@@ -5,7 +5,7 @@ description: "A technical review of ProtonMail's mobile applications for iOS and
 date: 2026-03-15
 author: theluckystrike
 permalink: /protonmail-ios-android-app-review-2026/
-categories: [email, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 7
 ---
