@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Best Browser for Tor Network 2026: A Technical Guide"
 description: "A comprehensive technical guide for developers and power users selecting the best browser for Tor network in 2026."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /best-browser-for-tor-network-2026/
+reviewed: true
+score: 8
+categories: [browser-privacy]
 ---
+
 
 {% raw %}
 # Best Browser for Tor Network 2026: A Technical Guide
