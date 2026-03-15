@@ -6,6 +6,10 @@ description: "Learn how Arti, the Rust implementation of Tor, works under the ho
 date: 2026-03-15
 author: theluckystrike
 permalink: /arti-tor-rust-implementation-explained-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
