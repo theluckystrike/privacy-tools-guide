@@ -2,7 +2,7 @@
 
 layout: default
 title: "Windows 11 Telemetry Disable Guide: Step by Step"
-description: "A comprehensive guide to disabling Windows 11 telemetry for developers and power users. Learn multiple methods including Settings, Group Policy, Registry, and PowerShell."
+description: "A comprehensive guide to disabling Windows 11 telemetry for developers and power users. Learn multiple methods including Settings, Group Policy."
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-11-telemetry-disable-guide-step-by-step/
@@ -128,6 +128,11 @@ Disabling telemetry may affect certain Windows features. Some applications rely 
 Windows Defender and core security features continue functioning regardless of telemetry settings. Security-related data collection operates independently of the diagnostic telemetry system.
 
 For developers building applications that integrate with Windows telemetry APIs, be aware that reduced telemetry may limit available diagnostic data for your applications. Test thoroughly in environments matching your configured telemetry level.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
