@@ -175,6 +175,41 @@ env:
         key: api-key
 ```
 
+## Self-Hosted Solutions
+
+### Vault by HashiCorp
+
+For teams running infrastructure on their own servers, [HashiCorp Vault](https://www.vaultproject.io/) provides enterprise-grade secrets management. It handles dynamic secrets, encryption as a service, and detailed audit logs.
+
+```hcl
+# Example Vault policy for team access
+path "secret/data/team/*" {
+  capabilities = ["read", "list", "create", "update"]
+}
+
+path "secret/metadata/team/*" {
+  capabilities = ["list"]
+}
+```
+
+Vault's learning curve is steeper than simple password managers, but it pays off for teams needing dynamic database credentials that rotate automatically, PKI certificate management, encryption APIs for application data, or fine-grained access control. The open-source version covers most small team needs.
+
+### Vaultwarden (Bitwarden RS)
+
+[Vaultwarden](https://github.com/dani-garcia/vaultwarden) is a Rust implementation of the Bitwarden API. It runs lightweight and supports all Bitwarden clients.
+
+```bash
+# Run with Docker
+docker run -d --name vaultwarden \
+  -e SIGNUPS_ALLOWED=false \
+  -e ADMIN_TOKEN=your-admin-token \
+  -v /vw-data/:/data/ \
+  -p 443:80 \
+  vaultwarden/server:latest
+```
+
+This gives you a self-hosted Bitwarden instance without the memory overhead of running the full .NET application. Your team gets the official mobile apps and browser extensions while you maintain control of the server.
+
 ## Making the Choice
 
 Consider these factors when choosing:
@@ -184,7 +219,8 @@ Consider these factors when choosing:
 | Budget constraints | Bitwarden (self-hosted) or gopass |
 | Existing ecosystem | 1Password (Apple), Proton Pass (Proton), Bitwarden (cross-platform) |
 | Need for audit trails | 1Password or Bitwarden Enterprise |
-| Self-hosting requirement | Bitwarden or gopass |
+| Self-hosting requirement | Vaultwarden, Bitwarden, or gopass |
+| Dynamic secrets rotation | HashiCorp Vault |
 | CLI-first workflow | Pass, gopass, or Bitwarden CLI |
 
 The best password manager for small teams in 2026 is the one your team will actually use consistently. A more expensive solution with full adoption beats a free solution that gets ignored. Start with one person's workflow, test it for two weeks, then roll it out team-wide.
