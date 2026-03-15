@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "1Password Secrets Automation Guide: Integrating 1Password CLI into Your Development Workflow"
 description: "A practical guide to automating secret management with 1Password CLI. Learn how to integrate 1Password into CI/CD pipelines, environment variable workflows, and infrastructure scripts."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /1password-secrets-automation-guide/
+reviewed: true
+score: 8
+categories: [passwords]
 ---
+
 
 {% raw %}
 
