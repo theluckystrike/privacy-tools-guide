@@ -239,21 +239,13 @@ registry.add_subprocessor(
 
 You typically need a DPA when:
 
-1. **Building B2B SaaS** — Your customers (controllers) give you their users' data
-2. **Processing for clients** — Handling customer data on behalf of another business
-3. **Using third-party services** — Services like AWS, Google Cloud, SendGrid process data on your behalf
-4. **Outsourcing operations** — External vendors handling customer support, analytics, or marketing
+A DPA is required when building B2B SaaS (your customers hand you their users' data), when processing data on behalf of another business, when engaging third-party services such as AWS, Google Cloud, or SendGrid, and when outsourcing operations like customer support or analytics to external vendors.
 
 ## Common Mistakes to Avoid
 
-- **Generic agreements** — Each DPA should reflect your actual data processing
-- **Missing subprocessors** — Keep your subprocessor list current
-- **Unclear timelines** — Define specific response times for data subject requests
-- **No termination clause** — Specify what happens to data when the agreement ends
+Generic agreements that don't reflect your actual data processing are the most common failure. Keep your subprocessor list current, define specific response times for data subject requests, and include a termination clause specifying what happens to data when the agreement ends.
 
-## Conclusion
-
-A compliant DPA is more than a legal checkbox. It documents your actual data handling practices and creates accountability. Use this template as a starting point, customize it to match your architecture, and maintain it as your services evolve.
+A DPA documents your actual data handling practices and creates accountability between you and the controllers you serve. Use this template as a starting point, customize it to match your architecture, and update it as your services evolve.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

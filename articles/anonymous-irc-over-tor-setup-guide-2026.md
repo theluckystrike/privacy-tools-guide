@@ -245,11 +245,7 @@ HiddenServicePort 6667 127.0.0.1:6667
 
 This allows users to connect directly to your .onion address, eliminating exit node exposure entirely.
 
-## Conclusion
-
-Running IRC over Tor provides meaningful protection against network surveillance and traffic analysis. The setup requires a Tor daemon, a compatible IRC client, and attention to operational security practices. Start with a trusted network like OFTC, verify your anonymity through hostmask checks, and gradually incorporate advanced configurations as needed.
-
-For developers working with sensitive communications or contributing to projects requiring privacy, this setup provides a foundation for secure, pseudonymous collaboration.
+The setup requires a Tor daemon, a compatible IRC client, and attention to operational security practices. Start with a trusted network like OFTC, verify your anonymity through hostmask checks, and add advanced configurations as your requirements grow.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

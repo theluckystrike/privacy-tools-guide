@@ -118,10 +118,7 @@ Any legitimate integration should use official APIs and respect rate limits and 
 
 Some power users maintain a dedicated Facebook account specifically for Marketplace transactions. This approach:
 
-- Isolates Marketplace activity from personal social presence
-- Allows use of a distinct name and profile picture
-- Limits exposure of personal friends and family
-- Requires managing separate account security credentials
+A dedicated account isolates Marketplace activity from your personal social presence, allows a distinct name and profile picture, and limits exposure of personal connections — at the cost of managing separate credentials.
 
 When implementing this strategy, consider:
 
@@ -138,20 +135,13 @@ When implementing this strategy, consider:
 
 Reduce personal information in listings:
 
-- Use generic item photos without EXIF location data
-- Avoid showing your home environment in photos
-- Meet buyers in public locations rather than providing your address
-- Use pseudonyms for communication when possible (though this violates ToS)
-- Remove listings promptly after completion to limit history exposure
+Use generic item photos stripped of EXIF data, keep your home environment out of the frame, and arrange meetups in public locations. Remove completed listings promptly to minimize history exposure. Pseudonyms limit traceability but violate Facebook's ToS.
 
 ### Monitoring Your Digital Footprint
 
 Regularly audit your Marketplace presence:
 
-1. **Search for yourself on Marketplace** — Use an alternate account to see what buyers see
-2. **Review listing history** — Your past listings remain visible for some time
-3. **Check Google indexing** — Search `site:facebook.com/marketplace yourname` periodically
-4. **Monitor profile connection** — Note which friends appear as mutual connections with buyers
+Use an alternate account to search for yourself and see what buyers see. Review your listing history — past listings remain visible for some time. Search `site:facebook.com/marketplace yourname` periodically to check Google indexing. Note which friends appear as mutual connections on your Marketplace profile.
 
 ## Reporting and Dispute Resolution
 
@@ -159,7 +149,7 @@ When privacy violations occur, use Facebook's built-in reporting mechanisms:
 
 - Report individual listings that violate privacy norms
 - Block users who engage in stalking or harassment
-- Utilize Facebook's **Safety Center** for resources on digital safety
+- Use Facebook's **Safety Center** for resources on digital safety
 - For serious threats, consider legal remedies and law enforcement contact
 
 ## Summary of Recommended Settings

@@ -209,18 +209,14 @@ class ErasureAuditLogger:
 
 When building your erasure system, ensure you address:
 
-1. **Unified user identification** — Link all data to a single user identifier across systems
-2. **Asynchronous processing** — Large-scale deletion should run as background jobs
-3. **Verification workflow** — Confirm user identity before processing
-4. **Retention exceptions** — Document legal bases for retaining any data post-erasure
-5. **Notification system** — Inform users when erasure completes
-6. **API for automated requests** — Enable integration with privacy-focused tools
+1. Link all data to a single user identifier across systems.
+2. Run large-scale deletion as background jobs.
+3. Confirm user identity before processing any erasure.
+4. Document legal bases for any data retained after an erasure request.
+5. Notify users when erasure completes.
+6. Expose an API endpoint to enable integration with external privacy tools.
 
-## Conclusion
-
-Implementing GDPR Article 17 erasure requires thorough database design, third-party notification systems, and comprehensive audit trails. The code patterns above provide a foundation for building compliant erasure workflows. Adapt these patterns to your specific technology stack and data architecture, ensuring you maintain documentation sufficient to demonstrate compliance.
-
-Building proper erasure systems protects your organization from regulatory penalties while respecting user privacy rights. Start with a data inventory to understand what you collect, then implement the deletion mechanisms described above.
+These patterns cover the core obligations: complete database deletion, third-party notification, and an audit trail for regulatory review. Adapt them to your stack, and maintain documentation sufficient to demonstrate compliance if challenged.
 
 ---
 

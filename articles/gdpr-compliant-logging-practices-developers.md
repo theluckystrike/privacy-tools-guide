@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -147,10 +148,7 @@ def cleanup_old_logs(retention_days=30):
 
 Logs containing personal data require appropriate security measures:
 
-- **Encryption at rest**: Use AES-256 for stored logs
-- **Access logging**: Track who accesses logs containing personal data
-- **Role-based access**: Restrict log access to authorized personnel
-- **Transport security**: Ensure all log transmission uses TLS
+Store logs with AES-256 encryption at rest, restrict access to authorized personnel using role-based controls, track who accesses logs containing personal data, and ensure all log transmission uses TLS.
 
 ```python
 # Encrypt sensitive log fields before storage
@@ -199,11 +197,9 @@ class DataSubjectRequestHandler:
         self.invalidate_pseudonym(user.id)
 ```
 
-## Conclusion
+GDPR-compliant logging starts with intentional, privacy-aware design rather than capturing everything and filtering later. Audit your current logs for personal data, implement pseudonymization for user identifiers, establish clear retention policies, and ensure your logging infrastructure supports data subject requests.
 
-Building GDPR-compliant logging requires shifting your mindset from comprehensive data capture to intentional, privacy-aware design. Start by auditing your current logs for personal data, implement pseudonymization for user identifiers, establish clear retention policies, and ensure your logging infrastructure supports data subject requests. These practices protect your users while keeping your systems observable.
-
-The effort pays dividends beyond compliance—cleaner logs are easier to search, cheaper to store, and less risky to maintain.
+The effort pays dividends beyond compliance — cleaner logs are easier to search, cheaper to store, and less risky to maintain.
 
 
 ## Related Reading

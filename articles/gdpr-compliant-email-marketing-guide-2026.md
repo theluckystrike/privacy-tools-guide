@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -105,7 +106,7 @@ Avoid pre-checked boxes. The consent must be an affirmative action.
 
 ## Building a Consent Audit Log
 
-Regulators may request proof of your consent practices. Maintain a comprehensive audit trail:
+Regulators may request proof of your consent practices. Maintain an audit trail:
 
 ```python
 class ConsentAuditLog:
@@ -191,10 +192,7 @@ class DataSubjectRequestHandler:
 
 Maintain compliance through ongoing list management:
 
-1. **Track engagement** — Remove unengaged subscribers after 12-18 months
-2. **Honor bounces** — Remove hard bounces immediately
-3. **Monitor complaints** — Process unsubscribe requests within 10 days
-4. **Document changes** — Log any modifications to consent terms
+Remove unengaged subscribers after 12–18 months, remove hard bounces immediately, process unsubscribe requests within 10 days, and log any modifications to consent terms.
 
 ```python
 def cleanup_inactive_subscribers(db, days_inactive: int = 547):
@@ -240,9 +238,7 @@ Before launching your email marketing system, verify:
 - [ ] Bounce handling automated
 - [ ] Data retention policy defined
 
-## Conclusion
-
-GDPR compliance for email marketing requires architectural decisions, not just policy updates. By implementing proper consent management, audit logging, and automated data subject request handling, you build systems that satisfy regulators while respecting user privacy. The technical investment upfront prevents costly compliance failures later.
+Proper consent management, audit logging, and automated data subject request handling build systems that satisfy regulators while respecting user privacy. The technical investment upfront prevents costly compliance failures later.
 
 
 ## Related Reading

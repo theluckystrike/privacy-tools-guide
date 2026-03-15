@@ -15,7 +15,7 @@ Building GDPR-compliant applications requires more than just checkbox privacy po
 
 ## Why GDPR Compliance Matters for Developers
 
-The GDPR (General Data Protection Regulation) imposes legal obligations on organizations processing personal data of EU residents. Non-compliance can result in fines up to €20 million or 4% of annual global turnover. For developers, this means building systems that respect data Subject rights from the ground up, not as afterthoughts.
+The GDPR (General Data Protection Regulation) imposes legal obligations on organizations processing personal data of EU residents. Non-compliance can result in fines up to €20 million or 4% of annual global turnover. For developers, this means building systems that respect data subject rights from the ground up, not as afterthoughts.
 
 Key developer responsibilities include implementing consent mechanisms, providing data export functionality, enabling data deletion, and ensuring data portability. The tools below help you meet these requirements efficiently.
 
@@ -280,15 +280,15 @@ const transferConfig = {
 
 ## Getting Started
 
-Begin by auditing your current data flow. Identify where personal data enters your system, where it travels, and where it gets stored. Then select tools that address your specific gaps:
+Audit your current data flow first — map where personal data enters, travels, and gets stored, then select tools that address specific gaps:
 
-1. **Consent management**: Add a CMP (Consent Management Platform) to your frontend
-2. **Data anonymization**: Implement anonymization for analytics and testing datasets
-3. **Erasure functionality**: Build delete endpoints that remove data from all tables
-4. **Data portability**: Create export endpoints in JSON or CSV format
-5. **Analytics**: Switch to cookieless or self-hosted analytics solutions
+1. Add a Consent Management Platform to your frontend.
+2. Anonymize data used in analytics and test datasets.
+3. Build delete endpoints that remove data from every related table.
+4. Create export endpoints in JSON or CSV format for Article 20 portability.
+5. Replace cookie-based analytics with a cookieless or self-hosted solution.
 
-GDPR compliance is an ongoing process, not a one-time implementation. Regularly review your data flows, update consent mechanisms, and maintain audit logs for every data processing activity.
+Revisit your data flows regularly, update consent mechanisms, and keep audit logs for every processing activity.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

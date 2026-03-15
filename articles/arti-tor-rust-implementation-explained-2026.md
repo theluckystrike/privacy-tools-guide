@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -126,9 +127,7 @@ The published onion service automatically handles circuit creation for both clie
 
 By 2026, Arti performance has improved substantially through several optimization rounds. Key performance tips include:
 
-1. **Enable incremental parsing** for large directory documents
-2. **Use connection pooling** for multiple concurrent streams
-3. **Configure appropriate circuit timeouts** based on your threat model
+Enable incremental parsing for large directory documents, use connection pooling for multiple concurrent streams, and set circuit timeouts to match your threat model.
 
 ```rust
 use arti_client::config::PerfConfig;
@@ -142,7 +141,7 @@ Connection pooling reuses existing circuits for multiple streams, reducing the o
 
 ## Error Handling Patterns
 
-Robust applications handle various failure modes:
+Applications must handle several failure modes:
 
 ```rust
 usearti_client::Error;
@@ -170,20 +169,11 @@ Circuit timeouts occur when relays become unresponsive. Network unreachability t
 
 When embedding Arti, follow these security practices:
 
-- **Validate configuration** in production environments
-- **Monitor circuit failures** for potential attacks
-- **Keep Arti updated** to receive security patches
-- **Use system DNS** or configure trusted resolvers
+In production, validate your configuration, monitor circuit failures for potential attack indicators, keep Arti updated, and use system DNS or a trusted resolver.
 
 Avoid disabling security features for convenience. Features like strict node selection and entry guard rotation exist to protect users from traffic analysis.
 
-## Conclusion
-
-Arti provides a mature, secure, and performant Rust implementation of the Tor protocol. Its modular architecture supports both simple integrations through `arti-client` and complex custom deployments using individual protocol crates. By 2026, Arti has proven itself suitable for production anonymity applications, offering developers memory-safe alternatives to the traditional C implementation.
-
-For developers building privacy-focused applications, Arti provides well-documented APIs, comprehensive error handling, and flexible configuration options. The Rust ecosystem benefits from Arti's development, with the crates enabling new privacy-preserving tools that were difficult to build with the older C codebase.
-
-Experiment with the examples above in your own projects. Start with basic connections, then explore circuit management and hidden service features as your requirements grow.
+Arti's modular crates support integrations from simple anonymous connections through `arti-client` to custom deployments using `tor-proto` and `tor-circmgr` directly.
 
 
 ## Related Reading

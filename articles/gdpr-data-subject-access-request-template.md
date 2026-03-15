@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -236,21 +237,15 @@ SELECT 'activity_log', user_id, NULL, created_at FROM activity_log WHERE user_id
 
 ## Best Practices for DSAR Handling
 
-1. **Verify identity rigorously**: DSARs are a common attack vector. Require multi-factor verification before processing.
+DSARs are a common attack vector, so require multi-factor verification before processing any request. The statutory clock starts at receipt, not at verification, so log the incoming request immediately.
 
-2. **Start tracking immediately**: The clock starts when you receive the request, not when you verify identity.
+Maintain audit trails of what data you found and what you provided. If you cannot fulfill all aspects of a request, document what you cannot provide and the legal reason why.
 
-3. **Document everything**: Maintain audit trails of what data you found and what you provided.
+Manual DSAR handling is error-prone and does not scale — automate data collection and response generation wherever the architecture permits. Ensure everyone on your team understands the legal requirements and your internal processes.
 
-4. **Handle partial data gracefully**: If you cannot fulfill all requests, explain what you cannot provide and why.
+## Making DSAR Handling Sustainable
 
-5. **Automate where possible**: Manual DSAR handling is error-prone and doesn't scale.
-
-6. **Train your team**: Ensure everyone understands the legal requirements and your internal processes.
-
-## Conclusion
-
-Implementing robust DSAR handling protects both your users and your organization. By building templates, automating data discovery, and following systematic processes, you can meet GDPR requirements while maintaining operational efficiency. The key is treating DSAR handling as an integral part of your data architecture rather than a compliance afterthought.
+Treating DSAR handling as part of your data architecture — not a compliance afterthought — is what makes it sustainable. Build templates, automate data discovery, and follow systematic processes to meet GDPR requirements without degrading operational efficiency.
 
 
 ## Related Reading
