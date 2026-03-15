@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Proton Pass vs Bitwarden Security Comparison for Developers"
 description: "A technical deep-dive comparing Proton Pass and Bitwarden security architectures, encryption schemes, and developer features."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /proton-pass-vs-bitwarden-security-comparison/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 {% raw %}
 # Proton Pass vs Bitwarden Security Comparison for Developers
