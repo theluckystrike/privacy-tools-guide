@@ -5,7 +5,7 @@ description: "Technical comparison of social media privacy policies in 2026. Cov
 date: 2026-03-15
 author: theluckystrike
 permalink: /social-media-privacy-policy-comparison-2026/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}
