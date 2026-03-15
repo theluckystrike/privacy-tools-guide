@@ -6,7 +6,7 @@ description: "A developer-focused guide to understanding and disabling Facebook'
 date: 2026-03-15
 author: theluckystrike
 permalink: /facebook-facial-recognition-opt-out-guide/
-categories: [guides, privacy, facebook]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
