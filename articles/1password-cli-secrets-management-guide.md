@@ -11,6 +11,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -144,13 +145,13 @@ This script demonstrates several best practices: authenticating once at the star
 
 While the 1Password CLI significantly improves security compared to hardcoded credentials, following best practices maximizes its effectiveness:
 
-**Session management** is critical. The default session duration is 30 minutes, but you can adjust this based on your workflow. For long-running CI/CD jobs, ensure the session remains active throughout the pipeline.
+Session management is critical. The default session duration is 30 minutes, but you can adjust this based on your workflow. For long-running CI/CD jobs, ensure the session remains active throughout the pipeline.
 
-**Audit logging** is built into 1Password Business accounts. Review access logs regularly to identify unusual patterns, such as secrets being retrieved at unexpected times or from unfamiliar locations.
+Audit logging is built into 1Password Business accounts. Review access logs regularly to identify unusual patterns, such as secrets being retrieved at unexpected times or from unfamiliar locations.
 
-**Least privilege access** applies to vault permissions. Grant team members access only to the vaults and specific items they need. Avoid sharing vault passwords broadly; instead, use item-level sharing where possible.
+Least privilege access applies to vault permissions. Grant team members access only to the vaults and specific items they need. Avoid sharing vault passwords broadly; instead, use item-level sharing where possible.
 
-**Environment variable exposure** can leak secrets inadvertently. Shell history and process environment displays may expose credentials. Use tools like `dotenv` to load secrets from files that are explicitly excluded from version control, or use container orchestration secrets management for larger deployments.
+Environment variable exposure can leak secrets inadvertently. Shell history and process environment displays may expose credentials. Use tools like `dotenv` to load secrets from files that are explicitly excluded from version control, or use container orchestration secrets management for larger deployments.
 
 ## Comparing with Alternative Approaches
 
@@ -172,7 +173,7 @@ This reduces errors and speeds up secret creation across your team.
 
 Begin by installing the CLI and authenticating with your account. Start with a simple retrieval to understand the authentication flow, then progressively integrate secrets into your development workflow. The incremental approach helps identify any permission issues or workflow adjustments needed before deploying to production environments.
 
-The 1Password CLI transforms secret management from a manual, error-prone process into a secure, scriptable workflow. By treating credentials as programmable data rather than static text, you build systems that are more secure by design.
+The 1Password CLI turns secret management into a secure, scriptable workflow. Treating credentials as programmable data rather than static text makes your systems more secure by design.
 
 
 ## Related Reading
