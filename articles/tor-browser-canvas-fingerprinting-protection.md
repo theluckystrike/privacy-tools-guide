@@ -5,7 +5,7 @@ description: "A comprehensive guide to understanding how Tor Browser protects ag
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-canvas-fingerprinting-protection/
-categories: [privacy, security, tor, fingerprinting]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

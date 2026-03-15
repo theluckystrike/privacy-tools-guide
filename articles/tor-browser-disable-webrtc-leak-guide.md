@@ -5,6 +5,10 @@ description: "Learn how to identify and mitigate WebRTC IP address leaks in Tor 
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-disable-webrtc-leak-guide/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
