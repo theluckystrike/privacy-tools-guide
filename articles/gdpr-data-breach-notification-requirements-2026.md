@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "GDPR Data Breach Notification Requirements 2026: A Technical Guide"
 description: "A developer-focused guide to GDPR data breach notification requirements in 2026. Covers 72-hour reporting timelines, technical implementation, and practical code examples."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /gdpr-data-breach-notification-requirements-2026/
 categories: [privacy, compliance, security]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # GDPR Data Breach Notification Requirements 2026: A Technical Guide

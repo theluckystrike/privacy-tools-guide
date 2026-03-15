@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "GDPR Data Subject Access Request Template"
 description: "A practical guide to GDPR data subject access requests for developers. Learn what to include in a DSAR, how to process requests programmatically, and build compliant response workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /gdpr-data-subject-access-request-template/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 # GDPR Data Subject Access Request Template
@@ -261,7 +266,7 @@ Sincerely,
 Data Protection Team
 ```
 
-Building robust DSAR handling into your application from the start saves significant effort later. The template and code examples here provide a foundation you can adapt to your specific architecture and data landscape.
+Building robust DSAR handling into your application from the start saves significant effort later. The template and code examples here provide a foundation you can adapt to your specific architecture and data ecosystem.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
