@@ -3,9 +3,11 @@ layout: default
 title: "Age Encryption Tool Tutorial for Developers"
 description: "A practical guide to using age encryption for developers and power users. Learn command-line usage, programmatic integration, and advanced workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /age-encryption-tool-tutorial-developers/
 categories: [guides]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
@@ -190,7 +192,7 @@ Age can derive recipient keys from existing SSH keys, making migration easier:
 ssh-to-age < ~/.ssh/id_rsa.pub
 ```
 
-Use the resulting age public key for encryption. This approach leverages your existing SSH infrastructure.
+Use the resulting age public key for encryption. This approach uses your existing SSH infrastructure.
 
 ## Shell Script Automation
 
