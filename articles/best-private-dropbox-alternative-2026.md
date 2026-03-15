@@ -6,7 +6,7 @@ description: "Discover privacy-focused cloud storage alternatives to Dropbox. Co
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-private-dropbox-alternative-2026/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
