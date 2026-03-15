@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-WebRTC (Web Real-Time Communication) is a powerful technology that enables peer-to-peer communication directly in web browsers. However, it poses significant privacy risks for users who rely on Tor Browser for anonymity. This guide explains WebRTC leaks, why they matter for Tor users, and practical methods to disable them.
+Disable WebRTC in Tor Browser by navigating to `about:config` and setting `media.peerconnection.enabled` to `false`, or create a `user.js` file in your profile directory to apply the setting automatically on each launch. While Tor Browser's default protections handle casual privacy needs, power users and developers facing targeted threats can add WebRTC blocking to prevent IP address leaks—though this changes your browser fingerprint and breaks features like video calling. This guide explains the threat model and implementation methods.
 
 ## Understanding WebRTC Leaks
 
