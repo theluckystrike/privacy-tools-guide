@@ -207,5 +207,6 @@ Start with these fundamentals, measure your outcomes, and adapt the practices to
 
 ## Related Reading
 
+- [Remote Work Tools Guide](/remote-work-tools/){: .cross-repo-linked}
 - [Jami P2P Messenger Review 2026: A Developer Guide to.](/privacy-tools-guide/jami-p2p-messenger-review-2026/)
 

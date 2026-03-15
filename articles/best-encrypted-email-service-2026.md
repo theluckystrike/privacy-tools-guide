@@ -165,6 +165,7 @@ The right choice is the one that you can consistently use while maintaining good
 
 ## Related Reading
 
+- [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
 - More guides coming soon.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
