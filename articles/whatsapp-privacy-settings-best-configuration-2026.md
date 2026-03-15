@@ -5,7 +5,7 @@ description: "A comprehensive guide to hardening WhatsApp privacy settings for d
 date: 2026-03-15
 author: theluckystrike
 permalink: /whatsapp-privacy-settings-best-configuration-2026/
-categories: [guides, privacy, messaging]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

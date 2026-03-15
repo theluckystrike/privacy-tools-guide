@@ -5,6 +5,10 @@ description: "Master Snapchat's privacy controls in 2026. This comprehensive gui
 date: 2026-03-15
 author: theluckystrike
 permalink: /snapchat-privacy-settings-complete-guide-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

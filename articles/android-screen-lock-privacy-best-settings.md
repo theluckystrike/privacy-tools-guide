@@ -5,7 +5,7 @@ description: "Configure Android screen lock privacy settings for maximum securit
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-screen-lock-privacy-best-settings/
-categories: [guides, security, android]
+categories: [guides, security]
 reviewed: true
 score: 0
 intent-checked: false

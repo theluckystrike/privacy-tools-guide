@@ -6,7 +6,7 @@ description: "Secure your macOS device for remote work. Configure privacy settin
 date: 2026-03-15
 author: theluckystrike
 permalink: /macos-privacy-settings-for-remote-workers-2026/
-categories: [guides, security, macos]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
