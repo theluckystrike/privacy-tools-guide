@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "XMPP OMEMO Encryption Setup Guide: Secure Your Instant Messages"
-description: "A practical guide to setting up OMEMO encryption for XMPP messaging. Learn how to configure your client, manage identity keys, and achieve end-to-end encryption for private communications."
+title: "XMPP OMEMO Encryption Setup Guide: Secure Your Instant."
+description: "A practical guide to setting up OMEMO encryption for XMPP messaging. Learn how to configure your client, manage identity keys, and achieve end-to-end."
 date: 2026-03-15
 author: theluckystrike
 permalink: /xmpp-omemo-encryption-setup-guide/
@@ -128,6 +128,11 @@ Once configured, OMEMO works transparently in the background. Your messages rema
 Start with one trusted contact, verify fingerprints, and expand from there. The setup overhead pays dividends in communication security.
 
 ---
+
+
+## Related Reading
+
+- More guides coming soon.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
