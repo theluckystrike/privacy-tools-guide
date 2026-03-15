@@ -5,7 +5,7 @@ description: "Configure macOS firewall for privacy using pf, Application Firewal
 date: 2026-03-15
 author: theluckystrike
 permalink: /macos-firewall-configuration-for-privacy/
-categories: [guides, security, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
