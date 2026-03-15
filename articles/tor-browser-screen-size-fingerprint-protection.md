@@ -6,7 +6,7 @@ description: "Learn how Tor Browser protects against screen size fingerprinting 
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-screen-size-fingerprint-protection/
-categories: [privacy, security, tor]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
