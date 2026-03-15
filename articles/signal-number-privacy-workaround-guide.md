@@ -7,7 +7,7 @@ description: "A technical guide to using Signal while protecting your phone numb
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /signal-number-privacy-workaround-guide/
-categories: [guides, privacy, security]
+categories: [guides, security]
 intent-checked: true
 reviewed: true
 score: 8
