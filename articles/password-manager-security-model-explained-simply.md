@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -59,9 +60,7 @@ A critical concept in password manager security is **zero-knowledge**. This mean
 
 Here's how zero-knowledge works in practice:
 
-1. **Client-side encryption**: Your password is encrypted before it leaves your device
-2. **Server receives encrypted data**: The server stores ciphertext, not plaintext
-3. **Decryption happens locally**: When you unlock your vault, the decryption key is derived from your master password on your device
+Encryption happens on your device before any data leaves it. The server stores only ciphertext, never plaintext. When you unlock your vault, the decryption key is derived from your master password locally—the server is not involved.
 
 This architecture protects you even if the server is compromised. An attacker with access to the database sees only random-looking encrypted data.
 
@@ -91,9 +90,7 @@ async function encryptVault(plaintext, masterPassword) {
 Most password managers use **AES-256-GCM** for symmetric encryption. The GCM mode provides both confidentiality (you can't read the data without the key) and authenticity (you can detect if the data was tampered with).
 
 AES-256-GCM is the gold standard because:
-- **256-bit keys** provide substantial security margin
-- **GCM mode** includes built-in integrity checking
-- **Hardware acceleration** is available on most modern processors
+AES-256-GCM uses 256-bit keys for a substantial security margin, includes built-in integrity checking through GCM mode, and benefits from hardware acceleration on most modern processors.
 
 When you sync your vault to the cloud, the encrypted blob looks something like this:
 
@@ -109,11 +106,7 @@ vault.encrypted = AES-256-GCM encrypt(
 
 When you enter your master password to unlock your password manager, here's the complete flow:
 
-1. **Master password entered**: You type your master password on your device
-2. **Salt retrieved**: Your client fetches the salt (public) from the server
-3. **Key derivation**: The KDF transforms your password + salt into an encryption key
-4. **Vault decryption**: Your client decrypts the encrypted vault using the derived key
-5. **Session established**: Your unlocked vault is available until you lock or close the app
+You type your master password on your device. Your client fetches the salt from the server (the salt is public), then the KDF transforms your password and salt into an encryption key. Your client decrypts the vault locally using that key, and the unlocked vault remains available until you lock or close the app.
 
 ```python
 # Complete unlock flow example
@@ -146,9 +139,7 @@ If you're building applications that interact with password managers or implemen
 
 A few clarifications that help when evaluating password manager security:
 
-- **Cloud sync ≠ cloud storage of plaintext**: Your data stays encrypted, even on the provider's servers
-- **Master password is not sent anywhere**: Zero-knowledge means the server never sees it
-- **Your encryption key protects everything**: Compromise of your master password compromises everything
+Cloud sync does not mean the provider stores your data in plaintext—it stays encrypted on their servers. Your master password is never sent anywhere; zero-knowledge means the server never sees it. Because your encryption key is derived from your master password, a compromised master password compromises everything.
 
 ## Summary
 

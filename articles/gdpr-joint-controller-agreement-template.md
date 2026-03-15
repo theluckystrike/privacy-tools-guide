@@ -5,6 +5,7 @@ description: "Learn how to create a compliant GDPR joint controller agreement wi
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-joint-controller-agreement-template/
+voice-checked: true
 ---
 
 {% raw %}
@@ -34,8 +35,6 @@ Your joint controller agreement must include:
 8. **Contact points** — How data subjects can reach you
 
 ## Practical Template
-
-Here's a streamlined template you can adapt for your projects:
 
 ```markdown
 # Joint Controller Agreement
@@ -153,11 +152,11 @@ Before finalizing your agreement, verify:
 
 ## Common Pitfalls to Avoid
 
-**Vague responsibility definitions** — Avoid generic statements like "both parties ensure compliance." Be specific about who does what.
+Vague responsibility definitions are a common problem. Avoid generic statements like "both parties ensure compliance" and be specific about who does what.
 
-**Missing breach procedures** — GDPR requires notification within 72 hours of becoming aware of a breach. Your agreement should specify exact timelines and communication channels.
+Missing breach procedures are another gap to watch for. GDPR requires notification within 72 hours of becoming aware of a breach, so specify exact timelines and communication channels in the agreement.
 
-**Ignoring third-party SDKs** — If you embed analytics or advertising SDKs, you may need to document whether you're a joint controller with that vendor. Many SDKs have their own terms—review them carefully.
+Third-party SDKs are easy to overlook. If you embed analytics or advertising SDKs, you may need to document whether you're a joint controller with that vendor. Many SDKs have their own terms—review them carefully.
 
 ## Automating Agreement Management
 

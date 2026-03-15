@@ -7,6 +7,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /windows-activity-history-disable-privacy-guide/
 categories: [guides]
+voice-checked: true
 ---
 
 {% raw %}
@@ -93,7 +94,7 @@ Save this script as `disable-activity-history.ps1` and execute with administrato
 
 ## Method 4: PowerShell Automation Script
 
-For developers managing multiple workstations or seeking repeatable deployment methods, a comprehensive PowerShell script provides the most flexible solution. The following example combines multiple privacy settings:
+For developers managing multiple workstations or seeking repeatable deployment methods, a PowerShell script provides the most flexible solution. The following example combines multiple privacy settings:
 
 ```powershell
 # Comprehensive Activity History Disabler
