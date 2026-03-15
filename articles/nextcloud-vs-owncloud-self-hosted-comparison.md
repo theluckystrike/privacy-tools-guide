@@ -5,7 +5,7 @@ description: "A technical comparison of Nextcloud and OwnCloud for self-hosted d
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-vs-owncloud-self-hosted-comparison/
-categories: [guides, self-hosted, cloud-storage]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
