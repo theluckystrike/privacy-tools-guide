@@ -9,7 +9,7 @@ author: "Privacy Tools Guide"
 permalink: /best-password-manager-for-small-teams-2026/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 

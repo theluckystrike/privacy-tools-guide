@@ -6,7 +6,7 @@ description: "A developer-focused explanation of browser fingerprinting techniqu
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-browser-fingerprinting-works-explained/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

@@ -6,7 +6,7 @@ description: "A technical comparison of privacy-focused browsers with code examp
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-for-avoiding-google-tracking/
-categories: [privacy, security, browsers]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

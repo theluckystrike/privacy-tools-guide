@@ -5,7 +5,7 @@ description: "Compare Firefox's built-in Strict tracking protection with custom 
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-strict-tracking-protection-vs-custom/
-categories: [guides, privacy, firefox]
+categories: [guides]
 reviewed: true
 score: 8
 ---
