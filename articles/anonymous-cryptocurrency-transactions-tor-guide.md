@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on achieving anon
 date: 2026-03-15
 author: theluckystrike
 permalink: /anonymous-cryptocurrency-transactions-tor-guide/
-categories: [privacy, security, cryptocurrency]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

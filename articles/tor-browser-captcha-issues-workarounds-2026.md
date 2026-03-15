@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users dealing with capt
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-captcha-issues-workarounds-2026/
-categories: [guides, security, tor, captcha]
+categories: [guides, security, troubleshooting]
 reviewed: true
 score: 8
 intent-checked: true
