@@ -5,7 +5,7 @@ description: "A technical comparison of GDPR-compliant consent management platfo
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-consent-management-platform-comparison-2026/
-categories: [guides, privacy, compliance]
+categories: [guides]
 reviewed: true
 score: 8
 ---
