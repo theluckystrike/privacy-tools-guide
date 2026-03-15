@@ -5,7 +5,7 @@ description: "Learn how to permanently delete old social media accounts with ste
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-delete-old-social-media-accounts/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

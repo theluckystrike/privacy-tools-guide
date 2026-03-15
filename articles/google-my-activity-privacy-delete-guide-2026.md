@@ -5,7 +5,7 @@ description: "A comprehensive guide for developers and power users on managing, 
 date: 2026-03-15
 author: theluckystrike
 permalink: /google-my-activity-privacy-delete-guide-2026/
-categories: [guides, privacy, google]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
