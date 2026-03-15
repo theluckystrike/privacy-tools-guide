@@ -6,6 +6,10 @@ description: "A technical deep-dive into Apple's iCloud Private Relay architectu
 date: 2026-03-15
 author: theluckystrike
 permalink: /ios-private-relay-how-it-works-vs-vpn/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

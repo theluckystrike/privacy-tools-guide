@@ -6,7 +6,7 @@ description: "A practical guide to Windows registry privacy tweaks for developer
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-registry-privacy-tweaks-safe-guide/
-categories: [guides, privacy, windows]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
