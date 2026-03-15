@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "Dashlane vs LastPass After Breach: Security Comparison for Developers"
 description: "A technical comparison of Dashlane and LastPass security posture after their respective data breaches. Covers breach timeline, encryption architecture, and actionable guidance for developers migrating away from compromised password managers."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /dashlane-vs-lastpass-after-breach-comparison/
 categories: [comparisons]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
