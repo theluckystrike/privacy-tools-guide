@@ -5,7 +5,7 @@ description: "Technical comparison of Dashlane and 1Password for developers and 
 date: 2026-03-15
 author: theluckystrike
 permalink: /dashlane-vs-1password-comparison-2026/
-categories: [guides, security, password-managers]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

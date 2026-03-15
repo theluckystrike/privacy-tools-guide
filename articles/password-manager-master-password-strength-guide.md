@@ -9,7 +9,7 @@ author: "Privacy Tools Guide"
 permalink: /password-manager-master-password-strength-guide/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 

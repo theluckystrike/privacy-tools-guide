@@ -5,7 +5,7 @@ description: "A practical comparison of Bitwarden and KeePassXC for developers a
 date: 2026-03-15
 author: theluckystrike
 permalink: /bitwarden-vs-keepassxc-which-to-pick-2026/
-categories: [comparisons, security, password-managers]
+categories: [comparisons, security, guides]
 reviewed: true
 score: 8
 intent-checked: true
