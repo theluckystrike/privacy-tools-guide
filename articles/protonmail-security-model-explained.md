@@ -9,10 +9,11 @@ permalink: /protonmail-security-model-explained/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
-ProtonMail stands apart from conventional email services by building security into its core architecture rather than treating it as an afterthought. For developers and power users evaluating privacy-focused communication tools, understanding the underlying security model reveals why ProtonMail has become a standard bearer for encrypted email.
+ProtonMail's security model relies on three pillars: end-to-end encryption (RSA-2048 + AES-256) so only you and your recipient can read messages, zero-access architecture so ProtonMail's own servers never store decryptable content, and client-side key generation so your private key never leaves your device in plaintext. This means ProtonMail cannot read your emails even if compelled by a court order or compromised by an attacker. Here is how each layer works in practice.
 
 ## End-to-End Encryption Fundamentals
 
