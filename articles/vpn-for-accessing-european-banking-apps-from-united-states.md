@@ -176,3 +176,4 @@ Some European banks actively block known VPN IP ranges. In these cases, consider
 For developers building integrations with European banking APIs, understand that PSD2 regulations in the EU require strong customer authentication (SCA). This means banking applications may require additional verification steps when accessed from new IP addresses, even when using a VPN.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
