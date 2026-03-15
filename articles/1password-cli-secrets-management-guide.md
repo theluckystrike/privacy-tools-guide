@@ -10,12 +10,13 @@ permalink: /1password-cli-secrets-management-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Managing secrets securely is a fundamental concern for developers and power users. Hardcoded credentials in configuration files or environment variables stored in plain text create significant security vulnerabilities. The 1Password CLI provides a robust solution for retrieving and managing secrets directly from your terminal, integrating smoothly with development workflows, scripts, and automation pipelines.
+Use the 1Password CLI (`op`) to retrieve secrets directly in your terminal with `op item get "API Key" --field password`, eliminating hardcoded credentials from config files and environment variables. Install it via `brew install --cask 1password-cli` on macOS, authenticate with `op signin`, and inject secrets into scripts, CI/CD pipelines, or shell aliases. This guide walks through setup, authentication, vault management, and scripting patterns for secure secrets management.
 
 ## What is the 1Password CLI?
 
