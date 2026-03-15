@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "How to Disable Crypto Features in Brave Browser: Complete Guide"
 description: "A practical guide for developers and power users on how to disable built-in cryptocurrency features in Brave Browser for enhanced privacy and security."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /brave-browser-crypto-features-disable-guide/
+reviewed: true
+score: 8
+categories: [browser-privacy]
 ---
+
 
 {% raw %}
 Brave Browser ships with several built-in cryptocurrency and Web3 features that many users may want to disable. Whether you're a developer focused on privacy, a security-conscious power user, or someone who simply doesn't need blockchain integration, removing these features reduces your attack surface and improves control over your browsing environment.

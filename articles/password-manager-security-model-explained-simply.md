@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "Password Manager Security Model Explained Simply"
 description: "Understand how password managers secure your data. This guide breaks down encryption, zero-knowledge architecture, and key derivation for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /password-manager-security-model-explained-simply/
 categories: [security, guides]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
