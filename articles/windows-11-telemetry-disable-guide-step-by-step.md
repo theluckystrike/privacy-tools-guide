@@ -6,7 +6,7 @@ description: "A comprehensive guide to disabling Windows 11 telemetry for develo
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-11-telemetry-disable-guide-step-by-step/
-categories: [guides, privacy, windows]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

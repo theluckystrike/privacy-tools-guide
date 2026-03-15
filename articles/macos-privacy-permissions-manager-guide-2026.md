@@ -8,7 +8,7 @@ description: "Master macOS privacy permissions using System Settings, Terminal, 
 date: 2026-03-15
 author: theluckystrike
 permalink: /macos-privacy-permissions-manager-guide-2026/
-categories: [guides, macos, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
