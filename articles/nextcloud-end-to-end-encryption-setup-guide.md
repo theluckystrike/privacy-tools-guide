@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users setting up end-to
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-end-to-end-encryption-setup-guide/
-categories: [guides, security, encryption]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
