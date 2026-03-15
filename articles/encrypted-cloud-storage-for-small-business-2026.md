@@ -6,7 +6,7 @@ description: "A technical guide to encrypted cloud storage solutions for small b
 date: 2026-03-15
 author: theluckystrike
 permalink: /encrypted-cloud-storage-for-small-business-2026/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
