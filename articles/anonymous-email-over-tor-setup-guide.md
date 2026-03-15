@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Anonymous Email Over Tor Setup Guide: Complete Technical Walkthrough"
-description: "A practical guide for developers and power users setting up anonymous email access over Tor network. Covers mail client configuration, onion service connections, and operational security."
+title: "Anonymous Email Over Tor Setup Guide: Complete Technical."
+description: "A practical guide for developers and power users setting up anonymous email access over Tor network. Covers mail client configuration, onion service."
 date: 2026-03-15
 author: theluckystrike
 permalink: /anonymous-email-over-tor-setup-guide/
@@ -217,6 +217,11 @@ Running email over Tor requires configuring your mail client to use a SOCKS5 pro
 The setup process takes approximately 30 minutes and significantly improves your resistance to network surveillance. For developers building privacy applications or users requiring strong anonymity, this configuration forms a foundational element of secure communications.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Tor Network Censorship Resistance Explained: A Technical Guide"
+title: "Tor Network Censorship Resistance Explained: A Technical."
 description: "Learn how Tor provides censorship resistance through onion routing, bridges, and pluggable transports. Practical examples for developers and power users."
 date: 2026-03-15
 author: theluckystrike
@@ -175,6 +175,11 @@ Bridge addresses themselves can become blocked. Maintain multiple bridge configu
 Tor provides robust censorship resistance through layered encryption, unlisted bridges, and pluggable transports. Configuring these components correctly enables access to the open internet from restricted environments. For developers, integrating Tor's SOCKS proxy or Control Protocol into applications extends these capabilities beyond browser-based usage.
 
 Understanding these mechanisms helps you choose the appropriate configuration for your threat model and network conditions. Whether you're a developer building privacy-aware applications or a power user in a restricted environment, Tor's architecture provides the tools necessary to resist network censorship.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

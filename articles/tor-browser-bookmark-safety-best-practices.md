@@ -259,5 +259,10 @@ if __name__ == "__main__":
 
 By treating bookmarks as persistent metadata rather than transient browser state, you maintain better operational security. These practices align with defense-in-depth principles—each layer adds friction against correlation attacks. Adapt these scripts to your threat model, and remember that bookmark hygiene is one component of a broader Tor Browser usage strategy.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
