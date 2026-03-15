@@ -5,6 +5,10 @@ description: "Technical analysis of NordVPN obfuscated servers effectiveness in 
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-nordvpn-obfuscated-servers-work-in-china-2026-test/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
