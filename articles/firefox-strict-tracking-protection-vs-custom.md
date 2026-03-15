@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Firefox Strict Tracking Protection vs Custom: A Developer Guide"
-description: "Compare Firefox's built-in Strict tracking protection with custom about:config configurations. Learn practical settings for developers and power users who need granular control."
+title: "Firefox Strict Tracking Protection vs Custom: A."
+description: "Compare Firefox's built-in Strict tracking protection with custom about:config configurations. Learn practical settings for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-strict-tracking-protection-vs-custom/
@@ -168,6 +168,13 @@ Choose Strict mode when you want maximum protection with minimal configuration e
 Choose Custom mode when you need to maintain specific site functionality while still blocking trackers. Developers often need Custom mode to test their own sites properly.
 
 The optimal configuration depends on your threat model and workflow. Most power users benefit from a Custom setup that enables cross-site cookie blocking and fingerprinting protection while allowing exceptions for development and critical web applications.
+
+
+## Related Reading
+
+- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
