@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Brave New Tab Page Privacy Review: What Developers Need to Know"
+title: "Brave New Tab Page Privacy Review: What Developers Need."
 description: "A technical privacy review of Brave browser's new tab page. Analyze data collection, network requests, and privacy implications for developers and power users."
 date: 2026-03-15
 author: theluckystrike
@@ -92,6 +92,11 @@ Based on this privacy review, developers and power users should consider these c
 Brave's new tab page represents a reasonable privacy tradeoff for most users—more transparent than Chrome's default experience but not as minimal as a completely custom solution. Developers who require absolute control should implement the configuration recommendations above or explore alternative NTP implementations.
 
 For teams integrating Brave into privacy-sensitive environments, conduct your own network analysis using the methods described here. Browser versions change frequently, and privacy implementations evolve. Regular audits ensure your configuration remains aligned with your security requirements.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

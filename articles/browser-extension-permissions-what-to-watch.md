@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Browser Extension Permissions What to Watch: A Developer and Power User Guide"
-description: "Learn which browser extension permissions pose security risks and how to evaluate them. Practical guide for developers and power users on understanding, auditing, and managing browser extension permissions safely."
+title: "Browser Extension Permissions What to Watch: A Developer."
+description: "Learn which browser extension permissions pose security risks and how to evaluate them. Practical guide for developers and power users on."
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-extension-permissions-what-to-watch/
@@ -120,6 +120,11 @@ Browser extension permissions determine what data extensions can access and what
 Regular audits of installed extensions help maintain good security hygiene. For developers, requesting minimal permissions, using `activeTab`, and clearly documenting permission needs builds user trust.
 
 By understanding which permissions matter and which to watch carefully, you can enjoy browser extension functionality while maintaining control over your digital privacy.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

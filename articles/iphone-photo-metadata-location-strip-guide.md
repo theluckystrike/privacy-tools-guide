@@ -2,7 +2,7 @@
 
 layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"
-description: "Learn how to strip GPS location data from iPhone photos using command-line tools, Python scripts, and automation workflows. Complete guide for privacy-conscious developers."
+description: "Learn how to strip GPS location data from iPhone photos using command-line tools, Python scripts, and automation workflows. Complete guide for."
 date: 2026-03-15
 author: theluckystrike
 permalink: /iphone-photo-metadata-location-strip-guide/
@@ -228,6 +228,11 @@ Removing location metadata from iPhone photos protects privacy when sharing imag
 For developers building photo applications, integrating metadata stripping into your pipeline ensures user privacy by default. The exiftool approach offers the most flexibility, while Python scripts provide customization for specific use cases.
 
 Always verify removal with exiftool after processing—assumptions about data removal can lead to unintended privacy exposure.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

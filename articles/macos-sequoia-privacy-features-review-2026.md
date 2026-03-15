@@ -156,6 +156,11 @@ For applications handling sensitive user data, these improvements reduce the imp
 
 macOS Sequoia privacy features provide meaningful improvements for both developers and power users. Privacy Manifest requirements promote transparency, enhanced sandboxing offers better isolation, and improved local network controls give users visibility into app behavior. The continued refinement of these features demonstrates Apple's commitment to privacy as a core platform differentiator.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
