@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Bitwarden Self-Hosted Setup Guide"
 description: "A practical guide to self-hosting Bitwarden for developers and power users. Learn how to deploy your own password vault with Docker, configure SSL, and manage your infrastructure."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /bitwarden-self-hosted-setup-guide/
 categories: [guides]
 intent-checked: true
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 Running your own Bitwarden instance gives you complete control over your password data. For developers and power users, self-hosting eliminates reliance on third-party servers while providing customization options unavailable in the cloud version.
