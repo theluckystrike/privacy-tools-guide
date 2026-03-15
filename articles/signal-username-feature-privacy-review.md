@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Signal Username Feature Privacy Review"
 description: "A technical analysis of Signal's username system, privacy implications, and configuration options for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /signal-username-feature-privacy-review/
+reviewed: true
+score: 8
+categories: [reviews]
 ---
+
 
 Signal introduced usernames as an alternative to phone number-based identity, offering users more control over their digital footprint. This review examines the privacy implications of this feature, practical configuration methods, and considerations for developers building applications that interact with Signal's ecosystem.
 
