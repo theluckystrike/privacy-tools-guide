@@ -5,7 +5,7 @@ description: "A comprehensive guide for setting up Tor Browser on Android using 
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-android-setup-guide-orbot/
-categories: [guides, android, tor, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
