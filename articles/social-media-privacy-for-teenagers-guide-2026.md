@@ -6,7 +6,7 @@ description: "A comprehensive guide to social media privacy for teenagers in 202
 date: 2026-03-15
 author: theluckystrike
 permalink: /social-media-privacy-for-teenagers-guide-2026/
-categories: [privacy, security, guides]
+categories: [guides, security]
 ---
 
 {% raw %}
