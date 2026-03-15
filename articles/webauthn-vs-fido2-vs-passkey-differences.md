@@ -2,7 +2,7 @@
 
 layout: default
 title: "WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained"
-description: "A technical breakdown of WebAuthn, FIDO2, and passkeys for developers. Understand the standards, protocols, and implementations driving passwordless authentication."
+description: "A technical breakdown of WebAuthn, FIDO2, and passkeys for developers. Understand the standards, protocols, and implementations driving passwordless."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /webauthn-vs-fido2-vs-passkey-differences/
@@ -140,5 +140,10 @@ The key decision point is whether to require attestation. Attestation lets you e
 WebAuthn provides the browser API, FIDO2 defines the protocol, and passkeys deliver the user experience. For authentication, WebAuthn and FIDO2 are essentially synonymous at the technical level—WebAuthn is the web-facing part, FIDO2 encompasses both web and native authenticator communication.
 
 Passkeys add synchronization and discoverability on top of FIDO2, making credentials practical for everyday use. The standards are mature and browser support is excellent across Chrome, Firefox, Safari, and Edge. If you're building a new application, WebAuthn with passkey support represents the strongest authentication path available today.
+
+
+## Related Reading
+
+- More guides coming soon.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
