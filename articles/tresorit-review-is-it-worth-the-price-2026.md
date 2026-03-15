@@ -5,7 +5,7 @@ description: "A technical analysis of Tresorit's end-to-end encryption, CLI tool
 date: 2026-03-15
 author: theluckystrike
 permalink: /tresorit-review-is-it-worth-the-price-2026/
-categories: [guides]
+categories: [guides, security]
 reviewed: true
 score: 7
 intent-checked: true

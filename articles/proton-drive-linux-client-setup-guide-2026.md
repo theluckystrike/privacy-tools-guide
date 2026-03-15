@@ -5,7 +5,7 @@ description: "Learn how to set up Proton Drive on Linux with this practical guid
 date: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-linux-client-setup-guide-2026/
-categories: [guides, proton-drive]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

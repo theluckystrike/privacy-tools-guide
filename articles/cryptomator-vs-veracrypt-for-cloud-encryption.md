@@ -6,7 +6,7 @@ description: "Compare Cryptomator and VeraCrypt for cloud encryption. Learn prac
 date: 2026-03-15
 author: theluckystrike
 permalink: /cryptomator-vs-veracrypt-for-cloud-encryption/
-categories: [comparisons]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
