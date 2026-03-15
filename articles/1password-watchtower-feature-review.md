@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /1password-watchtower-feature-review/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 

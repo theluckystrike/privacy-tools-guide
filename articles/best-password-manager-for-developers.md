@@ -7,7 +7,7 @@ description: "A comprehensive guide to choosing password managers with CLI suppo
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-password-manager-for-developers/
-categories: [passwords, security, developer-tools]
+categories: [guides, security, guides]
 reviewed: true
 score: 8
 ---

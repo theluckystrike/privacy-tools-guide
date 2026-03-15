@@ -6,7 +6,7 @@ description: "A practical guide to encrypted note-taking applications with E2EE,
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-notes-app-2026/
-categories: [privacy, encryption, developer-tools, notes]
+categories: [guides, guides, guides, guides]
 reviewed: true
 score: 8
 ---

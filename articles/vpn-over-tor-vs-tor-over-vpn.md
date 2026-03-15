@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /vpn-over-tor-vs-tor-over-vpn/
 reviewed: true
 score: 8
-categories: [vpn]
+categories: [guides]
 ---
 
 

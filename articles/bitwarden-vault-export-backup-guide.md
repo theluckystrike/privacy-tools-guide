@@ -7,7 +7,7 @@ description: "A practical guide to exporting and backing up your Bitwarden vault
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /bitwarden-vault-export-backup-guide/
-categories: [passwords, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

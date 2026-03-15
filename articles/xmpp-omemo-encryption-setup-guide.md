@@ -6,7 +6,7 @@ description: "A practical guide to setting up OMEMO encryption for XMPP messagin
 date: 2026-03-15
 author: theluckystrike
 permalink: /xmpp-omemo-encryption-setup-guide/
-categories: [xmpp, encryption, privacy, omemo]
+categories: [guides, guides, guides, guides]
 reviewed: true
 score: 8
 ---
