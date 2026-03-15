@@ -9,14 +9,13 @@ permalink: /password-manager-security-model-explained-simply/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 
 {% raw %}
 
-If you store passwords in a password manager, you trust that tool with some of your most sensitive data. But what actually happens when you type that master password? How does your vault stay encrypted? Understanding the password manager security model helps you make informed decisions about which tools to use and how to configure them for maximum protection.
-
-This article breaks down the core security mechanisms that modern password managers use, with practical examples and code demonstrations suitable for developers and power users.
+Password managers protect your data through three layers: your master password is transformed into an encryption key via a key derivation function (like Argon2id or PBKDF2 with 100,000+ iterations), that key encrypts your vault with AES-256-GCM before anything leaves your device, and zero-knowledge architecture means the server never possesses your decryption key. Even if the server is breached, attackers see only encrypted blobs they cannot decrypt without your master password. Below is a detailed breakdown of each mechanism with code examples.
 
 ## The Core Problem: Encrypting at Rest
 

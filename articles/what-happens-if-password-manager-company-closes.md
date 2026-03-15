@@ -9,11 +9,12 @@ permalink: /what-happens-if-password-manager-company-closes/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When you entrust your credentials to a third-party service, you implicitly trust that company will operate indefinitely. The reality is more nuanced—password manager companies can close, get acquired, or discontinue services. Understanding these scenarios helps you build resilience into your security architecture.
+If your password manager company shuts down, you lose access to cloud sync and web interfaces, but your locally cached vault remains intact and your passwords stay encrypted with a key only you hold -- the company never stores your master password. The critical protection is maintaining regular encrypted local backups using your provider's export tool (e.g., `op vault export` for 1Password or `bw export` for Bitwarden) so you can restore your credentials regardless of whether the service survives.
 
 ## The Shutdown Spectrum
 

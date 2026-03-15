@@ -9,11 +9,12 @@ permalink: /firefox-reset-and-clean-install-guide-privacy/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-A fresh Firefox installation eliminates accumulated tracking data, corrupted settings, and potentially unwanted extensions that compromise privacy. This guide covers both the built-in reset feature and a complete clean install, with special attention to preserving essential data while hardening privacy settings.
+To reset Firefox while keeping your data, go to `about:support` and click "Refresh Firefox" -- this preserves bookmarks and passwords but removes extensions and resets `about:config`. For a full clean install that eliminates all accumulated tracking data, back up your profile first, then delete your profile directory and reinstall. Below you will find step-by-step instructions for both methods, including backup commands, privacy hardening settings to apply immediately after reset, and an automation script for power users.
 
 ## When to Reset or Clean Install Firefox
 

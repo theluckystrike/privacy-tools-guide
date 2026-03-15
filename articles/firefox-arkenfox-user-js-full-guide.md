@@ -9,11 +9,12 @@ permalink: /firefox-arkenfox-user-js-full-guide/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Firefox remains one of the most customizable browsers available, and the Arkenfox project provides a powerful user.js configuration file that hardens Firefox against tracking, fingerprinting, and data collection. This guide walks you through implementing Arkenfox user.js effectively.
+To install Arkenfox user.js, download the latest `user.js` file from the Arkenfox GitHub repository and place it in your Firefox profile directory (find your profile path at `about:support`). Use Firefox ESR for best compatibility, create a `user-overrides.js` file for personal exceptions, and run the included diagnostic tool to verify your configuration. This guide covers the full setup process, key privacy settings Arkenfox enforces, and how to troubleshoot common breakage.
 
 ## What is Arkenfox user.js?
 

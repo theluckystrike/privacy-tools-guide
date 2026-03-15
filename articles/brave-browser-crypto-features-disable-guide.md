@@ -9,15 +9,12 @@ permalink: /brave-browser-crypto-features-disable-guide/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
-Brave Browser ships with several built-in cryptocurrency and Web3 features that many users may want to disable. Whether you're a developer focused on privacy, a security-conscious power user, or someone who simply doesn't need blockchain integration, removing these features reduces your attack surface and improves control over your browsing environment.
-
-Brave has positioned itself as a privacy-focused browser, yet it includes several blockchain-related features enabled by default. While these features serve legitimate purposes for users who want integrated crypto wallets or decentralized file storage, they represent components that cannot be simply uninstalled through standard means. Understanding how to properly disable these features becomes essential when operating in environments with strict security policies, when testing alternative browser configurations, or when simply preferring a more streamlined browsing experience without blockchain functionality.
-
-This guide covers practical methods to disable Brave's crypto features across different platforms. The approaches range from simple GUI toggles suitable for individual users to enterprise policy configurations and even custom compiled builds for those requiring absolute control.
+To disable Brave's crypto features, go to `brave://settings`, toggle off Brave Rewards and Brave Wallet, then visit `brave://flags` and set IPFS, Brave Wallet, Native Wallet, and Solana Wallet to "Disabled." For persistent enforcement on managed devices, deploy registry policies (Windows), plist configurations (macOS), or JSON policies (Linux) that set `BraveWalletAllowed` and `BraveRewardsAllowed` to false. This guide covers five methods from simple GUI toggles to custom compiled builds, each with different tradeoffs between ease and permanence.
 
 ## Understanding Brave's Crypto Features
 

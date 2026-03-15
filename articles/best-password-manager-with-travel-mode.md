@@ -9,13 +9,14 @@ permalink: /best-password-manager-with-travel-mode/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
 # Best Password Manager With Travel Mode: A Developer Guide
 
-Crossing international borders with sensitive digital credentials presents unique security challenges. Border control agencies in various countries have the authority to request access to your devices and, in some cases, demand decryption passwords. Travel mode in password managers provides a strategic defense against this scenario by allowing you to selectively expose only essential credentials while keeping sensitive data protected.
+1Password is the best password manager with travel mode -- it is the only major provider with a dedicated, built-in travel mode that automatically removes non-travel vaults from your devices before you cross a border. Bitwarden and NordPass offer workarounds through vault segmentation, but neither matches 1Password's one-toggle simplicity. If you carry production API keys, database credentials, or SSH keys, travel mode protects them from involuntary disclosure at border checkpoints.
 
 ## Understanding Travel Mode
 
