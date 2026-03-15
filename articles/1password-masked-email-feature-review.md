@@ -6,7 +6,7 @@ description: "A practical review of 1Password's masked email capabilities. Learn
 date: 2026-03-15
 author: theluckystrike
 permalink: /1password-masked-email-feature-review/
-categories: [reviews, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 ---

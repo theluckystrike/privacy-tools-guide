@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /1password-secrets-automation-devops-guide/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 

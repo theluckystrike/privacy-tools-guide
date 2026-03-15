@@ -6,7 +6,7 @@ description: "A technical review of RoboForm password manager evaluating its CLI
 date: 2026-03-15
 author: theluckystrike
 permalink: /roboform-review-still-relevant-2026/
-categories: [reviews, security]
+categories: [guides, security]
 reviewed: true
 score: 7
 intent-checked: true
