@@ -1,4 +1,11 @@
 {
-  "total": 0,
-  "clusters": {}
+  "total": 6,
+  "clusters": {
+    "vpn": {
+      "count": 5
+    },
+    "passwords": {
+      "count": 1
+    }
+  }
 }
