@@ -9,13 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Instagram collects a significant amount of personal data, from your photos and videos to your direct messages, search history, and advertising interactions. Whether you're looking to export your data for backup purposes or considering deleting your account entirely, understanding Instagram's data handling tools is essential for maintaining your digital privacy in 2026.
-
-This guide walks you through the complete process of downloading your Instagram data and, if needed, permanently deleting your account.
+To download your Instagram data, go to Settings, then Your Activity, then "Download your information," select JSON format and "All time," and request the download -- Instagram will email you a link within hours to days. To permanently delete your account, visit instagram.com/accounts/remove/request/permanent/, enter your password, and confirm; you then have a 30-day grace period to cancel. This guide walks through both processes step by step, covers the API for developers, and explains what data Meta retains after deletion.
 
 ## What Data Does Instagram Store?
 

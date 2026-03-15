@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Browser extensions add powerful functionality to your browser, but each permission you grant creates a potential security surface. Understanding which permissions to watch closely helps you make informed decisions about the tools you install.
+The most dangerous browser extension permissions to watch are `<all_urls>` host access (grants read/write to every site you visit), `webRequestBlocking` (can intercept and modify all network traffic), and `debugger` (gives full DevTools-level control over your tabs). Before installing any extension, check whether its requested permissions actually match its stated functionality. This guide explains each permission type, shows you how to audit installed extensions, and provides best practices for developers building extensions.
 
 ## How Browser Extension Permissions Work
 
