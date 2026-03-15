@@ -97,6 +97,11 @@ The Privacy Dashboard represents Google's commitment to giving users visibility 
 
 Start by exploring the dashboard today. Identify apps with excessive permissions and reduce their access to only what's necessary. Over time, this practice becomes second nature, and your privacy posture improves significantly.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

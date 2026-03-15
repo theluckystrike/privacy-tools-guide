@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Google My Activity Privacy Delete Guide 2026"
-description: "A comprehensive guide for developers and power users on managing, reviewing, and deleting your Google My Activity data. Includes automated deletion scripts and privacy best practices."
+description: "A comprehensive guide for developers and power users on managing, reviewing, and deleting your Google My Activity data. Includes automated deletion."
 date: 2026-03-15
 author: theluckystrike
 permalink: /google-my-activity-privacy-delete-guide-2026/
@@ -204,6 +204,11 @@ class PrivacyconsciousAnalytics:
 Managing Google My Activity data requires ongoing attention. Set calendar reminders to review and delete activity periodically, or enable auto-delete to automate the process. For developers, building privacy-conscious applications means implementing similar data minimization principles in your own projects.
 
 The balance between convenience and privacy remains personal. Understanding what data Google collects and having the tools to manage it empowers you to make informed choices about your digital footprint.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

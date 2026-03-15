@@ -229,6 +229,11 @@ The Mastodon vs Twitter decision in 2026 reflects your values around centralizat
 
 For developers, Mastodon's open API enables innovation without permission. For power users, the fediverse offers genuine data portability. The privacy landscape continues evolving, but decentralized protocols provide more control than centralized alternatives.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Twitter X Privacy Settings Recommended 2026: A Complete Guide"
-description: "Master Twitter X privacy settings in 2026 with this practical guide covering account protection, data controls, API access, and advanced hardening techniques for developers and power users."
+title: "Twitter X Privacy Settings Recommended 2026: A Complete."
+description: "Master Twitter X privacy settings in 2026 with this practical guide covering account protection, data controls, API access, and advanced hardening."
 date: 2026-03-15
 author: theluckystrike
 permalink: /twitter-x-privacy-settings-recommended-2026/
@@ -190,6 +190,11 @@ For maximum privacy on Twitter X in 2026, implement these settings:
 8. Regularly export and delete old data
 
 These recommendations balance security with platform functionality. Adjust based on your threat model and usage patterns.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Delete Old Social Media Accounts: A Practical Guide for Developers and Power Users"
-description: "Learn how to permanently delete old social media accounts with step-by-step instructions, automation scripts, and privacy-focused tools. Includes code examples for bulk account management."
+title: "How to Delete Old Social Media Accounts: A Practical."
+description: "Learn how to permanently delete old social media accounts with step-by-step instructions, automation scripts, and privacy-focused tools. Includes code."
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-delete-old-social-media-accounts/
@@ -148,6 +148,11 @@ Reduce future cleanup burden by adopting these practices:
 Deleting old social media accounts requires different approaches depending on the platform. Most major networks offer self-service deletion through settings menus, though the option is often intentionally difficult to find. For power users, automation tools and privacy regulations provide additional leverage. Regardless of method, verify deletion completes and monitor for data breaches affecting accounts you choose to abandon.
 
 Taking control of your digital presence means regularly auditing and removing accounts you no longer use. The effort protects your privacy and reduces exposure to future security incidents.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

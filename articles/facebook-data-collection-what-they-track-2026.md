@@ -199,6 +199,11 @@ The export process typically takes 30 days and delivers data in JSON or HTML for
 
 Understanding Facebook's data collection practices helps you make informed choices about platform usage. Review your privacy settings regularly, minimize third-party app connections, and stay aware of how your data contributes to Meta's advertising ecosystem.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
