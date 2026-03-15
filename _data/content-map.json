@@ -1,29 +1,17 @@
 {
-  "total": 17,
+  "total": 29,
   "clusters": {
-    "passwords": {
-      "count": 4
-    },
-    "vpn": {
-      "count": 5
+    "guides": {
+      "count": 17
     },
     "best-of": {
       "count": 1
     },
     "comparisons": {
+      "count": 10
+    },
+    "uncategorized": {
       "count": 1
-    },
-    "privacy": {
-      "count": 2
-    },
-    "encryption": {
-      "count": 1
-    },
-    "xmpp": {
-      "count": 1
-    },
-    "reviews": {
-      "count": 2
     }
   }
 }
