@@ -179,3 +179,4 @@ The optimal configuration depends on your threat model and workflow. Most power 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

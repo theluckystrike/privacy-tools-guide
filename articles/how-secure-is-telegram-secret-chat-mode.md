@@ -5,7 +5,7 @@ description: "A developer and power-user analysis of Telegram Secret Chat encryp
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-secure-is-telegram-secret-chat-mode/
-categories: [guides, security, messaging]
+categories: [guides, security]
 reviewed: true
 score: 7
 ---

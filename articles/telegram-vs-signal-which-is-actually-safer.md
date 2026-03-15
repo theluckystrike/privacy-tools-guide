@@ -5,7 +5,7 @@ description: "A developer-focused comparison of Telegram and Signal's security a
 date: 2026-03-15
 author: theluckystrike
 permalink: /telegram-vs-signal-which-is-actually-safer/
-categories: [security, privacy, messaging]
+categories: [security, guides]
 reviewed: true
 score: 8
 ---
