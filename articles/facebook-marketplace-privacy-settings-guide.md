@@ -6,7 +6,7 @@ description: "A comprehensive guide to Facebook Marketplace privacy settings for
 date: 2026-03-15
 author: theluckystrike
 permalink: /facebook-marketplace-privacy-settings-guide/
-categories: [guides, privacy, social-media]
+categories: [guides, security]
 ---
 
 {% raw %}
