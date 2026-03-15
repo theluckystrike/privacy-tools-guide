@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -142,7 +143,7 @@ Organizations managing multiple users benefit from centralized breach monitoring
 
 Standalone services provide additional monitoring capabilities. Google Password Manager integrates with Chrome and Android, providing breach alerts for saved passwords. Apple's Keychain includes breach warnings for saved credentials in Safari. These native solutions work well for basic use cases but lack the advanced features and control that dedicated password managers offer.
 
-For developers managing infrastructure credentials, services like GitHub's credential scanning and cloud provider secret detection complement password manager features. The layered approach—password manager alerts plus infrastructure scanning—provides comprehensive coverage.
+For developers managing infrastructure credentials, services like GitHub's credential scanning and cloud provider secret detection complement password manager features. The layered approach—password manager alerts plus infrastructure scanning—covers both user credentials and infrastructure secrets.
 
 
 ## Related Reading

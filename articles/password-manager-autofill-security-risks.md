@@ -10,6 +10,7 @@ categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -218,21 +219,11 @@ document.getElementById('paste-btn').addEventListener('click', async () => {
 
 Beyond developer implementations, users should follow these security practices:
 
-**Disable Autofill on Sensitive Sites**: Most password managers allow disabling autofill for specific websites. Enable this for banking, healthcare, and other high-value targets.
-
-**Use Keyboard Shortcuts Carefully**: The autofill keyboard shortcut (typically Ctrl+Shift+L or Cmd+Shift+L) provides explicit user intent. Prefer this over automatic autofill.
-
-**Review Saved Items Regularly**: Periodically audit your vault for duplicate passwords, old credentials, and sites you no longer use.
-
-**Enable Biometric Unlocking**: Adding biometric authentication to your password manager provides an additional authentication layer without significantly impacting usability.
-
-**Keep Extensions Updated**: Enable automatic extension updates and verify update authenticity periodically.
+Most password managers allow disabling autofill for specific websites — disable it for banking, healthcare, and other high-value targets. The autofill keyboard shortcut (typically Ctrl+Shift+L or Cmd+Shift+L) provides explicit user intent; prefer it over automatic autofill. Periodically audit your vault for duplicate passwords, old credentials, and sites you no longer use. Adding biometric authentication provides an additional authentication layer without significantly impacting usability. Enable automatic extension updates and verify update authenticity periodically.
 
 ## The Path Forward
 
-Password manager autofill remains a significant security trade-off. The convenience of automatic credential filling must be balanced against the attack surface it creates. As attackers develop more sophisticated techniques, both developers and users must remain vigilant.
-
-The most secure approach combines multiple defensive layers: strict CSP headers, explicit user interaction requirements, regular security audits, and informed user behavior. No single mitigation eliminates the risk entirely, but layered defenses significantly reduce the likelihood of credential compromise.
+Autofill requires layered defenses: strict CSP headers, explicit user interaction requirements, regular security audits, and informed user behavior. No single mitigation eliminates the risk entirely, but the combination significantly reduces the likelihood of credential compromise.
 
 
 ## Related Reading

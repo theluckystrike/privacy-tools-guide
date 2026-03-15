@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -282,7 +283,7 @@ jobs:
         run: ./scripts/check-headers.sh
 ```
 
-Privacy by design is not a checkbox—it's an ongoing commitment. Every feature, every data point, every integration deserves scrutiny. Start with these principles and build a culture where privacy is foundational, not optional.
+Privacy by design requires scrutiny of every feature, every data point, and every integration. Start with these principles and treat privacy as foundational to your architecture.
 
 
 ## Related Reading

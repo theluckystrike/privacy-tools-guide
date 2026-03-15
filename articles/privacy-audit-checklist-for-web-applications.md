@@ -9,12 +9,13 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
 # Privacy Audit Checklist for Web Applications: A Developer
 
-Conducting a privacy audit for web applications requires systematically evaluating data collection practices, consent mechanisms, storage security, and regulatory compliance. This checklist provides actionable items with implementation examples to help developers secure their applications.
+This checklist covers data collection practices, consent mechanisms, storage security, and regulatory compliance, with implementation examples for each.
 
 ## 1. Data Collection Audit
 

@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 {% raw %}
 
@@ -220,19 +221,17 @@ Run periodic audits against this registry to identify neglected credentials.
 
 ## Implementation Checklist
 
-1. **Audit existing credentials** - Know what you have before establishing rotation
-2. **Categorize by risk** - Not all credentials need the same schedule
-3. **Implement automation** - Manual rotation introduces human error
-4. **Document exceptions** - Some systems cannot rotate; document why and mitigate
-5. **Test recovery procedures** - Verify you can access systems after rotation
-6. **Monitor compliance** - Alert on credentials approaching rotation deadlines
-7. **Review quarterly** - Adjust schedules based on incident data and team feedback
+1. Audit existing credentials before establishing rotation schedules.
+2. Categorize by risk — not all credentials need the same frequency.
+3. Implement automation; manual rotation introduces human error.
+4. Document exceptions for systems that cannot rotate, and mitigate accordingly.
+5. Test recovery procedures to verify you can access systems after rotation.
+6. Monitor compliance and alert on credentials approaching rotation deadlines.
+7. Review quarterly and adjust schedules based on incident data and team feedback.
 
 ## Conclusion
 
-Password rotation in 2026 focuses on automation, risk-based scheduling, and continuous monitoring rather than calendar-based mandates. Implement dynamic secrets where possible, automate API key rotation, and maintain clear ownership of all credentials. The goal isn't rotation for its own sake—it's limiting the blast radius when credentials inevitably leak.
-
-Start with your highest-privilege credentials, automate what you can, and build from there. Small, consistent improvements beat comprehensive policies that nobody follows.
+Password rotation in 2026 focuses on automation, risk-based scheduling, and continuous monitoring rather than calendar-based mandates. Implement dynamic secrets where possible, automate API key rotation, and maintain clear ownership of all credentials. The goal is limiting the blast radius when credentials inevitably leak — not rotation for its own sake. Start with your highest-privilege credentials and automate what you can.
 
 ---
 

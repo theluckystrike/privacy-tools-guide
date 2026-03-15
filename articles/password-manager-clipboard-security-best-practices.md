@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -191,13 +192,7 @@ async function platformClearClipboard() {
 
 Configure your password manager's clipboard settings for optimal security:
 
-1. **Set Auto-Clear to 30 Seconds or Less**: Shorter durations reduce the window of exposure. Some managers offer 10-second defaults—consider this for high-security use cases.
-
-2. **Enable Clear on Application Close**: Ensure your password manager clears clipboard data when you lock or close the application.
-
-3. **Disable Clipboard History**: Windows 10/11 and macOS maintain clipboard history features. Disable these for sensitive work, as they store copied items longer than expected.
-
-4. **Use Exclude Rules for Non-Sensitive Data**: Configure your manager to not copy certain fields (like notes containing recovery codes) to clipboard by default.
+Set auto-clear to 30 seconds or less — shorter durations reduce the window of exposure, and some managers offer 10-second defaults for high-security use cases. Ensure your password manager clears clipboard data when you lock or close the application. Windows 10/11 and macOS maintain clipboard history features; disable these for sensitive work, as they store copied items longer than expected. Configure your manager to not copy certain fields (like notes containing recovery codes) to the clipboard by default.
 
 ### Operating System Hardening
 
@@ -245,9 +240,7 @@ Power users should consider implementing monitoring for clipboard access:
 
 ## Summary
 
-Clipboard security requires a layered approach combining proper password manager configuration, operating system hardening, and awareness of the attack surface. Configure auto-clear timers to 30 seconds or less, disable clipboard history features in your OS, and consider manual clearing for highly sensitive operations. For developers, implement secure clipboard handling with automatic clearing, random data overwriting, and platform-specific clearing mechanisms.
-
-The clipboard will always be a potential weak point in credential handling—minimizing exposure time and implementing automatic clearing significantly reduces risk without sacrificing the convenience that makes password managers useful.
+Configure auto-clear timers to 30 seconds or less, disable clipboard history features in your OS, and use manual clearing for highly sensitive operations. For developers, implement secure clipboard handling with automatic clearing, random data overwriting, and platform-specific clearing mechanisms.
 
 
 ## Related Reading
