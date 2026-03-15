@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "Password Manager Master Password Strength Guide"
 description: "A comprehensive guide to creating and managing strong master passwords for password managers. Learn entropy calculations, key derivation functions, and security best practices for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /password-manager-master-password-strength-guide/
+reviewed: true
+score: 8
+categories: [passwords]
 ---
+
 
 {% raw %}
 
