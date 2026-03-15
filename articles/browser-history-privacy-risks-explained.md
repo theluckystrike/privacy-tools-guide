@@ -5,7 +5,7 @@ description: "A technical breakdown of browser history privacy risks, covering d
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-history-privacy-risks-explained/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

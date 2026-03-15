@@ -5,7 +5,7 @@ description: "Master Android privacy in 2026 with this comprehensive guide cover
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-privacy-best-practices-2026/
-categories: [privacy, security, android]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
