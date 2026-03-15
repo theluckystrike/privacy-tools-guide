@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [comparisons]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -55,11 +56,11 @@ git merge --no-ff feature/new-payment-integration
 
 The PR description sets the stage for review. A well-crafted description includes:
 
-- **Context**: What problem does this PR solve?
-- **Changes**: What specific modifications were made?
-- **Testing**: How was the code tested?
-- **Screenshots**: Visual evidence for UI changes
-- **Related issues**: Links to tracking items
+- What problem does this PR solve?
+- What specific modifications were made?
+- How was the code tested?
+- Screenshots for UI changes
+- Links to related tracking items
 
 ```markdown
 ## Summary
@@ -84,15 +85,7 @@ Closes #123
 
 Effective code reviewers focus on multiple dimensions beyond just spotting bugs:
 
-**Architecture and Design**: Does the code follow established patterns? Is the solution maintainable?
-
-**Functionality**: Does the code do what it's supposed to do? Are edge cases handled?
-
-**Complexity**: Could the code be simpler? Are there unnecessary abstractions?
-
-**Tests**: Are there adequate tests? Do they cover happy paths and error conditions?
-
-**Naming**: Are variables and functions clearly named?
+Check whether the code follows established patterns and the solution is maintainable. Verify the code does what it is supposed to do and that edge cases are handled. Look for unnecessary complexity or abstractions that could be simplified. Confirm there are adequate tests covering both happy paths and error conditions, and that variables and functions are clearly named.
 
 When commenting, provide constructive feedback that explains why rather than just what to change:
 
@@ -104,15 +97,7 @@ When commenting, provide constructive feedback that explains why rather than jus
 
 ### For Authors
 
-PR authors should proactively facilitate reviews:
-
-- **Keep PRs small**: Aim for under 400 lines changed. Smaller PRs get faster, more thorough reviews.
-
-- **Self-review first**: Run through your changes before requesting others.
-
-- **Respond promptly**: Address comments quickly to keep momentum.
-
-- **Accept feedback gracefully**: Not all suggestions require implementation—discuss disagreements openly.
+Aim for under 400 lines changed—smaller PRs receive faster and more thorough reviews. Run through changes before requesting others' time. Address comments quickly to keep momentum. Not all suggestions require implementation; discuss disagreements openly rather than silently ignoring them.
 
 ## Time Zone Considerations
 
@@ -199,11 +184,7 @@ Track metrics to continuously improve your process:
 
 GitHub Insights provides built-in analytics, or integrate with tools like DevMetrics for custom dashboards.
 
-## Conclusion
-
-An effective pull request workflow is foundational to successful distributed software development. By implementing clear strategies, fostering constructive review culture, using automation, and being mindful of time zone challenges, teams can maintain high code quality while moving quickly. The key is continuous refinement—what works today may need adjustment as team composition and project needs evolve.
-
-Start with these fundamentals, measure your outcomes, and adapt the practices to your team's specific context. The investment in building a strong PR culture pays dividends in code quality, team knowledge sharing, and ultimately, successful product delivery.
+The key is continuous refinement—what works today may need adjustment as team composition and project needs evolve. Measure outcomes and adapt practices to fit the team's specific context.
 {% endraw %}
 
 ## Related Reading

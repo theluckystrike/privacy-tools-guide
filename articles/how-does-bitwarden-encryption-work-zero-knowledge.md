@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -110,11 +111,7 @@ Argon2 won the Password Hashing Competition and provides excellent resistance ag
 
 Understanding what data exists on Bitwarden's servers clarifies the zero-knowledge guarantee:
 
-- **Encrypted vault data**: Your passwords, notes, and attachments are encrypted with AES-256
-- **Salt values**: Random data used in key derivation (not secret)
-- **Hashed authentication key**: Used to verify identity without exposing the master password
-- **Account email**: Necessary for account recovery and notifications
-- **Vault metadata**: Item counts, folder names (encrypted), and sync timestamps
+Bitwarden stores your passwords, notes, and attachments encrypted with AES-256, alongside salt values used in key derivation. The server also holds a hashed authentication key to verify identity without exposing the master password, your account email for recovery and notifications, and vault metadata such as item counts and encrypted folder names.
 
 Notably, your master password never exists on Bitwarden's servers in any form. The hash stored for authentication cannot be used to decrypt your vault.
 
@@ -128,18 +125,13 @@ The encryption key derivation happens client-side regardless of which server hos
 
 While Bitwarden's encryption provides strong protection, your master password remains the critical factor:
 
-- Use a passphrase of at least 16 characters
-- Enable two-factor authentication for your Bitwarden account
-- Never reuse your master password elsewhere
-- Store your master password in a separate, secure location (not in your vault)
+Use a passphrase of at least 16 characters, enable two-factor authentication on your account, and never reuse your master password elsewhere. Store it in a separate, secure location—not inside your vault.
 
 A strong master password ensures the key derivation produces a secure encryption key. Even if someone obtains your encrypted vault, cracking it requires defeating AES-256 encryption plus the key derivation function.
 
 ## Conclusion
 
-Bitwarden's zero-knowledge architecture ensures that your passwords remain private through client-side encryption. The server acts only as a synchronized storage backend, unable to read your data. This design protects users even in the event of a complete server compromise.
-
-For developers and power users, understanding these mechanisms helps in making informed decisions about password management and in building applications that properly handle sensitive credentials. The encryption happens where your data originates and decrypts only where it arrives—at your trusted devices.
+Bitwarden's zero-knowledge architecture ensures that your passwords remain private through client-side encryption. The server acts only as a synchronized storage backend, unable to read your data. This design protects users even in the event of a complete server compromise. The encryption happens where your data originates and decrypts only where it arrives—at your trusted devices.
 
 
 ## Related Reading

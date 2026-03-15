@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -242,13 +243,7 @@ Under GDPR, you cannot retroactively change your lawful basis to circumvent requ
 
 ## Summary: Key Takeaways for Developers
 
-1. **Document your basis choice** — Regulators will ask what basis you used
-2. **Implement consent properly** — Store proof, enable withdrawal, handle withdrawal promptly
-3. **Use contract only for essential features** — Don't stretch this basis
-4. **Be careful with legitimate interest** — It requires the most documentation
-5. **Keep records updated** — Lawful basis decisions evolve with your application
-
-Building privacy-conscious applications starts with understanding why you're allowed to process data in the first place. The lawful basis isn't just a checkbox—it's the foundation that determines how you handle the entire data lifecycle.
+Document your basis choice—regulators will ask what basis you used and you must be able to answer. Implement consent properly by storing proof, enabling withdrawal, and handling withdrawal promptly. Use the contract basis only for genuinely essential features; stretching it beyond scope invites scrutiny. Legitimate interest requires the most documentation, so treat it with care. Revisit your records as the application evolves, because lawful basis decisions are not one-time choices.
 
 ---
 
