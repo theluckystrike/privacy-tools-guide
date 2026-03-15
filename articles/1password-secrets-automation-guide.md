@@ -9,12 +9,13 @@ permalink: /1password-secrets-automation-guide/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Managing secrets in development environments remains one of the most persistent challenges for developers. Whether you're deploying applications, running automated tests, or managing infrastructure, hardcoded credentials represent a significant security liability. 1Password provides a robust command-line interface that enables you to automate secret retrieval and integration into virtually any workflow.
+Use the 1Password CLI (`op`) to pull secrets directly into your shell scripts, CI/CD pipelines, and container orchestration workflows -- eliminating hardcoded credentials entirely. Install it with `brew install --cask 1password-cli`, authenticate with `op signin`, and retrieve any secret using `op item get "Item Name" --field password`. This guide walks through environment variable injection, GitHub Actions integration, Kubernetes secrets, and security best practices for automated secret management.
 
 ## Installing and Configuring the 1Password CLI
 

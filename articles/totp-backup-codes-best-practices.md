@@ -9,13 +9,14 @@ permalink: /totp-backup-codes-best-practices/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
 
 # TOTP Backup Codes Best Practices: A Developer's Guide
 
-Time-based One-Time Passwords (TOTP) provide a robust second authentication factor, but they introduce a critical vulnerability: what happens when you lose access to your authenticator app? Backup codes bridge this gap, offering emergency access when your primary TOTP device is unavailable. This guide covers practical strategies for generating, storing, and managing TOTP backup codes securely.
+Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Password, or KeePassXC) as your primary copy, and keep a second copy written on paper in a physically secure location like a safe or locked drawer. Never store backup codes in plain text files, unencrypted notes apps, or email. Test at least one code during setup to confirm it works before you need it in an emergency. This guide covers secure generation, encrypted and physical storage strategies, developer implementation patterns with hashed code validation, and multi-account management workflows.
 
 ## Understanding Backup Code Mechanics
 

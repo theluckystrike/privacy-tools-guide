@@ -9,11 +9,12 @@ categories: [guides]
 tags: [privacy, tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 # Simplex Chat Review: No Identifiers Architecture Analysis
 
-Simplex Chat represents a fundamental shift in messaging protocol design. Unlike Signal, WhatsApp, or Telegram—all of which require user identifiers (phone numbers, usernames, or email addresses)—Simplex Chat operates without any persistent user identifiers whatsoever. This architectural decision creates a fundamentally different threat model, eliminating entire categories of metadata that traditional messaging platforms inevitably collect.
+Simplex Chat is worth it if metadata protection is your top priority. It is the only production messaging app that operates without any persistent user identifiers -- no phone numbers, no usernames, no cryptographic keys that serve as stable IDs. This eliminates correlation attacks, social graph harvesting, and account hijacking entirely. The trade-offs are real: initial contact requires out-of-band address exchange, and the user base is small. For journalists, activists, or anyone whose threat model includes communication metadata analysis, Simplex Chat provides architectural guarantees no other network-based messenger can match.
 
 ## The Identifier Problem
 

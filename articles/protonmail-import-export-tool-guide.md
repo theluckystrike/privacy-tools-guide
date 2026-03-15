@@ -9,13 +9,14 @@ permalink: /protonmail-import-export-tool-guide/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 # ProtonMail Import Export Tool Guide: Complete Technical Reference
 
-Moving your email data into or out of Proton Mail requires understanding the available tools, protocols, and their limitations. This guide covers practical methods for developers and power users who need to migrate emails, create backups, or integrate Proton Mail with custom workflows.
+Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (`brew install --cask proton-mail-bridge`) for continuous desktop client sync, or the Proton Mail API for automated developer integrations. For imports, upload MBOX files through the web interface or push messages via IMAP. This guide covers step-by-step configuration for each method, including Python automation scripts and cron-based backup scheduling.
 
 ## Understanding ProtonMail's Data Export Options
 
