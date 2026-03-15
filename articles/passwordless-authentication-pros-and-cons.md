@@ -8,13 +8,14 @@ permalink: /passwordless-authentication-pros-and-cons/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
 
 # Passwordless Authentication Pros and Cons: A Developer Guide
 
-Passwordless authentication represents a fundamental shift in how users verify their identity online. Instead of relying on knowledge-based secrets that can be forgotten, phished, or compromised, passwordless methods use something you have (a device), something you are (biometrics), or a combination of both. For developers and power users evaluating this transition, understanding the advantages and limitations of passwordless authentication helps in making informed architectural decisions.
+Passwordless authentication eliminates phishing risks, removes password storage infrastructure, and delivers faster logins -- but it introduces device dependency, complicates account recovery, and requires significant implementation effort with WebAuthn/FIDO2. For most developers building new applications, passwordless is worth adopting when your user base has compatible devices and you can invest in proper recovery flows; keep password fallbacks when you need maximum legacy compatibility or simplified account recovery.
 
 ## What Is Passwordless Authentication?
 
