@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -126,7 +127,7 @@ op create user contractor@client.com --access-duration 48h
 
 ### Proton Pass
 
-[Proton Pass](https://proton.me/pass) has grown considerably since its initial release. For teams already in the Proton ecosystem, the integration is seamless:
+[Proton Pass](https://proton.me/pass) has grown considerably since its initial release. For teams already in the Proton ecosystem, the integration works well:
 
 ```bash
 # Proton Pass CLI (requires Proton Unlimited or Business)
