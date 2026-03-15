@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -169,13 +170,13 @@ Custom fields enable organizing complex credential sets—such as multiple API k
 
 When automating secret retrieval, follow these essential practices:
 
-**Use service accounts instead of master passwords** in automated environments. Service accounts provide limited access appropriate for CI/CD while avoiding credential exposure.
+Use service accounts instead of master passwords in automated environments. Service accounts provide limited access appropriate for CI/CD while avoiding credential exposure.
 
-**Implement vault timeouts** to automatically lock your vault after periods of inactivity. Configure this in your 1Password settings.
+Set vault timeouts to automatically lock your vault after periods of inactivity. Configure this in your 1Password settings.
 
-**Audit access regularly** using 1Password's built-in audit logs. Monitor which secrets were accessed and from which locations.
+Audit access regularly using 1Password's built-in audit logs. Monitor which secrets were accessed and from which locations.
 
-**Rotate credentials periodically** even when using a password manager. Automated rotation scripts can help maintain security hygiene:
+Rotate credentials periodically even when using a password manager. Automated rotation scripts can help maintain security hygiene:
 
 ```bash
 #!/bin/bash
@@ -204,7 +205,7 @@ Permission errors indicate the service account or account lacks access to specif
 
 ## Conclusion
 
-Integrating 1Password into your development workflow dramatically reduces the risk of credential exposure while maintaining developer productivity. The CLI provides sufficient flexibility for environment variable management, CI/CD pipelines, container orchestration, and infrastructure automation. Start with simple scripts and gradually expand as your confidence grows.
+The CLI covers environment variable injection, CI/CD pipelines, container orchestration, and infrastructure automation. Start with the environment variable pattern, get a service account set up in CI, then layer in Kubernetes or rotation scripts as needed.
 
 
 ## Related Reading

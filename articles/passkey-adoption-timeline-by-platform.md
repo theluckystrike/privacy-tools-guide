@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -35,9 +36,9 @@ This architecture eliminates phishing risks because the private key never leaves
 Apple implemented passkey support starting with iOS 16 and macOS Ventura in 2022. The company integrated passkeys deeply into iCloud Keychain, enabling cross-device synchronization while maintaining end-to-end encryption. Safari added full WebAuthn support, allowing web applications to use passkey authentication.
 
 Key milestones:
-- **iOS 16 / macOS Ventura (2022)**: Initial passkey support with iCloud Keychain sync
-- **iOS 17 / macOS Sonoma (2023)**: Enhanced passkey management, sharing via AirDrop
-- **iOS 18 / macOS Sequoia (2024)**: Passkey provisioning for enterprise environments, improved developer APIs
+- iOS 16 / macOS Ventura (2022): initial passkey support with iCloud Keychain sync
+- iOS 17 / macOS Sonoma (2023): enhanced passkey management, sharing via AirDrop
+- iOS 18 / macOS Sequoia (2024): passkey provisioning for enterprise environments, improved developer APIs
 
 Apple's implementation stores private keys in the Secure Enclave, providing hardware-level protection unavailable on other platforms.
 
@@ -46,9 +47,9 @@ Apple's implementation stores private keys in the Secure Enclave, providing hard
 Google's passkey rollout began in early 2023 with Android 14 and Chrome. The company positioned passkeys as the default authentication method across its ecosystem, integrating with Google Password Manager.
 
 Timeline:
-- **Android 14 (2023)**: Native passkey API support, Google Password Manager integration
-- **Chrome 120+ (2023-2024)**: Full WebAuthn Level 2 support, passkey management UI
-- **ChromeOS 118+ (2023)**: Passkey support for local accounts and enterprise
+- Android 14 (2023): native passkey API support, Google Password Manager integration
+- Chrome 120+ (2023-2024): full WebAuthn Level 2 support, passkey management UI
+- ChromeOS 118+ (2023): passkey support for local accounts and enterprise
 
 Google uses the GMS (Google Mobile Services) Passkeys API on Android, though the underlying implementation relies on platform-level APIs that third-party password managers can access.
 
@@ -57,10 +58,10 @@ Google uses the GMS (Google Mobile Services) Passkeys API on Android, though the
 Microsoft adopted passkeys across its product line, with Windows Hello serving as the foundation for credential storage. The company implemented support in Windows 11 first, then backported to Windows 10.
 
 Adoption timeline:
-- **Windows 11 22H2 (2022)**: Initial Windows Hello passkey support
-- **Windows 10 22H2 (2023)**: Passkey support added via Windows Hello
-- **Edge 120+ (2023)**: Full WebAuthn Level 2 support with biometric integration
-- **Microsoft Authenticator (2023)**: Mobile passkey storage and sync capabilities
+- Windows 11 22H2 (2022): initial Windows Hello passkey support
+- Windows 10 22H2 (2023): passkey support added via Windows Hello
+- Edge 120+ (2023): full WebAuthn Level 2 support with biometric integration
+- Microsoft Authenticator (2023): mobile passkey storage and sync capabilities
 
 Enterprise customers gained passthrough authentication from Windows Hello to Azure AD through the Fast IDentity Online (FIDO) bridge.
 
@@ -124,7 +125,7 @@ const roamingAllowed = {
 };
 ```
 
-### Conditional Mediation for Seamless Authentication
+### Conditional Mediation for Passkey Autofill
 
 Modern browsers support conditional mediation, which enables passkey autofill in traditional username/password forms:
 
@@ -150,15 +151,15 @@ This feature landed in Chrome 108, Safari 16, and Firefox 122, dramatically impr
 
 As of 2026, passkey support is mature across all major consumer platforms. For developers implementing passkey authentication:
 
-1. **Detect capability before prompting**: Use `PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()` to check if passkey authentication is available on the user's device.
+1. Detect capability before prompting: use `PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()` to check if passkey authentication is available on the user's device.
 
-2. **Provide fallback gracefully**: Not all users have passkey-capable devices. Maintain password-based authentication as a fallback.
+2. Provide fallback gracefully: not all users have passkey-capable devices. Maintain password-based authentication as a fallback.
 
-3. **Implement account recovery**: Passkey loss can occur through device changes or synchronization failures. Design recovery flows that don't reintroduce password vulnerabilities.
+3. Build account recovery flows: passkey loss can occur through device changes or synchronization failures. Design recovery flows that don't reintroduce password vulnerabilities.
 
-4. **Test cross-device scenarios**: Passkeys sync between devices on the same platform (iOS to macOS via iCloud Keychain, Android to Chrome via Google Password Manager) but may not sync cross-platform. Understand these limitations when advising users.
+4. Test cross-device scenarios: passkeys sync between devices on the same platform (iOS to macOS via iCloud Keychain, Android to Chrome via Google Password Manager) but may not sync cross-platform. Understand these limitations when advising users.
 
-5. **Enterprise considerations**: Many organizations require passkey support for federated identity. Azure AD, Okta, and Ping Identity all support FIDO2 authentication, though enterprise deployment often requires additional planning for credential management.
+5. Enterprise considerations: many organizations require passkey support for federated identity. Azure AD, Okta, and Ping Identity all support FIDO2 authentication, though enterprise deployment often requires additional planning for credential management.
 
 ## Looking Forward
 

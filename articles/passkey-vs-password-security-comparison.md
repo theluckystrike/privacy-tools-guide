@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -23,11 +24,11 @@ Choose passkeys over passwords when your users have modern devices (iOS 16+, And
 
 Traditional passwords suffer from fundamental flaws:
 
-**Credential stuffing** occurs when attackers use leaked username/password pairs from one service to access other accounts. Users who reuse passwords across services become vulnerable immediately.
+Credential stuffing occurs when attackers use leaked username/password pairs from one service to access other accounts. Users who reuse passwords across services become vulnerable immediately.
 
-**Phishing** tricks users into entering credentials on fake login pages. Even vigilant users can be deceived by sophisticated attacks.
+Phishing tricks users into entering credentials on fake login pages. Even vigilant users can be deceived by sophisticated attacks.
 
-**Data breaches** expose password databases. While bcrypt and Argon2 slow attackers, they cannot prevent breaches if the database is stolen.
+Data breaches expose password databases. While bcrypt and Argon2 slow attackers, they cannot prevent breaches if the database is stolen.
 
 Consider the attack surface: every password stored in your database represents a liability. Even with proper hashing, the mere presence of password-equivalent secrets creates risk.
 
@@ -99,29 +100,29 @@ The server verifies the signature using the stored public key and validates the 
 
 ### Passkey Advantages
 
-**Phishing resistance**: Passkeys are bound to a specific origin. A credential created for `yourdomain.com` cannot be used on `attacker.com`, even if the user is tricked into visiting a fake site.
+Passkeys are bound to a specific origin. A credential created for `yourdomain.com` cannot be used on `attacker.com`, even if the user is tricked into visiting a fake site.
 
-**No credential reuse**: Each passkey is unique to a service. Users cannot accidentally reuse credentials across sites.
+Each passkey is unique to a service, so users cannot accidentally reuse credentials across sites.
 
-**No server-side secrets**: Stolen public keys are useless to attackers. Unlike password hashes, public keys cannot be used to authenticate.
+Stolen public keys are useless to attackers. Unlike password hashes, public keys cannot be used to authenticate.
 
-**Biometric integration**: Most passkey implementations require biometric verification (fingerprint, face) or device PIN to unlock the private key, adding security without requiring passwords.
+Most passkey implementations require biometric verification (fingerprint, face) or device PIN to unlock the private key, adding security without requiring passwords.
 
 ### Password Weaknesses
 
-**Single factor dependence**: Passwords rely solely on something you know, which can be forgotten, shared, or intercepted.
+Passwords rely solely on something you know, which can be forgotten, shared, or intercepted.
 
-**Hash cracking**: Despite best practices, weak passwords or insufficient hashing can be cracked offline.
+Despite best practices, weak passwords or insufficient hashing can be cracked offline.
 
-**Man-in-the-middle**: Even with HTTPS, passwords can be intercepted through proxies or malware.
+Even with HTTPS, passwords can be intercepted through proxies or malware.
 
 ### Passkey Limitations
 
-**Device dependency**: Users must authenticate from a registered device. This complicates shared accounts or cross-device scenarios.
+Users must authenticate from a registered device, which complicates shared accounts or cross-device scenarios.
 
-**Recovery challenges**: Lost devices mean lost credentials without backup strategies.
+Lost devices mean lost credentials without backup strategies.
 
-**Browser support**: While improving, older browsers lack passkey support.
+While improving, older browsers lack passkey support.
 
 ## Implementation Considerations
 
@@ -166,8 +167,8 @@ This allows gradual migration while maintaining backward compatibility.
 
 Passkey public keys require different storage than passwords:
 
-- **Passwords**: Store hash, salt, iteration count
-- **Passkeys**: Store credential ID, public key, counter (for detection of key cloning), user handle
+- Passwords: store hash, salt, iteration count
+- Passkeys: store credential ID, public key, counter (for detection of key cloning), user handle
 
 Passkey records are typically larger but do not require the same security as password hashes.
 

@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -165,10 +166,10 @@ Implementing Signal Protocol from scratch involves significant complexity. Most 
 
 Your implementation needs secure storage for:
 
-- **Identity keypair** — Long-term, never transmitted
-- **Signed prekey** — Rotated periodically (weekly typical)
-- **One-time prekeys** — Consumed per message, replenished from server
-- **Session state** — Updated after each message exchange
+- Identity keypair: long-term, never transmitted
+- Signed prekey: rotated periodically (weekly is typical)
+- One-time prekeys: consumed per message and replenished from the server
+- Session state: updated after each message exchange
 
 ```javascript
 // Session store interface example
@@ -219,28 +220,28 @@ Recipients verify the MAC before decryption, rejecting any tampered messages.
 
 The Signal Protocol achieves several important security properties:
 
-**Forward Secrecy**: Compromise of current message keys does not reveal past messages because symmetric ratchet keys are deleted after use.
+Forward secrecy: compromise of current message keys does not reveal past messages because symmetric ratchet keys are deleted after use.
 
-**Future Secrecy**: Compromise of current keys does not reveal future messages because each new message triggers a DH ratchet operation producing a new shared secret.
+Future secrecy: compromise of current keys does not reveal future messages because each new message triggers a DH ratchet operation producing a new shared secret.
 
-**Deniable Authentication**: Unlike PGP, Signal provides deniable authentication—recipients can verify messages came from a specific sender, but cannot prove this to third parties.
+Deniable authentication: unlike PGP, Signal provides deniable authentication — recipients can verify messages came from a specific sender, but cannot prove this to third parties.
 
-**Asynchronous Operation**: Prekeys allow messages to be sent even when the recipient is offline, critical for practical messaging applications.
+Asynchronous operation: prekeys allow messages to be sent even when the recipient is offline, critical for practical messaging applications.
 
-**Post-Compromise Security**: After a device is compromised, the protocol automatically recovers security within a few message exchanges.
+Post-compromise security: after a device is compromised, the protocol automatically recovers security within a few message exchanges.
 
 ## Common Implementation Mistakes
 
 Developers new to Signal-style protocols often make these errors:
 
-1. **Storing message keys indefinitely** — Implement a "max-skipped" limit and delete old chain keys
-2. **Reusing one-time prekeys** — Track consumed prekeys server-side
-3. **Ignoring signature verification** — Always verify signed prekeys belong to the claimed identity
-4. **Weak random number generation** — Use cryptographically secure RNG for all key generation
+1. Storing message keys indefinitely: implement a "max-skipped" limit and delete old chain keys
+2. Reusing one-time prekeys: track consumed prekeys server-side
+3. Ignoring signature verification: always verify signed prekeys belong to the claimed identity
+4. Weak random number generation: use cryptographically secure RNG for all key generation
 
 ## Conclusion
 
-The Signal Protocol represents years of cryptographic research focused on practical secure messaging. Its combination of X3DH for initial key exchange and Double Ratchet for ongoing encryption provides robust protection against both current and future attacks. While implementing the full protocol requires careful attention to detail, understanding its mechanisms helps developers make informed decisions about secure communication systems.
+The Signal Protocol represents years of cryptographic research focused on practical secure messaging. Its combination of X3DH for initial key exchange and Double Ratchet for ongoing encryption provides strong protection against both current and future attacks. While implementing the full protocol requires careful attention to detail, understanding its mechanisms helps developers make informed decisions about secure communication systems.
 
 For production systems, prefer established library implementations over custom code. The protocol's security depends on correct implementation of subtle cryptographic operations—errors that may not be immediately apparent but could compromise user security.
 
