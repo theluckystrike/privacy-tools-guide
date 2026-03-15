@@ -9,10 +9,11 @@ permalink: /signal-username-feature-privacy-review/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
-Signal introduced usernames as an alternative to phone number-based identity, offering users more control over their digital footprint. This review examines the privacy implications of this feature, practical configuration methods, and considerations for developers building applications that interact with Signal's ecosystem.
+Signal's username feature is a meaningful privacy upgrade: it lets you communicate without exposing your phone number, with usernames that require exact-match lookup (preventing enumeration attacks) and can be changed or deleted at any time. The main risks are cross-platform linkage if you reuse handles, and online status exposure to username-based contacts. For developers, store the full `username#1234` identifier (discriminators can change) and implement rate limiting on lookups. This review covers the privacy implications, attack vectors, configuration options, and developer integration patterns.
 
 ## How Signal Usernames Work
 
