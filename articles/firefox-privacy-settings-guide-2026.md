@@ -6,7 +6,7 @@ description: "Master Firefox privacy settings in 2026. This guide covers about:c
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-privacy-settings-guide-2026/
-categories: [guides, privacy, firefox]
+categories: [guides]
 reviewed: true
 score: 8
 ---

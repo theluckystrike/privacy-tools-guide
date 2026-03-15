@@ -6,7 +6,7 @@ description: "A technical privacy comparison between Brave and Safari browsers f
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-vs-safari-privacy-comparison-2026/
-categories: [privacy, browsers, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

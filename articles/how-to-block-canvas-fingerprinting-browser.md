@@ -5,7 +5,7 @@ description: "A technical guide showing developers and power users how to detect
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-block-canvas-fingerprinting-browser/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /brave-browser-crypto-features-disable-guide/
 reviewed: true
 score: 8
-categories: [browser-privacy]
+categories: [guides]
 ---
 
 
