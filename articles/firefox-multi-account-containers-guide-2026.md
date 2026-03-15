@@ -5,7 +5,7 @@ description: "A comprehensive guide for developers and power users on managing m
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-multi-account-containers-guide-2026/
-categories: [guides, security, browser]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
