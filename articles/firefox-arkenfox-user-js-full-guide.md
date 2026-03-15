@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -177,7 +178,7 @@ If a site fails to load, check the Browser Console (Ctrl+Shift+J) for errors. Co
 
 - CSP (Content Security Policy) conflicts with `privacy.resistFingerprinting`
 - WebGL dependencies
--特定字体被阻止
+- Specific fonts blocked by font restriction settings
 
 Add exceptions to your `user-overrides.js` sparingly.
 
@@ -192,11 +193,6 @@ user_pref("privacy.resistFingerprinting", false);
 ### Sync Not Working
 
 Firefox Sync requires specific settings. Ensure `services.sync.enabled` is true and sign in through the Firefox UI after each profile reset.
-
-## Conclusion
-
-Arkenfox user.js provides a robust foundation for hardening Firefox against tracking and data collection. By understanding each setting and maintaining your configuration, you gain significant privacy improvements without sacrificing browser functionality. Start with the defaults, customize gradually, and maintain your setup through regular updates.
-
 
 ## Related Reading
 

@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -20,12 +21,7 @@ To build a GDPR-compliant contact form, add a mandatory consent checkbox with sp
 
 The GDPR establishes specific requirements for processing personal data through contact forms:
 
-- **Lawful basis** — You need a valid legal basis for processing (typically consent or legitimate interest)
-- **Purpose limitation** — Data must be used only for stated purposes
-- **Data minimization** — Collect only what you need
-- **Storage limitation** — Delete data when no longer needed
-- **Right to access** — Users can request their data
-- **Right to erasure** — Users can request deletion
+You need a valid lawful basis for processing (typically consent or legitimate interest). Data must be used only for stated purposes (purpose limitation) and you should collect only what you need (data minimization). Delete data when no longer needed (storage limitation). Users can request their data (right to access) and request deletion (right to erasure).
 
 For a basic contact form, consent is the most straightforward lawful basis, but you must implement it correctly.
 
@@ -362,7 +358,7 @@ Before deploying your contact form, verify:
 - [ ] HTTPS enforced
 - [ ] Privacy policy updated with contact form details
 
-Building a truly GDPR-compliant contact form requires attention to these technical details. The implementation above provides a solid foundation, but consult with legal counsel for your specific use case and jurisdiction.
+The implementation above covers the core technical requirements; consult legal counsel for jurisdiction-specific details such as those under the UK GDPR or CCPA.
 
 ---
 

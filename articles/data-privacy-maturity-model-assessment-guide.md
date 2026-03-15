@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -434,18 +435,7 @@ const RETENTION_POLICY = {
 
 Track these key metrics to measure your maturity journey:
 
-- **Consent Rate**: Percentage of users with valid, current consent
-- **Data Subject Request Time**: Average time to fulfill DSARs
-- **Classification Coverage**: Percentage of data fields classified
-- **Retention Compliance**: Percentage of data within retention policies
-- **Incident Response Time**: Mean time to detect and respond to breaches
-- **Training Completion**: Percentage of staff completing privacy training
-
-## Summary
-
-A data privacy maturity model assessment provides a roadmap for improving your organization's privacy capabilities. By systematically evaluating your current state across ten key dimensions and progressing through the five maturity levels, you can reduce regulatory risk, improve customer trust, and build more resilient privacy programs.
-
-Start with a simple self-assessment, prioritize quick wins that push you from Level 1 to Level 2, and gradually build toward the automated, optimized practices of Level 5. Each level of improvement directly reduces your risk profile and demonstrates regulatory compliance maturity.
+Track consent rate (percentage of users with valid, current consent), data subject request time (average time to fulfill DSARs), classification coverage (percentage of data fields classified), retention compliance (percentage of data within retention policies), incident response time (mean time to detect and respond to breaches), and training completion (percentage of staff completing privacy training).
 
 ---
 

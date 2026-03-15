@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -32,12 +33,7 @@ Your policy needs four essential elements: data categorization, retention period
 
 Organize your data into categories with corresponding retention periods:
 
-- **Transaction and service data**: Retain for the duration of the user relationship plus a defined period for tax and accounting purposes (typically 7 years)
-- **Authentication and account data**: Retain while the account is active plus 30 days after deletion for account recovery
-- **Application logs**: Retain for 90 days for debugging and security incident investigation
-- **Marketing and analytics data**: Retain based on consent duration, typically 2 years of inactivity
-- **Communication records**: Retain for 2 years for customer support and dispute resolution
-- **Backup data**: Delete or anonymize within 30 days of backup creation
+Transaction and service data should be retained for the duration of the user relationship plus a defined period for tax and accounting purposes (typically 7 years). Authentication and account data stays active plus 30 days after deletion for account recovery. Application logs are retained for 90 days for debugging and security incident investigation. Marketing and analytics data follows consent duration, typically purged after 2 years of inactivity. Communication records are retained for 2 years for customer support and dispute resolution. Backup data should be deleted or anonymized within 30 days of creation.
 
 Map these categories to your actual database tables and implement automated enforcement.
 

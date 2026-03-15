@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -203,13 +204,6 @@ After configuring settings, verify they work:
 2. Check that values match your intended configuration
 3. Test in a fresh profile to confirm changes propagate correctly
 4. Use browser fingerprinting test sites to evaluate your privacy posture
-
-## Summary
-
-Firefox's about:config provides powerful controls for privacy-conscious users. Key settings include enabling `privacy.resistFingerprinting`, configuring `network.cookie.cookieBehavior` to reject third-party cookies, and activating DNS-over-HTTPS. Combine these with privacy extensions and profile isolation for comprehensive protection.
-
-For developers, understanding these settings enables building privacy-aware applications and testing against various browser configurations. Power users gain control over their digital footprint without sacrificing browser functionality.
-
 
 ## Related Reading
 
