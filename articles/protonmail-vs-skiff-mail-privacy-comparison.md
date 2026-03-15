@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "ProtonMail vs Skiff Mail: Privacy Comparison for Developers"
 description: "A technical comparison of ProtonMail and Skiff Mail focusing on encryption, zero-knowledge architecture, API access, and developer integration."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /protonmail-vs-skiff-mail-privacy-comparison/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 {% raw %}
 # ProtonMail vs Skiff Mail: Privacy Comparison for Developers
