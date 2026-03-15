@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "Password Manager Browser Extension Attack Surface: A Security Analysis"
 description: "Explore the security risks and attack vectors of password manager browser extensions. Learn how developers and power users can assess and mitigate extension-based vulnerabilities."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /password-manager-browser-extension-attack-surface/
+reviewed: true
+score: 8
+categories: [passwords]
 ---
+
 
 {% raw %}
 
