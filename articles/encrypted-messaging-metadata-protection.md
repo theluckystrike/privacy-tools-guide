@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "Encrypted Messaging Metadata Protection: A Developer's Guide"
 description: "Learn how encrypted messaging metadata protection works, why it matters for privacy, and how to implement metadata-resistant communication systems."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /encrypted-messaging-metadata-protection/
 categories: [guides]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
