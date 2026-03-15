@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Privacy Compliance API Design Best Practices
 
-Building APIs that handle personal data responsibly requires more than basic authentication. You need intentional design decisions at every layer of your API architecture. This guide covers practical patterns for creating privacy-compliant APIs that satisfy regulations like GDPR, CCPA, and HIPAA while maintaining excellent developer experience.
+Privacy-compliant API design requires five core practices: minimize data in responses by returning only required fields, enforce purpose-based consent checks at the gateway, implement reliable deletion endpoints with cascading deletes, sanitize logs to prevent PII leakage, and encrypt sensitive fields at rest. This guide provides code examples in Python and JavaScript for each pattern, covering GDPR, CCPA, and HIPAA compliance.
 
 ## Why API Design Matters for Privacy Compliance
 

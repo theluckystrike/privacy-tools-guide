@@ -9,14 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # iOS Journal App Privacy Settings Explained: A Complete Guide
 
-Apple's Journal app, introduced with iOS 17.2, represents a significant addition to the ecosystem of on-device applications. For developers building privacy-conscious applications and power users seeking granular control over their personal data, understanding the Journal app's privacy architecture provides valuable insights into Apple's approach to local-first data handling.
-
-This guide examines the privacy mechanisms embedded in the iOS Journal app, exploring what data it collects, how it processes information on-device, and the configuration options available to users who prioritize data sovereignty.
+The iOS Journal app processes all data on-device using Apple's Neural Engine, meaning your entries never leave your iPhone unless you explicitly share them. You control privacy through Settings by toggling suggestions for photos, locations, and workouts, enabling Face ID lock, and managing per-category permissions. This guide breaks down every privacy setting, permission category, and developer-relevant architecture decision in the Journal app.
 
 ## On-Device Processing: The Core Privacy Principle
 

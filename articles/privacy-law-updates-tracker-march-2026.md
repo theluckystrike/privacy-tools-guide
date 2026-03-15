@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Privacy Law Updates Tracker March 2026: What Developers Need to Know
 
-March 2026 brings significant updates to privacy regulations across multiple jurisdictions. This tracker compiles the most relevant changes for developers building applications that handle user data. Understanding these updates helps you maintain compliance and protect your users.
+In March 2026, key privacy law changes include Colorado CPA enforcement of GPC opt-out signals (March 15), Texas TDPSA coverage expanding to 75,000+ consumers (March 1), EU AI Act privacy provisions taking effect, and Canada's Digital Privacy Framework launching March 30. Below is a jurisdiction-by-jurisdiction breakdown with code examples and a compliance checklist for each update.
 
 ## US State Privacy Laws
 
