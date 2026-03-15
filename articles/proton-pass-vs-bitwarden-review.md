@@ -5,9 +5,10 @@ description: "A technical comparison of Proton Pass and Bitwarden for developers
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /proton-pass-vs-bitwarden-review/
+categories: [guides]
+tags: [privacy, tools]
 reviewed: true
 score: 8
-categories: [comparisons]
 ---
 
 {% raw %}
