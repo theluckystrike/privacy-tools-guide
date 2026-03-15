@@ -6,7 +6,7 @@ description: "An in-depth analysis of Sticky Password for developers and power u
 date: 2026-03-15
 author: theluckystrike
 permalink: /sticky-password-review-2026/
-categories: [reviews, password-managers, security]
+categories: [comparisons, guides, security]
 reviewed: true
 score: 7
 ---
