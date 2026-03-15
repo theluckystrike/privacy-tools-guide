@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "GDPR Lawful Basis for Processing Explained: A Developer Guide"
-description: "A technical guide explaining GDPR lawful bases for processing personal data. Covers all 6 bases with code examples, practical implementation patterns for developers."
+title: "GDPR Lawful Basis for Processing Explained: A Developer."
+description: "A technical guide explaining GDPR lawful bases for processing personal data. Covers all 6 bases with code examples, practical implementation patterns."
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-lawful-basis-for-processing-explained/
@@ -251,6 +251,11 @@ Under GDPR, you cannot retroactively change your lawful basis to circumvent requ
 Building privacy-conscious applications starts with understanding why you're allowed to process data in the first place. The lawful basis isn't just a checkbox—it's the foundation that determines how you handle the entire data lifecycle.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

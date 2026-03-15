@@ -2,7 +2,7 @@
 
 layout: default
 title: "Data Retention Policy Template for Startups"
-description: "A practical data retention policy template designed for startups. Includes code examples, retention schedules by data type, and implementation guidance for developers."
+description: "A practical data retention policy template designed for startups. Includes code examples, retention schedules by data type, and implementation guidance."
 date: 2026-03-15
 author: theluckystrike
 permalink: /data-retention-policy-template-for-startups/
@@ -209,6 +209,11 @@ March 2026
 ## Key Implementation Steps
 
 Start by auditing your data stores to identify every table containing personal data. Map each table to a retention category and determine the appropriate retention period. Implement automated cleanup using the database-native approach or application-level code shown above. Schedule regular audits to verify that cleanup jobs execute successfully and retention periods remain accurate as your product evolves.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

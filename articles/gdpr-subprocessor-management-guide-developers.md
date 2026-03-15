@@ -2,7 +2,7 @@
 
 layout: default
 title: "GDPR Subprocessor Management Guide for Developers"
-description: "A practical developer guide to implementing GDPR-compliant subprocessor management. Learn how to track, document, and manage third-party data processors in your applications."
+description: "A practical developer guide to implementing GDPR-compliant subprocessor management. Learn how to track, document, and manage third-party data."
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-subprocessor-management-guide-developers/
@@ -244,6 +244,11 @@ Subprocessor management is not a one-time setup. Implement these ongoing practic
 Building subprocessor management into your development workflow from the start avoids scramble-mode compliance work later. Start with the registry, automate discovery, and layer on consent and disclosure features as your system matures.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
