@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Social Media Data Request Download Guide 2026: Complete Developer Reference"
+title: "Social Media Data Request Download Guide 2026: Complete."
 description: "Learn how to request and download your social media data from major platforms. Includes API methods, automation scripts, and best practices for developers."
 date: 2026-03-15
 author: theluckystrike
@@ -275,5 +275,10 @@ Review platform-specific terms of service. Automated data collection should comp
 ## Conclusion
 
 Social media data downloads have become accessible through both self-service tools and formal privacy requests. For developers, API-based automation provides the most flexibility, enabling scheduled backups, cross-platform analysis, and data portability. The scripts and methods in this guide give you a foundation for building robust data collection workflows while respecting platform limitations and privacy regulations.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows Group Policy Privacy Settings Guide"
-description: "A comprehensive guide to configuring Windows Group Policy privacy settings for developers and power users. Learn to disable telemetry, manage data collection, and harden your system."
+description: "A comprehensive guide to configuring Windows Group Policy privacy settings for developers and power users. Learn to disable telemetry, manage data."
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-group-policy-privacy-settings-guide/
@@ -168,6 +168,11 @@ For enterprise deployments, consider using Group Policy Results (gpresult /r) to
 Windows Group Policy offers extensive privacy controls beyond what Settings provides. By strategically configuring telemetry, advertising, feedback, and network settings, developers and power users can significantly reduce data collection while maintaining system functionality. Regular review of these settings ensures your systems align with your privacy requirements.
 
 For organizations, deploying these settings through Active Directory GPOs ensures consistent privacy posture across all managed machines. Individual users can apply settings locally using the methods described above.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

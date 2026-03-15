@@ -212,6 +212,11 @@ If you experience connectivity problems after adjusting settings:
 
 macOS provides robust network privacy controls, but they require configuration to be effective. By implementing the settings in this guide, you significantly reduce your network footprint and protect your browsing activity from unwanted observation. Start with the basics—firewall and DNS—then gradually implement advanced features as you become comfortable with each layer.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at zovo.one
 
 {% endraw %}

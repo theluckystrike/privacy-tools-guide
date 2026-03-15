@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "iOS Shortcuts Automation Privacy Considerations: A Developer Guide"
-description: "Learn about privacy implications when using iOS Shortcuts automation. Discover security best practices, data access permissions, and how to build privacy-conscious shortcuts."
+title: "iOS Shortcuts Automation Privacy Considerations: A."
+description: "Learn about privacy implications when using iOS Shortcuts automation. Discover security best practices, data access permissions, and how to build."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ios-shortcuts-automation-privacy-considerations/
@@ -173,6 +173,11 @@ iOS Shortcuts provides powerful automation capabilities, but with that power com
 By following these practices, you can build useful automations while maintaining control over your personal data.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
