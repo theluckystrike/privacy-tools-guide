@@ -9,12 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-iOS Shortcuts has evolved from a simple automation tool into a powerful platform for developers and power users. With the ability to access sensitive data through apps, files, and system services, understanding privacy implications becomes essential when building automation workflows.
-
-This guide examines the privacy considerations you should evaluate when creating iOS Shortcuts automations, whether you're building personal workflows or sharing them with others.
+The main privacy risks with iOS Shortcuts are over-permissioned automations accessing contacts, location, health data, or photos beyond what they need, and shared shortcuts that leak embedded API keys or credentials. To stay safe, grant only the minimum permissions each shortcut requires, prefer on-device processing over cloud actions, never hardcode credentials, and audit your automation library regularly in Settings > Shortcuts.
 
 ## Understanding Shortcuts Data Access Permissions
 

@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Snapchat remains one of the most privacy-conscious platforms among major social networks, yet its extensive feature set means privacy settings are scattered across multiple menus. This guide provides developers and power users with a comprehensive breakdown of every relevant privacy control available in 2026, with practical examples for each configuration.
+To lock down Snapchat privacy in 2026, go to Settings > Privacy and set "Contact Me" to My Friends, restrict Story visibility to friends or custom lists, enable Ghost Mode on Snap Map, and turn on two-factor authentication with an authenticator app. These four changes cover the most critical exposure points. The full settings breakdown below covers every privacy control available.
 
 ## Accessing Snapchat's Privacy Settings
 
