@@ -5,7 +5,7 @@ description: "A technical comparison of I2P and Tor anonymous networks for devel
 date: 2026-03-15
 author: theluckystrike
 permalink: /i2p-vs-tor-anonymous-network-comparison-2026/
-categories: [guides, privacy, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
