@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -19,12 +20,12 @@ The main privacy risks with iOS Shortcuts are over-permissioned automations acce
 
 When you run a shortcut, it operates with your explicit permissions. Each action within a shortcut may request access to specific data types. The key categories include:
 
-- **Contacts and Calendars**: Reading or writing event data
-- **Photos Library**: Accessing images and metadata
-- **Location Services**: Triggering based on geographic position
-- **Health Data**: Reading workout, sleep, and health metrics
-- **Files and Folders**: Accessing documents through Files app
-- **Credential Storage**: Retrieving passwords from Keychain
+- Contacts and Calendars
+- Photos Library
+- Location Services
+- Health Data
+- Files and Folders
+- Credential Storage
 
 iOS prompts you to grant permissions the first time an action requires access. However, these permissions persist until you manually revoke them in Settings > Shortcuts.
 
@@ -38,9 +39,7 @@ Running shortcuts at specific times is generally low-risk since no external data
 ### Location-Based Triggers
 This is where privacy concerns become more significant. When you create a location-based automation:
 
-- iOS needs continuous or frequent location access
-- The shortcut knows your physical movements
-- Consider whether the automation truly needs location, or if a simpler trigger would work
+Location-based automations require continuous or frequent location access, which means the shortcut tracks your physical movements. Before using them, consider whether a simpler trigger would accomplish the same goal.
 
 A privacy-conscious approach limits location triggers to specific, necessary scenarios rather than continuous tracking.
 
@@ -57,11 +56,7 @@ Only request the permissions your shortcut genuinely needs. A simple note-taking
 
 ### Principle 2: Local Processing Over Cloud
 
-iOS Shortcuts includes numerous actions that process data on-device:
-
-- Text analysis using built-in dictionaries
-- Image manipulation without sending data externally
-- File operations using local storage
+iOS Shortcuts includes actions that process data on-device: text analysis using built-in dictionaries, image manipulation without sending data externally, and file operations using local storage.
 
 Where possible, choose local actions over those requiring network requests.
 
@@ -152,24 +147,13 @@ iOS provides no built-in logging of shortcut execution, so maintain your own doc
 
 Integrating Shortcuts with HomeKit introduces additional privacy layers:
 
-- HomeKit data includes information about your home environment
-- Siri requests may be processed on-device or sent to Apple servers depending on complexity
-- Consider creating separate "guest" shortcuts that limit data exposure for shared devices
+HomeKit data includes information about your home environment, and Siri requests may be processed on-device or sent to Apple servers depending on complexity. For shared devices, consider creating separate "guest" shortcuts that limit data exposure.
 
 When building HomeKit-connected shortcuts, ask whether the automation truly needs to know specific device states or if a simpler trigger would serve the same purpose.
 
 ## Summary: Building Privacy-First Automations
 
-iOS Shortcuts provides powerful automation capabilities, but with that power comes responsibility. Key takeaways for privacy-conscious shortcut development:
-
-- Grant minimum required permissions
-- Prefer local processing over cloud services
-- Never embed credentials in shared shortcuts
-- Regularly audit your automation library
-- Validate and sanitize all input data
-- Consider the privacy implications before using location triggers
-
-By following these practices, you can build useful automations while maintaining control over your personal data.
+Granting minimum permissions, preferring local processing, keeping credentials out of shared shortcuts, and auditing your automation library regularly are the habits that keep iOS Shortcuts useful without exposing personal data.
 
 ---
 
