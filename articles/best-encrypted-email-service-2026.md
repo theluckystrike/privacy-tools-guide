@@ -27,6 +27,19 @@ Before diving into specific services, let's establish the criteria that matter f
 4. **Key management** — Control over your own keys or at minimum, transparent key handling
 5. **No vendor lock-in** — Export your data and keys if you need to switch providers
 
+## Understanding Zero-Knowledge Architecture
+
+Zero-knowledge encryption fundamentally changes how email services handle your data. In traditional email systems, the service provider holds decryption keys for your messages. With zero-knowledge architecture, your password generates encryption keys locally, and those keys never leave your device unencrypted.
+
+The critical components of zero-knowledge email include:
+
+- **Client-side encryption**: Messages are encrypted in your browser or app before transmission
+- **Password-derived keys**: Your passphrase generates encryption keys through key derivation functions
+- **Server-side blindness**: The server stores only encrypted blobs it cannot decrypt
+- **Proof of zero-knowledge**: Some services offer cryptographic proofs they cannot access your data
+
+For developers, understanding these mechanisms is essential for evaluating whether a service genuinely provides zero-knowledge protection or merely marketing claims.
+
 ## Service Comparison
 
 ### Proton Mail
@@ -128,6 +141,32 @@ gpg --armor --export-secret-keys your@email.com > private.asc
 # 3. Import your private key (private.asc)
 # 4. Set default key for your identity
 ```
+
+### StartMail
+
+Backed by the privacy-conscious team behind Startpage, StartMail offers zero-knowledge encryption with PGP support. Their implementation focuses on simplicity, with automatic key management that doesn't burden users. A solid option for developers who want PGP compatibility without manual key handling.
+
+## Threat Model Alignment
+
+Zero-knowledge email protects against:
+- Provider data breaches
+- Provider cooperation with surveillance requests
+- Server administrators accessing your mail
+
+Zero-knowledge does NOT protect against:
+- Compromised local devices
+- Keyloggers or malware on your system
+- Phishing attacks
+- Metadata analysis (who you email, when, how often)
+
+## Recovery Considerations
+
+Zero-knowledge systems create genuine data recovery challenges. Establish a plan before migrating:
+
+1. **Recovery keys**: Most services provide backup codes
+2. **Secondary email**: Recovery options vary by provider
+3. **Password reset**: Understand if/how it works (may lose encrypted data)
+4. **Key escrow**: For team implementations, consider secure key sharing
 
 ## Making Your Decision
 
