@@ -4,7 +4,7 @@ layout: default
 title: "ProtonMail Security Model Explained: A Technical Deep-Dive"
 description: "Understand ProtonMail's end-to-end encryption, zero-access architecture, and security features from a developer and power user perspective."
 date: 2026-03-15
-author: "Privacy Tools Guide"
+author: theluckystrike
 permalink: /protonmail-security-model-explained/
 reviewed: true
 score: 8
