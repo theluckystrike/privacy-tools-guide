@@ -9,7 +9,7 @@ author: "Privacy Tools Guide"
 permalink: /password-manager-browser-extension-attack-surface/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 
