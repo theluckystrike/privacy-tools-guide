@@ -10,13 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-The EU-US Data Privacy Framework represents a legal mechanism that enables organizations to transfer personal data from the European Union to the United States in compliance with GDPR requirements. Adopted in 2023 and refined throughout 2025-2026, this framework provides an alternative to the invalidated Privacy Shield and the complex Standard Contractual Clauses approach for many use cases.
-
-For developers and technical professionals building applications that serve EU users or process EU personal data, understanding this framework is essential for architecting compliant systems.
+The EU-US Data Privacy Framework is a legal mechanism that allows US companies to self-certify with the Department of Commerce and receive an adequacy determination from the European Commission, enabling GDPR-compliant transfers of EU personal data to the United States. It replaced the invalidated Privacy Shield by adding binding US intelligence surveillance limits, an independent Data Protection Review Court, and strengthened data handling obligations. This guide explains how the framework works and provides implementation patterns for developers building applications with transatlantic data flows.
 
 ## What the Framework Actually Provides
 

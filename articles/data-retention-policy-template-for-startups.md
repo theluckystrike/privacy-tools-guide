@@ -10,12 +10,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Data Retention Policy Template for Startups
 
-A data retention policy establishes how long your startup stores different types of data and defines the deletion procedures. For startups building SaaS products, mobile apps, or handling any user data, having a clear policy prevents regulatory penalties, reduces storage costs, and minimizes your attack surface. This guide provides a template you can adapt for your organization with ready-to-use code for enforcement.
+Below is a ready-to-use data retention policy template for startups, with recommended retention periods by data type: 7 years for transaction records, 90 days for application logs, 2 years for marketing data, and active-plus-30-days for account data. Copy the template, adapt the retention schedules to your business, and implement the included PostgreSQL and Python automation scripts to enforce deletion automatically. This prevents GDPR and CCPA penalties, reduces storage costs, and minimizes your breach surface.
 
 ## Why Startups Need a Data Retention Policy
 
