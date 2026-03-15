@@ -5,7 +5,7 @@ description: "A technical deep-dive into Tor network consensus mechanism and dir
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-consensus-how-directory-authorities-work/
-categories: [privacy, security, tor, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
