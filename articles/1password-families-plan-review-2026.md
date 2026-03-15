@@ -5,7 +5,7 @@ description: "A technical deep-dive into 1Password Families, covering vault orga
 date: 2026-03-15
 author: theluckystrike
 permalink: /1password-families-plan-review-2026/
-categories: [reviews, security, password-managers]
+categories: [comparisons, security, guides]
 reviewed: true
 score: 8
 ---
