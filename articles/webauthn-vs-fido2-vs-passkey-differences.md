@@ -144,6 +144,7 @@ Passkeys add synchronization and discoverability on top of FIDO2, making credent
 
 ## Related Reading
 
+- [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
 - More guides coming soon.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
