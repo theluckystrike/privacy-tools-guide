@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -163,9 +164,7 @@ For operators running hidden services:
 3. **Monitor for abuse** — hidden services remain responsible for their content
 4. **Implement rate limiting** — prevent resource exhaustion attacks
 
-## Conclusion
-
-The Tor Browser remains the gold standard for accessing hidden services, but Firefox with Tor proxy offers better developer tooling when configured correctly. The key to secure hidden service access lies in understanding your threat model, properly configuring browser settings, and verifying service authenticity. By implementing the configurations outlined in this guide, developers and power users can access hidden services while maintaining strong security posture.
+The Tor Browser remains the gold standard for accessing hidden services, but Firefox with Tor proxy offers better developer tooling when configured correctly. The key to secure access lies in understanding your threat model, properly configuring browser settings, and verifying service authenticity.
 
 
 ## Related Reading
