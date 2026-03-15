@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -264,29 +265,29 @@ Store the CI identity key as a secret in your CI platform's secrets management.
 
 When using age in production environments, follow these practices:
 
-**Key Management**: Store identity keys separately from encrypted data. Use hardware security modules or secure key management services for production secrets.
+Store identity keys separately from encrypted data. Use hardware security modules or secure key management services for production secrets.
 
-**Key Rotation**: Periodically rotate keys and re-encrypt sensitive data. Age makes this straightforward—decrypt with the old key and re-encrypt with a new one.
+Periodically rotate keys and re-encrypt sensitive data. Age makes this straightforward—decrypt with the old key and re-encrypt with a new one.
 
-**Passphrase Strength**: When using `-p`, choose passphrases that meet modern complexity requirements. Combine with public-key encryption for defense in depth.
+When using `-p`, choose passphrases that meet modern complexity requirements. Combine with public-key encryption for defense in depth.
 
-**Audit Trails**: Log encryption and decryption operations in sensitive environments. Consider adding metadata to encrypted files for organizational purposes.
+Log encryption and decryption operations in sensitive environments. Consider adding metadata to encrypted files for organizational purposes.
 
 ## Troubleshooting
 
 Common issues and solutions:
 
-**Permission Denied**: Ensure your identity key file has restrictive permissions:
+If you get a permission denied error, ensure your identity key file has restrictive permissions:
 
 ```bash
 chmod 600 ~/.age/identity
 ```
 
-**Invalid Key Format**: Verify the public key format—age public keys start with `age1`. Check for copy errors when sharing keys.
+If you see an invalid key format error, verify the public key format—age public keys start with `age1`. Check for copy errors when sharing keys.
 
-**Passphrase Mismatch**: When decrypting files encrypted with `-p`, ensure you're using the correct passphrase. There is no recovery mechanism for lost passphrases.
+A passphrase mismatch occurs when decrypting files encrypted with `-p` using the wrong passphrase. There is no recovery mechanism for lost passphrases.
 
-**Large Files**: Age encrypts files in streaming fashion, handling large files efficiently. For very large files, consider splitting them first with `split` before encryption.
+Age encrypts files in streaming fashion, handling large files efficiently. For very large files, consider splitting them first with `split` before encryption.
 
 ## Conclusion
 

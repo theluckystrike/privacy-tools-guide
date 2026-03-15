@@ -11,6 +11,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -167,17 +168,17 @@ For encrypted backups, the import process automatically prompts for your master 
 
 Your vault backup contains sensitive data. Follow these practices:
 
-**Encrypt before storage** — Never store unencrypted JSON exports on cloud services. Use the `--encrypted` flag or encrypt the output with GPG:
+Never store unencrypted JSON exports on cloud services. Use the `--encrypted` flag or encrypt the output with GPG:
 
 ```bash
 gpg --symmetric --cipher-algo AES256 vault-backup.json
 ```
 
-**Use separate storage** — Keep at least one backup copy on offline media like an encrypted USB drive or secure paper backup of your encrypted export.
+Keep at least one backup copy on offline media like an encrypted USB drive or secure paper backup of your encrypted export.
 
-**Rotate regularly** — New passwords added since your last backup won't exist in older exports. Weekly automated exports ensure minimal data loss.
+New passwords added since your last backup won't exist in older exports. Weekly automated exports ensure minimal data loss.
 
-**Test restores** — Periodically verify your backups work by restoring to a fresh vault. This catches format issues before you need the backup.
+Periodically verify your backups work by restoring to a fresh vault. This catches format issues before you need the backup.
 
 ## Exporting Specific Items
 
@@ -206,7 +207,7 @@ This generates a link that works once, then disappears—useful for sharing reco
 
 ## Conclusion
 
-Regular vault exports form the foundation of your password management disaster recovery plan. The Bitwarden CLI provides flexible options ranging from quick plaintext exports to encrypted cold storage. Automate your backups, encrypt the outputs, and test restoration procedures periodically to ensure your credentials remain accessible when needed.
+Automate your exports with the scripts above, encrypt every backup, and test a restore at least once a quarter. If your vault disappears tomorrow, a recent encrypted export is the difference between a minor inconvenience and a crisis.
 
 
 ## Related Reading
