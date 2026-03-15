@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /best-vpn-for-linux-desktop/
 reviewed: true
 score: 8
-categories: [vpn]
+categories: [guides]
 ---
 
 

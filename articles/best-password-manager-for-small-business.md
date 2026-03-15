@@ -9,7 +9,7 @@ author: "Privacy Tools Guide"
 permalink: /best-password-manager-for-small-business/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 

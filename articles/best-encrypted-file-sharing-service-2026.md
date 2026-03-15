@@ -6,7 +6,7 @@ description: "A practical guide to encrypted file sharing services with CLI supp
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-file-sharing-service-2026/
-categories: [encryption, security, file-sharing, developer-tools]
+categories: [guides, security, guides, guides]
 reviewed: true
 score: 8
 ---

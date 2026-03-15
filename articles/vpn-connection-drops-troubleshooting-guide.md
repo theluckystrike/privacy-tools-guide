@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /vpn-connection-drops-troubleshooting-guide/
 reviewed: true
 score: 8
-categories: [vpn]
+categories: [guides]
 ---
 
 

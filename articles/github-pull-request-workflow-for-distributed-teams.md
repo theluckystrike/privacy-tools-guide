@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /github-pull-request-workflow-for-distributed-teams/
 reviewed: true
 score: 8
-categories: [reviews]
+categories: [comparisons]
 ---
 
 
@@ -208,4 +208,4 @@ Start with these fundamentals, measure your outcomes, and adapt the practices to
 ## Related Reading
 
 - [Jami P2P Messenger Review 2026: A Developer Guide to.](/privacy-tools-guide/jami-p2p-messenger-review-2026/)
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

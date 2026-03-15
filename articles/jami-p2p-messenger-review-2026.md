@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /jami-p2p-messenger-review-2026/
 reviewed: true
 score: 8
-categories: [reviews]
+categories: [comparisons]
 ---
 
 

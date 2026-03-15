@@ -5,7 +5,7 @@ author: "Privacy Tools Guide"
 reviewed: true
 score: 8
 date: 2026-03-15
-categories: [vpn]
+categories: [guides]
 permalink: /vpn-warrant-canary-what-it-means/
 ---
 
@@ -16,7 +16,7 @@ description: "A technical guide to understanding VPN warrant canaries, how they 
 date: 2026-03-15
 author: theluckystrike
 permalink: /vpn-warrant-canary-what-it-means/
-categories: [privacy, security, vpn]
+categories: [guides, security, guides]
 ---
 
 If you use a VPN to protect your online privacy, you may have encountered the term "warrant canary" on your provider's transparency page. This mechanism serves as a critical warning system, and understanding how it works is essential for developers and power users who rely on VPNs for security.
