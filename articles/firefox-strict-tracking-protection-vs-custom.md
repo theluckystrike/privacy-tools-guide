@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -122,9 +123,7 @@ Firefox's content blocking works alongside extensions like uBlock Origin. For de
 
 After configuring settings, verify they're working. Firefox provides built-in tools:
 
-1. **Protection Dashboard**: Visit `about:protections` to see blocking statistics
-2. **Inspector Tool**: Open Developer Tools (F12), go to the Storage tab, and examine cookies
-3. **Network Monitor**: Check for blocked requests in the Network tab
+Visit `about:protections` to see blocking statistics on the Protection Dashboard. Open Developer Tools (F12) and go to the Storage tab to examine cookies. Check for blocked requests using the Network tab.
 
 Here's a simple JavaScript snippet to check if fingerprinting protection is active:
 
@@ -148,13 +147,7 @@ Compare values between protected and unprotected Firefox instances to confirm pr
 
 Custom configurations sometimes cause website issues. Here are typical problems and solutions:
 
-**Broken login sessions**: Third-party cookies blocked. Add the site to exceptions or temporarily allow third-party cookies.
-
-**Embedded content fails**: Videos or maps don't load. Check which tracker category is blocking the embedded resource.
-
-**WebSocket connections fail**: Some real-time applications use tracking domains. Examine WebSocket URLs in the Network tab.
-
-**Development localhost issues**: Local development may trigger tracking protection. Use `http://localhost` with appropriate exceptions during development.
+Broken login sessions occur when third-party cookies are blocked; add the site to exceptions or temporarily allow third-party cookies. Embedded content such as videos or maps may fail to load — check which tracker category is blocking the resource. Some real-time applications use tracking domains, causing WebSocket connections to fail; examine WebSocket URLs in the Network tab to identify the culprit. Local development may also trigger tracking protection, so use `http://localhost` with appropriate exceptions during development.
 
 ## Performance Considerations
 
