@@ -5,7 +5,7 @@ description: "Comprehensive guide to passkey support across major websites in 20
 date: 2026-03-15
 author: theluckystrike
 permalink: /passkey-support-by-website-2026/
-categories: [security, guides, developers]
+categories: [security, guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
