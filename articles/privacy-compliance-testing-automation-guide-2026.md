@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to automate priva
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-testing-automation-guide-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

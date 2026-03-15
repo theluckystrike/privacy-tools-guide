@@ -5,6 +5,10 @@ description: "A comprehensive tracker of privacy law updates affecting developer
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-law-updates-tracker-march-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

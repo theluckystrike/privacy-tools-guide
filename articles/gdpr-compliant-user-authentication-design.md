@@ -5,7 +5,7 @@ description: "Learn how to design GDPR compliant user authentication systems. Th
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-user-authentication-design/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
