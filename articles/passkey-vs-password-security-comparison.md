@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"
 description: "Technical comparison of passkeys and passwords for authentication. Learn security differences, implementation details, and when to adopt passkeys in your applications."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /passkey-vs-password-security-comparison/
+reviewed: true
+score: 8
+categories: [passwords]
 ---
+
 
 {% raw %}
 
