@@ -165,6 +165,13 @@ Regardless of your chosen tool, implement these practices:
 
 The "best" encrypted messaging for journalists depends on your specific threat model, technical capabilities, and organizational context. This guide provides the technical foundation to make an informed decision.
 
+
+## Related Reading
+
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
