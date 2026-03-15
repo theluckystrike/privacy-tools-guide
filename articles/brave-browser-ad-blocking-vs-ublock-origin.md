@@ -5,7 +5,7 @@ description: "Compare Brave browser's built-in ad blocking with uBlock Origin ex
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /brave-browser-ad-blocking-vs-ublock-origin/
-categories: [privacy, security, browser-tools]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

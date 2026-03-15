@@ -5,7 +5,7 @@ description: "A deep technical comparison of Firefox and Chromium browser privac
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-vs-chromium-privacy-architecture/
-categories: [guides, security, browser]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

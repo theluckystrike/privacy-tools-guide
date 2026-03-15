@@ -5,7 +5,7 @@ description: "A comprehensive guide to auditing Android app permissions in 2026.
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-app-permissions-audit-guide-2026/
-categories: [guides, android, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

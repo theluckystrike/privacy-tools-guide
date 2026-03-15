@@ -5,7 +5,7 @@ description: "A technical deep-dive into Android's privacy indicators for camera
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-privacy-indicators-camera-mic-explained/
-categories: [guides, security, android]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
