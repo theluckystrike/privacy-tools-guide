@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users switching between
 date: 2026-03-15
 author: theluckystrike
 permalink: /encrypted-cloud-storage-migration-guide-switching/
-categories: [guides, security, encryption]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
