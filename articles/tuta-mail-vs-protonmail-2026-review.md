@@ -219,6 +219,7 @@ Evaluate based on your specific use case: automation requirements, client prefer
 
 ## Related Reading
 
+- [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
 - [Jami P2P Messenger Review 2026: A Developer Guide to.](/privacy-tools-guide/jami-p2p-messenger-review-2026/)
 - [GitHub Pull Request Workflow for Distributed Teams: A.](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
