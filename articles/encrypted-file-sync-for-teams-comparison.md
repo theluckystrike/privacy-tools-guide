@@ -6,7 +6,7 @@ description: "Compare encrypted file sync solutions for teams. We evaluate SyncT
 date: 2026-03-15
 author: theluckystrike
 permalink: /encrypted-file-sync-for-teams-comparison/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
