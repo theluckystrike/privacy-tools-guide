@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "I2P vs Tor: Anonymous Network Comparison 2026"
-description: "A technical comparison of I2P and Tor anonymous networks for developers and power users. Architecture differences, use cases, performance benchmarks, and implementation guidance."
+description: "A technical comparison of I2P and Tor anonymous networks for developers and power users. Architecture differences, use cases, performance benchmarks."
 date: 2026-03-15
 author: theluckystrike
 permalink: /i2p-vs-tor-anonymous-network-comparison-2026/
@@ -162,6 +162,11 @@ I2P and Tor serve different niches in the anonymity landscape. Tor's larger ecos
 Many projects benefit from combining both networks—using Tor for external communication and I2P for internal peer-to-peer coordination. Evaluate your specific threat model, performance requirements, and target audience when making this decision.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
