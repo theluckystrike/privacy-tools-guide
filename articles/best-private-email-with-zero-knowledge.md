@@ -6,7 +6,7 @@ description: "A technical guide to zero-knowledge email services for developers 
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-private-email-with-zero-knowledge/
-categories: [guides, security, email]
+categories: [guides, security, guides]
 reviewed: true
 score: 8
 ---
