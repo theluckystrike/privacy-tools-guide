@@ -10,12 +10,13 @@ permalink: /password-manager-master-password-strength-guide/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Your master password is the single point of failure for your entire password manager vault. If an attacker cracks it, all your carefully generated unique passwords become accessible. This guide covers the technical details developers and power users need to know about creating, evaluating, and managing master password strength.
+Create a master password with at least 80 bits of entropy: use a random 6-8 word passphrase (e.g., generated via diceware) or a 16+ character random string mixing uppercase, lowercase, digits, and symbols. Pair it with a password manager that uses Argon2id for key derivation, never reuse it anywhere, and store a paper backup in a secure location. This guide covers entropy calculations, key derivation function comparisons, common vulnerabilities, and practical steps for both users and developers implementing password strength requirements.
 
 ## Understanding Master Password Entropy
 

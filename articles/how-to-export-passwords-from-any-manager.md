@@ -9,11 +9,12 @@ permalink: /how-to-export-passwords-from-any-manager/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Moving between password managers or backing up your credentials requires understanding how each platform handles data export. Whether switching services, creating encrypted backups, or migrating to a new system, the export process varies significantly across managers. This guide covers practical methods for extracting your passwords from major password managers, with a focus on developer-friendly CLI approaches.
+To export passwords from any manager, use its CLI tool for the most control: `op vault export` for 1Password, `bw export --format json` for Bitwarden, `lpass export` for LastPass, `keepassxc-cli export` for KeePassXC, or `dcli export` for Dashlane. Each outputs CSV or JSON that you should encrypt immediately with GPG and delete the plaintext file. This guide covers step-by-step export instructions for all major password managers, including web interface alternatives and automated backup scripts.
 
 ## Why Export Your Passwords?
 
