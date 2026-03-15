@@ -9,12 +9,13 @@ permalink: /encrypted-messaging-metadata-protection/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 
 {% raw %}
 
-When developers think about encrypted messaging, they often focus on end-to-end encryption for message content. But the reality is more nuanced. Even with perfect encryption for message bodies, metadata can reveal everything about a user's communication patterns. This guide covers how metadata protection works in encrypted messaging systems and what developers need to know to build privacy-respecting applications.
+Encrypted messaging metadata -- who contacted whom, when, how often, and from where -- remains fully exposed even with end-to-end encryption, and protecting it requires layering techniques like onion routing, mixnets, double-ratchet key advancement, and private contact discovery on top of content encryption. This guide explains each mechanism with code examples and shows developers how to architect messaging systems that resist traffic analysis, server-side correlation, and social graph extraction.
 
 ## Understanding Messaging Metadata
 

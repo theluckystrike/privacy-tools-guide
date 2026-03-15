@@ -9,12 +9,13 @@ permalink: /end-to-end-encryption-explained-simply/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 
-End-to-end encryption (E2EE) ensures that only the communicating parties can read the messages—not the service provider, not eavesdroppers, not anyone with server access. This guide breaks down E2EE into clear concepts with practical code examples you can use today.
+End-to-end encryption (E2EE) means your data is encrypted on your device before it leaves, and only the intended recipient's device can decrypt it -- the server in the middle never holds the keys and cannot read your messages, even if compromised. It works through public-key cryptography: you encrypt with the recipient's public key, and only their private key can decrypt it, with modern protocols like Signal's Double Ratchet advancing keys after every message for forward secrecy.
 
 ## What End-to-End Encryption Actually Means
 
