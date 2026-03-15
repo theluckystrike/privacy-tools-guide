@@ -6,7 +6,7 @@ description: "A technical guide covering browser storage mechanisms, origin-base
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-storage-isolation-explained-privacy/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

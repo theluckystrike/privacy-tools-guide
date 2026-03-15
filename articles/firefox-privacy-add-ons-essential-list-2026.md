@@ -6,7 +6,7 @@ description: "Discover the best Firefox privacy add-ons for developers and power
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-privacy-add-ons-essential-list-2026/
-categories: [privacy, security, browser]
+categories: [guides, security]
 reviewed: true
 score: 9
 ---

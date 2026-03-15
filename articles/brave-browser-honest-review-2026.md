@@ -6,7 +6,7 @@ description: "A technical deep-dive into Brave Browser in 2026. Evaluate its pri
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-browser-honest-review-2026/
-categories: [reviews]
+categories: [guides]
 reviewed: true
 score: 7
 ---
