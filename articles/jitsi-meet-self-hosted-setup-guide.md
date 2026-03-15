@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Jitsi Meet Self-Hosted Setup Guide: Complete Technical Walkthrough"
-description: "A comprehensive guide to deploying your own Jitsi Meet video conferencing server. Covers Docker installation, configuration, security hardening, and production best practices for developers."
+title: "Jitsi Meet Self-Hosted Setup Guide: Complete Technical."
+description: "A comprehensive guide to deploying your own Jitsi Meet video conferencing server. Covers Docker installation, configuration, security hardening, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /jitsi-meet-self-hosted-setup-guide/
@@ -305,6 +305,13 @@ docker logs prosody
 Self-hosting Jitsi Meet provides a capable video conferencing solution with full data ownership. The Docker deployment approach simplifies maintenance while enabling customization for specific requirements. Start with basic authentication and gradually add features—recording, TURN servers, and custom branding—as your needs evolve.
 
 For teams requiring enterprise features like SSO integration or advanced analytics, Jitsi Meet supports these through additional configuration and complementary open-source tools. The core platform remains free and open, making it an excellent choice for privacy-conscious organizations.
+
+
+## Related Reading
+
+- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

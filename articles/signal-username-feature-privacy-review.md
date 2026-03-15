@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /signal-username-feature-privacy-review/
 reviewed: true
 score: 8
-categories: [reviews]
+categories: [guides]
 ---
 
 
@@ -193,5 +193,12 @@ class SignalRateLimiter:
 Signal's username feature represents a meaningful privacy improvement for users who want to communicate without exposing their phone numbers. The implementation balances usability with privacy, though both developers and power users should understand the remaining attack surfaces.
 
 For developers, the username system provides cleaner identity management in applications. For power users, it offers an additional layer of privacy control. As with any security feature, understanding the tradeoffs enables better configuration and safer usage.
+
+
+## Related Reading
+
+- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
