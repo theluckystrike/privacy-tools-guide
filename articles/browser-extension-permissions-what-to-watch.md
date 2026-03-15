@@ -6,6 +6,10 @@ description: "Learn which browser extension permissions pose security risks and 
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-extension-permissions-what-to-watch/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

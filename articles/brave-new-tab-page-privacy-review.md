@@ -5,7 +5,7 @@ description: "A technical privacy review of Brave browser's new tab page. Analyz
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-new-tab-page-privacy-review/
-categories: [privacy, browser, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
