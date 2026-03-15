@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Arti is a modern implementation of the Tor protocol written entirely in Rust. Originally announced in 2020, Arti has matured significantly by 2026, offering a production-ready alternative to the original C-based Tor implementation. This guide explains how Arti works, its architecture, and how developers can integrate it into their projects.
+Arti is a memory-safe Rust rewrite of the Tor anonymity protocol, replacing the original C implementation with stronger security guarantees against buffer overflows and use-after-free vulnerabilities. By 2026 it is production-ready, offering modular crates — `arti-client` for high-level integration, `tor-proto` for the core protocol, and `tor-circmgr` for circuit management — that developers can embed directly into Rust applications. This guide covers Arti's architecture, integration examples, and performance tuning for privacy-focused projects.
 
 ## Why Rust for Tor
 
