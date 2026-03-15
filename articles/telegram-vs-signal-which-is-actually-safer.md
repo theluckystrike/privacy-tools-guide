@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Telegram vs Signal: Which Is Actually Safer? A Technical Analysis"
-description: "A developer-focused comparison of Telegram and Signal's security architectures, encryption implementations, and privacy features with code examples demonstrating the differences."
+title: "Telegram vs Signal: Which Is Actually Safer? A Technical."
+description: "A developer-focused comparison of Telegram and Signal's security architectures, encryption implementations, and privacy features with code examples."
 date: 2026-03-15
 author: theluckystrike
 permalink: /telegram-vs-signal-which-is-actually-safer/
@@ -244,6 +244,11 @@ For developers building secure applications, Signal's protocol provides a better
 
 Test both applications with your specific use case. Run network traffic analysis, verify encryption fingerprints, and consider what data each service collects about your communications. The choice ultimately depends on your specific security requirements and threat model.
 
-**Built by theluckystrike — More at [zovo.one](https://zovo.one)**
+**
+## Related Reading
+
+- More guides coming soon.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)**
 
 {% endraw %}
