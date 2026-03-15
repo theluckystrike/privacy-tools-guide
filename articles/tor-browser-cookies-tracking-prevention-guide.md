@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on how Tor Browse
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-cookies-tracking-prevention-guide/
-categories: [guides, security, tor]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

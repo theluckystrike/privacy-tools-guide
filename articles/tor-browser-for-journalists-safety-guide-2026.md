@@ -5,7 +5,7 @@ description: "A comprehensive technical guide to Tor Browser configuration for j
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-for-journalists-safety-guide-2026/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
