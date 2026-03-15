@@ -158,6 +158,6 @@ The trade-offs are substantial but acceptable depending on threat model and use 
 
 ## Related Reading
 
-- More guides coming soon.
+- [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/) — Practical setup, configuration, and advanced tuning
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

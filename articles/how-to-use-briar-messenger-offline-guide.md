@@ -14,17 +14,7 @@ score: 8
 
 {% raw %}
 
-Briar represents a major change in mobile messaging. Unlike conventional apps that require constant internet connectivity, Briar operates on a mesh networking model using Bluetooth and Wi-Fi Direct to enable communication even when no infrastructure exists. This makes it particularly valuable for developers working in remote environments, activists requiring resilient communication channels, and anyone who needs reliable messaging without depending on cellular networks or Wi-Fi hotspots.
-
-This guide covers the technical implementation and practical usage of Briar's offline capabilities for developers and power users.
-
-## Understanding Briar's Architecture
-
-Briar functions as a decentralized messaging platform built on top of the Tor network for metadata protection while introducing unique offline-first capabilities. The application uses the Bramble protocol, which operates in two distinct modes: transport mode and internet mode.
-
-In transport mode, Briar devices communicate directly through Bluetooth or Wi-Fi Direct connections, forming ad-hoc mesh networks. Messages propagate through these peer-to-peer connections, reaching any connected device in the network. This approach eliminates single points of failure and ensures communication persists even when traditional infrastructure fails.
-
-The internet mode routes traffic through the Tor network, providing anonymity while maintaining end-to-end encryption. Critically, both modes use the same encryption primitives, ensuring your messages remain secure regardless of the transport mechanism.
+Briar is a peer-to-peer encrypted messenger that works without internet connectivity, using Bluetooth and Wi-Fi Direct to form mesh networks between nearby devices. This guide covers practical setup and configuration for developers and power users who want to use Briar's offline capabilities. For a technical deep dive into Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
 
 ## Installation and Initial Setup
 
@@ -99,36 +89,14 @@ The protocol ensures:
 
 When multiple devices form a mesh, messages propagate automatically. If you move through an area with Briar users, your device will sync with theirs, picking up any messages transmitted while you were out of range.
 
-## Practical Use Cases
+## Security Tips
 
-### Emergency Communication
+For enhanced security when using Briar:
+- Use a dedicated device with full-disk encryption enabled
+- Set a strong passphrase for Briar's local database
+- Be aware that Bluetooth/Wi-Fi radio activity is visible to nearby observers
 
-In disaster scenarios where cellular infrastructure fails, Briar provides reliable communication without any infrastructure. A group of people in the same area can form a mesh network and exchange messages, coordinate rescue efforts, or share critical information.
-
-The key advantage: no central server, no single point of failure.
-
-### Remote Development Environments
-
-Developers working in remote locations—field research stations, remote offices, or rural deployments—can maintain team communication through Briar's offline capabilities. The mesh network provides communication without relying on satellite links or expensive infrastructure.
-
-### Protest and Activism
-
-Briar's metadata protection and offline-first design make it valuable for organizers in environments where communication surveillance is a concern. The lack of central servers means no single entity can be compelled to hand over communication records.
-
-## Security Considerations
-
-While Briar provides strong security guarantees, users should understand its threat model:
-
-- **Forward secrecy**: Each conversation uses unique encryption keys; compromising one session doesn't expose past messages
-- **Metadata protection**: The Tor network obscures communication patterns; mesh networking further reduces metadata
-- **Local encryption**: All messages are encrypted at rest using your passphrase-protected database
-
-However, Briar doesn't protect against:
-- Physical compromise of unlocked devices
-- Adversaries who control your device's Bluetooth/Wi-Fi radio
-- Traffic analysis when you connect to the Tor network
-
-For enhanced security, use Briar on a dedicated device with full-disk encryption enabled.
+For a full security model analysis including threat model details, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
 
 ## Advanced Configuration
 
