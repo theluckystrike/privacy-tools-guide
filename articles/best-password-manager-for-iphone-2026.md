@@ -6,7 +6,7 @@ description: "A practical comparison of password managers for iPhone in 2026. Ev
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-password-manager-for-iphone-2026/
-categories: [guides, security, mobile]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
