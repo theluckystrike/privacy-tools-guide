@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Compliant User Authentication Design: A Developer's Practical Guide"
-description: "Learn how to design GDPR compliant user authentication systems. This guide covers data minimization, consent mechanisms, secure storage, and implementation patterns for developers."
+description: "Learn how to design GDPR compliant user authentication systems. This guide covers data minimization, consent mechanisms, secure storage, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-user-authentication-design/
@@ -212,6 +212,11 @@ GDPR compliant authentication design centers on data minimization, explicit cons
 Start with collecting only essential data. Implement proper consent mechanisms for any additional data. Use modern password hashing like Argon2id. Build deletion and portability features into your core authentication system. These practices satisfy both security best practices and GDPR requirements, protecting your users and your organization.
 
 The key principle: privacy by design means making privacy-friendly choices the default, not an optional feature added when compliance demands it.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
