@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on configuring S/
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-set-up-smime-email-encryption/
-categories: [guides, security, email]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---
