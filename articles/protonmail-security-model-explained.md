@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "ProtonMail Security Model Explained: A Technical Deep-Dive"
 description: "Understand ProtonMail's end-to-end encryption, zero-access architecture, and security features from a developer and power user perspective."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /protonmail-security-model-explained/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 ProtonMail stands apart from conventional email services by building security into its core architecture rather than treating it as an afterthought. For developers and power users evaluating privacy-focused communication tools, understanding the underlying security model reveals why ProtonMail has become a standard bearer for encrypted email.
 
