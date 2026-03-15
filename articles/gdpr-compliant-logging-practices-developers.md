@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "GDPR Compliant Logging Practices for Developers"
 description: "A practical guide to implementing GDPR-compliant logging in your applications. Learn data minimization, consent management, and secure logging techniques."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /gdpr-compliant-logging-practices-developers/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 # GDPR Compliant Logging Practices for Developers
