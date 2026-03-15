@@ -5,7 +5,7 @@ description: "A practical comparison of Bitwarden and Vaultwarden for self-hoste
 date: 2026-03-15
 author: theluckystrike
 permalink: /bitwarden-vs-vaultwarden-self-hosted-comparison/
-categories: [guides, security, self-hosted]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
