@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Virginia Consumer Data Protection Act (VCDPA) Guide for Developers"
-description: "A practical technical guide to the Virginia Consumer Data Protection Act covering compliance requirements, data handling patterns, and implementation strategies for developers building Virginia-resident-facing applications."
+title: "Virginia Consumer Data Protection Act (VCDPA) Guide for."
+description: "A practical technical guide to the Virginia Consumer Data Protection Act covering compliance requirements, data handling patterns, and implementation."
 date: 2026-03-15
 author: theluckystrike
 permalink: /virginia-consumer-data-protection-act-vcdpa-guide/
@@ -213,6 +213,13 @@ Building VCDPA-compliant applications requires integrating privacy consideration
 - Audit logging for compliance demonstration
 
 By implementing these patterns now, your applications will be prepared for current requirements and future regulatory developments.
+
+
+## Related Reading
+
+- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
