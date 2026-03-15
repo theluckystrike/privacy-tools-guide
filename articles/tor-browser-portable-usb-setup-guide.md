@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Portable USB Setup Guide"
-description: "A comprehensive guide for developers and power users on running Tor Browser from a USB drive for enhanced privacy. Includes verification, configuration, and best practices."
+description: "A comprehensive guide for developers and power users on running Tor Browser from a USB drive for enhanced privacy. Includes verification."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-portable-usb-setup-guide/
@@ -237,6 +237,11 @@ Several mistakes undermine portable security:
 USB 2.0 ports severely limit Tor Browser performance due to latency in every circuit operation. USB 3.0 or newer provides acceptable experience. Consider a high-quality USB drive with high IOPS ratings for better responsiveness.
 
 For extremely sensitive operations, bootable distributions like Tails provide stronger guarantees, but sacrifice the convenience of persistent configurations.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
