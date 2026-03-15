@@ -4,7 +4,7 @@ layout: default
 title: "Signal Disappearing Messages Best Practices: Security."
 description: "Master Signal disappearing messages with developer-focused best practices. Learn timer selection, automation via Signal CLI, cryptographic cleanup, and."
 date: 2026-03-15
-author: "Privacy Tools Guide"
+author: theluckystrike
 permalink: /signal-disappearing-messages-best-practices/
 reviewed: true
 score: 8
