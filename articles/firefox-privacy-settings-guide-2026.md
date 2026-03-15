@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Firefox Privacy Settings Guide 2026: A Practical Guide for Developers and Power Users"
-description: "Master Firefox privacy settings in 2026. This guide covers about:config tweaks, resistFingerprinting, container extensions, and advanced configurations for developers and power users."
+title: "Firefox Privacy Settings Guide 2026: A Practical Guide."
+description: "Master Firefox privacy settings in 2026. This guide covers about:config tweaks, resistFingerprinting, container extensions, and advanced configurations."
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-privacy-settings-guide-2026/
@@ -208,6 +208,11 @@ After configuring settings, verify they work:
 Firefox's about:config provides powerful controls for privacy-conscious users. Key settings include enabling `privacy.resistFingerprinting`, configuring `network.cookie.cookieBehavior` to reject third-party cookies, and activating DNS-over-HTTPS. Combine these with privacy extensions and profile isolation for comprehensive protection.
 
 For developers, understanding these settings enables building privacy-aware applications and testing against various browser configurations. Power users gain control over their digital footprint without sacrificing browser functionality.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

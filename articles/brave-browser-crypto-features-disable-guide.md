@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Disable Crypto Features in Brave Browser: Complete Guide"
+title: "How to Disable Crypto Features in Brave Browser."
 description: "A practical guide for developers and power users on how to disable built-in cryptocurrency features in Brave Browser for enhanced privacy and security."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -225,6 +225,11 @@ Choose the method matching your technical requirements and deployment scenario. 
 For additional privacy hardening beyond crypto features, consider reviewing Brave's Shields configuration, adjusting fingerprinting protection settings, and configuring network request blocking for known trackers.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
