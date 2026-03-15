@@ -2,7 +2,7 @@
 
 layout: default
 title: "Linux Mint Privacy Setup Guide for Beginners"
-description: "A practical privacy setup guide for Linux Mint. Configure firewall, harden Firefox, enable disk encryption, and secure your system with step-by-step instructions for developers."
+description: "A practical privacy setup guide for Linux Mint. Configure firewall, harden Firefox, enable disk encryption, and secure your system with step-by-step."
 date: 2026-03-15
 author: theluckystrike
 permalink: /linux-mint-privacy-setup-guide-beginners/
@@ -214,6 +214,11 @@ This detects any modified system files—a useful check after installing softwar
 These steps create a privacy-respecting Linux Mint installation without extreme measures. Firewall rules block unauthorized access, disk encryption protects data at rest, Firefox hardening reduces tracking, and AppArmor provides application sandboxing. Combine these with secure DNS and SSH practices, and your system achieves reasonable privacy for most use cases.
 
 Review these settings periodically—software updates may reset preferences or introduce new telemetry features. Automate security checks with cron jobs or systemd timers for continuous hardening.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

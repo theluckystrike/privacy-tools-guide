@@ -144,6 +144,11 @@ Privacy indicators have specific limitations that users should understand:
 
 For maximum privacy, combine indicator awareness with regular permission audits, app reviews, and security scanning. Privacy indicators represent one layer of defense in Android's security model, but they work best as part of a comprehensive privacy strategy.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
