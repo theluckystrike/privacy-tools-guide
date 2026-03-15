@@ -5,7 +5,7 @@ description: "A technical guide to conducting GDPR legitimate interest assessmen
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-legitimate-interest-assessment-guide/
-categories: [guides, compliance, gdpr]
+categories: [guides]
 reviewed: true
 score: 8
 ---

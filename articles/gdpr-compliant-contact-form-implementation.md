@@ -5,7 +5,7 @@ description: "A practical guide for developers implementing GDPR-compliant conta
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-contact-form-implementation/
-categories: [privacy, development]
+categories: [guides]
 reviewed: true
 score: 8
 ---

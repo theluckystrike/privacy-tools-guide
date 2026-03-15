@@ -6,7 +6,7 @@ description: "A technical overview of cross-border data transfer mechanisms in 2
 date: 2026-03-15
 author: theluckystrike
 permalink: /cross-border-data-transfer-mechanisms-2026/
-categories: [privacy, security, compliance]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

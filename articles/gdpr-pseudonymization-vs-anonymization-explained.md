@@ -6,7 +6,7 @@ description: "A technical breakdown of pseudonymization and anonymization under 
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-pseudonymization-vs-anonymization-explained/
-categories: [guides, security, gdpr]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

@@ -6,7 +6,7 @@ description: "A practical guide to implementing the Consent Receipt Specificatio
 date: 2026-03-15
 author: theluckystrike
 permalink: /consent-receipt-specification-explained-guide/
-categories: [privacy, compliance, standards]
+categories: [guides]
 reviewed: true
 score: 8
 ---

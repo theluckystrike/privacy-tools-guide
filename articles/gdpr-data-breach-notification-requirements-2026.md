@@ -6,7 +6,7 @@ description: "A developer-focused guide to GDPR data breach notification require
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-data-breach-notification-requirements-2026/
-categories: [privacy, compliance, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

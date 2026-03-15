@@ -5,7 +5,7 @@ description: "A practical guide to GDPR joint controller agreements for develope
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-joint-controller-agreement-template/
-categories: [guides, gdpr, compliance]
+categories: [guides]
 reviewed: true
 score: 8
 ---

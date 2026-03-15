@@ -6,7 +6,7 @@ description: "A practical technical guide to the Virginia Consumer Data Protecti
 date: 2026-03-15
 author: theluckystrike
 permalink: /virginia-consumer-data-protection-act-vcdpa-guide/
-categories: [guides, privacy, compliance]
+categories: [guides]
 reviewed: true
 score: 8
 ---
