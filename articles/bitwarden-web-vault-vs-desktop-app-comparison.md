@@ -118,5 +118,11 @@ The Bitwarden desktop application offers superior performance, offline capabilit
 
 Your choice ultimately depends on usage patterns. Developers and power users who value quick access, offline operation, and CLI integration will find the desktop application more aligned with their needs. Casual users accessing Bitwarden primarily for web logins may find the web vault sufficiently capable.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Comparisons Hub](/privacy-tools-guide/comparisons-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

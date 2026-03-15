@@ -6,7 +6,7 @@ description: "A practical review of 1Password's masked email capabilities. Learn
 date: 2026-03-15
 author: theluckystrike
 permalink: /1password-masked-email-feature-review/
-categories: [reviews, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -148,6 +148,11 @@ Developers comparing email masking solutions should evaluate:
 For developers seeking to minimize email exposure without sacrificing convenience, this feature delivers measurable benefits. The trade-offs—primarily around reply handling and long-term service relationships—remain manageable for most use cases.
 
 Combine email masking with other privacy practices: use unique passwords from 1Password, enable two-factor authentication, and regularly audit your registered services to maintain control over your digital identity.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

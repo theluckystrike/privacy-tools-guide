@@ -2,13 +2,13 @@
 
 layout: default
 title: "1Password Secrets Automation for DevOps: A Practical Guide"
-description: "Learn how to integrate 1Password secrets automation into your DevOps workflows. Covers Terraform, Ansible, GitLab CI, Kubernetes, and production-ready patterns."
+description: "Learn how to integrate 1Password secrets automation into your DevOps workflows. Covers Terraform, Ansible, GitLab CI, Kubernetes, and production-ready."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /1password-secrets-automation-devops-guide/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 
@@ -251,6 +251,11 @@ Integrating 1Password into DevOps workflows eliminates hardcoded credentials whi
 
 The combination of service accounts, dedicated automation vaults, and programmatic CLI access provides a robust foundation for secret management across your entire deployment pipeline.
 
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
