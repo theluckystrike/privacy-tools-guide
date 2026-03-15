@@ -6,7 +6,7 @@ description: "Learn how to create anonymous social media accounts with strong pr
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-create-anonymous-social-media-accounts/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true

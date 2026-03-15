@@ -6,7 +6,7 @@ description: "A practical developer guide to implementing GDPR-compliant subproc
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-subprocessor-management-guide-developers/
-categories: [guides, privacy, gdpr]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

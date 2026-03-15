@@ -6,6 +6,10 @@ description: "Understand the EU-US Data Privacy Framework and its implications f
 date: 2026-03-15
 author: theluckystrike
 permalink: /data-privacy-framework-eu-us-explained-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
