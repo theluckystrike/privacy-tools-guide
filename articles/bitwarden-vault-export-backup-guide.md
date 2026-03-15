@@ -1,13 +1,17 @@
 ---
 
+
 layout: default
 title: "Bitwarden Vault Export Backup Guide: Complete Technical Reference"
 description: "A practical guide to exporting and backing up your Bitwarden vault. Learn CLI methods, automation scripts, and recovery strategies for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /bitwarden-vault-export-backup-guide/
 categories: [passwords, security]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Bitwarden Vault Export Backup Guide: Complete Technical Reference

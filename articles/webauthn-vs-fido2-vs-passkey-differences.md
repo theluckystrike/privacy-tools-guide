@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained"
 description: "A technical breakdown of WebAuthn, FIDO2, and passkeys for developers. Understand the standards, protocols, and implementations driving passwordless authentication."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /webauthn-vs-fido2-vs-passkey-differences/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 Understanding the relationship between WebAuthn, FIDO2, and passkeys requires distinguishing between standards, protocols, and consumer implementations. These three terms are often confused, but they represent distinct layers in the passwordless authentication stack.
 
