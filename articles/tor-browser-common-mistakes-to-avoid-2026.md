@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "Tor Browser Common Mistakes to Avoid in 2026"
-description: "A practical guide for developers and power users on the most common Tor Browser mistakes and how to avoid them. Includes configuration tips, security best practices, and code examples."
+description: "A practical guide for developers and power users on the most common Tor Browser mistakes and how to avoid them. Includes configuration tips, security."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-common-mistakes-to-avoid-2026/
-categories: [privacy, security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -153,6 +153,11 @@ cd /path/to/TorBrowser
 Tor Browser provides robust anonymity when used correctly, but its protections are nuanced. Avoid these common mistakes by maintaining consistent browser state, respecting window sizing, understanding NoScript, configuring bridges proactively, cycling identities appropriately, enforcing HTTPS, running isolated Tor processes, and keeping your browser updated.
 
 The difference between genuine anonymity and a false sense of security often comes down to understanding these implementation details. Apply these practices consistently, and your Tor usage will remain private in 2026 and beyond.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

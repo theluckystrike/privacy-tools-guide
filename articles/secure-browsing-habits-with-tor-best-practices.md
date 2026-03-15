@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Secure Browsing Habits With Tor: Best Practices for Developers and Power Users"
-description: "Master secure browsing with Tor using these practical best practices. Learn configuration tips, common pitfalls to avoid, and advanced techniques for maintaining privacy."
+title: "Secure Browsing Habits With Tor: Best Practices for."
+description: "Master secure browsing with Tor using these practical best practices. Learn configuration tips, common pitfalls to avoid, and advanced techniques for."
 date: 2026-03-15
 author: theluckystrike
 permalink: /secure-browsing-habits-with-tor-best-practices/
-categories: [privacy, security, tor]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -127,6 +127,11 @@ Maintain these habits for consistent anonymity:
 8. **Review extension permissions** and remove unnecessary add-ons.
 
 Tor provides strong anonymity when used correctly, but no tool guarantees perfect privacy. Understanding its limitations and combining it with other practices—such as using encrypted messaging and practicing good operational security—creates a more comprehensive privacy strategy.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

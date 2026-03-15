@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser for Journalists Safety Guide 2026"
-description: "A comprehensive technical guide to Tor Browser configuration for journalists. Learn advanced security settings, configuration tweaks, and best practices for source protection in 2026."
+description: "A comprehensive technical guide to Tor Browser configuration for journalists. Learn advanced security settings, configuration tweaks, and best."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-for-journalists-safety-guide-2026/
@@ -182,6 +182,11 @@ sha256sum document.pdf
 ## Conclusion
 
 Tor Browser remains an essential tool for journalist source protection, but its effectiveness depends entirely on configuration and usage patterns. The default installation provides reasonable protection for general privacy, but investigative journalism in high-risk environments demands careful hardening, bridge configuration, and disciplined operational security. Review your threat model, test your configurations, and establish procedures before relying on Tor in critical situations.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

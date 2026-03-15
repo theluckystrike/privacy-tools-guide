@@ -2,7 +2,7 @@
 
 layout: default
 title: "Tor Browser Cookies Tracking Prevention Guide"
-description: "A practical guide for developers and power users on how Tor Browser prevents cookie-based tracking through isolation mechanisms, configuration settings, and security best practices."
+description: "A practical guide for developers and power users on how Tor Browser prevents cookie-based tracking through isolation mechanisms, configuration."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-cookies-tracking-prevention-guide/
@@ -146,6 +146,11 @@ You can test your application's cookie handling by monitoring network requests a
 Tor Browser provides robust mechanisms for preventing cookie-based tracking through First-Party Isolation, circuit isolation, and configurable cookie policies. By understanding and properly configuring these features, developers and power users can significantly reduce their digital footprint while browsing.
 
 The combination of automatic session clearing, third-party cookie blocking, and the New Identity feature creates a defense-in-depth approach to privacy. Regular use of these features, combined with informed configuration choices, ensures that cookies remain what they were originally intended to be—a convenient way to maintain sessions—rather than tools for surveillance.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
