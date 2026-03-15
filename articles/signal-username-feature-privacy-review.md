@@ -4,7 +4,7 @@ layout: default
 title: "Signal Username Feature Privacy Review"
 description: "A technical analysis of Signal's username system, privacy implications, and configuration options for developers and power users."
 date: 2026-03-15
-author: "Privacy Tools Guide"
+author: "theluckystrike"
 permalink: /signal-username-feature-privacy-review/
 reviewed: true
 score: 8
