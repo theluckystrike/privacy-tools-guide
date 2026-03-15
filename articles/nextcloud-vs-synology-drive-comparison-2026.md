@@ -5,7 +5,7 @@ description: "A developer-focused comparison of Nextcloud and Synology Drive in 
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-vs-synology-drive-comparison-2026/
-categories: [guides, self-hosted, cloud-storage]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

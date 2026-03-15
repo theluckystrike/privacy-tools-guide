@@ -6,7 +6,7 @@ description: "A technical review of SpiderOak's cross-platform encrypted cloud s
 date: 2026-03-15
 author: theluckystrike
 permalink: /spideroak-review-cross-platform-encrypted-cloud/
-categories: [reviews, cloud-security]
+categories: [guides]
 reviewed: true
 score: 7
 intent-checked: true
