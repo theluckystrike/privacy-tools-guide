@@ -3,9 +3,11 @@ layout: default
 title: "Signal Protocol Explained for Developers: A Technical Deep Dive"
 description: "A developer-focused explanation of the Signal Protocol's cryptographic mechanisms, including Double Ratchet Algorithm, X3DH key agreement, and practical implementation guidance."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /signal-protocol-explained-for-developers/
 categories: [guides, encryption, security]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
