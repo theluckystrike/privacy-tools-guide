@@ -8,6 +8,7 @@ permalink: /chromebook-privacy-settings-for-students-2026/
 categories: [guides]
 reviewed: true
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -149,7 +150,7 @@ Students using personal Chromebooks can verify applied policies at `chrome://pol
 
 ## Advanced: Command-Line Privacy Tools
 
-Power users can leverage ChromeOS's Linux container for additional privacy tooling.
+Power users can use ChromeOS's Linux container for additional privacy tooling.
 
 ### Installing Privacy Tools
 
