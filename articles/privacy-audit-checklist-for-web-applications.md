@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Audit Checklist for Web Applications: A Developer"
-description: "A practical privacy audit checklist for web applications with implementation code. Covers data collection audit, consent management, encryption requirements, and compliance verification."
+description: "A practical privacy audit checklist for web applications with implementation code. Covers data collection audit, consent management, encryption."
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-audit-checklist-for-web-applications/
@@ -351,6 +351,11 @@ def run_compliance_checks():
 Run these checks periodically and maintain evidence of compliance for regulatory audits.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

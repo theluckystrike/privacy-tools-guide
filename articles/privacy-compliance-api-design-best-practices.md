@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Compliance API Design Best Practices"
-description: "A practical guide to building APIs that respect user privacy while meeting GDPR, CCPA, and other regulatory requirements. Includes code examples and implementation patterns."
+description: "A practical guide to building APIs that respect user privacy while meeting GDPR, CCPA, and other regulatory requirements. Includes code examples and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-api-design-best-practices/
@@ -303,6 +303,11 @@ Building privacy-compliant APIs requires systematic attention across your entire
 Building privacy into your API from the start costs less than retrofitting compliance onto an existing system. These patterns provide a foundation that scales with evolving regulations while protecting the users whose data you handle.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
