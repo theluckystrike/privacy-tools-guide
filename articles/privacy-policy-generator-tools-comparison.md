@@ -5,7 +5,7 @@ description: "A technical comparison of privacy policy generator tools for devel
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-policy-generator-tools-comparison/
-categories: [guides, privacy, compliance]
+categories: [guides]
 reviewed: true
 score: 8
 ---

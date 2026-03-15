@@ -6,7 +6,7 @@ description: "A technical comparison of CCPA and GDPR privacy regulations for de
 date: 2026-03-15
 author: theluckystrike
 permalink: /ccpa-vs-gdpr-comparison-guide-2026/
-categories: [guides, privacy, compliance]
+categories: [guides]
 reviewed: true
 score: 8
 ---

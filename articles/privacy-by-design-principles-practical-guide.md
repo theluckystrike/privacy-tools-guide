@@ -6,7 +6,7 @@ description: "Learn how to implement privacy by design principles in your applic
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-by-design-principles-practical-guide/
-categories: [guides, security, development]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---
