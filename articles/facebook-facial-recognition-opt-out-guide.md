@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Facebook Facial Recognition Opt-Out Guide: Complete Technical Walkthrough"
+title: "Facebook Facial Recognition Opt-Out Guide: Complete."
 description: "A developer-focused guide to understanding and disabling Facebook's facial recognition system. Includes API references, Graph Explorer examples, and programmatic methods for privacy-conscious users."
 date: 2026-03-15
 author: theluckystrike
@@ -134,6 +134,11 @@ These measures create defense-in-depth against unintended facial data collection
 
 ---
 
-**Built by theluckystrike** — More at [zovo.one](https://zovo.one)
+**
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+Built by theluckystrike** — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
