@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on configuring VP
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-accessing-youtube-in-china-without-buffering/
-categories: [guides, vpn, streaming]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

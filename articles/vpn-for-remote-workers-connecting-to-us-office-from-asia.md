@@ -6,7 +6,7 @@ description: "Learn how to set up a VPN for remote workers in Asia connecting to
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-remote-workers-connecting-to-us-office-from-asia/
-categories: [guides, vpn, remote-work]
+categories: [guides, workflows]
 ---
 
 {% raw %}
