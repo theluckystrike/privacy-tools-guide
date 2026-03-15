@@ -9,11 +9,12 @@ permalink: /how-does-bitwarden-encryption-work-zero-knowledge/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding how Bitwarden encryption works is essential for developers and power users evaluating password managers. Bitwarden's architecture implements a zero-knowledge security model, meaning the server never sees your master password or your decrypted vault data. This article examines the cryptographic mechanisms that make this possible.
+Bitwarden encrypts your vault with AES-256 using a key derived from your master password via PBKDF2 (600,000 iterations) or Argon2id -- and that key never leaves your device. The server stores only encrypted blobs and a hashed authentication token, so even a full server compromise cannot expose your passwords. Here is exactly how the zero-knowledge architecture works, from key derivation through authentication to sync.
 
 ## The Encryption Foundation
 
