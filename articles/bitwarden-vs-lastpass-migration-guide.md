@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Bitwarden vs LastPass Migration Guide: Complete Technical Walkthrough"
-description: "A practical guide for developers migrating from LastPass to Bitwarden. Covers CLI-based export/import, handling TOTP codes, custom fields, and automation scripts."
+title: "Bitwarden vs LastPass Migration Guide: Complete."
+description: "A practical guide for developers migrating from LastPass to Bitwarden. Covers CLI-based export/import, handling TOTP codes, custom fields, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /bitwarden-vs-lastpass-migration-guide/
-categories: [password-managers, security, migration]
+categories: [comparisons]
 reviewed: true
 score: 8
 intent-checked: true
@@ -257,6 +257,13 @@ docker run -d --name bitwarden \
   -p 8080:80 \
   bitwarden/self-host:latest
 ```
+
+
+## Related Reading
+
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
