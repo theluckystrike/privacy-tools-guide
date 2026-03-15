@@ -1,0 +1,13 @@
+title: "Privacy Tools Guide"
+url: "https://theluckystrike.github.io"
+baseurl: "/privacy-tools-guide"
+permalink: /:title/
+theme: minima
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: "articles"
+    values:
+      layout: default
