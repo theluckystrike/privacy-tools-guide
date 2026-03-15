@@ -6,7 +6,7 @@ description: "Learn how to store TOTP codes in your password manager for central
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-store-otp-codes-in-password-manager/
-categories: [guides, security, authentication]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
