@@ -9,12 +9,13 @@ permalink: /1password-secrets-automation-devops-guide/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Managing secrets across infrastructure, CI/CD pipelines, and deployment workflows represents one of the most critical challenges in DevOps. Rather than storing credentials in environment files, configuration repositories, or shared password spreadsheets, integrating 1Password into your automation pipelines provides centralized secret management with audit trails, access controls, and programmatic retrieval. This guide focuses on practical DevOps implementations using the 1Password CLI and Connect server for infrastructure automation, container orchestration, and continuous deployment scenarios.
+To automate secrets with 1Password in DevOps, create a dedicated vault, set up a service account with scoped permissions, then use the 1Password CLI (`op`) or Connect server to inject credentials into Terraform, Ansible, Kubernetes, or your CI/CD pipeline at runtime. This eliminates hardcoded credentials from repos and environment files while providing audit trails and access controls. Below are production-ready examples for each integration pattern.
 
 ## Setting Up 1Password for DevOps Automation
 
