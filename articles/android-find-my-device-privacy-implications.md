@@ -6,7 +6,7 @@ description: "A technical breakdown of Android's Find My Device feature, its dat
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-find-my-device-privacy-implications/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

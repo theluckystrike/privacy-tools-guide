@@ -6,7 +6,7 @@ description: "A comprehensive technical guide to configuring OneDrive privacy se
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-onedrive-privacy-settings-guide-2026/
-categories: [guides, privacy, windows]
+categories: [guides]
 reviewed: true
 score: 8
 ---

@@ -6,7 +6,7 @@ description: "A comprehensive checklist of Windows 10 privacy settings for devel
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-10-privacy-settings-complete-checklist/
-categories: [guides, windows, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
