@@ -5,7 +5,7 @@ description: "A technical comparison of encrypted VoIP solutions featuring self-
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-voip-app-with-encryption-2026/
-categories: [guides, security, guides]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

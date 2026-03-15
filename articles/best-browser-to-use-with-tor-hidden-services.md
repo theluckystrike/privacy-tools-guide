@@ -5,7 +5,7 @@ description: "A technical guide evaluating browsers for accessing Tor hidden ser
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-to-use-with-tor-hidden-services/
-categories: [guides, security, tor]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

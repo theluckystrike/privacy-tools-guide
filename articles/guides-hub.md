@@ -4,7 +4,7 @@ title: "Guides Hub"
 description: "Complete guide to guides topics — all articles in one place."
 date: 2026-03-15
 permalink: /guides-hub/
-categories: [hub]
+categories: [guides]
 reviewed: true
 score: 9
 ---
