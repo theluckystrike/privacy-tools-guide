@@ -5,7 +5,7 @@ description: "A technical breakdown of Facebook's data collection practices. Lea
 date: 2026-03-15
 author: theluckystrike
 permalink: /facebook-data-collection-what-they-track-2026/
-categories: [privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
