@@ -5,7 +5,7 @@ description: "A technical comparison of Firefox Focus and DuckDuckGo Browser for
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-focus-vs-duckduckgo-browser-comparison/
-categories: [guides, privacy, browser]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

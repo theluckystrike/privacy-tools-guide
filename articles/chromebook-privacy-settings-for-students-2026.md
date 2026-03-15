@@ -5,7 +5,7 @@ description: "A comprehensive guide to hardening ChromeOS privacy settings for s
 date: 2026-03-15
 author: theluckystrike
 permalink: /chromebook-privacy-settings-for-students-2026/
-categories: [guides, privacy, chromebook]
+categories: [guides]
 reviewed: true
 intent-checked: true
 ---

@@ -5,7 +5,7 @@ description: "Learn how to configure macOS Spotlight privacy settings to minimiz
 date: 2026-03-15
 author: theluckystrike
 permalink: /macos-spotlight-privacy-settings-disable-tracking/
-categories: [privacy, security, macos]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
