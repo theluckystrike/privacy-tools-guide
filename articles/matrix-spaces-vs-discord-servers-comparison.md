@@ -3,9 +3,11 @@ layout: default
 title: "Matrix Spaces vs Discord Servers: A Technical Comparison"
 description: "A comprehensive technical comparison of Matrix Spaces and Discord servers for developers and power users. Explore federation, encryption, API capabilities, and self-hosting options."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /matrix-spaces-vs-discord-servers-comparison/
 categories: [guides, security]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
