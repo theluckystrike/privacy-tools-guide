@@ -5,7 +5,7 @@ description: "A comprehensive guide to automating privacy compliance testing, co
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-testing-automation-guide-2026/
-categories: [guides, privacy, compliance, devops]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
