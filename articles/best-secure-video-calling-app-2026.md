@@ -5,7 +5,7 @@ description: "A practical guide to secure video conferencing solutions with end-
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-secure-video-calling-app-2026/
-categories: [guides, security, video-conferencing]
+categories: [guides, security, guides]
 reviewed: true
 score: 8
 ---

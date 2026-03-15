@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /briar-messenger-offline-mesh-review/
 reviewed: true
 score: 8
-categories: [reviews]
+categories: [comparisons]
 ---
 
 
