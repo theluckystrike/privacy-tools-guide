@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Encrypt Files Before Cloud Upload"
-description: "A practical guide for developers and power users on encrypting files before uploading to cloud storage. Covers age, gocryptfs, OpenSSL, and automated workflows."
+description: "A practical guide for developers and power users on encrypting files before uploading to cloud storage. Covers age, gocryptfs, OpenSSL, and automated."
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-encrypt-files-before-cloud-upload/
@@ -244,6 +244,12 @@ For most use cases, age provides the best balance of security and simplicity. If
 Encrypting files before cloud upload is a critical practice for privacy-conscious developers and power users. Age offers simplicity for single files, gocryptfs provides transparent directory encryption, and OpenSSL handles custom integrations. By implementing client-side encryption, you maintain true ownership of your data regardless of cloud provider policies or security incidents.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

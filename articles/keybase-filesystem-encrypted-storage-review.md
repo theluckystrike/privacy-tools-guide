@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Keybase Filesystem Encrypted Storage Review: A Technical Guide"
+title: "Keybase Filesystem Encrypted Storage Review: A Technical."
 description: "A practical review of Keybase's encrypted filesystem (KBFS) for developers and power users. Learn how KBFS provides end-to-end encryption for file storage."
 date: 2026-03-15
 author: theluckystrike
 permalink: /keybase-filesystem-encrypted-storage-review/
-categories: [reviews, encryption]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -143,6 +143,12 @@ Each alternative presents different tradeoffs between convenience, control, and 
 Keybase Filesystem provides a practical encrypted storage solution with solid cryptography and team collaboration features. The transparent filesystem interface reduces friction for users comfortable with command-line tools, while the team paper key system enables secure group workflows. Performance suits typical document and code storage use cases, though large-file workflows may encounter bandwidth limitations.
 
 For developers requiring encrypted file storage with team sharing capabilities, KBFS offers a viable option worth evaluating against your specific requirements and threat model.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
