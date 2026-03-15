@@ -1,10 +1,10 @@
 ---
 
 layout: default
-title: "Privacy by Design Principles: A Practical Guide for."
-description: "Learn how to implement privacy by design principles in your applications with concrete code examples and architectural patterns for developers and."
+title: "Privacy by Design Principles: A Practical Guide"
+description: "Learn how to implement privacy by design principles in your applications with concrete code examples and architectural patterns for developers and power users."
 date: 2026-03-15
-author: "Privacy Tools Guide"
+author: theluckystrike
 permalink: /privacy-by-design-principles-practical-guide/
 categories: [guides, security]
 reviewed: true
