@@ -5,6 +5,10 @@ description: "A technical guide to securing your online banking with VPN while t
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-online-banking-while-traveling-southeast-asia-safety/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
