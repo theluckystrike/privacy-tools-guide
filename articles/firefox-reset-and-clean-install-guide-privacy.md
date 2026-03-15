@@ -6,7 +6,7 @@ description: "Complete guide to resetting and performing a clean install of Fire
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-reset-and-clean-install-guide-privacy/
-categories: [guides, privacy, firefox]
+categories: [guides]
 reviewed: true
 score: 8
 ---

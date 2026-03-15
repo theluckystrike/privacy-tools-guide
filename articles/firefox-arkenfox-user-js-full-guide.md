@@ -6,7 +6,7 @@ description: "A comprehensive guide to Arkenfox user.js for Firefox. Learn how t
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-arkenfox-user-js-full-guide/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

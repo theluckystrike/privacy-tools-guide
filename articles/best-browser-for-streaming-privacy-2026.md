@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users comparing privacy
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-for-streaming-privacy-2026/
-categories: [guides, privacy, streaming]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

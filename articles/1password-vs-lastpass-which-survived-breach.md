@@ -6,7 +6,7 @@ description: "A technical comparison of how 1Password and LastPass responded to 
 date: 2026-03-15
 author: theluckystrike
 permalink: /1password-vs-lastpass-which-survived-breach/
-categories: [security, comparison]
+categories: [security, comparisons]
 reviewed: true
 score: 8
 ---

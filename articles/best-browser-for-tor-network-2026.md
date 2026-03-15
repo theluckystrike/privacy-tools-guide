@@ -5,6 +5,10 @@ description: "A comprehensive technical guide for developers and power users sel
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-for-tor-network-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

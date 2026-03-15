@@ -6,7 +6,7 @@ description: "Learn how browser fingerprinting works, why it threatens your priv
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-fingerprinting-what-it-is-how-to-block/
-categories: [privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

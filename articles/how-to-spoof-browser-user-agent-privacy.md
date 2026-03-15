@@ -6,7 +6,7 @@ description: "Learn how to spoof browser user agent strings to enhance privacy, 
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-spoof-browser-user-agent-privacy/
-categories: [privacy, security, guides]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

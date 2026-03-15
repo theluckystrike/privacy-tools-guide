@@ -6,7 +6,7 @@ description: "A practical comparison of Brave browser and Chrome battery consump
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-browser-battery-drain-vs-chrome-comparison/
-categories: [browsers, privacy, performance]
+categories: [guides]
 reviewed: true
 score: 8
 ---

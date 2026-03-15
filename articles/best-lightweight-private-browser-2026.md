@@ -5,7 +5,7 @@ description: "A technical comparison of lightweight privacy-focused browsers in 
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-lightweight-private-browser-2026/
-categories: [guides, security, browser]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

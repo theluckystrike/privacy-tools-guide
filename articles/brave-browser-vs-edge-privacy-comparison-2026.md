@@ -5,7 +5,7 @@ description: "A detailed privacy comparison between Brave Browser and Microsoft 
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-browser-vs-edge-privacy-comparison-2026/
-categories: [privacy, browsers, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
