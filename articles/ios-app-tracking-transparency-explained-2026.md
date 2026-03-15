@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "iOS App Tracking Transparency Explained 2026: A Developer and Power User Guide"
+title: "iOS App Tracking Transparency Explained 2026: A."
 description: "Understand how Apple's App Tracking Transparency framework works, how to implement it as a developer, and what options are available for users who want control over app tracking."
 date: 2026-03-15
 author: theluckystrike
@@ -171,6 +171,11 @@ For developers, implementing ATT correctly means building apps that respect user
 Understanding these mechanisms helps both developers build better, more trustworthy apps and users make informed decisions about their privacy on iOS.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

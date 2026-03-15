@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "macOS Spotlight Privacy Settings: Disable Tracking and Enhance Security"
+title: "macOS Spotlight Privacy Settings: Disable Tracking and."
 description: "Learn how to configure macOS Spotlight privacy settings to minimize tracking, prevent data leakage, and control what information is indexed and shared."
 date: 2026-03-15
 author: theluckystrike
@@ -190,5 +190,10 @@ Beyond Spotlight configuration, consider these complementary measures:
 - **Regular system audits**: Review privacy settings after macOS updates, which frequently reset preferences
 
 macOS provides robust privacy controls, but they require intentional configuration. By understanding how Spotlight indexes and exposes your data, you can make informed decisions about what remains searchable and what stays private.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

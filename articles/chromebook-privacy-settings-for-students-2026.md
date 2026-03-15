@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chromebook Privacy Settings for Students 2026"
-description: "A comprehensive guide to hardening ChromeOS privacy settings for students. Covers management console policies, DNS configuration, extension permissions, and command-line tools for power users."
+description: "A comprehensive guide to hardening ChromeOS privacy settings for students. Covers management console policies, DNS configuration, extension."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chromebook-privacy-settings-for-students-2026/
@@ -193,6 +193,11 @@ Review these settings periodically:
 ## Conclusion
 
 Chromebook privacy requires attention at multiple layers—from browser settings through network configuration to extension permissions. Students can significantly reduce their digital footprint without sacrificing functionality by methodically addressing each surface. For managed devices, coordinate with IT administrators to request privacy-preserving policies. Personal devices offer full control, making regular audits essential for maintaining privacy hygiene throughout the academic year.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

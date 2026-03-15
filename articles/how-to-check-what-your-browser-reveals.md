@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Check What Your Browser Reveals: A Developer Guide"
-description: "Learn how to check what your browser reveals to websites. Practical methods, code examples, and tools for developers to audit browser fingerprinting vectors."
+description: "Learn how to check what your browser reveals to websites. Practical methods, code examples, and tools for developers to audit browser fingerprinting."
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-check-what-your-browser-reveals/
@@ -266,6 +266,11 @@ Disable WebRTC in browser settings or use extensions that block the leak.
 Your browser reveals substantially more information than most users realize. By running the code examples above, you can audit exactly what websites see. The Navigator API exposes basic properties, WebGL reveals your GPU, canvas rendering creates unique hashes, and font detection exposes your installed typefaces.
 
 Understanding these fingerprinting vectors is essential for developers building privacy-conscious applications and for users who want to minimize their digital footprint. The methods shown here give you the tools to test, audit, and ultimately reduce what your browser reveals.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

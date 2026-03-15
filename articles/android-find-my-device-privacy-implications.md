@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Android Find My Device: Privacy Implications You Need to Know"
+title: "Android Find My Device: Privacy Implications You Need to."
 description: "A technical breakdown of Android's Find My Device feature, its data collection practices, and privacy considerations for developers and power users."
 date: 2026-03-15
 author: theluckystrike
@@ -139,6 +139,11 @@ For maximum privacy:
 - Review location data stored in your Google Account periodically
 
 Understanding these trade-offs helps you make informed decisions about enabling or continuing to use this feature. Privacy is about having the knowledge to choose what data you share and with whom.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
