@@ -5,6 +5,10 @@ description: "A comprehensive technical breakdown of iOS Journal app privacy set
 date: 2026-03-15
 author: theluckystrike
 permalink: /ios-journal-app-privacy-settings-explained/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

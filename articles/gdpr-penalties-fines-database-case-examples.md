@@ -6,7 +6,7 @@ description: "A practical guide to GDPR penalties, notable fines, real case exam
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-penalties-fines-database-case-examples/
-categories: [guides, privacy, compliance]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
