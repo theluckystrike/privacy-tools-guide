@@ -9,13 +9,14 @@ permalink: /totp-backup-codes-best-practices/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
 
 # TOTP Backup Codes Best Practices: A Developer's Guide
 
-TOTP (Time-based One-Time Password) authentication provides strong security for your accounts, but what happens when you lose access to your authenticator app? Backup codes remain your lifeline when your primary 2FA method becomes unavailable. This guide covers practical strategies for managing TOTP backup codes effectively.
+Store TOTP backup codes in an encrypted password manager with its own 2FA enabled, or on paper in a physically secured location like a safe -- never in plain text files, unencrypted cloud storage, or screenshots. Generate codes immediately during 2FA setup, test one code to confirm validity, and refresh your codes every 3-6 months. This guide covers the complete lifecycle: generation, secure storage options, usage tracking, and emergency access planning.
 
 ## Understanding Backup Code Security
 

@@ -8,10 +8,11 @@ permalink: /password-rotation-policy-best-practices-2026/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 {% raw %}
 
-Password rotation remains a cornerstone of security hygiene, but the ecosystem has shifted significantly. The old mandate of changing passwords every 90 days has given way to smarter, risk-based approaches. This guide covers what developers and power users need to implement effective password rotation in 2026.
+In 2026, best practice is risk-based rotation: rotate database passwords every 30-90 days, API keys every 60 days, and user passwords only after confirmed breaches or during yearly audits -- not on a fixed calendar schedule. Use dynamic secrets (HashiCorp Vault) for database credentials and automate API key rotation with expiration monitoring. This guide provides the complete rotation schedule by credential type, automation scripts, and monitoring configurations.
 
 ## Why Rotation Still Matters
 

@@ -9,11 +9,12 @@ permalink: /gdpr-pseudonymization-vs-anonymization-explained/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding the distinction between pseudonymization and anonymization is critical for building GDPR-compliant systems. Both techniques reduce data subject risk, but they carry different legal implications and implementation requirements. This guide provides a practical breakdown for developers working with personal data.
+Pseudonymization replaces identifiers with tokens while keeping a reversible mapping, so the data remains personal data under GDPR. Anonymization irreversibly transforms data so individuals cannot be re-identified, placing it outside GDPR's scope entirely. Choose pseudonymization when you need to preserve data relationships for internal analytics; choose anonymization when sharing data publicly or with untrusted parties. This guide covers implementation code for both approaches, including tokenization, k-anonymity, and differential privacy.
 
 ## What GDPR Says About These Terms
 

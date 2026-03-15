@@ -8,12 +8,13 @@ permalink: /gdpr-compliant-contact-form-implementation/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # GDPR Compliant Contact Form Implementation: A Technical Guide
 
-Building a contact form that meets GDPR requirements involves more than adding a checkbox. You need proper consent mechanisms, data minimization, clear retention policies, and the ability to handle data subject requests. This guide covers the technical implementation for developers and power users.
+To build a GDPR-compliant contact form, add a mandatory consent checkbox with specific purpose language, set a defined retention period (e.g., 30 days) with automatic deletion, and implement endpoints for data access and erasure requests. Below you will find working HTML, JavaScript, and Python code for each requirement, from consent capture through automated data cleanup.
 
 ## Core GDPR Requirements for Contact Forms
 

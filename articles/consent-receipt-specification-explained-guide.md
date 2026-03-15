@@ -9,11 +9,12 @@ permalink: /consent-receipt-specification-explained-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-The Consent Receipt Specification, developed by the Kantara Initiative, provides a standardized format for recording user consent in a machine-readable way. If you're building privacy-focused applications or need to comply with regulations like GDPR, CCPA, or similar frameworks, understanding this specification helps you implement consent management that actually works. This guide walks through the specification's structure, key components, and practical implementation examples.
+The Consent Receipt Specification is a JSON-based standard from the Kantara Initiative that records exactly what a user consented to, when, under which jurisdiction, and for which purposes -- giving you a machine-readable, cryptographically verifiable proof of consent for GDPR, CCPA, and similar compliance. To implement it, you generate a signed JSON document containing the subject identifier, issuer details, granular per-service consent records, and a cryptographic signature, then store it immutably as legal evidence. This guide walks through the full JSON structure, required fields, and working Python code for generating and verifying consent receipts.
 
 ## What the Consent Receipt Specification Provides
 

@@ -8,11 +8,12 @@ permalink: /gdpr-legitimate-interest-assessment-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding when and how to apply legitimate interest under GDPR is essential for building compliant applications. This guide provides developers and power users with a practical framework for conducting legitimate interest assessments, complete with code patterns you can implement in your projects.
+To conduct a GDPR legitimate interest assessment, apply the three-part test: identify a specific legitimate interest, confirm the processing is necessary (no less intrusive alternative exists), and balance your interest against the individual's privacy rights. This guide walks through each step with implementable code patterns, practical examples for analytics, fraud prevention, and email marketing, plus documentation templates that satisfy regulatory audits.
 
 ## What Is Legitimate Interest Under GDPR
 

@@ -8,11 +8,12 @@ permalink: /gdpr-joint-controller-agreement-template/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When two or more organizations determine the purposes and means of processing personal data together, they become joint controllers under the General Data Protection Regulation. This creates specific legal obligations that require a formal joint controller agreement. Understanding how to implement and manage these agreements is essential for developers building products that involve data sharing between parties.
+A GDPR joint controller agreement must define which party handles data subject requests, specify the data categories and processing purposes shared between controllers, allocate security responsibilities, and be made available to data subjects on request (Article 26). Below you will find a complete agreement template with the required elements, database schemas for tracking agreements, and Python validation code to enforce agreement checks before processing shared data.
 
 ## What Triggers Joint Controller Status
 

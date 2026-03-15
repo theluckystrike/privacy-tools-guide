@@ -8,10 +8,11 @@ permalink: /bitwarden-custom-fields-usage-guide/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
-Bitwarden custom fields represent one of the most powerful yet underutilized features in password management. While most users store simple username and password combinations, custom fields enable developers and power users to attach structured metadata to vault entries, creating sophisticated organization systems and enabling programmatic access to additional data.
+To use Bitwarden custom fields, open any vault item, scroll to the "Custom Fields" section, and click "Add Item" to create Text (visible metadata), Hidden (masked values like API keys), or Protected (extra-secure, non-searchable) fields. Custom fields let you store API keys, database connection strings, SSH configurations, and environment tags alongside your login credentials, and you can retrieve them programmatically via the Bitwarden CLI with `bw get item "name" | jq '.fields[]'`.
 
 ## What Are Custom Fields?
 

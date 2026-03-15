@@ -10,13 +10,14 @@ permalink: /gdpr-data-subject-access-request-template/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 # GDPR Data Subject Access Request Template
 
-The right of access—commonly called a Data Subject Access Request (DSAR)—is one of the most powerful tools GDPR gives individuals. As a developer building privacy-conscious applications, understanding how DSARs work and implementing robust handling for them is essential. This guide provides a practical template and implementation strategies for processing these requests efficiently.
+A GDPR Data Subject Access Request (DSAR) response must include all personal data you hold about the requester -- account records, activity logs, communications, and derived data -- plus metadata about your processing purposes, recipients, retention periods, and data sources, delivered within 30 days. This guide provides a ready-to-use response template, Python code for building automated DSAR processing pipelines, and a verification workflow to confirm requester identity before fulfilling requests.
 
 ## What Is a Data Subject Access Request?
 

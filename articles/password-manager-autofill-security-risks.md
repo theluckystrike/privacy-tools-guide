@@ -9,11 +9,12 @@ permalink: /password-manager-autofill-security-risks/
 categories: [security, guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Password managers have transformed how we handle authentication, but their autofill functionality introduces a nuanced attack surface that developers and security-conscious users must understand. While password managers encrypt your vault and protect your master password, the autofill mechanism operates in a fundamentally different trust model that attackers have increasingly exploited.
+The main security risks of password manager autofill are hidden-form credential theft (invisible login fields that capture autofilled data), XSS-based interception on legitimate domains, and overly broad browser extension permissions that grant access to every website. To mitigate these risks, disable automatic autofill in favor of user-triggered filling, implement strict Content Security Policy headers, and audit for hidden form elements. Below is a detailed breakdown of each attack vector with code examples and defensive strategies.
 
 ## Understanding the Autofill Attack Surface
 

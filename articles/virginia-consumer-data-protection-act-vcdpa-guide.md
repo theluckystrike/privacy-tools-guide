@@ -9,11 +9,12 @@ permalink: /virginia-consumer-data-protection-act-vcdpa-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-The Virginia Consumer Data Protection Act (VCDPA) represents one of the most comprehensive state privacy laws in the United States. Effective since January 1, 2023, it establishes clear requirements for businesses handling personal data of Virginia residents. For developers building applications that serve Virginia users, understanding VCDPA compliance is essential for avoiding legal pitfalls and protecting user privacy.
+The VCDPA applies to businesses that control or process personal data of 100,000+ Virginia consumers, or 25,000+ consumers while deriving over 50% of revenue from data sales. It requires you to implement six consumer rights (access, deletion, correction, portability, opt-out, and right to know), enforce data minimization, and maintain reasonable security measures -- with penalties up to $7,500 per violation. This guide provides the compliance requirements, working Python/Flask code for consumer rights endpoints, and implementation patterns for opt-out mechanisms and encrypted data storage.
 
 ## Who VCDPA Applies To
 
