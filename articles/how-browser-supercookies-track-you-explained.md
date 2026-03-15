@@ -157,6 +157,11 @@ If you're building web applications, understanding supercookie techniques helps 
 
 Supercookies represent an ongoing arms race between privacy advocates and tracking technologies. While browser vendors continue improving their protections, trackers find new vectors for persistent identification. The most effective defense remains using privacy-focused browsers, regularly auditing storage mechanisms, and supporting policies that limit abusive tracking practices. For developers, building privacy-respecting applications starts with understanding these techniques and choosing implementation approaches that respect user control over their own browsing data.
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

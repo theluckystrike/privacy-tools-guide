@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Firefox Arkenfox User.js Full Guide: Complete Privacy Hardening"
-description: "A comprehensive guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against tracking."
+title: "Firefox Arkenfox User.js Full Guide: Complete Privacy."
+description: "A comprehensive guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against."
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-arkenfox-user-js-full-guide/
@@ -196,6 +196,11 @@ Firefox Sync requires specific settings. Ensure `services.sync.enabled` is true 
 ## Conclusion
 
 Arkenfox user.js provides a robust foundation for hardening Firefox against tracking and data collection. By understanding each setting and maintaining your configuration, you gain significant privacy improvements without sacrificing browser functionality. Start with the defaults, customize gradually, and maintain your setup through regular updates.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
