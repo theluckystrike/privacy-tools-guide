@@ -5,7 +5,7 @@ description: "A technical comparison of Proton Drive and Tresorit for developers
 date: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-vs-tresorit-which-to-pick-2026/
-categories: [guides, security, cloud-storage]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

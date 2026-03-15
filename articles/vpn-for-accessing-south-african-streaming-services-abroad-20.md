@@ -5,7 +5,7 @@ description: "A technical guide to accessing South African streaming services fr
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-south-african-streaming-services-abroad-20/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 0
 intent-checked: false
