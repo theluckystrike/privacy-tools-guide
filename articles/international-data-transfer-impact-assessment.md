@@ -6,6 +6,10 @@ description: "A practical guide to conducting international data transfer impact
 date: 2026-03-15
 author: theluckystrike
 permalink: /international-data-transfer-impact-assessment/
+categories: [guides]
+tags: [privacy, tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

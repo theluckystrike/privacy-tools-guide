@@ -5,6 +5,10 @@ description: "Learn the essential privacy compliance requirements for fintech st
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-for-fintech-startups-2026/
+categories: [guides]
+tags: [privacy, tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

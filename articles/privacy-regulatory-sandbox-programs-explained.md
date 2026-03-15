@@ -5,6 +5,10 @@ description: "Learn how privacy regulatory sandbox programs work, their benefits
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-regulatory-sandbox-programs-explained/
+categories: [guides]
+tags: [privacy, tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
