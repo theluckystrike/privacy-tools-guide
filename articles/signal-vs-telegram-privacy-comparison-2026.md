@@ -5,7 +5,7 @@ description: "A technical deep-dive into Signal and Telegram's privacy architect
 date: 2026-03-15
 author: theluckystrike
 permalink: /signal-vs-telegram-privacy-comparison-2026/
-categories: [guides, security, messaging]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
