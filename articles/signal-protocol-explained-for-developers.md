@@ -8,11 +8,12 @@ permalink: /signal-protocol-explained-for-developers/
 categories: [guides, encryption, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-The Signal Protocol stands as the gold standard for end-to-end encrypted messaging. Used by Signal, WhatsApp, and Facebook Messenger, this protocol provides forward secrecy and post-compromise security through sophisticated cryptographic mechanisms. Understanding these mechanisms helps developers implement secure messaging systems or audit existing implementations.
+The Signal Protocol achieves end-to-end encryption by combining X3DH (Extended Triple Diffie-Hellman) for asynchronous initial key agreement with the Double Ratchet Algorithm for per-message forward and future secrecy -- meaning compromised keys reveal neither past nor future messages. For production use, integrate an established library like `libsignal` (Rust) or `libsignal-protocol-javascript` rather than implementing from scratch; the sections below walk through each cryptographic layer so you can audit implementations or understand the security guarantees you are depending on.
 
 ## Core Cryptographic Components
 
