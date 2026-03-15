@@ -5,7 +5,7 @@ description: "A practical comparison of encrypted cloud storage services with fr
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-cloud-storage-free-tier-2026/
-categories: [guides, security, cloud]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
