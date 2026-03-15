@@ -283,6 +283,7 @@ The arms race between privacy protection and tracking continues as both sides de
 
 ## Related Reading
 
+- [Remote Work Tools Guide](/remote-work-tools/){: .cross-repo-linked}
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 - [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
 - [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
