@@ -1,0 +1,238 @@
+---
+
+layout: default
+title: "How to Export Passwords from Any Manager: A Developer's Guide"
+description: "Learn how to export passwords from popular password managers including 1Password, Bitwarden, LastPass, KeePass, and Dashlane. Practical CLI methods and code examples for developers."
+date: 2026-03-15
+author: theluckystrike
+permalink: /how-to-export-passwords-from-any-manager/
+categories: [guides, security]
+reviewed: true
+score: 8
+---
+
+{% raw %}
+
+Moving between password managers or backing up your credentials requires understanding how each platform handles data export. Whether switching services, creating encrypted backups, or migrating to a new system, the export process varies significantly across managers. This guide covers practical methods for extracting your passwords from major password managers, with a focus on developer-friendly CLI approaches.
+
+## Why Export Your Passwords?
+
+Several legitimate scenarios require password export. Switching to a different password manager is the most common—you might prefer an open-source solution or need features unavailable in your current tool. Creating regular encrypted backups provides insurance against account lockouts or service outages. Developers building integration tools need programmatic access to credential data. Security researchers auditing password practices may need to analyze stored credentials.
+
+Whatever your reason, the export process should preserve your data in a usable format while maintaining security during transfer.
+
+## 1Password Export Methods
+
+1Password offers several export pathways depending on your plan and preferences.
+
+### Using the 1Password CLI
+
+The 1Password CLI provides the most flexible export capability. First, ensure you have the CLI installed and authenticated:
+
+```bash
+# Install on macOS
+brew install --cask 1password-cli
+
+# Authenticate with your account
+op signin
+```
+
+Export your vault items to JSON format:
+
+```bash
+# Export all items to JSON
+op vault export "Personal" --format json > passwords.json
+
+# Export specific item types
+op item list --vault "Personal" --format json | jq -r '.[].id' | while read id; do
+  op item get "$id" --format json
+done > export.json
+```
+
+The JSON output includes item UUIDs, titles, usernames, passwords, URLs, and custom fields. You can parse this data with standard tools like `jq` for further processing.
+
+### Exporting from the 1Password Web App
+
+Navigate to your vault in the web interface, select items, and choose "Export" from the actions menu. You can select CSV or 1PIF (1Password Interchange Format) as output formats. The CSV option provides broader compatibility, while 1PIF preserves more metadata.
+
+## Bitwarden Export Options
+
+Bitwarden's open-source nature makes export straightforward.
+
+### Web Vault Export
+
+In the web vault, access Settings > Export Data. You can choose between CSV and JSON formats. JSON preserves more detail including custom fields, totp secrets, and folder associations.
+
+### Using the Bitwarden CLI
+
+The Bitwarden CLI offers programmatic export:
+
+```bash
+# Install Bitwarden CLI
+npm install -g @bitwarden/cli
+
+# Login interactively
+bw login
+
+# Unlock your vault
+bw unlock
+
+# Export to JSON
+bw export --format json --output passwords.json
+```
+
+For automated scripts, you can use an API key:
+
+```bash
+BW_CLIENT_ID="your-client-id" BW_CLIENT_SECRET="your-secret" bw login --api
+
+# Then export with session
+bw unlock --passwordenv BW_PASSWORD
+```
+
+The exported JSON includes login items, secure notes, identities, and cards—each with full field data.
+
+## LastPass Export Procedures
+
+LastPass provides export functionality through its web interface and CLI tools.
+
+### Web Interface Export
+
+LastPass offers export under Account Settings > Export. The platform supports CSV export containing usernames, passwords, URLs, and notes. Navigate to the Advanced options section to access this functionality.
+
+### Using the LastPass CLI (lpass)
+
+The LastPass CLI provides more control:
+
+```bash
+# Install on macOS
+brew install lastpass-cli
+
+# Export all entries
+lpass export > passwords.csv
+
+# Export to JSON with better structure
+lpass export --json > passwords.json
+```
+
+Note that LastPass requires your master password for export. Some enterprise accounts may have export disabled by administrators.
+
+## KeePass and KeePassXC Export
+
+As open-source, local password managers, KeePass variants offer the most direct access to your data.
+
+### Direct Database Export
+
+KeePass stores passwords in `.kdbx` files. The format is encrypted, but you can export to multiple formats:
+
+```bash
+# Using keepassxc-cli (part of KeePassXC)
+keepassxc-cli export --format csv /path/to/database.kdbx passwords.csv
+
+# Usingkpcli for scripting
+kpcli --kdb=passwords.kdbx --export=passwords.csv
+```
+
+### Python Script for KeePass Export
+
+You can use the `pykeepass` library for programmatic access:
+
+```python
+from pykeepass import PyKeePass
+
+# Open your KeePass database
+kp = PyKeePass('passwords.kdbx', password='your-master-password')
+
+# Export all entries
+entries_data = []
+for entry in kp.entries:
+    entries_data.append({
+        'title': entry.title,
+        'username': entry.username,
+        'password': entry.password,
+        'url': entry.url,
+        'notes': entry.notes
+    })
+
+import json
+with open('export.json', 'w') as f:
+    json.dump(entries_data, f, indent=2)
+```
+
+This approach gives you complete control over the export format and allows filtering or transformation before saving.
+
+## Dashlane Export
+
+Dashlane provides export through its web interface and desktop applications.
+
+### Web Interface Export
+
+Access your Dashlane account through the web, navigate to Settings > Passwords > Export. You can choose between CSV and JSON formats. The export includes passwords, personal info, and payment methods depending on your selection.
+
+### Using the Dashlane CLI
+
+Dashlane's CLI tool supports export:
+
+```bash
+# Install dashlane-cli
+npm install -g dashlane-cli
+
+# Authenticate
+dcli login
+
+# Export passwords
+dcli export --format json > passwords.json
+```
+
+## Security Considerations
+
+Regardless of which manager you export from, handle the exported file carefully:
+
+- **Encrypt immediately**: Convert CSV exports to encrypted formats like GPG or use a password-protected ZIP
+- **Delete promptly**: Remove export files from disk after transferring to secure storage
+- **Use secure transfer**: Never send unencrypted password exports over unencrypted channels
+- **Rotate passwords**: After migration, generate new passwords for critical accounts
+- **Verify exports**: Check that your export contains all expected entries before deleting source data
+
+## Automating Regular Backups
+
+For developers wanting automated exports, create a scheduled script:
+
+```bash
+#!/bin/bash
+# backup-passwords.sh
+
+DATE=$(date +%Y%m%d)
+BACKUP_DIR="$HOME/password-backups"
+
+# Create backup directory if needed
+mkdir -p "$BACKUP_DIR"
+
+# Export Bitwarden (example)
+export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
+bw export --format json --file "backup-$DATE.json" --output "$BACKUP_DIR"
+
+# Encrypt the backup
+gpg -c "$BACKUP_DIR/backup-$DATE.json"
+rm "$BACKUP_DIR/backup-$DATE.json"
+
+# Keep only last 7 backups
+ls -t "$BACKUP_DIR"/*.gpg | tail -n +8 | xargs rm
+```
+
+Schedule this with cron for regular automated backups:
+
+```bash
+# Add to crontab - run daily at 2 AM
+0 2 * * * /path/to/backup-passwords.sh
+```
+
+## Conclusion
+
+Exporting passwords from any manager is straightforward once you understand the available methods. Most modern password managers support some form of export, with CLI tools providing the most flexibility for developers and power users. Always handle exported data with appropriate care—these files contain the keys to your digital life.
+
+The key steps are: identify your password manager, use the appropriate CLI or web interface, choose between CSV or JSON format based on your needs, encrypt the export immediately, and verify the data before deleting source copies. With proper handling, you can safely migrate between managers or maintain encrypted backups without compromising security.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
