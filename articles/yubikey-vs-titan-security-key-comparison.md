@@ -7,9 +7,10 @@ description: "A practical comparison of YubiKey and Titan Security Key for devel
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /yubikey-vs-titan-security-key-comparison/
+categories: [guides]
+tags: [tools]
 reviewed: true
 score: 8
-categories: [comparisons]
 ---
 
 

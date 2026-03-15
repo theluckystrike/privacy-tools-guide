@@ -7,9 +7,10 @@ description: "A technical comparison of TOTP and FIDO2 authentication methods. L
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /totp-vs-fido2-authentication-explained/
+categories: [guides]
+tags: [tools]
 reviewed: true
 score: 8
-categories: [comparisons]
 ---
 
 

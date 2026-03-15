@@ -6,7 +6,7 @@ description: "An in-depth analysis of security vulnerabilities in password manag
 date: 2026-03-15
 author: theluckystrike
 permalink: /password-manager-autofill-security-risks/
-categories: [security, privacy, password-managers]
+categories: [security, guides]
 reviewed: true
 score: 8
 ---
