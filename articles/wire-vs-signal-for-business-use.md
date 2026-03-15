@@ -5,7 +5,7 @@ description: "A developer-focused comparison of Wire and Signal for business com
 date: 2026-03-15
 author: theluckystrike
 permalink: /wire-vs-signal-for-business-use/
-categories: [guides, security, messaging]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

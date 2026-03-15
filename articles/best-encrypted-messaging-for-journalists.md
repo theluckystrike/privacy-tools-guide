@@ -5,7 +5,7 @@ description: "A developer-focused comparison of encrypted messaging apps for jou
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-messaging-for-journalists/
-categories: [guides, security, journalism]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

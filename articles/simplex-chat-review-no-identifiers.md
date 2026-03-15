@@ -5,6 +5,10 @@ description: "A technical deep dive into Simplex Chat's identifier-less messagin
 date: 2026-03-15
 author: theluckystrike
 permalink: /simplex-chat-review-no-identifiers/
+categories: [guides]
+tags: [privacy, tools]
+reviewed: true
+score: 8
 ---
 
 # Simplex Chat Review: No Identifiers Architecture Analysis
