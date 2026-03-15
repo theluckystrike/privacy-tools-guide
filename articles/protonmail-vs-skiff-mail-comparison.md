@@ -143,6 +143,30 @@ Here's how each service performs in typical developer scenarios:
 
 **Email filtering and rules:** ProtonMail offers robust filtering and labeling. Skiff's filtering is more basic but improving.
 
+## Privacy Policy and Jurisdiction
+
+### ProtonMail
+
+- **Headquarters**: Switzerland (strong privacy laws, outside 14 Eyes)
+- **Transparency**: Regular transparency reports, warrants must go through Swiss courts
+- **Data Retention**: Minimal; no access to user plaintext
+- **Legal Precedent**: Proven track record in Swiss courts
+
+### Skiff
+
+- **Headquarters**: United States (more vulnerable to surveillance requests)
+- **Transparency**: Publishes transparency reports
+- **Data Retention**: Minimal plaintext; encrypted data only
+- **Legal Precedent**: Less established; fewer precedent cases
+
+## Zero-Knowledge Verification
+
+For true privacy, you need zero-knowledge architecture—the service provider should not be able to access your plaintext content.
+
+**ProtonMail** achieves zero-knowledge through their Bridge and client-side encryption. When you enable "Protect against IP address" or use their onion service, even metadata is shielded. ProtonMail has a longer track record with published security audits and a mature key management system.
+
+**Skiff** claims zero-knowledge but the implementation differs. Your private key is encrypted with your password-derived key. This means if you forget your password, data is unrecoverable (good for security, bad for UX). Skiff cannot read your emails, but they do handle key distribution. The trade-off is slightly better UX than managing raw PGP keys.
+
 ## Decision Framework
 
 Choose **ProtonMail** if you need:
