@@ -10,6 +10,7 @@ categories: [security, comparisons]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -138,15 +139,15 @@ Never store exported vault data in plain text, regardless of which platform you'
 
 Based on the breach histories, several practices strengthen your security posture:
 
-**Use Secret Key functionality** if your password manager offers it. This additional factor protects against master password compromise scenarios.
+Use Secret Key functionality if your password manager offers it. This additional factor protects against master password compromise scenarios.
 
-**Enable two-factor authentication** on your password manager account. Hardware tokens like YubiKeys provide the strongest second factor.
+Enable two-factor authentication on your password manager account. Hardware tokens like YubiKeys provide the strongest second factor.
 
-**Review vault access regularly** and remove items you no longer need. Smaller vault sizes reduce the blast radius of any potential compromise.
+Review vault access regularly and remove items you no longer need. Smaller vault sizes reduce the blast radius of any potential compromise.
 
-**Consider compartmentalization** for high-value credentials. Some developers maintain separate vaults for work and personal use, or use different password managers for different sensitivity levels.
+Consider compartmentalization for high-value credentials. Some developers maintain separate vaults for work and personal use, or use different password managers for different sensitivity levels.
 
-**Monitor account activity** for both services. Both platforms provide login history and device management features that can alert you to unauthorized access attempts.
+Monitor account activity for both services. Both platforms provide login history and device management features that can alert you to unauthorized access attempts.
 
 ## Conclusion
 

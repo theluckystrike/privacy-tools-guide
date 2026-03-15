@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -57,10 +58,10 @@ The auth token is tied to your Google account, creating a direct link between yo
 
 Google's Find My Device collects several categories of data:
 
-1. **Precise location history**: Every location update gets stored on Google's servers
-2. **Device metadata**: Model, manufacturer, software version, and carrier information
-3. **Network information**: Wi-Fi SSIDs, BSSIDs, and Bluetooth device names
-4. **Account linkage**: Connection to your primary Google account
+1. Precise location history — every location update gets stored on Google's servers
+2. Device metadata — model, manufacturer, software version, and carrier information
+3. Network information — Wi-Fi SSIDs, BSSIDs, and Bluetooth device names
+4. Account linkage — connection to your primary Google account
 
 This data retention raises concerns for users seeking to minimize their digital footprint. Even when disabled, historical location data may persist on Google's servers.
 
@@ -122,9 +123,9 @@ Always minimize the location data you collect, store it securely, and provide cl
 
 Find My Device impacts your device in ways you might not expect:
 
-- **Battery drain**: Continuous location tracking, even in the background, consumes power
-- **Data usage**: Regular server communication consumes mobile data
-- **Network requests**: Your device maintains persistent connections to Google's services
+- Battery drain — continuous location tracking, even in the background, consumes power
+- Data usage — regular server communication consumes mobile data
+- Network requests — your device maintains persistent connections to Google's services
 
 Power users monitoring their network traffic may notice regular HTTPS connections to `android.googleapis.com` even when not actively using the feature. This is expected behavior as the service maintains readiness for remote commands.
 

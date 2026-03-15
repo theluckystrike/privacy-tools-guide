@@ -9,7 +9,7 @@ categories: [guides, security]
 reviewed: true
 score: 0
 intent-checked: true
-voice-checked: false
+voice-checked: true
 ---
 
 {% raw %}
@@ -142,9 +142,7 @@ fun shouldHideWorkNotifications(context: Context): Boolean {
 
 For users seeking maximum privacy, custom ROMs like GrapheneOS, CalyxOS, or DivestOS provide enhanced screen lock capabilities:
 
-- **GrapheneOS**: Default to strong biometric with no fallback, per-app authentication, and sandboxed Google Play compatibility
-- **CalyxOS**: Includes MicroG with limited Play Services, reducing background lock screen activity
-- **DivestOS**: Legacy device support with privacy-focused modifications
+GrapheneOS defaults to strong biometric with no fallback, supports per-app authentication, and maintains sandboxed Google Play compatibility. CalyxOS includes MicroG with limited Play Services, reducing background lock screen activity. DivestOS provides legacy device support with privacy-focused modifications.
 
 These ROMs often include additional lock screen hardening unavailable in stock Android, such as preventing screenshots and screen recording from the lock screen.
 
@@ -152,10 +150,7 @@ These ROMs often include additional lock screen hardening unavailable in stock A
 
 Physical device security depends on threat model. For most users, a 6-digit PIN combined with fingerprint provides reasonable convenience while maintaining security. For developers handling sensitive data or high-value targets:
 
-- Use strong alphanumeric passwords
-- Disable Smart Lock entirely
-- Enable USB debugging only when needed, then disable
-- Consider hardware security keys via NFC for critical authentication
+Use strong alphanumeric passwords and disable Smart Lock entirely. Enable USB debugging only when needed, then disable it afterward. Hardware security keys via NFC add another layer for critical authentication.
 
 Regularly audit your lock screen configuration, particularly after Android updates that may reset privacy settings. The lock screen represents the gateway to all device data—invest time in configuring it appropriately.
 

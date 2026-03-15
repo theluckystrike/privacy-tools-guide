@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -27,13 +28,13 @@ For developers, this distinction matters because secure notes often support cust
 
 When assessing password managers for secure notes capability, prioritize these technical considerations:
 
-**Encryption Architecture**: Zero-knowledge design ensures the service provider cannot read your notes. Verify the encryption happens client-side before data leaves your device.
+Encryption architecture matters most. Zero-knowledge design ensures the service provider cannot read your notes. Verify the encryption happens client-side before data leaves your device.
 
-**Field Types**: Look for support for custom fields, especially for developers storing API credentials with multiple parameters. Some managers offer specific field types like masked text for secrets.
+Look for support for custom field types, especially for developers storing API credentials with multiple parameters. Some managers offer specific field types like masked text for secrets.
 
-**File Attachments**: Maximum file size and supported formats vary significantly. If you need to store certificates, PGP keys, or backup files, check attachment limits.
+Maximum file attachment size and supported formats vary significantly. If you need to store certificates, PGP keys, or backup files, check attachment limits.
 
-**Search and Organization**: Secure notes should support tags, folders, and full-text search without compromising encryption performance.
+Secure notes should support tags, folders, and full-text search without compromising encryption performance.
 
 ## Bitwarden: Open-Source with Flexible Notes
 
@@ -85,7 +86,7 @@ op item create \
 
 Proton Pass includes secure notes through its "Note" item type, supporting custom fields for structured data. As part of the Proton ecosystem, it benefits from zero-knowledge encryption and Swiss-based data protection. The free tier includes unlimited notes and basic custom fields.
 
-For developers already using Proton services, the unified login and seamless integration across Mail, VPN, and Pass creates a cohesive privacy ecosystem. The CLI is less developed than Bitwarden's, but the browser extension and mobile apps provide solid access to secure notes.
+For developers already using Proton services, the unified login and integration across Mail, VPN, and Pass creates a cohesive privacy ecosystem. The CLI is less developed than Bitwarden's, but the browser extension and mobile apps provide solid access to secure notes.
 
 ## KeePassXC: Local Vault with Unlimited Flexibility
 
@@ -104,27 +105,21 @@ KeePassXC supports plugins for extended functionality, though the core applicati
 
 Secure notes excel at storing information beyond standard credentials:
 
-**API Configuration**: Store API endpoints, authentication tokens, and webhook URLs in structured custom fields. Using masked fields prevents accidental exposure during screen sharing.
+Store API endpoints, authentication tokens, and webhook URLs in structured custom fields. Using masked fields prevents accidental exposure during screen sharing.
 
-**SSH Keys**: While you should use ssh-agent for active sessions, backup copies of private keys in secure notes provide disaster recovery without compromising security.
+While you should use ssh-agent for active SSH sessions, backup copies of private keys in secure notes provide disaster recovery without compromising security.
 
-**Environment Configurations**: JSON or environment variable templates for different deployment environments—dev, staging, production—help maintain consistency across projects.
-
-**Software Licenses**: License keys, activation emails, and purchase information stored securely but accessible when needed for reinstallation.
-
-**Backup Codes**: Two-factor authentication backup codes belong in a secure note, not in a text file on your desktop.
+JSON or environment variable templates for different deployment environments—dev, staging, production—help maintain consistency across projects. License keys, activation emails, and purchase information stay accessible when needed for reinstallation. Two-factor authentication backup codes belong in a secure note, not in a text file on your desktop.
 
 ## Security Considerations
 
 Regardless of which password manager you choose, apply these practices for secure notes:
 
-**Master Password Strength**: Your secure notes inherit your master password's security. Use a passphrase of 4+ random words or 20+ characters with high entropy.
+Your secure notes inherit your master password's security. Use a passphrase of 4+ random words or 20+ characters with high entropy.
 
-**Two-Factor Authentication**: Enable 2FA on your password manager account. This protects your vault even if your master password is compromised.
+Enable 2FA on your password manager account. This protects your vault even if your master password is compromised. When exporting vault data, use encryption—never store plaintext exports on cloud storage.
 
-**Export Encryption**: When exporting vault data, use encryption. Never store plaintext exports on cloud storage.
-
-**Mobile Device Security**: Enable biometric unlock for mobile apps, but understand the security trade-offs. Biometric authentication supplements—does not replace—your master password.
+Enable biometric unlock for mobile apps, but understand the security trade-offs. Biometric authentication supplements—does not replace—your master password.
 
 ## Comparison Summary
 
