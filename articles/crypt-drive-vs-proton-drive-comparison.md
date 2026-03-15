@@ -5,7 +5,7 @@ description: "A comprehensive comparison of CryptDrive and ProtonDrive for priva
 date: 2026-03-16
 author: theluckystrike
 permalink: /crypt-drive-vs-proton-drive-comparison/
-categories: [comparisons, security, encrypted-storage]
+categories: [comparisons, security, guides]
 reviewed: true
 score: 7
 intent-checked: true
