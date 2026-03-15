@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on setting up VPN
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-using-whatsapp-calls-in-saudi-arabia-2026/
-categories: [guides, vpn, privacy]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
