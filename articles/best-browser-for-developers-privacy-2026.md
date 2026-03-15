@@ -5,7 +5,7 @@ description: "A developer-focused comparison of privacy-focused browsers in 2026
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-for-developers-privacy-2026/
-categories: [guides, privacy, security, browsers]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---
