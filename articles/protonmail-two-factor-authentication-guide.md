@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "ProtonMail Two-Factor Authentication Guide: Secure Your Email"
 description: "A comprehensive guide to setting up and using two-factor authentication with ProtonMail for enhanced email security."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /protonmail-two-factor-authentication-guide/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 
