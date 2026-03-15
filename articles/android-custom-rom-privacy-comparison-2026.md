@@ -5,7 +5,7 @@ description: "A developer-focused comparison of GrapheneOS, CalyxOS, LineageOS, 
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-custom-rom-privacy-comparison-2026/
-categories: [security, privacy, android]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
