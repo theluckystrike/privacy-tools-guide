@@ -4,7 +4,7 @@ layout: default
 title: "Briar Messenger Offline Mesh Review: Technical Deep Dive"
 description: "A technical review of Briar messenger's offline mesh networking capabilities for developers and power users."
 date: 2026-03-15
-author: "Privacy Tools Guide"
+author: "theluckystrike"
 permalink: /briar-messenger-offline-mesh-review/
 reviewed: true
 score: 8
