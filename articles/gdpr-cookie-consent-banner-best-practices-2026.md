@@ -6,7 +6,7 @@ description: "A practical developer guide to implementing GDPR-compliant cookie 
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-cookie-consent-banner-best-practices-2026/
-categories: [guides, privacy, compliance]
+categories: [guides, enterprise]
 reviewed: true
 score: 8
 intent-checked: true
