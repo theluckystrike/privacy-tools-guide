@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "ProtonMail Import Export Tool Guide: Complete Technical Reference"
 description: "A practical guide to importing and exporting emails in Proton Mail. Learn CLI methods, IMAP bridge configuration, migration scripts, and automation for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /protonmail-import-export-tool-guide/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 # ProtonMail Import Export Tool Guide: Complete Technical Reference
