@@ -1,5 +1,14 @@
-{% raw %}
 ---
+layout: default
+raw %}
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
+permalink: /vpn-warrant-canary-what-it-means/
+---
+
 
 layout: default
 title: "VPN Warrant Canary: What It Means and Why It Matters"
@@ -173,4 +182,4 @@ The key takeaway: verify canary dates, look for cryptographic signatures, and tr
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+
