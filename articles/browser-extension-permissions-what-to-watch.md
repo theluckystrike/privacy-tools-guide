@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -60,11 +61,11 @@ The `debugger` permission is extremely powerful—it allows an extension to atta
 
 Before installing any extension, examine its requested permissions carefully. Most browser extension stores display permissions before installation. Look for these red flags:
 
-**Unnecessary permissions:** A simple note-taking extension requesting `tabs` and `<all_urls>` access is suspicious. The core functionality should align with minimal permissions.
+A simple note-taking extension requesting `tabs` and `<all_urls>` access is suspicious — the core functionality should align with minimal permissions.
 
-**Vague justifications:** Review the extension's description and privacy policy. Legitimate developers explain why each permission is needed.
+Review the extension's description and privacy policy — legitimate developers explain why each permission is needed.
 
-**Low review counts:** New extensions with few downloads warrant extra caution. Established extensions with thousands of positive reviews are generally safer bets.
+New extensions with few downloads warrant extra caution. Established extensions with thousands of positive reviews are safer bets.
 
 ## Auditing Installed Extensions
 
@@ -89,13 +90,13 @@ This outputs all installed extensions with their permissions, making it easy to 
 
 If you're building browser extensions, follow these permission guidelines:
 
-**Request only necessary permissions:** Start with the minimum set and add more as needed. Users trust extensions that ask for less.
+Start with the minimum set and add more only as needed — users trust extensions that ask for less.
 
-**Use activeTab when possible:** Instead of `tabs`, prefer `activeTab` for actions triggered by user interaction. This dramatically reduces the extension's attack surface.
+Instead of `tabs`, prefer `activeTab` for actions triggered by user interaction. This dramatically reduces the extension's attack surface.
 
-**Document permissions clearly:** Include a clear explanation of why each permission is needed in your extension's store listing. Users appreciate transparency.
+Include a clear explanation of why each permission is needed in your extension's store listing — users appreciate transparency.
 
-**Implement optional permissions:** Make certain features work without optional permissions, allowing users to choose enhanced functionality without mandatory data access:
+Set up optional permissions to make certain features work without requiring them, letting users choose enhanced functionality without mandatory data access:
 
 ```json
 {
@@ -104,7 +105,7 @@ If you're building browser extensions, follow these permission guidelines:
 }
 ```
 
-**Use permission warnings:** Chrome and Firefox display warnings for sensitive permissions during installation. Don't ignore these warnings—reconsider your permission strategy if many warnings appear.
+Chrome and Firefox display warnings for sensitive permissions during installation — reconsider your permission strategy if many appear.
 
 ## Extension Permissions and Privacy
 
@@ -120,7 +121,6 @@ Browser extension permissions determine what data extensions can access and what
 
 Regular audits of installed extensions help maintain good security hygiene. For developers, requesting minimal permissions, using `activeTab`, and clearly documenting permission needs builds user trust.
 
-By understanding which permissions matter and which to watch carefully, you can enjoy browser extension functionality while maintaining control over your digital privacy.
 
 
 ## Related Reading

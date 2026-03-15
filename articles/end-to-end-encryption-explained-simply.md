@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -149,11 +150,11 @@ You should verify safety numbers in person or through a trusted channel when sta
 
 ## Common Misconceptions
 
-**"E2EE means the server can't see anything."** This is true for message content, but metadata remains. Server operators can see who communicates with whom, when, and how often—even if they can't read the messages.
+E2EE is often misread as meaning the server can't see anything. That's true for message content, but metadata remains — server operators can see who communicates with whom, when, and how often, even if they can't read the messages.
 
-**"End-to-end encrypted means perfectly secure."** Implementation matters. Poor random number generation, key management flaws, or compromised devices can break the encryption guarantees. Use well-audited libraries rather than implementing cryptography yourself.
+End-to-end encrypted does not mean perfectly secure. Implementation matters: poor random number generation, key management flaws, or compromised devices can break the encryption guarantees. Use well-audited libraries rather than implementing cryptography yourself.
 
-**"E2EE is only for messaging."** Any application handling sensitive data can benefit: file storage, note-taking, password managers, and video calls all use E2EE principles.
+E2EE is not only for messaging. Any application handling sensitive data can benefit: file storage, note-taking, password managers, and video calls all use E2EE principles.
 
 ## Key Takeaways
 

@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -70,11 +71,7 @@ Traditional cookie-based tracking relies on storing an identifier on your device
 
 This technique is particularly concerning because:
 
-1. It works across sessions without any persistent storage
-2. Private browsing modes provide minimal protection
-3. Users often do not know they are being fingerprinted
-4. It can track users across different websites without any visible indication
-5. Resisting fingerprinting can itself become a identifying feature
+Fingerprinting works across sessions without any persistent storage, and private browsing modes provide minimal protection. Users typically have no idea it is happening, and it can track them across websites without any visible indication. Perhaps most counterintuitively, actively resisting fingerprinting can itself become an identifying feature.
 
 ## How to Block Browser Fingerprinting
 
