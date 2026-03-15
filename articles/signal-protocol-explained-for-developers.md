@@ -5,7 +5,7 @@ description: "A developer-focused explanation of the Signal Protocol's cryptogra
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /signal-protocol-explained-for-developers/
-categories: [guides, encryption, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

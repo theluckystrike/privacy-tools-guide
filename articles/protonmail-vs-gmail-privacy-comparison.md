@@ -5,7 +5,7 @@ description: "A technical deep-dive comparing ProtonMail and Gmail privacy featu
 date: 2026-03-15
 author: theluckystrike
 permalink: /protonmail-vs-gmail-privacy-comparison/
-categories: [guides, privacy, email]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
