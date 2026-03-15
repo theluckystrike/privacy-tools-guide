@@ -1,17 +1,17 @@
 {
-  "total": 43,
+  "total": 50,
   "clusters": {
     "guides": {
-      "count": 29
+      "count": 33
     },
     "security": {
       "count": 1
     },
     "best-of": {
-      "count": 1
+      "count": 2
     },
     "comparisons": {
-      "count": 11
+      "count": 13
     },
     "uncategorized": {
       "count": 1
