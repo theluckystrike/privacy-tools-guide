@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "Best Password Manager with Secure Notes: A Technical Guide"
 description: "Compare password managers with encrypted notes functionality. Features, security models, and practical examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /best-password-manager-with-secure-notes/
 categories: [guides, security]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
