@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bitwarden Custom Fields Usage Guide"
-description: "A comprehensive guide to using Bitwarden custom fields for developers and power users. Learn how to organize credentials, automate workflows, and enhance password management."
+description: "A comprehensive guide to using Bitwarden custom fields for developers and power users. Learn how to organize credentials, automate workflows, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /bitwarden-custom-fields-usage-guide/
@@ -160,6 +160,13 @@ When sharing items through Bitwarden Send or organizational sharing, custom fiel
 Custom fields transform Bitwarden from a simple password manager into a comprehensive credential management system. By attaching structured metadata to vault entries, developers can maintain organized credential libraries, automate authentication workflows, and ensure consistent security practices across projects.
 
 The combination of different field types, CLI automation, and organized naming conventions creates a powerful system suitable for managing complex development environments, multiple service accounts, and sensitive infrastructure credentials.
+
+
+## Related Reading
+
+- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
