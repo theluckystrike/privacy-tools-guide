@@ -5,6 +5,10 @@ description: "Learn essential bookmark security practices for Tor Browser to pro
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-bookmark-safety-best-practices/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,7 +5,7 @@ description: "A comprehensive guide for troubleshooting Tor Browser connection i
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-connection-troubleshooting-guide/
-categories: [privacy, security, guides, tor]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

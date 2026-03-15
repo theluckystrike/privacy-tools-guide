@@ -5,7 +5,7 @@ description: "Learn how Tor Browser protects against font fingerprinting, the te
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-font-fingerprinting-protection/
-categories: [privacy, security, tor]
+categories: [guides, security]
 ---
 
 {% raw %}
