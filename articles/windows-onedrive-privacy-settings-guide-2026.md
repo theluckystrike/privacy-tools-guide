@@ -9,11 +9,12 @@ permalink: /windows-onedrive-privacy-settings-guide-2026/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-OneDrive integrates deeply with Windows, offering seamless cloud storage but also collecting significant telemetry data. For developers and power users who need control over their data, understanding and configuring these settings is essential. This guide provides practical methods to harden OneDrive privacy on Windows systems in 2026.
+To lock down OneDrive privacy on Windows in 2026, set the `TelemetryLevel` registry value to `1` at `HKCU:\Software\Microsoft\OneDrive`, disable personalized recommendations, and exclude sensitive file types like `.env`, `.pem`, and `.key` from sync. These three changes address the most significant data exposure risks. This guide walks through every privacy setting available through the GUI, registry, and PowerShell automation, with scripts you can deploy across multiple machines.
 
 ## Understanding OneDrive Data Collection
 
