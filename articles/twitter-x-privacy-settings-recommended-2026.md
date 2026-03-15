@@ -5,7 +5,7 @@ description: "Master Twitter X privacy settings in 2026 with this practical guid
 date: 2026-03-15
 author: theluckystrike
 permalink: /twitter-x-privacy-settings-recommended-2026/
-categories: [guides, privacy, social-media]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

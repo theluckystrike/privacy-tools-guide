@@ -5,7 +5,7 @@ description: "A technical comparison of Mastodon and Twitter's privacy mechanism
 date: 2026-03-15
 author: theluckystrike
 permalink: /mastodon-vs-twitter-privacy-comparison-2026/
-categories: [guides, social-media, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
