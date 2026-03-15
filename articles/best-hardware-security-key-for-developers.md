@@ -6,7 +6,7 @@ description: "A hands-on comparison of hardware security keys for developers. Ev
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-hardware-security-key-for-developers/
-categories: [guides, security, hardware, 2fa]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---
