@@ -9,6 +9,7 @@ categories: [best-of]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -34,11 +35,7 @@ Email aliases remain the most practical solution for everyday privacy. Instead o
 
 SimpleLogin provides email alias forwarding with open-source infrastructure. After Proton acquired it, the service maintains its commitment to privacy while integrating with the Proton ecosystem.
 
-**Key features:**
-- Unlimited aliases on paid plans
-- Catch-all domain support
-- PGP encryption for forwarded emails
-- Open-source browser extensions
+SimpleLogin offers unlimited aliases on paid plans with catch-all domain support, PGP encryption for forwarded emails, and open-source browser extensions.
 
 **API usage example:**
 
@@ -102,10 +99,7 @@ Proton Mail collects minimal user data and operates under Swiss privacy laws. Ac
 
 TutaNota operates from Germany with strong privacy protections. Their custom encryption protocol handles both email and contacts, though this creates interoperability challenges with PGP users.
 
-**Considerations for developers:**
-- No standard IMAP/SMTP on free tiers
-- Limited API access
-- Proprietary encryption limits external integration
+TutaNota lacks standard IMAP/SMTP on free tiers, offers limited API access, and its proprietary encryption limits external integration.
 
 ## Self-Hosted Solutions
 

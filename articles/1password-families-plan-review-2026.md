@@ -9,6 +9,7 @@ categories: [comparisons, security, guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -53,13 +54,7 @@ Item organization within vaults supports tags, favorites, and custom fields. For
 
 The sharing system in 1Password Families operates through what 1Password calls "sharing circles" and direct item sharing. When you share an item from your vault, recipients can view it with their own vault copy or access it directly from the shared vault.
 
-The sharing permissions are granular:
-
-- **View** — Recipients can see the item but cannot modify or copy
-- **Edit** — Recipients can modify the item, with changes syncing to all who have access
-- **Manage** — Recipients can share the item with others in the family
-
-For technical users, this permission system maps well to role-based access control patterns. A family member might receive View access to banking credentials, Edit access to streaming services, and Manage access to shared household accounts.
+The sharing permissions are granular. View access lets recipients see items without modifying or copying them. Edit access allows modifications that sync to everyone with access. Manage access extends sharing rights to other family members. This permission system maps well to role-based access control patterns—a family member might receive View access to banking credentials, Edit access to streaming services, and Manage access to shared household accounts.
 
 The sharing UI in the desktop and mobile apps makes these permissions clear, though the CLI requires explicit commands:
 
@@ -73,13 +68,7 @@ op share info "Netflix"
 
 ## Administrator Capabilities
 
-Family organizers have several administrative functions that differentiate the plan from individual accounts. These include:
-
-**Vault Recovery**: If a family member forgets their master password, the organizer can initiate recovery, resetting the password and providing access to the vault contents. This is crucial for families where technical support falls to one person.
-
-**Member Management**: Adding and removing family members, with the ability to transfer vault ownership before removal. The organizer can also view which devices each family member has authorized.
-
-**Security Alerts**: The organizer receives notifications when family members have compromised passwords detected by Watchtower, enabling proactive security outreach.
+Family organizers have several administrative functions that differentiate the plan from individual accounts. The organizer can initiate vault recovery if a family member forgets their master password, resetting the password and restoring access—crucial for families where technical support falls to one person. Member management covers adding and removing family members, transferring vault ownership before removal, and viewing which devices each member has authorized. The organizer also receives security alerts when Watchtower detects compromised passwords across family members, enabling proactive outreach.
 
 These features serve families well, though developers accustomed to enterprise directory integration might find the admin capabilities limited compared to 1Password Business.
 
