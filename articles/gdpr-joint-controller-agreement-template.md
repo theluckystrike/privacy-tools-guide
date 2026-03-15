@@ -129,7 +129,7 @@ const jointControllerAgreement = {
   ],
   processing: {
     purpose: "analytics_and_improvement",
-    categories: ["email", "ip_address", "usage_data"],
+    categories: [guides],
     legal_basis: "legitimate_interest"
   },
   timeline: {

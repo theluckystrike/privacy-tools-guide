@@ -5,6 +5,10 @@ description: "A practical guide to building APIs that respect user privacy while
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-api-design-best-practices/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

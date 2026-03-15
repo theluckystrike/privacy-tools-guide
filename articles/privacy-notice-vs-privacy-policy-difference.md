@@ -6,7 +6,7 @@ description: "A technical breakdown of privacy notices versus privacy policies. 
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-notice-vs-privacy-policy-difference/
-categories: [guides, privacy, compliance]
+categories: [guides]
 ---
 
 {% raw %}
