@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Jami P2P Messenger Review 2026: A Developer Guide to Decentralized Communication"
 description: "A technical review of Jami's peer-to-peer messaging capabilities, encryption, self-hosting options, and integration possibilities for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /jami-p2p-messenger-review-2026/
+reviewed: true
+score: 8
+categories: [reviews]
 ---
+
 
 {% raw %}
 
