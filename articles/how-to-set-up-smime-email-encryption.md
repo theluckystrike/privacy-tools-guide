@@ -8,11 +8,12 @@ permalink: /how-to-set-up-smime-email-encryption/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Email encryption remains one of the most effective ways to protect sensitive communications. While PGP encryption has dominated technical discussions, S/MIME (Secure/Multipurpose Internet Mail Extensions) offers a more standardized approach integrated directly into major email clients. This guide walks you through setting up S/MIME encryption from certificate generation to client configuration.
+To set up S/MIME email encryption, generate a certificate with OpenSSL (or obtain one from a public CA like DigiCert), export it to PKCS#12 format, and import it into your email client — Thunderbird, Apple Mail, and Outlook all have native S/MIME support with no plugins required. The full process takes about 15 minutes for a self-signed certificate or a few hours when waiting for CA validation, and this guide covers every step from key generation through client configuration and troubleshooting.
 
 ## Understanding S/MIME Fundamentals
 

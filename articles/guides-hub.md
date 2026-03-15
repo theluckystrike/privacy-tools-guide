@@ -7,11 +7,12 @@ permalink: /guides-hub/
 categories: [guides]
 reviewed: true
 score: 9
+intent-checked: true
 ---
 
 # Guides — Complete Guide Hub
 
-Everything you need to know about guides, curated and reviewed.
+Browse every privacy and security guide in one place — from VPN setup and password manager reviews to encrypted messaging comparisons and browser fingerprinting defense. Each article below is technically reviewed and scored for depth.
 
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 - [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)

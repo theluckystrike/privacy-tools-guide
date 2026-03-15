@@ -9,11 +9,12 @@ permalink: /how-browser-fingerprinting-works-explained/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Browser fingerprinting is a technique websites use to identify and track users by collecting attributes of their browser and device configuration. Unlike cookies, which can be deleted or blocked, fingerprinting creates a persistent identifier based on characteristics that are difficult to spoof without breaking functionality. Understanding how fingerprinting works helps developers build more private applications and empowers users to protect their privacy.
+Browser fingerprinting tracks you by combining your screen resolution, installed fonts, GPU model, audio processing quirks, and dozens of other browser attributes into a unique identifier — no cookies required. Because these signals come from APIs browsers must expose for normal functionality, fingerprints are far harder to block than cookies and can follow you across sessions, sites, and even different browsers on the same device. Below is a technical breakdown of each fingerprinting vector, with working code examples and practical defenses.
 
 ## What Makes Fingerprinting Possible
 

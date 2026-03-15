@@ -8,11 +8,12 @@ permalink: /how-secure-is-telegram-secret-chat-mode/
 categories: [guides, security]
 reviewed: true
 score: 7
+intent-checked: true
 ---
 
 {% raw %}
 
-Telegram's Secret Chat mode offers end-to-end encryption for messages, but understanding its actual security requires examining the protocol details and implementation. This analysis covers the cryptographic foundations, practical security properties, and limitations that developers and security-conscious users should understand.
+Telegram Secret Chat is genuinely end-to-end encrypted with forward secrecy, meaning message content is well-protected against interception — but it falls short of Signal in three important ways: it uses a less-audited custom protocol (MTProto 2.0), it does not encrypt metadata (Telegram sees who you talk to and when), and it does not support E2E-encrypted group chats. If message confidentiality is your only concern, Secret Chat is solid; if you also need metadata protection or an independently audited protocol, use Signal instead. Here is a full technical breakdown.
 
 ## Understanding Telegram's MTProto Protocol
 

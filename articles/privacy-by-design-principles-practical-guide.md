@@ -9,11 +9,12 @@ permalink: /privacy-by-design-principles-practical-guide/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Privacy by design means building privacy protections into your software from the ground up, rather than adding them as an afterthought. Originally formalized by Dr. Ann Cavoukian in the 1990s, these principles have become essential for developers handling user data. This guide covers the seven foundational principles with practical implementation strategies.
+Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed protections into your architecture, maintain full functionality alongside privacy, enforce end-to-end security across the data lifecycle, build transparency into your system, and keep user interests paramount. This guide provides concrete code examples and architectural patterns for each principle so you can apply them directly in your projects.
 
 ## The Seven Foundational Principles
 

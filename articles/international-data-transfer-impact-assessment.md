@@ -10,13 +10,12 @@ categories: [guides]
 tags: [privacy, tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When you build applications that serve users across borders, data inevitably flows between jurisdictions. Each transfer potentially subjects that data to different legal frameworks, surveillance regimes, and enforcement mechanisms. Understanding how to assess the impact of these transfers is essential for building compliant, trustworthy systems.
-
-This guide provides a practical framework for conducting international data transfer impact assessments, targeted at developers and power users who need to implement privacy-by-design principles in their projects.
+To conduct an international data transfer impact assessment, start by mapping every cross-border data flow in your infrastructure, then evaluate each transfer against the destination country's legal framework, surveillance powers, and available safeguards such as Standard Contractual Clauses (SCCs) or encryption. This structured assessment is required under GDPR Article 44 and increasingly expected by other privacy regulations worldwide. This guide provides a practical, step-by-step framework for developers and power users who need to implement these assessments in their projects.
 
 ## Understanding the Legal Framework
 

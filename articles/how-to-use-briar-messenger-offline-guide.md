@@ -9,12 +9,13 @@ permalink: /how-to-use-briar-messenger-offline-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Briar is a peer-to-peer encrypted messenger that works without internet connectivity, using Bluetooth and Wi-Fi Direct to form mesh networks between nearby devices. This guide covers practical setup and configuration for developers and power users who want to use Briar's offline capabilities. For a technical deep dive into Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
+To use Briar offline, install the app from F-Droid or Google Play, enable Bluetooth or Wi-Fi Direct in Settings, and add contacts by scanning QR codes or exchanging contact links while physically nearby. Briar then forms an encrypted mesh network between devices, delivering messages without any internet connection. This guide walks through each step in detail, from installation to advanced configuration. For a technical deep dive into Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
 
 ## Installation and Initial Setup
 
