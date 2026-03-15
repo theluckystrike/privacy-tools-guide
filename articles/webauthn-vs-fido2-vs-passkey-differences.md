@@ -9,10 +9,11 @@ permalink: /webauthn-vs-fido2-vs-passkey-differences/
 reviewed: true
 score: 8
 categories: [comparisons]
+intent-checked: true
 ---
 
 
-Understanding the relationship between WebAuthn, FIDO2, and passkeys requires distinguishing between standards, protocols, and consumer implementations. These three terms are often confused, but they represent distinct layers in the passwordless authentication stack.
+WebAuthn is the browser API for passwordless login, FIDO2 is the full protocol suite (WebAuthn plus the CTAP standard for communicating with hardware authenticators), and passkeys are the consumer-facing product built on FIDO2 that adds cross-device sync through iCloud Keychain, Google Password Manager, or Windows Hello. If you are a developer implementing passwordless auth, you work with the WebAuthn API; FIDO2 defines the underlying cryptographic protocol; and passkeys are what your end users actually interact with.
 
 ## What Is WebAuthn?
 

@@ -9,12 +9,13 @@ permalink: /signal-app-disappearing-messages-guide/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Signal App Disappearing Messages Guide: Technical Configuration for Power Users
 
-Signal's disappearing messages feature provides ephemeral communication for users who prioritize privacy. Unlike cloud backups that persist indefinitely, disappearing messages self-destruct after a configurable timer expires. This guide covers configuration methods, storage mechanics, and practical implementations for developers and power users managing Signal in personal or organizational contexts.
+To enable disappearing messages in Signal, open any conversation, tap the contact name at the top, select "Disappearing messages," and choose a timer between 30 seconds and 4 weeks. Messages then self-destruct on both devices after the timer expires, using cryptographic key deletion that makes recovery impossible. Below you will find detailed configuration steps for mobile, desktop, and Signal CLI, along with storage mechanics, security considerations, and automation scripts for organizational deployments.
 
 ## Understanding Disappearing Messages Architecture
 

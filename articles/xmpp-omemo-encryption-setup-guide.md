@@ -9,11 +9,12 @@ permalink: /xmpp-omemo-encryption-setup-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-End-to-end encryption protects your messages from being read by anyone except the intended recipient. For XMPP (Jabber) users, OMEMO provides this capability using the Double Ratchet Algorithm, offering forward secrecy and deniable authentication. This guide walks through setting up OMEMO on your XMPP client, managing your identity keys, and troubleshooting common issues.
+To set up OMEMO encryption on XMPP, install an OMEMO-capable client (Gajim on desktop: `sudo apt install gajim gajim-omemo`, or Conversations on Android), enable the OMEMO plugin in your account settings, then verify your contact's fingerprint through a separate trusted channel. Once enabled, your client automatically generates identity keys and handles per-message encryption with forward secrecy -- the detailed steps for each client, key management, and troubleshooting follow below.
 
 ## Understanding OMEMO Encryption
 
