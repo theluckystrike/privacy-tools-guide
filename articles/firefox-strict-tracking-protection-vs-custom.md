@@ -8,11 +8,12 @@ permalink: /firefox-strict-tracking-protection-vs-custom/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Firefox offers multiple approaches to blocking trackers, from the simple Strict preset to granular about:config tuning. For developers and power users, understanding the tradeoffs between these approaches helps you balance privacy, compatibility, and performance.
+Choose Firefox's Strict mode if you want maximum one-click tracker blocking and can tolerate occasional site breakage. Choose Custom mode if you need granular control over individual blocking categories—particularly useful for developers who must test their own sites while still blocking cross-site cookies, fingerprinters, and cryptominers. Below, we break down exactly what each approach blocks and provide ready-to-use about:config settings for power users.
 
 ## Understanding Firefox's Tracking Protection
 
