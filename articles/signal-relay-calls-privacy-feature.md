@@ -5,7 +5,7 @@ description: "Learn how Signal's relay calls feature protects your IP address du
 date: 2026-03-15
 author: theluckystrike
 permalink: /signal-relay-calls-privacy-feature/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

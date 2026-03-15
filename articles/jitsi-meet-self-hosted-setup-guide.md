@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /jitsi-meet-self-hosted-setup-guide/
 reviewed: true
 score: 8
-categories: [guides, self-hosted, video-conferencing]
+categories: [guides]
 ---
 
 {% raw %}

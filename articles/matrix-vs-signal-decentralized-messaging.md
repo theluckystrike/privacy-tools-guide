@@ -5,7 +5,7 @@ description: "A technical comparison of Matrix and Signal protocols for develope
 date: 2026-03-15
 author: theluckystrike
 permalink: /matrix-vs-signal-decentralized-messaging/
-categories: [guides, security, messaging]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
