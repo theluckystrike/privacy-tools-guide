@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Nextcloud Collabora Office Setup Guide: Complete Technical Implementation"
-description: "A complete technical guide for integrating Collabora Online with Nextcloud. Covers Docker deployment, reverse proxy configuration, SSL setup, and advanced security settings for developers and power users."
+title: "Nextcloud Collabora Office Setup Guide: Complete."
+description: "A complete technical guide for integrating Collabora Online with Nextcloud. Covers Docker deployment, reverse proxy configuration, SSL setup, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-collabora-office-setup-guide/
@@ -289,6 +289,12 @@ docker-compose up -d
 ```
 
 For production environments, consider the Collabora Enterprise subscription for additional support and features. The base self-hosted solution covered here provides solid functionality for most use cases.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

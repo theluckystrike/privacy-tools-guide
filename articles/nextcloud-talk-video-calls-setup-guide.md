@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Nextcloud Talk Video Calls Setup Guide: A Practical Resource."
-description: "Learn how to configure Nextcloud Talk for video calls. This guide covers server requirements, TURN/STUN setup, firewall configuration, and advanced settings for developers."
+title: "Nextcloud Talk Video Calls Setup Guide: A Practical."
+description: "Learn how to configure Nextcloud Talk for video calls. This guide covers server requirements, TURN/STUN setup, firewall configuration, and advanced."
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /nextcloud-talk-video-calls-setup-guide/
@@ -165,6 +165,12 @@ As usage grows, consider separating components onto dedicated infrastructure. Th
 For most small to medium deployments, a single well-configured server handles 50-100 concurrent users effectively. Monitor CPU and memory usage during peak hours to determine when scaling becomes necessary.
 
 Nextcloud Talk delivers capable video conferencing without sacrificing data sovereignty. With proper TURN server configuration and network setup, you gain a reliable communication platform under your complete control.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

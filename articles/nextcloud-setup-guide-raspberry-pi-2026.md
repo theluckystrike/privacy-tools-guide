@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Nextcloud Setup Guide Raspberry Pi 2026: Self-Hosted Cloud Storage"
-description: "A practical guide for setting up Nextcloud on Raspberry Pi in 2026. Covers Docker installation, reverse proxy configuration, performance tuning, and security hardening."
+title: "Nextcloud Setup Guide Raspberry Pi 2026: Self-Hosted."
+description: "A practical guide for setting up Nextcloud on Raspberry Pi in 2026. Covers Docker installation, reverse proxy configuration, performance tuning, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-setup-guide-raspberry-pi-2026/
@@ -400,6 +400,12 @@ docker exec --user www-data nextcloud_app php occ maintenance:mode --off
 Your Raspberry Pi now runs a fully functional Nextcloud instance with Docker, reverse proxy, caching, and security hardening. This setup provides private cloud storage with calendar sync, file sharing, and collaborative features—all under your control.
 
 Monitor system resources with `docker stats` and adjust PHP-FPM settings if you notice memory pressure. Regular backups and updates keep your instance secure and reliable.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -203,6 +203,12 @@ borg init --encryption=keyfile-chacha20poly1305 \
 
 For encrypted backups, both Restic and Borg deliver solid security with strong deduplication. Restic offers simpler cloud storage integration and a cleaner CLI, while Borg provides faster restores and more advanced repository management. Evaluate based on your storage backend, restore frequency, and whether you need cross-platform consistency. Test both with your actual data before committing to production use.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
