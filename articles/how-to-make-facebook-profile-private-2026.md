@@ -6,7 +6,7 @@ description: "Learn how to make your Facebook profile private in 2026 using the 
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-make-facebook-profile-private-2026/
-categories: [privacy, security, facebook]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

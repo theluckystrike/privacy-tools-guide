@@ -5,6 +5,10 @@ description: "Learn about privacy implications when using iOS Shortcuts automati
 date: 2026-03-15
 author: theluckystrike
 permalink: /ios-shortcuts-automation-privacy-considerations/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

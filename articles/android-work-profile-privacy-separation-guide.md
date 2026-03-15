@@ -5,7 +5,7 @@ description: "Learn how to implement and manage Android Work Profiles for comple
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-work-profile-privacy-separation-guide/
-categories: [guides, security, android]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
