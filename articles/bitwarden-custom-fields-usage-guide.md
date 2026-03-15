@@ -3,8 +3,11 @@ layout: default
 title: "Bitwarden Custom Fields Usage Guide"
 description: "A comprehensive guide to using Bitwarden custom fields for developers and power users. Learn how to organize credentials, automate workflows, and enhance password management."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /bitwarden-custom-fields-usage-guide/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}

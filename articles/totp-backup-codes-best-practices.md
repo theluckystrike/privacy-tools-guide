@@ -4,8 +4,11 @@ layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"
 description: "Learn essential best practices for generating, storing, and managing TOTP backup codes. Practical examples and security recommendations for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /totp-backup-codes-best-practices/
+reviewed: true
+score: 8
+categories: [best-of]
 ---
 
 {% raw %}
