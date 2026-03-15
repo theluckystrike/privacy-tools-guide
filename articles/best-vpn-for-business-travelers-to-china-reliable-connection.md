@@ -6,7 +6,7 @@ description: "A technical guide to configuring reliable VPNs for business travel
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-business-travelers-to-china-reliable-connection/
-categories: [guides, vpn, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
