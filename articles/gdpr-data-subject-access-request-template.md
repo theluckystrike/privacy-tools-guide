@@ -253,5 +253,10 @@ SELECT 'activity_log', user_id, NULL, created_at FROM activity_log WHERE user_id
 
 Implementing robust DSAR handling protects both your users and your organization. By building templates, automating data discovery, and following systematic processes, you can meet GDPR requirements while maintaining operational efficiency. The key is treating DSAR handling as an integral part of your data architecture rather than a compliance afterthought.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
