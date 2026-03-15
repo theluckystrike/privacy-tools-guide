@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "Tor Browser Connection Troubleshooting Guide"
-description: "A comprehensive guide for troubleshooting Tor Browser connection issues in 2026. Learn how to diagnose and resolve common connection problems, bridge configuration, and network-related issues."
+description: "A comprehensive guide for troubleshooting Tor Browser connection issues in 2026. Learn how to diagnose and resolve common connection problems, bridge."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-connection-troubleshooting-guide/
-categories: [privacy, security, guides, tor]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -237,6 +237,11 @@ If issues persist after trying these solutions:
 Most connection issues resolve with proper bridge configuration or firewall adjustments. Understanding your network environment is key to maintaining reliable Tor connectivity.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
