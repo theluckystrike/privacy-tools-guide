@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -63,7 +64,7 @@ openssl pkcs12 -in smime.p12 -nocerts -nodes -out smime-key.pem
 
 ## Configuring Thunderbird for S/MIME
 
-Mozilla Thunderbird provides robust S/MIME support with a straightforward configuration interface.
+Mozilla Thunderbird has native S/MIME support with a straightforward configuration interface.
 
 ### Importing Your Certificate
 
@@ -85,7 +86,7 @@ Thunderbird will automatically attach your public certificate to signed emails, 
 
 ## Apple Mail Configuration
 
-Apple Mail integrates S/MIME through the macOS Keychain, providing seamless encryption across Apple devices.
+Apple Mail integrates S/MIME through the macOS Keychain, enabling encryption across Apple devices without additional configuration.
 
 ### Importing to Keychain
 
@@ -152,11 +153,7 @@ openssl x509 -in smime.crt -noout -dates
 
 Your private key protects all encrypted communication. Follow these practices:
 
-- Never share your private key or PFX file
-- Store keys on hardware tokens (YubiKey, SmartCards) for production use
-- Use strong passwords when exporting PKCS#12 files
-- Backup your certificate and key in a secure location
-- Revoke certificates immediately if compromised
+Never share your private key or PFX file. Store keys on hardware tokens (YubiKey, SmartCards) for production use. Use strong passwords on PKCS#12 exports, back them up securely, and revoke immediately if compromised.
 
 ## Advanced: Certificate Automation with ACME
 
@@ -176,9 +173,7 @@ This approach enables automatic certificate renewal and deployment through confi
 
 ## Conclusion
 
-S/MIME provides enterprise-grade email encryption with native support across major email clients. While initial setup requires some effort, the resulting security for sensitive communications justifies the investment. Start with a self-signed certificate for testing, then transition to CA-issued certificates for production use.
-
-For developers, integrating S/MIME into automated workflows using tools like OpenSSL and acme.sh enables scalable deployment across organizations. The key is understanding your threat model and selecting appropriate certificate management strategies.
+Start with a self-signed certificate for testing, then obtain a CA-issued certificate for production. The setup is a one-time cost; renewed certificates slot into the same client configuration.
 
 
 ## Related Reading
