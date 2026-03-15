@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -281,7 +282,7 @@ location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
 
 ## Conclusion
 
-You now have a fully functional Collabora Online deployment integrated with Nextcloud. This setup provides secure, private document editing with real-time collaboration capabilities. Maintain your installation by regularly updating the Docker image:
+Maintain your installation by regularly updating the Docker image:
 
 ```bash
 docker-compose pull

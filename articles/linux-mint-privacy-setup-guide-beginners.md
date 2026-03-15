@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -211,9 +212,7 @@ This detects any modified system files—a useful check after installing softwar
 
 ## Summary
 
-These steps create a privacy-respecting Linux Mint installation without extreme measures. Firewall rules block unauthorized access, disk encryption protects data at rest, Firefox hardening reduces tracking, and AppArmor provides application sandboxing. Combine these with secure DNS and SSH practices, and your system achieves reasonable privacy for most use cases.
-
-Review these settings periodically—software updates may reset preferences or introduce new telemetry features. Automate security checks with cron jobs or systemd timers for continuous hardening.
+Combine these steps with secure DNS and SSH practices for a privacy-respecting Linux Mint installation that suits most use cases. Review settings periodically—software updates may reset preferences or introduce new telemetry features.
 
 
 ## Related Reading

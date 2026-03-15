@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -17,7 +18,7 @@ Spotlight search on macOS is one of the most powerful built-in features for quic
 
 ## What macOS Spotlight Collects and Indexes
 
-Spotlight builds a comprehensive index of your files, emails, messages, and application data to provide fast search results. By default, macOS indexes:
+Spotlight builds a full index of your files, emails, messages, and application data to provide fast search results. By default, macOS indexes:
 
 - **Files and folders** in your home directory and connected drives
 - **Mail messages** from Apple Mail, including headers and body content
@@ -32,7 +33,7 @@ This indexing creates a detailed map of your digital activity. When you search S
 
 ## Privacy Concerns with Default Spotlight Behavior
 
-The primary privacy concerns with Spotlight fall into several categories. First, **local data exposure** occurs when indexed sensitive documents (password files, financial records, medical information) become searchable. Second, **metadata leakage** happens when Spotlight caches information about your usage patterns, search history, and file access times. Third, **integration with Siri** means Apple may collect search queries to improve their services, though this can be disabled.
+The primary privacy concerns with Spotlight fall into several categories. Indexed sensitive documents—password files, financial records, medical information—become searchable through local data exposure. Spotlight also caches information about usage patterns, search history, and file access times. Finally, Apple may collect search queries through Siri integration to improve their services, though this can be disabled.
 
 For developers working with sensitive codebases or handling proprietary information, accidental indexing of credentials or API keys in configuration files represents a significant security risk. Security researchers have demonstrated scenarios where indexed sensitive data could be extracted through Spotlight-based attacks.
 
@@ -50,7 +51,7 @@ The most straightforward approach uses macOS System Settings:
 
 ### Method 2: Terminal Commands for Advanced Control
 
-For granular control, use Terminal to modify Spotlight behavior. These commands provide power users with fine-tuned privacy settings:
+Use Terminal to modify Spotlight behavior directly:
 
 ```bash
 # Disable Spotlight indexing entirely (aggressive privacy)
@@ -116,7 +117,7 @@ Developers should pay special attention to Spotlight indexing of project directo
 
 ### Recommended Exclusions for Developers
 
-Create a comprehensive exclusion list for development directories:
+Create an exclusion list for development directories:
 
 ```bash
 # Example exclusion paths for common sensitive directories
@@ -189,7 +190,7 @@ Beyond Spotlight configuration, consider these complementary measures:
 - **Full Disk Access restrictions**: Limit which applications can access your file system
 - **Regular system audits**: Review privacy settings after macOS updates, which frequently reset preferences
 
-macOS provides robust privacy controls, but they require intentional configuration. By understanding how Spotlight indexes and exposes your data, you can make informed decisions about what remains searchable and what stays private.
+macOS provides detailed privacy controls, but they require intentional configuration. By understanding how Spotlight indexes and exposes your data, you can make informed decisions about what remains searchable and what stays private.
 
 
 ## Related Reading
