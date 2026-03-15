@@ -3,7 +3,7 @@ layout: default
 title: "WebAuthn Implementation Guide for Developers"
 description: "A practical developer guide to implementing WebAuthn authentication. Code examples for registration, authentication, and best practices."
 date: 2026-03-15
-author: "Privacy Tools Guide"
+author: "theluckystrike"
 permalink: /webauthn-implementation-guide-developers/
 reviewed: true
 score: 8
@@ -11,7 +11,7 @@ categories: [guides]
 intent-checked: true
 ---
 
-To implement WebAuthn, generate a cryptographic challenge on your server, call `navigator.credentials.create()` for registration or `navigator.credentials.get()` for authentication on the client, then verify the signed response server-side against the stored public key. This guide provides copy-ready Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
+{% raw %}To implement WebAuthn, generate a cryptographic challenge on your server, call `navigator.credentials.create()` for registration or `navigator.credentials.get()` for authentication on the client, then verify the signed response server-side against the stored public key. This guide provides copy-ready Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
 
 ## Understanding WebAuthn Fundamentals
 
@@ -313,3 +313,4 @@ With proper implementation, you can offer users passwordless login via security 
 - [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
