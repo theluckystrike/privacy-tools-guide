@@ -155,4 +155,9 @@ For developers exploring decentralized systems, Briar offers a well-documented i
 
 The trade-offs are substantial but acceptable depending on threat model and use case. Briar is not a replacement for everyday communication—it excels in specific scenarios where infrastructure independence outweighs convenience. Understanding this distinction proves essential for proper deployment.
 
+
+## Related Reading
+
+- More guides coming soon.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
