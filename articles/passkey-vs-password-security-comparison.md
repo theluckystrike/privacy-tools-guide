@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /passkey-vs-password-security-comparison/
 reviewed: true
 score: 8
-categories: [passwords]
+categories: [guides]
 ---
 
 
