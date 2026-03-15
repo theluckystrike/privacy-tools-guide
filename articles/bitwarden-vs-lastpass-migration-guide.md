@@ -9,6 +9,7 @@ categories: [comparisons]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -78,7 +79,7 @@ grep -oP '(?<=TOTP: )[A-Z2-7]+=*' lastpass-export.csv > totp-seeds.txt
 
 ## Importing into Bitwarden
 
-Bitwarden's CLI handles imports elegantly:
+Bitwarden's CLI handles imports directly:
 
 ```bash
 # Login to Bitwarden

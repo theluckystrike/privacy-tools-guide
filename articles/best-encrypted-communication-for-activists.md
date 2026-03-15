@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /best-encrypted-communication-for-activists/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

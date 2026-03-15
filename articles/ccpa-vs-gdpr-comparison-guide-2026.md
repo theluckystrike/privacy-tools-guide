@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -189,19 +190,19 @@ CCPA penalties are $2,500 per unintentional violation and $7,500 per intentional
 
 For developers building applications that must comply with both regulations, here's a practical checklist:
 
-1. **Data Inventory**: Document all personal data you collect, where it flows, and how it's processed. This is essential for responding to access requests.
+1. Document all personal data you collect, where it flows, and how it's processed. This is the foundation for responding to access requests.
 
-2. **Request Handling Pipeline**: Build automated workflows for handling data subject requests. Users should be able to submit requests without creating an account if possible.
+2. Build automated workflows for handling data subject requests. Users should be able to submit requests without creating an account if possible.
 
-3. **Consent Management**: Implement a consent management platform or build custom consent tracking. Store consent proofs for GDPR compliance.
+3. Set up a consent management platform or build custom consent tracking. Store consent proofs for GDPR compliance.
 
-4. **Data Minimization**: Collect only what you need. Review your data models and remove unnecessary fields.
+4. Collect only what you need. Review your data models and remove unnecessary fields.
 
-5. **Retention Policies**: Define how long you keep each data type and implement automated cleanup.
+5. Define how long you keep each data type and set up automated cleanup.
 
-6. **Third-Party Audits**: Review all third-party services that process user data. Ensure data processing agreements are in place.
+6. Review all third-party services that process user data. Ensure data processing agreements are in place.
 
-7. **Breach Response Plan**: Document your breach notification procedures and test them regularly.
+7. Document your breach notification procedures and test them regularly.
 
 ## Practical Takeaways
 
