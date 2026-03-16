@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on detecting Blue
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/
-categories: [security, privacy, bluetooth]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

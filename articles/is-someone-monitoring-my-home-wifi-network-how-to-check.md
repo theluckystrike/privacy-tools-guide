@@ -6,7 +6,7 @@ description: "Learn how to detect if someone is monitoring your home WiFi networ
 date: 2026-03-16
 author: theluckystrike
 permalink: /is-someone-monitoring-my-home-wifi-network-how-to-check/
-categories: [security, privacy, networking]
+categories: [security, guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
