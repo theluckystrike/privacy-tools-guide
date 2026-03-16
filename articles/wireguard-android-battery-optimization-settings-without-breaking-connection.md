@@ -14,7 +14,7 @@ intent-checked: true
 
 {% raw %}
 
-WireGuard has become the go-to VPN protocol for developers and privacy-conscious users due to its minimal codebase and excellent performance. However, running WireGuard on Android presents a common challenge: balancing battery efficiency with connection stability. Android's aggressive battery optimization can kill VPN connections when the screen turns off, while disabling all battery restrictions defeats the purpose of mobile battery life. This guide provides practical configuration strategies to keep WireGuard running reliably on Android without excessive battery drain.
+Running WireGuard on Android presents a common challenge: balancing battery efficiency with connection stability. Android's aggressive battery optimization can kill VPN connections when the screen turns off, while disabling all battery restrictions defeats the purpose of mobile battery life. This guide provides practical configuration strategies to keep WireGuard running reliably on Android without excessive battery drain.
 
 ## Understanding Android's Battery Management
 

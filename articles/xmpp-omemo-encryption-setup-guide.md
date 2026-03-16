@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -119,14 +120,6 @@ OMEMO protects message content but reveals metadata. Your server knows who commu
 Additionally, OMEMO does not encrypt group chat metadata (who is in the room). The actual messages are encrypted, but membership information remains visible to the server and other members.
 
 Regularly rotate your pre-keys through your client's settings. Most clients handle this automatically, but periodic manual verification of critical contacts remains good practice.
-
-## Conclusion
-
-Setting up OMEMO encryption transforms your XMPP communications into genuinely private conversations. The initial fingerprint verification requires effort, but the security guarantees—forward secrecy, deniable authentication, and multi-device support—make it worthwhile for developers and power users handling sensitive information.
-
-Once configured, OMEMO works transparently in the background. Your messages remain readable only by intended recipients, regardless of server compromises or eavesdropping attempts.
-
-Start with one trusted contact, verify fingerprints, and expand from there. The setup overhead pays dividends in communication security.
 
 ---
 

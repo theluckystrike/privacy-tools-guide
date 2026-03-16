@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [comparisons]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -138,7 +139,7 @@ The key decision point is whether to require attestation. Attestation lets you e
 
 ## Summary
 
-WebAuthn provides the browser API, FIDO2 defines the protocol, and passkeys deliver the user experience. For authentication, WebAuthn and FIDO2 are essentially synonymous at the technical level—WebAuthn is the web-facing part, FIDO2 encompasses both web and native authenticator communication.
+WebAuthn provides the browser API, FIDO2 defines the protocol, and passkeys deliver the user experience. For authentication, WebAuthn and FIDO2 are synonymous at the technical level—WebAuthn is the web-facing part, FIDO2 encompasses both web and native authenticator communication.
 
 Passkeys add synchronization and discoverability on top of FIDO2, making credentials practical for everyday use. The standards are mature and browser support is excellent across Chrome, Firefox, Safari, and Edge. If you're building a new application, WebAuthn with passkey support represents the strongest authentication path available today.
 

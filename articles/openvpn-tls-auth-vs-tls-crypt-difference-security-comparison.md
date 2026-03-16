@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Choose `tls-crypt` if you need maximum security -- it encrypts and authenticates the entire TLS handshake, hiding your server from fingerprinting scans and providing strong DoS protection. Choose `tls-auth` only if you need backward compatibility with older OpenVPN versions, since it adds HMAC authentication to the handshake but leaves the TLS fingerprint visible to network observers. For any new OpenVPN deployment, `tls-crypt` is the recommended option.
@@ -108,9 +109,7 @@ Note that `tls-crypt` does not use a direction parameter—both sides use the sa
 
 Consider an attacker performing reconnaissance on your VPN infrastructure:
 
-- **With tls-auth**: The attacker sees the TLS handshake and can fingerprint your OpenSSL version, cipher suites, and potentially identify vulnerabilities in your TLS implementation.
-
-- **With tls-crypt**: The attacker cannot determine that a VPN server exists. The encrypted packet appears as random data, revealing nothing about your configuration.
+With tls-auth, the attacker sees the TLS handshake and can fingerprint your OpenSSL version, cipher suites, and potentially identify vulnerabilities in your TLS implementation. With tls-crypt, the attacker cannot determine that a VPN server exists — the encrypted packet appears as random data, revealing nothing about your configuration.
 
 For TLS handshakes, `tls-crypt` provides superior security by eliminating the attack surface entirely.
 
@@ -118,9 +117,7 @@ For TLS handshakes, `tls-crypt` provides superior security by eliminating the at
 
 Both methods use pre-shared keys, but with different implications:
 
-- **tls-auth**: Key compromise allows attackers to sign packets and trigger TLS processing. However, they cannot decrypt traffic without breaking TLS.
-
-- **tls-crypt**: Key compromise is more severe—an attacker can both authenticate and decrypt the initial packet, potentially enabling more sophisticated attacks.
+With tls-auth, key compromise allows attackers to sign packets and trigger TLS processing, but they cannot decrypt traffic without breaking TLS. With tls-crypt, key compromise is more severe — an attacker can both authenticate and decrypt the initial packet, potentially enabling more sophisticated attacks.
 
 In both cases, rotate keys regularly and protect them with appropriate file permissions (chmod 600 ta.key).
 

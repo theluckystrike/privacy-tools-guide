@@ -10,13 +10,14 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Verify your VPN traffic is encrypted by running `sudo tcpdump -i eth0 -A port 80 | grep -i "GET\|POST\|Host:"` on your physical interface while connected -- a properly working VPN produces no readable output. Capture traffic on both your physical interface (eth0/en0) and VPN tunnel interface (tun0/wg0), then compare: encrypted traffic appears as random bytes with no readable HTTP headers, domain names, or application data.
 
 ## Understanding VPN Encryption Verification
 
-Before diving into tcpdump commands, you need to understand what to look for. A properly encrypted VPN tunnel wraps your original traffic in a cryptographic protocol—typically WireGuard, OpenVPN, or IKEv2/IPSec. When you inspect packets leaving your device, encrypted traffic should appear as unreadable data to any observer without the decryption keys.
+To use tcpdump effectively, you need to understand what to look for. A properly encrypted VPN tunnel wraps your original traffic in a cryptographic protocol—typically WireGuard, OpenVPN, or IKEv2/IPSec. When you inspect packets leaving your device, encrypted traffic should appear as unreadable data to any observer without the decryption keys.
 
 The verification process involves capturing traffic before it enters the VPN tunnel and comparing it to traffic after encryption. If plaintext content remains visible, your VPN configuration has a leak or misconfiguration.
 

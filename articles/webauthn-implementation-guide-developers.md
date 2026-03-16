@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}To implement WebAuthn, generate a cryptographic challenge on your server, call `navigator.credentials.create()` for registration or `navigator.credentials.get()` for authentication on the client, then verify the signed response server-side against the stored public key. This guide provides copy-ready Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
@@ -298,13 +299,6 @@ Always serve WebAuthn pages over HTTPS. The WebAuthn API is only available in se
 Implement rate limiting on registration and authentication endpoints to prevent abuse. Monitor for duplicate credential registrations from the same authenticator.
 
 Store public keys with appropriate access controls. While public keys aren't secret, they should be protected against modification.
-
-## Conclusion
-
-WebAuthn provides strong, phishing-resistant authentication without passwords. The implementation requires careful attention to challenge management, signature verification, and credential storage. Start with a reputable library for your language—implementing crypto from scratch introduces security risks.
-
-With proper implementation, you can offer users passwordless login via security keys, platform authenticators, or biometric devices, significantly improving your application's security posture.
-
 
 ## Related Reading
 

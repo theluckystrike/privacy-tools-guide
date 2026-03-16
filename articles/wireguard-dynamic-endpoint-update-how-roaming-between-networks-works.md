@@ -13,9 +13,7 @@ voice-checked: true
 
 # WireGuard Dynamic Endpoint Update: How Roaming Between Networks Works
 
-WireGuard's lightweight protocol design makes it exceptionally well-suited for devices that move between networks. Whether you're managing a laptop that transitions between WiFi and cellular, a vehicle roaming between cell towers, or a remote worker switching between home office and coffee shop, understanding how WireGuard handles dynamic endpoint updates ensures uninterrupted connectivity.
-
-This guide explains the technical mechanisms WireGuard uses for network roaming and provides configuration strategies for maintaining stable VPN connections across network transitions.
+WireGuard's lightweight protocol design makes it well-suited for devices that move between networks. Whether you're managing a laptop that transitions between WiFi and cellular, a vehicle roaming between cell towers, or a remote worker switching between home office and coffee shop, understanding how WireGuard handles dynamic endpoint updates ensures uninterrupted connectivity.
 
 ## How WireGuard Handles Network Roaming
 
@@ -134,11 +132,7 @@ Mobile devices present unique challenges for VPN roaming due to frequent IP chan
 
 For applications requiring zero disruption during network transitions:
 
-**1. Connection Pooling:** Maintain multiple WireGuard tunnels across different interfaces. When one path fails, traffic immediately switches to another.
-
-**2. Retransmission Tolerance:** Configure application-layer protocols to handle packet loss gracefully. WireGuard's UDP-based design means dropped packets require retransmission at the application layer.
-
-**3. Graceful Degradation:** Implement network quality detection. When cellular signal weakens (before the actual handoff), preemptively establish connections on available WiFi networks.
+Connection pooling maintains multiple WireGuard tunnels across different interfaces so that when one path fails, traffic immediately switches to another. Configure application-layer protocols to handle packet loss gracefully, since WireGuard's UDP-based design means dropped packets require retransmission at the application layer. Implement network quality detection for graceful degradation — when cellular signal weakens before the actual handoff, preemptively establish connections on available WiFi networks.
 
 ### Mobile Carrier Considerations
 
@@ -302,9 +296,7 @@ This efficiency matters during network transitions when packets may be retransmi
 
 Network transition latency depends on several factors:
 
-- **Keepalive interval:** Lower values detect connection loss faster but increase traffic
-- **Application timeout:** How quickly applications detect and recover from packet loss
-- **Network type:** WiFi-to-cellular transitions typically take longer than WiFi-to-WiFi
+Keepalive interval affects how quickly connection loss is detected — lower values are faster but increase traffic. Application timeout determines how quickly applications detect and recover from packet loss. Network type also matters, since WiFi-to-cellular transitions typically take longer than WiFi-to-WiFi.
 
 Applications should implement reconnection logic that tolerates 5-30 second interruptions without user-visible errors.
 
