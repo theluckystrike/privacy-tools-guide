@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -26,7 +27,7 @@ Tor Browser isolates your browsing into distinct circuit paths, but bookmarks li
 - **Timestamps**: Access patterns visible in bookmark modification dates
 - **Sync metadata**: If enabled, bookmarks sync to external servers
 
-For developers building privacy-focused tooling, understanding these vectors helps create more robust solutions.
+For developers building privacy-focused tooling, understanding these vectors helps create better solutions.
 
 ## Strategic Bookmark Organization
 
@@ -239,11 +240,7 @@ if __name__ == "__main__":
 
 ## Common Mistakes to Avoid
 
-1. **Bookmarking login pages**: Any bookmark to an authenticated page reveals your account existence
-2. **Using browser sync**: Tor Browser sync sends metadata to Mozilla servers
-3. **Keeping old bookmarks**: Review and delete inactive bookmarks quarterly
-4. **Bookmarking from clearnet then using Tor**: Timing correlation between clearnet and Tor access
-5. **Revealing folder hierarchy**: Deep nested folders create behavioral fingerprints
+Avoid bookmarking login pages — any such bookmark reveals your account existence. Tor Browser sync sends metadata to Mozilla servers, so disable it. Delete inactive bookmarks quarterly rather than letting them accumulate. Bookmarking a URL on clearnet and then accessing it through Tor creates timing correlation. Deep nested folder hierarchies also create behavioral fingerprints, so keep your structure flat and generic.
 
 ## Quick Reference Checklist
 

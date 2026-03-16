@@ -6,6 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /syncthing-setup-guide-private-file-sync/
 categories: [guides]
+voice-checked: true
 ---
 
 {% raw %}
@@ -239,15 +240,7 @@ launchctl load ~/Library/LaunchAgents/com.github.xor-gate.syncthing.plist
 
 ## Troubleshooting Common Issues
 
-**Devices won't connect**: Verify both devices have the correct Device ID added and that firewalls allow port 22000. Check that at least one folder is shared between the devices.
-
-**Files not syncing**: Examine the .stignore file for patterns that might be blocking files. Check the Syncthing log for specific error messages.
-
-**High CPU usage**: Reduce the number of concurrent file operations in Settings → Advanced → Max Concurrent Items.
-
-## Conclusion
-
-Syncthing provides a powerful, privacy-focused alternative to cloud storage for synchronizing files across your devices. By running on your own hardware with peer-to-peer transfers, you maintain complete control over your data. The setup process takes only a few minutes, and the web interface makes ongoing management straightforward. Whether you're syncing code repositories, sensitive documents, or media files, Syncthing handles it all without subscription fees or vendor lock-in.
+If devices won't connect, verify both have the correct Device ID added and that firewalls allow port 22000. At least one folder must be shared between them. If files aren't syncing, check the `.stignore` file for patterns that block them, then review the Syncthing log for specific error messages. High CPU usage can be reduced by lowering the concurrent file operation limit in Settings → Advanced → Max Concurrent Items.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
