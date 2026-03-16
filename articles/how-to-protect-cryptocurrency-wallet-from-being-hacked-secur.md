@@ -5,7 +5,7 @@ description: "A practical security guide for developers and power users on prote
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/
-categories: [guides, security, cryptocurrency]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

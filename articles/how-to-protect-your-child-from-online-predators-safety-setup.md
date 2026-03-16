@@ -6,7 +6,7 @@ description: "A practical technical guide for developers and power users to prot
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-your-child-from-online-predators-safety-setup/
-categories: [guides, security, family-safety]
+categories: [guides, security]
 voice-checked: true
 ---
 

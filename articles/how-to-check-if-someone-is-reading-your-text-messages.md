@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on detecting SMS 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-someone-is-reading-your-text-messages/
-categories: [guides, security, mobile]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

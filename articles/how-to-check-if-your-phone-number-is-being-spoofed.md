@@ -5,7 +5,7 @@ description: "Learn technical methods to detect if your phone number is being sp
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-phone-number-is-being-spoofed/
-categories: [privacy, security]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

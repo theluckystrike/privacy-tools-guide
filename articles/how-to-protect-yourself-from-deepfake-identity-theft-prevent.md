@@ -6,7 +6,7 @@ description: "Learn practical strategies to protect yourself from deepfake ident
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-protect-yourself-from-deepfake-identity-theft-prevent/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
