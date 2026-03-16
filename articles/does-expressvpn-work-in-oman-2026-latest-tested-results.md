@@ -6,7 +6,7 @@ description: "Comprehensive technical guide testing VPN connectivity in Oman. In
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-expressvpn-work-in-oman-2026-latest-tested-results/
-categories: [vpn-testing, privacy-tools]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
