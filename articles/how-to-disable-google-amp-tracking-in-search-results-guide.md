@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Disable Google AMP Tracking in Search Results Guide"
-description: "A practical guide for developers and power users to disable Google AMP tracking in search results. Learn methods for browsers, search engines, and custom solutions."
+description: "A practical guide for developers and power users to disable Google AMP tracking in search results. Learn methods for browsers, search engines, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-disable-google-amp-tracking-in-search-results-guide/
@@ -242,5 +242,11 @@ The most effective approach combines multiple methods:
 - Enable browser privacy settings
 
 This layered approach ensures protection even if one method fails. For developers, implementing AMP detection in your own tools helps maintain privacy across all browsing activities.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

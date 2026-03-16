@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Handle Password Manager When Switching Phones: Android to iPhone"
-description: "A practical guide for developers and power users on transferring your password vault from Android to iPhone, covering export methods, import processes, and CLI automation."
+title: "How to Handle Password Manager When Switching Phones."
+description: "A practical guide for developers and power users on transferring your password vault from Android to iPhone, covering export methods, import processes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-handle-password-manager-when-switching-phones-android/
@@ -194,6 +194,12 @@ Throughout the migration process, maintain these security practices:
 Migrating password managers from Android to iPhone requires attention to export formats, TOTP seed handling, and field compatibility. Cloud sync provides the smoothest experience for most users, while CLI-based exports give developers full control over the process. Regardless of method, always verify complete vault transfer before removing your old device from service.
 
 The key steps reduce to: export from Android (preferably encrypted JSON with TOTP), transfer securely to iPhone, import through the iOS app, and verify all items appear correctly. With proper preparation, the entire migration completes in under thirty minutes for typical vaults.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

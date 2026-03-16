@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "How to Use Tor Safely in Country That Criminalizes Its Use"
-description: "A technical guide for developers and power users on using Tor securely in regions where its use is criminalized. Includes configuration examples, bridges, and operational security."
+description: "A technical guide for developers and power users on using Tor securely in regions where its use is criminalized. Includes configuration examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-safely-in-country-that-criminalizes-its-use/
-categories: [privacy, security, tor]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -148,6 +148,12 @@ Using Tor safely in restrictive environments requires combining obfuscated bridg
 Test your configuration thoroughly before relying on it in high-risk situations. Understand the legal landscape in your specific jurisdiction and weigh the risks carefully. For most users in truly dangerous situations, seeking professional security consultation is advisable.
 
 The Tor network remains a critical tool for privacy and free expression, but using it safely requires technical competence and vigilance. The techniques in this guide provide a foundation, but threat models evolve and configurations must be updated accordingly.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

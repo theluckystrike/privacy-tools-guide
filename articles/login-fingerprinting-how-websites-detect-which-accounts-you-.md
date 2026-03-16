@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Login Fingerprinting: How Websites Detect Which Accounts You Have"
-description: "A technical deep-dive into login fingerprinting techniques that allow websites to identify your accounts without authentication. Learn how timing attacks, OAuth enumeration, and behavioral analysis work."
+title: "Login Fingerprinting: How Websites Detect Which Accounts."
+description: "A technical deep-dive into login fingerprinting techniques that allow websites to identify your accounts without authentication. Learn how timing."
 date: 2026-03-16
 author: theluckystrike
 permalink: /login-fingerprinting-how-websites-detect-which-accounts-you-/
-categories: [privacy, security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -202,6 +202,12 @@ For developers, implementing proper rate limiting, using generic error messages,
 ## Conclusion
 
 Login fingerprinting represents a subtle but significant privacy threat. The techniques described work without requiring any authentication, making them difficult to detect from a user perspective. Understanding these methods helps developers build more privacy-respecting authentication systems and helps users make informed decisions about where they enter their credentials.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
