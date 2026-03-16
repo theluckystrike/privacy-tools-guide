@@ -6,7 +6,7 @@ description: "A comprehensive technical guide for securing your iCloud account. 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-stop-someone-from-accessing-your-icloud-without-permi/
-categories: [security, privacy, guides]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

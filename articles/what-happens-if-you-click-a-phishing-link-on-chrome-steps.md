@@ -5,7 +5,7 @@ description: "Learn exactly what happens when you click a phishing link in Chrom
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-happens-if-you-click-a-phishing-link-on-chrome-steps/
-categories: [security, privacy]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

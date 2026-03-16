@@ -5,7 +5,7 @@ description: "Learn practical methods to secure your WiFi network from bandwidth
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/
-categories: [security, networking, privacy]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

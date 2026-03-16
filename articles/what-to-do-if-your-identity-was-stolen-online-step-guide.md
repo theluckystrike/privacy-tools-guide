@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on how to respond
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
-categories: [security, privacy]
+categories: [security, guides]
 ---
 
 {% raw %}
