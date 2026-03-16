@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Protect Yourself from QR Code Phishing (Quishing) Attacks"
-description: "Learn practical methods to defend against QR code phishing attacks. This guide covers quishing mechanics, detection techniques, and developer-focused mitigation strategies."
+title: "How to Protect Yourself from QR Code Phishing (Quishing)."
+description: "Learn practical methods to defend against QR code phishing attacks. This guide covers quishing mechanics, detection techniques, and developer-focused."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-qR-code-phishing-quishing-attac/
@@ -218,6 +218,12 @@ Quishing represents a convergence of physical and digital attack surfaces. As QR
 The key defense is simple: never scan a QR code without understanding where it leads. Take the extra second to preview, verify, and only then proceed.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
