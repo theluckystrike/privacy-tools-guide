@@ -8,11 +8,12 @@ permalink: /how-vpn-encryption-key-exchange-works-diffie-hellman-explained/
 categories: [guides, security]
 reviewed: true
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-When you connect to a VPN, your client and the server perform a sophisticated dance behind the scenes to establish a shared encryption key. This process—called key exchange—happens in seconds, yet it determines whether your VPN traffic remains secure or becomes vulnerable to interception. The most common key exchange protocol in modern VPN implementations is Diffie-Hellman (DH), and understanding how it works is essential for anyone serious about VPN security.
+Diffie-Hellman key exchange enables two parties to establish a shared encryption secret over an insecure channel without transmitting the secret itself—by each side computing the same value independently using public parameters and private keys. When you connect to a VPN, this mathematical process happens in seconds and determines whether your traffic remains secure or becomes vulnerable to interception. Understanding DH mechanics helps developers and users evaluate VPN security and make informed choices about protocol selection.
 
 ## The Key Distribution Problem
 

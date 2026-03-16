@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Setting up automatic VPN failover ensures your connections remain stable when one provider experiences issues. This guide walks you through configuring two VPN providers with automatic switching using WireGuard and systemd services on Linux.
+Set up automatic VPN failover by configuring two WireGuard providers with a health check script and systemd service that monitors connectivity and switches to backup within seconds of primary failure. This eliminates manual intervention and ensures uninterrupted VPN protection.
 
 ## Understanding VPN Failover Architecture
 

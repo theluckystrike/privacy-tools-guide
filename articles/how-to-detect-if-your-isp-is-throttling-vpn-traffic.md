@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-As network traffic grows increasingly complex, developers and power users face a subtle but impactful problem: Internet Service Providers throttle specific types of traffic, particularly VPN connections. Understanding how to detect this behavior empowers you to advocate for net neutrality, optimize your network, or simply confirm whether your connection issues stem from throttling rather than other factors.
+To detect ISP throttling of VPN traffic, compare your connection speed with and without a VPN using speed tests—if performance drops below 50% of baseline, throttling is likely occurring. This guide covers five proven detection methods using command-line tools and network analysis to identify whether your ISP targets VPN protocols, specific ports, or general VPN traffic.
 
-This guide covers practical methods to identify VPN throttling, using command-line tools, network analysis, and controlled testing approaches that require minimal external dependencies.
+Armed with diagnostic techniques like baseline testing, packet loss analysis, MTR monitoring, and protocol-specific testing, you can confirm throttling and choose appropriate workarounds like protocol switching or port changes.
 
 ## Understanding VPN Throttling
 

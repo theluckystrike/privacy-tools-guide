@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Running a VPN over satellite internet presents unique challenges that differ significantly from terrestrial connections. Understanding these nuances helps developers and power users make informed decisions about network architecture and protocol selection.
+Running a VPN over satellite internet adds 20-50ms of latency overhead on top of already high base latency (20-40ms for LEO, 500-700ms for geostationary), making protocol choice critical. WireGuard is the optimal choice for satellite VPN due to its minimal overhead and efficient cryptography, while proper MTU configuration and split tunneling can significantly reduce performance degradation.
 
 ## Understanding Satellite Internet Architecture
 
