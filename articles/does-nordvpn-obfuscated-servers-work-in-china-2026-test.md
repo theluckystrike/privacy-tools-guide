@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Does NordVPN Obfuscated Servers Work in China? 2026 Technical Analysis
 
-Testing VPN services behind the Great Firewall requires understanding how deep packet inspection (DPI) works and what obfuscation techniques actually bypass it. This article provides technical evidence from 2026 testing of NordVPN's obfuscated servers, along with configuration patterns developers can apply to their own infrastructure.
+NordVPN's obfuscated servers provide mixed results in China in 2026—they work 30-60% of the time depending on server location and time of day, making them unreliable for consistent access. For guaranteed connectivity, self-hosted solutions like V2Ray or Outline outperform NordVPN, though with greater configuration complexity. This article provides 2026 testing evidence and technical patterns developers can implement.
 
 ## Understanding China's Network Blocking Mechanism
 
