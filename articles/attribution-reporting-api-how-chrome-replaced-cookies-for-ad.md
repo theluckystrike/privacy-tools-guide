@@ -5,7 +5,7 @@ description: "Learn how Chrome's Attribution Reporting API enables privacy-prese
 date: 2026-03-16
 author: theluckystrike
 permalink: /attribution-reporting-api-how-chrome-replaced-cookies-for-ad/
-categories: [privacy, advertising, web-development]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to identify, anal
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-and-block-hidden-third-party-trackers-on-websi/
-categories: [privacy, security, development]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

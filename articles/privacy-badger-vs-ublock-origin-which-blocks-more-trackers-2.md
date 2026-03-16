@@ -6,7 +6,7 @@ description: "A technical comparison of Privacy Badger and uBlock Origin tracker
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/
-categories: [privacy, security, tools]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
