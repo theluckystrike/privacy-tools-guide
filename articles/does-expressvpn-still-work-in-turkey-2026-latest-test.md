@@ -6,7 +6,7 @@ description: "A technical deep-dive testing ExpressVPN connectivity in Turkey in
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-expressvpn-still-work-in-turkey-2026-latest-test/
-categories: [privacy, vpn, turkey]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
