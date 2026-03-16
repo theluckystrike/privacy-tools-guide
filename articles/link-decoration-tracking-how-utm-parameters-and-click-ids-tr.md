@@ -6,6 +6,10 @@ description: "A technical deep-dive into link decoration tracking, UTM parameter
 date: 2026-03-16
 author: theluckystrike
 permalink: /link-decoration-tracking-how-utm-parameters-and-click-ids-tr/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

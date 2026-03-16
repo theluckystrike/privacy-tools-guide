@@ -6,7 +6,7 @@ description: "Learn how ETag headers work, how they can be used for tracking use
 date: 2026-03-16
 author: theluckystrike
 permalink: /etag-tracking-how-server-caching-headers-follow-you-across-w/
-categories: [privacy, security, http]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
