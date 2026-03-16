@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on responding to 
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /what-to-do-if-your-biometric-data-fingerprint-was-compromise/
-categories: [guides, security, biometric]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users to detect unautho
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consent/
-categories: [security, privacy, mobile]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
