@@ -8,7 +8,7 @@ description: "Learn how to identify if your computer has been compromised and ad
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/
-categories: [security, privacy]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
