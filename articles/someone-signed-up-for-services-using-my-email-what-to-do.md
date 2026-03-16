@@ -154,6 +154,12 @@ Finding that someone signed up for services using your email requires calm, syst
 
 Staying proactive with your email hygiene and monitoring your digital footprint significantly reduces the impact of these incidents. The key is acting quickly, verifying before clicking anything, and leveraging the technical tools at your disposal.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
