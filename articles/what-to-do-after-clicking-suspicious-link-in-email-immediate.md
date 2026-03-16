@@ -8,13 +8,13 @@ permalink: /what-to-do-after-clicking-suspicious-link-in-email-immediate/
 categories: [security, guides]
 reviewed: true
 score: 0
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Clicking a suspicious link happens to everyone—even security professionals have off moments. What matters is how you respond in the minutes and hours after that click. This guide provides a systematic approach for developers and power users to contain the damage, assess what actually happened, and recover securely.
+Immediately disconnect from the network, force-quit your browser, and do not enter any credentials or interact with the page that loaded. Once isolated, check your downloads folder for unexpected files, scan for unusual processes, and rotate passwords for any accounts where you use the same credentials. Acting within the first 60 seconds prevents ongoing communication with attacker-controlled servers and stops potential data exfiltration before it starts.
 
 ## Immediate Actions (First 60 Seconds)
 

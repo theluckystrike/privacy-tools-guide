@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-SIM swap attacks represent one of the most insidious threats facing users who rely on mobile phones for two-factor authentication. Attackers trick mobile carriers into transferring your phone number to a SIM card they control, effectively hijacking your identity and bypassing SMS-based security measures. For developers and power users who understand the technical implications, this guide provides actionable strategies to protect yourself.
+Set a PIN or security code on your carrier account, replace SMS-based two-factor authentication with hardware security keys or authenticator apps, and enable SIM swap protection that requires in-person verification for number transfers. These three steps block the primary attack path where criminals social-engineer your carrier into transferring your phone number to their SIM card, giving them access to every SMS-based verification code you receive. For developers and power users managing sensitive accounts, this guide walks through each safeguard along with advanced protections and recovery procedures.
 
 ## Understanding the Attack Vector
 
