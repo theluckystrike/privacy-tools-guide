@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to check if priva
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-private-photos-were-leaked-online/
-categories: [guides]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
