@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Topics API: Chrome Replacement for Cookies and How It Tracks You"
 description: "Learn how Google's Topics API works as a privacy-focused replacement for third-party cookies, and understand the tracking mechanisms it introduces."
