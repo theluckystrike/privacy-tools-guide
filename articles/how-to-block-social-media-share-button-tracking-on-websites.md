@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "How to Block Social Media Share Button Tracking on Websites"
-description: "A practical guide for developers and power users to block social media share button tracking. Learn techniques using JavaScript, browser extensions, and Content Security Policy headers."
+description: "A practical guide for developers and power users to block social media share button tracking. Learn techniques using JavaScript, browser extensions."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-block-social-media-share-button-tracking-on-websites/
-categories: [privacy, security, web-development]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -166,6 +166,12 @@ Test share functionality manually across different browsers and devices. Ensure 
 Social media share button tracking is pervasive but preventable. Users can block these trackers with browser extensions or privacy-focused browser settings. Developers can eliminate tracking by implementing custom share buttons that load social media sites only on user action. Server-side headers provide additional protection at the network level.
 
 The techniques in this guide preserve legitimate sharing functionality while removing invasive tracking. Implement these solutions to protect your users' privacy without sacrificing the ability to share content across platforms.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up a Password Manager for Home Server SSH Keys"
-description: "A practical guide for developers on storing SSH keys in a password manager. Covers Bitwarden, 1Password, and KeePassXC with CLI examples and automation scripts."
+description: "A practical guide for developers on storing SSH keys in a password manager. Covers Bitwarden, 1Password, and KeePassXC with CLI examples and automation."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-password-manager-for-home-server-ssh-keys/
@@ -269,6 +269,12 @@ Regardless of your password manager choice, follow these practices:
 - **Monitor access** — Use password manager audit logs to track key retrievals
 
 Storing SSH keys in a password manager transforms scattered key management into a centralized, auditable system. The initial setup takes about 30 minutes, but the operational benefits of automatic backup, easy rotation, and cross-device access are substantial for anyone managing multiple servers.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
