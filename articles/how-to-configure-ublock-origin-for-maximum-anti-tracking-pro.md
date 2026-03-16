@@ -184,3 +184,4 @@ uBlock Origin's flexibility makes it adaptable from basic ad blocking to compreh
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
