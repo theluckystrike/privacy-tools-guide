@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Accurate VPN throughput measurement requires more than running a speed test through a browser. Browser-based speed tests measure throughput after VPN encryption overhead and network routing are already applied, giving you a single number that hides multiple variables. For developers and power users who need to evaluate VPN performance objectively, iperf3 provides a controllable, repeatable testing methodology that reveals actual throughput, latency impact, and protocol efficiency.
+To benchmark VPN throughput accurately, install iperf3 on a server and client machine, run tests through your VPN tunnel with `iperf3 -c <server-ip> -p 5201 -t 30`, then compare results against a baseline test without the VPN to calculate exact overhead. This approach gives you controllable, repeatable measurements of actual throughput, latency impact, and protocol efficiency -- unlike browser-based speed tests that hide multiple variables behind a single number.
 
 This guide walks through setting up iperf3 for VPN benchmarking, explaining each step with practical examples you can implement immediately.
 

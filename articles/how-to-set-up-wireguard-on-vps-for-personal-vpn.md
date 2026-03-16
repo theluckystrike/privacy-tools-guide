@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-WireGuard has revolutionized the VPN landscape by offering a modern, lightweight, and high-performance alternative to traditional protocols like OpenVPN and IPSec. If you want to create your own personal VPN server, setting up WireGuard on a Virtual Private Server (VPS) gives you complete control over your network traffic while maintaining excellent speeds. This guide walks you through the complete setup process.
+To set up WireGuard on a VPS for a personal VPN, install the `wireguard` package on an Ubuntu/Debian VPS, generate server and client key pairs with `wg genkey`, create a `wg0.conf` with your keys and IP forwarding rules, then connect from your client using `wg-quick up`. The entire setup takes about 30 minutes and gives you a fast, self-hosted VPN with modern cryptography and significantly better performance than OpenVPN or IPSec.
 
 ## Why Choose WireGuard for Your Personal VPN
 
