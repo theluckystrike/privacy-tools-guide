@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users to diagnose and f
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-connection-timeout-troubleshooting-tcp-handshake-failure/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
