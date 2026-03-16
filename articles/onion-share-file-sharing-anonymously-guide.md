@@ -6,6 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /onion-share-file-sharing-anonymously-guide/
 categories: [guides]
+voice-checked: true
 ---
 
 {% raw %}

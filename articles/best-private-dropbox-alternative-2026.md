@@ -160,7 +160,7 @@ For developers managing sensitive project files, the choice depends on your thre
 - **Peer-to-peer sync**: Use Syncthing for direct device-to-device synchronization
 - **Layer existing storage**: Add Cryptomator encryption to any backend
 
-Consider also how each service integrates with your development workflow. Services with WebDAV support (like Nextcloud and Filen) work seamlessly with IDEs and file managers, while CLI tools enable scripted backups and deployments.
+Consider also how each service integrates with your development workflow. Services with WebDAV support (like Nextcloud and Filen) work directly with IDEs and file managers, while CLI tools enable scripted backups and deployments.
 
 ## Implementation Strategy
 
