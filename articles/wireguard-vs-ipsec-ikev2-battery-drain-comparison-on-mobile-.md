@@ -6,7 +6,7 @@ description: "A technical comparison of WireGuard and IPSec IKEv2 VPN protocols 
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "Learn when to enable WireGuard persistent keepalive. Practical gui
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-persistent-keepalive-setting-explained-when-to-enable-it/
-categories: [guides, vpn, wireguard]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
