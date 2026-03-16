@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Threat Model for Union Organizer in Hostile Employer Environment Guide"
-description: "A practical security guide for union organizers facing surveillance, intimidation, or retaliation from employers. Learn threat modeling, digital security practices, and operational security for organizing campaigns."
+title: "Threat Model for Union Organizer in Hostile Employer Environment"
+description: "A practical threat model for union organizers facing hostile employer environments. Learn actionable digital security strategies for protecting communications, member lists, and organizing activities."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-union-organizer-in-hostile-employer-environ/
@@ -10,114 +10,193 @@ categories: [guides]
 
 {% raw %}
 
-Union organizers face unique security challenges that differ significantly from typical privacy or corporate security scenarios. When employers actively monitor, intimidate, or retaliate against organizing efforts, understanding your threat model becomes essential for protecting yourself, your colleagues, and the campaign itself. This guide provides a practical framework for assessing risks and implementing appropriate countermeasures.
+Union organizers operating in hostile employer environments face adversaries with significant resources, including corporate security teams, legal departments, and increasingly sophisticated surveillance technology. This threat model provides developers and power users with concrete strategies for protecting organizing activities, member communications, and sensitive data from employer retaliation, union-busting tactics, and digital surveillance.
 
-## Understanding the Threat Landscape
+## The Unique Challenges Facing Union Organizers
 
-Hostile employer environments present adversaries with significant resources—corporate surveillance technology, legal teams, private investigators, and control over workplace infrastructure. Your threat model must account for these capabilities while remaining practical enough for real-world organizing work.
+Unlike other threat models where the adversary is external, union organizers must contend with an adversary who has legal access to certain workplace systems, direct influence over the organizer's employment, and often substantial financial resources to deploy union-busting consultants and technology.
 
-The first step involves identifying specific threats rather than abstract concerns. Consider three categories: technical threats (digital surveillance, device confiscation), physical threats (workplace monitoring, investigator infiltration), and legal threats (union-busting litigation, retaliatory termination). Each category requires different mitigation strategies.
+The threat landscape for union organizers includes:
 
-A union organizer at a logistics company, for example, faced management installing keystroke logging software on work computers after rumors of organizing began circulating. Another organizer discovered their employer had purchased mobile device location data from data brokers to track workers attending union meetings. These scenarios demonstrate why threat modeling must address both obvious and less visible attack vectors.
+1. **Workplace surveillance** — employer monitoring of work devices, email systems, and network traffic
+2. **Social engineering** — union-busting consultants trained in psychological manipulation
+3. **Legal coercion** — retaliation through firing, demotion, or frivolous lawsuits
+4. **Digital intrusion** — compromise of personal devices and accounts
+5. **Physical surveillance** — following organizers to meetings and private locations
 
-## Digital Security Foundations
+A comprehensive threat model addresses each vector while maintaining the practical ability to coordinate organizing activities among coworkers.
 
-### Device Security
+## Device Isolation Strategy
 
-Your primary devices—phones, computers, and communication platforms—represent both essential tools and potential vulnerabilities. Assume that employer-controlled devices have limited privacy guarantees. Work computers, phones on corporate networks, and accounts registered with work email address expose significant data to employer surveillance.
+The most critical decision in this threat model involves separating work and personal digital lives. Employers typically have legal authority over work devices and may claim ownership over any data stored on them. This makes device isolation essential.
 
-For sensitive organizing work, maintain separate devices from your personal and work contexts. Use a dedicated phone with a privacy-focused OS for union-related communications. This separation creates legal and practical distance between your organizing activities and employer-controlled infrastructure.
+### Dedicated Organizing Hardware
+
+Use a separate, personal smartphone for all union-related communications. This device should:
+
+- Be purchased with cash or using a privacy-focused payment method
+- Not be connected to your employer's WiFi network
+- Use a privacy-focused mobile OS such as GrapheneOS or CalyxOS
+- Have all unnecessary apps removed
 
 ```bash
-# Verify your phone's network connections on iOS
-# Settings > Cellular > Cellular Data Options > Cellular Data Network
+# Verify device integrity before each organizing meeting
+# Check for unknown processes and network connections
 
-# On Android, check for unusual apps with:
-adb shell pm list packages -3 | grep -v google
+# On Android (requires root or adb):
+adb shell ps -A | grep -v "system\|android" | head -20
+
+# Check active network connections
+adb shell netstat -tn | established
 ```
 
-Enable full-disk encryption on all devices. Modern operating systems enable this by default, but verify encryption status in your device settings. For additional protection, consider hardware encryption keys for sensitive communications.
+Keep this device powered off when not in use and store it separately from work belongings. Consider using a Faraday bag to prevent remote activation.
 
-### Communication Channels
+### Network Segmentation
 
-Choose communication platforms based on their security properties and the sensitivity of your discussions. End-to-end encrypted messaging provides strong protection against interception but requires proper implementation.
+Never use employer's network for union activities. This applies even to personal devices brought into the workplace.
 
-Signal remains the standard for secure mobile messaging. Enable disappearing messages for sensitive conversations:
+```bash
+# Configure your organizing device to block all non-essential network traffic
+# Using simple iptables rules on Android via Termux:
 
+# Block all incoming connections
+iptables -P INPUT DROP
+
+# Allow established outgoing connections
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Only allow specific union-related endpoints
+iptables -A OUTPUT -p tcp --dport 443 -d unionnews.example.com -j ACCEPT
 ```
-Signal Settings > Privacy > Disappearing Messages > After 1 hour
+
+Use mobile data or a trusted VPN service when organizing outside the workplace. The VPN should be configured to prevent DNS leaks and kill all traffic if the connection drops.
+
+## Encrypted Communication Architecture
+
+Union communications require end-to-end encryption that protects content from both employer surveillance and the communication provider itself. Signal remains the gold standard for secure messaging, but additional hardening improves security.
+
+### Signal Hardening Configuration
+
+Configure Signal with these privacy-critical settings:
+
+```javascript
+// Signal privacy settings checklist:
+// 1. Registration lock: Enable (requires PIN to register new device)
+// 2. Relay calls: Enable (prevents caller ID exposure)
+// 3. Typing indicators: Disable for group chats
+// 4. Read receipts: Disable entirely
+// 5. Screen lock: Enable with reasonable timeout
+// 6. Incinerator: Enable (auto-deletes old messages)
 ```
 
-For group coordination, consider using Signal groups rather than workplace messaging platforms. Create a new group specifically for organizing work, avoiding adding members who have work devices or accounts.
+Create a dedicated Signal identity specifically for organizing work. Do not import existing contacts. This separation prevents accidental exposure and makes device forensics more difficult for adversaries.
 
-Email encryption using PGP or S/MIME protects communications in transit but introduces usability challenges. Many organizers find that secure messaging apps provide better practical security through ease of use rather than relying on technically complex email encryption that users frequently misconfigure.
+### Secure Group Communication
 
-## Operational Security Practices
+For group coordination, consider using Session messenger, which provides onion-routing infrastructure similar to Tor. Session stores no metadata about group membership or message content on central servers.
 
-### Information Compartmentalization
+```bash
+# Session protocol advantages over Signal:
+# - No phone number requirement (uses public key addresses)
+# - No metadata stored on servers
+# - Decentralized infrastructure
+# - Onion-routing to relay nodes
+```
 
-Not every organizer needs access to every piece of information about the campaign. Compartmentalizing information limits the damage from any single compromise—a device being seized, an account being hacked, or an individual being pressured by management.
+Use disappearing messages with a timeout that matches your operational tempo. If a device is compromised, the window for exfiltrating message history should be minimal.
 
-Establish clear boundaries: some workers handle workplace outreach, others manage legal strategy, and others coordinate with allied organizations. Each role accesses only the information necessary for their function.
+## Member List Protection
 
-When sharing sensitive documents, avoid sending them through email or cloud storage that ties to your employer. Use encrypted file transfer services or USB drives for passing sensitive materials in person.
+The most sensitive data in any organizing campaign is the member list. This data, if exposed, enables employer retaliation against specific workers and allows union-busting consultants to target vulnerable individuals.
 
-### Device Handling During Work Hours
+### Air-Gapped Storage
 
-Workplace surveillance extends beyond digital monitoring. Employers may request or require that employees install mobile device management (MDM) profiles on personal phones used at work, granting significant surveillance capabilities.
+Store member information on air-gapped devices that never connect to any network:
 
-If asked to install MDM software on your personal device, consult with an employment attorney first—in many jurisdictions, this request has legal limitations. Separating work and personal devices eliminates this threat entirely.
+```bash
+# Create encrypted partition for member data
+# Using LUKS on a dedicated USB drive
 
-During union meetings or sensitive conversations, leave devices in a shielded location. Faraday bags provide modest protection against remote exploitation, though sophisticated adversaries can compromise devices through other vectors.
+# Wipe and create encrypted container
+cryptsetup luksFormat /dev/sdX1
+
+# Open the container
+cryptsetup luksOpen /dev/sdX1 union_data
+
+# Create filesystem
+mkfs.ext4 /dev/mapper/union_data
+
+# Mount and work
+mount /dev/mapper/union_data /mnt/secure
+```
+
+This USB drive should be physically secured—stored in a location the employer cannot access, possibly in the custody of a trusted co-worker who is not yourself. Never connect this device to any computer used for other purposes.
+
+### Data Minimization
+
+Collect only essential information. Do not maintain detailed personal information about members unless operationally necessary. A minimal member database might include:
+
+```python
+# Example: Minimal member data structure
+# Only store what's absolutely necessary
+
+member_record = {
+    "unique_id": "hash_of_employee_id",  # Never store actual ID
+    "department": "general_area",         # Broad category only
+    "support_level": 1-5,                 # Numeric, not descriptive
+    "last_contact": "YYYY-MM-DD",         # Date only, no time
+}
+```
+
+The principle here: if you don't have the data, it cannot be seized, leaked, or coerced from you.
 
 ## Physical Security Considerations
 
-### Workplace Surveillance
+Digital threats exist alongside physical ones. Organizers must consider how their devices, documents, and movements can be observed.
 
-Modern workplaces often feature extensive physical surveillance systems. Understand what your employer can legally monitor: video cameras in public areas, badge swipe logs for building access, and computer activity monitoring on work devices.
+### Device Seizure Preparation
 
-Document existing surveillance as part of your threat assessment. Note camera locations, access control systems, and any monitoring you're aware of. This information helps you identify safe spaces for conversations and understand what information your employer can collect.
-
-### Investigator Infiltration
-
-Employers frequently hire union-busting consulting firms that deploy infiltrators into organizing campaigns. These individuals may pose as sympathetic co-workers, allied community members, or even friends of friends. Red flags include excessive interest in identifying other organizers, pressure to share internal discussions, or attempts to gather information about strategy.
-
-Build relationships with organizers through in-person interactions before digital communication. Verify new supporters through trusted personal connections. When someone new joins the campaign, allow time for relationship-building before sharing sensitive information.
-
-## Incident Response Planning
-
-Prepare for potential security incidents before they occur. Develop a plan for different scenarios: a device being confiscated, an account being compromised, or an organizer being confronted by management.
-
-### If Your Device Is Confiscated
-
-Immediately change passwords for all sensitive accounts from a separate device. Enable two-factor authentication on accounts that didn't previously have it. Contact allies to warn them that your device may have been compromised.
-
-For work devices, understand your legal rights regarding employer search of personal devices. In many cases, employers cannot search personal devices without consent—though they may face pressure to terminate employees who refuse.
-
-### If Your Account Is Compromised
-
-Assume any communication through the compromised channel is exposed. Immediately warn affected parties through alternative channels. Review account access logs to understand what information was viewed or exfiltrated.
+Configure all devices with encrypted storage and automatic lockout:
 
 ```bash
-# Review recent account access (example for Google)
-# Visit: myaccount.google.com/signin/revocations
-# Review security event history
+# Linux: Enable encrypted home directory
+ecryptfs-setup-private
+
+# macOS: Enable FileVault
+sudo fdesetup enable
+
+# Both: Set aggressive auto-lock
+# - Lock screen: 1 minute
+# - Require password immediately after sleep
+# - Erase data after 10 failed attempts
 ```
 
-## Building Security Culture
+If you face sudden device seizure, full-disk encryption protects data provided the device was powered off or locked. Many jurisdictions do not require suspects to provide passwords, but be aware that some do. Know your legal rights in your jurisdiction.
 
-Effective security in organizing campaigns requires buy-in from all participants, not just technical experts. Workers who aren't security-conscious can inadvertently expose sensitive information through casual conversations, unsecured devices, or naive responses to investigator approaches.
+### Meeting Security
 
-Conduct basic security training for all organizers. Cover topics including: recognizing social engineering attempts, secure communication practices, and incident reporting procedures. Make security guidance practical rather than theoretical—explain not just what to do but why specific threats matter.
+Organizing meetings require physical security planning:
 
-Regular security check-ins help maintain awareness. Brief discussions at organizing meetings about recent threats, new precautions, or suspicious activity keep security present without becoming burdensome.
+- Rotate meeting locations frequently
+- Avoid meeting at venues with obvious surveillance
+- Leave personal electronics outside when discussing sensitive matters
+- Designate a security observer to watch for unusual vehicles or individuals
 
-## Conclusion
+## Response Planning
 
-Threat modeling for union organizing requires balancing security with accessibility. Overly complex security practices discourage participation; inadequate protection exposes organizers to real risks. Start with fundamental practices—separate devices for organizing work, use encrypted messaging, and maintain information compartmentalization. Add layers of security as threats require and as organizers become comfortable with basic practices.
+Despite precautions, compromise may occur. Prepare response procedures:
 
-The goal isn't perfect security, which is impossible, but rather making targeted surveillance and intimidation sufficiently difficult that employers must resort to visible, legally risky tactics that mobilize rather than suppress organizing efforts.
+1. **Account compromise**: Immediately change passwords from a clean device, enable two-factor authentication on fresh accounts, notify affected members
+2. **Device seizure**: Do not attempt to destroy data unless you can do so without detection; encryption provides legal protection in many jurisdictions
+3. **Retaliation threats**: Document everything, contact legal counsel, notify union leadership
+
+Build these response procedures into your organizing plan before you need them. Panic leads to mistakes; preparation enables calm, effective response.
+
+---
+
+Protecting union organizing activities in hostile environments requires layered defenses across digital and physical domains. No single measure is sufficient, but a thoughtful combination of device isolation, encrypted communications, minimal data storage, and physical security dramatically improves your security posture. Adapt these strategies to your specific context, threat level, and resources.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}
