@@ -1,56 +1,61 @@
 ---
+
 layout: default
-title: "How to Set Up VPN Failover Between Two Providers."
-description: "A practical guide for developers and power users to configure automatic VPN failover using wireguard, systemd, and custom scripts."
+title: "How to Set Up VPN Failover Between Two Providers Automatically"
+description: "A practical guide for developers and power users to implement automatic VPN failover between two providers using open-source tools and scripts."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-vpn-failover-between-two-providers-automatical/
-categories: [guides]
-tags: [tools]
+categories: [guides, networking, vpn]
 reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
+score: 0
+intent-checked: false
+voice-checked: false
 ---
 
 {% raw %}
 
-Set up automatic VPN failover by configuring two WireGuard providers with a health check script and systemd service that monitors connectivity and switches to backup within seconds of primary failure. This eliminates manual intervention and ensures uninterrupted VPN protection.
+When your business depends on a stable VPN connection, a single provider failure can bring operations to a halt. Automatic VPN failover between two providers ensures continuous connectivity by detecting failures and switching traffic without manual intervention. This guide walks you through implementing a robust failover system using open-source tools that work with most VPN providers.
 
-## Understanding VPN Failover Architecture
+## Why Automatic Failover Matters
 
-VPN failover works by monitoring the active connection and automatically switching to a backup when the primary fails. The key components are:
+VPN connections serve as critical infrastructure for remote access, site-to-site networking, and privacy. Network interruptions happen—provider outages, ISP issues, or hardware failures can disconnect your tunnel. Manual switching wastes time and introduces human error. An automatic failover system detects connectivity loss within seconds and restores your connection through an alternate provider.
 
-- **Primary VPN tunnel**: Your main connection (typically WireGuard or OpenVPN)
-- **Backup VPN tunnel**: Secondary provider as a standby
-- **Health check script**: Monitors connectivity and triggers failover
-- **Routing policy**: Ensures traffic uses the active tunnel
+The solution described here uses **WireGuard** for its simplicity and performance, combined with a monitoring script that tracks tunnel health. You can adapt these principles to OpenVPN or other protocols as needed.
 
 ## Prerequisites
 
-Ensure you have:
+Before implementing failover, gather the following:
 
-- Two VPN provider accounts (any WireGuard-compatible provider works)
-- A Linux system with WireGuard tools installed
-- Root or sudo access
-- Basic familiarity with the command line
+- Two active VPN provider accounts (or self-hosted VPN servers)
+- A Linux machine to run the failover script (a VPS, Raspberry Pi, or dedicated hardware)
+- Basic familiarity with terminal commands and cron scheduling
+- Root or sudo access on your Linux system
 
-Install WireGuard tools on Ubuntu/Debian:
+## Setting Up Your Primary and Secondary VPN Tunnels
+
+First, establish both VPN connections on your Linux machine. This example uses WireGuard, but the principles apply to any protocol.
+
+### Install WireGuard
 
 ```bash
+# Debian/Ubuntu
 sudo apt update
-sudo apt install wireguard-tools curl
+sudo apt install wireguard
+
+#RHEL/Fedora
+sudo dnf install wireguard-tools
 ```
 
-## Step 1: Configure Primary VPN
+### Configure the Primary Tunnel
 
-Generate your WireGuard configuration for the primary provider. Most providers give you a config file. Save it as `/etc/wireguard/wg0.conf`:
+Create the WireGuard configuration for your primary provider:
 
 ```bash
 sudo nano /etc/wireguard/wg0.conf
 ```
 
-Add your provider's configuration:
+Add your provider's settings:
 
 ```ini
 [Interface]
@@ -59,121 +64,135 @@ Address = 10.0.0.2/32
 DNS = 1.1.1.1
 
 [Peer]
-PublicKey = PROVIDER_PUBLIC_KEY
-Endpoint = vpn.provider1.com:51820
+PublicKey = PRIMARY_SERVER_PUBLIC_KEY
+Endpoint = primary.vpn-provider.com:51820
 AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-Start the primary interface:
+### Configure the Secondary Tunnel
 
-```bash
-sudo wg-quick up wg0
-sudo wg show
-```
-
-## Step 2: Configure Backup VPN
-
-Create a second WireGuard configuration for your backup provider at `/etc/wireguard/wg1.conf`:
+Create a second WireGuard interface for your backup provider:
 
 ```bash
 sudo nano /etc/wireguard/wg1.conf
 ```
 
+Add the secondary provider configuration:
+
 ```ini
 [Interface]
-PrivateKey = YOUR_BACKUP_PRIVATE_KEY
+PrivateKey = YOUR_SECONDARY_PRIVATE_KEY
 Address = 10.0.1.2/32
 DNS = 1.1.1.1
 
 [Peer]
-PublicKey = PROVIDER_PUBLIC_KEY
-Endpoint = vpn.provider2.com:51820
+PublicKey = SECONDARY_SERVER_PUBLIC_KEY
+Endpoint = secondary.vpn-provider.com:51820
 AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-## Step 3: Create Health Check Script
+Bring up both interfaces:
 
-The health check script monitors connectivity and decides when to switch. Create `/usr/local/bin/vpn-failover.sh`:
+```bash
+sudo wg-quick up wg0
+sudo wg-quick up wg1
+```
+
+## Implementing the Failover Script
+
+The core of your failover system is a monitoring script that checks connectivity through each tunnel and switches routes when needed.
+
+Create the failover script:
+
+```bash
+sudo nano /usr/local/bin/vpn-failover.sh
+```
+
+Add this content:
 
 ```bash
 #!/bin/bash
 
-PRIMARY_INTERFACE="wg0"
-BACKUP_INTERFACE="wg1"
-CHECK_HOST="1.1.1.1"
-MAX_FAILURES=3
+# Configuration
+PRIMARY_IF="wg0"
+SECONDARY_IF="wg1"
+PRIMARY_GW="10.0.0.1"
+CHECK_HOST="8.8.8.8"
+CHECK_INTERVAL=10
+LOG_FILE="/var/log/vpn-failover.log"
+
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOG_FILE"
+}
 
 check_connectivity() {
     local interface=$1
-    ping -I "$interface" -c 2 -W 3 "$CHECK_HOST" > /dev/null 2>&1
+    local gateway=$2
+    ip route get "$CHECK_HOST" | grep -q "$interface" && ping -I "$interface" -c 3 -W 5 "$CHECK_HOST" > /dev/null 2>&1
     return $?
 }
 
-get_active_interface() {
-    ip route show default | awk '/default/ {print $5}' | head -1
+get_active_tunnel() {
+    ip route show default | grep -oP '(wg[01])' | head -1
 }
 
 failover() {
-    echo "$(date): Failover triggered - switching to $BACKUP_INTERFACE"
-    sudo wg-quick down "$PRIMARY_INTERFACE"
-    sudo wg-quick up "$BACKUP_INTERFACE"
-    echo "$(date): Switched to $BACKUP_INTERFACE" >> /var/log/vpn-failover.log
-}
-
-failback() {
-    echo "$(date): Failback triggered - switching to $PRIMARY_INTERFACE"
-    sudo wg-quick down "$BACKUP_INTERFACE"
+    local from_if=$1
+    local to_if=$2
+    
+    log "FAILOVER: $from_if failed, switching to $to_if"
+    
+    # Remove default routes through failed tunnel
+    sudo ip route del default dev "$from_if" 2>/dev/null
+    
+    # Add default route through backup tunnel
+    sudo ip route add default dev "$to_if"
+    
+    # Restart the failed interface for recovery
+    sudo wg-quick down "$from_if" 2>/dev/null
     sleep 2
-    sudo wg-quick up "$PRIMARY_INTERFACE"
-    echo "$(date): Switched to $PRIMARY_INTERFACE" >> /var/log/vpn-failover.log
+    sudo wg-quick up "$from_if" 2>/dev/null
 }
 
-main() {
-    active=$(get_active_interface)
-    failures=0
-
-    while true; do
-        if [[ "$active" == "$PRIMARY_INTERFACE" ]]; then
-            if ! check_connectivity "$PRIMARY_INTERFACE"; then
-                failures=$((failures + 1))
-                echo "$(date): Primary check failed ($failures/$MAX_FAILURES)"
-                if [[ $failures -ge $MAX_FAILURES ]]; then
-                    failover
-                    active="$BACKUP_INTERFACE"
-                    failures=0
-                fi
-            else
-                failures=0
-            fi
-        elif [[ "$active" == "$BACKUP_INTERFACE" ]]; then
-            if check_connectivity "$PRIMARY_INTERFACE"; then
-                echo "$(date): Primary recovered, failing back"
-                failback
-                active="$PRIMARY_INTERFACE"
-            fi
+# Main monitoring loop
+while true; do
+    ACTIVE=$(get_active_tunnel)
+    
+    if [ "$ACTIVE" = "$PRIMARY_IF" ]; then
+        if ! check_connectivity "$PRIMARY_IF" "$PRIMARY_GW"; then
+            log "Primary tunnel ($PRIMARY_IF) is down"
+            failover "$PRIMARY_IF" "$SECONDARY_IF"
         fi
-        sleep 10
-    done
-}
-
-main
+    elif [ "$ACTIVE" = "$SECONDARY_IF" ]; then
+        if ! check_connectivity "$SECONDARY_IF" "$PRIMARY_GW"; then
+            log "Secondary tunnel ($SECONDARY_IF) is down"
+            # Try to restore primary
+            sudo ip route del default dev "$SECONDARY_IF"
+            sudo ip route add default dev "$PRIMARY_IF"
+        fi
+    fi
+    
+    sleep "$CHECK_INTERVAL"
+done
 ```
 
-Make it executable:
+Make the script executable:
 
 ```bash
 sudo chmod +x /usr/local/bin/vpn-failover.sh
 ```
 
-## Step 4: Create Systemd Service
+## Running the Failover Monitor
 
-Create a systemd service to run the failover script as a daemon:
+Start the failover script as a systemd service for reliability. Create the service file:
 
 ```bash
 sudo nano /etc/systemd/system/vpn-failover.service
 ```
+
+Add:
 
 ```ini
 [Unit]
@@ -184,8 +203,7 @@ After=network.target
 Type=simple
 ExecStart=/usr/local/bin/vpn-failover.sh
 Restart=always
-RestartSec=10
-User=root
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
@@ -195,85 +213,59 @@ Enable and start the service:
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable vpn-failover.service
-sudo systemctl start vpn-failover.service
+sudo systemctl enable vpn-failover
+sudo systemctl start vpn-failover
 ```
 
-Check the status:
+## Testing Your Failover System
+
+Verify the failover mechanism works before relying on it in production.
+
+### Simulate a Failure
+
+Disconnect your primary VPN to trigger failover:
 
 ```bash
-sudo systemctl status vpn-failover.service
-```
-
-## Step 5: Verify Configuration
-
-Test your setup by intentionally blocking the primary connection:
-
-```bash
-# Check which interface is active
-ip route show default
-
-# View failover logs
-sudo tail -f /var/log/vpn-failover.log
-
-# Manually trigger failover
 sudo wg-quick down wg0
-# The script should automatically bring up wg1
 ```
 
-## Advanced: IPTable Rules for Guaranteed Routing
-
-To ensure traffic always uses the active VPN regardless of interface ordering, add specific routing rules:
+Check the logs:
 
 ```bash
-# Ensure all traffic uses the default route through active VPN
-sudo ip rule add from all table main prio 100
-
-# Or for specific use cases, mark packets
-sudo iptables -t mangle -A PREROUTING -s 192.168.1.0/24 -j MARK --set-mark 1
-sudo ip rule add fwmark 1 table vpn_table
+sudo journalctl -u vpn-failover -f
 ```
 
-## Troubleshooting Common Issues
+You should see the failover script detect the failure and switch to the secondary tunnel. Confirm your public IP changed by running:
 
-**Problem**: Both VPNs connect but traffic still goes through the original interface.
+```bash
+curl ifconfig.me
+```
 
-**Solution**: Check your routing table with `ip route show table all` and ensure WireGuard is set as the default route.
+### Restore Primary Connectivity
 
-**Problem**: Failover triggers too slowly.
+Bring the primary tunnel back up:
 
-**Solution**: Reduce the sleep interval in the script and decrease MAX_FAILURES to 2.
+```bash
+sudo wg-quick up wg0
+```
 
-**Problem**: DNS leaks after failover.
+The script will detect recovery and switch back, or you can configure it to remain on the secondary tunnel until manually restored.
 
-**Solution**: Ensure your WireGuard configs include DNS settings and consider using a system-wide DNS resolver like dnsmasq.
+## Additional Considerations
 
-## Performance Considerations
+**Routing Policy**: Modify the script to prioritize specific traffic through either tunnel based on destination, source IP, or application requirements using `ip rule` tables.
 
-Failover introduces brief interruptions (typically 5-15 seconds). For applications requiring zero downtime, consider:
+**Health Check Frequency**: Adjust the `CHECK_INTERVAL` based on your tolerance for downtime. A 10-second interval balances responsiveness with system overhead.
 
-- **BGP peering**: More complex but faster failover
-- **Anycast IPs**: Providers offering anycast reduce latency during switches
-- **Connection pooling**: Applications should implement retry logic
+**Multiple Failures**: Extend the script to support additional VPN providers by adding more interfaces and corresponding checks.
 
-## Security Notes
-
-- Store private keys securely with proper file permissions: `chmod 600 /etc/wireguard/*.conf`
-- Consider encrypting the failover log if it contains sensitive information
-- Regularly rotate VPN credentials
-- Audit your firewall rules to ensure only intended traffic exits the VPN
+**Logging**: Monitor the log file regularly or integrate with a log aggregation system for production environments.
 
 ## Conclusion
 
-Automatic VPN failover provides resilience for critical connections. The setup above uses WireGuard for its speed and simplicity, but the same principles apply to OpenVPN or other protocols. Monitor your logs regularly and adjust failure thresholds based on your network conditions.
+Automatic VPN failover between two providers protects your connectivity against single-point failures. The solution outlined here uses WireGuard interfaces, a bash monitoring script, and systemd for reliability. This approach gives you resilience without vendor lock-in—swap providers anytime without redesigning your infrastructure.
 
-For production environments, consider combining this with network monitoring tools like Prometheus or Zabbix to track VPN health metrics over time.
-
-
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+Implement this system on your critical nodes, test thoroughly, and enjoy peace of mind knowing your VPN connections will survive provider outages automatically.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
