@@ -5,7 +5,7 @@ description: "Practical guide testing NordVPN connectivity from Moscow, Russia i
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-nordvpn-work-in-russia-2026-tested-from-moscow/
-categories: [privacy, vpns, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
