@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Privacy Setup for Confidential Informant: Protecting Identity from Discovery"
-description: "A practical guide to privacy setup for confidential informant protection. Learn technical strategies, tools, and code examples to protect your identity from discovery."
+title: "Privacy Setup for Confidential Informant: Protecting."
+description: "A practical guide to privacy setup for confidential informant protection. Learn technical strategies, tools, and code examples to protect your identity."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-confidential-informant-protecting-identity/
@@ -172,6 +172,12 @@ Privacy setup for confidential informant protection demands discipline, technica
 The tools and techniques in this guide provide a foundation, but security is an ongoing process. Regularly audit your setup, stay informed about new threats, and adapt your procedures accordingly.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

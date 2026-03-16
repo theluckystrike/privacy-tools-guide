@@ -202,6 +202,12 @@ Canary traps work best when recipients have a reasonable expectation of privacy 
 
 For truly sensitive information, combine canary traps with encryption, access logging, and other security controls. A canary trap identifies leaks after they occur—it does not prevent them.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
 
 {% endraw %}

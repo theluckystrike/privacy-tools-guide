@@ -4,7 +4,7 @@
 
 layout: default
 title: "How to Set Up Secure File Sharing for Sensitive Documents"
-description: "A practical guide for developers and power users to implement secure file sharing using encryption, self-hosted solutions, and best practices for protecting sensitive documents."
+description: "A practical guide for developers and power users to implement secure file sharing using encryption, self-hosted solutions, and best practices for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-file-sharing-for-sensitive-documents/
@@ -216,6 +216,12 @@ def verify_signed_url(secret_key, file_path, expires, signature):
 - **Use air-gapped transfers**: For extremely sensitive documents, physically transfer encrypted media
 
 Implementing these layers of protection ensures your sensitive documents remain confidential throughout their lifecycle—whether you're sharing with colleagues, storing for backup, or transferring to clients.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

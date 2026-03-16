@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Threat Model for Source Communicating with Journalist Anonymously: A Practical Guide"
-description: "A comprehensive threat model guide for sources communicating with journalists anonymously. Covers secure communication tools, operational security, and practical implementation for developers and power users."
+title: "Threat Model for Source Communicating with Journalist."
+description: "A comprehensive threat model guide for sources communicating with journalists anonymously. Covers secure communication tools, operational security, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-source-communicating-with-journalist-anonym/
@@ -176,6 +176,12 @@ Remember that perfect security doesn't exist. The goal is raising the cost of in
 Start with Signal as your baseline communication tool, add Tor for network anonymity, separate your source identity from your normal digital life, and build from there based on your specific threat model.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
