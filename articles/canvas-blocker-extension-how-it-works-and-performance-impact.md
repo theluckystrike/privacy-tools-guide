@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Canvas Blocker Extension: How It Works and Performance Impact Review"
-description: "A technical deep dive into canvas blocker browser extensions, explaining the underlying mechanisms, implementation approaches, and real-world performance implications for privacy-conscious developers and users."
+title: "Canvas Blocker Extension: How It Works and Performance."
+description: "A technical deep dive into canvas blocker browser extensions, explaining the underlying mechanisms, implementation approaches, and real-world."
 date: 2026-03-16
 author: theluckystrike
 permalink: /canvas-blocker-extension-how-it-works-and-performance-impact/
-categories: [privacy, security, browser-extensions]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -204,6 +204,12 @@ Canvas blocker extensions effectively disrupt fingerprinting by injecting noise 
 For developers, understanding these mechanisms helps evaluate privacy tools and build more resilient web applications. The underlying tension between fingerprinting prevention and canvas functionality ensures this remains an active area of development in the privacy tooling space.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "ETag Tracking: How Server Caching Headers Follow You Across Websites"
-description: "Learn how ETag headers work, how they can be used for tracking users across the web, and what developers and privacy-conscious users need to know about this caching mechanism."
+title: "ETag Tracking: How Server Caching Headers Follow You."
+description: "Learn how ETag headers work, how they can be used for tracking users across the web, and what developers and privacy-conscious users need to know about."
 date: 2026-03-16
 author: theluckystrike
 permalink: /etag-tracking-how-server-caching-headers-follow-you-across-w/
@@ -194,6 +194,12 @@ Modern browsers increasingly implement protections against ETag-based tracking. 
 The key takeaway: ETags are a legitimate caching optimization that becomes a tracking vector when servers choose to use them as persistent identifiers. Awareness and appropriate configuration on both sides can significantly reduce unnecessary tracking while maintaining the performance benefits of HTTP caching.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

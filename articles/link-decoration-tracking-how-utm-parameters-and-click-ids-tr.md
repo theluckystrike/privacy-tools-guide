@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Link Decoration Tracking: How UTM Parameters and Click IDs Track You"
-description: "A technical deep-dive into link decoration tracking, UTM parameters, click IDs, and how they enable cross-site user tracking. Learn to identify and mitigate these tracking vectors."
+title: "Link Decoration Tracking: How UTM Parameters and Click."
+description: "A technical deep-dive into link decoration tracking, UTM parameters, click IDs, and how they enable cross-site user tracking. Learn to identify and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /link-decoration-tracking-how-utm-parameters-and-click-ids-tr/
@@ -165,6 +165,12 @@ app.use((req, res, next) => {
 Link decoration tracking represents a fundamental tension in modern web architecture: the same mechanism that enables legitimate marketing attribution also enables pervasive cross-site surveillance. UTM parameters and click IDs collectively form an invisible infrastructure that tracks users across domains, platforms, and devices.
 
 For developers, understanding these tracking vectors is crucial for building privacy-respecting applications. For power users, recognizing and neutralizing decorated links is an essential privacy skill. The first step is awareness—and now you can identify these tracking patterns everywhere they appear.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
