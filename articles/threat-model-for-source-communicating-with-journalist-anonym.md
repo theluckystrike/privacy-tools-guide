@@ -1,202 +1,182 @@
 ---
-
 layout: default
-title: "Threat Model for Source Communicating with Journalist: Anonymous Guide"
-description: "A practical threat model guide for sources communicating with journalists anonymously. Learn adversary modeling, tool selection, and operational security for whistleblower protection."
+title: "Threat Model for Source Communicating with Journalist Anonymously: A Practical Guide"
+description: "A comprehensive threat model guide for sources communicating with journalists anonymously. Covers secure communication tools, operational security, and practical implementation for developers and power users."
 date: 2026-03-16
 author: theluckystrike
-permalink: /threat-model-for-source-communicating-with-journalist-anonymously-guide/
-categories: [privacy, security, operational-security]
+permalink: /threat-model-for-source-communicating-with-journalist-anonym/
+categories: [guides, security, privacy]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
 
-When a source needs to communicate with a journalist while protecting their identity, the technology choices and operational habits they adopt can mean the difference between safety and exposure. This guide provides a practical threat model specifically for sources who need to share sensitive information with journalists while maintaining anonymity.
+Understanding how to communicate with journalists securely requires a structured threat model. Unlike general privacy guides, source protection demands attention to metadata, timing attacks, and adversary capabilities that extend beyond typical personal security. This guide provides a practical framework for developers and power users evaluating their threat model when reaching out to journalists anonymously.
 
-## Understanding the Threat Model
+## Identifying Your Adversary
 
-Before selecting tools, you must identify who might be trying to identify you. The adversary in source-journalist communication typically includes:
+The first step in building a threat model involves understanding who might be investigating your communications. For source-journalist communication, adversaries typically include:
 
-- **ISP-level monitoring**: Your internet service provider can see which servers you connect to, even if the traffic is encrypted
-- **Device fingerprinting**: Metadata from your device, browser, or application can create a unique signature
-- **Timing analysis**: When you communicate and for how long can reveal patterns
-- **Social engineering**: Someone may try to trick you or the journalist into revealing identifying information
-- **Compromised endpoints**: Malware on your device or the journalist's device can expose communications
+- **Nation-state actors** with sophisticated surveillance capabilities
+- **Corporate security teams** with legal process power (subpoenas, warrants)
+- **ISP-level monitoring** that can correlate traffic patterns
+- **Device-level compromises** including keyloggers and firmware attacks
 
-Your threat model should prioritize based on the sophistication and resources of your adversary. A local employer investigating a leak faces different constraints than a national intelligence agency.
+Each adversary brings different capabilities. A nation-state can potentially perform traffic analysis across multiple networks, while a corporation is limited to what they can legally compel or technically observe within their infrastructure. Your threat model should account for the most capable adversary you expect to face.
 
-## Network-Level Protections
+## Layer 1: Communication Channel Selection
 
-The first layer of defense involves hiding your network activity from your ISP and local network observers.
+Choosing the right communication platform forms the foundation of your threat model. Not all secure messaging apps provide equivalent protection.
 
-### Using Tor for Encrypted Connections
+### Signal: The Baseline
 
-The Tor network routes your traffic through multiple relays, making it difficult for anyone observing your connection to determine which sites you're访问ing. For sources, Tor is often the minimum baseline for secure communications.
-
-```bash
-# Install Tor on Linux
-sudo apt install tor
-
-# Start Tor service
-sudo systemctl start tor
-
-# Configure your application to use Tor's SOCKS proxy
-# SOCKS5 proxy at localhost:9050
-export SOCKS_PROXY="socks5://127.0.0.1:9050"
-export HTTPS_PROXY="socks5://127.0.0.1:9050"
-```
-
-When using Tor, avoid logging into any accounts linked to your real identity. The combination of a Tor connection with a previously-used account can de-anonymize you through behavioral analysis.
-
-### Consider Your Network Environment
-
-Your physical location matters significantly. Connections from corporate networks, government facilities, or public WiFi with captive portals create logs that can be subpoenaed or monitored. Home connections are traceable to your physical address through ISP records.
-
-If possible, use a network that isn't associated with you. A friend's home network, a VPN service paid in cash, or a mobile hotspot with a prepaid SIM card (purchased with cash) all provide better deniability than your home connection.
-
-## Secure Communication Channels
-
-### End-to-End Encrypted Messaging
-
-Signal remains the gold standard for encrypted messaging between sources and journalists. However, Signal requires a phone number, which can be a linking vector. Consider using a burner phone purchased with cash:
+Signal provides end-to-end encryption with a focus on reducing metadata. However, it stores contact lists and message timestamps on servers. For sources, Signal's safety number verification prevents man-in-the-middle attacks but requires careful verification.
 
 ```bash
-# When setting up Signal on a burner device:
-# 1. Purchase a prepaid SIM with cash
-# 2. Install Signal from official app store
-# 3. Register with the burner number
-# 4. Verify the journalist's safety number in person or via a separate channel
-# 5. Disable cloud backup in Signal settings
-# 6. Enable disappearing messages with an appropriate timer
+# Verify Signal safety numbers in person or via separate secure channel
+# On iOS: Settings > Account > Safety Numbers
+# On Android: Settings > Account > Safety Numbers
+# Compare these numbers through a DIFFERENT channel than Signal
 ```
 
-The key verification step is comparing safety numbers ( Signal's key fingerprint) through a separate channel. This ensures you're not communicating with a compromised or impersonated account.
+Signal's weakness for source protection lies in phone number dependency. Your phone carrier knows your number, and SIM-swapping attacks can compromise accounts. Consider using a dedicated device with a burner SIM for sensitive communications.
 
-### Secure Email with PGP
+### Secure Email: ProtonMail and Tutanota
 
-For document transfers, PGP-encrypted email provides additional security, though it has a steeper learning curve:
+Encrypted email services provide asynchronous communication but introduce different trade-offs. ProtonMail requires phone number verification for signup, which creates an authentication linkage. Tutanota offers anonymous signup without phone numbers.
+
+```python
+# When using encrypted email, verify encryption is actually enabled
+# ProtonMail: Settings > Security > Enable encryption
+# Always use the recipient's public key for additional encryption layer
+# Store public keys separately from the communication channel
+```
+
+### Decentralized Options: Session and SimpleX
+
+Session and SimpleX Messenger offer no phone number requirements and distributed infrastructure. Session routes messages through onion-routing similar to Tor, while SimpleX uses a novel mesh network approach without user IDs.
+
+These platforms trade convenience for anonymity. Expect a steeper learning curve and potentially smaller journalist adoption.
+
+## Layer 2: Metadata Protection
+
+Metadata often reveals more than content. Your threat model must address what information leaks even when encryption is perfect.
+
+### Timing Analysis
+
+When you communicate matters as much as what you communicate. Regular communication patterns establish baseline behavior. Sudden spikes in communication around significant events correlate strongly with source activity.
 
 ```bash
-# Generate a new PGP key (run on an air-gapped machine for highest security)
-gpg --full-generate-key
-
-# Key generation options:
-# - RSA keys, 4096 bits
-# - No expiration or short expiration
-# - Use a passphrase
-
-# Export your public key to share with the journalist
-gpg --armor --export your_email@example.com > pubkey.asc
-
-# Encrypt a document for the journalist
-gpg --encrypt --recipient journalist@news.org --armor sensitive_document.pdf
+# Reduce timing correlation by:
+# 1. Setting up scheduled, periodic check-ins regardless of content
+# 2. Using message delay features in Signal (Settings > Privacy > Reload Messages)
+# 3. Sending messages at random times rather than immediately after events
+# 4. Batching communications to reduce frequency
 ```
 
-The challenge with PGP is key management. Both parties need to properly secure their private keys, and the metadata (subject lines, sender, timestamps) remains visible to email providers.
+### Traffic Correlation
 
-## Device and Operational Security
-
-### Air-Gapped Machines for Sensitive Work
-
-For handling the most sensitive documents, consider an air-gapped computer that never connects to the internet:
-
-- Use a dedicated machine purchased with cash
-- Install a minimal Linux distribution
-- Transfer files via USB drives that are only used for this purpose
-- Wipe the USB drive after each transfer
-- Physically destroy the drive if compromised
-
-This approach protects against remote exploitation but requires careful physical security and operational discipline.
-
-### Metadata Stripping
-
-Documents, images, and files contain metadata that can reveal identifying information:
+If an adversary monitors both your network and the journalist's network, they can correlate communication timing. Using Tor or a VPN obscures your IP address but adds latency and requires trust in the exit node.
 
 ```bash
-# Strip EXIF data from images using exiftool
-exiftool -all= image.jpg
-
-# Remove metadata from PDFs
-exiftool -all:all= document.pdf
-
-# Use a tool like MAT (Metadata Anonymisation Toolkit) for comprehensive cleaning
-mat image.png
+# Using Tor for encrypted messaging:
+# 1. Download Tor Browser from torproject.org (verify signatures)
+# 2. Use Signal Desktop through Tor (advanced configuration)
+# 3. Or use Tor Browser for accessing web-based encrypted email
+# Remember: Tor protects IP but timing metadata still exists
 ```
 
-Camera photos often contain GPS coordinates, timestamps, and camera serial numbers. Always run images through metadata removal tools before sharing with journalists.
+### Device Fingerprinting
 
-### Browser Fingerprinting Defense
+Browser fingerprinting can identify your device even without cookies. Journalists receiving links from sources should open them in Tor Browser or isolated VMs to prevent correlation attacks.
 
-If you must browse the regular web (not Tor), browser fingerprinting can still identify you across sessions:
+## Layer 3: Operational Security
 
-- Use Firefox with resistFingerprinting enabled in about:config
-- Consider the Tor Browser for all web browsing related to the source work
-- Disable JavaScript when possible (Tor Browser includes a NoScript extension)
-- Avoid resizing browser windows to non-standard dimensions
-- Never log into personal accounts while investigating
+Technical tools fail without operational discipline. Your threat model must include human factors.
 
-## Behavioral Security
+### Device Separation
 
-Technical tools fail without proper operational habits:
+Consider using a dedicated device for source communications:
 
-**Communication patterns matter.** If you always communicate at 9 AM on weekdays, that pattern is identifiable. Use random intervals or scheduled check-ins rather than predictable routines.
-
-**Separate identities completely.** The source identity and personal identity should never intersect. Different devices, different locations, different times, different topics in separate conversations.
-
-**Limit the number of intermediaries.** Each person who knows about the communication channel is a potential vulnerability. Direct communication between source and journalist is safest.
-
-**Destroy temporary data.** Use tools like BleachBit (Windows) or shred (Linux) to overwrite sensitive files:
+- **Burner phone**: Basic phone for Signal, purchased with cash, used only for communication
+- **Air-gapped computer**: For handling sensitive documents, never connected to the internet
+- **Separate identity**: New email, new phone number, new accounts unrelated to your normal identity
 
 ```bash
-# Securely delete a file
-shred -u sensitive_file.txt
-
-# Wipe free space (may take a long time)
-dd if=/dev/zero of=/tmp/wipefile bs=1M
-rm /tmp/wipefile
+# Air-gapped document handling workflow:
+# 1. Create documents on offline machine
+# 2. Transfer via USB to online machine using Tails or similar live OS
+# 3. Use professional redacting tools (like Adobe Acrobat redaction)
+# 4. Verify no metadata in files (exif, author names, track changes)
+# 5. Convert to PDF before transmission
 ```
 
-## Communicating with Journalists
+### Account Isolation
 
-When establishing contact with a journalist:
+Create accounts using:
 
-1. Use an initial anonymous channel (SecureDrop, Signal with burner number, or encrypted email with a new account)
-2. Verify their identity through a separate, trusted channel
-3. Establish communication protocols before sharing sensitive information
-4. Agree on how to handle emergencies or compromise scenarios in advance
+- Email addresses from privacy-respecting providers (ProtonMail, Tutanota)
+- Phone numbers from burner SIMs or VoIP numbers (Google Voice, but understand Google ties these to accounts)
+- Usernames unrelated to your real identity
+- Passwords generated and stored in a password manager, never reused
 
-Journalists using SecureDrop have infrastructure designed for source protection. Research whether your target journalist or their organization supports SecureDrop or similar whistleblower platforms.
+### Physical Security
 
-## Building Your Complete Threat Model
+Digital security fails without physical security:
 
-A complete threat model for source-journalist communication combines all these elements:
+- Use screen filters to prevent shoulder surfing
+- Enable full-disk encryption on all devices
+- Set BIOS/firmware passwords
+- Disable Bluetooth and Wi-Fi when not in use
+- Consider Faraday bags for sensitive devices
 
-| Layer | Protection | Residual Risk |
-|-------|------------|---------------|
-| Network | Tor, VPN | Timing analysis, traffic patterns |
-| Device | Air-gapped machine, secure boot | Physical compromise |
-| Communication | Signal, PGP | Metadata, key management |
-| Behavior | OpSec habits | Social engineering, mistakes |
-| Documents | Metadata stripping | Content analysis |
+## Layer 4: Document Handling
 
-The goal isn't perfect security—it's making identification cost more than the information is worth to your adversary.
+Documents carry substantial metadata that can identify sources.
 
-## Quick Reference Checklist
+### Removing Metadata
 
-Before communicating with a journalist:
+```bash
+# Using exiftool to strip metadata from images:
+exiftool -all= document.jpg
+exiftool -all= -overwrite_original document.png
 
-- [ ] Using Tor or a non-attributed network connection
-- [ ] Device has been hardened or is dedicated to this purpose
-- [ ] All file metadata has been stripped
-- [ ] Communication channel uses end-to-end encryption
-- [ ] Identity is separated from personal accounts and devices
-- [ ] Journalist has verified your initial contact is legitimate
-- [ ] Backup plan exists for communication failure
+# For PDFs, use pdfinfo to check metadata:
+pdfinfo document.pdf
 
-This threat model provides layered protection against most adversaries. Adjust based on your specific situation and the resources of those trying to identify you.
+# Remove PDF metadata with pdftk:
+pdftk document.pdf dump_data output metadata.txt
+# Edit metadata.txt, then:
+pdftk document.pdf update_info metadata.txt output document_clean.pdf
+```
+
+### Redaction Best Practices
+
+- Never use Word or Google Docs for redacting (metadata persists)
+- Use professional redaction tools, not black bars (they can be removed)
+- Print and scan documents as images to remove digital traces
+- Handwrite sensitive portions, scan as images
+
+## Implementing Your Threat Model
+
+Building a complete threat model requires documenting your decisions:
+
+1. **List your adversaries**: Who might investigate your communications?
+2. **Assess their capabilities**: What can they technically and legally accomplish?
+3. **Map your attack surface**: What information do you expose through each channel?
+4. **Select your layers**: Which tools and practices match your risk tolerance?
+5. **Test your setup**: Verify everything works before actual communications
+6. **Maintain discipline**: Regular security practices, not just initial setup
+
+Remember that perfect security doesn't exist. The goal is raising the cost of investigation beyond what your adversary is willing to spend. Most sources are compromised through operational failures— reused passwords, unencrypted backups, or social engineering—rather than cryptographic breaks.
+
+Start with Signal as your baseline communication tool, add Tor for network anonymity, separate your source identity from your normal digital life, and build from there based on your specific threat model.
 
 ---
 
-{% endraw %}
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
