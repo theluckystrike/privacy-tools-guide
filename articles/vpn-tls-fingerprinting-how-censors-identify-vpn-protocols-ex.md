@@ -6,7 +6,7 @@ description: "Learn how TLS fingerprinting enables network censors to detect and
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-explained/
-categories: [privacy, security, networking]
+categories: [guides, security]
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ description: "Learn how to securely access Canadian bank accounts while in Mexic
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-canadian-banking-from-mexico-securely-2026/
-categories: [guides, security, privacy]
+categories: [guides, security]
 ---
 
 {% raw %}

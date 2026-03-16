@@ -6,7 +6,7 @@ description: "A practical guide to running WireGuard inside Docker containers wi
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-container-setup-docker-network-namespace-isolation/
-categories: [guides, networking, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

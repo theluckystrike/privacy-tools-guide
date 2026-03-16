@@ -6,7 +6,7 @@ description: "A comprehensive comparison of OpenVPN Access Server vs Community E
 date: 2026-03-16
 author: theluckystrike
 permalink: /openvpn-access-server-vs-community-edition-differences-features-2026/
-categories: [guides, vpn, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

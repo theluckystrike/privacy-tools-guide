@@ -5,6 +5,10 @@ description: "Learn how to measure VPN throughput precisely using iperf3. This g
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-benchmark-vpn-throughput-accurately-iperf3-setup-guid/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
