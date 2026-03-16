@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # VPN Tunnel Interface vs Full Tunnel Routing: A Technical Guide
 
-When configuring a VPN connection, one of the fundamental decisions developers and network administrators face involves choosing between tunnel interface-based routing and full tunnel routing. Understanding the differences between these approaches directly impacts network performance, security posture, and the ability to access both local and remote resources simultaneously.
+Choose tunnel interface routing if you need simultaneous access to local resources (printers, NAS, Docker networks) and VPN-protected resources -- it routes only specific subnets through the VPN while keeping everything else on your direct connection. Choose full tunnel routing if your organization mandates all traffic through the VPN for compliance, or if you need complete protection on untrusted networks like public WiFi. The core difference is control granularity: tunnel interface gives you precise per-subnet routing decisions, while full tunnel encrypts everything at the cost of added latency and lost local network access.
 
 ## What Is a Tunnel Interface?
 
