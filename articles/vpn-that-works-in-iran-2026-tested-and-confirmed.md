@@ -5,7 +5,7 @@ description: "A technical guide to VPNs that work in Iran in 2026. Tested config
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-that-works-in-iran-2026-tested-and-confirmed/
-categories: [privacy, security, vpn]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
