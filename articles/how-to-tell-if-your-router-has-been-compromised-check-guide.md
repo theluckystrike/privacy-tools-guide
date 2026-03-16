@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Tell If Your Router Has Been Compromised: A Check Guide"
+title: "How to Tell If Your Router Has Been Compromised: A Check."
 description: "Learn how to identify signs of a compromised router with practical detection methods, command-line tools, and security hardening steps for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-router-has-been-compromised-check-guide/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -153,6 +153,12 @@ Run this script hourly via cron for continuous monitoring.
 Router compromise represents a serious threat because of the device's privileged position in your network infrastructure. By regularly checking DNS settings, scanning for unknown devices, reviewing logs, verifying firmware integrity, and implementing monitoring automation, you can detect and respond to compromises before they result in data theft or further network intrusion.
 
 For developers and power users, these verification steps integrate naturally into existing security practices. Treat your router as a critical security boundary—because that is exactly what it is.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

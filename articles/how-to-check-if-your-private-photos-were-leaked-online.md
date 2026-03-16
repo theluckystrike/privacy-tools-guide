@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Check If Your Private Photos Were Leaked Online"
-description: "Learn technical methods to detect if your private photos have been exposed online. This guide covers reverse image search, haveibeenpwned alternatives, and API-based monitoring."
+description: "Learn technical methods to detect if your private photos have been exposed online. This guide covers reverse image search, haveibeenpwned alternatives."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-private-photos-were-leaked-online/
@@ -204,6 +204,12 @@ Automated detection has boundaries. Images must be visually similar to be matche
 For professional-grade protection, consider commercial services that specialize in digital footprint monitoring—they aggregate data from multiple sources and provide more comprehensive coverage than individual tools.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
