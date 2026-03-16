@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on setting up per
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-per-app-vpn-on-android-without-root/
-categories: [guides, android, vpn, privacy]
+categories: [guides]
 ---
 
 {% raw %}

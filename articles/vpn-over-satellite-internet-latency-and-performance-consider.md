@@ -5,6 +5,10 @@ description: "A technical deep dive into running VPNs over satellite internet co
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-over-satellite-internet-latency-and-performance-consider/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Running a VPN over satellite internet presents unique challenges that differ significantly from terrestrial connections. Understanding these nuances helps developers and power users make informed decisions about network architecture and protocol selection.

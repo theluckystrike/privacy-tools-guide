@@ -5,7 +5,7 @@ description: "A technical deep-dive into how Diffie-Hellman key exchange enables
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-vpn-encryption-key-exchange-works-diffie-hellman-explained/
-categories: [guides, vpn, encryption]
+categories: [guides, security]
 reviewed: true
 voice-checked: true
 ---
