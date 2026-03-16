@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users on using VPN to a
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-using-twitter-x-in-countries-where-banned/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

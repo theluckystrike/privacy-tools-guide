@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on bypassing Inst
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-using-instagram-in-china-2026-working-solution/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
