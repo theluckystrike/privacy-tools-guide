@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users to detect comprom
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-smart-home-devices-are-compromised/
-categories: [security, privacy, smart-home]
+categories: [security, guides]
 ---
 
 {% raw %}

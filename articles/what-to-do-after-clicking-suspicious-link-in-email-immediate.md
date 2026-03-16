@@ -5,7 +5,7 @@ description: "Learn the critical steps to take immediately after clicking a susp
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-after-clicking-suspicious-link-in-email-immediate/
-categories: [security, privacy]
+categories: [security, guides]
 reviewed: true
 score: 0
 intent-checked: false

@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to check if their
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-social-security-number-was-leaked-onlin/
-categories: [security, privacy, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
