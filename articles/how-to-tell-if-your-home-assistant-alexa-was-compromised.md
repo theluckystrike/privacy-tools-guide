@@ -6,7 +6,7 @@ description: "Learn the technical signs of Home Assistant and Alexa compromise. 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
-categories: [security, privacy, smart-home]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

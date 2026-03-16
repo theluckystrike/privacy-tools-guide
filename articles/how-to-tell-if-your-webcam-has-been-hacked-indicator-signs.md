@@ -5,7 +5,7 @@ description: "Learn the technical indicators and detection methods to determine 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-webcam-has-been-hacked-indicator-signs/
-categories: [security, privacy, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
