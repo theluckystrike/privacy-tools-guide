@@ -2,11 +2,11 @@
 
 layout: default
 title: "How to Tell If Your Home Assistant or Alexa Was Compromised"
-description: "A technical guide for developers and power users to detect signs of compromise in Home Assistant and Alexa devices. Learn to audit logs, identify suspicious patterns, and secure your smart home."
+description: "A technical guide for developers and power users to detect signs of compromise in Home Assistant and Alexa devices. Learn to audit logs, identify."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
-categories: [security, smart-home, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -227,6 +227,12 @@ Maintain ongoing security by implementing these practices:
 Detecting compromise in smart home platforms requires vigilance and systematic monitoring. By regularly reviewing logs, tracking entity changes, monitoring network traffic, and maintaining security hygiene, you can identify threats before they cause significant damage. The techniques in this guide give developers and power users the tools to audit their installations and respond effectively to potential security incidents.
 
 Implement these detection methods as part of your regular security routine, and maintain baseline documentation to quickly identify deviations from normal operation.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Check If Your Social Security Number Was Leaked Online"
-description: "A practical guide for developers and power users to check if their SSN has been exposed in data breaches. Includes API tools, monitoring scripts, and actionable steps."
+title: "How to Check If Your Social Security Number Was Leaked."
+description: "A practical guide for developers and power users to check if their SSN has been exposed in data breaches. Includes API tools, monitoring scripts, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-social-security-number-was-leaked-onlin/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -183,6 +183,12 @@ While you can't prevent breaches at companies you do business with, you can redu
 Checking whether your SSN has been leaked requires a multi-layered approach. No single service provides complete coverage, so combining HIBP monitoring, credit bureau services, dark web scanning, and custom scripts gives you the best detection capability. The most critical factor is acting quickly once you discover exposure — the faster you freeze your credit and place fraud alerts, the less damage identity thieves can cause.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
