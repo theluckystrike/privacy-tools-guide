@@ -5,7 +5,7 @@ description: "Master WireGuard PostUp and PostDown scripts for advanced routing.
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/
-categories: [guides, wireguard, vpn, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
