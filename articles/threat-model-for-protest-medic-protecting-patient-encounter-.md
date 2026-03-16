@@ -244,3 +244,4 @@ Use this checklist when setting up your protest medic security:
 The goal isn't paranoia—it's reasonable protection for the people who trust you with their care. By implementing these measures, you reduce the risk that patient information becomes evidence, gets leaked, or harms the people you treated.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
