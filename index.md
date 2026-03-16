@@ -1,11 +1,16 @@
 ---
 layout: default
 title: "Privacy Tools Guide — Reviews & Comparisons"
+description: "In-depth guides and reviews of privacy tools, encrypted services, and security software for everyday users"
 permalink: /
 ---
 
 # Privacy Tools Guide
 
-Comprehensive guides for privacy tools, VPNs, and digital security.
+In-depth guides and reviews of privacy tools, encrypted services, and security software for everyday users.
 
-*Articles coming soon...*
+{% for page in site.pages %}
+{% if page.path contains 'articles/' %}
+- [{{ page.title }}]({{ page.url | relative_url }})
+{% endif %}
+{% endfor %}
