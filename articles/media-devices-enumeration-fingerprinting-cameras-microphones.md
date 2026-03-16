@@ -127,3 +127,4 @@ The tension between useful web features and privacy protection continues to evol
 For developers, building privacy-respecting applications means understanding these APIs thoroughly and implementing only the capabilities your users need. For power users, knowing what gets exposed helps you configure browser settings and extensions that balance functionality with privacy protection.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Complete Guide to Operating System Hardening for Extreme Privacy"
-description: A comprehensive guide to hardening your operating system for maximum privacy protection. Learn essential settings, tools, and techniques to secure your digital life.
+description: "A comprehensive guide to hardening your operating system for maximum privacy protection. Learn essential settings, tools, and techniques to secure your digital life."
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-operating-system-hardening-for-extreme-privacy/
