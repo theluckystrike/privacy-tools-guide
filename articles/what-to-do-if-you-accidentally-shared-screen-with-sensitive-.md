@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "What to Do If You Accidentally Shared Screen With Sensitive Info"
-description: "Learn immediate steps to take if you accidentally exposed sensitive information during a screen share. Practical tips for developers and power users to contain the damage and prevent future incidents."
+title: "What to Do If You Accidentally Shared Screen With."
+description: "Learn immediate steps to take if you accidentally exposed sensitive information during a screen share. Practical tips for developers and power users to."
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-accidentally-shared-screen-with-sensitive-/
@@ -181,6 +181,12 @@ The best defense against accidental screen sharing is making privacy-conscious b
 These practices become muscle memory quickly and significantly reduce the probability of exposure. The occasional slip-up will still happen—humans are fallible—but having robust containment procedures means those moments don't become security incidents.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
