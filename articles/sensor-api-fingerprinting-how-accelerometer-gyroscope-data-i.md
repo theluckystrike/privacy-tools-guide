@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Sensor API Fingerprinting: How Accelerometer and Gyroscope Data Identifies Phones"
-description: "A technical guide to sensor-based device fingerprinting. Learn how accelerometer and gyroscope APIs expose unique device signatures that can track users without cookies."
+title: "Sensor API Fingerprinting: How Accelerometer and."
+description: "A technical guide to sensor-based device fingerprinting. Learn how accelerometer and gyroscope APIs expose unique device signatures that can track."
 date: 2026-03-16
 author: theluckystrike
 permalink: /sensor-api-fingerprinting-how-accelerometer-gyroscope-data-identifies-phones/
-categories: [privacy, security, fingerprinting]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -185,6 +185,12 @@ async function checkSensorAccess() {
 Sensor API fingerprinting represents a powerful and relatively unknown tracking mechanism. While the W3C standard includes privacy considerations, implementation varies significantly across browsers and devices. Understanding these techniques helps developers build more privacy-conscious applications and empowers users to make informed decisions about their device security.
 
 As privacy awareness grows, expect continued development of anti-fingerprinting protections. The tension between useful sensor functionality and privacy will remain a central challenge in web platform design.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

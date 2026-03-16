@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Global Privacy Control Header: How It Works and Who Supports It"
+title: "Global Privacy Control Header: How It Works and Who."
 description: "A technical guide to the GPC header for developers. Learn how this privacy signal works, which browsers and companies support it, and how to implement it."
 date: 2026-03-16
 author: theluckystrike
@@ -218,6 +218,12 @@ Browser developer tools also show the GPC header in the Network tab when making 
 The Global Privacy Control header provides a standardized, legally recognized way for users to opt out of data selling. For developers, implementing GPC support is straightforward and often satisfies regulatory requirements. While not a complete privacy solution, GPC represents meaningful progress in giving users control over their digital footprint.
 
 Browser support continues to expand, and regulatory pressure will likely increase adoption among tracking companies. Getting GPC right today prepares your infrastructure for evolving privacy expectations tomorrow.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

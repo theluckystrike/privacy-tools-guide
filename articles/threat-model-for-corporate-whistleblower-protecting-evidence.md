@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Threat Model for Corporate Whistleblower: Protecting Evidence and Identity"
-description: "A practical threat model for corporate whistleblowers protecting evidence and identity. Learn actionable strategies for secure evidence handling, secure communication, and identity protection."
+title: "Threat Model for Corporate Whistleblower: Protecting."
+description: "A practical threat model for corporate whistleblowers protecting evidence and identity. Learn actionable strategies for secure evidence handling."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
-categories: [security, privacy, guides]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -223,6 +223,12 @@ A threat model for corporate whistleblowing must address technical surveillance,
 The specific tools and techniques matter less than the disciplined application of compartmentalization, encryption, and operational security. Start with the highest-threat activities and work backward to ensure your most sensitive communications receive your strongest protections.
 
 Remember that no security posture is impenetrable. The goal is to raise the cost and complexity of identification and evidence compromise high enough that adversaries face unacceptable risk.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

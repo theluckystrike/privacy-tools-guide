@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Media Devices Enumeration and Fingerprinting: How Websites Reveal Your Identity Through Cameras and Microphones"
-description: "Discover how websites enumerate your media devices, the privacy risks of device fingerprinting through MediaDevices API, and practical protection strategies for developers and power users."
+title: "Media Devices Enumeration and Fingerprinting: How."
+description: "Discover how websites enumerate your media devices, the privacy risks of device fingerprinting through MediaDevices API, and practical protection."
 date: 2026-03-16
 author: theluckystrike
 permalink: /media-devices-enumeration-fingerprinting-cameras-microphones/
@@ -125,6 +125,12 @@ Media device enumeration represents one component in a larger ecosystem of brows
 The tension between useful web features and privacy protection continues to evolve. Browser vendors are implementing stricter defaults, but the underlying APIs remain powerful tools that can be abused. Staying informed about what information your browser reveals empowers you to make choices that align with your privacy requirements.
 
 For developers, building privacy-respecting applications means understanding these APIs thoroughly and implementing only the capabilities your users need. For power users, knowing what gets exposed helps you configure browser settings and extensions that balance functionality with privacy protection.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
