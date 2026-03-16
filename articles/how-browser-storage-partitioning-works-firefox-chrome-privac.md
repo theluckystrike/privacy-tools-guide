@@ -5,7 +5,7 @@ description: "A technical guide to browser storage partitioning explaining how F
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-browser-storage-partitioning-works-firefox-chrome-privac/
-categories: [privacy, security, browsers]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

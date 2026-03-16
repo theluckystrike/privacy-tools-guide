@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on how to stop br
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/
-categories: [privacy, security, guides]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

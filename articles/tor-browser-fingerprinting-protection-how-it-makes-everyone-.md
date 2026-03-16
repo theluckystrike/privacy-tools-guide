@@ -5,7 +5,7 @@ description: "Understand how Tor Browser's fingerprinting protection works to ma
 date: 2026-03-16
 author: theluckystrike
 permalink: /tor-browser-fingerprinting-protection-how-it-makes-everyone-/
-categories: [privacy, security, tor]
+categories: [guides, security]
 ---
 
 {% raw %}
