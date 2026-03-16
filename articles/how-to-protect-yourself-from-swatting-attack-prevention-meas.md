@@ -6,7 +6,7 @@ description: "Learn practical swatting attack prevention measures. This comprehe
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-swatting-attack-prevention-measures/
-categories: [security, privacy]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

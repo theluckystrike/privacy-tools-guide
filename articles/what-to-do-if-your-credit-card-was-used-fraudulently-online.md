@@ -5,7 +5,7 @@ description: "A practical technical guide for developers and power users on hand
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-credit-card-was-used-fraudulently-online/
-categories: [security, financial-privacy, guides]
+categories: [security, guides]
 ---
 
 {% raw %}

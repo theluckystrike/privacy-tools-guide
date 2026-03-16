@@ -6,7 +6,7 @@ description: "Learn the technical indicators and verification methods to determi
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-someone-has-access-to-your-apple-id/
-categories: [security, privacy, apple]
+categories: [security, guides]
 ---
 
 {% raw %}
