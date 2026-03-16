@@ -212,3 +212,4 @@ A well-configured password manager addresses the unique credential management ch
 For developers and power users, the command-line approach provides flexibility and automation opportunities that graphical interfaces cannot match. Invest time in structuring your vault correctly from the start, and establish sharing and recovery protocols before you need them.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
