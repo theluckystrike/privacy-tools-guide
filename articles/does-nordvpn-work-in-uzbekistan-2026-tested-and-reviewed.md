@@ -6,7 +6,7 @@ description: "A technical guide testing NordVPN connectivity in Uzbekistan. Incl
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-nordvpn-work-in-uzbekistan-2026-tested-and-reviewed/
-categories: [privacy, vpn, security]
+categories: [guides, security]
 ---
 
 {% raw %}
