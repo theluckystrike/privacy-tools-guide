@@ -5,7 +5,7 @@ description: "Learn how to configure a VPN exempt list to access local network r
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-vpn-exempt-list-for-local-network-access/
-categories: [guides, vpn, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
