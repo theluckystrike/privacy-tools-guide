@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -150,10 +151,7 @@ gpg --armor --export-secret-keys your@email.com > private_key.asc
 
 When building applications that handle ProtonMail credentials or 2FA tokens, follow these practices:
 
-- **Never store plaintext passwords** — Use proper hashing (Argon2, bcrypt)
-- **Encrypt 2FA secrets at rest** — TOTP secrets are sensitive data
-- **Implement rate limiting** — Protect against brute-force attacks on 2FA codes
-- **Use secure memory handling** — Clear sensitive data from memory after use
+Never store plaintext passwords — use proper hashing with Argon2 or bcrypt. TOTP secrets are sensitive data and must be encrypted at rest. Implement rate limiting to protect against brute-force attacks on 2FA codes, and clear sensitive data from memory after use.
 
 Example of secure secret storage in Python:
 
@@ -174,15 +172,9 @@ encrypted_secret = cipher.encrypt(secret.encode())
 
 ## Common Pitfalls
 
-- **Losing recovery codes** — Always print and store them
-- **Changing phones without transferring authenticator** — Export your TOTP secrets before switching devices
-- **Using SMS 2FA** — ProtonMail doesn't support SMS, which is fortunate since SIM swapping attacks are common
+Always print and store your recovery codes — losing them can mean permanent lockout. Export your TOTP secrets before switching phones, since changing devices without transferring your authenticator will cut off access. ProtonMail does not support SMS 2FA, which is an advantage given how common SIM swapping attacks are.
 
-## Conclusion
-
-Two-factor authentication significantly strengthens your ProtonMail security posture. For most users, TOTP provides an excellent balance of security and convenience. Developers and power users may prefer WebAuthn for its phishing resistance or integrate programmatic 2FA into their workflows using the approaches outlined here.
-
-Remember that 2FA is just one layer of defense—use strong, unique passwords, keep your recovery information updated, and regularly audit your active sessions.
+Remember that 2FA is just one layer of defense — use strong, unique passwords, keep your recovery information updated, and regularly audit your active sessions.
 
 ---
 

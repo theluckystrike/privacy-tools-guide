@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -23,11 +24,7 @@ Signal implements disappearing messages through an encryption key rotation syste
 
 The key architectural points to understand:
 
-**Message lifecycle** — Messages persist locally until the timer expires. Signal does not delete messages from your device automatically; the recipient's app removes the message after the timer completes. This means both sender and recipient must have disappearing messages enabled for the full effect.
-
-**Timer options** — Signal offers predefined intervals: 30 seconds, 5 minutes, 1 hour, 1 day, 1 week, and 4 weeks. There's no custom timer support in the standard UI, though the underlying protocol could theoretically support arbitrary durations.
-
-**Per-conversation setting** — Disabling disappearing messages in one conversation does not affect others. Each conversation maintains its own timer state.
+Messages persist locally until the timer expires; Signal does not delete messages from your device automatically, and the recipient's app removes the message after the timer completes. This means both sender and recipient must have disappearing messages enabled for the full effect. Signal offers predefined intervals — 30 seconds, 5 minutes, 1 hour, 1 day, 1 week, and 4 weeks — with no custom timer support in the standard UI. Each conversation maintains its own timer state, so disabling disappearing messages in one conversation does not affect others.
 
 ## Configuring Disappearing Messages
 
@@ -132,11 +129,11 @@ This script reads contact:timer pairs from a file and applies them sequentially.
 
 Disappearing messages reduce the attack surface of stored communications, but they are not foolproof.
 
-**Device compromise** — If an attacker gains physical access to an unlocked device, they can photograph messages before they disappear. Disappearing messages protect against later unauthorized access but not immediate compromise.
+Device compromise: if an attacker gains physical access to an unlocked device, they can photograph messages before they disappear. Disappearing messages protect against later unauthorized access but not immediate compromise.
 
-**Forwarded messages** — A recipient can forward a disappearing message to another conversation before the timer expires. The new conversation does not inherit the disappearing timer unless explicitly configured.
+Forwarded messages: a recipient can forward a disappearing message to another conversation before the timer expires. The new conversation does not inherit the disappearing timer unless explicitly configured.
 
-**Notification previews** — Lock screen notifications may display message previews. Disable notification previews in Signal's privacy settings to prevent this leakage:
+Notification previews: lock screen notifications may display message previews. Disable notification previews in Signal's privacy settings to prevent this leakage:
 
 1. Settings > Privacy > Notifications
 2. Toggle "Show" to "No name or message"

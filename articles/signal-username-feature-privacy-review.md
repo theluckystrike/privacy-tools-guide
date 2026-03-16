@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -118,9 +119,9 @@ async function resolveSignalUsername(fullIdentifier) {
 ### Username Selection
 
 Choose usernames that balance:
-- **Uniqueness**: Avoid common names that might be taken
-- **Privacy**: Don't reuse handles from other platforms
-- **Length**: Shorter usernames are harder to guess
+- Uniqueness: avoid common names that might be taken
+- Privacy: don't reuse handles from other platforms
+- Length: shorter usernames are harder to guess
 
 A good approach involves generating random but memorable identifiers:
 
@@ -162,10 +163,10 @@ For users who need separate identities:
 
 When building tools that interact with Signal's username system:
 
-1. **Validate all inputs** — usernames have strict format requirements
-2. **Implement exponential backoff** for rate-limited operations
-3. **Cache responsibly** — usernames can change, implement TTL
-4. **Handle deletions gracefully** — usernames can be removed
+1. Validate all inputs — usernames have strict format requirements
+2. Implement exponential backoff for rate-limited operations
+3. Cache responsibly — usernames can change, implement TTL
+4. Handle deletions gracefully — usernames can be removed
 
 ```python
 # Example: Proper rate limiting wrapper
@@ -191,9 +192,7 @@ class SignalRateLimiter:
 
 ## Conclusion
 
-Signal's username feature represents a meaningful privacy improvement for users who want to communicate without exposing their phone numbers. The implementation balances usability with privacy, though both developers and power users should understand the remaining attack surfaces.
-
-For developers, the username system provides cleaner identity management in applications. For power users, it offers an additional layer of privacy control. As with any security feature, understanding the tradeoffs enables better configuration and safer usage.
+Signal's username feature represents a meaningful privacy improvement for users who want to communicate without exposing their phone numbers.
 
 
 ## Related Reading

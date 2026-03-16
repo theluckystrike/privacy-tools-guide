@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -115,7 +116,7 @@ async function authenticate(email, password) {
 
 ## Address Verification and Key Transparency
 
-A often-overlooked aspect of ProtonMail's security model is its approach to public key verification. The service maintains a **Key Transparency** system that helps detect man-in-the-middle attacks by publishing signed prekeys to a verifiable log.
+An often-overlooked aspect of ProtonMail's security model is its approach to public key verification. The service maintains a **Key Transparency** system that helps detect man-in-the-middle attacks by publishing signed prekeys to a verifiable log.
 
 When you add a new contact or receive their first email, ProtonMail automatically retrieves and validates their public key from the server. For security-conscious users, manual fingerprint verification remains available:
 
@@ -133,29 +134,15 @@ You can verify fingerprints through an independent channel (in-person, Signal, e
 
 Understanding what ProtonMail protects against—and what it doesn't—matters for proper risk assessment:
 
-**What ProtonMail protects:**
-- Message content from server-side attacks
-- Mass surveillance through bulk data collection
-- Server compromise or insider threats
-- Third-party eavesdropping on transit
+ProtonMail protects message content from server-side attacks, mass surveillance through bulk data collection, server compromise or insider threats, and third-party eavesdropping in transit.
 
-**What ProtonMail does NOT protect:**
-- Metadata (sender, recipient, timestamps, subject lines without encryption)
-- Account compromise through phishing or weak passwords
-- Device-level keyloggers or malware
-- Correlation attacks when communicating with non-encrypted services
+It does not protect against metadata exposure (sender, recipient, timestamps, subject lines without additional encryption), account compromise through phishing or weak passwords, device-level keyloggers or malware, or correlation attacks when communicating with non-encrypted services.
 
 ## Practical Implications for Developers
 
 If you're building applications that integrate with ProtonMail or implementing similar encryption systems, consider these architectural takeaways:
 
-1. **Key management is critical** — The security of E2EE systems depends entirely on proper key handling. Never store private keys in plaintext.
-
-2. **Client-side encryption is mandatory** — Server-side encryption provides transit security but fails the zero-access guarantee. Perform cryptographic operations in the user's browser or application.
-
-3. **Fail gracefully** — Design systems that handle missing keys, expired certificates, or decryption failures without exposing sensitive data.
-
-4. **Consider key rotation** — Implement procedures for key revocation and rotation to limit exposure if keys are compromised.
+Key management is critical: E2EE security depends entirely on proper key handling, so never store private keys in plaintext. Client-side encryption is mandatory because server-side encryption provides only transit security and fails the zero-access guarantee — perform all cryptographic operations in the user's browser or application. Design systems to fail gracefully, handling missing keys, expired certificates, or decryption failures without exposing sensitive data. Finally, implement key revocation and rotation procedures to limit exposure if keys are compromised.
 
 ProtonMail's security model demonstrates that building privacy into a consumer-friendly email service is achievable. While no system is impenetrable, the zero-access architecture provides meaningful protection against sophisticated adversaries—exactly what developers and power users need when communication confidentiality matters.
 
