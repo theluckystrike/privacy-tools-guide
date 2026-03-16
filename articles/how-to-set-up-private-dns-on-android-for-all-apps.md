@@ -152,6 +152,12 @@ Setting up Private DNS on Android takes less than a minute and provides meaningf
 
 The key is selecting a provider you trust and verifying the configuration works as expected. Once enabled, every app on your device benefits from encrypted DNS resolution without requiring per-app configuration.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

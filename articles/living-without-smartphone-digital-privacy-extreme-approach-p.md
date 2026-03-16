@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Living Without Smartphone: A Digital Privacy Extreme Approach Practical Guide"
-description: "A practical guide for developers and power users on living without smartphones. Learn hardware alternatives, communication tools, and privacy-first workflows."
+title: "Living Without Smartphone: A Digital Privacy Extreme."
+description: "A practical guide for developers and power users on living without smartphones. Learn hardware alternatives, communication tools, and privacy-first."
 date: 2026-03-16
 author: theluckystrike
 permalink: /living-without-smartphone-digital-privacy-extreme-approach-p/
-categories: [privacy, security, guides]
+categories: [guides]
 reviewed: true
 score: 0
 intent-checked: false
@@ -176,6 +176,12 @@ Living without a smartphone represents a philosophical commitment to controlling
 This approach is not for everyone. However, for those seeking maximum privacy and minimal digital distraction, abandoning the smartphone provides a clean foundation for building more intentional technology habits.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

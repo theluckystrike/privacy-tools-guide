@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Threat Model for Religious Minority in Persecuting Country: Digital Safety Guide"
-description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers threat assessment, communication security, data protection, and operational security for developers and power users."
+title: "Threat Model for Religious Minority in Persecuting."
+description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers threat assessment, communication security, data."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-religious-minority-in-persecuting-country-d/
@@ -142,6 +142,12 @@ Digital security for religious minorities in hostile environments requires accep
 Start with threat assessment specific to your situation, then implement layered defenses. Prioritize metadata protection over content encryption, device seizure response over device intrusion prevention, and operational discipline over technical solutions.
 
 The most effective security measures are those you can maintain consistently. A basic implementation practiced regularly beats an elaborate system abandoned after one week.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

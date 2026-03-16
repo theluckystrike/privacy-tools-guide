@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Privacy Setup for Confidential Informant: Protecting Identity From Discovery"
-description: "A technical guide to setting up privacy and security measures for confidential informants. Covers OS hardening, secure communications, operational security, and practical implementation for protecting identity from discovery."
+title: "Privacy Setup for Confidential Informant: Protecting."
+description: "A technical guide to setting up privacy and security measures for confidential informants. Covers OS hardening, secure communications, operational."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-confidential-informant-protecting-identity/
-categories: [privacy, security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -250,6 +250,12 @@ Protecting your identity as a confidential informant requires combining multiple
 Start with the highest-priority risks in your threat model. Add layers progressively. Test your setup regularly. Security that isn't tested regularly fails when needed most.
 
 For developers, many of these tools integrate into existing workflows. Automate security where possible to reduce human error. The effort invested in proper setup pays dividends in protection.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

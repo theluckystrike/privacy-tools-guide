@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Create a New Digital Identity After Escaping Domestic Violence"
-description: "A technical guide for survivors rebuilding their digital presence securely. Learn email isolation, device hardening, identity separation, and operational security for developers and power users."
+title: "How to Create a New Digital Identity After Escaping."
+description: "A technical guide for survivors rebuilding their digital presence securely. Learn email isolation, device hardening, identity separation, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
@@ -272,6 +272,12 @@ Keep written records of:
 Building a new digital identity takes time and patience. Start with the most critical accounts (banking, government documents) and gradually expand. The key principle is separation: keep your new digital life completely isolated from anything the abuser could access.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
