@@ -2,7 +2,7 @@
 
 layout: default
 title: "What to Do If You Find an Unknown Device on Your Network"
-description: "A comprehensive guide for discovering unknown devices on your network, including identification techniques, security actions, and preventive measures for developers and privacy-conscious users."
+description: "A comprehensive guide for discovering unknown devices on your network, including identification techniques, security actions, and preventive measures."
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
@@ -241,3 +241,9 @@ Discovering an unknown device on your network demands systematic investigation a
 Remember: the goal isn't just removing unknown devices but building a security-conscious mindset that treats network hygiene as an ongoing priority rather than a one-time fix.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
