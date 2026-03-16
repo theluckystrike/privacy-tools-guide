@@ -5,7 +5,7 @@ description: "Real-world test results for ExpressVPN usage in Cuba. We tested co
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-expressvpn-work-in-cuba-2026-tested-from-havana/
-categories: [vpn, privacy, security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -125,6 +125,12 @@ For the best experience, use Miami or New York servers, connect during off-peak 
 The situation with internet access in Cuba continues to evolve. We'll update this article as conditions change and new testing data becomes available.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
