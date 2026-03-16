@@ -6,7 +6,7 @@ description: "Learn immediate steps to take when you accidentally expose sensiti
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-accidentally-shared-screen-with-sensitive-/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

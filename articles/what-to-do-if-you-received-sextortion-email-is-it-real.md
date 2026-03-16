@@ -5,7 +5,7 @@ description: "Learn how to identify and handle sextortion emails. Technical anal
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
-categories: [security, privacy]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
