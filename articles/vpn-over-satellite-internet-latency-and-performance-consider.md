@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding how VPNs perform over satellite internet requires examining the unique physics of satellite communications and how VPN protocols interact with high-latency, variable-bandwidth connections. This guide provides practical insights for developers and power users who need to secure their satellite internet traffic while maintaining reasonable performance.
+VPN over satellite internet adds roughly 15ms of overhead with WireGuard versus 120ms with OpenVPN on top of the satellite link's base latency of 500-800ms, making WireGuard the clear protocol choice for satellite deployments. Key optimizations include setting MTU to 1400-1420 bytes to prevent fragmentation, using UDP-only transport (WireGuard does this by default), enabling split tunneling to route only sensitive traffic through the VPN, and configuring persistent keepalives to maintain connections through weather-related signal interruptions.
 
 ## How Satellite Internet Differs from Terrestrial Connections
 
