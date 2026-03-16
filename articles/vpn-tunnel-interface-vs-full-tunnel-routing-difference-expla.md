@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN Tunnel Interface vs Full Tunnel Routing: A Technical Guide"
+title: "VPN Tunnel Interface vs Full Tunnel Routing: A Technical."
 description: "A practical guide explaining tunnel interfaces and full tunnel routing differences for developers and power users."
 date: 2026-03-16
 author: theluckystrike
@@ -164,6 +164,12 @@ Are you primarily concerned about public WiFi eavesdropping while wanting minima
 Do you run services that need to be accessible from your local network while the VPN runs? Full tunnel blocks incoming connections unless explicitly port-forwarded through the VPN.
 
 Understanding these tradeoffs enables informed decisions rather than one-size-fits-all configurations. Most modern VPN clients support both approaches, giving you the flexibility to choose based on your current task.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

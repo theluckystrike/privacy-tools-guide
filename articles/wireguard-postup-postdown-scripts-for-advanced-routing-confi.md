@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "WireGuard PostUp PostDown Scripts for Advanced Routing Configuration"
-description: "Master WireGuard PostUp and PostDown scripts for advanced routing. Learn to implement split tunneling, kill switches, custom DNS, and selective traffic routing."
+title: "WireGuard PostUp PostDown Scripts for Advanced Routing."
+description: "Master WireGuard PostUp and PostDown scripts for advanced routing. Learn to implement split tunneling, kill switches, custom DNS, and selective traffic."
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/
@@ -212,6 +212,12 @@ PostUp and PostDown scripts run with root privileges, making security critical:
 ## Summary
 
 PostUp and PostDown scripts transform WireGuard from a simple VPN into a flexible routing platform. Implement split tunneling for optimal bandwidth usage, build kill switches for security, manage custom DNS resolution, and coordinate multiple peers—all through these powerful hooks. Start with simple scripts, test thoroughly, and gradually add complexity as your needs evolve.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
