@@ -6,7 +6,7 @@ description: "Learn practical methods to defend against QR code phishing attacks
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-qR-code-phishing-quishing-attac/
-categories: [security, privacy]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

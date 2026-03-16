@@ -6,7 +6,7 @@ description: "Learn how to detect if your WiFi password has been compromised. Th
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-wifi-password-has-been-cracked/
-categories: [security, networking]
+categories: [security, guides]
 ---
 
 {% raw %}
