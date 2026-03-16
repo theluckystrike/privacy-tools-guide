@@ -6,7 +6,7 @@ description: "Learn technical methods to detect spyware on your iPhone. This gui
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-someone-installed-spyware-on-your-iphone/
-categories: [security, privacy]
+categories: [security, guides]
 ---
 
 {% raw %}

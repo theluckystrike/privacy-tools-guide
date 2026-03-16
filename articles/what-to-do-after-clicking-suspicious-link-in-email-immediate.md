@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on responding imm
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-after-clicking-suspicious-link-in-email-immediate/
-categories: [security, privacy, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
