@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "WireGuard Container Setup with Docker Network Namespace Isolation Guide"
+title: "WireGuard Container Setup with Docker Network Namespace."
 description: "A practical guide to running WireGuard inside Docker containers with network namespace isolation for enhanced privacy and security."
 date: 2026-03-16
 author: theluckystrike
@@ -205,6 +205,12 @@ For production deployments, consider implementing key rotation and using hardwar
 Running WireGuard inside Docker containers with network namespace isolation provides flexibility and security for privacy-conscious users. Whether you need to protect specific containers, create isolated VPN environments, or simply simplify VPN management, this approach delivers a robust solution without sacrificing performance.
 
 The combination of WireGuard's lightweight protocol and Docker's orchestration capabilities creates a powerful setup for modern privacy requirements. Start with the basic configuration and progressively add isolation layers as your needs evolve.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

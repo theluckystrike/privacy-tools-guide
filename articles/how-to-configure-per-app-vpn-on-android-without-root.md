@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Configure Per-App VPN on Android Without Root"
-description: "Learn how to set up per-app VPN routing on Android devices without rooting. This guide covers built-in Android features, VPN apps with per-app support, and configuration methods for developers and power users."
+description: "Learn how to set up per-app VPN routing on Android devices without rooting. This guide covers built-in Android features, VPN apps with per-app support."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-per-app-vpn-on-android-without-root/
@@ -224,6 +224,12 @@ Per-app VPN implementations on non-rooted Android devices have inherent limitati
 For threat models requiring complete network isolation, consider dedicated devices or hardware solutions rather than relying solely on per-app VPN.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
