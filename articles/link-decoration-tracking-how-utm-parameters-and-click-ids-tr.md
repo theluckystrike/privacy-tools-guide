@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Link decoration—also known as link tagging or query parameter tracking—is one of the most pervasive yet overlooked tracking methods on the web. Every time you click a URL containing `utm_source`, `fbclid`, or similar parameters, you're carrying metadata that websites, advertisers, and analytics platforms use to build profiles of your browsing behavior. For developers and privacy-conscious users, understanding this mechanism is essential for building transparent systems or protecting personal privacy.
+Link decoration is a tracking technique where query parameters like `utm_source`, `fbclid`, `gclid`, and `_ga` are appended to URLs to carry user identity and campaign data across sites, bypassing cookie restrictions. These parameters serve no functional purpose for the destination page — they exist solely to enable cross-site tracking by connecting your click origin to your on-site behavior. Browser extensions like ClearURLs strip these automatically, and Firefox's Enhanced Tracking Protection now blocks known tracking parameters by default. This guide explains the technical mechanism and provides detection and mitigation strategies.
 
 ## What Is Link Decoration?
 
