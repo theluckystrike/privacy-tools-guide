@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to configure auto
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-vpn-failover-between-two-providers-automatical/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

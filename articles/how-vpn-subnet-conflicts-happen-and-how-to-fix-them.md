@@ -5,7 +5,7 @@ description: "A technical guide explaining VPN subnet conflicts, why they occur,
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-vpn-subnet-conflicts-happen-and-how-to-fix-them/
-categories: [guides, vpn, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

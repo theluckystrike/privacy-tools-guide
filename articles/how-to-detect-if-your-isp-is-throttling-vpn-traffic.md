@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users to identify and d
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-your-isp-is-throttling-vpn-traffic/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

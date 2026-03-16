@@ -5,7 +5,7 @@ description: "A technical deep-dive into how Diffie-Hellman key exchange enables
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-vpn-encryption-key-exchange-works-diffie-hellman-explained/
-categories: [guides, vpn, encryption]
+categories: [guides, security]
 reviewed: true
 voice-checked: true
 ---
@@ -160,3 +160,4 @@ The protocol continues to evolve, with elliptic curve variants providing better 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
