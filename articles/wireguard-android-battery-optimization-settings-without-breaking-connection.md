@@ -6,7 +6,7 @@ description: "Configure WireGuard on Android for optimal battery life while main
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-android-battery-optimization-settings-without-breaking-connection/
-categories: [guides, privacy, vpn]
+categories: [guides]
 reviewed: true
 voice-checked: true
 intent-checked: true

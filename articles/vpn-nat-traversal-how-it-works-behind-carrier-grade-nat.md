@@ -5,7 +5,7 @@ description: "A technical guide to understanding NAT traversal for VPNs. Learn h
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-nat-traversal-how-it-works-behind-carrier-grade-nat/
-categories: [guides, vpn, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

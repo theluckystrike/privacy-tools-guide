@@ -5,6 +5,10 @@ description: "Learn practical methods to verify that your VPN tunnel is properly
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When using a VPN, trusting that your traffic is actually encrypted requires more than faith in your provider's claims. Network packet analysis gives you concrete proof that your data is protected. Tcpdump, the classic command-line packet analyzer, lets you inspect network traffic at a fundamental level and verify encryption in action.
