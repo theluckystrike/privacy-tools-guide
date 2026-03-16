@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users on identifying, i
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

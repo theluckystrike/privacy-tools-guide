@@ -5,7 +5,7 @@ description: "Learn technical methods to detect unauthorized camera access on An
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-phone-camera-is-being-accessed-remotely/
-categories: [security, privacy, mobile]
+categories: [security, guides]
 ---
 
 {% raw %}

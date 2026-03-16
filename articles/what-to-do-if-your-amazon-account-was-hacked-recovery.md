@@ -6,7 +6,7 @@ description: "Learn how to recover a compromised Amazon account, secure your per
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-amazon-account-was-hacked-recovery/
-categories: [security, privacy, guides]
+categories: [security, guides]
 ---
 
 {% raw %}
