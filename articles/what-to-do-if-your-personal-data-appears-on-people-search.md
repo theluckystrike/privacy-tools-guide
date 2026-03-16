@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "What to Do If Your Personal Data Appears on People Search Sites"
-description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal strategies, and preventive measures."
+title: "What to Do If Your Personal Data Appears on People."
+description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal."
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-personal-data-appears-on-people-search/
-categories: [privacy, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -267,6 +267,12 @@ Removing your data from people search sites requires a multi-step approach: disc
 The process demands persistence. Sites may re-add your information or emerge with new data. Regular maintenance keeps your digital footprint manageable.
 
 For developers, this experience informs better data handling practices in your own projects. Minimizing collected data, implementing proper deletion mechanisms, and respecting user privacy build trust and reduce risk.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

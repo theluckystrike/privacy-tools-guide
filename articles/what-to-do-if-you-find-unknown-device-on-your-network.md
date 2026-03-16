@@ -193,5 +193,11 @@ When you find an unknown device, follow this sequence:
 
 Network visibility is the foundation of security. By regularly monitoring connected devices and understanding your network's expected behavior, you can quickly identify anomalies. Implement segmentation, enable logging, and maintain an inventory of authorized devices. These practices reduce the attack surface and give you confidence in your network's integrity.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

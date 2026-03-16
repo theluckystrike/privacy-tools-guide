@@ -6,7 +6,7 @@ description: "Received a verification email for an account you didn't create? Th
 date: 2026-03-16
 author: theluckystrike
 permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
-categories: [privacy, security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -153,6 +153,12 @@ Some situations require additional action:
 Finding that someone signed up for services using your email requires calm, systematic action. Start by verifying the email's authenticity, then determine whether an account actually exists. Take control through password reset or support channels, and implement preventive measures like email aliases and 2FA. For developers, this situation underscores the importance of building secure signup flows that prevent email enumeration and unauthorized account creation.
 
 Staying proactive with your email hygiene and monitoring your digital footprint significantly reduces the impact of these incidents. The key is acting quickly, verifying before clicking anything, and leveraging the technical tools at your disposal.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

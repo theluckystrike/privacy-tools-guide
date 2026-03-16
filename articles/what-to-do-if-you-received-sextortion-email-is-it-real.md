@@ -5,7 +5,7 @@ description: "Learn how to identify and handle sextortion emails. Technical anal
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -191,6 +191,12 @@ Receiving a sextortion email is alarming, but the technical reality is that most
 Remember: legitimate attackers rarely announce their presence. If someone truly had compromising material, they would demonstrate proof before demanding payment—not send generic threats to thousands of recipients simultaneously.
 
 Stay vigilant, keep your credentials unique, and verify before you panic.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
