@@ -196,3 +196,4 @@ Migrating password managers from Android to iPhone requires attention to export 
 The key steps reduce to: export from Android (preferably encrypted JSON with TOTP), transfer securely to iPhone, import through the iOS app, and verify all items appear correctly. With proper preparation, the entire migration completes in under thirty minutes for typical vaults.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

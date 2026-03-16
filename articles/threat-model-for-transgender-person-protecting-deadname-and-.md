@@ -215,3 +215,4 @@ Start with the digital footprint audit to understand your current exposure, then
 Remember: privacy during transition isn't about shame—it's about safety and autonomy over your own information.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
