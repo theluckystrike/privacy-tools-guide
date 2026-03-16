@@ -5,6 +5,10 @@ description: "A practical guide to setting up WireGuard on a VPS to create your 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-wireguard-on-vps-for-personal-vpn/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
