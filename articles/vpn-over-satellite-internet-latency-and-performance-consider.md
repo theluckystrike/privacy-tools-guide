@@ -6,6 +6,10 @@ description: "A technical guide covering VPN performance over satellite internet
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-over-satellite-internet-latency-and-performance-consider/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
