@@ -5,7 +5,7 @@ description: "A technical guide on using VPN services to access US pharmacy webs
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-us-pharmacy-websites-from-europe-safely/
-categories: [privacy, security, guides]
+categories: [guides, security]
 ---
 
 {% raw %}
