@@ -132,6 +132,44 @@ curl -I https://example.com 2>/dev/null | grep -i "Strict-Transport-Security"
 
 If you see the HSTS header, your browser will remember this domain for the specified duration.
 
+## HSTS Preload Lists and Long-Term Persistence
+
+The HSTS preload list takes supercookie persistence to another level. Major browsers ship with a compiled list of domains that should always use HTTPS—this list is hardcoded into browser binaries and cannot be easily cleared by users. While the preload list itself isn't designed for tracking, it demonstrates how deeply embedded HTTP redirection can become.
+
+For developers, understanding preload implications matters:
+
+```javascript
+// Check if a domain is on Chrome's HSTS preload list
+// This cannot be cleared by users
+const preloadDomains = [
+  'google.com', 'facebook.com', 'twitter.com', 
+  // ... thousands of other domains
+];
+
+function isPreloaded(domain) {
+  return preloadDomains.includes(domain.toLowerCase());
+}
+```
+
+Preloaded domains automatically enforce HTTPS for one year minimum, creating persistent connection behavior that cannot be overridden without browser updates.
+
+## Developer Considerations
+
+Web developers should understand both the security benefits and privacy concerns of HSTS:
+
+- **Security benefit**: Prevents man-in-the-middle attacks and protocol downgrades
+- **Privacy concern**: Creates a persistent state that trackers can exploit
+- **Best practice**: Use HSTS, but be aware of how it interacts with tracking prevention tools
+
+When implementing HSTS in your applications, consider using shorter max-age values during development:
+
+```nginx
+# Nginx configuration for HSTS
+add_header Strict-Transport-Security "max-age=3600; includeSubDomains" always;
+# Development: short max-age
+# Production: max-age=31536000; includeSubDomains; preload
+```
+
 ## Conclusion
 
 HSTS supercookie tracking demonstrates how security mechanisms designed to protect users can be repurposed for tracking. Understanding these techniques empowers developers and privacy-conscious users to make informed decisions about browser configuration and web application design. While the web ecosystem continues to develop countermeasures, awareness remains the first line of defense against persistent identifier tracking.
