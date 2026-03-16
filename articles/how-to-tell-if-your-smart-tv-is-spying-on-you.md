@@ -5,7 +5,7 @@ description: "Learn how to detect if your smart TV is collecting and transmittin
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-smart-tv-is-spying-on-you/
-categories: [privacy, security, smart-home]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
