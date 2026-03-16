@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Threat Model for Corporate Whistleblower: Protecting Evidence and Identity"
-description: "A practical threat modeling guide for corporate whistleblowers. Learn to protect evidence, secure communications, and maintain anonymity using proven security patterns."
+title: "Threat Model for Corporate Whistleblower: Protecting."
+description: "A practical threat modeling guide for corporate whistleblowers. Learn to protect evidence, secure communications, and maintain anonymity using proven."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
@@ -146,6 +146,12 @@ Before relying on your system, test it exhaustively. Verify that Tor is actually
 Practice your operational security procedures until they become muscle memory. The stress of an actual whistleblower situation will degrade your judgment; automated habits provide protection when cognitive load is highest.
 
 Building a robust threat model requires ongoing attention as both adversaries and tools evolve. Regular security audits of your practices help identify weaknesses before they become critical vulnerabilities.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Use Public Computers Safely Without Leaving Any Traces"
-description: "A practical guide for developers and power users on using public computers securely. Learn browser fingerprinting prevention, data hygiene, and forensic countermeasures."
+title: "How to Use Public Computers Safely Without Leaving Any."
+description: "A practical guide for developers and power users on using public computers securely. Learn browser fingerprinting prevention, data hygiene, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-public-computers-safely-without-leaving-any-trace/
-categories: [security, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -218,6 +218,12 @@ Before using a public computer for any sensitive activity:
 - [ ] Prefer not to authenticate at all when possible
 
 Public computers will always carry residual risk. Understanding what data persists and applying defense-in-depth measures reduces your attack surface significantly. For developers handling API keys, credentials, or proprietary code, these practices prevent accidental exposure that could compromise production systems.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

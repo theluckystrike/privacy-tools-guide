@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Complete Guide to Operating System Hardening for Extreme Privacy"
-description: "A practical guide to hardening your operating system for maximum privacy. Learn kernel parameters, sysctl settings, firewall configuration, and advanced techniques for developers and power users."
+title: "Complete Guide to Operating System Hardening for Extreme."
+description: "A practical guide to hardening your operating system for maximum privacy. Learn kernel parameters, sysctl settings, firewall configuration, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-operating-system-hardening-for-extreme-pri/
@@ -281,6 +281,12 @@ Operating system hardening transforms default installations into privacy-respect
 The initial setup requires investment, but automated scripts and configuration management tools like Ansible simplify ongoing maintenance. Privacy is not a product—it's a process built on careful system configuration.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

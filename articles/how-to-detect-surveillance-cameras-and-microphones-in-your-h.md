@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Detect Surveillance Cameras and Microphones in Your Home"
-description: "A practical guide for developers and power users to identify hidden surveillance devices in your living space using network scanning, RF detection, and physical inspection techniques."
+title: "How to Detect Surveillance Cameras and Microphones in."
+description: "A practical guide for developers and power users to identify hidden surveillance devices in your living space using network scanning, RF detection, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-surveillance-cameras-and-microphones-in-your-h/
@@ -219,6 +219,12 @@ Detecting hidden cameras and microphones requires a layered approach:
 Regular network audits and physical sweeps help maintain privacy in your living space. For developers, building automated monitoring scripts provides continuous protection against covert surveillance.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

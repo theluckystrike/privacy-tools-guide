@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Create a New Digital Identity After Escaping Domestic Violence: A Technical Guide"
-description: "A practical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers email isolation, phone number separation, device hardening, and operational security."
+title: "How to Create a New Digital Identity After Escaping."
+description: "A practical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers email isolation, phone."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
@@ -158,6 +158,12 @@ This is not a one-time setup. Digital security requires continuous attention as 
 ## Summary
 
 Building a new digital identity after escaping domestic violence involves isolating email, phone, device, and network layers. Each step reduces the attack surface available to an abuser. Prioritize device and credential separation first, then establish new communication channels. Regularly audit your digital footprint and maintain security practices that protect your new identity.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
