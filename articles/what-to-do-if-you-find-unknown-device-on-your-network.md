@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Discovering an unknown device on your network can be unsettling. Whether you're managing a home lab, a development environment, or a small business network, knowing how to respond systematically is essential. This guide walks through the technical process of identifying unknown devices, assessing potential threats, and hardening your network security posture.
+Run `arp -a` or `nmap -sn 192.168.1.0/24` to identify the unknown device by MAC address, then look up the manufacturer via the OUI prefix. If unrecognized, block it immediately via your router's MAC filter, change your WiFi password, and check for unauthorized access. Most unknown devices turn out to be forgotten IoT gadgets, but treating every one as a potential threat until identified protects against unauthorized network access.
 
 ## Identifying the Unknown Device
 
