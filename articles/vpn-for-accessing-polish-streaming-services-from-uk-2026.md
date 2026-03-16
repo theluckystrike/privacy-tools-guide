@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on using VPNs to 
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-polish-streaming-services-from-uk-2026/
-categories: [guides, vpn, streaming]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

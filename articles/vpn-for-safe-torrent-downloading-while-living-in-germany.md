@@ -5,6 +5,10 @@ description: "A technical guide to using VPNs for secure torrent downloading in 
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-safe-torrent-downloading-while-living-in-germany/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
