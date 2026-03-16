@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Verify Your VPN Is Not Leaking DNS Requests"
-description: "Learn practical methods to check if your VPN is leaking DNS requests. Includes command-line tools, automated tests, and advanced troubleshooting for developers and power users."
+description: "Learn practical methods to check if your VPN is leaking DNS requests. Includes command-line tools, automated tests, and advanced troubleshooting for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-your-vpn-is-not-leaking-dns-requests/
@@ -209,5 +209,11 @@ AllowedIPs = 0.0.0.0/0, ::/0
 ## Conclusion
 
 Regular DNS leak testing ensures your VPN provides the privacy protection you expect. Combine online testers with command-line tools for comprehensive coverage. Automated scripts catch leaks that manual testing might miss, especially after network changes or system updates.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
