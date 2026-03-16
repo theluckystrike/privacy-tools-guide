@@ -5,6 +5,10 @@ description: "A practical guide explaining tunnel interfaces and full tunnel rou
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

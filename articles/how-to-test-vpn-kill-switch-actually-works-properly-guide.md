@@ -6,7 +6,7 @@ description: "Learn how to verify your VPN kill switch actually works. This guid
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-test-vpn-kill-switch-actually-works-properly-guide/
-categories: [guides, vpn, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

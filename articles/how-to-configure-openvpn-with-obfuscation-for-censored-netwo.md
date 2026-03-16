@@ -6,7 +6,7 @@ description: "A practical guide to configuring OpenVPN with obfuscation to bypas
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-openvpn-with-obfuscation-for-censored-networks/
-categories: [guides, privacy, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
