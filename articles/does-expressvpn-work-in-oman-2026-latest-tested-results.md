@@ -6,7 +6,7 @@ description: "Technical analysis of ExpressVPN functionality in Oman. Includes r
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-expressvpn-work-in-oman-2026-latest-tested-results/
-categories: [privacy, vpn, testing]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

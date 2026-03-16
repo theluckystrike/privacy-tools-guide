@@ -5,7 +5,7 @@ description: "Technical analysis of VPN functionality in Belarus. Learn which pr
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-ivpn-work-in-belarus-2026-latest-confirmed-test/
-categories: [privacy, security, vpn]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

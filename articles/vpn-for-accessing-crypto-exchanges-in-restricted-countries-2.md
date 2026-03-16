@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on using VPNs to 
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-crypto-exchanges-in-restricted-countries-2/
-categories: [guides, vpn, cryptocurrency]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
