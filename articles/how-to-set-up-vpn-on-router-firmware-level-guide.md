@@ -138,6 +138,12 @@ For users requiring maximum throughput, consider these approaches:
 
 Running VPN at the router level remains one of the most effective methods for protecting all network devices. With the right firmware and hardware, you can achieve comprehensive network security without sacrificing convenience or managing multiple client installations.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
