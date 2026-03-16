@@ -6,7 +6,7 @@ description: "Technical comparison of WireGuard and OpenVPN performance on mobil
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/
-categories: [guides, vpn, wireguard, openvpn]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
