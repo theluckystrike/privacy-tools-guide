@@ -5,7 +5,7 @@ description: "Discover actionable steps to remove your personal data from people
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-personal-data-appears-on-people-search/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}
