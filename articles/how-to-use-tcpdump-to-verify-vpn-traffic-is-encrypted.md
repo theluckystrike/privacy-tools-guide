@@ -9,11 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When using a VPN, trusting that your traffic is actually encrypted requires more than faith in your provider's claims. Network packet analysis gives you concrete proof that your data is protected. Tcpdump, the classic command-line packet analyzer, lets you inspect network traffic at a fundamental level and verify encryption in action.
-
-This guide shows developers and power users how to capture and analyze VPN traffic to confirm encryption is working correctly.
+Verify your VPN traffic is encrypted by running `sudo tcpdump -i eth0 -A port 80 | grep -i "GET\|POST\|Host:"` on your physical interface while connected -- a properly working VPN produces no readable output. Capture traffic on both your physical interface (eth0/en0) and VPN tunnel interface (tun0/wg0), then compare: encrypted traffic appears as random bytes with no readable HTTP headers, domain names, or application data.
 
 ## Understanding VPN Encryption Verification
 

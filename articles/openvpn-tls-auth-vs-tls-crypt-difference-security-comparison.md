@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When configuring OpenVPN, security professionals face a choice between `tls-auth` and `tls-crypt` for protecting the TLS handshake. Both mechanisms add a layer of authentication to OpenVPN connections, but they operate differently and provide distinct security properties. This article examines the technical differences, security implications, and practical configurations for each option.
+Choose `tls-crypt` if you need maximum security -- it encrypts and authenticates the entire TLS handshake, hiding your server from fingerprinting scans and providing strong DoS protection. Choose `tls-auth` only if you need backward compatibility with older OpenVPN versions, since it adds HMAC authentication to the handshake but leaves the TLS fingerprint visible to network observers. For any new OpenVPN deployment, `tls-crypt` is the recommended option.
 
 ## Understanding the Baseline: TLS Encryption in OpenVPN
 

@@ -9,11 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-VPN providers make bold claims about their services—no-logs policies, military-grade encryption, blazing-fast speeds, and complete anonymity. But how can you verify these claims yourself without relying solely on marketing materials? Fortunately, a growing ecosystem of open source tools allows you to audit and validate what your VPN provider actually delivers.
-
-This guide walks you through practical methods to test VPN provider claims using freely available, community-verified tools.
+Audit your VPN provider's claims by running DNS leak tests with `dig` and dnsleaktest.com, verifying encryption protocols with `nmap` and `wg show`, checking for IP leaks via WebRTC and IPv6, and benchmarking real-world speeds with `speedtest-cli` and `iperf3`. These open source tools let you independently verify whether a provider's no-logs, encryption, and performance promises hold up outside of their marketing materials.
 
 ## Why Audit Your VPN?
 
