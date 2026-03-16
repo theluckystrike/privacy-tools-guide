@@ -5,7 +5,7 @@ description: "Learn technical methods to detect if your private photos have been
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-private-photos-were-leaked-online/
-categories: [privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

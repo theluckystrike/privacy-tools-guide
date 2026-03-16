@@ -6,7 +6,7 @@ description: "Learn how to identify signs of a compromised router with practical
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-router-has-been-compromised-check-guide/
-categories: [security, networking, privacy]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

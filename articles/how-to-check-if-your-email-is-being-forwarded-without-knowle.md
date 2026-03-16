@@ -6,7 +6,7 @@ description: "Learn how to detect unauthorized email forwarding with practical t
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-email-is-being-forwarded-without-knowle/
-categories: [privacy, security, email]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

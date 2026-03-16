@@ -6,7 +6,7 @@ description: "Learn practical techniques to protect your credit card from skimmi
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-credit-card-from-being-skimmed-online-shoppin/
-categories: [privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}
