@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "What to Do If Your Identity Was Stolen Online: Step-by-Step Guide"
-description: "A practical guide for developers and power users on how to respond when your identity has been compromised online. Includes command-line tools, API checks, and automation scripts."
+title: "What to Do If Your Identity Was Stolen Online."
+description: "A practical guide for developers and power users on how to respond when your identity has been compromised online. Includes command-line tools, API."
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
-categories: [security, privacy, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -173,6 +173,12 @@ After recovering from an identity theft incident, implement these ongoing practi
 Responding to identity theft requires speed and method. Audit your exposure, secure accounts by resetting passwords and enabling MFA, rotate credentials, monitor for further abuse, document everything, and consider credit freezes. With these steps, you regain control and reduce the risk of future incidents.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
