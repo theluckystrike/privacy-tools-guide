@@ -5,7 +5,7 @@ description: "Discover how websites use the Battery API to fingerprint users, th
 date: 2026-03-16
 author: theluckystrike
 permalink: /battery-api-fingerprinting-how-battery-status-tracks-you-exp/
-categories: [guides, security, privacy]
+categories: [guides, security]
 ---
 
 The web platform provides numerous APIs designed to enhance user experience, but some of these APIs can be weaponized for tracking. The Battery Status API, standardized under the W3C, exemplifies this tension between functionality and privacy. Originally created to help web applications adjust their behavior based on battery level—dimming screens on low battery or pausing resource-intensive tasks—this API simultaneously exposes data that can be used to fingerprint users across sessions.

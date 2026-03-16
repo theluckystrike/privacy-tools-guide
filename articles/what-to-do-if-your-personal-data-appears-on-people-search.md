@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on removing your 
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-personal-data-appears-on-people-search/
-categories: [privacy, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

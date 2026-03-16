@@ -6,7 +6,7 @@ description: "Discover how WebRTC local IP leaks can expose your real network ad
 date: 2026-03-16
 author: theluckystrike
 permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/
-categories: [guides, security, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

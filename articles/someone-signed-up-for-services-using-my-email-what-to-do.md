@@ -6,7 +6,7 @@ description: "Received a verification email for an account you didn't create? Th
 date: 2026-03-16
 author: theluckystrike
 permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
-categories: [privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
