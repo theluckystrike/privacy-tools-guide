@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Tell If Your Phone Has Been Jailbroken Without Consent"
-description: "A technical guide for developers and power users to detect unauthorized iOS or Android jailbreaks. Includes code examples, detection scripts, and remediation steps."
+title: "How to Tell If Your Phone Has Been Jailbroken Without."
+description: "A technical guide for developers and power users to detect unauthorized iOS or Android jailbreaks. Includes code examples, detection scripts, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consent/
-categories: [security, guides]
+categories: [troubleshooting]
 reviewed: true
 score: 8
 intent-checked: true
@@ -326,6 +326,12 @@ Protecting against unauthorized jailbreaking requires physical security measures
 For enterprise environments, consider Mobile Device Management (MDM) solutions that can detect and respond to jailbroken devices automatically.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

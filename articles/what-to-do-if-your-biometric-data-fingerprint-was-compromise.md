@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "What to Do If Your Biometric Data (Fingerprint) Was Compromised: A Developer's Action Plan"
-description: "A practical guide for developers and power users on responding to fingerprint biometric data breaches. Includes technical assessment steps, containment procedures, and long-term mitigation strategies."
+title: "What to Do If Your Biometric Data (Fingerprint) Was."
+description: "A practical guide for developers and power users on responding to fingerprint biometric data breaches. Includes technical assessment steps, containment."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /what-to-do-if-your-biometric-data-fingerprint-was-compromise/
@@ -285,6 +285,12 @@ After immediate containment:
 Fingerprint biometric compromise presents unique challenges because the affected identifier cannot be changed. The key responses—immediate containment, service-level coordination, authentication architecture changes, and ongoing monitoring—form a comprehensive approach to managing this permanent risk.
 
 For developers, the lesson is clear: biometric authentication should never be the sole factor in any security-critical system. Design for the scenario where biometric data will eventually be compromised, because with enough time and motivation, it likely will be.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
