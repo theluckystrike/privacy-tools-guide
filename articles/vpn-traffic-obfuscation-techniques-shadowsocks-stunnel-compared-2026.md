@@ -5,6 +5,10 @@ description: "Technical comparison of VPN traffic obfuscation methods including 
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compared-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
