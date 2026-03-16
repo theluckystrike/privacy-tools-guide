@@ -263,3 +263,4 @@ A breached cloud storage account doesn't have to be catastrophic. By acting quic
 For developers, this means treating cloud credentials with the same care as production secrets. Implement proper secret management, use short-lived tokens, enable audit logging, and maintain verified backups. Your cloud storage should enhance your workflow, not become a vulnerability.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
