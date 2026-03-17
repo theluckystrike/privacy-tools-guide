@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Set Up Offline Encrypted Communication Between Two People"
-description: "A practical guide for developers and power users to establish secure offline communication channels using encryption tools, air-gapped systems, and proven protocols."
+title: "How to Set Up Offline Encrypted Communication Between."
+description: "A practical guide for developers and power users to establish secure offline communication channels using encryption tools, air-gapped systems, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-offline-encrypted-communication-between-two-pe/
@@ -191,6 +191,12 @@ Offline encrypted communication requires more effort than online alternatives, b
 Choose your method based on your threat model, technical capability, and the sensitivity of your communications. Test your setup thoroughly before relying on it for sensitive information.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Researcher Participant Data Privacy IRB Compliance Digital Tools Guide"
-description: "A practical guide for researchers on protecting participant data, maintaining IRB compliance, and selecting privacy-respecting digital tools for human subjects research."
+title: "Researcher Participant Data Privacy IRB Compliance."
+description: "A practical guide for researchers on protecting participant data, maintaining IRB compliance, and selecting privacy-respecting digital tools for human."
 date: 2026-03-16
 author: theluckystrike
 permalink: /researcher-participant-data-privacy-irb-compliance-digital-t/
@@ -244,6 +244,12 @@ Before launching data collection, verify these requirements:
 ## Conclusion
 
 Protecting participant data requires layered defenses combining encryption, access controls, and secure development practices. The tools and techniques in this guide provide a foundation, but implementation must be tailored to your specific study protocols and institutional requirements. Document your security measures thoroughly—your IRB approval and future audits will thank you.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

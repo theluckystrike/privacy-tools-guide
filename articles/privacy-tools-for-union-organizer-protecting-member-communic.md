@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Privacy Tools for Union Organizer: Protecting Member Communication Securely"
-description: "A practical guide for union organizers on securing member communications. Covers encrypted messaging, secure file sharing, metadata protection, and implementation strategies."
+title: "Privacy Tools for Union Organizer: Protecting Member."
+description: "A practical guide for union organizers on securing member communications. Covers encrypted messaging, secure file sharing, metadata protection, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-union-organizer-protecting-member-communic/
@@ -203,6 +203,12 @@ Protecting union member communications requires a multi-layered approach combini
 Start with Signal for day-to-day communications, implement encrypted file storage for member data, and establish network protection for sensitive discussions. As your organizing work scales, consider self-hosted solutions like Matrix for greater infrastructure control.
 
 The security of your members depends not just on tool selection, but on consistent implementation and ongoing vigilance against evolving threats.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

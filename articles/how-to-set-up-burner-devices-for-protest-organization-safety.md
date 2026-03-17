@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Burner Devices for Protest Organization Safety"
-description: "A technical guide for developers and power users on configuring secure burner phones and tablets for protest coordination. Covers OS hardening, communication tools, operational security, and disposal protocols."
+description: "A technical guide for developers and power users on configuring secure burner phones and tablets for protest coordination. Covers OS hardening."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-burner-devices-for-protest-organization-safety/
@@ -202,6 +202,12 @@ Effective burner device implementation requires:
 - **Secure disposal**: Physical destruction of storage media
 
 This layered approach—sometimes called defense in depth—ensures that compromise of any single element doesn't expose your network or participants.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

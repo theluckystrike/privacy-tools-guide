@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Secure Dead Drop for Digital Information"
-description: "A practical guide to creating secure digital dead drops for anonymous information exchange. Learn to build encrypted drop points using GPG, Tor onion services, and custom implementations."
+description: "A practical guide to creating secure digital dead drops for anonymous information exchange. Learn to build encrypted drop points using GPG, Tor onion."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-dead-drop-for-digital-information/
@@ -256,6 +256,12 @@ Begin with the GPG-based method if you need quick setup with minimal infrastruct
 Each approach trades simplicity for control. The right choice depends on your specific threat model and operational requirements.
 
 For additional privacy tools and security guides, explore the Privacy Tools Guide collection.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,8 +3,8 @@
 
 
 layout: default
-title: "Privacy Tools for Social Worker Handling Sensitive Case Files Digitally"
-description: "A comprehensive guide to privacy tools for social workers handling sensitive case files digitally. Learn about encrypted storage, secure communication platforms, and HIPAA-compliant solutions."
+title: "Privacy Tools for Social Worker Handling Sensitive Case."
+description: "A comprehensive guide to privacy tools for social workers handling sensitive case files digitally. Learn about encrypted storage, secure communication."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-social-worker-handling-sensitive-case-file/
@@ -161,5 +161,11 @@ Privacy tools for social workers must balance strict security requirements with 
 Start with the basics—encrypted storage and a password manager—then layer in additional tools based on your specific role and agency requirements. The investment in setting up secure workflows pays dividends in client trust, legal compliance, and professional peace of mind.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Communicate During Internet Shutdown: Alternative Network Methods"
-description: "A practical guide for developers and power users on maintaining communication when the internet goes down. Covers mesh networks, packet radio, offline messaging protocols, and implementation examples."
+title: "How to Communicate During Internet Shutdown: Alternative."
+description: "A practical guide for developers and power users on maintaining communication when the internet goes down. Covers mesh networks, packet radio, offline."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-communicate-during-internet-shutdown-alternative-netw/
@@ -165,6 +165,12 @@ For developers serious about communication resilience:
 Internet shutdowns need not mean complete communication failure. By understanding mesh networking, radio-based communication, and offline messaging protocols, developers can build systems that maintain connectivity when traditional infrastructure fails. Start with local experiments using the code examples above, then scale toward more sophisticated solutions as skills develop.
 
 The key is preparation—testing equipment and procedures before emergencies occur ensures functional communication when it matters most.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

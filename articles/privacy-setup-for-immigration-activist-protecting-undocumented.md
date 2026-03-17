@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Privacy Setup for Immigration Activist: Protecting Undocumented Community Members"
+title: "Privacy Setup for Immigration Activist: Protecting."
 description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/
-categories: [privacy, security, activism]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -175,6 +175,12 @@ When meeting undocumented community members, create physical security:
 Protecting undocumented community members requires layering multiple privacy technologies with consistent operational practices. Start with encrypted communication (Signal), implement encrypted storage (GPG, VeraCrypt), secure your network (WireGuard VPN), and harden devices against physical compromise. Remember that security is iterative—regularly audit your practices and update configurations as threats evolve.
 
 The tools and techniques outlined here provide a foundation, but each organization must assess their specific threat model. Consult with digital security trainers who specialize in immigrant rights work for situation-specific guidance.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

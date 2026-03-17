@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Dentist Patient Records Privacy: HIPAA-Compliant Digital Storage Guide"
-description: "A practical guide for developers and dental practice power users implementing HIPAA-compliant digital storage for patient records. Covers encryption, access controls, and implementation patterns."
+title: "Dentist Patient Records Privacy: HIPAA-Compliant Digital."
+description: "A practical guide for developers and dental practice power users implementing HIPAA-compliant digital storage for patient records. Covers encryption."
 date: 2026-03-16
 author: theluckystrike
 permalink: /dentist-patient-records-privacy-hipaa-compliant-digital-stor/
@@ -193,5 +193,11 @@ Implementing HIPAA-compliant digital storage for dentist patient records require
 The investment in proper HIPAA implementation protects patients and your practice from breaches, fines, and reputational damage.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
