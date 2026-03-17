@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "WireGuard Persistent Keepalive Setting Explained: When."
+title: "WireGuard Persistent Keepalive Setting Explained: When to Enable It"
 description: "Learn when to enable WireGuard persistent keepalive. Practical guide covering NAT traversal, firewall timeouts, and configuration examples for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -90,7 +90,6 @@ Understanding persistent keepalive helps you make informed decisions about your 
 
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
