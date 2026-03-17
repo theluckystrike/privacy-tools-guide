@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Async Code Review Process Without Zoom Calls: A Step-by-Step Guide"
 description: "Learn how to implement async code review process without Zoom calls. This comprehensive guide covers pull request templates, async feedback workflows, and best practices for distributed teams."
