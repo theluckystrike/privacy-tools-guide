@@ -184,3 +184,4 @@ Establishing secure digital communication for lawyer-client privilege requires i
 The key principle remains: any communication channel where a third party can potentially access content represents a risk to attorney-client privilege. By implementing the solutions described here, you maintain the confidentiality that privilege protection requires.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

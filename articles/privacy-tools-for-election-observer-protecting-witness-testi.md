@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Tools for Election Observer Protecting Witness."
-description: A practical guide to securing witness testimony and election observation data using encryption, secure communication, and operational security tools.
+description: "A practical guide to securing witness testimony and election observation data using encryption, secure communication, and operational security tools."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-election-observer-protecting-witness-testimony/

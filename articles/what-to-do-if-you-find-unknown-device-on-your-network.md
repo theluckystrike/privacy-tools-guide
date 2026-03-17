@@ -1,7 +1,7 @@
 ---
 layout: default
-title: What to Do If You Find an Unknown Device on Your Network
-description: A comprehensive guide for discovering unknown devices on your network, investigating suspicious connections, and securing your home network against unauthorized access.
+title: "What to Do If You Find an Unknown Device on Your Network"
+description: "A comprehensive guide for discovering unknown devices on your network, investigating suspicious connections, and securing your home network against unauthorized access."
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
