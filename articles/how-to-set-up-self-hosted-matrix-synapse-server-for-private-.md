@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Self-Hosted Matrix Synapse Server for Private Messaging"
-description: "A practical guide to deploying your own Matrix Synapse server for secure, encrypted private messaging. Includes Docker setup, configuration, and essential hardening steps."
+title: "How to Set Up Self-Hosted Matrix Synapse Server for."
+description: "A practical guide to deploying your own Matrix Synapse server for secure, encrypted private messaging. Includes Docker setup, configuration, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-self-hosted-matrix-synapse-server-for-private-/
@@ -230,6 +230,12 @@ services:
 Running your own Matrix Synapse server provides privacy, control, and interoperability with the broader Matrix network. The setup described above gives you a functional server with TLS, end-to-end encryption, and federation capabilities. Regular maintenance—backups, updates, and monitoring—ensures your private messaging infrastructure remains secure.
 
 For further customization, explore Synapse's extensive configuration options, including room directory management, authentication providers, and integration bridges. The official Matrix documentation at matrix.org offers detailed guidance for advanced use cases.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

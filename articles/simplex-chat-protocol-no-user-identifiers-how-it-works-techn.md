@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Simplex Chat Protocol No User Identifiers: How It Works Technical Guide"
-description: "A technical deep dive into how SimpleX Chat achieves privacy through absence of user identifiers. Learn the queue-based architecture, DH key exchange, and implementation details."
+title: "Simplex Chat Protocol No User Identifiers: How It Works."
+description: "A technical deep dive into how SimpleX Chat achieves privacy through absence of user identifiers. Learn the queue-based architecture, DH key exchange."
 date: 2026-03-16
 author: theluckystrike
 permalink: /simplex-chat-protocol-no-user-identifiers-how-it-works-techn/
@@ -215,6 +215,12 @@ For developers implementing SimpleX or similar identifier-free protocols:
 The identifier-free design trades some usability for privacy. Users must share new invitations for each device, and there's no way to recover access if all queue credentials lost. These tradeoffs reflect the protocol's priority: privacy over convenience.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Post-Quantum Encryption in Messaging Apps: Preparing for Quantum Computing Threats in 2026"
+title: "Post-Quantum Encryption in Messaging Apps: Preparing for."
 description: "A technical guide for developers and power users on post-quantum encryption in messaging apps, NIST algorithms, and migration strategies for 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -133,6 +133,12 @@ Individual users can take several concrete steps to prepare:
 The post-quantum migration will accelerate throughout 2026 as more platforms adopt NIST-standardized algorithms and as quantum computing capabilities continue advancing. Developers should prioritize crypto-agility in new implementations, designing systems that can incorporate improved algorithms without complete overhauls.
 
 For now, the hybrid approach provides practical protection while the ecosystem matures. The key is beginning the transition now rather than waiting for quantum computers to become practical threats—security architecture takes time to implement correctly.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

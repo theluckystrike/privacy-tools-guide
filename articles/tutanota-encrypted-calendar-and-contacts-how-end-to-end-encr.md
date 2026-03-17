@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Tutanota Encrypted Calendar and Contacts: How End-to-End Encryption Works"
+title: "Tutanota Encrypted Calendar and Contacts: How End-to-End."
 description: "A technical deep-dive into Tutanota's encrypted calendar and contacts features. Learn how end-to-end encryption protects your data with practical examples for developers and power users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/
-categories: [security, tutorials]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -140,6 +140,12 @@ For users requiring maximum privacy, Tutanota's approach reduces attack surface 
 Tutanota's encrypted calendar and contacts represent a mature implementation of end-to-end encryption applied beyond email. The combination of AES-256 for bulk encryption with RSA/ECC for key exchange provides strong security guarantees. For developers and power users, understanding these mechanisms enables better privacy decisions and more secure implementations.
 
 The critical insight is that encryption only protects data when keys remain secure. Tutanota's architecture correctly places the key derivation and decryption process entirely on the client side, ensuring the server never sees plaintext. This design principle—never trusting the server with plaintext—forms the foundation of truly private digital communication.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
