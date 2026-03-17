@@ -19,7 +19,7 @@ Airport public WiFi networks present significant security risks for travelers. T
 
 ## Understanding Airport WiFi Security Risks
 
-Airport WiFi networks are among the most dangerous public无线networks you'll encounter. Multiple factors contribute to this risk:
+Airport WiFi networks are among the most dangerous public networks you'll encounter. Multiple factors contribute to this risk:
 
 **Unencrypted Networks**: Many airport WiFi networks transmit data without any encryption, meaning anyone nearby can capture network traffic with freely available tools. Airmon-ng, Wireshark, and similar utilities allow attackers to intercept credentials, session cookies, and sensitive communications.
 
