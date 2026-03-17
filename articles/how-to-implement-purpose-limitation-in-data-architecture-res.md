@@ -5,6 +5,10 @@ description: "Learn practical techniques to implement purpose limitation in your
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-purpose-limitation-in-data-architecture-res/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
