@@ -5,7 +5,7 @@ description: "A practical technical guide for developers and power users to buil
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
-categories: [guides, security, privacy]
+categories: [guides, security]
 intent-checked: true
 voice-checked: true
 ---

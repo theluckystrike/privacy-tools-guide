@@ -5,7 +5,7 @@ description: "A practical guide for nurse practitioners setting up HIPAA complia
 date: 2026-03-16
 author: theluckystrike
 permalink: /nurse-practitioner-mobile-device-privacy-hipaa-compliant-phone-setup/
-categories: [guides, privacy, healthcare]
+categories: [guides]
 reviewed: false
 score: 0
 intent-checked: false
