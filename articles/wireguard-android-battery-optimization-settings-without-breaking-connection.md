@@ -8,7 +8,7 @@ description: "Learn how to optimize WireGuard VPN battery usage on Android witho
 date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /wireguard-android-battery-optimization-settings-without-breaking-connection/
-categories: [guides, vpn, wireguard]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

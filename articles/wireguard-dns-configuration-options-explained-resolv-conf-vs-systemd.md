@@ -5,7 +5,7 @@ description: "Complete guide to WireGuard DNS configuration. Learn how to set DN
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/
-categories: [guides, security, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
