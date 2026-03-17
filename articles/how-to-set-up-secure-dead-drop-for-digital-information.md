@@ -1,284 +1,262 @@
 ---
 layout: default
 title: "How to Set Up Secure Dead Drop for Digital Information"
-description: "A practical guide to building secure digital dead drops for anonymous information exchange. Learn self-hosted solutions, PGP-based methods, and automation for developers and power users."
+description: "A practical guide to creating secure digital dead drops for anonymous information exchange. Learn to build encrypted drop points using GPG, Tor onion services, and custom implementations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-dead-drop-for-digital-information/
-categories: [guides]
+categories: [guides, privacy, security]
+reviewed: true
+score: 8
 intent-checked: true
 voice-checked: true
 ---
 
 {% raw %}
 
-A digital dead drop works like its physical counterpart: one person leaves information in a predetermined location for another person to retrieve later, without both parties needing to meet. In an era of mass surveillance and data harvesting, understanding how to set up secure dead drops for digital information provides a valuable tool for privacy-conscious developers, security researchers, whistleblowers, and anyone needing to exchange sensitive information without exposing their identities or communication patterns.
+A digital dead drop functions like its physical counterpart—a secure location where information can be left for later pickup without both parties being present simultaneously. For developers and power users seeking secure communication channels, understanding how to set up dead drops provides valuable tools for privacy-conscious information exchange.
 
-This guide covers multiple approaches to building secure dead drops, from simple PGP-based message exchange to self-hosted web applications. Each method offers different tradeoffs between convenience, anonymity, and security.
+This guide covers three approaches to building secure dead drops: GPG-based encrypted file drops, Tor onion service implementations, and custom server configurations.
 
-## Understanding Dead Drop Security Requirements
+## Understanding Digital Dead Drops
 
-Before implementing a dead drop system, you need to establish your threat model. A secure digital dead drop should provide:
+Traditional communication requires simultaneous presence—both parties must be online at the same time. Dead drops break this requirement by separating the upload and download actions. The sender leaves encrypted data at a predetermined location; the recipient retrieves it later using a shared key or authentication mechanism.
 
-- **Sender anonymity**: The recipient cannot determine who uploaded the message
-- **Recipient anonymity**: The sender does not know who retrieved the message (for reply drops)
-- **Message confidentiality**: Only the intended recipient can read the message
-- **Metadata protection**: Timing patterns and access logs should not reveal participant identities
-- **Expiration**: Messages should auto-delete after retrieval or a set time
+Legitimate use cases include secure tip lines, investigative journalism communications, incident response coordination, and any scenario where metadata minimization matters. The key security property is temporal separation: sender and receiver never directly communicate.
 
-No single solution provides perfect anonymity, but layering these properties creates robust communication channels.
+## Method 1: GPG-Encrypted File Drops
 
-## Method 1: PGP-Based Dead Drop with Pastebin
+The simplest approach uses GPG encryption with a shared drop location. This method requires minimal infrastructure—a simple file server or even cloud storage.
 
-The simplest approach uses GPG encryption combined with a temporary paste service. This requires no special software and works across any platform with GPG installed.
+### Setup Process
 
-First, generate a dedicated dead drop keypair for the recipient:
+First, generate a dedicated dead drop key pair:
 
 ```bash
 gpg --full-generate-key
-# Select RSA, 4096 bits, no expiration
+# Select RSA, 4096 bits, no expiration for simplicity
 # Use a dedicated email like deaddrop@example.com
 ```
 
-Export the public key and share it securely (in person or via a separate channel):
+Export the public key for drop users:
 
 ```bash
-gpg --export --armor deaddrop@example.com > deaddrop-public.key
+gpg --armor --export deaddrop@example.com > deaddrop-public.asc
 ```
 
-Senders encrypt their message using this public key:
+### Drop Implementation
+
+Create a script to handle encrypted uploads:
 
 ```bash
-echo "Secret message for the dead drop" | gpg \
-  --encrypt \
-  --armor \
-  --recipient deaddrop@example.com \
-  --output encrypted-message.asc
+#!/bin/bash
+# drop-upload.sh - Upload encrypted content to dead drop
+
+DROP_DIR="/var/www/drops"
+RECIPIENT="deaddrop@example.com"
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <file-to-drop>"
+    exit 1
+fi
+
+INPUT_FILE="$1"
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+OUTPUT_FILE="$DROP_DIR/drop-$TIMESTAMP.gpg"
+
+# Encrypt file for recipient
+gpg --encrypt --recipient "$RECIPIENT" --output "$OUTPUT_FILE" "$INPUT_FILE"
+
+echo "Drop created: $OUTPUT_FILE"
+echo "Share this filename with the recipient"
 ```
 
-The encrypted message can now be posted to any pastebin service. The recipient downloads, decrypts, and reads:
+Recipients decrypt using:
 
 ```bash
-gpg --decrypt encrypted-message.asc
+gpg --decrypt --output recovered-file.txt drop-TIMESTAMP.gpg
 ```
 
-For reply functionality, the recipient creates their own keypair and publishes the public key. The sender retrieves it, encrypts their response, and posts it back to the dead drop.
+### Security Considerations
 
-**Limitations**: This method relies on third-party paste services, which may log IP addresses. Timing analysis can correlate upload and download events.
+This method provides confidentiality through GPG encryption but offers no anonymity by default. Server logs reveal upload and download patterns. For enhanced anonymity, combine with Tor Browser or a VPN.
 
-## Method 2: Self-Hosted PrivateBin
+## Method 2: Tor Onion Service Dead Drops
 
-PrivateBin provides a self-hosted pastebin with client-side encryption. The server never sees plaintext content, making it suitable for dead drops.
+Onion services provide inherent encryption and can be configured for anonymity. This approach creates a dedicated .onion address that accepts encrypted submissions.
 
-### Installing PrivateBin
+### Prerequisites
 
-PrivateBin requires PHP and a web server. Using Docker simplifies deployment:
+Install Tor and configure an onion service:
 
 ```bash
-docker run -d --name privatebin \
-  -p 8080:8080 \
-  -v privatebin-data:/data \
-  -e PASSWORDPHRASE=changeme \
-  privatebin/nginx:latest
+# Install Tor (Debian/Ubuntu)
+sudo apt install tor
+
+# Configure onion service
+sudo tee /etc/tor/torrc << 'EOF'
+HiddenServiceDir /var/lib/tor/deaddrop/
+HiddenServicePort 80 127.0.0.1:8080
+EOF
+
+sudo systemctl restart tor
 ```
 
-### Configuration for Dead Drop Use
-
-Edit the configuration file at `/var/www/privatebin/cfg/conf.php`:
-
-```php
-<?php
-$cfg = [
-    // Enable burn after reading (one-time view)
-    'burnafter' => true,
-    
-    // Expire discussions after 1 hour
-    'defaultexpiration' => '1hour',
-    
-    // Disable IP logging
-    'ip' => false,
-    
-    // Require password for creation
-    'password' => true,
-    
-    // Enable discussion (replies)
-    'discussion' => true,
-    
-    // Open discussion means anyone with the link can reply
-    'opendiscussion' => false,
-];
-```
-
-### Workflow
-
-1. Sender visits the PrivateBin URL
-2. Enters the dead drop password (shared separately)
-3. Types message, enables "burn after reading"
-4. Shares the generated URL with recipient
-5. Recipient opens URL once, then message self-destructs
-
-For bidirectional communication, both parties exchange URLs through the drop.
-
-## Method 3: OnionShare for Persistent Dead Drops
-
-OnionShare creates temporary Tor hidden services for file transfer. It works without a dedicated server and provides strong anonymity through Tor's onion routing.
-
-### Installing OnionShare
+Retrieve your onion address:
 
 ```bash
-# macOS
-brew install onionshare
-
-# Linux
-sudo apt install onionshare
-
-# Or use the AppImage
-wget https://github.com/micahflee/onionshare/releases/latest/download/OnionShare-x86_64.AppImage
-chmod +x OnionShare-x86_64.AppImage
+sudo cat /var/lib/tor/deaddrop/hostname
 ```
 
-### Creating a Persistent Dead Drop
+### Submission Handler
 
-Launch OnionShare and configure a static, persistent onion address:
-
-```bash
-onionshare --persistent --address mydeaddrop.onion \
-  --data-dir /var/deaddrop/data \
-  --verbose
-```
-
-This creates a permanent `.onion` URL. The first time you run it, OnionShare generates a private key stored locally—backup this key to maintain the same address across reinstalls.
-
-### Automating Dead Drop Access
-
-For programmatic access, use the OnionShare CLI with the receive mode:
-
-```bash
-onionshare --receive \
-  --persistent \
-  --data-dir /var/deaddrop/incoming \
-  --title "Secure Dead Drop" \
-  --verbose
-```
-
-The receive mode creates a web interface where files are uploaded to a designated folder. Configure the web server to auto-delete files after retrieval using a cron job:
-
-```bash
-# Delete files older than 24 hours
-0 */6 * * * find /var/deaddrop/incoming -type f -mmin +1440 -delete
-```
-
-## Method 4: Custom Dead Drop API with Encryption
-
-For developers wanting full control, build a minimal dead drop API with explicit encryption handling.
-
-### Python Flask Implementation
+Create a simple Python Flask application to receive encrypted submissions:
 
 ```python
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, render_template_string
 import os
-import uuid
-import time
-from cryptography.fernet import Fernet
+from datetime import datetime
 
 app = Flask(__name__)
-DROP_DIR = '/var/deaddrop/messages'
-EXPIRATION_SECONDS = 3600
-
-# Generate or load encryption key
-KEY_FILE = '/var/deaddrop/.key'
-if os.path.exists(KEY_FILE):
-    with open(KEY_FILE, 'rb') as f:
-        KEY = f.read()
-else:
-    KEY = Fernet.generate_key()
-    with open(KEY_FILE, 'wb') as f:
-        f.write(KEY)
-
-cipher = Fernet(KEY)
+DROP_DIR = '/var/www/drops'
 os.makedirs(DROP_DIR, exist_ok=True)
 
-@app.route('/api/deaddrop', methods=['POST'])
-def create_message():
-    """Create a new encrypted dead drop message."""
-    data = request.json
-    encrypted_message = data.get('message')
-    
-    if not encrypted_message:
-        return jsonify({'error': 'Message required'}), 400
-    
-    message_id = str(uuid.uuid4())
-    expiry = time.time() + EXPIRATION_SECONDS
-    
-    # Store encrypted message with expiry timestamp
-    filepath = os.path.join(DROP_DIR, f"{message_id}.enc")
-    with open(filepath, 'w') as f:
-        f.write(f"{expiry}\n{encrypted_message}")
-    
-    return jsonify({
-        'id': message_id,
-        'expires': expiry
-    })
+HTML_FORM = '''
+<!DOCTYPE html>
+<html>
+<head><title>Secure Drop</title></head>
+<body>
+<h1>Secure Information Drop</h1>
+<p>Encrypt your message using the public key before submitting.</p>
+<form method="post" enctype="multipart/form-data">
+<textarea name="message" rows="10" cols="50" placeholder="Paste encrypted content here"></textarea><br>
+<input type="submit" value="Submit Securely">
+</form>
+</body>
+</html>
+'''
 
-@app.route('/api/deaddrop/<message_id>', methods=['GET'])
-def get_message(message_id):
-    """Retrieve and delete a message (one-time access)."""
-    filepath = os.path.join(DROP_DIR, f"{message_id}.enc")
-    
-    if not os.path.exists(filepath):
-        return jsonify({'error': 'Not found'}), 404
-    
-    with open(filepath, 'r') as f:
-        lines = f.readlines()
-    
-    expiry = float(lines[0])
-    if time.time() > expiry:
-        os.remove(filepath)
-        return jsonify({'error': 'Expired'}), 410
-    
-    # Delete after retrieval (burn after reading)
-    os.remove(filepath)
-    
-    return jsonify({'message': lines[1].strip()})
-
-@app.route('/api/cleanup', methods=['POST'])
-def cleanup():
-    """Remove expired messages."""
-    count = 0
-    for filename in os.listdir(DROP_DIR):
-        filepath = os.path.join(DROP_DIR, filename)
-        if os.path.isfile(filepath):
-            with open(filepath, 'r') as f:
-                expiry = float(f.readline())
-            if time.time() > expiry:
-                os.remove(filepath)
-                count += 1
-    return jsonify({'deleted': count})
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        message = request.form.get('message', '')
+        if message:
+            timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
+            filename = os.path.join(DROP_DIR, f'drop-{timestamp}.txt')
+            with open(filename, 'w') as f:
+                f.write(message)
+            return 'Submission received securely.'
+    return render_template_string(HTML_FORM)
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000)
+    app.run(host='127.0.0.1', port=8080)
 ```
 
-**Security notes**: 
-- Run behind Tor for anonymous hosting
-- Use HTTPS in production
-- Consider adding rate limiting to prevent enumeration
-- Implement authentication for management endpoints
+Run behind a local Nginx or Apache proxy, then start the Tor onion service.
 
-## Security Considerations
+### Public Key Distribution
 
-Regardless of which method you choose, follow these best practices:
+Distribute your GPG public key through the onion service:
 
-1. **Use Tor Browser** for all dead drop interactions to prevent IP leakage
-2. **Verify public keys** through separate channels before sending sensitive information
-3. **Use unique passwords** for each dead drop service
-4. **Enable auto-expiration** on all messages
-5. **Regularly clear browser history** and cookies after accessing dead drops
-6. **Consider timing**—avoid accessing dead drops at predictable intervals
+```html
+<!-- Add to your HTML -->
+<a href="/deaddrop-public.asc">Public Key</a>
+```
 
-For highest-security scenarios, combine methods: encrypt with PGP before uploading to a self-hosted service accessible only through Tor.
+Senders download the key, encrypt their message locally, then paste the encrypted content into the submission form.
 
----
+## Method 3: Custom Implementation with Access Codes
+
+For more control, implement a system with expiring access codes. This adds authentication without requiring GPG.
+
+```python
+import hashlib
+import secrets
+from datetime import datetime, timedelta
+
+class SecureDeadDrop:
+    def __init__(self, storage_path):
+        self.storage = storage_path
+        self.codes = {}
+    
+    def create_drop(self, content, expiry_hours=24):
+        """Create a new drop with expiration"""
+        drop_id = secrets.token_urlsafe(16)
+        access_code = secrets.token_hex(8)
+        
+        # Hash the code for storage (never store plain codes)
+        code_hash = hashlib.sha256(access_code.encode()).hexdigest()
+        
+        with open(f"{self.storage}/{drop_id}.dat", 'w') as f:
+            f.write(content)
+        
+        self.codes[drop_id] = {
+            'hash': code_hash,
+            'expires': datetime.now() + timedelta(hours=expiry_hours)
+        }
+        
+        return drop_id, access_code
+    
+    def retrieve_drop(self, drop_id, access_code):
+        """Retrieve drop content if code is valid and not expired"""
+        if drop_id not in self.codes:
+            return None
+        
+        code_data = self.codes[drop_id]
+        code_hash = hashlib.sha256(access_code.encode()).hexdigest()
+        
+        if code_hash != code_data['hash']:
+            return None  # Wrong code
+        
+        if datetime.now() > code_data['expires']:
+            return None  # Expired
+        
+        try:
+            with open(f"{self.storage}/{drop_id}.dat", 'r') as f:
+                return f.read()
+        except FileNotFoundError:
+            return None
+
+# Usage
+drop = SecureDeadDrop('/var/www/drops')
+drop_id, code = drop.create_drop("Sensitive information here")
+print(f"Drop ID: {drop_id}, Access Code: {code}")
+```
+
+This implementation provides:
+- Access codes that expire after a configurable duration
+- No plaintext code storage (only hashes)
+- Automatic cleanup of expired drops (implement via cron job)
+
+## Security Best Practices
+
+Regardless of implementation choice, follow these principles:
+
+**Metadata minimization** matters. Tor onion services hide IP addresses but timing patterns may still reveal information. Consider adding random delays before serving content.
+
+**Key management** requires attention. If using GPG, protect your private key with a strong passphrase. Consider hardware security modules or air-gapped systems for high-value keys.
+
+**File deletion** should be automatic. Implement cron jobs or background processes to remove drops after retrieval or expiration.
+
+**Transport encryption** remains essential. Even with onion services, use HTTPS/TLS for any web interface. Let's Encrypt provides free certificates.
+
+## Deployment Considerations
+
+For production deployments, consider additional hardening:
+
+- Run the drop service in a container with limited capabilities
+- Use separate authentication for admin functions
+- Implement rate limiting to prevent abuse
+- Log access attempts for security monitoring while avoiding sensitive data logging
+
+## Getting Started
+
+Begin with the GPG-based method if you need quick setup with minimal infrastructure. Move to Tor onion services when anonymity is critical. The custom implementation suits scenarios requiring fine-grained control over drop lifecycle and access patterns.
+
+Each approach trades simplicity for control. The right choice depends on your specific threat model and operational requirements.
+
+For additional privacy tools and security guides, explore the Privacy Tools Guide collection.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}
