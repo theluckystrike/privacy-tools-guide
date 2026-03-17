@@ -5,7 +5,7 @@ description: "A practical guide to setting up secure email forwarding with encry
 date: 2026-03-16
 author: theluckystrike
 permalink: /secure-email-forwarding-with-encryption-how-to-set-up-anonad/
-categories: [guides, privacy, email]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

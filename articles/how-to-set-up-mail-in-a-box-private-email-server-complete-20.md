@@ -6,7 +6,7 @@ description: "A comprehensive guide to setting up Mail-in-a-Box for privacy-focu
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/
-categories: [guides, email, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

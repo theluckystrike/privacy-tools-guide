@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to create secure,
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 OnionShare is a powerful open-source tool that enables secure file sharing and web hosting over the Tor network. Beyond simple file transfers, you can use OnionShare to create encrypted dead drops—anonymous drop boxes where sources can securely submit information without revealing their identity. This guide walks you through setting up a production-ready dead drop using OnionShare.

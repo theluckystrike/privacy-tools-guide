@@ -5,7 +5,7 @@ description: "A technical analysis of metadata leakage in Signal, WhatsApp, and 
 date: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/
-categories: [privacy, security, encryption]
+categories: [security]
 intent-checked: true
 voice-checked: true
 ---

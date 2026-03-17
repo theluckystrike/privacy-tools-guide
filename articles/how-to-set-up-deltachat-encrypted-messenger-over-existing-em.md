@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to configure Delt
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-deltachat-encrypted-messenger-over-existing-em/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 DeltaChat transforms your existing email account into a secure messaging platform without requiring you to maintain a separate server or switch to a proprietary chat network. This guide walks you through setting up DeltaChat for end-to-end encrypted communication, targeting developers and power users who value privacy and control.
