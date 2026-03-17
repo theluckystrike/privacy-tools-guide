@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Privacy-Preserving Customer Analytics Without Collecting PII"
-description: "A practical guide for developers to implement privacy-first customer analytics. Learn differential privacy, anonymization techniques, and building analytics pipelines that respect user privacy while gaining actionable insights."
+title: "How to Set Up Privacy-Preserving Customer Analytics."
+description: "A practical guide for developers to implement privacy-first customer analytics. Learn differential privacy, anonymization techniques, and building."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-privacy-preserving-customer-analytics-without-/
@@ -277,6 +277,12 @@ Start with server-side aggregation for the simplest implementation. Add differen
 The best analytics respect user privacy while still answering the questions that matter for product decisions.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
