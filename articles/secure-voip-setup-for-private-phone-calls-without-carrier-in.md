@@ -10,8 +10,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-{% raw %}
-
 # Secure VoIP Setup for Private Phone Calls Without Carrier Involvement: A Developer's Guide
 
 Traditional phone calls route through carrier infrastructure, exposing metadata including call duration, phone numbers, and often recording capabilities. For developers and power users seeking complete control over their voice communications, self-hosted VoIP infrastructure offers a compelling alternative. This guide walks through building a private VoIP system that operates entirely independent of telecom carriers while maintaining strong encryption and privacy properties.
