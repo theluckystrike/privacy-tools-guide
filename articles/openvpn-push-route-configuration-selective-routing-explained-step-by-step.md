@@ -5,6 +5,10 @@ description: "A comprehensive guide to configuring OpenVPN push route directives
 date: 2026-03-17
 author: theluckystrike
 permalink: /openvpn-push-route-configuration-selective-routing-explained-step-by-step/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Selective routing in OpenVPN is a powerful feature that allows you to decide which network traffic flows through the VPN tunnel and which traffic uses your regular internet connection. By default, OpenVPN routes all traffic through the VPN server, but this isn't always ideal. Whether you need to access local network resources while using VPN, want to reduce bandwidth usage on your VPN connection, or need to route only specific traffic through an exit node in another country, understanding the `push` directive and `redirect-gateway` options is essential.
