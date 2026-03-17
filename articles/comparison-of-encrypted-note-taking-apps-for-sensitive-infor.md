@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Comparison of Encrypted Note-Taking Apps for Sensitive Information Storage 2026"
-description: "A technical comparison of encrypted note-taking applications for developers and power users storing sensitive data. Covers encryption models, CLI access, and self-hosting options."
+title: "Comparison of Encrypted Note-Taking Apps for Sensitive."
+description: "A technical comparison of encrypted note-taking applications for developers and power users storing sensitive data. Covers encryption models, CLI."
 date: 2026-03-16
 author: theluckystrike
 permalink: /comparison-of-encrypted-note-taking-apps-for-sensitive-infor/
@@ -135,6 +135,11 @@ When evaluating encrypted note-taking applications for sensitive information sto
 | Vim + GPG | Terminal workflow | Full | N/A | GPG |
 
 For most developers, a combination approach works best. Store general notes in Obsidian with GPG-encrypted files for sensitive content. Use Tomb for command-line secrets. The key is understanding that no single application fits every use case—layer your tools based on the sensitivity of the information being stored.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
