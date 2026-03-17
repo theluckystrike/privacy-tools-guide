@@ -5,7 +5,7 @@ title: "Migrating From KeePass Database to Bitwarden Cloud."
 description: "A technical guide for developers and power users moving from local KeePass databases to Bitwarden's cloud vault. Covers export methods, CLI tools, and automation scripts."
 date: 2026-03-16
 author: theluckystrike
-permalink: /migrating-from-keepass-database-to-bitwarden-cloud-vault-ste/
+permalink: /migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/
 categories: [guides]
 tags: [tools]
 reviewed: true

@@ -8,7 +8,9 @@ twitter:
   username: _alphashark_
   card: summary_large_image
 
-author: "Michael Lip"
+author:
+  name: Michael Lip
+  url: https://github.com/theluckystrike
 
 plugins:
   - jekyll-sitemap
