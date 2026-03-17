@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Secure Document Collaboration Alternatives to Google."
-description: "Discover E2E encrypted document collaboration tools for developers and power users. Compare CryptPad, Standard Notes, and self-hosted options with."
+title: "Secure Document Collaboration Alternatives to Google Docs with End-to-End Encryption"
+description: "Discover E2E encrypted document collaboration tools for developers and power users. Compare CryptPad, Standard Notes, and self-hosted options with practical examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /secure-document-collaboration-alternatives-to-google-docs-wi/
@@ -175,7 +175,6 @@ For developers and power users who value privacy, these alternatives prove that 
 
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
