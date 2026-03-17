@@ -1,138 +1,187 @@
 ---
 layout: default
-title: "How Browser Storage Partitioning Works: Firefox vs Chrome Privacy Protection"
-description: "A technical deep dive into browser storage partitioning, explaining how Firefox and Chrome isolate storage to prevent cross-site tracking."
+title: "How Browser Storage Partitioning Works: Firefox, Chrome, and Privacy Protection"
+description: "A technical guide to browser storage partitioning explaining how Firefox and Chrome isolate storage to prevent cross-site tracking, with code examples and implementation details."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-browser-storage-partitioning-works-firefox-chrome-privac/
+categories: [guides, security]
+reviewed: false
+score: 0
+intent-checked: false
+voice-checked: false
 ---
 
 {% raw %}
-Browser storage partitioning represents one of the most significant privacy developments in modern web browsers. As third-party cookies face deprecation, browsers have implemented storage partitioning as a core defense mechanism against cross-site tracking. Understanding how this technology works helps developers build privacy-respecting applications and empowers users to make informed browser choices.
+
+Modern browsers have adopted storage partitioning as a core defense mechanism against cross-site tracking. This article explains how storage partitioning works, examines implementation differences between Firefox and Chrome, and provides practical guidance for developers and power users who want to understand or test these privacy protections.
 
 ## What Is Storage Partitioning?
 
-Storage partitioning isolates website data based on the top-level site a user visits. Without partitioning, any embedded third-party script can access storage set by other sites, enabling persistent cross-site tracking. Partitioning ties storage access to the context of the top-level frame, preventing embedded content from reading data left by previous visits to different sites.
+Storage partitioning is a browser mechanism that isolates website data based on the context in which a site is loaded. Without partitioning, websites can store data locally (cookies, localStorage, IndexedDB) and retrieve it even when the user visits other sites. This behavior enables cross-site tracking, where advertisers and analytics services build user profiles by sharing identifiers across multiple domains.
 
-When you visit `example.com` which embeds a tracker from `tracker.example`, the tracker's storage is now scoped to `example.com` as the top-level site. If you then visit `another-site.com` with the same embedded tracker, the tracker cannot access data stored under `example.com`. Each top-level site receives its own isolated storage partition.
+Storage partitioning changes this by scoping storage to a combination of the website origin and the top-level site. When you visit `example.com` embedded within `news-site.com` (via an iframe), the storage accessed is separate from what `example.com` would access when loaded as the top-level site or when embedded in a different parent site.
 
-This approach directly addresses the fundamental privacy flaw in the traditional web: the assumption that any origin can access its own storage regardless of embedding context.
+This means a third-party script embedded across multiple websites cannot correlate user activity because each embedding context provides a different storage partition.
 
-## How Firefox Implements Storage Partitioning
+## How Storage Partitioning Works
 
-Firefox enables storage partitioning by default in all browsing modes, including regular windows. The implementation, known as "state partitioning," extends to all storage mechanisms including cookies, localStorage, sessionStorage, IndexedDB, and Cache API.
+Browsers implement partitioning by modifying how they generate storage keys. Traditional storage uses the origin as the key:
 
-Firefox uses a two-key partitioning scheme:
-
-1. **First-party site key**: The scheme, domain, and port of the top-level URL
-2. **Origin key**: The full origin of the resource accessing storage
-
-This creates strict isolation. A script running in an iframe on `site-a.com` cannot access storage that same script set when embedded on `site-b.com`.
-
-To verify this behavior in Firefox, you can inspect how localStorage behaves:
-
-```javascript
-// Running in an iframe on https://tracker.example embedded in https://site-a.com
-localStorage.setItem('tracker_id', 'user-12345');
-
-// This value is isolated to site-a.com's partition
-// The same iframe on site-b.com would have a different localStorage instance
+```
+Storage key = "https://example.com"
 ```
 
-Firefox also partitions network state, including HTTP cookies and connection pooling. This prevents information leakage through timing attacks and connection reuse.
+With partitioning, the key becomes a combination of the origin and the top-level site:
 
-## How Chrome Implements Storage Partitioning
-
-Chrome introduced storage partitioning starting in version 115, with gradual rollout across 2023 and 2024. Unlike Firefox's opt-out approach, Chrome's implementation focuses on breaking cross-site tracking while maintaining compatibility with existing web patterns.
-
-Chrome's partitioning scheme works similarly but with some key differences:
-
-- **Third-party cookies**: When blocked (or after third-party cookie deprecation), Chrome partitions storage for cross-site resources
-- **Storage APIs affected**: localStorage, sessionStorage, IndexedDB, Cache Storage, and BroadcastChannel
-- **Partition key**: Uses the top-level site (schemeful site) as the partitioning boundary
-
-Chrome defines the partition key as the scheme and registered domain of the top-level page:
-
-```javascript
-// On https://site-a.com with embedded tracker at https://tracker.example
-// The tracker's storage partition key is: https://site-a.com
-
-// On https://site-b.com with same embedded tracker
-// The tracker's storage partition key is: https://site-b.com
-
-// These are completely separate storage instances
+```
+Storage key = ("https://example.com", "https://news-site.com")
 ```
 
-Chrome's approach includes a "shared storage" API for legitimate cross-site use cases like frequency capping, allowing controlled data access without full cross-site tracking capabilities.
+This same principle applies across various storage APIs:
 
-## Practical Implications for Developers
+- **Cookies**: The `SameSite` attribute and cookie prefix behavior interact with partitioning
+- **localStorage** and **sessionStorage**: Isolated per partition
+- **IndexedDB**: Partitioned by top-level site
+- **Cache API**: Also subject to partitioning in modern browsers
 
-Storage partitioning affects how web applications function, particularly those relying on third-party scripts and embedded content.
+## Firefox Implementation
 
-### Breaking Changes to Expect
+Firefox implements storage partitioning through its Enhanced Tracking Protection (ETP) feature, specifically "Total Cookie Protection." Firefox partitions all third-party storage by default in standard browsing mode.
 
-Third-party analytics and advertising scripts lose persistent cross-site identifiers. Any functionality relying on tracking users across sites must be redesigned:
+You can verify Firefox's partitioning behavior by checking `about:config`:
 
-- **Cross-site analytics**: Traditional analytics using third-party cookies no longer work
-- **Embedded widgets**: Social media embeds cannot maintain login state across sites
-- **CDN-based resources**: JavaScript libraries hosted on CDNs cannot share state
+```
+browser.storage.partitioning.enabled = true
+```
 
-### Adapting Your Code
+Firefox also provides detailed partitioning information in the Browser Toolbox. To access it:
 
-For first-party storage, behavior remains largely unchanged. For third-party integrations:
+1. Open `about:devtools-toolbox`
+2. Select the storage inspector
+3. Look for partition information in the storage tree
+
+Here's a practical test you can run in Firefox's developer console:
 
 ```javascript
-// Instead of relying on third-party cookies for:
-// 1. Use first-party storage with server-side sync
-localStorage.setItem('user_preference', JSON.stringify(preferences));
-// Send to your server for cross-site analysis
+// Run in the main frame of example.com
+localStorage.setItem('test-key', 'main-frame-value');
 
-// 2. Use the Storage Access API for legitimate cross-site needs
-// In an iframe, request storage access:
-const hasAccess = await document.requestStorageAccess();
-if (hasAccess) {
-  // Access first-party storage from third-party context
+// Now run this in an iframe on a different domain
+// You'll find a different localStorage instance
+console.log(localStorage.getItem('test-key')); // null - different partition
+```
+
+Firefox's approach is aggressive—they partition all third-party storage automatically, which provides strong privacy but may break some legitimate cross-site functionality.
+
+## Chrome Implementation
+
+Chrome has been rolling out storage partitioning more gradually, referring to it as "Third-Party Cookie Deprecation" preparation, though the feature extends beyond cookies.
+
+Chrome's partitioning applies to:
+
+- LocalStorage and sessionStorage
+- IndexedDB
+- Cache API
+- Cookie storage (with SomeParty cookie attribute)
+
+You can observe Chrome's partitioning via the Application tab in DevTools. Select a storage entry and look for partition details in the side panel.
+
+Chrome also provides a testing flag to force partitioning behavior:
+
+```
+chrome://flags/#storage-partitioning
+```
+
+To programmatically detect partitioning in Chrome:
+
+```javascript
+// Check if storage is partitioned
+if (window.isolationSentinel) {
+  // This property existed briefly to detect partitioning
+  console.log('Partitioning may be active');
+}
+
+// Alternative: Check via console in DevTools
+// Look for "Partition key" in Storage Inspector
+```
+
+Chrome's implementation allows some exceptions for specific use cases, particularly for legitimate cross-site functionality that requires shared state. The Partitioned cookie attribute (`Partitioned`) allows cookies to work in a partitioned context while maintaining privacy boundaries.
+
+## Code Examples: Testing Partitioning
+
+Here's a complete example demonstrating storage partitioning behavior:
+
+```javascript
+// script.js - Run this on site A (https://site-a.com)
+function demonstratePartitioning() {
+  // Set a value in localStorage
+  localStorage.setItem('user-preference', 'dark-mode');
+  
+  // Set a cookie with Partitioned attribute (Firefox, some Chrome versions)
+  document.cookie = 'session=abc123; SameSite=None; Secure; Partitioned';
+  
+  // Log current storage state
+  console.log('LocalStorage value:', localStorage.getItem('user-preference'));
+  console.log('Cookies:', document.cookie);
+}
+
+// Read storage on page load
+window.addEventListener('DOMContentLoaded', demonstratePartitioning);
+```
+
+When `site-a.com` is embedded as a third-party on `site-b.com`, the storage accessed will be completely separate from storage accessed when `site-a.com` is the top-level site.
+
+## Developer Considerations
+
+For web developers, storage partitioning means:
+
+1. **Third-party scripts may lose persistent state**: If your analytics or advertising scripts rely on localStorage or cookies set by your domain when embedded elsewhere, that data will no longer persist across different sites.
+
+2. **Testing becomes more complex**: You need to test your site's behavior both as a top-level site and as embedded content, in different partitioning contexts.
+
+3. **First-party solutions remain unaffected**: Storage set and read when your site is the top-level site continues to work normally.
+
+4. **Consider using partitioning-aware APIs**: The Storage Access API allows embedded sites to request storage access, with browsers potentially granting permission based on user interaction.
+
+```javascript
+// Request storage access for embedded content
+async function requestStorageAccess() {
+  if (document.hasStorageAccess()) {
+    return true;
+  }
+  
+  try {
+    const granted = await document.requestStorageAccess();
+    return granted;
+  } catch (error) {
+    console.log('Storage access denied:', error);
+    return false;
+  }
 }
 ```
 
-The Storage Access API allows embedded content to request access to unpartitioned storage when there's a legitimate user interaction basis, such as maintaining a logged-in state across parent sites.
+## Power User Implications
 
-## Privacy Protection Outcomes
+For users concerned about privacy, storage partitioning provides significant protection:
 
-Storage partitioning dramatically reduces the effectiveness of cross-site tracking techniques:
+- **Cross-site tracking is hindered**: Advertisers cannot use localStorage or cookies to track you across different websites
+- **Fingerprinting becomes harder**: While fingerprinting can still occur through other methods, storage partitioning removes one major vector
+- **Some site features may break**: Expect occasional issues with embedded content that relies on cross-site storage
 
-1. **Fingerprinting resistance**: While browser fingerprinting remains possible, partitioning reduces the data available for fingerprinting by isolating storage
-2. **Reduced tracking persistence**: Trackers cannot maintain user profiles across browsing sessions on different sites
-3. **Defense in depth**: Even if one tracking vector is blocked, partitioning provides isolation at the storage layer
+You can verify your browser's partitioning status by:
 
-Firefox's comprehensive approach provides stronger privacy by default. Chrome's implementation balances privacy improvements with web compatibility concerns, though the gap is narrowing as Chrome phases out third-party cookies entirely.
-
-## Testing Storage Partitioning
-
-Developers can verify partitioning behavior using browser developer tools:
-
-```javascript
-// Check if storage is partitioned by comparing storage instances
-const frame = document.createElement('iframe');
-frame.src = 'https://tracker.example/test.html';
-document.body.appendChild(frame);
-
-// In console of the iframe:
-console.log('Storage key:', window.localStorage);
-
-// Firefox: Shows partition key in about:storage
-// Chrome: Use chrome://inspect/#containers to view partitioned storage
-```
-
-Browser extensions like "Storage Partitioning Tester" can visualize how different sites partition storage for embedded resources.
+1. **Firefox**: Check that Enhanced Tracking Protection is enabled in privacy settings
+2. **Chrome**: Look for the "Third-party cookies" setting—selecting "Block third-party cookies" enables partitioning
 
 ## Conclusion
 
-Storage partitioning fundamentally changes how web storage behaves across contexts. Both Firefox and Chrome now isolate storage based on the top-level site, breaking traditional cross-site tracking methods. For developers, this necessitates rethinking how third-party integrations handle user identification and persistence. For users, storage partitioning provides meaningful privacy protection without requiring technical configuration.
+Storage partitioning represents a fundamental shift in how browsers handle web storage, creating isolation boundaries that prevent cross-site tracking while maintaining web functionality. Firefox implements this more aggressively, while Chrome has taken a more gradual approach with exceptions for certain use cases. Understanding these mechanisms helps developers build more robust web applications and empowers users to make informed privacy decisions.
 
-The web is evolving toward a model where cross-site tracking requires explicit user consent rather than operating by default. Understanding storage partitioning helps you build better, more privacy-conscious web applications while making informed decisions about your browsing tools.
+For developers, the key takeaway is to avoid relying on third-party storage for persistent state, and to test applications in various embedding contexts. For users, enabling partitioning protections in browser settings provides meaningful privacy improvements with minimal downsides.
 
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}
