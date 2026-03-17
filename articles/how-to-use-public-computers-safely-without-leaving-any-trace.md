@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Public Computers Safely Without Leaving Any Trace"
-description: "A practical guide for developers and power users on using public computers securely, covering browser fingerprinting, data残留清理, and ephemeral session techniques."
+description: "A practical guide for developers and power users on using public computers securely, covering browser fingerprinting, data残留清理, and ephemeral session."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-public-computers-safely-without-leaving-any-trace/
@@ -215,5 +215,11 @@ Even after you log out and clear your session:
 2. **Review SSH known hosts**: Connections to servers may be logged
 3. **Check for planted malware**: Files may have been secretly dropped on USB drives
 4. **Monitor accounts**: Watch for unauthorized access in the following days
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

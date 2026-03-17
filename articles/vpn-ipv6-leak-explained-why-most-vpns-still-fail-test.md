@@ -240,3 +240,9 @@ The solution requires both:
 Regular testing is essential—your privacy may be at risk without you knowing. Use the testing methods described in this guide to verify your VPN is truly protecting your identity across both IPv4 and IPv6 connections.
 
 Remember: A VPN that only protects IPv4 is only half a solution. Make sure your privacy protection covers the full scope of modern internet connectivity.
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+

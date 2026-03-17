@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Privacy Tools for Election Observer Protecting Witness Testimony Data
+title: "Privacy Tools for Election Observer Protecting Witness."
 description: A practical guide to securing witness testimony and election observation data using encryption, secure communication, and operational security tools.
 date: 2026-03-16
 author: theluckystrike
@@ -248,5 +248,11 @@ This provides application-level encryption independent of disk encryption.
 Protecting witness testimony in election observation requires layered defenses. No single tool provides complete security—your operational practices matter as much as your technology choices. Start with secure collection practices, use encryption at rest and in transit, minimize metadata exposure, and maintain incident response capabilities.
 
 For developers building tools in this space, prioritize security defaults over convenience, implement encryption everywhere, and test your implementations against realistic threat models. The witnesses you protect depend on it.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

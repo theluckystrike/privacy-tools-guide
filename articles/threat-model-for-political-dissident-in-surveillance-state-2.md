@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Threat Model for Political Dissident in Surveillance State: 2026 Guide"
-description: "A practical technical guide for developers and power users on building a comprehensive threat model when living under surveillance. Includes actionable security implementations and code examples."
+title: "Threat Model for Political Dissident in Surveillance."
+description: "A practical technical guide for developers and power users on building a comprehensive threat model when living under surveillance. Includes actionable."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-political-dissident-in-surveillance-state-2/
@@ -252,6 +252,12 @@ if should_trigger():
 Threat modeling for high-risk environments requires acknowledging that perfect security is unattainable. The goal is raising the cost of surveillance beyond what your adversaries can justify. Layer multiple defenses, maintain operational discipline, and plan for compromise rather than assuming invulnerability.
 
 Every security measure introduces friction—that friction is the point. By making surveillance resource-intensive, you protect yourself and create deniability for others in your network. The tools and techniques in this guide provide starting points; adapt them to your specific threat profile and operational requirements.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

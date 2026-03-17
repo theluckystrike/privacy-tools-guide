@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Threat Model for Protest Medic: Protecting Patient Encounter Information"
+title: "Threat Model for Protest Medic: Protecting Patient."
 description: "A technical guide for developers and power users on building a threat model to protect patient encounter information as a protest medic."
 date: 2026-03-16
 author: theluckystrike
@@ -246,6 +246,12 @@ Use this checklist when setting up your protest medic security:
 - [ ] Use separate phone if possible
 
 The goal isn't paranoia—it's reasonable protection for the people who trust you with their care. By implementing these measures, you reduce the risk that patient information becomes evidence, gets leaked, or harms the people you treated.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

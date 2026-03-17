@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Threat Model for Transgender Person: Protecting Deadname and Old Identity"
-description: "A technical guide for developers and power users on building a threat model to protect your deadname and previous digital identity during a name transition."
+title: "Threat Model for Transgender Person: Protecting Deadname."
+description: "A technical guide for developers and power users on building a threat model to protect your deadname and previous digital identity during a name."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-transgender-person-protecting-deadname-and-/
@@ -217,6 +217,12 @@ Protecting your deadname and previous identity requires a layered approach combi
 Start with the digital footprint audit to understand your current exposure, then systematically work through account segregation, email management, and data broker removal. Maintain your migration checklist to track progress and identify remaining work.
 
 Remember: privacy during transition isn't about shame—it's about safety and autonomy over your own information.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

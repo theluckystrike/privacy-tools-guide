@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "First Party Sets: Chrome Proposal and Its Impact on Cross-Site Tracking"
+title: "First Party Sets: Chrome Proposal and Its Impact on."
 description: "A technical deep-dive into Chrome's First Party Sets proposal — how it works, what it means for developers, and how it reshapes cross-site tracking."
 date: 2026-03-16
 author: theluckystrike
@@ -176,6 +176,12 @@ First Party Sets are still evolving. The proposal has gone through multiple roun
 The era of frictionless cross-site tracking is ending. First Party Sets offer a structured transition — one that gives developers a clear path forward while giving users more visibility into how their data flows across the sites they visit.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

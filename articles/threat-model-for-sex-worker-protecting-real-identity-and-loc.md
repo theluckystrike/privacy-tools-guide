@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Threat Model for Sex Worker: Protecting Real Identity and Location"
-description: "A practical technical guide for developers and power users on building a threat model to protect real identity and physical location for sex workers. Covers operational security, identity separation, and location privacy."
+title: "Threat Model for Sex Worker: Protecting Real Identity."
+description: "A practical technical guide for developers and power users on building a threat model to protect real identity and physical location for sex workers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-sex-worker-protecting-real-identity-and-location/
@@ -307,6 +307,12 @@ Protecting your real identity and location requires discipline and systematic se
 Start by auditing your current digital footprint, then systematically separate your identities. Use dedicated devices, anonymous communication channels, VPN/Tor for network traffic, and privacy-focused payment methods. Regular maintenance and security reviews keep your protection current.
 
 Privacy isn't about paranoia—it's about maintaining control over information that could harm you. These tools and techniques provide that control.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

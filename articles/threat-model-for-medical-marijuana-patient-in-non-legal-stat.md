@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Threat Model for Medical Marijuana Patient in Non-Legal State"
-description: "A comprehensive security and privacy guide for medical marijuana patients in states where cannabis remains illegal. Learn how to protect your digital identity and personal safety."
+title: "Threat Model for Medical Marijuana Patient in Non-Legal."
+description: "A comprehensive security and privacy guide for medical marijuana patients in states where cannabis remains illegal. Learn how to protect your digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-medical-marijuana-patient-in-non-legal-stat/
@@ -154,5 +154,11 @@ Layering multiple privacy tools provides defense in depth. No single tool makes 
 Medical marijuana patients in prohibition states face genuine risks that require serious security consideration. While no approach provides complete protection, implementing layered privacy measures significantly reduces your attack surface. Balance practical security with quality of life—extreme measures that make daily life difficult are unsustainable.
 
 Focus on the highest-impact changes first: location privacy, financial separation, and encrypted communication. Add additional layers based on your specific threat model and resources.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

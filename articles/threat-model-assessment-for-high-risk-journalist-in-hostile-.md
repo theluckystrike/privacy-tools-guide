@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Threat Model Assessment for High Risk Journalist in Hostile Country"
+title: "Threat Model Assessment for High Risk Journalist in."
 description: "A comprehensive technical guide for developers and power users building security infrastructure for journalists operating in hostile environments."
 date: 2026-03-16
 author: theluckystrike
@@ -195,6 +195,12 @@ The most sophisticated technical controls fail when users make poor decisions. D
 Effective threat modeling for high-risk journalists requires acknowledging that sophisticated adversaries can compromise most traditional security measures. Build defense in depth using tools that provide strong encryption, minimal metadata exposure, and resilience against sophisticated attacks. Assume compromise, plan for incidents, and maintain operational security discipline.
 
 The technical implementations in this guide provide starting points, but security is an ongoing process. Stay informed about emerging threats, update your tooling regularly, and connect with organizations like the Committee to Protect Journalists, Access Now, and local digital rights organizations who provide training and support for journalists in hostile environments.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
