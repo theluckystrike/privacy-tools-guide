@@ -184,3 +184,5 @@ Physical mail privacy requires attention to both direct and indirect exposure ve
 Start by auditing your current mail footprint. Identify organizations with your address, consider transitioning to digital alternatives where available, and implement monitoring for unauthorized changes. Each layer of protection adds meaningful distance between your physical location and potential harvesters.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
