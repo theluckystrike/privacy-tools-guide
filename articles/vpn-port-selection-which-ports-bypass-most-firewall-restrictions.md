@@ -8,7 +8,7 @@ description: "A comprehensive guide to selecting VPN ports that work through fir
 date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /vpn-port-selection-which-ports-bypass-most-firewall-restrictions/
-categories: [guides, security, privacy, vpn]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
