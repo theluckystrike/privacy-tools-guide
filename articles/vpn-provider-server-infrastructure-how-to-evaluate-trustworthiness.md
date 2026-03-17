@@ -6,7 +6,7 @@ description: "Learn how to evaluate VPN provider server infrastructure for trust
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/
-categories: [guides]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true
