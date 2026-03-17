@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Forward Secrecy in Messaging Apps Explained and Why It Matters 2026"
-description: "A technical guide to forward secrecy in messaging apps: how it works, why it protects your conversations, and how to identify apps that implement it correctly."
+title: "Forward Secrecy in Messaging Apps Explained and Why It."
+description: "A technical guide to forward secrecy in messaging apps: how it works, why it protects your conversations, and how to identify apps that implement it."
 date: 2026-03-16
 author: theluckystrike
 permalink: /forward-secrecy-in-messaging-apps-explained-and-why-it-matters/
@@ -171,6 +171,12 @@ def compute_safety_number(identity_key_a, identity_key_b,
 4. **Update regularly**: Forward secrecy implementations have improved significantly in recent years
 
 Forward secrecy is not a feature you can add after the fact—it must be architected into the protocol from the beginning. Understanding these mechanisms helps you make informed choices about which tools deserve your sensitive communications.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

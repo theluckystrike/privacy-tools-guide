@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "CryptPad Self-Hosting Setup Guide: Encrypted Collaboration Suite for Teams"
-description: "Learn how to self-host CryptPad for end-to-end encrypted document collaboration. This practical guide covers Docker deployment, configuration, security hardening, and team management."
+title: "CryptPad Self-Hosting Setup Guide: Encrypted."
+description: "Learn how to self-host CryptPad for end-to-end encrypted document collaboration. This practical guide covers Docker deployment, configuration, security."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/
@@ -271,6 +271,12 @@ Consider enabling Redis for session management in high-load scenarios by adding 
 Self-hosted CryptPad provides encrypted collaboration without compromising on functionality. The zero-knowledge architecture means your team retains full privacy—server administrators cannot access document content. Docker simplifies deployment and maintenance, while configuration options enable customization for organizational needs.
 
 For teams handling sensitive information, CryptPad offers a compelling alternative to conventional office suites. The initial setup investment pays dividends in privacy assurance and data sovereignty.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
