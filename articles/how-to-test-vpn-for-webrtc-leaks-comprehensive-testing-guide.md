@@ -8,7 +8,7 @@ description: "Learn how to identify and prevent WebRTC leaks that can expose you
 date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /how-to-test-vpn-for-webrtc-leaks-comprehensive-testing-guide/
-categories: [guides, vpn, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

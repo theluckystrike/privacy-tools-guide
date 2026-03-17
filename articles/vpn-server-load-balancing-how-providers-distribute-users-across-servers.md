@@ -5,7 +5,7 @@ description: "A technical guide explaining how VPN providers distribute users ac
 date: 2026-03-17
 author: theluckystrike
 permalink: /vpn-server-load-balancing-how-providers-distribute-users-across-servers/
-categories: [guides, security, vpn]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
