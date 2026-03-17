@@ -5,7 +5,7 @@ description: "A practical guide for developers to implement privacy-first custom
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-privacy-preserving-customer-analytics-without-/
-categories: [guides, privacy, analytics]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

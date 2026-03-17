@@ -5,7 +5,7 @@ description: "A practical template and developer guide for conducting legitimate
 date: 2026-03-16
 author: theluckystrike
 permalink: /legitimate-interest-assessment-template-for-processing-perso/
-categories: [privacy, gdpr, compliance]
+categories: [security, enterprise]
 reviewed: false
 intent-checked: true
 voice-checked: false
