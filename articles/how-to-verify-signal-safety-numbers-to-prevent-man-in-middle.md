@@ -1,118 +1,265 @@
 ---
 layout: default
-title: "How to Verify Signal Safety Numbers to Prevent."
-description: "Learn how to verify Signal safety numbers to prevent man-in-the-middle attacks. Practical guide for developers and power users."
+title: "How to Verify Signal Safety Numbers to Prevent Man-in-the-Middle Attacks"
+description: "A technical guide for developers and power users on verifying Signal safety numbers. Learn to protect your encrypted communications from MITM attacks."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/
-categories: [security, guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
+categories: [guides]
+reviewed: false
+score: 0
+intent-checked: false
+voice-checked: false
 ---
 
 {% raw %}
 
-Signal provides end-to-end encryption by default, but encryption alone does not guarantee that your messages are reaching the intended recipient. A sophisticated adversary could perform a man-in-the-middle (MITM) attack by intercepting the key exchange process between you and your contact. Signal prevents this through safety numbers—unique identifiers that verify the cryptographic keys belong to the right person.
+Signal provides end-to-end encryption by default, but the real security question is whether you're actually communicating with the intended person. Safety numbers (also called safety keys) are unique identifiers that verify the cryptographic identity of your contact. When you verify safety numbers, you confirm that no man-in-the-middle (MITM) attacker has intercepted your conversation.
 
-This guide explains how to verify Signal safety numbers, why they matter for security-conscious users, and practical workflows for integrating this verification into your security practices.
+This guide covers safety number verification for developers and power users who want cryptographic certainty in their Signal communications.
 
-## What Are Signal Safety Numbers?
+## Understanding Safety Numbers
 
-Signal safety numbers (also called safety keys or verification codes) are 60-digit numbers derived from the pairwise keys exchanged between two Signal users. Each conversation has its own unique safety number based on the combination of your identity key, the recipient's identity key, and the session keys generated during the conversation setup.
+Every Signal conversation generates a unique safety number based on the X3DH key agreement protocol and Double Ratchet algorithm. This number combines:
 
-When you and a contact exchange messages for the first time, Signal automatically generates these keys. If an attacker intercepts the key exchange and substitutes their own keys, they can decrypt and re-encrypt messages between both parties without detection—this is a classic MITM attack. Safety numbers exist precisely to detect this scenario.
+- Your device identity key
+- Your contact's device identity key
+- Session-specific ephemeral keys
 
-The core principle is straightforward: if the safety number displayed on your device matches the safety number displayed on your contact's device, the encryption is secure and no interception has occurred.
+The safety number changes when either party reinstalls Signal, adds a new device, or in some cases when keys are regenerated. This is a security feature—not a bug.
 
-## How to Verify Safety Numbers in Signal
+Safety numbers appear as 60-digit numbers displayed in groups:
 
-Verifying safety numbers involves comparing the code displayed on both devices. Here's the step-by-step process:
-
-1. Open the conversation with the contact you want to verify
-2. Tap on the contact's name or profile picture at the top of the screen
-3. Scroll down to the "Safety Number" section
-4. Tap "Verify Safety Number"
-
-Signal displays a large, scannable QR code alongside the 60-digit numerical code. On mobile, you can either visually compare the numbers or scan the QR code using the other device's camera. The verification succeeds only if both devices show matching numbers.
-
-For users who prefer textual comparison, the numerical format allows verification through a separate channel—read the number aloud over a phone call, copy it to a password manager, or transcribe it through a verified secure channel.
-
-## Why Developers and Power Users Should Verify Safety Numbers
-
-If you communicate sensitive information—such as API credentials, security vulnerability details, or confidential business data—verifying safety numbers adds a critical layer of assurance. Consider these scenarios:
-
-- **Remote team coordination**: Developers sharing production credentials or deployment keys through Signal should verify safety numbers to ensure credentials reach the correct team member.
-- **Security incident response**: During incident response, you may share sensitive logs or network traces. Verifying the safety number prevents accidental disclosure to an impostor.
-- **Journalists and activists**: In high-risk environments, state-level adversaries may attempt to compromise communications. Safety number verification provides defense against sophisticated interception.
-
-While casual conversations may not require this level of verification, power users handling sensitive information should make safety number verification a standard practice.
-
-## Automating Safety Number Verification
-
-Signal does not provide a public API for automated safety number verification, but you can integrate manual verification into your workflow using simple scripts. The key principle is establishing a trusted baseline—verify once, then monitor for changes.
-
-### Detecting Safety Number Changes
-
-When Signal detects that a contact's safety number has changed, it displays a warning banner in the conversation. This can happen for legitimate reasons (your contact reinstalled Signal, switched devices, or migrated to a new phone). However, it can also indicate a potential compromise.
-
-For organizations managing multiple Signal users, consider implementing a verification policy:
-
-```bash
-# Example: Create a verification reminder workflow
-# This is pseudocode for integrating into your team's documentation
-
-function verify_contact_safety_number(contact_name, verified_number):
-    current_number = signal_get_safety_number(contact_name)
-    if current_number != verified_number:
-        log_security_alert(f"Safety number changed for {contact_name}")
-        notify_security_team(contact_name)
-        return false
-    return true
+```
+12345 67890 12345 67890 12345 67890 12345 67890 12345 67890
 ```
 
-While Signal's mobile app does not expose safety numbers via CLI, users can document verified numbers in a secrets manager after initial verification. Any subsequent change triggers an investigation.
+Signal also generates a QR code for easier verification.
 
-## Verifying Safety Numbers Across Multiple Devices
+## Accessing Safety Numbers
 
-Signal supports linking multiple devices to a single account. Each device maintains its own set of safety numbers for each contact. This creates an important verification consideration: the safety number between you and a contact may differ slightly across your own devices.
+### On Mobile
 
-The reason is technical: each device generates its own identity key pair. When you link a new device, it establishes separate session keys with your contacts. Therefore, you should verify safety numbers on the primary device you use most frequently, or verify across all devices if you use Signal on multiple platforms.
+1. Open the conversation with your contact
+2. Tap the conversation header (name or number)
+3. Scroll down and tap "View safety number"
+4. You'll see the 60-digit number and a QR code
 
-For teams using Signal across desktop and mobile, establish which device serves as the canonical verification point. Document this in your team's security wiki and ensure all members verify against the same device to avoid confusion.
+### On Desktop (signal-cli or Desktop App)
 
-## Best Practices for Safety Number Verification
+If you're using the Signal Desktop client or signal-cli:
 
-Adopting these practices strengthens your security posture:
+```bash
+# List conversations with signal-cli
+signal-cli listConversations
 
-1. **Verify during initial contact**: Before sharing sensitive information for the first time, always verify the safety number.
-2. **Re-verify after device changes**: When your contact gets a new phone or reinstalls Signal, request a re-verification.
-3. **Use a separate channel**: Read the safety number over a voice call (not VoIP), or compare through a previously verified communication channel.
-4. **Enable notification of key changes**: Signal automatically notifies you when a contact's safety number changes. Do not dismiss these warnings without investigation.
-5. **Document verified numbers**: Store the initial safety number in a secure note. Monitor for changes over time.
+# Get detailed conversation info including safety numbers
+signal-cli -o json receive | jq '.[] | select(.type == "typing")'
+```
 
-## Common Misconceptions
+The Desktop client displays safety numbers in the same location as mobile: conversation header → "View safety number."
 
-A few points warrant clarification:
+## Verifying Safety Numbers: The Process
 
-- **Safety numbers are not your Signal username**: They are tied to specific conversations, not your account identity.
-- **Safety numbers change rarely**: They should only change when devices are replaced or Signal is reinstalled. Frequent changes warrant suspicion.
-- **QR code scanning is safer**: Visual comparison of 60-digit numbers is error-prone. Scanning the QR code reduces human error and is the recommended verification method.
+Verification involves comparing the safety number through an independent channel—one that can't be intercepted by the same attacker targeting your Signal traffic.
+
+### Step 1: Obtain the Safety Number
+
+Get the safety number from your device as shown above. Both parties need to do this.
+
+### Step 2: Choose Your Verification Channel
+
+Select a channel that provides authentication independent of Signal:
+
+**In-person verification**: Meet physically and compare numbers on each other's devices. This provides the highest security because the attacker would need to be physically present.
+
+**Voice call (non-Signal)**: Call your contact on a regular phone or a different encrypted platform. Voice verification has limitations—call interception is possible but requires different capabilities than Signal traffic analysis.
+
+**Another encrypted messenger**: Use a different end-to-end encrypted platform to exchange safety numbers. This assumes the alternative platform isn't also compromised.
+
+**SMS with PGP**: For the paranoid, exchange safety numbers signed with PGP. This creates a verifiable paper trail.
+
+### Step 3: Compare and Confirm
+
+Both parties read their safety numbers aloud (in-person) or type them out (text-based channels). If the numbers match, your connection is secure—no MITM attacker has compromised the key exchange.
+
+If numbers don't match, do not communicate sensitive information. The mismatch indicates either:
+- A legitimate key change (new device, reinstall)
+- An active attack
+
+Contact your contact through a different channel to verify.
+
+## Automating Verification for Power Users
+
+For developers who want programmatic safety number verification, several approaches exist.
+
+### Using signal-cli
+
+Extract safety numbers via the API:
+
+```bash
+# Get account details including linked devices
+signal-cli account
+
+# Examine conversation details
+signal-cli -o json send -m "test" +1234567890 | jq
+```
+
+Note: signal-cli doesn't directly expose safety numbers through CLI flags. You may need to inspect the local database.
+
+### Parsing Signal's Local Database
+
+Signal stores data locally in SQLCipher-encrypted databases. On Android, the path is:
+
+```
+/data/data/org.thoughtcrime.securesms/databases/signal.db
+```
+
+On Desktop (Linux):
+
+```
+~/.config/Signal/sql/db.sqlite
+```
+
+Query the database directly (requires key extraction):
+
+```python
+import sqlite3
+
+# Signal stores safety numbers in the recipient table
+conn = sqlite3.connect('/path/to/signal.db')
+cursor = conn.cursor()
+
+# Get recipient identity info
+cursor.execute('''
+    SELECT recipient_id, identity_key, identity_key_verified 
+    FROM recipient 
+    WHERE recipient_id = ?
+''', (contact_id,))
+
+for row in cursor.fetchall():
+    print(f"Recipient ID: {row[0]}")
+    print(f"Identity Key (hex): {row[1].hex()}")
+    print(f"Verified: {row[2]}")
+```
+
+The actual safety number calculation involves the X3DH result and Double Ratchet state. Replicating this precisely requires studying Signal's open-source implementation.
+
+### Building a Verification Script
+
+Create a script that monitors for safety number changes:
+
+```bash
+#!/bin/bash
+# monitor-safety.sh
+# Usage: ./monitor-safety.sh <phone-number>
+
+CONTACT="$1"
+DB_PATH="$HOME/.config/Signal/sql/db.sqlite"
+
+if [ -z "$CONTACT" ]; then
+    echo "Usage: $0 <phone-number>"
+    exit 1
+fi
+
+# Query current identity state
+sqlite3 "$DB_PATH" "
+SELECT 
+    r.phone_number,
+    hex(i.identity_key) as identity_key,
+    i.verified_time
+FROM recipient r
+JOIN identity_key i ON r.id = i.recipient_id
+WHERE r.phone_number = '$CONTACT'
+;" 2>/dev/null
+
+echo "If the identity key changes unexpectedly, investigate immediately."
+echo "Safe keys should only change after device changes or reinstalls."
+```
+
+## Understanding Attack Scenarios
+
+Knowing why safety number verification matters requires understanding the attack vectors.
+
+### The Man-in-the-Middle Attack
+
+In a MITM attack on Signal, the attacker intercepts the key exchange between you and your contact. They establish two separate encrypted sessions—one with you, one with your contact—decrypting, reading, and re-encrypting all messages.
+
+Without safety number verification:
+- Signal shows "end-to-end encrypted" for both sessions
+- Messages flow normally
+- You have no indication of compromise
+
+With safety number verification:
+- Your safety numbers won't match your contact's
+- The mismatch alerts you to the attack
+- You can confirm via independent channel
+
+### The Threat Model
+
+Safety number verification protects against:
+- State-level adversaries who can intercept network traffic
+- Compromised telecommunications providers
+- Sophisticated hackers with network positioning
+
+It doesn't protect against:
+- Compromised devices (malware on your phone)
+- Social engineering (attacker impersonating your contact)
+- Signal server compromise (they can't read messages, but could deny service)
+
+## When to Verify
+
+Verify safety numbers in these scenarios:
+
+1. **Initial contact**: When starting a sensitive conversation for the first time
+2. **After device changes**: When you or your contact gets a new phone
+3. **After reinstalls**: When Signal is reinstalled
+4. **Periodically**: For high-security relationships, verify quarterly
+5. **Before sensitive exchanges**: Before sharing credentials, financial info, or classified data
+
+## Common Pitfalls
+
+**Relying only on "verified" badges**: Signal marks contacts as verified if you've previously confirmed safety numbers. If those numbers change, Signal alerts you—but only if you notice.
+
+**Ignoring warnings**: Signal shows prominent warnings when safety numbers change. Don't dismiss these.
+
+**Verifying through Signal**: Don't verify safety numbers through Signal itself. Use an independent channel.
+
+**Weak verification channels**: Avoid verifying through email or unencrypted SMS—these can be intercepted.
+
+## Troubleshooting Mismatches
+
+When safety numbers don't match:
+
+1. **Confirm separately**: Contact your contact through a known-good channel (phone call, in-person)
+2. **Check for legitimate causes**: Did they get a new phone? Reinstall Signal?
+3. **Re-establish verification**: After confirming legitimacy, verify the new safety numbers
+4. **Document the change**: In high-security contexts, log when and why keys changed
+
+## Advanced: Fingerprint Comparison
+
+For maximum security, compare identity key fingerprints rather than just safety numbers. This provides cryptographic certainty:
+
+```bash
+# Extract identity keys from Signal database
+# Then compare using SHA-256
+
+echo "Your identity key fingerprint:"
+echo -n "$YOUR_KEY" | sha256sum | cut -d' ' -f1
+
+echo "Contact's identity key fingerprint:"
+echo -n "$THEIR_KEY" | sha256sum | cut -d' ' -f1
+```
+
+Matching fingerprints prove you're using the same identity keys that generated the safety number.
 
 ## Conclusion
 
-Verifying Signal safety numbers is a straightforward process that provides substantial security guarantees. For developers and power users handling sensitive information, making this verification a habit protects against man-in-the-middle attacks—even against well-resourced adversaries.
+Safety number verification is the only way to ensure your Signal conversations aren't being intercepted. While Signal's default encryption is strong, verification adds the critical layer of authentication that confirms you're talking to the right person.
 
-The verification takes under a minute but provides cryptographic assurance that your communications remain confidential. In an era where encrypted messaging is standard, verifying safety numbers is the step that transforms "encrypted" into "verified."
+For developers, exploring signal-cli and local database inspection provides deeper insight into how Signal maintains security. Power users should verify safety numbers before sensitive discussions and treat any mismatch as a potential security incident.
 
----
-
-
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+The extra minute it takes to verify creates cryptographic certainty that no one is listening in.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
