@@ -6,7 +6,7 @@ description: "Learn how iOS Mail Privacy Protection blocks email tracking pixels
 date: 2026-03-16
 author: theluckystrike
 permalink: /ios-mail-privacy-protection-how-it-prevents-email-tracking-o/
-categories: [guides, privacy, email]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on sharing passwo
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-share-passwords-securely-with-team-using-encrypted-co/
-categories: [guides, security, password-management]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

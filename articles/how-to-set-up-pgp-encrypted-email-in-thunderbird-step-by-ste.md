@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to configure PGP 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

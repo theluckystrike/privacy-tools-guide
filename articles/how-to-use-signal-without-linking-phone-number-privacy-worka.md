@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on how to use Sig
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-signal-without-linking-phone-number-privacy-worka/
-categories: [guides, security, signal]
+categories: [guides, security]
 intent-checked: true
 voice-checked: true
 reviewed: true

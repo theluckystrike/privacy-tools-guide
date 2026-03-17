@@ -5,6 +5,10 @@ description: "Learn practical methods for preserving your chat messages locally 
 date: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-backup-of-chat-history-how-to-preserve-messages-wi/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ description: "Learn how to remove EXIF location data from mobile photos before s
 date: 2026-03-16
 author: theluckystrike
 permalink: /mobile-photo-metadata-exif-location-data-how-to-strip-before/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
