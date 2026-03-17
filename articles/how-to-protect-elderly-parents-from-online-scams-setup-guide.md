@@ -15,7 +15,7 @@ Online scams targeting elderly individuals have grown increasingly sophisticated
 
 ## Understanding the Threat Landscape
 
-Elderly users face unique vulnerabilities. Many are unfamiliar with how websites authenticate, making fake login pages nearly indistinguishable from legitimate ones. Tech support scams remain prevalent, with scammers calling声称 to be from Microsoft or Apple and convincing users to download remote access software. Investment fraud and lottery scams continue to drain savings from unsuspecting victims.
+Elderly users face unique vulnerabilities. Many are unfamiliar with how websites authenticate, making fake login pages nearly indistinguishable from legitimate ones. Tech support scams remain prevalent, with scammers calling to be from Microsoft or Apple and convincing users to download remote access software. Investment fraud and lottery scams continue to drain savings from unsuspecting victims.
 
 The challenge lies in implementing protections without making technology unusable. Overly restrictive controls lead to frustration and defeat the purpose. The goal is defense in depth: multiple layers of protection that catch threats at different stages.
 
