@@ -1,254 +1,240 @@
 ---
+
 layout: default
 title: "Privacy Setup for Someone Leaving Abusive Relationship: Digital Safety Guide"
-description: "A practical technical guide for securing digital privacy when leaving an abusive relationship. Covers device hardening, account isolation, and communication security for developers and power users."
+description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure communications, and practical implementation patterns."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
+categories: [guides, privacy, security]
 ---
 
 {% raw %}
 
-Leaving an abusive relationship introduces specific digital security challenges that differ from typical privacy hardening. Abusers often have established access to devices, accounts, and can leverage social engineering against shared services. This guide addresses the unique threat model faced when transitioning to safety.
+When someone leaves an abusive relationship, digital safety becomes immediately critical. Abusers often maintain access to victim devices, accounts, and online presence through various technical means. This guide provides practical implementation patterns for securing devices, communications, and accounts during the transition period. The focus is on actionable steps that developers and technically-minded supporters can implement quickly.
 
-## Assessing Access Vectors
+## Immediate Threat Assessment
 
-An abuser may have obtained access through multiple pathways. Before securing anything, systematically identify what needs to be revoked:
+Before implementing any security measures, understand the common attack vectors in abusive situations:
 
-**Physical access** includes any device the abuser could have touched—phones, laptops, tablets, or smart home equipment. They may have installed monitoring applications or configured recovery options.
+- **Shared device access**: Abusers may have physical access to victim devices or know passwords
+- **Account recovery exploitation**: Email account recovery can grant access to other services
+- **Location tracking**: Find My features, GPS data in photos, or installed tracking apps
+- **Social engineering**: Abusers may contact support teams pretending to be the victim
+- **SIM swapping**: Phone number porting to seize control of authentication
 
-**Account access** spans email, social media, cloud storage, and financial accounts. Check for:
-- Authorized devices listed in account security settings
-- Recovery email addresses or phone numbers you don't recognize
-- Third-party app permissions granting access to data
-- Shared passwords between accounts
+The goal is creating immediate separation while building longer-term security posture. Start with the highest-impact changes first.
 
-**Social engineering vectors** involve the abuser leveraging mutual contacts, impersonating you to service providers, or using personal information to bypass security questions.
+## Device Hardening
 
-## Immediate Device Hardening
+### Removing Tracker Access
 
-### Factory Reset Protocol
-
-When possible, factory reset all devices that the abuser had physical access to. This removes any hidden monitoring software. For mobile devices:
+First, audit all location-sharing settings across devices. On iOS, check Find My settings comprehensively:
 
 ```bash
-# On Android, ensure encryption is enabled before reset
-# Settings > Security > Encryption
-
-# On iOS, sign out of iCloud before erasing
-# Settings > [Your Name] > Sign Out
+# Check shared location settings via Apple ID
+# 1. Settings > Apple ID > Find My
+# 2. Remove any sharing with the abuser's Apple ID
+# 3. Disable Share My Location entirely if not needed
 ```
 
-For laptops, boot into recovery mode and wipe the storage drive. Reinstall the operating system from trusted media rather than relying on recovery partitions that could harbor firmware-level compromises.
+On Android, similar checks apply for Google Location Sharing and any third-party tracking apps. Look for:
+- Apps with accessibility permissions (often used for spying)
+- Unknown device management profiles
+- Location history enabled for timeline features
 
-### Mobile Device Configuration
+### Factory Reset as Baseline
 
-Configure a new device with a fresh account rather than restoring from backups that may contain compromises. Enable these settings immediately:
-
-- **Two-factor authentication** on all critical accounts—use an authenticator app rather than SMS
-- **Biometric authentication** for device unlock, with a strong PIN as backup
-- **Encrypted messaging** for all communications—Signal provides default end-to-end encryption
-- **Location services** disabled by default, enabled only when explicitly needed
-
-Create a new Apple ID or Google account on fresh devices. Do not use your previous credentials.
-
-## Account Isolation Strategy
-
-### Email Account Segregation
-
-Create entirely new email accounts for all sensitive communications. Use a privacy-respecting provider with strong encryption:
+When device compromise is suspected and immediate safety is priority, factory reset provides a clean slate. However, this introduces risks—abusers may notice and escalate. Consider:
 
 ```bash
-# Example: Generate a GPG keypair for encrypted email communication
-gpg --full-generate-key
-# Select RSA 4096-bit, no expiration for simplicity
-# Use a strong passphrase stored in your password manager
+# Before reset, backup ONLY essential data:
+# - Contact numbers (manually recreate, don't restore full backup)
+# - Photos to encrypted USB (then securely wipe device)
+# - Any documents to encrypted storage
+#
+# DO NOT restore from iCloud/Google backup - these may contain
+# tracking data or间谍 software
 ```
 
-Configure your new email with the following security measures:
-- App-specific passwords disabled
-- IMAP/POP access reviewed and removed if unnecessary
-- Recovery options set to your new phone number and email only
-- Login notifications enabled
+For Android, verify the bootloader is locked after reset. Enter recovery mode and confirm:
+- Bootloader status shows "locked" 
+- Verified boot shows "green" or "verified"
 
-### Password Manager Architecture
+### New Device Procurement
 
-Your password manager becomes critical infrastructure. Generate completely new passwords for every account:
+If possible, obtain a fresh device using cash or a separate payment method. When this isn't feasible, thoroughly reset existing devices. The key principle: assume compromise until proven otherwise.
+
+## Account Security Implementation
+
+### Email Account Isolation
+
+Email is the linchpin of account security. Password resets for almost every service flow through email. Create a new email account with these specifications:
 
 ```bash
-# Example: Using bitwarden CLI to generate secure passwords
-bw generate --length 24 --uppercase --lowercase --number --symbol
+# New email account setup checklist:
+# 1. Use a privacy-respecting provider (ProtonMail, Tutanota)
+# 2. Register with phone number from new SIM (see below)
+# 3. Enable two-factor authentication with authenticator app
+# 4. Set up recovery email to NEW account only
+# 5. Disable email forwarding from old account
+# 6. Review and remove any connected devices/sessions
 ```
 
-Organize vault entries with clear naming conventions. Consider creating separate vaults:
-- **Financial** — banking, investment, credit card portals
-- **Communication** — email, messaging, video calling
-- **Identity** — government services, healthcare portals
-- **Recovery** — password reset accounts
+The new email should be used exclusively for security-critical communications. Do not link it to social accounts the abuser knows about.
 
-Enable emergency access with a trusted contact who understands the sensitivity of this arrangement.
+### Password Manager Deployment
 
-### Two-Factor Authentication Migration
-
-Review every account with 2FA enabled. For each:
-1. Verify the registered devices are only those you control
-2. Regenerate TOTP secrets where compromise is possible
-3. Remove phone numbers used as SMS backup if they could be SIM-swapped
-4. Store backup codes in a secure physical location
-
-Hardware security keys provide the strongest 2FA option. If using YubiKey or similar:
+A password manager enables unique, strong passwords for every service. For high-risk situations:
 
 ```bash
-# Verify FIDO2 registration on supported services
-# Check account security settings for "Security Key" or "Hardware Token" options
+# Recommended password manager setup:
+# 1. Bitwarden (self-hosted option available)
+# 2. Create NEW master password - never reuse any old password
+# 3. Enable 2FA with hardware key (YubiKey) if possible
+# 4. Export/import only critical account credentials
+# 5. Enable vault timeout (auto-lock after 1 minute)
+# 6. DO NOT import full old password database
 ```
 
-## Communication Security
+For users uncomfortable with technical tools, even writing passwords on paper (stored securely) is better than reusing passwords across accounts.
 
-### Encrypted Messaging Setup
+### Two-Factor Authentication
 
-Signal serves as the primary recommendation for secure communication. Configure these settings:
+Move beyond SMS-based 2FA whenever possible. SIM swapping remains a viable attack:
 
-- Enable **disappearing messages** with a short duration (1 hour or 24 hours)
-- Set **registration lock** to require your PIN if SIM is transferred
-- Disable **link previews** to prevent metadata leakage
-- Use **Signal PIN** to protect local database
+```bash
+# 2FA migration priority:
+# 1. Hardware security keys (YubiKey, Titan) - highest security
+# 2. Authenticator apps (Bitwarden Authenticator, Aegis for Android)
+# 3. Backup codes (print, store in safe location)
+# AVOID: SMS verification for any security-critical account
+```
 
-For sensitive communications, consider:
+For accounts that only support SMS, contact support to see if alternative 2FA methods are available. Some banks and financial institutions can add additional security layers.
+
+## Phone Number Security
+
+### Obtaining a New Number
+
+Phone numbers serve as authentication anchors. Secure the line:
+
+```bash
+# New phone number acquisition:
+# 1. Obtain new SIM card - pay with cash if possible
+# 2. Use new email for account registration
+# 3. Enable PIN/PUK code protection on carrier account
+# 4. Request port-out protection/porting freeze
+# 5. Enable carrier-level call screening
+```
+
+### Removing Number from Accounts
+
+Audit accounts linked to the old number:
+
+- Financial services (banks, PayPal, Venmo)
+- Social media accounts
+- Shopping sites with saved payment methods
+- Government services (IRS, DMV)
+- Healthcare portals
+
+Create a systematic checklist and methodically work through each service.
+
+## Secure Communications
+
+### Messaging Platform Selection
+
+Signal provides the best balance of security and usability:
+
+```bash
+# Signal hardening for high-risk users:
+# 1. Enable registration lock (requires PIN to reregister)
+# 2. Set disappearing messages for ALL conversations
+# 3. Disable notification previews in system settings
+# 4. Enable screen lock within Signal settings
+# 5. Turn off link previews (prevents metadata leakage)
+# 6. Use Screen Security to block screenshots
+```
+
+For users needing anonymity, consider:
+- VoIP numbers from Twilio or similar (registered to new email)
+- Signal with registered VoIP number instead of primary
+- Burner phones for highest-risk communications
+
+### Emergency Communication Plan
+
+Establish communication plans before they're needed:
+
+```bash
+# Pre-arranged safety protocol:
+# 1. Code word that indicates danger/distress
+# 2. Trusted contact who knows the situation
+# 3. Check-in schedule (if missed, contact initiates welfare check)
+# 4. Physical safe location information
+# 5. Offline communication method (written notes)
+```
+
+Document this plan in a secure location—not on devices that might be compromised.
+
+## Data Protection
+
+### Photo and File Security
+
+Photos often contain location metadata. Before transferring any files:
+
+```bash
+# Strip EXIF data before sharing/saving:
+# exiftool -all= -overwrite_original image.jpg
+# Or use ImageMagick:
+# convert input.jpg -strip output.jpg
+```
+
+For sensitive documents:
 
 ```python
-# Example: Using Python to encrypt messages with recipient's public key
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.asymmetric import padding
-from cryptography.hazmat.backends import default_backend
+# Python example: Encrypt sensitive files before storage
+from cryptography.fernet import Fernet
 
-def encrypt_message(message, recipient_public_key):
-    ciphertext = recipient_public_key.encrypt(
-        message.encode(),
-        padding.OAEP(
-            mgf=padding.MGF1(algorithm=hashes.SHA256()),
-            algorithm=hashes.SHA256(),
-            label=None
-        )
-    )
-    return ciphertext
+# Generate key (store securely, separately from files)
+key = Fernet.generate_key()
+f = Fernet(key)
+
+# Encrypt file
+with open('document.pdf', 'rb') as file:
+    encrypted = f.encrypt(file.read())
+
+with open('document.pdf.enc', 'wb') as file:
+    file.write(encrypted)
 ```
 
-### Email Encryption
+### Cloud Account Audit
 
-For sensitive written communication, configure GPG encryption:
+Review all cloud storage for sensitive data:
 
 ```bash
-# Export your public key to share with trusted contacts
-gpg --armor --export your@email.com > public_key.asc
-
-# Encrypt a message for a recipient
-gpg --encrypt --armor --recipient recipient@email.com --output message.asc message.txt
+# Cloud service audit checklist:
+# 1. Dropbox, Google Drive, OneDrive - remove old devices
+# 2. iCloud/Google backup - disable if not needed
+# 3. Photo sharing - revoke access to ex-partner
+# 4. Shared calendars - remove from ex-partner's accounts
+# 5. Family sharing schemes - exit all shared arrangements
 ```
 
-Provide your public key to trusted contacts through an in-person exchange or secure channel.
+## Ongoing Maintenance
 
-## Financial Account Protection
+Security isn't a one-time configuration. Establish regular review habits:
 
-### Bank Account Isolation
+- Weekly: Check for unknown devices on accounts
+- Monthly: Review privacy settings on social media
+- Quarterly: Update passwords on critical accounts
+- After any concerning incident: Immediate password change on potentially compromised accounts
 
-Contact your bank to:
-- Add a verbal password or PIN for in-person and phone transactions
-- Remove any authorized users you did not add
-- Enable transaction alerts via your new email and phone
-- Review and close any recurring payments to shared services
+## Conclusion
 
-Consider opening a new account at a different institution if your current bank has security gaps.
+Digital safety for someone leaving an abusive relationship requires immediate, decisive action combined with ongoing vigilance. The implementations above provide technical foundations, but the human element matters equally. Ensure the person understands why these measures matter, and provide support for maintaining them.
 
-### Credit Freeze
-
-Place a credit freeze with all major bureaus:
-
-```bash
-# Equifax: https://www.equifax.com/personal/credit-report-services/
-# Experian: https://www.experian.com/freeze/center.html
-# TransUnion: https://www.transunion.com/credit-freeze
-```
-
-This prevents an abuser from opening accounts in your name using stolen personal information.
-
-## Location Privacy
-
-### Device Location Settings
-
-Disable location sharing across all platforms:
-
-- **Google Maps**: Turn off Location History and Timeline
-- **Apple**: Disable Significant Locations in Privacy settings
-- **Social media**: Review and disable geotagging on posts
-- **Photos**: Strip EXIF metadata before sharing images
-
-### Smart Home Isolation
-
-If the abuser had access to smart home devices, treat them as compromised:
-
-```bash
-# Factory reset all smart home devices
-# Change WiFi credentials
-# Create a new network for smart devices
-# Use VLAN segmentation if your router supports it
-```
-
-Replace any device that cannot be factory reset or whose firmware cannot be verified.
-
-## Social Media Hygiene
-
-### Account Audit
-
-Review every social media account:
-- Remove the abuser and their associates
-- Check tagged photos and posts
-- Review login history for unauthorized access
-- Remove third-party app permissions
-- Enable login alerts
-
-Set accounts to private. Consider a complete break from social media during the transition period.
-
-### Search Engine Removal
-
-Request removal of personal information from search results:
-
-```bash
-# Google removal request form
-# https://www.google.com/webmasters/tools/removals
-```
-
-This prevents an abuser from finding new accounts or location information through search.
-
-## Documentation and Monitoring
-
-### Security Checklist
-
-Maintain a written record of:
-- All changed passwords (stored in password manager)
-- New account creations
-- Devices reset or replaced
-- Contacts with financial institutions
-- Police reports or restraining orders
-
-### Ongoing Monitoring
-
-Set up automated monitoring:
-- HaveIBeenPwned.com alerts for your new email
-- Google Alerts for your name and new phone number
-- Credit report monitoring (many services offer free monitoring)
-
-## Summary
-
-Securing digital life after leaving an abusive relationship requires systematic action across devices, accounts, and communication channels. The priority order:
-
-1. Create new devices and accounts, isolated from previous infrastructure
-2. Enable strong authentication everywhere—hardware keys preferred
-3. Encrypt all communications using Signal and GPG
-4. Freeze credit and secure financial accounts
-5. Audit social media and remove location sharing
-
-These measures provide defense-in-depth against an abuser who may attempt continued digital surveillance or identity theft.
+Start with the highest-impact changes first: new email, new phone number, and device hardening. Build from there based on threat model and resources available. Every layer of security makes surveillance more difficult—and safety more achievable.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}
