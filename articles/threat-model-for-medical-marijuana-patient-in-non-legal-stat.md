@@ -7,8 +7,6 @@ author: theluckystrike
 permalink: /threat-model-for-medical-marijuana-patient-in-non-legal-stat/
 ---
 
-{% raw %}
-
 Using medical marijuana legally in one state while residing in a prohibition state creates unique security challenges. This threat model addresses digital privacy, physical security, and legal risk mitigation for patients navigating this complex situation.
 
 ## Understanding Your Threat Landscape
