@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /vpn-token-based-authentication-how-hardware-tokens-work-with-vpn/
 reviewed: true
 score: 8
-categories: [guides]
+categories: [security]
 intent-checked: true
 voice-checked: true
 ---
