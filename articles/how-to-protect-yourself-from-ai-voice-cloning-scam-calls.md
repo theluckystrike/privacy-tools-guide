@@ -6,7 +6,7 @@ description: "Learn how to recognize and protect yourself from AI voice cloning 
 date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-yourself-from-ai-voice-cloning-scam-calls/
-categories: [privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "Learn how websites use browser permission prompts (notifications, 
 date: 2026-03-17
 author: theluckystrike
 permalink: /browser-permission-prompt-fingerprinting-how-notification/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false
