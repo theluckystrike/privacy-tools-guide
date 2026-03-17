@@ -6,7 +6,7 @@ description: "A comprehensive developer guide for implementing encryption at res
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-customer-data-encryption-at-rest-and-in-tra/
-categories: [guides, security, encryption]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

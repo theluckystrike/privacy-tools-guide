@@ -6,6 +6,10 @@ description: "A technical guide for developers on implementing consent receipts 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-consent-receipts-giving-customers-proof-of-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
