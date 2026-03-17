@@ -5,7 +5,7 @@ description: "Learn practical methods to encrypt file attachments that anyone ca
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-send-encrypted-attachments-that-recipients-can-open-w/
-categories: [guides, encryption, privacy]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 ---

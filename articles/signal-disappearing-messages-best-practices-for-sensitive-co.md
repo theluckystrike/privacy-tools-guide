@@ -5,6 +5,10 @@ description: "A developer-focused guide to Signal disappearing messages for sens
 date: 2026-03-16
 author: theluckystrike
 permalink: /signal-disappearing-messages-best-practices-for-sensitive-co/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

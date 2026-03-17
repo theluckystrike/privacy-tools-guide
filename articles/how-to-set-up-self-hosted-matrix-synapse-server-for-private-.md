@@ -5,7 +5,7 @@ description: "A practical guide to deploying your own Matrix Synapse server for 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-self-hosted-matrix-synapse-server-for-private-/
-categories: [guides, privacy, self-hosted]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
