@@ -8,7 +8,7 @@ description: "A comprehensive guide to privacy tools for social workers handling
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-social-worker-handling-sensitive-case-file/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 ---
 

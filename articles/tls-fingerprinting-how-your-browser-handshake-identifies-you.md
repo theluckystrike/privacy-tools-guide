@@ -5,6 +5,10 @@ description: "Learn how TLS fingerprinting works, what JA3 fingerprints are, and
 date: 2026-03-16
 author: theluckystrike
 permalink: /tls-fingerprinting-how-your-browser-handshake-identifies-you/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 TLS fingerprinting is a technique that identifies clients and browsers by analyzing the cryptographic parameters they send during the TLS handshake. Even though the actual data is encrypted, the initial handshake reveals distinctive patterns that can be used to track users, detect bots, and block malicious traffic. Understanding how this works helps developers building privacy-focused applications and security professionals defending against automated threats.

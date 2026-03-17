@@ -6,6 +6,10 @@ description: "Learn how websites use timezone detection via JavaScript to estima
 date: 2026-03-16
 author: theluckystrike
 permalink: /timezone-fingerprinting-how-websites-determine-your-location/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

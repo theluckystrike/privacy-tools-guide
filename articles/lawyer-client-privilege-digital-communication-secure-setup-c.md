@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users setting up secure
 date: 2026-03-16
 author: theluckystrike
 permalink: /lawyer-client-privilege-digital-communication-secure-setup-c/
-categories: [security, privacy, legal-tech]
+categories: [security, guides]
 ---
 
 {% raw %}

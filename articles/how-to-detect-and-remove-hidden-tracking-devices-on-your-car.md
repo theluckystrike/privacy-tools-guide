@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on finding GPS tr
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-and-remove-hidden-tracking-devices-on-your-car/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

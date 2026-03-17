@@ -5,6 +5,10 @@ description: "A comprehensive review of Keybase Filesystem (KBFS) - explore how 
 date: 2024-01-15
 author: theluckystrike
 permalink: /keybase-filesystem-encrypted-storage-review/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users migrating passwor
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-nordpass-to-bitwarden-export-import-process-guide/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

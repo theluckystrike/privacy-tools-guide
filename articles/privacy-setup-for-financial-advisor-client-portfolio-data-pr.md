@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users implementing priv
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-financial-advisor-client-portfolio-data-pr/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

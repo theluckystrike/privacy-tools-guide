@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to detect DNS hij
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/
-categories: [security, networking, privacy]
+categories: [security, guides]
 ---
 
 {% raw %}

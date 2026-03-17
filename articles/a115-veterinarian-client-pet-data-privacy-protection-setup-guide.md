@@ -5,7 +5,7 @@ description: "A comprehensive guide for veterinary practices to protect client a
 date: 2026-03-17
 author: theluckystrike
 permalink: /veterinarian-client-pet-data-privacy-protection-setup-guide/
-categories: [guides, privacy, healthcare]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

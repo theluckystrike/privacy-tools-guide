@@ -5,7 +5,7 @@ description: "A practical guide for developers on storing SSH keys in a password
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-password-manager-for-home-server-ssh-keys/
-categories: [guides, security, developer-tools]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

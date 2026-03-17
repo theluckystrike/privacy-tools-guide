@@ -6,6 +6,10 @@ description: "A practical technical guide for developers and power users on buil
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-political-dissident-in-surveillance-state-2/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

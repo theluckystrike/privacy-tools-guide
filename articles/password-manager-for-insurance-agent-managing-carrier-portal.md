@@ -6,7 +6,7 @@ description: "Learn how insurance agents can efficiently manage multiple carrier
 date: 2026-03-16
 author: theluckystrike
 permalink: /password-manager-for-insurance-agent-managing-carrier-portal/
-categories: [guides, security, insurance-tech]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

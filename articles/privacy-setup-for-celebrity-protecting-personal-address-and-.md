@@ -6,6 +6,10 @@ description: "A technical guide to securing personal addresses and family inform
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-celebrity-protecting-personal-address-and-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

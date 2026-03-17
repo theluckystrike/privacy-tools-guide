@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on implementing T
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tails-operating-system-for-extreme-privacy-daily/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

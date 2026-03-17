@@ -6,6 +6,10 @@ description: "A technical deep-dive into Chrome's First Party Sets proposal — 
 date: 2026-03-16
 author: theluckystrike
 permalink: /first-party-sets-chrome-proposal-how-it-affects-cross-site-t/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

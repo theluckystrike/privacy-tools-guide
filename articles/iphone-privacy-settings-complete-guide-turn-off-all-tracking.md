@@ -5,6 +5,10 @@ description: "A comprehensive technical guide for developers and power users to 
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-privacy-settings-complete-guide-turn-off-all-tracking/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

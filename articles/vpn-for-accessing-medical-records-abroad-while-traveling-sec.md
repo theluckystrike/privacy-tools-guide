@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users on setting up VPN
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-medical-records-abroad-while-traveling-sec/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # VPN for Accessing Medical Records Abroad While Traveling Securely

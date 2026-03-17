@@ -5,7 +5,7 @@ description: "A technical deep-dive into the Client Hints API and how it enables
 date: 2026-03-16
 author: theluckystrike
 permalink: /client-hints-api-fingerprinting-new-chrome-tracking-vector-e/
-categories: [guides, security, privacy]
+categories: [guides, security]
 ---
 
 {% raw %}

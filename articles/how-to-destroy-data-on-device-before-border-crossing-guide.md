@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on securely destr
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/
-categories: [guides, security, privacy]
+categories: [guides, security]
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ description: "A comprehensive technical guide for union organizers to build thre
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-union-organizer-in-hostile-employer-environ/
-categories: [security, privacy, guides]
+categories: [security, guides]
 ---
 
 {% raw %}

@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on setting up unt
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-untraceable-email-for-anonymous-tips-to-report/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

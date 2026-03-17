@@ -6,7 +6,7 @@ description: "A practical guide to setting up secure, encrypted telehealth sessi
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to set up panic b
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

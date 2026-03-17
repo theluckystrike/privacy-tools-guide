@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users implementing priv
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-immigration-activist-protecting-undocument/
-categories: [guides, privacy, security, activism]
+categories: [guides, security]
 ---
 
 {% raw %}

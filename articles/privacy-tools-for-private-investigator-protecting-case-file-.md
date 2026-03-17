@@ -5,6 +5,10 @@ description: "A comprehensive guide to digital privacy tools and security practi
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-private-investigator-protecting-case-file-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

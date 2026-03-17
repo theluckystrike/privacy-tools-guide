@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users on establishing s
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-communicate-securely-when-all-messaging-apps-are-moni/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

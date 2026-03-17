@@ -5,6 +5,10 @@ description: "Technical analysis of iPhone personal hotspot naming behavior. Lea
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

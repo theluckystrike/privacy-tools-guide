@@ -5,7 +5,7 @@ description: "Learn how websites use the Sensor API to fingerprint devices using
 date: 2026-03-16
 author: theluckystrike
 permalink: /sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/
-categories: [privacy, security, web-development]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

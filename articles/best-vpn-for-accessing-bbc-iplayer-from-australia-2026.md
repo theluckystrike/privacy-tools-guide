@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on accessing BBC 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-accessing-bbc-iplayer-from-australia-2026/
-categories: [guides, vpn, streaming]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

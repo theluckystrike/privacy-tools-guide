@@ -6,6 +6,10 @@ description: "A practical guide to setting up and managing a password manager fo
 date: 2026-03-16
 author: theluckystrike
 permalink: /password-manager-for-family-of-four-with-kids-accounts-guide/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

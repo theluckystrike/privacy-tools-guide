@@ -5,7 +5,7 @@ description: "A practical guide to setting up VPN access to your home network wh
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-remote-access-to-home-network-while-traveling/
-categories: [guides, vpn, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

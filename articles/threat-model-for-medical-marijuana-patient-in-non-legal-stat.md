@@ -5,6 +5,10 @@ description: "A comprehensive security and privacy guide for medical marijuana p
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-medical-marijuana-patient-in-non-legal-stat/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Using medical marijuana legally in one state while residing in a prohibition state creates unique security challenges. This threat model addresses digital privacy, physical security, and legal risk mitigation for patients navigating this complex situation.

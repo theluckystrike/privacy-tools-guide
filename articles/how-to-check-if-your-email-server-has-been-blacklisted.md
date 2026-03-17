@@ -2,6 +2,10 @@
 title: How to Check If Your Email Server Has Been Blacklisted
 description: Learn how to identify if your mail server IP is on any email blacklist and what steps to take to get delisted and restore email deliverability.
 permalink: /how-to-check-if-your-email-server-has-been-blacklisted/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Email blacklisting is one of the most frustrating issues that can happen to any organization relying on email communication. When your mail server's IP address gets added to a blacklist, your outgoing emails may be blocked, bounced, or marked as spam by receiving mail servers. This guide will walk you through the process of checking if your email server has been blacklisted, understanding the implications, and taking corrective action.

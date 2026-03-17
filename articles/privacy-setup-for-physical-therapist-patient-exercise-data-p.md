@@ -6,7 +6,7 @@ description: "A practical guide to securing patient exercise data in physical th
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-physical-therapist-patient-exercise-data-p/
-categories: [guides, healthcare, privacy]
+categories: [guides]
 ---
 
 {% raw %}

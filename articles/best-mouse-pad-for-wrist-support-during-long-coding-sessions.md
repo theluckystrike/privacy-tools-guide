@@ -6,7 +6,7 @@ description: "Discover the best mouse pads for wrist support during long coding 
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /best-mouse-pad-for-wrist-support-during-long-coding-sessions/
-categories: [guides, ergonomics, productivity]
+categories: [guides, productivity]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users helping someone l
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on detecting, pre
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-qr-code-phishing-quishing-attack/
-categories: [security, privacy]
+categories: [security, guides]
 ---
 
 {% raw %}

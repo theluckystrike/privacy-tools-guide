@@ -2,6 +2,10 @@
 title: "How to Tell If Your Email Account Was Hacked: Immediate Warning Signs"
 description: "Learn the critical warning signs that indicate your email account has been compromised, plus exact steps to secure it right now."
 permalink: /how-to-tell-if-your-email-account-was-hacked-right-now/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Your email is the gateway to your entire digital life. When hackers gain access, they can reset passwords across all your accounts, steal sensitive data, and even commit identity theft. The scary part? Many people don't realize they've been hacked until significant damage is done.

@@ -5,6 +5,10 @@ description: "A practical guide to securing client financial data as an accounta
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-accountant-handling-client-financial-data-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

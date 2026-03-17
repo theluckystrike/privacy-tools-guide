@@ -5,6 +5,10 @@ description: "Learn how HTTP/2 connection pooling enables browser fingerprinting
 date: 2026-03-16
 author: theluckystrike
 permalink: /browser-connection-pooling-fingerprinting-how-http2-connecti/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 HTTP/2 revolutionized web performance through multiplexing, header compression, and connection reuse. However, these same features create novel fingerprinting vectors that can track users across the web. This article explores how connection pooling in browsers enables fingerprinting and what you need to know as a developer or privacy-conscious user.

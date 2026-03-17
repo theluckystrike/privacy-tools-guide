@@ -5,6 +5,10 @@ description: "A comprehensive technical guide for developers and power users bui
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

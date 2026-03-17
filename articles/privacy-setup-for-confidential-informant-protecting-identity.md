@@ -5,7 +5,7 @@ description: "A practical guide to privacy setup for confidential informant prot
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-confidential-informant-protecting-identity/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

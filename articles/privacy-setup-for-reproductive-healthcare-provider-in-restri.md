@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users securing patient 
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-reproductive-healthcare-provider-in-restri/
-categories: [guides, privacy, security, healthcare]
+categories: [guides, security]
 ---
 
 {% raw %}

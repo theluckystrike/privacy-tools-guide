@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users on using public c
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-public-computers-safely-without-leaving-any-trace/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Public computers at libraries, hotels, and coworking spaces pose significant privacy risks. Every keystroke, file access, and browser session can be logged, cached, or recovered by subsequent users or system administrators. This guide provides actionable techniques for developers and power users to minimize their digital footprint on shared machines.

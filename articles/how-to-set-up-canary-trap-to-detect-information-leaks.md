@@ -6,7 +6,7 @@ description: "Learn how to implement a canary trap system to identify the source
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-canary-trap-to-detect-information-leaks/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

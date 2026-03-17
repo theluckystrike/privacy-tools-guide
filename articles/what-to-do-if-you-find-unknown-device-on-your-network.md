@@ -5,7 +5,7 @@ description: A comprehensive guide for discovering unknown devices on your netwo
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
-categories: [guides, security, privacy]
+categories: [guides, security]
 ---
 
 {% raw %}

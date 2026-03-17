@@ -6,7 +6,7 @@ description: "A practical threat modeling guide for corporate whistleblowers. Le
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users on building a thr
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-transgender-person-protecting-deadname-and-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

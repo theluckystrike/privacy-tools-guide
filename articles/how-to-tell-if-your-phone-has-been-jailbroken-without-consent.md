@@ -8,7 +8,7 @@ description: "A comprehensive guide to detecting unauthorized jailbreaks on your
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consent/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

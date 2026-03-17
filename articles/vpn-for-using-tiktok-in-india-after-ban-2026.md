@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users on accessing TikT
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-using-tiktok-in-india-after-ban-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

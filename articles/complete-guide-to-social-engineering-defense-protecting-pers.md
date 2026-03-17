@@ -5,7 +5,7 @@ description: "Learn practical social engineering defense strategies for develope
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-social-engineering-defense-protecting-pers/
-categories: [security, privacy, social-engineering]
+categories: [security, guides]
 ---
 
 {% raw %}

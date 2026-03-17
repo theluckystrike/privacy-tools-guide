@@ -5,7 +5,7 @@ description: "A practical walkthrough for developers and power users on how to s
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-removing-real-name-from-all-online-account/
-categories: [privacy, guides]
+categories: [guides]
 ---
 
 {% raw %}

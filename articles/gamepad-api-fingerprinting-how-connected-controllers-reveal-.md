@@ -5,7 +5,7 @@ description: "Discover how websites use the Gamepad API to fingerprint browsers 
 date: 2026-03-16
 author: theluckystrike
 permalink: /gamepad-api-fingerprinting-how-connected-controllers-reveal-/
-categories: [privacy, security, web-development]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

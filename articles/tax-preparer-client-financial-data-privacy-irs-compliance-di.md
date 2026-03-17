@@ -5,6 +5,10 @@ description: "A practical technical guide for tax professionals on securing clie
 date: 2026-03-16
 author: theluckystrike
 permalink: /tax-preparer-client-financial-data-privacy-irs-compliance-di/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

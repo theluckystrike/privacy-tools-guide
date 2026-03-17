@@ -6,7 +6,7 @@ description: "Discover how websites enumerate your media devices, the privacy ri
 date: 2026-03-16
 author: theluckystrike
 permalink: /media-devices-enumeration-fingerprinting-cameras-microphones/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

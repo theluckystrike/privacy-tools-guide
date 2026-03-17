@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on purchasing mob
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-purchase-phone-and-sim-card-anonymously-complete-guid/
-categories: [privacy, security, guides]
+categories: [guides, security]
 ---
 
 {% raw %}

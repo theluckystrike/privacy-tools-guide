@@ -5,6 +5,10 @@ description: A practical guide to securing witness testimony and election observ
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-election-observer-protecting-witness-testimony/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Election observers and their witnesses face unique data protection challenges. When documenting electoral irregularities, protecting the identity and testimony of sources becomes as critical as the evidence itself. This guide covers privacy tools and techniques for developers and power users building infrastructure for election observation missions.

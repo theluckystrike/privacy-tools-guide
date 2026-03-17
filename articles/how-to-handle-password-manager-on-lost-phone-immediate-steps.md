@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on securing your 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-handle-password-manager-on-lost-phone-immediate-steps/
-categories: [security, privacy]
+categories: [security, guides]
 reviewed: true
 intent-checked: true
 voice-checked: true

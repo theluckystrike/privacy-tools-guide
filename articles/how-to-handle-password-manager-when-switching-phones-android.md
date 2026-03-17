@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on transferring y
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-handle-password-manager-when-switching-phones-android/
-categories: [guides, security, password-managers]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A practical guide for individuals who need to maintain attorney-cl
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-communicate-with-lawyer-privately-when-device-compromised/
-categories: [guides, security, privacy]
+categories: [guides, security]
 tags: [tools]
 reviewed: true
 score: 8

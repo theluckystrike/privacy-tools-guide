@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on permanently de
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-location-history-google-timeline-how-to-delete-perma/
-categories: [guides, privacy, android]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

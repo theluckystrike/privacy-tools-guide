@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to establish secu
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-offline-encrypted-communication-between-two-pe/
-categories: [guides, security, encryption]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

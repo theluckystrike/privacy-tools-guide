@@ -6,6 +6,10 @@ description: "Learn how websites exploit the Web Audio API to create unique brow
 date: 2026-03-16
 author: theluckystrike
 permalink: /audio-context-fingerprinting-how-websites-use-sound-api-trac/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

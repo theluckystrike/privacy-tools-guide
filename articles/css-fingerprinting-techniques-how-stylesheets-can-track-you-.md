@@ -6,7 +6,7 @@ description: "Discover how CSS fingerprinting techniques enable tracking users w
 date: 2026-03-16
 author: theluckystrike
 permalink: /css-fingerprinting-techniques-how-stylesheets-can-track-you-/
-categories: [privacy, security, web-development]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

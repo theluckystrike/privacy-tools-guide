@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users implementing priv
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

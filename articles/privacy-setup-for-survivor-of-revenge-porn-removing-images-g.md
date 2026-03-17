@@ -6,7 +6,7 @@ description: "A practical technical guide for removing non-consensual intimate i
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-survivor-of-revenge-porn-removing-images-g/
-categories: [privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

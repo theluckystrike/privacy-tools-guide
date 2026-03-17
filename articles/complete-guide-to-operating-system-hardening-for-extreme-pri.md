@@ -5,7 +5,7 @@ description: "A practical guide to hardening your operating system for maximum p
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-operating-system-hardening-for-extreme-pri/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

@@ -5,6 +5,10 @@ description: "A practical technical guide for developers and power users impleme
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-underground-railroad-modern-equivalent-pro/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

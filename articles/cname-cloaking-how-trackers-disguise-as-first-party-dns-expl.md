@@ -5,7 +5,7 @@ description: "Learn how CNAME cloaking works, how trackers use DNS CNAME records
 date: 2026-03-16
 author: theluckystrike
 permalink: /cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 CNAME cloaking represents one of the most insidious tracking techniques in modern web privacy. While ad blockers and privacy extensions excel at identifying traditional third-party trackers, CNAME cloaking exploits a fundamental gap in how browsers and DNS resolution work together. Understanding this technique helps developers and privacy-conscious users protect against invisible tracking that bypasses many common defenses.

@@ -6,7 +6,7 @@ description: "A practical guide for developers and dental practice power users i
 date: 2026-03-16
 author: theluckystrike
 permalink: /dentist-patient-records-privacy-hipaa-compliant-digital-stor/
-categories: [guides, hipaa, privacy, healthcare]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

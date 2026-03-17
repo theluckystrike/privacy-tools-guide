@@ -5,7 +5,7 @@ description: "A practical guide to creating secure digital dead drops for anonym
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-dead-drop-for-digital-information/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

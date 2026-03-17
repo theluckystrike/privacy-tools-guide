@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users migrating passwor
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-sticky-password-to-bitwarden-step-by-step-gui/
-categories: [guides, migration]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

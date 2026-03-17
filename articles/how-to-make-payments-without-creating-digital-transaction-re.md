@@ -5,6 +5,10 @@ description: "A practical guide to conducting transactions without leaving a dig
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-make-payments-without-creating-digital-transaction-re/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

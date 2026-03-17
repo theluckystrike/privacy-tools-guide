@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on implementing F
 date: 2026-03-16
 author: theluckystrike
 permalink: /teacher-student-data-privacy-ferpa-compliance-digital-tools-/
-categories: [guides, privacy, education, compliance]
+categories: [guides, enterprise]
 reviewed: false
 intent-checked: false
 voice-checked: false

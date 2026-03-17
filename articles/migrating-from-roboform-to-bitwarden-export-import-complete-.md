@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users migrating passwor
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-roboform-to-bitwarden-export-import-complete-/
-categories: [guides, security, migration]
+categories: [guides, security]
 ---
 
 {% raw %}

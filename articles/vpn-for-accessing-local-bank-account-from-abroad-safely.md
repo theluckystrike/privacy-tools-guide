@@ -5,7 +5,7 @@ description: "A technical guide to using VPNs for accessing your home country's 
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-local-bank-account-from-abroad-safely/
-categories: [guides, security, banking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

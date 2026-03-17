@@ -6,7 +6,7 @@ description: "A practical guide to privacy tools and techniques for whistleblowe
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

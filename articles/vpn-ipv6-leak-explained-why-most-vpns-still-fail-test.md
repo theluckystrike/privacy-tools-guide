@@ -2,6 +2,10 @@
 title: "VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test"
 description: "Understanding IPv6 leaks and why your VPN might be exposing your real IP address despite being connected."
 permalink: /vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test

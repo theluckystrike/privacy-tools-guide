@@ -5,7 +5,7 @@ description: "Learn how HSTS supercookies work and how HTTPS settings can be exp
 date: 2026-03-16
 author: theluckystrike
 permalink: /hsts-supercookie-tracking-how-https-settings-create-persiste/
-categories: [privacy, security, tracking]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

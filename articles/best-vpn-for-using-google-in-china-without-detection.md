@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users seeking reliable 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-using-google-in-china-without-detection/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

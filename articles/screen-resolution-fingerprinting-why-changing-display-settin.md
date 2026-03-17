@@ -5,7 +5,7 @@ description: "Learn how screen resolution fingerprinting works, why it threatens
 date: 2026-03-16
 author: theluckystrike
 permalink: /screen-resolution-fingerprinting-why-changing-display-settin/
-categories: [privacy, security]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

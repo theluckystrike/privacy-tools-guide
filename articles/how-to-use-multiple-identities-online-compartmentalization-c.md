@@ -5,7 +5,7 @@ description: "A practical guide to managing multiple online identities through c
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-multiple-identities-online-compartmentalization-c/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

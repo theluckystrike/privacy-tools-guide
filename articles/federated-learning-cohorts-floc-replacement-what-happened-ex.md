@@ -5,6 +5,10 @@ description: "Understand what happened to Google's FLoC, why it was replaced, an
 date: 2026-03-16
 author: theluckystrike
 permalink: /federated-learning-cohorts-floc-replacement-what-happened-ex/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

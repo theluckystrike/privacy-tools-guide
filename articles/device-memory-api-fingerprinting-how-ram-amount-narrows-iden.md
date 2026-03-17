@@ -5,6 +5,10 @@ description: "Learn how the Device Memory API enables browser fingerprinting by 
 date: 2026-03-16
 author: theluckystrike
 permalink: /device-memory-api-fingerprinting-how-ram-amount-narrows-iden/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
