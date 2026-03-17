@@ -1,12 +1,11 @@
 ---
-
 layout: default
-title: "How to Tell If Your Home Assistant or Alexa Was Compromised"
-description: "A technical guide for developers and power users to detect signs of compromise in Home Assistant and Alexa devices. Learn to audit logs, identify."
-date: 2026-03-16
-author: theluckystrike
+title: "How to Tell If Your Home Assistant or Alexa Was Compromised: Security Audit Guide"
+description: "A technical guide to detecting if your smart home voice assistants have been compromised. Learn to identify signs of unauthorized access, audit logs, and secure your Home Assistant and Alexa devices."
+date: 2026-03-17
+author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
-categories: [guides]
+categories: [security, smart-home]
 reviewed: true
 score: 8
 intent-checked: true
@@ -14,226 +13,180 @@ voice-checked: true
 ---
 
 {% raw %}
+# How to Tell If Your Home Assistant or Alexa Was Compromised: Security Audit Guide
 
-Smart home devices like Home Assistant and Alexa have become central to our digital lives, controlling everything from lights and locks to climate systems and security cameras. When these platforms are compromised, attackers gain visibility into your daily routines and potentially control over physical access points. This guide provides developers and power users with practical techniques to detect whether your Home Assistant or Alexa has been compromised.
+Smart home assistants like Amazon Alexa and Home Assistant have become central to our digital lives, controlling lights, locks, thermostats, and accessing sensitive information. Knowing how to detect if these devices have been compromised is essential for maintaining your privacy and security. This guide covers the key indicators of compromise, how to audit your devices, and practical steps to secure them.
 
-## Understanding the Attack Surface
+## Signs Your Smart Assistant May Be Compromised
 
-Both Home Assistant and Alexa expose network interfaces that can be targeted. Home Assistant runs as a web server on your local network, accepting connections through its API and the frontend. Alexa communicates with Amazon's cloud, but the Alexa app and connected devices can be manipulated through account compromise or malicious skills.
+Detecting a compromise early can prevent further intrusion. Here are the most common warning signs:
 
-The most common attack vectors include weak passwords, exposed APIs, compromised Alexa skills with excessive permissions, and network-level attacks on unencrypted communications.
+### Unusual Activity on Your Account
 
-## Detecting Compromise in Home Assistant
+- **Unexpected voice recordings** in your history that you do not recognize
+- **New smart home devices** added to your account without your knowledge
+- **Automation routines** you did not create, especially those that trigger at odd hours
+- **Unfamiliar smart home groups or scenes** configured in your system
+- **Changes to account settings** such as phone numbers, email addresses, or payment methods
 
-Home Assistant provides extensive logging that can reveal unauthorized access. The primary log file records events, authentication attempts, and component errors. Here's how to examine it programmatically:
+### Device Behavior Anomalies
 
-```python
-import requests
-from datetime import datetime, timedelta
+- **Microphone activating spontaneously** when not triggered by the wake word
+- **Lights blinking or devices activating** without corresponding voice commands or automation triggers
+- **Unexpected reboots** or firmware updates you did not initiate
+- **Increased network traffic** from your smart device when idle
+- **Lag or delayed responses** that persist after network troubleshooting
 
-HA_URL = "http://homeassistant.local:8123"
-TOKEN = "your_long_lived_access_token"
+### Network-Level Indicators
 
-def get_auth_logs(hours=24):
-    """Fetch authentication logs from Home Assistant"""
-    end_time = datetime.now()
-    start_time = end_time - timedelta(hours=hours)
-    
-    # Query the logbook API
-    response = requests.get(
-        f"{HA_URL}/api/logbook",
-        headers={"Authorization": f"Bearer {TOKEN}"},
-        params={
-            "start_time": start_time.isoformat(),
-            "end_time": end_time.isoformat()
-        }
-    )
-    return response.json()
+- **Unknown devices** connected to your network with MAC addresses you do not recognize
+- **Unusual DNS queries** from your smart devices to suspicious domains
+- **Increased data usage** that cannot be attributed to normal operation
+- **Port scans** or connection attempts from your smart home hub to external addresses
 
-def analyze_failed_logins(events):
-    """Identify suspicious login patterns"""
-    failed_attempts = {}
-    
-    for event in events:
-        if event.get("event_type") == "login_failed":
-            source = event.get("data", {}).get("source")
-            if source:
-                failed_attempts[source] = failed_attempts.get(source, 0) + 1
-    
-    return failed_attempts
+## How to Audit Your Amazon Alexa
 
-# Run analysis
-logs = get_auth_logs(24)
-failures = analyze_failed_logins(logs)
+### Review Voice History
 
-if failures:
-    print("Potential brute force attempts detected:")
-    for ip, count in failures.items():
-        print(f"  {ip}: {count} failed attempts")
-else:
-    print("No failed login attempts in the last 24 hours")
-```
+1. Open the Alexa app on your mobile device
+2. Go to **Settings** > **Alexa Privacy** > **Review Voice History**
+3. Filter by date and carefully examine recordings you do not recognize
+4. Note any recordings that occurred while you were away from home
+5. Delete suspicious recordings and history
 
-This script queries the Home Assistant logbook API and identifies IP addresses with multiple failed authentication attempts. If you see repeated failures from an unfamiliar IP address, your instance may be under attack.
+### Check Activity and Smart Home Devices
 
-### Checking for Unauthorized Entities
+1. Navigate to **Settings** > **Account Settings** > **History**
+2. Review the full activity log for unrecognized commands
+3. Go to **Settings** > **Alexa Privacy** > **Manage Your Alexa Data**
+4. Review connected smart home devices and remove any you do not recognize
+5. Check for陌生 skill permissions in **Settings** > **Skills** > **Your Skills**
 
-Compromised installations often contain unfamiliar entities that you did not create. These might appear as automation, scripts, or new devices. Use the Home Assistant API to enumerate all entities and compare against a known-good baseline:
+### Audit Alexa Skills
 
-```python
-def get_all_entities():
-    """Retrieve all entities from Home Assistant"""
-    response = requests.get(
-        f"{HA_URL}/api/states",
-        headers={"Authorization": f"Bearer {TOKEN}"}
-    )
-    return response.json()
+1. Open the Alexa app and go to **Skills**
+2. Review all installed skills, especially those you did not intentionally install
+3. Remove skills that request excessive permissions:
+   - Access to voice recordings
+   - Contact list access
+   - Payment permissions
+   - Home network control
+4. Disable skills you no longer use
 
-def find_new_entities(current_entities, known_entities):
-    """Identify entities not in the known baseline"""
-    current_ids = {e["entity_id"] for e in current_entities}
-    known_ids = set(known_entities)
-    return current_ids - known_ids
+### Check for Unrecognized Routines
 
-# Load your baseline (store this securely)
-known_entity_ids = []  # Load from saved baseline
+1. Go to **More** > **Routines** in the Alexa app
+2. Review all active routines, noting their triggers and actions
+3. Look for routines that:
+   - Run at unusual times
+   - Control multiple devices unexpectedly
+   - Send notifications or emails
+   - Interact with third-party services
 
-all_entities = get_all_entities()
-new_entities = find_new_entities(all_entities, known_entity_ids)
+## How to Audit Your Home Assistant
 
-if new_entities:
-    print("New entities detected:")
-    for entity in sorted(new_entities):
-        print(f"  {entity}")
-```
+### Review the Logbook
 
-Save the output of this script to create a baseline, then run it periodically to detect additions.
+1. Access your Home Assistant web interface
+2. Navigate to **Configuration** > **Logbook**
+3. Filter for unusual time periods when you were not home
+4. Look for:
+   - Unexpected device state changes
+   - Automation executions you did not trigger
+   - Unknown user logins
+   - Service calls to unfamiliar integrations
 
-### Examining Automation Triggers
+### Check Automation and Script Executions
 
-Malicious automations can execute arbitrary actions on your system. Review your automations for suspicious triggers, especially those that execute shell commands or make external HTTP requests:
+1. Go to **Configuration** > **Automations**
+2. Review all automations for:
+   - Unknown or recently added automations
+   - Automations with HTTP requests to external services
+   - Automations that trigger on unusual events
+   - Hidden or disabled automations that may have been intentionally concealed
+3. Check **Configuration** > **Scripts** for unfamiliar scripts
+4. Review the automation trace history for unexpected triggers
 
-```yaml
-# Example of a suspicious automation pattern to search for
-automation:
-  - alias: "SUSPICIOUS - executes shell commands"
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.anything
-    action:
-      - service: shell_command.execute
-        data:
-          entity_id: shell_command.suspicious
-```
+### Audit Users and Permissions
 
-Search your configuration files for automations containing `shell_command`, `http_request`, or `rest_command` services, as these can be used for data exfiltration or executing arbitrary code.
+1. Navigate to **Configuration** > **Users**
+2. Review all users, paying attention to:
+   - Unknown or newly added users
+   - Users with administrator privileges you did not create
+   - Service accounts with broad access
+3. Check **Long-Lived Access Tokens** in your user profile
+4. Revoke any tokens you do not recognize or that are no longer needed
 
-## Detecting Compromise in Alexa
+### Network Monitoring for Home Assistant
 
-Alexa compromise typically occurs at the account level rather than the device level. Amazon provides tools to review Alexa activity and connected skills.
+If you have network monitoring capabilities:
 
-### Reviewing Alexa Voice History
+1. Review DHCP leases for unknown devices
+2. Check your firewall logs for unusual outbound connections from your Home Assistant server
+3. Monitor DNS queries from your Home Assistant IP address
+4. Look for connections to known malicious IP addresses or domains
 
-Amazon stores voice request history, which can reveal unauthorized commands. Navigate to the Alexa Privacy settings in the Amazon website or app, and review the "Voice History" section. Look for:
+### Verify Integrations
 
-- Commands you did not issue
-- Smart home device controls at unusual times
-- Shopping orders you did not authorize
+1. Go to **Configuration** > **Integrations**
+2. Review all installed integrations, especially:
+   - Third-party cloud integrations
+   - Custom integrations from unknown sources
+   - Integrations with access to sensitive data
+3. Remove any integrations you did not intentionally install
+4. Check for unofficial or fake integrations masquerading as legitimate ones
 
-### Checking Connected Skills
+## Securing Your Smart Assistants
 
-Malicious skills can request excessive permissions and capture voice data. Access the Alexa app, go to Skills, and review "Your Skills." Remove any skills you do not recognize or that request unnecessary permissions:
+After auditing, take these steps to harden your devices:
 
-```bash
-# Use Amazon's Alexa API (requires developer credentials)
-# List all enabled skills
-aws alexaforbusiness list-skills --region us-east-1
-```
+### Amazon Alexa Security
 
-Review each skill's permissions using the skill manifest. Skills requesting permissions beyond their stated purpose should be disabled and removed.
+- **Enable two-step verification** on your Amazon account
+- **Use a strong, unique password** for your Amazon account
+- **Enable voice PIN** for sensitive actions like unlocking doors
+- **Disable voice purchasing** or require a confirmation code
+- **Regularly review and delete voice recordings**
+- **Use Amazon Kids+** if you have children to enforce additional controls
 
-### Monitoring Alexa App Activity
+### Home Assistant Security
 
-The Alexa app shows a history of all voice requests and smart home actions. Check for patterns that indicate compromise:
+- **Enable secure authentication** with long, unique passwords
+- **Use two-factor authentication** for remote access
+- **Keep Home Assistant updated** to the latest version
+- **Run Home Assistant behind a VPN** for remote access instead of opening ports
+- **Use SSL/TLS certificates** for all external connections
+- **Implement network segmentation** by placing smart devices on a separate VLAN
+- **Disable unnecessary integrations** and cloud connections
+- **Use the password-protected mode** for sensitive automations
 
-1. Open the Alexa app
-2. Navigate to Activity > Voice History
-3. Filter by date range
-4. Look for anomalies in timing and command types
+### General Smart Home Security
 
-## Network-Level Detection
+- **Change default passwords** on all IoT devices
+- **Update firmware regularly** on all smart devices
+- **Use a separate network** for smart home devices
+- **Enable network-level firewalls** and intrusion detection
+- **Review third-party access** and revoke permissions you no longer need
+- **Monitor your network traffic** for anomalies
+- **Use a password manager** for all smart home account credentials
 
-For advanced users, monitoring network traffic can reveal compromise indicators. Both Home Assistant and Alexa should communicate only with expected endpoints.
+## Responding to a Confirmed Compromise
 
-### Identifying Unexpected Network Connections
+If you determine your device was compromised:
 
-Use tools like Wireshark or ngrep to monitor traffic from your smart home devices:
-
-```bash
-# Monitor HTTP traffic from Home Assistant
-sudo ngrep -d en0 -i 'host 192.168.1.xxx' port 8123
-
-# List established connections from Alexa devices
-sudo lsof -i -P | grep -i alexa
-```
-
-Home Assistant should only connect to your local network and configured external services. Alexa devices communicate primarily with Amazon's AWS infrastructure. Any unexpected destination IP addresses warrant investigation.
-
-### Setting Up Network Alerts
-
-Create firewall rules that alert on unusual outbound connections:
-
-```bash
-# Create an iptables rule to log unexpected connections
-sudo iptables -A OUTPUT -p tcp --dport 8123 -m state --state NEW \
-  -m recent --set --name HA_CONNECTIONS
-
-sudo iptables -A OUTPUT -p tcp --dport 8123 -m state --state NEW \
-  -m recent --update --seconds 60 --hitcount 5 --name HA_CONNECTIONS \
-  -j LOG --log-prefix "HA_BRUTE_FORCE: "
-```
-
-## Remediation Steps
-
-If you detect signs of compromise, act immediately:
-
-1. **Change passwords**: Update your Home Assistant password and any associated accounts. Use long, unique passwords stored in a password manager.
-
-2. **Revoke API tokens**: In Home Assistant, generate new long-lived access tokens and invalidate old ones.
-
-3. **Disable unknown entities**: Remove unfamiliar automations, scripts, and devices from your Home Assistant configuration.
-
-4. **Factory reset Alexa devices**: If you suspect device-level compromise, perform a factory reset on affected Echo devices.
-
-5. **Enable two-factor authentication**: Secure your Amazon account and any Home Assistant cloud integrations with 2FA.
-
-6. **Update firmware**: Ensure all smart home devices run current firmware versions.
-
-7. **Review network segmentation**: Isolate smart home devices on a separate VLAN to limit lateral movement in case of future compromise.
-
-## Prevention Best Practices
-
-Maintain ongoing security by implementing these practices:
-
-- Use a dedicated admin account for Home Assistant, separate from daily use accounts
-- Enable SSL/TLS for all Home Assistant connections
-- Configure fail2ban to automatically block repeated authentication attempts
-- Regularly audit your Alexa skills and remove unused ones
-- Keep Home Assistant and all add-ons updated
-- Use static IP assignments for critical devices to simplify monitoring
+1. **Disconnect the device** from the network immediately
+2. **Change passwords** for all associated accounts
+3. **Revoke API keys and access tokens**
+4. **Factory reset** the compromised device
+5. **Review and remove** any unauthorized smart home devices
+6. **Check for financial impact** if payment information was stored
+7. **Enable additional security measures** before reconnecting
+8. **Monitor for future suspicious activity** more closely
+9. **Report the incident** to the device manufacturer
+10. **Consider identity monitoring** if sensitive personal data was exposed
 
 ## Conclusion
 
-Detecting compromise in smart home platforms requires vigilance and systematic monitoring. By regularly reviewing logs, tracking entity changes, monitoring network traffic, and maintaining security hygiene, you can identify threats before they cause significant damage. The techniques in this guide give developers and power users the tools to audit their installations and respond effectively to potential security incidents.
-
-Implement these detection methods as part of your regular security routine, and maintain baseline documentation to quickly identify deviations from normal operation.
-
-
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Regular auditing of your smart home assistants is essential for maintaining privacy and security. By reviewing account activity, checking device behavior, and monitoring network traffic, you can detect compromises early and respond quickly. Implement the security measures outlined in this guide to reduce the likelihood of future incidents and protect your connected home.
 
 {% endraw %}
