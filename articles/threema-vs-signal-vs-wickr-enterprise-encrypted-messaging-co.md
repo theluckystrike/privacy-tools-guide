@@ -5,7 +5,7 @@ description: "A technical comparison of Threema, Signal, and Wickr for enterpris
 date: 2026-03-16
 author: theluckystrike
 permalink: /threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/
-categories: [security, encryption, messaging]
+categories: [security, guides]
 reviewed: true
 intent-checked: true
 voice-checked: true

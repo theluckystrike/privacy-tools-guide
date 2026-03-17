@@ -6,7 +6,7 @@ description: "Learn how to integrate ProtonMail with VPN services for enhanced p
 date: 2026-03-16
 author: theluckystrike
 permalink: /protonmail-vpn-integration-how-combining-email-and-vpn-impro/
-categories: [guides]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true
