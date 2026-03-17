@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Build a Privacy Dashboard for Customers to Manage Their Data Settings"
-description: "A practical guide for developers building privacy dashboards. Learn data access patterns, consent management, GDPR/CCPA compliance, and user-facing controls."
+title: "How to Build a Privacy Dashboard for Customers to Manage."
+description: "A practical guide for developers building privacy dashboards. Learn data access patterns, consent management, GDPR/CCPA compliance, and user-facing."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-privacy-dashboard-for-customers-to-manage-their/
@@ -282,6 +282,12 @@ Automated tests should cover:
 Building a privacy dashboard requires ongoing maintenance as regulations evolve and user expectations change. Start with the core features, maintain a clean audit trail, and prioritize user transparency.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
