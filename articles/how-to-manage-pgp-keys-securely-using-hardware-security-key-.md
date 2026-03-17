@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Manage PGP Keys Securely Using Hardware Security Key (YubiKey)"
-description: "A practical guide for developers and power users to store and manage PGP keys on hardware security keys like YubiKey. Includes GnuPG setup, key migration, and security best practices."
+title: "How to Manage PGP Keys Securely Using Hardware Security."
+description: "A practical guide for developers and power users to store and manage PGP keys on hardware security keys like YubiKey. Includes GnuPG setup, key."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-pgp-keys-securely-using-hardware-security-key-/
@@ -207,6 +207,12 @@ Consider a secondary YubiKey for redundancy. Configure the same keys on a backup
 For high-threat scenarios, use an air-gapped computer for key generation, then transfer to YubiKey in a controlled environment. This prevents key exposure during the creation process.
 
 Test your setup regularly. Verify you can decrypt messages, sign commits, and access your keys after system reboots. Document your recovery procedures—lost YubiKeys without revocation certificates create permanent identity loss.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
