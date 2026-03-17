@@ -1,206 +1,357 @@
 ---
 layout: default
-title: "How to Configure DNS Over HTTPS Inside VPN Tunnel"
-description: "A practical guide for developers and power users to configure DNS over HTTPS within a VPN tunnel. Learn methods, code examples, and troubleshooting."
-date: 2026-03-16
+title: How to Configure DNS over HTTPS Inside a VPN Tunnel
+description: A comprehensive technical guide to setting up DNS over HTTPS within your VPN tunnel for enhanced privacy and security.
+date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-configure-dns-over-https-inside-vpn-tunnel/
-categories: [guides]
+categories: [guides, security, privacy, vpn, networking]
 ---
 
 {% raw %}
 
-DNS over HTTPS (DoH) encrypts your DNS queries, preventing eavesdropping and manipulation. Running DoH inside a VPN tunnel adds an extra layer of privacy by ensuring all DNS resolution happens through the encrypted tunnel. This guide covers multiple methods to configure DoH within your VPN setup, targeting developers and power users who want granular control over their network traffic.
+When you use a VPN, your internet traffic is encrypted and routed through the VPN server, hiding your browsing activity from your ISP. However, even with a VPN, your DNS requests can still leak information about your browsing habits. DNS over HTTPS (DoH) adds an additional layer of privacy by encrypting your DNS queries, making it impossible for anyone—including your VPN provider—to see what domains you're accessing.
 
-## Why Run DoH Inside a VPN Tunnel
+In this guide, we'll explore how to configure DNS over HTTPS inside a VPN tunnel, why it matters, and the various methods to implement it across different platforms and VPN protocols.
 
-When you use a VPN without explicit DoH configuration, DNS queries often leak outside the encrypted tunnel. Your ISP or VPN provider handles DNS resolution, which means they can see which domains you access even if the traffic itself is encrypted. By configuring DoH inside the tunnel, you route DNS queries through encrypted HTTPS to a DoH provider of your choice, completely bypassing traditional DNS infrastructure.
+## Understanding DNS Leaks and Why DoH Inside VPN Matters
 
-This approach provides defense in depth: the VPN encrypts your traffic, and DoH encrypts your DNS queries. Neither your ISP nor your VPN provider can see which domains you're resolving.
+### What is a DNS Leak?
 
-## Prerequisites
+Every time you visit a website, your computer needs to translate the human-readable domain name (like example.com) into an IP address. This process is called DNS (Domain Name System) resolution. By default, your computer sends these DNS queries to your ISP's DNS servers, which can log every website you visit.
 
-Before configuring DoH inside your VPN tunnel, ensure you have:
+When you connect to a VPN, ideally all your traffic—including DNS queries—should go through the encrypted VPN tunnel. However, due to misconfigurations or IPv6 compatibility issues, DNS queries can sometimes "leak" outside the VPN tunnel, exposing your browsing activity to your ISP or other observers.
 
-- A working VPN client (OpenVPN, WireGuard, or strongSwan)
-- Administrative access to your VPN client or server
-- A DoH provider (Cloudflare, Google, Quad9, or a self-hosted resolver)
-- Basic understanding of networking concepts (DNS, UDP/TCP ports, tunnel interfaces)
+### Why Combine DoH with VPN?
 
-## Method 1: Configure DoH on Your VPN Client
+DNS over HTTPS encrypts your DNS queries using HTTPS protocol, making them indistinguishable from regular web traffic. When you combine DoH with a VPN:
 
-The simplest approach involves configuring your VPN client to use DoH instead of the default DNS servers. This works well for WireGuard and OpenVPN clients that support DNS configuration.
+1. **Double Encryption**: Your DNS queries are encrypted twice—once by the VPN tunnel and again by HTTPS
+2. **ISP Privacy**: Your ISP cannot see even the domains you're accessing
+3. **VPN Provider Privacy**: Your VPN provider cannot log your DNS queries
+4. **Bypass Local DNS Blocks**: DoH can bypass local DNS-based content filtering
+5. **Protection Against DNS Spoofing**: Encrypted DNS is resistant to man-in-the-middle DNS attacks
 
-### WireGuard Configuration
+## Configuring DoH Inside Different VPN Setups
 
-WireGuard allows you to specify DNS servers in the peer configuration. Add the DoH resolver address to your WireGuard config file:
+### Method 1: WireGuard with DoH Stubby Configuration
+
+WireGuard is known for its simplicity and performance. Here's how to configure DoH with WireGuard on Linux:
+
+#### Step 1: Install Required Packages
+
+```bash
+# Ubuntu/Debian
+sudo apt update
+sudo apt install stubby dnsmasq
+
+# Fedora/RHEL
+sudo dnf install stubby dnsmasq
+```
+
+#### Step 2: Configure Stubby for DNS over HTTPS
+
+Edit the Stubby configuration file:
+
+```bash
+sudo nano /etc/stubby/stubby.yml
+```
+
+Add the following configuration:
+
+```yaml
+resolution_type: GETDNS_RESOLUTION_STUB
+dns_transport_list:
+  - GETDNS_TRANSPORT_HTTPS
+tls_authentication: GETDNS_AUTHENTICATION_REQUIRED
+tls_query_padding_blocksize: 128
+edns_client_subnet_private: 0
+round_robin_upstreams: 1
+listen_addresses:
+  - 127.0.0.1@53530
+upstream_recursive_servers:
+  - address_data: 1.1.1.1
+    tls_auth_name: "cloudflare-dns.com"
+    tls_pubkey_pinset:
+      - digest: "SHA256"
+        value: y/oE5kfNgrX5qYJqJVq/3L2n6WcP8jR5vN3kGmT9sM=
+  - address_data: 8.8.8.8
+    tls_auth_name: "dns.google"
+    tls_pubkey_pinset:
+      - digest: "SHA256"
+        value: JSMUlqH2g/3BE/h2+aSxL+jEv9IU/A9zZ5Xu2HI7RoM=
+```
+
+#### Step 3: Configure WireGuard to Use Local DNS
+
+Edit your WireGuard configuration:
+
+```bash
+sudo nano /etc/wireguard/wg0.conf
+```
+
+Add or modify the DNS setting:
 
 ```ini
 [Interface]
 PrivateKey = <your-private-key>
-Address = 10.0.0.2/32
-DNS = 1.1.1.1, 1.0.0.1
-
-[Peer]
-PublicKey = <server-public-key>
-Endpoint = vpn.example.com:51820
-AllowedIPs = 0.0.0.0/0, ::/0
-```
-
-However, this basic configuration still uses standard DNS over UDP port 53. To use DoH, you need a tool that intercepts DNS queries and forwards them over HTTPS. Enter `dnscrypt-proxy`, which you can run alongside your VPN client.
-
-Install dnscrypt-proxy and configure it to listen on a local address, then point your WireGuard DNS to that local resolver:
-
-```bash
-# /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-listen_addresses = ['127.0.0.1:53']
-bootstrap_resolvers = ['1.1.1.1:53']
-doh_sources = ['https://cloudflare-dns.com/dns-query']
-```
-
-Then update your WireGuard config to use `127.0.0.1` as the DNS server. Now all DNS queries from your VPN client go through the local dnscrypt-proxy, which encrypts them via DoH.
-
-### OpenVPN Configuration
-
-OpenVPN supports the `dhcp-option DNS` directive to push DNS servers to clients. For DoH, you need a client-side resolver. Configure your OpenVPN client to use a local DoH proxy:
-
-```bash
-# /etc/openvpn/client.conf
-client
-dev tun
-remote vpn.example.com 1194
-proto udp
-resolv-retry infinite
-nobind
-persist-key
-persist-tun
-remote-cert-tls server
-cipher AES-256-GCM
-auth SHA256
-
-# Redirect all traffic through VPN
-redirect-gateway def1 bypass-dhcp
-
-# Push DoH resolver to client (requires client-side setup)
-push "dhcp-option DNS 10.0.0.1"
-```
-
-On your client machine, run dnscrypt-proxy listening on `10.0.0.1`. This intercepts DNS queries from the VPN and encrypts them via DoH.
-
-## Method 2: Configure DoH on the VPN Server
-
-For more centralized control, configure DoH on your VPN server. This approach ensures all clients automatically use DoH without individual configuration.
-
-### strongSwan with DoH Forwarding
-
-If you use strongSwan for IPsec VPNs, you can set up a local DNS forwarder that handles DoH. Install `unbound` or `bind9` and configure it to forward DNS queries to DoH providers:
-
-```conf
-# /etc/unbound/unbound.conf.d/doh-forward.conf
-server:
-    interface: 0.0.0.0
-    access-control: 10.0.0.0/24 allow
-    forward-zone:
-        name: "."
-        forward-tls-upstream: yes
-        forward-addr: 1.1.1.1@853#cloudflare-dns.com
-        forward-addr: 8.8.8.8@853#dns.google
-```
-
-Configure your strongSwan IPsec configuration to assign this DNS server to clients:
-
-```conf
-# /etc/ipsec.conf
-conn myvpn
-    leftsubnet=0.0.0.0/0
-    right=%any
-    rightsubnet=10.0.0.0/24
-    authby=secret
-    auto=add
-    esp=aes256gcm16
-    ike=aes256gcm16-prfsha256-ecp256
-    mobike=no
-
-# Push DNS server to clients
-rightdns=10.0.0.1
-```
-
-Now all VPN clients receive the DoH-configured DNS server automatically.
-
-### WireGuard VPN Server with systemd-resolved
-
-On Linux servers, you can integrate WireGuard with systemd-resolved to handle DoH. Create a WireGuard interface and configure systemd-resolved to use DoH:
-
-```bash
-# /etc/systemd/resolved.conf
-[Resolve]
-DNS=1.1.1.1 8.8.8.8
-DNSOverTLS=cloudflare
-Domains=~.
-```
-
-Configure your WireGuard server to assign this DNS to clients:
-
-```ini
-[Peer]
-PublicKey = <client-public-key>
-AllowedIPs = 10.0.0.2/32
-DNS = 10.0.0.1
-```
-
-The `DNSOverTLS=cloudflare` setting ensures all DNS queries from the server go through DoH, and clients inherit this configuration.
-
-## Method 3: Split Tunneling with DoH
-
-For scenarios where you want only specific traffic through the VPN while maintaining DoH, split tunneling provides flexibility. Configure your VPN client to route specific subnets through the tunnel while using DoH for all DNS queries.
-
-WireGuard's `AllowedIPs` directive enables split tunneling:
-
-```ini
-[Interface]
-PrivateKey = <your-private-key>
-Address = 10.0.0.2/32
+Address = 10.0.0.2/24
 DNS = 127.0.0.1
 
 [Peer]
 PublicKey = <server-public-key>
 Endpoint = vpn.example.com:51820
-# Route only specific networks through VPN
-AllowedIPs = 10.0.0.0/8, 192.168.100.0/24
+AllowedIPs = 0.0.0.0/0, ::/0
 PersistentKeepalive = 25
 ```
 
-Run dnscrypt-proxy locally to handle DoH for all DNS queries, regardless of whether traffic goes through the VPN. This ensures DNS privacy even for traffic that doesn't use the VPN tunnel.
-
-## Verifying Your Configuration
-
-After configuring DoH inside your VPN tunnel, verify the setup works correctly:
-
-1. **Check DNS resolution**: Run `dig example.com` or `nslookup example.com` and confirm responses come back
-2. **Verify DoH is active**: Use `tcpdump -i any -n port 53` to confirm no plain DNS traffic leaves your machine
-3. **Test DoH encryption**: Use a tool like `dog` or `curl` to query your DoH provider directly:
+#### Step 4: Configure Dnsmasq as Local Caching Resolver
 
 ```bash
-curl -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=example.com&type=A'
+sudo nano /etc/dnsmasq.conf
 ```
 
-4. **Check VPN DNS assignment**: On Linux, run `resolvectl status` to see which DNS servers are active
+Add these lines:
 
-## Troubleshooting
+```conf
+no-resolv
+server=127.0.0.1#53530
+cache-size=1000
+```
 
-Common issues and solutions:
+#### Step 5: Restart Services
 
-- **DNS leaks**: Ensure your VPN client configuration explicitly sets DNS servers and that no other interfaces override this
-- **DoH connection failures**: Verify firewall rules allow outbound HTTPS (port 443) for DoH providers
-- **VPN connection drops**: Check that `PersistentKeepalive` is set in WireGuard configurations to maintain NAT mappings
-- **Client DNS not updating**: Restart the VPN service and clear local DNS caches with `systemd-resolve --flush-caches`
+```bash
+sudo systemctl restart stubby
+sudo systemctl restart dnsmasq
+sudo wg-quick down wg0
+sudo wg-quick up wg0
+```
+
+Now all your DNS queries will go through DoH before being sent through the WireGuard VPN tunnel.
+
+### Method 2: OpenVPN with DoH Configuration
+
+OpenVPN doesn't natively support DoH, but you can chain a local DoH resolver similar to the WireGuard method.
+
+#### Using dnscrypt-proxy with OpenVPN
+
+```bash
+# Install dnscrypt-proxy
+sudo apt install dnscrypt-proxy
+
+# Configure dnscrypt-proxy
+sudo nano /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+```
+
+Edit the configuration:
+
+```toml
+listen_addresses = ['127.0.0.1:53']
+max_clients = 250
+ipv4_servers = true
+ipv6_servers = false
+dnscrypt_servers = true
+doh_servers = true
+require_dnssec = true
+require_nolog = true
+disable_ipv6 = true
+cache = true
+cache_size = 10000
+cache_min_ttl = 600
+cache_max_ttl = 86400
+cache_neg_ttl = 3600
+```
+
+Configure OpenVPN to use this DNS:
+
+```ini
+# Add to your OpenVPN client config
+script-security 2
+up /etc/openvpn/update-dns
+down /etc/openvpn/update-dns
+```
+
+Create the update script:
+
+```bash
+#!/bin/bash
+# /etc/openvpn/update-dns
+if [ "$1" = "up" ]; then
+    # When VPN comes up, use local DoH resolver
+    echo "nameserver 127.0.0.1" > /etc/resolv.conf
+    chattr +i /etc/resolv.conf
+elif [ "$1" = "down" ]; then
+    # When VPN goes down, restore original DNS
+    chattr -i /etc/resolv.conf
+    cp /etc/resolv.conf.vpn /etc/resolv.conf
+fi
+```
+
+### Method 3: Configuring DoH on Windows with VPN
+
+Windows 11 has native DoH support, which you can configure to work with your VPN:
+
+#### Step 1: Enable DoH in Windows Settings
+
+1. Open Settings → Network & Internet → Wi-Fi or Ethernet
+2. Click on your active network connection
+3. Scroll to "DNS server assignment"
+4. Select "Manual"
+5. Enable "IPv4"
+6. Enter a DoH-compatible DNS server:
+   - Cloudflare: `1.1.1.1`
+   - Google: `8.8.8.8`
+   - Quad9: `9.9.9.9`
+7. Set "Preferred DNS" and "Alternate DNS" to the same IP
+8. Under "Preferred DNS encryption", select "Encrypted (DNS over HTTPS)"
+9. Repeat for IPv6 if desired
+
+#### Step 2: Configure VPN to Use System DNS
+
+When your VPN connects, it may override your DNS settings. To ensure your VPN uses the DoH-enabled system DNS:
+
+1. Open your VPN client's settings
+2. Look for "DNS Settings" or "Network Settings"
+3. Disable "Use VPN provider's DNS" or similar option
+4. Select "Use system DNS" or "Automatic"
+
+### Method 4: macOS DoH with VPN Tunnel
+
+On macOS, you can use the built-in DoH support or third-party applications:
+
+#### Using macOS System Preferences
+
+```bash
+# For macOS Ventura and later
+# Enable DoH via Terminal
+sudo networksetup -setdnsservers "Wi-Fi" 1.1.1.1 8.8.8.8
+
+# Note: Native DoH GUI settings are in System Preferences > Network > Wi-Fi > Advanced > DNS
+```
+
+#### Using dnscrypt-proxy with macOS VPN
+
+```bash
+# Install Homebrew if not installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install dnscrypt-proxy
+brew install dnscrypt-proxy
+
+# Copy and edit configuration
+cp /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml.sample /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml
+
+# Edit to use DoH servers
+nano /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml
+```
+
+Configure your VPN client to use `127.0.0.1` as the DNS server.
+
+### Method 5: Router-Level Configuration
+
+Configuring DoH at the router level protects all devices on your network:
+
+#### Using OpenWrt with DoH
+
+1. Install required packages:
+```bash
+opkg update
+opkg install https-dns-proxy
+```
+
+2. Configure https-dns-proxy:
+```bash
+# Edit /etc/config/https-dns-proxy
+config https-dns-proxy
+    option interpreter '/usr/bin/https-dns-proxy'
+    option bootstrap_dns '1.1.1.1,8.8.8.8'
+    option resolver_url 'https://cloudflare-dns.com/dns-query'
+    option listen_addr '127.0.0.1'
+    option listen_port '5053'
+```
+
+3. Add firewall rule to redirect DNS:
+```bash
+config redirect
+    option name 'Redirect-DNS'
+    option src 'lan'
+    option proto 'udp'
+    option src_port '53'
+    option dest_port '5053'
+    option target 'REDIRECT'
+```
+
+## Verifying Your DoH Inside VPN Configuration
+
+### Test for DNS Leaks
+
+Use these online tools to verify your configuration:
+
+1. **dnsleaktest.com**: Run the extended test to check which DNS servers are being used
+2. **ipleak.net**: Check for IP and DNS leaks
+3. **browserleaks.com**: Comprehensive privacy tests
+
+### Verify DoH is Working
+
+To verify DoH is actually encrypting your DNS:
+
+```bash
+# On Linux, use tcpdump to monitor DNS traffic
+sudo tcpdump -i any -n port 53 or port 443
+
+# You should NOT see plaintext DNS queries on port 53
+# You should see encrypted HTTPS traffic on port 443
+```
+
+### Check Which DNS Resolution You're Using
+
+```bash
+# Test with dig
+dig +short whoami.cloudflare.com @1.1.1.1
+
+# Check your DNS resolver
+nslookup example.com
+```
+
+## Troubleshooting Common Issues
+
+### DNS Resolution Fails After Enabling DoH
+
+- Check that your DoH provider is reachable: `curl -v https://1.1.1.1/dns-query`
+- Verify firewall rules allow HTTPS outbound
+- Check that stubby/dnscrypt-proxy is running: `systemctl status stubby`
+
+### VPN Connection Drops
+
+- Ensure "PersistentKeepalive" is set in your VPN config
+- Check that your DoH resolver has a fallback
+- Verify network connectivity
+
+### DNS Conflicts with VPN Provider
+
+- Some VPNs force their own DNS servers
+- Use a local DNS forwarder (dnsmasq) to override
+- Configure your VPN client to use "Use system DNS" option
+
+## Advanced: Split DNS with DoH
+
+For more granular control, implement split DNS:
+
+```bash
+# Example: Use DoH for specific domains only
+# Configure in /etc/dnsmasq.conf
+server=/corporate-internal.com/1.1.1.1
+server=/private-network.local/1.1.1.1
+bogus-priv
+```
 
 ## Conclusion
 
-Configuring DNS over HTTPS inside a VPN tunnel significantly enhances your privacy posture. Whether you choose client-side configuration, server-side forwarding, or split tunneling with DoH, the key is ensuring DNS queries never escape unencrypted. The methods outlined here provide flexibility for different VPN protocols and deployment scenarios, allowing developers and power users to implement defense in depth for their network traffic.
+Configuring DNS over HTTPS inside your VPN tunnel provides enhanced privacy by ensuring your DNS queries are encrypted end-to-end. Whether you use WireGuard, OpenVPN, or a commercial VPN service, implementing DoH adds a significant layer of protection against DNS leaks.
 
-For most users, running dnscrypt-proxy locally alongside the VPN client provides the best balance of simplicity and effectiveness. Advanced users managing their own VPN servers may prefer server-side configuration for centralized control.
+The setup process varies depending on your platform and VPN protocol, but the core principle remains the same: route your DNS queries through an encrypted DoH resolver before they enter the VPN tunnel. This ensures that neither your ISP, VPN provider, or any potential eavesdropper can see what domains you're accessing.
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+By following this guide, you've taken an important step toward comprehensive online privacy and security.
 
 {% endraw %}
