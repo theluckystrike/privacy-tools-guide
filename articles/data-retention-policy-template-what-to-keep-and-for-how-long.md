@@ -6,7 +6,7 @@ description: "A practical data retention policy template for developers and busi
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-retention-policy-template-what-to-keep-and-for-how-long/
-categories: [guides, privacy, compliance]
+categories: [guides, security, enterprise]
 reviewed: true
 score: 8
 intent-checked: true
