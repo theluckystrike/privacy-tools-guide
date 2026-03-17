@@ -2,7 +2,7 @@
 layout: default
 title: "How to Communicate with Lawyer Privately When Device is Compromised"
 description: "A practical guide for individuals who need to maintain attorney-client privilege while dealing with a compromised device. Learn secure communication methods."
-date: 2026-03-17
+date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-communicate-with-lawyer-privately-when-device-compromised/
 categories: [guides, security, privacy]
