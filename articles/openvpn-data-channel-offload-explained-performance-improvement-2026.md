@@ -5,7 +5,7 @@ description: Learn how OpenVPN Data Channel Offload (DCO) enhances VPN performan
 date: 2026-03-17
 author: theluckystrike
 permalink: /openvpn-data-channel-offload-explained-performance-improvement-2026/
-categories: [privacy, security, vpn, networking]
+categories: [security, guides]
 tags: [openvpn, vpn, data channel offload, dco, performance, encryption, network]
 ---
 

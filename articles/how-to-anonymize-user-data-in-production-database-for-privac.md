@@ -5,6 +5,10 @@ description: "A practical guide for developers on anonymizing user data in produ
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-anonymize-user-data-in-production-database-for-privac/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
