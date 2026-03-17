@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Engineering Hiring Guide: What Skills to Look for in a Privacy Team"
-description: "A practical hiring guide for building a privacy engineering team. Learn what technical skills, certifications, and competencies to evaluate when recruiting privacy engineers."
+title: "Privacy Engineering Hiring Guide: What Skills to Look."
+description: "A practical hiring guide for building a privacy engineering team. Learn what technical skills, certifications, and competencies to evaluate when."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-engineering-hiring-guide-what-skills-to-look-for-in-privacy-team/
@@ -183,6 +183,12 @@ Prioritize candidates who demonstrate continuous learning in this rapidly evolvi
 The right privacy engineer doesn't just implement checkbox compliance—they build systems where privacy is a fundamental feature, not an afterthought.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
