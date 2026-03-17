@@ -5,7 +5,7 @@ description: "Learn how to verify Signal safety numbers to prevent man-in-the-mi
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/
-categories: [security, privacy, messaging]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

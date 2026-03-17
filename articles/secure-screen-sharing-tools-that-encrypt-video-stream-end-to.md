@@ -5,7 +5,7 @@ description: "A practical guide to screen sharing solutions with true end-to-end
 date: 2026-03-16
 author: theluckystrike
 permalink: /secure-screen-sharing-tools-that-encrypt-video-stream-end-to/
-categories: [guides, security, screen-sharing]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

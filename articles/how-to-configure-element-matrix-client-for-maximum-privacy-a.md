@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to harden Element
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-element-matrix-client-for-maximum-privacy-a/
-categories: [guides, security, matrix]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
