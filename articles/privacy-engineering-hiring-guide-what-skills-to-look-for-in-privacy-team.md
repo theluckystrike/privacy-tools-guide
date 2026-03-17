@@ -6,6 +6,10 @@ description: "A practical hiring guide for building a privacy engineering team. 
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-engineering-hiring-guide-what-skills-to-look-for-in-privacy-team/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

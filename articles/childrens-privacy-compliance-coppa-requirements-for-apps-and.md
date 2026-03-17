@@ -5,7 +5,7 @@ description: "A practical guide to COPPA compliance for developers and businesse
 date: 2026-03-16
 author: theluckystrike
 permalink: /childrens-privacy-compliance-coppa-requirements-for-apps-and/
-categories: [guides, compliance, privacy]
+categories: [guides, enterprise, security]
 reviewed: true
 score: 8
 intent-checked: true

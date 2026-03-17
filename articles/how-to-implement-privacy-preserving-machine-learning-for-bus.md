@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users implementing priv
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

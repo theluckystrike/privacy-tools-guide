@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users on building or co
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-privacy-focused-crm-that-minimizes-customer-da/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

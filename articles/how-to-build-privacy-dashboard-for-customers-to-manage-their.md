@@ -6,7 +6,7 @@ description: "A practical guide for developers building privacy dashboards. Lear
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-privacy-dashboard-for-customers-to-manage-their/
-categories: [guides, privacy, development]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
