@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "OpenVPN Push Route Configuration: Selective Routing Explained Step by Step"
-description: "A comprehensive guide to configuring OpenVPN push route directives for selective routing, allowing you to control which traffic goes through the VPN tunnel."
+title: "OpenVPN Push Route Configuration: Selective Routing."
+description: "A comprehensive guide to configuring OpenVPN push route directives for selective routing, allowing you to control which traffic goes through the VPN."
 date: 2026-03-17
 author: theluckystrike
 permalink: /openvpn-push-route-configuration-selective-routing-explained-step-by-step/
@@ -200,5 +200,11 @@ When implementing selective routing, keep these security principles in mind:
 - **Split tunneling risks**: Understand the security implications before excluding traffic
 
 For maximum security, use the full tunnel unless you have specific requirements for split tunneling. When using selective routing, regularly audit your routing tables to ensure no sensitive traffic is accidentally leaking outside the VPN.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at zovo.one
