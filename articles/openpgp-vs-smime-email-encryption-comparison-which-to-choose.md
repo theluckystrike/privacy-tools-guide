@@ -5,6 +5,10 @@ description: "A technical comparison of OpenPGP and S/MIME email encryption stan
 date: 2026-03-16
 author: theluckystrike
 permalink: /openpgp-vs-smime-email-encryption-comparison-which-to-choose/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on rotating encry
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-rotate-encryption-keys-in-messaging-apps-without-losi/
-categories: [security, privacy, encryption]
+categories: [security]
 ---
 
 {% raw %}

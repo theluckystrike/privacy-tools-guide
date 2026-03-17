@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users exploring encrypt
 date: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-sms-alternatives-for-when-data-connection-is-not-a/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,7 +5,7 @@ description: "A comprehensive guide for developers and power users setting up Pr
 date: 2026-03-16
 author: theluckystrike
 permalink: /protonmail-bridge-setup-for-desktop-email-clients-privacy-co/
-categories: [guides, security, email]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

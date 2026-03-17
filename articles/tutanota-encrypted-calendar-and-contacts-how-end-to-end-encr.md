@@ -5,7 +5,7 @@ description: "A technical deep-dive into Tutanota's encrypted calendar and conta
 date: 2026-03-16
 author: theluckystrike
 permalink: /tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/
-categories: [encryption, privacy, tutorials]
+categories: [security, tutorials]
 reviewed: true
 score: 8
 intent-checked: true

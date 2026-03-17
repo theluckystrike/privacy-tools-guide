@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users on post-quantum e
 date: 2026-03-16
 author: theluckystrike
 permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
