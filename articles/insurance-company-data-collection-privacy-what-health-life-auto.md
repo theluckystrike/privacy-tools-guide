@@ -11,11 +11,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding what insurance companies can legally collect about you matters whether you're building privacy-focused applications, handling user data in compliance with regulations, or simply trying to minimize your digital footprint. This guide breaks down the data collection practices of health, life, and auto insurers with practical examples developers can use for reference.
+Health insurers collect medical history, prescription records, genetic testing results, and biometric data (height, weight) through required applications and automatic feeds from doctors/pharmacies; life insurers use lifestyle data (smoking, alcohol use), financial records, and motor vehicle reports; auto insurers pull driving records, vehicle history, claims history, and increasingly telematics (real-time vehicle data via apps). The Fair Credit Reporting Act governs access to credit reports (insurers can use), HIPAA restricts medical data sharing, and state insurance laws vary on permissible underwriting factors—FCRA allows insurers to obtain records without consent while requiring disclosure. Developers building insurance systems must implement: explicit consent for unusual data sources (social media analysis, genetic testing), access controls preventing unauthorized employee data viewing, retention policies deleting data post-underwriting, and opt-out mechanisms for behavioral tracking. For consumers, requesting disclosure under FCRA of what insurers know about you, challenging inaccurate data, and declining optional data collection (telematics, genetic testing) provides practical leverage.
 
 ## The Legal Framework Governing Insurance Data Collection
 

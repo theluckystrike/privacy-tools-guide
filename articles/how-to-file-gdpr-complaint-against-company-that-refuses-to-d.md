@@ -10,12 +10,11 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-# How to File a GDPR Complaint Against a Company That Refuses to Delete Your Data
-
-The General Data Protection Regulation (GDPR) grants you the right to erasure—commonly known as the "right to be forgotten." Under Article 17, you can request that companies delete your personal data. However, many organizations ignore these requests or respond with generic refusal emails. This guide walks you through the formal complaint process, using tools and approaches tailored for developers and technical users.
+Filing a GDPR complaint with your national Data Protection Authority (e.g., CNIL in France, ICO in UK, Datenschutzbehörde in Germany) requires documented evidence of your erasure request, the company's refusal response with timestamps, proof the company has legitimate basis to retain data, and detailed description of what personal data remains stored. Most DPAs provide online complaint forms; you upload copies of your deletion request email and their response, cite the specific GDPR article (17 for erasure), and describe the personal data categories. DPAs prioritize cases where companies clearly refuse or ignore requests—formal complaints carry significant regulatory weight because violations trigger fines up to 4% of annual revenue. Documentation matters: timestamps from registered emails, screenshots of account data still visible, and your explanation of why their retention justification fails (contract ended, data unrelated to purpose, or no legal basis) transforms "they won't delete me" into enforceable regulatory actions.
 
 ## Understanding Your Rights Under GDPR
 

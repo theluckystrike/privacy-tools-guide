@@ -10,12 +10,11 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-When a company mishandles user data on a massive scale, individual lawsuits often consolidate into class action cases. The success of such litigation depends heavily on the quality and preservation of digital evidence. For developers and power users who understand how systems work, gathering proper documentation requires technical precision and an understanding of what constitutes admissible evidence.
-
-This guide covers practical methods for documenting privacy violations while maintaining evidence integrity.
+Documenting privacy violations requires preserving timestamped screenshots, browser inspector captures showing data transmission, network logs (using Charles or Fiddler), and metadata proving your access date and conditions, with parallel documentation of privacy policy text and company statements contemporaneous to the violation. Hash file timestamps, save browser consoles showing data being transmitted to unexpected third parties, and preserve ToS or privacy policy versions via archive.org before they're updated—this layer of authentication evidence transforms anecdotal complaints into admissible documentation. Class action lawyers specifically need evidence showing: (1) what data was actually collected, (2) violation of stated privacy policy or law, (3) company knowledge (security researcher disclosures, regulatory complaints), and (4) affected population scale—technical documentation you can provide demonstrating large-scale unencrypted data transmission, hardcoded API keys in client code, or retention beyond stated periods becomes crucial evidence distinguishing frivolous from meritorious class actions.
 
 ## Understanding Evidence Requirements
 
