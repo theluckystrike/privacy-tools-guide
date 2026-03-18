@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Standard push notifications expose sender information and message metadata to Google (FCM) and Apple (APNs), who can read this data during delivery. Signal solves this problem by sending encrypted payloads through FCM/APNs that contain only minimal unencrypted wake-up signals, keeping message content and sender identity hidden from platform operators. This architecture provides end-to-end privacy while maintaining the real-time notification experience users expect.

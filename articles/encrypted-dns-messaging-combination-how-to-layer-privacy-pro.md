@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Combine encrypted DNS with secure messaging (Signal, Matrix) to create defense-in-depth privacy protection. Encrypted DNS (DoH/DoT) hides your browsing destinations from network observers, while secure messaging protects communication content and metadata—together addressing different threat vectors for complete privacy.

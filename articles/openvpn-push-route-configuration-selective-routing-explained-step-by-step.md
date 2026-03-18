@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Configure OpenVPN's push route directive to route only specific traffic through your VPN tunnel instead of all traffic. Use push "route" for selective routing, push "redirect-gateway def1" for full tunneling, or combine both to access local networks while encrypting only sensitive destinations.

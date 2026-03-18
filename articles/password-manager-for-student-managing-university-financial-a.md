@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Secure university financial aid portal credentials (FAFSA, Sallie Mae, Banner) in a password manager with shared access for co-signing parents. Use Bitwarden CLI for programmatic credential access, enable emergency sharing, and generate unique high-entropy passwords for each portal to prevent breach cascades.

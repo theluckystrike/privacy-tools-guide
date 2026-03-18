@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Migrate from Google Authenticator to password manager TOTP by adding TOTP secrets during account setup instead of using Google's proprietary format. Password managers like Bitwarden, 1Password, and KeePass generate TOTP codes directly from stored secrets, provide automatic backups, and work across devices. This is more convenient than Google Authenticator (no manual entry needed) and more secure (tied to encrypted password vault rather than unencrypted device) while maintaining the same industry-standard TOTP algorithm.

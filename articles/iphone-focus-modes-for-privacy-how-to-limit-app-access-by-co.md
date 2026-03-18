@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use iPhone Focus Modes to limit app notifications and access by context—create custom modes that allow only specific apps to alert you during work, home, or public settings. Automate Focus Mode switching by location or time to prevent sensitive apps from revealing information in inappropriate contexts.

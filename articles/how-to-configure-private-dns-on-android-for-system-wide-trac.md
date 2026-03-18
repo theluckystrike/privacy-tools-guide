@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 # How to Configure Private DNS on Android for System-Wide Tracker Blocking

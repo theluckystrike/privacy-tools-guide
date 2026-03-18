@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 TLS fingerprinting (JA3) identifies browsers and clients by analyzing the TLS handshake parameters they send—cipher suites, supported curves, extensions, and signature algorithms create a unique fingerprint. Defend against fingerprinting by using Tor Browser, rotating cipher suite order with privacy extensions, or using anti-fingerprinting tools that randomize TLS parameters.

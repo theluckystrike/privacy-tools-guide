@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Configure Postfix with mandatory TLS encryption using `smtp_tls_mandatory_ciphers = high` and enforcing certificate verification via `smtp_tls_verify_cert_match = hostname`. This prevents downgrade attacks and man-in-the-middle interception of email traffic between mail servers. Proper TLS setup requires valid certificates, cipher hardening, and monitoring authentication failures to detect tampering attempts.
