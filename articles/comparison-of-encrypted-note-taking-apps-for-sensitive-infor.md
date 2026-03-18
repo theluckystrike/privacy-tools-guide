@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Storing sensitive information—API keys, passwords, security tokens, personal identifiers—requires more than basic encryption. Developers and power users need note-taking applications that provide verifiable security properties, programmatic access, and control over where data resides. This comparison evaluates leading encrypted note-taking solutions based on their encryption architecture, developer-friendly features, and suitability for high-security workflows.
+Choose Obsidian Vault for offline-first note storage with client-side encryption, or select Notion with encryption layers if you need cloud collaboration. For highest security with minimal dependencies, use plaintext files encrypted with GPG or age. Each approach trades convenience for control—evaluate your threat model, access patterns, and deployment requirements against each tool's encryption guarantees to select the best fit.
 
 ## Evaluation Criteria
 

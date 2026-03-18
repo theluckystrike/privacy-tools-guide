@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-HTTP/2 revolutionized web performance through multiplexing, header compression, and connection reuse. However, these same features create novel fingerprinting vectors that can track users across the web. This article explores how connection pooling in browsers enables fingerprinting and what you need to know as a developer or privacy-conscious user.
+HTTP/2 connection pooling creates a fingerprinting vector that websites exploit to track users across the web by analyzing connection patterns and reuse behaviors. The browser's connection pool—a cache of persistent connections reused across multiple requests—exposes patterns unique enough to identify individual users. Developers must understand this technique to defend against it and build privacy-conscious applications.
 
 ## How Browser Connection Pooling Works
 
