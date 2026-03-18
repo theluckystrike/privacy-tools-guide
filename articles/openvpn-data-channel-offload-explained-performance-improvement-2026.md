@@ -84,4 +84,6 @@ Remember that real-world performance varies based on your specific hardware, net
 ## Conclusion
 
 OpenVPN Data Channel Offload represents a mature and production-ready feature that significantly improves VPN performance without sacrificing security or compatibility. For users and organizations relying on OpenVPN for their privacy and connectivity needs, enabling DCO provides an immediate and transparent performance boost. Whether you're running a personal VPN on a modest device or managing enterprise-scale deployments, DCO offers tangible benefits that make your VPN experience faster and more efficient.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
