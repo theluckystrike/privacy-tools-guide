@@ -9,6 +9,7 @@ categories: [guides, privacy]
 reviewed: true
 score: 0
 intent-checked: false
+voice-checked: true
 voice-checked: false
 ---
 
