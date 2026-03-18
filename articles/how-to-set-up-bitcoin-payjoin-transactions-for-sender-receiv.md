@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Bitcoin PayJoin Transactions for Sender and Receiver Privacy"
+title: "How to Set Up Bitcoin PayJoin Transactions for Sender."
 description: "A practical guide for developers and power users to implement Bitcoin PayJoin, a privacy-enhancing technique that breaks common transaction heuristics."
 date: 2026-03-16
 author: theluckystrike
@@ -259,6 +259,12 @@ Before deploying PayJoin in production:
 - [ ] Set up key rotation procedures
 
 PayJoin represents one of the most effective practical improvements in Bitcoin transaction privacy. By carefully implementing both sender and receiver components, you can significantly reduce on-chain analysis effectiveness while maintaining full Bitcoin security guarantees.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
