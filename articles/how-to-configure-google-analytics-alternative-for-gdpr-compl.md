@@ -228,3 +228,4 @@ Document your data processing activities, update your privacy policy to reflect 
 Moving away from Google Analytics to self-hosted alternatives significantly reduces GDPR compliance burden. Matomo provides enterprise features with full data control. Plausible offers simplicity and privacy by default. Choose based on your monitoring needs and technical capacity for self-hosting.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
