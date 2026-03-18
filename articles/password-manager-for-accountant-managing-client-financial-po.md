@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}
@@ -54,7 +55,7 @@ This structure enables rapid lookup and access control if team members need part
 
 ## CLI-Based Credential Management
 
-Power users benefit from command-line interfaces that integrate with existing workflows. The 1Password CLI (`op`) provides robust capabilities for programmatic credential access. Install it and authenticate:
+Power users benefit from command-line interfaces that integrate with existing workflows. The 1Password CLI (`op`) provides strong capabilities for programmatic credential access. Install it and authenticate:
 
 ```bash
 brew install --cask 1password-cli
@@ -129,37 +130,35 @@ op item get "Client-Alpha/Chase Business" --field "Backup Codes"
 
 ## Security Best Practices for Financial Portals
 
-Implement these technical controls when managing client financial portal access:
-
-**Use unique passwords per portal.** Never reuse credentials across different client accounts or services. Generate new passwords with sufficient entropy:
+Never reuse credentials across different client accounts or services. Generate new passwords with sufficient entropy:
 
 ```bash
 # Generate a 20-character password using openssl
 openssl rand -base64 20 | tr -dc 'a-zA-Z0-9' | cut -c1-20
 ```
 
-**Enable vault locking.** Configure automatic vault lock after periods of inactivity:
+Configure automatic vault lock after periods of inactivity:
 
 ```bash
 # Set vault to lock after 5 minutes of inactivity (1Password)
 op vault lock --timeout 5m
 ```
 
-**Audit access regularly.** Review which credentials were accessed and when:
+Review which credentials were accessed and when:
 
 ```bash
 # View item history
 op item get "Client-Alpha/QuickBooks Online" --history
 ```
 
-**Separate personal and work vaults.** Maintain strict separation between personal passwords and client financial portal credentials. Use entirely separate vaults or accounts if your password manager supports multiple vaults.
+Maintain strict separation between personal passwords and client financial portal credentials. Use entirely separate vaults or accounts if your password manager supports multiple vaults.
 
 ## Credential Rotation Schedules
 
 Establish rotation policies for different portal types:
 
 - Banking credentials: Rotate every 90 days
-- Accounting software: Rotate every 180 days  
+- Accounting software: Rotate every 180 days
 - Payroll systems: Rotate immediately when staff changes
 
 Create rotation reminders using the password manager's notes field or external calendar integration:
@@ -169,11 +168,9 @@ Create rotation reminders using the password manager's notes field or external c
 op item edit "Client-Alpha/QuickBooks Online" --notes "Rotate by: 2026-09-16"
 ```
 
-## Conclusion
-
 A password manager provides accountants with the structured, secure foundation needed for multi-client financial portal access. Through CLI automation, teams can streamline daily workflows while maintaining security best practices. The investment in setting up proper vault organization and automation scripts pays dividends in reduced cognitive load and strengthened security posture.
 
-The key is treating password management as infrastructure rather than convenience—implement proper organization, automation, and auditing from the start. Your clients' financial data security depends on it.
+Treat password management as infrastructure rather than convenience—implement proper organization, automation, and auditing from the start. Your clients' financial data security depends on it.
 
 
 ## Related Reading

@@ -164,3 +164,4 @@ Android hardware-backed attestation provides valuable security guarantees for ap
 For privacy-focused applications, consider combining attestation with other signals rather than relying solely on boot state. The goal is achieving appropriate security without unnecessarily exposing device details that users might prefer to keep private.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
