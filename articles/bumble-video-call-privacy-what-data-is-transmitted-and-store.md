@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Bumble Video Call Privacy: What Data Is Transmitted and Stored During In-App Calls"
+title: "Bumble Video Call Privacy: What Data Is Transmitted and."
 description: "A technical breakdown of Bumble's video call architecture, data transmission, storage practices, and privacy implications for developers and power users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-video-call-privacy-what-data-is-transmitted-and-store/
-categories: [privacy, security, dating-apps]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -177,6 +177,12 @@ Bumble's video calling uses industry-standard WebRTC with SRTP encryption for me
 Understanding these technical details helps you make informed decisions about your digital privacy. The difference between encrypted content and visible metadata can be significant depending on your threat model.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

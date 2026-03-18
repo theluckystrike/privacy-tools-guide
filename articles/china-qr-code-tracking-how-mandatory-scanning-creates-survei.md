@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "China QR Code Tracking: How Mandatory Scanning Creates Surveillance Trail of Movements"
-description: "A technical guide for developers and power users exploring how mandatory QR code scanning in China creates comprehensive surveillance trails, tracking citizens' movements."
+title: "China QR Code Tracking: How Mandatory Scanning Creates."
+description: "A technical guide for developers and power users exploring how mandatory QR code scanning in China creates comprehensive surveillance trails, tracking."
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/
@@ -146,6 +146,12 @@ For those concerned about movement tracking in any jurisdiction:
 - Support regulations requiring data minimization and purpose limitation
 
 The technical lesson from China's QR system demonstrates how routine convenience can create comprehensive surveillance infrastructure. Recognizing these patterns helps in evaluating privacy implications of any tracking technology.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
