@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Communicate Securely When All Messaging Apps Are."
 description: "A technical guide for developers and power users on establishing secure communication channels when mainstream messaging platforms are compromised or."
