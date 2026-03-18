@@ -5,7 +5,7 @@ title: "How to Detect Catfish on Dating Apps Using OSINT Verification Techniques
 description: "Learn practical OSINT techniques to verify dating app profiles. Includes reverse image search, metadata analysis, social media cross-referencing, and automation scripts for developers."
 date: 2026-03-16
 author: theluckystrike
-permalink: /how-to-detect-catfish-on-dating-apps-using-osint-verification-techniques-2026-guide/
+permalink: /how-to-detect-catfish-on-dating-apps-using-osint-verificatio/
 categories: [guides, osint, privacy, dating-apps, security]
 ---
 
