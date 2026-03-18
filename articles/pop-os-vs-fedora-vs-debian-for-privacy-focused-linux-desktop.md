@@ -9,6 +9,7 @@ categories: [linux, privacy, security]
 reviewed: true
 score: 0
 intent-checked: false
+voice-checked: true
 voice-checked: false
 ---
 

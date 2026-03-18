@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 The Transparency, Consent, and Control (TCC) database is the backbone of macOS privacy enforcement. Located in `/Library/Application Support/com.apple.TCC/TCC.db` (system-wide) and `~/Library/Application Support/com.apple.TCC/TCC.db` (per-user), this SQLite database tracks which applications have access to sensitive resources like location data, contacts, microphone, camera, and more. Understanding how to inspect and manage TCC entries is essential for developers and power users who want to harden their security posture.
