@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use PGP Encrypted Email with ProtonMail to Non-ProtonMail Recipients."
-description: "A practical guide for developers and power users on sending PGP-encrypted emails from ProtonMail to external recipients. Includes key management, configuration, and troubleshooting."
+title: "How to Use PGP Encrypted Email with ProtonMail to."
+description: "A practical guide for developers and power users on sending PGP-encrypted emails from ProtonMail to external recipients. Includes key management."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/
@@ -235,6 +235,12 @@ When using PGP with external recipients:
 ## Summary
 
 Sending PGP-encrypted emails from ProtonMail to non-ProtonMail recipients requires manual key management but provides robust end-to-end encryption. The workflow involves obtaining recipient public keys, storing them in ProtonMail contacts, and selecting encryption when composing messages. For developers, programmatic tools enable automated encryption workflows. While more complex than ProtonMail-internal encryption, this approach ensures your sensitive communications remain private across provider boundaries.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

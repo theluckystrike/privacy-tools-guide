@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Facial Recognition Search Opt-Out: How to Remove Your Face from Pimeyes and Clearview"
-description: "A technical guide for developers and power users on removing facial data from Pimeyes, Clearview AI, and other reverse image search services. Includes API patterns, automation techniques, and privacy tools."
+title: "Facial Recognition Search Opt-Out: How to Remove Your."
+description: "A technical guide for developers and power users on removing facial data from Pimeyes, Clearview AI, and other reverse image search services. Includes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /facial-recognition-search-opt-out-how-to-remove-your-face-fr/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -173,6 +173,12 @@ Removing your data from Pimeyes and Clearview addresses two services but doesn't
 The technical landscape of facial recognition search continues evolving. New services emerge, legal frameworks mature, and removal processes change. Staying informed and maintaining vigilance protects your digital identity in an era where biometric data has become a valuable—and sometimes exploited—commodity.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Your Own Email Server for Maximum Privacy Using Mail-in-a-Box"
-description: "A practical guide for developers and power users to self-host email using Mail-in-a-Box. Learn how to achieve complete control over your email infrastructure and maximize privacy."
+title: "How to Set Up Your Own Email Server for Maximum Privacy."
+description: "A practical guide for developers and power users to self-host email using Mail-in-a-Box. Learn how to achieve complete control over your email."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/
@@ -198,6 +198,12 @@ For maximum privacy, consider these additional measures:
 Running your own email server requires more maintenance than using hosted services, but the privacy benefits justify the effort for developers and power users who value data sovereignty. Mail-in-a-Box simplifies what traditionally represented a complex undertaking, making self-hosted email accessible without deep expertise in mail server administration.
 
 Your email infrastructure now operates under your terms, free from algorithmic profiling and third-party data exploitation.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

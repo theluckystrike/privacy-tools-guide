@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Opt Out of Acxiom, Oracle Data Cloud, and Nielsen Consumer Databases"
-description: "A practical guide for developers and power users to remove personal data from major consumer data brokers. Includes direct URLs, API considerations, and automation patterns."
+title: "How to Opt Out of Acxiom, Oracle Data Cloud, and Nielsen."
+description: "A practical guide for developers and power users to remove personal data from major consumer data brokers. Includes direct URLs, API considerations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -238,6 +238,12 @@ For comprehensive coverage beyond the three companies covered here, consider:
 - Browser-based privacy tools that automate opt-out signals
 
 Taking control of your data requires ongoing attention. The steps outlined here provide a starting point for reducing your digital footprint with major data brokers.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
