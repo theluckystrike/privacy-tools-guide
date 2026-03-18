@@ -5,7 +5,7 @@ title: "Proton Mail Account Inheritance: How Encrypted Email Providers Handle De
 description: "A technical guide for developers and power users exploring how Proton Mail handles account inheritance, the limitations of end-to-end encryption, and available estate planning options."
 date: 2026-03-16
 author: theluckystrike
-permalink: /proton-mail-account-inheritance-how-encrypted-email-provider-handles-deceased-user-data-access/
+permalink: /proton-mail-account-inheritance-how-encrypted-email-provider/
 categories: [guides]
 reviewed: false
 intent-checked: false
