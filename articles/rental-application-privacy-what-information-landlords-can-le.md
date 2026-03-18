@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Rental Application Privacy: What Information Landlords Can Legally Require from Prospective Tenants"
-description: "A practical guide for developers and power users understanding rental application privacy laws, tenant rights, and what information landlords can legally request."
+title: "Rental Application Privacy: What Information Landlords."
+description: "A practical guide for developers and power users understanding rental application privacy laws, tenant rights, and what information landlords can."
 date: 2026-03-16
 author: theluckystrike
 permalink: /rental-application-privacy-what-information-landlords-can-le/
@@ -162,6 +162,12 @@ For developers and technically-minded renters, consider these approaches:
 Understanding your rights helps you navigate the rental process confidently. Landlords have legitimate interests in evaluating prospective tenants, but those interests have clear boundaries. By knowing what information you can legitimately be asked to provide—and what information falls outside those boundaries—you protect both your privacy and your legal rights.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

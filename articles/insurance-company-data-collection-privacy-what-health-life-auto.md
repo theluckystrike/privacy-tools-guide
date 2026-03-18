@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Insurance Company Data Collection: What Health, Life, and Auto Insurers Can Legally Gather"
-description: "A technical guide for developers and power users explaining exactly what data insurance companies collect, how they obtain it, and the legal frameworks governing privacy."
+title: "Insurance Company Data Collection: What Health, Life."
+description: "A technical guide for developers and power users explaining exactly what data insurance companies collect, how they obtain it, and the legal frameworks."
 date: 2026-03-16
 author: theluckystrike
 permalink: /insurance-company-data-collection-privacy-what-health-life-auto/
@@ -218,6 +218,12 @@ For power users concerned about insurance data collection:
 5. **Consider pay-per-mile insurance** if privacy is paramount (though this shares more location data)
 
 Understanding these collection practices helps you make informed decisions about what data you share and how you structure your insurance relationships.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
