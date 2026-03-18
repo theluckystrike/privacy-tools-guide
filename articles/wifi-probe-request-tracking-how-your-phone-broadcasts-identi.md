@@ -10,10 +10,11 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-WiFi probe requests represent one of the most overlooked privacy vulnerabilities in modern mobile devices. Every time your phone searches for a known WiFi network, it broadcasts identifying information that can be intercepted by anyone with a basic wireless adapter. Understanding the mechanics of probe requests helps developers building privacy tools and empowers users to make informed decisions about their device security.
+Your phone continuously broadcasts WiFi probe requests containing its MAC address and the names (SSIDs) of previously connected networks, which anyone with a basic wireless adapter and tools like Wireshark or airodump-ng can capture to track your location and movement patterns. While modern iOS and Android devices use MAC address randomization to mitigate this, the randomization is imperfect—devices often revert to their real MAC when connecting, and the list of probed SSIDs itself creates a unique fingerprint. To reduce exposure, disable WiFi when not actively connected, periodically clear saved network lists, and use a device that supports full probe request suppression.
 
 ## How Probe Requests Work
 
