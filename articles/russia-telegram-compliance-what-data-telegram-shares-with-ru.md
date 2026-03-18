@@ -10,11 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Russia's 2026 regulatory overhaul of messaging services has fundamentally changed how Telegram handles user data requests from authorities. If you use Telegram—whether for personal chats, group discussions, or bot development—understanding these changes helps you make informed decisions about your communication privacy.
-
-This article breaks down the technical specifics of what Telegram now shares with Russian authorities, who can request data, and what remains protected under the new compliance framework.
+Under Russia's 2026 regulatory framework, Telegram now shares user metadata including IP addresses, phone numbers, and message timestamps with Russian authorities upon request from the FSB via Roskomnadzor. Messaging services with over 100,000 Russian users must maintain local server infrastructure, implement real-time data request systems, and store specific user metadata for 6 months to 3 years. End-to-end encrypted secret chats remain technically protected, but standard cloud chats and group messages are accessible under the new compliance rules.
 
 ## The 2026 Regulatory Framework
 
