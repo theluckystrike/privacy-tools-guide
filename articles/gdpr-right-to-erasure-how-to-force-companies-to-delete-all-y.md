@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 The General Data Protection Regulation (GDPR) grants European residents powerful rights over their personal data. Among the most significant is Article 17, the "right to erasure" (also called the "right to be forgotten"). This right allows individuals to demand that organizations delete their personal data under specific circumstances. For developers and power users who understand how data flows through modern systems, exercising this right effectively requires knowing exactly what to ask for, how to ask, and what to do when companies ignore your requests.

@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 The Virginia Consumer Data Protection Act (VCDPA) represents one of the most comprehensive state privacy laws in the United States. Effective since January 1, 2023, the VCDPA grants Virginia residents significant rights over their personal data. If you live in Virginia, understanding how to exercise these rights is essential for protecting your digital privacy in 2026.

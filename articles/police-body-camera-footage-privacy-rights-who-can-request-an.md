@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Police body cameras have become ubiquitous across law enforcement agencies, generating millions of hours of footage annually. Understanding who can request these recordings and the privacy implications involved is essential for developers building transparency tools, journalists investigating incidents, and citizens exercising their rights.
