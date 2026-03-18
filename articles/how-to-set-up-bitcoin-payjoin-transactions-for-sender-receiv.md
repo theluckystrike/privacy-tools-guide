@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Bitcoin PayJoin (BIP 78) is a privacy technique that allows two parties to collaboratively create a transaction, breaking the common on-chain analysis heuristic that assumes the sender is the sole contributor of inputs. This guide covers the technical implementation for both senders and receivers, with practical code examples.
+Bitcoin PayJoin (BIP 78) lets the receiver contribute inputs to a transaction, making it impossible for blockchain observers to identify who sent the funds. Unlike normal payments where the sender's inputs are obvious, PayJoin creates ambiguity that defeats standard on-chain analysis heuristics. This guide provides step-by-step technical implementation for both senders and receivers, including Python and Flask code examples, testing strategies, and production deployment checklists.
 
 ## Understanding PayJoin Fundamentals
 
