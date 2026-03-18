@@ -5,7 +5,7 @@ description: "A comprehensive guide for developers and power users on flashing O
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/
-categories: [guides, privacy, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

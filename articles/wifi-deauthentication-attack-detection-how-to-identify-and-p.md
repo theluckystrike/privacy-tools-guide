@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on detecting, ana
 date: 2026-03-16
 author: theluckystrike
 permalink: /wifi-deauthentication-attack-detection-how-to-identify-and-p/
-categories: [security, networking]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

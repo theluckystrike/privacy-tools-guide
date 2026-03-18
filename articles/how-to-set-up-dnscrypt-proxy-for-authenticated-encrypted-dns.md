@@ -6,7 +6,7 @@ description: "Learn how to configure DNSCrypt Proxy on Linux to encrypt DNS quer
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
