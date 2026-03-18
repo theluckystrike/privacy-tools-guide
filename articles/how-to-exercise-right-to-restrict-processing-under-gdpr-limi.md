@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Exercise Your Right to Restrict Processing Under GDPR: A Limiting Data Use Guide"
+title: "How to Exercise Your Right to Restrict Processing Under."
 description: "Learn how to exercise your right to restrict processing under GDPR. Practical guide for developers and power users on limiting data use with code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -216,6 +216,12 @@ After submitting your request, verify compliance:
 5. **Document everything** — Keep copies of your request and their response
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

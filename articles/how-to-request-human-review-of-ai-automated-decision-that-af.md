@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Request Human Review of AI Automated Decision That Affects You Legally"
-description: "A practical guide for developers and power users on exercising your right to human review of AI-mediated decisions. Includes templates, legal basis, and technical implementation strategies."
+title: "How to Request Human Review of AI Automated Decision."
+description: "A practical guide for developers and power users on exercising your right to human review of AI-mediated decisions. Includes templates, legal basis."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-human-review-of-ai-automated-decision-that-affects-you/
@@ -287,6 +287,12 @@ def notify_user_of_decision(user_email: str, decision: dict):
 The right to human review of AI-mediated decisions is a fundamental protection in modern data privacy law. Whether you're exercising this right as an individual or building compliant systems as a developer, understanding the legal framework and technical implementation patterns ensures these rights are effectively maintained.
 
 Document all your requests, keep copies of correspondence, and follow up if organizations don't respond within required timelines. Regulatory authorities can assist if organizations fail to comply with their obligations.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

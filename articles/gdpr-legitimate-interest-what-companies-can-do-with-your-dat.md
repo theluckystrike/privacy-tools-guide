@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "GDPR Legitimate Interest: What Companies Can Do With Your Data Without Consent Explained"
-description: "A practical guide explaining GDPR legitimate interest basis - how companies process your data without consent, the three-part test, and what it means for your privacy."
+title: "GDPR Legitimate Interest: What Companies Can Do With."
+description: "A practical guide explaining GDPR legitimate interest basis - how companies process your data without consent, the three-part test, and what it means."
 date: 2026-03-16
 author: theluckystrike
 permalink: /gdpr-legitimate-interest-what-companies-can-do-with-your-dat/
@@ -175,6 +175,12 @@ GDPR legitimate interest is a powerful tool that allows companies to process you
 Understanding legitimate interest helps you recognize which data practices are legally permitted and which rights you can exercise. Even when companies have legitimate interests, your right to object and your right to explanation remain protected. If you believe a company is misusing legitimate interest, you have recourse through data protection authorities.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

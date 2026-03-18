@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Tenant Privacy Rights: What Landlords Can Legally Monitor in Rental Property by State 2026"
-description: "A technical guide to tenant privacy rights covering what landlords can legally monitor in rental property. State-by-state breakdown with code examples for documenting surveillance."
+title: "Tenant Privacy Rights: What Landlords Can Legally."
+description: "A technical guide to tenant privacy rights covering what landlords can legally monitor in rental property. State-by-state breakdown with code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /tenant-privacy-rights-what-landlords-can-legally-monitor-in-/
@@ -205,6 +205,12 @@ For quick reference, here are key thresholds across major states:
 Tenant privacy rights remain a rapidly evolving area of law. While landlords retain significant access rights, tenants have more protections than many realize — particularly in states with strong consumer protection frameworks. The key to protecting yourself involves understanding your state's specific laws, documenting everything, and using technical tools to maintain privacy where legally possible.
 
 The balance between property management needs and tenant privacy will continue shifting as smart home technology becomes more prevalent. Tenants should stay informed about both legislative developments and their specific lease terms, which may grant or restrict rights beyond statutory minimums.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
