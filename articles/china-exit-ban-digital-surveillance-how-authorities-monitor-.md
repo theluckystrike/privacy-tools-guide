@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-China's exit ban system represents one of the most sophisticated examples of digital surveillance integrated with travel restriction mechanisms. For developers and power users who value digital privacy, understanding how these systems operate is essential for protecting both yourself and those in your network.
+Chinese authorities monitor travel plans through an interconnected digital surveillance system that automatically triggers exit restrictions based on online activity patterns—including social media posts, e-commerce purchases of flights or travel gear, and communication metadata. The system pulls data from WeChat, Weibo, Douyin, and e-commerce platforms to flag individuals before they reach border checkpoints. Understanding how these mechanisms work is essential for developers and power users seeking to protect their digital privacy and assess their exposure.
 
 ## The Digital Architecture of Exit Bans
 
