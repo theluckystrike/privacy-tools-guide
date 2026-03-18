@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Prevent Ex-Partner From Creating Fake Dating Profiles Using Your Photos"
-description: "A technical guide for protecting your identity and photos from being used in fake dating profiles. Learn reverse image search, metadata removal, and proactive defense strategies."
+title: "How to Prevent Ex-Partner From Creating Fake Dating."
+description: "A technical guide for protecting your identity and photos from being used in fake dating profiles. Learn reverse image search, metadata removal, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/
-categories: [security]
+categories: [troubleshooting]
 reviewed: true
 voice-checked: true
 ---
@@ -298,6 +298,12 @@ The most effective strategy combines multiple layers:
 This isn't about paranoia—it's about recognizing that once photos are online, you have limited control over how they're used. Taking these steps gives you the best chance of catching misuse early and minimizing harm.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

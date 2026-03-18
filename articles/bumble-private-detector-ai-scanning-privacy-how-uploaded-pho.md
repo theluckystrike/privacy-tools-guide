@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Bumble Private Detector: How AI Scans Your Uploaded Photos and Privacy Implications"
+title: "Bumble Private Detector: How AI Scans Your Uploaded."
 description: "A technical deep dive into Bumble's Private Detector AI, how uploaded photos are analyzed, stored, and the privacy considerations for developers and power users."
 date: 2026-03-16
 author: theluckystrike
@@ -184,6 +184,12 @@ Bumble's Private Detector represents a significant investment in proactive user 
 Privacy-conscious users should review current platform policies, as implementations evolve. Developers building similar features should consider the balance between effective moderation and user privacy, implementing appropriate data retention policies and transparent data handling practices.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
