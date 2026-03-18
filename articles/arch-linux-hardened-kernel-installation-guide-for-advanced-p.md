@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Arch Linux Hardened Kernel Installation Guide for Advanced Privacy Focused Users 2026"
+title: "Arch Linux Hardened Kernel Installation Guide for."
 description: "A comprehensive guide to installing and configuring the Linux hardened kernel on Arch Linux for enhanced security and privacy. Includes practical examples."
 date: 2026-03-16
 author: theluckystrike
@@ -258,6 +258,12 @@ hyperfine --warmup 3 'your-workload-command'
 Typical performance impact ranges from 1-5% for compute-heavy workloads. If performance degradation is unacceptable, consider the zen kernel as a balance between security and speed, or selectively disable certain boot parameters.
 
 The hardened kernel provides substantial security improvements for privacy-conscious users. Combined with proper system configuration and security practices, it forms a robust foundation for a privacy-focused Arch Linux installation.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Linux Secure Boot Setup with Custom Keys for Preventing Firmware Level Tampering"
+title: "Linux Secure Boot Setup with Custom Keys for Preventing."
 description: "Learn how to set up Secure Boot on Linux with custom keys to protect against firmware-level attacks and ensure boot integrity."
 date: 2026-03-16
 author: theluckystrike
@@ -185,6 +185,12 @@ Store this backup securely, preferably offline. Additionally, note your firmware
 Implementing custom Secure Boot keys transforms your system's security posture. Rather than relying on manufacturer-trusted certificates, you gain cryptographic assurance that only your signed code executes during boot. While the initial setup requires effort, the protection against firmware-level tampering justifies the investment.
 
 For developers handling sensitive workloads or security-conscious power users, this configuration provides peace of mind knowing your boot chain remains uncompromised. The keys you generate today protect your system tomorrow.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

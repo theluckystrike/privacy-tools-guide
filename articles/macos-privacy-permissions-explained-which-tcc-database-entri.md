@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "macOS Privacy Permissions Explained: Which TCC Database Entries to Revoke for Security"
-description: "A comprehensive guide for developers and power users on understanding macOS TCC database, identifying granted permissions, and revoking unnecessary access for enhanced security."
+title: "macOS Privacy Permissions Explained: Which TCC Database."
+description: "A comprehensive guide for developers and power users on understanding macOS TCC database, identifying granted permissions, and revoking unnecessary."
 date: 2026-03-16
 author: theluckystrike
 permalink: /macos-privacy-permissions-explained-which-tcc-database-entries-to-revoke-for-security/
@@ -140,5 +140,11 @@ Save this as `tcc-audit.sh` and run it periodically to track permission changes.
 The TCC database is a powerful but underutilized tool for macOS security. By regularly auditing and revoking unnecessary permissions, you reduce the attack surface of your system. Whether you're a developer debugging permission issues or a power user prioritizing privacy, understanding TCC management is a valuable skill.
 
 Start by listing current permissions, identify entries for apps you no longer use, and remove them. Your privacy and security will improve as a result.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
