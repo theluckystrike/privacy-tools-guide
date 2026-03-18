@@ -9,13 +9,14 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
 # How to Implement Purpose Limitation in Data Architecture: Restrict Data Use by Context
 
-Purpose limitation is a core principle in data protection regulations like GDPR that restricts data processing to specific, declared purposes. Rather than collecting data broadly with intentions to "figure it out later," purpose limitation requires you to define why you're collecting each piece of data and enforce that restriction throughout your system. This article provides practical implementation strategies for developers building privacy-conscious data architectures.
+Implement purpose limitation by creating purpose-tagged data buckets with role-based access controls that prevent usage outside declared purposes. Track data lineage through logs, implement query-level purpose enforcement via database views, and require explicit approval when requesting data reuse. Developers should separate customer contact information (used for transactions) from behavioral data (used for analytics) at the schema level to ensure queries violating purpose restrictions fail at execution time.
 
 ## Understanding Purpose Limitation in Practice
 

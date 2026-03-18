@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Push notifications have become a ubiquitous part of mobile messaging, but they introduce a significant privacy concern: the notification payload passes through Google's Firebase Cloud Messaging (FCM) or Apple's APNs servers. This means platform operators can potentially read message sender information, notification text, and other metadata. Signal, the privacy-focused messaging app, addresses this vulnerability through a sophisticated encrypted push notification system that keeps sensitive content hidden from both platform operators and potential eavesdroppers.
+Standard push notifications expose sender information and message metadata to Google (FCM) and Apple (APNs), who can read this data during delivery. Signal solves this problem by sending encrypted payloads through FCM/APNs that contain only minimal unencrypted wake-up signals, keeping message content and sender identity hidden from platform operators. This architecture provides end-to-end privacy while maintaining the real-time notification experience users expect.
 
 ## The Privacy Problem With Traditional Push Notifications
 

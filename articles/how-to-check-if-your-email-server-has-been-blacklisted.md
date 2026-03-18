@@ -6,9 +6,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Email blacklisting is one of the most frustrating issues that can happen to any organization relying on email communication. When your mail server's IP address gets added to a blacklist, your outgoing emails may be blocked, bounced, or marked as spam by receiving mail servers. This guide will walk you through the process of checking if your email server has been blacklisted, understanding the implications, and taking corrective action.
+Check if your mail server IP is blacklisted by querying multiple blocklists (Spamhaus, SORBS, Barracuda) using lookup tools or direct DNS queries. Blacklisting occurs from spam complaints, compromised accounts sending malware, or reputation damage from abandoned IPs. Once blacklisted, remediate the underlying issue (enforce authentication, reduce spam complaints), then request delisting from each DNSBL to restore email deliverability.
 
 ## What Is an Email Blacklist?
 

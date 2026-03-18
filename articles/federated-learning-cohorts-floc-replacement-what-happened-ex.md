@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Google's Federated Learning of Cohorts (FLoC) represented an ambitious attempt to replace third-party cookies with a privacy-preserving alternative. The project, announced in 2020, promised to group users into "cohorts" based on browsing behavior while keeping individual data local. However, after extensive testing and pushback from privacy advocates and regulators, Google abandoned FLoC in 2022 and replaced it with the Topics API. This article explains what FLoC was, why it failed, and what developers need to know about the current state of browser-based advertising APIs.
+Google's FLoC failed due to user privacy concerns and regulatory opposition, leading to its replacement with the Topics API in 2023. Topics provides coarser interest categories updated weekly rather than persistent cohort assignments, reducing re-identification risks while still enabling interest-based advertising. Developers migrating from cookies should understand that Topics, Protected Audiences, and Attribution Reporting form the modern Privacy Sandbox—each addressing different advertising use cases with varying privacy guarantees.
 
 ## What Was Federated Learning of Cohorts?
 

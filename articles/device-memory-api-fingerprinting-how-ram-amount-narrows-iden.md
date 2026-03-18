@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-The Device Memory API represents one of the more subtle browser fingerprinting vectors that privacy-conscious developers and users must understand. This relatively obscure API exposes the amount of device memory (RAM) to web pages, creating a persistent identifier that can narrow user identity across sessions. While it might seem innocuous at first glance, this metric becomes powerful when combined with other fingerprinting techniques.
+The Device Memory API exposes your device's RAM amount to websites, allowing them to narrow your identity across sessions when combined with other fingerprinting signals. The API's innocuous-seeming information becomes powerful in fingerprinting chains—revealing RAM alongside screen resolution, CPU counts, and battery status creates a nearly unique device signature. Developers should disable this API or randomize responses in privacy-critical applications, while users can restrict API access through browser extensions.
 
 ## How the Device Memory API Works
 

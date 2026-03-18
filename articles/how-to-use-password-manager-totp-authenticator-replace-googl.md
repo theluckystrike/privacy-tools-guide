@@ -9,11 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you have been using Google Authenticator for two-factor authentication, you have likely encountered its limitations. Manual entry of setup keys, lack of backup options, and no cross-device synchronization create friction for power users. Fortunately, modern password managers offer built-in TOTP (Time-based One-Time Password) generation that eliminates these pain points while maintaining security standards.
-
-This guide walks you through migrating from Google Authenticator to a password manager's native TOTP feature, with practical examples suitable for developers and technical users.
+Migrate from Google Authenticator to password manager TOTP by adding TOTP secrets during account setup instead of using Google's proprietary format. Password managers like Bitwarden, 1Password, and KeePass generate TOTP codes directly from stored secrets, provide automatic backups, and work across devices. This is more convenient than Google Authenticator (no manual entry needed) and more secure (tied to encrypted password vault rather than unencrypted device) while maintaining the same industry-standard TOTP algorithm.
 
 ## Understanding TOTP Mechanics
 

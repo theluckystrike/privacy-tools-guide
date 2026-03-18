@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When mainstream messaging platforms become unreliable for sensitive communication, developers and power users need alternatives that provide genuine security guarantees. This guide covers practical approaches to establishing encrypted communication channels, from self-hosted solutions to decentralized protocols that resist surveillance.
+When mainstream messaging apps are monitored or compromised, use self-hosted communication stacks (Matrix/Synapse for chat, Jami for P2P calling) or decentralized protocols (Briar, Ricochet IM) that operate without central servers. Choose based on your threat model: Briar offers automatic mesh networking in network denial scenarios, while self-hosted solutions provide control but require operational security. For conversations requiring government-level adversary resistance, combine multiple transport layers (Tor, onion services) with end-to-end encryption and ephemeral message expiration.
 
 ## Understanding the Threat Model
 

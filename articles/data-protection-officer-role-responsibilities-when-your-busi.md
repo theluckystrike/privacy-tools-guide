@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Whether you're running a SaaS platform, handling user authentication, or processing customer data, understanding when you need a Data Protection Officer (DPO) is essential for compliance and building user trust. This guide breaks down the DPO role, identifies when your business requires one, and provides actionable steps for implementation.
+You need a Data Protection Officer if your business is a public authority, or if you regularly monitor individuals at scale or process large amounts of sensitive personal data as a core activity. Under GDPR, DPOs are mandatory for these organizations but optional for businesses with limited data processing. Designating a DPO—whether internal or external—provides a compliance focal point and establishes accountability for data protection practices.
 
 ## What Is a Data Protection Officer?
 

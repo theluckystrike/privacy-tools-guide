@@ -9,13 +9,13 @@ permalink: /how-to-set-up-secure-file-sharing-for-sensitive-documents/
 categories: [guides, security]
 reviewed: true
 score: 0
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-When handling sensitive documents—whether API credentials, personal identification documents, or proprietary code—you need more than basic file transfer. This guide covers practical approaches to secure file sharing using encryption, self-hosted tools, and command-line workflows tailored for developers and power users who value privacy and control.
+Share sensitive documents using client-side encryption tools (Tresorit, Sync.com), self-hosted solutions (Nextcloud with encryption), or command-line approaches (encrypted tar archives with age). Choose based on your requirements: hosted solutions provide convenience and automatic expiration, self-hosted solutions offer control but require infrastructure maintenance, while command-line tools provide maximum security at the cost of usability. For API credentials and authentication tokens, use temporary access grants with time limits instead of static credentials wherever possible.
 
 ## Understanding the Threat Model
 

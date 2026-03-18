@@ -9,12 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Employee email monitoring sits at the intersection of employer legitimate interests and employee privacy rights. For developers building HR systems, IT administrators configuring email infrastructure, and security teams implementing monitoring solutions, understanding the legal landscape across jurisdictions is essential for compliance and risk management.
-
-This guide examines the legal frameworks governing workplace email monitoring in major jurisdictions, practical implementation considerations, and the technical controls that help maintain compliance.
+Employee email monitoring legality varies dramatically by jurisdiction: the U.S. permits broad employer monitoring of work email, the EU requires specific legitimate purposes and proportionality tests, and many countries require explicit notice and employee consent. For developers and IT administrators, compliance depends on: establishing legitimate business purposes, notifying employees, implementing role-based access controls, and conducting regular audits. The threshold for legal monitoring shifts based on whether employees have reasonable privacy expectations and whether non-work communications are involved.
 
 ## United States: The Patchwork Approach
 
