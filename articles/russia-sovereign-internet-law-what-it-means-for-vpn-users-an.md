@@ -112,6 +112,6 @@ The Russia Sovereign Internet Law represents a significant challenge to online p
 
 For those who need secure communications with Russian contacts or require resilient privacy tools, staying informed about technical developments and using obfuscated VPN services remains essential. The cat-and-mouse game between privacy tools and regulatory frameworks continues to evolve, and maintaining robust security practices is an ongoing process.
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
