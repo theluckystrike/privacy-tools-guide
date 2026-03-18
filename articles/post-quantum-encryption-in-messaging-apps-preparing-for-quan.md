@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Post-Quantum Encryption in Messaging Apps: Preparing for Quantum Computing Threats in 2026"
+title: "Post-Quantum Encryption in Messaging Apps: Preparing for."
 description: "A practical guide for developers and power users on post-quantum cryptography in messaging apps, featuring code examples and implementation strategies."
 date: 2026-03-16
 author: theluckystrike
@@ -134,6 +134,12 @@ Post-quantum encryption represents an essential evolution in messaging security.
 The quantum threat is not imminent, but it is inevitable. Organizations and individuals who prepare now will maintain secure communications when quantum computing matures. Start evaluating your messaging infrastructure today—your future communications will thank you.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
