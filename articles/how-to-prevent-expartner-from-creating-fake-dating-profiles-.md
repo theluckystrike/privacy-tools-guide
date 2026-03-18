@@ -9,11 +9,12 @@ permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/
 categories: [troubleshooting]
 reviewed: true
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-The scenario is unsettling but increasingly common: your former partner creates a fake dating profile using your photos, and now strangers are contacting you, your reputation is at risk, or you're dealing with harassment. This guide provides concrete technical steps to detect, prevent, and respond to this form of identity misuse—written for developers and power users who want actionable solutions rather than generic advice.
+Immediately reduce your attack surface by making social media profiles private, removing photos from public galleries, and stripping EXIF metadata from any shared images using tools like ExifTool. Proactively set up reverse image search alerts using Google Alerts and TinEye to detect when your photos appear on dating platforms, and if impersonation occurs, report profiles directly to the platform and file a DMCA takedown notice. For ongoing protection, limit photo sharing publicly and use privacy settings across all platforms to reduce available materials for impersonation.
 
 ## Understanding the Threat Vector
 

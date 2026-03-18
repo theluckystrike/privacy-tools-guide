@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding how dating platforms process your images is crucial for privacy-conscious users and developers building similar features. This article examines Bumble's Private Detector AI system—their proactive image moderation technology—and explains the technical pipeline from photo upload to analysis and storage.
+Bumble's Private Detector analyzes uploaded photos in real-time using computer vision AI to detect explicit content before images become visible to other users, with the system capable of blurring, requiring verification, or blocking uploads that violate community guidelines. Photos are retained in Bumble's servers during your account's active period and typically deleted within 90 days of account deactivation, though the exact retention and training data usage terms are not fully transparent in their privacy policy, creating uncertainty about long-term data access and model training purposes.
 
 ## What Is Bumble's Private Detector?
 
