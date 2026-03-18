@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Challenge Employer Mandatory Biometric Clock-In: Legal Options and Technical Defenses"
-description: "A practical guide for developers and power users on challenging mandatory fingerprint and facial recognition time-tracking systems. Learn legal rights, technical considerations, and actionable steps."
+title: "How to Challenge Employer Mandatory Biometric Clock-In."
+description: "A practical guide for developers and power users on challenging mandatory fingerprint and facial recognition time-tracking systems. Learn legal rights."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/
@@ -206,6 +206,12 @@ Mandatory biometric clock-in systems lack legal mandate in most jurisdictions. E
 Before accepting biometric collection, understand your rights, document your employer's policies, and formally request alternatives. Legal frameworks exist to protect you—use them.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

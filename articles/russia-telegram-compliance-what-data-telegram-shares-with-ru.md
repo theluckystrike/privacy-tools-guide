@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Russia Telegram Compliance: What Data Telegram Shares with Russian Authorities After 2026 Changes"
+title: "Russia Telegram Compliance: What Data Telegram Shares."
 description: "A technical breakdown of Telegram's data sharing obligations under Russia's 2026 regulatory changes. Learn what metadata, IP addresses, and user data Russian authorities can now request."
 date: 2026-03-16
 author: theluckystrike
@@ -200,5 +200,11 @@ The 2026 changes have significantly altered Telegram's privacy posture for Russi
 For developers and power users, understanding these changes means making informed platform choices based on your specific threat model. Telegram remains useful for many purposes, but sensitive communications may require additional layers of protection or alternative platforms entirely.
 
 The key takeaway: Telegram in 2026 is not the same privacy tool it was in 2024. Adjust your security practices accordingly.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
