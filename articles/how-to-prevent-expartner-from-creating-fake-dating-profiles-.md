@@ -6,7 +6,7 @@ description: "A technical guide for protecting your identity and photos from bei
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/
-categories: [privacy, security]
+categories: [security]
 reviewed: true
 voice-checked: true
 ---

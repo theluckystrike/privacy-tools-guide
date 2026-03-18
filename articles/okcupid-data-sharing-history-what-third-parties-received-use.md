@@ -5,7 +5,7 @@ description: "A technical analysis of OkCupid's data sharing practices, third-pa
 date: 2026-03-16
 author: theluckystrike
 permalink: /okcupid-data-sharing-history-what-third-parties-received-use/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on exchanging soc
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-safely-exchange-social-media-handles-with-dating-match/
-categories: [guides, privacy, security]
+categories: [guides, security]
 intent-checked: true
 voice-checked: true
 ---

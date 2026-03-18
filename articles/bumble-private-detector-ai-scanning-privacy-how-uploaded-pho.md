@@ -5,6 +5,10 @@ description: "A technical deep dive into Bumble's Private Detector AI, how uploa
 date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
