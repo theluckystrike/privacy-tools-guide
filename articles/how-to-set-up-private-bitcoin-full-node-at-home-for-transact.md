@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to run a Bitcoin 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-private-bitcoin-full-node-at-home-for-transact/
-categories: [guides, bitcoin]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

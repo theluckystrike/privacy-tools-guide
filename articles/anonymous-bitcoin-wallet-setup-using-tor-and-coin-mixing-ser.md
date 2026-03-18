@@ -6,7 +6,7 @@ description: "A practical guide to setting up an anonymous Bitcoin wallet using 
 date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/
-categories: [guides, privacy, bitcoin]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

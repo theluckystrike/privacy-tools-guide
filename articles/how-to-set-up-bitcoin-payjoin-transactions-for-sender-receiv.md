@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to implement Bitc
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

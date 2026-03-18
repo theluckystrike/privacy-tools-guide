@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on withdrawing cr
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-withdraw-crypto-from-exchange-without-linking-to-pers/
-categories: [guides, privacy, crypto]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

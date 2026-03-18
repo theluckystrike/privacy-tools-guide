@@ -6,7 +6,7 @@ description: "A technical guide to understanding how Chainalysis, Elliptic, and 
 date: 2026-03-16
 author: theluckystrike
 permalink: /blockchain-analysis-companies-how-chainalysis-elliptic-track/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

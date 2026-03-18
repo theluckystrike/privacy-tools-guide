@@ -5,7 +5,7 @@ description: "A practical guide to setting up and using Wasabi Wallet's CoinJoin
 date: 2026-03-16
 author: theluckystrike
 permalink: /wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/
-categories: [guides, bitcoin, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

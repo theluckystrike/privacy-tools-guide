@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on creating separ
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/
-categories: [guides, security, cryptocurrency]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 ---

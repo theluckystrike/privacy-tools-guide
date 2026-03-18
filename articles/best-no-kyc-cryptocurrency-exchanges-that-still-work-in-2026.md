@@ -5,7 +5,7 @@ description: "A technical guide to no-KYC cryptocurrency exchanges that still op
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-no-kyc-cryptocurrency-exchanges-that-still-work-in-2026/
-categories: [guides, security, cryptocurrency]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

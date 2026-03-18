@@ -5,6 +5,10 @@ description: "Explore how the Taproot upgrade enhanced Bitcoin privacy through S
 date: 2026-03-16
 author: theluckystrike
 permalink: /taproot-upgrade-bitcoin-privacy-improvements-what-changed-fo/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ description: "Analyzing the 2024 Ledger breach and technical lessons for develop
 date: 2026-03-16
 author: theluckystrike
 permalink: /ledger-data-breach-lessons-how-hardware-wallet-companies-can/
-categories: [guides, security, cryptocurrency]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
