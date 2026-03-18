@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on creating isola
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-separate-network-segment-for-smart-home-isolat/
-categories: [guides, networking, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
