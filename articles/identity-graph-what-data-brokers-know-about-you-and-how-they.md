@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Identity Graph: What Data Brokers Know About You and How They Connect Records"
+title: "Identity Graph: What Data Brokers Know About You and How."
 description: "Learn how data brokers build identity graphs to track your online activity, connect your records across platforms, and monetize your personal information."
 date: 2026-03-16
 author: theluckystrike
@@ -141,6 +141,12 @@ While you cannot completely eliminate yourself from these databases, you can red
 Identity graphs represent one of the most powerful—and least understood—tools in the data broker arsenal. By connecting your digital breadcrumbs across websites, apps, and platforms, these systems build remarkably complete pictures of who you are, what you do, and what you're likely to do next. The more you understand about this process, the better equipped you are to minimize your exposure and take control of your personal data.
 
 Being aware of how these systems work is the first step toward reclaiming your digital privacy. Every piece of information you keep private makes it harder for brokers to build accurate profiles—and that's a win for your personal autonomy.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
