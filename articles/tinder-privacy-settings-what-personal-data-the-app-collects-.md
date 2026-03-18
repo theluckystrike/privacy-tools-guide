@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Tinder Privacy Settings: What Personal Data the App Collects and Shares with Partners (2026)"
+title: "Tinder Privacy Settings: What Personal Data the App."
 description: "A technical breakdown of Tinder data collection practices, API integrations, and privacy settings for developers and power users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /tinder-privacy-settings-what-personal-data-the-app-collects-and-shares-with-partners-2026/
-categories: [privacy, mobile-apps, data-security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -193,6 +193,12 @@ For developers:
 - Clear user data upon account deletion requests within the required timeframe
 
 Understanding Tinder's data practices enables informed participation in the platform. Both users and developers benefit from recognizing how personal information flows through the service and what controls are available to manage exposure.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

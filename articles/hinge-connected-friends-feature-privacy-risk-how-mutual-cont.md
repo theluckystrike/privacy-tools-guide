@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Hinge Connected Friends Feature: Privacy Risk — How Mutual Contacts Can Identify Your Profile"
+title: "Hinge Connected Friends Feature: Privacy Risk — How."
 description: "Learn how Hinge's Connected Friends feature exposes your dating profile to mutual contacts, the technical mechanisms behind profile matching, and practical steps to protect your privacy."
 date: 2026-03-16
 author: theluckystrike
 permalink: /hinge-connected-friends-feature-privacy-risk-how-mutual-cont/
-categories: [privacy, dating-apps]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -116,6 +116,12 @@ After submitting a data access request, you receive a comprehensive breakdown of
 The Hinge Connected Friends feature demonstrates how modern dating applications leverage social graph data in ways that challenge traditional privacy expectations. Mutual contacts can identify your profile through contact list matching, Facebook friend graph integration, and notification systems — all without explicit opt-in from the identified party.
 
 For developers, this feature serves as a case study in privacy-ambiguous design patterns that prioritize engagement over user control. For users, understanding these mechanisms enables more informed decisions about platform participation and data sharing practices. The tension between social discovery features and privacy protection remains an ongoing challenge in dating application design.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
