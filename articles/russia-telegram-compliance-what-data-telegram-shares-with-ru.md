@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Russia's 2026 regulatory overhaul of messaging services has fundamentally changed how Telegram handles user data requests from authorities. If you use Telegram—whether for personal chats, group discussions, or bot development—understanding these changes helps you make informed decisions about your communication privacy.
