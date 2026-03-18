@@ -9,12 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Running Home Assistant locally provides excellent privacy and control, but accessing it remotely traditionally requires opening ports on your router—a security risk that exposes your network to potential attacks. Tailscale offers a elegant solution by creating a secure mesh VPN that lets you access your Home Assistant instance from anywhere without port forwarding.
-
-This guide walks through setting up Tailscale for remote Home Assistant access, targeting developers and power users who want enterprise-grade security without complexity.
+Access Home Assistant remotely without port forwarding by using Tailscale's mesh VPN to create encrypted peer-to-peer connections between your server and client devices. Tailscale assigns private IP addresses to your Home Assistant instance, making it accessible from anywhere while keeping your network completely private and invisible to the public internet. This guide walks through setting up Tailscale for remote access, targeting developers and power users who want enterprise-grade security without complexity.
 
 ## Why Avoid Port Forwarding
 
