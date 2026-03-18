@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries"
+title: "How to Configure Xray Reality Protocol for Undetectable."
 description: "A technical guide to setting up Xray Reality protocol to create an undetectable proxy that works in countries with strict internet censorship."
 date: 2026-03-16
 author: theluckystrike
@@ -206,6 +206,12 @@ To optimize throughput:
 - Enable BBR congestion control on your server: `sysctl -w net.ipv4.tcp_congestion_control=bbr`
 - Use kernel-level Xray installation (not the Docker version) for lower latency
 - Place your server geographically closer to your actual location for better speed
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

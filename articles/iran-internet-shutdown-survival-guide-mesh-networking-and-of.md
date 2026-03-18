@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Iran Internet Shutdown Survival Guide: Mesh Networking and Offline Communication Tools 2026"
-description: "A technical guide to mesh networking and offline communication tools for maintaining connectivity during internet shutdowns. Includes practical setup examples for developers and power users."
+title: "Iran Internet Shutdown Survival Guide: Mesh Networking."
+description: "A technical guide to mesh networking and offline communication tools for maintaining connectivity during internet shutdowns. Includes practical setup."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /iran-internet-shutdown-survival-guide-mesh-networking-and-of/
@@ -216,5 +216,11 @@ For high-risk scenarios, combining mesh networking with appropriate operational 
 Maintaining communication during internet shutdowns requires preparation and understanding of decentralized technologies. Mesh networking tools like Briar and Serval, combined with offline file synchronization via Syncthing, provide developers and power users with robust alternatives when traditional infrastructure fails. The key lies in regular practice, community coordination, and understanding both the capabilities and limitations of these technologies.
 
 Building resilience into communication infrastructure before emergencies occur ensures that communities can maintain coordination when it matters most.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
