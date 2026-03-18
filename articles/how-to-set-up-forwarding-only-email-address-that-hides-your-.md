@@ -6,7 +6,7 @@ description: "Learn how to set up a forwarding-only email address to protect you
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-forwarding-only-email-address-that-hides-your-/
-categories: [privacy, email, security]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

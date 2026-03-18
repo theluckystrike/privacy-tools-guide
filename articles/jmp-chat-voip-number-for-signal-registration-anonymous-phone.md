@@ -6,7 +6,7 @@ description: "Learn how to use JMP Chat VoIP numbers for Signal registration whi
 date: 2026-03-16
 author: theluckystrike
 permalink: /jmp-chat-voip-number-for-signal-registration-anonymous-phone/
-categories: [privacy, security, signal]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

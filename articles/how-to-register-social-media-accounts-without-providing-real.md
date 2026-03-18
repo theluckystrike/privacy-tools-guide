@@ -6,7 +6,7 @@ description: "Learn privacy-focused methods for creating social media accounts w
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-register-social-media-accounts-without-providing-real/
-categories: [privacy, security]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on implementing i
 date: 2026-03-16
 author: theluckystrike
 permalink: /identity-compartmentalization-strategy-separating-real-name-/
-categories: [privacy, security]
+categories: [security]
 ---
 
 {% raw %}

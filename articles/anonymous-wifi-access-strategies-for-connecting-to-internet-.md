@@ -6,7 +6,7 @@ description: "A practical technical guide for developers and power users to conn
 date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-wifi-access-strategies-for-connecting-to-internet-/
-categories: [privacy, security]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

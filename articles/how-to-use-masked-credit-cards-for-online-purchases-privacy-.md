@@ -6,7 +6,7 @@ description: "Master masked credit cards for private online transactions. Learn 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-masked-credit-cards-for-online-purchases-privacy-/
-categories: [guides, privacy, financial]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

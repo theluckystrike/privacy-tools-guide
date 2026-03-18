@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to self-host emai
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

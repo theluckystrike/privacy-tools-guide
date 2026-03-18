@@ -5,7 +5,7 @@ description: "A technical guide to ordering physical goods online while protecti
 date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

@@ -6,7 +6,7 @@ description: "A practical guide for developers who want to contribute to open so
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-anonymous-github-account-for-open-source-contr/
-categories: [guides, privacy]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 ---

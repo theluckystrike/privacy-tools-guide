@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on using Tor Brow
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-browser-for-creating-anonymous-accounts-witho/
-categories: [privacy, security, tor]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

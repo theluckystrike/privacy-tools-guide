@@ -6,7 +6,7 @@ description: "A comprehensive guide to anonymous payment methods for developers 
 date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-payment-methods-for-online-services-when-you-canno/
-categories: [privacy, security, payments]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

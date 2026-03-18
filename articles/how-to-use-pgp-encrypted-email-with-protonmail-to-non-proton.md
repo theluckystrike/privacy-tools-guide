@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on sending PGP-en
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/
-categories: [guides, security, email-encryption]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

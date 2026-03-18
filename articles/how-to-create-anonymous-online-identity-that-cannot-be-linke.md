@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on creating unlin
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-anonymous-online-identity-that-cannot-be-linked-to-real-person/
-categories: [privacy, security, guides]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

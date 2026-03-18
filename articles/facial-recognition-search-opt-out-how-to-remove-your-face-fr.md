@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on removing facia
 date: 2026-03-16
 author: theluckystrike
 permalink: /facial-recognition-search-opt-out-how-to-remove-your-face-fr/
-categories: [privacy, security, opt-out-guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

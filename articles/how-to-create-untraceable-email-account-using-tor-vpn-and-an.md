@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on creating untra
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-untraceable-email-account-using-tor-vpn-and-an/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

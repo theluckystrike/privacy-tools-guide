@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to remove persona
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/
-categories: [privacy, data-brokers]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

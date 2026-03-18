@@ -6,7 +6,7 @@ description: "Learn how to configure SPF, DKIM, and DMARC records to prevent ema
 date: 2026-03-16
 author: theluckystrike
 permalink: /email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/
-categories: [security, email, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
