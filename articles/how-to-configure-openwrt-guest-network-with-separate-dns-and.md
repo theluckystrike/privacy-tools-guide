@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure OpenWRT Guest Network with Separate DNS and Firewall Isolation Rules"
+title: "How to Configure OpenWRT Guest Network with Separate DNS."
 description: "A practical guide for developers and power users to set up OpenWRT guest networks with custom DNS servers and strict firewall isolation."
 date: 2026-03-16
 author: theluckystrike
@@ -202,6 +202,12 @@ Common issues and solutions:
 ## Summary
 
 A properly configured OpenWRT guest network with separate DNS and firewall isolation protects your main network from untrusted devices while giving guests internet access. The key components are: dedicated subnet routing, isolated DNS resolution, wireless client isolation, and explicit firewall deny rules between zones.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

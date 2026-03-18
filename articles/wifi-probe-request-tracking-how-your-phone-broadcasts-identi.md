@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "WiFi Probe Request Tracking: How Your Phone Broadcasts Identity and Location to Nearby Routers"
+title: "WiFi Probe Request Tracking: How Your Phone Broadcasts."
 description: "Learn how WiFi probe requests work, what data your phone broadcasts, and how developers can capture and analyze these signals for privacy research."
 date: 2026-03-16
 author: theluckystrike
@@ -139,6 +139,12 @@ Understanding probe request mechanics reveals why airplane mode provides the onl
 The next time you enable WiFi in a public space, recognize that your device is broadcasting a list of everywhere you've been. This transparency built into the WiFi standard enables convenience—network selection without user interaction—but trades privacy for usability. Armed with this knowledge, you can make conscious decisions about when to enable wireless interfaces and which networks deserve a place in your device's memory.
 
 The protocol continues evolving. 802.11ax introduces new privacy features, and operating systems improve randomization. Yet the fundamental broadcast nature of wireless communication ensures some information will always escape your device. Awareness remains the first line of privacy defense.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
