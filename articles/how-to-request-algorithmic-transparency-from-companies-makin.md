@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Request Algorithmic Transparency from Companies Making Automated Decisions About You"
-description: "A practical guide for developers and power users on exercising your right to understand how automated systems impact your life. Includes templates, legal frameworks, and technical approaches."
+title: "How to Request Algorithmic Transparency from Companies."
+description: "A practical guide for developers and power users on exercising your right to understand how automated systems impact your life. Includes templates."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-algorithmic-transparency-from-companies-makin/
@@ -175,6 +175,12 @@ The path to algorithmic accountability runs through informed individuals exercis
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [Understanding Your Data Rights Under GDPR](/understanding-gdpr-data-subject-rights/)
 - [How to Exercise Your Right to Access Personal Data](/how-to-exercise-right-to-access-personal-data/)
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
