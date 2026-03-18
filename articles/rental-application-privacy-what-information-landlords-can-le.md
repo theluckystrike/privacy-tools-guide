@@ -11,13 +11,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-As a developer or power user, you likely appreciate systems that follow clear rules and respect boundaries. When searching for rental housing, the same principle applies. Understanding what information landlords can legally require helps you protect your privacy while completing applications efficiently.
-
-This guide breaks down rental application privacy laws in practical terms, with examples of how to handle common scenarios and tools to manage your personal data during the rental process.
+Landlords can require income verification, credit checks, rental history, and background checks to assess financial responsibility and tenancy reliability, but cannot request protected class information (race, religion, family status, disability status, national origin) regardless of stated reasons. Fair Housing Act restrictions mean refusing to rent based on protected characteristics is illegal; landlords must use objective criteria consistently applied—if you're asked invasive health questions, social security numbers not required for credit checks, or employment history unrelated to income verification, you can decline. Most states allow tenants to obtain copies of reports used for denial decisions (FCRA rights), challenge inaccurate data, and request correction before rental decisions. For protection: provide only information requested, refuse optional questions, and if denied, request the specific reasons and review reports for errors—many rental denials trace to incorrect background checks or credit reports that you can challenge and correct.
 
 ## The Fair Housing Act: Foundation of Tenant Privacy
 

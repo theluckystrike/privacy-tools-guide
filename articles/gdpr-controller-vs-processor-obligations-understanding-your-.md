@@ -10,12 +10,11 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-# GDPR Controller vs Processor Obligations: Understanding Your Rights Based on Data Relationship
-
-When you collect user data, build applications, or integrate third-party services, GDPR distinguishes between two critical roles: controller and processor. Understanding which role applies to you—or which entity holds which role when you interact with a service—determines your rights and obligations under European data protection law.
+Controllers determine the purposes and means of data processing and bear primary legal responsibility for GDPR compliance, while processors handle data only on controllers' instructions and must use Data Processing Agreements that specify their limited liability. When you build an application collecting user data, you're the controller; when you use a third-party email service, that service is the processor handling data per your instructions. Understanding this distinction matters because controllers must implement data protection by design, conduct impact assessments, and respond to user rights requests, while processors can only follow controller directions—meaning your choice of processor significantly limits your compliance obligations. As a user interacting with services, identifying the controller lets you exercise rights (deletion, access, portability) against the correct entity, while recognizing processor limitations explains why requests to SaaS vendors sometimes redirect you to customer businesses.
 
 ## The Fundamental Distinction
 

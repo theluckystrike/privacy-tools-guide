@@ -11,11 +11,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-When companies mishandle your personal data, federal agencies aren't your only recourse. State attorneys general possess significant enforcement powers that can hold businesses accountable for privacy violations. This guide walks you through the process of filing complaints, understanding your rights, and leveraging state-level enforcement mechanisms effectively.
+State attorneys general enforce privacy laws through data breach notification statutes, unfair trade practice acts, and state-specific privacy regulations (CCPA, CPA, etc.) with enforcement authority that can result in multimillion-dollar settlements when companies violate consumer rights at scale. Filing complaints requires identifying your state's AG office (most have online forms), describing the privacy violation with documentation (screenshots, emails, data breaches), explaining financial or identity harm, and identifying whether your state has specific privacy laws the company violated. Unlike federal FTC complaints which go into a database, state AG offices can initiate investigations that lead to enforcement actions; in fact, many landmark privacy settlements (Meta's $100M, Google's $393M, Equifax's $700M) originated from state AG investigations rather than individual complaints. Developers should document: what data was collected, whether consent was obtained, retention duration, any unauthorized sharing, and breach notification failures—patterns showing systemic violations rather than isolated incidents get AG attention.
 
 ## Understanding State AG Privacy Enforcement Powers
 
