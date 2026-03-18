@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Employee Social Media Privacy: Can Your Employer Fire You for Private Posts?"
+title: "Employee Social Media Privacy: Can Your Employer Fire."
 description: "A comprehensive legal guide for developers and power users on employee social media privacy rights, employer policies, and protected speech in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -138,6 +138,12 @@ For developers and power users who are active online, the best approach is aware
 
 ---
 
-**Built by theluckystrike** — More at [zovo.one](https://zovo.one)
+**
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+Built by theluckystrike** — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Library Patron Privacy Rights: What Information Libraries Can Share with Law Enforcement"
-description: "A practical guide covering library patron privacy rights, what information libraries can share with law enforcement, and how to protect your reading history."
+title: "Library Patron Privacy Rights: What Information."
+description: "A practical guide covering library patron privacy rights, what information libraries can share with law enforcement, and how to protect your reading."
 date: 2026-03-16
 author: theluckystrike
 permalink: /library-patron-privacy-rights-what-information-libraries-can/
@@ -170,6 +170,12 @@ Library patron privacy exists in a gray area between strong principles and legal
 - Libraries often advocate for patrons but must comply with valid legal requests
 
 Understanding these dynamics helps you use library resources while maintaining appropriate privacy for your reading and research activities.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Border Crossing Phone Search Rights: What Customs Agents Can Legally Access by Country"
-description: "A practical guide for developers and power users on phone search rights at international borders. Learn what customs agents can legally access, encryption strategies, and device protection protocols across the US, EU, UK, Canada, and Australia."
+title: "Border Crossing Phone Search Rights: What Customs Agents."
+description: "A practical guide for developers and power users on phone search rights at international borders. Learn what customs agents can legally access."
 date: 2026-03-16
 author: theluckystrike
 permalink: /border-crossing-phone-search-rights-what-customs-agents-can-/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -180,6 +180,12 @@ Border device search laws continue to evolve, with most democracies expanding po
 The balance between border security and digital privacy remains contested. Stay informed, prepare technically, and travel wisely.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Genetic Data Privacy Rights: What 23andMe and Ancestry Can Do With Your DNA"
-description: "A technical guide for developers and power users on genetic data privacy rights, covering what 23andMe and AncestryDNA can legally do with your DNA data, consent mechanisms, and how to exercise your data rights."
+title: "Genetic Data Privacy Rights: What 23andMe and Ancestry."
+description: "A technical guide for developers and power users on genetic data privacy rights, covering what 23andMe and AncestryDNA can legally do with your DNA."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/
@@ -156,6 +156,12 @@ For privacy-conscious users, alternatives include:
 Genetic data privacy remains a complex landscape where legal protections lag behind technological capabilities. Before submitting a DNA sample, understand that your genetic information will likely be retained indefinitely, may be used for research you did not explicitly consent to, could be shared with pharmaceutical partners, and may be accessible to law enforcement with proper legal process. Your best defense is informed decision-making: read the full terms of service, exercise your opt-out rights where available, and consider whether the ancestry insights justify the permanent privacy implications.
 
 For developers working with genetic data, apply the same privacy-by-design principles you would use for any sensitive personal information, recognizing that genetic data carries unique permanence that distinguishes it from other data types.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

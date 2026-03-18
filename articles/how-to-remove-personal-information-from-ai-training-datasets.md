@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Remove Personal Information from AI Training Datasets and Language Models"
+title: "How to Remove Personal Information from AI Training."
 description: "A practical guide for developers on identifying, removing, and preventing personal data in AI training pipelines and deployed language models."
 date: 2026-03-16
 author: theluckystrike
@@ -261,6 +261,12 @@ Removing personal information from AI training datasets requires a defense-in-de
 The techniques in this guide represent current best practices, but the field evolves rapidly. Stay informed about new research in privacy-preserving machine learning and regularly audit your pipelines for potential data leakage points.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

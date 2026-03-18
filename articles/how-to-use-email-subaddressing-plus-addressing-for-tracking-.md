@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use Email Subaddressing Plus Addressing for Tracking Which Services Leak Your Address"
-description: "A practical guide to leveraging email subaddressing and addressing techniques to track which services leak your email address. Perfect for developers and power users."
+title: "How to Use Email Subaddressing Plus Addressing for."
+description: "A practical guide to leveraging email subaddressing and addressing techniques to track which services leak your email address. Perfect for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/
@@ -182,6 +182,12 @@ This approach creates discoverable aliases that include service name, purpose, a
 Email subaddressing transforms your inbox into an intelligence system. By creating distinct addresses for each service and tracking incoming patterns, you gain visibility into how your data flows through the digital ecosystem. When services leak, sell, or share your email, you know immediately which one to blame and can take targeted action.
 
 The key is consistency: establish your naming convention early, document everything, and review regularly. What starts as a simple privacy trick becomes a powerful tool for maintaining control over your digital identity.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
