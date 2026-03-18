@@ -222,6 +222,22 @@ Consider these best practices for production deployments:
 - **Keep software updated** to address newly discovered protocol fingerprints
 - **Maintain multiple server configurations** for failover capability
 
+## Security Considerations
+
+When deploying Shadowsocks with obfuscation, keep these security practices in mind:
+
+1. **Use strong encryption** - Always prefer AES-256-GCM over older methods like rc4-md5
+2. **Rotate passwords regularly** - Change server passwords every 30-60 days
+3. **Enable TCP OOB** - Use out-of-band data detection for improved security
+4. **Monitor access logs** - Track connection patterns to detect anomalies
+5. **Use TLS 1.3** - Ensure your obfuscation layer uses the latest TLS version
+
+## Troubleshooting Common Issues
+
+Connection problems often stem from misconfigured settings. If your client cannot connect, verify that the server firewall allows traffic on your chosen port. Check that the plugin options match exactly between server and client configurations. Ensure your server's system time is accurate, as TLS certificates validate timestamps.
+
+For persistent connectivity issues, try switching from TLS obfuscation to HTTP mode, which uses different traffic patterns. Some networks may block specific ports, so consider using common ports like 80 or 443 that are less likely to be filtered.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
