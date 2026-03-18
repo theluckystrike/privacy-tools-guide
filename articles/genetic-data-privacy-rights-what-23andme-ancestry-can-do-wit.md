@@ -11,12 +11,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-# Genetic Data Privacy Rights: What 23andMe and Ancestry Can Do With Your DNA
 
-Direct-to-consumer genetic testing services like 23andMe and AncestryDNA have collected DNA data from millions of users. Understanding what these companies can legally do with your genetic information is critical for anyone who has submitted a saliva sample or is considering doing so. This guide covers the technical and legal realities of genetic data privacy for developers and power users who want to make informed decisions.
+23andMe and AncestryDNA can use genetic data for research partnerships, pharmaceutical company collaboration, and law enforcement requests (with legal process). Genetic data cannot be changed like passwords if breached, and HIPAA does not cover direct-to-consumer services. GDPR (EU residents), CCPA/CPRA (California), and GINA (US) provide varying protections; export your data before deletion since residual copies persist in research databases and backups. For developers handling genetic data, apply differential privacy, federated learning, or homomorphic encryption to prevent re-identification attacks.
 
 ## How Genetic Testing Companies Process Your Data
 

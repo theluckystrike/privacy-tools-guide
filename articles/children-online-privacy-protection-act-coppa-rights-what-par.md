@@ -10,10 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-The Children's Online Privacy Protection Act (COPPA) is a federal law in the United States that imposes specific requirements on websites and online services that collect personal information from children under 13 years of age. For developers building applications that might attract younger users, understanding COPPA is not just good practice—it is often a legal requirement. Parents have specific rights under this law, and companies must comply or face significant penalties.
+
+COPPA requires companies to obtain verifiable parental consent before collecting any personal information from children under 13, provide parents access to child data within 30 days, delete data upon parental request, and never retain data longer than necessary. For developers, this means implementing age-gate verification, parental consent email flows, and data minimization practices (storing age ranges instead of birthdates, using display names instead of real names). FTC enforcement includes six-figure fines, making compliance essential for any service potentially used by children.
 
 ## What COPPA Requires from Companies
 

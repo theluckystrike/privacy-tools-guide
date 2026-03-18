@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Police body cameras have become ubiquitous across law enforcement agencies, generating millions of hours of footage annually. Understanding who can request these recordings and the privacy implications involved is essential for developers building transparency tools, journalists investigating incidents, and citizens exercising their rights.
+Police body camera footage is generally public record but with significant state variations: California's SB 1421 requires disclosure of use-of-force incidents, Texas and Florida provide broader public access, while New York restricts disclosure at agency discretion. Individuals involved in incidents, journalists, and the general public can request footage through FOIA/public records processes, though exemptions apply for ongoing investigations, juveniles, and confidential informants. Response timelines range from 10-45 days depending on jurisdiction.
 
 ## Understanding Body Camera Footage as Public Records
 

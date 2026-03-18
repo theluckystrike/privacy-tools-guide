@@ -10,9 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
+
+Send formal deletion requests explicitly referencing applicable state laws (Virginia VCDPA, Colorado CPA, Connecticut CTDPA, Utah UCPA, Texas TDPSA) even to non-GDPR/CCPA companies, as many voluntarily comply. If companies refuse, escalate to state attorneys general, the FTC, or BBB. For companies beyond legal reach, minimize future data sharing through temporary emails, pseudonyms, and privacy tools, or pursue small claims court for significant violations.
 
 ## Understanding the Data Protection Gap
 

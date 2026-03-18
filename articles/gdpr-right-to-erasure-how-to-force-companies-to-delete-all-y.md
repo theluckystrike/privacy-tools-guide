@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-The General Data Protection Regulation (GDPR) grants European residents powerful rights over their personal data. Among the most significant is Article 17, the "right to erasure" (also called the "right to be forgotten"). This right allows individuals to demand that organizations delete their personal data under specific circumstances. For developers and power users who understand how data flows through modern systems, exercising this right effectively requires knowing exactly what to ask for, how to ask, and what to do when companies ignore your requests.
+GDPR Article 17 right to erasure requires companies to delete data within 30 days when you withdraw consent, data becomes unnecessary, or processing is unlawful. Send formal requests explicitly referencing the regulation (not generic "delete my account"), escalate to Data Protection Authorities (ICO, CNIL, AEPD) when companies ignore you, and file compensation claims under Article 82 for damages from non-compliance. Verify deletion by requesting subject access exports afterward (should return empty), and use email aliases per service to track which companies have your data.
 
 ## Understanding Your Rights Under Article 17
 

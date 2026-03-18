@@ -10,13 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-# Employee Social Media Privacy: Can Your Employer Fire You for Private Posts?
-
-As a developer or power user, you probably spend significant time on social media platforms. You might post technical thoughts on X, share articles on LinkedIn, or express personal opinions on private accounts. But can your employer terminate you for content you post on your personal, private profiles? This guide breaks down the legal landscape for 2026.
+Employers can fire you for most social media posts under at-will employment, even private ones, but exceptions exist: discussions about wages/working conditions (NLRA protected concerted activity), posts related to protected characteristics (discrimination laws), and off-duty conduct in some states. Platform privacy settings don't create legal immunity—what matters is the post's legal content, not its visibility. Technical separation (different email/phone for personal accounts), reviewing your company's policy for red flags, and thinking strategically before posting controversial content provides practical protection despite broad employer authority.
 
 ## At-Will Employment and the Default Rule
 
