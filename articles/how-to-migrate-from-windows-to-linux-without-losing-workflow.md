@@ -241,3 +241,4 @@ A successful migration requires ongoing maintenance:
 The transition from Windows to Linux requires adjustment, but the privacy benefits and system control justify the learning curve. Your development workflow will not only persist but improve as you gain visibility into your system's operation.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
