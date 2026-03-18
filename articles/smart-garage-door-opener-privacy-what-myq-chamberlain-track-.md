@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Smart garage door openers have become increasingly popular, with Chamberlain's MyQ system being one of the most widely deployed. While these devices offer convenient remote access and monitoring capabilities, they collect substantial data about your daily routines. Understanding what information these systems capture and transmit is essential for privacy-conscious users and developers building integrations.
+MyQ and Chamberlain smart garage door openers transmit detailed timestamps of every door opening and closing to cloud servers, creating comprehensive logs of your arrival, departure, and routine patterns. Over months, this data reveals your work schedule, vacation periods, and household occupancy—information that insurers, real estate agents, and law enforcement can potentially access. This guide explains the privacy implications, practical alternatives for local-only control, and strategies to minimize data exposure.
 
 ## Data Collection Overview
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Mesh WiFi systems have become the default choice for home networking, offering seamless coverage across larger properties. However, these always-connected devices collect varying amounts of user data, and understanding these differences matters for privacy-conscious developers and power users. This comparison examines data collection practices across Amazon Eero, Netgear Orbi, and TP-Link Deco as of early 2026.
+TP-Link Deco collects the least user data among mainstream mesh systems, offering local processing options and operating without mandatory cloud accounts. Amazon Eero collects the most data, integrating with Alexa and sharing analytics with third parties, while Netgear Orbi sits in the middle with moderate data collection and improved privacy controls. This comparison examines data collection practices, local processing capabilities, and privacy controls across all three systems to help you choose the most privacy-respecting option for your home network.
 
 ## Data Collection Overview
 
