@@ -5,7 +5,7 @@ description: "A technical deep-dive into Bitcoin dust attacks, exploring how tin
 date: 2026-03-16
 author: theluckystrike
 permalink: /bitcoin-dust-attack-explained-how-small-transactions-deanony/
-categories: [guides, security, bitcoin]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

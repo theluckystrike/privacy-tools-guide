@@ -6,7 +6,7 @@ description: "Explore how robot vacuums with LIDAR mapping collect, store, and p
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/
-categories: [privacy, iot, security]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ description: "A technical analysis of Samsung Family Hub refrigerator network tr
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-refrigerator-data-collection-what-samsung-family-hub-s/
-categories: [privacy, iot, security]
+categories: [security]
 ---
 
 {% raw %}

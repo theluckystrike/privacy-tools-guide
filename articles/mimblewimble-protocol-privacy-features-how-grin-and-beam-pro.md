@@ -5,7 +5,7 @@ description: "A technical deep dive into the Mimblewimble protocol's privacy mec
 date: 2026-03-16
 author: theluckystrike
 permalink: /mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/
-categories: [privacy, cryptocurrency, mimblewimble]
+categories: [security, guides]
 ---
 
 {% raw %}

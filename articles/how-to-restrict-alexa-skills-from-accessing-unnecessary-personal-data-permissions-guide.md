@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to restrict Alexa
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/
-categories: [guides, privacy, alexa]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
