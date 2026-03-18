@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Setting up SecureBoot alongside full disk encryption on Fedora Linux provides defense-in-depth protection for your system. SecureBoot ensures that only digitally signed bootloaders and kernels can execute, while encryption protects your data even if physical access is compromised. This guide walks you through configuring both technologies on Fedora Linux.
+Combine SecureBoot with LUKS full disk encryption on Fedora to create multi-layer security protecting against bootkits and physical theft. SecureBoot verifies bootloader signatures before execution, while TPM2 integration allows automatic decryption without compromising security. This guide covers key enrollment, kernel signing, automatic signing via hooks, and recovery planning for production Linux systems.
 
 ## Prerequisites
 
