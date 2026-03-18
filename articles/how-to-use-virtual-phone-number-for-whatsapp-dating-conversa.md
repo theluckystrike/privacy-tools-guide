@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Virtual phone numbers provide a practical solution for maintaining privacy during WhatsApp dating conversations. Instead of sharing your personal phone number with strangers from dating apps, you can use a separate number that keeps your real contact information private. This guide covers the technical implementation, available options, and security considerations for developers and power users.
+Use an eSIM-based virtual number like Google Fi or Airalo (not VoIP, which WhatsApp blocks frequently) to register WhatsApp for dating conversations while keeping your real phone number private. eSIM numbers are treated as genuine cellular numbers by WhatsApp, so they avoid verification failures that plague free VoIP services. Buy a cheap Android phone, install a second WhatsApp profile using the eSIM number on it, and all dating conversations happen through that separate identity—you can discard or reset the number anytime without affecting your primary WhatsApp account.
 
 ## Understanding Virtual Phone Numbers for WhatsApp
 

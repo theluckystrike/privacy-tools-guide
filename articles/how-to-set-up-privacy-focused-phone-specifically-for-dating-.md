@@ -11,13 +11,11 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-
-# How to Set Up a Privacy-Focused Phone Specifically for Dating Apps and Meetup Planning
-
-Dating apps collect enormous amounts of personal data—location history, contacts, browsing patterns, and behavioral analytics. For developers and power users who want to maintain their privacy while still meeting new people, setting up a dedicated privacy-focused phone for dating activities provides strong isolation between your personal digital life and your dating life. This guide covers the technical implementation, from OS selection to network hardening, with practical examples and code snippets you can apply immediately.
+Set up a dedicated Android phone with CalyxOS (not GrapheneOS, since it's harder to get dating apps working) running only the essential dating apps you need. Buy a used Google Pixel 4a or 7a, unlock the bootloader, flash CalyxOS with Play Services disabled by default, then install dating apps individually and enable Play Services only for those apps. This gives you complete isolation: if that phone gets compromised, your real identity on your primary phone remains untouched, and you can discard or reset the dating phone instantly without losing access to your main accounts.
 
 ## Why a Dedicated Phone Matters
 
