@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users on Turkey's conte
 date: 2026-03-16
 author: theluckystrike
 permalink: /turkey-content-removal-orders-how-government-forces-platform/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

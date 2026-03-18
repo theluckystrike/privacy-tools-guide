@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on configuring th
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-cloak-plugin-for-shadowsocks-to-evade-activ/
-categories: [guides, privacy, security]
+categories: [guides, security]
 ---
 
 {% raw %}

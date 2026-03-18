@@ -6,7 +6,7 @@ description: "A practical guide to understanding Turkey's internet freedom ranki
 date: 2026-03-16
 author: theluckystrike
 permalink: /turkey-internet-freedom-index-ranking-and-comparison-with-ne/
-categories: [privacy, security, internet-freedom]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

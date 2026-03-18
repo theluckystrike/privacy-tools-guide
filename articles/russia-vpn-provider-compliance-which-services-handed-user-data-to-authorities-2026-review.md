@@ -6,7 +6,7 @@ description: "A technical review of VPN provider compliance with Russian data re
 date: 2026-03-16
 author: theluckystrike
 permalink: /russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/
-categories: [privacy, security, vpn]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

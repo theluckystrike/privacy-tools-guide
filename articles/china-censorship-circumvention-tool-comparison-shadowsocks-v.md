@@ -6,7 +6,7 @@ description: "A technical comparison of Shadowsocks, V2Ray, and Trojan for bypas
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-censorship-circumvention-tool-comparison-shadowsocks-vs-v2ray-vs-trojan-2026-guide/
-categories: [security, privacy, networking]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

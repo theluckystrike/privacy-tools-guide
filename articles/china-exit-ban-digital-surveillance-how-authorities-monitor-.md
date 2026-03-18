@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users exploring how Chi
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-travel-plans-through-online-activity/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
