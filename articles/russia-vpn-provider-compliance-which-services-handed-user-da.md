@@ -130,3 +130,5 @@ The 2026 Russian VPN compliance landscape demonstrates that jurisdiction shoppin
 Understanding the technical details—protocol choices, logging practices, and corporate structures—enables informed decisions. Audit your current setup, verify provider claims through transparency reports, and consider self-hosted solutions for sensitive applications.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
