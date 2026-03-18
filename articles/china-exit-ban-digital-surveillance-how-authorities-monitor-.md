@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "China Exit Ban: How Authorities Monitor Travel Plans Through Digital Surveillance"
-description: "A technical guide for developers and power users exploring how Chinese authorities track travel plans via online activity, digital surveillance mechanisms, and potential countermeasures."
+title: "China Exit Ban: How Authorities Monitor Travel Plans."
+description: "A technical guide for developers and power users exploring how Chinese authorities track travel plans via online activity, digital surveillance."
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-travel-plans-through-online-activity/
@@ -188,6 +188,12 @@ The intersection of digital surveillance and travel restrictions in China repres
 The reality is that any digital activity within Chinese infrastructure can potentially be monitored, logged, and used as the basis for administrative actions including exit bans. Technical awareness and careful operational security practices remain the best defense for those who need to protect their digital communications and travel plans.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
