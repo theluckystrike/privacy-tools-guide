@@ -10,6 +10,7 @@ categories: [comparisons]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -51,10 +52,7 @@ Understanding the encryption models helps assess the real impact of breaches on 
 
 LastPass uses the following encryption approach:
 
-- **Derivation**: PBKDF2-SHA256 with 100,100 iterations for master password derivation
-- **Encryption**: AES-256 for vault data
-- **Zero-knowledge**: Server never stores master password in plaintext
-- **Local encryption**: Vault decrypted locally before sync
+LastPass derives the master password key using PBKDF2-SHA256 at 100,100 iterations. Vault data is encrypted with AES-256 and decrypted locally before sync. The server never stores the master password in plaintext.
 
 The critical vulnerability in LastPass's breach was that encrypted vaults were stored in a format that became vulnerable once the attacker obtained both the encrypted data and the ability to perform offline attacks on weak master passwords.
 
@@ -78,10 +76,7 @@ def derive_lastpass_key(master_password, salt, iterations=100100):
 
 Dashlane implemented stronger security measures:
 
-- **Derivation**: PBKDF2-SHA512 with 500,000+ iterations
-- **Encryption**: AES-256-GCM (authenticated encryption)
-- **Key separation**: Separate keys for authentication and encryption
-- **Local-first**: Enhanced local encryption before cloud sync
+Dashlane derives keys using PBKDF2-SHA512 at 500,000+ iterations and encrypts vault data with AES-256-GCM (authenticated encryption). It uses separate keys for authentication and encryption, with enhanced local encryption before cloud sync.
 
 The use of authenticated encryption (GCM mode) provides additional protection against tampering attempts.
 
@@ -188,20 +183,13 @@ bw list items | jq '.[:5]'
 
 For developers and power users, several conclusions emerge:
 
-1. **No password manager is breach-proof**, but response and transparency matter
-2. **Master password strength** remains critical—use passphrases of 20+ characters
-3. **Enable multi-factor authentication** on all password manager accounts
-4. **Consider self-hosted options** like Bitwarden for maximum control
-5. **Regular audits** of your vault for weak or duplicate passwords
+No password manager is breach-proof, but response and transparency distinguish vendors meaningfully. Use a passphrase of 20+ characters as your master password. Enable multi-factor authentication on all password manager accounts. For maximum control, consider self-hosted options like Bitwarden. Audit your vault regularly for weak or duplicate passwords.
 
 ## Alternative Recommendations
 
 If moving away from both services, these options offer strong security:
 
-- **Bitwarden**: Open-source, self-hostable, strong CLI
-- **1Password**: Strong security model, excellent developer features
-- **KeePassXC**: Fully offline, open-source, maximum transparency
-- **Proton Pass**: Built by security-focused team, integrated with Proton ecosystem
+Bitwarden is open-source and self-hostable with a strong CLI. 1Password offers a strong security model with excellent developer features. KeePassXC is fully offline, open-source, and maximally transparent. Proton Pass comes from a security-focused team and integrates with the Proton ecosystem.
 
 The choice depends on your threat model, technical requirements, and preference for cloud versus local-only solutions.
 

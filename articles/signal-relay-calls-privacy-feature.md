@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -116,9 +117,7 @@ turn:
 
 Relaying calls introduces latency because traffic makes an additional hop. The impact varies based on:
 
-- **Server proximity**: Closer relay servers mean less delay
-- **Network conditions**: Congested connections benefit from relay routing
-- **Call quality**: Video calls consume more bandwidth through relays
+Closer relay servers reduce delay. Congested connections often benefit from relay routing, and video calls consume more bandwidth through relays than voice.
 
 Signal automatically selects optimal relay servers based on geographic location. Users with strict privacy requirements often accept the slight performance trade-off for the IP protection benefits.
 
@@ -130,15 +129,7 @@ Typical latency additions range from 20-80ms depending on server distance. For m
 
 Relay calls protect against specific threats while acknowledging limitations:
 
-**What relay calls protect:**
-- IP address exposure to call recipients
-- Basic geographic location inference
-- ISP identification through IP lookup
-
-**What relay calls don't protect:**
-- Metadata (who called whom, when, duration)
-- Signal server knowledge of call timing
-- Government demands for records
+Relay calls protect against IP address exposure to call recipients, basic geographic location inference, and ISP identification through IP lookup. They do not protect call metadata (who called whom, when, and for how long), Signal's server knowledge of call timing, or government demands for records.
 
 For high-security scenarios, combine relay calls with additional measures:
 
@@ -151,9 +142,7 @@ For high-security scenarios, combine relay calls with additional measures:
 
 Developers building privacy-focused applications can learn from Signal's implementation:
 
-- **TURN server deployment**: Self-host relay infrastructure using coturn
-- **Client-side configuration**: Prioritize relay candidates in WebRTC
-- **Key management**: Implement double ratchet for forward secrecy
+Developers can self-host relay infrastructure using coturn, prioritize relay candidates in WebRTC configuration, and implement the double ratchet algorithm for forward secrecy.
 
 Example coturn configuration for relay services:
 
@@ -177,11 +166,7 @@ Signal's relay feature strikes a practical balance between privacy and usability
 
 ## Conclusion
 
-Signal's relay calls feature provides meaningful IP address protection without sacrificing end-to-end encryption. The implementation leverages standard WebRTC protocols while maintaining Signal's commitment to privacy. Developers can study this approach for building similar protections into their own applications.
-
 For privacy-conscious users, enabling relay calls adds a layer of protection against IP-based tracking and attacks. Combined with Signal's existing encryption guarantees, it creates a more complete privacy solution for voice and video communications.
-
-The feature demonstrates how modern messaging platforms can provide strong privacy without requiring users to sacrifice usability or functionality.
 
 ---
 

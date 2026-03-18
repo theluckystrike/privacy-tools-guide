@@ -10,6 +10,7 @@ categories: [comparisons, guides, security]
 reviewed: true
 score: 7
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -31,7 +32,7 @@ This is where Sticky Password shows its age. As of 2026, Sticky Password does no
 - Automate secret retrieval
 - Build custom workflows
 
-Compare this to Bitwarden's robust CLI:
+Compare this to Bitwarden's CLI:
 
 ```bash
 # Bitwarden CLI - retrieve password programmatically
@@ -74,13 +75,7 @@ Teams requiring sophisticated sharing workflows will find Sticky Password insuff
 
 Sticky Password includes several security features worth noting:
 
-**Two-Factor Authentication**: Supports TOTP-based 2FA for the master account. The authenticator seeds are stored encrypted in your vault, a convenient but potentially controversial design choice.
-
-**Biometric Unlocking**: Windows Hello, Touch ID on Mac, and Android/iOS biometric unlock are supported. This provides convenience while maintaining security boundaries.
-
-**Password Generator**: Configurable generator with options for length, character sets, and pronounceability. The implementation is solid but lacks the advanced options some competitors offer.
-
-**Breach Monitoring**: Sticky Password includes breach monitoring, though the detection capabilities lag behind dedicated services like HaveIBeenPwned integration found in other managers.
+Sticky Password supports TOTP-based 2FA for the master account. Authenticator seeds are stored encrypted in your vault—convenient, but a potentially controversial design choice. Windows Hello, Touch ID on Mac, and Android/iOS biometric unlock are all supported, providing convenience without sacrificing security boundaries. The password generator is configurable for length, character sets, and pronounceability, though it lacks the advanced options some competitors offer. Breach monitoring is included, but detection capabilities lag behind dedicated services like HaveIBeenPwned integration found in other managers.
 
 ## Database Export and Portability
 

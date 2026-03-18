@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [comparisons]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -21,11 +22,7 @@ Jami is worth using in 2026 if you prioritize full architectural decentralizatio
 
 Jami uses a distributed hash table (DHT) called GNU Name System for peer discovery. When you install Jami, your device becomes a node on this network. The application maintains connections to other nodes and uses these connections to discover contacts and relay messages when direct peer-to-peer connections aren't possible due to network topology.
 
-The core technology stack includes:
-
-- **Libjami**: The underlying C++ library handling all communication logic
-- **Swarm-based messaging**: Messages propagate through the network using a gossip protocol
-- **Account identifiers**: 40-character alphanumeric strings that serve as your unique identity
+The core technology stack includes Libjami, the underlying C++ library handling all communication logic. Messages propagate through the network using a gossip protocol (swarm-based messaging). Account identifiers are 40-character alphanumeric strings generated cryptographically, serving as your unique identity.
 
 Unlike Signal or Telegram, there's no phone number requirement and no centralized account registration. Your Jami ID is generated cryptographically and belongs entirely to you.
 
@@ -33,11 +30,7 @@ Unlike Signal or Telegram, there's no phone number requirement and no centralize
 
 Jami implements end-to-end encryption using the NaCl cryptographic library. All messages, calls, and file transfers are encrypted with the libsodium primitives. Each device generates its own key pair, meaning multi-device setups maintain separate identities that must be trusted individually.
 
-The security model includes:
-
-- **Perfect forward secrecy**: Session keys rotate regularly, limiting the impact of potential key compromise
-- **No metadata collection**: Since there's no central server, there's no server-side metadata to harvest
-- **Self-destructing messages**: Configurable message expiration that removes content from devices
+The security model includes perfect forward secrecy — session keys rotate regularly, limiting the impact of potential key compromise. Since there's no central server, there's no server-side metadata to harvest. Configurable message expiration removes content from devices on a schedule you control.
 
 One limitation worth noting: Jami does not support group messaging with the same security properties as one-to-one conversations. Group communication currently relies on trusted servers, which represents a trade-off from the pure P2P model.
 
@@ -107,11 +100,7 @@ However, Jami has limitations worth considering. The user interface lacks the po
 
 ## Performance Characteristics
 
-In testing, Jami message delivery typically completes within seconds on good connectivity. However, performance varies based on:
-
-- Network topology: Direct peer connections outperform relayed connections
-- Peer availability: Offline contacts delay message delivery until they reconnect
-- Swarm size: Heavier contact lists increase background network activity
+In testing, Jami message delivery typically completes within seconds on good connectivity. However, performance varies based on network topology (direct peer connections outperform relayed ones), peer availability (offline contacts delay delivery until they reconnect), and swarm size (heavier contact lists increase background network activity).
 
 For developers monitoring network usage, Jami exposes statistics through its D-Bus interface, allowing integration with monitoring tools:
 
@@ -132,9 +121,7 @@ The trade-off is clear: Jami sacrifices convenience and feature richness for arc
 
 ## Conclusion
 
-Jami offers a genuine alternative for developers and power users who want peer-to-peer messaging without trusting third-party servers. The encryption model works correctly, the software is free and open-source, and the self-hosting options provide real control over your communication stack. The trade-off is a less refined user experience and fewer features than commercial alternatives.
-
-For privacy-conscious developers willing to accept these trade-offs, Jami provides a solid foundation for secure, decentralized communication. The learning investment pays dividends if you value understanding exactly how your messages flow through the network.
+For privacy-conscious developers willing to accept the trade-offs in polish and feature pace, Jami provides a solid foundation for secure, decentralized communication. The self-hosting options provide real control over your communication stack, and the learning investment pays dividends if you value understanding exactly how your messages flow through the network.
 
 
 ## Related Reading

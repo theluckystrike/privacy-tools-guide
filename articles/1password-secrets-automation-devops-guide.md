@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -250,7 +251,7 @@ Access auditing provides visibility into which automation systems accessed which
 
 Integrating 1Password into DevOps workflows eliminates hardcoded credentials while maintaining the accessibility that development teams need. Start with the Terraform or Ansible integration for infrastructure automation, add Kubernetes external secrets for containerized applications, and extend to your CI/CD platform of choice. Each layer reduces risk while improving operational efficiency.
 
-The combination of service accounts, dedicated automation vaults, and programmatic CLI access provides a robust foundation for secret management across your entire deployment pipeline.
+The combination of service accounts, dedicated automation vaults, and programmatic CLI access covers secret management across your entire deployment pipeline.
 
 
 

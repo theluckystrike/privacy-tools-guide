@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -189,9 +190,7 @@ For users managing their vault:
 
 ## Conclusion
 
-Master password strength combines entropy, key derivation function configuration, and avoiding predictable patterns. For developers, implementing Argon2id with proper parameters provides robust protection against offline attacks. For users, a 6-8 word passphrase or 16+ character random password, combined with a slow KDF, keeps your vault secure for years to come.
-
-The security of your password manager ultimately depends on this single password—invest the effort to make it strong.
+Master password strength combines entropy, key derivation function configuration, and avoiding predictable patterns. For developers, implementing Argon2id with proper parameters provides strong protection against offline attacks. For users, a 6-8 word passphrase or 16+ character random password, combined with a slow KDF, keeps your vault secure for years to come.
 
 
 ## Related Reading

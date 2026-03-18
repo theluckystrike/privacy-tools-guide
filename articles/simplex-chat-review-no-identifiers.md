@@ -10,6 +10,7 @@ tags: [privacy, tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 # Simplex Chat Review: No Identifiers Architecture Analysis
@@ -22,10 +23,7 @@ Every conventional messaging platform requires some form of user identification 
 
 This creates several privacy vulnerabilities:
 
-- **Correlation attacks**: Your phone number or username links conversations across different groups, enabling mass surveillance
-- **Harvesting**: Platforms collect and store your contact list, building social graphs
-- **Account recovery**: Email or phone recovery mechanisms create backdoors to your identity
-- **Network discovery**: Servers must know who to deliver messages to, requiring persistent addressing
+Correlation attacks occur because your phone number or username links conversations across different groups, enabling mass surveillance. Platforms collect and store your contact list, building social graphs through contact harvesting. Email or phone account recovery mechanisms create backdoors to your identity. Servers must know who to deliver messages to, which requires persistent addressing that exposes network-level metadata.
 
 Simplex Chat addresses these issues by eliminating identifiers entirely from the protocol layer.
 
@@ -171,19 +169,13 @@ Running your own server eliminates even the minimal metadata visible to third-pa
 
 Simplex Chat's architecture provides strong protection against:
 
-- **Mass surveillance**: No persistent identifiers to correlate
-- **Contact harvesting**: No address book upload required
-- **Social graph analysis**: Connection addresses don't reveal relationships
-- **Identity theft**: No account to hijack
+Without persistent identifiers, there is nothing to correlate in mass surveillance. No address book upload is required, eliminating contact harvesting. Connection addresses don't reveal relationships, preventing social graph analysis. With no account to hijack, identity theft through account takeover is not possible.
 
 ### Remaining Considerations
 
 Several limitations warrant awareness:
 
-- **Network availability**: Requires at least one SMP server to be online
-- **Initial contact**: Must exchange addresses via some out-of-band channel
-- **Server trust**: While messages are encrypted, servers see connection metadata (timing, volume)
-- **No phone number recovery**: If you lose your device and addresses, communication cannot be recovered
+At least one SMP server must be online for messages to be delivered. Initial contact requires exchanging addresses through some out-of-band channel. While messages are encrypted, servers still see connection metadata such as timing and volume. If you lose your device and all saved addresses, communication cannot be recovered because there is no phone number or account to fall back on.
 
 ### Metadata Minimization
 

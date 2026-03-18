@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -138,11 +139,9 @@ Field type `0` represents text, while `1` represents hidden fields.
 
 Custom fields shine when organizing vault entries for large projects or multiple environments. Create consistent field naming conventions across items:
 
-**Environment Tags**: Use a text field named "Environment" with values like "production", "staging", or "development" on every credential item.
+Use a text field named "Environment" with values like "production", "staging", or "development" on every credential item as an environment tag. Add a "Project" text field to group related credentials across different services.
 
-**Project Association**: Add a "Project" text field to group related credentials across different services.
-
-**Expiration Tracking**: Store expiration dates in a "Expires" text field. Write a script using the CLI to check for upcoming expirations:
+For expiration tracking, store expiration dates in an "Expires" text field. Write a script using the CLI to check for upcoming expirations:
 
 ```bash
 bw list items | jq -r '.[] | select(.fields != null) | select(.fields[] | .name == "Expires") | "\(.name): \((.fields[] | select(.name == "Expires") | .value))"'
@@ -158,7 +157,7 @@ When sharing items through Bitwarden Send or organizational sharing, custom fiel
 
 ## Conclusion
 
-Custom fields transform Bitwarden from a simple password manager into a comprehensive credential management system. By attaching structured metadata to vault entries, developers can maintain organized credential libraries, automate authentication workflows, and ensure consistent security practices across projects.
+Custom fields transform Bitwarden from a simple password manager into a structured credential management system. By attaching structured metadata to vault entries, developers can maintain organized credential libraries, automate authentication workflows, and ensure consistent security practices across projects.
 
 The combination of different field types, CLI automation, and organized naming conventions creates a powerful system suitable for managing complex development environments, multiple service accounts, and sensitive infrastructure credentials.
 

@@ -10,6 +10,7 @@ categories: [comparisons]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -48,11 +49,7 @@ Bitwarden's open-source nature means you can audit the domain-matching logic dir
 
 1Password also maintains a curated list of known phishing domains updated through their security team. When you attempt to fill credentials on a flagged domain, the extension displays a warning rather than autofilling.
 
-The technical implementation includes:
-
-- **Address bar icon indicator**: Shows a filled vault icon only on verified domains
-- **Zero-knowledge domain verification**: Domain checks happen locally without sending URLs to 1Password servers
-- **Clipboard auto-clear**: Copied passwords clear from clipboard after 90 seconds
+The browser extension shows a filled vault icon only on verified domains. Domain checks happen locally without sending URLs to 1Password servers. Copied passwords clear from clipboard after 90 seconds.
 
 ### Dashlane: Real-Time Phishing Detection
 
@@ -62,7 +59,7 @@ The practical implication: Dashlane may offer stronger detection of novel phishi
 
 ## Practical Examples: Testing Protection Mechanisms
 
-Understanding protection mechanisms requires hands-on testing. Here's how to verify your password manager's behavior:
+Here's how to verify your password manager's behavior:
 
 ### Testing Domain Mismatch Protection
 
@@ -129,11 +126,9 @@ For developers and power users, consider these implementation strategies:
 
 ## Conclusion
 
-Password manager phishing protection varies substantially between providers. Bitwarden offers transparency through open-source implementation. 1Password provides deep browser integration with zero-knowledge verification. Dashlane uses real-time detection at some privacy cost. All three significantly reduce phishing risk compared to manual password entry.
+Password manager phishing protection varies substantially between providers. Bitwarden offers transparency through open-source implementation. 1Password provides deep browser integration with zero-knowledge verification. Dashlane uses real-time detection at some privacy cost.
 
-The best choice depends on your threat model. For maximum transparency, Bitwarden's open-source approach wins. For polished user experience with strong defaults, 1Password excels. For aggressive novel-phishing detection, Dashlane offers unique value.
-
-Regardless of choice, understand that password managers reduce—but don't eliminate—phishing risk. Combine them with hardware authentication, security training, and vigilant browsing habits for defense in depth.
+The best choice depends on your threat model: Bitwarden for maximum transparency, 1Password for polished defaults, Dashlane for novel-phishing detection. All three significantly reduce phishing risk but do not eliminate it — combine them with hardware authentication and security training for defense in depth.
 
 
 ## Related Reading

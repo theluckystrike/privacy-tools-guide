@@ -1,0 +1,236 @@
+---
+layout: default
+title: "Android ADB Commands for Removing Bloatware That Tracks."
+description: "A practical guide for developers and power users on using ADB commands to remove bloatware and trackers from Android devices. Includes essential."
+date: 2026-03-16
+author: theluckystrike
+permalink: /android-adb-commands-for-removing-bloatware-that-tracks-user/
+categories: [guides, security]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+---
+
+{% raw %}
+
+Android devices ship with numerous pre-installed applications that collect user data for advertising and analytics purposes. These tracking components often run in the background, consuming battery and transmitting sensitive information to third parties. Using Android Debug Bridge (ADB), power users and developers can remove or disable these tracking components without rooting the device.
+
+This guide provides practical ADB commands for identifying and removing bloatware that tracks user activity, along with automation scripts for batch operations.
+
+## Prerequisites
+
+Before proceeding, ensure you have ADB installed on your computer. You can install it via package managers:
+
+```bash
+# macOS
+brew install android-platform-tools
+
+# Ubuntu/Debian
+sudo apt install adb
+
+# Windows (using Chocolatey)
+choco install adb
+```
+
+Enable Developer Options on your Android device by tapping the build number in Settings > About Phone seven times. Then enable USB debugging in Settings > Developer Options.
+
+Connect your device via USB and verify the connection:
+
+```bash
+adb devices
+```
+
+The output should show your device serial number with "device" status. If you see "unauthorized," accept the debugging prompt on your device.
+
+## Identifying Tracking Packages
+
+First, list all installed packages to identify potential trackers:
+
+```bash
+adb shell pm list packages | grep -E "(google|facebook|amazon|microsoft|analytics|tracking)"
+```
+
+For a more comprehensive scan, export the full package list:
+
+```bash
+adb shell pm list packages > packages.txt
+```
+
+To find packages with specific keywords in their names:
+
+```bash
+adb shell pm list packages | grep -i "analytics"
+adb shell pm list packages | grep -i "tracker"
+adb shell pm list packages | grep -i "ads"
+```
+
+Get detailed information about a specific package:
+
+```bash
+adb shell dumpsys package com.google.android.gms | head -20
+```
+
+This command reveals the package's permissions, activities, and services. Pay attention to permissions like `READ_PHONE_STATE`, `ACCESS_FINE_LOCATION`, and `READ_CONTACTS` which indicate potential data collection.
+
+## Removing vs Disabling Packages
+
+Android provides two approaches for handling unwanted packages:
+
+**Disabling** a package makes it invisible and prevents it from running, but keeps it on the device for system restoration if needed:
+
+```bash
+adb shell pm disable-user --user 0 com.package.name
+```
+
+**Removing** a package completely deletes it from the system partition. This requires root access on most devices:
+
+```bash
+adb shell pm uninstall -k --user 0 com.package.name
+```
+
+For non-rooted devices, disabling is the recommended approach. Disabled packages can be re-enabled if problems occur:
+
+```bash
+adb shell pm enable com.package.name
+```
+
+## Common Tracking Packages to Consider
+
+The following packages are commonly associated with tracking and advertising. Verify each package's purpose on your specific device before disabling:
+
+```bash
+# Google Analytics and Firebase
+adb shell pm disable-user --user 0 com.google.android.gms
+adb shell pm disable-user --user 0 com.google.android.gsf
+
+# Facebook services (if pre-installed)
+adb shell pm disable-user --user 0 com.facebook.katana
+adb shell pm disable-user --user 0 com.facebook.services
+adb shell pm disable-user --user 0 com.facebook.system
+
+# Amazon bloatware
+adb shell pm disable-user --user 0 com.amazon.mShop.android
+adb shell pm disable-user --user 0 com.amazon.aa
+
+# Manufacturer tracking (example for Samsung)
+adb shell pm disable-user --user 0 com.samsung.android.lool
+adb shell pm disable-user --user 0 com.samsung.android.sm.devicesecurity
+```
+
+Exercise caution when disabling system-critical packages. If an app force-closes after disabling, re-enable it immediately:
+
+```bash
+adb shell pm enable com.package.name
+```
+
+## Batch Operations and Automation
+
+For managing multiple packages efficiently, create a shell script:
+
+```bash
+#!/bin/bash
+
+# File: remove_trackers.sh
+# Usage: ./remove_trackers.sh
+
+PACKAGES=(
+    "com.google.android.gms"
+    "com.facebook.katana"
+    "com.amazon.mShop.android"
+    "com.samsung.android.lool"
+)
+
+for pkg in "${PACKAGES[@]}"; do
+    echo "Disabling: $pkg"
+    adb shell pm disable-user --user 0 "$pkg"
+done
+
+echo "Tracking packages disabled successfully"
+```
+
+Run the script with:
+
+```bash
+chmod +x remove_trackers.sh
+./remove_trackers.sh
+```
+
+To create a backup script that stores disabled packages:
+
+```bash
+#!/bin/bash
+
+# Save currently disabled packages
+adb shell pm list packages -d > disabled_packages.txt
+
+# Restore packages from backup
+while IFS= read -r pkg; do
+    adb shell pm enable "$pkg"
+done < disabled_packages.txt
+```
+
+## Preventing Reinstallation
+
+Some packages reinstall themselves during system updates or when certain apps are opened. To prevent automatic re-enrollment:
+
+```bash
+# Clear package's data and cache
+adb shell pm clear com.package.name
+
+# Revoke runtime permissions (Android 6.0+)
+adb shell pm revoke com.package.name android.permission.READ_PHONE_STATE
+adb shell pm revoke com.package.name android.permission.ACCESS_FINE_LOCATION
+```
+
+For persistent blocking, consider using a VPN-based ad blocker or hosts file modification at the DNS level, which works without root access.
+
+## Verification and Monitoring
+
+After disabling tracking packages, verify the changes:
+
+```bash
+# List all disabled packages
+adb shell pm list packages -d
+
+# Check if a specific package is disabled
+adb shell pm dump com.package.name | grep -i "enabled"
+```
+
+Monitor network traffic to confirm data transmission has stopped. Use apps like "Network Logs" or tcpdump via ADB:
+
+```bash
+# Capture network traffic (requires root for full capture)
+adb shell tcpdump -i any -w /sdcard/capture.pcap
+adb pull /sdcard/capture.pcap
+```
+
+## Safety Recommendations
+
+Follow these guidelines when removing bloatware:
+
+1. **Research before disabling**: Verify each package's function to avoid breaking essential features
+2. **Create backups**: Export your disabled packages list before making changes
+3. **Test incrementally**: Disable one package at a time and test device functionality
+4. **Document changes**: Keep notes on what you disabled for future reference
+5. **Avoid critical system packages**: Do not disable packages related to calls, SMS, or core Android functionality
+
+If your device becomes unstable, perform a factory reset to restore all packages to their original state.
+
+## Conclusion
+
+ADB provides powerful capabilities for controlling pre-installed tracking software on Android devices. By strategically disabling bloatware packages, you can significantly reduce data collection, improve battery life, and regain control over your privacy. Remember to document your changes and proceed cautiously to maintain device stability.
+
+The techniques in this guide work on non-rooted devices and provide a middle ground between accepting manufacturer defaults and fully rooting your device for complete control.
+
+---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}

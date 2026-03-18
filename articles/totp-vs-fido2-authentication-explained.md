@@ -12,6 +12,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -122,10 +123,7 @@ The security properties comparison:
 
 TOTP remains appropriate for certain scenarios:
 
-- **Legacy compatibility**: Many services still use TOTP, and users have existing authenticator apps.
-- **Low implementation complexity**: Adding TOTP requires minimal infrastructure changes compared to FIDO2.
-- **No hardware requirements**: Users only need a smartphone or computer with an authenticator app.
-- **Backup options**: TOTP secrets can be stored in password managers, providing account recovery paths.
+Many services still use TOTP and users have existing authenticator apps, so legacy compatibility is a primary reason to choose it. Adding TOTP requires minimal infrastructure changes compared to FIDO2, and users only need a smartphone or authenticator app — no hardware purchase required. TOTP secrets can also be stored in password managers, providing account recovery paths that hardware-only solutions lack.
 
 For developers, TOTP libraries exist in every major language. Implementation typically involves storing a secret, generating QR codes for setup, and validating 6-digit codes.
 
@@ -133,9 +131,7 @@ For developers, TOTP libraries exist in every major language. Implementation typ
 
 FIDO2 is superior for high-security applications:
 
-- **Financial services**: Banks and payment platforms benefit from hardware-backed authentication.
-- **Enterprise environments**: Organizations requiring strong security baselines should consider FIDO2.
-- **Passwordless migration**: FIDO2 enables true passwordless authentication, improving both security and UX.
+Banks and payment platforms benefit from hardware-backed authentication. Organizations requiring strong security baselines should adopt FIDO2 as a standard. It also enables true passwordless authentication, improving both security and user experience.
 
 WebAuthn support is now broad—Chrome, Firefox, Safari, and Edge all implement the standard. However, FIDO2 requires more server-side infrastructure, including challenge storage, public key management, and attestation verification.
 
@@ -163,12 +159,6 @@ def verify_login(authentication):
 Many modern services implement both TOTP and FIDO2, allowing users to choose their preferred method. Administrators might require FIDO2 for privileged accounts while offering TOTP as a fallback for users without hardware authenticators.
 
 Progressive enrollment strategies work well: start users with TOTP, then prompt them to add FIDO2 credentials once familiar with the system. This reduces support burden while improving security for willing users.
-
-## Conclusion
-
-TOTP and FIDO2 serve different security needs. TOTP offers simplicity and broad compatibility at the cost of phishing susceptibility and shared-secret architecture. FIDO2 provides stronger security through hardware-backed keys and domain binding, but requires more implementation effort and user hardware.
-
-For developers building new systems, FIDO2 should be the default choice when possible. Reserve TOTP for compatibility requirements or situations where hardware authenticator adoption is impractical. The extra implementation complexity pays dividends in security posture and user trust.
 
 ---
 

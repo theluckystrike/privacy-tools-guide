@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -38,7 +39,7 @@ GDPR doesn't define legitimate interest precisely, but the ICO (Information Comm
 2. **Is the processing necessary?** — Can you achieve the same goal without processing personal data?
 3. **Balance against individual rights** — Does your interest override the person's right to privacy?
 
-Let's examine each component with developer-focused examples.
+Each component is examined below with developer-focused examples.
 
 ## Implementing the Assessment in Code
 
@@ -255,13 +256,9 @@ Store these records with your data processing agreements. Regulators will reques
 
 Integrate legitimate interest assessments into your development workflow:
 
-1. **Create assessment templates** for common processing activities
-2. **Version your assessments** as purposes or processing changes
-3. **Automate documentation** generation during deployment
-4. **Implement safeguards** as code-level configurations
-5. **Schedule reviews** — reassess periodically or when processing changes
+Create assessment templates for common processing activities, and version them as purposes or processing change. Automate documentation generation during deployment, implement safeguards as code-level configurations, and schedule periodic reviews to reassess when processing changes.
 
-By treating legitimate interest assessments as part of your development process rather than legal afterthought, you build more privacy-conscious applications while maintaining the flexibility this lawful basis provides.
+Treating legitimate interest assessments as part of your development process rather than a legal afterthought keeps the flexibility this lawful basis provides intact.
 
 Test your implementation by reviewing the ICO's legitimate interest checklist and ensure your documentation addresses each point before deploying new processing activities.
 

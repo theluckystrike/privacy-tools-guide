@@ -8,6 +8,7 @@ categories: [guides]
 reviewed: true
 score: 9
 intent-checked: true
+voice-checked: true
 ---
 
 # Guides — Complete Guide Hub

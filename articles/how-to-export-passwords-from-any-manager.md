@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -189,11 +190,7 @@ dcli export --format json > passwords.json
 
 Regardless of which manager you export from, handle the exported file carefully:
 
-- **Encrypt immediately**: Convert CSV exports to encrypted formats like GPG or use a password-protected ZIP
-- **Delete promptly**: Remove export files from disk after transferring to secure storage
-- **Use secure transfer**: Never send unencrypted password exports over unencrypted channels
-- **Rotate passwords**: After migration, generate new passwords for critical accounts
-- **Verify exports**: Check that your export contains all expected entries before deleting source data
+Encrypt the exported file immediately—convert CSV output to GPG or a password-protected ZIP before storing it anywhere. Remove the plaintext file from disk after transferring to secure storage, and never send an unencrypted password export over an unencrypted channel. After migrating, generate new passwords for critical accounts and confirm that the export contains all expected entries before deleting source data.
 
 ## Automating Regular Backups
 
@@ -228,11 +225,7 @@ Schedule this with cron for regular automated backups:
 0 2 * * * /path/to/backup-passwords.sh
 ```
 
-## Conclusion
-
-Exporting passwords from any manager is straightforward once you understand the available methods. Most modern password managers support some form of export, with CLI tools providing the most flexibility for developers and power users. Always handle exported data with appropriate care—these files contain the keys to your digital life.
-
-The key steps are: identify your password manager, use the appropriate CLI or web interface, choose between CSV or JSON format based on your needs, encrypt the export immediately, and verify the data before deleting source copies. With proper handling, you can safely migrate between managers or maintain encrypted backups without compromising security.
+Most modern password managers support CLI export, which gives the most control over output format and automation. Encrypt the file immediately after export and verify it contains all expected entries before removing source data.
 
 
 ## Related Reading

@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 9
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -54,10 +55,7 @@ The extension uses EasyList and EasyPrivacy filter lists by default, blocking ov
 
 Developed by the Electronic Frontier Foundation, Privacy Badger uses machine learning to detect and block invisible tracking pixels. Unlike uBlock Origin, which relies on predefined filter lists, Privacy Badger learns from your browsing behavior.
 
-**Key features:**
-- Automatically blocks invisible tracking pixels
-- No configuration required for basic use
-- Shows color-coded indicators for trackers (red = blocked, yellow = partially blocked, green = allowed)
+Privacy Badger automatically blocks invisible tracking pixels, needs no configuration for basic use, and uses color-coded indicators — red for blocked, yellow for partially blocked, green for allowed.
 
 Privacy Badger complements uBlock Origin well. While uBlock Origin uses predefined lists, Privacy Badger catches trackers that slip through, particularly first-party trackers that change domains dynamically.
 
@@ -77,12 +75,7 @@ The add-on also prevents tracking via the History API by adding `rel="noreferrer
 
 Decentraleyes simulates Content Delivery Networks locally by serving common JavaScript libraries from your browser instead of reaching out to third-party CDNs. This prevents CDN-based tracking and can improve page load times.
 
-**Supported libraries include:**
-- jQuery
-- React and ReactDOM
-- Vue.js
-- Bootstrap
-- And 100+ others
+Decentraleyes bundles jQuery, React, ReactDOM, Vue.js, Bootstrap, and 100+ other common libraries, serving them locally instead of fetching from CDNs.
 
 For developers, Decentraleyes reduces external requests and provides an additional layer of privacy by keeping your library requests local.
 
@@ -176,16 +169,9 @@ toolkit.telemetry.enabled = false
 
 Privacy add-ons can impact browser performance, but you can minimize this:
 
-1. **Use uBlock Origin's "lite" mode** for lower memory usage on resource-constrained systems
-2. **Disable unused filter lists** in uBlock Origin dashboard
-3. **Limit NoScript to necessary domains** rather than keeping it in default-deny mode everywhere
-4. **Use Firefox's built-in tracking protection** as a first line of defense, supplementing with specific extensions
+On resource-constrained systems, switch uBlock Origin to lite mode and disable unused filter lists in the dashboard. Keep NoScript limited to necessary domains rather than running it in global default-deny mode. Treat Firefox's built-in tracking protection as the first line of defense and layer extensions on top of it.
 
-## Conclusion
-
-These Firefox privacy add-ons provide defense in depth against tracking, fingerprinting, and data collection. For developers and power users, the combination of uBlock Origin, Privacy Badger, ClearURLs, Decentraleyes, NoScript, Multi-Account Containers, and Trace creates a robust privacy configuration.
-
-Remember that no browser or extension provides complete anonymity. Layer your defenses, understand each tool's capabilities, and regularly review your configuration as both threats and tools evolve.
+No extension stack provides complete anonymity — review your configuration when tools release major updates or new tracking techniques emerge.
 
 
 ## Related Reading

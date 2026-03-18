@@ -10,12 +10,13 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
 {% raw %}
 
-To use Briar offline, install the app from F-Droid or Google Play, enable Bluetooth or Wi-Fi Direct in Settings, and add contacts by scanning QR codes or exchanging contact links while physically nearby. Briar then forms an encrypted mesh network between devices, delivering messages without any internet connection. This guide walks through each step in detail, from installation to advanced configuration. For a technical deep dive into Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
+To use Briar offline, install the app from F-Droid or Google Play, enable Bluetooth or Wi-Fi Direct in Settings, and add contacts by scanning QR codes or exchanging contact links while physically nearby. Briar then forms an encrypted mesh network between devices, delivering messages without any internet connection. For a technical deep dive into Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
 
 ## Installation and Initial Setup
 
@@ -81,12 +82,7 @@ Configure Tor settings through Settings → Connectivity → Internet. You can s
 
 Understanding mesh propagation helps you optimize network topology for your use case. Briar uses a store-and-forward mechanism where each device stores messages until it can forward them to another connected device.
 
-The protocol ensures:
-
-- Message delivery even with intermittent connectivity
-- Automatic route discovery through periodic广播
-- Message deduplication at each hop
-- Forward secrecy through rotating session keys
+The protocol delivers messages even with intermittent connectivity, discovers routes automatically, deduplicates messages at each hop, and maintains forward secrecy through rotating session keys.
 
 When multiple devices form a mesh, messages propagate automatically. If you move through an area with Briar users, your device will sync with theirs, picking up any messages transmitted while you were out of range.
 
@@ -164,9 +160,7 @@ For large groups, periodic synchronization through Wi-Fi Direct provides better 
 
 ## Conclusion
 
-Briar's offline-first architecture provides robust communication capabilities independent of internet infrastructure. By using Bluetooth and Wi-Fi Direct mesh networking, it enables message propagation in scenarios where traditional apps fail completely. For developers and power users who need resilient, secure communication, understanding and utilizing these offline capabilities transforms Briar from a simple messaging app into a critical communication tool.
-
-The combination of strong encryption, decentralized architecture, and infrastructure-independent transport makes Briar uniquely valuable for specific use cases. Evaluate your requirements—if offline communication resilience matters for your scenario, Briar delivers where cloud-dependent alternatives cannot.
+Briar's offline-first architecture provides reliable communication independent of internet infrastructure. By using Bluetooth and Wi-Fi Direct mesh networking, it enables message propagation in scenarios where traditional apps fail completely. For developers and power users who need resilient, secure communication, understanding and using these offline capabilities transforms Briar from a simple messaging app into a critical communication tool.
 
 
 ## Related Reading

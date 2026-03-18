@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -303,7 +304,7 @@ docker logs prosody
 
 ## Conclusion
 
-Self-hosting Jitsi Meet provides a capable video conferencing solution with full data ownership. The Docker deployment approach simplifies maintenance while enabling customization for specific requirements. Start with basic authentication and gradually add features—recording, TURN servers, and custom branding—as your needs evolve.
+Start with basic authentication and gradually add features—recording, TURN servers, and custom branding—as your needs evolve.
 
 For teams requiring enterprise features like SSO integration or advanced analytics, Jitsi Meet supports these through additional configuration and complementary open-source tools. The core platform remains free and open, making it an excellent choice for privacy-conscious organizations.
 
