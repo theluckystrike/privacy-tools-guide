@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Create Separate Network Segment for Smart Home Isolating From Personal Devices"
+title: "How to Create Separate Network Segment for Smart Home."
 description: "A practical guide for developers and power users on creating isolated network segments to separate smart home devices from personal computers and phones."
 date: 2026-03-16
 author: theluckystrike
@@ -189,6 +189,12 @@ Another consideration is device provisioning. Many smart home devices require an
 Network segmentation remains one of the most effective defenses against compromised IoT devices. Whether you use VLANs on managed hardware, iptables rules on a Linux gateway, or DNS-level filtering with Pi-hole, the principle remains the same: minimize the attack surface by ensuring that a hacked lightbulb cannot reach your workstation or personal files.
 
 Start with the method that matches your hardware and skill level. Even basic isolation—separating your smart devices onto a guest network—provides substantial protection over a flat network where every device can communicate with every other device.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

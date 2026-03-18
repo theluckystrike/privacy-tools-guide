@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Run Zigbee2MQTT Locally for Smart Home Without Vendor Cloud Accounts"
+title: "How to Run Zigbee2MQTT Locally for Smart Home Without."
 description: "A practical guide for developers and power users to run Zigbee2MQTT locally, eliminating vendor lock-in and cloud dependencies for your smart home setup."
 date: 2026-03-16
 author: theluckystrike
@@ -226,6 +226,12 @@ Once running, explore these enhancements:
 - **Prometheus metrics**: Enable `/metrics` endpoint for monitoring
 
 Running Zigbee2MQTT locally transforms your smart home from vendor-dependent to self-hosted. You control the network, own the data, and eliminate cloud failure points. The initial setup takes about 30 minutes, and the resulting reliability and privacy benefits justify the effort.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
