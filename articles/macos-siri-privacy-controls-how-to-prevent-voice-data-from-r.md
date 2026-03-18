@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "macOS Siri Privacy Controls: How to Prevent Voice Data From Reaching Apple Servers"
-description: "A technical guide for developers and power users to disable Siri voice recording collection, prevent audio data from being sent to Apple, and configure macOS privacy settings for maximum voice assistant privacy."
+title: "macOS Siri Privacy Controls: How to Prevent Voice Data."
+description: "A technical guide for developers and power users to disable Siri voice recording collection, prevent audio data from being sent to Apple, and configure."
 date: 2026-03-16
 author: theluckystrike
 permalink: /macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/
@@ -158,6 +158,12 @@ Combining multiple approaches provides defense-in-depth for voice privacy:
 Controlling Siri voice data on macOS requires multiple configuration changes and ongoing vigilance. While complete elimination of Apple's data collection may require disabling Siri entirely or using alternative solutions, the methods outlined here provide significant privacy improvements for developers and power users who need voice assistant functionality with reduced data exposure.
 
 Evaluate your threat model and implement the controls that match your privacy requirements. For high-security environments, consider running privacy-focused voice processing entirely on local systems rather than relying on any cloud-based assistant.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

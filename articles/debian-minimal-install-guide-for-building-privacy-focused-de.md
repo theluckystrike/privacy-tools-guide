@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Debian Minimal Install Guide for Building Privacy Focused Desktop From Scratch 2026"
-description: "A practical guide to installing Debian with a minimal footprint and hardening it for privacy. Perfect for developers and power users who want full control over their system."
+title: "Debian Minimal Install Guide for Building Privacy."
+description: "A practical guide to installing Debian with a minimal footprint and hardening it for privacy. Perfect for developers and power users who want full."
 date: 2026-03-16
 author: theluckystrike
 permalink: /debian-minimal-install-guide-for-building-privacy-focused-de/
@@ -220,6 +220,12 @@ With a minimal Debian base, you have complete control over your computing enviro
 This foundation scales from a simple web-browsing machine to a full development workstation. Add programming languages through version managers, set up development environments as needed, and extend functionality through containers or virtual machines when isolation becomes necessary.
 
 The privacy you achieve comes from understanding your system rather than trusting defaults. Debian minimal install provides the canvas—you paint the picture.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

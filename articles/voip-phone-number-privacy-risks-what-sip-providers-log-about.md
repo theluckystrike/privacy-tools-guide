@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "VOIP Phone Number Privacy Risks: What SIP Providers Log About Your Calls"
-description: "A technical breakdown of the metadata and call logs that SIP/VOIP providers collect, with practical examples for developers evaluating privacy-conscious alternatives."
+title: "VOIP Phone Number Privacy Risks: What SIP Providers Log."
+description: "A technical breakdown of the metadata and call logs that SIP/VOIP providers collect, with practical examples for developers evaluating."
 date: 2026-03-16
 author: theluckystrike
 permalink: /voip-phone-number-privacy-risks-what-sip-providers-log-about/
@@ -213,6 +213,12 @@ Complete metadata elimination is difficult because some information exchange is 
 - **Disable detailed logging** in your SIP software while maintaining billing functionality
 
 The reality is that SIP was designed for functionality, not privacy. Understanding what your provider logs is the first step toward making informed decisions about the services you use and the systems you build.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Use MAC Address Randomization on Linux to Prevent WiFi Tracking"
-description: "A practical guide for developers and power users to implement MAC address randomization on Linux, preventing WiFi tracking while maintaining network connectivity."
+title: "How to Use MAC Address Randomization on Linux to Prevent."
+description: "A practical guide for developers and power users to implement MAC address randomization on Linux, preventing WiFi tracking while maintaining network."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-mac-address-randomization-on-linux-to-prevent-wif/
-categories: [privacy, security, linux, networking]
+categories: [troubleshooting]
 reviewed: true
 score: 8
 intent-checked: true
@@ -207,6 +207,12 @@ Randomized MAC addresses also break location-based services that rely on persist
 ## Conclusion
 
 Implementing MAC address randomization on Linux protects your physical privacy without requiring specialized hardware or complex configurations. NetworkManager provides the simplest integration for most users, while `macchanger` and systemd services offer advanced control for power users requiring frequent address rotation. Combined with other privacy practices, MAC randomization forms a practical layer of defense against the pervasive WiFi tracking present in modern environments.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

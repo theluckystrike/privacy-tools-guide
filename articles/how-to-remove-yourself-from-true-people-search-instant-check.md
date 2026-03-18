@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Remove Yourself from TruePeopleSearch, Instant Checkmate, Radaris & Data Broker Databases"
+title: "How to Remove Yourself from TruePeopleSearch, Instant."
 description: "A practical guide for developers and power users to remove personal data from people search sites. Includes automation scripts and API strategies."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-remove-yourself-from-true-people-search-instant-check/
-categories: [privacy, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -176,6 +176,12 @@ Removing your data from people search sites addresses immediate visibility but d
 Removing yourself from TruePeopleSearch, Instant Checkmate, Radaris, and similar data brokers requires upfront effort but significantly reduces your online exposure. The manual opt-out processes work but demand follow-up vigilance since these sites continuously repopulate their databases.
 
 For developers, building automation around tracking and verifying removals provides a scalable approach to managing your privacy. Combine technical solutions with ongoing monitoring to maintain control over your personal information in an era of ubiquitous data collection.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
