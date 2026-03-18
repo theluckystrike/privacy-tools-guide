@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Layer Privacy Protections: Encrypted DNS + Secure Messaging"
+title: "How to Layer Privacy Protections: Encrypted DNS + Secure."
 description: "Learn how combining encrypted DNS with secure messaging creates robust privacy protections for developers and power users."
 date: 2026-03-16
 author: theluckystrike
@@ -184,5 +184,11 @@ For most users, the privacy benefits outweigh the modest performance cost. Measu
 Layering encrypted DNS with secure messaging creates a privacy posture that addresses multiple attack vectors. Encrypted DNS prevents network observers from logging your browsing destinations, while secure messaging protects both the content and metadata of your communications.
 
 Start with encrypted DNS at the system level, add a reputable secure messaging app, and progressively add layers based on your threat model. Test your configuration regularly, and remember that privacy requires ongoing attention as both threats and tools evolve.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes to Cloud Servers"
+title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes."
 description: "A technical comparison of mobile keyboard privacy policies. Learn which keyboards send keystrokes to cloud servers and how to protect your data."
 date: 2026-03-16
 author: theluckystrike
@@ -152,6 +152,12 @@ Implement password fields with `inputType="textPassword"` to ensure keyboards tr
 Mobile keyboard privacy varies dramatically across providers. Apple's keyboard offers strong on-device processing by default, while GBoard and SwiftKey transmit data to their respective companies for cloud-based features. Open-source alternatives like OpenBoard provide verifiable local-only processing.
 
 For developers and power users, the best approach involves auditing your keyboard's network behavior, understanding what data leaves your device, and choosing a keyboard aligned with your threat model. The trade-off between prediction accuracy and privacy is personal, but informed choices require understanding exactly what happens when you type.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

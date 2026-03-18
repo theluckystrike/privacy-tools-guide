@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "iPhone Focus Modes for Privacy: How to Limit App Access by Context"
-description: "Learn how to leverage iPhone Focus Modes to enhance your privacy by limiting app access based on your current context. A guide for developers and power users."
+title: "iPhone Focus Modes for Privacy: How to Limit App Access."
+description: "Learn how to leverage iPhone Focus Modes to enhance your privacy by limiting app access based on your current context. A guide for developers and power."
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/
@@ -127,5 +127,11 @@ iPhone Focus Modes offer developers and power users a robust framework for conte
 The key is to think of Focus Modes not just as a notification filter, but as a comprehensive privacy management system that can adapt to your changing contexts throughout the day.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
