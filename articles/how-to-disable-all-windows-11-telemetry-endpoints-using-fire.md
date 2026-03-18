@@ -4,7 +4,7 @@ title: "How to Disable All Windows 11 Telemetry Endpoints Using Firewall Rules G
 description: "A comprehensive technical guide for developers and power users to block Windows 11 telemetry using Windows Firewall, including PowerShell scripts and practical examples."
 date: 2026-03-16
 author: theluckystrike
-permalink: /how-to-disable-all-windows-11-telemetry-endpoints-using-firewall-rules/
+permalink: /how-to-disable-all-windows-11-telemetry-endpoints-using-fire/
 categories: [guides]
 ---
 
