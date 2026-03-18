@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Bumble Beeline Data Privacy: Who Can See That You Swiped Right"
-description: "A technical deep-dive into Bumble Beeline privacy controls, data exposure risks, and what developers should understand about swipe visibility on the platform."
+title: "Bumble Beeline Data Privacy: Who Can See That You Swiped."
+description: "A technical deep-dive into Bumble Beeline privacy controls, data exposure risks, and what developers should understand about swipe visibility on the."
 date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
-categories: [privacy, dating-apps, security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -166,6 +166,12 @@ Your swipe data directly informs the algorithm determining which profiles appear
 - **Data exports** let you verify what Bumble stores about your behavior
 
 For developers building privacy tools or users evaluating dating platform risks, understanding these asymmetric visibility patterns helps assess actual versus perceived privacy. The Beeline feature creates value through information asymmetry—but that asymmetry primarily benefits paying subscribers, not necessarily privacy.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

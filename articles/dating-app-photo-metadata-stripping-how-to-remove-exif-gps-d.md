@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Dating App Photo Metadata Stripping: How to Remove EXIF GPS Data Before Uploading"
-description: "Learn how to strip EXIF metadata and GPS coordinates from photos before uploading to dating apps. Practical examples using Python, command-line tools, and mobile solutions for privacy-conscious users."
+title: "Dating App Photo Metadata Stripping: How to Remove EXIF."
+description: "Learn how to strip EXIF metadata and GPS coordinates from photos before uploading to dating apps. Practical examples using Python, command-line tools."
 date: 2026-03-16
 author: theluckystrike
 permalink: /dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/
-categories: [privacy, security]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -235,6 +235,12 @@ This script automatically processes any new JPEG files added to the `./uploads` 
 Removing EXIF metadata before uploading photos to dating apps is a straightforward but essential privacy practice. Whether you prefer Python scripts, command-line tools, or mobile apps, the key is making metadata stripping a consistent part of your photo-sharing workflow.
 
 The methods outlined here give you control over what information accompanies your images. Location data should remain private—strip it before sharing, not after.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
