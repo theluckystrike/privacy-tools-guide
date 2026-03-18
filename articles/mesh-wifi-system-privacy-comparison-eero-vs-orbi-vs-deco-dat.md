@@ -5,6 +5,10 @@ description: "A technical breakdown of data collection practices across Amazon E
 date: 2026-03-16
 author: theluckystrike
 permalink: /mesh-wifi-system-privacy-comparison-eero-vs-orbi-vs-deco-dat/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Mesh WiFi systems have become the default choice for home networking, offering seamless coverage across larger properties. However, these always-connected devices collect varying amounts of user data, and understanding these differences matters for privacy-conscious developers and power users. This comparison examines data collection practices across Amazon Eero, Netgear Orbi, and TP-Link Deco as of early 2026.

@@ -5,7 +5,7 @@ description: "A technical breakdown of data collection practices for Google Nest
 date: 2026-03-16
 author: theluckystrike
 permalink: /google-nest-hub-data-collection-what-information-google-capt/
-categories: [privacy, security, iot]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

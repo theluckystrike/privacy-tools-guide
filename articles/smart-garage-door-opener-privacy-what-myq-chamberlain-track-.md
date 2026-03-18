@@ -5,6 +5,10 @@ description: "A technical deep dive into the data collection practices of MyQ an
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-garage-door-opener-privacy-what-myq-chamberlain-track-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

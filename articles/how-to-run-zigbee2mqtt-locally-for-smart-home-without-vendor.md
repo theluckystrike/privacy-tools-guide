@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to run Zigbee2MQT
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/
-categories: [guides, smart-home, privacy]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
