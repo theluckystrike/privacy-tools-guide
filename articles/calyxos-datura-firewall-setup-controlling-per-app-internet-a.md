@@ -6,7 +6,7 @@ description: "Learn how to configure the Datura firewall in CalyxOS to control p
 date: 2026-03-16
 author: theluckystrike
 permalink: /calyxos-datura-firewall-setup-controlling-per-app-internet-a/
-categories: [privacy, security, android]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

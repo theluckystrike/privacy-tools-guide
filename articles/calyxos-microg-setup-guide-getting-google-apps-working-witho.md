@@ -5,7 +5,7 @@ description: "A practical guide to setting up microG on CalyxOS for running Goog
 date: 2026-03-16
 author: theluckystrike
 permalink: /calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/
-categories: [guides, privacy, android]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

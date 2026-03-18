@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users transitioning fro
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-migrate-from-windows-to-linux-without-losing-workflow/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

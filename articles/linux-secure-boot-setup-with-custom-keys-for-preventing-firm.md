@@ -5,6 +5,10 @@ description: "Learn how to set up Secure Boot on Linux with custom keys to prote
 date: 2026-03-16
 author: theluckystrike
 permalink: /linux-secure-boot-setup-with-custom-keys-for-preventing-firm/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

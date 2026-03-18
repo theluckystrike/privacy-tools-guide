@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on setting up Tai
 date: 2026-03-16
 author: theluckystrike
 permalink: /tails-persistent-storage-setup-guide-what-to-save-and-what-s/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

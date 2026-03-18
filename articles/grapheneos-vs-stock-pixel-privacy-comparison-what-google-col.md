@@ -6,7 +6,7 @@ description: "A technical comparison of GrapheneOS and stock Pixel Android for d
 date: 2026-03-16
 author: theluckystrike
 permalink: /grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/
-categories: [comparisons, privacy, android]
+categories: [comparisons, security, guides]
 intent-checked: true
 voice-checked: true
 ---

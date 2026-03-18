@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on implementing V
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/
-categories: [guides, security, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

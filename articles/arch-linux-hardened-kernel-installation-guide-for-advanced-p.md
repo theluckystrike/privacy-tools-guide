@@ -5,7 +5,7 @@ description: "A comprehensive guide to installing and configuring the Linux hard
 date: 2026-03-16
 author: theluckystrike
 permalink: /arch-linux-hardened-kernel-installation-guide-for-advanced-p/
-categories: [linux, privacy, security, arch-linux]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

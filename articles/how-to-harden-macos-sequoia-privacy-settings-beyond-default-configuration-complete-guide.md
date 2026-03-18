@@ -5,7 +5,7 @@ description: "Master macOS Sequoia privacy hardening beyond defaults. Configure 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/
-categories: [guides, security, macos]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

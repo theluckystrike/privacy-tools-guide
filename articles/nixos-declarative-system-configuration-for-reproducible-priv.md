@@ -6,7 +6,7 @@ description: "Learn how to use NixOS to create reproducible, privacy-hardened Li
 date: 2026-03-16
 author: theluckystrike
 permalink: /nixos-declarative-system-configuration-for-reproducible-priv/
-categories: [guides, linux, security, privacy]
+categories: [guides, security]
 ---
 
 {% raw %}

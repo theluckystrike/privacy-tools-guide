@@ -5,6 +5,10 @@ description: "A comprehensive guide to configuring SecureBoot and full disk encr
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Setting up SecureBoot alongside full disk encryption on Fedora Linux provides defense-in-depth protection for your system. SecureBoot ensures that only digitally signed bootloaders and kernels can execute, while encryption protects your data even if physical access is compromised. This guide walks you through configuring both technologies on Fedora Linux.
