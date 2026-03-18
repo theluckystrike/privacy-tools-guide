@@ -8,6 +8,7 @@ permalink: /email-provider-jurisdiction-comparison-which-countries-prote/
 categories: [privacy, security, email]
 reviewed: true
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

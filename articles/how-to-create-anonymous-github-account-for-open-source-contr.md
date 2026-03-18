@@ -9,6 +9,7 @@ permalink: /how-to-create-anonymous-github-account-for-open-source-contr/
 categories: [guides, security]
 reviewed: true
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
