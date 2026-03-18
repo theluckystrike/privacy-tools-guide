@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Set Up VLAN Isolation for IoT Devices on Home Network 2026 Guide"
-description: "A practical guide for developers and power users on implementing VLAN isolation to separate IoT devices from main network using managed switches and routers."
+title: "How to Set Up VLAN Isolation for IoT Devices on Home."
+description: "A practical guide for developers and power users on implementing VLAN isolation to separate IoT devices from main network using managed switches and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/
@@ -207,6 +207,12 @@ These tools integrate with your VLAN architecture without requiring fundamental 
 ## Conclusion
 
 VLAN isolation transforms your home network from a flat, easily-penetrated structure into a segmented environment where compromised IoT devices cannot reach your sensitive data. The initial configuration takes some effort, but the security benefit justifies the investment. Start with two VLANs—trusted and IoT—and expand as your needs grow.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

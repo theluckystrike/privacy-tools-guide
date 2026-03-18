@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "CalyxOS MicroG Setup Guide: Getting Google Apps Working Without Google Services"
-description: "A practical guide to setting up microG on CalyxOS for running Google apps without Google Play Services. Includes installation steps, signature spoofing, and troubleshooting."
+title: "CalyxOS MicroG Setup Guide: Getting Google Apps Working."
+description: "A practical guide to setting up microG on CalyxOS for running Google apps without Google Play Services. Includes installation steps, signature."
 date: 2026-03-16
 author: theluckystrike
 permalink: /calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/
@@ -198,6 +198,12 @@ This provides granular control over which applications can use Google's infrastr
 Begin by enabling microG through CalyxOS's built-in installer, then configure signature spoofing. Install Aurora Store and try a few applications you regularly use. Test push notifications with UnifiedPush-compatible apps, and adjust your configuration based on your specific requirements.
 
 The privacy-utility balance depends on your threat model and use cases. MicroG enables running most Google-dependent applications while significantly reducing data collection compared to stock Android. As you use the system, you'll identify which apps work seamlessly and which require workarounds.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
