@@ -5,6 +5,10 @@ description: "Learn technical methods and developer tools to monitor when someon
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-someone-is-searching-for-your-personal-info/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

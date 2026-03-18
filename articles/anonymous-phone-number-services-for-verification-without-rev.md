@@ -5,6 +5,10 @@ description: "A comprehensive technical guide to anonymous phone number services
 date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-phone-number-services-for-verification-without-rev/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

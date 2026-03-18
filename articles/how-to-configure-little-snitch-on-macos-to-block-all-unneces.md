@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to configure Litt
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

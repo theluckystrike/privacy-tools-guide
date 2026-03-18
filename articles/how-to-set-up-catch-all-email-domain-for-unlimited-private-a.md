@@ -5,7 +5,7 @@ description: "A practical guide to configuring catch-all email domains for creat
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/
-categories: [guides, privacy, email]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

@@ -6,7 +6,7 @@ description: "Learn technical methods to detect, identify, and block email track
 date: 2026-03-16
 author: theluckystrike
 permalink: /email-tracking-pixel-detection-how-to-identify-and-block-spy/
-categories: [privacy, security, email]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

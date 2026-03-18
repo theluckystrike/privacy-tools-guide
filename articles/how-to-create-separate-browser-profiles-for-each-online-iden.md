@@ -5,6 +5,10 @@ description: "Learn how to create and manage separate browser profiles to compar
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

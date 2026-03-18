@@ -5,6 +5,10 @@ description: "Learn how data brokers build identity graphs to track your online 
 date: 2026-03-16
 author: theluckystrike
 permalink: /identity-graph-what-data-brokers-know-about-you-and-how-they/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

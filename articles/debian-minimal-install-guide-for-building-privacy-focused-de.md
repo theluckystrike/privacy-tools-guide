@@ -5,7 +5,7 @@ description: "A practical guide to installing Debian with a minimal footprint an
 date: 2026-03-16
 author: theluckystrike
 permalink: /debian-minimal-install-guide-for-building-privacy-focused-de/
-categories: [guides, privacy, linux]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

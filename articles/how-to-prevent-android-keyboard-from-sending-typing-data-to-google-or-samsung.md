@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to disable keyboa
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/
-categories: [guides, privacy, android]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

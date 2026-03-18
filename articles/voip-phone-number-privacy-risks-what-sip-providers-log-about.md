@@ -5,7 +5,7 @@ description: "A technical breakdown of the metadata and call logs that SIP/VOIP 
 date: 2026-03-16
 author: theluckystrike
 permalink: /voip-phone-number-privacy-risks-what-sip-providers-log-about/
-categories: [guides, security, voip]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

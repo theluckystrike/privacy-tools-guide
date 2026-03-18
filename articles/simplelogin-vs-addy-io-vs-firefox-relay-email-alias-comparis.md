@@ -5,7 +5,7 @@ description: "A technical comparison of SimpleLogin, Addy.io, and Firefox Relay 
 date: 2026-03-16
 author: theluckystrike
 permalink: /simplelogin-vs-addy-io-vs-firefox-relay-email-alias-comparis/
-categories: [guides, privacy, email]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
