@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Qubes OS Compartmentalized Workflow Guide: Separating Work and Personal in 2026"
+title: "Qubes OS Compartmentalized Workflow Guide: Separating."
 description: "A practical guide to implementing a compartmentalized workflow in Qubes OS, isolating work and personal activities with proven security boundaries."
 date: 2026-03-18
 author: theluckystrike
@@ -282,3 +282,9 @@ Start with three qubes (work, personal, disposable) and expand as your workflow 
 The key is consistent application: every time you handle sensitive data, verify you're in the correct qube with the appropriate network configuration. Security through isolation only works when the boundaries remain intact.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
