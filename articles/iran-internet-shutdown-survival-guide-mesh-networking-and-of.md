@@ -11,11 +11,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 # Iran Internet Shutdown Survival Guide: Mesh Networking and Offline Communication Tools 2026
 
-Internet shutdowns have become a recurring tool for suppressing communication during times of unrest. For developers and technical users in Iran, preparing for network disruptions requires understanding decentralized communication technologies that operate without reliance on centralized infrastructure. This guide covers practical mesh networking solutions and offline communication tools that can maintain connectivity when traditional internet access is blocked or throttled.
+When internet shutdowns occur in Iran, mesh networking and offline communication tools enable connectivity without relying on centralized infrastructure. Partial mesh networks using Wi-Fi Direct and Bluetooth Low Energy offer the best practical balance, with applications like Briar providing encrypted peer-to-peer messaging that syncs automatically when devices reconnect. For developers and technical users, understanding these decentralized technologies is essential for maintaining communication during network disruptions.
 
 ## Understanding Mesh Networking Fundamentals
 

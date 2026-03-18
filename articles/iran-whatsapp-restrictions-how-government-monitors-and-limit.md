@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-As internet censorship evolves globally, Iran stands as a case study in sophisticated application-level traffic filtering. WhatsApp, despite being one of the most encrypted messaging platforms available, faces significant restrictions within Iranian borders. This article examines the technical mechanisms behind these limitations, how deep packet inspection (DPI) identifies and throttles traffic, and what developers and power users can implement to understand or work around these restrictions.
+Iran's government monitors and restricts WhatsApp through flow-based Deep Packet Inspection that analyzes traffic signatures, TLS handshakes, and SNI values rather than just IP blocking. The system identifies WhatsApp's characteristic port patterns, packet size distributions, and timing intervals to throttle or block connections, making traditional VPNs less effective. Developers and power users can counteract this through SNI obfuscation, traffic shaping to disguise packet patterns, and stealth VPN configurations that hide encrypted tunnel signatures.
 
 ## Understanding Iran's Traffic Management Infrastructure
 

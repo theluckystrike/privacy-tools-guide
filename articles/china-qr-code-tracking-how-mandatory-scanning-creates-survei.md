@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-China's mandatory QR code tracking system represents one of the most comprehensive examples of location surveillance implemented at national scale. For developers and power users concerned with privacy, understanding how these systems function helps you make informed decisions about digital hygiene and movement privacy.
+China's mandatory QR code system creates comprehensive surveillance trails of citizens' movements through centralized tracking of venue check-ins, payment transactions, and location registrations. Each scan generates permanent records linking identity to location, timestamp, and even GPS coordinates in integrated government databases. For developers and power users in China, understanding this architecture is critical for assessing privacy risks and implementing effective countermeasures.
 
 ## The Architecture of QR Code Surveillance
 
