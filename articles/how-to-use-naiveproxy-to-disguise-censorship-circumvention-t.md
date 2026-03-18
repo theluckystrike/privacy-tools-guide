@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use NaiveProxy to Disguise Censorship Circumvention Traffic as Normal Browsing"
 description: "A practical guide for developers and power users on using NaiveProxy to disguise censorship circumvention traffic as normal web browsing."
