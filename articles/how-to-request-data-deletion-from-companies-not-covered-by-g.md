@@ -5,6 +5,10 @@ description: "Learn practical methods to request data deletion from companies th
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-data-deletion-from-companies-not-covered-by-g/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

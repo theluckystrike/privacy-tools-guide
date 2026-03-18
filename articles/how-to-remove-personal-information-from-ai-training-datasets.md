@@ -6,7 +6,7 @@ description: "A practical guide for developers on identifying, removing, and pre
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-remove-personal-information-from-ai-training-datasets/
-categories: [guides, privacy, ai]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

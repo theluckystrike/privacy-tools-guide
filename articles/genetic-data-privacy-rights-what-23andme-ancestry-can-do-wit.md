@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users on genetic data p
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

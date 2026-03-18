@@ -6,7 +6,7 @@ description: "Learn who owns the data your connected car collects about driving 
 date: 2026-03-16
 author: theluckystrike
 permalink: /vehicle-data-privacy-who-owns-the-data-your-connected-car-co/
-categories: [privacy, security, automotive]
+categories: [security, guides]
 reviewed: true
 intent-checked: true
 voice-checked: true

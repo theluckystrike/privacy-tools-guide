@@ -5,7 +5,7 @@ description: "A practical guide to anonymous prepaid SIM card purchasing in 2026
 date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-prepaid-sim-card-countries-where-you-can-buy-without-id-2026/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

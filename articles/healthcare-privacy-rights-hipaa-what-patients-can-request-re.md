@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on patient rights
 date: 2026-03-16
 author: theluckystrike
 permalink: /healthcare-privacy-rights-hipaa-what-patients-can-request-re/
-categories: [privacy, healthcare]
+categories: [security, guides]
 ---
 
 {% raw %}

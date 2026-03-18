@@ -6,7 +6,7 @@ description: "Learn practical techniques to discover if your email address has b
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-your-email-address-has-been-sold-to-marketi/
-categories: [privacy, security, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

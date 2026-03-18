@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on automating dat
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-broker-opt-out-automation-tools-that-continuously-remov/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

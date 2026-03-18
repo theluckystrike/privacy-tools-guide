@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on phone search r
 date: 2026-03-16
 author: theluckystrike
 permalink: /border-crossing-phone-search-rights-what-customs-agents-can-/
-categories: [privacy, security, travel]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

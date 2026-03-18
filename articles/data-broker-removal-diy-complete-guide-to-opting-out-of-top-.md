@@ -5,7 +5,7 @@ description: "A comprehensive guide for developers and power users on removing p
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-broker-removal-diy-complete-guide-to-opting-out-of-top-/
-categories: [guides, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

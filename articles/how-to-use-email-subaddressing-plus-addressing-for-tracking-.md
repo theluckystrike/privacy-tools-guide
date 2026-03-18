@@ -5,7 +5,7 @@ description: "A practical guide to leveraging email subaddressing and addressing
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

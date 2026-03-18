@@ -5,6 +5,10 @@ description: "Learn what rights parents have under COPPA and what companies must
 date: 2026-03-16
 author: theluckystrike
 permalink: /children-online-privacy-protection-act-coppa-rights-what-par/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

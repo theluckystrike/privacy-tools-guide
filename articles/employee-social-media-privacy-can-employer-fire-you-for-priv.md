@@ -5,6 +5,10 @@ description: "A comprehensive legal guide for developers and power users on empl
 date: 2026-03-16
 author: theluckystrike
 permalink: /employee-social-media-privacy-can-employer-fire-you-for-priv/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

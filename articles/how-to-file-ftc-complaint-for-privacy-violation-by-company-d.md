@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on filing FTC com
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-file-ftc-complaint-for-privacy-violation-by-company-d/
-categories: [guides, privacy, legal]
+categories: [guides, security, enterprise]
 reviewed: true
 score: 8
 intent-checked: true

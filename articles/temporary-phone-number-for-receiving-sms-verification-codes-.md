@@ -6,7 +6,7 @@ description: "A practical guide to using temporary phone numbers for SMS verific
 date: 2026-03-16
 author: theluckystrike
 permalink: /temporary-phone-number-for-receiving-sms-verification-codes-/
-categories: [privacy, security, tools]
+categories: [security, integrations]
 reviewed: false
 intent-checked: true
 voice-checked: false

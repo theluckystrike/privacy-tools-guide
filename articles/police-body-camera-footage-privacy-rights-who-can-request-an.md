@@ -5,6 +5,10 @@ description: "A comprehensive guide explaining who can request police body camer
 date: 2026-03-16
 author: theluckystrike
 permalink: /police-body-camera-footage-privacy-rights-who-can-request-an/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Police body cameras have become ubiquitous across law enforcement agencies, generating millions of hours of footage annually. Understanding who can request these recordings and the privacy implications involved is essential for developers building transparency tools, journalists investigating incidents, and citizens exercising their rights.

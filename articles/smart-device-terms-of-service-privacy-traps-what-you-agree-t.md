@@ -6,7 +6,7 @@ description: "Discover the hidden privacy risks in smart device terms of service
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-device-terms-of-service-privacy-traps-what-you-agree-t/
-categories: [privacy, security, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

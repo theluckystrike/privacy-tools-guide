@@ -5,7 +5,7 @@ description: "An in-depth analysis of the Eufy camera cloud upload controversy, 
 date: 2026-03-18
 author: theluckystrike
 permalink: /eufy-camera-cloud-upload-controversy-what-local-storage/
-categories: [privacy, smart-home, security-cameras]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
