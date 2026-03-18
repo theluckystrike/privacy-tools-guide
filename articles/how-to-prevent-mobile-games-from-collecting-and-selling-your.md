@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users on stopping mobil
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-mobile-games-from-collecting-and-selling-your/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

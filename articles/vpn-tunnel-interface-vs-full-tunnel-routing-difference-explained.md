@@ -8,7 +8,7 @@ description: "Understand the difference between VPN tunnel interface and full tu
 date: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/
-categories: [guides, vpn, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

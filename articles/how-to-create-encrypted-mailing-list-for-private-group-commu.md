@@ -8,7 +8,7 @@ description: "A practical guide to setting up encrypted mailing lists for privat
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-encrypted-mailing-list-for-private-group-commu/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

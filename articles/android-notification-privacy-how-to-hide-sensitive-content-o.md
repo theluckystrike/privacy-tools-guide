@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on hiding sensiti
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-notification-privacy-how-to-hide-sensitive-content-o/
-categories: [guides, security, android]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

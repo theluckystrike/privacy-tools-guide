@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on post-quantum c
 date: 2026-03-16
 author: theluckystrike
 permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

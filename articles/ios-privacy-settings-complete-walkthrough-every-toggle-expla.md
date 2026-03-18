@@ -6,7 +6,7 @@ description: "A comprehensive technical guide to iOS privacy settings covering L
 date: 2026-03-16
 author: theluckystrike
 permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-expla/
-categories: [guides, ios, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

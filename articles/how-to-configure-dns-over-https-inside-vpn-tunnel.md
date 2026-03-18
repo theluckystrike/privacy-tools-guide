@@ -5,7 +5,7 @@ description: A comprehensive technical guide to setting up DNS over HTTPS within
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-configure-dns-over-https-inside-vpn-tunnel/
-categories: [guides, security, privacy, vpn, networking]
+categories: [guides, security]
 ---
 
 {% raw %}

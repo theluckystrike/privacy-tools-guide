@@ -5,6 +5,10 @@ description: "A practical guide and template for creating GDPR-compliant data pr
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-processing-agreement-template-for-third-party-vendors-g/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

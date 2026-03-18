@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on using ADB comm
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-adb-commands-for-removing-bloatware-that-tracks-user/
-categories: [guides, security, android]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

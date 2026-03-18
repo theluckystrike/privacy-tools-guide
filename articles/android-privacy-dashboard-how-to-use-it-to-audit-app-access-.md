@@ -8,7 +8,7 @@ description: "Master Android's Privacy Dashboard for comprehensive app permissio
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-privacy-dashboard-how-to-use-it-to-audit-app-access-/
-categories: [guides, android, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

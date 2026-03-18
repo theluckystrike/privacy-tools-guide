@@ -5,7 +5,7 @@ description: "A technical guide explaining Android sensor permissions for accele
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-sensor-permissions-how-accelerometer-gyroscope-can-b/
-categories: [guides, security, android]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

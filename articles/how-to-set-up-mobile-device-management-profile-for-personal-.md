@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on configuring MD
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-mobile-device-management-profile-for-personal-/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

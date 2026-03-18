@@ -6,6 +6,10 @@ description: "A technical deep-dive into mobile fitness tracker privacy. Learn w
 date: 2026-03-16
 author: theluckystrike
 permalink: /mobile-fitness-tracker-privacy-what-health-apps-share-with-t/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

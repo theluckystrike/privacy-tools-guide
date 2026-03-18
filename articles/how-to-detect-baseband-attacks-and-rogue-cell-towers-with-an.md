@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on detecting base
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-baseband-attacks-and-rogue-cell-towers-with-an/
-categories: [security, android, privacy]
+categories: [security, guides]
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "A comprehensive guide for developers and power users to configure 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-private-dns-on-android-for-system-wide-trac/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # How to Configure Private DNS on Android for System-Wide Tracker Blocking

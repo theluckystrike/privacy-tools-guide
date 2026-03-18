@@ -5,7 +5,7 @@ description: "A technical deep dive into VPN logging practices, explaining what 
 date: 2026-03-18
 author: theluckystrike
 permalink: /what-vpn-logs-actually-mean-no-log-policy-explained-technically/
-categories: [guides, privacy, vpn]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

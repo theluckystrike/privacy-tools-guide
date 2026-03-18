@@ -5,7 +5,7 @@ description: "A comprehensive technical guide for developers and power users on 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/
-categories: [privacy, android, security]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

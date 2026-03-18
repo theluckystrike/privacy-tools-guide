@@ -5,7 +5,7 @@ description: "A comprehensive technical guide for detecting and removing stalker
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-and-remove-stalkerware-from-android-phone-comp/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

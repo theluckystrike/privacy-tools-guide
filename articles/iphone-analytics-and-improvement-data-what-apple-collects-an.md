@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users explaining what i
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-analytics-and-improvement-data-what-apple-collects-an/
-categories: [privacy, iphone, apple, security]
+categories: [security, guides]
 tags: [ios-privacy, analytics, data-collection, iphone-settings]
 reviewed: true
 score: 8

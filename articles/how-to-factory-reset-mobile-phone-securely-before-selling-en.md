@@ -5,7 +5,7 @@ description: "A comprehensive technical guide for developers and power users on 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-factory-reset-mobile-phone-securely-before-selling-en/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

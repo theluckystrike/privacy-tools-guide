@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to route email th
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/
-categories: [privacy, security, tor]
+categories: [security, guides]
 ---
 
 {% raw %}

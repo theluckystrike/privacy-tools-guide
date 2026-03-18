@@ -6,6 +6,10 @@ description: "A technical deep-dive into Apple's communication safety features, 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ios-communication-safety-features-parental-controls-versus-p/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,7 +5,7 @@ description: "Learn how to optimize VPN MTU settings to reduce fragmentation, im
 date: 2026-03-18
 author: theluckystrike
 permalink: /vpn-mtu-settings-optimization-for-faster-connection-speed-guide/
-categories: [guides, vpn, security, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

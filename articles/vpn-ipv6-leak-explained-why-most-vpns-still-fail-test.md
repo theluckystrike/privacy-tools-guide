@@ -6,7 +6,7 @@ description: "Discover why IPv6 leaks happen even when using a VPN, how to test 
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/
-categories: [guides, vpn, privacy]
+categories: [guides, security]
 reviewed: true
 score: 0
 intent-checked: false

@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to create encrypt
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

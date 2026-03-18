@@ -5,7 +5,7 @@ description: "Learn how Android hardware-backed attestation keys work, what devi
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-attestation-key-privacy-what-hardware-backed-keys-re/
-categories: [security, privacy, android]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

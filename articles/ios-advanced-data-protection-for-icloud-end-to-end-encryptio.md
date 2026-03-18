@@ -5,7 +5,7 @@ description: "A comprehensive guide to enabling and configuring iOS Advanced Dat
 date: 2026-03-16
 author: theluckystrike
 permalink: /ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/
-categories: [guides, security, encryption]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

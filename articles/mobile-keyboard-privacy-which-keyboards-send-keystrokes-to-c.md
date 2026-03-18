@@ -5,6 +5,10 @@ description: "A technical comparison of mobile keyboard privacy policies. Learn 
 date: 2026-03-16
 author: theluckystrike
 permalink: /mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

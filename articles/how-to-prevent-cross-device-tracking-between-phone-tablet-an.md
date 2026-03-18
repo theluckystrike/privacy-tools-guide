@@ -6,7 +6,7 @@ description: "A technical guide for preventing cross-device tracking across your
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-cross-device-tracking-between-phone-tablet-an/
-categories: [privacy, security, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

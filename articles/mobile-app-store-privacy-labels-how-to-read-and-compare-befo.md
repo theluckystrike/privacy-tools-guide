@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on understanding 
 date: 2026-03-16
 author: theluckystrike
 permalink: /mobile-app-store-privacy-labels-how-to-read-and-compare-befo/
-categories: [guides, privacy, mobile-security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

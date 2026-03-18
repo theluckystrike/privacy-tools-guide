@@ -5,7 +5,7 @@ description: "A practical step-by-step guide for developers and power users to v
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/
-categories: [guides, security, email]
+categories: [guides, security]
 ---
 
 {% raw %}
