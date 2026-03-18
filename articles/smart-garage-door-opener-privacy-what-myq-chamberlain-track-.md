@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Smart Garage Door Opener Privacy: What MyQ and Chamberlain Track About Your Schedule"
-description: "A technical deep dive into the data collection practices of MyQ and Chamberlain smart garage door openers, including API analysis and privacy implications for developers."
+title: "Smart Garage Door Opener Privacy: What MyQ and."
+description: "A technical deep dive into the data collection practices of MyQ and Chamberlain smart garage door openers, including API analysis and privacy."
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-garage-door-opener-privacy-what-myq-chamberlain-track-/
@@ -129,6 +129,12 @@ Smart garage door openers like MyQ collect detailed schedule information that re
 The key takeaway is awareness: knowing what data your connected devices collect enables informed decisions about which services to use and how to configure them for optimal privacy.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

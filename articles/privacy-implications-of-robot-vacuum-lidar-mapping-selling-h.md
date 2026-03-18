@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Privacy Implications of Robot Vacuum LIDAR Mapping: Selling Home Layout Data Concerns"
+title: "Privacy Implications of Robot Vacuum LIDAR Mapping."
 description: "Explore how robot vacuums with LIDAR mapping collect, store, and potentially sell your home layout data. Technical analysis for developers and power users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/
-categories: [privacy, iot, security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -157,6 +157,12 @@ For developers building IoT applications, the ethical handling of spatial data s
 The fundamental question remains: who controls the digital representation of your home? As robot vacuums become more capable, ensuring that spatial intelligence serves users rather than external commercial interests becomes an essential frontier in consumer privacy.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

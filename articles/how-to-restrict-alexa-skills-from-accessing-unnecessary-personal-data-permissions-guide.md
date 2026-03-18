@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Restrict Alexa Skills From Accessing Unnecessary Personal Data: Permissions Guide"
-description: "A practical guide for developers and power users to restrict Alexa skills from accessing unnecessary personal data. Learn permission management, privacy controls, and best practices."
+title: "How to Restrict Alexa Skills From Accessing Unnecessary."
+description: "A practical guide for developers and power users to restrict Alexa skills from accessing unnecessary personal data. Learn permission management."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/
@@ -168,4 +168,10 @@ These settings apply globally across all skills and provide baseline privacy pro
 Managing Alexa skill permissions requires ongoing attention rather than a one-time configuration. As you install new skills and existing ones update, permission requirements change. Establishing a regular review habit keeps your data access surface minimized while maintaining useful functionality.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

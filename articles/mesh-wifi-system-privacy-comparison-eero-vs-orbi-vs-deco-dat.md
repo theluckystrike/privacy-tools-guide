@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Mesh WiFi System Privacy Comparison: Eero vs Orbi vs Deco Data Collection"
+title: "Mesh WiFi System Privacy Comparison: Eero vs Orbi vs."
 description: "A technical breakdown of data collection practices across Amazon Eero, Netgear Orbi, and TP-Link Deco mesh WiFi systems for privacy-conscious users."
 date: 2026-03-16
 author: theluckystrike
@@ -149,5 +149,11 @@ For developers specifically, the local API availability on Deco systems enables 
 The choice ultimately depends on your threat model. If you prioritize seamless integration and accept data sharing in exchange for polished UX, Eero remains compelling. For privacy-first configurations requiring local control and minimal cloud dependency, Deco offers the strongest foundation.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

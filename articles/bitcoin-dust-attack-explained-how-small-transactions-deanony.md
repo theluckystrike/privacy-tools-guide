@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Bitcoin Dust Attack Explained: How Small Transactions Deanonymize Your Wallet Activity"
-description: "A technical deep-dive into Bitcoin dust attacks, exploring how tiny transactions can be used to track and deanonymize your wallet activity. Includes detection code and mitigation strategies for developers and power users."
+title: "Bitcoin Dust Attack Explained: How Small Transactions."
+description: "A technical deep-dive into Bitcoin dust attacks, exploring how tiny transactions can be used to track and deanonymize your wallet activity. Includes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /bitcoin-dust-attack-explained-how-small-transactions-deanony/
@@ -206,6 +206,12 @@ The key defenses are: awareness of what enters your wallet, careful control over
 For developers building Bitcoin applications, incorporating dust detection and prevention into your wallet software protects your users. The techniques described here can be integrated directly into wallet software to provide automated protection against these privacy attacks.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
