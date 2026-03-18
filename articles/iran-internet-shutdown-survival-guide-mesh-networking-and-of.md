@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 # Iran Internet Shutdown Survival Guide: Mesh Networking and Offline Communication Tools 2026
