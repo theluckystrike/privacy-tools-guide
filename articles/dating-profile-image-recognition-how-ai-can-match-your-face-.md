@@ -6,7 +6,7 @@ description: "A technical guide to understanding facial recognition technology u
 date: 2026-03-16
 author: theluckystrike
 permalink: /dating-profile-image-recognition-how-ai-can-match-your-face-/
-categories: [privacy, security, ai]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

@@ -6,7 +6,7 @@ description: "Learn how ad networks track users across dating apps like Tinder a
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /dating-app-cross-platform-tracking-how-ad-networks-follow-yo/
-categories: [privacy, security]
+categories: [security]
 ---
 
 {% raw %}
