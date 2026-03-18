@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /guerrilla-mail-vs-temp-mail-vs-mailinator-which-disposable-e/
 reviewed: true
 score: 8
-categories: [comparisons, privacy, email]
+categories: [comparisons, security, guides]
 intent-checked: true
 voice-checked: true
 ---
