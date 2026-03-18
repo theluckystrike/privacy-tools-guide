@@ -6,6 +6,10 @@ description: "A technical guide to mesh networking and offline communication too
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /iran-internet-shutdown-survival-guide-mesh-networking-and-of/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Iran Internet Shutdown Survival Guide: Mesh Networking and Offline Communication Tools 2026

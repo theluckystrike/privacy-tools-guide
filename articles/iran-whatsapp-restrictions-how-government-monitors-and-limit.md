@@ -5,6 +5,10 @@ description: "A technical deep-dive into Iran's WhatsApp restrictions, censorshi
 date: 2026-03-16
 author: theluckystrike
 permalink: /iran-whatsapp-restrictions-how-government-monitors-and-limit/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

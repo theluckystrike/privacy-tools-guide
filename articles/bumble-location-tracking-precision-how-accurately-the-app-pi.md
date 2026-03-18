@@ -6,7 +6,7 @@ description: "A technical breakdown of Bumble's location tracking precision, pri
 date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-location-tracking-precision-how-accurately-the-app-pi/
-categories: [privacy, mobile-apps, location]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users on VPN usage risk
 date: 2026-03-16
 author: theluckystrike
 permalink: /iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
