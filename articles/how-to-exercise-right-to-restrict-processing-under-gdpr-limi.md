@@ -6,7 +6,7 @@ description: "Learn how to exercise your right to restrict processing under GDPR
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-exercise-right-to-restrict-processing-under-gdpr-limi/
-categories: [guides, privacy, gdpr]
+categories: [guides, security, enterprise]
 reviewed: true
 score: 8
 intent-checked: true

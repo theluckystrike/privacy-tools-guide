@@ -6,7 +6,7 @@ description: "A technical breakdown of smart city surveillance systems, the data
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-city-surveillance-privacy-rights-what-data-municipal-c/
-categories: [privacy, security, surveillance]
+categories: [security, guides]
 ---
 
 {% raw %}

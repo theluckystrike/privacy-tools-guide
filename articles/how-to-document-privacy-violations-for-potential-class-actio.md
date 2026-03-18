@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users on collecting and
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-document-privacy-violations-for-potential-class-actio/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

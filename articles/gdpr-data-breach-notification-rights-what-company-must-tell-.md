@@ -6,7 +6,7 @@ description: "Learn your GDPR data breach notification rights. Discover what com
 date: 2026-03-16
 author: theluckystrike
 permalink: /gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/
-categories: [guides, privacy, gdpr]
+categories: [guides, security, enterprise]
 reviewed: true
 score: 8
 intent-checked: true

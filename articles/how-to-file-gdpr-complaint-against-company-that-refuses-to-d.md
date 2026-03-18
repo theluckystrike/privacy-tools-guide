@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users on exercising GDP
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-file-gdpr-complaint-against-company-that-refuses-to-d/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

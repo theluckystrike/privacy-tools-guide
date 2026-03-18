@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users understanding ren
 date: 2026-03-16
 author: theluckystrike
 permalink: /rental-application-privacy-what-information-landlords-can-le/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "A practical developer guide to GDPR controller and processor roles
 date: 2026-03-16
 author: theluckystrike
 permalink: /gdpr-controller-vs-processor-obligations-understanding-your-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

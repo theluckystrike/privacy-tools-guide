@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users on leveraging sta
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-state-attorney-general-office-to-enforce-privacy-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
