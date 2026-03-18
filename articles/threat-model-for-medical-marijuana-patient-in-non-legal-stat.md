@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Protect medical marijuana use in non-legal states by separating identities (different email, phone, payment methods), disabling location sharing, stripping GPS from photos, using encrypted messaging, and limiting dispensary communications. Store documentation separately from your main identity, and understand that legal protections may not apply even with out-of-state recommendations.

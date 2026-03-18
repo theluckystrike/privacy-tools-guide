@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessments and end-to-end encryption as the primary mechanism for EU-US data transfers. Evaluate whether U.S. government access risks—particularly FISA and Executive Order surveillance—require additional technical safeguards like field-level encryption or pseudonymization. Developers must conduct transfer assessments that specifically address PRISM/Schrems II risks and implement compensatory controls that ensure data protection equivalent to EU standards.

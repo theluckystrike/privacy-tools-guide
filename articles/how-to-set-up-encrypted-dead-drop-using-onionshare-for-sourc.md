@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Set up an OnionShare dead drop by installing the application, creating a receive-only mode, and hosting it as a Tor onion service that accepts file uploads over encrypted channels. Sources access the service via a one-time URL over Tor, submit documents, and disconnect without leaving identifying information. OnionShare never logs IP addresses, doesn't require accounts, and automatically deletes files after retrieval—creating truly anonymous submission channels for developers and power users protecting sources.

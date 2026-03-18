@@ -9,6 +9,7 @@ permalink: /smart-blinds-and-shades-privacy-do-motorized-window-covers-r/
 categories: [security]
 reviewed: true
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

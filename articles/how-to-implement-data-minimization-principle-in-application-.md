@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Implement data minimization by collecting only fields directly required for declared purposes—remove optional fields from forms, use temporary identifiers instead of email addresses, and aggregate data instead of storing individual records. Each data field you collect creates compliance liability under GDPR that deletion requests, breach notifications, and audits must address. Developers should design database schemas around purpose-specific tables, implement field-level access controls, and regularly audit stored data against business justification.

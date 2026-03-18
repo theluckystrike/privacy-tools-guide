@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Protect election observer witness testimony using Signal for encrypted communications, exiftool to strip GPS from photos, encrypted storage containers (VeraCrypt) for case notes, and Tor for communications. Never store unencrypted witness identities with evidence, and use separate devices for different operations to compartmentalize data.

@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Choose Shadowsocks if you need lower latency (5-15% overhead) and lightweight obfuscation for everyday browsing and streaming. Choose stunnel if you need maximum detection resistance on highly restrictive networks, since its TLS wrapping is indistinguishable from regular HTTPS traffic -- though at a higher latency cost (10-25% overhead). Both tools mask VPN traffic to bypass deep packet inspection, but they serve different threat models and performance requirements.

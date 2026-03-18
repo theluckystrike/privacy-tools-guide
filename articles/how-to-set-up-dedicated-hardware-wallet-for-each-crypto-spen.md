@@ -9,6 +9,7 @@ permalink: /how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/
 categories: [guides, security]
 reviewed: true
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

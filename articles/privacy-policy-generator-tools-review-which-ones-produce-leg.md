@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use privacy policy generators that produce GDPR/CCPA-compliant output covering data collection, third-party sharing, retention, and user rights. Evaluate generators by output completeness, not marketing—open-source options give maximum control, while hosted generators automate updates but require auditing for regulatory changes.

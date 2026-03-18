@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Set a PIN or security code on your carrier account, replace SMS-based two-factor authentication with hardware security keys or authenticator apps, and enable SIM swap protection that requires in-person verification for number transfers. These three steps block the primary attack path where criminals social-engineer your carrier into transferring your phone number to their SIM card, giving them access to every SMS-based verification code you receive. For developers and power users managing sensitive accounts, this guide walks through each safeguard along with advanced protections and recovery procedures.
