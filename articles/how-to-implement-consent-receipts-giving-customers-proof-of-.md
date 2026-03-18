@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Consent receipts are structured records that prove a customer has made specific privacy choices. Unlike generic privacy policies, consent receipts capture the exact preferences a user has selected, when they made those choices, and what they agreed to. This article shows you how to build a consent receipt system that gives customers verifiable proof of their privacy decisions.
+Consent receipts provide cryptographically signed records of user privacy choices, including exactly which purposes and data categories were consented to, when consent was given, and by whom. This creates irrefutable audit trails for regulators while demonstrating good faith compliance to users. Developers should implement receipts as hashed records stored in customer accounts with asymmetric signature verification, ensuring neither customers nor companies can later alter consent history.
 
 ## Why Consent Receipts Matter
 

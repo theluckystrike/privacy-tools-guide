@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-The invalidation of the EU-US Privacy Shield framework created significant challenges for organizations transferring personal data between the United States and European Union. Following the Schrems II decision by the EU Court of Justice, companies must implement alternative mechanisms to ensure legal data transfers. This guide provides developers and technical teams with practical approaches to handling cross-border data transfers while maintaining compliance.
+Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessments and end-to-end encryption as the primary mechanism for EU-US data transfers. Evaluate whether U.S. government access risks—particularly FISA and Executive Order surveillance—require additional technical safeguards like field-level encryption or pseudonymization. Developers must conduct transfer assessments that specifically address PRISM/Schrems II risks and implement compensatory controls that ensure data protection equivalent to EU standards.
 
 ## Understanding the Current Legal Framework
 

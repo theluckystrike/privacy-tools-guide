@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-DeltaChat transforms your existing email account into a secure messaging platform without requiring you to maintain a separate server or switch to a proprietary chat network. This guide walks you through setting up DeltaChat for end-to-end encrypted communication, targeting developers and power users who value privacy and control.
+Set up DeltaChat by installing the application, adding your existing email account, and enabling Autocrypt encryption to create end-to-end encrypted messaging over email infrastructure. DeltaChat works with any IMAP-compatible email provider without server setup, making it ideal for developers who want encryption without infrastructure maintenance. The email-based architecture means you retain access through any email client and avoid vendor lock-in, though metadata (subject lines, sender/recipient addresses) remains visible to email providers.
 
 ## Understanding DeltaChat's Architecture
 

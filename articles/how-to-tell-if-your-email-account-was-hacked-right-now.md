@@ -6,11 +6,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Your email is the gateway to your entire digital life. When hackers gain access, they can reset passwords across all your accounts, steal sensitive data, and even commit identity theft. The scary part? Many people don't realize they've been hacked until significant damage is done.
-
-This guide walks you through every warning sign—from obvious red flags to subtle clues—and gives you immediate action steps to take if your account has been compromised.
+Check for email compromise immediately by verifying unfamiliar login locations in account activity logs, reviewing password reset emails you didn't send, and checking connected apps and recovery email addresses. If compromised, change your password from a different device, enable two-factor authentication, disconnect suspicious sessions, and reset passwords on critical accounts (banking, cryptocurrency, cloud storage). Email compromise is a gateway to your entire digital identity, so treating it as a critical emergency is essential.
 
 ## 🔴 Critical Warning Signs Your Email Has Been Hacked
 

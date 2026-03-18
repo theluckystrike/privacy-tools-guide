@@ -9,11 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Email communication travels through numerous network nodes before reaching its destination. Without encryption, anyone along this path can intercept and read your messages. Configuring Postfix with mandatory TLS encryption ensures that all email traffic between your server and remote mail servers is encrypted, protecting sensitive data from eavesdropping and tampering.
-
-This guide walks you through hardening your Postfix installation to require TLS encryption for all outgoing and incoming connections.
+Configure Postfix with mandatory TLS encryption using `smtp_tls_mandatory_ciphers = high` and enforcing certificate verification via `smtp_tls_verify_cert_match = hostname`. This prevents downgrade attacks and man-in-the-middle interception of email traffic between mail servers. Proper TLS setup requires valid certificates, cipher hardening, and monitoring authentication failures to detect tampering attempts.
 
 ## Prerequisites
 

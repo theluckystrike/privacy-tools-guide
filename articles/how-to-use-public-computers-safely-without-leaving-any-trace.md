@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Public computers at libraries, hotels, and coworking spaces pose significant privacy risks. Every keystroke, file access, and browser session can be logged, cached, or recovered by subsequent users or system administrators. This guide provides actionable techniques for developers and power users to minimize their digital footprint on shared machines.
+Use private browsing modes to avoid history/cache, connect through VPN or Tor to prevent IP tracking, disable autocompletion and password saving, and manually clear browser data before leaving. Use Tails OS or Whonix virtual machines if handling sensitive credentials on shared machines to ensure no data persists. Avoid keyboard logging by using onscreen keyboards when possible, assume screenshots are captured by surveillance software, and never access accounts containing sensitive data on public computers unless absolutely necessary—operational security is more effective than technical defenses alone.
 
 ## Understanding the Threat Model
 

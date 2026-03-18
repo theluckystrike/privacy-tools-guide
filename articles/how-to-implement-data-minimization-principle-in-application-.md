@@ -9,11 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Data minimization stands as a foundational principle in privacy-conscious application development. Under GDPR Article 5(1)(c), organizations must collect only personal data that is adequate, relevant, and limited to what is necessary for the purposes for which it is processed. This requirement extends beyond legal compliance—it reduces your attack surface, lowers storage costs, simplifies data subject requests, and builds user trust.
-
-This guide provides developers with practical strategies for implementing data minimization in application design, covering database schema decisions, API design patterns, and code-level techniques with concrete examples.
+Implement data minimization by collecting only fields directly required for declared purposes—remove optional fields from forms, use temporary identifiers instead of email addresses, and aggregate data instead of storing individual records. Each data field you collect creates compliance liability under GDPR that deletion requests, breach notifications, and audits must address. Developers should design database schemas around purpose-specific tables, implement field-level access controls, and regularly audit stored data against business justification.
 
 ## The Core Concept: Collecting Less, Not More
 
