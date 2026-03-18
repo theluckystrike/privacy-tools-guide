@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on exercising you
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-algorithmic-transparency-from-companies-makin/
-categories: [guides, privacy, rights]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

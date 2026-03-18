@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on exercising opt
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-data-sharing-under-connecticut-data-privac/
-categories: [guides, privacy, ctdpa]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

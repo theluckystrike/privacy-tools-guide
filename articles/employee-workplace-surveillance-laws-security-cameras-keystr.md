@@ -6,7 +6,7 @@ description: "A comprehensive guide to employee workplace surveillance laws acro
 date: 2026-03-16
 author: theluckystrike
 permalink: /employee-workplace-surveillance-laws-security-cameras-keystr/
-categories: [privacy, legal, security]
+categories: [security, guides]
 ---
 
 {% raw %}

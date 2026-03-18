@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /school-surveillance-technology-privacy-student-rights-against/
 reviewed: true
 score: 8
-categories: [privacy, surveillance, rights]
+categories: [security, guides]
 intent-checked: true
 voice-checked: true
 ---
