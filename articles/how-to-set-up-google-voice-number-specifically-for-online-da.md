@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on setting up Goo
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-google-voice-number-specifically-for-online-da/
-categories: [guides, privacy]
+categories: [guides, security]
 intent-checked: true
 voice-checked: true
 reviewed: true

@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users to configure a pr
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-privacy-focused-phone-specifically-for-dating-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

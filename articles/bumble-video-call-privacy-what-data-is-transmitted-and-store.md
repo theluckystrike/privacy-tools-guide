@@ -6,7 +6,7 @@ description: "A technical breakdown of Bumble's video call architecture, data tr
 date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-video-call-privacy-what-data-is-transmitted-and-store/
-categories: [privacy, security, dating-apps]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

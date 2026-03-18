@@ -5,7 +5,7 @@ description: "Learn privacy-first techniques to verify dating profile authentici
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-dating-profile-authenticity-without-revealing-/
-categories: [privacy, security]
+categories: [security]
 reviewed: true
 intent-checked: true
 voice-checked: true

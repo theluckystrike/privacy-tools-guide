@@ -6,7 +6,7 @@ description: "Master Feeld privacy settings to protect relationship status from 
 date: 2026-03-16
 author: theluckystrike
 permalink: /feeld-privacy-settings-for-couples-and-alternative-dating-pr/
-categories: [privacy, dating-apps, security]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
