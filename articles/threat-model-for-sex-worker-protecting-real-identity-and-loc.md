@@ -9,13 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Sex workers face unique and serious threats that require specialized privacy strategies. Beyond typical data protection, the stakes include personal safety, legal protection, and professional boundary preservation. This guide provides a threat modeling framework specifically designed for protecting real identity and physical location.
-
-Understanding your adversary is the foundation of effective security. This article assumes you're protecting against doxxing attempts, harassment campaigns, legal discovery, and physical threat actors. The techniques here apply to anyone requiring strong identity and location privacy.
+Separate your professional and personal identities completely: use dedicated devices, distinct email addresses, separate phone numbers, and different payment methods for work. Enable VPN/Tor for location protection, use data brokers removal services, compartmentalize devices to prevent cross-contamination, and maintain strict operational security to prevent doxxing and physical threats.
 
 ## Threat Landscape Assessment
 

@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Protecting sensitive case file information is a critical responsibility for private investigators. Whether you're handling surveillance data, witness statements, or intelligence reports, the digital tools you use must prioritize confidentiality and security. This guide covers practical privacy tools and security practices specifically designed for investigative professionals.
+Protect investigative case files using VeraCrypt encrypted volumes, GPG for encrypted communications, and encrypted USB drives for offline storage. Store surveillance photos with GPS stripped, segregate client data from investigation notes, implement role-based access controls, and maintain audit logs of all case file access.
 
 ## Understanding the Threat Landscape
 

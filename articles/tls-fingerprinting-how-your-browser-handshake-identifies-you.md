@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-TLS fingerprinting is a technique that identifies clients and browsers by analyzing the cryptographic parameters they send during the TLS handshake. Even though the actual data is encrypted, the initial handshake reveals distinctive patterns that can be used to track users, detect bots, and block malicious traffic. Understanding how this works helps developers building privacy-focused applications and security professionals defending against automated threats.
+TLS fingerprinting (JA3) identifies browsers and clients by analyzing the TLS handshake parameters they send—cipher suites, supported curves, extensions, and signature algorithms create a unique fingerprint. Defend against fingerprinting by using Tor Browser, rotating cipher suite order with privacy extensions, or using anti-fingerprinting tools that randomize TLS parameters.
 
 ## How TLS Fingerprinting Works
 

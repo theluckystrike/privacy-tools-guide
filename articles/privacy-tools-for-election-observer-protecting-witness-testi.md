@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Election observers and their witnesses face unique data protection challenges. When documenting electoral irregularities, protecting the identity and testimony of sources becomes as critical as the evidence itself. This guide covers privacy tools and techniques for developers and power users building infrastructure for election observation missions.
+Protect election observer witness testimony using Signal for encrypted communications, exiftool to strip GPS from photos, encrypted storage containers (VeraCrypt) for case notes, and Tor for communications. Never store unencrypted witness identities with evidence, and use separate devices for different operations to compartmentalize data.
 
 ## Understanding the Threat Model
 

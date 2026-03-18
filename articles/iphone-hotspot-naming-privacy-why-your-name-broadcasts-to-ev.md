@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When you enable the personal hotspot on your iPhone, your device announces itself to nearby devices using a name that may reveal personal information. This behavior, built into iOS, broadcasts your chosen device name through Wi-Fi probe requests and Bonjour/mDNS service announcements. For privacy-conscious developers and power users, understanding this mechanism is essential for maintaining operational security.
+Your iPhone hotspot broadcasts your personal device name (e.g., "John's iPhone") through Wi-Fi probe requests and Bonjour/mDNS announcements to nearby devices, revealing personal information. Change your device name in Settings > General > About to use a generic name like "iPhone" or remove identifying information.
 
 ## How iPhone Hotspot Naming Works
 

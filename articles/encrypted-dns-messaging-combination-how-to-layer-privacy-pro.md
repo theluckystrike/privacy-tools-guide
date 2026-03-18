@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Modern privacy requires defense in depth. Relying on a single protection mechanism leaves gaps that adversaries can exploit. By combining encrypted DNS with secure messaging protocols, you create layered privacy that protects both your browsing metadata and your communications. This approach gives developers and power users actionable controls without sacrificing usability.
+Combine encrypted DNS with secure messaging (Signal, Matrix) to create defense-in-depth privacy protection. Encrypted DNS (DoH/DoT) hides your browsing destinations from network observers, while secure messaging protects communication content and metadata—together addressing different threat vectors for complete privacy.
 
 ## Understanding the Privacy Gaps
 

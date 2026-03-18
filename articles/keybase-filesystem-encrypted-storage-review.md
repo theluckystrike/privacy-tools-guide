@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Keybase Filesystem (KBFS) Review: Secure Encrypted Storage for Teams
 
-If you're searching for a way to store sensitive files with end-to-end encryption that both individuals and teams can use, Keybase Filesystem (KBFS) deserves your attention. This review examines how KBFS delivers secure, zero-knowledge encrypted storage that integrates seamlessly with your existing workflow.
+Keybase Filesystem (KBFS) provides end-to-end encrypted storage where only you and authorized team members hold the encryption keys—your files sync to Keybase's servers encrypted and inaccessible even to the provider. Mount KBFS as a regular filesystem and work with familiar tools while your data stays protected with zero-knowledge encryption.
 
 ## What is Keybase Filesystem?
 

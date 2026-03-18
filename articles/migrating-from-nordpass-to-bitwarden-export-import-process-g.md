@@ -10,12 +10,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Migrating From NordPass to Bitwarden: Export/Import Process Guide
 
-Switching password managers requires careful attention to data integrity, especially when moving between ecosystems with different feature sets. This guide covers the technical process of exporting your vault from NordPass and importing it into Bitwarden, with methods suitable for both GUI users and developers who prefer CLI automation.
+Migrate from NordPass to Bitwarden by exporting to CSV through the desktop app or CLI, then importing into Bitwarden using the web interface or bitwarden CLI tool. Both methods preserve passwords, folders, and custom fields, though some NordPass-specific features require manual remapping.
 
 ## Understanding Export Formats
 

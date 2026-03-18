@@ -9,15 +9,14 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
 # Mobile Keyboard Privacy: Which Keyboards Send Keystrokes to Cloud Servers
 
-Every keystroke you type on a mobile device passes through your keyboard application. Some keyboards process everything locally on your device, while others transmit data to remote servers for prediction, autocorrection, and personalization. For developers and security-conscious users, understanding these differences is essential for protecting sensitive information.
-
-This guide examines how major mobile keyboards handle your keystroke data and provides practical methods to verify their behavior.
+GBoard sends keystrokes to Google servers for predictions and emoji suggestions. SwiftKey, Gboard, and many keyboards transmit keystroke data to cloud services for personalization. Use locally-processing keyboards (Heliboard, OpenBoard) or analyze network traffic with Burp Suite to verify no data leaves your device before choosing.
 
 ## Understanding Keyboard Data Transmission
 

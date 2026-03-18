@@ -9,13 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Journalists operating in hostile countries face some of the most sophisticated adversaries in the threat landscape. State-level actors, advanced persistent threats, and coordinated surveillance campaigns target journalists who report on sensitive topics. Building effective digital security infrastructure requires a systematic approach to threat modeling that accounts for the unique constraints and risks these individuals face.
-
-This guide provides a technical framework for assessing threats and implementing layered defenses for high-risk journalists in hostile environments.
+Assess threats for journalists in hostile countries using STRIDE framework to identify state surveillance, APTs, and local network attacks. Implement compartmentalized devices, Tor for communications, encrypted offline storage for source documents, Signal for contact encryption, and SIM-swap protection for accounts.
 
 ## Understanding the Adversary
 

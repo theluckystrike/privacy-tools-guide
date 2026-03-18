@@ -10,11 +10,13 @@ author: theluckystrike
 permalink: /privacy-tools-for-social-worker-handling-sensitive-case-file/
 categories: [guides, security]
 reviewed: true
+score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Social workers handle some of the most sensitive personal information in any profession—case notes, client identities, family histories, and mandatory reports. Protecting this data isn't just about professional ethics; it's a legal requirement under HIPAA, state confidentiality laws, and agency policies. This guide covers practical privacy tools and workflows that help social workers secure digital case files without sacrificing accessibility or efficiency.
+Secure social worker case files using encrypted DMG containers (macOS) or LUKS encryption (Linux) for case storage, Signal for client communications, and secure agency workflows. Use automatic screen lock, separate work and personal devices, implement access controls per client sensitivity, and maintain audit logs of all data access for HIPAA and state law compliance.
 
 ## Understanding the Privacy Stakes
 

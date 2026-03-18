@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Apple's iOS includes extensive tracking mechanisms that collect user data across apps, services, and system features. For developers and power users who value privacy, understanding and disabling these tracking vectors is essential. This guide provides step-by-step instructions for turning off all tracking features on iPhone running iOS 19.
+Disable all iOS tracking by turning off the advertising identifier (IDFA), location services, Siri analytics, significant locations, and cross-site cookie tracking in Safari. Use Settings > Privacy & Security to methodically restrict each tracking vector: disable apps' location access, turn off location-based suggestions and alerts, and clear significant location history.
 
 ## System-Wide Tracking Disables
 

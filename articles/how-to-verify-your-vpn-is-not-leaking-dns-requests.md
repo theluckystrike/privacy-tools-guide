@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-A VPN is supposed to be your digital shield—encrypting your traffic and hiding your browsing activity from prying eyes. But there's a critical flaw that can undermine your entire privacy setup: DNS leaks. When your VPN leaks DNS requests, your ISP (or anyone monitoring your network) can see exactly which websites you're visiting, even though your actual traffic is encrypted. This guide walks you through understanding DNS leaks, detecting them, and fixing them.
+Verify your VPN isn't leaking DNS requests using online test tools like dnsleaktest.com—if you see your ISP's servers in results instead of your VPN provider's, your browsing history is exposed. Fix IPv6 leaks, misconfigured split tunneling, and default gateway issues to ensure complete DNS protection.
 
 ## What Exactly is a DNS Leak?
 

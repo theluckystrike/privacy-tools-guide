@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Accountants handling client financial data face unique privacy challenges. Unlike general privacy users, you carry legal obligations under frameworks like GLBA, GDPR, and state privacy laws. Your threat model includes client data interception, unauthorized access to financial records, and compliance violations that can result in severe penalties. This guide provides a practical privacy setup targeting developers and power users who need actionable configurations.
+Secure client financial data with full-disk encryption (FileVault, LUKS), use password managers with audit trails, and restrict network access to known secure servers. Implement segregated networks, disable USB ports, set automatic screen lock (5 minutes), use encrypted email (PGP), and establish clear data retention/deletion policies to comply with GLBA and state laws.
 
 ## Threat Model for Accountants
 

@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Building a privacy engineering team requires understanding the unique blend of technical depth, regulatory knowledge, and practical implementation skills that privacy engineers must possess. This guide provides a structured approach to evaluating candidates, with practical examples and assessment techniques tailored for developers and technical hiring managers.
+Hire privacy engineers with cryptography and data handling expertise, GDPR/privacy regulation knowledge, and demonstrated experience building privacy-respecting systems. Evaluate candidates on encryption implementation, privacy-by-design principles, threat modeling, and ability to implement differential privacy or data minimization patterns.
 
 ## Core Technical Competencies
 

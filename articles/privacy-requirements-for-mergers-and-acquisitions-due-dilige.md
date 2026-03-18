@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When companies pursue mergers and acquisitions, the due diligence process often focuses heavily on financial health, intellectual property, and operational efficiency. However, privacy compliance and data handling practices have become critical evaluation criteria that can make or break a deal. Understanding the privacy requirements for mergers and acquisitions due diligence helps developers and technical teams prepare for integration challenges while avoiding costly regulatory penalties.
+In M&A due diligence, conduct privacy assessments to identify data protection liabilities, undisclosed breaches, and non-compliant processing practices. Analyze database schemas for PII, trace data flows to third parties, verify encryption in transit/at rest, and document retention policies to avoid "successor liability" for privacy violations inherited from the target company.
 
 ## Understanding the Privacy Stakes in M&A Transactions
 

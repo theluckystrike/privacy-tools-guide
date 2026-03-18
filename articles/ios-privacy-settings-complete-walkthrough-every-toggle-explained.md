@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Apple's iOS includes dozens of privacy and security settings scattered across the Settings app. Understanding each toggle helps you make informed decisions about your data. This comprehensive walkthrough explains every privacy-related setting on iPhone and iPad, with practical guidance on what each does and recommended configurations.
+Review every iOS privacy setting with step-by-step walkthrough: disable tracking (advertising ID), restrict location services (turn off location-based suggestions and significant locations), block cross-site tracking in Safari, manage app permissions, and review app privacy reports to see which apps access your data.
 
 ## Privacy & Security Overview
 

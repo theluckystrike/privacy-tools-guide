@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Using medical marijuana legally in one state while residing in a prohibition state creates unique security challenges. This threat model addresses digital privacy, physical security, and legal risk mitigation for patients navigating this complex situation.
+Protect medical marijuana use in non-legal states by separating identities (different email, phone, payment methods), disabling location sharing, stripping GPS from photos, using encrypted messaging, and limiting dispensary communications. Store documentation separately from your main identity, and understand that legal protections may not apply even with out-of-state recommendations.
 
 ## Understanding Your Threat Landscape
 

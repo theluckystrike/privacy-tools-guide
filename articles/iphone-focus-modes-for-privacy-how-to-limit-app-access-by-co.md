@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-iPhone Focus Modes provide a powerful mechanism for managing notifications and app access based on your current activity. While most users think of Focus Modes as a way to reduce distractions, they also serve as a valuable privacy tool for developers and power users who want granular control over which apps can send notifications or access certain features during specific contexts.
+Use iPhone Focus Modes to limit app notifications and access by context—create custom modes that allow only specific apps to alert you during work, home, or public settings. Automate Focus Mode switching by location or time to prevent sensitive apps from revealing information in inappropriate contexts.
 
 ## Understanding Focus Mode Privacy Controls
 

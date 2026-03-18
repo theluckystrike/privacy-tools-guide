@@ -9,14 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Data Processing Agreement Template for Third Party Vendors: GDPR Compliant 2026
 
-When your application processes personal data of EU residents, GDPR mandates that you have a Data Processing Agreement (DPA) in place with any third-party vendor handling that data. This requirement applies regardless of where your vendor is located—non-EU vendors processing EU personal data must also comply.
-
-This guide provides a practical template and implementation patterns for developers and power users building privacy-compliant systems in 2026.
+A Data Processing Agreement (DPA) is required under GDPR Article 28 whenever a third-party vendor processes personal data on your behalf—regardless of where they're located. Use this template to establish clear processing instructions, security requirements, sub-processor controls, and breach response procedures to ensure compliance with EU regulations.
 
 ## What Makes a DPA GDPR Compliant
 

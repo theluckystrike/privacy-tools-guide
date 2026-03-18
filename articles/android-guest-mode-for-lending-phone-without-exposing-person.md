@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Android devices offer a built-in feature called Guest Mode that allows you to lend your phone to others without exposing your personal data. This guide covers everything developers and power users need to know about implementing, automating, and maximizing privacy when temporarily sharing an Android device.
+Use Android Guest Mode to safely lend your phone to others without exposing your contacts, messages, photos, or apps. This isolated user profile keeps your personal data completely hidden while allowing guests to make calls, browse the web, and use basic functions.
 
 ## What is Android Guest Mode?
 

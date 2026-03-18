@@ -9,13 +9,14 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
 # Tax Preparer Client Financial Data Privacy IRS Compliance Digital Guide
 
-Tax preparers handle some of the most sensitive personal information in existence—Social Security numbers, income statements, bank account details, investment portfolios, and deduction records. The IRS mandates specific protections for this data, and failure to comply carries serious consequences including penalties, reputational damage, and potential loss of credentials. This guide provides developers and power users with practical implementation strategies for securing client financial data throughout the tax preparation workflow.
+Meet IRS Publication 4557 requirements by encrypting client data at rest (SQLCipher) and in transit (TLS), implementing access controls with audit logging, storing SSNs/account numbers separately, and maintaining secure document destruction procedures. Use encrypted backups, regular security training, and vendor management to satisfy administrative, technical, and physical safeguards.
 
 ## Understanding IRS Data Protection Requirements
 

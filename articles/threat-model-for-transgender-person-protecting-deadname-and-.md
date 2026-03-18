@@ -10,13 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When you transition, your digital identity requires as much careful consideration as your physical safety. For transgender individuals, the term "deadname" refers to your birth name—the identifier you've likely used across countless online accounts, social platforms, and services. Protecting this previous identity isn't about hiding; it's about controlling who has access to information that could compromise your safety, privacy, or employment situation.
-
-This guide provides a practical threat modeling framework specifically designed for name transitions, with actionable steps developers and power users can implement immediately.
+Protect your deadname by auditing breaches (Have I Been Pwned), removing yourself from data brokers, deleting old accounts, requesting name changes on social platforms, and monitoring for new leaks. Use privacy-focused email providers, delete archived content, update professional profiles (LinkedIn, GitHub), and separate old identity data from new online presence to prevent accidental re-association.
 
 ## Understanding Your Threat Landscape
 

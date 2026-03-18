@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Building a threat model as a political dissident in a surveillance state requires a fundamentally different approach than standard privacy guides. The adversary isn't marketing trackers or data brokers—it's state-level actors with legal authority to compel cooperation from service providers, intercept communications at the network level, and deploy sophisticated tracking infrastructure. This guide provides developers and power users with actionable threat modeling frameworks and implementation strategies for high-risk environments in 2026.
+Build threat models for political dissidents against state-level adversaries using Tor (with bridges), compartmentalized devices, encrypted offline storage, out-of-band authentication, and Signal for communications. Assume ISP-level monitoring, device seizure risk, and forced cooperation from service providers—implement defense-in-depth across every layer of your digital infrastructure.
 
 ## Understanding the Adversary
 

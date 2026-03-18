@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Selective routing in OpenVPN is a powerful feature that allows you to decide which network traffic flows through the VPN tunnel and which traffic uses your regular internet connection. By default, OpenVPN routes all traffic through the VPN server, but this isn't always ideal. Whether you need to access local network resources while using VPN, want to reduce bandwidth usage on your VPN connection, or need to route only specific traffic through an exit node in another country, understanding the `push` directive and `redirect-gateway` options is essential.
+Configure OpenVPN's push route directive to route only specific traffic through your VPN tunnel instead of all traffic. Use push "route" for selective routing, push "redirect-gateway def1" for full tunneling, or combine both to access local networks while encrypting only sensitive destinations.
 
 ## Understanding the Default Behavior
 

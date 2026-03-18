@@ -10,13 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Protest medics operate in high-risk environments where both physical and digital security matter. When you treat protesters, the information you collect—patient conditions, treatments administered, identities—becomes sensitive data that could be used against the people you helped. Building a threat model for protest medic operations requires understanding who might want this information and implementing layered defenses.
-
-This guide provides a practical framework for securing patient encounter data, with code examples that developers and power users can implement immediately.
+Protect protest medic patient data by documenting encounters without storing identifiers (encrypted case numbers only), using encrypted messaging (Signal) for coordination, never storing names/locations together, and destroying paper notes securely. Anticipate law enforcement subpoenas and device seizure by keeping encrypted offline storage separate from operational devices.
 
 ## Who Wants Your Data
 
