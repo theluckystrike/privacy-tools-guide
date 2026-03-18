@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on using Bitcoin 
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/
-categories: [guides, bitcoin, privacy]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false
