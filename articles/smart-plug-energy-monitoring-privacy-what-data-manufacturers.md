@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users exploring what da
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-plug-energy-monitoring-privacy-what-data-manufacturers/
-categories: [guides, privacy, iot]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

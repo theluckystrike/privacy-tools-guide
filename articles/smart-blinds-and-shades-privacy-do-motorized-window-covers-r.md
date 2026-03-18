@@ -6,7 +6,7 @@ description: "An in-depth technical analysis of motorized smart blinds privacy c
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-blinds-and-shades-privacy-do-motorized-window-covers-r/
-categories: [guides]
+categories: [security]
 reviewed: true
 intent-checked: true
 ---

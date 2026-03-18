@@ -5,7 +5,7 @@ description: "Discover privacy-focused smart doorbell alternatives that store vi
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-doorbell-alternatives-that-store-video-locally-without/
-categories: [guides, privacy, hardware]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
