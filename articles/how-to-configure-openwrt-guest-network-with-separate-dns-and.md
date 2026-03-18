@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to set up OpenWRT
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-openwrt-guest-network-with-separate-dns-and/
-categories: [guides, networking, openwrt]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

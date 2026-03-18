@@ -5,6 +5,10 @@ description: "Learn how WiFi probe requests work, what data your phone broadcast
 date: 2026-03-16
 author: theluckystrike
 permalink: /wifi-probe-request-tracking-how-your-phone-broadcasts-identi/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
