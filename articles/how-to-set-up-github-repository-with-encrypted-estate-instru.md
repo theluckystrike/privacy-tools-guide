@@ -1,42 +1,50 @@
 ---
+
+
+
 layout: default
-title: "How to Set Up GitHub Repository with Encrypted Estate Instructions Using Age Encryption Tool"
-description: "Learn how to securely store estate planning documents and sensitive instructions in a GitHub repository using age encryption. A practical guide for developers and power users."
-date: 2026-03-16
-author: theluckystrike
+title: "How to Set Up a GitHub Repository with Encrypted Estate Instructions"
+description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This guide covers age, git-crypt, and SOPS for protecting your most sensitive digital assets."
+date: 2026-03-19
+author: "Privacy Tools Guide"
 permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
-categories: [guides, encryption, privacy]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
+categories: [guides]
+reviewed: false
+score: 0
+intent-checked: false
+voice-checked: false
 ---
+
 
 {% raw %}
 
-Storing sensitive estate planning documents, recovery instructions, or digital legacy information requires careful consideration. While cloud storage services offer convenience, they often lack the granular control developers and privacy-conscious users need. Setting up a GitHub repository with age encryption provides version control, cross-device access, and military-grade encryption without relying on a single provider's infrastructure.
+Storing sensitive estate planning documents, password vaults, and financial instructions requires military-grade encryption before they ever touch a cloud repository. This guide shows you how to set up a GitHub repository with encrypted files using age encryption, ensuring that even if your repository is compromised, your most sensitive information remains unreadable. We'll cover three production-ready approaches: age (the modern, Go-based encryption tool favored by the Tor Project), git-crypt (for Git-aware transparent encryption), and SOPS (for YAML/JSON-based secret management used by Mozilla and Discord). Each method has distinct trade-offs in key management, CI/CD integration, and recovery workflows that matter for estate planning where losing access means your heirs cannot recover anything.
 
-Age (ages file) is a modern encryption tool designed for simplicity and security. Unlike PGP, age uses modern cryptography (X25519 and ChaCha20-Poly1305) without the complexity of key servers or web-of-trust management. This makes it ideal for encrypting estate instructions that multiple trusted individuals might need to access.
+## Why Encrypt Estate Documents in GitHub?
 
-## Prerequisites
+Estate planning documents contain some of the most sensitive information a person can store digitally: master passwords to password managers, bank account credentials, locations of safety deposit keys, social security numbers, medical directives, and funeral preferences. Storing unencrypted versions of these documents in any cloud service creates a single point of failure that hackers, data breaches, or government subpoenas can exploit. Encryption before commit transforms your GitHub repository from a liability into a secure, version-controlled vault that your executor or family members can access using keys you've separately provided.
 
-Before setting up your encrypted repository, ensure you have:
+GitHub's own security features protect repositories against unauthorized access, but they do not protect against account takeovers, compromised developer machines, or accidental public exposure. The 2020 GitHub OAuth token breach, the 2022 GitLab database theft, and countless individual account compromises demonstrate that cloud-hosted Git repositories are not impenetrable. Encryption at rest in your repository ensures that even complete repository access by an attacker yields only useless ciphertext.
 
-- Git installed on your system
-- Age encryption tool installed
-- A GitHub account (free tier works fine)
-- Terminal access with basic command-line knowledge
+Beyond security, using Git for estate documents provides powerful version control that paper documents cannot match. You can track when you added a new bank account, see the history of changes to your funeral preferences, and revert mistakes without physically managing multiple versions of spreadsheets or PDFs. The Git history becomes an audit trail of your estate planning evolution, valuable for resolving disputes among heirs or proving that specific instructions were added at specific times.
 
-Install age on macOS with Homebrew:
+## Method 1: Age Encryption (Recommended)
+
+Age is a modern encryption tool written in Go, endorsed by the Tor Project for bridging relaying, and designed for simplicity without sacrificing security. It uses X25519 for key exchange and ChaCha20-Poly1305 for encryption, meeting modern cryptographic standards while remaining approachable for non-cryptographers. Age's design philosophy prioritates clear security boundaries, making it easier to reason about what is protected and what is not.
+
+### Installing Age
+
+On macOS, install age via Homebrew:
 
 ```bash
 brew install age
 ```
 
-On Linux, use the package manager or download from GitHub:
+On Linux, use your package manager:
 
 ```bash
-sudo apt install age
+sudo apt install age  # Debian/Ubuntu
+sudo pacman -S age    # Arch Linux
 ```
 
 Verify the installation:
@@ -45,157 +53,309 @@ Verify the installation:
 age --version
 ```
 
-## Generating Your Encryption Keys
+### Creating Encryption Keys
 
-Age supports two encryption methods: passphrase-based and key-pair encryption. For estate instructions, use key-pair encryption as it provides better security and allows for key rotation without re-encrypting everything.
-
-Generate your key pair:
+Generate a recipient public key that will be embedded in your encrypted files:
 
 ```bash
-age-keygen -o ~/estate-keys/age.key
+age-keygen
 ```
 
-This creates two files: a private key (keep this secure, never commit it) and a public key. The public key looks like:
+This outputs something like:
 
 ```
-age1ql3z8tgnlqshwucehfj6hfcxxs5a9x7pn9fcvp6m3l6k2u3q0z8s7q
+# created: 2026-03-19T10:30:00-07:00
+# public key: age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE
+AGE-SECRET-KEY-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-Store your private key securely. Consider using a password manager or hardware security key. Never commit the private key to any repository.
+The public key (starting with `age1`) is safe to share and can be embedded in configuration files. The secret key must be stored securely—ideally on multiple encrypted USB drives stored in separate physical locations, plus one copy with your attorney or executor. For estate purposes, generate separate keys for each person who needs access, and store all keys using a password manager or hardware security key.
 
-## Creating the GitHub Repository
+### Encrypting Files
 
-Create a new private repository on GitHub:
-
-1. Click "New repository" on GitHub
-2. Name it `estate-encrypted` or similar
-3. Select "Private" (important for sensitive documents)
-4. Add a `.gitignore` for the key files
-
-Clone it locally:
+Encrypt a single file:
 
 ```bash
-git clone git@github.com:yourusername/estate-encrypted.git
-cd estate-encrypted
+age -p -o estate-documents.txt.age -r age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE estate-documents.txt
 ```
 
-Create a `.gitignore` to prevent accidentally committing keys:
+The `-p` flag prompts for a passphrase as an additional layer of protection. Without `-p`, encryption relies solely on the recipient key. For estate documents, using both the recipient key and a passphrase provides defense in depth—if someone obtains your recipient key but not the passphrase, they still cannot read the files.
+
+Encrypt an entire directory:
 
 ```bash
-echo "*.key" >> .gitignore
-echo "age.keys/" >> .gitignore
-git add .gitignore
-git commit -m "Add .gitignore for key files"
+tar czf - documents/ | age -r age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE -o documents.tar.gz.age
 ```
 
-## Encrypting Estate Documents
+### Decrypting Files
 
-Create your estate instructions file. This might include:
-
-- Account recovery information
-- Password vault master key location
-- Instructions for next of kin
-- Location of physical safe deposit keys
-- Cryptocurrency wallet recovery phrases
-
-Save this as `instructions.txt`. Now encrypt it using your public key:
+Decrypt a file:
 
 ```bash
-age -r age1ql3z8tgnlqshwucehfj6hfcxxs5a9x7pn9fcvp6m3l6k2u3q0z8s7q \
-    -o instructions.txt.age instructions.txt
+age -d -o estate-documents.txt estate-documents.txt.age
 ```
 
-This creates an encrypted file that only someone with the corresponding private key can decrypt. Remove the plaintext file:
+If you used a passphrase with `-p`, age prompts for it. The decrypted output writes to the specified file or stdout if no output file is specified.
+
+### Automating Encryption in Git
+
+Create a Git filter to encrypt specific files automatically on commit and decrypt them on checkout. Add this to your repository's `.gitattributes`:
+
+```
+*.txt filter=agecrypt diff=agecrypt
+*.md filter=agecrypt diff=agecrypt
+*.pdf filter=agecrypt diff=agecrypt
+```
+
+Create a Python wrapper script at `.git/hooks/filter-age` that Git calls automatically:
+
+```python
+#!/usr/bin/env python3
+import sys
+import subprocess
+
+# Load recipient keys from .age-recipients (one per line)
+with open('.age-recipients', 'r') as f:
+    recipients = [line.strip() for line in f if line.strip()]
+
+if len(sys.argv) < 2:
+    sys.exit(1)
+
+action = sys.argv[1]
+filename = sys.argv[2]
+
+if action == 'clean':
+    # Encrypt file contents
+    import subprocess
+    result = subprocess.run(
+        ['age', '-r'] + recipients,
+        input=sys.stdin.read().encode(),
+        capture_output=True
+    )
+    sys.stdout.buffer.write(result.stdout)
+elif action == 'smudge':
+    # Decrypt file contents
+    result = subprocess.run(['age', '-d'], input=sys.stdin.read().encode(), capture_output=True)
+    sys.stdout.buffer.write(result.stdout)
+```
+
+Configure Git to use this filter:
 
 ```bash
-rm instructions.txt
+git config filter.agecrypt.clean "python3 .git/hooks/filter-age clean"
+git config filter.agecrypt.smudge "python3 .git/hooks/filter-age smudge"
 ```
 
-## Adding Multiple Recipients
+Now files matching your `.gitattributes` patterns encrypt automatically when you `git add` them and decrypt when you `git checkout`. The plaintext never leaves your local machine, but GitHub stores only encrypted versions.
 
-For estate instructions, you might want multiple people to have access. Age supports multiple recipients:
+## Method 2: Git-Crypt for Transparent Encryption
+
+Git-crypt provides Git-aware encryption that works seamlessly with standard Git workflows. Unlike age, which requires manual encryption and decryption commands, git-crypt encrypts files transparently—committed files appear as ciphertext in Git, but checkout automatically decrypts them if you possess the correct GPG key. This approach suits teams or families comfortable with GPG key management.
+
+### Installing Git-Crypt
+
+On macOS:
 
 ```bash
-age -r age1recipient-public-key -r age2recipient-public-key \
-    -o instructions.txt.age instructions.txt
+brew install git-crypt
 ```
 
-Each recipient with their corresponding private key can decrypt the file independently.
-
-## Automating Encryption in Git Hooks
-
-Set up a pre-commit hook to ensure you never accidentally commit plaintext files:
-
-Create `.git/hooks/pre-commit`:
+On Linux:
 
 ```bash
-#!/bin/bash
-# Check for unencrypted sensitive files
-for file in $(git diff --cached --name-only --diff-filter=ACM); do
-    if [[ "$file" == *.txt ]] && [[ ! "$file" == *.age ]]; then
-        echo "Error: Plaintext file detected: $file"
-        echo "Encrypt with: age -r <public-key> -o $file.age $file"
-        exit 1
-    fi
-done
+sudo apt install git-crypt  # Debian/Ubuntu
 ```
 
-Make it executable:
+### Initializing Git-Crypt
+
+Navigate to your repository and initialize git-crypt:
 
 ```bash
-chmod +x .git/hooks/pre-commit
+cd estate-repository
+git-crypt init
 ```
 
-## Decrypting When Needed
+Git-crypt generates a symmetric key and stores it encrypted in `.git-crypt/.git-crypt-key`. You need GPG to protect this key.
 
-When you or your trusted individuals need to read the instructions:
+### Configuring File Patterns
+
+Edit `.gitattributes` to specify which files to encrypt:
+
+```
+secret-info/** filter=git-crypt diff=git-crypt
+*.key filter=git-crypt diff=git-crypt
+passwords/** filter=git-crypt diff=git-crypt
+```
+
+Files not matching these patterns remain unencrypted and are stored in Git as plain text.
+
+### Adding Collaborators
+
+Export your GPG public key and import it into the repository:
 
 ```bash
-age -d -i ~/estate-keys/age.key -o decrypted.txt instructions.txt.age
+git-crypt add-gpg-user recipient@example.com
 ```
 
-This prompts for the passphrase protecting your private key and outputs the decrypted content.
+This command encrypts the git-crypt key using the recipient's GPG public key and commits it to the repository. When that recipient clones the repository and has the corresponding GPG secret key, git-crypt automatically decrypts files matching the filter patterns.
 
-## Rotating Keys
+For estate planning, add each trusted person (executor, attorney, family members) using their GPG keys. Each person receives the encrypted git-crypt key tailored to their GPG identity.
 
-If you need to rotate encryption keys (change access, key compromise, etc.), re-encrypt all files with new keys:
+### Using Git-Crypt
+
+After configuration, git-crypt works transparently:
 
 ```bash
-# Decrypt with old key
-age -d -i old-key.age -o content.txt content.txt.age
-
-# Encrypt with new key
-age -r new-public-key -o content.txt.age content.txt
+# Edit encrypted files normally
+vim passwords/master.txt
+git add passwords/master.txt
+git commit -m "Update master password"
+git push origin main
 ```
 
-Maintain a key rotation schedule and document which keys were valid during which time periods.
+On collaborators' machines with the correct GPG key, files decrypt automatically on checkout. On machines without the key, files appear as binary ciphertext.
 
-## Backup Strategy
+To lock encrypted files (prevent decryption):
 
-Your encryption keys are the weak point in this system. Implement a proper backup strategy:
+```bash
+git-crypt lock
+```
 
-- Store a copy of the private key in a secure physical location (safe deposit box)
-- Consider splitting the key using age's built-in functionality for additional security
-- Document the recovery process for your trusted individuals
+To unlock:
+
+```bash
+git-crypt unlock
+```
+
+## Method 3: SOPS for Encrypted Secret Management
+
+SOPS (Secrets OPerationS), developed by Mozilla and used by companies like Discord and embedded in the Cloudflare CDN infrastructure, encrypts YAML, JSON, INI, and Terraform files while preserving their structure. Unlike age or git-crypt which encrypt entire files, SOPS encrypts individual values within files, making it ideal for configuration files that mix sensitive and non-sensitive data. For estate planning, SOPS excels when your documents include both public information (like beneficiary names) and sensitive data (like account numbers) in the same file.
+
+### Installing SOPS
+
+On macOS:
+
+```bash
+brew install sops age
+```
+
+On Linux, download the appropriate binary from the GitHub releases page:
+
+```bash
+curl -LO https://github.com/mozilla/sops/releases/download/v3.7.3/sops_v3.7.3_linux_amd64.tar.gz
+tar xzf sops_v3.7.3_linux_amd64.tar.gz
+sudo mv sops /usr/local/bin/
+```
+
+### Creating Encrypted Files
+
+Create a YAML file with mixed sensitive and public data:
+
+```yaml
+# estate-config.yaml
+executor:
+  name: "Jane Executor"
+  email: "jane@example.com"
+
+accounts:
+  - name: "Chase Checking"
+    account_number: "ENC[age1EXAMPLEEXAMPLE...,chaseAccountNumber]"
+    routing_number: "ENC[age1EXAMPLEEXAMPLE...,chaseRoutingNumber]"
+    notes: "Joint account with spouse"
+
+  - name: "Vanguard Retirement"
+    account_number: "ENC[age1EXAMPLEEXAMPLE...,vanguardAccountNumber]"
+    notes: "Roth IRA"
+```
+
+Notice how `account_number` and `routing_number` are wrapped in `ENC[...]` markers. These values will be encrypted while `name`, `email`, and `notes` (unless marked) remain readable.
+
+### Encrypting with Age
+
+Create a `.sops.yaml` configuration file:
+
+```yaml
+creation_rules:
+  - age_recipients:
+      - age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE
+    path_regex: \.yaml$
+```
+
+Now edit the file using `sops`:
+
+```bash
+sops estate-config.yaml
+```
+
+SOPS opens your default editor with the decrypted file. Edit values as needed, then save and exit. SOPS re-encrypts only the changed values and writes the encrypted output back to the file. The result looks like:
+
+```yaml
+executor:
+  name: "Jane Executor"
+  email: "jane@example.com"
+
+accounts:
+  - name: "Chase Checking"
+    account_number: ENC[AES256_GCM,data:XXXXX,iv:XXXXX,type:str]
+    routing_number: ENC[AES256_GCM,data:XXXXX,iv:XXXXX,type:str]
+    notes: "Joint account with spouse"
+```
+
+### Decrypting Files
+
+Decrypt a SOPS file for viewing:
+
+```bash
+sops -d estate-config.yaml
+```
+
+Or extract a specific value:
+
+```bash
+sops -d --extract '["accounts"][0]["account_number"]' estate-config.yaml
+```
+
+This ability to decrypt individual values without exposing the entire file makes SOPS powerful for CI/CD pipelines where only specific secrets need injection.
+
+## Key Management for Estate Planning
+
+Encryption is only as strong as key management. For estate documents, key management has unique requirements: keys must survive you, be accessible to your executor, and remain secure against unauthorized access during your lifetime. The following strategies address these competing needs.
+
+### Primary Key Storage
+
+Your primary encryption key (for age) or GPG key (for git-crypt) should be stored in three locations using the 3-2-1 backup principle: three copies, on two different types of media, with one stored offsite. For encryption keys specifically, these copies should be:
+
+1. **Hardware security key** (YubiKey or SoloKey) storing the key in its secure element. This provides tamper-resistant storage and requires physical presence to use.
+
+2. **Encrypted USB drive** stored in a safe deposit box or with your attorney. Use LUKS (Linux) or FileVault (macOS) encryption with a strong passphrase separate from your everyday passwords.
+
+3. **Paper backup** using a QR code or armored paper (waterproof, fireproof paper designed for long-term storage). Store this in a physically separate location from the USB drive.
+
+### Executor Access
+
+Your executor needs access to decryption keys, but giving them keys during your lifetime creates security risks. Consider a time-locked approach where keys become accessible after a specified period of inactivity, or use a safe deposit box that your executor can access with proper documentation after your death.
+
+For SOPS or git-crypt with multiple recipients, you can add your executor's GPG key to the repository, but store their key encrypted with a passphrase that you provide separately (in your will, in a sealed envelope with your attorney, or in a separate secure location).
+
+### Key Recovery Scenarios
+
+Test your recovery procedures before relying on them. Create a test repository with sample encrypted files, then attempt recovery using only the backup keys. Document the exact steps your executor should follow, including:
+
+- Which software to install and from which source
+- Where to find the keys
+- The exact commands to decrypt each type of file
+- How to verify decryption succeeded (e.g., checking file hashes or comparing known content)
+
+Store this documentation alongside the keys or with your estate planning documents.
 
 ## Best Practices Summary
 
-Use these practices when maintaining your encrypted estate repository:
+Use age encryption for the simplest setup with strong security guarantees. Its modern cryptography, small attack surface, and cross-platform support make it ideal for most estate planning use cases. The main trade-off is that key distribution requires manual coordination—each collaborator needs their own recipient key added to every encrypted file.
 
-- Always use private repositories for sensitive information
-- Never commit private keys or plaintext sensitive files
-- Use long, unique passphrases for key protection
-- Test decryption regularly to ensure keys remain valid
-- Document the decryption process for non-technical trusted individuals
-- Consider using signed commits to verify your authorship
-- Review and update encrypted documents annually
+Use git-crypt if you prefer GPG-based key management and want transparent encryption that integrates seamlessly with Git workflows. The main risk is GPG's complexity—mismanaged GPG keys are a common source of lockouts. Ensure your executor understands GPG basics before relying on this method.
 
-## Conclusion
+Use SOPS when your estate documents include structured configuration files where you want to keep some fields readable while encrypting others. The learning curve is steeper than age, but SOPS excels in CI/CD pipelines if you want automated deployment of decrypted values to servers.
 
-Setting up a GitHub repository with age encryption provides a secure, version-controlled method for storing estate instructions and sensitive documents. The combination of modern encryption, git's history tracking, and GitHub's accessibility makes this approach practical for developers and power users who want full control over their digital legacy information.
-
-The initial setup takes approximately 30 minutes, but provides years of reliable, encrypted storage with full audit trails. Your sensitive information remains readable only by those you explicitly authorize, regardless of what happens to your other accounts or services.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Regardless of method, never commit plaintext secrets to your repository. Use Git's `.gitignore` to exclude unencrypted files, and audit your repository periodically to ensure no sensitive data slipped through. The encrypted repository becomes a powerful tool for organizing your estate—but only if the plaintext never reaches the cloud.
 
 {% endraw %}
