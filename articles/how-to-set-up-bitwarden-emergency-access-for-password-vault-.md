@@ -5,7 +5,7 @@ title: "How to Set Up Bitwarden Emergency Access for Password Vault Inheritance 
 description: "A comprehensive technical guide for developers and power users on configuring Bitwarden emergency access for password vault inheritance, covering trust delegation, API automation, and estate planning integration."
 date: 2026-03-16
 author: theluckystrike
-permalink: /how-to-set-up-bitwarden-emergency-access-for-password-vault-inheritance-after-death/
+permalink: /how-to-set-up-bitwarden-emergency-access-for-password-vault-/
 categories: [guides]
 tags: [tools]
 reviewed: true
