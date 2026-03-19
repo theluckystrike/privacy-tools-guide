@@ -5,7 +5,7 @@ title: "How to Set Up Beneficiary Access for Cloud Password Manager Using Time D
 description: "Learn how to configure beneficiary access with time-delayed release in cloud password managers like Bitwarden and 1Password. Step-by-step technical guide for developers and power users."
 date: 2026-03-16
 author: theluckystrike
-permalink: /how-to-set-up-beneficiary-access-for-cloud-password-manager-using-time-delayed-release/
+permalink: /how-to-set-up-beneficiary-access-for-cloud-password-manager-/
 categories: [guides]
 tags: [tools]
 reviewed: true
