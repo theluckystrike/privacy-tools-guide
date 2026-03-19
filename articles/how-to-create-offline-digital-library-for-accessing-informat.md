@@ -8,8 +8,6 @@ permalink: /how-to-create-offline-digital-library-for-accessing-informat/
 categories: [guides]
 ---
 
-{% raw %}
-
 Building an offline digital library enables you to access critical information even when the internet becomes unavailable. Whether you're preparing for potential government-imposed blackouts, traveling to regions with unreliable connectivity, or simply wanting reliable access to knowledge without dependence on cloud services, an offline library provides independence from network constraints. This guide walks through practical methods to create and maintain a personal offline knowledge base.
 
 ## Why Build an Offline Digital Library
@@ -111,5 +109,3 @@ Beyond Wikipedia and general websites, consider downloading:
 Building an offline library requires ongoing maintenance. Schedule regular updates to ensure your content remains current, particularly for rapidly evolving technical documentation. The initial investment of time and storage pays dividends when network access becomes unreliable or unavailable.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
