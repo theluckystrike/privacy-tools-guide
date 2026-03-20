@@ -147,6 +147,137 @@ Honest evaluation requires acknowledging Briar's constraints:
 - No voice or video calling (text and image sharing only)
 - Battery consumption significant during active mesh mode
 
+## Real-World Deployment Considerations
+
+Deploying Briar at scale requires addressing practical challenges beyond technical architecture.
+
+### Network Topology Planning
+
+Before large-scale deployment, understand your network layout. BLE-only meshes work well for compact geographic areas. Wi-Fi Direct supports larger areas but requires more devices. Hybrid deployments using both create redundancy.
+
+For a neighborhood emergency response network:
+
+```
+Device A (BLE/WiFi Direct) ← 20m → Device B (BLE/WiFi Direct)
+                                       ↓
+                                    Device C (WiFi Direct only)
+                                       ↓
+                                    Device D (BLE/WiFi Direct)
+                                       ↓
+                                    Device E (BLE only)
+
+Result: Devices A-D can relay to E despite lacking direct connection
+```
+
+### Battery Optimization for Field Deployment
+
+Extended mesh operations drain batteries rapidly. Optimize for real-world conditions:
+
+- Disable background processes unrelated to Briar
+- Configure adaptive refresh rates (longer delays between sync attempts when network is sparse)
+- Use USB power banks for extended operations
+- Reduce screen brightness when not actively messaging
+
+The Briar developers recommend 6-8 hours of continuous mesh operation per charge for modern smartphones.
+
+### Contact Management at Scale
+
+In emergency scenarios, you may need many contacts. Briar's QR code exchange works well for small groups but becomes unwieldy with dozens of contacts.
+
+Recommended workflow:
+
+1. Create a "hub" device with all contacts
+2. Those with hub contact can relay messages to others
+3. Eventually everyone connects as network density increases
+
+This hierarchical approach reduces the initial contact exchange burden.
+
+## Comparing Briar to Alternative Mesh Solutions
+
+Several applications attempt offline mesh communication. Understanding the trade-offs helps you choose appropriately.
+
+### Briar vs. Serval Project
+
+The Serval Project develops open-source mesh networking infrastructure. However, Serval lacks the integration of strong encryption and contact management that Briar provides. Serval is better suited for researchers and developers building custom mesh applications.
+
+### Briar vs. Bridgefy
+
+Bridgefy provides similar mesh functionality but uses a cloud backend for longer-range routing through users who have internet access. This approach extends range but introduces privacy trade-offs compared to Briar's purely decentralized model.
+
+### Briar vs. FireChat/Mesh (now Bridgefy)
+
+FireChat offered mesh communication but relied on OpenFlow routing without strong encryption. The application is effectively discontinued, with users migrating to Briar and Bridgefy.
+
+### Briar vs. Jami (GNU Ring)
+
+Jami provides encrypted communication with offline support, but uses different network protocols. Jami's strength lies in decentralized routing through DHT (Distributed Hash Table), while Briar optimizes for immediate local mesh communication.
+
+## Technical Troubleshooting
+
+Users encountering issues with Briar should understand common failure modes.
+
+### Messages Not Propagating
+
+If messages sent fail to propagate despite apparent network connections:
+
+1. Verify both devices have active Briar connections (indicated by status icons)
+2. Check that messages are actually being sent (swipe to see message status)
+3. Ensure sufficient time passes for propagation (depending on network density, could be hours)
+4. Restart Briar on both devices and re-attempt transmission
+
+### Poor BLE Connection Quality
+
+BLE connections suffer from range and interference issues:
+
+1. Maximize separation (fewer obstacles between devices)
+2. Reduce distance (20m+ range requires ideal conditions)
+3. Minimize metal and water barriers (walls, aquariums interfere significantly)
+4. Restart both devices' Bluetooth radios
+
+### Wi-Fi Direct Connection Failures
+
+When Wi-Fi Direct connections drop frequently:
+
+1. Check that both devices have Wi-Fi enabled (Wi-Fi Direct works through WiFi hardware)
+2. Verify no other WiFi connection is active (can interfere with Direct)
+3. Check battery saver settings aren't disabling Wi-Fi
+4. Update device firmware and Briar version
+
+## Development Integration Possibilities
+
+For developers building applications that need offline communication, Briar provides a Java library for building custom applications on top of the Bramble protocol.
+
+```java
+// Example: Building a Briar-compatible application
+import org.briarproject.bramble.api.Bytes32;
+import org.briarproject.bramble.api.contact.Contact;
+
+public class CustomBriarApp {
+    private BriarController controller;
+
+    public void sendCustomMessage(Contact contact, String message) {
+        // Build custom message format
+        byte[] payload = message.getBytes();
+
+        // Send through Briar's mesh network
+        controller.sendMessage(contact, payload);
+    }
+}
+```
+
+However, most developers benefit from using Briar's standard interface rather than building custom applications, as integration complexity is significant.
+
+## Future Development and Roadmap
+
+The Briar project continues evolving. Features under consideration or in development include:
+
+- Desktop client for contact management and message review
+- Voice messaging support (limited data but practical for offline scenarios)
+- Improved battery optimization through adaptive protocols
+- Better integration with other privacy-focused applications
+
+Participating in Briar development or testing new features helps strengthen the project. The community welcomes bug reports and feature requests through their official channels.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
