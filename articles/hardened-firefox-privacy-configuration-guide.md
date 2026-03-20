@@ -579,3 +579,9 @@ Firefox hardening prevents *tracking*, but doesn't prevent:
 **For privacy-focused user**: All steps = maximum privacy, accept breakage, whitelist sites as needed.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+

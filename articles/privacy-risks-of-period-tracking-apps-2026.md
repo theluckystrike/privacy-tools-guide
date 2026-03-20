@@ -535,3 +535,9 @@ Period tracking app privacy has become a **safety issue post-Dobbs**. Choose:
 If using any app, **assume data is discoverable by law enforcement**. Plan accordingly.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
