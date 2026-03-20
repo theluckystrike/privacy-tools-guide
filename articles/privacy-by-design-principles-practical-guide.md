@@ -285,6 +285,115 @@ jobs:
 
 Privacy by design requires scrutiny of every feature, every data point, and every integration. Start with these principles and treat privacy as foundational to your architecture.
 
+## Threat Modeling a New Feature Before Writing Code
+
+The proactive principle means running a brief privacy threat model before any feature that touches personal data ships. A structured five-minute review at design time prevents hours of remediation later:
+
+```markdown
+## Privacy Threat Model — [Feature Name]
+
+### Data Collected
+- What personal data does this feature collect?
+- Is all of it necessary for the declared purpose?
+
+### Data Flow
+- Where is the data stored (database, cache, logs, third parties)?
+- Who can query it (roles, services, external APIs)?
+
+### Threats
+- What happens if this data is breached?
+- Can it be combined with other data to identify individuals?
+- Does it create re-identification risk if "anonymized"?
+
+### Controls
+- Encryption at rest: yes/no
+- Encryption in transit: yes/no
+- Access logged: yes/no
+- Retention policy defined: yes/no
+- Deletion path exists: yes/no
+```
+
+Add this template to your pull request description for any feature that introduces new data collection. A reviewer who can fill in the blanks means the feature is ready to ship. Blanks that cannot be filled are blockers.
+
+## Documenting Data Flows in Code
+
+Privacy by design degrades quickly when the documentation lives in a wiki that no one reads. Keeping data flow annotations close to the code makes them visible during review:
+
+```python
+from dataclasses import dataclass, field
+from typing import ClassVar
+
+@dataclass
+class UserEventLog:
+    """
+    Stores application events for debugging and support.
+
+    DATA CLASSIFICATION: Personal — contains user_id (pseudonymous)
+    PURPOSE: Debug log access for support tickets only
+    RETENTION: 30 days (enforced by retention_cleanup cron)
+    ACCESS: Support team only (role: support-read)
+    NOT STORED: IP address, email, session content
+    """
+
+    RETENTION_DAYS: ClassVar[int] = 30
+
+    user_id: str          # Pseudonymous internal ID
+    event_type: str       # e.g. "login", "export_requested"
+    timestamp: str        # ISO 8601
+    # ip_address: omitted intentionally — not needed for support
+    # email: omitted intentionally — user_id is sufficient for lookup
+```
+
+These inline data classification comments become visible in code review and in IDE tooltips. They also give a single place to update when a field is added, removed, or reclassified — rather than chasing documentation spread across Notion pages.
+
+## Handling Right-to-Erasure Requests in Practice
+
+Principle 7 (respect for user privacy) requires that deletion actually work. Many systems have soft-delete patterns (`is_deleted = true`) that leave personal data in place. Implement verifiable deletion:
+
+```python
+import logging
+from typing import List, Dict
+
+def execute_erasure_request(user_id: str, db) -> Dict:
+    """
+    Execute a GDPR right-to-erasure request.
+    Returns a deletion manifest suitable for audit logging.
+    """
+    manifest = {"user_id": user_id, "tables": []}
+
+    tables_with_user_data = [
+        ("users", "id"),
+        ("user_sessions", "user_id"),
+        ("user_events", "user_id"),
+        ("user_uploads", "owner_id"),
+        ("email_preferences", "user_id"),
+    ]
+
+    for table, column in tables_with_user_data:
+        result = db.execute(
+            f"DELETE FROM {table} WHERE {column} = %s RETURNING *",
+            (user_id,)
+        )
+        count = result.rowcount
+        manifest["tables"].append({"table": table, "rows_deleted": count})
+        logging.info("erasure: deleted %d rows from %s for user %s", count, table, user_id)
+
+    # Verify nothing remains
+    for table, column in tables_with_user_data:
+        remaining = db.execute(
+            f"SELECT COUNT(*) FROM {table} WHERE {column} = %s",
+            (user_id,)
+        ).scalar()
+        if remaining > 0:
+            logging.error("erasure_incomplete: %d rows remain in %s", remaining, table)
+            manifest["complete"] = False
+            return manifest
+
+    manifest["complete"] = True
+    return manifest
+```
+
+The manifest returned by this function is your audit trail. Store it in a separate compliance log (which does not contain personal data — just deletion records) so you can demonstrate compliance if a regulator asks.
 
 ## Related Reading
 
