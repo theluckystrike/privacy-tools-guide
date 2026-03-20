@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use Compartmentalized Identity for Online Dating: Separate Email, Phone, Photos Guide"
-description: "A technical guide for developers and power users on creating compartmentalized identities for online dating. Learn how to separate email, phone, and photos to protect your privacy while using dating apps."
+title: "How to Use Compartmentalized Identity for Online Dating."
+description: "A technical guide for developers and power users on creating compartmentalized identities for online dating. Learn how to separate email, phone, and."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-compartmentalized-identity-for-online-dating-sepa/
@@ -265,6 +265,12 @@ When compartmentalization fails:
 2. **Evidence preservation**: Screenshot any threats or harassment
 3. **Platform reporting**: Report to dating app security teams
 4. **Legal consideration**: Consult with privacy attorney if necessary
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -4,8 +4,8 @@
 
 
 layout: default
-title: "How to Set Up a GitHub Repository with Encrypted Estate Instructions"
-description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This guide covers age, git-crypt, and SOPS for protecting your most sensitive digital assets."
+title: "How to Set Up a GitHub Repository with Encrypted Estate."
+description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This."
 date: 2026-03-19
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
@@ -361,3 +361,9 @@ Use SOPS when your estate documents include structured configuration files where
 Regardless of method, never commit plaintext secrets to your repository. Use Git's `.gitignore` to exclude unencrypted files, and audit your repository periodically to ensure no sensitive data slipped through. The encrypted repository becomes a powerful tool for organizing your estate—but only if the plaintext never reaches the cloud.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+

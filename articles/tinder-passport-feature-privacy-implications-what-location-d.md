@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Tinder Passport Feature: Privacy Implications and What Location Data Is Exposed When Changing Region"
-description: "A technical analysis of how Tinder Passport exposes location data, what information is transmitted during region changes, and privacy considerations for developers and power users."
+title: "Tinder Passport Feature: Privacy Implications and What."
+description: "A technical analysis of how Tinder Passport exposes location data, what information is transmitted during region changes, and privacy considerations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /tinder-passport-feature-privacy-implications-what-location-d/
@@ -162,6 +162,12 @@ For developers working with location data:
 - Provide genuine location control rather than apparent overrides
 - Minimize retention periods for historical location data
 - Document what location data your application collects and why
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

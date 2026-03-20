@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iran Smart Filtering: How Government Selectively Blocks Content and Circumvention Strategies"
+title: "Iran Smart Filtering: How Government Selectively Blocks."
 description: "A technical deep-dive into Iran's intelligent filtering system, the mechanisms behind selective content blocking, and practical circumvention strategies for developers and power users in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -208,6 +208,12 @@ When implementing circumvention strategies, consider these technical constraints
 Understanding Iran's smart filtering infrastructure is the first step toward building systems that can operate in restrictive network environments. The techniques described here represent current approaches, but filtering technology continues to evolve. Developers should stay informed about both detection and evasion methods to maintain operational security in changing conditions.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

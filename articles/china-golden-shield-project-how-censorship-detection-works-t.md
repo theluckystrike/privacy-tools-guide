@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "China Golden Shield Project: How Censorship Detection Works - Technical Explanation Guide"
+title: "China Golden Shield Project: How Censorship Detection."
 description: "A technical deep-dive into China's Golden Shield Project censorship detection mechanisms. Learn how DPI, DNS manipulation, packet inspection, and keyword filtering work with practical code examples for developers and power users."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -255,6 +255,12 @@ For developers building applications that need to work in censored environments:
 The Golden Shield Project represents a multi-layered approach to internet censorship. Its detection mechanisms operate at the DNS level, within network packets, during TLS handshakes, and through traffic pattern analysis. For developers and power users, understanding these technical details enables building more resilient systems and making informed decisions about circumvention strategies.
 
 The arms race between censorship and circumvention continues, with each side adapting to the other's techniques. What remains constant is the need for deep technical understanding to navigate these constraints effectively.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

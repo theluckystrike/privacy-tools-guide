@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Turkey Election Period Internet Throttling: How to Maintain Access During Political Censorship"
+title: "Turkey Election Period Internet Throttling: How to."
 description: "A technical guide for developers and power users on maintaining internet access during Turkey's election periods. Includes practical tools, configuration examples, and censorship circumvention strategies."
 date: 2026-03-16
 author: theluckystrike
@@ -236,6 +236,12 @@ Before election periods, verify these items:
 Users in Turkey should understand that while technical tools exist, legal risks vary. VPN usage itself is not criminalized, but circumvention tools should be used responsibly. Documentation of censorship (screenshots, logs) can be valuable for advocacy organizations.
 
 For those at higher risk (journalists, activists), the threat model should include device seizure, account compromise, and physical surveillance. In these cases, specialized security training and infrastructure (burner devices, dedicated communication channels) becomes necessary.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

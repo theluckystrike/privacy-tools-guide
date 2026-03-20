@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Subscription Service Cancellation After Death: How Executors Can Close Recurring Payment Accounts"
-description: "A practical guide for executors on how to cancel subscription services and recurring payments after death. Includes documentation requirements, service-specific procedures, and automation scripts for power users."
+title: "Subscription Service Cancellation After Death: How."
+description: "A practical guide for executors on how to cancel subscription services and recurring payments after death. Includes documentation requirements."
 date: 2026-03-16
 author: theluckystrike
 permalink: /subscription-service-cancellation-after-death-how-executor-c/
@@ -160,5 +160,11 @@ For complex estates with numerous digital assets, consider engaging a digital es
 ## Conclusion
 
 Canceling subscription services after death requires a methodical approach combining documentation, communication, and follow-through. By systematically identifying active subscriptions and following service-specific procedures, executors can protect the estate from unnecessary charges while properly handling the deceased's digital footprint. The automation tools and checklists in this guide provide a framework for managing this often-overlooked aspect of estate administration.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

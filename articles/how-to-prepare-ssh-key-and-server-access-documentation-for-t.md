@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Prepare SSH Key and Server Access Documentation for Technical Estate Inheritance"
-description: "A practical guide for developers and power users on documenting SSH keys, server credentials, and access details for technical estate inheritance scenarios."
+title: "How to Prepare SSH Key and Server Access Documentation."
+description: "A practical guide for developers and power users on documenting SSH keys, server credentials, and access details for technical estate inheritance."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prepare-ssh-key-and-server-access-documentation-for-t/
@@ -222,6 +222,12 @@ Start by auditing what exists today. Create structured documentation. Test acces
 The goal is simple: no single point of failure, no undocumented access, and no mystery about how to reach your systems.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

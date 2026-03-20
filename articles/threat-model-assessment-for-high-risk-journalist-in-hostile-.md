@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Threat Model Assessment for High-Risk Journalists in Hostile Countries"
-description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical implementation details."
+title: "Threat Model Assessment for High-Risk Journalists in."
+description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
@@ -165,5 +165,11 @@ Effective threat modeling for high-risk journalists combines technical counterme
 The goal is not perfect security—that remains impossible against well-resourced state adversaries—but rather making the cost of compromise exceed the value of what they might obtain. Each additional layer of protection narrows the attack surface and buys time for sources, colleagues, and yourself to respond to emerging threats.
 
 Build your threat model systematically, implement countermeasures proportionally to identified risks, and maintain operational security as an ongoing practice rather than a one-time configuration.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

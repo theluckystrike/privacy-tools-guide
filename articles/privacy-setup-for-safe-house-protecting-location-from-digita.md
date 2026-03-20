@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Privacy Setup for Safe House: Protecting Location from Digital Tracking"
-description: "A practical guide for developers and power users to protect location privacy. Learn to secure your address, obscure GPS data, and harden devices against location tracking."
+title: "Privacy Setup for Safe House: Protecting Location from."
+description: "A practical guide for developers and power users to protect location privacy. Learn to secure your address, obscure GPS data, and harden devices."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-safe-house-protecting-location-from-digita/
@@ -185,6 +185,12 @@ Location privacy requires ongoing attention rather than a one-time configuration
 The techniques above provide a practical foundation for developers and power users serious about location privacy. Start with the highest-impact changes and expand your privacy setup as needed.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

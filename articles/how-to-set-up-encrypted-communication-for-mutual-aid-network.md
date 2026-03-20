@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Encrypted Communication for Mutual Aid Network"
-description: "A practical technical guide for developers and power users to establish encrypted communication channels for mutual aid networks. Covers Signal, Session, Matrix, and offline encryption methods with implementation examples."
+description: "A practical technical guide for developers and power users to establish encrypted communication channels for mutual aid networks. Covers Signal."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-communication-for-mutual-aid-network/
@@ -190,6 +190,12 @@ Effective mutual aid communication requires layered security addressing both tec
 The appropriate tool selection depends on your specific threat model, participant technical capabilities, and infrastructure requirements. Start with Signal for simplicity, add Session for anonymity-sensitive participants, and implement Matrix for organizational control. Test all chosen tools thoroughly before relying on them during actual emergencies.
 
 Building secure mutual aid communication infrastructure requires ongoing attention to security practices and regular review of evolving threats. The investment in robust communication security protects participants and enables effective coordination when your community needs it most.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

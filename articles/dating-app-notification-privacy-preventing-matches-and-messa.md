@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Dating App Notification Privacy: Preventing Matches and Messages from Appearing on Lock Screen"
-description: "A technical guide for developers and power users on controlling dating app notifications. Learn platform-specific APIs, notification grouping, and programmatic approaches to prevent sensitive matches and messages from appearing on your lock screen."
+title: "Dating App Notification Privacy: Preventing Matches and."
+description: "A technical guide for developers and power users on controlling dating app notifications. Learn platform-specific APIs, notification grouping, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /dating-app-notification-privacy-preventing-matches-and-messa/
-categories: [privacy, security, mobile]
+categories: [troubleshooting]
 reviewed: true
 score: 8
 intent-checked: true
@@ -221,6 +221,12 @@ For developers, implementing privacy-respecting notification defaults and provid
 The balance between engagement and privacy remains a tension, but users have more control than most realize. Take time to audit your notification settings and consider what information your lock screen reveals to observers.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

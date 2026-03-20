@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "India Aadhaar Privacy Risks: What Biometric Data the Government Collects and Who Accesses It"
+title: "India Aadhaar Privacy Risks: What Biometric Data the."
 description: "A technical breakdown of Aadhaar's biometric data collection, storage architecture, and the privacy risks for developers and power users in India."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -187,6 +187,12 @@ Aadhaar demonstrates both the promise and pitfalls of national digital identity 
 The tension between convenience (streamlined KYC, direct benefit delivery) and privacy (surveillance potential, data breach risks) remains unresolved. As a developer, advocate for privacy-preserving practices. As a user, exercise the controls available to you.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

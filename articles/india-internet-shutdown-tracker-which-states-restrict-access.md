@@ -2,7 +2,7 @@
 
 
 layout: default
-title: "India Internet Shutdown Tracker: Which States Restrict Access Most Frequently (2026 Guide)"
+title: "India Internet Shutdown Tracker: Which States Restrict."
 description: "A practical guide to tracking internet shutdowns in India, focusing on which states restrict access most frequently in 2026."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -157,6 +157,12 @@ Tracking internet shutdowns in India requires a combination of automated tools, 
 For developers building applications for Indian users, incorporating shutdown detection and resilience into your systems is increasingly important. Resources like the OONI Probe, NetBlocks, and community-maintained GitHub repositories provide the data needed to understand and respond to these connectivity disruptions.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

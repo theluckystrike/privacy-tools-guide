@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Her Dating App Privacy: What LGBTQ+ Specific Data Is Collected and Stored by Developers"
+title: "Her Dating App Privacy: What LGBTQ+ Specific Data Is."
 description: "A technical breakdown of data collection practices in Her, the LGBTQ+ dating app. Learn what personal information developers store, how it's processed, and privacy implications for users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /her-dating-app-privacy-what-lgbtq-specific-data-is-collected/
-categories: [privacy, lgbtq, dating-apps, mobile-security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -232,6 +232,12 @@ Understanding these data collection practices empowers developers building simil
 **Related Reading**
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

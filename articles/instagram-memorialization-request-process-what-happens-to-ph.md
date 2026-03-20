@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Instagram Memorialization Request Process: What Happens to Photos, Stories, and Messages After Death"
+title: "Instagram Memorialization Request Process: What Happens."
 description: "A technical guide covering Instagram's memorialization request process, data handling after death, and API implications for developers building death-tech applications."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -268,6 +268,12 @@ Instagram's memorialization process provides a dignified way to preserve digital
 For developers building death-tech solutions, Instagram's approach emphasizes user privacy even in death, limiting data access through technical restrictions rather than offering broad post-mortem permissions.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

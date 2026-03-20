@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Secure Communication for Labor Strike Organizing: Technical Guide"
-description: "A practical guide for developers and power users setting up secure communication infrastructure for labor strike organizing. Covers encrypted messaging, threat models, and implementation details."
+title: "How to Set Up Secure Communication for Labor Strike."
+description: "A practical guide for developers and power users setting up secure communication infrastructure for labor strike organizing. Covers encrypted."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
@@ -189,6 +189,12 @@ Establish recovery procedures before operational need:
 Deploy multiple communication channels before operational need arises. Test all tools and verify all participants can access them. Document configurations and establish clear protocols for when to use each channel.
 
 Regular security reviews of your communication infrastructure protect organizational continuity and individual participant safety throughout organizing campaigns.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
