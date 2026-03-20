@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Verify Someone's Identity Before Meeting from a Dating App: Safety Verification Techniques"
+title: "Verify Someone's Identity Before Meeting from a Dating App"
 description: "Learn practical techniques to verify identity before meeting someone from a dating app. Includes reverse image search, social media validation, and."
 date: 2026-03-16
 author: theluckystrike

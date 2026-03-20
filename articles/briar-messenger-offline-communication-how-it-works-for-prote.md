@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Briar Messenger Offline Communication: How It Works for."
+title: "Briar Messenger Offline Communication"
 description: "Briar Messenger Offline Communication: How It Works for. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

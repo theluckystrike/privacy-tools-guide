@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Smart Device Terms of Service Privacy Traps: What You."
+title: "Smart Device Terms of Service Privacy Traps"
 description: "Discover the hidden privacy risks in smart device terms of service. Learn to analyze ToS, understand data collection practices, and protect your."
 date: 2026-03-16
 author: theluckystrike

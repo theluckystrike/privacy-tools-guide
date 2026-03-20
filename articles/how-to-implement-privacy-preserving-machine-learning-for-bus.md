@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Implement Privacy Preserving Machine Learning For."
+title: "Implement Privacy Preserving Machine Learning For Business Analytics"
 description: "A practical guide for developers and power users implementing privacy-preserving ML in business analytics. Covers differential privacy, federated."
 date: 2026-03-16
 author: theluckystrike

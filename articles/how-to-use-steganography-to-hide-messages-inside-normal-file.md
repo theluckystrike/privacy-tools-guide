@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use Steganography to Hide Messages Inside Normal."
+title: "Use Steganography to Hide Messages Inside Normal Files"
 description: "Learn practical steganography techniques to embed hidden data within ordinary files. Code examples for developers and power users."
 date: 2026-03-16
 author: "Privacy Tools Guide"

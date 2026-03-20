@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Encrypted Cloud Storage Performance Benchmarks 2026."
+title: "Encrypted Cloud Storage Performance Benchmarks 2026"
 description: "Real-world performance benchmarks for encrypted cloud storage services. Compare upload/download speeds, sync times, and latency across Proton Drive."
 date: 2026-03-15
 author: "Privacy Tools Guide"

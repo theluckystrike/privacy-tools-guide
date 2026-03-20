@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tenant Privacy Rights: What Landlords Can Legally."
+title: "Tenant Privacy Rights: What Landlords Can Legally Monitor in Rental Property by State"
 description: "A technical guide to tenant privacy rights covering what landlords can legally monitor in rental property. State-by-state breakdown with code examples."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN Connection Timeout Troubleshooting: TCP Handshake."
+title: "VPN Connection Timeout Troubleshooting"
 description: "A technical guide for developers and power users to diagnose and fix VPN connection timeouts caused by TCP handshake failures. Includes command-line."
 date: 2026-03-16
 author: theluckystrike

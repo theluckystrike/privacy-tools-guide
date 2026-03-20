@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Migrating from LastPass to Bitwarden Step by Step: No."
+title: "Migrating from LastPass to Bitwarden No Data Loss"
 description: "A technical guide for developers and power users migrating from LastPass to Bitwarden without losing any passwords, TOTP codes, or custom."
 date: 2026-03-16
 author: theluckystrike

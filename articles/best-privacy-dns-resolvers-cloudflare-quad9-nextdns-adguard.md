@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Privacy-Focused DNS Resolvers Compared: Cloudflare."
+title: "Best Privacy-Focused DNS Resolvers Compared"
 description: "Technical comparison of 2026 DNS resolvers. Includes privacy policies, logging practices, speed benchmarks, and configuration for all major devices."
 date: 2026-03-20
 author: theluckystrike

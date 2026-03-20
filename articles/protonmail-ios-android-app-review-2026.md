@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ProtonMail iOS Android App Review 2026: A Developer and."
+title: "ProtonMail iOS Android App Review 2026"
 description: "ProtonMail iOS Android App Review 2026: A Developer and. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Create a New Digital Identity After Escaping."
-description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone."
+title: "Create a New Digital Identity After Escaping Domestic Violence"
+description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone separation, password managers, and operational security."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/

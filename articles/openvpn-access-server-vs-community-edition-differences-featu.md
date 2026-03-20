@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "OpenVPN Access Server vs Community Edition: Key."
-description: "A comparison of OpenVPN Access Server vs Community Edition. Learn the differences in features, licensing, management, and which option suits your."
+title: "OpenVPN Access Server vs Community Edition"
+description: "A comparison of OpenVPN Access Server vs Community Edition. Learn the differences in features, licensing, management, and which option suits your infrastructure needs."
 date: 2026-03-16
 author: theluckystrike
 permalink: /openvpn-access-server-vs-community-edition-differences-features-2026/

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Tor Browser NoScript Settings Recommended 2026: A."
-description: "Learn the recommended NoScript settings for Tor Browser in 2026. This guide covers configuration options, security tradeoffs, and practical tips for."
+title: "Tor Browser NoScript Settings Recommended 2026"
+description: "Learn the recommended NoScript settings for Tor Browser in 2026. This guide covers configuration options, security tradeoffs, and practical tips for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-noscript-settings-recommended-2026/

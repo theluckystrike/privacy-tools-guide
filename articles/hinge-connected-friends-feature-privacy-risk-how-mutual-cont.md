@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Hinge Connected Friends Feature Privacy Risk: How Mutual."
+title: "Hinge Connected Friends Feature Privacy Risk"
 description: "Hinge Connected Friends Feature Privacy Risk: How Mutual Contacts Can Identify Your Profile — privacy guide covering tools, techniques, and best."
 date: 2026-03-16
 author: theluckystrike

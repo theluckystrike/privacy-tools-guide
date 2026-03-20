@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Secure Group Chat App 2026: A Developer's Technical Guide"
-description: "A technical comparison of secure group chat applications for developers and power users, covering Matrix, Session, Brijnet, and self-hosted solutions."
+title: "Best Secure Group Chat App 2026"
+description: "A technical comparison of secure group chat applications for developers and power users, covering Matrix, Session, Brijnet, and self-hosted solutions with code examples."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-secure-group-chat-app-2026/

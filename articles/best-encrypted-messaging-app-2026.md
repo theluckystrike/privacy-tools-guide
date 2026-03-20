@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Encrypted Messaging App 2026: A Developer's Technical Guide"
+title: "Best Encrypted Messaging App 2026"
 description: "A practical comparison of encrypted messaging apps for developers and power users, covering encryption protocols, self-hosting options, bot APIs, and."
 date: 2026-03-15
 author: theluckystrike

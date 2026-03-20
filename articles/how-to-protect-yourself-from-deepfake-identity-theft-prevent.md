@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Protect Yourself from Deepfake Identity Theft."
-description: "Learn practical strategies to protect yourself from deepfake identity theft. This guide covers detection tools, verification methods, and technical."
+title: "Protect Yourself from Deepfake Identity Theft"
+description: "Learn practical strategies to protect yourself from deepfake identity theft. This guide covers detection tools, verification methods, and technical countermeasures for developers and power users."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-protect-yourself-from-deepfake-identity-theft-prevent/

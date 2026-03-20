@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Protect Yourself from Credential Stuffing Attack."
-description: "Learn practical methods to defend against credential stuffing attacks. This guide covers password hygiene, MFA implementation, monitoring strategies."
+title: "Protect Yourself from Credential Stuffing Attack"
+description: "Learn practical methods to defend against credential stuffing attacks. This guide covers password hygiene, MFA implementation, monitoring strategies, and developer-side protections for applications."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-credential-stuffing-attack-pass/

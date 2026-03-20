@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Opt Out of Aadhaar-Based Surveillance and Limit."
-description: "A practical guide for developers and power users to reduce Aadhaar surveillance exposure. Learn to lock biometrics, revoke consents, and minimize."
+title: "Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing"
+description: "A practical guide for developers and power users to reduce Aadhaar surveillance exposure. Learn to lock biometrics, revoke consents, and minimize biometric data sharing."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/

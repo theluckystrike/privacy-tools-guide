@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Google Nest Hub Data Collection: What Information Google."
+title: "Google Nest Hub Data Collection"
 description: "A technical breakdown of data collection practices for Google Nest Hub devices. Learn what information Google captures, how it's used, and what developers need to know about smart display privacy."
 date: 2026-03-16
 author: theluckystrike

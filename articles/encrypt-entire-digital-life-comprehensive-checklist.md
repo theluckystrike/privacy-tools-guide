@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Encrypt Your Entire Digital Life: A Comprehensive."
+title: "Encrypt Your Entire Digital Life: A Comprehensive Checklist"
 description: "Complete guide to encrypting all data at rest and in transit. Covers device encryption, email, messaging, storage, passwords, and dead man's switches."
 date: 2026-03-20
 author: theluckystrike

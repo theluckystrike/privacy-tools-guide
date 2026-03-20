@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Children's Online Privacy Protection Act: What Parents Can Demand from Companies"
+title: "Children's Online Privacy Protection Act"
 description: "Learn what rights parents have under COPPA and what companies must do to protect children's privacy online."
 date: 2026-03-16
 author: theluckystrike

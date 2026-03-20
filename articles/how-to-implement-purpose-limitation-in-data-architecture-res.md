@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Implement Purpose Limitation in Data."
+title: "Implement Purpose Limitation in Data Architecture"
 description: "Learn practical techniques to implement purpose limitation in your data architecture. Code examples for enforcing data use restrictions based on."
 date: 2026-03-16
 author: theluckystrike

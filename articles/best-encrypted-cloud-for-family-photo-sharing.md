@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Best Encrypted Cloud for Family Photo Sharing: A."
-description: "A practical guide to selecting encrypted cloud storage for family photos. Compare zero-knowledge encryption, E2EE protocols, and self-hosting options."
+title: "Best Encrypted Cloud for Family Photo Sharing"
+description: "A practical guide to selecting encrypted cloud storage for family photos. Compare zero-knowledge encryption, E2EE protocols, and self-hosting options for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-cloud-for-family-photo-sharing/

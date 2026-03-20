@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Session Messenger Review 2026: Technical Analysis for."
+title: "Session Messenger Review 2026: Technical Analysis"
 description: "A deep technical review of Session messenger in 2026, covering its onion-routing architecture, Oxen blockchain integration, and practical API."
 date: 2026-03-15
 author: theluckystrike

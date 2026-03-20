@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Verify Your Devices Are Not Compromised: A."
-description: "A practical guide for developers and power users to audit device security. Learn to identify signs of compromise through process analysis, network."
+title: "Verify Your Devices Are Not Compromised: A Complete Audit"
+description: "A practical guide for developers and power users to audit device security. Learn to identify signs of compromise through process analysis, network monitoring, and system integrity checks."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-verify-your-devices-are-not-compromised-complete-audit/

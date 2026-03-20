@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Challenge Automated Credit Decision Using GDPR."
+title: "Challenge Automated Credit Decision Using GDPR Right to Human Review"
 description: "A practical guide for developers and power users on invoking GDPR Article 22 to challenge automated credit decisions and request human review. Includes."
 date: 2026-03-16
 author: theluckystrike

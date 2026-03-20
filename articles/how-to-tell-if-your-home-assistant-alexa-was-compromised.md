@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Tell If Your Home Assistant or Alexa Was."
+title: "Tell If Your Home Assistant or Alexa Was Compromised"
 description: "A technical guide to detecting if your smart home voice assistants have been compromised. Learn to identify signs of unauthorized access, audit logs."
 date: 2026-03-17
 author: "Privacy Tools Guide"

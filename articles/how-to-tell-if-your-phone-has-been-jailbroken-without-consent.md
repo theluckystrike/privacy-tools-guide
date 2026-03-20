@@ -3,7 +3,7 @@
 
 
 layout: default
-title: "How To Tell If Your Phone Has Been Jailbroken Without."
+title: "Tell If Your Phone Has Been Jailbroken Without Consent"
 description: "A guide to detecting unauthorized jailbreaks on your iPhone or Android device. Learn the signs, symptoms, and verification methods to."
 date: 2026-03-16
 author: "Privacy Tools Guide"

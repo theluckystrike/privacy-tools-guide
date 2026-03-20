@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN Packet Inspection Explained: How Deep Packet."
+title: "VPN Packet Inspection Explained"
 description: "Learn how deep packet inspection (DPI) works, how it detects VPN traffic, and what techniques VPN providers use to evade detection."
 date: 2026-03-18
 author: theluckystrike

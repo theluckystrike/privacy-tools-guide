@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "CryptDrive vs ProtonDrive Comparison: Which Encrypted."
+title: "CryptDrive vs ProtonDrive Comparison"
 description: "A comparison of CryptDrive and ProtonDrive for privacy-conscious users. Evaluate encryption, pricing, features, and which service better."
 date: 2026-03-16
 author: theluckystrike

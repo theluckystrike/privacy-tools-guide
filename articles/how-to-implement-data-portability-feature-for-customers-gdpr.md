@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Implement Data Portability Feature For Customers."
+title: "Implement Data Portability Feature For Customers Gdpr Right Explained"
 description: "A technical guide for developers on implementing GDPR data portability features. Learn API design, data export formats, authentication."
 date: 2026-03-16
 author: theluckystrike

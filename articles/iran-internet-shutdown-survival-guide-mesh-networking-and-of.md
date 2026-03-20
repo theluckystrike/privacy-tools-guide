@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Iran Internet Shutdown Survival Guide: Mesh Networking."
+title: "Iran Internet Shutdown Survival Guide"
 description: "A technical guide to mesh networking and offline communication tools for maintaining connectivity during internet shutdowns. Includes practical setup."
 date: 2026-03-16
 author: "theluckystrike"
