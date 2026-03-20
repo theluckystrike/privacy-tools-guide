@@ -138,9 +138,192 @@ The command-line flags available in Chromium also work in Brave, enabling advanc
 brave --remote-debugging-port=9222 --user-data-dir=/tmp/brave-debug
 ```
 
+## Benchmark Comparisons: Brave vs Competitors
+
+Here's how Brave stacks against Firefox and Safari for power users:
+
+| Feature | Brave | Firefox | Safari |
+|---------|-------|---------|--------|
+| Extension Support | Excellent | Excellent | Limited |
+| Developer Tools | Excellent | Excellent | Good |
+| Privacy Features | Excellent | Good | Excellent |
+| Performance | Good | Good | Excellent |
+| Sync Encryption | E2E | Server-side | iCloud |
+| Fingerprint Protection | Aggressive | Moderate | Minimal |
+| Cross-Platform | Yes | Yes | Apple only |
+
+Brave edges out Firefox on privacy; Safari wins on macOS performance. Firefox provides the best balance of privacy and compatibility.
+
+## Specific Workflow Optimization for Developers
+
+### API Development and Testing
+
+```javascript
+// Using Brave with Postman/REST client
+// Shields interfere with OAuth redirects
+
+// Recommended configuration for API work:
+// 1. Disable shields on localhost (127.0.0.1)
+// 2. Create profile for API development
+// 3. Use separate profile for production browsing
+```
+
+Create development profiles with reduced privacy to avoid shield-induced friction:
+
+```bash
+# Launch Brave with development profile
+brave --profile-directory="Development" https://localhost:3000
+```
+
+### Extension Management for Developers
+
+Brave supports unpacked extensions for development:
+
+```bash
+# Load unpacked extension
+# brave://extensions > Developer mode > Load unpacked
+# Navigate to your extension's folder
+
+# Example: Testing a custom privacy extension
+cd ~/my-privacy-extension
+brave --load-extension=$PWD/my-privacy-extension
+```
+
+### Frontend Performance Testing
+
+Brave's built-in DevTools match Chrome's capabilities:
+
+```javascript
+// Lighthouse audits work identically
+// Performance profiling captures same metrics
+// Network waterfall matches Chrome's output
+
+// One difference: Shields impact performance audit scores
+// Disable for accurate baselines
+```
+
+Develop with shields disabled for accurate metrics; enable for production testing.
+
+## Brave Crypto and Rewards Economics
+
+### BAT Token Mechanics
+
+The Basic Attention Token system involves:
+
+1. **Ad delivery**: Brave shows opt-in ads (user controls frequency)
+2. **Earnings**: Users earn BAT proportional to engagement
+3. **Tipping**: Send earned BAT to content creators
+4. **Valuation**: BAT trades on crypto exchanges (volatile)
+
+Current BAT price (March 2026): ~$0.45-0.55 per token
+
+```bash
+# Check current BAT earnings
+# brave://rewards
+
+# View transaction history
+# Understand your actual earnings value
+```
+
+For most users, BAT earnings amount to $2-5/month. Only worthwhile if you heavily use Brave and actively tip creators.
+
+### Privacy Implications of Rewards
+
+The on-device ad matching is genuinely private—Brave's architecture sends only matched ads (not browsing history) to backend:
+
+```javascript
+// Brave's privacy-preserving ad model
+// Instead of: "Show ads to users who visited crypto sites"
+// Brave: "User matches crypto interest" → "Show crypto ads locally" → Only send matching ad ID
+```
+
+This differs fundamentally from Google's targeting, though users still benefit from ad-serving in general.
+
+## Configuration for Maximum Privacy
+
+```json
+{
+  "privacy_settings": {
+    "cookies": "Block all third-party cookies",
+    "tracking": "Aggressive blocking",
+    "fingerprinting": "Strict randomization per-site",
+    "referrer": "Minimal",
+    "http_upgrade": "Upgrade all HTTP to HTTPS",
+    "ipfs_gateway": "Local node (advanced)"
+  },
+  "sync": {
+    "type": "end-to-end encryption",
+    "recovery_key": "SAVE THIS IN PASSWORD MANAGER"
+  },
+  "search": {
+    "provider": "Brave Search",
+    "private_window_provider": "DuckDuckGo"
+  }
+}
+```
+
+These settings maximize privacy at the cost of functionality on some sites.
+
+## Container Tabs and Profile Isolation
+
+Unlike Firefox containers, Brave uses separate profiles. For users needing isolation:
+
+```bash
+# Create separate profiles for different purposes
+brave --profile-directory="Work"
+brave --profile-directory="Personal"
+brave --profile-directory="Testing"
+
+# Each profile maintains separate:
+# - Cookies
+# - Extensions
+# - Sync data
+# - Browsing history
+```
+
+This provides stronger isolation than Firefox containers but requires launching multiple windows.
+
+## Known Issues in 2026
+
+Several limitations remain unresolved:
+
+**Site Breakage**: Aggressive shield defaults break sites using inline scripts or canvas-based verification. Fix requires per-site configuration, adding friction.
+
+**Search Quality**: Brave Search lacks Google's relevance ranking. Technical queries often return fewer results.
+
+**Extension Updates**: Less frequent updates compared to Chrome Web Store. Security patches sometimes lag weeks behind.
+
+**Onboarding**: New users frequently misunderstand shields, disabling protection immediately. Better default tuning would help.
+
+**Performance on Old Hardware**: Resource consumption rivals Chrome on older devices.
+
+## When NOT to Use Brave
+
+- Evaluating privacy-invasive services (shields interfere)
+- Enterprise environments (non-standard sync required)
+- Users prioritizing search quality over privacy
+- Applications requiring perfect site compatibility
+- Maximum performance on resource-constrained devices
+
+## Integration with Security Tools
+
+```bash
+# Brave integrates with password managers
+# Supports U2F hardware keys for 2FA
+# Works with Dashlane, 1Password, Bitwarden, LastPass
+
+# Enable hardware key requirement
+brave://settings/security
+# Toggle "Use a security key"
+```
+
+Hardware key integration is stronger than Firefox's (which requires extensions).
+
 ## Verdict for Developers and Power Users
 
 Brave works well when privacy is paramount but Chrome-level compatibility is required. It falls short when maximum search quality or enterprise compatibility trumps privacy concerns.
+
+For developers specifically: use Brave for general browsing and personal projects, switch to Chrome for debugging privacy-invasive third-party libraries. The dual-browser approach leverages each tool's strengths.
 
 ---
 

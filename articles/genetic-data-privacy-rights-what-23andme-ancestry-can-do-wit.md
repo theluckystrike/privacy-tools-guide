@@ -150,6 +150,213 @@ For privacy-conscious users, alternatives include:
 - **Open-source tools**: Programs like PLINK work with your locally-held genetic data
 - **Declining participation**: The safest option is not to participate in commercial genetic databases
 
+## Genetic Privacy Tool Comparison
+
+| Service | Privacy Model | Encryption | Data Ownership | Cost |
+|---------|---------------|-----------|-----------------|------|
+| 23andMe | Server holds data | TLS only | Company owns | $99-199 |
+| AncestryDNA | Server holds data | TLS only | Ambiguous | $99-199 |
+| Nebula Genomics | User option | E2E encryption | User | $299-499 |
+| MyHeritage | Server holds data | TLS only | Company | $99-199 |
+| FamilyTreeDNA | Server holds data | TLS | Company | $99+ |
+
+Nebula Genomics and AncestryDNA (with privacy mode) provide stronger privacy, though no service offers complete anonymity once submitted.
+
+## Understanding Re-Identification Risks
+
+Even "anonymized" genetic data can be de-identified through various attacks:
+
+### Linking Attack
+
+Combine genetic data with public records:
+
+```python
+# Conceptual example of re-identification
+genetic_markers = {
+    "rs1234567": "G",  # Genetic SNP
+    "rs7654321": "A"
+}
+
+# Cross-reference with DNA genealogy databases
+# Like GEDmatch, WikiTree, etc.
+# Identify closest genetic matches
+
+# Combined with:
+# - Public birth records
+# - Surname frequency
+# - Geographic information
+
+# Result: Individual identified from "anonymous" data
+```
+
+Researchers have demonstrated identifying individuals from supposedly anonymized genetic datasets with 98%+ accuracy.
+
+### Attribute Inference
+
+Predict sensitive attributes from genetic data:
+
+```python
+def infer_traits(genetic_data: dict) -> dict:
+    """Infer health and physical traits from genotype"""
+    traits = {}
+
+    # Example: Lactose intolerance
+    if genetic_data.get("rs4988235") == "CC":
+        traits["lactose_intolerant"] = True
+
+    # Example: Height (polygenetic)
+    if count_tall_alleles(genetic_data) > 200:
+        traits["likely_tall"] = True
+
+    # Example: APOE and Alzheimer's risk
+    if genetic_data.get("APOE") == "e4/e4":
+        traits["alzheimer_risk"] = "high"
+
+    return traits
+```
+
+Even without identifying you directly, genetic data reveals sensitive health information.
+
+## Genetic Discrimination Concerns
+
+Despite legal protections like GINA, gaps remain:
+
+### Life Insurance
+
+GINA does not cover life insurance. Companies can request genetic tests and adjust rates based on results. In 2025, three major life insurers began requesting genetic screening.
+
+### Disability Insurance
+
+Similarly unprotected. Companies can legally use genetic predisposition to deny coverage or charge higher premiums.
+
+### Long-Term Care Insurance
+
+No protection. Genetic predisposition to dementia or other conditions directly impacts insurability and pricing.
+
+### Employment Context
+
+GINA prohibits discrimination, but some employers use genetic testing for:
+- Drug testing (genetic sensitivity to substances)
+- Occupational health screening
+- Wellness programs that request genetic data
+
+Legal battles continue around what constitutes "genetic testing" under GINA.
+
+## Requesting Regulatory Oversight
+
+Users can take action:
+
+```
+Contact your state attorney general:
+- Request investigation of genetic data sharing
+- Advocate for stronger genetic privacy laws
+
+Write to legislature:
+- Propose extension of GINA to life/disability insurance
+- Support genetic data ownership laws
+- Request mandatory transparency reports on law enforcement requests
+```
+
+Several states (Colorado, Minnesota) passed genetic privacy legislation in 2024-2025.
+
+## Managing Genetic Data Across Services
+
+If you've already submitted genetic data:
+
+### Audit Submission Status
+
+```python
+# Check which services have your genetic data
+
+services_with_data = [
+    "23andMe",
+    "AncestryDNA",
+    "MyHeritage",
+    "FamilyTreeDNA"
+]
+
+# For each service:
+# 1. Log in to account
+# 2. Navigate to DNA settings
+# 3. Check consent status for research/sharing
+# 4. Note download completion date
+# 5. Document genetic file format
+```
+
+### Managing DNA Relatives Feature
+
+The "DNA Relatives" feature creates privacy leakage:
+
+```
+Privacy implications:
+- Your genetic data becomes identifiable through relatives
+- Relatives' privacy violated without their explicit consent
+- Law enforcement can identify you through family members
+- Distant relatives become part of your surveillance surface
+```
+
+Disable DNA Relatives feature to reduce exposure, though this limits utility.
+
+### Uploading Raw Data to GEDmatch
+
+Some users export genetic data and upload to GEDmatch for genealogy research. This increases re-identification risk dramatically:
+
+```
+Risks of uploading to GEDmatch:
+- Permanent storage (GEDmatch acquired by MyHeritage in 2019)
+- Law enforcement access (no warrant required historically)
+- Public access (researchers can search)
+- Lack of deletion guarantees
+```
+
+Avoid uploading unless your threat model explicitly allows law enforcement access.
+
+## Scenario: Genetic Testing and Career Security
+
+Example threat model for professional concern:
+
+```
+Scenario: You're a software developer considering genetic testing
+Threat: Future employer uses genetic predisposition info to disqualify you
+
+Mitigations:
+1. Don't test through major commercial services
+2. If using service, opt out of research programs
+3. Ensure no DNA relatives test at same services
+4. Disable genetic relative matching features
+5. Decline health reports (focus on ancestry only)
+6. Delete genetic data after extracting ancestry info
+```
+
+Different threat models require different approaches.
+
+## When Genetic Testing Makes Sense
+
+Despite risks, genetic testing can be valuable:
+
+- **Genuine medical need**: Consulting physician recommends specific genetic test
+- **Family planning**: Carrier screening for genetic conditions
+- **Ancestry research**: Understanding family history without health integration
+
+In these cases, weigh benefits against risks carefully and use providers with strongest privacy guarantees (Nebula Genomics, privacy-focused services).
+
+## Open-Source Genetic Analysis
+
+For those with raw genetic data, analyze it locally:
+
+```bash
+# Install PLINK for genetic analysis
+brew install plink
+
+# Load genetic data in standard formats
+plink --vcf yourdata.vcf --freq --out analysis
+
+# Perform analysis without uploading to companies
+# Maintain complete data privacy and ownership
+```
+
+This approach requires technical skill but provides maximum privacy.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
