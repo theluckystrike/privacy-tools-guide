@@ -5,7 +5,7 @@ description: "A comprehensive guide to enterprise identity governance platforms 
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-enterprise-identity-governance-platform-for-managing-team-access-reviews-2026/
-categories: [guides, security, identity-governance]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

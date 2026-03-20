@@ -5,7 +5,7 @@ description: "A practical comparison of enterprise privacy compliance tools for 
 date: 2026-03-20
 author: theluckystrike
 permalink: /enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/
-categories: [guides, privacy, compliance]
+categories: [guides, security, enterprise]
 reviewed: true
 score: 8
 intent-checked: true
