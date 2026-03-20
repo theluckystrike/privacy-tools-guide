@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, workflow]
 ---
 
 {% raw %}

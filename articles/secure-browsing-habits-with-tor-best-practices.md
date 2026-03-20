@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /secure-browsing-habits-with-tor-best-practices/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, best-of]
 ---
 
 {% raw %}

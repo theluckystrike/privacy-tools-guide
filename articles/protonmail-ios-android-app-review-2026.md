@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /protonmail-ios-android-app-review-2026/
 categories: [guides, security]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

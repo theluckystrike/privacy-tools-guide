@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /protonmail-vs-tutanota-for-daily-email-use-honest-comparison/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, comparison]
 ---
 
 {% raw %}

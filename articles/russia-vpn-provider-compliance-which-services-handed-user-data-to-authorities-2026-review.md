@@ -8,7 +8,7 @@ permalink: /russia-vpn-provider-compliance-which-services-handed-user-data-to-au
 score: 8
 voice-checked: true
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 intent-checked: true
 ---

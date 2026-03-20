@@ -7,9 +7,10 @@ author: "Privacy Tools Guide"
 permalink: /russia-sovereign-internet-law-what-it-means-for-vpn-users-an/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
+tags: [privacy-tools-guide, vpn]
 ---
 
 {% raw %}

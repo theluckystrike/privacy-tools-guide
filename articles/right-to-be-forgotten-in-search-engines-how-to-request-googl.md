@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /right-to-be-forgotten-in-search-engines-how-to-request-googl/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 voice-checked: true
