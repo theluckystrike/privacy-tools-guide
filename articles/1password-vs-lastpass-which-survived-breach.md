@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /1password-vs-lastpass-which-survived-breach/
 categories: [security, comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]
