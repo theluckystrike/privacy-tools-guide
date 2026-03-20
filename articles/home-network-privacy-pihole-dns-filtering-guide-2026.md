@@ -484,6 +484,140 @@ One setup protects all devices automatically.
 
 Pi-hole transforms your home network from a data collection pipe into a privacy fortress. It's a one-time investment that protects every device automatically—phones, tablets, smart TVs, even that sketchy IoT device your family insisted on buying.
 
+
+## Hardening Pi-hole Against Bypass
+
+Pi-hole only protects devices that use it as their DNS resolver. Devices with hardcoded DNS addresses—some smart TVs, gaming consoles, and misconfigured IoT devices—bypass Pi-hole entirely. Plug this gap at the router level by intercepting all outbound DNS traffic and redirecting it to Pi-hole.
+
+Most consumer routers running DD-WRT, OpenWrt, or Tomato firmware support this. On OpenWrt:
+
+```bash
+# Redirect all DNS traffic to Pi-hole regardless of device setting
+# Edit /etc/config/firewall on your OpenWrt router
+
+config rule
+    option name 'Redirect DNS'
+    option src 'lan'
+    option dest_port '53'
+    option target 'DNAT'
+    option family 'ipv4'
+    option dest_ip '192.168.1.50'  # Pi-hole IP
+
+# Apply changes
+/etc/init.d/firewall restart
+```
+
+With this rule active, a device that hardcodes 8.8.8.8 as its DNS server still has those queries intercepted and redirected to Pi-hole. The device never knows its queries were rerouted.
+
+For DoH (DNS-over-HTTPS) bypass—where apps or browsers encrypt DNS and send it directly to Cloudflare or Google over port 443—blocking is harder since port 443 carries all HTTPS traffic. You can block the specific IP ranges used by major DoH providers, though this is an ongoing maintenance task as providers change their infrastructure:
+
+```bash
+# Block known DoH provider IPs at router level
+# Cloudflare DoH
+iptables -A FORWARD -d 1.1.1.1 -j DROP
+iptables -A FORWARD -d 1.0.0.1 -j DROP
+
+# Google DoH
+iptables -A FORWARD -d 8.8.8.8 -j DROP
+iptables -A FORWARD -d 8.8.4.4 -j DROP
+```
+
+Firefox, which has DoH enabled by default in the US, respects the CANARY domain `use-application-dns.net` as a signal to disable DoH. Pi-hole can serve this domain:
+
+```bash
+# In Pi-hole admin: add to custom DNS
+# Settings → DNS → Custom DNS
+# Add: use-application-dns.net → 0.0.0.0
+```
+
+This tells Firefox running on any device in your network to use the system resolver (Pi-hole) instead of its built-in DoH configuration.
+
+
+## Integrating Pi-hole with Unbound for Recursive DNS
+
+The default Pi-hole setup forwards DNS queries to an upstream provider like Cloudflare or Quad9. Even encrypted, those providers see your complete query history. For maximum privacy, run Unbound as a recursive resolver: your queries go directly to authoritative DNS servers for each domain, with no intermediary seeing your complete browsing history.
+
+Install and configure Unbound alongside Pi-hole:
+
+```bash
+# Install Unbound
+sudo apt install unbound
+
+# Create Unbound configuration for Pi-hole integration
+sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+```
+
+Add this configuration:
+
+```
+server:
+    verbosity: 0
+    interface: 127.0.0.1
+    port: 5335
+    do-ip4: yes
+    do-udp: yes
+    do-tcp: yes
+    do-ip6: no
+    
+    # Privacy hardening
+    hide-identity: yes
+    hide-version: yes
+    qname-minimisation: yes
+    
+    # Performance
+    prefetch: yes
+    num-threads: 1
+    so-rcvbuf: 1m
+    
+    # Root hints (updated periodically)
+    root-hints: "/var/lib/unbound/root.hints"
+    
+    # Aggressive NSEC for DNSSEC validation
+    aggressive-nsec: yes
+    
+    # Hardened DNSSEC
+    harden-dnssec-stripped: yes
+    harden-below-nxdomain: yes
+    harden-referral-path: no
+```
+
+Configure Pi-hole to use Unbound as its upstream resolver by pointing it to `127.0.0.1#5335` in the DNS settings. The result: your home network's DNS queries never leave to an upstream provider in readable form. Each query resolves directly from authoritative root servers.
+
+The privacy improvement is significant. Cloudflare and Quad9 promise privacy, but with Unbound, no provider receives your complete query history because no provider is in the path. The tradeoff is slightly higher latency for the first query to each domain (subsequent queries hit Unbound's cache). For typical home network usage, this difference is imperceptible.
+
+
+## Long-Term Blocklist Management
+
+Blocklist quality degrades over time. Ad networks register new domains, trackers migrate to new hostnames, and legitimate services occasionally appear on blocklists through false-positive errors. Active blocklist management keeps your Pi-hole effective without breaking legitimate services.
+
+Evaluate your blocking rate monthly. A healthy Pi-hole typically blocks 15–40% of DNS queries depending on household browsing patterns. If your blocking rate drops suddenly, check whether blocklists have been updated and whether devices have been added that bypass Pi-hole.
+
+Maintain a local exceptions file for services that get incorrectly blocked on your network. Store this separately from Pi-hole's built-in whitelist so it survives updates:
+
+```bash
+# Create a local whitelist file
+sudo nano /etc/pihole/whitelist.txt
+
+# Common false positives (add as needed):
+# spotify.com
+# s.youtube.com (breaks YouTube if blocked)
+# fonts.googleapis.com (breaks many websites)
+
+# Apply whitelist
+pihole -w $(cat /etc/pihole/whitelist.txt | tr '
+' ' ')
+```
+
+Schedule automated blocklist updates through Pi-hole's built-in gravity update mechanism:
+
+```bash
+# Add to crontab for weekly gravity updates at 3 AM Sunday
+(crontab -l 2>/dev/null; echo "0 3 * * 0 pihole -g") | crontab -
+```
+
+When evaluating new blocklists, test in a staging configuration before enabling network-wide. Import the list, monitor the query log for 24 hours, and review which domains it blocks. Good blocklists block ad servers and trackers without touching CDNs, analytics that users have consented to, or first-party service domains.
+
+
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
