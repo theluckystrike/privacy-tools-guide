@@ -236,3 +236,4 @@ Run this script after each Firefox update, as some settings may reset.
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

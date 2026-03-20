@@ -141,3 +141,4 @@ For developers building applications that integrate with Windows telemetry APIs,
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

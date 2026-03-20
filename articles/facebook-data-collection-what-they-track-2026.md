@@ -211,3 +211,4 @@ Understanding Facebook's data collection practices helps you make informed choic
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

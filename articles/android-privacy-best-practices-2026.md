@@ -181,3 +181,4 @@ Consider using third-party permission managers from F-Droid for additional contr
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

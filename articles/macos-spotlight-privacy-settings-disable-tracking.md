@@ -204,3 +204,4 @@ macOS provides detailed privacy controls, but they require intentional configura
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

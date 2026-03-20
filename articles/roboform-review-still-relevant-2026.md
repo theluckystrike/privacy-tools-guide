@@ -143,3 +143,4 @@ The tool isn't irrelevant—it's simply optimized for a different user than you.
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

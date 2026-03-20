@@ -157,3 +157,4 @@ Brave works well when privacy is paramount but Chrome-level compatibility is req
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

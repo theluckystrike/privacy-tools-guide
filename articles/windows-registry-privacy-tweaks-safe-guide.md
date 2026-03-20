@@ -185,3 +185,4 @@ Restart-Service -Name "DiagTrack" -Force  # Requires administrator
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

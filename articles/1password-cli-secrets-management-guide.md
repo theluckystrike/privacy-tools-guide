@@ -188,3 +188,4 @@ The 1Password CLI turns secret management into a secure, scriptable workflow. Tr
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

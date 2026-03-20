@@ -140,3 +140,4 @@ A strong master password ensures the key derivation produces a secure encryption
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

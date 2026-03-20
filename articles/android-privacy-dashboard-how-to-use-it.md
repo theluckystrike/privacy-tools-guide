@@ -232,3 +232,4 @@ Remember: Just because an app requests permission doesn't mean you must grant it
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

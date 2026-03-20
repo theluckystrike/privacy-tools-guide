@@ -249,3 +249,4 @@ Power users should consider implementing monitoring for clipboard access:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -168,3 +168,4 @@ The information collected creates rich profiles about household patterns, daily 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

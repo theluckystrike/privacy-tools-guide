@@ -239,3 +239,4 @@ Most modern password managers support CLI export, which gives the most control o
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

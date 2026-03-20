@@ -205,3 +205,4 @@ Firefox Sync requires specific settings. Ensure `services.sync.enabled` is true 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
