@@ -98,7 +98,7 @@ tresor sync ~/Projects/sensitive-data/env-files
 
 ### Rclone Integration
 
-Most encrypted storage services work with rclone, providing a unified interface:
+Most encrypted storage services work with rclone, providing an unified interface:
 
 ```bash
 # Configure rclone with Internxt
@@ -226,14 +226,6 @@ Regardless of which service you choose, follow these practices:
 3. **Export recovery keys** and store them offline
 4. **Verify encryption** using CLI tools after upload
 5. **Consider local encryption** (GPG or age) for extra-sensitive files before cloud upload
-
-## Conclusion
-
-The encrypted cloud storage landscape in 2026 offers viable free options for developers. Internxt leads in storage capacity, Tresorit excels in compliance features, and Sync.com provides straightforward zero-knowledge encryption. Evaluate based on your specific needs: storage requirements, CLI functionality, key recovery options, and jurisdictional privacy.
-
-For most developers, starting with Internxt's free tier provides the best balance of storage and features. As projects grow, consider paid tiers or self-hosted alternatives.
-
----
 
 ## Related Reading
 

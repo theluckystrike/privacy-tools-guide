@@ -19,7 +19,7 @@ Every time you connect to a WiFi network, your device reveals multiple identifie
 
 ## Device Identity at the Network Layer
 
-Before implementing anonymity strategies, you need to understand what your device reveals at each network layer. At layer 2, your MAC address serves as a unique hardware identifier that WiFi access points log immediately upon association. Even before authentication completes, your device transmits this 48-bit identifier in probe requests and association frames.
+Before implementing anonymity strategies, you need to understand what your device reveals at each network layer. At layer 2, your MAC address serves as an unique hardware identifier that WiFi access points log immediately upon association. Even before authentication completes, your device transmits this 48-bit identifier in probe requests and association frames.
 
 Modern operating systems attempt MAC address randomization, but the implementation varies significantly. Windows 11 randomizes MAC addresses for random SSID probing but often uses the real address for trusted networks. Android randomizes probe requests but defaults to the real MAC on connected networks unless specifically configured. Linux distributions offer the most control but require manual configuration.
 

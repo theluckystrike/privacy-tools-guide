@@ -165,9 +165,9 @@ Firefox offers the best balance for developers—full extension support, excelle
 
 Implement privacy in layers:
 
-1. **Primary browser**: Firefox with uBlock Origin, Privacy Badger, and configured tracking protection
-2. **Secondary browser**: Brave for sites that require Chromium compatibility
-3. **Isolated environment**: Tor Browser for sensitive research
+1. Primary browser: Firefox with uBlock Origin, Privacy Badger, and configured tracking protection
+2. Secondary browser: Brave for sites that require Chromium compatibility
+3. Isolated environment: Tor Browser for sensitive research
 
 Additionally, create a separate Firefox profile for Google services you genuinely need:
 

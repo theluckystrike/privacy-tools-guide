@@ -68,7 +68,7 @@ const recommendedSettings = {
 
 Brave has gained significant popularity among privacy-conscious users, and its developer-friendly features make it suitable for development work. The browser blocks ads and trackers by default, reducing noise in your network logs and improving performance.
 
-Brave includes a built-in tor onion service for private browsing—a useful feature when testing applications that need to work over tor or when you need to verify tor compatibility.
+Brave includes a built-in tor onion service for private browsing—an useful feature when testing applications that need to work over tor or when you need to verify tor compatibility.
 
 Test Brave's fingerprinting protection:
 

@@ -31,7 +31,7 @@ Proton Calendar provides end-to-end encryption for events, including titles, loc
 
 The interface works through Proton's web application and mobile apps. Events support standard calendar fields: title, location, description, attendees, reminders, and recurrence rules. Sharing works through Proton's encrypted sharing system, allowing recipients to view events without Proton accounts if needed.
 
-Proton Calendar integrates with Proton Mail and Proton Drive, providing a unified privacy-focused ecosystem. The trade-off involves Proton's proprietary nature—you cannot self-host or audit the encryption implementation independently.
+Proton Calendar integrates with Proton Mail and Proton Drive, providing an unified privacy-focused ecosystem. The trade-off involves Proton's proprietary nature—you cannot self-host or audit the encryption implementation independently.
 
 For developers, Proton provides API access through Proton Mail API, though programmatic calendar management requires more work compared to open protocols. The lack of CalDAV support means integration with third-party calendar clients requires Proton's official applications.
 
@@ -109,11 +109,11 @@ Different solutions implement encryption at various layers:
 
 **Application-layer E2E encryption** (Proton, Tutanota, EteSync): Calendar data is encrypted on your device before transmission. The server stores only encrypted data. This provides the strongest protection but limits integration options.
 
-**Transport-layer encryption**: All solutions should use TLS for data in transit. This protects data during transmission but leaves plaintext on the server.
+Transport-layer encryption: All solutions should use TLS for data in transit. This protects data during transmission but leaves plaintext on the server.
 
-**Storage encryption**: Self-hosted solutions benefit from filesystem encryption on the server. This protects data at rest but requires server-side trust.
+Storage encryption: Self-hosted solutions benefit from filesystem encryption on the server. This protects data at rest but requires server-side trust.
 
-**Client-side encryption**: Some developers implement additional encryption at the application layer before syncing to any cloud service. Tools like GPG or age encrypt calendar exports, providing defense-in-depth.
+Client-side encryption: Some developers implement additional encryption at the application layer before syncing to any cloud service. Tools like GPG or age encrypt calendar exports, providing defense-in-depth.
 
 ## Automating Calendar Tasks
 

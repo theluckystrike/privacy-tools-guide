@@ -104,7 +104,7 @@ You control the server, can implement custom authentication, and pair with your 
 
 ### Nextcloud with End-to-End Encryption
 
-Nextcloud offers comprehensive file sharing with optional end-to-end encryption:
+Nextcloud offers file sharing with optional end-to-end encryption:
 
 ```bash
 # Enable end-to-end encryption app
@@ -133,7 +133,7 @@ curl -X POST https://api.tresorit.com/files \
   -F "file=@document.pdf"
 ```
 
-The service provides comprehensive audit logging, which matters for compliance requirements. Pricing reflects the enterprise focus, making it most suitable for organizations with budget for premium solutions.
+The service provides audit logging, which matters for compliance requirements. Pricing reflects the enterprise focus, making it most suitable for organizations with budget for premium solutions.
 
 ### Proton Drive
 
@@ -190,13 +190,13 @@ Select based on your threat model and workflow requirements.
 
 For **quick transfers** between machines without cloud dependency, Magic Wormhole provides the fastest path to secure file movement. The direct connection model eliminates trust in third-party storage.
 
-For **encrypted cloud storage** while maintaining usability, rclone with crypt offers flexibility across providers. You keep encryption keys while leveraging existing cloud accounts.
+For **encrypted cloud storage** while maintaining usability, rclone with crypt offers flexibility across providers. You keep encryption keys while using existing cloud accounts.
 
 For **continuous synchronization** across devices with full control, Syncthing excels. The self-hosted nature removes recurring costs and places your data entirely within your infrastructure.
 
 For **team collaboration** requiring audit trails and management features, Tresorit or Nextcloud provide the features but come with corresponding costs and complexity.
 
-For **application integration**, services with robust APIs like Scaleway or Cloudflare R2 give you building blocks for custom implementations while handling the encryption primitives.
+For **application integration**, services with APIs like Scaleway or Cloudflare R2 give you building blocks for custom implementations while handling the encryption primitives.
 
 Regardless of choice, verify that encryption covers both transit and storage, that you control or understand key management, and that the service supports your required access patterns. The best tool fits naturally into your workflow without forcing security compromises.
 

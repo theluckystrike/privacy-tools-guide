@@ -24,21 +24,21 @@ iOS presents unique security considerations that differ from Android. The platfo
 
 Every secure messaging app should meet these minimum criteria:
 
-- **End-to-end encryption (E2EE) by default**: Messages must be encrypted on your device and only decryptable on the recipient's device
-- **Open-source code**: Independent security researchers must be able to audit the encryption implementations
-- **Forward secrecy**: Compromising one session key should not expose past conversations
-- **Minimal metadata**: The app should collect and store as little data about your communications as possible
-- **Secure key verification**: Methods to verify you're communicating with the right person
+- End-to-end encryption (E2EE) by default: Messages must be encrypted on your device and only decryptable on the recipient's device
+- Open-source code: Independent security researchers must be able to audit the encryption implementations
+- Forward secrecy: Compromising one session key should not expose past conversations
+- Minimal metadata: The app should collect and store as little data about your communications as possible
+- Secure key verification: Methods to verify you're communicating with the right person
 
 ### iOS-Specific Considerations
 
 Apple's platform introduces specific factors to consider:
 
-- **App Store review process**: While providing some security vetting, this also means you cannot install apps outside Apple's ecosystem
-- **iMessage integration**: Apple's messaging platform has its own encryption, but lacks transparency
-- **Focus mode compatibility**: How apps handle notification delivery during Focus modes
-- **Screen Time restrictions**: Parental control features that can limit app functionality
-- **Keychain integration**: Whether apps use iOS Keychain for secure credential storage
+- App Store review process: While providing some security vetting, this also means you cannot install apps outside Apple's ecosystem
+- iMessage integration: Apple's messaging platform has its own encryption, but lacks transparency
+- Focus mode compatibility: How apps handle notification delivery during Focus modes
+- Screen Time restrictions: Parental control features that can limit app functionality
+- Keychain integration: Whether apps use iOS Keychain for secure credential storage
 
 ## Signal: The Gold Standard
 
@@ -70,10 +70,10 @@ async function verifySignalSafetyNumber(contact) {
 
 Signal on iOS integrates well with Apple's platform while maintaining security:
 
-- **iOS Keychain**: Session keys stored in secure enclave
-- **Focus mode support**: Proper notification filtering during Focus modes
-- **Screen Time compatible**: Works with parental controls
-- **Widget support**: Home screen widgets for quick actions
+- iOS Keychain: Session keys stored in secure enclave
+- Focus mode support: Proper notification filtering during Focus modes
+- Screen Time compatible: Works with parental controls
+- Widget support: Home screen widgets for quick actions
 
 ### Configuration for Maximum Privacy
 
@@ -113,10 +113,10 @@ Session uses a network of onion-routed nodes similar to Tor. Your messages bounc
 
 Session on iOS has matured significantly:
 
-- **No phone number required**: Create an account with just a Session ID
-- **Push notifications**: Uses Apple's push notification service without exposing content
-- **Attachment handling**: Media remains encrypted until viewed
-- **Offline messages**: Queue messages when offline, deliver when connected
+- No phone number required: Create an account with just a Session ID
+- Push notifications: Uses Apple's push notification service without exposing content
+- Attachment handling: Media remains encrypted until viewed
+- Offline messages: Queue messages when offline, deliver when connected
 
 The trade-off is Session lacks some features Signal offers—specifically voice and video calling. If you need these, you'll need a separate app.
 
@@ -136,11 +136,11 @@ Session's security model assumes you protect your recovery phrase. Without it, t
 
 ## Threema: Swiss Privacy
 
-Threema, developed in Switzerland, offers a European alternative with strong privacy laws protecting user data. It's one of the few paid encrypted messaging apps, which theoretically removes the incentive to monetize user data.
+Threema, developed in Switzerland, offers an European alternative with strong privacy laws protecting user data. It's one of the few paid encrypted messaging apps, which theoretically removes the incentive to monetize user data.
 
 ### Identity System
 
-Threema uses a unique approach to identity:
+Threema uses an unique approach to identity:
 
 ```javascript
 // Threema Identity structure
@@ -157,10 +157,10 @@ Unlike Signal, Threema doesn't require a phone number or email. The Threema ID i
 
 Threema provides solid iOS integration:
 
-- **iOS widgets**: Quick access to compose new messages
-- **Apple Watch support**: Receive and send messages from your watch
-- **File sharing**: Large file support up to 100MB
-- **Groups and broadcasts**: Full group support with E2EE
+- iOS widgets: Quick access to compose new messages
+- Apple Watch support: Receive and send messages from your watch
+- File sharing: Large file support up to 100MB
+- Groups and broadcasts: Full group support with E2EE
 
 ### Comparison with Signal
 
@@ -183,9 +183,9 @@ Apple's iMessage deserves mention, though it presents a complicated privacy pict
 
 iMessage provides:
 
-- **Encryption in transit**: Messages encrypted between devices
-- **Encryption at rest**: Messages encrypted on device with keys in Secure Enclave
-- **Device-to-device**: Encryption between Apple devices using Apple servers as relay
+- Encryption in transit: Messages encrypted between devices
+- Encryption at rest: Messages encrypted on device with keys in Secure Enclave
+- Device-to-device: Encryption between Apple devices using Apple servers as relay
 
 ```javascript
 // iMessage security verification
@@ -258,10 +258,10 @@ const whatsappMetadata = {
 
 WhatsApp on iOS integrates deeply with Apple features:
 
-- **Focus mode**: Good support for notification filtering
-- **Widgets**: Multiple widget options
-- **Live Activities**: Real-time message status
-- **CarPlay**: Native support
+- Focus mode: Good support for notification filtering
+- Widgets: Multiple widget options
+- Live Activities: Real-time message status
+- CarPlay: Native support
 
 If you must use WhatsApp, enable these privacy settings:
 

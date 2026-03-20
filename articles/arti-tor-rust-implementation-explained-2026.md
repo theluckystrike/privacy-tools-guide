@@ -28,11 +28,11 @@ Beyond memory safety, Rust provides excellent performance characteristics. The T
 
 Arti splits into several key crates that handle specific protocol responsibilities:
 
-- **tor-proto**: Core protocol state machine handling circuit building and data forwarding
-- **tor-circmgr**: Circuit creation and maintenance logic
-- **tor-chanmgr**: Channel management for directory authorities and relays
-- **tor-guard**: Guard relay selection and rotation
-- **arti-client**: High-level API for applications embedding Tor
+- tor-proto: Core protocol state machine handling circuit building and data forwarding
+- tor-circmgr: Circuit creation and maintenance logic
+- tor-chanmgr: Channel management for directory authorities and relays
+- tor-guard: Guard relay selection and rotation
+- arti-client: High-level API for applications embedding Tor
 
 This modular design allows developers to use individual components or the complete stack. The `arti-client` crate provides the simplest integration path for most applications.
 

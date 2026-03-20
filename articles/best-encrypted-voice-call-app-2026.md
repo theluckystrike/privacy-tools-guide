@@ -20,10 +20,10 @@ Finding the best encrypted voice call app requires understanding the underlying 
 
 True encrypted voice calling requires specific technical components:
 
-- **End-to-end encryption (E2EE)**: Encryption that only the endpoints can decrypt, preventing interception by servers or intermediaries
-- **Forward secrecy**: New encryption keys generated for each session, protecting past calls even if long-term keys are compromised
-- **SRTP (Secure Real-time Transport Protocol)**: Encrypts the actual audio stream, not just the signaling channel
-- **Key verification**: Mechanisms like SAS (Short Authentication Strings) that allow users to verify their connection is secure
+- End-to-end encryption (E2EE): Encryption that only the endpoints can decrypt, preventing interception by servers or intermediaries
+- Forward secrecy: New encryption keys generated for each session, protecting past calls even if long-term keys are compromised
+- SRTP (Secure Real-time Transport Protocol): Encrypts the actual audio stream, not just the signaling channel
+- Key verification: Mechanisms like SAS (Short Authentication Strings) that allow users to verify their connection is secure
 
 Applications that only encrypt the signaling channel (metadata, call setup) while leaving audio unencrypted do not provide meaningful privacy protection.
 
@@ -254,13 +254,13 @@ Wire advantages:
 
 ## Recommendations by Use Case
 
-**Personal communications**: Signal provides the strongest encryption with minimal configuration. The key verification through safety numbers ensures you're actually talking to who you think you are.
+Personal communications: Signal provides the strongest encryption with minimal configuration. The key verification through safety numbers ensures you're actually talking to who you think you are.
 
-**Team collaboration**: Jitsi Meet self-hosted gives organizations full control over infrastructure while maintaining E2EE. Disable recording and guest access for maximum security.
+Team collaboration: Jitsi Meet self-hosted gives organizations full control over infrastructure while maintaining E2EE. Disable recording and guest access for maximum security.
 
-**Custom application development**: Linphone offers the most flexibility with its SIP/ZRTP stack. The SDK supports embedding encrypted calling in your own applications.
+Custom application development: Linphone offers the most flexibility with its SIP/ZRTP stack. The SDK supports embedding encrypted calling in your own applications.
 
-**Enterprise environments**: Wire combines encrypted voice with business features like guest rooms and self-destructing messages. Self-hosting option available for data sovereignty requirements.
+Enterprise environments: Wire combines encrypted voice with business features like guest rooms and self-destructing messages. Self-hosting option available for data sovereignty requirements.
 
 The encrypted voice landscape continues evolving. MLS (Messaging Layer Security) adoption is growing across platforms, promising improved group call efficiency. Your choice should support standard protocols like SRTP and ZRTP to ensure future compatibility.
 

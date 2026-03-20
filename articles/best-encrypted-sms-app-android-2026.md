@@ -23,10 +23,10 @@ Signal is the best encrypted messaging app for Android in 2026 -- it provides op
 Standard SMS travels in plaintext through carrier networks. True encrypted SMS requires either: Over-the-Top (OTT) messaging apps that bypass SMS entirely, or RCS-based solutions that work within the messaging ecosystem. The distinction matters: app-based encryption protects against both carriers and app providers, while RCS encryption (as implemented by Google and carriers) primarily protects against interception but leaves metadata accessible.
 
 Key cryptographic properties to evaluate:
-- **End-to-end encryption (E2EE)**: Only sender and recipient can read messages
-- **Forward secrecy**: Compromised long-term keys cannot decrypt past conversations
-- **Metadata protection**: Minimal collection of who messaged whom and when
-- **Open-source verification**: Independent security audits of implementation
+- End-to-end encryption (E2EE): Only sender and recipient can read messages
+- Forward secrecy: Compromised long-term keys cannot decrypt past conversations
+- Metadata protection: Minimal collection of who messaged whom and when
+- Open-source verification: Independent security audits of implementation
 
 ## Signal: The Gold Standard
 
@@ -180,11 +180,6 @@ For custom implementations, consider these Android security configurations:
 ```
 
 Signal provides an Android Service Library for developers integrating secure messaging into custom applications. The library handles key management, session establishment, and message encryption.
-
-## Conclusion
-
-The "best" encrypted SMS app depends on your threat model, technical requirements, and contact ecosystem—not a universal ranking.
-
 
 ## Related Reading
 

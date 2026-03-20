@@ -42,7 +42,7 @@ Firefox's container tabs provide additional isolation for managing multiple iden
 
 Brave's Android browser ships with aggressive blocking by default, intercepting ads, trackers, and fingerprinting scripts. The Chromium base provides full extension compatibility, so developers can install the same privacy tools they use on desktop.
 
-Brave's Shields panel offers per-site controls. You can adjust blocking levels for specific domains without affecting your global settings—a useful feature when testing how your own web applications handle aggressive content blocking.
+Brave's Shields panel offers per-site controls. You can adjust blocking levels for specific domains without affecting your global settings—an useful feature when testing how your own web applications handle aggressive content blocking.
 
 ```javascript
 // Test Brave's fingerprinting resistance
@@ -166,10 +166,10 @@ curl -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?nam
 
 Select based on your workflow requirements:
 
-- **Full extension support**: Firefox or Brave
-- **Maximum privacy without Google services**: Mull or Fennec F-Droid
-- **Chromium compatibility for development**: Brave or Bromite
-- **Balanced approach with regular updates**: Firefox with uBlock Origin
+- Full extension support: Firefox or Brave
+- Maximum privacy without Google services: Mull or Fennec F-Droid
+- Chromium compatibility for development: Brave or Bromite
+- Balanced approach with regular updates: Firefox with uBlock Origin
 
 All options above provide substantial privacy improvements over default Android browsers. The key is configuring your chosen browser to match your threat model—whether that's blocking ad trackers, resisting fingerprinting, or encrypting all DNS queries.
 

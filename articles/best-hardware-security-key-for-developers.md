@@ -32,7 +32,7 @@ Different keys support different protocols. Your use case determines which featu
 
 ## YubiKey 5 Series: The Developer Standard
 
-Yubico's YubiKey 5 series dominates developer workflows for good reason. The YubiKey 5 NFC works across desktop (USB-A or USB-C via adapter) and mobile (NFC), while the YubiKey 5Ci offers Lightning connector support for iOS developers.
+Yubico's YubiKey 5 series dominates developer workflows for good reason. The YubiKey 5 NFC works across desktop (USB-An or USB-C via adapter) and mobile (NFC), while the YubiKey 5Ci offers Lightning connector support for iOS developers.
 
 ### FIDO2 Implementation
 

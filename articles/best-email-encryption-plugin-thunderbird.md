@@ -150,13 +150,6 @@ Corrupted keyrings can cause unpredictable behavior. Backup your `.gnupg` direct
 
 Forgotten passphrases have no recovery mechanism. If you lose both the passphrase and the key, the data is irrecoverably lost. Maintain backups of both.
 
-## Conclusion
-
-Thunderbird's built-in encryption capabilities provide strong protection for email communications when properly configured. OpenPGP suits users who value key independence and web-of-trust validation, while S/MIME serves enterprise environments with existing PKI infrastructure. Both standards benefit from correct implementation, strong key management practices, and regular security maintenance.
-
-The initial setup effort rewards you with genuine privacy—encrypted emails cannot be read by intermediaries, service providers, or adversaries who lack the corresponding private keys.
-
-
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)

@@ -17,7 +17,7 @@ voice-checked: true
 
 {% raw %}
 
-Set up a application performance monitoring (APM) workflow by instrumenting your code with custom metrics, establishing meaningful alerts based on service level objectives (SLOs), and implementing distributed tracing to quickly isolate performance bottlenecks. This guide covers metric collection strategies, alerting best practices, tracing implementation, and building a monitoring culture that balances observability with user privacy.
+Set up an application performance monitoring (APM) workflow by instrumenting your code with custom metrics, establishing meaningful alerts based on service level objectives (SLOs), and implementing distributed tracing to quickly isolate performance bottlenecks. This guide covers metric collection strategies, alerting best practices, tracing implementation, and building a monitoring culture that balances observability with user privacy.
 
 ## Why Application Performance Monitoring Matters
 
@@ -76,7 +76,7 @@ Distributed tracing follows a request as it travels through multiple services, e
 
 ### Trace Context Propagation
 
-When a request enters your system, generate a unique trace ID. Pass this ID through all subsequent service calls, typically via HTTP headers. Each service adds its own span data, creating a complete picture of the request journey.
+When a request enters your system, generate an unique trace ID. Pass this ID through all subsequent service calls, typically via HTTP headers. Each service adds its own span data, creating a complete picture of the request journey.
 
 ```javascript
 // Example: Trace context propagation in Node.js
