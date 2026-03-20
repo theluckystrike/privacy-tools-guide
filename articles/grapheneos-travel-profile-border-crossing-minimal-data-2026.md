@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [grapheneos, privacy, travel, border-crossing]
+tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]
 ---
 
 {% raw %}
