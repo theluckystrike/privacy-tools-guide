@@ -143,6 +143,200 @@ sudo tcpdump -i en0 -n | grep -E "(apple|siri|icloud)"
 
 This command shows real-time network traffic related to Apple services. You can verify whether Siri is attempting to send data after implementing privacy controls.
 
+## Alternative Voice Solutions for macOS
+
+For developers and power users who need voice assistance without Apple's servers:
+
+### Whisper.cpp for Local Speech Recognition
+
+Whisper.cpp brings OpenAI's Whisper model to local hardware:
+
+```bash
+# Build Whisper.cpp
+git clone https://github.com/ggerganov/whisper.cpp
+cd whisper.cpp
+make
+
+# Download model (first time)
+./main -m models/ggml-base.en.bin -f audio.wav
+
+# Transcribe local audio without sending to Apple
+./main -m models/ggml-base.en.bin -f ~/audio-recording.wav
+```
+
+This approach provides accurate speech-to-text conversion entirely on your machine.
+
+### Mycroft AI: Open-Source Voice Assistant
+
+Install Mycroft for local voice control:
+
+```bash
+# Install Mycroft on macOS
+brew install mycroft-core
+
+# Start Mycroft daemon
+mycroft-core start
+
+# Configure local-only operation
+# Edit ~/.mycroft/mycroft.conf
+cat > ~/.mycroft/mycroft.conf <<EOF
+{
+  "server": {
+    "disabled": true
+  },
+  "listener": {
+    "sample_rate": 16000
+  }
+}
+EOF
+```
+
+Mycroft can control applications, set reminders, and answer questions using local processing.
+
+### Coqui STT: Speech-to-Text Engine
+
+```bash
+# Install Coqui STT
+pip install coqui-stt
+
+# Download pre-trained model
+curl https://models.coqui.ai/english/coqui_stt_en_small.pbmm
+curl https://models.coqui.ai/english/coqui_stt_en_small.scorer
+
+# Transcribe audio
+stt --model coqui_stt_en_small.pbmm --scorer coqui_stt_en_small.scorer --audio test.wav
+```
+
+## Advanced Privacy Hardening: Removing Siri Binaries
+
+For maximum security in sensitive environments:
+
+```bash
+# List Siri-related processes and services
+launchctl list | grep -i siri
+
+# Disable Siri launchd services
+launchctl disable system/com.apple.Siri.agent
+launchctl disable system/com.apple.Siri.support
+
+# Remove Siri from Spotlight search
+# System Settings → Siri & Spotlight → Disable Siri
+```
+
+This approach is aggressive and may disable system features that depend on Siri.
+
+## Monitoring Siri Over Time
+
+Create automated checks to verify Siri privacy controls remain in place:
+
+```bash
+#!/bin/bash
+# Daily Siri privacy audit
+
+# Check if Siri is disabled
+SIRI_STATUS=$(defaults read com.apple.assistant.backedup "Hey Siri Enabled" 2>/dev/null)
+
+if [ "$SIRI_STATUS" != 0 ]; then
+  echo "WARNING: Siri activation re-enabled" | mail security@company.com
+  # Re-apply privacy settings
+  defaults write com.apple.assistant.backedup "Hey Siri Enabled" -bool false
+fi
+
+# Check for Siri network connections in last hour
+SIRI_CONNECTIONS=$(netstat -an | grep -i siri | wc -l)
+if [ $SIRI_CONNECTIONS -gt 0 ]; then
+  echo "WARNING: Siri network connections detected: $SIRI_CONNECTIONS" | mail security@company.com
+fi
+```
+
+## Privacy Controls Across Apple Ecosystem
+
+Siri privacy considerations extend beyond macOS:
+
+### iOS/iPadOS Siri Controls
+```
+Settings → Siri & Search
+- Disable "Listen for 'Hey Siri'"
+- Disable "Press Home/Top to Speak"
+- Toggle apps off in search results
+```
+
+### iCloud and Siri Integration
+- Siri suggestions rely on iCloud sync
+- Disable iCloud Keychain if concerned about password manager integration
+- Turn off Safari search suggestions (tracked by Apple)
+
+### Apple Watch Siri
+- Disable "Hey Siri" on watch if not needed
+- Limit which apps can access Siri suggestions
+- Review health data shared with Siri services
+
+## Verifying Privacy Settings with Activity Monitor
+
+```bash
+# Launch Activity Monitor
+open /Applications/Utilities/Activity\ Monitor.app
+
+# Search for Siri-related processes:
+# - assistant
+# - assistantd
+# - com.apple.Siri
+
+# If processes appear and you've disabled Siri, investigate why
+# They may be background services not fully disabled
+```
+
+## macOS Security Configuration Profile Approach
+
+Organizations can deploy privacy controls via MDM:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadDisplayName</key>
+      <string>Disable Siri</string>
+      <key>PayloadIdentifier</key>
+      <string>com.company.siri.disable</string>
+      <key>PayloadType</key>
+      <string>com.apple.ManagedClient.preferences</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>Forced</key>
+      <array>
+        <dict>
+          <key>mcx_preference_settings</key>
+          <dict>
+            <key>com.apple.assistant.backedup</key>
+            <dict>
+              <key>Hey Siri Enabled</key>
+              <false/>
+            </dict>
+          </dict>
+        </dict>
+      </array>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>Privacy Controls</string>
+  <key>PayloadIdentifier</key>
+  <string>com.company.privacy</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
+```
+
+Deploy via Apple Configurator or Jamf Pro for fleet-wide Siri disabling.
+
 ## Best Practices for Voice Privacy
 
 Combining multiple approaches provides defense-in-depth for voice privacy:

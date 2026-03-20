@@ -154,6 +154,211 @@ Signal's architecture ties identity to phone numbers. Changing your number creat
 
 **SMS delivery delays**: Some carriers route verification SMS through different pathways. Try requesting a voice call verification instead if SMS proves unreliable.
 
+## Comparing VoIP Services for Signal
+
+JMP Chat isn't the only option for Signal registration. Understanding alternatives helps choose the right service:
+
+| Service | Price | SMS Support | Portability | Privacy |
+|---------|-------|-------------|-------------|---------|
+| JMP Chat | $5-10/month | Yes | XMPP-based | Good |
+| Google Voice | Free | Yes | Limited export | Moderate |
+| Twilio | $1-4/month + calls | Yes | Full API | Good |
+| Voip.ms | $10-25/month | Yes | Full control | Good |
+| TextNow | Free/paid | Yes | Limited | Poor (ads) |
+
+For privacy-focused users, JMP Chat and Voip.ms offer the best balance of reliability and anonymity.
+
+## Advanced XMPP Client Setup
+
+For developers needing programmatic SMS access through JMP Chat:
+
+### Using Gajim with Python Integration
+
+```python
+#!/usr/bin/env python3
+"""Gajim plugin for automated Signal code retrieval"""
+
+import gajim.common.xmpp as xmpp
+import re
+from datetime import datetime
+
+class SignalCodeRetrievalPlugin:
+    def __init__(self, account):
+        self.account = account
+        self.connection = gajim.connections[account]
+
+    def on_message_received(self, message_data):
+        msg_body = message_data['message']
+
+        # Extract Signal verification code
+        if 'Signal' in msg_body:
+            code = re.search(r'\b(\d{6})\b', msg_body)
+            if code:
+                # Automatically paste to Signal if running
+                self.paste_to_signal(code.group(1))
+
+    def paste_to_signal(self, code):
+        # Use system clipboard to paste code
+        import subprocess
+        subprocess.run(['pbcopy'], input=code.encode())
+        print(f"Signal code {code} copied to clipboard")
+```
+
+### Integrating with Signal-CLI for Automation
+
+```bash
+#!/bin/bash
+# Automated Signal registration using Signal-CLI and JMP Chat
+
+# Prerequisites: signal-cli, JMP Chat account active
+
+PHONE_NUMBER="+1234567890"  # Your JMP Chat number
+JMP_USERNAME="your_xmpp_user"
+JMP_PASSWORD="your_xmpp_password"
+
+# Function to retrieve latest SMS
+get_verification_code() {
+  # Connect to JMP Chat via XMPP and retrieve latest message
+  strophe_client login "$JMP_USERNAME@jmp.chat" "$JMP_PASSWORD" 2>/dev/null | grep -oE '[0-9]{6}' | head -1
+}
+
+# Register Signal account
+signal-cli -u $PHONE_NUMBER register &
+sleep 2
+
+# Wait for SMS and retrieve code
+CODE=$(get_verification_code)
+echo "Retrieved code: $CODE"
+
+# Verify registration
+signal-cli -u $PHONE_NUMBER verify $CODE
+```
+
+## Production Deployment Considerations
+
+### Reliability and Uptime
+
+For businesses relying on JMP Chat numbers:
+
+```python
+#!/usr/bin/env python3
+"""Health check for JMP Chat service"""
+
+import requests
+import json
+from datetime import datetime, timedelta
+
+class JMPHealthMonitor:
+    def __init__(self, xmpp_user, xmpp_password):
+        self.xmpp_user = xmpp_user
+        self.xmpp_password = xmpp_password
+        self.last_sms_check = None
+
+    def verify_sms_delivery(self):
+        """Send test SMS to verify delivery"""
+        # Queue test message
+        test_number = "+15551234567"  # Test number
+
+        try:
+            # Check XMPP connection
+            import sleekxmpp
+            client = sleekxmpp.ClientXMPP(
+                f"{self.xmpp_user}@jmp.chat",
+                self.xmpp_password
+            )
+            client.connect()
+            client.process()
+
+            # Send test message
+            client.send_message(
+                mto=f"+{test_number}@sms.jmp.chat",
+                mbody="JMP Test",
+                mtype='chat'
+            )
+
+            self.last_sms_check = datetime.now()
+            return True
+        except Exception as e:
+            print(f"SMS delivery test failed: {e}")
+            return False
+
+    def generate_uptime_report(self):
+        """Generate 30-day uptime report"""
+        # Track successful SMS deliveries
+        # Alert if delivery fails for 24+ hours
+        pass
+```
+
+## Security Best Practices for JMP Chat Accounts
+
+### Protecting Your JMP Chat Account
+
+```bash
+# Use strong password
+PASSWORD=$(openssl rand -base64 32)
+echo "JMP Chat Password: $PASSWORD" | gpg --encrypt --recipient your-key > jmp-password.gpg
+
+# Enable XMPP account authentication
+# In your XMPP client settings:
+# - Enable SCRAM-SHA-256 instead of PLAIN
+# - Use TLS required
+# - Verify certificate
+
+# Audit login activity
+# Check XMPP login logs for unauthorized access
+```
+
+### Preventing Account Takeover
+
+```bash
+#!/bin/bash
+# Monitor JMP Chat account for suspicious activity
+
+# Check for unexpected device connections
+curl -s https://jmp.chat/api/devices \
+  -H "Authorization: Bearer $JMP_API_TOKEN" | jq '.devices[] | select(.last_seen > now - 86400)'
+
+# Revoke suspicious sessions
+curl -X POST https://jmp.chat/api/sessions/revoke \
+  -H "Authorization: Bearer $JMP_API_TOKEN" \
+  -d '{"session_id": "suspicious-session-id"}'
+```
+
+## Number Lifecycle Management
+
+### Long-Term Number Retention
+
+JMP Chat numbers can be retained long-term but require active maintenance:
+
+```bash
+#!/bin/bash
+# Annual number renewal reminder script
+
+# Check number status
+JMP_NUMBER_STATUS=$(curl -s https://jmp.chat/api/number/status \
+  -H "Authorization: Bearer $JMP_API_TOKEN")
+
+EXPIRATION=$(echo $JMP_NUMBER_STATUS | jq -r '.expires_at')
+DAYS_REMAINING=$((($EXPIRATION - $(date +%s)) / 86400))
+
+if [ $DAYS_REMAINING -lt 30 ]; then
+  echo "WARNING: JMP number expires in $DAYS_REMAINING days"
+  # Send renewal reminder
+fi
+```
+
+### Number Cycling Strategy
+
+For enhanced privacy, some users cycle JMP Chat numbers periodically:
+
+1. Reserve new number
+2. Update Signal registration
+3. Wait for address propagation in Signal contacts
+4. Archive old number (keep for 30 days in case of issues)
+5. Delete old number after 30 days
+
+This approach requires Signal's number change feature but provides additional operational security benefits.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

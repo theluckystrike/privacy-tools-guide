@@ -155,6 +155,177 @@ After cleaning, protect yourself from future botnet recruitment:
 - Be cautious with email attachments and links
 - Use a reputable firewall
 
+## Advanced Detection Techniques Using Command Line Tools
+
+### Monitoring Outbound Connections with Netstat
+
+```bash
+# Windows: Real-time monitoring of new connections
+netstat -b -o 1
+
+# macOS/Linux: Show all connections with process names
+netstat -tulpn | grep ESTABLISHED
+
+# Find unusual connection patterns
+netstat -nab | grep -E ":(80|443|8080|8888)" | sort | uniq -c | sort -rn
+```
+
+### Deep Packet Inspection with Wireshark
+
+For detailed traffic analysis, Wireshark captures and decodes network traffic:
+
+```bash
+# Capture traffic on eth0 interface
+sudo wireshark -i eth0
+
+# Filter for suspicious indicators
+# In Wireshark display filter:
+# tcp.dstport !in {80,443,22,21}  // Non-standard ports
+# ip.dst_geo == CN                  // Geolocation anomalies
+```
+
+### Automatic Log Analysis Scripts
+
+```bash
+#!/bin/bash
+# Analyze Windows Event Viewer for botnet indicators
+
+# Extract suspicious events
+Get-EventLog -LogName Security -Newest 1000 | \
+  Where-Object {$_.EventID -in 4688,4689,4702,4704} | \
+  Format-Table TimeGenerated, EventID, Message
+```
+
+## Behavioral Analysis: What Botnets Actually Do
+
+Understanding botnet behavior helps identify infections:
+
+### DDoS Botnet Behavior
+- High sustained bandwidth to specific destinations
+- Thousands of identical packets per second
+- Unusual traffic patterns at specific times
+- System slowdowns during attack periods
+
+### Cryptocurrency Mining Botnet Behavior
+- Consistent 80-100% CPU utilization
+- Elevated system temperature
+- Minimal network traffic but high compute load
+- Processes with randomized names consuming resources
+
+### Spam/Email Botnet Behavior
+- Rapid SMTP connection attempts
+- Large email queue buildup
+- Outbound traffic to mail servers
+- High memory consumption by email processes
+
+### Ransomware Botnet Behavior
+- Rapid file system activity (encryption in progress)
+- Unusual file extensions appearing system-wide
+- Ransom notes created in all directories
+- System slowdown from disk I/O saturation
+
+## Forensic Collection if You Suspect Infection
+
+If you suspect botnet infection, preserve evidence:
+
+```bash
+# Create forensic image before cleanup
+# macOS
+sudo dd if=/dev/disk0 of=forensic-image.dmg bs=4M
+sudo md5sum forensic-image.dmg > forensic-image.md5
+
+# Linux
+sudo dd if=/dev/sda of=forensic-image.img bs=4M
+sudo sha256sum forensic-image.img > forensic-image.sha256
+
+# Windows (using Open Source Digital Forensics)
+```
+
+This allows later analysis by security professionals if needed.
+
+## Botnet C2 Communication Patterns
+
+Botnets communicate with command servers in recognizable patterns:
+
+### HTTP Beacon Pattern
+```
+GET /update.php?id=botnet123&version=1.0 HTTP/1.1
+Host: c2-server.example.com
+User-Agent: Mozilla/5.0
+```
+
+Periodic requests to the same server at fixed intervals indicate C2 communication.
+
+### DNS Tunnel Pattern
+```
+Frequent DNS queries to: sub1.c2server.com, sub2.c2server.com, etc.
+Unusual: Queries for non-existent domains
+Pattern: Burst queries followed by silence, then repeat
+```
+
+DNS tunneling encodes commands in DNS query responses.
+
+### P2P Communication Pattern
+```
+Connections to random IPs on specific ports
+Encrypted payloads to multiple destinations
+Peer discovery through peer sharing protocol
+```
+
+P2P botnets distribute commands without central server.
+
+## Post-Infection Recovery Checklist
+
+After removing botnet malware:
+
+1. **Change all passwords** from clean device (25+ characters, symbols, numbers)
+2. **Enable 2FA** on all important accounts (email, banking, social media)
+3. **Monitor credit** with fraud alerts (Equifax, Experian, TransUnion)
+4. **Check bank statements** for unauthorized transactions
+5. **Scan external drives** for cross-contamination
+6. **Update router firmware** (botnets sometimes modify firmware)
+7. **Check browser history** for malicious site visits
+8. **Review installed programs** and remove unknown software
+9. **Update all software** to latest versions with security patches
+10. **Backup clean data** before using system for important activities
+
+## Continuous Monitoring After Recovery
+
+Prevent re-infection through ongoing monitoring:
+
+```bash
+#!/bin/bash
+# Weekly security check script
+
+# 1. Check for new admin accounts
+Get-LocalUser | Where-Object {$_.Enabled}
+
+# 2. Check scheduled tasks for suspicious entries
+Get-ScheduledTask | Where-Object {$_.State -eq 'Ready'} | Measure-Object
+
+# 3. Verify critical system files haven't changed
+certutil -hashfile C:\\Windows\\System32\\kernel32.dll
+
+# 4. Check for unauthorized network drivers
+driverquery | findstr -i "network"
+
+# 5. Audit firewall rules
+netsh advfirewall firewall show rule name=all | grep -i "allow"
+```
+
+## Prevention Strategies Moving Forward
+
+Implement defense-in-depth:
+
+1. **Keep systems updated**: Enable automatic patches
+2. **Use endpoint protection**: Maintain antivirus with real-time scanning
+3. **Network segmentation**: Separate IoT devices from critical systems
+4. **Firewall rules**: Block outbound connections by default, whitelist known good
+5. **User training**: Recognize phishing and avoid suspicious downloads
+6. **Monitoring alerts**: Setup SIEM or network monitoring for anomalies
+7. **Incident response plan**: Know what to do if infection occurs
+8. **Regular backups**: Offline backups protect against ransomware
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

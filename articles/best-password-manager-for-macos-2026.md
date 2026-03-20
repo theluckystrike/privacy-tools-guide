@@ -153,6 +153,175 @@ source <(bw list items --folder "production" | jq -r '.[] | "export \(.name)=\(.
 
 Audit access regularly. Review which credentials exist, who has access, and remove unused accounts. Credential sprawl creates security blind spots.
 
+## Pricing Comparison and Total Cost of Ownership
+
+When selecting a password manager, cost matters beyond the monthly subscription:
+
+| Tool | Base Cost | Family Plan | Self-Hosted | Team Support |
+|------|-----------|------------|-------------|--------------|
+| Apple Keychain | Free | N/A | N/A | No |
+| Bitwarden | Free/custom | $40/year | Yes | Free |
+| 1Password | $36/year | $99/year | No | $27/user/month |
+| Proton Pass | Free/custom | Custom | Planned | Yes |
+| KeePassXC | Free | N/A | Yes | No |
+
+For developers managing multiple devices and team secrets, total cost includes subscription plus potential self-hosting infrastructure.
+
+## Advanced CLI Usage Patterns
+
+### Injecting Secrets into Development Environments
+
+```bash
+# Load database credentials from Bitwarden
+export DB_PASSWORD=$(bw get password "production-database")
+export DB_USER=$(bw get username "production-database")
+
+# Execute command with secrets
+psql -U $DB_USER -h localhost -W
+```
+
+### Automated Secret Rotation
+
+```bash
+#!/bin/bash
+# Rotate API keys monthly
+
+MONTH=$(date +%Y-%m)
+OLD_KEY=$(bw get item "API Key" --field "Current Key")
+
+# Generate new key from provider
+NEW_KEY=$(curl -s https://api.provider.com/keys/generate \
+  -H "Authorization: Bearer $OLD_KEY" | jq -r '.key')
+
+# Update password manager
+bw get item "API Key" | jq --arg key "$NEW_KEY" '.fields[] |= select(.id=="current_key") | .value = $key' | bw create item
+
+echo "Key rotated: $MONTH"
+```
+
+### Team Secret Management
+
+For teams using 1Password:
+
+```bash
+# Create organization vault
+op vault create engineering-team --description "Engineering secrets"
+
+# Share secret with team
+op item create --vault engineering-team \
+  --template login \
+  --title "Staging API Token" \
+  --username "admin" \
+  --password "$(openssl rand -base64 32)"
+
+# Grant team member access
+op user grant team-member --vault engineering-team --permission edit_items
+```
+
+## Hardware Security Key Integration
+
+For maximum security, integrate hardware keys with your password manager:
+
+**YubiKey Setup with 1Password:**
+
+```bash
+# Generate WebAuthn credential
+op signin my --device-name "macbook-pro"
+
+# Add YubiKey as second factor
+1password settings add-webauthn
+
+# Now authenticate with:
+op signin my --webauthn
+```
+
+**Bitwarden with FIDO2:**
+
+```bash
+# Register FIDO2 device
+bw login
+
+# In settings, add FIDO2 device
+# When logging in next time:
+bw login --device "yubikey"
+```
+
+## MacOS-Specific Integration Features
+
+### Using 1Password as SSH Agent
+
+1Password can replace ssh-agent for managing SSH keys:
+
+```bash
+# Enable SSH agent in 1Password
+defaults write com.agilebits.onepassword7 OPSSHAgentEnabled -int 1
+
+# Configure SSH to use 1Password
+# In ~/.ssh/config
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.agilebits/t/agent.sock"
+```
+
+### Bitwarden CLI for macOS Development
+
+```bash
+# Auto-unlock for scripting
+export BW_SESSION=$(bw unlock --raw)
+
+# Use in build scripts
+bw get item "CodesignCert" --folder "Development" > cert.p12
+
+# Automatically lock after 30 minutes
+at now + 30 minutes <<< "bw lock"
+```
+
+## Password Generation Strategies
+
+Different accounts require different password generation approaches:
+
+```bash
+# Bitwarden: Generate strong passwords
+bw generate --length 32 --includeSymbols
+
+# For older systems with limited character support
+bw generate --length 24 --ambiguous --includeSymbols
+
+# 1Password: Generate and immediately add to vault
+op password generate --letters --digits --symbols --length 32
+
+# Derivation-based passwords using CLI
+SHA256=$(echo "site.com" | sha256sum | cut -c1-32)
+echo "Generated: $SHA256"
+```
+
+## Migration from One Manager to Another
+
+Switching password managers requires careful data handling:
+
+```bash
+# Export from source (Bitwarden)
+bw export --output json > vault-export.json
+
+# Transform to target format (1Password)
+python3 << 'EOF'
+import json
+
+with open('vault-export.json') as f:
+    bw_data = json.load(f)
+
+# Convert Bitwarden format to 1Password format
+for item in bw_data['items']:
+    # Process each item...
+    pass
+EOF
+
+# Import to new system
+op item import --vault Personal vault-import.json
+
+# Securely delete export file
+shred -vfz -n 3 vault-export.json
+```
+
 ## Related Reading
 
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)

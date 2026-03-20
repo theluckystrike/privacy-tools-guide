@@ -147,11 +147,163 @@ When testing websites against both browsers, expect differences in:
 - Canvas and font rendering
 - WebRTC behavior
 
+### Building Extensions for Tor Browser
+
+If developing Firefox extensions, Tor Browser has specific requirements. Extensions cannot phone home or make network requests that bypass Tor. Test extensions thoroughly since Tor Browser's restrictive settings may prevent some features from functioning. The `about:config` restrictions prevent you from enabling debugging features that would normally be available.
+
 ## Combining Both Tools
 
 Advanced users can combine Tor Browser and LibreWolf for layered privacy. Run LibreWolf with Tor proxy configuration for everyday browsing, and use Tor Browser for sensitive sessions requiring stronger anonymity guarantees.
 
 This approach provides flexibility while maintaining different trust levels for different browsing activities.
+
+## Installation and Setup Comparison
+
+### Tor Browser Installation
+
+Download from torproject.org (verify GPG signatures for authenticity). Extract the archive and run the executable. On first launch, Tor Browser connects to the Tor network, which typically takes 10-30 seconds. The browser stores settings in `~/.config/Tor Browser/` on Linux and similar locations on other systems.
+
+```bash
+# Verify Tor Browser download on Linux/macOS
+gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
+gpg --verify tor-browser-linux64-*.tar.xz.asc tor-browser-linux64-*.tar.xz
+
+# Extract
+tar -xf tor-browser-linux64-*.tar.xz
+cd tor-browser
+./start-tor-browser.desktop
+```
+
+### LibreWolf Installation
+
+LibreWolf is packaged in most Linux distributions and available via Homebrew on macOS. Installation is straightforward:
+
+```bash
+# macOS via Homebrew
+brew install librewolf
+
+# Linux (Fedora)
+sudo dnf install librewolf
+
+# Linux (Debian/Ubuntu) - add repository
+curl https://librewolf.net/install/key.asc | sudo apt-key add -
+echo "deb https://librewolf.net/install/deb/ deb main" | sudo tee /etc/apt/sources.list.d/librewolf.list
+sudo apt update
+sudo apt install librewolf
+```
+
+## Threat Model Analysis
+
+Your threat model determines which browser to use:
+
+**Tor Browser suits these threat models:**
+- Evading ISP surveillance of visited websites
+- Protecting against network traffic analysis
+- Accessing hidden services
+- Operating in oppressive regimes with strict internet filtering
+- Protecting against sophisticated state-level adversaries
+
+**LibreWolf suits these threat models:**
+- Preventing data brokers and advertisers from tracking behavior
+- Protecting against websites fingerprinting you
+- Avoiding telemetry collection by browser vendors
+- Local privacy without anonymity requirements
+- Protecting against casual corporate tracking
+
+## CLI Access and Automation
+
+For power users and developers, browser automation differs between the two:
+
+**Tor Browser** can be controlled via Selenium or other WebDriver protocols, but requires Tor to be running:
+
+```python
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+
+options = Options()
+options.binary_location = "/path/to/tor-browser/Browser/firefox"
+options.add_argument('--width=1280')
+options.add_argument('--height=720')
+
+driver = webdriver.Firefox(options=options)
+driver.get('http://example.onion')
+```
+
+**LibreWolf** works identically to standard Firefox with automation tools, offering better developer experience for testing and scripting purposes.
+
+## Security Audit Recommendations
+
+For organizations deploying these browsers, periodic security audits ensure continued protection:
+
+**Tor Browser audit checklist:**
+- Verify bridge configurations haven't been tampered with
+- Check for unexpected extensions or plugins
+- Monitor circuit isolation settings haven't changed
+- Verify Tor version is current (within 2 weeks of latest release)
+- Test DNS leaks to ensure no leakage through compromised resolver
+
+**LibreWolf audit checklist:**
+- Verify tracking protection level remains enabled
+- Check that WebRTC blocking is active
+- Confirm fingerprinting resistance settings unchanged
+- Monitor for unexpected telemetry collectors
+- Verify Firefox sync is disabled for privacy-conscious users
+
+## Hands-On Testing and Validation
+
+Before rolling out to users, test both browsers comprehensively:
+
+```bash
+# Test Tor Browser anonymity
+# 1. Check what IP is visible to websites
+curl https://ifconfig.me
+
+# 2. Verify circuit changes
+# Tor Browser menu → Circuits → New Tor Circuit for this Site
+
+# 3. Check DNS leaks
+# Visit https://www.dnsleaktest.com/
+
+# Test LibreWolf privacy
+# 1. Visit https://coveryourtracks.eff.org/
+# Check fingerprinting resistance score
+
+# 2. Check tracking protection
+# Visit https://www.trackography.org/
+# Verify no third-party tracking domains load
+```
+
+## Resource Consumption Comparison
+
+For organizations managing hardware resources:
+
+**Tor Browser:**
+- RAM: 200-300 MB at rest
+- Disk: 100+ MB installation
+- CPU: 5-15% per active tab
+- Network: Tor adds 100-200ms latency per request
+
+**LibreWolf:**
+- RAM: 150-250 MB at rest
+- Disk: 100+ MB installation
+- CPU: 2-8% per active tab (same as Firefox)
+- Network: Same as standard Firefox
+
+LibreWolf is the choice when system resources are constrained.
+
+## Extension Compatibility
+
+Both browsers can use Firefox extensions, but with caveats:
+
+**Tor Browser:**
+- uBlock Origin works well
+- NoScript works but restrictive default settings may conflict
+- Avoid extensions that make requests outside Tor
+
+**LibreWolf:**
+- All Firefox extensions compatible
+- uBlock Origin + privacy extensions recommended
+- Decentraleyes (provides local CDN content) useful addition
 
 ## Related Reading
 

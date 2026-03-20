@@ -154,6 +154,156 @@ Cwtch's focus on metadata resistance introduces trade-offs:
 - **User experience**: No phone number discovery means manual address exchange
 - **Ecosystem size**: Smaller user base limits practical communication options
 
+## Installation and Configuration
+
+### Getting Started with Cwtch
+
+Download Cwtch from cwtch.im (verify GPG signatures):
+
+```bash
+# Download and verify
+gpg --import cwtch.pub.asc
+gpg --verify cwtch-linux-0.3.5.tar.gz.asc cwtch-linux-0.3.5.tar.gz
+
+# Extract and run
+tar -xzf cwtch-linux-0.3.5.tar.gz
+./cwtch/cwtch &
+```
+
+After launch, Cwtch creates a local database and begins participating in the Tor network. The first startup downloads Tor if not already present.
+
+### Configuring Cwtch for Optimal Privacy
+
+Edit `~/.local/share/cwtch/cwtch.conf` for advanced configuration:
+
+```ini
+[experiments]
+# Enable additional experimental privacy features
+exponential-backoff=true
+auto-group-invite=false
+
+[privacy]
+# Use Tor bridges for additional anonymity
+use-bridges=true
+bridge-1=...
+
+[local]
+# Custom port for local UI (security through obscurity)
+ui-port=8085
+```
+
+### Creating and Sharing Your Identity
+
+Cwtch generates a cryptographic identity on first launch. To share with contacts:
+
+```bash
+# Your Cwtch address is displayed in the UI as a QR code or text
+# Copy and share securely with trusted contacts
+# Contacts add you manually by entering your full address
+```
+
+Unlike Signal (phone numbers), Cwtch requires manual key exchange. This increases friction but eliminates phone-number-based identity tracking.
+
+## Practical Threat Model Examples
+
+### Journalist Communicating with Sources
+
+**Signal threat model**: Journalists want confidential messages, but authorities can see who communicated with whom through metadata analysis.
+
+**Cwtch advantage**: Metadata resistance prevents authorities from establishing that a journalist and source communicated at all. Even if one party is compromised, traffic analysis cannot trace connections backward.
+
+### Political Dissident in Repressive Regime
+
+**Signal limitation**: Centralized servers store which devices are active; authorities can correlate online times with location data.
+
+**Cwtch advantage**: Distributed peer-to-peer routing eliminates central observation point. No service provider exists to compel cooperation or leak metadata.
+
+### Corporate Insider Reporting Misconduct
+
+**Signal consideration**: Messages are encrypted end-to-end, but delivery receipts and device information still flow through Signal's servers.
+
+**Cwtch feature**: Every message transits through multiple Tor relays with padding and cover traffic. No metadata about message timing is observable.
+
+## Forensic Resilience and Data Destruction
+
+Both platforms handle evidence differently:
+
+**Cwtch message deletion:**
+- Messages never stored by intermediate servers
+- Local deletion leaves no retrieval path
+- No centralized archive to recover deleted communications
+
+**Signal message deletion:**
+- Local deletion removes user's copy
+- Recipient can screenshot before deletion
+- Server doesn't store message content but knows delivery metadata
+
+For scenarios requiring complete forensic resistance, Cwtch's architecture provides stronger guarantees.
+
+## Performance Characteristics and Scaling
+
+### Cwtch Performance Profile
+
+- **Latency**: 5-30 seconds per message (Tor routing overhead)
+- **Throughput**: Limited by Tor bandwidth (~1 MB/s typical)
+- **Groups**: Scaling to large groups introduces performance degradation
+- **Battery**: Continuous Tor operation consumes significant mobile battery
+- **Storage**: Local-only storage scales with disk space available
+
+### Signal Performance Profile
+
+- **Latency**: 100-500ms typically (direct server)
+- **Throughput**: No inherent limit; scales with infrastructure
+- **Groups**: Supports thousands of participants efficiently
+- **Battery**: Minimal background consumption
+- **Storage**: Server-maintained message delivery queues
+
+For real-time communication, Signal's speed advantage is substantial. For asynchronous scenarios, Cwtch's privacy advantages may justify slower delivery.
+
+## Building on Cwtch: Developers and Integrations
+
+Cwtch's open-source protocol enables custom applications:
+
+```go
+// Example: Building a Cwtch-based application
+package main
+
+import (
+  "github.com/cwtch-im/cwtch/model"
+  "github.com/cwtch-im/cwtch/event"
+)
+
+func main() {
+  // Initialize Cwtch engine with peer
+  peer := model.NewCwtchPeer("alice")
+
+  // Register event handler
+  event.SetupMockEventManager().Subscribe(
+    event.NetworkStatus,
+    func(ev event.Event) {
+      // Handle network events
+    },
+  )
+
+  // Send group message
+  peer.SendMessage("group-id", "secret message")
+}
+```
+
+Developers can build privacy-preserving applications using Cwtch's underlying protocol, bypassing limitations of the default UI.
+
+## Comparison Matrix: Cwtch vs Signal vs Other Options
+
+| Feature | Cwtch | Signal | Wire | Session |
+|---------|-------|--------|------|---------|
+| Metadata Resistance | Excellent | Good | Good | Excellent |
+| Centralized | No | Yes | Yes | No |
+| Phone Number | No | Yes | No | No |
+| Message History | Stored locally | Server-stored | Server-stored | Local |
+| Open Source | Full | Full | Full | Full |
+| Scalability | Limited | Excellent | Good | Limited |
+| User Base | Small | Large | Medium | Growing |
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

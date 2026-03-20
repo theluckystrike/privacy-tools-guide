@@ -153,6 +153,156 @@ Your choice depends on your specific requirements:
 - Integration with existing tools: Bitwarden works well if you're already in their ecosystem
 - Complete control: Building your own solution using Python or shell scripts gives you full ownership
 
+## Pricing Comparison and Feature Matrix
+
+| Feature | Standard Notes | Obsidian | Bitwarden | Tutanota | Logseq |
+|---------|---|---|---|---|---|
+| E2E Encryption | Yes | Via plugin | Yes | Yes | Via plugin |
+| Free Tier | Yes (basic) | Yes (unlimited) | Yes | Yes | Yes |
+| Pro Cost | $99.99/year | One-time $60 | $10/month | $4.99/month | Free |
+| CLI Support | Yes | Via plugins | Yes | No | Via CLI |
+| Self-hosting | Yes | N/A | Yes | No | N/A |
+| Markdown | Yes | Native | Basic | Web only | Yes |
+| Version History | Extended plan | Yes | Yes | Basic | Yes |
+| Attachment Support | Extended plan | Yes | Free | Yes | Yes |
+
+## Advanced Integration Scenarios
+
+### Obsidian + Encryption + Syncing
+
+For developers using Obsidian without built-in encryption, this setup provides full privacy:
+
+```bash
+# Install gocryptfs and set up encrypted sync
+brew install gocryptfs
+mkdir -p ~/encrypted-vault ~/obsidian-vault
+
+# Initialize encrypted storage
+gocryptfs -init ~/encrypted-vault
+
+# Mount when needed
+gocryptfs -ro ~/encrypted-vault ~/obsidian-vault
+
+# Sync from ~/obsidian-vault to cloud storage
+rsync -av ~/obsidian-vault/ ~/Dropbox/obsidian-backup/
+```
+
+### Standard Notes Programmatic Access
+
+For developers building tools that need to access encrypted notes:
+
+```bash
+# Install Standard Notes CLI
+npm install -g @standardnotes/cli
+
+# Authenticate
+sn auth
+
+# Create note with metadata
+sn note:create \
+  --title "API Documentation" \
+  --content "$(cat api-docs.md)" \
+  --tags "development,technical"
+
+# Retrieve and pipe to other tools
+sn note:get "API Documentation" | jq .
+
+# List notes with filters
+sn list --tag "development"
+```
+
+## Security Audit and Trust Considerations
+
+When choosing an encrypted notes app, security verification matters:
+
+**Open-source verification:**
+- Standard Notes: Client applications fully open-source and auditable
+- Logseq: Source code available on GitHub for inspection
+- Bitwarden: Server and client code public on GitHub
+- Tutanota: Closed-source components in encryption layer
+- Obsidian: Closed core with open plugin ecosystem
+
+**Third-party security audits:**
+- Standard Notes: Independent audit available (review before use)
+- Bitwarden: Multiple third-party audits, results published
+- Tutanota: Security review completed, results public
+- Logseq: Community audit, less formal
+- Obsidian: No formal third-party audit
+
+For developers handling sensitive information, open-source and independently audited solutions provide verifiable security.
+
+## Backup and Recovery Strategies
+
+Encrypted notes require special backup considerations:
+
+```bash
+# Standard Notes: Export encrypted backup
+sn backup-export --path ~/encrypted-notes-backup.json
+
+# Obsidian: Backup encrypted vault
+gocryptfs-lazy -o allow_other ~/encrypted-vault ~/obsidian-vault
+rsync -av --backup ~/obsidian-vault/ ~/backup-location/
+
+# Python solution: Encrypted backup
+#!/usr/bin/env python3
+import json
+from pathlib import Path
+from cryptography.fernet import Fernet
+
+BACKUP_DIR = Path("~/backups").expanduser()
+BACKUP_DIR.mkdir(exist_ok=True)
+
+# Load your encryption key from secure storage
+key = Fernet.generate_key()
+
+def backup_notes(notes_dir: Path):
+    """Create encrypted backup of notes directory"""
+    cipher = Fernet(key)
+    for note in notes_dir.glob("*.md"):
+        content = note.read_text()
+        encrypted = cipher.encrypt(content.encode())
+        backup_file = BACKUP_DIR / f"{note.stem}.enc"
+        backup_file.write_bytes(encrypted)
+```
+
+## Data Portability and Vendor Lock-in
+
+Moving your notes between platforms requires considering export capabilities:
+
+- **Standard Notes**: Export to JSON or Markdown; full portability
+- **Obsidian**: Notes are plain Markdown files; native portability
+- **Bitwarden**: Can export secure notes in various formats
+- **Tutanota**: Limited export options; difficult migration path
+- **Logseq**: Markdown-based; good portability
+
+For long-term peace of mind, prioritize platforms with open export formats.
+
+## Real-World Workflow Examples
+
+### Developer Workflow: Technical Documentation
+
+```bash
+# Use Standard Notes with CLI for inline documentation
+sn note:create --title "Database Schema" \
+  --content "$(cat db-schema.sql)"
+
+# Retrieve and format
+sn get --id ABC123 | jq -r '.content' > current-schema.sql
+```
+
+### Researcher Workflow: Citation Management
+
+Combine Obsidian with encrypted storage for research notes:
+
+```bash
+# Create encrypted vault for sensitive research
+gocryptfs -init ~/research-encrypted
+gocryptfs ~/research-encrypted ~/research-vault
+
+# Use Obsidian for bidirectional linking between papers
+# Notes stored encrypted on disk
+```
+
 ## Related Reading
 
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)

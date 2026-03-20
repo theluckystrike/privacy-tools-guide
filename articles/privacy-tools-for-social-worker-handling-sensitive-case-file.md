@@ -155,6 +155,217 @@ Here's a secure workflow for a social worker handling sensitive case files:
 5. **End of day**: Close encrypted containers, clear clipboard, lock password manager
 6. **Mobile**: Enable "find my device" features for remote wipe capability, keep work apps in managed profile
 
+## Compliance Frameworks for Social Work Data
+
+Different jurisdictions and specializations require different compliance approaches:
+
+### HIPAA Compliance for Clinical Socio-Work
+
+If documenting behavioral health observations:
+
+```bash
+# Create HIPAA-compliant storage container
+# Requires encrypted storage + access controls
+
+# 1. Encrypt at rest
+cryptsetup luksFormat --cipher aes-xts-plain64 --hash sha256 case-files.img
+
+# 2. Enable audit logging
+auditctl -w /mnt/case-files/ -p wa -k case_file_access
+
+# 3. Restrict access
+chmod 700 /mnt/case-files/
+chown socialworker:casemanagement /mnt/case-files/
+```
+
+### FERPA for Education-Based Social Work
+
+If working in schools handling student records:
+
+- Student data cannot leave family computers without encryption
+- Parental consent required for any data sharing
+- Student records must be deleted upon request
+- Device used for student data must have automatic lock-out
+
+### State Child Welfare Laws
+
+Most states require:
+- Multi-factor authentication for case access
+- Automatic session timeout (15-30 minutes)
+- Encrypted backup of all case files
+- Annual security training
+- Incident reporting procedures
+
+## Building a Privacy-Focused Case Documentation System
+
+For agencies developing custom systems:
+
+```python
+#!/usr/bin/env python3
+"""HIPAA-compliant case documentation system"""
+
+from cryptography.fernet import Fernet
+from datetime import datetime, timedelta
+import json
+import hashlib
+
+class PrivateCaseFile:
+    def __init__(self, client_id, encryption_key):
+        self.client_id = client_id
+        self.cipher = Fernet(encryption_key)
+        self.access_log = []
+
+    def add_note(self, content, access_level='confidential'):
+        """Add encrypted note to case file"""
+        timestamp = datetime.now().isoformat()
+        note = {
+            'timestamp': timestamp,
+            'content': content,
+            'access_level': access_level
+        }
+
+        # Encrypt sensitive fields
+        encrypted_content = self.cipher.encrypt(
+            content.encode()
+        )
+
+        note['content'] = encrypted_content.decode()
+
+        # Log access
+        self.log_access('note_added', access_level)
+
+        return note
+
+    def log_access(self, action, access_level):
+        """Maintain audit trail"""
+        self.access_log.append({
+            'timestamp': datetime.now().isoformat(),
+            'action': action,
+            'access_level': access_level,
+            'user': self.get_current_user()
+        })
+
+    def export_for_client(self):
+        """Generate client-accessible summary (redacted)"""
+        redacted = {
+            'client_id': self.client_id,
+            'summary': 'Case summary available upon request',
+            'request_date': datetime.now().isoformat()
+        }
+        return redacted
+```
+
+## Data Minimization Best Practices
+
+Document only what's legally required:
+
+```
+REQUIRED:
+- Client name and ID
+- Service dates
+- Disposition of case
+- Required safety assessments
+- Mandatory reports filed
+
+AVOID STORING:
+- Worker's personal opinions
+- Non-professional assessments
+- Family members' private health information
+- Information provided "off the record"
+- Speculation about unreported abuse
+```
+
+## Incident Response Protocol
+
+If a breach occurs, have prepared procedures:
+
+```bash
+#!/bin/bash
+# Data breach response checklist
+
+# 1. IMMEDIATE: Isolate affected systems
+# sudo /sbin/shutdown -h now
+
+# 2. Preserve evidence (if possible)
+# Take forensic image of affected drive
+sudo dd if=/dev/disk0 of=breach-forensic.dmg bs=4m
+
+# 3. Notify leadership
+# Create breach report with:
+#  - What data was exposed
+#  - How many people affected
+#  - Timeline of discovery
+#  - Estimated severity
+
+# 4. Legal notification
+# Contact your state's attorney general office
+# File required notices under state law
+
+# 5. Credit monitoring
+# Offer affected clients credit monitoring services
+
+# 6. Post-incident review
+# Document what went wrong
+# Implement preventive measures
+```
+
+## Remote Work Security for Field Social Workers
+
+Social workers often work from home. Secure your home office:
+
+```bash
+# Home network security checklist
+
+# 1. Separate network for work
+# Use guest network or create dedicated VLAN
+# Isolate from personal devices
+
+# 2. Router security
+# Change default password
+# Disable WPS
+# Update firmware regularly
+# Use WPA3 encryption (or WPA2 at minimum)
+
+# 3. VPN for all work traffic
+# Establish corporate VPN connection
+# All case files accessed through VPN only
+
+# 4. Physical security
+# Position monitor away from windows
+# Use privacy screen filter
+# Lock office door when leaving
+
+# 5. Audio privacy
+# Close door during client calls
+# Use headset instead of speaker
+# Consider white noise machine for background
+```
+
+## Mental Health and Burnout Prevention
+
+Handling sensitive case files creates emotional burden. Protect your wellbeing:
+
+- Regular supervision with case-load review
+- Peer support groups within agency
+- Access to employee assistance programs
+- Clear boundaries between work/personal
+- Taking scheduled breaks from high-risk cases
+- Debriefing after traumatic cases
+
+Privacy tools protect client data, but organizational practices protect worker wellbeing.
+
+## Technology Stack Recommendation
+
+For social work agencies implementing privacy-first systems:
+
+**Storage**: Proton Drive or Tresorit with HIPAA BAA
+**Communication**: Signal for urgent matters, Proton Mail for formal
+**Authentication**: Hardware keys + passwords for case access
+**Monitoring**: Alerts for after-hours access, unusual data access patterns
+**Training**: Annual HIPAA/privacy training for all staff
+**Backups**: Encrypted offline backups in secure location
+**Incident response**: Written procedures, tested annually
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
