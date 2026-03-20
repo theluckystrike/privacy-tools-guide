@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /matrix-element-vs-signal-for-private-group-communication-comparison/
 categories: [guides]
-tags: [privacy-tools, signal, matrix, element, messaging, encryption]
+tags: [privacy-tools-guide, privacy-tools, signal, matrix, element, messaging, encryption, comparison]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /macos-gatekeeper-and-notarization-privacy-implications-what-/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

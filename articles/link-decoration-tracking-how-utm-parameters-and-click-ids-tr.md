@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /link-decoration-tracking-how-utm-parameters-and-click-ids-tr/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true

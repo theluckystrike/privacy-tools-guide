@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /mesh-wifi-system-privacy-comparison-eero-vs-orbi-vs-deco-dat/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, comparison, privacy]
 reviewed: true
 score: 8
 intent-checked: true
