@@ -160,7 +160,8 @@ Regularly audit your lock screen configuration, particularly after Android updat
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Android Notification Privacy: How to Hide Sensitive Content on Lock Screen](/privacy-tools-guide/android-notification-privacy-how-to-hide-sensitive-content-o/)
+- [WireGuard Android Battery Optimization: Settings That Actually Work.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
+- [macOS Spotlight Privacy Settings: Disable Tracking and.](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -168,7 +168,8 @@ Start by auditing your password habits today. Ensure every important account use
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Protect Yourself from Swatting Attack: Prevention.](/privacy-tools-guide/how-to-protect-yourself-from-swatting-attack-prevention-measures/)
+- [How to Protect Yourself from Browser Extension Malware Installed Secretly](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -161,7 +161,8 @@ Remember that canvas fingerprinting is just one tracking method. Combining Tor B
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Tor Browser Screen Size Fingerprint Protection: A.](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
+- [How to Block Canvas Fingerprinting in Your Browser: A.](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
+- [Tor Browser Font Fingerprinting Protection: A Technical Guide](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
 
-Built by theluckystrike — More at https://zovo.one
-
-{% endraw %}
+Built by

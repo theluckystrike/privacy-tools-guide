@@ -218,7 +218,8 @@ Regularly monitor enforcement databases, maintain current documentation of data 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [GDPR Article 17 Erasure Implementation Code: A Developer.](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
+- [GDPR Data Breach Notification: What Companies Must Tell.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

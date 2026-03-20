@@ -251,6 +251,8 @@ Treating DSAR handling as part of your data architecture — not a compliance af
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [How to Set Up Data Subject Access Request Workflow for.](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
+- [GDPR Data Processing Agreement Template Guide: A Developer's Practical Reference](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

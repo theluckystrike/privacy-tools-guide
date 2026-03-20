@@ -160,7 +160,8 @@ macOS Sequoia privacy features provide meaningful improvements for both develope
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
+- [How to Harden macOS Sequoia Privacy Settings Beyond.](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [Twitter X Privacy Settings Recommended 2026: A Complete.](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

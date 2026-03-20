@@ -157,7 +157,8 @@ The most effective strategy combines multiple protections: use privacy-focused b
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Block Canvas Fingerprinting in Your Browser: A.](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
+- [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
+- [Browser Permission Prompt Fingerprinting: How.](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

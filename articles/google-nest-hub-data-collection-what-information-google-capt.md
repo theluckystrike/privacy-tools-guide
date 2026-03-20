@@ -160,7 +160,8 @@ The information collected creates rich profiles about household patterns, daily 
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
+- [How to Prevent Android Keyboard from Sending Typing Data.](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
+- [Smart Refrigerator Data Collection: What Samsung Family.](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

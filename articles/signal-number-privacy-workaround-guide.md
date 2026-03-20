@@ -173,7 +173,8 @@ For the strongest security, combine multiple approaches—use a VoIP number on a
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Use Signal Without Linking Phone Number: Privacy.](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
+- [JMP Chat VoIP Number for Signal Registration: Anonymous.](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)
+- [Privacy Setup for Confidential Informant: Protecting Your Identity](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

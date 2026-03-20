@@ -162,7 +162,8 @@ The EU-US Data Privacy Framework provides a workable solution for transatlantic 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Cross Border Data Transfer Mechanisms 2026: A Developer.](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
+- [Arti Tor Rust Implementation Explained 2026: A Developer's Guide](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
+- [How to Handle Cross-Border Data Transfers After Privacy.](/privacy-tools-guide/how-to-handle-cross-border-data-transfers-after-privacy-shie/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

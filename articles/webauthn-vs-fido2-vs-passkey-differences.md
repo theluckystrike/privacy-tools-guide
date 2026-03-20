@@ -148,5 +148,8 @@ Passkeys add synchronization and discoverability on top of FIDO2, making credent
 
 - [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
 - More guides coming soon.
+- [Passkey Adoption Timeline by Platform: A Developer Guide](/privacy-tools-guide/passkey-adoption-timeline-by-platform/)
+- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

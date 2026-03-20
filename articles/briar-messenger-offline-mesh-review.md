@@ -159,5 +159,8 @@ The trade-offs are substantial but acceptable depending on threat model and use 
 ## Related Reading
 
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/) — Practical setup, configuration, and advanced tuning
+- [Briar Messenger Offline Communication: How It Works for.](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [How to Use Briar Messenger During Iran Internet.](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [Signal Protocol Explained for Developers: A Technical Deep Dive](/privacy-tools-guide/signal-protocol-explained-for-developers/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

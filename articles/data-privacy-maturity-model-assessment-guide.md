@@ -443,7 +443,8 @@ Track consent rate (percentage of users with valid, current consent), data subje
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Researcher Participant Data Privacy IRB Compliance.](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [GDPR Legitimate Interest Assessment Guide: A Developer Framework](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

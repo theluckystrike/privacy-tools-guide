@@ -213,7 +213,8 @@ Controlling iPhone location tracking requires addressing multiple layers: the sy
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Prevent Someone from Tracking Your Location.](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
+- [Dating App Background Location Tracking: What Happens.](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
+- [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 
-Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

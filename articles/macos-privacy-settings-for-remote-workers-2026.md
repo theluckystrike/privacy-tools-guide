@@ -190,7 +190,8 @@ Remote work offers flexibility but demands vigilance. By implementing these priv
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
+- [Best VPN for Remote Workers in Bali, Indonesia (2026)](/privacy-tools-guide/best-vpn-for-remote-workers-in-bali-indonesia-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

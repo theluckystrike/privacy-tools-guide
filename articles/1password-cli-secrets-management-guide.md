@@ -179,7 +179,8 @@ The 1Password CLI turns secret management into a secure, scriptable workflow. Tr
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [1Password Secrets Automation Guide: Integrating.](/privacy-tools-guide/1password-secrets-automation-guide/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

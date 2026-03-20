@@ -144,7 +144,8 @@ The key is having a plan before you need it. Document your emergency procedures,
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Handle Password Manager When Switching Phones.](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
+- [How to Store OTP Codes in Password Manager: A Developer.](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
+- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

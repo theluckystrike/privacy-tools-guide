@@ -224,6 +224,8 @@ For additional privacy hardening beyond crypto features, consider reviewing Brav
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
+- [How to Disable WebRTC Leaks in Tor Browser: A Developer's Guide](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

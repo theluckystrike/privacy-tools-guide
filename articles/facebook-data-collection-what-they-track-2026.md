@@ -203,7 +203,8 @@ Understanding Facebook's data collection practices helps you make informed choic
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Google Nest Hub Data Collection: What Information Google Captures From Your Home](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
+- [iPhone Analytics and Improvement Data: What Apple.](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
+- [How to Minimize Digital Footprint Guide 2026: A.](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

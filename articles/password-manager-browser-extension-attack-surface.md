@@ -152,6 +152,8 @@ The security of password manager extensions depends on implementation quality, p
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Password Manager Autofill Security Risks: What.](/privacy-tools-guide/password-manager-autofill-security-risks/)
+- [How to Protect Yourself from Browser Extension Malware Installed Secretly](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Best Password Manager for Firefox Extension: A Developer.](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

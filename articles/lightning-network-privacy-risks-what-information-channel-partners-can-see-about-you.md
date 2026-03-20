@@ -166,7 +166,8 @@ The Lightning Network continues to evolve, with proposals like PTLCs (Point Time
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Bumble Beeline Data Privacy: Who Can See That You Swiped.](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)
+- [Hotel Guest Privacy Rights: What Information Hotels Can.](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
+- [Employee Social Media Privacy: Can Your Employer Fire.](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by
