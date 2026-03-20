@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /how-to-prepare-phone-for-crossing-border-into-high-surveilla/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
