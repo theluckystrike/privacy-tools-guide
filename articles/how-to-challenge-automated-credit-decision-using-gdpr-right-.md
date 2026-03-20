@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Challenge Automated Credit Decision Using GDPR."
+title: "How to Challenge Automated Credit Decision Using GDPR Right to Human Review"
 description: "A practical guide for developers and power users on invoking GDPR Article 22 to challenge automated credit decisions and request human review. Includes."
 date: 2026-03-16
 author: theluckystrike
@@ -229,13 +229,6 @@ Lenders must respond to human review requests within:
 - **US**: Varies by state; some require 30 days
 
 Failure to comply can result in enforcement action and fines. The ICO has issued significant penalties to lenders who failed to provide adequate human review processes.
-
-## Conclusion
-
-GDPR Article 22 provides powerful protection against opaque automated credit decisions. By documenting the automated nature of the decision, formally requesting human review, and escalating to supervisory authorities when needed, you can effectively challenge unfair automated decisions.
-
-Keep records of all correspondence, set calendar reminders for response deadlines, and consider filing formal complaints if lenders fail to provide human review within required timeframes.
-
 
 ## Related Reading
 

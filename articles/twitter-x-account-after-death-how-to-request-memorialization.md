@@ -281,13 +281,6 @@ For developers building digital estate tools, consider integrating with multiple
 
 Each platform has its own policies and timelines. Building a unified tracking system helps manage multiple requests across services.
 
-## Summary
-
-Handling a deceased loved one's Twitter X account requires proper documentation and patience. Whether you choose memorialization to preserve their digital legacy or complete deactivation for privacy reasons, gather all required documents before submitting. For developers building tools around digital estate management, the Twitter API provides programmatic access to account information, though the deceased user process itself requires manual submission through official channels.
-
-Take action quickly if you need to preserve tweets—submit data archive requests before initiating memorialization or deactivation, as the processes may affect data availability.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

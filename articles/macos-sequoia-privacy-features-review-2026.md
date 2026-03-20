@@ -152,11 +152,6 @@ func secureFile(at url: URL) throws {
 
 For applications handling sensitive user data, these improvements reduce the implementation burden of secure storage while maintaining high security standards.
 
-## Summary
-
-macOS Sequoia privacy features provide meaningful improvements for both developers and power users. Privacy Manifest requirements promote transparency, enhanced sandboxing offers better isolation, and improved local network controls give users visibility into app behavior. The continued refinement of these features demonstrates Apple's commitment to privacy as a core platform differentiator.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

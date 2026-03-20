@@ -166,15 +166,6 @@ Despite precautions, compromise may occur. Prepare:
 
 Document your security setup but store that documentation separately from the devices themselves.
 
-## Conclusion
-
-Privacy setup for confidential informant protection demands discipline, technical knowledge, and constant vigilance. No single tool or technique provides complete protection—layer your defenses according to your specific threat model. Start with device isolation, harden your operating systems, use encrypted communications with metadata protection, manage your digital footprint carefully, and maintain rigorous operational security habits.
-
-The tools and techniques in this guide provide a foundation, but security is an ongoing process. Regularly audit your setup, stay informed about new threats, and adapt your procedures accordingly.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Create Anonymous GitHub Account for Open Source."
+title: "How To Create Anonymous Github Account For Open Source Contr"
 description: "A practical guide for developers who want to contribute to open source projects while maintaining privacy. Learn how to set up a completely separate."
 date: 2026-03-16
 author: theluckystrike
@@ -134,15 +134,6 @@ Keeping your anonymous identity separate requires ongoing vigilance. Follow thes
 Even with these precautions, be aware of GitHub's data collection. GitHub knows your IP address when you connect, the timing of your activity, and may collect browser fingerprints. Using Tor consistently helps mitigate some of this, though some GitHub features may work less reliably.
 
 For projects requiring maximum anonymity, consider using GitHub alternatives like GitLab or sourceHut, which offer more granular control over account visibility and don't require email verification.
-
-## Summary
-
-Creating an anonymous GitHub account involves: establishing an untraceable email, configuring Git with separate identity settings, generating dedicated SSH keys, and consistently maintaining separation between your anonymous and real identities. The effort required depends on your threat model — casual separation differs significantly from high-stakes anonymity.
-
-By following these steps, you can participate in open source communities while keeping your professional and personal identities distinct. This approach respects both your privacy and the communities you contribute to.
-
----
-
 
 ## Related Reading
 

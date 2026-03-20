@@ -175,15 +175,6 @@ done
 
 **Self-hosted V2Ray with domain fronting** uses legitimate CDN infrastructure to mask VPN traffic. By configuring your V2Ray server behind Cloudflare or similar CDNs, your traffic appears to be legitimate CDN traffic, making blocking extremely difficult.
 
-## Conclusion
-
-Accessing Telegram from Iran in 2026 requires understanding network blocking mechanisms and implementing appropriate countermeasures. The most reliable approach combines protocol selection (Shadowsocks with V2Ray being the current gold standard), server configuration with proper obfuscation, and client-side optimization for stability.
-
-No single solution works universally—the best method depends on your technical capability, available resources, and the current state of network filtering. Start with a self-hosted solution if you have the skills, as it provides the most control and reliability. Have fallback options configured, as blocking methods evolve and today's working solution may need adjustment tomorrow.
-
-Focus on making your traffic appear as normal HTTPS browsing, maintain multiple protocol options, and test regularly to ensure continued functionality. With proper configuration, reliable Telegram access from Iran remains achievable for developers and power users willing to invest the setup effort.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

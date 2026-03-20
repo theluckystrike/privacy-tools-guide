@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up DeltaChat Encrypted Messenger Over."
+title: "How To Set Up Deltachat Encrypted Messenger Over Existing Em"
 description: "A practical guide for developers and power users to configure DeltaChat for end-to-end encrypted messaging using your existing email infrastructure."
 date: 2026-03-16
 author: theluckystrike
@@ -153,13 +153,6 @@ While DeltaChat provides strong end-to-end encryption, several supplementary pra
 - Consider using a dedicated email account for sensitive communications
 
 Metadata—including subject lines, sender, and recipient addresses—remains visible to email providers. For complete anonymity, combine DeltaChat with a privacy-focused email provider and consider using Tor or a VPN.
-
-## Conclusion
-
-DeltaChat transforms any email account into an encrypted messaging platform with minimal configuration. By leveraging existing email infrastructure, you gain privacy-preserving communication without sacrificing compatibility with the broader email ecosystem. The platform's open-source nature and Autocrypt implementation ensure your messages remain confidential while maintaining interoperability with standard email clients.
-
-For developers, DeltaChat offers a unique opportunity to build privacy-focused applications on familiar protocols. The Decentralized Messaging mailing list and DeltaChat GitHub repository provide resources for contributing to the project and extending its capabilities.
-
 
 ## Related Reading
 

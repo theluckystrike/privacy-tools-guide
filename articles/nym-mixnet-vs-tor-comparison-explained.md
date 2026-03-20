@@ -173,17 +173,6 @@ For developers building privacy applications:
 
 Both systems require careful configuration and understanding of their threat models. Neither provides perfect anonymity, but each addresses different aspects of privacy.
 
-## Conclusion
-
-Tor excels at providing accessible, well-understood anonymity for general browsing and accessing hidden services. Nym Mixnet targets a specific niche: protecting against metadata analysis that can de-anonymize users even when traffic is encrypted.
-
-Your choice depends on your threat model. For most users, Tor provides sufficient privacy with better performance. For high-risk use cases requiring protection against sophisticated traffic analysis, Nym offers additional safeguards at the cost of speed.
-
-Consider running both systems and testing them against your specific requirements before committing to production use.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

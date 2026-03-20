@@ -267,16 +267,7 @@ Several issues frequently trip up Connecticut residents exercising their rights:
 - **Third-party data** - Deletion doesn't always remove data shared with partners
 - **Retention exceptions** - Companies can keep data for security, legal obligations
 
-## Conclusion
-
-The Connecticut Data Privacy Act provides meaningful protections for residents' personal data. By understanding your rights and using the tools available—whether direct requests, automated scripts, or browser signals—you can take control of your digital privacy.
-
-For developers, implementing CTDPA compliance isn't optional if you serve Connecticut users. The patterns shown here—detecting GPC signals, processing deletion requests, and enabling data portability—form the foundation of compliant applications.
-
-Start by checking which services have your data, submit opt-out requests to those you no longer want, and build privacy-first habits for ongoing protection.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

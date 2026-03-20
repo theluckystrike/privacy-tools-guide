@@ -327,14 +327,6 @@ sysupgrade -b /tmp/backup.tar.gz
 scp root@192.168.1.1:/tmp/backup.tar.gz ./
 ```
 
-## Conclusion
-
-Flashing OpenWRT transforms your router from a closed appliance into a fully customizable network security device. The initial setup requires some technical comfort, but the privacy and control benefits are substantial. Start with a supported model like the TP-Link TL-WR841N for your first attempt, then graduate to more advanced hardware as you gain experience.
-
-Remember to document your configuration changes, maintain regular backups, and stay current with security updates. Your network privacy starts at the gateway.
-
----
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

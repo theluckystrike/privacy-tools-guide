@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Audit Your Digital Footprint Using OSINT Tools."
+title: "Using exiftool on photos:"
 description: "Complete guide to finding your personal data online using open-source intelligence tools to identify exposure and privacy leaks."
 date: 2026-03-20
 author: theluckystrike

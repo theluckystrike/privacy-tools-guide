@@ -190,20 +190,6 @@ When a burner device's operational life ends:
 adb shell dumpsys diskstats | grep "Encrypted"
 ```
 
-## Summary
-
-Effective burner device implementation requires:
-
-- **Hardware isolation**: Dedicated devices, purchased anonymously
-- **Software hardening**: Privacy-focused OS, minimal app footprint
-- **Network security**: VPN, no personal network associations
-- **Communication hygiene**: E2EE tools, disappearing messages, no local storage
-- **Seizure preparation**: Strong PINs, secondary profiles, auto-wipe
-- **Secure disposal**: Physical destruction of storage media
-
-This layered approach—sometimes called defense in depth—ensures that compromise of any single element doesn't expose your network or participants.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

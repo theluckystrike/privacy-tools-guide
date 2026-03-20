@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best Email Encryption Plugin Thunderbird: A Technical."
+title: "Best Email Encryption Plugin Thunderbird"
 description: "A practical comparison of email encryption plugins for Thunderbird, focusing on OpenPGP and S/MIME implementation, key management, and CLI automation."
 date: 2026-03-15
 author: theluckystrike

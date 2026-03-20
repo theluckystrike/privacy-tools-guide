@@ -170,14 +170,6 @@ ip6tables -A FORWARD -i tun+ -p tcp --tcp-flags SYN,RST SYN -m tcpmss --mss 1400
 4. **Verify TCP timestamps**: Some networks filter these, affecting PMTUD
 5. **Test without VPN**: Determine if the problem is VPN-related or network-related
 
-## Conclusion
-
-MSS clamping is an essential configuration for reliable VPN connections, especially when traversing networks with unknown or restricted MTUs. By properly setting MSS values, you prevent packet fragmentation, reduce connection failures, and improve overall VPN stability.
-
-The key takeaway: always configure MSS clamping on your VPN server or use firewall rules to ensure packets don't exceed the path MTU. A value of 1400 bytes works reliably across most network configurations.
-
----
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

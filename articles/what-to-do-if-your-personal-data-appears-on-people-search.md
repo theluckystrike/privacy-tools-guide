@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What to Do If Your Personal Data Appears on People."
+title: "What To Do If Your Personal Data Appears On People Search"
 description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal."
 date: 2026-03-16
 author: theluckystrike
@@ -259,15 +259,6 @@ function anonymizeUserData(user) {
 ```
 
 Data minimization reduces your liability and protects users.
-
-## Summary
-
-Removing your data from people search sites requires a multi-step approach: discover where your information appears, submit opt-out requests (manually or with automation scripts), leverage legal frameworks when necessary, monitor for re-appearance, and adopt privacy-forward habits going forward.
-
-The process demands persistence. Sites may re-add your information or emerge with new data. Regular maintenance keeps your digital footprint manageable.
-
-For developers, this experience informs better data handling practices in your own projects. Minimizing collected data, implementing proper deletion mechanisms, and respecting user privacy build trust and reduce risk.
-
 
 ## Related Reading
 

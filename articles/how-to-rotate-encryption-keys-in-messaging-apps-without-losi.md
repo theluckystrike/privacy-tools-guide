@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Rotate Encryption Keys in Messaging Apps Without."
+title: "How To Rotate Encryption Keys In Messaging Apps Without Losi"
 description: "A practical guide for developers and power users on rotating encryption keys in messaging apps while preserving chat history. Covers Signal, WhatsApp."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -215,20 +215,6 @@ Signal: "Safety number changed" notification
 WhatsApp: "Number changed" for new device installations
 Custom apps: Display explicit "Key rotated" banner with verification option
 ```
-
-## Summary
-
-Rotating encryption keys without losing chat history requires careful key management:
-
-- **Mainstream apps** like Signal and WhatsApp handle this through encrypted backups that include session key material
-- **Custom implementations** need to implement key hierarchies with proper archival mechanisms
-- **Forward secrecy** ensures that rotating keys doesn't compromise historical message security
-- **User verification** remains essential after any key rotation event
-
-For developers building secure messaging systems, the double ratchet algorithm combined with proper key archival provides the most robust approach to maintaining message history through key rotations.
-
----
-
 
 ## Related Reading
 

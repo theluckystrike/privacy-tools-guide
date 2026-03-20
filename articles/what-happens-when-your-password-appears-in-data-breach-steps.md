@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What Happens When Your Password Appears in a Data."
+title: "What Happens When Your Password Appears In Data Breach Steps"
 description: "Learn what happens when your password appears in a data breach, how attackers use compromised credentials, and practical steps to protect yourself."
 date: 2026-03-15
 author: "Privacy Tools Guide"

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Arch Linux Hardened Kernel Installation Guide for."
+title: "Arch Linux Hardened Kernel Installation Guide For Advanced P"
 description: "A comprehensive guide to installing and configuring the Linux hardened kernel on Arch Linux for enhanced security and privacy. Includes practical examples."
 date: 2026-03-16
 author: theluckystrike

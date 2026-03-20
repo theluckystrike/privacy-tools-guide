@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Block Canvas Fingerprinting in Your Browser: A."
+title: "How To Block Canvas Fingerprinting Browser"
 description: "A technical guide showing developers and power users how to detect, prevent, and block canvas fingerprinting across different browsers with code."
 date: 2026-03-15
 author: theluckystrike

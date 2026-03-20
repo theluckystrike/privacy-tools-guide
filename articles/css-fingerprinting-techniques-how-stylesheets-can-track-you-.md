@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "CSS Fingerprinting Techniques: How Stylesheets Can Track."
+title: "Css Fingerprinting Techniques How Stylesheets Can Track You"
 description: "Discover how CSS fingerprinting techniques enable tracking users without JavaScript. Learn the mechanisms, code examples, and privacy implications for."
 date: 2026-03-15
 author: "Privacy Tools Guide"

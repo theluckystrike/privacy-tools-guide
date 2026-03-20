@@ -253,13 +253,6 @@ bw list items | jq 'group_by(.name) | map(select(length > 1))'
 
 Some RoboForm entries might have empty password fields (like WiFi passwords or secure notes). These won't appear in Bitwarden's login items—manually recreate them or import as secure notes.
 
-## Conclusion
-
-Moving from RoboForm to Bitwarden gives developers and power users better CLI tools, API access, and self-hosting options. The migration process involves exporting RoboForm data, converting the CSV format, and importing into Bitwarden. With the conversion scripts and verification steps in this guide, your migration should complete with all credentials intact.
-
-The key to success is treating the CSV transformation as a programmable step rather than relying solely on import wizards. This gives you control over field mapping, custom field extraction, and collection assignment—capabilities that matter for power users managing complex vaults.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

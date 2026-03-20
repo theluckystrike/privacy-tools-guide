@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tresorit Review 2026: Is It Worth the Price for."
+title: "Tresorit Review Is It Worth The Price 2026"
 description: "Tresorit Review 2026: Is It Worth the Price for. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: theluckystrike

@@ -111,12 +111,6 @@ For users concerned about being identified through mutual contacts, several miti
 
 After submitting a data access request, you receive a comprehensive breakdown of stored information, including contacts uploaded, Facebook connections, and interaction history. This transparency helps users understand their exact exposure level.
 
-## Conclusion
-
-The Hinge Connected Friends feature demonstrates how modern dating applications leverage social graph data in ways that challenge traditional privacy expectations. Mutual contacts can identify your profile through contact list matching, Facebook friend graph integration, and notification systems — all without explicit opt-in from the identified party.
-
-For developers, this feature serves as a case study in privacy-ambiguous design patterns that prioritize engagement over user control. For users, understanding these mechanisms enables more informed decisions about platform participation and data sharing practices. The tension between social discovery features and privacy protection remains an ongoing challenge in dating application design.
-
 ## Technical Mechanisms: Phone Number Hashing and Matching
 
 Understanding exactly how Hinge's contact matching operates helps you evaluate your exposure level. The application hashes phone numbers using deterministic algorithms (likely SHA-256 or MD5), creating fixed output values that appear identical each time the same number is hashed.
@@ -315,12 +309,6 @@ To maximize post-deletion privacy:
 2. **Facebook disconnect** — Unlink Facebook from Hinge, then request Facebook delete Hinge's cached permissions
 3. **Contact isolation** — For maximum protection, use a separate phone number for dating apps entirely
 4. **Monitor data brokers** — Services like Spokeo and PeopleFinders may have retained phone numbers as identifying information
-
-## Conclusion
-
-The Hinge Connected Friends feature demonstrates how modern dating applications leverage social graph data in ways that challenge traditional privacy expectations. Mutual contacts can identify your profile through contact list matching, Facebook friend graph integration, and notification systems — all without explicit opt-in from the identified party.
-
-For developers, this feature serves as a case study in privacy-ambiguous design patterns that prioritize engagement over user control. For users, understanding these mechanisms enables more informed decisions about platform participation and data sharing practices. The tension between social discovery features and privacy protection remains an ongoing challenge in dating application design.
 
 ## Related Reading
 

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use ADB to Disable Android System Apps That Spy."
+title: "How To Use Adb To Disable Android System Apps That Spy On Yo"
 description: "Learn how to use ADB to disable bloatware and privacy-invading system apps on Android. This guide covers practical commands, safety precautions, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Encrypted Group Chat for Activist."
+title: "How To Set Up Encrypted Group Chat For Activist Organization"
 description: "A practical technical guide for developers and power users setting up secure group messaging infrastructure for activist organizations. Covers Matrix."
 date: 2026-03-15
 author: "Privacy Tools Guide"

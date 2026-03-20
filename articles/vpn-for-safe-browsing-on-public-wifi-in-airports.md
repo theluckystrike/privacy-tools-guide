@@ -252,13 +252,6 @@ val vpnService = VpnService.Builder()
     .establish()
 ```
 
-## Summary
-
-Securing your browsing on airport public WiFi requires multiple layers of protection. A properly configured VPN with WireGuard or IKEv2 provides the foundation, while kill switches and DNS-over-HTTPS add critical defense in depth. Always verify your VPN's security properties before transmitting sensitive data on untrusted networks.
-
-Test your configuration thoroughly before travel, and maintain awareness that even the best VPN cannot protect against all attack vectors on compromised networks.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

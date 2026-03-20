@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Firefox Privacy Settings Guide 2026: A Practical Guide."
+title: "Firefox Privacy Settings Guide 2026"
 description: "Master Firefox privacy settings in 2026. This guide covers about:config tweaks, resistFingerprinting, container extensions, and advanced configurations."
 date: 2026-03-15
 author: theluckystrike

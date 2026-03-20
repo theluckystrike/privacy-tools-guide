@@ -147,13 +147,6 @@ Understanding what Private DNS does not protect is important for security-consci
 
 For users requiring full traffic encryption alongside DNS privacy, combining Private DNS with a VPN service provides comprehensive protection.
 
-## Conclusion
-
-Setting up Private DNS on Android takes less than a minute and provides meaningful privacy improvements for all applications on your device. For developers testing network configurations or privacy-conscious users wanting to reduce metadata leakage, this built-in feature offers a straightforward solution without additional software installation.
-
-The key is selecting a provider you trust and verifying the configuration works as expected. Once enabled, every app on your device benefits from encrypted DNS resolution without requiring per-app configuration.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

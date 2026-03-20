@@ -185,11 +185,6 @@ echo "NAS backup: $(ls -la /mnt/nas/projects | wc -l) files"
 echo "Cloud backup: $(rclone lsl cloud:projects-backup | wc -l) files"
 ```
 
-## Conclusion
-
-Encrypted NAS trades third-party trust for operational overhead. Zero-knowledge cloud storage trades physical control for managed accessibility and recurring cost. Match the solution to your actual threat model — the encryption implementation details matter more than the marketing label.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

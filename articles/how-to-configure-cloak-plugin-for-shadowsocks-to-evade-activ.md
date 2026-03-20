@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure Cloak Plugin for Shadowsocks to Evade."
+title: "How To Configure Cloak Plugin For Shadowsocks To Evade Activ"
 description: "A practical guide for developers and power users on configuring the Cloak plugin with Shadowsocks to resist active probing detection and censorship."
 date: 2026-03-15
 author: "Privacy Tools Guide"

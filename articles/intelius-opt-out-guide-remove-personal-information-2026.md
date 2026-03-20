@@ -178,11 +178,6 @@ Several organizations provide comprehensive data broker removal services:
 - **FTC Consumer Information**: Provides complaint resources for unresponsive brokers
 - **State privacy laws**: California, Virginia, and Colorado residents have additional privacy rights under state laws
 
-## Summary
-
-Removing your data from Intelius requires submitting an opt-out request through their website and verifying via email. For developers and power users, automating this process across multiple data brokers provides more comprehensive privacy protection. Maintain records of all opt-out requests and periodically verify that your information has been removed.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

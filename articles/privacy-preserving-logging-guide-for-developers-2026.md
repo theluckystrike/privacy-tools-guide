@@ -9,9 +9,8 @@ permalink: /privacy-preserving-logging-guide-for-developers-2026/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

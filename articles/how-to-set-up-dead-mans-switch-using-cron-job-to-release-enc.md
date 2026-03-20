@@ -191,15 +191,6 @@ You can enhance this basic implementation:
 - **Multiple files** — Modify the release script to handle directories or multiple encrypted files
 - **External triggers** — Add HTTP callbacks or file uploads to transfer decrypted content to a secure location
 
-## Summary
-
-Setting up a dead man's switch using cron jobs provides an automated way to release encrypted files when you become unavailable. The system requires minimal dependencies (GPG and cron), keeps your data secure until the trigger condition is met, and operates without external services.
-
-By regularly updating your check-in file, you maintain control over your encrypted files. When you fail to check in within the configured threshold, the cron job executes the release script, making your encrypted data accessible to designated recipients.
-
-This approach works well for digital estate planning, emergency access for trusted parties, or any scenario where automated file release provides peace of mind.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

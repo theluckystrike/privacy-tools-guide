@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Privacy Setup for Immigration Activist: Protecting."
+title: "Privacy Setup For Immigration Activist Protecting Undocument"
 description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -242,13 +242,6 @@ Prepare for potential device seizure or account compromise:
 2. **Document incident procedures** - Know who to contact if detained
 3. **Maintain encrypted backups** - Offline backups prevent data loss from remote wipe
 4. **Establish pre-agreed communication plans** - If detained, how do others know?
-
-## Conclusion
-
-Protecting undocumented community members requires technical vigilance and operational discipline. The implementations above provide foundation layers, but security demands continuous attention as threats evolve. Review your threat model regularly, update security practices, and ensure everyone in your network understands their role in maintaining collective protection.
-
-Prioritize high-impact measures: encrypted communication, local data storage, and device hardening provide the most protection for the effort invested. Add complexity only where your specific threat model requires it.
-
 
 ## Related Reading
 

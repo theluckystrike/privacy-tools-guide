@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Setup for Immigration Activist: Protecting."
+title: "Privacy Setup for Immigration Activist: Protecting Undocumented Community Members"
 description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members."
 date: 2026-03-16
 author: theluckystrike
@@ -170,13 +170,6 @@ When meeting undocumented community members, create physical security:
 - Leave phones in Faraday bags during sensitive discussions
 - Use silent meeting modes with pre-arranged hand signals
 - Establish escape routes and meeting points
-
-## Summary
-
-Protecting undocumented community members requires layering multiple privacy technologies with consistent operational practices. Start with encrypted communication (Signal), implement encrypted storage (GPG, VeraCrypt), secure your network (WireGuard VPN), and harden devices against physical compromise. Remember that security is iterative—regularly audit your practices and update configurations as threats evolve.
-
-The tools and techniques outlined here provide a foundation, but each organization must assess their specific threat model. Consult with digital security trainers who specialize in immigrant rights work for situation-specific guidance.
-
 
 ## Related Reading
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "SimpleLogin vs Addy.io vs Firefox Relay: Email Alias."
+title: "Simplelogin Vs Addy Io Vs Firefox Relay Email Alias Comparis"
 description: "A technical comparison of SimpleLogin, Addy.io, and Firefox Relay for developers in 2026, covering API access, self-hosting, pricing, and practical."
 date: 2026-03-16
 author: theluckystrike
@@ -195,13 +195,6 @@ Firefox Relay benefits from Mozilla's privacy reputation but offers fewer config
 - **SimpleLogin**: Free (10 aliases), Premium $3/month (unlimited + custom domains)
 - **Addy.io**: Free (10 aliases), Lite $1/month, Pro $5/month, Self-hosting free
 - **Firefox Relay**: Free (5 aliases), Premium $0.99/month (unlimited)
-
-## Conclusion
-
-For developers needing API access and advanced features, Addy.io offers the best value with full API access on all plans and self-hosting options. SimpleLogin provides excellent integration with the Proton ecosystem and PGP support. Firefox Relay serves users who want basic alias functionality without complexity.
-
-Choose Addy.io if you need API access, custom domains, or want to self-host. Choose SimpleLogin if you already use Proton services and want PGP encryption. Choose Firefox Relay for simple, no-frills alias protection.
-
 
 ## Related Reading
 

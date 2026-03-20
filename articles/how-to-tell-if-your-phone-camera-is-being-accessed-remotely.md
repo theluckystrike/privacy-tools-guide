@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Tell If Your Phone Camera Is Being Accessed."
+title: "How To Tell If Your Phone Camera Is Being Accessed Remotely"
 description: "Learn technical methods to detect unauthorized camera access on Android and iOS. Practical verification steps, system logs, and code-level inspection."
 date: 2026-03-15
 author: "Privacy Tools Guide"

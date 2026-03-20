@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Threat Model for Human Rights Worker in Conflict Zone: A."
+title: "Threat Model For Human Rights Worker In Conflict Zone Guide"
 description: "A comprehensive threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -169,13 +169,6 @@ A threat model is not a one-time document but a living reference that requires r
 - After any security incident, near-miss or actual
 
 Document your threat modeling process even if imperfect. The act of systematically thinking through assets, adversaries, and attack vectors significantly improves your security posture compared to ad-hoc security decisions.
-
-## Conclusion
-
-Effective security for human rights workers in conflict zones requires moving beyond generic security advice to targeted threat modeling. By understanding your specific assets, profiling your adversaries, and implementing mitigations proportionate to identified risks, you can significantly reduce your attack surface while continuing vital human rights documentation work.
-
-The goal is not perfect security—that is unachievable against sophisticated state adversaries—but rather raising the cost and difficulty of compromise high enough that adversaries seek easier targets. A well-constructed threat model, consistently applied, achieves exactly this.
-
 
 ## Related Reading
 

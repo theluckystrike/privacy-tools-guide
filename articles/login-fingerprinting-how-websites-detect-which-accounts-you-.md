@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Login Fingerprinting: How Websites Detect Which Accounts."
+title: "Login Fingerprinting How Websites Detect Which Accounts You"
 description: "A technical deep-dive into login fingerprinting techniques that allow websites to identify your accounts without authentication. Learn how timing."
 date: 2026-03-16
 author: theluckystrike
@@ -198,11 +198,6 @@ If you're concerned about login fingerprinting, several strategies reduce your e
 4. **Monitor Have I Been Pwned** - Check if your email appears in data breaches, which may indicate enumeration has occurred.
 
 For developers, implementing proper rate limiting, using generic error messages, and employing constant-time comparisons are essential defenses against login fingerprinting.
-
-## Conclusion
-
-Login fingerprinting represents a subtle but significant privacy threat. The techniques described work without requiring any authentication, making them difficult to detect from a user perspective. Understanding these methods helps developers build more privacy-respecting authentication systems and helps users make informed decisions about where they enter their credentials.
-
 
 ## Related Reading
 

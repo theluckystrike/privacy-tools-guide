@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Threat Model for Union Organizer in Hostile Employer."
+title: "Threat Model For Union Organizer In Hostile Employer Environ"
 description: "A comprehensive technical guide for union organizers to build threat models when operating in hostile employer environments. Includes practical."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -195,15 +195,6 @@ Threat models require regular updates as conditions change. Schedule quarterly r
 - Lessons learned from near-misses or incidents
 
 Document these reviews and adjust countermeasures accordingly. Security is an ongoing process, not a one-time configuration.
-
-## Summary
-
-Building a threat model as a union organizer means understanding both digital and physical attack vectors, implementing layered defenses, and maintaining operational security awareness. The key is starting with asset identification, mapping realistic threats, implementing practical countermeasures, and continuously reassessing as situations evolve.
-
-The tools and techniques in this guide draw from established security practices adapted for the specific risks faced by labor organizers. Start with the highest-impact changes first—secure communications, device encryption, and operational security procedures—and build from there.
-
----
-
 
 ## Related Reading
 

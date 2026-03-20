@@ -165,13 +165,6 @@ Write-Host "Cortana has been disabled. Restart recommended."
 
 This script provides flexibility through parameters, allowing you to choose between disabling Cortana or completely removing it, and apply changes to individual or all users.
 
-## Conclusion
-
-Disabling Cortana in Windows 11 is a straightforward process with multiple approaches suited to different user requirements. The Settings method provides quick disable for average users, while Group Policy and Registry approaches give administrators enterprise-level control. Complete removal through PowerShell suits users who want the cleanest possible privacy configuration.
-
-For developers and power users, combining Registry modifications with app removal provides the most thorough privacy protection. The automation script approach ensures consistent configuration across multiple machines, useful for development environments where privacy consistency matters.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

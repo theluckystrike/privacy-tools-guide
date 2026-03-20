@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Battery API Fingerprinting: How Battery Status Tracks."
+title: "Battery Api Fingerprinting How Battery Status Tracks You Exp"
 description: "Discover how websites use the Battery API to fingerprint users, the privacy risks involved, and practical ways to protect yourself from this."
 date: 2026-03-15
 author: "Privacy Tools Guide"

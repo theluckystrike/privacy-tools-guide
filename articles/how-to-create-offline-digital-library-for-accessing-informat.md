@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Create Offline Digital Library for Accessing."
+title: "How To Create Offline Digital Library For Accessing Informat"
 description: "A practical guide to building an offline digital library for accessing information during internet shutdowns. Learn about Kiwix, Wikipedia dumps, and."
 date: 2026-03-16
 author: "Privacy Tools Guide"

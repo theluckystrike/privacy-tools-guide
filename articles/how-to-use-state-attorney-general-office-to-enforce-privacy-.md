@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use State Attorney General Office to Enforce."
+title: "How To Use State Attorney General Office To Enforce Privacy"
 description: "A practical guide for developers and power users on leveraging state attorney general offices to enforce privacy rights against companies collecting."
 date: 2026-03-16
 author: theluckystrike

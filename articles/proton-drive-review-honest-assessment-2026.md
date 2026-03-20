@@ -111,12 +111,6 @@ The sweet spot is personal use and small team scenarios where encryption matters
 
 For developers specifically, the lack of a public API is the primary limitation. If you need to script backup operations, integrate with CI/CD pipelines, or build custom file management interfaces, you'll face more friction than with alternatives like Tresorit or self-hosted solutions like Nextcloud with encryption.
 
-## Conclusion
-
-Proton Drive delivers on its core promise of private, encrypted cloud storage. The encryption architecture is solid, the interface is clean, and the integration with Proton's ecosystem provides convenience for existing users. However, the feature set remains narrower than mainstream alternatives, and the lack of developer-friendly APIs limits its utility for power users with complex workflows.
-
-In 2026, Proton Drive is a credible option for encrypted storage—particularly if you're already invested in Proton's ecosystem. Just go in with clear expectations about what it does and doesn't offer.
-
 ## Detailed Performance Testing Across Environments
 
 Real-world performance varies significantly based on network conditions and file characteristics. Here's what to expect in specific scenarios:
@@ -365,12 +359,6 @@ Best practices for implementation:
 4. **Regular backups** — Since deletion is permanent, maintain offline backups
 5. **Monitor access** — Review Proton Account activity for suspicious logins
 6. **Test recovery** — Periodically verify you can access encrypted files
-
-## Conclusion
-
-Proton Drive delivers on its core promise of private, encrypted cloud storage. The encryption architecture is solid, the interface is clean, and the integration with Proton's ecosystem provides convenience for existing users. However, the feature set remains narrower than mainstream alternatives, and the lack of developer-friendly APIs limits its utility for power users with complex workflows.
-
-In 2026, Proton Drive is a credible option for encrypted storage—particularly if you're already invested in Proton's ecosystem. Just go in with clear expectations about what it does and doesn't offer.
 
 ## Related Reading
 

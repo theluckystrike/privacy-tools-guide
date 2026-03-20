@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Proton Mail Bridge with Local Email Client."
+title: "How To Set Up Proton Mail Bridge With Local Email Client For"
 description: "A practical guide for developers and power users to configure Proton Mail Bridge with local email clients like Thunderbird, Apple Mail, and Neomutt for."
 date: 2026-03-15
 author: "Privacy Tools Guide"

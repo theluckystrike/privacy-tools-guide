@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Tools for Union Organizer: Protecting Member."
+title: "Privacy Tools For Union Organizer Protecting Member Communic"
 description: "A practical guide for union organizers on securing member communications. Covers encrypted messaging, secure file sharing, metadata protection, and."
 date: 2026-03-16
 author: theluckystrike
@@ -196,15 +196,6 @@ Technical tools work best within a culture of privacy awareness:
 - Minimize data collection to what is strictly necessary
 - Regular security audits of organizing materials
 - Document destruction protocols for sensitive paper materials
-
-## Conclusion
-
-Protecting union member communications requires a multi-layered approach combining strong encryption tools, network-level privacy measures, device security, and organizational protocols. The tools and configurations above provide a foundation, but each organizing context will require adaptation based on specific threat models and member technical capabilities.
-
-Start with Signal for day-to-day communications, implement encrypted file storage for member data, and establish network protection for sensitive discussions. As your organizing work scales, consider self-hosted solutions like Matrix for greater infrastructure control.
-
-The security of your members depends not just on tool selection, but on consistent implementation and ongoing vigilance against evolving threats.
-
 
 ## Related Reading
 

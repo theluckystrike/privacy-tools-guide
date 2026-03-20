@@ -116,17 +116,6 @@ Plan for intermittent connectivity. While ExpressVPN works in Cuba, you should n
 
 VPN usage in Cuba exists in a legal gray area. The government technically restricts VPN services, but enforcement against tourists and business travelers appears minimal. We recommend researching current regulations before your trip and using VPNs primarily for legitimate purposes like protecting sensitive communications.
 
-## Conclusion
-
-ExpressVPN does work in Cuba, with our tests showing approximately 70% connection success rates and speeds suitable for most online activities. While not as reliable as in other locations, it provides a viable option for secure browsing, video calls, and streaming while visiting Havana and other parts of Cuba.
-
-For the best experience, use Miami or New York servers, connect during off-peak hours when possible, and be prepared to switch servers if you encounter issues. With proper configuration and realistic expectations, ExpressVPN remains a solid choice for internet privacy and access in Cuba in 2026.
-
-The situation with internet access in Cuba continues to evolve. We'll update this article as conditions change and new testing data becomes available.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -4,7 +4,7 @@
 
 
 layout: default
-title: "How to Set Up a GitHub Repository with Encrypted Estate."
+title: "How To Set Up Github Repository With Encrypted Estate Instru"
 description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This."
 date: 2026-03-19
 author: "Privacy Tools Guide"

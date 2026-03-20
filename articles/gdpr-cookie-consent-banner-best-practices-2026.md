@@ -259,11 +259,6 @@ Verify your consent system works correctly:
 
 Use browser DevTools to inspect localStorage and confirm the consent JSON matches expectations.
 
-## Summary
-
-A compliant cookie consent implementation requires explicit consent via affirmative actions, script blocking until consent is granted, the ability to withdraw and modify choices, and documentation of consent events. The patterns shown here provide a foundation that satisfies 2026 requirements while remaining maintainable for development teams.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

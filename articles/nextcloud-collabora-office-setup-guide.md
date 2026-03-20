@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Nextcloud Collabora Office Setup Guide: Complete."
+title: "Nextcloud Collabora Office Setup Guide"
 description: "A complete technical guide for integrating Collabora Online with Nextcloud. Covers Docker deployment, reverse proxy configuration, SSL setup, and."
 date: 2026-03-15
 author: theluckystrike
@@ -279,18 +279,6 @@ location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
     add_header Cache-Control "public, immutable";
 }
 ```
-
-## Conclusion
-
-Maintain your installation by regularly updating the Docker image:
-
-```bash
-docker-compose pull
-docker-compose up -d
-```
-
-For production environments, consider the Collabora Enterprise subscription for additional support and features. The base self-hosted solution covered here provides solid functionality for most use cases.
-
 
 ## Related Reading
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Setup for Someone Leaving Abusive Relationship."
+title: "Privacy Setup For Someone Leaving Abusive Relationship Digit"
 description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -231,13 +231,6 @@ Security isn't a one-time configuration. Establish regular review habits:
 - Monthly: Review privacy settings on social media
 - Quarterly: Update passwords on critical accounts
 - After any concerning incident: Immediate password change on potentially compromised accounts
-
-## Conclusion
-
-Digital safety for someone leaving an abusive relationship requires immediate, decisive action combined with ongoing vigilance. The implementations above provide technical foundations, but the human element matters equally. Ensure the person understands why these measures matter, and provide support for maintaining them.
-
-Start with the highest-impact changes first: new email, new phone number, and device hardening. Build from there based on threat model and resources available. Every layer of security makes surveillance more difficult—and safety more achievable.
-
 
 ## Related Reading
 

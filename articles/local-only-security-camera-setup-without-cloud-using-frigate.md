@@ -190,11 +190,6 @@ If you experience performance issues with multiple cameras, consider these adjus
 - Limit the number of detection zones and object types
 - Use motion-based recording instead of continuous recording to save resources
 
-## Conclusion
-
-Frigate provides a powerful, private alternative to cloud-based security camera systems. Your footage stays on your hardware, costs are limited to upfront equipment purchases, and you have complete control over your data. Start with one or two cameras and expand as needed—the modular configuration makes adding new cameras straightforward.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

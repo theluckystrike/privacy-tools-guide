@@ -165,13 +165,6 @@ PublicKey = <client-public-key>
 AllowedIPs = 10.0.0.2/32
 ```
 
-## Conclusion
-
-NordVPN can work from Moscow in 2026, but requires specific configuration. The NordLynx protocol provides reasonable success rates, while obfuscated servers over TCP 443 offer the most reliable connectivity. Developers should implement kill switches and consider self-hosted solutions for mission-critical applications.
-
-For the most reliable setup, combine NordVPN with a custom DNS configuration and always test connectivity before conducting sensitive operations. The situation remains fluid, and connection success rates may change as both sides—the filtering systems and VPN providers—continue to evolve.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

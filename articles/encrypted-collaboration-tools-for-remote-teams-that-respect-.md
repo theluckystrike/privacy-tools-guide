@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Encrypted Collaboration Tools for Remote Teams That."
+title: "Encrypted Collaboration Tools For Remote Teams That Respect"
 description: "A technical guide to encrypted collaboration platforms that keep your data under your control. Learn about E2EE, zero-knowledge architecture, and."
 date: 2026-03-16
 author: theluckystrike

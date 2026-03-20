@@ -209,11 +209,6 @@ If you experience connectivity problems after adjusting settings:
 - Verify VPN configuration if connection drops occur
 - Review system logs: `log show --predicate 'subsystem == "com.apple.network"'`
 
-## Conclusion
-
-macOS network privacy controls require intentional configuration to be effective. Start with the basics—firewall and DNS—then implement advanced features as needed.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

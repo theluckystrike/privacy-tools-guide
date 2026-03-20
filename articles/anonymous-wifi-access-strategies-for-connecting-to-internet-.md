@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Anonymous WiFi Access Strategies for Connecting to."
+title: "Anonymous Wifi Access Strategies For Connecting To Internet"
 description: "A practical technical guide for developers and power users to connect to WiFi networks while masking device identity through MAC randomization, Tor."
 date: 2026-03-16
 author: theluckystrike

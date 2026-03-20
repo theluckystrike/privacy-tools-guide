@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use GPG Signed Emails to Verify Sender Identity."
+title: "How To Use Gpg Signed Emails To Verify Sender Identity"
 description: "Learn how to use GPG signed emails to verify sender identity with this practical guide for developers and power users. Includes setup, signing."
 date: 2026-03-15
 author: "Privacy Tools Guide"

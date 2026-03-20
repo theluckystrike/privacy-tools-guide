@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Device Memory API Fingerprinting: How RAM Amount Narrows."
+title: "Device Memory Api Fingerprinting How Ram Amount Narrows Iden"
 description: "Learn how the Device Memory API enables browser fingerprinting by exposing available RAM, and how developers can detect and mitigate this tracking vector."
 date: 2026-03-16
 author: theluckystrike

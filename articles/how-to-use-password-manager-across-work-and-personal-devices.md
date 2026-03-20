@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use a Password Manager Across Work and Personal."
+title: "How To Use Password Manager Across Work And Personal Devices"
 description: "Learn practical strategies for using password managers seamlessly across work and personal devices. Includes CLI automation, vault organization, and."
 date: 2026-03-16
 author: theluckystrike

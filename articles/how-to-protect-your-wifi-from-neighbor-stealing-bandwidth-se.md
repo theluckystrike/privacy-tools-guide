@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Protect Your WiFi From Neighbor Stealing."
+title: "How To Protect Your Wifi From Neighbor Stealing Bandwidth Se"
 description: "Learn practical methods to secure your WiFi network from bandwidth theft. Includes router configuration, network monitoring tools, and advanced."
 date: 2026-03-15
 author: "Privacy Tools Guide"

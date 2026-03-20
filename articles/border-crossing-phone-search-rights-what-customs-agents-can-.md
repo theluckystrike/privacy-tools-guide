@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Border Crossing Phone Search Rights: What Customs Agents."
+title: "Border Crossing Phone Search Rights What Customs Agents Can"
 description: "A practical guide for developers and power users on phone search rights at international borders. Learn what customs agents can legally access."
 date: 2026-03-16
 author: theluckystrike

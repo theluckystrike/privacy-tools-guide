@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Data Subject Access Request Workflow for."
+title: "How to Set Up Data Subject Access Request Workflow for GDPR Compliance"
 description: "A practical technical guide for developers building GDPR-compliant data subject access request (DSAR) workflows. Covers automated pipelines, identity."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -319,13 +319,6 @@ Before relying on your DSAR pipeline, validate it works:
 3. **Test deadline handling** by backdating requests and confirming alerts fire
 4. **Validate erasure** by attempting to access deleted data across all systems
 5. **Audit trail verification** ensuring all actions are logged with timestamps
-
-## Summary
-
-A practical DSAR workflow combines intake forms, identity verification, cross-system data discovery, automated deadline tracking, and response generation. The complexity lies not in any single component but in ensuring all personal data across your infrastructure gets discovered and compiled correctly.
-
-Start with a complete data inventory, build incremental pipeline stages, and test thoroughly. The cost of automation is far less than the risk of missed deadlines or incomplete responses.
-
 
 ## Related Reading
 

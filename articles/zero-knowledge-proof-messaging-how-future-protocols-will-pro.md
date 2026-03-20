@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Zero Knowledge Proof Messaging: How Future Protocols."
+title: "Zero Knowledge Proof Messaging How Future Protocols Will Pro"
 description: "Learn how zero knowledge proof messaging works and how future protocols will protect conversation metadata using cryptographic techniques."
 date: 2026-03-15
 author: "Privacy Tools Guide"

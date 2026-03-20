@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Social Media Privacy for Teenagers Guide 2026: Essential."
+title: "Social Media Privacy For Teenagers Guide 2026"
 description: "A comprehensive guide to social media privacy for teenagers in 2026. Learn essential protection strategies, privacy settings, and security best."
 date: 2026-03-15
 author: "Privacy Tools Guide"

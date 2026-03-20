@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Bounce Tracking: How Redirects Through Tracker Domains."
+title: "Bounce Tracking How Redirects Through Tracker Domains Follow"
 description: "Learn how bounce tracking works, how tracker domains intercept your clicks, and practical techniques to protect yourself from this privacy-invasive."
 date: 2026-03-16
 author: theluckystrike

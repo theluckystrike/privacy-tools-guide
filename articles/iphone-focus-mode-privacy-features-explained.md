@@ -466,12 +466,7 @@ Result: If anyone sees device, private communications are invisible, no badges r
 6. Check that page switching doesn't reveal hidden pages
 ```
 
-## Conclusion
-
-Configuring Focus modes for your daily contexts—work, personal, sleep—gives you meaningful control over information exposure without sacrificing device functionality.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

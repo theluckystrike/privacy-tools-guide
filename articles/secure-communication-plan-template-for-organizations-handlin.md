@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Secure Communication Plan Template for Organizations."
+title: "Secure Communication Plan Template for Organizations Handling Sensitive Information Guide"
 description: "A practical secure communication plan template for organizations handling sensitive information. Includes implementation code, security controls, and."
 date: 2026-03-16
 author: theluckystrike

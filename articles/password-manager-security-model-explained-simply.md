@@ -141,15 +141,6 @@ A few clarifications that help when evaluating password manager security:
 
 Cloud sync does not mean the provider stores your data in plaintext—it stays encrypted on their servers. Your master password is never sent anywhere; zero-knowledge means the server never sees it. Because your encryption key is derived from your master password, a compromised master password compromises everything.
 
-## Summary
-
-Password managers achieve security through layered mechanisms: client-side encryption ensures your data never leaves your device in plaintext, key derivation transforms your master password into a secure cryptographic key, and authenticated encryption protects against tampering. Understanding these fundamentals helps you evaluate different tools and configure them appropriately.
-
-The security model ultimately rests on your master password being strong and unique. Even the most sophisticated encryption cannot protect against a compromised master password.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

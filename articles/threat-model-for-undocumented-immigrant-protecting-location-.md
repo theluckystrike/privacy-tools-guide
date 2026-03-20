@@ -440,12 +440,6 @@ echo "=== Threat Model Verification Complete ==="
 
 Run this verification monthly and after any system changes. Adjust your threat model if tests reveal unexpected exposure.
 
-## Conclusion
-
-Building a comprehensive threat model for protecting location and identity requires understanding your specific adversaries, implementing layered technical protections, and maintaining operational security discipline. No single measure provides complete protection, but each layer raises the cost of surveillance, making you a less attractive target than less-protected individuals.
-
-The goal is not perfect security, which is unattainable. The goal is making targeted surveillance costly enough that adversaries choose easier targets. Every layer of protection raises the resource requirements for those seeking to track you, creating meaningful distance between you and potential threats to your safety.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

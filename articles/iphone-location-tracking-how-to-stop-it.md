@@ -203,13 +203,6 @@ For maximum privacy without breaking functionality:
 4. **Use automation reminders** — Create Shortcuts that prompt location review
 5. **Consider MDM profiles for enterprise** — Mobile Device Management allows forced location restrictions on managed devices
 
-## Summary
-
-Controlling iPhone location tracking requires addressing multiple layers: the system-wide toggle, per-app permissions, and system services—particularly Significant Locations, which most users overlook entirely. The techniques here provide practical control without jailbreaking or sideloading.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

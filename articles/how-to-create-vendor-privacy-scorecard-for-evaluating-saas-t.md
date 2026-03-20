@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Create a Vendor Privacy Scorecard for Evaluating."
+title: "How To Create Vendor Privacy Scorecard For Evaluating Saas T"
 description: "Learn how to build a practical vendor privacy scorecard to evaluate SaaS tools before purchasing. Includes scoring criteria, code templates, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

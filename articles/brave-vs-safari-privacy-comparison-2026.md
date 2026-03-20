@@ -172,11 +172,6 @@ For developers working with sensitive data or testing privacy features:
 
 3. **Consider both**: Many developers maintain multiple browsers for different workflows—Safari for Apple ecosystem development, Brave for privacy testing and sensitive browsing.
 
-## Conclusion
-
-Safari provides integrated system privacy with minimal friction for Apple users; Brave offers more aggressive blocking and transparency. For developers testing privacy implementations, having both browsers available provides the best coverage for understanding how modern web applications behave under different privacy regimes.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

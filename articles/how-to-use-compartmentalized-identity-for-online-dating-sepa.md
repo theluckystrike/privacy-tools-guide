@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use Compartmentalized Identity for Online Dating."
+title: "How To Use Compartmentalized Identity For Online Dating Sepa"
 description: "A technical guide for developers and power users on creating compartmentalized identities for online dating. Learn how to separate email, phone, and."
 date: 2026-03-16
 author: "Privacy Tools Guide"

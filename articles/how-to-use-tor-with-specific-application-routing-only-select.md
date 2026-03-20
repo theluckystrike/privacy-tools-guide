@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Tor with Specific Application Routing: Select."
+title: "How To Use Tor With Specific Application Routing Only Select"
 description: "Learn how to route only specific applications through Tor while keeping other traffic on your regular internet connection. Practical setup guide for."
 date: 2026-03-16
 author: theluckystrike

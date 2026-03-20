@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Email Header Analysis: What Metadata Reveals About Your."
+title: "Email Header Analysis What Metadata Reveals About Your Locat"
 description: "Learn how to analyze email headers to uncover sender location, email client information, and hidden tracking data. Practical guide for developers and."
 date: 2026-03-16
 author: theluckystrike

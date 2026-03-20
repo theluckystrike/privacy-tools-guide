@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Protect Your Child from Online Predators: Safety."
+title: "How To Protect Your Child From Online Predators Safety Setup"
 description: "A practical technical guide for developers and power users to protect children from online predators. Learn device configuration, network-level."
 date: 2026-03-15
 author: "Privacy Tools Guide"

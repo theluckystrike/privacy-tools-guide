@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Controller vs Processor Obligations: Understanding."
+title: "Gdpr Controller Vs Processor Obligations Understanding Your"
 description: "A practical developer guide to GDPR controller and processor roles, obligations, and your rights when interacting with services that handle your."
 date: 2026-03-16
 author: theluckystrike

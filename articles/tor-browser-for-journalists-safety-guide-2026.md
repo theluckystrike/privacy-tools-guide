@@ -179,11 +179,6 @@ sha256sum document.pdf
 
 **Ignoring Tor Browser warnings**: The browser displays warnings for potentially dangerous configurations. Take these seriously—bypassing them often leads to de-anonymization.
 
-## Conclusion
-
-Tor Browser remains an essential tool for journalist source protection, but its effectiveness depends entirely on configuration and usage patterns. The default installation provides reasonable protection for general privacy, but investigative journalism in high-risk environments demands careful hardening, bridge configuration, and disciplined operational security. Review your threat model, test your configurations, and establish procedures before relying on Tor in critical situations.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

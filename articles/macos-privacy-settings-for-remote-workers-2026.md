@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "macOS Privacy Settings for Remote Workers 2026: Complete."
+title: "Macos Privacy Settings For Remote Workers 2026"
 description: "Secure your macOS device for remote work. Configure privacy settings, manage app permissions, enable firewall rules, and protect sensitive data with."
 date: 2026-03-15
 author: theluckystrike

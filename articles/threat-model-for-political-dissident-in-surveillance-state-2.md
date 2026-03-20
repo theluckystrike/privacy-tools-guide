@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Threat Model for Political Dissident in Surveillance."
+title: "Threat Model For Political Dissident In Surveillance State 2"
 description: "A practical technical guide for developers and power users on building a comprehensive threat model when living under surveillance. Includes actionable."
 date: 2026-03-16
 author: theluckystrike
@@ -248,13 +248,6 @@ def send_alert():
 if should_trigger():
     send_alert()
 ```
-
-## Conclusion
-
-Threat modeling for high-risk environments requires acknowledging that perfect security is unattainable. The goal is raising the cost of surveillance beyond what your adversaries can justify. Layer multiple defenses, maintain operational discipline, and plan for compromise rather than assuming invulnerability.
-
-Every security measure introduces friction—that friction is the point. By making surveillance resource-intensive, you protect yourself and create deniability for others in your network. The tools and techniques in this guide provide starting points; adapt them to your specific threat profile and operational requirements.
-
 
 ## Related Reading
 

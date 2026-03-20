@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Regulatory Sandbox Programs Explained: A."
+title: "Privacy Regulatory Sandbox Programs Explained"
 description: "Learn how privacy regulatory sandbox programs work, their benefits for developers, and how to participate in these innovation-friendly frameworks."
 date: 2026-03-15
 author: theluckystrike

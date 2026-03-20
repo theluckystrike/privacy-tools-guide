@@ -214,12 +214,6 @@ When configuring macOS firewall for privacy, avoid these mistakes:
 
 4. **Not testing rules**: Always test new rules in a controlled environment before deploying to production systems.
 
-## Conclusion
-
-Proper firewall configuration provides essential network privacy control on macOS. The Application Firewall handles basic inbound protection, while pf enables sophisticated outbound filtering and tracker blocking. Combined with regular monitoring and automated rule loading, these tools create a robust network privacy layer.
-
-Remember that firewall configuration requires balance between security and usability. Start with conservative rules, test thoroughly, and adjust based on your specific use case and threat model.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

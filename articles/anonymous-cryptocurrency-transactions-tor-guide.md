@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Anonymous Cryptocurrency Transactions Tor Guide: A."
+title: "Anonymous Cryptocurrency Transactions Tor Guide"
 description: "A practical guide for developers and power users on achieving anonymous cryptocurrency transactions using Tor network. Covers wallet configuration."
 date: 2026-03-15
 author: theluckystrike

@@ -192,11 +192,6 @@ Review these settings periodically:
 - [ ] Disable "Make searches and browsing better"
 - [ ] Review site permissions (camera, microphone, location)
 
-## Conclusion
-
-Chromebook privacy requires attention at multiple layers—from browser settings through network configuration to extension permissions. Students can significantly reduce their digital footprint without sacrificing functionality by methodically addressing each surface. For managed devices, coordinate with IT administrators to request privacy-preserving policies. Personal devices offer full control, making regular audits essential for maintaining privacy hygiene throughout the academic year.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

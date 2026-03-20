@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Nextcloud Talk Video Calls Setup Guide: A Practical."
+title: "Nextcloud Talk Video Calls Setup Guide"
 description: "Learn how to configure Nextcloud Talk for video calls. This guide covers server requirements, TURN/STUN setup, firewall configuration, and advanced."
 date: 2026-03-15
 author: "theluckystrike"

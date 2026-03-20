@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Benchmark VPN Throughput Accurately: iperf3 Setup."
+title: "How To Benchmark Vpn Throughput Accurately Iperf3 Setup Guid"
 description: "Learn how to measure VPN throughput precisely using iperf3. This guide covers server setup, client configuration, and testing methodologies for."
 date: 2026-03-16
 author: theluckystrike

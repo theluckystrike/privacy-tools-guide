@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Threat Model for Transgender Person: Protecting Deadname."
+title: "Threat Model For Transgender Person Protecting Deadname And"
 description: "A technical guide for developers and power users on building a threat model to protect your deadname and previous digital identity during a name."
 date: 2026-03-16
 author: theluckystrike
@@ -209,15 +209,6 @@ firefox --no-remote -P "NewIdentity"
 # Create separate profile for legacy accounts
 firefox --no-remote -P "LegacyAccounts"
 ```
-
-## Conclusion
-
-Protecting your deadname and previous identity requires a layered approach combining automation, systematic audits, and ongoing vigilance. The threat model framework outlined here addresses the most common exposure points while remaining practical for implementation by developers and power users.
-
-Start with the digital footprint audit to understand your current exposure, then systematically work through account segregation, email management, and data broker removal. Maintain your migration checklist to track progress and identify remaining work.
-
-Remember: privacy during transition isn't about shame—it's about safety and autonomy over your own information.
-
 
 ## Related Reading
 

@@ -160,11 +160,6 @@ rm -rf ~/.cache/mozilla ~/.cache/google-chrome ~/.cache/chromium
 history -c && history -w
 ```
 
-## Conclusion
-
-Secure data destruction before border crossing requires planning and the right tools. Understand your threat model, maintain secure backups, and use appropriate destruction methods for your storage technology. For most users, a combination of full disk encryption and selective secure deletion provides the best balance of security and practicality. Remember that the goal is not paranoia—it is maintaining control over your sensitive information when you may be required to surrender access to your devices.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

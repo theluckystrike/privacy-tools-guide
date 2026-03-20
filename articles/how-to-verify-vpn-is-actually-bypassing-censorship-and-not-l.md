@@ -180,12 +180,6 @@ If you discover leaks, several fixes are available:
 4. **Use a different VPN protocol**: Some protocols handle leaks better than others (WireGuard typically performs well)
 5. **Consider custom DNS**: Configure your system to use privacy-focused DNS servers (like Cloudflare 1.1.1.1 or Quad9) that support DNS-over-HTTPS
 
-## Conclusion
-
-Verifying your VPN is actually working requires more than checking that your IP address changed. Systematic testing for DNS leaks, WebRTC leaks, IPv6 leaks, and actual censorship bypass ensures your privacy protection is complete. Run these tests periodically, especially after VPN app updates or network configuration changes, to maintain consistent protection.
-
-The methods outlined here give developers and power users actionable verification steps that go beyond basic IP checks. Privacy protection only works when you can confirm it—and now you have the tools to do exactly that.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

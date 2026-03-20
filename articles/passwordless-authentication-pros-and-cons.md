@@ -181,10 +181,6 @@ Consider maintaining password options when:
 - Requiring maximum compatibility across legacy systems
 - Account recovery simplicity is critical
 
-## Conclusion
-
-For developers building new applications or upgrading authentication systems, passwordless represents a worthwhile investment. The security benefits justify the implementation effort, particularly for applications handling sensitive data. Users gain simplified login experiences without sacrificing security, provided they understand the responsibilities that come with managing authentication devices.
-
 ## Related Reading
 
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)

@@ -171,11 +171,6 @@ acme.sh --issue -d you@example.com \
 
 This approach enables automatic certificate renewal and deployment through configuration management tools.
 
-## Conclusion
-
-Start with a self-signed certificate for testing, then obtain a CA-issued certificate for production. The setup is a one-time cost; renewed certificates slot into the same client configuration.
-
-
 ## Related Reading
 
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)

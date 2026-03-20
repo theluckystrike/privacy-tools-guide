@@ -190,11 +190,6 @@ class SignalRateLimiter:
         self.requests.append(time.time())
 ```
 
-## Conclusion
-
-Signal's username feature represents a meaningful privacy improvement for users who want to communicate without exposing their phone numbers.
-
-
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)

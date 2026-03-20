@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Secure Browsing Habits With Tor: Best Practices for."
+title: "Secure Browsing Habits With Tor Best Practices"
 description: "Master secure browsing with Tor using these practical best practices. Learn configuration tips, common pitfalls to avoid, and advanced techniques for."
 date: 2026-03-15
 author: theluckystrike

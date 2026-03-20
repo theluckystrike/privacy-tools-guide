@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Consent Management Platform Comparison 2026: A."
+title: "Gdpr Consent Management Platform Comparison 2026"
 description: "A technical comparison of GDPR-compliant consent management platforms in 2026, with code examples for implementation, API considerations, and."
 date: 2026-03-15
 author: theluckystrike

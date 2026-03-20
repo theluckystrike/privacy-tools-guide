@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Windows Activity History: Complete Guide to Disabling."
+title: "Windows Activity History Disable Privacy Guide"
 description: "A practical guide for developers and power users to understand and disable Windows Activity History tracking through Settings, Group Policy, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

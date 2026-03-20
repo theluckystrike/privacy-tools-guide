@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Build a Privacy Dashboard for Customers to Manage."
+title: "How To Build Privacy Dashboard For Customers To Manage Their"
 description: "A practical guide for developers building privacy dashboards. Learn data access patterns, consent management, GDPR/CCPA compliance, and user-facing."
 date: 2026-03-16
 author: theluckystrike

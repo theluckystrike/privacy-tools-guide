@@ -219,15 +219,6 @@ msgs <- pollMessages addr
 
 The protocol specifications are open, enabling verification and custom implementations.
 
-## Conclusion
-
-Simplex Chat's identifier-less design represents genuine innovation in privacy-preserving communication. By eliminating persistent user IDs from the protocol layer, it addresses fundamental privacy vulnerabilities that plague conventional messaging platforms.
-
-The trade-offs are real: initial contact requires out-of-band address exchange, and the network model differs from familiar chat applications. For users with stringent privacy requirements—journalists, activists, or anyone requiring communication metadata protection—Simplex Chat provides architectural guarantees that traditional messenger protocols cannot match.
-
-For developers building privacy-focused applications, the protocol's Haskell implementation offers a reference architecture worth studying. The identifier-less model demonstrates that practical messaging can function without the identity infrastructure most platforms treat as essential.
-
-
 ## Related Reading
 
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Detect Catfish on Dating Apps Using OSINT."
+title: "How To Detect Catfish On Dating Apps Using Osint Verificatio"
 description: "Learn practical OSINT techniques to verify dating app profiles. Includes reverse image search, metadata analysis, social media cross-referencing, and."
 date: 2026-03-16
 author: "Privacy Tools Guide"

@@ -182,13 +182,6 @@ ssh -L 3389:localhost:3389 user@your-server
 
 This approach encrypts your traffic and provides authentication without the overhead of a full VPN stack. However, it only protects a single connection rather than all your network traffic.
 
-## Summary
-
-Hotel WiFi should never be used for remote desktop connections without protection. A properly configured VPN—whether self-hosted WireGuard or a commercial service—encrypts your session and protects your credentials from the numerous threats present on shared hotel networks. The setup time investment of 30 minutes pays dividends in security every time you connect from a hotel, conference, or any public WiFi network.
-
-The core steps are: deploy a VPN server, configure your client to route through it, use VPN IP addresses for RDP/VNC connections, and verify your traffic is encrypted before beginning work. With these measures in place, hotel WiFi becomes as safe as your office network for remote desktop access.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

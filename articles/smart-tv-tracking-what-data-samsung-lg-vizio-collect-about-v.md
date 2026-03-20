@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Smart TV Tracking: What Data Samsung, LG, and Vizio."
+title: "Smart Tv Tracking What Data Samsung Lg Vizio Collect About V"
 description: "Discover exactly what data smart TV manufacturers Samsung, LG, and Vizio collect from your viewing habits, how they use it, and practical steps to."
 date: 2026-03-15
 author: "Privacy Tools Guide"

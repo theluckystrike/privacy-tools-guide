@@ -205,13 +205,6 @@ After initial setup, implement these hardening measures:
    ```
 4. **Use strong admin token** and rotate it periodically
 
-## Conclusion
-
-Once your instance is running, you get all Premium features without the subscription fee, plus organization support with collections and event logging. The initial setup time pays off in control over where your data lives and how it is managed.
-
----
-
-
 ## Related Reading
 
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)

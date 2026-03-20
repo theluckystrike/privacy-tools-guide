@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Legitimate Interest: What Companies Can Do With."
+title: "GDPR Legitimate Interest: What Companies Can Do With Your Data Without Consent Explained"
 description: "A practical guide explaining GDPR legitimate interest basis - how companies process your data without consent, the three-part test, and what it means."
 date: 2026-03-16
 author: theluckystrike
@@ -167,15 +167,6 @@ When you encounter a privacy practice you're unsure about, look for these indica
 2. **Opt-out options** — Legitimate interest activities must offer ways to opt-out
 3. **No consent mechanism** — If you're not being asked to consent, legitimate interest may apply
 4. **Direct marketing** — Marketing to existing customers often relies on this basis
-
-## Conclusion
-
-GDPR legitimate interest is a powerful tool that allows companies to process your data without obtaining explicit consent. However, it is not a free pass—companies must conduct documented assessments, balance your rights against their interests, and allow you to object.
-
-Understanding legitimate interest helps you recognize which data practices are legally permitted and which rights you can exercise. Even when companies have legitimate interests, your right to object and your right to explanation remain protected. If you believe a company is misusing legitimate interest, you have recourse through data protection authorities.
-
----
-
 
 ## Related Reading
 

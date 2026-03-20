@@ -149,15 +149,6 @@ If fingerprinting detection shows persistent identifiers, consider:
 - Checking for browser extensions that leak information
 - Verifying that privacy.resistFingerprinting is enabled
 
-## Conclusion
-
-Tor Browser provides strong canvas fingerprinting protection through randomization, resistance fingerprinting, and first-party isolation. While no solution is perfect, following these configuration tips and best practices significantly reduces your canvas fingerprintable surface area. Regular updates and careful attention to browser behavior help maintain your privacy against evolving tracking techniques.
-
-Remember that canvas fingerprinting is just one tracking method. Combining Tor Browser with other privacy tools creates defense in depth against the various fingerprinting techniques used by trackers today.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

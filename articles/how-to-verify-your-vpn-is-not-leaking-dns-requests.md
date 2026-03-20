@@ -202,15 +202,6 @@ Beyond fixing leaks, consider these additional measures:
 - **Regularly test your VPN**: Network changes, app updates, or OS updates can introduce new leak vectors
 - **Keep your VPN app updated**: Providers frequently release patches for security issues
 
-## Conclusion
-
-DNS leaks are a serious but often overlooked VPN security issue. By regularly testing for leaks and knowing how to fix them, you ensure your VPN actually protects your privacy as intended. The steps in this guide—testing, identifying the cause, and implementing fixes—will help you achieve a truly private browsing experience.
-
-Remember: a VPN without DNS leak protection is like a shield with a hole in it. Take the time to verify your setup, and browse with confidence.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

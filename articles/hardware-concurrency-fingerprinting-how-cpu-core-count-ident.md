@@ -181,12 +181,6 @@ To see how your browser handles this fingerprinting vector:
 
 The goal is making your core count appear common—typically 2-4 cores—rather than distinctive.
 
-## Conclusion
-
-Hardware concurrency fingerprinting represents one of the simpler browser fingerprinting vectors, but its simplicity also makes it relatively easy to mitigate. For developers, understanding this technique informs better privacy-aware application design. For power users, using privacy-focused browsers and configurations effectively neutralizes this fingerprinting signal.
-
-The key takeaway is that seemingly innocuous browser properties combine into powerful tracking mechanisms. Protecting against fingerprinting requires understanding each individual vector while implementing layered defenses.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

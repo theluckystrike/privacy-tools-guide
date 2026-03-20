@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "GDPR Compliance Tools for Developers in 2026: A."
+title: "Gdpr Compliance Tools For Developers 2026"
 description: "A practical guide to GDPR compliance tools for developers. Learn about consent management, data anonymization, right to erasure implementation, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

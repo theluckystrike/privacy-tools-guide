@@ -9,9 +9,8 @@ permalink: /cookieyes-vs-osano-consent-tools-comparison-2026/
 categories: [guides, security, enterprise]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 
