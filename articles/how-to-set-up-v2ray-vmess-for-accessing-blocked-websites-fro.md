@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
+{% raw %}
 V2Ray is a powerful network proxy tool that supports multiple protocols, including VMess. VMess is a protocol designed for secure, encrypted communications that masks traffic patterns. This makes it effective for accessing websites that are blocked or restricted in certain regions, including China.
 
 This guide walks through setting up V2Ray with VMess from scratch. You'll learn how to configure both the server and client components, test the connection, and optimize settings for performance and security.
@@ -347,3 +348,5 @@ Test your setup thoroughly before relying on it for important work. Verify DNS r
 The configuration in this guide provides a foundation. As you become familiar with V2Ray's capabilities, you can explore additional features like routing rules, traffic statistics, and load balancing across multiple servers.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
