@@ -7,9 +7,10 @@ author: "Privacy Tools Guide"
 permalink: /vpn-authentication-methods-compared-certificate-vs-username-password-security/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, comparison, security, vpn]
 ---
 
 {% raw %}

@@ -7,9 +7,10 @@ author: "Privacy Tools Guide"
 permalink: /vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, vpn]
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-medical-records-abroad-while-traveling-sec/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 8
 intent-checked: true
