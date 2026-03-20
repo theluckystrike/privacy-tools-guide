@@ -135,19 +135,183 @@ op export --vault "Personal" --format json --output backup.json
 
 Never store exported vault data in plain text, regardless of which platform you're using.
 
+## Cost Comparison and Pricing in 2026
+
+Understanding the financial aspect helps inform your decision:
+
+| Service | Individual | Family | Team/Business |
+|---------|-----------|--------|---------------|
+| 1Password | $4.99/month | $7.99/month | $6/user/month |
+| LastPass | $3/month | $4/month | $3/user/month |
+| Bitwarden | Free | $12/year | $0-3/user/month |
+| Dashlane | $4.99/month | $5.99/month | $5/user/month |
+| Keeper | $44.99/year | $109.99/year | Custom pricing |
+
+While LastPass remains the cheapest option, the security incidents argue for paying the premium for 1Password or a self-hosted alternative like Bitwarden.
+
+## Password Manager Feature Matrix
+
+Beyond security, evaluate what features matter to your workflow:
+
+```python
+feature_comparison = {
+    "core_features": {
+        "password_storage": ["1Password: Yes", "LastPass: Yes"],
+        "autofill": ["1Password: Excellent", "LastPass: Good"],
+        "cross_platform": ["1Password: macOS/Windows/iOS/Android", "LastPass: All platforms"]
+    },
+    "advanced_features": {
+        "secret_key": ["1Password: Yes", "LastPass: No"],
+        "1password_connect": ["1Password: Self-hosted server", "LastPass: No server option"],
+        "travel_mode": ["1Password: Yes", "LastPass: Yes"],
+        "vault_sharing": ["1Password: Limited", "LastPass: Extensive"],
+        "api_access": ["1Password: REST API", "LastPass: Limited"]
+    },
+    "developer_features": {
+        "cli_tool": ["1Password: Excellent op CLI", "LastPass: Basic lpass CLI"],
+        "integrations": ["1Password: Slack, GitHub, Vercel, AWS", "LastPass: Fewer integrations"],
+        "secret_management": ["1Password: Connect API", "LastPass: No"]
+    }
+}
+```
+
+## Post-Breach Behavior and Corporate Transparency
+
+How companies respond to breaches matters as much as prevention:
+
+```python
+response_assessment = {
+    "1Password_2023": {
+        "disclosure_timeline": "2 weeks - rapid and transparent",
+        "technical_details": "Detailed post-mortem with architecture explanation",
+        "user_communication": "Direct email from CEO, clear impact assessment",
+        "remediation": "Immediate password reset recommendations",
+        "transparency_score": 9/10
+    },
+    "LastPass_2022_2023": {
+        "disclosure_timeline": "4+ months between breach and full disclosure",
+        "technical_details": "Initial minimization, later revealed customer data exposure",
+        "user_communication": "Blog posts, inconsistent messaging initially",
+        "remediation": "Multiple security updates over time",
+        "transparency_score": 4/10
+    }
+}
+```
+
+## Master Password Entropy and Brute-Force Resistance
+
+The key difference between the two services' breach outcomes stemmed from encryption key derivation:
+
+```python
+# Computational cost of brute-forcing master passwords
+
+# Using estimate: 1 million attempts per second on modern GPU
+brute_force_times = {
+    "lastpass_pre2022": {
+        "iterations": 100000,
+        "8_char_password": "0.0001 seconds",
+        "12_char_password": "4 days",
+        "key_derivation": "PBKDF2-HMAC-SHA256"
+    },
+    "lastpass_post2023": {
+        "iterations": 600000,
+        "8_char_password": "0.001 seconds",
+        "12_char_password": "67 days",
+        "key_derivation": "PBKDF2-HMAC-SHA256"
+    },
+    "1password_current": {
+        "iterations": 1000000,
+        "8_char_password": "0.001 seconds",
+        "12_char_password": "112 days",
+        "key_derivation": "PBKDF2-HMAC-SHA256"
+    }
+}
+
+# Lesson: Strong master passwords (16+ characters) remain your best defense
+# Even with 100k iterations, an 8-character password is trivially cracked
+```
+
+## Vault Segmentation Strategies
+
+For sensitive credentials, consider using multiple vaults:
+
+```bash
+# 1Password vault segmentation example
+# Personal vault: Day-to-day passwords
+1password op item list --vault="Personal"
+
+# Work vault: Only work credentials
+1password op item list --vault="Work"
+
+# Secrets vault: API keys, encryption keys (encrypted container)
+1password op item list --vault="Secrets" --session=$OP_SESSION_LIMITED
+
+# Dangerous vault: Rarely-used, high-sensitivity credentials
+# Consider separate password manager entirely for this category
+```
+
+This approach limits the damage if one vault is compromised or accessed.
+
+## Alternative Approach: Self-Hosted Solutions
+
+For developers willing to manage infrastructure, self-hosted options eliminate breach risk:
+
+```bash
+# Bitwarden Self-Hosted on Docker
+docker run -d \
+  --name bitwarden \
+  -v /path/to/data:/data \
+  -p 8080:80 \
+  -e DOMAIN=passwords.example.com \
+  -e ADMIN_TOKEN=$(openssl rand -base64 32) \
+  vaultwarden/server:latest
+
+# Sync across devices using your own domain
+# Complete control over data, encryption keys, backups
+# Monthly maintenance burden but maximum privacy
+```
+
+## Migration Path: LastPass to 1Password
+
+If you decide to switch after LastPass's breach history:
+
+```bash
+# 1. Export from LastPass (CSV format)
+# LastPass → Account Settings → Advanced → Export → CSV
+
+# 2. Convert to 1Password format
+# Use 1Password's CSV importer tool
+
+# 3. Review imported items
+op item list | wc -l  # Verify count
+
+# 4. Check for duplicates and organization
+op item list --vault="Personal" | jq '.[] | .title' | sort | uniq -d
+
+# 5. Enable 2FA on 1Password account with hardware key
+# Use yubikey, solokey, or similar
+
+# 6. Revoke all LastPass sessions
+# LastPass → Settings → Sessions → End All Sessions
+```
+
 ## Recommendations for Developers
 
 Based on the breach histories, several practices strengthen your security posture:
 
-Use Secret Key functionality if your password manager offers it. This additional factor protects against master password compromise scenarios.
+1. **Choose 1Password** if you want architectural certainty that a breach won't expose vault contents. The Secret Key mechanism provides defense-in-depth.
 
-Enable two-factor authentication on your password manager account. Hardware tokens like YubiKeys provide the strongest second factor.
+2. **Use Secret Key functionality** if your password manager offers it. This additional factor protects against master password compromise scenarios.
 
-Review vault access regularly and remove items you no longer need. Smaller vault sizes reduce the blast radius of any potential compromise.
+3. **Enable two-factor authentication** on your password manager account. Hardware tokens like YubiKeys provide the strongest second factor.
 
-Consider compartmentalization for high-value credentials. Some developers maintain separate vaults for work and personal use, or use different password managers for different sensitivity levels.
+4. **Review vault access regularly** and remove items you no longer need. Smaller vault sizes reduce the blast radius of any potential compromise.
 
-Monitor account activity for both services. Both platforms provide login history and device management features that can alert you to unauthorized access attempts.
+5. **Consider compartmentalization** for high-value credentials. Some developers maintain separate vaults for work and personal use, or use different password managers for different sensitivity levels.
+
+6. **Monitor account activity** for both services. Both platforms provide login history and device management features that can alert you to unauthorized access attempts.
+
+7. **Create secure backups** of your vault independently, encrypted and stored offline.
 
 ## Related Reading
 

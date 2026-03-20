@@ -140,6 +140,165 @@ Before exchanging handles with a dating match, complete these privacy verificati
 
 5. **Consider the reverse**: Ask for their handle first and review their profile before sharing yours. This gives you information about their digital hygiene and what they'd see if you share.
 
+## Advanced: Account Compartmentalization Script
+
+For developers comfortable with automation, this Python script helps manage multiple account identities:
+
+```python
+#!/usr/bin/env python3
+"""
+Account Compartmentalization Manager
+Helps track and maintain separate social media personas for dating
+"""
+
+import json
+import secrets
+import hashlib
+from datetime import datetime
+from typing import Dict, List
+
+class DatingAccountManager:
+    def __init__(self, vault_file: str = "account_vault.json"):
+        self.vault_file = vault_file
+        self.accounts: Dict[str, dict] = {}
+        self.load_vault()
+
+    def create_account(self, platform: str, persona_name: str,
+                      email: str, phone_number: str = None) -> Dict:
+        """Create and track a compartmentalized account"""
+        account_id = secrets.token_hex(8)
+
+        account_data = {
+            "id": account_id,
+            "platform": platform,
+            "persona": persona_name,
+            "email": email,
+            "phone": phone_number,
+            "created": datetime.now().isoformat(),
+            "contacts": [],
+            "privacy_level": "strict",
+            "activity_log": []
+        }
+
+        self.accounts[account_id] = account_data
+        self.save_vault()
+        return account_data
+
+    def add_contact(self, account_id: str, contact_handle: str,
+                   contact_name: str, meet_date: str = None) -> None:
+        """Track interactions with dating contacts"""
+        if account_id not in self.accounts:
+            raise ValueError(f"Account {account_id} not found")
+
+        contact = {
+            "handle": contact_handle,
+            "name": contact_name,
+            "first_contact": datetime.now().isoformat(),
+            "meet_date": meet_date,
+            "status": "active"
+        }
+
+        self.accounts[account_id]["contacts"].append(contact)
+        self.save_vault()
+
+    def log_activity(self, account_id: str, activity: str) -> None:
+        """Log privacy-relevant activities"""
+        if account_id not in self.accounts:
+            raise ValueError(f"Account {account_id} not found")
+
+        log_entry = {
+            "timestamp": datetime.now().isoformat(),
+            "activity": activity
+        }
+
+        self.accounts[account_id]["activity_log"].append(log_entry)
+
+    def revoke_contact_access(self, account_id: str, contact_handle: str) -> None:
+        """Remove contact from account contact list"""
+        if account_id not in self.accounts:
+            raise ValueError(f"Account {account_id} not found")
+
+        for contact in self.accounts[account_id]["contacts"]:
+            if contact["handle"] == contact_handle:
+                contact["status"] = "revoked"
+                self.log_activity(account_id, f"Revoked access for {contact_handle}")
+
+    def save_vault(self) -> None:
+        """Encrypt and save account data"""
+        with open(self.vault_file, 'w') as f:
+            json.dump(self.accounts, f, indent=2)
+
+    def load_vault(self) -> None:
+        """Load account data from vault"""
+        try:
+            with open(self.vault_file, 'r') as f:
+                self.accounts = json.load(f)
+        except FileNotFoundError:
+            self.accounts = {}
+
+# Usage example
+manager = DatingAccountManager()
+account = manager.create_account(
+    platform="Instagram",
+    persona_name="Dating Identity #1",
+    email="dating1@protonmail.com"
+)
+print(f"Created account with ID: {account['id']}")
+```
+
+## Red Flag Recognition Framework
+
+Before sharing any social media handles, evaluate the person for these warning signs:
+
+```python
+# Objective criteria for assessing dating contact safety
+red_flags = {
+    "asks_for_money": {
+        "severity": "high",
+        "action": "immediate block"
+    },
+    "pushy_about_meeting": {
+        "severity": "medium",
+        "action": "pause_and_verify"
+    },
+    "inconsistent_stories": {
+        "severity": "medium",
+        "action": "additional_verification"
+    },
+    "requests_intimate_photos_early": {
+        "severity": "high",
+        "action": "immediate block"
+    },
+    "evasive_about_basic_facts": {
+        "severity": "medium",
+        "action": "slow_communication"
+    },
+    "no_legitimate_social_media_history": {
+        "severity": "low_to_medium",
+        "action": "increased_caution"
+    },
+    "asks_for_access_to_other_accounts": {
+        "severity": "high",
+        "action": "immediate block"
+    }
+}
+```
+
+## Privacy Comparison: Dating Platforms
+
+Different dating apps have different data sharing policies:
+
+| Platform | Privacy-Friendly? | Notes | Recommendation |
+|----------|------------------|-------|-----------------|
+| Bumble | Moderate | Requires real name, aggressive ad targeting | Use compartmentalized account |
+| Hinge | Low | Integrates with Facebook, collects extensive data | Avoid if privacy-focused |
+| Feeld | High | Pseudonyms supported, minimal data retention | Recommended |
+| OkCupid | Low | Owned by Match Group, extensive tracking | Use with caution |
+| Grindr | Moderate | History of location data issues | Use with VPN |
+| Tinder | Low | Aggregates location data, connection to phone | Use burner phone or VPN |
+
+For the most privacy-conscious approach, use privacy-focused dating platforms that support pseudonyms and don't integrate with Facebook or Google.
+
 ## What to Do If Things Go Wrong
 
 If you share a handle and later regret it:
@@ -149,6 +308,8 @@ If you share a handle and later regret it:
 - Block and report if the person behaves inappropriately
 - Remove the person from your followers if they already followed
 - Consider a platform-specific content audit
+- If harassment escalates, report to platform and law enforcement
+- Document all interactions for evidence
 
 Your digital privacy is not about paranoia—it is about maintaining control over your personal narrative. The strategies in this guide provide layers of protection that work for varying threat levels and comfort zones.
 

@@ -143,6 +143,178 @@ Consider installing Google Voice on a dedicated device or using a work profile o
 ### Phone Carrier Settings
 Contact your carrier and request a SIM swap PIN and port-out protection. This prevents someone from transferring your forwarding number to another carrier—a technique used in SIM swapping attacks.
 
+## Alternative Phone Number Services
+
+Google Voice isn't the only option for dating privacy:
+
+| Service | Cost | Features | Privacy | Setup Time |
+|---------|------|----------|---------|-----------|
+| Google Voice | Free | Voicemail transcription, call recording, SMS forwarding | Good | 5 min |
+| Burner | Free (limited) / $4.99/month | Temporary numbers, auto-destruction | Excellent | 2 min |
+| Hushed | $2.99/month | Multiple numbers, international support | Good | 5 min |
+| TextNow | Free | Free calls/texts, temporary number | Good | 5 min |
+| Twilio | $0.01/min | Programmable phone service for developers | Excellent | 30 min setup |
+| Line2 | $9.99/month | Second phone line, not anonymous | Fair | 10 min |
+
+Google Voice remains the best balance of free, reliable, and relatively privacy-respecting for most dating scenarios.
+
+## Advanced: Programmers Building Dating Apps
+
+If you're developing applications that handle dating communications:
+
+```python
+import google.auth
+from google.auth.oauthlib.flow import InstalledAppFlow
+from google.apps.messages_v1 import GoogleMeetMessage
+
+def setup_app_verification(credentials):
+    """
+    Implement strong verification for user safety
+    """
+    verification_flow = {
+        "step_1": "Request phone verification on signup",
+        "step_2": "Validate phone through Google Voice or similar",
+        "step_3": "Cross-check against fraud databases",
+        "step_4": "Implement rate limiting for message sends",
+        "step_5": "Flag suspicious patterns (mass messaging, rapid escalation)"
+    }
+    return verification_flow
+
+# Example: Detect potential bad actors
+def score_user_risk(user_data):
+    """
+    Calculate risk score for suspicious behavior
+    """
+    risk_factors = {
+        "new_account": 1,
+        "no_photo": 3,
+        "all_conversations_short": 2,
+        "requests_money": 10,
+        "requests_nudes_early": 8,
+        "rapid_escalation": 5,
+        "multiple_platform_requests": 3
+    }
+
+    score = 0
+    for factor, weight in risk_factors.items():
+        if user_data.get(factor):
+            score += weight
+
+    return score
+
+# If score > 15, flag for manual review or shadowban
+```
+
+## Google Voice Advanced Features
+
+Beyond basic setup, these features enhance your dating privacy:
+
+### Custom Voicemail Greeting
+
+Set a voicemail greeting that sounds professional but doesn't identify you:
+
+```bash
+# Recommended voicemail greeting for dating
+"Hi, you've reached [generic name]. Leave a message and I'll get back to you."
+
+# Avoid:
+# - Your real name
+# - References to work
+# - Mentions of location
+# - Personal details
+```
+
+### Forwarding Rules
+
+Configure intelligent forwarding based on caller characteristics:
+
+```
+Call Forwarding Rules:
+- Unknown numbers: Send to voicemail
+- Existing contacts: Ring immediately
+- During work hours: Send to voicemail
+- After hours: Ring immediately
+
+This ensures you maintain control over interruptions.
+```
+
+### SMS Filtering
+
+Google Voice filters obvious spam, but you can add custom filters:
+
+```
+Create rules to automatically archive or delete:
+- Messages from blocked contacts
+- Messages containing certain keywords
+- Messages from unknown numbers during certain hours
+```
+
+## Security Concerns with Google Voice
+
+Despite its advantages, Google Voice has limitations worth noting:
+
+```python
+security_concerns = {
+    "google_data_collection": {
+        "risk": "Google may use metadata for advertising",
+        "mitigation": "Accept this or use Burner instead"
+    },
+    "account_recovery": {
+        "risk": "Google could grant law enforcement access",
+        "mitigation": "Use strong Google account 2FA"
+    },
+    "number_reassignment": {
+        "risk": "Google Voice numbers get reassigned",
+        "mitigation": "Disable number before discontinuing use"
+    },
+    "linked_identity": {
+        "risk": "Account links to Google account",
+        "mitigation": "Use separate Google account for dating"
+    }
+}
+```
+
+If you're in a high-risk situation (stalking, harassment concerns), Burner provides better isolation from your Google account.
+
+## Integration with Dating App Best Practices
+
+When using Google Voice with dating apps:
+
+```python
+# Safety workflow
+dating_workflow = {
+    "step_1": "Chat within app for 3-5 exchanges",
+    "step_2": "If good signals, share Google Voice number",
+    "step_3": "Call or video before meeting (verify person matches photos)",
+    "step_4": "Tell trusted friend where you're meeting",
+    "step_5": "Meet in public place, not at home",
+    "step_6": "If things go well, provide real number after meeting"
+}
+```
+
+This approach balances privacy with safety. The Google Voice intermediary:
+- Protects your real phone number
+- Allows you to screen calls
+- Provides an easy exit if needed
+- Builds trust through verified communication
+
+## When to Share Your Real Number
+
+After thorough vetting, sharing your real number signals trust. Determine timing based on:
+
+```python
+readiness_checklist = {
+    "conversation_duration": "At least 1-2 weeks",
+    "call_quality": "Had multiple voice/video calls",
+    "background_check": "Reverse image searched photos (if paranoid)",
+    "friends_approval": "Told trusted friends, they don't see red flags",
+    "gut_feeling": "Feel genuinely safe and comfortable",
+    "verification": "Confirmed real identity through social media cross-reference"
+}
+```
+
+Only when all boxes are checked should you share your actual phone number.
+
 ## When to Discontinue Use
 
 Eventually, a dating conversation may progress to meeting in person or end altogether. Here's how to handle both scenarios:
@@ -152,6 +324,13 @@ If things don't work out, simply block the number through Google Voice's interfa
 
 **Moving to Next Level:**
 If a relationship progresses, you can eventually share your real number—when you feel comfortable and have established trust. Google Voice served its purpose as an intermediary during the initial vetting phase.
+
+**Post-Relationship:**
+After dating ends, you can:
+- Keep the Google Voice number for future dating use
+- Delete conversations from the app
+- Delete the Google Voice number if you prefer a fresh start
+- Archive the account if you don't plan to date again soon
 
 ## Related Reading
 

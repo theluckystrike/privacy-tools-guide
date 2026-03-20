@@ -141,6 +141,146 @@ for email in "${EMAILS[@]}"; do
 done
 ```
 
+## Public Records and Background Check Sites
+
+Beyond data brokers, public records databases compile courthouse data, property records, and voter registration information. These sites often have separate opt-out procedures:
+
+```bash
+# Common public records sites requiring manual opt-out:
+# - VotingRecords.com
+# - PropertyRecords.com
+# - CourtRecords.gov
+
+# Example: Send GDPR request (EU residents)
+curl -X POST https://votingrecords.com/privacy/request \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "your@email.com",
+    "request_type": "deletion",
+    "jurisdiction": "state_name"
+  }'
+```
+
+Property records are particularly sensitive—they reveal your address and real estate holdings. In some states, you can request address confidentiality through homestead exemptions or property privacy programs.
+
+## Website Scrubbing Services Comparison
+
+Automated removal services have different capabilities and pricing:
+
+| Service | Cost | Coverage | Speed | Manual Work |
+|---------|------|----------|-------|------------|
+| DeleteMe | $129/year | ~200 sites | 30-90 days | 0% |
+| OneRep | $99/year | ~100 sites | 30-45 days | 10% |
+| Privacy Bee | $149/year | ~150 sites | 45-60 days | 5% |
+| Manual DIY | $0 | Unlimited | 90+ days | 100% |
+
+For developers, consider building a personal removal script to target specific brokers:
+
+```python
+#!/usr/bin/env python3
+import requests
+import json
+from datetime import datetime
+
+class DataBrokerRemover:
+    def __init__(self, email, name, phone):
+        self.email = email
+        self.name = name
+        self.phone = phone
+        self.removal_log = []
+
+    def submit_removal(self, broker_name, broker_url, method="email"):
+        """Submit removal request to data broker"""
+        timestamp = datetime.now().isoformat()
+
+        try:
+            if method == "email":
+                # Log email removal requests
+                self.removal_log.append({
+                    "broker": broker_name,
+                    "url": broker_url,
+                    "method": "email",
+                    "submitted": timestamp,
+                    "status": "pending"
+                })
+            elif method == "form":
+                response = requests.post(broker_url, data={
+                    "email": self.email,
+                    "name": self.name,
+                    "removal_request": True
+                })
+                self.removal_log.append({
+                    "broker": broker_name,
+                    "url": broker_url,
+                    "method": "form",
+                    "submitted": timestamp,
+                    "status": "submitted" if response.status_code == 200 else "failed",
+                    "response_code": response.status_code
+                })
+        except Exception as e:
+            self.removal_log.append({
+                "broker": broker_name,
+                "error": str(e),
+                "submitted": timestamp
+            })
+
+    def save_removal_log(self, filename="removal_log.json"):
+        """Persist removal attempts for tracking"""
+        with open(filename, 'w') as f:
+            json.dump(self.removal_log, f, indent=2)
+
+# Usage
+remover = DataBrokerRemover("your@email.com", "Your Name", "555-1234")
+remover.submit_removal("Spokeo", "https://www.spokeo.com/optout")
+remover.save_removal_log()
+```
+
+## Monitoring Your Digital Absence
+
+After removing yourself, verify the removal worked:
+
+```bash
+#!/bin/bash
+# Monitor if your email still appears in breaches
+
+EMAILS=("your@email.com" "alternative@email.com")
+MONITOR_DAYS=90
+
+for email in "${EMAILS[@]}"; do
+  echo "=== Monitoring $email ==="
+
+  # Check monthly
+  for day in {1..90..30}; do
+    sleep $((day * 86400))
+    result=$(curl -s -H "hibp-api-key: YOUR_API_KEY" \
+      "https://haveibeenpwned.com/api/v3/breachedaccount/${email}")
+
+    if [ -z "$result" ] || [ "$result" = "[]" ]; then
+      echo "[$day days] No breaches found"
+    else
+      echo "[$day days] Still in breaches - monitoring continues"
+    fi
+  done
+done
+```
+
+## Handling Cached and Archived Content
+
+Google Cache and Archive.org sometimes retain deleted content:
+
+```bash
+# Request removal from Google Cache
+# Visit: https://search.google.com/search-console/remove-outdated-content
+
+# Request removal from Archive.org (Wayback Machine)
+# Visit: https://archive.org/about/exclude.php
+
+# Use robots.txt to prevent future archiving
+# Add to your domain's /robots.txt:
+User-agent: ia_archiver
+Disallow: /
+```
+
 ## Maintaining Privacy Going Forward
 
 After reducing your footprint, adopt privacy-preserving practices:
@@ -151,6 +291,10 @@ After reducing your footprint, adopt privacy-preserving practices:
 4. Use privacy-focused browsers and search engines
 5. Review app permissions regularly
 6. Avoid sharing personal information on public forums
+7. Consider using a VPN or Tor for sensitive browsing
+8. Set up email forwarding rules to minimize primary email exposure
+9. Periodically audit your social media account privacy settings
+10. Subscribe to breach notification services for proactive monitoring
 
 ## Related Reading
 
