@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on opting out of 
 date: 2026-03-20
 author: theluckystrike
 permalink: /people-search-sites-opt-out-complete-guide-2026/
-categories: [guides, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
