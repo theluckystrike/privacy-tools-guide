@@ -6,9 +6,9 @@ date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-risks-period-tracking-apps/
 categories: [guides]
-tags: [privacy-tools-guide, tools, best-of]
+tags: [privacy-tools-guide, tools, best-of, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

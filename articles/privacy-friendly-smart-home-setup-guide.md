@@ -6,9 +6,9 @@ date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-friendly-smart-home-setup-guide-2026/
 categories: [guides]
-tags: [privacy-tools-guide, tools, best-of]
+tags: [privacy-tools-guide, tools, best-of, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
