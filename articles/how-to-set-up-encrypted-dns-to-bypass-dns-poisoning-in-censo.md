@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Set Up Encrypted DNS to Bypass DNS Poisoning in Censored Countries"
-description: "A technical guide for developers and power users on configuring DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) to bypass DNS poisoning attacks in restrictive network environments."
+title: "How to Set Up Encrypted DNS to Bypass DNS Poisoning in."
+description: "A technical guide for developers and power users on configuring DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) to bypass DNS poisoning attacks in."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/
@@ -203,5 +203,11 @@ Encrypted DNS should show only TLS handshake traffic with no readable DNS conten
 Encrypted DNS addresses DNS poisoning but does not make you invisible online. Your browsing activity still traverses your ISP's network, and they can see the IP addresses you connect to. For comprehensive privacy, combine encrypted DNS with a VPN or Tor network.
 
 Additionally, some networks implement SNI (Server Name Indication) filtering, which can block access to DoH servers by inspecting HTTPS handshake metadata. In these cases, VPN-based solutions provide more robust circumvention.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

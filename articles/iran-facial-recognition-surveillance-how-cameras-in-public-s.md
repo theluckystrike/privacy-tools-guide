@@ -1,13 +1,13 @@
 ---
 
 layout: default
-title: "Iran Facial Recognition Surveillance: How Cameras in Public Spaces Track Citizens Privacy 2026"
-description: "A technical breakdown of facial recognition surveillance systems deployed in Iranian public spaces, how they work, and privacy protection strategies for developers and power users."
+title: "Iran Facial Recognition Surveillance: How Cameras in."
+description: "A technical breakdown of facial recognition surveillance systems deployed in Iranian public spaces, how they work, and privacy protection strategies."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /iran-facial-recognition-surveillance-how-cameras-in-public-s/
 <<<<<<< HEAD
-categories: [privacy, security, surveillance]
+categories: [guides]
 reviewed: true
 score: 8
 =======
@@ -170,6 +170,12 @@ Understanding how facial recognition surveillance systems operate provides the f
 The arms race between surveillance and countermeasures continues, but informed users can significantly reduce their digital footprint. For developers, building privacy-first systems and advocating for ethical AI practices contributes to a future where technology serves rather than controls populations.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

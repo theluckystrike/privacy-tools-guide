@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "China WeChat Surveillance: What Messages and Activity Tencent Shares with Government Authorities (2026)"
-description: "A technical guide for developers and power users exploring what data Tencent collects, how government requests work, and what activity triggers data sharing."
+title: "China WeChat Surveillance: What Messages and Activity."
+description: "A technical guide for developers and power users exploring what data Tencent collects, how government requests work, and what activity triggers data."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-wechat-surveillance-what-messages-and-activity-tencent/
@@ -193,6 +193,12 @@ For developers building privacy tools or serving users in China, understanding t
 The key takeaway: WeChat is not a privacy-focused platform, and users with sensitive communication needs should look to alternatives that prioritize security and offer end-to-end encryption by default.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
