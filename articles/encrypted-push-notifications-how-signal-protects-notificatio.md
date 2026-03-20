@@ -8,7 +8,7 @@ permalink: /encrypted-push-notifications-how-signal-protects-notificatio/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 ---
