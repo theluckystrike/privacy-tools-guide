@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on configuring Gr
 date: 2026-03-16
 author: theluckystrike
 permalink: /grapheneos-travel-profile-border-crossing-minimal-data-2026/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -129,6 +129,12 @@ The GrapheneOS Travel Profile provides developers and power users with a practic
 Configure your travel profile before your trip, follow the minimal data principles, and develop a personal protocol for border crossings. These steps significantly enhance your digital privacy without sacrificing the convenience of traveling with a smartphone.
 
 Remember: the goal isn't to hide illegal activity—it's to exercise your right to privacy and minimize the personal data you must surrender when crossing borders.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
