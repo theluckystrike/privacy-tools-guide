@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/
 categories: [guides]
-tags: [privacy, security, china]
+tags: [privacy-tools-guide, privacy, security, china, vpn]
 reviewed: true
 score: 8
 intent-checked: true

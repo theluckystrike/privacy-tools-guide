@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /children-online-privacy-protection-act-coppa-rights-what-par/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 voice-checked: true

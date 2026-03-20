@@ -8,9 +8,10 @@ author: theluckystrike
 permalink: /chatgpt-privacy-risks-what-openai-stores-from-your-conversations-detailed-breakdown/
 categories: [guides]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, privacy, artificial-intelligence, chatgpt]
 ---
 
 {% raw %}
