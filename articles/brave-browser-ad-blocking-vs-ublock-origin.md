@@ -97,7 +97,7 @@ Both solutions support similar base filter lists, but their management interface
 
 Brave provides a simplified interface with three preset levels: Aggressive, Standard, and Allow all ads. Users cannot easily add custom filter lists through the GUI, though Brave periodically updates its built-in lists from upstream sources.
 
-uBlock Origin offers comprehensive filter list management through its dashboard:
+uBlock Origin offers filter list management through its dashboard:
 
 ```javascript
 // uBlock Origin filter management via about:config (Firefox)

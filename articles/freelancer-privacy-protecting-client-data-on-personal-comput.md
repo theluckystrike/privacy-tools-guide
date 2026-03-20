@@ -143,7 +143,7 @@ gpg --armor --export your-email@example.com > public-key.asc
 
 Your client data is only as secure as your access controls. Use a password manager for all credentials.
 
-**For local-first security**, considerKeePassXC or Bitwarden with a self-hosted vault. Both offer robust encryption and work offline.
+**For local-first security**, considerKeePassXC or Bitwarden with a self-hosted vault. Both offer encryption and work offline.
 
 ```bash
 # Bitwarden CLI for automated secret retrieval

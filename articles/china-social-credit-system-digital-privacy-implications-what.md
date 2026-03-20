@@ -16,7 +16,7 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-The China Social Credit System (SCS) represents one of the most comprehensive digital surveillance infrastructures ever deployed at national scale. For developers and power users who care about privacy, understanding what data points the system collects and how behavior monitoring works provides critical insight into the future of digital rights globally.
+The China Social Credit System (SCS) represents one of the most digital surveillance infrastructures ever deployed at national scale. For developers and power users who care about privacy, understanding what data points the system collects and how behavior monitoring works provides critical insight into the future of digital rights globally.
 
 ## What Data Points Are Collected
 
@@ -135,7 +135,7 @@ End-to-end encryption provides some protection, but developers should understand
 
 ## What This Means for Digital Privacy
 
-The SCS demonstrates that comprehensive surveillance is technically achievable at national scale. Several lessons apply globally:
+The SCS demonstrates that surveillance is technically achievable at national scale. Several lessons apply globally:
 
 1. **Data aggregation amplifies privacy risks**: Individual data points seem harmless, but combined profiles become invasive
 2. **Financial systems are surveillance infrastructure**: Transaction data reveals behavior patterns
@@ -152,7 +152,7 @@ For users concerned about behavioral surveillance, technical measures help:
 - Regularly audit app permissions and data access
 - Consider using hardware security keys for critical accounts
 
-The China Social Credit System represents a particular implementation of behavioral scoring, but the underlying techniques—data aggregation, predictive scoring, and comprehensive monitoring—are being adopted in various forms worldwide. Understanding these systems helps developers make informed decisions about the tools they build and the data they handle.
+The China Social Credit System represents a particular implementation of behavioral scoring, but the underlying techniques—data aggregation, predictive scoring, and monitoring—are being adopted in various forms worldwide. Understanding these systems helps developers make informed decisions about the tools they build and the data they handle.
 
 ---
 

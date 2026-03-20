@@ -25,7 +25,7 @@ Hulu employs multiple layers of detection to enforce geographic restrictions. Th
 3. **WebRTC Leaks**: Browser WebRTC implementations can expose real IP addresses, bypassing VPN protection.
 4. **Browser Fingerprinting**: Hulu analyzes browser characteristics, timezone settings, and language preferences to identify VPN usage patterns.
 
-For developers and power users, understanding these mechanisms helps in configuring more robust VPN setups.
+For developers and power users, understanding these mechanisms helps in configuring more VPN setups.
 
 ## VPN Protocol Configuration
 
@@ -176,7 +176,7 @@ dig hulu.com
 ```
 
 Expected results:
-- IP address should show a US location
+- IP address should show an US location
 - DNS requests should resolve to US-based servers
 - WebRTC should not expose your real IP
 - DNS leak test should show consistent server locations

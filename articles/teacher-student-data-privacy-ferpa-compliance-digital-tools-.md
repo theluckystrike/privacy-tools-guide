@@ -131,7 +131,7 @@ app.get('/api/v1/students/:studentId/records',
 
 ### Audit Logging Requirements
 
-FERPA requires institutions to maintain documentation of who accessed student records and for what purpose. Implement comprehensive audit logging:
+FERPA requires institutions to maintain documentation of who accessed student records and for what purpose. Implement audit logging:
 
 ```python
 # Example: FERPA-compliant audit logging
@@ -174,7 +174,7 @@ class FERPSAAuditLogger:
 
 ## Consent Management Systems
 
-Building a robust consent management system ensures you have documented permission before processing student data:
+Building a consent management system ensures you have documented permission before processing student data:
 
 ```javascript
 // Example: Consent tracking schema

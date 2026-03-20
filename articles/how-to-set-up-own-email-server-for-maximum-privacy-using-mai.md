@@ -23,7 +23,7 @@ This guide walks through setting up Mail-in-a-Box specifically for privacy-consc
 
 ## Understanding the Privacy Advantages
 
-When you use mainstream email services, your messages pass through servers controlled by companies with financial incentives to analyze your communication patterns. Every email you send reveals metadata: when you communicate, how frequently, and with whom. This data builds comprehensive profiles used for advertising and potentially shared with third parties.
+When you use mainstream email services, your messages pass through servers controlled by companies with financial incentives to analyze your communication patterns. Every email you send reveals metadata: when you communicate, how frequently, and with whom. This data builds profiles used for advertising and potentially shared with third parties.
 
 Self-hosting with Mail-in-a-Box changes this equation fundamentally. Your emails stay on infrastructure you control. You decide who has access, how long data is retained, and what logging occurs. For developers managing sensitive projects, businesses requiring confidentiality, or individuals prioritizing privacy, this represents a significant improvement over cloud email services.
 

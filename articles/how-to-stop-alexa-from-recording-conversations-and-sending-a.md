@@ -117,7 +117,7 @@ iptables -A OUTPUT -d 52.94.0.0/14 -j LOG --log-prefix "ALEXA_BLOCKED: "
 
 #### Using VLAN Isolation (Advanced)
 
-For the most robust solution, isolate your Alexa devices on a separate VLAN with restricted outbound access:
+For the most solution, isolate your Alexa devices on a separate VLAN with restricted outbound access:
 
 ```bash
 # Example: OpenWrt configuration snippet

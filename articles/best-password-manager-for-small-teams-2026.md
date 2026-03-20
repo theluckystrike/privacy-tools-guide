@@ -124,7 +124,7 @@ source <(op env .env.production)
 op create user contractor@client.com --access-duration 48h
 ```
 
-1Password'sPsst feature lets you share items with expiration dates, which is useful for bringing in contractors or external collaborators without permanent access. The watchtower alerts are comprehensive and help teams stay on top of credential rotation.
+1Password'sPsst feature lets you share items with expiration dates, which is useful for bringing in contractors or external collaborators without permanent access. The watchtower alerts are and help teams stay on top of credential rotation.
 
 ### Proton Pass
 

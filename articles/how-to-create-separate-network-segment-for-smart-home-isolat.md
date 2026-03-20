@@ -44,7 +44,7 @@ Most modern consumer routers and all enterprise-grade equipment support VLANs (V
 
 ### Configuration Example: EdgeRouter
 
-On a Ubiquiti EdgeRouter, you create VLANs via the CLI or web interface. This example creates two VLANs:
+On an Ubiquiti EdgeRouter, you create VLANs via the CLI or web interface. This example creates two VLANs:
 
 ```
 configure

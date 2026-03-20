@@ -15,7 +15,7 @@ score: 7
 
 {% raw %}
 
-Entering a witness protection program marks a significant transition in your life, requiring not just physical security but also comprehensive digital privacy. Your digital footprint can reveal your location, connections, and identity if not properly managed. This guide provides practical steps to secure your digital presence while maintaining the anonymity that witness protection requires.
+Entering a witness protection program marks a significant transition in your life, requiring not just physical security but also digital privacy. Your digital footprint can reveal your location, connections, and identity if not properly managed. This guide provides practical steps to secure your digital presence while maintaining the anonymity that witness protection requires.
 
 ## Understanding the Digital Threat Landscape
 

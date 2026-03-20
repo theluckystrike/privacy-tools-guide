@@ -19,7 +19,7 @@ TLS fingerprinting (JA3) identifies browsers and clients by analyzing the TLS ha
 
 When your browser connects to an HTTPS server, it initiates a TLS handshake before any application data transfers. This handshake includes several messages where the client announces its capabilities: supported cipher suites, extensions, elliptic curve groups, and signature algorithms. The specific combination of these parameters varies between browsers, operating systems, and applications.
 
-A TLS fingerprint is essentially a hash or string representation of these parameters. The most common format is JA3, developed by Salesforce in 2017. JA3 creates a fingerprint by concatenating specific fields from the ClientHello message:
+A TLS fingerprint is a hash or string representation of these parameters. The most common format is JA3, developed by Salesforce in 2017. JA3 creates a fingerprint by concatenating specific fields from the ClientHello message:
 
 ```text
 TLSVersion,CipherSuites,Extensions,EllipticCurves,EllipticCurvePointFormats

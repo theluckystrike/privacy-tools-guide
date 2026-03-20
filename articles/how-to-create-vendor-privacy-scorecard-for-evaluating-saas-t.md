@@ -160,7 +160,7 @@ This script provides a starting point. You can adapt the weights and criteria ba
 
 ## Practical Example: Evaluating Two Hypothetical Vendors
 
-Consider evaluating two project management tools, Vendor A and Vendor B, using your scorecard.
+Consider evaluating two project management tools, Vendor An and Vendor B, using your scorecard.
 
 **Vendor A** claims SOC 2 certification, offers GDPR-compliant DPA, encrypts all data in transit and at rest using AES-256, maintains a public subprocessor list, and provides data export in JSON format. However, their data centers are located in the United States, and they use embedded analytics from three third-party providers.
 

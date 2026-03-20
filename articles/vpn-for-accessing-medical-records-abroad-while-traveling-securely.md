@@ -820,7 +820,7 @@ These often include:
 
 ### HIPAA Compliance
 
-If you're a US citizen accessing records from US healthcare providers, the Health Insurance Portability and Accountability Act (HIPAA) protects your medical information. However, this protection may not extend to how foreign entities handle data.
+If you're an US citizen accessing records from US healthcare providers, the Health Insurance Portability and Accountability Act (HIPAA) protects your medical information. However, this protection may not extend to how foreign entities handle data.
 
 ### International Data Transfer
 

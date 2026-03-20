@@ -28,7 +28,7 @@ Before diving into RoboForm's specific capabilities, let's establish what matter
 - Import/export capabilities for migration flexibility
 - Strong encryption with verifiable security architecture
 
-Many modern password managers have built their entire product strategy around developer needs. Bitwarden, 1Password, and KeepassXC all offer robust CLI tools and API access. RoboForm, historically a Windows-centric consumer product, has had to adapt to these expectations.
+Many modern password managers have built their entire product strategy around developer needs. Bitwarden, 1Password, and KeepassXC all offer CLI tools and API access. RoboForm, historically a Windows-centric consumer product, has had to adapt to these expectations.
 
 ## RoboForm's Current Feature Set for Power Users
 

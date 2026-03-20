@@ -148,7 +148,7 @@ switch.checkin()  # Call this regularly (automate with cron)
 
 ## Automating the Check-In
 
-For a robust system, automate the check-in process using cron jobs or systemd timers. Create a simple script that runs daily:
+For a system, automate the check-in process using cron jobs or systemd timers. Create a simple script that runs daily:
 
 ```bash
 #!/bin/bash

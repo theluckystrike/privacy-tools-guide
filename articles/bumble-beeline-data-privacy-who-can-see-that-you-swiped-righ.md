@@ -109,12 +109,12 @@ If you're building applications that interact with Bumble data or analyzing app 
 ### For Maximum Privacy on Bumble:
 
 1. **Disable Beeline visibility** if you want to prevent others from seeing you've liked them:
-   - Go to Settings → Privacy Controls → Beeline
-   - Toggle off "Appear in Others' Beeline"
+ - Go to Settings → Privacy Controls → Beeline
+ - Toggle off "Appear in Others' Beeline"
 
 2. **Use Incognito mode** to limit visibility:
-   - Only users you've already matched or those with premium can see you
-   - Your profile won't appear in swipe stacks for free users
+ - Only users you've already matched or those with premium can see you
+ - Your profile won't appear in swipe stacks for free users
 
 3. **Regularly review connected apps**: Bumble allows social media connections that can expose additional data.
 

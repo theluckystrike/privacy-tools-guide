@@ -72,7 +72,7 @@ Naming conventions matter when searching offline. Use descriptive filenames with
 
 Start building your offline library with these concrete actions:
 
-**Step 1: Assess your storage needs.** Calculate available space on hard drives or external storage. A comprehensive offline library requires significant capacity—budget at least 500GB for a reasonably complete collection.
+**Step 1: Assess your storage needs.** Calculate available space on hard drives or external storage. An offline library requires significant capacity—budget at least 500GB for a reasonably complete collection.
 
 **Step 2: Prioritize essential content.** Begin with information you'd need during emergencies: first aid guides, government contact information, local news archives, and educational materials for children. Technical documentation for tools you use daily deserves high priority.
 
@@ -116,7 +116,7 @@ Beyond Wikipedia and general websites, consider downloading:
 
 For power users who want more control over what gets captured:
 
-**Using Wget for comprehensive site mirroring**:
+**Using Wget for site mirroring**:
 
 ```bash
 # Download entire site with full depth
@@ -134,7 +134,7 @@ wget --mirror --include="*.pdf" --include="*.epub" \
   https://example.com/library/
 ```
 
-**Using ArchiveBox for comprehensive site preservation**:
+**Using ArchiveBox for site preservation**:
 
 ```bash
 # Install ArchiveBox

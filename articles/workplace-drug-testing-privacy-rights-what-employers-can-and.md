@@ -2,7 +2,7 @@
 
 layout: default
 title: "Workplace Drug Testing Privacy Rights: What Employers Can and Cannot Test For by State"
-description: "A comprehensive guide to workplace drug testing privacy rights. Learn what substances employers can test for, state-by-state variations, and legal protections for employees."
+description: "A guide to workplace drug testing privacy rights. Learn what substances employers can test for, state-by-state variations, and legal protections for employees."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /workplace-drug-testing-privacy-rights-what-employers-can-and/
@@ -77,7 +77,7 @@ Certain states restrict testing for these substances. Connecticut, for instance,
 
 ### States with Strict Limitations
 
-**California** maintains the most restrictive workplace drug testing laws. AB 2776 prohibits most pre-employment drug screening unless the position involves federal compliance requirements. Random testing is virtually prohibited.
+**California** maintains the most restrictive workplace drug testing laws. AB 2776 prohibits most pre-employment drug screening unless the position involves federal compliance requirements. Random testing is prohibited.
 
 **Massachusetts** requires employers to have written drug testing policies and provides employees with confirmed positive test results before any adverse action. The state also prohibits testing for marijuana.
 

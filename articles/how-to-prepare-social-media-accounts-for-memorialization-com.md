@@ -15,13 +15,13 @@ intent-checked: true
 
 {% raw %}
 
-You can memorialization social media accounts on Facebook, Instagram, LinkedIn, Google, Twitter/X, Reddit, and Discord by submitting death certificate documentation and designating legacy contacts. Each platform provides different preservation features—from account freezing to data transfer to complete deletion—requiring proactive planning and documentation. This guide provides a comprehensive checklist for memorializing accounts across major platforms and automating digital estate inventory.
+You can memorialization social media accounts on Facebook, Instagram, LinkedIn, Google, Twitter/X, Reddit, and Discord by submitting death certificate documentation and designating legacy contacts. Each platform provides different preservation features—from account freezing to data transfer to complete deletion—requiring proactive planning and documentation. This guide provides a checklist for memorializing accounts across major platforms and automating digital estate inventory.
 
 ## Understanding Account Memorialization
 
 When a social media account holder passes away, their accounts become vulnerable to several risks: unauthorized access by malicious actors, identity theft, and the potential loss of valuable digital memories. Most major platforms offer memorialization features that freeze accounts in a read-only state, preserving content while preventing modifications.
 
-The memorialization process varies significantly between platforms, and not all services provide official memorialization options. Understanding these differences helps you create a comprehensive digital estate plan.
+The memorialization process varies significantly between platforms, and not all services provide official memorialization options. Understanding these differences helps you create a digital estate plan.
 
 ## Facebook Memorialization
 
@@ -152,7 +152,7 @@ Discord requires direct contact with their support team for memorialization requ
 
 ## General Checklist for All Platforms
 
-Use this comprehensive checklist when preparing accounts for memorialization:
+Use this checklist when preparing accounts for memorialization:
 
 - [ ] Document all active social media accounts
 - [ ] Store credentials in a secure password manager

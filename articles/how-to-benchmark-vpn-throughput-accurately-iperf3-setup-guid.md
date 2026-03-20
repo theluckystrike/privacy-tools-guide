@@ -27,7 +27,7 @@ When you test throughput through a VPN, several factors combine to determine you
 
 ## Setting Up the iperf3 Server
 
-You need two machines for comprehensive testing: one running as the iperf3 server, and another as the client. The server should be a VPS with a reliable, fast connection. Many cloud providers offer small instances suitable for testing at low or no cost.
+You need two machines for testing: one running as the iperf3 server, and another as the client. The server should be a VPS with a reliable, fast connection. Many cloud providers offer small instances suitable for testing at low or no cost.
 
 Install iperf3 on your server. On Debian or Ubuntu:
 
@@ -102,7 +102,7 @@ This outputs results every second, helping you identify performance variations d
 
 ## Advanced Testing Techniques
 
-For more comprehensive analysis, adjust test parameters to match your use case.
+For more analysis, adjust test parameters to match your use case.
 
 **UDP testing** provides more accurate results for latency-sensitive applications:
 

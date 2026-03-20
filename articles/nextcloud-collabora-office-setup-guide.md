@@ -250,9 +250,9 @@ Increase container memory limits:
 
 ```yaml
 deploy:
-  resources:
-    limits:
-      memory: 4G
+ resources:
+ limits:
+ memory: 4G
 ```
 
 ### SSL Certificate Errors
@@ -274,9 +274,9 @@ For deployments with multiple users, consider these optimizations:
 
 ```nginx
 location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
-    proxy_pass http://127.0.0.1:9980;
-    proxy_cache_valid 200 1h;
-    add_header Cache-Control "public, immutable";
+ proxy_pass http://127.0.0.1:9980;
+ proxy_cache_valid 200 1h;
+ add_header Cache-Control "public, immutable";
 }
 ```
 

@@ -142,10 +142,10 @@ Note: These codes work on most GSM networks but may differ by carrier.
    ```
 
 2. **Use Alternative Messaging Apps**
-   - Signal (end-to-end encrypted)
-   - WhatsApp (end-to-end encrypted)
-   - iMessage (iOS only, encrypted)
-   - Session (decentralized, encrypted)
+ - Signal (end-to-end encrypted)
+ - WhatsApp (end-to-end encrypted)
+ - iMessage (iOS only, encrypted)
+ - Session (decentralized, encrypted)
 
 3. **Enable Google Play Protect**
    ```bash
@@ -153,7 +153,7 @@ Note: These codes work on most GSM networks but may differ by carrier.
    ```
 
 4. **Consider a Custom ROM**
-   Privacy-focused ROMs like GrapheneOS or CalyxOS offer better security defaults and more granular permission controls.
+ Privacy-focused ROMs like GrapheneOS or CalyxOS offer better security defaults and more granular permission controls.
 
 ### For iOS Users
 

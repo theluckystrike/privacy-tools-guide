@@ -16,7 +16,7 @@ voice-checked: true
 
 Data broker websites like TruePeopleSearch, Instant Checkmate, and Radaris aggregate publicly available information and make it searchable to anyone with an internet connection. This includes your name, address, phone number, email, and in some cases, criminal records and background checks. For developers and power users concerned about privacy, removing your data from these platforms is a critical step in reclaiming your digital footprint.
 
-This guide covers the manual opt-out processes for major people search sites and provides automation strategies to streamline the removal of your data across multiple databases.
+This guide covers the manual opt-out processes for major people search sites and provides automation strategies to improve the removal of your data across multiple databases.
 
 ## Understanding How Data Brokers Collect Your Information
 

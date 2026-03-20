@@ -35,7 +35,7 @@ Failure to implement adequate protections can result in study termination, fundi
 
 Storage-level encryption protects data when devices are lost, stolen, or improperly accessed. For research data, consider these approaches:
 
-**Full Disk Encryption (FDE)** protects entire storage devices. On Linux, LUKS (Linux Unified Key Setup) provides robust protection:
+**Full Disk Encryption (FDE)** protects entire storage devices. On Linux, LUKS (Linux Unified Key Setup) provides protection:
 
 ```bash
 # Create encrypted container

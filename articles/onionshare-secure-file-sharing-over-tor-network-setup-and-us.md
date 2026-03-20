@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Onionshare Secure File Sharing Over Tor Network Setup And Us"
-description: "A comprehensive guide to setting up and using OnionShare for secure, anonymous file sharing over the Tor network. Includes CLI usage, automation, and."
+description: "A guide to setting up and using OnionShare for secure, anonymous file sharing over the Tor network. Includes CLI usage, automation, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /onionshare-secure-file-sharing-over-tor-network-setup-and-us/

@@ -65,7 +65,7 @@ Some VPN providers implement split tunneling at the application level, which can
 
 ## Performance Considerations
 
-The performance impact of full tunnel routing versus tunnel interface routing with split tunneling can be substantial. With full tunnel mode, you're essentially adding an extra hop to your network path: your device → VPN server → destination website. This increases latency and typically reduces throughput by 10-30% depending on the VPN protocol, server distance, and your hardware.
+The performance impact of full tunnel routing versus tunnel interface routing with split tunneling can be substantial. With full tunnel mode, you're adding an extra hop to your network path: your device → VPN server → destination website. This increases latency and typically reduces throughput by 10-30% depending on the VPN protocol, server distance, and your hardware.
 
 Split tunneling can significantly improve performance by allowing high-bandwidth, latency-sensitive traffic to bypass the VPN entirely. Streaming 4K video, competitive gaming, or large file transfers often work better with split tunneling because they don't benefit from VPN routing and may actually perform worse through a distant VPN server.
 

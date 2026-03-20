@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Secure Group Chat App 2026: A Developer's Technical Guide"
-description: "A comprehensive technical comparison of secure group chat applications for developers and power users, covering Matrix, Session, Brijnet, and self-hosted solutions with code examples."
+description: "A technical comparison of secure group chat applications for developers and power users, covering Matrix, Session, Brijnet, and self-hosted solutions with code examples."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-secure-group-chat-app-2026/
@@ -99,7 +99,7 @@ The trade-off: Session's group functionality is simpler than Matrix. Advanced fe
 
 ## Brijnet: Self-Hosted Simplicity
 
-For teams wanting Matrix's power without complexity, Brijnet offers a streamlined self-hosted option. It's optimized for small deployments, making it ideal for teams of 10-50 users.
+For teams wanting Matrix's power without complexity, Brijnet offers an improved self-hosted option. It's optimized for small deployments, making it ideal for teams of 10-50 users.
 
 ### Quick Setup
 

@@ -31,7 +31,7 @@ People search sites operate by scraping public records, purchasing data from bro
 - **Acxiom**
 - **LexisNexis**
 
-These sites often make opt-out processes intentionally cumbersome, requiring multiple steps, form submissions, or even physical mail requests. Developers can automate much of this process, while power users can use systematic approaches to achieve comprehensive removal.
+These sites often make opt-out processes intentionally cumbersome, requiring multiple steps, form submissions, or even physical mail requests. Developers can automate much of this process, while power users can use systematic approaches to achieve removal.
 
 ## Manual Opt-Out Process
 

@@ -60,7 +60,7 @@ await api.filters.create({
 });
 ```
 
-**Tutanota** offers a more limited API. Their business plan includes an API for custom integrations, but it's less comprehensive than Proton's. However, Tutanota provides a command-line tool and supports SMTP/IMAP for premium users, making it compatible with most email clients.
+**Tutanota** offers a more limited API. Their business plan includes an API for custom integrations, but it's less than Proton's. However, Tutanota provides a command-line tool and supports SMTP/IMAP for premium users, making it compatible with most email clients.
 
 ## Alias and Identity Management
 
@@ -88,7 +88,7 @@ The search functionality deserves special attention. ProtonMail's search indexes
 For developers building applications or integrating email services, several factors influence the choice:
 
 **ProtonMail advantages:**
-- More comprehensive API documentation
+- More API documentation
 - Better third-party tool ecosystem
 - ProtonVPN integration for network-level privacy
 - Longer market presence and established codebase
@@ -125,7 +125,7 @@ The migration process for encrypted emails differs between platforms. ProtonMail
 
 Your choice between ProtonMail and Tutanota ultimately depends on your specific requirements:
 
-Choose **ProtonMail** if you need comprehensive API access, plan to use custom domains extensively, or require integration with third-party tools and workflows.
+Choose **ProtonMail** if you need API access, plan to use custom domains extensively, or require integration with third-party tools and workflows.
 
 Choose **Tutanota** if you prioritize simplicity, want faster mobile applications, or prefer a provider with more aggressive open-source development.
 

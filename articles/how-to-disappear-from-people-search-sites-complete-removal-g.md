@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-People search sites aggregate public records, social media profiles, and data broker databases to create detailed profiles of virtually everyone. These profiles include names, addresses, phone numbers, relatives, and sometimes even property values and criminal histories. For developers and power users, the solution involves automation, systematic processes, and understanding how these sites operate.
+People search sites aggregate public records, social media profiles, and data broker databases to create detailed profiles of everyone. These profiles include names, addresses, phone numbers, relatives, and sometimes even property values and criminal histories. For developers and power users, the solution involves automation, systematic processes, and understanding how these sites operate.
 
 ## Understanding the People Search Ecosystem
 

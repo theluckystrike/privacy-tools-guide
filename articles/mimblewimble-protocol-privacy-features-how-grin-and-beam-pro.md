@@ -62,7 +62,7 @@ The intermediate output Y cancels out, leaving only the net transaction. This me
 
 ### Linear Transaction Model
 
-Grin uses a interactive transaction building process where the sender and receiver communicate to create a transaction. Unlike Bitcoin's static UTXO model, Grin transactions require:
+Grin uses an interactive transaction building process where the sender and receiver communicate to create a transaction. Unlike Bitcoin's static UTXO model, Grin transactions require:
 
 ```
 Sender creates: tx_kernel (contains excess, signature, lock_height)

@@ -25,7 +25,7 @@ The key distinction in alternative networking is between **infrastructure-depend
 
 ## Mesh Networking with IBSS/MANET
 
-One of the most robust solutions involves creating ad-hoc networks between devices using IBSS (Independent Basic Service Set) or MANET (Mobile Ad-hoc Networking) protocols. Linux supports this natively through iw and wpa_supplicant.
+One of the most solutions involves creating ad-hoc networks between devices using IBSS (Independent Basic Service Set) or MANET (Mobile Ad-hoc Networking) protocols. Linux supports this natively through iw and wpa_supplicant.
 
 ### Setting Up an Ad-Hoc Network on Linux
 

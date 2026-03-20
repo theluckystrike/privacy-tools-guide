@@ -199,7 +199,7 @@ This provides granular control over which applications can use Google's infrastr
 
 Begin by enabling microG through CalyxOS's built-in installer, then configure signature spoofing. Install Aurora Store and try a few applications you regularly use. Test push notifications with UnifiedPush-compatible apps, and adjust your configuration based on your specific requirements.
 
-The privacy-utility balance depends on your threat model and use cases. MicroG enables running most Google-dependent applications while significantly reducing data collection compared to stock Android. As you use the system, you'll identify which apps work seamlessly and which require workarounds.
+The privacy-utility balance depends on your threat model and use cases. MicroG enables running most Google-dependent applications while significantly reducing data collection compared to stock Android. As you use the system, you'll identify which apps work and which require workarounds.
 
 
 ## Related Reading

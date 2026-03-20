@@ -155,7 +155,7 @@ This approach converts your exchange withdrawals into privacy-oriented tokens or
 
 ## Method 5: Over-the-Counter (OTC) Desks
 
-For larger transactions, OTC desks facilitate peer-to-peer trades outside public order books. Many OTC brokers operate with minimal KYC requirements and accept various payment methods including cash.
+For larger transactions, OTC desks help peer-to-peer trades outside public order books. Many OTC brokers operate with minimal KYC requirements and accept various payment methods including cash.
 
 ### Finding OTC Brokers
 

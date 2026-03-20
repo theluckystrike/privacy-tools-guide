@@ -53,7 +53,7 @@ For a broader view of what Apple knows about you:
 3. Select categories including **Analytics** and **Health and Fitness**
 4. Wait for Apple's processing and download your data archive
 
-This portal provides a comprehensive view but requires account verification and may take days to process your request.
+This portal provides a view but requires account verification and may take days to process your request.
 
 ## Methods to Stop iPhone Analytics Collection
 

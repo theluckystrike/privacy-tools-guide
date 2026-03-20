@@ -20,7 +20,7 @@ First Party Sets allows related domains (like example.com, example.app, and exam
 
 ## Understanding the Core Problem
 
-Third-party cookies have powered cross-site tracking for decades. When you visit site A and it loads resources from tracker B, that tracker can set a cookie that follows you to site C, D, and beyond. Privacy regulations and browser restrictions are rapidly closing this pathway — Safari and Firefox already block most third-party cookies by default, and Chrome plans to do the same.
+Third-party cookies have powered cross-site tracking for decades. When you visit site An and it loads resources from tracker B, that tracker can set a cookie that follows you to site C, D, and beyond. Privacy regulations and browser restrictions are rapidly closing this pathway — Safari and Firefox already block most third-party cookies by default, and Chrome plans to do the same.
 
 The challenge: some legitimate use cases genuinely require cross-site data sharing. A company owning `example.com`, `example.org`, and `subdomain.example.co.uk` may need shared authentication, consistent analytics, or personalized experiences across these domains. Third-party cookies were the crude instrument that made this work, but they also enabled the privacy-invasive tracking that regulators dislike.
 

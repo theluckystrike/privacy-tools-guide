@@ -148,7 +148,7 @@ Reporting helps authorities track these operations:
 
 ### Email Filtering
 
-Configure robust spam filtering. For developers using Postfix:
+Configure spam filtering. For developers using Postfix:
 
 ```bash
 # In /etc/postfix/main.cf - enable advanced filtering

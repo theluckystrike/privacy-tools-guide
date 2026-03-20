@@ -27,7 +27,7 @@ Traditional approaches—spreadsheets, browser password managers, or sticky note
 
 For travel agents with development skills or IT support, several password managers offer the features needed for booking platform management:
 
-**Bitwarden** provides an open-source option with a robust CLI, making it ideal for teams wanting to audit their own infrastructure. The self-hosting capability appeals to agencies with strict data residency requirements.
+**Bitwarden** provides an open-source option with a CLI, making it ideal for teams wanting to audit their own infrastructure. The self-hosting capability appeals to agencies with strict data residency requirements.
 
 **1Password** offers strong team features with detailed access logs, which matters when regulatory compliance is involved. The CLI integrates well with automation scripts.
 

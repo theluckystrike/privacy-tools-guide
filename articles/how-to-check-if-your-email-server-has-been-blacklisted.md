@@ -49,7 +49,7 @@ There are several free online tools and services you can use to check if your IP
 - [DNSBL.info](http://www.dnsbl.info)
 - [BlacklistAlert.org](https://www.blacklistalert.org)
 
-These tools check your IP against dozens of major blacklists simultaneously and provide a comprehensive report showing which lists you're on, if any.
+These tools check your IP against dozens of major blacklists simultaneously and provide a report showing which lists you're on, if any.
 
 **Individual Blacklist Checks:**
 - **Spamhaus**: Visit [spamhaus.org](https://www.spamhaus.org) and use their Query form
@@ -62,7 +62,7 @@ When checking blacklists, pay attention to:
 
 - **Which blacklists you're listed on**: Some carry more weight than others. Major providers like Gmail, Outlook, and Yahoo heavily rely on Spamhaus and SORBS.
 - **Listing reason**: Many blacklists provide details about why you were listed (spam, open relay, malware, etc.)
-- **Listing duration**: Check if there's a automatic expiration or if you need to request removal
+- **Listing duration**: Check if there's an automatic expiration or if you need to request removal
 
 ## Common Reasons for Blacklisting
 

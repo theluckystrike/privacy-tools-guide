@@ -106,7 +106,7 @@ Most users should select deletion to prevent account hijacking and maintain clea
 
 ### Integrating with Password Managers
 
-For developers, coordinating Inactive Account Manager with password manager inheritance features creates comprehensive coverage:
+For developers, coordinating Inactive Account Manager with password manager inheritance features creates coverage:
 
 1. Store your Google account credentials in your password manager
 2. Configure your password manager's beneficiary feature to grant your executor access
@@ -206,7 +206,7 @@ This documentation bridges the gap between automated transfer and manual estate 
 
 ## Alternatives and Complementary Tools
 
-While Google Inactive Account Manager covers Google's ecosystem, comprehensive digital estate planning requires additional measures:
+While Google Inactive Account Manager covers Google's ecosystem, digital estate planning requires additional measures:
 
 - **Password managers**: 1Password, Bitwarden, and Dashlane offer inheritance features
 - **Email archiving**: Services like Mailstore provide independent email backups

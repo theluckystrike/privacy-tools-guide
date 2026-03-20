@@ -168,7 +168,7 @@ A VPN kill switch blocks all internet traffic if the VPN connection drops, preve
 Some protocols are more prone to leaks than others. Try switching:
 
 - **Wireguard**: Modern, fast, and generally more secure
-- **OpenVPN with TLS encryption**: Robust and well-audited
+- **OpenVPN with TLS encryption**: and well-audited
 - **IKEv2**: Good stability, especially for mobile connections
 
 Avoid PPTP or older protocols that have known security issues.

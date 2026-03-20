@@ -141,7 +141,7 @@ Never store encryption keys in the same database as encrypted data. Use environm
 
 ## Audit Logging
 
-Maintain comprehensive logs of data access. Each client data retrieval should record the user, timestamp, data type accessed, and access reason. Store logs separately from operational data to prevent tampering.
+Maintain logs of data access. Each client data retrieval should record the user, timestamp, data type accessed, and access reason. Store logs separately from operational data to prevent tampering.
 
 A basic audit trail implementation:
 

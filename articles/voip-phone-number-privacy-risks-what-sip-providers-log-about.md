@@ -49,7 +49,7 @@ Every completed call generates a Call Detail Record containing:
 - **Call routing** - The SIP proxies and media relays the call traversed
 - **Termination reason** - Whether the call ended normally or due to busy/no answer
 
-These CDRs form the backbone of billing systems but also represent a comprehensive record of your communication patterns. Law enforcement regularly requests CDR data from VoIP providers as part of investigations.
+These CDRs form the backbone of billing systems but also represent a record of your communication patterns. Law enforcement regularly requests CDR data from VoIP providers as part of investigations.
 
 ###SIP Message Headers
 

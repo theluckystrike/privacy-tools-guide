@@ -126,7 +126,7 @@ Maintain these habits for consistent anonymity:
 7. **Use bridges** if your ISP or country blocks Tor connections.
 8. **Review extension permissions** and remove unnecessary add-ons.
 
-Tor provides strong anonymity when used correctly, but no tool guarantees perfect privacy. Understanding its limitations and combining it with other practices—such as using encrypted messaging and practicing good operational security—creates a more comprehensive privacy strategy.
+Tor provides strong anonymity when used correctly, but no tool guarantees perfect privacy. Understanding its limitations and combining it with other practices—such as using encrypted messaging and practicing good operational security—creates a more privacy strategy.
 
 
 ## Related Reading

@@ -14,7 +14,7 @@ score: 7
 
 {% raw %}
 
-Protecting your identity as a confidential informant requires a multi-layered approach combining operational security, secure communication channels, and careful digital hygiene. This guide provides practical technical strategies for developers and power users who need robust privacy setup for confidential informant scenarios.
+Protecting your identity as a confidential informant requires a multi-layered approach combining operational security, secure communication channels, and careful digital hygiene. This guide provides practical technical strategies for developers and power users who need privacy setup for confidential informant scenarios.
 
 ## Understanding the Threat Model
 

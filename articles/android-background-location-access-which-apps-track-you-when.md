@@ -145,7 +145,7 @@ Disabling WiFi scanning and Bluetooth when not actively used prevents these alte
 
 ---
 
-Understanding background location access empowers you to audit which apps track you when not open and implement practical restrictions. Regular permission reviews, careful app selection, and using Android's built-in privacy controls provide meaningful protection against unnecessary location surveillance while preserving functionality for applications that genuinely need it.
+Understanding background location access enables you to audit which apps track you when not open and implement practical restrictions. Regular permission reviews, careful app selection, and using Android's built-in privacy controls provide meaningful protection against unnecessary location surveillance while preserving functionality for applications that genuinely need it.
 
 
 ## Related Reading

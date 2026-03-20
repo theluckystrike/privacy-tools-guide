@@ -116,8 +116,8 @@ VCDPA applies to "businesses" that:
 - Collect personal data from Virginia residents AND
 - Do business in Virginia AND
 - Meet one of these thresholds:
-  - Process data of 100,000+ Virginia residents/households annually
-  - Derive 50%+ of annual revenue from selling personal data of 25,000+ residents/households
+ - Process data of 100,000+ Virginia residents/households annually
+ - Derive 50%+ of annual revenue from selling personal data of 25,000+ residents/households
 
 **Companies that typically must comply**:
 - Social media platforms (Meta, Twitter, TikTok, Instagram)
@@ -246,7 +246,7 @@ Don't submit all requests simultaneously if you want to track responses carefull
 - Streaming platforms
 - Financial services (if not already done)
 
-**Month 5+: Comprehensive coverage**
+**Month 5+: coverage**
 - Data brokers
 - Ad networks (harder to identify)
 - Background check companies

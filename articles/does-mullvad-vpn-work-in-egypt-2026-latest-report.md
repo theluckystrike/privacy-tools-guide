@@ -67,7 +67,7 @@ check_connectivity
 check_dns
 ```
 
-This script provides basic verification. For more comprehensive testing, you need to check protocol-specific behavior.
+This script provides basic verification. For more testing, you need to check protocol-specific behavior.
 
 ## Protocol Recommendations for Egypt
 

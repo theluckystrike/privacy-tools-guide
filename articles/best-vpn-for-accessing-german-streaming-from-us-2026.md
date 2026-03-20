@@ -101,7 +101,7 @@ dig +short TXT whoami.ds.akahelp.net
 dig +short CH TXT whoami.cloud.flaps dns.google
 ```
 
-For more comprehensive testing, use dnsleaktest.com or perform manual verification:
+For more testing, use dnsleaktest.com or perform manual verification:
 
 ```bash
 # Check your visible IP address
@@ -145,7 +145,7 @@ pc.onicecandidate = (ice) => {
 };
 ```
 
-For automated testing, webRTCleak.com provides comprehensive results.
+For automated testing, webRTCleak.com provides results.
 
 ## Troubleshooting Common Issues
 
@@ -175,7 +175,7 @@ iperf3 -c de.test-server.example.com
 
 ## Alternative Approaches
 
-For users requiring more robust solutions, consider these alternatives beyond traditional VPN services:
+For users requiring more solutions, consider these alternatives beyond traditional VPN services:
 
 **Self-Hosted VPN on a German VPS**: Renting a German VPS and configuring your own WireGuard server provides maximum control and reliability. Providers like Hetzner, Contabo, and Netcup offer German-based VPS instances starting around €5/month.
 

@@ -90,9 +90,9 @@ The JSON output shows the status, delay hours, and whether the relationship is c
 2. **Click "Invite Member" to add your beneficiary**
 3. **Set permissions to "Full Access" or custom item sharing**
 4. **For time-delayed recovery**, use the 1Password account recovery process:
-   - Navigate to your account settings
-   - Enable "Account Recovery" for family organizers
-   - Set a recovery delay in the family settings
+ - Navigate to your account settings
+ - Enable "Account Recovery" for family organizers
+ - Set a recovery delay in the family settings
 
 ### The Emergency Kit Alternative
 

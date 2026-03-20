@@ -18,7 +18,7 @@ Samsung TVs use ACR (Automatic Content Recognition) to track everything displaye
 
 ## What Samsung Smart TVs Collect
 
-Samsung's smart TV platform, Tizen OS, employs one of the most comprehensive data collection systems in the industry. When you connect your Samsung TV to the internet, the manufacturer begins gathering:
+Samsung's smart TV platform, Tizen OS, employs one of the most data collection systems in the industry. When you connect your Samsung TV to the internet, the manufacturer begins gathering:
 
 **Viewing Data**: Samsung records every channel you tune to, every streaming app you open, and approximately how long you watch each content piece. This data is collected even when you're using external devices like Roku or Apple TV connected via HDMI—Samsung's ACR (Automatic Content Recognition) technology scans what's displayed on your screen.
 
@@ -64,9 +64,9 @@ To limit Vizio data collection:
 2. Navigate to **Settings** → **Smart TV Experience**
 3. Turn off **Viewing Data Collection**
 
-## Comprehensive Router-Level Blocking
+## Router-Level Blocking
 
-For comprehensive protection across all your smart TVs, consider blocking tracking domains at the router level using Pi-hole:
+For protection across all your smart TVs, consider blocking tracking domains at the router level using Pi-hole:
 
 ```bash
 # Install Pi-hole on a Raspberry Pi or Linux server

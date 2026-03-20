@@ -150,7 +150,7 @@ facial_template = {
 }
 ```
 
-These templates enable automated tracking across camera networks. Once a face is enrolled in a system, subsequent detections create comprehensive movement histories.
+These templates enable automated tracking across camera networks. Once a face is enrolled in a system, subsequent detections create movement histories.
 
 ## Privacy Rights and Regulatory Framework
 
@@ -158,7 +158,7 @@ Residents have varying legal protections depending on jurisdiction.
 
 The European GDPR provides strongest protections, classifying biometric data as special category requiring explicit consent. Municipalities must conduct data protection impact assessments before deploying surveillance systems. However, national security exemptions frequently override these protections in practice.
 
-In the United States, no comprehensive federal privacy law exists. Illinois' BIPA (Biometric Information Privacy Act) requires consent before collecting biometric data, but only covers biometrics—not video or location data. Most U.S. cities operate under general surveillance ordinances that may require transparency but offer limited enforcement mechanisms.
+In the United States, no federal privacy law exists. Illinois' BIPA (Biometric Information Privacy Act) requires consent before collecting biometric data, but only covers biometrics—not video or location data. Most U.S. cities operate under general surveillance ordinances that may require transparency but offer limited enforcement mechanisms.
 
 California's CPRA (California Privacy Rights Act) provides residents with opt-out rights for certain data sales and access rights to collected information, but municipal government exemptions often apply.
 

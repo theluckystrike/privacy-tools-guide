@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Browser for Anonymous Searching 2026: A Technical Guide"
-description: "A comprehensive comparison of privacy browsers for anonymous searching with configuration examples, extension setups, and hardening techniques for."
+description: "A comparison of privacy browsers for anonymous searching with configuration examples, extension setups, and hardening techniques for."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-for-anonymous-searching-2026/

@@ -20,7 +20,7 @@ Signal Messenger provides end-to-end encryption that protects communications fro
 
 ## Why Signal for Journalism
 
-Signal uses the Signal Protocol, which provides forward secrecy and deniability properties that distinguish it from typical messaging applications. Forward secrecy ensures that compromise of long-term keys does not expose past conversations. The protocol has undergone extensive cryptographic review and is considered state-of-the-art for asynchronous messaging.
+Signal uses the Signal Protocol, which provides forward secrecy and deniability properties that distinguish it from typical messaging applications. Forward secrecy ensures that compromise of long-term keys does not expose past conversations. The protocol has undergone extensive cryptographic review and is considered modern for asynchronous messaging.
 
 Journalists face specific threats that generic messaging applications do not adequately address. Sources may be at risk if their contact information becomes known, and message content itself may expose sensitive relationships or information. Signal addresses these concerns through phone number privacy features, sealed sender capabilities, and message expiration controls.
 

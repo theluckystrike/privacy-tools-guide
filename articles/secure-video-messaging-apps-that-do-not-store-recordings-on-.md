@@ -34,7 +34,7 @@ This approach fundamentally changes the trust equation. Even if the service prov
 
 ## Signal: The Gold Standard for Ephemeral Video Messages
 
-Signal provides video messaging with a robust ephemeral model. While it stores metadata (who communicated with whom, when), the actual video content uses the Signal Protocol with forward secrecy. For video calls, Signal employs peer-to-peer routing where possible, and when relay servers are necessary, they act only as intermediaries without storage capability.
+Signal provides video messaging with an ephemeral model. While it stores metadata (who communicated with whom, when), the actual video content uses the Signal Protocol with forward secrecy. For video calls, Signal employs peer-to-peer routing where possible, and when relay servers are necessary, they act only as intermediaries without storage capability.
 
 The key configuration for developers:
 
@@ -114,7 +114,7 @@ Matrix's advantage lies in its federation capability—you can run your own serv
 
 ## Session: Privacy-First Video Messages
 
-Session Messenger extends the Signal protocol with additional anonymity features. Video messages in Session route through a onion-routing network, making metadata collection significantly more difficult than centralized alternatives. The application stores no phone number or email associations with accounts.
+Session Messenger extends the Signal protocol with additional anonymity features. Video messages in Session route through an onion-routing network, making metadata collection significantly more difficult than centralized alternatives. The application stores no phone number or email associations with accounts.
 
 For developers evaluating Session integration:
 

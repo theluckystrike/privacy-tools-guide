@@ -202,19 +202,19 @@ Open the capture file in Wireshark and look for:
 When faced with a VPN connection timeout:
 
 1. **Can you ping the VPN server IP?** 
-   - No → Check network routing, try different network
-   - Yes → Continue to step 2
+ - No → Check network routing, try different network
+ - Yes → Continue to step 2
 
 2. **Can you TCP connect to the VPN port?**
-   - No → Firewall blocking, try different port or network
-   - Yes → Continue to step 3
+ - No → Firewall blocking, try different port or network
+ - Yes → Continue to step 3
 
 3. **Does TLS handshake start?**
-   - No → Check logs, update client, try different protocol
-   - Yes → Continue to step 4
+ - No → Check logs, update client, try different protocol
+ - Yes → Continue to step 4
 
 4. **Does handshake complete?**
-   - No → Check certificates, try obfuscation, contact provider
+ - No → Check certificates, try obfuscation, contact provider
 
 ## Related Reading
 

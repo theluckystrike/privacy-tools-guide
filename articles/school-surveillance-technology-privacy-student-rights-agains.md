@@ -23,7 +23,7 @@ This guide examines the technical architecture of school facial recognition syst
 
 ## How Facial Recognition Systems Work in Schools
 
-Modern school surveillance systems combine multiple technologies to create comprehensive student tracking capabilities.
+Modern school surveillance systems combine multiple technologies to create student tracking capabilities.
 
 ### Technical Architecture
 

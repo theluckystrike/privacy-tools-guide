@@ -30,7 +30,7 @@ The mechanism relies on embedding unique identifiers within ultrasonic audio sig
 2. **Receive beacons**: The microphone listens for nearby ultrasonic signals from other devices
 3. **Correlate data**: Analytics systems associate these signals with user profiles, building behavioral maps
 
-This creates a covert tracking network where devices essentially "see" each other through sound, even when no network connection exists. The tracking persists across sessions and can link multiple devices belonging to the same user.
+This creates a covert tracking network where devices "see" each other through sound, even when no network connection exists. The tracking persists across sessions and can link multiple devices belonging to the same user.
 
 ```javascript
 // Example: Detecting ultrasonic beacons using Web Audio API
@@ -144,7 +144,7 @@ For developers and security-conscious users, several approaches can help identif
 
 **Ultrasonic Jamming**: Some privacy tools emit background ultrasonic noise that interferes with beacon detection, though this approach has limited effectiveness and potential side effects.
 
-**Microphone Permission Review**: Regularly auditing which applications have microphone access remains essential. Both iOS and Android provide granular permission controls that users should utilize.
+**Microphone Permission Review**: Regularly auditing which applications have microphone access remains essential. Both iOS and Android provide granular permission controls that users should use.
 
 **Network Monitoring**: Some tracking systems relay ultrasonic data through network connections. Monitoring network traffic can reveal suspicious communication patterns.
 

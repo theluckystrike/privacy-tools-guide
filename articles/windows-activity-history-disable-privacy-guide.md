@@ -41,7 +41,7 @@ After disabling these options, scroll down to the "Show activities from these ac
 
 ## Method 2: Group Policy Configuration (Windows 10 Pro / 11 Pro / Enterprise)
 
-For enterprise environments or users seeking programmatic control, Group Policy provides comprehensive management capabilities. Press `Win + R`, type `gpedit.msc`, and press Enter to launch the Local Group Policy Editor.
+For enterprise environments or users seeking programmatic control, Group Policy provides management capabilities. Press `Win + R`, type `gpedit.msc`, and press Enter to launch the Local Group Policy Editor.
 
 Navigate through the following path:
 
@@ -73,7 +73,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
 
 If the key does not exist, create it by right-clicking "Windows" and selecting **New** → **Key**. Within the System key, create a new DWORD value named `PublishUserActivities` and set its value to `0`.
 
-For comprehensive blocking, also navigate to:
+For blocking, also navigate to:
 
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInfo

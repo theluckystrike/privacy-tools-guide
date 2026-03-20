@@ -65,7 +65,7 @@ locationManager.setTestProviderLocation(LocationManager.GPS_PROVIDER, mockLocati
 
 ### Root-Level Solutions
 
-For deeper location manipulation, root access provides additional options. Magisk modules like "Universal SafetyNet Fix" and "Mock Locations" offer more robust spoofing that survives app updates and更难 detection. These tools can spoof locations at the system level, making it appear as though the device physically exists at a different location.
+For deeper location manipulation, root access provides additional options. Magisk modules like "Universal SafetyNet Fix" and "Mock Locations" offer more spoofing that survives app updates and更难 detection. These tools can spoof locations at the system level, making it appear as though the device physically exists at a different location.
 
 ## iOS Location Spoofing Approaches
 

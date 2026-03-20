@@ -133,7 +133,7 @@ The public device maintains the correct endpoint for return traffic.
 
 ### Method 2: UDP Hole Punching
 
-For symmetric NAT environments, use a third-party coordination service. Tools like `udp-puncher` or commercial services facilitate initial connection establishment:
+For symmetric NAT environments, use a third-party coordination service. Tools like `udp-puncher` or commercial services help initial connection establishment:
 
 ```bash
 # Example using a hypothetical coordination service
@@ -142,7 +142,7 @@ For symmetric NAT environments, use a third-party coordination service. Tools li
 
 ### Method 3: Relay Server
 
-Deploy a lightweight relay for initial connection establishment. This differs from a VPN server—the relay only facilitates the handshake, not ongoing traffic:
+Deploy a lightweight relay for initial connection establishment. This differs from a VPN server—the relay only helps the handshake, not ongoing traffic:
 
 ```ini
 # Using a minimal relay configuration

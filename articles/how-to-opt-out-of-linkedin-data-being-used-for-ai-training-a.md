@@ -92,7 +92,7 @@ For EU users, GDPR provides additional rights. You can submit a formal request t
 
 ## Automating Data Export with Selenium
 
-For power users who want comprehensive data backups, you can automate the export process using Selenium:
+For power users who want data backups, you can automate the export process using Selenium:
 
 ```python
 from selenium import webdriver

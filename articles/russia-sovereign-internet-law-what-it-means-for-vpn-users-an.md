@@ -53,7 +53,7 @@ When your traffic passes through Russian network infrastructure, it may be subje
 
 ### DNS Manipulation Concerns
 
-The Sovereign Internet Law empowers authorities to manipulate DNS responses within Russia. This means that even if you're using a VPN, the initial DNS request before your VPN connection establishes could be intercepted or redirected. For maximum security, always use DNS-over-HTTPS or DNS-over-TLS providers that are independent of your ISP.
+The Sovereign Internet Law enables authorities to manipulate DNS responses within Russia. This means that even if you're using a VPN, the initial DNS request before your VPN connection establishes could be intercepted or redirected. For maximum security, always use DNS-over-HTTPS or DNS-over-TLS providers that are independent of your ISP.
 
 ## Practical Protections for VPN Users
 
@@ -271,7 +271,7 @@ Not all Russian internet users face the same risk profile. Your specific threat 
 
 **Business person conducting legitimate commerce** — Basic VPN for privacy, focus on maintaining normal access
 **Journalist with sensitive sources** — Multi-layered transport encryption, operational security discipline, secure communication channels
-**Political activist** — Comprehensive threat model including offline security, physical location protection, and sustained operational security
+**Political activist** — threat model including offline security, physical location protection, and sustained operational security
 **Researcher documenting blocking** — Diverse infrastructure, comparative testing across multiple tools, detailed logging
 
 Tailor your security approach to your actual threat. Overprotecting wastes resources and creates usability friction. Underprotecting leaves you vulnerable.

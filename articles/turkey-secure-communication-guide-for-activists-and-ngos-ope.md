@@ -128,10 +128,10 @@ sudo fdesetup enable
 ```
 
 2. **Use separate devices** for sensitive communications. A dedicated "operations phone" with:
-   - No SIM card (use Wi-Fi only)
-   - Privacy-focused ROM (GrapheneOS or CalyxOS)
-   - No Google Play Services
-   - All network toggles disabled when not in use
+ - No SIM card (use Wi-Fi only)
+ - Privacy-focused ROM (GrapheneOS or CalyxOS)
+ - No Google Play Services
+ - All network toggles disabled when not in use
 
 ### Metadata Protection
 

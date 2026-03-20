@@ -65,7 +65,7 @@ The self-hosted option gives you complete control over your data while maintaini
 
 ## Standard Notes: Encrypted Notes with Extensibility
 
-Standard Notes takes a different approach, focusing on long-form writing and note-taking rather than real-time spreadsheet collaboration. However, it provides arguably the strongest E2EE implementation in the consumer space, with features specifically designed for developers.
+Standard Notes takes a different approach, focusing on long-form writing and note-taking rather than real-time spreadsheet collaboration. However, it provides the strongest E2EE implementation in the consumer space, with features specifically designed for developers.
 
 What sets Standard Notes apart is its extensibility architecture. The core application handles encryption and data synchronization, while editors, themes, and custom extensions plug into the system. You can use the default rich-text editor, switch to a markdown editor, or create custom editors for specific formats.
 

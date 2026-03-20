@@ -19,7 +19,7 @@ To set up WireGuard on a VPS for a personal VPN, install the `wireguard` package
 
 ## Why Choose WireGuard for Your Personal VPN
 
-WireGuard was designed with simplicity and security as core principles. Unlike older VPN protocols that require thousands of lines of code, WireGuard operates with roughly 4,000 lines—this smaller attack surface means fewer potential vulnerabilities. The protocol uses state-of-the-art cryptography including Curve25519 for key exchange, ChaCha20 for encryption, and Poly1305 for authentication.
+WireGuard was designed with simplicity and security as core principles. Unlike older VPN protocols that require thousands of lines of code, WireGuard operates with roughly 4,000 lines—this smaller attack surface means fewer potential vulnerabilities. The protocol uses modern cryptography including Curve25519 for key exchange, ChaCha20 for encryption, and Poly1305 for authentication.
 
 Performance is another significant advantage. WireGuard operates at the kernel level, resulting in substantially faster connection speeds compared to user-space VPN solutions. Many users report speed improvements of 3-4x when switching from OpenVPN to WireGuard.
 

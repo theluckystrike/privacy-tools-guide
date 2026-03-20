@@ -59,7 +59,7 @@ rm -rf ~/.config/google-chrome/Default/Network/History\*
 
 ### Portable Browser Solutions
 
-Consider running a portable browser from a USB drive. This approach keeps your browser profile isolated from the host system:
+Consider running a portable browser from an USB drive. This approach keeps your browser profile isolated from the host system:
 
 ```bash
 # Example: Extract portable Firefox

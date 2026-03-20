@@ -55,7 +55,7 @@ def assess_privacy_score(provider):
 
 ### Germany
 
-Germany's strict data protection laws make it an excellent jurisdiction for email services. The General Data Protection Regulation (GDPR) provides comprehensive protections, and German courts have historically ruled against mass surveillance practices. Providers like Tutanota and Posteo operate under these protections.
+Germany's strict data protection laws make it an excellent jurisdiction for email services. The General Data Protection Regulation (GDPR) provides protections, and German courts have historically ruled against mass surveillance practices. Providers like Tutanota and Posteo operate under these protections.
 
 However, Germany participates in the EU's investigation powers directive, which can require providers to retain certain metadata. Despite this, the overall legal environment remains significantly more protective than most alternatives.
 
@@ -145,7 +145,7 @@ Jurisdiction encompasses both the provider's legal home and where their servers 
 
 For developers and power users handling sensitive communications, jurisdiction should factor heavily in email provider selection. Switzerland and Germany offer the strongest legal protections among major jurisdictions. The US and UK should be avoided for sensitive use cases, despite their technological sophistication.
 
-Remember that no jurisdiction provides absolute protection. Implementing your own encryption, maintaining awareness of legal developments, and diversifying your communication methods all contribute to a more robust privacy strategy.
+Remember that no jurisdiction provides absolute protection. Implementing your own encryption, maintaining awareness of legal developments, and diversifying your communication methods all contribute to a more privacy strategy.
 
 
 ## Related Reading

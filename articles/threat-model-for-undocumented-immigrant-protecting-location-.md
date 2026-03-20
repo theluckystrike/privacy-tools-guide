@@ -113,7 +113,7 @@ Know your threat model. The protections that matter most depend entirely on who 
 
 ## Building Your Protection Stack
 
-Protecting location and identity requires layering multiple defenses. No single measure is sufficient, but each layer makes comprehensive compromise more difficult. Start with the fundamentals—device hardening and network protection—then add communication security and identity separation as your threat model requires.
+Protecting location and identity requires layering multiple defenses. No single measure is sufficient, but each layer makes compromise more difficult. Start with the fundamentals—device hardening and network protection—then add communication security and identity separation as your threat model requires.
 
 The goal is not perfect security, which is unattainable. The goal is making targeted surveillance costly enough that adversaries choose easier targets. Every layer of protection raises the resource requirements for those seeking to track you, creating meaningful distance between you and potential threats to your safety.
 

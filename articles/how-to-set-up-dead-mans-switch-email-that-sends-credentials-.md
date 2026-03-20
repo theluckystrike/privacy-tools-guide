@@ -39,7 +39,7 @@ The system consists of three components:
 2. **Monitor script**—runs on a schedule and checks if you've exceeded the inactivity threshold
 3. **Delivery mechanism**—sends encrypted credentials to your designated contact
 
-You host these scripts on a always-online machine: a VPS, a home server, or even a Raspberry Pi connected to reliable power and internet.
+You host these scripts on an always-online machine: a VPS, a home server, or even a Raspberry Pi connected to reliable power and internet.
 
 ## Step 1: Prepare Encrypted Credential Payload
 

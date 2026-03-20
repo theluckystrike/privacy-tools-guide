@@ -134,7 +134,7 @@ PersistentKeepalive = 25
 
 ## Technique 3: WireGuard over SSH Tunnel
 
-Another effective method involves tunneling WireGuard through an SSH connection. This leverages SSH's established presence in enterprise networks.
+Another effective method involves tunneling WireGuard through an SSH connection. This uses SSH's established presence in enterprise networks.
 
 ### Server Configuration
 
@@ -219,7 +219,7 @@ PersistentKeepalive = 25
 
 ## Combining Techniques for Maximum Obfuscation
 
-For environments with aggressive DPI, combine multiple techniques. A robust setup might use:
+For environments with aggressive DPI, combine multiple techniques. A setup might use:
 
 1. WireGuard on port 443
 2. UDP to TCP conversion

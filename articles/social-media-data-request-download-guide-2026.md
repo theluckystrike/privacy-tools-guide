@@ -19,7 +19,7 @@ Privacy regulations like GDPR and CCPA have given users powerful rights over the
 
 ## Understanding Data Requests
 
-Most social media platforms provide two types of data access: self-service downloads through account settings and formal data requests under privacy regulations. Self-service downloads typically include your posts, media, and basic account information. Formal requests under GDPR Article 15 or CCPA can yield more comprehensive data, including algorithmic predictions, behavioral profiles, and inferred attributes.
+Most social media platforms provide two types of data access: self-service downloads through account settings and formal data requests under privacy regulations. Self-service downloads typically include your posts, media, and basic account information. Formal requests under GDPR Article 15 or CCPA can yield more data, including algorithmic predictions, behavioral profiles, and inferred attributes.
 
 The distinction matters for developers. Self-service downloads use web interfaces or APIs you can access with standard authentication. Formal requests go through legal or privacy teams and may take 30-45 days to fulfill.
 
@@ -33,23 +33,23 @@ Meta provides data downloads through the "Download Your Information" tool in Acc
 const axios = require('axios');
 
 async function downloadFacebookData(accessToken, dataType) {
-  const response = await axios.get(
-    `https://graph.facebook.com/v18.0/me/${dataType}`,
-    {
-      params: {
-        access_token: accessToken,
-        fields: 'id,message,created_time,permalink_url'
-      },
-      responseType: 'stream'
-    }
-  );
-  return response.data;
+ const response = await axios.get(
+ `https://graph.facebook.com/v18.0/me/${dataType}`,
+ {
+ params: {
+ access_token: accessToken,
+ fields: 'id,message,created_time,permalink_url'
+ },
+ responseType: 'stream'
+ }
+ );
+ return response.data;
 }
 
 // Usage: downloadFacebookData(token, 'posts')
 {% endhighlight %}
 
-For comprehensive data exports, use the Data Download tool through their OAuth flow. Navigate to Settings > Your Facebook Information > Download Your Information to initiate a request programmatically using the Marketing API.
+For data exports, use the Data Download tool through their OAuth flow. Navigate to Settings > Your Facebook Information > Download Your Information to initiate a request programmatically using the Marketing API.
 
 ### Twitter/X
 
@@ -60,23 +60,23 @@ import requests
 from datetime import datetime, timedelta
 
 def get_twitter_data(bearer_token, endpoint, params=None):
-    headers = {
-        "Authorization": f"Bearer {bearer_token}",
-        "Content-Type": "application/json"
-    }
-    url = f"https://api.twitter.com/2/{endpoint}"
-    response = requests.get(url, headers=headers, params=params)
-    return response.json()
+ headers = {
+ "Authorization": f"Bearer {bearer_token}",
+ "Content-Type": "application/json"
+ }
+ url = f"https://api.twitter.com/2/{endpoint}"
+ response = requests.get(url, headers=headers, params=params)
+ return response.json()
 
 # Fetch recent tweets
 params = {
-    "tweet.fields": "created_at,public_metrics",
-    "max_results": 100
+ "tweet.fields": "created_at,public_metrics",
+ "max_results": 100
 }
 tweets = get_twitter_data(bearer_token, "users/me/tweets", params)
 {% endhighlight %}
 
-Note that X's API access requires approval through their developer portal. Free tier access provides limited endpoints, while Academic Research or Enterprise access offers comprehensive data exports.
+Note that X's API access requires approval through their developer portal. Free tier access provides limited endpoints, while Academic Research or Enterprise access offers data exports.
 
 ### Instagram
 
@@ -86,29 +86,29 @@ Instagram shares the Meta ecosystem, so data requests route through Facebook's f
 import requests
 
 def get_instagram_media(access_token):
-    url = f"https://graph.instagram.com/me/media"
-    params = {
-        "fields": "id,caption,media_type,media_url,timestamp,permalink",
-        "access_token": access_token
-    }
-    response = requests.get(url, params=params)
-    return response.json()
+ url = f"https://graph.instagram.com/me/media"
+ params = {
+ "fields": "id,caption,media_type,media_url,timestamp,permalink",
+ "access_token": access_token
+ }
+ response = requests.get(url, params=params)
+ return response.json()
 
 # Paginate through results
 def get_all_media(access_token):
-    all_media = []
-    url = "https://graph.instagram.com/me/media"
-    
-    while url:
-        params = {
-            "fields": "id,caption,media_type,media_url,timestamp,permalink,next_page",
-            "access_token": access_token
-        }
-        response = requests.get(url, params=params).json()
-        all_media.extend(response.get("data", []))
-        url = response.get("paging", {}).get("next")
-    
-    return all_media
+ all_media = []
+ url = "https://graph.instagram.com/me/media"
+ 
+ while url:
+ params = {
+ "fields": "id,caption,media_type,media_url,timestamp,permalink,next_page",
+ "access_token": access_token
+ }
+ response = requests.get(url, params=params).json()
+ all_media.extend(response.get("data", []))
+ url = response.get("paging", {}).get("next")
+ 
+ return all_media
 {% endhighlight %}
 
 ### LinkedIn
@@ -118,8 +118,8 @@ LinkedIn's data export is available through the "Getting a copy of your data" op
 {% highlight bash %}
 # Using curl for LinkedIn API
 curl -X GET "https://api.linkedin.com/v2/ugcPosts" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -H "X-Restli-Protocol-Version: 2.0.0"
+ -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+ -H "X-Restli-Protocol-Version: 2.0.0"
 {% endhighlight %}
 
 Note that LinkedIn's API access is heavily restricted. Most developers use OAuth with specific scope grants for advertising or personal data retrieval.
@@ -132,25 +132,25 @@ Reddit provides data downloads through the "Download" tab in User Settings. The 
 import praw
 
 reddit = praw.Reddit(
-    client_id="YOUR_CLIENT_ID",
-    client_secret="YOUR_CLIENT_SECRET",
-    user_agent="data-download-script/1.0"
+ client_id="YOUR_CLIENT_ID",
+ client_secret="YOUR_CLIENT_SECRET",
+ user_agent="data-download-script/1.0"
 )
 
 def get_reddit_data(username):
-    user = reddit.redditor(username)
-    submissions = []
-    
-    for post in user.submissions.new(limit=None):
-        submissions.append({
-            "id": post.id,
-            "title": post.title,
-            "selftext": post.selftext,
-            "created_utc": post.created_utc,
-            "subreddit": str(post.subreddit)
-        })
-    
-    return submissions
+ user = reddit.redditor(username)
+ submissions = []
+ 
+ for post in user.submissions.new(limit=None):
+ submissions.append({
+ "id": post.id,
+ "title": post.title,
+ "selftext": post.selftext,
+ "created_utc": post.created_utc,
+ "subreddit": str(post.subreddit)
+ })
+ 
+ return submissions
 {% endhighlight %}
 
 ## Automating Cross-Platform Data Collection
@@ -165,40 +165,40 @@ from typing import List, Dict, Optional
 
 @dataclass
 class SocialDataConfig:
-    platform: str
-    access_token: str
-    data_types: List[str]
-    
+ platform: str
+ access_token: str
+ data_types: List[str]
+ 
 async def collect_platform_data(config: SocialDataConfig) -> Dict:
-    """Unified data collection across platforms."""
-    collectors = {
-        "facebook": collect_facebook_data,
-        "twitter": collect_twitter_data,
-        "instagram": collect_instagram_data,
-        "reddit": collect_reddit_data
-    }
-    
-    collector = collectors.get(config.platform)
-    if not collector:
-        raise ValueError(f"Unsupported platform: {config.platform}")
-    
-    results = {}
-    for data_type in config.data_types:
-        results[data_type] = await collector(config.access_token, data_type)
-    
-    return results
+ """Unified data collection across platforms."""
+ collectors = {
+ "facebook": collect_facebook_data,
+ "twitter": collect_twitter_data,
+ "instagram": collect_instagram_data,
+ "reddit": collect_reddit_data
+ }
+ 
+ collector = collectors.get(config.platform)
+ if not collector:
+ raise ValueError(f"Unsupported platform: {config.platform}")
+ 
+ results = {}
+ for data_type in config.data_types:
+ results[data_type] = await collector(config.access_token, data_type)
+ 
+ return results
 
 async def main():
-    configs = [
-        SocialDataConfig("facebook", fb_token, ["posts", "photos"]),
-        SocialDataConfig("twitter", tw_token, ["tweets"]),
-        SocialDataConfig("reddit", rd_token, ["submissions"])
-    ]
-    
-    tasks = [collect_platform_data(config) for config in configs]
-    all_data = await asyncio.gather(*tasks)
-    
-    return all_data
+ configs = [
+ SocialDataConfig("facebook", fb_token, ["posts", "photos"]),
+ SocialDataConfig("twitter", tw_token, ["tweets"]),
+ SocialDataConfig("reddit", rd_token, ["submissions"])
+ ]
+ 
+ tasks = [collect_platform_data(config) for config in configs]
+ all_data = await asyncio.gather(*tasks)
+ 
+ return all_data
 
 # Run with: asyncio.run(main())
 {% endhighlight %}
@@ -220,18 +220,18 @@ import time
 from functools import wraps
 
 def retry_with_backoff(max_retries=3, base_delay=1):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            for attempt in range(max_retries):
-                try:
-                    return func(*args, **kwargs)
-                except RateLimitError:
-                    delay = base_delay * (2 ** attempt)
-                    time.sleep(delay)
-            raise Exception("Max retries exceeded")
-        return wrapper
-    return decorator
+ def decorator(func):
+ @wraps(func)
+ def wrapper(*args, **kwargs):
+ for attempt in range(max_retries):
+ try:
+ return func(*args, **kwargs)
+ except RateLimitError:
+ delay = base_delay * (2 ** attempt)
+ time.sleep(delay)
+ raise Exception("Max retries exceeded")
+ return wrapper
+ return decorator
 {% end %}
 
 3. **Data Storage**: Store downloaded data locally with encryption. Use formats like JSON or CSV for interoperability:
@@ -242,16 +242,16 @@ import hashlib
 from pathlib import Path
 
 def save_data_secure(data, filename, encryption_key=None):
-    filepath = Path(filename)
-    
-    with open(filepath, 'w') as f:
-        json.dump(data, f, indent=2, default=str)
-    
-    # Verify integrity
-    with open(filepath, 'rb') as f:
-        checksum = hashlib.sha256(f.read()).hexdigest()
-    
-    return {"path": str(filepath), "checksum": checksum}
+ filepath = Path(filename)
+ 
+ with open(filepath, 'w') as f:
+ json.dump(data, f, indent=2, default=str)
+ 
+ # Verify integrity
+ with open(filepath, 'rb') as f:
+ checksum = hashlib.sha256(f.read()).hexdigest()
+ 
+ return {"path": str(filepath), "checksum": checksum}
 {% endhighlight %}
 
 4. **Regular Sync**: Schedule periodic downloads to maintain current archives. Use cron jobs or CI/CD pipelines:

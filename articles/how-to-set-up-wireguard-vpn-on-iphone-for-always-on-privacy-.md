@@ -21,7 +21,7 @@ WireGuard offers one of the fastest and most secure VPN protocols available toda
 
 WireGuard provides several advantages over traditional VPN protocols on mobile devices. The protocol's minimal codebase—around 4,000 lines compared to hundreds of thousands in OpenVPN—reduces the attack surface and results in fewer security vulnerabilities. Connection times are dramatically faster, often completing in milliseconds rather than seconds.
 
-For iPhone users specifically, WireGuard integrates natively with iOS through the WireGuard app, utilizing Apple's NetworkExtension framework for system-level VPN control. This integration enables always-on functionality that reconnects automatically when your network connection changes, whether you're switching from WiFi to cellular or moving between cell towers.
+For iPhone users specifically, WireGuard integrates natively with iOS through the WireGuard app, using Apple's NetworkExtension framework for system-level VPN control. This integration enables always-on functionality that reconnects automatically when your network connection changes, whether you're switching from WiFi to cellular or moving between cell towers.
 
 The cryptographic foundation uses modern primitives: Curve25519 for key exchange, ChaCha20-Poly1305 for authenticated encryption, and BLAKE2s for hashing. These algorithms provide strong security guarantees while maintaining excellent performance on mobile hardware.
 

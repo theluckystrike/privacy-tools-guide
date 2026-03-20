@@ -25,7 +25,7 @@ For privacy-conscious individuals, the core challenge involves obtaining Bitcoin
 
 ## Peer-to-Peer Platforms
 
-Peer-to-peer (P2P) marketplaces connect buyers and sellers directly, enabling Bitcoin purchases without intermediary verification. These platforms facilitate trades between individuals using various payment methods, including cash, bank transfers, and online payment services.
+Peer-to-peer (P2P) marketplaces connect buyers and sellers directly, enabling Bitcoin purchases without intermediary verification. These platforms help trades between individuals using various payment methods, including cash, bank transfers, and online payment services.
 
 ### Platform Selection
 
@@ -85,7 +85,7 @@ When using Bitcoin ATMs:
 
 ## Decentralized Exchanges
 
-Decentralized exchanges (DEXs) facilitate cryptocurrency trading without central authority involvement. While most DEXs trade ERC-20 tokens, several allow direct Bitcoin trading through atomic swaps or wrapped tokens.
+Decentralized exchanges (DEXs) help cryptocurrency trading without central authority involvement. While most DEXs trade ERC-20 tokens, several allow direct Bitcoin trading through atomic swaps or wrapped tokens.
 
 ### ThorChain
 

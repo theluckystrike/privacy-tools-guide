@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-SpiderOak has carved out a niche in the encrypted cloud storage space, positioning itself as a zero-knowledge backup and sync solution that operates across Windows, macOS, Linux, and mobile platforms. This review examines the service through the lens of developers and power users who prioritize cryptographic privacy while needing robust file synchronization capabilities.
+SpiderOak has carved out a niche in the encrypted cloud storage space, positioning itself as a zero-knowledge backup and sync solution that operates across Windows, macOS, Linux, and mobile platforms. This review examines the service through the lens of developers and power users who prioritize cryptographic privacy while needing file synchronization capabilities.
 
 ## Encryption Architecture
 

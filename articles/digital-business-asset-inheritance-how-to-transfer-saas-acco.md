@@ -21,7 +21,7 @@ SaaS accounts, API keys, domains, and cloud infrastructure represent significant
 
 Every developer accumulates digital assets that have real business value. These include cloud hosting accounts, SaaS subscriptions, API credentials, domain names, source code repositories, and automated deployment pipelines. Without proper documentation and transfer procedures, these assets become inaccessible or worse, get terminated due to non-renewal.
 
-The first step is creating a comprehensive inventory of all digital business assets. Document each service, the associated credentials, and the criticality to your operations. This inventory serves as the foundation for any inheritance planning.
+The first step is creating an inventory of all digital business assets. Document each service, the associated credentials, and the criticality to your operations. This inventory serves as the foundation for any inheritance planning.
 
 ## SaaS Account Transfer Procedures
 
@@ -40,7 +40,7 @@ For Google Cloud Platform, similar procedures apply through IAM administration. 
 
 ### GitHub and Code Repositories
 
-GitHub provides a straightforward transfer process through repository settings. You can transfer individual repositories to other GitHub accounts or organizations. For comprehensive coverage, consider:
+GitHub provides a straightforward transfer process through repository settings. You can transfer individual repositories to other GitHub accounts or organizations. For coverage, consider:
 
 - Adding your heir as a collaborator with admin access to all repositories
 - Setting up an organization with your heir as an owner

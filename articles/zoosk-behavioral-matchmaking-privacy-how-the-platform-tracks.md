@@ -64,7 +64,7 @@ The platform's data retention practices mean this information persists even afte
 
 ## Technical Implementation of Behavioral Tracking
 
-Zoosk's mobile apps implement comprehensive event tracking across the user experience. Understanding this architecture helps developers building integrations and privacy-conscious users evaluating the platform.
+Zoosk's mobile apps implement event tracking across the user experience. Understanding this architecture helps developers building integrations and privacy-conscious users evaluating the platform.
 
 ### SDK Tracking Points
 

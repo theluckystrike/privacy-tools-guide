@@ -109,7 +109,7 @@ The Bridge application provides IMAP/SMTP access for desktop clients, but requir
 
 ### Gmail API Ecosystem
 
-Gmail provides comprehensive API access through Google Cloud:
+Gmail provides API access through Google Cloud:
 
 ```javascript
 // Gmail API - sending邮件 with OAuth 2.0

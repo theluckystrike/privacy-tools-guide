@@ -216,7 +216,7 @@ Ensure the traffic captured looks like standard TLS handshakes with proper SNI i
 
 Consider these best practices for production deployments:
 
-- **Use server locations** in countries with robust internet infrastructure (Japan, Singapore, Germany)
+- **Use server locations** in countries with internet infrastructure (Japan, Singapore, Germany)
 - **Rotate server ports** periodically to avoid long-term traffic pattern analysis
 - **Implement domain fronting** by routing traffic through major CDN providers
 - **Keep software updated** to address newly discovered protocol fingerprints

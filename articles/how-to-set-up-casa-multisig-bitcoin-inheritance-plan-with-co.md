@@ -14,7 +14,7 @@ intent-checked: true
 
 {% raw %}
 
-Bitcoin inheritance planning remains one of the most overlooked aspects of cryptocurrency ownership. Without proper succession planning, Bitcoin holdings can become permanently inaccessible when something happens to the owner. Casa, a multisig wallet provider, offers a collaborative custody model that enables developers and power users to set up robust inheritance arrangements. This guide walks through the technical implementation of a Casa-based Bitcoin inheritance plan with collaborative custody.
+Bitcoin inheritance planning remains one of the most overlooked aspects of cryptocurrency ownership. Without proper succession planning, Bitcoin holdings can become permanently inaccessible when something happens to the owner. Casa, a multisig wallet provider, offers a collaborative custody model that enables developers and power users to set up inheritance arrangements. This guide walks through the technical implementation of a Casa-based Bitcoin inheritance plan with collaborative custody.
 
 ## Understanding Casa Multisig Architecture
 
@@ -22,7 +22,7 @@ Casa provides multi-signature wallet solutions that require multiple private key
 
 The typical Casa setup involves three or five keys, with a configurable threshold for transaction approval. For inheritance scenarios, a 3-of-5 or 2-of-3 configuration works well, requiring agreement from multiple trusted parties before funds can move.
 
-Each key holder maintains their key independently, and Casa's platform facilitates coordination without ever holding the keys themselves. This non-custodial approach means users retain full control over their Bitcoin while benefitting from collaborative security.
+Each key holder maintains their key independently, and Casa's platform helps coordination without ever holding the keys themselves. This non-custodial approach means users retain full control over their Bitcoin while benefitting from collaborative security.
 
 ## Collaborative Custody Model for Inheritance
 
@@ -34,7 +34,7 @@ Collaborative custody in this context means distributing signing authority acros
 
 **Trusted Advisors**: Attorneys, family members, or financial advisors who can assist with key management and ensure inheritance terms are followed.
 
-**Casa as Coordination Platform**: Casa facilitates the multi-signature process but cannot access funds or override key holder decisions.
+**Casa as Coordination Platform**: Casa helps the multi-signature process but cannot access funds or override key holder decisions.
 
 This distributed model prevents any single party from unilaterally accessing funds while ensuring legitimate inheritance transfers can proceed when proper authorization exists.
 
@@ -52,7 +52,7 @@ Begin by creating a Casa account and establishing a multisig vault. The setup pr
 
 For a 3-of-5 inheritance setup, generate five separate keys. Distribute these to:
 - Primary owner (1 key)
-- Primary successor (1 key)  
+- Primary successor (1 key) 
 - Secondary successor (1 key)
 - Trusted advisor or family member (1 key)
 - Cold storage backup (1 key)
@@ -109,7 +109,7 @@ The timelock period is critical—it provides a window where the original owner 
 
 ### Step 5: Documentation and Key Holder Coordination
 
-Create comprehensive documentation that all key holders understand:
+Create documentation that all key holders understand:
 
 - **Operating Procedures**: How to initiate and sign inheritance transactions
 - **Emergency Contacts**: How to reach all key holders

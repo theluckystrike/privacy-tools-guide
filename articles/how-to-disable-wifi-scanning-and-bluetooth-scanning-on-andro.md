@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Disable Wifi Scanning And Bluetooth Scanning On Andro"
-description: "A comprehensive technical guide for developers and power users on disabling WiFi and Bluetooth scanning on Android to enhance privacy. Includes ADB."
+description: "A technical guide for developers and power users on disabling WiFi and Bluetooth scanning on Android to enhance privacy. Includes ADB."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/
@@ -28,7 +28,7 @@ Both scanning types occur automatically in the background, often without explici
 
 The most accessible method involves adjusting Android settings. On most devices running Android 10 or later, navigate to **Settings > Location > WiFi Scanning** and toggle the scanning option off. However, this setting alone may not completely disable all scanning behavior, as some apps can still trigger scans independently.
 
-For more comprehensive control, access **Settings > Apps > Special app access > Location** and review which apps have location permissions. Disable location access for apps that don't require it, particularly utility apps, calculators, or file managers that shouldn't need your location.
+For more control, access **Settings > Apps > Special app access > Location** and review which apps have location permissions. Disable location access for apps that don't require it, particularly utility apps, calculators, or file managers that shouldn't need your location.
 
 On Samsung devices, additional controls exist under **Settings > Connections > WiFi** or **Settings > Privacy**, where you can disable "Improve location" and "Send WiFi diagnostic data" options.
 

@@ -108,11 +108,11 @@ However, a more proactive approach involves using *Silent Mode with Rules*. Conf
 2. Deny all connections from known untrusted applications
 3. Ask (alert) for unknown applications
 
-This three-tier approach creates a self-documenting system. Each time an unknown application attempts a connection, Little Snitch prompts you to make a decision. Your choice is saved as a permanent rule, gradually building a comprehensive policy.
+This three-tier approach creates a self-documenting system. Each time an unknown application attempts a connection, Little Snitch prompts you to make a decision. Your choice is saved as a permanent rule, gradually building a policy.
 
 ## Automation with Scheduled Rules
 
-Advanced users can leverage Little Snitch's scheduling capabilities to create time-based rules. This is useful for:
+Advanced users can use Little Snitch's scheduling capabilities to create time-based rules. This is useful for:
 
 - Blocking social media applications during work hours
 - Allowing automatic updates only during off-peak hours

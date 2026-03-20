@@ -115,7 +115,7 @@ Each container maintains separate sessions, so you can be logged into multiple a
 
 ### 7. Trace
 
-Trace provides comprehensive fingerprinting protection by randomizing browser attributes that websites use to identify you. This includes canvas, audio, WebGL, and font fingerprinting.
+Trace provides fingerprinting protection by randomizing browser attributes that websites use to identify you. This includes canvas, audio, WebGL, and font fingerprinting.
 
 **Configuration via about:config:**
 

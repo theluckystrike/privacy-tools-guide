@@ -169,7 +169,7 @@ print(f"OpenVPN uses {overhead_percentage:.1f}% more bandwidth than WireGuard")
 ### For Specific Use Cases
 
 - **Streaming**: WireGuard for fastest speeds; OpenVPN TCP for reliability
-- **Mobile devices**: IKEv2 for seamless roaming; WireGuard for battery efficiency
+- **Mobile devices**: IKEv2 for roaming; WireGuard for battery efficiency
 - **Restricted networks**: OpenVPN TCP as a fallback; SSTP for extreme censorship
 - **High-security needs**: Consider the slight overhead of additional authentication
 

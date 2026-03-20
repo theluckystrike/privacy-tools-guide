@@ -119,7 +119,7 @@ Frequent deauthentication frames often indicate an attack in progress, attemptin
 
 ## Protection Strategies
 
-Detection alone is insufficient—implementing robust protection measures prevents compromise even when attacks succeed.
+Detection alone is insufficient—implementing protection measures prevents compromise even when attacks succeed.
 
 ### Verify Network Certificates
 
@@ -162,9 +162,9 @@ Always enable 2FA for accounts accessed over public WiFi. Even if credentials ar
 
 ## Practical Defense Implementation
 
-For developers who need robust protection, combining multiple strategies creates defense-in-depth. Here's a practical setup:
+For developers who need protection, combining multiple strategies creates defense-in-depth. Here's a practical setup:
 
-First, create a dedicated work environment with a separate network interface. Use a USB wireless adapter for public networks while keeping your primary interface for trusted connections only. Configure your firewall to restrict traffic when connected to untrusted networks:
+First, create a dedicated work environment with a separate network interface. Use an USB wireless adapter for public networks while keeping your primary interface for trusted connections only. Configure your firewall to restrict traffic when connected to untrusted networks:
 
 ```bash
 # iptables rules for untrusted networks

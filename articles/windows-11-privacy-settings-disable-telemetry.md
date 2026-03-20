@@ -36,7 +36,7 @@ While this method works for average users, it does not fully disable telemetry. 
 
 ## Method 2: Using Group Policy Editor (Recommended for Pro/Enterprise)
 
-Windows 11 Pro and Enterprise users can use Group Policy for more comprehensive control. This method requires administrative privileges.
+Windows 11 Pro and Enterprise users can use Group Policy for more control. This method requires administrative privileges.
 
 Open Group Policy Editor by pressing `Win + R`, typing `gpedit.msc`, and pressing Enter. Navigate to:
 
@@ -71,7 +71,7 @@ This sets telemetry to the minimum level (0), equivalent to the Security level.
 
 ## Method 4: PowerShell Automation Script
 
-For developers who manage multiple machines or want reproducible configurations, PowerShell provides the most flexible approach. Here's a comprehensive script:
+For developers who manage multiple machines or want reproducible configurations, PowerShell provides the most flexible approach. Here's a script:
 
 ```powershell
 # Disable-WindowsTelemetry.ps1

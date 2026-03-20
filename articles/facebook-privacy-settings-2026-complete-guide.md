@@ -76,7 +76,7 @@ Facebook's "Stories" and "Reels" have separate privacy controls from standard po
 
 ## Data Download and Portability
 
-Facebook provides comprehensive data export options under **Settings → Your Facebook Information → Download your information**. You can request:
+Facebook provides data export options under **Settings → Your Facebook Information → Download your information**. You can request:
 
 - **All available data** or custom date ranges
 - Specific data categories: posts, photos, messages, ads interactions

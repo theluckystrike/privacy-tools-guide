@@ -44,7 +44,7 @@ gpg --armor --detach-sign document.pdf
 gpg --verify document.pdf.asc document.pdf
 ```
 
-Store these hashes and signatures on separate, air-gapped media. A USB drive kept in a secure location provides the simplest approach. For higher security requirements, write hashes on paper using archival-quality ink.
+Store these hashes and signatures on separate, air-gapped media. An USB drive kept in a secure location provides the simplest approach. For higher security requirements, write hashes on paper using archival-quality ink.
 
 ## Secure Evidence Storage
 
@@ -144,7 +144,7 @@ Before relying on your system, test it exhaustively. Verify that Tor is actually
 
 Practice your operational security procedures until they become muscle memory. The stress of an actual whistleblower situation will degrade your judgment; automated habits provide protection when cognitive load is highest.
 
-Building a robust threat model requires ongoing attention as both adversaries and tools evolve. Regular security audits of your practices help identify weaknesses before they become critical vulnerabilities.
+Building a threat model requires ongoing attention as both adversaries and tools evolve. Regular security audits of your practices help identify weaknesses before they become critical vulnerabilities.
 
 
 ## Related Reading

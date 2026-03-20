@@ -214,7 +214,7 @@ The logs often reveal specific failure points:
 journalctl -u cloak -f
 ```
 
-Cloak provides robust protection against active probing by transforming your Shadowsocks traffic into TLS-encrypted connections that blend with legitimate web traffic. This configuration requires more setup than basic Shadowsocks but offers significantly better resistance to sophisticated censorship infrastructure.
+Cloak provides protection against active probing by transforming your Shadowsocks traffic into TLS-encrypted connections that blend with legitimate web traffic. This configuration requires more setup than basic Shadowsocks but offers significantly better resistance to sophisticated censorship infrastructure.
 
 ---
 

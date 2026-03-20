@@ -89,7 +89,7 @@ Consider comparing two hypothetical messaging apps:
 - Retention: Message content not stored on servers
 - Third-party sharing: None
 
-The privacy labels immediately reveal that App A operates as an advertising business with your data, while App B focuses on communication privacy. This distinction becomes clear without reading any privacy policy.
+The privacy labels immediately reveal that App An operates as an advertising business with your data, while App B focuses on communication privacy. This distinction becomes clear without reading any privacy policy.
 
 ## What Privacy Labels Don't Tell You
 

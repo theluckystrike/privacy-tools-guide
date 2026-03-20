@@ -71,7 +71,7 @@ Stunnel is a different approach to traffic obfuscation. Rather than a standalone
 
 ### How Stunnel Works
 
-Stunnel creates an encrypted tunnel by leveraging standard SSL/TLS protocols. It can wrap non-SSL traffic (like POP3, IMAP, or custom protocols) and make it appear as HTTPS. For VPN obfuscation, Stunnel typically wraps OpenVPN connections.
+Stunnel creates an encrypted tunnel by using standard SSL/TLS protocols. It can wrap non-SSL traffic (like POP3, IMAP, or custom protocols) and make it appear as HTTPS. For VPN obfuscation, Stunnel typically wraps OpenVPN connections.
 
 A basic Stunnel configuration for OpenVPN obfuscation looks like this:
 

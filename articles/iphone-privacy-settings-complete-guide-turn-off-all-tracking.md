@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Iphone Privacy Settings Complete Guide Turn Off All Tracking"
-description: "A comprehensive technical guide for developers and power users to disable all tracking features on iPhone. Includes Settings app navigation, Shortcuts."
+description: "A technical guide for developers and power users to disable all tracking features on iPhone. Includes Settings app navigation, Shortcuts."
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-privacy-settings-complete-guide-turn-off-all-tracking/
@@ -42,10 +42,10 @@ Location data reveals significant personal information. Review and restrict:
 1. **Settings** → **Privacy & Security** → **Location Services**
 2. Review each app's location access—set to **Never** for apps that don't need it
 3. Tap **System Services** at the bottom:
-   - Disable **Location-Based Suggestions**
-   - Disable **Location-Based Alerts**
-   - Disable **Significant Locations** (clear history first)
-   - Disable **Product Improvement**
+ - Disable **Location-Based Suggestions**
+ - Disable **Location-Based Alerts**
+ - Disable **Significant Locations** (clear history first)
+ - Disable **Product Improvement**
 
 For developers testing location-dependent features, use the location simulation APIs:
 
@@ -94,13 +94,13 @@ iOS requires apps to disclose data collection in App Store listings. To review o
 1. **Settings** → **Privacy & Security** → **App Privacy Report** (iOS 15+)
 2. Enable the feature and use apps normally for 24 hours
 3. Review which apps are accessing:
-   - Location
-   - Contacts
-   - Calendars
-   - Photos
-   - Microphone
-   - Camera
-   - Network activity
+ - Location
+ - Contacts
+ - Calendars
+ - Photos
+ - Microphone
+ - Camera
+ - Network activity
 
 ### Network Traffic Monitoring
 
@@ -122,10 +122,10 @@ Apple collects usage data from iCloud:
 
 1. **Settings** → **[Your Name]** → **iCloud** → **Manage Account Storage**
 2. Scroll to **iCloud+** features and disable:
-   - **Share My Location** (if not needed)
+ - **Share My Location** (if not needed)
 3. **Settings** → **Privacy & Security** → **Analytics & Improvements**
-   - Disable **Share iPhone Analytics**
-   - Disable **Share iCloud Analytics**
+ - Disable **Share iPhone Analytics**
+ - Disable **Share iCloud Analytics**
 
 ### Siri and Dictation Privacy
 

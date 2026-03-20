@@ -3,7 +3,7 @@
 
 layout: default
 title: "Password Manager Master Password Strength Guide"
-description: "A comprehensive guide to creating and managing strong master passwords for password managers. Learn entropy calculations, key derivation functions, and."
+description: "A guide to creating and managing strong master passwords for password managers. Learn entropy calculations, key derivation functions, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-master-password-strength-guide/
@@ -32,7 +32,7 @@ Entropy = log2(charset_size^password_length)
 With a 95-character charset (standard keyboard):
 
 - 12 characters: 78 bits
-- 14 characters: 91 bits  
+- 14 characters: 91 bits 
 - 16 characters: 105 bits
 - 20 characters: 131 bits
 

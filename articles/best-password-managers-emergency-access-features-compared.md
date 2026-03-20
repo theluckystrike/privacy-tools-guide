@@ -289,10 +289,10 @@ Annual:
 - 30-day wait period expires
 - Emergency contact gains access to vault
 - They access:
-  - Email account (notifies people, manages messages)
-  - Bank account (ensures bills are paid, accounts secured)
-  - Insurance (files claims for medical expenses)
-  - Cryptocurrency (if present, transfers to family)
+ - Email account (notifies people, manages messages)
+ - Bank account (ensures bills are paid, accounts secured)
+ - Insurance (files claims for medical expenses)
+ - Cryptocurrency (if present, transfers to family)
 
 **Benefit:** Family has access within 5 weeks instead of 3-6 months through legal processes.
 

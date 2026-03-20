@@ -40,7 +40,7 @@ When creating a Her profile, users provide information that forms the core ident
 }
 ```
 
-The app specifically requests sexual orientation and gender identity during onboarding—data points rarely collected by mainstream dating applications but essential to Her's matching algorithm. This identity-specific information represents sensitive personal data that requires robust protection measures.
+The app specifically requests sexual orientation and gender identity during onboarding—data points rarely collected by mainstream dating applications but essential to Her's matching algorithm. This identity-specific information represents sensitive personal data that requires protection measures.
 
 ### Location and Geospatial Data
 
@@ -217,7 +217,7 @@ Users concerned about their data privacy on Her should consider these technical 
 2. **Disable location history** when not actively using the app
 3. **Use unique email** addresses specifically for dating profiles
 4. **Review connected accounts** and third-party permissions regularly
-5. **Utilize in-app blocking** features to limit exposure to specific users
+5. **Use in-app blocking** features to limit exposure to specific users
 6. **Request data exports** periodically to understand stored information
 7. **Consider account deletion** rather than simply discontinuing use
 

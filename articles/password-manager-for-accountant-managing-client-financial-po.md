@@ -71,7 +71,7 @@ op item get "Client-Alpha/QuickBooks Online" --field password
 
 ## Automating Portal Access Workflows
 
-Beyond simple retrieval, password managers integrate with automation tools to streamline repeated tasks. For accountants accessing client portals daily, create shell functions that authenticate and launch:
+Beyond simple retrieval, password managers integrate with automation tools to improve repeated tasks. For accountants accessing client portals daily, create shell functions that authenticate and launch:
 
 ```bash
 #!/bin/bash
@@ -167,7 +167,7 @@ Create rotation reminders using the password manager's notes field or external c
 op item edit "Client-Alpha/QuickBooks Online" --notes "Rotate by: 2026-09-16"
 ```
 
-A password manager provides accountants with the structured, secure foundation needed for multi-client financial portal access. Through CLI automation, teams can streamline daily workflows while maintaining security best practices. The investment in setting up proper vault organization and automation scripts pays dividends in reduced cognitive load and strengthened security posture.
+A password manager provides accountants with the structured, secure foundation needed for multi-client financial portal access. Through CLI automation, teams can improve daily workflows while maintaining security best practices. The investment in setting up proper vault organization and automation scripts pays dividends in reduced cognitive load and strengthened security posture.
 
 Treat password management as infrastructure rather than convenience—implement proper organization, automation, and auditing from the start. Your clients' financial data security depends on it.
 

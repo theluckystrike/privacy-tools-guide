@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Protection Officer Role Responsibilities When Your Business Needs One Guide"
-description: "A comprehensive guide to understanding when your business needs a DPO, their key responsibilities, and how to implement effective data protection."
+description: "A guide to understanding when your business needs a DPO, their key responsibilities, and how to implement effective data protection."
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-protection-officer-role-responsibilities-when-your-business-needs-one-guide/
@@ -29,10 +29,10 @@ Under GDPR Article 37, you must appoint a DPO in these scenarios:
 1. **Core Activities Involve Regular Monitoring**: If your business systematically monitors data subjects on a large scale—for example, tracking user behavior, profiling, or processing sensitive data—you need a DPO.
 
 2. **Large-Scale Processing**: Processing large volumes of personal data systematically falls under this requirement. This includes:
-   - Social media platforms
-   - E-commerce platforms with customer databases
-   - Healthcare applications
-   - Financial services
+ - Social media platforms
+ - E-commerce platforms with customer databases
+ - Healthcare applications
+ - Financial services
 
 3. **Public Authority**: Government agencies and public authorities always require a DPO.
 

@@ -346,7 +346,7 @@
 
 layout: default
 title: "How to Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage"
-description: "A comprehensive guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices."
+description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices."
 date: 2026-03-15
 type: article
 topic:
@@ -785,7 +785,7 @@ Every cloud storage account storing client photos should have 2FA enabled. Use a
 Organize client work into separate, password-protected folders. Many cloud services let you create shareable links with:
 
 - Expiration dates
-- Password protection  
+- Password protection 
 - Download limits
 - Access tracking
 
@@ -811,7 +811,7 @@ When sending client photos:
 
 ## Secure Backup Strategies for Photo Archives
 
-Long-term storage of client work requires robust backup strategies that don't compromise privacy:
+Long-term storage of client work requires backup strategies that don't compromise privacy:
 
 ### The 3-2-1 Rule with Privacy
 

@@ -301,7 +301,7 @@ if __name__ == "__main__":
 
 ## Integration with Home Assistant Automations
 
-Create automations that leverage Tailscale connectivity:
+Create automations that use Tailscale connectivity:
 
 ```yaml
 # automations.yaml - Example automations
@@ -387,7 +387,7 @@ sudo tcpdump -i any 'udp port 3478 or udp port 5349' -n
 
 ## Conclusion
 
-Tailscale transforms how you access Home Assistant remotely. Rather than exposing your network to internet scans and attacks, you get encrypted, authenticated access that works seamlessly across devices. The peer-to-peer architecture ensures good performance, and the zero-config setup means minimal maintenance once configured.
+Tailscale transforms how you access Home Assistant remotely. Rather than exposing your network to internet scans and attacks, you get encrypted, authenticated access that works across devices. The peer-to-peer architecture ensures good performance, and the zero-config setup means minimal maintenance once configured.
 
 Your smart home remains private, your access remains secure, and you gain the ability to manage your Home Assistant instance from anywhere using the same credentials across all your devices. Combined with proper ACL policies and key rotation, Tailscale provides an enterprise-grade security model for personal infrastructure.
 

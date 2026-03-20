@@ -45,7 +45,7 @@ Several platforms provide real-time data on internet shutdowns in India:
 
 ### 1. Internet Freedom Foundation's Internet Shutdown Tracker
 
-The Internet Freedom Foundation maintains a comprehensive shutdown tracker covering incidents across India. You can access their data through their official website, which provides dates, duration, and rationale for each shutdown.
+The Internet Freedom Foundation maintains a shutdown tracker covering incidents across India. You can access their data through their official website, which provides dates, duration, and rationale for each shutdown.
 
 ### 2. OONI Probe
 

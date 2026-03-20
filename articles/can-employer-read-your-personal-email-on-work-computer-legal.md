@@ -2,7 +2,7 @@
 
 layout: default
 title: "Can Employer Read Your Personal Email On Work Computer Legal"
-description: "A comprehensive legal guide on employer email monitoring rights. Understand your privacy rights by jurisdiction, workplace monitoring laws, and."
+description: "A legal guide on employer email monitoring rights. Understand your privacy rights by jurisdiction, workplace monitoring laws, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /can-employer-read-your-personal-email-on-work-computer-legal/

@@ -53,7 +53,7 @@ Good lighting is essential. Work in daylight or use a bright LED flashlight. Her
 
 1. **Start at the OBD-II port.** This is the most common location for plug-in trackers. Look for any device plugged in that you don't recognize. Legitimate insurance plugins (like usage-based insurance monitors) usually have brand logos. Unknown devices deserve suspicion.
 
-2. **Work around the exterior.** Physically feel along the undercarriage while crouched—trackers often feel like small rectangular lumps. Use a inspection mirror to see behind components.
+2. **Work around the exterior.** Physically feel along the undercarriage while crouched—trackers often feel like small rectangular lumps. Use an inspection mirror to see behind components.
 
 3. **Check wheel wells.** The plastic wheel liners often have spaces behind them where trackers can be concealed. Press gently to feel for objects.
 

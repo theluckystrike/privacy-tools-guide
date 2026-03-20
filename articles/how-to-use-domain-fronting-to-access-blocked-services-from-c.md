@@ -26,7 +26,7 @@ When you make an HTTPS request, two different hostnames appear in the request:
 1. **SNI (Server Name Indication)**: Visible during the TLS handshake, determines which certificate the server presents
 2. **HTTP Host header**: Specifies the actual website you want to access
 
-Network filters typically inspect the SNI or the HTTP Host header to decide whether to block a connection. Domain fronting leverages a disconnect between these two values.
+Network filters typically inspect the SNI or the HTTP Host header to decide whether to block a connection. Domain fronting uses a disconnect between these two values.
 
 Here's what happens:
 

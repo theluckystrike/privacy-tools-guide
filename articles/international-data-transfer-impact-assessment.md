@@ -18,7 +18,7 @@ voice-checked: true
 
 To conduct an international data transfer impact assessment, start by mapping every cross-border data flow in your infrastructure, then evaluate each transfer against the destination country's legal framework, surveillance powers, and available safeguards such as Standard Contractual Clauses (SCCs) or encryption. This structured assessment is required under GDPR Article 44 and increasingly expected by other privacy regulations worldwide. ## Understanding the Legal Framework
 
-The European Union's General Data Protection Regulation (GDPR) establishes the most comprehensive framework for international data transfers. When personal data leaves the EU, it must continue receiving equivalent protection. This requirement stems from Article 44, which states that any transfer to a third country must ensure an adequate level of protection.
+The European Union's General Data Protection Regulation (GDPR) establishes the most framework for international data transfers. When personal data leaves the EU, it must continue receiving equivalent protection. This requirement stems from Article 44, which states that any transfer to a third country must ensure an adequate level of protection.
 
 Following the invalidation of the EU-US Privacy Shield in 2020 and subsequent legal challenges, organizations transferring data across the Atlantic face significant uncertainty. The EU-US Data Privacy Framework provides a new mechanism, but organizations must evaluate whether it applies to their specific data flows.
 

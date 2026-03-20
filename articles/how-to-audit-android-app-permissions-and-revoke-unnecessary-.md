@@ -29,7 +29,7 @@ Android 6.0 (API level 23) introduced runtime permissions, meaning apps must req
 
 Android provides native tools for reviewing and managing permissions. Navigate to **Settings > Apps**, select any app, and tap **Permissions** to see what access that specific app has been granted. This interface shows each permission's status: "Allowed," "Denied," or "Allowed only while in use."
 
-For a comprehensive overview, open **Settings > Privacy > Permission Manager**. This dashboard groups permissions by category—Location, Camera, Microphone, Contacts, Storage—and lists every app with access to each category. Sort by permission count to identify apps requesting unusual numbers of permissions.
+For an overview, open **Settings > Privacy > Permission Manager**. This dashboard groups permissions by category—Location, Camera, Microphone, Contacts, Storage—and lists every app with access to each category. Sort by permission count to identify apps requesting unusual numbers of permissions.
 
 Android 12 and later includes a **Permissions dashboard** showing recent permission usage. Access it via **Settings > Privacy > Permission Manager > All permissions**, then tap the clock icon. This reveals which apps accessed specific sensors recently, helping identify apps that access data in the background without clear justification.
 

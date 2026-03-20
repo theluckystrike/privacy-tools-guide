@@ -28,7 +28,7 @@ Spokeo operates as a people search engine that compiles data from multiple sourc
 - **Data partnerships**: Information shared between broker networks
 - **Consumer contributions**: Data from contest entries, newsletter signups
 
-The result is a comprehensive profile linking your name to addresses, phone numbers, family members, and estimated income. Each profile generates revenue through subscription plans and advertising—creating an incentive for Spokeo to maintain your data even after an opt-out request.
+The result is a profile linking your name to addresses, phone numbers, family members, and estimated income. Each profile generates revenue through subscription plans and advertising—creating an incentive for Spokeo to maintain your data even after an opt-out request.
 
 ## Manual Opt-Out Process
 

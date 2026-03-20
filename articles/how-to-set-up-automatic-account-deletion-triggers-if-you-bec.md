@@ -211,7 +211,7 @@ Create a clear document for your emergency contact or executor:
 
 **Service Limitations**: Many services don't offer programmatic deletion APIs. Some require manual confirmation via email or SMS. Factor this into your timeline.
 
-**Partial Solutions**: Even if you can't automate everything, creating a comprehensive inventory and documented process significantly reduces the burden on your family.
+**Partial Solutions**: Even if you can't automate everything, creating an inventory and documented process significantly reduces the burden on your family.
 
 ## Related Reading
 

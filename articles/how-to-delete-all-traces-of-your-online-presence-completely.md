@@ -28,7 +28,7 @@ curl -H "hibp-api-key: YOUR_API_KEY" \
   "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com"
 ```
 
-Create a comprehensive inventory of all accounts tied to your identity. Search your name in major search engines and note every result.
+Create an inventory of all accounts tied to your identity. Search your name in major search engines and note every result.
 
 ## Data Broker Removal
 

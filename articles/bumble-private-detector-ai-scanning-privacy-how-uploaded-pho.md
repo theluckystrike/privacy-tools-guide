@@ -158,7 +158,7 @@ async function classifyImageLocally(imageElement) {
 }
 ```
 
-On-device analysis offers privacy benefits—images don't leave the device for initial screening—but has limitations for comprehensive detection. Server-side analysis provides more accurate results but requires secure data handling.
+On-device analysis offers privacy benefits—images don't leave the device for initial screening—but has limitations for detection. Server-side analysis provides more accurate results but requires secure data handling.
 
 ### Privacy-Preserving Approaches
 

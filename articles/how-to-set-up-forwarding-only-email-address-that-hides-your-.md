@@ -29,7 +29,7 @@ For developers specifically, this technique proves invaluable when testing email
 
 ### Gmail and Google Workspace
 
-Gmail offers robust forwarding capabilities through its settings interface. First, navigate to Settings > See all settings > Forwarding and POP/IMAP. Click "Add a forwarding address" and enter the destination email where you want messages delivered. Google will send a verification code to that address—enter it to complete the setup.
+Gmail offers forwarding capabilities through its settings interface. First, navigate to Settings > See all settings > Forwarding and POP/IMAP. Click "Add a forwarding address" and enter the destination email where you want messages delivered. Google will send a verification code to that address—enter it to complete the setup.
 
 For developers who prefer programmatic control, Gmail's filters provide powerful automation. Create a filter by clicking "Create a new filter" and specify the conditions that match emails you want to forward. When configuring the filter action, select "Forward it to" and choose your destination address. This approach allows you to automatically forward emails based on sender, subject line, keywords, or any combination of criteria.
 

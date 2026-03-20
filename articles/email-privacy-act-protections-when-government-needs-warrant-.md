@@ -38,7 +38,7 @@ However, several exceptions exist that developers and privacy-conscious users sh
 
 ## Technical Implications for Developers
 
-For developers building email systems or privacy tools, understanding these legal frameworks shapes architecture decisions. End-to-end encryption represents the most robust technical defense against warrant-based government access.
+For developers building email systems or privacy tools, understanding these legal frameworks shapes architecture decisions. End-to-end encryption represents the most technical defense against warrant-based government access.
 
 Consider this fundamental principle: if you cannot read your users' emails, neither can a court compel you to produce them. This zero-knowledge architecture provides mathematical certainty that no amount of legal process can override.
 
@@ -88,7 +88,7 @@ For developers building global applications, consider where data actually flows:
 
 - Email content stored on U.S. servers: Full ECPA protections apply
 - Data mirrored to foreign jurisdictions: Potentially subject to local laws
-- Encrypted data with keys outside U.S. jurisdiction: Essentially immune to U.S. warrants
+- Encrypted data with keys outside U.S. jurisdiction: immune to U.S. warrants
 
 ## Practical Steps for Enhanced Email Privacy
 
@@ -96,7 +96,7 @@ Several practical measures strengthen your email privacy posture:
 
 **Use End-to-End Encrypted Email Services**: Providers like ProtonMail or Tutanota design systems where the provider cannot read your messages, making warrants ineffective for content access.
 
-**Implement PGP or S/MIME Encryption**: For technical users, traditional email encryption remains viable. While usability challenges exist, the cryptographic protections are robust.
+**Implement PGP or S/MIME Encryption**: For technical users, traditional email encryption remains viable. While usability challenges exist, the cryptographic protections are.
 
 ```bash
 # Generating a PGP keypair for email encryption
@@ -400,7 +400,7 @@ The Email Privacy Act provides meaningful protections, but technical measures re
 
 For developers, building privacy-respecting systems means assuming that any data stored or transmitted may eventually face legal compulsion. Designing systems that cannot comply with content requests—by design—represents the strongest architectural choice.
 
-Understanding when the government needs a warrant to read your emails matters not just for legal compliance, but for making informed architectural and operational decisions about digital communications. Combine legal understanding with strong encryption, operational security practices, and jurisdictional considerations to create robust email privacy strategies.
+Understanding when the government needs a warrant to read your emails matters not just for legal compliance, but for making informed architectural and operational decisions about digital communications. Combine legal understanding with strong encryption, operational security practices, and jurisdictional considerations to create email privacy strategies.
 
 ---
 

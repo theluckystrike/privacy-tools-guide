@@ -21,7 +21,7 @@ A canary trap is a practical technique for tracing the origin of leaked informat
 
 The fundamental concept is straightforward: create slightly different versions of your document, each marked with a unique identifier. When a leaked version appears, the identifier tells you exactly which recipient was compromised. Each version contains the same core information, but subtle differences make it possible to trace the source.
 
-Traditional canary traps work by embedding unique text strings or codes within otherwise identical documents. Modern implementations use digital watermarks, unique URLs, or tracking parameters that serve the same purpose but integrate seamlessly with digital workflows.
+Traditional canary traps work by embedding unique text strings or codes within otherwise identical documents. Modern implementations use digital watermarks, unique URLs, or tracking parameters that serve the same purpose but integrate with digital workflows.
 
 This approach provides several advantages for developers and security-conscious professionals:
 

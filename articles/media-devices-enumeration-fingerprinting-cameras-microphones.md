@@ -120,9 +120,9 @@ async function requestMediaAccess() {
 
 ## The Broader Privacy Context
 
-Media device enumeration represents one component in a larger ecosystem of browser fingerprinting techniques. Understanding how these APIs interact with other tracking methods helps you develop comprehensive privacy strategies.
+Media device enumeration represents one component in a larger ecosystem of browser fingerprinting techniques. Understanding how these APIs interact with other tracking methods helps you develop privacy strategies.
 
-The tension between useful web features and privacy protection continues to evolve. Browser vendors are implementing stricter defaults, but the underlying APIs remain powerful tools that can be abused. Staying informed about what information your browser reveals empowers you to make choices that align with your privacy requirements.
+The tension between useful web features and privacy protection continues to evolve. Browser vendors are implementing stricter defaults, but the underlying APIs remain powerful tools that can be abused. Staying informed about what information your browser reveals enables you to make choices that align with your privacy requirements.
 
 For developers, building privacy-respecting applications means understanding these APIs thoroughly and implementing only the capabilities your users need. For power users, knowing what gets exposed helps you configure browser settings and extensions that balance functionality with privacy protection.
 

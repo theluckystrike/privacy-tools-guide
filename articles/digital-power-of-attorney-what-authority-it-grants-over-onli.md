@@ -107,7 +107,7 @@ Cryptocurrency presents unique challenges for power of attorney arrangements:
 
 ### Types of Authority Your Agent Needs
 
-A comprehensive crypto DPOA should grant:
+A crypto DPOA should grant:
 
 - **Custodial exchange access**: Authority to log into exchange accounts and withdraw funds
 - **Hardware wallet access**: Physical access to hardware wallets and recovery seeds

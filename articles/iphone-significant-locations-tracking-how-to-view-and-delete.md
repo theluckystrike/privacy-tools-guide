@@ -148,7 +148,7 @@ For users seeking complete privacy, combining Significant Locations deletion wit
 
 ## Additional Location Privacy Controls
 
-Managing Significant Locations represents one component of comprehensive location privacy. Consider these complementary measures:
+Managing Significant Locations represents one component of location privacy. Consider these complementary measures:
 
 **Per-App Location Permissions**: Review which applications access location data. Navigate to Settings → Privacy & Security → Location Services to audit each app's permissions.
 

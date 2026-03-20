@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser for Whistleblowers Safety Guide"
-description: "A comprehensive technical guide to Tor Browser for whistleblowers. Learn essential configuration, operational security practices, and advanced techniques for source protection."
+description: "A technical guide to Tor Browser for whistleblowers. Learn essential configuration, operational security practices, and advanced techniques for source protection."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-for-whistleblowers-safety-guide/

@@ -165,10 +165,10 @@ For most effective removal, follow this sequence:
 6. **Obtain order**: If granted, receive signed order.
 
 7. **Notify agencies**: Send order to relevant agencies including:
-   - Local law enforcement
-   - State repository
-   - FBI (for federal records)
-   - Any known background check companies
+ - Local law enforcement
+ - State repository
+ - FBI (for federal records)
+ - Any known background check companies
 
 ### Tracking Your Removal Requests
 

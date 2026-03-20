@@ -28,7 +28,7 @@ Effective protection requires addressing all three vectors simultaneously.
 
 Standard Tor bridges are often blocked within days of publication in restrictive jurisdictions. Obfs4 bridges provide an additional layer of obfuscation that makes Tor traffic appear like normal TLS connections. Unlike pluggable transports that were previously popular, obfs4 has proven more resilient against automated blocking systems.
 
-First, obtain obfs4 bridge addresses from official sources. The Tor Project maintains a email-based bridge request system at bridges@torproject.org with subject "get transport obfs4". Alternatively, use the Snowflake proxy system which leverages ephemeral peer-to-peer connections.
+First, obtain obfs4 bridge addresses from official sources. The Tor Project maintains an email-based bridge request system at bridges@torproject.org with subject "get transport obfs4". Alternatively, use the Snowflake proxy system which uses ephemeral peer-to-peer connections.
 
 Configure your Tor client to use obfs4 bridges by editing the torrc configuration file:
 

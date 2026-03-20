@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Protect patient exercise data through full encryption at rest and in transit, role-based access controls limiting therapist viewing to only their patients, automatic audit logging of all data access, and secure deletion procedures that comply with HIPAA retention rules. Implement data minimization by collecting only exercise details without sensitive medical history, use separate databases for billing and clinical data, and conduct regular security audits. This guide provides comprehensive strategies for securing patient exercise data in physical therapy practices while maintaining usability for clinical workflows and HIPAA compliance.
+Protect patient exercise data through full encryption at rest and in transit, role-based access controls limiting therapist viewing to only their patients, automatic audit logging of all data access, and secure deletion procedures that comply with HIPAA retention rules. Implement data minimization by collecting only exercise details without sensitive medical history, use separate databases for billing and clinical data, and conduct regular security audits. This guide provides strategies for securing patient exercise data in physical therapy practices while maintaining usability for clinical workflows and HIPAA compliance.
 
 ## Understanding Patient Exercise Data Sensitivity
 
@@ -142,7 +142,7 @@ Multi-factor authentication (MFA) should be mandatory for all staff accessing pa
 
 ## Audit Logging
 
-Comprehensive audit logging enables you to detect and investigate unauthorized access:
+audit logging enables you to detect and investigate unauthorized access:
 
 ```python
 import logging

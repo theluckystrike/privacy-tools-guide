@@ -152,7 +152,7 @@ Additional verification steps include examining profile photo EXIF data for crea
 
 ## Platform-Level Protections
 
-For developers building dating applications, implementing robust verification requires layered approaches:
+For developers building dating applications, implementing verification requires layered approaches:
 
 **Account creation controls:**
 - Require phone number verification tied to carrier records

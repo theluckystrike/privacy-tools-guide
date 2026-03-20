@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-When switching networks, most VPN protocols detect the IP address change and automatically re-establish the tunnel: OpenVPN uses its persistent connection with keepalive timers to detect drops and reconnect within seconds, WireGuard detects endpoint changes and rekeys the session, and mobile protocols like IKEv2 support MOBIKE to seamlessly switch networks. During handoff, there's typically a 1-5 second interruption as the new tunnel establishes. For seamless switching, use IKEv2 protocol, enable keepalive settings, and ensure your VPN client supports automatic reconnection.
+When switching networks, most VPN protocols detect the IP address change and automatically re-establish the tunnel: OpenVPN uses its persistent connection with keepalive timers to detect drops and reconnect within seconds, WireGuard detects endpoint changes and rekeys the session, and mobile protocols like IKEv2 support MOBIKE to switch networks. During handoff, there's typically a 1-5 second interruption as the new tunnel establishes. For switching, use IKEv2 protocol, enable keepalive settings, and ensure your VPN client supports automatic reconnection.
 
 ## The Core Problem: IP Address Changes
 
@@ -65,7 +65,7 @@ The `PersistentKeepalive` setting sends a packet every 25 seconds to maintain NA
 
 IKEv2 was designed with mobility in mind. It supports MOBIKE (IKEv2 Mobility and Multihoming Protocol), which allows the VPN to survive network changes without dropping the session. When your device switches from WiFi to cellular, IKEv2 can update the endpoint information without renegotiating the entire security association.
 
-Many enterprise VPN solutions use IKEv2 specifically because of its robust handoff capabilities. The protocol handles:
+Many enterprise VPN solutions use IKEv2 specifically because of its handoff capabilities. The protocol handles:
 
 - IP address changes
 - Network interface changes
@@ -176,7 +176,7 @@ monitor.start(queue: queue)
 
 ## Building a Resilient VPN Reconnection Strategy
 
-Rather than relying solely on the VPN client's built-in reconnection, you can implement a more robust strategy in your application layer.
+Rather than relying solely on the VPN client's built-in reconnection, you can implement a more strategy in your application layer.
 
 ### Exponential Backoff with Jitter
 

@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-End-to-end encryption for voice messages protects your audio communications from interception, ensuring that only the sender and recipient can access the content. Unlike standard voice calls that may traverse multiple servers, encrypted voice messages remain unreadable to service providers, cloud storage systems, and potential attackers. This guide covers the technical implementation, available applications, and considerations for developers and power users seeking robust audio privacy.
+End-to-end encryption for voice messages protects your audio communications from interception, ensuring that only the sender and recipient can access the content. Unlike standard voice calls that may traverse multiple servers, encrypted voice messages remain unreadable to service providers, cloud storage systems, and potential attackers. This guide covers the technical implementation, available applications, and considerations for developers and power users seeking audio privacy.
 
 ## Understanding End-to-End Encryption for Audio
 

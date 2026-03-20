@@ -207,7 +207,7 @@ This architecture provides several concrete privacy properties:
 
 For developers implementing SimpleX or similar identifier-free protocols:
 
-1. **Queue Management**: Implement robust queue rotation on every session initialization
+1. **Queue Management**: Implement queue rotation on every session initialization
 2. **Key Storage**: Use secure enclaves or hardware-backed storage for long-term ratchet keys
 3. **Server Selection**: Allow users to run their own SMP servers for complete infrastructure control
 4. **Forward Secrecy**: Rotate symmetric keys frequently—SimpleX recommends per-message rotation

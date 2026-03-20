@@ -76,13 +76,13 @@ For macOS users preferring Apple Mail over the Proton Mail web interface:
 2. Select **Other Mail Account**
 3. Enter your name, email address, and the Bridge password
 4. Configure the incoming mail server:
-   - Host Name: `127.0.0.1`
-   - Port: `1143`
-   - Use SSL: No (Bridge handles encryption internally)
+ - Host Name: `127.0.0.1`
+ - Port: `1143`
+ - Use SSL: No (Bridge handles encryption internally)
 5. Configure the outgoing mail server:
-   - Host Name: `127.0.0.1`
-   - Port: `1025`
-   - Use SSL: No
+ - Host Name: `127.0.0.1`
+ - Port: `1025`
+ - Use SSL: No
 
 Click **Sign In** and Apple Mail will connect through Bridge to Proton Mail.
 
@@ -93,14 +93,14 @@ Thunderbird provides excellent customization options for power users:
 1. Go to **Edit > Account Settings > Account Actions > Add Mail Account**
 2. Enter your name, email, and Bridge password
 3. For incoming server configuration:
-   - Incoming Server: `127.0.0.1`
-   - Port: `1143`
-   - SSL: None
-   - Authentication: Normal password
+ - Incoming Server: `127.0.0.1`
+ - Port: `1143`
+ - SSL: None
+ - Authentication: Normal password
 4. For outgoing server:
-   - Outgoing Server: `127.0.0.1`
-   - Port: `1025`
-   - SSL: None
+ - Outgoing Server: `127.0.0.1`
+ - Port: `1025`
+ - SSL: None
 
 Thunderbird will attempt automatic configuration, but manually entering these values ensures proper connection through Bridge.
 

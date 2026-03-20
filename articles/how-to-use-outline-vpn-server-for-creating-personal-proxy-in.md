@@ -112,7 +112,7 @@ proxychains4 git push origin main
 proxychains4 npm install express
 ```
 
-This approach works with virtually any network application, making it invaluable for developers working in restricted environments.
+This approach works with any network application, making it invaluable for developers working in restricted environments.
 
 ## Port Customization and Firewall Configuration
 

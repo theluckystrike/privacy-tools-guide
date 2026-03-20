@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Portable USB Setup Guide"
-description: "A comprehensive guide for developers and power users on running Tor Browser from a USB drive for enhanced privacy. Includes verification."
+description: "A guide for developers and power users on running Tor Browser from a USB drive for enhanced privacy. Includes verification."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-portable-usb-setup-guide/
@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-Running Tor Browser from a USB drive provides a powerful layer of mobility and privacy for users who need anonymous browsing across multiple machines without leaving local traces. This guide covers the complete setup process, security considerations, and practical configurations for developers and power users.
+Running Tor Browser from an USB drive provides a powerful layer of mobility and privacy for users who need anonymous browsing across multiple machines without leaving local traces. This guide covers the complete setup process, security considerations, and practical configurations for developers and power users.
 
 ## Why Run Tor Browser Portably
 
@@ -83,7 +83,7 @@ The default Tor Browser configuration provides solid baseline protection, but po
 
 ### Disable Disk Persistence
 
-When using Tor Browser on a USB drive in sensitive environments, consider disabling disk caching entirely:
+When using Tor Browser on an USB drive in sensitive environments, consider disabling disk caching entirely:
 
 ```javascript
 // In about:config

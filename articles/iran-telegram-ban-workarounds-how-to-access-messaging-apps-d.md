@@ -22,7 +22,7 @@ Access Telegram in Iran using Tor Browser (circumvents DNS blocks), WireGuard wi
 
 Iran's internet filtering operates at multiple levels. The Telecommunications Infrastructure Company (TIC) blocks access to Telegram's IP addresses and domain names through DNS manipulation and deep packet inspection. The filtering system uses a combination of IP range blocking, SNI inspection, and keyword-based traffic analysis to identify and block encrypted messaging traffic.
 
-For developers building applications that need to function in Iran, understanding these mechanisms is essential. The blocking is not monolithic—it varies by region, internet service provider, and time of day. This variability means that robust solutions must be adaptable and resilient.
+For developers building applications that need to function in Iran, understanding these mechanisms is essential. The blocking is not monolithic—it varies by region, internet service provider, and time of day. This variability means that solutions must be adaptable and resilient.
 
 ## VPN Solutions for Developers
 

@@ -66,7 +66,7 @@ typeperf "\Process(Chrome)\% Processor Time" -si 5
 
 ### Linux Power Measurement
 
-On Linux, the `powertop` tool provides comprehensive power consumption data:
+On Linux, the `powertop` tool provides power consumption data:
 
 ```bash
 sudo powertop --html=powertop_report.html

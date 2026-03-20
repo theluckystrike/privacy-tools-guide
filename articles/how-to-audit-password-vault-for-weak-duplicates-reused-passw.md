@@ -53,7 +53,7 @@ Weak password detection requires analyzing entropy and checking against known we
 
 ### Using zxcvbn for Entropy Analysis
 
-The `zxcvbn` library (originally developed by Dropbox) provides robust password strength estimation. It detects patterns, dictionary words, and common substitutions rather than simply counting character types.
+The `zxcvbn` library (originally developed by Dropbox) provides password strength estimation. It detects patterns, dictionary words, and common substitutions rather than simply counting character types.
 
 Install the JavaScript version for command-line use:
 
@@ -259,7 +259,7 @@ if __name__ == '__main__':
         print(f"  - Used in {item['count']} accounts: {', '.join(item['accounts'])}")
 ```
 
-Run this script against your exported vault to generate a comprehensive report. Schedule regular runs to track improvements over time.
+Run this script against your exported vault to generate a report. Schedule regular runs to track improvements over time.
 
 ## Interpreting Results and Taking Action
 

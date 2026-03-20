@@ -149,11 +149,11 @@ Once you've confirmed or strongly suspect compromise, immediate containment prev
 2. **Factory Reset Consideration**: For mobile devices that stored fingerprints locally, a factory reset ensures the biometric template is completely removed. This is particularly important if the compromise occurred through device malware rather than a service breach.
 
 3. **Review Connected Accounts**: Check services linked to fingerprint authentication:
-   - Mobile payment apps (Apple Pay, Google Pay, Samsung Pay)
-   - Banking applications
-   - Device encryption
-   - Password managers with biometric unlock
-   - Cryptocurrency wallets
+ - Mobile payment apps (Apple Pay, Google Pay, Samsung Pay)
+ - Banking applications
+ - Device encryption
+ - Password managers with biometric unlock
+ - Cryptocurrency wallets
 
 ### Service-Level Response
 
@@ -276,7 +276,7 @@ After immediate containment:
 
 2. **Credit Freezes**: Consider freezing your credit with major bureaus to prevent identity theft using combined biometric and personal data.
 
-3. **Identity Monitoring**: Services that monitor for biometric data specifically are limited, but comprehensive identity monitoring provides partial coverage.
+3. **Identity Monitoring**: Services that monitor for biometric data specifically are limited, but identity monitoring provides partial coverage.
 
 4. **Future-Proof Your Authentication**: Accept that your fingerprint data is now permanently exposed. Design your personal and professional security around this reality—never rely on fingerprint alone for high-value authentication.
 

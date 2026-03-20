@@ -183,9 +183,9 @@ Where legal requests fail, technical options exist:
 - VPN services to mask IP addresses
 - Cookie consent managers to limit data collection
 
-### Data Breach Leverage
+### Data Breach Use
 
-If the company has experienced a data breach, use this as leverage. Under many state laws, companies must maintain specific security practices. A breach history may encourage compliance.
+If the company has experienced a data breach, use this as use. Under many state laws, companies must maintain specific security practices. A breach history may encourage compliance.
 
 ## What to Do If They Refuse
 

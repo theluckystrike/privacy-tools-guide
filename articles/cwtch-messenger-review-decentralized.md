@@ -19,7 +19,7 @@ Cwtch stands as a unique entrant in the privacy-focused messaging space. Built o
 
 ## Understanding Cwtch's Design Philosophy
 
-Cwtch ( Welsh for " cuddle" or "privacy") emerged from the open-source community as an answer to fundamental weaknesses in conventional messaging apps. Unlike Signal or Telegram, Cwtch operates without any central infrastructure. Messages route through the Tor network, leveraging onion routing to obscure both message content and metadata.
+Cwtch ( Welsh for " cuddle" or "privacy") emerged from the open-source community as an answer to fundamental weaknesses in conventional messaging apps. Unlike Signal or Telegram, Cwtch operates without any central infrastructure. Messages route through the Tor network, using onion routing to obscure both message content and metadata.
 
 The project distinguishes itself through three core principles:
 

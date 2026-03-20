@@ -184,7 +184,7 @@ except OMEMOException as e:
     print(f"Encryption failed: {e}")
 ```
 
-This approach allows building custom tools that leverage OMEMO's encryption without being limited to standard chat clients.
+This approach allows building custom tools that use OMEMO's encryption without being limited to standard chat clients.
 
 ## Threat Model and Limitations
 

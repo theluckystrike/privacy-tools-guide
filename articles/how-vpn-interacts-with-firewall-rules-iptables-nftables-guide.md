@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Vpn Interacts With Firewall Rules Iptables Nftables Guide"
-description: "A comprehensive technical guide explaining how VPN traffic flows through firewall rules, covering iptables and nftables configuration for secure VPN."
+description: "A technical guide explaining how VPN traffic flows through firewall rules, covering iptables and nftables configuration for secure VPN."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/

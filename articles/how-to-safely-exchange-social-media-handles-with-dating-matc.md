@@ -31,7 +31,7 @@ For users with elevated threat models—journalists, activists, or anyone managi
 
 ## Strategy One: Dedicated Compartmentalized Accounts
 
-The most robust approach involves creating separate social media accounts specifically for dating transitions. This compartmentalization follows the principle of least privilege: your dating contacts access only what you explicitly choose to share.
+The most approach involves creating separate social media accounts specifically for dating transitions. This compartmentalization follows the principle of least privilege: your dating contacts access only what you explicitly choose to share.
 
 ### Creating a Privacy-Isolated Instagram Account
 

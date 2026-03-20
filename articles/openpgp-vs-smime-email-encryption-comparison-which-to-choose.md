@@ -97,7 +97,7 @@ ciphertext = public_key.encrypt(
 
 **Choose S/MIME if:**
 - Your organization already uses PKI infrastructure
-- You need seamless integration with enterprise email systems
+- You need integration with enterprise email systems
 - Compliance requirements mandate certificate-based verification
 - User experience simplicity is a priority
 

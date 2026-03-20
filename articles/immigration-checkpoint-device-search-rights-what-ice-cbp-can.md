@@ -227,9 +227,9 @@ diff pre_travel_hashes.txt post_travel_hashes.txt
 ```
 
 2. **Check system logs**: Review system logs for evidence of forensic tools (they often create event log entries):
-   - Windows: Check Event Viewer for Cellebrite/GrayKey artifact patterns
-   - macOS: Check system.log for filesystem scanner patterns
-   - Linux: Check kernel logs for device mounting activities
+ - Windows: Check Event Viewer for Cellebrite/GrayKey artifact patterns
+ - macOS: Check system.log for filesystem scanner patterns
+ - Linux: Check kernel logs for device mounting activities
 
 3. **Analyze file access times**: Forensic tools typically access files in patterns different from normal use. Tools like Timeline Execution Tree (TET) can identify unusual access patterns.
 

@@ -21,7 +21,7 @@ Your email address serves as a central identity anchor across the internet. Ever
 
 Data breaches affect millions of users annually. When attackers obtain email addresses from compromised databases, they can perform credential stuffing attacks—testing stolen email/password combinations across numerous services. Knowing exactly which services hold your email allows you to proactively secure or delete unused accounts, reducing your attack surface.
 
-Beyond security, privacy concerns drive digital footprint audits. Services you forgot about may continue collecting data, sharing information with third parties, or maintaining records you no longer want retained. A comprehensive audit provides visibility into your actual online presence.
+Beyond security, privacy concerns drive digital footprint audits. Services you forgot about may continue collecting data, sharing information with third parties, or maintaining records you no longer want retained. An audit provides visibility into your actual online presence.
 
 ## Method 1: Using Have I Been Pwned's API
 

@@ -177,7 +177,7 @@ sudo audit -s
 sudo grep -i login /var/audit/*
 ```
 
-For comprehensive monitoring, consider logging agents that track permission changes:
+For monitoring, consider logging agents that track permission changes:
 
 ```bash
 # Monitor TCC database changes

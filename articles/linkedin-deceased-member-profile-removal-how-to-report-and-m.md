@@ -113,7 +113,7 @@ def check_profile_status(profile_url, session):
 
 ## Bulk Requests for Organizations
 
-HR departments and organizations managing employee departures sometimes need to handle multiple profiles. LinkedIn's policy requires individual requests for each profile, but you can streamline the documentation process:
+HR departments and organizations managing employee departures sometimes need to handle multiple profiles. LinkedIn's policy requires individual requests for each profile, but you can improve the documentation process:
 
 ```python
 # Generate documentation for bulk deceased member requests

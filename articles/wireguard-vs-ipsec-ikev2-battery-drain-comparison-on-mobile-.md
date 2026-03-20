@@ -37,7 +37,7 @@ The primary factors contributing to this difference include:
 
 ## Connection Stability and Reconnection Behavior
 
-Mobile devices frequently transition between WiFi and cellular networks. IPSec IKEv2 includes built-in mobility and multihoming support (MOBIKE), allowing it to seamlessly switch interfaces without dropping the connection. This capability reduces the need for reconnection cycles, which are computationally expensive and consume significant battery.
+Mobile devices frequently transition between WiFi and cellular networks. IPSec IKEv2 includes built-in mobility and multihoming support (MOBIKE), allowing it to switch interfaces without dropping the connection. This capability reduces the need for reconnection cycles, which are computationally expensive and consume significant battery.
 
 WireGuard does not include native MOBIKE support. When a device switches networks, the tunnel typically drops and requires reestablishment. However, recent kernel implementations and mobile applications have introduced workarounds that detect network changes and rapidly rebuild tunnels.
 
@@ -131,7 +131,7 @@ Both protocols interact differently with system battery saver modes. IPSec IKEv2
 
 ## Making the Right Choice
 
-For most mobile use cases, WireGuard provides superior battery efficiency. The protocol's lightweight design translates to measurable power savings during both active use and idle periods. However, scenarios requiring seamless network transitions without application-level handling may benefit from IPSec IKEv2's native mobility features.
+For most mobile use cases, WireGuard provides superior battery efficiency. The protocol's lightweight design translates to measurable power savings during both active use and idle periods. However, scenarios requiring network transitions without application-level handling may benefit from IPSec IKEv2's native mobility features.
 
 Consider these guidelines:
 

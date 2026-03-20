@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Understand how data brokers build identity graphs by using deterministic matching (exact identifiers like email), probabilistic matching (statistical analysis of patterns), device fingerprinting, and location tracking to link your scattered data points into comprehensive profiles—then use data removal services and compartmentalization strategies to minimize your graph's size. Your identity graph may contain demographic, financial, health, and behavioral data monetized across ad networks and data exchanges.
+Understand how data brokers build identity graphs by using deterministic matching (exact identifiers like email), probabilistic matching (statistical analysis of patterns), device fingerprinting, and location tracking to link your scattered data points into profiles—then use data removal services and compartmentalization strategies to minimize your graph's size. Your identity graph may contain demographic, financial, health, and behavioral data monetized across ad networks and data exchanges.
 
 Data brokers are quietly collecting, analyzing, and selling your personal information. At the core of their operation is something called an identity graph—a sophisticated system that connects disparate pieces of data about you across the internet. Understanding how these graphs work is essential for anyone serious about protecting their privacy.
 
@@ -32,7 +32,7 @@ An identity graph is a database structure that links together various identifier
 - Purchase histories
 - Browser behavior patterns
 
-Data brokers aggregate this information from hundreds of sources—apps you use, websites you visit, loyalty programs you sign up for, public records, and data exchanges. The identity graph then stitches these fragments together to create a comprehensive profile.
+Data brokers aggregate this information from hundreds of sources—apps you use, websites you visit, loyalty programs you sign up for, public records, and data exchanges. The identity graph then stitches these fragments together to create a profile.
 
 ## How Data Brokers Connect Your Records
 

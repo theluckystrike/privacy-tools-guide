@@ -15,11 +15,11 @@ voice-checked: true
 
 {% raw %}
 
-WebRTC (Web Real-Time Communication) is a powerful browser API that enables direct peer-to-peer communication between browsers for audio, video, and data sharing. While WebRTC brings valuable capabilities like seamless video conferencing and file transfer, it harbors a privacy vulnerability that many users remain unaware of: the local IP leak.
+WebRTC (Web Real-Time Communication) is a powerful browser API that enables direct peer-to-peer communication between browsers for audio, video, and data sharing. While WebRTC brings valuable capabilities like video conferencing and file transfer, it harbors a privacy vulnerability that many users remain unaware of: the local IP leak.
 
 ## Understanding WebRTC and the Leak Mechanism
 
-WebRTC was designed to facilitate real-time communication without requiring plugin installations or server-side processing for media streams. To establish peer-to-peer connections, browsers must exchange network candidates—information about available network interfaces and potential connection paths.
+WebRTC was designed to help real-time communication without requiring plugin installations or server-side processing for media streams. To establish peer-to-peer connections, browsers must exchange network candidates—information about available network interfaces and potential connection paths.
 
 The problem emerges when browsers expose local IP addresses to websites through the RTCPeerConnection API. Even when you route your traffic through a VPN or proxy, WebRTC can reveal your actual local network address, potentially exposing:
 

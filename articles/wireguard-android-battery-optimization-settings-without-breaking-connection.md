@@ -189,25 +189,25 @@ Understanding why WireGuard uses battery helps you make informed optimization ch
 **Battery Measurement Protocol**:
 
 1. **Baseline Measurement**:
-   - Disconnect all VPNs
-   - Enable WiFi on a known network
-   - Set screen brightness to 50%
-   - Keep screen on and note starting battery percentage
-   - Wait 30 minutes, record ending percentage
-   - Calculate baseline drain rate
+ - Disconnect all VPNs
+ - Enable WiFi on a known network
+ - Set screen brightness to 50%
+ - Keep screen on and note starting battery percentage
+ - Wait 30 minutes, record ending percentage
+ - Calculate baseline drain rate
 
 2. **Configuration Test**:
-   - Connect WireGuard with settings to test
-   - Maintain same screen brightness, WiFi network, usage
-   - Wait 30 minutes, record battery percentage
-   - Calculate test drain rate
-   - Compare to baseline
+ - Connect WireGuard with settings to test
+ - Maintain same screen brightness, WiFi network, usage
+ - Wait 30 minutes, record battery percentage
+ - Calculate test drain rate
+ - Compare to baseline
 
 3. **Real-World Usage Test**:
-   - Connect WireGuard with optimized settings
-   - Use phone normally for full day
-   - Check final battery percentage
-   - Compare to typical usage without VPN
+ - Connect WireGuard with optimized settings
+ - Use phone normally for full day
+ - Check final battery percentage
+ - Compare to typical usage without VPN
 
 **Measuring Results**:
 

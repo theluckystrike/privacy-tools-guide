@@ -32,7 +32,7 @@ Bitcoin Core, the reference implementation, stores the complete blockchain. As o
 - **Bandwidth**: 200GB monthly upload/download during initial sync
 - **Uptime**: Continuous for proper synchronization
 
-A repurposed desktop computer or small-form-factor PC works well. Raspberry Pi 5 with external SSD can handle pruning modes, but a full archival node needs more robust hardware.
+A repurposed desktop computer or small-form-factor PC works well. Raspberry Pi 5 with external SSD can handle pruning modes, but a full archival node needs more hardware.
 
 ## Installing Bitcoin Core
 
@@ -170,7 +170,7 @@ bitcoin-cli createwallet "my-wallet"
 bitcoin-cli getnewaddress "legacy" "legacy"
 ```
 
-The Core wallet provides comprehensive node integration but lacks some convenience features of modern alternatives.
+The Core wallet provides node integration but lacks some convenience features of modern alternatives.
 
 ## Network Security
 

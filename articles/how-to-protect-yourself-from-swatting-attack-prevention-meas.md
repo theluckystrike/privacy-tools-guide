@@ -2,7 +2,7 @@
 
 layout: default
 title: "How To Protect Yourself From Swatting Attack Prevention Measures"
-description: "Learn practical swatting attack prevention measures. This comprehensive guide covers threat modeling, address protection, emergency response protocols."
+description: "Learn practical swatting attack prevention measures. This guide covers threat modeling, address protection, emergency response protocols."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-swatting-attack-prevention-measures/
@@ -104,10 +104,10 @@ Establish a documented protocol for your household:
 1. **Establish a safe word** that only family members know
 2. **Designate a trusted contact** who can verify your safety
 3. **Create a physical folder** near your front door with:
-   - Your identification
-   - A letter explaining you may be targeted by swatting
-   - Contact information for your attorney
-   - Instructions for law enforcement to verify claims
+ - Your identification
+ - A letter explaining you may be targeted by swatting
+ - Contact information for your attorney
+ - Instructions for law enforcement to verify claims
 
 ### 6. Coordinate with Local Law Enforcement
 

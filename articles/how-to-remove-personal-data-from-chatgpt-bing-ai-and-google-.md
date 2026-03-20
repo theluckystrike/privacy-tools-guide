@@ -71,9 +71,9 @@ For complete removal from training data, submit a formal request to OpenAI:
 1. Visit **https://help.openai.com/en/collections/37407-data-privacy-and-security**
 2. Look for "Delete my data" or "Data deletion request"
 3. Alternatively, email **privacy@openai.com** with:
-   - Your account email
-   - Request type: "Delete my data from training models"
-   - Specific data types to remove
+ - Your account email
+ - Request type: "Delete my data from training models"
+ - Specific data types to remove
 
 ```bash
 # Example curl request format for data deletion

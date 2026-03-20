@@ -36,12 +36,12 @@ Before comparing services, identify what matters for your use case:
 
 ### 1. VirtualPostMail
 
-VirtualPostMail offers comprehensive mailbox management with digital scanning as a core feature. You receive email notifications with scanned images of incoming mail, then choose to open, forward, or shred items.
+VirtualPostMail offers mailbox management with digital scanning as a core feature. You receive email notifications with scanned images of incoming mail, then choose to open, forward, or shred items.
 
 **Pricing**: Starts around $9.99/month for basic plans, with additional fees per scanned item.
 
 **Pros**:
-- Robust scanning workflow
+- scanning workflow
 - Mobile app for managing mail on the go
 - Multiple address options across US locations
 

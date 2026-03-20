@@ -145,7 +145,7 @@ This configuration focuses on person detection while filtering out small movemen
 
 ## Integrating with Home Assistant
 
-For seamless integration, add the Frigate integration in Home Assistant by adding this to your `configuration.yaml`:
+For integration, add the Frigate integration in Home Assistant by adding this to your `configuration.yaml`:
 
 ```yaml
 frigate:

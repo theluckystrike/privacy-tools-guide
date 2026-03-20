@@ -2,7 +2,7 @@
 
 layout: default
 title: "Social Media Will What Legal Authority Executor Has Over You"
-description: "A comprehensive guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states."
+description: "A guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /social-media-will-what-legal-authority-executor-has-over-you/

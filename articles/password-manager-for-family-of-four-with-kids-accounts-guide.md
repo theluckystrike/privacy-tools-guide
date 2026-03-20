@@ -34,7 +34,7 @@ All family credentials live in a single vault with organized folders. Everyone k
 ### Individual Vaults with Selective Sharing
 Each family member maintains their own vault. Parents have admin rights to create and manage children's accounts while kids maintain autonomy over their personal credentials. Shared credentials are explicitly shared between relevant vault owners.
 
-The second model scales better as children grow and need more privacy. Most modern password managers support both models seamlessly.
+The second model scales better as children grow and need more privacy. Most modern password managers support both models.
 
 ## Implementation Steps
 

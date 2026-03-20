@@ -173,7 +173,7 @@ Medical records often use standardized formats like HL7 FHIR (Fast Healthcare In
 
 - Implement role-based access controls (RBAC)
 - Encrypt data at rest and in transit
-- Maintain comprehensive audit logs
+- Maintain audit logs
 - Support patient data export in portable formats
 - Ensure backup and disaster recovery capabilities
 
@@ -190,7 +190,7 @@ Medical records often use standardized formats like HL7 FHIR (Fast Healthcare In
 
 The Office for Civil Rights (OCR) within the Department of Health and Human Services enforces HIPAA. Patients can file complaints at [hhs.gov/ocr/privacy/hipaa/complaints](https://www.hhs.gov/ocr/privacy/hipaa/complaints). OCR has imposed significant penalties for violations, with fines ranging from $100 to $50,000 per violation.
 
-Understanding these rights empowers both patients seeking access to their data and developers building systems that must respect and facilitate those rights. HIPAA provides robust mechanisms for patient control over health information — knowing how to exercise these rights or implement them in code is a valuable skill for anyone working with healthcare data.
+Understanding these rights enables both patients seeking access to their data and developers building systems that must respect and help those rights. HIPAA provides mechanisms for patient control over health information — knowing how to exercise these rights or implement them in code is a valuable skill for anyone working with healthcare data.
 
 ---
 

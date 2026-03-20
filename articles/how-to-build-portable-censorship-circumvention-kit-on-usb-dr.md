@@ -15,17 +15,17 @@ intent-checked: true
 ---
 
 
-Building a portable censorship circumvention kit on a USB drive enables reliable internet access in regions with heavy filtering and censorship. This guide provides step-by-step instructions for creating a self-contained toolkit with Tor, VPN clients, and DNS tunneling tools that work across any computer without installation or traces. You'll learn how to configure bridges, automate connections, and maintain your kit for consistent access when traveling to countries that restrict internet freedom.
+Building a portable censorship circumvention kit on an USB drive enables reliable internet access in regions with heavy filtering and censorship. This guide provides step-by-step instructions for creating a self-contained toolkit with Tor, VPN clients, and DNS tunneling tools that work across any computer without installation or traces. You'll learn how to configure bridges, automate connections, and maintain your kit for consistent access when traveling to countries that restrict internet freedom.
 
 ## Why Build a Portable Kit
 
-Many countries implement network-level censorship that blocks access to news sites, social media platforms, and communication tools. When traveling to these regions, having a portable solution means you do not need to install software on every computer you use. A USB-based kit runs directly from the drive, leaves no installed software behind, and works on any computer with a USB port and operating system.
+Many countries implement network-level censorship that blocks access to news sites, social media platforms, and communication tools. When traveling to these regions, having a portable solution means you do not need to install software on every computer you use. An USB-based kit runs directly from the drive, leaves no installed software behind, and works on any computer with an USB port and operating system.
 
 The key components you need are a Tor Browser bundle configured with bridges, portable VPN clients, and tools for DNS tunneling. Each component serves different scenarios, and having all three ensures you can adapt to varying network restrictions.
 
 ## Preparing the USB Drive
 
-Select a USB 3.0 drive with at least 16GB of storage. The extra space accommodates the Tor Browser bundle, additional tools, and any cached bridges or configuration files you download while traveling.
+Select an USB 3.0 drive with at least 16GB of storage. The extra space accommodates the Tor Browser bundle, additional tools, and any cached bridges or configuration files you download while traveling.
 
 Format the drive with exFAT if you need cross-platform compatibility between Windows, macOS, and Linux. This filesystem works on all major operating systems without additional drivers. For better security, consider using LUKS encryption, though this requires administrative privileges on each computer you use.
 

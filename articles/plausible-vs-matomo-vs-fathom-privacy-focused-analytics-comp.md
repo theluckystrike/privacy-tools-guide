@@ -108,7 +108,7 @@ The self-hosted option requires a paid subscription but provides full data owner
 
 ### Matomo On-Premise
 
-Matomo offers the most comprehensive self-hosted option with no paid subscription required:
+Matomo offers the most self-hosted option with no paid subscription required:
 
 ```bash
 # Docker setup for Matomo

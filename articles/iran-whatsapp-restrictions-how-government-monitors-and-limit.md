@@ -19,7 +19,7 @@ Iran's government monitors and restricts WhatsApp through flow-based Deep Packet
 
 ## Understanding Iran's Traffic Management Infrastructure
 
-The Iranian government operates one of the most comprehensive internet filtering systems in the world, commonly referred to as the "Halal Internet" or national intranet. The infrastructure relies on multiple layers of filtering, with the Communications Regulatory Authority (CRA) coordinating efforts across internet service providers (ISPs).
+The Iranian government operates one of the most internet filtering systems in the world, commonly referred to as the "Halal Internet" or national intranet. The infrastructure relies on multiple layers of filtering, with the Communications Regulatory Authority (CRA) coordinating efforts across internet service providers (ISPs).
 
 Unlike simple IP blocking, Iran's approach to WhatsApp restriction uses **flow-based filtering** that analyzes traffic patterns rather than just destination addresses. This makes traditional VPN solutions less effective, as the system can detect encrypted tunnel signatures.
 

@@ -65,7 +65,7 @@ This script computes a 64-bit perceptual hash. When comparing hashes, a Hamming 
 
 ## Method 3: TinEye API Integration
 
-TinEye offers one of the most comprehensive reverse image search databases. Their API allows programmatic queries, though it requires an API key. For developers building monitoring systems, TinEye provides:
+TinEye offers one of the most reverse image search databases. Their API allows programmatic queries, though it requires an API key. For developers building monitoring systems, TinEye provides:
 
 - Exact match detection
 - Modified copy identification
@@ -184,7 +184,7 @@ Combine these methods into a systematic workflow:
 | Yandex API | Freemium | Full | Large |
 | Custom Python | Variable | Full | Depends on integration |
 
-For developers, the Python-based approach using perceptual hashing provides the best balance of cost control and customization. Combine it with API access to search engines for comprehensive coverage.
+For developers, the Python-based approach using perceptual hashing provides the best balance of cost control and customization. Combine it with API access to search engines for coverage.
 
 ## Related Reading
 

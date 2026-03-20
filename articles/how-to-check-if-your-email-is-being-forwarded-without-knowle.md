@@ -224,7 +224,7 @@ If you discover unauthorized forwarding:
 - Enable login alerts for new devices
 - Regularly audit forwarding rules (monthly)
 - Use password managers to prevent credential reuse
-- Consider using a privacy-focused email provider with robust security features
+- Consider using a privacy-focused email provider with security features
 
 Detecting unauthorized email forwarding requires vigilance and understanding of email metadata. By regularly examining headers, monitoring forwarding rules, and implementing automated checks, you can protect your communications from silent exfiltration.
 

@@ -67,11 +67,11 @@ The trade-off involves trusting a third party with your forwarding rules. For hi
 
 ## Method 2: Dedicated Forwarding Addresses
 
-Create a separate email account specifically for one-time use. This approach works well when you need something more robust than aliases but don't want to set up a full alias infrastructure.
+Create a separate email account specifically for one-time use. This approach works well when you need something more than aliases but don't want to set up a full alias infrastructure.
 
 ### Gmail Filters for Disposable Management
 
-If you use Gmail, you can leverage the plus-addressing feature combined with filters:
+If you use Gmail, you can use the plus-addressing feature combined with filters:
 
 1. Create a base address like `myprojectsignups@gmail.com`
 2. Sign up for services using `myprojectsignups+netflix@gmail.com`

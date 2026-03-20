@@ -46,7 +46,7 @@ The Service Node network handles several functions:
 
 1. **Message delivery**: Storing encrypted messages for offline recipients
 2. **Path construction**: Selecting random three-node paths for each message
-3. **Key distribution**: Facilitating the initial key exchange between users
+3. **Key distribution**: Helping the initial key exchange between users
 4. **Directory services**: Maintaining a current list of active Service Nodes
 
 Unlike Tor's directory authorities, which can be compromised, the Oxen blockchain provides decentralized consensus about network state. Each Service Node's reputation is recorded on-chain, making historical manipulation difficult.

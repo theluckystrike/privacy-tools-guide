@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Abine Blur is a privacy-focused service that provides masked contact details—essentially creating throwaway email addresses, phone numbers, and credit card numbers that forward to your real information. This allows you to sign up for services, make purchases, and communicate without exposing your actual identity. For developers and power users who value digital privacy, understanding how to leverage Blur effectively can significantly reduce your attack surface across the web.
+Abine Blur is a privacy-focused service that provides masked contact details—creating throwaway email addresses, phone numbers, and credit card numbers that forward to your real information. This allows you to sign up for services, make purchases, and communicate without exposing your actual identity. For developers and power users who value digital privacy, understanding how to use Blur effectively can significantly reduce your attack surface across the web.
 
 ## How Abine Blur Works
 
@@ -114,7 +114,7 @@ The XXXX placeholders represent the masked portions that Blur generates.
 
 ## Managing Your Masked Data
 
-The Blur dashboard provides comprehensive management tools for all your masked data. You can view history, categorize masks by service or purpose, and terminate individual masks when they're no longer needed. This centralized management makes it easy to maintain good privacy hygiene by regularly rotating masks.
+The Blur dashboard provides management tools for all your masked data. You can view history, categorize masks by service or purpose, and terminate individual masks when they're no longer needed. This centralized management makes it easy to maintain good privacy hygiene by regularly rotating masks.
 
 For users with many active masks, organizing them with clear labels becomes essential. Create descriptive labels like "Amazon Purchase," "Job Application," or "Online Course" when generating new masks. This organization helps track which services have your data and makes it simpler to identify problematic sources later.
 

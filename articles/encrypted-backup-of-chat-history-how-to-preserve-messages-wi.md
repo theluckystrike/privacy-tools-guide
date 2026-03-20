@@ -36,7 +36,7 @@ Your encryption strategy should include:
 
 ## Exporting Chat Data
 
-Most modern chat applications provide export functionality. Signal offers comprehensive export options through its settings menu. Telegram allows exporting individual chats or entire histories via the desktop client. WhatsApp includes backup export in its settings, though Android and iOS handle this differently.
+Most modern chat applications provide export functionality. Signal offers export options through its settings menu. Telegram allows exporting individual chats or entire histories via the desktop client. WhatsApp includes backup export in its settings, though Android and iOS handle this differently.
 
 For developers building custom solutions, the Signal protocol library provides programmatic access to message databases. The keyczar project offers encryption primitives suitable for implementing custom backup systems. Many chat platforms expose data through official APIs or unofficial community libraries.
 
@@ -44,7 +44,7 @@ When exporting, consider the format. JSON provides flexibility but increases fil
 
 ## Implementing Encrypted Backups with GPG
 
-GNU Privacy Guard (GPG) provides a straightforward approach for encrypting chat backups without custom code. This method works across platforms and leverages well-audited cryptographic implementations.
+GNU Privacy Guard (GPG) provides a straightforward approach for encrypting chat backups without custom code. This method works across platforms and uses well-audited cryptographic implementations.
 
 First, generate an encryption key:
 
@@ -60,7 +60,7 @@ gpg --armor --export your-email@example.com > public.key
 gpg --armor --export-secret-keys your-email@example.com > secret.key
 ```
 
-Store these keys on separate media—perhaps a USB drive kept in a secure location. The secret key file enables decryption on any machine with GPG installed.
+Store these keys on separate media—perhaps an USB drive kept in a secure location. The secret key file enables decryption on any machine with GPG installed.
 
 Encrypt your chat export:
 

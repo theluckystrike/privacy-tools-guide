@@ -46,7 +46,7 @@ shred -u -z -n 3 -r /path/to/sensitive_directory/
 
 The `-u` flag removes the file after overwriting, `-z` adds a final layer of zeros to hide the shredding operation, and `-n` specifies the number of overwrite passes. The National Institute of Standards and Technology (NIST) notes that a single overwrite with random data is sufficient for modern hard drives, though three passes provide additional confidence.
 
-For more comprehensive tools, consider `srm` (secure remove) from the `secure-delete` package:
+For more tools, consider `srm` (secure remove) from the `secure-delete` package:
 
 ```bash
 # Install on Debian/Ubuntu
@@ -96,7 +96,7 @@ PowerShell's `Remove-Item` with the `-Force` flag does not securely overwrite da
 cipher /w:C:\
 ```
 
-For more robust solutions, consider the `SDelete` tool from Microsoft's Sysinternals suite:
+For more solutions, consider the `SDelete` tool from Microsoft's Sysinternals suite:
 
 ```bash
 # Download SDelete

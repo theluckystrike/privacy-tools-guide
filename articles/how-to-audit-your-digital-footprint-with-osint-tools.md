@@ -274,20 +274,20 @@ Pages you've deleted may still be cached:
 
 ```
 1. Google Cache
-   - In Google search results: Click dropdown next to URL
-   - Select "Cached" to see Google's last stored version
-   - Old information can be found this way
+ - In Google search results: Click dropdown next to URL
+ - Select "Cached" to see Google's last stored version
+ - Old information can be found this way
 
 2. Wayback Machine (archive.org)
-   - Type your name or website
-   - See snapshots of pages over time
-   - Useful for finding very old digital footprints
-   - Can request removal (though not guaranteed)
+ - Type your name or website
+ - See snapshots of pages over time
+ - Useful for finding very old digital footprints
+ - Can request removal (though not guaranteed)
 
 3. Archive.today
-   - Similar to Wayback Machine
-   - More difficult for websites to remove content
-   - Request removal where possible
+ - Similar to Wayback Machine
+ - More difficult for websites to remove content
+ - Request removal where possible
 ```
 
 If you find cached content you want removed:

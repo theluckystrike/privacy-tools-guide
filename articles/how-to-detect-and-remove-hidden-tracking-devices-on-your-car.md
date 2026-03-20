@@ -42,7 +42,7 @@ Use a mirror on an extension handle to inspect areas you cannot see directly. Lo
 
 ## Technical Detection Methods
 
-For more comprehensive detection, employ RF (radio frequency) scanning and protocol analysis.
+For more detection, employ RF (radio frequency) scanning and protocol analysis.
 
 ### Using an RF Detector
 
@@ -57,7 +57,7 @@ Modern active trackers transmit periodically. If your detector shows intermitten
 
 ### Network Scanning with Smartphone Apps
 
-For cellular-active devices, you can leverage network scanning applications. On Android, apps like Wi-Fi Analyzer and cellular network scanners can detect unusual RF activity. iOS users can employ specialized detection apps that monitor for Bluetooth LE and NFC scanning.
+For cellular-active devices, you can use network scanning applications. On Android, apps like Wi-Fi Analyzer and cellular network scanners can detect unusual RF activity. iOS users can employ specialized detection apps that monitor for Bluetooth LE and NFC scanning.
 
 A more advanced approach involves monitoring cellular network activity:
 
@@ -120,7 +120,7 @@ Several mobile applications automate the detection process. These apps typically
 - **Tracker Detect** (Android): Specifically identifies Apple AirTags
 - **Glint Finder** (iOS): Uses the camera to detect hidden camera lenses (some trackers have built-in cameras)
 
-Run multiple detection apps for comprehensive coverage, as each may catch different device types.
+Run multiple detection apps for coverage, as each may catch different device types.
 
 ## Removing Tracking Devices
 

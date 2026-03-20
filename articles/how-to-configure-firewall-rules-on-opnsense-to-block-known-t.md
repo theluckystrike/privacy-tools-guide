@@ -25,7 +25,7 @@ Blocking trackers at the IP level offers several advantages over DNS-based block
 
 ## Gathering Tracking Domain IP Addresses
 
-The foundation of this setup involves obtaining a list of IP addresses associated with known tracking domains. Several maintained blocklists exist, with StevenBlack's hosts file being one of the most comprehensive options. This aggregated list combines multiple sources including ad servers, trackers, and phishing domains.
+The foundation of this setup involves obtaining a list of IP addresses associated with known tracking domains. Several maintained blocklists exist, with StevenBlack's hosts file being one of the most options. This aggregated list combines multiple sources including ad servers, trackers, and phishing domains.
 
 To extract IP addresses from a hosts file, you can use command-line tools on any Unix-like system. The following bash one-liner pulls the latest StevenBlack hosts file and extracts unique IP addresses:
 
@@ -111,7 +111,7 @@ Schedule this script to run weekly or monthly via **System > Settings > Cron**. 
 
 Blocking thousands of IP addresses at the firewall does introduce some processing overhead, though modern OPNsense hardware typically handles this with minimal impact. If you notice any performance degradation, consider these optimizations:
 
-First, reduce the number of blocked IPs by using more focused blocklists. The comprehensive StevenBlack list includes 广告 servers that may not be relevant to your threat model.
+First, reduce the number of blocked IPs by using more focused blocklists. The StevenBlack list includes 广告 servers that may not be relevant to your threat model.
 
 Second, ensure your OPNsense has adequate RAM. Aliases are loaded into memory, and larger lists require more memory allocation.
 
@@ -119,7 +119,7 @@ Third, monitor your CPU usage after implementing the blocking rules. OPNsense pr
 
 ## Alternative Approaches
 
-While IP-level blocking provides robust network-wide protection, consider supplementing it with DNS-based blocking for defense-in-depth. OPNsense includes the Unbound DNS resolver, which can be configured to return null responses for known tracker domains. This handles some cases that IP blocking misses, such as trackers behind CDNs that share IPs with legitimate services.
+While IP-level blocking provides network-wide protection, consider supplementing it with DNS-based blocking for defense-in-depth. OPNsense includes the Unbound DNS resolver, which can be configured to return null responses for known tracker domains. This handles some cases that IP blocking misses, such as trackers behind CDNs that share IPs with legitimate services.
 
 You might also want to implement logging exceptions for specific devices. Some smart home devices may require access to certain tracker domains to function properly. In such cases, create pass rules for specific source IPs that take precedence over your blocking rule.
 

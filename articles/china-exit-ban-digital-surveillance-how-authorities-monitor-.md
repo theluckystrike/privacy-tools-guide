@@ -146,7 +146,7 @@ For users who need to minimize their digital footprint when traveling in or thro
 
 ## The Broader Technical ecosystem
 
-The Chinese surveillance system demonstrates how metadata aggregation creates comprehensive behavioral profiles without requiring access to encrypted content. For developers, this illustrates a fundamental principle: encryption protects content, but metadata often reveals more than intended.
+The Chinese surveillance system demonstrates how metadata aggregation creates behavioral profiles without requiring access to encrypted content. For developers, this illustrates a fundamental principle: encryption protects content, but metadata often reveals more than intended.
 
 Modern privacy architecture increasingly focuses on metadata protection—not just encrypting what's sent, but hiding who communicates with whom, when, and how often. Techniques like mixnets, private information retrieval, and zero-knowledge proofs represent the cutting edge of this defense.
 

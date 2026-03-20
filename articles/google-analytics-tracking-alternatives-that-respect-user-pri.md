@@ -202,7 +202,7 @@ trackPage();
 
 ### Using PostHog for Self-Hosted Analytics
 
-PostHog offers a comprehensive product analytics platform with a self-hosted option:
+PostHog offers a product analytics platform with a self-hosted option:
 
 ```bash
 # Deploy PostHog with Docker

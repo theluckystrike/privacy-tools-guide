@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Broker Removal Diy Complete Guide To Opting Out Of Top"
-description: "A comprehensive guide for developers and power users on removing personal data from the top fifty data broker sites in 2026. Includes automated."
+description: "A guide for developers and power users on removing personal data from the top fifty data broker sites in 2026. Includes automated."
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-broker-removal-diy-complete-guide-to-opting-out-of-top-/

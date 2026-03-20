@@ -23,7 +23,7 @@ RoboForm served many users well for years, but several factors drive developers 
 
 - **Open-source architecture**: Bitwarden's client code is publicly auditable
 - **Self-hosting option**: Run your own vault server for complete data control
-- **CLI excellence**: The Bitwarden CLI is robust and scriptable
+- **CLI excellence**: The Bitwarden CLI is and scriptable
 - **API access**: Full programmatic access to vault operations
 - **Import flexibility**: Supports more formats than most competitors
 

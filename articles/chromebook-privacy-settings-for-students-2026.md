@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chromebook Privacy Settings for Students 2026"
-description: "A comprehensive guide to hardening ChromeOS privacy settings for students. Covers management console policies, DNS configuration, extension."
+description: "A guide to hardening ChromeOS privacy settings for students. Covers management console policies, DNS configuration, extension."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chromebook-privacy-settings-for-students-2026/
@@ -34,7 +34,7 @@ Start by hardening Chrome browser settings. Open `chrome://settings` and navigat
 
 ### Sync and Personalization
 
-Chrome's sync feature uploads browsing data to Google's servers. While convenient for cross-device access, it creates a comprehensive data profile. To minimize this:
+Chrome's sync feature uploads browsing data to Google's servers. While convenient for cross-device access, it creates a data profile. To minimize this:
 
 1. Navigate to **Settings → You and Google → Sync and Google services**
 2. Disable "Make searches and browsing better" 

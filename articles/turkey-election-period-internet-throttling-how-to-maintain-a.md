@@ -21,7 +21,7 @@ Turkey has a documented history of internet throttling and censorship during ele
 
 ## How Turkey Implements Election-Period Internet Restrictions
 
-The Turkish government utilizes several technical mechanisms to throttle and restrict internet access during sensitive periods:
+The Turkish government uses several technical mechanisms to throttle and restrict internet access during sensitive periods:
 
 1. **Deep Packet Inspection (DPI)**: Traffic analysis systems that identify and throttle specific protocols
 2. **DNS Manipulation**: Redirecting or blocking DNS queries for specific domains
@@ -134,7 +134,7 @@ ip route add default via 192.168.1.1 dev eth0 metric 200
 
 ### Tor Bridge Configuration
 
-Tor bridges are less likely to be blocked since they don't appear in public lists. Request a obfs4 bridge:
+Tor bridges are less likely to be blocked since they don't appear in public lists. Request an obfs4 bridge:
 
 ```bash
 # Install Tor and configure obfs4 bridge

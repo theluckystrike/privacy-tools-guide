@@ -173,7 +173,7 @@ If you see unexpected DNS queries or unusual traffic patterns, your VPN may not 
 
 ## Using VPN Testing Frameworks
 
-Several comprehensive frameworks exist for testing VPN security:
+Several frameworks exist for testing VPN security:
 
 - **Algo VPN** - Deploy your own VPN server to compare performance and features
 - **WireGuard** - Open source VPN protocol with auditable code

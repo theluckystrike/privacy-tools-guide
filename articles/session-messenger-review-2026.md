@@ -69,7 +69,7 @@ def send_session_message(pubkey, message):
     return response.json()
 ```
 
-This simplicity enables rapid prototyping of notification systems or automated responders. However, the API remains relatively limited compared to Matrix's more comprehensive specification.
+This simplicity enables rapid prototyping of notification systems or automated responders. However, the API remains relatively limited compared to Matrix's more specification.
 
 For building custom clients, Session maintains an open-source codebase. The libraries include reference implementations for:
 

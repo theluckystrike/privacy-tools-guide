@@ -200,9 +200,9 @@ sudo dhclient -r wlan0 && sudo dhclient wlan0
 
 ## Practical Considerations
 
-MAC address randomization significantly reduces your fingerprint but operates within limitations. Sophisticated tracking systems combine multiple signals—timing patterns, packet sizes, radio characteristics—to de-anonymize randomized MAC addresses despite the address changes. For comprehensive protection, combine MAC randomization with VPN usage, browser fingerprinting defenses, and consistent network hygiene.
+MAC address randomization significantly reduces your fingerprint but operates within limitations. Sophisticated tracking systems combine multiple signals—timing patterns, packet sizes, radio characteristics—to de-anonymize randomized MAC addresses despite the address changes. For protection, combine MAC randomization with VPN usage, browser fingerprinting defenses, and consistent network hygiene.
 
-Randomized MAC addresses also break location-based services that rely on persistent device identifiers. Your device won't automatically reconnect to known networks using the original MAC, requiring you to re-authenticate after randomization. Save network credentials in your password manager to streamline reconnection.
+Randomized MAC addresses also break location-based services that rely on persistent device identifiers. Your device won't automatically reconnect to known networks using the original MAC, requiring you to re-authenticate after randomization. Save network credentials in your password manager to improve reconnection.
 
 ## Related Reading
 

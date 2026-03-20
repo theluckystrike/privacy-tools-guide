@@ -142,7 +142,7 @@ This architecture prevents lateral movement—departing employees lose access to
 
 ### Audit Trail Analysis
 
-Extract and analyze Tresorit's comprehensive audit logs:
+Extract and analyze Tresorit's audit logs:
 
 ```bash
 # Export audit logs for compliance review
@@ -338,7 +338,7 @@ Tresorit makes sense in specific scenarios:
 
 For general use—backing up photos, syncing documents across personal devices—alternatives like Sync.com or Internxt offer similar zero-knowledge encryption at lower price points. And for teams prioritizing real-time collaboration, mainstream services with server-side encryption often provide better workflow integration.
 
-The decision hinges on your threat model and regulatory requirements. If the highest level of file confidentiality combined with Swiss data protection laws and comprehensive audit capabilities justifies the premium, Tresorit delivers. For budget-conscious teams with less stringent compliance needs, alternatives provide equivalent encryption at lower cost.
+The decision hinges on your threat model and regulatory requirements. If the highest level of file confidentiality combined with Swiss data protection laws and audit capabilities justifies the premium, Tresorit delivers. For budget-conscious teams with less stringent compliance needs, alternatives provide equivalent encryption at lower cost.
 
 
 ## Related Reading

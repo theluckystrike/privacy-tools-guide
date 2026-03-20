@@ -145,7 +145,7 @@ tweets = client.get_users_tweets(
 )
 ```
 
-Pricing changes in 2023-2024 limited free access. Comprehensive data analysis requires paid tiers.
+Pricing changes in 2023-2024 limited free access. data analysis requires paid tiers.
 
 ### Mastodon API
 

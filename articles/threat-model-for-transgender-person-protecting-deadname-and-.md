@@ -137,7 +137,7 @@ for broker in "${BROKERS[@]}"; do
 done
 ```
 
-For comprehensive removal, consider services like DeleteMe or Incogni, which automate broker removals on your behalf.
+For removal, consider services like DeleteMe or Incogni, which automate broker removals on your behalf.
 
 ## Social Media and Platform Privacy
 

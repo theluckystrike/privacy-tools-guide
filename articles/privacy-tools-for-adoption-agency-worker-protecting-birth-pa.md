@@ -164,7 +164,7 @@ getfacl -R /case-files/
 
 ## Audit Logging and Monitoring
 
-### Comprehensive Audit Trails
+### Audit Trails
 
 Implement logging for all access to birth parent records. The Linux audit framework provides detailed tracking:
 

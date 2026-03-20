@@ -60,7 +60,7 @@ Signal's bot ecosystem is relatively limited compared to other platforms. The AP
 
 ### Wire Bot and Webhook Framework
 
-Wire provides a more comprehensive API surface for business integrations:
+Wire provides a more API surface for business integrations:
 
 ```javascript
 // Wire Bot SDK example
@@ -129,7 +129,7 @@ For organizations with strict data handling requirements, Wire's self-hosted opt
 
 ## Group Communication and Team Features
 
-Business use typically requires robust group functionality.
+Business use typically requires group functionality.
 
 ### Signal Groups
 

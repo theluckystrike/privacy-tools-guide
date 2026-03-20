@@ -2,7 +2,7 @@
 
 layout: default
 title: "How To Use State Attorney General Office To Enforce Privacy"
-description: "A practical guide for developers and power users on leveraging state attorney general offices to enforce privacy rights against companies collecting."
+description: "A practical guide for developers and power users on using state attorney general offices to enforce privacy rights against companies collecting."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-state-attorney-general-office-to-enforce-privacy-/
@@ -44,7 +44,7 @@ Most state privacy laws share common elements:
 | Connecticut | CTDPA | Connecticut AG |
 | Utah | UCPA | Utah AG |
 
-Even without comprehensive privacy laws, every state has consumer protection statutes that address deceptive practices—which often encompass data mishandling.
+Even without privacy laws, every state has consumer protection statutes that address deceptive practices—which often encompass data mishandling.
 
 ## Filing a Complaint: Step-by-Step Process
 

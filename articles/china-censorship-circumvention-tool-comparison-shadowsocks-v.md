@@ -36,7 +36,7 @@ Shadowsocks originated as a fork of the encrypted proxy project and uses the SOC
 
 ### V2Ray
 
-V2Ray (Project V) is a more comprehensive platform that supports multiple protocols and routing capabilities. It implements VMess, VLESS, and Trojan protocols natively, along with sophisticated traffic routing and balancing.
+V2Ray (Project V) is a more platform that supports multiple protocols and routing capabilities. It implements VMess, VLESS, and Trojan protocols natively, along with sophisticated traffic routing and balancing.
 
 **Strengths:**
 - Multiple protocol support (VMess, VLESS, Trojan, Shadowsocks)

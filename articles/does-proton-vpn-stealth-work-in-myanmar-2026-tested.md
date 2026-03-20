@@ -200,9 +200,9 @@ Using VPNs in restrictive jurisdictions carries inherent risks. Developers shoul
 
 ```bash
 # Configure iptables kill switch (Linux)
-iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A OUTPUT -o tun+ -j ACCEPT
-iptables -A OUTPUT -j DROP
+iptables -An OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -An OUTPUT -o tun+ -j ACCEPT
+iptables -An OUTPUT -j DROP
 ```
 
 ## Related Reading

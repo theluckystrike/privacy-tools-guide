@@ -186,7 +186,7 @@ Running such checks weekly helps identify when brokers republish your informatio
 
 ## Using OSINT Tools for Personal Reconnaissance
 
-Open-source intelligence tools enable comprehensive monitoring of your digital footprint. Tools like Sherlock, Spiderfoot, and recon-ng automate data collection from public sources.
+Open-source intelligence tools enable monitoring of your digital footprint. Tools like Sherlock, Spiderfoot, and recon-ng automate data collection from public sources.
 
 ```bash
 # Install and run Sherlock for username tracking
@@ -309,7 +309,7 @@ Beyond technical monitoring, consider these complementary approaches:
 
 **Reverse Image Search**: Upload photos of yourself to Google Images or TinEye periodically to discover where your images appear without authorization.
 
-**Social Media Listening**: Use platform-native alerts for mentions, or employ APIs from services like Brandwatch or Mention for comprehensive social monitoring.
+**Social Media Listening**: Use platform-native alerts for mentions, or employ APIs from services like Brandwatch or Mention for social monitoring.
 
 **Public Records Monitoring**: Register with local court systems to receive alerts when your name appears in new filings, which can indicate investigation or legal action.
 

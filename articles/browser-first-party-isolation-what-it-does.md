@@ -19,7 +19,7 @@ First-party isolation is a browser security mechanism that separates data on a p
 
 ## How First-Party Isolation Differs from Standard Cookie Behavior
 
-In standard browser configurations, cookies set by `analytics.example.com` can be read by `news-site.com` when embedded as a third-party resource. This is the mechanism that allows ad networks to build comprehensive browsing profiles across thousands of sites. First-party isolation changes this by effectively creating separate cookie jars for each origin, even when the same third-party script loads across multiple sites.
+In standard browser configurations, cookies set by `analytics.example.com` can be read by `news-site.com` when embedded as a third-party resource. This is the mechanism that allows ad networks to build browsing profiles across thousands of sites. First-party isolation changes this by effectively creating separate cookie jars for each origin, even when the same third-party script loads across multiple sites.
 
 Consider a scenario where you visit two different news websites, both embedding the same advertising tracker. Without first-party isolation, the tracker sets a cookie on the first site and reads it on the second, building a profile of your interests. With first-party isolation enabled, the tracker receives different identifiers on each site—it cannot correlate that the same person visited both locations.
 
@@ -200,7 +200,7 @@ function testCookieIsolation() {
 
 ---
 
-First-party isolation represents a fundamental shift in how browsers handle web storage. By treating each site as a separate security context for client-side data, browsers can significantly reduce the ability of trackers to build comprehensive user profiles. While not a complete privacy solution, it forms a critical layer in a defense-in-depth approach to web privacy.
+First-party isolation represents a fundamental shift in how browsers handle web storage. By treating each site as a separate security context for client-side data, browsers can significantly reduce the ability of trackers to build user profiles. While not a complete privacy solution, it forms a critical layer in a defense-in-depth approach to web privacy.
 
 For developers, understanding these isolation mechanisms is essential for building privacy-respecting applications and debugging issues that arise as browsers continue to strengthen their privacy defaults.
 

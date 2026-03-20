@@ -18,7 +18,7 @@ tags: [privacy-tools-guide]
 
 # Encrypted Cloud Storage for Small Business 2026: A Practical Guide
 
-As cyber threats evolve and data privacy regulations tighten, small businesses increasingly need robust encryption solutions for their cloud storage. This guide covers the technical aspects of encrypted cloud storage, implementation strategies, and practical considerations for developers and power users evaluating solutions in 2026.
+As cyber threats evolve and data privacy regulations tighten, small businesses increasingly need encryption solutions for their cloud storage. This guide covers the technical aspects of encrypted cloud storage, implementation strategies, and practical considerations for developers and power users evaluating solutions in 2026.
 
 ## Understanding Encryption Models
 
@@ -55,9 +55,9 @@ The rclone tool supports encrypted backends, making it straightforward to add en
 {% highlight bash %}
 # Configure an encrypted remote using rclone
 rclone config create my-encrypted-backup crypt \
-    remote s3:my-bucket/encrypted \
-    password "your-strong-encryption-key" \
-    password2 "salt-for_key_derivation"
+ remote s3:my-bucket/encrypted \
+ password "your-strong-encryption-key" \
+ password2 "salt-for_key_derivation"
 {% endhighlight %}
 
 This configuration encrypts files before uploading to S3, ensuring your cloud provider stores only encrypted blobs. The encryption happens locally, and your plaintext data never leaves your network.
@@ -69,10 +69,10 @@ Cryptomator offers a FUSE-based encrypted vault solution suitable for team workf
 {% highlight java %}
 // Using Cryptomator's vault API for programmatic access
 Vault vault = Vault.Builder()
-    .withCipherSpec(CipherSpec.aesGcm256())
-    .withKeyDerivation(KeyDerivation.argon2id())
-    .withPath(Path.of("/team/vault"))
-    .build();
+ .withCipherSpec(CipherSpec.aesGcm256())
+ .withKeyDerivation(KeyDerivation.argon2id())
+ .withPath(Path.of("/team/vault"))
+ .build();
 
 vault.unlock("vault-password");
 DirectoryContents contents = vault.getContents();
@@ -88,22 +88,22 @@ For developers requiring custom implementations, libsodium provides well-audited
 #include <sodium.h>
 
 int encrypt_file(const unsigned char *plaintext, 
-                 size_t plaintext_len,
-                 const unsigned char *key,
-                 unsigned char **ciphertext_out) {
-    
-    unsigned char nonce[crypto_secretbox_NONCEBYTES];
-    randombytes_buf(nonce, sizeof(nonce));
-    
-    *ciphertext_out = malloc(plaintext_len + crypto_secretbox_MACBYTES);
-    
-    crypto_secretbox_easy(*ciphertext_out, 
-                         plaintext, 
-                         plaintext_len, 
-                         nonce, 
-                         key);
-    
-    return 0;
+ size_t plaintext_len,
+ const unsigned char *key,
+ unsigned char **ciphertext_out) {
+ 
+ unsigned char nonce[crypto_secretbox_NONCEBYTES];
+ randombytes_buf(nonce, sizeof(nonce));
+ 
+ *ciphertext_out = malloc(plaintext_len + crypto_secretbox_MACBYTES);
+ 
+ crypto_secretbox_easy(*ciphertext_out, 
+ plaintext, 
+ plaintext_len, 
+ nonce, 
+ key);
+ 
+ return 0;
 }
 {% endhighlight %}
 
@@ -131,8 +131,8 @@ restic -r s3:https://s3.amazonaws.com/bucket/backup init
 
 # Backup with automatic encryption
 restic -r s3:https://s3.amazonaws.com/bucket/backup backup \
-    --password-file /etc/secrets/backup-pass \
-    /important/data
+ --password-file /etc/secrets/backup-pass \
+ /important/data
 {% endhighlight %}
 
 Schedule regular backup verification tests to ensure encryption integrity and recovery procedures work correctly.

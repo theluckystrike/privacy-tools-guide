@@ -156,7 +156,7 @@ sqlite3 cookies.sqlite "SELECT host, name, value, expiry FROM moz_cookies" \
   > cookies_export.txt
 ```
 
-## Building a Comprehensive Evidence Package
+## Building an Evidence Package
 
 Organize collected evidence systematically:
 

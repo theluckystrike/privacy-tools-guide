@@ -209,7 +209,7 @@ The Shortcuts app integration allows automation beyond what apps provide nativel
 # 4. Combine with "Copy to Clipboard"
 ```
 
-App Extension support varies—1Password provides the most seamless Safari integration with autofill across websites. Bitwarden's extension works well but requires slightly more configuration.
+App Extension support varies—1Password provides the most Safari integration with autofill across websites. Bitwarden's extension works well but requires slightly more configuration.
 
 Biometric unlock speed differs significantly. In testing, 1Password responds fastest to Face ID, followed by Bitwarden, then Proton Pass. This matters when you're unlocking your vault dozens of times daily.
 

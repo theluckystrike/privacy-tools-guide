@@ -180,7 +180,7 @@ Zero knowledge proofs are not a complete solution:
 
 The future of metadata-private messaging combines multiple techniques: ZKP for authentication without identification, mixnets for traffic analysis resistance, DC-mixes for interactive deniability, and encrypted headers for routing without content exposure.
 
-As these technologies mature, expect to see messaging applications that reveal virtually no metadata to anyone—including the servers that facilitate communication. The mathematical guarantees of zero knowledge proofs provide a foundation for truly private conversation metadata.
+As these technologies mature, expect to see messaging applications that reveal no metadata to anyone—including the servers that help communication. The mathematical guarantees of zero knowledge proofs provide a foundation for truly private conversation metadata.
 
 For developers, now is the time to experiment with these protocols. Libraries like `libsnark`, `bellman`, and `bulletproofs` are becoming more accessible. The privacy-preserving messaging protocols of tomorrow are being built today.
 

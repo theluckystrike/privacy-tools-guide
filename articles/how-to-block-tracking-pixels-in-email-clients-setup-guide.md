@@ -42,7 +42,7 @@ This approach loads tracking pixels through Apple's proxy servers, masking your 
 
 ### Thunderbird
 
-Mozilla Thunderbird provides robust tracking protection:
+Mozilla Thunderbird provides tracking protection:
 
 1. Go to **Settings → Privacy & Security**
 2. Enable "Block remote content in messages"

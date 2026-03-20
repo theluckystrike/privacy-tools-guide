@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Keybase Filesystem (KBFS) Review: Secure Encrypted Storage for Teams"
-description: "A comprehensive review of Keybase Filesystem (KBFS) - explore how this zero-knowledge encrypted storage solution works for individuals and teams."
+description: "A review of Keybase Filesystem (KBFS) - explore how this zero-knowledge encrypted storage solution works for individuals and teams."
 date: 2024-01-15
 author: theluckystrike
 permalink: /keybase-filesystem-encrypted-storage-review/

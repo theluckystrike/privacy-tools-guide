@@ -138,7 +138,7 @@ This CSP prevents loading scripts from third-party sources, though it requires c
 
 ### Network-Level Blocking
 
-For comprehensive protection, consider network-level blocking using Pi-hole or similar solutions:
+For protection, consider network-level blocking using Pi-hole or similar solutions:
 
 ```bash
 # Add tracker domains to Pi-hole blocklist

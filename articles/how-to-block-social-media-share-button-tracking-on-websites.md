@@ -26,13 +26,13 @@ When you visit a page with social media share buttons, the browser loads scripts
 - Referring URL
 - Cookies and tracking identifiers
 
-Facebook's Like button, for example, sets cookies on your device regardless of whether you have a Facebook account or click anything. Twitter's share button similarly tracks page views across the web. This data builds a comprehensive profile of your browsing habits, interests, and behavior.
+Facebook's Like button, for example, sets cookies on your device regardless of whether you have a Facebook account or click anything. Twitter's share button similarly tracks page views across the web. This data builds a profile of your browsing habits, interests, and behavior.
 
 ## Blocking Tracking at the Browser Level
 
 Users can block social media tracking through browser extensions. uBlock Origin filters out known tracking domains at the network level. Privacy Badger learns to block trackers based on observed behavior. These extensions work automatically and require no configuration.
 
-For Firefox users, enable Enhanced Tracking Protection in browser settings. This feature blocks known social media trackers by default. Chrome users can use the built-in Safe Browsing protection, though it is less comprehensive than dedicated privacy extensions.
+For Firefox users, enable Enhanced Tracking Protection in browser settings. This feature blocks known social media trackers by default. Chrome users can use the built-in Safe Browsing protection, though it is less than dedicated privacy extensions.
 
 Browser developers also offer native solutions. Firefox's Facebook Container extension isolates Facebook tracking to prevent it from following you across other websites. Safari's Intelligent Tracking Prevention automatically identifies and blocks cross-site trackers.
 

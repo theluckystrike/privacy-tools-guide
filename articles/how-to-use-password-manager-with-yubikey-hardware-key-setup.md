@@ -40,7 +40,7 @@ Bitwarden offers free support for FIDO2 authentication, making it an excellent c
 
 Log into your Bitwarden vault through the web interface. Navigate to **Settings** → **Two-Step Login**. You'll see available two-step methods listed. Locate **FIDO2 WebAuthn** in the list and click the toggle to enable it.
 
-Bitwarden will prompt you to register your YubiKey. Insert your YubiKey into a USB port when prompted. When the browser requests access to your security key, touch the golden contact on your YubiKey when it pulses. This touch confirms your physical presence and completes the registration.
+Bitwarden will prompt you to register your YubiKey. Insert your YubiKey into an USB port when prompted. When the browser requests access to your security key, touch the golden contact on your YubiKey when it pulses. This touch confirms your physical presence and completes the registration.
 
 ### Step 2: Verify the Setup
 

@@ -105,7 +105,7 @@ pm grant com.datingapp android.permission.READ_CONTACTS
 
 ## Developer APIs for Notification Control
 
-For developers building dating or messaging apps, implementing user-controlled notification privacy requires leveraging platform APIs.
+For developers building dating or messaging apps, implementing user-controlled notification privacy requires using platform APIs.
 
 ### iOS: UNNotificationContent
 

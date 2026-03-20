@@ -50,7 +50,7 @@ print(f"External: {external_ip}:{external_port}")
 Carrier-Grade NAT extends NAT to ISP level. Instead of NAT happening at your router, the ISP's infrastructure handles address translation for entire subscriber groups. This means:
 
 1. Your public IP is shared among dozens or hundreds of customers
-2. Inbound connections are virtually impossible without port forwarding
+2. Inbound connections are impossible without port forwarding
 3. Your actual public IP differs from what websites see
 
 CGNAT typically uses symmetric NAT behavior, making peer-to-peer VPN connections extremely difficult. Many mobile networks and some residential ISPs now deploy CGNAT exclusively.

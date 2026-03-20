@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook still offers comprehensive manual settings, programmatic access through the Graph API and browser automation provide powerful options for bulk management and automation. This guide covers both approaches to make your Facebook profile private in 2026.
+If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook still offers manual settings, programmatic access through the Graph API and browser automation provide powerful options for bulk management and automation. This guide covers both approaches to make your Facebook profile private in 2026.
 
 ## Understanding Facebook's Privacy Architecture
 

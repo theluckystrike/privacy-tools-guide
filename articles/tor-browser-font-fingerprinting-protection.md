@@ -78,7 +78,7 @@ privacy.resistFingerprinting = true
 canvas.randomize-font = true
 ```
 
-The `privacy.resistFingerprinting` boolean enables the comprehensive fingerprinting resistance system, which affects fonts, canvas, WebGL, and other fingerprinting vectors. Setting this to true is recommended for maximum protection.
+The `privacy.resistFingerprinting` boolean enables the fingerprinting resistance system, which affects fonts, canvas, WebGL, and other fingerprinting vectors. Setting this to true is recommended for maximum protection.
 
 ## Platform-Specific Considerations
 

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Windows OneDrive Privacy Settings Guide 2026"
-description: "A comprehensive technical guide to configuring OneDrive privacy settings on Windows for developers and power users. Covers registry tweaks, Group."
+description: "A technical guide to configuring OneDrive privacy settings on Windows for developers and power users. Covers registry tweaks, Group."
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-onedrive-privacy-settings-guide-2026/
@@ -119,7 +119,7 @@ However, note that some enterprise features require Azure AD authentication. If 
 
 ## Automating Privacy Configuration
 
-PowerShell scripting enables consistent privacy hardening across multiple machines. Here's a comprehensive script for applying recommended privacy settings:
+PowerShell scripting enables consistent privacy hardening across multiple machines. Here's a script for applying recommended privacy settings:
 
 ```powershell
 # OneDrive Privacy Hardening Script

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Android Location Permissions Best Practices"
-description: "A comprehensive guide to implementing Android location permissions correctly. Learn about runtime permissions, foreground vs background location, and."
+description: "A guide to implementing Android location permissions correctly. Learn about runtime permissions, foreground vs background location, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /android-location-permissions-best-practices/

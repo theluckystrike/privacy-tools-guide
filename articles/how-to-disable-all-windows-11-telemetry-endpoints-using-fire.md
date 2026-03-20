@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Disable All Windows 11 Telemetry Endpoints Using Fire"
-description: "A comprehensive technical guide for developers and power users to block Windows 11 telemetry using Windows Firewall, including PowerShell scripts and."
+description: "A technical guide for developers and power users to block Windows 11 telemetry using Windows Firewall, including PowerShell scripts and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-disable-all-windows-11-telemetry-endpoints-using-fire/
@@ -16,7 +16,7 @@ voice-checked: true
 
 Windows 11 collects telemetry data from your system and sends it to Microsoft servers. While Microsoft uses this data to improve the operating system, privacy-conscious developers and power users often want complete control over what leaves their machines. Using Windows Firewall to block telemetry endpoints provides a surgical approach that doesn't require disabling system features or modifying the registry.
 
-This guide covers the comprehensive method of blocking Windows 11 telemetry at the network level using firewall rules.
+This guide covers the method of blocking Windows 11 telemetry at the network level using firewall rules.
 
 ## Understanding Windows 11 Telemetry
 
@@ -91,7 +91,7 @@ This script creates individual outbound rules for each telemetry endpoint. The `
 
 ### Advanced Blocking with IP Ranges
 
-For more comprehensive coverage, you can block IP ranges that Microsoft uses:
+For more coverage, you can block IP ranges that Microsoft uses:
 
 ```powershell
 # Block Microsoft telemetry IP ranges

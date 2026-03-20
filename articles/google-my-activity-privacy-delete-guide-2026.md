@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Google My Activity Privacy Delete Guide 2026"
-description: "A comprehensive guide for developers and power users on managing, reviewing, and deleting your Google My Activity data. Includes automated deletion."
+description: "A guide for developers and power users on managing, reviewing, and deleting your Google My Activity data. Includes automated deletion."
 date: 2026-03-15
 author: theluckystrike
 permalink: /google-my-activity-privacy-delete-guide-2026/
@@ -25,7 +25,7 @@ Navigate to [myactivity.google.com](https://myactivity.google.com) to access you
 Google provides three auto-delete options that control how long your data persists:
 
 - **Keep until you delete manually**: Data persists indefinitely until you manually remove it
-- **Keep for 18 months**: Activity older than 18 months deletes automatically  
+- **Keep for 18 months**: Activity older than 18 months deletes automatically 
 - **Keep for 3 months**: Activity older than 3 months deletes automatically
 
 To change these settings, access the "Auto-delete" option from the activity controls page. Select the duration that matches your privacy requirements. For maximum privacy, choose the 3-month option or manually delete data regularly.

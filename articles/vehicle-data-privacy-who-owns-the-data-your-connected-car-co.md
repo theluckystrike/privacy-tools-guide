@@ -21,7 +21,7 @@ Modern vehicles generate massive amounts of data. Your connected car records whe
 
 Today's vehicles contain multiple data collection systems working simultaneously. The OBD-II port, typically located under the dashboard, serves as the primary gateway for diagnostic and telematics data. Every car sold in the United States since 1996 must have an OBD-II port, making it a standardized interface for accessing vehicle metrics.
 
-When you connect a third-party device to the OBD-II port—whether a insurance telematics device, a performance tuner, or a fleet management tool—you grant that device access to the vehicle's CAN bus. The Controller Area Network bus connects all electronic control units (ECUs) in modern vehicles, enabling communication between the engine control module, transmission, brakes, and infotainment system.
+When you connect a third-party device to the OBD-II port—whether an insurance telematics device, a performance tuner, or a fleet management tool—you grant that device access to the vehicle's CAN bus. The Controller Area Network bus connects all electronic control units (ECUs) in modern vehicles, enabling communication between the engine control module, transmission, brakes, and infotainment system.
 
 ### Data Points Your Car Collects
 
@@ -63,7 +63,7 @@ Tesla's privacy policy explicitly states that vehicle data, including telemetry 
 
 ### The Driver's Position
 
-Consumer advocates argue that drivers should own the data their vehicles generate, similar to how individuals own their personal health records or financial data. Several states have introduced legislation to establish driver data ownership, but no comprehensive federal law currently grants drivers explicit ownership of their vehicle telemetry.
+Consumer advocates argue that drivers should own the data their vehicles generate, similar to how individuals own their personal health records or financial data. Several states have introduced legislation to establish driver data ownership, but no federal law currently grants drivers explicit ownership of their vehicle telemetry.
 
 The Federal Trade Commission has taken action against some automotive data practices under existing consumer protection laws, but these enforcement actions focus on deceptive practices rather than establishing a clear ownership framework.
 
@@ -124,7 +124,7 @@ const vehicleDataRequest = {
 // and explicit owner consent through their mobile app
 ```
 
-Tesla offers the most comprehensive third-party API access through their partner program.
+Tesla offers the most third-party API access through their partner program.
 
 ### Aftermarket Telematics Devices
 

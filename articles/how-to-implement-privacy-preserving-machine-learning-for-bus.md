@@ -160,7 +160,7 @@ combined = sensitive_data_a + sensitive_data_b
 result = combined.get().sum()  # Returns 21.0
 ```
 
-For more complex analytics, explore MP-SPDZ, a comprehensive SMPC framework supporting various protocols ( Shamir secret sharing, SPDZ, etc.).
+For more complex analytics, explore MP-SPDZ, a SMPC framework supporting various protocols ( Shamir secret sharing, SPDZ, etc.).
 
 ## Practical Implementation Strategy
 

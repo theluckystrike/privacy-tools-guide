@@ -15,7 +15,7 @@ score: 8
 
 {% raw %}
 
-Protecting children from online predators requires a multi-layered technical approach. While traditional parental controls provide a baseline, developers and power users can implement more robust safety systems using network-level filtering, device hardening, and privacy enforcement. This guide covers practical implementations for securing children's digital environments.
+Protecting children from online predators requires a multi-layered technical approach. While traditional parental controls provide a baseline, developers and power users can implement more safety systems using network-level filtering, device hardening, and privacy enforcement. This guide covers practical implementations for securing children's digital environments.
 
 ## Network-Level Content Filtering
 
@@ -55,7 +55,7 @@ Access your router's admin panel, navigate to WAN or DNS settings, and replace y
 
 ### iOS Screen Time Configuration
 
-iOS provides robust parental controls through Screen Time. Use Configuration Profiles to enforce these settings programmatically:
+iOS provides parental controls through Screen Time. Use Configuration Profiles to enforce these settings programmatically:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -122,7 +122,7 @@ print(f"Screen time: {device_activity.get('screenTime', 'N/A')}")
 
 ## Monitoring and Activity Logging
 
-### Setting Up Comprehensive Activity Logging
+### Setting Up Activity Logging
 
 For power users requiring detailed monitoring, implement a syslog server to collect network activity:
 
@@ -231,11 +231,11 @@ Create a family agreement document that outlines expectations and consequences. 
 Security requires continuous attention. Schedule regular reviews:
 
 - Weekly: Check device Screen Time reports for unusual patterns
-- Monthly: Review installed apps and remove unused applications  
+- Monthly: Review installed apps and remove unused applications 
 - Quarterly: Update router firmware and DNS blocklists
 - Annually: Reassess age-appropriate settings as children mature
 
-By combining network-level filtering, device hardening, active monitoring, and open communication, you create a comprehensive protection system that adapts to evolving online threats.
+By combining network-level filtering, device hardening, active monitoring, and open communication, you create a protection system that adapts to evolving online threats.
 
 ---
 

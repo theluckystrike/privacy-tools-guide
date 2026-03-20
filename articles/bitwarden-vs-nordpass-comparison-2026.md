@@ -66,7 +66,7 @@ derived_key = ph.hash(master_password)
 
 For developers integrating password management into workflows, API access determines real-world utility.
 
-**Bitwarden** offers a comprehensive REST API and official CLI tool. The CLI supports vault management, password generation, and secure note handling. You can script complex workflows:
+**Bitwarden** offers a REST API and official CLI tool. The CLI supports vault management, password generation, and secure note handling. You can script complex workflows:
 
 ```bash
 # Bitwarden CLI examples
@@ -178,7 +178,7 @@ Choose **Bitwarden** if you:
 Choose **NordPass** if you:
 - Already use NordVPN and want integrated services
 - Prioritize XChaCha20 encryption over AES
-- Prefer a more streamlined, consumer-focused interface
+- Prefer a more improved, consumer-focused interface
 - Value the masked email feature for privacy
 
 For developers and power users, Bitwarden's self-hosting capability, open-source architecture, and extensive API access typically provide greater flexibility. The price advantage doesn't hurt either. However, if you're already invested in the Nord ecosystem or prefer XChaCha20's modern cipher design, NordPass remains a solid choice.

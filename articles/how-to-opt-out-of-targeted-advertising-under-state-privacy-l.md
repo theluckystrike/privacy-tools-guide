@@ -18,7 +18,7 @@ Targeted advertising relies on collecting and processing personal data to delive
 
 ## State Privacy Laws Overview
 
-Several states have enacted comprehensive privacy legislation that includes opt-out rights for targeted advertising:
+Several states have enacted privacy legislation that includes opt-out rights for targeted advertising:
 
 **California Consumer Privacy Act (CCPA)** and **California Privacy Rights Act (CPRA)** provide California residents the right to opt out of the sale or sharing of their personal information, which directly covers targeted advertising.
 
@@ -138,7 +138,7 @@ async function getFacebookAdPreferences(accessToken) {
 
 ### Google Advertising
 
-Google maintains comprehensive ad personalization controls:
+Google maintains ad personalization controls:
 
 1. Visit **myadcenter.google.com**
 2. Toggle off ad personalization

@@ -33,7 +33,7 @@ ping -M do -s 1472 10.0.0.1  # Start with 1472 (1500 - 28 ICMP header)
 
 Replace `10.0.0.1` with your VPN server IP. If packets succeed, try increasing the size gradually. When ping fails, you've exceeded the path MTU. The highest successful value plus 28 (IP and ICMP headers) gives you the optimal MTU.
 
-A more comprehensive approach uses `tracepath` or `mtu-path` discovery:
+A more approach uses `tracepath` or `mtu-path` discovery:
 
 ```bash
 tracepath -n vpn.example.com

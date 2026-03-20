@@ -196,9 +196,9 @@ Encrypted DNS should show only TLS handshake traffic with no readable DNS conten
 
 ## Limitations and Considerations
 
-Encrypted DNS addresses DNS poisoning but does not make you invisible online. Your browsing activity still traverses your ISP's network, and they can see the IP addresses you connect to. For comprehensive privacy, combine encrypted DNS with a VPN or Tor network.
+Encrypted DNS addresses DNS poisoning but does not make you invisible online. Your browsing activity still traverses your ISP's network, and they can see the IP addresses you connect to. For privacy, combine encrypted DNS with a VPN or Tor network.
 
-Additionally, some networks implement SNI (Server Name Indication) filtering, which can block access to DoH servers by inspecting HTTPS handshake metadata. In these cases, VPN-based solutions provide more robust circumvention.
+Additionally, some networks implement SNI (Server Name Indication) filtering, which can block access to DoH servers by inspecting HTTPS handshake metadata. In these cases, VPN-based solutions provide more circumvention.
 
 
 ## Related Reading

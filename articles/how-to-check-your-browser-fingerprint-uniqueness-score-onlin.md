@@ -69,7 +69,7 @@ The service provides:
 
 ### BrowserLeaks
 
-[BrowserLeaks](https://browserleaks.com/) offers comprehensive testing across multiple fingerprinting vectors including canvas, WebGL, audio context, and WebGL2. This tool is particularly useful for developers because it shows exactly what each API reveals.
+[BrowserLeaks](https://browserleaks.com/) offers testing across multiple fingerprinting vectors including canvas, WebGL, audio context, and WebGL2. This tool is particularly useful for developers because it shows exactly what each API reveals.
 
 ## Building a Custom Fingerprint Tester
 

@@ -130,7 +130,7 @@ foreach ($adapter in $adapters) {
 
 ### Method 3: PowerShell Script for Complete Disabling
 
-This comprehensive script disables both protocols:
+This script disables both protocols:
 
 ```powershell
 # Disable-LLMNR-NetBIOS.ps1

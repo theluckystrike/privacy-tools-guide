@@ -145,7 +145,7 @@ Understanding what Private DNS does not protect is important for security-consci
 - **Provider trust**: You must trust your chosen DNS provider with your query history, even if they claim no-logging policies
 - **Does not bypass censorship**: While encrypting DNS, Private DNS does not circumvent network-level blocks
 
-For users requiring full traffic encryption alongside DNS privacy, combining Private DNS with a VPN service provides comprehensive protection.
+For users requiring full traffic encryption alongside DNS privacy, combining Private DNS with a VPN service provides protection.
 
 ## Related Reading
 

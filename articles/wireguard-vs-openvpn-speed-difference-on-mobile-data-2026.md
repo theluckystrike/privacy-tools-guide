@@ -131,7 +131,7 @@ The difference becomes more pronounced during active use. If you're running a VP
 
 When your phone switches from cellular to WiFi (or vice versa), both protocols must reestablish connections. WireGuard's persistent key pairs mean the server recognizes your client immediately upon reconnection. The `PersistentKeepalive` setting ensures the NAT mappings stay open during network transitions.
 
-OpenVPN requires renegotiation, and without proper `persist-tun` and `persist-key` settings, you experience a complete disconnection rather than a seamless handoff.
+OpenVPN requires renegotiation, and without proper `persist-tun` and `persist-key` settings, you experience a complete disconnection rather than a handoff.
 
 ### Scenario 2: Poor Signal Areas
 

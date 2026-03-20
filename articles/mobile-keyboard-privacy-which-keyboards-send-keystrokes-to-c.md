@@ -27,7 +27,7 @@ When a keyboard sends keystrokes to cloud servers, your typing patterns, partial
 
 ### Local Processing vs Cloud Processing
 
-Modern keyboards often use on-device machine learning for predictions. Apple's QuickType and Google's GBoard both leverage device-side processing for many features. However, certain capabilities—such as collaborative learning across devices or advanced language models—require server-side processing.
+Modern keyboards often use on-device machine learning for predictions. Apple's QuickType and Google's GBoard both use device-side processing for many features. However, certain capabilities—such as collaborative learning across devices or advanced language models—require server-side processing.
 
 The distinction matters for threat models. If your primary concern is preventing your typing data from reaching third parties, local-only keyboards provide the strongest guarantees. If you accept some data collection but want transparency about what leaves your device, understanding each keyboard's architecture becomes critical.
 

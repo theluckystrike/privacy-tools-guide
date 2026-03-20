@@ -152,7 +152,7 @@ def check_image_visibility(image_path):
 check_image_visibility('my_dating_photo.jpg')
 ```
 
-## Method 5: Leverage Platform Privacy Settings
+## Method 5: Use Platform Privacy Settings
 
 Some dating platforms offer privacy controls that affect how your photos can be discovered:
 

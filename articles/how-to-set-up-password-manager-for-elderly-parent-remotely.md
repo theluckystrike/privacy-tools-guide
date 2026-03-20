@@ -20,7 +20,7 @@ Use Bitwarden or 1Password family plans to remotely manage your parent's passwor
 
 Setting up a password manager for someone who isn't technically inclined presents unique obstacles. Your parent may struggle with complex interfaces, password generation, or remembering master passwords. The solution must minimize their cognitive load while maximizing security.
 
-Most password managers offer family or team plans that allow shared vaults. This architecture lets you create and manage items on their behalf while granting them independent access. The key is selecting a manager with robust sharing features and a family plan that fits your budget.
+Most password managers offer family or team plans that allow shared vaults. This architecture lets you create and manage items on their behalf while granting them independent access. The key is selecting a manager with sharing features and a family plan that fits your budget.
 
 ## Selecting the Right Password Manager
 

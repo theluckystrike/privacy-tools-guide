@@ -20,7 +20,7 @@ Ad networks track you across dating apps and social platforms using device finge
 
 ## The Tracking Ecosystem Overview
 
-Ad networks operate on a simple premise: build comprehensive user profiles to deliver targeted advertisements with higher conversion rates. Dating apps present particularly valuable targets because users reveal explicit interests, demographics, and location data. Social media platforms then amplify this targeting capability by connecting behavioral patterns across the web.
+Ad networks operate on a simple premise: build user profiles to deliver targeted advertisements with higher conversion rates. Dating apps present particularly valuable targets because users reveal explicit interests, demographics, and location data. Social media platforms then amplify this targeting capability by connecting behavioral patterns across the web.
 
 The core tracking infrastructure relies on shared identifiers and behavioral signals transmitted between applications. When you install both Tinder and Instagram, you're not just using two separate apps—you're entering a connected network where your activities inform advertising decisions across both platforms.
 
@@ -289,7 +289,7 @@ For developers creating dating or social applications, privacy-by-design princip
 
 Minimize data collection to essential functionality only. Store identifiers in encrypted formats. Provide users genuine control over data sharing. Consider implementing local-first architectures where sensitive matching occurs on-device rather than transmitting detailed profiles to servers.
 
-The technical mechanisms enabling cross-platform tracking will continue evolving. Staying informed about these systems allows developers to make better architecture decisions and empowers users to understand the privacy implications of their application usage.
+The technical mechanisms enabling cross-platform tracking will continue evolving. Staying informed about these systems allows developers to make better architecture decisions and enables users to understand the privacy implications of their application usage.
 
 ---
 

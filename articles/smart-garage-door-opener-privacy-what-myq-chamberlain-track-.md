@@ -15,13 +15,13 @@ voice-checked: true
 
 {% raw %}
 
-MyQ and Chamberlain smart garage door openers transmit detailed timestamps of every door opening and closing to cloud servers, creating comprehensive logs of your arrival, departure, and routine patterns. Over months, this data reveals your work schedule, vacation periods, and household occupancy—information that insurers, real estate agents, and law enforcement can potentially access. This guide explains the privacy implications, practical alternatives for local-only control, and strategies to minimize data exposure.
+MyQ and Chamberlain smart garage door openers transmit detailed timestamps of every door opening and closing to cloud servers, creating logs of your arrival, departure, and routine patterns. Over months, this data reveals your work schedule, vacation periods, and household occupancy—information that insurers, real estate agents, and law enforcement can potentially access. This guide explains the privacy implications, practical alternatives for local-only control, and strategies to minimize data exposure.
 
 ## Data Collection Overview
 
 The MyQ system operates through a combination of a hub device connected to your garage door opener and a cloud-based infrastructure. This architecture means that every door operation travels through Chamberlain's servers, creating a detailed log of when your garage opens and closes.
 
-When you interact with the MyQ mobile application, the system records timestamps for each door event. This includes the exact time you arrived home, left for work, or accessed your garage. Over weeks and months, this data creates a comprehensive picture of your household's schedule.
+When you interact with the MyQ mobile application, the system records timestamps for each door event. This includes the exact time you arrived home, left for work, or accessed your garage. Over weeks and months, this data creates a picture of your household's schedule.
 
 Chamberlain's privacy policy explicitly states that they collect device usage data, including door open/close events, user account information, and device diagnostic data. The policy also indicates that this information may be shared with third parties for analytics and marketing purposes.
 

@@ -57,9 +57,9 @@ Default DNS queries can be logged by your ISP. Configure privacy-focused DNS:
 1. **System Settings** → **Network** → **WiFi** (or Ethernet)
 2. Click **Details** → **DNS**
 3. Add servers like:
-   - Cloudflare: `1.1.1.1`, `1.0.0.1`
-   - Quad9: `9.9.9.9`
-   - Or use encrypted DNS (DoH/DoT)
+ - Cloudflare: `1.1.1.1`, `1.0.0.1`
+ - Quad9: `9.9.9.9`
+ - Or use encrypted DNS (DoH/DoT)
 
 ### Enabling DNS Encryption
 
@@ -132,7 +132,7 @@ Always test pf rules carefully to avoid locking yourself out.
 
 Third-party firewalls provide detailed monitoring:
 
-- **Little Snitch**: Comprehensive connection monitoring with alerts
+- **Little Snitch**: connection monitoring with alerts
 - **Lulu**: Free, open-source network monitor focusing on apps
 
 ### Built-in Network Monitor

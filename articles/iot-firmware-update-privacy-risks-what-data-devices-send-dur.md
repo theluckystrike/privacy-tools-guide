@@ -103,7 +103,7 @@ If you're building IoT devices or deploying them professionally, you have option
 
 ### Implement Selective Version Checking
 
-Instead of transmitting comprehensive device fingerprints, consider version checking that minimizes identification:
+Instead of transmitting device fingerprints, consider version checking that minimizes identification:
 
 ```python
 # Minimal version check - only essential data

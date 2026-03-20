@@ -77,9 +77,9 @@ Some botnets and malware modify your browser settings, changing your homepage or
 
 ## How to Check If Your Computer Is in a Botnet
 
-### Step 1: Run a Antivirus or Anti-Malware Scan
+### Step 1: Run an Antivirus or Anti-Malware Scan
 
-The first step in botnet detection is running a comprehensive security scan. Update your antivirus definitions and run a full system scan. Use reputable security software such as Windows Defender, Malwarebytes, or Bitdefender. Schedule scans to run automatically to catch infections early.
+The first step in botnet detection is running a security scan. Update your antivirus definitions and run a full system scan. Use reputable security software such as Windows Defender, Malwarebytes, or Bitdefender. Schedule scans to run automatically to catch infections early.
 
 ### Step 2: Check for Suspicious Processes
 

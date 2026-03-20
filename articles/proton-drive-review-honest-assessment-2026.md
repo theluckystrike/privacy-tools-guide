@@ -71,7 +71,7 @@ Authorization: Basic base64(username:password)
 Depth: 1
 ```
 
-This WebDAV access enables basic scripting but lacks the robust API features that developers typically expect—version control, conflict resolution hooks, or custom metadata handling. If your workflow requires deep programmatic integration, you'll need to build custom solutions around WebDAV or consider alternative storage solutions.
+This WebDAV access enables basic scripting but lacks the API features that developers typically expect—version control, conflict resolution hooks, or custom metadata handling. If your workflow requires deep programmatic integration, you'll need to build custom solutions around WebDAV or consider alternative storage solutions.
 
 ## Sharing and Collaboration Features
 
@@ -93,7 +93,7 @@ An honest assessment must acknowledge the limitations:
 
 1. **No file versioning** — Unlike Dropbox or Google Drive, Proton Drive doesn't maintain file version history. Accidental overwrites mean permanent data loss.
 
-2. **Limited API access** — The absence of a robust developer API limits automation possibilities.
+2. **Limited API access** — The absence of a developer API limits automation possibilities.
 
 3. **No desktop client for Linux** — While WebDAV works, there's no official Proton Drive Linux application (though a third-party wrapper exists).
 

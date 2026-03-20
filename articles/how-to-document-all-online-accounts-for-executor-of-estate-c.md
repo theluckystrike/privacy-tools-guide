@@ -188,7 +188,7 @@ curl -s -H "User-Agent: EstateExecutorTool" \
 
 This reveals services where the email was compromised, indicating active or former accounts.
 
-## Building the Comprehensive Inventory Template
+## Building the Inventory Template
 
 Create a structured inventory using this template structure:
 

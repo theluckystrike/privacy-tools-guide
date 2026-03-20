@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Voice Mode Not Working Fix 2026: Complete Troubleshooting Guide"
-description: "Having trouble with ChatGPT voice mode? This comprehensive guide covers all the common issues and proven solutions to get your voice conversations."
+description: "Having trouble with ChatGPT voice mode? This guide covers all the common issues and proven solutions to get your voice conversations."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /chatgpt-voice-mode-not-working-fix-2026/
@@ -185,10 +185,10 @@ If you've tried all these solutions and voice mode still doesn't work:
 
 1. Visit [help.openai.com](https://help.openai.com)
 2. Submit a support ticket with:
-   - Your browser version and OS
-   - Screenshot of any error messages
-   - Steps you've already tried
-   - Network speed test results
+ - Your browser version and OS
+ - Screenshot of any error messages
+ - Steps you've already tried
+ - Network speed test results
 
 ---
 

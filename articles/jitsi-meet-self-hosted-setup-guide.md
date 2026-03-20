@@ -2,7 +2,7 @@
 
 layout: default
 title: "Jitsi Meet Self Hosted Setup Guide"
-description: "A comprehensive guide to deploying your own Jitsi Meet video conferencing server. Covers Docker installation, configuration, security hardening, and."
+description: "A guide to deploying your own Jitsi Meet video conferencing server. Covers Docker installation, configuration, security hardening, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /jitsi-meet-self-hosted-setup-guide/

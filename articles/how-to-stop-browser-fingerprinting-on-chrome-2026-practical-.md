@@ -180,7 +180,7 @@ If you need Chrome-specific solutions, consider running both browsers with diffe
 
 ## Network-Level Protection
 
-For comprehensive protection, consider network-level solutions.
+For protection, consider network-level solutions.
 
 ### Using Pi-hole
 

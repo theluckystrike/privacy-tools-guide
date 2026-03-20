@@ -122,7 +122,7 @@ Several protocols are designed to resist traffic analysis:
 
 ### 3. Domain Fronting
 
-Domain fronting leverages Cloudflare, Azure, or other large CDNs to mask the true destination. The TLS Server Name Indication shows an allowed domain, while the actual Content-Length and Host headers request the blocked content.
+Domain fronting uses Cloudflare, Azure, or other large CDNs to mask the true destination. The TLS Server Name Indication shows an allowed domain, while the actual Content-Length and Host headers request the blocked content.
 
 ```python
 # Domain fronting example with requests

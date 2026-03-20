@@ -22,7 +22,7 @@ This guide covers Signal alternatives that provide genuine end-to-end encryption
 
 ## Session: Decentralized Messaging Without Identifiers
 
-Session operates on the Signal Protocol but removes phone numbers entirely. Instead, it uses a onion-routing network called Lokinet and assigns users cryptographic public keys as identifiers.
+Session operates on the Signal Protocol but removes phone numbers entirely. Instead, it uses an onion-routing network called Lokinet and assigns users cryptographic public keys as identifiers.
 
 ### Technical Architecture
 
@@ -91,7 +91,7 @@ The main limitation is network effect—convincing contacts to switch requires m
 
 ## Matrix: Federated Control
 
-Matrix offers the most developer-friendly ecosystem. While it doesn't require phone numbers, it does require choosing a homeserver—essentially picking who hosts your data.
+Matrix offers the most developer-friendly ecosystem. While it doesn't require phone numbers, it does require choosing a homeserver—picking who hosts your data.
 
 ### Setting Up a Privacy-Focused Client
 
@@ -194,7 +194,7 @@ Messages stored on your device are encrypted with keys only you hold. When you c
 For developers building privacy-focused applications:
 
 1. **Use Matrix** for team collaboration—federation and bridges provide the most flexibility
-2. **Use Session** for direct messaging where metadata resistance is paramount  
+2. **Use Session** for direct messaging where metadata resistance is paramount 
 3. **Use SimpleX** for threat models requiring zero-identifier architecture
 4. **Use Briar** for scenarios requiring offline-first, mesh-network communication
 

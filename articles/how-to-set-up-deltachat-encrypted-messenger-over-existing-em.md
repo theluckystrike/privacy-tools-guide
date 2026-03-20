@@ -17,13 +17,13 @@ Set up DeltaChat by installing the application, adding your existing email accou
 
 ## Understanding DeltaChat's Architecture
 
-DeltaChat operates on a decentralized model by leveraging email protocols with automatic encryption. Rather than maintaining its own network, DeltaChat uses your existing email provider as the transport layer while implementing Autocrypt to handle key management and message encryption. This approach means you retain full ownership of your communication without depending on a single service provider.
+DeltaChat operates on a decentralized model by using email protocols with automatic encryption. Rather than maintaining its own network, DeltaChat uses your existing email provider as the transport layer while implementing Autocrypt to handle key management and message encryption. This approach means you retain full ownership of your communication without depending on a single service provider.
 
 When you send a message through DeltaChat, it travels as an encrypted email to your recipient's email address. The recipient's DeltaChat client automatically detects and decrypts incoming messages. This architecture provides several advantages: your messages are accessible from any email client, you can communicate with non-DeltaChat users via regular email, and there's no vendor lock-in.
 
 ## Prerequisites
 
-Before configuring DeltaChat, ensure you have access to an email account that supports IMAP and SMTP. Most providers—including Gmail, ProtonMail, self-hosted solutions like Mailu or DockerMail, and standard email services—work seamlessly with DeltaChat.
+Before configuring DeltaChat, ensure you have access to an email account that supports IMAP and SMTP. Most providers—including Gmail, ProtonMail, self-hosted solutions like Mailu or DockerMail, and standard email services—work with DeltaChat.
 
 For developers seeking maximum privacy, consider running a personal email server. A minimal Postfix and Dovecot setup on a VPS provides complete control over your communication infrastructure.
 

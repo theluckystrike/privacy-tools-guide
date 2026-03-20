@@ -190,9 +190,9 @@ Once you exercise the Right to Restrict Processing:
 
 1. **Data remains stored** — The organization cannot delete your data based on this request alone
 2. **Processing stops** — Most processing activities halt, except:
-   - Storing the data
-   - Legal claims establishment or defense
-   - Protecting rights of another person
+ - Storing the data
+ - Legal claims establishment or defense
+ - Protecting rights of another person
 3. **You can lift the restriction** — At any time, you can allow processing to resume
 
 Organizations must inform you before lifting any restriction — giving you the opportunity to fully erase your data if you prefer.

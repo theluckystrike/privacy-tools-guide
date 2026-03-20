@@ -203,7 +203,7 @@ On iOS, the jailbreak community has developed tools to detect compromise, though
 
 ## Practical Audit Checklist
 
-Perform these steps in order for a comprehensive audit:
+Perform these steps in order for an audit:
 
 1. **Document baseline**: Before issues arise, record your normal process list, network connections, and startup items
 2. **Review running processes**: Identify unknown or suspicious processes

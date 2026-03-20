@@ -81,7 +81,7 @@ rclone config
 rclone sync ./local-backups remote:backups --verbose
 ```
 
-The rclone integration represents the most robust CLI approach, supporting encryption, bandwidth limits, and flexible sync behaviors. Create an application-specific password in your IceDrive account settings rather than using your primary password for automation.
+The rclone integration represents the most CLI approach, supporting encryption, bandwidth limits, and flexible sync behaviors. Create an application-specific password in your IceDrive account settings rather than using your primary password for automation.
 
 ## Practical Limitations and Considerations
 

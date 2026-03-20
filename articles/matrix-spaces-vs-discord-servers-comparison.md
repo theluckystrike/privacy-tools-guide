@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Matrix Spaces vs Discord Servers: A Technical Comparison"
-description: "A comprehensive technical comparison of Matrix Spaces and Discord servers for developers and power users. Explore federation, encryption, API."
+description: "A technical comparison of Matrix Spaces and Discord servers for developers and power users. Explore federation, encryption, API."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /matrix-spaces-vs-discord-servers-comparison/
@@ -20,7 +20,7 @@ Choose Matrix Spaces if you need self-hosting, end-to-end encryption by default,
 
 The most significant difference lies in network architecture. Discord operates as a centralized service—all data flows through Discord's servers, and the company controls the entire infrastructure. There is no way to run your own Discord server that connects to the main network. This centralization simplifies moderation tools and feature development but creates a single point of failure and trust dependency.
 
-Matrix Spaces adopt a federated model inspired by email. Each community runs on a homeserver, and these homeservers communicate with each other through the Matrix protocol. Users on one homeserver can join Spaces hosted on different servers, creating a interconnected network without single-point control.
+Matrix Spaces adopt a federated model inspired by email. Each community runs on a homeserver, and these homeservers communicate with each other through the Matrix protocol. Users on one homeserver can join Spaces hosted on different servers, creating an interconnected network without single-point control.
 
 ```python
 # Querying Matrix Space information via HTTP API
@@ -110,7 +110,7 @@ services:
 
 Discord's bot API is extensive and well-documented, supporting complex automation, slash commands, and rich embeds. The developer experience is polished, with official libraries in multiple languages and active community resources.
 
-Matrix provides a RESTful API that, while comprehensive, requires more manual implementation for advanced features. The Matrix Client-Server API and Application Service API enable bot creation and integration, but the ecosystem is less mature than Discord's.
+Matrix provides a RESTful API that, while, requires more manual implementation for advanced features. The Matrix Client-Server API and Application Service API enable bot creation and integration, but the ecosystem is less mature than Discord's.
 
 ```python
 # Simple Matrix bot using matrix-nio library

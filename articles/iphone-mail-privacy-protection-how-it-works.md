@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Email tracking has become ubiquitous in modern communications. Marketers, newsletters, and even malicious actors embed invisible pixels in messages to monitor when you open emails, where you are located, and what device you use. Apple's Mail Privacy Protection, introduced with iOS 15, iPadOS 15, and macOS Monterey, shields users from this pervasive surveillance. This guide explains the technical mechanisms behind this feature and how you can leverage it for enhanced privacy.
+Email tracking has become ubiquitous in modern communications. Marketers, newsletters, and even malicious actors embed invisible pixels in messages to monitor when you open emails, where you are located, and what device you use. Apple's Mail Privacy Protection, introduced with iOS 15, iPadOS 15, and macOS Monterey, shields users from this pervasive surveillance. This guide explains the technical mechanisms behind this feature and how you can use it for enhanced privacy.
 
 ## What is Mail Privacy Protection?
 

@@ -162,7 +162,7 @@ Document these cases thoroughly since the threshold is high.
 
 ## Legitimate Interest: The Flexible but Complex Basis
 
-Legitimate interest requires balancing your organization's interests against individual privacy rights. It's the most flexible basis but demands comprehensive documentation through a Legitimate Interest Assessment (LIA).
+Legitimate interest requires balancing your organization's interests against individual privacy rights. It's the most flexible basis but demands documentation through a Legitimate Interest Assessment (LIA).
 
 The three-part test from the ICO:
 1. **Identify a legitimate interest** — What is your purpose?

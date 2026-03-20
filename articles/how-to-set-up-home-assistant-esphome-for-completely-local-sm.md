@@ -127,7 +127,7 @@ binary_sensor:
 
 ### Air Quality Monitoring
 
-Integrate sensors like the BME680 for comprehensive environmental data:
+Integrate sensors like the BME680 for environmental data:
 
 ```yaml
 sensor:

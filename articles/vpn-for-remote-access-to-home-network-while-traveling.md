@@ -86,7 +86,7 @@ For dynamic DNS, set up a service like DuckDNS or Cloudflare to point a domain t
 
 ## Option 2: OpenVPN for Broader Compatibility
 
-While WireGuard is more efficient, OpenVPN remains useful when you need broad client compatibility or are traversing restrictive networks that block UDP. OpenVPN works on virtually any device, including routers with custom firmware.
+While WireGuard is more efficient, OpenVPN remains useful when you need broad client compatibility or are traversing restrictive networks that block UDP. OpenVPN works on any device, including routers with custom firmware.
 
 ### Quick OpenVPN Setup
 

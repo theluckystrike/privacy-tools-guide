@@ -148,9 +148,9 @@ for site in PEOPLE_SEARCH_SITES.keys():
 
 This script provides a framework. Each site requires custom handling due to different form structures and validation requirements.
 
-## Step 3: Use Legal Leverage (CCPA/GDPR)
+## Step 3: Use Legal Use (CCPA/GDPR)
 
-If automated opt-outs fail or the site ignores requests, legal frameworks provide additional leverage.
+If automated opt-outs fail or the site ignores requests, legal frameworks provide additional use.
 
 ### CCPA (California Privacy Rights)
 

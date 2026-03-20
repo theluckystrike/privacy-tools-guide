@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Configure DNS over HTTPS Inside a VPN Tunnel"
-description: "A comprehensive technical guide to setting up DNS over HTTPS within your VPN tunnel for enhanced privacy and security."
+description: "A technical guide to setting up DNS over HTTPS within your VPN tunnel for enhanced privacy and security."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-dns-over-https-inside-vpn-tunnel/
@@ -204,9 +204,9 @@ Windows 11 has native DoH support, which you can configure to work with your VPN
 4. Select "Manual"
 5. Enable "IPv4"
 6. Enter a DoH-compatible DNS server:
-   - Cloudflare: `1.1.1.1`
-   - Google: `8.8.8.8`
-   - Quad9: `9.9.9.9`
+ - Cloudflare: `1.1.1.1`
+ - Google: `8.8.8.8`
+ - Quad9: `9.9.9.9`
 7. Set "Preferred DNS" and "Alternate DNS" to the same IP
 8. Under "Preferred DNS encryption", select "Encrypted (DNS over HTTPS)"
 9. Repeat for IPv6 if desired
@@ -294,7 +294,7 @@ Use these online tools to verify your configuration:
 
 1. **dnsleaktest.com**: Run the extended test to check which DNS servers are being used
 2. **ipleak.net**: Check for IP and DNS leaks
-3. **browserleaks.com**: Comprehensive privacy tests
+3. **browserleaks.com**: privacy tests
 
 ### Verify DoH is Working
 

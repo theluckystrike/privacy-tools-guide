@@ -36,7 +36,7 @@ sqlite3 ~/Library/Application\ Support/Google/Chrome/Default/History \
   "SELECT url, visit_count, last_visit_time FROM urls ORDER BY last_visit_time DESC LIMIT 10;"
 ```
 
-The `last_visit_time` field uses a Unix timestamp multiplied by 1,000,000—you'll need to convert it to human-readable format.
+The `last_visit_time` field uses an Unix timestamp multiplied by 1,000,000—you'll need to convert it to human-readable format.
 
 ## Privacy Risk Vectors
 

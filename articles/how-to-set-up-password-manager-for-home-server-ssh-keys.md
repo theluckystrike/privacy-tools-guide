@@ -138,7 +138,7 @@ echo "Key rotated and Bitwarden updated"
 
 ## 1Password: SSH Agent Integration
 
-1Password provides deeper SSH integration through its agent, making key retrieval seamless during normal SSH usage.
+1Password provides deeper SSH integration through its agent, making key retrieval during normal SSH usage.
 
 ### Setting Up 1Password SSH Agent
 

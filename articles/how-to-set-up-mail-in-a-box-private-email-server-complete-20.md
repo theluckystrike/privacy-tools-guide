@@ -2,7 +2,7 @@
 
 layout: default
 title: "How To Set Up Mail In A Box Private Email Server Complete 2026 Guide"
-description: "A comprehensive guide to setting up Mail-in-a-Box for privacy-focused email hosting. Perfect for developers and power users wanting self-hosted email."
+description: "A guide to setting up Mail-in-a-Box for privacy-focused email hosting. Perfect for developers and power users wanting self-hosted email."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/

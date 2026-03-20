@@ -2,7 +2,7 @@
 
 layout: default
 title: "Firefox Arkenfox User Js Full Guide"
-description: "A comprehensive guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against."
+description: "A guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against."
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-arkenfox-user-js-full-guide/
@@ -149,7 +149,7 @@ After applying Arkenfox, verify that settings are active:
 2. Search for key settings like `privacy.trackingprotection.enabled`
 3. Confirm values match your expectations
 
-Use the Arkenfox diagnostic tool for comprehensive validation:
+Use the Arkenfox diagnostic tool for validation:
 
 ```bash
 # Run from the user.js repository

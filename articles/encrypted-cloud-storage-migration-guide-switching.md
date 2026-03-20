@@ -25,7 +25,7 @@ Identify which model your current provider uses. If you use zero-knowledge encry
 
 ## Preparing for Migration
 
-Create a comprehensive inventory of your stored data. Run a script to catalog all files with their sizes, modification dates, and folder structure:
+Create an inventory of your stored data. Run a script to catalog all files with their sizes, modification dates, and folder structure:
 
 ```bash
 #!/bin/bash

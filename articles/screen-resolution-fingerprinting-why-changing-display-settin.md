@@ -157,7 +157,7 @@ Screen resolution fingerprinting represents just one piece of the broader finger
 - Hardware concurrency (CPU cores)
 - WebGL renderer information
 
-Comprehensive privacy protection requires addressing multiple fingerprinting vectors simultaneously. Browser choice matters significantly here—Tor Browser and Brave offer strong resistance, while Firefox with privacy settings enabled provides reasonable protection.
+privacy protection requires addressing multiple fingerprinting vectors simultaneously. Browser choice matters significantly here—Tor Browser and Brave offer strong resistance, while Firefox with privacy settings enabled provides reasonable protection.
 
 For developers building privacy tools, understanding these techniques helps create more effective countermeasures. The cat-and-mouse game between privacy advocates and trackers continues evolving, making it essential to stay informed about new fingerprinting methods and defenses.
 

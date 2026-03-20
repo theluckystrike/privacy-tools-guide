@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-Proton Drive Bridge provides a powerful way to integrate encrypted cloud storage into your desktop workflows. For developers and power users seeking seamless file synchronization with end-to-end encryption, understanding Bridge configuration unlocks capabilities that go beyond the standard web interface.
+Proton Drive Bridge provides a powerful way to integrate encrypted cloud storage into your desktop workflows. For developers and power users seeking file synchronization with end-to-end encryption, understanding Bridge configuration unlocks capabilities that go beyond the standard web interface.
 
 ## What Is Proton Drive Bridge?
 

@@ -32,7 +32,7 @@ Additional rights include the right to object to processing, rights related to a
 
 ### OneTrust Data Subject Rights
 
-OneTrust remains a leader in privacy management with comprehensive DSAR (Data Subject Access Request) automation capabilities. The platform provides centralized request intake through multiple channels, including web forms, email integrations, and API endpoints. Its workflow engine automatically routes requests to appropriate data stewards, tracks deadline compliance, and generates required documentation. OneTrust's integration with data mapping tools enables automated data discovery across on-premises and cloud repositories, significantly reducing the manual effort required to locate subject data.
+OneTrust remains a leader in privacy management with DSAR (Data Subject Access Request) automation capabilities. The platform provides centralized request intake through multiple channels, including web forms, email integrations, and API endpoints. Its workflow engine automatically routes requests to appropriate data stewards, tracks deadline compliance, and generates required documentation. OneTrust's integration with data mapping tools enables automated data discovery across on-premises and cloud repositories, significantly reducing the manual effort required to locate subject data.
 
 The 2026 version enhanced its AI-powered data classification, improving accuracy in identifying personal data across unstructured sources. Pricing starts at $15,000 annually for mid-market organizations, with enterprise tiers offering advanced features like predictive analytics and custom workflow builders.
 
@@ -44,7 +44,7 @@ The tool's strength lies in its ability to process data in-place, eliminating th
 
 ### Cookiebot Consent Manager
 
-Cookiebot has expanded beyond consent management to offer robust data subject rights automation. Its DSAR module integrates with its consent tracking infrastructure, allowing organizations to link consent records with subject identity verification. The platform automates identity verification workflows, a critical requirement before fulfilling erasure or access requests.
+Cookiebot has expanded beyond consent management to offer data subject rights automation. Its DSAR module integrates with its consent tracking infrastructure, allowing organizations to link consent records with subject identity verification. The platform automates identity verification workflows, a critical requirement before fulfilling erasure or access requests.
 
 The tool excels in handling web-based data subject requests, with customizable intake forms that can be embedded in privacy policies. Cookiebot's pricing model makes it accessible for smaller organizations, starting at €99 per month for basic DSAR features.
 

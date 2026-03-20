@@ -249,7 +249,7 @@ rm "${ENCRYPTED_ARCHIVE}"
 echo "Backup completed: ${BACKUP_DATE}"
 ```
 
-This script demonstrates how both platforms can coexist in a comprehensive data strategy.
+This script demonstrates how both platforms can coexist in a data strategy.
 
 ---
 

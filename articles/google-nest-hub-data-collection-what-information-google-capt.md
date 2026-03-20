@@ -53,7 +53,7 @@ The Nest Hub acts as a Matter controller and Thread border router for connected 
 - Real-time device state information
 - Usage patterns for each connected device
 
-This data enables features like occupancy-based automation but also creates a comprehensive map of your home's connected ecosystem. The Google Home app stores this information, and it syncs to cloud infrastructure for remote access capabilities.
+This data enables features like occupancy-based automation but also creates a map of your home's connected ecosystem. The Google Home app stores this information, and it syncs to cloud infrastructure for remote access capabilities.
 
 For Matter devices specifically, the Nest Hub maintains:
 

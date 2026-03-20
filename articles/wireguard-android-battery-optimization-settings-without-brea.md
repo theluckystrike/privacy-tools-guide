@@ -17,7 +17,7 @@ To optimize WireGuard battery life on Android without breaking your connection, 
 
 ## Understanding WireGuard's Power Profile on Android
 
-WireGuard's design philosophy prioritizes simplicity and efficiency, which inherently helps with battery consumption. Unlike older VPN protocols that maintain complex state machines, WireGuard uses modern cryptographic primitives and a streamlined handshake mechanism. The `wg` kernel module on Android handles packet processing efficiently, but several configuration choices can further reduce power draw.
+WireGuard's design philosophy prioritizes simplicity and efficiency, which inherently helps with battery consumption. Unlike older VPN protocols that maintain complex state machines, WireGuard uses modern cryptographic primitives and an improved handshake mechanism. The `wg` kernel module on Android handles packet processing efficiently, but several configuration choices can further reduce power draw.
 
 When WireGuard maintains an active connection, the device cannot enter deep sleep states as frequently. Each incoming packet wakes the processor, and the persistent keepalive mechanism ensures the connection stays alive. Understanding these behaviors is the first step toward optimization.
 
@@ -77,7 +77,7 @@ For Android 12 and later, you may need to grant additional permissions through d
 
 ### Using Tasker for Dynamic Configuration
 
-Developers can leverage Tasker to dynamically adjust WireGuard settings based on context. Here's a profile that disables the VPN when connected to trusted Wi-Fi networks:
+Developers can use Tasker to dynamically adjust WireGuard settings based on context. Here's a profile that disables the VPN when connected to trusted Wi-Fi networks:
 
 ```xml
 <TaskerData sr="" dvi="1" tv="5.15.beta.3">

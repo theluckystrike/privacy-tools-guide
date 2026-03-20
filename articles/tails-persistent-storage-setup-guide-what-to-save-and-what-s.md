@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Tails is a privacy-focused operating system that runs from a USB stick, routing all traffic through the Tor network. By default, Tails leaves no trace on the computer you use—but this anonymity comes with a trade-off: every shutdown wipes your session clean. The persistent storage feature solves this problem by creating an encrypted volume on your USB drive that survives reboots. This guide explains how to set it up, what belongs in persistent storage, and what data should remain ephemeral for maximum security.
+Tails is a privacy-focused operating system that runs from an USB stick, routing all traffic through the Tor network. By default, Tails leaves no trace on the computer you use—but this anonymity comes with a trade-off: every shutdown wipes your session clean. The persistent storage feature solves this problem by creating an encrypted volume on your USB drive that survives reboots. This guide explains how to set it up, what belongs in persistent storage, and what data should remain ephemeral for maximum security.
 
 ## How Persistent Storage Works in Tails
 

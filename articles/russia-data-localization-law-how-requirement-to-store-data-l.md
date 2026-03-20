@@ -45,7 +45,7 @@ International privacy frameworks like GDPR provide strong user rights including 
 
 ### Increased Government Access
 
-Local data storage facilitates easier access by Russian authorities. The law was specifically designed to enable Roskomnadzor and other agencies to demand user data without going through international legal assistance processes. Companies with Russian data centers face direct legal pressure to comply with broad data requests.
+Local data storage helps easier access by Russian authorities. The law was specifically designed to enable Roskomnadzor and other agencies to demand user data without going through international legal assistance processes. Companies with Russian data centers face direct legal pressure to comply with broad data requests.
 
 ### Cross-Border Data Risks
 

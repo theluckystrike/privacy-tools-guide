@@ -22,7 +22,7 @@ This comparison focuses on deployment flexibility, security architecture, develo
 
 ### Nextcloud
 
-Nextcloud is an open-source PHP application that runs on virtually any Linux server, including containers, VMs, and bare metal. It requires a LAMP/LEMP stack (Linux, Apache/Nginx, MySQL/MariaDB/PostgreSQL, PHP).
+Nextcloud is an open-source PHP application that runs on any Linux server, including containers, VMs, and bare metal. It requires a LAMP/LEMP stack (Linux, Apache/Nginx, MySQL/MariaDB/PostgreSQL, PHP).
 
 ```bash
 # Deploy Nextcloud with Docker Compose
@@ -121,7 +121,7 @@ Synology's security model is partially closed-source. While DSM receives regular
 
 ### Nextcloud API
 
-Nextcloud exposes a comprehensive REST API and supports WebDAV for file operations. The platform offers official SDKs for Python, Node.js, and PHP.
+Nextcloud exposes a REST API and supports WebDAV for file operations. The platform offers official SDKs for Python, Node.js, and PHP.
 
 ```python
 # Python Nextcloud API example

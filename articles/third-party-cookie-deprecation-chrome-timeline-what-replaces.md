@@ -189,7 +189,7 @@ The Privacy Sandbox APIs have limitations. Avoid these mistakes:
 
 The deprecation of third-party cookies marks a fundamental shift in how the web handles user tracking. While Google's Privacy Sandbox offers compelling alternatives, the ecosystem is still maturing. The most resilient approach combines multiple strategies: authenticated first-party tracking for logged-in users, server-side solutions for conversions, and Privacy Sandbox APIs for interest-based advertising.
 
-Monitor Google's official deprecation timeline and the W3C Privacy Community Group for updates. The transition won't be seamless, but early preparation will minimize disruption.
+Monitor Google's official deprecation timeline and the W3C Privacy Community Group for updates. The transition won't be, but early preparation will minimize disruption.
 
 ---
 

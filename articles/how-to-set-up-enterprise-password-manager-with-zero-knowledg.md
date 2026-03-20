@@ -26,9 +26,9 @@ This architecture provides mathematical guarantees that even if the service prov
 
 For an enterprise deployment, you have several open-source options that provide zero-knowledge guarantees:
 
-- **Bitwarden**: Offers both hosted and self-hosted variants with a comprehensive API
+- **Bitwarden**: Offers both hosted and self-hosted variants with an API
 - **Vaultwarden**: A Rust-based Bitwarden server implementation, ideal for self-hosting
-- **Pass**: A Unix-style password manager using GPG encryption
+- **Pass**: An Unix-style password manager using GPG encryption
 - **1Password**: Proprietary but with strong zero-knowledge implementation
 
 For this guide, I'll focus on Vaultwarden for self-hosted deployment and Bitwarden's CLI for credential management, as these provide the most flexibility for developers.

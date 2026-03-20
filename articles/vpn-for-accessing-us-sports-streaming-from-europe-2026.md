@@ -21,7 +21,7 @@ Accessing US sports streaming platforms from Europe presents technical challenge
 
 US sports streaming services like ESPN+, Fox Sports, NBC Sports, and MLB.TV implement multiple layers of geographic detection. These systems combine IP address filtering, DNS geolocation, WebRTC leak detection, and browser fingerprinting to enforce regional restrictions. A successful implementation requires addressing each detection vector.
 
-The primary obstacle is that IPv4 address geolocation databases are highly accurate for major streaming services. When your exit IP originates from a European ISP, the streaming service's API queries MaxMind, ipinfo, or similar databases and blocks the connection immediately. Simply routing traffic through a US VPN server is necessary but often insufficient.
+The primary obstacle is that IPv4 address geolocation databases are highly accurate for major streaming services. When your exit IP originates from a European ISP, the streaming service's API queries MaxMind, ipinfo, or similar databases and blocks the connection immediately. Simply routing traffic through an US VPN server is necessary but often insufficient.
 
 ## Protocol Selection and Configuration
 

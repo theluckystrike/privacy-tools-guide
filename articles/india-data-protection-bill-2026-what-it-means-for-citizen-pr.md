@@ -125,7 +125,7 @@ The DPDPA became effective in phases:
 - **October 2025**: Data Protection Authority of India was constituted
 - **April 2026**: Full enforcement began with penalties up to ₹250 crore (approximately $30 million USD) for serious violations
 
-The Data Protection Authority of India (DPAI) has been empowered to conduct audits, investigate complaints, and impose financial penalties. Non-compliance can result in:
+The Data Protection Authority of India (DPAI) has been enabled to conduct audits, investigate complaints, and impose financial penalties. Non-compliance can result in:
 - Up to ₹50 crore ($6 million USD) for minor violations
 - Up to ₹250 crore ($30 million USD) or 4% of global turnover for serious breaches
 - Criminal liability for individuals involved in wrongful data processing

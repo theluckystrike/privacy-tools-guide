@@ -16,7 +16,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Email tracking pixels represent one of the most pervasive yet overlooked privacy threats in digital communication. These tiny, invisible images embedded in emails allow senders to monitor when you open messages, where you are located, and what device you use. Understanding how these spy pixels work and how to detect them empowers developers and power users to reclaim their email privacy.
+Email tracking pixels represent one of the most pervasive yet overlooked privacy threats in digital communication. These tiny, invisible images embedded in emails allow senders to monitor when you open messages, where you are located, and what device you use. Understanding how these spy pixels work and how to detect them enables developers and power users to reclaim their email privacy.
 
 ## How Email Tracking Pixels Work
 
@@ -102,7 +102,7 @@ This script parses raw email files and identifies potential tracking pixels by c
 
 ### Email Proxy Solutions
 
-For power users who want comprehensive protection without writing code, setting up an email proxy provides automatic tracking pixel blocking. Services like Mailbird or Proton Mail filter known trackers. You can also run your own proxy using tools like `mailu` or configure postfix with tracking filters.
+For power users who want protection without writing code, setting up an email proxy provides automatic tracking pixel blocking. Services like Mailbird or Proton Mail filter known trackers. You can also run your own proxy using tools like `mailu` or configure postfix with tracking filters.
 
 ## Blocking Tracking Pixels
 

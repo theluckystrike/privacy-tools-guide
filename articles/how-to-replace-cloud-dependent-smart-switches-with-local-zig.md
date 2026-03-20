@@ -40,7 +40,7 @@ The hub bridges Zigbee devices to your local network. Several options work well 
 - **SkyConnect** (USB dongle): Native Home Assistant integration
 - **Philips Hue Bridge**: Simple option if you only need Hue-compatible devices
 
-For maximum control, Zigbee2MQTT running on a local server paired with a USB dongle provides the most flexibility and transparency.
+For maximum control, Zigbee2MQTT running on a local server paired with an USB dongle provides the most flexibility and transparency.
 
 ### Smart Switches and Dimmers
 

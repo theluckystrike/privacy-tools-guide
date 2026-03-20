@@ -2,7 +2,7 @@
 
 layout: default
 title: "How To Set Up Encrypted Usb Drive With Recovery Instructions"
-description: "A comprehensive technical guide for setting up encrypted USB drives with recovery instructions. Perfect for developers and power users managing digital."
+description: "A technical guide for setting up encrypted USB drives with recovery instructions. Perfect for developers and power users managing digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-usb-drive-with-recovery-instructions/
@@ -75,7 +75,7 @@ Launch VeraCrypt and follow these steps:
 3. Select "Standard VeraCrypt volume"
 4. Choose a strong location for the container file
 5. Select AES-256 encryption with SHA-512 hash
-6. Set a robust volume password (we'll cover key derivation shortly)
+6. Set a volume password (we'll cover key derivation shortly)
 
 ### Step 3: Configure Strong Password Derivation
 

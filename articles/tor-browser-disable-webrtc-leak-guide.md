@@ -117,7 +117,7 @@ If your threat model involves sophisticated state-level adversaries, disabling W
 
 ## Advanced Configuration with Hardened user.js
 
-A comprehensive privacy-focused user.js extends beyond WebRTC:
+A privacy-focused user.js extends beyond WebRTC:
 
 ```javascript
 // user.js - Comprehensive Tor Browser hardening
@@ -151,7 +151,7 @@ Place this file in your Tor Browser profile directory and Tor Browser will apply
 
 ## Verification Commands for Linux and macOS
 
-Comprehensive testing ensures your WebRTC configuration is effective:
+testing ensures your WebRTC configuration is effective:
 
 ```bash
 # 1. Check about:config setting (manual verification required)
@@ -218,7 +218,7 @@ find ~/Library -name "profile.default" -path "*/Tor Browser*"
 
 ## Testing WebRTC Leaks Programmatically
 
-Create a comprehensive test suite to verify protection:
+Create a test suite to verify protection:
 
 ```javascript
 // webrtc-leak-test.js - Run in browser console
@@ -344,7 +344,7 @@ After implementing any of these methods, verify that WebRTC is properly disabled
 
 First, check that `media.peerconnection.enabled` shows as false in about:config. Second, test with JavaScript-based leak detection tools. Third, check browser console output for any WebRTC-related errors or warnings when visiting websites that use the technology.
 
-Use the comprehensive test script provided above to verify across all browsers. Regular verification is important because browser updates can reset some settings. Maintain a checklist of your privacy configurations and review them after each Tor Browser update.
+Use the test script provided above to verify across all browsers. Regular verification is important because browser updates can reset some settings. Maintain a checklist of your privacy configurations and review them after each Tor Browser update.
 
 ## Disabling WebRTC Across the Browser Ecosystem
 

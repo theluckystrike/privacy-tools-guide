@@ -163,7 +163,7 @@ async function handleRequest(request) {
 }
 ```
 
-This technique leverages Cloudflare's massive infrastructure, making blocking impractical.
+This technique uses Cloudflare's massive infrastructure, making blocking impractical.
 
 ## Recommended Workflow for 2026
 

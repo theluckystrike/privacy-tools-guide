@@ -25,7 +25,7 @@ Choosing between Bitwarden and KeePassXC comes down to a fundamental decision: d
 
 **KeePassXC** takes a fundamentally different approach. It's a local password database that never contacts any server by default. Your vault file (.kdbx) stays on your devices, and you control exactly where it lives. KeePassXC uses Argon2id as the default key derivation function (with PBKDF2 as a fallback), which provides better resistance against GPU-based brute force attacks compared to PBKDF2 alone.
 
-For threat models: if you're concerned about server-side breaches or mass surveillance, KeePassXC's offline-first design has a smaller attack surface. If you want seamless cross-device sync without manually managing vault files, Bitwarden's architecture is more convenient.
+For threat models: if you're concerned about server-side breaches or mass surveillance, KeePassXC's offline-first design has a smaller attack surface. If you want cross-device sync without manually managing vault files, Bitwarden's architecture is more convenient.
 
 ## Command-Line Interface
 
@@ -33,7 +33,7 @@ Both tools offer CLI access, but with different philosophies.
 
 ### Bitwarden CLI
 
-Bitwarden provides a comprehensive CLI that integrates directly with their cloud service:
+Bitwarden provides a CLI that integrates directly with their cloud service:
 
 ```bash
 # Install via npm
@@ -155,7 +155,7 @@ ssh-add -l
 
 Choose Bitwarden if:
 
-- You need seamless cross-device sync without manual file management
+- You need cross-device sync without manual file management
 - Your team needs shared vaults and admin controls
 - You want zero-configuration self-hosting with all premium features
 - You prefer cloud-based recovery options
@@ -171,7 +171,7 @@ Choose KeePassXC if:
 - You want to audit every line of code (open source with no proprietary server)
 - You prefer managing your own sync solution
 - Your threat model includes server-side attacks or you work in air-gapped environments
-- You need portable vaults that work from a USB stick
+- You need portable vaults that work from an USB stick
 
 KeePassXC serves developers who prioritize transparency and local control. The ability to keep your entire password database on encrypted storage with no cloud dependency appeals to those with strict security requirements.
 

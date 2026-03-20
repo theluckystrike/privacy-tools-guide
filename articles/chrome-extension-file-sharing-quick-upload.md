@@ -26,7 +26,7 @@ Chrome extension file sharing tools have become essential for quickly transferri
 
 A file sharing Chrome extension enables you to upload and share files directly from your browser without needing to visit a separate file hosting website. These extensions typically integrate with cloud storage services, dedicated file sharing platforms, or create temporary peer-to-peer connections for direct transfer.
 
-The "quick upload" capability refers to features that minimize the steps between selecting a file and generating a shareable link. Modern extensions achieve this through keyboard shortcuts, context menu integration, and one-click sharing workflows that streamline the entire process.
+The "quick upload" capability refers to features that minimize the steps between selecting a file and generating a shareable link. Modern extensions achieve this through keyboard shortcuts, context menu integration, and one-click sharing workflows that improve the entire process.
 
 ## Why Privacy Matters for File Sharing
 
@@ -170,7 +170,7 @@ shasum -a 256 -c document.pdf.sha256
 
 - **Setting expiration times too long**: Default settings often retain files for 30 days. For sensitive data, change this to 24 hours or immediate deletion after download.
 
-- **Sharing the link insecurely**: The shareable link is essentially a decryption key. If you email the link unencrypted or send it through unencrypted messaging, you've defeated the extension's encryption. Use end-to-end encrypted communication (Signal, ProtonMail) for link sharing.
+- **Sharing the link insecurely**: The shareable link is a decryption key. If you email the link unencrypted or send it through unencrypted messaging, you've defeated the extension's encryption. Use end-to-end encrypted communication (Signal, ProtonMail) for link sharing.
 
 - **Using the same password for multiple shares**: Always generate unique strong passwords for each sensitive share. Some extensions allow you to set custom passwords before sharing.
 

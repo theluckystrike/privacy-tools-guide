@@ -21,7 +21,7 @@ Choosing a Linux distribution for privacy-sensitive work requires understanding 
 
 ## Telemetry and Data Collection
 
-**Debian** collects virtually no telemetry by default. The project operates under a social contract that explicitly prioritizes user freedom, and the base system sends nothing to external servers. When you install Debian, you receive the software exactly as maintained by upstream Debian developers with no added data collection.
+**Debian** collects no telemetry by default. The project operates under a social contract that explicitly prioritizes user freedom, and the base system sends nothing to external servers. When you install Debian, you receive the software exactly as maintained by upstream Debian developers with no added data collection.
 
 ```bash
 # Verify no telemetry services are running on Debian
@@ -134,7 +134,7 @@ gpg --verify *.iso.sha256.sig *.iso
 
 Choose Debian if you need maximum transparency, minimal telemetry, and a stable base that changes slowly. Debian suits users who audit their systems regularly and prefer to compile additional software from source.
 
-Choose Fedora if you need cutting-edge features, SELinux enforcement by default, and faster security updates. Fedora works well for developers who want recent toolchains and containers.
+Choose Fedora if you need features, SELinux enforcement by default, and faster security updates. Fedora works well for developers who want recent toolchains and containers.
 
 Choose Pop!_OS if you need excellent hardware support, particularly for NVIDIA GPUs, and prefer a polished desktop experience. Pop!_OS serves users who want Ubuntu compatibility with System76's hardware enablement.
 

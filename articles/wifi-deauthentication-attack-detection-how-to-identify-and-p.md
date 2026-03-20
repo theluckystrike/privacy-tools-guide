@@ -26,7 +26,7 @@ This vulnerability affects both WPA2 and WPA3 networks. While WPA3 introduced Dr
 
 ## Detecting Deauthentication Attacks with Scapy
 
-Python developers can leverage Scapy, a powerful packet manipulation library, to build custom detection systems. Install Scapy with pip:
+Python developers can use Scapy, a powerful packet manipulation library, to build custom detection systems. Install Scapy with pip:
 
 ```bash
 pip install scapy
@@ -85,7 +85,7 @@ Run this script with your wireless interface in monitor mode. The detector maint
 
 ## Using Bettercap for Real-Time Monitoring
 
-Bettercap provides a more comprehensive attack detection framework with built-in WiFi module support. Install it and run the WiFi reconnaissance:
+Bettercap provides a more attack detection framework with built-in WiFi module support. Install it and run the WiFi reconnaissance:
 
 ```bash
 brew install bettercap  # macOS

@@ -71,13 +71,13 @@ function extractTimezoneDetails() {
 console.log(extractTimezoneDetails());
 ```
 
-The `getTimezoneOffset()` method returns the difference between UTC and local time in minutes. Combined with the IANA identifier, this creates a robust timezone fingerprint.
+The `getTimezoneOffset()` method returns the difference between UTC and local time in minutes. Combined with the IANA identifier, this creates a timezone fingerprint.
 
 ## Privacy Implications and Fingerprinting Potential
 
 Timezone fingerprinting poses significant privacy concerns despite its simplicity. The technique creates a persistent identifier that survives clearing cookies and using private browsing modes. Your timezone remains constant across sessions unless you deliberately change system settings.
 
-Marketing platforms leverage timezone data for several purposes. Content delivery networks use it for performance optimization, serving content from geographically closer servers. Advertising networks incorporate timezone into user profiles, inferring approximate location for geo-targeted advertising. Fraud detection systems flag accounts创建的timezone与预期不符.
+Marketing platforms use timezone data for several purposes. Content delivery networks use it for performance optimization, serving content from geographically closer servers. Advertising networks incorporate timezone into user profiles, inferring approximate location for geo-targeted advertising. Fraud detection systems flag accounts创建的timezone与预期不符.
 
 The effectiveness of timezone fingerprinting depends on population density within timezone regions. Someone with "America/New_York" timezone could be anywhere in the Eastern United States or Eastern Canada—millions of people share this identifier. However, the technique becomes more powerful when combined with other fingerprinting methods like screen resolution, language settings, and hardware characteristics.
 

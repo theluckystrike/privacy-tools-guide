@@ -35,7 +35,7 @@ Verify your router's available storage before proceeding:
 df -h
 ```
 
-AdGuard Home requires approximately 100MB of storage. If your device has limited space, consider using a USB drive for additional storage.
+AdGuard Home requires approximately 100MB of storage. If your device has limited space, consider using an USB drive for additional storage.
 
 ## Installing AdGuard Home on GL-Inet
 
@@ -108,7 +108,7 @@ This configuration ensures all devices connected to your router use the local DN
 
 ## Managing Block Lists
 
-AdGuard Home ships with default block lists, but you can add more comprehensive lists for better coverage. Navigate to **Filters** → **DNS Blocklists** and add these reputable sources:
+AdGuard Home ships with default block lists, but you can add more lists for better coverage. Navigate to **Filters** → **DNS Blocklists** and add these reputable sources:
 
 ### Recommended Block Lists
 
@@ -126,7 +126,7 @@ adguardhome --update
 
 ## Setting Up Pi-hole on Separate Hardware
 
-For users seeking more robust filtering or running additional network services, Pi-hole provides a mature alternative. Install Pi-hole on a Raspberry Pi or virtual machine, then configure your GL-Inet router to use it.
+For users seeking more filtering or running additional network services, Pi-hole provides a mature alternative. Install Pi-hole on a Raspberry Pi or virtual machine, then configure your GL-Inet router to use it.
 
 ### Router Configuration
 

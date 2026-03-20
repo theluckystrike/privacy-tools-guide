@@ -52,7 +52,7 @@ Tresorit also provides a SDK for .NET and JavaScript, making integration into ex
 
 ### Proton Drive API
 
-Proton Drive's API offerings have expanded significantly in 2026 but remain more limited than Tresorit's enterprise-focused approach. The current API supports basic file operations through a RESTful interface, though the documentation has historically been less comprehensive.
+Proton Drive's API offerings have expanded significantly in 2026 but remain more limited than Tresorit's enterprise-focused approach. The current API supports basic file operations through a RESTful interface, though the documentation has historically been less.
 
 For developers, Proton's strength lies in its **Drive SDK** available for multiple platforms:
 
@@ -89,7 +89,7 @@ tresorctl folder sync-mode "code-repo" --mode always-local
 
 ### Proton Drive Sync
 
-Proton Drive's sync client offers similar selective sync capabilities but with arguably smoother integration into desktop environments. The Proton Drive desktop app mounts as a virtual drive, making cloud files appear as local files without necessarily consuming local storage until accessed.
+Proton Drive's sync client offers similar selective sync capabilities but with smoother integration into desktop environments. The Proton Drive desktop app mounts as a virtual drive, making cloud files appear as local files without necessarily consuming local storage until accessed.
 
 Proton Drive supports file versioning across all paid plans, with retention periods varying by plan tier. Tresorit provides version history with 30-day retention on standard plans, extendable on higher tiers.
 
@@ -137,7 +137,7 @@ Neither service suffered major security incidents in 2025-2026, though Proton's 
 ## Practical Recommendations
 
 **Choose Tresorit if:**
-- You need robust API access for automation and team management
+- You need API access for automation and team management
 - Enterprise features like admin policies and compliance reporting matter
 - You're managing sensitive corporate data requiring detailed access logs
 

@@ -25,7 +25,7 @@ GDPR requires explicit consent before setting non-essential cookies, the right t
 
 ## Self-Hosted Analytics Solutions
 
-Several open-source and commercial alternatives provide robust analytics without the GDPR complications. The most popular options include Matomo, Plausible, Fathom, and Umami. Each offers different trade-offs between features, hosting requirements, and pricing.
+Several open-source and commercial alternatives provide analytics without the GDPR complications. The most popular options include Matomo, Plausible, Fathom, and Umami. Each offers different trade-offs between features, hosting requirements, and pricing.
 
 **Matomo** provides the most feature-complete alternative, offering goals, funnels, heatmaps, and custom events. You can host it yourself on any PHP-compatible server or use their cloud offering. The self-hosted version gives you complete data ownership.
 
@@ -35,7 +35,7 @@ Several open-source and commercial alternatives provide robust analytics without
 
 ## Configuring Matomo for GDPR Compliance
 
-Matomo offers the most comprehensive GDPR compliance features when self-hosted. Here's how to set it up on a typical Linux server with Nginx.
+Matomo offers the most GDPR compliance features when self-hosted. Here's how to set it up on a typical Linux server with Nginx.
 
 First, install the required dependencies:
 

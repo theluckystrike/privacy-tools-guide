@@ -93,7 +93,7 @@ privacy.resistFingerprinting = true
 // - Navigator properties (generic values)
 ```
 
-Chromium's fingerprinting countermeasures are more limited. The `PrivacySandboxSettings4` and related features provide some protection, but the approach differs from Firefox's comprehensive fingerprinting resistance.
+Chromium's fingerprinting countermeasures are more limited. The `PrivacySandboxSettings4` and related features provide some protection, but the approach differs from Firefox's fingerprinting resistance.
 
 ## Extension Permission Models
 
@@ -158,7 +158,7 @@ Chromium's advantage lies in its ubiquity—testing in Chrome ensures compatibil
 
 The architectural differences between Firefox and Chromium create distinct privacy profiles:
 
-- **Choose Firefox** if comprehensive fingerprinting resistance, aggressive tracker blocking, and first-party isolation are priorities. Firefox's Total Cookie Protection and Enhanced Tracking Protection provide stronger out-of-box privacy.
+- **Choose Firefox** if fingerprinting resistance, aggressive tracker blocking, and first-party isolation are priorities. Firefox's Total Cookie Protection and Enhanced Tracking Protection provide stronger out-of-box privacy.
 
 - **Choose Chromium-based browsers** if extension ecosystem, developer tooling, and cross-browser compatibility are primary concerns. The large extension library and consistent web platform behavior support development workflows.
 

@@ -16,7 +16,7 @@ voice-checked: true
 
 Technical estate inheritance refers to the process of transferring digital infrastructure access from one person or team to another. Whether you are a sysadmin preparing for retirement, a lead developer transitioning projects, or an organization ensuring business continuity, proper documentation of SSH keys and server access is critical. Without it, your team faces unnecessary downtime, security risks, or costly recovery efforts.
 
-This guide walks through creating comprehensive SSH and server access documentation that makes technical inheritance seamless and secure.
+This guide walks through creating SSH and server access documentation that makes technical inheritance and secure.
 
 ## Why Technical Estate Documentation Matters
 

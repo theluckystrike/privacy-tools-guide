@@ -167,7 +167,7 @@ Using a personal VPN adds a layer of protection against traffic monitoring, thou
 
 ### After Moving In
 
-1. **Document everything** — create a comprehensive log of monitoring devices
+1. **Document everything** — create a log of monitoring devices
 2. **Send written confirmation** of what devices you've identified
 3. **Check lease for surveillance clauses** — some states require specific language
 4. **Test network security** — verify no unauthorized devices on your network

@@ -67,7 +67,7 @@ This script handles the decryption automatically using your local Chrome keychai
 Select a password manager that fits your threat model and technical requirements:
 
 - **Bitwarden**: Open-source, cloud-hosted or self-hosted, excellent CLI
-- **1Password**: Closed-source, best-in-class UX, robust CLI
+- **1Password**: Closed-source, leading UX, CLI
 - **Vaultwarden**: Self-hosted Bitwarden alternative, lightweight
 - **KeepassXC**: Local-only, completely offline, excellent for air-gapped systems
 

@@ -109,7 +109,7 @@ The practical limitation is message length—SMS supports 160 characters (or 70 
 
 ## Mesh Networking Applications
 
-Mesh networking represents a paradigm shift, using device-to-device communication to create resilient networks independent of centralized infrastructure. These applications often support encrypted message passing without internet connectivity.
+Mesh networking represents a major change, using device-to-device communication to create resilient networks independent of centralized infrastructure. These applications often support encrypted message passing without internet connectivity.
 
 ### Briar Messenger
 

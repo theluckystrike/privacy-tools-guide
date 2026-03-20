@@ -112,7 +112,7 @@ sudo pfctl -e
 
 ## Creating an Outbound Blocking Ruleset
 
-For comprehensive privacy, control outbound connections as well. This prevents applications from transmitting data without your knowledge:
+For privacy, control outbound connections as well. This prevents applications from transmitting data without your knowledge:
 
 ```bash
 # Default deny outbound

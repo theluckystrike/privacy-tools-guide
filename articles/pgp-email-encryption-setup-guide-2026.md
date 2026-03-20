@@ -31,7 +31,7 @@ Most Linux distributions include GPG by default. On macOS, install via Homebrew:
 brew install gnupg
 ```
 
-On Windows, download Gpg4win from the official website or use WSL for a Unix-like environment.
+On Windows, download Gpg4win from the official website or use WSL for an Unix-like environment.
 
 Verify your installation:
 

@@ -109,7 +109,7 @@ For users concerned about being identified through mutual contacts, several miti
 # https://hinge.co/settings/privacy
 ```
 
-After submitting a data access request, you receive a comprehensive breakdown of stored information, including contacts uploaded, Facebook connections, and interaction history. This transparency helps users understand their exact exposure level.
+After submitting a data access request, you receive a breakdown of stored information, including contacts uploaded, Facebook connections, and interaction history. This transparency helps users understand their exact exposure level.
 
 ## Technical Mechanisms: Phone Number Hashing and Matching
 

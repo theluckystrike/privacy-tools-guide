@@ -21,7 +21,7 @@ Dating apps require phone number verification as a standard security measure, bu
 
 ## The Privacy Problem with Dating App Verification
 
-When you verify a dating app with your primary phone number, you create an irreversible link between your dating profile and your real identity. Data brokers compile phone number records alongside addresses, property ownership, and family connections. Anyone with your phone number can purchase a comprehensive profile containing your full name, home address, and background information.
+When you verify a dating app with your primary phone number, you create an irreversible link between your dating profile and your real identity. Data brokers compile phone number records alongside addresses, property ownership, and family connections. Anyone with your phone number can purchase a profile containing your full name, home address, and background information.
 
 Beyond data broker risks, dating app phone numbers face additional threats. Ex-partners, harasses, or malicious actors can use your number to perform SIM swap attacks, hijack your accounts, or conduct social engineering campaigns. The consequences extend beyond the dating context—your professional reputation, family safety, and financial security all depend on controlling who accesses your primary contact information.
 
@@ -64,13 +64,13 @@ async function getLatestSMS(fromNumber) {
 
 Virtual number services offer dedicated phone numbers with various pricing models. Unlike VoIP services focused on communication, these providers often emphasize privacy and anonymity. Services like Hushed, Burner, or Line2 provide subscription-based numbers that function like regular phone numbers within iOS and Android applications.
 
-The primary advantage involves cross-platform compatibility—these numbers integrate with your phone's native messaging application, providing seamless user experience while maintaining separation from your primary line.
+The primary advantage involves cross-platform compatibility—these numbers integrate with your phone's native messaging application, providing user experience while maintaining separation from your primary line.
 
 ### eSIM and SIM-Free Mobile Solutions
 
 Modern smartphones support multiple eSIM profiles, enabling you to maintain separate phone numbers without physical SIM cards. Services like Airalo, Holafly, or regional carriers provide eSIM data plans with phone numbers in various countries.
 
-This approach provides the most robust separation because eSIM numbers operate independently from your primary carrier account. Even if someone obtains your primary phone number, they cannot easily correlate it with your dating app number.
+This approach provides the most separation because eSIM numbers operate independently from your primary carrier account. Even if someone obtains your primary phone number, they cannot easily correlate it with your dating app number.
 
 ## Implementation Strategies
 
@@ -136,7 +136,7 @@ Using separate phone numbers generally complies with dating app terms, though so
 
 ## Security Hardening Beyond Phone Numbers
 
-Phone number separation forms one layer of a comprehensive dating privacy strategy. Supplement this with:
+Phone number separation forms one layer of a dating privacy strategy. Supplement this with:
 
 - Separate email addresses for each dating platform
 - Profile photos that don't appear elsewhere on your social media

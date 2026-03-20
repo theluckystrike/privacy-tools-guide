@@ -23,7 +23,7 @@ This guide provides direct opt-out procedures, practical examples, and considera
 
 Acxiom, now part of IPG Mediabrands, maintains one of the largest consumer databases in the world, containing information on over 500 million consumers globally. Their data includes demographic details, purchasing behavior, lifestyle interests, and predictive scores used by marketers for targeting.
 
-Oracle Data Cloud (formerly Datalogix) aggregates purchase data from retailers, loyalty programs, and loyalty card transactions. They connect offline purchasing behavior with online identifiers, creating comprehensive consumer profiles used for advertising measurement and targeting.
+Oracle Data Cloud (formerly Datalogix) aggregates purchase data from retailers, loyalty programs, and loyalty card transactions. They connect offline purchasing behavior with online identifiers, creating consumer profiles used for advertising measurement and targeting.
 
 Nielsen, best known for television ratings, also maintains consumer panels and behavioral databases. Their consumer information services track shopping habits, media consumption, and demographic profiles used for market research.
 
@@ -232,7 +232,7 @@ brew install --cask ublock-origin
 
 ## Additional Resources
 
-For comprehensive coverage beyond the three companies covered here, consider:
+For coverage beyond the three companies covered here, consider:
 - The Privacy Rights Clearinghouse database
 - State-level consumer privacy laws (CCPA, VCDPA, etc.)
 - Browser-based privacy tools that automate opt-out signals

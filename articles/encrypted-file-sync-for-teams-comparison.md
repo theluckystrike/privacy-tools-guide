@@ -120,7 +120,7 @@ curl -u "user:password" https://your-nextcloud.com/remote.php/dav/files/user/
 curl -u "user:password" -T localfile.txt https://your-nextcloud.com/remote.php/dav/files/user/
 ```
 
-**Team features**: Nextcloud offers comprehensive team collaboration: file sharing,权限管理, calendar, contacts, and collaborative editing via OnlyOffice or Collabora.
+**Team features**: Nextcloud offers team collaboration: file sharing,权限管理, calendar, contacts, and collaborative editing via OnlyOffice or Collabora.
 
 ## Comparison Summary
 

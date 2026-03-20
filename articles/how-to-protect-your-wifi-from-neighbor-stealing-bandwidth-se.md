@@ -111,7 +111,7 @@ ubus call hostapd.wlan0 get_clients
 
 ### Network Scanning Tools
 
-For more comprehensive analysis, use network scanning tools:
+For more analysis, use network scanning tools:
 
 ```bash
 # Install nmap for network scanning

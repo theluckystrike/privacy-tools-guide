@@ -78,7 +78,7 @@ def estimate_identifiability(ip_type, users_count):
 
 ### Dedicated IP Advantages
 
-**Behavioral fingerprinting resistance** actually favors dedicated IPs in certain scenarios. With a shared IP, your consistent connection patterns (connection times, bandwidth usage, traffic timing) combined with other markers can create a identifiable profile even without seeing your actual IP.
+**Behavioral fingerprinting resistance** actually favors dedicated IPs in certain scenarios. With a shared IP, your consistent connection patterns (connection times, bandwidth usage, traffic timing) combined with other markers can create an identifiable profile even without seeing your actual IP.
 
 **Reputation management** becomes possible with dedicated IPs. You control the IP's entire reputation history, allowing you to build trust with services that maintain allowlists or require consistent IP verification.
 

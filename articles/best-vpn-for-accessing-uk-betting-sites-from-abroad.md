@@ -175,7 +175,7 @@ When connection problems persist, systematically diagnose:
 ## Legal and Responsible Usage
 
 Before accessing betting platforms from abroad, verify that:
-- You hold a valid account with a UK-licensed operator
+- You hold a valid account with an UK-licensed operator
 - Your account remains in good standing
 - You comply with the terms of service of both the VPN provider and betting site
 - You understand the gambling regulations in your current jurisdiction

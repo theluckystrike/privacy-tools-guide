@@ -109,7 +109,7 @@ services:
 
 ## Mobile Device Configuration
 
-On iOS and Android, VPN configuration has become streamlined through built-in support for IKEv2 and WireGuard protocols, as well as VPN configuration profiles.
+On iOS and Android, VPN configuration has become improved through built-in support for IKEv2 and WireGuard protocols, as well as VPN configuration profiles.
 
 ```swift
 // iOS VPN Configuration Extension (conceptual)

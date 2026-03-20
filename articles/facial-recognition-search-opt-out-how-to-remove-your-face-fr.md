@@ -163,7 +163,7 @@ Several services offer proactive facial recognition protection by monitoring for
 
 ## Beyond Individual Services
 
-Removing your data from Pimeyes and Clearview addresses two services but doesn't eliminate your images from the broader internet. Images remain on original hosting platforms, and new services may emerge. A comprehensive strategy includes:
+Removing your data from Pimeyes and Clearview addresses two services but doesn't eliminate your images from the broader internet. Images remain on original hosting platforms, and new services may emerge. A strategy includes:
 
 1. **Regular monitoring** — Periodically search for your name and images using these services
 2. **Image removal requests** — Contact websites hosting your images directly

@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Facebook Dating represents Meta's attempt to compete in the crowded online dating market by leveraging its massive social graph. Since launching in 2019, the feature has raised legitimate privacy questions from security-conscious users, particularly those familiar with how platforms monetize user data. This article examines whether Meta uses your dating activity for ad targeting and provides actionable controls for managing your privacy.
+Facebook Dating represents Meta's attempt to compete in the crowded online dating market by using its massive social graph. Since launching in 2019, the feature has raised legitimate privacy questions from security-conscious users, particularly those familiar with how platforms monetize user data. This article examines whether Meta uses your dating activity for ad targeting and provides actionable controls for managing your privacy.
 
 ## How Facebook Dating Works
 
@@ -96,15 +96,15 @@ Developers and privacy-conscious users should understand both the interface cont
 ### Interface-Based Controls
 
 1. **Limit Dating Profile Visibility**
-   - Settings → Dating → Edit Settings → "Who can see your dating profile"
-   - Options include "Friends of Friends" or "Everyone"
+ - Settings → Dating → Edit Settings → "Who can see your dating profile"
+ - Options include "Friends of Friends" or "Everyone"
 
 2. **Disconnect Instagram**
-   - Settings → Dating → Instagram Settings
-   - Removing the link prevents cross-platform data merging
+ - Settings → Dating → Instagram Settings
+ - Removing the link prevents cross-platform data merging
 
 3. **Activity Controls**
-   - Turn off "Show activity on Facebook" to prevent Dating activity appearing in friends' feeds
+ - Turn off "Show activity on Facebook" to prevent Dating activity appearing in friends' feeds
 
 ### API-Level Controls (For Developers)
 

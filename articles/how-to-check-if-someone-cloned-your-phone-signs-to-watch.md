@@ -87,7 +87,7 @@ Apps requesting SMS, call log, or device admin permissions without clear justifi
 
 ### Checking for IMSI Catcher Indicators
 
-IMSI catchers (StingRay devices) can facilitate cloning by intercepting your phone's connection. While detecting them requires specialized tools, you can monitor network behavior:
+IMSI catchers (StingRay devices) can help cloning by intercepting your phone's connection. While detecting them requires specialized tools, you can monitor network behavior:
 
 ```python
 # Python script to monitor cell tower changes
@@ -171,7 +171,7 @@ If you confirm unauthorized access:
 1. **Contact your carrier immediately** - Report suspected cloning and request a new SIM card with fresh IMSI
 2. **Change all passwords** - Prioritize email, banking, and social media accounts
 3. **Enable two-factor authentication** - Switch to hardware keys or authenticator apps
-4. **Factory reset your device** - This removes any malware facilitating the cloning
+4. **Factory reset your device** - This removes any malware helping the cloning
 5. **File a report** - Document the incident with relevant authorities
 
 ## Related Reading

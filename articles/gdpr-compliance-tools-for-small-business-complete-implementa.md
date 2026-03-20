@@ -83,7 +83,7 @@ Establish clear internal procedures:
 - Document response steps
 - Prepare notification templates
 
-Breach detection tools monitor for suspicious activity and automate alerting. While comprehensive security information and event management (SIEM) solutions exceed small business budgets, basic logging and monitoring services provide essential visibility.
+Breach detection tools monitor for suspicious activity and automate alerting. While security information and event management (SIEM) solutions exceed small business budgets, basic logging and monitoring services provide essential visibility.
 
 ## Vendor Management and Data Processing Agreements
 

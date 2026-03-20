@@ -33,7 +33,7 @@ Instead of tracking individual opens, consider implementing these approaches:
 
 ## Building Consent Management
 
-Effective privacy-first email systems start with robust consent management. Users should understand what data you collect and why.
+Effective privacy-first email systems start with consent management. Users should understand what data you collect and why.
 
 ### Implementing Consent Preferences
 
@@ -177,7 +177,7 @@ Shift your success metrics from invasive tracking to privacy-respecting alternat
 | Predictive behavioral scores | Preference-based segmentation |
 | Revenue per recipient | Revenue per campaign (aggregated) |
 
-These alternatives still provide actionable insights while respecting user privacy.
+These alternatives still provide practical recommendations while respecting user privacy.
 
 ## Testing Your Implementation
 

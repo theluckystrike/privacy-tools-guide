@@ -25,7 +25,7 @@ Non-consensual intimate image (NCII) distribution occurs when intimate media is 
 
 ### Document Everything
 
-Before initiating removal requests, create a comprehensive record:
+Before initiating removal requests, create a record:
 
 ```bash
 # Create a timestamped evidence directory

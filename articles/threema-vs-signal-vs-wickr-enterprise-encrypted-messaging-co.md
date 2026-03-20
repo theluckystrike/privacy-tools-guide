@@ -94,7 +94,7 @@ Threema Work pricing is per-user, with volume discounts for organizations exceed
 
 ### Wickr
 
-Wickr provides the most comprehensive enterprise deployment options:
+Wickr provides the most enterprise deployment options:
 
 - **Wickr Enterprise**: Self-hosted or AWS-hosted options
 - **Wickr Government**: FedRAMP-authorized variant for US government agencies
@@ -145,7 +145,7 @@ def signal_webhook():
 
 **Threema Gateway**: Requires registration as a Threema Gateway ID. Supports both end-to-end encrypted and plaintext (for public channels) messaging.
 
-**Wickr Bot API**: Provides the most comprehensive bot framework with:
+**Wickr Bot API**: Provides the most bot framework with:
 - Rich message formatting
 - Attachment handling
 - Message threading

@@ -18,7 +18,7 @@ The California Consumer Privacy Act (CCPA) grants California residents significa
 
 ## Understanding CCPA Enforcement Authority
 
-The CAG holds primary enforcement authority for CCPA violations. Unlike some privacy laws that rely solely on private lawsuits, the CCPA empowers the Attorney General to take action against businesses that fail to comply with consumer rights requirements. This makes the CAG complaint process a powerful tool for accountability.
+The CAG holds primary enforcement authority for CCPA violations. Unlike some privacy laws that rely solely on private lawsuits, the CCPA enables the Attorney General to take action against businesses that fail to comply with consumer rights requirements. This makes the CAG complaint process a powerful tool for accountability.
 
 Before filing, ensure your complaint involves a for-profit business that collects California residents' personal information and meets one of these thresholds: annual gross revenue exceeding $25 million, buys or sells personal information of 100,000+ consumers, or derives 50% or more of annual revenue from selling personal information.
 
@@ -141,7 +141,7 @@ For CPRA-specific violations, you can also file complaints with the California P
 
 ## Developer-Specific Considerations
 
-If you're building applications that handle California consumer data, understand that users may file complaints against your organization. Implement robust CCPA compliance:
+If you're building applications that handle California consumer data, understand that users may file complaints against your organization. Implement CCPA compliance:
 
 ```javascript
 // Example: CCPA opt-out response headers

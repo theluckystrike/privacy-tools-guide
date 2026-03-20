@@ -67,10 +67,10 @@ Detecting a compromise early can prevent further intrusion. Here are the most co
 1. Open the Alexa app and go to **Skills**
 2. Review all installed skills, especially those you did not intentionally install
 3. Remove skills that request excessive permissions:
-   - Access to voice recordings
-   - Contact list access
-   - Payment permissions
-   - Home network control
+ - Access to voice recordings
+ - Contact list access
+ - Payment permissions
+ - Home network control
 4. Disable skills you no longer use
 
 ### Check for Unrecognized Routines
@@ -78,10 +78,10 @@ Detecting a compromise early can prevent further intrusion. Here are the most co
 1. Go to **More** > **Routines** in the Alexa app
 2. Review all active routines, noting their triggers and actions
 3. Look for routines that:
-   - Run at unusual times
-   - Control multiple devices unexpectedly
-   - Send notifications or emails
-   - Interact with third-party services
+ - Run at unusual times
+ - Control multiple devices unexpectedly
+ - Send notifications or emails
+ - Interact with third-party services
 
 ## How to Audit Your Home Assistant
 
@@ -91,19 +91,19 @@ Detecting a compromise early can prevent further intrusion. Here are the most co
 2. Navigate to **Configuration** > **Logbook**
 3. Filter for unusual time periods when you were not home
 4. Look for:
-   - Unexpected device state changes
-   - Automation executions you did not trigger
-   - Unknown user logins
-   - Service calls to unfamiliar integrations
+ - Unexpected device state changes
+ - Automation executions you did not trigger
+ - Unknown user logins
+ - Service calls to unfamiliar integrations
 
 ### Check Automation and Script Executions
 
 1. Go to **Configuration** > **Automations**
 2. Review all automations for:
-   - Unknown or recently added automations
-   - Automations with HTTP requests to external services
-   - Automations that trigger on unusual events
-   - Hidden or disabled automations that may have been intentionally concealed
+ - Unknown or recently added automations
+ - Automations with HTTP requests to external services
+ - Automations that trigger on unusual events
+ - Hidden or disabled automations that may have been intentionally concealed
 3. Check **Configuration** > **Scripts** for unfamiliar scripts
 4. Review the automation trace history for unexpected triggers
 
@@ -111,9 +111,9 @@ Detecting a compromise early can prevent further intrusion. Here are the most co
 
 1. Navigate to **Configuration** > **Users**
 2. Review all users, paying attention to:
-   - Unknown or newly added users
-   - Users with administrator privileges you did not create
-   - Service accounts with broad access
+ - Unknown or newly added users
+ - Users with administrator privileges you did not create
+ - Service accounts with broad access
 3. Check **Long-Lived Access Tokens** in your user profile
 4. Revoke any tokens you do not recognize or that are no longer needed
 
@@ -130,9 +130,9 @@ If you have network monitoring capabilities:
 
 1. Go to **Configuration** > **Integrations**
 2. Review all installed integrations, especially:
-   - Third-party cloud integrations
-   - Custom integrations from unknown sources
-   - Integrations with access to sensitive data
+ - Third-party cloud integrations
+ - Custom integrations from unknown sources
+ - Integrations with access to sensitive data
 3. Remove any integrations you did not intentionally install
 4. Check for unofficial or fake integrations masquerading as legitimate ones
 

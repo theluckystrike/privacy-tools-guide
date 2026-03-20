@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Email tracking has become ubiquitous in modern email marketing. When you open an email, the sender can often detect it—and build a profile of your reading habits. Apple's iOS Mail Privacy Protection offers a robust defense against these invasive tracking techniques. This guide explains how the feature works, what it blocks, and how power users can leverage it effectively.
+Email tracking has become ubiquitous in modern email marketing. When you open an email, the sender can often detect it—and build a profile of your reading habits. Apple's iOS Mail Privacy Protection offers a defense against these invasive tracking techniques. This guide explains how the feature works, what it blocks, and how power users can use it effectively.
 
 ## Understanding Email Tracking and Open Receipts
 
@@ -91,7 +91,7 @@ Important limitations exist. Mail Privacy Protection does not:
 - Protect against sendercollected metadata beyond tracking pixels
 - Work with IMAP/POP accounts that don't use Apple's servers
 
-For comprehensive email privacy, consider using dedicated encrypted email services alongside iOS Mail.
+For email privacy, consider using dedicated encrypted email services alongside iOS Mail.
 
 ## Practical Examples for Developers and Power Users
 

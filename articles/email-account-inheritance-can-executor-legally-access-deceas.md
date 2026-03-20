@@ -280,7 +280,7 @@ class GoogleTakeoutRequest:
 
 2. **Start early**: Email provider response times vary from weeks to months.
 
-3. **Obtain comprehensive court authority**: Ensure your Letters of Administration or Probate explicitly mention "digital assets" or "electronic communications."
+3. **Obtain court authority**: Ensure your Letters of Administration or Probate explicitly mention "digital assets" or "electronic communications."
 
 4. **Use secure channels**: Send sensitive documents via encrypted email or secure file transfer.
 

@@ -61,7 +61,7 @@ log_entry = {
 }
 ```
 
-Traffic logs essentially recreate your browsing history. If you're trying to hide your activity from your ISP, government, or VPN provider itself, traffic logs defeat that purpose.
+Traffic logs recreate your browsing history. If you're trying to hide your activity from your ISP, government, or VPN provider itself, traffic logs defeat that purpose.
 
 ### Authentication Logs
 

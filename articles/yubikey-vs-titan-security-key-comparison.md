@@ -22,7 +22,7 @@ Choose YubiKey if you need multi-protocol support (TOTP, OpenPGP, PIV, SSH), mul
 
 YubiKey comes in multiple form factors, giving users flexibility in how they carry and use their keys. The YubiKey 5 Series offers USB-A, USB-C, and NFC variants, with some models combining multiple connectors. The YubiKey 5Ci features both Lightning and USB-C, making it compatible with iOS devices. This versatility matters for developers working across multiple platforms.
 
-Titan Security Key ships in two versions: a USB-A model with NFC and a Bluetooth Low Energy (BLE) version. The BLE key requires battery power and pairing via the Titan Security Key app, which introduces complexity absent from Yubico's simpler approach. The USB-A+NFC model works immediately when plugged into any compatible port.
+Titan Security Key ships in two versions: an USB-A model with NFC and a Bluetooth Low Energy (BLE) version. The BLE key requires battery power and pairing via the Titan Security Key app, which introduces complexity absent from Yubico's simpler approach. The USB-A+NFC model works immediately when plugged into any compatible port.
 
 Both keys feel solidly constructed. Yubico's keys have a slightly larger profile with a removable keychain ring, while Titan keys are more compact but lack the same carrying options.
 

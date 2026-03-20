@@ -207,7 +207,7 @@ async function initializeAds() {
 
 The Topics API exists in ongoing regulatory scrutiny. The UK's Competition and Markets Authority has expressed concerns about whether the API truly reduces tracking or simply consolidates Google's dominance in digital advertising. Privacy researchers continue to analyze whether the API's privacy protections are sufficient or merely create an illusion of user control.
 
-For users seeking maximum privacy, the Topics API represents one tracking vector among many. Combining API blocking with other measures—using privacy-focused browsers, implementing tracker blockers, and minimizing browser fingerprinting—provides more comprehensive protection.
+For users seeking maximum privacy, the Topics API represents one tracking vector among many. Combining API blocking with other measures—using privacy-focused browsers, implementing tracker blockers, and minimizing browser fingerprinting—provides more protection.
 
 The API's design includes some privacy safeguards: no user identifiers are shared, topics are intentionally generic rather than specific, and the three-week delay prevents real-time tracking. Yet these safeguards create a system that trades explicit tracking for inferred interests—a distinction that may feel meaningless when the end result enables the same advertising targeting.
 

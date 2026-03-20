@@ -140,7 +140,7 @@ If any of these occur, stop your banking session immediately. Disconnect from th
 When banking online from Southeast Asia, your VPN server location affects both security and functionality:
 
 - **Singapore servers**: Typically provide lowest latency and strong banking compatibility
-- **Hong Kong servers**: Good alternative with robust infrastructure
+- **Hong Kong servers**: Good alternative with infrastructure
 - **Japan servers**: Excellent connectivity, though potentially higher latency
 
 Some banks block connections from certain countries or flag VPN IPs as suspicious. Keep a few server options available and test them before traveling.

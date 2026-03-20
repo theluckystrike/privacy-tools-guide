@@ -54,7 +54,7 @@ The fundamental difference between Private Relay and VPNs lies in how they handl
 
 A VPN creates an encrypted tunnel from your device to the VPN server. All application traffic—HTTP, HTTPS, DNS, and raw TCP/UDP flows—passes through this tunnel. The VPN provider can see all your traffic but your ISP cannot. This is particularly useful when using untrusted networks or when hiding traffic patterns from your network administrator.
 
-Private Relay only encrypts Safari traffic and DNS queries. Other applications using direct network connections bypass Private Relay entirely. This means you still need a VPN for comprehensive traffic protection, especially on public Wi-Fi networks.
+Private Relay only encrypts Safari traffic and DNS queries. Other applications using direct network connections bypass Private Relay entirely. This means you still need a VPN for traffic protection, especially on public Wi-Fi networks.
 
 ### IP Address Behavior
 
@@ -426,11 +426,11 @@ iOS Device Management Profile:
 
 The choice between Private Relay and VPN depends on your specific requirements, threat model, and device ecosystem. Private Relay offers Apple-centric users a convenient way to reduce IP-based tracking and hide DNS queries from ISPs, with minimal configuration. It excels at providing baseline privacy for Safari users who want protection without managing VPN subscriptions.
 
-Traditional VPNs remain the better choice for comprehensive traffic protection, cross-platform consistency, and use cases requiring specific IP address behavior. For developers building privacy-aware applications, understanding both systems allows better testing and compatibility decisions.
+Traditional VPNs remain the better choice for traffic protection, cross-platform consistency, and use cases requiring specific IP address behavior. For developers building privacy-aware applications, understanding both systems allows better testing and compatibility decisions.
 
 Neither solution provides complete anonymity on its own. Clever tracking methods can still fingerprint users through browser characteristics, JavaScript APIs, and behavioral analysis. For high-security requirements, consider combining these network-layer protections with browser hardening, tracker blocking, content-security policies, and proper cookie management strategies.
 
-The optimal approach depends on your specific use case: baseline privacy for casual browsing (Private Relay), comprehensive protection for mobile devices (VPN), or a combination of both for maximum defense-in-depth.
+The optimal approach depends on your specific use case: baseline privacy for casual browsing (Private Relay), protection for mobile devices (VPN), or a combination of both for maximum defense-in-depth.
 
 
 ## Related Reading

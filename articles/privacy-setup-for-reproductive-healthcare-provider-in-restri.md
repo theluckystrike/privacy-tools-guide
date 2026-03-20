@@ -26,7 +26,7 @@ States with restricted reproductive healthcare access have introduced laws that 
 - **Data broker exemptions**: Information shared with third-party services may not receive the same protections
 - **Employee liability**: Staff may face personal legal risk for handling certain patient data
 
-The technical response involves encryption at rest and in transit, data minimization, compartmentalization, and robust access controls.
+The technical response involves encryption at rest and in transit, data minimization, compartmentalization, and access controls.
 
 ## Patient Data Protection
 

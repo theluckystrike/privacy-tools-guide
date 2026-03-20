@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-The Reality protocol represents one of the most sophisticated approaches to bypassing network censorship in 2026. Developed as part of the Xray project, it leverages a unique mechanism called "active probing" or "realities" to simulate legitimate traffic patterns, making detection significantly harder than traditional proxy protocols. This guide walks you through configuring Xray with Reality to create an undetectable proxy suitable for use in heavily censored regions.
+The Reality protocol represents one of the most sophisticated approaches to bypassing network censorship in 2026. Developed as part of the Xray project, it uses a unique mechanism called "active probing" or "realities" to simulate legitimate traffic patterns, making detection significantly harder than traditional proxy protocols. This guide walks you through configuring Xray with Reality to create an undetectable proxy suitable for use in heavily censored regions.
 
 ## Understanding How Reality Protocol Works
 

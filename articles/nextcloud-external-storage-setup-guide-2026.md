@@ -2,7 +2,7 @@
 
 layout: default
 title: "Nextcloud External Storage Setup Guide 2026"
-description: "A comprehensive technical guide to configuring external storage in Nextcloud for developers and power users. Connect S3, WebDAV, FTP, and local storage."
+description: "A technical guide to configuring external storage in Nextcloud for developers and power users. Connect S3, WebDAV, FTP, and local storage."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nextcloud-external-storage-setup-guide-2026/
@@ -56,10 +56,10 @@ For AWS S3, MinIO, Backblaze B2, or other S3-compatible providers:
 
 1. Select **Amazon S3** from the storage dropdown
 2. Enter your credentials:
-   - Bucket name
-   - Access key ID
-   - Secret access key
-   - Region (or leave blank for MinIO)
+ - Bucket name
+ - Access key ID
+ - Secret access key
+ - Region (or leave blank for MinIO)
 3. Configure the hostname for MinIO or other S3-compatible services:
 
 ```bash

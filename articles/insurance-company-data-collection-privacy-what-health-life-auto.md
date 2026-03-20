@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-Health insurers collect medical history, prescription records, genetic testing results, and biometric data (height, weight) through required applications and automatic feeds from doctors/pharmacies; life insurers use lifestyle data (smoking, alcohol use), financial records, and motor vehicle reports; auto insurers pull driving records, vehicle history, claims history, and increasingly telematics (real-time vehicle data via apps). The Fair Credit Reporting Act governs access to credit reports (insurers can use), HIPAA restricts medical data sharing, and state insurance laws vary on permissible underwriting factors—FCRA allows insurers to obtain records without consent while requiring disclosure. Developers building insurance systems must implement: explicit consent for unusual data sources (social media analysis, genetic testing), access controls preventing unauthorized employee data viewing, retention policies deleting data post-underwriting, and opt-out mechanisms for behavioral tracking. For consumers, requesting disclosure under FCRA of what insurers know about you, challenging inaccurate data, and declining optional data collection (telematics, genetic testing) provides practical leverage.
+Health insurers collect medical history, prescription records, genetic testing results, and biometric data (height, weight) through required applications and automatic feeds from doctors/pharmacies; life insurers use lifestyle data (smoking, alcohol use), financial records, and motor vehicle reports; auto insurers pull driving records, vehicle history, claims history, and increasingly telematics (real-time vehicle data via apps). The Fair Credit Reporting Act governs access to credit reports (insurers can use), HIPAA restricts medical data sharing, and state insurance laws vary on permissible underwriting factors—FCRA allows insurers to obtain records without consent while requiring disclosure. Developers building insurance systems must implement: explicit consent for unusual data sources (social media analysis, genetic testing), access controls preventing unauthorized employee data viewing, retention policies deleting data post-underwriting, and opt-out mechanisms for behavioral tracking. For consumers, requesting disclosure under FCRA of what insurers know about you, challenging inaccurate data, and declining optional data collection (telematics, genetic testing) provides practical use.
 
 ## The Legal Framework Governing Insurance Data Collection
 
@@ -182,7 +182,7 @@ If you're building applications that interact with insurance data or help users 
 Only collect and store insurance-related data that your application absolutely requires. The less customer data you hold, the smaller your compliance burden.
 
 **Consent Management**
-Implement robust consent tracking:
+Implement consent tracking:
 
 ```python
 # Example consent tracking structure

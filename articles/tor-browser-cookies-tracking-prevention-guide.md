@@ -92,7 +92,7 @@ This visibility helps you understand what data sites attempt to store and adjust
 
 ## The Circuit Isolation System
 
-Tor Browser's circuit isolation works alongside cookie protections to provide comprehensive privacy. Each website you visit uses a separate Tor circuit, meaning:
+Tor Browser's circuit isolation works alongside cookie protections to provide privacy. Each website you visit uses a separate Tor circuit, meaning:
 
 - Different sites see different IP addresses
 - Tracking cookies cannot be correlated across sites

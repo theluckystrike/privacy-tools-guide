@@ -28,7 +28,7 @@ A secure intercom system for residential or commercial buildings must address se
 - **Integrity**: Audio streams cannot be tampered with during transmission
 - **Availability**: The system functions reliably without depending on cloud services you don't control
 
-Traditional VoIP protocols like SIP can be encrypted using TLS for signaling and SRTP (Secure Real-time Transport Protocol) for media streams. This combination provides comprehensive protection against eavesdropping and man-in-the-middle attacks.
+Traditional VoIP protocols like SIP can be encrypted using TLS for signaling and SRTP (Secure Real-time Transport Protocol) for media streams. This combination provides protection against eavesdropping and man-in-the-middle attacks.
 
 ## Architectural Components
 

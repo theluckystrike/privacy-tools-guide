@@ -215,7 +215,7 @@ Schedule regular reviews of monitoring coverage:
 - Are new services instrumented?
 - Do alerts fire appropriately (not too sensitive, not too silent)?
 - Are SLOs still relevant to user experience?
-- Are dashboards providing actionable insights?
+- Are dashboards providing practical recommendations?
 
 ### Post-Incident Analysis
 

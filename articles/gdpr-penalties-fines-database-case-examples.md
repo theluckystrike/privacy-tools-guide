@@ -168,11 +168,11 @@ fetchGDPRFines('FR')
 
 Understanding GDPR enforcement patterns helps prioritize privacy implementation efforts. Based on case analysis, certain violation categories appear frequently:
 
-**Inadequate Technical Measures**: Organizations consistently receive penalties for insufficient security controls. Implement encryption at rest and in transit, maintain comprehensive audit logs, and conduct regular security assessments.
+**Inadequate Technical Measures**: Organizations consistently receive penalties for insufficient security controls. Implement encryption at rest and in transit, maintain audit logs, and conduct regular security assessments.
 
 **Transparency Failures**: Privacy notices must be clear, specific, and easily accessible. Avoid legal boilerplate that obscures actual data practices. Use layered notices for complex processing activities.
 
-**Consent Management**: When relying on consent as a legal basis, ensure it meets GDPR requirements: freely given, specific, informed, and unambiguous. Implement robust consent management platforms that maintain verifiable consent records.
+**Consent Management**: When relying on consent as a legal basis, ensure it meets GDPR requirements: freely given, specific, informed, and unambiguous. Implement consent management platforms that maintain verifiable consent records.
 
 **Data Subject Rights**: Build systems that can respond to access, deletion, and portability requests within the one-month deadline. Automated pipelines for right fulfillment reduce compliance burden.
 

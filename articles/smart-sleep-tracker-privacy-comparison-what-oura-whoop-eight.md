@@ -23,7 +23,7 @@ This guide examines the data collection practices of three popular sleep tracker
 
 ## Oura Ring: Biometric Data Collection
 
-The Oura Ring captures comprehensive biometric data through infrared sensors, red LED lights, and temperature sensors embedded in the titanium housing. The device continuously monitors heart rate, heart rate variability (HRV), skin temperature, and blood oxygen saturation.
+The Oura Ring captures biometric data through infrared sensors, red LED lights, and temperature sensors embedded in the titanium housing. The device continuously monitors heart rate, heart rate variability (HRV), skin temperature, and blood oxygen saturation.
 
 ### What Oura Collects
 

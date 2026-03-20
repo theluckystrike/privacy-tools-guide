@@ -28,7 +28,7 @@ When you disable an app via ADB, the application remains installed but enters a 
 Before proceeding, gather the following:
 
 - A computer running Windows, macOS, or Linux
-- A USB cable for connecting your Android device
+- An USB cable for connecting your Android device
 - The Android SDK Platform Tools installed on your computer
 
 ### Installing Platform Tools

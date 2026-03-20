@@ -22,7 +22,7 @@ To access European banking apps from the US, connect via VPN with a European exi
 
 European banks implement geographic restrictions through several mechanisms. The most common is IP-based geolocation, where the bank's server checks your connection's source IP against known EU IP ranges. Some banks also perform deeper inspection, analyzing TLS client hello messages for anomalies or checking for DNS leaks that might reveal your true location.
 
-Banks like N26 (Germany), Revolut (UK/EU), and Bunq (Netherlands) enforce these restrictions to comply with licensing requirements and fraud prevention policies. When you access these services from a US IP, the server either blocks the connection entirely or presents a reduced-feature interface that lacks full banking functionality.
+Banks like N26 (Germany), Revolut (UK/EU), and Bunq (Netherlands) enforce these restrictions to comply with licensing requirements and fraud prevention policies. When you access these services from an US IP, the server either blocks the connection entirely or presents a reduced-feature interface that lacks full banking functionality.
 
 ## VPN Protocol Configuration
 

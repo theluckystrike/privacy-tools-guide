@@ -138,7 +138,7 @@ If you believe you've found spyware on your iPhone, take these steps immediately
 
 ## Limitations and Considerations
 
-While these methods help detect common spyware, sophisticated attacks have limitations. State-level spyware like Pegasus uses zero-day exploits that are virtually undetectable through conventional means. Physical access attacks with specialized tools can install compromises that survive factory resets in some scenarios.
+While these methods help detect common spyware, sophisticated attacks have limitations. State-level spyware like Pegasus uses zero-day exploits that are undetectable through conventional means. Physical access attacks with specialized tools can install compromises that survive factory resets in some scenarios.
 
 For users who believe they face nation-state level threats, consider contacting security organizations like Amnesty International's Security Lab or the Electronic Frontier Foundation, which have expertise in advanced mobile threat detection.
 

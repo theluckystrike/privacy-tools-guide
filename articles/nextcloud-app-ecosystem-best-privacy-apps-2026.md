@@ -16,7 +16,7 @@ score: 8
 
 # Nextcloud App Ecosystem: Best Privacy Apps for 2026
 
-The Nextcloud app ecosystem provides privacy-focused alternatives to mainstream cloud services. For developers and power users seeking data sovereignty, the right combination of apps transforms a standard Nextcloud installation into a comprehensive privacy platform. This guide covers the essential privacy apps available in 2026, with practical implementation details for each.
+The Nextcloud app ecosystem provides privacy-focused alternatives to mainstream cloud services. For developers and power users seeking data sovereignty, the right combination of apps transforms a standard Nextcloud installation into a privacy platform. This guide covers the essential privacy apps available in 2026, with practical implementation details for each.
 
 ## Why Nextcloud for Privacy
 

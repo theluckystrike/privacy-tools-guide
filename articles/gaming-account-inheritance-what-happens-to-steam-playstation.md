@@ -75,7 +75,7 @@ While platforms restrict direct transfers, several practical approaches help pre
 
 ### Document Your Digital Library
 
-Maintain a comprehensive record of your gaming accounts, games purchased, and associated credentials. This documentation enables executors to access what is accessible and understand the value of non-transferable assets.
+Maintain a record of your gaming accounts, games purchased, and associated credentials. This documentation enables executors to access what is accessible and understand the value of non-transferable assets.
 
 ```markdown
 # gaming-assets.md - Example documentation format

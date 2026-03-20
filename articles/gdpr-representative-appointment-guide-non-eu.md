@@ -24,7 +24,7 @@ The GDPR applies to organizations outside the EU when they either offer goods or
 - You are established outside the EU (headquarters in the US, UK post-Brexit, Asia, etc.)
 - You process personal data of people residing in the EU
 
-This applies even if you don't have a physical presence in the EU. A US-based SaaS company serving European customers, a UK e-commerce platform shipping to EU addresses, or an app developer with EU users all fall within scope.
+This applies even if you don't have a physical presence in the EU. An US-based SaaS company serving European customers, an UK e-commerce platform shipping to EU addresses, or an app developer with EU users all fall within scope.
 
 ### Exceptions to the Requirement
 

@@ -139,7 +139,7 @@ The most reliable verification method is a live video call. This confirms the pe
 
 ## Building Your Own Verification Tool
 
-For developers interested in creating a comprehensive verification system, here's a conceptual framework:
+For developers interested in creating a verification system, here's a conceptual framework:
 
 ```python
 class IdentityVerifier:

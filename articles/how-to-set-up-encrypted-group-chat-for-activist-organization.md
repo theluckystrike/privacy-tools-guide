@@ -84,7 +84,7 @@ This configuration rotates encryption keys weekly or after 100 messages, limitin
 
 ## Signal Group Chats
 
-For organizations preferring managed solutions, Signal provides robust group encryption. Each group uses Sender Keys, allowing efficient many-to-many communication without the overhead of pairwise encryption.
+For organizations preferring managed solutions, Signal provides group encryption. Each group uses Sender Keys, allowing efficient many-to-many communication without the overhead of pairwise encryption.
 
 ### Signal Group Security Features
 

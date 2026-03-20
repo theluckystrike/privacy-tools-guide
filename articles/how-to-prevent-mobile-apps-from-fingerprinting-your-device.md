@@ -28,7 +28,7 @@ The technique works by combining dozens of seemingly innocuous data points—scr
 
 Fingerprinting poses significant privacy risks because it operates largely outside user visibility and control. Unlike cookie banners that ask for consent, fingerprinting happens passively in the background, often without explicit disclosure. The resulting profiles can be used for:
 
-- **Cross-app tracking**: Building comprehensive user profiles across different apps
+- **Cross-app tracking**: Building user profiles across different apps
 - **Device recognition**: Identifying users who clear cookies or use private browsing
 - **Fraud detection**: But also enabling invasive behavioral profiling
 - **Targeted advertising**: Creating detailed interest profiles without consent
@@ -262,7 +262,7 @@ Protecting against mobile fingerprinting requires a layered approach:
 5. **Limit your digital footprint**: Install fewer apps, use fewer services
 6. **Stay informed**: Privacy landscape changes rapidly
 
-While achieving complete anonymity on mobile devices is extremely difficult, implementing these techniques significantly reduces your fingerprinting surface and makes comprehensive device tracking substantially more challenging.
+While achieving complete anonymity on mobile devices is extremely difficult, implementing these techniques significantly reduces your fingerprinting surface and makes device tracking substantially more challenging.
 
 ## Related Reading
 

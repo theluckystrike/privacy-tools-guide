@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Privacy-Focused Email Alternatives to Gmail 2026"
-description: "Comprehensive comparison of encrypted email providers including ProtonMail, Tutanota, and others with feature and pricing analysis."
+description: " comparison of encrypted email providers including ProtonMail, Tutanota, and others with feature and pricing analysis."
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-privacy-focused-email-alternatives-to-gmail-2026/

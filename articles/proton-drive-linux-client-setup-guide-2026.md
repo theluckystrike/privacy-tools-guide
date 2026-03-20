@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-Proton Drive provides end-to-end encrypted cloud storage, and the Linux client enables seamless file synchronization for developers and power users who prefer command-line workflows. This guide covers installation, authentication, mounting options, and practical usage patterns for Linux environments in 2026.
+Proton Drive provides end-to-end encrypted cloud storage, and the Linux client enables file synchronization for developers and power users who prefer command-line workflows. This guide covers installation, authentication, mounting options, and practical usage patterns for Linux environments in 2026.
 
 ## Understanding Proton Drive for Linux
 

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Threat Model For Source Communicating With Journalist Anonym"
-description: "A comprehensive threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational."
+description: "A threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-source-communicating-with-journalist-anonym/

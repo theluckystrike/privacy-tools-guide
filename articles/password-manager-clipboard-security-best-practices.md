@@ -2,7 +2,7 @@
 
 layout: default
 title: "Password Manager Clipboard Security Best Practices"
-description: "A comprehensive guide to securing clipboard operations in password managers. Learn about clipboard vulnerabilities, auto-clear implementations, and."
+description: "A guide to securing clipboard operations in password managers. Learn about clipboard vulnerabilities, auto-clear implementations, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /password-manager-clipboard-security-best-practices/

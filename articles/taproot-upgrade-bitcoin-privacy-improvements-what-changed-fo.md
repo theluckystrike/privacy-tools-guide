@@ -14,7 +14,7 @@ voice-checked: true
 ---
 
 {% raw %}
-The Taproot upgrade, activated in November 2021, introduced three major privacy improvements: Schnorr signatures that hide whether a transaction is single-sig or multi-sig, MAST (Merkelized Abstract Syntax Trees) that hide unused spending conditions, and Bech32m addresses that are indistinguishable from standard payments. These changes fundamentally altered how transactions appear on-chain, making complex contracts blend seamlessly with simple payments. For developers building privacy-focused applications, understanding these improvements is essential for leveraging Taproot's enhanced anonymity properties in 2026.
+The Taproot upgrade, activated in November 2021, introduced three major privacy improvements: Schnorr signatures that hide whether a transaction is single-sig or multi-sig, MAST (Merkelized Abstract Syntax Trees) that hide unused spending conditions, and Bech32m addresses that are indistinguishable from standard payments. These changes fundamentally altered how transactions appear on-chain, making complex contracts blend with simple payments. For developers building privacy-focused applications, understanding these improvements is essential for using Taproot's enhanced anonymity properties in 2026.
 
 ## Schnorr Signatures: The Foundation of Privacy
 
@@ -157,7 +157,7 @@ As the Bitcoin ecosystem matures, Taproot's privacy benefits compound with other
 
 - **Scriptless scripts** enable smart contract logic without revealing terms on-chain
 - **Cross-input signature aggregation** (proposed) would further reduce fingerprinting
-- **Vaults and DLCs** leverage Taproot for improved privacy-preserving structures
+- **Vaults and DLCs** use Taproot for improved privacy-preserving structures
 
 The Taproot upgrade demonstrated Bitcoin's ability to evolve while maintaining its core properties. For developers and power users, understanding these privacy improvements is essential for building or using Bitcoin in ways that respect user confidentiality.
 

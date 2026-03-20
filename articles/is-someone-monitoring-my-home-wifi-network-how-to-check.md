@@ -39,7 +39,7 @@ sudo arp-scan --localnet
 
 The tool sends ARP requests to all addresses in your subnet and displays responding devices. On a typical home network (192.168.1.0/24), this covers addresses 192.168.1.1 through 192.168.1.254. Look for devices you don't recognize—the MAC address vendor prefix can help identify manufacturers.
 
-## Use nmap for Comprehensive Discovery
+## Use nmap for Discovery
 
 The Network Mapper (`nmap`) offers deeper introspection. It not only discovers devices but also identifies open ports and sometimes guesses operating systems.
 
@@ -83,7 +83,7 @@ arp -a
 
 On a healthy network, each IP should map to a single MAC address. Duplicate MAC addresses mapped to different IPs—or multiple IPs mapping to one MAC—suggest ARP spoofing. However, some routers legitimately use MAC address cloning.
 
-A more robust check uses `arpwatch` or similar tools that monitor ARP activity and alert on changes:
+A more check uses `arpwatch` or similar tools that monitor ARP activity and alert on changes:
 
 ```bash
 # Install on macOS

@@ -148,7 +148,7 @@ If minimizing data collection ranks highest in your decision criteria, TP-Link D
 
 For developers specifically, the local API availability on Deco systems enables custom integrations without cloud dependencies—a meaningful advantage for self-hosted and privacy-focused smart home deployments.
 
-The choice ultimately depends on your threat model. If you prioritize seamless integration and accept data sharing in exchange for polished UX, Eero remains compelling. For privacy-first configurations requiring local control and minimal cloud dependency, Deco offers the strongest foundation.
+The choice ultimately depends on your threat model. If you prioritize integration and accept data sharing in exchange for polished UX, Eero remains compelling. For privacy-first configurations requiring local control and minimal cloud dependency, Deco offers the strongest foundation.
 
 ---
 

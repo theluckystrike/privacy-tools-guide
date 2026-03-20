@@ -182,7 +182,7 @@ When evaluating cloud providers or software vendors, verify:
 1. **BAA (Business Associate Agreement)**: Vendor must sign a BAA committing to HIPAA compliance
 2. **SOC 2 Type II certification**: Demonstrates security controls
 3. **Encryption at rest**: Default encryption on all stored data
-4. **Audit logging**: Comprehensive access logging
+4. **Audit logging**: access logging
 5. **Data residency**: Control over where data is stored geographically
 
 Major cloud providers (AWS, Azure, Google Cloud) offer HIPAA-eligible services with BAA coverage. Many practice management software vendors also offer HIPAA-compliant versions.

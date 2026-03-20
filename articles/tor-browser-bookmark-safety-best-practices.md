@@ -45,7 +45,7 @@ Bookmarks Toolbar/
 
 ### Use Descriptive Rather Than Revealing Names
 
-Bad: "Whistleblower Sites"  
+Bad: "Whistleblower Sites" 
 Good: "Technical Documentation"
 
 The goal is plausible deniability if your device is examined.

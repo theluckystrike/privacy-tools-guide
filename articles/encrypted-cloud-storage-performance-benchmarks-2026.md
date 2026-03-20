@@ -80,7 +80,7 @@ Large files benefit from streaming encryption, reducing memory overhead but stil
 | Sync.com | 8.3s | 14.1s | 70% |
 | Icedrive | 8.1s | 9.8s | 21% |
 
-Icedrive surprised with the lowest overhead, using a streamlined encryption pipeline that minimizes context switching.
+Icedrive surprised with the lowest overhead, using an improved encryption pipeline that minimizes context switching.
 
 ### Test Results: 10 × 100MB Files (Parallel Upload)
 

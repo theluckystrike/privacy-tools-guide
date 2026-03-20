@@ -31,12 +31,12 @@ The protocol relies on the mathematical properties of modular exponentiation. He
 2. **Private keys**: Alice generates a private key `a`, and Bob generates a private key `b`. These keys remain secret and never leave each person's device.
 
 3. **Public values**: 
-   - Alice computes `A = g^a mod p` and sends to Bob
-   - Bob computes `B = g^b mod p` and sends to Alice
+ - Alice computes `A = g^a mod p` and sends to Bob
+ - Bob computes `B = g^b mod p` and sends to Alice
 
 4. **Shared secret**: Both parties compute the same shared secret:
-   - Alice: `B^a mod p = (g^b)^a mod p = g^(ab) mod p`
-   - Bob: `A^b mod p = (g^a)^b mod p = g^(ab) mod p`
+ - Alice: `B^a mod p = (g^b)^a mod p = g^(ab) mod p`
+ - Bob: `A^b mod p = (g^a)^b mod p = g^(ab) mod p`
 
 The magic is that Eve, observing `p`, `g`, `A`, and `B`, faces the computational difficulty of solving the discrete logarithm problem to recover `a` or `b`. With sufficiently large keys, this becomes computationally infeasible.
 

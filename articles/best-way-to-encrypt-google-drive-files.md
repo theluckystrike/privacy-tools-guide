@@ -59,11 +59,11 @@ Follow these steps:
 4. Enter your Google Drive client ID and secret (or leave blank for default)
 5. Set `scope` to `drive.file` for app-only access
 6. Configure the crypt backend:
-   - Select the existing `gdrive` remote as the remote path
-   - Choose a filename encryption mode (recommended: `standard`)
-   - Choose a directory name encryption mode (recommended: `hash`)
-   - Set your encryption password (or generate random)
-   - Confirm the password
+ - Select the existing `gdrive` remote as the remote path
+ - Choose a filename encryption mode (recommended: `standard`)
+ - Choose a directory name encryption mode (recommended: `hash`)
+ - Set your encryption password (or generate random)
+ - Confirm the password
 
 ### Encrypting and Syncing Files
 
@@ -156,7 +156,7 @@ age -d -i ~/age-key.txt -o document.pdf document.pdf.enc
 
 ### Automation Script
 
-Create a script to streamline the workflow:
+Create a script to improve the workflow:
 
 ```bash
 #!/bin/bash

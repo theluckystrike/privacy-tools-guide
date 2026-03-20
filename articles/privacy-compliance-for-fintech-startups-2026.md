@@ -27,7 +27,7 @@ The key principle across all these regulations is data minimization and purpose 
 
 ## GDPR Compliance for Fintech
 
-GDPR remains the most comprehensive privacy regulation, with significant penalties for non-compliance.
+GDPR remains the most privacy regulation, with significant penalties for non-compliance.
 
 ### Lawful Basis for Processing
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Employee Social Media Privacy Can Employer Fire You For Priv"
-description: "A comprehensive legal guide for developers and power users on employee social media privacy rights, employer policies, and protected speech in 2026."
+description: "A legal guide for developers and power users on employee social media privacy rights, employer policies, and protected speech in 2026."
 date: 2026-03-16
 author: theluckystrike
 permalink: /employee-social-media-privacy-can-employer-fire-you-for-priv/

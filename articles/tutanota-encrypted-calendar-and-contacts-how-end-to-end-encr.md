@@ -125,7 +125,7 @@ For developers integrating Tutanota's encrypted features, several practical cons
 
 **API Access**: Tutanota provides a REST API for programmatic access. Authentication uses your email and password, with the client deriving encryption keys locally. The API returns encrypted data that your application must decrypt.
 
-**Key Management**: Tutanota supports **encrypted mailboxes** (mail, calendar, contacts) but currently limits some features. The calendar and contacts encryption is robust, but be aware of synchronization limitations with third-party clients.
+**Key Management**: Tutanota supports **encrypted mailboxes** (mail, calendar, contacts) but currently limits some features. The calendar and contacts encryption is, but be aware of synchronization limitations with third-party clients.
 
 **Backup Strategies**: Export your encrypted data regularly. Tutanota allows exporting all your data, preserving encryption. Store backups in secure locations.
 

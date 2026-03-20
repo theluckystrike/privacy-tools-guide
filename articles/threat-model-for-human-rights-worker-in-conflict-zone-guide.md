@@ -2,7 +2,7 @@
 
 layout: default
 title: "Threat Model For Human Rights Worker In Conflict Zone Guide"
-description: "A comprehensive threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement."
+description: "A threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
@@ -21,7 +21,7 @@ Human rights workers in conflict zones face nation-state and paramilitary threat
 
 Conflict zone environments present threat models fundamentally different from corporate or personal security contexts. Your adversaries often include nation-state threat actors with significant resources, technical capability, and operational presence on the ground. The consequences of compromise extend beyond data theft to physical danger for you, your contacts, and local staff.
 
-Before implementing any security tool or procedure, you must understand who is trying to harm you and what they want. A threat model is essentially a document that answers three questions: What do I need to protect? Who wants it? What will they do to get it?
+Before implementing any security tool or procedure, you must understand who is trying to harm you and what they want. A threat model is a document that answers three questions: What do I need to protect? Who wants it? What will they do to get it?
 
 ## Step 1: Identifying Critical Assets
 

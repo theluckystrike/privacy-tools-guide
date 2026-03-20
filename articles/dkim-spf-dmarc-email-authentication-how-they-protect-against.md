@@ -22,7 +22,7 @@ Email spoofing is one of the most common attack vectors used by spammers, phishe
 
 Email protocols were designed in the early days of the internet when trust was assumed. The SMTP protocol allows any server to send email claiming to be from any sender address. This fundamental design flaw enables attackers to forge the "From" header and impersonate legitimate senders.
 
-When you configure your domain's email authentication, you're essentially creating a cryptographic verification system that tells receiving mail servers: "Emails claiming to come from my domain should only come from my authorized servers, and I can prove it."
+When you configure your domain's email authentication, you're creating a cryptographic verification system that tells receiving mail servers: "Emails claiming to come from my domain should only come from my authorized servers, and I can prove it."
 
 ## SPF: Sender Policy Framework
 
@@ -46,7 +46,7 @@ v=spf1 include:_spf.google.com include:_spf.mailchimp.com ~all
 
 ### Common SPF Mistakes
 
-A frequent error is having multiple SPF records for the same domain, which causes authentication failures. Only one TXT record with your SPF policy should exist. Also, avoid overly permissive setups like `v=spf1 ip4:0.0.0.0/0 ~all`—this essentially authorizes every IP address and provides no security benefit.
+A frequent error is having multiple SPF records for the same domain, which causes authentication failures. Only one TXT record with your SPF policy should exist. Also, avoid overly permissive setups like `v=spf1 ip4:0.0.0.0/0 ~all`—this authorizes every IP address and provides no security benefit.
 
 ## DKIM: DomainKeys Identified Mail
 
@@ -139,7 +139,7 @@ For most organizations, the recommended implementation order is:
 4. Analyze reports and address legitimate sources failing authentication
 5. Gradually strengthen DMARC policy to `quarantine` then `reject`
 
-This measured approach prevents accidentally blocking legitimate email while building toward comprehensive protection.
+This measured approach prevents accidentally blocking legitimate email while building toward protection.
 
 ## Related Reading
 

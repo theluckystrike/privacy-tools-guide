@@ -124,7 +124,7 @@ Several strategies can reduce Client Hints fingerprinting:
 
 ### Browser Configuration
 
-Firefox provides the most comprehensive protection by not implementing Client Hints. For Chrome users, the built-in privacy settings offer limited control:
+Firefox provides the most protection by not implementing Client Hints. For Chrome users, the built-in privacy settings offer limited control:
 
 1. Navigate to `chrome://settings/cookies` and disable "Send Do Not Track" (ironically, this reduces your fingerprint surface)
 2. Use browser extensions that modify request headers
@@ -149,7 +149,7 @@ For advanced users, proxy services and privacy-focused DNS providers can filter 
 
 ### The Tor Browser Approach
 
-Tor Browser provides the most robust protection by standardizing Client Hints across all users. Every Tor Browser instance reports identical hint values, eliminating the ability to distinguish between users based on these headers.
+Tor Browser provides the most protection by standardizing Client Hints across all users. Every Tor Browser instance reports identical hint values, eliminating the ability to distinguish between users based on these headers.
 
 ## What Developers Need to Know
 

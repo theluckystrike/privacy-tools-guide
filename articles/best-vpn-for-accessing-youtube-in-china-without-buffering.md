@@ -69,7 +69,7 @@ sudo sysctl net.ipv4.tcp_congestion_control=bbr
 sudo sysctl net.core.default_qdisc=fq
 ```
 
-This single change can improve throughput by 20-30% on high-latency connections by better utilizing available bandwidth.
+This single change can improve throughput by 20-30% on high-latency connections by better using available bandwidth.
 
 ## Client-Side Optimization
 

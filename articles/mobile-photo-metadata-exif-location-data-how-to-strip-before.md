@@ -27,7 +27,7 @@ The implications extend beyond simple privacy concerns. Metadata can reveal your
 
 Before removing metadata, you should understand what information your photos contain. Several tools allow you to examine EXIF data from the command line.
 
-The `exiftool` utility, created by Phil Harvey, provides comprehensive metadata inspection:
+The `exiftool` utility, created by Phil Harvey, provides metadata inspection:
 
 ```bash
 # Install on macOS
@@ -217,7 +217,7 @@ func stripEXIF(from url: URL) -> Data? {
 
 ## Automating the Workflow
 
-For developers who frequently share photos, automation scripts streamline the process. A simple shell script processes incoming images:
+For developers who frequently share photos, automation scripts improve the process. A simple shell script processes incoming images:
 
 ```bash
 #!/bin/bash

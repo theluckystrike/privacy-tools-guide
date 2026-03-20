@@ -223,7 +223,7 @@ While basic LSB steganography is easy to implement, it leaves detectable traces.
 
 ## Complete Example Script
 
-Here's a streamlined script combining all steps:
+Here's an improved script combining all steps:
 
 ```python
 #!/usr/bin/env python3

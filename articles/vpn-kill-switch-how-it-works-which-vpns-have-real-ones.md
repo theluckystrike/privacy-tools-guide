@@ -31,7 +31,7 @@ The key technical difference lies in how this interception happens and whether i
 
 ### Firewall-Based Kill Switch
 
-The most robust implementation modifies system firewall rules to block all non-VPN traffic. On Linux, this typically involves iptables rules that drop all outgoing packets except those routed through the VPN interface:
+The most implementation modifies system firewall rules to block all non-VPN traffic. On Linux, this typically involves iptables rules that drop all outgoing packets except those routed through the VPN interface:
 
 ```bash
 # Allow only VPN tunnel traffic
@@ -136,7 +136,7 @@ Proton VPN implements kill switches at the system level for all paid plans. Thei
 
 ### WireGuard-Based Solutions
 
-Any VPN using WireGuard can leverage the protocol's built-in features for robust kill switch functionality. Providers like AzireVPN and cryptostorm implement WireGuard-native kill switches that work at the tunnel level rather than relying on application-level logic.
+Any VPN using WireGuard can use the protocol's built-in features for kill switch functionality. Providers like AzireVPN and cryptostorm implement WireGuard-native kill switches that work at the tunnel level rather than relying on application-level logic.
 
 ## Testing Your Kill Switch
 

@@ -284,7 +284,7 @@ class BreachNotifier:
 
 ## Moving Forward
 
-Building HIPAA-compliant software requires attention to security fundamentals: encryption, access controls, and comprehensive audit logging. The technical implementations above provide a foundation, but compliance is an ongoing process. Regular security audits, employee training, and staying updated on HHS guidance are essential.
+Building HIPAA-compliant software requires attention to security fundamentals: encryption, access controls, and audit logging. The technical implementations above provide a foundation, but compliance is an ongoing process. Regular security audits, employee training, and staying updated on HHS guidance are essential.
 
 Remember that HIPAA violations can result in significant fines—up to $1.5 million per violation category per year. Investing in proper security architecture from the start is far less expensive than dealing with breaches and compliance penalties later.
 

@@ -37,7 +37,7 @@ Modern VPN services support multiple authentication methods. Understanding how h
 
 ### FIDO2/WebAuthn Implementation
 
-Most enterprise VPN solutions now support FIDO2, the authentication standard behind WebAuthn. When your VPN leverages FIDO2, authentication works through a challenge-response protocol:
+Most enterprise VPN solutions now support FIDO2, the authentication standard behind WebAuthn. When your VPN uses FIDO2, authentication works through a challenge-response protocol:
 
 ```javascript
 // Simplified WebAuthn authentication flow

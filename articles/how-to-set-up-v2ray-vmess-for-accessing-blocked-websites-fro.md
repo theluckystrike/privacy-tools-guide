@@ -78,7 +78,7 @@ Create a configuration file at `/etc/v2ray/config.json` on your server. This fil
 }
 ```
 
-The `id` field contains a UUID that identifies authorized clients. Generate a new UUID using:
+The `id` field contains an UUID that identifies authorized clients. Generate a new UUID using:
 
 ```bash
 uuidgen
@@ -286,7 +286,7 @@ Use TLS encryption for all connections. This prevents traffic analysis and ensur
 }
 ```
 
-Rotate UUIDs periodically. If a UUID is compromised, generate a new one and update your client configurations. This limits the window of exposure.
+Rotate UUIDs periodically. If an UUID is compromised, generate a new one and update your client configurations. This limits the window of exposure.
 
 Enable firewall rules on your server to restrict access:
 

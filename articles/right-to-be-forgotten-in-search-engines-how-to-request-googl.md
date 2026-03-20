@@ -95,7 +95,7 @@ def submit_google_removal(urls, reason="privacy"):
         time.sleep(1)
 ```
 
-Most removal requests require manual submission through Google's web interface, but organizing your URLs in advance streamlines the process.
+Most removal requests require manual submission through Google's web interface, but organizing your URLs in advance improves the process.
 
 ## Understanding Google's Removal Criteria
 

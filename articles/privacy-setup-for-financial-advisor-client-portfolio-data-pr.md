@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Financial advisors manage sensitive client portfolio data that requires robust privacy protections. This guide provides practical implementation details for securing client information using encryption, access controls, and audit logging. The techniques covered here apply whether you're building a custom portfolio management system or hardening an existing infrastructure.
+Financial advisors manage sensitive client portfolio data that requires privacy protections. This guide provides practical implementation details for securing client information using encryption, access controls, and audit logging. The techniques covered here apply whether you're building a custom portfolio management system or hardening an existing infrastructure.
 
 ## Understanding Client Portfolio Data Sensitivity
 
@@ -129,7 +129,7 @@ def get_client_portfolio(client_id):
 
 ## Audit Logging for Compliance
 
-Financial regulations require comprehensive audit trails. Log every access to client portfolio data with sufficient detail for forensic analysis.
+Financial regulations require audit trails. Log every access to client portfolio data with sufficient detail for forensic analysis.
 
 ```python
 import logging

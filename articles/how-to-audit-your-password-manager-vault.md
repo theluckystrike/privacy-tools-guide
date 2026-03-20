@@ -27,7 +27,7 @@ Password managers simplify credential management, but they can also become repos
 - Stale two-factor authentication methods
 - Outdated recovery options
 
-An audit helps you identify and remediate these issues before they become problems. Rather than manually reviewing each entry, you can leverage CLI tools and scripting to automate much of this process.
+An audit helps you identify and remediate these issues before they become problems. Rather than manually reviewing each entry, you can use CLI tools and scripting to automate much of this process.
 
 ## Exporting Your Vault Data
 

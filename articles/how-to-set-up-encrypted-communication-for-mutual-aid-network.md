@@ -22,7 +22,7 @@ Mutual aid networks face distinct challenges that differ from typical secure mes
 
 The primary security goals for mutual aid communication include protecting message content from interception, minimizing metadata that could reveal network participants, ensuring communication continues during internet outages, and enabling secure coordination without exposing participant identities to hostile actors.
 
-Traditional messaging platforms create significant risks: phone number linkage exposes participant identities, centralized servers can be compelled to hand over data, and cloud backups often store decrypted messages indefinitely. A robust mutual aid communication stack addresses each vulnerability systematically.
+Traditional messaging platforms create significant risks: phone number linkage exposes participant identities, centralized servers can be compelled to hand over data, and cloud backups often store decrypted messages indefinitely. A mutual aid communication stack addresses each vulnerability systematically.
 
 ## Building Your Encrypted Communication Stack
 
@@ -35,10 +35,10 @@ Signal provides the strongest end-to-end encryption available with an audited, o
 1. Install Signal from the official website (signal.org) or F-Droid
 2. Register with a dedicated phone number separate from your personal number
 3. Configure the following security settings:
-   - Enable disappearing messages (24-hour window recommended)
-   - Disable cloud backup in device settings
-   - Enable screen security to prevent screenshots
-   - Register a Signal PIN to protect your account
+ - Enable disappearing messages (24-hour window recommended)
+ - Disable cloud backup in device settings
+ - Enable screen security to prevent screenshots
+ - Register a Signal PIN to protect your account
 
 ```bash
 # Verify Signal Android APK integrity before installation

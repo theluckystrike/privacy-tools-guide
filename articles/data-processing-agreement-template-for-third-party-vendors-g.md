@@ -42,7 +42,7 @@ Your agreement should contain these mandatory components:
 
 ## Practical DPA Template
 
-Here is a streamlined template you can adapt for your vendor relationships:
+Here is an improved template you can adapt for your vendor relationships:
 
 ```markdown
 # DATA PROCESSING AGREEMENT

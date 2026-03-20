@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Unified Payments Interface (UPI) has transformed digital payments in India, enabling seamless peer-to-peer and peer-to-merchant transactions. However, using UPI generates a trail of metadata that banks, payment processors, and government agencies can access. Understanding what data these entities collect and retain is essential for developers building UPI-integrated applications and privacy-conscious users.
+Unified Payments Interface (UPI) has transformed digital payments in India, enabling peer-to-peer and peer-to-merchant transactions. However, using UPI generates a trail of metadata that banks, payment processors, and government agencies can access. Understanding what data these entities collect and retain is essential for developers building UPI-integrated applications and privacy-conscious users.
 
 ## What is UPI Metadata?
 
@@ -32,7 +32,7 @@ The NPCI (National Payments Corporation of India) operates the UPI infrastructur
 
 ## What Banks Can Access
 
-When you initiate a UPI transaction through your bank's mobile app or a third-party provider like PhonePe, Paytm, or Google Pay, your bank retains comprehensive records. Banks access:
+When you initiate an UPI transaction through your bank's mobile app or a third-party provider like PhonePe, Paytm, or Google Pay, your bank retains records. Banks access:
 
 **Transaction History**: Complete records of all UPI transactions, including sent and received amounts, timestamps, and counterparty VPAs. Banks maintain this data for years—typically 5-10 years per RBI guidelines.
 
@@ -168,7 +168,7 @@ UPI operates under a complex regulatory framework that balances privacy with fin
 
 - **RBI Guidelines**: Direct banks to maintain transaction records for specific periods
 - **NPCI Operating Guidelines**: Define data retention standards for payment network operators
-- **IT Act Section 69**: Empowers government to intercept digital communications
+- **IT Act Section 69**: Enables government to intercept digital communications
 - **PMLA (Prevention of Money Laundering Act)**: Mandates transaction monitoring for suspicious activity reporting
 
 These regulations mean your UPI data exists in a legal gray area—technically private but legally accessible through proper channels.

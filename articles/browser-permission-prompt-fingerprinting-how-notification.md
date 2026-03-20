@@ -221,7 +221,7 @@ This combined fingerprint can uniquely identify users because:
 
 ### Cross-Site Permission Harvesting
 
-Malicious sites can build comprehensive permission profiles by:
+Malicious sites can build permission profiles by:
 
 1. Checking existing permission states for known services
 2. Requesting new permissions and tracking responses
@@ -309,17 +309,17 @@ Browser vendors are aware of these tracking techniques and are implementing prot
 ### Browser Settings
 
 1. **Review Permission Settings Regularly**
-   - Chrome: Settings → Privacy and Security → Site Settings → Permissions
-   - Firefox: Settings → Privacy & Security → Permissions
-   - Safari: Preferences → Websites → Permissions
+ - Chrome: Settings → Privacy and Security → Site Settings → Permissions
+ - Firefox: Settings → Privacy & Security → Permissions
+ - Safari: Preferences → Websites → Permissions
 
 2. **Use Permission Managers**
-   - Install browser extensions that manage permissions
-   - Use "ask" default for all permissions
+ - Install browser extensions that manage permissions
+ - Use "ask" default for all permissions
 
 3. **Clear Permission States**
-   - Periodically reset permissions for all sites
-   - Use browser tools to view and manage granted permissions
+ - Periodically reset permissions for all sites
+ - Use browser tools to view and manage granted permissions
 
 ### Extension Protection
 
@@ -342,15 +342,15 @@ Some browsers are more resistant to permission fingerprinting:
 To check if a site is using permission fingerprinting:
 
 1. **Check Network Requests**
-   - Look for requests to analytics services with permission-related data
-   - Monitor for unusual permission API queries
+ - Look for requests to analytics services with permission-related data
+ - Monitor for unusual permission API queries
 
 2. **Use Developer Tools**
-   - Check console for permission-related errors or warnings
-   - Monitor JavaScript execution for permission queries
+ - Check console for permission-related errors or warnings
+ - Monitor JavaScript execution for permission queries
 
 3. **Test with Fingerprinting Test Sites**
-   - Use sites likecovery.org or AmIUnique to see what permissions they can detect
+ - Use sites likecovery.org or AmIUnique to see what permissions they can detect
 
 {% endraw %}
 ## Related Reading

@@ -316,7 +316,7 @@ DNS = 1.1.1.1
 1. **Test after network changes** - when switching networks, verify VPN works
 2. **Keep VPN client updated** - newer versions handle fragmentation better
 3. **Document working configurations** - note which MTU works for which servers
-4. **Use providers with robust infrastructure** - better servers mean fewer issues
+4. **Use providers with infrastructure** - better servers mean fewer issues
 5. **Monitor connection quality** - watch for degradation over time
 
 ## When to Contact Your VPN Provider

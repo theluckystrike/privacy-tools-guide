@@ -84,7 +84,7 @@ Regardless of your MDM choice, establish these baseline policies:
 
 ## Application Vetting and Healthcare Apps
 
-Not all apps are created equal when it comes to HIPAA compliance. A app might handle PHI legitimately while another exposes patient data through insecure practices.
+Not all apps are created equal when it comes to HIPAA compliance. An app might handle PHI legitimately while another exposes patient data through insecure practices.
 
 ### Identifying Compliant Healthcare Applications
 

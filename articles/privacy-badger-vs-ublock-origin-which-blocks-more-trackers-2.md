@@ -46,7 +46,7 @@ This means Privacy Badger starts with an empty blocklist and builds one based on
 
 ## How uBlock Origin Works
 
-uBlock Origin takes the opposite approach—**comprehensive blocklists**. It ships with thousands of filter lists covering known trackers, ads, malware domains, and annoyances. When a page loads, uBlock Origin checks every request against these lists and blocks matches before they ever execute.
+uBlock Origin takes the opposite approach—**blocklists**. It ships with thousands of filter lists covering known trackers, ads, malware domains, and annoyances. When a page loads, uBlock Origin checks every request against these lists and blocks matches before they ever execute.
 
 The blocking happens at the network level:
 
@@ -106,7 +106,7 @@ For developers who want fine-grained control, uBlock Origin offers more options:
 }
 ```
 
-You can create custom filter rules, enable or disable specific filter lists, and set per-domain policies. Privacy Badger offers fewer configuration options—you essentially toggle blocking for domains Privacy Badger has already learned about.
+You can create custom filter rules, enable or disable specific filter lists, and set per-domain policies. Privacy Badger offers fewer configuration options—you toggle blocking for domains Privacy Badger has already learned about.
 
 ## Resource Usage
 

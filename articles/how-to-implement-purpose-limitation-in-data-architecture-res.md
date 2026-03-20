@@ -194,7 +194,7 @@ Building a purpose-limited architecture requires coordinated changes across mult
 3. **Service Layer**: Pass purpose context through all business logic
 4. **API Layer**: Validate declared purpose against endpoint functionality
 5. **Audit System**: Log all data access with full context for compliance
-6. **Consent Management**: Build robust consent collection and storage
+6. **Consent Management**: Build consent collection and storage
 7. **Testing**: Include purpose violation tests in your test suite
 
 ## Common Pitfalls to Avoid

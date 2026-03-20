@@ -29,7 +29,7 @@ UK GDPR and the EU GDPR provide the strongest employee monitoring access rights.
 
 Before submitting your request, gather information about your employment that helps identify you in their systems. This includes your employee ID, department, manager's name, office location, and device identifiers if you know them. Having this information ready speeds up the employer's response.
 
-Document the monitoring tools you know your employer uses. Common enterprise monitoring platforms include Microsoft Endpoint Analytics, SpectorSoft, ActivTrak, Teramind, Hubstaff, and Veriato. Mention specific tools in your request—this demonstrates your awareness of their data collection practices and encourages comprehensive responses.
+Document the monitoring tools you know your employer uses. Common enterprise monitoring platforms include Microsoft Endpoint Analytics, SpectorSoft, ActivTrak, Teramind, Hubstaff, and Veriato. Mention specific tools in your request—this demonstrates your awareness of their data collection practices and encourages responses.
 
 Check your company's privacy policy, employee handbook, or acceptable use policy. These documents often specify what monitoring they conduct and data retention periods. Reference specific sections in your request to show you've done your homework and to prompt complete disclosures.
 
@@ -245,7 +245,7 @@ GDPR provides additional rights beyond accessing data:
 - CCPA/CPRA provide similar rights but with employment exemptions
 - Some states (Vermont, Connecticut) offer stronger protections
 - Federal employees have additional rights under Privacy Act
-- Many states lack comprehensive privacy laws (workplace monitoring still legal)
+- Many states lack privacy laws (workplace monitoring still legal)
 
 **Other regions**:
 - Australia: Privacy Act 1988 provides access rights

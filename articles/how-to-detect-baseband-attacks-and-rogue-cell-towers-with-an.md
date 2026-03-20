@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-Mobile devices communicate with cell towers through the baseband processor—a dedicated chip that handles all cellular radio functions. This component operates independently from the main application processor, making it a attractive target for sophisticated attackers. Rogue cell towers (also known as IMSI catchers or StingRays) can intercept calls, track device locations, and inject malicious signals. This guide covers practical methods for detecting baseband attacks and rogue cell towers using Android apps.
+Mobile devices communicate with cell towers through the baseband processor—a dedicated chip that handles all cellular radio functions. This component operates independently from the main application processor, making it an attractive target for sophisticated attackers. Rogue cell towers (also known as IMSI catchers or StingRays) can intercept calls, track device locations, and inject malicious signals. This guide covers practical methods for detecting baseband attacks and rogue cell towers using Android apps.
 
 ## Understanding the Threat ecosystem
 

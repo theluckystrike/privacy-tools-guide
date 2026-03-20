@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Dating app conversations often contain sensitive personal information that users want to keep private. While screenshot prevention isn't a perfect solution, understanding the technical options available helps you make informed decisions about your digital privacy. This guide covers what platforms can actually prevent, the APIs developers can leverage, and practical steps you can take today.
+Dating app conversations often contain sensitive personal information that users want to keep private. While screenshot prevention isn't a perfect solution, understanding the technical options available helps you make informed decisions about your digital privacy. This guide covers what platforms can actually prevent, the APIs developers can use, and practical steps you can take today.
 
 ## The Reality of Screenshot Prevention
 

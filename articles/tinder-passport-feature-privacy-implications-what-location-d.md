@@ -56,7 +56,7 @@ When you activate Tinder Passport, multiple data points become accessible or are
 
 **Precise GPS Coordinates**: Your device's actual location remains stored in Tinder's backend, even when you manually select a different city. The app continues collecting GPS data in the background to verify if you've actually moved to the Passport location.
 
-**IP Address Geolocation**: Tinder associates your account with the IP address you use while the app is active. If you select Tokyo as your Passport location but connect through a US IP address, this discrepancy gets logged.
+**IP Address Geolocation**: Tinder associates your account with the IP address you use while the app is active. If you select Tokyo as your Passport location but connect through an US IP address, this discrepancy gets logged.
 
 **Timestamp Correlation**: Each location change generates a timestamp. By analyzing when you changed locations and how far apart those changes occurred, Tinder (or anyone with access to this data) can infer your actual travel patterns.
 

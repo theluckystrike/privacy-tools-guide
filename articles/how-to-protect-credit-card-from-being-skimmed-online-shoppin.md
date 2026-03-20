@@ -48,7 +48,7 @@ window.fetch = async function(...args) {
 
 ## Using Browser Extensions for Protection
 
-Several browser extensions actively detect and block known skimming scripts. Privacy Badger, developed by the Electronic Frontier Foundation, learns to block tracking scripts including potential skimmers. uBlock Origin provides comprehensive blocking of malicious domains and known skimming infrastructure.
+Several browser extensions actively detect and block known skimming scripts. Privacy Badger, developed by the Electronic Frontier Foundation, learns to block tracking scripts including potential skimmers. uBlock Origin provides blocking of malicious domains and known skimming infrastructure.
 
 For a more targeted approach, consider extensions specifically designed for payment protection. These tools maintain blocklists of known skimming domains and can intercept scripts attempting to capture form data before exfiltration occurs.
 

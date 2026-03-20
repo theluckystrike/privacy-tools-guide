@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-ETags (Entity Tags) are HTTP headers designed to improve web performance through conditional caching. However, these same mechanisms create privacy concerns because they can function as persistent identifiers. Understanding how ETag tracking works helps developers build more privacy-respecting applications and empowers users to protect their digital footprint.
+ETags (Entity Tags) are HTTP headers designed to improve web performance through conditional caching. However, these same mechanisms create privacy concerns because they can function as persistent identifiers. Understanding how ETag tracking works helps developers build more privacy-respecting applications and enables users to protect their digital footprint.
 
 ## What Are ETags and How Do They Work?
 

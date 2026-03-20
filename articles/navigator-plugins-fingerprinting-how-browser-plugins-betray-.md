@@ -102,7 +102,7 @@ The `navigator.mimeTypes` property often accompanies plugin enumeration, providi
 
 Several browser settings and extensions can reduce plugin fingerprinting effectiveness:
 
-**Tor Browser** provides the most robust protection by either blocking plugin enumeration or returning standardized plugin lists regardless of actual installations. This approach sacrifices some functionality for privacy but represents the gold standard for resistance.
+**Tor Browser** provides the most protection by either blocking plugin enumeration or returning standardized plugin lists regardless of actual installations. This approach sacrifices some functionality for privacy but represents the gold standard for resistance.
 
 **Firefox's fingerprinting protection** includes `privacy.resistFingerprinting`, which modifies the plugins array to return generic values. Users enable this through `about:config`.
 

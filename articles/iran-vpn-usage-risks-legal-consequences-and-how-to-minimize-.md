@@ -88,7 +88,7 @@ This approach works because the traffic patterns are designed to blend with norm
 
 ### Domain Fronted Connections
 
-Domain fronting uses legitimate CDN infrastructure to tunnel traffic. The request appears to go to a major tech company's domain (like cloudfront.net or azureedge.net) while the actual content routes through your VPN server. This technique leverages the trusted status of major cloud providers.
+Domain fronting uses legitimate CDN infrastructure to tunnel traffic. The request appears to go to a major tech company's domain (like cloudfront.net or azureedge.net) while the actual content routes through your VPN server. This technique uses the trusted status of major cloud providers.
 
 ```python
 # Conceptual domain fronting setup

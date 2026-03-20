@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "WireGuard Dynamic Endpoint Update: How Roaming Between Networks Works"
-description: "A technical guide for developers and power users on configuring WireGuard VPN for seamless roaming between networks, covering dynamic endpoint updates."
+description: "A technical guide for developers and power users on configuring WireGuard VPN for roaming between networks, covering dynamic endpoint updates."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/
@@ -16,7 +16,7 @@ intent-checked: true
 
 # WireGuard Dynamic Endpoint Update: How Roaming Between Networks Works
 
-WireGuard automatically detects when your device's IP changes (WiFi to cellular, switching coffee shops) and updates the endpoint dynamically without dropping the tunnel, unlike OpenVPN which requires reconnection. Enable this by configuring PersistentKeepalive = 25 (sends heartbeat packets every 25 seconds) and letting the peer endpoint be updated by sending packets from the new address—WireGuard's stateless design means it accepts packets from new IPs as long as the cryptographic keys match. This provides seamless roaming for mobile devices and laptops without application layer reconnections; however, the initial handshake may briefly interrupt traffic during the IP transition.
+WireGuard automatically detects when your device's IP changes (WiFi to cellular, switching coffee shops) and updates the endpoint dynamically without dropping the tunnel, unlike OpenVPN which requires reconnection. Enable this by configuring PersistentKeepalive = 25 (sends heartbeat packets every 25 seconds) and letting the peer endpoint be updated by sending packets from the new address—WireGuard's stateless design means it accepts packets from new IPs as long as the cryptographic keys match. This provides roaming for mobile devices and laptops without application layer reconnections; however, the initial handshake may briefly interrupt traffic during the IP transition.
 
 ## How WireGuard Handles Network Roaming
 
@@ -84,7 +84,7 @@ Persistent keepalive is not always required. Disable it when:
 
 ## Dynamic DNS Integration
 
-For devices with dynamically assigned IP addresses, combining WireGuard with dynamic DNS (DDNS) provides a robust roaming solution.
+For devices with dynamically assigned IP addresses, combining WireGuard with dynamic DNS (DDNS) provides a roaming solution.
 
 ### DDNS Configuration Example
 
@@ -131,7 +131,7 @@ Trigger this script via network manager hooks or systemd services that run on in
 
 Mobile devices present unique challenges for VPN roaming due to frequent IP changes, carrier NAT, and intermittent connectivity.
 
-### Seamless Handoff Strategies
+### Handoff Strategies
 
 For applications requiring zero disruption during network transitions:
 

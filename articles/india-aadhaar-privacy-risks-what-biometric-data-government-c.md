@@ -186,7 +186,7 @@ For individuals concerned about Aadhaar privacy:
 
 Aadhaar demonstrates both the promise and pitfalls of national digital identity systems. For developers, understanding the technical architecture helps build compliant applications. For users, knowing who accesses your data and how to protect yourself is essential.
 
-The tension between convenience (streamlined KYC, direct benefit delivery) and privacy (surveillance potential, data breach risks) remains unresolved. As a developer, advocate for privacy-preserving practices. As a user, exercise the controls available to you.
+The tension between convenience (improved KYC, direct benefit delivery) and privacy (surveillance potential, data breach risks) remains unresolved. As a developer, advocate for privacy-preserving practices. As a user, exercise the controls available to you.
 
 ---
 

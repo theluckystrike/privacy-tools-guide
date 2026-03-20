@@ -19,7 +19,7 @@ voice-checked: true
 
 {% raw %}
 
-WebRTC (Real-Time Communication) is a browser feature that enables direct peer-to-peer communication for services like Google Meet, Discord, and Zoom. However, it can inadvertently reveal your real IP address even when you're connected to a VPN—a vulnerability known as a WebRTC leak. This guide walks you through comprehensive testing methods to detect WebRTC leaks, understand the risks, and implement effective mitigation strategies.
+WebRTC (Real-Time Communication) is a browser feature that enables direct peer-to-peer communication for services like Google Meet, Discord, and Zoom. However, it can inadvertently reveal your real IP address even when you're connected to a VPN—a vulnerability known as a WebRTC leak. This guide walks you through testing methods to detect WebRTC leaks, understand the risks, and implement effective mitigation strategies.
 
 ## What is a WebRTC Leak?
 

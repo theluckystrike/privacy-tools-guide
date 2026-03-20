@@ -121,7 +121,7 @@ The trade-off is clear: Jami sacrifices convenience and feature richness for arc
 
 ## Multi-Device Challenges and Solutions
 
-Jami's decentralized approach creates complexity when using multiple devices. Unlike Signal or Telegram, which synchronize accounts seamlessly across devices, Jami treats each device as a separate node with its own identity.
+Jami's decentralized approach creates complexity when using multiple devices. Unlike Signal or Telegram, which synchronize accounts across devices, Jami treats each device as a separate node with its own identity.
 
 When you install Jami on a second device:
 1. The new device generates its own 40-character ID

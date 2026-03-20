@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Instagram Data Download and Delete Guide 2026"
-description: "Learn how to download your Instagram data and permanently delete your account with this comprehensive privacy guide for developers and power users."
+description: "Learn how to download your Instagram data and permanently delete your account with this privacy guide for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /instagram-data-download-and-delete-guide-2026/
@@ -106,8 +106,8 @@ Your profile, photos, and comments will be hidden for however long you choose. Y
 **Important**: Before deleting, consider that you cannot reuse the same username, and some content may remain in backups or on other users' devices.
 
 1. Visit the **Delete Account** page:
-   - Desktop: [instagram.com/accounts/remove/request/permanent/](https://www.instagram.com/accounts/remove/request/permanent/)
-   - Mobile browser required for deletion
+ - Desktop: [instagram.com/accounts/remove/request/permanent/](https://www.instagram.com/accounts/remove/request/permanent/)
+ - Mobile browser required for deletion
 
 2. Select a reason from the dropdown menu
 3. Re-enter your password

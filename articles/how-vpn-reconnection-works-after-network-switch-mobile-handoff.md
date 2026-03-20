@@ -13,7 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-VPN reconnection after a network switch works by detecting the broken tunnel via Dead Peer Detection keepalives, then performing a fresh key exchange and authentication handshake over the new network interface. WireGuard completes this in under 100ms, IKEv2 with MOBIKE handles it seamlessly by updating the network path without tearing down the tunnel, and OpenVPN typically requires a full reconnection using `persist-tun` and `persist-key` to reduce overhead. The speed of reconnection depends on your protocol choice, keepalive interval configuration, and whether the VPN client implements session persistence.
+VPN reconnection after a network switch works by detecting the broken tunnel via Dead Peer Detection keepalives, then performing a fresh key exchange and authentication handshake over the new network interface. WireGuard completes this in under 100ms, IKEv2 with MOBIKE handles it by updating the network path without tearing down the tunnel, and OpenVPN typically requires a full reconnection using `persist-tun` and `persist-key` to reduce overhead. The speed of reconnection depends on your protocol choice, keepalive interval configuration, and whether the VPN client implements session persistence.
 
 ## Network Handoff Fundamentals
 
@@ -56,7 +56,7 @@ class VPNClient:
 
 This pattern allows VPN clients to detect network switches within seconds rather than waiting for lengthy TCP timeouts.
 
-### Seamless Reconnection Strategies
+### Reconnection Strategies
 
 Modern VPN implementations use several strategies to minimize disruption during network switch mobile handoff:
 
@@ -102,7 +102,7 @@ The `persist-tun` option attempts to keep the TUN/TAP device open across reconne
 
 ### IKEv2/IPSec
 
-IKEv2 includes native support for mobility through MOBIKE (IKEv2 Mobility and Multihoming). This protocol extension allows the VPN to seamlessly switch network paths without interrupting the tunnel:
+IKEv2 includes native support for mobility through MOBIKE (IKEv2 Mobility and Multihoming). This protocol extension allows the VPN to switch network paths without interrupting the tunnel:
 
 ```bash
 # StrongSwan configuration enabling MOBIKE

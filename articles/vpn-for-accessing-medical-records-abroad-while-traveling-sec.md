@@ -146,7 +146,7 @@ Different EHR systems have different behaviors when accessed via VPN:
 
 **Cerner/Oracle Health**: Generally VPN-friendly but can have strict session timeouts.
 
-**Veterans Health Administration (My HealtheVet)**: Requires VA-specific authentication; VPN must terminate at a US IP.
+**Veterans Health Administration (My HealtheVet)**: Requires VA-specific authentication; VPN must terminate at an US IP.
 
 ## Kill Switch Implementation
 

@@ -94,7 +94,7 @@ This tracker helps maintain a record of all opt-out requests, including confirma
 
 ## Batch Processing Multiple Data Brokers
 
-Removing your data from a single platform provides limited protection. A comprehensive privacy strategy requires targeting multiple data brokers. Here's a shell script template for managing multiple opt-out processes.
+Removing your data from a single platform provides limited protection. A privacy strategy requires targeting multiple data brokers. Here's a shell script template for managing multiple opt-out processes.
 
 ```bash
 #!/bin/bash
@@ -172,7 +172,7 @@ Data broker databases continuously refresh with new information. A single opt-ou
 
 ## Additional Resources
 
-Several organizations provide comprehensive data broker removal services:
+Several organizations provide data broker removal services:
 
 - **Privacy Rights Clearinghouse**: Maintains a database of data brokers and opt-out links
 - **FTC Consumer Information**: Provides complaint resources for unresponsive brokers

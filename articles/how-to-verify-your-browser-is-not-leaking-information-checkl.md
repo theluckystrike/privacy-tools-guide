@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Verify Your Browser is Not Leaking Information: A Practical Checklist"
-description: "A comprehensive checklist for developers and power users to verify their browser is not leaking sensitive information. Includes code examples and testing methods."
+description: "A checklist for developers and power users to verify their browser is not leaking sensitive information. Includes code examples and testing methods."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-your-browser-is-not-leaking-information-checkl/
@@ -70,7 +70,7 @@ cat /etc/resolv.conf  # Linux/macOS
 ipconfig /all | findstr "DNS"  # Windows
 ```
 
-For a more comprehensive test, visit dnsleaktest.com or use the command-line tool:
+For a more test, visit dnsleaktest.com or use the command-line tool:
 
 ```bash
 # Using dnsleaktest CLI (if available)
@@ -142,7 +142,7 @@ A privacy-hardened browser should either block this API or return generic values
 
 Your browser's user agent string and navigator properties reveal significant information about your system.
 
-### Comprehensive Navigator Audit
+### Navigator Audit
 
 ```javascript
 function auditNavigator() {
@@ -195,7 +195,7 @@ function testStorageIsolation() {
 console.log('Storage Isolation:', testStorageIsolation());
 ```
 
-## Comprehensive Browser Privacy Checklist
+## Browser Privacy Checklist
 
 Use this checklist to verify your browser configuration:
 

@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-To access US pharmacy websites from Europe, connect via VPN with a US exit node using WireGuard for speed or OpenVPN for compatibility, enable DNS leak protection to prevent exposure of your European IP, and use a static IP address to bypass blocklists. US pharmacies block European IPs due to FDA regulations and state licensing requirements; a VPN masks your location by routing traffic through a US server, but you'll still face payment processor barriers if you use a European credit card. Ensure the VPN prevents DNS leaks (set 1.1.1.1 as DNS) and implements leak protection; without these, your real location remains visible.
+To access US pharmacy websites from Europe, connect via VPN with an US exit node using WireGuard for speed or OpenVPN for compatibility, enable DNS leak protection to prevent exposure of your European IP, and use a static IP address to bypass blocklists. US pharmacies block European IPs due to FDA regulations and state licensing requirements; a VPN masks your location by routing traffic through an US server, but you'll still face payment processor barriers if you use a European credit card. Ensure the VPN prevents DNS leaks (set 1.1.1.1 as DNS) and implements leak protection; without these, your real location remains visible.
 
 ## Understanding Geo-Restrictions on Pharmacy Websites
 
@@ -26,7 +26,7 @@ The underlying reason involves the Food and Drug Administration regulations, sta
 
 ## How VPNs Bypass Geographic Restrictions
 
-A VPN creates an encrypted tunnel between your device and a remote server, routing all internet traffic through that server. When you connect to a US-based VPN server, websites see your traffic originating from that server's IP address rather than your actual European IP. This IP address substitution is the primary mechanism that bypasses geo-restrictions.
+A VPN creates an encrypted tunnel between your device and a remote server, routing all internet traffic through that server. When you connect to an US-based VPN server, websites see your traffic originating from that server's IP address rather than your actual European IP. This IP address substitution is the primary mechanism that bypasses geo-restrictions.
 
 Beyond simple IP masking, quality VPNs also:
 

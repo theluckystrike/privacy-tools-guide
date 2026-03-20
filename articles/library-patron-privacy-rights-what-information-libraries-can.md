@@ -97,7 +97,7 @@ Many libraries offer guest computer access that does not require identification.
 # This prevents local browser history but does not hide from network logs
 ```
 
-### Leverage Self-Service Holds
+### Use Self-Service Holds
 
 Instead of staff placing holds on your behalf, use the public catalog to place holds yourself. This keeps your reading interests out of staff knowledge.
 

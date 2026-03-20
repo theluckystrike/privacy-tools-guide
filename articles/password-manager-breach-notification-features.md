@@ -2,7 +2,7 @@
 
 layout: default
 title: "Password Manager Breach Notification Features"
-description: "A comprehensive guide to password manager breach notification features for developers and power users. Learn how breach alerts work, API integrations."
+description: "A guide to password manager breach notification features for developers and power users. Learn how breach alerts work, API integrations."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-breach-notification-features/

@@ -19,7 +19,7 @@ Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessme
 
 The EU-US Data Privacy Framework (DPF) emerged as the successor to Privacy Shield, but organizations cannot rely solely on this certification. Additional technical and organizational measures are often required to supplement the framework. The key mechanisms available include Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), and supplementary measures such as end-to-end encryption.
 
-Standard Contractual Clauses remain the most commonly implemented solution. The European Commission adopted new SCCs in 2021 that account for the Schrems II requirements, including the requirement to conduct Transfer Impact Assessments (TIAs). These clauses must be accompanied by technical safeguards that ensure essentially equivalent protection to EU data protection standards.
+Standard Contractual Clauses remain the most commonly implemented solution. The European Commission adopted new SCCs in 2021 that account for the Schrems II requirements, including the requirement to conduct Transfer Impact Assessments (TIAs). These clauses must be accompanied by technical safeguards that ensure equivalent protection to EU data protection standards.
 
 ## Implementing Standard Contractual Clauses
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Android Setup Guide with Orbot"
-description: "A comprehensive guide for setting up Tor Browser on Android using Orbot. Learn how to configure Orbot as a VPN, integrate with Tor Browser, and maximize privacy on mobile devices."
+description: "A guide for setting up Tor Browser on Android using Orbot. Learn how to configure Orbot as a VPN, integrate with Tor Browser, and maximize privacy on mobile devices."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-android-setup-guide-orbot/
@@ -76,7 +76,7 @@ ClientTransportPlugin meek exec /path/to/meek-client
 
 ### VPN Mode Configuration
 
-Orbot's VPN mode routes all device traffic through Tor—a critical feature for comprehensive protection:
+Orbot's VPN mode routes all device traffic through Tor—a critical feature for protection:
 
 1. In Orbot, tap the menu icon
 2. Select "VPN Mode"

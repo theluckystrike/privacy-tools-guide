@@ -22,7 +22,7 @@ Fitness apps share your heart rate, sleep data, GPS routes, and biometric readin
 
 ## What Data Do Fitness Apps Collect?
 
-Modern fitness trackers collect a comprehensive range of biometric and behavioral data. The typical dataset includes:
+Modern fitness trackers collect a range of biometric and behavioral data. The typical dataset includes:
 
 - **Heart rate measurements** (resting, active, recovery)
 - **Sleep patterns** (stages, duration, quality scores)
@@ -88,7 +88,7 @@ For developers building health-focused applications, API security directly impac
 
 ### Endpoint Authentication
 
-Always implement robust authentication for health data endpoints:
+Always implement authentication for health data endpoints:
 
 ```python
 # Example: Secure health data API endpoint

@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Immigration activists protecting undocumented community members must use Signal for encrypted communications, Tor for all internet traffic, separate devices for organizing work, encrypted databases with minimal personal identifying information, and legal frameworks that destroy records after retention periods. Anticipate geographic tracking, social network analysis, communication interception, and device seizures at borders or protests. This guide provides comprehensive technical implementations including secure communications architecture, database design, access controls, and operational security practices for protecting vulnerable community members from enforcement surveillance.
+Immigration activists protecting undocumented community members must use Signal for encrypted communications, Tor for all internet traffic, separate devices for organizing work, encrypted databases with minimal personal identifying information, and legal frameworks that destroy records after retention periods. Anticipate geographic tracking, social network analysis, communication interception, and device seizures at borders or protests. This guide provides technical implementations including secure communications architecture, database design, access controls, and operational security practices for protecting vulnerable community members from enforcement surveillance.
 
 ## Understanding the Threat ecosystem
 

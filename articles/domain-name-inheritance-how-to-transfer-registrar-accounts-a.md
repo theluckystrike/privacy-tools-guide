@@ -131,7 +131,7 @@ If the deceased used cPanel hosting, you have several transfer options:
 For developers using AWS, Google Cloud, or similar providers:
 
 - **AWS**: Requires a death certificate and legal documentation. The process goes through AWS Trust & Safety. You may need to create a new account and rebuild resources, as direct account transfers aren't supported.
-  
+ 
 - **Google Cloud**: Similar requirements. Contact Google Cloud Support with documentation proving your authority over the estate.
 
 - **DigitalOcean/Vultr/Linode**: These providers typically allow account access transfers with proper documentation. Open a support ticket explaining the situation.

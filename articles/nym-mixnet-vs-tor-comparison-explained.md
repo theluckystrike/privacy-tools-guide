@@ -153,9 +153,9 @@ This combination provides Tor's established anonymity with Nym's metadata protec
 For developers building privacy applications:
 
 1. **Tor integration** uses well-documented SOCKS5 proxy or Control ports. Libraries exist for most languages:
-   - Python: `stem` library for Tor control
-   - Go: `gyges` or `tor` packages
-   - Rust: `arti` (Tor implementation in Rust)
+ - Python: `stem` library for Tor control
+ - Go: `gyges` or `tor` packages
+ - Rust: `arti` (Tor implementation in Rust)
 
 2. **Nym integration** requires the SDK:
    ```javascript

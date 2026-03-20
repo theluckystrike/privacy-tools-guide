@@ -59,7 +59,7 @@ camera:
 
 ### Hikvision and Dahua Professional Solutions
 
-Enterprise-grade doorbell and camera systems from Hikvision and Dahua offer robust local recording capabilities. These require more technical setup but provide professional reliability.
+Enterprise-grade doorbell and camera systems from Hikvision and Dahua offer local recording capabilities. These require more technical setup but provide professional reliability.
 
 For Hikvision cameras, enable local storage via the web interface:
 

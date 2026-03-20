@@ -223,7 +223,7 @@ export GIT_ASKPASS=/usr/bin/pass-git-helper
 
 For environment variables, consider using `.env` files encrypted with your password manager, or use a tool like `direnv` combined with your chosen password manager.
 
-The best password manager for Linux is ultimately the one that fits seamlessly into your existing workflow while maintaining strong security practices. Start with one that matches your current toolchain and adjust as your needs evolve.
+The best password manager for Linux is ultimately the one that fits into your existing workflow while maintaining strong security practices. Start with one that matches your current toolchain and adjust as your needs evolve.
 
 
 ## Related Reading

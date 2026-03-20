@@ -48,7 +48,7 @@ Instagram requires different proof depending on your relationship to the decease
 
 ### Method 1: Legacy Contact Request
 
-If the deceased designated you as a legacy contact before passing, you have a streamlined path:
+If the deceased designated you as a legacy contact before passing, you have an improved path:
 
 ```bash
 # Instagram Legacy Contact Memorialization Flow

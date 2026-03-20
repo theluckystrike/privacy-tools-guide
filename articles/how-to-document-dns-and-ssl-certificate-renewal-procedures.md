@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Document DNS and SSL Certificate Renewal Procedures"
-description: "A practical guide to creating comprehensive documentation for DNS and SSL certificate renewal processes to maintain continuous website availability and."
+description: "A practical guide to creating documentation for DNS and SSL certificate renewal processes to maintain continuous website availability and."
 date: 2026-03-19
 author: theluckystrike
 permalink: /how-to-document-dns-and-ssl-certificate-renewal-procedures/
@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-Documenting DNS and SSL certificate renewal procedures is essential for maintaining continuous website availability and security. Without proper documentation, certificate expirations can cause service outages, and poorly documented DNS changes can lead to prolonged downtime during incidents. This guide walks you through creating comprehensive documentation that your team can follow reliably.
+Documenting DNS and SSL certificate renewal procedures is essential for maintaining continuous website availability and security. Without proper documentation, certificate expirations can cause service outages, and poorly documented DNS changes can lead to prolonged downtime during incidents. This guide walks you through creating documentation that your team can follow reliably.
 
 ## Why Documentation Matters for Renewals
 
@@ -301,7 +301,7 @@ Documentation requires ongoing maintenance to remain useful.
 - **Weekly**: Check monitoring alerts, verify auto-renewal status
 - **Monthly**: Review upcoming expirations (30-90 days out)
 - **Quarterly**: Full audit of all certificates and DNS records
-- **Annually**: Comprehensive review with penetration testing
+- **Annually**: review with penetration testing
 
 ### Change Management
 
@@ -328,7 +328,7 @@ git push origin main
 
 ## Tools and Automation
 
-Consider these tools to streamline documentation and reduce manual effort:
+Consider these tools to improve documentation and reduce manual effort:
 
 ### Certificate Management Platforms
 
@@ -347,7 +347,7 @@ Consider these tools to streamline documentation and reduce manual effort:
 ### Monitoring Services
 
 - **SSL Labs**: Free SSL testing and monitoring
-- **Datadog**: Comprehensive infrastructure monitoring
+- **Datadog**: infrastructure monitoring
 - **UptimeRobot**: Simple uptime monitoring with SSL checks
 - **Checkmk**: Open-source monitoring with SSL checks
 

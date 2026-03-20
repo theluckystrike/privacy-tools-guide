@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-OpenVPN is a widely-used open-source VPN protocol that provides robust encryption and flexibility. However, in regions or networks where VPN traffic is actively blocked, standard OpenVPN connections fail because firewalls can identify the protocol signatures. This is where obfuscation becomes essential.
+OpenVPN is a widely-used open-source VPN protocol that provides encryption and flexibility. However, in regions or networks where VPN traffic is actively blocked, standard OpenVPN connections fail because firewalls can identify the protocol signatures. This is where obfuscation becomes essential.
 
 Obfuscation wraps VPN traffic in a different protocol layer, making it appear like normal HTTPS traffic or another benign protocol. This guide covers practical methods to configure OpenVPN with obfuscation, focusing on server and client setups that work in censored environments.
 

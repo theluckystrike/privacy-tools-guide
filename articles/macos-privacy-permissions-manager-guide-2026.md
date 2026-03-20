@@ -75,7 +75,7 @@ defaults read com.apple.systempreferences 2>/dev/null | grep -i yourapp
 
 ### Third-Party Tools
 
-For comprehensive TCC database management, developers often use third-party utilities:
+For TCC database management, developers often use third-party utilities:
 
 - **TCCutilPlus**: A GUI tool for viewing and managing TCC entries
 - **Silicon**: Provides detailed privacy permission management

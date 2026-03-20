@@ -43,7 +43,7 @@ DigiLocker serves as a centralized repository for various identity and governmen
 - Vehicle registration
 - Business registrations
 
-The platform links directly to issuing authorities like UIDAI (Aadha), IRCTC, transport departments, and educational boards. This means when you access documents through DigiLocker, you're essentially accessing live data from these government databases through a single authentication point.
+The platform links directly to issuing authorities like UIDAI (Aadha), IRCTC, transport departments, and educational boards. This means when you access documents through DigiLocker, you're accessing live data from these government databases through a single authentication point.
 
 ## Technical Architecture and Authentication
 
@@ -121,7 +121,7 @@ DigiLocker doesn't just store document copies—it maintains live links to issui
 
 - Changes to your original documents (address updates, license renewals) automatically reflect in DigiLocker
 - Government agencies can theoretically track document access patterns
-- Revocation of access may not be immediate or comprehensive
+- Revocation of access may not be immediate or 
 
 ### 3. Third-Party Application Risks
 

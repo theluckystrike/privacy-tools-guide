@@ -16,7 +16,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Bitcoin inheritance planning requires more than just writing down a seed phrase and hoping loved ones can access it. For developers and power users holding significant bitcoin, the complexity of self-custody creates real risk that heirs may lose access permanently. Multi-signature (multisig) setups provide a robust solution by distributing key custody across multiple parties, eliminating single points of failure while enabling inheritance scenarios that work with family members and legal frameworks.
+Bitcoin inheritance planning requires more than just writing down a seed phrase and hoping loved ones can access it. For developers and power users holding significant bitcoin, the complexity of self-custody creates real risk that heirs may lose access permanently. Multi-signature (multisig) setups provide a solution by distributing key custody across multiple parties, eliminating single points of failure while enabling inheritance scenarios that work with family members and legal frameworks.
 
 ## Why Standard Seed Phrase Storage Fails for Inheritance
 
@@ -69,7 +69,7 @@ Descriptor wallets in Bitcoin Core handle derivation paths correctly, making rec
 
 ## Working with Estate Lawyers
 
-Integrating an estate lawyer into your Bitcoin inheritance plan requires careful coordination. The lawyer should hold one signing key but should not have exclusive control over any funds. Their role is to facilitate access according to your will while preventing unauthorized withdrawals by other family members.
+Integrating an estate lawyer into your Bitcoin inheritance plan requires careful coordination. The lawyer should hold one signing key but should not have exclusive control over any funds. Their role is to help access according to your will while preventing unauthorized withdrawals by other family members.
 
 Provide your estate lawyer with written documentation specifying:
 - The multisig configuration (M-of-N threshold)
@@ -95,7 +95,7 @@ The locktime is specified in block height or Unix timestamp. For inheritance, se
 
 ## Documenting Everything for Your Executor
 
-Comprehensive documentation is critical. Your executor needs clear, non-technical instructions that explain how to access your Bitcoin holdings. This documentation should include:
+documentation is critical. Your executor needs clear, non-technical instructions that explain how to access your Bitcoin holdings. This documentation should include:
 
 - The location of hardware wallets and seed phrase backups
 - The multisig configuration details and required signature threshold

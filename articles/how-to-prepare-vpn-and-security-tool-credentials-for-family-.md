@@ -47,7 +47,7 @@ sudo wg show wg0 peers
 sudo wg show wg0 peer <public-key>
 ```
 
-Create a comprehensive configuration file for your family member:
+Create a configuration file for your family member:
 
 ```ini
 # family-member-vpn.conf

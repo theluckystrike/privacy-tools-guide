@@ -2,7 +2,7 @@
 
 layout: default
 title: "Crypto Dead Man Switch Services That Transfer Wallet Access"
-description: "A comprehensive review of crypto dead man switch services that automatically transfer wallet access after inactivity. Designed for developers and power."
+description: "A review of crypto dead man switch services that automatically transfer wallet access after inactivity. Designed for developers and power."
 date: 2026-03-16
 author: theluckystrike
 permalink: /crypto-dead-man-switch-services-that-transfer-wallet-access-/
@@ -95,7 +95,7 @@ Self-hosted contracts have significant limitations:
 
 - **No access to wallet private keys**: The contract only manages ETH held within it, not your main wallet
 - **Single point of failure**: If the contract has vulnerabilities, funds can be stolen
-- **No multisig support**: Doesn't leverage hardware wallet security
+- **No multisig support**: Doesn't use hardware wallet security
 
 ## Third-Party Services Overview
 

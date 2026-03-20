@@ -23,7 +23,7 @@ China maintains one of the world's most stringent internet regulatory frameworks
 
 China's approach to VPN regulation centers on the requirement that all VPN services must obtain government approval before operating within the country. The primary legal instruments include the 2017 amendment to the Customs Code of the People's Republic of China, the Administrative Measures for the Administration of Internet Information Services, and provisions within the broader Cybersecurity Law.
 
-Under these regulations, VPN providers must register with the Ministry of Industry and Information Technology (MIIT), maintain servers located within mainland China, agree to data retention requirements, and enable government access capabilities. Approved providers essentially operate as licensed telecommunications services, subject to extensive oversight.
+Under these regulations, VPN providers must register with the Ministry of Industry and Information Technology (MIIT), maintain servers located within mainland China, agree to data retention requirements, and enable government access capabilities. Approved providers operate as licensed telecommunications services, subject to extensive oversight.
 
 The distinction between legal and illegal VPNs matters significantly. Government-approved services like those operated by certain telecommunications companies comply with registration requirements and maintain the necessary infrastructure within Chinese borders. Unauthorized VPN services—whether operated by foreign companies or domestic entities without proper licensing—technically violate these regulations regardless of the user's stated purpose.
 

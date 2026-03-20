@@ -85,7 +85,7 @@ gpg --armor --export security@yourcompany.com > company-pub.asc
 # openpgpkey.yourdomain.com CNAME to your keyserver
 ```
 
-**Claws Mail** provides robust GPG integration on Linux:
+**Claws Mail** provides GPG integration on Linux:
 
 ```bash
 # Install with GPG support

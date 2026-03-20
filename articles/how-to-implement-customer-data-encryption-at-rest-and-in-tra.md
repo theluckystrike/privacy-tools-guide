@@ -2,7 +2,7 @@
 
 layout: default
 title: "How To Implement Customer Data Encryption At Rest And In Tra"
-description: "A comprehensive developer guide for implementing encryption at rest and in transit. Learn practical techniques with code examples for securing customer."
+description: "A developer guide for implementing encryption at rest and in transit. Learn practical techniques with code examples for securing customer."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-customer-data-encryption-at-rest-and-in-tra/
@@ -57,7 +57,7 @@ For production systems, avoid storing encryption keys in your application code. 
 
 ### Application-Level Encryption
 
-For finer control, encrypt data within your application before storing. The `cryptography` library in Python provides robust primitives:
+For finer control, encrypt data within your application before storing. The `cryptography` library in Python provides primitives:
 
 ```python
 from cryptography.fernet import Fernet

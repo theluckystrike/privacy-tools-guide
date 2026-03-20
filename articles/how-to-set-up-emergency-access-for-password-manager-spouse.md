@@ -41,8 +41,8 @@ Bitwarden offers the most straightforward emergency access implementation among 
 3. **Configure Wait Time**: Set the waiting period between 1 hour and 7 days. A 24-48 hour window balances security against urgency.
 
 4. **Choose Verification Type**: Bitwarden supports two modes:
-   - **Trusted Emergency Access**: Your spouse can request access after the wait period without additional notification to you.
-   - **Inheritance Planning**: More stringent, designed for estate planning scenarios.
+ - **Trusted Emergency Access**: Your spouse can request access after the wait period without additional notification to you.
+ - **Inheritance Planning**: More stringent, designed for estate planning scenarios.
 
 Your spouse receives an email notification when they initiate an emergency access request, giving you an opportunity to deny it if you're simply unavailable but capable of responding.
 
@@ -73,11 +73,11 @@ VERIFICATION_CODE_EMERGENCY=your-shared-code-here
    ```
 
 2. **Add Critical Items**: Move essential items to this vault:
-   - Bank account credentials
-   - Insurance policy numbers and login
-   - Medical records and portal passwords
-   - Subscription services (streaming, utilities)
-   - Master password documentation (for the spouse's own vault)
+ - Bank account credentials
+ - Insurance policy numbers and login
+ - Medical records and portal passwords
+ - Subscription services (streaming, utilities)
+ - Master password documentation (for the spouse's own vault)
 
 3. **Share with Family Member**: Select each item → Share → Choose your spouse's account. Enable "Can view" permissions.
 

@@ -120,7 +120,7 @@ Travel mode represents a balance between security and convenience. Consider thes
 **Limitations**:
 - Requires pre-trip preparation and planning
 - May impede access to legitimate needs while traveling
-- Relies on the password manager's implementation being robust
+- Relies on the password manager's implementation being 
 
 Your threat model determines whether travel mode provides meaningful security benefits. For developers carrying production credentials or working with sensitive systems, the feature offers valuable protection against involuntary disclosure scenarios.
 

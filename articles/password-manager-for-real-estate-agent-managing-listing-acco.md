@@ -53,7 +53,7 @@ This approach keeps all credential data on infrastructure you control, which may
 
 ### Cloud-Based: Bitwarden or 1Password
 
-Both Bitwarden and 1Password offer robust sharing features. Bitwarden's Organizations feature allows creating separate vaults for different credential categories:
+Both Bitwarden and 1Password offer sharing features. Bitwarden's Organizations feature allows creating separate vaults for different credential categories:
 
 ```bash
 # Bitwarden CLI: Create a new collection for MLS credentials
@@ -93,7 +93,7 @@ This structure enables granular sharing. You might share MLS credentials with an
 
 ## Implementing CLI-Based Workflows
 
-Power users benefit from password managers with robust CLI tools. Both Bitwarden and 1Password provide command-line interfaces that integrate with scripts and automation.
+Power users benefit from password managers with CLI tools. Both Bitwarden and 1Password provide command-line interfaces that integrate with scripts and automation.
 
 ### Retrieving Credentials Programmatically
 

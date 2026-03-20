@@ -194,7 +194,7 @@ sudo setcap cap_net_admin+ep /usr/bin/openvpn
 sudo iptables -L -n -v
 ```
 
-**Split tunneling enabled**: Check if split tunneling is accidentally allowing traffic outside the VPN tunnel. Disable split tunneling for comprehensive protection.
+**Split tunneling enabled**: Check if split tunneling is accidentally allowing traffic outside the VPN tunnel. Disable split tunneling for protection.
 
 ## Related Reading
 

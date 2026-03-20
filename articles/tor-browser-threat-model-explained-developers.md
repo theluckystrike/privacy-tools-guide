@@ -221,7 +221,7 @@ When deciding whether Tor fits your threat model, ask:
 3. **What is your attack surface?** Browser exploits, phishing, and malware bypass Tor entirely
 4. **Do you need additional layers?** Consider layered approaches for higher-risk scenarios
 
-Tor Browser provides strong protection for its intended use case: anonymous web browsing against network-level adversaries. It is not a comprehensive security solution and should be understood as one component in a broader security architecture.
+Tor Browser provides strong protection for its intended use case: anonymous web browsing against network-level adversaries. It is not a security solution and should be understood as one component in a broader security architecture.
 
 For developers building privacy-sensitive applications, Tor provides valuable primitives for network-level anonymity—but requires careful integration and understanding of its limitations to be effective.
 

@@ -69,7 +69,7 @@ Database access should follow the principle of least privilege. Grant volunteers
 
 ## Secure Communication Channels
 
-Campaign communication often moves quickly, but security shouldn't be compromised for convenience. End-to-end encrypted messaging provides protection against interception. Signal remains the gold standard for secure mobile communication, offering disappearing messages and robust encryption.
+Campaign communication often moves quickly, but security shouldn't be compromised for convenience. End-to-end encrypted messaging provides protection against interception. Signal remains the gold standard for secure mobile communication, offering disappearing messages and encryption.
 
 For email, consider using Pretty Good Privacy (PGP) encryption for highly sensitive communications. While PGP has usability challenges, it provides strong protection for specific messages containing sensitive voter information.
 

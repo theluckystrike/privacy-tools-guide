@@ -188,9 +188,9 @@ After deletion, verify the process completed successfully:
 1. **Request a new data export** after 24-48 hours
 2. **Compare the exports** to confirm location data reduction
 3. **Check specific sections**:
-   - Visit **Places You've Been** - should be empty
-   - Check **Location Settings** - history should show "No recent location history"
-   - Review **Ads Location Data** - should show minimal or no data
+ - Visit **Places You've Been** - should be empty
+ - Check **Location Settings** - history should show "No recent location history"
+ - Review **Ads Location Data** - should show minimal or no data
 
 ```python
 def compare_location_exports(old_export, new_export):

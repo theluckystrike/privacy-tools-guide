@@ -36,7 +36,7 @@ Modern hotels collect a range of guest information during booking and check-in:
 - Restaurant and bar purchases
 - Spa and amenity usage
 
-This creates a comprehensive profile that law enforcement can request under various legal mechanisms.
+This creates a profile that law enforcement can request under various legal mechanisms.
 
 ## Legal Framework: When Hotels Must Disclose Data
 

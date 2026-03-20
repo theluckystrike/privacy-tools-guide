@@ -2,7 +2,7 @@
 
 layout: default
 title: "Hardware Wallet Inheritance Instructions How To Write Clear"
-description: "A practical guide for developers and power users on creating comprehensive hardware wallet inheritance documentation that enables non-technical heirs."
+description: "A practical guide for developers and power users on creating hardware wallet inheritance documentation that enables non-technical heirs."
 date: 2026-03-16
 author: theluckystrike
 permalink: /hardware-wallet-inheritance-instructions-how-to-write-clear-/
@@ -29,7 +29,7 @@ Effective hardware wallet inheritance instructions must cover several critical a
 
 ### Physical Asset Inventory
 
-Create a comprehensive list of all hardware wallets, their locations, and what assets they contain. Use plain language: instead of "Ledger Nano X storing BTC and ETH," write "Blue device in bedroom closet - contains Bitcoin and Ethereum worth approximately $XX,XXX."
+Create a list of all hardware wallets, their locations, and what assets they contain. Use plain language: instead of "Ledger Nano X storing BTC and ETH," write "Blue device in bedroom closet - contains Bitcoin and Ethereum worth approximately $XX,XXX."
 
 Example inventory structure:
 

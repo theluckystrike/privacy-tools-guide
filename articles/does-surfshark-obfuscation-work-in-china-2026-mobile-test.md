@@ -119,7 +119,7 @@ Android showed slightly better results due to more flexible network configuratio
 
 - **Automatic selection**: 61% success rate
 - **OpenVPN with obfuscation**: 69% success rate
-- **WireGuard (non-obfuscated)**: 8% (essentially blocked)
+- **WireGuard (non-obfuscated)**: 8% (blocked)
 
 Android users benefit from Split Tunneling, which allows routing only sensitive traffic through the VPN while using direct connections for local services.
 

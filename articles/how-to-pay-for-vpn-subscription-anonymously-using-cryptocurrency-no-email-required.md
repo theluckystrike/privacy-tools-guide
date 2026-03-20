@@ -27,7 +27,7 @@ Cryptocurrency payments offer pseudonymity by default, but most mainstream excha
 
 ### Method 1: Peer-to-Peer Exchange
 
-LocalBitcoins and Paxful facilitate in-person cash trades. Meet in a public location, pay with现金, and receive Bitcoin immediately into a wallet you control.
+LocalBitcoins and Paxful help in-person cash trades. Meet in a public location, pay with现金, and receive Bitcoin immediately into a wallet you control.
 
 ```bash
 # Generate a new receiving address for each transaction

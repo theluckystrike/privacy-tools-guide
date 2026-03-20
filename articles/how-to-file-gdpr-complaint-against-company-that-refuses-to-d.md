@@ -130,7 +130,7 @@ fetch('https://api.ico.org.uk/v1/complaints', {
 });
 ```
 
-## Step 4: Leverage Technical Tools
+## Step 4: Use Technical Tools
 
 For developers and power users, several tools can help automate and document the process:
 

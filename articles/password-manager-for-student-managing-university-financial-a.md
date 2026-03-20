@@ -27,7 +27,7 @@ For developers comfortable with terminal workflows, command-line password manage
 
 ### Bitwarden CLI
 
-Bitwarden offers a robust CLI that integrates with your existing workflow:
+Bitwarden offers a CLI that integrates with your existing workflow:
 
 ```bash
 # Install via npm

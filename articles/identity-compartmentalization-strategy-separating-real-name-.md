@@ -19,7 +19,7 @@ Create completely separate digital identities by using distinct email addresses 
 
 ## Why Identity Compartmentalization Matters
 
-Every data point you share online contributes to a profile that can be used against you. When your real name, email, phone number, and location are connected across platforms, attackers can build comprehensive dossiers through correlation attacks. A single breach at one service can expose your entire digital life.
+Every data point you share online contributes to a profile that can be used against you. When your real name, email, phone number, and location are connected across platforms, attackers can build dossiers through correlation attacks. A single breach at one service can expose your entire digital life.
 
 For developers and power users, the stakes are even higher. Your GitHub contributions, npm packages, Stack Overflow posts, and professional profiles create a detailed trail back to your real identity. Anyone with moderate OSINT capabilities can connect these dots. Compartmentalization provides defense in depth—if one persona is compromised, your other identities remain protected.
 

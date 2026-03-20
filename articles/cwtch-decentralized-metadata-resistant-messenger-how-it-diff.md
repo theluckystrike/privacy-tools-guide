@@ -96,7 +96,7 @@ For developers evaluating these platforms, several practical factors warrant con
 ### Signal Advantages
 
 - **Mature codebase**: Signal has undergone extensive security auditing
-- **Cross-platform availability**: iOS, Android, Desktop with seamless sync
+- **Cross-platform availability**: iOS, Android, Desktop with sync
 - **Large user base**: Better availability for general communication
 - **Forward compatibility**: Protocol standardization (Signal Protocol used by others)
 

@@ -76,7 +76,7 @@ CREATE TABLE users (
 );
 ```
 
-The mapping table should receive additional security protections including encryption at rest, restricted access, and comprehensive audit logging.
+The mapping table should receive additional security protections including encryption at rest, restricted access, and audit logging.
 
 ### Hash-Based Pseudonymization
 

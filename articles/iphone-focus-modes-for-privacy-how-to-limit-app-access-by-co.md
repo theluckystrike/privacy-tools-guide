@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Iphone Focus Modes For Privacy How To Limit App Access By Co"
-description: "Learn how to leverage iPhone Focus Modes to enhance your privacy by limiting app access based on your current context. A guide for developers and power."
+description: "Learn how to use iPhone Focus Modes to enhance your privacy by limiting app access based on your current context. A guide for developers and power."
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/
@@ -28,7 +28,7 @@ For privacy-conscious users, the ability to create context-specific restrictions
 
 ## Creating Privacy-Focused Focus Modes
 
-The native Settings app provides the interface for creating Focus Modes, but power users can leverage Shortcuts automation to create more sophisticated rules. Here's how to set up a basic privacy-focused Focus Mode:
+The native Settings app provides the interface for creating Focus Modes, but power users can use Shortcuts automation to create more sophisticated rules. Here's how to set up a basic privacy-focused Focus Mode:
 
 1. Open Settings > Focus
 2. Tap the + button to create a new Focus Mode

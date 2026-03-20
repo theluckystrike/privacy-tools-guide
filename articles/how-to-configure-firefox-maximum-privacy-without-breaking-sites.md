@@ -192,11 +192,11 @@ Install from: addons.mozilla.org
 1. Click uBlock icon → Dashboard
 2. Go to "Filter lists" tab
 3. Enable recommended lists:
-   - uBlock filters
-   - EasyList (ads)
-   - EasyPrivacy (tracking)
-   - Fanboy's Annoyance List (social media widgets)
-   - Peter Lowe's Ad/Tracking list
+ - uBlock filters
+ - EasyList (ads)
+ - EasyPrivacy (tracking)
+ - Fanboy's Annoyance List (social media widgets)
+ - Peter Lowe's Ad/Tracking list
 
 **Settings → Behavior:**
 - Check "Prevent media elements from loading data"

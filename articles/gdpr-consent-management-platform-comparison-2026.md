@@ -84,7 +84,7 @@ OneTrust works well for organizations with dedicated compliance teams. Smaller p
 
 ### TrustArc
 
-TrustArc offers comprehensive privacy management with a focus on enterprise compliance. The platform provides detailed consent analytics and cross-border transfer management.
+TrustArc offers privacy management with a focus on enterprise compliance. The platform provides detailed consent analytics and cross-border transfer management.
 
 **Implementation approach**:
 

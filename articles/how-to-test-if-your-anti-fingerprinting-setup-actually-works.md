@@ -57,7 +57,7 @@ A properly configured setup should either block WebRTC or route it through your 
 
 ## Programmatic Fingerprinting Tests
 
-For comprehensive testing, write a simple script that extracts the same data fingerprinting libraries collect. Create an HTML file with JavaScript:
+For testing, write a simple script that extracts the same data fingerprinting libraries collect. Create an HTML file with JavaScript:
 
 ```html
 <!DOCTYPE html>

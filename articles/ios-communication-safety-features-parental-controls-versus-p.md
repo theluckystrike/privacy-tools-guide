@@ -79,7 +79,7 @@ iOS distinguishes between controls applied at the device level versus Family Sha
 # - Screen Time synchronization across devices
 ```
 
-Account-level controls through Family Sharing provide more comprehensive oversight but require creating managed Apple IDs for children—a significant privacy decision for families.
+Account-level controls through Family Sharing provide more oversight but require creating managed Apple IDs for children—a significant privacy decision for families.
 
 ### 3. **The Content Analysis Dilemma**
 
@@ -87,9 +87,9 @@ When Communication Safety is enabled for a child:
 
 1. Image analysis occurs on-device
 2. If sensitive content detected:
-   - Child receives warning with " resources" option
-   - Parent notification (depending on settings)
-   - Image blurred/hidden
+ - Child receives warning with " resources" option
+ - Parent notification (depending on settings)
+ - Image blurred/hidden
 
 This differs from traditional content filtering that would log or report content to a server. The on-device approach minimizes data exposure but still represents a form of content inspection.
 

@@ -83,7 +83,7 @@ curl -X POST "https://example-broker.com/opt-out" \
 
 Not all brokers provide programmatic opt-out, so manual research may be necessary.
 
-## Method 5: Leverage Have I Been Sold
+## Method 5: Use Have I Been Sold
 
 A newer service called [Have I Been Sold](https://haveibeensold.com/) specifically tracks whether your email appears in data sold to marketing brokers. Unlike Have I Been Pwned, which focuses on breaches, this service monitors broker-specific datasets. You enter your email and receive a report indicating which brokers possess your data.
 

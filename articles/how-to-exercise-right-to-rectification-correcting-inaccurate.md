@@ -180,7 +180,7 @@ Keep these strategies in mind when exercising your rectification rights:
 
 **Escalate systematically** — Regulatory complaints work. Companies receiving DPA inquiries typically prioritize resolving individual requests.
 
-Exercising your right to rectification requires persistence and precision. The legal framework exists to empower you—understanding how to use it effectively transforms abstract rights into practical data control.
+Exercising your right to rectification requires persistence and precision. The legal framework exists to enable you—understanding how to use it effectively transforms abstract rights into practical data control.
 
 
 ## Related Reading

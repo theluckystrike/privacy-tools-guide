@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-Organizing peaceful assemblies requires communication infrastructure that protects participant identities from surveillance, device seizure, and network interception. A properly configured burner device—essentially a secondary phone or tablet used only for sensitive activities—forms the foundation of operational security for protest coordination. This guide covers the technical implementation from hardware selection through secure disposal, with code examples for automation where applicable.
+Organizing peaceful assemblies requires communication infrastructure that protects participant identities from surveillance, device seizure, and network interception. A properly configured burner device—a secondary phone or tablet used only for sensitive activities—forms the foundation of operational security for protest coordination. This guide covers the technical implementation from hardware selection through secure disposal, with code examples for automation where applicable.
 
 ## Hardware Selection and Initial Acquisition
 

@@ -14,15 +14,15 @@ voice-checked: true
 
 {% raw %}
 
-Screen sharing has become essential for remote work, code reviews, technical support, and sensitive business discussions. However, most popular screen sharing tools only encrypt data in transit—leaving your actual screen content vulnerable to interception by servers, intermediate infrastructure, and potential adversaries with legal leverage over service providers. True end-to-end encryption (E2EE) ensures that screen content never leaves your device in a decryptable form until it reaches the intended viewer.
+Screen sharing has become essential for remote work, code reviews, technical support, and sensitive business discussions. However, most popular screen sharing tools only encrypt data in transit—leaving your actual screen content vulnerable to interception by servers, intermediate infrastructure, and potential adversaries with legal use over service providers. True end-to-end encryption (E2EE) ensures that screen content never leaves your device in a decryptable form until it reaches the intended viewer.
 
 This guide covers secure screen sharing tools that encrypt video streams end-to-end, with practical implementation details for developers and power users who need verifiable security.
 
 ## Understanding End-to-End Encryption in Screen Sharing
 
-End-to-end encrypted screen sharing means that the encryption keys never leave your device. The server facilitating the connection acts only as a relay—it cannot decrypt your screen content because it never possesses the keys. This differs from transport-layer encryption (TLS), where the service provider holds decryption keys and can theoretically access your data.
+End-to-end encrypted screen sharing means that the encryption keys never leave your device. The server helping the connection acts only as a relay—it cannot decrypt your screen content because it never possesses the keys. This differs from transport-layer encryption (TLS), where the service provider holds decryption keys and can theoretically access your data.
 
-True E2EE for screen sharing requires several technical components working together. The screen capture pipeline must encrypt frames before transmission using recipient-specific keys. Key exchange typically uses the Double Ratchet algorithm or similar forward-secret protocols. Some implementations leverage WebRTC's Insertable Streams API to intercept and encrypt video frames at the browser level, ensuring the content remains encrypted through the entire pipeline.
+True E2EE for screen sharing requires several technical components working together. The screen capture pipeline must encrypt frames before transmission using recipient-specific keys. Key exchange typically uses the Double Ratchet algorithm or similar forward-secret protocols. Some implementations use WebRTC's Insertable Streams API to intercept and encrypt video frames at the browser level, ensuring the content remains encrypted through the entire pipeline.
 
 The security guarantee breaks down if any participant lacks E2EE support—ensure all viewers in your session use compatible clients.
 

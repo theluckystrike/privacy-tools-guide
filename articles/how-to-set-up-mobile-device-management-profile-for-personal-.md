@@ -97,7 +97,7 @@ Android provides more flexibility through its Enterprise APIs. The two primary a
 
 ### Device Owner Mode (Full Control)
 
-Device Owner grants complete administrative control over the device. This is typically used for single-user devices where you want comprehensive policy enforcement.
+Device Owner grants complete administrative control over the device. This is typically used for single-user devices where you want policy enforcement.
 
 ```bash
 # First, install your MDM app (FDroid or custom)

@@ -48,7 +48,7 @@ This handles basic disabling but leaves residual code in the browser executable.
 For granular control beyond the standard settings, Brave provides experimental flags accessible at `brave://flags`. These offer deeper control over individual features:
 
 - **IPFS Integration**: Set to "Disabled" - prevents IPFS node initialization and gateway usage
-- **Brave Wallet**: Set to "Disabled" - removes wallet functionality entirely  
+- **Brave Wallet**: Set to "Disabled" - removes wallet functionality entirely 
 - **Native Wallet**: Set to "Disabled" - disables Ethereum provider injection
 - **Solana Wallet**: Set to "Disabled" - removes Solana support
 - **ENS Resolution**: Set to "Disabled" - disables Ethereum Name Service lookups

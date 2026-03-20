@@ -51,7 +51,7 @@ sample_tx = {
 }
 ```
 
-This clustering enables analysts to build comprehensive profiles of wallet activity without directly accessing personal information.
+This clustering enables analysts to build profiles of wallet activity without directly accessing personal information.
 
 ### Address Tagging
 

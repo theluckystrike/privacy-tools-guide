@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android App Permissions Audit Guide 2026"
-description: "A comprehensive guide to auditing Android app permissions in 2026. Learn how to review, manage, and control app access using ADB, Play Store insights."
+description: "A guide to auditing Android app permissions in 2026. Learn how to review, manage, and control app access using ADB, Play Store insights."
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-app-permissions-audit-guide-2026/
@@ -33,7 +33,7 @@ Android 14 and the 2026 platform updates have added new permission categories in
 
 The most straightforward method for reviewing permissions uses Android's Settings interface. Navigate to **Settings > Apps**, select any application, and tap **Permissions** to see a complete list of requested permissions grouped by category.
 
-For a overview of all apps with dangerous permissions, access **Settings > Privacy > Permission Manager**. This view groups permissions by category (Location, Camera, Microphone, Contacts, etc.) and shows which apps have access—essential for identifying apps that may no longer need certain permissions.
+For an overview of all apps with dangerous permissions, access **Settings > Privacy > Permission Manager**. This view groups permissions by category (Location, Camera, Microphone, Contacts, etc.) and shows which apps have access—essential for identifying apps that may no longer need certain permissions.
 
 Modern Android versions display permission indicators in the status bar when apps actively use sensitive capabilities. A persistent camera or microphone icon warrants immediate investigation.
 

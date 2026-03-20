@@ -153,7 +153,7 @@ server {
 
 ## Audit Logging for Compliance
 
-Tax professionals must maintain records demonstrating compliance. Implement comprehensive audit logging for all client data access:
+Tax professionals must maintain records demonstrating compliance. Implement audit logging for all client data access:
 
 ```python
 import hashlib

@@ -71,7 +71,7 @@ Wickr's administrative console provides centralized user management, role-based 
 
 Organizations with strict data sovereignty requirements may need to self-host their messaging infrastructure.
 
-Signal does not offer a self-hosted option. You must use Signal's servers, which means your metadata and communication patterns are handled by a US-based nonprofit organization.
+Signal does not offer a self-hosted option. You must use Signal's servers, which means your metadata and communication patterns are handled by an US-based nonprofit organization.
 
 Wickr offers both cloud and on-premises deployment options. Enterprises requiring complete control over their infrastructure can deploy Wickr servers within their own data centers:
 

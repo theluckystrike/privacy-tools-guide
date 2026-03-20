@@ -51,7 +51,7 @@ function derivePrivateKey(password, salt) {
 
 ## Proton Mail's Official Position on Account Inheritance
 
-As of 2026, Proton Mail does not offer a built-in account inheritance or legacy access feature comparable to what some traditional email providers provide. Their terms of service and privacy policy clearly state that accounts are non-transferable. This isn't a policy limitation — it's a architectural necessity. Building in a backdoor for estate access would compromise the security model that users rely on.
+As of 2026, Proton Mail does not offer a built-in account inheritance or legacy access feature comparable to what some traditional email providers provide. Their terms of service and privacy policy clearly state that accounts are non-transferable. This isn't a policy limitation — it's an architectural necessity. Building in a backdoor for estate access would compromise the security model that users rely on.
 
 Proton does have a deceased user process, but its scope is limited. Users (or their legal representatives) can request account deletion after providing appropriate documentation, including death certificates and proof of legal authority. However, this process results in data destruction rather than data transfer. The encrypted contents are permanently deleted, not recovered.
 
@@ -98,7 +98,7 @@ Automated systems can periodically check for account inactivity and trigger cred
 - **Dead Man's Switch** (GitHub: alemiz/dmans): Monitors activity and releases encrypted credentials
 - **GhostArchivist**: More sophisticated system with legal document integration
 
-These systems require ongoing maintenance and introduce their own security considerations, but they provide the most comprehensive solution currently available for E2EE account succession.
+These systems require ongoing maintenance and introduce their own security considerations, but they provide the most solution currently available for E2EE account succession.
 
 ## Legal and Practical Considerations
 
@@ -193,7 +193,7 @@ Proton Mail integrates with Proton Drive for file sharing. While emails stored i
 
 This hybrid approach maintains encryption while providing a practical inheritance mechanism.
 
-## Building a Comprehensive Digital Estate Strategy
+## Building a Digital Estate Strategy
 
 Rather than viewing Proton Mail inheritance as a single problem, integrate it into a broader digital asset inventory:
 
