@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /how-to-detect-and-remove-hidden-tracking-devices-on-your-car/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
