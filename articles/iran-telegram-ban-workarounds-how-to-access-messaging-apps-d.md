@@ -5,7 +5,7 @@ description: "Technical guide for developers and power users on accessing Telegr
 date: 2026-03-16
 author: theluckystrike
 permalink: /iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false
