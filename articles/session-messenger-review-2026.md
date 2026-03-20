@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /session-messenger-review-2026/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}
