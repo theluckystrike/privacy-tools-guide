@@ -141,6 +141,187 @@ For developers building privacy-focused applications, ProtonMail's API and OpenP
 
 Both services represent significant improvements over conventional email providers. The right choice depends on your specific threat model, technical requirements, and workflow integration needs.
 
+## Threat Model Analysis
+
+Different email use cases require different security guarantees:
+
+**Threat Model 1: Corporate Surveillance**
+Concern: Employer, ISP, or NSA reading corporate email.
+Solution: Either provider works. ProtonMail's OpenPGP compatibility with Thunderbird enables end-to-end encryption even between different organizations.
+
+**Threat Model 2: Cross-Border Communication**
+Concern: Government censorship, surveillance in transit.
+Solution: Zero-knowledge encryption is essential. Proton's Swiss jurisdiction provides legal protections. Tutanota's subject-line encryption adds extra layer.
+
+**Threat Model 3: Regulated Industry Communication**
+Concern: Compliance audits, retention requirements.
+Solution: ProtonMail with API access enabling audit logging. Document encryption and archival procedures.
+
+**Threat Model 4: Activist/Dissident Communication**
+Concern: Targeted attacks, metadata collection, forced account access.
+Solution: Tutanota's metadata encryption and ProtonMail's Swiss jurisdiction both help. Use separate burner accounts for different communication contexts.
+
+## Hands-On Technical Comparison
+
+Beyond marketing claims, here's how to test these services:
+
+```bash
+# Test ProtonMail encryption by exporting a message
+# Save a ProtonMail → ProtonMail encrypted message
+# Export using ProtonMail's export tool
+# Attempt to decrypt locally with:
+gpg --decrypt exported-message.gpg
+
+# If decryption works, encryption is real (not just server-side)
+```
+
+```bash
+# Test Tutanota by verifying all-encompassing encryption
+# Compare email data exported from both services
+# Tutanota export should show encrypted subject lines and metadata
+# ProtonMail export should show decrypted subjects (encryption is message-body only)
+```
+
+## Integration with Existing Workflows
+
+For developers with established email workflows, integration determines practical usability:
+
+**Thunderbird with ProtonMail Bridge**:
+```bash
+# Download and install ProtonMail Bridge
+# Configure Thunderbird:
+# - IMAP: localhost, port 1143
+# - SMTP: localhost, port 1025
+# - Username: ProtonMail@protonmailch (special account format)
+
+# Thunderbird now provides full IMAP access with transparent encryption
+# Backward compatibility with existing Thunderbird rules and filters
+```
+
+**Command-line access with API**:
+```bash
+# ProtonMail API for automation
+# Example: Creating filters via API
+
+curl -X POST "https://api.protonmail.com/filters" \
+  -H "Authorization: Bearer $PROTON_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Name": "auto-label",
+    "Conditions": {
+      "From": "newsletter@example.com"
+    },
+    "Actions": {
+      "Labels": ["Newsletter"]
+    }
+  }'
+```
+
+## Key Management for Organizations
+
+Organizations sending encrypted email between team members face key distribution challenges:
+
+**ProtonMail Advantage**: Public key infrastructure handled automatically. Adding a new team member is simple—their encryption key is automatically available to others.
+
+**Tutanota Advantage**: Proprietary system means no external key management. All team members use the same encryption system, simplifying trust model.
+
+For organizations integrating with external partners using different email systems, ProtonMail's OpenPGP support is essential. You can send encrypted email to partners using Outlook, Gmail, or other systems if they have PGP keys.
+
+## Practical Data Migration
+
+Moving existing email to encrypted providers requires planning:
+
+```bash
+# ProtonMail migration tool handles IMAP import
+# But understand what gets imported:
+# 1. Emails are imported and encrypted with your new key
+# 2. PGP-encrypted emails must be decrypted during import (tool handles this if you provide keys)
+# 3. Sent items folder is imported (encrypted on arrival in ProtonMail)
+
+# Recommended: Import only critical emails, not entire archive
+# The encryption key used on old provider may differ from new provider's key
+```
+
+For Tutanota:
+```bash
+# Tutanota provides standard IMAP import capability
+# Process is similar but uses Tutanota's proprietary encryption
+# Imported emails are re-encrypted with new keys
+```
+
+## Supplementary Privacy Measures
+
+Using encrypted email doesn't guarantee complete privacy. Additional measures are important:
+
+**Email Aliases**:
+- ProtonMail: 15 aliases per account (excellent for compartmentalization)
+- Tutanota: Unlimited aliases on paid plans
+- Use different aliases for different purposes (work, personal, disposable)
+
+**Expiring Emails**:
+Both providers support emails that auto-delete after specified period. Useful for temporary passwords, authentication codes.
+
+```bash
+# ProtonMail API: Setting expiration
+curl -X POST "https://api.protonmail.com/sendWithExpiration" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "Body": "Temporary password: xyz",
+    "ExpiresIn": 3600
+  }'
+```
+
+**Custom Domains**:
+Both support custom domain email (e.g., your-company.com managed by ProtonMail). Provides professional appearance while maintaining encryption.
+
+## Compliance and Audit Scenarios
+
+For organizations handling regulated data:
+
+**ProtonMail Compliance**:
+- SOC 2 Type II certified
+- GDPR compliant
+- Can provide account activity logs to organizations (Swiss legal protections limit what can be disclosed)
+- Custom domain features support DMARC, DKIM, SPF for domain authentication
+
+**Tutanota Compliance**:
+- GDPR compliant
+- German data residency option (SCHREMS II compliant)
+- Business plans include audit logging
+- Can integrate with organization's authentication systems (SAML/OAuth)
+
+## Email Security Best Practices Beyond Encryption
+
+Encryption is necessary but insufficient:
+
+```bash
+# Additional email security measures:
+
+# 1. Enable two-factor authentication on email account
+# 2. Review authorized sessions regularly (Settings → Security)
+# 3. Use strong, unique passwords (never reuse across services)
+# 4. Set up recovery email separate from primary email
+# 5. Enable emergency access (Tutanota Business) for account recovery
+# 6. Disable less secure app access
+# 7. Monitor login activity for unusual locations/times
+# 8. Use mobile app biometric authentication (strengthens possession factor)
+```
+
+## Performance Considerations at Scale
+
+For organizations sending hundreds of encrypted emails daily:
+
+**ProtonMail Performance**:
+- Web interface: Quick for normal use, slower for large attachments
+- IMAP/SMTP via Bridge: Slightly higher latency than standard email
+- API rate limits: 100 requests per minute for authenticated users (sufficient for most automation)
+
+**Tutanota Performance**:
+- Web interface: Generally faster due to integrated encryption
+- Mobile app: Excellent performance on iOS and Android
+- API: More limited than ProtonMail, designed for basic operations
+
+For mail server integration with high message throughput, neither provider is ideal. Consider self-hosted solutions like Mail-in-a-Box if you need enterprise-scale operations.
 
 ## Related Reading
 

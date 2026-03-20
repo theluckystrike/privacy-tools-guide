@@ -144,6 +144,347 @@ These measures won't guarantee protection in all scenarios, but they significant
 
 For developers and power users, the extra effort pays off: your primary credentials, client data, and intellectual property remain protected even in the worst-case inspection scenario.
 
+## Detailed Backup and Recovery Procedures
+
+Creating secure backups requires systematic approach:
+
+**Step 1: Identify critical data**
+- SSH keys (revocable)
+- Cryptocurrency seeds (irrevocable)
+- API tokens and credentials
+- Client data and proprietary code
+- Encryption keys
+- Account recovery codes
+
+**Step 2: Create encrypted backup**
+```bash
+# macOS: Using built-in encryption
+# Create encrypted disk image
+hdiutil create -type SPARSE -encryption AES-256 \
+  -size 50g -fs APFS -volname "Border Backup" \
+  ~/Desktop/border_backup.sparsebundle
+
+# Mount image
+hdiutil attach ~/Desktop/border_backup.sparsebundle
+
+# Copy critical files
+cp -r ~/ssh ~/.ssh /Volumes/Border\ Backup/
+cp ~/important-docs/* /Volumes/Border\ Backup/
+
+# Unmount when done
+hdiutil eject /Volumes/Border\ Backup
+```
+
+**Step 3: Test recovery**
+Before travel, ensure you can actually recover:
+
+```bash
+# Test decryption and file access
+hdiutil attach ~/Desktop/border_backup.sparsebundle
+ls /Volumes/Border\ Backup/
+# If this works, recovery is possible
+hdiutil eject /Volumes/Border\ Backup
+```
+
+**Step 4: Store securely**
+- Cloud storage (Google Drive with encryption enabled, ProtonDrive, etc.)
+- Physical backup (external drive locked in safe at home)
+- Second location (trusted friend's house, safe deposit box)
+
+Never carry all backups with you to the border.
+
+## Technical Deep Dive: Encryption Verification
+
+Before relying on device encryption, verify it's actually enabled:
+
+**iOS Encryption Check**:
+```bash
+# iPhone encryption is tied to Secure Enclave
+# Verify Secure Enclave is active:
+# Settings → Privacy & Security → Lockdown Mode → Check Status
+
+# If Lockdown Mode is available, Secure Enclave is active
+# All data is encrypted
+
+# Verify Find My is enabled (protects encryption keys):
+# Settings → [Apple ID] → Find My → Find My iPhone → On
+```
+
+**Android Encryption Check**:
+```bash
+# Android 10+: Full Disk Encryption (FDE) or File-Based Encryption (FBE)
+# Check status via:
+# Settings → Security → Encryption Status
+
+# View technical details:
+adb shell getprop ro.crypto.state
+# Should return "encrypted"
+
+adb shell getprop ro.crypto.type
+# Should return "block" (FDE) or "file" (FBE)
+```
+
+If encryption is not enabled, enable it before traveling:
+
+```bash
+# iOS: Set strong passcode (Settings → Face ID & Passcode)
+# Encryption activates automatically with passcode
+
+# Android: Settings → Security & Privacy → Encryption
+# Follow on-screen prompts (may take hours)
+# Do NOT restart device during this process
+```
+
+## App-Specific Data Removal
+
+Different apps store sensitive data in different locations:
+
+**SSH/Development Tools**:
+```bash
+# Remove SSH keys (can be regenerated after border)
+rm -rf ~/.ssh/
+
+# Verify removal:
+[ ! -f ~/.ssh/id_rsa ] && echo "SSH keys removed"
+
+# Remove local git credentials
+git config --global user.name ""
+git config --global user.email ""
+rm ~/.gitcredentials
+```
+
+**API Tokens and Credentials**:
+```bash
+# Find config files containing credentials
+grep -r "api_key\|token\|secret" ~/.config/ ~/.local/ 2>/dev/null
+
+# Remove or redact them
+# Be methodical—missing a token can compromise accounts
+```
+
+**Cryptocurrency and Financial Apps**:
+- Remove completely before crossing borders (can reinstall after)
+- Cryptocurrency wallets are particularly sensitive
+
+**Development Environments**:
+- IDE configuration files may contain credentials
+- Virtual machine images may contain sensitive data
+- Docker containers may have embedded secrets
+
+Use this script to audit config files:
+
+```bash
+#!/bin/bash
+# Audit for sensitive information before border
+
+echo "Auditing for sensitive information..."
+
+# Search in common config locations
+for dir in ~/.config ~/.ssh ~/.local ~/.kube ~/.aws ~/.docker; do
+  if [ -d "$dir" ]; then
+    echo "=== Checking $dir ==="
+    grep -r "password\|secret\|key\|token" "$dir" 2>/dev/null | head -20
+  fi
+done
+
+echo "Review above output and remove sensitive data"
+```
+
+## Custom Shortcut Automation for iOS
+
+iOS Shortcuts can automate border preparation:
+
+```swift
+// iOS Shortcut: Border Preparation Automation
+// Run this shortcut before arriving at border
+
+import Foundation
+
+// Create shortcut with these actions:
+// 1. Set Airplane Mode: ON
+// 2. Ask "Proceed with border mode?"
+// 3. If Yes:
+//    - Ask for device passcode confirmation
+//    - Turn off Bluetooth
+//    - Turn off WiFi
+//    - Set Do Not Disturb: ON
+//    - Show notification: "Device is in border mode"
+// 4. If No: Cancel
+
+// Save as "Border Mode" shortcut
+// Add to Lock Screen for quick access
+```
+
+This provides one-tap activation of all protective measures.
+
+## Legal Documentation and Rights
+
+Understanding your legal rights depends on destination:
+
+**US Border (CBP Authority)**:
+- Border agents can search electronic devices without warrant
+- You have right to remain silent, but silence can trigger additional searches
+- Device password is not protected by Fifth Amendment (unlike memorized passwords)
+- Request: "I'd like to speak with a lawyer before consenting to device search"
+
+**UK Border**:
+- Border Force can demand device unlock under Terrorism Act 2000
+- Refusing can result in prosecution (up to 2 years imprisonment)
+- No right to refuse
+
+**EU Borders (varies by country)**:
+- Generally weaker border search powers than US/UK
+- GDPR provides some data protection rights
+- Requesting lawyer can delay searches
+
+**Canada**:
+- RCMP can search devices at border
+- Right to counsel applies; request it
+
+**Practical recommendation**: Store a card with your rights in your travel documents:
+
+```
+[Your jurisdiction] Border Search Rights Card
+
+I understand border agents may search my device.
+I do not consent to searches, but understand I cannot legally refuse.
+I request to speak with a lawyer before any extended searches.
+I do not consent to sharing my passwords or unlock methods.
+
+[Your lawyer's contact information]
+```
+
+## Post-Border Device Verification
+
+After crossing the border, verify device integrity:
+
+```bash
+# Immediate checks (within 1 hour of crossing)
+
+# 1. Check device logs for unusual activity
+log show --last 1h | grep -i "security\|app\|network"
+
+# 2. List recently installed apps
+# iOS: Settings → General → iPhone Storage (sort by size, look for new apps)
+# Android: Settings → Apps → Installation time
+
+# 3. Check permissions granted to apps
+# iOS: Settings → Privacy (Review each category)
+# Android: Settings → Apps & Notifications → Permissions
+
+# 4. Review location access history
+# iOS: Settings → Privacy → Location Services (check for unexpected access)
+# Android: Settings → Privacy → Location (check timeline)
+
+# 5. Check iCloud/Google Account Security
+# Log into your accounts from separate device
+# Review: Recent activity, connected devices, authorized locations
+# Look for logins from unusual locations/times
+```
+
+## Advanced Threat Scenarios
+
+For travelers with sophisticated threat models:
+
+**Scenario 1: Nation-state threat (dissident, journalist)**
+- Secondary device strategy is insufficient; use additional compartmentalization
+- Consider: Traveling with no devices, using internet café computers instead
+- If devices necessary: Keep them completely isolated until post-border verification
+- Have security specialist verify devices after border crossing
+
+**Scenario 2: Corporate espionage threat**
+- Physical device inspection possible but sensitive documents aren't stored on device
+- Use temporary device with no valuable data, restored after border
+- Critical data remains in encrypted cloud storage (Proton Drive, etc.)
+- Access cloud data only after border crossing verification
+
+**Scenario 3: Border agent wants to copy device**
+- Request: "Can you provide written documentation of what was accessed?"
+- Understand: Full device forensic copy includes everything (deleted files, system memory dumps, etc.)
+- Post-border: Assume device is fully compromised; rotate all credentials
+- Consider: Device is no longer trustworthy; consider replacement
+
+## Device Restoration and Recovery
+
+After border crossing, proper restoration reduces risks:
+
+```bash
+# Recommended: Full device reset
+
+# iOS:
+# Settings → General → Transfer or Reset → Erase All Content and Settings
+# (Choose "Erase iPhone" from Recovery Mode for complete reset)
+# Then restore from encrypted backup (not cloud backups from before border)
+
+# Android:
+# Settings → System → Reset → Erase All Data
+# Or ADB: adb shell pm reset
+
+# After reset:
+# 1. Set up device fresh (no cloud restoration initially)
+# 2. Reinstall essential apps one at a time
+# 3. Wait 24 hours, observe for suspicious behavior
+# 4. Only then restore data from backups
+# 5. Update all credentials and passwords
+```
+
+This "clean room" restoration approach detects malware introduced at border.
+
+## Credential Rotation Checklist
+
+After suspected device compromise:
+
+```bash
+# Immediate (within 1 hour)
+- [ ] Change banking passwords (from separate, trusted device)
+- [ ] Change email password (all email accounts)
+- [ ] Change social media passwords
+
+# Within 24 hours
+- [ ] Change work/company passwords
+- [ ] Rotate API keys for services accessed from device
+- [ ] Generate new SSH keys (if old ones were on device)
+- [ ] Rotate database credentials
+- [ ] Update 2FA phone number if sim-swapped
+
+# Within 1 week
+- [ ] Update cryptocurrency keys (if non-hardware-wallet holding)
+- [ ] Review and revoke authorized apps (Google, Apple, GitHub, etc.)
+- [ ] Enable login notifications on all accounts
+- [ ] Check for unauthorized payment methods in accounts
+
+# Ongoing
+- [ ] Monitor accounts for unusual activity
+- [ ] Set calendar reminder to rotate passwords quarterly
+```
+
+## Insurance and Liability Considerations
+
+Developers traveling should understand liability implications:
+
+- If your device is compromised and client data is exposed, you may have legal liability
+- Insurance may not cover border seizure consequences
+- Document everything: device configuration before border, what happened at border, post-border findings
+
+Recommended documentation:
+
+```bash
+# Before departure: Create device audit log
+date > border_travel_log.txt
+uname -a >> border_travel_log.txt
+sw_vers >> border_travel_log.txt  # macOS
+lsb_release -a >> border_travel_log.txt  # Linux/Android
+find ~ -type f -newermt "2024-01-01" | wc -l >> border_travel_log.txt
+
+# At border: If searched, ask for written documentation
+# Request: "Please provide written documentation of what was accessed/copied"
+
+# After border: Document findings
+date >> border_travel_log.txt
+echo "Device searched by [Border Agency]" >> border_travel_log.txt
+echo "Duration: [time]" >> border_travel_log.txt
+echo "Post-search findings: [any suspicious changes]" >> border_travel_log.txt
+```
 
 ## Related Reading
 

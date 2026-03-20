@@ -141,6 +141,147 @@ While these methods help detect common spyware, sophisticated attacks have limit
 
 For users who believe they face nation-state level threats, consider contacting security organizations like Amnesty International's Security Lab or the Electronic Frontier Foundation, which have expertise in advanced mobile threat detection.
 
+## Advanced Detection Techniques for Developers
+
+Developers can employ more sophisticated detection methods using command-line tools and network analysis.
+
+### Forensic Analysis with macOS
+
+For users with access to a Mac, detailed forensic analysis of a connected iPhone is possible:
+
+```bash
+# Mount iPhone in forensic mode (requires developer mode on iPhone)
+# Use Apple Configurator 2 or third-party forensic tools
+
+# List all running processes (requires developer mode)
+log stream --predicate 'process contains "daemon"' --level debug
+
+# Check for suspicious background tasks
+log show --predicate 'eventMessage contains[c] "notification"' --last 1h
+
+# Monitor system calls related to sensitive operations
+sudo log show --predicate 'eventMessage contains[c] "location"' --last 24h
+```
+
+### Network Traffic Deep Analysis
+
+For users comfortable with network packet analysis, examining traffic patterns reveals data exfiltration:
+
+```bash
+# Using tcpdump on macOS to capture iPhone traffic
+sudo tcpdump -i en0 -A | grep -E '(POST|GET|dns)' | head -100
+
+# Look for unexpected DNS queries to suspicious domains
+# Look for large POST requests that don't correspond to user actions
+```
+
+Wireshark provides a GUI for packet analysis. Import captured packets and filter for:
+- DNS queries to unusual domains
+- Encrypted connections to unknown IP addresses
+- Traffic patterns that occur during idle device periods (indicating background activity)
+
+### Memory Analysis
+
+For extremely technical users with access to debugging tools:
+
+```bash
+# Requires Xcode and developer mode on iPhone
+# Use Instruments to profile memory usage
+
+# Observe which libraries are loaded
+nm -D /var/mobile/Applications/*/executable
+
+# Check for injected libraries (advanced detection)
+# Legitimate apps load from /var/mobile/Containers/Bundle/Application
+# Suspicious injected libraries load from /var/tmp or /private directories
+```
+
+## Spyware Families and Detection Indicators
+
+Different spyware exhibits distinct behavioral patterns. Understanding these helps prioritize investigation:
+
+**Pegasus (NSO Group)**: Zero-day exploitation, invisible operation. No behavioral indicators typically present. Detection requires forensic analysis by specialists.
+
+**ForcedEntry variant**: May show unusual iMessage activity, frequent FaceTime sessions initiating from iCloud.
+
+**Stalkerware (commercial tools)**: Often show obvious location tracking, call logging, message interception. Battery drain is extreme, sometimes 50%+ per day in active monitoring mode.
+
+**Enterprise MDM abuse**: Configuration profiles visible in Settings. May show unusual VPN profiles, certificate pinning for app stores.
+
+## Proactive Hardening
+
+Rather than reactive detection, implement hardening measures to minimize vulnerability:
+
+```bash
+# iOS hardening checklist (accessible to all users)
+
+# Enable Lockdown Mode (Settings → Privacy & Security → Lockdown Mode)
+# This is the single most effective protection against targeted spyware
+
+# Restrict app installation (Settings → Screen Time → Content & Privacy Restrictions → App Installation → Don't Allow)
+
+# Enable face-unlock requirement for payments (Settings → Face ID & Passcode → Payment & Apple ID)
+
+# Require iPhone unlock before purchases (Settings → iTunes & App Store → Purchase & In-App Purchases → Require Password → Always)
+
+# Disable connection to insecure networks automatically (Settings → WiFi → Auto-Join Hotspots → Never)
+```
+
+For extreme threat models, the recommendations shift:
+
+- Use a dedicated phone for sensitive communications (different from the phone handling routine tasks)
+- Factory reset the device every 30 days (addresses persistence concerns)
+- Use Bluetooth-disconnected communication (avoids some malware propagation vectors)
+- Avoid sideloaded apps entirely (even from trusted sources, as supply chain compromise is possible)
+
+## When to Escalate
+
+Indicators that warrant professional help:
+
+1. **Correlated suspicious activity**: Multiple anomalies occurring together (battery drain + unusual data usage + location tracking failures)
+2. **Evidence of physical tampering**: Device hardware showing signs of opening or modification
+3. **Targeted attack indicators**: If you have reason to believe a nation-state or sophisticated attacker targets you specifically
+4. **Legal proceedings**: If device data becomes evidence in legal matters, engage forensic specialists to preserve evidence properly
+
+## Post-Detection Response Procedures
+
+If you identify spyware, follow this sequence to minimize exposure:
+
+1. **Document everything**: Screenshot suspicious profiles, take notes of behavioral indicators, save network logs
+2. **Preserve evidence**: Make forensic copies of device state using Apple Configurator or similar
+3. **Alert accounts**: Notify providers of compromised accounts (email, banking, social media, etc.)
+4. **Rotate credentials**: Change passwords from a clean device, not the compromised one
+5. **Enable multi-factor authentication**: On all accounts, if not already enabled
+6. **Factory reset**: Reset the device completely (Settings → General → Transfer or Reset → Erase All Content and Settings)
+7. **Monitor accounts**: For weeks after detection, monitor for unauthorized access attempts
+
+## Spyware Removal Verification
+
+After factory reset, verify the device is actually clean:
+
+```bash
+# Post-reset checks
+# These can be performed within hours of factory reset
+
+# Restore from clean backup (one created before suspected infection)
+# Check Settings → General → VPN & Device Management (should be empty)
+# Review all installed apps (list should be minimal, system apps only)
+
+# If any custom apps were previously installed, reinstall them one at a time
+# Wait 24 hours between each installation, monitoring for suspicious behavior
+```
+
+## Resources for High-Risk Users
+
+Organizations working with journalists, activists, or human rights defenders should establish relationships with:
+
+- **Forensic analysis specialists**: Firms like Claudio Guarnieri's research team or Check Point's Mobile Research Team
+- **VPN providers with strong no-log policies**: For network segmentation
+- **Hardware security key manufacturers**: For critical account protection
+- **Open-source security tools communities**: For ongoing defense improvements
+
+The threat landscape changes constantly. Maintaining awareness through security research communities, following updates from organizations like Amnesty Tech, and understanding emerging attack vectors helps keep defensive measures current.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

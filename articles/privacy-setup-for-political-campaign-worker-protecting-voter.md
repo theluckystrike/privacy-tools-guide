@@ -135,6 +135,183 @@ The work you do impacts real people's privacy. Voters share their information wi
 
 Start with the basics—full-disk encryption, strong passwords, MFA—then layer in additional protections based on your specific needs. Security improvements don't need to happen all at once, but they do need to happen consistently.
 
+## Data Segregation Architecture
+
+Campaign data requires architectural separation. Rather than a single "campaign device," implement these compartments:
+
+**Tier 1 - Voter Database Access**: A dedicated device or virtual machine with access to the voter database. This device:
+- Remains offline except when accessing the database
+- Never connects to public WiFi
+- Never contains personal communications
+- Is backed up separately with restricted access
+
+**Tier 2 - Team Communications**: A separate device for internal team discussions. This device:
+- Uses Signal for all conversations
+- Contains no voter data
+- Can be more relaxed in security posture (focuses on endpoint protection instead)
+- Is accessible to broader team
+
+**Tier 3 - Public Devices**: Devices that interact with external services (email, social media, web browsing). These:
+- Are isolated from Tiers 1 and 2
+- Can be seized without compromising sensitive data
+- Use public accounts with limited personal information
+
+This segregation means compromise of a public device doesn't expose voter information.
+
+## Implementation Timeline
+
+For campaigns just beginning, prioritize in this order:
+
+**Week 1**: Deploy full-disk encryption and strong passwords. This is foundational.
+
+**Week 2**: Enable MFA on all campaign accounts. Implement Signal for team communications.
+
+**Week 3**: Set up basic backup procedures and develop incident response protocols.
+
+**Week 4**: Audit data access permissions. Remove unnecessary access to voter databases.
+
+**Month 2**: Deploy VPN for all remote access. Implement email encryption for sensitive communications.
+
+**Month 3**: Establish security awareness training. Run tabletop incident response exercises.
+
+This phased approach avoids overwhelming staff while systematically improving security posture.
+
+## Phishing Defense in Detail
+
+Campaign staff face targeted phishing attacks. Implement these specific mitigations:
+
+```bash
+# Email authentication improvements (technical staff)
+# Verify DKIM, SPF, DMARC records are configured correctly
+# These prevent spoofed emails appearing to come from campaign addresses
+
+# For Microsoft/Google Workspace users, enable:
+# - Advanced phishing and malware protection
+# - Suspicious email reporting
+# - Admin quarantine review of suspicious messages
+```
+
+Develop a staff reporting workflow:
+
+1. Staff identify suspicious email
+2. Click "Report Phishing" or forward to security@campaign.com
+3. Security team analyzes within 24 hours
+4. Feedback provided to reporter
+5. If confirmed phishing, organization-wide alert sent
+
+Mock phishing campaigns help staff maintain awareness. Services like Gophish simulate realistic attacks. Track staff who click malicious links, provide additional training to high-risk individuals.
+
+## Database Security for Voter Lists
+
+Voter data presents unique challenges—large datasets, multiple access points, sensitive PII:
+
+```bash
+# Database access should use these patterns:
+
+# 1. Role-based access - staff access only their assigned territory
+# 2. Connection logging - every query logged with timestamp and user
+# 3. Encryption in transit - TLS 1.3 minimum for all connections
+# 4. Encryption at rest - database-level encryption if available
+
+# Example: Creating restricted database user (SQL Server)
+USE [voter_database]
+CREATE USER [canvasser_john] FROM LOGIN [CAMPAIGN\john.smith]
+ALTER ROLE [Canvassers] ADD MEMBER [canvasser_john]
+GO
+```
+
+Implement query logging and monitoring:
+
+```bash
+# MySQL example - enable query logging for audits
+SET GLOBAL log_queries_not_using_indexes = 'ON'
+SET GLOBAL general_log = 'ON'
+
+# Regularly review logs for suspicious queries
+# Look for: requests accessing data outside assigned territories,
+# bulk exports not consistent with normal work patterns
+```
+
+## Volunteer Management Security
+
+Volunteers significantly increase attack surface. Many aren't technically sophisticated and may become vectors for compromise:
+
+**Vetting Process**:
+- Background checks for volunteers with database access
+- Require agreements acknowledging data sensitivity
+- Limit access: volunteers typically need read-only access to public information, not raw voter data
+
+**Temporary Access**:
+- Use time-limited credentials (expire automatically after campaign ends)
+- Require password resets on first login
+- Provide MFA-only account options (no password login)
+
+**Monitoring**:
+- Log all volunteer access
+- Alert on unusual access patterns (accessing data outside their territory, late-night access, large exports)
+- Revoke access immediately when volunteers stop working
+
+## Physical Security for Campaign Offices
+
+Campaign offices store devices, documents, and may have unattended workstations:
+
+- **Locked device charging stations**: Prevent overnight device theft
+- **Visitor policies**: Screen visitors, limit office access to staff only
+- **Document shredding**: Use cross-cut shredders (harder to reconstruct than strip shredders) for voter lists, printed data
+- **Desk clear policy**: Enforce clean desk at end of shift (no printed voter data left visible)
+- **Secure meeting spaces**: For discussing sensitive strategies, use internal offices with closed doors
+
+## Legal Compliance Integration
+
+Campaign security intersects with legal requirements:
+
+- **GDPR (if EU supporters)**: Voter data constitutes personal data. Document consent, data retention limits, deletion procedures.
+- **CCPA/CPRA (California)**: Voter privacy rights, disclosure requirements.
+- **State privacy laws**: Many states have specific regulations on political campaigns. Engage legal counsel early.
+
+Security practices should explicitly support legal compliance:
+```bash
+# Data retention schedule example
+# All voter data deleted 90 days after election unless specific legal requirement
+# Maintain audit logs for 1 year minimum for compliance verification
+```
+
+## Crisis Response Procedures
+
+When things go wrong, preparation minimizes damage:
+
+**Ransomware Response**:
+1. Isolate affected systems immediately (unplug from network)
+2. Alert leadership and legal counsel
+3. Contact FBI IC3 for federal crimes
+4. Do NOT pay ransom without legal counsel
+5. Restore from offline backup
+6. Document everything for post-incident review
+
+**Data Breach Response**:
+1. Confirm breach scope (which data, which period)
+2. Notify affected voters within timeframe specified by law (typically 30-45 days)
+3. Offer free credit monitoring if SSNs compromised
+4. Provide specific steps voters can take
+5. Maintain public statement acknowledging incident without admitting liability
+
+**Staff Compromise**:
+1. Immediately revoke credentials of suspected person
+2. Audit all data accessed from their accounts
+3. Rotate encryption keys or reset databases
+4. Notify law enforcement if criminal activity suspected
+
+## Building Security Champions
+
+Rather than treating security as compliance burden, cultivate security champions on staff:
+
+- **Identify technical staff** who understand security concerns
+- **Empower them** to lead security initiatives
+- **Provide resources**: Training, tools, budget for security improvements
+- **Recognition**: Celebrate security contributions alongside campaign work
+
+Security-aware staff become force multipliers, helping educate colleagues and spotting problems others might miss.
+
 ---
 
 ## Related Reading

@@ -137,6 +137,176 @@ When evaluating encrypted note-taking applications for sensitive information sto
 
 For most developers, a combination approach works best. Store general notes in Obsidian with GPG-encrypted files for sensitive content. Use Tomb for command-line secrets. The key is understanding that no single application fits every use case—layer your tools based on the sensitivity of the information being stored.
 
+## Threat Model Considerations
+
+Different note-taking scenarios present different threats. A developer storing API keys faces different risks than a journalist documenting sources. Understanding your specific threat model guides tool selection.
+
+**API Key and Credential Storage**: These require absolute zero-knowledge encryption with offline access. Vim with GPG or Tomb provide the strongest guarantees—no cloud services, no synchronization attack surface. Standard Notes self-hosted offers a reasonable alternative if you control the infrastructure.
+
+**Collaborative Notes**: Teams need share mechanisms. Standard Notes' extension system enables team access, while Cryptee provides encrypted folder sharing with granular permissions. Tomb and Vim with GPG lack practical team features.
+
+**Offline-First Development**: Developers working in high-surveillance environments or unreliable networks benefit from Obsidian's local-first approach. The offline guarantee means notes remain accessible even if cloud services are blocked or compromised.
+
+**Search and Organization**: Obsidian's graph view and backlinks create powerful knowledge management. This comes at the cost of not using zero-knowledge encryption—mitigate by encrypting sensitive files with GPG. Cryptee and Standard Notes provide server-side encryption of plaintext, limiting search capabilities.
+
+## Encryption Verification Methods
+
+Before trusting a note application with sensitive data, verify its encryption claims independently.
+
+For OpenPGP-based tools, verify the implementation using real-world tests:
+
+```bash
+# Create a test note, encrypt it with the app
+# Export the encrypted file and decrypt outside the app
+gpg --decrypt exported-note.gpg | head -20
+
+# If the decrypted output matches the original note,
+# the encryption is genuine
+```
+
+For closed-source applications like Cryptee or Standard Notes, examine the source code on GitHub (if available) or review security audit reports from firms like Cure53. Look specifically for:
+
+- Whether encryption keys are ever sent to servers
+- Whether plaintext is ever logged or cached
+- Whether the encryption library is standard (OpenPGP, TweetNaCl, libsodium) or custom
+- Whether security audits cover the full application lifecycle
+
+## Advanced Usage: Encrypted Archive Backup
+
+For critical notes, implement immutable encrypted backups outside your primary tool:
+
+```bash
+# Create a TAR archive of encrypted notes
+tar czf - ~/encrypted-notes/ | gpg --symmetric --cipher-algo AES256 > notes-backup-$(date +%Y%m%d).tar.gz.gpg
+
+# Verify backup integrity
+gpg --decrypt notes-backup-20260320.tar.gz.gpg | tar tzf - | head
+
+# Store backup on separate storage (external drive, cloud service)
+# The GPG encryption ensures confidentiality during transmission and storage
+```
+
+This approach isolates critical information from the primary note-taking application. If your daily app is compromised, the archived notes remain protected.
+
+## Performance Characteristics
+
+For developers considering these tools for production use, understand the performance implications:
+
+**Standard Notes**: Web interface can feel sluggish during initial load due to cryptographic operations. Once loaded, responsiveness is acceptable. Desktop application performs better for large vaults.
+
+**Obsidian**: Very fast with local storage. Encryption operations (when using GPG) add minimal overhead. Works excellently with 10,000+ notes.
+
+**Cryptee**: Browser-based encryption adds noticeable latency on slower machines. Acceptable for typical use but not ideal for real-time rapid note-taking.
+
+**Vim + GPG**: Fastest for command-line workflows. Encryption is transparent to the user. Note: decryption requires passphrase entry on each file open unless using gpg-agent.
+
+## Integration with Development Workflows
+
+Developers need notes to integrate with version control and build systems.
+
+Obsidian integrates naturally with Git:
+
+```bash
+# Initialize Obsidian vault as git repository
+cd ~/ObsidianVault
+git init
+git add .gitignore  # Exclude encrypted files if desired
+
+# Commit changes
+git add *.md
+git commit -m "Update development notes"
+```
+
+Standard Notes' export functionality works with Git:
+
+```bash
+# Export Standard Notes backup
+# Import into version control for redundancy
+```
+
+Vim with GPG works directly in Git workflows—encrypted files can be committed directly, with decryption happening at file open time.
+
+## Cost Analysis and Selection Matrix
+
+For developers evaluating long-term costs:
+
+**Standard Notes**: Free tier includes 5 editors and limited extensions. Paid plans start at $99/year for extended functionality. For teams, pricing is per-user but extensibility justifies cost.
+
+**Obsidian**: One-time $50 purchase includes sync and publish features. No recurring costs. Add-ons are free community contributions. Most affordable for long-term ownership.
+
+**Cryptee**: Free tier offers 100MB storage. Paid plans ($99/year) include unlimited storage, password-protected documents, and collaborative folders. Mid-range pricing.
+
+**Tomb**: Completely free, open-source software. Only cost is infrastructure if needed. Lowest cost for command-line developers.
+
+**Vim + GPG**: Completely free, zero ongoing costs. Only investment is learning time.
+
+**For individuals**: Obsidian ($50 one-time) offers best value
+**For small teams**: Standard Notes ($99/year per user) provides extensibility and team features
+**For developers**: Tomb or Vim + GPG for cost-free alternatives
+**For organizations**: Standard Notes self-hosted minimizes long-term costs
+
+## Real-World Scenario: Security Researcher Workflow
+
+A security researcher documenting zero-day vulnerabilities needs encryption, versioning, and selective sharing. Recommended approach:
+
+```bash
+# Obsidian vault for general knowledge base
+~/Obsidian/SecurityResearch/
+  ├── vulnerabilities/
+  │   ├── cve-2026-1234.md (general info, public)
+  │   └── zero-day-details.md.gpg (sensitive, encrypted)
+  ├── research-notes.md (unencrypted, searchable)
+  └── .git/ (version control)
+
+# Workflow:
+# 1. General notes in Obsidian (full-text search enabled)
+# 2. Sensitive details in GPG-encrypted files (outside search index)
+# 3. Git tracks all changes (including which files changed)
+# 4. Share encrypted POC code via GPG:
+
+gpg --encrypt --recipient collab@example.com exploit-code.c
+# Send exploit-code.c.gpg to collaborator
+# They decrypt with: gpg --decrypt exploit-code.c.gpg > exploit-code.c
+```
+
+Benefits:
+- **Knowledge management** via Obsidian (graph view, backlinks)
+- **Encryption** for sensitive material (GPG)
+- **Version control** for audit trail (Git)
+- **Selective sharing** without exposing all research
+
+## Evaluation Checklist for Choosing Tools
+
+Before committing to a platform, assess against these criteria:
+
+**Encryption guarantees**:
+- [ ] Tool uses industry-standard encryption (AES-256, ChaCha20, or OpenPGP)
+- [ ] Encryption happens before transmission (zero-knowledge)
+- [ ] No plaintext logs stored on servers
+- [ ] Encryption keys never transmitted to provider
+
+**Usability**:
+- [ ] Can create notes quickly without friction
+- [ ] Search functionality works for your needs
+- [ ] Mobile apps available (if needed)
+- [ ] Offline access for critical notes
+
+**Technical integration**:
+- [ ] Works with your version control system (Git)
+- [ ] CLI or API for automation
+- [ ] Export format is standard (markdown, JSON, or plaintext)
+- [ ] Can be self-hosted if needed
+
+**Compliance**:
+- [ ] Independent security audits published
+- [ ] Open-source code (or significant portion)
+- [ ] Bug bounty program active
+- [ ] Privacy policy clearly states no data selling
+
+**Cost**:
+- [ ] Acceptable pricing for your use case
+- [ ] No vendor lock-in (export capability)
+- [ ] Long-term viability of company/project
 
 ## Related Reading
 
