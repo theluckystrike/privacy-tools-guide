@@ -217,7 +217,8 @@ The key principle: privacy by design means making privacy-friendly choices the d
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [GDPR Article 17 Erasure Implementation Code: A Developer.](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
+- [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
+- [GDPR Data Processing Agreement Template Guide: A Developer's Practical Reference](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

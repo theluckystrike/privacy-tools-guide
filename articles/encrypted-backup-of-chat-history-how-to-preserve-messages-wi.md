@@ -170,6 +170,8 @@ Start with GPG for quick implementation, then graduate to custom Python scripts 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Comparison of Encrypted Note-Taking Apps for Sensitive.](/privacy-tools-guide/comparison-of-encrypted-note-taking-apps-for-sensitive-infor/)
+- [Encrypted Cloud Storage Migration Guide: Switching.](/privacy-tools-guide/encrypted-cloud-storage-migration-guide-switching/)
+- [Mumble Encrypted Voice Chat Server Setup for Private.](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

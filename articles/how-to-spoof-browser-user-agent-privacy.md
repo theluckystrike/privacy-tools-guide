@@ -148,8 +148,10 @@ For privacy-conscious users, browser extensions offer the easiest entry point, t
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
+- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
+- [How to Verify Your Browser is Not Leaking Information: A Practical Checklist](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

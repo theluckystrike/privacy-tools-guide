@@ -213,7 +213,8 @@ Your headers should show connections from `.onion` domains or Tor exit node IPs,
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
+- [Anonymous Bitcoin Wallet Setup Using Tor and Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
+- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

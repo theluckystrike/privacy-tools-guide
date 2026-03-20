@@ -222,6 +222,7 @@ Remember that firewall configuration requires balance between security and usabi
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [macOS Privacy Permissions Manager Guide 2026](/macos-privacy-permissions-manager-guide-2026/)
 - [macOS Spotlight Privacy Settings](/macos-spotlight-privacy-settings-disable-tracking/)

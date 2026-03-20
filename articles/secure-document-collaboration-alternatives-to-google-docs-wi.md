@@ -176,7 +176,8 @@ For developers and power users who value privacy, these alternatives prove that 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
+- [Cryptomator vs VeraCrypt for Cloud Encryption: A.](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
+- [Secure Communication Plan Template for Organizations.](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

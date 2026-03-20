@@ -221,6 +221,7 @@ Remaining informed and advocating for transparent policies remains the most effe
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [Understanding Data Retention Policies](/data-retention-basics/)
 - [Building Privacy-First Applications](/privacy-first-development/)

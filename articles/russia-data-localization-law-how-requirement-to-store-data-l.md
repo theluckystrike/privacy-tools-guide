@@ -171,7 +171,8 @@ Users themselves benefit most from applications that implement strong client-sid
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Russia Yarovaya Law: What Data Telecom Companies Must.](/privacy-tools-guide/russia-yarovaya-law-mass-surveillance-requirements-what-tele/)
+- [Russia Telegram Compliance: What Data Telegram Shares.](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)
+- [How to Anonymize User Data in Production Database for.](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

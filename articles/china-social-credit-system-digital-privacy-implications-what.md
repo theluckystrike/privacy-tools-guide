@@ -2,7 +2,7 @@
 
 layout: default
 title: "China Social Credit System: What Online Behavior Is."
-description: "A technical breakdown of China's Social Credit System monitoring capabilities, data points collected, and implications for digital privacy. Written for developers and power users."
+description: "China Social Credit System: What Online Behavior Is. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-social-credit-system-digital-privacy-implications-what/

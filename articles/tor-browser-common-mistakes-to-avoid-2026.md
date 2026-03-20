@@ -158,7 +158,8 @@ The difference between genuine anonymity and a false sense of security often com
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
+- [Tor Browser Captcha Issues Workarounds 2026](/privacy-tools-guide/tor-browser-captcha-issues-workarounds-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -249,7 +249,8 @@ Building subprocessor management into your development workflow from the start a
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
+- [GDPR Compliance Tools for Developers in 2026: A.](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
+- [GDPR Lawful Basis for Processing Explained: A Developer.](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

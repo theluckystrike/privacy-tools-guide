@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bumble Private Detector: How AI Scans Your Uploaded."
-description: "A technical deep dive into Bumble's Private Detector AI, how uploaded photos are analyzed, stored, and the privacy considerations for developers and power users."
+description: "Bumble Private Detector: How AI Scans Your Uploaded. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/

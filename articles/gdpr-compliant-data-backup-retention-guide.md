@@ -281,8 +281,10 @@ The examples above provide starting points—adapt them to your specific infrast
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
+- [GDPR Compliant Contact Form Implementation: A Technical.](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)
+- [GDPR Data Breach Notification Requirements 2026: A.](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

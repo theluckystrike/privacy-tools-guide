@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Threat Model Explained for Developers"
-description: "A technical breakdown of Tor Browser's threat model designed for developers and power users. Understand what Tor protects against, its limitations, and how to leverage it effectively."
+description: "Tor Browser Threat Model Explained for Developers — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-threat-model-explained-developers/
@@ -229,7 +229,8 @@ For developers building privacy-sensitive applications, Tor provides valuable pr
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Tor Network Censorship Resistance Explained: A Technical.](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
+- [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
+- [Browser Storage Isolation Explained for Privacy: A.](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -169,8 +169,10 @@ This practice prevents permission creep and ensures your system maintains the mi
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)
+- [Android App Permissions Audit Guide 2026: Complete.](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [How to Harden macOS Sequoia Privacy Settings Beyond.](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

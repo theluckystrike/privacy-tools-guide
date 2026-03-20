@@ -238,8 +238,10 @@ Remember that stronger protection sometimes means reduced functionality. Some we
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
+- [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
+- [Navigator Plugins Fingerprinting: How Browser Plugins.](/privacy-tools-guide/navigator-plugins-fingerprinting-how-browser-plugins-betray-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

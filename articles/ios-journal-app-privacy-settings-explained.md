@@ -164,6 +164,8 @@ The iOS Journal app's on-device architecture, granular permission controls, and 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [iOS Privacy Settings Complete Walkthrough: Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [Snapchat Privacy Settings Complete Guide 2026: A.](/privacy-tools-guide/snapchat-privacy-settings-complete-guide-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

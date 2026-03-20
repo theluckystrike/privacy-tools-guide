@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "India Data Protection Bill 2026: What It Means for."
-description: "A comprehensive guide to India's Data Protection Bill 2026 and how it affects privacy rights for Indian citizens. Learn what developers and power users need to know."
+description: "India Data Protection Bill 2026: What It Means for. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-data-protection-bill-2026-what-it-means-for-citizen-pr/

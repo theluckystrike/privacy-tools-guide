@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Signal vs Telegram: Privacy Comparison 2026"
-description: "A technical deep-dive into Signal and Telegram's privacy architectures for developers. End-to-end encryption, metadata handling, API access, and self-hosting options."
+description: "Signal vs Telegram: Privacy Comparison 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in."
 date: 2026-03-15
 author: theluckystrike
 permalink: /signal-vs-telegram-privacy-comparison-2026/

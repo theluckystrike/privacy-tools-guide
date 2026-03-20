@@ -279,6 +279,7 @@ Separate vaults for separate VMs creates meaningful security boundaries. A compr
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [How to Audit Your Password Manager Vault](/how-to-audit-your-password-manager-vault/)
 - [Password Manager Security Model Explained](/password-manager-security-model-explained-simply/)

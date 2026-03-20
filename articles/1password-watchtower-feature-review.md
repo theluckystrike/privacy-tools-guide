@@ -188,6 +188,7 @@ The key is understanding what Watchtower monitors and supplementing it with prac
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - More guides coming soon.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

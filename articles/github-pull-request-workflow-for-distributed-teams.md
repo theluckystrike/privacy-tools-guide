@@ -189,6 +189,7 @@ The key is continuous refinement—what works today may need adjustment as team 
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Remote Work Tools Guide](/remote-work-tools/){: .cross-repo-linked}
 - [Jami P2P Messenger Review 2026: A Developer Guide to.](/privacy-tools-guide/jami-p2p-messenger-review-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

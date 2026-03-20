@@ -183,7 +183,8 @@ Windows registry modifications offer developers and power users granular control
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
+- [Windows 10 Privacy Settings Complete Checklist: A.](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

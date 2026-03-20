@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tresorit Review 2026: Is It Worth the Price for."
-description: "A technical analysis of Tresorit's end-to-end encryption, CLI tools, admin capabilities, and pricing structure. Evaluate if this Swiss-based secure cloud storage fits your threat model."
+description: "Tresorit Review 2026: Is It Worth the Price for. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tresorit-review-is-it-worth-the-price-2026/

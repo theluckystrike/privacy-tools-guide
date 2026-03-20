@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Guest Mode for Lending Phone Without Exposing."
-description: "Learn how to use Android's built-in Guest Mode to safely lend your phone to others without exposing personal data, photos, messages, or apps."
+description: "Android Guest Mode for Lending Phone Without Exposing. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-guest-mode-for-lending-phone-without-exposing-person/

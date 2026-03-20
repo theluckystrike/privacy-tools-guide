@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Iran Smart Filtering: How Government Selectively Blocks."
-description: "A technical deep-dive into Iran's intelligent filtering system, the mechanisms behind selective content blocking, and practical circumvention strategies for developers and power users in 2026."
+description: "Iran Smart Filtering: How Government Selectively Blocks. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /iran-smart-filtering-how-government-selectively-blocks-conte/

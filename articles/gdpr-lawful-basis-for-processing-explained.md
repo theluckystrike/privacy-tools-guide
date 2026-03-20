@@ -251,7 +251,8 @@ Document your basis choice—regulators will ask what basis you used and you mus
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [GDPR Data Processing Agreement Template Guide: A Developer's Practical Reference](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [GDPR Article 17 Erasure Implementation Code: A Developer.](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
+- [Legitimate Interest Assessment Template for Processing.](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

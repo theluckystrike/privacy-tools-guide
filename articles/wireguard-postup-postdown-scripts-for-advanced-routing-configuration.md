@@ -331,7 +331,7 @@
 
 layout: default
 title: "WireGuard Postup Postdown Scripts for Advanced Routing."
-description: "Learn how to leverage WireGuard's postup and postdown scripts to implement advanced routing, split tunneling, and network automation for enhanced privacy and performance."
+description: "WireGuard Postup Postdown Scripts for Advanced Routing. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 categories:
 - privacy

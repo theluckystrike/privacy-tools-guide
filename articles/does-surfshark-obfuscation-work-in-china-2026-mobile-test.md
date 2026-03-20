@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does Surfshark Obfuscation Work in China 2026: Mobile."
-description: "Technical analysis of Surfshark's obfuscation technology in China for 2026. Mobile testing methodology, protocols tested, and real-world results for developers and power users."
+description: "Does Surfshark Obfuscation Work in China 2026: Mobile. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-surfshark-obfuscation-work-in-china-2026-mobile-test/

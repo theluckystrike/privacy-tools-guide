@@ -192,8 +192,10 @@ Browser storage isolation forms the foundation of web privacy and security. Unde
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [Brave Browser vs Edge Privacy Comparison 2026: A.](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
+- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton Drive Review: Honest Assessment 2026"
-description: "A practical evaluation of Proton Drive's features, pricing, performance, and limitations for developers and privacy-focused power users in 2026."
+description: "Proton Drive Review: Honest Assessment 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in."
 date: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-review-honest-assessment-2026/

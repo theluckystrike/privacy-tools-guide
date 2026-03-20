@@ -249,8 +249,10 @@ Access auditing provides visibility into which automation systems accessed which
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [1Password CLI Secrets Management Guide: A Practical.](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+- [1Password Secrets Automation Guide: Integrating.](/privacy-tools-guide/1password-secrets-automation-guide/)
+- [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

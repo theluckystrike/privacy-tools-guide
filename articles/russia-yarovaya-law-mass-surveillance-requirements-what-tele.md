@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Russia Yarovaya Law: What Data Telecom Companies Must."
-description: "A technical guide to Russia's Yarovaya Law data retention requirements. Learn what telecom operators, ISPs, and messaging services must store about users under Russian surveillance legislation."
+description: "Russia Yarovaya Law: What Data Telecom Companies Must. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /russia-yarovaya-law-mass-surveillance-requirements-what-tele/

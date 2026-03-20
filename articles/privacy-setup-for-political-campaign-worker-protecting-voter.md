@@ -140,8 +140,10 @@ Start with the basics—full-disk encryption, strong passwords, MFA—then layer
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Setup for Abuse Hotline Worker: Protecting.](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Setup for Immigration Activist: Protecting.](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Tools for Social Worker Handling Sensitive Case.](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

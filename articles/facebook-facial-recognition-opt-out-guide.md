@@ -138,7 +138,8 @@ These measures create defense-in-depth against unintended facial data collection
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Facial Recognition Search Opt-Out: How to Remove Your.](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [How to Opt Out of Data Sharing Under Connecticut Data Privacy Act (CTDPA) - Complete Guide](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
 
-Built by theluckystrike** — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

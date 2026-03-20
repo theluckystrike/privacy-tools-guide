@@ -147,7 +147,8 @@ By understanding these mechanisms and following best practices, developers and p
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
+- [Tor Browser Fingerprinting Protection: How It Makes.](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
+- [How to Check Your Browser Fingerprint Uniqueness Score.](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

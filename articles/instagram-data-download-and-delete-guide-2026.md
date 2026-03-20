@@ -158,7 +158,10 @@ Whether you want a backup of your memories or are ready to leave the platform en
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Social Media Data Request Download Guide 2026: Complete.](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
+- [GDPR Right to Erasure: How to Force Companies to Delete.](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [Children's Online Privacy Protection Act: What Parents Can Demand from Companies](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

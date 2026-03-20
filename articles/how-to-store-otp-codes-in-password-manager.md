@@ -223,7 +223,10 @@ The security tradeoff—consolidating secrets—remains acceptable for most use 
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Browser Password Manager vs Dedicated App: A Developer.](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
+- [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
+- [Password Manager for Travel Agent Managing Booking Platform Passwords: A Practical Guide](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

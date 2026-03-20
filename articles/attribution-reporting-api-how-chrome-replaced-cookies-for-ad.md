@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Attribution Reporting API: How Chrome Replaced Cookies."
-description: "Learn how Chrome's Attribution Reporting API enables privacy-preserving ad measurement without third-party cookies. Includes code examples and implementation guide."
+description: "Attribution Reporting API: How Chrome Replaced Cookies. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /attribution-reporting-api-how-chrome-replaced-cookies-for-ad/
