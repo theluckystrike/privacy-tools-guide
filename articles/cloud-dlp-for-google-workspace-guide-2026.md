@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /cloud-dlp-for-google-workspace-guide-2026/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 
