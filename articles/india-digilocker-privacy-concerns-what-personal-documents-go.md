@@ -7,20 +7,18 @@ description: "A technical analysis of DigiLocker's data storage practices, API e
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
-<<<<<<< HEAD
 categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
-=======
 categories: [security, guides]
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-DigiLocker, the Indian government's flagship digital document storage platform, has become an integral part of the country's digital infrastructure. Launched under the Digital India initiative, it allows citizens to store, share, and verify identity documents electronically. However, for developers and power users concerned about privacy, understanding exactly what data DigiLocker stores, how it handles authentication, and what access risks exist is critical before entrusting sensitive documents to the platform.
+DigiLocker stores identity documents (Aadhaar, PAN, passport) and links them to centralized government databases, creating a single point of failure for biometric and identity data. While documents are encrypted in transit, the Indian government maintains access to all stored data. Minimize exposure by using DigiLocker only for mandatory government applications, never for private document storage. For privacy-sensitive documents, use encrypted third-party services like Tresorit or self-hosted solutions instead.
 
 ## What Documents Does DigiLocker Store?
 

@@ -9,9 +9,10 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
-India's Digital Personal Data Protection Act (DPDPA) represents a watershed moment for digital privacy in the world's most populous democracy. After years of deliberation, the Indian government finally enacted comprehensive data protection legislation that fundamentally reshapes how organizations collect, process, and store personal information of Indian citizens.
+India's Digital Personal Data Protection Act (DPDPA) 2026 grants citizens rights to access, delete, and correct their personal data, requires 72-hour response times for data requests, and establishes a data protection board. Unlike GDPR, DPDPA exempts government agencies and small businesses, but it still protects Indian citizens from arbitrary corporate data collection. Use these rights to audit which companies hold your data, exercise deletion requests, and demand consent before organizations process your information.
 
 ## What the India Data Protection Bill 2026 Actually Does
 

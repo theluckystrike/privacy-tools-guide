@@ -7,20 +7,18 @@ description: "A technical guide for Turkish journalists on securing communicatio
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
-<<<<<<< HEAD
 categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
-=======
 categories: [security, guides]
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Journalists operating in Turkey face sophisticated surveillance threats from state-level actors. The country's history of internet censorship, social media blocking, and targeted arrests of reporters demands a proactive approach to digital security. This guide provides practical, developer-focused strategies for protecting sources and communications against government surveillance.
+Turkish journalists must protect against DPI surveillance and mandatory data retention using Tor for anonymous browsing, Signal for encrypted messaging with disappearing messages enabled, and Tails OS for secure reporting devices. Use a separate SIM card and phone for source communications, store documents in encrypted vaults with plausible deniability (VeraCrypt hidden partitions), and establish secure protocols with trusted sources. Maintain dead man's switches for source information release if arrested, and document surveillance incidents for international press freedom organizations.
 
 ## Understanding the Threat Model
 

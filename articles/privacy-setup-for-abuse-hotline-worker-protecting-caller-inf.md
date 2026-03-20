@@ -10,11 +10,12 @@ categories: [guides, security]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Abuse hotline workers handle some of the most sensitive communications in digital safety. Callers seeking help often share location details, personal identifiers, and crisis information that could endanger them if exposed. This guide provides technical implementations for protecting caller information, securing worker communications, and maintaining operational security.
+Protect abuse hotline caller data by using end-to-end encrypted call systems (Jitsi Meet self-hosted), segmented phone lines with no caller ID linkage, and encrypted storage systems without personal identifiers in searchable fields. Train workers on operational security, use Signal for internal communications, and implement a kill-switch policy for immediate data deletion if an abuser gains access. Document conversations anonymously and maintain strict access control over files containing phone numbers or identifying information.
 
 ## Understanding the Threat Landscape
 

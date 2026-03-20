@@ -10,13 +10,12 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Dating apps collect massive amounts of personal data—contacts, location history, messages, photos, and behavioral patterns. When a breach occurs or your relationship ends poorly, this data becomes vulnerable. Compartmentalization limits your exposure by isolating your dating identity from your professional and personal digital footprint.
-
-This guide provides practical implementation strategies for creating and maintaining a compartmentalized identity specifically optimized for online dating.
+Create a compartmentalized dating identity by using a dedicated email (ProtonMail or SimpleLogin), separate phone number (Google Voice or Burner app), unique username with no digital footprint, VPN connection, and a separate browser profile. Never link your dating accounts to Facebook or other social media. Use Signal for early messaging instead of exchanging phone numbers, and store dating photos separately from your personal photo library. This limits data exposure if your account is breached or matches turn out unsafe.
 
 ## Core Compartmentalization Principles
 

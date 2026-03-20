@@ -9,11 +9,12 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
 
-If you live in India, chances are you have an Aadhaar number. With over 1.4 billion enrollments, Aadhaar is the world's largest biometric identity system. But what data does the government actually collect, how is it stored, and who can access it? For developers building applications that interact with Aadhaar, and for power users concerned about digital privacy, understanding these details matters.
+Aadhaar collects ten fingerprints, two iris scans, face photos, and demographic data for over 1.4 billion Indians. The UIDAI (Unique Identification Authority of India) stores this biometric data in centralized servers with documented security breaches. Developers integrating Aadhaar APIs should use minimal e-KYC verification, never store raw biometric data, and users should monitor whether their Aadhaar has been leaked through dark web monitoring. Understand your legal rights to access or delete your Aadhaar data under India's emerging data protection laws.
 
 ## What Biometric Data Aadhaar Collects
 

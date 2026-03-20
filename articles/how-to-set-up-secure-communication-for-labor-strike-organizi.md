@@ -9,13 +9,12 @@ categories: [guides, security]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Labor strike organizing requires communication infrastructure that can withstand surveillance, disruption, and potential targeting by employer interests or state actors. Unlike typical organizational communications, strike coordination involves time-sensitive decisions, sensitive membership information, and the need for resilient systems that work when traditional channels become compromised or monitored.
-
-This guide provides technical implementation details for developers and power users building secure communication stacks for labor organizing, with emphasis on self-hostable solutions and operational security practices.
+To set up secure labor strike communication, deploy Signal for primary encrypted messaging with disappearing messages enabled, Session Messenger for decentralized backup, and self-hosted Jitsi Meet for group calls. Layer in encrypted email through ProtonMail, use a separate device or virtual machine, implement dead man's switches for credential management, and establish clear operational security protocols before coordinating sensitive strike activities.
 
 ## Threat Modeling for Strike Communications
 

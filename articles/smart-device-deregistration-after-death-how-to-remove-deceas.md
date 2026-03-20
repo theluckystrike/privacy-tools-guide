@@ -10,11 +10,12 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
-Managing a deceased person's digital footprint across smart devices requires a systematic approach. This guide covers technical methods for removing deceased users from shared devices, smart home ecosystems, and IoT platforms—information designed for developers and power users who need actionable solutions.
+Remove a deceased person's accounts from smart devices by accessing administrator settings, changing WiFi passwords to lock out cloud-linked devices, and reaching out to manufacturers (Google Home, Amazon Alexa, Apple HomeKit) with a death certificate to remove their account. For your own estate planning, document all smart device credentials and specify whether you want devices factory-reset or transferred to family members. Include smart device management instructions in your digital legacy planning.
 
 ## Understanding the Challenge
 

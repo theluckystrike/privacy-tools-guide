@@ -6,24 +6,22 @@ description: "A technical guide for executors and power users on how to identify
 date: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/
-<<<<<<< HEAD
 reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
-=======
 categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-When a loved one passes away, managing their digital footprint becomes an essential task for executors and family members. Among the most overlooked responsibilities is canceling recurring subscription services—which can continue charging the estate indefinitely if left unaddressed. This guide provides developers and power users with technical methods to systematically identify, access, and close subscription accounts.
+Identify subscription services by checking credit card statements and bank records for recurring charges. Contact each company with a death certificate and request account closure or transfer to a surviving family member. Request refunds for prepaid services. For locked accounts, credit card companies can sometimes help—request the card be canceled so fraudulent charges stop. Document all subscriptions in your will to make executor's job easier, and maintain a shared password manager with emergency access instructions for your family.
 
 ## Understanding the Challenge
 

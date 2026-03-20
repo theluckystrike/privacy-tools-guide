@@ -9,9 +9,10 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
-Security threat modeling for journalists in hostile environments requires a structured approach that goes beyond generic advice. This guide provides a practical framework for assessing risks, identifying attack vectors, and implementing defensive measures tailored to high-risk reporting scenarios.
+Create a threat model by assessing your adversaries' capabilities (state surveillance, ISP monitoring, physical targeting), identifying attack vectors (device seizure, source compromise, metadata exposure), and implementing layered defenses: separate reporting device with clean OS, Tor for communications, encrypted storage with plausible deniability, and operational security protocols (regular pattern-breaking, location variation). Document your threat model, update it as conditions change, and maintain emergency exfiltration plans with trusted international contacts.
 
 ## Understanding the Threat ecosystem
 

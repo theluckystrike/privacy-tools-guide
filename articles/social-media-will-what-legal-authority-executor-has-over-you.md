@@ -10,12 +10,13 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Digital estate planning has become essential as more of our lives exist online. From social media profiles to cryptocurrency wallets, executors need clear legal authority to manage these assets. This guide covers what executors can legally access across major platforms and how state laws affect those rights.
+Executors have limited authority over social media accounts—most platforms don't transfer login credentials even with a death certificate. Instead, designate legacy contacts directly in platform settings (Facebook, Instagram, TikTok, LinkedIn) to memorialize or delete your account. Create a digital will documenting all account usernames, where credentials are stored, and explicit instructions for each platform. U.S. states have varying laws; check your state's fiduciary access laws. Executors should contact platforms' legal teams with a death certificate and will copy to request account memorialization.
 
 ## Understanding Fiduciary Access to Digital Assets
 

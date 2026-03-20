@@ -10,12 +10,13 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Sharing sensitive credentials securely is a common challenge for developers and system administrators. Whether you're sharing API keys, database passwords, or temporary access tokens, you need a method that ensures the recipient can view the information only once before it disappears forever. This is where one-time note services like SafeNote and PrivNote come into play.
+Share credentials securely using SafeNote or PrivNote: paste your API key or password, set an expiration time, and send the link. The recipient views it once and it auto-deletes, leaving no server copy. For extra security, use browser-side encryption variants and avoid sending the link through logged communication channels. This approach eliminates password history vulnerabilities and reduces the window for credentials to be intercepted.
 
 ## Understanding One-Time Secure Notes
 
