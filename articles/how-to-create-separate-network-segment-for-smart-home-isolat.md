@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /how-to-create-separate-network-segment-for-smart-home-isolat/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

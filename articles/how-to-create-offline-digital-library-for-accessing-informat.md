@@ -7,9 +7,10 @@ author: "Privacy Tools Guide"
 permalink: /how-to-create-offline-digital-library-for-accessing-informat/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
+tags: [privacy-tools-guide]
 ---
 
 

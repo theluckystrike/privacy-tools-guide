@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /how-to-detect-remove-stalkerware-ios-iphone/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}
