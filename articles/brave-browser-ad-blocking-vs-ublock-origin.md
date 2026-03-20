@@ -7,7 +7,7 @@ author: "theluckystrike"
 permalink: /brave-browser-ad-blocking-vs-ublock-origin/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]
