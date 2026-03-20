@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Captive Portal Alternative Avoid WiFi Harvesting Personal Data Guide"
-description: "A technical guide for developers and power users to bypass captive portals without exposing personal data. Learn alternative methods to access WiFi while preventing data harvesting."
+title: "Captive Portal Alternative Avoid WiFi Harvesting."
+description: "A technical guide for developers and power users to bypass captive portals without exposing personal data. Learn alternative methods to access WiFi."
 date: 2026-03-16
 author: theluckystrike
 permalink: /captive-portal-alternative-avoid-wifi-harvesting-personal-da/
@@ -194,6 +194,12 @@ For most developers, combining methods works best: test HTTPS probe first, then 
 ## Conclusion
 
 Captive portals represent a significant vector for personal data collection, but they are not unavoidable. By understanding how these systems operate and leveraging protocols they cannot easily intercept, you can maintain connectivity while minimizing your data exposure. The methods above range from quick tests requiring no infrastructure to full solutions needing dedicated servers—choose based on your threat model and available resources.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
