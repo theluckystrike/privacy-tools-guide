@@ -11,6 +11,7 @@ score: 8
 intent-checked: false
 voice-checked: true
 intent-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -11,6 +11,7 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 
