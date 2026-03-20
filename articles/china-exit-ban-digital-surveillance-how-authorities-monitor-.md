@@ -7,20 +7,17 @@ description: "Understand how Chinese authorities use digital surveillance to mon
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-/
-<<<<<<< HEAD
-categories: [guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 voice-checked: true
-=======
-categories: [security, guides]
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-China's exit ban system represents one of the most sophisticated examples of digital surveillance integrated with travel restriction enforcement. For developers and power users who understand how data flows through systems, understanding these mechanisms helps when designing privacy-respecting applications or traveling through regions with extensive monitoring infrastructure.
+China's exit ban system automatically triggers when authorities detect specific patterns in your online activity—including travel-related searches, VPN usage, sensitive communications, or unusual financial activity. The system integrates network monitoring, WeChat surveillance, search query analysis, and travel booking data to create behavioral risk profiles without explicit court orders. Understanding how metadata aggregation flags individuals is essential for developers building privacy tools and users navigating regions with ubiquitous surveillance infrastructure.
 
 ## Understanding the Exit Ban Mechanism
 

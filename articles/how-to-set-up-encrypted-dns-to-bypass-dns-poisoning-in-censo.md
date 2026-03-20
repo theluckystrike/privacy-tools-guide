@@ -6,18 +6,12 @@ description: "A technical guide for developers and power users on configuring DN
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/
-<<<<<<< HEAD
 reviewed: true
 score: 8
 voice-checked: true
-categories: [guides]
-=======
 categories: [guides]
 tags: [tools]
-reviewed: true
-score: 8
-voice-checked: true
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 

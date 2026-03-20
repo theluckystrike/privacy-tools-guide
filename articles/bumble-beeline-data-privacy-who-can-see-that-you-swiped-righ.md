@@ -7,20 +7,17 @@ description: "A technical deep dive into Bumble Beeline privacy controls. Learn 
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
-<<<<<<< HEAD
-categories: [guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 voice-checked: true
-=======
-categories: [security, guides]
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Understanding Bumble's Beeline feature requires examining both the user-facing functionality and the underlying data architecture. This guide provides a technical analysis of Beeline privacy controls, what information gets exposed, and practical steps developers and privacy-conscious users can take.
+Beeline shows you users who have swiped right on you, but your own swipes are never revealed to free users—only premium subscribers see your likes through Beeline. You can hide from Beeline entirely or enable Incognito Mode to limit visibility to premium users only, giving you direct control over who can see your interest. This guide explains exactly what data Bumble exposes, how privacy controls work, and practical mitigation strategies.
 
 ## What Is Bumble Beeline?
 

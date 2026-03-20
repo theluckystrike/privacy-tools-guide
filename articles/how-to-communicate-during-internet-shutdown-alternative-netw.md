@@ -10,11 +10,12 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-When traditional internet infrastructure becomes inaccessible—whether due to government restrictions, natural disasters, or technical failures—developers and power users need reliable alternatives. This guide covers practical methods for maintaining communication without relying on centralized internet services.
+When the internet goes down due to shutdowns, disasters, or infrastructure failures, alternative communication methods become critical for staying connected. This guide teaches practical techniques for maintaining communication during internet shutdowns using mesh networks, offline messaging apps, LoRa radio systems, and satellite communication. You'll learn how to set up ad-hoc Wi-Fi networks, use Briar for device-to-device messaging, and configure emergency communication layers that work independently of traditional internet infrastructure.
 
 ## Understanding the Problem Space
 

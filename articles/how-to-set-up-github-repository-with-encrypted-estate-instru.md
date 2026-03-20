@@ -12,9 +12,8 @@ permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

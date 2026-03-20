@@ -9,15 +9,12 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-## Understanding Public Records Background Checks
-
-When you've matched with someone on a dating app, you may want to verify basic information before meeting in person. Public records provide a legal way to confirm identity details, check for criminal history, and verify other publicly available information. This guide covers how to conduct these checks responsibly and within legal boundaries.
-
-Public records are information maintained by government agencies and made available to citizens. These include court records, property ownership, business registrations, professional licenses, and certain criminal histories. The key principle is that you're using information already legally public—not hacking databases or circumventing privacy protections.
+You can verify dating matches using public records by searching county court records, state criminal databases, sex offender registries (NSOPW), property assessor records, and professional licensing boards. This guide covers legal methods for conducting background checks using PACER, state-specific court systems, and publicly available information to confirm identity, check for criminal history, and verify professional credentials while respecting FCRA compliance and ethical boundaries.
 
 ## What Public Records Can Reveal
 

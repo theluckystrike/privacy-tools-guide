@@ -9,12 +9,13 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 
 {% raw %}
 
-India's Aadhaar system, the world's largest biometric identification database, links personal identity to fingerprints, iris scans, and facial photographs. While designed for efficient service delivery, the system creates significant surveillance surface area. Each authentication leaves a timestamped record revealing when, where, and which service you accessed. This guide provides concrete steps to minimize your exposure.
+You can minimize Aadhaar surveillance exposure by locking biometrics on the UIDAI portal, generating a Virtual ID proxy, auditing authentication history, revoking optional service provider consents, and monitoring for breaches. This guide provides concrete steps to reduce your biometric data footprint within India's centralized identification system while acknowledging that complete opt-out is impossible due to mandatory linkages for banking and telecom.
 
 ## Understanding the Aadhaar Authentication Ecosystem
 

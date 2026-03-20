@@ -10,13 +10,12 @@ categories: [guides, security]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Memorializing social media accounts ensures that a person's digital legacy remains preserved while preventing unauthorized access and potential identity theft. For developers and power users who maintain multiple accounts across platforms, understanding the technical steps involved in account memorialization is essential for proper digital estate planning.
-
-This guide provides a comprehensive checklist for memorializing social media accounts across major platforms, including command-line approaches where applicable.
+You can memorialization social media accounts on Facebook, Instagram, LinkedIn, Google, Twitter/X, Reddit, and Discord by submitting death certificate documentation and designating legacy contacts. Each platform provides different preservation features—from account freezing to data transfer to complete deletion—requiring proactive planning and documentation. This guide provides a comprehensive checklist for memorializing accounts across major platforms and automating digital estate inventory.
 
 ## Understanding Account Memorialization
 

@@ -9,11 +9,12 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-The Great Firewall of China (GFW) represents one of the most sophisticated internet censorship systems in the world. Understanding its technical mechanisms helps developers build more resilient applications and power users comprehend how their traffic gets filtered. This guide examines the detection techniques employed by China's Golden Shield Project with practical technical details.
+The Great Firewall detects VPN traffic through multiple layers: deep packet inspection (DPI) identifies protocol signatures, DNS poisoning blocks forbidden domains, SNI filtering inspects unencrypted domain names during TLS handshakes, and active probing tests suspected servers. Even encrypted traffic reveals metadata through packet size patterns, timing analysis, and connection duration that machine learning classifiers can use to identify circumvention tools. Understanding these detection mechanisms is essential for developers building resilient privacy applications and power users seeking effective evasion strategies.
 
 ## Core Detection Mechanisms
 

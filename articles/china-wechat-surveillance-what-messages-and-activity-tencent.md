@@ -7,26 +7,18 @@ description: "A technical guide for developers and power users exploring what da
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-wechat-surveillance-what-messages-and-activity-tencent/
-<<<<<<< HEAD
 reviewed: true
 score: 8
 voice-checked: true
-categories: [guides]
-=======
+intent-checked: true
 categories: [guides]
 tags: [tools]
-reviewed: true
-score: 8
-voice-checked: true
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 
 
 {% raw %}
 
-WeChat is more than a messaging app—it is a comprehensive digital ecosystem used by over 1.3 billion people in China. For developers and security-conscious users, understanding what data Tencent actually collects and shares with government authorities is essential for making informed decisions about digital privacy.
-
-This guide breaks down the technical aspects of WeChat surveillance, covering data collection practices, legal frameworks, and practical implications for users who want to understand the extent of government access to their information.
+Tencent collects all WeChat messages, metadata, location data, and payment information and is legally required to share this data with Chinese authorities upon request. Keyword monitoring systems flag sensitive terms, political discussions, and communications with targeted groups (journalists, activists, Uyghurs) for government review. Users have no expectation of privacy on WeChat—the platform prioritizes government cooperation and state surveillance integration over user confidentiality by design.
 
 ## What Data Tencent Collects
 

@@ -7,24 +7,18 @@ description: "Learn how to transfer domain names and hosting accounts after deat
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /domain-name-inheritance-how-to-transfer-registrar-accounts-a/
-<<<<<<< HEAD
 reviewed: true
 score: 8
 voice-checked: true
-categories: [guides]
-=======
 categories: [guides]
 tags: [tools]
-reviewed: true
-score: 8
-voice-checked: true
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Domain names and web hosting accounts represent valuable digital assets that require planning for transfer upon death. Unlike physical property, these assets exist in registrar databases and rely on account credentials that may not survive the account holder. This guide covers the technical and procedural steps developers and power users need to transfer domain names and hosting after death.
+Domain names can be transferred after death by providing the registrar with a death certificate, letter of testamentary or administration, and court order appointing you as personal representative, then obtaining the AUTH code to complete the ICANN transfer process (typically 5-7 days). For web hosting, you'll need to transfer cPanel backups, export databases, and manage SSL certificates separately. This guide covers the technical and procedural steps developers and power users need to transfer domain names and hosting after death, including preventing transfer delays with advance planning.
 
 ## Understanding Domain Name Transfer Mechanics
 

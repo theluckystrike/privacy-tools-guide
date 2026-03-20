@@ -7,24 +7,18 @@ description: "Learn how to build a tiered digital estate system where executors 
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-create-tiered-access-plan-giving-executor-immediate-a/
-<<<<<<< HEAD
 reviewed: true
 score: 8
 voice-checked: true
-categories: [guides]
-=======
 categories: [guides]
 tags: [tools]
-reviewed: true
-score: 8
-voice-checked: true
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Digital estate planning requires careful consideration of access timing. Many people want their executor to manage affairs immediately after death while restricting heir access until after probate or a waiting period. This guide shows developers how to build a tiered access system that enforces these temporal constraints programmatically.
+Digital estate planning requires separating executor access from heir access with different unlock timelines. Executors need immediate access to handle funerals, bills, and estate administration, while heirs should only access assets after probate completes or a waiting period passes. This guide teaches developers how to implement time-locked encryption, access control layers, and verification systems that automatically grant executor access immediately while delaying heir access by 30+ days based on configurable conditions.
 
 ## Understanding the Tiered Access Model
 
