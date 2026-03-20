@@ -10,6 +10,7 @@ permalink: /privacy-fatigue-solutions-how-to-make-privacy-easier-guide/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 
