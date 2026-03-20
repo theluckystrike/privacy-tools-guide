@@ -6,9 +6,9 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

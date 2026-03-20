@@ -6,7 +6,7 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-verify-your-vpn-is-not-leaking-dns-requests/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 8
 intent-checked: true
