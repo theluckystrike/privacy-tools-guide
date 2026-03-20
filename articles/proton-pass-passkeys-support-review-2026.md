@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /proton-pass-passkeys-support-review-2026/
 categories: [guides]
-tags: [privacy, passkeys, proton-pass]
+tags: [privacy-tools-guide, privacy, passkeys, proton-pass]
 reviewed: true
 score: 8
 intent-checked: true

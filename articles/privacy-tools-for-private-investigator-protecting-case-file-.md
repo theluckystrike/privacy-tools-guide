@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-private-investigator-protecting-case-file-/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

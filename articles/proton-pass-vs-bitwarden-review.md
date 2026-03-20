@@ -6,7 +6,7 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /proton-pass-vs-bitwarden-review/
 categories: [guides]
-tags: [privacy, tools]
+tags: [privacy-tools-guide, privacy, tools, comparison]
 reviewed: true
 score: 8
 intent-checked: true
