@@ -8,7 +8,7 @@ permalink: /vpn-for-using-twitter-x-in-countries-where-banned/
 categories: [guides]
 tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
