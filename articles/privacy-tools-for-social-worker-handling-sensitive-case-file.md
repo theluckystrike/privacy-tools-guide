@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /privacy-tools-for-social-worker-handling-sensitive-case-file/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
