@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /how-to-make-instagram-story-viewers-list-private-controlling/
 categories: [security, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

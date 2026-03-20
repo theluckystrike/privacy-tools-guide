@@ -7,7 +7,7 @@ date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /how-to-manage-team-password-vault-permissions-across-enterpr/
 categories: [guides]
-tags: [password-manager, enterprise-security, access-control]
+tags: [privacy-tools-guide, password-manager, enterprise-security, access-control]
 reviewed: true
 score: 8
 ---
