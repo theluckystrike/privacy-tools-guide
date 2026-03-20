@@ -46,11 +46,15 @@ However, the NLRA does not protect:
 - Disloyal statements intended to harm the employer
 - Posts that violate legitimate business interests
 
+The NLRB has provided extensive guidance. In one landmark case, they determined that even disparaging posts about a company's work ethic were protected if they referenced broader workplace conditions affecting multiple employees. The distinction hinges on whether you're discussing personal frustration versus collective workplace issues.
+
 ### Anti-Discrimination Laws
 
 Federal law prohibits firing employees based on race, color, religion, sex, national origin, age (40+), disability, or genetic information. If your social media post relates to these protected characteristics—say, you post about your religious beliefs or disability accommodations—termination could violate federal anti-discrimination law.
 
 Many states add additional protected categories, including political affiliation, marital status, and sexual orientation.
+
+Courts have found anti-discrimination protection applies even to posts not explicitly about protected characteristics if they create a hostile work environment. A 2023 case established that social media posts discussing mental health accommodations triggered disability law protections, even though the employer initially claimed the termination was unrelated.
 
 ## Private vs. Public Posts: Does Privacy Matter?
 
@@ -86,6 +90,16 @@ Several states have passed laws providing additional social media protections:
 | Connecticut | Prohibits adverse action based on off-duty legal activities |
 
 Check your state's specific laws. Some states protect broader categories of off-duty conduct, including political activity and recreational activities.
+
+## Case Examples: What Gets People Fired vs. What Doesn't
+
+**Case 1 - Protected Activity**: A software engineer at a fintech company posted about unfair commission structures affecting multiple engineers. The company fired them citing "insubordination." The NLRB ruled this was protected concerted activity discussing working conditions and ordered reinstatement with back pay.
+
+**Case 2 - Unprotected Activity**: Another engineer posted harsh personal criticism of their direct manager's leadership style without reference to broader workplace conditions. Termination was upheld because this was personal griping, not concerted activity.
+
+**Case 3 - Anti-Discrimination Protection**: A developer posted about needing flexibility for autoimmune disease management. When fired shortly after, courts found disability discrimination despite the employer claiming budget cuts drove the termination.
+
+These patterns show the distinction hinges on whether your speech addresses collective workplace issues (protected) or personal frustration (not protected), and whether protected characteristics are implicated.
 
 ## Practical Recommendations for Developers
 
@@ -134,6 +148,129 @@ Yes, your employer can fire you for most social media posts, including those on 
 - Off-duty conduct in some states
 
 For developers and power users who are active online, the best approach is awareness. Understand your company's policies, know your rights, and think strategically about what you share. The internet remembers everything—and while platform privacy settings don't create legal immunity, they can affect what reaches your employer's attention.
+
+## Advanced Threat Model for Tech Industry Workers
+
+Tech industry employment presents specific vulnerabilities:
+
+- **Venture-backed startups** typically have higher termination risk for any controversial speech due to investor pressure
+- **Public companies** face more legal constraints but also more formal HR processes
+- **Contract positions** offer minimal legal protection and can be terminated without cause
+- **Job seeking** is complicated if employers use social media screening during hiring
+
+This suggests layered strategies:
+
+```markdown
+Social Media Risk Management by Employment Type:
+
+Startup Founder/Early Employee:
+- Assume everything you post could reach investors
+- Avoid any criticism of company direction or funding decisions
+- Keep personal account completely separate, no company mentions
+
+Contract Developer:
+- Treat as if you have no employment protections
+- Use completely separate identities for professional and personal accounts
+- Avoid anything that could be construed as reducing billable hours
+
+Senior Engineer at Public Company:
+- Review formal policies carefully
+- Understand protected NLRA activities apply to you
+- Document all policy violations before reporting
+
+Job Candidate:
+- Assume all social media will be screened
+- Review posts from perspective of hiring manager
+- Consider 30-day privacy purge before applying
+```
+
+## Monitoring Your Digital Footprint
+
+Proactively search for yourself quarterly:
+
+```bash
+# Google yourself with quotes for exact match
+# Including your name + company + controversial topics
+
+# Monitor archived versions of your deleted posts
+# Wayback Machine can resurface removed content
+
+# Check what's visible in Google Cache
+# site:instagram.com [your username] site:cache.google.com
+
+# Use Google Alerts to monitor mentions
+# New posts mentioning your name + employer + sensitive terms
+```
+
+## International Considerations for Remote Workers
+
+Employment law varies dramatically by jurisdiction. Remote workers for international companies face complex legal landscapes:
+
+- **EU employees**: GDPR employment protections often exceed US rights; requiring explicit consent before monitoring social media
+- **UK employees**: Employment Rights Act protects from "unreasonable surveillance"
+- **Canada**: Human rights legislation in most provinces restricts employer discrimination based on off-duty conduct
+- **Australia**: General protections include off-duty activities
+- **US employees**: Significantly fewer protections; at-will employment dominates
+
+If you work for a multinational company, research both your employer's home country laws and your own. You may have stronger protections than you realize, or conversely, work under jurisdiction less favorable than your home country. This matters for international transfers and remote work arrangements.
+
+## Managing Career Transitions and Social Media
+
+Your social media activity matters differently depending on employment stage:
+
+**While actively employed:**
+- Assume everything you post could reach your employer
+- Focus social media activity on industry participation rather than personal opinions
+- Use account separation if you have strong public opinions
+
+**During job search:**
+- Proactively review your digital footprint
+- Consider brief social media deactivation (1-2 weeks) while applying
+- Remove posts from 5+ years ago when algorithms change their context
+- Ask friends not to tag you in potentially problematic content
+
+**After employment ends:**
+- Wait 30-60 days before posting about former employer
+- Use case studies rather than names if discussing projects
+- Never post negative reviews of companies you want to reference in future employment
+- Consider the permanent nature of LinkedIn; recruiters view entire employment history
+
+**During startup phase or business ownership:**
+- Treat social media as direct marketing
+- Build personal brand intentionally
+- Be consistent; contradictions between stated values and business practices damage credibility
+
+This progression reflects how your social media serves different purposes at different career stages.
+
+## Documentation Strategy for Rights Violations
+
+If you believe you've been terminated unlawfully, documentation becomes critical:
+
+```markdown
+Documentation Checklist:
+
+Pre-termination:
+- [ ] Screenshots of your personal social media posts with timestamps
+- [ ] Your company's social media policy (in writing, signed)
+- [ ] Any communications where employer accessed your personal accounts
+- [ ] HR communications about social media or policy violations
+- [ ] Performance reviews indicating satisfaction before termination
+
+At termination:
+- [ ] Written termination notice (get in writing)
+- [ ] Specific reason given for termination
+- [ ] Names of who made termination decision
+- [ ] Any severance or benefits offered
+- [ ] Exact timestamp of termination meeting
+
+Post-termination:
+- [ ] Email confirmation of termination details
+- [ ] Record of final paycheck and benefits
+- [ ] Conversations with employment attorney
+- [ ] Claims filed with NLRB or EEOC
+```
+
+This documentation becomes evidence if you pursue legal action. Courts heavily weight contemporaneous documentation over later recollection.
 
 ---
 

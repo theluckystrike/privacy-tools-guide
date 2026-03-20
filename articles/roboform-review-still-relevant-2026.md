@@ -130,6 +130,184 @@ RoboForm remains a capable password manager for non-technical users seeking reli
 
 The tool isn't irrelevant—it's simply optimized for a different user than you. If you're evaluating password managers for development work, look elsewhere. If you need excellent form filling and already use RoboForm, the 2026 version maintains the core experience that made it popular.
 
+## Detailed Feature Comparison Table
+
+| Feature | RoboForm | Bitwarden | 1Password | KeePassXC |
+|---------|----------|-----------|-----------|-----------|
+| **CLI Interface** | Limited (rfcli) | Full-featured | Full-featured | N/A (desktop) |
+| **API Access** | None | REST API | REST API | N/A |
+| **Self-Hosting** | Not available | Yes (enterprise) | Not available | N/A (local-only) |
+| **Open Source** | No | Yes | No | Yes |
+| **Master Password** | Required | Required | Required | Required |
+| **Browser Extensions** | Chrome, Firefox, Edge, Safari | Chrome, Firefox, Edge, Safari | Chrome, Firefox, Edge, Safari | N/A |
+| **Mobile Apps** | iOS, Android | iOS, Android | iOS, Android | Android only |
+| **Form Filling Accuracy** | Excellent | Good | Good | Good |
+| **Encryption Standard** | AES-256 | AES-256 | AES-256 | AES-256 |
+| **Cost** | $39.99/year | $10/year free plan | $4.99/month | Free |
+| **Custom Fields** | Yes | Yes | Yes | Yes |
+| **Team Sharing** | Limited (business tier) | Yes | Yes | N/A |
+| **Dark Web Support** | No | Via Tor | Via Tor | N/A |
+
+## Password Manager Workflow Scenarios
+
+### Scenario 1: Personal User with Occasional Form Filling
+- **Best choice**: RoboForm or Firefox built-in password manager
+- **Why**: Simplicity, excellent form filling, affordable
+- **Consideration**: Not necessary to pay for advanced features
+
+### Scenario 2: Developer Managing Infrastructure Credentials
+- **Best choice**: Bitwarden or 1Password with CLI
+- **Why**: API access for automation, team sharing, CLI integration in scripts
+- **Example workflow**:
+```bash
+# Bitwarden CLI for credential rotation
+bw get item "database_password" | jq -r '.data.password' > /tmp/pwd
+# Use password in deployment script
+./deploy.sh --db-password=$(cat /tmp/pwd)
+# Securely delete
+shred -vfz -n 10 /tmp/pwd
+```
+
+### Scenario 3: Security-Conscious Individual
+- **Best choice**: KeePassXC with local storage + Syncthing
+- **Why**: No cloud dependency, full control, open-source
+- **Setup**:
+```bash
+# Create encrypted local database
+keepassxc-cli db create ~/.local/share/passwords.kdbx
+# Set up synced backup
+ln -s ~/.local/share/passwords.kdbx ~/Syncthing/passwords.kdbx
+```
+
+### Scenario 4: Small Business Team
+- **Best choice**: 1Password or Bitwarden business tier
+- **Why**: Audit logs, permission management, emergency access
+- **Compliance features**: Device enrollment, policy enforcement
+
+## RoboForm's Browser Extension Architecture
+
+Understanding how RoboForm's form filler works helps explain its strengths and limitations:
+
+**Form Detection Algorithm**:
+- Scans DOM for `<input>`, `<select>`, `<textarea>` elements
+- Uses field name, id, and placeholder attributes for type inference
+- Custom regex patterns match uncommon field names
+- Builds "identity profiles" mapping field types to user data
+
+**Example extension code structure**:
+```javascript
+// RoboForm's conceptual form detection
+const detectedFields = {
+  firstName: "John",
+  lastName: "Doe",
+  email: "john@example.com",
+  phone: "+1234567890",
+  address: "123 Main St",
+  city: "Springfield",
+  zip: "12345",
+  country: "United States"
+};
+
+// Matches form fields and auto-fills
+document.querySelectorAll('input[name*="first"]').forEach(field => {
+  field.value = detectedFields.firstName;
+});
+```
+
+**Strengths**:
+- Handles dynamically loaded forms better than competitors
+- Custom field mapping for unusual website architectures
+- Remembers field mappings for future visits
+- Works on complex JavaScript-heavy applications
+
+**Limitations**:
+- Cannot fill fields that don't exist in its profile set
+- Struggle with masked input fields (real-time formatting)
+- No way to customize algorithm without using UI
+
+## Migration Path from RoboForm
+
+If you're locked into RoboForm but want to transition to a more developer-friendly solution:
+
+**Step 1: Export from RoboForm**
+```bash
+# Export to CSV format (less secure)
+# Settings → Import/Export → Export to CSV
+# This creates a file with all credentials in plaintext
+```
+
+**Step 2: Convert Format**
+```python
+import csv
+import json
+
+def convert_roboform_csv_to_bitwarden(csv_file):
+    items = []
+    with open(csv_file) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            items.append({
+                "type": 1,  # Login type
+                "name": row.get('Name'),
+                "login": {
+                    "username": row.get('Login'),
+                    "password": row.get('Password'),
+                    "uri": row.get('Site')
+                },
+                "notes": row.get('Notes')
+            })
+    return items
+```
+
+**Step 3: Import to New Password Manager**
+```bash
+# Bitwarden CLI import
+bw import roboform converted_export.json
+```
+
+**Step 4: Securely Delete Export File**
+```bash
+# Overwrite file content before deletion
+shred -vfz -n 35 roboform_export.csv
+```
+
+## Browser Extension Privacy Concerns
+
+Any password manager browser extension has access to form submissions. Critical security considerations for RoboForm:
+
+**Risks**:
+- Extension can see form data before submission
+- Cannot distinguish between legitimate forms and phishing attempts
+- Extension permissions grant access to all websites
+- No way to prevent form pre-filling on HTTPS downgrade attacks
+
+**Mitigation strategies**:
+- Use browser's native password manager for low-risk sites
+- Manually enter passwords on high-security accounts
+- Enable two-factor authentication everywhere possible
+- Review extension permissions quarterly
+
+## When Not to Use RoboForm
+
+Several specific scenarios make RoboForm inappropriate regardless of its form-filling quality:
+
+| Scenario | Why RoboForm Fails | Alternative |
+|----------|-------------------|-------------|
+| CI/CD pipeline automation | No API for credential access | Bitwarden CLI + GitHub Actions |
+| Kubernetes secret rotation | Cannot rotate secrets programmatically | Sealed Secrets or HashiCorp Vault |
+| Compliance auditing | No audit logs of password access | 1Password with audit logs |
+| Self-hosted infrastructure | Cloud-only solution | KeePassXC with local storage |
+| Team permission management | Limited role-based access control | Bitwarden Business tier |
+
+## The Privacy Angle
+
+For privacy-conscious users, RoboForm presents a trade-off. While the company doesn't have explicit reports of breaches, the cloud-only architecture means all passwords travel to RoboForm's servers, even if encrypted.
+
+Alternatives like KeePassXC completely eliminate this risk by keeping data local. Users unwilling to trust any third-party infrastructure should avoid RoboForm entirely, regardless of encryption strength.
+
+## Conclusion: The Right Tool for the Job
+
+In 2026, RoboForm occupies a narrow niche: users who value form-filling accuracy, aren't concerned about CLI/API access, and prioritize ease of use over maximum privacy. If you fit this profile, RoboForm delivers. If you're a developer, security-conscious user, or need programmatic access to credentials, the alternatives are simply better choices.
 
 ## Related Reading
 

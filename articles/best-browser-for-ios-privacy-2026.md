@@ -135,6 +135,228 @@ Consider your specific needs: if you rely on iCloud integration and want minimal
 
 Test different options with your specific workflow. Privacy is personal—the best browser is one that protects your data while supporting your work effectively.
 
+## WebKit Engine Architecture and Privacy
+
+All iOS browsers must use WebKit due to Apple's platform requirements. Understanding WebKit's role clarifies privacy differences:
+
+**WebKit's Privacy Features**:
+```javascript
+// Intelligent Tracking Prevention (ITP) works at engine level
+// Prevents cross-site tracking through cookie partitioning
+// In developer tools, observe how cookies are scoped:
+// Site A's cookies never accessible from Site B iframe
+
+// Third-party script blocking (optional in most browsers)
+if (document.location.hostname !== frame.contentDocument.location.hostname) {
+  // Cross-origin iframe - subject to tracking prevention
+  // Can still access, but cookies isolated
+}
+```
+
+**Browser-specific extensions**:
+- Safari adds Private Relay and fingerprint randomization at OS level
+- Firefox implements Total Cookie Protection (supercookie blocking)
+- Brave adds aggressive ad/tracker blocking above WebKit
+- Onion Browser wraps WebKit with Tor network routing
+
+The WebKit engine provides baseline privacy that all iOS browsers share. Differences emerge in additional protections each browser adds.
+
+## Privacy Feature Comparison Matrix
+
+| Protection | Safari | Firefox | Brave | Onion Browser | Firefox Focus |
+|-----------|--------|---------|-------|---------------|---------------|
+| **Third-party cookies blocked** | Yes (ITP) | Yes (TCP) | Yes (Shields) | Yes (Tor) | Yes |
+| **First-party isolation** | Partial | Yes | Yes | Yes | Yes |
+| **Script blocking** | No (optional) | No (optional) | Yes (default) | Yes (NoScript) | No |
+| **Fingerprint protection** | Yes | Limited | Yes | Yes | Limited |
+| **Private Relay** | Yes (paid) | No | No | No | No |
+| **Tor support** | No | Limited | Beta | Yes | No |
+| **Automatic cache clear** | No | No | No | No | Yes |
+| **Data minimization** | Partial | Partial | Yes | Yes | Yes |
+| **Open source code** | No | Yes | Yes | Partial | Yes |
+| **Regular audits** | No | No | No | No | Limited |
+
+## Testing Privacy Features in Your Applications
+
+For developers, validate your applications handle privacy-focused browsers correctly:
+
+```javascript
+// Detect which privacy-focused browser user is on
+function detectBrowser() {
+  const ua = navigator.userAgent;
+
+  if (ua.includes('OnionBrowser')) {
+    return 'onion-browser'; // Tor network
+  }
+  if (ua.includes('FxiOS')) {
+    return 'firefox-ios'; // Firefox with TCP
+  }
+  if (ua.includes('Version/') && ua.includes('Safari')) {
+    return 'safari'; // Native Safari
+  }
+  if (ua.includes('Brave')) {
+    return 'brave'; // Brave with aggressive blocking
+  }
+  if (ua.includes('FocusIOS')) {
+    return 'firefox-focus'; // Session-only
+  }
+  return 'unknown';
+}
+
+// Test if third-party resources load
+function testThirdPartyBlocking() {
+  const img = new Image();
+  let trackerLoaded = false;
+
+  img.onload = () => {
+    trackerLoaded = true;
+    console.log('Third-party tracker loaded - blocking may be disabled');
+  };
+  img.onerror = () => {
+    console.log('Third-party tracker blocked - strong privacy mode active');
+  };
+
+  img.src = 'https://tracking-service.com/pixel.gif';
+
+  // Timeout to catch blocked requests
+  setTimeout(() => {
+    if (!trackerLoaded) {
+      console.log('Tracker request blocked or failed');
+    }
+  }, 2000);
+}
+
+// Verify cookie isolation
+async function testCookieIsolation() {
+  try {
+    // Attempt to set cross-domain cookie
+    const response = await fetch('https://other-domain.com/set-cookie');
+
+    // Try to read it from current domain
+    if (document.cookie.includes('tracking_cookie')) {
+      console.log('FAIL: Cross-domain cookie accessible');
+    } else {
+      console.log('PASS: Cross-domain cookie blocked');
+    }
+  } catch (e) {
+    console.log('Cross-domain request blocked');
+  }
+}
+```
+
+## Performance Impact of Privacy Features
+
+Privacy protections add computational overhead:
+
+**Safari (Intelligent Tracking Prevention)**:
+- On-device ML model for tracker detection
+- ~2-5% CPU increase per page load
+- Minimal battery impact due to optimizations
+
+**Firefox (Total Cookie Protection)**:
+- Hash-based cookie jar isolation
+- ~1-3% CPU overhead
+- Low memory impact
+
+**Brave (Shields)**:
+- Local filter list matching
+- ~5-10% CPU increase (varies with filter count)
+- Noticeable on older devices
+
+**Onion Browser (Tor network)**:
+- Network routing through 3 relays minimum
+- 500ms-5s additional latency per request
+- Significant battery drain from persistent connections
+
+**Firefox Focus (Session data clearing)**:
+- Automatic SQLite database cleanup
+- ~1-2% overhead at session close
+- Fastest browser for pure performance
+
+For users on older iPhone models (XS or earlier), consider performance impact when choosing between Brave (maximum blocking) and Safari (optimized ITP).
+
+## Browser Configuration
+
+Each privacy-focused browser offers granular settings. Access through Settings → Privacy/Security:
+
+**Safari**: Enable "Cover IP address" (requires iCloud+), disable ad measurement
+**Firefox**: Set tracking protection to Strict, enable HTTPS-Only mode
+**Brave**: Enable aggressive shields and fingerprinting protection
+**Onion Browser**: Disable JavaScript for maximum security
+**Firefox Focus**: Enable automatic data clearing on quit
+
+## Real-World Privacy Testing: Three Scenarios
+
+### Scenario 1: News Reading
+**Goal**: Read news without profiling
+**Best choice**: Safari with Private Relay
+**Why**: Private Relay masks IP from news site while maintaining performance
+**Configuration**:
+```
+- Enable Private Relay in iCloud+ settings
+- Use Private Browsing mode in Safari
+- Disable JavaScript if news site loads ads
+- Incognito visit prevents history storage
+```
+
+**Privacy outcome**: News site sees randomized IP, no tracking cookies, no fingerprint matching
+
+### Scenario 2: Sensitive Account Access
+**Goal**: Banking, email, healthcare with maximum isolation
+**Best choice**: Firefox Focus
+**Why**: Automatic session clearing prevents local data leakage
+**Configuration**:
+```
+- Each session creates new fingerprint
+- No persistent cookies
+- Cache cleared automatically
+- Browsing history never stored
+```
+
+**Privacy outcome**: Complete isolation between sessions, zero local traces
+
+### Scenario 3: Avoiding Mass Surveillance
+**Goal**: Protect against ISP-level monitoring, government censorship
+**Best choice**: Onion Browser with bridges
+**Why**: Tor network makes traffic invisible to ISP and local network
+**Configuration**:
+```
+Settings → Network:
+- Meek bridges if ISP blocks Tor
+- Obfs4 bridges for additional obfuscation
+- Update bridges monthly from https://bridges.torproject.org
+```
+
+**Privacy outcome**: ISP sees encrypted traffic to bridge node, cannot determine destination
+
+## iOS-Specific Privacy Considerations
+
+iOS's sandbox model affects all browsers equally:
+
+**What iOS provides**:
+- No cross-app data sharing without explicit permissions
+- All browsers isolated from each other
+- Cannot access other app's local storage
+- Clipboard access requires user permission
+
+**What iOS cannot prevent**:
+- App-level tracking within a single browser
+- Web tracking across sites (unless browser adds protections)
+- Metadata leakage (timestamps, connection patterns)
+
+**App Tracking Transparency (ATT) limitation**:
+- Requires App Store consent for cross-app tracking
+- Only affects app-to-app data sharing
+- Doesn't apply to web-based tracking
+- Browser implementation determines if web tracking is restricted
+
+## Troubleshooting Privacy Features
+
+Websites may break with aggressive privacy settings. Solutions: whitelist domains in privacy settings, temporarily allow scripts for problem sites, or switch browsers for specific sites requiring weak privacy.
+
+## Updating to 2026 Standards
+
+iOS browsers receive regular security updates. Check App Store for updates monthly.
 
 ## Related Reading
 

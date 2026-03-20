@@ -72,6 +72,24 @@ function validateScopes(requestedScopes) {
 
 Smart devices frequently collect granular location data that goes far beyond what's necessary for device function. A smart bulb doesn't need your precise GPS coordinates to respond to sunset times—your timezone and approximate location would suffice. Yet many devices collect high-precision location data continuously.
 
+### 5. Unexpected Monetization of Your Data
+
+Many device ToS documents include language permitting manufacturers to monetize your usage patterns. Phrases like "usage analytics" often translate to selling aggregated data to advertisers, insurance companies, or market research firms. Smart home devices revealing your daily routines—when you leave home, how long you shower, your nighttime activity patterns—become valuable commodities.
+
+A 2024 analysis of smart home ToS found that 73% of major manufacturers reserve rights to use device data for advertising purposes. Some even explicitly state they'll share data with "trusted partners" without requiring user consent for each sharing instance.
+
+### 6. Default Settings That Expose More Than Necessary
+
+Device manufacturers deliberately ship products with maximum data collection enabled by default. Users must actively hunt through settings to disable features like:
+
+- Microphone always listening for wake words
+- Activity history synchronization to cloud accounts
+- Crash reporting that may include sensitive context
+- Predictive features requiring behavioral pattern analysis
+- Diagnostic telemetry streams
+
+This "dark defaults" pattern means the average user accepts far more data sharing than they realize, simply by completing setup without diving into advanced options.
+
 ## Practical Strategies for Developers and Power Users
 
 ### Audit Your Current Devices
@@ -115,6 +133,31 @@ Most devices include privacy settings buried in menus. After setup, immediately 
 - Advertising ID association
 - Unnecessary cloud integration
 
+### Document and Track Your Connected Devices
+
+Maintain an inventory of every connected device, its data collection scope, and associated ToS:
+
+```yaml
+# Example device inventory tracking
+smart_devices:
+  - name: "Echo Dot (Living Room)"
+    manufacturer: Amazon
+    year_purchased: 2024
+    tos_version: "2.3"
+    tos_last_reviewed: "2026-03-10"
+    data_collected:
+      - voice_recordings
+      - usage_patterns
+      - device_metrics
+    privacy_settings:
+      voice_storage: "auto_delete_24h"
+      usage_analytics: "disabled"
+      advertising: "disabled"
+    risk_level: "medium"
+```
+
+By documenting your devices, you create accountability. When a manufacturer updates their ToS, you know exactly which devices are affected and what permissions you previously granted.
+
 ## Reading Terms of Service Effectively
 
 Rather than reading every word of every ToS, focus on high-risk sections:
@@ -127,6 +170,55 @@ Rather than reading every word of every ToS, focus on high-risk sections:
 
 Browser extensions like Terms of Service; Didn't Read (ToS;DR) provide community ratings for major services, offering quick insight into problematic clauses.
 
+For specific smart devices, look for these red flags in ToS:
+
+- **Unlimited retention**: "data stored indefinitely" or "no deletion timeline"
+- **Broad third-party sharing**: "we may share with any affiliated entities"
+- **Unilateral changes**: "we may modify this policy at any time without notice"
+- **Binding arbitration**: "disputes resolved through binding arbitration, not courts"
+- **Vague purposes**: "service improvement" or "business purposes" without specifics
+- **Cross-device tracking**: "data combined across your devices and accounts"
+
+A single device containing multiple red flags represents higher risk than one with transparent, limited data practices.
+
+## Specific Privacy Clauses to Watch For in Device ToS
+
+When evaluating devices before purchase, extract and analyze these specific sections:
+
+### "Device Health" and "Diagnostic Reporting"
+
+This language may sound innocent but often encompasses:
+
+- Every error your device encounters
+- Network connectivity diagnostics
+- Performance metrics revealing usage intensity
+- Battery health data
+- Thermal behavior
+
+One manufacturer's "device health reporting" eventually enabled insurers to estimate home temperature preferences and occupancy patterns for risk assessment.
+
+### "Ambient Audio" and "Always-Listening" Features
+
+Smart speakers' ToS commonly include ambiguous language about audio recording. Review for:
+
+- How long "short audio clips" are retained
+- What triggers recording beyond wake words
+- Whether human review of recordings is permitted
+- Data minimization practices
+
+Request the specific audio retention policy in writing before purchasing. Some manufacturers' official support documents contradict their ToS regarding retention periods.
+
+### "Improvement of Services" — The Catch-All Clause
+
+This deceptively simple phrase grants sweeping permissions for data use. It can legally encompass:
+
+- Training machine learning models
+- Behavioral research
+- Sharing with third-party researchers
+- Development of competing products using your data
+
+Always search for limitation clauses. Better ToS restrict this to "improving _this specific device_" rather than permitting unrestricted research use.
+
 ## Building Privacy-Conscious Habits
 
 The most effective strategy combines multiple protective measures:
@@ -136,6 +228,52 @@ The most effective strategy combines multiple protective measures:
 - **Network segmentation** – Isolate IoT devices from primary networks
 - **Regular audits** – Periodically review connected devices and permissions
 - **Firmware updates** – Keep devices patched against security vulnerabilities
+
+## Advanced Monitoring for Developer-Level Protections
+
+For those with technical expertise, packet inspection reveals what data devices transmit. Tools like Wireshark let you monitor network traffic and identify unexpected data flows to external servers.
+
+```bash
+# Monitor DNS queries from smart devices using tcpdump
+sudo tcpdump -i en0 -n 'udp port 53' | grep -E "(amazon|google|echo|alexa)"
+
+# Analyze traffic patterns to identify data exfiltration
+# Smart devices should only contact expected manufacturer domains
+```
+
+Additionally, firmware analysis tools like Binwalk can extract and examine device firmware for hardcoded APIs, telemetry endpoints, or data encoding schemes. While this requires technical skill, it represents the deepest level of verification available to power users.
+
+## When to Reconsider Device Purchases
+
+Some devices present such unfavorable privacy terms that alternatives warrant consideration:
+
+- **Smart speakers with poor voice retention policies**: Consider local-first alternatives like Mycroft
+- **Health trackers sharing data with advertisers**: Look for HIPAA-compliant alternatives for medical data
+- **Thermostats with location tracking**: Manual systems or privacy-respecting alternatives like Ecobee with local-only operation
+- **Cameras with cloud-dependent functionality**: Self-hosted options like Home Assistant with local NVR storage
+
+The device market increasingly includes privacy-conscious alternatives. Before accepting privacy-invasive ToS, compare with competitors offering stronger guarantees.
+
+## Real-World Example: Comparing Two Smart Thermostat ToS
+
+**Device A (Major Manufacturer)**: "We collect temperature data, occupancy patterns, and weather preferences. This data may be shared with affiliated companies for marketing purposes. We retain data indefinitely and may use it for developing AI models."
+
+**Device B (Privacy-Focused Alternative)**: "We collect only temperature and occupancy data necessary for device function. Local processing means no cloud transmission required. Users can request data deletion at any time, and we commit to deletion within 30 days. Data is never shared with third parties."
+
+The practical implications differ dramatically:
+
+- Device A could enable insurance companies to profile your home heating habits
+- Device A's indefinite retention means 10-year-old usage data still exists
+- Device B requires intentional deletion but guarantees removal
+- Device B's local processing eliminates cloud surveillance risks
+
+When evaluating devices, directly compare competitor ToS side-by-side using this framework. The price difference (usually 10-20% premium for privacy-focused devices) becomes negligible when you consider the value of your behavioral data.
+
+## Updating Devices and Policy Changes
+
+Most importantly, manufacturer privacy policies change. Register devices under your name and enable email notifications for policy updates. When Amazon, Google, Apple, or other manufacturers update their data practices, you receive notification. A single concerning change may justify replacing a device despite sunk costs.
+
+Document when you accepted the original ToS and what changes have occurred. This creates leverage if you later experience issues. In one case, a user demonstrated that data sharing permissions they accepted had been expanded three times without adequate notification, successfully requesting compensation.
 
 ## Related Reading
 

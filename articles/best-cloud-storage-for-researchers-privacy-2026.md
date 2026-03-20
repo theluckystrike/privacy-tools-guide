@@ -47,6 +47,8 @@ services:
 
 Nextcloud supports server-side encryption where the server holds keys, or you can enable end-to-end encryption via the desktop client for additional protection. The application provides collaborative editing, calendar integration, and over 200 community apps for specialized research workflows.
 
+For institutional deployment, Nextcloud handles user authentication through LDAP/Active Directory integration, allowing researchers to use existing institutional credentials without additional account management overhead.
+
 ### Syncthing
 
 For decentralized, direct synchronization between devices without cloud intermediaries, Syncthing operates as a peer-to-peer file sync protocol. It uses TLS for all transfers and stores only encrypted data at rest.
@@ -59,6 +61,22 @@ sudo systemctl start syncthing@username
 ```
 
 Syncthing works well for research teams at a single institution with reliable network connectivity. It avoids subscription costs entirely and exposes no data to third-party clouds. The trade-off is that synchronization requires at least one online device at all times and lacks the web interface convenience of hosted solutions.
+
+### IPFS and Distributed Storage
+
+For researchers requiring maximum decentralization, InterPlanetary File System (IPFS) offers distributed storage where files are stored across multiple nodes rather than centralized servers. This approach eliminates single points of failure and vendor lock-in entirely.
+
+```bash
+# Initialize IPFS node and add research dataset
+ipfs init
+ipfs add -r /path/to/research-data
+# Returns: QmHashOfYourData
+
+# Share via content-addressable hash
+# Other researchers can retrieve: ipfs get QmHashOfYourData
+```
+
+IPFS requires technical management but suits research workflows where long-term data availability matters more than traditional cloud convenience. Data pinning services like Pinata provide persistence guarantees without centralizing control.
 
 ## Zero-Knowledge Cloud Providers
 
@@ -84,6 +102,8 @@ await fs.promises.writeFile(
 
 This approach lets you use familiar platforms like Google Drive or Dropbox while adding encryption. The downside is that collaborative workflows become more complex since recipients need the same vault password and Cryptomator access.
 
+For researchers sharing data with collaborators, Cryptomator supports shared vaults where multiple users can access the same encrypted storage with different master passwords, each deriving their own encryption keys from their password while maintaining compatibility.
+
 ### Filen
 
 Filen offers native zero-knowledge encryption with a modern web interface. Their encryption model uses your password to derive keys locally, never transmitting usable key material to their servers. Monthly pricing falls below major commercial providers, making it viable for individual researchers or small labs.
@@ -106,6 +126,22 @@ Set-OrganizationConfig -CustomerKeyStatus "Enabled"
 ```
 
 These integrations simplify authentication via single sign-on but require careful key management configuration to maintain zero-knowledge properties.
+
+### Open-Source Alternatives: Seafile
+
+Seafile provides a middle ground between full self-hosting complexity and commercial cloud dependency. It combines desktop sync with server-side encryption where you manage encryption keys independently of the platform provider.
+
+```bash
+# Deploy Seafile server with encryption
+docker run -d \
+  -e SEAFILE_SERVER_HOSTNAME=research.institution.edu \
+  -e SEAFILE_ADMIN_EMAIL=admin@institution.edu \
+  -v /data/seafile:/shared \
+  -p 80:80 -p 443:443 \
+  seafileltd/seafile-mc:latest
+```
+
+Seafile supports concurrent editing, version control, and permission management suitable for team research environments. Unlike fully proprietary solutions, you can audit the codebase and deploy on institutional infrastructure.
 
 ### Versioning and Backup
 
@@ -137,6 +173,128 @@ The optimal solution balances security requirements against operational complexi
 
 For researchers handling sensitive data, the minimal recommendation is client-side encryption layered over any cloud backend. This protects against provider-side breaches while maintaining accessibility. Evaluate your specific requirements against these options, implement incrementally, and document your configuration for reproducibility.
 
+## Data Classification Framework for Research Teams
+
+Before selecting a solution, classify your research data:
+
+| Classification | Characteristics | Recommended Solution |
+|----------------|-----------------|----------------------|
+| Public | Published findings, methodologies, datasets | Any provider with basic TLS |
+| Institutional | Shared across department, publishable eventually | Nextcloud with institutional hosting |
+| Sensitive | Human subjects data, proprietary research | Zero-knowledge + encryption (Filen/Cryptomator) |
+| Restricted | HIPAA/FERPA compliance, legal restrictions | Self-hosted with audit logging |
+
+This framework prevents over-engineering simple public data while ensuring adequate protection for genuinely sensitive research.
+
+## Key Management Practices for Encrypted Storage
+
+If you implement client-side or zero-knowledge encryption, establish key management procedures:
+
+```yaml
+key_management_policy:
+  key_generation:
+    method: "cryptographically secure random"
+    minimum_entropy: 256
+  storage:
+    primary: "secure hardware key storage"
+    backup: "encrypted offline copies in physical safe"
+    rotation: "annually or after team changes"
+  sharing:
+    method: "in-person or verified video call"
+    verification: "fingerprint comparison before sharing"
+  recovery:
+    procedure: "documented escrow process"
+    testing: "quarterly recovery drills"
+```
+
+Strong key management separates convenience from security. A perfect zero-knowledge architecture fails if team members share passwords via email or lose encryption keys without recovery procedures.
+
+## Comparative Feature Matrix for Research Environments
+
+```markdown
+| Feature | Nextcloud | Syncthing | Cryptomator | Filen | Seafile |
+|---------|-----------|-----------|-------------|-------|---------|
+| E2E Encryption | Optional | Yes | Yes | Yes | Optional |
+| Self-Hosted | Yes | Yes | N/A | No | Yes |
+| Web Interface | Full | No | Mounting only | Full | Full |
+| Team Collaboration | Excellent | Good | Limited | Good | Good |
+| Versioning | 30+ days | All versions | All versions | 30+ days | Configurable |
+| Setup Complexity | Medium | Low | Medium | Low | Medium |
+| Cost | Free | Free | Free | $80-300/year | Free |
+| Compliance Ready | Yes | Limited | Yes | Limited | Yes |
+| Zero-Knowledge | No | Yes | Yes | Yes | No |
+| Offline Access | Yes | Yes | Yes | Web only | Limited |
+```
+
+This matrix helps researchers match features to specific requirements rather than adopting one-size-fits-all solutions.
+
+## Integration with Research Workflows
+
+Modern research requires seamless integration with analytics tools, version control, and collaboration platforms:
+
+- **Lab notebook integration**: Services like LabArchives connect to cloud storage for automatic backup
+- **Data analysis pipelines**: Jupyter notebooks can read directly from encrypted storage if properly configured
+- **Citation management**: Zotero, Mendeley sync with cloud storage for shared research libraries
+- **Version control**: Git repositories can be stored in zero-knowledge vaults for confidential research
+
+The technical challenge arises when researchers need both encryption transparency and workflow automation. Many research tools expect unencrypted storage access, requiring careful architecture decisions.
+
+## Disaster Recovery and Business Continuity
+
+Research data loss affects not just current projects but historical records needed for reproducibility and validation. Implement comprehensive recovery:
+
+```yaml
+disaster_recovery_framework:
+  rto_recovery_time_objective: "4 hours"
+  rpo_recovery_point_objective: "24 hours"
+  backup_strategy:
+    daily_backup:
+      destination: "separate physical location"
+      encryption: "separate encryption key from primary"
+      testing: "monthly recovery drills"
+    weekly_backup:
+      destination: "cold storage (offline)"
+      retention: "perpetual"
+    monthly_verification:
+      process: "full restoration test on isolated system"
+      sign_off: "documented by team lead"
+  incident_response:
+    discovery: "within 4 hours of problem detection"
+    notification: "to research team and compliance officer"
+    restoration: "from latest clean backup"
+```
+
+This framework prevents situations where a ransomware attack, accidental deletion, or hardware failure erases irreplaceable research data.
+
+## Migration Planning for Existing Research Data
+
+Moving large research datasets to new storage systems requires careful planning:
+
+1. **Inventory your current storage**: Identify all locations where research data exists (personal laptops, lab servers, cloud accounts, external drives)
+
+2. **Categorize by sensitivity**: Separate public data from sensitive data requiring encryption
+
+3. **Plan parallel operation**: Run old and new systems simultaneously for 30-60 days to verify functionality
+
+4. **Establish validation procedures**: Spot-check transferred data against source files to confirm integrity
+
+5. **Document the migration**: Create audit trail showing what was moved, when, and to where
+
+6. **Secure old storage**: Either securely erase old copies or maintain as offline backup
+
+Large migrations (terabytes of data) can take weeks. Budget time accordingly and avoid migrating immediately before paper deadlines or grant submissions.
+
+## Compliance and Institutional Requirements
+
+Research institutions impose specific storage requirements:
+
+- **HIPAA** (health research): Requires encryption at rest and in transit, access logging
+- **FERPA** (education records): Restricts third-party access, requires deletion procedures
+- **Export control** (national security research): May prohibit cloud storage entirely
+- **GDPR** (European researchers): Requires data protection impact assessments before cloud use
+- **Institutional policies**: Often mandate specific approved providers
+
+Before selecting any solution, consult your institution's compliance office. Many universities maintain approved vendor lists and pre-negotiated contracts providing better security terms than individual researchers could obtain.
 
 ## Related Reading
 
