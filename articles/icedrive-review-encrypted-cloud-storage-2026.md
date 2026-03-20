@@ -159,6 +159,147 @@ For CLI-first workflows, test the WebDAV mount or rclone configuration before re
 
 IceDrive provides a functional zero-knowledge storage option for developers who value simplicity and cross-platform support. The service won't suit every use case, but for individual developers and small teams seeking encrypted cloud backup without complex infrastructure, it represents a viable choice in 2026's storage landscape.
 
+## Threat Model Considerations
+
+IceDrive's security model assumes an adversary cannot access your device or intercept your communications. Where IceDrive excels and struggles depends on your specific threat model.
+
+**Strong against:**
+- Cloud provider breaches (IceDrive cannot read your data)
+- Law enforcement requests to IceDrive (service has no unencrypted data to provide)
+- Passive network eavesdropping (communications encrypted end-to-end)
+
+**Vulnerable to:**
+- Compromised local device (attacker can access decrypted files during use)
+- Keyloggers capturing your password
+- Your account credentials compromised (attacker gains access to encrypted vault)
+- Malware exfiltrating files before encryption
+- Supply chain attacks on the desktop client
+
+For highest security, combine IceDrive with additional measures: use full-disk encryption, run antimalware, enable two-factor authentication, and isolate sensitive work to air-gapped systems.
+
+## Platform-Specific Considerations
+
+### Linux Desktop Integration
+
+The Linux client requires FUSE (Filesystem in Userspace) support and may encounter compatibility issues with certain distributions:
+
+```bash
+# Ubuntu/Debian setup
+sudo apt-get install libfuse-dev
+
+# Fedora/RHEL setup
+sudo dnf install fuse-devel
+
+# Verify FUSE support
+mount | grep fuse
+```
+
+FUSE mounting creates a standard filesystem interface, enabling integration with existing Linux tools:
+
+```bash
+# Use standard commands with IceDrive
+ls -la ~/IceDrive/
+cp ~/projects/* ~/IceDrive/backup/
+rsync -av ~/important-data ~/IceDrive/
+```
+
+### macOS Compatibility
+
+macOS requires macFUSE (previously OSXFUSE) for native mounting. The installation process is more involved than Linux but provides seamless integration once configured.
+
+### Windows BitLocker Integration
+
+Consider combining IceDrive with Windows BitLocker for additional disk encryption:
+
+```powershell
+# Enable BitLocker on IceDrive volume
+# Adjust X: to your actual IceDrive drive letter
+Enable-BitLocker -MountPoint "X:" -EncryptionMethod XtsAes256
+```
+
+This provides defense-in-depth: even if IceDrive's encryption is compromised, Windows BitLocker adds another layer.
+
+## Advanced Usage: Encrypted Containers Within IceDrive
+
+For data requiring higher security than standard IceDrive encryption, create encrypted containers stored within IceDrive:
+
+```bash
+# Create VeraCrypt encrypted container in IceDrive
+veracrypt --text --create /Volumes/IceDrive/sensitive.vc
+
+# Mount the container
+veracrypt /Volumes/IceDrive/sensitive.vc /mnt/sensitive
+
+# Store this in a shell function for convenience
+function mount_secure() {
+    veracrypt /Volumes/IceDrive/sensitive.vc /mnt/sensitive
+}
+```
+
+This creates nested encryption: VeraCrypt encryption for files, then IceDrive encryption for the entire container file before upload.
+
+## Sync Behavior and Bandwidth Optimization
+
+IceDrive's sync engine can consume significant bandwidth during initial setup. Optimize sync behavior:
+
+```bash
+# IceDrive preferences for bandwidth limiting
+# Windows Registry (if using Windows client)
+# Set max upload speed to 10 MB/s
+# Set max download speed to 50 MB/s
+```
+
+Monitor initial syncs carefully if you have data caps. A 100GB initial sync consumes substantial bandwidth and may trigger ISP throttling on capped connections.
+
+## Recovery Procedures
+
+If you forget your IceDrive password, recovery is impossible—the zero-knowledge architecture means IceDrive cannot reset your password. Protect your password by:
+
+```bash
+# Generate a strong password
+openssl rand -base64 32
+
+# Store it in a secure location (hardware key, encrypted vault)
+# Test password recovery before storing sensitive data
+```
+
+Before committing critical data to IceDrive, perform a test deletion and recovery to verify your backup and restore procedures work.
+
+## Compliance and Data Residency
+
+For organizations with data residency requirements, IceDrive's UK infrastructure may or may not satisfy obligations.
+
+**GDPR Compliance:**
+- IceDrive uses EU data centers (UK-based after Brexit)
+- UK is recognized as having adequate data protection
+- Standard Data Processing Agreement available
+- Suitable for EU customer data storage
+
+**HIPAA Compliance:**
+- IceDrive does NOT offer HIPAA BAA (Business Associate Addendum)
+- Not recommended for healthcare data containing PHI
+- Consider Tresorit or Sync.com for HIPAA-covered data
+
+**SOC 2 Compliance:**
+- IceDrive maintains basic compliance but has not published SOC 2 reports
+- Not suitable for organizations requiring independent security audits
+- Competitors like Filen and Tresorit publish detailed reports
+
+Document your data storage provider in your compliance matrix:
+
+```markdown
+# Data Storage Provider Selection Matrix
+
+| Requirement | IceDrive | Proton Drive | Tresorit |
+|------------|----------|-------------|----------|
+| Zero-Knowledge | Yes | Yes | Yes |
+| GDPR Compliant | Yes | Yes | Yes |
+| HIPAA Ready | No | No | Yes |
+| SOC 2 Type II | No | No | Yes |
+| GDPR BAA | Yes | Limited | Yes |
+| Max File Size | 10GB | 5GB | 2GB |
+| Cost | $5/50GB | $4/200GB | $12/100GB |
+```
 
 ## Related Reading
 
