@@ -150,6 +150,228 @@ When evaluating VPN providers, consider:
 
 4. **Update frequency**: Cryptographic vulnerabilities are discovered periodically. VPNs that regularly update their cryptographic implementations provide better security.
 
+## Elliptic Curve Diffie-Hellman (ECDH) for Modern VPNs
+
+While traditional DH works mathematically, Elliptic Curve variants offer advantages:
+
+### Curve25519 Implementation
+
+WireGuard uses Curve25519, an elliptic curve providing 128-bit security with 256-bit keys:
+
+```python
+# Conceptual ECDH using Curve25519
+from cryptography.hazmat.primitives.asymmetric import x25519
+
+# Generate key pairs (replaces DH prime/generator setup)
+alice_private_key = x25519.X25519PrivateKey.generate()
+bob_private_key = x25519.X25519PrivateKey.generate()
+
+# Exchange public keys
+alice_public = alice_private_key.public_key()
+bob_public = bob_private_key.public_key()
+
+# Compute shared secret (same result on both sides)
+alice_shared_secret = alice_private_key.exchange(bob_public)
+bob_shared_secret = bob_private_key.exchange(alice_public)
+
+assert alice_shared_secret == bob_shared_secret
+```
+
+Curve25519 offers:
+- Smaller key sizes (256-bit ≈ 3072-bit DH security)
+- Faster computation
+- Stronger security guarantees
+- Resistance to timing attacks
+
+### Why Curves Win Modern Adoption
+
+| Aspect | DH | ECDH |
+|--------|----|----- |
+| Key Size | 2048-4096 bit | 256-521 bit |
+| Computation | Slower | Much faster |
+| Security Level | Good | Excellent |
+| Side-channel Risk | Higher | Lower |
+| Hardware Support | Limited | Widespread |
+
+All modern VPN protocols (WireGuard, Signal, TLS 1.3) use ECDH variants.
+
+## Post-Quantum Cryptography Concerns
+
+Diffie-Hellman's security rests on the discrete logarithm problem being hard. Quantum computers could theoretically solve this in polynomial time using Shor's algorithm.
+
+### Timeline Considerations
+
+- **Current**: Quantum computers insufficient for cryptanalysis
+- **2030-2035**: Potential cryptographically relevant quantum computers (CRQCs)
+- **Threat**: "Harvest now, decrypt later" attacks storing encrypted data for future decryption
+
+### Hybrid Approaches
+
+Some VPN providers explore hybrid key exchange combining DH and post-quantum algorithms:
+
+```
+Traditional: DH (vulnerable to quantum)
+Hybrid: DH + Kyber (lattice-based post-quantum)
+Result: Secure even if either algorithm breaks
+```
+
+WireGuard developers explicitly rejected hybrid approaches (adds complexity without current threat), though this may change if quantum threats materialize.
+
+## Practical Implementation Issues
+
+### Side-Channel Vulnerabilities
+
+Naive DH implementations leak information through timing:
+
+```python
+# VULNERABLE: Timing reveals bit patterns
+def modular_exponentiation_naive(base, exp, mod):
+    result = 1
+    while exp > 0:
+        if exp % 2 == 1:
+            result = (result * base) % mod
+        base = (base * base) % mod
+        exp //= 2
+    return result
+
+# Time to complete varies based on exponent bits
+# Attackers can infer private exponent from timing
+```
+
+Modern crypto libraries use constant-time implementations preventing timing attacks.
+
+### Random Number Generation
+
+DH security critically depends on quality random numbers for generating private keys:
+
+```python
+import os
+from cryptography.hazmat.primitives.asymmetric import dh
+
+# CORRECT: Cryptographically secure random
+def generate_secure_dh_private():
+    parameters = dh.generate_parameters(generator=2, key_size=2048)
+    return parameters.generate_private_key()
+
+# WRONG: Using weak random
+import random
+weak_private = random.randint(1, large_prime)  # DO NOT USE
+```
+
+Uses of weak random sources have caused real-world crypto failures.
+
+## Analyzing VPN Protocols for Key Exchange
+
+### WireGuard Analysis
+
+```bash
+# WireGuard uses:
+# - Curve25519 for ECDH
+# - ChaCha20-Poly1305 for encryption
+# - BLAKE2s for hashing
+
+# Key exchange happens once per session
+# Each session gets independent encryption key
+# All parameters public; security from cryptography strength
+```
+
+Minimal protocol surface reduces attack surface compared to complex protocols.
+
+### OpenVPN Analysis
+
+```bash
+# OpenVPN supports:
+# - Traditional DH (configurable size)
+# - ECDH with various curves
+# - TLS handshake for authentication
+# - Renegotiation for key updates
+
+# Default: 2048-bit DH + TLS 1.2
+# Modern: ECDH with TLS 1.3
+
+# Complexity: More implementation surface than WireGuard
+```
+
+OpenVPN's flexibility allows weak configurations if not carefully tuned.
+
+## Verifying Key Exchange in Production
+
+For operators running VPNs, verify proper key exchange:
+
+```bash
+# Inspect TLS handshake
+openssl s_client -connect vpn.example.com:443 -showcerts
+
+# Check key exchange algorithm in handshake
+# Look for: ECDHE (Elliptic Curve Diffie-Hellman Ephemeral)
+
+# Verify certificate chain validity
+# Ensure no self-signed certs in trust chain
+```
+
+Weak handshakes indicate configuration issues or potential compromise.
+
+## Future Directions in Key Exchange
+
+### Kyber Post-Quantum Candidate
+
+NIST selected Kyber (now ML-KEM) as post-quantum encryption standard:
+
+```python
+# Conceptual Kyber usage (library not yet widely available)
+# Uses lattice problems instead of discrete log/discrete curve log
+
+def kyber_hybrid_exchange():
+    """Combine Kyber with Curve25519 for hybrid security"""
+    # Generate both DH and Kyber key pairs
+    dh_pair = generate_x25519_pair()
+    kyber_pair = generate_kyber1024_pair()
+
+    # Peer does same
+
+    # Exchange both public keys
+    shared_secret_dh = dh_pair.private.exchange(peer_dh_public)
+    shared_secret_kyber = kyber_pair.decapsulate(peer_kyber_ciphertext)
+
+    # Combine into single key
+    final_key = hash(shared_secret_dh + shared_secret_kyber)
+    return final_key
+```
+
+Adoption will gradually shift VPN protocols toward post-quantum security over next 5-10 years.
+
+### Perfect Forward Secrecy Evolution
+
+All modern protocols implement PFS, but mechanisms vary:
+
+```
+Traditional: Single long-term key + occasional new session keys
+Perfect: Every packet gets independent key material
+Goal: Compromise of long-term key doesn't expose session key history
+```
+
+WireGuard achieves strong PFS; some configurations of older protocols require explicit tuning.
+
+## Debugging Key Exchange Issues
+
+When VPN connections fail:
+
+```bash
+# Capture handshake traffic
+tcpdump -i eth0 'tcp port 443 or tcp port 1194' -w capture.pcap
+
+# Analyze in Wireshark
+wireshark capture.pcap
+
+# Look for:
+# - Complete handshake (Client Hello → Server Hello → ...  → Finished)
+# - Proper cipher suite selection
+# - Certificate validation steps
+# - Unexpected connection resets
+```
+
+Incomplete handshakes indicate key exchange issues.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

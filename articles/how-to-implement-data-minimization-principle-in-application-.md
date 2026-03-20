@@ -292,9 +292,111 @@ class PrivacyAwareLogger:
         logging.info(f"{action}: {safe_data}")
 ```
 
+## Auditing Existing Data Collections
+
+When joining a team with an existing codebase, the first step is mapping what personal data the application already collects. An automated schema audit gives you a starting inventory:
+
+```python
+import psycopg2
+from typing import List, Dict
+
+# Column names that commonly contain personal data
+PII_COLUMN_PATTERNS = [
+    'email', 'phone', 'name', 'address', 'zip', 'postal',
+    'dob', 'birth', 'ssn', 'ip_address', 'location',
+    'lat', 'lon', 'device_id', 'user_agent', 'fingerprint'
+]
+
+def audit_schema_for_pii(conn_string: str) -> List[Dict]:
+    """Scan all tables and flag columns that likely contain personal data."""
+    conn = psycopg2.connect(conn_string)
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT table_name, column_name, data_type
+        FROM information_schema.columns
+        WHERE table_schema = 'public'
+        ORDER BY table_name, ordinal_position
+    """)
+
+    findings = []
+    for table, column, dtype in cur.fetchall():
+        col_lower = column.lower()
+        if any(pattern in col_lower for pattern in PII_COLUMN_PATTERNS):
+            findings.append({
+                "table": table,
+                "column": column,
+                "type": dtype,
+                "flag": "Likely PII — review for necessity"
+            })
+
+    conn.close()
+    return findings
+
+# Usage
+findings = audit_schema_for_pii("postgresql://user:pass@localhost/mydb")
+for f in findings:
+    print(f"{f['table']}.{f['column']} ({f['type']}) — {f['flag']}")
+```
+
+Run this audit and export the results to a spreadsheet. For each flagged column, document the business purpose it serves. Columns with no documented purpose are candidates for removal in the next schema migration.
+
+## Designing Registration Flows for Minimization
+
+Registration forms are the primary point where applications over-collect. A minimized registration should request the fewest fields needed to create a working account. Progressive disclosure — asking for additional information only when a feature that requires it is accessed — keeps the initial profile lean:
+
+```javascript
+// Minimal registration: email + password only
+const registerSchema = {
+  email: { type: 'string', format: 'email', required: true },
+  password: { type: 'string', minLength: 12, required: true }
+  // NOT: first_name, last_name, phone, dob, address
+  // Collect those only when the user accesses a feature that genuinely needs them
+};
+
+// When user first requests billing, ask only then
+const billingSchema = {
+  billing_name: { type: 'string', required: true },    // Name on card
+  // Delegate everything else to your payment processor's hosted form
+  // Never store card numbers or CVV in your application
+};
+```
+
+This pattern also reduces abandonment rates — shorter forms convert better — while simultaneously reducing your data liability.
+
+## Anonymizing Analytics Without Losing Insights
+
+Analytics are a common source of unnecessary personal data retention. You can capture meaningful usage metrics without storing user-identifying information:
+
+```python
+import hashlib
+from datetime import date
+
+def anonymize_event(user_id: str, event: dict) -> dict:
+    """
+    Convert a user event into an anonymized analytics record.
+    Uses a rotating daily salt so the pseudonym cannot be
+    linked across days.
+    """
+    daily_salt = date.today().isoformat()
+    pseudonym = hashlib.sha256(
+        f"{daily_salt}:{user_id}".encode()
+    ).hexdigest()[:16]
+
+    return {
+        "session_id": pseudonym,      # Rotates daily, not linkable long-term
+        "event": event["name"],
+        "page": event.get("page"),
+        "timestamp": event["timestamp"],
+        # Excluded: user_id, ip_address, user_agent, email
+    }
+```
+
+Daily rotation of the salt means you can count unique sessions within a day (for DAU metrics) without building a long-term profile that links a user's behavior across weeks or months.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

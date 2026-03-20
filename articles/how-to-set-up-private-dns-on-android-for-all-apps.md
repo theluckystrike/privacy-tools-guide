@@ -148,6 +148,140 @@ Understanding what Private DNS does not protect is important for security-consci
 
 For users requiring full traffic encryption alongside DNS privacy, combining Private DNS with a VPN service provides protection.
 
+## Threat Model Analysis for DNS Privacy
+
+Different users face different threats. Understanding your specific threat model helps determine appropriate DNS configuration.
+
+**ISP Surveillance**: Your internet service provider can observe DNS queries without Private DNS. Switching to Private DNS prevents ISP-level tracking.
+
+**Network-Level Monitoring**: Public WiFi networks capture plaintext DNS. Private DNS encrypts these queries from the network operator.
+
+**DNS Hijacking**: Some networks redirect DNS to tracking servers. Private DNS prevents this attack by verifying the DNS provider's TLS certificate.
+
+**Geolocation via DNS**: Services use DNS resolver location to infer your location. Switching DNS providers may change geo-blocking results.
+
+## Provider Comparison: Privacy and Performance
+
+Choosing the right provider involves tradeoffs:
+
+| Provider | Encryption | Logging | Speed | Jurisdiction | Cost |
+|----------|-----------|---------|-------|--------------|------|
+| Cloudflare (1.1.1.1) | DoT/DoH | No logs (claimed) | Fastest | US | Free |
+| Quad9 (9.9.9.9) | DoT/DoH | IP logs deleted hourly | Good | Swiss | Free |
+| NextDNS | DoT/DoH | Configurable retention | Good | US | Free - $19.99/year |
+| UncensoredDNS | DoT | No logs | Good | Denmark | Free |
+| Mullvad (default) | DoT | No logs | Good | Sweden | Free |
+
+Quad9 and Mullvad lean toward privacy-first; Cloudflare prioritizes speed.
+
+## Advanced Configuration with DNS Blocking
+
+Some users want Private DNS combined with ad/tracker blocking:
+
+```bash
+# NextDNS allows configuration via API
+# Example: Create a blocking profile
+
+curl -X POST "https://api.nextdns.io/profiles" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "blocking-profile",
+    "settings": {
+      "block_ads": true,
+      "block_malware": true,
+      "block_trackers": true
+    }
+  }'
+```
+
+This profile can then be used in Android's Private DNS setting.
+
+## Bypassing DNS Blocking in Restricted Networks
+
+In environments where DNS blocking prevents access to certain sites:
+
+```bash
+# Test if specific domain is blocked
+nslookup example.com your-private-dns-provider
+
+# If blocked, use alternate resolution paths
+# Configure VPN with custom DNS
+# Or use DNS-over-HTTPS (DoH) instead of DoT for better obfuscation
+```
+
+DNS-over-HTTPS may evade some network-level blocks because it uses standard HTTPS ports (443) rather than dedicated DNS ports.
+
+## Monitoring DNS Configuration with ADB
+
+For power users wanting verification:
+
+```bash
+# ADB commands to inspect DNS settings
+adb shell settings get global private_dns_specifier
+
+# View all DNS-related properties
+adb shell getprop | grep dns
+```
+
+This helps confirm Private DNS is active and reveals fallback behavior.
+
+## Integration with VPN Services
+
+When using Private DNS alongside a VPN:
+
+```bash
+# Ensure DNS doesn't leak outside VPN tunnel
+# Configure on Linux with systemd-resolved
+
+[Resolve]
+DNS=1.1.1.1 1.0.0.1
+FallbackDNS=
+Domains=
+DNSSEC=yes
+DNSSECNegativeTrustAnchors=
+```
+
+This configuration forces DNS through only specified servers, preventing leaks.
+
+## DNS Privacy in Development and Testing
+
+For developers testing applications:
+
+```kotlin
+// Example: Detecting DNS-over-TLS in Android
+fun isDnsEncrypted(context: Context): Boolean {
+    val connectivityManager =
+        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+    val network = connectivityManager.activeNetwork ?: return false
+    val linkProperties = connectivityManager.getLinkProperties(network) ?: return false
+
+    return linkProperties.dnsServers.any {
+        it.hostAddress == "one.one.one.one" // Cloudflare DoT
+    }
+}
+```
+
+This helps applications verify DNS configuration meets security requirements.
+
+## Troubleshooting Unresponsive DNS Providers
+
+If Private DNS stops working:
+
+```bash
+# Test connectivity to DNS provider
+adb shell ping one.one.one.one
+
+# Check for connectivity timeouts
+adb logcat | grep -i dns
+
+# Temporarily disable for network access
+# Then re-enable once network stabilizes
+```
+
+Network instability sometimes breaks DoT connections. Temporarily disabling helps identify the root cause.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
