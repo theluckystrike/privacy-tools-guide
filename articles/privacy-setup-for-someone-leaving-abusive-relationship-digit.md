@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup for Someone Leaving Abusive Relationship."
 description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure."
