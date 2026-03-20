@@ -7,7 +7,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /data-privacy-framework-eu-us-explained-2026/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 intent-checked: true

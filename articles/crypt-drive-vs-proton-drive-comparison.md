@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /crypt-drive-vs-proton-drive-comparison/
 categories: [comparisons, security, guides]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, comparison]
 ---
 
 {% raw %}

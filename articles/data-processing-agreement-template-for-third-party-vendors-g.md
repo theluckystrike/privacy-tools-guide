@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /data-processing-agreement-template-for-third-party-vendors-g/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true
