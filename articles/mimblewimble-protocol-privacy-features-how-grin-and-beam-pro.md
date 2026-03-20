@@ -7,7 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
