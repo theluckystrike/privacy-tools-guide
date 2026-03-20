@@ -3,8 +3,11 @@ layout: default
 title: "Cloud Storage Security Breach History: Compromised Services Timeline 2026"
 description: "A comprehensive timeline of cloud storage security breaches and compromised services for developers and power users. Learn from past incidents and secure your data."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /cloud-storage-security-breach-history-compromised-services-t/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}

@@ -3,10 +3,12 @@ layout: default
 title: "Cloud Storage Subpoena Risk: Provider Law Enforcement Compliance Guide"
 description: "Understand how cloud storage providers respond to law enforcement subpoenas, the data they can and cannot access, and strategies developers can use to protect user data."
 date: 2026-03-16
-author: theluckystrike
-permalink: /cloud-storage-subpoena-risk-provider-law-enforcement-compliance/
+author: "Privacy Tools Guide"
+permalink: /cloud-storage-subpoena-risk-provider-law-enforcement-complia/
 categories: [privacy, security, compliance]
 tags: [cloud-storage, subpoena, law-enforcement, privacy]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
