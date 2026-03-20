@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /best-vpn-for-business-travelers-to-china-reliable-connection/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, vpn]
