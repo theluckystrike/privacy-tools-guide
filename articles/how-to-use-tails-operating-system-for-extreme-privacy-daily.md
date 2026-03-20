@@ -118,6 +118,12 @@ Integrating TAILS into your daily workflow provides powerful privacy guarantees 
 
 The learning curve is modest for Linux users, and the security benefits justify the adjustment. Your activities leave no trace, your network traffic exits through Tor, and your persistent data remains encrypted. For anyone serious about operational security and digital privacy, TAILS delivers on its promise of extreme privacy.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

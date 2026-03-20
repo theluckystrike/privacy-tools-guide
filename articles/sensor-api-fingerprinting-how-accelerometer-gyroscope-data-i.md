@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Sensor API Fingerprinting: How Accelerometer and Gyroscope Data Identifies Phones"
-description: "Learn how websites use the Sensor API to fingerprint devices using accelerometer and gyroscope data. Understand the technical mechanisms, code examples, and privacy implications for developers and power users."
+title: "Sensor API Fingerprinting: How Accelerometer and."
+description: "Learn how websites use the Sensor API to fingerprint devices using accelerometer and gyroscope data. Understand the technical mechanisms, code."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/
@@ -212,6 +212,12 @@ The Sensor API represents a powerful but underappreciated vector for device fing
 For developers, the takeaway is clear: request sensor permissions only when necessary, implement appropriate privacy safeguards, and consider the implications of collecting high-resolution sensor data. For power users, awareness of sensor-based tracking is the first step toward implementing effective countermeasures.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

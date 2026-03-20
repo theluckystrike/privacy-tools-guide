@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Setup for Someone Leaving Abusive Relationship: Digital Safety Guide"
-description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure communications, and practical implementation patterns."
+title: "Privacy Setup for Someone Leaving Abusive Relationship."
+description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
@@ -236,6 +236,12 @@ Security isn't a one-time configuration. Establish regular review habits:
 Digital safety for someone leaving an abusive relationship requires immediate, decisive action combined with ongoing vigilance. The implementations above provide technical foundations, but the human element matters equally. Ensure the person understands why these measures matter, and provide support for maintaining them.
 
 Start with the highest-impact changes first: new email, new phone number, and device hardening. Build from there based on threat model and resources available. Every layer of security makes surveillance more difficult—and safety more achievable.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

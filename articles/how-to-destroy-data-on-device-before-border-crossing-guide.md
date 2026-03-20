@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Destroy Data on Device Before Border Crossing Guide"
-description: "A technical guide for developers and power users on securely destroying data on devices before border crossings. Covers forensic data removal, encryption key destruction, and practical implementation."
+description: "A technical guide for developers and power users on securely destroying data on devices before border crossings. Covers forensic data removal."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/
@@ -205,6 +205,12 @@ For most developers and power users, cryptographic erasure combined with careful
 7. Consider whether carrying the device is necessary
 
 By implementing these techniques, developers can protect sensitive intellectual property and maintain privacy at international borders without sacrificing device functionality entirely.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

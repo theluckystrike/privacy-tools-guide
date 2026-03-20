@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Employee Workplace Surveillance Laws: Security Cameras, Keystroke Logging, and GPS Tracking by State"
-description: "A comprehensive guide to employee workplace surveillance laws across US states. Learn about security camera regulations, keystroke logging legality, GPS tracking restrictions, and what developers and power users need to know."
+title: "Employee Workplace Surveillance Laws: Security Cameras."
+description: "A comprehensive guide to employee workplace surveillance laws across US states. Learn about security camera regulations, keystroke logging legality."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /employee-workplace-surveillance-laws-security-cameras-keystr/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -188,6 +188,12 @@ State legislatures continue introducing employee surveillance bills. The trend f
 For developers building enterprise monitoring tools, prioritize consent workflows and audit logging as foundational features. These capabilities will become increasingly important as the regulatory ecosystem evolves.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

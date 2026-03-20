@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "What to Do If You Accidentally Shared Your Screen with Sensitive Info"
-description: "Learn immediate steps to take when you accidentally expose sensitive information during screen sharing. Covers containment, platform-specific actions, and prevention strategies for developers and power users."
+title: "What to Do If You Accidentally Shared Your Screen with."
+description: "Learn immediate steps to take when you accidentally expose sensitive information during screen sharing. Covers containment, platform-specific actions."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-you-accidentally-shared-screen-with-sensitive-/
@@ -168,6 +168,12 @@ Provide your security team with details: what was exposed, for how long, who was
 ## Conclusion
 
 Accidental screen sharing happens, but a structured response minimizes damage. Stop sharing immediately, assess the exposure scope, take platform-specific recovery actions, and implement prevention strategies for the future. For developers, treating screen sharing sessions like any other security boundary—using clean environments, clearing history, and enabling alerts—turns an accidental leak into a manageable incident rather than a critical breach.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

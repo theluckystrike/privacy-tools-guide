@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Threat Model for Religious Minority in Persecuting Country: Digital Safety Guide"
-description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers risk assessment, encryption strategies, communication security, and operational security for developers and power users."
+title: "Threat Model for Religious Minority in Persecuting."
+description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers risk assessment, encryption strategies, communication."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-religious-minority-in-persecuting-country-d/
@@ -188,6 +188,12 @@ Start with the highest-risk assets and highest-impact threats. Implement increme
 Your faith community's survival may depend on the digital defenses you build today.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Secure Communication for Labor Strike Organizing"
-description: "A practical technical guide for developers and power users to build secure communication infrastructure for labor strike organizing. Covers encryption, self-hosted tools, threat models, and implementation examples."
+title: "How to Set Up Secure Communication for Labor Strike."
+description: "A practical technical guide for developers and power users to build secure communication infrastructure for labor strike organizing. Covers encryption."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
@@ -215,6 +215,12 @@ veracrypt --create --size=500M --volume-type=normal \
 Effective labor strike communication requires layered security: end-to-end encrypted messaging (Signal, Session), self-hosted infrastructure when you need control (Matrix), secure file sharing (PrivateBin, Syncthing), and disciplined operational practices. The tools and techniques in this guide provide practical starting points for developers and power users building organizing infrastructure that protects both communication content and participant identities.
 
 Security is a process, not a product. Regularly audit your communication practices, rotate credentials, and maintain operational security awareness throughout your campaign.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

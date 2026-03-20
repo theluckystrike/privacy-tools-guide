@@ -194,6 +194,12 @@ If you experience performance issues with multiple cameras, consider these adjus
 
 Frigate provides a powerful, private alternative to cloud-based security camera systems. Your footage stays on your hardware, costs are limited to upfront equipment purchases, and you have complete control over your data. Start with one or two cameras and expand as needed—the modular configuration makes adding new cameras straightforward.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

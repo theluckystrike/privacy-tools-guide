@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Audit Your Digital Footprint and Find All Accounts Linked to Email: A Developer Guide"
-description: "A practical guide for developers and power users to discover, audit, and manage all accounts linked to your email addresses. Learn CLI tools, automated scripts, and manual techniques for comprehensive digital footprint mapping."
+title: "How to Audit Your Digital Footprint and Find All."
+description: "A practical guide for developers and power users to discover, audit, and manage all accounts linked to your email addresses. Learn CLI tools, automated."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-your-digital-footprint-and-find-all-accounts-li/
@@ -257,6 +257,12 @@ Regular reviews catch new accounts you create and identify breaches in newly-com
 Auditing your digital footprint requires systematic investigation across multiple data sources. No single method reveals every account—combining password manager exports, breach databases, service enumeration tools, and manual verification provides comprehensive visibility. Once you know your complete account inventory, securing and pruning unnecessary presences becomes straightforward.
 
 Regular audits, perhaps quarterly, help maintain control over your digital identity. As you create new accounts, document them immediately rather than discovering them months or years later through a breach notification.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

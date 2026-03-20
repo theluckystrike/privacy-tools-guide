@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Article 17 Erasure Implementation Code: A Developer Guide"
+title: "GDPR Article 17 Erasure Implementation Code: A Developer."
 description: "Practical implementation guide for GDPR Article 17 right to erasure. Code examples for handling data deletion requests in your applications."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -216,6 +216,12 @@ When building your erasure system, link all data to a single user identifier acr
 These patterns cover the core obligations: complete database deletion, third-party notification, and an audit trail for regulatory review.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

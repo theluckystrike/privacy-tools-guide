@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "What to Do If Your Identity Was Stolen Online: A Step-by-Step Technical Guide"
-description: "A practical guide for developers and power users on how to respond when your identity has been stolen online. Covers immediate actions, account recovery, monitoring, and prevention."
+title: "What to Do If Your Identity Was Stolen Online: A."
+description: "A practical guide for developers and power users on how to respond when your identity has been stolen online. Covers immediate actions, account."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -231,6 +231,12 @@ Identity theft recovery requires methodical action. Secure your email first, the
 
 The time invested in recovery builds habits that make your digital life more secure going forward.
 
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

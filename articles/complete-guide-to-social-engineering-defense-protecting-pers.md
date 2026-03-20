@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Complete Guide to Social Engineering Defense: Protecting Personal Information"
-description: "Learn practical social engineering defense strategies for developers and power users. This guide covers psychological manipulation tactics, real-world attack examples, code-level defenses, and personal information protection techniques."
+title: "Complete Guide to Social Engineering Defense: Protecting."
+description: "Learn practical social engineering defense strategies for developers and power users. This guide covers psychological manipulation tactics, real-world."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /complete-guide-to-social-engineering-defense-protecting-pers/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -205,6 +205,12 @@ When you suspect a social engineering attempt:
 Social engineering defense requires combining technical controls with psychological awareness. By implementing the code-level protections outlined here, minimizing your personal information exposure, and developing a questioning mindset, you significantly reduce your vulnerability to these attacks. Remember: the strongest security systems fail when humans are manipulated into granting access.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

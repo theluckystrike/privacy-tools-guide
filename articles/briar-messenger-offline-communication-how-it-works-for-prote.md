@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Briar Messenger Offline Communication: How It Works for Protest Situations"
+title: "Briar Messenger Offline Communication: How It Works for."
 description: "A technical deep-dive into Briar messenger's offline-first architecture, Bluetooth and Wi-Fi mesh networking, and how it enables secure communication when internet access is unavailable."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -183,6 +183,12 @@ Developers can examine the source code on GitHub to understand the exact securit
 Briar represents a fundamentally different approach to messaging—one that eliminates server-based infrastructure entirely and instead relies on the collective network formed by participants' devices. For protest situations where internet access is unavailable or deliberately blocked, this architecture provides a resilient communication channel that scales with participant density.
 
 The trade-offs are significant: limited range, no asynchronous long-distance messaging, and the need for physical proximity during initial contact setup. For developers and power users evaluating Briar for high-risk scenarios, the key is understanding these constraints and planning deployments that account for them—ensuring sufficient device density, strategic relay placement, and proper operational security practices.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

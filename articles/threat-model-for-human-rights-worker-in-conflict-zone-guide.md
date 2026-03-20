@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Threat Model for Human Rights Worker in Conflict Zone: A Practical Guide"
-description: "A comprehensive threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement effective security measures."
+title: "Threat Model for Human Rights Worker in Conflict Zone: A."
+description: "A comprehensive threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
@@ -177,6 +177,12 @@ Document your threat modeling process even if imperfect. The act of systematical
 Effective security for human rights workers in conflict zones requires moving beyond generic security advice to targeted threat modeling. By understanding your specific assets, profiling your adversaries, and implementing mitigations proportionate to identified risks, you can significantly reduce your attack surface while continuing vital human rights documentation work.
 
 The goal is not perfect security—that is unachievable against sophisticated state adversaries—but rather raising the cost and difficulty of compromise high enough that adversaries seek easier targets. A well-constructed threat model, consistently applied, achieves exactly this.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

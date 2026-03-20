@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "LLMNR and NetBIOS Name Resolution Privacy: Disabling Windows Protocols That Leak Hostnames on Your Network"
-description: "A technical guide for developers and power users to disable LLMNR and NetBIOS name resolution on Windows, preventing hostname leakage that exposes your device identity across the network."
+title: "LLMNR and NetBIOS Name Resolution Privacy: Disabling."
+description: "A technical guide for developers and power users to disable LLMNR and NetBIOS name resolution on Windows, preventing hostname leakage that exposes your."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
@@ -243,6 +243,12 @@ The methods outlined above provide multiple approaches—from simple registry mo
 The privacy gains from disabling these legacy protocols typically outweigh the minimal functionality loss, especially on modern networks where DNS provides reliable name resolution.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

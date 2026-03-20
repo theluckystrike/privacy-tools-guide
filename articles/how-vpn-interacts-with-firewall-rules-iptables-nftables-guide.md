@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How VPN Interacts with Firewall Rules: iptables and nftables Guide"
-description: "A comprehensive technical guide explaining how VPN traffic flows through firewall rules, covering iptables and nftables configuration for secure VPN setups."
+title: "How VPN Interacts with Firewall Rules: iptables and."
+description: "A comprehensive technical guide explaining how VPN traffic flows through firewall rules, covering iptables and nftables configuration for secure VPN."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/
@@ -288,3 +288,9 @@ Properly configuring firewall rules for VPN traffic requires understanding how p
 By following the examples in this guide and adapting them to your specific use case—whether a simple VPN client or a full VPN server—you can achieve a secure configuration that maintains both protection and functionality.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+

@@ -2,11 +2,11 @@
 
 layout: default
 title: "What to Do If Your Amazon Account Was Hacked: Recovery Guide"
-description: "Learn how to recover a compromised Amazon account, secure your personal data, and prevent future unauthorized access. Practical steps for developers and power users."
+description: "Learn how to recover a compromised Amazon account, secure your personal data, and prevent future unauthorized access. Practical steps for developers."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-your-amazon-account-was-hacked-recovery/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -184,6 +184,12 @@ Recovering a hacked Amazon account requires immediate action, thorough verificat
 7. **Monitor continuously** for future unauthorized activity
 
 For developers and power users, integrating account monitoring into your security tooling provides peace of mind. Treat Amazon account security as part of your broader operational security posture—because in today's interconnected digital ecosystem, a single compromised account can expose far more than just shopping history.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

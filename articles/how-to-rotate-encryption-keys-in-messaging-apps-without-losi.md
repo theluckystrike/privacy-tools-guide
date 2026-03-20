@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Rotate Encryption Keys in Messaging Apps Without Losing Chat History"
-description: "A practical guide for developers and power users on rotating encryption keys in messaging apps while preserving chat history. Covers Signal, WhatsApp, and custom implementations."
+title: "How to Rotate Encryption Keys in Messaging Apps Without."
+description: "A practical guide for developers and power users on rotating encryption keys in messaging apps while preserving chat history. Covers Signal, WhatsApp."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-rotate-encryption-keys-in-messaging-apps-without-losi/
-categories: [security]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -226,6 +226,12 @@ Rotating encryption keys without losing chat history requires careful key manage
 For developers building secure messaging systems, the double ratchet algorithm combined with proper key archival provides the most robust approach to maintaining message history through key rotations.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

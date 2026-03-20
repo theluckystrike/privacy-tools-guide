@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What to Do If You Find an Unknown Device on Your Network"
-description: "A comprehensive guide for discovering unknown devices on your network, investigating suspicious connections, and securing your home network against unauthorized access."
+description: "A comprehensive guide for discovering unknown devices on your network, investigating suspicious connections, and securing your home network against."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
@@ -231,6 +231,12 @@ Finding an unknown device on your network doesn't necessarily mean you've been c
 Remember: prevention is easier than remediation. Keep your router firmware updated, use strong encryption, and monitor your network consistently to catch potential issues early.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

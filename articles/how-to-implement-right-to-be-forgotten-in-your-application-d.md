@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Implement Right to Be Forgotten in Your Application: Database Guide"
+title: "How to Implement Right to Be Forgotten in Your."
 description: "A practical developer guide for implementing the right to be forgotten (data deletion) in your application's database. Includes code examples for SQL, MongoDB, and user data sanitization patterns."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -227,6 +227,12 @@ async def test_user_deletion_removes_all_data():
 ```
 
 Implementing the right to be forgotten requires careful attention to data architecture, cascade relationships, and verification processes. By building these capabilities into your application from the start, you ensure compliance while respecting user privacy.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Healthcare Data Privacy: HIPAA Compliance for Software Companies Technical Guide 2026"
-description: "A practical technical guide for developers building healthcare software. Covers PHI handling, encryption requirements, access controls, audit logging, and HIPAA compliance patterns."
+title: "Healthcare Data Privacy: HIPAA Compliance for Software."
+description: "A practical technical guide for developers building healthcare software. Covers PHI handling, encryption requirements, access controls, audit logging."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /healthcare-data-privacy-hipaa-compliance-for-software-compan/
@@ -289,6 +289,12 @@ Building HIPAA-compliant software requires attention to security fundamentals: e
 Remember that HIPAA violations can result in significant fines—up to $1.5 million per violation category per year. Investing in proper security architecture from the start is far less expensive than dealing with breaches and compliance penalties later.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

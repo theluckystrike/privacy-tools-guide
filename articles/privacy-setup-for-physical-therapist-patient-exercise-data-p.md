@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Setup for Physical Therapist Patient Exercise Data Protection"
-description: "A practical guide to securing patient exercise data in physical therapy practice. Learn about encryption, access controls, audit logging, and implementation strategies for HIPAA-compliant data protection."
+title: "Privacy Setup for Physical Therapist Patient Exercise."
+description: "A practical guide to securing patient exercise data in physical therapy practice. Learn about encryption, access controls, audit logging, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-physical-therapist-patient-exercise-data-p/
@@ -263,6 +263,12 @@ Before launching any physical therapy data system, verify:
 Building privacy-respecting systems for physical therapy practices requires balancing security with clinical usability. The strategies outlined here provide a foundation for protecting patient exercise data while enabling effective treatment delivery.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

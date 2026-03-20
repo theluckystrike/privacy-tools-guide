@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Gamepad API Fingerprinting: How Connected Controllers Reveal Browser Identity"
-description: "Discover how websites use the Gamepad API to fingerprint browsers through connected controllers. Learn the technical mechanisms, code examples, and privacy implications for developers and power users."
+title: "Gamepad API Fingerprinting: How Connected Controllers."
+description: "Discover how websites use the Gamepad API to fingerprint browsers through connected controllers. Learn the technical mechanisms, code examples, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gamepad-api-fingerprinting-how-connected-controllers-reveal-/
@@ -147,6 +147,12 @@ For developers building legitimate gaming applications, understanding these fing
 - Provide users with controls over what gamepad information is shared
 
 The Gamepad API serves legitimate purposes in web gaming, but its fingerprinting potential deserves awareness. By understanding how this API can be exploited, both users and developers can make informed decisions about controlling this tracking vector.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

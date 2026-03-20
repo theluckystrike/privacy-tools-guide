@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Setup for Immigration Activist: Protecting Undocumented Community Members"
-description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection, and operational security for protecting undocumented community members."
+title: "Privacy Setup for Immigration Activist: Protecting."
+description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-immigration-activist-protecting-undocument/
@@ -246,6 +246,12 @@ Prepare for potential device seizure or account compromise:
 Protecting undocumented community members requires technical vigilance and operational discipline. The implementations above provide foundation layers, but security demands continuous attention as threats evolve. Review your threat model regularly, update security practices, and ensure everyone in your network understands their role in maintaining collective protection.
 
 Prioritize high-impact measures: encrypted communication, local data storage, and device hardening provide the most protection for the effort invested. Add complexity only where your specific threat model requires it.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

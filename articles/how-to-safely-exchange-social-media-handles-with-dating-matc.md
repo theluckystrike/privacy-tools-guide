@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Safely Exchange Social Media Handles with Dating Match Without Full Exposure"
-description: "A technical guide for developers and power users on exchanging social media handles with dating matches while protecting privacy. Covers compartmentalized accounts, privacy-preserving techniques, and implementation strategies."
+title: "How to Safely Exchange Social Media Handles with Dating."
+description: "A technical guide for developers and power users on exchanging social media handles with dating matches while protecting privacy. Covers."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-safely-exchange-social-media-handles-with-dating-matc/
@@ -156,6 +156,12 @@ Your digital privacy is not about paranoia—it is about maintaining control ove
 Exchanging social media handles with dating matches does not require exposing your entire digital life. Dedicated compartmentalized accounts, encrypted messaging platforms, temporary redirect services, and privacy-first social alternatives each provide viable paths to controlled connection. Evaluate your privacy requirements, implement one or more strategies from this guide, and maintain agency over what new contacts can discover about you.
 
 The best approach is the one you will consistently follow. Start with the strategy that fits your technical comfort level and threat model, then layer in additional protections as needed.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

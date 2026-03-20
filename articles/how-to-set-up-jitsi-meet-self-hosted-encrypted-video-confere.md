@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Jitsi Meet Self-Hosted Encrypted Video Conferencing 2026"
-description: "A practical guide for developers and power users to deploy a self-hosted Jitsi Meet server with end-to-end encryption. Covers Docker deployment, security configuration, and production hardening."
+title: "How to Set Up Jitsi Meet Self-Hosted Encrypted Video."
+description: "A practical guide for developers and power users to deploy a self-hosted Jitsi Meet server with end-to-end encryption. Covers Docker deployment."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/
@@ -248,6 +248,12 @@ Beyond basic setup, implement these hardening measures:
 ## Conclusion
 
 Self-hosting Jitsi Meet with encryption provides a privacy-respecting alternative to commercial video conferencing platforms. The Docker-based deployment scales from small teams to organizations with hundreds of users. End-to-end encryption ensures that even your infrastructure remains untrusted for call content.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

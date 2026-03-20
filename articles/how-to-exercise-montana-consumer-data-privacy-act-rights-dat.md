@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Exercise Montana Consumer Data Privacy Act Rights: Data Deletion and Opt-Out"
-description: "A practical guide for developers and power users on exercising rights under the Montana Consumer Data Privacy Act. Learn how to request data deletion, opt out of data sales, and enforce your privacy rights."
+title: "How to Exercise Montana Consumer Data Privacy Act."
+description: "A practical guide for developers and power users on exercising rights under the Montana Consumer Data Privacy Act. Learn how to request data deletion."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-exercise-montana-consumer-data-privacy-act-rights-dat/
@@ -234,6 +234,12 @@ print(f"Request to {deletion_request.company}: {deletion_request.days_remaining}
 5. **Regular audits**: Review which companies have your data quarterly and submit deletion requests for unused accounts
 
 The MCDPA gives you real power over your personal information. Use these rights proactively to minimize your digital footprint and control who has access to your data.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

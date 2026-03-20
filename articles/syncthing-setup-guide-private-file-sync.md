@@ -244,6 +244,12 @@ launchctl load ~/Library/LaunchAgents/com.github.xor-gate.syncthing.plist
 
 If devices won't connect, verify both have the correct Device ID added and that firewalls allow port 22000. At least one folder must be shared between them. If files aren't syncing, check the `.stignore` file for patterns that block them, then review the Syncthing log for specific error messages. High CPU usage can be reduced by lowering the concurrent file operation limit in Settings → Advanced → Max Concurrent Items.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

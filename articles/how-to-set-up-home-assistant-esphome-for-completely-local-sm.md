@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Home Assistant ESPHome for Completely Local Smart Sensors"
-description: "A practical guide for developers and power users setting up ESPHome with Home Assistant for privacy-focused, fully local smart home sensors without cloud dependencies."
+title: "How to Set Up Home Assistant ESPHome for Completely."
+description: "A practical guide for developers and power users setting up ESPHome with Home Assistant for privacy-focused, fully local smart home sensors without."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-home-assistant-esphome-for-completely-local-sm/
@@ -181,6 +181,12 @@ Even though your sensors operate locally, implement basic security practices:
 ## Conclusion
 
 Building local smart sensors with ESPHome and Home Assistant eliminates cloud dependencies while providing a robust, customizable home automation foundation. Start with a simple temperature sensor and expand your network as needs grow. The declarative configuration approach makes adding new sensors straightforward, and the local-only operation ensures your data remains under your control.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

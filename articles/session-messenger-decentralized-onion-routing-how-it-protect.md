@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Session Messenger: Decentralized Onion Routing and How It Protects Metadata"
-description: "A technical breakdown of how Session messenger uses onion routing to protect communication metadata. Learn about the Oxen Service Node network, multi-hop encryption, and practical implementation details."
+title: "Session Messenger: Decentralized Onion Routing and How."
+description: "A technical breakdown of how Session messenger uses onion routing to protect communication metadata. Learn about the Oxen Service Node network."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /session-messenger-decentralized-onion-routing-how-it-protect/
@@ -122,6 +122,12 @@ Signal remains excellent for encrypted content with reasonable metadata protecti
 Session messenger demonstrates that meaningful metadata protection requires architectural changes, not just encryption improvements. By combining the Signal Protocol for content encryption with onion routing for transport, Session creates a system where communication metadata becomes extraordinarily difficult to collect. The Oxen Service Node network provides the decentralized infrastructure necessary to avoid single points of failure and trust.
 
 For developers building privacy-sensitive applications, Session's architecture offers a valuable reference model. The principle of minimizing server-side knowledge—ensuring that infrastructure cannot easily observe user behavior—extends beyond messaging to broader privacy engineering practices.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

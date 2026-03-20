@@ -2,7 +2,7 @@
 
 layout: default
 title: "Nextcloud External Storage Setup Guide 2026"
-description: "A comprehensive technical guide to configuring external storage in Nextcloud for developers and power users. Connect S3, WebDAV, FTP, and local storage to expand your self-hosted cloud."
+description: "A comprehensive technical guide to configuring external storage in Nextcloud for developers and power users. Connect S3, WebDAV, FTP, and local storage."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nextcloud-external-storage-setup-guide-2026/
@@ -209,6 +209,12 @@ External storage excels in several developer-focused scenarios:
 Nextcloud's external storage capabilities turn your self-hosted cloud into a flexible data hub that integrates with any storage backend. Whether you're connecting enterprise S3 buckets or legacy file servers, the configuration options covered here provide the foundation for building reliable, multi-source file management systems.
 
 Start with local mounts to understand the mechanics, then expand to network-based backends as you refine your setup. The combination of web interface configuration and command-line tools gives you both quick setup and automation-ready deployment options.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

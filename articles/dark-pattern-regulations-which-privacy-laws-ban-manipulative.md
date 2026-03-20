@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dark Pattern Regulations: Which Privacy Laws Ban Manipulative Consent Interfaces"
+title: "Dark Pattern Regulations: Which Privacy Laws Ban."
 description: "A technical guide for developers on dark pattern regulations and which privacy laws prohibit manipulative consent interface design tricks in 2026."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -205,6 +205,12 @@ For developers, this means implementing consent systems that:
 - Use clear, non-deceptive language
 
 By following these principles and the code patterns above, you can build consent interfaces that satisfy regulatory requirements while respecting user autonomy.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

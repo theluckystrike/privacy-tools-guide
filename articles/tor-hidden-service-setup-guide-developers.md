@@ -207,6 +207,12 @@ Hidden services introduce latency because traffic bounces through multiple Tor n
 
 Setting up a Tor hidden service involves installing Tor, configuring your `torrc` file, and ensuring your local web server is properly secured. For developers, the key steps are using version 3 onion addresses, restricting access through client authorization when needed, and running services in isolated environments. With your hidden service running, you can offer access to your application without revealing your server's location or exposing it to the broader internet.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

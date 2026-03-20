@@ -169,6 +169,12 @@ Disabling Cortana in Windows 11 is a straightforward process with multiple appro
 
 For developers and power users, combining Registry modifications with app removal provides the most thorough privacy protection. The automation script approach ensures consistent configuration across multiple machines, useful for development environments where privacy consistency matters.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

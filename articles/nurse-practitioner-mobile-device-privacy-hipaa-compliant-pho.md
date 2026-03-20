@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Nurse Practitioner Mobile Device Privacy: HIPAA Compliant Phone Setup Guide"
-description: "A practical guide for nurse practitioners setting up HIPAA compliant phones. Covers encryption, MDM solutions, app vetting, and privacy configurations for mobile healthcare."
+title: "Nurse Practitioner Mobile Device Privacy: HIPAA."
+description: "A practical guide for nurse practitioners setting up HIPAA compliant phones. Covers encryption, MDM solutions, app vetting, and privacy configurations."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/
@@ -177,6 +177,12 @@ Use this checklist when configuring a new HIPAA compliant device:
 A HIPAA compliant phone setup requires attention to encryption, application management, network security, and audit capabilities. The initial configuration takes approximately one to two hours, but maintains protection for every patient interaction occurring on your device.
 
 The specific MDM platform matters less than consistent enforcement of security policies. Whether you choose Microsoft Intune, Jamf, Hexnode, or another solution, the key is ensuring that every device accessing PHI maintains encryption, permits remote wiping, and restricts applications to vetted options only.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

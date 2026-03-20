@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure Cloak Plugin for Shadowsocks to Evade Active Probing Detection"
+title: "How to Configure Cloak Plugin for Shadowsocks to Evade."
 description: "A practical guide for developers and power users on configuring the Cloak plugin with Shadowsocks to resist active probing detection and censorship."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -215,6 +215,12 @@ journalctl -u cloak -f
 Cloak provides robust protection against active probing by transforming your Shadowsocks traffic into TLS-encrypted connections that blend with legitimate web traffic. This configuration requires more setup than basic Shadowsocks but offers significantly better resistance to sophisticated censorship infrastructure.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

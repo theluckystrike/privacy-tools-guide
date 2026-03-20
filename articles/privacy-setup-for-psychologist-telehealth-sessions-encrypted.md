@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Setup for Psychologist Telehealth Sessions: Encrypted Video Guide"
-description: "A practical guide to setting up secure, encrypted telehealth sessions for psychologists. Learn end-to-end encryption, self-hosted solutions, and privacy-first configurations."
+title: "Privacy Setup for Psychologist Telehealth Sessions."
+description: "A practical guide to setting up secure, encrypted telehealth sessions for psychologists. Learn end-to-end encryption, self-hosted solutions, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
@@ -194,6 +194,12 @@ Self-hosted solutions give you control but transfer compliance responsibility en
 Setting up encrypted telehealth sessions requires attention to server configuration, client-side security, and network-level protections. Self-hosted Jitsi with E2EE enabled provides the strongest privacy guarantees, while Matrix homeservers add secure messaging capabilities. Client device hardening and network-level controls complete a defense-in-depth approach to psychological session privacy.
 
 For psychologists who prioritize patient confidentiality, the effort to self-host or configure privacy-focused infrastructure pays dividends in trust and regulatory compliance.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

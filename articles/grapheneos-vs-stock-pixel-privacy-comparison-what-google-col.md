@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "GrapheneOS vs Stock Pixel: What Google Collects on Unmodified Android"
-description: "A technical comparison of GrapheneOS and stock Pixel Android for developers and power users. Analyze what Google collects on unmodified Android and how privacy-focused alternatives handle data differently."
+title: "GrapheneOS vs Stock Pixel: What Google Collects on."
+description: "A technical comparison of GrapheneOS and stock Pixel Android for developers and power users. Analyze what Google collects on unmodified Android and how."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/
-categories: [comparisons, security, guides]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 reviewed: true
@@ -202,6 +202,12 @@ For those building privacy-conscious applications or evaluating mobile security 
 
 ---
 
-*Built by theluckystrike — More at [zovo.one](https://zovo.one)*
+*
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)*
 
 {% endraw %}

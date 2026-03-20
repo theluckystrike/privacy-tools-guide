@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Telehealth Privacy Rights: What Therapists and Doctors Can Record or Share in Video Calls"
-description: "A practical guide for developers and power users on telehealth privacy rights. Learn what healthcare providers can legally record, consent requirements, data retention policies, and how to protect your video session privacy."
+title: "Telehealth Privacy Rights: What Therapists and Doctors."
+description: "A practical guide for developers and power users on telehealth privacy rights. Learn what healthcare providers can legally record, consent."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /telehealth-privacy-rights-what-therapist-doctor-video-calls-/
@@ -169,6 +169,12 @@ If a healthcare provider records you without consent, you have several recourse 
 Telehealth privacy rights center on consent and control. Healthcare providers can only record sessions with your explicit authorization. You maintain rights to access, inspect, and request deletion of recordings. Developers building telehealth applications must implement robust consent management, encryption, and audit logging to meet HIPAA requirements.
 
 Understanding these rights helps you make informed decisions about your virtual healthcare experience. Whether you're a patient seeking therapy or a developer building telehealth tools, the framework exists to protect privacy while enabling valuable remote care.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

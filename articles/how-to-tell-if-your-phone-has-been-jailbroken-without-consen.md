@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Tell if Your Phone Has Been Jailbroken Without Consent"
-description: "A practical guide for developers and power users to detect unauthorized jailbreaking or rooting on iOS and Android devices. Includes code examples and verification steps."
+title: "How to Tell if Your Phone Has Been Jailbroken Without."
+description: "A practical guide for developers and power users to detect unauthorized jailbreaking or rooting on iOS and Android devices. Includes code examples and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consen/
-categories: [security, guides]
+categories: [troubleshooting]
 reviewed: true
 score: 8
 ---
@@ -287,6 +287,12 @@ Detecting unauthorized jailbreaks or rooting requires checking for specific file
 If you suspect your device has been compromised, treat it as potentially compromised until you can perform a clean factory reset. Regular security audits help catch issues early.
 
 For more security guidance, explore our [privacy tools hub](/privacy-tools-guide/guides-hub/).
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

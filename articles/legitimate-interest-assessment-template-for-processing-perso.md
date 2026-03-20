@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Legitimate Interest Assessment Template for Processing Personal Data Without Consent Under GDPR"
-description: "A practical template and developer guide for conducting legitimate interest assessments under GDPR Article 6(1)(f). Includes code examples and implementation patterns."
+title: "Legitimate Interest Assessment Template for Processing."
+description: "A practical template and developer guide for conducting legitimate interest assessments under GDPR Article 6(1)(f). Includes code examples and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /legitimate-interest-assessment-template-for-processing-perso/
-categories: [security, enterprise]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: false
@@ -231,6 +231,12 @@ Legitimate interest assessment doesn't require legal expertise, but it does requ
 Build the assessment into your data processing workflows. Document purposes, verify necessity, and implement objection handling. This approach transforms GDPR compliance from a checkbox exercise into practical privacy engineering.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

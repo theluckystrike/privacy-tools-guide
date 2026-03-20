@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Threat Model for Activist in Authoritarian Country: Digital Safety 2026"
-description: "A practical threat modeling guide for political activists in authoritarian countries. Identify assets, analyze threats, and implement effective digital security measures."
+title: "Threat Model for Activist in Authoritarian Country."
+description: "A practical threat modeling guide for political activists in authoritarian countries. Identify assets, analyze threats, and implement effective digital."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-activist-in-authoritarian-country-digital-s/
@@ -141,6 +141,12 @@ Security researcher communities often publish local threat intelligence. Connect
 Digital security for activists in authoritarian countries requires honest assessment of threats and disciplined implementation of layered defenses. No tool or technique provides complete protection, but combining strong communications encryption, network anonymity, device hardening, and operational discipline creates meaningful barriers against surveillance and repression.
 
 The specific tools and techniques that work best depend on your threat model, which changes as adversaries evolve. Stay informed, adapt your security practices, and build networks of trusted security-conscious peers.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

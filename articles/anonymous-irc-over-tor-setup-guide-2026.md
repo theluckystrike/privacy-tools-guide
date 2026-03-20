@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Anonymous IRC Over Tor Setup Guide 2026"
-description: "A practical guide to configuring IRC over Tor for anonymous communications. Learn to set up Tor daemon, configure IRC clients, connect to onion-service networks, and implement best practices for privacy-conscious developers."
+description: "A practical guide to configuring IRC over Tor for anonymous communications. Learn to set up Tor daemon, configure IRC clients, connect to onion-service."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /anonymous-irc-over-tor-setup-guide-2026/
@@ -249,6 +249,12 @@ HiddenServicePort 6667 127.0.0.1:6667
 This allows users to connect directly to your .onion address, eliminating exit node exposure entirely.
 
 The setup requires a Tor daemon, a compatible IRC client, and attention to operational security practices. Start with a trusted network like OFTC and verify your anonymity through hostmask checks before adding advanced configurations.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

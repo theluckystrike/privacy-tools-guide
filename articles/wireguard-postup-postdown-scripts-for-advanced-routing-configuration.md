@@ -299,7 +299,7 @@
 
 
 layout: default
-title: "WireGuard Postup Postdown Scripts for Advanced Routing Configuration"
+title: "WireGuard Postup Postdown Scripts for Advanced Routing."
 description: "Learn how to leverage WireGuard's postup and postdown scripts to implement advanced routing, split tunneling, and network automation for enhanced privacy and performance."
 date: 2026-03-15
 categories:
@@ -319,6 +319,8 @@ permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-configuration
 reviewed: true
 score: 8
 ---
+categories: [guides]
+
 
 
 
@@ -745,5 +747,11 @@ Use absolute paths in your scripts since the environment when WireGuard starts m
 Finally, always clean up resources in your postdown scripts. Network interfaces, routes, and firewall rules that aren't properly removed can cause connectivity issues on subsequent connection attempts or interfere with other network functionality.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

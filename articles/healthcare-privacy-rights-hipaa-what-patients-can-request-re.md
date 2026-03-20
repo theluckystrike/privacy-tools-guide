@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Healthcare Privacy Rights Under HIPAA: What Patients Can Request"
-description: "A practical guide for developers and power users on patient rights under HIPAA, including medical record access requests, amendments, and accounting of disclosures."
+title: "Healthcare Privacy Rights Under HIPAA: What Patients Can."
+description: "A practical guide for developers and power users on patient rights under HIPAA, including medical record access requests, amendments, and accounting of."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /healthcare-privacy-rights-hipaa-what-patients-can-request-re/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -191,6 +191,12 @@ The Office for Civil Rights (OCR) within the Department of Health and Human Serv
 Understanding these rights empowers both patients seeking access to their data and developers building systems that must respect and facilitate those rights. HIPAA provides robust mechanisms for patient control over health information — knowing how to exercise these rights or implement them in code is a valuable skill for anyone working with healthcare data.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

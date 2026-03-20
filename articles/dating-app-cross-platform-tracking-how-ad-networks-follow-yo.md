@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Dating App Cross-Platform Tracking: How Ad Networks Follow You from Tinder to Instagram"
-description: "Learn how ad networks track users across dating apps like Tinder and social platforms like Instagram. Technical deep-dive with code examples for developers and power users."
+title: "Dating App Cross-Platform Tracking: How Ad Networks."
+description: "Learn how ad networks track users across dating apps like Tinder and social platforms like Instagram. Technical deep-dive with code examples for."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dating-app-cross-platform-tracking-how-ad-networks-follow-yo/
-categories: [security]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -289,6 +289,12 @@ Minimize data collection to essential functionality only. Store identifiers in e
 The technical mechanisms enabling cross-platform tracking will continue evolving. Staying informed about these systems allows developers to make better architecture decisions and empowers users to understand the privacy implications of their application usage.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

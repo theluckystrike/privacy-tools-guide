@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Encrypted Group Chat for Activist Organization Security Guide"
-description: "A practical technical guide for developers and power users setting up secure group messaging infrastructure for activist organizations. Covers Matrix, Signal, and key management."
+title: "How to Set Up Encrypted Group Chat for Activist."
+description: "A practical technical guide for developers and power users setting up secure group messaging infrastructure for activist organizations. Covers Matrix."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-encrypted-group-chat-for-activist-organization/
@@ -185,6 +185,12 @@ For Signal:
 Deploy Matrix when infrastructure control is paramount. Use Signal for ease of adoption with strong security defaults. Choose Session for anonymity without phone numbers. Select Briar for environments with limited connectivity.
 
 Test your chosen solution thoroughly before operational use. Document configuration procedures and ensure all group members understand security protocols. Regular security audits of your communication infrastructure protect both organizational continuity and individual safety.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

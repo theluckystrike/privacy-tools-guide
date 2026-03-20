@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "What to Do If Your Credit Card Was Used Fraudulently Online"
-description: "A practical technical guide for developers and power users on handling fraudulent credit card charges online. Includes API integration patterns, automated monitoring scripts, and forensic recovery steps."
+description: "A practical technical guide for developers and power users on handling fraudulent credit card charges online. Includes API integration patterns."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-your-credit-card-was-used-fraudulently-online/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -254,6 +254,12 @@ If the dispute isn't resolved satisfactorily, escalate to:
 ## Summary
 
 Handling credit card fraud requires rapid action and systematic follow-through. Contact your issuer immediately, document everything, and systematically review all services using the compromised card. For developers, treat fraud incidents as security events requiring audit and potential code changes. Implement monitoring scripts, alert systems, and virtual card numbers to reduce future risk.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

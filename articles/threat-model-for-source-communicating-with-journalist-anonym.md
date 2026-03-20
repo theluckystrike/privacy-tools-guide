@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Threat Model for Source Communicating with Journalist Anonymously: Practical Guide"
-description: "A comprehensive threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational security for developers and power users."
+title: "Threat Model for Source Communicating with Journalist."
+description: "A comprehensive threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-source-communicating-with-journalist-anonym/
@@ -172,6 +172,12 @@ Always maintain redundant communication methods:
 Protecting source-journalist communication requires layered defenses addressing technical, operational, and physical security. No single tool or technique provides complete protection—your threat model must account for multiple attack vectors and implement corresponding defenses. The key is understanding your specific adversary, implementing appropriate technical measures, and maintaining discipline throughout the communication relationship.
 
 Start with device isolation, implement strong encryption for all communications, use Tor for network anonymity, and establish clear operational protocols. Regularly review and update your security practices as both threats and tools evolve.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Privacy Setup for Someone Hiding From Abusive Ex: Comprehensive Guide"
-description: "A practical technical guide for securing devices, accounts, and communications when fleeing an abusive situation. Includes code examples and developer-focused recommendations."
+title: "Privacy Setup for Someone Hiding From Abusive Ex."
+description: "A practical technical guide for securing devices, accounts, and communications when fleeing an abusive situation. Includes code examples and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-someone-hiding-from-abusive-ex-comprehensi/
@@ -188,6 +188,12 @@ Prepare for the worst-case scenario:
 ## Conclusion
 
 Digital security for someone fleeing an abusive situation requires paranoia as a feature, not a bug. Every setting, every app, every account needs scrutiny. The steps above provide a strong foundation—but security is ongoing. Review your settings monthly, stay aware of new threats, and prioritize physical safety alongside digital hardening.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

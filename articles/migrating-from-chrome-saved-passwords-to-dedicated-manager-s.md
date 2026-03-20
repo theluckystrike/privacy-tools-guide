@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Migrating from Chrome Saved Passwords to Dedicated Manager: Step by Step"
-description: "A practical guide for developers and power users moving Chrome passwords to a dedicated password manager. Export, import, and secure your credentials with CLI tools."
+title: "Migrating from Chrome Saved Passwords to Dedicated."
+description: "A practical guide for developers and power users moving Chrome passwords to a dedicated password manager. Export, import, and secure your credentials."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /migrating-from-chrome-saved-passwords-to-dedicated-manager-s/
@@ -262,6 +262,12 @@ Migrating from Chrome's built-in manager to a dedicated solution gives you progr
 Start with a small batch of critical passwords, validate your workflow, then migrate the remainder. Your future self will appreciate having CLI access to secrets when automating deployments or managing infrastructure.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

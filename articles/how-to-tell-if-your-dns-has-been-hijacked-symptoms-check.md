@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Tell If Your DNS Has Been Hijacked: Symptoms and Detection Methods"
+title: "How to Tell If Your DNS Has Been Hijacked: Symptoms and."
 description: "A practical guide for developers and power users to detect DNS hijacking. Learn to identify symptoms, use diagnostic tools, and verify your DNS integrity."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -191,6 +191,12 @@ If you confirm DNS hijacking:
 - Monitor your network for unusual DNS traffic patterns
 
 Regular DNS health checks and awareness of hijacking symptoms protect your browsing privacy and security. The methods outlined here work without special equipment, using tools already available on most systems.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

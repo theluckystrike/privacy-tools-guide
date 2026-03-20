@@ -186,5 +186,11 @@ Hotel WiFi should never be used for remote desktop connections without protectio
 
 The core steps are: deploy a VPN server, configure your client to route through it, use VPN IP addresses for RDP/VNC connections, and verify your traffic is encrypted before beginning work. With these measures in place, hotel WiFi becomes as safe as your office network for remote desktop access.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

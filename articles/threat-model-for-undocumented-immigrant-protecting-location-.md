@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Threat Model for Undocumented Immigrant Protecting Location and Identity Digital"
-description: "A practical guide to building a digital threat model for protecting location and identity. Learn actionable strategies for device hardening, network security, and operational security for at-risk individuals."
+title: "Threat Model for Undocumented Immigrant Protecting."
+description: "A practical guide to building a digital threat model for protecting location and identity. Learn actionable strategies for device hardening, network."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-undocumented-immigrant-protecting-location-/
@@ -115,6 +115,12 @@ Know your threat model. The protections that matter most depend entirely on who 
 Protecting location and identity requires layering multiple defenses. No single measure is sufficient, but each layer makes comprehensive compromise more difficult. Start with the fundamentals—device hardening and network protection—then add communication security and identity separation as your threat model requires.
 
 The goal is not perfect security, which is unattainable. The goal is making targeted surveillance costly enough that adversaries choose easier targets. Every layer of protection raises the resource requirements for those seeking to track you, creating meaningful distance between you and potential threats to your safety.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

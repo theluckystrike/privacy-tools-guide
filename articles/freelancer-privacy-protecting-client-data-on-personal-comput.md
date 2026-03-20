@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Freelancer Privacy: Protecting Client Data on Personal Computer Guide"
-description: "A practical guide for freelancers on securing client data on personal computers. Learn encryption, access controls, and workflows that keep sensitive information protected."
+title: "Freelancer Privacy: Protecting Client Data on Personal."
+description: "A practical guide for freelancers on securing client data on personal computers. Learn encryption, access controls, and workflows that keep sensitive."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /freelancer-privacy-protecting-client-data-on-personal-comput/
@@ -203,6 +203,12 @@ Security works best when it fits naturally into your workflow. Start with disk e
 Review your setup quarterly. Check that encryption keys haven't expired, backup drives are functional, and your practices still match your current client work. Adjust as your work changes.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

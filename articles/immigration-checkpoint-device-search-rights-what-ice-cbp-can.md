@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Immigration Checkpoint Device Search Rights: What ICE and CBP Can Legally Access at the Border"
-description: "A practical guide for developers and power users on what U.S. Customs and Border Protection can legally search on your electronic devices at border crossings and airports."
+title: "Immigration Checkpoint Device Search Rights: What ICE."
+description: "A practical guide for developers and power users on what U.S. Customs and Border Protection can legally search on your electronic devices at border."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /immigration-checkpoint-device-search-rights-what-ice-cbp-can/
@@ -121,6 +121,12 @@ For developers and power users who value both compliance and privacy:
 The border search exception remains one of the broadest exceptions to Fourth Amendment protections. While reasonable people can debate the policy wisdom, understanding the current legal reality helps you make practical decisions that balance compliance, privacy, and security.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Local Network Storage for Security Cameras Without NAS Cloud"
-description: "A practical guide to building private, cloud-free local network storage for your security cameras. Perfect for developers and power users who want full control over their video surveillance data."
+title: "How to Set Up Local Network Storage for Security Cameras."
+description: "A practical guide to building private, cloud-free local network storage for your security cameras. Perfect for developers and power users who want full."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/
@@ -305,6 +305,12 @@ Building local network storage for security cameras eliminates cloud dependencie
 For most users, the SMB direct-write method provides the best balance of simplicity and reliability. Developers and power users may prefer Shinobi or Frigate for advanced features like object detection and flexible recording rules.
 
 The initial setup effort pays dividends through years of fee-free operation and the peace of mind that comes from owning your data completely.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

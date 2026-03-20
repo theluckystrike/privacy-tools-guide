@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "NixOS Declarative System Configuration for Reproducible Privacy-Hardened Linux Setup"
-description: "Learn how to use NixOS to create reproducible, privacy-hardened Linux systems through declarative configuration. This guide covers declarative package management, secure by default settings, and reproducible system states for developers and power users."
+title: "NixOS Declarative System Configuration for Reproducible."
+description: "Learn how to use NixOS to create reproducible, privacy-hardened Linux systems through declarative configuration. This guide covers declarative package."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nixos-declarative-system-configuration-for-reproducible-priv/
@@ -186,6 +186,12 @@ This approach lets you verify configuration changes before applying them to your
 NixOS provides a fundamentally different approach to system administration. By treating configuration as code, you gain reproducibility, atomic updates, and easy rollback capabilities. For privacy and security, this means you can declare your desired system state, verify it produces the expected result, and replicate that exact configuration across machines. The declarative model eliminates configuration drift and ensures your security hardening remains consistent over time.
 
 The initial learning curve exists—Nix's language and ecosystem require investment. However, for developers and power users managing privacy-critical systems, this investment pays dividends through reliable, reproducible, and auditable infrastructure. Your configuration file becomes both documentation and the source of truth, making security hardening sustainable across machines and time.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

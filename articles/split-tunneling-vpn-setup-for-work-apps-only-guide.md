@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Split Tunneling VPN Setup for Work Apps Only Guide"
-description: "A practical guide to configuring split tunneling VPN to route only work applications through the VPN while keeping personal traffic on your regular connection."
+description: "A practical guide to configuring split tunneling VPN to route only work applications through the VPN while keeping personal traffic on your regular."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /split-tunneling-vpn-setup-for-work-apps-only-guide/
@@ -314,5 +314,11 @@ Split tunneling provides the best of both worlds: secure access to corporate res
 Start with your VPN client's built-in split tunneling options, then graduate to custom configurations as your needs become more specific. Remember to test thoroughly and maintain documentation for troubleshooting.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

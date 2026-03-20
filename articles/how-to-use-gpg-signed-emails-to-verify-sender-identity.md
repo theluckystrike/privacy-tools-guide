@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use GPG Signed Emails to Verify Sender Identity: A Step-by-Step Guide"
-description: "Learn how to use GPG signed emails to verify sender identity with this practical guide for developers and power users. Includes setup, signing, verification, and troubleshooting."
+title: "How to Use GPG Signed Emails to Verify Sender Identity."
+description: "Learn how to use GPG signed emails to verify sender identity with this practical guide for developers and power users. Includes setup, signing."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity/
@@ -223,6 +223,12 @@ This provides verified commit provenance, complementary to signed emails.
 Start by generating a GPG key if you don't have one. Configure your primary email client to sign outgoing messages by default. Import keys from frequent correspondents, and verify signatures on all signed messages you receive. Over time, building this habit creates a web of cryptographic trust.
 
 GPG signing adds friction to email communication, but the authenticity guarantees are valuable for technical collaboration. Start with low-stakes communications to build familiarity before relying on signatures for sensitive matters.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

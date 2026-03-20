@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users to detect comprom
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-check-if-your-smart-home-devices-are-compromised/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -180,6 +180,12 @@ The best defense is proactive security:
 Smart home security requires ongoing attention. Establishing regular audit routines—monthly network scans, weekly log reviews—keeps your ecosystem manageable and secure.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

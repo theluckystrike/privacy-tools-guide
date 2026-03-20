@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Facebook Marketplace Privacy Settings Guide: A Technical Overview"
-description: "A comprehensive guide to Facebook Marketplace privacy settings for developers and power users. Learn to control your profile visibility, secure listings, and manage data exposure."
+title: "Facebook Marketplace Privacy Settings Guide: A Technical."
+description: "A comprehensive guide to Facebook Marketplace privacy settings for developers and power users. Learn to control your profile visibility, secure."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /facebook-marketplace-privacy-settings-guide/
@@ -165,6 +165,12 @@ These configurations balance Marketplace functionality with privacy protection. 
 For developers building privacy tools or analyzing social platform data, always use official APIs, respect user consent, and comply with platform terms of service.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

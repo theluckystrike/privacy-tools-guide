@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How Browser Storage Partitioning Works: Firefox, Chrome, and Privacy Protection"
-description: "A technical guide to browser storage partitioning explaining how Firefox and Chrome isolate storage to prevent cross-site tracking, with code examples and implementation details."
+title: "How Browser Storage Partitioning Works: Firefox, Chrome."
+description: "A technical guide to browser storage partitioning explaining how Firefox and Chrome isolate storage to prevent cross-site tracking, with code examples."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-browser-storage-partitioning-works-firefox-chrome-privac/
@@ -181,6 +181,12 @@ Storage partitioning represents a fundamental shift in how browsers handle web s
 For developers, the key takeaway is to avoid relying on third-party storage for persistent state, and to test applications in various embedding contexts. For users, enabling partitioning protections in browser settings provides meaningful privacy improvements with minimal downsides.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

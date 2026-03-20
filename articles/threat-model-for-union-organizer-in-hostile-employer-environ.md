@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Threat Model for Union Organizer in Hostile Employer Environment Guide"
-description: "A comprehensive technical guide for union organizers to build threat models when operating in hostile employer environments. Includes practical examples, code snippets, and security strategies."
+title: "Threat Model for Union Organizer in Hostile Employer."
+description: "A comprehensive technical guide for union organizers to build threat models when operating in hostile employer environments. Includes practical."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-union-organizer-in-hostile-employer-environ/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -201,6 +201,12 @@ Building a threat model as a union organizer means understanding both digital an
 The tools and techniques in this guide draw from established security practices adapted for the specific risks faced by labor organizers. Start with the highest-impact changes first—secure communications, device encryption, and operational security procedures—and build from there.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

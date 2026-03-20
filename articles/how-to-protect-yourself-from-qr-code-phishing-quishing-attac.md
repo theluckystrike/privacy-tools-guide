@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Protect Yourself from QR Code Phishing (Quishing) Attacks"
-description: "A practical guide for developers and power users on detecting, preventing, and mitigating QR code phishing attacks. Includes code examples and security tools."
+title: "How to Protect Yourself from QR Code Phishing (Quishing)."
+description: "A practical guide for developers and power users on detecting, preventing, and mitigating QR code phishing attacks. Includes code examples and security."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-yourself-from-qr-code-phishing-quishing-attac/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -234,5 +234,11 @@ Quishing represents a growing threat that exploits the trust we place in QR code
 The key principle remains: never trust a QR code's destination without verification. Build verification into your workflows and applications, and treat QR code scanning with the same caution you apply to clicking unknown links.
 
 {% endraw %}
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Protect Elderly Parents from Online Scams: A Setup Guide"
-description: "A practical technical guide for developers and power users to help protect elderly parents from online scams. Includes DNS filtering, browser hardening, and automation scripts."
+title: "How to Protect Elderly Parents from Online Scams: A."
+description: "A practical technical guide for developers and power users to help protect elderly parents from online scams. Includes DNS filtering, browser."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-elderly-parents-from-online-scams-setup-guide/
@@ -227,6 +227,12 @@ Layer your defenses based on your family member's technical comfort level:
 Start with DNS filtering and browser hardening, as these require minimal behavior change. Add monitoring scripts incrementally as you identify what works for your situation.
 
 The most effective protection combines technology with communication. Technical controls catch many threats, but a skeptical mindset remains the best defense against sophisticated social engineering attacks.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

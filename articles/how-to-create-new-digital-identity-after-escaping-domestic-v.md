@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Create a New Digital Identity After Escaping Domestic Violence"
-description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone separation, password managers, and operational security."
+title: "How to Create a New Digital Identity After Escaping."
+description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
@@ -195,6 +195,12 @@ This redundancy protects against losing access to your own accounts.
 Building a new digital identity after escaping domestic violence requires deliberate action across multiple domains. Each step reduces the attack surface available to an adversary. Start with the highest-risk vectors—phone and email—and work downward. The process takes time, but the security gained provides lasting protection.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

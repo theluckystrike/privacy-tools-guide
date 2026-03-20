@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Dating Profile Image Recognition: How AI Can Match Your Face Across Platforms"
+title: "Dating Profile Image Recognition: How AI Can Match Your."
 description: "A technical guide to understanding facial recognition technology used in dating apps and how your images can be matched across different platforms."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dating-profile-image-recognition-how-ai-can-match-your-face-/
-categories: [security, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: false
@@ -185,6 +185,12 @@ Reverse image search your profile photos periodically to detect unauthorized use
 The arms race between privacy tools and recognition systems continues. Emerging technologies like adversarial perturbations—subtle patterns that confuse AI models—show promise but remain imperfect. Researchers are also exploring federated learning approaches that could perform matching without centralizing sensitive biometric data.
 
 Understanding how these systems work is the first step toward making informed decisions about your digital presence. For developers building privacy-focused alternatives, the technical foundation exists to create dating platforms that respect user confidentiality while still providing meaningful matching functionality.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

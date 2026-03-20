@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Setup for Domestic Abuse Shelter Staff: Protecting Location Data"
-description: "A technical guide for developers and power users implementing privacy measures for domestic abuse shelter staff. Learn location protection, secure communications, and operational security."
+title: "Privacy Setup for Domestic Abuse Shelter Staff."
+description: "A technical guide for developers and power users implementing privacy measures for domestic abuse shelter staff. Learn location protection, secure."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/
@@ -212,6 +212,12 @@ Technical measures fail without physical security discipline:
 Protecting location data for domestic abuse shelter staff requires layered defenses. No single measure suffices, but combining device hardening, network protection, secure communications, and operational discipline creates meaningful protection. The implementations above provide starting points for developers building shelter systems or staff hardening their own setups.
 
 Review and update these measures regularly. Adversaries adapt, and security requires ongoing attention.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

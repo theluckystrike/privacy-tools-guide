@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Android Background Location Access: Which Apps Track You When Not Open"
-description: "A technical guide for developers and power users on Android background location tracking. Learn which apps access your location when closed, how to audit permissions, and practical mitigation strategies."
+title: "Android Background Location Access: Which Apps Track You."
+description: "A technical guide for developers and power users on Android background location tracking. Learn which apps access your location when closed, how to."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /android-background-location-access-which-apps-track-you-when/
@@ -144,6 +144,12 @@ Disabling WiFi scanning and Bluetooth when not actively used prevents these alte
 ---
 
 Understanding background location access empowers you to audit which apps track you when not open and implement practical restrictions. Regular permission reviews, careful app selection, and using Android's built-in privacy controls provide meaningful protection against unnecessary location surveillance while preserving functionality for applications that genuinely need it.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

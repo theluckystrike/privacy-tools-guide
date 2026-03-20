@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Tools for Whistleblower: Preparing Disclosure While Protecting Identity"
-description: "A practical guide to privacy tools and techniques for whistleblowers preparing to disclose sensitive information securely. Covers encryption, secure communication, metadata removal, and operational security for developers and power users."
+title: "Privacy Tools for Whistleblower: Preparing Disclosure."
+description: "A practical guide to privacy tools and techniques for whistleblowers preparing to disclose sensitive information securely. Covers encryption, secure."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
@@ -132,6 +132,12 @@ bleachbit --wipe-free-space
 Whistleblower security requires layering multiple protections—encryption alone is insufficient when metadata, network traffic, or device forensics can compromise your identity. Use dedicated tools for each attack surface: Tor for network anonymity, GPG for end-to-end encryption, VeraCrypt for encrypted storage, and exiftool for metadata removal.
 
 The goal is creating sufficient doubt about your identity that the cost of investigation exceeds the value of silencing you. By implementing these tools and practices, you significantly reduce the risk of identification while maintaining the ability to expose wrongdoing.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

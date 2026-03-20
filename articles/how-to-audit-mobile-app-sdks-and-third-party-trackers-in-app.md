@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Audit Mobile App SDKs and Third-Party Trackers in Apps"
-description: "A practical guide for developers and power users to audit mobile app SDKs and identify third-party trackers. Learn static analysis, dynamic testing, and network monitoring techniques."
+title: "How to Audit Mobile App SDKs and Third-Party Trackers in."
+description: "A practical guide for developers and power users to audit mobile app SDKs and identify third-party trackers. Learn static analysis, dynamic testing."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/
@@ -262,6 +262,12 @@ The methods in this guide apply to both iOS and Android, though specific tools d
 
 Regular auditing of mobile apps reveals the constantly evolving tracking ecosystem. New SDKs emerge, and existing ones change their behavior. Staying current requires ongoing analysis, but the fundamentals—examining binaries, monitoring networks, and reviewing code—remain consistent.
 
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

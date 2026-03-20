@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Joint Controller Agreement Template: A Practical Guide for Developers"
+title: "GDPR Joint Controller Agreement Template: A Practical."
 description: "Learn how to create a compliant GDPR joint controller agreement with this practical template and code examples designed for developers and technical teams."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -186,6 +186,12 @@ This template provides a starting point, but complex processing activities, cros
 ---
 
 A well-drafted joint controller agreement protects all parties and, more importantly, protects the data subjects whose information you're handling. Take time to get it right—it'll save headaches later.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
