@@ -5,7 +5,7 @@ description: "Technical comparison of Proton VPN and Mullvad: speed performance,
 date: 2026-03-16
 author: theluckystrike
 permalink: /proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/
-categories: [privacy, vpn, security]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true
