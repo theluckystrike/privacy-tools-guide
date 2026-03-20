@@ -12,7 +12,7 @@ score: 8
 categories: [guides]
 =======
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
 score: 8
 intent-checked: true
