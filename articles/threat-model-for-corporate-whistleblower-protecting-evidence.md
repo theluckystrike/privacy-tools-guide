@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Threat Model for Corporate Whistleblower: Protecting."
 description: "A practical threat modeling guide for corporate whistleblowers. Learn to protect evidence, secure communications, and maintain anonymity using proven."
