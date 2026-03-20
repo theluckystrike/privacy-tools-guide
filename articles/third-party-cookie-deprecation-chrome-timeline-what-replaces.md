@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /third-party-cookie-deprecation-chrome-timeline-what-replaces/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true

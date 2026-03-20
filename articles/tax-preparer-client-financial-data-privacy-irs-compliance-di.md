@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /tax-preparer-client-financial-data-privacy-irs-compliance-di/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 intent-checked: true

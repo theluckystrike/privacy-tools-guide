@@ -8,7 +8,7 @@ permalink: /subscription-service-cancellation-after-death-how-executor-can-close
 score: 8
 voice-checked: true
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 intent-checked: true
 ---

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /taproot-upgrade-bitcoin-privacy-improvements-what-changed-fo/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 intent-checked: true

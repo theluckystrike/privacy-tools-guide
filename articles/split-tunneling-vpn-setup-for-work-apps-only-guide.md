@@ -6,7 +6,7 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /split-tunneling-vpn-setup-for-work-apps-only-guide/
 categories: [guides]
-tags: [vpn, security, privacy, networking]
+tags: [privacy-tools-guide, vpn, security, privacy, networking]
 reviewed: true
 score: 8
 intent-checked: true

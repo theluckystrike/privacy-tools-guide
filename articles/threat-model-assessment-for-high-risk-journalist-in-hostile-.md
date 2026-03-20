@@ -10,6 +10,7 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
+tags: [privacy-tools-guide]
 ---
 
 Create a threat model by assessing your adversaries' capabilities (state surveillance, ISP monitoring, physical targeting), identifying attack vectors (device seizure, source compromise, metadata exposure), and implementing layered defenses: separate reporting device with clean OS, Tor for communications, encrypted storage with plausible deniability, and operational security protocols (regular pattern-breaking, location variation). Document your threat model, update it as conditions change, and maintain emergency exfiltration plans with trusted international contacts.

@@ -6,7 +6,7 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /stretching-routine-for-remote-developers-guide/
 categories: [guides]
-tags: [wellness, productivity]
+tags: [privacy-tools-guide, wellness, productivity, remote-work]
 reviewed: true
 score: 8
 intent-checked: true
