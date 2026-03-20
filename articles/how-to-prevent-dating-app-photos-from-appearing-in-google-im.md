@@ -6,11 +6,11 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-dating-app-photos-from-appearing-in-google-im/
 categories: [guides]
-tags: [privacy, security, dating-apps]
+tags: [privacy-tools-guide, privacy, security, dating-apps]
 reviewed: true
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 ---
 
 {% raw %}

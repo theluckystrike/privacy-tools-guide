@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-reverse-image-search-from-linking-dating-prof/
 categories: [guides]
-tags: [privacy, security]
+tags: [privacy-tools-guide, privacy, security]
 reviewed: true
 score: 8
 voice-checked: true

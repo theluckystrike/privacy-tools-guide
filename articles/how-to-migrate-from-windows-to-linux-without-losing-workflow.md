@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-migrate-from-windows-to-linux-without-losing-workflow/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, workflow]
 reviewed: true
 score: 8
 voice-checked: true

@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-pseudonymization-in-your-database-for-gdpr-/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---
