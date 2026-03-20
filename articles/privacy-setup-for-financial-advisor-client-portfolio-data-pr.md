@@ -246,6 +246,148 @@ server {
 }
 ```
 
+
+## Regulatory Compliance Considerations
+
+Financial advisors operate under a layered regulatory framework that directly shapes how client data must be handled. Understanding which rules apply to your implementation determines what controls are mandatory versus discretionary.
+
+**SEC Rule 17a-4** requires registered broker-dealers to retain records in a non-rewritable, non-erasable format. This "WORM" (Write Once Read Many) requirement affects how you store client communications, trade records, and account statements. Cloud storage solutions must be configured to enforce retention periods programmatically:
+
+```python
+# AWS S3 Object Lock configuration for SEC 17a-4 compliance
+import boto3
+
+s3 = boto3.client('s3')
+
+def configure_compliant_storage(bucket_name: str, retention_years: int = 7):
+    """Configure S3 bucket for SEC 17a-4 compliant storage."""
+    s3.put_object_lock_configuration(
+        Bucket=bucket_name,
+        ObjectLockConfiguration={
+            'ObjectLockEnabled': 'Enabled',
+            'Rule': {
+                'DefaultRetention': {
+                    'Mode': 'COMPLIANCE',
+                    'Years': retention_years
+                }
+            }
+        }
+    )
+    return True
+```
+
+**FINRA Rule 4370** requires firms to maintain a business continuity plan addressing data backup and recovery. Your privacy setup should include encrypted offsite backups with documented recovery procedures.
+
+**GDPR and CCPA** apply when you serve clients in the EU or California. Both regulations require a documented lawful basis for processing, data minimization practices, and the ability to fulfill subject access requests within their respective timeframes.
+
+Before building any system, identify which regulations apply to your advisory practice and document how your technical implementation satisfies each requirement. This documentation becomes evidence during regulatory examinations.
+
+
+## Multi-Factor Authentication and Session Management
+
+Financial advisor applications require strong authentication controls. Passwords alone are insufficient given the sensitivity of portfolio data and the value of these accounts to attackers.
+
+Implement TOTP-based multi-factor authentication as a minimum:
+
+```python
+import pyotp
+import qrcode
+from io import BytesIO
+
+class MFAManager:
+    def generate_secret(self, advisor_id: str) -> str:
+        secret = pyotp.random_base32()
+        self._store_secret(advisor_id, secret)
+        return secret
+    
+    def generate_qr_code(self, advisor_email: str, secret: str) -> bytes:
+        totp_uri = pyotp.totp.TOTP(secret).provisioning_uri(
+            name=advisor_email,
+            issuer_name="PortfolioManager"
+        )
+        img = qrcode.make(totp_uri)
+        buffer = BytesIO()
+        img.save(buffer, format='PNG')
+        return buffer.getvalue()
+    
+    def verify_token(self, advisor_id: str, token: str) -> bool:
+        secret = self._retrieve_secret(advisor_id)
+        totp = pyotp.TOTP(secret)
+        return totp.verify(token, valid_window=1)
+```
+
+Session management deserves equal attention. Financial applications should implement short session timeouts (15–30 minutes of inactivity), re-authentication requirements for sensitive actions like bulk data exports, and concurrent session controls that limit active sessions per advisor:
+
+```python
+from datetime import datetime, timedelta
+from typing import Optional
+
+class SessionManager:
+    SESSION_TIMEOUT_MINUTES = 20
+    MAX_CONCURRENT_SESSIONS = 3
+    
+    def validate_session(self, session_token: str) -> Optional[dict]:
+        session = self._fetch_session(session_token)
+        if not session:
+            return None
+        
+        last_activity = datetime.fromisoformat(session['last_activity'])
+        timeout = timedelta(minutes=self.SESSION_TIMEOUT_MINUTES)
+        
+        if datetime.utcnow() - last_activity > timeout:
+            self._invalidate_session(session_token)
+            return None
+        
+        self._update_last_activity(session_token)
+        return session
+```
+
+Enforce MFA enrollment during onboarding. Advisors who bypass enrollment at signup rarely complete it later. Make MFA mandatory at the application layer, not optional in a settings menu.
+
+
+## Client Data Sharing and Third-Party Integration Controls
+
+Financial advisors frequently share client data with custodians, portfolio analysis platforms, and compliance systems. Each integration is a potential privacy exposure. Implement a structured approach to third-party data sharing that limits what each integration receives.
+
+Use read-only API tokens with field-level restrictions rather than sharing full database credentials:
+
+```python
+from enum import Enum
+from typing import List, Dict, Any
+from dataclasses import dataclass
+
+class DataScope(Enum):
+    PORTFOLIO_SUMMARY = "portfolio_summary"
+    HOLDINGS_DETAIL = "holdings_detail"
+    TRANSACTION_HISTORY = "transaction_history"
+    CLIENT_PII = "client_pii"
+
+@dataclass
+class IntegrationToken:
+    vendor: str
+    allowed_scopes: List[DataScope]
+    client_ids: List[str]  # Specific clients this token can access
+    expires_at: str
+
+class PortfolioDataGateway:
+    def fetch_for_integration(
+        self, 
+        token: IntegrationToken, 
+        client_id: str, 
+        requested_scope: DataScope
+    ) -> Dict[str, Any]:
+        if client_id not in token.client_ids:
+            raise PermissionError(f"Token not authorized for client {client_id}")
+        
+        if requested_scope not in token.allowed_scopes:
+            raise PermissionError(f"Token scope does not include {requested_scope}")
+        
+        return self._fetch_scoped_data(client_id, requested_scope)
+```
+
+Maintain a current inventory of every third-party integration, what data it receives, and the legal basis for sharing. Review this inventory quarterly. Integrations that appeared necessary at the time sometimes outlive their purpose—old connections are easy to forget but continue transmitting data until explicitly terminated.
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
