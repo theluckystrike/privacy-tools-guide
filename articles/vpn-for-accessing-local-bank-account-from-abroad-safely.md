@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /vpn-for-accessing-local-bank-account-from-abroad-safely/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
