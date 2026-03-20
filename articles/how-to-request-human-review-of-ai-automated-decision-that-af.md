@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-human-review-of-ai-automated-decision-that-affects-you/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
