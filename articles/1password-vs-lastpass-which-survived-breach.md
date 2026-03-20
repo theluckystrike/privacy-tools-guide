@@ -58,7 +58,7 @@ Both services use AES-256 for encryption, but their key derivation approaches di
 ```python
 # Simplified concept of key derivation
 # LastPass (pre-2022): 100,000 iterations
-# LastPass (post-2023): 600,000+ iterations  
+# LastPass (post-2023): 600,000+ iterations 
 # 1Password (current): 1,000,000+ iterations with PBKDF2-HMAC-SHA256
 ```
 
@@ -148,14 +148,6 @@ Review vault access regularly and remove items you no longer need. Smaller vault
 Consider compartmentalization for high-value credentials. Some developers maintain separate vaults for work and personal use, or use different password managers for different sensitivity levels.
 
 Monitor account activity for both services. Both platforms provide login history and device management features that can alert you to unauthorized access attempts.
-
-## Conclusion
-
-Both 1Password and LastPass experienced security breaches, but the outcomes differed significantly due to architectural decisions made before those incidents occurred. 1Password's Secret Key implementation and stricter zero-knowledge boundaries limited the damage of their 2023 breach. LastPass's breach resulted in actual credential exposure for some users, prompting substantial architectural changes.
-
-For developers and power users, the practical takeaway involves understanding that no system is invulnerable. What matters is how a service is designed to contain breaches and protect the most sensitive data. The architectural decisions that protected 1Password users were made years before their incident—demonstrating that security investments pay dividends when incidents occur.
-
-Evaluate password managers based on their worst-case scenarios rather than marketing claims. The breach histories provide concrete data for that evaluation, even though both services remain popular and actively maintained.
 
 ## Related Reading
 

@@ -107,7 +107,7 @@ Once you've captured some traffic, it's time to analyze it. The key question is:
 
 When you examine your captured packets, encrypted traffic will show several characteristic signs:
 
-**1. Non-Readable Payload**: The data portion of the packets should appear as random-looking bytes rather than readable text. If you see plain HTTP requests, email contents, or other readable data, your VPN might not be working correctly.
+1. Non-Readable Payload The data portion of the packets should appear as random-looking bytes rather than readable text. If you see plain HTTP requests, email contents, or other readable data, your VPN might not be working correctly.
 
 ```bash
 # Example: viewing captured packets
@@ -116,9 +116,9 @@ tcpdump -r vpn-traffic.pcap | head -20
 
 You should see mostly hexadecimal output or garbled characters in the data section, not plain English text.
 
-**2. VPN Protocol Headers**: Your packets should contain headers from your VPN protocol. For WireGuard, you'll see UDP packets on port 51820. For OpenVPN, you'll see packets on port 1194 (or your configured port) with OpenVPN-specific headers.
+2. VPN Protocol Headers Your packets should contain headers from your VPN protocol. For WireGuard, you'll see UDP packets on port 51820. For OpenVPN, you'll see packets on port 1194 (or your configured port) with OpenVPN-specific headers.
 
-**3. Consistent Packet Sizes**: Encrypted packets often have consistent or semi-consistent sizes due to block cipher padding, whereas plaintext packets vary more randomly.
+3. Consistent Packet Sizes Encrypted packets often have consistent or semi-consistent sizes due to block cipher padding, whereas plaintext packets vary more randomly.
 
 ### Using tcpdump with Specific Filters
 
@@ -245,8 +245,8 @@ ip addr
 ip route
 
 # Check VPN status
-sudo wg show  # for WireGuard
-sudo openvpn --config /path/to/config  # for OpenVPN
+sudo wg show # for WireGuard
+sudo openvpn --config /path/to/config # for OpenVPN
 ```
 
 ### Issue: High Packet Count but No Data Transfer
@@ -261,33 +261,23 @@ If you see many packets but no actual data:
 
 When using tcpdump to verify your VPN:
 
-1. **Capture files can contain sensitive data**: Even if your VPN traffic is encrypted, your captures might contain metadata, DNS queries, or initial handshake information. Delete capture files when done.
+1. Capture files can contain sensitive data Even if your VPN traffic is encrypted, your captures might contain metadata, DNS queries, or initial handshake information. Delete capture files when done.
 
-2. **Local network visibility**: On shared networks (coffee shops, hotels), anyone else on the network can potentially see your packets if they're not properly encrypted through the VPN.
+2. Local network visibility On shared networks (coffee shops, hotels), anyone else on the network can potentially see your packets if they're not properly encrypted through the VPN.
 
-3. **Avoid real-time streaming to untrusted systems**: Don't pipe tcpdump output directly to remote servers you don't control.
+3. Avoid real-time streaming to untrusted systems Don't pipe tcpdump output directly to remote servers you don't control.
 
 ## Best Practices for Regular VPN Verification
 
 To maintain confidence in your VPN setup:
 
-1. **Initial verification**: Always verify your VPN is working with tcpdump when first setting up a new VPN provider or configuration.
+1. Initial verification Always verify your VPN is working with tcpdump when first setting up a new VPN provider or configuration.
 
-2. **Periodic checks**: Run tcpdump captures periodically to ensure nothing has changed in your VPN behavior.
+2. Periodic checks Run tcpdump captures periodically to ensure nothing has changed in your VPN behavior.
 
-3. **After network changes**: Verify again after router changes, network configuration updates, or VPN software updates.
+3. After network changes Verify again after router changes, network configuration updates, or VPN software updates.
 
-4. **After system sleep/wake**: Some systems don't properly re-establish VPN connections after waking from sleep—always verify after resuming.
-
-## Conclusion
-
-Using tcpdump to verify VPN encryption is an essential skill for anyone serious about their online privacy and security. By understanding how to capture and analyze network traffic, you can verify that your VPN is actually doing what it claims—encrypting your data and protecting your privacy.
-
-The key takeaways are: look for unreadable (encrypted) payload data in your captures, verify the correct VPN protocol ports are being used, check for DNS leaks, and always confirm that your VPN interface is the one carrying your traffic.
-
-Remember that a VPN is only as good as its implementation—tcpdump gives you the tools to verify that implementation yourself, rather than blindly trusting that your "connected" status means your data is truly secure.
-
-{% endraw %}
+4. After system sleep/wake Some systems don't properly re-establish VPN connections after waking from sleep—always verify after resuming.
 
 ## Related Reading
 

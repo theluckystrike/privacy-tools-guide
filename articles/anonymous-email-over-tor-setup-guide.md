@@ -63,8 +63,8 @@ Thunderbird provides a graphical interface with full SOCKS5 proxy support. This 
 
 1. Open **Thunderbird → Settings → Connection Settings**
 2. Select **Manual Proxy Configuration**
-3. Set **SOCKS Host**: `127.0.0.1`
-4. Set **Port**: `9050`
+3. Set SOCKS Host `127.0.0.1`
+4. Set Port `9050`
 5. Select **SOCKS v5**
 6. Check **Proxy DNS when using SOCKS v5** (prevents DNS leaks)
 
@@ -209,15 +209,6 @@ Confirm your email traffic routes through Tor:
 3. Verify no your home IP appears in any headers
 
 Your headers should show connections from `.onion` domains or Tor exit node IPs, never your ISP-assigned address.
-
-## Summary
-
-Running email over Tor requires configuring your mail client to use a SOCKS5 proxy, optionally connecting to provider onion services for enhanced privacy, and maintaining strict operational security. Thunderbird provides a user-friendly interface, while NeoMutt suits command-line workflows. Regardless of client choice, always verify your traffic routes correctly and avoid mixing anonymous and regular identities.
-
-The setup process takes approximately 30 minutes and significantly improves your resistance to network surveillance. For developers building privacy applications or users requiring strong anonymity, this configuration forms a foundational element of secure communications.
-
----
-
 
 ## Related Reading
 

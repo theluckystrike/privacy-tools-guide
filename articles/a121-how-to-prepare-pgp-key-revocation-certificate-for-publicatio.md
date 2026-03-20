@@ -39,10 +39,10 @@ gpg --list-secret-keys
 This displays your secret keys with their key IDs. The output looks like this:
 
 ```
-sec   rsa4096/3AA5C6F7 2026-01-15 [SC]
+sec rsa4096/3AA5C6F7 2026-01-15 [SC]
       4A7C8E9F2B3D1A6C5E4F7890ABCDEF01
-uid                 [ultimate] Your Name <your@email.com>
-ssb   rsa4096/7B8C9D0E 2026-01-15 [E]
+uid [ultimate] Your Name <your@email.com>
+ssb rsa4096/7B8C9D0E 2026-01-15 [E]
 ```
 
 The key ID is `3AA5C6F7` in this example. Replace it with your actual key ID in the commands below.

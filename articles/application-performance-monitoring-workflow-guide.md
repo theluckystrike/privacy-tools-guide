@@ -17,11 +17,11 @@ voice-checked: true
 
 {% raw %}
 
-Set up a comprehensive application performance monitoring (APM) workflow by instrumenting your code with custom metrics, establishing meaningful alerts based on service level objectives (SLOs), and implementing distributed tracing to quickly isolate performance bottlenecks. This guide covers metric collection strategies, alerting best practices, tracing implementation, and building a monitoring culture that balances observability with user privacy.
+Set up a application performance monitoring (APM) workflow by instrumenting your code with custom metrics, establishing meaningful alerts based on service level objectives (SLOs), and implementing distributed tracing to quickly isolate performance bottlenecks. This guide covers metric collection strategies, alerting best practices, tracing implementation, and building a monitoring culture that balances observability with user privacy.
 
 ## Why Application Performance Monitoring Matters
 
-Application performance monitoring provides visibility into how your software behaves in production. Without proper monitoring, you're essentially flying blind—unable to detect degraded performance, understand root causes of incidents, or make data-driven decisions about optimization investments. Modern APM tools collect metrics, logs, and traces to give you a complete picture of system health.
+Application performance monitoring provides visibility into how your software behaves in production. Without proper monitoring, you're flying blind—unable to detect degraded performance, understand root causes of incidents, or make data-driven decisions about optimization investments. Modern APM tools collect metrics, logs, and traces to give you a complete picture of system health.
 
 Effective monitoring serves three primary purposes. First, it enables rapid incident detection so your team can resolve issues before they impact users. Second, it provides the data needed for root cause analysis when problems occur. Third, it offers insights for capacity planning and performance optimization.
 
@@ -112,9 +112,9 @@ function handleRequest(req, res) {
 
 Full tracing generates enormous volumes of data. Implement sampling to reduce costs while retaining useful data. Common strategies include:
 
-- **Head sampling**: Decide whether to trace a request before knowing its outcome. Sample a fixed percentage of requests or sample all errors.
+- Head sampling: Decide whether to trace a request before knowing its outcome. Sample a fixed percentage of requests or sample all errors.
 
-- **Tail sampling**: Make sampling decisions after the request completes. This allows you to capture all errors while sampling only a fraction of successful requests.
+- Tail sampling: Make sampling decisions after the request completes. This allows you to capture all errors while sampling only a fraction of successful requests.
 
 ## Alerting Best Practices
 
@@ -134,9 +134,9 @@ Create alerts that fire when users are affected, not when intermediate systems h
 
 Not all alerts require immediate action. Use severity levels:
 
-- **Critical**: Immediate user impact, requires urgent response (page on-call staff)
-- **Warning**: Potential user impact, investigate during business hours
-- **Info**: Informational, no immediate action needed
+- Critical: Immediate user impact, requires urgent response (page on-call staff)
+- Warning: Potential user impact, investigate during business hours
+- Info: Informational, no immediate action needed
 
 ### Reduce Alert Fatigue
 
@@ -224,17 +224,17 @@ After significant incidents, analyze monitoring data to understand what happened
 
 ### Open Source Options
 
-- **Prometheus**: Metrics collection and alerting with powerful PromQL query language
-- **Grafana**: Visualization and dashboarding
-- **Jaeger**: Distributed tracing
-- **OpenTelemetry**: Vendor-neutral instrumentation library
+- Prometheus: Metrics collection and alerting with powerful PromQL query language
+- Grafana: Visualization and dashboarding
+- Jaeger: Distributed tracing
+- OpenTelemetry: Vendor-neutral instrumentation library
 
 ### Commercial Platforms
 
-- **Datadog**: Full-stack APM with log management
-- **New Relic**: APM with AI-powered anomaly detection
-- **AWS CloudWatch**: Native AWS monitoring
-- **Google Cloud Operations**: GCP-native monitoring stack
+- Datadog: Full-stack APM with log management
+- New Relic: APM with AI-powered anomaly detection
+- AWS CloudWatch: Native AWS monitoring
+- Google Cloud Operations: GCP-native monitoring stack
 
 Choose tools that integrate with your existing infrastructure and provide the specific capabilities your team needs.
 
@@ -242,19 +242,13 @@ Choose tools that integrate with your existing infrastructure and provide the sp
 
 Start with foundational monitoring before adding complexity:
 
-1. **Phase 1**: Instrument all services with basic metrics (latency, errors, throughput). Set up alerts for critical errors and extreme latency.
+1. Phase 1: Instrument all services with basic metrics (latency, errors, throughput). Set up alerts for critical errors and extreme latency.
 
-2. **Phase 2**: Add distributed tracing for services with complex call paths. Implement SLO tracking and error budgets.
+2. Phase 2: Add distributed tracing for services with complex call paths. Implement SLO tracking and error budgets.
 
-3. **Phase 3**: Build comprehensive dashboards for different audiences (executives, on-call engineers, developers). Establish runbooks for common incidents.
+3. Phase 3: Build dashboards for different audiences (executives, on-call engineers, developers). Establish runbooks for common incidents.
 
-4. **Phase 4**: Implement advanced features like anomaly detection, custom business metrics, and automated remediation.
-
-## Conclusion
-
-Effective application performance monitoring requires thoughtful implementation of metrics, tracing, and alerting. Start simple, iterate based on operational needs, and always consider privacy implications when collecting and storing monitoring data. With proper monitoring in place, your team can detect issues quickly, resolve incidents efficiently, and make informed decisions about performance investments.
-
-{% endraw %}
+4. Phase 4: Implement advanced features like anomaly detection, custom business metrics, and automated remediation.
 
 ## Related Reading
 

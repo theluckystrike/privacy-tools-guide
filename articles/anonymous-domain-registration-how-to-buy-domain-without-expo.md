@@ -164,11 +164,11 @@ fi
 
 No privacy method is perfect. Be aware of these constraints:
 
-1. **Legal requests**: Privacy services must respond to valid legal requests, providing your information when required
-2. **Payment trails**: Even with privacy protection, payment records exist unless using cryptocurrency
-3. **Domain transfers**: Moving domains may temporarily expose information
-4. **TLD restrictions**: Some country-code TLDs (ccTLDs) do not permit privacy protection
-5. **Renewal notices**: Ensure your privacy service forwards renewal emails reliably
+1. Legal requests Privacy services must respond to valid legal requests, providing your information when required
+2. Payment trails Even with privacy protection, payment records exist unless using cryptocurrency
+3. Domain transfers Moving domains may temporarily expose information
+4. TLD restrictions Some country-code TLDs (ccTLDs) do not permit privacy protection
+5. Renewal notices Ensure your privacy service forwards renewal emails reliably
 
 ## Recommended Workflow for Maximum Privacy
 
@@ -178,13 +178,6 @@ No privacy method is perfect. Be aware of these constraints:
 4. Enable DNS privacy with Cloudflare or similar
 5. Use VPN/Tor when managing domain settings
 6. Monitor WHOIS regularly to confirm protection remains active
-
-## Conclusion
-
-Anonymous domain registration is accessible to anyone willing to implement a few privacy layers. For developers and power users, combining registrar-provided privacy protection with anonymous email, VPN/Tor usage, and cryptocurrency payment creates a robust privacy posture. Start with a privacy-focused registrar for simplicity, then add layers based on your threat model.
-
-Regular maintenance—checking WHOIS status, renewing domains promptly, and monitoring for leaks—ensures your privacy remains intact over time.
-
 
 ## Related Reading
 

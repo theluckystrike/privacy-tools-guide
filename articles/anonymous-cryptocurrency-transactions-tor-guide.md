@@ -83,7 +83,7 @@ Edit your Tor configuration file (`/etc/tor/torrc`):
 # Add Bitcoin hidden service
 HiddenServiceDir /var/lib/tor/bitcoin-service
 HiddenServicePort 8333 127.0.0.1:8333
-HiddenServicePort 18333 127.0.0.1:18333  # testnet
+HiddenServicePort 18333 127.0.0.1:18333 # testnet
 ```
 
 Restart Tor after configuration:
@@ -174,15 +174,6 @@ bitcoin-cli getpeerinfo | grep -E "addronnet.*onion"
 ```
 
 Confirm your node accepts only onion connections and that your visible IP differs from your actual IP.
-
-## Conclusion
-
-Anonymous cryptocurrency transactions through Tor represent a achievable goal for developers and power users willing to invest in proper implementation. The technical foundation involves running your own full node, configuring wallets to use Tor exclusively, and operating your node as a hidden service.
-
-However, technical implementation is only part of the solution. Operational security practices—address management, network isolation, and metadata awareness—determine your actual privacy. Blockchain surveillance continues to evolve, and staying informed about emerging analysis techniques helps you adapt your practices accordingly.
-
-The balance between usability and privacy requires tradeoffs. More isolation means more complexity and potentially reduced functionality. Start with basic Tor integration, verify it works correctly, then progressively implement additional protections based on your threat model.
-
 
 ## Related Reading
 

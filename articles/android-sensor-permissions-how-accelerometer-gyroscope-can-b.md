@@ -16,11 +16,11 @@ voice-checked: true
 
 Modern Android devices contain a variety of sensors that measure physical phenomena. Among the most common are the accelerometer and gyroscope, which detect device movement and rotation. While these sensors enable useful features like screen rotation and fitness tracking, they also present privacy considerations that developers and power users should understand.
 
-This guide covers how Android sensor permissions work, what data these sensors provide, and how they can be leveraged for tracking purposes.
+This guide covers how Android sensor permissions work, what data these sensors provide, and how they can be used for tracking purposes.
 
 ## Understanding Android Motion Sensors
 
-Android provides a comprehensive sensor framework through the `android.hardware.Sensor` API. The accelerometer and gyroscope serve different but complementary purposes:
+Android provides a sensor framework through the `android.hardware.Sensor` API. The accelerometer and gyroscope serve different but complementary purposes:
 
 - **Accelerometer** measures the acceleration force in m/s² applied to the device on all three physical axes (x, y, z). This includes gravity. When the device is resting on a table, the accelerometer reads approximately 9.8 m/s² on the z-axis.
 
@@ -186,25 +186,16 @@ public void calculateOrientation(SensorEvent event) {
 
 For developers working with motion sensors:
 
-1. **Minimize data collection**: Only collect sensor data when necessary for core functionality
-2. **Process locally**: Perform analysis on-device rather than transmitting raw sensor data
-3. **Implement rate limiting**: Use lower sampling rates when high precision is unnecessary
-4. **Provide disclosure**: Clearly explain sensor usage in your privacy policy
+1. Minimize data collection Only collect sensor data when necessary for core functionality
+2. Process locally Perform analysis on-device rather than transmitting raw sensor data
+3. Implement rate limiting Use lower sampling rates when high precision is unnecessary
+4. Provide disclosure Clearly explain sensor usage in your privacy policy
 
 For users concerned about motion sensor tracking:
 
-1. **Review app permissions**: Check which apps have access to sensors (visible in Android settings under "Physical activity")
-2. **Use security-focused ROMs**: Some privacy-oriented Android distributions offer sensor access controls
-3. **Restrict background access**: Ensure apps cannot access sensors when not in use
-
-## Conclusion
-
-Android sensor permissions for accelerometer and gyroscope represent an often-overlooked privacy consideration. While these sensors lack the runtime permission requirements of location or camera access, they can still enable sophisticated tracking and data inference. Understanding these capabilities helps developers build more privacy-conscious applications and empowers users to make informed decisions about the apps they install.
-
-The gap between sensor permissions and dangerous permissions reflects outdated assumptions about sensor data sensitivity. As research continues to reveal new attack vectors, both developers and users should treat motion sensor data with appropriate caution.
-
----
-
+1. Review app permissions Check which apps have access to sensors (visible in Android settings under "Physical activity")
+2. Use security-focused ROMs Some privacy-oriented Android distributions offer sensor access controls
+3. Restrict background access Ensure apps cannot access sensors when not in use
 
 ## Related Reading
 

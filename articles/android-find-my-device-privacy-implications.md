@@ -25,9 +25,9 @@ When you enable Find My Device on Android, several background services activate 
 
 Find My Device integrates with Android's location framework, which operates on three levels:
 
-- **GPS (Global Positioning System)**: Provides precise outdoor location using satellite signals
-- **Wi-Fi positioning**: Estimates location based on nearby wireless networks
-- **Cell tower triangulation**: Uses cellular network cell IDs for approximate location
+- GPS (Global Positioning System) Provides precise outdoor location using satellite signals
+- Wi-Fi positioning Estimates location based on nearby wireless networks
+- Cell tower triangulation Uses cellular network cell IDs for approximate location
 
 The service requires Google Play Services to function, meaning it maintains a persistent connection to Google's servers. This connection transmits your device's location periodically, even when you're not actively using the Find My Device interface.
 
@@ -87,8 +87,8 @@ However, note that some device manufacturers integrate Find My Device functional
 
 For users who want device recovery capability without cloud dependency, consider these alternatives:
 
-- **Offline finding**: Some Android devices support offline finding, which uses Bluetooth LE to broadcast location signals that other devices can relay to you (without Google servers)
-- **Third-party solutions**: Apps like Cerberus or Prey offer self-hosted tracking options, though they require more setup
+- Offline finding Some Android devices support offline finding, which uses Bluetooth LE to broadcast location signals that other devices can relay to you (without Google servers)
+- Third-party solutions Apps like Cerberus or Prey offer self-hosted tracking options, though they require more setup
 
 ### Developer Considerations
 

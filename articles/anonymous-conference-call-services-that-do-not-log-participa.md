@@ -21,10 +21,10 @@ When organizing sensitive discussions—whether for business negotiations, whist
 
 Traditional conference call services collect varying amounts of participant data. The most common privacy concerns include:
 
-- **Caller ID logging**: Services record the phone numbers of all participants
-- **Call metadata retention**: Duration, times, and participant lists are stored
-- **Recording capabilities**: Some services automatically record without explicit consent
-- **Third-party data sharing**: Metadata may be sold to advertisers or analytics firms
+- Caller ID logging Services record the phone numbers of all participants
+- Call metadata retention Duration, times, and participant lists are stored
+- Recording capabilities Some services automatically record without explicit consent
+- Third-party data sharing Metadata may be sold to advertisers or analytics firms
 
 For developers building privacy-conscious applications or individuals requiring secure communications, understanding these risks is essential before selecting a service.
 
@@ -152,7 +152,7 @@ def build_jitsi_url(room_name, domain="meet.example.com"):
     base_url = f"https://{domain}/{room_name}"
     # Add privacy-focused URL parameters
     params = {
-        "config.prejoinPageEnabled": "false",  # Skip prejoin screen
+        "config.prejoinPageEnabled": "false", # Skip prejoin screen
         "config.startWithAudioMuted": "true",
         "config.startWithVideoMuted": "true",
     }

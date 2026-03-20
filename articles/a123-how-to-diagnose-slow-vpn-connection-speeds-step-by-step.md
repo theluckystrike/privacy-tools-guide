@@ -25,12 +25,12 @@ Before diving into diagnostics, it's essential to understand what affects VPN sp
 
 The main factors affecting VPN speed include:
 
-- **Server distance**: The physical distance between you and the VPN server directly impacts latency and throughput
-- **Server load**: Overcrowded servers share bandwidth among more users, reducing individual speeds
-- **Protocol overhead**: Different VPN protocols (OpenVPN, WireGuard, IKEv2) have varying levels of encryption overhead
-- **Your base internet speed**: A VPN cannot exceed your underlying connection speed
-- **Network congestion**:ISP throttling or network congestion can amplify VPN slowdowns
-- **Encryption strength**: Stronger encryption typically requires more processing power
+- Server distance The physical distance between you and the VPN server directly impacts latency and throughput
+- Server load Overcrowded servers share bandwidth among more users, reducing individual speeds
+- Protocol overhead Different VPN protocols (OpenVPN, WireGuard, IKEv2) have varying levels of encryption overhead
+- Your base internet speed A VPN cannot exceed your underlying connection speed
+- Network congestion ISP throttling or network congestion can amplify VPN slowdowns
+- Encryption strength Stronger encryption typically requires more processing power
 
 Understanding these factors helps you interpret your diagnostic results and choose appropriate fixes.
 
@@ -97,12 +97,12 @@ for server in servers:
     result = run_speedtest()
     results.append({
         'server': server,
-        'download': result['download']['bandwidth'] / 125000,  # Convert to Mbps
+        'download': result['download']['bandwidth'] / 125000, # Convert to Mbps
         'upload': result['upload']['bandwidth'] / 125000,
         'ping': result['ping']['latency']
     })
-    print(f"  Download: {results[-1]['download']:.2f} Mbps")
-    print(f"  Ping: {results[-1]['ping']:.2f} ms")
+    print(f" Download: {results[-1]['download']:.2f} Mbps")
+    print(f" Ping: {results[-1]['ping']:.2f} ms")
 
 # Find the best server
 best = min(results, key=lambda x: x['ping'])
@@ -120,11 +120,11 @@ Different VPN protocols offer different speed/ security tradeoffs. Testing multi
 
 ### Common VPN Protocols and Their Characteristics
 
-- **WireGuard**: Modern, lightweight, typically fastest (often within 10% of base speed)
-- **OpenVPN (UDP)**: Good balance of speed and security
-- **OpenVPN (TCP)**: More reliable but slower due to error correction
-- **IKEv2**: Fast reconnection, good for mobile devices
-- **Lightway**: ExpressVPN's protocol, optimized for speed
+- WireGuard Modern, lightweight, typically fastest (often within 10% of base speed)
+- OpenVPN (UDP) Good balance of speed and security
+- OpenVPN (TCP) More reliable but slower due to error correction
+- IKEv2 Fast reconnection, good for mobile devices
+- Lightway ExpressVPN's protocol, optimized for speed
 
 ### Protocol Testing Procedure
 
@@ -200,7 +200,7 @@ def test_transfer_speed(packet_size, count):
     return elapsed
 
 # Test with various payload sizes
-sizes = [64, 512, 1400, 65535]  # bytes
+sizes = [64, 512, 1400, 65535] # bytes
 for size in sizes:
     elapsed = test_transfer_speed(size, 1000)
     print(f"Packet size {size}: {elapsed:.3f}s")
@@ -243,8 +243,8 @@ mtu = 1400
 
 ### Kill Switch and Split Tunneling
 
-- **Enable kill switch**: Prevents data leaks if VPN drops
-- **Configure split tunneling**: Route only specific traffic through VPN to reduce overhead
+- Enable kill switch Prevents data leaks if VPN drops
+- Configure split tunneling Route only specific traffic through VPN to reduce overhead
 
 ### Encryption Cipher Selection
 
@@ -273,13 +273,6 @@ If you've exhausted all diagnostic steps and optimizations, the issue might be:
 - Account limitations
 
 Contact support with your diagnostic results—they can often identify server-specific issues or suggest optimal server configurations.
-
-## Conclusion
-
-Diagnosing slow VPN speeds requires a systematic approach: establish baselines, test systematically, identify patterns, and apply targeted fixes. Most issues can be resolved by switching servers, changing protocols, or optimizing configuration settings.
-
-Remember that some speed reduction is normal with any VPN due to encryption overhead and routing. Aim for retaining at least 60% of your base speed on nearby servers. If you're seeing significantly worse performance, the diagnostic steps in this guide will help you identify and resolve the specific bottleneck affecting your connection.
-
 
 ## Related Reading
 

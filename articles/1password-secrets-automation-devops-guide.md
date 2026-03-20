@@ -41,14 +41,14 @@ First, configure the 1Password provider in your Terraform configuration:
 terraform {
   required_providers {
     onepassword = {
-      source  = "1password/onepassword"
+      source = "1password/onepassword"
       version = "1.0.0"
     }
   }
 }
 
 provider "onepassword" {
-  url  = "https://mycompany.1password.com"
+  url = "https://mycompany.1password.com"
   token = var.onepassword_token
 }
 
@@ -58,14 +58,14 @@ resource "onepassword_item" "aws_production" {
     title = "AWS Production Keys"
     category = "API Credential"
     fields {
-      name  = "access_key_id"
+      name = "access_key_id"
       value = var.aws_access_key_id
-      type  = "STRING"
+      type = "STRING"
     }
     fields {
-      name  = "secret_access_key"
+      name = "secret_access_key"
       value = var.aws_secret_access_key
-      type  = "CONCEALED"
+      type = "CONCEALED"
     }
   }
 }
@@ -239,21 +239,13 @@ Network security becomes critical when transmitting credentials between systems.
 ```bash
 # Wrong - exposes password in process list
 export PASSWORD=$(op item get "Item" --field password)
-echo $PASSWORD  # Never do this
+echo $PASSWORD # Never do this
 
 # Correct - suppress command output
 export PASSWORD=$(op item get "Item" --field password 2>/dev/null)
 ```
 
 Access auditing provides visibility into which automation systems accessed which secrets. Review the 1Password audit logs regularly to identify unusual access patterns or unauthorized attempts.
-
-## Conclusion
-
-Integrating 1Password into DevOps workflows eliminates hardcoded credentials while maintaining the accessibility that development teams need. Start with the Terraform or Ansible integration for infrastructure automation, add Kubernetes external secrets for containerized applications, and extend to your CI/CD platform of choice. Each layer reduces risk while improving operational efficiency.
-
-The combination of service accounts, dedicated automation vaults, and programmatic CLI access covers secret management across your entire deployment pipeline.
-
-
 
 ## Related Reading
 

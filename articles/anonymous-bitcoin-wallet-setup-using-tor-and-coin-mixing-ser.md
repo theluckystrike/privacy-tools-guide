@@ -87,7 +87,7 @@ Replace the server with any Electrum server that supports SSL. Many privacy-focu
 
 ### Sparrow Wallet with Bitcoin Core over Tor
 
-For users requiring more advanced features, Sparrow Wallet paired with a Tor-configured Bitcoin Core node offers comprehensive privacy. Sparrow connects exclusively to your local node, and Bitcoin Core can be configured to only connect via Tor:
+For users requiring more advanced features, Sparrow Wallet paired with a Tor-configured Bitcoin Core node offers privacy. Sparrow connects exclusively to your local node, and Bitcoin Core can be configured to only connect via Tor:
 
 ```bash
 # In bitcoin.conf
@@ -137,10 +137,10 @@ The key principle is separation: keep your identity-linked coins completely sepa
 
 Beyond Tor and mixing, consider these practices:
 
-- **Air-gapped signing**: Use a hardware wallet on an air-gapped machine for signing transactions, preventing malware from capturing keys
-- **Blockchain explorers**: Access blockchain explorers through Tor for viewing transaction details
-- **Network timing**: Avoid timing attacks by ensuring consistent Tor usage patterns rather than intermittent use
-- **UTXO management**: Be aware that spending mixed coins in ways that reveal the mixing history can reduce privacy gains
+- Air-gapped signing Use a hardware wallet on an air-gapped machine for signing transactions, preventing malware from capturing keys
+- Blockchain explorers Access blockchain explorers through Tor for viewing transaction details
+- Network timing Avoid timing attacks by ensuring consistent Tor usage patterns rather than intermittent use
+- UTXO management Be aware that spending mixed coins in ways that reveal the mixing history can reduce privacy gains
 
 ## Common Mistakes to Avoid
 
@@ -151,15 +151,6 @@ Many users undermine their privacy through simple mistakes:
 - Using the same wallet for mixed and unmixed coins
 - Failing to verify the mixing service's implementation
 - Assuming mixing alone provides complete anonymity without network-level protection
-
-## Summary
-
-Building an anonymous Bitcoin setup requires combining multiple privacy techniques. Tor hides your network identity, while coin mixing breaks the transaction graph. Electrum with Tor or Wasabi Wallet provide accessible implementations for most users, while Sparrow with a Tor-configured Bitcoin Core node offers more advanced control.
-
-Remember that privacy is an arms race—blockchain analysis techniques continue evolving, and best practices change accordingly. Stay informed about protocol-level privacy improvements like Taproot and Schnorr signatures, which enhance transaction privacy at the base layer.
-
-The tools and techniques in this guide represent current best practices for Bitcoin privacy, but they require consistent implementation to be effective. Start with the basics, establish good operational security habits, and gradually incorporate more advanced techniques as you become comfortable with the workflow.
-
 
 ## Related Reading
 

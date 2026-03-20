@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-Yes, 1Password Families is worth it for power users in 2026, especially technical households that need granular vault sharing, CLI automation for home infrastructure, and Watchtower security monitoring across all family members. At up to five members with flexible vault organization and robust admin recovery controls, it justifies its premium over Bitwarden Families for users who value polished developer tooling and sharing infrastructure.
+Yes, 1Password Families is worth it for power users in 2026, especially technical households that need granular vault sharing, CLI automation for home infrastructure, and Watchtower security monitoring across all family members. At up to five members with flexible vault organization and admin recovery controls, it justifies its premium over Bitwarden Families for users who value polished developer tooling and sharing infrastructure.
 
 ## Pricing and Core Features
 
@@ -131,11 +131,11 @@ The monitoring operates server-side, meaning 1Password never receives the actual
 
 Transparency about limitations helps determine if 1Password Families fits your needs. Missing features include:
 
-**No Dedicated Admin Dashboard**: Compared to 1Password Business, families lack centralized reporting and user management beyond basic recovery. Technical users accustomed to admin panels might find this limiting.
+No Dedicated Admin Dashboard Compared to 1Password Business, families lack centralized reporting and user management beyond basic recovery. Technical users accustomed to admin panels might find this limiting.
 
-**Limited Vault Policies**: Organizations can enforce policies like "require two-factor authentication" or "master password length minimum." Families have no equivalent policy enforcement.
+Limited Vault Policies Organizations can enforce policies like "require two-factor authentication" or "master password length minimum." Families have no equivalent policy enforcement.
 
-**No Directory Integration**: Families cannot connect to Google Workspace, Microsoft Entra ID, or other identity providers for automatic provisioning.
+No Directory Integration Families cannot connect to Google Workspace, Microsoft Entra ID, or other identity providers for automatic provisioning.
 
 For households with mixed technical sophistication, these limitations matter less. The trade-off is simplicity over enterprise-grade control.
 

@@ -35,10 +35,10 @@ Each occupies a different position on the privacy-usability spectrum.
 
 GrapheneOS implements the most aggressive security hardening. Its architecture includes:
 
-- **Hardened malloc**: Uses hardened_malloc to prevent heap exploitation
-- **Mandatory SELinux enforcement**: Every process runs in enforced mode
-- **Network sandboxing**: Per-app network access control without requiring VPN
-- **Exec spawning**: Reduces attack surface by eliminating executable file support
+- Hardened malloc Uses hardened_malloc to prevent heap exploitation
+- Mandatory SELinux enforcement Every process runs in enforced mode
+- Network sandboxing Per-app network access control without requiring VPN
+- Exec spawning Reduces attack surface by eliminating executable file support
 
 ```bash
 # GrapheneOS sandbox verification
@@ -82,9 +82,9 @@ LineageOS provides the most flexible foundation. It ships without microG by defa
 # 2. Flash via TWRP: Install -> microG-signed.zip
 # 3. Reboot to system
 # 4. Open microG Settings and enable:
-#    - Google device registration
-#    - Cloud messaging
-#    - SafetyNet (basic attestation only)
+# - Google device registration
+# - Cloud messaging
+# - SafetyNet (basic attestation only)
 ```
 
 LineageOS supports the broadest device range—over 180 devices receive monthly security patches.
@@ -190,13 +190,6 @@ All privacy-focused ROMs require:
 adb backup -apk -shared -all -f backup.ab
 # Store backup securely before proceeding
 ```
-
-## Conclusion
-
-The right choice depends on your threat model. GrapheneOS offers maximum security but limits app compatibility. CalyxOS provides a middle ground with microG support. LineageOS remains the most flexible with the largest community. DivestOS breathes new life into older hardware while maintaining privacy features.
-
-For developers building privacy-conscious applications, testing across multiple ROM environments reveals how your app behaves without Google Play Services—a critical consideration as privacy awareness grows.
-
 
 ## Related Reading
 

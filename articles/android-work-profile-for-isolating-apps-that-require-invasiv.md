@@ -26,8 +26,8 @@ Android Work Profile is a native Android feature introduced in Android 5.0 (Loll
 
 When you enable Work Profile, Android creates two distinct spaces:
 
-- **Personal Profile**: Your regular apps and data, protected from work profile monitoring
-- **Work Profile**: A managed container where designated apps operate under IT or user-defined policies
+- Personal Profile Your regular apps and data, protected from work profile monitoring
+- Work Profile A managed container where designated apps operate under IT or user-defined policies
 
 The key privacy benefit: apps installed in the Work Profile cannot access data from your personal profile, and vice versa. This isolation extends to file systems, contacts, and installed app lists.
 
@@ -149,29 +149,18 @@ MDM solutions like Microsoft Intune, Samsung Knox, or open-source alternatives l
 
 Work Profile isn't a perfect solution. Be aware of these constraints:
 
-- **Cross-profile notifications**: Notifications from Work Profile apps appear on your lock screen, potentially exposing sensitive data
-- **Battery drain**: Running two profiles increases memory and battery consumption
-- **Limited isolation**: Some system APIs remain accessible across profiles; Work Profile doesn't protect against all attack vectors
-- **Not a replacement for vetting**: Always review app permissions before installation, even within Work Profile
+- Cross-profile notifications Notifications from Work Profile apps appear on your lock screen, potentially exposing sensitive data
+- Battery drain Running two profiles increases memory and battery consumption
+- Limited isolation Some system APIs remain accessible across profiles; Work Profile doesn't protect against all attack vectors
+- Not a replacement for vetting Always review app permissions before installation, even within Work Profile
 
 ## Alternatives and Complementary Tools
 
 While Work Profile is the native solution, consider these alternatives for specific use cases:
 
-- **Shelter**: An open-source app (F-Droid) that creates a "work profile" without full Android management
-- **Island/Shelter**: Provides additional features like "frozen" apps that cannot run in the background
-- **Cross-profile limitations**: Android 14+ introduced better restrictions for cross-profile intent handling
-
-## Conclusion
-
-Android Work Profile provides a powerful mechanism for containing apps with invasive permission requirements. By running potentially untrustworthy apps in an isolated environment, you maintain control over your personal data while still accessing necessary applications.
-
-For developers testing apps with broad permission requests, or power users concerned about privacy, Work Profile delivers meaningful protection without requiring a separate device. The setup process takes minutes, and the isolation it provides scales with your threat model.
-
-Start by creating a Work Profile today, install your problematic apps there, and experience the peace of compartmentalized mobile computing.
-
----
-
+- Shelter An open-source app (F-Droid) that creates a "work profile" without full Android management
+- Island/Shelter Provides additional features like "frozen" apps that cannot run in the background
+- Cross-profile limitations Android 14+ introduced better restrictions for cross-profile intent handling
 
 ## Related Reading
 

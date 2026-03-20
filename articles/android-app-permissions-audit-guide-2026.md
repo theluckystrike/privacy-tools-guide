@@ -22,9 +22,9 @@ This guide covers practical methods for auditing Android app permissions using b
 
 Android organizes permissions into three protection levels that determine how users and developers interact with them:
 
-- **Normal permissions**: Granted automatically at install time (e.g., `INTERNET`, `ACCESS_NETWORK_STATE`)
-- **Signature permissions**: Granted only if the app is signed with the same certificate as the declaring app
-- **Dangerous permissions**: Require runtime user approval and grant access to sensitive data (e.g., `READ_CONTACTS`, `ACCESS_FINE_LOCATION`, `CAMERA`, `RECORD_AUDIO`)
+- Normal permissions Granted automatically at install time (e.g., `INTERNET`, `ACCESS_NETWORK_STATE`)
+- Signature permissions Granted only if the app is signed with the same certificate as the declaring app
+- Dangerous permissions Require runtime user approval and grant access to sensitive data (e.g., `READ_CONTACTS`, `ACCESS_FINE_LOCATION`, `CAMERA`, `RECORD_AUDIO`)
 
 Android 14 and the 2026 platform updates have added new permission categories including `READ_MEDIA_VISUAL_USER_SELECTED` for more granular photo access and improved `NEARBY_WIFI_DEVICES` permission for device discovery without location dependency.
 
@@ -32,11 +32,11 @@ Android 14 and the 2026 platform updates have added new permission categories in
 
 The most straightforward method for reviewing permissions uses Android's Settings interface. Navigate to **Settings > Apps**, select any application, and tap **Permissions** to see a complete list of requested permissions grouped by category.
 
-For a comprehensive overview of all apps with dangerous permissions, access **Settings > Privacy > Permission Manager**. This view groups permissions by category (Location, Camera, Microphone, Contacts, etc.) and shows which apps have access—essential for identifying apps that may no longer need certain permissions.
+For a overview of all apps with dangerous permissions, access **Settings > Privacy > Permission Manager**. This view groups permissions by category (Location, Camera, Microphone, Contacts, etc.) and shows which apps have access—essential for identifying apps that may no longer need certain permissions.
 
 Modern Android versions display permission indicators in the status bar when apps actively use sensitive capabilities. A persistent camera or microphone icon warrants immediate investigation.
 
-## Using ADB for Comprehensive Audits
+## Using ADB for Audits
 
 The Android Debug Bridge (ADB) provides powerful command-line capabilities for auditing permissions at scale. Enable developer options and USB debugging on your device, then connect via USB or wireless debugging.
 
@@ -196,10 +196,10 @@ Run this weekly via cron or systemd timers to track permission changes over time
 
 Not all permissions indicate malicious intent. When auditing, consider the app's legitimate functionality:
 
-- **Flashlight apps**: Require `CAMERA` (for flash control) and potentially `ACCESS_FINE_LOCATION` (incorrectly, often for ad targeting)
-- **Banking apps**: Require `READ_PHONE_STATE` for device identification, `CAMERA` for check deposits
-- **Messaging apps**: Require `READ_CONTACTS` to find connections, `RECORD_AUDIO` for voice messages
-- **Fitness apps**: Require `ACCESS_FINE_LOCATION` for workout tracking
+- Flashlight apps Require `CAMERA` (for flash control) and potentially `ACCESS_FINE_LOCATION` (incorrectly, often for ad targeting)
+- Banking apps Require `READ_PHONE_STATE` for device identification, `CAMERA` for check deposits
+- Messaging apps Require `READ_CONTACTS` to find connections, `RECORD_AUDIO` for voice messages
+- Fitness apps Require `ACCESS_FINE_LOCATION` for workout tracking
 
 Be suspicious of permission combinations that exceed the app's apparent function—a simple calculator requesting `READ_CONTACTS` or `RECORD_AUDIO` warrants investigation.
 
@@ -207,19 +207,12 @@ Be suspicious of permission combinations that exceed the app's apparent function
 
 Implement these practices to maintain tight permission control:
 
-1. **Review before installing**: Play Store's permission summary shows all requested dangerous permissions before download
-2. **Use "While Using" restrictions**: Prefer "Allow only while using" over "Allow all the time" for location and camera
-3. **Deny non-essential permissions**: Many apps function without all requested permissions—test by denying
-4. **Audit quarterly**: Run comprehensive permission audits every three months
-5. **Remove unused apps**: Uninstall applications no longer in use rather than leaving them installed
-6. **Check background access**: Android's Privacy Dashboard shows which apps accessed sensitive permissions recently
-
-## Conclusion
-
-Regular Android app permission audits are a fundamental security practice. Whether using built-in tools for quick checks or implementing automated scripts for comprehensive reviews, staying aware of what access you've granted protects your personal data.
-
-The Android permission system continues evolving—with each release offering users more control. Take advantage of these controls, audit regularly, and revoke permissions that no longer serve a purpose.
-
+1. Review before installing Play Store's permission summary shows all requested dangerous permissions before download
+2. Use "While Using" restrictions Prefer "Allow only while using" over "Allow all the time" for location and camera
+3. Deny non-essential permissions Many apps function without all requested permissions—test by denying
+4. Audit quarterly Run permission audits every three months
+5. Remove unused apps Uninstall applications no longer in use rather than leaving them installed
+6. Check background access Android's Privacy Dashboard shows which apps accessed sensitive permissions recently
 
 ## Related Reading
 

@@ -236,11 +236,11 @@ fun observeSensorPrivacy(): Flow<Set<SensorPrivacyType>> = callbackFlow {
 
 Combining these techniques creates a defense-in-depth approach to mobile anonymity:
 
-1. **Network**: Route traffic through Tor or a trusted VPN with kill switch
-2. **Browser**: Use a privacy-hardened browser with fingerprinting protection
-3. **Operating System**: Lock down permissions and disable unnecessary tracking
-4. **Session**: Clear all cookies and storage after each anonymous session
-5. **Network Identity**: Rotate network connections (switch between WiFi and cellular) to prevent timing correlation
+1. Network Route traffic through Tor or a trusted VPN with kill switch
+2. Browser Use a privacy-hardened browser with fingerprinting protection
+3. Operating System Lock down permissions and disable unnecessary tracking
+4. Session Clear all cookies and storage after each anonymous session
+5. Network Identity Rotate network connections (switch between WiFi and cellular) to prevent timing correlation
 
 For developers building anonymous browsing features, test your implementation using tools like AmIUnique (mobile-friendly version) and Cover Your Tracks (EFF) to verify fingerprinting resistance. The effectiveness of your implementation depends on how consistently you apply these techniques across all layers.
 

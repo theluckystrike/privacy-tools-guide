@@ -63,9 +63,9 @@ The attestation certificate contains several fields that reveal device informati
 
 Attestation keys report whether the device's verified boot chain is intact. This includes:
 
-- **GREEN**: The device booted from a trusted state with verified boot
-- **YELLOW**: The device booted with verified boot but with unsigned modifications
-- **ORANGE**: The device booted with verified boot disabled or in an unlockable state
+- GREEN The device booted from a trusted state with verified boot
+- YELLOW The device booted with verified boot but with unsigned modifications
+- ORANGE The device booted with verified boot disabled or in an unlockable state
 
 This information helps security-sensitive applications detect compromised devices, but it also reveals whether a user has unlocked their bootloader.
 
@@ -85,9 +85,9 @@ String patchLevel = record.getSecurityPatchLevel();
 
 Attestation keys may expose:
 
-- **Bootloader version**: Reveals custom ROM possibilities
-- **Verified boot key hash**: Identifies the specific device manufacturer
-- **Rollback protection version**: Anti-replay counter status
+- Bootloader version Reveals custom ROM possibilities
+- Verified boot key hash Identifies the specific device manufacturer
+- Rollback protection version Anti-replay counter status
 
 ## Privacy Implications for Users
 
@@ -157,13 +157,6 @@ While attestation is difficult to forge, sophisticated attackers can potentially
 ### Battery and Performance Impact
 
 Generating attestation signatures requires hardware operations that consume power. Frequent attestation requests during app usage may impact battery life on some devices.
-
-## Conclusion
-
-Android hardware-backed attestation provides valuable security guarantees for applications handling sensitive data or financial transactions. The system reveals specific device state information by design, enabling verification that keys are hardware-protected and that the device hasn't been compromised. However, developers should implement attestation thoughtfully, requesting only necessary information and handling non-ideal device states gracefully. Users should understand that unlocking their bootloader or installing custom ROMs will be visible to any application performing attestation checks.
-
-For privacy-focused applications, consider combining attestation with other signals rather than relying solely on boot state. The goal is achieving appropriate security without unnecessarily exposing device details that users might prefer to keep private.
-
 
 ## Related Reading
 

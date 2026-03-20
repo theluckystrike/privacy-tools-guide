@@ -173,9 +173,7 @@ stringData:
 
 ### Keeper
 
-Keeper provides **Keeper Secrets Manager**:
-
-```bash
+Keeper provides Keeper Secrets Manager ```bash
 # Initialize Keeper Secrets Manager
 ksm init --cloud
 

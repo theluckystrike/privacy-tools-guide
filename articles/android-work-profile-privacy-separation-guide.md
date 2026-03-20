@@ -18,12 +18,12 @@ Android Work Profiles provide a powerful mechanism for separating work and perso
 
 ## What Is a Work Profile?
 
-A Work Profile is a managed container that creates a distinct security boundary within Android. When you enable a Work Profile, Android essentially creates a second user environment that shares the same physical device but maintains complete data isolation from your personal space.
+A Work Profile is a managed container that creates a distinct security boundary within Android. When you enable a Work Profile, Android creates a second user environment that shares the same physical device but maintains complete data isolation from your personal space.
 
 The key architectural distinction lies in how Android handles the two profiles:
 
-- **Personal Profile**: Your everyday apps, photos, messages, and data
-- **Work Profile**: Managed apps and data controlled by your organization's IT policy
+- Personal Profile Your everyday apps, photos, messages, and data
+- Work Profile Managed apps and data controlled by your organization's IT policy
 
 This separation operates at the kernel level through Android's multi-user infrastructure. The Work Profile has its own app storage, its own accounts, and its own data sandbox. Neither profile can directly access the other's files without explicit user action.
 
@@ -104,14 +104,14 @@ private fun configureCrossProfile(
 ```
 
 The key settings to review are:
-- **Cross-profile copy/paste**: Set to "Never allow" to prevent data leakage
-- **Work notifications**: Configure whether work app notifications appear in the personal profile
-- **Work contacts search**: Disable if you don't want personal apps searching work contacts
-- **Default apps**: Some apps can function in both profiles; review these carefully
+- Cross-profile copy/paste Set to "Never allow" to prevent data leakage
+- Work notifications Configure whether work app notifications appear in the personal profile
+- Work contacts search Disable if you don't want personal apps searching work contacts
+- Default apps Some apps can function in both profiles; review these carefully
 
 ## Work Profile for Personal Privacy
 
-Even without an organizational MDM solution, individuals can leverage Work Profile for personal privacy use cases. This approach treats one profile as a "locked" or "restricted" environment.
+Even without an organizational MDM solution, individuals can use Work Profile for personal privacy use cases. This approach treats one profile as a "locked" or "restricted" environment.
 
 ### Scenario: Testing Unknown Apps
 
@@ -133,8 +133,8 @@ Parents can create Work Profiles for children, applying restrictions through sta
 
 For developers building enterprise applications, Work Profile integration requires understanding the Device Owner and Profile Owner concepts:
 
-- **Profile Owner**: Manages apps and settings within a single Work Profile
-- **Device Owner**: Has full control over the entire device
+- Profile Owner Manages apps and settings within a single Work Profile
+- Device Owner Has full control over the entire device
 
 ```xml
 <!-- device_admin_receiver.xml -->
@@ -172,13 +172,13 @@ Device Owners can enforce policies like:
 
 Work Profile users frequently encounter these challenges:
 
-**App compatibility**: Some applications check for "work" or "managed" profiles and restrict functionality. Banking apps frequently implement this check. Use the personal profile for such applications.
+App compatibility Some applications check for "work" or "managed" profiles and restrict functionality. Banking apps frequently implement this check. Use the personal profile for such applications.
 
-**Notification duplication**: If you add the same account to both profiles (common with personal Gmail and corporate Google Workspace), notifications may duplicate. Configure account sync settings per profile to resolve this.
+Notification duplication If you add the same account to both profiles (common with personal Gmail and corporate Google Workspace), notifications may duplicate. Configure account sync settings per profile to resolve this.
 
-**Battery drainage**: Work Profile apps run continuously in the background. Audit installed work apps regularly and remove unused applications to maintain battery performance.
+Battery drainage Work Profile apps run continuously in the background. Audit installed work apps regularly and remove unused applications to maintain battery performance.
 
-**Profile switching**: Android displays a briefcase icon in the status bar when the Work Profile is active. Tap this icon to quickly switch between profiles or manage notifications.
+Profile switching Android displays a briefcase icon in the status bar when the Work Profile is active. Tap this icon to quickly switch between profiles or manage notifications.
 
 ## Security Limitations
 

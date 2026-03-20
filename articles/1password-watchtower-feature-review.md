@@ -136,7 +136,7 @@ Automate credential rotation using GitHub Actions with 1Password:
 ```yaml
 name: Credential Audit
 on: schedule:
-    - cron: '0 9 * * 1'  # Weekly Monday audit
+    - cron: '0 9 * * 1' # Weekly Monday audit
 
 jobs:
   audit:

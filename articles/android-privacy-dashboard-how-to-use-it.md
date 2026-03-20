@@ -85,7 +85,7 @@ Keeping your apps updated ensures you receive the latest privacy improvements fr
 
 ## Additional Privacy Controls
 
-Beyond the Privacy Dashboard, Android provides several other tools for managing privacy. The Permissions Manager, accessible from the same Privacy settings area, lists all apps and their permission status in a comprehensive table format. Use this view for bulk permission audits across all your installed apps.
+Beyond the Privacy Dashboard, Android provides several other tools for managing privacy. The Permissions Manager, accessible from the same Privacy settings area, lists all apps and their permission status in a table format. Use this view for bulk permission audits across all your installed apps.
 
 The Sensors Off option, found in the quick settings panel, disables camera, microphone, and location for all apps simultaneously. This toggle provides instant privacy when you need guaranteed isolation, such as during sensitive calls or when leaving your device unattended.
 
@@ -93,7 +93,7 @@ Android also supports Restricted Networks for Wi-Fi and Bluetooth, limiting how 
 
 ## Taking Control of Your Privacy
 
-The Privacy Dashboard represents Google's commitment to giving users visibility into app behavior. By regularly reviewing this data and acting on what you find, you transform passive privacy settings into active privacy management. Understanding which apps access your sensitive permissions—and why—forms the foundation of a robust personal privacy strategy.
+The Privacy Dashboard represents Google's commitment to giving users visibility into app behavior. By regularly reviewing this data and acting on what you find, you transform passive privacy settings into active privacy management. Understanding which apps access your sensitive permissions—and why—forms the foundation of a personal privacy strategy.
 
 Start by exploring the dashboard today. Identify apps with excessive permissions and reduce their access to only what's necessary. Over time, this practice becomes second nature, and your privacy posture improves significantly.
 

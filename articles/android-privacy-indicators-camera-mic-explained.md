@@ -22,8 +22,8 @@ Android displays privacy indicators in the status bar as colored dots when camer
 
 The indicators appear in two locations:
 
-- **Status bar**: A persistent dot that remains visible during active access
-- **Quick Settings panel**: A more prominent icon that shows which sensor is in use
+- Status bar A persistent dot that remains visible during active access
+- Quick Settings panel A more prominent icon that shows which sensor is in use
 
 These visual cues work alongside the privacy dashboard, introduced in Android 12, which provides a historical log of sensor access. Users can navigate to Settings → Privacy → Privacy Dashboard to review which apps accessed camera or microphone and when.
 
@@ -33,9 +33,9 @@ The privacy indicator system relies on Android's `ActivityManager` and `AppOpsMa
 
 The implementation uses three key components:
 
-1. **Permission grant tracking**: The system tracks whether runtime permissions for `CAMERA` and `RECORD_AUDIO` are currently granted
-2. **Active usage detection**: Window manager monitors which apps have active camera or microphone sessions
-3. **Indicator rendering**: StatusBarPolicy updates the status bar icons based on the current usage state
+1. Permission grant tracking The system tracks whether runtime permissions for `CAMERA` and `RECORD_AUDIO` are currently granted
+2. Active usage detection Window manager monitors which apps have active camera or microphone sessions
+3. Indicator rendering StatusBarPolicy updates the status bar icons based on the current usage state
 
 For developers, understanding this flow is crucial for building privacy-conscious applications. Users should note that indicators only appear when apps actively use the hardware—not merely when permission is granted.
 
@@ -121,11 +121,11 @@ Certain Android system services display indicators for legitimate operations. Go
 
 Users can manage privacy indicator behavior through Android settings:
 
-1. **Disable indicators**: Navigate to Settings → Privacy → Privacy Dashboard → Privacy indicators. Note that disabling indicators reduces visibility into sensor access.
+1. Disable indicators Navigate to Settings → Privacy → Privacy Dashboard → Privacy indicators. Note that disabling indicators reduces visibility into sensor access.
 
-2. **Manage individual app permissions**: Settings → Apps → [App] → Permissions allows revoking camera and microphone access for specific applications.
+2. Manage individual app permissions Settings → Apps → [App] → Permissions allows revoking camera and microphone access for specific applications.
 
-3. **Use per-app permissions**: Android 12+ supports granular microphone and camera permissions. Users can revoke access while keeping other permissions intact.
+3. Use per-app permissions Android 12+ supports granular microphone and camera permissions. Users can revoke access while keeping other permissions intact.
 
 For developers, testing privacy indicator behavior requires:
 

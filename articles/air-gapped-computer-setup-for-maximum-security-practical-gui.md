@@ -29,17 +29,17 @@ The foundation of a secure air-gapped setup begins with hardware. Avoid refurbis
 
 A typical air-gapped workstation configuration includes:
 
-- **CPU**: Any modern processor suffices, though Intel TXT or AMD SME provide additional hardware verification features
-- **RAM**: 16GB minimum for comfortable operation with encryption
-- **Storage**: SSD with hardware encryption support (Opal-compliant) or a removable storage approach
-- **Network cards**: Physically removed or disabled via BIOS if the machine will never connect to any network
-- **BIOS/UEFI**: Configure to boot only from intended media, disable unnecessary peripherals
+- CPU Any modern processor suffices, though Intel TXT or AMD SME provide additional hardware verification features
+- RAM 16GB minimum for comfortable operation with encryption
+- Storage SSD with hardware encryption support (Opal-compliant) or a removable storage approach
+- Network cards Physically removed or disabled via BIOS if the machine will never connect to any network
+- BIOS/UEFI Configure to boot only from intended media, disable unnecessary peripherals
 
 Before first boot, verify the machine's integrity. Inspect all cables and components for tampering indicators. Update the BIOS firmware from a trusted source using a verified medium before proceeding with OS installation.
 
 ## Operating System Hardening
 
-For an air-gapped system, choose an operating system that minimizes attack surface and supports robust encryption. Linux distributions like Qubes OS or Debian with the hardened kernel provide excellent baselines. Alternatively, Windows with BitLocker and rigorous group policies works for enterprise environments.
+For an air-gapped system, choose an operating system that minimizes attack surface and supports encryption. Linux distributions like Qubes OS or Debian with the hardened kernel provide excellent baselines. Alternatively, Windows with BitLocker and rigorous group policies works for enterprise environments.
 
 After installation, apply these hardening measures:
 
@@ -84,7 +84,7 @@ gsettings set org.gnome.screensaver lock-enabled true
 
 ## Encrypted Storage and Partitions
 
-Full-disk encryption protects data if the physical machine is stolen. For Linux systems, LUKS (Linux Unified Key Setup) provides robust encryption:
+Full-disk encryption protects data if the physical machine is stolen. For Linux systems, LUKS (Linux Unified Key Setup) provides encryption:
 
 ```bash
 # Create encrypted partition
@@ -122,7 +122,7 @@ USB drives offer convenience but require careful handling. Use dedicated drives 
 ```bash
 # Completely wipe and create new partition table
 sudo dd if=/dev/zero of=/dev/sdX bs=1M status=progress
-sudo fdisk /dev/sdX  # Create new partition
+sudo fdisk /dev/sdX # Create new partition
 sudo mkfs.vfat -n "AIRGAP_TRANSFER" /dev/sdX1
 ```
 
@@ -175,20 +175,13 @@ Document all access to the machine. Any physical interaction with the system—s
 
 A developer working with sensitive cryptographic keys might structure their workflow as follows:
 
-1. **Development**: Write and test code on the main workstation
-2. **Transfer**: Move code via USB to air-gapped system
-3. **Signing**: Perform cryptographic operations (signing commits, generating keys) on the air-gapped machine
-4. **Verification**: Export public keys or signed artifacts back to the main workstation via read-only media
-5. **Storage**: Keep all private keys permanently on the air-gapped system, never transferring them out
+1. Development Write and test code on the main workstation
+2. Transfer Move code via USB to air-gapped system
+3. Signing Perform cryptographic operations (signing commits, generating keys) on the air-gapped machine
+4. Verification Export public keys or signed artifacts back to the main workstation via read-only media
+5. Storage Keep all private keys permanently on the air-gapped system, never transferring them out
 
 This workflow ensures private keys never exist on a network-connected machine while maintaining productive development capability.
-
-## Conclusion
-
-Setting up an air-gapped computer requires upfront investment in hardware, time for configuration, and ongoing discipline in data handling procedures. The security benefits are substantial for those handling truly sensitive information—cryptographic keys, classified data, forensic evidence, or proprietary source code requiring maximum protection.
-
-Start with dedicated hardware, apply operating system hardening, implement encrypted storage, and establish controlled data transfer procedures. Regular review of your physical and procedural security ensures the air gap remains effective over time. The inconvenience is real, but for high-value assets, the isolation provides protection that no firewall or antivirus can match.
-
 
 ## Related Reading
 

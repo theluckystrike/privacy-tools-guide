@@ -51,7 +51,7 @@ First, list all installed packages to identify potential trackers:
 adb shell pm list packages | grep -E "(google|facebook|amazon|microsoft|analytics|tracking)"
 ```
 
-For a more comprehensive scan, export the full package list:
+For a more scan, export the full package list:
 
 ```bash
 adb shell pm list packages > packages.txt
@@ -209,22 +209,13 @@ adb pull /sdcard/capture.pcap
 
 Follow these guidelines when removing bloatware:
 
-1. **Research before disabling**: Verify each package's function to avoid breaking essential features
-2. **Create backups**: Export your disabled packages list before making changes
-3. **Test incrementally**: Disable one package at a time and test device functionality
-4. **Document changes**: Keep notes on what you disabled for future reference
-5. **Avoid critical system packages**: Do not disable packages related to calls, SMS, or core Android functionality
+1. Research before disabling Verify each package's function to avoid breaking essential features
+2. Create backups Export your disabled packages list before making changes
+3. Test incrementally Disable one package at a time and test device functionality
+4. Document changes Keep notes on what you disabled for future reference
+5. Avoid critical system packages Do not disable packages related to calls, SMS, or core Android functionality
 
 If your device becomes unstable, perform a factory reset to restore all packages to their original state.
-
-## Conclusion
-
-ADB provides powerful capabilities for controlling pre-installed tracking software on Android devices. By strategically disabling bloatware packages, you can significantly reduce data collection, improve battery life, and regain control over your privacy. Remember to document your changes and proceed cautiously to maintain device stability.
-
-The techniques in this guide work on non-rooted devices and provide a middle ground between accepting manufacturer defaults and fully rooting your device for complete control.
-
----
-
 
 ## Related Reading
 

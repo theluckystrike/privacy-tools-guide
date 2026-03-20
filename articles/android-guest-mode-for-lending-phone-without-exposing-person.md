@@ -81,14 +81,14 @@ Event: Display Cleared
 Enter Task:
 1. Variable Set: %GUEST_MODE to "1"
 2. If %PACTIVE ~ "*guest*"
-3.   HTTP Post: server=https://your-home-server/api/lockdown
+3. HTTP Post: server=https://your-home-server/api/lockdown
 4. End If
 
 Exit Task:
 1. If %GUEST_MODE = "1"
-2.   Wait 2 seconds
-3.   Action: Launch App (select browser or phone only)
-4.   Variable Clear: %GUEST_MODE
+2. Wait 2 seconds
+3. Action: Launch App (select browser or phone only)
+4. Variable Clear: %GUEST_MODE
 5. End If
 ```
 
@@ -108,9 +108,9 @@ Understanding what data remains private helps you configure Guest Mode appropria
 - Device settings and preferences
 
 ### Partially Accessible
-- **Storage**: Some Android versions allow guests to use external SD cards with limitations
-- **Wi-Fi**: Guests can connect to Wi-Fi networks but cannot see saved networks
-- **Bluetooth**: Pairing is disabled by default in guest sessions
+- Storage Some Android versions allow guests to use external SD cards with limitations
+- Wi-Fi Guests can connect to Wi-Fi networks but cannot see saved networks
+- Bluetooth Pairing is disabled by default in guest sessions
 
 ### Guest Session Defaults
 By default, guest users can:
@@ -158,13 +158,13 @@ val deviceDir = context.createDeviceProtectedStorageContext().filesDir
 
 Guest Mode provides solid privacy but has boundaries you should understand:
 
-1. **Not a security boundary**: A knowledgeable user with physical access could potentially exit Guest Mode through developer settings or recovery. For true security against determined access, use Android's Work Profile feature.
+1. Not a security boundary A knowledgeable user with physical access could potentially exit Guest Mode through developer settings or recovery. For true security against determined access, use Android's Work Profile feature.
 
-2. **Network traffic visibility**: Your mobile carrier can still see all network traffic from the device regardless of user mode.
+2. Network traffic visibility Your mobile carrier can still see all network traffic from the device regardless of user mode.
 
-3. **App installations persist**: Apps installed during a guest session remain until manually removed.
+3. App installations persist Apps installed during a guest session remain until manually removed.
 
-4. **No encrypted profile**: Unlike Work Profile with Samsung Knox, Guest Mode does not provide additional encryption layers.
+4. No encrypted profile Unlike Work Profile with Samsung Knox, Guest Mode does not provide additional encryption layers.
 
 ## Combining with Other Privacy Features
 
@@ -214,10 +214,10 @@ adb shell settings put secure lock_task_enabled 1
 
 After a guest finishes using your device:
 
-1. **Switch back to your account**: Tap the user avatar and select your profile
-2. **Remove guest data**: Go to Settings → System → Multiple users → Remove guest
-3. **Check for residual data**: Verify Downloads folder and any new app installations
-4. **Review installed apps**: Remove any apps the guest may have installed
+1. Switch back to your account Tap the user avatar and select your profile
+2. Remove guest data Go to Settings → System → Multiple users → Remove guest
+3. Check for residual data Verify Downloads folder and any new app installations
+4. Review installed apps Remove any apps the guest may have installed
 
 For automated cleanup, create a script:
 
@@ -236,13 +236,6 @@ else
     echo "No guest user found"
 fi
 ```
-
-## Conclusion
-
-Android Guest Mode provides an effective solution for lending your phone without exposing personal data. For most casual situations—like showing someone a website or letting a friend make a quick call—it offers adequate privacy protection with minimal friction. Developers can leverage the underlying user management APIs to create custom automation, while power users can combine Guest Mode with other Android privacy features for enhanced protection.
-
-For scenarios requiring stronger security boundaries, consider implementing Work Profile, which provides encrypted containers and enterprise-grade separation. However, for everyday use when you need to hand your phone to someone temporarily, Guest Mode remains the most practical built-in option Android offers.
-
 
 ## Related Reading
 

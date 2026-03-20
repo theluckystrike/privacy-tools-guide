@@ -20,14 +20,14 @@ For the strongest Android screen lock privacy, use a 6-digit PIN combined with f
 
 Android offers multiple lock screen authentication methods, each with distinct security characteristics. The hierarchy from weakest to strongest includes:
 
-- **Swipe/None**: Provides no actual security
-- **PIN (4-6 digits)**: Minimal protection, vulnerable to brute force
-- **Password (alphanumeric)**: Stronger than PIN but inconvenient
-- **Pattern**: Moderate security, but smudge attacks remain a risk
-- **Fingerprint**: Convenient but has forensic vulnerabilities
-- **Face Recognition**: Variable security depending on hardware
-- **Fingerprint + PIN/Pattern**: Strong two-factor approach
-- **Strong Biometric + PIN**: Maximum physical security
+- Swipe/None Provides no actual security
+- PIN (4-6 digits) Minimal protection, vulnerable to brute force
+- Password (alphanumeric) Stronger than PIN but inconvenient
+- Pattern Moderate security, but smudge attacks remain a risk
+- Fingerprint Convenient but has forensic vulnerabilities
+- Face Recognition Variable security depending on hardware
+- Fingerprint + PIN/Pattern Strong two-factor approach
+- Strong Biometric + PIN Maximum physical security
 
 For developers building privacy-sensitive applications, consider supporting multiple authentication methods through the BiometricPrompt API:
 
@@ -62,8 +62,8 @@ val promptInfo = BiometricPrompt.PromptInfo.Builder()
 The lock screen frequently leaks sensitive information through notifications. Android provides granular controls to prevent this:
 
 1. **Settings > Notifications > Device & app notifications**
-2. **On the lock screen**: Select "Hide sensitive content" or "Don't show notifications"
-3. **For individual apps**: Configure notification privacy per-application
+2. On the lock screen Select "Hide sensitive content" or "Don't show notifications"
+3. For individual apps Configure notification privacy per-application
 
 For enterprise or high-security scenarios, consider the fully locked state available on Samsung devices and stock Android 12+. This prevents any notification content from appearing until authentication succeeds.
 

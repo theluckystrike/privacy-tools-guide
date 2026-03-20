@@ -29,7 +29,7 @@ Several app categories exhibit particularly aggressive background location behav
 
 **Weather applications** frequently maintain background location access to update forecasts based on your current position. While this provides genuine convenience, the continuous access generates detailed location histories that may extend beyond what users expect.
 
-**Fitness and health apps** require background location for tracking runs, walks, and cycling sessions. These apps often accumulate years of location data creating comprehensive movement profiles.
+**Fitness and health apps** require background location for tracking runs, walks, and cycling sessions. These apps often accumulate years of location data creating movement profiles.
 
 **Social media platforms** represent some of the most aggressive background location collectors. Applications like Facebook, Instagram, and TikTok have faced scrutiny for accessing location data in the background for advertising targeting and user profiling purposes.
 
@@ -78,9 +78,9 @@ Android provides built-in tools for auditing background location access:
 
 1. **Privacy Dashboard** (Android 12+): Navigate to Settings > Privacy > Privacy Dashboard to view which apps recently accessed location data, including timestamps and access duration.
 
-2. **Location Permissions Page**: Settings > Location > App Permission Settings displays each installed app with its current location permission level. Apps permitted for "Allow all the time" appear at the top with a location icon.
+2. Location Permissions Page Settings > Location > App Permission Settings displays each installed app with its current location permission level. Apps permitted for "Allow all the time" appear at the top with a location icon.
 
-3. **Permission Manager**: Settings > Privacy > Permission Manager > Location provides granular control over individual app permissions.
+3. Permission Manager Settings > Privacy > Permission Manager > Location provides granular control over individual app permissions.
 
 For developers and power users seeking deeper insights, the `adb` command reveals precise permission states:
 
@@ -134,11 +134,11 @@ Building privacy-respecting location features requires intentional design decisi
 
 Some apps have been documented requesting location permission but actually transmitting data through indirect methods:
 
-- **WiFi scanning**: Even without location permission, apps can approximate location by scanning nearby WiFi networks and comparing against geolocation databases.
+- WiFi scanning Even without location permission, apps can approximate location by scanning nearby WiFi networks and comparing against geolocation databases.
 
-- **Bluetooth beacon detection**: Similar to WiFi scanning, BLE beacons in retail environments enable tracking without GPS permission.
+- Bluetooth beacon detection Similar to WiFi scanning, BLE beacons in retail environments enable tracking without GPS permission.
 
-- **Sensor-based location inference**: Barometer data combined with other sensors can reveal floor-level position information.
+- Sensor-based location inference Barometer data combined with other sensors can reveal floor-level position information.
 
 Disabling WiFi scanning and Bluetooth when not actively used prevents these alternative tracking vectors.
 

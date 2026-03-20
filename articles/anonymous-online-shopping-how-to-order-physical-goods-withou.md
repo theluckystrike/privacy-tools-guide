@@ -148,7 +148,7 @@ Services like Privacy.com create virtual card numbers linked to your actual acco
 
 ## Building a System
 
-For power users, combining multiple techniques creates robust privacy:
+For power users, combining multiple techniques creates privacy:
 
 ### Layered Approach
 
@@ -230,15 +230,6 @@ Always verify that your chosen methods comply with:
 - Merchant shipping policies
 - Carrier terms of service
 - Local and federal laws
-
-## Conclusion
-
-Anonymous online shopping requires combining several privacy techniques: separate payment methods, third-party addresses, and careful operational security. While no single method provides perfect anonymity, layering these approaches significantly reduces the connection between your purchases and your physical location. Start with one method that fits your threat model and build from there.
-
-For developers, the config-based approach above can be extended with actual API integrations to major forwarding services, creating automated workflows for privacy-respecting purchases.
-
----
-
 
 ## Related Reading
 
