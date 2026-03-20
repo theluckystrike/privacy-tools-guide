@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "Iran Facial Recognition Surveillance: How Cameras in Public Spaces Track Citizens Privacy 2026"
 description: "A technical breakdown of facial recognition surveillance systems deployed in Iranian public spaces, how they work, and privacy protection strategies for developers and power users."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /iran-facial-recognition-surveillance-how-cameras-in-public-s/
 categories: [privacy, security, surveillance]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

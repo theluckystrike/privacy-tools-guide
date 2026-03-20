@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "Domain Name Inheritance: How to Transfer Registrar Accounts and Website Hosting After Death"
 description: "Learn how to transfer domain names and hosting accounts after death. This guide covers registrar transfer processes, documentation requirements, and technical steps for developers and power users."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /domain-name-inheritance-how-to-transfer-registrar-accounts-a/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 

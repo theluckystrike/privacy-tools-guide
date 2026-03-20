@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "How to Build Portable Censorship Circumvention Kit on USB Drive for Travel"
 description: "Create a portable USB-based toolkit for bypassing internet censorship while traveling. Includes configuration guides for Tor, obfs4 bridges, and secure tunneling tools."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-build-portable-censorship-circumvention-kit-on-usb-dr/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 Building a portable censorship circumvention kit on a USB drive gives you reliable access to the open internet regardless of where you travel. This guide walks through creating a self-contained toolkit that works across different computers without leaving traces on the host system.
 

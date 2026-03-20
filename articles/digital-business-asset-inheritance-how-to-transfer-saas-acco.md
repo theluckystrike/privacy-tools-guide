@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Digital Business Asset Inheritance: How to Transfer SaaS Accounts, API Keys, and Domains After Death"
 description: "A practical guide for developers and power users on managing digital business asset inheritance, including SaaS accounts, API keys, and domain transfers."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /digital-business-asset-inheritance-how-to-transfer-saas-acco/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 Digital business assets represent significant value that often gets overlooked in estate planning. Unlike physical property, SaaS subscriptions, API keys, and domains require specific technical procedures to transfer properly. This guide covers the practical steps developers and power users need to handle digital business asset inheritance.
 

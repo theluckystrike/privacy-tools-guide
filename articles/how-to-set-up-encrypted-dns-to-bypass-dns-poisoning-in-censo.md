@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "How to Set Up Encrypted DNS to Bypass DNS Poisoning in Censored Countries"
 description: "A technical guide for developers and power users on configuring DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) to bypass DNS poisoning attacks in restrictive network environments."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 DNS poisoning represents one of the most common censorship techniques employed by governments and network administrators to block access to specific websites or services. When you type a domain name into your browser, your device performs a DNS lookup to translate that human-readable address into an IP address. In censored networks, intercepting and manipulating these lookups allows blockers to redirect users away from forbidden content or simply return no result at all.
 

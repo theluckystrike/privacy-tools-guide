@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Dating App Two-Factor Authentication Setup: Protecting Your Account from Unauthorized Access"
 description: "A technical guide to setting up two-factor authentication on dating apps. Learn about TOTP, SMS-based 2FA, authenticator apps, and advanced security configurations for developers and power users."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /dating-app-two-factor-authentication-setup-protecting-accoun/
+reviewed: true
+score: 8
+categories: [setup]
 ---
+
 
 {% raw %}
 

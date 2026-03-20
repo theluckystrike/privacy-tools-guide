@@ -1,13 +1,17 @@
 ---
 
+
 layout: default
 title: "India DigiLocker Privacy Concerns: What Personal Documents the Government Stores Digitally and Access Risks"
 description: "A technical analysis of DigiLocker's data storage practices, API exposure, and privacy risks for developers and power users in India."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
 categories: [privacy, india, government, digilocker, security]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

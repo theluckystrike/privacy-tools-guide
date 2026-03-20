@@ -1,13 +1,17 @@
 ---
 
+
 layout: default
 title: "Bumble Beeline Data Privacy: Who Can See That You Swiped Right"
 description: "A technical deep dive into Bumble Beeline privacy controls. Learn exactly what data is exposed, who can see your swipes, and how to manage your visibility on Bumble in 2026."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
 categories: [privacy, dating-apps, data-security]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

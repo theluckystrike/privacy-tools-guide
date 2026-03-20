@@ -1,13 +1,17 @@
 ---
 
+
 layout: default
 title: "China Exit Ban: How Digital Surveillance Monitors Travel Plans Through Online Activity"
 description: "Understand how Chinese authorities use digital surveillance to monitor travel plans, enforce exit bans, and track online activity. Technical deep-dive for developers and power users."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-/
 categories: [privacy, security, surveillance, china, digital-rights]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
@@ -137,7 +141,7 @@ For users who need to minimize their digital footprint when traveling in or thro
 
 5. **Consider airport privacy screens**: At border control, officials may examine your devices. Screens limit visibility of on-screen content.
 
-## The Broader Technical Landscape
+## The Broader Technical ecosystem
 
 The Chinese surveillance system demonstrates how metadata aggregation creates comprehensive behavioral profiles without requiring access to encrypted content. For developers, this illustrates a fundamental principle: encryption protects content, but metadata often reveals more than intended.
 

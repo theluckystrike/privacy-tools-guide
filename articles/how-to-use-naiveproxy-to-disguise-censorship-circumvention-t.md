@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "How to Use NaiveProxy to Disguise Censorship Circumvention Traffic as Normal Browsing"
 description: "A practical guide for developers and power users on using NaiveProxy to disguise censorship circumvention traffic as normal web browsing."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/
 categories: [guides]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

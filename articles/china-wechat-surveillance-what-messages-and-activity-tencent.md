@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "China WeChat Surveillance: What Messages and Activity Tencent Shares with Government Authorities (2026)"
 description: "A technical guide for developers and power users exploring what data Tencent collects, how government requests work, and what activity triggers data sharing."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /china-wechat-surveillance-what-messages-and-activity-tencent/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 

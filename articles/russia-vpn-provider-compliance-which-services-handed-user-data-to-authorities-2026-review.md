@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Russia VPN Provider Compliance: Which Services Handed User Data to Authorities in 2026"
 description: "A comprehensive review of VPN provider compliance with Russian data requests. Learn which services cooperated with authorities and what this means for user privacy in 2026."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/
+reviewed: true
+score: 8
+categories: [vpn]
 ---
+
 
 The Russian government has intensified its demands for VPN provider compliance in recent years, creating significant concerns for users who rely on these services for privacy and security. Understanding which VPN providers have handed user data to Russian authorities becomes essential for making informed decisions about online privacy tools.
 
