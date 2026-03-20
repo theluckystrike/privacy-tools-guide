@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /gdpr-controller-vs-processor-obligations-understanding-your-/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
 score: 8
 voice-checked: true

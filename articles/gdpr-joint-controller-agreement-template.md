@@ -10,6 +10,7 @@ voice-checked: true
 reviewed: true
 score: 8
 categories: [guides]
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}
