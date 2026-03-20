@@ -251,6 +251,97 @@ val vpnService = VpnService.Builder()
     .establish()
 ```
 
+
+## Choosing a VPN Provider for Travel Security
+
+Self-hosted VPN infrastructure offers maximum control, but many travelers rely on commercial VPN providers. Evaluating providers correctly is as important as the technical configuration. A VPN that logs your traffic defeats its own purpose.
+
+Key criteria for provider selection:
+
+**No-logs policy with independent verification**: Look for providers whose no-logs claims have been verified through third-party audits (not just self-attestation) or demonstrated through actual government data requests that returned no useful data. Providers like Mullvad, ProtonVPN, and IVPN have established track records here.
+
+**Jurisdiction**: Providers incorporated in countries outside the 5/9/14 Eyes intelligence-sharing alliances face different legal compulsions. This matters for long-term metadata retention, though for airport use cases, the immediate encryption benefit matters more than jurisdiction.
+
+**Protocol support**: Confirm the provider supports WireGuard or OpenVPN. Proprietary protocols lack independent security review. PPTP is broken and should never be used.
+
+**Kill switch reliability**: Test the kill switch before you need it. Connect to the VPN, then simulate a drop by disabling the network interface, and verify that traffic does not flow without the VPN active. Some providers advertise kill switches that only work on desktop, not mobile.
+
+For self-hosted solutions, Algo VPN simplifies WireGuard setup on a cloud VPS:
+
+```bash
+# Algo VPN automated setup
+git clone https://github.com/trailofbits/algo.git
+cd algo
+python3 -m venv .env
+source .env/bin/activate
+pip install -r requirements.txt
+
+# Configure your deployment target in config.cfg
+# Deploy to DigitalOcean, AWS, or similar
+./algo
+```
+
+Using a VPS in your home country means your DNS and traffic appearance matches your normal browsing patterns, avoiding the anomaly detection that some streaming services use to block VPN traffic.
+
+
+## Evaluating Your Security Posture Before Connecting
+
+Before connecting to airport WiFi, establish your baseline security configuration. The steps taken before joining a network often matter more than actions taken after.
+
+Verify these settings before entering an airport:
+
+**Automatic connection disabled**: Set your device to ask before connecting to networks, never to connect automatically. Devices that auto-connect to previously seen network names are vulnerable to evil twin attacks that clone your home network SSID.
+
+```bash
+# macOS: Disable auto-connect via networksetup
+networksetup -setairportpower en0 off
+
+# Or disable specific remembered networks
+sudo networksetup -removepreferredwirelessnetwork en0 "Airport Free WiFi"
+
+# Linux: NetworkManager prevent auto-connection
+nmcli connection modify "Airport Free WiFi" connection.autoconnect no
+```
+
+**Firewall enabled and configured**: Confirm your host-based firewall is active before traveling:
+
+```bash
+# macOS: Enable application firewall
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+# Linux: UFW basic configuration
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow out on wg0
+sudo ufw enable
+```
+
+**Sensitive applications closed**: Close email clients, Slack, and banking apps before connecting to public networks. Even with VPN active, a vulnerability in an application could be exploited during the connection window before the tunnel establishes.
+
+After connecting to airport WiFi and before starting VPN, verify you are on the legitimate network by checking the gateway MAC address matches what airport staff confirm, or use your mobile data connection to verify the network legitimacy before trusting it.
+
+
+## Corporate Device Considerations
+
+Airport network security has additional complexity when traveling with corporate devices. Enterprise VPN configurations may conflict with commercial VPN software. Split tunneling decisions made by IT policy may inadvertently route sensitive traffic outside the corporate tunnel.
+
+Most enterprise environments use IPSec or SSL VPN solutions (Cisco AnyConnect, Palo Alto GlobalProtect, Zscaler) that establish full tunnels to corporate infrastructure. Verify that your corporate VPN routes all traffic and not just corporate destinations:
+
+```bash
+# Verify routing table after connecting to corporate VPN
+ip route show table main | grep -E "^default"
+
+# On macOS
+netstat -rn | grep "^default"
+# Both routes should point to VPN tunnel interface, not local gateway
+```
+
+If your corporate VPN uses split tunneling (routes only corporate destinations through the tunnel), personal browsing and sensitive personal applications remain unprotected on airport WiFi. In this case, you need a personal VPN running simultaneously for non-corporate traffic, or you should avoid personal browsing entirely on corporate devices while on public networks.
+
+Check with your IT department about approved VPN stacking configurations before traveling. Using unauthorized VPN software on corporate devices may violate acceptable use policies.
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
