@@ -131,6 +131,182 @@ For developers building privacy-conscious applications or testing anti-tracking 
 
 You can test your application's cookie handling by monitoring network requests and verifying that cookies are properly isolated per-domain.
 
+## Supercookie Prevention Mechanisms
+
+Beyond traditional cookies, Tor Browser blocks supercookie technologies that persist across sessions using non-standard storage:
+
+**Flash Local Shared Objects (LSOs)**:
+- Also called "Flash cookies," these survive regular cookie deletion
+- Tor Browser blocks Flash content by default through NoScript
+- Even if Flash is enabled, LSOs cannot store across domains
+
+**HTML5 Storage Mechanisms**:
+```javascript
+// These storage methods are isolated per-domain in Tor Browser
+localStorage.setItem('key', 'value');        // First-party isolated
+sessionStorage.setItem('key', 'value');      // Session-only, cleared on exit
+// IndexedDB is also first-party isolated
+let db = indexedDB.open('dbname');           // Cannot access other sites' data
+```
+
+**Testing storage isolation**:
+```javascript
+// Verify that localStorage is isolated per-domain
+const testKey = 'isolation_test_' + Math.random();
+localStorage.setItem(testKey, 'test_value');
+
+// Visit another domain and attempt to retrieve
+// The item will not be accessible, confirming isolation
+```
+
+**Etags and Cache Abuse**:
+- HTTP ETags can theoretically track users across sites
+- Tor Browser clears cache between identities
+- The "New Identity" feature ensures cache doesn't leak across sessions
+
+## Configuring Security Levels in Tor Browser
+
+Tor Browser offers multiple security levels that affect JavaScript, plugins, and other execution contexts:
+
+### Standard Security Level (Default)
+- All web features enabled
+- JavaScript allowed globally
+- Most compatible with modern websites
+- Provides solid privacy without functionality loss
+
+### Safer Security Level
+- Disables JavaScript on .onion sites only
+- Disables certain CSS features that enable fingerprinting
+- Some sites may not function correctly
+- Recommended for accessing untrusted .onion services
+
+### Safest Security Level
+- JavaScript disabled entirely
+- WebGL disabled
+- Math operations randomized
+- Recommended for maximum security but limited functionality
+- Many modern web applications will fail completely
+
+```
+about:config settings for Safest mode:
+javascript.enabled = false
+webgl.disabled = true
+dom.event.clipboardevents.enabled = false
+```
+
+Switch levels through Tor Browser settings menu → Privacy & Security → Security Settings.
+
+## Cookie Behavior Testing Framework
+
+For developers who need to verify cookie isolation and tracking prevention:
+
+```javascript
+// Comprehensive cookie isolation test suite
+class CookieIsolationTest {
+  constructor() {
+    this.results = {
+      firstPartyIsolation: true,
+      thirdPartyBlocked: true,
+      sessionOnlyMode: true
+    };
+  }
+
+  // Test 1: Verify first-party isolation
+  async testFirstPartyIsolation() {
+    // Visit site1.com and set cookie
+    const cookie1 = document.cookie;
+
+    // Redirect to site2.com and attempt to read site1's cookie
+    const cookie2 = document.cookie;
+
+    // If isolation is working, site2 cannot access site1's cookie
+    this.results.firstPartyIsolation = cookie1 !== cookie2;
+    return this.results.firstPartyIsolation;
+  }
+
+  // Test 2: Verify third-party cookie blocking
+  testThirdPartyCookieBlocking() {
+    // Embed iframe from tracking.com
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://tracking.com/pixel.gif';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    // Verify no cookies set by tracker
+    // (Check browser DevTools → Application → Cookies)
+    return this.results.thirdPartyBlocked;
+  }
+
+  // Test 3: Verify session-only mode
+  testSessionOnlyMode() {
+    // Set a persistent cookie with Max-Age
+    document.cookie = 'test=value; Max-Age=31536000; path=/';
+
+    // Close and reopen browser
+    // Cookie should be deleted despite Max-Age directive
+    // (Verify through DevTools on reopening)
+    return this.results.sessionOnlyMode;
+  }
+}
+```
+
+## Debugging Cookie Issues in Applications
+
+When testing applications in Tor Browser, use these debugging techniques:
+
+**Monitoring Cookie Headers**:
+```bash
+# Use curl with Tor to monitor Set-Cookie headers
+curl --socks5-hostname 127.0.0.1:9050 \
+  -v "https://example.com" 2>&1 | grep "Set-Cookie"
+```
+
+**Identifying Tracking Attempts**:
+```javascript
+// Detect if page attempts third-party cookie setting
+const originalSetAttribute = Element.prototype.setAttribute;
+Element.prototype.setAttribute = function(name, value) {
+  if (name === 'src' && value.includes('tracking.')) {
+    console.warn('Potential tracker detected:', value);
+  }
+  return originalSetAttribute.call(this, name, value);
+};
+```
+
+## Comparison: Cookie Protection Methods
+
+| Method | Coverage | Configuration | Usability |
+|--------|----------|---------------|-----------|
+| First-Party Isolation | Blocks cross-site tracking | Automatic in Tor Browser | Full functionality |
+| Third-Party Cookie Blocking | Removes traditional tracking | Standard browser setting | Widespread adoption |
+| Session-Only Mode | Prevents persistent tracking | about:config setting | Some site breakage |
+| Circuit Isolation | Network-layer protection | Automatic in Tor network | Slower performance |
+| NoScript Extension | Script-based tracking | Per-site configuration | Requires manual allow-listing |
+
+## Migrating Away from Tracker-Heavy Sites
+
+Tor Browser's cookie protections work well, but sites designed around tracking may malfunction. Consider these alternatives:
+
+- **Google Search** → DuckDuckGo, Startpage, or SearX
+- **YouTube** → Invidious or FreeTube
+- **Twitter** → Nitter (privacy-respecting frontend)
+- **Medium** → Scribe (removes tracker code)
+
+These alternatives respect Tor Browser's privacy model without breaking functionality.
+
+## Integration with Tor for Maximum Privacy
+
+Tor Browser's cookie isolation combines with the Tor network's circuit isolation for comprehensive protection:
+
+```
+Your Device → Tor Entry Node → Middle Node → Exit Node → Website
+Each node sees different information, and circuit changes with New Identity
+Cookies isolated per-domain AND traffic routes through random circuits
+Result: Behavior cannot be correlated across sites or time
+```
+
+For users combining Tor Browser with Tor network, no single observer can correlate your browsing activities across different identities or sites.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

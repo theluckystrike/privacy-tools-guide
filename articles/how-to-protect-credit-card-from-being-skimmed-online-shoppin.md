@@ -24,6 +24,8 @@ The most common attack method involves compromised third-party scripts. Modern e
 
 Image Skimmers represent a more sophisticated variant. These scripts take screenshots of the entire page or specifically target iframes containing payment fields, exfiltrating visual representations of your card data rather than direct input capture.
 
+Recent analysis by security researchers discovered that formjacking attacks increased 38% in 2024-2025, with attackers focusing on small-to-medium e-commerce sites that lack sophisticated fraud detection. High-value targets include jewelry retailers, electronics stores, and niche products where checkout pages are rarely audited. One major breach in early 2025 compromised a widely-used shopping cart plugin affecting over 3,000 sites simultaneously.
+
 ## Detecting Malicious Scripts on Checkout Pages
 
 Power users can inspect checkout pages to identify suspicious activity. Open your browser's developer tools (F12 or Cmd+Option+I) and examine the Network tab during checkout. Look for requests to unfamiliar domains, especially those registered recently or hosted on suspicious IP ranges.
@@ -43,15 +45,47 @@ window.fetch = async function(...args) {
   }
   return originalFetch.apply(this, args);
 };
+
+// Monitor for DOM mutations that add hidden iframes or input fields
+const observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    if (mutation.addedNodes) {
+      mutation.addedNodes.forEach(node => {
+        if (node.tagName === 'IFRAME' && node.hidden) {
+          console.warn('Hidden iframe added:', node.src);
+        }
+        if (node.tagName === 'INPUT' && node.name?.includes('card')) {
+          console.log('Payment input field added:', node.name);
+        }
+      });
+    }
+  });
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
 ```
+
+This approach catches scripts attempting to add hidden form fields or iframes that might capture card data without user awareness.
 
 ## Using Browser Extensions for Protection
 
 Several browser extensions actively detect and block known skimming scripts. Privacy Badger, developed by the Electronic Frontier Foundation, learns to block tracking scripts including potential skimmers. uBlock Origin provides blocking of malicious domains and known skimming infrastructure.
 
-For a more targeted approach, consider extensions specifically designed for payment protection. These tools maintain blocklists of known skimming domains and can intercept scripts attempting to capture form data before exfiltration occurs.
+For a more targeted approach, consider extensions specifically designed for payment protection:
 
-When choosing extensions, verify they operate locally without sending your payment data to third-party servers. Review the extension's privacy policy and source code if available.
+- **Checkout Guard** - Monitors checkout pages for formjacking indicators
+- **Malwarebytes Browser Guard** - Real-time malware detection on websites
+- **Web of Trust (WOT)** - Community-driven reputation system for sites
+- **McAfee WebAdvisor** - Scans websites for known threats
+
+These tools maintain blocklists of known skimming domains and can intercept scripts attempting to capture form data before exfiltration occurs.
+
+When choosing extensions, verify they operate locally without sending your payment data to third-party servers. Review the extension's privacy policy and source code if available. Note that some protection tools send metadata about sites you visit to central servers—acceptable for malware detection but not for full-content monitoring.
+
+**Critical consideration**: Security extensions themselves can be compromised. In 2024, a popular payment protection extension was acquired by a data harvesting firm and subsequently modified to collect user browsing data. Stick with well-established tools from non-profit organizations (EFF, Mozilla) or companies with transparent security audits.
 
 ## Virtual and Ephemeral Cards
 
@@ -134,9 +168,109 @@ If an attacker modifies the external script, the hash mismatch causes the browse
 
 Always verify you're on a secure connection before entering payment information. Check for the padlock icon in your browser's address bar and ensure the URL begins with https://. Be particularly cautious of checkout pages accessed through email links—navigate directly to merchants instead.
 
+**Certificate pinning in browsers** represents an advanced technique. Some browsers allow website owners to pre-register SSL certificates that will be accepted for their domain, preventing attackers from using fraudulently issued certificates. As a user, you can't implement this, but it's worth knowing that technically sophisticated merchants use this additional protection layer.
+
 Consider using dedicated browsers or browser profiles for financial transactions, reducing the risk of cross-site tracking scripts accumulating data across your browsing sessions. Some power users maintain separate profiles with minimal extensions for payment activities.
 
-Regularly review your credit card statements, preferably weekly or immediately after large purchases. The faster you detect unauthorized charges, the easier the resolution process becomes.
+```bash
+# Example: Create a payment-only browser profile
+# For Chrome/Chromium users
+chromium --profile-directory="PaymentOnly" https://your-shopping-destination.com
+
+# This isolates cookies, cache, and extensions
+# Limiting cross-site tracking infrastructure accumulation
+```
+
+## Fraud Detection and Recovery
+
+Even with perfect protection, breaches happen. Establish a recovery workflow:
+
+1. **Immediate actions** (within 24 hours):
+   - Contact your card issuer to report fraud
+   - Request temporary card freeze while dispute processing
+   - Ask for credit monitoring enrollment
+
+2. **Documentation** (within a week):
+   - Collect email receipts from compromised transactions
+   - Screenshot your statement showing disputed charges
+   - Document merchant websites where card was used
+
+3. **Long-term monitoring** (continuous):
+   - Set credit freeze with Equifax, Experian, TransUnion
+   - Monitor credit reports via AnnualCreditReport.com
+   - Check credit monitoring services (often free after breach)
+
+The Fair Credit Billing Act (FCBA) protects consumers for unauthorized charges up to $50, and most card issuers waive even this amount. Recovery typically takes 1-2 billing cycles, but documentation speeds the process.
+
+## Payment Method Alternatives to Credit Cards
+
+Consider shifting to payment methods with stronger skimming resilience:
+
+**EMV Chip Technology**: Chip-enabled cards generate one-time transaction codes making captured data unusable for future purchases. Online purchases don't fully leverage this advantage, but chip technology prevents reuse at physical merchants.
+
+**Contactless/NFC Payments**: Mobile wallet payments (Apple Pay, Google Pay) substitute tokenized card data—a temporary code specific to that transaction—rather than your actual card number. Skimmers capturing tokenized data cannot reuse it elsewhere.
+
+**Buy Now, Pay Later Services**: Stripe Checkout, Affirm, and similar services authenticate transactions through redirect flows rather than hosting payment forms on merchant sites. This architecture reduces formjacking surface area since payment data never reaches the merchant's website.
+
+**Bank-Issued Digital Cards**: Many banks offer digital-only card numbers with unique identifiers for online shopping. Each online purchase gets a new virtual account number, preventing pattern matching attacks.
+
+**Account-Based Transfers**: Platforms like PayPal, Square Cash, and Venmo increasingly support direct bank transfers. These avoid card networks entirely, eliminating card skimming as an attack vector.
+
+Layering multiple payment methods—credit card for established retailers, virtual cards for new merchants, digital wallets for verification-enabled sites—distributes risk across different fraud mechanisms.
+
+## Checking for Data Breaches Across Merchants
+
+If your card was compromised, the merchant's site may have been breached. Verify your exposure:
+
+```bash
+# Check if email appears in known breaches
+curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com" \
+  -H "User-Agent: MyApp (your-email@domain.com)"
+
+# Monitor compromised merchant lists
+# Check FBI IC3 (ic3.gov) for reported breaches
+# Monitor payment card industry lists of compromised merchants
+```
+
+Websites like Have I Been Pwned aggregate known breach data. Regular checking helps you understand whether card compromise came from a specific merchant breach or broader infrastructure attack.
+
+## Technical Deep Dive: Preventing Skimming in E-Commerce
+
+For developers implementing checkout flows, formjacking prevention requires layered defense:
+
+```html
+<!-- 1. Use Subresource Integrity for all external payment resources -->
+<script src="https://js.stripe.com/v3/"
+        integrity="sha384-[actual-hash-here]"
+        crossorigin="anonymous"></script>
+
+<!-- 2. Implement strict Content Security Policy -->
+<!-- Prohibits any script from capturing form data -->
+
+<!-- 3. Never handle raw card data in your HTML -->
+<!-- Always use Stripe Elements, Braintree, or equivalent -->
+<div id="stripe-element-container"></div>
+
+<!-- 4. Tokenize card data client-side -->
+<!-- Raw PAN never reaches your servers -->
+
+<!-- 5. Monitor for DOM mutations in payment context -->
+<!-- Catch injected scripts adding hidden capture fields -->
+```
+
+The principle: minimize the attack surface by never handling raw card data, validating all external dependencies, and monitoring for unauthorized modifications.
+
+## Merchant Security Hygiene as a Consumer Signal
+
+When evaluating merchants, their security practices reveal trustworthiness:
+
+- **Published security policies**: Companies comfortable disclosing incident response procedures tend to invest more in prevention
+- **PCI DSS compliance**: Required for all payment processors; verify merchant maintains compliance
+- **SSL certificate transparency**: Use ssldecoder.org to verify legitimate certificates (check issuer, expiration, domains)
+- **HTTPS everywhere**: Not just checkout pages but entire site should use secure connections
+- **Regular security audits**: Ask merchants about third-party security assessments
+
+Merchants demonstrating security awareness correlate with lower skimming risk. Conversely, merchants showing poor basic security (no HTTPS, ancient certificates, obvious vulnerabilities) represent elevated risk.
 
 ## Related Reading
 

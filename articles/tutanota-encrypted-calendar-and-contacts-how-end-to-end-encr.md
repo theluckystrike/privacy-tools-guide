@@ -135,6 +135,245 @@ While Tutanota provides integrated encrypted calendar and contacts, alternatives
 
 For users requiring maximum privacy, Tutanota's approach reduces attack surface by eliminating the need to trust separate services for different data types.
 
+## Detailed Encryption Comparison
+
+| Feature | Tutanota | Proton Calendar | Proton Contacts | Google Calendar |
+|---------|----------|-----------------|-----------------|-----------------|
+| **E2E Encryption** | Yes (AES-256) | Yes (AES-256) | Yes (AES-256) | No (TLS only) |
+| **Server-Side Encryption** | Yes | Yes | Yes | Yes |
+| **Public Key Infrastructure** | RSA-4096 | ECC (X25519) | ECC (X25519) | N/A |
+| **Calendar Sharing Encryption** | Symmetric key exchange | Symmetric key exchange | N/A | No encryption |
+| **Open Source** | Partial (client) | Yes (OpenPGP.js) | Yes | No |
+| **Self-Hosting** | Not available | Not available | Not available | Not available |
+| **Zero-Knowledge Proof** | Required (password-based) | Required (password-based) | Required | None |
+| **Multi-Device Sync** | Encrypted sync | Encrypted sync | Encrypted sync | Plain sync |
+| **Cross-Platform Support** | iOS, Android, Web | iOS, Android, Web | iOS, Android, Web | Universal |
+
+## Advanced: Implementing Encrypted Calendar in Your Application
+
+For developers building privacy-first applications with encrypted calendar functionality, Tutanota's model provides valuable lessons:
+
+**Key Derivation Strategy**:
+```javascript
+// Simplified Tutanota-style key derivation
+async function deriveEncryptionKey(password, salt, iterations = 100000) {
+  const encoder = new TextEncoder();
+  const passwordData = encoder.encode(password);
+
+  // PBKDF2 key derivation
+  const key = await crypto.subtle.importKey(
+    'raw',
+    passwordData,
+    'PBKDF2',
+    false,
+    ['deriveBits']
+  );
+
+  const derivedBits = await crypto.subtle.deriveBits(
+    {
+      name: 'PBKDF2',
+      hash: 'SHA-256',
+      salt: salt,
+      iterations: iterations
+    },
+    key,
+    256  // 256 bits for AES-256
+  );
+
+  return crypto.subtle.importKey('raw', derivedBits, 'AES-GCM', false, ['encrypt', 'decrypt']);
+}
+
+// Generate and encrypt asymmetric keypair
+async function generateAndEncryptKeyPair(masterKey) {
+  const keyPair = await crypto.subtle.generateKey(
+    {
+      name: 'RSA-OAEP',
+      modulusLength: 4096,
+      publicExponent: new Uint8Array([1, 0, 1]),
+      hash: 'SHA-256'
+    },
+    true,  // extractable
+    ['encrypt', 'decrypt']
+  );
+
+  // Encrypt private key with master key
+  const privateKeyJwk = await crypto.subtle.exportKey('jwk', keyPair.privateKey);
+  const privateKeyJson = JSON.stringify(privateKeyJwk);
+
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const encryptedPrivateKey = await crypto.subtle.encrypt(
+    { name: 'AES-GCM', iv: iv },
+    masterKey,
+    new TextEncoder().encode(privateKeyJson)
+  );
+
+  return {
+    publicKey: await crypto.subtle.exportKey('spki', keyPair.publicKey),
+    encryptedPrivateKey: encryptedPrivateKey,
+    iv: iv
+  };
+}
+```
+
+## Calendar Sharing and Access Control
+
+Understanding Tutanota's sharing mechanism helps explain how encrypted collaboration works:
+
+**Shared Calendar Workflow**:
+1. Calendar owner generates unique symmetric key (K_calendar)
+2. Calendar data encrypts with K_calendar
+3. K_calendar encrypts with recipient's public key → K_shared
+4. Both K_calendar and K_shared store on server
+5. Recipient decrypts K_shared with private key to obtain K_calendar
+6. Recipient can now decrypt calendar data
+
+**Multi-recipient scenario**:
+```
+Owner's perspective:
+- One K_calendar (same encryption key for all event data)
+- N different K_shared values (one per recipient)
+- Reduces computation but requires secure key management
+
+Recipient's perspective:
+- Receive K_shared encrypted with public key
+- Decrypt to get K_calendar
+- Use K_calendar to decrypt all calendar events
+- Cannot revoke without changing K_calendar and re-sharing
+```
+
+**Revocation challenge**:
+- No direct way to revoke access without changing encryption key
+- Would require re-encrypting all events with new key
+- Tutanota handles this through separate access control metadata
+- Metadata lists authorized recipients (not encrypted the same way)
+
+## Metadata Leakage and What Tutanota Cannot Hide
+
+Even with end-to-end encryption, certain information remains visible to Tutanota servers:
+
+**Leakable metadata**:
+- **Access patterns**: When you access your calendar (timestamps)
+- **Recipient information**: Whom you share calendars with (encrypted but linkable)
+- **Event frequency**: Number of events reveals meeting schedule intensity
+- **Calendar size**: Storage space used indicates data volume
+- **Device information**: Device type and IP geolocation (from client headers)
+- **Sync frequency**: How often you sync changes (reveals activity patterns)
+
+**Example attack**:
+```
+Attacker monitoring Tutanota:
+Day 1: User accesses calendar 8 times between 9am-5pm (normal work pattern)
+Day 2: User accesses calendar 15 times between 6pm-11pm (unusual pattern)
+Day 3: User shares new calendar with contact "Jane Doe"
+Inference: Possible late-night project or collaboration shift
+```
+
+Tutanota doesn't hide these patterns, only the content itself.
+
+## Practical Setup: Tutanota for Teams
+
+For small teams using Tutanota's encrypted calendar and contacts:
+
+**Step 1: Create Shared Calendar**
+- Calendar owner goes to Calendar settings
+- Toggles "Allow others to view" and sets participants
+- Participants receive invite with encrypted calendar access
+
+**Step 2: Configure Reminders**
+- Reminders encrypt locally; server never sees reminder settings
+- Set up to 1 hour before event (some limitations on very early reminders)
+- Push notifications work across all platforms
+
+**Step 3: Recurring Events**
+- Tutanota handles recurrence rules (RFC 5545 compliance)
+- Modifications to single instances create new encrypted entries
+- Attendees see modifications in real-time through encrypted sync
+
+**Step 4: Contact Integration**
+- Share contacts separately from calendar
+- Each contact creates individual encrypted entry
+- Batch operations (import contacts) encrypt each entry independently
+
+## Backup and Recovery Strategy
+
+Critical for encrypted calendar users:
+
+**What Tutanota provides**:
+- Data export in encrypted format
+- Calendar export as .ics file (unencrypted)
+- Account recovery through email
+
+**Recovery scenarios**:
+```
+Scenario 1: Lost password
+- Cannot recover encrypted data without backup
+- Must delete account and create new one
+- Previous calendar/contacts inaccessible
+
+Scenario 2: Device compromise
+- Attacker has access to cached encrypted data
+- Cannot decrypt without master password
+- Two-factor authentication still provides account protection
+
+Scenario 3: Want to switch services
+- Export calendar as standard .ics file
+- Export contacts as VCard format
+- Both formats lose end-to-end encryption properties in other services
+```
+
+## Performance Implications of End-to-End Encryption
+
+Encryption adds computational overhead:
+
+**Encryption cost** (approximate, 2026 hardware):
+- Calendar event encryption: 5-15ms per event
+- Contact encryption: 2-5ms per contact
+- Key derivation on login: 500-800ms (intentionally slow for security)
+
+**For bulk operations**:
+- Import 1000 contacts: 2-5 seconds encryption time
+- Sync 50 updated events: 250-750ms encryption time
+
+Power users importing large calendars from legacy systems may experience delays. Plan migrations during off-peak times.
+
+## Compliance and Jurisdictional Considerations
+
+Tutanota's encryption provides meaningful privacy even under legal pressure:
+
+**GDPR Right to Deletion**:
+- Tutanota can delete your account and data
+- Cannot provide plaintext data to data requestors (doesn't have access)
+- Regulatory compliance through technical architecture
+
+**Law Enforcement Requests**:
+- Even with subpoena, cannot provide decrypted calendar data
+- Can only confirm existence of account
+- Cannot recover deleted data from archives
+
+**Cross-Border Data Transfer**:
+- All Tutanota servers in Germany (EU jurisdiction)
+- Falls under GDPR protections
+- No data transfer to US surveillance jurisdictions
+
+For users in jurisdictions with aggressive data access laws, Tutanota's model provides meaningful legal protection through technical design.
+
+## Integration Limitations and Workarounds
+
+**Limitation 1: No CalDAV/CardDAV Support**
+- Cannot sync to non-Tutanota clients
+- Workaround: Export .ics regularly for backup
+- Alternative: Use ProtonMail calendar with CalDAV support
+
+**Limitation 2: Limited Search Functionality**
+- Cannot search encrypted event descriptions
+- Only title fields are partially searchable
+- Workaround: Maintain separate plaintext notes
+
+**Limitation 3: Third-Party Calendar Apps**
+- iOS/Android calendar apps cannot access Tutanota
+- Must use Tutanota's mobile apps
+- Workaround: Duplicate events in local calendar for non-sensitive items
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
