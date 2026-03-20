@@ -128,6 +128,159 @@ ProtonMail offers a balance of features, community trust, and mobile functionali
 
 For teams requiring encrypted email with cross-platform mobile support, ProtonMail's open-standards foundation and active development keep it a mature option in 2026.
 
+## Advanced: ProtonMail Bridge Setup for Development
+
+Developers frequently need programmatic email access for testing, backup scripts, or system integration. ProtonMail Bridge solves this by providing an IMAP/SMTP gateway on your local machine.
+
+Download ProtonMail Bridge from Proton's website and install it. The application runs locally and binds to ports 1143 (IMAP) and 1025 (SMTP). All traffic between your applications and the Bridge is encrypted, and messages remain encrypted in transit.
+
+```python
+# Python script for backing up ProtonMail to local storage
+import imaplib
+import email
+import json
+from datetime import datetime
+
+class ProtonBackup:
+    def __init__(self, email_address, bridge_password):
+        self.email_address = email_address
+        self.backup_log = []
+
+        # Connect through Bridge
+        self.imap = imaplib.IMAP4_SSL('127.0.0.1', 1143)
+        self.imap.login(email_address, bridge_password)
+
+    def backup_mailbox(self, folder='INBOX'):
+        # Select folder and fetch all messages
+        status, messages = self.imap.select(folder)
+
+        if status != 'OK':
+            print(f"Failed to select {folder}")
+            return
+
+        # Get message count
+        response, msgids = self.imap.search(None, 'ALL')
+        message_list = msgids[0].split()
+
+        for msg_id in message_list:
+            status, msg_data = self.imap.fetch(msg_id, '(RFC822)')
+            msg = email.message_from_bytes(msg_data[0][1])
+
+            # Store metadata for indexing
+            self.backup_log.append({
+                'from': msg['From'],
+                'to': msg['To'],
+                'subject': msg['Subject'],
+                'date': msg['Date'],
+                'size': len(msg_data[0][1])
+            })
+
+    def save_backup(self, filename):
+        with open(filename, 'w') as f:
+            json.dump(self.backup_log, f, indent=2)
+
+    def close(self):
+        self.imap.close()
+        self.imap.logout()
+
+# Usage
+backup = ProtonBackup('your@protonmail.com', 'bridge-password')
+backup.backup_mailbox('INBOX')
+backup.save_backup('protonmail_backup_' + datetime.now().isoformat() + '.json')
+backup.close()
+```
+
+This approach enables automated email archiving while preserving encryption. Messages remain encrypted at rest, and the Bridge handles decryption locally on your machine.
+
+## Email Filtering and Rule Configuration
+
+Both iOS and Android apps support labels and folder organization, but advanced filtering requires ProtonMail Bridge and external tools.
+
+Using Sieve filtering rules through the Bridge:
+
+```sieve
+# Automatically organize receipts
+if address :contains "from" "receipt@store.com"
+{
+    fileinto "Receipts";
+    stop;
+}
+
+# Flag important internal communications
+if address :contains "from" "@company.com"
+{
+    addflag "\\Flagged";
+}
+
+# Archive newsletters automatically
+if header :contains "list-id" "newsletter"
+{
+    fileinto "Archive/Newsletters";
+}
+```
+
+Store these rules on your local system, then apply them through your email client or custom scripts that interact with the Bridge.
+
+## Calendar and Contact Synchronization
+
+ProtonCalendar on mobile shares the same encryption model as ProtonMail. Events sync through Proton's servers but remain encrypted end-to-end. For developers integrating ProtonCalendar into workflows:
+
+The calendar supports iCalendar format through the Bridge, enabling integration with external tools:
+
+```bash
+# Example: Sync ProtonCalendar to CalDAV client through Bridge
+# Configure your CalDAV client with:
+# Server: localhost:1143
+# Protocol: CalDAV (through Bridge)
+# Username: your@protonmail.com
+# Password: bridge-app-password
+```
+
+This enables using ProtonCalendar alongside other encrypted productivity tools in your workflow.
+
+## Offline Email Access and Sync
+
+The mobile apps cache recent messages, enabling offline reading. However, the cache is limited by device storage. Developers managing large email archives should understand sync behavior:
+
+- First sync: Downloaded all messages in selected folders
+- Ongoing: New and updated messages sync continuously
+- Offline: Cached messages remain readable, but compose and send require connectivity
+
+For long trips with intermittent connectivity, manually download important folders before travel:
+
+```bash
+# Through Bridge, download specific folders for offline access
+# Configure your email client to download full folder contents
+# Then rely on cached data when disconnected
+```
+
+## Threat Model Considerations
+
+ProtonMail protects message content but cannot prevent every privacy leak:
+
+**What ProtonMail protects:**
+- Message bodies are encrypted end-to-end
+- Attachments are encrypted before transmission
+- Metadata for your account (password, recovery email) is secured with strong encryption
+
+**What ProtonMail cannot protect:**
+- Email metadata (sender, recipient, subject, timestamps) visible to network observers
+- IP address when accessing ProtonMail web
+- Information about which emails you receive (frequency, volume, patterns)
+- Metadata about communications with external, non-Proton users
+
+For maximum privacy, combine ProtonMail with VPN access when accessing the web interface, use GPG encryption for subjects and metadata when needed, and understand that no email system provides perfect privacy for recipients outside the Proton ecosystem.
+
+## Performance Optimization for Mobile
+
+On older devices or slow networks, ProtonMail can be slow. Optimize performance:
+
+- Disable full-text search indexing if battery drain is severe
+- Use POP3 instead of IMAP through Bridge if downloading archived mail (transfers only new messages)
+- Clear app cache periodically to free storage space
+- Reduce attachment download quality (avoid auto-downloading large attachments)
+
+For development teams managing encrypted corporate email at scale, these optimizations prevent user friction while maintaining security.
 
 ## Related Reading
 

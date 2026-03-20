@@ -91,13 +91,61 @@ For developers evaluating messaging security, here's a practical comparison:
 
 The open-source nature of Signal's protocol has been audited extensively. MTProto's implementation, while publicly available, has received less independent cryptanalysis.
 
+## Advanced MTProto 2.0 Technical Details
+
+MTProto 2.0 implements a multi-layered encryption approach that differs from simpler protocols:
+
+**Encryption Layers:**
+1. Transport Layer: Messages are wrapped in transport headers
+2. TLS Layer: Optional wrapper for additional security (similar to HTTPS)
+3. Encryption Layer: Core AES-256-IGE encryption with key derivation from Diffie-Hellman exchange
+
+```python
+# Simplified MTProto key exchange representation
+from cryptography.hazmat.primitives.asymmetric import rsa
+
+def mtproto_key_exchange():
+    """
+    Conceptual representation of MTProto DH key exchange.
+    Actual implementation is more complex.
+    """
+    # Generate DH parameters
+    p = 0xffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b14e5c9f40e3585e8fda79
+
+    # Each party generates random a and b
+    # Computes g^a mod p and g^b mod p
+    # Derives shared secret: g^(a*b) mod p
+
+    # Forward secrecy achieved because:
+    # - Session keys are ephemeral (exist only during chat)
+    # - Lost a session key doesn't expose other sessions
+    # - No long-term secrets derived from a single key
+    pass
+```
+
+## Understanding MTProto Vulnerabilities and Strengths
+
+**Strengths:**
+- Custom protocol design optimized for Telegram's specific use case
+- AES-256 is industry-standard and well-tested
+- Forward secrecy per session prevents bulk retroactive decryption
+- DH key exchange prevents passive monitoring during key establishment
+
+**Weaknesses and Criticisms:**
+- Less peer review compared to Signal Protocol (used by Signal, WhatsApp)
+- No comprehensive independent security audits published
+- Key fingerprints use MD5-like truncation, considered less ideal
+- No protection against active man-in-the-middle unless keys are verified out-of-band
+
 ## Practical Security Considerations
 
 For developers building applications that interact with Telegram or handling sensitive communications:
 
 ### Verifying Secret Chat Keys
 
-Always verify key fingerprints out-of-band. In the Telegram desktop client, you can view the key fingerprint by navigating to the secret chat, clicking on the contact name, and selecting "Encryption Key." Compare this with your contact through a separate verified channel.
+Always verify key fingerprints out-of-band. In the Telegram desktop client, you can view the key fingerprint by navigating to the secret chat, clicking on the contact name, and selecting "Encryption Key." Compare this with your contact through a separate verified channel (phone call, in-person, verified video call).
+
+The fingerprint verification process:
 
 ```python
 # Python example for manual key verification logic
@@ -110,24 +158,127 @@ def verify_secret_chat_key(auth_key, server_salt, client_salt):
     In practice, Telegram clients handle this automatically.
     """
     # The key is derived using HMAC with server/client salts
+    # This prevents tampering with the key exchange
     key_check = hmac.new(
-        auth_key, 
-        server_salt + client_salt, 
+        auth_key,
+        server_salt + client_salt,
         hashlib.sha256
     ).digest()
-    
-    return key_check[:4]  # First 4 bytes for quick verification
+
+    # Fingerprint is derived from key material
+    # First 4 bytes provide collision resistance for visual verification
+    fingerprint = key_check[:4].hex()
+
+    # Convert to visual representation (8 hex digits)
+    visual_id = ':'.join([fingerprint[i:i+2] for i in range(0, 8, 2)])
+
+    return visual_id
+
+# Example output: "a1:b2:c3:d4"
+```
+
+### Threat Model: When Secret Chat Protects You
+
+Secret Chat is effective against:
+- **Passive ISP Monitoring**: Your ISP cannot see message content (encrypted)
+- **Network Eavesdropping**: WiFi eavesdroppers cannot decrypt messages
+- **Cloud Breach**: Even if Telegram servers are compromised, messages remain unreadable
+- **Weak Authentication Schemes**: Cannot be cracked with password alone (uses key exchange)
+
+Secret Chat is NOT effective against:
+- **Malicious Contacts**: Your chat partner can screenshot or forward messages
+- **Compromised Devices**: Malware on your phone can read decrypted messages
+- **Metadata Analysis**: Communication partners and timing are visible to Telegram
+- **Active MITM**: Unverified fingerprints allow substitution attacks
+
+### Implementation: Building Telegram Bots with Security
+
+For developers building Telegram bots or integrating with Telegram's infrastructure:
+
+```python
+# Using Telethon (community-maintained Telegram library)
+from telethon.sync import TelegramClient
+from telethon.errors import SessionPasswordNeededError
+
+async def secure_message_send():
+    """
+    Example of sending end-to-end encrypted messages via bot
+    """
+    async with TelegramClient('session_name', api_id, api_hash) as client:
+        # Get contact to initiate Secret Chat
+        contact = await client.get_entity('username_or_phone')
+
+        # Initiate Secret Chat (creates new encrypted session)
+        secret_chat = await client.get_dialogs()
+        # Note: Actual Secret Chat creation requires manual user action
+
+        # Send encrypted message
+        await client.send_message(
+            secret_chat,
+            'This message is end-to-end encrypted',
+            # Secret chats don't support additional encryption layers
+        )
 ```
 
 ### Security Best Practices
 
-Use Secret Chat for sensitive communications and enable two-factor authentication on your account. Verify encryption keys with contacts out-of-band, set self-destruct timers for time-sensitive messages, and keep in mind that metadata exposure persists regardless of encryption.
+Use Secret Chat for sensitive communications:
+
+1. **Enable two-factor authentication** on your Telegram account
+2. **Verify encryption keys** with contacts out-of-band before exchanging sensitive information
+3. **Set self-destruct timers** for messages containing temporary credentials or time-sensitive data
+4. **Avoid logging into same account** from multiple devices (compromises metadata isolation)
+5. **Use strong device lock** (PIN/biometric) to prevent physical access to decrypted messages
+6. **Keep Telegram updated** to receive security patches and protocol improvements
+
+### Metadata Exposure Impact
+
+Telegram's metadata visibility creates unique risks:
+
+```
+Timeline visible to Telegram servers:
+├─ 2024-03-20 14:32:15 — You go online
+├─ 2024-03-20 14:32:47 — User @alice becomes online
+├─ 2024-03-20 14:33:12 — Secret Chat initiated with @alice
+├─ 2024-03-20 14:33:14 through 14:38:47 — Active typing/reading indicators
+└─ 2024-03-20 14:39:01 — Both users go offline
+
+Even though message content is encrypted, this timeline can reveal:
+- When you communicate with specific people
+- Frequency and duration of communication
+- Whether communication is active at specific times
+```
+
+This metadata pattern analysis can reveal relationships and interests without decrypting messages.
 
 ### When Secret Chat Is Appropriate
 
-Telegram Secret Chat works well for sensitive personal conversations, sharing temporary information that should disappear, encrypted file transfer, and cases where Telegram's feature set is preferred over Signal.
+Telegram Secret Chat works well for:
+- Sensitive personal conversations with people you trust
+- Sharing temporary information that should disappear (2FA codes, temporary passwords)
+- Encrypted file transfer when Telegram's feature set is preferred
+- Cases where message confidentiality (not metadata) is your primary concern
 
-Telegram Secret Chat provides genuine end-to-end encryption with forward secrecy, offering meaningful protection against message content interception. It is not a replacement for Signal when metadata protection and audited open-source protocols are priorities. For high-stakes communications where metadata protection matters, use Signal or combine Secret Chat with additional anonymity tooling.
+Telegram Secret Chat is NOT appropriate for:
+- Communications requiring metadata protection
+- Group communications (Secret Chat is 1-to-1 only)
+- Situations requiring independent protocol audits
+- Scenarios where a single compromised device exposes all history
+
+## Comparing with Signal for High-Security Use Cases
+
+If metadata protection is critical, Signal offers:
+- End-to-end encryption by default (not opt-in)
+- Open-source, extensively audited Signal Protocol
+- Group chat encryption
+- Contact discovery via phone number (with option to hide from phone book)
+- Disappearing messages with better enforcement
+
+For minimal privacy exposure beyond content, Signal is the stronger choice.
+
+## Conclusion
+
+Telegram Secret Chat provides genuine end-to-end encryption with forward secrecy, offering meaningful protection against message content interception. It is not a replacement for Signal when metadata protection and audited open-source protocols are priorities. For high-stakes communications where metadata protection matters, use Signal or combine Secret Chat with additional anonymity tooling like Tor or a VPN (though this adds latency to Telegram).
 
 
 ## Related Reading

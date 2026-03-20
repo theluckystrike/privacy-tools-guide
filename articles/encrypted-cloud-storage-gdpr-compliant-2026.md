@@ -91,46 +91,261 @@ Encryption effectiveness depends critically on key management. Poor key practice
 
 Key rotation should occur regularly—typically annually for encryption keys, though your risk assessment might require more frequent rotation. Document your rotation procedures and maintain the ability to re-encrypt old data with new keys.
 
-## Verifying GDPR Compliance
+## Breach Notification and Encryption Status
 
-Compliance verification requires documentation and testing. Create a compliance checklist covering encryption implementation, key management, access controls, and incident response procedures.
+GDPR Article 34 requires breach notification to individuals unless encryption or similar measures make personal data unintelligible. Client-side encryption with keys held separately can reduce or eliminate breach notification requirements:
 
-Conduct regular penetration testing and vulnerability assessments. Document that encryption successfully protects data even in breach scenarios. GDPR requires breach notification within 72 hours—having encryption in place reduces both breach likelihood and notification requirements since encrypted data typically does not constitute a reportable breach.
+**Scenario 1: Encrypted Data + Compromised Keys**
+→ Breach notification required (data is readable)
 
-Maintain audit logs showing who accessed encryption keys and when. Both encryption and key access should follow least-privilege principles. Document the justification for your chosen encryption approach and threat model.
+**Scenario 2: Encrypted Data + Keys Held Separately**
+→ Breach notification NOT required (data remains unintelligible)
 
-## Practical Example: Integrating Encrypted Storage
+**Scenario 3: Encrypted Data + Server Breach (Keys Never Exposed)**
+→ Breach notification NOT required (encryption prevents access)
 
-For developers building applications that must comply with GDPR, integrating encrypted cloud storage typically involves these components:
+This distinction makes encryption architecture critical for compliance. If your encryption keys are compromised, you must notify affected individuals. If keys remain secure, notification is unnecessary.
+
+## Key Management Audit and Compliance Logging
+
+Implement comprehensive audit logging for all encryption key operations:
 
 ```python
+import logging
+import json
+from datetime import datetime
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
+class AuditedKeyManager:
+    def __init__(self, audit_logger):
+        self.logger = audit_logger
+        self.keys = {}
+
+    def log_key_operation(self, operation: str, user_id: str, key_id: str, success: bool):
+        """Log all key operations for GDPR compliance audit trails."""
+        audit_entry = {
+            'timestamp': datetime.utcnow().isoformat(),
+            'operation': operation,  # 'generate', 'rotate', 'derive', 'delete'
+            'user_id': user_id,
+            'key_id': key_id,
+            'success': success,
+            'source': 'key_manager'
+        }
+        self.logger.info(json.dumps(audit_entry))
+
+    def generate_user_key(self, user_id: str) -> bytes:
+        """Generate and audit a new encryption key."""
+        salt = os.urandom(32)
+        master_key = os.urandom(32)
+
+        key = PBKDF2HMAC(
+            algorithm=hashes.SHA256(),
+            length=32,
+            salt=salt,
+            iterations=100000,
+        ).derive(master_key)
+
+        key_id = hashlib.sha256(key).hexdigest()[:16]
+        self.keys[user_id] = {'key': key, 'salt': salt, 'created': datetime.utcnow()}
+
+        self.log_key_operation('generate', user_id, key_id, True)
+        return key
+
+    def rotate_key(self, user_id: str) -> bytes:
+        """Rotate user's encryption key with audit trail."""
+        try:
+            # Generate new key
+            new_key = self.generate_user_key(user_id)
+
+            # Re-encrypt all user's data with new key
+            self.log_key_operation('rotate', user_id, user_id, True)
+            return new_key
+        except Exception as e:
+            self.log_key_operation('rotate', user_id, user_id, False)
+            raise
+```
+
+## Data Subject Rights Implementation
+
+GDPR Articles 15-22 grant data subjects specific rights. Encryption affects implementation:
+
+**Right to Access (Article 15):**
+- Must decrypt user's data on request
+- Requires secure transmission to data subject
+- Recommend using temporary decryption keys sent via separate secure channel
+
+**Right to Erasure (Article 17):**
+- Encryption simplifies deletion: destroy encryption key = data becomes unrecoverable
+- No need to overwrite encrypted storage (key destruction is sufficient)
+
+**Right to Data Portability (Article 20):**
+- Decrypt user's data in machine-readable format
+- Challenge: Users may not know encryption password
+- Solution: Use BYOK/HYOK with programmatic key access controls
+
+**Right to Object (Article 21):**
+- Stop processing personal data
+- Encryption enables "freeze" without actual deletion (maintain key but block access)
+
+## Practical Example: GDPR-Compliant Storage Implementation
+
+For developers building applications that must comply with GDPR:
+
+```python
+import os
+import hashlib
+from datetime import datetime, timedelta
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from cryptography.hazmat.primitives import hashes
+
 class GDPRCompliantStorage:
-    def __init__(self, cloud_client, key_manager):
+    def __init__(self, cloud_client, key_manager, audit_logger):
         self.cloud = cloud_client
         self.keys = key_manager
-    
-    def store(self, user_id: str, data: bytes) -> str:
+        self.audit = audit_logger
+
+    def store(self, user_id: str, data: bytes, retention_days: int = None) -> str:
+        """Store user data with GDPR-compliant encryption."""
         # Derive unique key per user for encryption
         salt = self.keys.get_salt(user_id)
         key = derive_key(self.keys.get_master_key(), salt)
-        
-        # Encrypt and upload
-        encrypted = encrypt_file(data, key)
-        file_id = self.cloud.upload(encrypted, user_id)
-        
+
+        # Encrypt with authenticated encryption (AES-256-GCM)
+        nonce = os.urandom(12)
+        aesgcm = AESGCM(key)
+        ciphertext = aesgcm.encrypt(nonce, data, None)
+
+        # Store with encryption metadata
+        encrypted_package = {
+            'nonce': nonce.hex(),
+            'ciphertext': ciphertext.hex(),
+            'algorithm': 'AES-256-GCM',
+            'timestamp': datetime.utcnow().isoformat(),
+            'retention_until': (datetime.utcnow() + timedelta(days=retention_days)).isoformat() if retention_days else None
+        }
+
+        file_id = self.cloud.upload(
+            user_id,
+            json.dumps(encrypted_package),
+            metadata={'encrypted': True, 'user_id': user_id}
+        )
+
+        # Log storage operation
+        self.audit.log(f"Stored encrypted data for {user_id}: {file_id}")
         return file_id
-    
+
     def retrieve(self, user_id: str, file_id: str) -> bytes:
-        # Download and decrypt
-        encrypted = self.cloud.download(file_id)
-        
+        """Retrieve and decrypt user data."""
+        # Download encrypted package
+        encrypted_package = json.loads(self.cloud.download(file_id))
+
+        # Derive decryption key
         salt = self.keys.get_salt(user_id)
         key = derive_key(self.keys.get_master_key(), salt)
-        
-        return decrypt_file(encrypted, key)
+
+        # Decrypt with integrity verification
+        nonce = bytes.fromhex(encrypted_package['nonce'])
+        ciphertext = bytes.fromhex(encrypted_package['ciphertext'])
+
+        aesgcm = AESGCM(key)
+        plaintext = aesgcm.decrypt(nonce, ciphertext, None)
+
+        # Log access
+        self.audit.log(f"Retrieved encrypted data for {user_id}: {file_id}")
+        return plaintext
+
+    def delete_user_data(self, user_id: str) -> bool:
+        """Right to Erasure: Delete all user's encrypted data."""
+        try:
+            # Find all files for user
+            files = self.cloud.list_files(user_id)
+
+            # Delete cloud storage
+            for file_id in files:
+                self.cloud.delete(file_id)
+
+            # Rotate and delete user's encryption key
+            self.keys.revoke_key(user_id)
+
+            # Log deletion
+            self.audit.log(f"Exercised right to erasure for {user_id}")
+            return True
+        except Exception as e:
+            self.audit.log(f"Failed to delete user {user_id}: {e}")
+            return False
+
+    def export_user_data(self, user_id: str) -> bytes:
+        """Right to Data Portability: Export all user's data in machine-readable format."""
+        files = self.cloud.list_files(user_id)
+        exported_data = {}
+
+        for file_id in files:
+            decrypted = self.retrieve(user_id, file_id)
+            exported_data[file_id] = decrypted.decode('utf-8')
+
+        # Return as JSON archive
+        self.audit.log(f"Exported data for {user_id}")
+        return json.dumps(exported_data).encode('utf-8')
 ```
 
-This pattern ensures each user's data encrypts with a unique derived key. Even if master key exposure occurs, individual user data remains protected. The key manager abstracts key management complexities, allowing the storage class to focus on encryption operations.
+This pattern ensures:
+- Each user's data encrypts with a unique key
+- All operations are audit-logged for compliance verification
+- Key destruction implements right to erasure efficiently
+- Data portability supports user rights
+- Retention policies prevent indefinite storage
+
+## Compliance Documentation Template
+
+For GDPR compliance demonstrations, maintain documentation covering:
+
+```markdown
+# Encryption Technical Documentation
+
+## Data Protection Impact Assessment (DPIA)
+
+### System Overview
+- Service: [Name]
+- Processing Purpose: [Storage/Analysis/etc]
+- Data Categories: [Customer data, internal documents, etc]
+- Recipients: [Internal teams, cloud provider, etc]
+
+### Encryption Measures
+- Algorithm: AES-256-GCM
+- Key Derivation: PBKDF2-SHA256, 100,000 iterations
+- Key Management: [BYOK/HYOK/Customer-managed]
+- Key Rotation: Annual or upon detection of compromise
+
+### Risk Analysis
+- Threat: Server breach with unauthorized access
+- Mitigation: Client-side encryption makes data unintelligible
+- Residual Risk: Master key compromise (separate risk control)
+
+### Controls
+- Encryption: ✓
+- Key Management: ✓
+- Access Logging: ✓
+- Incident Response: ✓
+
+### Compliance Status
+- GDPR Article 32 (Security): ✓ Compliant
+- GDPR Article 34 (Breach Notification): ✓ Encrypted data exempt
+```
+
+## Verifying GDPR Compliance
+
+Compliance verification requires documentation and testing:
+
+1. **Create compliance checklist** covering encryption implementation, key management, access controls, and incident response procedures
+2. **Conduct penetration testing** to verify encryption effectiveness
+3. **Test breach scenarios** to confirm encrypted data remains unintelligible
+4. **Maintain audit logs** showing who accessed encryption keys and when
+5. **Document data flow** showing where encryption occurs
+6. **Review data processing agreements** with cloud providers for compatibility
+
+Having encryption in place reduces GDPR notification requirements since encrypted data with inaccessible keys typically does not constitute a reportable breach under Article 34.
 
 ## Related Reading
 

@@ -129,6 +129,110 @@ shred -u -z -n 7 sensitive_file.txt
 bleachbit --wipe-free-space
 ```
 
+## Organizational Intelligence Detection and Evasion
+
+Large organizations deploy sophisticated surveillance methods to identify leakers. Understand how they investigate to avoid detection:
+
+**Common Detection Techniques:**
+
+- **Document correlation** — Forensic linguistics comparing written evidence to known employee writings
+- **Timeline analysis** — Correlating system access logs with document creation times
+- **Email metadata examination** — Analyzing forwarded documents and blind CC patterns
+- **Network flow analysis** — Observing unusual data transfers or uploads to external services
+- **Mobile device tracking** — Correlating cell tower data with office entry/exit times
+
+**Evasion Strategies:**
+
+Use systems you would normally access for your role. Accessing sensitive systems outside your normal scope triggers investigation logs. If you typically have access to certain files, using that access appears normal; accessing files outside your permission scope creates audit trail anomalies.
+
+Vary your collection timing. Don't systematically gather evidence during specific hours—spread collection over weeks or months, mimicking normal work patterns.
+
+Avoid dramatic volume changes. Downloading 500MB of files you've never touched before creates network logs that stand out. Instead, make periodic small downloads consistent with legitimate work activity.
+
+## Securing Communication with Journalists
+
+Establish secure communication channels before sharing sensitive information. Use ProtonMail for initial contact, sending public GPG key alongside your message.
+
+```bash
+# Generate a temporary GPG key pair for journalist communication
+gpg --batch --generate-key <<EOF
+%echo Generating journalist communication key
+Key-Type: RSA
+Key-Length: 4096
+Name-Real: Disclosure Contact
+Name-Email: journalist-contact@protonmail.com
+Expire-Date: 1y
+%commit
+%echo Done
+EOF
+
+# Export public key to share with journalist
+gpg --armor --export journalist-contact@protonmail.com > disclosure.key
+```
+
+Publish your key to a public keyserver so journalists can verify it independently:
+
+```bash
+gpg --send-keys --keyserver keys.openpgp.org journalist-contact@protonmail.com
+```
+
+Schedule encrypted Signal calls through separate channels. Provide instructions: "I will call through Signal from [burner number]. This number will be active Tuesday 19:00-20:00 UTC only." Time-bound availability prevents targetted surveillance.
+
+## Handling Law Enforcement and Subpoenas
+
+Whistleblowers may face legal pressure from employers or government agencies. Understand your jurisdiction's protections and legal obligations:
+
+**Preparation:**
+
+- Consult with a whistleblower protection attorney before disclosing
+- Document your organization's internal policies (harassment, retaliation procedures)
+- Keep detailed records of all disclosure communications with journalists
+- Store encrypted copies of attorney communications separately from evidence
+
+**During Investigation:**
+
+If questioned by investigators, you have the right to remain silent and demand attorney presence. Provide no information about your disclosure activities without legal counsel present.
+
+```bash
+# If subpoenaed for devices, your encrypted containers provide protection
+# Full-disk encryption on all whistleblower devices prevents compulsory unlocking in most US jurisdictions
+# However, always consult your attorney about specific jurisdiction laws
+
+# Document your security setup for attorney review
+echo "Full-disk encryption: LUKS (Linux), FileVault (macOS), BitLocker (Windows)" > legal_security_documentation.txt
+echo "Communication encryption: Signal (end-to-end), GPG (email)" >> legal_security_documentation.txt
+```
+
+## Physical Operational Security
+
+Digital tools matter, but physical security prevents the most damaging disclosure leaks:
+
+- **Device separation**: Never use work devices for whistleblower communications. Never use whistleblower devices at work.
+- **Location variation**: Don't conduct whistleblower activities from the same location repeatedly. Use different coffee shops, libraries, or public networks.
+- **Time variation**: Avoid predictable patterns. If you always gather evidence on Tuesday nights, investigators will notice your office access logs.
+- **Phone discipline**: Discard whistleblower burner phones after disclosure. Don't keep them as backups—archived numbers can be reactivated.
+
+## Threat Assessment Decision Tree
+
+Before disclosing, assess your actual threat level:
+
+**Low Threat (Corporate disclosure to mainstream journalists):**
+- Use: SecureDrop + GPG email
+- Threat model: Document tracing, internal investigation
+- Tools needed: Metadata removal, separate email, Signal
+
+**Medium Threat (Government accountability disclosure):**
+- Use: Multiple communication channels, physical separation
+- Threat model: Sophisticated forensic analysis, subpoenas
+- Tools needed: Full encryption, Tails Linux, attorney coordination
+
+**High Threat (National security disclosure, hostile regime):**
+- Use: Professional intermediaries, physical distance
+- Threat model: Law enforcement, asset targeting, physical security
+- Tools needed: International lawyer, escape plan, dead drops
+
+Honestly assess which category applies to you. Over-preparing creates operational friction; under-preparing creates legal vulnerability.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

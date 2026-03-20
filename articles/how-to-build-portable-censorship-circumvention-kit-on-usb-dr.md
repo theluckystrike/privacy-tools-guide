@@ -132,6 +132,195 @@ Test your complete setup in a restrictive environment before relying on it durin
 
 Keep backup copies of important configuration files. If your USB drive fails or gets lost, having backups ensures you can quickly restore your working setup.
 
+## Building a Tor Browser Configuration with Fallback Chains
+
+The most reliable portable kit includes multiple Tor bridge configurations. If your primary bridges get blocked, fallback bridges provide continued access without downloading new configurations.
+
+Create multiple Tor configurations in separate folders:
+
+```bash
+/kit/tor/
+  /config-primary/
+    torrc-br (with primary bridges)
+  /config-secondary/
+    torrc-br (with secondary bridges)
+  /config-tertiary/
+    torrc-br (with backup bridges)
+```
+
+In each torrc-br file, specify your bridge lines:
+
+```
+# Primary configuration (obfs4 bridges)
+UseBridges 1
+Bridge obfs4 1.2.3.4:443 cert=ABC... iat-mode=1
+Bridge obfs4 5.6.7.8:443 cert=DEF... iat-mode=1
+
+# Fallback to meek bridges if obfs4 blocked
+Bridge meek 1.9.9.9:443 url=https://meek.azureedge.net/
+```
+
+Test each configuration before travel to verify connectivity. Document which configuration to use based on network conditions you encounter.
+
+## Advanced: Chaining Multiple Proxies for Resilience
+
+For maximum resilience, chain multiple proxy layers. This approach uses Tor behind a VPN behind an SSH tunnel, providing multiple fallback points:
+
+```bash
+# Layer 1: SSH tunnel through trusted server (fastest, detectable)
+ssh -D 1080 -N user@trusted-server.com &
+SSH_PID=$!
+
+# Layer 2: VPN through SSH tunnel (adds encryption, harder to detect)
+openvpn --proto tcp --socks-proxy 127.0.0.1 1080 \
+  --config vpn-config.ovpn &
+VPN_PID=$!
+
+# Layer 3: Tor through VPN (slowest, most resistant to detection)
+# Configure Tor to use 127.0.0.1:8080 (VPN socks proxy)
+# Then use Tor Browser normally
+
+# Script to kill layers if detection occurs
+kill_layer() {
+  kill $SSH_PID
+  sleep 5
+  # VPN will fail, then Tor exits, system falls back
+}
+```
+
+This architecture provides automatic fallback—if your VPN gets blocked, Tor attempts to work directly. If that fails, you still have SSH tunnel access.
+
+## Mobile Circumvention Toolkit
+
+Mobile devices require different tools since you cannot install arbitrary software on iOS or Android.
+
+**iOS circumvention approach:**
+
+```
+1. Install Onion Browser from App Store (Tor-based)
+2. Configure custom bridges in app settings
+3. Install Shadowsocks/ss via TestFlight beta (if available)
+4. Use system VPN settings for fallback OpenVPN connection
+5. Configure WireGuard via system settings as final fallback
+```
+
+**Android circumvention approach:**
+
+```bash
+# Install F-Droid from https://f-droid.org (open-source app store)
+# Through F-Droid, install:
+# - Orbot (Tor client)
+# - Shadowsocks for Android
+# - Outline (Shadowsocks client)
+# - Wireguard
+
+# Create shortcut launcher for quick app switching:
+# Home screen → Quick settings → Add "Orbot" toggle
+# Switch between Tor and Shadowsocks by toggling network app
+```
+
+Document which apps and configurations work on your specific devices before travel.
+
+## Maintaining Your Kit During Long Trips
+
+Extended travel requires kit maintenance procedures:
+
+**Weekly checks:**
+
+```bash
+# Verify all tools still launch correctly
+./tor/TorBrowser/start-tor-browser  # Should launch browser
+./vpn/openvpn --version             # Should show version
+./scripts/test-connectivity.sh      # Custom test script
+```
+
+**Network environment testing:**
+
+```bash
+#!/bin/bash
+# test-connectivity.sh
+
+echo "Testing connection methods in current network..."
+
+# Test 1: Direct internet (likely blocked in censored regions)
+timeout 5 curl -s https://www.google.com > /dev/null && \
+  echo "Direct: SUCCESS (not in restricted network)" || \
+  echo "Direct: BLOCKED (enter restricted network)"
+
+# Test 2: Tor Browser
+timeout 10 curl -s --proxy socks5://127.0.0.1:9050 \
+  https://check.torproject.org | grep "Congratulations" && \
+  echo "Tor: SUCCESS" || echo "Tor: FAILED - try different bridges"
+
+# Test 3: VPN
+timeout 10 openvpn --config config.ovpn --ping 10 --ping-exit 60 && \
+  echo "VPN: SUCCESS" || echo "VPN: FAILED"
+
+# Test 4: DNS tunneling
+timeout 10 ./dns/dnscat2 client --secret=key --domain example.com && \
+  echo "DNS: SUCCESS" || echo "DNS: FAILED"
+```
+
+Run these tests every 2-3 days when traveling to identify problems early.
+
+## Hardware Redundancy for USB Kit
+
+A single USB drive failing ruins your trip. Maintain hardware redundancy:
+
+```bash
+# Primary kit on USB-A drive (16GB)
+# Backup kit on USB-C drive (16GB, identical contents)
+# Emergency kit on microSD card (stored separately)
+
+# Create backup using rsync
+rsync -av /Volumes/KitDrive /Volumes/BackupKitDrive --delete
+```
+
+Store backup drives separately from your primary device. If your primary USB drive gets confiscated or damaged, you still have working backups.
+
+## Legal Considerations by Region
+
+Circumvention tools are legal in most countries but prohibited in others. Research before traveling:
+
+**Legal in most regions:**
+- Tor Browser (legal)
+- VPN usage for privacy (legal in most countries)
+- SSH tunneling (legal, but may violate ISP terms of service)
+
+**Restricted or illegal in:**
+- China: VPN/Tor usage heavily monitored; detection can trigger investigations
+- Russia: Using circumvention to access blocked content may violate information laws
+- Iran: Unauthorized circumvention is illegal; detection risk is high
+- UAE: VPN usage technically violates telecom law; enforcement varies
+- Turkey: Circumvention tools are discouraged but not technically illegal
+
+Consult with lawyers in your destination country before travel. Some organizations provide legal guidance for journalists and activists operating in restricted environments.
+
+## Emergency Procedures
+
+If authorities discover your circumvention kit:
+
+```bash
+# 1. SECURE YOUR DATA IMMEDIATELY
+# If possible, power off device before authorities access it
+# Powered-off encrypted drives are harder to access than running systems
+
+# 2. KNOW YOUR RIGHTS
+# In most countries, you have right to attorney before questioning
+# Do not discuss your tools or activities without legal counsel
+
+# 3. DOCUMENT THE INTERACTION
+# Try to remember: Time, location, badge numbers, questions asked
+# Report interaction to press freedoms organizations
+
+# 4. LAWYER COMMUNICATION
+# Contact embassy/consulate (if applicable)
+# Notify international press freedom organizations
+# Have emergency contact pre-loaded in your phone
+```
+
+Preparation before travel prevents panic and poor decisions during interactions.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

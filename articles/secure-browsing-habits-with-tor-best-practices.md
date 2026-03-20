@@ -113,20 +113,256 @@ Consider using a dedicated virtual private server (VPS) for Tor traffic if you n
 
 DNS leaks can expose your browsing even when using Tor. Tor Browser includes built-in DNS leak protection, but verify this with tools like dnsleaktest.com when configuring other applications to use Tor.
 
+## Tor Network Topology and Relay Types
+
+Understanding Tor's architecture helps you make better security decisions:
+
+**Guard Relay (Entry):**
+- Sees your real IP address
+- Cannot see what you're accessing
+- Fixed for extended periods (typically months)
+- Consider running your own to control entry point
+
+**Middle Relay:**
+- Knows previous and next hops but not origin or destination
+- Randomly selected for each circuit
+- No information that reveals identity
+
+**Exit Relay:**
+- Sees destination website and traffic content (if unencrypted over Tor)
+- Does not know your IP address
+- High operational cost and legal liability (especially for unencrypted traffic)
+- Can be monitored by network administrators
+
+This architecture reveals important limitations:
+
+```
+You (IP: 203.0.113.42) → Guard Relay sees 203.0.113.42
+                       → Middle Relay (encrypted)
+                       → Exit Relay → example.com sees unencrypted traffic
+
+Problem: If you access http://example.com over Tor,
+the exit relay operator can see your traffic content.
+Solution: Always use https:// or .onion sites over Tor.
+```
+
+## Performance Optimization and Latency Considerations
+
+Tor adds latency due to multi-hop routing and encryption at each layer. Optimize performance:
+
+```bash
+# Tor Browser with custom circuit settings (~torrc)
+
+# Increase circuit build timeout for unreliable networks
+CircuitBuildTimeout 90
+
+# Reduce number of hops if privacy needs allow (faster but less secure)
+PathlenCoinWeight 0.6  # Default is 0.6, higher = longer paths
+
+# Use high-performance exit relays (by country)
+ExitNodes {us},{nl},{de}
+# May reduce anonymity but improve speed
+
+# Enable connection pooling
+NumEntryGuards 3  # Default, balance between security and speed
+```
+
+## Practical Tor Usage for Developers
+
+For developers who need programmatic Tor access:
+
+```bash
+# Route specific applications through Tor using torsocks
+torsocks curl https://check.torproject.org/api/ip
+
+# SSH through Tor (useful for accessing hidden services)
+torsocks ssh user@hostname
+
+# Download files through Tor with progress
+torsocks wget -q --show-progress https://example.com/largefile.zip
+
+# Python requests through Tor
+pip install pysocks
+# Then use in code:
+import requests
+import socks
+from socket import SOCK_STREAM
+
+socks.set_default_proxy(socks.SOCKS5, "localhost", 9050)
+response = requests.get('https://check.torproject.org/api/ip')
+```
+
+## Fingerprinting Resistance and Canvas Blocking
+
+Modern fingerprinting attacks attempt to identify users by:
+- **Screen resolution**
+- **Browser plugins** (Flash, Java)
+- **Font availability**
+- **Canvas fingerprinting** (drawing unique image from code)
+- **WebGL capabilities**
+- **User agent strings**
+
+Tor Browser mitigates these:
+
+```javascript
+// Check Tor Browser fingerprinting resistance
+
+// 1. Canvas fingerprinting blocked
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+ctx.fillText('test', 10, 20);
+// Tor Browser returns uniform data
+
+// 2. WebGL fingerprinting blocked
+const canvas2 = document.createElement('canvas');
+const gl = canvas2.getContext('webgl');
+// WebGL disabled in Safest mode
+
+// 3. Font fingerprinting limited
+// Tor Browser uses limited font list
+
+// 4. User agent is uniform
+// All Tor Browser users report same user agent for their version
+```
+
+Additional fingerprinting prevention:
+
+```bash
+# Disable plugins entirely (highest security)
+# Tor Browser → Settings → Privacy & Security
+# Uncheck all plugins
+
+# Disable WebGL (causes noticeable performance degradation)
+about:config
+webgl.disabled = true
+
+# Limit available fonts
+font-family: sans-serif, monospace;
+# System uses only generic font families
+```
+
+## .onion Services and Hidden Services
+
+Tor's .onion addresses provide mutually anonymous connections:
+
+```bash
+# Access Tor hidden services
+# These addresses are generated using public key cryptography
+# Example real .onion addresses:
+
+# The Tor Project: thehiddenwiki.onion
+# SecureDrop (various news organizations): xxx.onion
+
+# Accessing .onion requires Tor Browser
+# Standard HTTPS verification doesn't apply
+
+# Verify .onion certificate
+# Look for .onion address in address bar
+# Verify with organization through other channels
+```
+
+## Defense Against Advanced Adversaries
+
+For users facing nation-state or advanced adversaries:
+
+**Tor Exit Node Monitoring:**
+- Your ISP cannot see encrypted HTTPS traffic content
+- Tor exit operators cannot see your IP address
+- Combine for protection: use HTTPS + Tor
+
+**DNS Leaks:**
+- Tor Browser includes DNS leak protection
+- Verify: dnsleaktest.com shows Tor exit IP
+- If shows your real ISP, DNS is leaking
+
+```bash
+# Verify DNS resolution through Tor
+torsocks nslookup example.com
+# Should show resolver's Tor exit IP, not your ISP
+
+# If DNS leaks, restart Tor circuit
+# Tor Browser → Preferences → tor settings → request new circuit
+```
+
+**Correlation Attacks:**
+- Using Tor with identified username/email = deanonymization
+- Using same Tor session across different sites = potential correlation
+- Solution: New Tor circuit between sessions (less secure but better isolation)
+
+```bash
+# Request new Tor circuit
+# Tor Browser → Tor settings → Request new circuit for this site
+# Creates new circuit, old exit relay cannot track subsequent requests
+
+# Or configure automatic circuit rotation
+# ~/.torrc
+NewCircuitPeriod 1800  # New circuit every 30 minutes
+```
+
+## Combining Tor with VPN (Tor-Over-VPN vs VPN-Over-Tor)
+
+**Tor-Over-VPN** (Your ISP → VPN → Tor Network):
+- Advantages: Hides Tor usage from ISP
+- Disadvantages: VPN provider can see you're using Tor, potential performance degradation
+- Recommendation: Use only if your ISP blocks Tor
+
+**VPN-Over-Tor** (Tor Network → VPN → Destination):
+- Advantages: Exit VPN operator doesn't see your Tor usage
+- Disadvantages: VPN operator gains your exit IP, reducing anonymity
+- Recommendation: Generally not recommended (adds complexity, reduces privacy)
+
+```bash
+# Tor-Over-VPN: VPN first, then use Tor normally
+# In your OS networking, connect to VPN provider
+# Then launch Tor Browser normally
+# Check with: torsocks curl https://check.torproject.org/api/ip
+```
+
+## Operational Security Beyond Tor
+
+Tor's anonymity is broken by behavioral analysis. Reduce identifying patterns:
+
+```markdown
+## Behavioral Deidentification
+
+❌ Avoid these patterns:
+- Always accessing same sites at same times
+- Consistent browsing durations
+- Unique writing style in forums/comments
+- Uploading documents with metadata
+- Using personal identifying information
+
+✓ Practice these habits:
+- Vary your browsing patterns
+- Use multiple accounts for different activities
+- Randomize session lengths
+- Strip file metadata with `exiftool`
+- Use pseudonyms with distinct personalities
+
+# Strip metadata from document before uploading
+exiftool -all= sensitive-document.pdf
+# Creates sensitive-document_original.pdf (original backup)
+# Modified document has no metadata
+```
+
 ## Best Practices Summary
 
 Maintain these habits for consistent anonymity:
 
 1. **Keep Tor Browser updated** to benefit from security patches and improvements.
-2. **Never log into personal accounts** while using Tor.
-3. **Disable JavaScript** unless specifically needed, and only for trusted sites.
-4. **Avoid downloading files** through Tor when possible.
+2. **Never log into personal accounts** while using Tor for anonymity.
+3. **Disable JavaScript** unless specifically needed, and only on trusted sites.
+4. **Avoid downloading files** through Tor except when using new circuit per download.
 5. **Use separate browser profiles** for Tor and regular browsing.
 6. **Verify your connection** regularly using check.torproject.org.
 7. **Use bridges** if your ISP or country blocks Tor connections.
 8. **Review extension permissions** and remove unnecessary add-ons.
+9. **Vary your behaviors** to avoid fingerprinting and correlation attacks.
+10. **Disable plugins** and WebGL to minimize fingerprinting surface.
+11. **Strip file metadata** before uploading documents.
+12. **Use HTTPS always** to prevent exit relay monitoring.
 
-Tor provides strong anonymity when used correctly, but no tool guarantees perfect privacy. Understanding its limitations and combining it with other practices—such as using encrypted messaging and practicing good operational security—creates a more privacy strategy.
+Tor provides strong anonymity when used correctly, but no tool guarantees perfect privacy. Understanding its limitations and combining it with other practices—such as using encrypted messaging, varying behavioral patterns, and practicing good operational security—creates a comprehensive privacy strategy. For journalists, activists, and whistleblowers, Tor combined with additional measures like SecureDrop and encrypted communication channels provides meaningful protection against surveillance.
 
 
 ## Related Reading

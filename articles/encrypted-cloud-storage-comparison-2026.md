@@ -106,17 +106,112 @@ rclone copy --crypt-provider b2-encrypted:/ backup:/source/
 
 Strengths: complete control, no subscription, no third-party trust. Weaknesses: infrastructure costs, maintenance overhead, no native mobile apps.
 
+## Detailed Service Specifications
+
+### Proton Drive Advanced Features
+
+Proton Drive's API supports WebAuthn for hardware-based authentication. The SDK provides integration points for developers building privacy-focused applications:
+
+```python
+# Example: Proton Drive SDK integration
+from proton.drive import ProtonDrive
+
+drive = ProtonDrive(
+    email="user@protonmail.com",
+    api_key="your-api-key"
+)
+
+# List files with client-side filtering
+files = drive.list_files()
+encrypted_files = [f for f in files if f.is_encrypted]
+
+# Download and decrypt locally
+for file in encrypted_files:
+    raw_data = drive.download(file.id)
+    decrypted = drive.decrypt_locally(raw_data, file.encryption_key)
+    with open(file.name, 'wb') as f:
+        f.write(decrypted)
+```
+
+### Filen API Implementation
+
+Filen's REST API uses rate limiting (100 requests/minute for free tier). For batch operations, implement backoff:
+
+```python
+import requests
+import time
+from typing import List, Dict
+
+class FilenClient:
+    def __init__(self, api_key: str):
+        self.api_key = api_key
+        self.base_url = "https://filen.io/api/v1"
+        self.rate_limit_remaining = 100
+
+    def upload_batch(self, files: List[Dict]) -> List[str]:
+        uploaded_ids = []
+        for file_data in files:
+            while self.rate_limit_remaining < 10:
+                time.sleep(30)  # Back off if approaching limit
+
+            response = requests.post(
+                f"{self.base_url}/file/upload",
+                headers={
+                    'Authorization': f'Bearer {self.api_key}',
+                    'Content-Type': 'application/octet-stream'
+                },
+                data=file_data['content']
+            )
+
+            if response.status_code == 201:
+                uploaded_ids.append(response.json()['id'])
+
+            self.rate_limit_remaining -= 1
+
+        return uploaded_ids
+```
+
+### Tresorit Enterprise Integration
+
+Tresorit's API supports OAuth 2.0 with team-level permissions:
+
+```bash
+# Tresorit team management via CLI
+tresorit team create --name "Engineering Team" --members-file team-members.csv
+
+# Upload with automatic encryption and metadata
+tresorit upload \
+  --encrypt \
+  --metadata='{"classification": "confidential", "owner": "engineering"}' \
+  ./source/important-files/ \
+  --destination /team-vault/
+```
+
+## Comprehensive Encryption Comparison Table
+
+| Feature | Proton Drive | Filen | Tresorit | Sync.com | Nextcloud | rclone+S3 |
+|---------|--------------|-------|----------|----------|-----------|-----------|
+| Client-Side Encryption | AES-256 | ChaCha20-Poly1305 | AES-256 | AES-256 | AES-256 | AES-256 |
+| Key Derivation | PBKDF2 | Argon2 | PBKDF2 | PBKDF2 | Custom | Custom |
+| Metadata Encryption | Partial | Yes | Yes | Partial | Yes | Yes |
+| API Availability | Limited | Full | Full | Limited | Full | N/A |
+| Free Tier | 5GB | 10GB lifetime | None | None | Self-hosted | Pay per storage |
+| GDPR Certified | Yes | Yes | Yes | Yes | Self-managed | Self-managed |
+| Jurisdiction | Switzerland | Germany | Switzerland | Canada | Self-hosted | Self-hosted |
+| Audit Trail | Yes | Limited | Yes | Limited | Yes | N/A |
+
 ## Decision Framework
 
 Choose based on your priority:
 
-| Priority | Recommended Service |
-|----------|---------------------|
-| Maximum privacy | Proton Drive, Filen |
-| Enterprise compliance | Tresorit |
-| Budget-conscious | Filen, Sync.com |
-| Complete control | Nextcloud, rclone+S3 |
-| Developer automation | Tresorit (API), Filen (API) |
+| Priority | Recommended Service | Why |
+|----------|---------------------|-----|
+| Maximum privacy | Proton Drive, Filen | Zero-knowledge with audited encryption |
+| Enterprise compliance | Tresorit | HIPAA/SOC2 certified with full audit logs |
+| Budget-conscious | Filen, Sync.com | Generous free tiers, affordable paid plans |
+| Complete control | Nextcloud, rclone+S3 | No third-party trust required |
+| Developer automation | Tresorit (API), Filen (API) | Well-documented REST APIs with SDKs |
+| Offline-first workflow | rclone+S3 | Works with any S3-compatible storage |
 
 ## Security Considerations
 
@@ -126,10 +221,54 @@ For sensitive workloads, implement additional layers:
 
 ```bash
 # Double encryption: encrypt with age before uploading to any cloud
-age -p -o encrypted-key.txt -r age1EXAMPLE encryption-key.txt
-age -passphrase -o sensitive-file.age sensitive-file.tar.gz
-# Upload encrypted-file.age and encrypted-key.txt to cloud
+# First, generate an encryption key
+age-keygen -o key.txt
+
+# Encrypt file with your key
+age -p -i key.txt -o sensitive-file.age sensitive-file.tar.gz
+
+# Upload encrypted file to cloud
+curl -H "Authorization: Bearer $API_KEY" \
+  --data-binary @sensitive-file.age \
+  https://filen.io/api/v1/file/upload
+
+# For recovery, store key.txt in separate secure location
+# (hardware key, printed backup, password manager)
 ```
+
+## Threat Model Considerations
+
+When selecting a provider, consider these threat scenarios:
+
+**Scenario 1: Server Breach**
+- Zero-knowledge services: Data remains encrypted, no compromise
+- Server-side encryption: Data potentially exposed if keys are stored on server
+- Recommendation: Choose zero-knowledge (Proton, Filen, Tresorit)
+
+**Scenario 2: Account Compromise**
+- Enable two-factor authentication on all accounts
+- Use unique, strong passwords for each service
+- Consider separate accounts for different data types
+
+**Scenario 3: Regional Jurisdiction**
+- Proton and Tresorit use Swiss hosting (strong privacy laws)
+- Sync.com uses Canadian hosting (strong PIPEDA protections)
+- Nextcloud/rclone: No jurisdiction risk (self-hosted)
+
+## Implementation Checklist
+
+For production deployments:
+
+- [ ] Encrypt all data client-side before cloud upload
+- [ ] Use unique encryption keys per user or per data classification
+- [ ] Implement key rotation policies (annually minimum)
+- [ ] Enable two-factor authentication on all accounts
+- [ ] Document encryption key management procedures
+- [ ] Test recovery procedures regularly
+- [ ] Monitor for security advisories from provider
+- [ ] Maintain offline backup of encryption keys
+- [ ] Verify provider security certifications (SOC2, ISO27001, etc.)
+- [ ] Review data processing agreements for compliance requirements
 
 ## Related Reading
 

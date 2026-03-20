@@ -129,6 +129,106 @@ Enter your secret: seed phrase word1 word2 ... word24
 
 Each family member or lawyer receives a share. If two combine their shares, they can reconstruct the seed. This adds another layer of security—neither your lawyer nor a single family member can access funds independently.
 
+## Inheritance Access Triggers and Automated Release
+
+Modern multisig wallets can implement conditional fund access using timelock scripts and external oracles. This enables scenarios where funds automatically release to beneficiaries after a specific period of inactivity, mimicking a dead-man's switch pattern.
+
+Create a conditional inheritance address using Bitcoin's scripting language:
+
+```bash
+# Create a 2-of-2 that becomes 1-of-2 after 52 weeks of inactivity
+# This uses CLTV (Check LockTime Verify) to implement the time lock
+
+# First, construct the redeem script
+bitcoin-cli -stdin <<EOF
+# Standard 2-of-2 multisig
+OP_2 <pubkey1> <pubkey2> OP_2 OP_CHECKMULTISIG
+
+# OR after block height 840000:
+OP_IF OP_1 <beneficiary_pubkey> OP_1 OP_CHECKMULTISIG OP_ELSE <block_height> OP_CLTV OP_DROP OP_ENDIF
+EOF
+```
+
+This script pattern enables your heirs to access funds using only the beneficiary key after a predetermined time, without requiring signatures from all multisig participants. Set the block height appropriately—blocks roughly occur every 10 minutes, so roughly 52,560 blocks equals one year.
+
+## Wallet Software Compatibility for Heirs
+
+Your executor needs wallet software that can handle multisig recovery. Not all wallets support this equally well:
+
+**Recommended Wallets for Inheritance Access:**
+
+- **Sparrow Wallet** — Excellent multisig support with clear interface. Shows required signatures and can coordinate signing across devices. Works on Windows, Mac, and Linux.
+- **Electrum** — Mature multisig implementation, lightweight, cross-platform. CLI tools enable headless signing for automated scenarios.
+- **Caravan** — Web-based multisig coordinator. Useful if heirs use different systems and need a common interface.
+- **Casa** — Provides inheritance services with legal coordination. Higher cost but includes professional guidance for executors.
+
+Document which software you recommend. If your executor must choose unfamiliar software in a stressful situation, clear recommendations reduce errors and recovery time.
+
+## Coordination Workflow for Executor and Keyholders
+
+Create a step-by-step workflow document your executor can follow when coordinating fund release:
+
+```
+BITCOIN INHERITANCE RECOVERY WORKFLOW
+
+Step 1: Verify death and legal status
+- Obtain certified death certificate
+- Confirm probate or estate proceedings status
+- Contact all listed keyholders
+
+Step 2: Coordinate signature gathering
+- Contact keyholder 1 (Family member): Request signature authority
+- Contact keyholder 2 (Lawyer): Provide probate documentation
+- Confirm both parties understand inheritance requirements
+
+Step 3: Technical recovery
+- Download Sparrow Wallet from https://sparrowwallet.com
+- Import multisig wallet descriptor from documented backup
+- Create unsigned transaction for fund distribution
+- Send transaction file to keyholder 1 for first signature
+
+Step 4: Transaction completion
+- Collect signed transaction from keyholder 1
+- Pass to keyholder 2 for second signature
+- Broadcast completed transaction to Bitcoin network
+- Verify transaction confirmation (2-10 minutes)
+
+Step 5: Fund distribution
+- Move recovered Bitcoin to beneficiary addresses
+- Document all transactions for estate tax purposes
+```
+
+This template ensures your executor doesn't have to figure out the process under emotional duress.
+
+## Tax Implications and Estate Planning
+
+Bitcoin inheritance involves complex tax treatment that varies by jurisdiction. Document the Bitcoin's fair market value at the time of death for estate tax calculations.
+
+Include in your will or separate memorandum:
+
+- The wallet addresses containing inherited Bitcoin
+- Fair market value determination method (use trusted exchange prices from death date)
+- Beneficiary identities and intended distribution percentages
+- Any conditions on access (age thresholds, education requirements)
+- Your estate lawyer's recommendations
+
+Provide your executor with contact information for a tax professional familiar with cryptocurrency inheritance. Incorrectly reported values can trigger audits or penalties affecting your entire estate.
+
+## Recovery Testing Checklist
+
+Before finalizing your setup, verify each recovery component works:
+
+- [ ] Each keyholder can independently sign transactions
+- [ ] Collecting M signatures produces a valid transaction
+- [ ] Your executor can follow recovery documentation without errors
+- [ ] All hardcopies are legible and stored securely
+- [ ] Time-locks (if used) count down correctly
+- [ ] You've tested recovery with test amounts (small value)
+- [ ] All contact information for keyholders is current
+- [ ] Your will explicitly references Bitcoin holdings
+
+Document the date of your last successful test. If circumstances change significantly—key holders relocate, wallet software updates, or exchange rates shift dramatically—retest your setup annually.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

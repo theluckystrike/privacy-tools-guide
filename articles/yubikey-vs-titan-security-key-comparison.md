@@ -113,6 +113,88 @@ Modern operating systems and browsers support both keys through standard WebAuth
 - **Windows**: Both keys work with Windows Hello and standard WebAuthn. Titan requires Google Play Services for BLE on Android.
 - **iOS/iPadOS**: YubiKey 5Ci provides native Lightning support. Titan requires the dedicated app and BLE connection.
 
+## OATH-TOTP Configuration for Multi-Factor Authentication
+
+For developers implementing TOTP-based authentication systems, YubiKey's OATH support enables hardware-backed codes without requiring a smartphone authenticator app.
+
+Using Yubico's CLI tool, configure OATH on your YubiKey:
+
+```bash
+# Install ykman for YubiKey management
+pip install yubikey-manager
+
+# Add a TOTP secret to your key
+ykman oath accounts add -t my-github "GitHub" JBSWY3DPEBLW64TMMQ======
+
+# Generate a TOTP code
+ykman oath accounts code my-github
+
+# List all configured accounts
+ykman oath accounts list
+```
+
+This approach eliminates dependency on phone authenticators. If your phone is lost or compromised, OATH codes on your YubiKey remain accessible. For developers managing multiple accounts with different TOTP secrets, storing them on hardware provides superior security compared to password manager-integrated TOTP storage.
+
+Titan Security Key does not support OATH, requiring you to use a separate authenticator app for TOTP codes. This limitation matters for developers with high-friction authentication workflows.
+
+## OpenPGP Support for SSH Key Management
+
+YubiKey's OpenPGP implementation enables SSH operations using hardware-backed keys, eliminating the need to store SSH private keys on disk.
+
+Configure your YubiKey for OpenPGP:
+
+```bash
+# Generate keys on the YubiKey itself
+gpg --card-edit
+
+# At the gpg/card> prompt:
+gpg/card> admin
+gpg/card> generate
+
+# Follow the prompts to set key parameters
+# YubiKey will generate public and private keys directly on the device
+
+# Extract public key for SSH
+gpg --armor --export your@email.com > public-key.asc
+
+# Configure SSH to use GPG
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
+```
+
+Once configured, SSH connections use GPG to unlock the YubiKey for signing, requiring your PIN. This architectural approach provides stronger security than traditional SSH key files, preventing key extraction even if your computer is compromised.
+
+For security teams managing developer access across multiple systems, YubiKey's OpenPGP support enables unified SSH credential management without storing keys on individual machines.
+
+## Implementation Comparison Table
+
+| Feature | YubiKey 5 Series | Titan Security Key |
+|---------|-----------------|-------------------|
+| FIDO2/WebAuthn | Yes | Yes |
+| U2F | Yes | Yes |
+| OATH-TOTP | Yes | No |
+| OpenPGP/SSH | Yes | No |
+| PIV Smart Card | Yes | No |
+| Cost per unit | $50-80 | $45 |
+| NFC support | Yes (most models) | Yes (USB-A+NFC) |
+| Lightning support | Yes (5Ci only) | No |
+| Offline configuration | Yes | Limited |
+| Zero-dependency operation | Yes | Yes (WebAuthn only) |
+
+## Real-World Integration Scenarios
+
+**Scenario 1: Developer with GitHub/GitLab SSH + 2FA**
+
+YubiKey provides the better fit. Use OpenPGP for SSH key management and OATH for GitHub's TOTP backup codes. GitLab, GitHub, and Gitea all support WebAuthn directly, allowing you to use the same key for multiple authentication methods.
+
+**Scenario 2: Enterprise Google Workspace Organization**
+
+Titan Security Key is purpose-built for this scenario. Google designed Titan specifically for Workspace deployments. The lower cost and simpler feature set reduce support burden for non-technical users. If your organization has no requirement for SSH keys or complex TOTP workflows, Titan eliminates unnecessary complexity.
+
+**Scenario 3: Traveling Developer with Mixed Devices**
+
+YubiKey 5Ci with Lightning support provides flexibility. Carry one key that works with your iPhone, Mac, and USB-A equipped computers abroad. The multiple connector options and OATH support enable offline authentication regardless of device type.
+
 ## Which Key Should You Choose?
 
 Choose YubiKey if you need:
@@ -127,6 +209,98 @@ Choose Titan Security Key if you need:
 - Integration with Google Workspace (both work, but Titan is marketed for this use case)
 
 For most developers implementing modern WebAuthn authentication, either key performs equally well. The decision often comes down to whether you need the additional protocols YubiKey provides or prefer Titan's simpler approach and lower cost.
+
+## Advanced YubiKey Management with ykman
+
+For developers managing multiple YubiKeys across teams, Yubico's command-line management tool (`ykman`) provides automation and batch configuration capabilities.
+
+```bash
+# Install ykman
+pip install yubikey-manager
+
+# List connected YubiKeys
+ykman list
+
+# Configure OATH on multiple keys programmatically
+for serial in $(ykman list | awk '{print $NF}'); do
+    ykman --device $serial oath accounts add \
+        -t production-github "GitHub" JBSWY3DPEBLW64TMMQ======
+done
+
+# Set PIN on YubiKey
+ykman config pins set
+
+# Export configuration for backup
+ykman oath export > backup.txt
+```
+
+This approach enables organizations to standardize YubiKey deployments across developer teams without manual configuration of individual keys.
+
+## Security Boundaries and Trust Models
+
+Both keys employ different trust models that affect long-term security posture.
+
+**YubiKey's closed-source hardware:**
+
+Yubico manufactures its secure element privately, not publishing full specifications. This approach provides security through obscurity—attackers cannot study the implementation to find vulnerabilities. However, independent researchers cannot audit the hardware design, requiring users to trust Yubico's engineering practices.
+
+**Titan's open reference design:**
+
+Google published the Titan Security Key design as an open reference. However, production Titan keys are manufactured by third-party vendors, not Google directly. This means users cannot verify whether production units match the published design. The open reference enables academic scrutiny, but actual deployed hardware may differ.
+
+For security-conscious developers, both approaches have merits. Closed-source hardware is harder to target with specific attacks but impossible to audit. Open hardware is auditable in theory but manufactured by unknown vendors in practice.
+
+## Real-World Authentication Integration Patterns
+
+Understanding how each key integrates with real services reveals practical differences.
+
+**GitHub authentication flow with YubiKey:**
+
+```
+1. Register WebAuthn security key in GitHub settings
+2. Enable TOTP by exporting codes from YubiKey: ykman oath accounts code github
+3. Create SSH key on YubiKey: gpg --card-edit
+4. Add SSH public key to GitHub
+5. Future logins use: key insert → challenge → sign with touch
+6. Future SSH commits use: touch key → gpg unlocks → SSH signs commit
+```
+
+**Google Workspace flow with Titan:**
+
+```
+1. Organizations add Titan keys to Admin Console
+2. Users register key during login
+3. All subsequent logins require key
+4. Titan's integration is seamless—no additional configuration needed
+5. No TOTP or SSH support, just WebAuthn/U2F
+```
+
+For Google Workspace organizations with thousands of users, Titan's simplified management reduces support overhead. For developers with complex authentication needs, YubiKey's flexibility enables unified credential management across multiple services.
+
+## Backup and Recovery Considerations
+
+Both keys require backup strategies for business continuity.
+
+**YubiKey backup approach:**
+
+```bash
+# Register multiple YubiKeys with the same accounts
+# Each user gets 2-3 keys distributed to different locations
+# One key on desk, one in safe, one in backup location
+
+# Test rotation periodically
+ykman oath accounts list  # Verify all keys have same accounts
+```
+
+**Titan backup approach:**
+
+```bash
+# Google recommends: 2 Titan keys + 1 backup phone number
+# This hybrid approach uses key for primary 2FA, phone for recovery
+# Keys provide stronger security, phone provides fallback if both keys lost
+```
+
+For developers managing their own accounts, YubiKey's multi-key support enables true key rotation without provider involvement. Titan's integration with Google Account recovery simplifies scenarios where users lose keys but can prove identity through other means.
 
 
 ## Related Reading
