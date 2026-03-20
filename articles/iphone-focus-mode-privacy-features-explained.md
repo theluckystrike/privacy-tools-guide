@@ -105,10 +105,372 @@ If Focus Mode isn't protecting your privacy as expected:
 - Ensure Shortcuts automation isn't overriding Focus settings
 - Confirm iOS is updated to the latest version
 
+## Threat Model: What Focus Mode Protects Against
+
+Understanding attack scenarios helps you configure Focus appropriately:
+
+**Shoulder Surfing**: Someone standing behind you sees notifications on your lock screen showing message previews, email subjects, or app alerts. Focus Mode with hidden notification previews prevents this exposure.
+
+**Physical Device Access**: Someone momentarily picks up your unlocked phone and sees sensitive notifications. Focus Mode suppresses notification badges and reduces visible information on home screen.
+
+**Behavioral Analysis**: Attackers observe when you receive notifications (patterns reveal routine). Focus Mode eliminates notification sounds and visual indicators.
+
+**App Activity Exposure**: Apps displaying notification badges reveal apps you use and frequency. Focus Mode removes badges for non-allowed apps.
+
+**Automatic Screen Display**: Notifications cause device to wake with potentially sensitive information visible. Focus Mode prevents this automatic wake.
+
+## Advanced Focus Configuration Examples
+
+**Professional Work Focus**:
+
+```
+Settings → Focus → Work
+
+Allowed Contacts:
+- Boss/manager
+- Colleagues you communicate with frequently
+- Corporate IT helpdesk
+
+Allowed Apps:
+- Email
+- Slack/Teams
+- Calendar
+- Productivity apps
+- Phone (for work calls only)
+
+Home Screen Page Filtering:
+- Hide Personal page
+- Hide Shopping/Entertainment pages
+- Show only Work apps
+
+Automation:
+- Activate automatically 9 AM - 5 PM weekdays
+- Activate when connecting to work WiFi
+- Deactivate when leaving office location
+```
+
+**Personal/Family Focus**:
+
+```
+Settings → Focus → Personal
+
+Allowed Contacts:
+- Family members
+- Close friends
+- Emergency services
+
+Allowed Apps:
+- Messages
+- Phone
+- Maps
+- Health
+- Photos
+
+Notifications:
+- Enable message previews (you know these contacts)
+- Allow only important apps to notify
+- Hide sensitive notifications on lock screen
+
+Automation:
+- Activate 5 PM - 9 AM weekdays
+- Activate all day weekends
+- Enable when at home
+```
+
+**Sleep Focus** (for genuine privacy during offline time):
+
+```
+Settings → Focus → Sleep
+
+Allowed Contacts:
+- Emergency contacts only (family, emergency services)
+
+Allowed Apps:
+- Alarm
+- Health/Sleep tracking
+- Emergency SOS
+
+Notifications:
+- Hide all notification previews
+- No visual indicators
+- No sound/vibration
+
+Home Screen:
+- Show single, minimal home screen page
+- Hide work and entertainment apps
+
+Automation:
+- Activate 10 PM - 7 AM daily
+- Lock screen displays sleep status
+- Bedtime schedule integration
+
+Lock Screen Customization:
+- Disable lock screen notifications entirely
+- Show only time and emergency info
+```
+
+**Financial/Sensitive Focus** (for banking/crypto access):
+
+```
+Settings → Focus → Financial
+
+Allowed Contacts:
+- Only your own phone number
+- No other contacts
+
+Allowed Apps:
+- None (notifications suppressed entirely)
+
+Sensitive Settings:
+- Enable "Hide Notifications" completely
+- Hide notification badges
+- Disable notification previews
+- No sound or vibration
+
+Usage:
+- Manually activate before checking banking/crypto accounts
+- Disables all notifications preventing compromising reveals
+- No app badges showing account activity
+```
+
+## Technical Deep Dive: How Focus Affects iOS Internals
+
+**Focus-Based Entitlements**:
+
+From a developer perspective, Focus Mode triggers changes in how iOS handles notifications:
+
+```swift
+// When Focus is active, the system applies these behaviors:
+
+// 1. Notification filtering
+UNNotificationRequest - filtered by Focus allow-list
+// Only notifications from allowed apps/contacts reach user
+
+// 2. Badge suppression
+UIApplication.applicationIconBadgeNumber = 0
+// Apps not in Focus whitelist don't show badges
+
+// 3. Notification content hiding
+UNNotificationPresentationOptions = [.list, .banner]
+// Can be overridden by Focus to hide preview
+.hiddenPreviewsBodyPlaceholder = "Private Notification"
+
+// 4. Focus status publishing
+CNContact.isBlockedByFocusMode // Tells apps if you're in Focus
+// Apps can adjust behavior based on Focus status
+```
+
+**User-Facing Implementation**:
+
+```
+Settings path:
+Settings → Focus → [Your Focus] → Apps → [App Name]
+
+Privacy Impact:
+- App cannot receive notifications while Focus active
+- App cannot access Focus Status API to know you're in Focus
+- (with Focus Status sharing enabled)
+```
+
+## Shortcuts Automation for Enhanced Privacy
+
+Create sophisticated privacy automations using Shortcuts:
+
+**Automatic Focus Activation on App Launch**:
+
+```
+Trigger: When specific app opens (e.g., banking app)
+Action 1: Enable Personal Focus
+Action 2: Hide home screen pages (except financial)
+Action 3: Enable low power mode
+Action 4: Disable screen sharing
+Action 5: Turn off WiFi (if internet not needed)
+
+Result: Opening banking app automatically enables privacy mode
+```
+
+**Schedule-Based Privacy Transitions**:
+
+```
+Trigger: Daily at 6 PM
+Action 1: Disable Work Focus
+Action 2: Enable Personal Focus
+Action 3: Show all home screen pages
+Action 4: Resume normal notifications
+Action 5: Turn on WiFi
+
+Trigger: Daily at 9 AM
+Action 1: Disable Personal Focus
+Action 2: Enable Work Focus
+Action 3: Hide personal pages
+```
+
+**Location-Based Focus Activation**:
+
+```
+Trigger: Arriving at home location
+Action 1: Disable Work Focus
+Action 2: Enable Personal Focus
+Action 3: Connect to WiFi if not already
+Action 4: Share Focus status with family
+
+Trigger: Leaving home location
+Action 1: Disable Personal Focus
+Action 2: Enable Work Focus
+Action 3: Prepare for work notifications
+```
+
+**Emergency Override Automation**:
+
+```
+Trigger: Receive call from Emergency contact list
+Action 1: Temporarily disable Focus mode
+Action 2: Allow notifications from caller
+Action 3: Send location to emergency contact
+Action 4: Record call information
+
+Result: Even in strict Focus, emergency contacts can reach you
+```
+
+## Focus Status Sharing Implications
+
+When you enable Focus Status sharing:
+
+**What Others See**:
+- People in your contacts see "Focus Mode" indicator instead of typing indicators
+- Shared calendar shows you're in Focus (if calendar shared)
+- Messages app shows "They're in Focus" when they don't respond
+
+**Privacy Implications**:
+- Reveals to others that you have Focus enabled
+- Shows specific times you use Focus (patterns reveal schedule)
+- Can be inferred from "Focus" status in Messages
+
+**Best Practices**:
+- Enable for Work Focus only (expected to not respond during work)
+- Disable for Personal/Sleep Focus (nobody needs to know you're unavailable)
+- Use automated Focus Status sharing that only activates during scheduled hours
+
+## Common Focus Configuration Mistakes
+
+**Mistake 1: Adding Too Many Contacts/Apps**:
+- Result: Focus mode becomes ineffective (everything notifies)
+- Solution: Keep contact list to <5 people, app list to <10 apps
+
+**Mistake 2: Forgetting to Set Home Screen Page Filtering**:
+- Result: Sensitive apps still visible on lock screen
+- Solution: Always hide home screen pages for sensitive Focus modes
+
+**Mistake 3: Not Disabling Focus Status Sharing**:
+- Result: Reveals when you're in Focus, when you use Focus
+- Solution: Disable for personal/sleep, enable for work only
+
+**Mistake 4: Conflicting Automation Rules**:
+- Result: Conflicting Focus modes activate simultaneously
+- Solution: Test all automation rules, ensure no overlapping schedules
+
+**Mistake 5: Not Testing Notification Behavior**:
+- Result: Critical notifications missed, or too many notifications get through
+- Solution: Test each Focus mode by having friends message/call you
+
+## Real-World Focus Mode Scenarios
+
+**Scenario 1: Corporate Privacy**:
+
+Worker needs to prevent personal notifications during presentations:
+
+```
+Setup:
+- Create "Presentation" Focus mode
+- Allow: Only direct boss
+- Notifications: Hidden previews completely
+- Apps: Only calendar and timer
+- Activate: Manually 5 minutes before meeting
+
+Result: No personal notifications visible during presentation, no notification sounds, only essential functions remain
+```
+
+**Scenario 2: Sleep Preservation**:
+
+User wants genuine sleep without interruptions:
+
+```
+Setup:
+- Create "Sleep" Focus
+- Allow: Only emergency contact (parent, spouse)
+- No apps notify
+- Lock screen: Minimal time display only
+- Automation: 11 PM - 7 AM daily
+
+Result: Complete notification silence except genuine emergencies, device feels offline, genuine rest achieved
+```
+
+**Scenario 3: Relationship Privacy**:
+
+User with privacy-sensitive relationship wants to hide communications:
+
+```
+Setup:
+- Create "Private" Focus
+- Hide notifications completely
+- Hide sensitive apps from home screen
+- No notification previews
+- Manually activate when needed
+
+Result: If anyone sees device, private communications are invisible, no badges reveal app usage
+```
+
+## Comparison with Similar Privacy Features on Android
+
+| Feature | iOS Focus Mode | Android Focus Mode |
+|---------|----------------|--------------------|
+| Notification Filtering | Excellent | Good |
+| App-specific control | Yes | Limited |
+| Home Screen hiding | Yes | No |
+| Automation | Full | Basic |
+| Focus Status sharing | Yes | No equivalent |
+| Password/biometric lock per focus | No | No |
+| App launch blocking | No | Available via launcher |
+
+## Verification: Testing Your Focus Setup
+
+**Notification Testing Protocol**:
+
+```
+1. Enable Focus mode
+2. Have friend send message via Messages
+3. Verify notification behavior matches expectation:
+   - Should not appear if contact not allowed
+   - Should hide preview if configured
+   - Should have no sound/vibration if disabled
+
+4. Have allowed contact message you
+5. Verify:
+   - Notification appears
+   - Shows (or hides) preview based on settings
+   - Produces correct sound/vibration
+
+6. Test app notifications:
+   - Apps not in whitelist: No notification
+   - Apps in whitelist: Notification appears
+```
+
+**Home Screen Visibility Test**:
+
+```
+1. Enable Focus mode with hidden home screen page
+2. Navigate to home screen
+3. Verify hidden pages don't display
+4. Disable Focus mode
+5. Verify hidden pages reappear
+6. Check that page switching doesn't reveal hidden pages
+```
+
 ## Conclusion
 
 Configuring Focus modes for your daily contexts—work, personal, sleep—gives you meaningful control over information exposure without sacrificing device functionality.
 
+{% endraw %}
 
 ## Related Reading
 

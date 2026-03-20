@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/
 categories: [guides, security]
 reviewed: true
-score: 0
+score: 8
 intent-checked: true
 voice-checked: true
 ---

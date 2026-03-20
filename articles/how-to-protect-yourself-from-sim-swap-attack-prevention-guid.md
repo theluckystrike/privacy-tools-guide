@@ -13,6 +13,8 @@ intent-checked: true
 voice-checked: true
 ---
 
+{% raw %}
+
 Set a PIN or security code on your carrier account, replace SMS-based two-factor authentication with hardware security keys or authenticator apps, and enable SIM swap protection that requires in-person verification for number transfers. These three steps block the primary attack path where criminals social-engineer your carrier into transferring your phone number to their SIM card, giving them access to every SMS-based verification code you receive. For developers and power users managing sensitive accounts, this guide walks through each safeguard along with advanced protections and recovery procedures.
 
 ## Understanding the Attack Vector
@@ -100,6 +102,318 @@ If you suspect a SIM swap has occurred despite your precautions, act immediately
 4. **Enable additional authentication** on accounts the attacker may have accessed.
 5. **Monitor accounts** for unusual activity for months following the incident.
 
+## Threat Model: Attack Scenarios Explained
+
+Understanding realistic SIM swap attack patterns helps you prioritize defenses:
+
+**Target Profile Analysis**: Attackers target high-value accounts likely to contain cryptocurrency, sensitive financial access, or corporate credentials. Primary targets include:
+- Cryptocurrency exchange account holders (potential loss: tens of thousands of dollars)
+- High-profile social media accounts (value for hacking and reselling)
+- Email accounts (master key to all other accounts through password reset)
+- Banking/brokerage accounts (direct financial access)
+- Crypto wallet recovery phrases stored in cloud accounts
+
+**Attack Progression**:
+1. **Information Gathering** (days/weeks): Attacker researches target using data breaches, LinkedIn, social media, public records
+2. **Carrier Social Engineering** (hours): Call carrier pretending to be customer, request SIM swap
+3. **Account Compromise** (minutes): Intercept SMS 2FA codes, reset passwords, transfer funds or crypto
+4. **Covering Tracks** (seconds to minutes): Add attacker's recovery email to victim's accounts, disable alerts, prevent victim from regaining access
+
+**Common Information Used for Social Engineering**:
+- Name and address (from data breaches or public records)
+- Last 4 SSN digits (from credit card offers, public disclosures)
+- Phone number (publicly listed)
+- Account number (sometimes visible on bills)
+- Date of birth (social media, public records)
+
+## Step-by-Step Carrier Protection Setup
+
+**For Verizon**:
+
+```
+1. Open my.verizon.com or visit a Verizon store
+2. Go to Settings → Account PIN
+3. Select "Create PIN"
+4. Create a strong, random PIN (not birthdates or sequential numbers)
+5. Confirm the PIN in writing or note the confirmation number
+6. Call 611 from your Verizon line to verify activation
+
+Verification:
+- Call Verizon customer service and verify the PIN is active
+- Ask if SIM swap protection is enabled
+- Request written confirmation via email
+```
+
+**For AT&T**:
+
+```
+1. Log into at.com or visit an AT&T store
+2. Go to My Account → Account Security
+3. Select "Password/PIN"
+4. Create account PIN
+5. Enable "Extra Security" option if available
+6. Document PIN and keep securely
+
+AT&T Specific:
+- Ask for "Port Freeze" to prevent number porting entirely
+- Requires in-person visit to store for maximum security
+- Can be requested remotely but in-person is more secure
+```
+
+**For T-Mobile**:
+
+```
+1. Open t-mobile.com or visit store
+2. Account → Account & Billing
+3. Security → Add Account PIN
+4. Create strong PIN (16 characters maximum for some systems)
+5. Enable SIM Protection
+6. Request written confirmation
+
+T-Mobile Specific:
+- Request "SIM Protection PIN" separate from account PIN
+- Ask for "Port Freeze" status confirmation
+- Verify monthly that protections remain active
+```
+
+**For Regional/International Carriers**:
+
+Contact your carrier's security team directly and request:
+- Account PIN requirement for all account changes
+- SIM card change confirmation via registered email/secondary phone
+- Port freeze/prevention service
+- Notification of any account access attempts
+
+## Verification: Confirm Your Carrier Protections Are Active
+
+```
+Verification Checklist:
+☐ Account PIN created and documented securely
+☐ Carrier confirmed receipt and activation
+☐ Called back using official carrier number to verify PIN is active
+☐ Port freeze requested and confirmed
+☐ SIM swap protection enabled (where available)
+☐ Recovery contact methods updated with current phone/email
+☐ Monthly verification of all active protections
+```
+
+## Advanced Hardware Security Key Configuration
+
+**YubiKey Setup Example**:
+
+```bash
+# List connected YubiKeys
+ykman list
+
+# Set up FIDO2 resident key for passwordless authentication
+ykman fido2 credential add example.com
+
+# Test authentication
+# Visit a service supporting FIDO2/WebAuthn (github.com, google.com, etc.)
+# Register your YubiKey as authentication device
+# Verify you can authenticate using the physical key
+```
+
+**Dual-Key Redundancy Strategy**:
+
+For critical accounts, maintain multiple hardware keys:
+1. Primary key: Used daily for authentication
+2. Backup key: Stored securely, registered as backup authentication method
+3. Cloud recovery key: Registered with service provider as backup (uses Brave, 1Password, or similar cloud backup)
+
+Never store both keys in the same location. If one is lost or damaged, you can use the backup.
+
+**Testing YubiKey Setup**:
+
+```
+Test Sites Accepting FIDO2:
+- github.com (Settings → Security → Security keys)
+- google.com (Account → Security → Your devices)
+- microsoft.com (Account → Security → Advanced security options)
+- twitter.com (Settings → Account → Authentication apps)
+
+Registration Process:
+1. Go to security settings
+2. Select "Add security key"
+3. Insert YubiKey when prompted
+4. Touch the YubiKey to confirm
+5. Set a PIN for the key (if not already set)
+6. Test authentication by logging out and back in using the key
+```
+
+## TOTP Implementation for Developers
+
+**Setting Up TOTP Authentication**:
+
+```python
+import pyotp
+import qrcode
+from io import BytesIO
+
+# Generate TOTP secret for a new user
+def setup_user_2fa(username):
+    secret = pyotp.random_base32()
+    totp = pyotp.TOTP(secret)
+
+    # Generate QR code for authenticator app
+    provisioning_uri = totp.provisioning_uri(
+        name=username,
+        issuer_name="YourAppName"
+    )
+
+    # Create QR code image
+    qr = qrcode.QRCode()
+    qr.add_data(provisioning_uri)
+    qr.make()
+    qr_image = qr.make_image()
+
+    return {
+        "secret": secret,
+        "qr_image": qr_image,
+        "backup_codes": generate_backup_codes(secret)
+    }
+
+# Verify TOTP code provided by user
+def verify_totp_code(secret, user_provided_code):
+    totp = pyotp.TOTP(secret)
+    # Allow for time drift (±1 time window)
+    return totp.verify(user_provided_code, valid_window=1)
+
+# Generate backup codes for account recovery
+def generate_backup_codes(secret, count=10):
+    import secrets
+    backup_codes = [secrets.token_hex(4) for _ in range(count)]
+    return backup_codes
+```
+
+**TOTP Migration Strategy**:
+
+For existing users without 2FA, implement progressive enforcement:
+
+```
+Week 1-2: Announce TOTP requirement, provide guides
+Week 3-4: Offer incentives for early adoption (badge, feature access)
+Week 5-6: Require TOTP for sensitive operations (password change, payment)
+Week 7+: Require TOTP for all account access (with grace period for support)
+```
+
+## Cryptocurrency-Specific Protections
+
+For users holding significant cryptocurrency:
+
+**Multi-Signature Wallets**:
+
+```
+Setup:
+1. Use hardware wallet (Ledger, Trezor) requiring physical signing
+2. Set up multi-signature wallet requiring 2-of-3 or 3-of-5 signatures
+3. Distribute key shards among trusted locations
+4. Use different hardware wallets for different key shares
+
+Verification:
+- Test a small transaction to verify all signatures work
+- Document recovery process before storing keys
+- Never keep all key shares in single location
+```
+
+**Exchange Account Hardening**:
+
+```
+1. Enable 2FA with hardware key (not SMS or authenticator app)
+2. Set withdrawal address whitelist
+   - Add only your hardware wallet address
+   - No new addresses can be added without waiting period
+3. Set withdrawal limits
+   - Daily limit below significant holdings
+   - Requires email confirmation for larger withdrawals
+4. Geographic IP restrictions
+   - Only allow logins from specific countries
+   - Alert on unexpected login locations
+5. Disable API access unless absolutely necessary
+   - If needed, use IP-restricted API keys
+   - Use separate API keys for different exchange accounts
+```
+
+## Post-SIM Swap Recovery Protocol
+
+If you discover a SIM swap has occurred:
+
+**Immediate Actions (First 15 Minutes)**:
+
+```
+1. Call your carrier's fraud line (number on your bill) from another phone
+   DO NOT use the number the "attacker" provides
+
+2. Request immediate SIM swap reversal
+
+3. Ask if the attacker:
+   - Changed account PIN (if so, you need new one)
+   - Added recovery email/phone
+   - Ported number to another carrier
+
+4. Verify your phone number is back in your control:
+   - You should get signal restored
+   - Test by calling yourself from another phone
+```
+
+**First Hour Actions**:
+
+```
+5. If number was ported, contact the receiving carrier:
+   - Request reversal if possible
+   - Accelerates the reversal process
+
+6. Contact your bank and financial institutions:
+   - Inform of potential compromise
+   - Request account freeze or monitoring
+   - Check for unauthorized transactions
+
+7. Change passwords for critical accounts:
+   - Email (foundation for password resets)
+   - Banking/financial accounts
+   - Cryptocurrency exchanges
+   - Cloud accounts (iCloud, Google Drive, OneDrive)
+```
+
+**First 24 Hours**:
+
+```
+8. File reports:
+   - Local police department (get case number)
+   - FBI IC3 (ic3.gov)
+   - FTC (reportfraud.ftc.gov)
+   - Your state attorney general
+
+9. Credit freeze with bureaus:
+   - Equifax: equifax.com/personal/credit-report-services/credit-freeze
+   - Experian: experian.com/freeze/center.html
+   - TransUnion: transunion.com/credit-freeze/place-credit-freeze
+
+10. Security key audit:
+    - Register new hardware keys with compromised accounts
+    - Remove attacker's recovery options
+    - Review and revoke attacker's access
+```
+
+**Ongoing Monitoring (Weeks/Months)**:
+
+```
+11. Monitor accounts closely:
+    - Daily login checks
+    - Review transaction history
+    - Watch for unauthorized password changes
+
+12. Update carrier protections:
+    - Change account PIN
+    - Enable additional protections
+    - Request written confirmation of all protections
+
+13. Credit monitoring:
+    - Check credit reports monthly
+    - Use free annual reports: annualcreditreport.com
+    - Consider credit monitoring service for 24+ months
+```
+
 ## Building Defense in Depth
 
 Security requires layered approaches. No single measure guarantees protection, but combining carrier account protections, hardware security keys, authenticator apps, and vigilant monitoring significantly reduces your attack surface. Review your authentication methods periodically, removing SMS-based 2FA where alternatives exist.
@@ -108,6 +422,7 @@ For developers building authentication systems, design with SIM swap vulnerabili
 
 Protecting yourself from SIM swap attacks demands awareness, proactive configuration, and commitment to stronger authentication methods. The effort required is minimal compared to the potential loss from a successful attack.
 
+{% endraw %}
 
 ## Related Reading
 

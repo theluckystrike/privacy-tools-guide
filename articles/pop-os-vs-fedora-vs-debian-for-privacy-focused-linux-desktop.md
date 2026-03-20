@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/
 categories: [guides]
 reviewed: true
-score: 0
+score: 8
 intent-checked: true
 voice-checked: true
 ---

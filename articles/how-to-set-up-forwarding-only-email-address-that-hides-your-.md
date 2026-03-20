@@ -116,6 +116,289 @@ Third, consider using a dedicated password manager to store your forwarding acco
 
 Finally, periodically audit your forwarding rules and delete addresses you no longer need. The fewer forwarding points you maintain, the easier it becomes to manage your email security.
 
+## Advanced Domain Forwarding Strategy
+
+For developers who want maximum flexibility, registering a personal domain specifically for email forwarding provides unmatched control. Unlike free forwarding services that can disappear or be compromised, your domain remains under your control indefinitely.
+
+**Setting up email forwarding on a custom domain:**
+
+```bash
+# 1. Register a short domain (yourinitials.dev, yourname.email, etc.)
+# 2. Configure DNS records at your domain registrar
+
+# Add MX record to your DNS:
+# Type: MX
+# Priority: 10
+# Value: mail.forwardemail.net
+
+# Add TXT record for SPF (allows forwarding service to send emails)
+# Type: TXT
+# Name: @
+# Value: v=spf1 include:forwardemail.net ~all
+
+# Add DKIM record for signed emails
+# Type: TXT
+# Name: default._domainkey
+# Value: [provided by forwarding service]
+
+# Verify domain setup
+dig yourdomain.com MX
+dig yourdomain.com TXT
+```
+
+Once your domain is configured, create catch-all forwarding:
+
+```bash
+# All emails to any address @yourdomain.com forward to your real email:
+# github@yourdomain.com → real@gmail.com
+# twitter@yourdomain.com → real@gmail.com
+# newsletter@yourdomain.com → real@gmail.com
+
+# Create infinite unique addresses on the fly
+# No separate setup required for each new address
+```
+
+This approach is superior to email alias services because:
+1. You maintain full DNS control
+2. Forwarding continues even if the service is compromised
+3. You can migrate forwarding services without changing addresses
+4. You can receive replies (some services block this)
+
+## Forwarding with Proton Mail and ProtonPlus
+
+Proton Mail offers a particularly privacy-friendly forwarding setup through ProtonPlus subscription. Unlike consumer email services that track your behavior, Proton doesn't log IP addresses or build behavioral profiles.
+
+```bash
+# Proton Mail forwarding setup:
+# 1. Create multiple email addresses under ProtonPlus
+# 2. Each address can have forwarding rules
+# 3. Use Proton Mail's native encryption for sensitive forwarding
+
+# Example: Combine forwarding with encryption for sensitive services
+# contact@yourdomain.com → forwarding address
+# forwarding address → encrypted to your main Proton inbox
+```
+
+For maximum security, consider using Proton Mail's forwarding combined with their VPN to mask your location when accessing the forwarding inbox.
+
+## Spam Filtering and List Management
+
+A critical challenge with forwarding-only addresses is that they become spam targets. Implement aggressive filtering at multiple levels:
+
+```python
+# Advanced spam filtering rules for forwarding addresses
+class ForwardingSpamFilter:
+    def __init__(self, destination_email):
+        self.destination = destination_email
+        self.spam_rules = []
+
+    def add_spam_filter(self, rule_type, patterns, action='delete'):
+        """
+        Define rules to prevent spam reaching your real inbox.
+        """
+        self.spam_rules.append({
+            'type': rule_type,
+            'patterns': patterns,
+            'action': action  # 'delete', 'block', 'archive'
+        })
+
+    def apply_filters(self, incoming_email):
+        """
+        Check incoming email against all rules before forwarding.
+        """
+        for rule in self.spam_rules:
+            if rule['type'] == 'sender_domain':
+                # Block entire domains known for spam
+                if any(domain in incoming_email.from_addr
+                       for domain in rule['patterns']):
+                    return rule['action']
+
+            elif rule['type'] == 'subject_keywords':
+                # Block emails with spam keywords
+                if any(keyword.lower() in incoming_email.subject.lower()
+                       for keyword in rule['patterns']):
+                    return rule['action']
+
+            elif rule['type'] == 'size_limit':
+                # Block unusually large emails (common spam vectors)
+                if incoming_email.size > rule['patterns'][0]:
+                    return 'block'
+
+            elif rule['type'] == 'html_detection':
+                # Block emails with excessive HTML (phishing vector)
+                if incoming_email.html_complexity > rule['patterns'][0]:
+                    return 'block'
+
+        # Email passes all filters
+        return 'forward'
+```
+
+Implement these rules at the forwarding service level before they reach your real inbox:
+
+```bash
+# Gmail filter example: Block common spam patterns
+# Create a filter matching: from:(@payday-loans.ru OR @crypto-wallet.io)
+# Action: Delete it
+
+# Fastmail rule example: Block based on sender reputation
+# Create rule: If message has SPAM_SCORE > 0.8
+# Then: Delete it, Skip inbox
+
+# Custom domain forwarding: Use service's advanced rules
+# Block if: Sender not in whitelist AND List-Unsubscribe header missing
+# Action: Archive to spam folder
+```
+
+## Monitoring and Auditing Forwarding Activity
+
+Keep detailed records of which services have which forwarding addresses. This helps you identify which company sold or leaked your information when spam targeting increases:
+
+```python
+import json
+from datetime import datetime
+
+class ForwardingAddressTracker:
+    def __init__(self):
+        self.addresses = {}
+
+    def register_address(self, service_name, address):
+        """
+        Track which address is used for each service.
+        """
+        self.addresses[service_name] = {
+            'address': address,
+            'registered_date': datetime.now().isoformat(),
+            'status': 'active',
+            'incident_reports': []
+        }
+
+    def report_spam_incident(self, service_name, spam_count, source=None):
+        """
+        Log unusual spam activity targeting specific address.
+        Indicates potential data leak.
+        """
+        self.addresses[service_name]['incident_reports'].append({
+            'date': datetime.now().isoformat(),
+            'spam_count': spam_count,
+            'source': source,
+            'severity': 'high' if spam_count > 50 else 'medium'
+        })
+
+    def identify_leaky_services(self):
+        """
+        Flag services with high incident counts.
+        Strong signal of data selling or poor security.
+        """
+        suspicious = []
+        for service, data in self.addresses.items():
+            incident_count = len(data['incident_reports'])
+            total_spam = sum(r['spam_count']
+                           for r in data['incident_reports'])
+
+            if incident_count > 3 or total_spam > 100:
+                suspicious.append({
+                    'service': service,
+                    'incidents': incident_count,
+                    'total_spam': total_spam
+                })
+
+        return suspicious
+
+    def save_audit_log(self, filepath):
+        """
+        Persist audit log for GDPR/CCPA requests.
+        """
+        with open(filepath, 'w') as f:
+            json.dump(self.addresses, f, indent=2)
+
+# Usage
+tracker = ForwardingAddressTracker()
+tracker.register_address('GitHub', 'github@yourdomain.com')
+tracker.register_address('Twitter', 'twitter@yourdomain.com')
+
+# After observing spam spikes
+tracker.report_spam_incident('GitHub', 75, 'Dark web offers')
+tracker.report_spam_incident('GitHub', 42, 'Phishing attempts')
+
+# Identify which service likely leaked data
+print(tracker.identify_leaky_services())
+```
+
+Use this tracker to inform your decisions about which services deserve your real contact information and which are too risky.
+
+## Recovery and Deletion Procedures
+
+When a forwarding address is compromised, having a clear recovery procedure minimizes damage:
+
+1. **Immediate quarantine** — Stop forwarding to your real inbox
+2. **Notification** — Email the service explaining the compromise
+3. **Evidence collection** — Save spam logs as documentation
+4. **Address deletion** — Remove the compromised address from the forwarding service
+5. **Replacement** — Create a new address for future use with that service
+6. **Data request** — Submit GDPR/CCPA request to the service to understand the breach
+
+```bash
+#!/bin/bash
+# Emergency forwarding address shutdown script
+
+COMPROMISED_ADDRESS="breached@yourdomain.com"
+FORWARDING_SERVICE="your-provider.com"
+
+# 1. Disable forwarding
+curl -X DELETE "https://${FORWARDING_SERVICE}/api/forwards/${COMPROMISED_ADDRESS}" \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+
+# 2. Log the incident
+echo "$(date): $COMPROMISED_ADDRESS compromised" >> forwarding_incidents.log
+
+# 3. Create replacement
+NEW_ADDRESS=$(uuidgen)@yourdomain.com
+curl -X POST "https://${FORWARDING_SERVICE}/api/forwards" \
+  -d "address=${NEW_ADDRESS}&destination=your-real@email.com" \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+
+# 4. Update service with new address
+echo "Update your account at service.com to use: $NEW_ADDRESS"
+
+# 5. Monitor for continued abuse
+echo "Monitoring for leaked address abuse..."
+```
+
+## Integration with Password Managers
+
+Store your forwarding email setup in a password manager alongside service credentials. This provides:
+
+1. **Centralized tracking** — See which address is used for which service
+2. **Quick generation** — Generate and store new addresses systematically
+3. **Backup access** — Recover address information if forwarding service is compromised
+4. **Sharing with trusted contacts** — Give family members access to critical forwarding addresses
+
+```json
+{
+  "service": "GitHub",
+  "email": "github@yourdomain.com",
+  "category": "development",
+  "created": "2026-03-15",
+  "risk_level": "medium",
+  "notes": "Monitor for leaks; GitHub has good security"
+}
+```
+
+## Forwarding vs. Email Aliasing: When to Use Each
+
+**Use forwarding addresses when:**
+- You want to hide your real email from the service
+- You're unsure about the service's security practices
+- You want to track information leakage
+
+**Use traditional email aliasing when:**
+- You need to reply from the alias
+- You want the service to know your email for password recovery
+- You're using the same service long-term and trust it
+
+## Conclusion
+
+Forwarding-only email addresses provide a crucial privacy boundary between your real inbox and the countless services that would otherwise collect your contact information. By understanding the technical mechanisms, implementing proper filtering and monitoring, and integrating with your broader security practices, you can maintain a private email presence across the internet while retaining the convenience of centralized inbox management.
 
 ## Related Reading
 

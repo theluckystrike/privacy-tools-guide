@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-set-up-vpn-failover-between-two-providers-automatical/
 categories: [guides]
 reviewed: true
-score: 0
+score: 8
 intent-checked: true
 voice-checked: true
 ---

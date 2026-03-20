@@ -87,12 +87,258 @@ Based on this privacy review, developers and power users should consider these c
 4. **Review sync settings**: Brave's sync can replicate NTP data across devices—ensure you're comfortable with this
 5. **Clear NTP data regularly**: Use `brave://settings/clearBrowserData` to remove local NTP storage
 
+## Network Monitoring Methodology
+
+Conduct your own privacy audit of the new tab page to verify what data transmits:
+
+**Using mitmproxy**:
+
+```bash
+# Install mitmproxy
+brew install mitmproxy
+
+# Start mitmproxy listening on localhost:8080
+mitmproxy -p 8080
+
+# Configure Brave to use mitmproxy as a proxy
+# Brave Settings → Advanced → System → Open Proxy Settings
+# Set HTTP Proxy: localhost:8080
+
+# Open a new tab and observe all network requests in mitmproxy
+# Look for domains containing "brave.com", "cdn.jsdelivr.net", or news provider domains
+# Document the requests, headers, and data being sent
+```
+
+**Using Firefox Developer Tools**:
+
+While monitoring Brave with Brave DevTools, open the Network tab and:
+1. Open a fresh new tab (Ctrl+T or Cmd+T)
+2. Observe all HTTP/HTTPS requests in the Network tab
+3. Filter by "XHR" to see data requests (distinct from CSS/JS/image loading)
+4. Examine request headers for tracking identifiers or user data
+5. Check response headers for cookies or tracking parameters
+
+**Expected Network Requests**:
+- brave.com API endpoints for NTP configuration
+- CDN requests for images and static assets
+- News feed endpoints if enabled
+- Metrics collection endpoints (may contain anonymized usage data)
+
+## Threat Model: What NTP Data Leaks Reveal
+
+Understanding the privacy implications of different NTP configurations:
+
+**IP Address Leakage**: Every request to Brave's servers or third-party content loads reveals your IP address (or proxy IP). Network observers can correlate multiple new tab openings to track your active browsing periods.
+
+**Usage Pattern Profiling**: When you open new tabs multiple times per minute, Brave's servers might log this frequency, creating a usage pattern profile even if the NTP itself doesn't load content.
+
+**Geography Fingerprinting**: Your IP address reveals your approximate location. If Brave serves location-specific news or content, they can infer your location from NTP requests.
+
+**Tile Preferences**: If you sync NTP tiles across devices, Brave can profile your interests based on your bookmark choices and tile organization patterns.
+
+**Session Identification**: If requests include session IDs or user tokens, Brave can correlate multiple NTP opens to the same session, building session-level usage profiles.
+
+## Advanced Hardening Configuration
+
+For users requiring strict NTP privacy:
+
+**about:flags Configuration**:
+
+```
+brave://flags/#ntp-offline-mode
+  # Enable offline mode to eliminate network requests
+  # Trade-off: No dynamic content, no news, no sync
+
+brave://flags/#ntp-modules-first-run-experience
+  # Control whether first-run prompts appear
+
+brave://flags/#ntp-shortcuts
+  # Enable/disable shortcuts functionality
+
+brave://flags/#brave-ntp-superreferrer
+  # Control referrer passing to NTP requests
+
+brave://flags/#brave-news
+  # Disable Brave News component entirely
+
+brave://flags/#enable-sync-ui-ios
+  # Control sync integration
+```
+
+**Hardened about:config Example**:
+
+```javascript
+// These settings further restrict NTP data collection
+brave.local_preferences_on_startup = true
+  # Disables any network calls on startup
+
+privacy.brave.metrics_aggregation = false
+  # Disables aggregated metrics transmission
+
+privacy.brave.p3a.enabled = false
+  # Disables P3A (Privacy Preserving Product Analytics)
+
+privacy.brave.stats.v2.enabled = false
+  # Disables stats reporting
+```
+
+## Custom New Tab Page Implementation
+
+For developers willing to implement a custom NTP:
+
+**Basic Custom HTML NTP**:
+
+Create a local HTML file and configure Brave to use it as the NTP:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Private New Tab</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+    .search-box {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+    }
+    .tile {
+      background: #3a3a3a;
+      padding: 15px;
+      border-radius: 4px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .tile:hover {
+      background: #4a4a4a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="text" class="search-box" placeholder="Search..."
+           id="searchBox" autofocus>
+    <div class="tiles" id="tiles"></div>
+  </div>
+
+  <script>
+    // All data stored locally, no network requests
+    const bookmarks = [
+      { title: 'GitHub', url: 'https://github.com' },
+      { title: 'Privacy Guide', url: 'https://example.com' },
+    ];
+
+    const tilesContainer = document.getElementById('tiles');
+    bookmarks.forEach(bookmark => {
+      const tile = document.createElement('a');
+      tile.href = bookmark.url;
+      tile.className = 'tile';
+      tile.textContent = bookmark.title;
+      tilesContainer.appendChild(tile);
+    });
+
+    document.getElementById('searchBox').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const query = e.target.value;
+        // Use privacy-respecting search engine
+        window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+      }
+    });
+  </script>
+</body>
+</html>
+```
+
+**Configuration Steps**:
+1. Save the HTML file locally
+2. Configure as Brave NTP via a custom NTP extension or manual configuration
+3. All bookmarks and preferences remain local—no network requests
+
+## Privacy Comparison: Brave NTP vs Alternatives
+
+| Feature | Brave NTP | Edge NTP | Chrome NTP |
+|---------|-----------|----------|-----------|
+| IP Leakage | Yes | Yes | Yes |
+| Telemetry | Optional | Enabled | Enabled |
+| Offline Mode | Yes | No | No |
+| Data Sync | Optional | Optional | Optional |
+| News Feeds | Optional | Enabled | Disabled |
+| Third-Party Content | Minimal | Extensive | Extensive |
+| Privacy Controls | Good | Fair | Poor |
+
+## Verification: Check Current NTP Settings
+
+Verify your Brave NTP configuration:
+
+**Browser Settings Review**:
+```
+brave://settings/newTab
+  → Review all enabled features
+  → Disable News, Widgets, or Metrics collection as desired
+
+brave://settings/privacy
+  → Verify "Help improve Brave" is disabled
+  → Review data sharing preferences
+
+brave://components
+  → Find "Brave New Tab Page" component
+  → Note current version and update status
+```
+
+**Network Verification**:
+1. Open new tab with Developer Tools (Shift+Cmd+I or F12)
+2. Go to Network tab
+3. Open another new tab (Command+T)
+4. Document all requests made
+5. Compare requests with/without news, metrics enabled
+
+## Troubleshooting NTP Privacy Issues
+
+**News Feed Not Respecting Disablement**:
+- Clear Brave cache: Settings → Clear browsing data
+- Restart browser completely
+- Verify setting persists in brave://settings/newTab
+
+**Sync Replicating NTP Data Unexpectedly**:
+- Check brave://sync-internals/ to see what's being synced
+- Disable NTP sync specifically or all sync
+- Clear sync data: Settings → Clear browsing data → Synced data
+
+**High Network Usage from NTP**:
+- Enable offline mode: brave://flags/#ntp-offline-mode
+- Disable news: Settings → New Tab Page → News → Off
+- Disable metrics: Settings → Privacy → Help improve Brave → Off
+
 ## Conclusion
 
 Brave's new tab page represents a reasonable privacy tradeoff for most users—more transparent than Chrome's default experience but not as minimal as a completely custom solution. Developers who require absolute control should implement the configuration recommendations above or explore alternative NTP implementations.
 
 For teams integrating Brave into privacy-sensitive environments, conduct your own network analysis using the methods described here. Browser versions change frequently, and privacy implementations evolve. Regular audits ensure your configuration remains aligned with your security requirements.
 
+{% endraw %}
 
 ## Related Reading
 

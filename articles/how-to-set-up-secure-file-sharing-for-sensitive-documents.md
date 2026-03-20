@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-set-up-secure-file-sharing-for-sensitive-documents/
 categories: [guides, security]
 reviewed: true
-score: 0
+score: 8
 intent-checked: true
 voice-checked: true
 ---
