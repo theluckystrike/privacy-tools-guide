@@ -1,16 +1,18 @@
 ---
+
 layout: default
 title: "Facebook Location History Deletion: How to Remove All Stored Places from Your Account Data"
 description: "A technical guide for developers and power users on deleting Facebook location history and removing stored places data from your account using the Data Download feature and Graph API."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /facebook-location-history-deletion-how-to-remove-all-stored-/
 categories: [guides, security]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 {% raw %}
 
@@ -226,3 +228,4 @@ Removing Facebook location history requires a multi-step approach: exporting you
 For power users, the data export and analysis approach provides transparency into exactly what information Facebook stores, enabling informed decisions about what to delete.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
