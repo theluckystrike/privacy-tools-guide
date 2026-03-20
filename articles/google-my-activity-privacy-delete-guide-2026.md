@@ -215,3 +215,5 @@ The balance between convenience and privacy remains personal. Understanding what
 - [How to Minimize Digital Footprint Guide 2026: A.](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -173,3 +173,5 @@ App Tracking Transparency gives users meaningful control over cross-app tracking
 - [Mobile App Store Privacy Labels: How to Read and Compare.](/privacy-tools-guide/mobile-app-store-privacy-labels-how-to-read-and-compare-befo/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

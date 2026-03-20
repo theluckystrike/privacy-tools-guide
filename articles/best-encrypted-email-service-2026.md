@@ -190,3 +190,5 @@ Evaluate based on your specific needs: PGP interoperability, API access, SMTP/IM
 - [Best Encrypted File Sharing Service 2026: A Developer's.](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

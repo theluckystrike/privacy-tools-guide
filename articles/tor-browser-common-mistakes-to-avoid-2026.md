@@ -163,3 +163,5 @@ The difference between genuine anonymity and a false sense of security often com
 - [Tor Browser Captcha Issues Workarounds 2026](/privacy-tools-guide/tor-browser-captcha-issues-workarounds-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

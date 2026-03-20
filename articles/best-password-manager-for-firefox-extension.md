@@ -151,3 +151,5 @@ For developers managing API keys, deployment credentials, and multiple identitie
 - [How to Store OTP Codes in Password Manager: A Developer.](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

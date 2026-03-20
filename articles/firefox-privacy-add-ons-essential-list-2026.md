@@ -183,3 +183,5 @@ No extension stack provides complete anonymity — review your configuration whe
 - [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -257,3 +257,5 @@ Both browsers have legitimate use cases. Run them as separate profiles for diffe
 - [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

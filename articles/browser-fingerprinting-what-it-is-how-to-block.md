@@ -163,3 +163,5 @@ The most effective strategy combines multiple protections: use privacy-focused b
 - [Browser Permission Prompt Fingerprinting: How.](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -149,3 +149,5 @@ The choice ultimately depends on your specific requirements. Power users who spe
 - [Brave Browser vs Edge Privacy Comparison 2026: A.](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

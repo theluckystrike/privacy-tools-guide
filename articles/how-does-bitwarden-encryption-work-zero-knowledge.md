@@ -143,3 +143,5 @@ Bitwarden's zero-knowledge architecture ensures that your passwords remain priva
 - [How to Set Up Enterprise Password Manager with Zero.](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -177,3 +177,5 @@ Adapt your implementations based on your specific user base and data processing 
 - [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

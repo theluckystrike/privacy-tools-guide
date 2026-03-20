@@ -167,3 +167,5 @@ The EU-US Data Privacy Framework provides a workable solution for transatlantic 
 - [How to Handle Cross-Border Data Transfers After Privacy.](/privacy-tools-guide/how-to-handle-cross-border-data-transfers-after-privacy-shie/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

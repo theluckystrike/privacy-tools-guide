@@ -207,3 +207,5 @@ This setup is particularly valuable for sensitive browsing or when working remot
 - [How to Set Up Encrypted DNS to Bypass DNS Poisoning in.](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -234,3 +234,5 @@ For developers building privacy-sensitive applications, Tor provides valuable pr
 - [Browser Storage Isolation Explained for Privacy: A.](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

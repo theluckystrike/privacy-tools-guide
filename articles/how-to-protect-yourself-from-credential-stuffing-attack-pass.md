@@ -174,3 +174,5 @@ Start by auditing your password habits today. Ensure every important account use
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -184,3 +184,5 @@ Arti's modular crates support integrations from simple anonymous connections thr
 - [Data Privacy Framework EU US Explained 2026: A Developer.](/privacy-tools-guide/data-privacy-framework-eu-us-explained-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -169,3 +169,5 @@ The iOS Journal app's on-device architecture, granular permission controls, and 
 - [Snapchat Privacy Settings Complete Guide 2026: A.](/privacy-tools-guide/snapchat-privacy-settings-complete-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

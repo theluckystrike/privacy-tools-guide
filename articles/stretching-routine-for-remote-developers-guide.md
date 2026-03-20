@@ -171,3 +171,5 @@ Technology should support your wellness, not compete with it. Configure your too
 - [How to Verify Your Browser is Not Leaking Information: A Practical Checklist](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

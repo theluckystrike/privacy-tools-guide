@@ -449,3 +449,5 @@ Track consent rate (percentage of users with valid, current consent), data subje
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

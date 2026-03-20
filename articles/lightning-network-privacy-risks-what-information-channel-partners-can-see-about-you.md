@@ -172,3 +172,5 @@ The Lightning Network continues to evolve, with proposals like PTLCs (Point Time
 - [Employee Social Media Privacy: Can Your Employer Fire.](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

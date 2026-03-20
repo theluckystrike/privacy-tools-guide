@@ -179,3 +179,5 @@ For the strongest security, combine multiple approaches—use a VoIP number on a
 - [Privacy Setup for Confidential Informant: Protecting Your Identity](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

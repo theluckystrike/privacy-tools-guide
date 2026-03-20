@@ -124,3 +124,5 @@ The key is understanding your threat model. Most users do not need to disable We
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

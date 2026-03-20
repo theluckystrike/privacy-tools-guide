@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 {% raw %}
@@ -233,3 +234,4 @@ Start with one additional identity today. Perhaps create a separate email for ne
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

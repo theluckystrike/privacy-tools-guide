@@ -192,3 +192,5 @@ For sensitive data handling, the best approach is often to avoid storing that da
 - [Best Browser for Online Banking Security 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-online-banking-security/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

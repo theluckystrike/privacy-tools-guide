@@ -154,3 +154,5 @@ Passkeys add synchronization and discoverability on top of FIDO2, making credent
 - [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

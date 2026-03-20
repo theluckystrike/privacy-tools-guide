@@ -367,3 +367,4 @@ Regardless of method, never commit plaintext secrets to your repository. Use Git
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

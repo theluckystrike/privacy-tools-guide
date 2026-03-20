@@ -286,3 +286,5 @@ Social media data downloads have become accessible through both self-service too
 - [How to Demand a Company Stop Selling Your Personal Data.](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

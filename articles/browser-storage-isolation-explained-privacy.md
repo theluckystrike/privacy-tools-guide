@@ -199,3 +199,5 @@ Browser storage isolation forms the foundation of web privacy and security. Unde
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

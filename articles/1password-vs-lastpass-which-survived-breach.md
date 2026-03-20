@@ -158,3 +158,5 @@ Monitor account activity for both services. Both platforms provide login history
 - [Dashlane vs LastPass After Breach: Security Comparison.](/privacy-tools-guide/dashlane-vs-lastpass-after-breach-comparison/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -266,3 +266,5 @@ For additional privacy tools and security guides, explore the Privacy Tools Guid
 - [How to Set Up Offline Encrypted Communication Between.](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

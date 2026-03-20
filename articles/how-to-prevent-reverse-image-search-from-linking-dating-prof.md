@@ -198,3 +198,5 @@ Preventing reverse image search from linking your dating profile to your real id
 - [Dating Profile Image Recognition: How AI Can Match Your.](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

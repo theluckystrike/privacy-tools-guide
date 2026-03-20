@@ -224,3 +224,5 @@ Combine these steps with secure DNS and SSH practices for a privacy-respecting L
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

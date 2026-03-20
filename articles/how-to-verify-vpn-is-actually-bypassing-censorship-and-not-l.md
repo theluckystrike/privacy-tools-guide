@@ -195,3 +195,5 @@ The methods outlined here give developers and power users actionable verificatio
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

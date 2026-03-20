@@ -175,3 +175,5 @@ For those handling sensitive information—whether personal research, security w
 - [Chrome Privacy Sandbox Explained: What It Means for.](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

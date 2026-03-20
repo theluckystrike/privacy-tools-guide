@@ -223,3 +223,5 @@ Implement these practices to maintain tight permission control:
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -252,3 +252,5 @@ Configure auto-clear timers to 30 seconds or less, disable clipboard history fea
 - [Password Manager for Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

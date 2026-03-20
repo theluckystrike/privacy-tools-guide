@@ -170,3 +170,5 @@ For power users and developers alike, understanding these mechanisms helps you m
 - [Email Tracking Pixel Detection: How to Identify and Block Spy Pixels in Messages](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

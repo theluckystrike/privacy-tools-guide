@@ -158,3 +158,5 @@ The Tor network remains a critical tool for privacy and free expression, but usi
 - [Does IVPN Work in Belarus? 2026 Latest Confirmed Test](/privacy-tools-guide/does-ivpn-work-in-belarus-2026-latest-confirmed-test/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

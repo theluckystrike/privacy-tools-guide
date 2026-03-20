@@ -326,3 +326,5 @@ The goal is not paranoia but disciplined verification. Regular audits catch comp
 - [How to Verify Your Browser is Not Leaking Information: A Practical Checklist](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

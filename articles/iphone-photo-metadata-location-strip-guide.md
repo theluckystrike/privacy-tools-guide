@@ -240,3 +240,5 @@ Always verify removal with exiftool after processing—assumptions about data re
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

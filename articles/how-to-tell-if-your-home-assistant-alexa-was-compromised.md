@@ -196,3 +196,4 @@ Regular auditing of your smart home assistants is essential for maintaining priv
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

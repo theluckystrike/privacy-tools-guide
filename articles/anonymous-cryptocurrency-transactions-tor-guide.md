@@ -183,3 +183,5 @@ Confirm your node accepts only onion connections and that your visible IP differ
 - [How to Use Tor With Encrypted Email for Maximum Sender.](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

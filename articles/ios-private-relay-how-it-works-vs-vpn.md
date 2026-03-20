@@ -128,3 +128,5 @@ Neither solution provides complete anonymity on its own. Clever tracking methods
 - [How VPN Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

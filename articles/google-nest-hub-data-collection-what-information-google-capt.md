@@ -166,3 +166,5 @@ The information collected creates rich profiles about household patterns, daily 
 - [Smart Refrigerator Data Collection: What Samsung Family.](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

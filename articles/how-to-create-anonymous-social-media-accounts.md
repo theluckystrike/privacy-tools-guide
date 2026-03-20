@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 {% raw %}
@@ -211,3 +212,5 @@ The effort invested in proper setup pays dividends in maintained privacy and red
 - [How to Use Tor Browser for Creating Anonymous Accounts.](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -254,3 +254,5 @@ Building subprocessor management into your development workflow from the start a
 - [GDPR Lawful Basis for Processing Explained: A Developer.](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

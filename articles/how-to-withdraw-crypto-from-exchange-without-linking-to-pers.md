@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 {% raw %}
@@ -221,3 +222,5 @@ Each method involves trade-offs between convenience, fees, limits, and privacy. 
 - [How to Prevent Screenshots of Dating Conversations from Being Shared Without Your Consent: A Technical Guide](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

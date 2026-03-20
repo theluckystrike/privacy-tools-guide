@@ -231,3 +231,5 @@ The reality is that screenshot prevention exists on a spectrum. Implement what y
 - [How to Buy Bitcoin Without KYC Verification: Private.](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

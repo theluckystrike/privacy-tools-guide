@@ -159,3 +159,5 @@ Taking control of your digital presence means regularly auditing and removing ac
 - [How to Safely Exchange Social Media Handles with Dating.](/privacy-tools-guide/how-to-safely-exchange-social-media-handles-with-dating-matc/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

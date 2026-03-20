@@ -151,3 +151,4 @@ For pure storage privacy without other requirements, CryptDrive often provides b
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Comparisons Hub](/privacy-tools-guide/comparisons-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

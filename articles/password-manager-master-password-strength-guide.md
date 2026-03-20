@@ -202,3 +202,5 @@ Master password strength combines entropy, key derivation function configuration
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

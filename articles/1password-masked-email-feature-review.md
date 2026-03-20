@@ -150,3 +150,5 @@ Developers comparing email masking solutions should evaluate:
 - [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

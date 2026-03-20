@@ -147,3 +147,5 @@ Start with the basics—full-disk encryption, strong passwords, MFA—then layer
 - [Privacy Tools for Social Worker Handling Sensitive Case.](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

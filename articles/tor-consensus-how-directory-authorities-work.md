@@ -175,3 +175,5 @@ Understanding how the consensus works is fundamental to working effectively with
 - [Anonymous Cryptocurrency Transactions Tor Guide: A.](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

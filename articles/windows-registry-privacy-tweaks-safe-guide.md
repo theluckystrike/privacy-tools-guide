@@ -188,3 +188,5 @@ Windows registry modifications offer developers and power users granular control
 - [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

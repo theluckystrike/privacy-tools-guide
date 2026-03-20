@@ -201,3 +201,5 @@ Both solutions remain viable choices in 2026. The OpenVPN protocol continues to 
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data: A.](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

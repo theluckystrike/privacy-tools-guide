@@ -178,3 +178,5 @@ Consider using third-party permission managers from F-Droid for additional contr
 - [Best Browser for Streaming Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-streaming-privacy-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

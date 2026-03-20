@@ -214,3 +214,5 @@ After configuring settings, verify they work:
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -147,3 +147,5 @@ For most developers, a combination approach works best. Store general notes in O
 - [Best Encrypted Communication for Activists: A Technical.](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

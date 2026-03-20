@@ -161,3 +161,5 @@ Regardless of choice, encrypting your calendar adds a critical layer of privacy 
 - [Best Authenticator App 2026 Review: A Developer's Guide](/privacy-tools-guide/best-authenticator-app-2026-review/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

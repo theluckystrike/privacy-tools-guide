@@ -195,3 +195,5 @@ Start with the changes that impact your daily workflow most. Add new layers incr
 - [Privacy Setup for Safe House: Protecting Location from.](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

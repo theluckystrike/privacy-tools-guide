@@ -239,3 +239,5 @@ The right alternative is one you'll actually use consistently while maintaining 
 - [PGP Email Encryption Setup Guide 2026: A Developer and.](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

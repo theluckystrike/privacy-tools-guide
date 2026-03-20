@@ -239,3 +239,5 @@ A clean Firefox installation provides a solid privacy foundation by removing acc
 - [Firefox Privacy Settings Guide 2026: A Practical Guide.](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

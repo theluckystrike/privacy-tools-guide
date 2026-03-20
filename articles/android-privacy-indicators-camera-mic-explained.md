@@ -155,3 +155,5 @@ For maximum privacy, combine indicator awareness with regular permission audits,
 - [Browser Storage Isolation Explained for Privacy: A.](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

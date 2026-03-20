@@ -182,3 +182,5 @@ Your security architecture should assume that any cloud service can disappear to
 - [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

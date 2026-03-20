@@ -288,3 +288,4 @@ The key is consistent application: every time you handle sensitive data, verify 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

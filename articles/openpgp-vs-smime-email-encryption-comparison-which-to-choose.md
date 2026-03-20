@@ -149,3 +149,5 @@ Start with a pilot deployment, assess user experience, and scale based on operat
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

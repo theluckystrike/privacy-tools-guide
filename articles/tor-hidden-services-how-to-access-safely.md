@@ -223,3 +223,5 @@ For developers, the Tor network provides a unique platform for building privacy-
 - [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

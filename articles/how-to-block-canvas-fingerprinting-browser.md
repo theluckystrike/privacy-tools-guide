@@ -245,3 +245,5 @@ Remember that stronger protection sometimes means reduced functionality. Some we
 - [Navigator Plugins Fingerprinting: How Browser Plugins.](/privacy-tools-guide/navigator-plugins-fingerprinting-how-browser-plugins-betray-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -228,3 +228,5 @@ This separation prevents cross-site tracking between your development work and p
 - [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -217,3 +217,5 @@ This checklist provides multiple layers of Windows 10 privacy protection. Start 
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

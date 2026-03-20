@@ -165,3 +165,5 @@ The trade-offs are substantial but acceptable depending on threat model and use 
 - [Signal Protocol Explained for Developers: A Technical Deep Dive](/privacy-tools-guide/signal-protocol-explained-for-developers/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

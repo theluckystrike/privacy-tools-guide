@@ -171,3 +171,5 @@ The main considerations are the platform-locked sync model and enterprise featur
 - [Proton Pass vs Bitwarden Review: Which Password Manager.](/privacy-tools-guide/proton-pass-vs-bitwarden-review/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

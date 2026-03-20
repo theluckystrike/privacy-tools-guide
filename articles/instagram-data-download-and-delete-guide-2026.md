@@ -165,3 +165,5 @@ Whether you want a backup of your memories or are ready to leave the platform en
 - [Children's Online Privacy Protection Act: What Parents Can Demand from Companies](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

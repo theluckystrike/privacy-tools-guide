@@ -222,3 +222,5 @@ The key principle: privacy by design means making privacy-friendly choices the d
 - [GDPR Data Processing Agreement Template Guide: A Developer's Practical Reference](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -284,3 +284,5 @@ These settings balance WhatsApp's functionality with privacy protection. Review 
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

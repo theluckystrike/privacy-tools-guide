@@ -175,3 +175,5 @@ Start with GPG for quick implementation, then graduate to custom Python scripts 
 - [Mumble Encrypted Voice Chat Server Setup for Private.](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

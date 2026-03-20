@@ -256,3 +256,5 @@ Document your basis choice—regulators will ask what basis you used and you mus
 - [Legitimate Interest Assessment Template for Processing.](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

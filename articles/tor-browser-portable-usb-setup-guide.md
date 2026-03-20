@@ -247,3 +247,5 @@ For extremely sensitive operations, bootable distributions like Tails provide st
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

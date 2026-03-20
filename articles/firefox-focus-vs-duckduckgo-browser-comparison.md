@@ -181,3 +181,5 @@ The choice ultimately depends on your workflow: if you need to test privacy impl
 - [Best Browser for Privacy Android 2026: Developer and.](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

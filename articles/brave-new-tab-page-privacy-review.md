@@ -103,3 +103,5 @@ For teams integrating Brave into privacy-sensitive environments, conduct your ow
 - [Android Find My Device: Privacy Implications You Need to.](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

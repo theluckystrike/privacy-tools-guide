@@ -151,3 +151,5 @@ Understanding these trade-offs helps you make informed decisions about enabling 
 - [Smart Device Terms of Service Privacy Traps: What You.](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

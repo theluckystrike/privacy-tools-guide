@@ -166,3 +166,5 @@ Remember that canvas fingerprinting is just one tracking method. Combining Tor B
 - [Tor Browser Font Fingerprinting Protection: A Technical Guide](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

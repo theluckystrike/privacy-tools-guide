@@ -272,3 +272,5 @@ A compliant cookie consent implementation requires explicit consent via affirmat
 - [GDPR Compliance Tools for Developers in 2026: A.](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -158,3 +158,5 @@ The security of password manager extensions depends on implementation quality, p
 - [Best Password Manager for Firefox Extension: A Developer.](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -195,3 +195,5 @@ The best password manager is one you'll actually use consistently. Test each opt
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -199,3 +199,4 @@ If you've tried all these solutions and voice mode still doesn't work:
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

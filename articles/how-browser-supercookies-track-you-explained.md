@@ -163,3 +163,5 @@ The most effective defense is using a privacy-focused browser, auditing storage 
 - [How to Block Canvas Fingerprinting in Your Browser: A.](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 {% raw %}
@@ -182,3 +183,5 @@ The tools and techniques in this guide provide a foundation, but security is an 
 - [Signal Number Privacy Workaround Guide: Protecting Your.](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

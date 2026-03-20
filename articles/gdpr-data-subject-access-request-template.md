@@ -256,3 +256,5 @@ Treating DSAR handling as part of your data architecture — not a compliance af
 - [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

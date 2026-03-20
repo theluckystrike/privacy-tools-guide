@@ -186,3 +186,5 @@ Safari provides integrated system privacy with minimal friction for Apple users;
 - [Brave Browser Honest Review 2026: A Developer and Power.](/privacy-tools-guide/brave-browser-honest-review-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -166,3 +166,5 @@ Regularly audit your lock screen configuration, particularly after Android updat
 - [macOS Spotlight Privacy Settings: Disable Tracking and.](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

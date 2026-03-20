@@ -176,3 +176,5 @@ Users themselves benefit most from applications that implement strong client-sid
 - [How to Anonymize User Data in Production Database for.](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

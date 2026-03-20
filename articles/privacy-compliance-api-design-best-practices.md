@@ -315,3 +315,5 @@ Building privacy into your API from the start costs less than retrofitting compl
 - [Privacy Compliance for Fintech Startups 2026: A Complete Guide](/privacy-tools-guide/privacy-compliance-for-fintech-startups-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

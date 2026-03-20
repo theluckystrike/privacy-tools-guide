@@ -206,3 +206,5 @@ The key is understanding that true privacy requires both selecting services that
 - [Anonymous Online Shopping: How to Order Physical Goods.](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

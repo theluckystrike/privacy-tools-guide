@@ -119,3 +119,5 @@ Configuring Focus modes for your daily contexts—work, personal, sleep—gives 
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

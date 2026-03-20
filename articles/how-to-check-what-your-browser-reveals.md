@@ -264,3 +264,5 @@ Your browser reveals substantially more information than most users realize. By 
 - [Tor Browser Fingerprinting Protection: How It Makes.](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -132,3 +132,5 @@ Regular audits of installed extensions help maintain good security hygiene. For 
 - [How to Disable WebRTC Leaks in Tor Browser: A Developer's Guide](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

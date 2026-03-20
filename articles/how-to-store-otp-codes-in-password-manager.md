@@ -230,3 +230,5 @@ The security tradeoff—consolidating secrets—remains acceptable for most use 
 - [Password Manager for Travel Agent Managing Booking Platform Passwords: A Practical Guide](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

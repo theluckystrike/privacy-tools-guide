@@ -362,3 +362,5 @@ Run these checks periodically and maintain evidence of compliance for regulatory
 - [Windows 10 Privacy Settings Complete Checklist: A.](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

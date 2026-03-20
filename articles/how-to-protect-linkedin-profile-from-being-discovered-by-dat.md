@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 {% raw %}
@@ -212,3 +213,4 @@ The effort you invest in protecting your LinkedIn presence pays dividends across
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

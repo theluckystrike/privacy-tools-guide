@@ -230,3 +230,5 @@ For additional privacy hardening beyond crypto features, consider reviewing Brav
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

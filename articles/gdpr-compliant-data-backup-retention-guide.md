@@ -288,3 +288,5 @@ The examples above provide starting points—adapt them to your specific infrast
 - [GDPR Data Breach Notification Requirements 2026: A.](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

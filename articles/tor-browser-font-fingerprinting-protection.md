@@ -136,3 +136,5 @@ The ongoing cat-and-mouse game between privacy tools and fingerprinting techniqu
 - [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -137,3 +137,5 @@ Tor provides strong anonymity when used correctly, but no tool guarantees perfec
 - [How to Set Up Secure Communication for Labor Strike.](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

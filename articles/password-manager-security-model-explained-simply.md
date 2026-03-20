@@ -159,3 +159,5 @@ The security model ultimately rests on your master password being strong and uni
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

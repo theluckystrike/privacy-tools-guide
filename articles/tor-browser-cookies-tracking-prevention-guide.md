@@ -140,3 +140,5 @@ You can test your application's cookie handling by monitoring network requests a
 - [Tor Browser Font Fingerprinting Protection: A Technical Guide](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

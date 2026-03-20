@@ -219,3 +219,5 @@ Controlling iPhone location tracking requires addressing multiple layers: the sy
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

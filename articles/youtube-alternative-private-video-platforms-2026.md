@@ -234,3 +234,5 @@ Test multiple platforms with sample content before committing. Most open-source 
 - [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

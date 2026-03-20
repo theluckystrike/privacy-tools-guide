@@ -154,3 +154,5 @@ Brave works well when privacy is paramount but Chrome-level compatibility is req
 - [Sticky Password Review 2026: A Developer's Perspective](/privacy-tools-guide/sticky-password-review-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

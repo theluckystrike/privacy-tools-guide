@@ -141,3 +141,5 @@ The tool isn't irrelevant—it's simply optimized for a different user than you.
 - [Tresorit Review 2026: Is It Worth the Price for.](/privacy-tools-guide/tresorit-review-is-it-worth-the-price-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

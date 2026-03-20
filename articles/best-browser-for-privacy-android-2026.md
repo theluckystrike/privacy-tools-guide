@@ -185,3 +185,5 @@ Test each option with your development workflows before committing. Privacy tool
 - [Best Browser for Streaming Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-streaming-privacy-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

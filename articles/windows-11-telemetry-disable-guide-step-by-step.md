@@ -139,3 +139,5 @@ For developers building applications that integrate with Windows telemetry APIs,
 - [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

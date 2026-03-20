@@ -210,3 +210,5 @@ Start with circuit changes and security level adjustments — they resolve most 
 - [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

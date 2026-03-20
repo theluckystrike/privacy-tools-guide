@@ -146,3 +146,5 @@ The best password manager with secure notes ultimately depends on your threat mo
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

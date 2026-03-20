@@ -247,3 +247,5 @@ Most connection issues resolve with proper bridge configuration or firewall adju
 - [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

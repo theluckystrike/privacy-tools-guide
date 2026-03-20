@@ -172,3 +172,5 @@ Many projects benefit from combining both networks—using Tor for external comm
 - [Whonix vs Tails for Anonymous Browsing 2026: A Practical.](/privacy-tools-guide/whonix-vs-tails-for-anonymous-browsing-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

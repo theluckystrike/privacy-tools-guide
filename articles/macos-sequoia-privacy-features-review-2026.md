@@ -166,3 +166,5 @@ macOS Sequoia privacy features provide meaningful improvements for both develope
 - [Twitter X Privacy Settings Recommended 2026: A Complete.](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

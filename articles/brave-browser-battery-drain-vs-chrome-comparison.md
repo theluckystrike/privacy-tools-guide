@@ -218,3 +218,5 @@ If battery life is a priority, Brave provides meaningful improvements out of the
 - [WireGuard vs IPSec IKEv2 Battery Drain Comparison on.](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

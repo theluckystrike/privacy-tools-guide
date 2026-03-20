@@ -223,3 +223,5 @@ Regularly monitor enforcement databases, maintain current documentation of data 
 - [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -251,3 +251,5 @@ Both provide solid security for developers, with the choice depending on your sp
 - [Best Password Manager for macOS 2026: A Developer and.](/privacy-tools-guide/best-password-manager-for-macos-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

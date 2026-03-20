@@ -238,3 +238,5 @@ The right choice depends on your workflow: evaluate CLI capabilities against you
 - [Sticky Password Review 2026: A Developer's Perspective](/privacy-tools-guide/sticky-password-review-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -237,3 +237,5 @@ Most modern password managers support CLI export, which gives the most control o
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
