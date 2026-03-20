@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "China Social Credit System: What Online Behavior Is Monitored in 2026"
+title: "China Social Credit System: What Online Behavior Is."
 description: "A technical breakdown of China's Social Credit System monitoring capabilities, data points collected, and implications for digital privacy. Written for developers and power users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-social-credit-system-digital-privacy-implications-what/
-categories: [privacy, surveillance]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -154,6 +154,12 @@ For users concerned about behavioral surveillance, technical measures help:
 The China Social Credit System represents a particular implementation of behavioral scoring, but the underlying techniques—data aggregation, predictive scoring, and comprehensive monitoring—are being adopted in various forms worldwide. Understanding these systems helps developers make informed decisions about the tools they build and the data they handle.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

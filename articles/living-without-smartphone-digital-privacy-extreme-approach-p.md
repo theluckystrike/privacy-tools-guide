@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Living Without a Smartphone: A Practical Guide to Digital Privacy Through Extreme Separation"
-description: "A practical guide for developers and power users on living without a smartphone. Learn about dumb phones, privacy-focused alternatives, communication tools, and implementation strategies for maximum digital privacy."
+title: "Living Without a Smartphone: A Practical Guide to."
+description: "A practical guide for developers and power users on living without a smartphone. Learn about dumb phones, privacy-focused alternatives, communication."
 date: 2026-03-16
 author: theluckystrike
 permalink: /living-without-smartphone-digital-privacy-extreme-approach-p/
@@ -179,6 +179,12 @@ This script demonstrates how developers can create custom notification pipelines
 Living without a smartphone requires deliberate planning and acceptance of certain inconveniences. The privacy benefits—eliminating constant location tracking, removing app-based behavioral profiling, and reducing your attack surface—justify the effort for security-conscious developers and power users.
 
 Start with preparation, transition gradually, and build systems that accommodate your specific needs. The smartphone-free lifestyle rewards those who value privacy enough to adapt their habits.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Create Shamir Secret Sharing Backup of Crypto Seed Phrase for Inheritance"
-description: "A technical guide for developers and power users on implementing Shamir Secret Sharing to secure cryptocurrency seed phrases for inheritance planning. Includes code examples and practical implementation."
+title: "How to Create Shamir Secret Sharing Backup of Crypto."
+description: "A technical guide for developers and power users on implementing Shamir Secret Sharing to secure cryptocurrency seed phrases for inheritance planning."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-shamir-secret-sharing-backup-of-crypto-seed-ph/
@@ -199,6 +199,12 @@ Legal frameworks vary by jurisdiction. Consult with an estate planning attorney 
 
 Shamir Secret Sharing provides developers and power users with a flexible tool for securing cryptocurrency seed phrases across multiple parties. The mathematical guarantees ensure that insufficient shares reveal nothing about the original secret, while threshold schemes enable recovery when needed. Implement this on air-gapped hardware, maintain careful documentation, and integrate with your broader estate planning. The upfront effort protects your holdings from single points of failure while enabling your heirs to access funds according to your wishes.
 
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

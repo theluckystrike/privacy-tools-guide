@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Google Inactive Account Manager for Automatic Data Transfer After Death 2026"
-description: "A technical guide for developers and power users on configuring Google Inactive Account Manager to automatically transfer data to trusted contacts when your account becomes inactive."
+title: "How to Set Up Google Inactive Account Manager for."
+description: "A technical guide for developers and power users on configuring Google Inactive Account Manager to automatically transfer data to trusted contacts when."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-google-inactive-account-manager-for-automatic-/
@@ -216,6 +216,12 @@ While Google Inactive Account Manager covers Google's ecosystem, comprehensive d
 Google's solution handles one piece of the puzzle—coordinate it with broader digital estate strategy.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

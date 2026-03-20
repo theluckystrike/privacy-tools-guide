@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up Satellite Internet as Backup During Government Internet Shutdowns"
-description: "A technical guide for developers and power users on configuring satellite internet as a reliable backup connection when government-mandated internet shutdowns occur."
+title: "How to Set Up Satellite Internet as Backup During."
+description: "A technical guide for developers and power users on configuring satellite internet as a reliable backup connection when government-mandated internet."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-satellite-internet-as-backup-during-government/
@@ -197,6 +197,12 @@ For organizations, consider maintaining relationships with multiple satellite pr
 Implementing satellite internet as a backup connection requires upfront investment in hardware and configuration time, but provides reliable connectivity when terrestrial networks become unavailable. The key to effective implementation lies in automatic failover configuration, security hardening for the satellite link, and regular testing to ensure the system works when needed.
 
 For developers and power users comfortable with network administration, the technical setup described here can be adapted to specific threat models and operational requirements. The investment in understanding and deploying these systems provides resilience against one of the most common forms of information control during political crises.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

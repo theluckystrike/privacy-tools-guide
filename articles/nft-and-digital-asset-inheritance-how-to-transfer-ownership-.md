@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "NFT and Digital Asset Inheritance: How to Transfer Ownership of Tokens After Death"
-description: "A technical guide for developers and power users on implementing digital asset inheritance for NFTs and tokens. Covers smart contract patterns, multi-sig wallets, and automated transfer mechanisms."
+title: "NFT and Digital Asset Inheritance: How to Transfer."
+description: "A technical guide for developers and power users on implementing digital asset inheritance for NFTs and tokens. Covers smart contract patterns."
 date: 2026-03-16
 author: theluckystrike
 permalink: /nft-and-digital-asset-inheritance-how-to-transfer-ownership-/
@@ -235,6 +235,12 @@ For most developers and power users, a layered approach works best:
 The optimal solution depends on your technical comfort level, the value of assets, and your trust relationships. Start with simple measures—documenting your holdings and securing recovery seeds—and layer additional complexity as needed.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

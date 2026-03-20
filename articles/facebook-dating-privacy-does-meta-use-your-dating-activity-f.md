@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Facebook Dating Privacy: Does Meta Use Your Dating Activity for Ad Targeting in 2026?"
-description: "A technical deep-dive into how Meta handles your Facebook Dating data, whether dating activity influences ad targeting, and privacy controls for developers and power users."
+title: "Facebook Dating Privacy: Does Meta Use Your Dating."
+description: "A technical deep-dive into how Meta handles your Facebook Dating data, whether dating activity influences ad targeting, and privacy controls for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /facebook-dating-privacy-does-meta-use-your-dating-activity-f/
-categories: [privacy, meta, facebook]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -182,6 +182,12 @@ These changes represent incremental improvements rather than fundamental shifts 
 Meta maintains that Facebook Dating activity remains excluded from ad targeting systems. This claim is supported by privacy researchers and appears consistent with public documentation. However, the complexity of Meta's data ecosystem means users should remain skeptical and proactive about privacy controls.
 
 For developers building privacy-focused alternatives or auditing their own data exposure, understanding these boundaries helps in making informed decisions about platform usage. The controls exist but require active management—passive acceptance of defaults is not a privacy strategy.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

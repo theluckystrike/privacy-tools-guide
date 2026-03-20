@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Cryptocurrency Wallet Recovery Planning for Heirs: How to Pass Access Without Exposing Keys"
-description: "Learn practical methods for passing cryptocurrency wallet access to heirs without exposing private keys. Covers seed phrase encryption, multi-signature setups, and Shamir secret sharing for developers and power users."
+title: "Cryptocurrency Wallet Recovery Planning for Heirs: How."
+description: "Learn practical methods for passing cryptocurrency wallet access to heirs without exposing private keys. Covers seed phrase encryption, multi-signature."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/
@@ -145,6 +145,12 @@ Review your plan annually. Verify that share holders are still appropriate, that
 ---
 
 Planning for cryptocurrency inheritance requires thinking differently than traditional estate planning. The cryptographic nature of these assets offers possibilities that don't exist for conventional assets—but those possibilities require deliberate design. By implementing one or more of these methods, you ensure your crypto assets benefit your heirs rather than becoming permanent casualties of poor planning.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

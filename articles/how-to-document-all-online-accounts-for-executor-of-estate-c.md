@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Document All Online Accounts for Executor of Estate: Comprehensive Inventory Template"
+title: "How to Document All Online Accounts for Executor of."
 description: "A practical guide for executors and power users to systematically document and manage deceased person's digital accounts. Includes CLI tools, inventory templates, and automation scripts for 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -366,6 +366,12 @@ Documenting all online accounts for executor of estate requires systematic appro
 Start the documentation process early, maintain detailed records, and consult with legal professionals for specific situations requiring probate court involvement. Proper digital estate management protects both financial assets and precious memories.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

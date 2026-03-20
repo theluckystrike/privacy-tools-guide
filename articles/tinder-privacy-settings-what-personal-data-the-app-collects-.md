@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "Tinder Privacy Settings: What Personal Data the App Collects and Shares with Partners"
+title: "Tinder Privacy Settings: What Personal Data the App."
 description: "A technical breakdown of Tinder's data collection practices, privacy settings, and what information is shared with third-party partners in 2026."
 date: 2026-03-16
 author: theluckystrike
 permalink: /tinder-privacy-settings-what-personal-data-the-app-collects-/
-categories: [privacy, mobile-apps]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -142,6 +142,12 @@ Tinder collects comprehensive data spanning account information, behavioral patt
 For those seeking alternatives, several dating applications now offer more privacy-forward data policies with reduced third-party sharing. Evaluate your threat model and privacy requirements before committing to any platform.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
