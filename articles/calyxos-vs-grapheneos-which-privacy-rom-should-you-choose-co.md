@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/
 categories: [guides]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison, privacy]
