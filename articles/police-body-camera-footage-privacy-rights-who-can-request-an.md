@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /police-body-camera-footage-privacy-rights-who-can-request-an/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 voice-checked: true

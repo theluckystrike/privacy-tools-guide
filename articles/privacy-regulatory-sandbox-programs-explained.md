@@ -6,9 +6,9 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-regulatory-sandbox-programs-explained/
 categories: [guides]
-tags: [privacy, tools]
+tags: [privacy-tools-guide, privacy, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

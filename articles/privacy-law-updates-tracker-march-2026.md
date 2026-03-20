@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-law-updates-tracker-march-2026/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 intent-checked: true

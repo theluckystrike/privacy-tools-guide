@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, comparison, privacy]
 ---
 
 {% raw %}
