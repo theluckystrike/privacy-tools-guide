@@ -9,11 +9,12 @@ permalink: /how-to-rotate-encryption-keys-in-messaging-apps-without-losi/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Encryption key rotation is a critical security practice that limits the blast radius of a compromised key. However, in messaging applications, rotating keys traditionally meant losing access to conversation history—or forcing contacts to re-verify identity through new safety numbers. This guide walks through methods to rotate encryption keys without losing chat history, covering both mainstream messaging apps and custom implementations for developers building secure communication systems.
+Modern messaging apps like Signal use forward secrecy protocols that automatically rotate encryption keys with each message, so you won't lose chat history. To manually rotate your safety numbers in Signal, simply reinstall the app or add a new device—the app automatically regenerates new identity keys while keeping your local message history intact. For custom implementations, implement the Double Ratchet Algorithm which rotates keys per-message while storing decryption material for old messages.
 
 ## Understanding the Key Rotation Challenge
 

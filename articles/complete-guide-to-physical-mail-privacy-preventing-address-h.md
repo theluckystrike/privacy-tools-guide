@@ -16,6 +16,7 @@ voice-checked: true
 {% raw %}
 
 Address harvesting from physical mail represents an often-overlooked attack surface in personal privacy. While digital security gets substantial attention, your postal correspondence carries identifiable information that data brokers, marketers, and malicious actors actively collect. This guide provides actionable techniques for developers and power users to minimize address exposure and regain control over physical mail privacy.
+To protect physical mail privacy, use a private mailbox service (UPS Store, mailbox rental) to replace your home address on public accounts, opt-out of data broker mailing lists through services like OptOutPrescreen, use USPS Informed Delivery to monitor what's coming, and implement mail forwarding services for sensitive accounts. Address harvesting collects your postal address from mail observation, public records, and marketing lists, then sells it to data brokers creating physical location profiles. Separate your public and private addresses and use mail forwarding for online retail to prevent aggregating data exposure.
 
 ## Understanding the Address Harvesting Ecosystem
 

@@ -9,11 +9,12 @@ permalink: /iphone-significant-locations-history-what-apple-tracks-how-t/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-iPhone Significant Locations is one of Apple's most privacy-sensitive features, collecting aggregated data about places you visit frequently. This system powers features like predictive traffic routes, location-based reminders, and improved Maps suggestions. Understanding what Apple stores, how the data is structured, and how to manage it gives you control over your digital footprint.
+Disable Significant Locations at Settings → Privacy & Security → Location Services → System Services → Significant Locations to prevent your iPhone from recording your home, work, and frequented places. The data is stored encrypted on-device and synced via iCloud, but disabling it eliminates this tracking entirely. If you want location-based features like smart traffic predictions, keep it enabled but review Settings → Privacy & Security → Location Services regularly to see which apps request access.
 
 ## What Are Significant Locations?
 

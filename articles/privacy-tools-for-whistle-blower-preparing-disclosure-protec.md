@@ -9,11 +9,12 @@ permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Whistleblowing remains one of the most effective mechanisms for exposing corporate misconduct, government surveillance, and systemic violations. However, the act of disclosure carries significant personal risk. Before publishing any sensitive information, you must build a security architecture that protects both your identity and your sources. This guide covers practical tools and techniques for preparing disclosures while maintaining operational security.
+Whistleblowers should use Signal for encrypted communications, SecureDrop or Globaleaks for anonymous document submission to journalists, Tails Linux for all evidence gathering, and GPG encryption for sensitive documents before transmission. Use a separate device and dedicated phone number for all organizing, remove metadata from documents using ExifTool or Mat2, separate your whistleblower identity completely from personal accounts, and never use personal or work devices for sensitive communications. This guide covers practical tools and techniques for preparing disclosures while maintaining operational security, including threat modeling based on your adversary type.
 
 ## Understanding the Threat Model
 

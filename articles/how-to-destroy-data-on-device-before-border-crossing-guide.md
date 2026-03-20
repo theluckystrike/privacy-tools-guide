@@ -8,6 +8,7 @@ permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

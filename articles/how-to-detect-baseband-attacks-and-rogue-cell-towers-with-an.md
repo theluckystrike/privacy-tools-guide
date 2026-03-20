@@ -8,6 +8,7 @@ permalink: /how-to-detect-baseband-attacks-and-rogue-cell-towers-with-an/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

@@ -8,6 +8,7 @@ permalink: /how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

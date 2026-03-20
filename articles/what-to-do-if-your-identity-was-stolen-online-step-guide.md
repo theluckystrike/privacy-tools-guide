@@ -9,11 +9,12 @@ permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Discovering that your identity has been stolen online can be alarming. Whether attackers have compromised your email, social media accounts, or worse—gained access to financial information—acting quickly and systematically minimizes damage. This guide walks you through the technical steps to recover your digital identity, secure your accounts, and establish monitoring systems to detect future compromise.
+Secure your email account immediately (this is the master key to resetting all other services), revoke all active sessions, change passwords for all critical accounts (banking, email, social media), and enable two-factor authentication. File a fraud report with the FTC (identity theft.gov) and place fraud alerts with credit bureaus (Equifax, Experian, TransUnion). Monitor credit reports monthly for unauthorized accounts, set up breach monitoring services like Have I Been Pwned alerts, and consider a credit freeze to prevent new accounts opened in your name. For developers: audit all API tokens and SSH keys with access to repositories or infrastructure, assume any stored credentials are compromised, and rotate them across all services.
 
 ## Immediate Actions: The First Hour
 

@@ -9,9 +9,13 @@ categories: [guides]
 tags: [openvpn, vpn, data channel offload, dco, performance, encryption, network]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
+
+OpenVPN Data Channel Offload (DCO) moves encryption and decryption operations from the CPU to the kernel, delivering 2-5x performance improvements by eliminating expensive user-space-to-kernel context switches. Enable DCO in your OpenVPN config with `data-channel-offload`, which works transparently with existing setups and provides automatic performance gains for high-bandwidth use cases like 4K streaming and large file transfers. This guide explains how DCO works, how to enable it, and performance tuning for different scenarios.
+
 ## Understanding OpenVPN Data Channel Offload
 
 OpenVPN Data Channel Offload (DCO) represents a significant advancement in VPN technology, designed to dramatically improve performance by offloading cryptographic operations from user space to the kernel. This approach reduces the overhead associated with packet processing, resulting in higher throughput and lower latency for VPN connections.

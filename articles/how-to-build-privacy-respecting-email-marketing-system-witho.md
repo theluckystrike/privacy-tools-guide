@@ -9,6 +9,7 @@ permalink: /how-to-build-privacy-respecting-email-marketing-system-witho/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

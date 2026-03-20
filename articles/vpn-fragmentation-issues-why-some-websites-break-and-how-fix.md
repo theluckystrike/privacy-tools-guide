@@ -9,9 +9,10 @@ categories: [guides]
 tags: [vpn, troubleshooting, networking, privacy]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-VPN fragmentation issues occur when network packets get broken down, reassembled incorrectly, or blocked entirely, causing websites to fail loading, display incorrectly, or refuse connections entirely. Understanding why these problems happen and how to fix them helps you maintain reliable VPN connectivity.
+VPN fragmentation happens when packets exceed MTU (Maximum Transmission Unit) limits because VPN headers add 50-100 bytes overhead to every packet; firewalls block ICMP PMTUD (Path MTU Discovery) messages, preventing automatic detection of optimal packet sizes. Fix it by reducing MTU to 1400-1450 bytes (lower than the standard 1500) to account for VPN overhead, disabling path MTU discovery if it's being blocked, or configuring your VPN client to fragment packets at the application layer rather than at the network layer.
 
 ## What Causes VPN Fragmentation Issues
 

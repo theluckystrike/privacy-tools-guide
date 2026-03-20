@@ -8,11 +8,12 @@ permalink: /complete-guide-to-removing-real-name-from-all-online-account/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Removing your real name from online accounts is a fundamental privacy step that reduces your digital footprint and limits exposure to doxxing, unwanted surveillance, and identity correlation across platforms. This guide provides a systematic approach for developers and power users to audit, modify, and pseudonymize their online presence.
+Systematically replace your real name with pseudonyms across GitHub, Stack Overflow, social media, e-commerce, and developer platforms, using privacy extensions to audit your public presence and a spreadsheet to track account changes. Your real name links all accounts together, enabling doxxing, identity correlation, and surveillance across platforms. Create a unique pseudonym for each category (development, personal, financial), update your name, commit history, and package metadata, then monitor search results and data brokers for lingering references.
 
 ## Why Your Real Name Matters
 

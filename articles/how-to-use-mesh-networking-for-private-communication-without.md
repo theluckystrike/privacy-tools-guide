@@ -9,11 +9,12 @@ permalink: /how-to-use-mesh-networking-for-private-communication-without/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Mesh networking enables devices to communicate directly with each other without relying on centralized infrastructure or internet connectivity. This approach creates resilient, decentralized networks where each node serves as both a client and a relay, forwarding messages across the network. For developers and power users seeking private, offline communication channels, mesh networking provides a robust foundation.
+Deploy mesh networking using BATMAN-Adv for WiFi-based mesh (100-200m range) or LoRaWAN/LoRa for extended range (several kilometers). Devices communicate peer-to-peer without requiring a central router or internet connection. Implement this using hardware like Raspberry Pis with BATMAN-enabled WiFi interfaces, or use specialized LoRa modules for longer distances. Combine with encrypted messaging apps to create fully offline, private communication networks resilient to infrastructure outages.
 
 ## Understanding Mesh Networking Fundamentals
 

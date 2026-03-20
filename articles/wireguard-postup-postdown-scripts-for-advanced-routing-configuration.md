@@ -322,6 +322,7 @@ author: "Privacy Tools Guide"
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-configuration/
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 

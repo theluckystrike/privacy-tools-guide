@@ -10,11 +10,12 @@ categories: [guides, security]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Teenagers today navigate an unprecedented digital ecosystem where personal information flows freely across social platforms. Understanding social media privacy isn't just about hiding information—it's about maintaining control over your digital identity. This guide provides practical strategies to protect your privacy on major platforms while still enjoying the benefits of social connection.
+Protect your social media privacy by making all accounts private, disabling location sharing and metadata collection in app settings, limiting friend/follower lists to people you know, and using platform-specific privacy controls like Instagram's Restrict feature and TikTok's comment filtering. Review privacy policies to understand what each platform collects—Instagram tracks location and interactions, TikTok collects keystroke patterns and browser history, and Snapchat stores messages on servers. This guide provides platform-specific privacy configuration steps, details about what each major platform collects, and practical strategies for maintaining your digital identity while staying socially connected.
 
 ## Understanding Social Media Data Collection
 

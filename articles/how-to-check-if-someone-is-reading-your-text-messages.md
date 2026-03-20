@@ -8,7 +8,7 @@ permalink: /how-to-check-if-someone-is-reading-your-text-messages/
 categories: [guides, security]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

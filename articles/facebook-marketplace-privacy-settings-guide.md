@@ -10,11 +10,12 @@ categories: [guides, security]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Facebook Marketplace exposes more personal data than most users realize. Unlike traditional classifieds platforms, Marketplace integrates with your entire Facebook profile, pulling in your name, profile photo, location, friend network, and activity history. For developers building integrations or power users concerned about digital footprint management, understanding these settings is essential for maintaining privacy while using the platform effectively.
+Facebook Marketplace exposes your name, profile photo, location (city-level minimum), friend network, and activity history directly to buyers. Minimize exposure by creating a separate Facebook account for Marketplace (no real name/photo), using a generic profile picture, disabling location services during listings, and limiting marketplace access to "Friends" or "Friends of friends" if possible. Use a private mailbox service instead of your home address, communicate through Marketplace messages only, and never provide real phone numbers or email addresses for casual sales.
 
 ## Understanding What Facebook Marketplace Exposes
 

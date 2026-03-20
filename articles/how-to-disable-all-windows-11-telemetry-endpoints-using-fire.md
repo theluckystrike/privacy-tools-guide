@@ -8,6 +8,7 @@ permalink: /how-to-disable-all-windows-11-telemetry-endpoints-using-fire/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

@@ -10,12 +10,11 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Nextcloud's external storage support transforms your self-hosted cloud into a unified hub for all your data, regardless of where it lives. Whether you need to connect S3-compatible object storage, access legacy FTP servers, or mount local directories outside the Nextcloud data folder, the external storage app provides flexible mounting options that integrate directly with Nextcloud's file browser.
-
-This guide walks through configuring external storage backends in Nextcloud, with practical examples for common scenarios that developers and power users encounter in 2026.
+Nextcloud's external storage app lets you mount S3 buckets, WebDAV servers, FTP sites, and local directories directly into your Nextcloud file browser, creating a unified interface for all your data regardless of where it physically lives. Enable the External Storage support app in the admin interface, then create mount points by specifying storage type, credentials, and mount path. This guide covers configuration for all major backends with practical examples for developers managing multiple storage sources.
 
 ## Prerequisites
 

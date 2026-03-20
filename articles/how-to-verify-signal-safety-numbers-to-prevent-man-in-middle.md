@@ -8,15 +8,13 @@ permalink: /how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Signal provides end-to-end encryption by default, but the real security question is whether you're actually communicating with the intended person. Safety numbers (also called safety keys) are unique identifiers that verify the cryptographic identity of your contact. When you verify safety numbers, you confirm that no man-in-the-middle (MITM) attacker has intercepted your conversation.
-
-This guide covers safety number verification for developers and power users who want cryptographic certainty in their Signal communications.
+In Signal, open a conversation with your contact, tap their name, and select "View Safety Number" to see a 60-digit code or QR code. Verify this in person or through a trusted video call against their device's displayed safety number—they see the same code. If the numbers match, your encryption keys are authentic and no MITM attack is occurring. You can scan each other's QR codes in the app to mark verification as complete, which sends a notification showing others in the chat that you've verified each other's identities.
 
 ## Understanding Safety Numbers
 

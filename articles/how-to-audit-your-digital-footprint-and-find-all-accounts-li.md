@@ -9,6 +9,7 @@ permalink: /how-to-audit-your-digital-footprint-and-find-all-accounts-li/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

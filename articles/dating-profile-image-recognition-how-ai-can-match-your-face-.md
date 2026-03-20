@@ -9,13 +9,13 @@ permalink: /dating-profile-image-recognition-how-ai-can-match-your-face-/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Dating apps have evolved beyond simple profile matching. Modern platforms employ sophisticated computer vision systems that can identify users across multiple services using facial recognition technology. Understanding how these systems work is essential for anyone concerned about digital privacy.
+Dating apps use facial recognition through face embeddings (mathematical vectors of facial features) to identify duplicate accounts and potentially match users across platforms by comparing face vectors. Apps compute face embeddings locally or upload images to cloud AI services that generate comparable vectors, enabling cross-service matching if data is shared. To protect against facial recognition matching, use profile photos that are heavily cropped, obscured, or significantly different from photos you use elsewhere online, avoiding verification photos that require clear face visibility.
 
 ## How Facial Recognition Works in Dating Apps
 

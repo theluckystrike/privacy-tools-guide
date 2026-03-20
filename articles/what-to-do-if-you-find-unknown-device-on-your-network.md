@@ -8,10 +8,11 @@ permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Finding an unknown device connected to your home network can be unsettling. Whether it's a neighbor piggybacking on your Wi-Fi, an old device you forgot about, or something more sinister, knowing how to identify and respond to unknown devices is essential for maintaining your network security. This guide walks you through the complete process of discovering, investigating, and securing your network against unauthorized access.
+To identify unknown devices, check your router's admin interface (192.168.1.1 or 192.168.0.1) for the connected devices list showing IP, MAC address, and device names, or use network scanning tools like nmap. Immediately change your WiFi password to WPA3 (or WPA2 with a strong passphrase), isolate suspicious devices onto a guest network if possible, and check your router logs for access attempts. If you find unfamiliar devices, disable WPS (Wi-Fi Protected Setup), enable MAC filtering to whitelist only your devices, and update router firmware to patch security vulnerabilities that allowed unauthorized access.
 
 ## Identifying Devices on Your Network
 

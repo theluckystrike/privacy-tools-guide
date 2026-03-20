@@ -8,6 +8,7 @@ permalink: /how-to-configure-openpgp-key-server-for-organization-interna/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

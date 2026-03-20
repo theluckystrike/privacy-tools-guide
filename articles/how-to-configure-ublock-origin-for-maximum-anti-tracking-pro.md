@@ -9,6 +9,7 @@ permalink: /how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

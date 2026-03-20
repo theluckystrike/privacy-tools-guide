@@ -8,7 +8,7 @@ permalink: /how-browser-storage-partitioning-works-firefox-chrome-privac/
 categories: [guides, security]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

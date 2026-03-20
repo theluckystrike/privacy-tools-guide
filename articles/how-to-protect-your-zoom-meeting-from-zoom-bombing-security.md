@@ -9,6 +9,7 @@ permalink: /how-to-protect-your-zoom-meeting-from-zoom-bombing-security/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

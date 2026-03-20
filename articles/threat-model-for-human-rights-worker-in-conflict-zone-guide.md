@@ -9,15 +9,12 @@ permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-# Threat Model for Human Rights Worker in Conflict Zone: A Practical Guide
-
-Human rights workers operating in conflict zones face some of the most sophisticated and dangerous adversaries in the digital threat ecosystem.Documenting human rights abuses, coordinating with local activists, and communicating with international organizations all create attack surfaces that state actors, paramilitary groups, and other hostile entities actively exploit. Building a structured threat model is not an academic exercise—it determines whether you and your sources remain safe or become targets.
-
-This guide provides a practical framework for creating threat models tailored to the unique risks faced by human rights workers in active conflict zones. The approach draws from adversarial risk analysis and focuses on actionable mitigations rather than abstract security theater.
+Human rights workers in conflict zones face nation-state and paramilitary threats with capabilities including physical surveillance, device seizure with forensic extraction, social network analysis, and sophisticated network eavesdropping. Protect evidence of human rights abuses using Tails Linux for documentation work, Signal encrypted communications, encrypted storage vaults for sensitive documents, and regular device wipes. Establish secure communication with international organizations, separate your work device from personal phone, use dead drops or air-gapped document transfer, and implement strict access controls on victim testimony. This guide provides a practical threat modeling framework covering asset identification, adversary capability analysis, and actionable mitigations tailored to conflict zone environments.
 
 ## Understanding the Threat Environment
 

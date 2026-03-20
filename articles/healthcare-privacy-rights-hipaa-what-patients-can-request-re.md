@@ -8,6 +8,7 @@ permalink: /healthcare-privacy-rights-hipaa-what-patients-can-request-re/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

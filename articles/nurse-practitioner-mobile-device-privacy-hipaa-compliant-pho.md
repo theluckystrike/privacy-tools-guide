@@ -8,15 +8,13 @@ permalink: /nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Mobile devices have become essential tools for nurse practitioners managing patient care. Whether you're reviewing electronic health records, communicating with colleagues, or accessing telehealth platforms, your smartphone contains sensitive protected health information (PHI). Configuring your device properly isn't optional—it's a HIPAA requirement that protects both your patients and your practice from costly breaches.
-
-This guide walks through setting up a HIPAA compliant phone configuration, focusing on practical steps that work whether you use iOS or Android. We'll cover device encryption, mobile device management (MDM), application vetting, network security, and audit-ready configurations.
+HIPAA-compliant mobile devices require full-disk encryption enabled through a strong passcode, mobile device management (MDM) for remote oversight, carefully vetted healthcare apps, and a dedicated network separate from personal use. iOS or Android both work, but your choice depends on your practice's MDM infrastructure and regulatory environment. This guide covers practical configuration steps for device encryption, MDM setup, app vetting, network security, and audit-ready logging that protects patient data and keeps your practice compliant.
 
 ## Device Encryption and Basic Security
 

@@ -7,6 +7,7 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-representative-appointment-guide-non-eu/
 categories: [guides]
+intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8

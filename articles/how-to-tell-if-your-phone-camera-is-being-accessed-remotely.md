@@ -8,11 +8,12 @@ permalink: /how-to-tell-if-your-phone-camera-is-being-accessed-remotely/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Modern smartphones have privacy indicators that reveal when the camera or microphone is active. These indicators exist precisely because remote camera access represents a real threat vector—whether through malicious apps, compromised operating systems, or network-level attacks. This guide provides concrete methods to detect unauthorized camera access on both Android and iOS devices.
+iOS shows a green dot when any app accesses the camera; watch for this indicator when no apps should use it. On Android, check app permissions in Settings → Apps, monitor data usage in Settings → Network for unexpected spikes, and use network monitoring apps to detect outbound video streams. Review Settings → Applications → Permissions for suspicious camera access requests you don't remember granting. The most reliable detection: disable camera permissions completely for untrusted apps, or use airplane mode while monitoring for unexpected activity when you re-enable it.
 
 ## Understanding the Threat Model
 

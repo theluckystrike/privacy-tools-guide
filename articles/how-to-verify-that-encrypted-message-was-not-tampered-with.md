@@ -8,11 +8,12 @@ permalink: /how-to-verify-that-encrypted-message-was-not-tampered-with/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Encryption alone does not guarantee message integrity. An attacker who intercepts an encrypted message can modify bits in transit, and unless you have a mechanism to detect tampering, the recipient will receive corrupted or maliciously altered data. This article covers practical methods to verify that encrypted messages remain unmodified, with code examples for developers implementing secure communication systems.
+Use authenticated encryption (AES-GCM, ChaCha20-Poly1305) which automatically detects tampering by validating an authentication tag—if anyone modifies the ciphertext, decryption fails and the tampering is detected. Alternatively, append an HMAC computed over the encrypted message using a secret key, send both the ciphertext and HMAC, and have the recipient recompute the HMAC to verify it matches. Modern protocols like Signal and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
 
 ## Understanding the Integrity Problem
 

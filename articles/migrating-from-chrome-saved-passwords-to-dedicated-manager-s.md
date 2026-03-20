@@ -9,13 +9,13 @@ permalink: /migrating-from-chrome-saved-passwords-to-dedicated-manager-s/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Chrome's built-in password manager offers basic functionality, but developers and power users typically require more robust solutions. Dedicated password managers provide encryption, cross-platform sync, CLI access, and programmatic secret retrieval. This guide walks through migrating your Chrome-saved passwords to a dedicated manager using command-line tools.
+To migrate Chrome passwords to a dedicated manager like Bitwarden or 1Password, export your Chrome passwords from chrome://settings/passwords, then import the CSV file into your new manager. This process protects your credentials from Google's access and enables advanced features like vault sharing, CLI automation, and self-hosting that Chrome's basic manager cannot provide. This guide provides step-by-step instructions for a complete, secure migration.
 
 ## Why Migrate to a Dedicated Password Manager
 

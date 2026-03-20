@@ -9,11 +9,12 @@ voice-checked: true
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
 
-Facebook's privacy ecosystem has evolved significantly through 2026, offering granular controls that advanced users and developers can use to protect their data. This guide walks you through the most effective configurations, from basic audience selection to programmatic access controls using Facebook's Graph API.
+Control Facebook privacy through Settings > Privacy by restricting "Who can see your posts" to Friends only, disabling platform tracking in Settings > Apps and Websites, using "Clear History" to remove apps' data access, and setting Location Services to "Off." For developers, restrict API access through Facebook Developer settings, requiring user re-authentication before accessing sensitive data. Configure audience defaults to "Friends" instead of "Public," disable facial recognition in privacy settings, and review connected apps monthly to revoke unnecessary data access.
 
 ## Accessing Your Privacy Dashboard
 

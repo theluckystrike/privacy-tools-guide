@@ -8,11 +8,12 @@ permalink: /mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-The Mimblewimble protocol represents a fundamentally different approach to blockchain privacy. Named after the tongue-tying curse from Harry Potter, this protocol was introduced in 2016 through a whitepaper by Tom Elvis Jedusor (the French name for Voldemort). Unlike Bitcoin, which exposes transaction inputs, outputs, and amounts publicly, Mimblewimble achieves privacy through clever cryptographic constructions that hide this information while maintaining cryptographic verifiability.
+The Mimblewimble protocol achieves blockchain privacy by hiding transaction amounts through Confidential Transactions and Pedersen commitments, while eliminating blockchain bloat through a mechanism called cut-through. Both Grin and Beam implement Mimblewimble, but Grin emphasizes simplicity and fungibility while Beam adds features like confidential assets and optional auditability. This technical deep dive explains how Mimblewimble's cryptographic innovations enable private transactions that remain verifiable without exposing sender, receiver, or amounts.
 
 ## Understanding Confidential Transactions
 

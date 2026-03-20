@@ -9,11 +9,12 @@ permalink: /privacy-setup-for-immigration-activist-protecting-undocument/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Immigration activists face unique digital threats when supporting undocumented community members. Unlike typical security concerns, the stakes involve potential deportation, family separation, and legal consequences. This guide provides technical implementations for protecting sensitive communications, securing member databases, and maintaining operational security.
+Immigration activists protecting undocumented community members must use Signal for encrypted communications, Tor for all internet traffic, separate devices for organizing work, encrypted databases with minimal personal identifying information, and legal frameworks that destroy records after retention periods. Anticipate geographic tracking, social network analysis, communication interception, and device seizures at borders or protests. This guide provides comprehensive technical implementations including secure communications architecture, database design, access controls, and operational security practices for protecting vulnerable community members from enforcement surveillance.
 
 ## Understanding the Threat ecosystem
 

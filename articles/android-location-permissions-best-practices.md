@@ -10,11 +10,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Location access is one of the most sensitive permissions an Android app can request. Users entrust apps with their physical whereabouts, and mishandling this data damages trust and violates platform policies. This guide covers the essential patterns for requesting, handling, and managing location permissions in modern Android development.
+Android location permission best practices require requesting fine location through runtime permissions (not manifest-only), explicitly distinguishing between foreground and background access, implementing alternatives like geofencing when full precision isn't needed, and providing clear privacy notices to users. The fundamental requirement is to request only the minimum location precision your app needs and make background location requests separately from foreground requests, ensuring users understand the privacy implications.
 
 ## Understanding Location Permission Types
 

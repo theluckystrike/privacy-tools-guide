@@ -10,11 +10,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Location tracking on Android extends far beyond the moments you actively use an app. Many applications continue monitoring your position in the background, collecting data even when you have switched to another task or when your device sits idle. Understanding which apps track you when not open, and how this tracking technically works, enables you to make informed decisions about your digital privacy.
+Many Android apps track your location in the background even when closed, including weather apps, fitness trackers, social media platforms, and navigation services that maintain background location permission. You can audit which apps access location with "Allow all the time" permission in Android Settings and deny background location access individually per app. Understanding how background location differs from foreground location and which apps are tracking you enables you to reclaim location privacy.
 
 ## Background Location vs Foreground Location
 

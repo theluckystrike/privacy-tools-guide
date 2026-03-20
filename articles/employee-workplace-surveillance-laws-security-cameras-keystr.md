@@ -9,11 +9,12 @@ permalink: /employee-workplace-surveillance-laws-security-cameras-keystr/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding employee workplace surveillance laws protects both employers and employees. This guide covers security camera regulations, keystroke logging, and GPS tracking laws across US states, with practical examples for developers and power users.
+US federal law permits workplace surveillance for legitimate business purposes under ECPA, but states add restrictions—California prohibits keystroke logging and GPS tracking without consent, while New York requires reasonable notice and Connecticut restricts keystroke monitoring to detecting data theft. Security cameras in common areas are generally permitted, but bathrooms, changing rooms, and private areas are always protected. Employers must balance monitoring with employee privacy rights and NLRA protection of wage/working condition discussions, while employees should understand state laws and document any illegal surveillance.
 
 ## Federal Baseline for Workplace Surveillance
 

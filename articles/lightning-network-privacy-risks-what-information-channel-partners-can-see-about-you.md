@@ -9,11 +9,12 @@ permalink: /lightning-network-privacy-risks-what-information-channel-partners-ca
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-The Lightning Network promises fast, cheap Bitcoin transactions, but it introduces privacy trade-offs that developers and power users must understand. Unlike on-chain transactions where pseudonymous addresses provide some privacy, Lightning channels expose significant information to your channel partners. This guide breaks down exactly what data channel counterparties can observe and how that impacts your financial privacy.
+Your Lightning channel partners can see your channel balance, inbound/outbound capacity, and can infer transaction amounts and timing from failed/successful payments. They cannot see your on-chain identity unless you link it through address reuse. To minimize exposure: create channels through different nodes to avoid balance correlations, use unpublished private channels, route payments through unrelated intermediary nodes, and avoid linking your node's IP address to your identity. Monero offers better transaction privacy than Lightning if financial anonymity is critical.
 
 ## Understanding Lightning Network Channel Architecture
 

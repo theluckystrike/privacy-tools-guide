@@ -8,6 +8,7 @@ permalink: /how-to-disable-smart-app-control-in-windows-11-that-reports-/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

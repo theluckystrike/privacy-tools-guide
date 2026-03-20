@@ -8,6 +8,7 @@ permalink: /how-to-check-if-your-smart-home-devices-are-compromised/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

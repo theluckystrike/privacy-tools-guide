@@ -9,11 +9,12 @@ permalink: /how-to-use-password-manager-with-yubikey-hardware-key-setup/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Hardware security keys represent the gold standard in two-factor authentication. When paired with a password manager, they create a formidable defense against account compromise. This guide walks through setting up YubiKey with popular password managers, focusing on Bitwarden and 1Password—the two most commonly used options among developers and security-conscious users.
+Configure YubiKey as a second authentication factor in Bitwarden or 1Password settings using the FIDO2/WebAuthn protocol: during login, after entering your master password, the system prompts you to physically touch your YubiKey. This creates cryptographic proof of presence that cannot be phished or reused. Buy two YubiKeys (keep one as backup), register both to your account, and store the backup in a secure location. This combination—master password plus hardware key—provides near-unbreakable protection even if your master password is compromised.
 
 ## Understanding YubiKey and Password Manager Integration
 

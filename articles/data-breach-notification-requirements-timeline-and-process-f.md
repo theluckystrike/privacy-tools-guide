@@ -8,13 +8,13 @@ permalink: /data-breach-notification-requirements-timeline-and-process-f/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Understanding data breach notification requirements is critical for any organization handling user data. The General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA) both mandate breach notifications, but their timelines, thresholds, and procedures differ significantly. This guide breaks down both frameworks with practical implementation guidance for developers.
+GDPR requires notifying authorities within 72 hours of discovering a breach, while CCPA requires notification to California residents without unreasonable delay but no specific timeline. GDPR applies to all EU resident data, CCPA to California residents, with both requiring notification documentation and reasonable security investigation. Implement breach discovery automation, maintain audit logs, prepare notification templates, and document your incident response process to meet these timelines before breaches occur.
 
 ## GDPR Breach Notification Requirements
 

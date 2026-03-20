@@ -9,11 +9,12 @@ permalink: /vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-TLS fingerprinting is a technique that network censors use to identify and block VPN traffic by analyzing the unique characteristics of TLS handshakes. While TLS encryption hides the contents of network traffic, the initial handshake reveals metadata that can betray the underlying application—including VPN protocols like OpenVPN, WireGuard, and others.
+Censors identify VPN protocols like OpenVPN and WireGuard by analyzing TLS ClientHello messages, which reveal fingerprints in the cipher suite list, TLS extensions (SNI, ALPN), TLS version, and random bytes—even though the message is encrypted, these metadata elements match known VPN patterns. The Great Firewall of China uses this technique to block VPN connections; mitigation requires obfuscation tools (obfs4, Stealth VPN) that randomize the ClientHello to look like regular HTTPS traffic, or alternative protocols like QUIC that don't expose the same fingerprinting vectors.
 
 ## How TLS Fingerprinting Works
 

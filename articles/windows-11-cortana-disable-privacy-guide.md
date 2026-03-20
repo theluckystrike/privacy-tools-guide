@@ -9,11 +9,12 @@ permalink: /windows-11-cortana-disable-privacy-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Cortana, Microsoft's digital assistant, ships enabled by default in Windows 11. While it offers hands-free convenience and productivity features, Cortana continuously processes voice input, searches, and user behavior patterns. For developers and power users prioritizing privacy, disabling Cortana removes an active data collection component from your system. This guide covers multiple methods to disable Cortana completely, from simple Settings toggles to advanced scripting approaches.
+Disable Cortana through Settings (Privacy & security → Search permissions → toggle off Cortana), but this incomplete method still leaves background processes running. Use Group Policy Editor (gpldit.msc) to navigate to Computer Configuration → Administrative Templates → Windows Components → Search and set "Allow Cortana" to Disabled for complete removal. For Home editions without Group Policy, use Registry Editor to set HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search to AllowCortana = 0. These methods stop Cortana from sending voice recordings, search queries, calendar data, and contact information to Microsoft servers, eliminating a significant cloud-connected data collection vector from your system.
 
 ## Why Disable Cortana from a Privacy Perspective
 

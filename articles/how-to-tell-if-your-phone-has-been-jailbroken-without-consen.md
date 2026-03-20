@@ -8,13 +8,12 @@ permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consen/
 categories: [troubleshooting]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Jailbreaking (iOS) and rooting (Android) remove manufacturer restrictions to grant administrative access. While some users jailbreak their own devices intentionally, unauthorized jailbreaks—performed without your knowledge—pose serious security risks. Malicious actors may jailbreak your phone to install spyware, steal credentials, bypass authentication, or manipulate app behavior.
-
-This guide covers methods to detect whether your phone has been jailbroken or rooted without your consent, written for developers and power users who want technical verification steps.
+For iOS, check for Cydia, Sileo, or Zebra apps (jailbreak package managers) in Settings → General → iPhone Storage. Look for suspicious ssh keys or rock.json files using a computer. For Android, use the "Verify Root" app or check for Magisk/SuperSU in Settings → Applications. Review system apps in Settings → Apps for unknown entries. The definitive test: if you can read system partition files without adb root access (Linux/Mac), or if you see warning messages when attempting security checks, your device is likely jailbroken/rooted.
 
 ## Why Unauthorized Jailbreaks Matter
 

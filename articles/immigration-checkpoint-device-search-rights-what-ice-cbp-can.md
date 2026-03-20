@@ -8,13 +8,13 @@ permalink: /immigration-checkpoint-device-search-rights-what-ice-cbp-can/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Understanding your rights regarding electronic device searches at U.S. borders is essential for developers, security professionals, and anyone carrying sensitive data across international boundaries. The legal framework governing these searches differs significantly from domestic Fourth Amendment protections, and knowing the specifics helps you make informed decisions about data protection before traveling.
+At U.S. borders, CBP/ICE can search your devices without a warrant, warrant, probable cause, or reasonable suspicion under the "border search exception"—this applies to basic device searches. More intensive searches theoretically require suspicion but enforcement is inconsistent. They can view files, copy data, and retain information you have. Protections: encrypt sensitive files with tools CBP cannot easily access, consider leaving sensitive devices at home and using a travel phone, know your right to consult an attorney upon return, and keep travel logs documenting what devices you carried.
 
 ## The Legal Framework: Border Search Exception
 

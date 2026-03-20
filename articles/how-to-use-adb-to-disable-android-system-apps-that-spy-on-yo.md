@@ -9,13 +9,12 @@ permalink: /how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Android devices ship with numerous pre-installed applications that run in the background, collecting data and consuming system resources. Many of these system apps—often called bloatware—cannot be uninstalled through standard methods. The Android Debug Bridge (ADB) provides a way to disable these apps without root access, giving you control over your device's privacy and performance.
-
-This guide walks through using ADB to disable Android system apps that may be tracking your activity or draining your battery.
+Enable Developer Mode on your Android device, connect it to a computer via USB with ADB tools installed, then run `adb shell pm disable-user [package.name]` for each bloatware app you want to disable (e.g., `adb shell pm disable-user com.samsung.android.app.telephonyui`). The app becomes inactive but remains installed, allowing you to re-enable it later with `adb shell pm enable [package.name]`. This method doesn't require rooting and immediately stops background data collection and battery drain from disabled apps.
 
 ## What is ADB and Why Use It?
 

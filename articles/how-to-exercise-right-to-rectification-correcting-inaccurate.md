@@ -8,7 +8,7 @@ permalink: /how-to-exercise-right-to-rectification-correcting-inaccurate/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

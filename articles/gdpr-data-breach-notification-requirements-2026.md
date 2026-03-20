@@ -9,7 +9,7 @@ permalink: /gdpr-data-breach-notification-requirements-2026/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
 ---
 

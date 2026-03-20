@@ -5,6 +5,7 @@ description: "Learn how to create a compliant GDPR joint controller agreement wi
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-joint-controller-agreement-template/
+intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8

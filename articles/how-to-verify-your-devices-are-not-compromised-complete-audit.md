@@ -8,11 +8,12 @@ permalink: /how-to-verify-your-devices-are-not-compromised-complete-audit/
 categories: [security, guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Regular device security audits help developers and power users detect compromises before they lead to data breaches or system degradation. This guide walks through systematic verification steps using command-line tools available on Linux, macOS, and Windows. The techniques here target those comfortable with terminal operations who need actionable methods rather than theoretical security advice.
+Create baseline snapshots of running processes, installed packages, open network connections, and scheduled tasks during a known-clean state. Periodically compare current snapshots against baselines using diff tools to identify new processes, ports, or packages. Monitor system logs for suspicious authentication attempts, privilege escalations, or file modifications. Check for unexpected cron jobs, systemd timers, startup hooks, and browser extensions. Use integrity checkers like `aide` or `tripwire` to alert on unauthorized file modifications to system binaries.
 
 ## Starting Point: Document Your Baseline
 

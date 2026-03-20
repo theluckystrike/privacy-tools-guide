@@ -9,11 +9,12 @@ permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Domestic abuse shelter staff handle extremely sensitive information. Survivors' locations must remain confidential for their safety. This guide covers technical implementations for protecting location data, securing communications, and maintaining operational security. Whether you're building shelter management software or hardening existing systems, these patterns help protect vulnerable populations.
+Protect shelter staff and survivor locations using full-disk encryption on all devices, separate work phones without location services, Signal-encrypted communications, and databases that redact precise addresses while retaining only essential case information. Implement access controls limiting staff visibility to only their assigned cases, disable metadata from photos before sharing, and use Tor for any external communications about residents. This guide covers comprehensive technical implementations for protecting location data, securing communications, and maintaining operational security in shelter management systems.
 
 ## Understanding the Threat Model
 

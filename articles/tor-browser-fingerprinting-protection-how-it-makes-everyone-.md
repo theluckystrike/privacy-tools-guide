@@ -8,11 +8,12 @@ permalink: /tor-browser-fingerprinting-protection-how-it-makes-everyone-/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Browser fingerprinting is one of the most sophisticated tracking techniques used today. Unlike cookies, which can be blocked or deleted, fingerprinting collects static and dynamic characteristics of your browser to create a unique identifier. Tor Browser addresses this threat through a radical approach: making all users appear identical to trackers.
+Tor Browser eliminates browser fingerprinting by making all users report the same user agent, screen resolution, fonts, and rendering characteristics to trackers, effectively giving them a fingerprint shared by hundreds of thousands of users. This is achieved through letterboxing (gray margins that normalize window size), font standardization, and JavaScript tricks that return identical values to scripts attempting to identify your browser, making you statistically invisible among the crowd.
 
 ## Understanding Browser Fingerprinting
 

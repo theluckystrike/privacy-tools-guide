@@ -9,13 +9,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When you need to share sensitive files with someone, the typical approach involves uploading to Google Drive, Dropbox, or WeTransfer. These services hold your data on their servers, creating significant privacy and security risks. Third-party file sharing platforms can access your files, may be subpoenaed for data, and frequently impose file size limits.
-
-For developers and power users who value privacy, several methods exist to send large encrypted files directly from your machine to the recipient without any intermediary servers. This guide covers practical approaches using open-source tools and custom implementations.
+Use OnionShare for encrypted peer-to-peer file transfer without intermediaries: it creates a Tor onion address that the recipient accesses directly from your machine, keeping files off all servers. Alternatively, use age encryption combined with SFTP or rsync to send encrypted files directly to the recipient's server, or use the age-encrypted-backup pattern for offline transfer via USB drives. All three methods avoid cloud services entirely while keeping data encrypted end-to-end.
 
 ## Why Avoid Third-Party File Sharing Services
 

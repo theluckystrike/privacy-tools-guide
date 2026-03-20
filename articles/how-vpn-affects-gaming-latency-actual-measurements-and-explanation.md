@@ -8,11 +8,12 @@ permalink: /how-vpn-affects-gaming-latency-actual-measurements-and-explanation/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Latency is the enemy of competitive gaming. Every millisecond matters when you're peeking corners in Counter-Strike 2 or trading kills in Valorant. Using a VPN adds extra network hops between your machine and the game server, which inevitably increases ping. But the actual impact varies dramatically based on your setup, VPN configuration, and network conditions. This guide provides actual measurements and explains the mechanics so you can make informed decisions about VPN usage while gaming.
+VPNs typically add 10-50ms of additional latency depending on the VPN server's location relative to the game server. If your baseline ping is 30ms, a VPN might push it to 50-80ms, significantly impacting competitive gaming. VPN encryption/decryption adds roughly 2-5ms overhead. Solution: use a VPN server geographically closest to the game server, or skip the VPN for competitive play and use it only for privacy-sensitive browsing. Measure your actual ping impact by testing with `ping` and `mtr` before and after connecting to different VPN servers.
 
 ## Understanding Latency Components
 

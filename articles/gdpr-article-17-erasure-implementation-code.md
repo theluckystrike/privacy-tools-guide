@@ -5,6 +5,7 @@ description: "Practical implementation guide for GDPR Article 17 right to erasur
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-article-17-erasure-implementation-code/
+intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8

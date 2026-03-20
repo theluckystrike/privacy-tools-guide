@@ -8,13 +8,12 @@ permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-GPG-signed emails provide cryptographic proof that a message originated from a specific sender and has not been tampered with during transit. Unlike simple sender addresses that can be easily spoofed, GPG signatures rely on public-key cryptography to verify identity with mathematical certainty.
-
-This guide walks you through the complete workflow of signing and verifying emails using GPG, with practical examples designed for developers and power users who prefer command-line tools.
+Generate a GPG key pair with `gpg --gen-key`, export your public key with `gpg --armor --export [email]`, and share it with contacts. To sign an email, use `gpg --clearsign email.txt` which generates a signed version others can verify with `gpg --verify email.txt.asc`. Recipients obtain your public key, verify it against your key fingerprint (check over a trusted channel), and then verify your signatures automatically. This proves the message came from you and wasn't altered in transit.
 
 ## Understanding GPG Email Signatures
 

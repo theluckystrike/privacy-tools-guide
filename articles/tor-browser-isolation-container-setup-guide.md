@@ -9,11 +9,12 @@ permalink: /tor-browser-isolation-container-setup-guide/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Running Tor Browser inside isolated containers provides defense-in-depth for your privacy setup. Even if a browser vulnerability is exploited, the attacker gains only limited access to the container environment rather than your entire system. This guide covers three containerization approaches suitable for developers and power users: Docker-based isolation, Firejail sandboxing, and Linux network namespaces.
+Containerizing Tor Browser in Docker, Firejail, or Linux network namespaces limits the damage from browser exploits by isolating processes from the host filesystem, restricting network access, and starting each session fresh without persistent tracking data. This guide shows you three practical implementations: Docker for maximum flexibility, Firejail for quick sandboxing without container overhead, and network namespaces for granular Linux-level control, each providing defense-in-depth beyond Tor's IP-masking protections.
 
 ## Why Containerize Tor Browser?
 

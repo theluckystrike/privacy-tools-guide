@@ -5,6 +5,7 @@ description: "A practical guide to GDPR data processing agreements for developer
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-data-processing-agreement-template-guide/
+intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8

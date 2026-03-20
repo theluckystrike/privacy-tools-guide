@@ -8,13 +8,13 @@ permalink: /screen-resolution-fingerprinting-why-changing-display-settin/
 categories: [guides, security]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-When you visit a website, your browser reveals more information than you might expect. Beyond cookies and IP addresses, websites can fingerprint your device using seemingly harmless properties like your screen resolution. This technique, known as screen resolution fingerprinting, creates a unique identifier that tracks you across the web without your consent. Understanding how this works and what you can do about it is essential for protecting your digital privacy.
+Websites use the JavaScript `screen` object to collect your screen resolution, color depth, and pixel ratio, combining these with other browser properties to create a unique fingerprint that tracks you across the web without cookies. Protect yourself by using Firefox with privacy.resistFingerprinting enabled, enabling display scaling in your browser that obscures actual resolution, using Tor Browser which normalizes fingerprinting metrics, or spoofing the screen object through browser extensions. This guide explains how screen resolution fingerprinting works, shows you what information your browser reveals, and provides practical mitigation techniques for developers and power users.
 
 ## What Is Screen Resolution Fingerprinting?
 

@@ -10,11 +10,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Android storage permissions have undergone dramatic changes since Android 10 introduced scoped storage. These changes fundamentally alter how applications access files on external storage, prioritizing user privacy while requiring developers to adapt their file-handling strategies. Understanding these mechanisms helps developers build compliant apps and empowers users to grasp what data apps can actually reach.
+Scoped storage (introduced in Android 10 and mandatory since Android 12) limits apps to their own sandbox directories and prevents broad read-write access to all files on external storage. Instead of requesting READ_EXTERNAL_STORAGE permission that granted access to all files, apps now use the MediaStore API for shared media or request user file picks through the Storage Access Framework. This fundamentally reduces privacy risks by preventing apps from accessing your documents, photos, or other sensitive files without explicit per-file user consent.
 
 ## The Evolution of Android Storage Permissions
 

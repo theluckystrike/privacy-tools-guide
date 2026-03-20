@@ -8,6 +8,7 @@ permalink: /how-to-protect-yourself-from-qr-code-phishing-quishing-attac/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

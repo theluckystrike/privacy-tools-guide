@@ -8,11 +8,12 @@ permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When someone leaves an abusive relationship, digital safety becomes immediately critical. Abusers often maintain access to victim devices, accounts, and online presence through various technical means. This guide provides practical implementation patterns for securing devices, communications, and accounts during the transition period. The focus is on actionable steps that developers and technically-minded supporters can implement quickly.
+Help abuse survivors immediately by enabling full-disk encryption on their device, securing their email and primary accounts with new strong passwords and two-factor authentication, removing any location-sharing features and checking for installed tracking apps, and establishing secure communications channels using Signal or Tor. Change account recovery methods, remove the abuser from all shared accounts, and document threatening communications for legal purposes. This guide provides practical implementation patterns for securing devices, communications, and accounts during the critical transition period, with actionable steps for technically-minded supporters.
 
 ## Immediate Threat Assessment
 

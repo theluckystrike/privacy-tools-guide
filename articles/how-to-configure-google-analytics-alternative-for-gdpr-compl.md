@@ -9,6 +9,7 @@ permalink: /how-to-configure-google-analytics-alternative-for-gdpr-compl/
 categories: [guides, security, enterprise]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

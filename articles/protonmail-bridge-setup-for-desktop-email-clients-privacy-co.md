@@ -8,11 +8,12 @@ permalink: /protonmail-bridge-setup-for-desktop-email-clients-privacy-co/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-ProtonMail Bridge enables desktop email clients like Thunderbird, Apple Mail, and Outlook to access your encrypted ProtonMail account while maintaining end-to-end encryption. This guide covers the complete setup process with practical configuration examples for developers and power users who demand full control over their email workflow.
+ProtonMail Bridge is a local IMAP/SMTP proxy that lets Thunderbird, Apple Mail, and Outlook access your encrypted ProtonMail account while keeping your private keys on your device only. Install Bridge from protonmail.com, configure it with your ProtonMail credentials, then add your IMAP account in Thunderbird or your preferred client using localhost:1143 as the IMAP server. This guide covers installation, configuration with common clients, security considerations, and automation for power users who need desktop email integration without sacrificing end-to-end encryption.
 
 ## Why Use ProtonMail Bridge
 

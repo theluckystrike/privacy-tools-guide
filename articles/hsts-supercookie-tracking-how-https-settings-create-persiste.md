@@ -8,13 +8,13 @@ permalink: /hsts-supercookie-tracking-how-https-settings-create-persiste/
 categories: [guides, security]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-HTTP Strict Transport Security (HSTS) is a web security policy mechanism that forces browsers to only connect via HTTPS. While HSTS improves security, it also creates an unexpected privacy concern: HSTS supercookies. These tracking vectors exploit browser behavior to create persistent identifiers that survive private browsing sessions, cookie deletion, and even browser resets.
+HSTS supercookies exploit the browser's HSTS preload list (which persists locally) to encode tracking identifiers: a site sends HSTS headers that instruct the browser to remember dozens of related domains, and the pattern of which domains are recorded in HSTS creates a unique fingerprint. This persists across private browsing, cookie deletion, and even browser resets. Mitigation: regularly clear your HSTS cache (though most modern browsers reset it in private mode), use privacy extensions that block HSTS state storage, or switch to Tor Browser which isolates HSTS per-session.
 
 ## How HSTS Supercookies Work
 

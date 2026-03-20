@@ -9,11 +9,12 @@ permalink: /threat-model-for-union-organizer-in-hostile-employer-environ/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Building a threat model as a union organizer working against a hostile employer requires careful analysis of adversary capabilities, attack vectors, and defensive countermeasures. This guide provides a practical framework for assessing digital and physical risks, with concrete examples that developers and power users can implement immediately.
+Union organizers in hostile employer environments need a threat model that accounts for corporate surveillance capabilities—email monitoring, badge swipes, video surveillance, and potential infiltration—while remaining practical for organizing work. This guide uses the STRIDE framework adapted for union contexts, showing you how to identify your assets (communication metadata, membership lists, meeting locations), map adversary capabilities, and implement concrete countermeasures that developers and power users can deploy immediately.
 
 ## Understanding Your Adversary
 

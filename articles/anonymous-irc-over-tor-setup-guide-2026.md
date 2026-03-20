@@ -9,13 +9,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Internet Relay Chat (IRC) remains a vital communication protocol for developer communities, open-source projects, and privacy-focused discussions. However, standard IRC connections expose your IP address, making traffic analysis and deanonymization attacks straightforward. Running IRC over Tor adds multiple layers of obfuscation, hiding both your location and the content of your communications from network observers.
-
-This guide covers setting up Tor, configuring IRC clients, connecting to Tor-hidden IRC networks, and implementing operational security practices for developers and power users who require stronger anonymity guarantees.
+To set up anonymous IRC over Tor, install the Tor daemon, configure your IRC client (like WeeChat or Irssi) to connect through SOCKS5 on localhost:9050, then connect to Tor-hidden IRC networks that operate as .onion services for near-complete anonymity. Standard IRC exposes your IP address to all network observers, while running IRC over Tor hides your IP and adds multiple layers of routing obfuscation, protecting you from traffic analysis and deanonymization.
 
 ## Installing and Configuring the Tor Daemon
 

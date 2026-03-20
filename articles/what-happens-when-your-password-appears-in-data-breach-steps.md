@@ -8,11 +8,12 @@ permalink: /what-happens-when-your-password-appears-in-data-breach-steps/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Data breaches have become a fact of life in modern computing. When your credentials appear in a leaked database, the consequences can unfold quickly and quietly. Understanding exactly what happens—and knowing how to respond—can mean the difference between a minor inconvenience and a full account compromise.
+When your password appears in a data breach, automated credential stuffing bots test it against thousands of services within hours, exploiting password reuse to gain access to your email, banking, and social media accounts. Immediately change passwords on all accounts where you reused credentials (starting with email, which is the master account), use a password manager to generate unique passwords going forward, enable multi-factor authentication on critical accounts, and monitor breach databases like Have I Been Pwned for future compromises. If the breached password was hashed, attackers may crack weak passwords offline—this is why strong, unique passwords matter more after a breach.
 
 ## How Breached Passwords Get Exploited
 

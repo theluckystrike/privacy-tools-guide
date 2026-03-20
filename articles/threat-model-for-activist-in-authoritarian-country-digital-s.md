@@ -9,15 +9,12 @@ permalink: /threat-model-for-activist-in-authoritarian-country-digital-s/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-# Threat Model for Activist in Authoritarian Country: Digital Safety 2026
-
-Political activists in authoritarian countries operate under constant digital surveillance. Governments in these environments invest heavily in monitoring capabilities, from internet service provider-level traffic analysis to sophisticated social media monitoring and mobile device compromise. Building an effective threat model means understanding these capabilities and implementing layered defenses that address realistic attack scenarios.
-
-This guide provides a structured approach to threat modeling for activists in authoritarian contexts. It covers asset identification, adversary analysis, and practical mitigation strategies using free and open-source tools. The focus is on actionable security that works under real-world constraints, not theoretical protections.
+Activists in authoritarian countries must assume ISP-level traffic monitoring, sophisticated social media analysis, mobile device compromise capabilities, and sophisticated surveillance tools like Pegasus. Protect yourself by using Tails Linux for sensitive work, communicating through Tor, using Signal with disappearing messages, maintaining separate devices for organizing work, storing sensitive documents encrypted locally, and understanding that your location data is constantly harvested by governments. This guide provides a structured threat modeling approach for activists, covering asset identification, adversary capabilities analysis, and practical mitigation strategies using free and open-source tools adapted to real-world constraints in authoritarian environments.
 
 ## Step 1: Identify What You Need to Protect
 

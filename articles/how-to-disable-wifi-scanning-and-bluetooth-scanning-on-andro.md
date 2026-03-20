@@ -8,7 +8,7 @@ permalink: /how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

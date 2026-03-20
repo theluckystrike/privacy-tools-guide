@@ -9,11 +9,12 @@ permalink: /threat-model-for-source-communicating-with-journalist-anonym/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Journalistic sources face sophisticated adversaries ranging from state-level actors to corporate surveillance. Building a threat model for source-journalist communication requires understanding attack vectors, implementing layered defenses, and maintaining operational discipline throughout the relationship. This guide provides a practical framework for developers and power users who need to protect sensitive communications.
+Sources communicating with journalists must assume potential state-level compromise including OS-level exploits, network-level interception, and zero-day vulnerabilities; therefore use Tails Linux booted from USB for all sensitive communications, SecureDrop for anonymous document submission, Signal for messaging if using personal devices, and Tor for any internet access. Use a separate device unconnected to your identity, remove all metadata from documents using Mat2 or ExifTool, and establish out-of-band communication channels for verifying journalist identity. This guide provides a practical threat modeling framework covering adversary types, attack vectors, layered defenses, and operational discipline required for source-journalist relationships.
 
 ## Understanding the Threat ecosystem
 

@@ -10,11 +10,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When building applications that collect user data, understanding the distinction between a privacy notice and a privacy policy is essential for compliance and transparency. These terms are often used interchangeably, but they serve different purposes and appear in different contexts. This guide breaks down the key differences for developers and power users who need to implement proper privacy documentation.
+A privacy notice is a brief, context-specific disclosure about a single data practice (shown before collecting email addresses or requesting location), while a privacy policy is a comprehensive legal document explaining all data handling practices across your entire service. Privacy notices are used at the point of collection for GDPR/CCPA compliance, while privacy policies appear in app settings and website footers as binding agreements. This guide explains the legal differences, when to use each, and how to implement them correctly in your applications.
 
 ## What is a Privacy Policy?
 

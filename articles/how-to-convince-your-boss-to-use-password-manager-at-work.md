@@ -9,6 +9,7 @@ permalink: /how-to-convince-your-boss-to-use-password-manager-at-work/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

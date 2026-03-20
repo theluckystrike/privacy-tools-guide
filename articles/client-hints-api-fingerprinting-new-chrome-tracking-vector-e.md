@@ -8,11 +8,12 @@ permalink: /client-hints-api-fingerprinting-new-chrome-tracking-vector-e/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-The Client Hints API represents one of Chrome's most significant additions to web tracking capabilities since third-party cookies began their decline. Originally designed to help servers deliver optimized content based on device characteristics, this API has evolved into a powerful fingerprinting vector that operates with minimal user visibility.
+The Client Hints API automatically sends your device model, operating system, CPU architecture, and browser version to every website via HTTP headers, enabling fingerprinting without JavaScript. Originally designed for content optimization, websites now use these headers to fingerprint and track users across sessions with high accuracy. Disable Client Hints through browser preferences (if available), use privacy extensions to block high-entropy hints, or use a privacy-focused browser like Firefox, which offers better Client Hints protection than Chrome.
 
 ## What Are Client Hints?
 

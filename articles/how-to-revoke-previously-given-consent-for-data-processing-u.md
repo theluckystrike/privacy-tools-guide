@@ -9,11 +9,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding your right to withdraw consent under GDPR is essential for both data subjects and developers building compliant systems. Article 7(3) of the GDPR explicitly states that consent withdrawal must be as easy as giving consent. This guide covers the technical and practical aspects of revoking previously given consent.
+Under GDPR Article 7(3), you have the right to withdraw consent at any time, and organizations must stop processing your data for that purpose immediately upon withdrawal. The withdrawal must be as easy as giving consent—you can typically do this by finding the consent settings in a service's privacy dashboard, using opt-out links in marketing emails, or contacting the organization's data controller directly. This guide covers both the legal requirements and practical methods for revoking consent from major companies.
 
 ## The Legal Foundation: GDPR Article 7(3)
 

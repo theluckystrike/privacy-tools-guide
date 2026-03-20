@@ -9,11 +9,12 @@ permalink: /workplace-drug-testing-privacy-rights-what-employers-can-and/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding workplace drug testing laws protects both employers and employees. For developers building HR tools, compliance software, or employee wellness applications, knowing these regulations prevents costly legal mistakes. This guide covers what employers can legally test for and how state laws create different compliance requirements.
+Federal law (Drug-Free Workplace Act) sets minimum standards but doesn't mandate testing; state laws create the real restrictions—California bans pre-employment drug testing for most positions, Texas allows broad employer freedom, and other states create complex frameworks. Employers can legally test for marijuana (THC), cocaine, opiates, amphetamines, and PCP in most states, but marijuana testing is increasingly prohibited pre-employment in states where it's legal. For developers building compliance tools, you must implement state-by-state validation: a simple boolean "testing allowed" fails because regulations vary by job position, test type (pre-employment, random, reasonable suspicion), and state.
 
 ## Federal Baseline vs. State Variation
 

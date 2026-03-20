@@ -9,11 +9,12 @@ permalink: /what-to-do-if-your-amazon-account-was-hacked-recovery/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Discovering that your Amazon account has been compromised is a stressful experience. Whether you notice unfamiliar orders, changed account details, or find yourself locked out entirely, acting quickly and methodically is essential for minimizing damage. This guide provides a technical, practical approach to Amazon account recovery tailored for developers and power users who want to understand the underlying mechanisms and take control of the situation.
+If your Amazon account is compromised, immediately reset your password at amazon.com/gp/forgot-password, review your Login & Security page for unauthorized email addresses or devices, and contact Amazon support (phone is faster than email for account recovery). Check your order history for fraudulent purchases, review payment methods and address changes, and monitor your Alexa voice purchase history. Enable two-factor authentication once you regain control, place a fraud alert with credit bureaus if your personal information was changed, and check linked accounts (Prime, Audible, Twitch) for cross-account compromises since attackers often exploit connected services.
 
 ## Recognizing the Signs of Compromise
 

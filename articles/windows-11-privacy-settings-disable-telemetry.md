@@ -9,11 +9,12 @@ permalink: /windows-11-privacy-settings-disable-telemetry/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Windows 11 collects significant amounts of telemetry data by default, sending diagnostic information to Microsoft servers. For developers and power users who value privacy or work in security-sensitive environments, understanding how to minimize this data collection is essential. This guide covers multiple methods to disable or reduce Windows 11 telemetry, from basic Settings adjustments to advanced Group Policy and Registry configurations.
+Reduce Windows 11 telemetry by changing diagnostic data from Enhanced/Full to Basic through Settings (Privacy & security → Diagnostics & feedback), disabling Tailored experiences and Feedback frequency. For Pro/Enterprise editions, use Group Policy (gpldit.msc) to set Computer Configuration → Administrative Templates → Windows Components → Data Collection and On-Demand Diagnostics to Diagnostic data off (minimum level). Home edition users must edit Registry (HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection) and disable telemetry services manually. Complete telemetry blocking requires disabling multiple background services (DiagTrack, dmwappushservice) and blocking Microsoft's telemetry endpoints at the firewall level, which is more aggressive but removes crash reporting and usage statistics sent to Microsoft.
 
 ## Understanding Windows 11 Telemetry Levels
 

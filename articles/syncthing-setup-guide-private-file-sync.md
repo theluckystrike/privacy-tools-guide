@@ -9,11 +9,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Syncthing is an open-source continuous file synchronization program that allows you to synchronize files between devices without storing your data on third-party servers. Unlike cloud services such as Dropbox or Google Drive, Syncthing transfers data directly between your devices using peer-to-peer connections, keeping your files under your control at all times. This guide walks you through installing, configuring, and securing Syncthing for privacy-conscious file management.
+Syncthing is an open-source, decentralized file sync tool that transfers data directly between your devices using peer-to-peer connections, eliminating any cloud server and keeping your files under your complete control. Install Syncthing on macOS via Homebrew, Windows via installer, or Linux via package manager, then add devices by scanning QR codes or pasting device IDs and selecting folders to sync. This guide covers installation on all platforms, device pairing, folder configuration, security settings including TLS encryption and device verification, and practical setup for privacy-conscious file management across multiple devices.
 
 ## Installing Syncthing
 

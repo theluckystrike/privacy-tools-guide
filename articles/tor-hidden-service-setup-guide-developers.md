@@ -8,11 +8,12 @@ permalink: /tor-hidden-service-setup-guide-developers/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Tor hidden services (also called onion services) allow you to host websites, APIs, or any network service that is accessible exclusively through the Tor network. Unlike conventional servers that expose your IP address to the internet, hidden services route all traffic through Tor's onion routing, concealing both your location and the identity of your users. This guide walks you through setting up a basic hidden service, configuring it securely, and integrating it into your development workflow.
+Tor hidden services (.onion addresses) allow you to host websites or APIs that are accessible only through the Tor network, with both your server location and users' identities hidden from passive observers because traffic routes through multiple relays in both directions. This guide shows you how to configure the Tor service with HiddenServicePort settings, generate your .onion address, harden security with network isolation, and integrate hidden services into your development workflow.
 
 ## Prerequisites
 

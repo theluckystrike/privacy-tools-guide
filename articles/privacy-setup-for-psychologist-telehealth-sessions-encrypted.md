@@ -9,11 +9,12 @@ permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Telehealth has become essential for mental health professionals, but default video conferencing solutions often fall short on privacy requirements. HIPAA compliance demands encryption in transit and strict access controls, yet many mainstream platforms collect metadata that could reveal sensitive patient information. This guide covers practical setups for psychologists who want encrypted, self-controlled telehealth infrastructure.
+Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and allow server access to unencrypted content. Self-host these platforms on your own infrastructure or use privacy-focused providers that explicitly don't record sessions without explicit patient consent. Enable E2EE encryption, disable automatic recording, minimize metadata collection, and implement access controls limiting patient visibility to only their own session history. This guide covers practical setups for HIPAA-compliant telehealth infrastructure with full encryption control.
 
 ## Understanding the Encryption Requirements
 

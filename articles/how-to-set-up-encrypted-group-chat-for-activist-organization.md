@@ -8,11 +8,12 @@ permalink: /how-to-set-up-encrypted-group-chat-for-activist-organization/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Effective coordination requires secure communication channels that protect against surveillance, interception, and compromise. This guide provides technical implementation details for deploying encrypted group chat infrastructure suitable for activist organizations, focusing on self-hostable solutions and robust key management.
+For activist organizations, Matrix with Synapse (self-hosted) provides the best balance of security, privacy, and coordination features—it's decentralized, supports end-to-end encryption, offers strong access controls, and gives you complete infrastructure control. Alternative: use Signal's Group Messaging if preferring managed simplicity over self-hosting, though Signal doesn't allow self-hosting. Configure your chosen platform with mandatory end-to-end encryption, strong access controls, and regular security audits.
 
 ## Threat Modeling for Group Communications
 

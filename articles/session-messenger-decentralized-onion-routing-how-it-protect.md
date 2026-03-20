@@ -8,13 +8,12 @@ permalink: /session-messenger-decentralized-onion-routing-how-it-protect/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-# Session Messenger: Decentralized Onion Routing and How It Protects Metadata
-
-When evaluating privacy-focused messaging applications, the conversation often centers on end-to-end encryption. While encrypting message content remains critical, metadata—the information about who communicated with whom, when, and how often—can reveal as much as the message itself. Session messenger addresses this vulnerability through a decentralized architecture built on onion routing, creating a system where even network observers struggle to determine the parties involved in a conversation.
+Session Messenger protects metadata by routing all messages through a decentralized network of Oxen Service Nodes using onion routing, so no single node knows both sender and recipient—unlike Signal which uses central servers that can see connection metadata. Messages are encrypted end-to-end and routed through three or more service nodes, with each layer removing one encryption layer, preventing network observers from determining who is communicating. Session works on the Oxen blockchain and doesn't require a phone number for registration. This guide explains how Session's metadata protection works technically, compares it to centralized messengers like Signal and WhatsApp, and discusses practical implementation details.
 
 ## The Metadata Problem in Traditional Messengers
 

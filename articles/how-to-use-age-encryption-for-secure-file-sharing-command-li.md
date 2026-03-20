@@ -9,11 +9,12 @@ permalink: /how-to-use-age-encryption-for-secure-file-sharing-command-li/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
- AGE is a modern, minimalist encryption tool designed for simplicity and security. Created by Filippo Valsorda, age provides a clean command-line interface for encrypting files using modern cryptography. Unlike older tools that rely on outdated algorithms or complex key management, age uses ChaCha20-Poly1305 for symmetric encryption and supports SSH keys for recipient authentication. This guide walks you through installing age, generating keys, encrypting and decrypting files, and integrating it into your workflow for secure file sharing.
+Install age (`brew install age` on macOS, `apt install age` on Linux), generate recipient keys with `age-keygen`, then encrypt files using `age -r [public-key] file.txt > file.txt.age` and decrypt with `age -d file.txt.age`. For best results, share your public key through a trusted channel, have recipients encrypt their files using your key, and decrypt using your private key. Age is simpler than GPG, works with modern cryptography (ChaCha20-Poly1305), and requires no key servers or complex configuration.
 
 ## Installing AGE
 

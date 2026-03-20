@@ -10,11 +10,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Windows Activity History represents one of Windows 10 and 11's more persistent privacy features, continuously logging user actions across applications, websites, and system interactions. For developers and power users prioritizing data minimization, understanding how this feature operates and learning effective disabling methods is crucial for maintaining workstation privacy.
+Disable Windows Activity History through Settings (Privacy & security → Activity history: uncheck "Store my activity history on this device" and "Send my activity history to Microsoft"), which stops it from recording app launches, file access, browser history from Edge, and voice commands. For Pro/Enterprise editions, use Group Policy (gpldit.msc) to navigate to Computer Configuration → Administrative Templates → System → OS Policies and set "Allow activity history" to Disabled. Activity History feeds data to Timeline for resuming work across devices, but also creates a persistent log of sensitive activities like code files accessed, passwords potentially visible in window titles, and voice commands—disabling it eliminates this tracking vector for developers handling sensitive code or security researchers.
 
 ## What is Windows Activity History
 

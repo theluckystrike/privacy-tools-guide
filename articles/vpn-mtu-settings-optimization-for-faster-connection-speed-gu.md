@@ -8,13 +8,13 @@ permalink: /vpn-mtu-settings-optimization-for-faster-connection-speed-gu/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-When your VPN connection feels sluggish despite having decent bandwidth, the culprit might be incorrect MTU (Maximum Transmission Unit) settings. MTU determines the largest packet size your network interface can transmit without fragmentation. Misconfigured MTU values cause packet fragmentation, retransmissions, and measurable throughput degradation. This guide covers diagnosing MTU problems, finding optimal values, and implementing fixes across common VPN implementations.
+Optimize VPN speed by reducing MTU from the standard 1500 bytes to 1400-1450 bytes to account for WireGuard's 60-byte or OpenVPN's 50-70 byte overhead; test your optimal value using ping with the don't-fragment flag to discover path MTU, then subtract 28 bytes for IP/ICMP headers to find your ideal setting. Incorrect MTU causes packet fragmentation that forces CPU-intensive reassembly on both endpoints and triggers PMTUD black holes; start at 1400 and incrementally increase until ping fails, then configure that value on your VPN interface to eliminate retransmissions and improve throughput by 10-30%.
 
 ## Understanding MTU and VPN Overhead
 

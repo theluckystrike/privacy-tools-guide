@@ -10,11 +10,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Contact Posters represent one of iOS's most visible identity features, appearing when you receive calls, initiate FaceTime calls, and interact with certain third-party applications. Understanding the privacy controls surrounding these features helps you maintain control over what personal information displays to callers and app developers.
+Access iOS Contact Poster settings at Settings → Contacts → Contact Poster to control which name and photo appear to callers and apps. You can disable the poster completely (appearing blank to others), customize it per contact, or choose which contacts see which information. Disable the photo if you want privacy from caller ID images, but keep a name for legitimate identification. You can set different posters for different contacts by editing individual contact cards.
 
 ## What Are Contact Posters?
 

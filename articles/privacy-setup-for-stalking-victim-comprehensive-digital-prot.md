@@ -9,11 +9,12 @@ permalink: /privacy-setup-for-stalking-victim-comprehensive-digital-prot/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
 
-Stalking in the digital age extends far beyond physical surveillance. Modern stalkers exploit vulnerabilities in email accounts, social media, mobile devices, and IoT ecosystems to track victims' movements, communications, and daily routines. This guide provides a systematic approach to securing your digital life when facing stalking threats.
+Protect yourself from digital stalking by enabling full-disk encryption, using a separate device and phone number for communications, disabling location sharing on all devices, removing metadata from photos, using Signal and Tor for sensitive communications, and implementing strong unique passwords with two-factor authentication on all accounts. Monitor for account compromises regularly and physically inspect devices for tracking apps or hidden hardware. This guide provides a systematic approach to securing your digital life including threat model assessment, device hardening, account security, communications protection, and monitoring strategies.
 
 ## Threat Model Assessment
 

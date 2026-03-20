@@ -9,11 +9,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Onion Share is an open-source tool that enables secure, anonymous file sharing through the Tor network. Unlike traditional file transfer methods that expose your IP address and metadata, Onion Share creates temporary .onion services that allow recipients to download files directly from your machine without either party revealing their network location. This guide covers installation, command-line usage, persistent sharing, and integration workflows for developers and power users.
+Onion Share is an open-source tool that creates temporary .onion services allowing you to share files anonymously through Tor without exposing your IP address, recipient IP, or any metadata about the transfer. Install via Homebrew on macOS or your package manager on Linux, then use the simple GUI or CLI to select files, start sharing, and distribute the unique .onion URL to recipients. This guide covers installation, command-line workflows, persistent sharing, and practical integration patterns for developers and journalists.
 
 ## Installing Onion Share
 

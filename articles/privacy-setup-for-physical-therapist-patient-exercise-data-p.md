@@ -9,11 +9,12 @@ permalink: /privacy-setup-for-physical-therapist-patient-exercise-data-p/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Physical therapy practices handle sensitive patient information daily, including exercise prescriptions, progress notes, and treatment plans. Protecting this data requires more than basic security measures—it demands a thoughtful privacy setup that addresses the unique challenges of healthcare data. This guide provides developers and power users with practical strategies for securing patient exercise data while maintaining usability for clinical workflows.
+Protect patient exercise data through full encryption at rest and in transit, role-based access controls limiting therapist viewing to only their patients, automatic audit logging of all data access, and secure deletion procedures that comply with HIPAA retention rules. Implement data minimization by collecting only exercise details without sensitive medical history, use separate databases for billing and clinical data, and conduct regular security audits. This guide provides comprehensive strategies for securing patient exercise data in physical therapy practices while maintaining usability for clinical workflows and HIPAA compliance.
 
 ## Understanding Patient Exercise Data Sensitivity
 

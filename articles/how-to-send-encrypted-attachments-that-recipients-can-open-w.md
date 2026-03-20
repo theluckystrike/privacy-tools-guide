@@ -8,13 +8,12 @@ permalink: /how-to-send-encrypted-attachments-that-recipients-can-open-w/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When you need to send sensitive files to someone who may not be technically inclined, encryption becomes challenging. Traditional approaches like PGP require the recipient to install specialized software, configure keys, and understand cryptographic concepts. This creates barriers that prevent secure file sharing in many real-world scenarios.
-
-The solution is sending encrypted attachments that recipients can open using tools already built into their computers or mobile devices. This guide covers practical methods for developers and power users who need to share sensitive documents, credentials, or personal data with anyone—regardless of their technical expertise.
+The easiest solution is sending password-protected ZIP archives—all operating systems natively support creating and opening encrypted ZIPs without additional software. On macOS, use `zip -e` to create an encrypted archive; on Windows, right-click and select "Send to → Compressed (Zipped) folder" then set a password; on Linux, use the `zip -e` command. Share the password through a separate, secure channel, and the recipient can open it immediately using their built-in file manager.
 
 ## The Problem with Traditional Encryption
 

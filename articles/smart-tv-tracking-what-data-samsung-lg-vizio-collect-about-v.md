@@ -8,10 +8,12 @@ permalink: /smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Modern smart TVs have transformed from simple entertainment devices into sophisticated data collection platforms. Samsung, LG, and Vizio—the three largest smart TV manufacturers in the US market—each gather extensive information about what you watch, when you watch it, and how you interact with your television. Understanding exactly what these manufacturers collect is the first step to protecting your viewing privacy.
+
+Samsung TVs use ACR (Automatic Content Recognition) to track everything displayed, even on external HDMI devices, and collect voice command recordings; LG TVs collect viewing habits and send them to third-party advertisers; Vizio TVs engage in the most aggressive tracking including ACR and co-viewing data sales to data brokers. Limit tracking by disabling voice features and ACR in settings, using a firewall rule to block TV internet connectivity, routing your TV through a VPN, or choosing brands like some models from manufacturers with privacy-first policies. This guide details exactly what Samsung, LG, and Vizio collect from your viewing habits, how they use this data, and practical steps to disable tracking features.
 
 ## What Samsung Smart TVs Collect
 

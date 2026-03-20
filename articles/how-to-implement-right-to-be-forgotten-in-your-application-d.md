@@ -9,7 +9,7 @@ permalink: /how-to-implement-right-to-be-forgotten-in-your-application-d/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

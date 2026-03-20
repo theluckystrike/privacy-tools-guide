@@ -8,11 +8,12 @@ permalink: /what-to-do-if-your-credit-card-was-used-fraudulently-online/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Discovering unauthorized charges on your credit card is a stressful experience. Whether you're a developer who stores payment credentials in your applications or a power user managing multiple cards across platforms, knowing how to respond to fraud effectively can save you money and protect your financial identity. This guide covers the technical and practical steps to take when your credit card is used fraudulently online.
+Contact your bank immediately (phone call is fastest, not email) to report the fraudulent charges and request card replacement; most banks reverse charges within 10 days. Request an expedited replacement card or temporary virtual card number while waiting. Monitor your account daily for additional unauthorized charges, place a fraud alert with credit bureaus (Equifax, Experian, TransUnion), and check your credit report for unauthorized accounts opened in your name. For developers: audit payment processing code for stored credentials or logs that might expose card data, regenerate any API tokens used with that card, and check transaction monitoring for patterns indicating the card was cloned.
 
 ## Identifying Fraudulent Transactions
 

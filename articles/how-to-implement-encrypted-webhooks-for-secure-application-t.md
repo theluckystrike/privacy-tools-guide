@@ -8,7 +8,7 @@ permalink: /how-to-implement-encrypted-webhooks-for-secure-application-t/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

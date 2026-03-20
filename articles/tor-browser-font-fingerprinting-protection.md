@@ -8,11 +8,12 @@ permalink: /tor-browser-font-fingerprinting-protection/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Font fingerprinting is one of the most sophisticated tracking techniques used across the web. Unlike cookies that can be deleted or IP addresses that can be masked, font fingerprinting exploits the unique characteristics of fonts installed on your system to create a persistent browser fingerprint. Tor Browser implements multiple layers of defense against this attack vector, and understanding these protections helps you make informed decisions about your browsing privacy.
+Tor Browser stops font fingerprinting by normalizing fonts across all users—the Standard security level provides default protection by blocking aggressive fingerprinting vectors, the Safer level allows only minimal system fonts, and the Safest level disables JavaScript access to font enumeration APIs entirely. Combined with letterboxing (gray margins that prevent window-size tracking), these defenses ensure trackers see the same fonts from your browser as from thousands of other Tor users, making you indistinguishable from the crowd.
 
 ## Understanding Font Fingerprinting
 

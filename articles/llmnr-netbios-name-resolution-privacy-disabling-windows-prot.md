@@ -8,13 +8,12 @@ permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When your Windows machine connects to a network, it participates in name resolution protocols that can silently broadcast your device's hostname to every other machine on that network. Two protocols in particular—LLMNR (Link-Local Multicast Name Resolution) and NetBIOS Name Service—create privacy concerns by leaking system information that could be exploited by attackers on the same network.
-
-This guide explains how these protocols work, why they pose a privacy risk, and the practical methods to disable them on Windows systems.
+Disable LLMNR and NetBIOS on Windows to prevent hostname leakage: run `netsh int ipv4 set global unicastif=enabled` to disable LLMNR, then disable NetBIOS through Network Settings → Advanced → Wins/NetBIOS tab. Alternatively, use Group Policy (gpedit.msc) to disable both at the system level. These protocols broadcast your device name across the network, allowing attackers to discover system information and launch targeted attacks. Disabling them removes this exposure while leaving DNS-based name resolution intact for normal connectivity.
 
 ## Understanding LLMNR and NetBIOS Name Resolution
 

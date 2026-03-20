@@ -8,6 +8,7 @@ permalink: /how-to-configure-cloak-plugin-for-shadowsocks-to-evade-activ/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

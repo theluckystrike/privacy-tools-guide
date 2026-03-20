@@ -8,13 +8,12 @@ permalink: /threat-model-for-religious-minority-in-persecuting-country-d/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Digital security is not abstract for religious minorities living under regimes that actively monitor, track, and persecute faith communities. Whether you're a developer building tools for at-risk populations or a power user organizing community communications, understanding the specific threat model facing religious minorities in persecuting countries shapes every technical decision you make.
-
-This guide provides a structured approach to threat modeling for this specific context, covering risk assessment, defensive architecture, and practical implementation patterns.
+Religious minorities in persecuting countries face state-level surveillance including deep packet inspection, DNS filtering, SIM card registration mandates, border device seizures, and social network analysis of communication patterns. Defend against this by using Tails Linux for sensitive communications, Signal with disappearing messages, separate devices for religious organizing, encrypted local storage for sensitive documents, and avoiding patterns that reveal identity through financial transactions or location data. Use Tor for any internet access, avoid platforms that require government-issued ID, and establish offline communication networks where possible. This guide provides a structured threat modeling approach covering risk assessment, defensive architecture, and practical implementation patterns tailored to religious minority contexts.
 
 ## Threat ecosystem for Religious Minorities
 

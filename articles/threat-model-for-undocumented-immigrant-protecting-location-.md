@@ -10,11 +10,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Location data and digital identity represent some of the most consequential attack surfaces for individuals in vulnerable positions. Unlike passwords or credit card numbers, your physical movements and social connections cannot be reset. A single GPS coordinate logged by an app can compromise months of careful operational security. This guide walks through building a practical threat model focused on protecting location and identity in digital spaces.
+Protect your location and identity by disabling location permissions for all apps, removing metadata from photos before sharing, avoiding social media check-ins and location tags, using a VPN for all internet access, and using Tor for sensitive online activities. Assume government agencies and data brokers have access to cell tower records and app location data, so minimize your digital footprint and use separate anonymous accounts for sensitive communications. This guide walks through building a practical threat model covering asset identification, adversary capabilities including government surveillance and data broker harvesting, attack surfaces from app permissions and metadata, and actionable mitigations for protecting location and identity.
 
 ## What Is a Threat Model
 

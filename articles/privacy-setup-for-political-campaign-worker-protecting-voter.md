@@ -9,11 +9,12 @@ permalink: /privacy-setup-for-political-campaign-worker-protecting-voter/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Political campaign work involves handling sensitive voter information, making privacy and security a non-negotiable priority. Whether you're managing volunteer databases, coordinating outreach, or analyzing polling data, the tools and practices you use directly impact voter trust and legal compliance. This guide provides a practical privacy setup for political campaign workers, focusing on device hardening, data encryption, secure communication, and operational security workflows.
+Campaign staff protecting voter data must enable full-disk encryption (FileVault on macOS, BitLocker on Windows, LUKS on Linux), use separate devices for voter database access, implement Signal for all team communications, segregate volunteer data from analytics systems, and establish strict access controls limiting staff to only their assigned voter groups. Anticipate phishing attacks, device theft, unsecured network connections, and insider risks from temporary staff. This guide provides practical device hardening, data encryption, secure communication, and operational security workflows tailored to the 2026 political campaign threat landscape.
 
 ## Understanding the Threat Model
 

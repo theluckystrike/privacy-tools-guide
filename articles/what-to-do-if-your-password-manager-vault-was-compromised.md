@@ -8,11 +8,12 @@ permalink: /what-to-do-if-your-password-manager-vault-was-compromised/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Discovering that your password manager vault has been compromised is a critical security incident. Whether through a phishing attack, malware on your device, or a breach at the password manager service itself, the consequences can be severe if not addressed properly. This guide provides a systematic approach to recovering from such an incident, tailored for developers and power users who understand the technical implications.
+Immediately disconnect the compromised device from the network, revoke active sessions in your password manager's web dashboard, and change your master password from a different, trusted device. Assume all stored passwords are compromised—start rotating the most critical ones (email, banking, admin accounts) immediately. For developers: regenerate all API keys, SSH private keys, and database credentials stored in the vault, audit access logs on affected services, and deploy updated credentials to production. Contact your password manager provider to report the incident and determine whether the breach was local (malware) or service-wide, then migrate to a new password manager with a new master password once threat is contained.
 
 ## Immediate Actions (First 15 Minutes)
 

@@ -8,13 +8,13 @@ permalink: /sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/
 categories: [guides, security]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Modern web browsers expose hardware sensor data through the W3C Sensor API, enabling websites to access accelerometer, gyroscope, and magnetometer readings. While these APIs were designed for legitimate purposes like motion-based games and fitness tracking, they also provide a powerful vector for device fingerprinting. This article examines how accelerometer and gyroscope data creates unique device fingerprints, with practical code examples developers can use to understand and mitigate this privacy risk.
+Websites use the Sensor API to collect accelerometer and gyroscope data, which creates unique device fingerprints by analyzing the specific biases and noise patterns of your device's hardware sensors—information that persists even if you change location or reset your browser. Protect yourself by denying sensor permissions in your browser settings, using Firefox's privacy.resistFingerprinting, enabling Tor Browser which blocks sensor access, or using a privacy extension that spoofs sensor data. This guide examines how sensor APIs work technically, demonstrates fingerprinting code examples, explains privacy implications, and provides practical mitigation strategies for developers and power users.
 
 ## Understanding the Sensor API
 

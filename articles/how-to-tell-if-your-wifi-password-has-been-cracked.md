@@ -9,11 +9,12 @@ permalink: /how-to-tell-if-your-wifi-password-has-been-cracked/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Detecting whether your WiFi password has been cracked requires understanding how wireless authentication works and knowing which indicators to monitor. This guide provides practical techniques for identifying unauthorized access to your network, focusing on methods that developers and power users can implement without specialized hardware.
+Check your router's connected devices list (usually at 192.168.1.1 or 192.168.0.1) and compare against known devices—unknown MAC addresses indicate unauthorized access. Monitor your internet speed and bandwidth usage; unauthorized users downloading large files will cause noticeable slowdowns. Enable router logging to track connection attempts and failed authentications. If you find unknown devices, change your WiFi password to a strong, randomly-generated one and use WPA3 encryption instead of WPA2 if supported.
 
 ## Understanding WiFi Authentication Basics
 

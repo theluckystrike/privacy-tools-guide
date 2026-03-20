@@ -9,11 +9,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-OnionShare has become the go-to solution for developers and power users who need to share sensitive files without exposing their identity or relying on third-party cloud services. By using the Tor network's hidden service infrastructure, OnionShare enables direct peer-to-peer transfers that leave no trace on intermediary servers. This guide walks you through complete setup, configuration, and advanced usage patterns for secure file sharing in 2026.
+OnionShare uses Tor hidden services to enable direct, peer-to-peer file sharing that exposes neither your IP address nor any files to third-party servers, making it ideal for journalists, whistleblowers, and anyone sharing sensitive data. Install Tor and OnionShare via your package manager or Homebrew, then use the CLI to select files, start sharing, and securely distribute the temporary .onion URL to recipients. This guide covers complete setup, CLI automation, advanced usage patterns, and security best practices for developers and high-security environments.
 
 ## Prerequisites and Initial Setup
 

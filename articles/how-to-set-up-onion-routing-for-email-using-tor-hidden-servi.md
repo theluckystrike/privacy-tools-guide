@@ -9,13 +9,12 @@ permalink: /how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Onion routing through Tor provides a powerful mechanism for obscuring email communication metadata. While end-to-end encryption protects message content, network-level surveillance can still reveal who communicates with whom and when. By routing email through Tor hidden services, you add a significant layer of protection against traffic analysis.
-
-This guide walks through setting up email delivery through Tor onion services. You'll configure a mail server with an onion address and set up your email client to route outbound mail through the Tor network.
+Route email through Tor hidden services by configuring Postfix as a Tor hidden service with an onion address, then configure your email client to connect via SOCKS proxy to the Tor network. This masks your mail server's IP address and your outbound email metadata. For maximum privacy, combine this with end-to-end encryption (PGP or Proton Mail) so neither the mail server operator nor your ISP can observe who you're communicating with.
 
 ## Understanding Onion Email Architecture
 

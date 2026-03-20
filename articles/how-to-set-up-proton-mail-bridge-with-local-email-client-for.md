@@ -8,11 +8,12 @@ permalink: /how-to-set-up-proton-mail-bridge-with-local-email-client-for/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Proton Mail Bridge provides a secure way to use your Proton Mail account with any IMAP/SMTP-compatible email client while maintaining end-to-end encryption. This guide walks through the setup process for developers and power users who prefer local email clients over web interfaces.
+Install Proton Mail Bridge, log in with your Proton Mail credentials, then add the Bridge's local IMAP/SMTP server to your email client (Thunderbird, Apple Mail, Neomutt): Bridge runs locally on your machine and automatically encrypts/decrypts messages while your email client communicates with it using standard protocols. This gives you full end-to-end encryption with the power of desktop email clients without sacrificing Proton Mail's zero-access encryption model.
 
 ## What is Proton Mail Bridge?
 

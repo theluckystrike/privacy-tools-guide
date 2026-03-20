@@ -8,13 +8,13 @@ permalink: /how-to-set-up-home-assistant-esphome-for-completely-local-sm/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Smart home devices often send data to cloud services, creating privacy concerns and adding unnecessary latency. Building your own sensors with ESPHome and Home Assistant gives you complete control over your data while avoiding vendor lock-in. This guide walks through setting up a fully local smart sensor infrastructure.
+ESPHome converts ESP32 and ESP8266 microcontrollers into local smart sensors that communicate directly with Home Assistant via MQTT or native API—no cloud required. Install Home Assistant OS on a Raspberry Pi or mini-PC, install the ESPHome addon, flash your microcontroller with YAML configuration, and sensors immediately report to your local network. All data stays on your hardware with zero cloud dependencies, recurring costs, or vendor lock-in.
 
 ## Why ESPHome for Local Sensors
 

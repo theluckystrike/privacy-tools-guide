@@ -9,6 +9,7 @@ permalink: /how-to-protect-yourself-from-doxxing-after-meeting-someone-t/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}

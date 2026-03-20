@@ -9,6 +9,7 @@ permalink: /how-to-protect-elderly-parents-from-online-scams-setup-guide/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

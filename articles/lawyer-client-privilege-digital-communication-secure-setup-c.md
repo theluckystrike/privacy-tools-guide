@@ -8,11 +8,12 @@ permalink: /lawyer-client-privilege-digital-communication-secure-setup-c/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Digital communication between attorneys and clients requires protection under attorney-client privilege. This privilege protects confidential communications made for the purpose of obtaining or providing legal advice. However, using standard email services or consumer messaging apps can inadvertently waive this protection. This guide provides developers and power users with practical methods to establish secure communication channels that preserve privilege while remaining functional for daily legal work.
+Use end-to-end encrypted messaging (Signal), Proton Mail for encrypted email, or a dedicated secure client portal for attorney-client communications to preserve privilege. Ensure no third party (not even your email provider) can decrypt messages. Never use standard Gmail, Microsoft Teams, or Slack for privileged communications. Establish clear written agreements with clients confirming use of specific secure channels. Document that communications were made in confidence for obtaining legal advice. This combination—end-to-end encryption + documented intent + client acknowledgment—preserves privilege protection.
 
 ## Understanding Attorney-Client Privilege in Digital Contexts
 

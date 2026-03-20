@@ -8,11 +8,12 @@ permalink: /what-to-do-if-your-cloud-storage-account-was-breached/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Discovering that your cloud storage account has been breached can be alarming. Whether you use Dropbox, Google Drive, OneDrive, or a self-hosted solution like Nextcloud, attackers gaining access to your files means potential data theft, privacy violations, and downstream account compromises. This guide walks you through the immediate actions to take, the forensic steps to understand what happened, and the long-term measures to secure your setup.
+Immediately revoke all active sessions and access tokens (Google Workspace security checkup, Dropbox "Sign out everywhere", AWS IAM key rotation) to prevent further unauthorized access. Reset your password to a unique, strong one, enable two-factor authentication if available, and review file access logs to identify what data was accessed. Check shared file permissions and revoke access to sensitive folders, monitor activity history for suspicious changes or deletions, and contact your cloud provider's abuse team if your account was used maliciously. For developers with API credentials stored in cloud storage, treat as critical: rotate all keys immediately and audit what data those credentials could have accessed.
 
 ## Immediate Response: Contain the Breach
 

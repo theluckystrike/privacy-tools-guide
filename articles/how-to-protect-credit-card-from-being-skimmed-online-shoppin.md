@@ -9,6 +9,7 @@ permalink: /how-to-protect-credit-card-from-being-skimmed-online-shoppin/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

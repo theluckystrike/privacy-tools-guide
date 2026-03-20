@@ -9,13 +9,14 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
 # WireGuard Dynamic Endpoint Update: How Roaming Between Networks Works
 
-WireGuard's lightweight protocol design makes it well-suited for devices that move between networks. Whether you're managing a laptop that transitions between WiFi and cellular, a vehicle roaming between cell towers, or a remote worker switching between home office and coffee shop, understanding how WireGuard handles dynamic endpoint updates ensures uninterrupted connectivity.
+WireGuard automatically detects when your device's IP changes (WiFi to cellular, switching coffee shops) and updates the endpoint dynamically without dropping the tunnel, unlike OpenVPN which requires reconnection. Enable this by configuring PersistentKeepalive = 25 (sends heartbeat packets every 25 seconds) and letting the peer endpoint be updated by sending packets from the new address—WireGuard's stateless design means it accepts packets from new IPs as long as the cryptographic keys match. This provides seamless roaming for mobile devices and laptops without application layer reconnections; however, the initial handshake may briefly interrupt traffic during the IP transition.
 
 ## How WireGuard Handles Network Roaming
 

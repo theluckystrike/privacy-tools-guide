@@ -8,11 +8,12 @@ permalink: /tor-circuit-how-it-works-visualization-explained/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When you use Tor Browser or connect to the Tor network, your traffic travels through a carefully constructed pathway called a circuit. Understanding how these circuits work helps developers build privacy-focused applications and empowers power users to make informed security decisions. This guide visualizes the Tor circuit architecture and explains each component in technical detail.
+Tor circuits route your traffic through exactly three relays—the guard node (knows your IP but not destination), middle node (knows neither origin nor destination), and exit node (knows destination but not origin)—such that no single relay sees your complete path. This three-hop design encrypts traffic at each layer and balances anonymity with performance, making it computationally infeasible for passive adversaries to trace your connection from origin to destination even if they control some network infrastructure.
 
 ## The Three-Hop Tor Circuit
 

@@ -16,6 +16,7 @@ voice-checked: true
 {% raw %}
 
 This guide assumes you have access to a trusted computer and can install software. If you are in immediate danger, skip to the emergency section at the end. The technical measures here complement—not replace—professional support and safety planning.
+Immediately enable full-disk encryption (FileVault on macOS, BitLocker on Windows, LUKS on Linux), create a new anonymous email account from a safe device, use a password manager to generate strong unique passwords for all accounts, remove all location-sharing features and check for hidden tracking apps, and use Tor for any sensitive communications. Change all recovery methods and security questions, remove the abuser's access to shared accounts, and establish emergency contacts outside the abuser's network. This guide provides immediate and long-term actionable technical steps with code examples for securing your digital safety when leaving an abusive relationship.
 
 ## Threat Model
 

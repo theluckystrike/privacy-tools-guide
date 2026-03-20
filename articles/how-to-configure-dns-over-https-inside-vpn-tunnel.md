@@ -8,6 +8,7 @@ permalink: /how-to-configure-dns-over-https-inside-vpn-tunnel/
 categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

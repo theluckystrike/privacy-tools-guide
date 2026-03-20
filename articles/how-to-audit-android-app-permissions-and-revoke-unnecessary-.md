@@ -9,6 +9,7 @@ permalink: /how-to-audit-android-app-permissions-and-revoke-unnecessary-/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

@@ -8,11 +8,12 @@ permalink: /how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/
 categories: [guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-DNS hijacking redirects your traffic through malicious servers, allowing attackers to intercept data, block access to legitimate sites, or serve phishing content. This guide covers the symptoms of DNS hijacking and practical detection methods for developers and power users.
+Detect DNS hijacking by running `nslookup` or `dig` to verify which DNS server is resolving your queries—compare results against your configured DNS settings. Check for unexpected website redirects, SSL certificate errors on previously-working sites, and access blocks to security websites. Use online DNS checkers (DNS Leak Test) to confirm your ISP's DNS or a hijacking attempt. If suspected, change your router's DNS settings to Cloudflare (1.1.1.1), Quad9 (9.9.9.9), or OpenDNS, and clear your browser's DNS cache.
 
 ## Common Symptoms of DNS Hijacking
 

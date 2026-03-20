@@ -8,13 +8,13 @@ permalink: /how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Virtual credit card numbers have become an essential tool for anyone serious about online privacy. Privacy.com, a financial technology company, offers a service that generates temporary card numbers linked to your actual bank account—but with significant privacy benefits. This guide covers practical usage patterns, API integration for developers, and advanced workflows for power users.
+Use Privacy.com to generate unique virtual card numbers for each merchant: sign up, link your bank account, and create a new card for each online purchase with a custom spending limit (e.g., $25 per transaction, $50 monthly). If that merchant is breached, only that specific virtual card is exposed while your real bank account remains protected. Pause or delete cards instantly without contacting your bank. This prevents merchant profiling and cross-site tracking while protecting against credential theft.
 
 ## What Privacy.com Virtual Cards Offer
 

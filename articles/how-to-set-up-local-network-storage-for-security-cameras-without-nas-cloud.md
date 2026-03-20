@@ -9,13 +9,12 @@ categories: [guides]
 voice-checked: true
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Many security camera users assume that cloud storage or expensive NAS devices are the only options for storing footage. This assumption leads to ongoing subscription costs, privacy concerns, and dependence on internet connectivity. Fortunately, you can set up local network storage for security cameras without relying on NAS cloud services or monthly fees.
-
-This guide covers practical approaches to building a private, reliable video storage system using hardware you likely already own or can inexpensively acquire. Developers and power users will appreciate the flexibility and control that comes with self-hosted solutions.
+Set up a dedicated Linux PC or Raspberry Pi with large external drives running Frigate or MotionEye to record directly from IP cameras over your local network—no cloud required, no subscriptions. Alternatively, configure your router to attach external storage and set up Samba network shares where cameras record directly. Both methods cost $50-200 in hardware for a complete system that stores months of footage locally while avoiding cloud vendor dependence.
 
 ## Understanding Your Storage Requirements
 

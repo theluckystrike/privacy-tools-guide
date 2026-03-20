@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # VPN for Remote Desktop Connection from Hotel WiFi Safely
 
-Hotel WiFi networks present significant security risks for remote desktop connections. These networks are typically shared among hundreds of guests, rarely encrypted properly, and can be monitored by malicious actors or even the hotels themselves. Using a VPN to protect your Remote Desktop Protocol (RDP) or Virtual Network Computing (VNC) connections is essential when working remotely from hotels.
+Hotel WiFi is vulnerable to packet sniffing, man-in-the-middle attacks, and session hijacking; tunneling RDP or VNC through a VPN encrypts your credentials and session data, preventing attackers on the same network from capturing them. Use WireGuard or OpenVPN over hotel WiFi, ensure the VPN has a kill switch to disconnect RDP if the tunnel drops, and route all traffic through the tunnel (no split tunneling). A self-hosted VPN on your corporate server or cloud provider is better than public VPN services for this use case, because you control the authentication and can audit logs.
 
 ## The Security Risks of Hotel WiFi
 

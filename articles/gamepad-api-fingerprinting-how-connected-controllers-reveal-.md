@@ -8,7 +8,7 @@ permalink: /gamepad-api-fingerprinting-how-connected-controllers-reveal-/
 categories: [guides, security]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

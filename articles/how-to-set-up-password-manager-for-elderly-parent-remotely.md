@@ -8,13 +8,13 @@ permalink: /how-to-set-up-password-manager-for-elderly-parent-remotely/
 categories: [guides, security]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Helping an elderly parent secure their digital life requires a balance between security and simplicity. Remote password manager setup solves this challenge by giving you visibility into their accounts while keeping their credentials accessible only to them. This guide walks through the technical process of configuring a password manager for a parent remotely, assuming you're comfortable with CLI tools and security concepts.
+Use Bitwarden or 1Password family plans to remotely manage your parent's passwords while they retain independent access: you create and share credentials with them through shared vaults, reducing their burden while you maintain oversight. Install the app on their device, share commonly-needed passwords from your vault, and they inherit a simplified vault containing only their frequently-used accounts. Add a backup email address you control and strong authentication to prevent account lockouts.
 
 ## Understanding the Remote Setup Challenge
 
