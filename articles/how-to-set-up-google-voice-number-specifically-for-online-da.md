@@ -1,13 +1,17 @@
 ---
 
+
 layout: default
 title: "How to Set Up Google Voice Number Specifically for Online Dating Conversations: Privacy Guide"
 description: "Learn how to set up a Google Voice number for online dating while protecting your personal phone number. Complete setup guide with privacy best practices for 2026."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-set-up-google-voice-number-specifically-for-online-da/
 categories: [privacy, security, google-voice, online-dating]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "How to Create Offline Digital Library for Accessing Information During Internet Shutdowns"
 description: "A practical guide to building an offline digital library for accessing information during internet shutdowns. Learn about Kiwix, Wikipedia dumps, and tools for developers and power users."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-create-offline-digital-library-for-accessing-informat/
 categories: [guides]
+reviewed: true
+score: 8
 ---
+
 
 Building an offline digital library enables you to access critical information even when the internet becomes unavailable. Whether you're preparing for potential government-imposed blackouts, traveling to regions with unreliable connectivity, or simply wanting reliable access to knowledge without dependence on cloud services, an offline library provides independence from network constraints. This guide walks through practical methods to create and maintain a personal offline knowledge base.
 

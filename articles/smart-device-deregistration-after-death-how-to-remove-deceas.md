@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Smart Device Deregistration After Death: How to Remove Deceased Person's Accounts from Shared Devices"
 description: "A technical guide for developers and power users on removing deceased persons accounts from smart home devices, shared electronics, and IoT ecosystems."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /smart-device-deregistration-after-death-how-to-remove-deceas/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 Managing a deceased person's digital footprint across smart devices requires a systematic approach. This guide covers technical methods for removing deceased users from shared devices, smart home ecosystems, and IoT platforms—information designed for developers and power users who need actionable solutions.

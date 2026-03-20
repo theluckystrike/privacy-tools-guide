@@ -2,6 +2,7 @@
 
 
 
+
 layout: default
 title: "How to Set Up a GitHub Repository with Encrypted Estate Instructions"
 description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This guide covers age, git-crypt, and SOPS for protecting your most sensitive digital assets."
@@ -9,16 +10,17 @@ date: 2026-03-19
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
 categories: [guides]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
 
 
+
 {% raw %}
 
-Storing sensitive estate planning documents, password vaults, and financial instructions requires military-grade encryption before they ever touch a cloud repository. This guide shows you how to set up a GitHub repository with encrypted files using age encryption, ensuring that even if your repository is compromised, your most sensitive information remains unreadable. We'll cover three production-ready approaches: age (the modern, Go-based encryption tool favored by the Tor Project), git-crypt (for Git-aware transparent encryption), and SOPS (for YAML/JSON-based secret management used by Mozilla and Discord). Each method has distinct trade-offs in key management, CI/CD integration, and recovery workflows that matter for estate planning where losing access means your heirs cannot recover anything.
+Storing sensitive estate planning documents, password vaults, and financial instructions requires AES-256 encryption before they ever touch a cloud repository. This guide shows you how to set up a GitHub repository with encrypted files using age encryption, ensuring that even if your repository is compromised, your most sensitive information remains unreadable. We'll cover three production-ready approaches: age (the modern, Go-based encryption tool favored by the Tor Project), git-crypt (for Git-aware transparent encryption), and SOPS (for YAML/JSON-based secret management used by Mozilla and Discord). Each method has distinct trade-offs in key management, CI/CD integration, and recovery workflows that matter for estate planning where losing access means your heirs cannot recover anything.
 
 ## Why Encrypt Estate Documents in GitHub?
 
@@ -150,7 +152,7 @@ Now files matching your `.gitattributes` patterns encrypt automatically when you
 
 ## Method 2: Git-Crypt for Transparent Encryption
 
-Git-crypt provides Git-aware encryption that works seamlessly with standard Git workflows. Unlike age, which requires manual encryption and decryption commands, git-crypt encrypts files transparently—committed files appear as ciphertext in Git, but checkout automatically decrypts them if you possess the correct GPG key. This approach suits teams or families comfortable with GPG key management.
+Git-crypt provides Git-aware encryption that works smoothly with standard Git workflows. Unlike age, which requires manual encryption and decryption commands, git-crypt encrypts files transparently—committed files appear as ciphertext in Git, but checkout automatically decrypts them if you possess the correct GPG key. This approach suits teams or families comfortable with GPG key management.
 
 ### Installing Git-Crypt
 
@@ -352,7 +354,7 @@ Store this documentation alongside the keys or with your estate planning documen
 
 Use age encryption for the simplest setup with strong security guarantees. Its modern cryptography, small attack surface, and cross-platform support make it ideal for most estate planning use cases. The main trade-off is that key distribution requires manual coordination—each collaborator needs their own recipient key added to every encrypted file.
 
-Use git-crypt if you prefer GPG-based key management and want transparent encryption that integrates seamlessly with Git workflows. The main risk is GPG's complexity—mismanaged GPG keys are a common source of lockouts. Ensure your executor understands GPG basics before relying on this method.
+Use git-crypt if you prefer GPG-based key management and want transparent encryption that integrates smoothly with Git workflows. The main risk is GPG's complexity—mismanaged GPG keys are a common source of lockouts. Ensure your executor understands GPG basics before relying on this method.
 
 Use SOPS when your estate documents include structured configuration files where you want to keep some fields readable while encrypting others. The learning curve is steeper than age, but SOPS excels in CI/CD pipelines if you want automated deployment of decrypted values to servers.
 
