@@ -264,6 +264,83 @@ My email is [your email]. Please confirm receipt and completion within
 - **Skipping verification** - Most brokers require email confirmation
 - **Ignoring re-listings** - Check quarterly for re-appeared data
 
+## Tracking Opt-Out Progress in a Local Database
+
+Submitting requests is only half the work. Without a record of what you submitted and when, you will lose track of which brokers have been addressed and which are overdue for a re-check. A SQLite database keeps this organized without requiring any external service:
+
+```python
+import sqlite3
+from datetime import datetime, timedelta
+
+DB_PATH = "optout-tracker.db"
+
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS submissions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            broker TEXT NOT NULL,
+            email TEXT NOT NULL,
+            submitted_at TEXT NOT NULL,
+            verified_removed INTEGER DEFAULT 0,
+            verified_at TEXT,
+            next_check_due TEXT NOT NULL
+        )
+    """)
+    conn.commit()
+    return conn
+
+def record_submission(conn, broker: str, email: str):
+    now = datetime.utcnow().isoformat()
+    next_check = (datetime.utcnow() + timedelta(days=30)).isoformat()
+    conn.execute(
+        "INSERT INTO submissions (broker, email, submitted_at, next_check_due) VALUES (?, ?, ?, ?)",
+        (broker, email, now, next_check)
+    )
+    conn.commit()
+
+def due_for_check(conn) -> list:
+    """Return all brokers where the next check date has passed."""
+    now = datetime.utcnow().isoformat()
+    rows = conn.execute(
+        "SELECT broker, email, submitted_at FROM submissions WHERE next_check_due <= ? AND verified_removed = 0",
+        (now,)
+    ).fetchall()
+    return [{"broker": r[0], "email": r[1], "submitted": r[2]} for r in rows]
+
+def mark_verified(conn, broker: str, email: str):
+    now = datetime.utcnow().isoformat()
+    conn.execute(
+        "UPDATE submissions SET verified_removed = 1, verified_at = ? WHERE broker = ? AND email = ?",
+        (now, broker, email)
+    )
+    conn.commit()
+```
+
+Run `due_for_check()` weekly from a cron job to get a list of brokers that need re-verification. If a broker re-listed your data, call `record_submission()` again to start a new tracking cycle.
+
+## Using a Dedicated Opt-Out Email Address
+
+Submitting opt-out requests with your primary email creates a new problem: you are confirming that address to each broker's marketing database when you click the verification link. Use a dedicated address instead:
+
+1. Create a new email address specifically for opt-outs (e.g., `yourname-optout@proton.me`).
+2. This address never receives legitimate mail, so any message to it is either a confirmation link or spam from a broker that re-listed you.
+3. Forward confirmation links from this address to a scratchpad, then let the address go dormant between opt-out cycles.
+4. If you start receiving fresh marketing to this address six months later, that is a signal that a specific broker re-listed your contact information.
+
+For the automated script above, pass this dedicated address as the `email` parameter. The actual personal data you want removed (your real name, home address, phone) goes in the form fields where the broker requires it — the opt-out email address itself does not need to match your real identity.
+
+## What Data Brokers Cannot Remove
+
+Even after successful opt-outs, some data sources fall outside individual brokers' control:
+
+- **Public court records** — criminal history, civil judgments, and property liens are public record. Brokers pull from these sources continuously. An opt-out from a broker removes your profile from their platform but does not prevent them from re-ingesting the same public record.
+- **Voter registration** — in most US states, voter rolls are public. In states with opt-out provisions (California, Colorado), you can request suppression of your voter record from commercial use.
+- **Property records** — deeds and tax assessor records are public in most jurisdictions and are a primary source for home address data.
+- **Social media** — any public posts, profile information, or tagged content remains indexed even after broker opt-outs.
+
+For maximum reduction of your data footprint, combine broker opt-outs with source-level actions: set social profiles to private, use a PO box for any address that enters public records, and register to vote using a privacy address if your state allows it.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
