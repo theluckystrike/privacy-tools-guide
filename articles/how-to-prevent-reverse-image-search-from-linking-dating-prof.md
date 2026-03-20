@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Prevent Reverse Image Search from Linking Dating."
-description: "A practical guide for developers and power users to prevent reverse image search engines from linking dating profile photos to your real identity."
+title: "How to Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity"
+description: "A practical technical guide for developers and power users on how to prevent reverse image search engines from linking your dating profile photos to your real identity using metadata stripping, perceptual hashing countermeasures, and dedicated photos."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-reverse-image-search-from-linking-dating-prof/
@@ -192,7 +192,6 @@ Preventing reverse image search from linking your dating profile to your real id
 
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
