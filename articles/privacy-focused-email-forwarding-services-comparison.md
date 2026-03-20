@@ -472,3 +472,9 @@ Email forwarding is essential for privacy. Your real email is too valuable to ex
 Start with DuckDuckGo Email (free, unlimited) for casual use. Upgrade to SimpleLogin ($40/year) if you want analytics and reply capability. Self-host ForwardEmail if you want complete control.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
