@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Qubes OS Compartmentalized Workflow Guide: Separating Work and Personal in 2026"
+title: "Qubes OS Compartmentalized Workflow Guide"
 description: "A practical guide to implementing a compartmentalized workflow in Qubes OS, isolating work and personal activities with proven security boundaries."
 date: 2026-03-18
 author: theluckystrike

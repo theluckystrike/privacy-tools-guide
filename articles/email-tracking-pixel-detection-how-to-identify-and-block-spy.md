@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Email Tracking Pixel Detection: How to Identify and Block Spy Pixels in Messages"
+title: "Email Tracking Pixel Detection"
 description: "Learn technical methods to detect, identify, and block email tracking pixels. Practical code examples for developers and power users."
 date: 2026-03-16
 author: theluckystrike

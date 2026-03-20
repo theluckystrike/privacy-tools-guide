@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Disable WebRTC Leaks in Tor Browser: A Developer's Guide"
+title: "How to Disable WebRTC Leaks in Tor Browser"
 description: "Learn how to identify and mitigate WebRTC IP address leaks in Tor Browser. Practical techniques for developers and power users concerned about privacy."
 date: 2026-03-15
 author: theluckystrike

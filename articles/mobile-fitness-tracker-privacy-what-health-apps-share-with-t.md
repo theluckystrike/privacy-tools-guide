@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Mobile Fitness Tracker Privacy: What Health Apps Share with Third Parties in 2026"
+title: "Mobile Fitness Tracker Privacy"
 description: "A technical deep-dive into mobile fitness tracker privacy. Learn what data health apps share with third parties, how APIs expose your information, and."
 date: 2026-03-16
 author: theluckystrike

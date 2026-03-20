@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Bitwarden vs LastPass Migration Guide: Complete Technical Walkthrough"
+title: "Bitwarden vs LastPass Migration Guide"
 description: "A practical guide for developers migrating from LastPass to Bitwarden. Covers CLI-based export/import, handling TOTP codes, custom fields, and."
 date: 2026-03-15
 author: theluckystrike

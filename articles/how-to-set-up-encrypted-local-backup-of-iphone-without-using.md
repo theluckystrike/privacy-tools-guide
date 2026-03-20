@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Encrypted Local Backup Of Iphone Without Using Icloud"
+title: "Set Up Encrypted Local Backup Of Iphone Without Using Icloud"
 description: "A practical guide for developers and power users to create encrypted local backups of your iPhone using Finder or iTunes, keeping your data private and."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Filen vs Proton Drive Comparison 2026: A Developer Perspective"
+title: "Filen vs Proton Drive Comparison 2026"
 description: "Technical comparison of Filen and Proton Drive for developers. Analyze encryption APIs, CLI tools, SDK availability, and automation capabilities."
 date: 2026-03-15
 author: "Privacy Tools Guide"

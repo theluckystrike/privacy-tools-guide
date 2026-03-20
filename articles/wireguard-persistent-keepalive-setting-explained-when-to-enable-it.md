@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "WireGuard Persistent Keepalive Setting Explained: When to Enable It"
+title: "WireGuard Persistent Keepalive Setting Explained"
 description: "Learn when to enable WireGuard persistent keepalive. Practical guide covering NAT traversal, firewall timeouts, and configuration examples for developers."
 date: 2026-03-16
 author: theluckystrike

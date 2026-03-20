@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How To Configure Openvpn With Obfuscation For Censored Networks"
+title: "Configure Openvpn With Obfuscation For Censored Networks"
 description: "A practical guide to configuring OpenVPN with obfuscation to bypass network censorship. Learn about OpenVPN obfuscation techniques, configuration."
 date: 2026-03-16
 author: theluckystrike

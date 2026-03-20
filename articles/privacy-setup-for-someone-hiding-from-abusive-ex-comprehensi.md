@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Privacy Setup for Someone Hiding from Abusive Ex: Comprehensive Guide"
+title: "Privacy Setup for Someone Hiding from Abusive Ex"
 description: "A technical guide to hardening your digital presence when escaping domestic violence. Covers device hardening, account isolation, network security, and operational security for developers and power users."
 date: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Protect Yourself from Doxxing After Meeting Someone Through Online Dating Platforms"
+title: "Protect Yourself from Doxxing After Meeting Someone Through Online Dating Platforms"
 description: "A practical security guide for developers and power users on protecting your personal information after meeting someone through online dating."
 date: 2026-03-15
 author: "Privacy Tools Guide"

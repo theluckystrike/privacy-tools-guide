@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Smart Sleep Tracker Privacy Comparison: What Oura, Whoop, and Eight Sleep Collect About You"
+title: "Smart Sleep Tracker Privacy Comparison"
 description: "A technical breakdown of privacy practices across Oura Ring, Whoop 4.0, and Eight Sleep. Learn what biometric data these sleep trackers collect, how."
 date: 2026-03-16
 author: theluckystrike
