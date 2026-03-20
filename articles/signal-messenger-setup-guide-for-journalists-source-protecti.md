@@ -11,6 +11,7 @@ categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 
