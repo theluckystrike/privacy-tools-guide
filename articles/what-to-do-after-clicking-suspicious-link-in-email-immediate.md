@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /what-to-do-after-clicking-suspicious-link-in-email-immediate/
 categories: [guides]
 reviewed: true
-score: 0
+score: 8
 intent-checked: true
 voice-checked: true
 ---

@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /vpn-for-accessing-south-african-streaming-services-abroad-20/
 categories: [guides]
 reviewed: true
-score: 0
+score: 8
 intent-checked: true
 voice-checked: true
 ---
