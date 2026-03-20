@@ -150,6 +150,178 @@ Corrupted keyrings can cause unpredictable behavior. Backup your `.gnupg` direct
 
 Forgotten passphrases have no recovery mechanism. If you lose both the passphrase and the key, the data is irrecoverably lost. Maintain backups of both.
 
+## Hardware Security Keys for Email Encryption
+
+For users handling highly sensitive communications, hardware security keys provide an additional layer of protection against key theft and unauthorized access.
+
+### FIDO2-Compatible Keys with OpenPGP
+
+Some hardware security keys support OpenPGP card emulation, enabling encrypted key storage on physical devices. YubiKey 5 and similar devices store private keys in tamper-resistant hardware, making them significantly harder to compromise than software-stored keys.
+
+```bash
+# Import a key to YubiKey via GPG
+gpg --card-edit
+
+# At the gpg/card> prompt:
+gpg/card> admin
+gpg/card> generate
+
+# Follow the wizard to generate keys directly on the device
+# This approach never exposes the private key to the computer
+```
+
+The primary advantage is that the private key never exists as a plain file on your system. Even if your computer is compromised, the attacker cannot extract keys from your YubiKey without physical access and specialized equipment.
+
+### Certificate-Based Hardware Keys for S/MIME
+
+Organizations using S/MIME can store certificates on smart cards or hardware tokens. This approach combines the hierarchical trust model of PKI with hardware-protected keys.
+
+Common options include:
+
+- **YubiKey NEO/NFC** ($45-60): Supports OpenPGP and OATH-based authentication
+- **Ledger Nano** ($60-80): Primarily cryptocurrency-focused but includes OpenPGP support
+- **IDCore 3300** ($200+): Enterprise-grade hardware security module
+- **SoloKey2** ($99): Open-source hardware security key
+
+## Advanced Automation with Email Signing
+
+Developers maintaining mailing lists or automated systems can sign emails programmatically using automated GPG authentication.
+
+### Batch Email Signing in Python
+
+```python
+import gnupg
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+gpg = gnupg.GPG(gnupghome='/home/user/.gnupg')
+
+def send_signed_email(to, subject, message_body, signing_key_id):
+    # Create signature of message body
+    signed_data = gpg.sign(message_body, keyid=signing_key_id)
+
+    # Create MIME structure
+    msg = MIMEMultipart()
+    msg['From'] = 'sender@example.com'
+    msg['To'] = to
+    msg['Subject'] = subject
+
+    # Add signed message
+    part = MIMEText(str(signed_data), 'plain')
+    msg.attach(part)
+
+    # Send via SMTP
+    with smtplib.SMTP('smtp.example.com', 587) as server:
+        server.starttls()
+        server.login('sender@example.com', 'password')
+        server.send_message(msg)
+```
+
+This approach enables automated systems to provide cryptographic proof of message origin without manual intervention.
+
+### Shell Script Automation
+
+For developers preferring command-line automation:
+
+```bash
+#!/bin/bash
+# encrypt_and_send.sh - Encrypt and sign email via CLI
+
+RECIPIENT="$1"
+SUBJECT="$2"
+MESSAGE_FILE="$3"
+SIGNING_KEY="$4"
+
+# Sign and encrypt in one operation
+gpg --sign --encrypt \
+    --recipient "$RECIPIENT" \
+    --local-user "$SIGNING_KEY" \
+    --armor \
+    --output message.asc \
+    "$MESSAGE_FILE"
+
+# Send encrypted message
+sendmail "$RECIPIENT" < message.asc
+```
+
+## PGP Key Distribution Strategies
+
+Effective key distribution remains a significant practical challenge. Your key is only useful if correspondents can verify it belongs to you.
+
+### Key Signing Parties
+
+In-person key signing events provide strong key verification. Participants exchange contact information and sign each other's keys, creating a web of trust. This approach works well for groups with geographic proximity.
+
+### Key Distribution via DNS (DANE)
+
+DANE (DNS-based Authentication of Named Entities) allows you to publish your public key in DNS records:
+
+```bash
+# Example DNS TXT record for PGP keys
+# _pgpkey.example.com TXT "v=PGPvER;fpr=FINGERPRINT;email=user@example.com"
+
+# Query DANE records
+dig _pgpkey.example.com TXT
+```
+
+This approach provides key distribution independent of email servers, though it requires control over your domain's DNS.
+
+### Keybase and Key Transparency Services
+
+Keybase and similar services provide centralized key distribution with cryptographic proofs of identity. Users link their keys to social media accounts and other verifiable identities, enabling correspondents to verify key ownership.
+
+```bash
+# Import a Keybase user's key locally
+keybase pgp export | gpg --import
+```
+
+The trade-off involves trusting a third party with your key metadata and identity information.
+
+## Troubleshooting Expired Keys and Key Rotation
+
+Key expiration becomes a critical concern for long-term encryption projects.
+
+### Identifying Expiring Keys
+
+```bash
+gpg --list-keys --with-validity | grep -i "exp"
+```
+
+This command shows all keys with their expiration status. Keys expiring within 30 days warrant immediate attention.
+
+### Extending Key Expiration
+
+Rather than rotating keys entirely, you can extend expiration:
+
+```bash
+# Interactive key editing
+gpg --edit-key YOUR_KEY_ID
+
+# At the gpg> prompt:
+gpg> expire
+# Follow prompts to set new expiration
+gpg> save
+```
+
+Push the updated key to keyservers:
+
+```bash
+gpg --send-keys --keyserver keyserver.ubuntu.com YOUR_KEY_ID
+```
+
+### Automated Key Rotation Policies
+
+Organizations can implement scheduled key rotation:
+
+```yaml
+# Key rotation policy
+key_rotation_interval: 365  # days
+max_key_age: 1825  # 5 years
+warning_threshold: 60  # days before expiration
+auto_revoke_expired: true
+```
+
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)

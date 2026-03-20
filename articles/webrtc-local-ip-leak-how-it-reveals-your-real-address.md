@@ -149,6 +149,140 @@ After implementing mitigation strategies, verify effectiveness:
 
 Regular testing ensures your protection remains effective as browser updates may change WebRTC behavior or introduce new leak vectors.
 
+## Advanced Leak Detection and Analysis
+
+Beyond basic WebRTC leaks, several related technologies can expose IP addresses through browser APIs. Understanding these mechanisms helps you evaluate your actual exposure.
+
+### IPv6 Leak Vectors
+
+Modern networks support both IPv4 and IPv6 protocols. WebRTC can leak IPv6 addresses, which may reveal information even when IPv4 addresses appear protected. When testing WebRTC protection, verify that both IPv4 and IPv6 addresses are properly hidden.
+
+Test IPv6 exposure using command-line tools:
+
+```bash
+# Check your IPv6 address before and after VPN connection
+ip addr show | grep 'inet6'
+
+# Compare with VPN-assigned IPv6
+curl -s "https://api64.ipify.org?format=json"
+```
+
+### STUN Server Analysis
+
+STUN servers (Session Traversal Utilities for NAT) are part of the WebRTC protocol. By analyzing responses from STUN servers, attackers can extract network topology information beyond just IP addresses.
+
+Some STUN server implementations return additional metadata:
+
+```javascript
+// Advanced STUN server probing
+const stun_servers = [
+  'stun.l.google.com:19302',
+  'stun1.l.google.com:19302',
+  'stun2.l.google.com:19302',
+  'stun3.l.google.com:19302',
+  'stun4.l.google.com:19302'
+];
+
+// Testing against multiple servers reveals if all return same IP
+// Different servers returning different IPs suggests NAT issues
+```
+
+Sophisticated attackers may maintain their own STUN servers to gather detailed mapping of users' network configurations.
+
+### DNS Leak Correlation
+
+WebRTC leaks often occur alongside DNS leaks. If your DNS requests escape your VPN tunnel, they can be correlated with WebRTC IP leaks to strengthen deanonymization attacks.
+
+```bash
+# Check for DNS leaks
+dig +short google.com @8.8.8.8
+dig +short google.com @1.1.1.1
+
+# If both work, your DNS may be escaping the VPN
+# Use your VPN provider's DNS exclusively
+
+# Configure your system DNS
+# macOS: networksetup -setdnsservers "Wi-Fi" 1.1.1.1 1.0.0.1
+# Linux: echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
+```
+
+## VPN Provider Comparison for WebRTC Protection
+
+Not all VPNs implement WebRTC leak protection equally. When evaluating VPN services:
+
+### Mullvad ($5/month, no account required)
+
+Mullvad includes kill switch and WebRTC leak protection as standard features. The "Always maximum privacy" default configuration blocks WebRTC entirely, eliminating the leak vector at the cost of disabling legitimate WebRTC applications.
+
+### ProtonVPN ($12.99/month for Plus)
+
+ProtonVPN's NetShield feature includes WebRTC leak blocking. The service publishes detailed documentation about its leak protection implementation, which is valuable for technical users evaluating the solution.
+
+### IVPN ($60/year, open-source client)
+
+IVPN offers explicit WebRTC leak protection and provides both automatic and manual leak detection modes. The open-source client allows advanced users to verify the implementation.
+
+### Windscribe (Free tier available, paid $5.88/month)
+
+Windscribe's basic free tier includes some WebRTC protection, though advanced features require paid subscription. The service is known for transparent documentation and responsive support.
+
+## Enterprise VPN Considerations
+
+Organizations deploying remote work solutions should evaluate WebRTC leak implications:
+
+Configure corporate VPN clients to disable WebRTC entirely at the group policy level (Windows) or through Mobile Device Management (MDM) on mobile devices. This eliminates the attack surface rather than attempting to manage it.
+
+Test all client VPN software against known WebRTC leak detection tools before deployment. Some enterprise VPN solutions may introduce leaks due to poor protocol implementation.
+
+## Browser-Specific Protection Guidance
+
+### Brave Browser
+
+Brave provides excellent built-in WebRTC leak protection through its privacy settings. The default configuration blocks IP leaks while allowing WebRTC for legitimate applications. This makes Brave an excellent choice for users wanting strong defaults without extensive configuration.
+
+### Tor Browser
+
+Tor Browser isolates WebRTC from the main browsing interface, effectively preventing leaks through isolation rather than blocking. All traffic routes through Tor exits, so even if WebRTC functions, IP addresses visible to endpoints are Tor exit addresses, not your real IP.
+
+### Firefox with Hardening
+
+Firefox users can implement comprehensive protection:
+
+```javascript
+// user.js configuration for Firefox
+user_pref("media.peerconnection.enabled", false);
+user_pref("media.peerconnection.turn.disable", true);
+user_pref("media.peerconnection.use_document_iceservers", false);
+```
+
+Store this in your Firefox profile directory for persistent protection across restarts.
+
+### Chromium-Based Browsers
+
+Chromium doesn't provide built-in WebRTC leak protection. Extensions become necessary:
+
+- uBlock Origin can block WebRTC through custom filters
+- WebRTC Control extension specifically targets WebRTC blocking
+- Privacy Badger provides partial protection alongside other functionality
+
+Test any extension-based solution thoroughly, as security updates and browser version changes may affect effectiveness.
+
+## Real-World Attack Scenarios
+
+Understanding how attackers exploit WebRTC leaks helps you evaluate your actual risk:
+
+### Doxing and Harassment
+
+Activists and journalists targeted by hostile actors may face doxing attempts using WebRTC leaks combined with other identifying information. Protecting against this requires addressing the full attack chain, not just WebRTC.
+
+### Law Enforcement Investigations
+
+Agencies investigating online activity may use WebRTC leaks to break pseudonymity. Activists in authoritarian regimes face particular risks where online speech has legal consequences.
+
+### Academic Research
+
+Researchers studying privacy implementations sometimes discover that studied users can be deanonymized through WebRTC leaks when combined with metadata analysis.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
