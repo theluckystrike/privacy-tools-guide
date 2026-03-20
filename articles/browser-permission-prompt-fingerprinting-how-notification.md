@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Permission Prompt Fingerprinting How Notification"
+title: "Browser Permission Prompt Fingerprinting: How Notification Requests Enable Tracking"
 description: "Learn how websites use browser permission prompts (notifications, camera, microphone) as a fingerprinting vector to track users without cookies."
 date: 2026-03-15
 author: "Privacy Tools Guide"

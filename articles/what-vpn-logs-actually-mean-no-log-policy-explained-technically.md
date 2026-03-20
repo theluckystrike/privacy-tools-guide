@@ -161,6 +161,26 @@ Reality: Minimal connection logs for troubleshooting are acceptable. The key is 
 5. **Multi-hop connections**: Route through multiple servers for enhanced privacy
 6. **Review settings**: Disable any optional logging features
 
+```bash
+# Verify your VPN is not leaking DNS outside the tunnel
+# Run while connected to check what IP is visible
+curl -s https://ifconfig.me
+
+# Check which DNS server is active
+cat /etc/resolv.conf
+
+# Test for DNS leaks — should resolve through VPN server's DNS
+dig +short whoami.akamai.net @ns1-1.akamaitech.net
+
+# Linux with systemd-resolved: confirm active DNS
+resolvectl status | grep "DNS Server"
+
+# WireGuard: check AllowedIPs in config
+# Full tunnel:   AllowedIPs = 0.0.0.0/0, ::/0
+# Split tunnel:  AllowedIPs = 10.0.0.0/8
+grep "AllowedIPs" /etc/wireguard/wg0.conf
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
