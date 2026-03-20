@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /bumble-location-tracking-precision-how-accurately-the-app-pi/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
