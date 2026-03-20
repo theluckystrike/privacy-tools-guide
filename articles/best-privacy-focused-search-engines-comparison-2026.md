@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /best-privacy-focused-search-engines-comparison-2026/
 categories: [guides]
-tags: [privacy, search-engines, security, privacy-tools]
+tags: [privacy-tools-guide, privacy, search-engines, security, privacy-tools, best-of]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
