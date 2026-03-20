@@ -19,7 +19,7 @@ Canvas fingerprinting is one of the most persistent tracking techniques used by 
 
 ## Understanding Canvas Fingerprinting
 
-Before examining blockers, you need to understand what canvas fingerprinting actually does. When a website renders text or graphics to an HTML5 canvas element, the browser produces a unique image based on your operating system, GPU, installed fonts, driver version, and rendering pipeline. The website then converts this image to a hash string that serves as a persistent identifier.
+Before examining blockers, you need to understand what canvas fingerprinting actually does. When a website renders text or graphics to an HTML5 canvas element, the browser produces an unique image based on your operating system, GPU, installed fonts, driver version, and rendering pipeline. The website then converts this image to a hash string that serves as a persistent identifier.
 
 Here's a minimal example of how fingerprinting works from the tracking side:
 
@@ -112,7 +112,7 @@ Canvas blockers maintain minimal additional memory footprint. Most implementatio
 The most measurable impact appears in page load timing. Extensions that hook into many canvas methods add slight latency during initialization. Benchmarks from privacy tool testing communities show:
 
 - Lightweight blockers: 5-15ms added load time
-- Comprehensive blockers with randomization: 20-50ms added load time
+- blockers with randomization: 20-50ms added load time
 
 These differences are negligible for human perception but statistically measurable.
 
@@ -200,7 +200,7 @@ Each handles the performance-compatibility tradeoff differently. Privacy-focused
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

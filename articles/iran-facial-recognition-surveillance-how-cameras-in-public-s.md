@@ -37,7 +37,7 @@ The technical pipeline follows a multi-stage process:
 
 ## Iranian Deployment Context
 
-Iran's surveillance infrastructure has expanded significantly, with reports indicating integration across multiple government agencies. The system reportedly combines facial recognition with license plate recognition (ALPR), mobile phone metadata, and internet monitoring to create comprehensive citizen profiles.
+Iran's surveillance infrastructure has expanded significantly, with reports indicating integration across multiple government agencies. The system reportedly combines facial recognition with license plate recognition (ALPR), mobile phone metadata, and internet monitoring to create citizen profiles.
 
 The Islamic Republic's Passive Defense Organization has promoted "smart city" initiatives that integrate surveillance cameras with behavioral analysis algorithms. These systems claim to detect "abnormal behaviors" but raise concerns about political targeting and mass surveillance capabilities.
 
@@ -165,7 +165,7 @@ The proliferation of surveillance technology raises concerns beyond individual p
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -20,7 +20,7 @@ Cross-site cookie tracking remains one of the most persistent methods advertiser
 
 To appreciate what Total Cookie Protection accomplishes, you need to understand how traditional cookie tracking operates. When you visit a website, that site can set cookies that are accessible not just to itself, but to any third party embedded on the page. A typical news site might embed content from dozens of external domains—advertising networks, analytics providers, social media widgets, and more. Each of these third parties can set cookies that persist across your entire browsing session.
 
-The critical vulnerability is that these third-party cookies can share identifiers across sites. When you visit Site A and Site B, both loading content from the same advertising network, that network can recognize you as the same visitor by reading the same cookie it set earlier. This allows trackers to construct browsing histories that span thousands of sites, building detailed profiles of user behavior, interests, and demographics.
+The critical vulnerability is that these third-party cookies can share identifiers across sites. When you visit Site An and Site B, both loading content from the same advertising network, that network can recognize you as the same visitor by reading the same cookie it set earlier. This allows trackers to construct browsing histories that span thousands of sites, building detailed profiles of user behavior, interests, and demographics.
 
 Traditional browser privacy settings often attempted to block third-party cookies entirely. However, this approach frequently broke legitimate website functionality—single sign-on systems, embedded content, and payment processing often rely on cross-site cookie access. The result was a perpetual arms race where users had to choose between privacy and functionality.
 
@@ -58,7 +58,7 @@ Setting `network.cookie.cookieBehavior` to 5 enables Total Cookie Protection alo
 
 ## Interaction with Related Privacy Features
 
-Total Cookie Protection works alongside other Firefox privacy features to provide comprehensive tracking defense. It complements Enhanced Tracking Protection's blocking of known trackers, SmartBlock's handling of first-party fallbacks, and the containerization system used by Firefox Multi-Account Containers.
+Total Cookie Protection works alongside other Firefox privacy features to provide tracking defense. It complements Enhanced Tracking Protection's blocking of known trackers, SmartBlock's handling of first-party fallbacks, and the containerization system used by Firefox Multi-Account Containers.
 
 The relationship with First-Party Isolation (FPI) is worth noting. FPI, an earlier privacy mechanism in Firefox, also partitioned cookies by top-level domain but with different implementation details. Total Cookie Protection supersedes FPI in terms of tracking prevention effectiveness while maintaining better compatibility with legitimate website features. If you encounter sites that worked with FPI but break under Total Cookie Protection, you can report these as compatibility issues to Firefox developers.
 
@@ -74,7 +74,7 @@ For authentication systems that previously relied on third-party cookies, consid
 
 ## Limitations and Considerations
 
-While Total Cookie Protection significantly reduces cross-site tracking, it does not prevent all forms of tracking. Browser fingerprinting—collecting device characteristics like screen resolution, installed fonts, and WebGL capabilities—remains possible even with robust cookie isolation. Firefox includes fingerprinting protection in its Enhanced Tracking Protection, but sophisticated fingerprinting techniques can still partially identify users.
+While Total Cookie Protection significantly reduces cross-site tracking, it does not prevent all forms of tracking. Browser fingerprinting—collecting device characteristics like screen resolution, installed fonts, and WebGL capabilities—remains possible even with cookie isolation. Firefox includes fingerprinting protection in its Enhanced Tracking Protection, but sophisticated fingerprinting techniques can still partially identify users.
 
 Supercookies and other storage mechanisms like ETags, cache timing, and HSTS supercookies operate outside the cookie system entirely. Firefox's Total Cookie Protection specifically targets HTTP cookies and does not automatically block these alternative tracking vectors.
 
@@ -84,7 +84,7 @@ Network-level tracking, where ISPs or network observers log DNS queries and traf
 
 Understanding what Total Cookie Protection protects against helps you evaluate whether your configuration meets your privacy needs:
 
-**Behavioral Profile Building**: Without partitioning, advertisers track you across dozens of sites—your reading habits, shopping interests, political views, health concerns—building a comprehensive behavioral profile. With TCP, each site's third parties see only what you do on that specific site. A fashion retailer cannot see that you visit health symptom checkers.
+**Behavioral Profile Building**: Without partitioning, advertisers track you across dozens of sites—your reading habits, shopping interests, political views, health concerns—building a behavioral profile. With TCP, each site's third parties see only what you do on that specific site. A fashion retailer cannot see that you visit health symptom checkers.
 
 **Cross-Domain Fingerprinting**: Trackers combine cookies with other identifiers (canvas fingerprinting, IP addresses) to recognize you across sites. TCP prevents the cookie component of this attack, though browser fingerprinting remains effective.
 
@@ -230,9 +230,9 @@ localStorage.setItem("tracker_id", "abc123");
 **For Developers Testing Cross-Site Behavior**:
 - Use Firefox private/incognito mode (temporary settings)
 - Or temporarily disable TCP for testing:
-  - Go to about:preferences#privacy
-  - Switch from "Strict" to "Standard" temporarily
-  - Note that this significantly reduces tracking protection
+ - Go to about:preferences#privacy
+ - Switch from "Strict" to "Standard" temporarily
+ - Note that this significantly reduces tracking protection
 
 ## Common Implementation Mistakes
 
@@ -260,7 +260,7 @@ curl -v https://example.com 2>&1 | grep -i "set-cookie"
 
 ## Limitations and Complementary Protections
 
-While TCP is robust, it doesn't prevent:
+While TCP is, it doesn't prevent:
 
 **Browser Fingerprinting**: Canvas fingerprinting, WebGL fingerprinting, font detection, and other technique still work. Use Firefox's fingerprinting protection (Enhanced Tracking Protection → Strict).
 
@@ -273,7 +273,7 @@ While TCP is robust, it doesn't prevent:
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

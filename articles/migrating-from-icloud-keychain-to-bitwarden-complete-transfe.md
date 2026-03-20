@@ -18,7 +18,7 @@ Bitwarden is the best alternative to iCloud Keychain for developers and power us
 
 ## Understanding iCloud Keychain Export Options
 
-Apple provides limited direct export functionality for iCloud Keychain. Unlike browsers that offer straightforward CSV exports, iCloud Keychain requires workarounds to extract passwords in a usable format.
+Apple provides limited direct export functionality for iCloud Keychain. Unlike browsers that offer straightforward CSV exports, iCloud Keychain requires workarounds to extract passwords in an usable format.
 
 Three primary approaches exist for developers:
 
@@ -247,7 +247,7 @@ During migration, follow these practices:
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
