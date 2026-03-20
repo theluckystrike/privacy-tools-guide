@@ -128,6 +128,156 @@ Third-party email services must be included in your SPF record. If you switch fr
 
 DMARC reports can be overwhelming. Start with `p=none` to gather baseline data, then move to `p=quarantine`, and finally `p=reject` once you're confident your legitimate email sources are properly configured.
 
+## Authentication Flow Diagrams
+
+Understanding the complete authentication process helps troubleshoot failures. When an email arrives, receiving servers follow this sequence:
+
+```
+Email arrives at receiving server
+    ↓
+1. SPF Validation
+   - Extract Return-Path domain
+   - Look up SPF record
+   - Check sender IP against allowed IPs
+   - Result: PASS/FAIL/SOFTFAIL/NEUTRAL
+    ↓
+2. DKIM Validation
+   - Extract d= and s= from DKIM-Signature header
+   - Look up public key from DNS
+   - Verify signature against header and body
+   - Result: PASS/FAIL/NEUTRAL
+    ↓
+3. DMARC Alignment Check
+   - For SPF: Does Return-Path domain align with From domain?
+   - For DKIM: Does d= domain align with From domain?
+   - Does at least one authentication method pass with alignment?
+   - Result: PASS/FAIL
+    ↓
+4. Apply DMARC Policy
+   - p=none: Monitor (no action)
+   - p=quarantine: Move to spam
+   - p=reject: Reject entirely
+```
+
+This alignment requirement is critical. Your email can pass SPF but fail DMARC if the SPF-passing domain doesn't match the From address domain. Similarly, DKIM can pass authentication but fail DMARC alignment if the signing domain doesn't match the From domain.
+
+## Advanced Configuration: Subdomain Policy
+
+For organizations with multiple subdomains sending email, the `sp` parameter provides subdomain-specific policies:
+
+```
+v=DMARC1; p=reject; sp=quarantine; rua=mailto:dmarc@example.com
+```
+
+This configuration rejects mail from the primary domain but quarantines mail from subdomains. This prevents overly strict policies from affecting mail from departments or services using subdomains.
+
+## Forensic Reports and DMARC Debugging
+
+DMARC forensic reports (`ruf=`) provide detailed information about individual message failures. While aggregate reports tell you percentages, forensic reports show exactly which messages failed and why:
+
+```
+v=DMARC1; p=reject;
+  rua=mailto:aggregate@example.com;
+  ruf=mailto:forensic@example.com;
+  fo=1:d:s:x
+```
+
+The `fo` parameter controls forensic report generation:
+- `0` (default): Send forensic reports for any failure
+- `1`: Send only for DKIM and SPF failures
+- `d`: Send only for DKIM failures
+- `s`: Send only for SPF failures
+- `x`: Send for forensic report generation errors
+
+## Real-World Failure Scenarios
+
+**Scenario 1: Third-Party Email Service**
+Your marketing team uses Mailchimp. Emails pass DKIM (Mailchimp signs them) but SPF fails because Mailchimp's servers aren't in your SPF record. Solution: Update SPF to `include:_spf.mailchimp.com`.
+
+**Scenario 2: Email Forwarding**
+Someone forwards your email to a mailing list. The forwarding service re-sends it with its own envelope sender (Return-Path), breaking SPF alignment. The DKIM signature usually survives forwarding, allowing DMARC to pass. This is why DKIM is essential for organizations whose mail gets forwarded.
+
+**Scenario 3: Acquired Company**
+You acquire a company that sends mail from domain.acquired.com but uses your mail servers. The SPF passes, but DKIM and DMARC may not align. Solution: Have the acquired domain's DMARC policy point to your aggregate report address, or ensure their mail servers have appropriate DNS records.
+
+## Monitoring Tools and Services
+
+Beyond manual DNS checks, several platforms help monitor authentication health:
+
+**MXToolbox**: Provides free SPF/DKIM/DMARC record validation and displays current policy settings. The visual interface makes it easy to spot misconfigurations.
+
+**250ok**: Commercial DMARC monitoring with detailed visualization of aggregate reports and forensic insights. Particularly useful for large organizations with complex email flows.
+
+**Valimail**: Enterprise DMARC management with account takeover protection. Automatically manages authentication policies as email services change.
+
+**dmarcian**: Smaller organizations often prefer dmarcian for its balance of features and pricing. It simplifies DMARC report analysis and suggests policy changes.
+
+## Subdomain-Specific Configuration
+
+For organizations with subdomains sending mail from different services:
+
+```
+mail.example.com sends via Google (Gmail)
+newsletter.example.com sends via Mailchimp
+api.example.com sends internally
+
+Each needs its own SPF record:
+mail.example.com: v=spf1 include:_spf.google.com ~all
+newsletter.example.com: v=spf1 include:servers.mcsv.net ~all
+api.example.com: v=spf1 ip4:10.0.0.5 ~all
+
+DMARC policy at domain level applies to subdomains unless overridden:
+_dmarc.example.com: v=DMARC1; p=quarantine; sp=reject
+(sp=reject is subdomain policy, stricter than parent)
+```
+
+This configuration allows fine-grained control over mail authentication across organizational boundaries.
+
+## Automatic Policy Escalation Strategy
+
+Implement DMARC policy strengthening gradually across time:
+
+```bash
+# Week 1: Deploy SPF and DKIM
+# Monitor for legitimate mail sources
+
+# Week 2-4: Set DMARC p=none
+# Collect baseline data
+# Identify all legitimate sending sources
+
+# Week 5-8: Set DMARC p=quarantine
+# Monitor bounce rates
+# Ensure legitimate services authenticate properly
+
+# Week 9+: Set DMARC p=reject
+# Only when you're confident about legitimate sources
+```
+
+Document the date of each policy change. If issues arise after policy strengthening, you can roll back with a specific rollback date.
+
+## Email Forwarding and DMARC Alignment
+
+Many organizations use email forwarding services (forwarding a work address to personal email). These break DMARC alignment:
+
+**Problem**: User's email forwarded from company.com to personal Gmail. Gmail's servers re-send with Gmail as the envelope sender. DMARC alignment fails because the forwarding server's SPF domain (Gmail) doesn't match the From address domain (company.com).
+
+**Solution 1**: Use authenticated forwarding (companies that preserve DMARC alignment):
+- Forwarding services like Dynu preserve SPF/DMARC alignment
+- Configure with specific CNAME records for your domain
+
+**Solution 2**: Allow forwarders in SPF:
+```
+v=spf1 include:_spf.google.com include:spf.protection.outlook.com ~all
+```
+
+**Solution 3**: Accept DMARC quarantine for forwarded mail:
+```
+v=DMARC1; p=quarantine; pct=80; sp=none
+(pct=80 means apply policy to 80% of traffic, allowing some flexibility for forwarders)
+```
+
+The best approach depends on your organization's email infrastructure.
+
 ## Implementation Priority
 
 For most organizations, the recommended implementation order is:

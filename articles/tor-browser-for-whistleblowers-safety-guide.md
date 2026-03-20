@@ -127,6 +127,150 @@ Tor Browser protects network-level anonymity, but endpoint compromises can still
 
 **Consider TAILS**: The TAILS amnesiac operating system leaves no trace on the host machine and routes all traffic through Tor by default. For high-risk whistleblower scenarios, TAILS provides stronger guarantees than a hardened Tor Browser on a regular OS.
 
+## Advanced Attack Vectors Against Tor Users
+
+Understanding the sophisticated attacks whistleblowers face informs defensive practices:
+
+**Exit Node Monitoring**: Attackers can operate Tor exit nodes (the final relay that connects to destination websites). They see unencrypted HTTP traffic passing through. While Tor protects your IP, traffic to unencrypted services becomes visible. Always use HTTPS when possible; verify SSL certificates match expected values.
+
+**Guard Relay Compromise**: Your entry guard is the first relay in your circuit. If an attacker controls your entry guard and the exit node, they can correlate traffic timing to deanonymize you. Mitigate by rotating identity and device usage patterns.
+
+**JavaScript Execution Attacks**: JavaScript running in your browser can potentially reveal your real IP through WebRTC leaks or plugin vulnerabilities. Tor Browser disables JavaScript by default at Safer security levels, but some sites require it. When enabling JavaScript, understand you're accepting additional risk.
+
+**Browser Fingerprinting Resistance**: Tor Browser normalizes browser characteristics (window size, timezone, font availability) to prevent identification based on unique browser configurations. However, plugins and extensions can reintroduce fingerprinting vectors.
+
+## Compartmentalization Strategy for Sensitive Work
+
+The most sophisticated whistleblowers practice complete compartmentalization:
+
+**Device Separation**
+- Dedicated device (old laptop or Raspberry Pi) for Tor-based whistleblower work
+- Never use this device for personal browsing, email, or regular work
+- Store on encrypted USB, accessible only in secure location
+
+**Network Separation**
+- Access via public WiFi (library, coffee shop) rather than home network
+- Never access Tor whistleblower work from office network
+- Consider using a mobile hotspot purchased with cash for internet access
+
+**Identity Separation**
+- Create entirely separate online identities
+- Never reference your real name, email, or identifiable information
+- Use pseudonyms consistently across communications
+
+**Time Separation**
+- Avoid accessing whistleblower accounts at predictable times
+- Vary access patterns to prevent temporal analysis
+- Never access while also being observed online elsewhere
+
+This compartmentalization approach adds operational security layers beyond Tor's technical guarantees.
+
+## Metadata Preservation in Downloaded Documents
+
+Documents often contain metadata revealing system information:
+
+```bash
+# Examine metadata before sharing
+exiftool document.pdf
+
+# Output might reveal:
+# Creator: John Smith
+# Producer: Microsoft Word 16.16
+# CreateDate: 2026-03-14
+
+# Strip all metadata
+exiftool -all= document.pdf
+
+# Verify metadata removal
+exiftool cleaned_document.pdf
+# Should show no document-specific metadata
+```
+
+Document metadata includes:
+- Author name and email
+- Creation/modification dates
+- File path history
+- System software versions
+- GPS coordinates (for photos)
+
+Always strip metadata before uploading to SecureDrop or contacting journalists.
+
+## Secure Communication Patterns Beyond Tor
+
+Tor protects your IP, but additional measures improve security:
+
+**Email Over Tor**: Never use your real email address in Tor. Create throwaway accounts through Tor. Example: access ProtonMail (which supports Tor) and create a new account specifically for whistleblower communications.
+
+**PGP Encryption**: Encrypt messages to journalists' public PGP keys before submission. This adds an encryption layer beyond SecureDrop's TLS.
+
+```bash
+# Encrypt a document with journalist's public key
+gpg --encrypt --recipient "journalist@news.org" sensitive_document.pdf
+
+# This creates sensitive_document.pdf.gpg
+# Even if intercepted, only the journalist can decrypt
+```
+
+**Signal or Wickr**: Download via Tor if contacting someone through encrypted messaging. These apps provide better metadata protection than email.
+
+**Dead Drops**: For maximum security, consider submitting documents through physical dead drops or USB devices rather than digital channels. This eliminates digital trails entirely.
+
+## TAILS Operating System Deep Dive
+
+TAILS (The Amnesic Incognito Live System) provides stronger guarantees than Tor Browser alone:
+
+**Complete Anonymity**: TAILS routes all traffic through Tor by default. No application can accidentally bypass Tor.
+
+**Amnesic Computing**: TAILS runs from RAM and leaves no trace on the host machine. After shutdown, all data vanishes except what you explicitly saved to encrypted USB.
+
+**Pre-configured Tools**: TAILS includes Tor Browser, GPG, and other privacy tools already configured optimally.
+
+**Disadvantage**: TAILS requires booting from USB, making it less convenient than Tor Browser on your regular system.
+
+For high-risk whistleblowing (government corruption, corporate crimes), TAILS provides measurably stronger protection than Tor Browser on a regular operating system.
+
+Access TAILS at https://tails.boum.org (via Tor for maximum security).
+
+## Behavior Analysis and Correlation
+
+Sophisticated adversaries use behavioral analysis to identify whistleblowers:
+
+**Access Pattern Consistency**: If you always access Tor between 9-10 PM and your office notifies after hours access is blocked, observers outside the office can infer your location and schedule.
+
+**Linguistic Analysis**: Your writing style is distinctive. Journalists know your typing patterns, sentence structure, and word choice can identify you. Mitigate by writing in brief, simple language without personal quirks.
+
+**Content Correlation**: If you submit documents that only specific people in your organization could access, that limited access set becomes identifying information. Consider submitting documents through public sources when possible.
+
+**Communication Frequency**: Regular submissions create patterns. Irregular, unpredictable submission timing is safer than weekly reports.
+
+## Safe Submission to SecureDrop Instances
+
+Major news organizations run SecureDrop instances (Tor onion services) specifically for whistleblower submissions:
+
+```
+ProPublica: p53lf7kc6iaezst5.onion
+Washington Post: 2a5thpq6xvcyp5mf.onion
+New York Times: nxu3htheg3vj7unv.onion
+```
+
+Before submitting through any SecureDrop instance:
+
+1. Verify the onion URL against the organization's official channels
+2. Verify the SSL certificate fingerprint if provided
+3. Use the organization's PGP key to encrypt submissions
+4. Submit documents incrementally (multiple small submissions) rather than one large dump
+
+## Counter-Surveillance Awareness
+
+In addition to technical measures, maintain operational security:
+
+- Check for surveillance when leaving secure locations
+- Vary your routes and schedules
+- Be aware of who's near you when using Tor
+- Never discuss whistleblowing activities in person or on regular communications
+
+Technical security (Tor Browser, encryption) protects against remote surveillance. Physical and behavioral awareness protects against local surveillance.
+
 ## Warning Signs of Compromise
 
 Watch for these indicators that something may be wrong:
@@ -135,8 +279,10 @@ Watch for these indicators that something may be wrong:
 - Unusually slow connections that persist across circuits
 - JavaScript exploits targeting specific browser versions
 - Behavioral analysis detecting non-Tor browsing patterns
+- Unexpected questions from colleagues about your work or knowledge
+- Unusual interest in your schedules or access patterns
 
-If you suspect compromise, stop using the system immediately. Do not attempt to investigate while continuing to use the same device for sensitive activities.
+If you suspect compromise, stop using the system immediately. Do not attempt to investigate while continuing to use the same device for sensitive activities. Consider consulting with a lawyer or civil liberties organization before taking further action.
 
 ## Related Reading
 
