@@ -6,7 +6,7 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /totp-vs-fido2-authentication-explained/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
 score: 8
 intent-checked: true
