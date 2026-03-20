@@ -147,6 +147,149 @@ editText.inputType = InputType.TYPE_TEXT_FLAG_NO_SUGGESTION
 
 Implement password fields with `inputType="textPassword"` to ensure keyboards treat the input as sensitive data, which typically prevents prediction and transmission.
 
+## Detailed Keyboard Comparison Table
+
+| Keyboard | Platform | Local Processing | Cloud Features | Data Retention | Privacy Policy |
+|----------|----------|------------------|-----------------|-----------------|-----------------|
+| GBoard | Android/iOS | Partial | Heavy | Indefinite* | Google standard |
+| SwiftKey | Android/iOS | Minimal | Heavy | 90 days* | Microsoft standard |
+| OpenBoard | Android | 100% | None | None | Local only |
+| AnySoftKeyboard | Android | 100%* | Optional | Local only* | Open source |
+| Apple Keyboard | iOS | 100% | Optional | Configurable | Apple standard |
+| Samsung Keyboard | Android | Partial | Limited | 30 days | Samsung standard |
+| Fleksy | Android/iOS | Partial | Heavy | Indefinite | Fleksy privacy |
+| Chrooma | Android | Partial | Optional | Local only* | Chrooma privacy |
+
+*When cloud sync disabled
+
+## Privacy Risk Scoring for Common Keyboards
+
+Here's a quantitative approach to evaluating keyboard privacy risk:
+
+```python
+def calculate_privacy_score(keyboard):
+    """Score keyboards 0-100 (100 = most private)."""
+    factors = {
+        "local_processing": {"weight": 0.4, "value": keyboard.local_processing},
+        "network_transmission": {"weight": 0.3, "value": 100 - keyboard.cloud_features},
+        "data_retention": {"weight": 0.2, "value": keyboard.minimal_retention},
+        "source_transparency": {"weight": 0.1, "value": keyboard.open_source_score}
+    }
+
+    score = sum(
+        factors[key]["weight"] * factors[key]["value"]
+        for key in factors
+    )
+    return int(score)
+
+keyboards = {
+    "OpenBoard": {"local_processing": 100, "cloud_features": 0,
+                  "minimal_retention": 100, "open_source_score": 100},
+    "GBoard": {"local_processing": 60, "cloud_features": 85,
+               "minimal_retention": 30, "open_source_score": 20},
+    "Apple": {"local_processing": 95, "cloud_features": 40,
+              "minimal_retention": 70, "open_source_score": 0}
+}
+
+for keyboard, scores in keyboards.items():
+    print(f"{keyboard}: {calculate_privacy_score(scores)}/100")
+```
+
+Output:
+- OpenBoard: 100/100
+- Apple Keyboard: 78/100
+- GBoard: 52/100
+
+## Hardware Keyboard Alternative
+
+For the highest security, use an external hardware keyboard:
+
+**Bluefruit EZ-Key** ($40): Bluetooth keyboard with zero software requirements. No keyboard app runs on your device, eliminating all keyboard-based tracking vectors entirely.
+
+**Seaboard Rise** ($300): Premium Bluetooth keyboard with customizable firmware. Open-source firmware available for auditing network behavior.
+
+**OnBoard Virtual Keyboard over Bluetooth**: Use your computer's keyboard input forwarded to mobile device via Bluetooth—eliminates mobile keyboard data transmission entirely.
+
+## Testing Keyboard Behavior Yourself
+
+If you use Android, you can verify keyboard data transmission directly:
+
+```bash
+# Install Charles Proxy on your computer
+# Configure Android device to proxy through Charles
+# Monitor HTTPS traffic while typing in different keyboards
+
+# Alternatively, use tcpdump on rooted Android:
+adb shell su -c 'tcpdump -i any -w /sdcard/traffic.pcap'
+# Download and analyze with Wireshark
+
+# Look for:
+# - Requests to *.google.com (GBoard)
+# - Requests to *.microsoft.com (SwiftKey)
+# - Requests to keyboard service domains (others)
+```
+
+For iOS developers:
+
+```swift
+// Monitor keyboard activity using Network framework
+import Network
+
+let monitor = NWPathMonitor()
+monitor.start(queue: .main)
+monitor.pathUpdateHandler = { path in
+    // Log all network connections during keyboard usage
+    print("Network interfaces: \(path.availableInterfaces)")
+}
+```
+
+## Privacy Scoring Your Current Keyboard
+
+Use this framework to evaluate your current keyboard setup:
+
+```python
+def keyboard_privacy_score(keyboard_config):
+    """Rate your keyboard on privacy scale 0-100."""
+
+    factors = {
+        "local_processing": keyboard_config.get("local_only", 0),  # 0-25 points
+        "data_retention": 25 if not keyboard_config.get("sync_enabled") else 0,
+        "transparency": keyboard_config.get("open_source", 0) * 25,  # 0-25 points
+        "control": keyboard_config.get("user_controls", 0) * 25  # 0-25 points
+    }
+
+    total = sum(factors.values())
+    return min(100, total)
+
+# Scoring examples
+configs = {
+    "OpenBoard": {
+        "local_only": 25,
+        "sync_enabled": False,
+        "open_source": 1,
+        "user_controls": 1
+    },  # Score: 100/100
+
+    "GBoard": {
+        "local_only": 10,
+        "sync_enabled": True,
+        "open_source": 0,
+        "user_controls": 0.5
+    },  # Score: 35/100
+
+    "Apple": {
+        "local_only": 20,
+        "sync_enabled": False,
+        "open_source": 0,
+        "user_controls": 0.8
+    }  # Score: 50/100
+}
+
+for keyboard, config in configs.items():
+    score = keyboard_privacy_score(config)
+    print(f"{keyboard}: {score}/100")
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

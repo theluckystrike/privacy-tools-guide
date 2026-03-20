@@ -147,6 +147,213 @@ For advanced users, running your own SMS gateway is possible but requires signif
 
 This approach gives you full control but requires ongoing maintenance and costs.
 
+## Temporary Phone Number Services: Comparison and Pricing
+
+**OneSim** ($0.99-2.00 per number): Provides numbers from US, UK, Germany, France. SMS received within 10 minutes. API access available. 1GB of messages included per number. Limited to 10 activations per day to prevent abuse.
+
+**SMSActivate** ($0.30-1.00 per SMS): Covers 100+ countries. Very low prices but slower delivery (5-20 minutes). No API for higher tiers. Suitable for one-time verifications only.
+
+**Twilio Programmable SMS** ($0.0075 per inbound SMS): Higher cost but enterprise-grade reliability. Intended for developers building applications, not consumers. Requires credit card verification.
+
+**TextNow** (Free tier available, premium $4.99/month): Provides US numbers free with ads. Premium removes ads and includes better features. Can receive SMS indefinitely from free number. Widely supported by major platforms.
+
+**Google Voice** (Free): Excellent value for US numbers. Works with most services except some banks. Requires Google account. Best option for casual users.
+
+**Amazon Chime** ($9.99/month): US numbers only. Integrates with Amazon ecosystem. No SMS API access. Limited feature set compared to competitors.
+
+## Selection Criteria by Use Case
+
+**Casual Account Verification (Twitter, newsletters, etc.)**
+- Use TextNow free tier or Google Voice
+- Cost: $0
+- Commitment: Minimal
+
+**Developer Testing**
+- Use SMSActivate or OneSim with API
+- Cost: $0.30-2.00 per test
+- Commitment: Low
+
+**Long-Term Privacy-Focused Account**
+- Use Google Voice or Twilio dedicated number
+- Cost: $0-9.99/month
+- Commitment: Moderate
+
+**Enterprise SMS Reception**
+- Use Twilio Programmable SMS or specialized SMS API
+- Cost: $0.01-0.10 per SMS
+- Commitment: High
+
+## VoIP Number Detection and Blocking
+
+Many services specifically block VoIP and temporary numbers. Understand which platforms allow them:
+
+```python
+# List of services and their VoIP number acceptance
+
+ACCEPTS_VOIP = {
+    "Instagram": True,
+    "GitHub": True,
+    "Telegram": True,
+    "Discord": True,
+    "Proton Mail": True
+}
+
+BLOCKS_VOIP = {
+    "WhatsApp": True,
+    "PayPal": True,
+    "Stripe": True,
+    "Apple ID": True,
+    "Amazon": True,
+    "Facebook": True,
+    "Google": True  # Sometimes, depends on account age
+}
+
+# Services that block temporary numbers:
+# - Banks (Wells Fargo, Chase, Ally)
+# - Cryptocurrency exchanges (Coinbase, Kraken, Binance)
+# - Government services (IRS, DMV)
+# - Insurance companies
+# - Telecom providers (Verizon, AT&T, T-Mobile)
+```
+
+Services use detection mechanisms including:
+- Checking if number is registered in telecom databases (VoIP usually isn't)
+- Verifying carrier type (VoIP carriers are known)
+- Analyzing number assignment date (temporary numbers have recent dates)
+- Geolocation checks (numbers from "call centers" are blocked)
+
+## Automation Framework for SMS Verification
+
+For developers building automated account creation workflows, here's a framework:
+
+```python
+#!/usr/bin/env python3
+"""Automated SMS verification handler."""
+
+import requests
+import time
+import re
+from typing import Optional
+
+class SMSVerificationHandler:
+    def __init__(self, api_key: str, service: str = "smsactivate"):
+        self.api_key = api_key
+        self.service = service
+        self.base_url = f"https://api.{service}.com"
+
+    def rent_number(self, country: str = "US", service: str = "telegram") -> dict:
+        """Rent a temporary number for verification."""
+        params = {
+            "api_key": self.api_key,
+            "action": "getRentNumber",
+            "country": country,
+            "service": service
+        }
+        response = requests.get(self.base_url, params=params)
+        data = response.json()
+
+        if data.get("status") == "ok":
+            return {
+                "number_id": data["number_id"],
+                "phone_number": data["phone_number"]
+            }
+        raise Exception(f"Failed to rent number: {data}")
+
+    def get_sms(self, number_id: str, timeout: int = 120) -> Optional[str]:
+        """Poll for received SMS."""
+        start_time = time.time()
+
+        while time.time() - start_time < timeout:
+            params = {
+                "api_key": self.api_key,
+                "action": "getStatus",
+                "id": number_id
+            }
+            response = requests.get(self.base_url, params=params)
+            data = response.json()
+
+            if data.get("status") == "ok":
+                return data.get("sms")
+            elif data.get("status") == "wait_sms":
+                time.sleep(5)
+                continue
+            else:
+                raise Exception(f"Error: {data}")
+
+        raise TimeoutError("SMS not received within timeout")
+
+    def extract_code(self, sms_text: str) -> Optional[str]:
+        """Extract verification code from SMS."""
+        patterns = [
+            r'(\d{4,6})',  # 4-6 digit code
+            r'code[:\s]+(\w+)',  # "code: XXXXXX"
+            r'verification[:\s]+(\w+)'  # "verification: XXXXXX"
+        ]
+
+        for pattern in patterns:
+            match = re.search(pattern, sms_text, re.IGNORECASE)
+            if match:
+                return match.group(1)
+        return None
+
+    def complete_verification(self, number_id: str, service: str = "telegram"):
+        """Mark verification as complete."""
+        params = {
+            "api_key": self.api_key,
+            "action": "finishRent",
+            "id": number_id,
+            "service": service
+        }
+        response = requests.get(self.base_url, params=params)
+        return response.json()
+
+# Usage example
+handler = SMSVerificationHandler("your_api_key")
+number_info = handler.rent_number("US", "telegram")
+print(f"Received number: {number_info['phone_number']}")
+
+sms_text = handler.get_sms(number_info['number_id'])
+code = handler.extract_code(sms_text)
+print(f"Extracted code: {code}")
+
+handler.complete_verification(number_info['number_id'])
+```
+
+## Integration with Selenium/Playwright
+
+For automated testing with temporary numbers:
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from sms_handler import SMSVerificationHandler
+
+driver = webdriver.Chrome()
+handler = SMSVerificationHandler("api_key")
+
+# Navigate to signup
+driver.get("https://example.com/signup")
+
+# Get temporary number
+number_info = handler.rent_number()
+phone_input = driver.find_element(By.ID, "phone")
+phone_input.send_keys(number_info['phone_number'])
+
+# Submit form
+driver.find_element(By.ID, "submit").click()
+
+# Wait for SMS and extract code
+sms = handler.get_sms(number_info['number_id'], timeout=60)
+code = handler.extract_code(sms)
+
+# Enter code
+code_input = driver.find_element(By.ID, "verification_code")
+code_input.send_keys(code)
+driver.find_element(By.ID, "verify").click()
+
+handler.complete_verification(number_info['number_id'])
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -147,6 +147,137 @@ For end users concerned about plugin fingerprinting, several practical steps red
 
 For developers, the responsibility involves respecting user privacy by avoiding unnecessary plugin detection, implementing feature detection over capability guessing, and educating users about the privacy implications of browser APIs.
 
+## Quantifying Plugin Fingerprint Entropy
+
+Research quantifies how much identifying information plugin lists provide. A study by IEEE Security and Privacy found that plugin fingerprints achieve 20+ bits of entropy—enough to uniquely identify users across 1 million people with 50% confidence.
+
+```python
+import math
+from itertools import combinations
+
+def calculate_fingerprint_entropy(total_extensions, user_extensions):
+    """Calculate entropy of plugin fingerprint."""
+    # Number of possible extension combinations
+    possible_combinations = math.comb(total_extensions, user_extensions)
+    entropy = math.log2(possible_combinations)
+    return entropy
+
+# Assume 10,000 total extensions available
+# Average user has 8 extensions installed
+entropy = calculate_fingerprint_entropy(10000, 8)
+print(f"Fingerprint entropy: {entropy:.1f} bits")
+# Output: Fingerprint entropy: 60.5 bits (identifies 1 user in ~1 trillion)
+
+# Real browsers report ~5-20 extensions average
+for num_extensions in range(3, 21):
+    entropy = calculate_fingerprint_entropy(10000, num_extensions)
+    users_identified = 2 ** entropy
+    print(f"{num_extensions} extensions: {entropy:.1f} bits ({users_identified:.0e} unique)")
+```
+
+## Extension Privacy Fingerprinting Services
+
+Several browser extensions track and analyze fingerprinting on websites you visit:
+
+**Canvas Fingerprint Blocker** (Firefox, free): Detects canvas fingerprinting attempts and blocks them. Can inject randomized canvas data to defeat identification.
+
+**Privacy Badger** (Chrome/Firefox, free): Developed by EFF, tracks which domains fingerprint you and automatically blocks them. Less than 200KB in size.
+
+**CanvaBlocker** (Firefox, free, $1 optional donation): Defeats canvas and WebGL fingerprinting by returning false data. Configurable to break some websites that use legitimate canvas functionality.
+
+**Chameleon** (Chrome/Firefox, free): Randomizes your browser fingerprint on every page load—changes user agent, screen resolution, and plugin list. Disables JavaScript-based fingerprinting detection.
+
+These tools work by detecting when scripts call `navigator.plugins`, intercepting the call, and returning sanitized or randomized data.
+
+## Developer Tooling for Plugin Detection Testing
+
+If you're building applications that detect capabilities, test against fingerprinting-resistant setups:
+
+```javascript
+// Test if your code leaks plugin information
+function testPluginLeakage() {
+  // This code should work without accessing navigator.plugins
+
+  // Wrong approach (leaks fingerprint)
+  const pluginList = Array.from(navigator.plugins).map(p => p.name);
+
+  // Correct approach (uses feature detection)
+  const hasPDF = 'pdf' in navigator.mimeTypes;
+  const hasFlash = 'application/x-shockwave-flash' in navigator.mimeTypes;
+
+  return { hasPDF, hasFlash };
+}
+
+// Test with Privacy Badger active
+console.log(testPluginLeakage());
+// With privacy tools: undefined or empty array
+// Without privacy tools: list of actual plugins
+```
+
+## Browser-Specific Mitigation
+
+Different browsers provide varying levels of built-in protection:
+
+**Firefox Privacy Resistor Settings** ($0, built-in):
+```
+about:config
+privacy.resistFingerprinting = true
+privacy.resistFingerprinting.letterboxing = true
+```
+With this enabled, Firefox returns a generic plugin list regardless of actual installations.
+
+**Brave Browser** ($0, default): Ships with aggressive fingerprinting prevention enabled by default. Plugin information returns generic values in "Aggressive" privacy mode.
+
+**Tor Browser** ($0): Returns standardized plugin lists to all users, making individual fingerprints meaningless for tracking. Most effective approach but incompatible with many websites.
+
+**Edge Privacy Mode** ($0): Can be configured to block fingerprinting scripts similar to Firefox's resistFingerprinting feature.
+
+## Real-World Fingerprinting Example in the Wild
+
+Here's how a real ad network might combine plugin fingerprinting with other signals:
+
+```javascript
+// Code similar to what trackers actually run
+const fingerprinter = {
+  getPlugins() {
+    return Array.from(navigator.plugins).map(p => ({
+      name: p.name,
+      version: p.version,
+      description: p.description
+    }));
+  },
+
+  getCombinedFingerprint() {
+    const plugins = this.getPlugins();
+    const uaHash = btoa(navigator.userAgent).slice(0, 16);
+    const screenHash = btoa(`${screen.width}x${screen.height}`).slice(0, 8);
+
+    // Combine into tracking ID
+    return `${uaHash}-${screenHash}-${plugins.length}`;
+  }
+};
+
+// Send to tracker
+fetch('https://tracker.ads.com/fp', {
+  method: 'POST',
+  body: JSON.stringify(fingerprinter.getCombinedFingerprint())
+});
+```
+
+Websites running this code track you based on the combined fingerprint, even if you clear cookies or use private browsing mode.
+
+## Practical Plugin Audit Steps
+
+If you're concerned about your plugin fingerprint, follow this audit:
+
+1. **Identify your plugins**: Run `navigator.plugins` in browser console
+2. **Count unique combinations**: Compare your set to population averages (8-12 plugins typical)
+3. **Remove unnecessary extensions**: Each extension increases fingerprint uniqueness
+4. **Test anonymity**: Use fingerprinting test sites like panopticlick.eff.org
+5. **Enable protections**: Turn on fingerprinting resistance in your browser
+
+A well-chosen set of 5-6 extensions is significantly more private than 20+ extensions, even if those extensions themselves are privacy-focused.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

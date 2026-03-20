@@ -143,6 +143,143 @@ Request only the minimum permissions necessary for functionality. Every addition
 
 Sanitize all data received from web pages and user input. Never trust data from untrusted sources. Use the browser's secure storage APIs with proper encryption, and avoid storing sensitive data in plain text or easily reversible formats. Conduct code reviews and consider third-party security audits to identify vulnerabilities before attackers discover them.
 
+## Password Manager Extension Risk Comparison
+
+Different password managers vary significantly in their attack surface and security practices:
+
+**Bitwarden** ($2.99/month premium, open-source): Source code publicly available on GitHub for security audit. No forced synchronization with cloud—can be used entirely offline. Browser extension requests minimal permissions. Regular third-party security audits published.
+
+**1Password** ($4.99/month, proprietary): Closed-source extension. Frequent security updates (typically weekly). 1Password is partially funded by venture capital, creating institutional pressure for profit optimization. Third-party audits published annually.
+
+**LastPass** ($3/month family plan, proprietary): Suffered multiple security incidents between 2015-2023. Extension remains widely installed despite past vulnerabilities. Slower security patch deployment compared to competitors.
+
+**KeePass** (Free, open-source): Browser extensions vary in quality. Desktop-first approach reduces attack surface. No cloud synchronization by default. Requires self-hosting sync infrastructure.
+
+**Dashlane** ($4.99/month, proprietary): Requires extensive permissions including clipboard access. Cloud-first architecture means passwords are constantly synchronized. High dependency on Dashlane's servers for full functionality.
+
+**Comparison Matrix**:
+
+| Feature | Bitwarden | 1Password | LastPass | KeePass | Dashlane |
+|---------|-----------|-----------|----------|---------|----------|
+| Open Source | Yes | No | No | Yes | No |
+| Security Audits | Annual 3rd-party | Annual 3rd-party | Infrequent | Community | Infrequent |
+| Breach History | None | None | Multiple | None | None |
+| Extension Permissions | Minimal | Standard | Extensive | Minimal* | Extensive |
+| Offline Mode | Full | Limited | No | Full | No |
+| Cost | $2.99 | $4.99 | $3 | Free | $4.99 |
+
+*KeePass browser extensions vary
+
+## Measuring Extension Permission Footprint
+
+Evaluate extensions by the permissions they request. Fewer permissions = smaller attack surface.
+
+```bash
+#!/bin/bash
+# Analyze extension permissions (Chrome)
+
+EXTENSION_ID="your-extension-id"
+MANIFEST_PATH="~/.config/google-chrome/Default/Extensions/$EXTENSION_ID"
+
+# Extract permissions from manifest.json
+jq '.permissions' "$MANIFEST_PATH/manifest.json"
+
+# Check for dangerous permissions
+DANGEROUS=("tabs" "webRequest" "webRequestBlocking" "storage" "cookies")
+
+for perm in "${DANGEROUS[@]}"; do
+  if jq '.permissions | contains(["$perm"])' "$MANIFEST_PATH/manifest.json"; then
+    echo "WARNING: Found dangerous permission: $perm"
+  fi
+done
+```
+
+## Content Security Policy Enforcement
+
+When evaluating password manager extensions, check their Content Security Policy (CSP) headers. A strong CSP indicates thoughtful security architecture:
+
+```bash
+# Check extension CSP from manifest.json
+curl -s "https://chromewebstore.google.com/detail/[EXTENSION_ID]" | \
+  grep -i "content-security-policy"
+
+# Example of strong CSP:
+# "content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'none';"
+
+# Example of weak CSP:
+# "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src '*';"
+```
+
+## Sandboxing Strategy for High-Value Credentials
+
+For banking, investment accounts, and other high-value targets, implement a multi-browser strategy:
+
+**Browser 1: Credential Storage Only**
+- Install password manager extension only
+- No other extensions
+- No browsing activity
+- Used only to copy credentials to clipboard
+
+**Browser 2: Web Browsing**
+- No password manager installed
+- Manually type credentials from clipboard
+- All malware executed here doesn't have direct access to vault
+
+This segregation means that even if Browser 2 gets compromised, the attacker has no programmatic access to stored credentials.
+
+```bash
+#!/bin/bash
+# Setup dual-browser credential architecture
+
+# Create isolated browser profiles
+firefox -CreateProfile "vault-only" 2>/dev/null
+firefox -CreateProfile "browsing" 2>/dev/null
+
+# Disable network access for vault browser
+# (Implementation varies by OS)
+# macOS: Use Little Snitch or similar to block vault-browser network except to password manager cloud
+# Linux: Use iptables to restrict network access
+```
+
+## Extension Development: Security Best Practices
+
+If building password manager extensions or similar security-critical tools:
+
+```javascript
+// Secure message passing pattern
+const ALLOWED_ORIGINS = ['https://example.com'];
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  // 1. Always validate sender origin
+  if (!ALLOWED_ORIGINS.includes(sender.url)) {
+    sendResponse({ error: 'Unauthorized origin' });
+    return;
+  }
+
+  // 2. Never expose sensitive data in responses
+  if (request.action === 'getPassword') {
+    // Wrong: return vault.getPassword(request.id);
+    // Right: copy to clipboard and return only hash
+    const password = vault.getPassword(request.id);
+    clipboard.write(password);
+    sendResponse({ success: true, message: 'Copied to clipboard' });
+    // Clear clipboard after timeout
+    setTimeout(() => clipboard.clear(), 60000);
+    return;
+  }
+
+  // 3. Rate-limit sensitive operations
+  if (request.action === 'unlock') {
+    rateLimiter.checkLimit(sender.id);
+    // Prevent brute force attacks
+  }
+});
+
+// 4. Encrypt all storage
+const encrypted = crypto.encrypt(vault, masterPassword);
+chrome.storage.local.set({ vault: encrypted });
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
