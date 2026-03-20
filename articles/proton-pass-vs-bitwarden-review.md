@@ -8,7 +8,7 @@ permalink: /proton-pass-vs-bitwarden-review/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

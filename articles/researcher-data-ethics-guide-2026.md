@@ -7,7 +7,7 @@ date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /researcher-data-ethics-guide-2026/
 categories: [guides]
-tags: [privacy, data-ethics, research, compliance]
+tags: [privacy-tools-guide, privacy, data-ethics, research, compliance]
 reviewed: true
 score: 8
 ---
