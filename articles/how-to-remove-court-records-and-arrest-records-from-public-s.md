@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Remove Court Records and Arrest Records From."
+title: "How To Remove Court Records And Arrest Records From Public S"
 description: "A practical technical guide for removing court records and arrest records from public search databases. Includes automation scripts, API approaches."
 date: 2026-03-16
 author: theluckystrike

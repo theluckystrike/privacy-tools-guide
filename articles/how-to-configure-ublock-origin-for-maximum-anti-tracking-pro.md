@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Configure uBlock Origin for Maximum Anti-Tracking."
+title: "How To Configure Ublock Origin For Maximum Anti Tracking Pro"
 description: "A comprehensive guide to hardening uBlock Origin against trackers, fingerprinting, and privacy-invasive scripts. Practical configurations for."
 date: 2026-03-15
 author: "Privacy Tools Guide"

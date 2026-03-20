@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Third-Party Cookie Deprecation Chrome Timeline: What."
+title: "Third Party Cookie Deprecation Chrome Timeline What Replaces"
 description: "Third-Party Cookie Deprecation Chrome Timeline: What. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike

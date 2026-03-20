@@ -206,19 +206,6 @@ if not check_connection():
 
 This pattern integrates VPN management into automated build processes, ensuring your development environment maintains network access during restricted connectivity periods.
 
-## Summary
-
-ExpressVPN continues to function in Oman as of March 2026, primarily through its Lightway protocol. OpenVPN and IKEv2 connections are blocked by DPI systems. WireGuard, despite being a modern protocol, has recently been added to Oman's blocklist.
-
-For developers and power users, the recommended approach involves:
-- Using Lightway as the primary protocol
-- Implementing connection watchdog scripts
-- Maintaining flexibility to switch server locations
-- Testing during off-peak hours for optimal reliability
-
-Network restrictions evolve continuously. Staying current with ExpressVPN client updates ensures you benefit from protocol improvements designed to bypass new blocking techniques.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

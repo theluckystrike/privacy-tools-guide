@@ -154,13 +154,6 @@ Settings → Journal → Require Face ID → On
 Settings → Privacy & Security → Journal
 ```
 
-## Conclusion
-
-The iOS Journal app's on-device architecture, granular permission controls, and full data export make it a practical reference for anyone building or configuring privacy-conscious applications.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

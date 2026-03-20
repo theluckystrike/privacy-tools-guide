@@ -203,13 +203,6 @@ External storage excels in several developer-focused scenarios:
 - **Backup consolidation**: Aggregate backups from multiple servers into a single S3-backed archive
 - **Media libraries**: Connect large media storage without consuming local disk space
 
-## Conclusion
-
-Nextcloud's external storage capabilities turn your self-hosted cloud into a flexible data hub that integrates with any storage backend. Whether you're connecting enterprise S3 buckets or legacy file servers, the configuration options covered here provide the foundation for building reliable, multi-source file management systems.
-
-Start with local mounts to understand the mechanics, then expand to network-based backends as you refine your setup. The combination of web interface configuration and command-line tools gives you both quick setup and automation-ready deployment options.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iran Smart Filtering: How Government Selectively Blocks."
+title: "Iran Smart Filtering How Government Selectively Blocks Conte"
 description: "Iran Smart Filtering: How Government Selectively Blocks. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-16
 author: theluckystrike

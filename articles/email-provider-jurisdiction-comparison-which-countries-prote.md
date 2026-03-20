@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Email Provider Jurisdiction Comparison: Which Countries."
+title: "Email Provider Jurisdiction Comparison Which Countries Prote"
 description: "A technical comparison of email provider jurisdictions and which countries offer the strongest legal protections against government surveillance. Learn."
 date: 2026-03-16
 author: theluckystrike

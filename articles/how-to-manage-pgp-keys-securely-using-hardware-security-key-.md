@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Manage PGP Keys Securely Using Hardware Security."
+title: "How To Manage Pgp Keys Securely Using Hardware Security Key"
 description: "A practical guide for developers and power users to store and manage PGP keys on hardware security keys like YubiKey. Includes GnuPG setup, key."
 date: 2026-03-16
 author: theluckystrike

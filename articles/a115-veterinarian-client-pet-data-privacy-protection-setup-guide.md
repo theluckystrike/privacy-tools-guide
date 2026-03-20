@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Veterinarian Client Pet Data Privacy Protection."
+title: "Veterinarian Client Pet Data Privacy Protection Setup Guide"
 description: "A comprehensive guide for veterinary practices to protect client and pet data privacy. Learn HIPAA compliance, secure record storage, client."
 date: 2026-03-17
 author: theluckystrike

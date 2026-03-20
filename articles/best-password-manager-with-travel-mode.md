@@ -124,11 +124,6 @@ Travel mode represents a balance between security and convenience. Consider thes
 
 Your threat model determines whether travel mode provides meaningful security benefits. For developers carrying production credentials or working with sensitive systems, the feature offers valuable protection against involuntary disclosure scenarios.
 
-## Conclusion
-
-Test travel mode before you travel, not at the border. The preparation steps above — auditing vaults, segmenting credentials, and verifying CLI access — are what determine whether the feature actually protects you.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

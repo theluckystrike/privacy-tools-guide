@@ -141,13 +141,6 @@ Run these tests both with and without the VPN enabled to establish baseline perf
 
 The regulatory landscape continues evolving. Developers should monitor community resources like the Privacy Tools Guide and relevant forums for real-time updates. Expect increased DPI capabilities from ISPs, which means protocol obfuscation will likely become even more important.
 
-## Conclusion
-
-VPN functionality in Belarus requires careful protocol selection and configuration. WireGuard offers a good balance of speed and reliability, while obfuscated OpenVPN and Shadowsocks provide alternatives when WireGuard faces issues. For developers, having multiple configuration options and understanding the underlying networking concepts proves essential.
-
-The key is preparation—testing your setup before arriving and maintaining backup options ensures you remain connected regardless of regulatory changes.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -240,14 +240,6 @@ While avoiding school surveillance entirely is difficult, students can reduce th
 - Advocate for policy changes through student government
 - Support organizations working on biometric privacy legislation
 
-## Conclusion
-
-School facial recognition surveillance presents significant privacy challenges that require both technical understanding and advocacy for policy changes. The technology exists to build privacy-preserving systems, but economic incentives often favor comprehensive data collection over student privacy.
-
-For developers, the responsibility includes building tools that minimize data collection, implement strong encryption, and give students control over their biometric information. For students and parents, the path forward requires understanding existing rights, demanding transparency, and supporting legislation that explicitly addresses biometric privacy in educational settings.
-
-The tension between school security and student privacy will continue to evolve as technology advances and legal frameworks struggle to keep pace. Staying informed and advocating for stronger protections remains the most effective approach for those concerned about facial recognition tracking in schools.
-
 ## Related Reading
 
 - [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)

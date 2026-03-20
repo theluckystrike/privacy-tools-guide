@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Apple Digital Legacy Program: How to Add Legacy Contacts."
+title: "Apple Digital Legacy Program How To Add Legacy Contacts For"
 description: "Learn how to set up Apple Digital Legacy contacts to ensure your iCloud data is transferred to trusted individuals. A technical guide for power users."
 date: 2026-03-16
 author: "Privacy Tools Guide"

@@ -7,7 +7,6 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-browser-for-tor-network-2026/
 <<<<<<< HEAD
-reviewed: true
 score: 8
 categories: [guides]
 =======

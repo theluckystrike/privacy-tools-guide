@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to File a GDPR Complaint Against a Company That."
+title: "How To File Gdpr Complaint Against Company That Refuses To D"
 description: "A technical guide for developers and power users on exercising GDPR data deletion rights, escalating complaints, and using regulatory tools when."
 date: 2026-03-16
 author: theluckystrike

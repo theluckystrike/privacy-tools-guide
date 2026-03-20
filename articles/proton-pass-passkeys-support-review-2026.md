@@ -157,11 +157,6 @@ Against Bitwarden and 1Password, Proton Pass offers the best ecosystem integrati
 
 Bitwarden's passkey support remains more mature in terms of CLI tooling and API access. If you require extensive automation or custom integrations, Bitwarden's architecture may better suit those needs. However, Proton Pass closes the gap rapidly with each release.
 
-## Conclusion
-
-The main considerations are the platform-locked sync model and enterprise feature gaps—but for individual users and privacy-focused teams, Proton Pass is a trustworthy passkey solution.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

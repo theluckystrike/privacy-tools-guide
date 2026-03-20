@@ -211,13 +211,6 @@ curl -X POST https://your-server.example.com/checkin \
 - **Test your system**: Run a dry test where you simulate inactivity and verify the email sends correctly
 - **Rotate credentials periodically**: Update the encrypted payload when you change passwords
 
-## Conclusion
-
-A self-hosted dead man's switch gives you peace of mind that your digital legacy will reach trusted contacts if something happens to you. The system is transparent, customizable, and requires no reliance on third-party services for its core functionality.
-
-Start with a simple setup: encrypt a test file, set up the cron job, and verify the email arrives when you let the inactivity period pass. From there, add redundancy and refine the payload to include everything your recipient would need.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -141,15 +141,6 @@ In case your Tor connection fails or is detected, establish out-of-band communic
 
 Document your security procedures before you need them. Create a paper-based reference with bridge addresses and configuration steps that can be memorized or destroyed quickly.
 
-## Conclusion
-
-Using Tor safely in restrictive environments requires combining obfuscated bridges, hardened browser configurations, network-level isolation, and strict operational security. No single measure provides complete protection; defense in depth is essential.
-
-Test your configuration thoroughly before relying on it in high-risk situations. Understand the legal landscape in your specific jurisdiction and weigh the risks carefully. For most users in truly dangerous situations, seeking professional security consultation is advisable.
-
-The Tor network remains a critical tool for privacy and free expression, but using it safely requires technical competence and vigilance. The techniques in this guide provide a foundation, but threat models evolve and configurations must be updated accordingly.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

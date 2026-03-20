@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Magic Wormhole: Encrypted File Transfer How to Send."
+title: "Magic Wormhole Encrypted File Transfer How To Send Files Sec"
 description: "A practical guide to using Magic Wormhole for secure, encrypted file transfers directly from your terminal. Learn setup, commands, and real-world."
 date: 2026-03-16
 author: theluckystrike

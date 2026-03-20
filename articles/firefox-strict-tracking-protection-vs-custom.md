@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Firefox Strict Tracking Protection vs Custom: A."
+title: "Firefox Strict Tracking Protection Vs Custom"
 description: "Firefox Strict Tracking Protection vs Custom: A. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: theluckystrike

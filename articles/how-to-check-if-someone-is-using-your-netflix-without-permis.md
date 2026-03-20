@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Check If Someone Is Using Your Netflix Without."
+title: "How To Check If Someone Is Using Your Netflix Without Permis"
 description: "Learn how to detect unauthorized Netflix account access. This guide covers viewing recent activity, checking device logs, IP address monitoring, and."
 date: 2026-03-16
 author: theluckystrike

@@ -160,13 +160,6 @@ Once you confirm throttling, several approaches may help:
 4. **Contact your ISP**: Request clarification on their traffic management policies
 5. **Document findings**: Keep logs and speed tests as evidence if pursuing complaints
 
-## Conclusion
-
-Detecting VPN throttling requires systematic testing and comparison of network performance under different conditions. The methods outlined — baseline speed testing, packet loss analysis, protocol comparison, port testing, and continuous monitoring with MTR — provide the tools for identifying whether your ISP throttles VPN traffic.
-
-Network transparency remains a persistent challenge, but armed with these diagnostic techniques, you can make informed decisions about your connectivity and advocate for fair traffic treatment.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

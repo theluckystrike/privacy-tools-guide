@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Migrating From NordPass to Bitwarden: Export/Import."
+title: "Migrating From NordPass to Bitwarden: Export/Import Process Guide"
 description: "A technical guide for developers and power users migrating passwords from NordPass to Bitwarden. Covers CLI export, import automation, custom fields."
 date: 2026-03-16
 author: theluckystrike
@@ -298,19 +298,6 @@ iconv -f ISO-8859-1 -t UTF-8 nordpass-export.csv > nordpass-utf8.csv
 **Issue**: TOTP codes not working
 
 **Solution**: Verify the secret key format—Bitwarden requires base32, not otpauth:// URIs
-
-## Conclusion
-
-Migrating from NordPass to Bitwarden requires attention to format compatibility and manual handling of TOTP secrets, but the process is straightforward for developers comfortable with CLI tools. The key steps are:
-
-1. Export NordPass data to CSV format
-2. Import into Bitwarden using CLI or web interface
-3. Manually transfer TOTP secrets
-4. Verify data integrity across all vault items
-5. Securely delete temporary export files
-
-Bitwarden's open-source architecture and self-hosting options provide flexibility that many users find valuable after migrating from proprietary solutions.
-
 
 ## Related Reading
 

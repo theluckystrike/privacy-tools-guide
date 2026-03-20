@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Password Manager Death Plan: Which Managers Have."
+title: "Password Manager Death Plan: Which Managers Have Built-in Emergency Access Features in 2026"
 description: "A technical comparison of password managers with built-in emergency access and death plan features. Covers 1Password, Bitwarden, Dashlane, Keeper."
 date: 2026-03-16
 author: theluckystrike

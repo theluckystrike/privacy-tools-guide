@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "GitHub Pull Request Workflow for Distributed Teams: A."
+title: "Github Pull Request Workflow For Distributed Teams"
 description: "Master pull request best practices for remote and distributed software teams. Learn about branch strategies, code review workflows, automation, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -63,9 +63,6 @@ The PR description sets the stage for review. A well-crafted description include
 - Links to related tracking items
 
 ```markdown
-## Summary
-Implements user dashboard with real-time analytics
-
 ## Changes
 - Added DashboardController with index action
 - Created Vue.js component for data visualization

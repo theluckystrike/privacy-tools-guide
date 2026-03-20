@@ -210,11 +210,6 @@ sudo debsums -ca
 
 This detects any modified system files—a useful check after installing software from untrusted sources.
 
-## Summary
-
-Combine these steps with secure DNS and SSH practices for a privacy-respecting Linux Mint installation that suits most use cases. Review settings periodically—software updates may reset preferences or introduce new telemetry features.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

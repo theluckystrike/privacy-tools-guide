@@ -201,11 +201,6 @@ The specification records consent but does not solve every consent management ch
 
 Additionally, the specification requires careful key management for signatures. If your signing keys are compromised, attackers could create valid-looking consent receipts. Key rotation and proper key management are essential.
 
-## Conclusion
-
-The Consent Receipt Specification gives you a standardized, verifiable format for recording consent that satisfies GDPR and CCPA audit requirements. The JSON structure fits naturally into modern web services, and the cryptographic signature ensures tamper detection. Start with the required fields, add per-service granularity, and store receipts immutably.
-
-
 ## Related Reading
 
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)

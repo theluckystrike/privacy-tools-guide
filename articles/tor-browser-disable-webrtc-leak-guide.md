@@ -109,13 +109,6 @@ First, check that `media.peerconnection.enabled` shows as false in about:config.
 
 Regular verification is important because browser updates can reset some settings. Maintain a checklist of your privacy configurations and review them after each Tor Browser update.
 
-## Conclusion
-
-WebRTC leaks represent a real but often misunderstood threat to Tor Browser users. While the technology provides useful features for web developers, the privacy implications require careful consideration. For developers and power users willing to accept the trade-offs, disabling WebRTC provides additional protection against IP address leakage.
-
-The key is understanding your threat model. Most users do not need to disable WebRTC, but those handling sensitive information or facing targeted attacks should implement these protections. Remember that browser fingerprinting works both ways—any customization makes you more unique, so balance privacy improvements against the cost of increased identifiability.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

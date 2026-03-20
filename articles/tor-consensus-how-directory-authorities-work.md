@@ -160,13 +160,6 @@ For applications that must operate in adversarial environments, consider hardeni
 
 The Tor network's security model depends on having at least 5 honest authorities. As of 2026, this assumption holds—the nine authorities are operated by diverse, independent organizations. However, for high-value deployments, you should implement the signature verification steps shown above.
 
-## Summary
-
-Directory authorities form the trusted core of Tor's directory system, producing a hourly consensus that every client uses to discover and validate relays. The multi-signed consensus document provides cryptographic guarantees about network state, while the flag system helps clients select reliable paths. For developers, Stem and the Onionoo API provide programmatic access to this infrastructure, enabling sophisticated monitoring and debugging tools.
-
-Understanding how the consensus works is fundamental to working effectively with Tor—whether you're debugging connection issues, building privacy-preserving applications, or simply verifying that your browsing traffic is being routed correctly.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

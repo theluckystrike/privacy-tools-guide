@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Forward Secrecy in Messaging Apps Explained and Why It."
+title: "Forward Secrecy In Messaging Apps Explained And Why It Matters"
 description: "A technical guide to forward secrecy in messaging apps: how it works, why it protects your conversations, and how to identify apps that implement it."
 date: 2026-03-16
 author: theluckystrike

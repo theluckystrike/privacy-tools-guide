@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "OpenVPN Push Route Configuration: Selective Routing."
+title: "Openvpn Push Route Configuration Selective Routing Explained Step By Step"
 description: "A comprehensive guide to configuring OpenVPN push route directives for selective routing, allowing you to control which traffic goes through the VPN."
 date: 2026-03-17
 author: theluckystrike

@@ -205,15 +205,6 @@ auth_log = {
 
 Hash IP addresses if you need to track repeated failed attempts across requests. Use user IDs rather than email addresses in logs to maintain pseudonymization.
 
-## Conclusion
-
-GDPR compliant authentication design centers on data minimization, explicit consent, secure storage, and built-in support for data subject rights. By implementing these patterns, you create authentication systems that respect user privacy while maintaining strong security.
-
-Start with collecting only essential data. Implement proper consent mechanisms for any additional data. Use modern password hashing like Argon2id. Build deletion and portability features into your core authentication system. These practices satisfy both security best practices and GDPR requirements, protecting your users and your organization.
-
-The key principle: privacy by design means making privacy-friendly choices the default, not an optional feature added when compliance demands it.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

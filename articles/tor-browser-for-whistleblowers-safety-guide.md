@@ -138,13 +138,6 @@ Watch for these indicators that something may be wrong:
 
 If you suspect compromise, stop using the system immediately. Do not attempt to investigate while continuing to use the same device for sensitive activities.
 
-## Conclusion
-
-Tor Browser provides robust anonymity for whistleblowers when properly configured and used with discipline. The key principles are: verify installations, maintain consistent operational security, avoid mixing activities, and understand the difference between network anonymity and endpoint security. Your threat model determines which additional precautions are necessary—corporate whistleblowing may require less caution than exposing activities by sophisticated adversaries, but assuming you need less protection is a common and dangerous mistake.
-
-For additional guidance on secure communications and privacy tools, explore our comprehensive privacy guides at the links below.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

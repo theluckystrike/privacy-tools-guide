@@ -163,13 +163,6 @@ Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" 
 
 For enterprise deployments, consider using Group Policy Results (gpresult /r) to verify applied policies across machines.
 
-## Summary
-
-Windows Group Policy offers extensive privacy controls beyond what Settings provides. By strategically configuring telemetry, advertising, feedback, and network settings, developers and power users can significantly reduce data collection while maintaining system functionality. Regular review of these settings ensures your systems align with your privacy requirements.
-
-For organizations, deploying these settings through Active Directory GPOs ensures consistent privacy posture across all managed machines. Individual users can apply settings locally using the methods described above.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

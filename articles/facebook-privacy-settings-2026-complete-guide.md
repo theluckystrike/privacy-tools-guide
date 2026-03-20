@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Facebook Privacy Settings 2026: A Complete Guide for."
+title: "Facebook Privacy Settings 2026 Complete Guide"
 description: "Facebook Privacy Settings 2026: A Complete Guide for. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: "Privacy Tools Guide"

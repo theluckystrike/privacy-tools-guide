@@ -201,13 +201,6 @@ Regardless of your choice, remember these practices:
 # Alternatively, use their dedicated export tool for accounts
 ```
 
-## Conclusion
-
-ProtonMail remains the stronger choice for developers who need protocol access, PGP compatibility, and mature API tooling. Skiff Mail excels as an integrated privacy workspace but falls short on developer-focused features like IMAP/SMTP access. Your decision should hinge on whether you need email to integrate with existing systems or whether you're building new workflows within an encrypted ecosystem.
-
-
----
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

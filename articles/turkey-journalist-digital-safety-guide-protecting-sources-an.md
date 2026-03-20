@@ -2,7 +2,7 @@
 
 
 layout: default
-title: "Turkey Journalist Digital Safety Guide: Protecting."
+title: "Turkey Journalist Digital Safety Guide Protecting Sources An"
 description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -219,13 +219,6 @@ Prepare for potential device seizure:
 2. **Dead man's switch**: Use a timed encrypted message service that releases information if you don't check in
 3. **Source contact schedule**: Establish regular check-in times with sources
 4. **Legal contacts**: Have digital rights lawyer contact information readily available
-
-## Conclusion
-
-Digital security for Turkish journalists requires layered defenses spanning communications, network access, device protection, and operational habits. No single tool provides complete protection—adopt a defense-in-depth strategy and regularly audit your security posture. Stay informed about current censorship methods and maintain backup communication channels with sources.
-
-Remember: the goal is not perfect security but making surveillance sufficiently expensive and time-consuming to protect your sources and your work.
-
 
 ## Related Reading
 

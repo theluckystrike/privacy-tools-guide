@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "NFT and Digital Asset Inheritance: How to Transfer."
+title: "Nft And Digital Asset Inheritance How To Transfer Ownership"
 description: "A technical guide for developers and power users on implementing digital asset inheritance for NFTs and tokens. Covers smart contract patterns."
 date: 2026-03-16
 author: theluckystrike

@@ -203,15 +203,6 @@ tcpdump -i any port 53 | grep tor
 
 The exit node IP should differ from your host's public IP, and DNS queries should originate from your Tor proxy rather than your ISP's resolvers.
 
-## Conclusion
-
-Container-based Tor Browser isolation provides robust protection against browser exploits and system compromise. Docker offers the most flexible setup with complete network control. Firejail delivers lightweight sandboxing with minimal overhead. Network namespaces suit advanced users requiring fine-grained network stack isolation.
-
-Choose the approach matching your threat model and technical comfort level. All three methods significantly improve your privacy posture compared to running Tor Browser directly on the host system.
-
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

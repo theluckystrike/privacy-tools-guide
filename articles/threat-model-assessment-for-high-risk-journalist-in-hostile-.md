@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Threat Model Assessment for High-Risk Journalists in."
+title: "Threat Model Assessment For High Risk Journalist In Hostile"
 description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -159,15 +159,6 @@ Prepare for the scenario where your security fails:
 5. **Legal preparation**: Research privacy laws and encryption regulations
 
 Create a security cone—a set of trusted contacts who can trigger pre-planned responses if you become unreachable. This provides resilience against detention or forced communication.
-
-## Conclusion
-
-Effective threat modeling for high-risk journalists combines technical countermeasures with operational discipline. No single tool provides complete protection; defense requires layering multiple strategies and assuming that any individual component may fail.
-
-The goal is not perfect security—that remains impossible against well-resourced state adversaries—but rather making the cost of compromise exceed the value of what they might obtain. Each additional layer of protection narrows the attack surface and buys time for sources, colleagues, and yourself to respond to emerging threats.
-
-Build your threat model systematically, implement countermeasures proportionally to identified risks, and maintain operational security as an ongoing practice rather than a one-time configuration.
-
 
 ## Related Reading
 

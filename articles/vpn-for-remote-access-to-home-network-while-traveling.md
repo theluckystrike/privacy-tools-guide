@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN for Remote Access to Home Network While Traveling: A."
+title: "Vpn For Remote Access To Home Network While Traveling"
 description: "A practical guide to setting up VPN access to your home network while traveling. Covers WireGuard, OpenVPN, and cloud tunnel solutions for developers."
 date: 2026-03-16
 author: theluckystrike

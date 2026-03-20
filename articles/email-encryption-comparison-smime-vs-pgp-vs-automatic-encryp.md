@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Email Encryption Comparison: S/MIME vs PGP vs Automatic."
+title: "Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp"
 description: "A technical comparison of S/MIME, PGP, and automatic email encryption for developers and power users. Includes practical implementation examples and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Privacy Setup for Abuse Hotline Worker: Protecting."
+title: "Privacy Setup For Abuse Hotline Worker Protecting Caller Inf"
 description: "A technical guide for developers and power users implementing privacy measures for abuse hotline workers. Learn secure communications, metadata."
 date: 2026-03-16
 author: theluckystrike
@@ -191,15 +191,6 @@ Technical measures fail without proper procedures. Develop documentation coverin
 - Emergency protocols for caller safety
 
 Regular training ensures all workers understand both the threats and mitigations. Conduct tabletop exercises simulating device confiscation or data breach scenarios.
-
-## Conclusion
-
-Protecting caller information requires layered technical implementations combined with procedural discipline. The strategies in this guide—encrypted communications, metadata protection, device hardening, data minimization, and network security—provide defense in depth against common attack vectors.
-
-The most important principle: collect only what is absolutely necessary, protect what you collect, and delete when no longer needed. Caller trust depends on demonstrating that their information remains confidential.
-
----
-
 
 ## Related Reading
 

@@ -184,15 +184,6 @@ fi
 
 Schedule this to run weekly via cron.
 
-## Conclusion
-
-Receiving a sextortion email is alarming, but the technical reality is that most are automated scams relying on stolen data rather than actual compromise. By analyzing email headers, checking credential breaches, and understanding how these attacks work, you can accurately assess the threat level and respond appropriately.
-
-Remember: legitimate attackers rarely announce their presence. If someone truly had compromising material, they would demonstrate proof before demanding payment—not send generic threats to thousands of recipients simultaneously.
-
-Stay vigilant, keep your credentials unique, and verify before you panic.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Remove Personal Data From ChatGPT, Bing AI, and."
+title: "How To Remove Personal Data From Chatgpt Bing Ai And Google"
 description: "A practical developer guide to removing your personal data from AI training models, including OpenAI, Microsoft Copilot, and Google Gemini. Includes."
 date: 2026-03-15
 author: "Privacy Tools Guide"

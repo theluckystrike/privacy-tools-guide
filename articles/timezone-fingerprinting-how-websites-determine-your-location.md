@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Timezone Fingerprinting: How Websites Determine Your."
+title: "Timezone Fingerprinting How Websites Determine Your Location"
 description: "Learn how websites use timezone detection via JavaScript to estimate your location without GPS. Technical explanation with code examples for developers."
 date: 2026-03-16
 author: theluckystrike

@@ -3,7 +3,7 @@
 
 
 layout: default
-title: "Privacy Tools for Social Worker Handling Sensitive Case."
+title: "Privacy Tools For Social Worker Handling Sensitive Case File"
 description: "A comprehensive guide to privacy tools for social workers handling sensitive case files digitally. Learn about encrypted storage, secure communication."
 date: 2026-03-16
 author: theluckystrike
@@ -156,15 +156,6 @@ Here's a secure workflow for a social worker handling sensitive case files:
 4. **Client communication**: Use Signal for time-sensitive matters, Proton Mail for formal correspondence
 5. **End of day**: Close encrypted containers, clear clipboard, lock password manager
 6. **Mobile**: Enable "find my device" features for remote wipe capability, keep work apps in managed profile
-
-## Conclusion
-
-Privacy tools for social workers must balance strict security requirements with the practical realities of field work, crisis response, and multi-agency collaboration. The key is defense in depth: encrypted storage protects data at rest, secure communication channels protect data in transit, strong authentication prevents unauthorized access, and careful mobile habits close potential leakage points.
-
-Start with the basics—encrypted storage and a password manager—then layer in additional tools based on your specific role and agency requirements. The investment in setting up secure workflows pays dividends in client trust, legal compliance, and professional peace of mind.
-
----
-
 
 ## Related Reading
 

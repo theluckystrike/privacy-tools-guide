@@ -166,12 +166,6 @@ iptables -A OUTPUT -j DROP
 
 **Connection drops frequently**: Add the `PersistentKeepalive` option to your configuration. For WireGuard, a value of 25 seconds works well in most restrictive networks.
 
-## Conclusion
-
-Using a VPN to enable WhatsApp calls in Saudi Arabia requires proper technical configuration rather than just installing consumer VPN apps. WireGuard provides the best performance, while OpenVPN offers broader compatibility. The key is ensuring your VPN traffic cannot be identified by deep packet inspection systems, which requires using non-standard ports, protocol obfuscation, or operating your own server infrastructure.
-
-For developers who need reliable VoIP communication, investing time in setting up a properly configured VPN solution pays dividends in call quality and connection reliability. Test multiple configurations to find what works best for your specific network conditions and location within Saudi Arabia.
-
 ## Related Reading
 
 - [WireGuard vs OpenVPN: Technical Comparison for Privacy](/privacy-tools-guide/wireguard-vs-openvpn-technical-comparison/)

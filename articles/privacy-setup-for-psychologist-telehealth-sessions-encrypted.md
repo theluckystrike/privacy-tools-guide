@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Privacy Setup for Psychologist Telehealth Sessions."
+title: "Privacy Setup For Psychologist Telehealth Sessions Encrypted"
 description: "A practical guide to setting up secure, encrypted telehealth sessions for psychologists. Learn end-to-end encryption, self-hosted solutions, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -190,13 +190,6 @@ While this guide focuses on technical privacy implementation, remember that HIPA
 - Secure backup and retention policies
 
 Self-hosted solutions give you control but transfer compliance responsibility entirely to your infrastructure. Document your technical setup and conduct regular security audits if handling sensitive patient information.
-
-## Summary
-
-Setting up encrypted telehealth sessions requires attention to server configuration, client-side security, and network-level protections. Self-hosted Jitsi with E2EE enabled provides the strongest privacy guarantees, while Matrix homeservers add secure messaging capabilities. Client device hardening and network-level controls complete a defense-in-depth approach to psychological session privacy.
-
-For psychologists who prioritize patient confidentiality, the effort to self-host or configure privacy-focused infrastructure pays dividends in trust and regulatory compliance.
-
 
 ## Related Reading
 

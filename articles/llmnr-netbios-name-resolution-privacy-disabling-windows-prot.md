@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "LLMNR and NetBIOS Name Resolution Privacy: Disabling."
+title: "Llmnr Netbios Name Resolution Privacy Disabling Windows Prot"
 description: "A technical guide for developers and power users to disable LLMNR and NetBIOS name resolution on Windows, preventing hostname leakage that exposes your."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -233,17 +233,6 @@ Before deploying organization-wide, verify that:
 - Legacy systems do not rely on NetBIOS for name resolution
 - Applications using custom multicast discovery are identified
 - Printers or IoT devices using NetBIOS are documented
-
-## Summary
-
-LLMNR and NetBIOS name resolution protocols create unintended privacy exposure by broadcasting your device hostname across the network. For privacy-conscious developers and power users, disabling these protocols reduces your attack surface and limits network reconnaissance capabilities.
-
-The methods outlined above provide multiple approaches—from simple registry modifications to enterprise deployment options. Start with the PowerShell scripts for individual machines, or scale to Group Policy for organizational rollout.
-
-The privacy gains from disabling these legacy protocols typically outweigh the minimal functionality loss, especially on modern networks where DNS provides reliable name resolution.
-
----
-
 
 ## Related Reading
 

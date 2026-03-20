@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Threat Model for Medical Marijuana Patient in Non-Legal."
+title: "Threat Model For Medical Marijuana Patient In Non Legal Stat"
 description: "A comprehensive security and privacy guide for medical marijuana patients in states where cannabis remains illegal. Learn how to protect your digital."
 date: 2026-03-16
 author: theluckystrike
@@ -150,13 +150,6 @@ Layering multiple privacy tools provides defense in depth. No single tool makes 
 - Location minimization
 
 ...creates a substantially more difficult target for surveillance than any individual measure.
-
-## Conclusion
-
-Medical marijuana patients in prohibition states face genuine risks that require serious security consideration. While no approach provides complete protection, implementing layered privacy measures significantly reduces your attack surface. Balance practical security with quality of life—extreme measures that make daily life difficult are unsustainable.
-
-Focus on the highest-impact changes first: location privacy, financial separation, and encrypted communication. Add additional layers based on your specific threat model and resources.
-
 
 ## Related Reading
 

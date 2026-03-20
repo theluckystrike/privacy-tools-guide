@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Her Dating App Privacy: What LGBTQ+ Specific Data Is."
+title: "Her Dating App Privacy What Lgbtq Specific Data Is Collected"
 description: "A technical breakdown of data collection practices in Her, the LGBTQ+ dating app. Learn what personal information developers store, how it's processed, and privacy implications for users."
 date: 2026-03-16
 author: theluckystrike
@@ -220,19 +220,6 @@ Users concerned about their data privacy on Her should consider these technical 
 5. **Utilize in-app blocking** features to limit exposure to specific users
 6. **Request data exports** periodically to understand stored information
 7. **Consider account deletion** rather than simply discontinuing use
-
-## Conclusion
-
-Her, like other LGBTQ+-focused dating platforms, collects a comprehensive dataset that includes identity-specific information beyond typical dating app telemetry. The combination of sexual orientation, gender identity, location data, and behavioral patterns creates detailed user profiles with unique privacy implications for the LGBTQ+ community.
-
-Understanding these data collection practices empowers developers building similar applications to implement stronger privacy controls and helps users make informed decisions about their digital footprint in spaces designed for community connection.
-
----
-
-**Related Reading**
-
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-
 
 ## Related Reading
 

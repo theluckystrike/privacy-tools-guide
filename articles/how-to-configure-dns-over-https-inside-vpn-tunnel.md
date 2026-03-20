@@ -350,16 +350,7 @@ server=/private-network.local/1.1.1.1
 bogus-priv
 ```
 
-## Conclusion
-
-Configuring DNS over HTTPS inside your VPN tunnel provides enhanced privacy by ensuring your DNS queries are encrypted end-to-end. Whether you use WireGuard, OpenVPN, or a commercial VPN service, implementing DoH adds a significant layer of protection against DNS leaks.
-
-The setup process varies depending on your platform and VPN protocol, but the core principle remains the same: route your DNS queries through an encrypted DoH resolver before they enter the VPN tunnel. This ensures that neither your ISP, VPN provider, or any potential eavesdropper can see what domains you're accessing.
-
-By following this guide, you've taken an important step toward comprehensive online privacy and security.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

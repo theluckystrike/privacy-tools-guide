@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Social Media Data Request Download Guide 2026: Complete."
+title: "Using curl for LinkedIn API"
 description: "Learn how to request and download your social media data from major platforms. Includes API methods, automation scripts, and best practices for developers."
 date: 2026-03-15
 author: theluckystrike
@@ -271,11 +271,6 @@ When collecting data through formal privacy requests, platforms typically provid
 - Inferred interests and demographics
 
 Review platform-specific terms of service. Automated data collection should comply with API terms and rate limiting policies. For personal data under GDPR, you have the right to request a complete data portrait—use this right strategically.
-
-## Conclusion
-
-Social media data downloads have become accessible through both self-service tools and formal privacy requests. For developers, API-based automation provides the most flexibility, enabling scheduled backups, cross-platform analysis, and data portability. The scripts and methods in this guide give you a foundation for building robust data collection workflows while respecting platform limitations and privacy regulations.
-
 
 ## Related Reading
 

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "ProtonMail Import Export Tool Guide: Complete Technical."
+title: "ProtonMail Import Export Tool Guide: Complete Technical Reference"
 description: "A practical guide to importing and exporting emails in Proton Mail. Learn CLI methods, IMAP bridge configuration, migration scripts, and automation for."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -223,11 +223,6 @@ gpg --symmetric --cipher-algo AES256 inbox_backup.mbox
 # Decrypt when needed
 gpg --decrypt inbox_backup.mbox.gpg > inbox_backup.mbox
 ```
-
-## Summary
-
-Proton Mail offers multiple paths for data import and export: the web interface for manual one-time exports, IMAP Bridge for continuous desktop client sync, and the API for developer integrations. Choose the method matching your workflow requirements. For automated backups, combine the IMAP Bridge with Python scripts and scheduled cron jobs, ensuring you encrypt exports before offsite storage.
-
 
 ## Related Reading
 

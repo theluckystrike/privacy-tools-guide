@@ -182,13 +182,6 @@ auth on
 user your@gmail.com
 ```
 
-## Conclusion
-
-The ProtonMail versus Gmail decision reflects your threat model. If you need zero-knowledge encryption where the provider cannot access your content, ProtonMail delivers. If you need full API access and accept Google's data practices for convenience, Gmail remains powerful.
-
-For developers building privacy-conscious applications, the choice impacts your architecture. Gmail's API is more capable but creates dependency on Google's ecosystem. ProtonMail prioritizes privacy over developer convenience—which may be exactly what you need.
-
-
 ## Related Reading
 
 - [Bitwarden vs 1Password 2026: Which Is Better for Developers](/privacy-tools-guide/bitwarden-vs-1password-2026-which-is-better/)

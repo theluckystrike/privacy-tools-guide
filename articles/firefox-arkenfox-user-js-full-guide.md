@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Firefox Arkenfox User.js Full Guide: Complete Privacy."
+title: "Firefox Arkenfox User Js Full Guide"
 description: "A comprehensive guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against."
 date: 2026-03-15
 author: theluckystrike

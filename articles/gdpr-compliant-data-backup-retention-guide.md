@@ -273,12 +273,6 @@ def audit_backup_retention(bucket_name, retention_days):
 
 Run this audit weekly and alert on any violations.
 
-## Conclusion
-
-GDPR-compliant backup retention combines clear documentation of retention periods, automated enforcement, encryption safeguards, and processes for handling data subject requests. Start by documenting what data you back up and why, then implement automated retention policies that enforce those periods without manual intervention.
-
-The examples above provide starting points—adapt them to your specific infrastructure and regulatory requirements.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

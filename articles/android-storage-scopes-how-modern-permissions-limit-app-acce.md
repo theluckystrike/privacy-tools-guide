@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Android Storage Scopes: How Modern Permissions Limit App."
+title: "Android Storage Scopes How Modern Permissions Limit App Acce"
 description: "A developer guide to Android storage scopes, scoped storage, and how modern permissions control app access to files. Includes code examples and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

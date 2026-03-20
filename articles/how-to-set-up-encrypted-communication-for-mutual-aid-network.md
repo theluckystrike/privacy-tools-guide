@@ -183,15 +183,6 @@ Technical encryption tools provide limited protection without consistent operati
 
 Regular security audits help identify vulnerabilities before adversaries exploit them. Schedule monthly reviews of participant device security, application configurations, and recovery procedure accessibility.
 
-## Conclusion
-
-Effective mutual aid communication requires layered security addressing both technical encryption and operational practices. Signal provides the strongest real-time encryption for most scenarios, while Session offers anonymous communication for high-risk participants. Matrix enables self-hosted infrastructure for organizations requiring complete data control, and offline tools like Briar ensure communication resilience when networks fail.
-
-The appropriate tool selection depends on your specific threat model, participant technical capabilities, and infrastructure requirements. Start with Signal for simplicity, add Session for anonymity-sensitive participants, and implement Matrix for organizational control. Test all chosen tools thoroughly before relying on them during actual emergencies.
-
-Building secure mutual aid communication infrastructure requires ongoing attention to security practices and regular review of evolving threats. The investment in robust communication security protects participants and enables effective coordination when your community needs it most.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

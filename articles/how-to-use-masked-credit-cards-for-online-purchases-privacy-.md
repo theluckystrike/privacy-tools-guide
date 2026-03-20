@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use Masked Credit Cards for Online Purchases."
+title: "How To Use Masked Credit Cards For Online Purchases Privacy"
 description: "Master masked credit cards for private online transactions. Learn API integration, virtual card generation, and privacy-first spending strategies for."
 date: 2026-03-16
 author: theluckystrike

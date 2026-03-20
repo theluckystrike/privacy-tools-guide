@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Debian Minimal Install Guide for Building Privacy."
+title: "Debian Minimal Install Guide For Building Privacy Focused De"
 description: "A practical guide to installing Debian with a minimal footprint and hardening it for privacy. Perfect for developers and power users who want full."
 date: 2026-03-16
 author: theluckystrike

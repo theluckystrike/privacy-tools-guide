@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Healthcare Data Privacy: HIPAA Compliance for Software."
+title: "Healthcare Data Privacy Hipaa Compliance For Software Compan"
 description: "A practical technical guide for developers building healthcare software. Covers PHI handling, encryption requirements, access controls, audit logging."
 date: 2026-03-15
 author: "Privacy Tools Guide"

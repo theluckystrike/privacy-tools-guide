@@ -158,11 +158,6 @@ Understanding Briar's performance helps set expectations:
 
 For large groups, periodic synchronization through Wi-Fi Direct provides better performance than maintaining continuous Bluetooth mesh connections.
 
-## Conclusion
-
-Briar's offline-first architecture provides reliable communication independent of internet infrastructure. By using Bluetooth and Wi-Fi Direct mesh networking, it enables message propagation in scenarios where traditional apps fail completely. For developers and power users who need resilient, secure communication, understanding and using these offline capabilities transforms Briar from a simple messaging app into a critical communication tool.
-
-
 ## Related Reading
 
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)

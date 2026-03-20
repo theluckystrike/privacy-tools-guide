@@ -175,15 +175,6 @@ Several providers have maintained transparency reports and warrant canaries:
 
 Always verify current canary status directly on provider websites, as policies change.
 
-## Conclusion
-
-A VPN warrant canary serves as an early warning system about potential government data demands. For developers and power users, regularly checking your VPN provider's canary—along with understanding its limitations—forms part of a solid privacy strategy. While not foolproof, this mechanism represents an important tool in the ongoing balance between user privacy and governmental oversight.
-
-The key takeaway: verify canary dates, look for cryptographic signatures, and treat stale or missing canaries as a serious security concern requiring immediate action.
-
----
-
-
 ## Related Reading
 
 - [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)

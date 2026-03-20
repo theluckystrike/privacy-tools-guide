@@ -246,13 +246,6 @@ Understanding Tor circuit limitations helps you use it effectively:
 - **Protocol leakage**: Applications must be configured to avoid leaking identifying information outside the Tor circuit
 - **Circuit fingerprinting**: Traffic patterns through a circuit can be fingerprinted
 
-## Conclusion
-
-Tor circuits provide robust anonymity through layered encryption and distributed relay architecture. By understanding how guard nodes, middle nodes, and exit nodes work together, you can make better privacy decisions and build more secure applications. Remember that Tor is one tool in a broader privacy toolkit—combine it with good operational security practices for optimal protection.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

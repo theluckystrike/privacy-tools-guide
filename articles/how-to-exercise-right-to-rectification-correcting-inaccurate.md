@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Exercise Your Right to Rectification: Correcting."
+title: "How To Exercise Right To Rectification Correcting Inaccurate"
 description: "A practical guide for developers and power users on exercising GDPR right to rectification. Learn formal request templates, legal basis, company."
 date: 2026-03-15
 author: "Privacy Tools Guide"

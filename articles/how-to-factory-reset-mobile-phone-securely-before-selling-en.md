@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Factory Reset Mobile Phone Securely Before."
+title: "How To Factory Reset Mobile Phone Securely Before Selling En"
 description: "A comprehensive technical guide for developers and power users on securely wiping Android and iOS devices before resale. Includes verification methods."
 date: 2026-03-16
 author: theluckystrike

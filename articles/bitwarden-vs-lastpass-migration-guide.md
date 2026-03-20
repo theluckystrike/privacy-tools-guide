@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Bitwarden vs LastPass Migration Guide: Complete."
+title: "Bitwarden vs LastPass Migration Guide: Complete Technical Walkthrough"
 description: "A practical guide for developers migrating from LastPass to Bitwarden. Covers CLI-based export/import, handling TOTP codes, custom fields, and."
 date: 2026-03-15
 author: theluckystrike
@@ -245,20 +245,6 @@ During migration:
 shred -u lastpass-export.csv
 shred -u totp-seeds.txt
 ```
-
-## Conclusion
-
-Moving from LastPass to Bitwarden provides better control over your password infrastructure. The CLI-based migration described here gives developers precise control over every aspect of the transfer. While some manual TOTP handling is required, the process is repeatable and automatable.
-
-For teams, consider running Bitwarden Vault as a Docker container for full data ownership:
-
-```bash
-docker run -d --name bitwarden \
-  -e DATABASE_URL=postgresql://user:pass@db:5432/vault \
-  -p 8080:80 \
-  bitwarden/self-host:latest
-```
-
 
 ## Related Reading
 

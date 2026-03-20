@@ -197,13 +197,6 @@ Save these resources offline:
 - National Domestic Violence Hotline: 1-800-799-7233
 - Cyber Civil Rights Initiative: 1-844-878-2274
 
-## Conclusion
-
-Digital security for domestic violence survivors requires defense in depth. No single tool makes you safe, but combining device hardening, account isolation, network security, and operational practices significantly raises the barrier against surveillance. Review these measures monthly, change critical passwords after any suspected compromise, and prioritize physical safety alongside digital hardening.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Anonymize User Data in Production Database for."
+title: "How To Anonymize User Data In Production Database For Privac"
 description: "A practical developer guide to anonymizing user data in production databases. Learn SQL techniques, scripting approaches, and compliance strategies for."
 date: 2026-03-16
 author: theluckystrike

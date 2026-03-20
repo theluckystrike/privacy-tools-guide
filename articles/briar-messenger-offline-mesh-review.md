@@ -147,15 +147,6 @@ Honest evaluation requires acknowledging Briar's constraints:
 - No voice or video calling (text and image sharing only)
 - Battery consumption significant during active mesh mode
 
-## Conclusion
-
-Briar's offline mesh capability represents genuine innovation in decentralized communication. The implementation demonstrates that practical mesh messaging is achievable on consumer hardware, providing a working model for scenarios where infrastructure-dependent communication fails.
-
-For developers exploring decentralized systems, Briar offers a well-documented implementation of store-and-forward messaging over heterogeneous transport layers. The Bramble protocol provides a reference architecture worth studying, regardless of whether one chooses to build upon it.
-
-The trade-offs are substantial but acceptable depending on threat model and use case. Briar is not a replacement for everyday communication—it excels in specific scenarios where infrastructure independence outweighs convenience. Understanding this distinction matters for proper deployment.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

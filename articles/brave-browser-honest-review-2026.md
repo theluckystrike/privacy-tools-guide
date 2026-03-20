@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Brave Browser Honest Review 2026: A Developer and Power."
+title: "Brave Browser Honest Review 2026"
 description: "A technical deep-dive into Brave Browser in 2026. Evaluate its privacy features, performance, developer tools, and extension compatibility for power users."
 date: 2026-03-15
 author: theluckystrike

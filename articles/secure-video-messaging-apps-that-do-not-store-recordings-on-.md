@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Secure Video Messaging Apps That Do Not Store Recordings."
+title: "Secure Video Messaging Apps That Do Not Store Recordings On"
 description: "Discover video messaging apps that process recordings locally without server storage. Technical implementation details, privacy architecture, and."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up an Encrypted Dead Drop Using OnionShare."
+title: "How To Set Up Encrypted Dead Drop Using Onionshare For Sourc"
 description: "A practical guide for developers and power users to create secure, anonymous drop boxes using OnionShare."
 date: 2026-03-16
 author: theluckystrike
@@ -197,13 +197,6 @@ while true; do
     sleep 5
 done
 ```
-
-## Conclusion
-
-OnionShare provides a robust foundation for secure source communication. By combining its built-in encryption with additional layers like GPG and proper operational security practices, you can create a dead drop that protects both your sources and your identity.
-
-Remember that security is a chain—the strongest link determines overall protection. Invest time in securing every component of your drop infrastructure, and your sources will benefit from genuinely anonymous submission channels.
-
 
 ## Related Reading
 

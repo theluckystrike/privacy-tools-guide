@@ -162,16 +162,7 @@ app.use('/api/*', (req, res, next) => {
 
 Ensure your systems respond to consumer requests within the mandated 45-day window. Implement automated tracking for request deadlines to avoid unintentional violations.
 
-## Conclusion
-
-Filing a privacy complaint with the California Attorney General provides accountability when businesses violate CCPA consumer rights. By documenting your requests thoroughly, writing clear complaint descriptions, and providing supporting evidence, you contribute to enforcement efforts that benefit all California residents.
-
-The CAG's enforcement actions create precedents that improve industry compliance. Your complaint, combined with others, may trigger investigations that result in systemic changes beyond your individual case.
-
-Start by submitting your request directly to the business, maintain detailed logs, and escalate to the CAG when businesses ignore or improperly refuse legitimate consumer rights requests.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

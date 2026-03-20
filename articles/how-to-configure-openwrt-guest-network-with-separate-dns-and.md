@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure OpenWRT Guest Network with Separate DNS."
+title: "How To Configure Openwrt Guest Network With Separate Dns And"
 description: "A practical guide for developers and power users to set up OpenWRT guest networks with custom DNS servers and strict firewall isolation."
 date: 2026-03-16
 author: theluckystrike
@@ -198,11 +198,6 @@ Common issues and solutions:
 - **Guest devices can't get IP**: Verify the DHCP server is enabled and the interface is in the correct firewall zone
 - **DNS not working**: Ensure the dnsmasq instance is listening on the guest interface and firewall allows port 53
 - **Guest can access LAN**: Check that the `block-guest-to-lan` firewall rule exists and is before any forwarding rules
-
-## Summary
-
-A properly configured OpenWRT guest network with separate DNS and firewall isolation protects your main network from untrusted devices while giving guests internet access. The key components are: dedicated subnet routing, isolated DNS resolution, wireless client isolation, and explicit firewall deny rules between zones.
-
 
 ## Related Reading
 

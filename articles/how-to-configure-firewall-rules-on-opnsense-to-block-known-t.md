@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure Firewall Rules on OPNsense to Block."
+title: "How to Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level"
 description: "A practical guide for developers and power users to configure OPNsense firewall rules that block known tracking domains at the IP level, providing."
 date: 2026-03-16
 author: theluckystrike
@@ -122,11 +122,6 @@ Third, monitor your CPU usage after implementing the blocking rules. OPNsense pr
 While IP-level blocking provides robust network-wide protection, consider supplementing it with DNS-based blocking for defense-in-depth. OPNsense includes the Unbound DNS resolver, which can be configured to return null responses for known tracker domains. This handles some cases that IP blocking misses, such as trackers behind CDNs that share IPs with legitimate services.
 
 You might also want to implement logging exceptions for specific devices. Some smart home devices may require access to certain tracker domains to function properly. In such cases, create pass rules for specific source IPs that take precedence over your blocking rule.
-
-## Summary
-
-Configuring OPNsense to block known tracking domains at the IP level provides comprehensive network-wide privacy protection that works independently of device-level configurations. By importing IP blocklists as aliases and creating corresponding firewall rules, you establish a transparent filtering layer that prevents tracker connections before they reach your devices. Regular updates keep the blocking list current, and logging allows you to verify proper operation and troubleshoot any issues that arise.
-
 
 ## Related Reading
 

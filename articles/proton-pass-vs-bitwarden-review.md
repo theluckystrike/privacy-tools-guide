@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Proton Pass vs Bitwarden Review: Which Password Manager."
+title: "Proton Pass Vs Bitwarden Review"
 description: "A technical comparison of Proton Pass and Bitwarden for developers and power users. Explore encryption, CLI tools, autofill, and self-hosting capabilities."
 date: 2026-03-15
 author: "Privacy Tools Guide"

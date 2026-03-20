@@ -249,12 +249,6 @@ privacy.resistFingerprinting = true
 
 Disable WebRTC in browser settings or use an extension that blocks the leak.
 
-## Conclusion
-
-Your browser reveals substantially more information than most users realize. By running the code examples above, you can audit exactly what websites see. The Navigator API exposes basic properties, WebGL reveals your GPU, canvas rendering creates unique hashes, and font detection exposes your installed typefaces.
-
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Secure Communication for Labor Strike."
+title: "How To Set Up Secure Communication For Labor Strike Organizing"
 description: "A practical technical guide for developers and power users to build secure communication infrastructure for labor strike organizing. Covers encryption."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -209,13 +209,6 @@ veracrypt --create --size=500M --volume-type=normal \
   --encryption=AES --hash=SHA-512 --filesystem=FAT \
   /path/to/organizing-container
 ```
-
-## Summary
-
-Effective labor strike communication requires layered security: end-to-end encrypted messaging (Signal, Session), self-hosted infrastructure when you need control (Matrix), secure file sharing (PrivateBin, Syncthing), and disciplined operational practices. The tools and techniques in this guide provide practical starting points for developers and power users building organizing infrastructure that protects both communication content and participant identities.
-
-Security is a process, not a product. Regularly audit your communication practices, rotate credentials, and maintain operational security awareness throughout your campaign.
-
 
 ## Related Reading
 

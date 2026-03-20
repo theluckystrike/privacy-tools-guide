@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Android Sensor Permissions: How Accelerometer and."
+title: "Android Sensor Permissions How Accelerometer Gyroscope Can B"
 description: "A technical guide explaining Android sensor permissions for accelerometer and gyroscope. Learn how motion sensors work, their privacy implications, and."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gamepad API Fingerprinting: How Connected Controllers."
+title: "Gamepad Api Fingerprinting How Connected Controllers Reveal"
 description: "Discover how websites use the Gamepad API to fingerprint browsers through connected controllers. Learn the technical mechanisms, code examples, and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

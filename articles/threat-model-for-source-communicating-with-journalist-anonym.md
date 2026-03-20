@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Threat Model for Source Communicating with Journalist."
+title: "Threat Model For Source Communicating With Journalist Anonym"
 description: "A comprehensive threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational."
 date: 2026-03-15
 author: "Privacy Tools Guide"
@@ -168,13 +168,6 @@ Always maintain redundant communication methods:
 - Secondary: PGP-encrypted email through Tor
 - Tertiary: Encrypted dead drop using secure file hosting
 - Emergency: Physical dead drop with pre-arranged location
-
-## Summary
-
-Protecting source-journalist communication requires layered defenses addressing technical, operational, and physical security. No single tool or technique provides complete protection—your threat model must account for multiple attack vectors and implement corresponding defenses. The key is understanding your specific adversary, implementing appropriate technical measures, and maintaining discipline throughout the communication relationship.
-
-Start with device isolation, implement strong encryption for all communications, use Tor for network anonymity, and establish clear operational protocols. Regularly review and update your security practices as both threats and tools evolve.
-
 
 ## Related Reading
 

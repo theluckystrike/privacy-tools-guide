@@ -205,17 +205,6 @@ iptables -A OUTPUT -o tun+ -j ACCEPT
 iptables -A OUTPUT -j DROP
 ```
 
-## Conclusion
-
-Proton VPN Stealth provides **partial functionality in Myanmar** as of 2026, with approximately 60-70% success rates on optimal server configurations. The Stealth protocol works better than standard VPN connections, though users should not rely on it for mission-critical connectivity. Singapore servers on port 8443 currently offer the best combination of success rate and latency.
-
-For guaranteed access, self-hosted solutions or Tor bridges remain more reliable despite their drawbacks. The situation remains fluid—success rates change as Myanmar's filtering technology evolves and as Proton VPN updates its obfuscation methods.
-
-The most practical approach combines Proton VPN Stealth as a primary tool with a self-hosted WireGuard server or Tor bridges as backup options. Test connectivity during non-restricted hours (typically early morning local time) for best results.
-
----
-
-**
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

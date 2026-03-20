@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Encrypted Voice Call App 2026: A Developer and."
+title: "Best Encrypted Voice Call App 2026"
 description: "A comprehensive guide to encrypted voice call apps in 2026, featuring protocol analysis, self-hosting options, and code examples for developers and."
 date: 2026-03-15
 author: theluckystrike
