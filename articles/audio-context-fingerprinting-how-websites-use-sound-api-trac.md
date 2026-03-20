@@ -7,7 +7,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /audio-context-fingerprinting-how-websites-use-sound-api-trac/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, api]
 reviewed: true
 score: 8
 intent-checked: true

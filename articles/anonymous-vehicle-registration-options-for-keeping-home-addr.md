@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-vehicle-registration-options-for-keeping-home-addr/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 voice-checked: true

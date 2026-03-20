@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /anonymous-domain-registration-how-to-buy-domain-without-expo/
 categories: [guides, security]
 reviewed: true
-score: 0
+score: 8
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

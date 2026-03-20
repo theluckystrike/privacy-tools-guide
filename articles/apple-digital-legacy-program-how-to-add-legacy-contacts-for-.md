@@ -10,6 +10,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 categories: [guides]
+tags: [privacy-tools-guide]
 ---
 
 The Apple Digital Legacy Program allows you to designate trusted contacts who can access your iCloud data after your death or incapacitation through a recovery key and death certificate verification. Available on iOS 15+ and macOS 12.1+, this feature enables secure data transfer—including Photos, iCloud Drive, and Keychain entries—while maintaining end-to-end encryption. Setting up legacy contacts takes just 15 minutes and involves selecting trusted individuals and storing a recovery key in a secure location.

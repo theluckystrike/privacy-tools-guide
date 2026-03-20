@@ -6,7 +6,7 @@ date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /async-code-review-process-without-zoom-calls-step-by-step/
 categories: [guides]
-tags: [remote-work, async-communication, code-review]
+tags: [privacy-tools-guide, remote-work, async-communication, code-review]
 reviewed: true
 score: 8
 intent-checked: true
