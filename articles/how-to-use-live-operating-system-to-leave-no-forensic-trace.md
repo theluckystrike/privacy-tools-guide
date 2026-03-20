@@ -6,7 +6,7 @@ date: 2026-03-17
 author: theluckystrike
 permalink: /how-to-use-live-operating-system-to-leave-no-forensic-trace/
 categories: [guides]
-tags: [privacy, security, tools]
+tags: [privacy-tools-guide, privacy, security, tools]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-separate-phone-number-for-dating-apps-without-rev/
 categories: [guides]
-tags: [privacy, security]
+tags: [privacy-tools-guide, privacy, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tails-operating-system-for-extreme-privacy-daily/
 categories: [guides]
-tags: [privacy, security, tails, operating-system]
+tags: [privacy-tools-guide, privacy, security, tails, operating-system]
 reviewed: true
 score: 8
 intent-checked: true
