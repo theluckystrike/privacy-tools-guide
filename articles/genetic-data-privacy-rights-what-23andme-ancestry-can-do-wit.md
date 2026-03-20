@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "theluckystrike"
 permalink: /genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 voice-checked: true

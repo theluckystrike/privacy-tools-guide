@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/
 categories: [guides]
-tags: [tools, security]
+tags: [privacy-tools-guide, tools, security, encryption]
 reviewed: true
 score: 8
 intent-checked: true

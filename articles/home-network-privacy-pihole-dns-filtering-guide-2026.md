@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /home-network-privacy-pihole-dns-filtering-guide-2026/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}
