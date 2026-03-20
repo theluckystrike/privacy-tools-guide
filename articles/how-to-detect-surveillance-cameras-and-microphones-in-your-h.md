@@ -196,6 +196,106 @@ pip install sounddevice numpy scipy
 brew install rtl-sdr cubicsdr
 ```
 
+
+## Detecting Cameras with Lens Reflection Scanning
+
+Hidden camera lenses reflect light in a distinctive way. Camera lenses are made of glass with a specific refractive index that reflects a small amount of incoming light back toward the source, even when the device is turned off. This optical property makes cameras detectable with a bright light source even when they have no network presence and emit no RF signal.
+
+The technique works with any bright flashlight: darken the room, hold the light source near your eye level, and slowly scan surfaces. Camera lenses return a bright, colored reflection distinct from the duller reflection of ordinary objects. IR filter glass often reflects red or purple under a flashlight.
+
+Dedicated RF/lens detector devices combine both detection methods. Consumer devices like the JMDHKK RF detector or the SZBOB Non-Linear Junction Detector range from $30 to $200. More capable devices cost more but add sensitivity and frequency range.
+
+For a systematic visual search, document positions methodically:
+
+```python
+# room_scan.py - Document camera detection sweep
+from datetime import datetime
+import json
+
+def log_room_scan(room_name: str, scan_positions: list) -> dict:
+    scan_record = {
+        "room": room_name,
+        "date": datetime.now().isoformat(),
+        "scan_method": ["visual_lens_reflection", "nmap", "rf_scan"],
+        "positions_checked": [],
+        "findings": []
+    }
+    
+    for position in scan_positions:
+        scan_record["positions_checked"].append({
+            "location": position,
+            "checked_at": datetime.now().isoformat(),
+            "clear": True
+        })
+    
+    return scan_record
+
+# Document a standard hotel room scan
+positions = [
+    "smoke_detector", "clock_radio", "picture_frames",
+    "outlets", "light_fixtures", "tv_top", "air_vent",
+    "mirror_back", "decorative_objects", "bathroom_vent"
+]
+
+log_room_scan("hotel_room_214", positions)
+```
+
+Systematic documentation is useful when staying in accommodations repeatedly, or when a concern needs to be reported to a property manager or law enforcement with specific locations noted.
+
+
+## Hardening Against Smart Device Surveillance
+
+Many homes now contain dozens of connected devices: smart TVs, voice assistants, robot vacuums, baby monitors, and security cameras. These devices present a different challenge from covert surveillance equipment—they are openly installed but may be collecting more data than their owners realize.
+
+Smart TVs with automatic content recognition (ACR) technology capture screenshots of everything displayed and transmit them to the manufacturer. This surveillance is often enabled by default during initial setup under vague "improve your experience" consent flows. Disable ACR in your TV's privacy settings—the menu location varies by manufacturer.
+
+Voice assistants create recordings of audio when triggered, and sometimes when not triggered due to false wake-word detection. Review and delete stored voice recordings regularly:
+
+```bash
+# Monitor network traffic from smart devices using tcpdump
+# First, identify device IP from your router's DHCP table
+sudo tcpdump -i eth0 host 192.168.1.87 -n -v 2>/dev/null |   grep -E "(amazon|alexa|google|siri|microsoft)" |   head -50
+
+# Use Wireshark for more detailed analysis
+# Filter: ip.addr == 192.168.1.87 && tcp
+```
+
+Segment smart devices onto a separate VLAN to limit their access to other devices and your main network:
+
+```
+# Router VLAN configuration (conceptual)
+VLAN 10 - Trusted devices (computers, phones)
+  - Full internet access
+  - Access to NAS
+  - Internal DNS
+
+VLAN 20 - IoT/Smart devices
+  - Internet access only (no access to VLAN 10)
+  - Blocked: local network routing
+  - DNS: Pi-hole (blocks tracking domains)
+  - Outbound monitoring: suspicious traffic alerts
+```
+
+This network segmentation means a compromised smart device cannot access your computer's file shares, your NAS, or your other trusted devices, even if it is actively running surveillance software.
+
+
+## What to Do if You Find a Device
+
+Discovering a hidden surveillance device in a rented space (hotel room, Airbnb, rental property) requires specific steps. How you handle the discovery affects both your ability to pursue legal remedies and the safety of any evidence.
+
+**Do not move or disable the device.** Interfering with the device may constitute destruction of evidence and could complicate criminal proceedings. Photograph its location and orientation before doing anything else.
+
+**Document thoroughly before acting.** Use your phone to photograph the device in situ, including reference shots showing its position relative to the room layout.
+
+**Notify the property manager or hotel management immediately.** Request that they contact law enforcement. In most jurisdictions, installing covert recording devices without consent in a space where privacy is expected is a criminal offense.
+
+**Preserve network evidence.** Before leaving the location, capture network traffic logs from your earlier scans. The device's MAC address and any traffic captured are useful to investigators.
+
+If law enforcement will not respond or the property manager is unresponsive, contact local data protection authorities. In the EU, national DPAs (Data Protection Authorities) have jurisdiction over surveillance privacy violations. In the US, contact local police and the FBI's IC3 for internet crimes.
+
+Post public reviews on the booking platform documenting what you found and that you reported it. This creates accountability and protects future guests.
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
