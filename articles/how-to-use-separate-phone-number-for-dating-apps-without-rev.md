@@ -8,7 +8,7 @@ permalink: /how-to-use-separate-phone-number-for-dating-apps-without-rev/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
