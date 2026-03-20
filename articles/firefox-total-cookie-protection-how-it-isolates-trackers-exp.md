@@ -80,6 +80,196 @@ Supercookies and other storage mechanisms like ETags, cache timing, and HSTS sup
 
 Network-level tracking, where ISPs or network observers log DNS queries and traffic patterns, also bypasses browser-level cookie protections. Users concerned about network-level tracking need to combine browser privacy features with DNS-over-HTTPS configuration or VPN services.
 
+## Threat Model: Tracking Scenarios Prevented
+
+Understanding what Total Cookie Protection protects against helps you evaluate whether your configuration meets your privacy needs:
+
+**Behavioral Profile Building**: Without partitioning, advertisers track you across dozens of sites—your reading habits, shopping interests, political views, health concerns—building a comprehensive behavioral profile. With TCP, each site's third parties see only what you do on that specific site. A fashion retailer cannot see that you visit health symptom checkers.
+
+**Cross-Domain Fingerprinting**: Trackers combine cookies with other identifiers (canvas fingerprinting, IP addresses) to recognize you across sites. TCP prevents the cookie component of this attack, though browser fingerprinting remains effective.
+
+**Remarketing Escape**: Advertisers use cookies to follow you after you leave their site, showing you relevant ads everywhere else. TCP breaks this mechanism—advertisers cannot build persistent audiences across unrelated sites.
+
+**Identity Resolution**: Data brokers purchase cookies from tracking networks to match user identifiers across sites, creating unified profiles from multiple sources. TCP prevents trackers from sharing identifiers across different browsing contexts.
+
+## Hands-On Verification: Testing Cookie Isolation Yourself
+
+Create a practical test to verify cookie isolation works on your browser:
+
+**Test Setup**: Open two browser tabs to different websites:
+- Tab A: Visit reddit.com
+- Tab B: Visit news.ycombinator.com
+
+Both sites likely load analytics from Google Analytics, but with TCP enabled, the Google Analytics cookies in Tab A cannot be read in Tab B, even though both pages load Google Analytics code.
+
+**Verification Steps**:
+1. Open Firefox Developer Tools (F12) on Tab A
+2. Go to Storage → Cookies → Find the domain that ends in ".google.com"
+3. Note the cookies present (typically "_ga", "_gid", or similar)
+4. Switch to Tab B and repeat the process
+5. Observe that the cookies are different—the same tracking domain has separate cookies in each context
+
+**Browser Console Verification**: In Developer Tools Console, you can verify isolation:
+
+```javascript
+// In Tab A with reddit.com loaded
+// This will show Google Analytics cookies for the reddit.com context
+document.cookie;
+
+// Note the cookies, then switch to Tab B with ycombinator.com
+// The same command will show different cookies for the ycombinator.com context
+document.cookie;
+```
+
+**Advanced Testing**: Create test pages on different local domains:
+
+```html
+<!-- Save as test-a.local -->
+<html>
+<body>
+  <h1>Site A - Check Storage Inspector</h1>
+  <iframe src="https://tracker.example.com/set-cookie.html"></iframe>
+  <script>
+    console.log("Cookies in Site A context:", document.cookie);
+  </script>
+</body>
+</html>
+```
+
+The tracker.example.com iframe will set cookies that are isolated to test-a.local's context.
+
+## Configuration Deep Dive
+
+Beyond the default settings, Firefox offers granular controls for power users:
+
+**about:config Settings**:
+
+```
+privacy.isolation.forceStrictStoragePartitioning = true
+  # Forces strict partitioning across all storage types (cookies, localStorage, IndexedDB)
+
+privacy.trackingprotection.enabled = true
+  # Enables basic tracking protection
+
+privacy.trackingprotection.socialtracking.enabled = true
+  # Blocks trackers categorized as social networks
+
+privacy.trackingprotection.cryptomining.enabled = true
+  # Blocks cryptomining scripts
+
+network.cookie.cookieBehavior = 5
+  # 0 = Accept all cookies
+  # 1 = Reject third-party cookies
+  # 2 = Accept only from visited sites
+  # 3 = Reject all cookies
+  # 4 = Reject tracking cookies
+  # 5 = Reject tracking and third-party (highest privacy)
+
+network.cookie.sameSite.laxByDefault = true
+  # Makes SameSite=Lax the default for cookies without explicit SameSite attribute
+```
+
+**Verification Command**: Check your current privacy settings:
+
+```javascript
+// In Firefox console, check the privacy settings
+navigator.doNotTrack  // Returns "1" if DNT is enabled
+
+// Check cookie behavior setting
+// Go to about:preferences#privacy and look for "Strict" mode indicator
+```
+
+## Storage Partitioning Beyond Cookies
+
+Total Cookie Protection also affects other storage mechanisms:
+
+**localStorage and sessionStorage**: These are now partitioned per-site, meaning trackers cannot store identifiers in localStorage that persist across different sites.
+
+**IndexedDB**: Similarly partitioned, preventing cross-site IndexedDB access. This affects applications that use IndexedDB for client-side data storage.
+
+**Cache Partitioning**: HTTP cache is also partitioned by the top-level site, preventing trackers from detecting your previous visits through cache timing attacks.
+
+**Testing localStorage Isolation**:
+
+```javascript
+// On site-a.example.com
+localStorage.setItem("tracker_id", "abc123");
+
+// This data is isolated to site-a.example.com
+// When you visit site-b.example.com, even if both load the same third-party code,
+// that code cannot access the tracker_id from site-a
+
+// You can verify this in Developer Tools → Storage → Local Storage
+// You'll see separate entries for each top-level site
+```
+
+## Interaction with Other Firefox Privacy Features
+
+**Multi-Account Containers**: Combines with TCP for enhanced isolation. Containers partition storage by both site and container, creating additional context separation.
+
+**First-Party Isolation (FPI)**: Older privacy mechanism now superseded by TCP, but some users still enable both for maximum partitioning. FPI created entirely separate browser contexts (different dom storage IDs), while TCP uses a simpler partitioning approach.
+
+**SmartBlock**: Handles compatibility issues when trackers are blocked. If a site breaks due to missing tracker functionality, SmartBlock provides a local substitute. Works alongside TCP to maintain functionality.
+
+## Practical Configuration for Different Use Cases
+
+**For Maximum Privacy**:
+- Enable Strict Enhanced Tracking Protection
+- Enable all about:config partitioning settings
+- Disable JavaScript for non-essential sites
+- Use containers for different website categories
+- Clear cookies on browser close
+
+**For Balanced Privacy and Functionality**:
+- Use Standard Enhanced Tracking Protection
+- Keep default TCP settings enabled
+- Accept necessary cookies for website functionality
+- Use containers for banking/financial sites
+- Clear cookies weekly
+
+**For Developers Testing Cross-Site Behavior**:
+- Use Firefox private/incognito mode (temporary settings)
+- Or temporarily disable TCP for testing:
+  - Go to about:preferences#privacy
+  - Switch from "Strict" to "Standard" temporarily
+  - Note that this significantly reduces tracking protection
+
+## Common Implementation Mistakes
+
+**Websites that Break with TCP**:
+
+Some websites implement SSO or authentication systems that rely on third-party cookies:
+- Single sign-on services that span multiple properties
+- Payment processors embedded in third-party frames
+- Cross-domain form builders
+
+**Solutions**:
+- Request the website implement OAuth/OIDC instead of third-party cookie SSO
+- Use redirect-based authentication flows
+- Configure site-specific cookie exceptions (Settings → Manage Permissions → Manage Exceptions for Cookies)
+
+**Testing Cookie Behavior**:
+
+```bash
+# Check what cookies a specific site is setting
+# Monitor Firefox network tab and filter by "cookies" or specific domains
+
+# Using curl to see Set-Cookie headers
+curl -v https://example.com 2>&1 | grep -i "set-cookie"
+```
+
+## Limitations and Complementary Protections
+
+While TCP is robust, it doesn't prevent:
+
+**Browser Fingerprinting**: Canvas fingerprinting, WebGL fingerprinting, font detection, and other technique still work. Use Firefox's fingerprinting protection (Enhanced Tracking Protection → Strict).
+
+**HSTS Supercookies**: Some sites use HSTS cache to store identifiers. These bypass cookie partitioning. HSTS pinning attacks remain possible.
+
+**IP-Based Tracking**: Network-level tracking using your IP address, ISP logs, or DNS queries. Combine with VPN or DNS-over-HTTPS.
+
+**First-Party Tracking**: Tracking from the website you're actually visiting isn't prevented by TCP. Use privacy settings to minimize first-party data collection.
+
 ## Conclusion
 
 Firefox Total Cookie Protection represents a substantial advancement in browser privacy technology. By isolating cookies at the site level, it prevents the most common form of cross-site tracking while maintaining website functionality that depends on legitimate cookie use. For developers and power users, understanding how this isolation works enables better decisions about privacy configurations and more privacy-conscious application design.

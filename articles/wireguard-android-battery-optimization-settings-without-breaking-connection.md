@@ -101,6 +101,311 @@ If you notice significant battery drain despite optimization efforts, consider w
 
 The optimal configuration typically combines a 60-second keepalive interval, disabled battery optimization for the WireGuard app, on-demand rules for cellular versus WiFi usage, and either Always-On VPN with those settings or manual connection management. Start with this baseline, test for a few days, and adjust based on your observed battery life and connection reliability.
 
+## Advanced Configuration File Examples
+
+**Minimal Battery Drain Configuration**:
+
+```ini
+[Interface]
+Address = 10.0.0.2/32
+PrivateKey = <your-private-key>
+DNS = 1.1.1.1, 8.8.8.8
+# Longer keepalive for battery efficiency
+# Only works on stable networks
+PersistentKeepalive = 120
+
+[Peer]
+PublicKey = <server-public-key>
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 120
+```
+
+**High-Reliability Configuration** (for aggressive NAT environments):
+
+```ini
+[Interface]
+Address = 10.0.0.2/32
+PrivateKey = <your-private-key>
+DNS = 8.8.8.8
+# Conservative keepalive for unreliable networks
+PersistentKeepalive = 25
+
+[Peer]
+PublicKey = <server-public-key>
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
+```
+
+**Mixed Usage Configuration** (with on-demand rules):
+
+```ini
+# For WiFi (less battery sensitivity)
+[Interface]
+Address = 10.0.0.2/32
+PrivateKey = <your-private-key>
+DNS = 1.1.1.1
+# Can use more frequent keepalive on WiFi
+PersistentKeepalive = 60
+
+[Peer]
+PublicKey = <server-public-key>
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 60
+
+# For Cellular (more aggressive optimization)
+[Interface]
+Address = 10.0.0.2/32
+PrivateKey = <your-private-key>
+DNS = 1.1.1.1
+# Longer intervals for cellular data conservation
+PersistentKeepalive = 120
+
+[Peer]
+PublicKey = <server-public-key>
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 120
+```
+
+## Threat Model: Understanding WireGuard Battery Consumption
+
+Understanding why WireGuard uses battery helps you make informed optimization choices:
+
+**Keepalive Mechanism**: WireGuard periodically sends packets to the server to keep NAT mappings alive. Every packet causes the Android CPU to wake from sleep state, process the packet, and return to sleep. More frequent packets = more CPU wake cycles = more battery drain.
+
+**Network Interface Activity**: The physical radio (WiFi or cellular) must activate to send keepalive packets. Radio activation has significant power overhead beyond the packet transmission itself.
+
+**Tunnel Establishment**: Each network change (switching between WiFi and cellular, or between WiFi networks) requires re-establishing the tunnel and re-authenticating, which consumes additional battery.
+
+**DNS Resolution**: If you route DNS through the VPN tunnel, each DNS query requires processing through the encrypted tunnel rather than being cached locally. More DNS queries = more battery.
+
+**Device Idle State Conflicts**: Android's aggressive battery optimization may conflict with VPN packet processing, causing retries and increased power consumption.
+
+## Detailed Testing Methodology
+
+**Battery Measurement Protocol**:
+
+1. **Baseline Measurement**:
+   - Disconnect all VPNs
+   - Enable WiFi on a known network
+   - Set screen brightness to 50%
+   - Keep screen on and note starting battery percentage
+   - Wait 30 minutes, record ending percentage
+   - Calculate baseline drain rate
+
+2. **Configuration Test**:
+   - Connect WireGuard with settings to test
+   - Maintain same screen brightness, WiFi network, usage
+   - Wait 30 minutes, record battery percentage
+   - Calculate test drain rate
+   - Compare to baseline
+
+3. **Real-World Usage Test**:
+   - Connect WireGuard with optimized settings
+   - Use phone normally for full day
+   - Check final battery percentage
+   - Compare to typical usage without VPN
+
+**Measuring Results**:
+
+```
+Calculation Example:
+Baseline: Started at 100%, ended at 96% over 30 min = 4% drain / 30 min = 0.13% per minute
+Test 1: Started at 100%, ended at 98.5% = 1.5% drain / 30 min = 0.05% per minute
+Test 2: Started at 100%, ended at 97% = 3% drain / 30 min = 0.1% per minute
+
+Result: Test 1 with 120-second keepalive is optimal, Test 2 with 25-second is middle ground
+```
+
+## Network Condition Detection
+
+Adapt your configuration based on detected network conditions:
+
+**WiFi vs Cellular Detection Script** (using Android Shortcuts or automation):
+
+```bash
+# Pseudo-code for network-aware optimization
+if (currentNetwork == "WiFi" AND isOnTrustedNetwork) {
+    # Can use shorter keepalive on trusted home/office WiFi
+    setKeepalive(60)
+}
+else if (currentNetwork == "Cellular") {
+    # Use longer keepalive for cellular to save data and battery
+    setKeepalive(120)
+}
+else if (currentNetwork == "PublicWiFi") {
+    # Unknown networks need VPN active
+    setKeepalive(30)  # More reliable at cost of battery
+}
+```
+
+**Using Android's ConnectivityManager** (for app developers):
+
+```java
+// Detect current network type
+public void optimizeForNetwork() {
+    ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+    if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+        // WiFi detected - can use lower power settings
+        setKeepalive(90);
+    } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+        // Cellular detected - prioritize battery
+        setKeepalive(120);
+    }
+}
+```
+
+## Android Version-Specific Optimizations
+
+**Android 10 and Earlier**:
+- Battery optimization for VPN apps may be less aggressive
+- Keepalive intervals of 25-60 seconds work well
+- Always-on VPN drains less battery than manual reconnection
+
+**Android 11-12**:
+- More aggressive battery optimization
+- Recommend 60-120 second keepalive
+- Enable "Don't Optimize" for WireGuard app
+- Always-on VPN still more efficient than frequent reconnection
+
+**Android 13+**:
+- Most aggressive battery optimization yet
+- Consider 120+ second keepalive
+- May need to disable battery optimization completely
+- Foreground service notification required for always-on VPN
+
+**Version Detection for Optimization**:
+
+```kotlin
+// Adjust settings based on Android version
+fun optimizeForAndroidVersion() {
+    val apiLevel = Build.VERSION.SDK_INT
+
+    val keepaliveInterval = when {
+        apiLevel >= Build.VERSION_CODES.TIRAMISU -> 120  // Android 13+
+        apiLevel >= Build.VERSION_CODES.S -> 90         // Android 12+
+        apiLevel >= Build.VERSION_CODES.R -> 60         // Android 11+
+        else -> 25                                        // Android 10 and earlier
+    }
+
+    applyKeepaliveInterval(keepaliveInterval)
+}
+```
+
+## Troubleshooting Specific Issues
+
+**Battery Drain Remains High Despite Optimization**:
+
+```
+Diagnostic Steps:
+1. Check Settings → Battery → Battery usage
+   - Is WireGuard listed as top consumer?
+   - Compare to baseline without VPN
+
+2. Check background app refresh settings
+   - Settings → Apps → WireGuard → Permissions
+   - Verify "Background execution" is allowed
+
+3. Monitor network activity
+   - Use Android's built-in Network Monitor
+   - Settings → Developer options → Network Monitor
+   - Check if excessive data is transmitting
+
+4. Test with different DNS settings
+   - Switch from VPN DNS to system DNS
+   - May reduce processing overhead
+   - Trade-off: DNS queries visible to ISP
+```
+
+**Frequent Disconnections After Optimization**:
+
+```
+Resolution:
+1. Reduce keepalive interval incrementally
+   - If 120 sec causes disconnects, try 90 sec
+   - Test for 24 hours before adjusting further
+
+2. Check NAT timeout characteristics
+   - Contact VPN provider for their network's NAT timeout
+   - Set keepalive interval to 50% of NAT timeout
+   - Example: 120 second NAT timeout = 60 second keepalive
+
+3. Enable Always-On VPN
+   - Helps reconnection succeed quickly
+   - Prevents persistent disconnection state
+
+4. Check for MTU issues
+   - Some networks require smaller MTU
+   - Standard: 1500 bytes
+   - VPN: 1420 bytes (accounting for VPN overhead)
+   - Test by setting MTU to 1280 if issues persist
+```
+
+**DNS Resolution Failures**:
+
+```
+Testing DNS:
+1. In WireGuard config, specify multiple DNS servers:
+   DNS = 1.1.1.1, 8.8.8.8, 9.9.9.9
+
+2. Test connectivity:
+   - Open browser and navigate to a site
+   - Verify you can resolve domains
+   - If failing, try system DNS instead
+
+3. DNS privacy trade-off:
+   - VPN DNS: Private but may be slower
+   - System DNS: Visible to ISP but potentially faster/more reliable
+
+4. Optimal settings:
+   - Use VPN DNS on public networks
+   - Use system DNS on trusted networks
+   - Use on-demand rules to switch automatically
+```
+
+## Verification and Monitoring
+
+**Quick Connectivity Test**:
+
+After any configuration change, verify connectivity works properly:
+
+```
+Test Procedure:
+1. Connect WireGuard with new settings
+2. Open a browser and navigate to google.com
+3. Open Settings → About Phone and check for IP address
+4. Visit ipinfo.io to verify your IP has changed (VPN working)
+5. Check speed at speedtest.net (establish baseline)
+6. Monitor for any disconnections over next 2 hours
+
+Expected Results:
+- Immediate connection (within 3 seconds)
+- IP address shows VPN provider location
+- Speed reasonable for your connection type
+- No reconnects during normal usage
+```
+
+**Long-Term Battery Validation**:
+
+```
+Method:
+1. Note battery percentage and time (e.g., 100% at 8:00 AM)
+2. Use phone normally for 8 hours
+3. Record battery percentage and time (e.g., 15% at 4:00 PM)
+4. Calculate drain: (100% - 15%) / 8 hours = 10.625% per hour
+5. Project to full day: ~17 hours of typical use until battery depleted
+
+Targets:
+- Without VPN: 20% per hour typical = 5 hours total
+- With WireGuard (optimized): 10% per hour = 10 hours total
+- With WireGuard (unoptimized): 15%+ per hour = 6-7 hours total
+```
+
 ## Getting Started
 
 Begin by reviewing your current WireGuard configuration and identifying which settings you can adjust. Most users see immediate battery improvements by increasing the keepalive interval from the default 25 seconds to 60 seconds. Combine this with disabling battery optimization for the app, and you have a solid foundation for further optimization.

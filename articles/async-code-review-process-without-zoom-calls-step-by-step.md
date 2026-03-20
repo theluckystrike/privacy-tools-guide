@@ -106,6 +106,269 @@ Be willing to experiment. Try different response time expectations, different PR
 Effective async code review comes down to clear communication, structured processes, and mutual respect for everyone's time and expertise. Use PR templates to ensure consistency. Write detailed, specific feedback in inline comments. Maintain reasonable response time expectations. Handle disagreements thoughtfully. And continuously improve your process based on what you learn.
 
 By following these steps, your team can maintain high code quality while respecting the async nature of remote work. The initial setup takes some effort, but the long-term benefits of faster reviews, better feedback, and improved team collaboration make it worth the investment.
+
+## Advanced PR Template Examples
+
+**For Security-Sensitive Changes**:
+
+```markdown
+## Security Checklist
+- [ ] Input validation implemented for all user inputs
+- [ ] Output encoding applied appropriately (XSS prevention)
+- [ ] CSRF tokens checked if applicable
+- [ ] SQL injection prevention verified (parameterized queries)
+- [ ] Sensitive data not logged or exposed
+- [ ] Authentication/authorization checks enforced
+- [ ] No hardcoded secrets (API keys, passwords)
+
+## Security Review Required
+- [ ] Cryptographic changes
+- [ ] Authentication/authorization modifications
+- [ ] Data handling changes
+- [ ] Permission system modifications
+
+**Assign to**: @security-team
+```
+
+**For Database Migrations**:
+
+```markdown
+## Migration Details
+- [ ] Reversible migration included
+- [ ] Data loss impact assessed
+- [ ] Tested on production-like dataset
+- [ ] Rollback plan documented
+- [ ] Performance impact analyzed
+- [ ] No downtime required
+
+## Performance Impact
+- Expected query time change: ___
+- Index changes: ___
+- Storage impact: ___
+
+## Deployment Order
+1. Deploy migration in blue-green environment
+2. Verify queries perform within SLA
+3. Deploy application code
+```
+
+**For Performance-Critical Changes**:
+
+```markdown
+## Performance Metrics
+- [ ] Benchmarked before/after
+- [ ] Memory usage compared
+- [ ] CPU usage profiled
+- [ ] Network requests analyzed
+- [ ] Database queries optimized
+
+## Benchmark Results
+```
+Before: ___
+After: ___
+Improvement: ___
+```
+
+## Load Testing
+- [ ] Tested with 10x normal traffic
+- [ ] Tested with concurrent requests
+- [ ] Memory leaks detected and resolved
+```
+
+## Reviewer Checklists
+
+**For Reviewers** - Create a personal checklist applied to every review:
+
+```markdown
+## Code Quality Checks
+- [ ] Does the code do what the PR description claims?
+- [ ] Are there obvious bugs or logic errors?
+- [ ] Are variable names clear and meaningful?
+- [ ] Is code unnecessarily complex?
+- [ ] Are there better solutions in the codebase to follow?
+
+## Performance Checks
+- [ ] Are there obvious performance issues?
+- [ ] Are loops efficient?
+- [ ] Are database queries optimized (N+1 problems)?
+- [ ] Are unnecessary allocations minimized?
+
+## Security Checks
+- [ ] Could this code be exploited?
+- [ ] Are inputs validated?
+- [ ] Are error messages safe (no information leakage)?
+- [ ] Are there security-related dependencies that need auditing?
+
+## Testing Checks
+- [ ] Do the tests cover the main functionality?
+- [ ] Are edge cases tested?
+- [ ] Are error conditions tested?
+- [ ] Would I trust this code in production based on the tests?
+
+## Documentation Checks
+- [ ] Is the change documented if needed?
+- [ ] Are complex decisions explained?
+- [ ] Are future maintainers clear on why this approach was chosen?
+```
+
+## Time-Zone Friendly Review Practices
+
+For globally distributed teams:
+
+**Shift Rotation Review System**:
+- Assign each PR to reviewers from different time zones
+- First reviewer provides initial feedback within their business hours
+- Author responds, second reviewer provides additional feedback
+- This enables continuous progress without waiting for synchronous meetings
+
+**Asynchronous Decision Making**:
+
+```markdown
+## Decision Protocol for Disagreements
+
+When reviewers disagree with an author's approach:
+
+**Comment Format**:
+```
+## Decision Point: [Issue Title]
+
+### Position A (Author): [Author's position and reasoning]
+
+### Position B (Reviewer): [Reviewer's position and reasoning]
+
+### Resolution Process:
+1. Both parties provide full context within 24 hours
+2. If still unresolved, escalate to [decision maker]
+3. Decision is documented in the merged PR for future reference
+```
+```
+
+**Recording Decision Rationale**: Document why decisions were made:
+
+```bash
+# In PR description or comment:
+## Architecture Decisions
+- **Why Approach X over Approach Y**: [detailed explanation]
+- **Trade-offs Accepted**: [what we're giving up for this benefit]
+- **Future Considerations**: [what might need changing]
+```
+
+## Automation for Async Review Efficiency
+
+**GitHub Actions for Pre-Review Automation**:
+
+```yaml
+name: Pre-Review Checks
+on: [pull_request]
+
+jobs:
+  automated-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Lint check
+      - name: Run Linter
+        run: npm run lint
+
+      # Test execution
+      - name: Run Tests
+        run: npm test
+
+      # Security scanning
+      - name: Security Audit
+        run: npm audit --production
+
+      # Code coverage
+      - name: Check Coverage
+        run: npm run coverage -- --threshold=80
+
+      # Dependency updates check
+      - name: Check Dependencies
+        run: npx depcheck
+
+      # Post automated results
+      - name: Comment on PR
+        if: always()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ All pre-review checks passed!'
+            })
+```
+
+**GitLab CI Example**:
+
+```yaml
+pre-review:
+  stage: test
+  script:
+    - npm run lint
+    - npm test
+    - npm audit --production
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+    junit: test-results.xml
+  allow_failure: false
+```
+
+## Metrics and Continuous Improvement
+
+**Key Metrics to Track**:
+
+```bash
+# Average time from PR open to first review
+echo "First Review Latency"
+
+# Average number of review cycles before merge
+echo "Review Cycles"
+
+# Total time from PR open to merge
+echo "Total Cycle Time"
+
+# Number of PRs with blocking comments vs suggestions
+echo "Blocking vs Non-Blocking Feedback Ratio"
+
+# Defect escape rate (bugs that made it to production)
+echo "Quality Metric"
+```
+
+**Improvement Actions Based on Metrics**:
+
+| Metric | Poor Performance | Action |
+|--------|------------------|--------|
+| First Review Latency > 24h | Insufficient reviewers | Assign more reviewers, rotate responsibility |
+| Review Cycles > 3 | Unclear feedback or vague PRs | Improve PR templates, feedback clarity training |
+| Total Cycle Time > 5 days | Slow discussion or approval | Use async decision protocols, reduce approvers needed |
+| Blocking vs Non-Blocking 1:1 or worse | Too critical feedback | Discuss code standards, separate blockers from preferences |
+| Defect Escape > 5% | Review quality issues | Increase coverage requirements, add security checks |
+
+## Implementation Phases
+
+**Phase 1: Foundation (Week 1)**
+- Create PR template
+- Document code review guidelines
+- Set up basic automations
+- Train team on process
+
+**Phase 2: Optimization (Weeks 2-3)**
+- Monitor metrics
+- Adjust approval requirements
+- Refine templates based on feedback
+- Add advanced automations
+
+**Phase 3: Scaling (Weeks 4+)**
+- Implement time-zone aware routing
+- Advanced automation pipelines
+- Regular process retrospectives
+- Leadership education on async culture
 {% endraw %}
 
 ## Related Reading
