@@ -10,11 +10,12 @@ categories: [guides, security]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Dating app catfishing remains one of the most common online scams in 2026. Attackers create fake profiles using stolen photos, fabricated identities, and fabricated backstories to deceive users—often for financial gain, emotional manipulation, or identity theft. While dating platforms implement their own verification systems, they aren't foolproof. This guide teaches developers and power users how to apply Open Source Intelligence (OSINT) techniques to verify profile authenticity before investing time or trust.
+Catfishing on dating apps is widespread and dangerous, with scammers using stolen photos and fake identities to deceive users for money or emotional manipulation. Dating platforms' built-in verification isn't enough to catch sophisticated catfish. This guide teaches you OSINT verification techniques—reverse image search, EXIF metadata analysis, username enumeration, and social media timeline analysis—that reliably detect fake profiles before you invest time or trust in someone who isn't real.
 
 ## Why OSINT Matters for Dating App Verification
 

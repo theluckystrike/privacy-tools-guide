@@ -9,11 +9,12 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
 {% raw %}
 
-Dating applications collect some of the most sensitive personal data available—private messages, location history, sexual orientation, and intimate photographs. This makes them attractive targets for attackers. The dating app data breach history reveals a pattern of security failures across the industry, from poorly secured databases to third-party vendor compromises. This guide provides a chronological breakdown of major incidents, technical analysis of attack vectors, and practical code examples for checking exposure.
+Dating apps have experienced multiple major data breaches exposing millions of user records, including the 2015 AdultFriendFinder breach (412 million accounts), 2020 3Fun exposure (real-time location, photos, chat logs), and 2021 MeetMindful breach (2.28 million records with names, addresses, and dating preferences). These breaches reveal a pattern of security failures from weak password hashing to insecure API endpoints and unprotected cloud storage. This guide provides a chronological breakdown of major incidents, technical analysis of attack vectors, and practical code examples for checking if your data was exposed.
 
 ## Timeline of Major Dating App Data Breaches
 

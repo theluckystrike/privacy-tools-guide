@@ -10,6 +10,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}

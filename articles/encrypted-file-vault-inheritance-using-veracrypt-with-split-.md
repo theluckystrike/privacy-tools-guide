@@ -11,12 +11,13 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Digital estate planning requires more than organizing files—it demands secure mechanisms for transferring access to trusted parties after incapacity or death. VeraCrypt, an open-source disk encryption software, offers features that make this possible: hidden volumes and multiple password support. This guide walks through implementing a split-password inheritance system where your estate executor and attorney each hold partial authentication credentials.
+VeraCrypt's hidden volume and split-password features enable secure digital estate planning by creating a decoy volume (visible with executor's password) and hidden volume (accessible only with attorney's password), requiring both parties to collaborate to access sensitive inheritance documents. This approach prevents any single person from accessing your complete digital estate and ensures accountability. This guide walks through implementing a split-password inheritance system using VeraCrypt, including optional Shamir's Secret Sharing for even stronger security.
 
 ## Why Split Password Authentication Matters
 

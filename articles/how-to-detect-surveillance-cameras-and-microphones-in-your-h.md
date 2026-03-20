@@ -7,24 +7,18 @@ description: "Learn technical methods to identify hidden surveillance devices in
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-detect-surveillance-cameras-and-microphones-in-your-h/
-<<<<<<< HEAD
 reviewed: true
 score: 8
 voice-checked: true
-categories: [guides]
-=======
 categories: [guides]
 tags: [tools]
-reviewed: true
-score: 8
-voice-checked: true
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Understanding how to detect surveillance cameras and microphones in your home becomes essential when privacy is a priority. While commercial bug detectors exist, developers and power users can use open-source tools and network analysis techniques to identify hidden devices. This guide covers practical methods for discovering covert surveillance equipment using command-line utilities, software-defined radio, and audio analysis.
+You can detect hidden surveillance cameras and microphones in your home using network scanning (nmap, arp-scan), RF analysis (gqrx, RTL-SDR), acoustic noise floor analysis, and thermal imaging. This guide covers practical methods for discovering covert surveillance equipment using command-line utilities, software-defined radio, audio analysis, and physical inspection techniques.
 
 ## Network Discovery for Camera Detection
 

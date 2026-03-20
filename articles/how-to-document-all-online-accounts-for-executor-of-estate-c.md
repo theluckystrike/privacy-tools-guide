@@ -10,11 +10,12 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-When a loved one passes away, their digital presence doesn't simply disappear. Executors face the challenging task of identifying, managing, and eventually closing hundreds of online accounts—from social media to banking to subscription services. Without proper documentation, valuable assets can be lost, identities can be stolen, and sentimental data becomes irretrievable. This guide provides systematic methods to document all online accounts for executor of estate responsibilities.
+Executors must systematically identify, document, and manage hundreds of online accounts to prevent asset loss and identity theft. This guide provides practical discovery methods—email analysis, CLI tools, Have I Been Pwned API checks, and structured inventory templates—to document financial accounts, social media, cloud storage, and subscriptions. Use Python scripts and automation to accelerate account discovery and track completion of priority actions.
 
 ## Understanding the Scope of Digital Estate
 

@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+intent-checked: true
 ---
 
 
