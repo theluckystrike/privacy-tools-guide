@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure File Sharing Tools Comparison: E2E Encrypted Solutions"
+title: "Secure File Sharing Tools Comparison: E2E Encrypted."
 description: "Compare E2E encrypted file sharing: OnionShare, Tresorit Send, Wormhole, Firefox Send alternatives, Magic Wormhole. CLI examples, size limits, pricing."
 date: 2026-03-20
 author: "Privacy Tools Guide"
@@ -428,3 +428,9 @@ onionshare-cli --auto-start --no-slugs share leaked-docs.zip
 Start with Wormhole if you're technical. Start with Tresorit Send if you prioritize ease of use. Upgrade to OnionShare for legally sensitive documents.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
