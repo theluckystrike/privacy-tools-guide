@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Russia Data Localization Law: How Requirement to Store."
+title: "Russia Data Localization Law: How Requirement to Store Data Locally Affects User Privacy"
 description: "A technical guide for developers and power users exploring Russia's data localization requirements, how they impact privacy, and strategies for protecting user data."
 date: 2026-03-16
 author: theluckystrike
@@ -170,7 +170,6 @@ Users themselves benefit most from applications that implement strong client-sid
 
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
