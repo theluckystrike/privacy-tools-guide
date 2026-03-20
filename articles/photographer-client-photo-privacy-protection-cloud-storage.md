@@ -353,7 +353,7 @@
 
 
 layout: default
-title: "How to Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage"
+title: "How to Protect Client Photos: Privacy Best Practices for."
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices."
 date: 2026-03-15
 type: article

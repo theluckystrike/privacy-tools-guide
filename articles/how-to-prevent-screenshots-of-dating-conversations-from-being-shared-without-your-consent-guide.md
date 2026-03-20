@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Prevent Screenshots of Dating Conversations from Being Shared Without Your Consent: A Technical Guide"
-description: "A practical guide for developers and power users on screenshot prevention technologies, platform limitations, and privacy-conscious messaging app implementation."
+title: "How to Prevent Screenshots of Dating Conversations from."
+description: "A practical guide for developers and power users on screenshot prevention technologies, platform limitations, and privacy-conscious messaging app."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/

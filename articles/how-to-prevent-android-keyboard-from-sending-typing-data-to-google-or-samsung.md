@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Prevent Android Keyboard From Sending Typing Data To Google Or Samsung"
+title: "How To Prevent Android Keyboard From Sending Typing Data."
 description: "A practical guide for developers and power users to disable keyboard data collection on Android devices. Learn about Gboard, Samsung Keyboard, and."
 date: 2026-03-16
 author: theluckystrike

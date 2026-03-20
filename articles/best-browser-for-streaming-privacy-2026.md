@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Browser for Streaming Privacy 2026: A Developer Guide"
-description: "A technical guide for developers and power users comparing privacy-focused browsers optimized for streaming, with configuration examples and fingerprinting resistance testing."
+description: "A technical guide for developers and power users comparing privacy-focused browsers optimized for streaming, with configuration examples and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-for-streaming-privacy-2026/

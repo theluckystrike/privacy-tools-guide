@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Subscription Service Cancellation After Death How Executor Can Close Recurring Payment Accounts Guide"
+title: "Subscription Service Cancellation After Death How."
 description: "A technical guide for executors and power users on how to identify, access, and cancel subscription services after someone passes away. Includes."
 date: 2026-03-18
 author: "Privacy Tools Guide"

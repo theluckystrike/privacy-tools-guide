@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Cross Border Data Transfer Mechanisms 2026: A Developer Guide"
+title: "Cross Border Data Transfer Mechanisms 2026: A Developer."
 description: "A technical overview of cross-border data transfer mechanisms in 2026. Covers legal frameworks, technical implementations, and code examples for."
 date: 2026-03-15
 author: theluckystrike

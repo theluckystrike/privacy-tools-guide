@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Article 17 Erasure Implementation Code: A Developer Guide"
+title: "GDPR Article 17 Erasure Implementation Code: A Developer."
 description: "Practical implementation guide for GDPR Article 17 right to erasure. Code examples for handling data deletion requests in your applications."
 date: 2026-03-15
 author: "Privacy Tools Guide"

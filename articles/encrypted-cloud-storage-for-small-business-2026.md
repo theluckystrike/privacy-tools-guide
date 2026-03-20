@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Encrypted Cloud Storage for Small Business 2026: A Practical Guide"
+title: "Encrypted Cloud Storage for Small Business 2026: A."
 description: "A technical guide to encrypted cloud storage solutions for small businesses in 2026. Learn about client-side encryption, zero-knowledge architecture."
 date: 2026-03-15
 author: theluckystrike

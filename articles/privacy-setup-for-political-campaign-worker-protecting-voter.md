@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Setup for Political Campaign Worker: Protecting Voter Data in 2026"
-description: "A practical guide for political campaign staff on securing voter data, implementing encryption, and hardening devices against threats in the 2026 threat landscape."
+title: "Privacy Setup for Political Campaign Worker: Protecting."
+description: "A practical guide for political campaign staff on securing voter data, implementing encryption, and hardening devices against threats in the 2026."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-political-campaign-worker-protecting-voter/

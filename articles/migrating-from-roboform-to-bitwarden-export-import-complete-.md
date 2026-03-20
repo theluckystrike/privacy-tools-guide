@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Migrating from RoboForm to Bitwarden: Complete Export-Import Guide"
-description: "A technical guide for developers and power users migrating password data from RoboForm to Bitwarden, covering export methods, CSV parsing, and import scripts."
+title: "Migrating from RoboForm to Bitwarden: Complete."
+description: "A technical guide for developers and power users migrating password data from RoboForm to Bitwarden, covering export methods, CSV parsing, and import."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /migrating-from-roboform-to-bitwarden-export-import-complete-/

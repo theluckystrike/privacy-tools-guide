@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Macos Privacy Permissions Explained Which Tcc Database Entries To Revoke For Security"
+title: "Macos Privacy Permissions Explained Which Tcc Database."
 description: "A guide for developers and power users on understanding macOS TCC database, identifying granted permissions, and revoking unnecessary."
 date: 2026-03-16
 author: theluckystrike

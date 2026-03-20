@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Brave Browser Ad Blocking vs uBlock Origin: A Technical Comparison"
+title: "Brave Browser Ad Blocking vs uBlock Origin: A Technical."
 description: "Brave Browser Ad Blocking vs uBlock Origin: A Technical Comparison — privacy guide covering tools, techniques, and best practices to protect your data."
 date: 2026-03-15
 author: "theluckystrike"

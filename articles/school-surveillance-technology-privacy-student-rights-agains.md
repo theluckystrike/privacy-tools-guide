@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "School Surveillance Technology Privacy: Student Rights Against Facial Recognition Tracking in Schools"
-description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective measures students can take."
+title: "School Surveillance Technology Privacy: Student Rights."
+description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective."
 date: 2026-03-16
 author: theluckystrike
 permalink: /school-surveillance-technology-privacy-student-rights-against/

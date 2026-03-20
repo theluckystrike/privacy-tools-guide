@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Browser for Developers Privacy 2026: A Technical Guide"
-description: "A developer-focused comparison of privacy-focused browsers in 2026, with code examples showing how to test fingerprinting protection and configure secure development environments."
+description: "A developer-focused comparison of privacy-focused browsers in 2026, with code examples showing how to test fingerprinting protection and configure."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-for-developers-privacy-2026/

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure Private DNS on Android for System-Wide Tracker Blocking"
+title: "How to Configure Private DNS on Android for System-Wide."
 description: "A guide for developers and power users to configure Private DNS on Android devices for blocking trackers system-wide without requiring."
 date: 2026-03-16
 author: theluckystrike

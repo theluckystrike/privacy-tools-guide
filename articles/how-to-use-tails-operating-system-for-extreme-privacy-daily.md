@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Tails Operating System for Extreme Privacy Daily"
-description: "A guide for developers and power users on integrating Tails OS into daily workflows for maximum privacy. Covers setup, persistent storage, networking, and automation."
+description: "A guide for developers and power users on integrating Tails OS into daily workflows for maximum privacy. Covers setup, persistent storage, networking."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tails-operating-system-for-extreme-privacy-daily/

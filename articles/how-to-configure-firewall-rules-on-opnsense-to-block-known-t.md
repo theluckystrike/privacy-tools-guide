@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level"
+title: "How to Configure Firewall Rules on OPNsense to Block."
 description: "A practical guide for developers and power users to configure OPNsense firewall rules that block known tracking domains at the IP level, providing."
 date: 2026-03-16
 author: theluckystrike

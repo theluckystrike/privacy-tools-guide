@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Android Work Profile for Isolating Apps That Require Invasive Permissions: 2026 Guide"
+title: "Android Work Profile for Isolating Apps That Require."
 description: "A practical guide for developers and power users on using Android Work Profile to isolate apps with invasive permissions, enhancing privacy and security."
 date: 2026-03-16
 author: "theluckystrike"

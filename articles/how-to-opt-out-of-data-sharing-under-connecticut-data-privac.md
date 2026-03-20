@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Opt Out of Data Sharing Under Connecticut Data Privacy Act (CTDPA) - Complete Guide"
-description: "A practical guide for developers and power users on exercising opt-out rights under the Connecticut Data Privacy Act. Learn how to control your personal data, automate requests, and integrate CTDPA compliance into your applications."
+title: "How to Opt Out of Data Sharing Under Connecticut Data."
+description: "A practical guide for developers and power users on exercising opt-out rights under the Connecticut Data Privacy Act. Learn how to control your."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-data-sharing-under-connecticut-data-privac/

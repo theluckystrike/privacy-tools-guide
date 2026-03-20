@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Password Manager For Real Estate Agent Managing Listing Accounts Guide"
+title: "Password Manager For Real Estate Agent Managing Listing."
 description: "A practical guide for real estate professionals on using password managers to securely manage multiple listing service accounts, MLS credentials, and."
 date: 2026-03-16
 author: theluckystrike

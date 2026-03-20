@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Lightning Network Privacy Risks: What Information Channel Partners Can See About You"
-description: "A technical breakdown of Lightning Network privacy risks and what information channel partners can observe about your transactions, wallet balances, and payment patterns."
+title: "Lightning Network Privacy Risks: What Information."
+description: "A technical breakdown of Lightning Network privacy risks and what information channel partners can observe about your transactions, wallet balances."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/

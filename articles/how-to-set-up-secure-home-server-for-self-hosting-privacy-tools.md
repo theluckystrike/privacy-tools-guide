@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up a Secure Home Server for Self-Hosting Privacy Tools."
+title: "How to Set Up a Secure Home Server for Self-Hosting."
 description: "Step-by-step guide to hardware, networking, OS hardening, and containerized privacy tools on local infrastructure."
 date: 2026-03-20
 author: theluckystrike

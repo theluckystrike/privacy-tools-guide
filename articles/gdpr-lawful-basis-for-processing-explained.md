@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Lawful Basis for Processing Explained: A Developer Guide"
+title: "GDPR Lawful Basis for Processing Explained: A Developer."
 description: "A technical guide explaining GDPR lawful bases for processing personal data. Covers all 6 bases with code examples, practical implementation patterns."
 date: 2026-03-15
 author: theluckystrike

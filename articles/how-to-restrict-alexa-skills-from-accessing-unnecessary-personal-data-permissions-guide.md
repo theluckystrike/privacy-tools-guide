@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How To Restrict Alexa Skills From Accessing Unnecessary Personal Data Permissions Guide"
+title: "How To Restrict Alexa Skills From Accessing Unnecessary."
 description: "A practical guide for developers and power users to restrict Alexa skills from accessing unnecessary personal data. Learn permission management."
 date: 2026-03-16
 author: theluckystrike

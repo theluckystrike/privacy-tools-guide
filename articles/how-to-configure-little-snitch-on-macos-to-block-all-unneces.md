@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How To Configure Little Snitch On Macos To Block All Unnecessary Outbound Connections"
+title: "How To Configure Little Snitch On Macos To Block All."
 description: "A practical guide for developers and power users to configure Little Snitch on macOS. Learn to monitor, audit, and block unnecessary outbound network."
 date: 2026-03-16
 author: theluckystrike
