@@ -240,6 +240,137 @@ git-crypt init
 # All remaining users must re-add themselves
 ```
 
+## Preventing Accidental Plaintext Commits
+
+The biggest failure mode for git-crypt is committing a secret file before adding the filter attribute to `.gitattributes`. Once the plaintext is in history, you need a history rewrite — expensive and disruptive. Add a pre-commit hook to catch this before it happens:
+
+```bash
+#!/usr/bin/env bash
+# .git/hooks/pre-commit — block commits of known secret files if git-crypt is not unlocked
+
+# Check if git-crypt is initialized
+if [ ! -d ".git-crypt" ]; then
+  exit 0  # No git-crypt, nothing to check
+fi
+
+# Verify that encrypted files are listed in .gitattributes
+STAGED=$(git diff --cached --name-only)
+
+for file in $STAGED; do
+  # Check if the file matches a git-crypt pattern
+  if git check-attr filter "$file" | grep -q "git-crypt"; then
+    # Verify the file is actually being stored encrypted
+    if git-crypt status "$file" 2>/dev/null | grep -q "not encrypted"; then
+      echo "ERROR: $file is staged but not encrypted by git-crypt."
+      echo "Run: git-crypt unlock"
+      exit 1
+    fi
+  fi
+done
+```
+
+Install the hook in every clone with a setup script:
+
+```bash
+#!/usr/bin/env bash
+# scripts/setup-hooks.sh
+cp scripts/pre-commit .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+echo "Git hooks installed."
+```
+
+Add `./scripts/setup-hooks.sh` to your onboarding README so new team members run it on first clone.
+
+## Migrating Existing Secrets into git-crypt
+
+If secrets are already in your repository history in plaintext, you need to purge them before adding encryption. The safest approach:
+
+```bash
+# Step 1: Rotate the actual secrets first — assume they are compromised
+# (change API keys, rotate certs, generate new passwords)
+
+# Step 2: Remove the file from history using git-filter-repo
+pip install git-filter-repo
+git filter-repo --path secrets/api-keys.json --invert-paths
+
+# Step 3: Add git-crypt attributes
+echo 'secrets/api-keys.json filter=git-crypt diff=git-crypt' >> .gitattributes
+git-crypt init
+git-crypt export-key ~/backup/git-crypt-key.bin
+
+# Step 4: Add the new (rotated) secret file and commit
+git add .gitattributes secrets/api-keys.json
+git commit -m "Encrypt api-keys.json with git-crypt"
+
+# Step 5: Force push the rewritten history
+git push --force-with-lease origin main
+```
+
+Alert all collaborators to re-clone after a history rewrite. Any stale clones can re-introduce the purged files if pushed again.
+
+## Using age-plugin-yubikey for Hardware Key Protection
+
+For higher-assurance environments, the `age-plugin-yubikey` plugin lets you store age private keys on a YubiKey rather than on disk:
+
+```bash
+# Install the plugin
+cargo install age-plugin-yubikey
+
+# Initialize a new age identity on the YubiKey
+age-plugin-yubikey --generate --slot 1
+# Outputs recipient: age1yubikey1q...
+
+# Encrypt to the YubiKey recipient
+age -r age1yubikey1q... -o secrets/prod.age secrets/prod.txt
+
+# Decrypt — requires physical YubiKey touch
+age -d -i age-plugin-yubikey: secrets/prod.age
+```
+
+YubiKey-backed age identities are particularly useful for repository administrators who hold the master encryption key. Day-to-day CI pipelines use the shared symmetric git-crypt key, while the YubiKey-secured age identity protects the key export itself.
+
+## Team Offboarding: Revoking Access Without Rekeying
+
+When a team member leaves, git-crypt has no native revocation — you cannot simply remove their GPG key and have them locked out of future commits, because they already have a copy of the decrypted history. The correct procedure:
+
+1. Remove the departing user's key blob from the repository:
+
+```bash
+# Find their GPG key fingerprint
+gpg --list-keys departing@example.com
+# FINGERPRINT: ABCD1234...
+
+# Remove their key blob
+rm .git-crypt/keys/default/0/ABCD1234.gpg
+git add -A
+git commit -m "Remove departing user from git-crypt access"
+```
+
+2. Rotate the symmetric key and all secrets it protects:
+
+```bash
+# Export current encrypted files as plaintext
+git-crypt unlock
+cp secrets/api-keys.json /tmp/api-keys-backup.json
+
+# Re-initialize git-crypt with a new key
+git-crypt init
+git-crypt export-key ~/backup/git-crypt-key-v2.bin
+
+# Re-add remaining team members
+git-crypt add-gpg-user alice@example.com
+git-crypt add-gpg-user bob@example.com
+
+# Re-encrypt the files (they are already tracked by .gitattributes)
+git add secrets/
+git commit -m "Rekey git-crypt after team member departure"
+```
+
+3. Distribute the new key to CI/CD systems and remaining team members.
+4. Rotate the actual secret values (API keys, passwords) as an independent step — assume the departing person has copies of the plaintext values regardless of repository access.
+
+The combination of key rotation and secret rotation is the only complete offboarding. Repository access removal alone is insufficient.
+
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/)
