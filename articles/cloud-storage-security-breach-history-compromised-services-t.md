@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /cloud-storage-security-breach-history-compromised-services-t/
 reviewed: true
 score: 7
+voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, security]
 ---
