@@ -11,7 +11,7 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 intent-checked: true
 ---
 

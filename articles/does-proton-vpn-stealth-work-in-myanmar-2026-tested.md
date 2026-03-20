@@ -7,7 +7,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /does-proton-vpn-stealth-work-in-myanmar-2026-tested/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 8
 intent-checked: true

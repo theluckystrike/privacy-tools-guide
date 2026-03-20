@@ -7,9 +7,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /email-privacy-act-protections-when-government-needs-warrant-/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
