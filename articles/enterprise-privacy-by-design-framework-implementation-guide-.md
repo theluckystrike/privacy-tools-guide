@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /enterprise-privacy-by-design-framework-implementation-guide-/
 categories: [guides]
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 ---

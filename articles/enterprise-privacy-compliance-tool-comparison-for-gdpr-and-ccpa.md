@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [gdpr, ccpa, privacy-compliance, enterprise]
+tags: [privacy-tools-guide, gdpr, ccpa, privacy-compliance, enterprise, privacy]
 ---
 
 {% raw %}

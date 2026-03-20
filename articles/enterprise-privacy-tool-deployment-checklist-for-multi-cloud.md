@@ -8,6 +8,7 @@ permalink: /enterprise-privacy-tool-deployment-checklist-for-multi-cloud/
 reviewed: true
 score: 8
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}
