@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 voice-checked: true
 categories: [guides]
+tags: [privacy-tools-guide]
 ---
 {% raw %}
 # Cookie Alternatives After Third-Party Deprecation: A 2026 Guide

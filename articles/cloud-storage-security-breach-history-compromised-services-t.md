@@ -6,8 +6,9 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /cloud-storage-security-breach-history-compromised-services-t/
 reviewed: true
-score: 8
+score: 7
 categories: [guides]
+tags: [privacy-tools-guide, security]
 ---
 
 {% raw %}
