@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on configuring Gr
 date: 2026-03-16
 author: theluckystrike
 permalink: /grapheneos-travel-profile-border-crossing-minimal-data-2026/
-categories: [privacy, security, grapheneos]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

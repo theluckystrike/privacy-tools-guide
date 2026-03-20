@@ -5,7 +5,7 @@ description: "A technical analysis of EA app data collection practices, privacy 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ea-app-origin-replacement-privacy-data-collection-review-ana/
-categories: [privacy, gaming]
+categories: [security, guides]
 reviewed: true
 score: 8
 voice-checked: true
