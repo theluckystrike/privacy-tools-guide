@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

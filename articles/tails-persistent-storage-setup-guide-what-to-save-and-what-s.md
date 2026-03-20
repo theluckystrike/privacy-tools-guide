@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /tails-persistent-storage-setup-guide-what-to-save-and-what-s/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

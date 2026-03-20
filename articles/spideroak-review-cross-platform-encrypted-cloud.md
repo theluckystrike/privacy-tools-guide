@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /spideroak-review-cross-platform-encrypted-cloud/
 categories: [guides]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
