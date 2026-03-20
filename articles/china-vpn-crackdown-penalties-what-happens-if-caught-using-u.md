@@ -8,7 +8,7 @@ permalink: /china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthori
 categories: [guides]
 tags: [privacy-tools-guide, privacy, security, china, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

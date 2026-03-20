@@ -7,7 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

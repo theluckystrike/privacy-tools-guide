@@ -8,7 +8,7 @@ permalink: /children-online-privacy-protection-act-coppa-rights-what-par/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
