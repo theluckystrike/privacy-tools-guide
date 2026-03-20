@@ -108,6 +108,13 @@ For applications that don't support SOCKS proxies natively, use `proxychains` to
 - You need stable bandwidth for streaming or downloads
 - You trust your VPN provider more than your ISP
 - Simplicity matters for your deployment
+- You need backward compatibility with many applications
+- You want to access .onion services (Tor hidden services)
+
+**Ideal Scenarios**:
+- Journalists accessing news in censored regions (VPN hides Tor use from censors)
+- Activists in countries where Tor is blocked but VPNs are tolerated
+- Privacy-conscious users wanting basic obfuscation without complex setup
 
 ### Choose VPN over Tor when:
 
@@ -115,6 +122,72 @@ For applications that don't support SOCKS proxies natively, use `proxychains` to
 - Maximum ISP obfuscation is critical
 - You're concerned about malicious exit nodes
 - Your threat model includes sophisticated network observers
+- You can tolerate higher latency for better anonymity
+- You operate in countries where Tor is actively blocked
+
+**Ideal Scenarios**:
+- Users in countries with deep packet inspection monitoring Tor connections
+- Activists with sophisticated adversaries monitoring network patterns
+- Users accessing services that block Tor exit nodes
+- Those prioritizing anonymity over speed
+
+## Hybrid and Specialized Approaches
+
+Beyond simple Tor over VPN or VPN over Tor configurations, consider:
+
+**Multi-VPN Chaining**: Route traffic through multiple VPN providers sequentially. Each VPN can see the previous VPN's IP address but not your real IP. Tools like ProxyChains enable this:
+
+```bash
+# Chain multiple proxies
+proxychains curl https://api.ipify.org
+```
+
+**Whonix and Isolated VMs**: Use Whonix, which routes all traffic through Tor by default, then add a VPN layer. Running Whonix in a virtual machine provides additional isolation.
+
+**Custodial vs. Self-Hosted**: Consider operating your own VPN on a VPS to have complete control over traffic handling. Self-hosted VPNs eliminate provider-based trust concerns but introduce operational complexity.
+
+## DNS and Leak Prevention
+
+One critical aspect of both configurations is DNS handling. DNS requests must not leak your real identity. A leaked DNS query can reveal your real IP address even if all other traffic is routed through Tor or VPN.
+
+### DNS Leaks with Tor over VPN
+
+When using Tor over VPN, your VPN provider should be configured to use Tor-compatible DNS servers or handle DNS requests through the Tor tunnel. Many VPN applications do not automatically handle DNS, requiring manual configuration:
+
+```bash
+# Verify DNS is not leaking
+# Use an online tool like ipleak.net or run locally:
+dig +short myip.opendns.com @resolver1.opendns.com
+
+# Or with curl:
+curl dns.opendns.com/api/myIp
+```
+
+If DNS queries resolve to your real ISP's DNS servers instead of Tor exit node DNS servers, your location is partially compromised.
+
+### DNS Handling with VPN over Tor
+
+VPN over Tor faces similar challenges. The VPN client must not bypass the Tor tunnel to perform DNS lookups. Whonix handles this automatically by forcing all DNS through Tor, but standalone configurations require careful setup.
+
+## Traffic Pattern Analysis
+
+Tor and VPN traffic have distinct characteristics that observers can identify:
+
+**Tor Traffic Patterns**:
+- Consistent packet sizes (Tor uses fixed-size cells: 512 bytes for headers)
+- Regular inter-packet timing (Tor's defense-in-depth mechanisms create predictable patterns)
+- Distinctive handshake pattern (Tor's TLS handshake differs from standard TLS)
+- Detectable connection to known Tor relay IP addresses
+
+**VPN Traffic Patterns**:
+- Highly variable packet sizes (dependent on application traffic)
+- Irregular timing (real application behavior)
+- Standard or provider-specific TLS patterns
+- Connection to provider's server IP addresses
+
+VPN over Tor attempts to hide the distinctive Tor patterns by wrapping them in VPN encryption. An observer sees only VPN traffic, not Tor traffic. However, the VPN provider itself can see that you're connecting to the Tor network.
+
+Tor over VPN presents the opposite problem: your ISP sees regular Tor traffic characteristics, but the Tor network sees your VPN provider's IP address instead of your home IP.
 
 ## Developer Considerations
 
@@ -122,11 +195,60 @@ If you're building privacy-focused applications, consider these architectural im
 
 Tor traffic has detectable patterns, and VPN over Tor can help blend with regular VPN traffic. Both configurations should handle DNS carefully to prevent leaks. Be aware that some sites may block Tor exit nodes through certificate pinning. Use tools like `torcheck` and `ipleak.net` to verify your configuration.
 
+For applications handling sensitive communications, test both configurations to verify no leaks occur. Use tools like `tcpdump` to inspect traffic and ensure all connections route through the expected proxies:
+
+```bash
+# Monitor all DNS queries with tcpdump
+sudo tcpdump -i any port 53
+
+# Monitor VPN traffic
+sudo tcpdump -i any 'tcp port 443 or udp port 443'
+
+# Verify Tor connection
+torify curl https://api.ipify.org
+```
+
+Document your testing procedures so other developers understand how to verify the configuration's effectiveness.
+
+## Exit Node Risks and Trust Implications
+
+An often overlooked aspect of these architectures concerns exit node behavior:
+
+**In Tor over VPN**: The Tor exit node can see all unencrypted traffic exiting the Tor network. If you're accessing HTTP (unencrypted) websites, the Tor exit node operator can see your traffic. Some exit nodes are operated by researchers or adversaries specifically to log traffic. For this reason, you should always use HTTPS with Tor over VPN. The VPN then adds an additional encryption layer protecting even your HTTPS traffic from the Tor exit node.
+
+**In VPN over Tor**: The VPN provider receives all traffic exiting the Tor network. They cannot determine your real IP address, but they can see all your unencrypted traffic. This creates a different trust relationship — you must trust your VPN provider to handle sensitive data responsibly. A malicious VPN provider can log all your traffic.
+
+For maximum security with either approach, always use HTTPS for sensitive communications. HTTPS encrypts data before it reaches either the Tor exit node or the VPN provider.
+
+### Selecting Tor Exit Node Countries
+
+Tor allows selecting exit nodes in specific countries by editing your torrc configuration:
+
+```bash
+# Force exit nodes in specific country (ISO country code)
+ExitNodes {US}
+StrictNodes 1
+
+# Exclude countries
+ExcludeExitNodes {RU}
+StrictNodes 1
+```
+
+Some users prefer exit nodes in countries with strong privacy laws. Others select exit nodes matching their apparent location for consistency. Be aware that selectively using certain exit nodes may reduce anonymity by making your traffic patterns more identifiable.
+
 ## Common Misconceptions
 
 One frequently misunderstood point: neither configuration makes you "more anonymous" in absolute terms. Both provide different trade-offs within the same threat model. The best choice depends on your specific adversaries and requirements.
 
 Neither approach magically makes you invulnerable. Operational security, strong passwords, and careful browser configuration matter equally.
+
+**Misconception 1**: "Using Tor + VPN = maximum anonymity." Reality: Both configurations have trade-offs and potential vulnerabilities. Combining them doesn't eliminate all risks.
+
+**Misconception 2**: "VPN companies can't see my traffic with VPN over Tor." Reality: VPN providers can see all traffic exiting the Tor network (though not your real IP). You must trust them.
+
+**Misconception 3**: "Tor over VPN is slower because VPN processes data first." Reality: The speed difference is negligible. Both configurations add latency; the order doesn't significantly change throughput for typical applications.
+
+**Misconception 4**: "Tor is a VPN replacement." Reality: Tor and VPNs solve different problems. Tor prioritizes anonymity at the cost of speed. VPNs prioritize speed and reliability for accessing content.
 
 ## Related Reading
 

@@ -41,6 +41,29 @@ A jailbroken device often exhibits noticeable performance degradation. Your phon
 
 Pay attention to unusual network behavior. Unexpected data usage spikes can indicate that malicious apps are transmitting data from your device. Strange network connections, unknown processes actively communicating over the network, or unusual server connections visible in your firewall logs all warrant investigation.
 
+## Behavioral Signs of Compromise
+
+Beyond obvious performance issues, behavioral changes indicate potential compromise. Apps that previously worked reliably may crash or hang. System features like Face ID or fingerprint authentication may stop functioning reliably—jailbreaks sometimes interfere with biometric security layers.
+
+Watch for unexpected changes in notification behavior. Legitimate system notifications may appear modified or delayed. Attackers sometimes intercept notifications to hide evidence of malicious activity. Similarly, watch for changes in phone call or messaging behavior—dropped calls, delayed messages, or messages not arriving at expected times can indicate interception.
+
+Battery drain unrelated to app usage patterns warrants investigation. A jailbroken device running malicious apps or maintaining persistent remote connections will show unusual battery drain even when sitting idle. Check battery usage under Settings to identify which processes consume power.
+
+## Advanced Forensic Indicators
+
+Understanding more subtle technical indicators helps identify sophisticated jailbreaks. Legitimate iOS and Android systems maintain specific security characteristics that unauthorized modifications break.
+
+For iOS, certificates and code signatures verify that apps come from legitimate sources. A jailbroken device may contain apps with invalid signatures or unsigned code. You can check signature validity through:
+
+```bash
+# Check code signature validity
+codesign -v /Applications/AppName.app
+```
+
+The output should show "valid on disk" for legitimate apps. Invalid signatures indicate modification or installation outside the official app store.
+
+Firewall and DNS configurations often change on compromised devices. Jailbreakers sometimes modify DNS settings to prevent security software from functioning or to intercept network traffic. Check your device's network settings for unexpected custom DNS servers.
+
 ## Technical Verification Methods
 
 ### Checking for Jailbreak Indicators on iOS
@@ -74,7 +97,18 @@ which su
 ls -la /system/app/Superuser.apk
 ```
 
-If these commands succeed or reveal the Superuser app, your device has root access—either intentional or unauthorized.
+If these commands succeed or reveal the Superuser app, your device has root access—either intentional or unauthorized. On modern Android devices, check for the Magisk app or Super SU—both are common tools used to grant root access.
+
+Examine your system partition for modifications. A jailbroken Android often contains suspicious system apps or modified system libraries. Check for unexpected processes:
+
+```bash
+# List running processes and check for suspicious ones
+ps aux | grep -v "system\|root" | sort
+```
+
+Any unexpected processes, particularly those starting with unusual names or from unexpected directories, warrant investigation.
+
+The Google Play Protect service provides automated device protection. A compromised device may show Play Protect disabled or in reduced functionality mode. Check Google Play Protect status through Settings > Google > Manage Your Google Account > Security. Green checkmarks indicate healthy status; warnings indicate potential issues.
 
 The SafetyNet Attestation API can help verify your device's integrity:
 
@@ -113,6 +147,20 @@ netstat -an | grep :22
 lsof -i -P | grep LISTEN
 ```
 
+## Detecting Sophisticated Attacks
+
+Advanced attackers use techniques that escape simple detection. Mobile spyware like Pegasus or similar tools operate at the operating system level, making them nearly invisible to users. These tools intercept communications, activate cameras and microphones without indication, and access your location history.
+
+Some indicators of sophisticated attacks include:
+
+**Unusual permissions**: Apps requesting permissions they don't need represent red flags. A flashlight app requesting microphone access, or a calendar app requesting camera permission, indicates malicious behavior. Audit app permissions through your privacy settings regularly.
+
+**Background app activity**: Monitor apps that consume network bandwidth even when not actively used. Apps running suspicious background tasks may be exfiltrating your data. Many phones allow setting restrictions on background app activity—review these settings and restrict unnecessary background access.
+
+**Encrypted analytics data**: Legitimate apps send analytics data, but this data should be encrypted in transit (HTTPS). Watch for apps sending data without encryption, visible in network monitoring tools. This could indicate malicious data exfiltration.
+
+**Fake security warnings**: Compromised devices often display fake security alerts encouraging installation of additional malware. These warnings appear legitimate but originate from malicious apps. Genuine security warnings come from your OS vendor or known security software—not random ads.
+
 ## Protective Measures
 
 ### Immediate Actions If Compromised
@@ -126,6 +174,20 @@ After restoring, ensure you update to the latest OS version before reinstalling 
 Protecting your device from unauthorized jailbreaking requires a proactive approach. Always use strong, unique passwords for your device and associated accounts. Enable two-factor authentication wherever possible. Avoid jailbreaking your own device, as this creates inherent security risks. Keep your operating system updated to benefit from the latest security patches. Be cautious about clicking suspicious links or installing apps from unknown sources.
 
 For additional security, consider using a security app that monitors for device integrity changes. Many reputable mobile security applications can detect common jailbreak indicators and alert you to potential compromises.
+
+## Recovery and Verification After Restoration
+
+After restoring your device to factory settings, verify the restoration was complete. Don't simply restore your backup immediately—set up your phone fresh and gradually reinstall apps. This approach allows you to:
+
+1. Verify the clean installation boots and functions normally
+2. Monitor which apps cause problems during fresh reinstallation
+3. Identify apps that were modified or compromised
+
+When selecting which backup data to restore, be selective. Your photos, contacts, and basic data are generally safe to restore, but app data may contain malicious modifications. Let the App Store reinstall apps rather than restoring old app data.
+
+For iOS devices, you can verify restoration completeness by checking your iOS version and security patch level. Go to Settings > General > About and note the version number and security patch date. Compare this to the latest available version on Apple's website to ensure you're fully updated.
+
+For Android, verify the security patch level matches the current month. Go to Settings > About Phone > Android Version and check the security patch date. If it's older than the current month, you may not be fully updated despite the factory reset.
 
 ## Related Reading
 
