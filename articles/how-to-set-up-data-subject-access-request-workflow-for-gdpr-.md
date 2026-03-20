@@ -32,7 +32,7 @@ Personal data under GDPR includes not just obvious fields like name and email, b
 
 ## Designing Your DSAR Pipeline
 
-A robust DSAR workflow consists of five stages:
+A DSAR workflow consists of five stages:
 
 1. **Intake**: Receive and log the request
 2. **Verification**: Confirm the requester's identity
@@ -323,7 +323,7 @@ Before relying on your DSAR pipeline, validate it works:
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

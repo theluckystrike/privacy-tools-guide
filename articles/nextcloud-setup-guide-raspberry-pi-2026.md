@@ -18,7 +18,7 @@ Running your own cloud storage service gives you complete control over your data
 
 ## Prerequisites
 
-You need a Raspberry Pi 4 or 5 with at least 4GB of RAM. A 32GB SD card works for the operating system, but your data should live on external storage—a USB SSD or HDD provides better performance and reliability than SD cards.
+You need a Raspberry Pi 4 or 5 with at least 4GB of RAM. A 32GB SD card works for the operating system, but your data should live on external storage—an USB SSD or HDD provides better performance and reliability than SD cards.
 
 Install Raspberry Pi OS Lite (64-bit) and ensure your system is updated:
 
@@ -398,7 +398,7 @@ docker exec --user www-data nextcloud_app php occ maintenance:mode --off
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

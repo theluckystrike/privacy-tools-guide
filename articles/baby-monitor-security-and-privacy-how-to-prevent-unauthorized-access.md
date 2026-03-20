@@ -4,7 +4,7 @@
 
 layout: default
 title: "Baby Monitor Security And Privacy How To Prevent Unauthorized Access"
-description: "Learn how to secure your baby monitor from hackers and prevent unauthorized access. Comprehensive guide covering WiFi monitoring, camera security, and."
+description: "Learn how to secure your baby monitor from hackers and prevent unauthorized access. guide covering WiFi monitoring, camera security, and."
 date: 2026-03-18
 author: theluckystrike
 permalink: /baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/
@@ -98,6 +98,18 @@ Most routers display real-time traffic usage. Unusual data usage when the baby i
 
 Apps like Fing or Advanced IP Scanner discover all devices on your network. Run periodic checks to ensure only recognized devices appear.
 
+Scan from the command line to catch devices your router may not surface:
+
+```bash
+# Install nmap: sudo apt install nmap  OR  brew install nmap
+# Replace subnet with your network's range (check with: ip route | grep kernel)
+sudo nmap -sn 192.168.1.0/24 | grep -E '(Nmap scan|MAC Address|report for)'
+
+# Watch live traffic from your monitor's IP (replace 192.168.1.50)
+sudo tcpdump -i eth0 host 192.168.1.50 -n 2>/dev/null | head -40
+```
+
+
 ### Firewall Rules
 
 Configure your router's firewall to block incoming connections to your baby monitor except from your authorized devices.
@@ -112,6 +124,14 @@ If you need remote monitoring, avoid directly exposing your monitor to the inter
 - Works with any device on your home network
 
 Many routers support built-in VPN servers, or you can run a VPN service like WireGuard on a home server or Raspberry Pi.
+
+```bash
+# Install WireGuard on a Raspberry Pi acting as home VPN server
+sudo apt install wireguard
+wg genkey | sudo tee /etc/wireguard/server_private.key | wg pubkey | sudo tee /etc/wireguard/server_public.key
+# Enable: sudo systemctl enable --now wg-quick@wg0
+```
+
 
 ## Physical Security Measures
 
@@ -143,6 +163,6 @@ For maximum security, consider traditional analog baby monitors that operate on 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
