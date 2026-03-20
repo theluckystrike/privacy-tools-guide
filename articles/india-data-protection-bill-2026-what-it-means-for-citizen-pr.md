@@ -3,8 +3,11 @@ layout: default
 title: "India Data Protection Bill 2026: What It Means for Citizen Privacy Rights"
 description: "A comprehensive guide to India's Data Protection Bill 2026 and how it affects privacy rights for Indian citizens. Learn what developers and power users need to know."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /india-data-protection-bill-2026-what-it-means-for-citizen-pr/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 India's Digital Personal Data Protection Act (DPDPA) represents a watershed moment for digital privacy in the world's most populous democracy. After years of deliberation, the Indian government finally enacted comprehensive data protection legislation that fundamentally reshapes how organizations collect, process, and store personal information of Indian citizens.
@@ -21,7 +24,7 @@ The bill grants Indian residents several enforceable rights:
 
 **Right to Correction and Erasure**: Individuals can demand correction of inaccurate data and complete erasure of their personal information under certain circumstances. This is particularly relevant for users who want to remove their digital footprint from platforms they no longer use.
 
-**Right to Data Portability**: Citizens can request their data in a machine-readable format, enabling them to transfer information between service providers seamlessly.
+**Right to Data Portability**: Citizens can request their data in a machine-readable format, enabling them to transfer information between service providers smoothly.
 
 **Right to Grievance Redressal**: The bill mandates that every data fiduciary appoint a grievance officer who must address complaints within 72 hours.
 

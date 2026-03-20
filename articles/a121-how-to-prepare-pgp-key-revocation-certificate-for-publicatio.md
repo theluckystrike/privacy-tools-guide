@@ -2,12 +2,12 @@
 layout: default
 title: "How to Prepare PGP Key Revocation Certificate for Publication: A Complete Guide"
 description: "Learn how to generate, securely store, and publish a PGP key revocation certificate to invalidate your keys if compromised. Essential for developers and security-conscious users."
-date: 2026-03-19
-author: theluckystrike
+date: 2026-03-16
+author: "Privacy Tools Guide"
 permalink: /a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/
 categories: [guides]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---

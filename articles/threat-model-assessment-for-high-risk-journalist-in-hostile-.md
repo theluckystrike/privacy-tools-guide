@@ -3,13 +3,16 @@ layout: default
 title: "Threat Model Assessment for High-Risk Journalists in Hostile Countries"
 description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical implementation details."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 Security threat modeling for journalists in hostile environments requires a structured approach that goes beyond generic advice. This guide provides a practical framework for assessing risks, identifying attack vectors, and implementing defensive measures tailored to high-risk reporting scenarios.
 
-## Understanding the Threat Landscape
+## Understanding the Threat ecosystem
 
 Journalists operating in hostile countries face adversaries with significant resources, including state-level actors, intelligence agencies, and coordinated non-state groups. Your threat model must account for adversaries capable of:
 
