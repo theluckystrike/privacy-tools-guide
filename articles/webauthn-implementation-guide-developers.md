@@ -301,6 +301,105 @@ Implement rate limiting on registration and authentication endpoints to prevent 
 
 Store public keys with appropriate access controls. While public keys aren't secret, they should be protected against modification.
 
+## Using py_webauthn for Production Verification
+
+The verification snippets above show the conceptual flow. For production code, use the `py_webauthn` library rather than implementing CBOR parsing and signature verification yourself:
+
+```python
+from webauthn import (
+    generate_registration_options,
+    verify_registration_response,
+    generate_authentication_options,
+    verify_authentication_response,
+)
+from webauthn.helpers.structs import (
+    PublicKeyCredentialDescriptor,
+    UserVerificationRequirement,
+)
+
+# Registration options
+options = generate_registration_options(
+    rp_id="yourdomain.com",
+    rp_name="Your Application",
+    user_id=user_id.encode(),
+    user_name=username,
+    user_display_name=display_name,
+)
+
+# Verify registration response from client
+verification = verify_registration_response(
+    credential=credential_response,   # JSON from client
+    expected_challenge=stored_challenge,
+    expected_rp_id="yourdomain.com",
+    expected_origin="https://yourdomain.com",
+)
+
+# Store the returned credential
+db.credentials.insert({
+    "user_id": user_id,
+    "credential_id": verification.credential_id,
+    "public_key": verification.credential_public_key,
+    "sign_count": verification.sign_count,
+    "created_at": datetime.utcnow().isoformat(),
+})
+```
+
+The library handles CBOR decoding, attestation verification, and public key parsing. The `sign_count` field in the verification result is important: increment it with each authentication and reject requests where the count does not increase — this detects cloned authenticators.
+
+## Supporting Multiple Authenticators Per User
+
+Users should be able to register multiple devices (laptop, phone, hardware security key) for account recovery. Design your credential storage to support this from the start:
+
+```python
+# Schema that supports multiple credentials per user
+CREATE TABLE webauthn_credentials (
+    id          SERIAL PRIMARY KEY,
+    user_id     UUID NOT NULL REFERENCES users(id),
+    credential_id  BYTEA NOT NULL UNIQUE,
+    public_key  BYTEA NOT NULL,
+    sign_count  INTEGER NOT NULL DEFAULT 0,
+    device_name TEXT,          -- User-assigned label: "Work YubiKey"
+    created_at  TIMESTAMPTZ DEFAULT NOW(),
+    last_used   TIMESTAMPTZ
+);
+```
+
+Expose a credential management UI where users can:
+- See all registered authenticators with their `device_name` and `last_used` date
+- Rename devices for clarity
+- Delete a lost or stolen device
+
+When a device is deleted, generate a new challenge immediately on the server side to invalidate any in-progress authentication from that credential.
+
+## Adding WebAuthn to an Existing Password-Based System
+
+Most teams add WebAuthn as a second factor before removing passwords entirely. The migration path:
+
+1. **Add as 2FA**: Users register a passkey after password login. Password remains required, passkey provides the second factor.
+2. **Offer as alternative login**: Users who have registered a passkey can use it in place of the password + OTP flow.
+3. **Deprecate passwords**: After majority passkey adoption, encourage password removal. Keep a recovery path (email link or support contact) for edge cases.
+
+```javascript
+// Login flow that supports both paths
+async function login(username, password) {
+  const user = await authenticateWithPassword(username, password);
+  if (!user) throw new Error("Invalid credentials");
+
+  const credentials = await getCredentials(user.id);
+
+  if (credentials.length > 0) {
+    // Upgrade: use passkey for second factor
+    const authOptions = await getAuthenticationOptions(user.id);
+    const assertion = await authenticate(authOptions);
+    await verifyAuthenticationOnServer(assertion);
+  }
+
+  return createSession(user.id);
+}
+```
+
+This progressive approach lets you introduce WebAuthn without requiring all users to migrate simultaneously, reducing support burden during the transition.
+
 ## Related Reading
 
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
