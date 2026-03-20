@@ -8,7 +8,7 @@ permalink: /vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/
 categories: [guides]
 tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 ---
