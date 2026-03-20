@@ -7,7 +7,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /data-retention-policy-template-for-startups/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true
