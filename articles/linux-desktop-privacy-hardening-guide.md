@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Linux Desktop Privacy Hardening Guide"
-description: "Ubuntu and Fedora privacy hardening: AppArmor, firewall, disk encryption, telemetry removal, browser sandboxing. CLI examples and step-by-step configuration."
+description: "Ubuntu and Fedora privacy hardening: AppArmor, firewall, disk encryption, telemetry removal, browser sandboxing. CLI examples and step-by-step."
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /linux-desktop-privacy-hardening-guide/
@@ -518,3 +518,9 @@ Quarterly:
 This hardened Linux desktop now refuses telemetry, limits network exposure, encrypts sensitive data, and sandboxes applications. The trade-off: slightly more complex to manage, but vastly more privacy-respecting.
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
