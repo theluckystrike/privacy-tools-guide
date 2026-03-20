@@ -85,6 +85,208 @@ Look for the `transfer` statistics—persistent keepalive packets will show as s
 
 Increasing the keepalive interval can help if you experience issues. Values up to 60 seconds work in most environments, though this increases latency in re-establishing dropped connections. Decreasing below 20 seconds is rarely necessary and wastes bandwidth with no practical benefit.
 
+## Advanced Keepalive Configuration
+
+For complex network scenarios, you can optimize keepalive settings beyond the simple 25-second default:
+
+```ini
+# Advanced multi-peer configuration
+[Interface]
+PrivateKey = <your-private-key>
+Address = 10.0.0.2/32
+DNS = 1.1.1.1
+
+# Primary VPN server - behind NAT, needs keepalive
+[Peer]
+PublicKey = <primary-server-public-key>
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+
+# Secondary server for failover - direct connection, no keepalive needed
+[Peer]
+PublicKey = <secondary-server-public-key>
+Endpoint = backup-vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 0
+
+# Local peer (mesh network) - direct connectivity, no keepalive
+[Peer]
+PublicKey = <local-peer-public-key>
+Endpoint = 192.168.1.150:51820
+AllowedIPs = 10.0.0.0/24
+PersistentKeepalive = 0
+```
+
+### Mobile Device Optimization
+
+For iOS and Android WireGuard clients, keepalive configuration is critical due to carrier NAT aggressiveness:
+
+**iOS (WireGuard App)**:
+```swift
+// In WireGuard iOS, the app automatically manages keepalive
+// No manual configuration needed, but understand the behavior:
+// - When app is backgrounded, keepalive maintains the tunnel
+// - iOS may still suspend the VPN after extended inactivity
+// - For always-on VPN, use Settings > VPN & Device Management
+
+// Recommended iOS configuration for reliability:
+// 1. Enable "On Demand" in WireGuard settings
+// 2. Add trusted networks where VPN is disabled (optional)
+// 3. Keep keepalive at 25 seconds for cellular
+```
+
+**Android (WireGuard App)**:
+```bash
+# Android WireGuard configuration
+# In the WireGuard Android UI:
+# Edit Configuration > Advanced > Persistent Keepalive = 25
+
+# For background operation:
+# 1. Settings > Apps > WireGuard > Battery > Battery Saver = Off
+# 2. Grant "Always Allow" location permission (if needed for your setup)
+# 3. Disable Doze mode for WireGuard if using custom ROM
+
+# Verify keepalive is working:
+adb shell dumpsys package com.wireguard.android | grep persistent
+```
+
+### Keepalive Packet Analysis
+
+Monitor actual keepalive behavior on your network:
+
+```bash
+#!/bin/bash
+# monitor_keepalive.sh - Observe keepalive packet timing
+
+INTERFACE="wg0"
+DURATION=300  # Monitor for 5 minutes
+
+echo "Monitoring keepalive packets on $INTERFACE"
+echo "Capturing packet timestamps to analyze keepalive interval..."
+
+# Capture all packets on the WireGuard interface
+tcpdump -i "$INTERFACE" -ttt 'length == 148' 2>/dev/null | head -20
+
+# Interpretation:
+# If packets appear every 25 seconds, keepalive is working
+# If packets appear at irregular intervals or stop, connection may be dropping
+```
+
+### Detecting NAT Timeout Issues
+
+Use this diagnostic script to determine your actual NAT timeout:
+
+```bash
+#!/bin/bash
+# detect_nat_timeout.sh - Find your actual NAT timeout value
+
+echo "=== NAT Timeout Detection ==="
+echo "This script tests when your NAT drops connections"
+echo ""
+
+# Requires two machines: one inside NAT, one outside
+# Run from the inside-NAT device
+
+TARGET_SERVER="vpn.example.com"
+TEST_PORT="51820"
+TEST_INTERVAL=10  # Test every 10 seconds
+MAX_WAIT=300      # Test for up to 5 minutes
+
+echo "Testing connection timeout..."
+echo "Sending initial packet to establish NAT mapping..."
+
+# Send initial packet
+nc -u -w1 "$TARGET_SERVER" "$TEST_PORT" < /dev/null
+
+# Now test when the mapping expires
+for i in $(seq 0 $TEST_INTERVAL $MAX_WAIT); do
+    sleep "$TEST_INTERVAL"
+
+    # Try to send a packet through the existing NAT mapping
+    timeout 2 bash -c "cat < /dev/null > /dev/udp/$TARGET_SERVER/$TEST_PORT" 2>/dev/null
+
+    if [ $? -ne 0 ]; then
+        echo "NAT timeout detected at: $i seconds"
+        echo "Recommended keepalive interval: $((i / 2))"
+        break
+    else
+        echo "Still connected at: $i seconds"
+    fi
+done
+```
+
+### Battery and Power Considerations
+
+For low-power devices, optimize keepalive without sacrificing reliability:
+
+```bash
+#!/bin/bash
+# Low-power WireGuard configuration
+
+# Create adaptive keepalive based on device state
+cat > /etc/wireguard/wg0.conf << 'EOF'
+[Interface]
+PrivateKey = <key>
+Address = 10.0.0.2/32
+
+[Peer]
+PublicKey = <server-key>
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+EOF
+
+# Create systemd service for power management
+cat > /etc/systemd/system/wg-adaptive-keepalive.service << 'EOF'
+[Unit]
+Description=Adaptive WireGuard Keepalive
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/adaptive_keepalive.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Script to adapt keepalive based on power state
+cat > /usr/local/bin/adaptive_keepalive.sh << 'ENDSCRIPT'
+#!/bin/bash
+# adaptive_keepalive.sh - Adjust WireGuard keepalive based on device power state
+
+# Monitor /sys/class/power_supply for battery information
+while true; do
+    # Check if on battery power
+    if [ -f /sys/class/power_supply/BAT0/status ]; then
+        STATUS=$(cat /sys/class/power_supply/BAT0/status)
+
+        if [ "$STATUS" = "Discharging" ]; then
+            # On battery: increase keepalive to conserve power
+            # Tradeoff: connection may not respond within 60 seconds
+            NEW_KEEPALIVE=60
+        else
+            # On AC power or charging: use optimal keepalive
+            NEW_KEEPALIVE=25
+        fi
+
+        # Update WireGuard configuration
+        # (requires elevated privileges)
+        # wg set wg0 peer <pubkey> persistent-keepalive $NEW_KEEPALIVE
+    fi
+
+    sleep 30
+done
+ENDSCRIPT
+
+chmod +x /usr/local/bin/adaptive_keepalive.sh
+systemctl enable wg-adaptive-keepalive.service
+```
+
 Understanding persistent keepalive helps you make informed decisions about your WireGuard deployment. For most client use cases behind NAT, a keepalive interval of 25 seconds provides reliable connectivity without significant overhead. For direct peer connections or privacy-conscious setups, disabling it entirely remains a valid choice.
 
 

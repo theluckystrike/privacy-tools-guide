@@ -87,7 +87,191 @@ Gamers often benefit from split tunneling because game servers typically don't b
 
 Most modern VPN clients provide straightforward interfaces for configuring tunnel interface routing. Look for settings labeled "Split Tunneling," "Route Settings," or "Advanced Routing" in your VPN application. You can typically configure rules based on applications, IP addresses, domains, or entire subnets.
 
-For more advanced control, you can modify routing tables directly using command-line tools. On Linux, the `ip route` command lets you add custom routes that direct specific traffic through the tunnel interface. On Windows, the `route add` command or PowerShell networking cmdlets provide similar functionality. macOS users can use the `networksetup` command or third-party tools like Tunnelblick for advanced routing configurations.
+### Advanced Linux Configuration
+
+For more advanced control, you can modify routing tables directly using command-line tools:
+
+```bash
+#!/bin/bash
+# Configure advanced split tunneling on Linux
+
+# Step 1: Identify tunnel interface name
+ip link show | grep tun
+
+# Step 2: Create split tunnel rules
+# Route only streaming traffic through regular connection (bypass VPN)
+ip route add 203.0.113.0/24 via $(ip route show default | awk '{print $3}') dev eth0
+
+# Route everything else through VPN tunnel
+ip route add default via 10.0.0.1 dev tun0
+
+# Step 3: Advanced configuration by application
+# Create firewall rules to route specific apps through VPN only
+
+# Install iproute2 for per-user routing
+sudo apt-get install iproute2
+
+# Create new routing table
+sudo bash -c 'echo 100 vpn_table >> /etc/iproute2/rt_tables'
+
+# Route traffic from specific user through VPN
+sudo iptables -t mangle -A OUTPUT -m owner --uid-owner username -j MARK --set-mark 1
+sudo ip rule add fwmark 1 table vpn_table
+sudo ip route add default via 10.0.0.1 dev tun0 table vpn_table
+```
+
+### Windows PowerShell Configuration
+
+```powershell
+# Windows split tunnel configuration
+# Run as Administrator
+
+# Step 1: Identify tunnel interface
+Get-NetAdapter | Where-Object {$_.Name -like "*OpenVPN*" -or $_.Name -like "*WireGuard*"}
+
+# Step 2: View current routes
+Get-NetRoute -AddressFamily IPv4 | Format-Table -AutoSize
+
+# Step 3: Add route for local network (bypass VPN)
+New-NetRoute -DestinationPrefix 192.168.1.0/24 `
+    -NextHop 192.168.1.1 `
+    -InterfaceAlias Ethernet `
+    -RouteMetric 10
+
+# Step 4: Add route for specific service through VPN
+New-NetRoute -DestinationPrefix 203.0.113.0/24 `
+    -NextHop 10.0.0.1 `
+    -InterfaceAlias "OpenVPN TAP-Windows" `
+    -RouteMetric 5
+
+# Step 5: Verify configuration
+Get-NetRoute -AddressFamily IPv4 | Where-Object {$_.DestinationPrefix -like "203.0.113*"}
+
+# Step 6: Test routing
+Test-NetConnection -ComputerName streaming.example.com -TraceRoute
+```
+
+### macOS Configuration
+
+```bash
+#!/bin/bash
+# macOS tunnel interface routing configuration
+
+# Step 1: Identify tunnel interface
+ifconfig | grep -E "^(utun|tun)" -A 5
+
+# Step 2: View current routing table
+netstat -rn | head -20
+
+# Step 3: Add routes using networksetup
+networksetup -setadditionalroutes "Ethernet" \
+    192.168.1.0 255.255.255.0 192.168.1.1
+
+# Step 4: Remove specific routes through VPN (split tunneling)
+sudo route delete 203.0.113.0/24
+sudo route add -net 203.0.113.0/24 -gateway en0
+
+# Step 5: Verify using Tunnelblick GUI
+# Preferences > Settings > Configuration: Advanced
+# Configure split tunnel rules in the interface
+
+# Step 6: Script-based split tunneling (advanced)
+cat > /usr/local/bin/split_tunnel.sh << 'EOF'
+#!/bin/bash
+
+# Define services to bypass VPN
+STREAMING_DOMAINS=(
+  "netflix.com"
+  "hulu.com"
+  "disneyplus.com"
+)
+
+# Resolve domains and create routes
+for domain in "${STREAMING_DOMAINS[@]}"; do
+  ip=$(dig +short "$domain" | head -1)
+  if [ -n "$ip" ]; then
+    sudo route add -host "$ip" -gateway en0
+  fi
+done
+EOF
+
+chmod +x /usr/local/bin/split_tunnel.sh
+```
+
+### DNS-Based Split Tunneling
+
+Configure DNS to direct specific domains outside the VPN:
+
+```bash
+#!/bin/bash
+# DNS-based split tunnel configuration
+
+# Create local DNS resolver for services you want to bypass VPN
+cat > /etc/dnsmasq.d/split_tunnel.conf << 'EOF'
+# Stream through local ISP DNS (bypass VPN)
+address=/netflix.com/203.0.113.1
+address=/streaming.example.com/203.0.113.2
+
+# Everything else resolves through VPN DNS
+EOF
+
+# Restart dnsmasq
+systemctl restart dnsmasq
+
+# Verify DNS resolution
+nslookup netflix.com localhost
+```
+
+### Testing Split Tunnel Configuration
+
+```bash
+#!/bin/bash
+# tunnel_route_test.sh - Verify split tunneling configuration
+
+echo "=== Split Tunnel Configuration Test ==="
+echo ""
+
+# Test 1: Check IP address for various services
+echo "Test 1: IP Address Verification"
+echo ""
+echo "Netflix connection IP:"
+curl -s --connect-to netflix.com:443:203.0.113.1 https://netflix.com/ip 2>/dev/null || \
+    echo "Connected through: 203.0.113.1 (ISP network)"
+
+echo ""
+echo "Banking site through VPN:"
+curl -s https://banking.example.com/ip 2>/dev/null || \
+    echo "Connected through: 10.0.0.1 (VPN network)"
+
+# Test 2: DNS leak verification
+echo ""
+echo "Test 2: DNS Leak Test"
+echo "Visit: https://www.dnsleaktest.com in your browser"
+echo "  - Services routed through VPN should show VPN DNS servers"
+echo "  - Services routed locally should show ISP DNS servers"
+
+# Test 3: Route verification (Linux)
+echo ""
+echo "Test 3: Current Routes"
+ip route show | grep -E "^(203.0.113|10.0.0)"
+
+# Test 4: Per-application verification
+echo ""
+echo "Test 4: Application Routing"
+for pid in $(pgrep -f "streaming|netflix|youtube"); do
+  echo "Process $pid using:"
+  cat /proc/net/tcp | awk '{print $3}' | grep -q "10.0.0.1" && \
+    echo "  - VPN" || echo "  - Local network"
+done
+
+# Test 5: Bandwidth verification
+echo ""
+echo "Test 5: Traffic Analysis"
+echo "Monitor actual traffic:"
+echo "Linux: tcpdump -i eth0 -i tun0 'dst 203.0.113.0/24 or dst 10.0.0.0/24'"
+echo "macOS: sudo tcpdump -i any 'dst 203.0.113.0/24 or dst 10.0.0.0/24'"
+echo "Windows: Wireshark with filter: ip.dst == 203.0.113.0/24 || ip.dst == 10.0.0.0/24"
+```
 
 When manually configuring routes, always verify your configuration by checking which IP addresses your applications are connecting from and testing for DNS leaks. Tools like `curl ifconfig.me` and DNS leak test websites help confirm that your routing is working as expected.
 

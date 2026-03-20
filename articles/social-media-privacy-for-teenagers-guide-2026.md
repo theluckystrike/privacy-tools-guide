@@ -63,6 +63,30 @@ Modern social media employs sophisticated tracking across websites and apps. Bro
 
 When possible, use the platform's built-in browser rather than opening external links, as this reduces cross-site tracking. Some platforms also offer "Limit Ad Tracking" options that reduce the data collected for advertising purposes.
 
+## Android-Specific Privacy Configuration
+
+Android devices offer several privacy advantages for social media apps. Start by reviewing app permissions in Settings > Apps. For each social media app, disable unnecessary permissions:
+
+- Camera: Only enable when actively using video features
+- Microphone: Disable unless the app requires audio recording
+- Location: Always disable unless absolutely required
+- Contacts: Consider disabling to prevent contact harvesting
+- Calendar and Call logs: Always disable for social apps
+
+Use Android's built-in Permission Manager to grant temporary permissions that automatically expire:
+
+```bash
+# Check which permissions are actively used by apps
+# On modern Android, go to: Settings > Privacy > Permission Manager
+# Review each app's permissions and grant minimal access
+
+# For advanced users on rooted devices or GrapheneOS:
+# Use Shelter or Island apps to create isolated work profiles for social media
+# This sandboxes apps from your main profile
+```
+
+Consider using GrapheneOS if your device supports it—this hardened Android variant provides granular control over app permissions and removes Google services by default, preventing data sharing with Google's ad network.
+
 ## Practical Privacy Habits
 
 Developing consistent privacy habits provides lasting protection. Before posting, ask yourself: would I be comfortable with this content appearing in a public space? Remember that screenshots exist—anything you share can be preserved indefinitely, even on platforms designed for ephemeral content.
@@ -71,11 +95,69 @@ Review your follower lists regularly. Remove accounts you no longer interact wit
 
 Be cautious with personal information in bios and profiles. Avoid sharing your phone number, address, school name, or daily routines. This information can be used for social engineering attacks or physical security risks.
 
+### Password Manager Setup for Teenagers
+
+Maintain unique passwords for each platform using a password manager. Bitwarden (free and open-source) or 1Password work well:
+
+```bash
+# Generate strong passwords using command line (for technical users)
+openssl rand -base64 16  # Creates 16-character random password
+
+# Example strong password format:
+# Minimum 16 characters, mix of uppercase, lowercase, numbers, symbols
+# NOT based on your name, birthday, or favorite celebrity
+```
+
+Each social media account should have a completely different password. If one account is compromised, it doesn't expose all your other accounts.
+
 ## Responding to Privacy Concerns
 
 If you encounter harassment or unwanted contact, use platform reporting tools immediately. Document any concerning interactions by taking screenshots before blocking, as blocked users cannot see your content but may have already saved information.
 
 Most platforms allow you to download your data—a useful step if you're considering deleting your account or want to understand what information the platform has collected about you. Review this data periodically to understand your digital footprint.
+
+### Comprehensive Privacy Self-Audit
+
+Perform a quarterly privacy audit using this systematic approach:
+
+**Step 1: Data Download**
+On each platform:
+- Instagram: Settings > Security > Download Data > Submit Request
+- TikTok: Me > Settings and Privacy > Account Control > Download Your Data
+- Snapchat: Settings > Username > Download My Data
+
+Wait for the data archive and examine what's included. Look specifically for:
+- Locations recorded in your profile or messages
+- Metadata about your photos (device info, GPS coordinates)
+- Full text of all your messages (even deleted ones, depending on platform)
+- IP addresses of devices used to access your account
+
+**Step 2: Third-Party App Audit**
+On each platform, review connected apps:
+- Instagram: Settings > Apps and Websites > Installed Apps
+- TikTok: Settings and Privacy > Connected Apps
+- Snapchat: Settings > Connected Apps
+
+Remove any apps you don't actively use. Apps you haven't used in 90 days should be removed immediately.
+
+**Step 3: Account Recovery Audit**
+Verify that recovery options are current and secure:
+- Recovery email: Should be an email address you actively use and control
+- Recovery phone: Should be your current phone number
+- Backup codes: Store these in a secure location (password manager)
+- Security questions: Update answers periodically; use fictional answers that can't be guessed from social media
+
+**Step 4: Search Visibility**
+Check what information appears in platform search results:
+- Search your username on the platform's built-in search
+- Search your username on Google (platform:instagram, platform:tiktok, etc.)
+- Look for any leaked contact information or addresses
+
+### Understanding Data Brokers
+
+Even after securing your social media accounts, data brokers may have compiled profiles about you from multiple sources. These services collect and sell data about teenagers' interests, locations, and behaviors.
+
+Services like Spokeo, MyLife, and PeopleFinder aggregate social media data with other sources. You can request removal from these services, though it requires individual requests per site. Automated services like Privacy.com or Optery can handle bulk removal requests.
 
 
 ## Related Reading

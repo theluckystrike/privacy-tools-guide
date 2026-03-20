@@ -79,6 +79,152 @@ For custom VPN configurations, implement pinning explicitly. If you're configuri
 
 Consider using VPN services that support Certificate Transparency monitoring. This provides an additional layer of security by detecting if any unauthorized certificates are issued for the VPN server's domain.
 
+## Implementation Examples
+
+### OpenVPN Certificate Pinning Configuration
+
+For OpenVPN, implement certificate pinning using certificate hashing:
+
+```bash
+# Extract public key from server certificate
+openssl x509 -in server.crt -noout -pubkey > server_pubkey.pem
+
+# Generate SHA256 hash of the public key
+openssl pkey -pubin -in server_pubkey.pem -outform DER | openssl dgst -sha256 -hex
+# Output: (stdin)= a1b2c3d4e5f6... (this is your pin)
+```
+
+Add the pin to your OpenVPN client configuration:
+
+```ini
+# client.conf
+remote vpn.example.com 1194
+proto udp
+
+# Certificate pinning directives
+verify-x509-name "vpn.example.com" name
+pin-sha256 "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0="
+
+# Additional security options
+tls-version-min 1.2
+cipher AES-256-GCM
+auth SHA256
+```
+
+The `pin-sha256` directive ensures the server certificate's public key matches the pinned value. If the certificate is replaced with a different key (even if valid), the connection will be rejected.
+
+### WireGuard Key Pinning (Inherent Protection)
+
+WireGuard provides certificate pinning through its fundamental design:
+
+```ini
+# /etc/wireguard/wg0.conf
+[Interface]
+PrivateKey = <client-private-key>
+Address = 10.0.0.2/32
+DNS = 8.8.8.8
+
+[Peer]
+# This public key is the "pin" - only this exact key is accepted
+PublicKey = <exact-server-public-key>
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = vpn.example.com:51820
+PersistentKeepalive = 25
+```
+
+WireGuard doesn't use certificates at all—it pins the public key directly. This is more secure than certificate-based pinning because there's no CA involved to compromise.
+
+### Testing Certificate Pinning
+
+Verify that pinning is actually enforced using test tools:
+
+```bash
+#!/bin/bash
+# Test if your VPN client properly rejects invalid certificates
+
+# Generate a self-signed certificate to test rejection
+openssl req -x509 -newkey rsa:2048 -keyout test_key.pem \
+    -out test_cert.pem -days 1 -nodes \
+    -subj "/CN=vpn.example.com"
+
+# Attempt connection with forged certificate
+# (This should fail if pinning is configured)
+openssl s_client -connect localhost:1194 \
+    -cert test_cert.pem -key test_key.pem
+
+# Expected result: connection rejected with certificate verification error
+```
+
+For production testing, use tools like mitmproxy in a controlled environment:
+
+```bash
+# Using mitmproxy to test MITM detection
+mitmproxy --mode reverse:https://vpn.example.com:443 \
+    --listen-port 8443 \
+    --certs *.vpn.example.com
+
+# Then attempt VPN connection through mitmproxy
+# Client should reject the forged certificate
+```
+
+## Certificate Transparency Monitoring
+
+Implement automated monitoring for unauthorized certificates:
+
+```python
+# ct_monitor.py - Monitor Certificate Transparency logs
+import requests
+from datetime import datetime, timedelta
+
+def check_ct_logs(domain):
+    """Check if any new certificates were issued for your domain"""
+    api_url = "https://crt.sh/"
+
+    params = {
+        "q": f"%.{domain}",
+        "output": "json",
+        "exclude": "expired"
+    }
+
+    response = requests.get(api_url, params=params)
+    certs = response.json()
+
+    print(f"Certificates found for *.{domain}: {len(certs)}")
+
+    for cert in certs:
+        issued_at = cert.get('entry_timestamp', '')
+        common_name = cert.get('name_value', '')
+        issuer = cert.get('issuer_name', '')
+
+        print(f"  - CN: {common_name}")
+        print(f"    Issuer: {issuer}")
+        print(f"    Issued: {issued_at}")
+        print()
+
+    # Alert if new certificates from unexpected CAs
+    expected_issuers = ["Let's Encrypt", "DigiCert"]
+    for cert in certs:
+        issuer = cert.get('issuer_name', '')
+        if not any(expected in issuer for expected in expected_issuers):
+            print(f"WARNING: Unexpected issuer detected: {issuer}")
+
+# Monitor your domain daily
+check_ct_logs("example.com")
+```
+
+Run this monitoring script as a daily cron job to detect if any unauthorized certificates are issued for your VPN domain.
+
+## Common Certificate Pinning Mistakes
+
+**Mistake 1: Pinning to the end-entity certificate**
+If you pin to the actual server certificate and rotate certificates annually, your VPN will break after rotation. Instead, pin to the intermediate CA certificate or the public key, which may remain constant across certificate rotations.
+
+**Mistake 2: Not updating pins during certificate rotation**
+Even if you pin to the intermediate CA, you must update your client applications when the CA changes. Distribute updates before certificate expiration to prevent service disruption.
+
+**Mistake 3: Using weak hash algorithms**
+Always use SHA-256 or stronger for certificate hashes. SHA-1 is cryptographically broken and should not be used for security-critical applications.
+
 Test your VPN's security periodically. Tools and techniques exist to verify that your VPN properly validates server certificates and rejects invalid connections, helping ensure the pinning is actually functioning as expected.
 
 ---

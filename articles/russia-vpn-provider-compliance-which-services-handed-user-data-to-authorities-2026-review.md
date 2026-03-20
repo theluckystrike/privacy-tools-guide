@@ -53,10 +53,10 @@ def handle_data_request(request):
     # Verify legal basis of request
     if not request.has_legal_basis():
         return "Request rejected"
-    
+
     # Check what data provider actually maintains
     available_data = query_server_logs(request.user_id)
-    
+
     if available_data:
         # Determine what can be legally disclosed
         return filter_compliant_data(available_data, request.scope)
@@ -64,6 +64,129 @@ def handle_data_request(request):
 ```
 
 Understanding this process helps users recognize that the VPN provider's technical architecture directly determines what data they can possibly hand over.
+
+### Self-Hosted Alternative Configuration
+
+For users in Russia seeking maximum privacy, self-hosted solutions eliminate reliance on third-party providers. Here's a practical Shadowsocks setup:
+
+```bash
+# Install Shadowsocks on a VPS outside Russia
+apt-get update && apt-get install -y shadowsocks-libev
+
+# Generate configuration file
+cat > /etc/shadowsocks-libev/config.json << 'EOF'
+{
+    "server": "0.0.0.0",
+    "server_port": 443,
+    "password": "your-strong-password-here",
+    "timeout": 600,
+    "method": "aes-256-gcm",
+    "fast_open": true
+}
+EOF
+
+# Start service
+systemctl start shadowsocks-libev
+systemctl enable shadowsocks-libev
+
+# Monitor connections
+ss -tunap | grep :443
+```
+
+Client-side configuration for Linux/macOS:
+
+```bash
+#!/bin/bash
+# ss-client.sh - Connect to self-hosted Shadowsocks
+
+# Install client
+apt-get install -y shadowsocks-libev
+
+# Create client config
+cat > ~/.ss_config.json << 'EOF'
+{
+    "server": "your-vps-ip-address",
+    "server_port": 443,
+    "password": "your-strong-password-here",
+    "method": "aes-256-gcm",
+    "mode": "tcp_and_udp",
+    "timeout": 600,
+    "local_address": "127.0.0.1",
+    "local_port": 1080
+}
+EOF
+
+# Start local proxy
+ss-local -c ~/.ss_config.json -d start
+
+# Configure applications to use SOCKS5 proxy on localhost:1080
+# Browser proxy: SOCKS5 127.0.0.1:1080
+```
+
+For enhanced security, combine with NaiveProxy:
+
+```bash
+# NaiveProxy provides stronger obfuscation than plain Shadowsocks
+# Install on VPS:
+cd /tmp && wget https://github.com/klzgrad/naiveproxy/releases/download/v119.0.6045.159-2/naiveproxy-v119.0.6045.159-2-linux-x64.tar.xz
+
+tar xf naiveproxy*.tar.xz
+cd naiveproxy-v119.0.6045.159-2-linux-x64
+
+# Configure with certificate (using Let's Encrypt)
+# Create config file:
+cat > config.json << 'EOF'
+{
+  "listen": "https://127.0.0.1:8443",
+  "auth": "your-username:your-password",
+  "cert": "/etc/letsencrypt/live/yourdomain.com/fullchain.pem",
+  "key": "/etc/letsencrypt/live/yourdomain.com/privkey.pem"
+}
+EOF
+
+# Run NaiveProxy
+./naive config.json
+```
+
+### Detecting Roskomnadzor Blocking
+
+Test whether your provider is being blocked:
+
+```bash
+#!/bin/bash
+# vpn-block-test.sh - Detect if VPN is blocked in Russia
+
+VPN_SERVER="your-vpn.example.com"
+VPN_PORT="1194"
+
+echo "Testing VPN connectivity..."
+
+# Test 1: DNS resolution
+if ! host "$VPN_SERVER" > /dev/null 2>&1; then
+    echo "ERROR: DNS blocked - cannot resolve $VPN_SERVER"
+    echo "This suggests Roskomnadzor DNS blocking is active"
+    exit 1
+fi
+
+# Test 2: Port connectivity
+timeout 3 bash -c "cat < /dev/null > /dev/tcp/$VPN_SERVER/$VPN_PORT"
+if [ $? -ne 0 ]; then
+    echo "ERROR: Port $VPN_PORT blocked - connection timeout"
+    echo "Roskomnadzor likely blocking this VPN provider"
+    exit 1
+fi
+
+# Test 3: SSL/TLS handshake
+openssl s_client -connect "$VPN_SERVER:$VPN_PORT" -connect_timeout 3 < /dev/null 2>/dev/null
+if [ $? -ne 0 ]; then
+    echo "WARNING: TLS handshake failed - provider may be blocked"
+    exit 1
+fi
+
+echo "SUCCESS: VPN provider appears accessible"
+```
+
+Run this test to determine if your VPN provider is actively blocked by Roskomnadzor. If blocked, self-hosted solutions become necessary.
 
 ## What Users Should Know in 2026
 

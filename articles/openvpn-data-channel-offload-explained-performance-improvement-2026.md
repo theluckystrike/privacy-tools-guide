@@ -84,6 +84,183 @@ For users requiring FIPS compliance or other regulatory certifications, verify t
 
 If you want to measure the impact of DCO on your specific hardware and network conditions, conducting your own benchmarks is straightforward. Use tools like iperf3 to measure throughput and ping or similar utilities to measure latency. Run tests with DCO enabled and disabled, ensuring identical network conditions and hardware for valid comparisons.
 
+### Benchmark Methodology
+
+```bash
+#!/bin/bash
+# openvpn_benchmark.sh - Comprehensive DCO performance testing
+
+# Prerequisites
+# Server: OpenVPN with DCO enabled/disabled config
+# Client: iperf3 installed
+
+SERVER_IP="10.8.0.1"
+ITERATIONS=3
+DURATION=60  # seconds per test
+
+echo "=== OpenVPN DCO Performance Benchmark ==="
+echo ""
+
+# Function to run iperf3 test
+run_iperf_test() {
+    local mode=$1  # "dco-enabled" or "dco-disabled"
+    local results=()
+
+    echo "Testing: $mode"
+    echo "Running $ITERATIONS iterations..."
+
+    for i in $(seq 1 $ITERATIONS); do
+        # Measure throughput
+        result=$(iperf3 -c "$SERVER_IP" -t "$DURATION" -b 0 -J 2>/dev/null | \
+            jq '.end.sum_received.bits_per_second / 1000000')
+
+        results+=("$result")
+        echo "  Iteration $i: ${result} Mbps"
+    done
+
+    # Calculate average
+    avg=$(printf '%s\n' "${results[@]}" | awk '{sum+=$1} END {print sum/NR}')
+    echo "Average: $avg Mbps"
+    echo ""
+
+    echo "$avg"
+}
+
+# Test 1: DCO Disabled (baseline)
+echo ">>> Test 1: DCO Disabled (Baseline)"
+dco_disabled=$(run_iperf_test "dco-disabled")
+
+# Switch to DCO-enabled config on server
+# (requires SSH access to server)
+# ssh user@vpn-server "systemctl restart openvpn"
+
+# Test 2: DCO Enabled
+echo ">>> Test 2: DCO Enabled"
+dco_enabled=$(run_iperf_test "dco-enabled")
+
+# Calculate improvement
+improvement=$(echo "scale=2; ($dco_enabled - $dco_disabled) / $dco_disabled * 100" | bc)
+echo ""
+echo "=== Results ==="
+echo "DCO Disabled: $dco_disabled Mbps"
+echo "DCO Enabled: $dco_enabled Mbps"
+echo "Improvement: $improvement %"
+```
+
+### Latency Testing
+
+```bash
+#!/bin/bash
+# openvpn_latency_benchmark.sh - Measure VPN latency with/without DCO
+
+echo "=== OpenVPN DCO Latency Benchmark ==="
+echo ""
+
+# Method 1: Simple ping test
+test_ping_latency() {
+    local target=$1
+    local label=$2
+
+    echo "Testing latency to $target ($label)..."
+
+    ping -c 100 "$target" 2>/dev/null | tail -1 | awk '{print $4}' | \
+        awk -F'/' '{print "Avg: "$2"ms, Min: "$1"ms, Max: "$3"ms"}'
+}
+
+# Test through VPN connection
+test_ping_latency "10.8.0.1" "DCO-Enabled"
+
+# Method 2: iperf3 latency test
+echo ""
+echo "Packet Rate Test (simulates many small packets):"
+
+iperf3 -c 10.8.0.1 -t 30 -b 1M -R --json 2>/dev/null | \
+    jq '.start.timestamp, .intervals[0].streams[0].rtt' | head -5
+
+# Method 3: DNS query latency (practical metric)
+echo ""
+echo "DNS Query Latency Through VPN:"
+
+time nslookup google.com 10.8.0.1 > /dev/null
+
+# Expected improvement with DCO:
+# - Without DCO: 30-60ms per DNS query
+# - With DCO: 15-30ms per DNS query
+```
+
+### Real-World Workload Testing
+
+```bash
+#!/bin/bash
+# openvpn_realworld_benchmark.sh - Test common use cases
+
+echo "=== Real-World DCO Performance Testing ==="
+echo ""
+
+# Test 1: Large file download
+echo "Test 1: Large File Download (1GB)"
+dd if=/dev/zero bs=1M count=1000 2>/dev/null | \
+    ssh vpn_user@vpn_server "dd of=/tmp/testfile bs=1M" 2>/dev/null
+
+echo "Download speed: $(du -sh /tmp/testfile)"
+
+# Test 2: Video streaming simulation
+echo ""
+echo "Test 2: Video Streaming Simulation (4K @ 25Mbps)"
+
+ffmpeg -f lavfi -i testsrc=duration=60:size=3840x2160:rate=30 \
+    -c:v libx265 -b:v 25M -f mpegts pipe: 2>/dev/null | \
+    pv -r > /dev/null  # pv shows throughput
+
+# Test 3: Real-time communication (VoIP simulation)
+echo ""
+echo "Test 3: VoIP Quality Test"
+
+# Use G.711 codec (typical VoIP)
+# Test requires VoIP endpoints
+
+# Test 4: Database sync (small frequent packets)
+echo ""
+echo "Test 4: Database Sync Simulation"
+
+for i in $(seq 1 100); do
+    # Simulate small database packets
+    curl -s https://10.8.0.1:443/api/sync -d "{packet: $i}" > /dev/null
+done
+
+echo "Database sync test complete"
+```
+
+### Expected Results by Hardware
+
+```markdown
+## Typical DCO Performance Improvements
+
+### Low-End Hardware (Older CPU, ARM Processors)
+- Without DCO: 50-100 Mbps (limited by CPU)
+- With DCO: 200-400 Mbps (2-4x improvement)
+- Latency: 80ms → 40ms (50% reduction)
+- Use case: Raspberry Pi, older VPS, embedded systems
+
+### Mid-Range Hardware (Modern CPU, 2-4 cores)
+- Without DCO: 300-600 Mbps
+- With DCO: 800-1500 Mbps (2-3x improvement)
+- Latency: 50ms → 25ms (50% reduction)
+- Use case: Standard laptops, small business servers
+
+### High-End Hardware (Modern Multi-core, AES-NI)
+- Without DCO: 1-3 Gbps
+- With DCO: 3-8 Gbps (2-3x improvement)
+- Latency: 20ms → 10ms (50% reduction)
+- Use case: Enterprise deployments, data centers
+
+### Important Considerations
+- DCO improvements are most pronounced on CPU-bound workloads
+- Network bandwidth limitations may cap improvements
+- Real-world gains vary significantly by encryption algorithm and hardware acceleration
+- ARM processors see larger improvements than x86 due to smaller instruction caches
+```
+
 Typical results show throughput improvements of 200-400% for CPU-bound scenarios, particularly when using AES-NI accelerated encryption. Latency reductions of 30-50% are common in high packet-rate tests. These improvements are most pronounced on systems with slower CPUs or under heavy load, while modern high-performance systems may show more modest but still significant gains.
 
 Remember that real-world performance varies based on your specific hardware, network conditions, and workload characteristics. The theoretical maximum improvement depends on how much the original implementation was bottlenecked by CPU context switching versus other factors like network bandwidth limitations or disk I/O.

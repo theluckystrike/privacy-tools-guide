@@ -90,17 +90,188 @@ Reserve your actual name and personal photo for a secondary poster configuration
 
 Disable automatic poster sharing during calls if you frequently receive unwanted calls. This prevents your information from propagating to unknown parties who might harvest contact details for marketing or malicious purposes.
 
-## Managing Poster Changes
+## Managing Poster Changes Across Devices
 
 iOS synchronizes Contact Poster changes across your devices through your Apple ID. Modifying your poster on iPhone automatically updates the display on your iPad and Mac, provided all devices sign into the same Apple ID with Contacts sync enabled.
 
 When you change your poster, any contact who has your information saved receives the updated display on subsequent calls. This synchronization works bidirectionally—contacts who have updated their posters appear with new information when they call you.
 
+### Automation: Managing Multiple Contact Posters
+
+For users managing many contacts or frequently changing posters, automation reduces friction. Here's a practical example using Apple Shortcuts:
+
+```swift
+// iOS Shortcut automation for Contact Poster management
+// Create in Shortcuts app for automated poster switching
+
+import Contacts
+
+// Shortcut 1: Evening Mode - Business poster only visible to work contacts
+Shortcut {
+    name: "Evening Mode - Privacy Poster"
+    description: "Switch to privacy-focused poster with limited info"
+    steps: [
+        // This requires Contacts access permission
+        "Open Contacts app",
+        "Edit your contact card",
+        "Tap Contact Poster",
+        "Change name to: [Business Name Only]",
+        "Disable photo sharing: Toggle Photo to Off",
+        "Repeat for work contacts only to show full info"
+    ]
+}
+
+// Shortcut 2: Business Mode - Full poster for work contacts
+Shortcut {
+    name: "Business Mode - Full Poster"
+    description: "Enable full contact info during business hours"
+    steps: [
+        "Open Contacts app",
+        "Edit your contact card",
+        "Tap Contact Poster",
+        "Change name to: [Your Full Name]",
+        "Enable photo: Toggle Photo On",
+        "Set visibility to 'All Contacts'"
+    ]
+}
+```
+
+While iOS Shortcuts cannot directly automate Contact Poster changes (Apple restricts this for privacy), you can create reminders to check your settings:
+
+```swift
+// Automation: Daily privacy settings review
+import EventKit
+
+func createDailyPrivacyReview() {
+    let reminder = EKReminder()
+    reminder.title = "Review Contact Poster Settings"
+    reminder.notes = "Check Contact Poster visibility and make desired adjustments"
+    reminder.calendar = EKEventStore().defaultCalendarForNewReminders()
+
+    // Set to daily at 9 AM
+    let dateComponents = DateComponents(hour: 9, minute: 0)
+    reminder.recurrenceRules = [EKRecurrenceRule(
+        recurrenceWith: .daily,
+        interval: 1,
+        end: nil
+    )]
+
+    do {
+        try EKEventStore().save(reminder, commit: true)
+        print("Daily privacy review reminder created")
+    } catch {
+        print("Failed to create reminder: \(error)")
+    }
+}
+
+createDailyPrivacyReview()
+```
+
+### tvOS Contact Poster Considerations
+
+Apple TV also supports Contact Poster functionality when making calls through FaceTime audio. Managing tvOS posters:
+
+```swift
+// tvOS Contact Poster Management
+import ContactsUI
+
+func configureTVOSContactPoster() {
+    // On Apple TV 4K with tvOS 16+:
+    // Settings > Users and Accounts > [Your Account] > Contact Info
+    // Manage how your name/photo appears to other Apple ID users
+
+    // Note: tvOS has limited customization compared to iOS
+    // Default is to show name and photo to FaceTime contacts
+
+    // To modify:
+    // 1. Go to Settings on Apple TV
+    // 2. Select [Your Apple ID account]
+    // 3. Tap Edit Account
+    // 4. Update name or remove photo as desired
+}
+```
+
+### macOS Contact Poster Management
+
+On macOS Ventura and later, Contact Poster settings sync from iPhone:
+
+```bash
+#!/bin/bash
+# macOS Contact Poster verification script
+
+echo "=== macOS Contact Poster Status ==="
+
+# Check if Contacts sync is enabled
+defaults read com.apple.AddressBook AddressBookSyncInterval
+
+# View your contact card on macOS
+open "/System/Library/Frameworks/AddressBook.framework/Resources/AddressBookUI.app"
+
+# Settings on macOS (if available):
+# System Settings > Internet Accounts > iCloud > Contacts (should be enabled)
+
+# Contact Poster appears in:
+# - Contacts app (when calling shows how others see you)
+# - FaceTime calls and group FaceTime
+# - Messages (shows in conversation headers)
+
+# Reset Contact Poster to default:
+# Contacts app > right-click your contact > Edit
+# Reset all fields and photo to default state
+```
+
 ## Privacy Implications Summary
 
 Contact Posters represent a subtle but significant privacy vector within iOS. Unlike app permissions that trigger explicit prompts, poster data shares passively during every call you make or receive. Taking time to configure these settings according to your privacy preferences ensures your identity information remains visible only to those you intend.
 
-Regularly review your poster settings, especially after iOS updates that may introduce new sharing options or modify default behaviors.
+### Privacy Audit Checklist
+
+Perform quarterly reviews using this checklist:
+
+```bash
+# Contact Poster Privacy Audit
+
+echo "=== Contact Poster Privacy Audit (Quarterly) ==="
+echo "Date: $(date)"
+echo ""
+
+# Check 1: Primary poster settings
+echo "1. PRIMARY POSTER REVIEW"
+echo "   Go to: Settings > Contacts > Contact Poster"
+echo "   ✓ Verify name is appropriate (full name, nickname, pseudonym?)"
+echo "   ✓ Verify photo matches current identity"
+echo "   ✓ Check Share During Calls toggle"
+echo ""
+
+# Check 2: Per-contact customization
+echo "2. PER-CONTACT CUSTOMIZATION REVIEW"
+echo "   ✓ Do your closest contacts have appropriate custom posters?"
+echo "   ✓ Have any contacts been added that need custom settings?"
+echo ""
+
+# Check 3: Device sync
+echo "3. DEVICE SYNCHRONIZATION REVIEW"
+echo "   ✓ Check iPad > Settings > Contacts > Contact Poster"
+echo "   ✓ Check Mac > Contacts > Edit Your Contact Card"
+echo "   ✓ Verify all devices show consistent information"
+echo ""
+
+# Check 4: Unwanted sharing
+echo "4. RECENT CALLS REVIEW"
+echo "   ✓ Review recent calls in Phone app"
+echo "   ✓ Check if poster info was visible to unknown callers"
+echo "   ✓ If shared with unwanted parties, update poster immediately"
+echo ""
+
+# Check 5: Third-party app exposure
+echo "5. THIRD-PARTY APP PERMISSIONS"
+echo "   Go to: Settings > [App Name] > Contacts"
+echo "   ✓ Review which apps have Contacts access"
+echo "   ✓ Revoke access for apps that don't need your contact info"
+echo ""
+```
+
+Regularly review your poster settings, especially after iOS updates that may introduce new sharing options or modify default behaviors. After major iOS updates (e.g., iOS 17, iOS 18), check your poster settings to ensure new features align with your privacy preferences.
 
 
 ## Related Reading

@@ -58,11 +58,83 @@ Verify that the provider uses diskless servers or RAM-only configurations where 
 
 Open-source VPN client and server applications allow security researchers to verify implementation details. When providers use proprietary server software, you trust that the compiled binaries match the published source code. Some providers offer encrypted server names or server-side configurations that even they cannot read, demonstrating technical commitment to user privacy.
 
+### Practical Evaluation Checklist
+
+Use this checklist to systematically evaluate VPN infrastructure:
+
+```bash
+#!/bin/bash
+# VPN Infrastructure Evaluation Script
+
+VPN_DOMAIN="${1:?Provide VPN domain}"
+
+echo "=== VPN Server Infrastructure Evaluation ==="
+echo "Target: $VPN_DOMAIN"
+echo ""
+
+# Check server certificate information
+echo "1. Certificate Analysis:"
+echo | openssl s_client -connect "$VPN_DOMAIN:443" 2>/dev/null | \
+    openssl x509 -noout -issuer -subject -dates
+
+# Check DNS resolution locations
+echo ""
+echo "2. DNS Geolocation (may indicate server locations):"
+dig +short "$VPN_DOMAIN" | while read ip; do
+    echo "IP: $ip"
+    # Use whois to check jurisdiction
+    echo "Jurisdiction check: $(whois "$ip" | grep -i country | head -1)"
+done
+
+# Check for transparency report existence
+echo ""
+echo "3. Transparency Report Check:"
+curl -s -I "https://$VPN_DOMAIN/transparency-report/" | head -5
+
+# Check for bug bounty program
+echo ""
+echo "4. Bug Bounty Program:"
+curl -s "https://$VPN_DOMAIN/.well-known/security.txt" 2>/dev/null || \
+    echo "No security.txt found - check provider website for bug bounty policy"
+
+# Check SSL certificate chain depth
+echo ""
+echo "5. Certificate Chain Analysis:"
+echo | openssl s_client -connect "$VPN_DOMAIN:443" 2>/dev/null | \
+    grep "Certificate chain" -A 20
+```
+
+Run this script to gather baseline infrastructure information about any VPN provider. The results help you understand the provider's transparency level and geographic footprint.
+
+### Specific Provider Infrastructure Comparison
+
+**ProtonVPN**: Owns and operates all servers, publishes detailed transparency reports showing zero government data requests historically, maintains servers only in neutral jurisdictions, implements dedicated network infrastructure with DDoS protection. Servers use RAM-only configurations where possible.
+
+**Mullvad**: Operates all infrastructure directly, published audits of every server location available on website, uses OpenVPN and WireGuard protocols with published source code, implements memory-based routing without persistent logs. Company uses anonymous company registration to prevent legal entity targeting.
+
+**NordVPN**: Uses mix of owned and leased infrastructure, publishes transparency reports, maintains third-party security audits annually, implements no-logs policy with technical limitations (providers admit they have less control over leased infrastructure than owned servers).
+
+**ExpressVPN**: Primarily leased infrastructure through tier-1 data centers, publishes transparency reports, has undergone public no-logs validation, implements TrustedServer technology that boots from RAM on every restart, preventing any persistent data storage.
+
 ## Making an Informed Choice
 
 Your threat model determines which infrastructure characteristics matter most. Users concerned about legal compulsion should prioritize providers in privacy-friendly jurisdictions with proven no-logging track records. Those worried about technical attacks benefit from providers using diskless servers, dedicated network infrastructure, and regular third-party security audits.
 
 Cross-reference provider claims with independent reviews and user reports. Security researchers frequently discover discrepancies between what VPN providers claim and what their infrastructure actually provides. A provider that cooperates with researchers and patches vulnerabilities promptly offers better assurance than one that ignores reported issues.
+
+### Due Diligence Questions to Ask
+
+Before committing to a provider, verify these specific points:
+
+1. **Ownership Structure**: Does the provider own its servers or lease them? If leasing, which data center partners? Can they provide documentation?
+
+2. **Jurisdiction Testing**: Have any governmental bodies successfully compelled data disclosure? Search news archives for "VPN provider" + "government request" + provider name.
+
+3. **Technical Validation**: Has an independent security firm audited the infrastructure? Request links to published audits and review the audit scope carefully.
+
+4. **No-Logs Verification**: Has the provider been tested in a legal proceeding? Companies with court-validated claims have stronger assurance than policy statements alone.
+
+5. **Update Transparency**: How quickly does the provider patch vulnerabilities? Check security advisories and disclosure timelines.
 
 The most trustworthy VPN providers combine multiple transparency mechanisms: published audits, transparency reports, bug bounty programs, court-validated no-logging claims, and open-source components. No single indicator guarantees privacy, but providers that stack multiple trust layers demonstrate commitment to protecting user data rather than just marketing privacy-focused messaging.
 

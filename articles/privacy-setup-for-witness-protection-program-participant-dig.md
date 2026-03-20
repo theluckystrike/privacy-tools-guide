@@ -84,11 +84,191 @@ Create strong, unique passwords for each account using a password manager. This 
 
 Implementing these security measures requires a systematic approach. Begin with the highest-priority items that create the most significant vulnerabilities:
 
-1. **First week**: Enable full disk encryption on all devices, review and revoke app permissions, disable location services by default, set up Signal with disappearing messages
+### Phase 1: Device Hardening (Week 1)
 
-2. **Second week**: Audit and close old accounts, set up new email addresses and phone numbers for recovery, install and configure a VPN, create new accounts with completely separate information
+```bash
+#!/bin/bash
+# Initial device security hardening script
 
-3. **Ongoing**: Maintain operational security, periodically review settings for new privacy-compromising features, stay informed about emerging threats and security tools
+# iOS specific hardening
+echo "iOS Hardening Steps:"
+echo "1. Settings > Privacy > Location Services > Off (enable only when needed)"
+echo "2. Settings > Privacy > Contacts > Review and revoke permissions"
+echo "3. Settings > Privacy > Camera > Disable for all apps except essential"
+echo "4. Settings > Privacy > Microphone > Disable except for calls"
+echo "5. Settings > Privacy > Health > Disable"
+echo "6. Settings > Siri & Search > Disable Siri on Lock Screen"
+echo "7. Settings > Passwords and Security > Enable two-factor authentication"
+echo "8. Settings > Privacy > Analytics > Disable all analytics sharing"
+echo "9. Settings > Privacy > Apple Advertising > Disable personalized ads"
+echo "10. Disable Siri suggestions from lock screen: Settings > Siri & Search > off"
+
+# Enable Signal
+echo ""
+echo "Signal Installation and Configuration:"
+echo "1. Download Signal from official App Store only"
+echo "2. Create account with NEW phone number (not tied to previous identity)"
+echo "3. Settings > Privacy > Screen Security > Enable"
+echo "4. Settings > Disappearing Messages > Set to 24 hours"
+echo "5. Settings > Notifications > Customize to disable revealing message previews"
+```
+
+### Phase 2: Account Migration (Week 2)
+
+```bash
+#!/bin/bash
+# Account migration and old identity removal
+
+# Create completely new email identity
+# Use ProtonMail for encrypted email: https://protonmail.com
+# Alternative: Tutanota (Switzerland-based, full encryption)
+
+# Step 1: New email account creation
+echo "Create new email accounts (use Tor Browser for registration if possible)"
+echo "Recommended services:"
+echo "  - ProtonMail: Switzerland-based, encrypted, no tracking"
+echo "  - Tutanota: Germany-based, automatic encryption"
+
+# Step 2: Close old accounts
+echo ""
+echo "Closing old social media accounts:"
+echo "Instagram: Settings > Account > Help > Request Account Deletion"
+echo "Facebook: Settings > Account > Deactivation and Deletion > Permanently Delete Account"
+echo "Twitter/X: Settings > Account > Deactivate Your Account"
+echo "TikTok: Me > Settings and Privacy > Account Control > Delete Account"
+
+# Wait 30 days for deletion (accounts are recoverable during grace period)
+# After 30 days, deletion is permanent
+
+# Step 3: Monitor old accounts
+echo ""
+echo "After account closure, periodically check:"
+echo "  - Google Takeout for any remaining linked accounts"
+echo "  - Archive.org (Wayback Machine) for cached versions of old profiles"
+echo "  - Google Search for name+old information"
+```
+
+### Phase 3: Network Hardening
+
+```bash
+#!/bin/bash
+# VPN Configuration Script
+
+# Install ProtonVPN or Mullvad (recommended for witness protection)
+# ProtonVPN: Switzerland-based, no-logs audited, accepts cryptocurrency
+
+# Linux/macOS: Manual WireGuard configuration (maximum privacy)
+cat > /etc/wireguard/wg0.conf << 'EOF'
+[Interface]
+PrivateKey = <generate-with-wg-genkey>
+Address = 10.0.0.2/32
+DNS = 1.1.1.1  # or use ProtonVPN DNS
+
+[Peer]
+PublicKey = <server-public-key>
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+EOF
+
+# Enable VPN at startup
+systemctl enable wg-quick@wg0
+
+# Verify VPN is active before any other network activity
+# Test: curl https://api.ipify.org (should return VPN IP, not real IP)
+```
+
+### Phase 4: Verification and Testing
+
+```bash
+#!/bin/bash
+# Privacy verification checklist
+
+echo "=== Privacy Verification Checklist ==="
+
+# Test 1: IP Address Verification
+echo "1. IP Address Leaks:"
+echo "   Real IP check: curl https://api.ipify.org"
+echo "   VPN should show different IP"
+
+# Test 2: DNS Leak Testing
+echo ""
+echo "2. DNS Leak Test:"
+echo "   Visit: https://www.dnsleaktest.com"
+echo "   Verify VPN DNS servers are used, not ISP DNS"
+
+# Test 3: IPv6 Leak Testing
+echo ""
+echo "3. IPv6 Leak Test:"
+echo "   Visit: https://test-ipv6.com"
+echo "   Should show no IPv6 address if VPN is active"
+
+# Test 4: WebRTC Leak Testing
+echo ""
+echo "4. WebRTC Leak Test:"
+echo "   Visit: https://browserleaks.com/webrtc"
+echo "   Should show VPN IP only"
+
+# Test 5: Location Verification
+echo ""
+echo "5. Location Verification:"
+echo "   Visit: https://www.iplocation.net"
+echo "   Should show VPN server location, not your actual location"
+
+# Test 6: Browser Fingerprinting
+echo ""
+echo "6. Browser Fingerprint Test:"
+echo "   Visit: https://coveryourtracks.eff.org"
+echo "   Review what information websites can collect"
+```
+
+### Phase 5: Ongoing Maintenance
+
+Implement monthly security reviews:
+
+```bash
+#!/bin/bash
+# Monthly security review script
+
+REVIEW_DATE=$(date +%Y-%m-%d)
+REVIEW_LOG="$HOME/.security_review_$REVIEW_DATE.txt"
+
+echo "Monthly Security Review - $REVIEW_DATE" > "$REVIEW_LOG"
+
+# Check 1: App permissions
+echo "" >> "$REVIEW_LOG"
+echo "1. App Permissions Review:" >> "$REVIEW_LOG"
+echo "   - Settings > Privacy > Review each app's permissions" >> "$REVIEW_LOG"
+echo "   - Remove access for apps no longer used" >> "$REVIEW_LOG"
+
+# Check 2: Location history
+echo "" >> "$REVIEW_LOG"
+echo "2. Location History Audit:" >> "$REVIEW_LOG"
+echo "   - Google: https://myactivity.google.com" >> "$REVIEW_LOG"
+echo "   - Apple: Settings > Privacy > Location Services" >> "$REVIEW_LOG"
+echo "   - Clear history if any remains" >> "$REVIEW_LOG"
+
+# Check 3: Connected devices
+echo "" >> "$REVIEW_LOG"
+echo "3. Connected Devices Review:" >> "$REVIEW_LOG"
+echo "   - Check Apple ID Sign In & Security" >> "$REVIEW_LOG"
+echo "   - Google Security Checkup: https://myaccount.google.com/security-checkup" >> "$REVIEW_LOG"
+echo "   - Remove unrecognized devices" >> "$REVIEW_LOG"
+
+# Check 4: App store review
+echo "" >> "$REVIEW_LOG"
+echo "4. App Store Review:" >> "$REVIEW_LOG"
+echo "   - Identify any new apps requesting new permissions" >> "$REVIEW_LOG"
+echo "   - Remove any apps added by others (if shared device)" >> "$REVIEW_LOG"
+
+# Check 5: Malware scan
+echo "" >> "$REVIEW_LOG"
+echo "5. Malware Detection:" >> "$REVIEW_LOG"
+echo "   - iOS: Use Find My > Find My iPhone to ensure no tracking" >> "$REVIEW_LOG"
+echo "   - Android: Install Exodus Privacy and review app tracking" >> "$REVIEW_LOG"
+
+echo "Security review completed. Details saved to: $REVIEW_LOG"
+```
 
 Remember that security is an ongoing process, not a one-time configuration. New threats emerge regularly, and the tools and techniques for protection evolve accordingly. Stay informed, remain vigilant, and prioritize your digital privacy as seriously as your physical security.
 

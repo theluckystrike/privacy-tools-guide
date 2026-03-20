@@ -108,16 +108,174 @@ Regardless of tool choice, apply consistent key management practices:
 
 **Maintain revocation certificates.** Generate and securely store revocation certificates for all keys. If a member loses access or leaves, having revocation certificates ready prevents unauthorized future use.
 
+## Step-by-Step Setup: Mailman 3 with GPG (Recommended for Developers)
+
+For a developer team, here's a concrete implementation:
+
+**1. Install Mailman 3 on your server**:
+```bash
+# Ubuntu/Debian
+sudo apt-get install mailman3 mailman3-web
+
+# Start services
+sudo systemctl start mailman3
+sudo systemctl start mailman3-web
+```
+
+**2. Configure list encryption**:
+Create a new list via the web interface, then edit `/etc/mailman3/mailman-hyperkitty.cfg`:
+```ini
+[mailman]
+# Enable archiver plugin
+plugins = mailman_hyperkitty
+
+[hyperkitty]
+# Store encrypted archives
+enable_hyperkitty = yes
+
+# Custom: Add encryption settings
+archive_policy = encrypted
+require_pgp = yes
+```
+
+**3. Distribute GPG keys to members**:
+```bash
+# Export your list's public key
+gpg --armor --export list@domain.com > /tmp/list-public-key.asc
+
+# Members import and verify
+gpg --import /tmp/list-public-key.asc
+gpg --edit-key list@domain.com  # Sign the key locally
+```
+
+**4. Configure thunderbird for encrypted mailing list usage**:
+- Import your GPG key into Thunderbird's Enigmail
+- Create filter rules that automatically decrypt incoming list messages
+- When composing, use "Write & Encrypt" for list messages
+
+## Privacy-First Community Mailing Lists
+
+For activist groups, journalists, or other communities prioritizing privacy:
+
+**Signal Groups** (built-in encrypted communication):
+- Signal supports groups of up to 5,000 members
+- True end-to-end encryption
+- No central server stores message history
+- Limitation: Primarily designed for chat, not formal mailing lists
+
+**ProtonMail Groups** (with encryption):
+- ProtonMail users can create encrypted shared mailboxes
+- Professional web interface for group communication
+- Limitation: Expensive for large groups
+
+**Standard Notes with Shared Vault** (encrypted collaborative documents):
+- Not a traditional mailing list but can serve similar purposes for group notes
+- All content encrypted end-to-end
+- Members can add/edit shared documents
+
+## Comparison Table: Encrypted Mailing List Solutions
+
+| Solution | Setup Complexity | User Friction | Encryption | Best For |
+|----------|------------------|---------------|-----------|----------|
+| Mailman 3 + GPG | High | Medium-High | Strong E2EE | Developer teams |
+| Delta Chat | Medium | Low | Strong E2EE | Non-technical groups |
+| Listmonk + PGP | High | Low | Strong E2EE | Organizations with DevOps |
+| ProtonMail Groups | Low | Low | Moderate E2EE | Small business teams |
+| Signal Groups | Very Low | Very Low | Very Strong E2EE | <5000 members, informal |
+
+## Compliance and Legal Considerations
+
+When running an encrypted mailing list for sensitive communications:
+
+**GDPR Compliance**:
+- Document your data processing practices
+- Inform members about encryption and data retention
+- Provide clear data deletion procedures
+- Maintain privacy impact assessments for sensitive groups
+
+**HIPAA (Healthcare)** or **FedRAMP (Federal)**: Standard open-source solutions rarely meet these compliance requirements. Consider evaluated platforms if subject to these regulations.
+
+**Corporate Records Retention**: If your mailing list handles business-critical information, consult with legal regarding retention policies and archival. Encrypted archives complicate but don't eliminate retention obligations.
+
+## Advanced: Splitting the Mailing List into Encrypted Subgroups
+
+For very large lists with mixed security needs:
+
+```python
+# Example: Automatically split sensitive discussions
+# into separate encrypted subgroups
+
+def route_message_to_sublist(message, sender, recipient_list):
+    """
+    Route messages based on content sensitivity
+    """
+    if contains_pgp_tags(message.body):
+        # High-security message - route to encrypted sublist
+        return "secure-sublist@domain.com"
+    elif contains_sensitive_keywords(message.body):
+        # Medium-security - prompt sender for encryption
+        send_warning_to_sender(sender)
+
+    return "main-list@domain.com"  # Public discussions
+```
+
+This approach allows mixed-sensitivity groups to coexist while ensuring critical communications get appropriate encryption.
+
+## Testing Your Encrypted Mailing List
+
+Before deployment to production:
+
+1. **Send test messages**: Have team members send unencrypted, encrypted, and PGP-signed messages. Verify all arrive correctly.
+
+2. **Verify archive encryption**: Check that stored archives are actually encrypted. Attempt to read raw archive files—they should be unreadable without decryption.
+
+3. **Test key rotation**: Simulate a member's key expiration and replacement. Verify the list continues functioning with new keys.
+
+4. **Test member removal**: Remove a member and verify their old messages in archives cannot be decrypted by them (past messages should be secure).
+
+5. **Backup and recovery**: Test restoring list from backups. Ensure encrypted archives restore intact.
+
+## Migration from Unencrypted Lists
+
+If moving an existing mailing list to encryption:
+
+1. **Archive the old list**: Export full history before making changes
+2. **Announce encryption change**: Communicate security upgrade to members
+3. **Distribute new GPG keys**: Have members import and verify fingerprints
+4. **Create new encrypted list**: Don't retrofit encryption on existing list
+5. **Archive old list as read-only**: Keep for historical reference but migrate new discussions
+
+## Monitoring and Auditing Your List
+
+Regular security practices for encrypted lists:
+
+```bash
+#!/bin/bash
+# daily-list-audit.sh - Monitor list health
+
+# Check disk space for archives
+du -sh /var/lib/mailman3/data/* | sort -h
+
+# Monitor GPG key validity
+gpg --list-keys | grep -E "expired|invalid"
+
+# Check mail queue for stuck messages
+mailq | grep -v "Mail queue is empty"
+
+# Log failed decryptions
+grep "failed to decrypt" /var/log/mailman3/mailman.log
+```
+
 ## Choosing the Right Solution
 
 For developer teams already using GPG, Mailman with GPG encryption provides the most control. For broader groups wanting friction-free encryption, Delta Chat offers the best user experience. For organizations needing a web interface, listmonk with PGP middleware balances usability with security.
 
 Test your chosen solution with a small group before deploying widely. Verify that all members can send and receive encrypted messages successfully, and document the procedure for onboarding new members.
 
+For activists, journalists, and others facing adversarial conditions, Signal Groups may provide better threat-model alignment than traditional mailing lists, despite their different UI.
 
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
