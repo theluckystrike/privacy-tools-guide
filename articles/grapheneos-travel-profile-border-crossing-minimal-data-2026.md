@@ -122,13 +122,165 @@ While GrapheneOS provides strong privacy protections, understand its limitations
 
 **Legal Variations**: Border search laws vary significantly by country. Some jurisdictions allow agents to compel biometric unlock, while others require a warrant for password disclosure. Research the specific laws of your destination.
 
+## Advanced Profile Isolation Techniques
+
+Beyond the basic setup, GrapheneOS offers additional layers of isolation that power users should understand. The operating system's access control system (SELinux) enforces strict separation between profiles at the kernel level. This means malware in one profile cannot access data from another profile, even with root access or physical access to the device.
+
+### Understanding GrapheneOS User Profile Architecture
+
+GrapheneOS's multi-user system is fundamentally different from Android's standard approach. Each user profile has:
+
+- Separate storage partition encrypted with its own key
+- Independent permission grants and app access controls
+- Isolated Bluetooth and NFC pairing history
+- Separate calendar, contact, and message databases
+- Independent network access logs
+
+This architectural separation means that compromising one profile doesn't automatically compromise others. Unlike Android's standard multi-user system which shares the kernel, GrapheneOS enforces user-space isolation that survives even kernel exploits under certain conditions.
+
+### Profile-Level Permissions and Permission Management
+
+Each profile maintains independent permission grants. An app installed in your Travel Profile requesting location access doesn't automatically gain permissions from your primary profile. This isolation extends to:
+
+- Network access controls per-profile
+- Microphone and camera permissions isolated per-profile
+- Contacts and calendar separate by profile
+- Clipboard isolated between profiles
+- Bluetooth device pairing separate by profile
+- SIM card access restricted per user
+
+GrapheneOS provides granular per-app permission controls that go beyond stock Android:
+
+```bash
+# View permissions granted to an app in your current profile
+adb shell pm get-app-ops-stats
+
+# Revoke specific permissions (example: revoke camera access)
+adb shell appops set <package_name> CAMERA deny
+
+# Monitor permission access in real-time
+adb shell dumpsys appops | grep "Op="
+```
+
+The permission model ensures that even if an app in your Travel Profile is compromised, it cannot access your primary profile's resources. This separation is enforced at the Linux kernel level through file system permissions and SELinux policies.
+
+### Understanding GrapheneOS Encryption and Key Derivation
+
+GrapheneOS uses Android's full-disk encryption (FDE) at the block device level. Each user profile uses a derived key from the profile's password. The key derivation process uses Scrypt with strong parameters:
+
+- 32-bit salt (unique per profile)
+- 262144 iteration count
+- 32-byte derived key length
+
+This ensures that even if an attacker obtains the encrypted data, they cannot brute-force a Travel Profile password without owning the physical device.
+
+### Encrypted Storage Configuration
+
+GrapheneOS allows you to encrypt individual profiles with separate keys:
+
+```bash
+# Access developer settings in your travel profile
+adb shell setprop ro.debuggable 1
+
+# Verify encryption status
+adb shell vdc cryptfs getCryptoState
+
+# Change password for current profile
+adb shell am start -n com.android.settings/.SetupWizardActivity
+```
+
+This ensures that if customs agents gain access to your device powered off, they cannot decrypt your Travel Profile data without knowing its specific password.
+
+## Real-World Border Crossing Scenarios
+
+### Best Practice Protocol for High-Risk Borders
+
+When crossing into jurisdictions known for aggressive device searches (certain Eastern European countries, authoritarian regimes, or aggressive enforcement in specific US ports), implement this enhanced protocol:
+
+1. **72 Hours Before Crossing**: Back up your primary profile to an encrypted external drive or cloud storage using a second device
+2. **24 Hours Before**: Verify your Travel Profile contains only essential apps and disable auto-sync on all services
+3. **At Checkpoint**: Power device off completely, present it powered off initially
+4. **During Search**: If forced to unlock, provide only the Travel Profile password; biometric unlock reveals which profile is being accessed
+5. **After Clearing**: Immediately verify profile integrity using CLI commands before re-enabling networks
+
+### Handling Forced Device Unlock
+
+If customs agents demand you unlock your device, you have options:
+
+- Provide the Travel Profile password, keeping your primary identity protected
+- Under some jurisdictions, refusing to provide a password is legal (requires jurisdiction-specific legal knowledge)
+- Document everything—request badge numbers, names, badge numbers, and note the time of interaction
+- Contact legal representation immediately if your rights are violated
+
+GrapheneOS's multi-profile system creates plausible deniability: "This is my travel phone for the trip. My work stuff is on my primary profile, which I'm keeping secure."
+
+## Threat Model Analysis
+
+Understanding who you're defending against matters. Your threat model determines how aggressive your travel profile configuration should be:
+
+**Low Threat Model**: Crossing into Western European countries with standard customs screening. A basic travel profile with a few essential apps suffices.
+
+**Medium Threat Model**: Business travel to countries with active surveillance or known aggressive customs screening (Russia, China, certain US ports). Implement the full isolation protocol with airplane mode during crossing.
+
+**High Threat Model**: Travel to authoritarian regimes, being a known activist or journalist, or having sensitive professional credentials. Consider leaving your primary device behind entirely and using a dedicated cheap phone as your travel device—potentially cheaper than the risk of compromise.
+
+## Technical Verification Commands
+
+After border crossing, run these commands to verify your device integrity:
+
+```bash
+# List all installed packages and compare against your pre-travel baseline
+adb shell pm list packages > post-crossing-packages.txt
+diff pre-crossing-packages.txt post-crossing-packages.txt
+
+# Check for unexpected users/profiles created
+adb shell dumpsys user
+
+# Verify SELinux enforcement is active
+adb shell getenforce
+
+# Check for unexpected privileged processes
+adb shell ps | grep -E "su|daemon|priv"
+
+# Verify network interfaces haven't been modified
+adb shell netstat -an | grep ESTABLISHED
+
+# Check system partition integrity (requires GrapheneOS verification)
+adb shell dm verity
+```
+
+Any unexpected packages, additional user accounts, or unusual processes suggest possible device tampering during customs inspection.
+
+## Post-Travel Profile Cleanup
+
+After returning home, treat your Travel Profile as potentially compromised:
+
+1. **Backup important data** from the Travel Profile before deletion
+2. **Delete the Travel Profile** entirely using Settings → System → Multiple Users
+3. **Create a fresh Travel Profile** for your next trip
+4. **Reset your passwords** for any services accessed through the Travel Profile
+
+This aggressive cleanup approach assumes that customs agents with forensic tools may have planted surveillance software in your Travel Profile. By deleting and recreating it, you ensure a clean baseline for the next trip.
+
+## Legal Considerations by Jurisdiction
+
+Border search laws vary dramatically:
+
+- **United States**: CBP can search devices without a warrant at borders, though some courts have limited this for comprehensive searches requiring reasonable suspicion
+- **European Union**: GDPR provides some protection against bulk data collection without suspicion
+- **Canada**: CBSA requires reasonable suspicion for device searches; citizenship provides some legal protection
+- **UK**: Borders Act allows device search, but data access requires consent or warrant
+- **Australia**: Border Force can search without warrant, but retention is limited
+
+Research the specific laws for your destination before traveling. Consult with legal counsel familiar with technology rights in your destination country.
+
 ## Conclusion
 
 The GrapheneOS Travel Profile provides developers and power users with a practical tool for minimizing data exposure during border crossings. By maintaining strict separation between your primary identity and your travel persona, you reduce the information available to customs agents while maintaining plausible deniability.
 
-Configure your travel profile before your trip, follow the minimal data principles, and develop a personal protocol for border crossings. These steps significantly enhance your digital privacy without sacrificing the convenience of traveling with a smartphone.
+Configure your travel profile before your trip, follow the minimal data principles, develop a personal protocol for border crossings, and understand your legal rights in target jurisdictions. These steps significantly enhance your digital privacy without sacrificing the convenience of traveling with a smartphone.
 
-Remember: the goal isn't to hide illegal activity—it's to exercise your right to privacy and minimize the personal data you must surrender when crossing borders.
+Remember: the goal isn't to hide illegal activity—it's to exercise your right to privacy and minimize the personal data you must surrender when crossing borders. Plan ahead, test your setup at home, and carry documentation explaining your security practices if challenged.
 
 
 ## Related Reading

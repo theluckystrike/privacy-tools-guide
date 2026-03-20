@@ -140,11 +140,225 @@ Consider these network-level privacy measures:
 # Signal, Session, or SimpleX for sensitive communications
 ```
 
+## Carrier-Specific Prepaid Options and Real Pricing
+
+Understanding specific carrier policies and pricing helps optimize anonymous acquisition:
+
+### United States Carriers (2026 Pricing)
+
+**AT&T Prepaid:**
+- Entry-level plans: $40-65/month for 10-25GB
+- No ID required at major retailers (Walmart, Best Buy, Target)
+- SIM activation: Cash purchase, in-store activation
+- Card costs: $20-30 for SIM kit, includes starter credit
+
+**T-Mobile Prepaid:**
+- Entry-level plans: $25-50/month (various data tiers)
+- Available at dollar stores and convenience stores
+- Fastest activation for anonymous use (can use USSD codes)
+- Card costs: $15-25
+
+**Verizon Prepaid:**
+- Plans: $35-80/month
+- Available at widespread retail locations
+- SIM activation requires basic account setup (can use fake name with mail forwarding)
+- Card costs: $20-30
+
+**MVNO (Mobile Virtual Network Operator) Options:**
+- **FreedomPop**: $0-20/month (free tier available)
+- **Google Fi**: $20/month base + per-GB charges (requires verification, less anonymous)
+- **Mint Mobile**: $25-50/month (3-month minimum, no ID store purchase)
+- **Ultra Mobile**: $40+ (accepts prepaid card payment)
+
+### International Prepaid SIM Aggregators
+
+For travelers or specific country selection:
+
+- **simcardwiki.com**: Updated registry of no-ID carriers per country
+- **holafly.com**: Virtual numbers (esim format, requires verification)
+- **skyroam.com**: International portable WiFi for location-free internet
+
+## Device Acquisition Deep Dive
+
+### Budget Device Models and IMEI Considerations
+
+When purchasing hardware anonymously, device selection matters for post-purchase longevity:
+
+**Recommended Budget Android Devices:**
+- Moto E series ($100-200): Standard IMEI assignment, common models reduce suspicion
+- Xiaomi Redmi Note series ($120-250): Good specs, lower detection risk due to volume
+- Samsung Galaxy A series ($150-300): Most trusted hardware, widely available secondhand
+- OnePlus Nord series ($200+): Good reputable hardware if budget allows
+
+**Devices to avoid:**
+- High-end flagships (>$800): Purchases with cash attract anti-money laundering scrutiny
+- Very old devices (>5 years): May have known security flaws or proprietary IMEI issues
+- Suspiciously cheap devices: Counterfeit IMEIs or stolen stock raises red flags
+
+### Validating Device Cleanliness
+
+```bash
+# Comprehensive device validation after acquisition
+# 1. Check IMEI against Apple/Samsung databases for reported losses
+# IMEI: Found via Settings -> About -> IMEI
+# Lookup at IMEI24.com or manufacturer's anti-theft database
+
+# 2. Scan for pre-installed MDM profiles
+adb shell pm list packages | grep -E "com.airwatch|com.mobileiron|com.vmware"
+
+# 3. Check for custom recovery or modified firmware
+adb shell getprop ro.build.fingerprint
+# Compare against manufacturer's known fingerprints
+
+# 4. Verify no developer options enabled by default
+adb shell settings get global adb_enabled
+# Should return 0 (disabled)
+
+# 5. List all system-level background services
+adb shell dumpsys activity services | grep -i "service"
+
+# 6. Check for unusual system apps
+adb shell pm list packages -s | wc -l
+# Count of system apps; unusually high (>100) suggests modifications
+
+# 7. Reset to factory and verify clean boot
+adb reboot recovery
+# Select "wipe data/factory reset" and complete
+```
+
+### Second-Hand Purchase Validation Checklist
+
+When acquiring used devices through peer-to-peer markets (OfferUp, Craigslist, Facebook Marketplace):
+
+1. **Verify IMEI authenticity**: Run IMEI check before purchase
+2. **Test all hardware**: Camera, microphone, speakers, proximity sensor
+3. **Check storage health**: `adb shell dumpsys meminfo` to see memory errors
+4. **Inspect battery**: `adb shell dumpsys battery` checking cycle count
+5. **Verify activation lock removal**: Try signing out of iCloud (iOS) or Google (Android)
+6. **Test payment method**: Ensure carrier can activate SIM without existing account
+
+## Advanced Payment Anonymization
+
+### Cryptocurrency Payment Strategies
+
+While most major retailers require KYC, specific scenarios enable crypto payments:
+
+```bash
+# Privacy coin workflow (Monero preferred for fungibility)
+# 1. Obtain Monero through peer-to-peer exchange (LocalMonero.co)
+
+# 2. Create dedicated wallet on air-gapped system
+monero-wallet-cli --generate-new-wallet purchased-device-wallet --testnet
+
+# 3. Transfer funds to transaction pool
+monero-wallet-cli
+> transfer <address> <amount>
+
+# 4. Use for purchase at privacy-supporting retailers
+# Limited retailers accepting Monero directly:
+# - Some European tech retailers
+# - Select Asian SIM providers
+```
+
+**Practical limitation**: Shipping address linkage remains the core vulnerability. Cryptocurrency solves the payment trail but not the physical address leak.
+
+### Layered Mail Services Strategy
+
+For higher operational security:
+
+```bash
+# Use nested mail forwarding
+# Layer 1: Business address registered to LLC
+# Layer 2: Physical mail forwarding to Layer 1
+# Layer 3: Purchase shipped to Layer 2
+
+# Example workflow:
+# Purchase -> Ship to: [Forwarding Service Address]
+# Forwarding Service forwards to: [Business LLC Address]
+# You retrieve from business location
+
+# Tools:
+# - Traveling Mailbox ($15/month) - international forwarding
+# - UPS Store (Mail Boxes Etc.) - commercial address service
+# - iPostal1 ($10+/month) - virtual address with package consolidation
+```
+
+This approach creates a three-layer separation between your identity and the purchase point.
+
+### Privacy-Respecting Payment Cards
+
+Some payment methods provide better anonymity than others:
+
+- **Vanilla Visa/Mastercard**: Prepaid cards bought with cash, single-use or low-balance ($25-200)
+- **BitPay Cards**: Crypto-linked cards with limited KYC (available in select countries)
+- **Privacy.com**: Virtual card numbers (US-only, requires bank account but masks real card)
+
+Most effective: Cash → Vanilla prepaid card → Online purchase → Mail forwarding service
+
+## Post-Purchase Hardening
+
+Immediately after acquiring hardware, establish baseline hardening:
+
+```bash
+# 1. Enable full-disk encryption
+# Android 10+: Settings -> Security -> Encryption -> Encrypt Phone
+# iOS: Settings -> Face ID & Passcode -> Enable (default on modern iOS)
+
+# 2. Disable telemetry completely
+adb shell settings put global stay_on_while_plugged_in 0
+adb shell pm disable-user --user 0 com.google.android.gms/.analytics
+
+# 3. Install from alternative sources only (F-Droid)
+# Do NOT use Google Play Store on anonymous devices
+
+# 4. Disable location services entirely until needed
+adb shell settings put secure location_providers_allowed -gps,-network
+
+# 5. Use only encrypted messaging apps
+# Recommended: Signal (using new account), Session (Monero-optional)
+
+# 6. Mount filesystem as read-only when possible
+# For ultra-high security, disable write access to /system
+adb shell mount -o ro,remount /system
+```
+
+## Threat Models: Anonymity Levels
+
+### Level 1: Basic Privacy (Defending Against Commercial Tracking)
+- Cash purchase at retail locations
+- Standard prepaid SIM
+- Limited background checking
+
+**Defense against**: Carrier tracking, ISP tracking, advertising networks
+
+### Level 2: Enhanced Anonymity (Against Local Surveillance)
+- Physical separation through mail forwarding service
+- Multiple device identities
+- Network isolation through VPN
+
+**Defense against**: Physical surveillance, location tracking, local law enforcement without warrant
+
+### Level 3: Advanced Operational Security (Against Active Targeting)
+- Nested mail forwarding (multiple hops)
+- Cryptocurrency payment through mixing
+- Air-gapped device configuration
+- Separate networks with no correlation to primary identity
+- Hardware firewall with network isolation
+
+**Defense against**: Sophisticated actors, organized crime investigations, state-level surveillance
+
+Most users seeking reasonable privacy will benefit from Level 1-2 measures. Level 3 requires extreme discipline and attracts attention through unusual purchasing patterns.
+
 ## Legal and Practical Considerations
 
-Jurisdictions vary significantly in their requirements. In some countries, owning a mobile phone without registration is illegal and can result in service disconnection or fines. Research local regulations before proceeding.
+Jurisdictions vary significantly in their requirements. In some countries, owning a mobile phone without registration is illegal and can result in service disconnection or fines. Research local regulations before proceeding:
 
-For most use cases, the goal should be reasonable privacy rather than complete anonymity, which is practically impossible. The techniques in this guide reduce your attack surface without requiring extreme measures that might themselves attract attention.
+- **United States**: No legal prohibition on prepaid phones; carrier can terminate service for suspicious activity
+- **European Union**: SIM card registration typically required within 30 days of activation
+- **China**: All phones require identity registration; violations carry criminal penalties
+- **India**: Registration required for all SIM cards within 90 days
+
+For most use cases, the goal should be reasonable privacy rather than complete anonymity, which is practically impossible. The techniques in this guide reduce your attack surface without requiring extreme measures that might themselves attract attention or create legal complications.
 
 ## Related Reading
 

@@ -146,6 +146,239 @@ When evaluating providers, examine their technical documentation. Request securi
 
 For developers, self-hosted solutions using rclone with crypt provide maximum flexibility, while commercial services offer turnkey solutions with managed infrastructure. Evaluate multiple options and test recovery procedures before committing.
 
+## Advanced Self-Hosted Implementation
+
+For developers requiring maximum control, implement zero-knowledge storage using cloud infrastructure you control:
+
+### S3 with Client-Side Encryption
+
+Use AWS S3 with client-side encryption to create your own zero-knowledge storage:
+
+```python
+#!/usr/bin/env python3
+import boto3
+from cryptography.fernet import Fernet
+import os
+
+class ZeroKnowledgeS3:
+    def __init__(self, bucket_name, encryption_key):
+        self.s3_client = boto3.client('s3')
+        self.bucket = bucket_name
+        self.cipher = Fernet(encryption_key)
+
+    def upload_encrypted(self, file_path, s3_key):
+        """Upload file with client-side encryption"""
+        with open(file_path, 'rb') as f:
+            plaintext = f.read()
+
+        # Encrypt before uploading
+        ciphertext = self.cipher.encrypt(plaintext)
+
+        # Upload encrypted blob
+        self.s3_client.put_object(
+            Bucket=self.bucket,
+            Key=s3_key,
+            Body=ciphertext,
+            ServerSideEncryption='AES256'  # Additional S3-side encryption
+        )
+
+    def download_decrypted(self, s3_key, output_path):
+        """Download and decrypt file"""
+        response = self.s3_client.get_object(Bucket=self.bucket, Key=s3_key)
+        ciphertext = response['Body'].read()
+
+        # Decrypt locally
+        plaintext = self.cipher.decrypt(ciphertext)
+
+        with open(output_path, 'wb') as f:
+            f.write(plaintext)
+```
+
+Cost analysis: S3 storage costs $0.023/GB/month. A 500GB vault costs ~$11.50/month with full encryption and recovery capability.
+
+### Backblaze B2 with Zero-Knowledge Architecture
+
+Backblaze B2 offers lower costs than S3 ($0.006/GB/month) with similar encryption capabilities:
+
+```bash
+# Install B2 CLI
+pip install b2
+
+# Configure B2 credentials
+b2 account-info
+
+# Use rclone with B2 and crypt
+rclone config create myb2crypt crypt \
+    remote b2:bucket \
+    password your-encryption-password \
+    password2 your-salt
+
+# Upload with automatic encryption
+rclone copy /local/files myb2crypt:
+```
+
+This approach costs approximately $3-4/month for 500GB storage compared to $11+ for S3.
+
+## Pricing Comparison Table (2026)
+
+| Provider | Storage | Price | Encryption | Features |
+|----------|---------|-------|------------|----------|
+| Proton Drive | 500GB | €4.99/mo | E2E | Email included |
+| Tresorit | 500GB | ~€12/mo | E2E | Enterprise focus |
+| Sync.com | 500GB | ~$8/mo | E2E | Simple interface |
+| Filen | 500GB | €1.99/mo | E2E | Most affordable |
+| Self-hosted S3 | 500GB | ~$11.50/mo | Client-side | Maximum control |
+| Self-hosted B2 | 500GB | ~$3/mo | Client-side | Cheapest self-hosted |
+| Cryptomator | ∞ | Free | Client-side | Works with any cloud |
+
+## Encryption Standards Verification
+
+When evaluating zero-knowledge providers, verify their encryption claims:
+
+### Request Security Audits
+
+Legitimate zero-knowledge providers should provide:
+1. Third-party security audit reports (published in whitepaper or blog)
+2. Encryption algorithm documentation (which version of AES, RSA key size, etc.)
+3. Key derivation methodology (Argon2, PBKDF2, iterations)
+4. Transparency reports on data requests from law enforcement
+
+### Verify Claims Independently
+
+For open-source implementations, audit the code:
+
+```bash
+# Clone Cryptomator source
+git clone https://github.com/cryptomator/cryptomator.git
+
+# Review encryption implementation
+grep -r "AES" cryptomator/src/main/java/org/cryptomator/*/
+
+# Check for audit reports
+find . -name "*audit*" -o -name "*security*"
+```
+
+## Compliance and Regulatory Considerations
+
+Different zero-knowledge providers have different compliance profiles:
+
+### HIPAA Compliance (Healthcare)
+
+Tresorit explicitly supports HIPAA compliance with Business Associate Agreements (BAAs).
+
+Proton Drive and others typically don't provide HIPAA compliance.
+
+Cost implications: HIPAA-compliant tiers cost more ($15-25/user/month) than standard plans.
+
+### GDPR Compliance (Europe)
+
+All major zero-knowledge providers comply with GDPR:
+- Data processing agreements available
+- Data residency in EU (typically)
+- Right to erasure compliant
+
+### FINMA Compliance (Switzerland)
+
+Switzerland's financial regulator FINMA certifies:
+- Tresorit (explicitly certified)
+- Proton (implicit through Swiss residency)
+
+For financial services companies, Switzerland-based providers offer advantages.
+
+## Disaster Recovery and Business Continuity
+
+Zero-knowledge architecture complicates disaster recovery. Plan accordingly:
+
+### Recovery Key Storage
+
+All zero-knowledge providers require you maintain recovery keys:
+
+```bash
+# Generate recovery key (provider-specific)
+# Store securely in multiple locations:
+
+# 1. Encrypted password manager
+# 2. Physical backup (laminated, safe deposit box)
+# 3. Trusted contact (Bitwarden emergency access equivalent)
+
+# Never store recovery key in same location as primary password
+```
+
+### Recovery Testing Schedule
+
+Monthly: Test recovery on a test device
+Quarterly: Verify recovery key accessibility
+Annually: Simulate complete account loss scenario
+
+## Data Migration Between Providers
+
+If switching providers, ensure clean migration:
+
+```bash
+#!/bin/bash
+# Safe migration workflow
+
+# 1. Download all encrypted data from source
+rclone copy oldstorage: local-backup/ --progress
+
+# 2. Re-encrypt with new provider's key
+rclone copy local-backup/ newstorage: --progress
+
+# 3. Verify integrity
+rclone check oldstorage: newstorage:
+
+# 4. Wait 30 days before deleting old storage
+# 5. Document migration timestamp
+echo "Migration completed: $(date)" >> migration.log
+```
+
+This two-week verification period prevents accidental permanent data loss during migration.
+
+## Performance Benchmarking
+
+Different providers exhibit different performance characteristics:
+
+```bash
+#!/bin/bash
+# Benchmark encryption performance
+
+for provider in proton filen sync tresorit; do
+  echo "Testing $provider..."
+
+  # Create 100MB test file
+  dd if=/dev/zero of=test-100mb.bin bs=1M count=100
+
+  # Measure upload time
+  start_time=$(date +%s%N)
+  rclone copy test-100mb.bin $provider:
+  end_time=$(date +%s%N)
+
+  elapsed=$((($end_time - $start_time) / 1000000))
+  throughput=$(echo "scale=2; 100000 / ($elapsed/1000)" | bc)
+
+  echo "$provider: $throughput MB/sec"
+done
+```
+
+Expected throughput varies by:
+- Network bandwidth available
+- Provider's server load
+- Client-side encryption overhead
+- File size (larger files typically faster)
+
+## Archival and Long-Term Preservation
+
+Zero-knowledge clouds are suitable for archival, but consider:
+
+1. **Service Longevity**: Will the provider exist in 10 years?
+2. **Algorithm Durability**: Will AES-256 remain cryptographically sound?
+3. **Format Obsolescence**: Will your files remain accessible in future formats?
+4. **Key Preservation**: Can you recover your key after decades?
+
+For critical long-term archival:
+- Use self-hosted solutions with offline key backups
+- Store unencrypted copies in secure physical locations
+- Assume you'll need to migrate every 5-10 years as technology evolves
 
 ## Related Reading
 

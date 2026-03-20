@@ -121,27 +121,238 @@ For advanced analysis, capture network messages using Android's bugreport featur
 - **Ciphering algorithm changes**: Downgrade attacks often force weaker encryption
 - **Neighboring cell information**: Compare reported neighbors against known networks
 
+## Real-World Threat Scenarios
+
+Understanding actual threat scenarios helps prioritize detection efforts.
+
+### Scenario 1: Border Checkpoint Surveillance
+
+At international borders, law enforcement may deploy IMSI catchers to:
+- Identify travelers with specific phone numbers
+- Force devices to 2G for easier interception
+- Extract location history without warrant
+
+**Detection approach**: Monitor network downgrade, verify cell ID against known carrier maps, avoid making calls at borders if possible.
+
+### Scenario 2: Activist/Dissident Targeting
+
+Authoritarian regimes deploy IMSI catchers at:
+- Protest locations
+- Opposition party offices
+- Known activist housing
+
+**Detection approach**: Run SnoopSnitch continuously in high-risk locations, establish baseline of normal towers, create alert system for anomalies.
+
+### Scenario 3: Corporate/Competitive Intelligence
+
+Industrial espionage actors sometimes deploy IMSI catchers near:
+- Corporate research facilities
+- Executive residences
+- Board meeting locations
+
+**Detection approach**: Monitor for multiple IMSI catchers simultaneously, check for coordinated signal injection patterns, review email/message timing against detected attacks.
+
+### Scenario 4: Criminal Investigation
+
+Law enforcement with warrants may deploy transient IMSI catchers:
+- Active only during specific hours
+- Positioned near suspect's residence or workplace
+- Removed after target location identified
+
+**Detection approach**: Maintain historical baseline, notice new towers appearing/disappearing, flag towers active only during specific times.
+
 ## Practical Detection Workflow
 
 Implement a systematic detection process:
 
-1. **Baseline establishment**: Document your normal cellular environment—legitimate towers, signal strength ranges, typical network operators
-2. **Regular scanning**: Run detection apps daily, noting any anomalies
-3. **Signal analysis**: Investigate sudden signal strength changes without corresponding movement
-4. **Tower verification**: Cross-reference connected towers with known networks
-5. **Protocol inspection**: Review network connection types (2G/3G/4G/5G) for unexpected downgrades
+1. **Baseline establishment**: Document your normal cellular environment—legitimate towers, signal strength ranges, typical network operators in your regular locations
+2. **Regular scanning**: Run detection apps daily (SnoopSnitch), noting any anomalies
+3. **Signal analysis**: Investigate sudden signal strength changes without corresponding movement (walk toward/away from tower to verify)
+4. **Tower verification**: Cross-reference connected towers with CellMapper known networks, check if tower IDs appear in carrier databases
+5. **Protocol inspection**: Review network connection types (2G/3G/4G/5G) for unexpected downgrades, particularly forced 2G which suggests interception
+6. **Timing correlation**: Document times of suspicious activity, correlate with your location and activities
+
+## Advanced Detection: Network Analysis Tools
+
+Power users can deploy more sophisticated detection mechanisms by monitoring network traffic patterns and timing behaviors.
+
+### Using tcpdump for Signal Analysis
+
+On rooted Android devices with tcpdump, capture and analyze cellular radio data:
+
+```bash
+# Capture all traffic to identify anomalous patterns
+adb shell tcpdump -i any -w /sdcard/capture.pcap
+
+# Analyze the capture offline with Wireshark
+wireshark ./capture.pcap
+
+# Key patterns to investigate:
+# - Unexpected DNS requests to unfamiliar servers
+# - Traffic to IP addresses not matching known carrier networks
+# - Abnormal packet timing suggesting signal injection
+```
+
+### Timing Analysis and Radio Measurements
+
+IMSI catchers often exhibit distinctive timing signatures. Monitor these metrics:
+
+```kotlin
+// Log timing data between cell transitions
+fun monitorCellTransitionTiming(context: Context) {
+    val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+    val signalStrength = tm.signalStrength
+
+    // Rapid signal strength fluctuations without movement suggest active attack
+    if (previousSignal != null) {
+        val delta = abs(signalStrength.level - previousSignal.level)
+        if (delta > 2) {
+            Log.w("Security", "Rapid signal change detected: $delta levels")
+        }
+    }
+    previousSignal = signalStrength
+}
+```
+
+## Threat Models and Risk Assessment
+
+Different threat actors employ different IMSI catcher capabilities. Understanding the threat model helps calibrate detection sensitivity.
+
+### Law Enforcement IMSI Catchers
+
+Government agencies typically use sophisticated equipment like Stingrays (Harris Corporation), which:
+- Spoof legitimate cell IDs to avoid immediate detection
+- Implement proper encryption to maintain session integrity
+- Use advanced timing synchronization
+- Cost $100,000-400,000 per unit
+
+These are difficult to detect through behavioral analysis alone, but combined tools can identify activation patterns.
+
+### Civilian-Grade IMSI Catchers
+
+Lower-cost alternatives including open-source implementations (Software-Defined Radio kits) typically:
+- Exhibit obvious signal quality issues
+- Use obvious cell IDs not matching local networks
+- Lack sophisticated encryption implementation
+- Cost $500-5,000
+
+These remain detectable through standard monitoring approaches.
+
+### Hybrid Threats
+
+Some sophisticated actors deploy multiple layers:
+- Initial IMSI catcher for device identification
+- Follow-up baseband exploit for ongoing access
+- Encrypted command channel for stealth
+
+Detection requires monitoring both network layer (IMSI catcher) and radio layer (baseband activity).
+
+## Operational Security During Detection Activities
+
+If you suspect active targeting, operational discipline prevents counter-intelligence:
+
+```bash
+# Rotate to clean devices for detection analysis
+# Never use your primary communications device for investigation
+
+# Document findings in offline media
+# Create encrypted, disconnected archives
+
+# Use air-gapped systems for analysis
+# Never connect analytical equipment to potentially compromised networks
+```
+
+Use write-once media (DVDs, optical media) for archiving analytical findings if extremely high risk is suspected.
+
+## Tool Combination Strategy
+
+No single tool provides complete detection. Effective security combines multiple independent methods:
+
+1. **App-based passive monitoring**: SnoopSnitch and CellMapper provide continuous data
+2. **Manual signal inspection**: Periodic analysis using tcpdump and Wireshark
+3. **Timing behavior review**: Monitor signal strength changes and network transitions
+4. **Protocol anomaly detection**: Examine cell broadcast messages and encryption downgrades
+5. **Historical baseline comparison**: Establish normal patterns then compare against observed behavior
 
 ## Limitations and Considerations
 
 Detection tools have constraints. IMSI catchers with advanced capabilities can defeat some detection methods by:
 
-- Spoofing legitimate cell IDs
-- Using proper encryption
-- Mimicking normal timing patterns
+- Spoofing legitimate cell IDs perfectly
+- Using proper encryption matching carrier standards
+- Mimicking normal timing patterns with precision timing synchronization
+- Operating at the radio layer below Android's visibility
 
 No single method guarantees detection. Defense-in-depth—combining multiple tools and remaining aware of unusual device behavior—provides the strongest protection.
 
-For high-risk users, consider hardware solutions like Faraday bags when not in use or dedicated encrypted communication applications that use end-to-end encryption independent of cellular network security.
+For high-risk users, consider hardware solutions like Faraday bags when not actively using the device or dedicated encrypted communication applications that use end-to-end encryption independent of cellular network security. Some security professionals recommend switching to WiFi-only communication when in potentially compromised locations.
+
+### When Detection Fails
+
+If you cannot reliably detect IMSI catchers in your environment, consider these alternatives:
+
+- **Geofencing approach**: Avoid using the device in high-risk locations entirely
+- **Dual-device strategy**: Separate devices for sensitive vs. routine communications
+- **Airplane mode default**: Enable airplane mode by default, enabling cellular only when necessary
+- **Communication app switching**: Use Signal or Wire (both with perfect forward secrecy) for all sensitive communications
+- **Hardware-based protection**: Dedicated encrypted phones like Purism Librem 5 or Blackphone offer stronger baseband isolation
+
+## Professional-Grade Detection Equipment
+
+For high-value targets, commercial IMSI catcher detection equipment exists:
+
+### Commercial Detection Tools
+
+**IMSI Catcher Catchers (such as Septier)**:
+- Price: $50,000-200,000+ per unit
+- Capabilities: Can identify StingRay-class devices, measure signal source location, analyze encryption implementations
+- Limitation: Requires specialized expertise, not practical for individual users
+
+**HackRF-Based SDR Detection**:
+- Price: $300 ($25 HackRF + $275 in software/laptop)
+- Capabilities: Analyze raw radio signals, identify signal characteristics unique to IMSI catchers
+- Limitation: Requires signal processing knowledge, significant false positive rates
+
+**Commercial Network Monitoring**:
+- Price: $2,000-10,000 per deployment
+- Services: Carriers use this internally to detect rogue towers on their networks
+- Limitation: Only available to carrier operations teams
+
+Most individuals cannot justify commercial detection equipment. App-based and protocol analysis remain the practical approach.
+
+## Baseband Exploit Indicators
+
+Beyond IMSI catchers, sophisticated attackers may exploit the baseband processor itself:
+
+### Signs of Baseband Compromise
+
+1. **Unexpected resets**: Baseband crashes manifest as spontaneous reboots
+2. **Temperature anomalies**: Baseband exploit execution generates heat (check with thermal imaging or temp sensor apps)
+3. **Battery drain patterns**: Continuous radio operations drain battery even in standby
+4. **Data usage anomalies**: Unexplained data transmission detected through network monitoring
+5. **Baseband error logs**: On rooted devices, examine baseband logs:
+
+```bash
+# Access baseband diagnostics
+adb shell cat /dev/kmsg | grep -i "baseband\|modem\|radio"
+adb shell dmesg | grep -i "modem"
+adb shell dumpsys | grep -i "radio"
+```
+
+Baseband exploits remain difficult to detect without deep radio knowledge. If you suspect compromise at this level, consider replacing the device entirely rather than attempting remediation.
+
+## Post-Detection Actions
+
+If you detect IMSI catcher activity, follow these steps:
+
+1. **Document evidence**: Screenshot alert messages, record timestamps, preserve tcpdump captures
+2. **Stop sensitive communications**: Discontinue phone calls, SMS, and data usage immediately
+3. **Switch location**: Move to a different geographic area and monitor for tower changes
+4. **Notify relevant parties**: Contact law enforcement (if legal), digital rights organizations, or legal counsel
+5. **Device isolation**: Consider this device potentially compromised; begin using alternative device
+6. **Change security practices**: Assume past communications may be compromised; adjust operational security accordingly
+
+The goal of detection is not necessarily to catch attackers, but to modify behavior in response to likely targeting.
 
 ---
 
