@@ -1,193 +1,206 @@
 ---
+
 layout: default
-title: "Privacy Setup for Someone Hiding From Abusive Ex: Comprehensive Guide"
-description: "A practical technical guide for securing devices, accounts, and communications when fleeing an abusive situation. Includes code examples and developer-focused recommendations."
-date: 2026-03-15
-author: "Privacy Tools Guide"
+title: "Privacy Setup for Someone Hiding from Abusive Ex: Comprehensive Guide"
+description: "A technical guide to hardening your digital presence when escaping domestic violence. Covers device hardening, account isolation, network security, and operational security for developers and power users."
+date: 2026-03-16
+author: theluckystrike
 permalink: /privacy-setup-for-someone-hiding-from-abusive-ex-comprehensi/
-categories: [guides]
+categories: [guides, security]
 reviewed: true
 score: 8
+intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
 
-When your safety depends on digital privacy, standard security advice falls short. This guide provides actionable technical steps for securing your digital life when leaving an abusive relationship. The focus is on practical implementation—things you can do right now—with code examples tailored for developers and power users.
+This guide assumes you have access to a trusted computer and can install software. If you are in immediate danger, skip to the emergency section at the end. The technical measures here complement—not replace—professional support and safety planning.
 
-## Immediate Device Hardening
+## Threat Model
 
-Your phone and computer are the primary vectors an abuser uses to track you. Start with physical security, then work outward.
+When fleeing an abusive ex who possesses technical knowledge, your threat model includes someone who may have installed spyware, has credentials to shared accounts, understands your digital habits, and could use social engineering against your contacts. Every recommendation below addresses these specific risks.
 
-### Enable Full Disk Encryption
+## Device Hardening
 
-On macOS, FileVault encrypts your entire drive. Enable it immediately:
+### Clean Device Installation
 
-```bash
-sudo fdesetup enable
-```
-
-On Linux with LUKS:
+Never continue using a device your abuser had physical access to. Purchase a new device with cash if possible. Boot into recovery mode and wipe the existing OS completely:
 
 ```bash
-sudo cryptsetup luksFormat /dev/sdaX
+# On macOS: Hold Cmd+R during boot, select Disk Utility, erase the drive
+# On Linux: Use a live USB to run shred or badblocks on the entire drive
+sudo shred -v -n 3 /dev/sda
 ```
 
-Windows users should enable BitLocker via `manage-bde -on C:` in an elevated command prompt.
-
-### Boot Security
-
-Set a firmware password to prevent booting from external media. On Mac, restart and hold Command+R to enter Recovery Mode, then select Firmware Password Utility. For Linux systems, enable Secure Boot and ensure your bootloader is protected with a password.
-
-### Secondary Phone Strategy
-
-Acquire a burner phone for sensitive communications. Use a prepaid SIM card purchased with cash—register it with a pseudonym if your jurisdiction allows. Keep your primary phone powered off when not in use; remove the battery if possible to prevent location tracking via cell tower pings.
-
-## Account Security Overhaul
-
-Abusive ex-partners often have credentials from the relationship period. Assume all shared accounts are compromised until proven otherwise.
-
-### Password Rotation
-
-Generate new passwords for every account using a password manager. Create a unique, high-entropy master password:
+For mobile, perform a factory reset after enabling full disk encryption. On Android, verify the bootloader is locked afterward:
 
 ```bash
-openssl rand -base64 32
+fastboot flashing get_unlock_ability
 ```
 
-Enable two-factor authentication on every service that supports it. Prefer authenticator apps over SMS—a SIM swap attack can compromise phone-based 2FA.
+If unlock_ability returns 0, the bootloader remains locked—a positive security indicator.
 
-### Email Account Isolation
+### Operating System Choice
 
-Create a completely new email address from a privacy-respecting provider. ProtonMail or Tutanota offer end-to-end encryption by default. Set up account recovery options using only this new email—never link it to your old accounts.
+GrapheneOS on a Pixel device provides strong sandboxing and sensor toggles that physically disable the microphone and cameras. This matters because stalkerware often exploits camera and microphone access. Install GrapheneOS via the official web-based installer:
 
-For added security, access the new email exclusively through Tor Browser:
+1. Enable developer settings on the Pixel
+2. Visit grapheneos.org/install
+3. Follow the web installer instructions (no flashing required)
+
+For desktop, Tails or Qubes OS compartmentalize your activities. Tails wipes memory on shutdown—essential for preventing forensic recovery of your location data.
+
+## Account Isolation
+
+### Email Separation
+
+Create a completely new email address from a device your abuser never touched. Use a privacy-respecting provider like Proton Mail. Enable two-factor authentication with a hardware key, not SMS:
 
 ```bash
-# Download Tor Browser from torproject.org
-./start-tor-browser --verbose
+# Generate a YubiKey-compatible GPG key for authentication backup
+gpg --full-generate-key
+# Use this key as your 2FA backup, store the revocation certificate offline
 ```
 
-### Account Discovery and Cleanup
+Never link this new email to your previous accounts. Do not import contacts or emails from your old accounts.
 
-Search your existing accounts for shared devices, authorized applications, and recovery options. Revoke access to all unrecognized devices:
+### Phone Number Strategy
 
-- Google: myaccount.google.com/permissions
-- Apple: appleid.apple.com
-- Microsoft: account.microsoft.com/devices
+Get a new SIM card from a provider that doesn't require ID registration where you live. Use a VoIP number (like MySudo or Google Voice) for all dating and social accounts—keep your real number completely separate. On Android, configure calls to route through the VoIP app only:
 
-## Communication Hardening
+```kotlin
+// Example: Using Tasker to route calls from unknown numbers to VoIP
+Profile: Unknown Caller
+Event: Phone Ringing
+    IF %CNUMBER !IN %MyContacts
+Task: Accept Call
+    App Launch: VoIP App
+```
 
-Your messaging apps carry significant risk. An abuser who previously had access to your phone may have installed spyware or configured message forwarding.
+This prevents your ex from discovering your new number through social engineering telecom employees.
 
-### Signal Configuration
+### Password Manager Segregation
 
-Signal provides end-to-end encryption by default, but configure these settings:
-
-1. Enable "Disappearing Messages" for all conversations
-2. Set a registration lock PIN
-3. Disable cloud backups in Settings > Privacy
+Your old password manager is compromised. Create a fresh vault in Bitwarden or 1Password with a completely new master password. Generate unique 20+ character passwords for every account:
 
 ```bash
-# Verify Signal installation integrity on Android
-adb shell dumpsys package org.thoughtcrime.securesms | grep -i signature
+# Using Bitwarden CLI to generate passwords
+bw generate --length 24 --complexity --includeNumber --includeSymbol --includeUppercase --includeLowercase
 ```
 
-### Phone Number Protection
-
-Contact your mobile carrier to add a PIN to your account—this prevents SIM swapping. Request that your number be removed from online directories. Consider moving to a carrier that supports eSIM, allowing you to switch numbers instantly if needed.
-
-## Location Privacy
-
-Modern devices constantly broadcast location data. Disable this systematically.
-
-### Device-Level Location Controls
-
-- **iOS**: Settings > Privacy > Location Services > Disable
-- **Android**: Settings > Location > Disable
-- **macOS**: System Preferences > Security & Privacy > Privacy > Location Services
-
-Review which apps have location access and revoke it for everything except mapping applications you actively use.
-
-### Metadata Stripping
-
-Photos contain GPS coordinates, device information, and timestamps. Remove metadata before sharing:
-
-```bash
-# Using exiftool (brew install exiftool)
-exiftool -all= -overwrite_original image.jpg
-```
-
-For batch processing:
-
-```bash
-find ./photos -type f -exec exiftool -all= -overwrite_original {} \;
-```
-
-### WiFi and Bluetooth
-
-Disable WiFi scanning and auto-connect. Avoid public WiFi networks—use a VPN instead. Turn off Bluetooth when not in active use; Bluetooth beacons can track device movement.
-
-## Digital Footprint Reduction
-
-Search for yourself online and request removal of personal information from data broker sites. Use services like JustOptOut or DeleteMe, or submit removal requests directly:
-
-- Acxiom: acxiom.com/opt-out-request
-- Experian: experian.com/optout
-- Spokeo: spokeo.com/optout
-
-Create new social media accounts with privacy-first settings—private profiles, no location tagging, no mutual connections with old accounts.
+Enable the emergency access feature with a trusted person who understands the sensitivity—but give them instructions to delete the request if they receive it unexpectedly. This serves as a dead man's switch for your digital life.
 
 ## Network Security
 
-Your home network is your castle. Secure it properly.
+### VPN Configuration
 
-### Router Configuration
+Route all traffic through a VPN you control—a self-hosted WireGuard server on a VPS purchased with cryptocurrency. This prevents your ISP and anyone monitoring network traffic from seeing your browsing activity:
 
-Change the default administrator credentials on your router. Use WPA3 encryption if available, WPA2-AES as a minimum. Create a guest network for visitors:
-
-```bash
-# Example router configuration via SSH (varies by manufacturer)
-ssh admin@192.168.1.1
-> set wireless security wpa3-personal
-> set wireless guest-network enable
-> set wireless guest-network isolation enable
-```
-
-### VPN Implementation
-
-Route all traffic through a reputable VPN. Self-host a WireGuard server for maximum control:
-
-```bash
-# Server setup (Ubuntu)
-apt install wireguard
-wg genkey | tee /etc/wireguard/privatekey | wg pubkey > /etc/wireguard/publickey
-
-# /etc/wireguard/wg0.conf
+```ini
+# /etc/wireguard/wg0.conf on your VPS
 [Interface]
-PrivateKey = <your-private-key>
+PrivateKey = <your-server-private-key>
 Address = 10.0.0.1/24
-ListenPort = 51820
-PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostUp = iptables -A FORWARD -i %i -j ACCEPT
+PostUp = iptables -A FORWARD -o %i -j ACCEPT
+PostUp = iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 [Peer]
-PublicKey = <client-public-key>
+PublicKey = <your-client-public-key>
 AllowedIPs = 10.0.0.2/32
+PersistentKeepalive = 25
 ```
 
-Configure clients to connect automatically on untrusted networks.
+Configure your client to route all traffic through the tunnel. Set the kill switch to block all non-VPN traffic—this prevents accidental leaks if the connection drops.
 
-## Emergency Response Plan
+### DNS Configuration
 
-Prepare for the worst-case scenario:
+Use NextDNS or your own Pi-hole to block tracking domains. Configure it to log nothing:
 
-1. **Cloud Account Backup**: Ensure critical data exists in encrypted cloud storage you alone control
-2. **Device Wipe Capability**: Enable Find My Device (iOS) or Find My Device (Android) for remote wipe
-3. **Evidence Preservation**: Screenshot any threatening messages, save emails, document harassment before blocking
-4. **Safe Computer**: Have access to a trusted friend's computer or library system for sensitive communications
+```yaml
+# nextdns.yml configuration
+listen: :53
+discovery: false
+reporting:
+  enabled: false
+blocks:
+  - 1d8c6f16-6466-11ea-8c41-063af41d5f76
+```
+
+Blocklists should include known stalkerware domains, advertising trackers, and social media trackers.
+
+### Browser Hardening
+
+Use Firefox with the following about:config changes:
+
+```
+privacy.resistFingerprinting = true
+network.cookie.cookieBehavior = 1
+privacy.trackingprotection.enabled = true
+webgl.disabled = true
+```
+
+Install uBlock Origin and Privacy Badger. Create a separate browser profile for sensitive activities—bookmark the new email, the VPN status page, and your safety plan.
+
+## Operational Security
+
+### Metadata Stripping
+
+Before sharing any photos, strip EXIF data:
+
+```bash
+# Using exiftool
+exiftool -all= -overwrite_original image.jpg
+
+# Batch processing
+for f in *.jpg; do exiftool -all= -overwrite_original "$f"; done
+```
+
+On mobile, use Metapho orexif to remove location data before sending photos to anyone.
+
+### Signal Configuration
+
+Configure Signal with these settings:
+
+1. Enable registration lock with a strong PIN
+2. Set disappearing messages to 24 hours for all chats
+3. Disable link previews (prevents URL leakage)
+4. Use the screen lock feature
+
+Never link Signal to your old phone number.
+
+### Social Media Audit
+
+Search for yourself on social media using your new email and phone number. Set Google Alerts for your name variations. Request account deletion from any platform where your ex might have created lookalike accounts:
+
+```bash
+# Use the email you just created to check data broker exposure
+curl -X DELETE https://api.example-data-broker.com/v1/profile \
+  -H "Authorization: Bearer $API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"email": "your-new-email@example.com"}'
+```
+
+## Emergency Protocols
+
+If you suspect immediate danger:
+
+1. Power off all devices and remove batteries if possible
+2. Go to a location your ex doesn't know about
+3. Use a library computer or borrowed device to change critical passwords
+4. Contact a domestic violence hotline—they have secure communication channels
+
+Save these resources offline:
+
+- National Domestic Violence Hotline: 1-800-799-7233
+- Cyber Civil Rights Initiative: 1-844-878-2274
 
 ## Conclusion
 
-Digital security for someone fleeing an abusive situation requires paranoia as a feature, not a bug. Every setting, every app, every account needs scrutiny. The steps above provide a strong foundation—but security is ongoing. Review your settings monthly, stay aware of new threats, and prioritize physical safety alongside digital hardening.
+Digital security for domestic violence survivors requires defense in depth. No single tool makes you safe, but combining device hardening, account isolation, network security, and operational practices significantly raises the barrier against surveillance. Review these measures monthly, change critical passwords after any suspected compromise, and prioritize physical safety alongside digital hardening.
+
+---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
