@@ -303,6 +303,75 @@ Start with a pilot group before rolling out organization-wide. Document exceptio
 
 The most effective plans are those that balance security with usability. If your team cannot easily communicate using approved tools, they will find workarounds. Choose tools your team can adopt consistently, then enforce compliance through technical controls and regular audits.
 
+## Enforcing Tool Compliance Programmatically
+
+Documenting approved tools is ineffective if there is no mechanism to detect unapproved ones. For organizations managing device fleets, add a weekly scan that reports non-compliant communication apps:
+
+```bash
+#!/usr/bin/env bash
+# tool-compliance-scan.sh — report unapproved communication tools
+
+UNAPPROVED_APPS=("telegram" "whatsapp" "facebook-messenger" "discord" "zoom")
+REPORT_FILE="/tmp/tool-compliance-$(date +%Y-%m-%d).txt"
+
+echo "Tool Compliance Report — $(date)" > "$REPORT_FILE"
+echo "==============================" >> "$REPORT_FILE"
+
+for app in "${UNAPPROVED_APPS[@]}"; do
+  if command -v "$app" &>/dev/null; then
+    echo "FOUND (unapproved): $app" >> "$REPORT_FILE"
+  elif ls /Applications | grep -qi "$app"; then
+    echo "FOUND (unapproved): $app" >> "$REPORT_FILE"
+  fi
+done
+
+FOUND=$(grep -c "FOUND" "$REPORT_FILE" || echo 0)
+
+if [ "$FOUND" -gt 0 ]; then
+  echo "$FOUND unapproved tools detected" >> "$REPORT_FILE"
+  # Send report to security team
+  mail -s "Tool Compliance Alert" security@yourorg.com < "$REPORT_FILE"
+else
+  echo "All checked apps are compliant." >> "$REPORT_FILE"
+fi
+```
+
+This scan complements policy documents with a technical enforcement layer. Pair it with an exception request process — teams that genuinely need Zoom for a client relationship should have a documented approval rather than a silent policy violation.
+
+## Handling Metadata in Secure Communications
+
+End-to-end encryption protects message content but not metadata. Metadata — who communicated with whom, when, how frequently — can be as sensitive as the messages themselves. Account for this in your plan:
+
+| Tool | Content encrypted? | Metadata exposed to provider? |
+|---|---|---|
+| Signal | Yes | Phone number, contact graph (minimized) |
+| Session | Yes | None (no phone number, decentralized) |
+| Matrix (Element hosted) | Yes | Room membership, message timing |
+| Matrix (self-hosted) | Yes | None (to external parties) |
+| ProtonMail to ProtonMail | Yes | Sender/recipient email, timing |
+| ProtonMail to Gmail | TLS only | Full metadata |
+
+For the highest-sensitivity communications — legal strategy, journalist sources, M&A discussions — choose tools where metadata exposure is minimal. Session and self-hosted Matrix give the strongest metadata protection without requiring advanced operational security.
+
+Document this tradeoff explicitly in your plan so team members understand why certain tools are required for specific classification levels, rather than treating the rules as arbitrary.
+
+## Quarterly Review Process
+
+Communication security plans become stale as tools change, teams grow, and threat landscapes shift. Build a quarterly review cadence into the plan itself:
+
+```markdown
+## Q1 2026 Review Checklist
+
+- [ ] Verify all approved tools are still maintained and have received security updates
+- [ ] Review any new CVEs for approved tools from the past 90 days
+- [ ] Check if any team members have left — revoke access, rotate shared keys
+- [ ] Review incident log: were any policy violations detected? What was the outcome?
+- [ ] Confirm onboarding checklist matches current tooling
+- [ ] Update policy version and effective date
+- [ ] Distribute updated policy to all team members and log their acknowledgment
+```
+
+Assign a named policy owner responsible for driving each review. Plans with no named owner drift until a security incident forces an emergency update.
 
 ## Related Reading
 
