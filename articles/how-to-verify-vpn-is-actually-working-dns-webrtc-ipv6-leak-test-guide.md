@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test Guide"
+title: "Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test"
 description: "Step-by-step VPN verification guide. Test DNS leaks, WebRTC leaks, IPv6 leaks, kill switch verification. Real commands and tools."
 date: 2026-03-20
 author: theluckystrike

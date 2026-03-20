@@ -193,6 +193,23 @@ If you're locked out of your account:
 
 Provide as much documentation as possible to prove account ownership.
 
+## Scripted Session Audit
+
+Apple's data export (available at privacy.apple.com) includes a machine-readable log of sign-in events. Once downloaded, parse it to spot unexpected sessions:
+
+```python
+import json
+
+with open("apple_id_sign_ins.json") as f:
+    data = json.load(f)
+
+for event in data.get("signInEvents", []):
+    device = event.get("deviceName", "unknown")
+    ip = event.get("ipAddress", "unknown")
+    date = event.get("date", "unknown")
+    print(f"{date}  device={device}  ip={ip}")
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

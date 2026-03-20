@@ -175,6 +175,32 @@ Your record of processing should be practical—it doesn't need to be lengthy, b
 
 For small businesses, a simple spreadsheet with rows for each processing activity works fine initially. The critical requirement is that you've documented your thinking about how data flows and how you protect it.
 
+## Record of Processing Activities Template
+
+Article 30 requires a Record of Processing Activities (RoPA). This CSV template tracks each processing activity:
+
+```csv
+activity_name,lawful_basis,data_categories,retention_days,recipients,security_measures
+Customer orders,contract,name;email;address;payment,1095,payment processor,TLS+AES256
+Newsletter,consent,email,730,email marketing platform,TLS
+Employee records,legal obligation,name;salary;tax ID,2555,payroll provider,TLS+AES256
+Web analytics,legitimate interest,IP address;browser,90,analytics SaaS,anonymization
+```
+
+```python
+# Generate a simple RoPA HTML report from the CSV
+import csv, html
+
+with open("ropa.csv") as f:
+    rows = list(csv.DictReader(f))
+
+print("<table border='1'>")
+print("<tr>" + "".join(f"<th>{html.escape(k)}</th>" for k in rows[0]) + "</tr>")
+for row in rows:
+    print("<tr>" + "".join(f"<td>{html.escape(v)}</td>" for v in row.values()) + "</tr>")
+print("</table>")
+```
+
 ## Implementation Checklist
 
 Use this checklist when establishing your GDPR compliance program:

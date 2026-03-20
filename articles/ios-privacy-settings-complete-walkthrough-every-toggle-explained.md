@@ -129,6 +129,28 @@ Apple provides a Data & Privacy portal at **privacy.apple.com** where you can:
 - Download a transcript of your Siri recordings
 - Manage marketing preferences
 
+```bash
+# iOS privacy audit checklist — run these checks via iCloud API (requires authentication)
+# or use Apple Configurator 2 on macOS to inspect managed device profiles
+
+# List installed configuration profiles on a supervised iOS device via MDM API
+curl -s -X POST https://your-mdm-server/mdm   -H 'Content-Type: application/json'   -d '{"RequestType": "ProfileList", "UDID": "device-udid-here"}'
+
+# On macOS, check if any profiles are installed on a paired iPhone
+cfgutil --ecid ECID_HERE get -f ProfileList
+
+# Review iOS sysdiagnose for privacy-relevant settings (diagnostic only)
+# Settings -> Privacy & Security -> App Privacy Report -> export
+# Then parse the exported JSON to audit app data access patterns
+python3 -c "
+import json
+with open('AppPrivacyReport.json') as f:
+    report = json.load(f)
+for app in report.get('privacyAccessedBundleIdentifiers', []):
+    print(app['bundleIdentifier'], app.get('types', []))
+"
+```
+
 ## Recommended Privacy Configuration Summary
 
 For maximum iOS privacy, consider these settings:
