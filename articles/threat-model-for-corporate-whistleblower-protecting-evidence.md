@@ -147,6 +147,179 @@ Practice your operational security procedures until they become muscle memory. T
 
 Building a threat model requires ongoing attention as both adversaries and tools evolve. Regular security audits of your practices help identify weaknesses before they become critical vulnerabilities.
 
+## Tools and Pricing for Whistleblower Operations
+
+**Tails Operating System** ($0, free download): Live OS based on Linux that routes all traffic through Tor and leaves no persistent storage. Ideal for whistleblower activities on untrusted hardware. Requires USB drive or DVD.
+
+**Whonix** ($0, free): Virtual machine that forces all traffic through Tor. Can be installed inside VirtualBox. Provides strong isolation from host system compromise. Requires 2GB RAM minimum.
+
+**SecureDrop** ($0, free open-source): Turnkey secure submission system for journalists. 100+ news organizations host SecureDrop instances. Available via .onion address for Tor access. Supports file uploads and anonymous source management.
+
+**KeePass** ($0, free, open-source): Offline password manager for managing credentials securely. Stores encrypted database locally. No syncing means zero cloud exposure. Suitable for storing recovery codes and contact info.
+
+**Signal** ($0, free): End-to-end encrypted messaging. Requires phone number verification (use burner phone). No servers can read messages due to Signal Protocol. Desktop and mobile versions available.
+
+**VeraCrypt** ($0, free, open-source): Creates encrypted containers for sensitive evidence. AES-256 encryption. Works across Windows, macOS, Linux. Hidden volume feature allows plausible deniability.
+
+**gpg** (GNU Privacy Guard, $0, free, open-source): Command-line encryption tool for encrypting sensitive files and communications. Generates RSA-4096 keys for file signing. Industry standard for secure communications.
+
+**ProtonMail** ($119.88/year, or free plan with limitations): Encrypted email for external communications. Swiss-based with strong privacy protections. Integrates with Signal for additional encryption.
+
+Total baseline cost: $0 (all open-source tools) or $120/year (add ProtonMail for convenience).
+
+## Threat Model Analysis Template
+
+Structure your threat assessment systematically:
+
+```
+THREAT ASSESSMENT: Corporate Whistleblower
+
+1. ADVERSARY CAPABILITIES
+   - Technical: Employer has IT department, network monitoring
+   - Legal: Can conduct discovery, subpoenas
+   - Physical: Access to workplace, parking lot
+   - Social: Can interview employees, gain context
+
+2. ATTACK VECTORS
+   - Compromise your work computer
+   - Monitor network traffic (packet capture)
+   - Recover deleted files from hard drive
+   - Intercept communications (phone, email)
+   - Physical surveillance of home
+   - Social engineering of contacts
+   - Recovery of USB drives left in vehicles/offices
+
+3. EVIDENCE PRESERVATION STRATEGY
+   - Evidence location: USB drive in safe deposit box
+   - Encryption: AES-256 with VeraCrypt
+   - Redundancy: 3 copies in different locations
+   - Verification: SHA-256 hashes on paper
+   - Chain of custody: Signed evidence logs
+
+4. OPERATIONAL SECURITY
+   - Evidence collection location: Car during lunch breaks
+   - Transfer method: Encrypted USB, not company network
+   - Storage: Air-gapped device never connected to network
+   - Timeline: Document dates/times for all evidence
+
+5. COMMUNICATION SECURITY
+   - Primary channel: Signal with burner phone
+   - Secondary channel: ProtonMail for longer documents
+   - Emergency contact: Journalist at news org with SecureDrop
+   - Testing: Verify all channels work before deployment
+```
+
+## Evidence Types and Handling
+
+Different evidence types require different preservation approaches:
+
+**Digital Documents** (emails, spreadsheets, code):
+- Copy using air-gapped device only
+- Generate SHA-256 hash
+- Store in VeraCrypt container
+- Create multiple backups
+
+**Screen Recordings** (demonstrating UI evidence of wrongdoing):
+```bash
+# Use ffmpeg to record screen without audio (smaller files)
+ffmpeg -f x11grab -i :0 -vf "fps=10" -q:v 5 -pix_fmt yuv420p output.mp4
+# Result: Low-quality video that's hard to prove tampered with
+```
+
+**Audio Recordings** (meetings, conversations):
+```bash
+# Check local recording laws before capturing
+# Some jurisdictions require consent from all parties
+# One-party consent states: Record with only your own knowledge
+
+# Recording quality sufficient for evidence:
+# - 16-bit, 48kHz minimum for court acceptance
+# - Clear audio without background noise
+ffmpeg -f dshow -i "microphone" -acodec pcm_s16le -ar 48000 audio.wav
+```
+
+**Physical Evidence** (documents, printed emails):
+- Photograph with consistent lighting
+- Document chain of custody (who handled, when, where)
+- Preserve originals in secure location
+- Consider watermarking digital reproductions
+
+## Jurisdiction-Specific Protections
+
+Different countries offer varying legal protections for whistleblowers:
+
+**United States**:
+- Whistleblower Protection Act (WPA) provides some statutory protection
+- Coverage limited to certain federal/government contractors
+- Retaliation illegal but enforcement weak
+- Recommendation: Work with established journalists or legal organizations
+
+**European Union**:
+- Whistleblower Directive (2019/1937) provides strong legal protections
+- Protection applies across all Member States
+- Internal reporting channels required before external disclosure
+- Recommendation: Report internally first per directive requirements
+
+**United Kingdom**:
+- Public Interest Disclosure Act (PIDA) protects whistleblowers
+- Protection applies to "qualifying disclosures"
+- Tribunal can award unlimited compensation
+- Recommendation: Consult solicitor experienced in PIDA cases
+
+**Australia**:
+- Corporations Act and Public Interest Disclosure Act
+- Protection covers corporate misconduct and public interest matters
+- Civil penalties for victimization
+- Recommendation: Report to regulatory authorities (ASIC)
+
+## Cold Start Testing
+
+Before executing your plan, test every component without burning your cover:
+
+```bash
+#!/bin/bash
+# Dry-run test of whistleblower infrastructure
+
+set -e
+
+# 1. Test Tor connectivity
+echo "Testing Tor..."
+curl -s https://check.torproject.org/ | grep -q "Congratulations" && \
+  echo "✓ Tor working" || echo "✗ Tor failed"
+
+# 2. Test Signal
+echo "Testing Signal..."
+signal-cli receive 2>&1 | head -1 | grep -q "error" && \
+  echo "✗ Signal setup needed" || echo "✓ Signal ready"
+
+# 3. Test encryption
+echo "Testing encryption..."
+echo "test" | gpg -ear your-key-id > test.gpg 2>/dev/null && \
+  echo "✓ Encryption working" || echo "✗ GPG failed"
+
+# 4. Test evidence storage
+echo "Testing evidence storage..."
+mkdir -p /tmp/test-evidence
+dd if=/dev/urandom of=/tmp/test-evidence/1gb.img bs=1M count=1024
+sha256sum /tmp/test-evidence/1gb.img > /tmp/test-evidence/checksums.txt
+echo "✓ Storage device working, capacity sufficient"
+
+# 5. Test recovery workflow
+echo "Testing recovery..."
+cat > RECOVERY_PLAN.txt <<'EOF'
+1. Access safe deposit box with key #XXX
+2. Retrieve encrypted USB drive
+3. Boot from Tails OS
+4. Mount VeraCrypt container with passphrase
+5. Verify SHA-256 hashes
+6. Contact journalist via SecureDrop
+7. Provide evidence in encrypted format
+EOF
+
+echo "✓ Recovery plan documented"
+echo ""
+echo "All systems functional. Ready for deployment."
+```
 
 ## Related Reading
 

@@ -146,6 +146,136 @@ Key management is critical: E2EE security depends entirely on proper key handlin
 
 ProtonMail's security model demonstrates that building privacy into a consumer-friendly email service is achievable. While no system is impenetrable, the zero-access architecture provides meaningful protection against sophisticated adversaries—exactly what developers and power users need when communication confidentiality matters.
 
+## ProtonMail vs. Alternative Encrypted Email Services
+
+ProtonMail operates in a crowded privacy email market. Understanding how it compares to alternatives helps determine if it's the right choice for your threat model.
+
+**ProtonMail** ($119.88/year Unlimited): 500GB storage, unlimited addresses, custom domain support. Strong zero-access encryption. Owned by Proton AG (Swiss company).
+
+**Tutanota** ($96/year Pro): 10GB storage, open-source client, more aggressive zero-knowledge architecture. Based in Germany. Similar security model to ProtonMail.
+
+**Posteo** ($1.25/month, €12/year): 40GB storage, German hosting, hardware-level encryption. Focuses on transparency reporting. No JavaScript required for webmail.
+
+**Hey** ($99/year): Privacy-focused email from Basecamp. End-to-end encryption available through integration with third-party tools. Based in US (less favorable jurisdiction).
+
+**Comparison of Encryption Standards**:
+
+| Service | Encryption Algorithm | Key Exchange | Zero-Access | Open Source | Cost |
+|---------|----------------------|--------------|-------------|-------------|------|
+| ProtonMail | AES-256 + RSA-2048 | RSA-2048 | Yes | Partial* | $119/year |
+| Tutanota | AES-256-GCM | RSA-4096 | Yes | Yes | $96/year |
+| Posteo | AES-256 | ECC | Yes (claimed) | No | €12/year |
+| Hey | TLS + optional PGP | TLS + RSA | Limited | No | $99/year |
+
+*ProtonMail publishes some cryptographic libraries as open-source.
+
+## Metadata Leakage in ProtonMail
+
+While ProtonMail encrypts message content with zero-access guarantees, metadata remains partially exposed. This represents an important limitation to understand:
+
+**Exposed Metadata**:
+- Sender identity (unless using ProtonMail Bridge)
+- Recipient email address
+- Send/receive timestamps
+- Approximate message size (rounded to nearest KB)
+- Email subject line (unless encrypted via ProtonMail's encrypted-to-non-ProtonMail feature)
+
+**Implications for Threat Models**:
+A government conducting surveillance can see that you contacted specific people at specific times, even though they can't read the content. For some users (whistleblowers, activists), the patterns themselves are dangerous.
+
+**Mitigation**:
+Use ProtonMail with Tor Browser, connect via VPN before accessing ProtonMail, and consider using non-standard communication patterns (varying send times, batching messages) to obscure patterns.
+
+## Cryptographic Implementation Details
+
+ProtonMail uses specific cryptographic implementations that developers should understand:
+
+```javascript
+// Simplified ProtonMail encryption architecture
+class ProtonMailCrypto {
+  // Session key generation for each message
+  generateSessionKey() {
+    const sessionKey = crypto.getRandomValues(new Uint8Array(32)); // AES-256
+    return sessionKey;
+  }
+
+  // Message encryption
+  encryptMessage(plaintext, sessionKey) {
+    const iv = crypto.getRandomValues(new Uint8Array(16));
+    const cipher = new AES256GCM(sessionKey);
+    const ciphertext = cipher.encrypt(plaintext, iv);
+    return { ciphertext, iv };
+  }
+
+  // Session key encryption with recipient's public key
+  encryptSessionKey(sessionKey, recipientPublicKey) {
+    const encrypted = RSA.encrypt(sessionKey, recipientPublicKey);
+    return encrypted;
+  }
+
+  // Combined message structure
+  buildEncryptedMessage(plaintext, recipientPublicKey) {
+    const sessionKey = this.generateSessionKey();
+    const { ciphertext, iv } = this.encryptMessage(plaintext, sessionKey);
+    const encryptedKey = this.encryptSessionKey(sessionKey, recipientPublicKey);
+
+    return {
+      encrypted_body: ciphertext,
+      iv: iv,
+      encrypted_key: encryptedKey
+    };
+  }
+}
+```
+
+This hybrid encryption (AES for bulk data, RSA for key exchange) provides both performance and security.
+
+## Setting Up ProtonMail Bridge for Maximum Privacy
+
+ProtonMail Bridge connects your email client to ProtonMail's servers while maintaining end-to-end encryption. This provides several privacy advantages:
+
+```bash
+# Install ProtonMail Bridge
+# macOS: brew install protonmail-bridge
+# Linux: Download from protonmail.com
+# Windows: Download installer
+
+# Start Bridge (runs as background service)
+protonmail-bridge
+
+# In your email client (Thunderbird, Outlook, Apple Mail):
+# IMAP Server: 127.0.0.1
+# IMAP Port: 1143 (or 143 if unencrypted local)
+# SMTP Server: 127.0.0.1
+# SMTP Port: 1025
+
+# Advantages:
+# 1. Your email client encrypts/decrypts locally (not in browser)
+# 2. ProtonMail servers see encrypted traffic from your device
+# 3. Use PGP on top for additional encryption
+# 4. Integrates with established email workflows
+```
+
+## Auditing ProtonMail Security Assumptions
+
+For developers implementing similar systems, critically evaluate ProtonMail's security guarantees:
+
+**Assumptions That Hold**:
+- Cryptographic algorithms (AES-256, RSA-2048) are secure if correctly implemented
+- ProtonMail's servers genuinely cannot decrypt your emails
+- Transport security is enforced throughout
+
+**Assumptions That Are Risky**:
+- Trusting ProtonMail's client-side code without auditing it yourself
+- Assuming ProtonMail's Swiss jurisdiction provides absolute legal protection
+- Believing ProtonMail can't be compelled to provide future access
+- Relying on ProtonMail alone for protection against sophisticated adversaries
+
+**Recommended Complementary Measures**:
+- Use ProtonMail with Tor Browser for maximum anonymity
+- Add PGP encryption on top for defense-in-depth
+- Store sensitive communications locally rather than in ProtonMail (email is inherently a poor medium for security)
+- Rotate encryption keys periodically
 
 ## Related Reading
 
