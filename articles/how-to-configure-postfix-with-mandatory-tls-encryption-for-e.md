@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-postfix-with-mandatory-tls-encryption-for-e/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, troubleshooting, encryption]
 reviewed: true
 score: 8
 intent-checked: true

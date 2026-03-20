@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-configure-firefox-maximum-privacy-without-breaking-sites/
 categories: [guides]
-tags: [privacy, firefox, browser, security, tracking]
+tags: [privacy-tools-guide, privacy, firefox, browser, security, tracking]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

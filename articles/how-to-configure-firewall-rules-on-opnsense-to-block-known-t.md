@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-firewall-rules-on-opnsense-to-block-known-t/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

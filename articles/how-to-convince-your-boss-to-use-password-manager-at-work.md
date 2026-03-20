@@ -7,9 +7,10 @@ author: "Privacy Tools Guide"
 permalink: /how-to-convince-your-boss-to-use-password-manager-at-work/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

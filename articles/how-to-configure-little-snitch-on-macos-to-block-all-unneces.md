@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}
