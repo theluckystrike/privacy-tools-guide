@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "How to Use SafeNote or PrivNote for One-Time Secure Credential Sharing"
 description: "Learn how to securely share sensitive credentials one-time using SafeNote and PrivNote. Practical examples for developers and power users."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-use-safenote-or-privnote-for-one-time-secure-credenti/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 

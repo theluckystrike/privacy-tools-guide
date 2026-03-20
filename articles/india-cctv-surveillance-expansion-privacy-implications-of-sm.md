@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "India CCTV Surveillance Expansion: Privacy Implications of Smart City Camera Networks in 2026"
 description: "An in-depth technical analysis of India's smart city CCTV surveillance expansion, privacy implications, and practical tools for developers and power users to protect their digital identity."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /india-cctv-surveillance-expansion-privacy-implications-of-sm/
 categories: [privacy, surveillance, smart-cities]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
@@ -174,7 +178,7 @@ noisy_count = int(add_laplace_noise(np.array([original_count]), epsilon=0.1)[0])
 print(f"Original: {original_count}, Private: {noisy_count}")
 ```
 
-## Regulatory Landscape in 2026
+## Regulatory ecosystem in 2026
 
 The Digital Personal Data Protection Act continues to evolve. Key developments affecting surveillance include:
 
@@ -191,3 +195,4 @@ India's smart city surveillance expansion represents one of the world's largest 
 Implement network-level protections, minimize persistent identifiers in your applications, and stay current with evolving regulatory requirements. The balance between urban security and individual privacy remains complex, but proactive technical measures can significantly reduce your digital footprint in public spaces.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
