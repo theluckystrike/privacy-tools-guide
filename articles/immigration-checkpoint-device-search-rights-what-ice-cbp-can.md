@@ -7,9 +7,10 @@ author: "Privacy Tools Guide"
 permalink: /immigration-checkpoint-device-search-rights-what-ice-cbp-can/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

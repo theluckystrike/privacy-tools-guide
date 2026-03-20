@@ -8,8 +8,9 @@ permalink: /ios-contact-poster-privacy-settings-guide/
 categories: [guides]
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

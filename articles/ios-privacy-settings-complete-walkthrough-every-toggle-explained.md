@@ -6,7 +6,7 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-explained/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 intent-checked: true

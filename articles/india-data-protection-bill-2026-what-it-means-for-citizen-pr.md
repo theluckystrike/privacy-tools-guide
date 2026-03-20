@@ -6,10 +6,11 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-data-protection-bill-2026-what-it-means-for-citizen-pr/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 intent-checked: true
+tags: [privacy-tools-guide]
 ---
 
 India's Digital Personal Data Protection Act (DPDPA) 2026 grants citizens rights to access, delete, and correct their personal data, requires 72-hour response times for data requests, and establishes a data protection board. Unlike GDPR, DPDPA exempts government agencies and small businesses, but it still protects Indian citizens from arbitrary corporate data collection. Use these rights to audit which companies hold your data, exercise deletion requests, and demand consent before organizations process your information.

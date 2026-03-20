@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /instagram-memorialization-request-process-what-happens-to-ph/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 voice-checked: true
