@@ -5,7 +5,7 @@ description: "A technical comparison of Decentraleyes browser extension versus s
 date: 2026-03-20
 author: theluckystrike
 permalink: /decentraleyes-vs-local-cdn-comparison-2026/
-categories: [privacy, security, development]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
