@@ -121,6 +121,110 @@ Enable 2FA on your password manager account. This protects your vault even if yo
 
 Enable biometric unlock for mobile apps, but understand the security trade-offs. Biometric authentication supplements—does not replace—your master password.
 
+## Advanced CLI Integration Patterns
+
+For developers, CLI integration with password managers enables sophisticated automation:
+
+**Using Bitwarden CLI to inject secrets into environment**:
+
+```bash
+# Login and sync vault
+bw login email@example.com
+
+# Create a function to securely inject production secrets
+production_env() {
+  eval $(bw unlock --raw | tr -d '\n')
+  export DB_PASSWORD=$(bw get password "Production Database")
+  export API_KEY=$(bw get password "Production API Key")
+  echo "Production environment configured"
+}
+
+# Usage: Call the function before running scripts
+production_env
+npm run deploy
+```
+
+This approach keeps secrets out of shell history and dotfiles while providing programmatic access.
+
+**Using 1Password CLI for git secrets prevention**:
+
+```bash
+# Prevent accidental secret commits
+# Add to .git/hooks/pre-commit
+
+#!/bin/bash
+for file in $(git diff --cached --name-only); do
+  if grep -qE "(password|api.?key|secret)" "$file"; then
+    echo "ERROR: Potential secret in $file"
+    exit 1
+  fi
+done
+exit 0
+```
+
+This hook, combined with 1Password's vault integration, prevents developers from committing secrets in the first place.
+
+## Zero-Knowledge Architecture Verification
+
+For security-conscious developers, understanding the encryption chain matters:
+
+**Bitwarden encryption flow**:
+1. Master password → PBKDF2 (600,000 iterations) → encryption key
+2. Vault data → AES-256-GCM with derived key
+3. Encrypted vault sent to servers
+4. Server stores ciphertext—cannot decrypt without master password
+
+**Attack scenario**: Bitwarden servers are compromised. Attackers get your encrypted vault. Without knowing your master password, they cannot decrypt anything. This is the zero-knowledge guarantee.
+
+**Critical assumption**: Bitwarden's client code is actually doing encryption before sending. For developers, the open-source repository on GitHub allows code review to confirm this happens.
+
+## Synchronization and Conflict Resolution
+
+When using password managers across multiple devices, synchronization becomes important:
+
+```python
+# Conflict resolution logic for simultaneous updates
+class VaultSync:
+    def resolve_conflict(self, local_item, remote_item):
+        """Handle updates when both sides changed"""
+
+        # Last-write-wins strategy (common, but risky)
+        if remote_item.modified > local_item.modified:
+            return remote_item
+        return local_item
+
+        # Or: merge strategy for secure notes
+        # Combine additions, keep deletions from winner
+        if remote_item.modified > local_item.modified:
+            merged = remote_item.copy()
+            # Keep local additions not in remote
+            for field in local_item.fields:
+                if field not in remote_item.fields:
+                    merged.fields[field] = local_item.fields[field]
+            return merged
+```
+
+Most password managers use last-write-wins, which works for passwords but can lose data in secure notes. Check your manager's documentation for its specific strategy.
+
+## Export and Backup Strategies
+
+Secure notes backup requires careful handling:
+
+```bash
+# Export vault from Bitwarden
+bw export --format json > vault.json
+
+# Encrypt the export before storing
+gpg --symmetric --cipher-algo AES256 vault.json
+# This creates vault.json.gpg
+
+# Store backup on external drive, encrypted USB, or cloud
+# Verify periodically that backups decrypt correctly
+gpg --output vault-test.json --decrypt vault.json.gpg
+```
+
+Never store unencrypted vault exports. The JSON contains all passwords and secure notes in plaintext—a single backup recovery point for attackers.
+
 ## Comparison Summary
 
 | Manager | Custom Fields | File Attachments | Self-Hosting | Free Tier |
@@ -129,6 +233,69 @@ Enable biometric unlock for mobile apps, but understand the security trade-offs.
 | 1Password | Yes | 1GB (Paid) | No | Limited |
 | Proton Pass | Yes | 100MB (Plus) | No | Full |
 | KeePassXC | Yes (Native) | Unlimited | Local only | Full |
+
+## Extended Feature Comparison
+
+| Manager | 2FA Built-in | Emergency Access | Breach Monitoring | API Support |
+|---------|--------------|------------------|-------------------|-------------|
+| Bitwarden | Limited | Yes (Premium) | No | Full REST API |
+| 1Password | Yes | Yes (Premium) | Limited | Full REST API |
+| Proton Pass | Limited | No | Via Proton | Limited |
+| KeePassXC | No | No | No | No |
+
+## Migration Between Managers
+
+When switching password managers, careful migration prevents access loss:
+
+```bash
+# 1. Export from source manager
+# 2. Review export format (CSV, JSON, XML)
+# 3. Test import on secondary account first
+# 4. Map fields correctly—different managers use different field names
+# 5. Verify all items imported successfully
+# 6. Gradually migrate to new manager without deleting old vault
+# 7. After 30 days confidence, delete old vault
+
+# Example: Migrate from 1Password to Bitwarden
+# Export 1Password to CSV
+# Map 1Password's "password" field to Bitwarden's password
+# Map 1Password's "notes" to Bitwarden's notes
+# Import CSV to Bitwarden
+# Verify all logins work with new manager
+```
+
+For developers, automated migration is possible:
+
+```python
+# Convert 1Password export to Bitwarden format
+import json
+import csv
+
+def convert_1password_to_bitwarden(input_file):
+    bitwarden_items = []
+
+    with open(input_file, 'r') as f:
+        reader = csv.DictReader(f)
+
+        for row in reader:
+            item = {
+                "type": 1,  # Login item
+                "name": row['title'],
+                "login": {
+                    "uri": row.get('website', ''),
+                    "username": row.get('username', ''),
+                    "password": row.get('password', '')
+                },
+                "notes": row.get('notes', '')
+            }
+            bitwarden_items.append(item)
+
+    # Export as Bitwarden-compatible JSON
+    with open('bitwarden_import.json', 'w') as f:
+        json.dump(bitwarden_items, f)
+```
+
+## For Developers and Power Users
 
 For developers who value open-source transparency and self-hosting capability, Bitwarden provides the most flexible secure notes implementation. If you prefer a unified privacy ecosystem with no self-hosting requirement, Proton Pass delivers solid functionality in the free tier. KeePassXC remains the choice for those requiring complete local control.
 

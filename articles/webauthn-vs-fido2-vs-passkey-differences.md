@@ -136,6 +136,200 @@ if (verification.verified) {
 
 The key decision point is whether to require attestation. Attestation lets you enforce hardware security key requirements, but it complicates implementation and may frustrate users who just want to use their phone.
 
+## Platform Implementation Differences
+
+Each major platform implements passkeys differently, affecting developer complexity:
+
+**iOS (Apple)**
+- Passkeys stored in iCloud Keychain
+- Synced across all user's Apple devices
+- Available for auto-fill in apps and websites
+- Users authenticate with Face ID or Touch ID
+- Works offline (uses cached biometric validation)
+- No direct developer control—Apple manages backup and sync
+
+**Android (Google)**
+- Passkeys stored in Google Password Manager
+- Synced across all user's Android devices
+- Available for auto-fill in apps and browsers
+- Users authenticate with biometric or PIN
+- Requires network connectivity for creation
+- Developers can integrate with Play services for seamless experience
+
+**Windows (Microsoft)**
+- Passkeys stored in Windows Hello
+- Synced across Microsoft account–linked devices
+- Uses Windows Hello biometric (Face ID, fingerprint) or PIN
+- Available for auto-fill and native OS integration
+- Can work offline after initial setup
+
+**Mac (Apple)**
+- Same as iOS—managed through iCloud Keychain
+- Seamless integration with Safari and other browsers
+- Strong biometric integration (Touch ID, Face ID)
+
+**Linux**
+- No native passkey support
+- Users must rely on browser extensions or third-party managers
+- Developing rapidly—GNOME and KDE are adding support
+
+## Resident vs Non-Resident Keys
+
+A critical distinction affecting deployment:
+
+**Non-Resident Keys** (traditional FIDO2)
+- Authenticator stores only the private key
+- Server stores the credential ID (which tells the authenticator which key to use)
+- Server must send credential IDs during authentication
+- Useful when users have multiple security keys
+- Traditional YubiKey 5 uses this model
+
+**Resident Keys** (required for passkeys)
+- Authenticator stores the credential ID and other metadata
+- Authenticator can return the correct credential ID without server prompting
+- Enables "sign in with" flows (authenticator offers available credentials)
+- Requires more authenticator storage but simplifies UX
+- All passkeys are resident keys
+
+For developers, this means:
+
+If using non-resident keys, store credential IDs in your database and send them during authentication:
+
+```javascript
+const credentialIds = await getCredentialIDsForUser(userId);
+
+const publicKeyCredentialRequestOptions = {
+  challenge: challengeFromServer,
+  allowCredentials: credentialIds.map(id => ({
+    id: id,
+    type: "public-key",
+    transports: ["usb", "ble", "nfc", "internal"]
+  })),
+  userVerification: "preferred"
+};
+```
+
+If using resident keys (passkeys), let the authenticator decide which credentials to return:
+
+```javascript
+const publicKeyCredentialRequestOptions = {
+  challenge: challengeFromServer,
+  allowCredentials: [], // Empty—authenticator decides
+  userVerification: "preferred"
+};
+```
+
+## Attestation Object Handling
+
+Attestation objects contain cryptographic proof about the authenticator, but handling them requires careful consideration:
+
+```javascript
+// Verifying attestation during registration
+const attestationVerified = verifyAttestationStatement(
+  credential.response.attestationObject,
+  credential.response.clientDataJSON
+);
+
+// Attestation formats include:
+// - "packed": Discrete tokens (YubiKey, Titan)
+// - "fido-u2f": FIDO U2F format (backwards compatibility)
+// - "android-safetynet": Android device attestation
+// - "none": Self-signed (browser-based authenticators)
+
+// Most applications accept "none" attestation
+// But you can require specific formats:
+const acceptedFormats = ["packed", "fido-u2f"];
+if (!acceptedFormats.includes(attestationObject.fmt)) {
+  throw new Error("Attestation format not accepted");
+}
+```
+
+Organizations with strong security requirements use attestation to enforce specific hardware. For example, banks might require only certified hardware security keys. Consumer applications typically accept any attestation format including "none."
+
+## Migration Strategies from Passwords
+
+Moving existing users to passwordless authentication requires thoughtful planning:
+
+**Phase 1**: Add passkey registration alongside password login
+- Users can register passkeys but still use passwords
+- No pressure to migrate
+- Collect feedback on implementation
+
+**Phase 2**: Require passkey + password
+- Both methods required for authentication
+- Transition period (30-60 days) while users register passkeys
+- Reduces password exposure while maintaining fallback
+
+**Phase 3**: Passkey primary, password secondary
+- Passkey is primary authentication
+- Passwords available for account recovery
+- Deprecated passwords on longer timescales
+
+**Phase 4**: Passwordless only
+- Passkeys exclusively for authentication
+- Password recovery through alternative means (email, phone)
+- Only after >95% user adoption of passkeys
+
+This multi-phase approach prevents user frustration and account lockouts.
+
+## Recovery and Account Access
+
+Passwordless authentication creates recovery challenges. Without passwords, what happens if a user loses access to their biometric device?
+
+**Recovery Options**:
+
+1. **Backup passkeys**: Users can create backup passkeys on secondary devices during enrollment
+2. **Recovery codes**: Generate one-time use codes (like 2FA backup codes) during passkey setup
+3. **Email recovery**: Send recovery codes to verified email address
+4. **Administrative recovery**: Support team can verify identity and reset authentication
+
+Most applications combine multiple recovery methods. For example: backup codes + email recovery.
+
+Implement recovery carefully—weak recovery mechanisms make the authentication useless, while overly lenient recovery allows account takeover.
+
+## Phishing Resistance and Threat Model
+
+The core advantage of passkeys is phishing resistance. A passkey never authenticates to a phishing site because the authenticator verifies the site's origin before signing:
+
+```javascript
+// During WebAuthn authentication
+// The authenticator checks: Does this origin match
+// the origin stored in my credential?
+
+// Phishing scenario:
+// User tries to login at phishing.site
+// But credential was registered for legitimate.site
+// Authenticator rejects authentication request
+// No credential is sent to phishing site
+```
+
+This property (origin binding) is WebAuthn's strongest security property. Even sophisticated phishing attacks cannot bypass it.
+
+However, this assumes:
+- User has legitimate site bookmarked (not finding it via search)
+- Browser correctly displays the URL
+- Browser implements WebAuthn correctly
+- User trusts browser origin indicators
+
+For maximum security, combine with:
+- Security keys (not software passkeys) for highest phishing resistance
+- FIDO2 U2F keys for established organizations
+- Strong email recovery controls to prevent account takeover
+
+## Standards Roadmap for 2026 and Beyond
+
+The passwordless authentication landscape continues evolving:
+
+**Conditional UI**: Native Android and iOS support for passkey auto-fill without explicit user interaction. This improves UX while maintaining security.
+
+**Cross-Origin Mediation**: Allow users to authenticate across different domains using the same passkey. Still being standardized but will improve single-sign-on experiences.
+
+**Multi-Device Flows**: Authenticate on one device using another device's passkey (cross-device authentication). Useful when primary device is unavailable.
+
+**Batch Operations**: Register/update multiple credentials in single flows, improving UX for managing multiple accounts.
+
+Developers implementing WebAuthn/FIDO2 in 2026 should monitor these developments and plan for eventual migration when standards stabilize.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
