@@ -8,7 +8,7 @@ permalink: /how-to-communicate-with-lawyer-privately-when-device-compromised/
 categories: [guides, security]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
