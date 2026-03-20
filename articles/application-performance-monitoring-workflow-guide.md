@@ -253,3 +253,5 @@ Start with foundational monitoring before adding complexity:
 ## Conclusion
 
 Effective application performance monitoring requires thoughtful implementation of metrics, tracing, and alerting. Start simple, iterate based on operational needs, and always consider privacy implications when collecting and storing monitoring data. With proper monitoring in place, your team can detect issues quickly, resolve incidents efficiently, and make informed decisions about performance investments.
+
+{% endraw %}
