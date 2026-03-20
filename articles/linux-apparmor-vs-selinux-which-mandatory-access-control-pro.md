@@ -152,6 +152,35 @@ Use `aa-genprof` to generate profiles for new applications. Run the application 
 
 Debug AppArmor denials through `/var/log/syslog` (or `journalctl` on systemd systems) where AppArmor messages appear with the DENIED keyword. The error messages clearly identify the denied path and requested permissions, simplifying troubleshooting.
 
+```bash
+# SELinux: check status and current enforcement mode
+getenforce
+sestatus
+
+# View SELinux security context on files
+ls -Z /etc/nginx/nginx.conf
+
+# Analyze a recent denial from the audit log
+ausearch -m avc -ts recent | audit2why
+
+# Generate a custom policy module from logged denials
+ausearch -m avc -ts recent | audit2allow -M mypolicy
+semodule -i mypolicy.pp
+
+# AppArmor: check loaded profiles and their modes
+aa-status
+
+# Generate a new profile for an application in learning mode
+aa-genprof /usr/bin/myapp
+
+# View AppArmor denials via journal
+journalctl -k | grep "apparmor.*DENIED"
+
+# Toggle a profile between enforce and complain modes
+aa-enforce /etc/apparmor.d/usr.bin.myapp
+aa-complain /etc/apparmor.d/usr.bin.myapp
+```
+
 {% endraw %}
 ## Related Reading
 

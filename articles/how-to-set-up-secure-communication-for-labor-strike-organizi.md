@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Secure Communication For Labor Strike Organizing"
+title: "Set Up Secure Communication for Labor Strike Organizing: Threat Modeling for Strike Communications"
 description: "A practical guide for developers and power users setting up secure communication infrastructure for labor strike organizing. Covers encrypted."
 date: 2026-03-16
 author: theluckystrike
