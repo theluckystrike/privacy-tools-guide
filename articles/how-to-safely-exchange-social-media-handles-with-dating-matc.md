@@ -9,7 +9,7 @@ categories: [guides, security]
 intent-checked: true
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 tags: [privacy-tools-guide]
 ---
 
