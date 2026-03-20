@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Cloud DLP for Google Workspace Guide 2026"
 description: "A practical guide to implementing Cloud Data Loss Prevention in Google Workspace for developers and power users."
 date: 2026-03-20
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /cloud-dlp-for-google-workspace-guide-2026/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 
@@ -21,7 +26,7 @@ The system supports two primary modes: inspection rules that flag violations and
 
 Begin by accessing the Security > Data protection section in Google Admin. Create a new DLP rule and define the content types you want to detect. For credit card detection, Cloud DLP provides pre-built detectors that validate checksums and identify card formats. Custom detectors accept regular expressions for organization-specific patterns like internal project codes or employee IDs.
 
-Consider starting with detection-only rules to understand your data landscape before enabling remediation. This approach reduces false positive fatigue and helps refine detector accuracy. Review the incidents panel weekly during the initial deployment to tune rule sensitivity and exception lists.
+Consider starting with detection-only rules to understand your data ecosystem before enabling remediation. This approach reduces false positive fatigue and helps refine detector accuracy. Review the incidents panel weekly during the initial deployment to tune rule sensitivity and exception lists.
 
 ## Practical Configuration Examples
 
