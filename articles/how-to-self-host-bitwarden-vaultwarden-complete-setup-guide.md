@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/
 categories: [guides]
-tags: [privacy-tools, self-hosted, bitwarden, vaultwarden, security]
+tags: [privacy-tools-guide, privacy-tools, self-hosted, bitwarden, vaultwarden, security]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
