@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ProtonMail vs Skiff Mail Comparison: A Developer Guide"
 description: "A technical comparison of ProtonMail vs Skiff Mail for developers. Covers encryption models, PGP support, SMTP/IMAP access, API options, and."

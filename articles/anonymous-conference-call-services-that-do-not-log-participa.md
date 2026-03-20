@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Anonymous Conference Call Services That Do Not Log Participant Phone Numbers"
 description: "A practical guide to anonymous conference call services that protect participant privacy by not logging phone numbers. Ideal for developers and power users."

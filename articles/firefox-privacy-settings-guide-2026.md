@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Firefox Privacy Settings Guide 2026"
 description: "Master Firefox privacy settings in 2026. This guide covers about:config tweaks, resistFingerprinting, container extensions, and advanced configurations."

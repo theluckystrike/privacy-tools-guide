@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Feeld Privacy Settings For Couples And Alternative Dating Pr"
 description: "Master Feeld privacy settings to protect relationship status from exposure. Configure hide, stealth, and anonymous browsing for couples in alternative."

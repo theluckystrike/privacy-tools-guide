@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ProtonMail Two-Factor Authentication Guide"
 description: "A guide to setting up and using two-factor authentication with ProtonMail for enhanced email security."

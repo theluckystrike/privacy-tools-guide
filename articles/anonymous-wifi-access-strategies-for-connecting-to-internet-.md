@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Anonymous Wifi Access Strategies For Connecting To Internet"
 description: "A practical technical guide for developers and power users to connect to WiFi networks while masking device identity through MAC randomization, Tor."

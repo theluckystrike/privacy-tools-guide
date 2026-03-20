@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best Password Manager For Safari Autofill"
 description: "Discover which password managers offer the best Safari autofill experience for developers and power users. Compare 1Password, Bitwarden, and native."

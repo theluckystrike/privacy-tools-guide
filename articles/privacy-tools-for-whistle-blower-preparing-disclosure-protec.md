@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Tools For Whistle Blower Preparing Disclosure Protec"
 description: "A practical guide to privacy tools and techniques for whistleblowers preparing to disclose sensitive information securely. Covers encryption, secure."

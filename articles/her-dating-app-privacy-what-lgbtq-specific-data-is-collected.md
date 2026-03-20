@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Her Dating App Privacy What Lgbtq Specific Data Is Collected"
 description: "A technical breakdown of data collection practices in Her, the LGBTQ+ dating app. Learn what personal information developers store, how it's processed, and privacy implications for users."

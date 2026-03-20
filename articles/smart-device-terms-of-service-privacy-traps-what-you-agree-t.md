@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Smart Device Terms of Service Privacy Traps"
 description: "Discover the hidden privacy risks in smart device terms of service. Learn to analyze ToS, understand data collection practices, and protect your."

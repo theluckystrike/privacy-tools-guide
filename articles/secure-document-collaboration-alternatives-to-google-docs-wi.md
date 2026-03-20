@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Secure Document Collaboration Alternatives to Google."
 description: "Discover E2E encrypted document collaboration tools for developers and power users. Compare CryptPad, Standard Notes, and self-hosted options with."

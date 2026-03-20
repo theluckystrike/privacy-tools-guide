@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Nextcloud Collabora Office Setup Guide"
 description: "A complete technical guide for integrating Collabora Online with Nextcloud. Covers Docker deployment, reverse proxy configuration, SSL setup, and."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Encrypted Email Providers For Privacy Compared Protonma"
 description: "A technical comparison of the best encrypted email providers for privacy in 2026. Compare ProtonMail and Tutanota on encryption, API access."

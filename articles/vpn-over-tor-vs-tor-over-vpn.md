@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "VPN over Tor vs Tor over VPN: A Technical Comparison"
 description: "A practical guide comparing VPN over Tor and Tor over VPN architectures for developers and power users."

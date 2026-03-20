@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Audit Your Digital Footprint And Find All Accounts Li"
 description: "A practical guide for developers and power users to discover, audit, and manage all accounts linked to your email addresses. Learn CLI tools, automated."

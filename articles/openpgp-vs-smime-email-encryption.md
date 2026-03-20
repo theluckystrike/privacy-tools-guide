@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "OpenPGP vs S/MIME Email Encryption: A Technical Comparison"
 description: "OpenPGP vs S/MIME Email Encryption: A Technical Comparison — privacy guide covering tools, techniques, and best practices to protect your data and."

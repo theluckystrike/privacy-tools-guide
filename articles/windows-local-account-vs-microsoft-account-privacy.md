@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Windows Local Account Vs Microsoft Account Privacy"
 description: "A privacy comparison between Windows local accounts and Microsoft accounts. Learn what data each account type collects, how they affect."

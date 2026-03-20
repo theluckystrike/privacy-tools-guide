@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Private Bitcoin Full Node At Home For Transact"
 description: "A practical guide for developers and power users to run a Bitcoin full node for private transaction verification. Covers hardware requirements."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Domain Name Inheritance How To Transfer Registrar Accounts A"
 description: "Learn how to transfer domain names and hosting accounts after death. This guide covers registrar transfer processes, documentation requirements, and."

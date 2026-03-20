@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Encrypted Backup Solution For Developers"
 description: "A guide to encrypted backup solutions for developers. Compare tools, learn implementation patterns, and protect your code and credentials."

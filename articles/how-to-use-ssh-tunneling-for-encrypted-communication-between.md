@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Ssh Tunneling For Encrypted Communication Between"
 description: "Learn how to create secure SSH tunnels to encrypt communication between devices. This guide covers local, remote, and dynamic port forwarding with."

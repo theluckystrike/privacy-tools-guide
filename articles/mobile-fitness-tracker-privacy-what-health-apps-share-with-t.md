@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Mobile Fitness Tracker Privacy"
 description: "A technical deep-dive into mobile fitness tracker privacy. Learn what data health apps share with third parties, how APIs expose your information, and."

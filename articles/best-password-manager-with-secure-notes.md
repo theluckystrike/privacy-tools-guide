@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager with Secure Notes: A Technical Guide"
 description: "Compare password managers with encrypted notes functionality. Features, security models, and practical examples for developers and power users."

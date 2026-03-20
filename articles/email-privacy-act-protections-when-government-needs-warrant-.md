@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Email Privacy Act Protections When Government Needs Warrant"
 description: "A technical guide understanding Email Privacy Act protections, warrant requirements, and what developers should know about email privacy legislation."

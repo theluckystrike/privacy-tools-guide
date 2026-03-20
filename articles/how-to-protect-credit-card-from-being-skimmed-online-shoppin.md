@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Protect Credit Card From Being Skimmed Online Shoppin"
 description: "Learn practical techniques to protect your credit card from skimming attacks during online shopping. Includes developer tools, browser extensions, and."

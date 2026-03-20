@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 
 
 
@@ -355,16 +356,18 @@
 
 
 
+=======
+>>>>>>> 473610dfc5bb1e4985a0125091febdbdbeccb965
 layout: default
 title: "Insurance Agent Client Health Data Privacy Protection Setup"
 description: "Learn how insurance agents can set up client health data privacy protection systems. Complete guide to HIPAA compliance, secure data handling."
 date: 2026-03-15
 author: "Privacy Tools Guide"
-categories:
+categories: 
   - privacy
   - data-protection
   - compliance
-tags:
+tags: 
   - health data privacy
   - HIPAA compliance
   - insurance data protection

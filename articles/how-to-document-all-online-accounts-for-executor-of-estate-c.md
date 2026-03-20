@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Document All Online Accounts For Executor Of Estate C"
 description: "A practical guide for executors and power users to systematically document and manage deceased person's digital accounts. Includes CLI tools, inventory templates, and automation scripts for 2026."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Temporary Phone Number For Receiving Sms Verification Codes"
 description: "A practical guide to using temporary phone numbers for SMS verification. Learn about virtual numbers, API integration, and privacy-first approaches for."

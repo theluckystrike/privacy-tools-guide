@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Tuta Mail vs ProtonMail 2026 Review: A Technical Comparison"
 description: "A detailed technical comparison of Tuta Mail and ProtonMail for developers and power users. Covers encryption protocols, API access, SMTP/IMAP, and."

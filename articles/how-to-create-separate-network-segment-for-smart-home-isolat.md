@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Create Separate Network Segment for Smart Home Isolating From Personal Devices"
 description: "A practical guide for developers and power users on creating isolated network segments to separate smart home devices from personal computers and phones."

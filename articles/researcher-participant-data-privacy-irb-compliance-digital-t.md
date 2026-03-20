@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Researcher Participant Data Privacy Irb Compliance Digital T"
 description: "A practical guide for researchers on protecting participant data, maintaining IRB compliance, and selecting privacy-respecting digital tools for human."

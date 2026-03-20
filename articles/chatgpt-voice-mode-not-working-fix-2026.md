@@ -5,7 +5,7 @@ description: "Having trouble with ChatGPT voice mode? This guide covers all the 
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /chatgpt-voice-mode-not-working-fix-2026/
-categories:
+categories: 
   - AI Tools
   - Troubleshooting
   - ChatGPT

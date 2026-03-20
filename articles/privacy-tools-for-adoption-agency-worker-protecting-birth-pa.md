@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Tools For Adoption Agency Worker Protecting Birth Pa"
 description: "A technical guide for adoption agency workers on implementing privacy tools to protect sensitive birth parent data. Covers encryption, secure storage."

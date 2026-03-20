@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Link Decoration Tracking How Utm Parameters And Click Ids Tr"
 description: "A technical deep-dive into link decoration tracking, UTM parameters, click IDs, and how they enable cross-site user tracking. Learn to identify and."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Gdpr Penalties Fines Database Case Examples"
 description: "A practical guide to GDPR penalties, notable fines, real case examples, and how to query GDPR enforcement databases. Essential reading for developers."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy by Design Principles: A Practical Guide"
 description: "Learn how to implement privacy by design principles in your applications with concrete code examples and architectural patterns for developers and."

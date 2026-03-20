@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Emergency Access For Password Manager Spouse"
 description: "Learn how to configure emergency access for your password manager so your spouse can retrieve critical accounts if you're unavailable. Step-by-step setup for Bitwarden, 1Password, and other managers."

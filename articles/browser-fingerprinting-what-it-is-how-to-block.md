@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Browser Fingerprinting: What It Is and How to Block It"
 description: "Learn how browser fingerprinting works, why it threatens your privacy, and practical techniques to block or mitigate fingerprinting scripts."

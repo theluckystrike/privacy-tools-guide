@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Brave Browser vs Chrome Battery Drain Comparison"
 description: "A practical comparison of Brave browser and Chrome battery consumption. Learn how each browser impacts system resources with benchmarks and."

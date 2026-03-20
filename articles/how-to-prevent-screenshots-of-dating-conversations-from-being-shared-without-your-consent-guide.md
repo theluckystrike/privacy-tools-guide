@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Prevent Screenshots of Dating Conversations from Being Shared Without Your Consent"
 description: "A practical guide for developers and power users on screenshot prevention technologies, platform limitations, and privacy-conscious messaging app implementation."

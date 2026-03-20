@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Secure Intercom System Using Encrypted Voip Fo"
 description: "A practical guide for developers and power users on building secure intercom systems using encrypted VoIP protocols. Learn about self-hosted solutions."

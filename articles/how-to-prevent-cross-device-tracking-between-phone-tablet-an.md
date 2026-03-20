@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Prevent Cross Device Tracking Between Phone Tablet An"
 description: "A technical guide for preventing cross-device tracking across your phone, tablet, and computer. Learn practical methods, configuration steps, and."

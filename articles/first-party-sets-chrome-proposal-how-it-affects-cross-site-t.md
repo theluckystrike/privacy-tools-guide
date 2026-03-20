@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "First Party Sets Chrome Proposal How It Affects Cross Site T"
 description: "First Party Sets: Chrome Proposal and Its Impact on. — privacy guide covering tools, techniques, and best practices to protect your data and digital."

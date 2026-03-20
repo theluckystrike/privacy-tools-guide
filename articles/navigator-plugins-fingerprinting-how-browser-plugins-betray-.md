@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Navigator Plugins Fingerprinting How Browser Plugins Betray"
 description: "Learn how browser plugins expose your identity through navigator.plugins fingerprinting, with code examples and mitigation strategies for."

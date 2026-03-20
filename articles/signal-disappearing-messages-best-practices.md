@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Signal Disappearing Messages Best Practices"
 description: "Master Signal disappearing messages with developer-focused best practices. Learn timer selection, automation via Signal CLI, cryptographic cleanup, and."

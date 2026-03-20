@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Masked Credit Cards For Online Purchases Privacy"
 description: "Master masked credit cards for private online transactions. Learn API integration, virtual card generation, and privacy-first spending strategies for."

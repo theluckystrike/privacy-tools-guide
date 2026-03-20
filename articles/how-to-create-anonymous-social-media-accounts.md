@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Create Anonymous Social Media Accounts"
 description: "Learn how to create anonymous social media accounts with strong privacy practices. This guide covers email isolation, device hardening, operational."

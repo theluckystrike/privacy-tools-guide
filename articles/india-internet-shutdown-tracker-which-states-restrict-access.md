@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "India Internet Shutdown Tracker Which States Restrict Access"
 description: "A practical guide to tracking internet shutdowns in India, focusing on which states restrict access most frequently in 2026."

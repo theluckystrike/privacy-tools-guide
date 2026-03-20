@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Signal Number Privacy Workaround Guide"
 description: "A technical guide to using Signal while protecting your phone number. Learn workarounds for developers and power users who want enhanced privacy."

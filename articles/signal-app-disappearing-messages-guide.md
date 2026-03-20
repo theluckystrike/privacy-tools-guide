@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Signal App Disappearing Messages Guide"
 description: "Signal App Disappearing Messages Guide: Technical. — privacy guide covering tools, techniques, and best practices to protect your data and digital."

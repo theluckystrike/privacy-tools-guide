@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Data Broker Opt Out Automation Tools That Continuously Remov"
 description: "A practical guide for developers and power users on automating data broker opt-out requests. Learn how to build scripts that continuously monitor and."

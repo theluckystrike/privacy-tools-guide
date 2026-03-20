@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Spideroak Review Cross Platform Encrypted Cloud"
 description: "SpiderOak Review: Cross-Platform Encrypted Cloud Storage. — privacy guide covering tools, techniques, and best practices to protect your data and."

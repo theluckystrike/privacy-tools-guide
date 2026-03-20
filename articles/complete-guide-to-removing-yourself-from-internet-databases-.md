@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Complete Guide To Removing Yourself From Internet Databases"
 description: "A practical technical guide for removing your data from people search sites and data broker databases. Includes automated opt-out scripts, API."

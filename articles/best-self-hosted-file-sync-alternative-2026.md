@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Self-Hosted File Sync Alternatives in 2026"
 description: "A practical comparison of self-hosted file synchronization tools for developers and power users. Explore Syncthing, Nextcloud, and other alternatives."

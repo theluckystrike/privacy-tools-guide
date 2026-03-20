@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup For Psychologist Telehealth Sessions Encrypted"
 description: "A practical guide to setting up secure, encrypted telehealth sessions for psychologists. Learn end-to-end encryption, self-hosted solutions, and."

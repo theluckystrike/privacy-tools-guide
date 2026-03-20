@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Dating Profile Image Recognition How Ai Can Match Your Face"
 description: "A technical guide to understanding facial recognition technology used in dating apps and how your images can be matched across different platforms."

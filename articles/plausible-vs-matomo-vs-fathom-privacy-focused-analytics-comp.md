@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp"
 description: "A practical comparison of Plausible, Matomo, and Fathom analytics platforms for businesses prioritizing privacy. Learn deployment options, data."

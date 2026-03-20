@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "GDPR Cookie Consent Banner Best Practices for 2026"
 description: "A practical developer guide to implementing GDPR-compliant cookie consent banners. Learn technical patterns, code examples, and compliance strategies."

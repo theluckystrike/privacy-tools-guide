@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Mls Messaging Layer Security Protocol How It Will Change Group Encryption"
 description: "Learn how MLS (Messaging Layer Security) protocol transforms group encryption for developers. Practical examples, implementation patterns, and what to."

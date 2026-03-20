@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best VPN for Using WhatsApp in China 2026 — Actually Works"
 description: "A technical guide for developers and power users on accessing WhatsApp in China. Covers VPN protocols, Shadowsocks/V2Ray setup, WireGuard."

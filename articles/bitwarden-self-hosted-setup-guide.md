@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Bitwarden Self-Hosted Setup Guide"
 description: "A practical guide to self-hosting Bitwarden for developers and power users. Learn how to deploy your own password vault with Docker, configure SSL, and."

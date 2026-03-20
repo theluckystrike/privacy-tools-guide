@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "1password Secrets Automation Guide"
 description: "A practical guide to automating secret management with 1Password CLI. Learn how to integrate 1Password into CI/CD pipelines, environment variable."

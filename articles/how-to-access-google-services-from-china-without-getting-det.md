@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Access Google Services From China Without Getting Det"
 description: "A technical guide for developers and power users on accessing Google services from China while avoiding firewall detection. Covers VPN configuration."

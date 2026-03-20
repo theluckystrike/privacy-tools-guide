@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Chrome Privacy Sandbox Explained What It Means For Tracking"
 description: "Chrome Privacy Sandbox Explained: What It Means for. — privacy guide covering tools, techniques, and best practices to protect your data and digital."

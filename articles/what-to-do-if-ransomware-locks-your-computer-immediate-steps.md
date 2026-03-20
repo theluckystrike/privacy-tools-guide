@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "What To Do If Ransomware Locks Your Computer Immediate Steps"
 description: "A practical guide for developers and power users facing ransomware attacks. Learn immediate response steps, isolation techniques, recovery options, and."

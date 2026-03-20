@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Create Anonymous Online Identity That Cannot Be Linke"
 description: "A practical guide for developers and power users on creating unlinkable anonymous online identities using cryptographic techniques."

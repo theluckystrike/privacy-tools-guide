@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing."
 description: "A practical guide to setting up an anonymous Bitcoin wallet using Tor network and coin mixing services. Designed for developers and power users who."

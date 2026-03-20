@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Social Media Privacy For Teenagers Guide 2026"
 description: "A guide to social media privacy for teenagers in 2026. Learn essential protection strategies, privacy settings, and security best."

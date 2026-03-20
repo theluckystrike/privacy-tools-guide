@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "1Password vs LastPass: Which Survived Their Breaches?"
 description: "A technical comparison of how 1Password and LastPass responded to security breaches. Learn what happened, what each company did differently, and what."

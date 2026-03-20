@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 
 
 
@@ -355,19 +356,21 @@
 
 
 
+=======
+>>>>>>> 473610dfc5bb1e4985a0125091febdbdbeccb965
 layout: default
 title: "Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices."
 date: 2026-03-15
 type: article
-topic:
+topic: 
   - cloud-storage
   - privacy
   - encryption
-categories:
+categories: 
   - privacy-tools
   - cloud-security
-tags:
+tags: 
   - photographer-privacy
   - client-photo-protection
   - encrypted-cloud-storage
@@ -376,7 +379,7 @@ tags:
   - data-protection
   - zero-knowledge-encryption
   - cloud-backup-privacy
-related_articles:
+related_articles: 
   - best-encrypted-cloud-storage-2026
   - best-encrypted-cloud-for-family-photo-sharing
   - how-to-check-if-your-private-photos-were-leaked-online

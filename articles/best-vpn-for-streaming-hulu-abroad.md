@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best VPN for Streaming Hulu Abroad"
 description: "A technical guide to bypassing geo-restrictions and streaming Hulu from outside the US. Includes code examples and testing methods for developers."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Gdpr Representative Appointment Guide Non Eu"
 description: "A practical guide for developers and power users on appointing a GDPR representative in the EU when your organization is based outside Europe. Includes."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best VPN for Accessing French TV Abroad"
 description: "A technical guide to accessing French television services from overseas using VPN technology. Covers server configurations, protocol setup, and practical implementation for developers."

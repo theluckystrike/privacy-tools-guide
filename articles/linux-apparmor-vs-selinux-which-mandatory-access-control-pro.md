@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Linux Apparmor Vs Selinux Which Mandatory Access Control Pro"
 description: "A comparison of AppArmor and SELinux mandatory access control systems for Linux. Learn the differences, use cases, and how to choose the."

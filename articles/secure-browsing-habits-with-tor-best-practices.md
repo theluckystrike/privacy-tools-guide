@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Secure Browsing Habits With Tor Best Practices"
 description: "Master secure browsing with Tor using these practical best practices. Learn configuration tips, common pitfalls to avoid, and advanced techniques for."

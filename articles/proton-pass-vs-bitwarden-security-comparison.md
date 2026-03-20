@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Proton Pass vs Bitwarden Security Comparison for Developers"
 description: "A technical deep-dive comparing Proton Pass and Bitwarden security architectures, encryption schemes, and developer features."

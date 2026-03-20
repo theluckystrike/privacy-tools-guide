@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Threat Model For Political Dissident In Surveillance State 2"
 description: "A practical technical guide for developers and power users on building a threat model when living under surveillance. Includes actionable."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Dating App Cross Platform Tracking How Ad Networks Follow Yo"
 description: "Learn how ad networks track users across dating apps like Tinder and social platforms like Instagram. Technical deep-dive with code examples for."

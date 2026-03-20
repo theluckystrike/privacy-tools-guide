@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup For Abuse Hotline Worker Protecting Caller Inf"
 description: "A technical guide for developers and power users implementing privacy measures for abuse hotline workers. Learn secure communications, metadata."

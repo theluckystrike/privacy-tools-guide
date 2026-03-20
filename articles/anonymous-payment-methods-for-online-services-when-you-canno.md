@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Anonymous Payment Methods For Online Services When You Canno"
 description: "A guide to anonymous payment methods for developers and power users who need privacy but cannot use cryptocurrency."

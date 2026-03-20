@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Prevent Mobile Games From Collecting And Selling Your"
 description: "A technical guide for developers and power users on stopping mobile games from harvesting location data. Learn API-level controls, app analysis, and."

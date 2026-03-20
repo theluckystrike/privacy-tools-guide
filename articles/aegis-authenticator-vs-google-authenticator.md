@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Aegis Authenticator vs Google Authenticator"
 description: "A technical comparison of Aegis Authenticator and Google Authenticator for developers and power users. Evaluate security features, import/export."

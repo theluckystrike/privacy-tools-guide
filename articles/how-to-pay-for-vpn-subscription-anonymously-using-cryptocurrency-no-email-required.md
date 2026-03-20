@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Pay For Vpn Subscription Anonymously Using Cryptocurrency No Email Required"
 description: "A practical guide for developers and power users on paying for VPN subscriptions anonymously using cryptocurrency without requiring email. Covers."

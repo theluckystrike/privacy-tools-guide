@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup For Domestic Abuse Shelter Staff Protecting Lo"
 description: "A technical guide for developers and power users implementing privacy measures for domestic abuse shelter staff. Learn location protection, secure."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Brave Browser Honest Review 2026"
 description: "A technical deep-dive into Brave Browser in 2026. Evaluate its privacy features, performance, developer tools, and extension compatibility for power users."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "TOTP vs FIDO2 Authentication Explained: A Developer's Guide"
 description: "A technical comparison of TOTP and FIDO2 authentication methods. Learn how these protocols work, their security properties, and when to use each."

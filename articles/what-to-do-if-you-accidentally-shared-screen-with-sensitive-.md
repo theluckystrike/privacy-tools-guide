@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "What To Do If You Accidentally Shared Screen With Sensitive"
 description: "Learn immediate steps to take when you accidentally expose sensitive information during screen sharing. Covers containment, platform-specific actions."

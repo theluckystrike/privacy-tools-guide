@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "iOS Contact Poster Privacy Settings Guide"
 description: "Learn how to configure Contact Poster privacy settings on iOS. This guide covers Name and Photo sharing controls, FaceTime, and third-party app."

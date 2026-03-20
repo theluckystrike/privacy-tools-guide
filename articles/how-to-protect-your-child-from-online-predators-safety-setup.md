@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Protect Your Child From Online Predators Safety Setup"
 description: "A practical technical guide for developers and power users to protect children from online predators. Learn device configuration, network-level."

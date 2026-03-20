@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Spokeo Opt Out Guide: Step by Step 2026"
 description: "A practical guide for developers and power users to remove personal information from Spokeo people search engine. Includes automated removal methods."

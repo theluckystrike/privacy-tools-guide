@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "GDPR Compliant Data Backup Retention Guide"
 description: "A practical guide to implementing GDPR-compliant data backup and retention policies. Learn retention periods, encryption requirements, and code."

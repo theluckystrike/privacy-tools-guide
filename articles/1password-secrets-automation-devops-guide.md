@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "1Password Secrets Automation for DevOps: A Practical Guide"
 description: "Learn how to integrate 1Password secrets automation into your DevOps workflows. Covers Terraform, Ansible, GitLab CI, Kubernetes, and production-ready."

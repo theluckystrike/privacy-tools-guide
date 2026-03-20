@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Configure Google Analytics Alternative For Gdpr Compl"
 description: "A practical guide to setting up privacy-first analytics solutions that comply with GDPR requirements. Learn to configure self-hosted alternatives with."

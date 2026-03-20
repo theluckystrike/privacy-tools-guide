@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup for Survivor of Revenge Porn"
 description: "A practical technical guide for removing non-consensual intimate images from the internet. Covers content removal requests, image hashing, platform policies, and developer tools for automation."

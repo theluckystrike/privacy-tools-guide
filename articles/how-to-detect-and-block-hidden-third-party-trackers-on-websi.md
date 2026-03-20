@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Detect And Block Hidden Third Party Trackers On Websi"
 description: "A practical guide for developers and power users to identify, analyze, and block hidden tracking scripts using network analysis, browser tools, and."

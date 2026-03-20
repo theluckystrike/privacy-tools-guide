@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use Password Manager with YubiKey Hardware Key Setup"
 description: "Learn how to integrate YubiKey with password managers like Bitwarden and 1Password for enhanced security. Step-by-step setup guide for developers and."

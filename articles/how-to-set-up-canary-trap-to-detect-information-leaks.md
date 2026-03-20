@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Set Up a Canary Trap to Detect Information Leaks"
 description: "Learn how to implement a canary trap system to identify the source of information leaks. Practical guide for developers and power users with code examples."

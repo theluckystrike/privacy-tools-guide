@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"
 description: "Technical comparison of passkeys and passwords for authentication. Learn security differences, implementation details, and when to adopt passkeys in."

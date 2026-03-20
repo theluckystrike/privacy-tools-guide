@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Browser for Anonymous Searching 2026: A Technical Guide"
 description: "A comparison of privacy browsers for anonymous searching with configuration examples, extension setups, and hardening techniques for."

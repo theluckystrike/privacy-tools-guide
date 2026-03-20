@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use State Attorney General Office To Enforce Privacy"
 description: "A practical guide for developers and power users on using state attorney general offices to enforce privacy rights against companies collecting."

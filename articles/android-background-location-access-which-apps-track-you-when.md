@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Android Background Location Access Which Apps Track You When"
 description: "A technical guide for developers and power users on Android background location tracking. Learn which apps access your location when closed, how to."

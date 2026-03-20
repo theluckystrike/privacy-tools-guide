@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup For Stalking Victim Comprehensive Digital Prot"
 description: "A technical guide for setting up digital privacy protections. Includes step-by-step configurations, code examples, and tools for individuals."

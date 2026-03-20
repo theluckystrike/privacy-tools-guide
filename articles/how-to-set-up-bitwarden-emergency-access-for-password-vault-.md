@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death"
 description: "A technical guide for developers and power users on configuring Bitwarden emergency access for password vault inheritance, covering trust delegation, API automation, and estate planning integration."

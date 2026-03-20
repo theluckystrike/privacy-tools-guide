@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "China Wechat Surveillance What Messages And Activity Tencent"
 description: "A technical guide for developers and power users exploring what data Tencent collects, how government requests work, and what activity triggers data."

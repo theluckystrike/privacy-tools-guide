@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Password Manager Browser Extension Attack Surface"
 description: "Explore the security risks and attack vectors of password manager browser extensions. Learn how developers and power users can assess and mitigate."

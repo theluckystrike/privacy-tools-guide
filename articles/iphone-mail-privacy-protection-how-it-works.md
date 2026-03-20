@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "iPhone Mail Privacy Protection: How It Works"
 description: "Learn how iPhone Mail Privacy Protection blocks email trackers, prevents sender read receipts, and protects your privacy. Technical deep-dive for."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Secure Communication Plan Template for Organizations."
 description: "A practical secure communication plan template for organizations handling sensitive information. Includes implementation code, security controls, and."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Briar Messenger Offline Mesh Review: Technical Deep Dive"
 description: "Briar Messenger Offline Mesh Review: Technical Deep Dive — privacy guide covering tools, techniques, and best practices to protect your data and."

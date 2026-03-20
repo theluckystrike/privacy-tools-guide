@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Encrypted Communication For Activists"
 description: "A practical guide to end-to-end encrypted messaging for activists and organizers. Covers Signal, Session, Matrix, and self-hosted solutions with code."

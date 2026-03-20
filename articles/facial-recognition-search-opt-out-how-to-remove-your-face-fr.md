@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Facial Recognition Search Opt Out How To Remove Your Face Fr"
 description: "A technical guide for developers and power users on removing facial data from Pimeyes, Clearview AI, and other reverse image search services. Includes."

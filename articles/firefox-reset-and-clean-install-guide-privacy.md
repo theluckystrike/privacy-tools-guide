@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Firefox Reset And Clean Install Guide Privacy"
 description: "Complete guide to resetting and performing a clean install of Firefox for maximum privacy. Learn backup strategies, profile management, and."

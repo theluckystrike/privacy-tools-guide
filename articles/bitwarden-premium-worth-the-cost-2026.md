@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Bitwarden Premium Worth the Cost 2026"
 description: "An technical breakdown of Bitwarden Premium features, pricing, and whether it delivers value for developers and power users in 2026."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Privacy Fatigue Solutions: How to Make Privacy Easier Guide"
 description: "Practical strategies and tools to overcome privacy fatigue. Learn automation techniques, privacy-focused tooling, and habits that reduce cognitive load."

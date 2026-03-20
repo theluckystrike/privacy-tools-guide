@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Bumble Video Call Privacy What Data Is Transmitted And Store"
 description: "Bumble Video Call Privacy: What Data Is Transmitted and. — privacy guide covering tools, techniques, and best practices to protect your data and."

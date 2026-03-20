@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Anonymous Resume Submission How To Apply For Jobs Without Re"
 description: "Learn practical methods to submit resumes anonymously, protect your privacy during job searches, and maintain control over your personal information."

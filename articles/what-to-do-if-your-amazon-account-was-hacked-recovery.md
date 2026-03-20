@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "What to Do If Your Amazon Account Was Hacked: Recovery Guide"
 description: "Learn how to recover a compromised Amazon account, secure your personal data, and prevent future unauthorized access. Practical steps for developers."

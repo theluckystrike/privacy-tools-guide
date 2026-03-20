@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "1Password vs Dashlane Comparison 2026: Which Is Better"
 description: "A technical comparison of 1Password and Dashlane for developers and power users. Evaluate CLI tools, security architecture, passkey support, and."

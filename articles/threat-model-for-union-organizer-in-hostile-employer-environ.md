@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Threat Model For Union Organizer In Hostile Employer Environ"
 description: "A technical guide for union organizers to build threat models when operating in hostile employer environments. Includes practical."

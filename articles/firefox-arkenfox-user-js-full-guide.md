@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Firefox Arkenfox User Js Full Guide"
 description: "A guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Iran Internet Shutdown Survival Guide"
 description: "A technical guide to mesh networking and offline communication tools for maintaining connectivity during internet shutdowns. Includes practical setup."

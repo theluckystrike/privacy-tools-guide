@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Build Privacy Respecting Email Marketing System Witho"
 description: "Learn how to build email marketing systems that respect user privacy while remaining effective. This guide covers consent-based tracking, privacy-first."

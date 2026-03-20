@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager for Android 2026: A Developer's Guide"
 description: "A practical comparison of Android password managers for developers and power users. Evaluate open-source options, CLI integration, encrypted exports."

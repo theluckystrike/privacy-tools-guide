@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "1Password Masked Email Feature Review: A Developer Guide"
 description: "1Password Masked Email Feature Review: A Developer Guide — privacy guide covering tools, techniques, and best practices to protect your data and."

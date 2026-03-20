@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How Browser Supercookies Track You: A Technical Explanation"
 description: "A developer-focused guide explaining browser supercookies, how they persist across sessions, and techniques to detect and prevent supercookie tracking."

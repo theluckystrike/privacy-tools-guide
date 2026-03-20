@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Encrypted Cloud Storage Gdpr Compliant 2026"
 description: "A technical deep-dive into encrypted cloud storage solutions that meet GDPR requirements. Covers client-side encryption, key management, and."

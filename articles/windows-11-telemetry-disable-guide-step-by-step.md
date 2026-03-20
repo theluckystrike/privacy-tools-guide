@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Windows 11 Telemetry Disable Guide: Step by Step"
 description: "A guide to disabling Windows 11 telemetry for developers and power users. Learn multiple methods including Settings, Group Policy."

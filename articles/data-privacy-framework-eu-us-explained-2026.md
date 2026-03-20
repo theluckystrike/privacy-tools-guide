@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Data Privacy Framework Eu Us Explained 2026"
 description: "Understand the EU-US Data Privacy Framework and its implications for developers building applications that handle transatlantic data transfers."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "China Exit Ban Digital Surveillance How Authorities Monitor"
 description: "Understand how Chinese authorities use digital surveillance to monitor travel plans, enforce exit bans, and track online activity. Technical deep-dive."

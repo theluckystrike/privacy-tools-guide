@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Private Dropbox Alternative 2026: A Developer Guide"
 description: "Discover privacy-focused cloud storage alternatives to Dropbox. Compare encryption, self-hosting options, and developer-friendly features for 2026."

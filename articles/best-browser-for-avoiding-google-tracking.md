@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Browser for Avoiding Google Tracking: A Developer Guide"
 description: "A technical comparison of privacy-focused browsers with code examples, configuration tips, and practical strategies for developers seeking to minimize."

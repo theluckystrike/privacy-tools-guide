@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager No Subscription Fee"
 description: "Discover the best password managers without subscription fees. Compare open-source and free-tier options ideal for developers and power users in 2026."
@@ -8,7 +7,7 @@ author: theluckystrike
 permalink: /best-password-manager-no-subscription-fee/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]

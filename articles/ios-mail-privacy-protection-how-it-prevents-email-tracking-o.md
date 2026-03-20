@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Ios Mail Privacy Protection How It Prevents Email Tracking O"
 description: "Learn how iOS Mail Privacy Protection blocks email tracking pixels, prevents open receipts, and shields your email behavior from marketers and snoopers."

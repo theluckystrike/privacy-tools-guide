@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Google Analytics Tracking Alternatives That Respect User Pri"
 description: "A practical guide to privacy-first analytics solutions for developers and power users. Compare self-hosted options, privacy-focused platforms, and."

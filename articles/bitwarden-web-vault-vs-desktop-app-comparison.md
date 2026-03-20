@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Bitwarden Web Vault vs Desktop App Comparison"
 description: "A detailed comparison of Bitwarden web vault versus desktop application for developers and power users. Learn which option best suits your workflow."

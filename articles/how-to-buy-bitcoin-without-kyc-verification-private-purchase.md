@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Buy Bitcoin Without Kyc Verification Private Purchase"
 description: "A technical guide for developers and power users exploring methods to acquire Bitcoin without mandatory identity verification, covering peer-to-peer."

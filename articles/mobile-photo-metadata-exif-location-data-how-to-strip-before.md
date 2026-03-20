@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Mobile Photo Metadata Exif Location Data How To Strip Before"
 description: "Learn how to remove EXIF location data from mobile photos before sharing. This guide covers command-line tools, Python scripts, and automation for."

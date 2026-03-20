@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup For Immigration Activist Protecting Undocument"
 description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection."

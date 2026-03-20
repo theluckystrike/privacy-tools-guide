@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Encrypted Email Service 2026: A Developer Guide"
 description: "A technical comparison of encrypted email services for developers and power users in 2026. Covers PGP support, SMTP/IMAP access, API options, and."

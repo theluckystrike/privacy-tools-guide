@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "iPhone Focus Mode Privacy Features Explained: Complete Guide"
 description: "Discover how iPhone Focus Mode protects your privacy. Learn about notification filtering, app restrictions, and hidden metadata protection."

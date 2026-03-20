@@ -5,7 +5,7 @@ description: "A guide to countries where you can purchase prepaid SIM cards with
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /anonymous-prepaid-sim-card-countries-where-you-can-buy-without-id-2026/
-categories:
+categories: 
   - privacy
   - security
   - telecommunications

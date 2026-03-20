@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Proton Mail Account Inheritance How Encrypted Email Provider"
 description: "A technical guide for developers and power users exploring how Proton Mail handles account inheritance, the limitations of end-to-end encryption, and."

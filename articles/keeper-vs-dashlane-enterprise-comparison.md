@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Keeper vs Dashlane Enterprise Comparison for Developers"
 description: "A technical comparison of Keeper and Dashlane enterprise password managers focusing on API access, CLI tools, security architecture, and developer."

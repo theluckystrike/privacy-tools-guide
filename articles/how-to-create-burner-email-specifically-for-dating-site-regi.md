@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Create Burner Email Specifically For Dating Site Regi"
 description: "A practical guide for developers and power users on creating burner emails for dating site registrations. Learn methods, tools, and code patterns for."

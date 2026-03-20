@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Tell If Someone Installed Spyware On Your Iphone"
 description: "Learn technical methods to detect spyware on your iPhone. This guide covers behavioral indicators, system analysis, and diagnostic commands for."

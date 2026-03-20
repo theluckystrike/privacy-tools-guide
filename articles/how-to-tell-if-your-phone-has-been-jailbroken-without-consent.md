@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Tell If Your Phone Has Been Jailbroken Without Consent"
 description: "A guide to detecting unauthorized jailbreaks on your iPhone or Android device. Learn the signs, symptoms, and verification methods to."

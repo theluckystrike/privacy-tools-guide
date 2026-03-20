@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Bitcoin Atm Anonymously Without Providing Photo I"
 description: "A practical guide for developers and power users on using Bitcoin ATMs while maintaining privacy. Learn about no-KYC options, cash purchases, and."

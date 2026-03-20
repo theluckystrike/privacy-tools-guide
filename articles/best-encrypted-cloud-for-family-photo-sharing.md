@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Encrypted Cloud for Family Photo Sharing"
 description: "A practical guide to selecting encrypted cloud storage for family photos. Compare zero-knowledge encryption, E2EE protocols, and self-hosting options for developers and power users."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager for iPhone 2026: A Developer's Guide"
 description: "A practical comparison of password managers for iPhone in 2026. Evaluate Bitwarden, 1Password, and open-source alternatives with CLI tools, biometric."

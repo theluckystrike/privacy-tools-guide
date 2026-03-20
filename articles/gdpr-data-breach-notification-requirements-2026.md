@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Gdpr Data Breach Notification Requirements 2026"
 description: "Understand GDPR data breach notification requirements for 2026. Learn72-hour reporting rules, documentation templates, and technical implementation for."

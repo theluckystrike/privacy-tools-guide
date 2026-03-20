@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "GrapheneOS vs Stock Pixel: What Google Collects on."
 description: "A technical comparison of GrapheneOS and stock Pixel Android for developers and power users. Analyze what Google collects on unmodified Android and how."
