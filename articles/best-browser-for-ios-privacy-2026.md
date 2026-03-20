@@ -29,9 +29,9 @@ Safari on iOS provides the deepest integration with Apple's privacy infrastructu
 
 For developers, Safari's privacy features include:
 
-- **Fingerprint randomization**: Safari randomizes certain device characteristics per session, making fingerprint-based tracking less reliable
-- **Private Browsing with enhanced protection**: The Private Browsing mode in iOS 18 blocks known trackers by default
-- **iCloud+ integration**: Private Relay (requires iCloud+ subscription) encrypts Safari traffic through two hops, preventing even Apple from seeing browsing activity
+- Fingerprint randomization: Safari randomizes certain device characteristics per session, making fingerprint-based tracking less reliable
+- Private Browsing with enhanced protection: The Private Browsing mode in iOS 18 blocks known trackers by default
+- iCloud+ integration: Private Relay (requires iCloud+ subscription) encrypts Safari traffic through two hops, preventing even Apple from seeing browsing activity
 
 To verify Safari's tracking prevention effectiveness, developers can examine the `document.referrer` behavior and observe how third-party cookies behave in the Safari developer console:
 
@@ -49,9 +49,9 @@ Mozilla's Firefox for iOS has evolved significantly, now using GeckoView rather 
 
 Firefox distinguishes itself through:
 
-- **Total Cookie Protection**: Each site gets its own isolated cookie jar, preventing cross-site tracking
-- **Supercookie blocking**: Firefox prevents supercookies, which are more persistent than regular cookies
-- **Disconnect.me tracker lists**: Uses established blocklists to identify known trackers
+- Total Cookie Protection: Each site gets its own isolated cookie jar, preventing cross-site tracking
+- Supercookie blocking: Firefox prevents supercookies, which are more persistent than regular cookies
+- Disconnect.me tracker lists: Uses established blocklists to identify known trackers
 
 For developers, Firefox provides clear blocking indicators in the address bar. The browser's about:config equivalents allow customization of privacy settings:
 
@@ -75,9 +75,9 @@ Brave Browser takes an aggressive approach to privacy, blocking trackers and ads
 
 Key privacy features include:
 
-- **Local ad blocking**: Unlike Safari's privacy proxy approach, Brave processes blocking locally
-- **Fingerprint randomization**: Brave randomizes canvas and WebGL data to prevent fingerprinting
-- **Tor integration**: For iOS, Brave offers onion routing through an integrated Tor option (beta)
+- Local ad blocking: Unlike Safari's privacy proxy approach, Brave processes blocking locally
+- Fingerprint randomization: Brave randomizes canvas and WebGL data to prevent fingerprinting
+- Tor integration: For iOS, Brave offers onion routing through an integrated Tor option (beta)
 
 Brave's approach is particularly relevant for developers testing how their applications behave when tracking is blocked:
 
@@ -97,9 +97,9 @@ For maximum anonymity, Onion Browser provides direct access to the Tor network o
 
 Onion Browser features include:
 
-- **Onion routing**: Traffic routes through multiple Tor relays, hiding the origin IP address
-- **NoScript integration**: Advanced script control prevents JavaScript-based fingerprinting
-- **Circuit display**: Users can view the current Tor circuit for transparency
+- Onion routing: Traffic routes through multiple Tor relays, hiding the origin IP address
+- NoScript integration: Advanced script control prevents JavaScript-based fingerprinting
+- Circuit display: Users can view the current Tor circuit for transparency
 
 The technical limitation is speed. Tor network latency makes Onion Browser unsuitable for general web browsing, but it remains the gold standard for use cases requiring strong anonymity.
 
@@ -109,9 +109,9 @@ Mozilla's Firefox Focus provides a privacy-first experience designed for casual 
 
 For developers, Firefox Focus demonstrates how to build privacy into application architecture:
 
-- **Automatic data clearing**: No persistent storage between sessions
-- **No sync**: Deliberately no account sync to prevent any data leaves the device
-- **Aggressive blocking**: Enhanced tracking protection enabled by default
+- Automatic data clearing: No persistent storage between sessions
+- No sync: Deliberately no account sync to prevent any data leaves the device
+- Aggressive blocking: Enhanced tracking protection enabled by default
 
 This approach suits sensitive browsing sessions where you want zero traces left on the device.
 

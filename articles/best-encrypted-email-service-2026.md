@@ -145,19 +145,19 @@ Zero-knowledge does NOT protect against:
 
 Zero-knowledge systems create genuine data recovery challenges. Establish a plan before migrating:
 
-1. **Recovery keys**: Most services provide backup codes
-2. **Secondary email**: Recovery options vary by provider
-3. **Password reset**: Understand if/how it works (may lose encrypted data)
-4. **Key escrow**: For team implementations, consider secure key sharing
+1. Recovery keys: Most services provide backup codes
+2. Secondary email: Recovery options vary by provider
+3. Password reset: Understand if/how it works (may lose encrypted data)
+4. Key escrow: For team implementations, consider secure key sharing
 
 ## Making Your Decision
 
 The "best" encrypted email service depends on your threat model and technical requirements:
 
-- **Maximum compatibility**: Proton Mail or Mailfence (PGP support)
-- **Ease of use**: Proton Mail (best bridge experience)
-- **Complete control**: Self-hosted solution
-- **Team collaboration**: Mailfence or self-hosted with group aliases
+- Maximum compatibility: Proton Mail or Mailfence (PGP support)
+- Ease of use: Proton Mail (best bridge experience)
+- Complete control: Self-hosted solution
+- Team collaboration: Mailfence or self-hosted with group aliases
 
 Consider also the metadata problem. Even with end-to-end encryption, metadata (sender, recipient, timestamps, subject lines) remains visible. For high-security use cases, consider combining encrypted email with additional tools like Tor or a VPN.
 

@@ -20,10 +20,10 @@ Journalists face unique security challenges. Source protection, secure communica
 
 Before evaluating tools, understand what you're protecting against. The primary threats include:
 
-- **Content interception**: Government agencies or adversaries reading message contents
-- **Metadata collection**: Who you communicate with, when, and how often
-- **Device compromise**: Physical or remote access to your phone or computer
-- **Social engineering**: Phishing, impersonation, or pressure on service providers
+- Content interception: Government agencies or adversaries reading message contents
+- Metadata collection: Who you communicate with, when, and how often
+- Device compromise: Physical or remote access to your phone or computer
+- Social engineering: Phishing, impersonation, or pressure on service providers
 
 Different tools address different threats. No single solution covers everything perfectly.
 
@@ -123,7 +123,7 @@ SimpleX takes a different approach entirely—eliminating persistent user identi
 
 ### How It Works
 
-Unlike Signal or Matrix, SimpleX doesn't assign you a permanent identity. Instead, each contact connection generates a unique, revocable identifier:
+Unlike Signal or Matrix, SimpleX doesn't assign you a permanent identity. Instead, each contact connection generates an unique, revocable identifier:
 
 ```bash
 # SimpleX CLI basic usage

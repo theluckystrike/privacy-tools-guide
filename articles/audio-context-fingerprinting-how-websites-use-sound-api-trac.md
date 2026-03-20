@@ -50,7 +50,7 @@ function generateAudioFingerprint() {
 }
 ```
 
-The key insight is that when you render this audio offline, the resulting audio buffer contains microscopic differences due to how the browser's audio engine processes the compressor and oscillator. These differences—often in the range of fractions of a decibel—create a unique signature.
+The key insight is that when you render this audio offline, the resulting audio buffer contains microscopic differences due to how the browser's audio engine processes the compressor and oscillator. These differences—often in the range of fractions of a decibel—create an unique signature.
 
 ## What Makes Each Fingerprint Unique
 

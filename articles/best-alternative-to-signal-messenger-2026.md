@@ -72,7 +72,7 @@ The primary trade-off: E2EE in Matrix has historically been complex to implement
 
 ## Session: Metadata-Resistant Messaging
 
-Session, developed by the Loki Foundation, focuses on eliminating metadata. It removes phone numbers entirely and routes messages through a onion-routing network similar to Tor.
+Session, developed by the Loki Foundation, focuses on eliminating metadata. It removes phone numbers entirely and routes messages through an onion-routing network similar to Tor.
 
 ### How Session Reduces Metadata
 
@@ -111,7 +111,7 @@ Session excels for users who need strong metadata protection but may lack the de
 
 ## SimpleX: Zero-Knowledge Identity
 
-SimpleX stands out by requiring absolutely no identifier—not even a username. Every conversation generates a unique queue, making it impossible to link communications to a persistent identity.
+SimpleX stands out by requiring absolutely no identifier—not even an username. Every conversation generates an unique queue, making it impossible to link communications to a persistent identity.
 
 ### The SimpleX Queue Model
 
@@ -191,10 +191,10 @@ brijnet add-user admin
 
 ### Key Considerations for Self-Hosting
 
-- **Maintenance**: Regular updates and security patches
-- **Uptime**: Your server becomes a single point of failure
-- **Backup**: Implement message history backups
-- **SSL/TLS**: Proper certificate management via Let's Encrypt
+- Maintenance: Regular updates and security patches
+- Uptime: Your server becomes a single point of failure
+- Backup: Implement message history backups
+- SSL/TLS: Proper certificate management via Let's Encrypt
 
 ## Comparing the Alternatives
 

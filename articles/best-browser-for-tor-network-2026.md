@@ -148,9 +148,9 @@ After restarting Tor, your hidden service key appears in `/var/lib/tor/hidden_se
 
 Tor network latency varies significantly based on the selected exit nodes and network conditions. Several factors impact performance:
 
-1. **Circuit length**: Each request passes through at least three relays, adding latency.
-2. **Exit node capacity**: Popular exit nodes become congested during peak hours.
-3. **Bridge usage**: Obfuscated bridges provide access in restricted regions but add overhead.
+1. Circuit length: Each request passes through at least three relays, adding latency.
+2. Exit node capacity: Popular exit nodes become congested during peak hours.
+3. Bridge usage: Obfuscated bridges provide access in restricted regions but add overhead.
 
 For improved performance in development environments, consider using:
 
@@ -199,12 +199,7 @@ Regardless of which browser you choose, follow these practices:
 
 Additionally, when building production applications that interact with Tor, implement proper error handling for network failures, timeouts, and circuit breaks. Log suspicious activity without capturing user-identifying information to maintain operational security while debugging issues.
 
-## Conclusion
-
-Tor Browser remains the strongest choice for most use cases. Developers routing other browsers through Tor should account for the security tradeoffs covered above.
 {% endraw %}
-
-
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)

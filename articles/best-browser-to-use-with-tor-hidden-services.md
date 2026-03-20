@@ -38,10 +38,10 @@ The Tor Browser is the most tested and recommended browser for accessing hidden 
 
 The Tor Browser includes several critical security features:
 
-1. **Circuit isolation**: Each tab uses a separate Tor circuit, preventing correlation attacks
-2. **NoScript integration**: JavaScript can be selectively enabled or disabled per-site
-3. **Resistance to fingerprinting**: Canvas and WebGL randomization defeat browser fingerprinting
-4. **Automatic HTTPS upgrade**: Forces HTTPS connections when available
+1. Circuit isolation: Each tab uses a separate Tor circuit, preventing correlation attacks
+2. NoScript integration: JavaScript can be selectively enabled or disabled per-site
+3. Resistance to fingerprinting: Canvas and WebGL randomization defeat browser fingerprinting
+4. Automatic HTTPS upgrade: Forces HTTPS connections when available
 
 ### Configuration for Hidden Services
 

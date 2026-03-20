@@ -27,11 +27,11 @@ End-to-end encrypted backups ensure that only you hold the decryption keys. Even
 
 When selecting an encrypted backup solution, developers should prioritize:
 
-- **Client-side encryption**: Data must be encrypted before leaving your machine
-- **CLI support**: Scriptable backups integrate with CI/CD pipelines
-- **Versioning**: Ability to restore previous versions of files
-- **Deduplication**: Efficient storage by only backing up changed content
-- **Open-source transparency**: Auditable security implementation
+- Client-side encryption: Data must be encrypted before leaving your machine
+- CLI support: Scriptable backups integrate with CI/CD pipelines
+- Versioning: Ability to restore previous versions of files
+- Deduplication: Efficient storage by only backing up changed content
+- Open-source transparency: Auditable security implementation
 
 ## Top Encrypted Backup Solutions for Developers
 
@@ -181,18 +181,11 @@ crontab -e
 
 ## Best Practices for Developer Backups
 
-1. **Separate credentials from backups**: Store your backup repository password in a password manager, not in environment variables that might be logged
-2. **Test restores regularly**: Verify your backup actually works by performing test restores quarterly
-3. **Use multiple destinations**: Store encrypted backups in at least two locations—local external drive and cloud storage
-4. **Version control your dotfiles**: Include shell configurations, SSH keys (encrypted), and editor settings in your backup strategy
-5. **Encrypt before cloud sync**: Always use client-side encryption when backing up to third-party services
-
-## Conclusion
-
-For developers seeking the best encrypted backup solution, the choice depends on your workflow. Restic offers the best balance of cross-platform support, deduplication, and CLI automation. Borg excels for Linux-heavy environments with its compression options. Cryptomator provides the simplest path to encrypting cloud-synced files. Tarsnap remains excellent for cost-conscious developers comfortable with Unix-centric tooling.
-
-Regardless of which tool you choose, implementing encrypted backups protects your codebase from data loss while ensuring sensitive credentials never leave your machine in plaintext. Start with a small project, automate the backup process, and expand to your full development environment once the workflow proves reliable.
-
+1. Separate credentials from backups: Store your backup repository password in a password manager, not in environment variables that might be logged
+2. Test restores regularly: Verify your backup actually works by performing test restores quarterly
+3. Use multiple destinations: Store encrypted backups in at least two locations—local external drive and cloud storage
+4. Version control your dotfiles: Include shell configurations, SSH keys (encrypted), and editor settings in your backup strategy
+5. Encrypt before cloud sync: Always use client-side encryption when backing up to third-party services
 
 ## Related Reading
 

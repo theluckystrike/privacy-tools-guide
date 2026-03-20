@@ -109,7 +109,7 @@ These integrations simplify authentication via single sign-on but require carefu
 
 ### Versioning and Backup
 
-Research data demands robust versioning. Most providers offer 30-day version history, but this may exceed grant requirements or fall short for long-term projects. Verify that your chosen solution supports:
+Research data demands versioning. Most providers offer 30-day version history, but this may exceed grant requirements or fall short for long-term projects. Verify that your chosen solution supports:
 
 - Granular version retention policies
 - Immutable backup options (WORM storage)
@@ -127,11 +127,11 @@ Research data demands robust versioning. Most providers offer 30-day version his
 
 ## Implementation Checklist
 
-1. **Audit your data classification**: Identify what requires encryption versus what can remain public
-2. **Test recovery procedures**: Verify you can restore from backups without the primary account
-3. **Document key management**: Establish clear processes for key rotation and access revocation
-4. **Plan for collaboration**: Ensure research partners can access shared data securely
-5. **Monitor for vendor changes**: Cloud providers periodically modify encryption features
+1. Audit your data classification: Identify what requires encryption versus what can remain public
+2. Test recovery procedures: Verify you can restore from backups without the primary account
+3. Document key management: Establish clear processes for key rotation and access revocation
+4. Plan for collaboration: Ensure research partners can access shared data securely
+5. Monitor for vendor changes: Cloud providers periodically modify encryption features
 
 The optimal solution balances security requirements against operational complexity. Self-hosted options provide the strongest privacy but demand ongoing maintenance. Zero-knowledge cloud services offer convenience with verifiable technical guarantees. Choose based on your specific threat model rather than marketing claims.
 

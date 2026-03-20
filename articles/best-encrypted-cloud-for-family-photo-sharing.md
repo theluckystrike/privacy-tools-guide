@@ -111,7 +111,7 @@ rclone config create myencrypteddrive crypt \
     directory_name_encryption: true
 ```
 
-This approach encrypts files before uploading to any backend (S3, B2, Google Drive), achieving zero-knowledge while leveraging affordable storage.
+This approach encrypts files before uploading to any backend (S3, B2, Google Drive), achieving zero-knowledge while using affordable storage.
 
 ## Comparing Encryption Implementations
 
@@ -132,9 +132,9 @@ All four major providers use AES-256 for symmetric encryption, with differences 
 
 Family photo collections grow quickly. Consider:
 
-- **Photo size**: A RAW family photo averages 25-50MB
-- **Video**: 4K family videos can reach 400MB per minute
-- **Backup redundancy**: Aim for 3 copies across 2+ media types
+- Photo size: A RAW family photo averages 25-50MB
+- Video: 4K family videos can reach 400MB per minute
+- Backup redundancy: Aim for 3 copies across 2+ media types
 
 Most encrypted cloud providers offer limited free tiers (2-5GB), with paid plans starting around $5-10/month for 100-500GB.
 
@@ -142,9 +142,9 @@ Most encrypted cloud providers offer limited free tiers (2-5GB), with paid plans
 
 Encryption complicates sharing. Look for providers offering:
 
-- **Shared vaults**: Create a family folder where members can add photos
-- **Encrypted links**: Generate shareable URLs that require password
-- **Recovery options**: Set up recovery contacts for account access
+- Shared vaults: Create a family folder where members can add photos
+- Encrypted links: Generate shareable URLs that require password
+- Recovery options: Set up recovery contacts for account access
 
 ### Migration Between Providers
 

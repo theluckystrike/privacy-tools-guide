@@ -22,9 +22,9 @@ Regulatory pressure increased significantly after the EU's MiCA framework fully 
 
 The remaining no-KYC options typically fall into three categories:
 
-- **Peer-to-peer (P2P) platforms**: Connect buyers and sellers directly without holding funds
-- **Decentralized exchanges (DEXs)**: Trade directly from your wallet without an intermediary
-- **Non-custodial exchanges**: Allow trading with your own wallet, limited KYC for fiat onramps
+- Peer-to-peer (P2P) platforms: Connect buyers and sellers directly without holding funds
+- Decentralized exchanges (DEXs): Trade directly from your wallet without an intermediary
+- Non-custodial exchanges: Allow trading with your own wallet, limited KYC for fiat onramps
 
 Each category has distinct characteristics that matter for developers integrating cryptocurrency functionality.
 
@@ -248,11 +248,6 @@ The options have diminished significantly. Many platforms that advertised "no KY
 - Certain payment methods
 
 For developers building applications, plan accordingly. The integrations above work but expect ongoing maintenance as platforms adjust to regulatory pressures.
-
-## Summary
-
-The no-KYC cryptocurrency exchange space in 2026 favors developers comfortable with P2P platforms and decentralized exchanges. Bisq, RoboSats, HodlHodl, and DEXs like Uniswap offer functional alternatives to traditional exchanges. Each has distinct API characteristics, privacy properties, and integration requirements. Choose based on your specific use case, whether that's Lightning Network payments, cross-border OTC trading, or DeFi protocol integration.
-
 
 ## Related Reading
 

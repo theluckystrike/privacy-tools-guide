@@ -25,11 +25,11 @@ Standard Notes is the best encrypted notes app for developers in 2026, offering 
 
 Here are the criteria that matter for technical users:
 
-- **End-to-end encryption (E2EE)**: Your notes should be encrypted before they leave your device
-- **CLI or API access**: Programmatic interaction enables automation and integration
-- **Self-hosting option**: Full control over your data location and infrastructure
-- **Open-source foundation**: Independent security audits and community trust
-- **Markdown support**: Developer-friendly formatting with code block support
+- End-to-end encryption (E2EE): Your notes should be encrypted before they leave your device
+- CLI or API access: Programmatic interaction enables automation and integration
+- Self-hosting option: Full control over your data location and infrastructure
+- Open-source foundation: Independent security audits and community trust
+- Markdown support: Developer-friendly formatting with code block support
 
 ## Top Encrypted Notes Apps for 2026
 
@@ -149,17 +149,10 @@ When evaluating encrypted notes apps, understanding the encryption implementatio
 
 Your choice depends on your specific requirements:
 
-- **Maximum compatibility**: Standard Notes offers the best balance of features and encryption
-- **Knowledge management**: Obsidian with encryption layer provides superior organization
-- **Integration with existing tools**: Bitwarden works well if you're already in their ecosystem
-- **Complete control**: Building your own solution using Python or shell scripts gives you full ownership
-
-## Conclusion
-
-For most developers, Standard Notes provides the best balance of security, usability, and cross-platform support. If you need deeper knowledge management, layer encryption onto Obsidian. If you want complete control, build your own.
-
-Before committing, consider where your data lives, who holds the keys, and how you need to access your notes day-to-day.
-
+- Maximum compatibility: Standard Notes offers the best balance of features and encryption
+- Knowledge management: Obsidian with encryption layer provides superior organization
+- Integration with existing tools: Bitwarden works well if you're already in their ecosystem
+- Complete control: Building your own solution using Python or shell scripts gives you full ownership
 
 ## Related Reading
 

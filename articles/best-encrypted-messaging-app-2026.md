@@ -109,15 +109,15 @@ The trade-off is complexity. Setting up a Matrix homeserver requires more effort
 
 ## Session: Decentralized Without Phone Numbers
 
-**Session** operates on the Signal protocol but removes phone number requirements entirely, using a onion-routing network (Loki Net) for metadata protection. Each user has a 64-character public key—no phone number, no email, no personally identifiable information required for account creation.
+**Session** operates on the Signal protocol but removes phone number requirements entirely, using an onion-routing network (Loki Net) for metadata protection. Each user has a 64-character public key—no phone number, no email, no personally identifiable information required for account creation.
 
 This makes Session particularly valuable for threat models where metadata matters as much as message content. Even if someone intercepts your messages, they cannot trivially associate them with your real-world identity.
 
 The platform uses a three-tier network architecture:
 
-- **Session nodes**: Store and forward encrypted messages
-- **Service nodes**: Facilitate onion routing and swarm management
-- **Onion requests**: Route traffic through multiple nodes to prevent traffic analysis
+- Session nodes: Store and forward encrypted messages
+- Service nodes: Help onion routing and swarm management
+- Onion requests: Route traffic through multiple nodes to prevent traffic analysis
 
 For developers, Session's API is more limited than Matrix. The focus remains on the client application rather than extensibility. However, the underlying Loki protocol libraries are available for custom implementations.
 
@@ -127,7 +127,7 @@ For developers, Session's API is more limited than Matrix. The focus remains on 
 
 Swiss jurisdiction provides strong legal protections for user data, and Threema publishes regular security audits. For users with moderate threat models who prefer simplicity over extensibility, Threema offers a polished experience with solid cryptographic foundations.
 
-Threema Work provides organizational management features—useful for companies requiring compliant messaging without enterprise complexity. The pricing model (a one-time purchase rather than subscription) appeals to users resistant to ongoing costs.
+Threema Work provides organizational management features—useful for companies requiring compliant messaging without enterprise complexity. The pricing model (an one-time purchase rather than subscription) appeals to users resistant to ongoing costs.
 
 ## SimpleX: Zero-Knowledge Architecture
 

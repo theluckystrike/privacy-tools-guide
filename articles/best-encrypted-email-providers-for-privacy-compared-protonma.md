@@ -119,7 +119,7 @@ Moving between providers or importing existing email requires planning.
 
 **Tutanota** provides import functionality for standard email formats. Their export generates a ZIP file containing all mailbox data in readable JSON format—impressive given their encryption-first approach.
 
-For developers building migration tools, both providers offer programmatic access to facilitate bulk transfers. The complexity increases significantly if you're migrating encrypted messages between providers.
+For developers building migration tools, both providers offer programmatic access to help bulk transfers. The complexity increases significantly if you're migrating encrypted messages between providers.
 
 ## Making the Choice
 

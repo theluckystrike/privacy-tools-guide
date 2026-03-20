@@ -22,10 +22,10 @@ Use Signal for everyday activist coordination where usability matters most, Sess
 
 Before selecting tools, activists must identify what they are protecting against. Common adversaries include:
 
-- **Mass surveillance**: Government agencies collecting bulk communication metadata
-- **Device seizure**: Physical access to phones or computers
-- **Social engineering**: Phishing, SIM swapping, or coercion
-- **Network interception**: Man-in-the-middle attacks on communications
+- Mass surveillance: Government agencies collecting bulk communication metadata
+- Device seizure: Physical access to phones or computers
+- Social engineering: Phishing, SIM swapping, or coercion
+- Network interception: Man-in-the-middle attacks on communications
 
 The best tool depends on which threats matter most. No single solution handles everything perfectly.
 
@@ -123,10 +123,10 @@ docker exec -it synapse register_new_matrix_user -c /data/homeserver.yaml http:/
 Matrix supports end-to-end encryption via the Matrix protocol, though the default configuration uses server-side encryption storage. For sensitive communications, verify that E2EE is properly configured.
 
 Key considerations for Matrix deployment:
-- **Server location**: Choose jurisdictions with strong privacy protections
-- **Registration defaults**: Disable open registration after creating admin accounts
-- **SSL certificates**: Use Let's Encrypt or proper certificate management
-- **Backup encryption keys**: Store recovery keys securely offline
+- Server location: Choose jurisdictions with strong privacy protections
+- Registration defaults: Disable open registration after creating admin accounts
+- SSL certificates: Use Let's Encrypt or proper certificate management
+- Backup encryption keys: Store recovery keys securely offline
 
 ## Briar: Offline-First and Mesh-Networking
 
@@ -153,13 +153,13 @@ The limitation is clear: Briar requires physical proximity or Tor connectivity f
 
 For activist organizations, a layered approach works best:
 
-**Tier 1 (Primary)**: Signal for day-to-day coordination among trusted contacts who already use it. Accept the phone number tradeoff.
+Tier 1 (Primary): Signal for day-to-day coordination among trusted contacts who already use it. Accept the phone number tradeoff.
 
-**Tier 2 (Sensitive)**: Session for communications where phone number linkage is unacceptable. Accept the smaller user base.
+Tier 2 (Sensitive): Session for communications where phone number linkage is unacceptable. Accept the smaller user base.
 
-**Tier 3 (Critical)**: Self-hosted Matrix with E2EE for organizational infrastructure. Accept the technical complexity.
+Tier 3 (Critical): Self-hosted Matrix with E2EE for organizational infrastructure. Accept the technical complexity.
 
-**Tier 4 (Contingency)**: Briar for scenarios where internet is unavailable or actively blocked.
+Tier 4 (Contingency): Briar for scenarios where internet is unavailable or actively blocked.
 
 This redundancy ensures communications survive various failure modes.
 
@@ -167,11 +167,11 @@ This redundancy ensures communications survive various failure modes.
 
 Encryption alone does not guarantee security. Implement these complementary practices:
 
-- **Device encryption**: Enable full-disk encryption on all devices
-- **Separate devices**: Consider dedicated phones for sensitive communications
-- **Air-gapped backups**: Store encryption keys and contact information offline
-- **Regular audits**: Periodically review group membership and remove inactive contacts
-- **Metadata discipline**: Avoid discussing sensitive topics in any digital format until necessary
+- Device encryption: Enable full-disk encryption on all devices
+- Separate devices: Consider dedicated phones for sensitive communications
+- Air-gapped backups: Store encryption keys and contact information offline
+- Regular audits: Periodically review group membership and remove inactive contacts
+- Metadata discipline: Avoid discussing sensitive topics in any digital format until necessary
 
 ```bash
 # Verify your Signal encryption key fingerprint with contacts
@@ -182,15 +182,6 @@ Encryption alone does not guarantee security. Implement these complementary prac
 # Settings > Security & Privacy > Cross-signing
 # Each device shows a fingerprint you can verify out-of-band
 ```
-
-## Summary
-
-The best encrypted communication for activists depends on context. Signal excels for usability and trust. Session removes identity linkage. Matrix offers infrastructure control. Briar provides resilience against connectivity disruption.
-
-For developers and power users willing to invest in technical setup, self-hosted Matrix combined with Session for sensitive contacts provides the strongest overall posture. For organizations prioritizing simplicity and speed, Signal with Session as a secondary option handles most scenarios.
-
-No tool guarantees safety. Operational discipline, threat awareness, and redundancy matter as much as encryption algorithms.
-
 
 ## Related Reading
 

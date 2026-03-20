@@ -170,9 +170,9 @@ This validation ensures generated passwords meet minimum complexity requirements
 
 Password managers remain the recommended storage solution for all generated passwords. Modern implementations should integrate with common managers through standardized formats:
 
-- **CSV export**: Compatible with most password managers
-- **JSON export**: Structured format for programmatic access
-- **Clipboard integration**: Secure clipboard handling with automatic clearing
+- CSV export: Compatible with most password managers
+- JSON export: Structured format for programmatic access
+- Clipboard integration: Secure clipboard handling with automatic clearing
 
 Always configure generated passwords for storage immediately upon creation. Passwords exist only in memory until stored—a critical security principle that prevents data loss and ensures consistent security practices.
 
@@ -187,11 +187,6 @@ Avoid character substitutions that reduce entropy. Replacing 'a' with '@' or 'i'
 Never generate passwords from predictable sources. User input, timestamps, and sequential patterns provide minimal entropy. Always use cryptographically secure random sources.
 
 Set up rate limiting and account lockout. Even strong passwords cannot compensate for authentication systems that permit unlimited login attempts.
-
-## Conclusion
-
-The best password generation strategy in 2026 combines high-entropy random generation with proper storage and unique credentials per service. For developers building authentication systems, use language-provided CSPRNGs, set appropriate length requirements (16+ characters for random strings, 6+ words for passphrases), and integrate with password managers for secure storage.
-
 
 ## Related Reading
 

@@ -21,9 +21,9 @@ The Arch Linux hardened kernel provides enhanced security features for users who
 
 Arch Linux offers several kernel packages through the official repositories and the AUR. The primary options include:
 
-- **linux-hardened**: A security-focused kernel with hardened memory allocations, stack protector defaults, and upstream Linux Hardening patches
-- **linux-zen**: A general-purpose kernel optimized for desktop usage with better scheduling
-- **linux-lts**: Long-term support kernel for stability over bleeding-edge features
+- linux-hardened: A security-focused kernel with hardened memory allocations, stack protector defaults, and upstream Linux Hardening patches
+- linux-zen: A general-purpose kernel optimized for desktop usage with better scheduling
+- linux-lts: Long-term support kernel for stability over bleeding-edge features
 
 For privacy-focused users, `linux-hardened` provides the most aggressive security defaults. The kernel includes features like kernel page table isolation (KPTI), randomize kernel memory offsets, and hardened user copy operations. These features protect against common privilege escalation attacks and memory corruption vulnerabilities.
 
@@ -257,7 +257,7 @@ hyperfine --warmup 3 'your-workload-command'
 
 Typical performance impact ranges from 1-5% for compute-heavy workloads. If performance degradation is unacceptable, consider the zen kernel as a balance between security and speed, or selectively disable certain boot parameters.
 
-The hardened kernel provides substantial security improvements for privacy-conscious users. Combined with proper system configuration and security practices, it forms a robust foundation for a privacy-focused Arch Linux installation.
+The hardened kernel provides substantial security improvements for privacy-conscious users. Combined with proper system configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
 
 
 ## Related Reading

@@ -20,11 +20,11 @@ Finding a browser that balances privacy, low resource usage, and developer-frien
 
 A lightweight browser should consume minimal memory and CPU while providing strong privacy protections. For developers and power users, the key metrics include:
 
-- **Memory footprint**: Under 200MB at idle for base installation
-- **Process isolation**: Separate processes for tabs and extensions
-- **Fingerprinting resistance**: Built-in or configurable protections against canvas, WebGL, and audio fingerprinting
-- **Extension ecosystem**: Support for privacy extensions like uBlock Origin
-- **Telemetry removal**: No anonymous usage data sent to remote servers
+- Memory footprint: Under 200MB at idle for base installation
+- Process isolation: Separate processes for tabs and extensions
+- Fingerprinting resistance: Built-in or configurable protections against canvas, WebGL, and audio fingerprinting
+- Extension ecosystem: Support for privacy extensions like uBlock Origin
+- Telemetry removal: No anonymous usage data sent to remote servers
 
 ## Top Recommendations for 2026
 
@@ -152,7 +152,7 @@ Brave's fingerprinting randomization is enabled by default. You can verify prote
 
 ### 4. Mullvad Browser
 
-The Mullvad Browser, developed by the Tor Project in partnership with Mullvad VPN, prioritizes fingerprinting resistance above all else. It's essentially a hardened version of Firefox designed to look identical to all users, eliminating browser fingerprinting entirely.
+The Mullvad Browser, developed by the Tor Project in partnership with Mullvad VPN, prioritizes fingerprinting resistance above all else. It's a hardened version of Firefox designed to look identical to all users, eliminating browser fingerprinting entirely.
 
 **Installation:**
 
@@ -218,13 +218,6 @@ firefox -P research     # Privacy-hardened profile
 ```
 
 This separation prevents cross-site tracking between your development work and personal browsing.
-
-## Conclusion
-
-The best lightweight private browser for 2026 depends on your specific requirements. For maximum privacy with developer-friendly features, Firefox with Arkenfox provides the best balance of control and protection. If you need Chrome compatibility, Brave offers hardened privacy with familiar DevTools. For the highest level of fingerprinting resistance, Mullvad Browser excels despite the trade-off in extension support.
-
-Test each option with your development workflow before committing. Browser preferences are personal, and the right choice depends on your specific use cases, threat model, and performance requirements.
-
 
 ## Related Reading
 
