@@ -156,10 +156,158 @@ Bitcoin regulations vary significantly by jurisdiction. In the United States:
 
 Consult local regulations before purchasing. This guide is for informational purposes and does not constitute legal advice.
 
+## Blockchain Analysis Prevention Techniques
+
+Even with no-KYC Bitcoin ATM purchases, blockchain analysis firms attempt to cluster transactions:
+
+### Address Reuse Avoidance
+
+```bash
+# Generate new address for each ATM purchase
+# Using Electrum in watch-only mode
+
+# On air-gapped machine (never touches internet)
+electrum --offline create
+
+# Generate receiving address before each purchase
+electrum --offline derive_address 0  # Generates new address
+
+# Manually record the address, move funds there from ATM
+```
+
+Address reuse is one of the strongest indicators that multiple transactions belong to the same person.
+
+### CoinJoin Timing
+
+```python
+# Implement CoinJoin after purchasing
+# Using Whirlpool (Samourai) or Wasabi
+
+# In Wasabi Wallet:
+# 1. After funding wallet from ATM
+# 2. Navigate to Privacy tab
+# 3. Select outputs to mix (combine multiple ATM purchases)
+# 4. Configure rounds: 100+ participants provides strong privacy
+```
+
+Proper CoinJoin implementation provides strong privacy guarantees. Analysts cannot determine which mixed output is yours with certainty.
+
+### Temporal Separation
+
+```python
+def safe_atm_withdrawal_schedule():
+    """
+    Implement time separation between purchases
+    """
+    return {
+        "first_purchase": "2026-03-20 14:30",
+        "second_purchase": "2026-03-25 09:15",  # 5 days later
+        "third_purchase": "2026-04-10 16:45",   # 16 days later
+    }
+```
+
+The longer the time separation, the harder for blockchain analysis to correlate transactions.
+
+## P2P Trading Platforms
+
+LocalBitcoins and Bisq provide privacy advantages over ATMs:
+
+**LocalBitcoins**:
+- Cash trade listings for in-person transactions
+- No KYC for peer-to-peer trades
+- Reputation system helps identify trustworthy traders
+- Trade in person at coffee shops or neutral locations
+
+**Bisq**:
+- Decentralized P2P exchange
+- Multiple payment methods including cash deposit
+- Escrow provided by Bisq network
+- No central authority (runs on Tor network)
+
+P2P trades avoid ATM transaction limits and provide more anonymity than ATMs, though they require finding trustworthy traders.
+
+## Geographic Privacy Considerations
+
+Avoid patterns that make you identifiable:
+
+```bash
+# DON'T use Bitcoin ATMs near:
+- Your home address
+- Your workplace
+- Your regular routes
+- Stores where you're a known customer
+
+# DO use ATMs:
+- In areas you rarely visit
+- Far from predictable patterns
+- Multiple different locations
+- If possible, in different cities
+```
+
+This prevents surveillance from linking your Bitcoin purchases to your daily routine.
+
+## Spending Considerations
+
+Once you own Bitcoin, how you spend it matters:
+
+**High-Risk Spending Patterns**:
+- Immediately deposit to exchange that requires ID
+- Transfer to easily-identifiable services (PayPal, Stripe)
+- Unusual round amounts (exactly $1,000)
+
+**Better Approaches**:
+- Wait weeks or months before spending
+- Use CoinJoin before any exchange deposit
+- Spend at merchants that don't require ID
+- Use decentralized exchanges (Uniswap, Bisq)
+
+The "no-KYC exit" becomes irrelevant if you later deposit to a regulated exchange where you must verify your identity.
+
+## Threat Model-Specific Guidance
+
+**Individual Privacy** (Low threat):
+- Single no-KYC ATM purchase sufficient
+- Basic OpSec (use cash, disable location) adequate
+- CoinJoin optional but recommended
+
+**Evading Surveillance** (Medium threat):
+- Multiple purchases over months from different ATMs
+- CoinJoin implementations mandatory
+- Temporal separation important
+- Geographic dispersion recommended
+
+**Hiding from Determined Adversary** (High threat):
+- Don't use Bitcoin (use Monero or Zcash instead)
+- Bitcoin's public ledger is permanent and analyzable
+- No amount of mixing provides complete anonymity against well-resourced analysis
+
+## Regulatory Compliance Checklist
+
+Before making any purchase, verify compliance with your jurisdiction:
+
+```
+United States:
+☐ Bitcoin not regulated as currency (IRS treats as property)
+☐ Structuring to avoid reporting is illegal (must not split purchases)
+☐ No-KYC purchases below $10,000 generally don't trigger reports
+☐ Large purchases may still be flagged if unusual for you
+
+European Union:
+☐ Fifth Anti-Money Laundering Directive requires KYC above €1,000
+☐ Crypto-assets regulations apply to exchanges and some providers
+☐ Transaction reporting required above thresholds
+
+Switzerland/Other:
+☐ Check local regulations before purchasing
+☐ Consult attorney if uncertain
+```
+
+This guide is informational. Always verify compliance with local regulations before purchase.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Mimblewimble Protocol Privacy Features](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

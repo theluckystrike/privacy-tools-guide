@@ -156,10 +156,162 @@ Managing Significant Locations represents one component of location privacy. Con
 
 **Share My Location**: Disable this feature in Settings → [Your Name] → Find My to prevent location sharing with contacts.
 
+## Extracting Significant Locations Data on Jailbroken Devices
+
+For researchers and developers (jailbroken devices only), direct database access is possible:
+
+```bash
+# Location of Significant Locations database on jailbroken device:
+# /var/mobile/Library/Preferences/com.apple.locationd.plist
+
+# Database file (SQLite):
+# ~/Library/Caches/LocationCache/consolidated.db
+
+# Extract on jailbroken device:
+sqlite3 ~/Library/Caches/LocationCache/consolidated.db \
+  "SELECT * FROM CellLocation LIMIT 20;"
+
+# Export full location history
+sqlite3 ~/Library/Caches/LocationCache/consolidated.db ".dump" > locations.sql
+```
+
+This reveals the raw data Apple collects. Note: Jailbreaking voids your warranty and can compromise security.
+
+## Location Privacy by iOS Version
+
+Apple has refined location tracking across iOS versions:
+
+**iOS 13-15**: Significant Locations tracked without major privacy controls. Users had minimal transparency.
+
+**iOS 16-17**: Added ability to see more granular location data and clear by time period. On-device processing improved.
+
+**iOS 18+** (planned): Enhanced local processing, user transparency improvements, potential end-to-end encryption options.
+
+If privacy is critical, verify your iOS version's capabilities. Older versions provide less control.
+
+## Using Shortcuts for Location Automation
+
+Create Shortcuts to manage location settings:
+
+```swift
+// iOS Shortcuts - Disable sensitive location services
+// Automation: When leaving "Work" location
+
+// 1. Request Siri & Shortcuts permission
+// 2. Create automation: Personal → Location → When leaving [location]
+
+// Actions:
+// → Set Location Services for each app to "Never"
+// → Turn off System Services > Significant Locations
+// → Send notification confirming location services disabled
+
+// Schedule for weekday end-of-day
+// Run Monday-Friday at 5:30 PM
+```
+
+This automation strengthens location privacy by disabling tracking when you leave work.
+
+## Threat Model Analysis for Location Privacy
+
+Different privacy levels suit different needs:
+
+**Low Threat** (casual user):
+- Default iOS settings acceptable
+- Clear Significant Locations occasionally (monthly)
+- Allow standard location services
+
+**Medium Threat** (privacy-conscious):
+- Disable Significant Locations entirely
+- Review which apps have location access
+- Limit to "While Using App" rather than "Always"
+- Clear location history monthly
+
+**High Threat** (journalist, activist, person in abusive situation):
+- Disable Location Services entirely (accept usability loss)
+- Use only WiFi location when possible
+- Use separate phone for sensitive activities
+- Consider older iPhone with early iOS version (less tracking)
+
+## Location Privacy Beyond Significant Locations
+
+Significant Locations is one tracking mechanism. Other location data collection includes:
+
+**System Services Location Access**:
+- Apple Ads uses location for targeted advertising
+- Calendar has location-based suggestions
+- Weather location personalizes forecasts
+- Emergency SOS location to emergency services
+
+**Third-Party Apps**: Review app permissions individually
+
+**iCloud Location Data**: Find My feature syncs locations to iCloud account
+
+**WiFi Networks**: Your device remembers WiFi networks you've connected to and their locations
+
+Disabling Significant Locations alone doesn't provide complete location privacy. Implement comprehensive location privacy:
+
+```bash
+# Complete location privacy lockdown on iPhone
+# Settings → Privacy & Security → Location Services → Toggle OFF
+
+# Or selective approach:
+# Location Services: ON (needed for core features)
+# Significant Locations: OFF
+# System Services:
+  # ✓ Emergency SOS (necessary)
+  # ✗ Apple Ads (disable)
+  # ✗ Location-Based Suggestions (disable)
+  # ✗ WiFi Networking (disable)
+  # ✗ iCloud Location (disable)
+
+# Per-app settings:
+# Maps: "While Using"
+# Health: "Never"
+# Social Media: "Never"
+# Shopping: "Never"
+```
+
+## Privacy Audit Process
+
+Quarterly location privacy audit:
+
+1. **Check Significant Locations**: How many entries exist? Has it grown unexpectedly?
+2. **Review per-app permissions**: Have you granted location to apps you forgot about?
+3. **Audit System Services**: Verify you haven't accidentally re-enabled services
+4. **Check Find My**: Verify location sharing is limited to trusted contacts
+5. **Test location denial**: Temporarily disable location for one app and verify app still works
+
+This regular audit catches configuration drift where privacy settings gradually get relaxed.
+
+## Recovery from Excessive Location Tracking
+
+If you've been using Significant Locations for years, here's how to recover privacy:
+
+```
+Week 1:
+- Clear Significant Locations (Settings → Privacy → Location Services → System Services → Significant Locations → Clear History)
+- Disable collection going forward
+
+Week 2-4:
+- Review per-app location permissions
+- Change any "Always" to "While Using"
+- Disable location for unnecessary apps
+
+Month 2-3:
+- Verify new Significant Locations don't accumulate
+- Review Siri suggestions to confirm location data isn't being used
+
+Ongoing:
+- Monthly audit of location permissions
+- Quarterly full privacy review
+```
+
+This phased approach restores privacy while minimizing service disruption.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Best Encrypted Messenger Apps 2026](/privacy-tools-guide/best-encrypted-messenger-apps-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

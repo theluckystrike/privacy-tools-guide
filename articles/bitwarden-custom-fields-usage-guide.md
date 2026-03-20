@@ -156,10 +156,150 @@ Never store plaintext passwords in text fields—use hidden or protected fields 
 
 When sharing items through Bitwarden Send or organizational sharing, custom field visibility depends on the item's sharing settings. Review shared items carefully to ensure sensitive fields aren't exposed unintentionally.
 
+## Advanced Field Patterns for Power Users
+
+### Multi-Step Deployment Documentation
+
+Store complete deployment instructions in custom fields:
+
+```
+Item: Production Deployment Instructions
+Password: [deploy user password]
+
+Custom Fields:
+- Deployment Script URL (Text): https://deploy.example.com/scripts/prod-deploy.sh
+- Required Environment Variables (Protected): [entire .env file content]
+- Pre-deployment Checklist (Text): [step-by-step checklist]
+- Rollback Command (Protected): git reset --hard [commit-hash]; ./deploy.sh
+- Notification Channel (Text): #production-deployments-slack
+```
+
+This approach keeps deployment knowledge with credentials, preventing situations where credentials exist but the deployment process is lost to departing team members.
+
+### Credential Expiration Tracking
+
+Implement automated expiration monitoring:
+
+```bash
+#!/bin/bash
+# Check expiring credentials in Bitwarden
+bw list items | jq -r '.[] | select(.fields != null) |
+  select(.fields[] | select(.name == "Expires") |
+  ((.value | split("-")[0] | tonumber) - 2026 < 1)) |
+  "\(.name): Expires \((.fields[] | select(.name == "Expires") | .value))"'
+```
+
+### Geographic/Temporal Field Organization
+
+Add custom fields for context-aware credential use:
+
+```
+Item: Production Database - US Region
+Password: [db password]
+
+Custom Fields:
+- Region (Text): us-east-1
+- Availability Zone (Text): us-east-1a
+- Timezone (Text): America/New_York
+- Business Hours Only (Text): 6am-8pm EST Monday-Friday
+- Backup Window (Text): Sunday 2am-4am EST
+```
+
+This allows scripts to select credentials based on deployment context.
+
+## Integration with Infrastructure-as-Code
+
+Connect Bitwarden credentials to Terraform or other IaC tools:
+
+```bash
+#!/bin/bash
+# Terraform variable file generator from Bitwarden
+
+bw unlock your@email.com  # Or use BW_SESSION environment variable
+
+cat > terraform.tfvars <<'EOF'
+# Auto-generated from Bitwarden - DO NOT EDIT MANUALLY
+
+# Database credentials
+rds_password = "$(bw get item 'RDS Production' | jq -r '.login.password')"
+db_host = "$(bw get item 'RDS Production' | jq -r '.fields[] | select(.name=="Host") | .value')"
+
+# API keys
+stripe_api_key = "$(bw get item 'Stripe Live' | jq -r '.fields[] | select(.name=="API Key") | .value')"
+
+# AWS credentials
+aws_access_key = "$(bw get item 'AWS Prod' | jq -r '.login.username')"
+aws_secret_key = "$(bw get item 'AWS Prod' | jq -r '.login.password')"
+EOF
+
+# Then provision with Terraform
+terraform apply -var-file=terraform.tfvars
+```
+
+## Threat Modeling Custom Fields
+
+Understand the security properties of different field types:
+
+**Text Fields**: Visible in plaintext. Use only for non-sensitive metadata like server hostnames or documentation URLs.
+
+**Hidden Fields**: Masked in UI but still searchable and exportable. Suitable for API keys that don't require extra protection layers.
+
+**Protected Fields**: Completely hidden, non-searchable, not included in plaintext exports. Best for recovery codes, encryption keys, or emergency credentials.
+
+```bash
+# Export shows protected fields as empty
+bw export --format json | jq '.items[].fields[] | select(.type == 2) | .value'
+
+# Output: null (protected fields are not exported unencrypted)
+```
+
+Use Protected fields for anything you absolutely don't want leaving your Bitwarden vault, even in encrypted exports.
+
+## Field Naming Conventions at Scale
+
+Establish consistent field naming to support large vaults:
+
+```
+Prefixed naming:
+- API_KEY (text field)
+- API_ENDPOINT (text field)
+- API_RATE_LIMIT (text field)
+- CRED_USERNAME (hidden field)
+- CRED_PASSWORD (hidden field)
+- SEC_RECOVERY_CODE (protected field)
+```
+
+This allows consistent grep patterns and CLI queries:
+
+```bash
+# Find all API endpoints
+bw list items | jq '.[] | .fields[] | select(.name | startswith("API_")) | .name'
+
+# Extract specific configuration
+bw get item "MyService" | jq '.fields[] | select(.name | startswith("API_")) | {name, value}'
+```
+
+## Audit and Compliance
+
+Track credential usage for compliance:
+
+```json
+{
+  "field": "ServiceAccountKey",
+  "purpose": "Production deployment automation",
+  "rotated": "2026-03-01",
+  "next_rotation": "2026-06-01",
+  "accessed_by": ["deploy-bot", "senior-devops"],
+  "compliance": ["SOC2", "ISO27001"]
+}
+```
+
+Document this in custom fields for regulatory audits.
+
 ## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+- [Bitwarden Vault Export Backup Guide: Complete Technical](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [Telegram vs Signal: Which Is Actually Safer? A Technical](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
 - [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

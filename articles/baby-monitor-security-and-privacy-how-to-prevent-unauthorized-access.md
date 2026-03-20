@@ -152,14 +152,141 @@ If you notice unusual behavior—camera moving on its own, lights activating, st
 
 Consider covering the camera lens until you've secured the device.
 
+## Known Baby Monitor Security Vulnerabilities
+
+Before purchasing any monitor, research known vulnerabilities:
+
+**Hacked Baby Monitors in News**:
+- In 2019, researchers found over 275,000 unsecured baby monitor feeds publicly accessible
+- Multiple brands including Fredi, Sonoff, and generic Chinese brands had firmware allowing unauthenticated access
+- Attackers simply guessed IP addresses and directly accessed video feeds without credentials
+
+**Common Vulnerability Patterns**:
+- Hardcoded credentials in firmware (cannot be changed by users)
+- Unencrypted video streams sent over WiFi
+- No authentication required for API endpoints
+- Default UPnP port mappings exposing devices to the internet
+- Insecure update mechanisms allowing attacker firmware installation
+
+When evaluating monitors, check security vulnerability databases:
+
+```bash
+# Search for known vulnerabilities
+curl -s "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-XXXXX" | grep "Baby\|Monitor"
+
+# Or use a security database
+# https://www.vulnerability-lab.com/
+# https://www.exploit-db.com/
+```
+
+Always check if the specific model you're considering has CVE (Common Vulnerabilities and Exposures) records.
+
+## Behavioral Detection: Identifying Hacked Monitors
+
+Signs your monitor may be compromised:
+
+- Camera moving on its own (pan/tilt activating randomly)
+- Unexpected audio playback from monitor
+- LED indicators behaving abnormally (lighting up when shouldn't)
+- Significantly increased data usage (background upload of video)
+- Monitor becoming sluggish or unresponsive
+- Temperature or humidity readings that don't match reality (indicates false sensor data from attacker)
+
+If you notice any of these:
+
+1. Immediately disconnect monitor from power AND network
+2. Do NOT reconnect to same WiFi network
+3. Factory reset the device (hold reset button, follow manufacturer process)
+4. Change your WiFi password to something completely new
+5. Change all passwords for apps using the monitor
+6. Contact the manufacturer's security team to report the incident
+
+## Tool Recommendations with Pricing
+
+Several manufacturers stand out for security practices:
+
+**Nanit Plus** ($199-299): Offers local streaming without mandatory cloud upload. Encrypted video stored locally on their secure servers. Supports HomeKit secure video for additional integration.
+
+**Eufy SpaceView Pro** ($149-249): No-WiFi option with closed 720p signal. If you need internet connectivity, their WiFi models offer strong encryption and local storage options.
+
+**Owlet Cam 2** ($199): Focuses on encrypted transmission with two-factor authentication standard. Regular security updates. Note: Different from their discontinued wearable monitors due to safety recalls.
+
+**Motorola Halo+** ($179): Established brand with good firmware update track record. Encrypted cloud option, but local viewing doesn't require internet.
+
+## Advanced Network Monitoring Techniques
+
+Power users can implement sophisticated monitoring:
+
+```bash
+# Monitor DNS requests from baby monitor to detect suspicious communication
+# Install mitmproxy on your router or a Raspberry Pi
+pip install mitmproxy
+
+# Run with hostname resolution
+mitmproxy -p 8080 --mode transparent --showhost
+
+# Check for unexpected destination domains
+grep -i baby-monitor ~/mitmproxy.log | grep -v "amazonaws\|trusted-cdn"
+```
+
+**Wireshark packet analysis** reveals certificate chains, allowing verification that encrypted connections use legitimate certificates:
+
+```bash
+# Capture traffic from monitor's IP
+sudo wireshark -i en0 -f "host 192.168.1.50"
+
+# Look for Certificate Authority names—should be recognized companies
+# Avoid monitors using self-signed certificates (indicates poor security)
+```
+
+## Behavioral Detection Patterns
+
+Hacked monitors typically show distinctive patterns:
+
+- Sudden increase in outbound bandwidth at unusual hours
+- Connections to IP ranges not matching manufacturer's known services
+- DNS queries for dynamic domain services (indicates attacker changing targets)
+- Failed login attempts visible in router logs
+- Unexpected firmware updates
+
+Create a baseline of normal traffic, then compare monthly. Most routers can export traffic logs.
+
 ## Alternative: Use a Dedicated Non-Networked Monitor
 
 For maximum security, consider traditional analog baby monitors that operate on dedicated frequencies without internet connectivity. These cannot be hacked remotely because they don't connect to networks. Modern digital audio monitors from companies like Motorola and VTech offer clear audio without privacy concerns—just verify they use encrypted transmission.
 
-{% endraw %}
+**DECT baby monitors** operate on the Digital Enhanced Cordless Telecommunications standard (1.9 GHz in US). These provide secure, encrypted channels without internet exposure:
+
+- Motorola MBP482 ($99-120): Simple DECT-only option
+- VTech RM5764 ($139): Larger screen, but stays local
+- Philips Avent SCD845 ($149-199): European standard, excellent encryption
+
+## Threat Model for Different Risk Profiles
+
+Tailor your security approach to your actual threat:
+
+**Low-risk environment** (suburban home, no specific threats):
+- Change default password
+- Use WPA2/WPA3 WiFi
+- Enable auto-updates
+
+**Medium-risk** (shared building, work with sensitive clients):
+- Implement everything above
+- Monitor network activity quarterly
+- Use separate IoT VLAN
+- Enable two-factor authentication
+
+**High-risk** (journalists, activists, custody disputes):
+- Non-networked monitor preferred
+- If internet required: dedicated hardware security key, air-gapped backup device
+- Professional security audit of entire network
+- Consult security researchers before selecting specific monitor
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}

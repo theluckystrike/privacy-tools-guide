@@ -157,10 +157,196 @@ The privacy requirements for mergers and acquisitions due diligence represent a 
 
 By conducting thorough privacy due diligence, organizations can avoid inheriting unexpected liabilities and establish a solid foundation for post-acquisition integration. The investment in technical assessment during due diligence pays dividends through smoother integrations and reduced regulatory exposure.
 
+## Encryption Audit Procedures
+
+Verify encryption implementation across systems:
+
+```bash
+#!/bin/bash
+# Encryption assessment script
+
+# Check TLS configuration
+echo "Checking TLS versions and ciphers..."
+nmap --script ssl-enum-ciphers -p 443 target.example.com
+
+# Verify certificate validity
+echo "Verifying certificates..."
+openssl s_client -connect target.example.com:443 -servername target.example.com | \
+  openssl x509 -noout -text | grep -E "Subject:|Validity|Public-Key"
+
+# Check database encryption
+echo "Checking database encryption..."
+# For MySQL
+mysql -u root -p -e "SHOW GLOBAL VARIABLES LIKE '%ssl%';"
+
+# For PostgreSQL
+psql -U postgres -c "SHOW ssl;"
+
+# Check data at rest encryption
+echo "Checking filesystem encryption..."
+# For AWS
+aws ec2 describe-volumes --query "Volumes[*].[VolumeId,Encrypted]"
+
+# For on-premises
+mount | grep -E "ext4|btrfs" | grep -i encrypt
+```
+
+## Consent Audit Tools
+
+Document consent management effectiveness:
+
+```javascript
+// Script to audit consent implementation
+async function auditConsentManagement() {
+  const issues = [];
+
+  // Check for cookie banner on first visit
+  const hasCookieBanner = document.querySelector('[data-cookiebanner]');
+  if (!hasCookieBanner) {
+    issues.push('No cookie banner detected on initial page load');
+  }
+
+  // Verify consent options (not just accept)
+  const rejectButton = document.querySelector('button[data-reject-cookies]');
+  if (!rejectButton) {
+    issues.push('No reject option for cookies (only accept-all)');
+  }
+
+  // Check for pre-checked boxes
+  const checkboxes = document.querySelectorAll('input[type="checkbox"][data-consent]');
+  for (let cb of checkboxes) {
+    if (cb.checked && !cb.disabled) {
+      issues.push(`Consent checkbox pre-checked: ${cb.id}`);
+    }
+  }
+
+  // Verify cookie storage
+  const consentRecord = localStorage.getItem('user_consent');
+  if (!consentRecord) {
+    issues.push('No consent record stored');
+  } else {
+    const consent = JSON.parse(consentRecord);
+    if (!consent.timestamp || !consent.version) {
+      issues.push('Consent record missing timestamp or version');
+    }
+  }
+
+  return issues;
+}
+```
+
+## Data Retention Policy Verification
+
+Ensure documented policies are actually implemented:
+
+```python
+def verify_retention_implementation(database_connection):
+    """
+    Check if documented retention policies are actually enforced
+    """
+    issues = []
+
+    # Get documented retention policies
+    documented_policies = {
+        'user_activity_logs': 90,  # days
+        'audit_logs': 365,
+        'customer_email': None,  # permanent
+        'temp_cache': 7,
+    }
+
+    for table, retention_days in documented_policies.items():
+        # Check if table has retention implementation
+        query = f"""
+        SELECT COUNT(*) as old_records
+        FROM {table}
+        WHERE created_at < NOW() - INTERVAL '{retention_days} days'
+        """
+
+        cursor = database_connection.cursor()
+        cursor.execute(query)
+        result = cursor.fetchone()
+
+        if result['old_records'] > 0:
+            issues.append({
+                'table': table,
+                'policy': f'{retention_days} days',
+                'actual_oldest_record': 'exceeds policy',
+                'count_violating': result['old_records']
+            })
+
+    return issues
+```
+
+## Post-Acquisition Privacy Integration
+
+After due diligence, plan integration:
+
+```yaml
+privacy_integration_timeline:
+
+  pre_closing_30_days:
+    - Finalize privacy gap remediation
+    - Obtain regulatory pre-approval if needed
+    - Document all integration approaches
+    - Train integration teams on privacy risks
+
+  closing_day:
+    - Execute transition documentation
+    - Transfer DPA agreements to acquirer
+    - Notify data subjects if required
+    - Update privacy policies
+
+  week_1_to_2:
+    - Merge user databases with full audit trail
+    - Verify consent records transferred correctly
+    - Test data subject access request procedures
+    - Confirm encryption keys migrated
+
+  month_1_to_3:
+    - Full privacy impact assessment of combined entity
+    - Update data flow diagrams
+    - Consolidate privacy documentation
+    - Run compliance verification against integrated system
+
+  ongoing:
+    - Monthly compliance monitoring
+    - Quarterly privacy audits
+    - Annual comprehensive assessment
+```
+
+## Tool Recommendations for Due Diligence
+
+**Privacy Assessment Tools**:
+- **OneTrust**: Enterprise privacy and compliance platform ($50k+/year)
+- **TrustArc**: Privacy assessment and documentation tools ($30k+/year)
+- **Osano**: Privacy management platform ($10k-50k/year)
+
+**Technical Audit Tools**:
+- **Nessus**: Vulnerability scanning ($3,500-30,000/year)
+- **Qualys**: Cloud-based security audit (pay-per-asset)
+- **Burp Suite Professional**: Web application security testing ($10-15k/year)
+
+**Database Analysis**:
+- **Prizm**: Data discovery and classification (part of larger platforms)
+- **Varonis**: Data governance and security
+- **Imperva**: Database activity monitoring
+
+## Team Composition for Privacy Due Diligence
+
+Effective due diligence requires cross-functional expertise:
+
+- **Privacy Officer/Counsel**: Regulatory interpretation, compliance strategy
+- **Security Engineer**: Infrastructure assessment, encryption verification
+- **Database Administrator**: Data inventory, retention implementation
+- **Software Architect**: Code review, data flow analysis
+- **Compliance Specialist**: Documentation, audit trail verification
+- **External Auditor**: Independent verification, regulatory perspective
+
+Budget 3-6 months for thorough privacy due diligence on mid-sized companies (100+ employees).
 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [GDPR Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

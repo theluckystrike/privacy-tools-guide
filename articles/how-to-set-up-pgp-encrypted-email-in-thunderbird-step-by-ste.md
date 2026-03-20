@@ -156,10 +156,150 @@ echo "Secret message" | gpg --encrypt --recipient recipient@example.com --armor
 
 However, Thunderbird's built-in OpenPGP integration provides better usability and handles MIME multipart messages correctly.
 
+## Advanced Key Management at Scale
+
+For organizations managing multiple PGP keys:
+
+```bash
+# Create a key management infrastructure
+# Store master key on air-gapped device
+# Subkeys on internet-connected machines
+
+# On offline machine, create primary key
+gpg --full-generate-key  # 4096-bit RSA, expires in 1 year
+
+# Export public key
+gpg --armor --export your.email@example.com > company_public_key.asc
+
+# Create revocation certificate
+gpg --gen-revoke your.email@example.com > revocation.asc
+
+# Create subkeys for different purposes
+# Signing subkey
+gpg --edit-key your.email@example.com
+# Command: addkey → RSA (sign only) → 4096 → expires 6 months
+
+# Encryption subkey
+gpg --edit-key your.email@example.com
+# Command: addkey → RSA (encrypt only) → 4096 → expires 6 months
+```
+
+This separation means if a signing key is compromised, you can revoke just that subkey without losing your entire key.
+
+## Using GnuPG in Bash Scripts
+
+Automate encryption for sensitive information:
+
+```bash
+#!/bin/bash
+# Automated encrypted backup script
+
+RECIPIENT="backup@company.com"
+BACKUP_DIR="/var/backups"
+GPG_KEY_ID="0x1234ABCD"  # Your GPG key ID
+
+# Create backup
+tar czf - /important/data | \
+  gpg --encrypt \
+      --recipient $RECIPIENT \
+      --sign \
+      --armor \
+      > "$BACKUP_DIR/backup-$(date +%Y%m%d).tar.gz.asc"
+
+# Upload to cloud storage
+aws s3 cp "$BACKUP_DIR/backup-$(date +%Y%m%d).tar.gz.asc" \
+         s3://encrypted-backups/
+
+# Verify backup integrity
+gpg --verify "$BACKUP_DIR/backup-$(date +%Y%m%d).tar.gz.asc"
+```
+
+This ensures backups remain encrypted from creation through storage.
+
+## Troubleshooting Advanced PGP Issues
+
+**Issue: "No public key" error when verifying signatures**
+
+```bash
+# The sender's key isn't in your keyring
+# Request it from them or a keyserver
+gpg --keyserver keys.openpgp.org --recv-keys 0x1234ABCD
+
+# Or import from keyserver if you know their keyserver
+gpg --keyserver pgp.mit.edu --search their.email@example.com
+```
+
+**Issue: Signature shows "unknown trustworthiness"**
+
+```bash
+# You imported their key but haven't verified the fingerprint
+# Verify fingerprint through an out-of-band channel (phone, in-person)
+gpg --fingerprint their.email@example.com
+
+# Sign their key to mark it as trusted
+gpg --sign-key their.email@example.com
+
+# Set ultimate trust if you're confident
+gpg --edit-key their.email@example.com
+# Command: trust → 5 (ultimate)
+```
+
+**Issue: Thunderbird won't use your key**
+
+```bash
+# Ensure gpg-agent is running
+pgrep gpg-agent || gpg-connect-agent /bye
+
+# Verify Thunderbird found your keys
+# Thunderbird Settings → Privacy & Security → End-to-End Encryption
+# Should list your key with email address
+```
+
+## Email Encryption Workflow
+
+Optimal workflow for secure email communication:
+
+1. **For new contacts**: Exchange keys through secure channels first (Signal, in-person, video call)
+2. **Verify fingerprints**: When importing, always verify the fingerprint matches
+3. **Use signed emails**: Sign all emails even if not encrypted (builds trust)
+4. **Establish communication**: Once key exchange is complete, enable encryption for sensitive topics
+
+## Integration with Other Email Clients
+
+While this guide focuses on Thunderbird, other clients support PGP:
+
+**Apple Mail** (macOS): Limited PGP support. Use third-party plugin "GPGTools" ($9 one-time, open-source).
+
+**Outlook**: Microsoft removed native PGP support. Use "Gpg4Win" for Windows or Thunderbird.
+
+**Gmail**: Web interface supports PGP through browser extensions (FlowCrypt, Mailvelope).
+
+**Mobile**: Signal includes encrypted messaging. For email on phone: K-9 Mail (Android) with OpenKeychain plugin.
+
+For maximum compatibility, Thunderbird remains the strongest open-source option with built-in PGP support.
+
+## Performance and Usability Trade-offs
+
+PGP encryption provides strong security guarantees but at usability cost:
+
+**Advantages**:
+- Strong cryptographic guarantees
+- Decentralized (no single point of failure)
+- Open standards (can migrate to different tools)
+- Mandatory verification builds trust networks
+
+**Disadvantages**:
+- Key management complexity
+- Users who lose passphrases cannot recover messages
+- Adoption friction (most users don't use PGP)
+- Metadata (sender, recipient, subject) not encrypted
+
+For organizations, consider whether PGP is necessary or if simpler transport encryption (TLS) plus authentication might suffice.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Best Encrypted Email Provider 2026](/privacy-tools-guide/best-encrypted-email-provider/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

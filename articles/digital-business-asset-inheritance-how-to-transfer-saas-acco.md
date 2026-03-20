@@ -158,9 +158,149 @@ Digital business assets have legal implications. Consider:
 - Consulting with an estate planning attorney familiar with digital assets
 - Understanding that some SaaS terms of service may restrict transfer
 
+## Tool Recommendations for Asset Documentation
+
+**1Password Families** ($14.99/month for 5 users): Provides Emergency Access feature where designated family members can request vault access after 30 days of inactivity. Supports sharing of specific items with defined expiration.
+
+**Bitwarden Family Organizations** ($12/year): Allows creating an organization vault where multiple family members have admin access. Cheaper than competitors with strong open-source credentials.
+
+**LastPass Family** ($17.99/month): Has designated emergency contacts who can access shared vaults. Note: LastPass has had security issues historically—current version is improved but verify current status before using.
+
+## Comprehensive Digital Asset Inventory Template
+
+Create a detailed spreadsheet documenting all digital assets:
+
+```yaml
+digital_assets:
+  - name: "GitHub Repositories"
+    type: "code_repository"
+    service: "GitHub"
+    account_email: "founder@company.com"
+    access_url: "https://github.com/company-name"
+    credentials_location: "Bitwarden vault - GitHub Primary"
+    transfer_instructions: "Change organization owner through Settings > Organizations > Members"
+    criticality: "high"
+    dependencies: ["CI/CD pipelines", "deployed applications"]
+
+  - name: "AWS Account"
+    type: "cloud_infrastructure"
+    service: "Amazon AWS"
+    account_id: "123456789012"
+    credentials_location: "1Password Vault - AWS Root"
+    transfer_instructions: "Add heir as IAM user with full admin permissions, then transfer billing"
+    criticality: "critical"
+    dependencies: ["production servers", "databases", "CDN"]
+    estimated_monthly_cost: "$2,400"
+
+  - name: "Stripe Account"
+    type: "payment_processor"
+    service: "Stripe"
+    account_id: "acct_xxxxx"
+    credentials_location: "Bitwarden - Stripe Admin"
+    transfer_instructions: "Add new owner email through Account Settings > Owners"
+    criticality: "high"
+    dependencies: ["billing system", "subscription management"]
+
+  - name: "Domain Names"
+    type: "domain"
+    service: "Namecheap"
+    domains:
+      - "company.com"
+      - "api.company.com"
+    credentials_location: "Bitwarden - Namecheap Master"
+    transfer_instructions: "Change registrant email, update WHOIS contact"
+    criticality: "high"
+    expiration_date: "2027-03-15"
+```
+
+## API Key Inventory and Rotation
+
+Document every API key with rotation schedule:
+
+```json
+{
+  "api_key_inventory": [
+    {
+      "service": "GitHub API",
+      "token_name": "CI/CD Deployments",
+      "scope": "repo:write,actions:write",
+      "created": "2023-06-01",
+      "last_rotated": "2026-01-15",
+      "next_rotation": "2026-04-15",
+      "stored_in": "CircleCI environment variables",
+      "backup_location": "Bitwarden vault",
+      "regeneration_impact": "CI/CD deployments will fail until CircleCI updated"
+    },
+    {
+      "service": "Stripe API",
+      "key_type": "Restricted API Key",
+      "permissions": ["read_write:charges", "read:customers"],
+      "created": "2024-02-01",
+      "rotation_required": false,
+      "notes": "Restricted keys don't expire but should be rotated annually"
+    }
+  ]
+}
+```
+
+## SaaS Platforms with Built-In Succession Features
+
+Several platforms have native successor or emergency access features:
+
+**GitHub**: GitHub organizations can have multiple owners. Transfer ownership through Settings > Owners. Consider creating a business organization if you currently use a personal account.
+
+**AWS**: Create a separate "root access" IAM user for your heir. Document the process in your inheritance documentation. Test it works before creating your will.
+
+**Stripe**: Multiple account owners can be added. Stripe doesn't have an automatic succession feature but allows changing account ownership through the Dashboard.
+
+**Google Workspace**: Set up a designated "succession admin" account. Google provides procedures for account recovery and data transfer to designated contacts.
+
+**Zapier**: Create a shared organization account where your heir is co-owner. Important integrations shouldn't depend on your personal account.
+
+## Inheritance Testing Protocol
+
+Before finalizing your documentation, test that your heir can actually access critical systems:
+
+```bash
+#!/bin/bash
+# Inheritance access verification script
+
+# Test password manager access
+echo "Testing password manager..."
+bw login heir@example.com  # Or 1password, lastpass, etc.
+bw list items --search "critical"
+
+# Test AWS access
+echo "Testing AWS permissions..."
+aws sts get-caller-identity
+aws ec2 describe-instances  # Should return your instances
+
+# Test GitHub access
+echo "Testing GitHub API..."
+curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user/repos
+
+# Test domain registrar access
+echo "Verify registrar account access..."
+# Navigate to registrar dashboard manually and confirm access works
+
+echo "All critical systems accessible from heir account"
+```
+
+Run this test quarterly to ensure everything still works as inheritance systems change.
+
+## Post-Inheritance Priorities
+
+If you're inheriting digital assets from someone:
+
+1. **Immediately change all passwords**: The original owner's password manager may be compromised
+2. **Review recent access logs**: Check AWS CloudTrail, GitHub audit logs, etc. for unauthorized activity
+3. **Rotate critical API keys**: Even if passwords are changed, old API keys may exist
+4. **Update contact information**: Email, phone, recovery methods should reflect new owner
+5. **Review third-party integrations**: Deactivate any services the previous owner used
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Bitwarden Vault Export Backup Guide: Complete Technical](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
