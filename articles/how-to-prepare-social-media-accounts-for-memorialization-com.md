@@ -6,7 +6,7 @@ description: "A practical checklist and technical guide for preparing social med
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-prepare-social-media-accounts-for-memorialization-com/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

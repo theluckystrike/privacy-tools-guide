@@ -5,6 +5,10 @@ description: "Create a portable USB-based toolkit for bypassing internet censors
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-portable-censorship-circumvention-kit-on-usb-dr/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Building a portable censorship circumvention kit on a USB drive gives you reliable access to the open internet regardless of where you travel. This guide walks through creating a self-contained toolkit that works across different computers without leaving traces on the host system.

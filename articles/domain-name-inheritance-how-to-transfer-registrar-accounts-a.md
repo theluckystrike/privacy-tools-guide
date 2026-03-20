@@ -6,6 +6,10 @@ description: "Learn how to transfer domain names and hosting accounts after deat
 date: 2026-03-16
 author: theluckystrike
 permalink: /domain-name-inheritance-how-to-transfer-registrar-accounts-a/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

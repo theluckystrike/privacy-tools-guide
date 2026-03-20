@@ -6,7 +6,7 @@ description: "A technical guide for protecting your physical mail from address h
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-physical-mail-privacy-preventing-address-h/
-categories: [privacy, guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true

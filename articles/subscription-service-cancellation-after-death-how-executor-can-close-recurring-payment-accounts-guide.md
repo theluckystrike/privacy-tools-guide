@@ -5,6 +5,10 @@ description: "A technical guide for executors and power users on how to identify
 date: 2026-03-18
 author: theluckystrike
 permalink: /subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

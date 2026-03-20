@@ -6,7 +6,7 @@ description: "A technical deep dive into Bumble Beeline privacy controls. Learn 
 date: 2026-03-16
 author: theluckystrike
 permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
-categories: [privacy, dating-apps, data-security]
+categories: [security, guides]
 ---
 
 {% raw %}

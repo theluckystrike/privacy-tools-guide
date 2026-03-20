@@ -6,7 +6,7 @@ description: "A comprehensive review of crypto dead man switch services that aut
 date: 2026-03-16
 author: theluckystrike
 permalink: /crypto-dead-man-switch-services-that-transfer-wallet-access-/
-categories: [guides, security, cryptocurrency]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users on configuring DN
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 DNS poisoning represents one of the most common censorship techniques employed by governments and network administrators to block access to specific websites or services. When you type a domain name into your browser, your device performs a DNS lookup to translate that human-readable address into an IP address. In censored networks, intercepting and manipulating these lookups allows blockers to redirect users away from forbidden content or simply return no result at all.

@@ -5,6 +5,10 @@ description: "A technical guide to setting up two-factor authentication on datin
 date: 2026-03-16
 author: theluckystrike
 permalink: /dating-app-two-factor-authentication-setup-protecting-accoun/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

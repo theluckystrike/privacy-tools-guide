@@ -5,7 +5,7 @@ description: "A technical guide to Russia's Yarovaya Law data retention requirem
 date: 2026-03-16
 author: theluckystrike
 permalink: /russia-yarovaya-law-mass-surveillance-requirements-what-tele/
-categories: [guides, surveillance, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users to configure V2Ra
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-v2ray-vmess-for-accessing-blocked-websites-fro/
-categories: [guides, networking]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

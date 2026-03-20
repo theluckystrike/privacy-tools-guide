@@ -5,6 +5,10 @@ description: "Learn how to use Signal usernames to communicate with dating match
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-signal-for-early-dating-conversations-instead-of-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

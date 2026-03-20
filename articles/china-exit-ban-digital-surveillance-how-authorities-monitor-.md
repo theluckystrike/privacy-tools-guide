@@ -6,7 +6,7 @@ description: "Understand how Chinese authorities use digital surveillance to mon
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-/
-categories: [privacy, security, surveillance, china, digital-rights]
+categories: [security, guides]
 ---
 
 {% raw %}

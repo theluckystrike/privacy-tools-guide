@@ -6,7 +6,7 @@ description: "A practical guide for executors on how to cancel subscription serv
 date: 2026-03-16
 author: theluckystrike
 permalink: /subscription-service-cancellation-after-death-how-executor-c/
-categories: [guides, privacy, estate-planning]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "Learn practical techniques to verify identity before meeting someo
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

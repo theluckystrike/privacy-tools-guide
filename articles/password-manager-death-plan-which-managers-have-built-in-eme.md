@@ -5,7 +5,7 @@ description: "A technical comparison of password managers with built-in emergenc
 date: 2026-03-16
 author: theluckystrike
 permalink: /password-manager-death-plan-which-managers-have-built-in-eme/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

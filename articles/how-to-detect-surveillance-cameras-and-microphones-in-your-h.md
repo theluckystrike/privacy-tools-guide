@@ -6,6 +6,10 @@ description: "Learn technical methods to identify hidden surveillance devices in
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-surveillance-cameras-and-microphones-in-your-h/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ description: "A technical guide for Turkish journalists on securing communicatio
 date: 2026-03-16
 author: theluckystrike
 permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
-categories: [security, privacy, journalism]
+categories: [security, guides]
 ---
 
 {% raw %}

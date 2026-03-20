@@ -6,7 +6,7 @@ description: "A technical guide for developers and power users on using Signal m
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-signal-without-phone-number-verification-in-count/
-categories: [guides, signal, privacy, security, messaging]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

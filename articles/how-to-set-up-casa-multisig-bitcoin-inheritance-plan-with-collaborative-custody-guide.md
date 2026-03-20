@@ -6,7 +6,7 @@ description: "A comprehensive technical guide for developers and power users on 
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/
-categories: [guides, bitcoin, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

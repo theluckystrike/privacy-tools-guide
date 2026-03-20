@@ -6,7 +6,7 @@ description: "A technical breakdown of digital power of attorney and how it appl
 date: 2026-03-16
 author: theluckystrike
 permalink: /digital-power-of-attorney-what-authority-it-grants-over-onli/
-categories: [guides, security, legal]
+categories: [guides, security, enterprise]
 reviewed: true
 score: 8
 intent-checked: true

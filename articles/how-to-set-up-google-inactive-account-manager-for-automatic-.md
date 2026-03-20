@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on configuring Go
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-google-inactive-account-manager-for-automatic-/
-categories: [guides, security, estate-planning]
+categories: [guides, security]
 intent-checked: true
 voice-checked: true
 reviewed: true

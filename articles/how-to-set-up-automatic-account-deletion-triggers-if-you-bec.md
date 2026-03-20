@@ -6,7 +6,7 @@ description: "Learn how to configure automatic account deletion triggers to prot
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

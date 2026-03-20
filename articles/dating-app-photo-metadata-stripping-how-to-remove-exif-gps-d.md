@@ -5,7 +5,7 @@ description: "A developer and power user guide to stripping EXIF GPS metadata fr
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---

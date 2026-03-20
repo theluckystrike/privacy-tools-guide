@@ -5,7 +5,7 @@ description: "Learn how to detect if your dating profile images are being stolen
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-dating-profile-photos-are-being-used-on/
-categories: [guides, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to run a Tor Snow
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-tor-snowflake-bridge-to-help-users-in-censored/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

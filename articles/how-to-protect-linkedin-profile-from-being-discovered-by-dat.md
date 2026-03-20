@@ -5,7 +5,7 @@ description: "Learn comprehensive strategies to prevent data brokers and people 
 date: 2026-03-19
 author: theluckystrike
 permalink: /how-to-protect-linkedin-profile-from-being-discovered-by-dat/
-categories: [guides, privacy, social-media]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

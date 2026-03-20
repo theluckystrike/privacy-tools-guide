@@ -6,6 +6,10 @@ description: "Learn how to build a tiered digital estate system where executors 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-tiered-access-plan-giving-executor-immediate-a/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

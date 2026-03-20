@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users exploring what da
 date: 2026-03-16
 author: theluckystrike
 permalink: /china-wechat-surveillance-what-messages-and-activity-tencent/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

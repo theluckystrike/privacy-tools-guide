@@ -5,7 +5,7 @@ description: "A technical deep-dive into Iran's intelligent filtering system, th
 date: 2026-03-16
 author: theluckystrike
 permalink: /iran-smart-filtering-how-government-selectively-blocks-conte/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

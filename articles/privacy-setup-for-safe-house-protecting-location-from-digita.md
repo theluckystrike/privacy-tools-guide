@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to protect locati
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-safe-house-protecting-location-from-digita/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ description: "A comprehensive technical guide for setting up encrypted USB drive
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-usb-drive-with-recovery-instructions/
-categories: [guides, encryption, security, estate-planning]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

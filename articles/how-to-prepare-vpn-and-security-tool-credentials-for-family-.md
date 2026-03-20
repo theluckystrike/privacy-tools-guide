@@ -6,6 +6,10 @@ description: "A technical guide for developers and power users on securely trans
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prepare-vpn-and-security-tool-credentials-for-family-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

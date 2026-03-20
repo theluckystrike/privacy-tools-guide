@@ -6,7 +6,7 @@ description: "A practical guide to implementing a compartmentalized workflow in 
 date: 2026-03-18
 author: theluckystrike
 permalink: /qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/
-categories: [guides, security, operating-systems, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

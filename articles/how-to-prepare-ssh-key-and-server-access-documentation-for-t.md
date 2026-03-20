@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on documenting SS
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prepare-ssh-key-and-server-access-documentation-for-t/
-categories: [guides, security, ssh, sysadmin]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

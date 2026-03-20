@@ -5,7 +5,7 @@ description: "A technical breakdown of facial recognition surveillance systems d
 date: 2026-03-16
 author: theluckystrike
 permalink: /iran-facial-recognition-surveillance-how-cameras-in-public-s/
-categories: [privacy, security, surveillance]
+categories: [security, guides]
 ---
 
 {% raw %}
