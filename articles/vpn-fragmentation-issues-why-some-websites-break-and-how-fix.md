@@ -6,7 +6,7 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /vpn-fragmentation-issues-why-some-websites-break-and-how-fix/
 categories: [guides]
-tags: [vpn, troubleshooting, networking, privacy]
+tags: [privacy-tools-guide, vpn, troubleshooting, networking, privacy]
 reviewed: true
 score: 8
 intent-checked: true

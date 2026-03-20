@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, comparison, vpn]
 reviewed: true
 score: 8
 intent-checked: true

@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, vpn]
 ---
 
 A VPN warrant canary is a regularly updated public statement confirming that a provider has not received any secret government orders (such as National Security Letters or gag orders) compelling them to hand over user data. If the statement disappears or stops being updated, it signals that the provider may have been legally compelled to share information -- giving you an early warning to reassess your security posture.

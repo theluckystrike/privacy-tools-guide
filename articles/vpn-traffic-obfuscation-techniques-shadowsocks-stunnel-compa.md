@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

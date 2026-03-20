@@ -6,9 +6,9 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
