@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /best-encrypted-email-providers-for-privacy-compared-protonma/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison, best-of, privacy]
