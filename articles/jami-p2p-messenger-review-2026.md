@@ -6,10 +6,11 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /jami-p2p-messenger-review-2026/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 

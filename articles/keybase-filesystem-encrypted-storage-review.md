@@ -6,9 +6,9 @@ date: 2024-01-15
 author: theluckystrike
 permalink: /keybase-filesystem-encrypted-storage-review/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

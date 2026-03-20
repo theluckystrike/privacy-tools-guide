@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

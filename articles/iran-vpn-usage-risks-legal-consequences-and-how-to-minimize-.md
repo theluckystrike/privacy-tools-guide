@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 8
 voice-checked: true

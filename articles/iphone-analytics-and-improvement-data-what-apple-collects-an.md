@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-analytics-and-improvement-data-what-apple-collects-an/
 categories: [guides]
-tags: [ios-privacy, analytics, data-collection, iphone-settings]
+tags: [privacy-tools-guide, ios-privacy, analytics, data-collection, iphone-settings]
 reviewed: true
 score: 8
 intent-checked: true
