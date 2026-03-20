@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Signal Messenger Setup Guide for Journalists: Source Protection"
-description: "A practical guide to configuring Signal Messenger for journalists who need secure communications with confidential sources. Covers phone number privacy, disappearing messages, and advanced security settings."
+title: "Signal Messenger Setup Guide for Journalists: Source."
+description: "A practical guide to configuring Signal Messenger for journalists who need secure communications with confidential sources. Covers phone number."
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /signal-messenger-setup-guide-for-journalists-source-protecti/
@@ -150,6 +150,12 @@ The most secure approach combines dedicated devices running privacy-focused oper
 For organizations handling particularly sensitive communications, consider combining Signal with additional tools like PGP-encrypted email for file transfers and secure password managers for credential storage. Layered security provides defense in depth against various threat vectors.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
