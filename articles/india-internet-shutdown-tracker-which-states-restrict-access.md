@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-internet-shutdown-tracker-which-states-restrict-access/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 intent-checked: true

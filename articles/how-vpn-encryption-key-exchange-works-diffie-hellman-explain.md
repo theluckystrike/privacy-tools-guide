@@ -9,7 +9,7 @@ categories: [guides, security]
 reviewed: true
 voice-checked: true
 intent-checked: true
-score: 8
+score: 9
 tags: [privacy-tools-guide, vpn, encryption, llm]
 ---
 
