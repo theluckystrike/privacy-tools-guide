@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /apple-digital-legacy-program-how-to-add-legacy-contacts-for-/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 categories: [guides]
