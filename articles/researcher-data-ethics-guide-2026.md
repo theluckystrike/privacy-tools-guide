@@ -2,7 +2,7 @@
 
 layout: default
 title: "Researcher Data Ethics Guide 2026"
-description: "A practical researcher data ethics guide for 2026 covering data collection, storage, consent, privacy-preserving techniques, and compliance for developers and power users."
+description: "A practical researcher data ethics guide for 2026 covering data collection, storage, consent, privacy-preserving techniques, and compliance for."
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /researcher-data-ethics-guide-2026/
@@ -195,6 +195,12 @@ Technical tools support ethical practice, but organizational culture determines 
 The researcher data ethics guide for 2026 emphasizes practical implementation over theoretical frameworks. By integrating these patterns into your workflows, you build systems that respect users while delivering research value. Ethics becomes a competitive advantage, not a compliance burden.
 
 Start with your next data project by auditing what you collect, why you collect it, and how long you retain it. Every improvement reduces risk and builds trust.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
 
