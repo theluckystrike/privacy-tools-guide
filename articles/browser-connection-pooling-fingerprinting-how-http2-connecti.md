@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /browser-connection-pooling-fingerprinting-how-http2-connecti/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true

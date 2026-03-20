@@ -8,9 +8,10 @@ author: theluckystrike
 permalink: /brave-browser-honest-review-2026/
 categories: [guides]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}
