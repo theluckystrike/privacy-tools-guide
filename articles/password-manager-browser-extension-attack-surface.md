@@ -151,6 +151,7 @@ The security of password manager extensions depends on implementation quality, p
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

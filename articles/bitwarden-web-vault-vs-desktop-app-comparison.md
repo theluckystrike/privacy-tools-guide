@@ -123,6 +123,7 @@ Developers and power users who value quick access, offline operation, and CLI in
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Comparisons Hub](/privacy-tools-guide/comparisons-hub/)
 

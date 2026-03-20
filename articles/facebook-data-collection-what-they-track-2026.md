@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Facebook Data Collection: What They Track in 2026"
-description: "A technical breakdown of Facebook's data collection practices. Learn what data Meta gathers, how it's used, and what developers need to know about tracking mechanisms."
+description: "Facebook Data Collection: What They Track in 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: theluckystrike
 permalink: /facebook-data-collection-what-they-track-2026/
@@ -202,6 +202,7 @@ Understanding Facebook's data collection practices helps you make informed choic
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

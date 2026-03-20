@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Facebook Privacy Settings 2026: A Complete Guide for."
-description: "Master Facebook's privacy controls in 2026. This comprehensive guide covers audience selection, data export, API restrictions, and advanced settings for developers and power users."
+description: "Facebook Privacy Settings 2026: A Complete Guide for. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /facebook-privacy-settings-2026-complete-guide/

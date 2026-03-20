@@ -2,7 +2,7 @@
 
 layout: default
 title: "India CCTV Surveillance Expansion: Privacy Implications."
-description: "An in-depth technical analysis of India's smart city CCTV surveillance expansion, privacy implications, and practical tools for developers and power users to protect their digital identity."
+description: "India CCTV Surveillance Expansion: Privacy Implications. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-cctv-surveillance-expansion-privacy-implications-of-sm/

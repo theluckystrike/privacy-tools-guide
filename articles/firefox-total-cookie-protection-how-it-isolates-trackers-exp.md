@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Total Cookie Protection: How It Isolates."
-description: "A technical deep-dive into Firefox's Total Cookie Protection feature. Learn how website isolation works, how it blocks cross-site tracking, and practical configuration examples for developers and power users."
+description: "Firefox Total Cookie Protection: How It Isolates. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /firefox-total-cookie-protection-how-it-isolates-trackers-exp/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Threat Model Explained for Developers"
-description: "A technical breakdown of Tor Browser's threat model designed for developers and power users. Understand what Tor protects against, its limitations, and how to leverage it effectively."
+description: "Tor Browser Threat Model Explained for Developers — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-threat-model-explained-developers/

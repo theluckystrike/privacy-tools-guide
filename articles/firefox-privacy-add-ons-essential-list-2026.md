@@ -176,6 +176,7 @@ No extension stack provides complete anonymity — review your configuration whe
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

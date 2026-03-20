@@ -2,7 +2,7 @@
 
 layout: default
 title: "Tinder Privacy Settings: What Personal Data the App."
-description: "A technical breakdown of Tinder's data collection practices, privacy settings, and what information is shared with third-party partners in 2026."
+description: "Tinder Privacy Settings: What Personal Data the App. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /tinder-privacy-settings-what-personal-data-the-app-collects-/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "OpenPGP vs S/MIME Email Encryption: A Technical Comparison"
-description: "A developer's guide comparing OpenPGP and S/MIME email encryption protocols. Learn the differences in key management, compatibility, and implementation."
+description: "OpenPGP vs S/MIME Email Encryption: A Technical Comparison — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /openpgp-vs-smime-email-encryption/

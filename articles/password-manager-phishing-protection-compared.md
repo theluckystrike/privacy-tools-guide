@@ -133,6 +133,7 @@ The best choice depends on your threat model: Bitwarden for maximum transparency
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Comparisons Hub](/privacy-tools-guide/comparisons-hub/)
 

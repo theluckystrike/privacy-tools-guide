@@ -146,6 +146,7 @@ Passkeys add synchronization and discoverability on top of FIDO2, making credent
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
 - More guides coming soon.
 

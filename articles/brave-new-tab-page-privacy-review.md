@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Brave New Tab Page Privacy Review: What Developers Need."
-description: "A technical privacy review of Brave browser's new tab page. Analyze data collection, network requests, and privacy implications for developers and power users."
+description: "Brave New Tab Page Privacy Review: What Developers Need. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-new-tab-page-privacy-review/
@@ -96,6 +96,7 @@ For teams integrating Brave into privacy-sensitive environments, conduct your ow
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -189,6 +189,7 @@ The key takeaway is that seemingly innocuous browser properties combine into pow
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [Browser Fingerprinting: What It Is and How to Block It](/browser-fingerprinting-what-it-is-how-to-block/)
 - [How to Block Canvas Fingerprinting in Your Browser](/how-to-block-canvas-fingerprinting-browser/)

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Privacy Indicators: Camera and Mic Access Explained"
-description: "A technical deep-dive into Android's privacy indicators for camera and microphone access, with practical code examples for developers and power users."
+description: "Android Privacy Indicators: Camera and Mic Access Explained — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-privacy-indicators-camera-mic-explained/
@@ -148,6 +148,7 @@ For maximum privacy, combine indicator awareness with regular permission audits,
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "China Golden Shield Project: How Censorship Detection."
-description: "A technical deep-dive into China's Golden Shield Project censorship detection mechanisms. Learn how DPI, DNS manipulation, packet inspection, and keyword filtering work with practical code examples for developers and power users."
+description: "China Golden Shield Project: How Censorship Detection. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-golden-shield-project-how-censorship-detection-works-t/

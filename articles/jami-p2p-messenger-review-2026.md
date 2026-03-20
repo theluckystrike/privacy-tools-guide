@@ -2,7 +2,7 @@
 
 layout: default
 title: "Jami P2P Messenger Review 2026: A Developer Guide to."
-description: "A technical review of Jami's peer-to-peer messaging capabilities, encryption, self-hosting options, and integration possibilities for developers and."
+description: "Jami P2P Messenger Review 2026: A Developer Guide to. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /jami-p2p-messenger-review-2026/
@@ -126,6 +126,7 @@ For privacy-conscious developers willing to accept the trade-offs in polish and 
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - More guides coming soon.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -266,6 +266,7 @@ Test your implementation by reviewing the ICO's legitimate interest checklist an
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Home](/privacy-tools-guide/)
 - [GDPR for Developers: A Practical Introduction](/privacy-tools-guide/gdpr-for-developers-practical-introduction/)
 - [Understanding Data Protection Impact Assessments](/privacy-tools-guide/understanding-dpia-guide/)

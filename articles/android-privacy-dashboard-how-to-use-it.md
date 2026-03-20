@@ -4,7 +4,7 @@
 
 layout: default
 title: "Android Privacy Dashboard: A Complete Guide to Using It"
-description: "Learn how to use Android's Privacy Dashboard to monitor and control app permissions. This guide covers accessing the dashboard, understanding permission usage data, and managing access effectively."
+description: "Android Privacy Dashboard: A Complete Guide to Using It — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /android-privacy-dashboard-how-to-use-it/
@@ -100,6 +100,7 @@ Start by exploring the dashboard today. Identify apps with excessive permissions
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

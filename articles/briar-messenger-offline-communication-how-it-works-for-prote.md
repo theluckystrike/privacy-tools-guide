@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Briar Messenger Offline Communication: How It Works for."
-description: "A technical deep-dive into Briar messenger's offline-first architecture, Bluetooth and Wi-Fi mesh networking, and how it enables secure communication when internet access is unavailable."
+description: "Briar Messenger Offline Communication: How It Works for. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /briar-messenger-offline-communication-how-it-works-for-prote/

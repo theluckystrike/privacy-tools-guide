@@ -244,6 +244,7 @@ When configuring VPN access for streaming, maintain good security practices:
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [WireGuard vs OpenVPN Comparison](/wireguard-vs-openvpn-comparison/)
 

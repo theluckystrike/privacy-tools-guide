@@ -246,6 +246,7 @@ Use these methods responsibly. Respect platform terms of service where legal. Co
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [1Password CLI Secrets Management Guide](/1password-cli-secrets-management-guide/)
 

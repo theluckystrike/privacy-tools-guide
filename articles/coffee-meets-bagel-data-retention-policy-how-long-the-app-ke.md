@@ -2,7 +2,7 @@
 
 layout: default
 title: "Coffee Meets Bagel Data Retention Policy: How Long the."
-description: "A technical breakdown of Coffee Meets Bagel's data retention practices. Learn how long your profile data, messages, and match history are stored, with code examples for privacy-conscious users."
+description: "Coffee Meets Bagel Data Retention Policy: How Long the. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "First Party Sets: Chrome Proposal and Its Impact on."
-description: "A technical deep-dive into Chrome's First Party Sets proposal — how it works, what it means for developers, and how it reshapes cross-site tracking."
+description: "First Party Sets: Chrome Proposal and Its Impact on. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike
 permalink: /first-party-sets-chrome-proposal-how-it-affects-cross-site-t/

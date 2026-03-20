@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mastodon vs Twitter: Privacy Comparison 2026"
-description: "A technical comparison of Mastodon and Twitter's privacy mechanisms for developers. Fediverse architecture, data collection, API access, and self-hosting considerations."
+description: "Mastodon vs Twitter: Privacy Comparison 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital identity."
 date: 2026-03-15
 author: theluckystrike
 permalink: /mastodon-vs-twitter-privacy-comparison-2026/
@@ -232,6 +232,7 @@ For developers, Mastodon's open API enables innovation without permission. For p
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

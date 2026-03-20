@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Signal Relay Calls Privacy Feature: A Complete Guide for."
-description: "Learn how Signal's relay calls feature protects your IP address during voice and video calls, with technical implementation details and configuration examples."
+description: "Signal Relay Calls Privacy Feature: A Complete Guide for. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /signal-relay-calls-privacy-feature/

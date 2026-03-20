@@ -2,7 +2,7 @@
 
 layout: default
 title: "Briar Messenger Offline Mesh Review: Technical Deep Dive"
-description: "A technical review of Briar messenger's offline mesh networking capabilities for developers and power users."
+description: "Briar Messenger Offline Mesh Review: Technical Deep Dive — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /briar-messenger-offline-mesh-review/
@@ -158,6 +158,7 @@ The trade-offs are substantial but acceptable depending on threat model and use 
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/) — Practical setup, configuration, and advanced tuning
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

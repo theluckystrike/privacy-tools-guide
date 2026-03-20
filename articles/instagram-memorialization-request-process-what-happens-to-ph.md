@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Instagram Memorialization Request Process: What Happens."
-description: "A technical guide covering Instagram's memorialization request process, data handling after death, and API implications for developers building death-tech applications."
+description: "Instagram Memorialization Request Process: What Happens. — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /instagram-memorialization-request-process-what-happens-to-ph/

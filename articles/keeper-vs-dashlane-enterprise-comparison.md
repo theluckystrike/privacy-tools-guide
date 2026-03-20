@@ -167,6 +167,7 @@ Both platforms meet enterprise security requirements with zero-knowledge encrypt
 
 ## Related Reading
 
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Comparisons Hub](/privacy-tools-guide/comparisons-hub/)
 
