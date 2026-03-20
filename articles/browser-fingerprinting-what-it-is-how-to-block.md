@@ -147,6 +147,176 @@ To understand your current exposure, visit cover-your-tracks.com (formerly Panop
 
 After implementing protections, revisit these tools to see if your fingerprint has become more generic. The goal is to blend in with other users rather than stand out.
 
+## Advanced Fingerprinting Vectors You May Not Know About
+
+Beyond the common vectors, modern trackers use sophisticated techniques:
+
+### WebGL Parameter Fingerprinting
+
+WebGL exposes vendor and renderer information that's highly unique per device:
+
+```javascript
+function getWebGLInfo() {
+  const canvas = document.createElement('canvas');
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+  const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+  return {
+    vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL),
+    renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+  };
+}
+```
+
+### Timezone and Locale Fingerprinting
+
+Your timezone, language, and locale settings combine to create a unique profile:
+
+```javascript
+// Timezone detection
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const languages = navigator.languages;
+const locale = navigator.language;
+
+// This combination is surprisingly unique
+console.log({ timezone, languages, locale });
+```
+
+### Local Storage and IndexedDB Fingerprinting
+
+Even with cookies disabled, trackers can fingerprint using browser storage:
+
+```javascript
+// IndexedDB enumeration
+async function checkIndexedDBExposure() {
+  const databases = await indexedDB.databases();
+  return databases.map(db => db.name);
+}
+
+// Fingerprinting across IndexedDB
+const stores = [];
+for (let db of await indexedDB.databases()) {
+  stores.push(db.name);
+}
+```
+
+### Permissions Query Fingerprinting
+
+Querying permission status exposes system configuration:
+
+```javascript
+// Permission status reveals device configuration
+async function checkPermissions() {
+  const permissions = ['camera', 'microphone', 'geolocation'];
+  const status = {};
+
+  for (const perm of permissions) {
+    try {
+      const result = await navigator.permissions.query({ name: perm });
+      status[perm] = result.state;
+    } catch (e) {
+      status[perm] = 'error';
+    }
+  }
+  return status;
+}
+```
+
+### Battery Level Fingerprinting
+
+The Battery Status API provides high-entropy tracking data:
+
+```javascript
+if (navigator.getBattery) {
+  navigator.getBattery().then(battery => {
+    // Battery level varies frequently and is unique per device
+    const fingerprint = {
+      level: battery.level,
+      charging: battery.charging,
+      dischargingTime: battery.dischargingTime
+    };
+  });
+}
+```
+
+## Browser Fingerprinting Defense Strategy
+
+Implement multiple defensive layers:
+
+### Layer 1: Browser Selection
+
+| Browser | Fingerprinting Protection | Ease of Use |
+|---------|---------------------------|-------------|
+| Tor Browser | Excellent (standardizes fingerprint) | Good |
+| Brave | Excellent (randomizes fingerprint) | Very Good |
+| Firefox (hardened) | Good (resist fingerprinting mode) | Good |
+| Safari (hardened) | Good (limited API exposure) | Very Good |
+| Chrome (default) | Poor (extensive API exposure) | Very Good |
+
+### Layer 2: Extension-Based Hardening
+
+Combine multiple privacy extensions for defense-in-depth:
+
+```bash
+# Recommended extension combinations
+
+# Tier 1: Core blocking
+- uBlock Origin (with extra filter lists)
+- Privacy Badger (learns tracker patterns)
+
+# Tier 2: Browser API protection
+- CanvasBlocker (canvas fingerprinting)
+- AudioContext Fingerprint Defender (WebAudio)
+- WebGL Fingerprint Defender (WebGL)
+
+# Tier 3: Metadata protection
+- Decentraleyes (CDN link blocking)
+- Cookie AutoDelete (automatic cookie cleanup)
+```
+
+### Layer 3: Manual Browser Configuration
+
+Firefox about:config hardening for fingerprinting resistance:
+
+```
+privacy.resistFingerprinting = true
+privacy.trackingprotection.enabled = true
+dom.battery.enabled = false
+dom.webaudio.enabled = false (breaks some audio sites)
+webgl.disabled = true (breaks graphics-heavy sites)
+canvas.capturestream.enabled = false
+plugin.state = 0 (disable all plugins)
+```
+
+## Measuring Fingerprint Effectiveness
+
+After implementing protections, test against multiple fingerprinting databases:
+
+```bash
+# Test against multiple services
+curl -s https://amiunique.org/api/fingerprint | jq '.isDark'
+curl -s https://cover-your-tracks.eff.org/api/ip | jq '.uniqueness'
+```
+
+Compare your results before and after implementing protections. Effective hardening shows:
+
+- Uniqueness percentage under 15%
+- Matching fingerprints across multiple test runs
+- Inability to distinguish between test browser instances
+
+## Performance Impact of Fingerprinting Defenses
+
+Privacy protections come with tradeoffs:
+
+| Protection | Performance Impact | Compatibility |
+|------------|-------------------|---|
+| Canvas blocking | Negligible | 99% |
+| WebGL disabling | 5-10% slower on graphics | 85% |
+| Font enumeration blocking | Negligible | 100% |
+| Full Tor Browser | 10-20% slower, DNS leaks possible | 90% |
+
+Monitor website functionality after enabling each protection. Some sites break with aggressive blocking—adjust settings per-domain using extension granular controls.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

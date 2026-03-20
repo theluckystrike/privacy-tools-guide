@@ -146,6 +146,120 @@ Ongoing access management prevents credential accumulation and ensures that acce
 
 Password managers provide audit logs that track who accessed which credentials and when. Review these logs periodically to identify unusual access patterns that might indicate compromised accounts.
 
+## Advanced Integration with Kubernetes and Container Orchestration
+
+For development teams deploying containerized applications:
+
+```yaml
+# Kubernetes secret syncing from 1Password
+apiVersion: v1
+kind: SecretProviderClass
+metadata:
+  name: 1password-secrets
+spec:
+  provider: 1password
+  parameters:
+    vaultName: "Production"
+    secretPath: "/run/secrets"
+```
+
+Developers can reference secrets directly in pods without storing them in cluster configuration:
+
+```bash
+# Inject 1Password secrets at pod runtime
+kubectl apply -f secret-provider-class.yaml
+```
+
+## Offboarding Procedures
+
+When employees leave, immediately:
+
+1. Revoke vault access in the password manager
+2. Force logout of all active sessions
+3. Change passwords for shared credentials accessed by the departing employee
+4. Audit account usage from the employee's first to last day
+5. Archive or transfer personal vault contents according to policy
+
+Automate this with offboarding workflows:
+
+```bash
+#!/bin/bash
+# offboard-employee.sh
+
+EMPLOYEE_EMAIL="departing@company.com"
+VAULT_ID="engineering"
+
+# Revoke access
+op user delete "$EMPLOYEE_EMAIL" --vault "$VAULT_ID"
+
+# Force session logout
+op session purge
+
+# Rotate shared credentials
+for credential in $(op list items --vault "$VAULT_ID" --format=json | jq -r '.[] | select(.last_accessed_by | contains("'"$EMPLOYEE_EMAIL"'")) | .id')
+do
+  NEW_PASSWORD=$(openssl rand -base64 32)
+  op item edit "$credential" --field password="$NEW_PASSWORD"
+done
+
+echo "Offboarding complete for $EMPLOYEE_EMAIL"
+```
+
+## Security Incident Response
+
+If a password manager account is compromised:
+
+1. **Immediate actions**: Change master password, revoke admin access, enable additional MFA
+2. **Credential rotation**: Change all passwords in the vault within 24 hours
+3. **Audit investigation**: Review access logs to determine what credentials were exposed
+4. **Communication**: Notify affected systems (AWS, GitHub, databases) about potential compromise
+5. **Post-incident**: Implement additional security measures like hardware keys
+
+Document the incident for compliance reporting. Many regulations (SOC 2, ISO 27001) require incident response procedures.
+
+## Cost Comparison for Team Setups
+
+| Solution | Per User Cost | Team Size | Annual Total | Best For |
+|----------|--------------|-----------|---|---|
+| 1Password Teams | $7.99/month | 1-50 | $96-$4,794 | Mature security practices |
+| Bitwarden Organization | $3/month | 1-∞ | $36-unlimited | Budget-conscious, self-hosted option |
+| Dashlane Business | $8/month | 1-50 | $96-$4,800 | UX-focused teams |
+| Keeper Enterprise | Custom | 5+ | $2,000+ | High-security requirements |
+
+For early-stage companies, Bitwarden's free organization tier supports up to 2 users, making it ideal for initial setup without cost.
+
+## Vault Strategy by Organization Type
+
+### Startup (10-20 people)
+- Single shared vault per team
+- Flat permission structure
+- Master password shared with co-founders during critical operations
+- Plan migration to stricter controls as company scales
+
+### Growing Company (20-100 people)
+- Department-based vaults (Engineering, Marketing, Operations)
+- Role-based access (Junior Dev, Senior Dev, Admin)
+- Individual personal vaults for non-shared credentials
+- Automated secret rotation for production credentials
+
+### Enterprise (100+ people)
+- Separate vaults per project/service
+- Multi-level approval for sensitive credentials
+- Hardware key (Yubikey) requirement for admin access
+- Integration with SSO provider (Okta, Azure AD)
+- Dedicated security team managing policies
+
+## Training and Documentation
+
+Create internal documentation covering:
+
+1. **Quick start guide**: Master password creation, two-factor setup, first login
+2. **Troubleshooting**: Account recovery, sync issues, browser extension problems
+3. **Best practices**: Password generation, sharing safely, breach response
+4. **Video tutorials**: Record setup walkthroughs for different devices
+
+Host this on an internal wiki or knowledge base accessible during onboarding.
+
 ---
 
 Setting up a password manager for new employee onboarding requires initial infrastructure investment but pays dividends in reduced security risk and improved operational efficiency. By establishing clear workflows, integrating with development tools, and enforcing security policies from day one, organizations build a strong foundation for credential management that scales with team growth.

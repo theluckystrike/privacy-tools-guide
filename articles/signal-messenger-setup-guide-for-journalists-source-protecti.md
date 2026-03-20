@@ -141,6 +141,194 @@ Technical configuration alone does not guarantee security. Operational practices
 # This displays "New message" instead of message text in notifications
 ```
 
+## Advanced: Multi-Device Configuration
+
+For high-risk journalists, maintain multiple phone numbers and devices:
+
+```yaml
+# Device 1: Work phone
+Phone: +1-555-WORK-001 (public-facing)
+Uses: Professional contacts, non-sensitive calls
+Signal: Standard configuration
+
+# Device 2: Source phone
+Phone: +1-555-SOURCE-001 (private number)
+Uses: Source communications only
+Signal: Maximum privacy configuration
+  - Sealed sender enabled
+  - Disappearing messages: 24 hours
+  - Screen lock enabled
+  - Regular wipe schedule: Every 30 days
+  - Backup: Disabled
+
+# Device 3: Backup device
+Phone: +1-555-BACKUP-001 (in safe)
+Uses: Emergency communications only
+Signal: Registered, configured, kept offline
+  - Activated only in crisis scenarios
+  - Contains backup contacts list
+  - Separate registration lock PIN
+```
+
+Store backup phone in a safe deposit box or secure location inaccessible to people who might seize devices.
+
+## Jurisdictional Considerations
+
+Different regions apply different laws to encrypted communications:
+
+### United States
+- Signal is legal; law enforcement regularly demands chats
+- Registration lock PIN can be compelled (though technically difficult)
+- Warrant requirements exist but are frequently overridden
+- ECPA provides minimal protection for stored messages
+
+### European Union
+- GDPR applies; data minimization favored
+- Court orders required before Signal content access
+- Jurisdiction-specific restrictions on law enforcement access
+
+### Authoritarian Jurisdictions
+- Signal may be blocked entirely (check beforehand)
+- Use Tor bridges for connectivity if blocked
+- Assume all communications may be monitored
+- Disappearing messages become critical (evidence destruction)
+
+Research your jurisdiction's laws before handling sensitive sources. Consult with a lawyer familiar with press freedom in your region.
+
+## Technical Verification Against Compromise
+
+If you suspect your device is compromised:
+
+```bash
+# Check for known indicators of compromise
+
+# 1. Memory test (advanced)
+# If you suspect you have malware, advanced tools can detect it:
+chkrootkit (Linux)
+rootkit hunter (Linux)
+# These may miss sophisticated spyware
+
+# 2. Network monitoring
+# Check for unexpected outbound connections
+netstat -an | grep ESTABLISHED
+lsof -i -P -n
+
+# 3. Check app permissions (Android)
+Settings > Apps > [Signal]
+- Camera: Should be "Don't allow"
+- Location: Should be "Don't allow"
+- Microphone: Allowed (required for calls)
+```
+
+If you detect compromise, physically destroy the device rather than attempting cleanup. Sophisticated malware is resistant to removal.
+
+## Documentation and Evidence Preservation
+
+Maintain secure documentation of your security practices:
+
+```bash
+# Create a security practices document (stored encrypted)
+# This protects your privilege claim if source relationship questioned
+
+Document:
+- When you established Signal contact with source
+- What privacy measures you implemented
+- How you verified their identity
+- Backup contacts/communication methods
+- Date of each significant communication
+
+# Store in encrypted vault alongside Signal conversations
+# This demonstrates good faith security practices
+```
+
+If questioned by law enforcement or courts about source protection, documentation of your security practices supports attorney-client and source-journalist privilege claims.
+
+## Source Onboarding Process
+
+When bringing a new source onto Signal:
+
+```
+Step 1: Provide phone number through verified channel
+  - In-person conversation preferred
+  - Alternative: Verified phone call (not Signal yet)
+  - Never: Email, social media DMs
+
+Step 2: Source installs Signal from official app store
+  - iOS: App Store (not TestFlight)
+  - Android: Google Play or signal.org
+
+Step 3: You and source verify phone numbers
+  - This prevents man-in-the-middle registration
+
+Step 4: Compare safety numbers in person
+  - Bring QR code to in-person meeting
+  - Source scans QR code on their device
+  - Confirms safety number matches
+
+Step 5: Establish communication protocols
+  - Disappearing message duration (24 hours recommended)
+  - Response time expectations
+  - Emergency contact procedures
+  - When to stop using Signal (escalation)
+```
+
+This process takes 30-45 minutes but provides strong verification that you're actually communicating with your intended source.
+
+## Signal vs Alternatives for Journalists
+
+| Messenger | Encryption | Metadata | Logging | Best For |
+|-----------|-----------|----------|---------|----------|
+| Signal | E2E | Phone number | Device only | Source protection, standard use |
+| Session | E2E | No phone required | Device only | Maximum anonymity |
+| Wire | E2E | Email option | Device only | Multi-device teams |
+| Telegram | Optional E2E | Phone number | Cloud stored | Non-sensitive comms |
+
+Signal remains the best balance for journalists. Session provides stronger anonymity if phone number registration is unacceptable risk.
+
+## Red Flags for Source Safety
+
+During Signal communication, watch for:
+
+- Unusual requests to move to less-secure channels
+- Pressure to share information quickly without verification
+- Multiple sources claiming same story independently (coordination possibility)
+- Requests for personal information unrelated to story
+- Attempts to establish relationship outside professional context
+
+These patterns suggest potential law enforcement manipulation or coordinated source attack. Consult with your news organization's legal and security teams before proceeding.
+
+## Creating a Journalist Security Policy
+
+Organizations should establish written policies:
+
+```markdown
+# [News Org] Source Communication Security Policy
+
+## Signal Requirements
+- All source communications use Signal
+- Registration lock enabled with strong PIN
+- Sealed sender enabled for all conversations
+- Disappearing messages: 7 days minimum
+
+## Device Requirements
+- iOS 15+ or Android 12+
+- Regular security updates enforced
+- No jailbreak/root allowed for journalists
+- Biometric unlock required
+
+## Verification Process
+- All new sources: In-person safety number verification
+- Existing sources: Re-verify quarterly
+- Documentation stored in secure vault
+
+## Incident Response
+- Suspected compromise: Immediately notify security team
+- Device theft: Remote wipe via Find My / Find My Device
+- Law enforcement approach: Refer to legal team
+```
+
+Distribute this policy during newsroom onboarding. Regular security training reinforces these practices.
+
 ## Summary
 
 Securing journalist-source communications with Signal requires attention to both application configuration and operational practices. Enable sealed sender for metadata protection, configure disappearing messages to reduce evidence retention, establish registration lock to prevent account takeover, and verify safety numbers for every sensitive conversation.

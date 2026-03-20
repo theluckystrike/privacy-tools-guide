@@ -150,6 +150,155 @@ For developers specifically, the local API availability on Deco systems enables 
 
 The choice ultimately depends on your threat model. If you prioritize integration and accept data sharing in exchange for polished UX, Eero remains compelling. For privacy-first configurations requiring local control and minimal cloud dependency, Deco offers the strongest foundation.
 
+## Detailed Pricing and Feature Matrix (2026)
+
+| Feature | Eero Pro | Orbi Pro | Deco X90 |
+|---------|----------|----------|----------|
+| Starting Price | $299 (1-pack) | $299 (1-pack) | $249 (1-pack) |
+| 3-Pack Cost | $599 | $579 | $279 |
+| Warranty | 1 year | 2 years | 3 years |
+| Cloud Required | Yes | Optional | Optional |
+| Local Dashboard | Limited | Full | Full |
+| Thread Support | Yes | No | No |
+| Alexa Integration | Native | No | No |
+| Guest Network Isolation | Yes | Yes | Yes |
+
+Deco offers better value, while Eero provides tighter ecosystem integration if you use Amazon devices.
+
+## Setting Up Local-Only Operation on Each System
+
+### Deco: Maximum Local Control
+
+```bash
+# Set up local Deco without cloud account
+1. Power on Deco units
+2. Open web browser to http://192.168.0.1
+3. Create admin account (local only)
+4. Skip "Create TP-Link ID" when prompted
+5. Configure WiFi SSID and password
+6. All management happens locally at web interface
+```
+
+This approach gives you full control without any cloud dependency.
+
+### Orbi: Partial Local Control
+
+```bash
+# Netgear Orbi can operate without cloud but with limitations
+1. Access web interface at http://orbilogin.com or 192.168.1.1
+2. Create local admin account
+3. Enable "Local Management" in settings
+4. Disable cloud account linkage
+5. Note: Some features (Armor security) require cloud account
+```
+
+You lose security features but maintain network management locally.
+
+### Eero: Cloud-Dependent
+
+Eero requires an Amazon account and cloud connectivity for all management. No pure local-only operation exists. However, you can minimize data collection:
+
+```bash
+# Eero privacy hardening (if you must use it)
+1. Create dedicated Amazon account (separate from personal)
+2. Disable Alexa integration in app
+3. Disable usage analytics in settings
+4. Configure DNS to Pi-hole for query blocking
+5. Monitor outbound DNS with tcpdump
+```
+
+## Network Monitoring Commands
+
+Verify what your mesh system is actually communicating:
+
+```bash
+# Monitor DNS queries from mesh device
+sudo tcpdump -i en0 dst port 53 -v | grep -E "192.168.1.1|<mesh-ip>"
+
+# Check HTTPS destinations (encrypted)
+sudo tcpdump -i en0 tcp port 443 -v | grep -E "192.168.1.1|<mesh-ip>"
+
+# Find mesh device IP and monitor continuously
+arp-scan -l | grep -i "tplink\|netgear\|amazon\|eero\|orbi"
+
+# Use Wireshark for detailed packet analysis
+# Filter for traffic from mesh device IP
+ip.src == 192.168.1.X
+```
+
+## Custom Firmware and Privacy Enhancements
+
+For developers willing to flash custom firmware:
+
+### OpenWrt on Compatible Routers
+
+Not all mesh systems support OpenWrt, but some Netgear and TP-Link models do:
+
+```bash
+# Check OpenWrt compatibility
+visit https://openwrt.org/supported_devices
+
+# If compatible, install OpenWrt for full local control
+# Benefits: no cloud, full customization, unlimited features
+# Tradeoff: loses warranty, requires technical expertise
+```
+
+OpenWrt provides:
+- Complete DNS control with dnsmasq
+- AdBlock integration
+- Traffic analysis tools
+- No cloud connectivity whatsoever
+
+### Pi-hole Integration
+
+All three mesh systems can route DNS through a local Pi-hole:
+
+```bash
+# Set up Pi-hole on Raspberry Pi
+docker run -d --name pihole -e TZ=UTC \
+  -p 53:53/tcp -p 53:53/udp \
+  -p 80:80 \
+  pihole/pihole
+
+# Configure mesh system to use Pi-hole as DNS
+# Eero: Settings > Advanced > DNS
+# Orbi: Advanced > DNS Settings
+# Deco: Advanced > DNS Settings
+
+# Point to: 192.168.1.XX (your Pi-hole IP)
+```
+
+All DNS queries flow through Pi-hole, blocking trackers and advertising domains before they leave your network.
+
+## Privacy Audit Checklist
+
+Before purchasing or after setup, verify:
+
+- [ ] Mesh system does not phone home during normal operation
+- [ ] Cloud account is optional (or not required)
+- [ ] Guest network completely isolated from main network
+- [ ] No integration with voice assistants enabled
+- [ ] Audit logs available for administrator review
+- [ ] Default credentials changed immediately
+- [ ] Firmware auto-updates can be disabled or scheduled
+- [ ] DNS provider is not owned by the manufacturer
+- [ ] Local API available for automation without cloud
+- [ ] Zero-day vulnerability disclosure process exists
+
+## Threat Model Application
+
+Choose based on your specific situation:
+
+**Consumer with smart home**: Eero works fine if you accept Amazon integration. The convenience may outweigh privacy concerns for non-sensitive networks.
+
+**Privacy-conscious home**: Deco with local-only operation provides strong privacy with good performance.
+
+**Developer building infrastructure**: Consider OpenWrt-compatible hardware for maximum control, even if not a branded mesh system.
+
+**Small business**: Orbi with local management disabled offers professional features without mandatory cloud.
+
+**High-security environment**: Separate mesh system from sensitive infrastructure. Use a privacy-focused standalone router for lab or development network.
+
 ---
 
 

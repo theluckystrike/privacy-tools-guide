@@ -152,6 +152,206 @@ Beyond secure communication channels, protect privilege through careful practice
 
 Your attorney should understand device compromise scenarios and have their own recommendations. Many law firms now offer secure client portals specifically designed for sensitive communications.
 
+## Legal Tool Recommendations and Setup
+
+### Proton Mail Enterprise for Law Firms
+
+If your attorney uses Proton Mail:
+
+```
+Setup:
+1. Create dedicated Proton Mail account
+2. Attorney shares their Proton Mail address
+3. Both parties enable encryption for message
+4. Enable message expiration (30 days)
+5. Disable forwarding to prevent leaks
+```
+
+Cost: Free for basic setup, €4/month for paid features
+
+### Tresorit Secure Sharing for Documents
+
+For larger case files or document exchanges:
+
+```
+1. Create Tresorit account from clean device
+2. Create encrypted folder ("Legal Matter 2024")
+3. Invite attorney's Tresorit account
+4. Upload documents (encrypted before leaving device)
+5. Set expiration dates on sensitive documents
+6. Revoke access when case concludes
+
+Cost: €15-30/month depending on storage needs
+```
+
+Benefits: No centralized server stores unencrypted data. Tresorit cannot access contents even if subpoenaed.
+
+### SecureSafe for Ongoing Communication
+
+Alternative with higher privacy focus:
+
+```
+1. Create account from clean device
+2. Generate secure link for attorney
+3. Upload documents to secure folder
+4. Attorney accesses via link without creating account
+5. All data encrypted end-to-end
+6. Automatic expiration available
+
+Cost: CHF 50-250/year depending on storage
+```
+
+## Threat Assessment Decision Tree
+
+Use this to decide what tools you need:
+
+```
+Is your device definitely compromised?
+├─ Yes: Use alternative device (library computer)
+│   └─ Case is time-sensitive?
+│       ├─ Yes: Use phone (from library)
+│       └─ No: Meet attorney in person
+├─ No (just suspected):
+│   └─ Can you bring the device to attorney?
+│       ├─ Yes: Let attorney examine it
+│       └─ No: Use alternative device anyway
+
+What type of law are we discussing?
+├─ Criminal: Assume maximum surveillance
+│   └─ Use most secure methods (Signal, in-person)
+├─ Civil (family, contracts, etc): Standard secure email works
+│   └─ Proton Mail + PGP sufficient
+└─ Immigration/refugee: Sensitive but less surveillance than criminal
+    └─ Session or Signal works well
+
+How time-critical is the communication?
+├─ Emergency (24 hours): Phone call from safe location
+├─ Urgent (1 week): Signal or Proton Mail
+└─ Standard (2+ weeks): In-person meeting preferred
+```
+
+## Privilege and Waiver Avoidance
+
+Maintaining attorney-client privilege requires careful practices:
+
+### What Preserves Privilege
+- Marked "Attorney-Client Privileged" in subject line
+- Directly to your attorney, not shared
+- Created for purpose of obtaining legal advice
+- Between you and attorney (no third parties)
+
+### What Waives Privilege
+- Accidentally disclosing to unauthorized third party
+- Using communications for non-legal purposes
+- Discussing with your spouse or friends
+- Forwarding to someone who isn't your attorney
+
+**Critical**: If your attorney instructs you to use a specific communication method, follow those instructions. Courts recognize attorney's judgment about what maintains privilege.
+
+## Example: Complete Threat Response Workflow
+
+**Scenario**: Your laptop appears to have malware. You need to discuss this with your criminal attorney immediately.
+
+```
+MINUTE 1: Recognize the threat
+- System behaving oddly (slow, crashes, unexpected programs)
+- Assume device is compromised
+
+MINUTE 5: Take immediate action
+- Disconnect from internet
+- Do not log into any accounts from this device again
+- Do not use this device for attorney communication
+
+MINUTE 15: Move to safe device
+- Find alternative: friend's phone, library computer
+- Bring your attorney's contact information (phone number)
+
+MINUTE 30: Call attorney
+- Use phone from safe device
+- Provide summary of situation
+- Establish secure communication method
+- Arrange in-person meeting if possible
+
+MINUTE 60: Follow up in writing
+- Use attorney's recommended secure method
+- Send written summary of phone conversation
+- Include: What happened, when, what data might be affected
+- Preserve everything for privilege
+
+HOUR 2: Device handling
+- If attorney recommends: bring device to law office
+- Attorney may have forensics expert examine it
+- If irreplaceable: back up to clean drive first (if attorney approves)
+```
+
+This workflow minimizes exposure while preserving privilege.
+
+## Documenting Your Security Measures
+
+For privilege protection, document that you took reasonable security precautions:
+
+```
+SECURITY LOG FOR ATTORNEY COMMUNICATIONS
+Matter: [Your Case Name]
+Date Started: [Date]
+Communication Methods Used: [List]
+
+Device Security:
+- Operating System: [macOS 14.2 / Windows 11]
+- Last Security Updates: [Date]
+- Anti-malware tool: [Windows Defender / ClamAV]
+- Firewall: [Status]
+
+Network Security:
+- Network Type: [Home WiFi / Library / Public]
+- VPN Used: [Yes/No]
+- Network Encryption: [WPA3 / WPA2]
+
+Communication Tools:
+- Primary: [Signal / Proton Mail / In-person]
+- Backup: [Alternative method]
+- Verification: [How attorney identity verified]
+
+This documentation demonstrates good faith security practices if privilege is challenged in court.
+```
+
+## Working With Your Attorney on Security
+
+Coordinate security practices with your legal team:
+
+1. **Initial discussion**: Ask about their security practices
+   - "What communication methods do you use?"
+   - "What if I need to send documents securely?"
+   - "How do you protect client communications?"
+
+2. **Establish preferences**: Work with their preferences
+   - Use their recommended methods
+   - Follow their instructions on encryption
+   - Respect their compromise comfort level
+
+3. **Maintain documentation**: Keep records of your practices
+   - Why you chose each method
+   - When you verified their identity
+   - What precautions you took
+
+4. **Escalation procedures**: Know what to do if suspected compromise
+   - How to reach them in emergency
+   - Alternative contact methods
+   - In-person meeting procedures
+
+A good attorney will have thought through these issues already.
+
+## Red Flags: When to Get a Different Attorney
+
+If your attorney:
+- Refuses to use encrypted communication for sensitive matters
+- Recommends standard email for criminal case discussions
+- Doesn't understand basic security concepts
+- Never discusses communication security
+- Pushes all sensitive discussion to in-person (extreme but suspicious)
+
+These red flags suggest limited security awareness. Consider consulting an attorney at a firm with dedicated security practices, especially for sensitive legal matters.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

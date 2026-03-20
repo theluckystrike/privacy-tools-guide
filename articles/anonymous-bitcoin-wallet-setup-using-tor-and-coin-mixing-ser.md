@@ -152,6 +152,204 @@ Many users undermine their privacy through simple mistakes:
 - Failing to verify the mixing service's implementation
 - Assuming mixing alone provides complete anonymity without network-level protection
 
+## Advanced Mixing Strategies
+
+### Multi-Hop Mixing for Maximum Privacy
+
+Perform mixing across multiple services and multiple rounds:
+
+```
+Step 1: Acquire Bitcoin from DEX
+↓
+Step 2: Mix through Wasabi (Round 1-5)
+↓
+Step 3: Transfer to Samourai Wallet
+↓
+Step 4: Mix through Whirlpool (Round 1-5)
+↓
+Step 5: Transfer to separate wallet for storage
+↓
+Step 6: After 2+ week wait, spend mixed coins
+```
+
+Each mixing service operates independently. A service that could track coins through one cannot connect them through another. Multiple rounds increase anonymity sets exponentially.
+
+### UTXO Management for Privacy
+
+Track your UTXOs (Unspent Transaction Outputs) carefully:
+
+```bash
+# Example UTXO management strategy
+Address 1 (mixed): 0.5 BTC (spend carefully)
+Address 2 (mixed): 0.5 BTC (spend after 1 month)
+Address 3 (mixed): 0.5 BTC (hold long-term)
+Address 4 (mixed): 0.5 BTC (backup)
+
+Rule: Never combine UTXOs in a single transaction
+      (combining reveals they're from the same source)
+```
+
+Spend mixed coins individually, never by combining multiple addresses.
+
+### Fee Bumping Without Privacy Loss
+
+If you need to increase transaction fees, do it privately:
+
+```bash
+# Bad: Replace-by-fee with higher fee
+# Analysis can infer you're the sender by watching fee pattern
+
+# Good: Wait for next batch and let it confirm naturally
+# Bad pattern is less apparent after time delay
+
+# Better: Send to mixer again first
+# New transaction obscures original fee patterns
+```
+
+Mixing services handle fee management internally, so they're safer for privacy-aware transactions.
+
+## Threat Models and Assumptions
+
+Your approach depends on what you're defending against:
+
+### Model 1: Internet Service Provider Monitoring
+**Threat**: ISP sees you visit Bitcoin exchange
+**Defense**: Use Tor for all exchange interactions
+**Level**: Basic
+
+### Model 2: Exchange Metadata Correlation
+**Threat**: Exchange records your ID, amount purchased, withdrawal address
+**Defense**: DEX without KYC, mixing before spending
+**Level**: Intermediate
+
+### Model 3: Blockchain Analysis Companies
+**Threat**: Chain surveillance following addresses across time
+**Defense**: Mixing, time delays, address separation
+**Level**: Advanced
+
+### Model 4: Targeted State Actor
+**Threat**: Law enforcement analysis of transactions over years
+**Defense**: Sophisticated UTXO management, sophisticated address creation patterns
+**Level**: Paranoid
+
+Choose your defensive measures to match your realistic threat model. Defending against state actors requires significant sophistication and paranoia.
+
+## Custody Models and Key Management
+
+How you store private keys affects your overall security:
+
+### Hot Wallet (Connected to Internet)
+- Easiest for frequent transactions
+- Most vulnerable to malware
+- Suitable for small amounts only ($500 or less)
+
+```bash
+# Hot wallet setup
+Electrum wallet on Linux laptop
+Secured with strong password
+Tor-connected exclusively
+Assumed compromisable, low funds
+```
+
+### Cold Wallet (Offline)
+- Suitable for long-term storage
+- Requires air-gapped signing
+- Best for large amounts
+
+```bash
+# Cold wallet setup
+Hardware wallet (Ledger/Trezor) + Sparrow
+Firmware verified
+Seed backed up to secure location
+Transaction signing done offline
+```
+
+### Multi-Signature (Multiple Keys Required)
+- Requires 2 or more keys to spend
+- Distributes trust across multiple security domains
+
+```bash
+# 2-of-3 multisig setup
+Key 1: Hardware wallet (home safe)
+Key 2: Backup seed (different location)
+Key 3: Trusted friend (emergency)
+
+Spend transaction requires at least 2 keys
+Each key held in geographically separate location
+```
+
+## Privacy Testing and Verification
+
+After mixing, verify your privacy gains:
+
+```bash
+# Test mixing effectiveness
+# Before: trace transaction history
+./bitcoin-cli gettransaction <txid>
+
+# After mixing: attempts to trace should fail
+# Use blockchain.com or whale-alert.io to search
+# Your mixed coins should not appear in analysis
+```
+
+Visit blockchain analysis sites and search for:
+- Your mixing wallet address (should find no history)
+- Your spending address (should not link back to original source)
+- Your post-mix address (should appear independent)
+
+Effective mixing makes these lookups fail to establish causality.
+
+## Legal and Regulatory Considerations
+
+Privacy coins (Monero, Zcash) and mixing may face regulatory restrictions:
+
+**United States**: Mixing is legal, though regulatory scrutiny increases. FATF guidance suggests exchanges may delist privacy coins.
+
+**European Union**: Proposed regulations may restrict mixing service access.
+
+**Authoritarian Jurisdictions**: Expect crackdowns on mixing and anonymity.
+
+Research your jurisdiction's laws. Bitcoin mixing is legal in most developed countries, but this may change. Stay informed.
+
+## Service Reliability and Backup Plans
+
+Coin mixing services can become unavailable:
+
+```
+Wasabi: Maintained by Bitcoin privacy developers
+        High likelihood of long-term availability
+
+Samourai: Maintained by dedicated team
+         Some centralized elements (coordinator)
+         Lower likelihood vs Wasabi
+
+CoinJoin.io: Decentralized implementation
+            More robust against service closure
+            Less user-friendly
+```
+
+Familiarize yourself with multiple mixing implementations. If your primary service becomes unavailable, understand how to use alternatives.
+
+## Combining Mixing with Other Privacy Techniques
+
+Comprehensive privacy combines multiple approaches:
+
+```
+Network Privacy: Tor
+  ↓
+Exchange Privacy: No-KYC DEX
+  ↓
+Wallet Privacy: Fresh address per transaction
+  ↓
+Mixing Privacy: CoinJoin
+  ↓
+Temporal Privacy: Time delays between steps
+  ↓
+Custody Privacy: Cold storage, multisig
+```
+
+Each layer adds friction but increases privacy exponentially.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

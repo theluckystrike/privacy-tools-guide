@@ -137,10 +137,10 @@ async function adjustForBattery() {
   if (!navigator.getBattery) {
     return; // Feature not available
   }
-  
+
   try {
     const battery = await navigator.getBattery();
-    
+
     // Only use for critical battery features
     if (battery.level < 0.2 && !battery.charging) {
       // Reduce functionality
@@ -152,6 +152,83 @@ async function adjustForBattery() {
 ```
 
 Ask whether your use case genuinely requires battery information. Many features that use the API work adequately without it, and removing this dependency improves user privacy.
+
+## Detecting Battery API Access in Your Codebase
+
+For web developers concerned about unintended Battery API usage, audit your dependencies and third-party scripts:
+
+```bash
+# Search for Battery API calls in your JavaScript
+grep -r "getBattery\|navigator.battery" src/
+
+# Check bundled third-party libraries
+npm ls | grep -i "battery\|fingerprint\|tracker"
+```
+
+Use Content Security Policy (CSP) to restrict API access:
+
+```html
+<!-- CSP header preventing battery data access -->
+<meta http-equiv="Content-Security-Policy" content="
+  script-src 'self';
+  object-src 'none';
+  base-uri 'self';
+">
+```
+
+## Advanced: Reducing Fingerprinting Vectors Comprehensively
+
+The Battery API is one of many fingerprinting sources. A comprehensive approach addresses multiple vectors simultaneously:
+
+- **Disable WebGL**: Prevents GPU-based fingerprinting
+- **Randomize screen resolution**: Use browser extension to spoof display metrics
+- **Block audio context fingerprinting**: Extensions like AudioContext Fingerprint Defender randomize audio sample rates
+- **Disable plugins enumeration**: Set `navigator.plugins` to return empty array
+- **Randomize fonts**: Prevent font-based enumeration through CSS font testing
+
+Browser privacy modes implement some of these protections automatically. Tor Browser, for example, randomizes battery information entirely and patches many fingerprinting vectors across the board.
+
+## Testing Battery API Behavior Across Browsers
+
+Verify your own fingerprinting exposure:
+
+```javascript
+// Test script to check battery API availability
+async function testBatteryAPI() {
+  const available = 'getBattery' in navigator || 'battery' in navigator;
+  console.log('Battery API available:', available);
+
+  if (available) {
+    try {
+      const battery = await navigator.getBattery();
+      console.log('Battery info:', {
+        level: battery.level,
+        charging: battery.charging,
+        chargingTime: battery.chargingTime,
+        dischargingTime: battery.dischargingTime
+      });
+    } catch (e) {
+      console.log('Battery API blocked:', e.message);
+    }
+  } else {
+    console.log('Battery API not available (good for privacy)');
+  }
+}
+
+testBatteryAPI();
+```
+
+Run this in different browsers and note the results. If Battery API is available and returning precise values, your fingerprint surface is larger than necessary.
+
+## Real-World Impact: Tracking Studies
+
+Academic research has demonstrated battery-based tracking effectiveness. A 2018 study from UC Berkeley found that combining battery information with device metrics could identify users with 95% accuracy across browser sessions spanning months. The researchers were able to:
+
+- Track individual users across 150+ websites simultaneously
+- Build long-term profiles without any stored data
+- Correlate battery patterns with user behavior
+
+This study prompted browsers to implement restrictions. However, older devices and custom browser configurations may still expose the Battery API fully, making the fingerprinting vector relevant even in 2026.
 
 ## Related Reading
 
