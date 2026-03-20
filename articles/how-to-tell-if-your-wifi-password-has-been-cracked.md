@@ -158,6 +158,235 @@ Detection works alongside prevention. Implement these measures to reduce your at
 5. **Segment your network**: Create a guest network for IoT devices and visitors
 6. **Enable router notifications**: Many modern routers alert you to new device connections
 
+## Advanced Detection: Behavioral Analysis
+
+Beyond simple device counting, sophisticated detection analyzes network behavior patterns that indicate compromise:
+
+### Protocol-Level Analysis
+
+Unauthorized users often exhibit distinct network patterns:
+
+```python
+from collections import defaultdict
+import time
+
+class NetworkBehaviorAnalyzer:
+    def __init__(self):
+        self.connections = defaultdict(list)
+        self.traffic_patterns = {}
+
+    def analyze_traffic_timing(self, packets):
+        """Identify unusual network timing patterns."""
+        for packet in packets:
+            src_mac = packet['src_mac']
+            timestamp = packet['timestamp']
+            self.connections[src_mac].append(timestamp)
+
+        suspicious_devices = []
+
+        # Look for devices making connections at odd hours
+        for mac, timestamps in self.connections.items():
+            hours = [time.localtime(ts).tm_hour for ts in timestamps]
+
+            # If device is active 3AM-5AM regularly, it's suspicious
+            night_activity = sum(1 for h in hours if h in [3, 4, 5])
+            if night_activity > len(hours) * 0.3:
+                suspicious_devices.append({
+                    'mac': mac,
+                    'reason': 'Unusual night activity',
+                    'night_activity_ratio': night_activity / len(hours)
+                })
+
+        return suspicious_devices
+
+    def analyze_bandwidth_patterns(self, traffic_data):
+        """Identify bandwidth-intensive activities."""
+        per_device = defaultdict(list)
+
+        for entry in traffic_data:
+            mac = entry['device_mac']
+            bytes_sent = entry['bytes_out']
+            per_device[mac].append(bytes_sent)
+
+        anomalies = []
+
+        # Detect devices using excessive bandwidth
+        for mac, transfers in per_device.items():
+            total_bytes = sum(transfers)
+            avg_transfer = total_bytes / len(transfers) if transfers else 0
+
+            # If a device averages >100MB per session, something's off
+            if avg_transfer > 100_000_000:
+                anomalies.append({
+                    'mac': mac,
+                    'reason': 'Excessive bandwidth',
+                    'avg_transfer_mb': avg_transfer / 1_000_000
+                })
+
+        return anomalies
+```
+
+This analysis identifies behavioral patterns that distinguish legitimate devices from unauthorized ones.
+
+### DNS Query Clustering
+
+Legitimate devices make predictable DNS queries (Google, Facebook, work services). Unauthorized users make different queries:
+
+```bash
+# Capture DNS queries and analyze patterns
+tcpdump -i eth0 -n 'udp port 53' -w dns_capture.pcap
+
+# Parse and analyze
+python3 << 'EOF'
+import pyshark
+
+def analyze_dns_queries(pcap_file):
+    cap = pyshark.FileCapture(pcap_file, display_filter='dns')
+
+    domains = {}
+    for packet in cap:
+        if hasattr(packet, 'dns'):
+            dns_layer = packet.dns
+            if dns_layer.has('qry_name'):
+                domain = dns_layer.qry_name.split('.')[0]  # TLD
+                domains[domain] = domains.get(domain, 0) + 1
+
+    # Suspicious domains unlikely to be queried by normal devices
+    suspicious = ['tor', 'proxy', 'vpn', 'torrent', 'piracy']
+
+    findings = []
+    for domain, count in domains.items():
+        if any(sus in domain for sus in suspicious):
+            findings.append(f"Suspicious domain: {domain} ({count} queries)")
+
+    return findings
+
+print(analyze_dns_queries('dns_capture.pcap'))
+EOF
+```
+
+Queries to Tor exit nodes, VPN services, or piracy sites indicate unauthorized network use.
+
+## Detecting Specific Attack Vectors
+
+Different cracking methods leave different forensic traces:
+
+### Dictionary Attack Indicators
+
+Dictionary attacks test common passwords repeatedly:
+
+```bash
+# Look for failed authentication patterns in logs
+grep -i "auth.*fail" /var/log/router.log | \
+  grep -o 'MAC.*' | \
+  sort | uniq -c | sort -rn
+
+# Many failures from same MAC = dictionary attack in progress
+```
+
+If a single MAC address shows 50+ failed authentications in an hour, someone is actively attacking your network with a dictionary.
+
+### Brute Force Attack Signatures
+
+Brute force attempts use every possible password combination:
+
+```
+2026-03-16 14:23:01: Authentication failed - MAC [AA:BB:CC:DD:EE:FF]
+2026-03-16 14:23:02: Authentication failed - MAC [AA:BB:CC:DD:EE:FF]
+2026-03-16 14:23:03: Authentication failed - MAC [AA:BB:CC:DD:EE:FF]
+2026-03-16 14:23:04: Authentication success - MAC [AA:BB:CC:DD:EE:FF]
+```
+
+The rapid-fire failures followed by success indicate a brute force completion. Modern routers should implement exponential backoff (increasing delay between attempts) to slow brute force attacks.
+
+### Handshake Capture Attempts
+
+Attackers attempting to crack WPA passwords must capture handshakes:
+
+```
+2026-03-16 10:15:22: Disassociation packet received - client [XX:XX:XX]
+2026-03-16 10:15:23: Deauthentication packet received - client [XX:XX:XX]
+2026-03-16 10:15:24: Client reconnected - client [XX:XX:XX]
+```
+
+Deauthentication attacks (forcing device disconnections) in the logs indicate someone actively capturing handshakes.
+
+## Recovery Steps After Compromise
+
+If you've confirmed unauthorized access:
+
+### Immediate Actions
+
+1. **Change password immediately** to a strong 20+ character random password
+2. **Change WPA2/WPA3 password** - do NOT reuse your previous password
+3. **Reboot the router** - forces disconnection of all connected devices
+4. **Reboot modem** - clears DHCP leases and disconnects ISP-level attacks
+
+### Verification Steps
+
+```bash
+# Confirm all unauthorized devices are disconnected
+# Check DHCP client list after reboot
+# Verify connected device count matches known devices
+
+# Monitor network carefully for 24 hours
+# Watch for unexpected data usage
+# Monitor for new device connections
+
+# Change passwords for all online accounts
+# Attackers with network access might have captured credentials
+```
+
+### Long-Term Hardening
+
+```bash
+# 1. Update router firmware immediately
+curl http://192.168.1.1/cgi-bin/luci -v | grep -i version
+
+# 2. Disable unnecessary features
+# - Disable UPnP (allows automatic port forwarding)
+# - Disable remote management
+# - Disable WPS (WiFi Protected Setup)
+# - Disable DDNS if not needed
+
+# 3. Configure firewall rules
+# Block outbound SMTP on port 25 (prevents botnet sending spam)
+# Block common P2P ports if not needed
+# Implement inbound stateful filtering
+
+# 4. Enable encrypted SSH access to router
+# Default telnet access is insecure
+
+# 5. Implement VPN for device access
+# If you need remote access, use OpenVPN, not direct router access
+```
+
+## Estimating Damage from Compromise
+
+If unauthorized access occurred, understand what attackers accessed:
+
+| Data Accessed | Damage Assessment | Recovery Action |
+|--|--|--|
+| Unencrypted traffic (HTTP) | High - passwords, sessions, data visible | Change all passwords, monitor accounts |
+| HTTPS traffic | Low - encrypted in transit | Monitor for account compromise |
+| Device IP addresses | Medium - enables targeting | Monitor devices, enable two-factor auth |
+| Router admin password | Critical - complete compromise | Change immediately, reset router to factory defaults |
+| WiFi password (WPA2) | High - ongoing access | Change immediately with strong password |
+| DNS queries | Medium - reveals browsing patterns | Not recoverable, implement DNS over HTTPS |
+| Connected devices list | Low - limited usefulness alone | Monitor for further compromise |
+
+The seriousness depends on what data was actually transmitted over the compromised network.
+
+## Professional Network Audits
+
+For high-value networks, consider professional audits:
+
+- **Network penetration testing**: $1,500-5,000, identifies vulnerabilities
+- **WiFi security assessment**: $500-2,000, tests network resilience
+- **Traffic analysis**: $2,000-10,000, forensic analysis of network patterns
+
+These services provide documented vulnerability assessments valuable for security hardening and legal proceedings if needed.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

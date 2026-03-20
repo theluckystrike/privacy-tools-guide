@@ -154,8 +154,271 @@ Several practices undermine backup code security:
 
 Storing all codes in one location defeats the redundancy purpose. Unencrypted digital storage invites compromise. Team backup codes need access logging, otherwise there is no audit trail. Expired codes during emergencies create account lockout, so track when codes were generated and regenerate them before they expire. Verify that codes work during setup — not during a crisis.
 
----
+## Backup Code Rotation Strategies
 
+Backup codes aren't "one and done." They require active management:
+
+### Planned Regeneration
+
+Most services allow regenerating backup codes, which invalidates old codes and generates new ones. Implement a rotation schedule:
+
+```python
+from datetime import datetime, timedelta
+
+class BackupCodeRotation:
+    def __init__(self, service_name):
+        self.service_name = service_name
+        self.generated_date = datetime.now()
+        self.rotation_interval = timedelta(days=365)
+        self.next_rotation = self.generated_date + self.rotation_interval
+
+    def is_rotation_needed(self):
+        """Check if codes should be rotated."""
+        days_until_rotation = (self.next_rotation - datetime.now()).days
+        return days_until_rotation <= 30
+
+    def regenerate_codes(self, new_codes):
+        """Replace old codes with new ones."""
+        # Delete old codes from all storage locations
+        self.delete_old_codes()
+
+        # Store new codes with updated timestamp
+        self.generated_date = datetime.now()
+        self.next_rotation = self.generated_date + self.rotation_interval
+        self.store_new_codes(new_codes)
+
+        # Update tracking
+        self.log_rotation_event()
+
+    def rotation_calendar(self):
+        """Track rotation dates for multiple services."""
+        services = {
+            'GitHub': datetime(2026, 6, 15),
+            'AWS': datetime(2026, 5, 20),
+            'Google': datetime(2026, 7, 10),
+            'Dropbox': datetime(2026, 4, 30)
+        }
+
+        for service, rotation_date in services.items():
+            days_until = (rotation_date - datetime.now()).days
+            print(f"{service}: rotate in {days_until} days")
+```
+
+Mark your calendar to regenerate codes annually. Services that haven't been rotated in over a year represent security gaps.
+
+### Emergency Code Usage
+
+When you actually need to use a backup code:
+
+1. Use it immediately (don't second-guess)
+2. Regenerate codes afterward (invalidates used code)
+3. Update stored copies with new codes
+4. Verify successful regeneration by checking account settings
+
+After using an emergency code, the threat level is elevated (something went wrong with your primary authenticator). Immediately regenerate to prevent any unused codes from being compromised.
+
+## Authenticator Device Failure Scenarios
+
+Understanding failure scenarios helps you prepare:
+
+### Lost Authenticator Device
+
+Your phone is stolen or lost, containing your TOTP secrets:
+
+```
+Scenario: Phone with TOTP app is stolen
+Impact:
+- Attacker has access to time-based codes
+- Can authenticate to any service using your TOTP
+- Your 2FA becomes useless
+
+Recovery with backup codes:
+- Log in using backup code
+- Immediately change password to something complex
+- Disable all sessions
+- Generate new TOTP secret (creates new QR code)
+- Set up TOTP on new device
+- Regenerate backup codes
+```
+
+Backup codes provide the only recovery path without account recovery email access.
+
+### Authenticator App Corruption
+
+Authenticator apps occasionally corrupt their databases:
+
+```
+Scenario: Authenticator app crashes, loses all secrets
+Impact:
+- Cannot generate TOTP codes
+- Locked out of 2FA-protected accounts
+- No alternative authentication available
+
+Recovery:
+- Use backup code to access account
+- Disable old authenticator
+- Re-add accounts to new authenticator instance
+```
+
+This scenario is rare but highlights why backup codes are critical.
+
+### Multiple Device Sync Failure
+
+Cross-device TOTP sync (synced across phone and tablet) can fail:
+
+```
+Scenario: Synced authenticator goes out of sync between devices
+Impact:
+- Codes on one device don't match the other
+- Inconsistent authentication across devices
+
+Recovery:
+- Use backup code from account where available
+- Resync authenticator accounts manually
+- Regenerate codes if service allows
+```
+
+### Catastrophic Backup Failure
+
+If ALL your backup codes are lost or destroyed:
+
+```
+Scenario: House fire, accident, or theft destroys all backup codes
+Impact:
+- Locked out of all 2FA-protected accounts
+- No authenticator device
+- No backup codes
+
+Recovery path:
+- Contact account recovery via email
+- Services have account recovery processes (usually 30-day waits)
+- Verify your identity through security questions, sent emails, or other methods
+- May result in temporary account suspension
+
+This is why "backup of backups" matters.
+```
+
+## Service-Specific Backup Code Behavior
+
+Different services handle backup codes differently:
+
+### GitHub
+
+- Provides 16 backup codes at setup
+- One-time use per code
+- Can be regenerated anytime
+- No expiration date
+- Codes shown only once (must be saved immediately)
+
+**Best practice**: Save to password manager immediately after generation.
+
+### AWS
+
+- Provides 5-10 backup codes (depends on 2FA type)
+- Single use per code
+- Can be regenerated through IAM console
+- No expiration
+
+**Best practice**: Store in secure facility not connected to AWS account (avoid AWS IAM secrets manager for backup codes).
+
+### Google
+
+- Provides 10 backup codes at setup
+- One-time use
+- Can be regenerated through security settings
+- No expiration
+- Can be printed as backup printable format
+
+**Best practice**: Print immediately and store in safe. Google's printed format is one of the easiest to access during emergencies.
+
+### Microsoft/Outlook
+
+- Provides 10 backup codes
+- One-time use
+- Can request new codes anytime
+- No expiration
+- Shows warning when codes are running low
+
+**Best practice**: Check remaining code count quarterly and regenerate when fewer than 3 remain.
+
+### Bitwarden (Self-Hosted 2FA)
+
+- User-configurable: 5-100 codes
+- Single use per code
+- Can be regenerated through admin panel
+- Optional expiration (default: no expiration)
+
+**Best practice**: Generate 20 codes and keep half physical, half digital.
+
+## Backup Code Documentation Template
+
+Create a tracking system for your codes:
+
+```
+SERVICE BACKUP CODE TRACKER
+
+Service: _____________
+Account: _____________
+Generated: ___________
+Status: [Active/Expired/Partially Used]
+Storage Location 1: ___________
+Storage Location 2: ___________
+Next Rotation: ___________
+
+Used Codes:
+- Code #1: [Used 2026-02-15]
+- Code #5: [Used 2026-03-10]
+
+Remaining Codes: _______
+Regeneration Plan: Annual (March 15)
+```
+
+Print this template and maintain it for each service requiring 2FA.
+
+## Recovery from Lost Backup Codes
+
+If you've lost your backup codes but still have access to your account:
+
+1. Verify you still have access (password + TOTP authenticator)
+2. Log into account settings immediately
+3. Locate 2FA settings and look for "backup codes" or "recovery codes"
+4. Regenerate new codes
+5. Store new codes immediately in primary and secondary locations
+6. Verify at least one code works
+7. Document regeneration date
+
+Never delay regeneration. If you lose backup codes, you're vulnerable to lockout.
+
+## Compliance and Professional Standards
+
+For organizations managing critical accounts, backup code policies should be documented:
+
+```
+ORGANIZATIONAL BACKUP CODE POLICY
+
+Policy Statement:
+- All accounts with access to production systems require TOTP 2FA
+- Backup codes required for all 2FA accounts
+- Codes stored in encrypted password manager (Bitwarden Enterprise)
+- Secondary copy in physical safe, accessible by IT director
+
+Rotation Schedule:
+- Codes regenerated annually
+- Emergency regeneration if primary codes are compromised
+- Rotation log maintained in audit system
+
+Access Control:
+- IT director: access to all backup codes
+- Service account owner: access only to their codes
+- Incident response team: temporary access during emergency
+
+Audit:
+- Monthly verification codes haven't been used
+- Quarterly review of unused codes
+- Annual rotation verification
+```
+
+This level of documentation becomes important for security audits and compliance certifications.
 
 ## Related Reading
 
