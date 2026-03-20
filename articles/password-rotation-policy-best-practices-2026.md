@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Password Rotation Policy Best Practices 2026: A Developer Guide"
+title: "Password Rotation Policy Best Practices 2026"
 description: "Practical password rotation strategies for developers and power users. Learn when to rotate credentials, how to automate updates, and which tools improve the process in 2026."
 date: 2026-03-15
 author: "Privacy Tools Guide"

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Encrypted Cloud Storage Free Tier 2026: A Developer's Guide"
+title: "Best Encrypted Cloud Storage Free Tier 2026"
 description: "A practical comparison of encrypted cloud storage services with free tiers in 2026, featuring CLI tools, encryption standards, and integration examples for developers."
 date: 2026-03-15
 author: theluckystrike

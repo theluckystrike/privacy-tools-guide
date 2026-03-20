@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Verify Your Devices Are Not Compromised: A Complete Audit"
+title: "Verify Your Devices Are Not Compromised: A Complete Audit"
 description: "A practical guide for developers and power users to audit device security, detect compromises, and verify system integrity through command-line tools."
 date: 2026-03-16
 author: theluckystrike

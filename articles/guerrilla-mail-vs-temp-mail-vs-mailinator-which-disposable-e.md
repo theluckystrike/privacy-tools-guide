@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Guerrilla Mail vs Temp Mail vs Mailinator: Which Disposable Email is Safest?"
+title: "Guerrilla Mail vs Temp Mail vs Mailinator"
 description: "A technical comparison of Guerrilla Mail, Temp Mail, and Mailinator for developers and power users. Evaluate security, privacy, and API capabilities."
 date: 2026-03-16
 author: theluckystrike

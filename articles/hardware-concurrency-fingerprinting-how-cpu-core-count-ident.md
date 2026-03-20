@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Hardware Concurrency Fingerprinting: How CPU Core Count Identifies You"
+title: "Hardware Concurrency Fingerprinting"
 description: "Learn how websites use hardware concurrency (CPU core count) for browser fingerprinting, and practical techniques to protect your privacy as a developer or power user."
 date: 2026-03-16
 author: theluckystrike

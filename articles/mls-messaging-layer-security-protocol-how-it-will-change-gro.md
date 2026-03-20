@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Mls Messaging Layer Security Protocol How It Will Change Group Encryption 2026"
+title: "Mls Messaging Layer Security Protocol How It Will Change Group Encryption"
 description: "Learn how MLS (Messaging Layer Security) protocol transforms group encryption for developers. Practical examples, implementation patterns, and what to."
 date: 2026-03-16
 author: theluckystrike

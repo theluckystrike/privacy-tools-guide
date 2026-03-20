@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In"
+title: "Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In"
 description: "A practical guide for developers and power users to create an automated system that delivers your credentials to trusted contacts if you become inactive."
 date: 2026-03-16
 author: "Privacy Tools Guide"

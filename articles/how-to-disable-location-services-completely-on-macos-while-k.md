@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Disable Location Services Completely On Macos While Keeping Apps Functional"
+title: "Disable Location Services Completely On Macos While Keeping Apps Functional"
 description: "A guide for developers and power users to disable macOS location services while maintaining app functionality through alternative methods."
 date: 2026-03-16
 author: theluckystrike

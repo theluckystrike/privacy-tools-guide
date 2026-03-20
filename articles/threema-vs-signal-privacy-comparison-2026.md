@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Threema vs Signal Privacy Comparison 2026: A Technical Analysis"
+title: "Threema vs Signal Privacy Comparison 2026"
 description: "Threema vs Signal Privacy Comparison 2026: A Technical Analysis — privacy guide covering tools, techniques, and best practices to protect your data and."
 date: 2026-03-15
 author: theluckystrike
