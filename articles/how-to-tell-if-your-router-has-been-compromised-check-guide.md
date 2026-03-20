@@ -148,6 +148,194 @@ fi
 
 Run this script hourly via cron for continuous monitoring.
 
+## Advanced Router Forensics
+
+For users with technical expertise, deeper investigation reveals more sophisticated compromise indicators:
+
+### Checking Router Firmware Modifications
+
+Router malware often modifies firmware to maintain persistence. Examine firmware binary signatures:
+
+```bash
+# Download original firmware from manufacturer
+# Compare with running system
+
+# On some routers with SSH access:
+ssh admin@192.168.1.1
+
+# Extract firmware
+dd if=/dev/mtd0 of=/tmp/firmware.bin
+
+# Compare against manufacturer's published binary
+sha256sum /tmp/firmware.bin
+# Cross-reference with manufacturer's checksums
+
+# Check for suspicious modifications
+strings firmware.bin | grep -i "malware\|backdoor\|exploit"
+```
+
+If the checksum doesn't match the manufacturer's published hash, your firmware has been modified.
+
+### Identifying Custom Firmware
+
+Some routers run custom open-source firmware (OpenWrt, Tomato) which is legitimate but should be intentional:
+
+```bash
+# Check router model and firmware
+curl http://192.168.1.1/status
+
+# Query system information
+ssh root@192.168.1.1 "uname -a"
+ssh root@192.168.1.1 "cat /etc/os-release"
+```
+
+If you never installed custom firmware but find it running, this indicates compromise.
+
+## Network Reconnaissance for Suspicious Activity
+
+Beyond simple DNS checks, examine network behavior patterns:
+
+```bash
+# Monitor DNS queries in real-time
+# Requires DNS logging on router or network capture
+
+tcpdump -i eth0 -n 'port 53' | head -20
+
+# Look for queries to suspicious domains
+# Example suspicious patterns:
+# - .tk, .ml, .ga domains (cheap TLDs favored by malware)
+# - Queries to IPs instead of domain names
+# - Queries to known C&C (command and control) servers
+```
+
+Tools like Pi-hole (running on a separate device) log all DNS queries from your network, making it easier to spot anomalies:
+
+```bash
+# Install Pi-hole for network-wide DNS monitoring
+docker run -d \
+  --name pihole \
+  -e TZ="UTC" \
+  -p 53:53/tcp \
+  -p 53:53/udp \
+  -p 80:80 \
+  pihole/pihole:latest
+```
+
+## Router Model-Specific Vulnerabilities
+
+Certain router models are frequently compromised. Check your model against known CVEs:
+
+```bash
+# Identify your router model
+curl -s http://192.168.1.1/status | grep -i "model\|version"
+
+# Check against known exploits
+# Visit: https://nvd.nist.gov/vuln/search
+# Or: https://www.exploit-db.com/
+
+# Subscribe to CVE alerts for your model
+# Many vendors provide security advisory mailing lists
+```
+
+Common vulnerable models from 2025-2026 include older TP-Link, D-Link, and Netgear units. If your router model appears in active CVE lists, prioritize updates.
+
+## Restoring Router Security After Compromise
+
+If you suspect compromise:
+
+### 1. Immediate Isolation
+```bash
+# Disconnect router from network
+# Do not powercycle (may trigger malware cleanup routines)
+# Leave powered on for forensics if desired
+```
+
+### 2. Hardware Replacement
+For thorough security, replace the compromised router rather than attempt recovery. Malware may persist in non-volatile memory that survives factory resets.
+
+### 3. Network Segmentation During Recovery
+If you must keep the router while recovering:
+
+```bash
+# Segment network into trusted and untrusted zones
+# Keep devices on separate SSID with isolated network
+
+# Create guest network strictly for unknown devices
+# Isolate IoT devices on separate network segment
+```
+
+### 4. Complete Credential Reset
+After recovery, change all credentials:
+
+```bash
+# Change router admin password
+# Ensure it's cryptographically random (16+ characters)
+# Store in password manager
+
+# Reset WiFi password
+# Use WPA3 encryption (WPA2 minimum)
+# Change SSID if it matches default
+
+# Reset SSH/SFTP credentials if enabled
+ssh-keygen -t ed25519 -C "router"
+```
+
+## Detecting Command and Control (C&C) Communication
+
+Compromised routers often communicate with attacker infrastructure:
+
+```bash
+# Analyze outbound traffic
+tcpdump -i eth0 'src 192.168.1.1' -w router_traffic.pcap
+
+# Examine with Wireshark
+wireshark router_traffic.pcap
+
+# Look for patterns:
+# - Regular connections to unknown external IPs
+# - Unusual ports (>50000) communicating with external hosts
+# - Encrypted traffic to untrusted destinations
+```
+
+Compare suspicious IPs against known malicious IP databases:
+
+```bash
+# Check IP reputation
+curl https://api.abuseipdb.com/api/v2/check \
+  -G \
+  -d ipAddress=SUSPICIOUS_IP
+```
+
+## Long-Term Monitoring Strategy
+
+Implement continuous monitoring rather than one-time checks:
+
+```bash
+#!/bin/bash
+# Continuous router health monitoring script
+
+ROUTER_IP="192.168.1.1"
+BASELINE_DNS="8.8.8.8"
+LOG_FILE="/var/log/router-monitor.log"
+
+while true; do
+  # Check DNS
+  CURRENT_DNS=$(dig +short @$ROUTER_IP example.com)
+
+  # Check uptime hasn't reset suspiciously
+  UPTIME=$(curl -s http://$ROUTER_IP/status | grep uptime)
+
+  # Check device count
+  DEVICE_COUNT=$(arp-scan --localnet 2>/dev/null | wc -l)
+
+  echo "$(date): DNS=$CURRENT_DNS, Uptime=$UPTIME, Devices=$DEVICE_COUNT" >> $LOG_FILE
+
+  sleep 3600  # Check hourly
+done
+```
+
+This script creates a baseline that helps identify unusual changes.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

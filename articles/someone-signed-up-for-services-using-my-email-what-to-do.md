@@ -148,6 +148,174 @@ Some situations require additional action:
 - **Legal threats**: If the account is used for illegal activity, contact local authorities
 - **Identity theft concerns**: If personal information is compromised, consider filing an identity theft report
 
+## Analyzing Email Headers for Forensics
+
+For developers wanting deeper analysis, examine full email headers. These reveal the actual origin of suspicious emails:
+
+```bash
+# Example: Gmail header analysis
+# The Received: field shows the email path
+
+Received: from mail.example.com (mail.example.com. [203.0.113.5])
+    by mx.gmail.com with SMTP id ...
+    Wed, 15 Mar 2026 14:23:00 +0000
+
+# Key header fields:
+# Authentication-Results: Shows if SPF, DKIM, DMARC passed
+# Return-Path: Sender's bounce address (may differ from From:)
+# X-Originating-IP: May reveal sender's IP address
+```
+
+If Authentication-Results shows failures, the email may be spoofed.
+
+## Comprehensive Account Security Audit
+
+When discovering unauthorized signups, conduct a broader account security review:
+
+```python
+# Script to check multiple services for account existence
+import requests
+import json
+
+def audit_email_accounts(email: str, services: list):
+    """Check if email is registered across services."""
+    results = {}
+
+    for service in services:
+        try:
+            # Most services have password reset endpoints
+            response = requests.post(
+                service['password_reset_endpoint'],
+                json={"email": email},
+                timeout=5
+            )
+
+            # Analyze response for account existence indicators
+            if "user not found" in response.text.lower():
+                results[service['name']] = "NOT FOUND"
+            elif "check your email" in response.text.lower():
+                results[service['name']] = "FOUND"
+            else:
+                results[service['name']] = "UNKNOWN"
+
+        except Exception as e:
+            results[service['name']] = f"ERROR: {str(e)}"
+
+    return json.dumps(results, indent=2)
+
+# Example usage
+services = [
+    {"name": "GitHub", "password_reset_endpoint": "https://github.com/password_reset"},
+    {"name": "AWS", "password_reset_endpoint": "https://aws.amazon.com/account/"},
+    # Add more services...
+]
+
+audit_results = audit_email_accounts("your@email.com", services)
+print(audit_results)
+```
+
+This helps identify all services where your email may have been used maliciously.
+
+## Credential Stuffing Detection and Prevention
+
+If unauthorized signups increase, you may be targeted by credential stuffing attacks. These use leaked credentials from other breaches:
+
+```bash
+# Check if your email appears in known breaches
+# Using haveibeenpwned.com API
+
+curl -H "User-Agent: PrivacyToolsGuide" \
+  "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com"
+
+# Response shows which breaches exposed your email
+# Combined with password reuse, attackers can access accounts
+```
+
+If exposed in breaches, ensure you're using unique passwords everywhere.
+
+## Setting Up Account Abuse Alerts
+
+For critical services, enable alerts on account creation:
+
+```python
+# Example: Webhook-based alert system for unauthorized access
+
+from flask import Flask, request
+import hmac
+import hashlib
+
+app = Flask(__name__)
+SECRET_KEY = "your-secret-key"
+
+@app.route('/account-alert', methods=['POST'])
+def account_alert():
+    """Receive webhook from services about account changes."""
+    data = request.json
+
+    # Verify webhook signature
+    signature = request.headers.get('X-Webhook-Signature')
+    expected_sig = hmac.new(
+        SECRET_KEY.encode(),
+        request.data,
+        hashlib.sha256
+    ).hexdigest()
+
+    if not hmac.compare_digest(signature, expected_sig):
+        return {"error": "Unauthorized"}, 401
+
+    # Log the alert
+    print(f"Alert: {data['event_type']} on {data['service_name']}")
+    print(f"Timestamp: {data['timestamp']}")
+    print(f"Action: Account {data['action']}")
+
+    # Implement notification logic (email, SMS, etc.)
+    return {"status": "received"}, 200
+
+if __name__ == '__main__':
+    app.run(port=5000)
+```
+
+This enables real-time notifications when suspicious account activity occurs.
+
+## Using Email Forwarding Rules for Monitoring
+
+Create forwarding rules to monitor signup emails:
+
+```bash
+# Gmail filter example
+# From: noreply@*
+# Contains: "confirm your email"
+# Forward to: monitor@example.com
+# Label: "Suspicious Signups"
+```
+
+This centralizes all signup notifications for easier monitoring.
+
+## Documenting Evidence for Potential Legal Action
+
+If repeated abuse occurs, document everything for potential legal claims:
+
+- Screenshots of suspicious signup emails (with headers)
+- List of dates and times of each signup attempt
+- Services names and URLs
+- Your response actions taken
+- Any service responses to abuse reports
+
+This documentation becomes valuable if you need to file a report with law enforcement or pursue civil action against the abuser or negligent service provider.
+
+## Related Services for Account Monitoring
+
+Several commercial services can monitor for unauthorized account creation on your behalf:
+
+| Service | Cost | Features |
+|---------|------|----------|
+| Equifax Identity Guard | $10.95/month | Credit monitoring, dark web scanning, account alerts |
+| LifeLock | $9.99/month | Identity theft protection, credit monitoring |
+| Experian IdentityWorks | Varies | Breach alerts, recovery services |
+| One Identity | $9.99/month | Dark web monitoring, ID theft protection |
+
+These services proactively monitor for fraudulent account creation across major platforms.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
