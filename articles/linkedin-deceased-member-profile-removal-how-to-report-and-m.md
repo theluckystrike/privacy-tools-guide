@@ -10,12 +10,13 @@ reviewed: true
 score: 8
 intent-checked: false
 voice-checked: true
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-When a LinkedIn user passes away, their professional profile remains accessible unless someone takes action to memorialize or remove it. This creates privacy concerns for families and organizations who want to respect the deceased's digital legacy. This guide covers the official processes for reporting deceased member profiles on LinkedIn, with practical details for developers and power users who need to handle these requests programmatically or in bulk.
+Report a deceased LinkedIn member's profile through the memorial request form in profile settings or via LinkedIn's support page. Provide a death certificate, obituary, or news article as proof. LinkedIn can memorialize (make read-only, add "Remembering" label) or delete the account if requested. For your own profile, designate a legacy contact in Account Settings > Legacy Settings to give someone permission to memorialize or manage your profile after death.
 
 ## Understanding LinkedIn's Deceased Member Policy
 

@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-When a loved one passes away, their digital presence requires careful handling. Instagram provides a memorialization process that transforms accounts while preserving digital legacies. This guide covers the technical details of what happens during memorialization, the request process, and how developers can work with these mechanisms programmatically.
+To memorialize a deceased Instagram account, submit a request through Instagram's memorial request form with a death certificate or obituary. The account becomes read-only, displays "Remembering" on the profile, disables login, and prevents new posts. You can designate a legacy contact to manage posts after death, or request deletion if the person wanted no digital legacy. Designate your own legacy contact in Settings > Account > Legacy Contact to ensure your family controls your account after you die.
 
 ## What Is Instagram Memorialization?
 

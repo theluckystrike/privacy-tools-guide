@@ -6,20 +6,18 @@ description: "A technical breakdown of facial recognition surveillance systems d
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /iran-facial-recognition-surveillance-how-cameras-in-public-s/
-<<<<<<< HEAD
 categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
-=======
 categories: [security, guides]
->>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
+intent-checked: true
 ---
 
 
 {% raw %}
 
-Facial recognition technology has become a cornerstone of government surveillance infrastructure worldwide, with Iran emerging as a notable case study in comprehensive public-space monitoring. Understanding the technical mechanisms behind these systems helps developers and privacy-conscious users implement effective countermeasures and protect personal data.
+Iran deploys integrated facial recognition surveillance at airports, highways, and public spaces connected to centralized government databases, primarily targeting women's clothing violations and political opposition. Defeat recognition by wearing sunglasses, face masks, and hats that disrupt facial landmarks; use hairline-altering makeup or prosthetics. For developers, advocate for on-device processing that doesn't transmit biometric data to servers. If targeted, use Signal without phone number verification and document surveillance instances for international human rights organizations.
 
 ## Technical Architecture of Public Surveillance Systems
 

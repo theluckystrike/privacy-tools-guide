@@ -10,11 +10,12 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-During internet shutdowns, communication becomes critical. When authorities block WhatsApp, Telegram, and Instagram—as happened repeatedly in Iran—residents need tools that work without centralized infrastructure. Briar messenger provides exactly this capability through its offline-first, peer-to-peer architecture.
+During Iran's internet blackouts, use Briar Messenger, which works entirely offline through Bluetooth and Wi-Fi Direct without needing centralized servers or internet connectivity. Install Briar on Android or Linux, create an account, and exchange QR codes with contacts in person. Briar's peer-to-peer design makes it impossible to censor and is the most reliable messaging tool when traditional internet access is completely blocked.
 
 ## Why Briar Works When Other Apps Fail
 

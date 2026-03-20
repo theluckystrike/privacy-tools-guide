@@ -11,12 +11,13 @@ reviewed: true
 score: 8
 intent-checked: false
 voice-checked: true
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-Romance scams have evolved into a sophisticated threat ecosystem, with fraudsters leveraging social engineering tactics, stolen photos, and automated messaging systems. For developers building dating platforms and privacy-conscious users, understanding the technical indicators and behavioral patterns of romance scammers enables more effective detection and prevention.
+Romance scams on dating apps follow predictable patterns: quick declarations of love, stolen photos that fail reverse-image searches, avoiding video calls, and requests for money. Spot these red flags by checking profile consistency across platforms, verifying photos through OSINT tools, and watching for messaging inconsistencies or suspicious financial requests. Developers can flag high-risk patterns through behavioral analysis and bot detection systems.
 
 ## Understanding Romance Scam Infrastructure
 

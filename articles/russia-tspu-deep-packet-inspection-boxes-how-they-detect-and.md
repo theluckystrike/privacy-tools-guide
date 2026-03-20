@@ -11,12 +11,13 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 
 {% raw %}
 
-If you operate VPNs or build privacy-focused applications that serve users in Russia, you've likely encountered traffic filtering systems that identify and block encrypted tunnels. These systems, commonly referred to as TSPU (Technical Supervision and Protection Unit) boxes or deep packet inspection (DPI) appliances, sit at network chokepoints and analyze traffic patterns to detect protocols that regimes want to restrict. Understanding how these systems work helps developers build more resilient tools and gives power users insight into what's actually happening on their networks.
+TSPU boxes are deep packet inspection systems deployed at Russian ISP chokepoints that identify VPN protocols by analyzing traffic patterns, TLS fingerprints, and handshake sequences. Defeat TSPU by using NaiveProxy (disguises as HTTPS), Shadowsocks with obfuscation plugins, or custom tools that mimic legitimate traffic. Avoid default VPN client signatures; compile custom clients. Developers building resilient applications should implement domain fronting, rotate server IPs frequently, and use traffic morphing techniques that make encrypted traffic statistically indistinguishable from normal browsing.
 
 ## What Are TSPU Deep Packet Inspection Boxes?
 

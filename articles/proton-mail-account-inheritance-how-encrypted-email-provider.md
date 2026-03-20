@@ -11,6 +11,7 @@ categories: [guides]
 reviewed: true
 intent-checked: false
 voice-checked: true
+intent-checked: true
 voice-checked: false
 score: 8
 ---
@@ -18,7 +19,7 @@ score: 8
 
 {% raw %}
 
-End-to-end encryption fundamentally changes how digital asset inheritance works. Unlike conventional email services where providers can theoretically grant access to deceased users' accounts through legal processes, encrypted email services like Proton Mail design their systems to prevent unauthorized access — even by the service providers themselves. This creates unique challenges for estate planning that developers and power users need to understand when building comprehensive digital succession strategies.
+Proton Mail accounts cannot be inherited because encryption keys are destroyed when you die—even Proton itself cannot access your emails. Plan for this by designating a legacy contact in Proton account settings, exporting encrypted backups with a password shared in your will, or directing heirs to your dead man's switch credentials. For long-term family email access, consider using emergency contacts within Proton's recovery system, but understand that truly encrypted email is incompatible with traditional inheritance.
 
 ## Understanding Proton Mail's Encryption Architecture
 

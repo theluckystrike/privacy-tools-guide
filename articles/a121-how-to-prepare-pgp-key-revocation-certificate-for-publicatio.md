@@ -10,12 +10,13 @@ reviewed: true
 score: 8
 intent-checked: false
 voice-checked: true
+intent-checked: true
 voice-checked: false
 ---
 
 {% raw %}
 
-A PGP key revocation certificate is your emergency escape hatch. When your private key is compromised, lost, or you simply want to retire an old key, the revocation certificate tells the world that this key is no longer valid. Without it, you have no way to signal that your key should no longer be trusted. This guide walks you through generating, securing, and publishing your revocation certificate.
+To prepare a PGP key revocation certificate, generate it immediately after creating your key using `gpg --gen-revoke`, then store it securely offline, and publish it to a keyserver if your key is compromised. A revocation certificate is a specially formatted file that invalidates your PGP key permanently, allowing you to protect yourself even if your private key is lost or stolen. This guide walks you through generating, securing, and publishing your revocation certificate to ensure you can always regain control of your key's trust status.
 
 ## Why You Need a Revocation Certificate Now
 
