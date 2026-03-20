@@ -113,7 +113,7 @@ Choose VPN providers that implement:
 - Dual-stack DNS (IPv4 and IPv6)
 - IPv6 kill switch functionality
 
-Providers like Mullvad, ProtonVPN, and IVPN have implemented comprehensive IPv6 protection.
+Providers like Mullvad, ProtonVPN, and IVPN have implemented IPv6 protection.
 
 ### Disable IPv6 at the Operating System Level
 
@@ -173,6 +173,56 @@ For maximum privacy, combine VPN protection with other measures like DNS-over-HT
 
 Remember: a VPN is only as strong as its weakest link. IPv6 leaks are common enough that assuming you're protected without testing is risky. Take a few minutes to verify your setup—you might be surprised by what you find.
 
+
+## Block IPv6 with nftables (Persistent)
+
+The `ip6tables` approach breaks across reboots. Use `nftables` with a persistent ruleset:
+
+```bash
+# Create persistent nftables IPv6 blocking ruleset
+sudo tee /etc/nftables-ipv6-block.conf << 'EOF'
+#!/usr/sbin/nft -f
+table ip6 filter {
+    chain output {
+        type filter hook output priority 0; policy drop;
+        oif "tun0" accept
+        oif "wg0" accept
+        oif "lo" accept
+    }
+    chain input {
+        type filter hook input priority 0; policy drop;
+        ct state established,related accept
+        iif "lo" accept
+    }
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+    }
+}
+EOF
+
+sudo nft -f /etc/nftables-ipv6-block.conf
+sudo systemctl enable nftables
+
+# Verify rules loaded
+sudo nft list ruleset | grep ip6
+```
+
+Replace `tun0` or `wg0` with your actual VPN interface (`ip link show` to find it).
+
+## Automated Leak Test Script
+
+Run this before trusting any VPN configuration:
+
+```bash
+#!/bin/bash
+echo "=== VPN Leak Test ==="
+echo "IPv4:" && curl -4 -s --max-time 5 https://icanhazip.com || echo "no response"
+echo "IPv6:" && curl -6 -s --max-time 5 https://icanhazip.com || echo "no IPv6 (expected if blocking)"
+echo "Default IPv6 route:" && ip -6 route show default || echo "none (good)"
+echo "IPv6 interfaces:" && ip -6 addr show scope global | head -5 || echo "none"
+```
+
+A working setup returns your VPN IPv4, no IPv6 response, and no IPv6 default route.
 
 ## Related Reading
 

@@ -261,6 +261,32 @@ The script will detect recovery and switch back, or you can configure it to rema
 
 **Logging**: Monitor the log file regularly or integrate with a log aggregation system for production environments.
 
+## Policy Routing for Split Traffic
+
+Use `ip rule` with named routing tables to send specific traffic through each tunnel independently of the default route:
+
+```bash
+# Register named routing tables
+echo "200 vpn0" | sudo tee -a /etc/iproute2/rt_tables
+echo "201 vpn1" | sudo tee -a /etc/iproute2/rt_tables
+
+# Route traffic from wg0 IP through provider 1 table
+sudo ip rule add from 10.0.0.2 table vpn0
+sudo ip route add default dev wg0 table vpn0
+
+# Route traffic from wg1 IP through provider 2 table
+sudo ip rule add from 10.0.1.2 table vpn1
+sudo ip route add default dev wg1 table vpn1
+
+# Verify active rules
+ip rule show
+ip route show table vpn0
+```
+
+This routes sensitive API traffic through provider 1 and general traffic through provider 2, without modifying the global default route. Add rules to `/etc/rc.local` or a systemd oneshot service for persistence across reboots.
+
+Automatic failover with WireGuard and systemd eliminates single-point failures. Swap providers by updating the `.conf` files — the monitoring script and routing tables stay unchanged.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

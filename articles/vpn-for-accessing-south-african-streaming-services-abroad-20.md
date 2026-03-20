@@ -172,6 +172,32 @@ wg-quick-up wg0.conf
 ```
 
 Ensure you configure firewall rules to allow UDP port 51820 and implement proper NAT settings.
+Full WireGuard server configuration for the Johannesburg instance:
+
+```ini
+# /etc/wireguard/wg0.conf on the server
+[Interface]
+PrivateKey = SERVER_PRIVATE_KEY
+Address = 10.0.0.1/24
+ListenPort = 51820
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
+[Peer]
+PublicKey = CLIENT_PUBLIC_KEY
+AllowedIPs = 10.0.0.2/32
+```
+
+Enable IP forwarding so the server routes client traffic through the South African IP:
+
+```bash
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+sysctl -p
+ufw allow 51820/udp && ufw enable
+```
+
+Your server's Johannesburg IP becomes your exit IP — a legitimate SA address that isn't part of a shared VPN pool that streaming services have already blocked.
+
 
 ---
 
