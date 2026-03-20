@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on deleting Faceb
 date: 2026-03-16
 author: theluckystrike
 permalink: /facebook-location-history-deletion-how-to-remove-all-stored-/
-categories: [guides, privacy]
+categories: [guides, security]
 reviewed: false
 score: 0
 intent-checked: false

@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on how to prevent
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/
-categories: [guides, privacy, ai]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
