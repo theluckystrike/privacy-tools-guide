@@ -262,6 +262,7 @@
 
 
 
+
 layout: default
 title: "WireGuard Postup Postdown Scripts for Advanced Routing Configuration"
 description: "Learn how to leverage WireGuard's postup and postdown scripts to implement advanced routing, split tunneling, and network automation for enhanced privacy and performance."
@@ -283,6 +284,7 @@ permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-configuration
 reviewed: true
 score: 8
 ---
+
 
 
 
