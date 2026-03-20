@@ -143,6 +143,22 @@ Effective crisis communication requires preparation:
 
 Having Briar operational before internet restrictions begin gives you the best chance at maintaining communication when it matters most.
 
+```bash
+# Install Briar on Android via ADB when app stores are unavailable
+# Download the APK from briarproject.org while internet is accessible
+
+# Enable USB debugging: Settings -> Developer Options -> USB debugging
+adb devices
+adb install -r briar.apk
+
+# Verify installation
+adb shell pm list packages | grep briar
+
+# Briar Desktop on Linux (Debian/Ubuntu)
+wget https://desktop.briarproject.org/releases/briar-desktop-latest.deb
+sudo dpkg -i briar-desktop-latest.deb
+```
+
 
 ## Related Reading
 
