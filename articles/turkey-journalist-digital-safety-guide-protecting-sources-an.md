@@ -2,13 +2,13 @@
 
 
 layout: default
-title: "Turkey Journalist Digital Safety Guide: Protecting Sources and Communications from Government Surveillance"
-description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using open-source tools and advanced security practices."
+title: "Turkey Journalist Digital Safety Guide: Protecting."
+description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
 <<<<<<< HEAD
-categories: [security, privacy, journalism]
+categories: [guides]
 reviewed: true
 score: 8
 =======
@@ -226,6 +226,12 @@ Prepare for potential device seizure:
 Digital security for Turkish journalists requires layered defenses spanning communications, network access, device protection, and operational habits. No single tool provides complete protection—adopt a defense-in-depth strategy and regularly audit your security posture. Stay informed about current censorship methods and maintain backup communication channels with sources.
 
 Remember: the goal is not perfect security but making surveillance sufficiently expensive and time-consuming to protect your sources and your work.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

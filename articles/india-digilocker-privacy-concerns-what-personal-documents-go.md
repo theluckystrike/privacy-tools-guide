@@ -2,13 +2,13 @@
 
 
 layout: default
-title: "India DigiLocker Privacy Concerns: What Personal Documents the Government Stores Digitally and Access Risks"
+title: "India DigiLocker Privacy Concerns: What Personal."
 description: "A technical analysis of DigiLocker's data storage practices, API exposure, and privacy risks for developers and power users in India."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
 <<<<<<< HEAD
-categories: [privacy, india, government, digilocker, security]
+categories: [guides]
 reviewed: true
 score: 8
 =======
@@ -169,6 +169,12 @@ The Indian government has proposed enhancements to data protection through the D
 DigiLocker represents a convenient approach to digital document management, but its centralized architecture, API-driven access model, and tight coupling with Aadhaar create legitimate privacy concerns for developers and power users. Understanding what documents are stored, how authentication works, and what access risks exist allows you to make informed decisions about using the platform and implement appropriate safeguards.
 
 The trade-off between convenience and privacy is yours to evaluate based on your threat model and specific use case.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

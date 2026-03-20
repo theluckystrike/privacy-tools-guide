@@ -2,13 +2,13 @@
 
 
 layout: default
-title: "China Exit Ban: How Digital Surveillance Monitors Travel Plans Through Online Activity"
-description: "Understand how Chinese authorities use digital surveillance to monitor travel plans, enforce exit bans, and track online activity. Technical deep-dive for developers and power users."
+title: "China Exit Ban: How Digital Surveillance Monitors Travel."
+description: "Understand how Chinese authorities use digital surveillance to monitor travel plans, enforce exit bans, and track online activity. Technical deep-dive."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-/
 <<<<<<< HEAD
-categories: [privacy, security, surveillance, china, digital-rights]
+categories: [guides]
 reviewed: true
 score: 8
 =======
@@ -154,6 +154,12 @@ Modern privacy architecture increasingly focuses on metadata protection—not ju
 Understanding how systems like China's exit ban monitoring work isn't just academic—it's essential for building applications that respect user privacy in an era of ubiquitous surveillance infrastructure.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
