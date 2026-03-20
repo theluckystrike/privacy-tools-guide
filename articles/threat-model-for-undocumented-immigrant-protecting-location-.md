@@ -3,8 +3,8 @@
 layout: default
 title: "Threat Model for Undocumented Immigrant Protecting Location and Identity Digital"
 description: "A practical guide to building a digital threat model for protecting location and identity. Learn actionable strategies for device hardening, network security, and operational security for at-risk individuals."
-date: 2026-03-15
-author: "Privacy Tools Guide"
+date: 2026-03-16
+author: theluckystrike
 permalink: /threat-model-for-undocumented-immigrant-protecting-location-/
 categories: [guides]
 voice-checked: true
