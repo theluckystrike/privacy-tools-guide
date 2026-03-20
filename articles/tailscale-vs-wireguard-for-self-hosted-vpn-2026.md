@@ -176,6 +176,97 @@ PresharedKey = <output of: wg genpsk>
 AllowedIPs = 10.10.0.2/32
 ```
 
+## Monitoring and Alerting for WireGuard Tunnels
+
+Raw WireGuard exposes minimal observability out of the box. The `wg show` command gives you the last handshake timestamp and bytes transferred, which is enough to build a basic health monitor:
+
+```bash
+#!/usr/bin/env bash
+# wireguard-monitor.sh — alert when a peer has not handshaked recently
+
+INTERFACE="wg0"
+MAX_STALE_SECONDS=180  # 3 minutes
+
+wg show "$INTERFACE" latest-handshakes | while read peer_key epoch; do
+  now=$(date +%s)
+  age=$((now - epoch))
+
+  if [ "$age" -gt "$MAX_STALE_SECONDS" ]; then
+    echo "ALERT: peer $peer_key last handshake ${age}s ago (threshold: ${MAX_STALE_SECONDS}s)"
+    # Hook into your alerting system here
+    curl -s -X POST "$SLACK_WEBHOOK" \
+      -H 'Content-type: application/json' \
+      -d "{\"text\": \"WireGuard peer $peer_key on $INTERFACE is stale (${age}s)\"}"
+  fi
+done
+```
+
+Run this from cron every two minutes. A peer that has not re-keyed in 180 seconds is either offline or experiencing connectivity problems — catching this early prevents silent tunnel failures.
+
+For Tailscale/Headscale, query the control plane API instead:
+
+```bash
+# List node health via Headscale API
+curl -s http://localhost:8080/api/v1/node \
+  -H "Authorization: Bearer $HEADSCALE_API_KEY" | \
+  python3 -c "
+import json, sys, time
+nodes = json.load(sys.stdin)['nodes']
+now = time.time()
+for n in nodes:
+    last_seen = n.get('lastSeen', '')
+    name = n['givenName']
+    online = n.get('online', False)
+    if not online:
+        print(f'OFFLINE: {name} (last seen: {last_seen})')
+"
+```
+
+## Firewall Configuration for WireGuard
+
+A common misconfiguration is opening the firewall broadly on the WireGuard interface. Lock it down:
+
+```bash
+# UFW rules for WireGuard server
+sudo ufw allow 51820/udp comment 'WireGuard'
+sudo ufw allow in on wg0 to any port 53 comment 'DNS on VPN'
+sudo ufw allow in on wg0 to any port 80,443 comment 'HTTP/S on VPN'
+
+# Block all other traffic on the VPN interface by default
+sudo ufw deny in on wg0
+sudo ufw enable
+
+# Verify
+sudo ufw status verbose
+```
+
+If you are using WireGuard for site-to-site connectivity rather than full-tunnel VPN, restrict `AllowedIPs` on each peer to only the subnets they need rather than `0.0.0.0/0`:
+
+```ini
+[Peer]
+# Allow this peer to reach only the internal services subnet
+PublicKey = <client-pub-key>
+AllowedIPs = 10.10.0.2/32, 192.168.10.0/24
+```
+
+This split-tunnel configuration means the peer's regular internet traffic does not traverse your VPN server, reducing bandwidth costs and giving better performance for non-private traffic.
+
+## Choosing Between Tailscale SaaS and Headscale
+
+Tailscale's hosted coordination service is fast to set up but involves a third-party having visibility into your network topology (node names, IPs, last-seen times). Headscale eliminates that dependency at the cost of operational overhead:
+
+| Factor | Tailscale SaaS | Headscale (self-hosted) |
+|---|---|---|
+| Setup time | 5 minutes | 1-2 hours |
+| Node limit (free tier) | 3 users / 100 devices | Unlimited |
+| Coordination server trust | Tailscale Inc. | You |
+| ACL management | Web UI | YAML file / API |
+| DERP relay control | Tailscale-operated | Self-hosted or Tailscale DERP |
+| MagicDNS / split-DNS | Yes | Yes (via Headscale config) |
+| SSO integration | Yes (Google, GitHub, etc.) | Manual via OIDC |
+
+For privacy-sensitive workloads where node metadata should not leave your infrastructure, Headscale is the right choice. For a development team that wants VPN access in under an hour and trusts a SaaS vendor, Tailscale's hosted offering is difficult to beat on convenience.
+
 ## Related Reading
 
 - [Privacy Tools Guide Hub](/privacy-tools-guide/)
