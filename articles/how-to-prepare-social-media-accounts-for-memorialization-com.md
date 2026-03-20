@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Prepare Social Media Accounts for Memorialization: Comprehensive Checklist for All Platforms"
+title: "How to Prepare Social Media Accounts for."
 description: "A practical checklist and technical guide for preparing social media accounts for memorialization across all major platforms in 2026."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-prepare-social-media-accounts-for-memorialization-com/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---
@@ -215,6 +215,12 @@ EOF
 Preparing social media accounts for memorialization requires proactive planning and understanding each platform's specific processes. By following this checklist and leveraging available automation tools, you can ensure your digital legacy remains protected and your accounts are properly managed according to your wishes.
 
 Remember that platform policies change frequently—review and update your digital estate plan annually to account for new features and policy changes.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

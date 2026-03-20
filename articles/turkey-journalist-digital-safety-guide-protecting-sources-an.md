@@ -7,9 +7,13 @@ description: "A technical guide for Turkish journalists on securing communicatio
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
+<<<<<<< HEAD
 categories: [security, privacy, journalism]
 reviewed: true
 score: 8
+=======
+categories: [security, guides]
+>>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 
 

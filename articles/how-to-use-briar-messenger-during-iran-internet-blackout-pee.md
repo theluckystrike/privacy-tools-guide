@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use Briar Messenger During Iran Internet Blackout: Peer-to-Peer Setup"
+title: "How to Use Briar Messenger During Iran Internet."
 description: "A practical guide to setting up Briar messenger for decentralized, peer-to-peer communication when traditional internet access is blocked."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -141,6 +141,12 @@ Effective crisis communication requires preparation:
 6. Educate your circle about proper usage
 
 Having Briar operational before internet restrictions begin gives you the best chance at maintaining communication when it matters most.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

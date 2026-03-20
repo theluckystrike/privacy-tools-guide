@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Smart Device Deregistration After Death: How to Remove Deceased Person's Accounts from Shared Devices"
+title: "Smart Device Deregistration After Death: How to Remove."
 description: "A technical guide for developers and power users on removing deceased persons accounts from smart home devices, shared electronics, and IoT ecosystems."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -274,6 +274,12 @@ For your own digital estate planning:
 ## Summary
 
 Removing deceased persons' accounts from smart devices requires a multi-platform approach combining device-level removal, cloud account deauthorization, and proper documentation. Developers can automate parts of this process using platform APIs, but family sharing configurations and legal requirements often necessitate manual intervention. Start with cloud account management before moving to device-level removal, and maintain thorough documentation throughout the process.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

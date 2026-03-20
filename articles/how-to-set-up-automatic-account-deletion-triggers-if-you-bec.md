@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Set Up Automatic Account Deletion Triggers if You Become Incapacitated or Die"
+title: "How to Set Up Automatic Account Deletion Triggers if You."
 description: "Learn how to configure automatic account deletion triggers to protect your digital legacy. This guide covers dead man's switches, cron jobs, cloud functions, and practical implementations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -219,6 +219,12 @@ Setting up automatic account deletion triggers requires upfront effort but provi
 Your digital legacy deserves the same attention as your physical estate. By implementing these systems now, you protect your privacy, reduce the burden on loved ones, and ensure your digital footprint aligns with your wishes.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Detect Catfish on Dating Apps Using OSINT Verification Techniques (2026 Guide)"
-description: "Learn practical OSINT techniques to verify dating app profiles. Includes reverse image search, metadata analysis, social media cross-referencing, and automation scripts for developers."
+title: "How to Detect Catfish on Dating Apps Using OSINT."
+description: "Learn practical OSINT techniques to verify dating app profiles. Includes reverse image search, metadata analysis, social media cross-referencing, and."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-detect-catfish-on-dating-apps-using-osint-verificatio/
-categories: [guides, osint, privacy, dating-apps, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 ---
@@ -288,6 +288,12 @@ Rather than relying on a single test, combine multiple verification layers:
 No single technique guarantees detection, but combining them catches most catfishing attempts. The more verification layers that fail, the higher the confidence that you're dealing with a fake profile.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

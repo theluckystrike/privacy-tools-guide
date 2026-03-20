@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users to automate encry
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/
-categories: [guides, security, privacy]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -197,6 +197,12 @@ Setting up a dead man's switch using cron jobs provides an automated way to rele
 By regularly updating your check-in file, you maintain control over your encrypted files. When you fail to check in within the configured threshold, the cron job executes the release script, making your encrypted data accessible to designated recipients.
 
 This approach works well for digital estate planning, emergency access for trusted parties, or any scenario where automated file release provides peace of mind.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

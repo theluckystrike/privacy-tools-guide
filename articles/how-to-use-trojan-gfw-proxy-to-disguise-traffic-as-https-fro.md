@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users on configuring Tr
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/
-categories: [guides, privacy, networking]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

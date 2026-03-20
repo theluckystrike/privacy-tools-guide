@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Social Media Will: What Legal Authority Executor Has Over Your Digital Accounts by State (2026)"
+title: "Social Media Will: What Legal Authority Executor Has."
 description: "A comprehensive guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -184,6 +184,12 @@ To protect your digital legacy:
 5. Provide your executor with a separate encrypted inventory document
 
 The legal ecosystem continues to evolve as states refine their digital asset statutes and platforms update their policies. Review your digital estate plan annually to ensure it reflects both legal changes and your current online presence.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

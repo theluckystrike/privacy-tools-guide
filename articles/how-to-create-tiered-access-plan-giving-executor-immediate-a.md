@@ -7,9 +7,16 @@ description: "Learn how to build a tiered digital estate system where executors 
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-create-tiered-access-plan-giving-executor-immediate-a/
+<<<<<<< HEAD
 reviewed: true
 score: 8
 categories: [guides]
+=======
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
+>>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 
 

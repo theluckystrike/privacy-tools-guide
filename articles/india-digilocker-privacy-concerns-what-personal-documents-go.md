@@ -7,9 +7,13 @@ description: "A technical analysis of DigiLocker's data storage practices, API e
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
+<<<<<<< HEAD
 categories: [privacy, india, government, digilocker, security]
 reviewed: true
 score: 8
+=======
+categories: [security, guides]
+>>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 
 

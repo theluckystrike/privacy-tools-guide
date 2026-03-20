@@ -6,7 +6,7 @@ description: "Learn practical methods to confirm your VPN is bypassing censorshi
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/
-categories: [privacy, security, vpn]
+categories: [security]
 reviewed: true
 score: 8
 intent-checked: true

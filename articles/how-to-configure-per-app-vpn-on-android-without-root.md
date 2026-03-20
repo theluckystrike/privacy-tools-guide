@@ -6,7 +6,7 @@ description: "Learn how to set up per-app VPN on Android devices without root ac
 date: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-per-app-vpn-on-android-without-root/
-categories: [guides, vpn, android, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

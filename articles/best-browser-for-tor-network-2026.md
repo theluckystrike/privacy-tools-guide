@@ -9,7 +9,7 @@ permalink: /best-browser-for-tor-network-2026/
 <<<<<<< HEAD
 reviewed: true
 score: 8
-categories: [browser-privacy]
+categories: [guides]
 =======
 categories: [guides]
 tags: [tools]

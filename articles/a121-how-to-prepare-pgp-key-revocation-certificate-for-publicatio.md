@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Prepare PGP Key Revocation Certificate for Publication: A Complete Guide"
-description: "Learn how to generate, securely store, and publish a PGP key revocation certificate to invalidate your keys if compromised. Essential for developers and security-conscious users."
+title: "How to Prepare PGP Key Revocation Certificate for."
+description: "Learn how to generate, securely store, and publish a PGP key revocation certificate to invalidate your keys if compromised. Essential for developers."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/
@@ -181,6 +181,12 @@ Forgetting the passphrase for your backup is equally problematic. Document your 
 ---
 
 A PGP key revocation certificate is not optional. It is a fundamental part of key management that protects you and your correspondents when things go wrong. Generate it, secure it, and know how to use it.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

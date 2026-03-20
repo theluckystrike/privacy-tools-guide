@@ -6,7 +6,7 @@ description: "Learn how to create and manage separate digital identities for onl
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-compartmentalized-identity-for-online-dating/
-categories: [guides, privacy, dating]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true

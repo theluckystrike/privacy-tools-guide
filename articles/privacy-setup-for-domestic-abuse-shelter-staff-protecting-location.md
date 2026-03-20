@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Privacy Setup for Domestic Abuse Shelter Staff: Protecting Location Data"
-description: "A technical guide for shelter staff and developers building privacy-respecting tools. Learn how to configure devices, networks, and applications to protect survivor location data."
+title: "Privacy Setup for Domestic Abuse Shelter Staff."
+description: "A technical guide for shelter staff and developers building privacy-respecting tools. Learn how to configure devices, networks, and applications to."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/
-categories: [privacy, security, guides]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -256,6 +256,12 @@ Protecting location privacy for domestic abuse survivors demands technical rigor
 For developers building tools for this population, prioritize privacy by design: collect only necessary data, minimize retention periods, encrypt everything, and provide users with meaningful controls over their information.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

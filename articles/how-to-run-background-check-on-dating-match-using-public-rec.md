@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Run Background Check on Dating Match Using Public Records Safely and Legally"
+title: "How to Run Background Check on Dating Match Using Public."
 description: "A practical guide for developers and power users on verifying dating matches through public records while respecting privacy laws and ethical boundaries."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -272,6 +272,12 @@ def create_verification_record(name):
 Using public records for personal safety verification is a legitimate practice that can help you make informed decisions about meeting dating matches. Focus on verification—not investigation. The goal is confirming basic identity and checking for serious red flags, not compiling an exhaustive biography.
 
 Remember that public records are one tool among many. Your judgment, direct communication, and intuition remain essential. A background check complements but doesn't replace getting to know someone through conversation and interaction.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

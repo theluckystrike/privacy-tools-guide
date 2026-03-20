@@ -215,6 +215,12 @@ A self-hosted dead man's switch gives you peace of mind that your digital legacy
 
 Start with a simple setup: encrypt a test file, set up the cron job, and verify the email arrives when you let the inactivity period pass. From there, add redundancy and refine the payload to include everything your recipient would need.
 
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

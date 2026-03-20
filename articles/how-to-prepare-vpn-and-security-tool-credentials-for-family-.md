@@ -7,9 +7,16 @@ description: "A technical guide for developers and power users on securely trans
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-prepare-vpn-and-security-tool-credentials-for-family-/
+<<<<<<< HEAD
 reviewed: true
 score: 8
 categories: [vpn]
+=======
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
+>>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 
 

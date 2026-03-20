@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "How to Verify Someone's Identity Before Meeting from a Dating App: Safety Verification Techniques"
-description: "Learn practical techniques to verify identity before meeting someone from a dating app. Includes reverse image search, social media validation, and developer-friendly verification methods."
+description: "Learn practical techniques to verify identity before meeting someone from a dating app. Includes reverse image search, social media validation, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/
-categories: [guides, privacy, security]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
@@ -201,6 +201,12 @@ Identity verification before meeting from dating apps involves layering multiple
 Building your own verification tools gives you control over the process and helps you understand what indicators matter most. Start with the simplest methods (reverse image search and video calls) and add more sophisticated checks as needed.
 
 ---
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

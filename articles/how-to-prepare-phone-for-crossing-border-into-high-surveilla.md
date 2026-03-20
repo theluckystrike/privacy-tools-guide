@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Prepare Your Phone for Crossing Borders: Security Checklist"
-description: "A practical security checklist for developers and power users preparing phones for high-surveillance border crossings. Includes encryption, airplane mode, and device configuration steps."
+title: "How to Prepare Your Phone for Crossing Borders: Security."
+description: "A practical security checklist for developers and power users preparing phones for high-surveillance border crossings. Includes encryption, airplane."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prepare-phone-for-crossing-border-into-high-surveilla/
-categories: [security, privacy, travel]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -142,6 +142,12 @@ Consider a full device wipe and restore from your encrypted backup if you have a
 These measures won't guarantee protection in all scenarios, but they significantly reduce your attack surface. The goal is making your device uninteresting to border agents while ensuring that any data exposure is limited to non-critical information.
 
 For developers and power users, the extra effort pays off: your primary credentials, client data, and intellectual property remain protected even in the worst-case inspection scenario.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

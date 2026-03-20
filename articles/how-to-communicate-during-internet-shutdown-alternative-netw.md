@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Communicate During Internet Shutdown: Alternative Network Methods"
-description: "A practical guide to alternative communication methods when the internet goes down. Learn about mesh networks, offline messaging, and peer-to-peer protocols for developers and power users."
+title: "How to Communicate During Internet Shutdown: Alternative."
+description: "A practical guide to alternative communication methods when the internet goes down. Learn about mesh networks, offline messaging, and peer-to-peer."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-communicate-during-internet-shutdown-alternative-netw/
@@ -231,6 +231,12 @@ Test these systems regularly. An untested solution fails when needed most.
 Alternative network communication requires planning and preparation. The methods outlined here—from simple local network messaging to satellite-based solutions—provide options across different threat models and operational requirements. Start with simpler solutions like ad-hoc Wi-Fi networks, then layer in more robust options based on your specific needs.
 
 For developers, these protocols offer opportunities to build resilient applications that continue functioning when traditional infrastructure fails. The key is understanding the trade-offs between range, bandwidth, power consumption, and cost.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

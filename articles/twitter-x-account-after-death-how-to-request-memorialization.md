@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on handling Twitt
 date: 2026-03-16
 author: theluckystrike
 permalink: /twitter-x-account-after-death-how-to-request-memorialization/
-categories: [guides, privacy]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

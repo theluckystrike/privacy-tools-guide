@@ -6,9 +6,13 @@ description: "A technical breakdown of facial recognition surveillance systems d
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /iran-facial-recognition-surveillance-how-cameras-in-public-s/
+<<<<<<< HEAD
 categories: [privacy, security, surveillance]
 reviewed: true
 score: 8
+=======
+categories: [security, guides]
+>>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 
 

@@ -6,9 +6,16 @@ description: "A technical guide for executors and power users on how to identify
 date: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/
+<<<<<<< HEAD
 reviewed: true
 score: 8
 categories: [guides]
+=======
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
+>>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 
 
