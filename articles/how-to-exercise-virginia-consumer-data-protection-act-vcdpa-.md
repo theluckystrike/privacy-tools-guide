@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

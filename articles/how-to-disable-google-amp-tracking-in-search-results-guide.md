@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-disable-google-amp-tracking-in-search-results-guide/
 categories: [guides]
-tags: [privacy, google, amp, tracking, search]
+tags: [privacy-tools-guide, privacy, google, amp, tracking, search]
 reviewed: true
 score: 8
 intent-checked: true
