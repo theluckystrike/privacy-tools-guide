@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Signal Messenger Setup Guide for Journalists: Source Protection"
 description: "A practical guide to configuring Signal Messenger for journalists who need secure communications with confidential sources. Covers phone number privacy, disappearing messages, and advanced security settings."
 date: 2026-03-20
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /signal-messenger-setup-guide-for-journalists-source-protecti/
 categories: [guides]
 tags: [privacy-tools-guide]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
