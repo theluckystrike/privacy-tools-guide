@@ -8,6 +8,7 @@ permalink: /how-to-use-dead-mans-switch-with-multiple-independent-truste/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

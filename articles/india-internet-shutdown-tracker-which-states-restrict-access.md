@@ -9,6 +9,7 @@ author: "Privacy Tools Guide"
 permalink: /india-internet-shutdown-tracker-which-states-restrict-access/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

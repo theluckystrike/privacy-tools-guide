@@ -333,6 +333,7 @@ related_articles:
 permalink: /photographer-client-photo-privacy-protection-cloud-storage/
 reviewed: true
 score: 8
+voice-checked: true
 author: "Privacy Tools Guide"
 ---
 

@@ -9,6 +9,7 @@ permalink: /how-to-create-offline-digital-library-for-accessing-informat/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

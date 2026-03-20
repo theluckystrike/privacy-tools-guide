@@ -11,6 +11,7 @@ permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 =======
 categories: [security, guides]
 >>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738

@@ -10,6 +10,7 @@ permalink: /proton-mail-account-inheritance-how-encrypted-email-provider/
 categories: [guides]
 reviewed: true
 intent-checked: false
+voice-checked: true
 voice-checked: false
 score: 8
 ---

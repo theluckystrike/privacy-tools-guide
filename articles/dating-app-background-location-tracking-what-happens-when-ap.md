@@ -10,6 +10,7 @@ permalink: /dating-app-background-location-tracking-what-happens-when-ap/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

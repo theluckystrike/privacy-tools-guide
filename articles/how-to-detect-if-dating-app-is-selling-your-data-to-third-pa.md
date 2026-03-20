@@ -10,6 +10,7 @@ permalink: /how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

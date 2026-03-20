@@ -10,6 +10,7 @@ tags: [vpn, security, privacy, networking]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Split tunneling routes only work applications through your corporate VPN while personal browsing, streaming, and video calls use your regular internet connection directly, improving bandwidth and reducing latency while maintaining secure access to corporate resources. Configure split tunneling at the application level using your VPN client's app list, or at the routing level using firewall rules and policy routing on Linux. This guide walks through setting up split tunneling for work-only applications on macOS, Windows, and Linux, plus discusses security implications and best practices for hybrid work environments.

@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /smart-device-deregistration-after-death-how-to-remove-deceas/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

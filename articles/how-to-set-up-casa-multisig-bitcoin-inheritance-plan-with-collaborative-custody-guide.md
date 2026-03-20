@@ -9,6 +9,7 @@ permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborat
 categories: [guides, security]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

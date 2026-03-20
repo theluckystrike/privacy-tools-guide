@@ -9,6 +9,7 @@ permalink: /how-to-use-compartmentalized-identity-for-online-dating-sepa/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

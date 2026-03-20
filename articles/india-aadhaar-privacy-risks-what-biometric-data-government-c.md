@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /india-aadhaar-privacy-risks-what-biometric-data-government-c/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

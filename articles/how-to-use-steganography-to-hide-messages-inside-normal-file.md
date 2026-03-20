@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-use-steganography-to-hide-messages-inside-normal-file/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

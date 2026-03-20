@@ -11,6 +11,7 @@ permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 =======
 categories: [security, guides]
 >>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738

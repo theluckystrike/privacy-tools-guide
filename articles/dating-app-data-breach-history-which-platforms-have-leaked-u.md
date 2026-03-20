@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /dating-app-data-breach-history-which-platforms-have-leaked-u/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

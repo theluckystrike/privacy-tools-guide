@@ -8,6 +8,7 @@ permalink: /dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/
 categories: [guides, security]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

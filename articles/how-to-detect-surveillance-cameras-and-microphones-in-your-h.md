@@ -10,12 +10,14 @@ permalink: /how-to-detect-surveillance-cameras-and-microphones-in-your-h/
 <<<<<<< HEAD
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 =======
 categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 >>>>>>> 1b5b77ffcb5d71c126a0be390dcc1870a9969738
 ---
 

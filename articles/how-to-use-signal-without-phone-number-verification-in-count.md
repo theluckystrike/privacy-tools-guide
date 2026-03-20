@@ -9,6 +9,7 @@ permalink: /how-to-use-signal-without-phone-number-verification-in-count/
 categories: [guides, security]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

@@ -9,6 +9,7 @@ permalink: /how-to-document-all-online-accounts-for-executor-of-estate-c/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

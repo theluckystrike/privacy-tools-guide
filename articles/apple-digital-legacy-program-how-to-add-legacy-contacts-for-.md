@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /apple-digital-legacy-program-how-to-add-legacy-contacts-for-/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

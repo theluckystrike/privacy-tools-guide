@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /social-media-will-what-legal-authority-executor-has-over-you/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

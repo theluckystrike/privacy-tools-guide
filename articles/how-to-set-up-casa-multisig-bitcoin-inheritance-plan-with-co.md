@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

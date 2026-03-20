@@ -9,6 +9,7 @@ permalink: /how-to-configure-wireguard-with-obfuscation-to-bypass-russia/
 categories: [guides, security]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Russia's Deep Packet Inspection (DPI) systems have become increasingly sophisticated at identifying and blocking VPN traffic. WireGuard, while efficient and secure, uses a distinctive packet pattern that DPI systems can detect. This guide shows you how to configure WireGuard with obfuscation to bypass Russian DPI blocking systems.

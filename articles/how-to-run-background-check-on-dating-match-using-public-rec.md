@@ -8,6 +8,7 @@ permalink: /how-to-run-background-check-on-dating-match-using-public-rec/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

@@ -9,6 +9,7 @@ permalink: /how-to-communicate-during-internet-shutdown-alternative-netw/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

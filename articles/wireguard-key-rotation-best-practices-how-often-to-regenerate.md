@@ -10,6 +10,7 @@ score: 8
 categories: [guides]
 categories: [best-of]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

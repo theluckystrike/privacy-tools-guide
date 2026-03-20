@@ -8,6 +8,7 @@ permalink: /china-golden-shield-project-how-censorship-detection-works-t/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

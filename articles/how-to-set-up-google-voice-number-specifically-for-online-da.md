@@ -10,6 +10,7 @@ permalink: /how-to-set-up-google-voice-number-specifically-for-online-da/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

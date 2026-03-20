@@ -10,6 +10,7 @@ permalink: /encrypted-file-vault-inheritance-using-veracrypt-with-split-/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

@@ -324,6 +324,7 @@ permalink: /insurance-agent-client-health-data-privacy-protection-setup/
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 

@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-use-safenote-or-privnote-for-one-time-secure-credenti/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

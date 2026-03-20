@@ -11,6 +11,7 @@ categories:
   - telecommunications
 reviewed: true
 score: 8
+voice-checked: true
 ---
 categories: [guides]
 

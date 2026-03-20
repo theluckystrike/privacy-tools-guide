@@ -8,6 +8,7 @@ permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

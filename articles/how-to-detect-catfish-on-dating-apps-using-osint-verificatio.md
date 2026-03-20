@@ -9,6 +9,7 @@ permalink: /how-to-detect-catfish-on-dating-apps-using-osint-verificatio/
 categories: [guides, security]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

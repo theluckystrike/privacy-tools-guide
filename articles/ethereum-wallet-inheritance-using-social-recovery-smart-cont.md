@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /ethereum-wallet-inheritance-using-social-recovery-smart-cont/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

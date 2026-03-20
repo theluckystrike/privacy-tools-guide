@@ -9,6 +9,7 @@ permalink: /how-to-use-briar-messenger-during-iran-internet-blackout-pee/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

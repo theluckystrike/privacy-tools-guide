@@ -9,6 +9,7 @@ permalink: /how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

@@ -13,6 +13,7 @@ categories: [guides]
 reviewed: true
 score: 8
 intent-checked: false
+voice-checked: true
 voice-checked: false
 ---
 

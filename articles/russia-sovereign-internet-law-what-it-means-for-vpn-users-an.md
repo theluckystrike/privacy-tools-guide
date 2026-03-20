@@ -8,6 +8,7 @@ permalink: /russia-sovereign-internet-law-what-it-means-for-vpn-users-an/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

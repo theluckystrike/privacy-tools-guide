@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-set-up-dead-mans-switch-email-that-sends-credentials-/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

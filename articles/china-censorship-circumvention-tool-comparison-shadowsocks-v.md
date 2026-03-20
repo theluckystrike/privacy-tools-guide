@@ -8,6 +8,7 @@ permalink: /china-censorship-circumvention-tool-comparison-shadowsocks-v/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

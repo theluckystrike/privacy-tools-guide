@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /india-data-protection-bill-2026-what-it-means-for-citizen-pr/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

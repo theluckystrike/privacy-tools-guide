@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

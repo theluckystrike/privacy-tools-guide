@@ -8,6 +8,7 @@ permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
 categories: [guides, security]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

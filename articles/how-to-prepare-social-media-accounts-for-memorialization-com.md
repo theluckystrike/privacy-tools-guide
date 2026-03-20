@@ -9,6 +9,7 @@ permalink: /how-to-prepare-social-media-accounts-for-memorialization-com/
 categories: [guides, security]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

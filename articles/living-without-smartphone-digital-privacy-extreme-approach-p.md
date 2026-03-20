@@ -9,6 +9,7 @@ permalink: /living-without-smartphone-digital-privacy-extreme-approach-p/
 categories: [guides]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}

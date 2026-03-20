@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 CNAME cloaking hides third-party tracker domains behind first-party domain aliases in DNS records, allowing trackers to bypass cookie-blocking and third-party script restrictions. A website creates a CNAME pointing to a tracker server, making tracker requests appear to originate from the site domain rather than the tracker, bypassing same-origin policies. Detect CNAME cloaking by inspecting DNS resolutions, use privacy extensions that analyze DNS records, or switch to privacy-respecting DNS providers (Quad9, Mullvad) that might block known CNAME tracker domains.
