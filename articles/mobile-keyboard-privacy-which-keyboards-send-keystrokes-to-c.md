@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 8
 intent-checked: true

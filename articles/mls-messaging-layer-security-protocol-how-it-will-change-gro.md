@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, security]
 ---
 
 {% raw %}
