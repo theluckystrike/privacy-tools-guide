@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Data Subject Rights Automation Tools 2026: A Practical Guide"
 description: "Discover the best automation tools for handling GDPR data subject rights requests in 2026. Learn about DSAR automation, consent management, and."

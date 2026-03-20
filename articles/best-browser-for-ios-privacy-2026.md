@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Browser for iOS Privacy 2026: A Developer Guide"
 description: "Discover the most privacy-focused browsers for iOS in 2026. This guide evaluates browsers based on tracking protection, data handling, and."

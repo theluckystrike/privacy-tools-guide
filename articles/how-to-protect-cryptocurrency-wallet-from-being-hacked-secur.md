@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Protect Cryptocurrency Wallet From Being Hacked Secur"
 description: "A security guide for developers and power users on protecting cryptocurrency wallets from hackers. Covers hardware wallets, key."

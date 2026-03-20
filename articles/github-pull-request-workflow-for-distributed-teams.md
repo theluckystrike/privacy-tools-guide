@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Github Pull Request Workflow For Distributed Teams"
 description: "Master pull request best practices for remote and distributed software teams. Learn about branch strategies, code review workflows, automation, and."

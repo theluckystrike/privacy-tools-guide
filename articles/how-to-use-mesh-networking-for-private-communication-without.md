@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Use Mesh Networking for Private Communication Without Internet"
 description: "A practical guide to implementing mesh networking for offline, private communication. Learn about protocols, tools, and code examples for developers."

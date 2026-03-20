@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cryptomator Vs Veracrypt For Cloud Encryption"
 description: "Compare Cryptomator and VeraCrypt for cloud encryption. Learn practical implementation, performance differences, and which tool fits your development."

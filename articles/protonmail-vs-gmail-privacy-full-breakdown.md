@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ProtonMail vs Gmail Privacy: A Full Technical Breakdown"
 description: "A technical comparison of ProtonMail vs Gmail privacy features for developers and power users. Covers encryption, data collection, API access, and."

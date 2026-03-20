@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Check If Your Social Security Number Was Leaked Onlin"
 description: "A practical guide for developers and power users to check if their SSN has been exposed in data breaches. Includes API tools, monitoring scripts, and."

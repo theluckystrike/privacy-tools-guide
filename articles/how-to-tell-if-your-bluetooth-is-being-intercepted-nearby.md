@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Tell if Your Bluetooth Is Being Intercepted Nearby"
 description: "A practical guide for developers and power users on detecting Bluetooth interception attempts. Learn the technical indicators, detection methods, and."

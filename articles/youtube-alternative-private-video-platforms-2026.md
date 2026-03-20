@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Youtube Alternative Private Video Platforms 2026"
 description: "Explore private video hosting solutions for developers and power users in 2026. Compare self-hosted options, privacy-focused platforms, and deployment."

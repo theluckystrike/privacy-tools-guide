@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Set Up DNS-Based Ad Blocking on Travel Router GL-Inet for Privacy"
 description: "A practical guide to configuring DNS-based ad blocking on GL-Inet travel routers. Protect your devices network-wide with AdGuard Home or Pi-hole deployment."

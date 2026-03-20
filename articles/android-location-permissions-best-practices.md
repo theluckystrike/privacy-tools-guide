@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Android Location Permissions Best Practices"
 description: "A guide to implementing Android location permissions correctly. Learn about runtime permissions, foreground vs background location, and."

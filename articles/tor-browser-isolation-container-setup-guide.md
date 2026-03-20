@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Tor Browser Isolation Container Setup Guide"
 description: "A practical guide to running Tor Browser in isolated containers for enhanced privacy. Learn Docker, Firejail, and network namespace configurations."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns"
 description: "Learn how to configure DNSCrypt Proxy on Linux to encrypt DNS queries with authentication. This guide covers installation, configuration, and."

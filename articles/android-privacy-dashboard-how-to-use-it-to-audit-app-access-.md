@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Android Privacy Dashboard How To Use It To Audit App Access"
 description: "Android Privacy Dashboard: How to Use It to Audit App. — privacy guide covering tools, techniques, and best practices to protect your data and digital."

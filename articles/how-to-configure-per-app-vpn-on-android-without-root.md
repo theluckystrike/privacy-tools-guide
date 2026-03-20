@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Configure Per App Vpn On Android Without Root"
 description: "Learn how to set up per-app VPN on Android devices without root access. This guide covers Android's built-in VPN settings, supported apps, and configuration methods for selective VPN routing."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "1Password vs Keeper Security Comparison 2026"
 description: "A technical security comparison of 1Password and Keeper for developers and power users in 2026, covering encryption, CLI tools, secrets management, and."

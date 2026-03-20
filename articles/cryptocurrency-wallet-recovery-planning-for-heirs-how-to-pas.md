@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cryptocurrency Wallet Recovery Planning For Heirs How To Pas"
 description: "Learn practical methods for passing cryptocurrency wallet access to heirs without exposing private keys. Covers seed phrase encryption, multi-signature."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Turkey Secure Communication Guide For Activists And Ngos Ope"
 description: "A practical technical guide to implementing secure communication channels for activists and NGOs in Turkey. Covers E2EE protocols, Tor, mesh networks."

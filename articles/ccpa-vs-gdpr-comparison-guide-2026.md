@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Ccpa Vs Gdpr Comparison Guide 2026"
 description: "A technical comparison of CCPA and GDPR privacy regulations for developers. Learn the key differences, compliance requirements, and code patterns for."

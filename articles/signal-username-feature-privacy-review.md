@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Signal Username Feature Privacy Review"
 description: "Signal Username Feature Privacy Review — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in 2026."

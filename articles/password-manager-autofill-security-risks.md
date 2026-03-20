@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Password Manager Autofill Security Risks"
 description: "An in-depth analysis of security vulnerabilities in password manager autofill features, including practical mitigation strategies for developers and."

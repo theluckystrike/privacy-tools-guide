@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Android Location History Google Timeline How To Delete Perma"
 description: "A technical guide for developers and power users on permanently deleting Android location history from Google Timeline. Includes API methods, automated."

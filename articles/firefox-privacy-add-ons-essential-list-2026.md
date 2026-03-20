@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Firefox Privacy Add-ons Essential List 2026: Complete Guide"
 description: "Discover the best Firefox privacy add-ons for developers and power users in 2026. Includes practical setup guides, code configurations, and security."

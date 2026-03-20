@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Lightning Network Privacy Risks"
 description: "A technical breakdown of Lightning Network privacy risks and what information channel partners can observe about your transactions, wallet balances, and payment patterns."

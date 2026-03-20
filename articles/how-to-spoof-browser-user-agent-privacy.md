@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Spoof Browser User Agent Privacy"
 description: "Learn how to spoof browser user agent strings to enhance privacy, test web applications, and avoid fingerprinting. Practical techniques for developers."

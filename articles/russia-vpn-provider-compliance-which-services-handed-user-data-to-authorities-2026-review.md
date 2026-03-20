@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Russia Vpn Provider Compliance Which Services Handed."
 description: "A review of VPN provider compliance with Russian data requests. Learn which services cooperated with authorities and what this means for."
@@ -9,10 +8,8 @@ permalink: /russia-vpn-provider-compliance-which-services-handed-user-data-to-au
 score: 8
 voice-checked: true
 categories: [guides]
-categories: [guides]
 tags: [tools]
 reviewed: true
-score: 8
 intent-checked: true
 ---
 

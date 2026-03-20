@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager With Travel Mode: A Developer Guide"
 description: "Discover password managers with travel mode for developers and power users. Learn how to protect sensitive credentials when crossing borders while."

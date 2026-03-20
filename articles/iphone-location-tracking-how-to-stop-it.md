@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "iPhone Location Tracking How to Stop It: A Practical Guide"
 description: "Disable iPhone location tracking with these developer-focused methods. Learn about Significant Locations, system services, per-app controls, and."

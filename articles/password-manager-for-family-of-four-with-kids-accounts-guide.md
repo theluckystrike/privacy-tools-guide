@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Password Manager for Family of Four with Kids Accounts Guide"
 description: "A practical guide to setting up and managing a password manager for a family of four with kids. Covers vault organization, kid-safe configurations, and."

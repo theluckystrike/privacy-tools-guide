@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Password Manager Master Password Strength Guide"
 description: "A guide to creating and managing strong master passwords for password managers. Learn entropy calculations, key derivation functions, and."

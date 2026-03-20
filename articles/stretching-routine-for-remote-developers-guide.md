@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Stretching Routine for Remote Developers: A Practical Guide"
 description: "A stretching routine for remote developers to prevent RSI, back pain, and neck strain. Includes desk exercises, hourly breaks, and a."

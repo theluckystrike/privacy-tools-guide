@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Implement Consent Receipts Giving Customers Proof Of"
 description: "A technical guide for developers on implementing consent receipts that provide customers with verifiable proof of their privacy preferences and consent."

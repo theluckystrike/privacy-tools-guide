@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup for Celebrity: Protecting Personal Address."
 description: "A technical guide to securing personal addresses and family information for high-profile individuals. Learn practical tools, configuration steps, and."

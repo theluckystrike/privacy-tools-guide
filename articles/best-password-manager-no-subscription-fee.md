@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager No Subscription Fee"
 description: "Discover the best password managers without subscription fees. Compare open-source and free-tier options ideal for developers and power users in 2026."

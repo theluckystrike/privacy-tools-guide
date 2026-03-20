@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Cryptocurrency Privately Without Leaving Traceabl"
 description: "A technical guide for developers and power users on minimizing cryptocurrency transaction traceability through privacy tools, network-level."

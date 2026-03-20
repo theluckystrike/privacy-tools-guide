@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Qubes OS Compartmentalized Workflow Guide"
 description: "A practical guide to implementing a compartmentalized workflow in Qubes OS, isolating work and personal activities with proven security boundaries."

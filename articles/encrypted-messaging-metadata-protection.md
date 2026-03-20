@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Encrypted Messaging Metadata Protection: A Developer's Guide"
 description: "Learn how encrypted messaging metadata protection works, why it matters for privacy, and how to implement metadata-resistant communication systems."

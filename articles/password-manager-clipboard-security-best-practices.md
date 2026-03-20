@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Password Manager Clipboard Security Best Practices"
 description: "A guide to securing clipboard operations in password managers. Learn about clipboard vulnerabilities, auto-clear implementations, and."

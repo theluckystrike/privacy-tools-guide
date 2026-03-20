@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Protonmail Vs Tutanota For Daily Email Use Honest Comparison"
 description: "A practical technical comparison of ProtonMail and Tutanota for developers and power users. Encryption protocols, API access, alias management, and."

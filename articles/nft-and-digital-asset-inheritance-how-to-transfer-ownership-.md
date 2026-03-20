@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Nft And Digital Asset Inheritance How To Transfer Ownership"
 description: "A technical guide for developers and power users on implementing digital asset inheritance for NFTs and tokens. Covers smart contract patterns."

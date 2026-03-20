@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Turkey Election Period Internet Throttling"
 description: "A technical guide for developers and power users on maintaining internet access during Turkey's election periods. Includes practical tools, configuration examples, and censorship circumvention strategies."

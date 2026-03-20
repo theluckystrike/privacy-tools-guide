@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best VPN for South Korea: Accessing Western Streaming Sites"
 description: "A technical guide for developers and power users on configuring VPNs to access Western streaming services from South Korea. Covers protocols, DNS."

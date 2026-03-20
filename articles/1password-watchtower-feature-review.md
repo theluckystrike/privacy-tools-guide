@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "1Password Watchtower Feature Review: A Developer's Guide"
 description: "A practical review of 1Password Watchtower features for developers and power users. Learn how to audit passwords, monitor data breaches, and strengthen."

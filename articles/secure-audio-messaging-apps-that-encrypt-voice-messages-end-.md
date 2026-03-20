@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Secure Audio Messaging Apps That Encrypt Voice Messages End"
 description: "A developer-focused guide to secure audio messaging apps that encrypt voice messages end-to-end. Compare protocols, implementation patterns, and."

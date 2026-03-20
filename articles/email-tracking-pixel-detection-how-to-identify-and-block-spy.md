@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Email Tracking Pixel Detection"
 description: "Learn technical methods to detect, identify, and block email tracking pixels. Practical code examples for developers and power users."

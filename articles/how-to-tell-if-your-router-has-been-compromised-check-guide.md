@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Tell If Your Router Has Been Compromised Check Guide"
 description: "Learn how to identify signs of a compromised router with practical detection methods, command-line tools, and security hardening steps for developers."

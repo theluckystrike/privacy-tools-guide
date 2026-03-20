@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Protect Yourself from Credential Stuffing Attack"
 description: "Learn practical methods to defend against credential stuffing attacks. This guide covers password hygiene, MFA implementation, monitoring strategies, and developer-side protections for applications."

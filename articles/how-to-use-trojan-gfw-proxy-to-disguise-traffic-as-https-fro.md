@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Trojan Gfw Proxy To Disguise Traffic As Https Fro"
 description: "A practical guide for developers and power users on configuring Trojan GFW proxy to mask traffic as HTTPS for use from China."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Windows Activity History Disable Privacy Guide"
 description: "A practical guide for developers and power users to understand and disable Windows Activity History tracking through Settings, Group Policy, and."

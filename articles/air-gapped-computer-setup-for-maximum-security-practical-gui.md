@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Air Gapped Computer Setup For Maximum Security Practical Gui"
 description: "A practical guide to setting up an air-gapped computer for maximum security. Learn hardware selection, OS hardening, data transfer methods, and."

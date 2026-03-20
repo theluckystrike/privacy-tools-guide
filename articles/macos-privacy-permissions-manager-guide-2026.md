@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Macos Privacy Permissions Manager Guide 2026"
 description: "Master macOS privacy permissions using System Settings, Terminal, and scripting. Learn how to audit, grant, revoke, and automate app permissions for."

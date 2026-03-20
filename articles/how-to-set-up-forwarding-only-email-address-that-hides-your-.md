@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Forwarding Only Email Address That Hides Your"
 description: "Learn how to set up a forwarding-only email address to protect your primary inbox from spam, trackers, and unwanted newsletters. Complete guide for."

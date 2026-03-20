@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Pgp Encrypted Email With Protonmail To Non Proton"
 description: "A practical guide for developers and power users on sending PGP-encrypted emails from ProtonMail to external recipients. Includes key management."

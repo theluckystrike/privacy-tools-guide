@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Age Encryption For Secure File Sharing Command Li"
 description: "A practical guide to using age encryption for secure file sharing via command line. Learn installation, key generation, encryption, decryption, and."

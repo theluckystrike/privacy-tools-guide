@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Communicate Securely When All Messaging Apps Are Moni"
 description: "A practical guide for developers and power users on securing communications when messaging apps are monitored. Covers E2EE, self-hosted solutions, and."

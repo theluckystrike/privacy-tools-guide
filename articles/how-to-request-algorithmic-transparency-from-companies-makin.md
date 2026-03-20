@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Request Algorithmic Transparency From Companies Makin"
 description: "A practical guide for developers and power users on exercising your right to understand how automated systems impact your life. Includes templates."

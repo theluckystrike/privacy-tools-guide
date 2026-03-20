@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Turkey Internet Freedom Index Ranking And Comparison With Ne"
 description: "Turkey Internet Freedom Index Ranking and Comparison. — privacy guide covering tools, techniques, and best practices to protect your data and digital."

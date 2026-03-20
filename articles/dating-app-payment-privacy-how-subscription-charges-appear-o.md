@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Dating App Payment Privacy How Subscription Charges Appear O"
 description: "Learn how dating app subscription charges appear on your credit card and bank statements. Practical guidance for developers and power users on payment."

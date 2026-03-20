@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Tor Browser Cookies Tracking Prevention Guide"
 description: "A practical guide for developers and power users on how Tor Browser prevents cookie-based tracking through isolation mechanisms, configuration."

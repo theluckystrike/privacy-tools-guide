@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Prevent Someone From Tracking Your Location Through P"
 description: " technical guide for developers and power users on preventing phone location tracking. Covers GPS, network-based tracking, app."

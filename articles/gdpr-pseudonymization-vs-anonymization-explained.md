@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Gdpr Pseudonymization Vs Anonymization Explained"
 description: "A technical breakdown of pseudonymization and anonymization under GDPR with code examples, practical implementation patterns, and guidance for."

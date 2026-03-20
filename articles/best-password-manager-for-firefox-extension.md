@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager For Firefox Extension"
 description: "A practical comparison of password manager Firefox extensions with focus on security features, developer tools, API integration, and automation."

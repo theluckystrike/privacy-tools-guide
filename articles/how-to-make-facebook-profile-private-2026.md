@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Make Facebook Profile Private 2026"
 description: "Learn how to make your Facebook profile private in 2026 using the Facebook Graph API, browser automation, and manual settings. Complete guide for."

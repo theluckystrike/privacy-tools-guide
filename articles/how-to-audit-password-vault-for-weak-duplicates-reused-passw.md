@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Audit Password Vault for Weak, Duplicate, and Reused Passwords"
 description: "Learn practical methods to audit your password vault for weak passwords, duplicates, and reused credentials. Includes code examples and automated checking."

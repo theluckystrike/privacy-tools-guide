@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Data Retention Policy Template What To Keep And For How Long"
 description: "A practical data retention policy template for developers and businesses. Learn what data to keep, retention periods, and how to implement automated."

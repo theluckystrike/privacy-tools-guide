@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Notice Vs Privacy Policy Difference"
 description: "A technical breakdown of privacy notices versus privacy policies. Learn what each document contains, when to use which, and how to implement them in."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Test Vpn Kill Switch Actually Works Properly Guide"
 description: "Learn how to verify your VPN kill switch actually works. This guide covers testing methods, automated scripts, and troubleshooting for developers and."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "How to Archive Encrypted Email Securely: A Developer Guide"
 description: "Learn practical methods to archive encrypted emails using PGP, backup strategies, and automation tools. Perfect for developers and power users."

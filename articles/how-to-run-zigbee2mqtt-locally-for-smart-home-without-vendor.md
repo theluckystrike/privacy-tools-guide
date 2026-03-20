@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Run Zigbee2mqtt Locally For Smart Home Without Vendor"
 description: "A practical guide for developers and power users to run Zigbee2MQTT locally, eliminating vendor lock-in and cloud dependencies for your smart home setup."

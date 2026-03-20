@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Guerrilla Mail vs Temp Mail vs Mailinator"
 description: "A technical comparison of Guerrilla Mail, Temp Mail, and Mailinator for developers and power users. Evaluate security, privacy, and API capabilities."

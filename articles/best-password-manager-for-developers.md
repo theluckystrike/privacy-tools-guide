@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Password Manager for Developers: A Technical Guide"
 description: "A practical comparison of password managers with CLI support, API access, and developer-friendly features. Includes configuration examples and security."

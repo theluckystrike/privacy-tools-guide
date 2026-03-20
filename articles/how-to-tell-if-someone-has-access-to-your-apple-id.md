@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "How To Tell If Someone Has Access To Your Apple Id"
 description: "Learn how to detect unauthorized access to your Apple ID. This guide covers warning signs, checking active sessions, reviewing sign-in history, and."

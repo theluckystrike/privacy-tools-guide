@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "VPN Connection Drops Troubleshooting Guide"
 description: "A technical guide for developers and power users to diagnose and fix VPN connection drops. Includes command-line diagnostics, configuration fixes, and."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "GDPR Compliant Logging Practices for Developers"
 description: "A practical guide to implementing GDPR-compliant logging in your applications. Learn data minimization, consent management, and secure logging techniques."

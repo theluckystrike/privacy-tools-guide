@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Vpn Failover Between Two Providers Automatical"
 description: "A practical guide for developers and power users to implement automatic VPN failover between two providers using open-source tools and scripts."

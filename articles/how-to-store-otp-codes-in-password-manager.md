@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Store Otp Codes In Password Manager"
 description: "Learn how to store TOTP codes in your password manager for centralized 2FA management. Compare Bitwarden, 1Password, and CLI-based approaches for."

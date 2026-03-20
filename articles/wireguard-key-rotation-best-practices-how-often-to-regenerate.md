@@ -8,7 +8,6 @@ permalink: /wireguard-key-rotation-best-practices-how-often-to-regenerate/
 reviewed: true
 score: 8
 categories: [guides]
-categories: [best-of]
 intent-checked: true
 voice-checked: true
 ---

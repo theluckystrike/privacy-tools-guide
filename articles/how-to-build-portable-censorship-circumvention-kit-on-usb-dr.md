@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Build Portable Censorship Circumvention Kit On Usb Dr"
 description: "Create a portable USB-based toolkit for bypassing internet censorship while traveling. Includes configuration guides for Tor, obfs4 bridges, and secure."

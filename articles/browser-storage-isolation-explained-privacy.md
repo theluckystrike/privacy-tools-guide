@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Browser Storage Isolation Explained Privacy"
 description: "A technical guide covering browser storage mechanisms, origin-based isolation, SameSite cookies, and privacy best practices for developers building."

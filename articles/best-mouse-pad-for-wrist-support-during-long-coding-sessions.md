@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Mouse Pad For Wrist Support During Long Coding Sessions"
 description: "Discover the best mouse pads for wrist support during long coding sessions. Learn about ergonomic designs, memory foam options, and how to prevent."

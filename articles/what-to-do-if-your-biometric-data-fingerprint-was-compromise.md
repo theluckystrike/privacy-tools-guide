@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "What To Do If Your Biometric Data Fingerprint Was Compromise"
 description: "A practical guide for developers and power users on responding to fingerprint biometric data breaches. Includes technical assessment steps, containment."

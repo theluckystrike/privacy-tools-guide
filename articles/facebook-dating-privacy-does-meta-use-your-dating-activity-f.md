@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Facebook Dating Privacy Does Meta Use Your Dating Activity F"
 description: "A technical deep-dive into how Meta handles your Facebook Dating data, whether dating activity influences ad targeting, and privacy controls for."

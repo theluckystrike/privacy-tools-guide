@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Brave Browser Crypto Features Disable Guide"
 description: "A practical guide for developers and power users on how to disable built-in cryptocurrency features in Brave Browser for enhanced privacy and security."

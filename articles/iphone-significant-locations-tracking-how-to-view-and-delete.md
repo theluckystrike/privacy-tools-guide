@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Iphone Significant Locations Tracking How To View And Delete"
 description: "Learn how to access, review, and delete iPhone Significant Locations data. Complete technical guide for developers and privacy-conscious users."

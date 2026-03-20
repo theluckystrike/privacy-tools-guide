@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Vpn Authentication Methods Compared Certificate Vs."
 description: "A comparison of VPN authentication methods—certificate-based vs username/password. Learn which method provides better security for your."

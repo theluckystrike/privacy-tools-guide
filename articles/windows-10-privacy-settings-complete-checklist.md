@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Windows 10 Privacy Settings Complete Checklist"
 description: "A checklist of Windows 10 privacy settings for developers and power users. Learn which settings to disable, registry tweaks, and."

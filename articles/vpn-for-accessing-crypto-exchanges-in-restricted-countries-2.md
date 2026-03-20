@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Vpn For Accessing Crypto Exchanges In Restricted Countries 2"
 description: "A technical guide for developers and power users on using VPNs to access cryptocurrency exchanges in restricted regions. Includes configuration."

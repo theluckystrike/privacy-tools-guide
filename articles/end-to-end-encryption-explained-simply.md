@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "End-to-End Encryption Explained Simply: A Developer's Guide"
 description: "Learn end-to-end encryption from first principles. Understand how E2EE works, implement it in your applications, and grasp the cryptography behind."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Tor Snowflake Bridge To Help Users In Censored"
 description: "A practical guide for developers and power users to run a Tor Snowflake bridge, enabling anonymous internet access for users in censored regions worldwide."
@@ -9,10 +8,8 @@ permalink: /how-to-set-up-tor-snowflake-bridge-to-help-users-in-censored/
 score: 8
 voice-checked: true
 categories: [guides]
-categories: [guides]
 tags: [tools]
 reviewed: true
-score: 8
 intent-checked: true
 ---
 

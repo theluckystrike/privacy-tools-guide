@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Facebook Location History Deletion How To Remove All Stored"
 description: "A technical guide for developers and power users on deleting Facebook location history and removing stored places data from your account using the Data."

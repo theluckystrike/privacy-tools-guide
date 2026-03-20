@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Tresorit Vs Proton Drive Comparison 2026"
 description: "A technical comparison of Tresorit and Proton Drive for developers and power users. Covers encryption, API access, file sync, pricing, and real-world."

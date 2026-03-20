@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Workplace Drug Testing Privacy Rights"
 description: "A guide to workplace drug testing privacy rights. Learn what substances employers can test for, state-by-state variations, and legal protections for employees."

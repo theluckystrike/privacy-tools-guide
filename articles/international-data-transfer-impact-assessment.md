@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "International Data Transfer Impact Assessment"
 description: "A practical guide to conducting international data transfer impact assessments for developers and power users building global applications."

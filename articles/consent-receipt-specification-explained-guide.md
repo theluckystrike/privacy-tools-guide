@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Consent Receipt Specification Explained: A Developer Guide"
 description: "A practical guide to implementing the Consent Receipt Specification for developers and power users. Learn the JSON structure, key components, and code."

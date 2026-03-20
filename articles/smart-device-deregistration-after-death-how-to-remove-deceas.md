@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Smart Device Deregistration After Death How To Remove Deceas"
 description: "A technical guide for developers and power users on removing deceased persons accounts from smart home devices, shared electronics, and IoT ecosystems."

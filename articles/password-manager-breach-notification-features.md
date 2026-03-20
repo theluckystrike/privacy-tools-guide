@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Password Manager Breach Notification Features"
 description: "A guide to password manager breach notification features for developers and power users. Learn how breach alerts work, API integrations."

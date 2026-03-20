@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "CookieYes vs Osano Consent Tools Comparison 2026"
 description: "A technical comparison of CookieYes and Osano consent management platforms for developers in 2026, covering API integration, customization, and."

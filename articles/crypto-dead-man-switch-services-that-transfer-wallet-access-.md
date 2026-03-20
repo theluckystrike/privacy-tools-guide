@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Crypto Dead Man Switch Services That Transfer Wallet Access"
 description: "A review of crypto dead man switch services that automatically transfer wallet access after inactivity. Designed for developers and power."

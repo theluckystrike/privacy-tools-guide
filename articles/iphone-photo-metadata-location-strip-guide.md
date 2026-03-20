@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"
 description: "Learn how to strip GPS location data from iPhone photos using command-line tools, Python scripts, and automation workflows. Complete guide for."

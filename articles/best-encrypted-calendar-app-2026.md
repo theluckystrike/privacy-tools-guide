@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Encrypted Calendar App 2026: A Developer's Guide"
 description: "A practical comparison of encrypted calendar apps for developers and power users. Evaluate E2E encryption, CalDAV support, self-hosting options, and."

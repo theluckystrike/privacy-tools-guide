@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Coffee Meets Bagel Data Retention Policy How Long The App Ke"
 description: "Coffee Meets Bagel Data Retention Policy: How Long the. — privacy guide covering tools, techniques, and best practices to protect your data and digital."

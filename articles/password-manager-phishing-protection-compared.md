@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Password Manager Phishing Protection Compared"
 description: "Compare how leading password managers defend against phishing attacks. Learn about browser integration, autofill behavior, and technical."

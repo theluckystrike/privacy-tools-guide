@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "What To Do If Your Identity Was Stolen Online Step Guide"
 description: "A practical guide for developers and power users on how to respond when your identity has been stolen online. Covers immediate actions, account."

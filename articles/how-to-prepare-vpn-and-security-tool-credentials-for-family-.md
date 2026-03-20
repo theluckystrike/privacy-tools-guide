@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "How To Prepare Vpn And Security Tool Credentials For Family"
 description: "A technical guide for developers and power users on securely transferring VPN, password manager, and security tool access to family members. Includes."

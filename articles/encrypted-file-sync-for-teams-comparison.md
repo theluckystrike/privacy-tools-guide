@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Encrypted File Sync for Teams Comparison: A Developer Guide"
 description: "Compare encrypted file sync solutions for teams. We evaluate SyncThing, Tresorit, SpiderOak, and more with technical details, encryption models, and."

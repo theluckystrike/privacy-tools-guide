@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Threat Model For Transgender Person Protecting Deadname And"
 description: "A technical guide for developers and power users on building a threat model to protect your deadname and previous digital identity during a name."

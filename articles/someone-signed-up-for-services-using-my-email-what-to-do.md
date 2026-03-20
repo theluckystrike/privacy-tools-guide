@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Someone Signed Up for Services Using My Email — What to Do"
 description: "Received a verification email for an account you didn't create? This guide covers technical solutions, privacy protection steps, and preventive measures for developers and power users."

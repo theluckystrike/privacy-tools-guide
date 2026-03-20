@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Threat Model For Human Rights Worker In Conflict Zone Guide"
 description: "A threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement."

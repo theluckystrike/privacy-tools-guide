@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Encrypted File Vault Inheritance Using Veracrypt With Split"
 description: "A technical guide for implementing secure digital estate planning using VeraCrypt's hidden volume feature and split password authentication for executors and legal representatives."

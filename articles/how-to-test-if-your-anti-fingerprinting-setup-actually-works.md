@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Test if Your Anti-Fingerprinting Setup Actually Works"
 description: "A practical guide for developers and power users to verify that anti-fingerprinting protections are working correctly. Includes code examples and."

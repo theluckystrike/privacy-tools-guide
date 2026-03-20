@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best Password Manager for Small Teams in 2026"
 description: "A practical comparison of password managers optimized for small development teams. Features CLI tools, automation support, and team collaboration without enterprise pricing."

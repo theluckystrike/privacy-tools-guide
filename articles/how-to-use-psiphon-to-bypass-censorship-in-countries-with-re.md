@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Psiphon To Bypass Censorship In Countries With Re"
 description: "A technical guide for developers and power users on using Psiphon to circumvent internet censorship. Learn setup, configuration, API usage, and."

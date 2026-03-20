@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Dkim Spf Dmarc Email Authentication How They Protect Against"
 description: "Learn how DKIM, SPF, and DMARC work together to prevent email spoofing. A practical guide for developers and power users configuring email security."

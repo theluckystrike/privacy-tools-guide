@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "How To Create Encrypted Mailing List For Private Group Commu"
 description: "A practical guide to setting up encrypted mailing lists for private group communication in 2026. Learn about encryption tools, list managers, and."

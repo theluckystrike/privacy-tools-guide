@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "What Happens If Password Manager Company Closes"
 description: "Learn what occurs when password manager services shut down, how to protect your data, and strategies for ensuring continuity. Essential reading for."

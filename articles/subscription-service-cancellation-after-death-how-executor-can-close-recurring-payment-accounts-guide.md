@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Subscription Service Cancellation After Death How."
 description: "A technical guide for executors and power users on how to identify, access, and cancel subscription services after someone passes away. Includes."
@@ -9,10 +8,8 @@ permalink: /subscription-service-cancellation-after-death-how-executor-can-close
 score: 8
 voice-checked: true
 categories: [guides]
-categories: [guides]
 tags: [tools]
 reviewed: true
-score: 8
 intent-checked: true
 ---
 

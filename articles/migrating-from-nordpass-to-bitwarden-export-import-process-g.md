@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Migrating From NordPass to Bitwarden"
 description: "A technical guide for developers and power users migrating passwords from NordPass to Bitwarden. Covers CLI export, import automation, custom fields."

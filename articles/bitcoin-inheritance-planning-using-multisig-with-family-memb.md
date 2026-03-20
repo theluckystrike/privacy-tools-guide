@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Bitcoin Inheritance Planning Using Multisig With Family Memb"
 description: "A technical guide for developers and power users on setting up Bitcoin multisig inheritance planning with family members and estate lawyers."

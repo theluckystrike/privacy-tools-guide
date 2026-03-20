@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Social Media Will What Legal Authority Executor Has Over You"
 description: "A guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states."

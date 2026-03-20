@@ -8,6 +8,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
+layout: default
+date: 2026-03-15
 ---
 
 Check if your mail server IP is blacklisted by querying multiple blocklists (Spamhaus, SORBS, Barracuda) using lookup tools or direct DNS queries. Blacklisting occurs from spam complaints, compromised accounts sending malware, or reputation damage from abandoned IPs. Once blacklisted, remediate the underlying issue (enforce authentication, reduce spam complaints), then request delisting from each DNSBL to restore email deliverability.

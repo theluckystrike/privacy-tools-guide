@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Dating App Two Factor Authentication Setup Protecting Accoun"
 description: "A technical guide to setting up two-factor authentication on dating apps. Learn about TOTP, SMS-based 2FA, authenticator apps, and advanced security."

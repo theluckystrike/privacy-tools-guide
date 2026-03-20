@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Engineering Hiring Guide What Skills To Look For."
 description: "A practical hiring guide for building a privacy engineering team. Learn what technical skills, certifications, and competencies to evaluate when."

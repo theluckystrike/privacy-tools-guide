@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Windows OneDrive Privacy Settings Guide 2026"
 description: "A technical guide to configuring OneDrive privacy settings on Windows for developers and power users. Covers registry tweaks, Group."

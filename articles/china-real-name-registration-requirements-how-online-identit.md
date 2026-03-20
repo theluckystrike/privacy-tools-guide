@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "China Real Name Registration Requirements How Online Identit"
 description: "A technical guide for developers and power users on China's real name registration system, how online identity verification works, and its impact on digital anonymity."

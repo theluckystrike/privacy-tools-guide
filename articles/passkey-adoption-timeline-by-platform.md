@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Passkey Adoption Timeline by Platform: A Developer Guide"
 description: "A timeline of passkey adoption across major platforms, with technical details and implementation guidance for developers and power users."

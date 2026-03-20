@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Employee Workplace Surveillance Laws Security Cameras Keystr"
 description: "A guide to employee workplace surveillance laws across US states. Learn about security camera regulations, keystroke logging legality."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Mobile Device Management Profile For Personal"
 description: "A technical guide for developers and power users on configuring MDM profiles on iOS and Android to enhance personal privacy and security."

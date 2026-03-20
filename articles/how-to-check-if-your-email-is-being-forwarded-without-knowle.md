@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Check If Your Email Is Being Forwarded Without Knowle"
 description: "Learn how to detect unauthorized email forwarding with practical techniques, header analysis, and developer tools. Protect your inbox from silent."

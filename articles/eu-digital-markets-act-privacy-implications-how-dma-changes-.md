@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Eu Digital Markets Act Privacy Implications How Dma Changes"
 description: "A practical guide for developers and power users on how the EU Digital Markets Act (DMA) reshapes big tech data practices, with code examples and."

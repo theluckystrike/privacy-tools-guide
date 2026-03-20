@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Living Without Smartphone Digital Privacy Extreme Approach P"
 description: "A practical guide for developers and power users on living without a smartphone. Learn about dumb phones, privacy-focused alternatives, communication."

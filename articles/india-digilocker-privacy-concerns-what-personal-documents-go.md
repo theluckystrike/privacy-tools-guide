@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "India Digilocker Privacy Concerns What Personal Documents Go"
 description: "India DigiLocker Privacy Concerns: What Personal. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
@@ -11,7 +9,6 @@ categories: [guides]
 reviewed: true
 score: 8
 voice-checked: true
-categories: [security, guides]
 intent-checked: true
 ---
 

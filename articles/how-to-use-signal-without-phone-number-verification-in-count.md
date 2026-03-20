@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Use Signal Without Phone Number Verification In Count"
 description: "A technical guide for developers and power users on using Signal messaging in countries with mandatory SIM registration laws. Covers alternatives to."

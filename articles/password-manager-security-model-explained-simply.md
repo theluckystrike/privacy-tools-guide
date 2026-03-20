@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Password Manager Security Model Explained Simply"
 description: "Understand how password managers secure your data. This guide breaks down encryption, zero-knowledge architecture, and key derivation for developers."

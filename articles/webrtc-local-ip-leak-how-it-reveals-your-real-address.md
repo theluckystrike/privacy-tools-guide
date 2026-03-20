@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real Address"
 description: "Discover how WebRTC local IP leaks can expose your real network address even when using a VPN. Learn practical detection methods and mitigation."

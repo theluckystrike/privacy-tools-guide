@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Windows Privacy Tools Open Source 2026: A Developer Guide"
 description: "A practical guide to open source privacy tools for Windows in 2026. Explore command-line utilities, encryption tools, network monitors, and more."

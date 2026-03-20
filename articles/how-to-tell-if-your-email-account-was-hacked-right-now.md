@@ -8,6 +8,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
+layout: default
+date: 2026-03-15
 ---
 
 Check for email compromise immediately by verifying unfamiliar login locations in account activity logs, reviewing password reset emails you didn't send, and checking connected apps and recovery email addresses. If compromised, change your password from a different device, enable two-factor authentication, disconnect suspicious sessions, and reset passwords on critical accounts (banking, cryptocurrency, cloud storage). Email compromise is a gateway to your entire digital identity, so treating it as a critical emergency is essential.

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Protect Your Zoom Meeting From Zoom Bombing Security"
 description: "Learn practical methods to secure your Zoom meetings from zoom bombing attacks. Includes configuration settings, security best practices, and code."

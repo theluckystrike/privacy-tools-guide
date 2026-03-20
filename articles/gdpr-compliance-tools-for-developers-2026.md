@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Gdpr Compliance Tools For Developers 2026"
 description: "A practical guide to GDPR compliance tools for developers. Learn about consent management, data anonymization, right to erasure implementation, and."

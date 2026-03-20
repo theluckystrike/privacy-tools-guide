@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co"
 description: "A technical comparison of Threema, Signal, and Wickr for enterprise encrypted messaging. Evaluate protocols, metadata retention, and deployment options."

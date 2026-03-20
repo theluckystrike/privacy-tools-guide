@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"
 description: "Master TOTP backup codes with these practical best practices. Learn secure generation, storage strategies, and recovery workflows for developers and."

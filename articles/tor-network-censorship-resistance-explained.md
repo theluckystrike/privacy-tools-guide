@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Tor Network Censorship Resistance Explained"
 description: "Learn how Tor provides censorship resistance through onion routing, bridges, and pluggable transports. Practical examples for developers and power users."

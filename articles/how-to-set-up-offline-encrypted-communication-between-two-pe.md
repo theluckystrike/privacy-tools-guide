@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How To Set Up Offline Encrypted Communication Between Two Pe"
 description: "A practical guide for developers and power users to establish secure offline communication channels using encryption tools, air-gapped systems, and."

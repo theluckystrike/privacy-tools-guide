@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Privacy Setup For Witness Protection Program Participant Dig"
 description: "Learn how to set up secure digital privacy measures as a witness protection program participant. This guide covers device security, communication."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Hardware Concurrency Fingerprinting"
 description: "Learn how websites use hardware concurrency (CPU core count) for browser fingerprinting, and practical techniques to protect your privacy as a developer or power user."

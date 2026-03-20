@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Comparison Of Encrypted Note Taking Apps For Sensitive Infor"
 description: "A technical comparison of encrypted note-taking applications for developers and power users storing sensitive data. Covers encryption models, CLI."

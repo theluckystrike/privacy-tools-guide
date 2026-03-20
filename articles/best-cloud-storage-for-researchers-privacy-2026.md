@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Cloud Storage for Researchers Privacy 2026"
 description: "A technical guide to privacy-focused cloud storage solutions for academic researchers and developers. Compare encryption, self-hosting, and integration."
