@@ -8,7 +8,7 @@ permalink: /signal-messenger-setup-guide-for-journalists-source-protecti/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
