@@ -136,6 +136,264 @@ For developers and power users seeking optimal protection:
 
 5. **Understand the tradeoffs** — Maximum protection sometimes means reduced functionality. Accept this compromise based on your specific threat model.
 
+## Advanced Fingerprinting Vectors
+
+Beyond screen size, multiple fingerprinting techniques attempt to identify users. Tor Browser's defenses extend across multiple vectors.
+
+### Device Pixel Ratio Fingerprinting
+
+The device pixel ratio (physical pixels / CSS pixels) can uniquely identify devices:
+
+```javascript
+// What websites collect
+console.log(window.devicePixelRatio);
+// Typical values: 1.0 (desktop), 2.0 (modern mobile), 3.0 (high-end phones)
+
+// In Tor Browser, this is normalized
+// All users report 1.0 regardless of actual hardware
+```
+
+Tor Browser normalizes this to 1.0, removing this fingerprinting vector.
+
+### Color Depth Fingerprinting
+
+Monitor color depth varies across devices:
+
+```javascript
+// Color depth varies significantly
+window.screen.colorDepth        // Typical: 24 (most modern displays)
+window.screen.pixelDepth        // Often matches colorDepth
+
+// In Tor Browser, normalized to standard value
+// Prevents using color depth as differentiator
+```
+
+Tor standardizes color depth to eliminate this distinction.
+
+### Available Screen Dimensions
+
+Websites can measure available screen space (accounting for taskbars):
+
+```javascript
+// Available space after OS UI elements
+window.screen.availWidth        // Desktop width minus taskbar
+window.screen.availHeight       // Height minus menu bar
+
+// In Tor Browser:
+// These are masked/normalized to prevent uniqueness
+```
+
+Tor Browser's letterboxing ensures consistent available dimensions.
+
+## Testing Your Fingerprint Against Real Datasets
+
+Rather than theoretical fingerprint uniqueness, test against actual datasets of Tor Browser users:
+
+### Using Cover Your Tracks
+
+The EFF's Cover Your Tracks tool (formerly Panopticlick) tests your browser fingerprint against known Tor users:
+
+```
+Visit: https://coveryourtracks.eff.org
+
+The tool reports:
+- Your unique fingerprint
+- Uniqueness against all browsers
+- Uniqueness against Tor users specifically
+- Which fingerprinting vectors identify you
+```
+
+**Interpreting results:**
+- "Unique" = Your fingerprint is one-of-a-kind
+- "Unique among Tor users" = No Tor user shares your fingerprint
+- "Unknown" = Fingerprint data insufficient
+
+For Tor Browser, most users should see low uniqueness scores. If high, check that Tor security features are enabled.
+
+### BrowserLeaks Fingerprinting Test
+
+BrowserLeaks provides detailed fingerprinting analysis:
+
+```
+Visit: https://browserleaks.com/
+
+Provides analysis of:
+- Canvas fingerprinting resistance
+- WebGL capabilities
+- WebRTC leak detection
+- TLS version and ciphers
+- HTTP/2 and ALPN support
+- DNS/IP leaks
+```
+
+### Running Local Fingerprinting Tests
+
+For developers, fingerprint your Tor Browser programmatically:
+
+```javascript
+// Comprehensive fingerprinting test
+const getFingerprint = () => {
+    const fingerprint = {
+        // Screen dimensions
+        screenSize: `${window.screen.width}x${window.screen.height}`,
+        innerSize: `${window.innerWidth}x${window.innerHeight}`,
+
+        // Display properties
+        devicePixelRatio: window.devicePixelRatio,
+        colorDepth: window.screen.colorDepth,
+
+        // Browser properties
+        userAgent: navigator.userAgent,
+        hardwareConcurrency: navigator.hardwareConcurrency,
+        deviceMemory: navigator.deviceMemory,
+
+        // Canvas fingerprint
+        canvasFingerprint: getCanvasFingerprint(),
+
+        // Timezone
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+
+        // Language
+        language: navigator.language
+    };
+
+    return fingerprint;
+};
+
+function getCanvasFingerprint() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.textBaseline = 'top';
+    ctx.font = '14px Arial';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = '#f60';
+    ctx.fillRect(125, 1, 62, 20);
+    ctx.fillStyle = '#069';
+    ctx.fillText('Tor Browser Fingerprint Test', 2, 15);
+    ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
+    ctx.fillText('Tor Browser Fingerprint Test', 4, 17);
+
+    return canvas.toDataURL();
+}
+```
+
+Compare your Tor Browser results against Firefox on the same system. Tor Browser should return significantly more normalized values.
+
+## Fingerprinting Timing and Behavior
+
+Beyond static properties, websites track behavioral patterns:
+
+### Click Pattern Fingerprinting
+
+Websites can create a fingerprint based on how you click, type, and move your mouse:
+
+```javascript
+// Behavioral fingerprinting (what bad sites do)
+window.addEventListener('mousemove', (e) => {
+    // Track mouse movement patterns, speed, acceleration
+});
+
+window.addEventListener('keypress', (e) => {
+    // Track typing speed and patterns
+});
+
+// Tor Browser mitigations:
+// - Pointer events disabled in some contexts
+// - Typing patterns obscured through event batching
+// - Mouse movement tracking limited
+```
+
+Tor Browser doesn't completely prevent behavioral tracking, but it introduces enough randomization to make patterns unreliable.
+
+### Timing-Based Fingerprinting
+
+Websites can use performance timing to distinguish browsers:
+
+```javascript
+// Performance timing revealing (limited in Tor Browser)
+console.time('operation');
+// ... do something
+console.timeEnd('operation');
+
+// High-resolution timing disabled in Tor Browser
+// performance.now() returns less granular values
+// Prevents microsecond-level measurements
+```
+
+Tor Browser limits timer precision to reduce fingerprinting surface.
+
+## Combining Protection Methods for Defense-in-Depth
+
+No single protection is perfect. Combine multiple techniques:
+
+**Layer 1: Tor Browser defaults**
+- Window resizing to standard width
+- Letterboxing
+- Normalized device properties
+
+**Layer 2: Security level adjustment**
+- Safer or Safest mode disables additional features
+- Blocks JavaScript, WebGL, others reducing fingerprint surface
+
+**Layer 3: Extensions**
+- NoScript provides script blocking
+- uBlock Origin blocks fingerprinting scripts
+- Canvas fingerprint protection blocks canvas access
+
+**Layer 4: Browser configuration**
+- Disable WebGL: `webgl.disabled = true`
+- Disable WebRTC: `media.peerconnection.enabled = false`
+- Disable hardware acceleration: `layers.acceleration.disabled = true`
+
+Stacking these layers makes fingerprinting exponentially harder.
+
+## Fingerprinting Across Tor Circuits
+
+When you request a new Tor circuit:
+
+```
+Old circuit: IP 1.2.3.4, Browser fingerprint A
+Renew circuit (Ctrl+Shift+L)
+New circuit: IP 5.6.7.8, Browser fingerprint A
+```
+
+Your fingerprint stays the same while IP changes. Websites can correlate through fingerprint even after IP rotation.
+
+Advanced fingerprinting systems track:
+
+1. Initial fingerprint
+2. Renew Tor circuit (IP changes)
+3. Same fingerprint = same user despite different IP
+
+Mitigate by:
+- Restart Tor Browser between sessions (resets fingerprint)
+- Use separate Tor Browser instances for different identities
+- Maximize time between circuit renewals
+
+## Limitations and Tradeoffs
+
+Tor Browser's fingerprinting protection has limits:
+
+**Canvas blocking affects some sites:**
+- Signature functionality on PDFs
+- Advanced graphics features
+- WebGL-dependent visualizations
+
+**Normalized screen size breaks layouts on some sites:**
+- Responsive design assumes variable widths
+- Some sites detect Tor and restrict access
+- Letterboxing appears unusual
+
+**Security level restrictions impact usability:**
+- Safest mode disables JavaScript entirely
+- Many modern sites require JavaScript
+- Productivity applications become unusable
+
+Choose your protection level based on:
+- Threat model (are you evading determined adversary?)
+- Usability requirements (how much functionality do you need?)
+- Time investment (fingerprinting resistance requires active management)
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

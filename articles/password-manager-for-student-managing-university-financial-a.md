@@ -141,6 +141,269 @@ If you're currently storing financial aid credentials in browser autofill or a t
 
 This migration typically takes under an hour but dramatically reduces your attack surface.
 
+## Understanding Financial Aid Systems
+
+Different financial aid platforms have distinct security requirements and characteristics that affect password manager strategy.
+
+### FAFSA (Free Application for Federal Student Aid)
+
+**Credentials to store:**
+- Username (email address typically)
+- Password
+- FSA ID login info if applicable
+- PIN for voice authentication (optional but useful)
+
+**Special considerations:**
+- FAFSA reopens annually (October 1)
+- Stores Social Security Number and tax information
+- Multiple household members often need access
+- Recovery requires verified identity (can be slow)
+
+**Password manager configuration:**
+Create a shared collection for parents if they need to co-sign. Generate a unique 24-character password. Store both your password and parent access credentials.
+
+### Sallie Mae / CommonLoan Servicer
+
+**Credentials to store:**
+- Account username
+- Master password
+- Security questions (store answers in password manager notes)
+- 2FA backup codes
+
+**Special considerations:**
+- Student loan payments are legally binding
+- Lost password recovery requires identity verification (takes days)
+- Incorrect payment information causes default risks
+- Multiple student loans may have separate accounts
+
+**Password manager configuration:**
+Create a separate vault entry for each loan account if you have multiple servicers. Enable 2FA. Store backup codes in password manager secure notes alongside password.
+
+### Banner (Institutional System)
+
+**Credentials to store:**
+- Banner username (often student ID)
+- Password
+- PIN (if required by institution)
+- Backup authentication method
+
+**Special considerations:**
+- Banner system varies by institution
+- Often integrated with email authentication
+- System slowdowns common around registration periods
+- Password rotation may be institution-enforced
+
+**Password manager configuration:**
+Some institutions enforce password complexity. Store generated passwords and update after institutional password changes. Note any institution-specific requirements in password manager entry.
+
+## Parent/Guardian Access Without Sharing Passwords
+
+Students and parents often need shared access without giving parents full account password. Most financial aid systems support this through official authorization mechanisms.
+
+### FAFSA Authorization Process
+
+Instead of sharing your FAFSA password:
+
+1. Log into your FAFSA account
+2. Add a parent as "Authorized Official"
+3. Parent receives notification to approve
+4. Parent can then view FAFSA information with their own login
+
+Store the authorization confirmation email in your password manager as documentation.
+
+### Sallie Mae Authorized User Setup
+
+Sallie Mae allows adding authorized users who can view account without having login credentials:
+
+1. Log into Sallie Mae
+2. Settings → User Access Management
+3. Add family member as Authorized User
+4. They receive access without credentials
+
+This approach reduces the number of people with actual passwords while providing legitimate access.
+
+### Banner Delegate Access (Institution-Specific)
+
+Many universities offer delegate access for parents:
+
+1. Log into Banner
+2. Student Profile → Family Access Management
+3. Grant parent view-only access
+4. Parent accesses through separate parent portal
+
+Check if your institution offers this before sharing passwords.
+
+## Two-Factor Authentication Strategy for Financial Accounts
+
+Financial aid accounts warrant stronger 2FA than typical accounts.
+
+### Hardware Security Keys (Recommended)
+
+For accounts supporting FIDO2 (YubiKey, Titan):
+
+```
+Enrollment:
+1. Obtain hardware key ($25-80)
+2. Log into account
+3. Security Settings → Add Security Key
+4. Register hardware key
+5. Store key in secure location
+```
+
+Hardware keys:
+- Immune to phishing
+- Work across all devices
+- Single-use (lost key = account recovery needed but no compromise)
+
+### Authenticator Apps (Good)
+
+If hardware keys unavailable:
+
+```bash
+# Add TOTP to Bitwarden
+bw get item "Sallie Mae" | jq '.login.totp = "otpauth://totp/Sallie%20Mae:account@example.com?secret=YOUR_SECRET&issuer=SallieMae"'
+```
+
+Store backup codes in password manager secure notes.
+
+### SMS/Email (Acceptable but Weak)
+
+If accounts only support SMS or email:
+
+- Use SMS 2FA rather than email (account compromise gives email access)
+- Keep phone number current
+- Consider number spoofing risk (consider Google Voice number if available)
+- Store backup codes in password manager
+
+## Credential Rotation Schedule
+
+Financial accounts require different rotation strategies than regular accounts.
+
+### Annual Rotation
+
+Rotate passwords annually during:
+- Semester start (setup period)
+- After initial FAFSA filing (spring)
+- Before loan disbursement period (summer)
+
+```
+Rotation calendar:
+January - Review all financial account passwords
+April - Post-FAFSA change
+July - Pre-disbursement rotation
+October - FAFSA reopening rotation
+```
+
+### Emergency Rotation
+
+Rotate immediately if:
+- Shared computer access (library, family member)
+- Suspected unauthorized access
+- Account security breach alert
+- Graduation/account transfer to independent status
+
+### Batch Update Process
+
+```bash
+#!/bin/bash
+# Update financial account passwords
+
+ACCOUNTS=("FAFSA" "Sallie Mae" "Banner")
+
+for account in "${ACCOUNTS[@]}"; do
+    echo "Updating $account password..."
+
+    # Generate new password
+    new_pass=$(bw generate --length 24 --includeNumber --includeSpecial --includeUppercase)
+
+    # Store in password manager
+    bw get item "$account" | jq ".login.password = \"$new_pass\"" | bw edit item
+
+    # Update account (requires manual login to each service)
+    echo "Remember to update password in $account web portal"
+done
+```
+
+Most of this process requires manual login to each service (for security), but password manager CLI reduces friction.
+
+## Backup and Emergency Access
+
+Financial accounts require special care in backup and recovery scenarios.
+
+### Offline Backup Creation
+
+Create encrypted backup stored securely:
+
+```bash
+# Export Bitwarden financial vault
+bw export --format encrypted > financial-backup.json.enc
+
+# Encrypt GPG
+gpg --symmetric --cipher-algo AES256 financial-backup.json.enc
+
+# Store in multiple locations
+cp financial-backup.json.enc.gpg /mnt/encrypted-usb/backups/
+cp financial-backup.json.enc.gpg ~/Documents/secure-storage/
+```
+
+Test recovery annually to ensure backups are usable.
+
+### Emergency Contact Setup
+
+Designate a trusted contact (parent, sibling) who can access financial accounts if you become incapacitated:
+
+For Bitwarden:
+```
+Settings → Emergency Contacts
+- Add parent/guardian
+- Grant access level: View only or Full
+- Set notification: Upon emergency request or automatic after period
+```
+
+This contact can recover account access if you're unavailable.
+
+### Recovery Documentation
+
+Store this offline (printed, not digital):
+
+```
+FINANCIAL ACCOUNT RECOVERY GUIDE
+
+Master Password: [written copy, encrypted]
+Account Recovery Codes: [list of recovery codes]
+Emergency Contact: [name and contact info]
+Password Manager Type: [e.g., Bitwarden]
+
+ACCOUNT LIST:
+1. FAFSA - https://fafsa.gov - [username]
+2. Sallie Mae - https://mysalliemae.com - [username]
+3. Banner (University) - [institution URL] - [username]
+
+RECOVERY PROCEDURE:
+1. Access password manager with master password
+2. Retrieve credentials for each account
+3. Use password recovery for accounts without access
+4. Contact emergency contact if needed
+
+Keep this document in a safe location accessible to trusted contacts.
+```
+
+## Common Security Mistakes to Avoid
+
+**Using predictable patterns** — Never use variations of your student ID or birth year. These are guessable from public information.
+
+**Reusing financial passwords** — Each financial account needs a unique password. Breach of one service compromises all if passwords are reused.
+
+**Sharing account access** — Even with trusted family, official authorization mechanisms are safer than password sharing.
+
+**Ignoring 2FA** — Set up 2FA immediately, even if optional. Financial accounts are high-value targets.
+
+**Neglecting backup codes** — Store recovery codes securely. Lost codes = account lockout potentially lasting weeks.
+
+**Updating only when required** — Proactive quarterly password updates reduce compromise risk if a service gets breached.
+
+**Storing sensitive documents** — Don't take photos of financial aid documents with account numbers. Use secure note features in password manager instead.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

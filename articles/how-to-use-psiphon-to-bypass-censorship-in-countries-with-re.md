@@ -138,6 +138,308 @@ Reviewing the client logs, which default to the system logging facility, provide
 
 Psiphon remains a valuable tool in the censorship circumvention toolkit. Its open-source nature, multiple transport options, and active development make it suitable for both individual users and organizations requiring reliable access to the global internet.
 
+## Advanced Obfuscation Techniques
+
+When basic VPN protocols fail, Psiphon employs sophisticated obfuscation to disguise tunnel traffic.
+
+### Protocol Obfuscation Strategies
+
+Psiphon's obfuscation layer makes the VPN tunnel appear as normal HTTPS web traffic. Advanced censorship systems use deep packet inspection (DPI) to identify VPN signatures even within HTTPS. Psiphon counters this through several techniques:
+
+**SSH Protocol Obfuscation**: The SSH tunnel is wrapped in HTTPS traffic so network observers cannot distinguish it from regular web browsing:
+
+```
+[HTTPS wrapper] → [SSH tunnel] → [Your traffic]
+Observer sees: HTTPS to normal server
+Actually carries: SSH to Psiphon server
+```
+
+**HTTP Proxy Mode**: Some networks allow HTTP proxies but block direct VPN connections. Psiphon can route through HTTP proxies:
+
+```json
+{
+  "HttpProxyAddress": "proxy.corporate.example.com:3128",
+  "HttpProxyUsername": "optional-proxy-user",
+  "HttpProxyPassword": "optional-proxy-password"
+}
+```
+
+**Meek Protocol**: Uses a legitimate CDN (Amazon CloudFront, Azure) as the VPN endpoint. The actual server address is obfuscated within HTTPS requests to the CDN:
+
+```
+Client → CloudFront (appears as normal web traffic)
+         → Psiphon server (hidden behind CDN)
+```
+
+This makes blocking extremely difficult—censoring CloudFront would block legitimate services.
+
+### Protocol Selection Strategies
+
+Configure Psiphon to automatically choose the best protocol based on network conditions:
+
+```json
+{
+  "ProtocolSelection": {
+    "PreferredProtocols": ["meek", "ssh", "ovpn"],
+    "ProtocolTimeout": 30,
+    "FallbackBehavior": "try_next",
+    "MetricsReporting": true
+  },
+  "ObfuscationSettings": {
+    "Level": "maximum",
+    "AddNoiseTraffic": true,
+    "RandomizePacketSize": true
+  }
+}
+```
+
+The "AddNoiseTraffic" option sends dummy packets to make traffic analysis harder. Analysts cannot distinguish real traffic from padding.
+
+## Deployment in Restricted Environments
+
+Organizations operating in highly censored countries need deployment strategies that survive aggressive blocking attempts.
+
+### Distributed Server Architecture
+
+Running your own Psiphon servers reduces dependence on public servers:
+
+```bash
+#!/bin/bash
+# Deploy Psiphon servers across multiple clouds
+
+CLOUDS=("aws" "digitalocean" "linode" "vultr")
+
+for provider in "${CLOUDS[@]}"; do
+    # Provision server in different jurisdiction
+    case $provider in
+        aws)
+            aws ec2 run-instances \
+              --image-id ami-xxxxx \
+              --instance-type t3.small \
+              --region eu-west-1
+            ;;
+        digitalocean)
+            doctl compute droplet create psiphon-$provider \
+              --region fra \
+              --image ubuntu-22-04-x64
+            ;;
+    esac
+done
+
+# Each server runs Psiphon server software
+# Clients discover servers through multiple channels
+```
+
+Multiple servers across different providers and jurisdictions ensure network resilience. If censors block one provider's IP ranges, others remain accessible.
+
+### Domain Fronting Resilience
+
+Domain fronting uses legitimate domains to mask VPN server addresses:
+
+```
+Request to: cdn.example.com (appears legitimate)
+Actually reaches: hidden-psiphon-server (via SNI hiding)
+```
+
+Maintain a list of fronting domains and automatically rotate them:
+
+```json
+{
+  "FrontingDomains": [
+    "example.cloudflare.net",
+    "cdn.trusted-provider.com",
+    "static.legit-service.io"
+  ],
+  "RotationStrategy": "round-robin",
+  "RotationInterval": 3600
+}
+```
+
+## Integration with Other Circumvention Tools
+
+Psiphon works synergistically with other privacy tools to create layered protection.
+
+### Psiphon + Tor Integration
+
+Chain Psiphon with Tor for extreme adversary resistance:
+
+```
+Client → Psiphon tunnel → Tor entry node → Tor relay → Exit node → Destination
+```
+
+This approach:
+- Psiphon obfuscates traffic as normal HTTPS
+- Tor provides anonymity through multiple relays
+- ISP/censors see only Psiphon connection
+- Destination sees only Tor exit node
+
+Configure Tor Browser to route through Psiphon:
+
+```
+In Tor Browser Settings:
+1. Enable bridge mode
+2. Set SOCKS5 proxy to localhost:9050 (Psiphon proxy)
+3. Configure Tor to use SOCKS5 proxy for bridge connection
+```
+
+### Psiphon + Split Tunneling
+
+Route only sensitive traffic through Psiphon, keeping general browsing on direct connection:
+
+```json
+{
+  "SplitTunneling": {
+    "Enabled": true,
+    "RouteThroughPsiphon": [
+      "domains": ["news-site.com", "activist-forum.org"],
+      "ips": ["10.0.0.0/8"],
+      "protocols": ["dns", "https"]
+    ],
+    "BypassPsiphon": [
+      "local-services",
+      "cdn-domains"
+    ]
+  }
+}
+```
+
+## Performance Optimization
+
+VPN throughput directly impacts usability. Optimize for your network conditions.
+
+### Bandwidth Optimization
+
+```json
+{
+  "PerformanceSettings": {
+    "MaximumConnectionsConcurrent": 3,
+    "BufferSize": 65536,
+    "TCPKeepAlive": 60,
+    "ReadTimeout": 300,
+    "WriteTimeout": 300
+  },
+  "Throttling": {
+    "MaxUploadRate": 0,
+    "MaxDownloadRate": 0,
+    "BurstSize": 131072
+  }
+}
+```
+
+- `MaximumConnectionsConcurrent`: Limit concurrent tunnels (3-5 typical)
+- `BufferSize`: Larger buffers improve throughput but use more memory
+- `Throttling`: Set to 0 for unlimited, or cap to avoid detection
+
+### Server Selection Optimization
+
+Psiphon automatically selects servers, but you can optimize:
+
+```go
+// Example: Select server by latency
+func SelectOptimalServer(servers []Server) Server {
+    latencies := make(map[string]time.Duration)
+
+    for _, server := range servers {
+        latency := measureLatency(server.Address)
+        latencies[server.Address] = latency
+    }
+
+    // Select server with lowest latency
+    minLatency := time.Duration(math.MaxInt64)
+    var optimalServer Server
+
+    for _, server := range servers {
+        if latencies[server.Address] < minLatency {
+            minLatency = latencies[server.Address]
+            optimalServer = server
+        }
+    }
+
+    return optimalServer
+}
+```
+
+## Logging and Debugging
+
+When Psiphon fails to connect, systematic debugging identifies the issue.
+
+### Enable Detailed Logging
+
+```json
+{
+  "LogLevel": "DEBUG",
+  "LogFilePath": "/var/log/psiphon-debug.log",
+  "LogFileSize": 104857600,
+  "LogMaxBackups": 3
+}
+```
+
+Review logs for:
+
+```bash
+grep "ERROR" /var/log/psiphon-debug.log
+# Look for specific failures:
+# - "dial timeout" = network blocking
+# - "handshake failed" = protocol detected/blocked
+# - "server unavailable" = server list outdated
+```
+
+### Protocol Verification
+
+Test which protocols work in your network:
+
+```bash
+# Test SSH connectivity
+ssh -v -N -D 9050 psiphon-server-address
+
+# Test HTTP proxy
+curl -x http://localhost:8080 https://example.com
+
+# Test VPN mode
+ping -I tun0 8.8.8.8
+```
+
+If only HTTP proxy succeeds, configure Psiphon to use that mode exclusively.
+
+## Maintenance and Updates
+
+Keep Psiphon current and functional with regular maintenance:
+
+1. **Update server lists weekly** — Censors block known servers; rotating server list is critical
+2. **Monitor protocol changes** — New transport methods appear as censors adapt
+3. **Test all protocols monthly** — Ensure at least one protocol works in your network
+4. **Review logs quarterly** — Look for patterns in failures or blocks
+
+For organizations, implement automated update mechanisms:
+
+```bash
+#!/bin/bash
+# Weekly Psiphon maintenance
+
+# Update server list from multiple sources
+for url in "${SERVER_LIST_URLS[@]}"; do
+    curl -s "$url" | verify_and_apply
+done
+
+# Test connectivity
+/usr/local/bin/psiphon-test --all-protocols
+
+# Report results
+if [ $? -ne 0 ]; then
+    alert_admin "Psiphon connectivity test failed"
+fi
+```
+
+## Legal Considerations and Risk Assessment
+
+Using circumvention tools carries legal risks in some jurisdictions. Before deploying:
+
+1. **Research local laws** — Some countries criminalize circumvention tools
+2. **Assess penalties** — Range from fines to imprisonment
+3. **Use organizational cover** — NGOs operating in restricted countries may have legal protection journalists lack
+4. **Document business case** — Legitimate need for internet access (journalism, human rights work) provides legal defense in some contexts
+
+This does not constitute legal advice. Consult local attorneys familiar with internet law before deploying circumvention infrastructure.
 
 ## Related Reading
 

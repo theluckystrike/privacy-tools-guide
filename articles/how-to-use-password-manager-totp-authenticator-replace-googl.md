@@ -141,6 +141,224 @@ sudo sntp -s time.apple.com
 
 **Duplicate Entries**: Some password managers create separate entries for passwords and TOTP. Verify your vault structure after import.
 
+## Advanced TOTP Implementation for Developers
+
+For developers building applications that use TOTP for user authentication, understanding implementation details improves security.
+
+### Server-Side TOTP Verification
+
+Implement robust TOTP verification that accounts for clock drift:
+
+```python
+import hmac
+import hashlib
+import base64
+import time
+import struct
+
+def verify_totp(secret, token, window=1):
+    """
+    Verify TOTP token with time window tolerance.
+
+    window: Number of 30-second periods to accept
+    (0 = current period only, 1 = current ± 1 period)
+    """
+    token = int(token)
+    secret_bytes = base64.b32decode(secret)
+
+    # Get current time counter
+    time_counter = int(time.time()) // 30
+
+    # Check token against multiple time windows
+    for i in range(-window, window + 1):
+        expected = hmac.new(
+            secret_bytes,
+            struct.pack('>Q', time_counter + i),
+            hashlib.sha1
+        ).digest()
+
+        # Extract 31-bit integer from HMAC
+        offset = expected[-1] & 0xf
+        code = struct.unpack('>I', expected[offset:offset+4])[0] & 0x7fffffff
+        code = code % 1000000
+
+        if code == token:
+            return True
+
+    return False
+```
+
+This implementation handles:
+- Users with clocks slightly out of sync (window=1 allows ±30 seconds)
+- Proper HMAC-SHA1 generation per RFC 6238
+- Return code validation
+
+### Backup Codes for Account Recovery
+
+When users store TOTP in a password manager, they must have recovery mechanisms if their vault is inaccessible:
+
+```python
+import secrets
+
+def generate_backup_codes(count=8):
+    """Generate backup codes for TOTP recovery."""
+    codes = []
+    for _ in range(count):
+        # 8 alphanumeric characters per code
+        code = secrets.token_urlsafe(6)[:8].upper()
+        codes.append(code)
+    return codes
+
+def hash_backup_code(code):
+    """Hash backup code for storage (like passwords)."""
+    import hashlib
+    return hashlib.sha256(code.encode()).hexdigest()
+```
+
+Generate backup codes during TOTP setup. Users save them offline (printed, encrypted file) for emergency use.
+
+### Database Schema for TOTP Storage
+
+Store TOTP secrets securely at the application level:
+
+```sql
+CREATE TABLE user_totp_credentials (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL UNIQUE REFERENCES users(id),
+    secret VARCHAR(32) NOT NULL,
+    backup_codes_hash TEXT[] NOT NULL,
+    enabled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_used_at TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Separate table for backup code tracking
+CREATE TABLE backup_code_usage (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id),
+    code_hash VARCHAR(64) NOT NULL,
+    used_at TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+Never store backup codes in plaintext. Hash them using bcrypt or similar, similar to password storage.
+
+### TOTP Setup Flow Best Practices
+
+1. **Generate secret on server**, don't trust client-generated secrets
+2. **Display secret in Base32 and QR code** for user to scan
+3. **Require test token** before enabling (user provides one generated token to verify)
+4. **Display backup codes** only once, clearly warn to save offline
+5. **Enforce backup code save** before enabling TOTP
+
+```python
+def setup_totp_for_user(user_id):
+    # Generate 32-byte secret (256 bits)
+    secret = base64.b32encode(secrets.token_bytes(32)).decode('utf-8')
+
+    # Generate backup codes
+    backup_codes = generate_backup_codes(10)
+
+    # Create QR code for easy scanning
+    totp_uri = f"otpauth://totp/{user_id}?secret={secret}&issuer=YourApp"
+
+    return {
+        'secret': secret,
+        'qr_code_uri': totp_uri,
+        'backup_codes': backup_codes,  # Show ONCE, then hash for storage
+        'backup_codes_hash': [hash_backup_code(c) for c in backup_codes]
+    }
+```
+
+### Migration from Authenticator Apps
+
+When users migrate from Google Authenticator or Authy:
+
+```python
+def export_totp_for_migration(user_id):
+    """Generate portable TOTP export for user."""
+    user_secrets = get_user_totp_secrets(user_id)
+
+    export_data = {
+        'version': 1,
+        'date': datetime.now().isoformat(),
+        'secrets': [
+            {
+                'account': secret.account_name,
+                'secret': secret.base32_secret,
+                'issuer': secret.issuer,
+                'algorithm': 'SHA1'
+            }
+            for secret in user_secrets
+        ]
+    }
+
+    # Encrypt for safety
+    encrypted = encrypt_export(export_data)
+
+    return encrypted
+```
+
+## Comparison: Password Manager TOTP vs Dedicated Authenticators
+
+| Aspect | Password Manager | Google Authenticator | Authy | Hardware Key |
+|--------|------------------|----------------------|-------|--------------|
+| **Cost** | Free (with manager) | Free | Free | $40-80 |
+| **Backup/Sync** | Automatic (encrypted) | No automatic backup | Cloud sync (optional) | Manual backup |
+| **Search** | Yes | No (icon-based) | Yes | N/A |
+| **Recovery Codes** | Easy access | Manual tracking | Manual tracking | Printed codes |
+| **Account Recovery** | Master password | Difficult | Account recovery | Recovery codes only |
+| **Phishing Resistant** | No | No | No | Yes (FIDO2) |
+
+Password managers excel at convenience and organization. Hardware keys (YubiKey with FIDO2 protocol) provide maximum security but lack TOTP generation. Dedicated authenticators offer a middle ground with cloud sync options.
+
+### Use Case Recommendations
+
+**Use password manager TOTP for:**
+- User accounts you access regularly
+- Services where convenience matters
+- Development/test environments
+- Accounts without high monetary value
+
+**Use hardware keys for:**
+- Primary email account
+- Cryptocurrency wallets
+- Financial institutions
+- Administrative accounts
+
+**Use dedicated authenticators for:**
+- Personal accounts where backup/sync matters
+- Accounts shared between devices you don't sync passwords across
+
+## TOTP at Scale: Enterprise Implementation
+
+Organizations deploying TOTP should implement:
+
+```python
+class EnterpriseOTPPolicy:
+    def __init__(self):
+        self.min_setup_time = 72  # Hours to set up after enabling
+        self.rate_limit = 5  # Failed attempts per minute
+        self.backup_code_count = 10
+        self.window_size = 1  # Accept ±1 time window
+        self.algorithm = 'SHA1'
+
+    def enforce_totp_setup(self, user):
+        """Require TOTP for users with elevated privileges."""
+        if user.is_admin or user.has_access_to_sensitive_systems:
+            if not user.totp_enabled:
+                user.totp_setup_deadline = datetime.now() + timedelta(days=3)
+                user.totp_enforcement = True
+```
+
+Enforce TOTP for:
+- Administrative accounts
+- Users with access to production systems
+- Finance/accounting personnel
+- Security-sensitive roles
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
