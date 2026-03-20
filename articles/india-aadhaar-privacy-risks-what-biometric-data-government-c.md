@@ -3,8 +3,11 @@ layout: default
 title: "India Aadhaar Privacy Risks: What Biometric Data the Government Collects and Who Accesses It"
 description: "A technical breakdown of Aadhaar's biometric data collection, storage architecture, and the privacy risks for developers and power users in India."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /india-aadhaar-privacy-risks-what-biometric-data-government-c/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}

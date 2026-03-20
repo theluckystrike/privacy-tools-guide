@@ -3,9 +3,11 @@ layout: default
 title: "How to Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Credential Release"
 description: "Learn how to implement a dead man's switch using multiple independent trustees for secure, decentralized credential release. Practical code examples for developers."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-use-dead-mans-switch-with-multiple-independent-truste/
 categories: [guides]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

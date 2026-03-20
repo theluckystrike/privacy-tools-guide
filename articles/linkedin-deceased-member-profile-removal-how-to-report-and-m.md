@@ -3,11 +3,11 @@ layout: default
 title: "LinkedIn Deceased Member Profile Removal: How to Report and Memorialize Professional Accounts"
 description: "A technical guide for reporting and memorializing LinkedIn profiles of deceased members. Includes official processes, API considerations, and automation patterns for developers."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /linkedin-deceased-member-profile-removal-how-to-report-and-m/
 categories: [privacy, linkedin, guides]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
