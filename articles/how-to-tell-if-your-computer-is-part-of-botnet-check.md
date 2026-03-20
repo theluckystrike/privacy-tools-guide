@@ -7,7 +7,7 @@ author: "theluckystrike"
 permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
