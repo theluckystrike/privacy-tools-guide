@@ -290,10 +290,137 @@ When integrating third-party services, ensure they meet FERPA requirements throu
 - [ ] Define liability for breaches
 ```
 
+## Directory Information and Opt-Out Mechanisms
+
+FERPA allows schools to designate certain information as "directory information" — name, address, phone number, email, dates of attendance, degrees awarded — and disclose it without consent unless the student has requested a hold. Educational platforms must respect these holds:
+
+```python
+from enum import Enum
+
+class DirectoryInfoField(Enum):
+    NAME = "full_name"
+    EMAIL = "email"
+    PHONE = "phone"
+    ADDRESS = "address"
+    DATES_ATTENDED = "enrollment_dates"
+    DEGREE = "degree_awarded"
+    MAJOR = "field_of_study"
+
+def get_safe_student_profile(student_id: str, requester_role: str, db) -> dict:
+    """
+    Return student data filtered by FERPA directory hold and requester role.
+    Students with an active hold get NO directory information released.
+    """
+    student = db.students.find_one({"_id": student_id})
+    hold = db.ferpa_holds.find_one({"student_id": student_id, "active": True})
+
+    if hold and requester_role not in ("school_official", "judicial_order"):
+        # Directory hold: return nothing except what the student can see themselves
+        return {"id": student_id, "hold_active": True}
+
+    allowed_fields = [f.value for f in DirectoryInfoField]
+
+    if requester_role == "school_official":
+        # School officials with legitimate educational interest see full records
+        return student
+
+    # External requester with no hold: directory information only
+    return {k: v for k, v in student.items() if k in allowed_fields}
+```
+
+When building student-facing portals, provide a clear toggle to set or remove a directory hold. The hold must take effect immediately — a student who sets a hold at 9 AM should have their directory information suppressed from the 10 AM honor roll email.
+
+## Implementing Parental Access Portals
+
+For K-12 institutions, parents have the right to inspect and review their child's education records. Build a secure portal that satisfies this requirement:
+
+```javascript
+// Parental access request flow
+router.post('/api/ferpa/access-request', authenticate, async (req, res) => {
+  const { studentId, requestedRecords, purpose } = req.body;
+  const requestor = req.user;
+
+  // Verify parental relationship
+  const relationship = await db.guardianships.findOne({
+    guardianId: requestor.id,
+    studentId: studentId,
+    verified: true
+  });
+
+  if (!relationship) {
+    return res.status(403).json({
+      error: 'No verified guardian relationship on file'
+    });
+  }
+
+  // Student over 18 transfers rights to themselves
+  const student = await db.students.findOne({ _id: studentId });
+  const studentAge = calculateAge(student.dateOfBirth);
+
+  if (studentAge >= 18 && requestor.id !== studentId) {
+    return res.status(403).json({
+      error: 'FERPA rights belong to the student (age 18+)'
+    });
+  }
+
+  // Create and log the access request
+  const accessRequest = await db.ferpaAccessRequests.create({
+    requestorId: requestor.id,
+    studentId,
+    requestedRecords,
+    purpose,
+    requestedAt: new Date(),
+    status: 'pending',
+    mustRespondBy: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000) // 45 days
+  });
+
+  // Notify the records office
+  await notifyRecordsOffice(accessRequest);
+
+  res.json({ requestId: accessRequest._id, expectedResponseDays: 45 });
+});
+```
+
+FERPA requires schools to respond to access requests within 45 days. Log every request with its deadline and surface overdue items in an administrative dashboard.
+
+## Handling Student Data When Using Cloud Learning Platforms
+
+When your institution uses a cloud LMS (Canvas, Schoology, Blackboard), the vendor operates as a "school official" with a legitimate educational interest — this is how the data sharing is legally structured. Verify three things before signing:
+
+1. The vendor contract explicitly states they act under the direct control of the school and are prohibited from using student data for any purpose other than the educational services being provided.
+2. The vendor documents where data is stored — FERPA does not prohibit international storage, but your institution may have additional policies.
+3. The vendor provides a data processing agreement and can demonstrate annual third-party security audits.
+
+```yaml
+# Vendor review checklist — save as ferpa-vendor-review.yml
+vendor: "YourLMS"
+review_date: "2026-03"
+
+contract_review:
+  school_official_language_present: true
+  use_limitation_clause: true
+  prohibits_advertising_targeting: true
+  data_return_clause: true  # What happens to data when contract ends?
+  breach_notification_sla: "24 hours"
+
+technical_review:
+  encryption_at_rest: "AES-256"
+  encryption_in_transit: "TLS 1.3"
+  access_logs_available_to_school: true
+  data_residency: "US-only"
+  third_party_security_audit: "SOC 2 Type II, annual"
+  penetration_testing: "annual"
+
+outcome: "approved"
+approved_by: "@privacy-officer"
+```
+
+Store these completed reviews in version control alongside your FERPA compliance documentation. When an incident occurs, having a dated approval record with a named reviewer demonstrates due diligence.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
