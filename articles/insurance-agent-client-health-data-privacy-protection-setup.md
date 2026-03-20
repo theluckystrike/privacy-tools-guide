@@ -1,5 +1,7 @@
 ---
 
+<<<<<<< HEAD
+
 
 
 <<<<<<< HEAD
@@ -361,6 +363,8 @@
 
 =======
 >>>>>>> 473610dfc5bb1e4985a0125091febdbdbeccb965
+=======
+>>>>>>> 0185691a22850cc94a72b63c03ade61d05bc3568
 layout: default
 title: "Insurance Agent Client Health Data Privacy Protection Setup"
 description: "Learn how insurance agents can set up client health data privacy protection systems. Complete guide to HIPAA compliance, secure data handling."
@@ -382,6 +386,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+
 
 
 

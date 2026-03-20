@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn"
 description: "Passkeys vs passwords security analysis. FIDO2 standard, WebAuthn implementation, platform support, migration guide, real-world security comparison."
