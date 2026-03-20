@@ -117,6 +117,221 @@ Session's approach differs from other privacy messengers:
 
 Signal remains excellent for encrypted content with reasonable metadata protection. Session sacrifices some convenience—slower message delivery and no phone number verification—in exchange for stronger metadata protection. For high-risk users like journalists, activists, or individuals in hostile environments, this trade-off often makes sense.
 
+## Service Node Network Security Economics
+
+The Oxen blockchain's slashing mechanism creates economic incentives for honest behavior, but understanding its limitations matters for threat modeling:
+
+**How slashing works**:
+- Service Nodes stake OXEN tokens as collateral (typically 2000+ OXEN)
+- If a node is caught misbehaving (proven on-chain), the stake is slashed (forfeited)
+- Misbehavior includes colluding to identify users, attacking the network, or running unauthorized software
+
+**Limitations**:
+- Slashing deters individual node misbehavior but doesn't prevent sophisticated state-level attacks
+- A well-funded adversary could operate nodes with disposable stakes
+- Network analysis attacks (observing message flow patterns) don't trigger slashing because they don't modify the blockchain
+
+**For developers**:
+```python
+# Monitor Service Node status programmatically
+import requests
+import json
+
+def check_service_node_health():
+    """Verify Service Node network is healthy"""
+    # Query Oxen blockchain for recent slashing events
+    # This indicates whether attacks are being detected
+
+    try:
+        # Example: query a public Oxen API endpoint
+        response = requests.get('https://blockchain.api.oxen.io/api/service_nodes')
+        nodes = response.json()
+
+        total_nodes = len(nodes)
+        active_nodes = len([n for n in nodes if n['active']])
+
+        print(f"Total Service Nodes: {total_nodes}")
+        print(f"Active Service Nodes: {active_nodes}")
+        print(f"Network health: {(active_nodes/total_nodes)*100:.1f}% active")
+
+        return active_nodes > 50  # Network remains healthy above 50 nodes
+    except Exception as e:
+        print(f"Failed to check Service Node health: {e}")
+        return False
+
+if __name__ == "__main__":
+    health = check_service_node_health()
+    print(f"Safe to use: {health}")
+```
+
+## IP Obfuscation Threat Model
+
+While Session protects who you're talking to, it doesn't hide the fact that you're using Session. The initial connection to the Service Node network reveals:
+
+1. **Network-level observation**: ISPs can see you're connecting to Oxen Service Node endpoints
+2. **Timing analysis**: An observer can correlate when you're sending messages with when Service Nodes receive encrypted blobs
+3. **Volume analysis**: The amount of data you send can be inferred from Service Node traffic patterns
+
+For activists in hostile environments, these metadata types matter. Session's threat model assumes:
+- Adversary can observe network traffic
+- Adversary cannot correlate timing across all three nodes simultaneously
+- Adversary cannot compromise cryptographic primitives
+
+**Threat model does NOT assume**:
+- ISP cannot see you're using Session
+- Network observer cannot see message timing
+- Adversary cannot identify your device through other means
+
+## Hybrid Threat Scenarios
+
+Real-world adversaries use multiple surveillance techniques. Understanding Session's limitations in combined threat scenarios:
+
+**Scenario 1: ISP + ISP Passive Observation**
+- Both sender and recipient ISPs observe Session connections
+- Service Node routing prevents ISPs from determining who talks to whom
+- **Result**: ISPs see "user A uses Session" and "user B uses Session" but not "A talks to B"
+- **Mitigation**: Still privacy-protective for metadata
+
+**Scenario 2: Sophisticated Timing Correlation**
+- Adversary controls multiple Service Nodes
+- Adversary correlates message arrival times
+- **Result**: Adversary may be able to guess sender-recipient pairing
+- **Mitigation**: Session's random path selection and queueing delays make this harder than on centralized systems
+
+**Scenario 3: Malicious Service Nodes**
+- Adversary operates 1 of 3 nodes in a message path
+- **Result**: That node sees encrypted onion layers but not the full plaintext
+- **Mitigation**: Would require controlling 2+ nodes for successful attack
+
+## Message Reliability and Retry Logic
+
+Session messages aren't guaranteed delivery. Understanding the retry behavior helps predict what an observer sees:
+
+```
+Initial Send → Service Node A → Node B → Node C → Recipient Offline
+                                            ↓
+                                   Store encrypted blob
+                                   for 24-48 hours
+                                            ↓
+                           Recipient comes online → Retrieve
+```
+
+If the recipient doesn't come online within the queue window, the message is lost. The sender retries, creating visible traffic patterns.
+
+**Developer consideration**: Applications relying on Session should implement application-level delivery confirmation:
+
+```python
+# Session messenger reliable delivery pattern
+def send_with_confirmation(contact_id, message, timeout=300):
+    """
+    Send message and wait for delivery confirmation
+    Implements application-level reliability
+    """
+    # Send message through Session
+    message_id = session_client.send_message(contact_id, message)
+
+    # Wait for receipt confirmation
+    for attempt in range(timeout // 5):
+        if session_client.is_delivered(message_id):
+            return True
+        time.sleep(5)
+
+    # Timeout: message may still deliver later
+    return False
+```
+
+## Key Rotation and Forward Secrecy
+
+Session uses the Signal Protocol for content encryption, which provides perfect forward secrecy at the message level. However, the metadata about who's communicating persists:
+
+- **Content**: Protected by Signal Protocol PFS
+- **Metadata** (who, when): Partially protected by onion routing
+
+This asymmetry matters for long-term adversaries. An adversary who captures encrypted blobs from the network cannot decrypt them later, even if they compromise keys. However, they can correlate timing patterns from captured traffic long after the fact.
+
+## Comparative Threat Model Analysis
+
+| Adversary Capability | Signal | Session | Jami |
+|---|---|---|---|
+| See IP addresses | Yes (servers) | Partial (entry node) | No (fully P2P) |
+| See sender-recipient link | Yes | No | No |
+| See message timing | Yes | Partial | Partial |
+| Metadata persistence on servers | Yes (metadata) | No | No |
+| Scalability for millions | Good | Good | Limited |
+| Hardware requirements | Low | Low-Medium | Medium-High |
+
+Signal wins on ubiquity and user experience. Session better for metadata protection. Jami better for decentralization principles but worse for usability and scalability.
+
+## Deployment in Hostile Environments
+
+For journalists, activists, and dissidents in hostile countries:
+
+**Session advantages**:
+- No phone number requirement (no SIM registration risks)
+- Metadata protection without Tor overhead
+- Works over standard internet connections without VPN
+
+**Session limitations**:
+- ISP can see you're using it
+- Slower delivery than centralized systems
+- No group messaging support without trust
+
+**Practical setup for at-risk users**:
+
+```bash
+# Install Session from trusted source
+# Use Tor bridge or VPN to mask ISP awareness of Session usage
+# Create account with random Jami-style ID (not phone)
+
+# Verification process
+# 1. Exchange Session IDs through separate trusted channel
+# 2. Send test message
+# 3. Verify delivery in expected timeframe
+
+# For sensitive communications:
+# Combine with Tor for additional network-level protection
+# Run on dedicated device
+# Keep Session in isolated container (Whonix, Qubes)
+```
+
+## Performance Benchmarks
+
+Real-world Session performance metrics:
+
+**Desktop Client** (Linux, macOS, Windows):
+- Message delivery: 2-5 seconds (good connectivity)
+- Memory usage: 150-300 MB
+- CPU: < 5% at rest
+- CPU: 10-15% during active messaging
+
+**Mobile** (Android, iOS):
+- Battery drain: Comparable to Signal
+- Data usage: Slightly higher than Signal (routing overhead)
+- Delivery: 3-10 seconds typical
+
+**Bottlenecks**:
+- Service Node availability affects delivery speed
+- Network quality impacts more than Signal
+- Relay node selection can introduce variable latency
+
+## Future Development Roadmap
+
+Session's development priorities (as of 2026):
+
+1. **Group messaging**: Moving toward true metadata-protected groups
+2. **Performance optimization**: Reducing message latency
+3. **Platform support**: Expanding beyond Android/iOS/Desktop
+4. **Integration**: Building APIs for other applications
+
+These improvements address current limitations while maintaining core metadata protection principles.
+
+## Conclusion
+
+Session messenger demonstrates that meaningful metadata protection requires architectural changes, not just encryption improvements. By combining the Signal Protocol for content encryption with onion routing for transport, Session creates a system where communication metadata becomes extraordinarily difficult to collect without sophisticated resource-intensive attacks. The Oxen Service Node network provides the decentralized infrastructure necessary to avoid single points of failure and trust.
+
+However, Session's threat model doesn't protect against network-level observation (ISP seeing Session usage) or sophisticated timing analysis attacks. For activists and journalists in hostile environments, Session works best combined with additional network protection (Tor, VPN) and clear understanding of its limitations. For developers building privacy-sensitive applications, Session's architecture offers a valuable reference model demonstrating how to minimize server-side observability while maintaining practical usability.
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

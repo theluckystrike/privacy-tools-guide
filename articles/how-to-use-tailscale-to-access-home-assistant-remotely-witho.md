@@ -112,7 +112,284 @@ If peer-to-peer connection fails, Tailscale automatically falls back to relay se
 
 Beyond web access, Tailscale enables secure SSH into your Home Assistant server. Configure `tailscale ssh` to access your device's command line from anywhere—no need for traditional SSH keys or exposed SSH ports.
 
-For scenarios requiring access without the Tailscale client, consider the Tailscale web proxy feature, which generates temporary URLs accessible through any browser—useful for one-off access on devices where installing Tailscale isn't practical.
+```bash
+# Enable Tailscale SSH on Home Assistant
+tailscale ssh core@<tailscale-ip> "ha core logs"
+
+# For non-core environments
+tailscale ssh username@<tailscale-ip> "systemctl status home-assistant"
+
+# Key expiration setup for temporary access
+tailscale key create \
+  --reusable \
+  --expiry 24h \
+  --description "emergency-access-key"
+```
+
+For scenarios requiring access without the Tailscale client, consider the Tailscale web proxy feature, which generates temporary URLs accessible through any browser:
+
+```bash
+# Generate a temporary web access URL (valid 24 hours)
+tailscale web
+# URL appears in admin console under "Web Proxy"
+```
+
+This is useful for one-off access on devices where installing Tailscale isn't practical.
+
+## Advanced: Multi-Network Federation
+
+Connect multiple Tailscale networks for large deployments:
+
+```bash
+# If managing multiple properties, use org-level administration
+# Primary network: home.tailscale.com
+# Secondary network: vacation-home.tailscale.com
+
+# Failover configuration
+tailscale set --accept-dns=true --accept-routes=true
+# Enables automatic failover between relay endpoints
+```
+
+## Threat Model and Security Analysis
+
+| Scenario | Threat Level | Tailscale Mitigation | Additional Controls |
+|----------|-------------|---------------------|-------------------|
+| Public Wi-Fi access | MEDIUM | Encrypted tunnel | MFA on Tailscale account |
+| Lost device access | MEDIUM | Device revocation | IP-based ACLs |
+| Compromised device | HIGH | Immediate removal | Regular key rotation |
+| Inside adversary | LOW-MEDIUM | Encrypted traffic | Network segmentation |
+| ISP surveillance | LOW | Hidden traffic patterns | Additional VPN layer optional |
+
+## Configuring Access Control Lists (ACLs)
+
+Tailor network access with granular policies:
+
+```hcl
+// tailscale-acl.hcl - Access control policy
+// Home Assistant automation setup
+
+acls = [
+  // Allow all devices to reach Home Assistant HTTP
+  {
+    action = "accept"
+    src    = ["tag:mobile", "tag:desktop", "tag:home"]
+    dst    = ["homeassistant:8123"]
+  },
+
+  // Restrict SSH access to desktop only
+  {
+    action = "accept"
+    src    = ["tag:desktop"]
+    dst    = ["homeassistant:22"]
+  },
+
+  // Block unexpected access patterns
+  {
+    action = "reject"
+    src    = ["*"]
+    dst    = ["homeassistant:*"]
+  },
+]
+
+hosts = {
+  homeassistant = "100.64.123.456"
+}
+
+tagOwners = {
+  "tag:mobile" = ["autogroup:members"]
+  "tag:desktop" = ["user@example.com"]
+  "tag:home" = ["homeassistant"]
+}
+```
+
+Deploy and test:
+
+```bash
+# Validate ACL syntax
+curl -X POST \
+  https://api.tailscale.com/api/v2/tailnet/example.com/check \
+  -H "Authorization: Bearer $(cat ~/.tailscale-token)" \
+  -H "Content-Type: application/json" \
+  -d @tailscale-acl.hcl
+
+# Apply ACL policy
+curl -X POST \
+  https://api.tailscale.com/api/v2/tailnet/example.com/acl \
+  -H "Authorization: Bearer $(cat ~/.tailscale-token)" \
+  --data @tailscale-acl.hcl
+```
+
+## Performance Optimization and Monitoring
+
+Monitor Tailscale connection quality:
+
+```bash
+# Check connection status and relay information
+tailscale status --json | jq '.Peer[] | {name: .HostName, relay: .Relay, latency: .Latency}'
+
+# Monitor bandwidth usage
+tailscale bugreport | grep -A 20 "Bandwidth"
+
+# Test latency to relay servers
+ping -c 4 $(tailscale status --json | jq -r '.Self.Relay')
+
+# Optimize for specific use cases
+# For Home Assistant automations requiring low latency:
+tailscale up --accept-routes --mangle-default-route=false
+```
+
+## Automated Home Assistant Monitoring via Tailscale
+
+Create a monitoring script that uses Tailscale to check Home Assistant remotely:
+
+```python
+#!/usr/bin/env python3
+import json
+import subprocess
+import requests
+from datetime import datetime
+
+def get_tailscale_status():
+    """Get current Tailscale status"""
+    result = subprocess.run(['tailscale', 'status', '--json'],
+                          capture_output=True, text=True)
+    return json.loads(result.stdout)
+
+def check_home_assistant(ha_ip, ha_token):
+    """Check Home Assistant availability and basic stats"""
+    headers = {"Authorization": f"Bearer {ha_token}"}
+
+    try:
+        response = requests.get(
+            f"http://{ha_ip}:8123/api/",
+            headers=headers,
+            timeout=5
+        )
+
+        if response.status_code == 200:
+            return {
+                "status": "healthy",
+                "timestamp": datetime.now().isoformat()
+            }
+    except requests.RequestException as e:
+        return {
+            "status": "error",
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
+
+def main():
+    # Configuration
+    HA_IP = "100.64.123.456"  # Tailscale IP
+    HA_TOKEN = "eyJhbGc..."  # Long-lived token from Home Assistant
+
+    # Get Tailscale status
+    ts_status = get_tailscale_status()
+    ha_status = check_home_assistant(HA_IP, HA_TOKEN)
+
+    # Log results
+    print(f"Tailscale Status: {ts_status['Self']['Online']}")
+    print(f"Home Assistant: {ha_status['status']}")
+
+    # Send alert if unhealthy
+    if ha_status['status'] == 'error':
+        send_alert(f"Home Assistant unreachable: {ha_status['error']}")
+
+if __name__ == "__main__":
+    main()
+```
+
+## Integration with Home Assistant Automations
+
+Create automations that leverage Tailscale connectivity:
+
+```yaml
+# automations.yaml - Example automations
+
+- id: "monitor_tailscale_connectivity"
+  alias: "Monitor Tailscale Network Status"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.tailscale_online"
+    to: "off"
+  action:
+    service: notify.mobile_app
+    data:
+      message: "Tailscale connection lost - remote access unavailable"
+      title: "Network Alert"
+
+- id: "remote_restart_ha"
+  alias: "Emergency Restart via Tailscale"
+  trigger:
+    platform: template
+    value_template: "{{ states('sensor.uptime_days') | float > 30 }}"
+  action:
+    service: homeassistant.restart
+
+- id: "geo_location_trigger"
+  alias: "Enable Automations When Away (Tailscale Verified)"
+  trigger:
+    platform: state
+    entity_id: "person.user"
+    to: "away"
+  action:
+    - service: input_boolean.turn_on
+      entity_id: "input_boolean.away_mode"
+```
+
+## Database-Level Logging
+
+Store Tailscale connection logs in Home Assistant for forensics:
+
+```bash
+# Export Tailscale device logs to Home Assistant database
+tailscale devices --json | jq '.[] | {hostname: .HostName, ip: .Addresses, os: .OS, lastSeen: .LastSeen}' >> /var/lib/home-assistant/tailscale_devices.json
+
+# Set up cron job for hourly snapshots
+0 * * * * tailscale devices --json > /var/lib/home-assistant/tailscale_status_$(date +\%Y\%m\%d_\%H\%M\%S).json
+```
+
+## Advanced: Tailscale SSH with MFA
+
+Enhance SSH security with multi-factor authentication:
+
+```bash
+# Enable Tailscale SSH and require MFA
+tailscale ssh --accept-risk-idp-device-trust user@homeassistant
+
+# Configure SSH certificates for Home Assistant
+# Add to /etc/ssh/sshd_config
+TrustedUserCAKeys /etc/ssh/tailscale-ca.pub
+AuthorizedKeysCommand /usr/bin/tailscale-ssh-ca %u
+```
+
+## Troubleshooting Connection Quality
+
+Common issues and diagnostic commands:
+
+```bash
+# Test if peer-to-peer connection is established
+tailscale ping -verbose homeassistant.tail-scale.tset.hot | grep -E "via|direct"
+
+# If relay connection, investigate why:
+# 1. Check firewall rules (UDP port 41641 should be open)
+sudo ufw allow 41641/udp
+
+# 2. Check NAT type
+tailscale debug deeplink | grep -i nat
+
+# 3. Force specific relay endpoint
+tailscale set --derp-region=sfo
+
+# 4. Monitor STUN requests
+sudo tcpdump -i any 'udp port 3478 or udp port 5349' -n
+```
+
+## Conclusion
+
+Tailscale transforms how you access Home Assistant remotely. Rather than exposing your network to internet scans and attacks, you get encrypted, authenticated access that works seamlessly across devices. The peer-to-peer architecture ensures good performance, and the zero-config setup means minimal maintenance once configured.
+
+Your smart home remains private, your access remains secure, and you gain the ability to manage your Home Assistant instance from anywhere using the same credentials across all your devices. Combined with proper ACL policies and key rotation, Tailscale provides an enterprise-grade security model for personal infrastructure.
 
 {% endraw %}
 ## Related Reading

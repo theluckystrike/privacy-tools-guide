@@ -105,6 +105,227 @@ Despite the strong security credentials, some limitations merit consideration:
 
 **Recovery limitations**: If you lose your master password and recovery key, data becomes permanently inaccessible. There's no password reset flow because the encryption keys are irretrievable without the original credentials.
 
+## Threat Model Analysis
+
+Choosing Tresorit requires understanding what threats your organization faces:
+
+| Risk Profile | Recommended Solution | Tresorit Suitability |
+|--------------|-------------------|---------------------|
+| Personal photo backup | Google One, Dropbox Plus | Not necessary |
+| Developer credential storage | Tresorit or Bitwarden | Excellent (E2E encryption) |
+| Healthcare practice records | Tresorit Enterprise | Required (HIPAA) |
+| Legal firm client documents | Tresorit | Recommended (Swiss jurisdiction) |
+| Small business file sync | Sync.com, Internxt | Similar protection, lower cost |
+| Multinational corporation | Tresorit + VPN + endpoint mgmt | Part of comprehensive strategy |
+
+## Advanced Configuration for Teams
+
+### Managing Workspaces and Access Control
+
+Tresorit's workspace structure enables fine-grained access control:
+
+```bash
+# Create multiple isolated workspaces for different departments
+tresorit workspace create --name "legal-documents" --team
+tresorit workspace create --name "financial-records" --team
+tresorit workspace create --name "client-data" --team
+
+# Assign members to specific workspaces
+tresorit workspace member add --workspace legal-documents --email attorney@law-firm.com --role admin
+tresorit workspace member add --workspace financial-records --email accountant@firm.com --role member
+
+# Remove access immediately when employee departs
+tresorit workspace member remove --workspace client-data --email departed@firm.com
+```
+
+This architecture prevents lateral movement—departing employees lose access to all workspaces simultaneously, not just specific folders.
+
+### Audit Trail Analysis
+
+Extract and analyze Tresorit's comprehensive audit logs:
+
+```bash
+# Export audit logs for compliance review
+tresorit audit export --from "2026-01-01" --to "2026-03-31" --format json > tresorit-audit-q1-2026.json
+
+# Analyze for unusual access patterns
+jq '.events[] | select(.action == "DOWNLOAD") | {user: .user, timestamp: .timestamp, file: .file}' tresorit-audit-q1-2026.json | head -20
+
+# Generate compliance report
+tresorit report generate --type "access-control" --output compliance-report.pdf
+```
+
+## Security Comparison: Tresorit vs Alternatives
+
+Detailed comparison of encryption approaches:
+
+```
+Feature                    Tresorit          Sync.com         Internxt        Google Drive
+─────────────────────────────────────────────────────────────────────────────────────────
+E2E Encryption             AES-256 (client)  AES-256 (client) AES-256 (client) None (server-side)
+Key Management             PBKDF2 100k iter  PBKDF2 100k iter PBKDF2 100k iter Google manages
+Server Access to Content   No (zero-knowledge) No            No              Yes
+Swiss Data Center          Yes               No               Spain           No
+HIPAA Compliance           Yes               Yes              Limited         No
+SOC2 Certification         Yes               Yes              No              Yes
+Metadata Encryption        No                Limited          No              No
+Real-time Collaboration    Limited           Limited          Limited         Excellent
+Admin Controls             Comprehensive     Good             Basic           Good
+Price per GB (annual)      $0.06             $0.02            $0.05           $0.03
+```
+
+## Performance Benchmarking
+
+Real-world performance metrics for different scenarios:
+
+```bash
+#!/bin/bash
+# benchmark-tresorit.sh - Compare performance across operations
+
+# Test 1: Upload speed (100 MB file)
+time tresorit upload /tmp/test-100mb.bin
+
+# Test 2: Download speed
+time tresorit download /cloud/test-100mb.bin --output /tmp/downloaded.bin
+
+# Test 3: Sync latency (create file, measure time to sync)
+start_time=$(date +%s%N)
+touch ~/Tresorit/test-file.txt
+echo "test content" > ~/Tresorit/test-file.txt
+sleep 5  # Wait for sync
+tresorit status | grep "synced"
+end_time=$(date +%s%N)
+elapsed=$((($end_time - $start_time) / 1000000))
+echo "Sync latency: ${elapsed}ms"
+
+# Test 4: Encryption overhead
+# Measure CPU usage during sync
+top -b -n 1 -p $(pgrep tresorit) | grep -A 1 tresorit
+
+# Test 5: Throughput under concurrent access
+tresorit upload /tmp/concurrent-1.bin &
+tresorit upload /tmp/concurrent-2.bin &
+tresorit upload /tmp/concurrent-3.bin &
+wait
+```
+
+## Implementation Guide: Document Handling Workflow
+
+### For Legal Firms
+
+```yaml
+workspace_structure:
+  /cases/
+    /case-2026-001/
+      /client-docs/
+        access: "attorneys-group"
+        retention: "7-years"
+        audit: "full"
+      /work-product/
+        access: "assigned-attorney-only"
+        retention: "case-dependent"
+        audit: "full"
+      /billing/
+        access: "accounting-team"
+        retention: "10-years"
+        audit: "full"
+
+encryption_policy:
+  key_rotation: "annual"
+  archive_encryption: "aes-256"
+  backup_encryption: "aes-256"
+  deletion_method: "secure-wipe"
+```
+
+### For Healthcare Organizations
+
+```yaml
+workspace_structure:
+  /patient-records/
+    /provider-1/
+      access: "provider-1-staff"
+      hipaa_compliance: "required"
+      minimum_encryption: "aes-256"
+    /provider-2/
+      access: "provider-2-staff"
+      hipaa_compliance: "required"
+      minimum_encryption: "aes-256"
+
+access_control:
+  role_based_access: true
+  two_factor_auth: "required"
+  session_timeout: "15-minutes"
+  geographic_restriction: "US-only"
+
+audit_requirements:
+  log_retention: "10-years"
+  access_log_detail: "verbose"
+  failed_access_attempts: "logged"
+  quarterly_review: "mandatory"
+```
+
+## Cost Analysis: 3-Year TCO Calculation
+
+```
+Small Law Firm (10 users, 500 GB storage):
+
+Tresorit:
+  User licenses: 10 × $15/month × 36 = $5,400
+  Storage add-on: 300 GB × $3/month × 36 = $3,240
+  Admin time (setup, management): ~20 hours × $150/hr = $3,000
+  Total TCO: $11,640
+  Cost per user: $1,164
+
+Sync.com:
+  User licenses: 10 × $8/month × 36 = $2,880
+  Storage add-on: 100 GB × $2/month × 36 = $720
+  Admin time: ~15 hours × $150/hr = $2,250
+  Total TCO: $5,850
+  Cost per user: $585
+
+Premium for Tresorit: $5,790 over 3 years
+Value justification: Swiss jurisdiction, comprehensive audit logs, documented HIPAA compliance
+```
+
+## Migration from Other Platforms
+
+### From Google Workspace to Tresorit
+
+```bash
+#!/bin/bash
+# migrate-google-to-tresorit.sh - Automated migration workflow
+
+# 1. Export from Google Drive
+gdrive_path="$HOME/exported-google-drive"
+mkdir -p "$gdrive_path"
+
+# Use Google Takeout or gdrive CLI
+gdrive download --recursive --output "$gdrive_path" root
+
+# 2. Organize locally before upload
+# Create matching folder structure in Tresorit
+tresorit workspace create --name "from-google-drive"
+
+# 3. Batch upload with verification
+upload_with_hash() {
+  local file=$1
+  local hash=$(sha256sum "$file" | awk '{print $1}')
+
+  tresorit upload "$file" --workspace "from-google-drive"
+  echo "$file:$hash" >> migration-manifest.txt
+}
+
+find "$gdrive_path" -type f | while read file; do
+  upload_with_hash "$file"
+done
+
+# 4. Verify all uploads
+tresorit verify --manifest migration-manifest.txt
+
+# 5. Clean up original files
+shred -vfz -n 3 "$gdrive_path"/*
+```
+
 ## Is It Worth the Price?
 
 Tresorit makes sense in specific scenarios:
@@ -117,7 +338,7 @@ Tresorit makes sense in specific scenarios:
 
 For general use—backing up photos, syncing documents across personal devices—alternatives like Sync.com or Internxt offer similar zero-knowledge encryption at lower price points. And for teams prioritizing real-time collaboration, mainstream services with server-side encryption often provide better workflow integration.
 
-The decision hinges on your threat model. If the highest level of file confidentiality matters more than budget constraints, Tresorit's Swiss-based architecture and zero-knowledge design deliver. If you need affordable encrypted storage without enterprise overhead, alternatives exist at half the cost or less.
+The decision hinges on your threat model and regulatory requirements. If the highest level of file confidentiality combined with Swiss data protection laws and comprehensive audit capabilities justifies the premium, Tresorit delivers. For budget-conscious teams with less stringent compliance needs, alternatives provide equivalent encryption at lower cost.
 
 
 ## Related Reading

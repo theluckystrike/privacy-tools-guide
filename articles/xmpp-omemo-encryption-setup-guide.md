@@ -121,6 +121,258 @@ Additionally, OMEMO does not encrypt group chat metadata (who is in the room). T
 
 Regularly rotate your pre-keys through your client's settings. Most clients handle this automatically, but periodic manual verification of critical contacts remains good practice.
 
+## Advanced: Server-Side Support and Protocol Requirements
+
+Not all XMPP servers support OMEMO equally. Before setting up, verify your server supports required XEPs:
+
+| XEP | Purpose | Support Level |
+|-----|---------|---|
+| XEP-0384 | OMEMO Core | Required |
+| XEP-0163 | Personal Eventing Protocol (PEP) | Required |
+| XEP-0060 | Publish-Subscribe | Required (underlying PEP) |
+| XEP-0191 | Blocking Command | Recommended |
+| XEP-0198 | Stream Management | Recommended |
+
+To check server support, use an XMPP client that displays capabilities:
+
+```bash
+# Using xmpp-console (if installed)
+disco info <your-server>
+
+# Or via web XMPP console
+# Visit https://conversejs.org/ and check your server's supported extensions
+```
+
+If your server doesn't support PEP (XEP-0163), OMEMO cannot function because identity keys must be published to your account's private PEP storage.
+
+## Building Custom Applications with OMEMO
+
+Developers integrating OMEMO into custom applications should use the pyomemo or omemo-python libraries:
+
+```python
+# Example: Sending encrypted messages programmatically
+from omemo.exceptions import OMEMOException
+from omemo.state import OMEMOState
+
+# Initialize OMEMO state
+state = OMEMOState(account_jid='user@xmpp.example.com')
+
+# Encrypt message for recipient
+plaintext = "This is a secret message"
+recipient_jid = 'friend@xmpp.example.com'
+
+try:
+    # Get recipient's identity keys
+    recipient_keys = state.get_recipient_keys(recipient_jid)
+
+    # Encrypt for each of recipient's devices
+    encrypted_messages = state.encrypt_message(
+        plaintext,
+        recipient_jid,
+        recipient_keys
+    )
+
+    # Send encrypted messages via XMPP
+    for device_id, encrypted_payload in encrypted_messages.items():
+        send_xmpp_message(
+            to=recipient_jid,
+            encrypted_payload=encrypted_payload,
+            device_id=device_id
+        )
+
+except OMEMOException as e:
+    print(f"Encryption failed: {e}")
+```
+
+This approach allows building custom tools that leverage OMEMO's encryption without being limited to standard chat clients.
+
+## Threat Model and Limitations
+
+OMEMO provides strong message encryption but has known limitations:
+
+**Protected**:
+- Message content (end-to-end encrypted)
+- Past messages (perfect forward secrecy)
+- Authentication (verify sender identity)
+
+**Not protected**:
+- Metadata (who talks to whom, when)
+- Group chat membership
+- Presence information
+- File transfer capabilities
+
+**Adversary assumptions**:
+- Can observe network traffic (sees encrypted messages, metadata)
+- Cannot compromise encryption keys (cryptography is sound)
+- Cannot compromise your device (malware would bypass encryption)
+
+For maximum security, combine OMEMO with:
+- **Tor**: Hide metadata from network observers
+- **Tox tunnels**: Route XMPP over Tor
+- **Persistent master key verification**: Detect accounts being compromised and re-registered
+
+## Server-Side Logging and Metadata
+
+Even with OMEMO encryption, your XMPP server records metadata:
+
+```
+[2026-03-15 14:32:15] alice@example.com -> bob@example.com (encrypted)
+[2026-03-15 14:32:45] bob@example.com -> alice@example.com (encrypted)
+```
+
+The server knows:
+- Who communicated with whom
+- When communication occurred
+- How many bytes were exchanged
+- Connection timing patterns
+
+**Mitigation**:
+1. **Trust your server**: Use servers run by organizations you trust (EFF-endorsed servers, institutional servers)
+2. **Use Tor**: Hide your IP address from server
+3. **Run your own**: Host your own XMPP server for your organization
+4. **Audit logs**: Request your server operator's logging policy
+5. **Message expiration**: Configure clients to delete messages after configurable period
+
+## Key Verification Automation
+
+For organizations managing multiple users, manual fingerprint verification doesn't scale. Several approaches help:
+
+**QR Code Distribution**:
+Many modern XMPP clients (particularly Conversations) support QR code scanning for fingerprint verification. Generate QR codes for distribution:
+
+```bash
+# Using qrencode
+echo "alice@example.com:e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3" | \
+  qrencode -o alice_fingerprint.png
+```
+
+Distribute QR codes through your organization's channels (printed badge at conference, email, shared document). Other users scan the code to automatically trust the fingerprint.
+
+**Out-of-Band Fingerprint Lists**:
+Publish fingerprint lists through authenticated channels:
+
+```python
+# Example: Publish fingerprints in JSON format
+{
+  "verified_users": [
+    {
+      "jid": "alice@example.com",
+      "fingerprints": [
+        {
+          "device": 12345,
+          "fingerprint": "e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3c4d5e6f"
+        }
+      ],
+      "verified_date": "2026-03-15",
+      "verifier": "bob@example.com"
+    }
+  ]
+}
+```
+
+Distribute this list through authenticated channels. Users can import fingerprints to automate verification.
+
+## Practical Organization Setup
+
+For a small organization deploying XMPP + OMEMO:
+
+```bash
+#!/bin/bash
+# deploy_xmpp_omemo.sh - Deploy XMPP server with OMEMO support
+
+# 1. Install Prosody XMPP server (excellent PEP support)
+sudo apt-get install prosody prosody-modules
+
+# 2. Enable required modules in prosody config
+cat >> /etc/prosody/prosody.cfg.lua << EOF
+modules_enabled = {
+    "roster",
+    "offline",
+    "pep",           -- Personal Eventing Protocol (required for OMEMO)
+    "private",       -- Private XML storage
+    "vcard",
+    "version",
+    "disco",
+    "time",
+};
+EOF
+
+# 3. Create virtual hosts
+prosodyctl register alice example.com password123
+prosodyctl register bob example.com password456
+
+# 4. Restart service
+sudo systemctl restart prosody
+
+# 5. Clients now connect to example.com:5222 (normal) or :5223 (legacy SSL)
+# Users add their accounts in OMEMO-capable clients
+```
+
+After setup, users connect with their organization's domain and OMEMO automatically protects communications.
+
+## Troubleshooting with Network Analysis Tools
+
+When OMEMO isn't working, network analysis helps diagnose issues:
+
+```bash
+# Capture XMPP traffic (without reading encrypted content)
+tcpdump -i eth0 'port 5222 or port 5269' -A | grep -E "(stanza|stream)"
+
+# Check if PEP is functioning
+# Look for <pubsub> stanzas in traffic
+tcpdump -i eth0 'port 5222' -A | grep -E "<pubsub|<items node"
+
+# Verify device list is published
+# Should see OMEMO device list under `/devices` node
+```
+
+Common issues and fixes:
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| "OMEMO not supported" | Server lacks PEP | Change servers or deploy own |
+| Messages stuck "sending" | Missing pre-keys | Regenerate pre-keys in settings |
+| "Untrusted device" | New device not verified | Verify fingerprint with contact |
+| Decryption fails | Corrupted session | Remove and re-add contact |
+| Slow delivery | Congested server | Wait or switch servers |
+
+## High-Security Setup for Activists
+
+For journalists, activists, and high-risk users requiring maximum OMEMO security:
+
+```bash
+#!/bin/bash
+# secure_xmpp_setup.sh
+
+# 1. Use Tor to hide XMPP server discovery
+export ALL_PROXY=socks5://127.0.0.1:9050
+
+# 2. Use onion-only XMPP servers if available
+# Example: xmpp5u7z6zzq3x5r.onion (Conversations' server over Tor)
+
+# 3. Configure client to require OMEMO encryption for all conversations
+# In Gajim: Accounts → Your Account → Encryption → OMEMO mandatory
+
+# 4. Disable automatic account creation
+# Existing accounts only; no registration
+
+# 5. Enable message expiration
+# Set to delete all messages from disk after 1 week
+
+# 6. Disable message carbons (copies to other devices)
+# Prevents metadata about your devices
+
+# 7. Regular key rotation
+# Manually regenerate OMEMO keys monthly
+
+# 8. Verify contacts through multiple independent channels
+# In-person if possible; phone call minimum
+```
+
+## Conclusion
+
+OMEMO encryption transforms XMPP from a metadata-exposed protocol into a privacy-respecting messaging system. When properly configured with fingerprint verification, OMEMO provides end-to-end encryption equivalent to Signal while maintaining the decentralization benefits of XMPP federation. However, metadata protection remains partial—your XMPP server still observes who communicates with whom. For maximum privacy, combine OMEMO with Tor or self-hosted XMPP infrastructure. The setup complexity pays dividends for organizations requiring encrypted communication without trusting centralized servers.
+
 ---
 
 

@@ -113,6 +113,343 @@ For optimal performance, KBFS maintains a local cache of recently accessed files
 keybase config set --cache-size-mb 5120
 ```
 
+## Advanced Deployment Patterns
+
+### Enterprise KBFS Integration
+
+Organizations can integrate KBFS into existing workflows:
+
+```bash
+#!/bin/bash
+# kbfs-enterprise-setup.sh - Multi-team deployment
+
+# Create isolated team workspaces
+keybase team create engineering-team
+keybase team create finance-team
+keybase team create legal-team
+
+# Set role-based access
+keybase team edit-members engineering-team \
+  --reset-members \
+  --add dev-lead:admin \
+  --add engineers:writer
+
+# Configure folder policies
+mkdir -p /keybase/team/engineering-team/{projects,archived,shared}
+
+# Project-level access control
+keybase fs chown /keybase/team/engineering-team/projects/secret-project \
+  --uid project-lead
+
+# Enable audit logging
+keybase team list-requests engineering-team --json | jq '.requests[] | {user: .username, action: .action}'
+
+# Monitor team activity
+keybase team get-members engineering-team --verbose
+```
+
+### Automated Backup from KBFS
+
+Create reliable backups of encrypted files:
+
+```python
+#!/usr/bin/env python3
+import os
+import subprocess
+import hashlib
+from datetime import datetime
+
+class KBFSBackupManager:
+    """Automated backup manager for KBFS files"""
+
+    def __init__(self, kbfs_path, backup_dest):
+        self.kbfs_path = kbfs_path
+        self.backup_dest = backup_dest
+        self.manifest_file = f"{backup_dest}/backup-manifest.json"
+
+    def backup_incremental(self):
+        """Backup only changed files since last backup"""
+
+        # Get current manifest
+        current_hashes = self.get_file_hashes()
+
+        # Load previous manifest
+        if os.path.exists(self.manifest_file):
+            previous_hashes = self.load_manifest()
+        else:
+            previous_hashes = {}
+
+        # Identify changed files
+        changed_files = [
+            f for f, h in current_hashes.items()
+            if previous_hashes.get(f) != h
+        ]
+
+        # Backup changed files
+        for file in changed_files:
+            src = os.path.join(self.kbfs_path, file)
+            dst = os.path.join(self.backup_dest, file)
+
+            # Create directory if needed
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+
+            # Copy with verification
+            subprocess.run(['cp', src, dst], check=True)
+            print(f"Backed up: {file}")
+
+        # Update manifest
+        self.save_manifest(current_hashes)
+
+    def get_file_hashes(self):
+        """Generate SHA256 hashes of all files"""
+
+        hashes = {}
+        for root, dirs, files in os.walk(self.kbfs_path):
+            for file in files:
+                filepath = os.path.join(root, file)
+                relpath = os.path.relpath(filepath, self.kbfs_path)
+
+                # Skip metadata
+                if relpath.startswith('.'):
+                    continue
+
+                with open(filepath, 'rb') as f:
+                    hashes[relpath] = hashlib.sha256(f.read()).hexdigest()
+
+        return hashes
+
+    def verify_backup(self):
+        """Verify backup integrity"""
+
+        current = self.get_file_hashes()
+        backed_up = self.load_manifest()
+
+        missing = set(backed_up.keys()) - set(current.keys())
+        changed = [f for f in backed_up if current.get(f) != backed_up[f]]
+
+        return {
+            'status': 'ok' if not (missing or changed) else 'warning',
+            'missing_files': list(missing),
+            'changed_files': changed
+        }
+```
+
+### KBFS Performance Optimization
+
+Tune KBFS for specific use cases:
+
+```bash
+# Configure KBFS cache for SSD vs HDD
+# Edit ~/.config/keybase/config.json
+
+{
+  "fuse": {
+    "mount_type": "osxfuse",  # or "winfsp" on Windows
+    "mount_point": "/keybase",
+    "log_to_file": false,
+    "debug": false
+  },
+  "disk": {
+    "cache_memory_mb": 512,     # Increase for large files
+    "cache_dir": "/var/cache/keybase",
+    "sync_batch_size": 100
+  },
+  "sync": {
+    "full_fleet_on_login": true,
+    "enable_peer_sync": true,
+    "block_cache_ttl_seconds": 3600
+  }
+}
+
+# Test performance under load
+keybase fs test --bench --num-files 1000 --file-size 1mb
+
+# Monitor active syncs
+keybase fs status --verbose
+```
+
+## Threat Model Analysis
+
+Evaluate KBFS against different threat scenarios:
+
+| Threat | Severity | KBFS Protection | Mitigation Strategy |
+|--------|----------|-----------------|-------------------|
+| Server breach | HIGH | Encrypted files; keys stay local | Excellent |
+| Metadata exposure | MEDIUM | Filenames/folders unencrypted | Use opaque folder names |
+| Account compromise | HIGH | Attacker gets metadata + encrypted files | Use strong master password |
+| Ransomware | MEDIUM-HIGH | Version history provides recovery | 30-day retention default |
+| Insider threat (Keybase employee) | LOW-MEDIUM | Zero-knowledge architecture | Cannot access plaintext |
+| Lost recovery key | CRITICAL | Permanent access loss | Maintain secure backups |
+| Key rotation | MEDIUM | Manual process available | Team key rotation procedure |
+
+## Cryptographic Implementation Details
+
+Understanding KBFS's security foundation:
+
+```
+KBFS Encryption Scheme:
+
+File Content Encryption:
+├─ Algorithm: AES-256-GCM (authenticated encryption)
+├─ Key: File-specific key (per-file secret)
+├─ IV: Random, included in ciphertext
+└─ Authentication: GCM provides integrity verification
+
+Key Management:
+├─ File Keys: Derived from master key
+├─ Master Key: Derived from Keybase account
+├─ Key Derivation: PBKDF2 with HMAC-SHA512
+├─ Master Key Storage: OS keyring when possible
+└─ Recovery: Account keys stored on Keybase servers (encrypted)
+
+Sharing Mechanism:
+├─ Reader Keys: Shared file-specific key wrapped per reader
+├─ Key Wrapping: Public key encryption (RSA-2048 equivalent)
+├─ Key Exchange: Secure channel authenticated by Keybase
+└─ Revocation: Key rotation when access removed
+```
+
+## Comparison with Alternative Solutions
+
+KBFS versus competitive options:
+
+```yaml
+Comparison Matrix:
+
+Feature                    KBFS              Tresorit         Sync.com        Google Drive
+─────────────────────────────────────────────────────────────────────────────────────────
+E2E Encryption             Yes (zero-knowledge) Yes            Yes             No
+Filesystem Mount           Yes (native)       No              No              No (native web)
+Version History            Yes (30-day)       Yes (30-day)    Yes (continuous) Yes
+Team Collaboration         Excellent          Good            Good            Excellent
+Real-time Sync             Yes                Yes             Yes             Yes
+Metadata Encryption        Partial (team)     No              Limited         No
+Custom Key Management      No (Keybase)       No              No              Google manages
+Free Storage                250 GB             No              No              15 GB
+Team Pricing (5 users)     Free               ~$75/month      ~$40/month      ~$50/month
+Zero-Knowledge Proof       Published          Audited         Claimed         Not applicable
+```
+
+## Advanced: Multi-Device Key Synchronization
+
+Securely sync keys across devices:
+
+```bash
+#!/bin/bash
+# sync-keys-secure.sh - Multi-device KBFS setup
+
+# Device 1: Primary (generate keys)
+keybase device add --name "primary-laptop"
+keybase pgp gen --push  # Generate PGP key
+
+# Backup device key securely
+keybase key export --device-id [id] --output primary-device.key
+
+# Encrypt backup with strong password
+openssl enc -aes-256-cbc -salt -in primary-device.key -out primary-device.key.enc
+rm primary-device.key
+
+# Store encrypted backup in Tresorit/Sync.com
+tresorit upload primary-device.key.enc
+
+# Device 2: Secondary (import keys)
+# Download and decrypt
+tresorit download primary-device.key.enc
+openssl enc -d -aes-256-cbc -in primary-device.key.enc -out primary-device.key
+
+# Import to secondary device
+keybase device add --name "secondary-laptop"
+keybase key import --file primary-device.key
+
+# Verify sync
+keybase status  # Should show authorized on both devices
+
+# Enable multi-device support
+keybase device list --verbose
+```
+
+## KBFS Integration with Development Workflow
+
+Use KBFS for secure development practices:
+
+```bash
+#!/bin/bash
+# dev-setup-with-kbfs.sh - Development environment with KBFS
+
+# 1. Store development credentials in KBFS
+mkdir -p /keybase/private/$(keybase status --json | jq -r '.username')/dev-credentials
+
+# 2. Create encrypted .env file
+cat > /keybase/private/$(keybase status --json | jq -r '.username')/dev-credentials/.env << 'EOF'
+DATABASE_URL=postgresql://user:password@localhost/db
+API_KEY=secret-key-from-secure-source
+PRIVATE_KEY=-----BEGIN PRIVATE KEY-----
+...
+-----END PRIVATE KEY-----
+EOF
+
+# 3. Symlink to project (never commit credentials)
+ln -s /keybase/private/$(keybase status --json | jq -r '.username')/dev-credentials/.env ./dev.env
+
+# 4. Add to .gitignore
+echo "*.env" >> .gitignore
+echo "/dev.env" >> .gitignore
+
+# 5. Source in dev environment
+export $(cat dev.env | grep -v '^#')
+
+# 6. Secure cleanup on logout
+trap "unset DATABASE_URL API_KEY PRIVATE_KEY" EXIT
+```
+
+## Disaster Recovery Procedures
+
+Plan for worst-case scenarios:
+
+```bash
+#!/bin/bash
+# disaster-recovery-plan.sh - KBFS recovery procedures
+
+# Scenario 1: Lost master password
+# Recovery: Use account recovery keys (set up during signup)
+keybase account recover
+
+# Scenario 2: Device lost/stolen
+# Response: Revoke device immediately
+keybase device revoke --device-id [lost-device-id]
+
+# Scenario 3: Account compromised
+# Response: Reset account and re-add devices
+keybase account reset  # Nuclear option - resets everything
+# Then: keybase device add from trusted devices
+
+# Scenario 4: Verify backup accessibility
+# Test quarterly: Can you decrypt archived files?
+test_backup_recovery() {
+  local backup_dir="/secure/backup/kbfs-snapshot"
+  local test_file="$backup_dir/encrypted-test.tar.enc"
+
+  # Attempt decryption
+  if openssl enc -d -aes-256-cbc -in "$test_file" > /dev/null 2>&1; then
+    echo "✓ Backup accessible and decryptable"
+  else
+    echo "✗ CRITICAL: Cannot decrypt backup"
+    return 1
+  fi
+}
+
+test_backup_recovery
+```
+
+## Conclusion
+
+Keybase Filesystem delivers on its promise of secure, zero-knowledge encrypted storage. The transparent filesystem interface means you don't need to sacrifice usability for security, and the team collaboration features make it practical for both personal and organizational use.
+
+The main limitations—unencrypted metadata and the responsibility of key management—should be understood but don't diminish KBFS's value as a privacy-focused storage solution. For users who need guaranteed confidentiality for their files, particularly when sharing with others, KBFS provides a rare combination of strong security and genuine usability.
+
+If you're evaluating encrypted storage options, KBFS deserves a place on your shortlist. The free tier is generous enough for individual use, and the team pricing remains competitive with less secure alternatives. Combined with proper key management practices, disaster recovery planning, and multi-device security procedures, KBFS provides enterprise-grade encryption for teams and individuals alike.
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

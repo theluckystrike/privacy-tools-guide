@@ -114,6 +114,113 @@ For users with significant digital assets stored in encrypted email, consider th
 
 4. **Regular credential updates**: Ensure recovery information stays current. Outdated phone numbers or abandoned recovery emails defeat the purpose of any succession planning.
 
+## Password Reset and Recovery Key Management
+
+Understanding Proton Mail's recovery mechanisms is essential for succession planning. When you set up a Proton account, you can configure recovery email addresses and phone numbers. However, these enable password reset, not account access recovery. The password itself drives key derivation — resetting the password doesn't grant access to the existing encrypted vault; it creates new encryption keys for future communications.
+
+This design means that if you share password reset credentials with an executor, they can reset the password but cannot access encrypted content created under your original password. They could read future emails sent to the account, but the existing encrypted library remains inaccessible.
+
+For power users, Proton Mail offers an additional security layer: you can create and download an encrypted backup of your account data. This backup itself is encrypted with a password of your choosing. To create this:
+
+1. Log into Proton Mail web
+2. Navigate to Settings → Account → Account recovery
+3. Select "Export account" (if available in your plan)
+4. Set a separate password for the export file
+5. Save the encrypted file to secure storage
+
+This mechanism allows you to share the encrypted backup with an executor while keeping the backup password in a separate location (physical will, sealed envelope, safety deposit box).
+
+## Alternative: Proton for Business and Legacy Access
+
+Proton Mail for Organizations provides different options than personal accounts. Organization administrators can technically manage shared mailboxes and delegate access in ways personal accounts cannot. If managing organizational email that needs inheritance, this represents a more viable path than personal Proton Mail accounts.
+
+For individuals managing significant professional correspondence, consider:
+
+1. **Separating roles**: Use personal Proton Mail for truly private communications, separate business email (potentially non-encrypted) for matters that need succession
+2. **Organization structure**: If you run a business, set up a Proton Organization with administrator delegation rather than sole-proprietor account setup
+3. **Archiving approach**: Periodically export portions of critical correspondence using encrypted backups
+
+## Implementing Shamir's Secret Sharing for Account Access
+
+For technically sophisticated users managing high-value encrypted communications, distributing account credentials using Shamir's Secret Sharing (SSS) provides practical security:
+
+```python
+# Using the secrets library and polynomial-based threshold splitting
+# Production use: install `pyshmir` or `shark` package
+
+def split_secret_shamir(secret_string, threshold, shares):
+    """
+    Split a Proton Mail password/recovery code using SSS
+    threshold: minimum number of shares needed to reconstruct (e.g., 2)
+    shares: total number of shares to generate (e.g., 3)
+    """
+    # In production, use: pip install shark
+    # from shark import generate_shares, reconstruct_secret
+
+    # Example with 3 shares, requiring 2 to reconstruct
+    # share_1 → attorney
+    # share_2 → family member
+    # share_3 → secure vault
+    # Any 2 of 3 can reconstruct the password
+
+    pass
+
+# To reconstruct: attorney + family member share with each other
+# Combined shares reveal the original password
+# No single party has enough information to access account
+```
+
+This approach ensures that no individual beneficiary possesses the account credentials, but coordinated parties can recover access to historical emails and account settings.
+
+## Jurisdictional Considerations for Digital Estate Planning
+
+The Uniform Fiduciary Access to Digital Assets Act (UFADAA), now adopted by most U.S. states, provides a legal framework but has limitations with end-to-end encryption:
+
+- **Kentucky, Wyoming, Vermont**: Adopted UFADAA with full support for accessing encrypted accounts if credentials are available
+- **California**: Extended privacy protections make digital asset access more restricted
+- **European Union**: GDPR Article 17 (right to erasure) complicates account inheritance — executors may lack authority to access personal data
+
+Before designing your succession plan, check your jurisdiction's specific rules. Some states require explicit written instructions from the account holder regarding data disposition.
+
+## Cloud Storage Integration and Workarounds
+
+Proton Mail integrates with Proton Drive for file sharing. While emails stored in Proton Mail cannot be inherited, you can use Proton Drive as a complementary system:
+
+1. Create a Proton Drive folder with sensitive documents
+2. Share access to the Drive folder (if beneficiary has Proton account) before death
+3. Update sharing permissions in your will or trust documentation
+4. The Drive folder remains accessible even if email account encryption prevents access
+
+This hybrid approach maintains encryption while providing a practical inheritance mechanism.
+
+## Building a Comprehensive Digital Estate Strategy
+
+Rather than viewing Proton Mail inheritance as a single problem, integrate it into a broader digital asset inventory:
+
+**Asset Type** | **Proton Solution** | **Backup Location** | **Inheritance Method**
+---|---|---|---
+Active email | Encrypted backups | Safety deposit box | Password-protected export
+Email archives | Periodic exports | Encrypted USB drives | Multi-share reconstruction
+Shared documents | Proton Drive | Separate service | Delegated access/recovery code
+Contacts/calendar | Local export | Secure backup | Plain file in encrypted container
+Account settings | Screenshot documentation | Physical safe | Recovery code distribution
+
+## Timeline and Notification Planning
+
+Create a documented timeline for your digital succession plan:
+
+- **Current**: Set up recovery email, add backup email address, document all recovery codes
+- **Annually**: Export encrypted backups, verify recovery mechanisms still work
+- **Upon diagnosis of serious illness**: Notify selected trusted parties, distribute recovery information according to predetermined process
+- **Upon death**: Executor accesses documented procedures and pre-distributed keys/shares
+
+## Conclusion
+
+Proton Mail's commitment to zero-knowledge encryption means account inheritance fundamentally differs from traditional email services. The mathematical impossibility of unauthorized access is a feature, not a bug — but it requires proactive planning. For developers and power users, the solution involves understanding the cryptography at play, implementing distributed trust mechanisms like Shamir's Secret Sharing, and integrating encrypted email succession into broader digital estate strategies.
+
+The key takeaway: if you're relying solely on Proton Mail for critical communications, plan for the scenario where only you hold the keys — and distribute those keys thoughtfully before you need to. Combine technical solutions (encrypted backups, multi-share distribution) with legal documentation (will provisions, executor instructions) to create a system that survives your death while maintaining the security principles Proton Mail was designed to protect.
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
