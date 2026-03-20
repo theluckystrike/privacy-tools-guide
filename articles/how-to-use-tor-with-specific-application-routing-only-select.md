@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use Tor with Specific Application Routing: Select Apps Through Onion Network"
-description: "Learn how to route only specific applications through Tor while keeping other traffic on your regular internet connection. Practical setup guide for Linux, macOS, and Windows."
+title: "How to Use Tor with Specific Application Routing: Select."
+description: "Learn how to route only specific applications through Tor while keeping other traffic on your regular internet connection. Practical setup guide for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-with-specific-application-routing-only-select/
@@ -242,6 +242,12 @@ Selective Tor routing serves several practical purposes:
 - **Compartmentalization**: Separate sensitive browsing from regular activities
 
 This setup gives you granular control over which applications receive Tor's anonymity properties while maintaining normal performance for everything else.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
