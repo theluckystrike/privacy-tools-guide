@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Setup for Domestic Abuse Shelter Staff: Protecting Location and Identity"
+title: "Privacy Setup for Domestic Abuse Shelter Staff"
 description: "A technical guide for developers and power users implementing privacy measures for domestic abuse shelter staff. Learn location protection, secure."
 date: 2026-03-15
 author: "Privacy Tools Guide"

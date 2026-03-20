@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN for Accessing Medical Records Abroad While Traveling: The Security Problem"
+title: "VPN for Accessing Medical Records Abroad While Traveling"
 description: "A technical guide for developers and power users on setting up VPN tunnels to securely access healthcare portals and medical records while traveling."
 date: 2026-03-16
 author: theluckystrike

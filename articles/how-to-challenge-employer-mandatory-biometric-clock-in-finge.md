@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Challenge Employer Mandatory Biometric Clock In Fingerprint Face Scan"
+title: "Challenge Employer Mandatory Biometric Clock"
 description: "A practical guide for developers and power users on challenging mandatory fingerprint and facial recognition time-tracking systems. Learn legal rights."
 date: 2026-03-16
 author: theluckystrike

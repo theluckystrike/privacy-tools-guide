@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Harden Macos Sequoia Privacy Settings Beyond Default Configuration"
+title: "Harden Macos Sequoia Privacy Settings Beyond Default"
 description: "Master macOS Sequoia privacy hardening beyond defaults. Configure TCC permissions, disable telemetry, tighten app access controls, and implement."
 date: 2026-03-16
 author: theluckystrike

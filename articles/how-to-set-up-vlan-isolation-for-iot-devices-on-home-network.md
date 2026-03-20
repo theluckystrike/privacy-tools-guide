@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up VLAN Isolation for IoT Devices on Home Network 2026 Guide"
+title: "Set Up VLAN Isolation for IoT Devices on Home Network 2026"
 description: "A practical guide for developers and power users on implementing VLAN isolation to separate IoT devices from main network using managed switches and."
 date: 2026-03-16
 author: theluckystrike

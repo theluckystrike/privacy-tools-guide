@@ -246,6 +246,27 @@ Services like **Proton Mail** offer:
 - Better security defaults
 - Switzerland-based privacy laws
 
+## Check Gmail for Hidden Forwarding Rules
+
+Attackers often add silent forwarding rules to copy every incoming email. Use the Gmail API to audit settings programmatically:
+
+```bash
+# Using Gmail API via curl (requires a valid OAuth2 access token)
+ACCESS_TOKEN="ya29.your_token_here"
+
+# List all active forwarding addresses
+curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+  "https://gmail.googleapis.com/gmail/v1/users/me/settings/forwardingAddresses" \
+  | python3 -m json.tool
+
+# List all active filters — look for forward or delete actions
+curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+  "https://gmail.googleapis.com/gmail/v1/users/me/settings/filters" \
+  | python3 -m json.tool
+```
+
+Or check manually: Gmail Settings → See all settings → Filters tab, then check the Forwarding and POP/IMAP tab.
+
 ## Quick Reference: How to Check Your Email Provider
 
 | Provider | Login History Location | Security Settings |
