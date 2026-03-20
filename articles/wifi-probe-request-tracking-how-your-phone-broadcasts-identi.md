@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /wifi-probe-request-tracking-how-your-phone-broadcasts-identi/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
