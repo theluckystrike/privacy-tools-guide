@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Gdpr Data Breach Notification Rights What Company Must Tell You Within Seventy Two Hours"
+title: "Gdpr Data Breach Notification Rights What Company Must."
 description: "Learn your GDPR data breach notification rights. Discover what companies must disclose within 72 hours, how to verify breach notifications, and steps."
 date: 2026-03-16
 author: theluckystrike

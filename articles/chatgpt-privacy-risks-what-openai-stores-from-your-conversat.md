@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chatgpt Privacy Risks What Openai Stores From Your Conversations Detailed Breakdown"
+title: "Chatgpt Privacy Risks What Openai Stores From Your."
 description: "A technical breakdown of exactly what data ChatGPT stores, how OpenAI uses your conversations, and what developers need to know about privacy implications."
 date: 2026-03-16
 author: theluckystrike

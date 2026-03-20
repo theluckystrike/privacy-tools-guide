@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How Blockchain Analysis Companies Track Your Crypto Transactions"
-description: "A technical guide to understanding how Chainalysis, Elliptic, and other blockchain analysis companies trace cryptocurrency transactions. Learn the methods, APIs, and practical implications for developers and privacy-conscious users."
+title: "How Blockchain Analysis Companies Track Your Crypto."
+description: "A technical guide to understanding how Chainalysis, Elliptic, and other blockchain analysis companies trace cryptocurrency transactions. Learn the."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /blockchain-analysis-companies-how-chainalysis-elliptic-track/

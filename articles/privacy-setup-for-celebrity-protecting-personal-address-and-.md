@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Privacy Setup for Celebrity: Protecting Personal Address and Family Info"
-description: "A technical guide to securing personal addresses and family information for high-profile individuals. Learn practical tools, configuration steps, and code-based solutions."
+title: "Privacy Setup for Celebrity: Protecting Personal Address."
+description: "A technical guide to securing personal addresses and family information for high-profile individuals. Learn practical tools, configuration steps, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-celebrity-protecting-personal-address-and-/

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Password Managers With Emergency Access Features Compared."
+title: "Best Password Managers With Emergency Access Features."
 description: "Emergency access lets trusted contacts retrieve passwords if you die or become incapacitated—comparison of implementations."
 date: 2026-03-20
 author: theluckystrike

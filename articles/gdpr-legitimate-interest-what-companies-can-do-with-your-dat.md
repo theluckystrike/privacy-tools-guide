@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Legitimate Interest: What Companies Can Do With Your Data Without Consent Explained"
+title: "GDPR Legitimate Interest: What Companies Can Do With."
 description: "A practical guide explaining GDPR legitimate interest basis - how companies process your data without consent, the three-part test, and what it means."
 date: 2026-03-16
 author: theluckystrike

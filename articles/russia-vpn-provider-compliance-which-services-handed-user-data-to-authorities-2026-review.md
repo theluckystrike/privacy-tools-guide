@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Russia Vpn Provider Compliance Which Services Handed User Data To Authorities 2026 Review"
+title: "Russia Vpn Provider Compliance Which Services Handed."
 description: "A review of VPN provider compliance with Russian data requests. Learn which services cooperated with authorities and what this means for."
 date: 2026-03-16
 author: "Privacy Tools Guide"

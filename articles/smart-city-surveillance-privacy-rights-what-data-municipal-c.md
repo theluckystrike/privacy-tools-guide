@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Smart City Surveillance: What Data Municipal Cameras and Sensors Collect About Residents"
-description: "A technical breakdown of smart city surveillance systems, the data they collect, privacy implications, and what developers need to know about municipal sensor networks in 2026."
+title: "Smart City Surveillance: What Data Municipal Cameras and."
+description: "A technical breakdown of smart city surveillance systems, the data they collect, privacy implications, and what developers need to know about municipal."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /smart-city-surveillance-privacy-rights-what-data-municipal-c/

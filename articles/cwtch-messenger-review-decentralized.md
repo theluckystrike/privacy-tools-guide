@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cwtch Messenger Review: A Decentralized Privacy Solution"
-description: "A technical review of Cwtch messenger for developers and power users, covering its decentralized architecture, Tor-based routing, and self-hosted deployment options."
+description: "A technical review of Cwtch messenger for developers and power users, covering its decentralized architecture, Tor-based routing, and self-hosted."
 date: 2026-03-15
 author: theluckystrike
 permalink: /cwtch-messenger-review-decentralized/

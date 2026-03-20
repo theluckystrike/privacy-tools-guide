@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Password Manager for Elderly Parent Remotely"
-description: "A technical guide for developers and power users to remotely configure a password manager for elderly parents, covering family plans, shared vaults, and security best practices."
+description: "A technical guide for developers and power users to remotely configure a password manager for elderly parents, covering family plans, shared vaults."
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-password-manager-for-elderly-parent-remotely/

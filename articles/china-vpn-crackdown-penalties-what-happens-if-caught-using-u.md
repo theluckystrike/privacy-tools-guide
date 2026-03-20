@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "China VPN Crackdown: Penalties and Consequences for Unauthorized VPN Usage"
+title: "China VPN Crackdown: Penalties and Consequences for."
 description: "China VPN Crackdown: Penalties and Consequences for. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
 date: 2026-03-16
 author: theluckystrike

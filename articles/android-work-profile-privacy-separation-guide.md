@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Work Profile Privacy Separation Guide"
-description: "Learn how to implement and manage Android Work Profiles for complete privacy separation between personal and work data. Technical guide for developers and power users."
+description: "Learn how to implement and manage Android Work Profiles for complete privacy separation between personal and work data. Technical guide for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-work-profile-privacy-separation-guide/

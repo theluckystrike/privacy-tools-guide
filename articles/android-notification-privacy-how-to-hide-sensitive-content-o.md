@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Android Notification Privacy: How to Hide Sensitive Content on Lock Screen"
-description: "A practical guide for developers and power users on hiding sensitive notification content on Android lock screens using NotificationListenerService, LockScreenVisibility, and programmatic approaches."
+title: "Android Notification Privacy: How to Hide Sensitive."
+description: "A practical guide for developers and power users on hiding sensitive notification content on Android lock screens using NotificationListenerService."
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-notification-privacy-how-to-hide-sensitive-content-o/

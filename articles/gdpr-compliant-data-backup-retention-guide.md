@@ -2,7 +2,7 @@
 
 layout: default
 title: "GDPR Compliant Data Backup Retention Guide"
-description: "A practical guide to implementing GDPR-compliant data backup and retention policies. Learn retention periods, encryption requirements, and code examples for developers."
+description: "A practical guide to implementing GDPR-compliant data backup and retention policies. Learn retention periods, encryption requirements, and code."
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-data-backup-retention-guide/

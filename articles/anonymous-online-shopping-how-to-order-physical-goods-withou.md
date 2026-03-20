@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Anonymous Online Shopping How To Order Physical Goods Without Revealing Home Address"
+title: "Anonymous Online Shopping How To Order Physical Goods."
 description: "A technical guide to ordering physical goods online while protecting your address privacy. Learn about mail forwarding services, pickup options, and."
 date: 2026-03-16
 author: theluckystrike

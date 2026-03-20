@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Privacy Engineering Hiring Guide What Skills To Look For In Privacy Team"
+title: "Privacy Engineering Hiring Guide What Skills To Look For."
 description: "A practical hiring guide for building a privacy engineering team. Learn what technical skills, certifications, and competencies to evaluate when."
 date: 2026-03-16
 author: theluckystrike

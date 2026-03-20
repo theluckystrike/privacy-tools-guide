@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Signal Disappearing Messages Best Practices for Sensitive Communication Security Guide"
+title: "Signal Disappearing Messages Best Practices for."
 description: "A guide to Signal disappearing messages best practices for developers and power users. Learn how to configure timers, implement proper."
 date: 2026-03-16
 author: theluckystrike

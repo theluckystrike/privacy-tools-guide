@@ -2,7 +2,7 @@
 
 layout: default
 title: "VPN for Safe Browsing on Public WiFi in Airports"
-description: "A technical guide to using VPNs for secure browsing on airport public WiFi networks. Learn about encryption protocols, network configuration, and practical implementation for developers and power users."
+description: "A technical guide to using VPNs for secure browsing on airport public WiFi networks. Learn about encryption protocols, network configuration, and."
 date: 2026-03-17
 author: theluckystrike
 permalink: /vpn-for-safe-browsing-on-public-wifi-in-airports/

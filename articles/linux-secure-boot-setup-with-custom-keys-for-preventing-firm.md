@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Linux Secure Boot Setup with Custom Keys for Preventing Firmware Level Tampering"
+title: "Linux Secure Boot Setup with Custom Keys for Preventing."
 description: "Learn how to set up Secure Boot on Linux with custom keys to protect against firmware-level attacks and ensure boot integrity."
 date: 2026-03-16
 author: theluckystrike

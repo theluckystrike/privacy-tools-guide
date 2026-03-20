@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Russia Data Localization Law: How Requirement to Store Data Locally Affects User Privacy"
+title: "Russia Data Localization Law: How Requirement to Store."
 description: "A technical guide for developers and power users exploring Russia's data localization requirements, how they impact privacy, and strategies for protecting user data."
 date: 2026-03-16
 author: theluckystrike
