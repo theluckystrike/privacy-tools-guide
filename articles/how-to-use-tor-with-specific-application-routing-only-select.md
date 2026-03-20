@@ -5,7 +5,7 @@ description: "Learn how to route only specific applications through Tor while ke
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-with-specific-application-routing-only-select/
-categories: [guides, privacy, security, tor]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

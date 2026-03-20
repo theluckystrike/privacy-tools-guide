@@ -6,7 +6,7 @@ description: "Learn how to control your Instagram story viewers list privacy and
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-make-instagram-story-viewers-list-private-controlling/
-categories: [guides]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
