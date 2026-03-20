@@ -6,7 +6,7 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /wickr-vs-signal-for-enterprise-use/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
