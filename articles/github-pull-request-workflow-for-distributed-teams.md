@@ -10,6 +10,7 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, workflow]
 ---
 
 

@@ -6,9 +6,10 @@ date: 2026-03-15
 permalink: /guides-hub/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 # Guides — Complete Guide Hub
