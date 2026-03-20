@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/
 categories: [guides]
-tags: [privacy, self-hosting, security, networking, infrastructure]
+tags: [privacy-tools-guide, privacy, self-hosting, security, networking, infrastructure]
 reviewed: true
 score: 8
 voice-checked: true

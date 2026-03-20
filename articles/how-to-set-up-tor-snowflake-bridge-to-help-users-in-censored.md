@@ -8,7 +8,7 @@ permalink: /how-to-set-up-tor-snowflake-bridge-to-help-users-in-censored/
 score: 8
 voice-checked: true
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 intent-checked: true
 ---

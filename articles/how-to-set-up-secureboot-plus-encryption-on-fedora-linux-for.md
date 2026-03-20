@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, encryption]
 reviewed: true
 score: 8
 voice-checked: true
