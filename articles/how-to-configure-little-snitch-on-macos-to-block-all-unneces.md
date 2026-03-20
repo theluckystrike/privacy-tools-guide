@@ -139,6 +139,176 @@ When legitimate applications fail to connect, Little Snitch is often the first s
 
 Remember to maintain a *whitelist* of essential services that must always work—payment processors, security tools, and development infrastructure should rarely, if ever, be blocked.
 
+## Advanced Rule Priority and Ordering
+
+Little Snitch evaluates rules from top to bottom—the first matching rule determines the connection outcome. Understanding rule precedence prevents unexpected blocking behavior.
+
+### Rule Priority Scenarios
+
+Create a layered approach using specific-to-general rule ordering:
+
+```
+// Most specific rules first
+1. Process /Applications/Safari.app TO *.facebook.com = DENY
+2. Process /Applications/Safari.app TO *.google-analytics.com = DENY
+3. Process /Applications/Safari.app TO any domain = ALLOW
+
+// General rules last
+4. Domain *.analytics.google.com = DENY (applies to all processes)
+5. Process any TO any = ASK (catch-all prompt)
+```
+
+This configuration allows Safari to connect to most sites while explicitly blocking known trackers, and prompts for unknown connections.
+
+### Priority Groups for Complex Setups
+
+When managing dozens of rules, organize them into logical groups with clear precedence:
+
+**Tier 1 - System Security**: Rules blocking known malware domains and exploit kits. Highest priority, never allow exceptions.
+
+**Tier 2 - Privacy Core**: Rules blocking major ad networks and tracking domains that apply universally across all applications.
+
+**Tier 3 - Application-Specific**: Allow/block rules for individual applications like Slack, VS Code, or development tools.
+
+**Tier 4 - Default Policy**: Catch-all rules (ASK for unknown, ALLOW for system processes, DENY for untrusted apps).
+
+This hierarchy ensures security-critical rules never get overridden by accident.
+
+## Real-World Configuration Examples
+
+### Developer Environment
+
+Developers typically need network access to multiple services. Create a configuration that grants development access while blocking tracking:
+
+```
+# Development tools - Allow
+Process /usr/local/bin/docker = ALLOW
+Process /usr/local/bin/git = ALLOW
+Process /opt/homebrew/bin/npm = ALLOW
+
+# Development servers
+Domain localhost = ALLOW
+Domain *.local = ALLOW
+Domain host.docker.internal = ALLOW
+
+# Package repositories - Allow
+Domain npmjs.org = ALLOW
+Domain pypi.org = ALLOW
+Domain crates.io = ALLOW
+Domain github.com = ALLOW
+
+# Tracking and Telemetry - Block
+Domain *.telemetry.* = DENY
+Domain *.analytics.* = DENY
+Domain sentry.io = DENY
+
+# Applications - Granular control
+Process /Applications/Slack.app TO *.slack.com = ALLOW
+Process /Applications/Slack.app TO *.slack-edge.com = ALLOW
+Process /Applications/Slack.app TO *.google-analytics.com = DENY
+```
+
+This setup keeps development workflows functional while eliminating unnecessary data leakage.
+
+### Minimal Privacy Configuration
+
+Users prioritizing privacy over convenience implement aggressive blocking:
+
+```
+# Block telemetry from Apple and system processes
+Domain *.apple.com/analyt* = DENY
+Domain sentry.apple.com = DENY
+Domain metrics.apple.com = DENY
+
+# Block major ad networks from all processes
+Domain doubleclick.net = DENY
+Domain *.facebook.com/tr = DENY
+Domain google-analytics.com = DENY
+Domain *.appsflyer.com = DENY
+
+# Application-specific tracking
+Process /Applications/Mail.app TO *.mail.ru = ALLOW
+Process /Applications/Mail.app TO *.google-analytics.com = DENY
+
+# Default: Ask for everything else
+Process any TO any = ASK
+```
+
+This approach creates maximum visibility into what applications are doing, at the cost of frequent prompts for new applications.
+
+## Integration with System Monitoring Tools
+
+Combine Little Snitch with other macOS monitoring tools for comprehensive security visibility:
+
+**Little Snitch + Activity Monitor**: Use Activity Monitor to identify which processes are making suspicious connections that Little Snitch flags. Sort by network activity to find unexpected traffic.
+
+**Little Snitch + DTrace**: Developers can use DTrace to trace system calls from processes and correlate them with Little Snitch's blocked connections:
+
+```bash
+# Monitor system calls for a specific process
+sudo dtrace -p $(pgrep -x "ApplicationName") -n 'syscall:::entry { @[execname] = count(); }'
+```
+
+**Little Snitch + Wireshark**: For deep analysis of blocked connections, run Wireshark alongside Little Snitch to capture traffic and understand the protocol-level details of what applications are attempting to do.
+
+These combinations provide forensic-level visibility into your system's network behavior.
+
+## Performance Optimization
+
+Little Snitch's kernel-level monitoring uses some CPU and memory resources. Optimize performance by:
+
+**Rule specificity** — Specific rules (e.g., `Process /Applications/Mail.app TO mail.google.com`) process faster than wildcard patterns (e.g., `Domain *.google.com`). Invest time writing precise rules.
+
+**Group similar rules** — Little Snitch optimizes groups of related rules differently than scattered rules. Keeping tracker domains together and application rules together improves performance.
+
+**Monitor rule evaluation** — Check Little Snitch's System Log for rule evaluation times. Rules taking >5ms indicate patterns needing optimization.
+
+**Disable unnecessary logging** — While monitoring, keep the Network Monitor running to debug, but disable logging to disk in production to reduce I/O overhead.
+
+Most users report negligible (<2%) performance impact with well-optimized configurations.
+
+## Automated Rule Updates
+
+Keep your rules current without manual maintenance:
+
+```bash
+#!/bin/bash
+# Update tracking domain rules from external lists
+
+# Download latest tracking domains
+curl -s "https://raw.githubusercontent.com/disconnect/disconnect.me/master/services.json" \
+  | jq -r '.categories.Advertising[].domains[]' > /tmp/new_trackers.txt
+
+# Convert to Little Snitch format and merge with existing rules
+while IFS= read -r domain; do
+  echo "Domain $domain = DENY"
+done < /tmp/new_trackers.txt >> ~/.little-snitch-tracking-rules.txt
+
+# Sort and deduplicate
+sort -u ~/.little-snitch-tracking-rules.txt > /tmp/sorted_rules.txt
+mv /tmp/sorted_rules.txt ~/.little-snitch-tracking-rules.txt
+```
+
+Import these automated rules into Little Snitch periodically (monthly is reasonable) to catch newly identified tracking domains without manual effort.
+
+## Enterprise Deployment
+
+Organizations managing multiple Macs can centralize Little Snitch configuration:
+
+```bash
+#!/bin/bash
+# Deploy standardized rules to fleet of developer machines
+
+RULES_REPOSITORY="https://github.com/company/little-snitch-rules.git"
+RULES_PATH="/Library/Little Snitch/Rules"
+
+# Sync rules from central repository
+git clone $RULES_REPOSITORY /tmp/rules
+cp /tmp/rules/*.plist "$RULES_PATH/"
+```
+
+This ensures all developers maintain consistent security postures and blocking policies.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
