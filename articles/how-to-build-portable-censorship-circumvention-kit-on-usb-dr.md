@@ -6,10 +6,10 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-build-portable-censorship-circumvention-kit-on-usb-dr/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 intent-checked: true
 ---
 
