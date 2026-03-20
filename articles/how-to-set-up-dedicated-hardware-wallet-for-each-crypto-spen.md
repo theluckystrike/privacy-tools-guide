@@ -157,6 +157,176 @@ Maintain separation discipline throughout daily use:
 - Verify URLs carefully—bookmark official DeFi sites rather than clicking links
 - Log each transaction in a local ledger for reconciliation
 
+## Comparing Hardware Wallet Devices for Purpose Separation
+
+Different devices have varying capabilities for managing multiple purposes:
+
+**Ledger Nano X ($149)**
+- Pros: Multiple app support, Bluetooth connectivity, largest ecosystem
+- Cons: Proprietary firmware, company security controversies
+- Multi-purpose fit: Excellent if managing 3-4 purposes through different apps
+
+**Trezor Model T ($229)**
+- Pros: Open-source firmware, customizable derivation paths, no proprietary software required
+- Cons: No wireless, requires USB connection
+- Multi-purpose fit: Best for power users managing complex path structures
+
+**Coldcard MK4 ($249)**
+- Pros: Air-gapped operation, PSBT support, advanced scripting
+- Cons: Steeper learning curve, less ecosystem integration
+- Multi-purpose fit: Ideal for developers handling complex multi-sig setups
+
+**Bitbox02 ($149)**
+- Pros: Swiss-made, beautiful UI, USB-C and desktop-native
+- Cons: Smaller ecosystem than Ledger, newer platform
+- Multi-purpose fit: Good for simpler two-to-three purpose setups
+
+For most users managing 3-4 distinct purposes, a Ledger Nano X or Trezor provides the best balance of capability and ease of use. Consider purchasing two devices for critical separation: one for trading/transfers, another for DeFi/NFT interactions.
+
+## Address Labeling and Purpose Verification
+
+Create a system for quickly identifying which wallet serves which purpose:
+
+```javascript
+// Purpose wallet registry (stored encrypted in password manager)
+const walletRegistry = {
+  "trading": {
+    "device": "Ledger Nano X",
+    "addresses": [
+      "0xDEADBEEF..."  // Kraken deposit address
+    ],
+    "last_used": "2026-03-15",
+    "purpose": "CEX deposits only - small amounts",
+    "max_balance": "5000 USD equivalent"
+  },
+  "defi": {
+    "device": "Trezor Model T",
+    "addresses": [
+      "0xCAFEBABE..."  // Uniswap LP address
+    ],
+    "last_used": "2026-03-14",
+    "purpose": "Liquidity provision and yield farming",
+    "max_balance": "20000 USD equivalent"
+  },
+  "nft": {
+    "device": "Ledger Nano X",
+    "addresses": [
+      "0xFEEDFACE..."  // OpenSea connected address
+    ],
+    "last_used": "2026-03-10",
+    "purpose": "NFT minting and secondary market",
+    "max_balance": "500 USD equivalent"
+  }
+};
+```
+
+This registry serves as your operational reference and audit trail.
+
+## Tax Implications of Multiple Wallets
+
+Maintaining separate wallets complicates tax reporting but improves accuracy:
+
+```javascript
+// Example: Tracking taxable events by purpose
+
+const taxableEvents = {
+  "trading": [
+    {
+      "date": "2026-03-15",
+      "action": "exchange",
+      "from": "1 ETH",
+      "to": "USDC 3500",
+      "cost_basis": "3000 USD"
+    }
+  ],
+  "defi": [
+    {
+      "date": "2026-02-01",
+      "action": "yield_earned",
+      "amount": "0.5 ETH",
+      "fair_market_value": "1750 USD",
+      "cost_basis": "0 USD (income)"
+    }
+  ]
+};
+
+// Purpose-separated wallets make aggregation and reporting clearer
+```
+
+Tools like Koinly or CoinTracker can import transactions from multiple wallet addresses and automatically categorize by purpose if you tag them correctly.
+
+## Disaster Recovery for Multi-Wallet Setup
+
+With multiple hardware wallets, recovery becomes complex:
+
+1. **Locate all seed phrases** (stored separately by device)
+2. **Test one recovery** offline before needing it for real
+3. **Document recovery order** (which device to recover first)
+4. **Verify balances match** across all devices after successful recovery
+5. **Re-establish operational patterns** (recheck derivation paths, app connections)
+
+Create a written disaster recovery guide:
+
+```
+Multi-Wallet Disaster Recovery Procedure
+========================================
+
+Step 1: Assess situation
+- Device lost/damaged/compromised?
+- Funds at risk?
+- Timeline urgency?
+
+Step 2: Recover wallets in order
+a) Trading wallet (Ledger) - FIRST (highest frequency use)
+b) DeFi wallet (Trezor) - SECOND (time-sensitive LP positions)
+c) NFT wallet (Ledger) - THIRD (collectibles less time-sensitive)
+
+Step 3: Verify recovered addresses
+- Check blockchain explorers for expected balances
+- Attempt small transaction on each to verify control
+- Note any discrepancies
+
+Step 4: Resume normal operations
+- Update exchange deposit addresses if trading wallet changed
+- Verify DeFi pool access with new address
+- Update NFT marketplace connected wallet
+```
+
+Store this guide in the same secure location as backup seed phrases.
+
+## Consolidation Strategy When Exiting Crypto
+
+If you eventually decide to consolidate or exit holdings, separate purpose wallets require careful planning:
+
+```bash
+#!/bin/bash
+# Consolidation workflow script
+
+echo "Crypto Consolidation Plan"
+echo "========================="
+
+# Phase 1: NFT → Trading
+echo "Phase 1: Sell all NFTs through OpenSea"
+echo "Proceeds go directly to trading wallet for conversion to stables"
+
+# Phase 2: DeFi → Trading
+echo "Phase 2: Exit all DeFi positions"
+echo "Withdraw liquidity, claim yield, move to trading wallet"
+
+# Phase 3: Stables → USD
+echo "Phase 3: Convert stables to fiat"
+echo "Use trading wallet for final CEX conversion to USD"
+
+# Phase 4: Tax reporting
+echo "Phase 4: Generate consolidated tax report"
+echo "Aggregate across all wallets and purposes"
+```
+
+Planning consolidation in advance prevents emotional decisions or tax mistakes during execution.
+
+---
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

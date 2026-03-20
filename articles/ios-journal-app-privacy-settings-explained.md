@@ -144,7 +144,7 @@ Settings → Journal → Suggestions → Off
 # Keep suggestions but disable specific categories
 Settings → Journal → Suggestions → Customize
   → Disable "Photos"
-  → Disable "Workouts"  
+  → Disable "Workouts"
   → Disable "Locations"
 
 # Enable biometric lock
@@ -153,6 +153,199 @@ Settings → Journal → Require Face ID → On
 # Review and revoke permissions
 Settings → Privacy & Security → Journal
 ```
+
+## Privacy Threat Models and Journal Configuration
+
+Different privacy needs call for different configurations:
+
+**Threat Model 1: Casual Privacy (Housemate Access)**
+- Configuration: Enable Face ID lock, allow location suggestions
+- Reasoning: Prevents accidental discovery while allowing functionality
+- Risk accepted: iCloud backup exposure if synchronized
+
+**Threat Model 2: Intimate Partner Violence (IPV) Victim**
+- Configuration: Disable ALL suggestions, enable Face ID, disable iCloud sync
+- Reasoning: Minimize device interaction patterns that might be observed
+- Risk accepted: None; maximum security is goal
+- Additional: Hide app from home screen using app library or folder
+
+**Threat Model 3: Workplace Surveillance Risk**
+- Configuration: Enable Face ID, disable location/health data suggestions
+- Reasoning: Prevent inference of work activities or patterns
+- Risk accepted: Lose contextual suggestions
+
+**Threat Model 4: Law Enforcement or Subpoena Risk**
+- Configuration: Use local-only mode, disable iCloud, enable Face ID/passcode
+- Reasoning: Prevent cloud backup access in emergency
+- Risk accepted: No backup redundancy; device loss = data loss
+
+Choose configuration based on your actual threat model rather than maximum security, which often creates usability issues that lead to abandonment of the app entirely.
+
+## Technical Architecture: Why Journal Is Safer Than Alternatives
+
+Understanding iOS Journal's design helps appreciate its privacy advantages:
+
+```swift
+// Simplified representation of Journal's architecture
+class JournalPrivacyModel {
+    // All processing happens on-device
+    func generateSuggestions(from photoMetadata: PhotoData) -> [Suggestion] {
+        // Uses on-device neural engine
+        let model = MLModel.load("journal_suggestions.mlmodel")
+
+        // Never sends raw data to servers
+        return model.predict(input: photoMetadata)
+    }
+
+    // Encryption key is derived from device passcode
+    func encryptEntry(_ text: String) -> EncryptedData {
+        let key = deriveKeyFromDevicePasscode()
+        let ciphertext = AES256_GCM.encrypt(text, key: key)
+        return ciphertext
+    }
+
+    // No telemetry about entry content
+    func recordAnalytics() {
+        // Only records:
+        // - Number of entries written
+        // - App usage time (aggregate)
+        // Not: content, sentiment, location, people mentioned
+        Analytics.log(event: "entry_created")
+    }
+}
+```
+
+Compared to third-party journaling apps (Penzu, Day One, Journey), which often sync to cloud servers, Apple's Journal provides stronger privacy by default.
+
+## Comparing Journal to Third-Party Journaling Apps
+
+Third-party alternatives exist but with different privacy profiles:
+
+| App | Architecture | Cloud Sync | Encryption | Cost | Privacy Model |
+|-----|-------------|-----------|-----------|------|--------------|
+| Apple Journal | Local-first | Optional | On-device | Free | Privacy-by-design |
+| Day One | Cloud-first | Always | End-to-end optional | $35/year | Privacy secondary |
+| Journey | Cloud-first | Always | Server-side | Free+ads | Ad-supported |
+| Penzu | Cloud-first | Default | Partial | Free | Business model unknown |
+| Notion | Cloud-first | Always | Minimal | Free+paid | Data collection explicit |
+
+Apple Journal stands out as the only mainstream journaling app with local-first architecture. This makes it technically superior for privacy despite being less feature-rich than alternatives.
+
+## Exporting and Backing Up Journal Data
+
+Unlike cloud-dependent apps, Journal lets you maintain full control through exports:
+
+```swift
+// Manual export workflow
+// Go to: Journal app → Settings → Export Journal
+
+// Exported JSON structure
+{
+  "version": "1.0",
+  "exportDate": "2026-03-20T10:30:00Z",
+  "entries": [
+    {
+      "id": "unique-entry-id",
+      "createdDate": "2026-03-15T09:00:00Z",
+      "lastModifiedDate": "2026-03-15T09:00:00Z",
+      "body": "Entry text content...",
+      "mood": "reflective",
+      "attachments": [
+        {
+          "type": "photo",
+          "fileName": "photo-uuid.jpg",
+          "createdDate": "2026-03-15T09:00:00Z"
+        }
+      ],
+      "location": {
+        "name": "San Francisco, CA",
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "isSignificantLocation": true
+      },
+      "tags": ["personal", "health"]
+    }
+  ],
+  "statistics": {
+    "totalEntries": 47,
+    "currentStreak": 12,
+    "longestStreak": 89
+  }
+}
+```
+
+Store exported JSON in encrypted file container (like Cryptomator) to maintain end-to-end encryption while maintaining backup copies.
+
+## Automation and Privacy-Preserving Workflow
+
+Developers can build workflows around Journal while maintaining privacy:
+
+```swift
+// Example: Daily reminder without tracking content
+import UserNotifications
+
+func scheduleDailyJournalReminder() {
+    let content = UNMutableNotificationContent()
+    content.title = "Time to Journal"
+    content.body = "Add an entry to today's journal"
+
+    // No data passed to notification
+    // No content available on lock screen (summary-off)
+    content.summaryArgument = ""
+
+    var dateComponents = DateComponents()
+    dateComponents.hour = 21
+    dateComponents.minute = 0
+
+    let trigger = UNCalendarNotificationTrigger(
+        dateMatching: dateComponents,
+        repeats: true
+    )
+
+    let request = UNNotificationRequest(
+        identifier: "daily-journal",
+        content: content,
+        trigger: trigger
+    )
+
+    UNUserNotificationCenter.current().add(request)
+}
+```
+
+This notification respects user privacy by not sharing journal entry data or patterns.
+
+## Migration From Other Apps to Apple Journal
+
+If switching from another journaling app:
+
+1. **Export from old app**: Use app's export function (usually JSON or PDF)
+2. **Review export**: Check what data is included
+3. **Import to Journal**: Create new entries manually or use import script
+4. **Delete old app**: Ensure account is closed on third-party service
+5. **Verify export deletion**: Request deletion confirmation from old service
+
+```bash
+#!/bin/bash
+# Migration checklist script
+
+echo "Journal App Migration Checklist"
+echo "=============================="
+echo "[ ] Export from existing journaling app"
+echo "[ ] Review export file for sensitive content"
+echo "[ ] Back up export file to encrypted storage"
+echo "[ ] Delete account on third-party service"
+echo "[ ] Request data deletion confirmation"
+echo "[ ] Begin importing entries to Apple Journal"
+echo "[ ] Verify all entries imported correctly"
+echo "[ ] Set up Face ID lock on Journal"
+echo "[ ] Configure privacy settings for new app"
+echo "[ ] Delete old app from device"
+```
+
+This migration preserves your journal history while moving to a more privacy-respecting platform.
+
+---
+
 
 ## Related Reading
 

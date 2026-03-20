@@ -153,6 +153,196 @@ func secureFile(at url: URL) throws {
 
 For applications handling sensitive user data, these improvements reduce the implementation burden of secure storage while maintaining high security standards.
 
+## Comparing macOS Sequoia to iOS Privacy Features
+
+macOS Sequoia adopted several iOS privacy features with unique desktop implementations:
+
+| Privacy Feature | iOS | macOS Sequoia | Key Difference |
+|-----------------|-----|---------------|-----------------|
+| App Tracking Transparency | Full enforcement | Limited (web-focused) | macOS allows more granular control |
+| Privacy Dashboard | Real-time | Audit log (delayed) | macOS emphasizes transparency over real-time |
+| Focus Mode Privacy | Full integration | Notification-only | macOS doesn't yet block system features |
+| App Sandbox | All apps | Optional for non-App Store | Desktop flexibility requires user caution |
+| Clipboard Access | Prompt required | Prompt required | Feature parity achieved |
+| Microphone/Camera | Always prompted | Always prompted | Same enforcement level |
+
+macOS prioritizes user control and developer flexibility over iOS's stricter privacy-first approach.
+
+## Setting Up Privacy-Focused macOS Configuration
+
+A privacy-optimized Sequoia setup requires systematic configuration:
+
+```bash
+#!/bin/bash
+# macOS Sequoia Privacy Hardening Script
+
+# 1. Disable Siri recording of voice input
+defaults write com.apple.assistant.support 'Siri Data Store Opt-In Status' -int 2
+
+# 2. Disable analytics sharing
+defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -bool false
+
+# 3. Disable Spotlight suggestions
+defaults write com.apple.spotlight orderedItems -array
+
+# 4. Disable ad personalization
+defaults write com.apple.AdLib ignoreAdIdTrackingId -bool true
+
+# 5. Disable iCloud analytics
+icloud_analytics_plist="$HOME/Library/Application Support/iCloud/Accounts/*/Private/CloudKitAnalytics.plist"
+if [ -f "$icloud_analytics_plist" ]; then
+    defaults write "$icloud_analytics_plist" CloudKitAnalyticsEnabled -bool false
+fi
+
+# 6. Force Safari to use private browsing
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+
+# 7. Disable web tracking
+defaults write com.apple.Safari PreventCrossTracking -bool true
+
+# 8. Set strong firewall defaults
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+
+echo "Privacy hardening complete. Restart applications for full effect."
+```
+
+Run this script to implement privacy defaults across Sequoia. Test carefully before deploying to production systems.
+
+## Privacy Extension Recommendations for macOS Sequoia
+
+Certain extensions significantly enhance privacy on Sequoia:
+
+**DuckDuckGo Privacy Essentials (Free)**
+- Blocks trackers and enforces encryption
+- Provides email protection for anonymous email aliases
+- Works across Safari and Chrome
+- No privacy compromise (no account required)
+
+**Ghostery (Free)**
+- Visualizes tracking and blocking in real-time
+- Integrates with Firefox, Chrome, Safari
+- Shows which trackers are active on sites
+- Open-source core functionality
+
+**Privacy Badger (Free, Open Source)**
+- Developed by EFF specifically for tracking prevention
+- Learns tracking patterns autonomously
+- No configuration required
+- Especially effective against first-party cookie tracking
+
+**1Blocker (Paid, $29.99)**
+- Content blocking at system level (not just browser)
+- Blocks trackers, ads, malware domains
+- More comprehensive than browser-only extensions
+- Supports multiple browser engines
+
+For Sequoia specifically, focus on extensions that provide DNS-level or system-level protection rather than browser-only filtering, since Sequoia's unified networking stack allows them to be more effective.
+
+## Enterprise Considerations for Sequoia
+
+Organizations deploying Sequoia should understand privacy implications:
+
+1. **Local Network Discovery**: Apps can discover devices on corporate networks
+   - Risk: Unauthorized network scanning by compromised app
+   - Mitigation: Use Network Segmentation policy to restrict app network access
+
+2. **Focus Mode Sync**: Focus states sync through iCloud
+   - Risk: Status information reveals work/personal boundaries
+   - Mitigation: Disable iCloud sync for corporate devices, use MDM for enforcement
+
+3. **Bluetooth Privacy**: Increased privacy for Bluetooth device connection
+   - Benefit: Reduces device fingerprinting through BLE scanning
+   - Implementation: Bluetooth MAC randomization enabled by default
+
+4. **Private Relay on Corporate Networks**: May conflict with proxy/firewall
+   - Issue: Private Relay bypass corporate inspection
+   - Solution: Disable Private Relay via MDM configuration profile
+
+Deploy this MDM configuration to disable Private Relay on corporate machines:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.security.iCloud</string>
+            <key>DisablePrivateRelay</key>
+            <true/>
+            <key>PayloadIdentifier</key>
+            <string>com.example.disable-private-relay</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+</dict>
+</plist>
+```
+
+## Auditing Third-Party App Permissions
+
+Sequoia improved visibility into app permissions. Regular audits help identify over-privileged applications:
+
+```bash
+#!/bin/bash
+# App Permission Audit Script
+
+echo "macOS Sequoia App Permission Audit"
+echo "===================================="
+
+# Check accessibility access
+echo "Apps with Accessibility access:"
+sqlite3 /Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.apple.access_control.sqlite-wal \
+  "SELECT name FROM access WHERE client LIKE '%Accessibility%';" 2>/dev/null
+
+# Check camera access
+echo ""
+echo "Apps with Camera access:"
+sqlite3 ~/Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.apple.camera.sqlite-wal \
+  "SELECT name FROM access WHERE allowed = 1;" 2>/dev/null
+
+# Check microphone access
+echo ""
+echo "Apps with Microphone access:"
+sqlite3 ~/Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.apple.microphone.sqlite-wal \
+  "SELECT name FROM access WHERE allowed = 1;" 2>/dev/null
+```
+
+Run this audit quarterly to identify permission creep over time.
+
+## Privacy Recommendations by Use Case
+
+**Software Developers:**
+- Keep Lockdown Mode off (breaks many development tools)
+- Use Virtual Machine for untrusted code
+- Maintain separate user account for development vs. production
+- Enable File Vault 2 for entire disk encryption
+
+**Journalists:**
+- Enable Lockdown Mode when handling sensitive sources
+- Use separate user account for secure communications
+- Disable Bluetooth/WiFi except when actively needed
+- Use encrypted messaging apps (Signal, Wire) for sensitive contacts
+
+**Home Users:**
+- Use standard privacy configuration (Privacy Dashboard default settings)
+- Install one blocking extension (Privacy Badger recommended)
+- Enable FileVault 2
+- Configure reasonable Focus Modes to prevent notification tracking
+
+**Business Professionals:**
+- Maintain work/personal account separation
+- Use VPN for all network access outside office
+- Enable Lockdown Mode for financial/legal work
+- Use password manager (1Password, Bitwarden) for credential management
+
+---
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
