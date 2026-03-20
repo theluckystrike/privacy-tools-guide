@@ -141,6 +141,220 @@ For businesses requiring enterprise features, compliance capabilities, and strai
 
 Start with a pilot deployment, assess user experience, and scale based on operational feedback. The best email encryption is the one your team actually uses consistently.
 
+## Certificate Authority Pricing and Costs
+
+S/MIME requires certificates from Certificate Authorities. Here's a realistic cost breakdown:
+
+**Leading S/MIME Certificate Providers (2026 Pricing)**:
+- Sectigo/Comodo: $50-$150 per year per person
+- DigiCert: $100-$200 per year per person
+- GlobalSign: $75-$175 per year per person
+- GoDaddy: $40-$80 per year per person
+
+For a 50-person organization, annual S/MIME costs run $2,000-$10,000. OpenPGP costs nothing but requires internal key management infrastructure.
+
+**OpenPGP Alternative Costs**:
+- Key server hosting: $5-$20 per month
+- Key verification infrastructure: Custom development (varies)
+- Training and documentation: Internal resource cost
+
+## Client Support Matrix: Real-World Compatibility
+
+Not all email clients support both standards equally:
+
+**OpenPGP Support**:
+- Thunderbird (excellent, native)
+- ProtonMail (native, web-based)
+- Apple Mail (via third-party plugins)
+- Outlook (limited, requires plugins like Gpg4win)
+- Gmail (limited, requires browser extensions)
+
+**S/MIME Support**:
+- Outlook (excellent, native)
+- Apple Mail (excellent, native)
+- Gmail (limited)
+- Thunderbird (excellent)
+- ProtonMail (no native support)
+
+For organizations where users predominantly use Outlook and Apple Mail, S/MIME provides native functionality. For decentralized organizations or ProtonMail users, OpenPGP is the better choice.
+
+## Advanced Configuration: Mutt with Multiple Standards
+
+Power users can support both standards simultaneously:
+
+```bash
+# .muttrc configuration for dual-standard email
+# Setup separate accounts or folders for each standard
+
+# Define two sending methods
+macro compose \Cpo "<attach-file>/tmp/signed.pgp<enter>" "Include OpenPGP signature"
+macro compose \Csm "<attach-file>/tmp/signed.p7s<enter>" "Include S/MIME signature"
+
+# Configure automatic key detection
+set pgp_default_key = "default-openpgp-key-id"
+set smime_default_key = "/path/to/smime/certificate.p12"
+
+# Automatic signing of all mail
+set crypt_autosign = yes
+set crypt_autopgp = yes        # Prefer PGP if available
+```
+
+For complex deployments, you can script key detection:
+
+```python
+# detect_recipient_standard.py
+# Determine whether recipient uses OpenPGP or S/MIME
+
+import subprocess
+import re
+
+def detect_encryption_standard(email):
+    """Detect if recipient prefers OpenPGP or S/MIME"""
+
+    # Query OpenPGP keyserver
+    openpgp_result = subprocess.run(
+        ['gpg', '--search', email],
+        capture_output=True,
+        text=True
+    )
+
+    # Query LDAP for S/MIME certificates (enterprise)
+    smime_result = subprocess.run(
+        ['ldapsearch', '-H', 'ldap://directory.example.com', f'mail={email}'],
+        capture_output=True,
+        text=True
+    )
+
+    has_openpgp = 'pub' in openpgp_result.stdout
+    has_smime = 'userCertificate' in smime_result.stdout
+
+    if has_openpgp and not has_smime:
+        return 'OpenPGP'
+    elif has_smime and not has_openpgp:
+        return 'S/MIME'
+    elif has_openpgp and has_smime:
+        return 'Both'  # Use preference from config
+    else:
+        return 'Unencrypted'
+
+# Usage
+recipient = 'someone@example.com'
+standard = detect_encryption_standard(recipient)
+print(f"Use {standard} for {recipient}")
+```
+
+## Threat Model Analysis
+
+**OpenPGP Threat Model**:
+- Threat: Key server compromise reveals all public keys and identities
+- Mitigation: Self-host key server or use decentralized approaches
+- Threat: Web of trust mistakes (signing wrong keys)
+- Mitigation: Require in-person key verification
+- Threat: Private key loss without recovery
+- Mitigation: Paper backups of private keys in secure locations
+
+**S/MIME Threat Model**:
+- Threat: CA breach compromises all issued certificates
+- Mitigation: Use reputable CAs with SOC2 certification
+- Threat: Stolen certificate enables impersonation
+- Mitigation: Use hardware tokens to store private keys (smartcards)
+- Threat: Certificate revocation delay
+- Mitigation: Implement OCSP stapling and CRL caching
+
+## Enterprise Deployment Scenarios
+
+**Scenario 1: Regulated Financial Institution**
+Recommendation: S/MIME
+- Regulators expect hierarchical trust (PKI)
+- Audit trails map to certificate issuance
+- Hardware token integration available
+- Compliance with FINRA and SEC requirements
+
+Configuration example:
+```xml
+<!-- S/MIME deployment policy -->
+<S/MIMEPolicy>
+    <CertificateAuthority>GlobalSign</CertificateAuthority>
+    <KeyLength>2048</KeyLength>
+    <Algorithm>RSA</Algorithm>
+    <RevocationChecking>OCSP</RevocationChecking>
+    <TokenRequirement>Optional</TokenRequirement>
+    <ArchiveEncryptedMail>true</ArchiveEncryptedMail>
+</S/MIMEPolicy>
+```
+
+**Scenario 2: Decentralized Open-Source Organization**
+Recommendation: OpenPGP
+- Values user autonomy and decentralization
+- Team members distributed globally
+- Budget constraints on certificate costs
+- Existing OpenPGP infrastructure (keybase, protonmail)
+
+Configuration:
+```bash
+# Decentralized key verification via blockchain
+# proton-identity-verification --method=blockchain --key-id=ABC123
+
+# Local keyserver for team (internal DNS)
+dirmngr --server hkp://keyserver.example.com
+```
+
+**Scenario 3: Mixed Environment (Hybrid)**
+Recommendation: Both standards, with routing logic
+- Some teams use S/MIME (corporate)
+- Others use OpenPGP (technical staff)
+- Policy: Auto-detect and respond in same format
+
+```python
+# Hybrid email router
+class HybridEmailRouter:
+    def route(self, recipient_email):
+        if recipient_email.endswith('@corporate.com'):
+            return 'S/MIME'
+        elif recipient_email in self.openpgp_directory:
+            return 'OpenPGP'
+        else:
+            return 'Ask user'  # Graceful fallback
+
+    def format_response(self, encryption_type, plaintext):
+        if encryption_type == 'OpenPGP':
+            return self.encrypt_openpgp(plaintext)
+        else:
+            return self.encrypt_smime(plaintext)
+```
+
+## Performance Comparison: Key Generation and Encryption Speed
+
+Practical benchmarks on modern hardware:
+
+**OpenPGP (4096-bit RSA)**:
+- Key generation: 30-60 seconds
+- Encrypt small message: 0.1-0.3 seconds
+- Decrypt small message: 0.2-0.5 seconds
+
+**S/MIME (2048-bit RSA)**:
+- Key generation: < 5 seconds (via CA)
+- Encrypt small message: 0.1-0.2 seconds
+- Decrypt small message: 0.1-0.3 seconds
+
+S/MIME is faster due to shorter key sizes, but the difference is negligible for practical email use. Network latency dominates actual email delivery time.
+
+## Maintenance Burden: Key and Certificate Renewal
+
+**OpenPGP Maintenance**:
+- Keys never expire unless you set expiration
+- Signing subkeys should be renewed annually
+- Key revocation requires publishing to keyservers
+- No central authority to manage renewals
+
+**S/MIME Maintenance**:
+- Certificates expire (typically 1-3 years)
+- Renewal must occur before expiration
+- Lost certificates cannot be recovered (must reissue)
+- CA manages expiration notifications
+
+For organizations, S/MIME's enforced renewal cycle ensures regular key rotation but increases administrative overhead. OpenPGP's flexibility requires more discipline.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

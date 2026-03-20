@@ -136,6 +136,272 @@ curl -s --data-binary '{"jsonrpc":"2.0","method":"listcoins","params":[]}' \
 
 The RPC interface provides access to wallet operations including coin listing, transaction building, and broadcasting. Documentation for these endpoints appears in Wasabi's GitHub repository.
 
+## Cost Analysis and Fee Structure
+
+CoinJoin fees depend on the mixing round size and coordinator settings. Wasabi Wallet typically charges between 0.3% and 0.5% per mixing round for the coordination service. This is significantly cheaper than centralized mixing services, which charge 1-5% but provide no transparency regarding coin handling.
+
+For example, mixing 0.1 BTC at current rates (approximately $4,300 per BTC) would cost roughly $1.30-$2.15 per round using Wasabi, plus standard Bitcoin network fees (typically $0.50-$5.00 depending on network congestion). Compare this to centralized services like CoinJoin mixers that charge flat $50-$100 per transaction without refund mechanisms if coins are compromised.
+
+## Understanding Anonymity Set Limitations
+
+The anonymity set represents how many participants mixed with you in a single transaction round. An anonymity set of 50 means 50 people contributed inputs to the same transaction. However, this doesn't guarantee complete anonymity—chain analysis firms employ sophisticated heuristics to attempt deanonymization.
+
+Post-mix surveillance techniques include:
+
+- **Change address analysis**: Identifying which output is likely the change address based on timing or spending patterns
+- **Round size fingerprinting**: Matching transaction outputs to specific round sizes
+- **Timing correlation**: Linking your pre-mix and post-mix activity based on transaction timestamps
+- **Co-spending heuristics**: Analyzing if mixed outputs are spent together at a later date
+
+To mitigate these risks:
+- Mix coins through multiple rounds (Wasabi's remix feature handles this automatically)
+- Don't spend mixed outputs immediately after mixing—wait hours or days
+- Avoid consolidating mixed coins with unmixed coins
+- Consider mixing in different time zones using Tor to avoid timing correlations
+
+## Integration with Hardware Wallets: Trezor and Ledger
+
+Both Trezor and Ledger hardware wallets integrate with Wasabi, allowing you to perform CoinJoin without exposing your private keys to your computer.
+
+```bash
+# For Trezor users
+# 1. Launch Wasabi and connect your Trezor device
+# 2. Wasabi automatically detects and imports addresses
+# 3. CoinJoin proceeds with hardware wallet signing approval
+
+# For Ledger users
+# 1. Connect Ledger device
+# 2. Open Bitcoin app on device
+# 3. Configure Wasabi to use Ledger as signing device
+# 4. Approve each CoinJoin round on the device
+```
+
+This approach provides optimal security: your private keys never leave the hardware device, yet you gain the privacy benefits of CoinJoin. The trade-off is slightly longer coordination times due to hardware wallet signing latency.
+
+## Performance and Scalability Considerations
+
+Wasabi's WabiSabi protocol implements several optimizations to enable scalability:
+
+- **Round aggregation**: Multiple smaller inputs can combine into a single round
+- **Blinded output registration**: Outputs are registered without revealing which participant owns them
+- **Distributed key generation**: No single entity sees the final output assignments
+
+During peak network times (Bitcoin fee surges during bull markets), CoinJoin rounds may become slower due to participant coordination delays. During these periods, consider:
+- Temporarily increasing your anonymity set tolerance
+- Scheduling mixing during off-peak hours (late night UTC)
+- Pre-mixing coins before expected network congestion
+
+## Real-World Example: Privacy-Focused Bitcoin Workflow
+
+Here's a practical workflow for a developer maintaining privacy while using Bitcoin:
+
+1. **Acquire coins**: Buy small amounts from multiple exchanges over time, each below KYC thresholds if possible
+2. **Immediate mix**: Transfer to Wasabi upon receipt from exchange
+3. **Auto-remix**: Enable auto-CoinJoin for 5+ additional rounds with target anonymity set of 50+
+4. **Waiting period**: Leave mixed coins unmoved for 48+ hours
+5. **Spend**: Use mixed outputs for payments, avoiding consolidated spends
+6. **Fresh rounds**: If receiving new coins, mix separately and maintain separate output pools
+
+This workflow requires discipline but provides strong privacy guarantees when combined with proper UTXO hygiene and Tor usage.
+
+## Troubleshooting Advanced Issues
+
+If CoinJoin rounds consistently fail to confirm:
+
+```bash
+# Check network connectivity
+ping seed.wasabiwallet.io
+
+# Verify Tor is functioning (Wasabi routes through Tor by default)
+curl --socks5 127.0.0.1:9050 --socks5-hostname 127.0.0.1:9050 https://check.torproject.org
+
+# Inspect Wasabi logs for coordination errors
+tail -f ~/.wasabi/WalletWasabi.Client/Logs/
+```
+
+Common causes of coordination failures:
+- Insufficient participants (try lowering anonymity set target)
+- Network interruptions (check Tor connection status)
+- Wallet synchronization lag (ensure blockchain is fully synced)
+- Firewall blocking coordinator connections (enable Tor bridge mode)
+
+## Comparing CoinJoin Implementations: Wasabi vs Competitors
+
+Wasabi isn't the only CoinJoin option. Here's how it compares:
+
+**Wasabi Wallet**:
+- Protocol: WabiSabi (decentralized)
+- Fee: 0.3-0.5% per round
+- Anonymity Set: Adjustable up to 100+
+- Supported Assets: Bitcoin only
+- Platforms: Windows, macOS, Linux
+- Hardware Wallet Support: Excellent
+
+**JoinMarket**:
+- Protocol: Market-based (takers/makers)
+- Fee: Variable (0.1-1% depending on counterparties)
+- Anonymity Set: Lower (typically 5-10)
+- Supported Assets: Bitcoin only
+- Platforms: Command-line, advanced users
+- Strength: Lowest fees, true decentralized
+- Weakness: Requires technical knowledge, longer coordination
+
+**Samourai Wallet WhirlPool**:
+- Protocol: Proprietary (coordinator-based)
+- Fee: 0.5% per round
+- Anonymity Set: 5, 100, or 500+
+- Supported Assets: Bitcoin only
+- Platforms: Mobile (Android), web
+- Hardware Wallet Support: Limited
+- Strength: Simple UI, preset anonymity tiers
+- Weakness: Coordinator dependency, removed from Play Store in 2024
+
+**Zcash (ZEC)**:
+- Protocol: zk-SNARKs (built-in privacy)
+- Fee: None (just network fees)
+- Anonymity Set: Optional (transparent/shielded pools)
+- Supported Assets: Zcash only
+- Platforms: Multiple wallets available
+- Strength: Privacy is default, no mixing required
+- Weakness: Not Bitcoin, smaller liquidity
+
+Cost comparison for 0.1 BTC at $4,300/BTC:
+- Wasabi: $1.30-$2.15 + network fee (~$2-$3)
+- JoinMarket: $4.30-$43 + network fee (highly variable)
+- Samourai: $2.15 + network fee
+- Zcash: Just network fee (~$0.10)
+
+## Understanding WabiSabi Protocol Technical Details
+
+The WabiSabi protocol improves upon original CoinJoin by eliminating the coordinator's ability to learn which outputs belong to which inputs:
+
+**Key Innovation: Blinded Output Registration**
+
+In original CoinJoin:
+1. Coordinator sees all inputs → knows which belong to whom
+2. Outputs are registered
+3. Coordinator could correlate if not honest
+
+In WabiSabi:
+1. Users register inputs and amounts (encrypted)
+2. Users register outputs without revealing themselves (blinded)
+3. Coordinator sees only encrypted data and aggregated output counts
+4. Coordinator cannot link inputs to outputs
+
+```
+Traditional CoinJoin:
+User A input: 1 BTC → Coordinator → (sees it's User A)
+User A output: 1 BTC ← Coordinator → (could track)
+
+WabiSabi CoinJoin:
+User A input: 1 BTC encrypted → Coordinator → (doesn't know it's A)
+User A output: 1 BTC blinded → Coordinator → (no linkage possible)
+```
+
+This means even if the Wasabi coordinator is compromised or turns hostile, they cannot deanonymize your mixing activity.
+
+## Optimal CoinJoin Strategies by Bitcoin Amount
+
+Different strategies work best depending on how much Bitcoin you're mixing:
+
+**Small Amounts (< 0.01 BTC / $43)**:
+- Strategy: Single round with low anonymity set (8-15)
+- Rationale: Fees are negligible, mixing quickly is more important
+- Config: `"AnonymitySetTarget": 10`
+- Time: 10-30 minutes typically
+
+**Medium Amounts (0.01 - 0.1 BTC / $43-$430)**:
+- Strategy: 2-3 rounds with medium anonymity set (25-50)
+- Rationale: Balance between privacy gains and fee cost
+- Config: `"AnonymitySetTarget": 35, "RemixThreshold": 3`
+- Time: 2-6 hours across multiple rounds
+- Cost: $2-$5 total in fees
+
+**Large Amounts (0.1 - 1.0 BTC / $430-$4300)**:
+- Strategy: 5+ rounds with high anonymity set (50+)
+- Rationale: Highest privacy protection, willing to pay higher fees
+- Config: `"AnonymitySetTarget": 75, "RemixThreshold": 10`
+- Time: 12+ hours across multiple rounds
+- Cost: $10-$50 in fees
+
+**Very Large Amounts (1+ BTC / $4300+)**:
+- Strategy: Break into smaller pieces, mix separately
+- Rationale: Avoid suspiciously perfect anonymity sets
+- Approach:
+  1. Split 1 BTC into 0.1 BTC pieces
+  2. Mix each piece in different rounds over days
+  3. Mix outputs through additional rounds
+- Cost: $50-$150 in fees
+- Time: Multiple days to weeks
+
+## Avoiding On-Chain Deanonymization After Mixing
+
+Mixing is just the first step. Post-mix behavior can undo all privacy gains:
+
+**Critical Mistakes**:
+- Consolidating multiple mixed outputs into one transaction
+- Spending all mixed outputs immediately
+- Spending from the same address as your pre-mix coins
+- Checking mixed address balance on public block explorer
+- Spending mixed coins during predictable times (working hours)
+
+**Best Practices**:
+```
+Post-mix workflow:
+
+Day 1: Mix coins (anonymity set 50+)
+       ↓
+Days 2-3: Wait (avoid immediate spending pattern)
+          ↓
+Day 4+: Spend only 1-2 mixed outputs per transaction
+        Never consolidate mixed outputs
+        Never mix with unmixed coins later
+        Use Tor when checking address status
+```
+
+Simulate your spending behavior:
+
+```bash
+# Monitor your mixed outputs (use Tor)
+torify curl -s https://blockstream.info/api/address/your-mixed-address | \
+  jq '.chain_stats.tx_count'
+
+# But DON'T check from your regular IP
+# And DON'T check frequently (monitoring is suspicious)
+
+# Instead: Trust that mixing worked and move on
+```
+
+## Regulatory and Legal Considerations
+
+CoinJoin legality varies by jurisdiction. This is critical:
+
+**United States**:
+- CoinJoin is legal for personal privacy
+- However, using it to evade taxes is illegal
+- Using it to launder illegal proceeds is illegal
+- Financial institutions may flag CoinJoin activity as suspicious
+
+**European Union**:
+- General use is legal
+- AMLD5 regulations require customer identification
+- Some exchanges prohibit deposits from freshly mixed coins
+
+**China**:
+- Crypto mixing is heavily restricted
+- Using CoinJoin may trigger capital controls
+- Risk of account freezing
+
+**Russia, Iran**:
+- Mixing may violate sanctions or capital flight regulations
+- Check local regulations before using
+
+**Best Approach**:
+- Document your coins' origins (purchase receipts, etc.)
+- Don't mix coins of unknown provenance
+- Be transparent with tax authorities if required
+- Consult legal counsel if holding >$500k in mixed coins
+
 ## Security Considerations
 
 CoinJoin improves transaction privacy but does not make your Bitcoin holdings completely anonymous. Chain analysis firms use various heuristics to attempt deanonymization. Combining CoinJoin with other practices—such as avoiding address reuse and using Tor—provides stronger privacy guarantees.
