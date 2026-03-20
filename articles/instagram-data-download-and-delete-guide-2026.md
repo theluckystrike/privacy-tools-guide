@@ -141,13 +141,232 @@ Consider moving to privacy-focused alternatives:
 - **Mastodon with Fediverse**: Decentralized social network
 - **Own your data**: Use self-hosted solutions like PhotoPrism for personal archives
 
+## Analyzing Your Instagram Data Download
+
+Once you receive your data download, analyzing it reveals what Meta collects:
+
+```python
+#!/usr/bin/env python3
+import json
+from pathlib import Path
+from collections import Counter
+from datetime import datetime
+
+class InstagramDataAnalyzer:
+    def __init__(self, data_directory: str):
+        self.data_dir = Path(data_directory)
+
+    def analyze_messages(self) -> dict:
+        """Analyze messaging metadata"""
+        messages_file = self.data_dir / "messages.json"
+
+        if not messages_file.exists():
+            return {}
+
+        with open(messages_file) as f:
+            messages = json.load(f)
+
+        stats = {
+            "total_conversations": len(messages),
+            "total_messages": sum(len(conv.get("messages", []))
+                                 for conv in messages),
+            "most_frequent_contacts": Counter(
+                conv["participants"][0]["name"]
+                for conv in messages
+            ).most_common(5)
+        }
+
+        return stats
+
+    def analyze_search_history(self) -> dict:
+        """Show what you've searched for"""
+        search_file = self.data_dir / "search.json"
+
+        if not search_file.exists():
+            return {}
+
+        with open(search_file) as f:
+            searches = json.load(f)
+
+        search_keywords = [
+            s.get("search_term") for s in searches
+            if s.get("search_term")
+        ]
+
+        return {
+            "total_searches": len(search_keywords),
+            "unique_searches": len(set(search_keywords)),
+            "most_common": Counter(search_keywords).most_common(10)
+        }
+
+    def analyze_ads(self) -> dict:
+        """See what advertisers know about you"""
+        ads_file = self.data_dir / "ads_interactions.json"
+
+        if not ads_file.exists():
+            return {}
+
+        with open(ads_file) as f:
+            ads = json.load(f)
+
+        categories = []
+        for ad in ads:
+            categories.extend(
+                ad.get("ad_details", {}).get("categories", [])
+            )
+
+        return {
+            "total_ads_interacted": len(ads),
+            "inferred_interests": Counter(categories).most_common(15)
+        }
+
+# Usage
+analyzer = InstagramDataAnalyzer("instagram_data")
+print("Messages:", analyzer.analyze_messages())
+print("Searches:", analyzer.analyze_search_history())
+print("Ads:", analyzer.analyze_ads())
+```
+
+## Migrating Content Before Deletion
+
+Don't lose important photos and videos. Migrate to self-hosted or decentralized solutions:
+
+```bash
+#!/bin/bash
+# Backup Instagram content before deletion
+
+# 1. Download Instagram data (JSON format)
+# 2. Extract photos and videos from the download
+
+# 3. Store locally with organized structure
+mkdir -p ~/instagram-archive/{photos,videos,stories}
+
+# 4. For each item, copy to archive
+# The Instagram data download includes media files
+
+# 5. Optional: Host on privacy-respecting platform
+# Examples:
+# - Self-hosted Nextcloud
+# - PixelFed (Instagram alternative)
+# - PhotoPrism (private photo library)
+
+# 6. Verify backup integrity
+find ~/instagram-archive -type f | wc -l
+du -sh ~/instagram-archive
+```
+
+## Decentralized Instagram Alternatives
+
+After deleting Instagram, these platforms offer similar functionality with better privacy:
+
+### PixelFed
+Decentralized image sharing, no algorithm, no ads:
+
+```bash
+# Join a PixelFed instance (federated)
+# Popular instances:
+# - pixelfed.social
+# - pixelfed.de
+# - pixelfed.art
+
+# Or self-host:
+docker run -d \
+    --name pixelfed \
+    -v /path/to/storage:/var/www/pixelfed/storage \
+    -e APP_URL=https://photos.example.com \
+    -p 8080:8080 \
+    pixelfed/pixelfed:latest
+```
+
+### Mastodon with Photo Sharing
+Use Mastodon's image sharing features:
+
+```bash
+# Post to Mastodon with photos
+# No algorithm, follows only what you subscribe to
+# Connects to broader Fediverse
+
+# Public or private posts
+# Full control over visibility
+```
+
+### Self-Hosted Solutions
+PhotoPrism: Personal photo library with full control
+
+```bash
+docker run -d \
+    --name photprism \
+    -v /path/to/photos:/photoprism/originals \
+    -v /path/to/storage:/photoprism/storage \
+    -p 2342:2342 \
+    photoprism/photoprism:latest
+```
+
+## Understanding Instagram's Legal Basis for Retention
+
+Meta claims legal basis for retaining data after deletion:
+
+```python
+retention_justification = {
+    "legal_claims": [
+        "Security and system integrity",
+        "Compliance with law",
+        "Fraud prevention",
+        "Backup and recovery"
+    ],
+    "reality": [
+        "Data remains in backups for months",
+        "Can be reactivated if account is restored",
+        "Sent messages remain on recipient's account",
+        "Meta doesn't distinguish deleted from active data"
+    ],
+    "privacy_implication": [
+        "Complete deletion is not guaranteed",
+        "Assume your data persists indefinitely",
+        "Account recovery is possible during grace period"
+    ]
+}
+```
+
+This is why taking a full backup before deletion is important—you maintain your own copy while Meta retains its backups.
+
+## Privacy Score Comparison Before and After
+
+Track your privacy improvement after leaving Instagram:
+
+```python
+privacy_metrics = {
+    "before_deletion": {
+        "data_collection": "Comprehensive (location, contacts, behavior, ads)",
+        "tracking": "Across web via Meta Pixel",
+        "data_retention": "Indefinite",
+        "third_party_access": "Extensive (advertisers, partners)",
+        "algorithmic_content": "Personalized feed designed for engagement",
+        "privacy_score": 2/10
+    },
+    "after_deletion": {
+        "data_collection": "Stops for new activity",
+        "tracking": "Reduced (other sites still track unless you block Meta Pixel)",
+        "data_retention": "Existing data persists, new data stops",
+        "third_party_access": "No new data sharing",
+        "algorithmic_content": "Not applicable",
+        "privacy_score": 8/10
+    }
+}
+```
+
+The improvement is significant: stopping active data collection is the primary benefit.
+
 ## Best Practices for Data Privacy
 
-1. **Regular audits**: Download your data annually to see what Instagram has collected
+1. **Regular audits**: Download your data annually to see what Instagram collects (until deletion)
 2. **Minimize connected apps**: Review third-party app permissions regularly
 3. **Use two-factor authentication**: Protect your account from unauthorized access
-4. **Export important content**: Don't rely solely on Instagram's servers
+4. **Export important content**: Back up important photos/videos before deleting
 5. **Understand the grace period**: Remember the 30-day deletion window
+6. **Monitor other Meta properties**: Facebook, WhatsApp continue collecting data
+7. **Block Meta Pixel**: Use browser extensions to block Meta tracking across websites
+8. **Consider complete Meta exit**: Delete all Meta accounts (Instagram, Facebook, WhatsApp) simultaneously if privacy is your goal
 
 ## Related Reading
 

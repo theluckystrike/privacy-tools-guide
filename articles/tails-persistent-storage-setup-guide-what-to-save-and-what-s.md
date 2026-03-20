@@ -149,8 +149,213 @@ Follow these hardening practices:
 
 For additional protection, consider using LUKS metadata randomization or plausible deniability tools, though these advanced techniques require careful configuration.
 
-Understanding what persists and what disappears is fundamental to using Tails effectively. By strategically selecting what survives reboots, you maintain both operational convenience and the strong anonymity guarantees that make Tails valuable.
+## Advanced Persistent Storage Encryption
 
+For sensitive files in persistent storage, apply additional encryption layers:
+
+```bash
+# Create encrypted vault within persistent storage
+mkdir -p /home/amnesia/Persistent/.vaults
+
+# Generate random encryption key
+openssl rand -base64 32 > /home/amnesia/Persistent/.vault-key
+
+# Create encrypted volume with cryptsetup
+sudo cryptsetup luksFormat --type luks2 /home/amnesia/Persistent/.vaults/sensitive.img
+
+# Mount encrypted volume
+sudo cryptsetup luksOpen /home/amnesia/Persistent/.vaults/sensitive.img vault
+sudo mount /dev/mapper/vault /mnt/vault
+
+# Unmount and close when done
+sudo umount /mnt/vault
+sudo cryptsetup luksClose vault
+```
+
+This nested encryption ensures that even if someone accesses your persistent storage, the most sensitive data remains protected.
+
+## Persistent Storage File Organization Best Practices
+
+Structure your persistent directory for efficiency and security:
+
+```
+/home/amnesia/Persistent/
+├── .config/           # Application configurations (hidden)
+├── .ssh/              # SSH keys (hidden)
+├── .gnupg/            # GPG keys (hidden)
+├── projects/          # Work files
+│   ├── client-a/
+│   └── client-b/
+├── documents/         # Writing and notes
+├── backups/           # Encrypted backups
+└── temp/              # Temporary files (not critical)
+```
+
+Keep sensitive files in hidden directories (prefixed with dot) and use restrictive permissions:
+
+```bash
+# Restrict access to sensitive directories
+chmod 700 /home/amnesia/Persistent/.ssh
+chmod 700 /home/amnesia/Persistent/.gnupg
+
+# Verify permissions
+ls -la /home/amnesia/Persistent/
+```
+
+## Monitoring Persistent Storage Usage
+
+Track how much persistent storage you're using to avoid filling the USB drive:
+
+```bash
+#!/bin/bash
+# Monitor persistent storage space
+echo "=== Persistent Storage Analysis ==="
+
+# Show total and used space
+du -sh /home/amnesia/Persistent
+
+# Show breakdown by directory
+du -sh /home/amnesia/Persistent/* | sort -rh | head -10
+
+# Show what changed in last 7 days
+find /home/amnesia/Persistent -type f -mtime -7 -exec ls -lh {} \;
+
+# Estimate storage efficiency
+total=$(du -sb /home/amnesia/Persistent | cut -f1)
+largest=$(du -sb /home/amnesia/Persistent | cut -f1)
+echo "Total storage used: $((total / 1024 / 1024))MB"
+```
+
+## Threat Models for Persistent Storage Configuration
+
+Different threat levels require different strategies:
+
+```python
+threat_models = {
+    "low_threat": {
+        "scenario": "General privacy, casual Tor browsing",
+        "persist": [
+            "SSH keys for personal servers",
+            "Browser bookmarks",
+            "Project files"
+        ],
+        "ephemeral": [
+            "Browser history",
+            "Cache",
+            "Temporary work files"
+        ]
+    },
+    "medium_threat": {
+        "scenario": "Journalist, activist in moderately hostile environment",
+        "persist": [
+            "GPG keys (encrypted)",
+            "SSH keys (encrypted)",
+            "Important documents (encrypted)"
+        ],
+        "ephemeral": [
+            "All communications",
+            "Research notes",
+            "Contact information"
+        ]
+    },
+    "high_threat": {
+        "scenario": "Dissident in repressive regime, targeted by state actors",
+        "persist": [
+            "Only absolutely critical keys",
+            "All data deeply encrypted"
+        ],
+        "ephemeral": [
+            "Everything except essential keys",
+            "Rotate USB keys frequently",
+            "Use separate USB for separate personas"
+        ]
+    }
+}
+```
+
+## Backup Strategy for Persistent Storage
+
+While Tails provides no internet by default, backups of persistent storage are essential:
+
+```bash
+# Create encrypted backup of persistent storage
+# Use only on external USB drive in secure location
+
+# 1. Insert external USB drive
+# 2. Mount it securely
+sudo mount /media/backup-drive
+
+# 3. Create encrypted tar backup
+tar --exclude='.*' \
+    --exclude='temp/*' \
+    -czf - /home/amnesia/Persistent | \
+    openssl enc -aes-256-cbc -salt \
+    > /media/backup-drive/tails-persistent-backup-$(date +%Y%m%d).tar.gz.enc
+
+# 4. Verify backup size
+ls -lh /media/backup-drive/*.enc
+
+# 5. Securely unmount
+sudo umount /media/backup-drive
+```
+
+To restore from backup:
+
+```bash
+# Decrypt and extract backup
+openssl enc -aes-256-cbc -d -salt \
+    -in /media/backup-drive/tails-persistent-backup-20260316.tar.gz.enc | \
+    tar -xzf - -C /home/amnesia/
+```
+
+## Recovery Scenarios and Persistent Storage
+
+Understanding recovery options helps inform your persistent storage decisions:
+
+```python
+# Recovery scenarios and implications
+recovery_scenarios = {
+    "lost_passphrase": {
+        "status": "Permanent loss of data",
+        "prevention": "Store passphrase in password manager with offline backup",
+        "recovery": "None—USB becomes unusable"
+    },
+    "corrupted_persistent_volume": {
+        "status": "Potential data loss",
+        "prevention": "Regular encrypted backups",
+        "recovery": "Restore from backup if available"
+    },
+    "device_seized": {
+        "status": "Depends on encryption and threat model",
+        "prevention": "Never carry sensitive data across borders",
+        "recovery": "Device is lost; focus on other devices"
+    },
+    "accidental_deletion": {
+        "status": "Data lost unless encrypted backup exists",
+        "prevention": "Regular backups, immutable storage",
+        "recovery": "Restore from recent backup"
+    }
+}
+```
+
+## Persistent Storage Performance Optimization
+
+Encrypted persistent storage is slower than regular storage. Optimize performance:
+
+```bash
+# Move frequently-accessed files to RAM tmpfs
+sudo mount -t tmpfs -o size=512M tmpfs /mnt/ramdisk
+
+# Copy working directory to RAM
+cp -r /home/amnesia/Persistent/projects /mnt/ramdisk/
+
+# Work from RAM, then copy back
+cp -r /mnt/ramdisk/projects /home/amnesia/Persistent/
+
+# This improves responsiveness while keeping persistent copy encrypted
+```
+
+Understanding what persists and what disappears is fundamental to using Tails effectively. By strategically selecting what survives reboots, you maintain both operational convenience and the strong anonymity guarantees that make Tails valuable.
 
 ## Related Reading
 

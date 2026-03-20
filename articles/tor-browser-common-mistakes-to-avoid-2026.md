@@ -149,6 +149,167 @@ cd /path/to/TorBrowser
 ./App/Firefox/Firefox --app-update
 ```
 
+## Mixing Tor with Non-Tor Activity
+
+A critical mistake involves using the same Tor Browser instance for both anonymous and identified activity. Once you log into your personal email, social media, or any identified account over Tor, the anonymity benefit is compromised.
+
+```python
+# Bad: Mixing identities
+browser_mistakes = {
+    "same_browser_instance": {
+        "activity1": "Browse news anonymously",
+        "activity2": "Login to personal email",
+        "result": "Email reveals identity for all activity"
+    }
+}
+
+# Good: Separate instances
+approach = {
+    "anonymous_browser": {
+        "purpose": "General anonymous browsing",
+        "rule": "Never login to personal accounts"
+    },
+    "identified_browser": {
+        "purpose": "Email, social media",
+        "rule": "Accept identification, no anonymity needed"
+    }
+}
+```
+
+If you must use multiple identities, launch separate Tor Browser instances:
+
+```bash
+# Start first instance (anonymous)
+/path/to/TorBrowser/Browser/firefox \
+    -profile ~/.tor-browser-anon/profile &
+
+# Start second instance (identified)
+# Note: Each instance uses separate Tor daemon
+/path/to/TorBrowser/Browser/firefox \
+    -profile ~/.tor-browser-main/profile &
+```
+
+## Leaking Metadata Through File Operations
+
+Downloading files over Tor protects the download from ISP visibility, but the file metadata itself—creation time, access patterns—can leak timing information:
+
+```bash
+# Metadata risks when downloading over Tor
+problem_scenario = {
+    "user": "Downloads leaked document at 3:47 AM",
+    "tor_protects": "ISP/exit relay doesn't see file content",
+    "tor_doesn't_protect": [
+        "File modification time (3:47 AM)",
+        "Download duration and size",
+        "Application access patterns"
+    ]
+}
+
+# Solution: Mask file metadata
+touch -d "1970-01-01" ~/Documents/downloaded-file.pdf
+# Or use standard file times for downloaded files
+```
+
+## Leaking DNS Queries
+
+Even with Tor, DNS queries can leak outside the encrypted tunnel if improperly configured:
+
+```bash
+# Bad: System-level DNS leaks
+nslookup example.com
+# Your ISP/router logs the query
+
+# Good: DNS over Tor (already configured)
+# Tor Browser uses Tor's internal DNS resolver
+# Verification: check about:config → network.proxy.socks_remote_dns
+
+# Verify DNS is routing through Tor:
+# Use torproject.org's DNS leak test in Tor Browser
+# Visit: https://www.dnsleaktest.com (behind Tor)
+```
+
+## Tab Correlation Attacks
+
+Using multiple tabs in Tor Browser for different activities can create correlation opportunities:
+
+```javascript
+// Threat: Tab correlation through timing
+tab_a = {
+    "content": "Anonymous chat about topic X",
+    "keystroke_timing": [45, 120, 88, 95, ...],  // milliseconds
+    "pattern": "Unique to this user"
+}
+
+tab_b = {
+    "content": "Different website",
+    "keystroke_timing": [45, 120, 88, 95, ...],  // Same pattern!
+    "risk": "Exit relay operator correlates activity"
+}
+```
+
+Best practice: Use a new Tor identity (New Circuit) when switching to different activities:
+
+```
+Tor Browser menu → New Circuit
+```
+
+This also rotates your exit relay, breaking potential timing correlations.
+
+## Certificate Validation Failures
+
+Tor Browser's HTTPS-Only mode protects against exit relays, but users who click "accept risks" or disable the security level bypass this protection:
+
+```bash
+# Verify HTTPS-Only mode is enabled
+# Tor Browser menu → Settings → Privacy & Security
+# Ensure "HTTPS-Only Mode" is set to "All Windows"
+
+# Check certificate validation status
+# Padlock icon should show "Secure" and "Verified by DigiCert"
+
+# Common certificate warning causes:
+# 1. Self-signed certificates (avoid sites using these)
+# 2. Expired certificates (site is unmaintained)
+# 3. MITM attack (rare over Tor, but possible with compromised exit relay)
+```
+
+## Network Timing Analysis Risks
+
+Even with Tor, adversaries can perform traffic correlation attacks by analyzing timing and volume:
+
+```python
+# Timing correlation vulnerability
+vulnerable_pattern = {
+    "activity": "User browses website A",
+    "observable": {
+        "entry_relay": "Sees traffic entering from user IP",
+        "exit_relay": "Sees traffic to website A's IP",
+        "timing": "Traffic patterns correlate ~80% of the time",
+        "risk": "Attacker correlates with both relays"
+    }
+}
+
+# Mitigation: Add cover traffic
+# Tor Browser padding helps, but not foolproof
+# For highest security: Use multiple Tor instances simultaneously
+# Or add artificial network delays
+```
+
+## Comparing Tor Browser Configurations
+
+Different security levels provide different protection-usability trade-offs:
+
+| Setting | Safest | Safer | Default |
+|---------|--------|-------|---------|
+| JavaScript | Disabled | Disabled | Enabled |
+| HTTPS-Only | All Sites | All Sites | All Sites |
+| WebGL | Disabled | Disabled | Enabled |
+| Canvas Protection | Maximum | Maximum | Standard |
+| Window Resize | Locked | Locked | Locked |
+| Auto-Update | Automatic | Automatic | Automatic |
+
+For general browsing, "Safer" setting balances security and usability. Switch to "Safest" for sensitive activities.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
