@@ -223,7 +223,8 @@ The arms race between privacy tools and tracking technologies continues, but und
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
+- [How to Detect and Block Hidden Third-Party Trackers on.](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
+- [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

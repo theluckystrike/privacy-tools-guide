@@ -179,7 +179,8 @@ Arti's modular crates support integrations from simple anonymous connections thr
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
+- [Best Authenticator App 2026 Review: A Developer's Guide](/privacy-tools-guide/best-authenticator-app-2026-review/)
+- [Data Privacy Framework EU US Explained 2026: A Developer.](/privacy-tools-guide/data-privacy-framework-eu-us-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

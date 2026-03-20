@@ -127,6 +127,8 @@ Regular audits of installed extensions help maintain good security hygiene. For 
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
+- [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
+- [How to Disable WebRTC Leaks in Tor Browser: A Developer's Guide](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

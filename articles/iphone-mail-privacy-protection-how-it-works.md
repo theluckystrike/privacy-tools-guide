@@ -165,7 +165,8 @@ For power users and developers alike, understanding these mechanisms helps you m
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [iOS Mail Privacy Protection: How It Prevents Email.](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)
+- [Firefox Total Cookie Protection: How It Isolates.](/privacy-tools-guide/firefox-total-cookie-protection-how-it-isolates-trackers-exp/)
+- [Email Tracking Pixel Detection: How to Identify and Block Spy Pixels in Messages](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -261,7 +261,8 @@ For additional privacy tools and security guides, explore the Privacy Tools Guid
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [How to Set Up an Encrypted Dead Drop Using OnionShare.](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
+- [How to Set Up Dead Man's Switch Using Cron Job to Release Encrypted File](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
+- [How to Set Up Offline Encrypted Communication Between.](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

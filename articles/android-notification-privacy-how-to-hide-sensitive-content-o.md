@@ -207,7 +207,8 @@ When selecting third-party solutions, verify the app's privacy policy and ensure
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
+- [Android Privacy Best Practices 2026: A Developer and.](/privacy-tools-guide/android-privacy-best-practices-2026/)
+- [Dating App Notification Privacy: Preventing Matches and.](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

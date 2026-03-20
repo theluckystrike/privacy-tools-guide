@@ -177,7 +177,8 @@ Your security architecture should assume that any cloud service can disappear to
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Set Up Enterprise Password Manager with Zero.](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
+- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
+- [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

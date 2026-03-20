@@ -145,7 +145,8 @@ Developers comparing email masking solutions should evaluate:
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [1Password Watchtower Feature Review: A Developer's Guide](/privacy-tools-guide/1password-watchtower-feature-review/)
+- [How to Set Up a Forwarding-Only Email Address That Hides.](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
+- [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

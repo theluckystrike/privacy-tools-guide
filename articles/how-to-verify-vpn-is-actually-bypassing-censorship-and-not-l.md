@@ -190,7 +190,8 @@ The methods outlined here give developers and power users actionable verificatio
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Verify Your Browser is Not Leaking Information: A Practical Checklist](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
+- [How to Test VPN Kill Switch: A Practical Guide for Power.](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
+- [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -184,7 +184,8 @@ The right combination of certifications depends on your specific context—your 
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Data Privacy Framework EU US Explained 2026: A Developer.](/privacy-tools-guide/data-privacy-framework-eu-us-explained-2026/)
+- [Privacy Regulatory Sandbox Programs Explained: A.](/privacy-tools-guide/privacy-regulatory-sandbox-programs-explained/)
+- [Social Media Privacy Policy Comparison 2026: A Developer.](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

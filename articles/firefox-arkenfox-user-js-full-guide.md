@@ -198,7 +198,8 @@ Firefox Sync requires specific settings. Ensure `services.sync.enabled` is true 
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
+- [Firefox Reset and Clean Install Guide: Privacy-Focused.](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)
+- [Signal Relay Calls Privacy Feature: A Complete Guide for.](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -135,7 +135,8 @@ You can test your application's cookie handling by monitoring network requests a
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Tor Browser Screen Size Fingerprint Protection: A.](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
+- [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
+- [Tor Browser Font Fingerprinting Protection: A Technical Guide](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

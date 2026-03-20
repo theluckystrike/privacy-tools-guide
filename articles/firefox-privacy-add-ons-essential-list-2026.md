@@ -178,7 +178,8 @@ No extension stack provides complete anonymity — review your configuration whe
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Firefox Multi-Account Containers Guide 2026: Complete.](/privacy-tools-guide/firefox-multi-account-containers-guide-2026/)
+- [Firefox Arkenfox User.js Full Guide: Complete Privacy.](/privacy-tools-guide/firefox-arkenfox-user-js-full-guide/)
+- [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

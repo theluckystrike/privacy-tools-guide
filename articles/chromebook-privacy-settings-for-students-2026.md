@@ -200,7 +200,8 @@ Chromebook privacy requires attention at multiple layers—from browser settings
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Minimize Digital Footprint Guide 2026: A.](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
+- [WhatsApp Privacy Settings Best Configuration 2026](/privacy-tools-guide/whatsapp-privacy-settings-best-configuration-2026/)
+- [macOS Privacy Settings for Remote Workers 2026: Complete.](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

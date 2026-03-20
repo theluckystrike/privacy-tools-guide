@@ -176,7 +176,8 @@ The choice ultimately depends on your workflow: if you need to test privacy impl
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Brave Browser Ad Blocking vs uBlock Origin: A Technical Comparison](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
+- [How Browser Storage Partitioning Works: Firefox, Chrome.](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
+- [Best Browser for Privacy Android 2026: Developer and.](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

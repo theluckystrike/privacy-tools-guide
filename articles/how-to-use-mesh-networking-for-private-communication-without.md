@@ -260,7 +260,8 @@ Mesh networking transforms how devices communicate, replacing fragile centralize
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Iran Internet Shutdown Survival Guide: Mesh Networking.](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
+- [How to Communicate During Internet Shutdown: Alternative.](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
+- [Briar Messenger Offline Communication: How It Works for.](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

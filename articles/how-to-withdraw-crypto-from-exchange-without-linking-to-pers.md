@@ -216,7 +216,8 @@ Each method involves trade-offs between convenience, fees, limits, and privacy. 
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [How to Use Signal Without Linking Phone Number: Privacy.](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
+- [VPN for Accessing Crypto Exchanges in Restricted.](/privacy-tools-guide/vpn-for-accessing-crypto-exchanges-in-restricted-countries-2/)
+- [How to Prevent Screenshots of Dating Conversations from Being Shared Without Your Consent: A Technical Guide](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

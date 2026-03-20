@@ -180,7 +180,8 @@ Understanding these mechanisms helps you choose the appropriate configuration fo
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [WireGuard Persistent Keepalive Setting Explained: When to Enable It](/privacy-tools-guide/wireguard-persistent-keepalive-setting-explained-when-to-enable-it/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by
