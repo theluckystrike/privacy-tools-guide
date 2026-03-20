@@ -2,7 +2,7 @@
 
 layout: default
 title: "Privacy Preserving Logging Guide for Developers 2026"
-description: "A practical guide to implementing privacy-preserving logging in your applications. Learn data minimization, PII redaction techniques, and secure log management strategies for developers."
+description: "A practical guide to implementing privacy-preserving logging in your applications. Learn data minimization, PII redaction techniques, and secure log."
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-preserving-logging-guide-for-developers-2026/
@@ -254,6 +254,12 @@ Privacy-preserving logging requires upfront planning but pays dividends in reduc
 - Protect log storage with encryption and access controls
 
 Start by auditing your current logs for sensitive data, then implement these patterns incrementally. Your users—and your compliance auditor—will thank you.
+
+
+## Related Reading
+
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
