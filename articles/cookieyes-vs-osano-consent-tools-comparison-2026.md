@@ -10,6 +10,7 @@ categories: [guides, security, enterprise]
 reviewed: true
 score: 8
 intent-checked: false
+voice-checked: true
 voice-checked: false
 ---
 
