@@ -3,9 +3,11 @@ layout: default
 title: "Russia Sovereign Internet Law: What It Means for VPN Users and Privacy in 2026"
 description: "A comprehensive guide understanding Russia's sovereign internet law and how it affects VPN functionality, online privacy, and digital freedom for users in 2026."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /russia-sovereign-internet-law-what-it-means-for-vpn-users-an/
 categories: [privacy, vpn, security, law, russia]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

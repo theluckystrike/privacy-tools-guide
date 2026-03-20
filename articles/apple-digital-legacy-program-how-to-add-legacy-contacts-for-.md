@@ -3,8 +3,11 @@ layout: default
 title: "Apple Digital Legacy Program: How to Add Legacy Contacts for iCloud Data Inheritance Guide"
 description: "Learn how to set up Apple Digital Legacy contacts to ensure your iCloud data is transferred to trusted individuals. A technical guide for power users."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /apple-digital-legacy-program-how-to-add-legacy-contacts-for-/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 The Apple Digital Legacy Program provides a mechanism for users to designate trusted contacts who can access their iCloud data after death or incapacitation. This feature, introduced with iOS 15 and later, addresses a critical gap in digital estate planning. For developers and power users managing multiple Apple devices, understanding how to properly configure legacy contacts ensures your data—whether it's Photos, iCloud Drive documents, or password vault entries—reaches intended recipients without requiring Apple to decrypt your data posthumously.

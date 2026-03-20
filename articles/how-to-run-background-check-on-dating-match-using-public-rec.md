@@ -3,9 +3,11 @@ layout: default
 title: "How to Run Background Check on Dating Match Using Public Records Safely and Legally"
 description: "A practical guide for developers and power users on verifying dating matches through public records while respecting privacy laws and ethical boundaries."
 date: 2026-03-16
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /how-to-run-background-check-on-dating-match-using-public-rec/
 categories: [guides]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
