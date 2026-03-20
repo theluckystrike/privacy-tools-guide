@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-using-google-in-china-without-detection/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, best-of, vpn]
 reviewed: true
 score: 8
 intent-checked: true

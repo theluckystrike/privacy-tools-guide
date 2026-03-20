@@ -11,6 +11,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 categories: [guides]
+tags: [privacy-tools-guide, best-of, vpn]
 ---
 
 {% raw %}
