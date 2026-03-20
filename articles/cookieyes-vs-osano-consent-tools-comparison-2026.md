@@ -5,7 +5,7 @@ description: "A technical comparison of CookieYes and Osano consent management p
 date: 2026-03-20
 author: theluckystrike
 permalink: /cookieyes-vs-osano-consent-tools-comparison-2026/
-categories: [guides, privacy, compliance]
+categories: [guides, security, enterprise]
 reviewed: false
 score: 0
 intent-checked: false
