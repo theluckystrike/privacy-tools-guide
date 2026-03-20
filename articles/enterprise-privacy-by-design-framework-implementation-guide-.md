@@ -2,11 +2,13 @@
 layout: default
 title: "Enterprise Privacy by Design Framework Implementation Guide for Dev Teams 2026"
 description: "A practical implementation guide for developers building privacy-first enterprise applications. Learn framework integration, data minimization patterns, and compliance automation."
-date: 2026-03-20
-author: theluckystrike
+date: 2026-03-16
+author: "Privacy Tools Guide"
 permalink: /enterprise-privacy-by-design-framework-implementation-guide-/
 categories: [guides]
 tags: [privacy-tools-guide]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
