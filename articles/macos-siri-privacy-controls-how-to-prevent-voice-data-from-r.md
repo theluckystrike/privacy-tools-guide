@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
