@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /wireguard-persistent-keepalive-setting-explained-when-to-enable-it/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -6,9 +6,9 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /yubikey-vs-titan-security-key-comparison/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, comparison, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
