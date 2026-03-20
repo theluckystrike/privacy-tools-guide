@@ -134,6 +134,217 @@ While Blur provides excellent protection for your contact information, understan
 
 Additionally, some services may not accept masked payment cards, particularly those with strict fraud prevention measures. Masked phone numbers generally work for most purposes, but certain banking applications and high-security services may flag them.
 
+## Comparing Blur to Alternatives
+
+For developers evaluating masking services, understanding competitive positioning is essential. Several vendors compete in this space:
+
+| Feature | Blur | 1Password | Dashlane | Proton Mail |
+|---------|------|-----------|----------|-------------|
+| Masked Emails | Yes (unlimited) | Limited | Limited | Yes (premium) |
+| Masked Phone | Yes (unlimited) | No | No | No |
+| Virtual Cards | Yes (multi-use) | Limited | Yes | No |
+| Browser Extension | Yes | Yes | Yes | Yes |
+| API Access | Yes | Yes | No | Limited |
+| Pricing | $4.99/mo | $3.99/mo | $4.99/mo | Custom |
+
+Blur excels specifically at masking breadth—all three categories (email, phone, card) with unlimited generation. Competitors focus on password management with masking as secondary feature.
+
+## Advanced Masking Workflows
+
+### Contact Segregation Pattern
+
+For developers managing multiple business identities or testing various personas, create masking aliases organized by purpose:
+
+```javascript
+// Organization scheme for masked data
+const maskingHierarchy = {
+  business: {
+    email: "business@yourname.blur.email",
+    phone: "+1-business-area-code",
+    card: "business-funded-card"
+  },
+  personal: {
+    email: "personal@yourname.blur.email",
+    phone: "+1-personal-area-code",
+    card: "personal-funded-card"
+  },
+  testing: {
+    email: "test@yourname.blur.email",
+    phone: "+1-test-area-code",
+    card: "test-card" // single-use
+  },
+  disposable: {
+    email: "randomstring@blur.email",
+    phone: "temporary-number",
+    card: "single-use-card"
+  }
+};
+```
+
+This hierarchy enables clear tracking of which identity interacted with which service, simplifying data breach analysis.
+
+### Leak Detection Through Mask Segregation
+
+When you create unique aliases for different services, spam or unwanted contact appearing at a specific alias reveals exactly where your data leaked. For example:
+
+- Spam at `retailername@yourname.blur.email` means that retailer sold your email
+- Spam at `newsletter@yourname.blur.email` means the newsletter platform leaked
+- Calls on a specific masked number pinpoint which service sold your phone number
+
+This forensic capability proves invaluable for identifying data brokers.
+
+## Handling Failed Transactions
+
+Occasionally masked cards decline due to fraud prevention systems that specifically block virtual cards. When this occurs:
+
+1. Check Blur dashboard for transaction decline reasons
+2. Switch to a different virtual card number (multi-use cards generate new numbers)
+3. Some services require contacting customer support with a physical address
+4. Blur provides options to update associated address information per card
+
+For recurring subscription charges, test a new masked card with small transaction first, then update the service with new card details.
+
+## Phone Number Masking Technical Details
+
+Masked phone numbers route through Blur's infrastructure. When someone calls your masked number:
+
+1. Call arrives at Blur's telephony system
+2. Blur's system authenticates the incoming call
+3. Call routes to your real phone number via VoIP
+4. From caller's perspective, they're talking to the masked number
+5. From your perspective, you see the call coming from your masked number
+
+Text messages follow a similar pattern. Blur intercepts SMS to the masked number and forwards via their system.
+
+This routing adds minimal latency (typically <1 second) but operates best on reliable internet. In areas with poor cellular coverage, call quality may degrade.
+
+## SMS Forwarding and Verification Codes
+
+Blur handles incoming SMS automatically, which is useful for verification codes:
+
+```
+Original message to masked number:
+"Your verification code is 123456"
+
+Forwarded to your real number:
+"From Masked Number [+1-555-123-4567]: Your verification code is 123456"
+```
+
+This works smoothly for most services. However, some authentication systems (particularly banking) detect the forwarding and may block access as a security measure.
+
+## Toll-Free and International Numbers
+
+Blur's masked phone numbers include options for:
+
+- **Local numbers**: Area codes specific to your region
+- **Toll-free numbers**: 1-800 numbers for certain subscriptions
+- **International numbers**: Limited availability in select countries
+
+Choose area codes strategically—using a local area code when services validate regional requirements helps prevent friction.
+
+## Card Declining and Processor Limitations
+
+Payment processors increasingly decline virtual card transactions due to fraud prevention upgrades. Specifically:
+
+- **Subscription platforms**: Some decline multi-use cards; single-use cards aren't viable for recurring billing
+- **International merchants**: May block virtual cards entirely
+- **High-value purchases**: Cards with spending limits trigger declines
+- **Adult entertainment sites**: Often block virtual payment methods
+
+When a virtual card declines, switch to single-use card for that transaction, or temporarily disable the card and create a new one.
+
+## Developer Integration: Building Masked Data into Applications
+
+If you're building an application that benefits from masking capabilities, the Blur API enables programmatic workflows:
+
+```python
+# Python example: Creating masked data for users
+import requests
+
+class BlurIntegration:
+    def __init__(self, api_key):
+        self.api_key = api_key
+        self.base_url = "https://api.abine.com/v1"
+        self.headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+
+    def create_email_mask(self, user_id, purpose):
+        """Create masked email for specific purpose"""
+        response = requests.post(
+            f"{self.base_url}/masks/email",
+            json={"description": purpose},
+            headers=self.headers
+        )
+        return response.json()
+
+    def create_phone_mask(self, user_id, area_code=None):
+        """Create masked phone number"""
+        payload = {}
+        if area_code:
+            payload["areaCode"] = area_code
+
+        response = requests.post(
+            f"{self.base_url}/masks/phone",
+            json=payload,
+            headers=self.headers
+        )
+        return response.json()
+
+    def create_virtual_card(self, user_id, single_use=False):
+        """Create virtual card for transaction"""
+        response = requests.post(
+            f"{self.base_url}/masks/card",
+            json={"singleUse": single_use},
+            headers=self.headers
+        )
+        return response.json()
+
+    def list_masks(self, mask_type="email"):
+        """List all masks of specific type"""
+        response = requests.get(
+            f"{self.base_url}/masks",
+            params={"type": mask_type},
+            headers=self.headers
+        )
+        return response.json()
+```
+
+This integration pattern is useful for SaaS platforms offering privacy features to users.
+
+## Organizing Mask Rotation
+
+For maximum privacy, rotate masks periodically:
+
+```bash
+#!/bin/bash
+# Mask rotation helper script
+
+# Archive old masks
+blur_cli masks:list --format=json > masks-archive-$(date +%Y-%m-%d).json
+
+# Deactivate masks unused for 90+ days
+blur_cli masks:deactivate --inactive-days=90
+
+# Create fresh masks for frequently-used services
+blur_cli masks:create --label="monthly-subscription" --type=card --single-use=false
+```
+
+Regular rotation ensures even if a service gets compromised, the exposed mask becomes worthless within months.
+
+## Privacy Considerations Beyond Masking
+
+While Blur provides excellent data segregation, remember:
+
+- Phone calls and SMS still route through Blur's systems (trust consideration)
+- Virtual card transactions still route through payment processors
+- Blur can theoretically correlate all your masks if compromised
+- Some services detect and block Blur numbers
+- Law enforcement can compel Blur to reveal which real contact information backs a masked number
+
+These limitations don't negate Blur's value but should inform your threat model.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

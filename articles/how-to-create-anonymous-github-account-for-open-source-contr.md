@@ -128,11 +128,139 @@ Keeping your anonymous identity separate requires ongoing vigilance. Follow thes
 
 **Review commit history** before pushing. Ensure no accidental references to your real name, email, or employer slip into commit messages or code comments.
 
-## Step 7: Understanding GitHub's Privacy Limitations
+## Maintaining Compartmentalization in Practice
+
+Creating an anonymous account is just the first step. Long-term compartmentalization requires ongoing discipline:
+
+### Workspace Isolation
+
+Create a dedicated directory structure for anonymous work that's completely separate from your professional projects:
+
+```bash
+# Recommended directory structure
+~/anonymous-work/
+  ├── repos/
+  │   ├── project-a/
+  │   └── project-b/
+  ├── ssh/
+  │   └── github_anonymous/
+  └── tor-session.sh
+
+# Create the local git config for each repository
+cd ~/anonymous-work/repos/project-a
+git config user.name "your-pseudonym"
+git config user.email "anon-email@provider.com"
+git config core.sshCommand "ssh -i ~/.ssh/github_anonymous"
+```
+
+### Browser Profile Management
+
+Separate browser profiles prevent cookie leakage between identities:
+
+```bash
+# Firefox - Create separate profile for anonymous GitHub
+firefox -ProfileManager
+
+# Or directly launch with specific profile
+firefox -P "anonymous-github" &
+
+# Disable Firefox sync entirely - don't log into any Mozilla accounts
+# Install Privacy Badger and uBlock Origin for tracking prevention
+# Set Firefox preferences in about:config:
+# privacy.trackingprotection.enabled = true
+# privacy.trackingprotection.socialtracking.enabled = true
+# network.IDN_show_punycode = true
+# dom.event.clipboardevents.enabled = false
+```
+
+### Git Configuration Verification
+
+Before pushing any code, verify your git configuration:
+
+```bash
+# Verify local repository configuration
+git config --local user.name
+git config --local user.email
+git config --local core.sshCommand
+
+# Check commit history to ensure identity
+git log -1 --pretty=format:"%an <%ae>"
+
+# Verify SSH key being used
+GIT_TRACE=1 git fetch 2>&1 | grep "SSHCommand\|IdentityFile"
+```
+
+### Preventing Identity Leakage in Commit Content
+
+Even well-configured commits can leak identity through commit messages or code content:
+
+```bash
+# BAD - Leaks employer name in commit message
+git commit -m "Fixed issue reported by acme-corp customer"
+
+# BAD - Leaks real email in author attribution
+git commit --author="John Smith <john@realcompany.com>"
+
+# GOOD - Generic, professional commit message
+git commit -m "Improved error handling for edge case"
+
+# Use pre-commit hooks to prevent accidents
+cat > .git/hooks/pre-commit << 'EOF'
+#!/bin/bash
+# Verify no real names or emails in staged changes
+STAGED=$(git diff --cached -p)
+if echo "$STAGED" | grep -iE "(John|Smith|realcompany|employer)"; then
+    echo "ERROR: Potential identity leak detected in staged changes"
+    exit 1
+fi
+EOF
+chmod +x .git/hooks/pre-commit
+```
+
+## Understanding GitHub's Privacy Limitations
 
 Even with these precautions, be aware of GitHub's data collection. GitHub knows your IP address when you connect, the timing of your activity, and may collect browser fingerprints. Using Tor consistently helps mitigate some of this, though some GitHub features may work less reliably.
 
-For projects requiring maximum anonymity, consider using GitHub alternatives like GitLab or sourceHut, which offer more granular control over account visibility and don't require email verification.
+GitHub's rate limiting and CAPTCHA systems treat Tor users more strictly. If you encounter frequent blocks, consider using Tor bridges in pluggable transport mode:
+
+```bash
+# In Tor Browser settings, enable bridges:
+# Tor Browser → Settings → Connection → Configure Proxy
+# Use obfs4 or meek bridges provided by Tor Project
+```
+
+GitHub also tracks GitHub API usage by IP address. If you need to use the GitHub API through an anonymous account, route requests through Tor as well:
+
+```python
+# Using GitHub API through Tor
+import requests
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
+# Configure requests to use Tor SOCKS proxy
+session = requests.Session()
+proxies = {
+    'http': 'socks5://127.0.0.1:9050',
+    'https': 'socks5://127.0.0.1:9050',
+}
+session.proxies.update(proxies)
+
+# Make GitHub API request
+response = session.get(
+    'https://api.github.com/user',
+    headers={'Authorization': 'token YOUR_GITHUB_TOKEN'}
+)
+```
+
+For projects requiring maximum anonymity, consider using GitHub alternatives:
+
+**GitLab.com** offers public project anonymity without requiring phone verification. You can create an account with just an anonymous email address. GitLab's infrastructure is also distributed, making account linkage harder.
+
+**Codeberg** is built on Gitea and operated by a German non-profit. They explicitly support anonymous development and don't track users across projects. No phone verification required.
+
+**SourceHut** (sr.ht) offers subscription-based hosting with strong privacy controls. Source submission doesn't require an account, reducing tracking across projects.
+
+Each platform has different metadata collection and blocking characteristics. For maximum anonymity, use a different platform per project, rather than consolidating all anonymous work on a single GitHub account.
 
 ## Related Reading
 

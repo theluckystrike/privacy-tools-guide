@@ -128,6 +128,150 @@ Use a passphrase of at least 16 characters, enable two-factor authentication on 
 
 A strong master password ensures the key derivation produces a secure encryption key. Even if someone obtains your encrypted vault, cracking it requires defeating AES-256 encryption plus the key derivation function.
 
+## Encryption Algorithm Deep Dive
+
+Bitwarden uses AES-256 in Galois/Counter Mode (AES-256-GCM). GCM mode provides both encryption and authentication, ensuring that even tiny modifications to encrypted data are detected. This prevents tampering attacks where an attacker modifies portions of your encrypted vault.
+
+The encryption process follows this flow:
+
+```javascript
+// AES-256-GCM encryption (simplified)
+const crypto = require('crypto');
+
+function encryptVaultData(plaintext, encryptionKey) {
+  const iv = crypto.randomBytes(16); // 128-bit IV
+  const cipher = crypto.createCipheriv('aes-256-gcm', encryptionKey, iv);
+
+  let encrypted = cipher.update(plaintext, 'utf8', 'hex');
+  encrypted += cipher.final('hex');
+
+  const authTag = cipher.getAuthTag();
+
+  return {
+    iv: iv.toString('hex'),
+    data: encrypted,
+    authTag: authTag.toString('hex')
+  };
+}
+```
+
+Each encryption operation generates a random IV, ensuring that encrypting the same password twice produces different ciphertext. This randomization is critical to security.
+
+## Cross-Device Syncing Without Key Exposure
+
+When you add a new device to your Bitwarden account, the new device must access your encrypted vault. The sync process never exposes decryption keys:
+
+1. New device logs in with master password and email
+2. Server sends the user's salt
+3. Device derives keys locally from master password + salt
+4. Device sends H(K1) to authenticate
+5. Server verifies authentication and returns encrypted vault contents
+6. Device decrypts locally using K2
+
+The critical insight: the server sends encrypted data that only your new device can decrypt because only that device has the ability to derive the correct K2.
+
+## Master Password Strength and Key Derivation
+
+The strength of your encryption depends entirely on master password entropy. Bitwarden's key derivation function stretches weak passwords into keys, but cannot overcome fundamentally weak passwords.
+
+Consider password entropy:
+
+| Password Type | Entropy | Crack Time (GPU) |
+|---------------|---------|-----------------|
+| Common word (8 chars) | ~40 bits | 8 hours |
+| Random alphanumeric (12 chars) | ~72 bits | 10^9 years |
+| Passphrase (5 words) | ~60 bits | 300 years |
+| 16-char random | ~96 bits | 10^25 years |
+
+PBKDF2 with 600,000 iterations adds approximately 20 bits of equivalent security against GPU attacks. This means your master password requires at least 80 bits of entropy for strong protection.
+
+For practical master password selection, use either:
+- A random 12-character alphanumeric string
+- A 5-6 word passphrase using dictionary words
+- Never reuse a password across services
+
+## What Happens During Account Recovery
+
+If you forget your master password, recovery is impossible—this is intentional security design. Bitwarden cannot reset your master password because doing so would require access to your encryption key.
+
+However, Bitwarden offers an "Account Recovery" feature for organizations:
+
+```javascript
+// Organization account recovery flow
+const recoveryProcess = {
+  step1: "Organization admin initiates recovery request",
+  step2: "User approves recovery through secondary channel",
+  step3: "Admin receives temporary key to re-encrypt vault",
+  step4: "User sets new master password",
+  step5: "Vault re-encrypts with new key"
+};
+```
+
+This only works in organizational contexts where an admin has been designated as a recovery contact.
+
+## Threat Modeling: What Can and Cannot Happen
+
+**Cannot happen (even with Bitwarden compromise):**
+- Attacker obtains plaintext passwords
+- Attacker decrypts vault without master password
+- Attacker intercepts plaintext during transmission
+- Server admin reads vault contents
+
+**Can happen (with sufficient resources):**
+- Brute-force attack on weak master password
+- Malware on your device capturing passwords at use time
+- Social engineering to reveal recovery codes
+- Phishing attacks redirecting to fake Bitwarden site
+
+**Mitigations:**
+- Use unique, strong master password
+- Enable two-factor authentication
+- Verify domain as `bitwarden.com` or `vault.bitwarden.com`
+- Use Bitwarden's Emergency Access feature to secure account recovery
+
+## Emergency Access and Trusted Contacts
+
+Bitwarden allows designating "Emergency Contacts" who can access your vault if you become incapacitated:
+
+```javascript
+// Emergency access data structure
+const emergencyAccess = {
+  granteeEmail: "trusted.person@example.com",
+  type: "view", // or "takeover"
+  waitTimeDays: 30,
+  status: "pending"
+};
+```
+
+When activated, the contact receives a time-delayed access grant. The wait period (default 30 days) provides opportunity for you to revoke access if the request was unauthorized.
+
+## Backup and Recovery Key Management
+
+Bitwarden provides an encrypted backup export feature:
+
+```bash
+# Export vault via CLI
+bw export --password "your-encryption-password" --output vault-backup.json
+```
+
+The exported file is encrypted using a password you specify. Store this backup in a separate, secure location. Combined with your master password, this backup ensures account recovery is possible even if Bitwarden's servers fail completely.
+
+Never store the backup in the same location as your master password—if someone finds both, they can decrypt everything.
+
+## Performance Considerations
+
+The key derivation process completes in 1-2 seconds on modern devices due to the high iteration count. This is intentional—the delay discourages brute-force attacks while remaining acceptable for user experience.
+
+```bash
+# Measure your own key derivation time
+# Using Bitwarden CLI
+time bw unlock "password"
+```
+
+Faster key derivation would be less secure. The 600,000 iterations represent a careful balance between security and usability.
+
+---
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

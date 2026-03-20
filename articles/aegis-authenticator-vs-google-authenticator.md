@@ -131,6 +131,219 @@ Moving accounts between authenticators follows a standard process regardless of 
 
 For developers managing multiple accounts, establishing a migration procedure before you need it saves significant stress.
 
+## Encryption Mechanisms Deep Dive
+
+### Aegis Encryption Implementation
+
+Aegis uses AES-256-GCM for database encryption when a master password or biometric lock is enabled. The encryption structure works as follows:
+
+```json
+{
+  "version": 1,
+  "header": {
+    "slots": [
+      {
+        "type": "biometric_prompt",
+        "key_size": 256,
+        "key_func": {
+          "type": "argon2id",
+          "time": 1,
+          "memory": 64000,
+          "parallelism": 4
+        }
+      }
+    ],
+    "params": {
+      "nonce": "base64-encoded-nonce",
+      "tag": "base64-encoded-auth-tag"
+    }
+  },
+  "database": "base64-encoded-encrypted-vault"
+}
+```
+
+When you set a master password on Aegis, your device derives encryption keys using Argon2id (memory-hard hash). Each unlock requires re-deriving the key and decrypting the vault.
+
+### Google Authenticator's Data Storage
+
+Google Authenticator on Android stores TOTP secrets in a SQLite database at:
+```
+/data/data/com.google.android.gms/databases/
+```
+
+This database receives minimal protection. The TOTP secrets themselves aren't encrypted at rest. On iOS, Apple's Keychain provides some encryption, but secrets are still accessible through the application.
+
+## Backup and Recovery Workflows
+
+### Aegis Backup Process
+
+For maximum security, Aegis allows encrypted backups:
+
+```bash
+# Aegis export with password protection
+# Done through Settings → Backups → Export
+
+# Result: encrypted JSON file
+# Can be safely stored in cloud storage or email
+{
+  "version": 1,
+  "header": {...},
+  "database": "encrypted-base64"
+}
+```
+
+Store this encrypted backup in multiple locations:
+- Local encrypted storage (external drive)
+- Cloud storage (Google Drive, OneDrive encrypted folder)
+- Email to yourself (if using encrypted email)
+
+To restore:
+1. Install Aegis on new device
+2. Go to Settings → Backups → Import
+3. Select the encrypted backup file
+4. Enter the password you set during export
+5. Aegis decrypts and restores all accounts
+
+### Google Authenticator Backup Process
+
+Google Authenticator backups happen automatically if you enable "Backup to Google Account":
+
+1. Settings → Account
+2. Enable "Backup to Google Account"
+3. Google encrypts QR code backings to your Google account
+4. On device loss, reinstall Google Authenticator and sign in to restore
+
+This automatic backup is convenient but places your TOTP secrets in Google's ecosystem, which may conflict with privacy goals.
+
+For manual backup, use QR code export:
+1. Settings → Transfer accounts
+2. Select accounts to export
+3. Google generates QR codes containing the otpauth:// URIs
+4. Scan with phone or screenshot QR codes for later scanning
+
+## Multi-Device Synchronization
+
+### Aegis Cross-Device Setup
+
+Aegis doesn't natively sync across devices. Instead, use manual backup/restore:
+
+1. Device A: Export encrypted backup
+2. Store backup in secure location (cloud or email)
+3. Device B: Import from backup file
+4. Both devices have identical accounts
+
+For accounts that are added after initial sync, export and import again. This manual process ensures you always have explicit control over which devices access your authenticator database.
+
+### Google Authenticator Cross-Device Setup
+
+Google Authenticator requires manual QR code scanning on each device. To set up multiple devices:
+
+1. Open Settings → Transfer accounts → Export accounts
+2. Select accounts
+3. Receive QR code
+4. On Device 2, use "Scan a setup key" and scan the QR code
+5. Repeat for all devices
+
+This process is tedious but explicit—you physically choose which devices get which accounts.
+
+## Security Against Device Theft
+
+### Aegis Protection Against Theft
+
+If your Aegis-protected phone is stolen:
+1. Thief sees Aegis icon but cannot open it (biometric or password protected)
+2. Attempting to access encrypted database fails without the key
+3. Vault remains protected even if phone is fully rooted
+4. Export decrypted backups stored elsewhere remain secure
+
+Recommendation: Enable PIN/biometric unlock AND a separate Aegis master password for defense-in-depth.
+
+### Google Authenticator Protection Against Theft
+
+If your Google Authenticator phone is stolen:
+1. Thief can potentially open Google Authenticator if device is unlocked
+2. TOTP secrets are immediately accessible
+3. All associated accounts can be compromised
+4. If Google Backup is enabled, thief cannot restore to other devices without your Google password
+
+Recommendation: Enable device lock and avoid relying solely on Google Authenticator for critical accounts. Use hardware security keys (YubiKey) as the primary second factor.
+
+## TOTP Code Visibility and Clipboard Safety
+
+### Aegis Code Handling
+
+Aegis displays TOTP codes prominently but prevents copying to clipboard by default (configurable). This mitigates malware exfiltrating codes through clipboard monitoring.
+
+Codes are visible for manual entry into web forms, but the security model assumes your device OS provides isolation from other applications.
+
+### Google Authenticator Code Handling
+
+Google Authenticator also prevents clipboard access by default. Codes are viewed within the application and entered manually into web forms.
+
+## Account Recovery Without Authenticator Access
+
+What happens when you lose access to your authenticator?
+
+**Aegis**:
+- Access your encrypted backup on another device
+- Or contact the service and use account recovery options (security questions, recovery codes, etc.)
+
+**Google Authenticator**:
+- Use Google account backup on another device
+- Or contact the service and use account recovery options
+
+Both require having saved backup codes or alternative recovery methods set up beforehand.
+
+## Implementation for Service Providers
+
+If you operate services requiring two-factor authentication, supporting both Aegis and Google Authenticator ensures maximum compatibility:
+
+```javascript
+// TOTP validation (library-agnostic)
+const speakeasy = require('speakeasy');
+
+function validateTOTPCode(secret, code) {
+  return speakeasy.totp.verify({
+    secret: secret,
+    encoding: 'base32',
+    token: code,
+    window: 2  // Allow ±2 30-second windows for clock skew
+  });
+}
+
+// Generate QR code for setup
+const qrCode = speakeasy.totp.keyuri({
+  secret: secret,
+  label: 'username',
+  issuer: 'Your Service Name'
+});
+```
+
+The underlying TOTP algorithm is identical regardless of which app users choose.
+
+## Compliance and Regulated Environments
+
+For organizations in regulated industries:
+
+- **Aegis**: Open-source, auditable, can be self-hosted
+- **Google Authenticator**: Proprietary, enterprise-grade support available
+
+If your compliance requirements mandate open-source verification, Aegis wins. If you need enterprise SLAs, Google provides support.
+
+## Terminal-Based Alternatives
+
+For developers who prefer command-line tools:
+
+```bash
+# Using oath-toolkit
+oathtool --base32 --time-based JBSWY3DPEHPK3PXP
+
+# Using Python pyotp library
+python3 -c "import pyotp; t = pyotp.TOTP('JBSWY3DPEHPK3PXP'); print(t.now())"
+```
+
+These tools generate TOTP codes from secrets, useful for automation or in environments where traditional authenticator apps aren't practical.
+
 ## Related Reading
 
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)

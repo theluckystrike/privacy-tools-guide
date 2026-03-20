@@ -121,21 +121,148 @@ defaults read /Applications/AppName.app/Contents/Info CFBundleIdentifier
 
 Additionally, some TCC entries are protected by System Integrity Protection (SIP). For these, you'll need to disable SIP temporarily or use recovery mode.
 
-## Automating TCC Management
+## Extended TCC Service Reference
 
-For developers managing multiple machines, script TCC audits:
+Beyond the common services, macOS includes many additional TCC entries that control privacy-sensitive access. Here's a comprehensive reference:
+
+| Service ID | Description | Risk Level |
+|------------|-------------|-----------|
+| `kTCCServiceCamera` | Camera access | High |
+| `kTCCServiceMicrophone` | Microphone access | High |
+| `kTCCServiceScreenCapture` | Screen recording | High |
+| `kTCCServiceAccessibility` | Accessibility (keyboard, mouse tracking) | Critical |
+| `kTCCServiceLocation` | Location services | High |
+| `kTCCServiceContacts` | Contacts database | High |
+| `kTCCServiceCalendar` | Calendar events | Medium |
+| `kTCCServiceReminders` | Reminders app | Medium |
+| `kTCCServicePhotos` | Photo library | High |
+| `kTCCServiceMediaLibrary` | Music and video library | Medium |
+| `kTCCServiceWillow` | HomeKit device access | Medium |
+| `kTCCServiceTCC` | TCC database itself | Critical |
+| `kTCCServiceSystemPolicyDocumentsFolder` | Documents folder access | High |
+| `kTCCServiceSystemPolicyDownloadsFolder` | Downloads folder access | High |
+| `kTCCServiceSystemPolicyDesktopFolder` | Desktop folder access | High |
+
+## Advanced TCC Queries
+
+For detailed permission audits, use more sophisticated SQLite queries:
+
+```bash
+# See full TCC database schema
+sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db ".schema"
+
+# Export all permissions with metadata
+sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db \
+  "SELECT client, service, auth_value, last_modified FROM access ORDER BY last_modified DESC;" \
+  | column -t -s '|'
+
+# Find apps with multiple sensitive permissions
+sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db \
+  "SELECT client, COUNT(*) as perm_count FROM access
+   WHERE auth_value = 2 AND service IN
+   ('kTCCServiceCamera', 'kTCCServiceMicrophone', 'kTCCServiceScreenCapture', 'kTCCServiceAccessibility')
+   GROUP BY client HAVING perm_count > 1;" \
+  | column -t -s '|'
+
+# Track when permissions were granted (requires full_disk_access for system DB)
+sudo sqlite3 /Library/Application\ Support/com.apple.TCC/TCC.db \
+  "SELECT client, service, auth_value, datetime(last_modified, 'unixepoch')
+   FROM access WHERE auth_value = 2 ORDER BY last_modified DESC LIMIT 20;"
+```
+
+## System Integrity Protection and TCC
+
+Apple's System Integrity Protection (SIP) prevents modification of certain system-level TCC entries even with sudo. Entries for system processes and critical services are locked:
+
+```bash
+# Check SIP status
+csrutil status
+
+# To modify system-level TCC entries, you must disable SIP
+# 1. Restart into Recovery Mode (Cmd+R during startup)
+# 2. Open Terminal from Utilities
+# 3. Run: csrutil disable
+# 4. Restart your Mac
+# 5. Modify TCC entries as needed
+# 6. Re-enable SIP: sudo csrutil enable
+# 7. Restart again
+```
+
+Be cautious with SIP modifications—disabling it reduces system security. Only disable for legitimate maintenance and re-enable immediately after.
+
+## TCC Database Corruption and Recovery
+
+If TCC operations fail, the database may be corrupted or locked:
+
+```bash
+# Check file permissions on TCC database
+ls -la ~/Library/Application\ Support/com.apple.TCC/TCC.db
+
+# Verify database integrity
+sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db "PRAGMA integrity_check;"
+
+# Rebuild corrupted database
+sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db ".dump" > tcc_backup.sql
+# Then delete the corrupted DB and restore from backup after fixing
+
+# Check if any processes have the TCC database locked
+lsof ~/Library/Application\ Support/com.apple.TCC/TCC.db
+```
+
+If the TCC database is locked by a running process, kill that process or restart your Mac to release the lock.
+
+## Automating TCC Management for Security Teams
+
+For developers managing multiple machines, create comprehensive TCC audit and deployment scripts:
 
 ```bash
 #!/bin/bash
-echo "=== TCC Permission Audit ==="
-for db in ~/Library/Application\ Support/com.apple.TCC/TCC.db; do
-  echo "Scanning: $db"
-  sqlite3 "$db" "SELECT client, service FROM access WHERE auth_value = 2;" | \
-  sort | uniq
-done
+# Comprehensive TCC Permission Audit Script
+
+echo "=== TCC Permission Audit Report ==="
+echo "Generated: $(date)"
+echo "Hostname: $(hostname)"
+echo ""
+
+# Function to audit TCC database
+audit_tcc_db() {
+    local db_path=$1
+    local db_type=$2
+
+    if [ ! -f "$db_path" ]; then
+        echo "Database not found: $db_path"
+        return
+    fi
+
+    echo "=== $db_type Permissions ==="
+    sqlite3 "$db_path" \
+      "SELECT client, service,
+              CASE auth_value WHEN 0 THEN 'Denied' WHEN 1 THEN 'Restricted' WHEN 2 THEN 'Allowed' END as status
+       FROM access
+       WHERE auth_value = 2
+       ORDER BY client, service;" | \
+      awk -F'|' '{printf "%-50s %-35s %s\n", $1, $2, $3}'
+    echo ""
+}
+
+# Audit user-level database
+audit_tcc_db ~/Library/Application\ Support/com.apple.TCC/TCC.db "User-Level"
+
+# Audit system-level database (requires Full Disk Access)
+if [ -f "/Library/Application Support/com.apple.TCC/TCC.db" ]; then
+    audit_tcc_db /Library/Application\ Support/com.apple.TCC/TCC.db "System-Level"
+fi
+
+# Export results for tracking
+echo ""
+echo "=== High-Risk Permissions Detected ==="
+sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db \
+  "SELECT client FROM access
+   WHERE auth_value = 2 AND service IN
+   ('kTCCServiceAccessibility', 'kTCCServiceScreenCapture', 'kTCCServiceCamera');"
 ```
 
-Save this as `tcc-audit.sh` and run it periodically to track permission changes.
+Save as `tcc-audit.sh`, make executable, and run periodically to track permission changes and identify new high-risk grants.
 
 ## Related Reading
 
