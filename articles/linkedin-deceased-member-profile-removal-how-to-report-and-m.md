@@ -11,7 +11,6 @@ score: 8
 intent-checked: false
 voice-checked: true
 intent-checked: true
-voice-checked: false
 ---
 
 {% raw %}
