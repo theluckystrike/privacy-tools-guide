@@ -360,7 +360,7 @@
 =======
 >>>>>>> 473610dfc5bb1e4985a0125091febdbdbeccb965
 layout: default
-title: "Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage"
+title: "Protect Client Photos: Privacy Best Practices"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices."
 date: 2026-03-15
 type: article

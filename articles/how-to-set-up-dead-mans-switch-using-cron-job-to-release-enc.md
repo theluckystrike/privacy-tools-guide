@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Dead Man's Switch Using Cron Job to Release Encrypted File"
+title: "Set Up Dead Man's Switch Using Cron Job to Release Encrypted"
 description: "A practical guide for developers and power users to automate encrypted file release using cron jobs and a dead man's switch mechanism."
 date: 2026-03-16
 author: theluckystrike

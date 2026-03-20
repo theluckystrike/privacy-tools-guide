@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Tcpdump to Verify VPN Traffic Is Encrypted: Installing tcpdump"
+title: "Use Tcpdump to Verify VPN Traffic Is Encrypted"
 description: "Learn how to use tcpdump to verify your VPN traffic is properly encrypted. This guide covers packet capture, analyzing encryption headers, and."
 date: 2026-03-18
 author: "Privacy Tools Guide"

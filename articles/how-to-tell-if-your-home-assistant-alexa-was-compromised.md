@@ -170,6 +170,35 @@ After auditing, take these steps to harden your devices:
 - **Monitor your network traffic** for anomalies
 - **Use a password manager** for all smart home account credentials
 
+## Automated Monitoring Script
+
+For Home Assistant users who want ongoing monitoring, this shell script checks for unexpected automations and logs recent activity:
+
+```bash
+#!/bin/bash
+# Home Assistant: export recent logbook entries via API for offline review
+HA_URL="http://homeassistant.local:8123"
+HA_TOKEN="your_long_lived_access_token_here"
+
+# Fetch last 24 hours of logbook entries
+curl -s -H "Authorization: Bearer ${HA_TOKEN}" \
+     -H "Content-Type: application/json" \
+     "${HA_URL}/api/logbook?hours_to_show=24" \
+     | python3 -m json.tool | grep -E "(entity_id|message|when)" \
+     | head -100
+
+# List all automations and their last-triggered time
+curl -s -H "Authorization: Bearer ${HA_TOKEN}" \
+     "${HA_URL}/api/states" \
+     | python3 -c "
+import json, sys
+states = json.load(sys.stdin)
+autos = [s for s in states if s['entity_id'].startswith('automation.')]
+for a in autos:
+    print(a['entity_id'], a['attributes'].get('last_triggered','never'))
+"
+```
+
 ## Responding to a Confirmed Compromise
 
 If you determine your device was compromised:

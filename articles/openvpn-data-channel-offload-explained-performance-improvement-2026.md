@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Openvpn Data Channel Offload Explained Performance Improvement"
+title: "Openvpn Data Channel Offload Explained Performance"
 description: "Learn how OpenVPN Data Channel Offload (DCO) enhances VPN performance by moving encryption operations to the kernel, reducing CPU overhead and."
 date: 2026-03-15
 author: "Privacy Tools Guide"

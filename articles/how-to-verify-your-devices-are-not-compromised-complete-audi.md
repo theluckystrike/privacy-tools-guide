@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Verify Your Devices Are Not Compromised: A Complete Audit — Why Device Audits Matter"
+title: "Verify Your Devices Are Not Compromised"
 description: "A practical guide for developers and power users to audit device security, detect compromises, and verify system integrity through command-line tools."
 date: 2026-03-16
 author: theluckystrike
