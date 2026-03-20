@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /dkim-spf-dmarc-email-authentication-how-they-protect-against/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
