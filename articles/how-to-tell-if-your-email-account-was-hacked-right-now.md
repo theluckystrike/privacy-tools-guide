@@ -3,7 +3,7 @@ title: "How To Tell If Your Email Account Was Hacked Right Now"
 description: "Learn the critical warning signs that indicate your email account has been compromised, plus exact steps to secure it right now."
 permalink: /how-to-tell-if-your-email-account-was-hacked-right-now/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true

@@ -9,7 +9,8 @@ categories: [guides]
 reviewed: true
 voice-checked: true
 intent-checked: true
-score: 7
+score: 8
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}
