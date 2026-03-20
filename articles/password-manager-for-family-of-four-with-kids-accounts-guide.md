@@ -8,7 +8,7 @@ permalink: /password-manager-for-family-of-four-with-kids-accounts-guide/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
