@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/
 categories: [guides]
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, comparison, security]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

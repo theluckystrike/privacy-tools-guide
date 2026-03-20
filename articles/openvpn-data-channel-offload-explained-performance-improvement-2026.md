@@ -6,9 +6,9 @@ date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /openvpn-data-channel-offload-explained-performance-improvement-2026/
 categories: [guides]
-tags: [openvpn, vpn, data channel offload, dco, performance, encryption, network]
+tags: [privacy-tools-guide, openvpn, vpn, data channel offload, dco, performance, encryption, network]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /password-manager-for-family-of-four-with-kids-accounts-guide/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true

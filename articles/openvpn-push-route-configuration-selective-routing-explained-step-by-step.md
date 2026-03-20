@@ -6,7 +6,7 @@ date: 2026-03-17
 author: theluckystrike
 permalink: /openvpn-push-route-configuration-selective-routing-explained-step-by-step/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 8
 intent-checked: true

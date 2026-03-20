@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, comparison, security, vpn]
 reviewed: true
 score: 8
 intent-checked: true
