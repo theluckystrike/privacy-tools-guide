@@ -9,6 +9,7 @@ categories: [privacy, security, compliance]
 tags: [privacy-tools-guide, cloud-storage, subpoena, law-enforcement, privacy]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}
