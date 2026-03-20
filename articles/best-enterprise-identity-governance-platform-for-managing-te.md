@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [identity-governance, access-reviews, enterprise-security]
+tags: [privacy-tools-guide, identity-governance, access-reviews, enterprise-security, best-of]
 ---
 
 {% raw %}
