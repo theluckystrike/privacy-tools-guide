@@ -119,6 +119,176 @@ For developers evaluating Sticky Password against alternatives, here's the pract
 
 Sticky Password offers a free tier with local-only storage and a Premium tier at approximately $30/year (as of 2026). The Premium tier adds cloud sync, priority support, and additional features. This pricing is competitive with Bitwarden Premium ($10/year) and significantly cheaper than 1Password ($35/year), though the feature gap justifies the price differences.
 
+## Threat Model: Password Manager Attack Surfaces
+
+Evaluating password managers requires understanding potential attack vectors:
+
+**Master Password Compromise**: If your master password is weak, attackers with access to the vault file can brute force it. Sticky Password's AES-256 implementation is solid, but strong master password entropy is critical.
+
+**Supply Chain Attack**: If Sticky Password's servers are compromised, attackers could inject malicious updates. No-logs policies don't protect against this if the update mechanism is compromised.
+
+**Synchronization Vulnerability**: When syncing vault data across devices, encrypted data is transmitted. If the encryption keys are derived from the master password and someone intercepts sync traffic, they'd need to brute force the key—practically infeasible with strong passwords.
+
+**Local Device Compromise**: If your device is compromised by malware, password managers are vulnerable because the decrypted vault must reside in memory while in use.
+
+**Browser Extension Vulnerability**: The browser extension is the most attack-prone component. It's constantly interacting with websites, making it a prime target.
+
+Sticky Password's local-first architecture reduces some risks (no server compromise of plaintext data) but doesn't address local device compromise or extension vulnerabilities.
+
+## Cryptographic Analysis
+
+Sticky Password uses AES-256-GCM for vault encryption, which is cryptographically sound. The key derivation process should use a proper KDF like PBKDF2 or Argon2, though Sticky Password doesn't publicly detail this.
+
+**Comparison to competitors**:
+
+**Bitwarden**: Open source, uses AES-256-CBC with HMAC for authentication. The open-source nature allows security researcher review. Uses PBKDF2 with 100,001 iterations.
+
+**1Password**: Proprietary encryption, but has undergone independent security audits. Uses AES-256-GCM with SRP (Secure Remote Password) for authentication, preventing the server from ever accessing plaintext passwords.
+
+**KeePass**: Open source, uses AES-256 (or ChaCha20) with database-level encryption. No built-in sync, requiring separate mechanisms.
+
+For developers concerned about cryptographic implementation details, Bitwarden's open-source nature and available source code inspection is a significant advantage.
+
+## API and Integration Limitations
+
+Sticky Password's lack of API access severely limits automation:
+
+**Use Case 1: Database Password Rotation**
+```bash
+# With Bitwarden CLI - possible
+export DB_PASS=$(bw get password "production-db" --raw)
+mysql -u admin -p"$DB_PASS" < schema.sql
+
+# With 1Password CLI - possible
+export DB_PASS=$(op item get "production-db" --field password)
+mysql -u admin -p"$DB_PASS" < schema.sql
+
+# With Sticky Password - not possible
+# Must manually copy/paste password
+```
+
+**Use Case 2: CI/CD Secret Injection**
+```bash
+# GitHub Actions with Bitwarden
+- name: Get Database Password
+  run: echo "DB_PASS=$(bw get password 'prod-db' --raw)" >> $GITHUB_ENV
+
+# GitHub Actions with Sticky Password
+# No supported method - security risk
+```
+
+**Use Case 3: Emergency Access Automation**
+```bash
+# 1Password allows programmatic emergency contact setup
+# Sticky Password: manual process only
+```
+
+These limitations make Sticky Password unsuitable for technical teams managing infrastructure.
+
+## Migration Path: Exporting from Sticky Password
+
+If you decide to migrate to Bitwarden or KeePass:
+
+```bash
+#!/bin/bash
+# Export data from Sticky Password to CSV
+# Then convert to KeePass XML format
+
+# Step 1: Export from Sticky Password (GUI)
+# Settings > Export > CSV (encrypted with master password)
+
+# Step 2: Convert CSV to standard format
+python3 << 'EOF'
+import csv
+import xml.etree.ElementTree as ET
+from xml.dom import minidom
+
+def csv_to_keepass_xml(csv_file, xml_output):
+    root = ET.Element('KeePassFile')
+    meta = ET.SubElement(root, 'Meta')
+    ET.SubElement(meta, 'Generator').text = 'Migration Script'
+
+    root_group = ET.SubElement(root, 'Root')
+    group = ET.SubElement(root_group, 'Group')
+    ET.SubElement(group, 'UUID').text = '0' * 32
+    ET.SubElement(group, 'Name').text = 'Imported'
+
+    with open(csv_file, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            entry = ET.SubElement(group, 'Entry')
+            ET.SubElement(entry, 'String').text = row.get('Title', '')
+            ET.SubElement(entry, 'String').text = row.get('Password', '')
+
+    xml_string = minidom.parseString(ET.tostring(root)).toprettyxml()
+    with open(xml_output, 'w') as f:
+        f.write(xml_string)
+
+csv_to_keepass_xml('sticky_export.csv', 'keepass_import.xml')
+EOF
+
+# Step 3: Import XML into KeePass
+# File > Import > From XML
+
+echo "Migration complete. Review imported data for accuracy."
+```
+
+## Sticky Password vs Open Source Alternatives
+
+For developers and security-conscious users, open-source alternatives offer advantages:
+
+**KeePass**
+- Complete source code available for review
+- Extensible plugin architecture
+- Supports multiple database formats
+- Cross-platform (Windows, Mac, Linux, mobile)
+- Community continues development
+- Zero recurring cost (one-time purchase for mobile)
+
+**Disadvantages**:
+- No cloud sync built-in (requires third-party solutions)
+- Smaller security research community than Bitwarden
+- Mobile apps have limited feature parity with desktop
+
+**Bitwarden**
+- Open-source server and client
+- Cloud sync included
+- CLI and API support
+- Team sharing and vault management
+- Institutional audits
+- Free tier available
+
+**Disadvantages**:
+- Premium cloud features cost $10/year (though self-hosted is free)
+- Larger attack surface than local-only solutions
+
+For the use cases Sticky Password targets (individual password storage with light sync), KeePass with manual sync or Bitwarden's free tier offer superior features and transparency.
+
+## Security Incidents and Track Record
+
+Sticky Password has not experienced major security breaches as of 2026, but its smaller user base and lower research attention may mean undiscovered vulnerabilities.
+
+Bitwarden disclosed and patched a server-side vulnerability in 2023 (non-critical).
+
+1Password has maintained a strong security record with regular third-party audits.
+
+No password manager is immune to compromise, making defense-in-depth critical: strong master passwords, enabling 2FA on account, monitoring Privacy Dashboard.
+
+## Verdict for Different User Profiles
+
+**Best fit for Sticky Password**:
+- Individual users with modest technical skills
+- Users wanting simple local-first storage
+- Those with limited budget ($30/year) who don't need API/CLI
+- Users in regions with specific software licensing requirements
+
+**Should look elsewhere**:
+- Developers requiring API/CLI access
+- Teams needing granular permission management
+- Organizations requiring self-hosting
+- Security-conscious users wanting open-source code review
+- Users building automation requiring password retrieval
+
 ## Related Reading
 
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)

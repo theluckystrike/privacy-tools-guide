@@ -123,6 +123,161 @@ Proactive monitoring enables early detection of compromise. Services like Ethers
 
 Have a documented incident response plan. If you suspect key compromise, immediately transfer remaining funds to a fresh wallet with new keys. Time is critical—attackers who obtain private keys typically transfer funds within minutes.
 
+```python
+# Example: Setting up monitoring for wallet activity
+import requests
+from datetime import datetime
+
+class WalletMonitor:
+    def __init__(self, wallet_address):
+        self.address = wallet_address
+        self.etherscan_api = "https://api.etherscan.io/api"
+        self.last_check = None
+
+    def check_recent_transactions(self):
+        """Monitor for suspicious activity"""
+        params = {
+            'action': 'txlist',
+            'address': self.address,
+            'startblock': 0,
+            'endblock': 99999999,
+            'sort': 'desc',
+            'apikey': 'YOUR_API_KEY'
+        }
+
+        response = requests.get(self.etherscan_api, params=params)
+        transactions = response.json()['result']
+
+        # Alert on any recent large transfers
+        for tx in transactions[:5]:
+            if tx['isError'] == '0':  # Successful transaction
+                value_eth = int(tx['value']) / 10**18
+                if value_eth > 1.0:  # Alert threshold
+                    timestamp = datetime.fromtimestamp(int(tx['timeStamp']))
+                    print(f"ALERT: {value_eth} ETH transferred at {timestamp}")
+
+    def setup_alerts(self):
+        """Configure automated monitoring"""
+        # Use Etherscan API for continuous monitoring
+        # Or integrate with webhook services for real-time alerts
+        pass
+```
+
+## Advanced Attack Vectors and Defenses
+
+**Clipboard Hijacking**: Malware monitors clipboard operations, replacing copied addresses with attacker-controlled wallets. When you paste an address you copied earlier, the transaction goes to the wrong wallet.
+
+Defense: Use address verification plugins that compare pasted addresses against known safe patterns, or manually verify address segments rather than trusting full address pastes.
+
+**Private Key Derivation Vulnerabilities**: Hierarchical deterministic wallets use BIP-32 standards to derive child keys from a master seed. Some implementations incorrectly randomize key derivation, creating predictable keys.
+
+```javascript
+// Secure BIP-32 key derivation
+const hdkey = require('hdkey');
+
+function deriveSecureKeys(seedPhrase) {
+    // Always use standard BIP-44 paths
+    const paths = [
+        "m/44'/60'/0'/0/0",  // First Ethereum account
+        "m/44'/60'/0'/0/1",  // Second account
+        "m/44'/60'/0'/0/2"   // Third account
+    ];
+
+    return paths.map(path => {
+        const derived = hdkey.fromMasterSeed(seedPhrase).derive(path);
+        return {
+            path: path,
+            publicKey: derived.publicKey.toString('hex'),
+            privateKey: derived.privateKey.toString('hex')
+        };
+    });
+}
+```
+
+**Malicious Contract Interaction**: Users approve smart contracts without understanding token transfer permissions. A compromised or malicious contract can then transfer all tokens of that type from the user's wallet.
+
+Defense: Use approval limits (approve only the amount needed for a specific transaction), revoke approvals after contract interaction, and audit contract source code before approving.
+
+```bash
+# Verify contract legitimacy before approval
+# 1. Check verified source on Etherscan
+# 2. Review audit reports if available
+# 3. Test approval limits with small amounts first
+# 4. Use contract interaction tools that show human-readable function calls
+
+# Example: Using Ethers.js with approval warnings
+const allowance = await contract.allowance(userAddress, contractAddress);
+if (allowance > ethers.utils.parseEther('0.1')) {
+    console.warn('WARNING: Existing approval exceeds single transaction needs');
+}
+```
+
+## Wallet Recovery and Backup Verification
+
+Beyond storing seed phrases, implement a comprehensive backup verification system:
+
+```bash
+#!/bin/bash
+# Wallet recovery testing script
+
+SEED_PHRASE="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+TEST_PASSWORD="test_password_for_verification"
+
+# 1. Restore wallet to a fresh device/VM
+# 2. Verify balance matches original wallet
+# 3. Attempt a small test transaction
+# 4. Confirm transaction appears in blockchain explorer
+
+function verify_wallet_restoration() {
+    echo "Starting wallet recovery verification..."
+
+    # Create temporary test environment
+    mkdir -p /tmp/wallet_test
+    cd /tmp/wallet_test
+
+    # Generate new address from seed phrase
+    # Using a standard derivation tool
+    derived_address=$(ethereum-address-from-seed "$SEED_PHRASE")
+
+    # Verify this address matches your known wallet
+    known_address="0x1234...5678"
+    if [ "$derived_address" == "$known_address" ]; then
+        echo "SUCCESS: Backup restoration verified"
+        return 0
+    else
+        echo "ERROR: Restored address does not match"
+        return 1
+    fi
+}
+```
+
+## Insurance and Custody Solutions
+
+For significant holdings, consider custody services that provide insurance:
+
+- **Fireblocks**: Institutional-grade custody with insurance coverage for digital assets
+- **Coinbase Custody**: FDIC-insured, held in cold storage with cryptographic key splitting
+- **BitGo**: Multi-signature custody with transaction signing controls
+
+These services sacrifice some privacy (they maintain user records) but provide insurance that personal custody cannot match.
+
+## Regulatory Compliance Considerations
+
+Different jurisdictions have specific requirements for cryptocurrency holders. Some countries require reporting above certain thresholds, and transactions over amounts may trigger AML (Anti-Money Laundering) reporting.
+
+Understanding your local regulatory environment prevents unexpected tax or legal issues:
+
+```
+United States: Report cryptocurrency holdings >$10,000 to IRS; FBAR
+  requirements for foreign exchange accounts exceeding $10,000
+European Union: MiCA regulations require exchange AML compliance and
+  customer identification
+Singapore: Approved exchanges must comply with Payment Services Act
+Japan: Requires tax reporting for cryptocurrency gains and holdings
+```
+
+For privacy-conscious users, this creates a tension: maximizing privacy through non-custodial self-hosted wallets versus accepting regulatory visibility through licensed exchanges for compliance.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

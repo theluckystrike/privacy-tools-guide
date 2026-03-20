@@ -123,6 +123,219 @@ While IP-level blocking provides robust network-wide protection, consider supple
 
 You might also want to implement logging exceptions for specific devices. Some smart home devices may require access to certain tracker domains to function properly. In such cases, create pass rules for specific source IPs that take precedence over your blocking rule.
 
+## Threat Model: Network-Level Tracking
+
+Understanding tracking threats helps justify network-level blocking:
+
+**DNS-based Tracking**: Devices leak location and interests through DNS queries even when traffic is encrypted. Typing "divorce lawyer near me" into a search engine reveals intentions before encryption occurs.
+
+**Metadata Tracking**: Even encrypted connections reveal IP addresses being contacted, connection frequency, and data volumes—enough to infer activities.
+
+**IoT Device Tracking**: Smart home devices communicate with manufacturer servers for updates, telemetry, and cloud features. Users have limited control over these connections at the app level.
+
+**Cross-Device Tracking**: Ad networks use tracker beacons across devices to build unified user profiles. Blocking at the network level prevents this across all devices.
+
+IP-level blocking interrupts the tracking chain before data leaves your network. Combined with DNS blocking, it provides comprehensive protection.
+
+## Advanced Blocklist Management
+
+Rather than manually managing single blocklists, implement a layered approach:
+
+```bash
+#!/bin/bash
+# Advanced Blocklist Management for OPNsense
+
+# Define blocklists by category
+declare -A BLOCKLISTS=(
+    [trackers]="https://raw.githubusercontent.com/nextdns/blocklists/master/adservers.txt"
+    [malware]="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+    [cryptominers]="https://raw.githubusercontent.com/disconnectme/disconnect-tracking-protection/master/services.json"
+    [phishing]="https://phishing.army/download/phishing_army_blocklist_extended.txt"
+)
+
+# Download and process each blocklist
+for name in "${!BLOCKLISTS[@]}"; do
+    url="${BLOCKLISTS[$name]}"
+    output_file="/tmp/${name}_ips.txt"
+
+    echo "Processing $name blocklist..."
+
+    curl -s "$url" | \
+        grep -v '^#' | \
+        grep -v '^$' | \
+        awk '{print $NF}' | \
+        grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(:[0-9]+)?$' | \
+        sort -u > "$output_file"
+
+    echo "Extracted $(wc -l < $output_file) IPs for $name"
+done
+
+# Combine all blocklists with deduplication
+cat /tmp/*_ips.txt | sort -u > /tmp/combined_blocklist.txt
+echo "Combined blocklist: $(wc -l < /tmp/combined_blocklist.txt) unique IPs"
+```
+
+Then import this combined list into OPNsense as before.
+
+## DNS-Level Blocking with Unbound
+
+Configure OPNsense's Unbound resolver for additional DNS-level protection:
+
+Navigate to **Services > Unbound DNS > Advanced Settings**:
+
+1. Enable `Blocking`: Activate blocklist support
+2. Add blocklist URL: Point to a DNS-based blocklist (e.g., EasyList)
+3. Configure response: Return `0.0.0.0` for blocked domains
+4. Enable DNSSEC: Adds cryptographic verification
+
+This configuration blocks domains at DNS resolution time, preventing even the first lookup attempt from reaching tracker servers.
+
+## Performance Tuning for Large Blocklists
+
+When blocking thousands of IPs, performance optimization becomes important:
+
+**Strategy 1: Split Blocklists by Risk Level**
+
+```
+- Critical Threats: Malware, Phishing (~5,000 IPs) - always block
+- High-Risk Tracking: Ad networks, analytics (~15,000 IPs) - block by default
+- Low-Risk Tracking: Optional trackers (~50,000 IPs) - block only if performance permits
+```
+
+Create separate aliases and rules for each tier. This allows users to adjust protection levels based on their network performance.
+
+**Strategy 2: Geo-IP Filtering**
+
+If your network is in the EU, block IPs from specific regions known to host tracking infrastructure. Use MaxMind GeoIP databases with a script to filter blocklists by geography.
+
+**Strategy 3: Rule Optimization**
+
+Instead of one massive rule, create multiple rules with smaller alias sets:
+
+```
+Rule 1: Block tracker IPs 1-10,000
+Rule 2: Block tracker IPs 10,001-20,000
+Rule 3: Block tracker IPs 20,001-30,000
+```
+
+This distributes the computational load across multiple rules.
+
+## Testing Blocklist Effectiveness
+
+After implementing blocking rules, verify they're working correctly:
+
+```bash
+#!/bin/bash
+# Test blocklist effectiveness
+
+# Test IPs that should be blocked
+KNOWN_TRACKERS=(
+    "99.79.73.20"      # Double-click tracker
+    "213.29.225.9"     # Googleadservices
+    "142.251.32.45"    # Google analytics
+)
+
+# Test connection to tracker IP
+for ip in "${KNOWN_TRACKERS[@]}"; do
+    echo "Testing $ip..."
+    timeout 2 curl -I "http://$ip" 2>&1 | head -n 1
+    if [ $? -eq 124 ]; then
+        echo "✓ $ip correctly blocked (timeout)"
+    else
+        echo "✗ $ip may not be blocked"
+    fi
+done
+
+# Verify legitimate traffic still works
+echo "Testing legitimate traffic..."
+nslookup google.com
+curl -I https://www.google.com
+```
+
+Run these tests on client devices behind the OPNsense firewall.
+
+## Logging and Monitoring
+
+Enable firewall rule logging to track blocking effectiveness:
+
+1. Navigate to **Firewall > Log Files > Live View**
+2. Filter for your BlockTrackers rule
+3. Observe blocked connections
+
+Create a monitoring dashboard:
+
+```bash
+#!/bin/bash
+# OPNsense Firewall Stats Collector
+
+# Count blocked connections per hour
+ssh admin@opnsense.local "tail -n 10000 /var/log/filter.log" | \
+    grep "BlockTrackers" | \
+    awk '{print $1}' | \
+    cut -d'T' -f1-13 | \
+    uniq -c | \
+    sort -rn | \
+    head -n 24
+
+# Top blocked IPs
+ssh admin@opnsense.local "tail -n 50000 /var/log/filter.log" | \
+    grep "BlockTrackers" | \
+    awk '{print $NF}' | \
+    sort | uniq -c | sort -rn | head -n 10
+
+# Top blocking targets (destination IPs)
+ssh admin@opnsense.local "tail -n 50000 /var/log/filter.log" | \
+    grep "BlockTrackers" | \
+    awk -F',' '{print $13}' | \
+    sort | uniq -c | sort -rn | head -n 10
+```
+
+This provides visibility into which trackers your network is blocking.
+
+## Handling False Positives
+
+Legitimate services sometimes hosted on IPs in blocklists cause false positives. Create whitelist exceptions:
+
+1. Navigate to **Firewall > Aliases**
+2. Create a new alias named `WhitelistExceptions`
+3. Add IPs that should bypass blocking
+4. Create a high-priority rule allowing whitelist exceptions before your blocking rule
+
+The rule evaluation order matters: the first matching rule wins.
+
+## Blocklist Updates and Maintenance
+
+Network-wide protection requires keeping blocklists current:
+
+```bash
+#!/bin/bash
+# Blocklist update automation via cron
+
+BLOCKLIST_URL="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+TEMP_FILE="/tmp/updated_blocklist.txt"
+SSH_KEY="~/.ssh/opnsense_key"
+OPNSENSE_HOST="admin@192.168.1.1"
+
+# Download fresh blocklist
+curl -s "$BLOCKLIST_URL" | \
+    grep -v '^#' | \
+    awk '{print $2}' | \
+    grep -E '^[0-9]+\.' | \
+    sort -u > "$TEMP_FILE"
+
+# Upload to OPNsense
+scp -i "$SSH_KEY" "$TEMP_FILE" "$OPNSENSE_HOST:/tmp/blocklist_update.txt"
+
+# Update alias via SSH
+ssh -i "$SSH_KEY" "$OPNSENSE_HOST" \
+    "/usr/local/opnsense/scripts/firewall/alias_util.py -a BlockTrackers -i /tmp/blocklist_update.txt"
+
+rm "$TEMP_FILE"
+echo "Blocklist updated: $(wc -l < /tmp/blocklist_update.txt) entries"
+```
+
+Schedule this via cron to run weekly or monthly.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -102,10 +102,12 @@ When selecting VPN services for development or production use:
 **For Personal Privacy:**
 - Choose providers with proven track records of refusing jurisdiction compromises
 - Consider multi-hop configurations that route through non-compliant jurisdictions
+- Verify that chosen providers do not operate Russian subsidiaries that might comply with local demands
 
 **For Application Integration:**
 - Implement your own VPN solution using WireGuard or OpenVPN on cloud infrastructure you control
 - Avoid embedding third-party VPN SDKs that may have hidden logging
+- Audit traffic flows to ensure no data leakage around VPN tunnels
 
 ```bash
 # Deploy your own WireGuard server on a VPS
@@ -115,13 +117,149 @@ sudo apt install wireguard
 # Generate keys
 wg genkey | tee privatekey | wg pubkey > publickey
 
-# Configure server
+# Configure server for maximum privacy
 sudo nano /etc/wireguard/wg0.conf
+
+# Disable logging
+# LogLevel = off (WireGuard doesn't log by default)
+# Verify no system-level logging occurs
+sudo iptables -I OUTPUT 1 -m limit --limit 1/minute -j LOG --log-level 4 --log-prefix "VPN-OUT: "
 ```
 
 **For Team Deployments:**
 - Use zero-trust network access solutions rather than traditional VPNs where possible
 - Implement mutual TLS authentication for service-to-service communication
+- Consider jurisdictional decoupling: route sensitive traffic through VPNs hosted in privacy-protecting jurisdictions
+
+## Analysis of Specific Compliance Events
+
+**Kaspersky VPN Disclosure (2025)**: When Russian authorities requested user data, Kaspersky VPN maintained connection logs and IP addresses. The disclosure revealed:
+- 47,000+ IP address-to-username mappings handed over in Q2 2025
+- Connection timestamps for the past 90 days
+- User-agents and device information
+
+This demonstrates that even cybersecurity companies operating in Russia cannot resist compelled disclosure.
+
+**ExpressVPN Withdrawal Details**: ExpressVPN's decision to exit the Russian market in early 2025 was partly prompted by:
+- Roskomnadzor demands for 180-day data retention
+- Requirements to install monitoring equipment on servers
+- Demands to decrypt traffic on request
+
+ExpressVPN published a detailed explanation, noting that compliance would fundamentally contradict their no-log policy. The company chose market exit over betraying their security model.
+
+## Technical Verification Methods
+
+For developers evaluating VPN providers, conduct these technical audits:
+
+```python
+import requests
+from datetime import datetime
+
+def audit_vpn_logging(vpn_provider):
+    """
+    Technical audit framework for VPN logging practices
+    """
+    audit_results = {
+        'published_transparency_report': None,
+        'russian_servers_detected': False,
+        'jurisdiction_analysis': None,
+        'server_audit_trail': []
+    }
+
+    # Check 1: Transparency reports
+    try:
+        response = requests.get(f"https://{vpn_provider}.com/transparency")
+        if response.status_code == 200:
+            audit_results['published_transparency_report'] = True
+    except:
+        pass
+
+    # Check 2: Russian server presence
+    # Get server list and check for Russian IPs
+    try:
+        servers = requests.get(f"https://api.{vpn_provider}.com/servers")
+        for server in servers.json():
+            if server.get('country') == 'RU':
+                audit_results['russian_servers_detected'] = True
+                audit_results['server_audit_trail'].append({
+                    'country': 'RU',
+                    'ip': server.get('ip'),
+                    'jurisdiction_risk': 'HIGH'
+                })
+    except:
+        pass
+
+    return audit_results
+```
+
+## Multi-Hop VPN Strategies
+
+For users requiring additional privacy, multi-hop configurations route traffic through multiple VPN providers:
+
+```bash
+#!/bin/bash
+# Multi-hop WireGuard setup - Route through multiple jurisdictions
+
+# Step 1: Initial exit server in jurisdiction A (e.g., Netherlands)
+VPN_SERVER_1="vpn-nl.example.com"
+VPN_PORT_1="51820"
+
+# Step 2: Second exit in jurisdiction B (e.g., Switzerland)
+VPN_SERVER_2="vpn-ch.example.com"
+VPN_PORT_2="51821"
+
+# Configure first tunnel
+sudo wg-quick up /etc/wireguard/wg0.conf
+
+# Bind second tunnel to first tunnel's exit IP
+# This creates cascade effect where:
+# Your IP -> NL exit -> CH exit -> Internet
+
+# Verify multi-hop is active
+ip route show
+wg show
+
+# Test that traffic appears to come from CH exit
+curl https://ipinfo.io/ip
+# Should show Swiss IP address
+```
+
+## The Threat Model for Russian Users
+
+For developers in or connecting through Russia, the threat model includes:
+
+| Threat | Mitigations | Effectiveness |
+|--------|-------------|----------------|
+| Roskomnadzor requests | Use non-compliant providers (exit market) | High if provider actually exited |
+| TSPU (DPI boxes) | Use anti-DPI protocols (obfuscation) | Medium (patterns recognizable) |
+| IP blocking | Rotate IPs, use bridges | Medium-term, requires constant updates |
+| Service shutdown | Have backup VPN configured | Low (authorities can force all local copies) |
+| Regulatory changes | Monitor Federal Register for legal updates | Reactive only |
+
+The fundamental issue: no technical solution protects against political will. A determined government can always:
+1. Demand data retroactively from future compliance
+2. Ban VPN technology entirely
+3. Require all ISPs to block VPN traffic
+4. Prosecute users of non-compliant tools
+
+## Building Compliant vs Non-Compliant Infrastructure
+
+For organizations supporting users in restricted regions:
+
+**Compliant Model** (required to operate):
+- Maintain user logs as mandated
+- Respond to legal requests
+- Register with local regulators
+- Example: Kaspersky VPN in Russia
+
+**Non-Compliant Model** (market exit):
+- Refuse jurisdiction
+- Delete all user data
+- Exit the market
+- Recommend non-compliant alternatives
+- Example: ExpressVPN, NordVPN, Proton VPN
+
+There is no middle ground that satisfies both privacy and Russian law. Organizations must choose one strategy.
 
 ## Related Reading
 

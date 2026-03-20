@@ -122,6 +122,276 @@ adb logcat | grep -i "wifi_scan\|ble_scan"
 
 If scanning continues despite your settings, check for apps with aggressive background behavior or system apps that may require separate configuration.
 
+## Threat Model: Location Inference from Scanning
+
+Understanding why scanning creates privacy risks clarifies the value of disabling it:
+
+**WiFi-Based Location**: When your device broadcasts WiFi scanning queries, it reveals the BSSIDs (MAC addresses) of nearby access points. Google's location services database maps these MAC addresses to physical locations with 10-50 meter accuracy. An attacker with access to your WiFi scans can infer your location without GPS.
+
+**Temporal Patterns**: Regular WiFi scans at specific times and locations create movement patterns. Presence at a particular location every Tuesday at 3 PM suggests work commute or routine activity.
+
+**Cross-Correlation with Other Data**: Combining WiFi scan metadata with other information (purchase location data from retailers, cell tower triangulation) enables higher-accuracy tracking.
+
+**Bluetooth MAC Address Tracking**: Bluetooth devices transmit MAC addresses that don't randomize as frequently as WiFi. Persistent Bluetooth device discovery enables tracking as you move through environments.
+
+Disabling scanning prevents this data generation entirely.
+
+## Advanced Scanning Detection and Prevention
+
+For developers building privacy-aware Android apps, detect and prevent excessive scanning:
+
+```kotlin
+// Advanced scanning detection and prevention
+import android.content.Context
+import android.net.wifi.WifiManager
+import android.bluetooth.BluetoothManager
+import android.util.Log
+
+class ScanningMonitor(private val context: Context) {
+    private val wifiManager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
+    private val bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+
+    fun detectActiveScanning(): ScanningStatus {
+        val status = ScanningStatus()
+
+        // Check WiFi scanning status
+        try {
+            val wifiResults = wifiManager.scanResults
+            if (wifiResults.isNotEmpty()) {
+                status.wifiScanActive = true
+                status.wifiNetworksDetected = wifiResults.size
+                Log.d("ScanMonitor", "Active WiFi scan detected: ${wifiResults.size} networks")
+            }
+        } catch (e: Exception) {
+            Log.e("ScanMonitor", "Error checking WiFi: ${e.message}")
+        }
+
+        // Check Bluetooth scanning
+        val bluetoothAdapter = bluetoothManager.adapter
+        if (bluetoothAdapter?.isDiscovering == true) {
+            status.bluetoothScanActive = true
+            Log.d("ScanMonitor", "Active Bluetooth discovery in progress")
+        }
+
+        return status
+    }
+
+    fun preventBackgroundScanning() {
+        // Implement app-specific scanning prevention
+        // Request minimal location permissions
+        // Disable background service scanning
+
+        // For your app: don't call startScan()
+        // Use passive results: wifiManager.scanResults
+
+        Log.d("ScanMonitor", "Background scanning prevention enabled")
+    }
+}
+
+data class ScanningStatus(
+    var wifiScanActive: Boolean = false,
+    var wifiNetworksDetected: Int = 0,
+    var bluetoothScanActive: Boolean = false
+)
+```
+
+## System-Level Scanning Commands Reference
+
+Complete ADB commands for comprehensive scanning control:
+
+```bash
+# Disable all location-related scanning
+adb shell settings put global wifi_scan_always_enabled 0
+adb shell settings put global ble_scan_always_enabled 0
+adb shell settings put global location_mode 0  # Disable location services entirely
+
+# Revoke location permissions from all apps
+adb shell pm revoke com.google.android.gms android.permission.ACCESS_FINE_LOCATION
+adb shell pm revoke com.google.android.gms android.permission.ACCESS_COARSE_LOCATION
+
+# Disable Google Location Services
+adb shell settings put secure location_providers_allowed -gps,-network
+
+# Disable WiFi scanning across all apps
+adb shell settings put global wifi_scan_interval_ms 0
+
+# Disable Bluetooth scanning
+adb shell settings put global ble_scan_interval_ms 0
+
+# Verify settings
+adb shell settings get global wifi_scan_always_enabled
+adb shell settings get global ble_scan_always_enabled
+
+# Check location mode
+adb shell settings get secure location_mode
+```
+
+## Blocklist Approach: Preventing Scanning Apps
+
+Alternative to system settings: block scanning at the network level.
+
+```bash
+#!/bin/bash
+# Block known Google location services endpoints
+# Run on your router or OPNsense firewall
+
+# Google location services IPs
+GOOGLE_LOCATION_IPS=(
+    "64.18.0.0/20"       # Google location services
+    "142.251.32.0/20"    # Google analytics
+    "142.251.41.0/20"    # Google services
+)
+
+# Create firewall rules blocking these
+for ip_range in "${GOOGLE_LOCATION_IPS[@]}"; do
+    # For OPNsense:
+    echo "pfctl -t google_tracking -T add $ip_range"
+
+    # Then create a blocking rule for the google_tracking table
+done
+
+# Alternative: Block at DNS level
+# Return NXDOMAIN for location services domains
+cat >> /etc/unbound/unbound.conf.d/location-block.conf << 'EOF'
+# Block WiFi scanning and location services
+local-zone: "www.googleapis.com" redirect
+local-data: "www.googleapis.com A 0.0.0.0"
+local-zone: "maps.googleapis.com" redirect
+local-data: "maps.googleapis.com A 0.0.0.0"
+EOF
+```
+
+## Alternative: Fused Location Provider for Developers
+
+For apps that need location but want minimal scanning:
+
+```kotlin
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+
+class EfficientLocationProvider(private val context: Context) {
+    private val fusedLocationClient: FusedLocationProviderClient =
+        LocationServices.getFusedLocationProviderClient(context)
+
+    fun getLocationWithMinimalScanning() {
+        // Request coarse location (network-based, no WiFi scanning)
+        val locationRequest = com.google.android.gms.location.LocationRequest.create().apply {
+            priority = com.google.android.gms.location.LocationRequest.PRIORITY_LOW_POWER
+            interval = 60000  // Update every 60 seconds, not continuously
+            fastestInterval = 120000  // Never update faster than 2 minutes
+        }
+
+        // Use passive location listener - doesn't trigger active scans
+        val callback = object : com.google.android.gms.location.LocationCallback() {
+            override fun onLocationResult(result: com.google.android.gms.location.LocationResult) {
+                for (location in result.locations) {
+                    // Use location without continuous scanning
+                    Log.d("Location", "Got passive location: ${location.latitude}")
+                }
+            }
+        }
+
+        fusedLocationClient.requestLocationUpdates(
+            locationRequest,
+            callback,
+            null  // Don't update on main thread
+        )
+    }
+}
+```
+
+This approach provides location data while minimizing background scanning.
+
+## Monitoring Background Activity
+
+After disabling scanning, monitor to ensure apps aren't re-enabling it:
+
+```bash
+#!/bin/bash
+# Monitor for unauthorized scanning enablement
+
+# Get current scanning state
+get_scanning_state() {
+    echo "=== WiFi Scanning Status ==="
+    adb shell settings get global wifi_scan_always_enabled
+
+    echo "=== Bluetooth Scanning Status ==="
+    adb shell settings get global ble_scan_always_enabled
+
+    echo "=== Location Services Status ==="
+    adb shell settings get secure location_mode
+}
+
+# Monitor logs for scanning attempts
+monitor_scanning_attempts() {
+    echo "Monitoring for scanning enablement attempts..."
+
+    adb logcat | while read line; do
+        if echo "$line" | grep -qi "wifi_scan\|ble_scan\|location.*enable"; then
+            echo "⚠️  Scanning activity detected: $line"
+        fi
+    done
+}
+
+# Create hourly monitoring job
+while true; do
+    get_scanning_state
+    sleep 3600  # Check every hour
+done
+```
+
+## Hardening: Kernel-Level Scanning Prevention
+
+For the most security-conscious users with custom ROMs:
+
+```bash
+# Disable WiFi scanning at kernel level
+adb shell "echo 0 > /sys/module/cfg80211/parameters/debug_scan"
+
+# Check kernel parameters
+adb shell "cat /proc/cmdline" | grep wifi
+
+# For Lineage OS with optional kernel patches:
+# Apply patches that disable background location scanning entirely
+```
+
+This requires root and custom ROM modifications, beyond typical user capabilities.
+
+## Recovery: Re-enabling Scanning When Needed
+
+Some apps genuinely need location services for legitimate purposes:
+
+```bash
+# Re-enable WiFi scanning
+adb shell settings put global wifi_scan_always_enabled 1
+
+# Re-enable for specific app context
+# Settings > Apps > [AppName] > Permissions > Location > Allow only while using the app
+
+# Verify re-enablement
+adb shell settings get global wifi_scan_always_enabled
+```
+
+Consider creating device profiles: one privacy-hardened configuration for personal use, another with normal permissions for navigation or location-based apps.
+
+## Privacy vs. Functionality Trade-Offs
+
+Complete scanning disablement comes with costs:
+
+**Loss of benefits**:
+- WiFi positioning (GPS works, but slower indoors)
+- Bluetooth device discovery (car audio, wearables)
+- Location-based app features
+- Ambient device sensing
+
+**Workarounds**:
+- Use GPS-only location mode when GPS signal available
+- Manually pair Bluetooth devices instead of auto-discovery
+- Accept reduced location accuracy for privacy
+- Use alternative location services that don't require scanning
+
+The choice depends on your threat model and location accuracy requirements.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

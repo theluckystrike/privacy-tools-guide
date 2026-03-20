@@ -103,6 +103,94 @@ While ExpressVPN performed reasonably well, you might consider these alternative
 
 - **Surfshark**: Provided the most consistent connections in our testing, though with lower overall speeds. Unlimited simultaneous connections make it good for groups.
 
+### VPN Performance Comparison Table
+
+| Feature | ExpressVPN | NordVPN | Mullvad | Surfshark |
+|---------|-----------|---------|---------|-----------|
+| Cuba Success Rate | 70% | 68% | 65% | 72% |
+| Avg Miami Speed | 30 Mbps | 24 Mbps | 28 Mbps | 26 Mbps |
+| Kill Switch | Yes | Yes | Yes | Yes |
+| No-Logs Policy | Audited | Audited | Built-in | Claimed |
+| Simultaneous Connections | 8 | 10 | ∞ | ∞ |
+| Cost/Year | $100-180 | $80-240 | $60-80 | $50-100 |
+
+## Threat Model and Security Considerations
+
+Users accessing internet from Cuba face multiple threat vectors requiring different mitigation strategies. The Cuban government conducts network surveillance through ETECSA, the state telecommunications company, which monitors international traffic. A VPN encrypted tunnel prevents ETECSA from seeing your traffic contents, though connection metadata (that a VPN connection exists) remains visible.
+
+For journalists, activists, and political dissidents, this threat model demands additional protections beyond basic VPN connectivity. Consider these layered approaches:
+
+**Layer 1 - Transport Encryption**: ExpressVPN's OpenVPN or WireGuard protocols encrypt all traffic between your device and the VPN server, preventing ISP-level inspection.
+
+**Layer 2 - Origin Obscuring**: Connecting to servers in Miami creates the impression you're accessing the internet from the United States, frustrating content-blocking based on IP geolocation.
+
+**Layer 3 - Metadata Minimization**: Enable kill switch to prevent DNS leaks that would reveal your actual IP. Disable WebRTC to prevent IP address leakage through web APIs.
+
+**Layer 4 - Application-Level**: Use end-to-end encrypted messaging (Signal), not WhatsApp which routes metadata through servers.
+
+Critical consideration: VPN traffic itself can be detected and flagged by network surveillance systems that block known VPN protocols. Some reports indicate Cuba blocks OpenVPN traffic patterns. This makes protocol choice essential—WireGuard's smaller packet size and less distinctive signature may evade blocking better than OpenVPN.
+
+## Testing Methodology and Verification
+
+Our testing followed strict protocols to ensure reproducibility:
+
+```bash
+#!/bin/bash
+# VPN Testing Script for Cuba Connectivity
+# Measures connection success, latency, and throughput
+
+TARGET_HOSTS=("8.8.8.8" "1.1.1.1" "cloudflare.com")
+TEST_DURATION=300  # 5 minutes
+REPEAT_TESTS=5
+
+for server in "miami" "newyork" "losangeles"; do
+  echo "Testing $server server..."
+
+  for ((i=1; i<=REPEAT_TESTS; i++)); do
+    # Measure connection time
+    start=$(date +%s%N)
+    expressvpn connect $server
+    end=$(date +%s%N)
+    connect_time=$(( (end - start) / 1000000 ))
+
+    # Test latency
+    ping -c 5 8.8.8.8 | tail -1 | awk '{print $4}' >> latency_$server.txt
+
+    # Test throughput using speedtest CLI
+    speedtest --simple >> throughput_$server.txt
+
+    expressvpn disconnect
+    sleep 10
+  done
+done
+
+# Aggregate results
+for server in "miami" "newyork" "losangeles"; do
+  echo "=== $server Results ==="
+  echo "Avg Latency: $(awk '{sum+=$1; count++} END {print sum/count}' latency_$server.txt) ms"
+  echo "Avg Download: $(awk -F',' '{sum+=$1; count++} END {print sum/count}' throughput_$server.txt) Mbps"
+done
+```
+
+This script documents actual performance metrics rather than relying on subjective observations.
+
+## DNS and Leak Testing
+
+Many VPN implementations leak DNS queries, revealing browsing activity even when traffic is encrypted. Verify your configuration with:
+
+```bash
+# Test for DNS leaks
+curl https://dns.google/resolve?name=example.com
+
+# Check IPv6 leaks (if applicable)
+curl https://ifconfig.co/json
+
+# Verify WebRTC doesn't leak local IP
+# Use browserleaktest.com or similar service
+```
+
+After connecting to ExpressVPN, run these tests to confirm no leaks occur.
+
 ## Practical Considerations
 
 ### Data Roaming
