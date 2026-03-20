@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /tor-browser-canvas-fingerprinting-protection/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}

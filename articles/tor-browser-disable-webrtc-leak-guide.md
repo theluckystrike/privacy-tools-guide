@@ -6,9 +6,9 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-disable-webrtc-leak-guide/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

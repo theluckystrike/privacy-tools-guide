@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-bookmark-safety-best-practices/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
 score: 8
 intent-checked: true

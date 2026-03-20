@@ -7,9 +7,10 @@ author: "Privacy Tools Guide"
 permalink: /threat-model-for-activist-in-authoritarian-country-digital-s/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide]
 ---
 
 {% raw %}
