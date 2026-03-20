@@ -8,6 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /fastpeoplesearch-opt-out-guide-step-by-step-2026/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 
