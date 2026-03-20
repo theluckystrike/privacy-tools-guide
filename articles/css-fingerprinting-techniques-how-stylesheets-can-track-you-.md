@@ -7,7 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /css-fingerprinting-techniques-how-stylesheets-can-track-you-/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
