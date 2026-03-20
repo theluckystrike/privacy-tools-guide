@@ -6,10 +6,11 @@ date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /fastpeoplesearch-opt-out-guide-step-by-step-2026/
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 categories: [guides]
+tags: [privacy-tools-guide]
 ---
 
 

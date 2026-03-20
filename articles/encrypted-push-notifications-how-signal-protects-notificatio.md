@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-push-notifications-how-signal-protects-notificatio/
 categories: [guides]
-tags: [tools]
+tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---
