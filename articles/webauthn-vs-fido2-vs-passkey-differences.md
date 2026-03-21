@@ -27,29 +27,29 @@ A basic WebAuthn registration looks like this in JavaScript:
 
 ```javascript
 const publicKeyCredentialCreationOptions = {
-  challenge: new Uint8Array([/* server-provided challenge */]),
-  rp: {
-    name: "Your Application",
-    id: "yourdomain.com"
-  },
-  user: {
-    id: new Uint8Array([/* user ID bytes */]),
-    name: "username",
-    displayName: "User Name"
-  },
-  pubKeyCredParams: [
-    { type: "public-key", alg: -7 },  // ES256
-    { type: "public-key", alg: -257 } // RS256
-  ],
-  authenticatorSelection: {
-    authenticatorAttachment: "platform",
-    requireResidentKey: true,
-    userVerification: "preferred"
-  }
+ challenge: new Uint8Array([/* server-provided challenge */]),
+ rp: {
+ name: "Your Application",
+ id: "yourdomain.com"
+ },
+ user: {
+ id: new Uint8Array([/* user ID bytes */]),
+ name: "username",
+ displayName: "User Name"
+ },
+ pubKeyCredParams: [
+ { type: "public-key", alg: -7 }, // ES256
+ { type: "public-key", alg: -257 } // RS256
+ ],
+ authenticatorSelection: {
+ authenticatorAttachment: "platform",
+ requireResidentKey: true,
+ userVerification: "preferred"
+ }
 };
 
 const credential = await navigator.credentials.create({
-  publicKey: publicKeyCredentialCreationOptions
+ publicKey: publicKeyCredentialCreationOptions
 });
 ```
 
@@ -124,15 +124,15 @@ For most developers, using a library like SimpleWebAuthn or Authelia saves signi
 const { verifyRegistrationResponse } = require('@simplewebauthn/server');
 
 const verification = await verifyRegistrationResponse({
-  response: credential,
-  expectedChallenge: savedChallenge,
-  expectedOrigin: 'https://yourdomain.com',
-  expectedRPID: 'yourdomain.com'
+ response: credential,
+ expectedChallenge: savedChallenge,
+ expectedOrigin: 'https://yourdomain.com',
+ expectedRPID: 'yourdomain.com'
 });
 
 if (verification.verified) {
-  // Save credential.publicKey and credential.id to your database
-  await saveCredential(userId, verification.registrationInfo);
+ // Save credential.publicKey and credential.id to your database
+ await saveCredential(userId, verification.registrationInfo);
 }
 ```
 
@@ -201,13 +201,13 @@ If using non-resident keys, store credential IDs in your database and send them 
 const credentialIds = await getCredentialIDsForUser(userId);
 
 const publicKeyCredentialRequestOptions = {
-  challenge: challengeFromServer,
-  allowCredentials: credentialIds.map(id => ({
-    id: id,
-    type: "public-key",
-    transports: ["usb", "ble", "nfc", "internal"]
-  })),
-  userVerification: "preferred"
+ challenge: challengeFromServer,
+ allowCredentials: credentialIds.map(id => ({
+ id: id,
+ type: "public-key",
+ transports: ["usb", "ble", "nfc", "internal"]
+ })),
+ userVerification: "preferred"
 };
 ```
 
@@ -215,9 +215,9 @@ If using resident keys (passkeys), let the authenticator decide which credential
 
 ```javascript
 const publicKeyCredentialRequestOptions = {
-  challenge: challengeFromServer,
-  allowCredentials: [], // Empty—authenticator decides
-  userVerification: "preferred"
+ challenge: challengeFromServer,
+ allowCredentials: [], // Empty—authenticator decides
+ userVerification: "preferred"
 };
 ```
 
@@ -228,8 +228,8 @@ Attestation objects contain cryptographic proof about the authenticator, but han
 ```javascript
 // Verifying attestation during registration
 const attestationVerified = verifyAttestationStatement(
-  credential.response.attestationObject,
-  credential.response.clientDataJSON
+ credential.response.attestationObject,
+ credential.response.clientDataJSON
 );
 
 // Attestation formats include:
@@ -242,7 +242,7 @@ const attestationVerified = verifyAttestationStatement(
 // But you can require specific formats:
 const acceptedFormats = ["packed", "fido-u2f"];
 if (!acceptedFormats.includes(attestationObject.fmt)) {
-  throw new Error("Attestation format not accepted");
+ throw new Error("Attestation format not accepted");
 }
 ```
 

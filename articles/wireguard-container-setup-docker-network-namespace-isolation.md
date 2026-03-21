@@ -33,8 +33,8 @@ Before starting, ensure you have Docker installed and the WireGuard kernel modul
 lsmod | grep wireguard
 
 # Install wireguard-tools if needed
-sudo apt-get install wireguard-tools  # Debian/Ubuntu
-sudo pacman -S wireguard-tools         # Arch Linux
+sudo apt-get install wireguard-tools # Debian/Ubuntu
+sudo pacman -S wireguard-tools # Arch Linux
 ```
 
 ## Basic WireGuard Container Setup
@@ -43,17 +43,17 @@ The simplest approach uses the official WireGuard Docker image with host network
 
 ```bash
 docker run -d \
-  --name wireguard \
-  --cap-add NET_ADMIN \
-  --cap-add SYS_MODULE \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=America/New_York \
-  -v /path/to/wg0.conf:/config/wg0.conf:ro \
-  -v /lib/modules:/lib/modules:ro \
-  --sysctl net.ipv4.conf.all.src_valid_mark=1 \
-  --network host \
-  linuxserver/wireguard
+ --name wireguard \
+ --cap-add NET_ADMIN \
+ --cap-add SYS_MODULE \
+ -e PUID=1000 \
+ -e PGID=1000 \
+ -e TZ=America/New_York \
+ -v /path/to/wg0.conf:/config/wg0.conf:ro \
+ -v /lib/modules:/lib/modules:ro \
+ --sysctl net.ipv4.conf.all.src_valid_mark=1 \
+ --network host \
+ linuxserver/wireguard
 ```
 
 This configuration maps your WireGuard configuration file into the container and grants the necessary capabilities for network interface management. The `--network host` mode places the container on the host's network stack.
@@ -78,14 +78,14 @@ Execute the WireGuard container within the network namespace:
 
 ```bash
 sudo ip netns exec wg-vpn docker run -d \
-  --name wireguard-ns \
-  --cap-add NET_ADMIN \
-  --cap-add SYS_MODULE \
-  -v /path/to/wg0.conf:/config/wg0.conf:ro \
-  -v /lib/modules:/lib/modules:ro \
-  --sysctl net.ipv4.conf.all.src_valid_mark=1 \
-  --network host \
-  linuxserver/wireguard
+ --name wireguard-ns \
+ --cap-add NET_ADMIN \
+ --cap-add SYS_MODULE \
+ -v /path/to/wg0.conf:/config/wg0.conf:ro \
+ -v /lib/modules:/lib/modules:ro \
+ --sysctl net.ipv4.conf.all.src_valid_mark=1 \
+ --network host \
+ linuxserver/wireguard
 ```
 
 ### Step 3: Configure Routing
@@ -112,11 +112,11 @@ docker network create -d bridge wg-network
 
 # Run a container that uses the WireGuard namespace for networking
 docker run -d \
-  --name protected-service \
-  --network wg-network \
-  --cap-add NET_ADMIN \
-  --network container:wireguard-ns \
-  nginx:alpine
+ --name protected-service \
+ --network wg-network \
+ --cap-add NET_ADMIN \
+ --network container:wireguard-ns \
+ nginx:alpine
 ```
 
 The `--network container:wireguard-ns` option shares the network stack of the WireGuard container, ensuring all traffic from the protected service passes through the VPN tunnel.
@@ -129,37 +129,37 @@ Define your setup in a Docker Compose file for easier management:
 version: '3.8'
 
 services:
-  wireguard:
-    image: linuxserver/wireguard
-    container_name: wireguard
-    cap_add:
-      - NET_ADMIN
-      - SYS_MODULE
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
-    volumes:
-      - ./wg0.conf:/config/wg0.conf:ro
-      - /lib/modules:/lib/modules:ro
-    sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
-    networks:
-      - wg-net
-    restart: unless-stopped
+ wireguard:
+ image: linuxserver/wireguard
+ container_name: wireguard
+ cap_add:
+ - NET_ADMIN
+ - SYS_MODULE
+ environment:
+ - PUID=1000
+ - PGID=1000
+ - TZ=America/New_York
+ volumes:
+ - ./wg0.conf:/config/wg0.conf:ro
+ - /lib/modules:/lib/modules:ro
+ sysctls:
+ - net.ipv4.conf.all.src_valid_mark=1
+ networks:
+ - wg-net
+ restart: unless-stopped
 
-  protected-app:
-    image: nginx:alpine
-    container_name: protected-app
-    networks:
-      - wg-net
-    depends_on:
-      - wireguard
-    restart: unless-stopped
+ protected-app:
+ image: nginx:alpine
+ container_name: protected-app
+ networks:
+ - wg-net
+ depends_on:
+ - wireguard
+ restart: unless-stopped
 
 networks:
-  wg-net:
-    driver: bridge
+ wg-net:
+ driver: bridge
 ```
 
 ## Troubleshooting Common Issues
@@ -179,7 +179,7 @@ Ensure DNS queries route through the tunnel by configuring the DNS setting in yo
 
 ```ini
 [Peer]
-# ... peer settings ...
+# ... Peer settings ...
 DNS = 1.1.1.1, 1.0.0.1
 ```
 

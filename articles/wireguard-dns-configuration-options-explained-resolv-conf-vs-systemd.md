@@ -95,7 +95,7 @@ cp /etc/resolv.conf.backup /etc/resolv.conf
 
 Modern Linux distributions using systemd include systemd-resolved, which manages DNS configuration through a local stub resolver. This approach integrates cleanly with NetworkManager and provides benefits like DNS caching and split-tunneling support.
 
-systemd-resolved maintains its own DNS configuration stored in `/run/systemd/resolve/resolv.conf` or `/run/systemd/resolve/stub-resolv.conf`. To configure DNS for WireGuard with systemd-resolved, you have several options.
+Systemd-resolved maintains its own DNS configuration stored in `/run/systemd/resolve/resolv.conf` or `/run/systemd/resolve/stub-resolv.conf`. To configure DNS for WireGuard with systemd-resolved, you have several options.
 
 The first approach uses wg-quick's built-in systemd-resolved support. Modern versions of wg-quick automatically interact with systemd-resolved when available. Add the DNS directive in your wg0.conf as shown earlier, and wg-quick will notify systemd-resolved of the DNS changes.
 
@@ -156,16 +156,16 @@ For most desktop Linux users with modern distributions (Ubuntu 22.04+, Fedora, A
 
 WireGuard runs on various platforms beyond Linux desktops, and DNS configuration varies accordingly.
 
-On Android, WireGuard app handles DNS automatically when you configure it in the tunnel settings. The app includes a DNS field in the interface configuration that works without any system-level changes. iOS users similarly configure DNS within the WireGuard app interface.
+On Android, WireGuard app handles DNS automatically when you configure it in the tunnel settings. The app includes a DNS field in the interface configuration that works without any system-level changes. IOS users similarly configure DNS within the WireGuard app interface.
 
 For router implementations (OpenWrt,pfSense, or dedicated hardware), DNS configuration typically happens at the network level. On OpenWrt with wg-quick, add the DNS directive to your WireGuard interface configuration in `/etc/config/network`:
 
 ```bash
 config interface 'wg0'
-    option proto 'wireguard'
-    option privatekey '<your-key>'
-    list addresses '10.0.0.2/32'
-    list dns '1.1.1.1'
+ option proto 'wireguard'
+ option privatekey '<your-key>'
+ list addresses '10.0.0.2/32'
+ list dns '1.1.1.1'
 ```
 
 This ensures all devices behind the router use the VPN's DNS servers, providing leak protection for your entire network.

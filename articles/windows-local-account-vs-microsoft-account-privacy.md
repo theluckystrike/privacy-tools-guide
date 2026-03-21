@@ -59,9 +59,9 @@ Local accounts offer advantages when working with enterprise resources or isolat
 # Check account type
 $accountType = (Get-WmiObject Win32_UserAccount | Where-Object { $_.LocalAccount -eq $true }).Name
 if ($accountType) {
-    Write-Host "Local account detected: $accountType"
+ Write-Host "Local account detected: $accountType"
 } else {
-    Write-Host "Microsoft account in use"
+ Write-Host "Microsoft account in use"
 }
 ```
 
@@ -152,14 +152,14 @@ Beyond simply using a local account, developers can implement additional hardeni
 ```powershell
 # Disable specific data collection services (requires admin)
 $services = @(
-    "DiagTrack",           # Connected User Experiences and Telemetry
-    "dmwappushservice",    # dmwappushservice
-    "MapsBroker",          # Maps service
-    "lfsvc"                # Location Service
+ "DiagTrack", # Connected User Experiences and Telemetry
+ "dmwappushservice", # dmwappushservice
+ "MapsBroker", # Maps service
+ "lfsvc" # Location Service
 )
 
 foreach ($service in $services) {
-    Set-Service -Name $service -StartupType Disabled -ErrorAction SilentlyContinue
+ Set-Service -Name $service -StartupType Disabled -ErrorAction SilentlyContinue
 }
 
 # Verify services are disabled
@@ -230,14 +230,14 @@ You can block these at the firewall level:
 ```powershell
 # Block specific hosts for Microsoft account users (if switching off is not an option)
 $blockHosts = @(
-    "login.live.com",
-    "settings-win.data.microsoft.com"
+ "login.live.com",
+ "settings-win.data.microsoft.com"
 )
 
 foreach ($host in $blockHosts) {
-    # Get IP via nslookup
-    $ip = (nslookup $host | Select-String "^Name:").ToString().Split()[-1]
-    New-NetFirewallRule -DisplayName "Block $host" -Direction Outbound -Action Block -RemoteAddress $ip
+ # Get IP via nslookup
+ $ip = (nslookup $host | Select-String "^Name:").ToString().Split()[-1]
+ New-NetFirewallRule -DisplayName "Block $host" -Direction Outbound -Action Block -RemoteAddress $ip
 }
 ```
 
@@ -307,7 +307,7 @@ Local accounts respect firewall rules more consistently. If using a VPN or proxy
 ```powershell
 # Force all traffic through proxy for local accounts (more reliable)
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name "ProxyEnable" -Value 1
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name "ProxyServer" -Value "127.0.0.1:9050"  # For Tor
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name "ProxyServer" -Value "127.0.0.1:9050" # For Tor
 
 # Microsoft accounts may bypass proxy settings for some services
 # Test by monitoring network traffic during cloud operations

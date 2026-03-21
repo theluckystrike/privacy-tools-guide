@@ -78,23 +78,23 @@ IKEv2 handles network transitions well, which matters for satellite users experi
 # /etc/ipsec.conf
 
 config setup
-    charondebug="ike 2, knl 2, net 2, esp 2, dmn 2"
+ charondebug="ike 2, knl 2, net 2, esp 2, dmn 2"
 
 conn satellite-vpn
-    authby=secret
-    auto=start
-    keyexchange=ikev2
-    type=tunnel
-    # Reduce rekey intervals for satellite
-    rekey=no
-    reauth=no
-    dpdaction=restart
-    dpddelay=30s
-    dpdtimeout=120s
-    # Fragmentation settings
-    fragmentation=yes
-    # MTU optimization
-    mtu=1400
+ authby=secret
+ auto=start
+ keyexchange=ikev2
+ type=tunnel
+ # Reduce rekey intervals for satellite
+ rekey=no
+ reauth=no
+ dpdaction=restart
+ dpddelay=30s
+ dpdtimeout=120s
+ # Fragmentation settings
+ fragmentation=yes
+ # MTU optimization
+ mtu=1400
 ```
 
 ## MTU and Fragmentation Considerations
@@ -193,24 +193,24 @@ import socket
 import time
 
 class SatelliteVPNConnection:
-    def __init__(self, host, port, keepalive=25):
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.host = host
-        self.port = port
-        self.keepalive = keepalive
-        self.last_activity = time.time()
-    
-    def send_with_keepalive(self, data):
-        self.sock.sendto(data, (self.host, self.port))
-        self.last_activity = time.time()
-        
-        # Send periodic keepalive
-        if time.time() - self.last_activity > self.keepalive:
-            self._send_keepalive()
-    
-    def _send_keepalive(self):
-        # Minimal keepalive packet
-        self.sock.sendto(b'\x00\x00\x00\x00', (self.host, self.port))
+ def __init__(self, host, port, keepalive=25):
+ self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+ self.host = host
+ self.port = port
+ self.keepalive = keepalive
+ self.last_activity = time.time()
+
+ def send_with_keepalive(self, data):
+ self.sock.sendto(data, (self.host, self.port))
+ self.last_activity = time.time()
+
+ # Send periodic keepalive
+ if time.time() - self.last_activity > self.keepalive:
+ self._send_keepalive()
+
+ def _send_keepalive(self):
+ # Minimal keepalive packet
+ self.sock.sendto(b'\x00\x00\x00\x00', (self.host, self.port))
 ```
 
 ## Weather and Signal Degradation
@@ -229,15 +229,15 @@ TARGET="8.8.8.8"
 TIMEOUT=5
 
 while true; do
-    if ping -c 1 -W $TIMEOUT $TARGET > /dev/null 2>&1; then
-        echo "$(date): Connection healthy"
-    else
-        echo "$(date): Connection lost, attempting restart"
-        wg-quick down $VPN_INTERFACE
-        sleep 5
-        wg-quick up $VPN_INTERFACE
-    fi
-    sleep 60
+ if ping -c 1 -W $TIMEOUT $TARGET > /dev/null 2>&1; then
+ echo "$(date): Connection healthy"
+ else
+ echo "$(date): Connection lost, attempting restart"
+ wg-quick down $VPN_INTERFACE
+ sleep 5
+ wg-quick up $VPN_INTERFACE
+ fi
+ sleep 60
 done
 ```
 

@@ -678,7 +678,7 @@ mullvad split-tunnel add /usr/bin/curl
 mullvad split-tunnel list
 
 # On Linux with NetworkManager, exclude a subnet:
-nmcli connection modify "VPN-Name"   ipv4.routes "10.0.0.0/8"   ipv4.never-default yes
+nmcli connection modify "VPN-Name" ipv4.routes "10.0.0.0/8" ipv4.never-default yes
 ```
 
 Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.

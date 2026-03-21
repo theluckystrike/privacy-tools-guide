@@ -76,7 +76,7 @@ whois malicious-domain.com
 
 # Check if the IP is on any blocklists
 curl -s "https://api.abuseipdb.com/api/v2/check?ipAddress=192.168.1.1" \
-  -H "Key: YOUR_API_KEY" -H "Accept: application/json"
+ -H "Key: YOUR_API_KEY" -H "Accept: application/json"
 ```
 
 Newly registered domains (within days of receiving the email) are strong indicators of scam operations. Legitimate extortion requires time to build credibility—not the opposite.
@@ -89,9 +89,9 @@ Legitimate emails include proper authentication headers. Sextortion scammers fre
 
 ```
 Authentication-Results: mx.google.com;
-  dkim=fail header.i=@sender.com header.s=selector1 header.b=ABC123;
-  spf=softfail (google.com: domain of threat@malicious.com does not designate 192.0.2.1 as permitted sender) smtp.mailfrom=threat@malicious.com;
-  dmarc=fail (p=REJECT sp=REJECT dis=NONE) header.from=sender.com
+ dkim=fail header.i=@sender.com header.s=selector1 header.b=ABC123;
+ spf=softfail (google.com: domain of threat@malicious.com does not designate 192.0.2.1 as permitted sender) smtp.mailfrom=threat@malicious.com;
+ dmarc=fail (p=REJECT sp=REJECT dis=NONE) header.from=sender.com
 ```
 
 The `dkim=fail` and `spf=softfail` indicate the email likely didn't originate from the claimed sender. This is a strong technical indicator that the threat is fabricated.
@@ -103,9 +103,9 @@ Sextortion emails often include links that appear to lead to evidence but actual
 ```bash
 # Extract and analyze all URLs from an email
 grep -oP 'http[s]?://[^"]+' email.txt | while read url; do
-  echo "URL: $url"
-  curl -sI "$url" | grep -E "^(HTTP|Location)"
-  echo "---"
+ echo "URL: $url"
+ curl -sI "$url" | grep -E "^(HTTP|Location)"
+ echo "---"
 done
 ```
 
@@ -114,8 +114,8 @@ Never click these links. Instead, analyze them in a sandboxed environment or use
 ```bash
 # Check URL with VirusTotal API (requires API key)
 curl -s "https://www.virustotal.com/api/v3/urls" \
-  -X POST -H "x-apikey: YOUR_VT_API_KEY" \
-  -d "url=https://suspicious-link.com"
+ -X POST -H "x-apikey: YOUR_VT_API_KEY" \
+ -d "url=https://suspicious-link.com"
 ```
 
 ## What To Do If You Receive a Sextortion Email
@@ -179,8 +179,8 @@ Set up alerts for your email:
 EMAIL="your@email.com"
 RESULT=$(curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/$EMAIL")
 if [ "$RESULT" != "[]" ]; then
-  echo "Breach detected!"
-  echo "$RESULT" | jq
+ echo "Breach detected!"
+ echo "$RESULT" | jq
 fi
 ```
 

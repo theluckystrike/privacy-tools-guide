@@ -102,38 +102,38 @@ V2Ray and its fork Xray support multiple protocols with built-in obfuscation. Th
 
 ```json
 {
-  "inbounds": [
-    {
-      "port": 443,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "YOUR-UUID-HERE",
-            "alterId": 0
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "ws",
-        "security": "tls",
-        "tlsSettings": {
-          "certs": [
-            {
-              "certificateFile": "/path/to/cert.crt",
-              "keyFile": "/path/to/cert.key"
-            }
-          ]
-        }
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "settings": {}
-    }
-  ]
+ "inbounds": [
+ {
+ "port": 443,
+ "protocol": "vmess",
+ "settings": {
+ "clients": [
+ {
+ "id": "YOUR-UUID-HERE",
+ "alterId": 0
+ }
+ ]
+ },
+ "streamSettings": {
+ "network": "ws",
+ "security": "tls",
+ "tlsSettings": {
+ "certs": [
+ {
+ "certificateFile": "/path/to/cert.crt",
+ "keyFile": "/path/to/cert.key"
+ }
+ ]
+ }
+ }
+ }
+ ],
+ "outbounds": [
+ {
+ "protocol": "freedom",
+ "settings": {}
+ }
+ ]
 }
 ```
 
@@ -148,20 +148,20 @@ Another effective technique uses domain-fronted CDNs. This approach routes VPN t
 ```javascript
 // Cloudflare Worker for domain-fronting
 addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
+ event.respondWith(handleRequest(event.request))
 })
 
 async function handleRequest(request) {
-  // Forward to actual WireGuard server
-  // The Host header appears as legitimate Cloudflare traffic
-  return fetch('https://wg.your-server.com' + new URL(request.url).pathname, {
-    method: request.method,
-    headers: {
-      ...request.headers,
-      'Host': 'wg.your-server.com'
-    },
-    body: request.body
-  })
+ // Forward to actual WireGuard server
+ // The Host header appears as legitimate Cloudflare traffic
+ return fetch('https://wg.your-server.com' + new URL(request.url).pathname, {
+ method: request.method,
+ headers: {
+ ...request.headers,
+ 'Host': 'wg.your-server.com'
+ },
+ body: request.body
+ })
 }
 ```
 
@@ -185,8 +185,8 @@ Before relying on a configuration, test it under various network conditions:
 ```bash
 # Test connection stability
 for i in {1..10}; do
-  ping -c 1 10.0.0.1 && echo "Success" || echo "Failed"
-  sleep 5
+ ping -c 1 10.0.0.1 && echo "Success" || echo "Failed"
+ sleep 5
 done
 
 # Test throughput

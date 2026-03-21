@@ -190,39 +190,39 @@ For users applying multiple privacy tweaks, creating a PowerShell script provide
 # Run as Administrator
 
 param(
-    [switch]$Undo
+ [switch]$Undo
 )
 
 $registryChanges = @(
-    @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"; Name="AllowTelemetry"; Value=0; Type="DWord"},
-    @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy"; Name="TailoredExperiencesWithDiagnosticDataEnabled"; Value=0; Type="DWord"},
-    @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy"; Name="PublishUserActivities"; Value=0; Type="DWord"},
-    @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"; Name="BingSearchEnabled"; Value=0; Type="DWord"},
-    @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient"; Name="EnableMulticast"; Value=0; Type="DWord"},
-    @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo"; Name="Enabled"; Value=0; Type="DWord"}
+ @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"; Name="AllowTelemetry"; Value=0; Type="DWord"},
+ @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy"; Name="TailoredExperiencesWithDiagnosticDataEnabled"; Value=0; Type="DWord"},
+ @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy"; Name="PublishUserActivities"; Value=0; Type="DWord"},
+ @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"; Name="BingSearchEnabled"; Value=0; Type="DWord"},
+ @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient"; Name="EnableMulticast"; Value=0; Type="DWord"},
+ @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo"; Name="Enabled"; Value=0; Type="DWord"}
 )
 
 if ($Undo) {
-    foreach ($change in $registryChanges) {
-        Remove-ItemProperty -Path $change.Path -Name $change.Name -ErrorAction SilentlyContinue
-    }
-    Write-Host "Privacy tweaks reverted"
+ foreach ($change in $registryChanges) {
+ Remove-ItemProperty -Path $change.Path -Name $change.Name -ErrorAction SilentlyContinue
+ }
+ Write-Host "Privacy tweaks reverted"
 } else {
-    foreach ($change in $registryChanges) {
-        if (-not (Test-Path $change.Path)) {
-            New-Item -Path $change.Path -Force | Out-Null
-        }
-        Set-ItemProperty -Path $change.Path -Name $change.Name -Value $change.Value -Type $change.Type
-    }
-    Write-Host "Privacy tweaks applied"
+ foreach ($change in $registryChanges) {
+ if (-not (Test-Path $change.Path)) {
+ New-Item -Path $change.Path -Force | Out-Null
+ }
+ Set-ItemProperty -Path $change.Path -Name $change.Name -Value $change.Value -Type $change.Type
+ }
+ Write-Host "Privacy tweaks applied"
 }
 ```
 
 Execute this script with `-Undo` to revert all changes:
 
 ```powershell
-.\PrivacyTweaks.ps1        # Apply tweaks
-.\PrivacyTweaks.ps1 -Undo  # Revert tweaks
+.\PrivacyTweaks.ps1 # Apply tweaks
+.\PrivacyTweaks.ps1 -Undo # Revert tweaks
 ```
 
 ## Comparing Registry Tweaks vs. GUI-Based Tools
@@ -248,7 +248,7 @@ reg query "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTel
 For settings requiring system restart, Windows displays a notification. Some changes take effect immediately upon restarting related services:
 
 ```powershell
-Restart-Service -Name "DiagTrack" -Force  # Requires administrator
+Restart-Service -Name "DiagTrack" -Force # Requires administrator
 ```
 
 To confirm telemetry data is not being uploaded, use Windows Resource Monitor or a network monitor like Wireshark to watch for outbound connections to `vortex.data.microsoft.com` and related endpoints after applying your tweaks.

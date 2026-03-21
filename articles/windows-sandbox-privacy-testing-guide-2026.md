@@ -47,18 +47,18 @@ Create a configuration file named `sandbox.wsb` in any folder:
 
 ```xml
 <Configuration>
-    <Networking>Disable</Networking>
-    <MappedFolders>
-        <MappedFolder>
-            <HostFolder>C:\privacy-tools</HostFolder>
-            <SandboxFolder>C:\shared</SandboxFolder>
-            <ReadOnly>true</ReadOnly>
-        </MappedFolder>
-    </MappedFolders>
-    <StartupFolder>C:\shared\startup.ps1</StartupFolder>
-    <MemoryInMB>4096</MemoryInMB>
-    <vGPU>Enable</vGPU>
-    <ClipboardTransfer>Disable</ClipboardTransfer>
+ <Networking>Disable</Networking>
+ <MappedFolders>
+ <MappedFolder>
+ <HostFolder>C:\privacy-tools</HostFolder>
+ <SandboxFolder>C:\shared</SandboxFolder>
+ <ReadOnly>true</ReadOnly>
+ </MappedFolder>
+ </MappedFolders>
+ <StartupFolder>C:\shared\startup.ps1</StartupFolder>
+ <MemoryInMB>4096</MemoryInMB>
+ <vGPU>Enable</vGPU>
+ <ClipboardTransfer>Disable</ClipboardTransfer>
 </Configuration>
 ```
 
@@ -85,17 +85,17 @@ Rather than manually installing analysis tools every time you launch a sandbox, 
 
 ```xml
 <Configuration>
-    <Networking>Enable</Networking>
-    <MappedFolders>
-        <MappedFolder>
-            <HostFolder>C:\sandbox-tools</HostFolder>
-            <SandboxFolder>C:\tools</SandboxFolder>
-            <ReadOnly>true</ReadOnly>
-        </MappedFolder>
-    </MappedFolders>
-    <LogonCommand>
-        <Command>C:\tools\setup.ps1</Command>
-    </LogonCommand>
+ <Networking>Enable</Networking>
+ <MappedFolders>
+ <MappedFolder>
+ <HostFolder>C:\sandbox-tools</HostFolder>
+ <SandboxFolder>C:\tools</SandboxFolder>
+ <ReadOnly>true</ReadOnly>
+ </MappedFolder>
+ </MappedFolders>
+ <LogonCommand>
+ <Command>C:\tools\setup.ps1</Command>
+ </LogonCommand>
 </Configuration>
 ```
 
@@ -156,7 +156,7 @@ For deeper network analysis, combine Sandbox with tools like Wireshark. Disable 
 
 ```xml
 <Configuration>
-    <Networking>Enable</Networking>
+ <Networking>Enable</Networking>
 </Configuration>
 ```
 
@@ -194,35 +194,35 @@ For repeated testing scenarios, automate Sandbox launch and teardown using Power
 
 ```powershell
 function Start-PrivacyTest {
-    param(
-        [string]$ApplicationPath,
-        [string]$LogDirectory = "C:\privacy-logs"
-    )
+ param(
+ [string]$ApplicationPath,
+ [string]$LogDirectory = "C:\privacy-logs"
+ )
 
-    # Create log directory
-    if (!(Test-Path $LogDirectory)) {
-        New-Item -ItemType Directory -Path $LogDirectory
-    }
+ # Create log directory
+ if (!(Test-Path $LogDirectory)) {
+ New-Item -ItemType Directory -Path $LogDirectory
+ }
 
-    $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-    $testLog = "$LogDirectory\test_$timestamp.log"
+ $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+ $testLog = "$LogDirectory\test_$timestamp.log"
 
-    # Launch sandbox with logging
-    $sandbox = Start-Process wsandbox -PassThru -RedirectStandardError $testLog
+ # Launch sandbox with logging
+ $sandbox = Start-Process wsandbox -PassThru -RedirectStandardError $testLog
 
-    # Wait for sandbox startup
-    Start-Sleep -Seconds 5
+ # Wait for sandbox startup
+ Start-Sleep -Seconds 5
 
-    # Copy test application if specified
-    if ($ApplicationPath) {
-        Copy-Item $ApplicationPath "C:\Users\WDAGUtilityAccount\Desktop\"
-    }
+ # Copy test application if specified
+ if ($ApplicationPath) {
+ Copy-Item $ApplicationPath "C:\Users\WDAGUtilityAccount\Desktop\"
+ }
 
-    # Return process and log path
-    return @{
-        Process = $sandbox
-        LogPath = $testLog
-    }
+ # Return process and log path
+ return @{
+ Process = $sandbox
+ LogPath = $testLog
+ }
 }
 
 # Usage
@@ -259,10 +259,10 @@ Once you have established workflows for common test types, document them as reus
 
 ```
 C:\sandbox-configs\
-  ├── browser-extension-test.wsb   # Networking on, Wireshark ready
-  ├── installer-audit.wsb          # Networking off, ProcMon autostart
-  ├── network-capture.wsb          # Networking on, host Wireshark attached
-  └── document-test.wsb            # Fully isolated, Office viewer only
+ ├── browser-extension-test.wsb # Networking on, Wireshark ready
+ ├── installer-audit.wsb # Networking off, ProcMon autostart
+ ├── network-capture.wsb # Networking on, host Wireshark attached
+ └── document-test.wsb # Fully isolated, Office viewer only
 ```
 
 Version control this directory with Git. When a new version of Windows ships, re-run your standard test suite against previously-approved software to catch regression in privacy behavior. Software vendors occasionally introduce telemetry in minor updates that wasn't present in the version you originally reviewed.

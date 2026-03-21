@@ -38,24 +38,24 @@ Here's a JavaScript snippet demonstrating how a website can capture local IP add
 
 ```javascript
 function findIPs() {
-  const ipSet = new Set();
-  const pc = new RTCPeerConnection({
-    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
-  });
+ const ipSet = new Set();
+ const pc = new RTCPeerConnection({
+ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+ });
 
-  pc.createDataChannel('');
-  pc.createOffer().then(offer => pc.setLocalDescription(offer));
+ pc.createDataChannel('');
+ pc.createOffer().then(offer => pc.setLocalDescription(offer));
 
-  pc.onicecandidate = (ice) => {
-    if (!ice.candidate) return;
-    const ip = ice.candidate.candidate.match(/(\d{1,3}\.){3}\d{1,3}/);
-    if (ip) ipSet.add(ip[0]);
-  };
+ pc.onicecandidate = (ice) => {
+ if (!ice.candidate) return;
+ const ip = ice.candidate.candidate.match(/(\d{1,3}\.){3}\d{1,3}/);
+ if (ip) ipSet.add(ip[0]);
+ };
 
-  setTimeout(() => {
-    console.log('Discovered IPs:', Array.from(ipSet));
-    pc.close();
-  }, 1000);
+ setTimeout(() => {
+ console.log('Discovered IPs:', Array.from(ipSet));
+ pc.close();
+ }, 1000);
 }
 
 findIPs();
@@ -177,11 +177,11 @@ Some STUN server implementations return additional metadata:
 ```javascript
 // Advanced STUN server probing
 const stun_servers = [
-  'stun.l.google.com:19302',
-  'stun1.l.google.com:19302',
-  'stun2.l.google.com:19302',
-  'stun3.l.google.com:19302',
-  'stun4.l.google.com:19302'
+ 'stun.l.google.com:19302',
+ 'stun1.l.google.com:19302',
+ 'stun2.l.google.com:19302',
+ 'stun3.l.google.com:19302',
+ 'stun4.l.google.com:19302'
 ];
 
 // Testing against multiple servers reveals if all return same IP

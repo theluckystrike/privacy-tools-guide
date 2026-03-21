@@ -178,8 +178,8 @@ dig +short whoami.akamai.net @ns1-1.akamaitech.net
 resolvectl status | grep "DNS Server"
 
 # WireGuard: check AllowedIPs in config
-# Full tunnel:   AllowedIPs = 0.0.0.0/0, ::/0
-# Split tunnel:  AllowedIPs = 10.0.0.0/8
+# Full tunnel: AllowedIPs = 0.0.0.0/0, ::/0
+# Split tunnel: AllowedIPs = 10.0.0.0/8
 grep "AllowedIPs" /etc/wireguard/wg0.conf
 ```
 

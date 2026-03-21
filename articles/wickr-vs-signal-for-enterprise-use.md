@@ -41,10 +41,10 @@ import wickr
 client = wickr.Client(api_key="YOUR_API_KEY", api_secret="YOUR_SECRET")
 
 room = client.create_room(
-    name="engineering-secure",
-    description="Secure comms for engineering team",
-    auto_delete=86400,  # Messages expire after 24 hours
-    participants=["user1@company.com", "user2@company.com"]
+ name="engineering-secure",
+ description="Secure comms for engineering team",
+ auto_delete=86400, # Messages expire after 24 hours
+ participants=["user1@company.com", "user2@company.com"]
 )
 
 print(f"Room created: {room.id}")
@@ -79,16 +79,16 @@ Wickr offers both cloud and on-premises deployment options. Enterprises requirin
 ```yaml
 # Wickr Enterprise deployment configuration
 services:
-  wickr-core:
-    image: wickr/enterprise-core:2.0
-    ports:
-      - "5000:5000"
-    environment:
-      - NODE_TYPE=master
-      - ENCRYPTION_MODE=hardware
-    volumes:
-      - wickr-data:/data
-      - /hardware-security-module:/hsm
+ wickr-core:
+ image: wickr/enterprise-core:2.0
+ ports:
+ - "5000:5000"
+ environment:
+ - NODE_TYPE=master
+ - ENCRYPTION_MODE=hardware
+ volumes:
+ - wickr-data:/data
+ - /hardware-security-module:/hsm
 ```
 
 This flexibility appeals to government agencies, financial institutions, and healthcare organizations with compliance requirements.
@@ -131,24 +131,24 @@ For developers building internal tools, here's a practical integration pattern c
 ```javascript
 // Hybrid approach: Wickr for internal, Signal for external
 async function sendSecureMessage(recipient, message, context) {
-  const isInternal = await checkInternalUser(recipient);
-  
-  if (isInternal) {
-    // Use Wickr for full enterprise features
-    return wickrClient.send({
-      to: recipient,
-      message: message,
-      policy: 'compliance_archive',
-      expires: 86400
-    });
-  } else {
-    // Use Signal for external partners
-    return signalClient.sendMessage({
-      recipient: recipient,
-      body: message,
-      attachments: context.attachments
-    });
-  }
+ const isInternal = await checkInternalUser(recipient);
+
+ if (isInternal) {
+ // Use Wickr for full enterprise features
+ return wickrClient.send({
+ to: recipient,
+ message: message,
+ policy: 'compliance_archive',
+ expires: 86400
+ });
+ } else {
+ // Use Signal for external partners
+ return signalClient.sendMessage({
+ recipient: recipient,
+ body: message,
+ attachments: context.attachments
+ });
+ }
 }
 ```
 
@@ -286,15 +286,15 @@ Many organizations use both platforms strategically:
 
 ```
 Internal Teams: Wickr (compliance, control, logging)
-  ├─ Engineering: Signal (open-source transparency priority)
-  ├─ Finance: Wickr (regulatory requirements)
-  ├─ Sales: Signal (cross-platform convenience)
-  └─ Compliance: Wickr (audit trail critical)
+ ├─ Engineering: Signal (open-source transparency priority)
+ ├─ Finance: Wickr (regulatory requirements)
+ ├─ Sales: Signal (cross-platform convenience)
+ └─ Compliance: Wickr (audit trail critical)
 
 External Communication:
-  ├─ Partners: Signal (simplicity)
-  ├─ Regulated Customers: Wickr (compliance)
-  └─ Public Engagement: Signal (ubiquity)
+ ├─ Partners: Signal (simplicity)
+ ├─ Regulated Customers: Wickr (compliance)
+ └─ Public Engagement: Signal (ubiquity)
 ```
 
 This approach costs more but optimizes for each use case's requirements.

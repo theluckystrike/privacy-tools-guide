@@ -107,18 +107,18 @@ Endpoint = vpn.example.com:51820
 AllowedIPs = 0.0.0.0/0, ::/0
 
 PostUp = iptables -I INPUT -i wg0 -j ACCEPT; \
-         iptables -I FORWARD -i wg0 -j ACCEPT; \
-         iptables -I OUTPUT -o wg0 -j ACCEPT; \
-         iptables -A INPUT -j DROP; \
-         iptables -A FORWARD -j DROP; \
-         iptables -A OUTPUT -j DROP
+ iptables -I FORWARD -i wg0 -j ACCEPT; \
+ iptables -I OUTPUT -o wg0 -j ACCEPT; \
+ iptables -A INPUT -j DROP; \
+ iptables -A FORWARD -j DROP; \
+ iptables -A OUTPUT -j DROP
 
 PostDown = iptables -D INPUT -i wg0 -j ACCEPT; \
-           iptables -D FORWARD -i wg0 -j ACCEPT; \
-           iptables -D OUTPUT -o wg0 -j ACCEPT; \
-           iptables -D INPUT -j DROP; \
-           iptables -D FORWARD -j DROP; \
-           iptables -D OUTPUT -j DROP
+ iptables -D FORWARD -i wg0 -j ACCEPT; \
+ iptables -D OUTPUT -o wg0 -j ACCEPT; \
+ iptables -D INPUT -j DROP; \
+ iptables -D FORWARD -j DROP; \
+ iptables -D OUTPUT -j DROP
 ```
 
 The script blocks all inbound and outbound traffic except traffic through the WireGuard interface. When the tunnel disconnects, your system becomes effectively isolated, preventing any unencrypted traffic from leaking.
@@ -127,14 +127,14 @@ For IPv6 compatibility, add parallel ip6tables rules:
 
 ```ini
 PostUp = ip6tables -I INPUT -i wg0 -j ACCEPT; \
-         ip6tables -I FORWARD -i wg0 -j ACCEPT; \
-         ip6tables -A INPUT -j DROP; \
-         ip6tables -A FORWARD -j DROP
+ ip6tables -I FORWARD -i wg0 -j ACCEPT; \
+ ip6tables -A INPUT -j DROP; \
+ ip6tables -A FORWARD -j DROP
 
 PostDown = ip6tables -D INPUT -i wg0 -j ACCEPT; \
-           ip6tables -D FORWARD -i wg0 -j ACCEPT; \
-           ip6tables -D INPUT -j DROP; \
-           ip6tables -D FORWARD -j DROP
+ ip6tables -D FORWARD -i wg0 -j ACCEPT; \
+ ip6tables -D INPUT -j DROP; \
+ ip6tables -D FORWARD -j DROP
 ```
 
 ## Custom DNS Resolution
@@ -148,9 +148,9 @@ Address = 10.2.0.5/24
 DNS = 10.0.0.53
 
 PostUp = mkdir -p /etc/netns/wg0; \
-         echo "nameserver 1.1.1.1" > /etc/netns/wg0/resolv.conf; \
-         echo "nameserver 1.0.0.1" >> /etc/netns/wg0/resolv.conf; \
-         resolvconf -a wg0 -m 0 -x
+ echo "nameserver 1.1.1.1" > /etc/netns/wg0/resolv.conf; \
+ echo "nameserver 1.0.0.1" >> /etc/netns/wg0/resolv.conf; \
+ resolvconf -a wg0 -m 0 -x
 
 PostDown = resolvconf -d wg0 -f
 ```
@@ -168,7 +168,7 @@ Endpoint = us-east.vpn.com:51820
 AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 PostUp = ip route add default dev wg0 via 10.2.0.1; \
-         iptables -t mangle -A PREROUTING -s 192.168.1.100 -j MARK --set-mark 1
+ iptables -t mangle -A PREROUTING -s 192.168.1.100 -j MARK --set-mark 1
 
 [Peer]
 PublicKey = <peer2-key>

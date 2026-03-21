@@ -205,7 +205,7 @@ Rapidly switch between multiple ports to evade blocking:
 remote server.example.com 443 tcp
 remote server.example.com 80 tcp
 remote server.example.com 8080 tcp
-remote-random  # Randomize connection attempts
+remote-random # Randomize connection attempts
 ```
 
 This ensures if one port is blocked, fallback ports work automatically.
@@ -305,31 +305,31 @@ Test which ports are accessible before configuring VPN:
 
 PORTS=(53 80 443 500 1194 1701 1723 4500 8080 8443)
 SERVERS=(
-  "google.com:53"
-  "cloudflare.com:80"
-  "example.com:443"
-  "vpn.example.com:500"
-  "vpn.example.com:1194"
+ "google.com:53"
+ "cloudflare.com:80"
+ "example.com:443"
+ "vpn.example.com:500"
+ "vpn.example.com:1194"
 )
 
 for server in "${SERVERS[@]}"; do
-  HOST=$(echo $server | cut -d':' -f1)
-  PORT=$(echo $server | cut -d':' -f2)
+ HOST=$(echo $server | cut -d':' -f1)
+ PORT=$(echo $server | cut -d':' -f2)
 
-  echo -n "Testing $HOST:$PORT... "
+ echo -n "Testing $HOST:$PORT... "
 
-  if nc -zv -w 2 $HOST $PORT 2>/dev/null; then
-    echo "OPEN"
-  else
-    echo "BLOCKED/FILTERED"
-  fi
+ if nc -zv -w 2 $HOST $PORT 2>/dev/null; then
+ echo "OPEN"
+ else
+ echo "BLOCKED/FILTERED"
+ fi
 done
 
 # Advanced: Test with different protocols
 echo -e "\nTesting TCP/UDP protocols:"
 for port in 53 80 443 1194; do
-  echo "Port $port TCP: $(nc -zv -w 2 -t $port 2>&1 | grep -o 'succeeded\|refused\|timeout')"
-  echo "Port $port UDP: $(nc -zu -w 2 -u 127.0.0.1 $port 2>&1 | grep -o 'succeeded\|refused\|timeout')"
+ echo "Port $port TCP: $(nc -zv -w 2 -t $port 2>&1 | grep -o 'succeeded\|refused\|timeout')"
+ echo "Port $port UDP: $(nc -zu -w 2 -u 127.0.0.1 $port 2>&1 | grep -o 'succeeded\|refused\|timeout')"
 done
 ```
 
@@ -350,7 +350,7 @@ Actual connectivity commands for each:
 ```bash
 # ExpressVPN (CLI)
 expressvpn connect smart
-expressvpn list  # Shows available ports
+expressvpn list # Shows available ports
 
 # Mullvad (bridge relay)
 mullvad relay set tunnel-protocol wireguard
@@ -409,11 +409,11 @@ If you're configuring firewalls, understanding VPN detection helps:
 
 ```
 # Block obvious VPN signatures (not foolproof)
-block port 1194  # OpenVPN default
-block port 1723  # PPTP
-block port 1701  # L2TP
-block protocol 50  # IPSec (AH)
-block protocol 51  # IPSec (ESP)
+block port 1194 # OpenVPN default
+block port 1723 # PPTP
+block port 1701 # L2TP
+block protocol 50 # IPSec (AH)
+block protocol 51 # IPSec (ESP)
 
 # Block suspected obfuscated VPN (more aggressive)
 identify_and_block pattern "obfs-tls"

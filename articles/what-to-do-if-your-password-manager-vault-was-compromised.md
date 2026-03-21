@@ -54,7 +54,7 @@ If you still have access to your account and suspect the master password may be 
 
 ```bash
 # Generate a secure passphrase using a password manager or CLI
-openssl rand -base64 24  # generates a 32-character random string
+openssl rand -base64 24 # generates a 32-character random string
 ```
 
 ## Account-Specific Recovery Steps
@@ -82,9 +82,9 @@ aws sts get-session-token --duration-seconds 43200
 
 # Rotate GitHub personal access tokens via API
 curl -X POST \
-  -H "Authorization: token OLD_TOKEN" \
-  https://api.github.com/authorizations \
-  -d '{"note":"temp","scopes":["repo"],"expires_at":"2026-03-17T00:00:00Z"}'
+ -H "Authorization: token OLD_TOKEN" \
+ https://api.github.com/authorizations \
+ -d '{"note":"temp","scopes":["repo"],"expires_at":"2026-03-17T00:00:00Z"}'
 ```
 
 ### Review Access Logs
@@ -208,7 +208,7 @@ Isolate your password manager access:
 # Use a VPN when accessing password managers on public networks
 # Configure your firewall to restrict outbound connections
 sudo ufw default deny outgoing
-sudo ufw allow out to any port 443  # HTTPS only
+sudo ufw allow out to any port 443 # HTTPS only
 ```
 
 

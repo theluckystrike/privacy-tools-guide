@@ -31,7 +31,7 @@ curl -s https://api.ipify.org?format=json
 
 # Compare with actual server IP
 ip addr show tun0 | grep inet
-# inet 10.8.0.2/24  scope global tun0
+# inet 10.8.0.2/24 scope global tun0
 ```
 
 In this scenario, `45.33.32.156` is the shared IP visible to the internet, while `10.8.0.2` is your internal VPN IP visible only inside the tunnel.
@@ -65,12 +65,12 @@ Endpoint = dedicated-ip.vpnprovider.com:51820
 ```python
 # Pseudocode: Demonstrating traffic correlation difficulty
 def estimate_identifiability(ip_type, users_count):
-    if ip_type == "shared":
-        # With 500 users on same IP, your "signal" is 1/500 of total traffic
-        return 1 / users_count
-    elif ip_type == "dedicated":
-        # Your signal is 100% identifiable to that IP
-        return 1.0
+ if ip_type == "shared":
+ # With 500 users on same IP, your "signal" is 1/500 of total traffic
+ return 1 / users_count
+ elif ip_type == "dedicated":
+ # Your signal is 100% identifiable to that IP
+ return 1.0
 
 # Shared IP with 500 users: 0.2% identifiability
 # Dedicated IP: 100% identifiability
@@ -94,10 +94,10 @@ def estimate_identifiability(ip_type, users_count):
 # Example: Service-side rate limiting configuration
 limit_req_zone $binary_remote_addr zone=api_limit:10m rate=10r/s;
 server {
-    location /api/ {
-        limit_req zone=api_limit burst=20;
-        # With shared IP, all VPN users share this bucket
-    }
+ location /api/ {
+ limit_req zone=api_limit burst=20;
+ # With shared IP, all VPN users share this bucket
+ }
 }
 ```
 
@@ -118,7 +118,7 @@ Shared IPs work well for general browsing, bypassing geographic restrictions, an
 ```bash
 # curl with shared VPN IP
 curl --socks5 socks5://user:pass@shared-ip.vpnprovider.com:1080 \
-     https://api.ipify.org?format=json
+ https://api.ipify.org?format=json
 ```
 
 ### When to Choose Dedicated IP
@@ -140,7 +140,7 @@ ListenPort = 51820
 
 [Peer]
 PublicKey = <your-client-public-key>
-AllowedIPs = 10.0.0.2/32  # Only this dedicated IP can connect
+AllowedIPs = 10.0.0.2/32 # Only this dedicated IP can connect
 PersistentKeepalive = 25
 ```
 
@@ -158,24 +158,24 @@ From a development perspective, handling both IP types requires different approa
 import requests
 
 def check_ip_type(vpn_credentials):
-    """Determine if VPN is using shared or dedicated IP"""
-    session = requests.Session()
-    session.proxies = {
-        'http': f'socks5://{vpn_credentials}',
-        'https': f'socks5://{vpn_credentials}'
-    }
-    
-    response = session.get('https://api.ipify.org?format=json')
-    vpn_ip = response.json()['ip']
-    
-    # Check against known VPN IP ranges (simplified)
-    is_vpn_ip = check_vpn_ip_database(vpn_ip)
-    
-    return {
-        'ip': vpn_ip,
-        'is_vpn': is_vpn_ip,
-        'type': 'unknown'  # Would need provider API to confirm dedicated
-    }
+ """Determine if VPN is using shared or dedicated IP"""
+ session = requests.Session()
+ session.proxies = {
+ 'http': f'socks5://{vpn_credentials}',
+ 'https': f'socks5://{vpn_credentials}'
+ }
+
+ response = session.get('https://api.ipify.org?format=json')
+ vpn_ip = response.json()['ip']
+
+ # Check against known VPN IP ranges (simplified)
+ is_vpn_ip = check_vpn_ip_database(vpn_ip)
+
+ return {
+ 'ip': vpn_ip,
+ 'is_vpn': is_vpn_ip,
+ 'type': 'unknown' # Would need provider API to confirm dedicated
+ }
 ```
 
 ## Making the Decision

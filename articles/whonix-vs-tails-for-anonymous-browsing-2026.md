@@ -26,16 +26,16 @@ Choosing between Whonix and Tails for anonymous browsing depends on your threat 
 Whonix runs as two virtual machines: a "Gateway" that routes all traffic through Tor, and a "Workstation" where your browsing and applications operate. This isolation means the workstation has no direct internet access—everything must pass through the Tor network via the gateway.
 
 ```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│  Physical   │────▶│  Whonix     │────▶│   Tor       │
-│  Host       │     │  Gateway    │     │   Network   │
-└─────────────┘     └─────────────┘     └─────────────┘
-                           │
-                           ▼
-                    ┌─────────────┐
-                    │  Whonix     │
-                    │  Workstation│
-                    └─────────────┘
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ Physical │────▶│ Whonix │────▶│ Tor │
+│ Host │ │ Gateway │ │ Network │
+└─────────────┘ └─────────────┘ └─────────────┘
+ │
+ ▼
+ ┌─────────────┐
+ │ Whonix │
+ │ Workstation│
+ └─────────────┘
 ```
 
 The workstation's lack of a public IP address provides strong protection against IP leaks, even if malware executes on the system. An attacker compromising the workstation cannot discover the user's real IP without also compromising the gateway.
@@ -45,15 +45,15 @@ The workstation's lack of a public IP address provides strong protection against
 Tails operates as a live USB or DVD that boots into a stateless Debian-based operating system. Nothing persists across reboots by default—all changes are stored in RAM and wiped when you shut down. This "amnesic" design protects against forensic analysis on the physical machine.
 
 ```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│  Physical   │────▶│   Tails     │────▶│   Tor       │
-│  USB/Drive  │     │   OS        │     │   Network   │
-└─────────────┘     └─────────────┘     └─────────────┘
-                          │
-                    ┌─────┴─────┐
-                    │  RAM only  │
-                    │  (stateless)│
-                    └───────────┘
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ Physical │────▶│ Tails │────▶│ Tor │
+│ USB/Drive │ │ OS │ │ Network │
+└─────────────┘ └─────────────┘ └─────────────┘
+ │
+ ┌─────┴─────┐
+ │ RAM only │
+ │ (stateless)│
+ └───────────┘
 ```
 
 Tails routes all connections through Tor automatically, including DNS queries. It includes a persistent volume option for storing encrypted data across sessions, but the operating system itself remains ephemeral.
@@ -229,20 +229,20 @@ torify curl https://check.torproject.org
 
 ```
 ╔═══════════════════════════════════════════════════════════╗
-║ THREAT MODEL vs SYSTEM CHOICE                             ║
+║ THREAT MODEL vs SYSTEM CHOICE ║
 ╠═══════════════════════════════════════════════════════════╣
-║ Threat                  │ Whonix    │ Tails    │ Both OK  ║
+║ Threat │ Whonix │ Tails │ Both OK ║
 ╠═══════════════════════════════════════════════════════════╣
-║ ISP/Network monitoring  │ ✓ Better  │ ✓ Both   │          ║
-║ Malware on host OS      │ ✓ Better  │ ✓ Immune │          ║
-║ Physical device seizure │          │ ✓ Better │          ║
-║ Forensic analysis       │          │ ✓ Better │          ║
-║ Long-term anonymity     │ ✓ Better  │          │          ║
-║ One-time anonymous task │          │ ✓ Better │          ║
-║ Running servers/daemons │ ✓ Better  │          │          ║
-║ Multi-session work      │ ✓ Better  │ Doable   │          ║
-║ USB-based portability   │          │ ✓ Better │          ║
-║ Development workflow    │ ✓ Better  │ Harder   │          ║
+║ ISP/Network monitoring │ ✓ Better │ ✓ Both │ ║
+║ Malware on host OS │ ✓ Better │ ✓ Immune │ ║
+║ Physical device seizure │ │ ✓ Better │ ║
+║ Forensic analysis │ │ ✓ Better │ ║
+║ Long-term anonymity │ ✓ Better │ │ ║
+║ One-time anonymous task │ │ ✓ Better │ ║
+║ Running servers/daemons │ ✓ Better │ │ ║
+║ Multi-session work │ ✓ Better │ Doable │ ║
+║ USB-based portability │ │ ✓ Better │ ║
+║ Development workflow │ ✓ Better │ Harder │ ║
 ╚═══════════════════════════════════════════════════════════╝
 ```
 
@@ -276,15 +276,15 @@ Tails Resource Profile:
 # Enable VT-x/AMD-V virtualization extensions in BIOS
 
 # Check if virtualization is enabled
-kvm-ok  # Linux
-system_profiler SPHardwareDataType | grep Virtualization  # macOS
+kvm-ok # Linux
+system_profiler SPHardwareDataType | grep Virtualization # macOS
 
 # Tails: Optimize USB performance
 # Use USB 3.0 drive for fastest boot times
 # Format with optimal block size
 
-mkfs.exfat -n TAILS /dev/sdX1  # Fastest format
-mkfs.ext4 -b 4096 -N 100000 /dev/sdX1  # Best performance
+mkfs.exfat -n TAILS /dev/sdX1 # Fastest format
+mkfs.ext4 -b 4096 -N 100000 /dev/sdX1 # Best performance
 
 # Disable journaling for better USB wear characteristics
 tune2fs -O ^has_journal /dev/sdX1

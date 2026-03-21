@@ -155,11 +155,11 @@ For Windows Firewall users, create outbound rules blocking these domains:
 ```powershell
 # Create firewall rule to block telemetry
 New-NetFirewallRule -DisplayName "Block Windows Telemetry" `
-    -Direction Outbound `
-    -Action Block `
-    -RemoteAddress @("13.107.4.50", "13.107.5.88", "40.77.226.189") `
-    -Protocol TCP `
-    -Enabled True
+ -Direction Outbound `
+ -Action Block `
+ -RemoteAddress @("13.107.4.50", "13.107.5.88", "40.77.226.189") `
+ -Protocol TCP `
+ -Enabled True
 ```
 
 ## Task Scheduler Telemetry Cleanup
@@ -169,19 +169,19 @@ Windows schedules numerous telemetry tasks through Task Scheduler. Disabling the
 ```powershell
 # Disable common telemetry tasks
 $telemetryTasks = @(
-    "Microsoft\Windows\Application Experience\ProgramDataUpdater",
-    "Microsoft\Windows\Application Experience\StartupTask",
-    "Microsoft\Windows\Autochk\Proxy",
-    "Microsoft\Windows\Customer Experience Improvement Program\Consolidator",
-    "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip",
-    "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector",
-    "Microsoft\Windows\Shell\CreateObjectTask",
-    "Microsoft\Windows\System Restore\SR",
-    "Microsoft\Windows\Diagnosis\RecommendedTroubleshootingScanner"
+ "Microsoft\Windows\Application Experience\ProgramDataUpdater",
+ "Microsoft\Windows\Application Experience\StartupTask",
+ "Microsoft\Windows\Autochk\Proxy",
+ "Microsoft\Windows\Customer Experience Improvement Program\Consolidator",
+ "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip",
+ "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector",
+ "Microsoft\Windows\Shell\CreateObjectTask",
+ "Microsoft\Windows\System Restore\SR",
+ "Microsoft\Windows\Diagnosis\RecommendedTroubleshootingScanner"
 )
 
 foreach ($task in $telemetryTasks) {
-    Disable-ScheduledTask -TaskName $task -ErrorAction SilentlyContinue
+ Disable-ScheduledTask -TaskName $task -ErrorAction SilentlyContinue
 }
 ```
 
@@ -263,7 +263,7 @@ Despite your best efforts, Windows may re-enable telemetry after major updates. 
 ```powershell
 # Create a scheduled task to enforce telemetry settings on reboot
 $action = New-ScheduledTaskAction -Execute powershell.exe `
-    -Argument "-ExecutionPolicy Bypass -File C:\scripts\disable-telemetry.ps1"
+ -Argument "-ExecutionPolicy Bypass -File C:\scripts\disable-telemetry.ps1"
 $trigger = New-ScheduledTaskTrigger -AtStartup
 $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -RunLevel Highest
 Register-ScheduledTask -TaskName "DisableTelemetryAtBoot" -Action $action -Trigger $trigger -Principal $principal

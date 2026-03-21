@@ -27,7 +27,7 @@ On Linux, you can view tunnel interfaces after connecting to a VPN:
 
 ```bash
 ip addr show | grep -i tun
-# Output typically shows tun0, tun1, etc. with VPN-assigned IPs
+# Output typically shows tun0, tun1, etc. With VPN-assigned IPs
 ```
 
 The tunnel interface becomes another pathway into your routing table. You control what goes through it explicitly using routing policies.
@@ -131,8 +131,8 @@ ipv4Settings.includedRoutes = [NEIPv4Route.default()]
 
 // Split tunnel: include only required subnets
 ipv4Settings.includedRoutes = [
-    NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
-    NEIPv4Route(destinationAddress: "192.168.100.0", subnetMask: "255.255.255.0")
+ NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
+ NEIPv4Route(destinationAddress: "192.168.100.0", subnetMask: "255.255.255.0")
 ]
 ```
 
@@ -276,42 +276,42 @@ macOS developers building VPN extensions need to implement packet filtering:
 ```swift
 // Implementing split tunnel in Network Extension
 class SplitTunnelPacketHandler {
-    let allowedDomains = ["corporate.com", "internal.example.com"]
+ let allowedDomains = ["corporate.com", "internal.example.com"]
 
-    func shouldRouteThroughTunnel(for address: String) -> Bool {
-        // Check if address matches allowed domains
-        for domain in allowedDomains {
-            if address.hasSuffix(domain) {
-                return true
-            }
-        }
-        return false
-    }
+ func shouldRouteThroughTunnel(for address: String) -> Bool {
+ // Check if address matches allowed domains
+ for domain in allowedDomains {
+ if address.hasSuffix(domain) {
+ return true
+ }
+ }
+ return false
+ }
 
-    func setupSplitTunnelRoutes() {
-        let tunnelSettings = NEPacketTunnelNetworkSettings(
-            tunnelRemoteAddress: "vpn.example.com"
-        )
+ func setupSplitTunnelRoutes() {
+ let tunnelSettings = NEPacketTunnelNetworkSettings(
+ tunnelRemoteAddress: "vpn.example.com"
+ )
 
-        // Configure DNS for corporate domain only
-        let dnsSettings = NEDNSSettings(servers: ["10.8.0.1"])
-        dnsSettings.matchDomains = ["corporate.com", "internal.example.com"]
-        tunnelSettings.dnsSettings = dnsSettings
+ // Configure DNS for corporate domain only
+ let dnsSettings = NEDNSSettings(servers: ["10.8.0.1"])
+ dnsSettings.matchDomains = ["corporate.com", "internal.example.com"]
+ tunnelSettings.dnsSettings = dnsSettings
 
-        // IPv4 routing: split tunnel approach
-        let ipv4Settings = NEIPv4Settings(
-            addresses: ["10.8.0.2"],
-            subnetMasks: ["255.255.255.0"]
-        )
+ // IPv4 routing: split tunnel approach
+ let ipv4Settings = NEIPv4Settings(
+ addresses: ["10.8.0.2"],
+ subnetMasks: ["255.255.255.0"]
+ )
 
-        // Only route corporate networks through VPN
-        ipv4Settings.includedRoutes = [
-            NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
-            NEIPv4Route(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0")
-        ]
+ // Only route corporate networks through VPN
+ ipv4Settings.includedRoutes = [
+ NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
+ NEIPv4Route(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0")
+ ]
 
-        tunnelSettings.ipv4Settings = ipv4Settings
-    }
+ tunnelSettings.ipv4Settings = ipv4Settings
+ }
 }
 ```
 
@@ -324,26 +324,26 @@ Windows users can achieve tunnel interface control through Wintun:
 #include <wintun.h>
 
 VOID FilterPackets(WINTUN_ADAPTER* Adapter) {
-    WINTUN_SESSION* Session = WintunStartSession(Adapter, 0x100000);
+ WINTUN_SESSION* Session = WintunStartSession(Adapter, 0x100000);
 
-    for (;;) {
-        WINTUN_PACKET* Packets[256];
-        DWORD PacketsRead = WintunReceivePackets(Session, Packets, 256);
+ for (;;) {
+ WINTUN_PACKET* Packets[256];
+ DWORD PacketsRead = WintunReceivePackets(Session, Packets, 256);
 
-        for (DWORD i = 0; i < PacketsRead; ++i) {
-            WINTUN_PACKET* Packet = Packets[i];
+ for (DWORD i = 0; i < PacketsRead; ++i) {
+ WINTUN_PACKET* Packet = Packets[i];
 
-            // Inspect packet destination
-            // Route corporate traffic through VPN
-            // Route local traffic direct
+ // Inspect packet destination
+ // Route corporate traffic through VPN
+ // Route local traffic direct
 
-            if (IsDestinationCorporate(Packet->Data)) {
-                RouteToVPN(Packet);
-            } else {
-                SendDirect(Packet);
-            }
-        }
-    }
+ if (IsDestinationCorporate(Packet->Data)) {
+ RouteToVPN(Packet);
+ } else {
+ SendDirect(Packet);
+ }
+ }
+ }
 }
 ```
 
@@ -356,18 +356,18 @@ Quantify the performance difference between approaches:
 # Compare tunnel interface vs full tunnel performance
 
 test_configuration() {
-    local config_name=$1
-    local test_duration=60
+ local config_name=$1
+ local test_duration=60
 
-    # Bandwidth test (download)
-    echo "Testing: $config_name"
-    iperf3 -c test-server.com -t $test_duration -R 2>&1 | grep "sender"
+ # Bandwidth test (download)
+ echo "Testing: $config_name"
+ iperf3 -c test-server.com -t $test_duration -R 2>&1 | grep "sender"
 
-    # Latency test
-    ping -c 10 test-server.com | grep "avg"
+ # Latency test
+ ping -c 10 test-server.com | grep "avg"
 
-    # DNS resolution speed
-    time nslookup test-domain.com
+ # DNS resolution speed
+ time nslookup test-domain.com
 }
 
 # Test tunnel interface (selective routing)
@@ -396,29 +396,29 @@ VPN_PROCESS="openvpn"
 FAILOVER_TIMEOUT=30
 
 monitor_vpn() {
-    while true; do
-        if ! ip link show $VPN_INTERFACE > /dev/null 2>&1; then
-            echo "VPN interface down, attempting reconnect..."
+ while true; do
+ if ! Ip link show $VPN_INTERFACE > /dev/null 2>&1; then
+ echo "VPN interface down, attempting reconnect..."
 
-            # Kill hanging process
-            pkill -f $VPN_PROCESS
-            sleep 2
+ # Kill hanging process
+ pkill -f $VPN_PROCESS
+ sleep 2
 
-            # Restart VPN
-            systemctl start openvpn@myconfig
+ # Restart VPN
+ systemctl start openvpn@myconfig
 
-            # Wait for interface
-            for i in $(seq 1 $FAILOVER_TIMEOUT); do
-                if ip link show $VPN_INTERFACE > /dev/null 2>&1; then
-                    echo "VPN reconnected"
-                    break
-                fi
-                sleep 1
-            done
-        fi
+ # Wait for interface
+ for i in $(seq 1 $FAILOVER_TIMEOUT); do
+ if ip link show $VPN_INTERFACE > /dev/null 2>&1; then
+ echo "VPN reconnected"
+ break
+ fi
+ sleep 1
+ done
+ fi
 
-        sleep 10
-    done
+ sleep 10
+ done
 }
 
 # Run as systemd service
@@ -438,61 +438,61 @@ import requests
 import socket
 
 def test_tunnel_configuration():
-    """Verify tunnel interface routes correctly"""
+ """Verify tunnel interface routes correctly"""
 
-    tests = {
-        "vpn_connected": check_vpn_connected,
-        "dns_routed": check_dns_routing,
-        "local_access": check_local_access,
-        "vpn_access": check_vpn_access,
-    }
+ tests = {
+ "vpn_connected": check_vpn_connected,
+ "dns_routed": check_dns_routing,
+ "local_access": check_local_access,
+ "vpn_access": check_vpn_access,
+ }
 
-    results = {}
-    for test_name, test_func in tests.items():
-        try:
-            result = test_func()
-            results[test_name] = "PASS" if result else "FAIL"
-        except Exception as e:
-            results[test_name] = f"ERROR: {e}"
+ results = {}
+ for test_name, test_func in tests.items():
+ try:
+ result = test_func()
+ results[test_name] = "PASS" if result else "FAIL"
+ except Exception as e:
+ results[test_name] = f"ERROR: {e}"
 
-    return results
+ return results
 
 def check_vpn_connected():
-    """Verify VPN interface is up"""
-    result = subprocess.run(
-        ["ip", "link", "show", "tun0"],
-        capture_output=True
-    )
-    return result.returncode == 0
+ """Verify VPN interface is up"""
+ result = subprocess.run(
+ ["ip", "link", "show", "tun0"],
+ capture_output=True
+ )
+ return result.returncode == 0
 
 def check_dns_routing():
-    """Verify DNS queries route correctly"""
-    try:
-        ip = socket.gethostbyname("corporate.com")
-        return True
-    except socket.gaierror:
-        return False
+ """Verify DNS queries route correctly"""
+ try:
+ ip = socket.gethostbyname("corporate.com")
+ return True
+ except socket.gaierror:
+ return False
 
 def check_local_access():
-    """Verify local resources are still accessible"""
-    try:
-        requests.get("http://192.168.1.1", timeout=2)
-        return True
-    except:
-        return False
+ """Verify local resources are still accessible"""
+ try:
+ requests.get("http://192.168.1.1", timeout=2)
+ return True
+ except:
+ return False
 
 def check_vpn_access():
-    """Verify VPN-protected resources are accessible"""
-    try:
-        requests.get("http://10.0.0.1", timeout=5)
-        return True
-    except:
-        return False
+ """Verify VPN-protected resources are accessible"""
+ try:
+ requests.get("http://10.0.0.1", timeout=5)
+ return True
+ except:
+ return False
 
 if __name__ == "__main__":
-    results = test_tunnel_configuration()
-    for test, result in results.items():
-        print(f"{test}: {result}")
+ results = test_tunnel_configuration()
+ for test, result in results.items():
+ print(f"{test}: {result}")
 ```
 
 These technical tools enable precise control over network routing, essential for complex environments requiring simultaneous VPN and direct access.

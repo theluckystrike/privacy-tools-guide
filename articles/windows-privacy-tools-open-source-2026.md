@@ -100,7 +100,7 @@ Generate a key pair:
 ```bash
 age-keygen
 # Output: age1example... (public key)
-#         # secret key (keep private)
+# # secret key (keep private)
 ```
 
 Encrypt a file:
@@ -240,17 +240,17 @@ Combine these tools into a privacy-focused workflow. Start with network monitori
 A PowerShell script to audit active connections:
 ```powershell
 Get-NetTCPConnection -State Established | 
-    Where-Object { $_.LocalAddress -notlike "127.*" } |
-    ForEach-Object {
-        $proc = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue
-        [PSCustomObject]@{
-            Process = $proc.ProcessName
-            PID = $_.OwningProcess
-            LocalAddress = $_.LocalAddress
-            RemoteAddress = $_.RemoteAddress
-            RemotePort = $_.RemotePort
-        }
-    } | Format-Table -AutoSize
+ Where-Object { $_.LocalAddress -notlike "127.*" } |
+ ForEach-Object {
+ $proc = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue
+ [PSCustomObject]@{
+ Process = $proc.ProcessName
+ PID = $_.OwningProcess
+ LocalAddress = $_.LocalAddress
+ RemoteAddress = $_.RemoteAddress
+ RemotePort = $_.RemotePort
+ }
+ } | Format-Table -AutoSize
 ```
 
 Run this periodically to monitor unexpected network activity.

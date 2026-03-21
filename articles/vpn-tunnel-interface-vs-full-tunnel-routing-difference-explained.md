@@ -133,15 +133,15 @@ Get-NetRoute -AddressFamily IPv4 | Format-Table -AutoSize
 
 # Step 3: Add route for local network (bypass VPN)
 New-NetRoute -DestinationPrefix 192.168.1.0/24 `
-    -NextHop 192.168.1.1 `
-    -InterfaceAlias Ethernet `
-    -RouteMetric 10
+ -NextHop 192.168.1.1 `
+ -InterfaceAlias Ethernet `
+ -RouteMetric 10
 
 # Step 4: Add route for specific service through VPN
 New-NetRoute -DestinationPrefix 203.0.113.0/24 `
-    -NextHop 10.0.0.1 `
-    -InterfaceAlias "OpenVPN TAP-Windows" `
-    -RouteMetric 5
+ -NextHop 10.0.0.1 `
+ -InterfaceAlias "OpenVPN TAP-Windows" `
+ -RouteMetric 5
 
 # Step 5: Verify configuration
 Get-NetRoute -AddressFamily IPv4 | Where-Object {$_.DestinationPrefix -like "203.0.113*"}
@@ -164,7 +164,7 @@ netstat -rn | head -20
 
 # Step 3: Add routes using networksetup
 networksetup -setadditionalroutes "Ethernet" \
-    192.168.1.0 255.255.255.0 192.168.1.1
+ 192.168.1.0 255.255.255.0 192.168.1.1
 
 # Step 4: Remove specific routes through VPN (split tunneling)
 sudo route delete 203.0.113.0/24
@@ -180,17 +180,17 @@ cat > /usr/local/bin/split_tunnel.sh << 'EOF'
 
 # Define services to bypass VPN
 STREAMING_DOMAINS=(
-  "netflix.com"
-  "hulu.com"
-  "disneyplus.com"
+ "netflix.com"
+ "hulu.com"
+ "disneyplus.com"
 )
 
 # Resolve domains and create routes
 for domain in "${STREAMING_DOMAINS[@]}"; do
-  ip=$(dig +short "$domain" | head -1)
-  if [ -n "$ip" ]; then
-    sudo route add -host "$ip" -gateway en0
-  fi
+ ip=$(dig +short "$domain" | head -1)
+ if [ -n "$ip" ]; then
+ sudo route add -host "$ip" -gateway en0
+ fi
 done
 EOF
 
@@ -235,19 +235,19 @@ echo "Test 1: IP Address Verification"
 echo ""
 echo "Netflix connection IP:"
 curl -s --connect-to netflix.com:443:203.0.113.1 https://netflix.com/ip 2>/dev/null || \
-    echo "Connected through: 203.0.113.1 (ISP network)"
+ echo "Connected through: 203.0.113.1 (ISP network)"
 
 echo ""
 echo "Banking site through VPN:"
 curl -s https://banking.example.com/ip 2>/dev/null || \
-    echo "Connected through: 10.0.0.1 (VPN network)"
+ echo "Connected through: 10.0.0.1 (VPN network)"
 
 # Test 2: DNS leak verification
 echo ""
 echo "Test 2: DNS Leak Test"
 echo "Visit: https://www.dnsleaktest.com in your browser"
-echo "  - Services routed through VPN should show VPN DNS servers"
-echo "  - Services routed locally should show ISP DNS servers"
+echo " - Services routed through VPN should show VPN DNS servers"
+echo " - Services routed locally should show ISP DNS servers"
 
 # Test 3: Route verification (Linux)
 echo ""
@@ -258,9 +258,9 @@ ip route show | grep -E "^(203.0.113|10.0.0)"
 echo ""
 echo "Test 4: Application Routing"
 for pid in $(pgrep -f "streaming|netflix|youtube"); do
-  echo "Process $pid using:"
-  cat /proc/net/tcp | awk '{print $3}' | grep -q "10.0.0.1" && \
-    echo "  - VPN" || echo "  - Local network"
+ echo "Process $pid using:"
+ cat /proc/net/tcp | awk '{print $3}' | grep -q "10.0.0.1" && \
+ echo " - VPN" || echo " - Local network"
 done
 
 # Test 5: Bandwidth verification

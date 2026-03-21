@@ -53,15 +53,15 @@ EMAIL="your@email.com"
 
 # Check common people search sites
 SITES=(
-  "https://www.spokeo.com/${NAME// /-}"
-  "https://www.whitepages.com/name/${NAME// /-}"
-  "https://www.beenverified.com/fn/${NAME// /-}"
+ "https://www.spokeo.com/${NAME// /-}"
+ "https://www.whitepages.com/name/${NAME// /-}"
+ "https://www.beenverified.com/fn/${NAME// /-}"
 )
 
 for site in "${SITES[@]}"; do
-  echo "Checking: $site"
-  curl -s -o /dev/null -w "%{http_code}" "$site"
-  echo ""
+ echo "Checking: $site"
+ curl -s -o /dev/null -w "%{http_code}" "$site"
+ echo ""
 done
 ```
 
@@ -94,58 +94,58 @@ from bs4 import BeautifulSoup
 import re
 
 PEOPLE_SEARCH_SITES = {
-    "spokeo": "https://www.spokeo.com/forms/opt-out/submit",
-    "whitepages": "https://www.whitepages.com/suppression_requests",
-    "beenverified": "https://www.beenverified.com/opt-out/verify",
+ "spokeo": "https://www.spokeo.com/forms/opt-out/submit",
+ "whitepages": "https://www.whitepages.com/suppression_requests",
+ "beenverified": "https://www.beenverified.com/opt-out/verify",
 }
 
 def find_opt_out_url(site_url):
-    """Scrape a site to find its opt-out page."""
-    try:
-        response = requests.get(site_url, timeout=10)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Look for common opt-out link patterns
-        for link in soup.find_all('a', href=True):
-            href = link['href'].lower()
-            if 'opt-out' in href or 'remove' in href or 'privacy' in href:
-                return link['href']
-    except Exception as e:
-        print(f"Error checking {site_url}: {e}")
-    return None
+ """Scrape a site to find its opt-out page."""
+ try:
+ response = requests.get(site_url, timeout=10)
+ soup = BeautifulSoup(response.text, 'html.parser')
+
+ # Look for common opt-out link patterns
+ for link in soup.find_all('a', href=True):
+ href = link['href'].lower()
+ if 'opt-out' in href or 'remove' in href or 'privacy' in href:
+ return link['href']
+ except Exception as e:
+ print(f"Error checking {site_url}: {e}")
+ return None
 
 def submit_opt_out(site_name, data):
-    """Submit opt-out request to a specific site."""
-    url = PEOPLE_SEARCH_SITES.get(site_name)
-    if not url:
-        print(f"No known opt-out URL for {site_name}")
-        return False
-    
-    # Site-specific payload construction
-    payload = {
-        "first_name": data.get("first_name", ""),
-        "last_name": data.get("last_name", ""),
-        "email": data.get("email", ""),
-        "phone": data.get("phone", ""),
-    }
-    
-    try:
-        response = requests.post(url, data=payload, timeout=10)
-        return response.status_code == 200
-    except Exception as e:
-        print(f"Error submitting to {site_name}: {e}")
-        return False
+ """Submit opt-out request to a specific site."""
+ url = PEOPLE_SEARCH_SITES.get(site_name)
+ if not url:
+ print(f"No known opt-out URL for {site_name}")
+ return False
+
+ # Site-specific payload construction
+ payload = {
+ "first_name": data.get("first_name", ""),
+ "last_name": data.get("last_name", ""),
+ "email": data.get("email", ""),
+ "phone": data.get("phone", ""),
+ }
+
+ try:
+ response = requests.post(url, data=payload, timeout=10)
+ return response.status_code == 200
+ except Exception as e:
+ print(f"Error submitting to {site_name}: {e}")
+ return False
 
 # Usage
 my_data = {
-    "first_name": "John",
-    "last_name": "Doe",
-    "email": "john.doe@example.com",
-    "phone": "555-123-4567"
+ "first_name": "John",
+ "last_name": "Doe",
+ "email": "john.doe@example.com",
+ "phone": "555-123-4567"
 }
 
 for site in PEOPLE_SEARCH_SITES.keys():
-    print(f"Processing {site}...")
+ print(f"Processing {site}...")
 ```
 
 This script provides a framework. Each site requires custom handling due to different form structures and validation requirements.
@@ -210,22 +210,22 @@ While primarily for breaches, Have I Been Pwned notifications can alert you to n
 import requests
 
 def check_email_breaches(email):
-    """Check if email appears in known breaches."""
-    url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
-    headers = {
-        "hibp-api-key": "your-api-key",  # Required for API v3
-        "user-agent": "PrivacyToolsScript"
-    }
-    
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        return response.json()
-    return []
+ """Check if email appears in known breaches."""
+ url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
+ headers = {
+ "hibp-api-key": "your-api-key", # Required for API v3
+ "user-agent": "PrivacyToolsScript"
+ }
+
+ response = requests.get(url, headers=headers)
+ if response.status_code == 200:
+ return response.json()
+ return []
 
 # Usage
 breaches = check_email_breaches("your@email.com")
 for breach in breaches:
-    print(f"Found: {breach['Name']} - {breach['Description'][:100]}...")
+ print(f"Found: {breach['Name']} - {breach['Description'][:100]}...")
 ```
 
 ## Step 5: Reduce Future Exposure
@@ -247,16 +247,16 @@ If you build applications:
 ```javascript
 // Example: Anonymize user data before analytics
 function anonymizeUserData(user) {
-  return {
-    // Hash identifying information
-    id_hash: sha256(user.id).substring(0, 16),
-    // Generalize location data
-    region: user.city + ", " + user.country,
-    // Remove exact timestamps
-    activity_period: "Q1 2024",
-    // Aggregate rather than individual
-    engagement_score: calculateScore(user.actions)
-  };
+ return {
+ // Hash identifying information
+ id_hash: sha256(user.id).substring(0, 16),
+ // Generalize location data
+ region: user.city + ", " + user.country,
+ // Remove exact timestamps
+ activity_period: "Q1 2024",
+ // Aggregate rather than individual
+ engagement_score: calculateScore(user.actions)
+ };
 }
 ```
 

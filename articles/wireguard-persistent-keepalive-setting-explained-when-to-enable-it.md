@@ -162,7 +162,7 @@ Monitor actual keepalive behavior on your network:
 # monitor_keepalive.sh - Observe keepalive packet timing
 
 INTERFACE="wg0"
-DURATION=300  # Monitor for 5 minutes
+DURATION=300 # Monitor for 5 minutes
 
 echo "Monitoring keepalive packets on $INTERFACE"
 echo "Capturing packet timestamps to analyze keepalive interval..."
@@ -192,8 +192,8 @@ echo ""
 
 TARGET_SERVER="vpn.example.com"
 TEST_PORT="51820"
-TEST_INTERVAL=10  # Test every 10 seconds
-MAX_WAIT=300      # Test for up to 5 minutes
+TEST_INTERVAL=10 # Test every 10 seconds
+MAX_WAIT=300 # Test for up to 5 minutes
 
 echo "Testing connection timeout..."
 echo "Sending initial packet to establish NAT mapping..."
@@ -203,18 +203,18 @@ nc -u -w1 "$TARGET_SERVER" "$TEST_PORT" < /dev/null
 
 # Now test when the mapping expires
 for i in $(seq 0 $TEST_INTERVAL $MAX_WAIT); do
-    sleep "$TEST_INTERVAL"
+ sleep "$TEST_INTERVAL"
 
-    # Try to send a packet through the existing NAT mapping
-    timeout 2 bash -c "cat < /dev/null > /dev/udp/$TARGET_SERVER/$TEST_PORT" 2>/dev/null
+ # Try to send a packet through the existing NAT mapping
+ timeout 2 bash -c "cat < /dev/null > /dev/udp/$TARGET_SERVER/$TEST_PORT" 2>/dev/null
 
-    if [ $? -ne 0 ]; then
-        echo "NAT timeout detected at: $i seconds"
-        echo "Recommended keepalive interval: $((i / 2))"
-        break
-    else
-        echo "Still connected at: $i seconds"
-    fi
+ if [ $? -ne 0 ]; then
+ echo "NAT timeout detected at: $i seconds"
+ echo "Recommended keepalive interval: $((i / 2))"
+ break
+ else
+ echo "Still connected at: $i seconds"
+ fi
 done
 ```
 
@@ -263,25 +263,25 @@ cat > /usr/local/bin/adaptive_keepalive.sh << 'ENDSCRIPT'
 
 # Monitor /sys/class/power_supply for battery information
 while true; do
-    # Check if on battery power
-    if [ -f /sys/class/power_supply/BAT0/status ]; then
-        STATUS=$(cat /sys/class/power_supply/BAT0/status)
+ # Check if on battery power
+ if [ -f /sys/class/power_supply/BAT0/status ]; then
+ STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
-        if [ "$STATUS" = "Discharging" ]; then
-            # On battery: increase keepalive to conserve power
-            # Tradeoff: connection may not respond within 60 seconds
-            NEW_KEEPALIVE=60
-        else
-            # On AC power or charging: use optimal keepalive
-            NEW_KEEPALIVE=25
-        fi
+ if [ "$STATUS" = "Discharging" ]; then
+ # On battery: increase keepalive to conserve power
+ # Tradeoff: connection may not respond within 60 seconds
+ NEW_KEEPALIVE=60
+ else
+ # On AC power or charging: use optimal keepalive
+ NEW_KEEPALIVE=25
+ fi
 
-        # Update WireGuard configuration
-        # (requires elevated privileges)
-        # wg set wg0 peer <pubkey> persistent-keepalive $NEW_KEEPALIVE
-    fi
+ # Update WireGuard configuration
+ # (requires elevated privileges)
+ # wg set wg0 peer <pubkey> persistent-keepalive $NEW_KEEPALIVE
+ fi
 
-    sleep 30
+ sleep 30
 done
 ENDSCRIPT
 

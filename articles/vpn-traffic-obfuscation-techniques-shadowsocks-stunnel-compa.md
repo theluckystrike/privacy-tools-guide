@@ -36,12 +36,12 @@ apt update && apt install -y shadowsocks-libev
 
 # Configure /etc/shadowsocks-libev/config.json
 {
-    "server": "0.0.0.0",
-    "server_port": 8388,
-    "password": "your-secure-password",
-    "method": "aes-256-gcm",
-    "fast_open": true,
-    "mode": "tcp_only"
+ "server": "0.0.0.0",
+ "server_port": 8388,
+ "password": "your-secure-password",
+ "method": "aes-256-gcm",
+ "fast_open": true,
+ "mode": "tcp_only"
 }
 ```
 
@@ -58,12 +58,12 @@ On your local machine, configure the client to connect through the server:
 
 ```json
 {
-    "server": "your-server-ip",
-    "server_port": 8388,
-    "local_address": "127.0.0.1",
-    "local_port": 1080,
-    "password": "your-secure-password",
-    "method": "aes-256-gcm"
+ "server": "your-server-ip",
+ "server_port": 8388,
+ "local_address": "127.0.0.1",
+ "local_port": 1080,
+ "password": "your-secure-password",
+ "method": "aes-256-gcm"
 }
 ```
 
@@ -88,8 +88,8 @@ apt install -y stunnel4
 
 # Generate self-signed certificate
 openssl req -new -x509 -days 365 -nodes \
-    -out /etc/stunnel/stunnel.pem \
-    -keyout /etc/stunnel/stunnel.pem
+ -out /etc/stunnel/stunnel.pem \
+ -keyout /etc/stunnel/stunnel.pem
 ```
 
 Configure `/etc/stunnel/stunnel.conf`:
@@ -249,16 +249,16 @@ Combining Shadowsocks and stunnel provides optimal characteristics:
 
 ```
 [Application] → Shadowsocks Client (port 1080)
-              ↓
-              Stunnel Client (wraps in TLS)
-              ↓
-              Network (appears as HTTPS)
-              ↓
-              Stunnel Server (unwraps TLS)
-              ↓
-              Shadowsocks Server (decrypts)
-              ↓
-              Target Server
+ ↓
+ Stunnel Client (wraps in TLS)
+ ↓
+ Network (appears as HTTPS)
+ ↓
+ Stunnel Server (unwraps TLS)
+ ↓
+ Shadowsocks Server (decrypts)
+ ↓
+ Target Server
 ```
 
 This layering provides:
@@ -273,10 +273,10 @@ Real-world performance testing shows practical differences:
 ### Bandwidth Overhead
 
 ```
-Protocol          Overhead Per Byte    Header Size
-Shadowsocks       0-2%                 6-22 bytes
-Stunnel + SS      5-8%                 48+ bytes
-Raw VPN           3-5%                 20-30 bytes
+Protocol Overhead Per Byte Header Size
+Shadowsocks 0-2% 6-22 bytes
+Stunnel + SS 5-8% 48+ bytes
+Raw VPN 3-5% 20-30 bytes
 ```
 
 Shadowsocks adds minimal overhead. Stunnel's TLS wrapping adds session state per connection. The combination compounds overhead but remains acceptable.
@@ -286,12 +286,12 @@ Shadowsocks adds minimal overhead. Stunnel's TLS wrapping adds session state per
 Measured on a 50ms base connection:
 
 ```
-Protocol              First Byte    Ongoing
-Direct connection     50ms          50ms
-Shadowsocks          55-60ms        50-55ms
-Stunnel              65-85ms        55-65ms (TLS handshake)
-OpenVPN              60-75ms        55-65ms
-WireGuard            55-65ms        50-55ms
+Protocol First Byte Ongoing
+Direct connection 50ms 50ms
+Shadowsocks 55-60ms 50-55ms
+Stunnel 65-85ms 55-65ms (TLS handshake)
+OpenVPN 60-75ms 55-65ms
+WireGuard 55-65ms 50-55ms
 ```
 
 Shadowsocks shows minimal latency addition. Stunnel's TLS handshake creates noticeable delays for short-lived connections (HTTPS requests). Long-lived connections (streaming, downloads) amortize this overhead.
@@ -299,10 +299,10 @@ Shadowsocks shows minimal latency addition. Stunnel's TLS handshake creates noti
 ### CPU Usage
 
 ```
-Protocol          CPU per Mbps   Memory Usage
-Shadowsocks       2-3%           10-15MB
-Stunnel           5-7%           15-25MB
-OpenVPN           8-10%          20-30MB
+Protocol CPU per Mbps Memory Usage
+Shadowsocks 2-3% 10-15MB
+Stunnel 5-7% 15-25MB
+OpenVPN 8-10% 20-30MB
 ```
 
 Shadowsocks is extremely efficient, suitable for older devices or mobile phones. Stunnel's cryptographic operations require more resources but remain lightweight on modern hardware.
@@ -318,7 +318,7 @@ Shadowsocks is extremely efficient, suitable for older devices or mobile phones.
 ```bash
 # Stunnel deployment for maximum obfuscation
 # Appears as regular HTTPS browsing to network observer
-stunnel -f  # foreground mode for debugging
+stunnel -f # foreground mode for debugging
 # Monitor shows: TLS handshake to stunnel.example.com, then HTTPS traffic
 # Administrator sees: normal encrypted HTTPS
 ```
@@ -382,19 +382,19 @@ gzip -c largefile.bin | ss-tunnel > transfer.bin.gz
 # Solution 1: Enable TCP_KEEPALIVE
 # Edit config.json:
 {
-  "server": "your-server",
-  "server_port": 8388,
-  "password": "password",
-  "method": "aes-256-gcm",
-  "timeout": 300,
-  "tcp_keepalive": true
+ "server": "your-server",
+ "server_port": 8388,
+ "password": "password",
+ "method": "aes-256-gcm",
+ "timeout": 300,
+ "tcp_keepalive": true
 }
 
 # Solution 2: Monitor connection:
 ss-local -c config.json -v
 
 # Solution 3: Use mitmproxy to debug traffic:
-mitmproxy -p 8080  # local proxy for debugging
+mitmproxy -p 8080 # local proxy for debugging
 # Configure ss-local to use this proxy
 ```
 
@@ -429,49 +429,49 @@ import time
 from datetime import datetime
 
 class ShadowsocksMonitor:
-    def __init__(self, config_path):
-        self.config = config_path
-        self.process = None
-        self.restart_count = 0
+ def __init__(self, config_path):
+ self.config = config_path
+ self.process = None
+ self.restart_count = 0
 
-    def start(self):
-        """Start Shadowsocks and monitor."""
-        self.process = subprocess.Popen(
-            ['ss-local', '-c', self.config, '-v'],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
-        )
-        self.monitor_loop()
+ def start(self):
+ """Start Shadowsocks and monitor."""
+ self.process = subprocess.Popen(
+ ['ss-local', '-c', self.config, '-v'],
+ stdout=subprocess.PIPE,
+ stderr=subprocess.PIPE
+ )
+ self.monitor_loop()
 
-    def monitor_loop(self):
-        """Monitor for crashes and restart if needed."""
-        while True:
-            return_code = self.process.poll()
+ def monitor_loop(self):
+ """Monitor for crashes and restart if needed."""
+ while True:
+ return_code = self.process.poll()
 
-            if return_code is not None:
-                # Process crashed
-                print(f"[{datetime.now()}] SS crashed with code {return_code}")
-                self.restart_count += 1
-                self.restart()
-            else:
-                # Process running normally
-                time.sleep(5)  # Check every 5 seconds
+ if return_code is not None:
+ # Process crashed
+ print(f"[{datetime.now()}] SS crashed with code {return_code}")
+ self.restart_count += 1
+ self.restart()
+ else:
+ # Process running normally
+ time.sleep(5) # Check every 5 seconds
 
-    def restart(self):
-        """Restart Shadowsocks."""
-        if self.restart_count > 5:
-            print("Too many restarts, aborting")
-            return
+ def restart(self):
+ """Restart Shadowsocks."""
+ if self.restart_count > 5:
+ print("Too many restarts, aborting")
+ return
 
-        print(f"Restarting Shadowsocks (attempt {self.restart_count})")
-        self.process = subprocess.Popen(
-            ['ss-local', '-c', self.config, '-v']
-        )
+ print(f"Restarting Shadowsocks (attempt {self.restart_count})")
+ self.process = subprocess.Popen(
+ ['ss-local', '-c', self.config, '-v']
+ )
 
 # Run monitoring
 if __name__ == "__main__":
-    monitor = ShadowsocksMonitor('/etc/shadowsocks/config.json')
-    monitor.start()
+ monitor = ShadowsocksMonitor('/etc/shadowsocks/config.json')
+ monitor.start()
 ```
 
 ## Comparison Table: Final Decision Matrix

@@ -150,9 +150,9 @@ sudo wg show
 Expected output:
 ```
 interface: wg0
-  public key: <server-public-key>
-  private key: (hidden)
-  listening port: 51820
+ public key: <server-public-key>
+ private key: (hidden)
+ listening port: 51820
 ```
 
 ### Open the Firewall Port
@@ -205,7 +205,7 @@ sudo cp ~/wireguard-laptop.conf /etc/wireguard/wg0.conf
 sudo wg-quick up wg0
 
 # Verify traffic is going through VPN
-curl ifconfig.me   # Should show your VPS IP, not your home IP
+curl ifconfig.me # Should show your VPS IP, not your home IP
 ```
 
 ### macOS Client

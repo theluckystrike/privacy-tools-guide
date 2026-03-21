@@ -53,7 +53,7 @@ For scripting this configuration, you can modify the registry directly:
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
 
 if (!(Test-Path $registryPath)) {
-    New-Item -Path $registryPath -Force | Out-Null
+ New-Item -Path $registryPath -Force | Out-Null
 }
 
 Set-ItemProperty -Path $registryPath -Name "AllowCortana" -Value 0 -Type DWord
@@ -91,13 +91,13 @@ $startupPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 
 # Remove Cortana from user startup
 if (Get-ItemProperty -Path $startupPath -Name "Cortana" -ErrorAction SilentlyContinue) {
-    Remove-ItemProperty -Path $startupPath -Name "Cortana"
+ Remove-ItemProperty -Path $startupPath -Name "Cortana"
 }
 
 # Remove Cortana from system startup (if present)
 $systemStartup = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
 if (Get-ItemProperty -Path $systemStartup -Name "Cortana" -ErrorAction SilentlyContinue) {
-    Remove-ItemProperty -Path $systemStartup -Name "Cortana"
+ Remove-ItemProperty -Path $systemStartup -Name "Cortana"
 }
 ```
 
@@ -135,30 +135,30 @@ If you're managing multiple Windows 11 installations, consider using a script th
 # Run as Administrator
 
 param(
-    [switch]$RemoveApp,
-    [switch]$AllUsers
+ [switch]$RemoveApp,
+ [switch]$AllUsers
 )
 
 # 1. Set Group Policy via Registry
 $policyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
 if (!(Test-Path $policyPath)) {
-    New-Item -Path $policyPath -Force | Out-Null
+ New-Item -Path $policyPath -Force | Out-Null
 }
 Set-ItemProperty -Path $policyPath -Name "AllowCortana" -Value 0 -Type DWord
 
 # 2. Disable via Settings (registry approach)
 $settingsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"
 if (Test-Path $settingsPath) {
-    Set-ItemProperty -Path $settingsPath -Name "CortanaConsent" -Value 0 -Type DWord
+ Set-ItemProperty -Path $settingsPath -Name "CortanaConsent" -Value 0 -Type DWord
 }
 
 # 3. Remove app if requested
 if ($RemoveApp) {
-    if ($AllUsers) {
-        Get-AppxPackage -AllUsers -Name Microsoft.549981C3F5F10 | Remove-AppxPackage -AllUsers
-    } else {
-        Get-AppxPackage -Name Microsoft.549981C3F5F10 | Remove-AppxPackage
-    }
+ if ($AllUsers) {
+ Get-AppxPackage -AllUsers -Name Microsoft.549981C3F5F10 | Remove-AppxPackage -AllUsers
+ } else {
+ Get-AppxPackage -Name Microsoft.549981C3F5F10 | Remove-AppxPackage
+ }
 }
 
 Write-Host "Cortana has been disabled. Restart recommended."
@@ -175,24 +175,24 @@ Beyond Cortana, Windows 11 includes other cloud-connected services. Disabling Co
 ```
 Windows 11 Data Collection Points:
 ┌─────────────────────────────────────────┐
-│ Cortana (voice, search queries)         │ → Azure services
+│ Cortana (voice, search queries) │ → Azure services
 ├─────────────────────────────────────────┤
-│ Windows Diagnostic Data (telemetry)     │ → Microsoft
+│ Windows Diagnostic Data (telemetry) │ → Microsoft
 ├─────────────────────────────────────────┤
-│ Activity History (timeline data)        │ → Cloud sync
+│ Activity History (timeline data) │ → Cloud sync
 ├─────────────────────────────────────────┤
-│ Location Services                       │ → Bing/Maps
+│ Location Services │ → Bing/Maps
 ├─────────────────────────────────────────┤
-│ App Suggestions (AppX services)         │ → Store telemetry
+│ App Suggestions (AppX services) │ → Store telemetry
 └─────────────────────────────────────────┘
 
 Disabling Cortana removes this vector:
 ┌─────────────────────────────────────────┐
-│ ✓ DISABLED: Cortana (voice, searches)   │ ← No data sent
+│ ✓ DISABLED: Cortana (voice, searches) │ ← No data sent
 ├─────────────────────────────────────────┤
-│ Activity History (still enabled)         │ → Consider disabling
+│ Activity History (still enabled) │ → Consider disabling
 ├─────────────────────────────────────────┤
-│ Diagnostic Data (depends on settings)    │ → Reduce level
+│ Diagnostic Data (depends on settings) │ → Reduce level
 └─────────────────────────────────────────┘
 ```
 
@@ -204,14 +204,14 @@ To maximize privacy beyond Cortana removal:
 # Disable Activity History (Timeline)
 $activityPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
 if (!(Test-Path $activityPath)) {
-    New-Item -Path $activityPath -Force | Out-Null
+ New-Item -Path $activityPath -Force | Out-Null
 }
 Set-ItemProperty -Path $activityPath -Name "EnableActivityFeed" -Value 0 -Type DWord
 
 # Reduce diagnostic data collection to minimum
 $diagPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
 if (!(Test-Path $diagPath)) {
-    New-Item -Path $diagPath -Force | Out-Null
+ New-Item -Path $diagPath -Force | Out-Null
 }
 Set-ItemProperty -Path $diagPath -Name "AllowDiagnosticData" -Value 1 -Type DWord
 # Value 1 = "Required diagnostic data" (minimum)
@@ -220,13 +220,13 @@ Set-ItemProperty -Path $diagPath -Name "AllowDiagnosticData" -Value 1 -Type DWor
 # Disable Bing search in Windows Search
 $bingPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\SearchSettings"
 if (!(Test-Path $bingPath)) {
-    New-Item -Path $bingPath -Force | Out-Null
+ New-Item -Path $bingPath -Force | Out-Null
 }
 Set-ItemProperty -Path $bingPath -Name "IsBingSearchEnabled" -Value 0 -Type DWord
 
 # Disable app suggestions (these generate telemetry)
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore" `
-    -Name "CloudStorePath" -Value 0 -Type DWord
+ -Name "CloudStorePath" -Value 0 -Type DWord
 ```
 
 ## Data That Cortana Collects (When Enabled)
@@ -235,37 +235,37 @@ Understanding what Cortana accesses helps motivate disabling it:
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│ CORTANA DATA COLLECTION SCOPE                        │
+│ CORTANA DATA COLLECTION SCOPE │
 ├──────────────────────────────────────────────────────┤
-│ Voice Recordings                                     │
-│ ├─ Raw audio from voice queries                    │
-│ ├─ Transcriptions (even if recognition fails)      │
-│ └─ Patterns for voice pattern analysis             │
-│                                                      │
-│ Search History                                       │
-│ ├─ Every search query typed/spoken                 │
-│ ├─ Timestamp of each search                        │
-│ ├─ Results clicked                                 │
-│ └─ Dwell time on results                           │
-│                                                      │
-│ Personal Information Access                         │
-│ ├─ Calendar events (from Outlook/Mail)            │
-│ ├─ Contact list (names, phone numbers)            │
-│ ├─ Location history (if enabled)                  │
-│ ├─ Documents accessed                             │
-│ └─ Email subject lines                            │
-│                                                      │
-│ Usage Analytics                                      │
-│ ├─ When Cortana is used                           │
-│ ├─ For how long                                    │
-│ ├─ On which devices                               │
-│ └─ Which features are utilized                    │
-│                                                      │
-│ IP Address & Device Information                     │
-│ ├─ Your public IP address                         │
-│ ├─ Device ID (unique identifier)                  │
-│ ├─ Hardware configuration                         │
-│ └─ Installed software list                        │
+│ Voice Recordings │
+│ ├─ Raw audio from voice queries │
+│ ├─ Transcriptions (even if recognition fails) │
+│ └─ Patterns for voice pattern analysis │
+│ │
+│ Search History │
+│ ├─ Every search query typed/spoken │
+│ ├─ Timestamp of each search │
+│ ├─ Results clicked │
+│ └─ Dwell time on results │
+│ │
+│ Personal Information Access │
+│ ├─ Calendar events (from Outlook/Mail) │
+│ ├─ Contact list (names, phone numbers) │
+│ ├─ Location history (if enabled) │
+│ ├─ Documents accessed │
+│ └─ Email subject lines │
+│ │
+│ Usage Analytics │
+│ ├─ When Cortana is used │
+│ ├─ For how long │
+│ ├─ On which devices │
+│ └─ Which features are used │
+│ │
+│ IP Address & Device Information │
+│ ├─ Your public IP address │
+│ ├─ Device ID (unique identifier) │
+│ ├─ Hardware configuration │
+│ └─ Installed software list │
 └──────────────────────────────────────────────────────┘
 ```
 
@@ -276,41 +276,41 @@ Verify that Cortana is truly disabled and monitor for re-enablement:
 ```powershell
 # Create a monitoring script that runs periodically
 $monitoringScript = {
-    # Check if Cortana is disabled via all methods
-    $groupPolicy = Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" `
-        -Name "AllowCortana" -ErrorAction SilentlyContinue
+ # Check if Cortana is disabled via all methods
+ $groupPolicy = Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" `
+ -Name "AllowCortana" -ErrorAction SilentlyContinue
 
-    $cortanaApp = Get-AppxPackage -Name "Microsoft.549981C3F5F10" -ErrorAction SilentlyContinue
+ $cortanaApp = Get-AppxPackage -Name "Microsoft.549981C3F5F10" -ErrorAction SilentlyContinue
 
-    $startupEntry = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
-        -Name "Cortana" -ErrorAction SilentlyContinue
+ $startupEntry = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
+ -Name "Cortana" -ErrorAction SilentlyContinue
 
-    # Report findings
-    $status = @{
-        'GroupPolicyDisabled' = $groupPolicy.AllowCortana -eq 0
-        'AppRemoved' = $null -eq $cortanaApp
-        'StartupCleaned' = $null -eq $startupEntry
-        'Timestamp' = Get-Date
-    }
+ # Report findings
+ $status = @{
+ 'GroupPolicyDisabled' = $groupPolicy.AllowCortana -eq 0
+ 'AppRemoved' = $null -eq $cortanaApp
+ 'StartupCleaned' = $null -eq $startupEntry
+ 'Timestamp' = Get-Date
+ }
 
-    # Alert if Cortana re-enabled
-    if (-not $status['GroupPolicyDisabled']) {
-        Write-Warning "Cortana has been re-enabled via Group Policy!"
-    }
+ # Alert if Cortana re-enabled
+ if (-not $status['GroupPolicyDisabled']) {
+ Write-Warning "Cortana has been re-enabled via Group Policy!"
+ }
 
-    if (-not $status['AppRemoved'] -and $cortanaApp.Status -eq "Ok") {
-        Write-Warning "Cortana app has been reinstalled!"
-    }
+ if (-not $status['AppRemoved'] -and $cortanaApp.Status -eq "Ok") {
+ Write-Warning "Cortana app has been reinstalled!"
+ }
 
-    return $status
+ return $status
 }
 
 # Run monitoring monthly
 $trigger = New-JobTrigger -At "01:00" -DaysOfWeek "Monday" -Weekly
 Register-ScheduledJob -Name "CortanaDisableMonitoring" `
-    -ScriptBlock $monitoringScript `
-    -Trigger $trigger `
-    -RunAs32 $true
+ -ScriptBlock $monitoringScript `
+ -Trigger $trigger `
+ -RunAs32 $true
 ```
 
 

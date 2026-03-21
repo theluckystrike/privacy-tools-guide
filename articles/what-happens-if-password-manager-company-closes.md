@@ -60,15 +60,15 @@ A basic Vaultwarden setup using Docker:
 # docker-compose.yml
 version: '3'
 services:
-  vaultwarden:
-    image: vaultwarden/server:latest
-    ports:
-      - "8080:80"
-    volumes:
-      - ./data:/data
-    environment:
-      - DOMAIN=https://your-domain.com
-      - ADMIN_TOKEN=your-secure-admin-token
+ vaultwarden:
+ image: vaultwarden/server:latest
+ ports:
+ - "8080:80"
+ volumes:
+ - ./data:/data
+ environment:
+ - DOMAIN=https://your-domain.com
+ - ADMIN_TOKEN=your-secure-admin-token
 ```
 
 This approach requires technical expertise but eliminates dependency on third-party services.
@@ -143,12 +143,12 @@ mkdir -p "$BACKUP_DIR"
 
 # Export Bitwarden vault
 bw unlock --passwordenv BW_MASTER_PASSWORD --raw | \
-  bw export --output "$BACKUP_DIR/vault-$DATE.json" --format json
+ bw export --output "$BACKUP_DIR/vault-$DATE.json" --format json
 
 # Encrypt the export
 gpg --symmetric --cipher-algo AES256 \
-  --output "$BACKUP_DIR/vault-$DATE.json.gpg" \
-  "$BACKUP_DIR/vault-$DATE.json"
+ --output "$BACKUP_DIR/vault-$DATE.json.gpg" \
+ "$BACKUP_DIR/vault-$DATE.json"
 
 # Remove unencrypted file
 rm "$BACKUP_DIR/vault-$DATE.json"
@@ -177,7 +177,7 @@ pip install bitwarden-audit
 bwaudit vault_export.json
 
 # Check HaveIBeenPwned for email breaches
-curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/you@example.com"   -H "hibp-api-key: YOUR_KEY" | python3 -m json.tool
+curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/you@example.com" -H "hibp-api-key: YOUR_KEY" | python3 -m json.tool
 
 # Remove export immediately after audit
 shred -u vault_export.json
@@ -197,13 +197,13 @@ shuf -n 6 /usr/share/dict/words | tr '
 # Or use the EFF large wordlist (recommended):
 curl -s https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt -o /tmp/eff.txt
 for i in 1 2 3 4 5; do
-  roll=$(( (RANDOM % 6 + 1) * 10000 + (RANDOM % 6 + 1) * 1000 +            (RANDOM % 6 + 1) * 100 + (RANDOM % 6 + 1) * 10 + (RANDOM % 6 + 1) ))
-  grep "^$roll" /tmp/eff.txt | awk '{print $2}'
+ roll=$(( (RANDOM % 6 + 1) * 10000 + (RANDOM % 6 + 1) * 1000 + (RANDOM % 6 + 1) * 100 + (RANDOM % 6 + 1) * 10 + (RANDOM % 6 + 1) ))
+ grep "^$roll" /tmp/eff.txt | awk '{print $2}'
 done | tr '
 ' '-'
 
 # 1Password CLI passphrase generation:
-op item create --category login   --generate-password=words,5,separator=-
+op item create --category login --generate-password=words,5,separator=-
 ```
 
 Five EFF words yield ~64 bits of entropy — equivalent to a 12-character random string, but far easier to type on mobile.

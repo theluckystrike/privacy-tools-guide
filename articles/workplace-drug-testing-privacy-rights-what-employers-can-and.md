@@ -41,24 +41,24 @@ The most common workplace drug tests detect:
 ```javascript
 // Example: State-specific test panel configuration
 const drugTestPanels = {
-  CA: {
-    preEmployment: false,
-    random: false,
-    postAccident: true,
-    allowedSubstances: ['cocaine', 'methamphetamine']
-  },
-  TX: {
-    preEmployment: true,
-    random: true,
-    postAccident: true,
-    allowedSubstances: ['thc', 'cocaine', 'opiates', 'amphetamines', 'pcp']
-  },
-  NY: {
-    preEmployment: true,
-    random: false,
-    postAccident: true,
-    allowedSubstances: ['cocaine', 'opiates', 'amphetamines', 'pcp', 'thc']
-  }
+ CA: {
+ preEmployment: false,
+ random: false,
+ postAccident: true,
+ allowedSubstances: ['cocaine', 'methamphetamine']
+ },
+ TX: {
+ preEmployment: true,
+ random: true,
+ postAccident: true,
+ allowedSubstances: ['thc', 'cocaine', 'opiates', 'amphetamines', 'pcp']
+ },
+ NY: {
+ preEmployment: true,
+ random: false,
+ postAccident: true,
+ allowedSubstances: ['cocaine', 'opiates', 'amphetamines', 'pcp', 'thc']
+ }
 };
 ```
 
@@ -97,49 +97,49 @@ Certain states restrict testing for these substances. Connecticut, for instance,
 ```python
 # Example: Python function to determine testing legality
 def can_employer_test(state: str, test_type: str) -> dict:
-    """
-    Determine if an employer can conduct drug testing
-    based on state laws and test type.
-    """
-    restrictions = {
-        'CA': {
-            'pre_employment': False,
-            'random': False,
-            'post_accident': True,
-            'note': 'Limited to federal compliance positions'
-        },
-        'MA': {
-            'pre_employment': True,
-            'random': False,
-            'post_accident': True,
-            'note': 'Marijuana excluded'
-        },
-        'NY': {
-            'pre_employment': True,
-            'random': False,
-            'post_accident': True,
-            'note': 'Marijuana restricted for most positions'
-        },
-        'IL': {
-            'pre_employment': True,
-            'random': True,
-            'post_accident': True,
-            'note': 'EAP required before termination'
-        },
-        'TX': {
-            'pre_employment': True,
-            'random': True,
-            'post_accident': True,
-            'note': 'Minimal restrictions'
-        }
-    }
-    
-    return restrictions.get(state, {
-        'pre_employment': True,
-        'random': True,
-        'post_accident': True,
-        'note': 'Default state policy'
-    })
+ """
+ Determine if an employer can conduct drug testing
+ based on state laws and test type.
+ """
+ restrictions = {
+ 'CA': {
+ 'pre_employment': False,
+ 'random': False,
+ 'post_accident': True,
+ 'note': 'Limited to federal compliance positions'
+ },
+ 'MA': {
+ 'pre_employment': True,
+ 'random': False,
+ 'post_accident': True,
+ 'note': 'Marijuana excluded'
+ },
+ 'NY': {
+ 'pre_employment': True,
+ 'random': False,
+ 'post_accident': True,
+ 'note': 'Marijuana restricted for most positions'
+ },
+ 'IL': {
+ 'pre_employment': True,
+ 'random': True,
+ 'post_accident': True,
+ 'note': 'EAP required before termination'
+ },
+ 'TX': {
+ 'pre_employment': True,
+ 'random': True,
+ 'post_accident': True,
+ 'note': 'Minimal restrictions'
+ }
+ }
+
+ return restrictions.get(state, {
+ 'pre_employment': True,
+ 'random': True,
+ 'post_accident': True,
+ 'note': 'Default state policy'
+ })
 ```
 
 ## Privacy Rights and Employee Protections
@@ -169,21 +169,21 @@ An increasing number of states protect employees who use prescription medication
 ```javascript
 // Example: Checking prescription medication compliance
 function validatePrescriptionMedication(employeeState, testResult) {
-  const prescriptionProtections = ['CA', 'NY', 'IL', 'MA', 'CT'];
-  
-  if (!prescriptionProtections.includes(employeeState)) {
-    return { protected: false, reason: 'No state prescription protection' };
-  }
-  
-  if (!testResult.hasValidPrescription) {
-    return { protected: false, reason: 'No valid prescription on file' };
-  }
-  
-  if (testResult.impairmentSuspected) {
-    return { protected: false, reason: 'Documented performance concerns' };
-  }
-  
-  return { protected: true, reason: 'Valid prescription, no impairment' };
+ const prescriptionProtections = ['CA', 'NY', 'IL', 'MA', 'CT'];
+
+ if (!prescriptionProtections.includes(employeeState)) {
+ return { protected: false, reason: 'No state prescription protection' };
+ }
+
+ if (!testResult.hasValidPrescription) {
+ return { protected: false, reason: 'No valid prescription on file' };
+ }
+
+ if (testResult.impairmentSuspected) {
+ return { protected: false, reason: 'Documented performance concerns' };
+ }
+
+ return { protected: true, reason: 'Valid prescription, no impairment' };
 }
 ```
 

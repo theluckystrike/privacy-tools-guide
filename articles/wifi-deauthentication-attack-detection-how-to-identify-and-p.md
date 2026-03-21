@@ -43,40 +43,40 @@ from collections import defaultdict
 import time
 
 class DeauthDetector:
-    def __init__(self, threshold=10, window=60):
-        self.threshold = threshold
-        self.window = window
-        self.packets = defaultdict(list)
-    
-    def analyze(self, pkt):
-        if pkt.haslayer(Dot11) and pkt.type == 0 and pkt.subtype == 12:
-            src = pkt.addr2
-            dst = pkt.addr1
-            bssid = pkt.addr3
-            timestamp = time.time()
-            
-            self.packets[src].append(timestamp)
-            self.packets[dst].append(timestamp)
-            
-            self.prune_old_packets()
-            
-            for client, times in self.packets.items():
-                if len(times) > self.threshold:
-                    print(f"[ALERT] High deauth rate from {client}: {len(times)} frames")
-                    print(f"  Target: {dst}, BSSID: {bssid}")
-    
-    def prune_old_packets(self):
-        current = time.time()
-        for client in list(self.packets.keys()):
-            self.packets[client] = [
-                t for t in self.packets[client] 
-                if current - t < self.window
-            ]
-            if not self.packets[client]:
-                del self.packets[client]
+ def __init__(self, threshold=10, window=60):
+ self.threshold = threshold
+ self.window = window
+ self.packets = defaultdict(list)
+
+ def analyze(self, pkt):
+ if pkt.haslayer(Dot11) and pkt.type == 0 and pkt.subtype == 12:
+ src = pkt.addr2
+ dst = pkt.addr1
+ bssid = pkt.addr3
+ timestamp = time.time()
+
+ self.packets[src].append(timestamp)
+ self.packets[dst].append(timestamp)
+
+ self.prune_old_packets()
+
+ for client, times in self.packets.items():
+ if len(times) > self.threshold:
+ print(f"[ALERT] High deauth rate from {client}: {len(times)} frames")
+ print(f" Target: {dst}, BSSID: {bssid}")
+
+ def prune_old_packets(self):
+ current = time.time()
+ for client in list(self.packets.keys()):
+ self.packets[client] = [
+ t for t in self.packets[client] 
+ if current - t < self.window
+ ]
+ if not self.packets[client]:
+ del self.packets[client]
 
 def packet_handler(pkt):
-    detector.analyze(pkt)
+ detector.analyze(pkt)
 
 detector = DeauthDetector(threshold=5, window=30)
 print("Monitoring for deauthentication attacks... (Ctrl-C to stop)")
@@ -90,7 +90,7 @@ Run this script with your wireless interface in monitor mode. The detector maint
 Bettercap provides a more attack detection framework with built-in WiFi module support. Install it and run the WiFi reconnaissance:
 
 ```bash
-brew install bettercap  # macOS
+brew install bettercap # macOS
 sudo bettercap -iface wlan0
 ```
 
@@ -171,14 +171,14 @@ LOGFILE="/var/log/deauth-detector.log"
 airodump-ng "$INTERFACE" --write-prefix deauth_log --output-format csv &
 DUMP_PID=$!
 
-while true; do
-    if [ -f "deauth_log-01.csv" ]; then
-        DEAUTH_COUNT=$(grep "deauth" "deauth_log-01.csv" | wc -l)
-        if [ "$DEAUTH_COUNT" -gt 10 ]; then
-            echo "$(date): Possible attack detected - $DEAUTH_COUNT frames" >> "$LOGFILE"
-        fi
-    fi
-    sleep 5
+While true; do
+ if [ -f "deauth_log-01.csv" ]; then
+ DEAUTH_COUNT=$(grep "deauth" "deauth_log-01.csv" | wc -l)
+ if [ "$DEAUTH_COUNT" -gt 10 ]; then
+ echo "$(date): Possible attack detected - $DEAUTH_COUNT frames" >> "$LOGFILE"
+ fi
+ fi
+ sleep 5
 done
 ```
 
