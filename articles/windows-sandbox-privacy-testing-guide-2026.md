@@ -78,6 +78,40 @@ wsandbox
 Start-Process wsandbox -ArgumentList "C:\configs\sandbox.wsb"
 ```
 
+### Pre-Loading Analysis Tools via Startup Script
+
+Rather than manually installing analysis tools every time you launch a sandbox, use the `LogonCommand` field to run a setup script automatically on startup:
+
+```xml
+<Configuration>
+    <Networking>Enable</Networking>
+    <MappedFolders>
+        <MappedFolder>
+            <HostFolder>C:\sandbox-tools</HostFolder>
+            <SandboxFolder>C:\tools</SandboxFolder>
+            <ReadOnly>true</ReadOnly>
+        </MappedFolder>
+    </MappedFolders>
+    <LogonCommand>
+        <Command>C:\tools\setup.ps1</Command>
+    </LogonCommand>
+</Configuration>
+```
+
+Your `setup.ps1` can copy tools from the mapped folder, configure Wireshark capture filters, and launch Process Monitor with a pre-defined filter set:
+
+```powershell
+# setup.ps1 — auto-configure sandbox for privacy analysis
+Copy-Item C:\tools\Wireshark-*.exe $env:USERPROFILE\Desktop\
+Copy-Item C:\tools\procmon.exe $env:USERPROFILE\Desktop\
+Copy-Item C:\tools\procmon-filter.pmc $env:USERPROFILE\Desktop\
+
+# Start Process Monitor with pre-defined filters
+Start-Process "$env:USERPROFILE\Desktop\procmon.exe" -ArgumentList "/LoadConfig $env:USERPROFILE\Desktop\procmon-filter.pmc /Quiet"
+```
+
+This means every new sandbox session opens with analysis tools ready, reducing the setup time from several minutes to seconds.
+
 ## Practical Privacy Testing Workflows
 
 ### Analyzing Privacy-Invasive Applications
@@ -97,6 +131,12 @@ Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuit
 Expand-Archive -Path "C:\Users\WDAGUtilityAccount\Desktop\SysinternalsSuite.zip" -DestinationPath "C:\Users\WDAGUtilityAccount\Desktop\Sysinternals"
 ```
 
+Look specifically for:
+- Registry writes under `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` — persistence mechanisms
+- Network connections to telemetry endpoints (common hostnames include `events.data.microsoft.com`, `vortex.data.microsoft.com`, or vendor-specific analytics domains)
+- File writes to `%APPDATA%` containing device identifiers or hardware fingerprints
+- Access to `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs` — applications reading your recent file history
+
 ### Testing Browser Extensions and Web Applications
 
 Browser extensions often request extensive permissions. Test them in Sandbox before installing on your main browser:
@@ -106,6 +146,8 @@ Browser extensions often request extensive permissions. Test them in Sandbox bef
 3. Install the extension under review
 4. Use browser developer tools to inspect network requests and local storage access
 5. Compare behavior against the extension's stated privacy policy
+
+Open the browser's developer tools Network panel while the extension is active and filter for XHR and Fetch requests. Legitimate privacy-focused extensions should show zero outbound requests to remote servers during idle browsing. Any beacon, analytics, or telemetry request not disclosed in the privacy policy is a red flag.
 
 ### Network Traffic Analysis
 
@@ -117,7 +159,33 @@ For deeper network analysis, combine Sandbox with tools like Wireshark. Disable 
 </Configuration>
 ```
 
-Run Wireshark on the host system while generating network traffic from the sandbox to observe what data applications transmit.
+Run Wireshark on the host system while generating network traffic from the sandbox to observe what data applications transmit. Capture on the virtual network adapter that Sandbox creates (visible in Wireshark's interface list as "vEthernet (WSL)" or a similarly named virtual adapter). Filter by the sandbox's assigned IP to isolate its traffic:
+
+```
+# Wireshark capture filter for Sandbox traffic only
+host 172.16.x.x
+```
+
+Check for unencrypted HTTP transmissions, DNS lookups to tracking domains, and TLS connections to IP ranges associated with advertising networks (IAB Tech Lab publishes a list of known ad infrastructure IP ranges).
+
+## Interpreting Registry Modifications
+
+Process Monitor captures every registry read and write. The volume of events is overwhelming without filters. Use these ProcMon filter presets to focus on privacy-relevant activity:
+
+```
+Operation is RegSetValue
+Path contains Run
+Result is SUCCESS
+```
+
+Save this as a filter configuration (`procmon-privacy.pmc`) and load it at startup. The filtered view will show only registry writes that could indicate persistence, startup registration, or identifier storage. Export the filtered results to CSV for offline analysis:
+
+```powershell
+# Export ProcMon results from command line
+procmon.exe /Quiet /Minimized /BackingFile C:\logs\analysis.pml
+# After analysis period:
+procmon.exe /OpenLog C:\logs\analysis.pml /SaveAs C:\logs\results.csv
+```
 
 ## Automating Sandbox Tests
 
@@ -129,26 +197,26 @@ function Start-PrivacyTest {
         [string]$ApplicationPath,
         [string]$LogDirectory = "C:\privacy-logs"
     )
-    
+
     # Create log directory
     if (!(Test-Path $LogDirectory)) {
         New-Item -ItemType Directory -Path $LogDirectory
     }
-    
+
     $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
     $testLog = "$LogDirectory\test_$timestamp.log"
-    
+
     # Launch sandbox with logging
     $sandbox = Start-Process wsandbox -PassThru -RedirectStandardError $testLog
-    
+
     # Wait for sandbox startup
     Start-Sleep -Seconds 5
-    
+
     # Copy test application if specified
     if ($ApplicationPath) {
         Copy-Item $ApplicationPath "C:\Users\WDAGUtilityAccount\Desktop\"
     }
-    
+
     # Return process and log path
     return @{
         Process = $sandbox
@@ -167,8 +235,38 @@ Windows Sandbox provides isolation but has limitations:
 - **Kernel-level threats**: Sophisticated malware detecting virtualization may escape Sandbox isolation
 - **Covert channels**: Timing-based communication could theoretically exfiltrate data
 - **Resource exhaustion**: Malicious code could consume all available resources
+- **Shared kernel**: Sandbox shares the host Windows kernel. A kernel exploit could break isolation entirely. For analyzing samples suspected of carrying kernel exploits, use a full VM on separate hardware or a dedicated cloud instance you can snapshot and discard.
 
 For advanced threat analysis, consider additional isolation layers like virtual machines or dedicated hardware. Windows Sandbox complements rather than replaces thorough security analysis.
+
+### Comparing Sandbox to Hyper-V VMs for Privacy Testing
+
+| Feature | Windows Sandbox | Hyper-V VM |
+|---------|----------------|------------|
+| Setup time | Seconds | Minutes |
+| State persistence | Never (auto-clear) | Configurable |
+| Kernel isolation | Shared with host | Fully separate |
+| Network control | Basic on/off | Full virtual networking |
+| Snapshot support | No | Yes |
+| Best for | Quick app testing | Deep malware analysis |
+
+Use Sandbox for routine privacy evaluation of commercial software and browser extensions. Reserve Hyper-V VMs (or VMware Workstation) for analyzing samples you suspect carry privilege escalation or kernel exploits.
+
+## Building a Repeatable Testing Library
+
+Once you have established workflows for common test types, document them as reusable `.wsb` templates. Maintain a library structured by purpose:
+
+```
+C:\sandbox-configs\
+  ├── browser-extension-test.wsb   # Networking on, Wireshark ready
+  ├── installer-audit.wsb          # Networking off, ProcMon autostart
+  ├── network-capture.wsb          # Networking on, host Wireshark attached
+  └── document-test.wsb            # Fully isolated, Office viewer only
+```
+
+Version control this directory with Git. When a new version of Windows ships, re-run your standard test suite against previously-approved software to catch regression in privacy behavior. Software vendors occasionally introduce telemetry in minor updates that wasn't present in the version you originally reviewed.
+
+For team environments, share the configs directory through a private repository. This allows a security-conscious member of the team to build and maintain testing templates while others consume them without needing to understand the underlying configuration details.
 
 ## Cleanup and Best Practices
 
@@ -179,10 +277,10 @@ Windows Sandbox automatically deletes all data when closed. However, follow thes
 - Use separate configurations for different test scenarios
 - Review logs on the host system before deleting them
 - Keep Sandbox Windows updated for latest security patches
+- Store your `.wsb` configuration files in version control to track changes to your testing environment over time
 
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
