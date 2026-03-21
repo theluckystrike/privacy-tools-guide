@@ -416,4 +416,9 @@ Extensions are convenient, but they're a massive privacy surface. Every extensio
 
 {% endraw %}
 
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
