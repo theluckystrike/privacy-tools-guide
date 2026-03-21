@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison, encryption]

@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /dns-over-tls-setup-linux-android/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

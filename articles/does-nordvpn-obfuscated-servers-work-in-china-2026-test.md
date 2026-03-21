@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /does-nordvpn-obfuscated-servers-work-in-china-2026-test/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
