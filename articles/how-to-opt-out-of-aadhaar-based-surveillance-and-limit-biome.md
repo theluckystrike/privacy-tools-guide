@@ -15,7 +15,7 @@ tags: [privacy-tools-guide]
 ---
 
 
-{% raw %}
+
 
 You can minimize Aadhaar surveillance exposure by locking biometrics on the UIDAI portal, generating a Virtual ID proxy, auditing authentication history, revoking optional service provider consents, and monitoring for breaches. This guide provides concrete steps to reduce your biometric data footprint within India's centralized identification system while acknowledging that complete opt-out is impossible due to mandatory linkages for banking and telecom.
 
@@ -275,7 +275,7 @@ Beyond personal protection, consider engaging with privacy advocacy organization
 
 Supporting these organizations amplifies your individual efforts and contributes to systemic change. Individual technical defenses matter, but collective policy action creates lasting protection.
 
-{% endraw %}
+
 
 
 ## Related Articles
@@ -288,4 +288,4 @@ Supporting these organizations amplifies your individual efforts and contributes
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+
