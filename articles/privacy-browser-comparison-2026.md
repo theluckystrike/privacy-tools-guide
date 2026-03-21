@@ -5,7 +5,7 @@ description: "Head-to-head comparison of Firefox, Brave, LibreWolf, Mullvad Brow
 date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-browser-comparison-2026/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

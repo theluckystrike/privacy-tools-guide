@@ -333,8 +333,7 @@ Singapore's PDPA (amended March 2026) introduces new requirements for organizati
 const singaporePDPANotice = {
   organization: "Your Company",
   collection_purpose: "Service delivery and analytics",
-  categories: [
-    { data_type: "email", retention_months: 36, third_parties: ["analytics_vendor"] },
+  categories: [guides] },
     { data_type: "usage_data", retention_months: 12, third_parties: ["marketing_vendor"] }
   ],
   user_rights: [
