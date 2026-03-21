@@ -9,7 +9,7 @@ permalink: /how-to-set-up-privacy-focused-phone-specifically-for-dating-/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

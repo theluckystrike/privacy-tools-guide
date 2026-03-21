@@ -9,7 +9,7 @@ permalink: /how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
