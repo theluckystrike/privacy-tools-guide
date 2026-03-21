@@ -316,6 +316,30 @@ Integrated into Fastmail webmail and apps. Creating masks directly within your e
 
 **Password manager integration:** Link your alias service to your password manager. When creating new accounts, generate alias + password together.
 
+
+### Manage Email Aliases via CLI
+
+```bash
+# SimpleLogin CLI — create and manage aliases from the terminal
+# Install: pip install simple-login
+
+# Authenticate
+sl login --email you@example.com
+
+# Create a new alias for a specific service
+sl alias create --note "Newsletter signup" --mailbox you@example.com
+
+# List all active aliases
+sl alias list | head -20
+
+# Disable a leaking alias immediately
+sl alias disable abc123@simplelogin.com
+
+# Self-hosted: check your SimpleLogin instance health
+curl -s http://localhost:7777/health | jq .
+```
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
