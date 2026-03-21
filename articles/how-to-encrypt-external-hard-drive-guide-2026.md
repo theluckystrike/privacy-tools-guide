@@ -8,7 +8,7 @@ permalink: /how-to-encrypt-external-hard-drive-guide-2026/
 categories: [security, guides]
 tags: [privacy-tools-guide, encryption, storage, external-drives]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
