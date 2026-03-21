@@ -213,3 +213,4 @@ The open-source game community provides excellent alternatives to most commercia
 LAN parties offer a privacy-respecting alternative to online gaming that puts you in complete control. By running your own game servers, using open-source alternatives, and properly configuring your network, you can enjoy gaming with friends without contributing to the massive data collection apparatus of the gaming industry. The setup effort is minimal for most games, and the privacy benefits are substantial.
 
 The gaming community increasingly recognizes data collection as a serious concern, and self-hosted gaming represents one of the most effective responses. Your gaming sessions stay private, your hardware stays under your control, and you avoid the extractive practices that define the modern gaming industry.
+{% endraw %}
