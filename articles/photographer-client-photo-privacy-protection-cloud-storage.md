@@ -107,6 +107,7 @@
 
 
 
+
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices"
@@ -140,6 +141,7 @@ intent-checked: true
 voice-checked: true
 author: "Privacy Tools Guide"
 ---
+
 
 
 
