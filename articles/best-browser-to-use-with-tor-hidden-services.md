@@ -168,6 +168,161 @@ For operators running hidden services:
 
 The Tor Browser remains the gold standard for accessing hidden services, but Firefox with Tor proxy offers better developer tooling when configured correctly. The key to secure access lies in understanding your threat model, properly configuring browser settings, and verifying service authenticity.
 
+## Advanced Circuit Management and Isolation
+
+Understanding Tor's circuit architecture helps you implement stronger isolation between different hidden service identities:
+
+```bash
+# Monitor Tor circuits in real-time
+$ telnet 127.0.0.1 9051
+AUTHENTICATE "your_control_port_password"
+GETINFO circuit-status
+250+circuit-status=
+...
+CLOSE
+
+# Force new circuits for specific tabs (requires Tor Browser preference)
+# browser.privatebrowsing.autostart set to true
+# Combined with Tor's --BridgeRelay configuration for advanced users
+```
+
+Advanced users can configure Tor with multiple control ports, allowing different applications to maintain independent circuits:
+
+```bash
+# torrc configuration for circuit isolation
+Socks5Proxy 127.0.0.1:9050
+Socks5ProxyOnion 127.0.0.1:9050
+IsolateSOCKSAuth
+IsolateClientAddr
+IsolateDestPort
+IsolateDestAddr
+
+# Run separate Tor instances for different threat contexts
+# Instance 1: General browsing
+SOCKSPort 9050
+
+# Instance 2: High-sensitivity work
+SOCKSPort 9051
+```
+
+## Fingerprinting Attacks and Defenses
+
+Browser fingerprinting remains a significant threat even on Tor Browser. Defenders attempt to make browsers indistinguishable from thousands of others:
+
+```javascript
+// Test your browser's fingerprinting resistance
+// Run in Tor Browser console
+
+console.log("Canvas Test:");
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+ctx.textBaseline = "top";
+ctx.font = "14px Arial";
+ctx.fillText("Browser Fingerprint Test", 2, 2);
+const dataURL = canvas.toDataURL();
+console.log(dataURL.substring(0, 50));
+
+// Check WebGL fingerprinting
+try {
+    const gl = canvas.getContext('webgl');
+    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+    const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+    const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+    console.log("WebGL Vendor:", vendor);
+    console.log("WebGL Renderer:", renderer);
+} catch(e) {
+    console.log("WebGL disabled (good for privacy)");
+}
+
+// Check User-Agent
+console.log("User-Agent:", navigator.userAgent);
+
+// Check JavaScript execution patterns
+console.time("PerformanceTest");
+for(let i = 0; i < 1000000; i++) {}
+console.timeEnd("PerformanceTest");
+```
+
+Tor Browser includes multiple fingerprinting protections:
+- **Canvas randomization**: All browsers get slightly randomized canvas fingerprints
+- **WebGL blocking**: By default disabled to prevent renderer fingerprinting
+- **Referer stripping**: Prevents referrer-based tracking
+- **Plugin blocking**: Disables Flash, Java, and other plugins
+
+For additional protection, enable Security Level to "Safest" in Tor Browser preferences, though this disables JavaScript entirely and may break many websites.
+
+## Debugging Hidden Service Issues
+
+When hidden services aren't loading, systematic debugging helps identify the root cause:
+
+```python
+# Hidden service connectivity test script
+import requests
+import socket
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
+# Configure proxy for Tor
+proxies = {
+    'http': 'socks5://127.0.0.1:9050',
+    'https': 'socks5://127.0.0.1:9050'
+}
+
+def test_hidden_service(onion_address, timeout=10):
+    """Test connectivity to .onion site"""
+
+    # Test 1: Resolve through Tor
+    try:
+        result = socket.getaddrinfo(onion_address, 443)
+        print(f"[OK] DNS resolution works")
+    except Exception as e:
+        print(f"[FAIL] DNS resolution failed: {e}")
+        return False
+
+    # Test 2: Connect via Tor
+    try:
+        session = requests.Session()
+        retry = Retry(connect=3, backoff_factor=0.5)
+        adapter = HTTPAdapter(max_retries=retry)
+        session.mount('http://', adapter)
+        session.mount('https://', adapter)
+
+        response = session.get(f'https://{onion_address}',
+                             proxies=proxies,
+                             timeout=timeout,
+                             verify=False)
+        print(f"[OK] Connection successful, status {response.status_code}")
+        return True
+    except requests.exceptions.ConnectTimeout:
+        print(f"[FAIL] Connection timeout - Tor may be disconnected")
+    except requests.exceptions.ConnectionError as e:
+        print(f"[FAIL] Connection error: {e}")
+    except Exception as e:
+        print(f"[FAIL] Unknown error: {e}")
+
+    return False
+
+# Test a hidden service
+test_hidden_service('example.onion')
+```
+
+Common issues and solutions:
+- **Connection timeout**: Tor may be overloaded; try a different circuit with `New Identity` in browser menu
+- **DNS failure**: Ensure `network.proxy.socks_remote_dns = true` is set in Firefox
+- **Certificate errors**: Hidden services often use self-signed certificates; add exceptions in browser settings
+- **Slow speeds**: Geographic distance to Tor entry nodes affects speed; patience required
+
+## Protocol Comparison Table
+
+| Aspect | Tor Browser | Firefox + SOCKS | Brave Tor Tabs | Whonix |
+|--------|-------------|-----------------|----------------|--------|
+| Default Fingerprinting Protection | Excellent | Good | Good | Excellent |
+| Developer Tools | Limited | Full | Good | Limited |
+| .onion Support | Native | Via Tor | Via Tor | Native |
+| Update Frequency | Monthly | Continuous | Weekly | Rolling |
+| Plugin Support | Disabled | Configurable | Disabled | Disabled |
+| First-time Setup | 5 minutes | 15 minutes | 2 minutes | 30+ minutes |
+| Recommended For | General users | Developers | Privacy-first | Maximum security |
 
 ## Related Articles
 

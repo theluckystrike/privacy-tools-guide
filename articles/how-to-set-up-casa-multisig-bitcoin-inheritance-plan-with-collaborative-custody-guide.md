@@ -170,6 +170,201 @@ Developers may prefer completely non-custodial solutions. Consider combining Hou
 
 This approach eliminates third-party dependency but requires more technical expertise and manual key management.
 
+## Advanced Multisig Threshold Design
+
+Choosing the right threshold (M-of-N) balances security with recoverability:
+
+```python
+# Multisig threshold optimization for inheritance
+
+class MultisigThresholdDesign:
+    """Analyze trade-offs for different M-of-N configurations"""
+
+    configurations = {
+        '2-of-3': {
+            'security_level': 'Medium',
+            'recovery_difficulty': 'Easy',
+            'single_point_failures': 1,
+            'attack_requirement': 'Compromise 2 of 3 keys',
+            'inheritance_use': 'Primary - you + Casa backup recovers funds',
+            'risk': 'If you + Casa both compromised, attacker gets funds'
+        },
+        '3-of-3': {
+            'security_level': 'High',
+            'recovery_difficulty': 'Hard',
+            'single_point_failures': 0,
+            'attack_requirement': 'Compromise all 3 keys',
+            'inheritance_use': 'Backup only - requires all parties to sign',
+            'risk': 'If any key lost, funds unrecoverable'
+        },
+        '3-of-5': {
+            'security_level': 'Very High',
+            'recovery_difficulty': 'Medium',
+            'single_point_failures': 2,
+            'attack_requirement': 'Compromise 3 of 5 keys',
+            'inheritance_use': 'Complex family structures - spouse + 3 adult children',
+            'risk': 'Requires coordination from multiple parties'
+        },
+        '2-of-5': {
+            'security_level': 'High',
+            'recovery_difficulty': 'Easy',
+            'single_point_failures': 3,
+            'attack_requirement': 'Compromise 2 of 5 keys',
+            'inheritance_use': 'Maximum accessibility - any 2 beneficiaries can recover',
+            'risk': 'Only 2 keys needed for theft'
+        }
+    }
+
+    def recommend_threshold(self, context: str) -> str:
+        """Recommend based on threat model"""
+
+        if context == "individual_high_security":
+            return "2-of-3: Maximum security with simple recovery"
+        elif context == "family_inheritance":
+            return "3-of-5: Distribute across family members, any 3 can recover"
+        elif context == "business_cofounders":
+            return "2-of-3: Founder A, Founder B, Trusted Advisor"
+        elif context == "maximum_redundancy":
+            return "3-of-5: Any 3 of (primary, backup1, backup2, trusted, escrow)"
+```
+
+## Timelocks and Escrow Mechanics
+
+Prevent immediate loss if keys are stolen by implementing recovery delays:
+
+```bash
+# Bitcoin Core multisig with timelock protection
+
+# Setup: 2-of-3 multisig requiring 2 signatures
+# + 1-of-3 timelock requiring 1 signature after 90 days
+# This prevents attacker from immediately spending if they get 2 keys
+
+# Generate keys
+key1=$(bitcoin-cli -regtest getnewaddress)
+key2=$(bitcoin-cli -regtest getnewaddress)
+key3=$(bitcoin-cli -regtest getnewaddress)
+
+# Create 2-of-3 multisig address
+multisig=$(bitcoin-cli -regtest createmultisig 2 "[\"$key1\", \"$key2\", \"$key3\"]")
+address=$(echo $multisig | jq -r '.address')
+
+# Send funds to multisig
+txid=$(bitcoin-cli -regtest sendtoaddress $address 1.0)
+
+# Later, need 2 signatures to spend. If attacker has 2 keys:
+# - Immediate spend possible with any 2 keys
+# - Timelock prevents this IF configured with OP_CHECKLOCKTIMEVERIFY
+
+# Advanced: Create spending transaction with timelock
+# (Requires PSBT and compatible hardware wallets)
+psbt=$(bitcoin-cli -regtest walletcreatefundedpsbt \
+  "[{\"txid\":\"$txid\",\"vout\":0}]" \
+  "[{\"$beneficiary_address\":0.99}]" \
+  0 \
+  '{"changeAddress":"'$change_address'"}')
+
+# Attach timelock: 90 days = 7776000 seconds
+# Beneficiary can only spend after 90 days pass
+bitcoin-cli -regtest finalizepsbt $psbt
+```
+
+## Inheritance Execution Workflow with Legal Documentation
+
+Ensure beneficiaries understand the process:
+
+```python
+# Inheritance execution checklist document
+
+inheritance_plan = {
+    'document_name': 'Bitcoin Inheritance Plan - Legal Execution',
+    'created_date': '2026-03-21',
+    'review_date': '2027-03-21',
+    'beneficiaries': [
+        {
+            'name': 'Primary Spouse',
+            'role': 'Primary beneficiary - receives all Bitcoin',
+            'key_location': 'Safe deposit box - Bank of [City]',
+            'instructions': [
+                '1. Obtain copy of death certificate',
+                '2. Contact Casa with death certificate + will',
+                '3. Provide own hardware wallet or Casa will direct you',
+                '4. Initiate recovery with Casa + your backup key',
+                '5. Wait 30-day recovery window',
+                '6. Bitcoin will be available in your wallet'
+            ]
+        }
+    ],
+    'contacts': [
+        {
+            'role': 'Estate Attorney',
+            'name': 'John Doe, Esq.',
+            'phone': '+1-555-0123',
+            'email': 'john@lawfirm.com',
+            'note': 'Has copy of will and this document'
+        },
+        {
+            'role': 'Casa Support',
+            'website': 'casa.io/support',
+            'note': 'They will guide recovery with legal docs'
+        }
+    ],
+    'security_locations': [
+        {
+            'location': 'Safe Deposit Box - Bank of Chicago',
+            'contents': 'Backup key, this document, password list',
+            'access_by': 'Spouse + executor',
+            'access_procedure': 'Bring death certificate to bank'
+        },
+        {
+            'location': 'Attorney Safe',
+            'contents': 'Copy of this document, will',
+            'access_by': 'Estate executor',
+            'access_procedure': 'Executor contacts attorney'
+        }
+    ]
+}
+```
+
+## Common Inheritance Mistakes to Avoid
+
+```python
+# Anti-patterns in Bitcoin inheritance
+
+mistakes = {
+    'single_point_failure': {
+        'description': 'Storing only one recovery key',
+        'consequence': 'If that key is lost/destroyed, Bitcoin unrecoverable',
+        'correct': 'Distribute keys across multiple locations + people'
+    },
+    'unclear_beneficiary_access': {
+        'description': 'Beneficiary doesn\'t understand multisig recovery',
+        'consequence': 'Beneficiary can\'t access funds even with keys',
+        'correct': 'Include step-by-step written instructions + practice drills'
+    },
+    'inadequate_legal_documentation': {
+        'description': 'No will mentioning Bitcoin',
+        'consequence': 'Inheritance goes to government, not family',
+        'correct': 'Update will, mention specific Bitcoin holdings, name executor'
+    },
+    'unused_timelock': {
+        'description': 'No delay before funds are spendable',
+        'consequence': 'If keys compromised, attacker spends immediately',
+        'correct': 'Use timelocks (90-180 days) for recovery delay'
+    },
+    'password_lock_only': {
+        'description': 'Protecting hardware wallet with only a PIN',
+        'consequence': 'Attacker with physical access can brute force',
+        'correct': 'Use passphrase + multisig (separate from PIN)'
+    },
+    'no_regular_testing': {
+        'description': 'Never verifying recovery actually works',
+        'consequence': 'Recovery fails when needed',
+        'correct': 'Test recovery annually on testnet'
+    }
+}
+```
+
+## Related Reading
 
 ## Related Articles
 

@@ -170,6 +170,202 @@ Always maintain redundant communication methods:
 - Tertiary: Encrypted dead drop using secure file hosting
 - Emergency: Physical dead drop with pre-arranged location
 
+## Technical Detection Vectors and Countermeasures
+
+Sophisticated adversaries use multiple detection methods. Understanding each improves your defense:
+
+```python
+# Attack vectors and countermeasures for source-journalist communication
+
+class SourceThreatVectors:
+    """Technical attacks that could identify sources"""
+
+    vectors = {
+        'timing_analysis': {
+            'attack': 'Correlate message send times with publishing',
+            'example': 'Editor receives leak, publishes article within hours',
+            'defense': 'Use asynchronous communication with random delays'
+        },
+        'metadata_analysis': {
+            'attack': 'EXIF data, document properties, timezone info',
+            'example': 'PDF metadata shows "Edited by John Smith"',
+            'defense': 'Strip all metadata using Mat2, convert to plain text'
+        },
+        'linguistic_fingerprinting': {
+            'attack': 'Writing style analysis identifies source',
+            'example': 'Unusual phrases, grammar patterns match employee',
+            'defense': 'Rewrite documents in neutral tone, break up distinctive phrasing'
+        },
+        'location_correlation': {
+            'attack': 'IP address, cell tower data, WiFi SSID fingerprinting',
+            'example': 'Source connects from office building where story originated',
+            'defense': 'Use Tor for all communications, access from public WiFi'
+        },
+        'endpoint_compromise': {
+            'attack': 'Malware captures messages before encryption',
+            'example': 'Keylogger records communication on personal device',
+            'defense': 'Use dedicated device for source communications only'
+        },
+        'supply_chain_attack': {
+            'attack': 'Compromise encryption tools themselves',
+            'example': 'Signal backdoor allows NSA decryption',
+            'defense': 'Use open-source tools audited by security researchers'
+        }
+    }
+
+    @staticmethod
+    def detect_timing_correlation():
+        """Detect if your message timing is visible"""
+        import time
+        import random
+
+        # Random delay before sending (5-30 minutes)
+        delay = random.randint(300, 1800)
+        print(f"Delaying message by {delay} seconds to break correlation")
+        time.sleep(delay)
+
+        # Send at randomized interval
+        message_queue = []
+        return message_queue
+
+    @staticmethod
+    def strip_document_metadata(filepath: str) -> str:
+        """Remove all metadata before sharing"""
+        import subprocess
+
+        # Using mat2 (Metadata Anonymization Toolkit v2)
+        result = subprocess.run(
+            ['mat2', '--inplace', '--remove-all', filepath],
+            capture_output=True
+        )
+
+        if result.returncode == 0:
+            print(f"Metadata stripped from {filepath}")
+        return filepath
+
+    @staticmethod
+    def detect_linguistic_patterns(text: str) -> dict:
+        """Analyze writing style for fingerprinting risk"""
+        metrics = {
+            'avg_word_length': sum(len(w) for w in text.split()) / len(text.split()),
+            'unique_words': len(set(text.split())),
+            'sentence_variety': len(set(s.split() for s in text.split('.'))),
+            'distinctive_phrases': []
+        }
+
+        # Identify high-risk distinctive phrases
+        distinctive = ['leverage', 'synergy', 'circle back', 'deep dive']
+        for phrase in distinctive:
+            if phrase in text.lower():
+                metrics['distinctive_phrases'].append(phrase)
+
+        return metrics
+```
+
+## Operational Security Discipline
+
+Technical tools fail without operational discipline:
+
+```bash
+#!/bin/bash
+# Source operational security checklist
+
+echo "=== SOURCE COMMUNICATION OPSEC ==="
+
+# 1. DEVICE PREPARATION
+echo "1. Device isolation check"
+# Verify device is air-gapped or isolated
+if [ -f ~/.ssh/config ]; then
+    echo "  WARNING: SSH config detected - may indicate identity linkage"
+fi
+if pgrep -l dropbox > /dev/null; then
+    echo "  ERROR: Cloud sync running - must disable"
+    killall dropbox
+fi
+
+# 2. NETWORK VERIFICATION
+echo "2. Network identity verification"
+# Verify Tor is working
+curl -s https://check.torproject.org/api/ip | jq '.IsTor'
+# Should return: true
+
+# 3. COMMUNICATION PREPARATION
+echo "3. Document preparation"
+# Strip metadata from documents
+find . -name "*.pdf" -o -name "*.docx" | while read file; do
+    mat2 --inplace "$file"
+    echo "  Stripped: $file"
+done
+
+# 4. PRE-COMMUNICATION VERIFICATION
+echo "4. Verify journalist identity before first contact"
+# Check PGP key fingerprint through multiple sources
+# - Published on website
+# - In WhatsApp about section
+# - On Twitter verified check
+# If all three match, likely legitimate
+
+# 5. POST-COMMUNICATION CLEANUP
+echo "5. Communication cleanup"
+# Clear all traces
+history -c
+sudo shred -vfz -n 5 ~/.bash_history
+pkill -f signal  # Kill Signal process
+# Unplug USB device, reboot
+
+echo "=== OPSEC COMPLETE ==="
+```
+
+## Detecting Investigative Surveillance
+
+If authorities or adversaries are investigating you:
+
+```python
+# Warning signs of active investigation
+
+warning_signs = {
+    'social_engineering': [
+        'Unexpected contact from unknown reporter',
+        'Sudden interest in your daily routine',
+        'People claiming to know your personal details',
+        'Offers that seem too good to be true'
+    ],
+    'technical_indicators': [
+        'Messages failing to send, then succeeding',
+        'Unexpected battery drain',
+        'Device running hot without apps open',
+        'Network connections during sleep',
+        'SIM card requiring authentication'
+    ],
+    'physical_surveillance': [
+        'Same vehicle parked near home repeatedly',
+        'Unfamiliar people in area watching',
+        'Broken car window/lock tampering signs',
+        'Mail appearing opened or displaced'
+    ],
+    'operational_failure': [
+        'Story publishes before you intended',
+        'Information that only you know becomes public',
+        'Journalist contact information compromised',
+        'Law enforcement asking questions about communications'
+    ]
+}
+
+def respond_to_compromise():
+    """If you suspect compromise"""
+    steps = [
+        '1. STOP all communication immediately',
+        '2. Power down compromised device - do NOT reboot',
+        '3. Contact journalist through new method established beforehand',
+        '4. Preserve evidence of compromise if safe to do so',
+        '5. Consider contacting attorney for legal advice',
+        '6. Assess physical safety - move location if necessary',
+        '7. Do NOT attempt to debug or "fix" compromised device'
+    ]
+    return steps
+```
+
+## Related Reading
 
 ## Related Articles
 
