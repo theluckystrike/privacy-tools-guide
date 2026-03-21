@@ -3,6 +3,7 @@ layout: default
 title: "Set Up Bitcoin Payjoin Transactions For Sender Receiver"
 description: "A practical guide for developers and power users to implement Bitcoin PayJoin, a privacy-enhancing technique that breaks common transaction heuristics"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/
 categories: [guides]
@@ -263,10 +264,15 @@ Before deploying PayJoin in production:
 PayJoin represents one of the most effective practical improvements in Bitcoin transaction privacy. By carefully implementing both sender and receiver components, you can significantly reduce on-chain analysis effectiveness while maintaining full Bitcoin security guarantees.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Bitcoin Dust Attack Explained How Small Transactions Deanony](/privacy-tools-guide/bitcoin-dust-attack-explained-how-small-transactions-deanony/)
+- [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
+- [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)
+- [How To Set Up Private Bitcoin Full Node At Home For Transact](/privacy-tools-guide/how-to-set-up-private-bitcoin-full-node-at-home-for-transact/)
+- [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

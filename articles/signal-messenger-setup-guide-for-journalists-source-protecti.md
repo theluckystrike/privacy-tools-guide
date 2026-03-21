@@ -3,6 +3,7 @@ layout: default
 title: "Signal Messenger Setup Guide for Journalists: Source."
 description: "A practical guide to configuring Signal Messenger for journalists who need secure communications with confidential sources. Covers phone number"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /signal-messenger-setup-guide-for-journalists-source-protecti/
 categories: [guides]
@@ -329,10 +330,15 @@ Organizations should establish written policies:
 
 Distribute this policy during newsroom onboarding. Regular security training reinforces these practices.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
+- [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
+- [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

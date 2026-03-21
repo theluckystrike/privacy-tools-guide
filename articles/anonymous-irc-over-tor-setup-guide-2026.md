@@ -3,6 +3,7 @@ layout: default
 title: "Anonymous IRC Over Tor Setup Guide 2026"
 description: "A practical guide to configuring IRC over Tor for anonymous communications. Learn to set up Tor daemon, configure IRC clients, connect to onion-service"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /anonymous-irc-over-tor-setup-guide-2026/
 categories: [guides]
@@ -251,10 +252,15 @@ This allows users to connect directly to your .onion address, eliminating exit n
 The setup requires a Tor daemon, a compatible IRC client, and attention to operational security practices. Start with a trusted network like OFTC and verify your anonymity through hostmask checks before adding advanced configurations.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
+- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
+- [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
+- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
+- [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

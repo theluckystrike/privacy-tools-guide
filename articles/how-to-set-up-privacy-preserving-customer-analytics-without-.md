@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Privacy Preserving Customer Analytics Without"
 description: "A practical guide for developers to implement privacy-first customer analytics. Learn differential privacy, anonymization techniques, and building"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-privacy-preserving-customer-analytics-without-/
 categories: [guides, security]
@@ -280,10 +281,15 @@ The best analytics respect user privacy while still answering the questions that
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Privacy Focused Crm That Minimizes Customer Da](/privacy-tools-guide/how-to-set-up-privacy-focused-crm-that-minimizes-customer-da/)
+- [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)
+- [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)
+- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
+- [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How to Secure Your Home Router Firmware"
 description: "Harden your home router against attacks. Update firmware, disable WPS and UPnP, set up a guest network, and consider OpenWrt for full control."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: home-router-firmware-security-guide
 categories: [guides, security]
@@ -217,11 +218,15 @@ Run `https://www.grc.com/x/ne.dll?bh0bkyd2` (Shields Up) from a browser to test 
 - [ ] Telnet disabled
 - [ ] Quarterly firmware check scheduled
 
-## Related Reading
 
-- [How to Set Up VPN on Router Firmware Level](/how-to-set-up-vpn-on-router-firmware-level-guide)
-- [Privacy-Focused DNS Providers Comparison](/privacy-focused-dns-providers-comparison)
-- [Encrypted DNS over HTTPS on Linux](/encrypted-dns-over-https-linux-setup)
+
+## Related Articles
+
+- [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
+- [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
+- [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
+- [Set Up DNS-Based Ad Blocking on Travel Router GL-Inet for](/privacy-tools-guide/how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/)
+- [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

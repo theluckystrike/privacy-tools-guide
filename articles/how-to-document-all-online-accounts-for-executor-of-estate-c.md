@@ -3,6 +3,7 @@ layout: default
 title: "How To Document All Online Accounts For Executor Of Estate C"
 description: "A practical guide for executors and power users to systematically document and manage deceased person's digital accounts. Includes CLI tools, inventory"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-document-all-online-accounts-for-executor-of-estate-c/
 categories: [guides]
@@ -361,10 +362,15 @@ During estate administration, protect against identity theft:
 3. **Monitor for fraud** using identity theft protection services
 4. **Document everything** in case of disputes
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
+- [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)
+- [How To Document Privacy Violations For Potential Class Actio](/privacy-tools-guide/how-to-document-privacy-violations-for-potential-class-actio/)
+- [How To Set Up Github Repository With Encrypted Estate Instru](/privacy-tools-guide/how-to-set-up-github-repository-with-encrypted-estate-instru/)
+- [Password Manager For Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

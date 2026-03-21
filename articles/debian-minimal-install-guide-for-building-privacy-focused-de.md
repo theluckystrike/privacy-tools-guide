@@ -3,6 +3,7 @@ layout: default
 title: "Debian Minimal Install Guide For Building Privacy Focused De"
 description: "A practical guide to installing Debian with a minimal footprint and hardening it for privacy. Perfect for developers and power users who want full"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /debian-minimal-install-guide-for-building-privacy-focused-de/
 categories: [guides, security]
@@ -223,10 +224,15 @@ This foundation scales from a simple web-browsing machine to a full development 
 The privacy you achieve comes from understanding your system rather than trusting defaults. Debian minimal install provides the canvas—you paint the picture.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
+- [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/privacy-tools-guide/best-anonymous-email-service-2026/)
+- [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

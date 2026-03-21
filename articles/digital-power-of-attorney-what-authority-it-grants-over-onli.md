@@ -3,6 +3,7 @@ layout: default
 title: "Digital Power of Attorney: What Authority It Grants Over."
 description: "A technical breakdown of digital power of attorney and how it applies to cryptocurrency wallets, online accounts, and digital assets. Includes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /digital-power-of-attorney-what-authority-it-grants-over-onli/
 categories: [guides, security, enterprise]
@@ -191,10 +192,15 @@ Configure this with a waiting period (typically 30 days) to prevent abuse. Your 
 4. **Coordinate with platforms**: Some services have their own legacy/transfer features
 5. **Educate your agents**: Ensure they understand your digital ecosystem
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [RoboForm Review: Still Relevant in 2026 for Power Users?](/privacy-tools-guide/roboform-review-still-relevant-2026/)
+- [Social Media Will What Legal Authority Executor Has Over You](/privacy-tools-guide/social-media-will-what-legal-authority-executor-has-over-you/)
+- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
+- [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

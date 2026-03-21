@@ -3,6 +3,7 @@ layout: default
 title: "Identity Graph What Data Brokers Know About You And How They"
 description: "Learn how data brokers build identity graphs to track your online activity, connect your records across platforms, and monetize your personal information"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /identity-graph-what-data-brokers-know-about-you-and-how-they/
 categories: [guides]
@@ -285,10 +286,15 @@ While you cannot completely eliminate yourself from these databases, you can red
 - Review app permissions on your devices (Android Settings > Apps > Permissions)
 - Check background data usage (stops apps from phoning home location data)
 
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Articles
+
+- [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
+- [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [Best Enterprise Identity Governance Platform for.](/privacy-tools-guide/best-enterprise-identity-governance-platform-for-managing-team-access-reviews-2026/)
+- [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
+
 {% endraw %}

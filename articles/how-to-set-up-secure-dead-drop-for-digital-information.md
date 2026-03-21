@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Secure Dead Drop for Digital Information"
 description: "A practical guide to creating secure digital dead drops for anonymous information exchange. Learn to build encrypted drop points using GPG, Tor onion"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-dead-drop-for-digital-information/
 categories: [guides, security]
@@ -259,12 +260,15 @@ Each approach trades simplicity for control. The right choice depends on your sp
 For additional privacy tools and security guides, explore the Privacy Tools Guide collection.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [How to Set Up an Encrypted Dead Drop Using OnionShare.](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
-- [How to Set Up Dead Man's Switch Using Cron Job to Release Encrypted File](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-- [How to Set Up Offline Encrypted Communication Between.](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
+
+## Related Articles
+
+- [How To Set Up Encrypted Dead Drop Using Onionshare For Sourc](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
+- [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
+- [How to Set Up a Canary Trap to Detect Information Leaks](/privacy-tools-guide/how-to-set-up-canary-trap-to-detect-information-leaks/)
+- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

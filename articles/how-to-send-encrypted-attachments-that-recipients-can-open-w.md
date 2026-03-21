@@ -3,6 +3,7 @@ layout: default
 title: "How To Send Encrypted Attachments That Recipients Can Open W"
 description: "A practical guide for developers and power users on sending encrypted file attachments that recipients can decrypt and open using only standard tools"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-send-encrypted-attachments-that-recipients-can-open-w/
 categories: [guides]
@@ -207,10 +208,15 @@ If using browser-based services, configure link expiration to prevent long-term 
 | Self-decrypting EXE | Windows + trust | Unlimited | Moderate |
 | Cloud encryption | Service app | Limited by service | High |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Send Large Encrypted Files Without Uploading To Third](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
+- [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
+- [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
+- [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
+- [Windows Privacy Tools Open Source 2026: A Developer Guide](/privacy-tools-guide/windows-privacy-tools-open-source-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

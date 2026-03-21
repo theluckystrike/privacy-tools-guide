@@ -3,6 +3,7 @@ layout: default
 title: "Jitsi Meet Self Hosted Setup Guide"
 description: "Deploy a self-hosted Jitsi Meet instance by running docker-compose up -d with the official Jitsi Docker images on a VPS with at least 2GB RAM and a domain name"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /jitsi-meet-self-hosted-setup-guide/
 reviewed: true
@@ -302,11 +303,15 @@ Examine Prosody logs for authentication or room creation issues:
 docker logs prosody
 ```
 
-## Related Reading
 
-- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+
+## Related Articles
+
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
+- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
+- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

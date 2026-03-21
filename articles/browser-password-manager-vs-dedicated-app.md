@@ -3,6 +3,7 @@ layout: default
 title: "Browser Password Manager Vs Dedicated App"
 description: "A technical comparison of browser-based password managers versus standalone applications, covering security models, CLI access, and integration"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /browser-password-manager-vs-dedicated-app/
 categories: [guides, security]
@@ -311,11 +312,15 @@ This pattern ensures sensitive credentials never appear in code while remaining 
 
 Browser password managers fundamentally cannot support this workflow. They were designed for interactive user authentication, not programmatic access by build systems.
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+
+## Related Articles
+
+- [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
+- [Migrating From Chrome Saved Passwords To Dedicated Manager S](/privacy-tools-guide/migrating-from-chrome-saved-passwords-to-dedicated-manager-s/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
+- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
+- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

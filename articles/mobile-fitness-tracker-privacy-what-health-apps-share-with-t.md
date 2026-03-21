@@ -3,6 +3,7 @@ layout: default
 title: "Mobile Fitness Tracker Privacy"
 description: "Fitness apps share your heart rate, sleep data, GPS routes, and biometric readings with analytics services, cloud storage providers, and third-party"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /mobile-fitness-tracker-privacy-what-health-apps-share-with-t/
 categories: [guides]
@@ -194,10 +195,15 @@ curl -X POST "https://api.fitnessapp.com/v1/data/export" \
   -d '{"format": "json", "data_types": ["workouts", "heart_rate", "sleep"]}'
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
+- [Privacy-Focused Fitness Trackers Comparison 2026](/privacy-tools-guide/privacy-focused-fitness-trackers-comparison-2026/)
+- [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
+- [Insurance Company Data Collection Privacy What Health.](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)
+- [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

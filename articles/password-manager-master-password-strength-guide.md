@@ -3,6 +3,7 @@ layout: default
 title: "Password Manager Master Password Strength Guide"
 description: "Create a master password with at least 80 bits of entropy: use a random 6-8 word passphrase (e.g., generated via diceware) or a 16+ character random string"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-master-password-strength-guide/
 reviewed: true
@@ -187,13 +188,15 @@ For users managing their vault:
 4. Enable two-factor authentication on your password manager account
 5. Test your master password strength using the calculation methods above
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Best Password Generator Strategy 2026: A Developer's Guide](/privacy-tools-guide/best-password-generator-strategy-2026/)
-- [How to Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
-- [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
+
+## Related Articles
+
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
+- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
+- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
+- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

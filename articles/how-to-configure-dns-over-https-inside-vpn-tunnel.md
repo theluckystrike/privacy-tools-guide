@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure DNS over HTTPS Inside a VPN Tunnel"
 description: "A technical guide to setting up DNS over HTTPS within your VPN tunnel for enhanced privacy and security"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-dns-over-https-inside-vpn-tunnel/
 categories: [guides, security]
@@ -352,9 +353,14 @@ bogus-priv
 ```
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
+- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

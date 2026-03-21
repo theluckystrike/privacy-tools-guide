@@ -3,6 +3,7 @@ layout: default
 title: "Nextcloud Talk Video Calls Setup Guide"
 description: "Learn how to configure Nextcloud Talk for video calls. This guide covers server requirements, TURN/STUN setup, firewall configuration, and advanced"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "theluckystrike"
 permalink: /nextcloud-talk-video-calls-setup-guide/
 categories: [guides]
@@ -396,10 +397,15 @@ Optimize for mobile clients:
 ],
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
+- [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
+- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
+- [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Create Separate Browser Profiles For Each Online Identity Compartmentalization"
 description: "Learn how to create and manage separate browser profiles to compartmentalize your online identities. Practical examples and CLI tools for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/
 categories: [guides]
@@ -243,10 +244,15 @@ This launches Puppeteer using your existing "work" profile, preserving your logg
 | Incognito | `chrome --incognito` |
 | New profile | Use Chrome's built-in "Add profile" feature |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
+- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
+- [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Secure Intercom System Using Encrypted Voip Fo"
 description: "A practical guide for developers and power users on building secure intercom systems using encrypted VoIP protocols. Learn about self-hosted solutions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-intercom-system-using-encrypted-voip-fo/
 categories: [guides]
@@ -208,10 +209,15 @@ Regular maintenance ensures continued security:
 openssl x509 -in /etc/asterisk/asterisk.pem -noout -dates
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
+- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
+- [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

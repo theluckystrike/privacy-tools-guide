@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Deltachat Encrypted Messenger Over Existing Em"
 description: "A practical guide for developers and power users to configure DeltaChat for end-to-end encrypted messaging using your existing email infrastructure"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-deltachat-encrypted-messenger-over-existing-em/
 categories: [guides]
@@ -323,9 +324,14 @@ While DeltaChat provides strong end-to-end encryption, several supplementary pra
 
 Metadata—including subject lines, sender, and recipient addresses—remains visible to email providers. For complete anonymity, combine DeltaChat with a privacy-focused email provider (ProtonMail, Tutanota) and consider using Tor or a VPN for email access.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
+- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
+- [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

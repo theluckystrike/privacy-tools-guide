@@ -3,6 +3,7 @@ layout: default
 title: "How to Document DNS and SSL Certificate Renewal Procedures"
 description: "Documenting DNS and SSL certificate renewal procedures is essential for maintaining continuous website availability and security. Without proper documentation"
 date: 2026-03-19
+last_modified_at: 2026-03-19
 author: theluckystrike
 permalink: /how-to-document-dns-and-ssl-certificate-renewal-procedures/
 categories: [guides]
@@ -352,9 +353,14 @@ Consider these tools to improve documentation and reduce manual effort:
 - **Checkmk**: Open-source monitoring with SSL checks
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
+- [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
+- [How To Document Privacy Violations For Potential Class Actio](/privacy-tools-guide/how-to-document-privacy-violations-for-potential-class-actio/)
+- [Secure Document Collaboration Alternatives to Google.](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
+- [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "What To Do If Your Identity Was Stolen Online Step Guide"
 description: "A practical guide for developers and power users on how to respond when your identity has been stolen online. Covers immediate actions, account"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
 categories: [guides]
@@ -227,10 +228,15 @@ Certain situations warrant police involvement:
 
 File a report at identitytheft.gov to get an official recovery plan and police report number. This documentation helps when disputing fraudulent charges.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
+- [How To Use Compartmentalized Identity For Online Dating Sepa](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

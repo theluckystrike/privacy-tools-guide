@@ -3,6 +3,7 @@ layout: default
 title: "Encrypted SMS Alternatives for When Data Connection Is."
 description: "A technical guide for developers and power users exploring encrypted SMS alternatives that work without active data connectivity. Covers carrier-based"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-sms-alternatives-for-when-data-connection-is-not-a/
 categories: [guides]
@@ -264,10 +265,15 @@ class AdaptiveMessenger:
         pass
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Encrypted SMS App for Android 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-sms-app-android-2026/)
+- [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)
+- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
+- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
+- [Best Tor Alternatives 2026: Privacy Browsing Guide](/privacy-tools-guide/best-tor-alternatives-2026-privacy-browsing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

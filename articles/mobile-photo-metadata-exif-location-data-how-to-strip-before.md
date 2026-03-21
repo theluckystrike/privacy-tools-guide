@@ -3,6 +3,7 @@ layout: default
 title: "Mobile Photo Metadata Exif Location Data How To Strip Before"
 description: "When you capture a photo with your smartphone, the image file contains more than just pixel data. Modern mobile phones embed extensive metadata within each"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /mobile-photo-metadata-exif-location-data-how-to-strip-before/
 categories: [guides, security]
@@ -268,10 +269,15 @@ alias strip-gps='exiftool -gps:all= -overwrite_original'
 
 This allows quick GPS removal from the current directory with a single command.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+- [How to Remove EXIF Metadata from Photos Before Sharing: Complete Guide](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
+- [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
+- [WireGuard vs OpenVPN Speed Difference on Mobile Data](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

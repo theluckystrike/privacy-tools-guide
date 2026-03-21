@@ -3,6 +3,7 @@ layout: default
 title: "Arch Linux Hardened Kernel Installation Guide For Advanced P"
 description: "A guide to installing and configuring the Linux hardened kernel on Arch Linux for enhanced security and privacy. Includes practical examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /arch-linux-hardened-kernel-installation-guide-for-advanced-p/
 categories: [guides, security]
@@ -261,10 +262,15 @@ Typical performance impact ranges from 1-5% for compute-heavy workloads. If perf
 The hardened kernel provides substantial security improvements for privacy-conscious users. Combined with proper system configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
+- [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
+- [Ios Advanced Data Protection For Icloud End To End.](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
+- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
+- [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

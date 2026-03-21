@@ -3,6 +3,7 @@ layout: default
 title: "School Surveillance Technology Privacy"
 description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective measures"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /school-surveillance-technology-privacy-student-rights-against/
 reviewed: true
@@ -240,11 +241,15 @@ While avoiding school surveillance entirely is difficult, students can reduce th
 - Advocate for policy changes through student government
 - Support organizations working on biometric privacy legislation
 
-## Related Reading
 
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [Air-Gapped Computer Setup for Maximum Security: Practical Guide](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
-- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
+
+## Related Articles
+
+- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
+- [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)
+- [India Cctv Surveillance Expansion Privacy Implications Of Sm](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

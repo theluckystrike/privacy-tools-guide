@@ -3,6 +3,7 @@ layout: default
 title: "Russia Telegram Compliance What Data Telegram Shares With Ru"
 description: "Russia Telegram Compliance: What Data Telegram Shares. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /russia-telegram-compliance-what-data-telegram-shares-with-ru/
 categories: [guides]
@@ -192,9 +193,14 @@ For users physically in Russia, the practical reality is:
 - **No notification**: Users aren't typically informed when data is requested
 - **Account termination risk**: Non-compliance isn't an option for Telegram under current law
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
+- [Russia Vpn Provider Compliance Which Services Handed User Da](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-da/)
+- [Russia Data Localization Law: How Requirement to Store.](/privacy-tools-guide/russia-data-localization-law-how-requirement-to-store-data-l/)
+- [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
+- [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

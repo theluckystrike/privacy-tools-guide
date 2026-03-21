@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Compliance Testing Automation Guide 2026"
 description: "A practical guide for developers and power users to automate privacy compliance testing with code examples and real-world strategies"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-testing-automation-guide-2026/
 categories: [guides]

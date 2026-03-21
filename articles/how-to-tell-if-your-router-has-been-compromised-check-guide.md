@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Your Router Has Been Compromised Check Guide"
 description: "Learn how to identify signs of a compromised router with practical detection methods, command-line tools, and security hardening steps for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-router-has-been-compromised-check-guide/
 categories: [guides]
@@ -336,10 +337,15 @@ done
 
 This script creates a baseline that helps identify unusual changes.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
+- [How To Tell If Your Dns Has Been Hijacked Symptoms Check](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

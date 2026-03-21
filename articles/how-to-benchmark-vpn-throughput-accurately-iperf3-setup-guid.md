@@ -3,6 +3,7 @@ layout: default
 title: "How To Benchmark Vpn Throughput Accurately Iperf3 Setup Guid"
 description: "To benchmark VPN throughput accurately, install iperf3 on a server and client machine, run tests through your VPN tunnel with iperf3 -c <server-ip> -p 5201 -t"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-benchmark-vpn-throughput-accurately-iperf3-setup-guid/
 categories: [guides]
@@ -174,10 +175,15 @@ iperf3 transforms VPN evaluation from subjective feeling to objective measuremen
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)
+- [How To Protect Yourself From Sim Swap Attack Prevention Guid](/privacy-tools-guide/how-to-protect-yourself-from-sim-swap-attack-prevention-guid/)
+- [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
+- [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Virginia Consumer Data Protection Act Vcdpa Guide"
 description: "A practical technical guide to the Virginia Consumer Data Protection Act covering compliance requirements, data handling patterns, and implementation"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /virginia-consumer-data-protection-act-vcdpa-guide/
 categories: [guides]
@@ -201,11 +202,15 @@ VCDPA includes a 30-day cure period for violations, allowing businesses time to 
 
 For development teams, this means building compliance into your current roadmap rather than treating it as a future concern. The enforcement landscape will tighten significantly after the cure period expires.
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+
+## Related Articles
+
+- [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

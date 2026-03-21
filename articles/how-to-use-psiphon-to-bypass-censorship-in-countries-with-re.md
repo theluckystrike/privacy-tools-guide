@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Psiphon To Bypass Censorship In Countries With Re"
 description: "Psiphon is an open-source circumvention tool designed to help users in censored regions access the open internet. Originally developed by the University of"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-psiphon-to-bypass-censorship-in-countries-with-re/
 categories: [guides, security]
@@ -442,10 +443,15 @@ Using circumvention tools carries legal risks in some jurisdictions. Before depl
 
 This does not constitute legal advice. Consult local attorneys familiar with internet law before deploying circumvention infrastructure.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
+- [How To Configure Wireguard With Obfuscation To Bypass Russia](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning In Censo](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+- [Vpn Port Selection Which Ports Bypass Most Firewall.](/privacy-tools-guide/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
+- [Anonymous Prepaid Sim Card Countries Where You Can Buy](/privacy-tools-guide/anonymous-prepaid-sim-card-countries-where-you-can-buy-without-id-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

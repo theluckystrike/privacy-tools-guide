@@ -3,6 +3,7 @@ layout: default
 title: "Smart Plug Energy Monitoring Privacy What Data Manufacturers"
 description: "A technical guide for developers and power users exploring what data smart plugs collect, how manufacturers use appliance usage patterns, and privacy"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /smart-plug-energy-monitoring-privacy-what-data-manufacturers/
 categories: [guides, security]
@@ -261,10 +262,15 @@ The smart plug market demonstrates how convenient features can mask extensive da
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
+- [Employee Email Monitoring Legal Requirements And Privacy Bou](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
+- [Smart Refrigerator Data Collection What Samsung Family Hub S](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
+- [Smart Tv Tracking What Data Samsung Lg Vizio Collect About V](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Set Up DNS-Based Ad Blocking on Travel Router GL-Inet for"
 description: "A practical guide to configuring DNS-based ad blocking on GL-Inet travel routers. Protect your devices network-wide with AdGuard Home or Pi-hole deployment"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/
 categories: [guides]
@@ -198,13 +199,15 @@ Deploying DNS blocking on a travel router provides consistent protection across 
 
 This setup is particularly valuable for sensitive browsing or when working remotely. The router acts as a privacy firewall, filtering traffic at the DNS level before it reaches your devices.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
 - [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
+- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
+- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning In Censo](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 - [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
-- [How to Set Up Encrypted DNS to Bypass DNS Poisoning in.](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

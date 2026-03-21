@@ -3,6 +3,7 @@ layout: default
 title: "How To Configure Openwrt Guest Network With Separate Dns And"
 description: "A practical guide for developers and power users to set up OpenWRT guest networks with custom DNS servers and strict firewall isolation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-openwrt-guest-network-with-separate-dns-and/
 categories: [guides]
@@ -200,10 +201,15 @@ Common issues and solutions:
 - **DNS not working**: Ensure the dnsmasq instance is listening on the guest interface and firewall allows port 53
 - **Guest can access LAN**: Check that the `block-guest-to-lan` firewall rule exists and is before any forwarding rules
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [How to Configure VPN Exempt List for Local Network Access](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

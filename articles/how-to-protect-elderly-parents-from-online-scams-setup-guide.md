@@ -3,6 +3,7 @@ layout: default
 title: "How To Protect Elderly Parents From Online Scams Setup Guide"
 description: "A practical technical guide for developers and power users to help protect elderly parents from online scams. Includes DNS filtering, browser"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-elderly-parents-from-online-scams-setup-guide/
 categories: [guides, security]
@@ -231,10 +232,15 @@ Start with DNS filtering and browser hardening, as these require minimal behavio
 The most effective protection combines technology with communication. Technical controls catch many threats, but a skeptical mindset remains the best defense against sophisticated social engineering attacks.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Protect Your Child From Online Predators Safety Setup](/privacy-tools-guide/how-to-protect-your-child-from-online-predators-safety-setup/)
+- [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
+- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
+- [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

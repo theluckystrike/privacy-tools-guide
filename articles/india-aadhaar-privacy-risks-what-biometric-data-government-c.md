@@ -3,6 +3,7 @@ layout: default
 title: "India Aadhaar Privacy Risks What Biometric Data Government C"
 description: "India Aadhaar Privacy Risks: What Biometric Data the. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-aadhaar-privacy-risks-what-biometric-data-government-c/
 reviewed: true
@@ -192,10 +193,15 @@ The tension between convenience (improved KYC, direct benefit delivery) and priv
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
+- [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
+- [India Data Protection Bill 2026 What It Means For Citizen Pr](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
+- [India Cctv Surveillance Expansion Privacy Implications Of Sm](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

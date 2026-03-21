@@ -3,6 +3,7 @@ layout: default
 title: "How To Configure Per App Vpn On Android Without Root"
 description: "Learn how to set up per-app VPN on Android devices without root access. This guide covers Android's built-in VPN settings, supported apps, and configuration"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-per-app-vpn-on-android-without-root/
 categories: [guides, security]
@@ -208,10 +209,15 @@ Here's a recommended split:
 | Social Media | ✅ | |
 | Browsing | ✅ | |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

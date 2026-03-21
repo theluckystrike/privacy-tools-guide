@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Encrypted Group Chat For Activist Organization"
 description: "A practical technical guide for developers and power users setting up secure group messaging infrastructure for activist organizations. Covers Matrix"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-encrypted-group-chat-for-activist-organization/
 categories: [guides, security]
@@ -243,11 +244,15 @@ Where you host your Synapse server matters as much as how you configure it. Cons
 
 For most organizations, a VPS from a provider with a no-logs policy, encrypted storage, and a history of resisting government requests is sufficient. Run your Synapse instance with full-disk encryption enabled at the OS level, and ensure the decryption key is not stored on the server itself — this prevents offline analysis of seized disks.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [How to Set Up Self-Hosted Matrix Synapse Server for Private Messaging](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
-- [Turkey Secure Communication Guide for Activists and NGOs](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+
+## Related Articles
+
+- [Best Secure Group Chat App 2026](/privacy-tools-guide/best-secure-group-chat-app-2026/)
+- [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
+- [How To Create Encrypted Mailing List For Private Group Commu](/privacy-tools-guide/how-to-create-encrypted-mailing-list-for-private-group-commu/)
+- [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
+- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

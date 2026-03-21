@@ -3,6 +3,7 @@ layout: default
 title: "Best Password Manager For Firefox Extension"
 description: "A practical comparison of password manager Firefox extensions with focus on security features, developer tools, API integration, and automation"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /best-password-manager-for-firefox-extension/
 categories: [guides, security]
@@ -366,13 +367,15 @@ Choose your password manager based on:
 
 No single password manager is perfect for all use cases. Evaluate your specific workflow—do you need CLI access? Do you work offline frequently? Do you need family sharing? Does cost matter significantly? Answer these questions first, then match to the best option.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Browser Password Manager vs Dedicated App: A Developer.](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
-- [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
-- [How to Store OTP Codes in Password Manager: A Developer.](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
+
+## Related Articles
+
+- [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
+- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
+- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

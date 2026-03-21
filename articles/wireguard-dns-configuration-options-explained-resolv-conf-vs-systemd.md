@@ -3,6 +3,7 @@ layout: default
 title: "WireGuard DNS Configuration Options Explained"
 description: "Complete guide to WireGuard DNS configuration. Learn how to set DNS using resolv.conf, systemd-resolved, and wg-quick. Compare methods for Linux, Android, and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/
 categories: [guides, security]
@@ -218,10 +219,15 @@ sudo resolvectl flush-caches
 
 Proper DNS configuration completes your WireGuard privacy setup. Whether you choose the simplicity of wg-quick's built-in handling or the flexibility of manual systemd-resolved configuration, ensuring DNS queries travel through your VPN tunnel prevents one of the most common privacy leaks in VPN setups.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
+- [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
+- [WireGuard Persistent Keepalive Setting Explained](/privacy-tools-guide/wireguard-persistent-keepalive-setting-explained-when-to-enable-it/)
+- [Anonymous Vehicle Registration Options For Keeping Home Addr](/privacy-tools-guide/anonymous-vehicle-registration-options-for-keeping-home-addr/)
+- [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

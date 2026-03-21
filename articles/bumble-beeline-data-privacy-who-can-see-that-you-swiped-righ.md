@@ -3,6 +3,7 @@ layout: default
 title: "Bumble Beeline Data Privacy Who Can See That You Swiped Righ"
 description: "A technical deep dive into Bumble Beeline privacy controls. Learn exactly what data is exposed, who can see your swipes, and how to manage your"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
 categories: [security, guides]
@@ -170,10 +171,15 @@ To request your data under GDPR/CCPA:
 2. Submit a formal request if the self-service option is unavailable
 3. Review the export for any Beeline-related entries
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
+- [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)
+- [Bumble Private Detector Ai Scanning Privacy How Uploaded.](/privacy-tools-guide/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)
+- [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)
+- [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

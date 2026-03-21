@@ -3,6 +3,7 @@ layout: default
 title: "Facebook Dating Privacy Does Meta Use Your Dating Activity F"
 description: "Facebook Dating represents Meta's attempt to compete in the crowded online dating market by using its massive social graph. Since launching in 2019, the"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /facebook-dating-privacy-does-meta-use-your-dating-activity-f/
 categories: [guides]
@@ -177,10 +178,15 @@ These changes represent incremental improvements rather than fundamental shifts 
 3. **Review permissions regularly**: Monthly audits of connected apps and data sharing settings
 4. **Consider deletion, not just hiding**: Hiding profile doesn't remove data; deletion is the stronger privacy action
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
+- [Facebook Marketplace Privacy Settings Guide](/privacy-tools-guide/facebook-marketplace-privacy-settings-guide/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [China Wechat Surveillance What Messages And Activity Tencent](/privacy-tools-guide/china-wechat-surveillance-what-messages-and-activity-tencent/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

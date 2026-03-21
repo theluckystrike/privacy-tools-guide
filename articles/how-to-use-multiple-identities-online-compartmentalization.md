@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Multiple Identities Online: Compartmentalization"
 description: "Learn how to create and manage multiple online identities through digital compartmentalization. Practical strategies for separating personal"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /how-to-use-multiple-identities-online-compartmentalization/
 categories: [guides, security]
@@ -222,9 +223,14 @@ finance:
 | YubiKey | Hardware authentication | High-security identities |
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
+- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
+- [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
+- [Anonymous Online Shopping How To Order Physical Goods.](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Hardened Firefox Privacy Configuration Guide"
 description: "Complete Firefox hardening guide: about:config tweaks, essential extensions, arkenfox user.js profiles, and step-by-step configuration"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /hardened-firefox-privacy-configuration/
 categories: [guides]
@@ -578,10 +579,14 @@ Firefox hardening prevents *tracking*, but doesn't prevent:
 
 **For privacy-focused user**: All steps = maximum privacy, accept breakage, whitelist sites as needed.
 
+
+## Related Articles
+
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+- [WhatsApp Privacy Settings Best Configuration 2026](/privacy-tools-guide/whatsapp-privacy-settings-best-configuration-2026/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
+
 {% endraw %}
-
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 

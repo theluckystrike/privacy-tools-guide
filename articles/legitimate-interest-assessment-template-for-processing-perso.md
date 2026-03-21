@@ -3,6 +3,7 @@ layout: default
 title: "Legitimate Interest Assessment Template For Processing Perso"
 description: "When building applications that process personal data, GDPR requires a lawful basis for each processing activity. While consent (Article 6(1)(a)) gets most of"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /legitimate-interest-assessment-template-for-processing-perso/
 categories: [guides]
@@ -225,10 +226,15 @@ Avoid legitimate interest when:
 
 In these cases, explicit consent is the safer path.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
+- [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
+- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

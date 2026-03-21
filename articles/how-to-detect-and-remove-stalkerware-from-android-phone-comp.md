@@ -3,6 +3,7 @@ layout: default
 title: "How To Detect And Remove Stalkerware From Android Phone Comp"
 description: "A technical guide for detecting and removing stalkerware from Android devices. Includes ADB commands, detection scripts, and removal"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-and-remove-stalkerware-from-android-phone-comp/
 categories: [guides, security]
@@ -233,10 +234,15 @@ if __name__ == "__main__":
 
 Run this script periodically to audit devices for suspicious permission patterns.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Detect and Remove Stalkerware From Your iPhone and iPad](/privacy-tools-guide/how-to-detect-remove-stalkerware-ios-iphone/)
+- [How to Detect Stalkerware on Your Phone 2026](/privacy-tools-guide/how-to-detect-stalkerware-on-your-phone-2026/)
+- [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
+- [Android Guest Mode For Lending Phone Without Exposing Person](/privacy-tools-guide/android-guest-mode-for-lending-phone-without-exposing-person/)
+- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

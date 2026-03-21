@@ -3,6 +3,7 @@ layout: default
 title: "Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit"
 description: "A technical guide for developers and power users on genetic data privacy rights, covering what 23andMe and AncestryDNA can legally do with your DNA"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/
 categories: [guides]
@@ -357,10 +358,15 @@ plink --vcf yourdata.vcf --freq --out analysis
 
 This approach requires technical skill but provides maximum privacy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
+- [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
+- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

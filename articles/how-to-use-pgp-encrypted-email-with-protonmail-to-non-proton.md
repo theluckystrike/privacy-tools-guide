@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Pgp Encrypted Email With Protonmail To Non Proton"
 description: "A practical guide for developers and power users on sending PGP-encrypted emails from ProtonMail to external recipients. Includes key management"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/
 categories: [guides, security]
@@ -232,10 +233,15 @@ When using PGP with external recipients:
 - **Metadata**: Remember that subject lines and headers remain unencrypted
 - **Forward secrecy**: PGP does not provide forward secrecy; consider Signal for real-time messaging
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
+- [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
+- [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Tor With Specific Application Routing Only Select"
 description: "When you need onion routing for specific tasks without routing your entire system through Tor, selective application routing provides the solution. This"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-with-specific-application-routing-only-select/
 categories: [guides, security]
@@ -245,10 +246,15 @@ Selective Tor routing serves several practical purposes:
 This setup gives you granular control over which applications receive Tor's anonymity properties while maintaining normal performance for everything else.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
+- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
+- [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
+- [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
+- [How To Implement Encrypted Webhooks For Secure Application T](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

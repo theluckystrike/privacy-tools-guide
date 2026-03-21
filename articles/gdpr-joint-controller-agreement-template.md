@@ -3,6 +3,7 @@ layout: default
 title: "Gdpr Joint Controller Agreement Template"
 description: "Learn how to create a compliant GDPR joint controller agreement with this practical template and code examples designed for developers and technical teams"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-joint-controller-agreement-template/
 intent-checked: true
@@ -190,10 +191,15 @@ This template provides a starting point, but complex processing activities, cros
 A well-drafted joint controller agreement protects all parties and, more importantly, protects the data subjects whose information you're handling. Take time to get it right—it'll save headaches later.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [Gdpr Controller Vs Processor Obligations Understanding Your](/privacy-tools-guide/gdpr-controller-vs-processor-obligations-understanding-your-/)
+- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
+- [Data Retention Policy Template for Startups](/privacy-tools-guide/data-retention-policy-template-for-startups/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

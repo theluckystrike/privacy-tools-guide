@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit Your Browser Extensions for Privacy Risks"
 description: "Guide to auditing browser extensions for privacy. Covers permission analysis, network monitoring, and privacy-safe alternatives to common extensions"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-your-browser-extensions-for-privacy-risks/
 categories: [guides]
@@ -417,8 +418,14 @@ Extensions are convenient, but they're a massive privacy surface. Every extensio
 {% endraw %}
 
 
-## Related Reading
 
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
+- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [Chatgpt Privacy Risks What Openai Stores From Your.](/privacy-tools-guide/chatgpt-privacy-risks-what-openai-stores-from-your-conversations-detailed-breakdown/)
+- [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
+- [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How To Detect Catfish On Dating Apps Using Osint Verificatio"
 description: "Catfishing on dating apps is widespread and dangerous, with scammers using stolen photos and fake identities to deceive users for money or emotional"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-detect-catfish-on-dating-apps-using-osint-verificatio/
 categories: [guides, security]
@@ -292,10 +293,15 @@ No single technique guarantees detection, but combining them catches most catfis
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
+- [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
+- [How To Spot Romance Scam Red Flags On Dating Apps Comprehens](/privacy-tools-guide/how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/)
+- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

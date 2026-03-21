@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Onion Routing For Email Using Tor Hidden Servi"
 description: "A practical guide for developers and power users to route email through Tor hidden services for enhanced privacy and anonymity"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/
 categories: [guides]
@@ -219,10 +220,15 @@ Start small by setting up a hidden service for receiving email. Configure Tor an
 The initial configuration requires attention to detail, but the resulting protection against traffic analysis justifies the effort. Your email metadata becomes significantly harder to collect and correlate.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Session Messenger Decentralized Onion Routing How It Protect](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
+- [How To Use Tor With Specific Application Routing Only Select](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
+- [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
+- [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

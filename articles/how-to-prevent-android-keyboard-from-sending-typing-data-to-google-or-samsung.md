@@ -3,6 +3,7 @@ layout: default
 title: "Prevent Android Keyboard From Sending Typing Data To Google Or Samsung"
 description: "Modern Android keyboards collect and transmit typing data to their developers—Google's Gboard and Samsung Keyboard are no exceptions. This guide explains how"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/
 categories: [guides, security]
@@ -227,10 +228,15 @@ After implementing changes, verify data transmission is blocked:
 adb shell tcpdump -i any -c 50 host google.com and port 443
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Smart Refrigerator Data Collection What Samsung Family Hub S](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
+- [Smart Tv Tracking What Data Samsung Lg Vizio Collect About V](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)
+- [How To Prevent Dating App Photos From Appearing In Google Im](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
+- [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
+- [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Someone Signed Up for Services Using My Email — What to Do"
 description: "Received a verification email for an account you didn't create? This guide covers technical solutions, privacy protection steps, and preventive measures for"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
 categories: [guides, security]
@@ -316,10 +317,15 @@ Several commercial services can monitor for unauthorized account creation on you
 
 These services proactively monitor for fraudulent account creation across major platforms.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
+- [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

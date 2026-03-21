@@ -3,6 +3,7 @@ layout: default
 title: "How To Request Algorithmic Transparency From Companies Makin"
 description: "A practical guide for developers and power users on exercising your right to understand how automated systems impact your life. Includes templates"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-algorithmic-transparency-from-companies-makin/
 categories: [guides, security]
@@ -178,10 +179,15 @@ The path to algorithmic accountability runs through informed individuals exercis
 - [How to Exercise Your Right to Access Personal Data](/how-to-exercise-right-to-access-personal-data/)
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
+- [Ios App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
+- [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
+- [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

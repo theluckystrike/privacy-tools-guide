@@ -3,6 +3,7 @@ layout: default
 title: "VeraCrypt Full Disk Encryption Setup Guide"
 description: "Complete VeraCrypt guide for full disk encryption, hidden volumes, system encryption. Step-by-step setup with performance impact and recovery planning"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /veracrypt-full-disk-encryption-setup-guide/
 categories: [guides]
@@ -269,12 +270,16 @@ This is rarely used outside high-risk scenarios (journalists, activists) due to 
 
 5. **Forgetting password in password manager** - Test password recovery procedure with your password manager before needing it.
 
-## Related Reading
-
-- [Privacy-Focused Web Browsers Comparison 2026](/privacy-tools-guide/privacy-focused-web-browsers-comparison-2026/)
-- [Best Hardware Security Key for Developers](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [1Password vs Bitwarden 2026 Comparison](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)
 
 Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
+
+
+## Related Articles
+
+- [Cryptomator Vs Veracrypt For Cloud Encryption](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
+- [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
+- [Xmpp Omemo Encryption Setup Guide](/privacy-tools-guide/xmpp-omemo-encryption-setup-guide/)
+- [Encrypted File Vault Inheritance Using Veracrypt With Split](/privacy-tools-guide/encrypted-file-vault-inheritance-using-veracrypt-with-split-/)
 
 {% endraw %}

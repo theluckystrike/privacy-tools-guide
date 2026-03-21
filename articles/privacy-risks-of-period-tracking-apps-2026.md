@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of Period Tracking Apps 2026"
 description: "Analysis of privacy risks in menstrual tracking apps (Clue, Flo, Stardust, Drip). Data collection, legal risks post-Dobbs, self-hosted alternatives"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-risks-period-tracking-apps/
 categories: [guides]
@@ -521,9 +522,13 @@ Instead:
 - Write in encrypted notes (not date-searchable)
 - Handwritten notebook (no digital trail)
 
+
+## Related Articles
+
+- [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
+- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [Chatgpt Privacy Risks What Openai Stores From Your.](/privacy-tools-guide/chatgpt-privacy-risks-what-openai-stores-from-your-conversations-detailed-breakdown/)
+- [How to Audit Your Browser Extensions for Privacy Risks](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
+- [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
+
 {% endraw %}
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-

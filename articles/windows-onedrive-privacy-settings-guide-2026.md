@@ -3,6 +3,7 @@ layout: default
 title: "Windows OneDrive Privacy Settings Guide 2026"
 description: "A technical guide to configuring OneDrive privacy settings on Windows for developers and power users. Covers registry tweaks, Group"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /windows-onedrive-privacy-settings-guide-2026/
 categories: [guides]
@@ -170,13 +171,15 @@ Get-ItemProperty -Path $key | Select-Object TelemetryLevel, DisablePersonalizedR
 
 Additionally, monitor network traffic using tools like Wireshark or Windows Performance Monitor to confirm no unexpected connections to Microsoft servers occur during idle periods.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Snapchat Privacy Settings Complete Guide 2026: A.](/privacy-tools-guide/snapchat-privacy-settings-complete-guide-2026/)
-- [Windows 10 Privacy Settings Complete Checklist: A.](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
-- [Facebook Privacy Settings 2026: A Complete Guide for.](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+
+## Related Articles
+
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
+- [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

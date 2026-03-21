@@ -3,6 +3,7 @@ layout: default
 title: "Create a New Digital Identity After Escaping Domestic"
 description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone separation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
 categories: [guides]
@@ -200,10 +201,15 @@ Building a new digital identity after escaping domestic violence requires delibe
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [How To Create Offline Digital Library For Accessing Informat](/privacy-tools-guide/how-to-create-offline-digital-library-for-accessing-informat/)
+- [How To Create Sealed Envelope With Digital Credentials For E](/privacy-tools-guide/how-to-create-sealed-envelope-with-digital-credentials-for-e/)
+- [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

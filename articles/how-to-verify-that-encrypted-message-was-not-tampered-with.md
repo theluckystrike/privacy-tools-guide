@@ -3,6 +3,7 @@ layout: default
 title: "How to Verify That Encrypted Message Was Not Tampered With"
 description: "A technical guide for developers and power users on verifying encrypted message integrity using HMACs, digital signatures, and authenticated encryption"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-verify-that-encrypted-message-was-not-tampered-with/
 categories: [guides]
@@ -182,10 +183,15 @@ By implementing proper integrity verification, you ensure that encrypted message
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How To Verify That Your Encrypted Messages Are Not Being Int](/privacy-tools-guide/how-to-verify-that-your-encrypted-messages-are-not-being-int/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

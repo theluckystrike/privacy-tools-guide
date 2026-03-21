@@ -3,6 +3,7 @@ layout: default
 title: "How To Build Privacy Dashboard For Customers To Manage Their"
 description: "A practical guide for developers building privacy dashboards. Learn data access patterns, consent management, GDPR/CCPA compliance, and user-facing"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-privacy-dashboard-for-customers-to-manage-their/
 categories: [guides, security]
@@ -467,10 +468,15 @@ Review privacy event logs weekly during the first month after launch. Establish 
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [Android Privacy Dashboard: Guide to Using It](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
+- [How To Build Privacy Respecting Email Marketing System Witho](/privacy-tools-guide/how-to-build-privacy-respecting-email-marketing-system-witho/)
+- [How To Build Portable Censorship Circumvention Kit On Usb Dr](/privacy-tools-guide/how-to-build-portable-censorship-circumvention-kit-on-usb-dr/)
+- [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

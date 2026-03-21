@@ -3,6 +3,7 @@ layout: default
 title: "Gdpr Controller Vs Processor Obligations Understanding Your"
 description: "A practical developer guide to GDPR controller and processor roles, obligations, and your rights when interacting with services that handle your"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /gdpr-controller-vs-processor-obligations-understanding-your-/
 categories: [guides]
@@ -217,10 +218,15 @@ Fines for controller non-compliance reach €20 million or 4% of global annual r
 Understanding whether you're dealing with a controller or processor—and recognizing your position as a data subject—helps you navigate GDPR effectively. Whether you're asserting your own rights or building compliant systems, this framework provides the foundation for protecting personal data in the digital ecosystem.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+- [Ccpa Vs Gdpr Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
+- [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
+- [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
+- [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

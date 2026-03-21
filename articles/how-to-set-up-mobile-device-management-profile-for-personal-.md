@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Mobile Device Management Profile For Personal"
 description: "A technical guide for developers and power users on configuring MDM profiles on iOS and Android to enhance personal privacy and security"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-mobile-device-management-profile-for-personal-/
 categories: [guides, security]
@@ -208,11 +209,16 @@ When implementing MDM for personal privacy, consider these trade-offs:
 
 Store your profile configurations in a secure location (encrypted external drive or password manager) to recreate them if needed.
 
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
+
+
+## Related Articles
+
+- [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
+- [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
+- [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
 
 {% endraw %}

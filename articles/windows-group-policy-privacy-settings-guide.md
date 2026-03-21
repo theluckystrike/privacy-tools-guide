@@ -3,6 +3,7 @@ layout: default
 title: "Windows Group Policy Privacy Settings Guide"
 description: "A guide to configuring Windows Group Policy privacy settings for developers and power users. Learn to disable telemetry, manage data"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /windows-group-policy-privacy-settings-guide/
 categories: [guides]
@@ -245,13 +246,15 @@ Group Policy gives significant control, but it has limits:
 
 For a comprehensive hardening approach, combine Group Policy with network-level blocking, minimal installed apps, and regular audits using tools like WireShark or Glasswire to observe what your machine actually transmits.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Windows 10 Privacy Settings Complete Checklist: A.](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
-- [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
+
+## Related Articles
+
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
+- [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
+- [Privacy Policy Generator Tools Comparison: A Developer Guide](/privacy-tools-guide/privacy-policy-generator-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

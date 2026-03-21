@@ -3,6 +3,7 @@ layout: default
 title: "Ultrasonic Beacon Tracking How Smart Devices Communicate Thr"
 description: "A technical deep-dive into ultrasonic beacon tracking, how devices use inaudible sound waves to communicate and track users, and what developers can do"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ultrasonic-beacon-tracking-how-smart-devices-communicate-thr/
 categories: [guides]
@@ -181,9 +182,14 @@ For users concerned about this threat vector, the best defense remains awareness
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
+- [Smart Tv Tracking What Data Samsung Lg Vizio Collect About V](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

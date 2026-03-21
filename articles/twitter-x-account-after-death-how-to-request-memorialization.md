@@ -3,6 +3,7 @@ layout: default
 title: "Twitter X Account After Death: How to Request."
 description: "A practical guide for developers and power users on handling Twitter X accounts of deceased users. Learn the memorialization and deactivation processes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /twitter-x-account-after-death-how-to-request-memorialization/
 categories: [guides, security]
@@ -282,12 +283,15 @@ For developers building digital estate tools, consider integrating with multiple
 
 Each platform has its own policies and timelines. Building an unified tracking system helps manage multiple requests across services.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Complete Guide to Removing Real Name from All Online Accounts](/complete-guide-to-removing-real-name-from-all-online-account/)
-- [How to Delete All Traces of Your Online Presence Completely](/how-to-delete-all-traces-of-your-online-presence-completely/)
+
+## Related Articles
+
+- [Instagram Memorialization Request Process What Happens To Ph](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
+- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
+- [Mastodon vs Twitter: Privacy Comparison 2026](/privacy-tools-guide/mastodon-vs-twitter-privacy-comparison-2026/)
+- [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

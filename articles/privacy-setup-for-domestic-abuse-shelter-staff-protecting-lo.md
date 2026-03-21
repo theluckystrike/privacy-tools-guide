@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup for Domestic Abuse Shelter Staff"
 description: "A technical guide for developers and power users implementing privacy measures for domestic abuse shelter staff. Learn location protection, secure"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/
 categories: [guides, security]
@@ -209,10 +210,15 @@ Technical measures fail without physical security discipline:
 - Staff should avoid working with sensitive data in public spaces
 - Shred all printed materials containing survivor information
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
+- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

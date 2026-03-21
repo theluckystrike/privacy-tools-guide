@@ -3,6 +3,7 @@ layout: default
 title: "Windows 11 Telemetry Disable Guide: Step by Step"
 description: "A guide to disabling Windows 11 telemetry for developers and power users. Learn multiple methods including Settings, Group Policy"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /windows-11-telemetry-disable-guide-step-by-step/
 categories: [guides]
@@ -287,13 +288,15 @@ For developers building applications that integrate with Windows telemetry APIs,
 One important note: Disabling Update Orchestrator Service (`UsoSvc`) can interfere with Windows Updates. If you disable this service, use Windows Update manually through Settings or configure WSUS if managing multiple machines in an organization.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Disable All Windows 11 Telemetry Endpoints Using.](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+
+## Related Articles
+
+- [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
-- [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

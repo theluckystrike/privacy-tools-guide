@@ -3,6 +3,7 @@ layout: default
 title: "Nym Mixnet vs Tor Comparison Explained: A Technical Guide"
 description: "A detailed technical comparison of Nym Mixnet and Tor for developers and power users. Understand the architectural differences, metadata protection"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nym-mixnet-vs-tor-comparison-explained/
 categories: [guides]
@@ -174,10 +175,15 @@ For developers building privacy applications:
 
 Both systems require careful configuration and understanding of their threat models. Neither provides perfect anonymity, but each addresses different aspects of privacy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How Browser Supercookies Track You: A Technical Explanation](/privacy-tools-guide/how-browser-supercookies-track-you-explained/)
+- [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [VPN over Tor vs Tor over VPN: A Technical Comparison](/privacy-tools-guide/vpn-over-tor-vs-tor-over-vpn/)
+- [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

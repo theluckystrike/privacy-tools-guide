@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up a Burner Phone for Protests"
 description: "Practical guide to setting up a burner phone for protests. Covers phone selection, communication tools, digital evidence protection, and operational security."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-a-burner-phone-for-protests/
 categories: [guides]
@@ -209,12 +210,15 @@ If arrested, your attorney will advise you whether to produce the phone or asser
 
 The cost is low relative to legal expenses if you're identified and charged. Even if you never use the burner phone setup, understanding these practices reduces anxiety about protest attendance and government surveillance.
 
-## Related Reading
 
-- Privacy-Focused Email Comparison
-- VPN Selection for Activists
-- Secure Messaging Apps Ranked
-- Law Enforcement Surveillance Technology Explained
+
+## Related Articles
+
+- [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
+- [How to Set Up Panic Button on Phone: Emergency Privacy Wipe](/privacy-tools-guide/how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/)
+- [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
+- [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
+- [Android Guest Mode For Lending Phone Without Exposing Person](/privacy-tools-guide/android-guest-mode-for-lending-phone-without-exposing-person/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Data Processing Agreement Template Guide"
 description: "A practical guide to GDPR data processing agreements for developers. Learn what clauses to include, how to implement DPA handling in code, and ensure"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-data-processing-agreement-template-guide/
 intent-checked: true
@@ -378,10 +379,15 @@ Assign each obligation to a named owner. Obligations without owners are obligati
 
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
+- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

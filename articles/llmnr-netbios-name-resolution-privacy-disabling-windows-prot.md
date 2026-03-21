@@ -3,6 +3,7 @@ layout: default
 title: "Llmnr Netbios Name Resolution Privacy Disabling Windows Prot"
 description: "A technical guide for developers and power users to disable LLMNR and NetBIOS name resolution on Windows, preventing hostname leakage that exposes your"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
 categories: [guides]
@@ -235,10 +236,15 @@ Before deploying organization-wide, verify that:
 - Applications using custom multicast discovery are identified
 - Printers or IoT devices using NetBIOS are documented
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup For Stalking Victim Digital Prot](/privacy-tools-guide/privacy-setup-for-stalking-victim--digital-prot/)
+- [Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)
+- [Screen Resolution Fingerprinting Why Changing Display Settin](/privacy-tools-guide/screen-resolution-fingerprinting-why-changing-display-settin/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

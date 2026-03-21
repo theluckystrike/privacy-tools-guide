@@ -3,6 +3,7 @@ layout: default
 title: "Vpn Tunnel Interface Vs Full Tunnel Routing Difference."
 description: "Understand the difference between VPN tunnel interface and full tunnel routing. Learn when to use split tunneling vs full tunnel, security"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/
 categories: [guides, security]
@@ -274,9 +275,14 @@ echo "Windows: Wireshark with filter: ip.dst == 203.0.113.0/24 || ip.dst == 10.0
 When manually configuring routes, always verify your configuration by checking which IP addresses your applications are connecting from and testing for DNS leaks. Tools like `curl ifconfig.me` and DNS leak test websites help confirm that your routing is working as expected.
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [VPN Tunnel Interface vs Full Tunnel Routing](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
+- [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [Vpn Certificate Pinning How It Prevents Mitm Attacks.](/privacy-tools-guide/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)
+- [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

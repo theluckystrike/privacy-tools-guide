@@ -3,6 +3,7 @@ layout: default
 title: "Windows Activity History Disable Privacy Guide"
 description: "Disable Windows Activity History through Settings (Privacy & security → Activity history: uncheck 'Store my activity history on this device' and 'Send my"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-activity-history-disable-privacy-guide/
 categories: [guides]
@@ -168,10 +169,15 @@ For developers, the privacy gains typically outweigh these losses. Code reposito
 Regularly audit your privacy settings, as Windows updates sometimes reset these configurations. Maintaining a deployment script ensures consistent privacy posture across system updates and fresh installations.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
+- [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

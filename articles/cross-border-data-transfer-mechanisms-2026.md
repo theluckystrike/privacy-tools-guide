@@ -3,6 +3,7 @@ layout: default
 title: "Cross Border Data Transfer Mechanisms 2026"
 description: "To legally transfer personal data across borders in 2026, use the EU-US Data Privacy Framework (DPF) for US transfers, Standard Contractual Clauses (SCCs) for"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /cross-border-data-transfer-mechanisms-2026/
 categories: [guides, security]
@@ -177,11 +178,15 @@ Building flexible architecture today positions your application to adapt as thes
 ---
 
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+
+## Related Articles
+
+- [How To Handle Cross Border Data Transfers After Privacy Shie](/privacy-tools-guide/how-to-handle-cross-border-data-transfers-after-privacy-shie/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

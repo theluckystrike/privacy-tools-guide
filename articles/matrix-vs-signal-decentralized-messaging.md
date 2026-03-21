@@ -3,6 +3,7 @@ layout: default
 title: "Matrix Vs Signal Decentralized Messaging"
 description: "A technical comparison of Matrix and Signal protocols for developers building decentralized messaging applications. Covers architecture, encryption"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /matrix-vs-signal-decentralized-messaging/
 categories: [guides, security]
@@ -178,11 +179,15 @@ Many developers combine both protocols for different use cases. A common pattern
 
 The Matrix bridge ecosystem supports integration with Signal through various community projects, though official Signal-to-Matrix bridges don't exist due to Signal's terms of service.
 
-## Related Reading
 
-- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+
+## Related Articles
+
+- [Matrix/Element vs Signal for Private Group Communication: Detailed Comparison](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
+- [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
+- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [Cwtch Decentralized Metadata Resistant Messenger How It Diff](/privacy-tools-guide/cwtch-decentralized-metadata-resistant-messenger-how-it-diff/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

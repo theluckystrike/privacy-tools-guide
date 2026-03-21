@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide"
 description: "Step-by-step DoH setup: macOS, Windows, Linux, iOS, Android, routers. Provider comparison (Cloudflare, NextDNS, Quad9). Verification steps included"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/
 categories: [guides]
@@ -476,9 +477,15 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 
 **Ongoing:** Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning In Censo](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

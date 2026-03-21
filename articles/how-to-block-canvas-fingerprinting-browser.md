@@ -3,6 +3,7 @@ layout: default
 title: "How To Block Canvas Fingerprinting Browser"
 description: "A technical guide showing developers and power users how to detect, prevent, and block canvas fingerprinting across different browsers with code"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-block-canvas-fingerprinting-browser/
 categories: [guides, security]
@@ -237,13 +238,15 @@ The right level of canvas fingerprinting protection depends on your threat model
 Remember that stronger protection sometimes means reduced functionality. Some websites may not work correctly with aggressive fingerprinting protection enabled, so maintaining separate profiles for different activities is often the best approach.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
-- [Navigator Plugins Fingerprinting: How Browser Plugins.](/privacy-tools-guide/navigator-plugins-fingerprinting-how-browser-plugins-betray-/)
+- [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

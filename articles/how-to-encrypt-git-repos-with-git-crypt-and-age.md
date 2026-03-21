@@ -3,6 +3,7 @@ layout: default
 title: "How to Encrypt Git Repos with git-crypt and age"
 description: "Full guide to encrypting sensitive files in Git repos using git-crypt and age. Team key management, CI/CD integration, and GPG-free workflows covered"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-encrypt-git-repos-with-git-crypt-and-age/
 categories: [guides]
@@ -371,9 +372,15 @@ git commit -m "Rekey git-crypt after team member departure"
 
 The combination of key rotation and secret rotation is the only complete offboarding. Repository access removal alone is insufficient.
 
-## Related Reading
 
-- [Privacy Tools Guide Hub](/privacy-tools-guide/)
+
+## Related Articles
+
+- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
+- [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
+- [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
+- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
+- [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
 
 Built by theluckystrike -- More at [zovo.one](https://zovo.one)
 {% endraw %}

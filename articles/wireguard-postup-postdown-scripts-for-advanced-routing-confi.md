@@ -3,6 +3,7 @@ layout: default
 title: "WireGuard PostUp/PostDown Scripts for Advanced Routing"
 description: "Master WireGuard PostUp and PostDown scripts for advanced routing. Learn to implement split tunneling, kill switches, custom DNS, and selective traffic"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/
 categories: [guides, security]
@@ -210,10 +211,15 @@ PostUp and PostDown scripts run with root privileges, making security critical:
 - Avoid storing credentials in scripts—use WireGuard's built-in key management
 - Test scripts in a non-production environment before deployment
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Ios Advanced Data Protection For Icloud End To End.](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
+- [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
+- [How To Use Tor With Specific Application Routing Only Select](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

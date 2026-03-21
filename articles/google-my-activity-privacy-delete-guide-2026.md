@@ -3,6 +3,7 @@ layout: default
 title: "Google My Activity Privacy Delete Guide 2026"
 description: "A guide for developers and power users on managing, reviewing, and deleting your Google My Activity data. Includes automated deletion"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /google-my-activity-privacy-delete-guide-2026/
 categories: [guides]
@@ -200,13 +201,15 @@ class PrivacyconsciousAnalytics:
         # Send to analytics endpoint
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Android Location History Google Timeline: How to Delete.](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
-- [Android Find My Device: Privacy Implications You Need to.](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-- [How to Minimize Digital Footprint Guide 2026: A.](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
+
+## Related Articles
+
+- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
+- [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
+- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
+- [GrapheneOS vs Stock Pixel: What Google Collects on.](/privacy-tools-guide/grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

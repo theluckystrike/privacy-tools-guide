@@ -3,6 +3,7 @@ layout: default
 title: "VPN Tunnel Interface vs Full Tunnel Routing"
 description: "A practical guide explaining tunnel interfaces and full tunnel routing differences for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/
 categories: [guides]
@@ -496,10 +497,15 @@ if __name__ == "__main__":
 
 These technical tools enable precise control over network routing, essential for complex environments requiring simultaneous VPN and direct access.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Vpn Tunnel Interface Vs Full Tunnel Routing Difference.](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [How To Use Wireguard Tunnel For Encrypted Peer To Peer Commu](/privacy-tools-guide/how-to-use-wireguard-tunnel-for-encrypted-peer-to-peer-commu/)
+- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

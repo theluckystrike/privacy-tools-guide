@@ -3,6 +3,7 @@ layout: default
 title: "India Digilocker Privacy Concerns What Personal Documents Go"
 description: "India DigiLocker Privacy Concerns: What Personal. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
 categories: [guides]
@@ -267,10 +268,15 @@ If you're currently using DigiLocker, perform this audit:
 6. **Monitor access**: If possible, review access logs for suspicious patterns
 7. **Plan alternatives**: Establish alternative systems for document storage (encrypted cloud, external drives)
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
+- [India Cctv Surveillance Expansion Privacy Implications Of Sm](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
+- [India Upi Payment Privacy What Digital Payment Metadata Gove](/privacy-tools-guide/india-upi-payment-privacy-what-digital-payment-metadata-gove/)
+- [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
+- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

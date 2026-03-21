@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser for Whistleblowers Safety Guide"
 description: "A technical guide to Tor Browser for whistleblowers. Learn essential configuration, operational security practices, and advanced techniques for source"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-for-whistleblowers-safety-guide/
 categories: [guides, security]
@@ -285,12 +286,15 @@ Watch for these indicators that something may be wrong:
 
 If you suspect compromise, stop using the system immediately. Do not attempt to investigate while continuing to use the same device for sensitive activities. Consider consulting with a lawyer or civil liberties organization before taking further action.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Anonymous Cryptocurrency Transactions via Tor](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
-- [Best Browser for Tor Network 2026](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-- [OnionShare for Anonymous File Sharing](/privacy-tools-guide/onion-share-file-sharing-anonymously-guide/)
+
+## Related Articles
+
+- [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
+- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

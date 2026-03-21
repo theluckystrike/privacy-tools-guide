@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Audit Checklist for Small Businesses"
 description: "A practical privacy audit checklist for small businesses. Covers data inventory, vendor review, employee access, and basic compliance steps."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: small-business-privacy-audit-checklist
 categories: [guides, privacy]
@@ -236,11 +237,15 @@ Technical controls fail when employees don't understand basic threats.
 | Test backup restoration | Annually |
 | Full privacy audit (this checklist) | Annually |
 
-## Related Reading
 
-- [GDPR Compliance Tools for Small Business](/gdpr-compliance-tools-for-small-business-complete-implementa)
-- [Best Encrypted Cloud Storage for Small Business 2026](/encrypted-cloud-storage-for-small-business-2026)
-- [How to Detect if Your Email Is Compromised](/detect-email-compromise-guide)
+
+## Related Articles
+
+- [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
+- [Privacy Audit Checklist for Web Applications: A Developer](/privacy-tools-guide/privacy-audit-checklist-for-web-applications/)
+- [Encrypted Cloud Storage for Small Business 2026](/privacy-tools-guide/encrypted-cloud-storage-for-small-business-2026/)
+- [Gdpr Compliance Tools For Small Business Complete Implementa](/privacy-tools-guide/gdpr-compliance-tools-for-small-business-complete-implementa/)
+- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

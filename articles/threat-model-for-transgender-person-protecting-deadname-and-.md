@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model For Transgender Person Protecting Deadname And"
 description: "A technical guide for developers and power users on building a threat model to protect your deadname and previous digital identity during a name"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-transgender-person-protecting-deadname-and-/
 categories: [guides]
@@ -209,10 +210,15 @@ firefox --no-remote -P "NewIdentity"
 firefox --no-remote -P "LegacyAccounts"
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
+- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Threat Model for Undocumented Immigrant Protecting.](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

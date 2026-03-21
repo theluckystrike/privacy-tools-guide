@@ -3,6 +3,7 @@ layout: default
 title: "Password Manager Breach Notification Features"
 description: "A guide to password manager breach notification features for developers and power users. Learn how breach alerts work, API integrations"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-breach-notification-features/
 categories: [guides]
@@ -401,10 +402,14 @@ def rotate_secret(secret_type, old_value):
         pass
 ```
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+
+## Related Articles
+
+- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
+- [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
+- [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
+- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

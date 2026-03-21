@@ -3,6 +3,7 @@ layout: default
 title: "How to remove yourself from data broker sites step by step."
 description: "Complete guide to removing your personal information from 50+ major data brokers: manual opt-outs, automated tools, and templates"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/
 categories: [guides]
@@ -508,12 +509,15 @@ MY RECOMMENDATION:
   Data brokers constantly re-collect, so automation is worth the cost.
 ```
 
-## Related Reading
-- [Data Broker Opt-Out Automation Tools That Continuously Remove Your Data](/privacy-tools-guide/guides-hub/)
-- [GDPR Individual Rights: How to Request Data Removal from Companies](/privacy-tools-guide/guides-hub/)
-- [Best Tools for Monitoring if Your Personal Data Appears Online](/privacy-tools-guide/guides-hub/)
 
----
+
+## Related Articles
+
+- [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
+- [Data Broker Removal Diy Complete Guide To Opting Out Of Top](/privacy-tools-guide/data-broker-removal-diy-complete-guide-to-opting-out-of-top-/)
+- [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

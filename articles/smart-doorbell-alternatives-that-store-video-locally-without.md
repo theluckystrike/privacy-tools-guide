@@ -3,6 +3,7 @@ layout: default
 title: "Smart Doorbell Alternatives That Store Video Locally Without"
 description: "Discover privacy-focused smart doorbell alternatives that store video footage locally without monthly cloud subscription fees. Technical setup guides"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /smart-doorbell-alternatives-that-store-video-locally-without/
 categories: [guides, security]
@@ -265,7 +266,6 @@ It depends on your setup. A properly configured NAS with RAID redundancy is more
 **Do I lose footage if my internet goes down?**
 With local storage, losing internet connectivity has no effect on recording. Cloud-dependent systems stop recording or become inaccessible during outages.
 
-## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Best Privacy Tools 2026](/privacy-tools-guide/best-privacy-tools-2026/)

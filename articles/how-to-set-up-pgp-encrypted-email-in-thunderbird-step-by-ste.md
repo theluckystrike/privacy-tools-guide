@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste"
 description: "A practical guide for developers and power users to configure PGP encryption in Thunderbird. Includes key generation, key management, and practical"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/
 categories: [guides, security]
@@ -296,10 +297,15 @@ PGP encryption provides strong security guarantees but at usability cost:
 
 For organizations, consider whether PGP is necessary or if simpler transport encryption (TLS) plus authentication might suffice.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Best Encrypted Email Provider 2026](/privacy-tools-guide/best-encrypted-email-provider/)
+
+## Related Articles
+
+- [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
+- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
+- [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

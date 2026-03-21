@@ -3,6 +3,7 @@ layout: default
 title: "Wireguard Container Setup Docker Network Namespace Isolation"
 description: "A practical guide to running WireGuard inside Docker containers with network namespace isolation for enhanced privacy and security"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-container-setup-docker-network-namespace-isolation/
 categories: [guides]
@@ -200,10 +201,15 @@ Running WireGuard in Docker adds security layers but requires attention to a few
 
 For production deployments, consider implementing key rotation and using hardware security modules for key storage. Container logs can reveal sensitive information—ensure log aggregation systems handle this data appropriately.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
+- [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [Container Security Basics for Developers](/privacy-tools-guide/container-security-basics-developers)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

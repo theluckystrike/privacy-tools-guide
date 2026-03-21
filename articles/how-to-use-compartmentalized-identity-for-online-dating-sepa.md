@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Compartmentalized Identity For Online Dating Sepa"
 description: "Create a compartmentalized dating identity by using a dedicated email (ProtonMail or SimpleLogin), separate phone number (Google Voice or Burner app), unique"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-compartmentalized-identity-for-online-dating-sepa/
 categories: [guides]
@@ -267,10 +268,15 @@ When compartmentalization fails:
 4. **Legal consideration**: Consult with privacy attorney if necessary
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
+- [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
+- [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

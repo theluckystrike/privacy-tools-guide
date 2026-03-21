@@ -3,6 +3,7 @@ layout: default
 title: "How To Submit Subject Access Request To Employer For All Mon"
 description: "A practical guide for employees to exercise their data subject rights under GDPR and similar privacy laws. Learn how to request all monitoring data"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-submit-subject-access-request-to-employer-for-all-mon/
 categories: [guides]
@@ -252,9 +253,15 @@ GDPR provides additional rights beyond accessing data:
 - Canada: Personal Information Protection and Electronic Documents Act (PIPEDA)
 - India: Information Technology Act provides limited access rights
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
+- [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
+- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
+- [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

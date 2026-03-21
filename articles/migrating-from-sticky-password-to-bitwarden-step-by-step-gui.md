@@ -3,6 +3,7 @@ layout: default
 title: "Migrating from Sticky Password to Bitwarden: A Guide"
 description: "A practical guide for developers and power users migrating passwords from Sticky Password to Bitwarden. Covers export methods, import scripts, and CLI"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-sticky-password-to-bitwarden-step-by-step-gui/
 categories: [guides]
@@ -200,12 +201,15 @@ For developers using Bitwarden for secrets management, explore the Bitwarden Sen
 
 The migration process, while requiring some technical steps, provides an opportunity to audit your password inventory and remove outdated entries. This periodic cleanup improves your overall security posture and reduces the attack surface of your password vault.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Bitwarden CLI Documentation](https://bitwarden.com/help/cli/)
-- [Password Manager Comparison Guide](/1password-vs-bitwarden-2026-comparison/)
+
+## Related Articles
+
+- [Migrating from LastPass to Bitwarden No Data Loss](/privacy-tools-guide/migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/)
+- [Sticky Password Review 2026: A Developer's Perspective](/privacy-tools-guide/sticky-password-review-2026/)
+- [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
+- [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
+- [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Challenge Automated Credit Decision Using GDPR Right to"
 description: "A practical guide for developers and power users on invoking GDPR Article 22 to challenge automated credit decisions and request human review. Includes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-challenge-automated-credit-decision-using-gdpr-right-/
 categories: [guides]
@@ -230,10 +231,15 @@ Lenders must respond to human review requests within:
 
 Failure to comply can result in enforcement action and fines. The ICO has issued significant penalties to lenders who failed to provide adequate human review processes.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Request Human Review of AI Automated Decision That Affects You Legally](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
+- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

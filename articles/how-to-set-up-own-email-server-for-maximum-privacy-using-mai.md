@@ -3,6 +3,7 @@ layout: default
 title: "Set Up Own Email Server For Maximum Privacy Using Mail In"
 description: "A practical guide for developers and power users to self-host email using Mail-in-a-Box. Learn how to achieve complete control over your email"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/
 categories: [guides]
@@ -203,10 +204,15 @@ Running your own email server requires more maintenance than using hosted servic
 Your email infrastructure now operates under your terms, free from algorithmic profiling and third-party data exploitation.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
+- [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)
+- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
+- [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

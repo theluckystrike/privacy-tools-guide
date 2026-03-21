@@ -3,6 +3,7 @@ layout: default
 title: "Cname Cloaking How Trackers Disguise As First Party Dns Expl"
 description: "Learn how CNAME cloaking works, how trackers use DNS CNAME records to bypass privacy protections, and practical methods to detect and block first-party"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/
 categories: [guides, security]
@@ -299,10 +300,15 @@ This check combines DNS, SSL certificate, and pattern matching to identify cloak
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
+- [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
+- [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
+- [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
+- [How To Use Naiveproxy To Disguise Censorship Circumvention T](/privacy-tools-guide/how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

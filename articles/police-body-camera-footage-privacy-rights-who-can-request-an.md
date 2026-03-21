@@ -3,6 +3,7 @@ layout: default
 title: "Police Body Camera Footage Privacy Rights Who Can Request An"
 description: "Police body camera footage is generally public record but with significant state variations: California's SB 1421 requires disclosure of use-of-force"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /police-body-camera-footage-privacy-rights-who-can-request-an/
 categories: [guides]
@@ -189,9 +190,14 @@ Several practical challenges affect request outcomes:
 4. **Understand exemptions**: Know what can and cannot be withheld
 5. **Consider legal counsel**: Complex requests may benefit from attorney involvement
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
+- [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
+- [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

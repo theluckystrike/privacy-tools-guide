@@ -3,6 +3,7 @@ layout: default
 title: "Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In"
 description: "A practical guide for developers and power users to create an automated system that delivers your credentials to trusted contacts if you become inactive"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-dead-mans-switch-email-that-sends-credentials-/
 reviewed: true
@@ -211,10 +212,15 @@ curl -X POST https://your-server.example.com/checkin \
 - **Test your system**: Run a dry test where you simulate inactivity and verify the email sends correctly
 - **Rotate credentials periodically**: Update the encrypted payload when you change passwords
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
+- [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
+- [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
+- [How To Set Up Encrypted Dead Drop Using Onionshare For Sourc](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
+- [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

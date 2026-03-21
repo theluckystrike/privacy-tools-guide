@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Signal Without Linking Phone Number Privacy Worka"
 description: "A technical guide for developers and power users on how to use Signal without linking your primary phone number. Practical workarounds including VoIP"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-signal-without-linking-phone-number-privacy-worka/
 categories: [guides, security]
@@ -211,10 +212,15 @@ Each method provides different privacy guarantees:
 
 Choose the method matching your threat model. For most users, a VoIP number combined with proper privacy settings provides adequate protection. High-risk users should consider the dedicated SIM or CLI approaches.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
+- [Jmp Chat Voip Number For Signal Registration Anonymous Phone](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)
+- [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
+- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

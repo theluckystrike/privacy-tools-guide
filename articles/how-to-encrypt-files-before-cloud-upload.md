@@ -3,6 +3,7 @@ layout: default
 title: "How to Encrypt Files Before Cloud Upload"
 description: "A practical guide for developers and power users on encrypting files before uploading to cloud storage. Covers age, gocryptfs, OpenSSL, and automated"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-encrypt-files-before-cloud-upload/
 categories: [guides]
@@ -240,10 +241,15 @@ For most use cases, age provides the best balance of security and simplicity. If
 - **Verify Decryption**: Always test decryption after encrypting critical files.
 - **Secure Deletion**: After encrypting and uploading, securely delete original files using `shred` or similar tools.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [Chrome Extension File Sharing Quick Upload](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
+- [How To Send Large Encrypted Files Without Uploading To Third](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
+- [Use Steganography to Hide Messages Inside Normal Files](/privacy-tools-guide/how-to-use-steganography-to-hide-messages-inside-normal-file/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Legitimate Interest Assessment Guide"
 description: "A technical guide to conducting GDPR legitimate interest assessments for developers and power users, with practical code examples and implementation patterns"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-legitimate-interest-assessment-guide/
 categories: [guides]
@@ -265,12 +266,15 @@ Test your implementation by reviewing the ICO's legitimate interest checklist an
 
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Home](/privacy-tools-guide/)
-- [GDPR for Developers: A Practical Introduction](/privacy-tools-guide/gdpr-for-developers-practical-introduction/)
-- [Understanding Data Protection Impact Assessments](/privacy-tools-guide/understanding-dpia-guide/)
+
+## Related Articles
+
+- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
+- [Data Privacy Maturity Model Assessment Guide](/privacy-tools-guide/data-privacy-maturity-model-assessment-guide/)
+- [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
+- [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

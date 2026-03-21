@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Lawful Basis for Processing Explained"
 description: "A technical guide explaining GDPR lawful bases for processing personal data. Covers all 6 bases with code examples, practical implementation patterns"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-lawful-basis-for-processing-explained/
 categories: [guides]
@@ -242,12 +243,15 @@ Under GDPR, you cannot retroactively change your lawful basis to circumvent requ
 2. Ensure the new basis was valid at collection time
 3. Document the change and reasoning
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [GDPR Data Processing Agreement Template Guide: A Developer's Practical Reference](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
-- [GDPR Article 17 Erasure Implementation Code: A Developer.](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
-- [Legitimate Interest Assessment Template for Processing.](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+
+## Related Articles
+
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
+- [Gdpr Pseudonymization Vs Anonymization Explained](/privacy-tools-guide/gdpr-pseudonymization-vs-anonymization-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

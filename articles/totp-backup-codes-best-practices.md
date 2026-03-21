@@ -3,6 +3,7 @@ layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"
 description: "Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Password, or KeePassXC) as your primary copy, and keep a second copy written on"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /totp-backup-codes-best-practices/
 reviewed: true
@@ -420,11 +421,15 @@ Audit:
 
 This level of documentation becomes important for security audits and compliance certifications.
 
-## Related Reading
 
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+
+## Related Articles
+
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
+- [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
+- [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
+- [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)
+- [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

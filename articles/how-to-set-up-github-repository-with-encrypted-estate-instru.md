@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Github Repository With Encrypted Estate Instru"
 description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This"
 date: 2026-03-19
+last_modified_at: 2026-03-19
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
 categories: [guides]
@@ -348,9 +349,14 @@ Test your recovery procedures before relying on them. Create a test repository w
 Store this documentation alongside the keys or with your estate planning documents.
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Github Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
+- [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
+- [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

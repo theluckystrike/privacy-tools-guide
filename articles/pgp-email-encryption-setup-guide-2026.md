@@ -3,6 +3,7 @@ layout: default
 title: "PGP Email Encryption Setup Guide 2026"
 description: "A technical guide to setting up PGP email encryption in 2026. Covers GPG key generation, key management, client configuration, and practical usage"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /pgp-email-encryption-setup-guide-2026/
 categories: [guides]
@@ -232,11 +233,15 @@ save
 
 The master signing key stays in cold storage; the encryption subkey goes on your device.
 
-## Related Reading
 
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+
+## Related Articles
+
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
+- [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
+- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
+- [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

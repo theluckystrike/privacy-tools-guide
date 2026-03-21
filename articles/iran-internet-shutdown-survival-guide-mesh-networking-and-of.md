@@ -3,6 +3,7 @@ layout: default
 title: "Iran Internet Shutdown Survival Guide"
 description: "A technical guide to mesh networking and offline communication tools for maintaining connectivity during internet shutdowns. Includes practical setup"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /iran-internet-shutdown-survival-guide-mesh-networking-and-of/
 categories: [guides]
@@ -212,9 +213,14 @@ Mesh networking provides resilience but comes with constraints:
 
 For high-risk scenarios, combining mesh networking with appropriate operational security—limiting communication to essential messages, using dead drops, and rotating devices—reduces exposure.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Use Mesh Networking for Private Communication Without](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
+- [How To Communicate During Internet Shutdown Alternative Netw](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
+- [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
+- [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

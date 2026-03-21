@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up a Canary Trap to Detect Information Leaks"
 description: "Learn how to implement a canary trap system to identify the source of information leaks. Practical guide for developers and power users with code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-canary-trap-to-detect-information-leaks/
 categories: [guides, security]
@@ -203,10 +204,15 @@ Canary traps work best when recipients have a reasonable expectation of privacy 
 For truly sensitive information, combine canary traps with encryption, access logging, and other security controls. A canary trap identifies leaks after they occur—it does not prevent them.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
+- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+- [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
+- [How to Disable WebRTC Leaks in Tor Browser](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
+- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
 
 Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"
 description: "Every photo your iPhone captures contains embedded metadata—Exchangeable Image File Format (EXIF) data—that reveals more than just the image itself. This"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /iphone-photo-metadata-location-strip-guide/
 categories: [guides]
@@ -222,13 +223,15 @@ for file in *.jpg *.jpeg; do
 done
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Mobile Photo Metadata EXIF Location Data: How to Strip.](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
-- [Dating App Photo Metadata Stripping: How to Remove EXIF.](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+
+## Related Articles
+
+- [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
+- [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
+- [How To Use Bitcoin Atm Anonymously Without Providing Photo I](/privacy-tools-guide/how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

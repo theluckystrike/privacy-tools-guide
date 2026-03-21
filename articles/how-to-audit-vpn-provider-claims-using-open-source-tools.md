@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit VPN Provider Claims Using Open Source Tools"
 description: "Learn how to independently verify what your VPN provider claims about privacy, security, and performance using free, open source tools"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-audit-vpn-provider-claims-using-open-source-tools/
 categories: [guides]
@@ -204,9 +205,14 @@ After running tests, evaluate your VPN provider honestly:
 - **Poor speeds** = Acceptable if privacy is prioritized, otherwise find alternatives
 - **Log-keeping incidents** = Proven privacy failures
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
+- [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
+- [Windows Privacy Tools Open Source 2026: A Developer Guide](/privacy-tools-guide/windows-privacy-tools-open-source-2026/)
+- [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
+- [Russia Vpn Provider Compliance Which Services Handed User Da](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-da/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

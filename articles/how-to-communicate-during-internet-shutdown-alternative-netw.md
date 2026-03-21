@@ -3,6 +3,7 @@ layout: default
 title: "How To Communicate During Internet Shutdown Alternative Netw"
 description: "A practical guide to alternative communication methods when the internet goes down. Learn about mesh networks, offline messaging, and peer-to-peer"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-communicate-during-internet-shutdown-alternative-netw/
 categories: [guides]
@@ -228,10 +229,15 @@ For developers responsible maintaining communication capabilities, implement def
 
 Test these systems regularly. An untested solution fails when needed most.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
+- [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
+- [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
+- [Communicate with Lawyer Privately When Device is Compromised](/privacy-tools-guide/how-to-communicate-with-lawyer-privately-when-device-compromised/)
+- [Ultrasonic Beacon Tracking How Smart Devices Communicate Thr](/privacy-tools-guide/ultrasonic-beacon-tracking-how-smart-devices-communicate-thr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Your Computer Is Part Of Botnet Check"
 description: "Learn how to identify if your computer has been compromised and added to a botnet. This guide covers warning signs, detection methods, and removal steps"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/
 categories: [guides]
@@ -326,10 +327,15 @@ Implement defense-in-depth:
 7. **Incident response plan**: Know what to do if infection occurs
 8. **Regular backups**: Offline backups protect against ransomware
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Tell If Your Dns Has Been Hijacked Symptoms Check](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)
+- [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
+- [What To Do If Ransomware Locks Your Computer Immediate Steps](/privacy-tools-guide/what-to-do-if-ransomware-locks-your-computer-immediate-steps/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

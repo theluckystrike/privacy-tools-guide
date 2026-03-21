@@ -3,6 +3,7 @@ layout: default
 title: "Media Devices Enumeration Fingerprinting Cameras Microphones"
 description: "Discover how websites enumerate your media devices, the privacy risks of device fingerprinting through MediaDevices API, and practical protection"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /media-devices-enumeration-fingerprinting-cameras-microphones/
 categories: [guides, security]
@@ -278,10 +279,15 @@ Even without cookies, the analytics provider tracks you across all these sites u
 These real-world examples show why defense-in-depth (extensions + settings + monitoring) is necessary.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
+- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
+- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

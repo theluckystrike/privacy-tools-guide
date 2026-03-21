@@ -3,6 +3,7 @@ layout: default
 title: "Instagram Memorialization Request Process What Happens To Ph"
 description: "To memorialize a deceased Instagram account, submit a request through Instagram's memorial request form with a death certificate or obituary. The account"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /instagram-memorialization-request-process-what-happens-to-ph/
 categories: [guides]
@@ -257,10 +258,15 @@ Maintain secure records of:
 - Data backup locations
 - Any special instructions for digital executor
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Twitter X Account After Death: How to Request.](/privacy-tools-guide/twitter-x-account-after-death-how-to-request-memorialization/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
+- [Async Code Review Process Without Zoom Calls Step By Step](/privacy-tools-guide/async-code-review-process-without-zoom-calls-step-by-step/)
+- [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
+- [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

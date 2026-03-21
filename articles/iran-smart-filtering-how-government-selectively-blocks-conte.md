@@ -3,6 +3,7 @@ layout: default
 title: "Iran Smart Filtering How Government Selectively Blocks Conte"
 description: "Iran operates one of the most sophisticated internet filtering systems in the world. Unlike simple IP blocking or DNS blackholing, the country's 'Smart"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /iran-smart-filtering-how-government-selectively-blocks-conte/
 categories: [guides, security]
@@ -211,10 +212,15 @@ Understanding Iran's smart filtering infrastructure is the first step toward bui
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
+- [Iran Whatsapp Restrictions How Government Monitors And Limit](/privacy-tools-guide/iran-whatsapp-restrictions-how-government-monitors-and-limit/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
+- [Privacy Badger Vs Ublock Origin Which Blocks More Trackers 2](/privacy-tools-guide/privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/)
+- [Email Privacy Act Protections When Government Needs Warrant](/privacy-tools-guide/email-privacy-act-protections-when-government-needs-warrant-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

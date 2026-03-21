@@ -3,6 +3,7 @@ layout: default
 title: "Navigator Plugins Fingerprinting How Browser Plugins Betray"
 description: "Modern web development demands awareness of browser fingerprinting techniques, and the navigator.plugins API represents one of the most effective methods"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /navigator-plugins-fingerprinting-how-browser-plugins-betray-/
 categories: [guides]
@@ -278,10 +279,15 @@ If you're concerned about your plugin fingerprint, follow this audit:
 
 A well-chosen set of 5-6 extensions is significantly more private than 20+ extensions, even if those extensions themselves are privacy-focused.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
+- [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

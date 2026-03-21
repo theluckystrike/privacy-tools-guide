@@ -3,6 +3,7 @@ layout: default
 title: "Social Media Privacy Policy Comparison 2026"
 description: "Technical comparison of social media privacy policies in 2026. Covers data collection, API access, export options, and practical tools for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /social-media-privacy-policy-comparison-2026/
 categories: [guides, security]
@@ -294,10 +295,15 @@ The social media ecosystem continues evolving. Staying informed about data pract
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [Social Media Privacy For Teenagers Guide 2026](/privacy-tools-guide/social-media-privacy-for-teenagers-guide-2026/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
+- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Openvpn Push Route Configuration Selective Routing Explained"
 description: "A guide to configuring OpenVPN push route directives for selective routing, allowing you to control which traffic goes through the VPN"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /openvpn-push-route-configuration-selective-routing-explained-step-by-step/
 categories: [guides]
@@ -204,9 +205,14 @@ When implementing selective routing, keep these security principles in mind:
 For maximum security, use the full tunnel unless you have specific requirements for split tunneling. When using selective routing, regularly audit your routing tables to ensure no sensitive traffic is accidentally leaking outside the VPN.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
+- [Openvpn Compression Vulnerability Voracle Attack Explained A](/privacy-tools-guide/openvpn-compression-vulnerability-voracle-attack-explained-a/)
+- [Openvpn Data Channel Offload Explained Performance](/privacy-tools-guide/openvpn-data-channel-offload-explained-performance-improvement-2026/)
+- [Vpn Tunnel Interface Vs Full Tunnel Routing Difference.](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
 
 Built by theluckystrike — More at zovo.one

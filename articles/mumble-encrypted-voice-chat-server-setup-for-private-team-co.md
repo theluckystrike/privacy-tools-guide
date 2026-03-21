@@ -3,6 +3,7 @@ layout: default
 title: "Mumble Encrypted Voice Chat Server Setup For Private Team Co"
 description: "A practical guide to setting up a self-hosted Mumble server with encryption for private team voice communication. Complete installation, configuration"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /mumble-encrypted-voice-chat-server-setup-for-private-team-co/
 categories: [guides]
@@ -179,10 +180,15 @@ sudo tail -f /var/log/murmur/murmur.log
 
 Periodically regenerate SSL certificates before expiration to prevent connection issues.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Share Passwords Securely With Team Using Encrypted Co](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
+- [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
+- [Best Encrypted Voice Call App 2026](/privacy-tools-guide/best-encrypted-voice-call-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

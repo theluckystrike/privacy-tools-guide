@@ -3,6 +3,7 @@ layout: default
 title: "Immigration Checkpoint Device Search Rights What Ice Cbp Can"
 description: "A practical guide for developers and power users on what U.S. Customs and Border Protection can legally search on your electronic devices at border"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /immigration-checkpoint-device-search-rights-what-ice-cbp-can/
 categories: [guides]
@@ -245,10 +246,15 @@ diff pre_travel_hashes.txt post_travel_hashes.txt
 | "These files look suspicious" | Request attorney | Remain silent | Possible civil asset forfeiture |
 | "I'm copying your drive" | Allow/allow | Refuse | Likely denial of entry + seizure |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup for Immigration Activist](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocumented/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [Best Privacy-Focused Search Engines Comparison 2026: DuckDuckGo, Startpage, B...](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

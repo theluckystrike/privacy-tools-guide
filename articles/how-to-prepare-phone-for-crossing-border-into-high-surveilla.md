@@ -3,6 +3,7 @@ layout: default
 title: "How To Prepare Phone For Crossing Border Into High Surveilla"
 description: "A practical security checklist for developers and power users preparing phones for high-surveillance border crossings. Includes encryption, airplane"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prepare-phone-for-crossing-border-into-high-surveilla/
 categories: [guides]
@@ -468,10 +469,15 @@ echo "Duration: [time]" >> border_travel_log.txt
 echo "Post-search findings: [any suspicious changes]" >> border_travel_log.txt
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
+- [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

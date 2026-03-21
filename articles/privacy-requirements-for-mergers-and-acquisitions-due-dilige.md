@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Requirements For Mergers And Acquisitions Due Dilige"
 description: "A technical guide covering privacy requirements, data handling protocols, and compliance checks for M&A due diligence processes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-requirements-for-mergers-and-acquisitions-due-dilige/
 categories: [guides]
@@ -344,9 +345,14 @@ Effective due diligence requires cross-functional expertise:
 
 Budget 3-6 months for thorough privacy due diligence on mid-sized companies (100+ employees).
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [GDPR Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+
+## Related Articles
+
+- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
+- [Employee Email Monitoring Legal Requirements And Privacy Bou](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
+- [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
+- [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

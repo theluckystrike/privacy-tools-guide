@@ -3,6 +3,7 @@ layout: default
 title: "How to Check If Someone Is Reading Your Text Messages"
 description: "A technical guide for developers and power users on detecting SMS interception, checking for message forwarding, and securing your text communications"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-check-if-someone-is-reading-your-text-messages/
 categories: [guides, security]
@@ -197,10 +198,15 @@ If you determine someone is reading your messages:
 4. **Contact your carrier** to check for unauthorized forwarding
 5. **Document evidence** before resetting if you plan to pursue legal action
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
+- [How To Check If Someone Is Using Your Netflix Without Permis](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permis/)
+- [Check If Someone Is Using Your Netflix Without Permission](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permission/)
+- [Is Someone Monitoring My Home WiFi Network? How to Check](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
+- [China Wechat Surveillance What Messages And Activity Tencent](/privacy-tools-guide/china-wechat-surveillance-what-messages-and-activity-tencent/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

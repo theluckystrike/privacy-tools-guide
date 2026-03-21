@@ -3,6 +3,7 @@ layout: default
 title: "Browser Fingerprinting: What It Is and How to Block It"
 description: "Learn how browser fingerprinting works, why it threatens your privacy, and practical techniques to block or mitigate fingerprinting scripts"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /browser-fingerprinting-what-it-is-how-to-block/
 categories: [guides, security]
@@ -317,13 +318,15 @@ Privacy protections come with tradeoffs:
 
 Monitor website functionality after enabling each protection. Some sites break with aggressive blocking—adjust settings per-domain using extension granular controls.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Block Canvas Fingerprinting in Your Browser: A.](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
-- [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
-- [Browser Permission Prompt Fingerprinting: How.](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification/)
+
+## Related Articles
+
+- [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
+- [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How To Exercise Right To Restrict Processing Under Gdpr Limi"
 description: "Learn how to exercise your right to restrict processing under GDPR. Practical guide for developers and power users on limiting data use with code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-exercise-right-to-restrict-processing-under-gdpr-limi/
 categories: [guides, security, enterprise]
@@ -218,10 +219,15 @@ After submitting your request, verify compliance:
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Exercise Right To Rectification Correcting Inaccurate](/privacy-tools-guide/how-to-exercise-right-to-rectification-correcting-inaccurate/)
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

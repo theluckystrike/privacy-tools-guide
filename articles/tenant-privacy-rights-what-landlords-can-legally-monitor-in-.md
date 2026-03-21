@@ -3,6 +3,7 @@ layout: default
 title: "Tenant Privacy Rights: What Landlords Can Legally Monitor"
 description: "A technical guide to tenant privacy rights covering what landlords can legally monitor in rental property. State-by-state breakdown with code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /tenant-privacy-rights-what-landlords-can-legally-monitor-in-/
 categories: [guides]
@@ -201,10 +202,15 @@ For quick reference, here are key thresholds across major states:
 **Mandatory Disclosure States (monitoring devices):**
 - California, Washington, Colorado, Nevada
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Rental Application Privacy What Information Landlords Can Le](/privacy-tools-guide/rental-application-privacy-what-information-landlords-can-le/)
+- [Baby Monitor Security And Privacy How To Prevent.](/privacy-tools-guide/baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
+- [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

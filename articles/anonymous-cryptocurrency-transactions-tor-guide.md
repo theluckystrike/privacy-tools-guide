@@ -3,6 +3,7 @@ layout: default
 title: "Anonymous Cryptocurrency Transactions Tor Guide"
 description: "A practical guide for developers and power users on achieving anonymous cryptocurrency transactions using Tor network. Covers wallet configuration"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /anonymous-cryptocurrency-transactions-tor-guide/
 categories: [guides, security]
@@ -175,12 +176,15 @@ bitcoin-cli getpeerinfo | grep -E "addronnet.*onion"
 
 Confirm your node accepts only onion connections and that your visible IP differs from your actual IP.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Anonymous Bitcoin Wallet Setup Using Tor and Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
-- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
-- [How to Use Tor With Encrypted Email for Maximum Sender.](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
+
+## Related Articles
+
+- [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
+- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
+- [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
+- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
+- [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

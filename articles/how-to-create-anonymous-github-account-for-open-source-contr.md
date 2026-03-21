@@ -3,6 +3,7 @@ layout: default
 title: "How To Create Anonymous Github Account For Open Source Contr"
 description: "A practical guide for developers who want to contribute to open source projects while maintaining privacy. Learn how to set up a completely separate"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-anonymous-github-account-for-open-source-contr/
 categories: [guides, security]
@@ -263,10 +264,15 @@ For projects requiring maximum anonymity, consider using GitHub alternatives:
 
 Each platform has different metadata collection and blocking characteristics. For maximum anonymity, use a different platform per project, rather than consolidating all anonymous work on a single GitHub account.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
+- [Windows Privacy Tools Open Source 2026: A Developer Guide](/privacy-tools-guide/windows-privacy-tools-open-source-2026/)
+- [How To Create Untraceable Email Account Using Tor Vpn And An](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
+- [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

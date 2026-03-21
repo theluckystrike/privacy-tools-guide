@@ -3,6 +3,7 @@ layout: default
 title: "How to Block Tracking Pixels in Email Clients: Setup Guide"
 description: "A practical guide for developers and power users to block email tracking pixels. Learn methods for major email clients, command-line tools, and custom"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-block-tracking-pixels-in-email-clients-setup-guide/
 categories: [guides]
@@ -198,10 +199,15 @@ Verify your protection is working:
 
 Many email tracking services offer "campaign previews" to test—sign up for a newsletter and check what data they collect before and after implementing these protections.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
+- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

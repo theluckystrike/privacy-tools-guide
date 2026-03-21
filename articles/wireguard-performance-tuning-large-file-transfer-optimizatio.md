@@ -3,6 +3,7 @@ layout: default
 title: "WireGuard Performance Tuning for Large File Transfer."
 description: "A technical guide for developers and power users on optimizing WireGuard VPN performance for large file transfers, covering MTU tuning"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /wireguard-performance-tuning-large-file-transfer-optimizatio/
 categories: [guides]
@@ -266,10 +267,15 @@ sudo iftop -i wg0
 sudo watch -n1 'sudo wg show wg0'
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
+- [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
+- [How To Send Large Encrypted Files Without Uploading To Third](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
+- [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
+- [Canvas Blocker Extension How It Works And Performance Impact](/privacy-tools-guide/canvas-blocker-extension-how-it-works-and-performance-impact/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

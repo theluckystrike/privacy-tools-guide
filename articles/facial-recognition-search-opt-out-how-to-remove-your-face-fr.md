@@ -3,6 +3,7 @@ layout: default
 title: "Facial Recognition Search Opt Out How To Remove Your Face Fr"
 description: "A technical guide for developers and power users on removing facial data from Pimeyes, Clearview AI, and other reverse image search services. Includes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /facial-recognition-search-opt-out-how-to-remove-your-face-fr/
 categories: [guides]
@@ -175,10 +176,15 @@ The technical landscape of facial recognition search continues evolving. New ser
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
+- [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
+- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
+- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
+- [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

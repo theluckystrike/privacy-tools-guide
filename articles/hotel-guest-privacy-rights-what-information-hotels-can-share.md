@@ -3,6 +3,7 @@ layout: default
 title: "Hotel Guest Privacy Rights What Information Hotels Can Share"
 description: "A practical guide for developers and power users on hotel guest privacy rights. Learn what information hotels can legally share with law enforcement"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /hotel-guest-privacy-rights-what-information-hotels-can-share/
 categories: [guides]
@@ -229,9 +230,14 @@ class GuestDataRetention:
         return datetime.now() > timestamp + retention
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Library Patron Privacy Rights What Information Libraries Can](/privacy-tools-guide/library-patron-privacy-rights-what-information-libraries-can/)
+- [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
+- [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)
+- [Rental Application Privacy What Information Landlords Can Le](/privacy-tools-guide/rental-application-privacy-what-information-landlords-can-le/)
+- [VPN for Remote Desktop Connection from Hotel WiFi Safely](/privacy-tools-guide/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

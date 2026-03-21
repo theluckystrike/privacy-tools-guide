@@ -3,6 +3,7 @@ layout: default
 title: "Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn"
 description: "Passkeys vs passwords security analysis. FIDO2 standard, WebAuthn implementation, platform support, migration guide, real-world security comparison"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/
 categories: [guides]
@@ -428,12 +429,15 @@ By 2027-2028, expect:
 - Hardware security keys becoming more affordable and common
 - Cross-service credential syncing improving
 
-## Related Reading
 
-- [Password Manager Review 2026](/privacy-tools-guide/password-manager-review-2026/)
-- [Best Security Keys and Hardware Authenticators](/privacy-tools-guide/best-security-keys-and-hardware-authenticators/)
-- [2FA vs FIDO2 Security Comparison](/privacy-tools-guide/2fa-vs-fido2-security-comparison/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
+- [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
+- [WebAuthn Implementation Guide for Developers](/privacy-tools-guide/webauthn-implementation-guide-developers/)
+- [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

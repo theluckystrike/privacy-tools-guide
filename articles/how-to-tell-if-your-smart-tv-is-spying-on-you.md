@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Your Smart Tv Is Spying On You"
 description: "Learn how to detect if your smart TV is collecting and transmitting data without your knowledge. This guide covers network traffic analysis, privacy"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-smart-tv-is-spying-on-you/
 categories: [guides, security]
@@ -219,10 +220,15 @@ Watch for these indicators:
 4. **Updated privacy policies**: Manufacturers frequently update terms to expand data collection
 5. **Ads in menu interfaces**: Free ad-supported models often transmit more data
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [How To Tell If Someone Has Access To Your Apple Id](/privacy-tools-guide/how-to-tell-if-someone-has-access-to-your-apple-id/)
+- [How To Tell If Someone Installed Spyware On Your Iphone](/privacy-tools-guide/how-to-tell-if-someone-installed-spyware-on-your-iphone/)
+- [How to Tell if Your Bluetooth Is Being Intercepted Nearby](/privacy-tools-guide/how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/)
+- [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

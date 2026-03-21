@@ -3,6 +3,7 @@ layout: default
 title: "Encrypted DNS over HTTPS on Linux"
 description: "Configure DNS over HTTPS on Linux using systemd-resolved, dnscrypt-proxy, or AdGuard Home. Stop your ISP from logging every domain you visit"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: encrypted-dns-over-https-linux-setup
 categories: [guides, privacy]
@@ -259,11 +260,15 @@ dig +dnssec sigfail.verteiltesysteme.net
 # Should return SERVFAIL if DNSSEC validation is working
 ```
 
-## Related Reading
 
-- [Privacy-Focused DNS Providers Comparison](/privacy-focused-dns-providers-comparison)
-- [How to Configure DNS over HTTPS Inside VPN Tunnel](/how-to-configure-dns-over-https-inside-vpn-tunnel)
-- [How to Set Up WireGuard on VPS for Personal VPN](/how-to-set-up-wireguard-on-vps-for-personal-vpn)
+
+## Related Articles
+
+- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
+- [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+- [Proton Drive Linux Client Setup Guide 2026](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

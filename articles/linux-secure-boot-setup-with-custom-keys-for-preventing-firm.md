@@ -3,6 +3,7 @@ layout: default
 title: "Linux Secure Boot Setup with Custom Keys for Preventing."
 description: "Learn how to set up Secure Boot on Linux with custom keys to protect against firmware-level attacks and ensure boot integrity"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /linux-secure-boot-setup-with-custom-keys-for-preventing-firm/
 categories: [guides]
@@ -182,10 +183,15 @@ gpg -o secureboot-keys-backup.tar.gz.gpg --symmetric secureboot-keys-backup.tar.
 
 Store this backup securely, preferably offline. Additionally, note your firmware's "Clear Secure Boot Keys" option exists as a last-resort recovery method—this returns to factory defaults.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
+- [Proton Drive Linux Client Setup Guide 2026](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
+- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
+- [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

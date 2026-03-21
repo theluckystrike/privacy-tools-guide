@@ -3,6 +3,7 @@ layout: default
 title: "Android Location Permissions Best Practices"
 description: "Android location permission best practices require requesting fine location through runtime permissions (not manifest-only), explicitly distinguishing between"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /android-location-permissions-best-practices/
 categories: [guides]
@@ -227,10 +228,15 @@ Google Play policies strictly regulate location permissions. Background location
 
 Frequent location updates in the background trigger battery drain warnings and potential Play Store warnings. Use geofencing APIs for event-driven location needs instead of continuous polling.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Android Sensor Permissions How Accelerometer Gyroscope Can B](/privacy-tools-guide/android-sensor-permissions-how-accelerometer-gyroscope-can-b/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

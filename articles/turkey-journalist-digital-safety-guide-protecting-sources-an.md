@@ -3,6 +3,7 @@ layout: default
 title: "Turkey Journalist Digital Safety Guide Protecting Sources An"
 description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
 categories: [guides]
@@ -218,10 +219,15 @@ Prepare for potential device seizure:
 3. **Source contact schedule**: Establish regular check-in times with sources
 4. **Legal contacts**: Have digital rights lawyer contact information readily available
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Source Communicating With Journalist Anonym](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
+- [Does Expressvpn Still Work In Turkey 2026 Latest Test](/privacy-tools-guide/does-expressvpn-still-work-in-turkey-2026-latest-test/)
+- [Turkey Content Removal Orders How Government Forces Platform](/privacy-tools-guide/turkey-content-removal-orders-how-government-forces-platform/)
+- [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Complete Guide To Removing Yourself From Internet Databases"
 description: "A practical technical guide for removing your data from people search sites and data broker databases. Includes automated opt-out scripts, API"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-removing-yourself-from-internet-databases-/
 categories: [guides]
@@ -171,10 +172,15 @@ For users with elevated threat models, additional measures reduce data broker ef
 
 These approaches involve significant effort and trade-offs. Evaluate whether your situation warrants extreme measures.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
+- [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)
+- [Privacy Setup for Survivor of Revenge Porn](/privacy-tools-guide/privacy-setup-for-survivor-of-revenge-porn-removing-images-g/)
+- [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
+- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

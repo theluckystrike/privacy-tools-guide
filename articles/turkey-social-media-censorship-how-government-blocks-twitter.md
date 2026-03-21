@@ -3,6 +3,7 @@ layout: default
 title: "Turkey Social Media Censorship How Government Blocks Twitter"
 description: "A technical guide for developers and power users on how Turkey blocks Twitter, YouTube, and other social media platforms, plus practical workarounds"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /turkey-social-media-censorship-how-government-blocks-twitter/
 categories: [guides]
@@ -256,10 +257,15 @@ print(f"Twitter access status: {status}")
 Understanding these technical mechanisms allows developers to build more resilient applications and provides power users with practical tools to maintain access to information.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Iran Smart Filtering How Government Selectively Blocks Conte](/privacy-tools-guide/iran-smart-filtering-how-government-selectively-blocks-conte/)
+- [Turkey Content Removal Orders How Government Forces Platform](/privacy-tools-guide/turkey-content-removal-orders-how-government-forces-platform/)
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "What to Do If Your Credit Card Was Used Fraudulently Online"
 description: "A practical technical guide for developers and power users on handling fraudulent credit card charges online. Includes API integration patterns"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-your-credit-card-was-used-fraudulently-online/
 categories: [guides]
@@ -254,10 +255,15 @@ If the dispute isn't resolved satisfactorily, escalate to:
 - Your state's attorney general
 - Credit bureau fraud departments (for credit report impact)
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
+- [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)
+- [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
+- [Anonymous Prepaid Sim Card Countries Where You Can Buy](/privacy-tools-guide/anonymous-prepaid-sim-card-countries-where-you-can-buy-without-id-2026/)
+- [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

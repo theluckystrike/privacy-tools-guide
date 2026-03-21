@@ -3,6 +3,7 @@ layout: default
 title: "Identity Compartmentalization Strategy Separating Real Name"
 description: "A practical guide for developers and power users on implementing identity compartmentalization to separate your real identity from online personas"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /identity-compartmentalization-strategy-separating-real-name-/
 categories: [guides]
@@ -183,10 +184,15 @@ To verify your compartmentalization is effective, regularly check:
 4. **Device separation**: Confirm each persona uses distinct devices or at minimum distinct user accounts
 5. **Credential isolation**: Check your password manager to ensure each persona has completely separate credentials
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
+- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
+- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide"
 description: "Complete Vaultwarden self-hosting guide. Docker setup, reverse proxy, SSL, backups, updates, and security hardening for password vault"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/
 categories: [guides]
@@ -641,13 +642,15 @@ docker-compose start vaultwarden
 
 For privacy-conscious users who want control, self-hosted Vaultwarden is the best value.
 
-## Related Reading
 
-- [Privacy-First Password Manager Comparison](/password-manager-comparison/)
-- [Self-Hosting Guide for Privacy-Conscious Users](/self-hosting-guide/)
-- [SSL/TLS Certificates and HTTPS Setup](/https-setup-guide/)
-- [Docker Security Best Practices](/docker-security-guide/)
-- [Automated Backup Strategies for Self-Hosted Services](/backup-strategies-guide/)
+
+## Related Articles
+
+- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
+- [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
+- [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
+- [Migrating from Safari Keychain to Bitwarden](/privacy-tools-guide/migrating-from-safari-keychain-to-bitwarden-complete-migration-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

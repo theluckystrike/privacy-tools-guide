@@ -3,6 +3,7 @@ layout: default
 title: "Teacher Student Data Privacy Ferpa Compliance Digital Tools"
 description: "A technical guide for developers and power users on implementing FERPA compliance for educational digital tools. Covers data handling, API security"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /teacher-student-data-privacy-ferpa-compliance-digital-tools-/
 categories: [guides, enterprise]
@@ -417,10 +418,15 @@ approved_by: "@privacy-officer"
 
 Store these completed reviews in version control alongside your FERPA compliance documentation. When an incident occurs, having a dated approval record with a named reviewer demonstrates due diligence.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
+
+## Related Articles
+
+- [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
+- [Tax Preparer Client Financial Data Privacy IRS.](/privacy-tools-guide/tax-preparer-client-financial-data-privacy-irs-compliance-di/)
+- [School Surveillance Technology Privacy](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
+- [Russia Telegram Compliance What Data Telegram Shares With Ru](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

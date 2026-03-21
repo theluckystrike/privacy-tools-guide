@@ -3,6 +3,7 @@ layout: default
 title: "Audio Context Fingerprinting How Websites Use Sound Api Trac"
 description: "Learn how websites exploit the Web Audio API to create unique browser fingerprints, and what developers and privacy-conscious users can do about it"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /audio-context-fingerprinting-how-websites-use-sound-api-trac/
 categories: [guides]
@@ -186,10 +187,15 @@ Developers building legitimate audio applications should minimize privacy risks:
 5. **Audit third-party libraries**: Verify that imported audio libraries don't perform fingerprinting
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Login Fingerprinting How Websites Detect Which Accounts You](/privacy-tools-guide/login-fingerprinting-how-websites-detect-which-accounts-you-/)
+- [Timezone Fingerprinting How Websites Determine Your Location](/privacy-tools-guide/timezone-fingerprinting-how-websites-determine-your-location/)
+- [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
+- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
+- [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

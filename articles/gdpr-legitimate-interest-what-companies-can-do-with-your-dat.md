@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Legitimate Interest: What Companies Can Do With."
 description: "A practical guide explaining GDPR legitimate interest basis - how companies process your data without consent, the three-part test, and what it means"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /gdpr-legitimate-interest-what-companies-can-do-with-your-dat/
 categories: [guides]
@@ -169,10 +170,15 @@ When you encounter a privacy practice you're unsure about, look for these indica
 3. **No consent mechanism** — If you're not being asked to consent, legitimate interest may apply
 4. **Direct marketing** — Marketing to existing customers often relies on this basis
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
+- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [How To Protect Linkedin Profile From Being Discovered By Dat](/privacy-tools-guide/how-to-protect-linkedin-profile-from-being-discovered-by-dat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

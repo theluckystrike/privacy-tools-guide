@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Public Computers Safely Without Leaving Any Trace"
 description: "A practical guide for developers and power users on using public computers securely, covering browser fingerprinting, data残留清理, and ephemeral session"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-public-computers-safely-without-leaving-any-trace/
 categories: [guides]
@@ -219,9 +220,14 @@ Even after you log out and clear your session:
 4. **Monitor accounts**: Watch for unauthorized access in the following days
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Use Cryptocurrency Privately Without Leaving Traceabl](/privacy-tools-guide/how-to-use-cryptocurrency-privately-without-leaving-traceabl/)
+- [How To Safely Share Location With Date Without Giving Perman](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)
+- [How to Use Live Operating System to Leave No Forensic Trace](/privacy-tools-guide/how-to-use-live-operating-system-to-leave-no-forensic-trace/)
+- [Does Mullvad Work in Turkmenistan? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-work-in-turkmenistan-2026-any-server-works/)
+- [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

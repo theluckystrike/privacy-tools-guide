@@ -3,6 +3,7 @@ layout: default
 title: "How To Configure Wireguard With Obfuscation To Bypass Russia"
 description: "Learn how to configure WireGuard with obfuscation techniques to bypass Russian DPI blocking systems. This practical guide covers UDP port rotation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-wireguard-with-obfuscation-to-bypass-russia/
 categories: [guides, security]
@@ -271,9 +272,14 @@ sudo journalctl -u wireguard -f
 sudo tail -f /var/log/syslog | grep udp2tcp
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
+- [Does Surfshark Obfuscation Work In China 2026 Mobile Test](/privacy-tools-guide/does-surfshark-obfuscation-work-in-china-2026-mobile-test/)
+- [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning In Censo](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+- [How To Use Psiphon To Bypass Censorship In Countries With Re](/privacy-tools-guide/how-to-use-psiphon-to-bypass-censorship-in-countries-with-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

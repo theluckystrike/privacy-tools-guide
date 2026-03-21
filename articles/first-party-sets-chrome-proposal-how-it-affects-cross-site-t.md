@@ -3,6 +3,7 @@ layout: default
 title: "First Party Sets Chrome Proposal How It Affects Cross Site T"
 description: "First Party Sets: Chrome Proposal and Its Impact on. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /first-party-sets-chrome-proposal-how-it-affects-cross-site-t/
 categories: [guides]
@@ -179,10 +180,15 @@ The era of frictionless cross-site tracking is ending. First Party Sets offer a 
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
+- [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)
+- [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
+- [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
+- [Request Human Review of AI Automated Decision That Affects You Legally](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

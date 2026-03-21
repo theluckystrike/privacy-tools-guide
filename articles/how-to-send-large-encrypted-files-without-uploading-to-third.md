@@ -3,6 +3,7 @@ layout: default
 title: "How To Send Large Encrypted Files Without Uploading To Third"
 description: "A guide for developers and power users on sending large encrypted files peer-to-peer without relying on cloud services. Covers age"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-send-large-encrypted-files-without-uploading-to-third/
 categories: [guides]
@@ -225,10 +226,15 @@ sha256sum largefile.zip > checksums.txt
 
 **Consider forward secrecy.** Tools like Signal and similar messaging apps provide automatic forward secrecy—the same file sent through these channels gets new encryption keys for each session. For files, age with ephemeral keys or GPG with proper key management provides similar properties when keys rotate.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
+- [How To Send Encrypted Attachments That Recipients Can Open W](/privacy-tools-guide/how-to-send-encrypted-attachments-that-recipients-can-open-w/)
+- [WireGuard Performance Tuning for Large File Transfer.](/privacy-tools-guide/wireguard-performance-tuning-large-file-transfer-optimizatio/)
+- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
+- [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

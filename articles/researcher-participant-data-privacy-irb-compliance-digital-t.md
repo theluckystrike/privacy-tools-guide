@@ -3,6 +3,7 @@ layout: default
 title: "Researcher Participant Data Privacy Irb Compliance Digital T"
 description: "A practical guide for researchers on protecting participant data, maintaining IRB compliance, and selecting privacy-respecting digital tools for human"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /researcher-participant-data-privacy-irb-compliance-digital-t/
 categories: [guides]
@@ -241,10 +242,15 @@ Before launching data collection, verify these requirements:
 6. **Incident response**: Document procedures for data breach scenarios
 7. **Staff training**: Verify all team members complete CITI or equivalent
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)
+- [Researcher Data Ethics Guide 2026](/privacy-tools-guide/researcher-data-ethics-guide-2026/)
+- [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
+- [Tax Preparer Client Financial Data Privacy IRS.](/privacy-tools-guide/tax-preparer-client-financial-data-privacy-irs-compliance-di/)
+- [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
