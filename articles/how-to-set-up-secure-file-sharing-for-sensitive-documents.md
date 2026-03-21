@@ -176,6 +176,214 @@ exiftool -all= document-scan.jpg
 shred -u sensitive-file.pdf
 ```
 
+## Ephemeral vs Persistent File Sharing
+
+Different scenarios require different retention models. Understanding when to use each approach is crucial:
+
+### Ephemeral File Sharing (Self-Destructing)
+
+Use when sharing temporary credentials, access tokens, or confidential documents that should not exist after viewing:
+
+**PrivateBin Setup:**
+```bash
+# Docker deployment of PrivateBin (ephemeral encrypted paste service)
+docker run -d \
+  --name privatebin \
+  -p 8080:80 \
+  -v privatebin_data:/srv/data \
+  privatebin/nginx:latest
+
+# Access at http://localhost:8080
+# Upload file, set expiration (5 minutes to 1 month), enable burn-after-reading
+```
+
+**Jami (previously Ring) for P2P Transfer:**
+```bash
+# CLI tool for peer-to-peer encrypted file transfer
+# No server, files never stored
+jami account create --archive=/tmp/account.gz --password yourpass
+
+# Share file (link appears in terminal)
+jami file send <contact-id> /path/to/file.pdf
+
+# Recipient receives notification and can accept/reject
+```
+
+### Persistent File Sharing with Access Control
+
+When documents need to remain accessible but with strict controls:
+
+**Nextcloud with Per-Share Expiration:**
+```bash
+# Share a file with automatic expiration
+curl -X POST "https://your-nextcloud.com/ocs/v2.php/apps/files_sharing/api/v2/shares" \
+  -u admin:password \
+  -H "OCS-APIRequest: true" \
+  -d "path=/documents/contract.pdf&shareType=3&expireDate=2026-03-31&permissions=1"
+```
+
+**SeaDrive for Encrypted Cloud Storage:**
+```bash
+# Encrypted personal cloud storage accessible from multiple devices
+# All files encrypted before upload; only you hold keys
+seafile-cli init -s https://your-seafile.com -u your@email.com -p password
+seafile-cli create-repo Documents
+seafile-cli share-repo Documents your-team@company.com rw
+```
+
+## Managing Encryption Keys Operationally
+
+For team environments, key management becomes critical. Here are tested patterns:
+
+### Group Key Management
+
+When multiple team members need to decrypt files:
+
+```python
+# Example: Rotating shared encryption key
+import hashlib
+from datetime import datetime, timedelta
+
+class SharedKeyRotation:
+    def __init__(self, base_secret, rotation_period_days=90):
+        self.base_secret = base_secret
+        self.rotation_period = rotation_period_days
+
+    def get_current_key(self):
+        """Generate key based on current time period"""
+        today = datetime.utcnow().date()
+        period = today.toordinal() // self.rotation_period
+
+        key_material = f"{self.base_secret}:{period}".encode()
+        return hashlib.sha256(key_material).hexdigest()
+
+    def list_valid_keys(self, periods_back=2):
+        """List keys valid for decrypting recent files"""
+        today = datetime.utcnow().date()
+        current_period = today.toordinal() // self.rotation_period
+
+        valid_keys = []
+        for i in range(periods_back + 1):
+            period = current_period - i
+            key_material = f"{self.base_secret}:{period}".encode()
+            key = hashlib.sha256(key_material).hexdigest()
+            valid_keys.append({
+                'key': key,
+                'period': period,
+                'valid_until': today - timedelta(days=(current_period - period) * self.rotation_period)
+            })
+
+        return valid_keys
+
+# Usage
+rotator = SharedKeyRotation("your-team-secret-base", rotation_period_days=30)
+print(f"Current key: {rotator.get_current_key()}")
+print(f"Valid decryption keys: {rotator.list_valid_keys()}")
+```
+
+### Hardware Key Distribution
+
+For maximum security, distribute encryption keys via hardware:
+
+```bash
+# Create encrypted USB drives for key distribution
+# 1. Create encrypted partition
+diskutil partitionDisk /dev/diskX GPTFormat JHFS+ "EncryptedKeys" 0b
+
+# 2. Generate and encrypt key
+gpg --symmetric --cipher-algo AES256 team-master-key.txt
+
+# 3. Copy encrypted key to USB drive
+cp team-master-key.txt.gpg /Volumes/EncryptedKeys/
+
+# 4. Distribute USB drives via secure courier
+# 5. Recipients decrypt with long passphrase
+gpg --decrypt team-master-key.txt.gpg > team-master-key.txt
+```
+
+## File Sharing Compliance Checklist
+
+Before sharing any sensitive documents, verify these technical and legal requirements:
+
+```yaml
+Pre-Share Verification:
+  Encryption:
+    - Algorithm strength: AES-256 minimum
+    - TLS version: 1.3 or higher
+    - Key derivation: PBKDF2, bcrypt, or Argon2
+
+  Access Control:
+    - Recipient verification enabled
+    - Time-based expiration set
+    - IP restriction applied (if available)
+    - Audit logging enabled
+
+  Data Minimization:
+    - Metadata stripped: EXIF, author, revision history
+    - Only necessary files included
+    - Sensitive fields redacted if needed
+
+  Legal Compliance:
+    - GDPR: Legal basis for processing identified
+    - CCPA: Privacy notice provided
+    - HIPAA (if applicable): BAA signed with provider
+    - Industry-specific: Sector regulations checked
+
+Post-Share Monitoring:
+  - Access logs reviewed within 24 hours
+  - Recipient acknowledgment documented
+  - Expiration verified on schedule
+  - Deletion confirmed in logs
+```
+
+## Troubleshooting Common Sharing Problems
+
+**Recipient cannot decrypt file:**
+```bash
+# Verify GPG key import succeeded
+gpg --list-keys recipient@email.com
+
+# If missing, recipient needs to provide public key
+gpg --import recipient_public_key.asc
+
+# Test encryption/decryption locally first
+echo "test" | gpg --encrypt --armor --recipient recipient@email.com | gpg --decrypt
+```
+
+**Self-hosted service reaches storage limits:**
+```bash
+# Check Nextcloud disk usage
+sudo du -sh /var/www/nextcloud/data/*/files
+
+# Implement retention policy
+# Edit /var/www/nextcloud/apps/files/lib/Command/CleanupFileLocks.php
+# Or use cron job for automatic purging:
+0 2 * * * nextcloud maintenance:mode --on && nextcloud trashbin:cleanup && nextcloud maintenance:mode --off
+```
+
+**VPN/proxy interferes with WebRTC in Syncthing:**
+```bash
+# Configure Syncthing to use specific relay servers
+# In configuration JSON:
+{
+  "syncThingIgnoredDevices": [],
+  "discovery": {
+    "servers": [
+      "https://discover.syncthing.net/?insecure",
+      "https://discovery.syncthing.net/"
+    ]
+  },
+  "relays": [
+    {
+      "address": "relay.syncthing.net:22067",
+      "dynamic": true,
+      "statusAddr": "http://stat.syncthing.net/endpoint/[CLIENT-ID]",
+      "locations": ["default"]
+    }
+  ]
+}
+```
+
 
 ## Related Articles
 

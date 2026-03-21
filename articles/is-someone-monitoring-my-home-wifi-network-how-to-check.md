@@ -176,7 +176,226 @@ If you've detected unauthorized access, take these steps immediately:
 
 Regular network audits—weekly or monthly—help maintain visibility over your home network. The techniques in this guide apply to any local network, making them valuable for securing home offices and small business environments alike.
 
----
+## Understanding Common Unauthorized Network Access Scenarios
+
+Unauthorized network access falls into several categories, each requiring different detection and remediation:
+
+**Scenario 1: Neighbor Stealing WiFi**
+Weakest encryption (WEP), no password, or shared WiFi password. Neighbors or passersby connect and use bandwidth. Usually low risk for data theft, but creates network congestion and exposes you to their traffic.
+
+**Detection:**
+- Unusual device count for known users (more devices than people + devices in household)
+- Devices with generic manufacturer names ("Huawei-12345") when everyone uses Apple/Windows
+- Bandwidth hogging to random IP addresses outside normal home traffic
+
+**Scenario 2: Malware-Infected Device on Network**
+One device in your home (TV, smart speaker, camera) got compromised and now serves as a pivot point for attacks on other devices.
+
+**Detection:**
+- Unusual traffic from a specific device (e.g., your smart TV making 100s of connections to foreign IPs)
+- High bandwidth usage when device should be idle
+- Unusual port activity on device (incoming connections on port 3389 = Windows Remote Desktop)
+
+**Scenario 3: Professional Monitoring (Family Member or Employer)**
+Spouse installed monitoring software on shared network. Employer deployed monitoring on a loaner laptop. Usually visible as active monitoring tool traffic.
+
+**Detection:**
+- Known monitoring tool signatures (TeamViewer, AnyDesk, Slack idle monitor)
+- Regular beacons to cloud monitoring services
+- DNS queries to monitoring service domains
+
+**Scenario 4: Network Mirroring / Man-in-the-Middle (MITM)**
+Attacker on the same network intercepts traffic. This is technically sophisticated but possible with tools like Bettercap or mitmproxy.
+
+**Detection:**
+- Your traffic routing through unexpected IPs
+- HTTPS certificate warnings (indicates MITM proxy)
+- Unexpected ARP entries mapping multiple IPs to single MAC address
+
+## Advanced Network Monitoring with Wireshark
+
+For developers suspicious of network tampering, Wireshark provides deep packet inspection. It requires technical skill but reveals everything happening on your network.
+
+```bash
+# Install Wireshark
+brew install wireshark
+
+# Capture packets on your primary interface
+wireshark  # GUI opens, select en0 or relevant interface
+```
+
+In Wireshark, set filters to focus on suspicious activity:
+
+```
+# Filter 1: Show all outbound traffic to non-private IPs
+ip.dst != 192.168.0.0/16 and ip.dst != 10.0.0.0/8
+
+# Filter 2: Show unencrypted HTTP traffic (no HTTPS)
+http
+
+# Filter 3: Show DNS queries
+dns
+
+# Filter 4: Show potential reverse shells
+tcp.dstport == 4444 or tcp.dstport == 5555 or tcp.dstport == 6666
+```
+
+A 30-minute Wireshark capture shows your actual network patterns. Run it:
+- When you believe activity is happening (suspicious time periods)
+- Against a known-clean baseline (compare normal activity to suspicious)
+- Focused on specific devices (filter by source IP)
+
+Interpreting Wireshark output requires networking knowledge, but unusual patterns become obvious: unencrypted login attempts, massive outbound data transfers, or connections to known malware C&C servers.
+
+## Checking for Rogue Access Points
+
+A sophisticated attacker might create a fake WiFi network mimicking your router's name (Evil Twin attack). Your devices connect to the fake network instead of your real one, and the attacker intercepts all traffic.
+
+**Detection:**
+```bash
+# List all WiFi networks (macOS)
+airport scan
+
+# Look for duplicate network names
+# If you see two "MyWiFi" networks, one might be fake
+```
+
+If you see multiple networks with the same name:
+1. Check your router's admin panel for the BSSID (MAC address)
+2. Compare against detected networks
+3. If one BSSID doesn't match your router's BSSID, it's a rogue network
+
+**Prevention:**
+- Forget old WiFi networks on your devices (Settings > WiFi > Forget Network)
+- Use 5GHz WiFi when possible (shorter range, harder to spoof)
+- Enable hidden SSID on your router (fewer rogue networks will match)
+
+## Monitoring with a Network TAP (Hardware Approach)
+
+For serious network monitoring, a network TAP (Terminal Access Point) lets you mirror traffic to a monitoring device without affecting normal traffic.
+
+This is overkill for home networks but relevant for small businesses:
+
+```bash
+# A network TAP mirrors all traffic to a separate port
+# Connected to a Raspberry Pi running tcpdump and analysis tools
+
+# Example setup with basic TP-Link switch (some models support port mirroring)
+# Enable port mirroring on switch:
+# Port 1: Internet uplink
+# Port 2: Router
+# Port 3: Monitoring port (destination)
+# Configure to mirror all traffic to port 3
+# Connect Raspberry Pi to port 3, run persistent tcpdump analysis
+```
+
+A Raspberry Pi TAP setup costs ~$50 and runs 24/7 monitoring, logging all network activity to local storage for forensic review.
+
+## Router-Level Monitoring Tools
+
+Modern routers support logging and monitoring. Access these features in admin panel (usually 192.168.1.1):
+
+**Log locations (vary by router):**
+- Status > System Log: General activity
+- Advanced > Log: Detailed security events
+- Advanced > Access Control: Blocked connections
+- Administration > Log Settings: Enable persistent logging
+
+**Enable these logs:**
+1. Syslog to external server (forward logs to monitoring device)
+2. System log (captures connection attempts)
+3. Access control log (shows blocked connections)
+
+Example router log revealing suspicious activity:
+
+```
+2026-03-21 14:23:45 - New wireless client connected: 00:1A:2B:3C:4D:5E (Unknown)
+2026-03-21 14:24:12 - Failed SSH login attempt from 192.168.1.105 (Port 22)
+2026-03-21 14:25:03 - DHCP IP assigned to device-12345 (192.168.1.106)
+2026-03-21 15:30:22 - Outbound connection blocked: 192.168.1.106 -> 203.0.113.45:445
+```
+
+These logs show an unauthorized device, login attempts, and suspicious outbound traffic.
+
+## Comparing Network Monitoring Tools
+
+Different tools serve different purposes. Here's what each excels at:
+
+| Tool | Cost | Best For | Learning Curve |
+|------|------|----------|-----------------|
+| nmap | Free | Device discovery | Medium |
+| arp-scan | Free | Fast local network audit | Low |
+| tcpdump | Free | Raw packet capture | High |
+| Wireshark | Free | Visual traffic analysis | High |
+| OpenWrt | Free (router firmware) | Advanced router monitoring | Very High |
+| Ubiquiti UniFi | $150-500 | Professional home/small business | Medium |
+| Glass WiFi | $15/month | Managed WiFi monitoring | Low |
+
+**For non-technical users:** Use your router's built-in logs + device count check.
+
+**For developers:** Wireshark + nmap combination covers 95% of detection scenarios.
+
+**For paranoid users:** Dedicated hardware TAP + Raspberry Pi + persistent logging.
+
+## Post-Detection: Response Procedures
+
+If you find evidence of unauthorized access:
+
+**Immediate (within 1 hour):**
+1. Unplug the suspicious device (or power cycle router to disconnect)
+2. Change WiFi password to 32-character random string
+3. Change router admin password
+4. Document evidence: screenshots, logs, timestamps
+
+**Short-term (within 24 hours):**
+1. Reset router to factory settings (losing all configuration)
+2. Reconfigure with new admin password + strong WiFi encryption (WPA3 if available)
+3. Disable WPS (WiFi Protected Setup)
+4. Change passwords for critical accounts from a different device
+5. Check if your devices have been compromised (antivirus scan, check system logs)
+
+**Medium-term (within 1 week):**
+1. Review device access logs on your computer/phone
+2. Check for unauthorized software installations
+3. Consider hiring professional to inspect systems (if you suspect deep compromise)
+4. Notify ISP of potential breach
+
+**Long-term (ongoing):**
+1. Set monthly network audit calendar reminders
+2. Review router logs weekly
+3. Update router firmware when available
+4. Implement network segmentation (guest network for IoT, main network for computers)
+
+## Home Network Architecture for Better Security
+
+Restructuring your network can prevent monitoring threats from spreading:
+
+```
+Internet
+   |
+   └─ Router (WPA3 encryption, strong admin password)
+      |
+      ├─ Trusted Devices Network
+      │  ├─ Computer (work/personal files)
+      │  ├─ Phone (banking, sensitive apps)
+      │  └─ Tablet
+      │
+      └─ IoT/Guest Network (isolated)
+         ├─ Smart TV
+         ├─ Smart Speaker
+         ├─ Camera
+         └─ Guest Device Access
+```
+
+If a smart TV gets compromised, it can't access your computer because it's on a separate network segment. This requires router support for VLAN (Virtual LAN) or dual-network setup.
+
+**Implementation:**
+1. Access router admin panel
+2. Enable guest network separate from main network
+3. Move IoT devices to guest network
+4. Disable communication between networks (if router supports it)
+
+This prevents a compromised device from becoming a pivot point into your main network.
 
 
 ## Related Articles

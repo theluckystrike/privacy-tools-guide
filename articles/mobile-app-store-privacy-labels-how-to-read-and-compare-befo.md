@@ -165,6 +165,101 @@ def map_to_privacy_labels(collection_points):
     return privacy_label_mapping
 ```
 
+## Advanced Privacy Label Analysis
+
+Beyond surface-level reading, deeper analysis reveals patterns that indicate privacy-hostile design:
+
+### Identifying Concerning Patterns
+
+**Pattern 1: Collection without stated purpose**
+When an app collects location data but the privacy label doesn't explain why, scrutiny is warranted. Map each collected data type to stated functionality. If collection appears disconnected from functionality, the app likely uses it for secondary purposes (ad targeting, profiling).
+
+**Pattern 2: Aggressive third-party sharing**
+Count the number of third-party categories. Apps sharing with five or more distinct entities (analytics, ads, ads network 2, ad network 3, marketing) typically prioritize data monetization over user value. Legitimate apps rarely share with more than two parties.
+
+**Pattern 3: Inconsistent iOS vs Android privacy labels**
+The same app sometimes shows different privacy practices between platforms. This often indicates platform-specific implementations where one platform receives less privacy protection. Such discrepancies suggest the company prioritizes profit over privacy.
+
+### Scoring Privacy Practices
+
+Create a personal scoring system:
+
+```python
+class PrivacyScore:
+    def __init__(self):
+        self.score = 100  # Start with perfect score
+
+    def assess_collection(self, data_types):
+        """Deduct points for each data type collected"""
+        high_risk = ['location', 'contact_list', 'health_fitness', 'financial_info']
+        medium_risk = ['browsing_history', 'search_history', 'identifiers']
+
+        for data_type in data_types:
+            if data_type in high_risk:
+                self.score -= 10
+            elif data_type in medium_risk:
+                self.score -= 5
+
+    def assess_tracking(self, is_tracked):
+        """Major deduction for tracking"""
+        if is_tracked:
+            self.score -= 20
+
+    def assess_third_party_sharing(self, sharing_count):
+        """Deduct based on number of third parties"""
+        self.score -= (sharing_count * 8)
+
+    def get_rating(self):
+        if self.score >= 80:
+            return "Excellent Privacy"
+        elif self.score >= 60:
+            return "Good Privacy"
+        elif self.score >= 40:
+            return "Fair Privacy"
+        else:
+            return "Poor Privacy"
+
+# Example: Scoring a hypothetical messaging app
+scorer = PrivacyScore()
+scorer.assess_collection(['contact_list', 'identifiers'])  # -15
+scorer.assess_tracking(False)  # No deduction
+scorer.assess_third_party_sharing(1)  # -8
+print(f"Score: {scorer.score}/100 ({scorer.get_rating()})")  # 77/100 (Good Privacy)
+```
+
+## Detecting Label Inconsistencies
+
+Developers sometimes misrepresent their data practices in labels. Here's how to detect likely inaccuracies:
+
+### Red Flag: Collection Claims vs Functionality
+
+**Test case:** A flashlight app claims to collect "precise location," yet flashlights require no location access. This is a clear sign of data monetization beyond stated app function.
+
+### Red Flag: Analytics Opacity
+
+When an app claims analytics collection but provides no details about what is analyzed or how long data is retained, request clarification through the app's support channels. Document the response. If no response arrives within 14 days, report to Apple or Google.
+
+### Red Flag: Inconsistent Retention Claims
+
+An app that collects behavioral data but claims "deleted after use" is likely inaccurate. Legitimate behavioral analytics require periods of retention to analyze patterns. Apps claiming zero retention are either not analyzing data (defeating the collection purpose) or misrepresenting practices.
+
+## Privacy Labels as Legal Liability
+
+For developers, understand that false privacy labels create legal exposure:
+
+```bash
+# Generate accurate privacy disclosure checklist
+# Verification steps before submission
+
+# 1. Identify all SDK integrations
+grep -r "import.*Analytics\|import.*Facebook\|import.*Adjust" ios/*.swift
+
+# 2. Map SDKs to data collection categories
+# 3. Cross-reference with privacy label claims
+# 4. Run privacy audit tools
+# 5. Submit for external privacy audit before app store submission
+```
+
 ## Making Informed Decisions
 
 Use this systematic approach when evaluating apps:
