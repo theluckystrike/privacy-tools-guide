@@ -173,6 +173,185 @@ The common thread across all these options is that the encryption happens in you
 
 For developers and power users who value privacy, these alternatives prove that you do not have to choose between collaboration convenience and data security. The tools exist, they work, and they are actively maintained by communities that understand what genuine end-to-end encryption means.
 
+## Advanced Cryptography Implementation for Teams
+
+For teams building custom E2EE collaboration, use established patterns:
+
+```javascript
+// Team-based E2EE architecture using libsodium.js
+
+class TeamCollaborationCrypto {
+  constructor() {
+    this.sodium = require('libsodium.js');
+  }
+
+  // Create team encryption context
+  createTeam(teamName) {
+    // Generate team keypair
+    const keyPair = this.sodium.crypto_box_keypair();
+
+    // Store public key in shared registry
+    // Keep private key on server (encrypted with master key)
+    return {
+      teamId: this.generateTeamId(),
+      publicKey: this.sodium.to_base64(keyPair.publicKey),
+      privateKey: this.encryptPrivateKey(keyPair.privateKey)
+    };
+  }
+
+  // Encrypt document for team
+  encryptForTeam(documentContent, teamPublicKey) {
+    const nonce = this.sodium.randombytes_buf(
+      this.sodium.crypto_box_NONCEBYTES
+    );
+
+    const encrypted = this.sodium.crypto_box(
+      this.sodium.from_string(documentContent),
+      nonce,
+      teamPublicKey,
+      this.userKeyPair.privateKey
+    );
+
+    return {
+      nonce: this.sodium.to_base64(nonce),
+      ciphertext: this.sodium.to_base64(encrypted)
+    };
+  }
+
+  // Decrypt document
+  decryptDocument(encryptedData, senderPublicKey) {
+    const nonce = this.sodium.from_base64(encryptedData.nonce);
+    const ciphertext = this.sodium.from_base64(encryptedData.ciphertext);
+
+    const plaintext = this.sodium.crypto_box_open(
+      ciphertext,
+      nonce,
+      senderPublicKey,
+      this.userKeyPair.privateKey
+    );
+
+    return this.sodium.to_string(plaintext);
+  }
+}
+```
+
+This pattern requires careful key distribution, but provides cryptographic proof that the server cannot read team documents.
+
+## Comparing Self-Hosted Solutions
+
+Beyond CryptPad and Hedgedoc, other self-hosted options exist:
+
+| Solution | Encryption | Real-time | Server Load | Best For |
+|----------|-----------|-----------|-------------|----------|
+| CryptPad | Client-side | Yes | Low-medium | Small teams |
+| Hedgedoc | E2EE capable | Yes | Medium | Technical teams |
+| Etherpad | None (basic) | Yes | Low | Internal wikis |
+| OnlyOffice | Optional | Limited | High | Office compatibility |
+| Firefly | Client-side | Yes | Low | Real-time editing |
+
+Choose based on your team's encryption needs versus feature requirements.
+
+## Audit Logging in E2EE Collaboration
+
+Even with E2EE, you can maintain audit trails:
+
+```json
+{
+  "audit_events": [
+    {
+      "timestamp": "2026-03-16T10:30:00Z",
+      "user": "alice@example.com",
+      "action": "document_created",
+      "document_id": "doc-hash-xyz",
+      "encrypted": true
+    },
+    {
+      "timestamp": "2026-03-16T10:35:00Z",
+      "user": "bob@example.com",
+      "action": "document_accessed",
+      "document_id": "doc-hash-xyz",
+      "encrypted": true
+    }
+  ]
+}
+```
+
+Log access events without exposing document content. This provides compliance documentation while maintaining E2EE.
+
+## Integration with Existing Workflows
+
+Migration from Google Docs requires workflow changes:
+
+```bash
+# Export from Google Docs
+# 1. Download as PDF, DOCX, or ODF
+# Google Takeout > Select Docs > Download
+
+# Import to CryptPad
+# 1. Create new document
+# 2. Paste content from exported file
+# 3. Manually recreate formatting (Google Docs markup doesn't always transfer)
+
+# Workflow adjustment
+# - Remove Google Drive sharing links
+# - Update team documentation with new collaboration URLs
+# - Train team on E2EE limitations (no web access, no public sharing)
+```
+
+E2EE collaboration requires behavioral changes—teams cannot rely on the convenience of Google Docs' seamless sharing.
+
+## Performance Characteristics of E2EE Collaboration
+
+Understand the trade-offs when using encrypted collaboration:
+
+**CryptPad performance**:
+- Document creation: ~100ms
+- Character entry latency: ~20-50ms (network dependent)
+- Simultaneous editor limit: 20-50 users (depends on network)
+- Sync conflict resolution: Automatic (Operational Transformation)
+
+**Standard Notes performance**:
+- Sync latency: ~100-500ms
+- Character entry latency: ~10-20ms (local)
+- Collaborative editing: Limited (designed for individual note-taking)
+- Version history: Every edit preserved (storage intensive)
+
+Choose based on your latency tolerance and concurrent editor requirements.
+
+## Compliance and Data Residency with Self-Hosted Solutions
+
+Organizations with data residency requirements benefit from self-hosting:
+
+```bash
+# Docker Compose configuration with data residency controls
+version: '3'
+services:
+  cryptpad:
+    image: cryptpad/cryptpad:latest
+    volumes:
+      - /data/cryptpad/customize:/cryptpad/customize
+      - /data/cryptpad/data:/cryptpad/data
+      - /data/cryptpad/datastore:/cryptpad/datastore
+    environment:
+      # Enforce EU data residency
+      - CORS_ORIGIN=https://cryptpad.eu-only.local
+      - RESTRICT_REGISTRATION=true
+      - ENABLE_LOGGING=true
+```
+
+Self-hosting ensures data remains within jurisdiction boundaries, critical for GDPR and similar regulations.
+
+## Security Audits of Collaboration Tools
+
+Before adopting E2EE collaboration platforms, verify security:
+
+- **Check for third-party audits**: Look for published security audits from firms like Trail of Bits or NCC Group
+- **Review source code**: Open-source tools should have published code reviews
+- **Check issue trackers**: Active security vulnerability reporting indicates transparency
+- **Verify key derivation**: Ensure passwords use strong KDFs (Argon2, scrypt)
+
+CryptPad has undergone third-party audits. Standard Notes publishes security reports. Verify any tool you select has credible security review.
+
 
 ## Related Articles
 

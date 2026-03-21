@@ -172,6 +172,156 @@ sudo tail -f /var/www/nextcloud/data/nextcloud.log | grep -i encryption
 
 Most issues stem from mismatched client versions or corrupted local key stores—server-side problems are rare since the server performs no cryptographic operations.
 
+## Advanced Key Recovery and Backup Strategies
+
+Losing your recovery key means permanent data loss. Implement robust backup procedures:
+
+```bash
+# Export your recovery key securely
+# 1. Generate recovery key (if not done at setup)
+sudo -u www-data php occ end-to-end-encryption:recovery-key generate
+
+# 2. Export the key
+sudo -u www-data php occ end-to-end-encryption:recovery-key export > recovery.txt
+
+# 3. Encrypt the recovery key before storage
+gpg --armor --symmetric recovery.txt
+rm recovery.txt
+
+# 4. Store encrypted key in multiple locations:
+# - Encrypted USB drive (offline)
+# - Hardware security module (if available)
+# - Secure note in password manager (if accessible without Nextcloud)
+```
+
+Never store the recovery key in plaintext. Treat it as the master key to all encrypted data.
+
+## Multi-Device E2EE Synchronization
+
+Setting up E2EE across multiple devices requires careful key management:
+
+```bash
+# Device 1 (initial setup)
+# Generate keys during first E2EE setup
+# Save recovery key
+
+# Device 2 (add to E2EE)
+# Option A: Use the same account password
+#   Desktop client automatically derives same keys
+# Option B: Use recovery key if Device 1 is unavailable
+#   Go to account settings and "Recover with key"
+
+# Verify synchronization works
+# Upload file on Device 1, sync to Nextcloud
+# Download and decrypt on Device 2
+# File should decrypt automatically if keys match
+```
+
+If devices derive different keys, you cannot decrypt files encrypted on one device from another. Always use the recovery key to re-establish E2EE on new devices if the account password changed.
+
+## Performance Optimization for Large Encrypted Vaults
+
+E2EE encryption/decryption adds CPU load. Optimize for performance:
+
+```bash
+# Use chunked transfers for large files
+# Configure in desktop client settings:
+# - Chunk size: 5-10 MB (balance CPU vs. network)
+# - Parallel uploads: 2-4 (depends on CPU cores)
+
+# Monitor CPU usage during encryption
+top -p [nextcloud-client-pid]
+
+# For servers with many users:
+# - Consider dedicated encryption hardware (AES-NI capable CPUs)
+# - Use SSD storage (encryption is I/O intensive)
+# - Monitor database query times (E2EE adds metadata overhead)
+```
+
+## Testing E2EE Functionality Before Production
+
+Validate E2EE works correctly before moving critical data:
+
+```bash
+# 1. Create test folders
+sudo -u www-data php occ end-to-end-encryption:enable-user testuser
+mkdir -p /tmp/test-e2ee
+
+# 2. Upload test files with different types
+touch /tmp/test-e2ee/{small.txt,large.bin,spreadsheet.xlsx}
+
+# 3. Verify encryption on server-side
+# SSH into server and check file storage
+ls -la /var/www/nextcloud/data/testuser/files_encryption/
+
+# 4. Delete encrypted files locally and re-sync
+# Verify files re-download and decrypt correctly
+
+# 5. Change password and verify access
+# Old encrypted keys should remain accessible
+```
+
+## Sharing Encrypted Files with Other Users
+
+E2EE complicates file sharing because each user needs their own copy encrypted with their key:
+
+```bash
+# Public sharing (workaround)
+# Create unencrypted folder > share publicly > download link
+# Downside: files not E2EE during download
+
+# Internal user sharing (preferred)
+# Right-click encrypted folder > Share > select user
+# Nextcloud re-encrypts with recipient's public key
+# Recipient can decrypt using their private key
+
+# Verify sharing worked
+# Recipient should see encrypted folder in their Nextcloud
+# File should decrypt automatically on their client
+```
+
+Sharing encrypted files with external users requires temporarily unencrypting or using unencrypted public shares—understand these limitations before deploying.
+
+## Compliance and Audit Logging
+
+For regulated environments (healthcare, finance), log E2EE operations:
+
+```bash
+# Enable debug logging for E2EE operations
+sudo -u www-data php occ config:app:set end_to_end_encryption debug true
+
+# Monitor logs for encryption errors
+tail -f /var/www/nextcloud/data/nextcloud.log | grep -i encryption
+
+# Audit file access (even encrypted, access can be logged)
+# Who accessed encrypted files (without seeing content)
+# When files were encrypted/decrypted
+# Which devices accessed encrypted data
+```
+
+This logging doesn't compromise encryption (server never sees plaintext) but provides audit trails for compliance.
+
+## Integration with Nextcloud Groupware
+
+E2EE has specific limitations with Nextcloud's groupware (calendar, contacts):
+
+```bash
+# Calendar and contacts use different encryption model
+# They cannot be fully E2EE due to sync requirements
+
+# Workaround for sensitive calendar data:
+# - Store calendar in separate E2EE folder
+# - Use ICS format export/import
+# - Don't sync sensitive calendar data via Nextcloud groupware
+
+# For contacts:
+# - Similar limitation
+# - Consider CardDAV with client-side filtering
+# - Don't store sensitive contact details in Nextcloud
+```
+
+Keep contacts and calendar separate from E2EE file storage for best results.
+
 
 ## Related Articles
 

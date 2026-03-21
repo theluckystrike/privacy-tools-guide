@@ -172,6 +172,124 @@ add_header Strict-Transport-Security "max-age=3600; includeSubDomains" always;
 # Production: max-age=31536000; includeSubDomains; preload
 ```
 
+## Practical Supercookie Detection
+
+Detect if a website is attempting to use HSTS for tracking:
+
+```javascript
+// Monitor for multiple HSTS subdomains being accessed
+// This is suspicious if unrelated to legitimate subdomain usage
+
+// Check HSTS state progression
+const hstsDomains = [
+  'track-0.example.com',
+  'track-1.example.com',
+  'track-2.example.com'
+];
+
+// In browser console (limited access due to SOP)
+// Legitimate use: cdn.example.com, api.example.com
+// Suspicious: dozens of track-*.example.com subdomains
+
+// Use Firefox > about:networking to inspect HSTS entries
+// Report suspicious patterns to site authors
+```
+
+Most tracker implementations use hundreds of tracking domains. If you observe unusual HSTS domain patterns during security research, document and report them.
+
+## Browser-Specific HSTS Clearing
+
+Different browsers store HSTS state differently:
+
+**Chrome/Edge**:
+```bash
+# Navigate to: chrome://net-internals/#hsts
+# Type domain name in "Delete domain security policies" field
+# Click "Delete" to remove single domain
+# For full reset: Clear browsing data > All time > Cookies > Clear data
+```
+
+**Firefox**:
+```bash
+# HSTS data stored in SiteSecurityServiceState.txt
+# Location: ~/.mozilla/firefox/[profile]/
+# Delete file to clear all HSTS state
+# Or navigate to: about:networking > View HSTS state (limited interface)
+```
+
+**Safari**:
+```bash
+# HSTS state stored in ~/Library/Safari/LocalStorage/
+# Clear via: Settings > Privacy > Manage Website Data > Remove All
+# Less granular than Chrome/Firefox
+```
+
+Clear HSTS state every 3-6 months when you prioritize privacy. This prevents long-term supercookie persistence but may break legitimate HSTS protections temporarily.
+
+## HSTS Supercookie vs. Traditional Cookie Tracking
+
+Understanding the key differences helps identify supercookie attacks:
+
+| Aspect | Traditional Cookie | HSTS Supercookie |
+|--------|-------------------|------------------|
+| Storage Mechanism | Browser cookie storage | HSTS preload list |
+| Persistence | Expires per max-age | Expires per HSTS max-age |
+| Survives Private Browsing | No | Yes |
+| Survives Cookie Deletion | No | Yes |
+| Survives Browser Resets | No | Sometimes |
+| User Awareness | Visible in settings | Hidden in security settings |
+| Encoded Information | Arbitrary data | Binary (domain present/absent) |
+| Detection Difficulty | Easy (visible) | Hard (requires technical knowledge) |
+
+HSTS supercookies are significantly more persistent and harder to detect than traditional cookies.
+
+## Real-World Tracking Implementation Analysis
+
+Security researchers have documented actual HSTS supercookie tracking:
+
+In 2017, researchers at Princeton University demonstrated tracking using HSTS. A tracker encoded a unique identifier by selectively setting HSTS on dozens of subdomains. When a user visited different websites, the tracker queried these subdomains and observed which had HSTS enabled, reconstructing the user's unique identifier.
+
+The technique requires:
+1. Control of many subdomains under the same registrar domain
+2. Access to set HSTS headers (server-side control)
+3. A mechanism to query HSTS state across different websites
+4. Cross-site request timing to infer which subdomains have HSTS
+
+This attack vector persists because browsers generally don't expose HSTS state to websites—the browser keeps it internal. However, timing-based side channels and other indirect methods can leak HSTS information.
+
+## Mitigation for Site Administrators
+
+If you operate a website and want to prevent HSTS supercookie abuse:
+
+```nginx
+# Implementation approach
+# Only set HSTS on your main domain, not tracking subdomains
+# Avoid creating hundreds of subdomains with HSTS headers
+# Monitor for unusual HSTS domain patterns
+
+# Example safe HSTS config
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+
+# Avoid:
+# - Creating track-0.example.com through track-1000.example.com
+# - Setting HSTS on every subdomain
+# - Using subdomains as tracking vectors
+```
+
+Legitimate HSTS use should cover your main domain and necessary subdomains (api, cdn, mail, etc.)—typically under 20 total domains.
+
+## Future Browser Protections
+
+Modern browsers are implementing mitigations:
+
+**Chrome 125+**: Discussions about randomizing HSTS behavior or requiring explicit user consent for supercookie-like techniques.
+
+**Firefox**: Privacy Badger and similar extensions partially mitigate by clearing HSTS state frequently.
+
+**Safari**: iCloud Private Relay and cookie isolation provide defense-in-depth against tracking.
+
+The fundamental tension remains: HSTS is necessary for security, but its persistent nature enables tracking. Until browsers redesign HSTS with privacy-first principles, users must actively clear HSTS state and use privacy extensions.
+
 
 ## Related Articles
 

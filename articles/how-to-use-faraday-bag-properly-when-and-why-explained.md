@@ -172,6 +172,116 @@ fi
 
 If this test passes inside your Faraday bag, you have verified basic isolation.
 
+## Advanced Testing with RF Measurements
+
+For developers requiring rigorous verification, use proper RF measurement equipment:
+
+```bash
+#!/bin/bash
+# RF measurement setup
+
+# Option 1: HackRF One + GNU Radio
+# Install hackrf tools and monitor 2.4 GHz band
+hackrf_transfer -r wifi_spectrum.bin -f 2400000000 -s 8000000
+
+# Option 2: USRP (Universal Software Radio Peripheral)
+# More expensive but more precise
+# UHD drivers provide Python/C++ APIs
+
+# Option 3: USB spectrum analyzer
+# Cheap($50-100) but limited frequency range
+# Use for quick verification in 2.4/5 GHz bands
+```
+
+Real RF analysis confirms whether your Faraday bag blocks across the full frequency range. A properly functioning bag should show signal attenuation of 60+ dB at WiFi and cellular frequencies.
+
+## Faraday Bag Use in High-Risk Environments
+
+Specific threat scenarios justify Faraday bag usage:
+
+**Border Security**: Some jurisdictions perform device cloning at borders. Place your device in the bag before reaching checkpoints to prevent unauthorized wireless access.
+
+**Insider Threat Environments**: Corporate espionage scenarios where devices might receive malicious firmware updates. Keep devices in Faraday bags when not actively in use.
+
+**Forensic Preservation**: During police custody or evidence collection, a Faraday bag prevents remote wipe commands that could destroy evidence of crimes committed by others on your device.
+
+**Secure Communication**: When conducting sensitive interviews or intelligence gathering, Faraday bags prevent tracking of the interview location by device location services.
+
+## Distinguishing Real Faraday Bags from Marketing Fraud
+
+Many products claim signal blocking without actual testing:
+
+```bash
+# Verification steps when purchasing:
+
+# 1. Request attenuation specifications
+# Real products specify dB of attenuation at key frequencies
+# Example: "60 dB @ 800 MHz, 70 dB @ 2.4 GHz"
+
+# 2. Ask for third-party test reports
+# Legitimate vendors provide FCC test data or independent lab reports
+
+# 3. Verify conductive material
+# Touch the inside—should feel metallic, not smooth fabric
+# Look for visible metallic weave or coating
+
+# 4. Test closure quality
+# The seal must be complete and firm
+# No gaps or thin points in the material
+```
+
+Cheap eBay Faraday bags frequently provide inadequate shielding. Verify specifications from manufacturers that publish technical data.
+
+## Maintenance and Durability Concerns
+
+Faraday bags degrade over time, affecting performance:
+
+**Annual inspection checklist**:
+- Check interior for tears or punctures
+- Verify conductive coating has not worn away (especially at seams)
+- Test closure mechanism for corrosion or damage
+- Verify electromagnetic sealing strip still provides firm closure
+- Check for water damage or moisture intrusion
+
+Replace bags annually or when visible degradation appears. The cost of a new bag ($30-100) is far less than the cost of a compromised device.
+
+## Combining Faraday Bags with Other Security Practices
+
+Faraday bags are one layer in a defense-in-depth strategy:
+
+```
+Defense Layers:
+├─ Physical security (Faraday bag)
+├─ Encryption (full-disk encryption enabled)
+├─ Authentication (strong passcode + biometric)
+├─ Network isolation (disconnect from WiFi/cellular)
+├─ Software hardening (minimal apps, no admin access)
+└─ Monitoring (check for tampering after isolation)
+```
+
+Never rely solely on Faraday bags. Use them alongside encrypted storage, strong authentication, and device monitoring.
+
+## Practical Packing Recommendations
+
+Pack your Faraday bag efficiently:
+
+```
+Efficient packing:
+├─ Phone (centered, wrapped in protective cloth)
+├─ Tablet (if necessary, place flat on phone)
+├─ Cables (coiled, separated from devices)
+├─ Backup battery (remove batteries if possible)
+└─ Notes/documents (non-electronic only)
+
+Avoid:
+├─ Multiple devices (interference, reduced effectiveness)
+├─ Metal objects (creates RF coupling)
+├─ Extreme pressure (can damage internal shielding)
+└─ Heat sources (can affect conductive material)
+```
+
+Leave at least 1 inch of space around devices to prevent RF coupling with the conductive material.
+
 
 ## Related Articles
 
