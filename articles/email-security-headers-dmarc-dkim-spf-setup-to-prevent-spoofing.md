@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]
