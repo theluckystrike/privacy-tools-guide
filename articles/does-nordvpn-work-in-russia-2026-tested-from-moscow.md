@@ -23,6 +23,8 @@ Russia's internet regulatory framework has evolved significantly. The Roskomnadz
 
 For developers, this means standard VPN configurations often fail silently. The connection attempt may appear to initiate but never establish a working tunnel. Understanding the underlying protocol behavior becomes essential for troubleshooting.
 
+Russia's DPI infrastructure uses a system called TSPU (Technical Means of Countering Threats), which ISPs are mandated to install. TSPU performs traffic analysis at the network edge, identifying and throttling or blocking protocols associated with VPN usage. Unlike a simple IP blocklist, TSPU analyzes the traffic fingerprint, making obfuscation a necessity rather than an optional enhancement.
+
 ## Testing Methodology
 
 The following tests were conducted from multiple locations within Moscow using residential and mobile connections. Each test evaluated connection success rate, protocol reliability, and throughput.
@@ -43,7 +45,7 @@ def test_vpn_connection(protocol, server):
         "wireguard": ["sudo", "wg-quick", "up", f"wg0-{protocol}"],
         "nordlynx": ["sudo", "nordvpn", "connect", "NordLynx"]
     }
-    
+
     try:
         result = subprocess.run(
             configs.get(protocol, []),
@@ -58,14 +60,14 @@ def check_dns_leak():
     """Verify DNS is not leaking through the VPN tunnel."""
     dns_servers = ["103.86.96.100", "103.86.99.100"]
     leaked = []
-    
+
     for dns in dns_servers:
         try:
             socket.setdefaulttimeout(2)
             socket.gethostbyname("example.com")
         except:
             leaked.append(dns)
-    
+
     return len(leaked) == 0
 
 # Test each protocol
@@ -89,6 +91,16 @@ During testing in March 2026, the following observations were recorded using Nor
 
 **OpenVPN (TCP 443)**: Tunneling OpenVPN over TCP port 443 (obfuscation mode) improved success rates to approximately 70%. This configuration wraps VPN traffic in what appears to be standard HTTPS traffic.
 
+### Protocol Success Rates at a Glance
+
+| Protocol | Success Rate | Notes |
+|---|---|---|
+| NordLynx (WireGuard) | 40-60% | Time-of-day dependent |
+| OpenVPN UDP | ~25% | Easily detected by DPI |
+| OpenVPN TCP 443 (obfuscated) | ~70% | Best option for most users |
+| Obfuscated servers + TCP 443 | ~80% | Recommended configuration |
+| Self-hosted WireGuard VPS | 85-95% | Most reliable, requires setup |
+
 ## Configuration Recommendations
 
 For developers requiring reliable connectivity from Russia, several configuration adjustments improve success rates:
@@ -101,6 +113,8 @@ NordVPN provides obfuscated servers specifically designed for restricted network
 nordvpn set obfuscate on
 nordvpn connect # automatically selects obfuscated server
 ```
+
+Obfuscated servers disguise VPN traffic as regular HTTPS traffic. This is the single most effective change for users in Russia. After enabling, verify obfuscation is active before transmitting sensitive data.
 
 ### Custom DNS Configuration
 
@@ -125,6 +139,8 @@ iptables -A OUTPUT -j DROP
 iptables -D OUTPUT -j DROP
 ```
 
+NordVPN also has a built-in kill switch that can be enabled via its CLI: `nordvpn set killswitch on`. The CLI-based kill switch integrates with the VPN connection lifecycle automatically, which is simpler than managing iptables rules manually.
+
 ## Performance Considerations
 
 Connection speeds through NordVPN from Moscow varied significantly based on server selection. Testing showed:
@@ -133,13 +149,17 @@ Connection speeds through NordVPN from Moscow varied significantly based on serv
 - **Asian servers (Japan, Singapore)**: 10-25 Mbps download
 - **US servers**: 8-20 Mbps download
 
-Latency increased by 80-150ms depending on the chosen server region.
+Latency increased by 80-150ms depending on the chosen server region. For latency-sensitive tasks such as video calls or SSH sessions, European servers generally offer the best balance of reliability and low latency.
+
+### Time-of-Day Impact
+
+Connection performance drops measurably during peak internet usage hours in Moscow. DPI enforcement appears to intensify during these windows, possibly due to increased monitoring resources being applied to high-traffic periods. Testing between midnight and 6 AM local time showed substantially higher success rates across all protocols.
 
 ## Alternative Approaches
 
 Developers should consider additional tools for redundancy:
 
-**Shadowsocks**: A SOCKS5 proxy that can tunnel traffic through obfuscated connections. Configure on a personal VPS for best results.
+**Shadowsocks**: A SOCKS5 proxy that can tunnel traffic through obfuscated connections. Configure on a personal VPS for best results. Shadowsocks is widely used in high-censorship environments and has a strong track record of evading DPI.
 
 **Tor Network**: While slower, Tor provides reliable connectivity from within Russia. Use Tor Browser or configure Tor as a proxy:
 
@@ -165,6 +185,18 @@ PostUp = iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PublicKey = <client-public-key>
 AllowedIPs = 10.0.0.2/32
 ```
+
+A self-hosted WireGuard instance on a VPS in, say, Finland or Germany, with a non-standard listening port (not 51820) is much harder to fingerprint than a commercial VPN service whose server IPs are publicly listed and routinely blocked.
+
+## VPN Apps vs. Manual Configuration
+
+NordVPN's official Android and iOS apps have historically fared better in Russia than desktop clients because mobile apps can more aggressively retry connections with different protocols and servers. The app's automatic protocol selection often lands on an obfuscated mode without user intervention.
+
+Desktop users benefit from manually locking in the obfuscated server option and TCP 443 before connecting. Letting the client auto-select often defaults to NordLynx, which has a lower success rate in the current environment.
+
+## Staying Compliant With Russian Law
+
+Use of VPN services to access blocked content falls into a legal grey area under Russian law. Roskomnadzor has required VPN providers to connect to a state registry of banned sites since 2019. NordVPN, like most international providers, does not comply with this requirement, which means the service itself occupies an uncertain legal position within Russia. This guide documents technical behavior, not legal advice. Users should consult local legal counsel regarding their specific circumstances.
 
 ## Related Reading
 
