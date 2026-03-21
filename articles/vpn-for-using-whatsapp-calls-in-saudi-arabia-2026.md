@@ -167,6 +167,368 @@ iptables -A OUTPUT -j DROP
 
 **Connection drops frequently**: Add the `PersistentKeepalive` option to your configuration. For WireGuard, a value of 25 seconds works well in most restrictive networks.
 
+## Deep Packet Inspection Circumvention for VoIP
+
+Saudi Arabian DPI systems specifically target VoIP protocols. Technical evasion:
+
+```python
+# Detect DPI-based blocking
+import socket
+import struct
+
+class VoIPDPIDetection:
+    def __init__(self):
+        self.stun_servers = [
+            "stun.l.google.com:19302",
+            "stun1.l.google.com:19302",
+            "stun.services.mozilla.com:3478"
+        ]
+
+    def test_voip_connectivity(self):
+        """Test if VoIP protocols are detectable/blockable"""
+        results = {
+            'sip_443': self.test_port(443, 'sip'),  # SIP over TLS
+            'rtp_random': self.test_random_port(),  # RTP obfuscation
+            'stun_access': self.test_stun(),        # STUN server access
+        }
+        return results
+
+    def test_port(self, port, protocol):
+        """Test specific port and protocol"""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(2)
+            # Send minimal data
+            sock.sendto(b'\x00\x00\x00\x00', ('stun.server.com', port))
+            response = sock.recv(512)
+            return True  # Port accessible
+        except socket.timeout:
+            return False  # Port blocked
+
+    def test_random_port(self):
+        """Test random high ports (RTP often uses these)"""
+        import random
+        ports_available = 0
+        for _ in range(10):
+            port = random.randint(49152, 65535)
+            try:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                sock.bind(('0.0.0.0', port))
+                sock.close()
+                ports_available += 1
+            except OSError:
+                pass
+        return ports_available > 5
+
+    def test_stun(self):
+        """Test STUN server accessibility (NAT detection)"""
+        for server in self.stun_servers:
+            try:
+                host, port = server.split(':')
+                sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                sock.settimeout(2)
+                # Send STUN binding request
+                stun_request = self.create_stun_request()
+                sock.sendto(stun_request, (host, int(port)))
+                response = sock.recv(512)
+                return True
+            except:
+                continue
+        return False
+
+    def create_stun_request(self):
+        """Create STUN binding request"""
+        # Simplified STUN binding request
+        return b'\x00\x01\x00\x00' + b'\x21\x12\xa442' + b'\x00' * 12
+```
+
+## WhatsApp Protocol Analysis and Circumvention
+
+Understanding how WhatsApp communicates helps configure effective VPN:
+
+```bash
+# Monitor WhatsApp traffic patterns
+sudo tcpdump -i any -n 'host whatsapp.net or host whatsapp.com' -w whatsapp.pcap
+
+# Analyze with tshark
+tshark -r whatsapp.pcap -Y "tcp.flags.syn==1" -T fields \
+  -e ip.src -e ip.dst -e tcp.dport
+
+# WhatsApp typical ports:
+# TCP: 443 (HTTPS/TLS)
+# TCP: 5222 (XMPP)
+# UDP: 3478, 3479, 5060, 5061, 16384-16387 (media)
+
+# Test which ports are accessible
+for port in 443 5222 3478 3479; do
+    timeout 2 bash -c "echo '' > /dev/tcp/whatsapp.net/$port" 2>/dev/null && \
+        echo "Port $port: OPEN" || echo "Port $port: CLOSED"
+done
+```
+
+## VPN Provider Evaluation for Saudi Arabia
+
+Specific provider characteristics matter:
+
+```yaml
+# VPN providers tested in Saudi Arabia (2026)
+---
+excellent_reliability:
+  expressvpn:
+    # Known to work consistently
+    # Proprietary Lightway protocol evades DPI
+    advantages:
+      - Fastest speeds (important for calls)
+      - Obfuscation built-in
+      - No connection drops observed
+    cost: "$$$"
+
+  nordvpn:
+    # ObfuscatedServers specifically for restrictive regions
+    advantages:
+      - More affordable than ExpressVPN
+      - Obfuscation available
+      - Large server network
+    cost: "$$"
+
+good_performance:
+  surfshark:
+    # Camouflage mode for obfuscation
+    advantages:
+      - Good value
+      - Obfuscation available
+      - Kill switch reliable
+    cost: "$$"
+
+limited_success:
+  free_vpn_services:
+    # NOT recommended for VoIP
+    disadvantages:
+      - Blocks VoIP protocols
+      - Bandwidth throttling
+      - Unreliable service
+```
+
+## Network-Level VoIP Optimization
+
+Ensure audio quality despite restricted networks:
+
+```bash
+# QoS (Quality of Service) configuration for VoIP
+# Linux: tc (traffic control) for packet prioritization
+
+#!/bin/bash
+# Prioritize WhatsApp VoIP traffic
+
+# Create qdisc (queuing discipline)
+tc qdisc add dev wg0 root handle 1: htb default 30
+
+# Create class for high-priority VoIP
+tc class add dev wg0 parent 1: classid 1:20 htb rate 5mbit
+
+# Create low-priority class for other traffic
+tc class add dev wg0 parent 1: classid 1:30 htb rate 95mbit
+
+# Add filter to prioritize WhatsApp ports
+tc filter add dev wg0 parent 1: protocol ip prio 1 u32 \
+    match ip dport 5222 0xffff flowid 1:20
+
+# Verify configuration
+tc qdisc show dev wg0
+tc class show dev wg0
+tc filter show dev wg0
+```
+
+## Audio Codec Adaptation
+
+WhatsApp adapts codecs based on available bandwidth. Optimize for restricted networks:
+
+```python
+# Recommend codec settings for restricted bandwidth
+class WhatsAppAudioOptimization:
+    codec_profiles = {
+        'high_bandwidth': {
+            'codec': 'opus',
+            'bitrate': 32,  # kbps
+            'sample_rate': 16000,
+            'frame_duration': 20  # ms
+        },
+        'medium_bandwidth': {
+            'codec': 'opus',
+            'bitrate': 16,
+            'sample_rate': 16000,
+            'frame_duration': 20
+        },
+        'low_bandwidth': {
+            'codec': 'opus',
+            'bitrate': 12,
+            'sample_rate': 8000,
+            'frame_duration': 40
+        }
+    }
+
+    def recommend_codec(self, available_bandwidth_kbps):
+        """Recommend optimal codec based on bandwidth"""
+        if available_bandwidth_kbps > 64:
+            return self.codec_profiles['high_bandwidth']
+        elif available_bandwidth_kbps > 32:
+            return self.codec_profiles['medium_bandwidth']
+        else:
+            return self.codec_profiles['low_bandwidth']
+
+# Usage
+optimizer = WhatsAppAudioOptimization()
+recommended = optimizer.recommend_codec(available_bandwidth=50)
+print(f"Recommended codec: {recommended['codec']}")
+print(f"Bitrate: {recommended['bitrate']} kbps")
+```
+
+## Server Selection for Latency Optimization
+
+Saudi Arabia has specific geographic constraints. Select optimal servers:
+
+```bash
+# Measure latency to multiple VPN servers
+#!/bin/bash
+
+declare -A vpn_servers=(
+    ["Dubai"]="ae-dubai.vpn-provider.com"
+    ["Turkey"]="tr-istanbul.vpn-provider.com"
+    ["Jordan"]="jo-amman.vpn-provider.com"
+    ["Egypt"]="eg-cairo.vpn-provider.com"
+    ["Singapore"]="sg-singapore.vpn-provider.com"
+)
+
+echo "Testing server latencies from Saudi Arabia..."
+for location in "${!vpn_servers[@]}"; do
+    server=${vpn_servers[$location]}
+    latency=$(ping -c 1 $server | grep "time=" | awk '{print $NF}')
+    echo "$location: $latency"
+done
+
+# Expected results:
+# Dubai (closest): 15-25ms
+# Turkey: 90-110ms
+# Egypt: 80-100ms
+# Singapore: 200-250ms
+
+# For voice calls, use < 150ms latency server
+```
+
+## Call Quality Monitoring and Diagnostics
+
+Monitor call quality in real-time:
+
+```python
+#!/usr/bin/env python3
+# WhatsApp call quality monitoring
+
+import time
+import subprocess
+import statistics
+
+class CallQualityMonitor:
+    def __init__(self):
+        self.metrics = {
+            'latency': [],
+            'jitter': [],
+            'packet_loss': []
+        }
+
+    def measure_latency(self, target="whatsapp.net"):
+        """Measure round-trip latency"""
+        result = subprocess.run(
+            ['ping', '-c', '10', target],
+            capture_output=True,
+            text=True
+        )
+        times = [float(line.split('time=')[1].split(' ')[0])
+                 for line in result.stdout.split('\n')
+                 if 'time=' in line]
+        return statistics.mean(times) if times else None
+
+    def measure_jitter(self):
+        """Measure jitter (latency variation)"""
+        latencies = [self.measure_latency() for _ in range(10)]
+        deltas = [abs(latencies[i] - latencies[i+1])
+                  for i in range(len(latencies)-1)]
+        return statistics.mean(deltas) if deltas else None
+
+    def measure_packet_loss(self, target="whatsapp.net"):
+        """Measure packet loss percentage"""
+        result = subprocess.run(
+            ['ping', '-c', '100', target],
+            capture_output=True,
+            text=True
+        )
+        # Extract packet loss from output
+        import re
+        match = re.search(r'(\d+\.?\d*)% packet loss', result.stdout)
+        return float(match.group(1)) if match else None
+
+    def assess_call_quality(self):
+        """Provide quality assessment"""
+        latency = self.measure_latency()
+        jitter = self.measure_jitter()
+        loss = self.measure_packet_loss()
+
+        assessments = {
+            'latency': 'EXCELLENT' if latency < 50 else 'GOOD' if latency < 100 else 'FAIR' if latency < 200 else 'POOR',
+            'jitter': 'EXCELLENT' if jitter < 5 else 'GOOD' if jitter < 10 else 'FAIR' if jitter < 20 else 'POOR',
+            'packet_loss': 'EXCELLENT' if loss < 1 else 'GOOD' if loss < 3 else 'FAIR' if loss < 5 else 'POOR'
+        }
+
+        return {
+            'metrics': {
+                'latency_ms': latency,
+                'jitter_ms': jitter,
+                'packet_loss_percent': loss
+            },
+            'assessment': assessments,
+            'recommended_action': self.get_recommendation(latency, jitter, loss)
+        }
+
+    def get_recommendation(self, latency, jitter, loss):
+        """Recommend action based on metrics"""
+        if latency > 200 or jitter > 20 or loss > 5:
+            return "Switch to different VPN server or network"
+        elif latency > 150 or jitter > 15 or loss > 3:
+            return "Call quality may be degraded, consider optimizing"
+        else:
+            return "Network conditions are suitable for calling"
+
+# Usage
+monitor = CallQualityMonitor()
+quality = monitor.assess_call_quality()
+print(f"Call Quality Assessment: {quality['assessment']}")
+print(f"Recommendation: {quality['recommended_action']}")
+```
+
+## Legal and Safety Considerations
+
+Understanding VoIP restrictions in Saudi Arabia:
+
+```yaml
+# VoIP restrictions in Saudi Arabia context
+---
+regulatory_status:
+  # CITC (Communications and Information Technology Commission) regulations
+  # VoIP services require specific licensing
+  # WhatsApp calls technically violate regulations but enforcement is limited
+
+usage_safety:
+  # Using VPN doesn't make calling "legal" but provides technical access
+  # VPN detection itself may not be prosecuted but context matters
+  # Business/professional calls through WhatsApp are increasingly tolerated
+
+recommendation:
+  # Personal use: Low legal risk with VPN
+  # Business use: Consider using regulated alternatives
+  # Compliance: If compliance required, use approved platforms
+```
+
+This technical setup enables WhatsApp calling in Saudi Arabia for most users, but understanding both the technical and regulatory context is essential.
+
 ## Related Reading
 
 - [WireGuard vs OpenVPN: Technical Comparison for Privacy](/privacy-tools-guide/wireguard-vs-openvpn-technical-comparison/)

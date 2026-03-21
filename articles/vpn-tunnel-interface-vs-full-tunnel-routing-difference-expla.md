@@ -167,6 +167,334 @@ Do you run services that need to be accessible from your local network while the
 
 Understanding these tradeoffs enables informed decisions rather than one-size-fits-all configurations. Most modern VPN clients support both approaches, giving you the flexibility to choose based on your current task.
 
+## Advanced Routing Policy Management
+
+For complex network scenarios, policy-based routing provides granular control:
+
+```bash
+# Linux: Advanced policy routing beyond basic tunnel/full tunnel
+# Add multiple routing tables for different traffic classes
+
+# Define routing tables
+echo "200 corporate" >> /etc/iproute2/rt_tables
+echo "201 personal" >> /etc/iproute2/rt_tables
+
+# Create rules for VPN routing
+ip rule add from 192.168.1.100 lookup corporate
+ip rule add from 192.168.1.101 lookup personal
+
+# Configure corporate table (through VPN)
+ip route add 10.0.0.0/8 via 10.8.0.1 dev tun0 table corporate
+ip route add 0.0.0.0/0 via 10.8.0.1 dev tun0 table corporate
+
+# Configure personal table (direct connection)
+ip route add 0.0.0.0/0 via 192.168.1.1 dev eth0 table personal
+
+# Verify routing
+ip route show table corporate
+ip route show table personal
+```
+
+This enables per-source routing where different devices on your network use different tunnel configurations.
+
+## DNS Configuration for Split Routing
+
+DNS remains the critical leak vector in tunnel interface configurations:
+
+```bash
+# Systemd-resolved with per-interface DNS
+cat > /etc/systemd/resolved.conf.d/vpn-dns.conf <<EOF
+[Resolve]
+# VPN tunnel interface gets VPN DNS
+DNS=10.8.0.1
+Domains=corporate.internal
+
+# Local interface gets local DNS
+FallbackDNS=8.8.8.8
+EOF
+
+# Verify DNS routing by interface
+resolvectl status
+
+# Test DNS leak for specific domain
+nslookup corporate.internal
+# Should use 10.8.0.1 (VPN)
+
+nslookup google.com
+# Should use ISP DNS (if split tunnel is configured)
+```
+
+Incorrect DNS configuration undermines tunnel interface security, allowing local observers to determine which services you access.
+
+## Linux iptables Rules for Tunnel Interface Enforcement
+
+For systems requiring no DNS leaks regardless of application misconfiguration:
+
+```bash
+#!/bin/bash
+# Strict tunnel interface firewall rules
+
+# Default: drop all traffic
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT DROP
+
+# Allow loopback
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+
+# Allow established connections
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow VPN interface traffic
+iptables -A OUTPUT -o tun0 -j ACCEPT
+iptables -A INPUT -i tun0 -j ACCEPT
+
+# Allow VPN tunnel creation traffic to specific server
+iptables -A OUTPUT -d YOUR_VPN_SERVER -p tcp --dport 1194 -j ACCEPT
+iptables -A OUTPUT -d YOUR_VPN_SERVER -p udp --dport 1194 -j ACCEPT
+
+# Allow specific local traffic (e.g., printer)
+iptables -A OUTPUT -d 192.168.1.100 -j ACCEPT
+
+# DNS over VPN only
+iptables -A OUTPUT -p udp --dport 53 -o tun0 -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 53 -o tun0 -j ACCEPT
+
+# Save rules
+iptables-save > /etc/iptables/rules.v4
+```
+
+This enforcement ensures no application can bypass the tunnel interface through misconfiguration.
+
+## macOS Packet Tunnel Implementation
+
+macOS developers building VPN extensions need to implement packet filtering:
+
+```swift
+// Implementing split tunnel in Network Extension
+class SplitTunnelPacketHandler {
+    let allowedDomains = ["corporate.com", "internal.example.com"]
+
+    func shouldRouteThroughTunnel(for address: String) -> Bool {
+        // Check if address matches allowed domains
+        for domain in allowedDomains {
+            if address.hasSuffix(domain) {
+                return true
+            }
+        }
+        return false
+    }
+
+    func setupSplitTunnelRoutes() {
+        let tunnelSettings = NEPacketTunnelNetworkSettings(
+            tunnelRemoteAddress: "vpn.example.com"
+        )
+
+        // Configure DNS for corporate domain only
+        let dnsSettings = NEDNSSettings(servers: ["10.8.0.1"])
+        dnsSettings.matchDomains = ["corporate.com", "internal.example.com"]
+        tunnelSettings.dnsSettings = dnsSettings
+
+        // IPv4 routing: split tunnel approach
+        let ipv4Settings = NEIPv4Settings(
+            addresses: ["10.8.0.2"],
+            subnetMasks: ["255.255.255.0"]
+        )
+
+        // Only route corporate networks through VPN
+        ipv4Settings.includedRoutes = [
+            NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
+            NEIPv4Route(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0")
+        ]
+
+        tunnelSettings.ipv4Settings = ipv4Settings
+    }
+}
+```
+
+## Windows Network Extension (Wintun)
+
+Windows users can achieve tunnel interface control through Wintun:
+
+```cpp
+// Wintun packet filtering example
+#include <wintun.h>
+
+VOID FilterPackets(WINTUN_ADAPTER* Adapter) {
+    WINTUN_SESSION* Session = WintunStartSession(Adapter, 0x100000);
+
+    for (;;) {
+        WINTUN_PACKET* Packets[256];
+        DWORD PacketsRead = WintunReceivePackets(Session, Packets, 256);
+
+        for (DWORD i = 0; i < PacketsRead; ++i) {
+            WINTUN_PACKET* Packet = Packets[i];
+
+            // Inspect packet destination
+            // Route corporate traffic through VPN
+            // Route local traffic direct
+
+            if (IsDestinationCorporate(Packet->Data)) {
+                RouteToVPN(Packet);
+            } else {
+                SendDirect(Packet);
+            }
+        }
+    }
+}
+```
+
+## Bandwidth and Latency Monitoring
+
+Quantify the performance difference between approaches:
+
+```bash
+#!/bin/bash
+# Compare tunnel interface vs full tunnel performance
+
+test_configuration() {
+    local config_name=$1
+    local test_duration=60
+
+    # Bandwidth test (download)
+    echo "Testing: $config_name"
+    iperf3 -c test-server.com -t $test_duration -R 2>&1 | grep "sender"
+
+    # Latency test
+    ping -c 10 test-server.com | grep "avg"
+
+    # DNS resolution speed
+    time nslookup test-domain.com
+}
+
+# Test tunnel interface (selective routing)
+echo "Tunnel Interface Results:"
+test_configuration "tunnel"
+
+# Test full tunnel (all traffic)
+echo "Full Tunnel Results:"
+test_configuration "full-tunnel"
+
+# Test direct connection (baseline)
+echo "Direct Connection Baseline:"
+test_configuration "direct"
+```
+
+## VPN Connection Recovery and Failover
+
+Handling VPN disconnections gracefully:
+
+```bash
+#!/bin/bash
+# Auto-reconnect and failover for tunnel interface
+
+VPN_INTERFACE="tun0"
+VPN_PROCESS="openvpn"
+FAILOVER_TIMEOUT=30
+
+monitor_vpn() {
+    while true; do
+        if ! ip link show $VPN_INTERFACE > /dev/null 2>&1; then
+            echo "VPN interface down, attempting reconnect..."
+
+            # Kill hanging process
+            pkill -f $VPN_PROCESS
+            sleep 2
+
+            # Restart VPN
+            systemctl start openvpn@myconfig
+
+            # Wait for interface
+            for i in $(seq 1 $FAILOVER_TIMEOUT); do
+                if ip link show $VPN_INTERFACE > /dev/null 2>&1; then
+                    echo "VPN reconnected"
+                    break
+                fi
+                sleep 1
+            done
+        fi
+
+        sleep 10
+    done
+}
+
+# Run as systemd service
+monitor_vpn
+```
+
+## Practical Testing Framework
+
+Verify your tunnel configuration works correctly:
+
+```python
+#!/usr/bin/env python3
+# Test tunnel interface configuration
+
+import subprocess
+import requests
+import socket
+
+def test_tunnel_configuration():
+    """Verify tunnel interface routes correctly"""
+
+    tests = {
+        "vpn_connected": check_vpn_connected,
+        "dns_routed": check_dns_routing,
+        "local_access": check_local_access,
+        "vpn_access": check_vpn_access,
+    }
+
+    results = {}
+    for test_name, test_func in tests.items():
+        try:
+            result = test_func()
+            results[test_name] = "PASS" if result else "FAIL"
+        except Exception as e:
+            results[test_name] = f"ERROR: {e}"
+
+    return results
+
+def check_vpn_connected():
+    """Verify VPN interface is up"""
+    result = subprocess.run(
+        ["ip", "link", "show", "tun0"],
+        capture_output=True
+    )
+    return result.returncode == 0
+
+def check_dns_routing():
+    """Verify DNS queries route correctly"""
+    try:
+        ip = socket.gethostbyname("corporate.com")
+        return True
+    except socket.gaierror:
+        return False
+
+def check_local_access():
+    """Verify local resources are still accessible"""
+    try:
+        requests.get("http://192.168.1.1", timeout=2)
+        return True
+    except:
+        return False
+
+def check_vpn_access():
+    """Verify VPN-protected resources are accessible"""
+    try:
+        requests.get("http://10.0.0.1", timeout=5)
+        return True
+    except:
+        return False
+
+if __name__ == "__main__":
+    results = test_tunnel_configuration()
+    for test, result in results.items():
+        print(f"{test}: {result}")
+```
+
+These technical tools enable precise control over network routing, essential for complex environments requiring simultaneous VPN and direct access.
 
 ## Related Reading
 
