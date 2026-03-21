@@ -8,7 +8,7 @@ permalink: /privacy-tools-for-private-investigator-protecting-case-file-/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 ---
