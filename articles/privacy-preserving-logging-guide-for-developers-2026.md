@@ -25,6 +25,8 @@ Application logs frequently contain more information than developers realize. IP
 
 The core principle is data minimization: log only what you need for operational purposes, and sanitize everything else. This approach reduces your attack surface while simplifying compliance.
 
+Regulators increasingly treat log files as subject to the same data protection requirements as primary databases. Under GDPR Article 5(1)(e), personal data must not be kept longer than necessary. Logs containing IP addresses—which the CJEU has ruled can constitute personal data—may require specific retention limits and deletion procedures. Getting this right from the start is far cheaper than retrofitting privacy controls after an audit.
+
 ## Data Classification: What Can You Log?
 
 Before writing a single log statement, classify your data into three categories:
@@ -155,6 +157,41 @@ func main() {
 }
 ```
 
+**Important**: plain SHA-256 hashes of low-entropy values like email addresses are reversible through rainbow table attacks. For production use, apply a keyed HMAC rather than bare SHA-256:
+
+```python
+import hmac
+import hashlib
+import os
+
+LOG_HMAC_KEY = os.environ.get("LOG_HMAC_KEY", "").encode()
+
+def privacy_hash(value: str) -> str:
+    """HMAC-SHA256 pseudonymization. Consistent within a deployment,
+    not reversible without the key."""
+    h = hmac.new(LOG_HMAC_KEY, value.encode(), hashlib.sha256)
+    return h.hexdigest()[:16]
+```
+
+Store the HMAC key in a secrets manager (AWS Secrets Manager, HashiCorp Vault, etc.) and rotate it periodically. After rotation, hashes from old logs will not match hashes from new logs, providing automatic unlinkability over time.
+
+## IP Address Handling
+
+IP addresses present a specific challenge. They are often necessary for security monitoring (detecting brute-force attacks, rate limiting) but constitute personal data under GDPR in many jurisdictions.
+
+**Truncation**: Log only the first three octets of an IPv4 address. This preserves enough information for geographic analysis and rough rate limiting without pinpointing individual users.
+
+```python
+def truncate_ip(ip: str) -> str:
+    parts = ip.split('.')
+    if len(parts) == 4:
+        return f"{parts[0]}.{parts[1]}.{parts[2]}.0"
+    # IPv6: log only the first 64 bits
+    return ip.split(':')[:4] + ['::'] if ':' in ip else ip
+```
+
+**Separate storage**: Log full IPs to a short-retention security log (7 days) and truncated IPs to your operational log (90 days). This satisfies both security and privacy requirements.
+
 ## Log Level Best Practices
 
 Different environments require different logging verbosity:
@@ -179,6 +216,28 @@ logger = logging.getLogger(__name__)
 # Conditional logging for expensive operations
 if logger.isEnabledFor(logging.DEBUG):
     logger.debug(f"Processing request: {request_id}, payload size: {len(data)}")
+```
+
+## Retention Policies and Automated Deletion
+
+Keeping logs indefinitely accumulates privacy debt. Define explicit retention periods and enforce them automatically:
+
+| Log Type | Recommended Retention | Justification |
+|----------|----------------------|---------------|
+| Security events (full IP) | 7-30 days | Incident response window |
+| Application errors | 90 days | Debugging window |
+| Performance metrics | 1 year | Trend analysis |
+| Audit trails | 3-7 years | Compliance requirements |
+| Debug logs | 3-7 days | Immediate troubleshooting only |
+
+Automate deletion using logrotate or cloud-native tools. For ELK Stack, configure index lifecycle management (ILM) policies. For AWS CloudWatch Logs, set log group retention policies via Terraform:
+
+```hcl
+resource "aws_cloudwatch_log_group" "app" {
+  name              = "/app/production"
+  retention_in_days = 90
+  kms_key_id        = aws_kms_key.log_encryption.arn
+}
 ```
 
 ## Secure Log Storage
@@ -243,8 +302,60 @@ function logUserAction(userId, action, metadata, hasConsent) {
 }
 ```
 
+## Testing Your Privacy Controls
 
-## Related Articles
+Privacy controls should be tested like any other security control. Add these checks to your CI pipeline:
+
+```python
+# pytest example: verify no PII reaches the log
+def test_login_log_contains_no_pii(caplog):
+    with caplog.at_level(logging.INFO):
+        process_login(email="test@example.com", password="hunter2")
+
+    for record in caplog.records:
+        assert "test@example.com" not in str(record.msg), "Email leaked to logs"
+        assert "hunter2" not in str(record.msg), "Password leaked to logs"
+        assert "@" not in str(record.msg), "Possible email pattern in logs"
+```
+
+Run these tests against real log output in a staging environment periodically, not just in unit tests. Log libraries, frameworks, and third-party middleware can inject PII at unexpected points in the request lifecycle.
+
+## Third-Party Libraries and Middleware
+
+One of the most common sources of unintended PII in logs is third-party libraries. An HTTP framework may log request bodies on error. An ORM may log query parameters that happen to contain email addresses. A payment library may log API responses containing card data.
+
+Audit your dependency chain:
+
+1. Review the default logging configuration for every library that touches user data
+2. Disable verbose logging modes in production—many libraries ship with debug logging enabled by default
+3. Intercept log output at the handler level with a global privacy filter, so even third-party code passes through your redaction pipeline
+4. Pin library versions and review changelogs for logging behavior changes before upgrading
+
+For Python applications using the standard `logging` module, installing a root-level filter catches output from all loggers, including those created by libraries:
+
+```python
+# Apply privacy filter globally to all loggers
+root_logger = logging.getLogger()
+root_logger.addFilter(PrivacyFilter())
+```
+
+This single line ensures that any library using standard logging will have its output sanitized before it reaches your handlers.
+
+## Compliance Checklist
+
+Use this checklist when reviewing your logging implementation for GDPR, CCPA, or SOC2:
+
+- All PII fields are redacted or hashed before reaching log storage
+- Log retention periods are defined and enforced automatically
+- Logs at rest are encrypted with access restricted to authorized roles
+- A data subject access request (DSAR) procedure exists that includes log data
+- Third-party log processors (Datadog, Splunk, etc.) have signed DPAs
+- Development environments do not receive copies of production logs
+- Audit trail logs have longer retention than operational logs, per compliance requirements
+- Log shipping uses TLS in transit
+
+
+## Related Reading
 
 - [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
 - [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)
