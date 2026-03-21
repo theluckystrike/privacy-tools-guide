@@ -9,7 +9,7 @@ permalink: /linux-secure-boot-setup-with-custom-keys-for-preventing-firm/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

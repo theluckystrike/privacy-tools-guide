@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /library-patron-privacy-rights-what-information-libraries-can/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]

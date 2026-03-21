@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
