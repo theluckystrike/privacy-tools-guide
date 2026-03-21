@@ -228,7 +228,7 @@ Regardless of method chosen, certain practices improve privacy:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Living Without Smartphone Digital Privacy Extreme Approach P](/privacy-tools-guide/living-without-smartphone-digital-privacy-extreme-approach-p/)
 - [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction P](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)

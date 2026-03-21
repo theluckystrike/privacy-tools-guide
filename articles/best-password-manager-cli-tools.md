@@ -248,7 +248,7 @@ This approach keeps credentials out of your shell history and environment files 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
 - [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)

@@ -204,7 +204,7 @@ Regardless of choice, verify that encryption covers both transit and storage, th
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure File Sharing Tools Comparison: E2E Encrypted.](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)

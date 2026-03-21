@@ -254,7 +254,7 @@ The setup requires a Tor daemon, a compatible IRC client, and attention to opera
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 - [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)

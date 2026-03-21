@@ -228,7 +228,7 @@ Run this script after each Firefox update, as some settings may reset.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Debian Minimal Install Guide For Building Privacy Focused De](/privacy-tools-guide/debian-minimal-install-guide-for-building-privacy-focused-de/)
 - [How To Factory Reset Mobile Phone Securely Before Selling En](/privacy-tools-guide/how-to-factory-reset-mobile-phone-securely-before-selling-en/)

@@ -282,7 +282,7 @@ Consider your specific use case:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
 - [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)

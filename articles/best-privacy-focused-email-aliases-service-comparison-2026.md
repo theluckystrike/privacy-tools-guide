@@ -343,7 +343,7 @@ curl -s http://localhost:7777/health | jq .
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/privacy-tools-guide/best-anonymous-email-service-2026/)
 - [Set Up Catch All Email Domain For Unlimited Private Aliases](/privacy-tools-guide/how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/)

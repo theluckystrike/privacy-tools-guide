@@ -368,7 +368,7 @@ echo "Quality Metric"
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [How To Protect Your Zoom Meeting From Zoom Bombing Security](/privacy-tools-guide/how-to-protect-your-zoom-meeting-from-zoom-bombing-security/)

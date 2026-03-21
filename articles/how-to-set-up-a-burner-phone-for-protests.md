@@ -212,7 +212,7 @@ The cost is low relative to legal expenses if you're identified and charged. Eve
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
 - [How to Set Up Panic Button on Phone: Emergency Privacy Wipe](/privacy-tools-guide/how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/)

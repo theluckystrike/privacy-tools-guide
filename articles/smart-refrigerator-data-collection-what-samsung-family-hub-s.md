@@ -227,7 +227,7 @@ If you want to reduce the data footprint:
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
 - [Smart Tv Tracking What Data Samsung Lg Vizio Collect About V](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)

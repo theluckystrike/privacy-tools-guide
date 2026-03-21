@@ -194,7 +194,7 @@ adb shell dumpsys diskstats | grep "Encrypted"
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up a Burner Phone for Protests](/privacy-tools-guide/how-to-set-up-a-burner-phone-for-protests/)
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)

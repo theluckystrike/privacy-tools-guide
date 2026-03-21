@@ -265,7 +265,7 @@ Building a reliable obfuscated VPN requires careful attention to both the encryp
 
 
 
-## Related Articles
+## Related Reading
 
 - [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
 - [How To Configure Wireguard With Obfuscation To Bypass Russia](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)

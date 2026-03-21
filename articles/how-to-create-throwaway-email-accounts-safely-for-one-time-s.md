@@ -206,7 +206,7 @@ For most developers and power users, a combination works well: an alias service 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Safenote Or Privnote For One Time Secure Credenti](/privacy-tools-guide/how-to-use-safenote-or-privnote-for-one-time-secure-credenti/)
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)

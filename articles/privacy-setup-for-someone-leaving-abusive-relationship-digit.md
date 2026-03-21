@@ -236,7 +236,7 @@ Security isn't an one-time configuration. Establish regular review habits:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup for Someone Hiding from Abusive Ex](/privacy-tools-guide/privacy-setup-for-someone-hiding-from-abusive-ex-comprehensi/)
 - [How To Use Cryptocurrency Privately Without Leaving Traceabl](/privacy-tools-guide/how-to-use-cryptocurrency-privately-without-leaving-traceabl/)

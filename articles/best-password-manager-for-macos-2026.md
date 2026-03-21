@@ -325,7 +325,7 @@ shred -vfz -n 3 vault-export.json
 
 
 
-## Related Articles
+## Related Reading
 
 - [Macos Privacy Permissions Manager Guide 2026](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

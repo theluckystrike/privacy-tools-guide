@@ -279,7 +279,7 @@ Document when you accepted the original ToS and what changes have occurred. This
 
 
 
-## Related Articles
+## Related Reading
 
 - [Smart Device Deregistration After Death How To Remove Deceas](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/privacy-tools-guide/best-anonymous-email-service-2026/)

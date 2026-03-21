@@ -189,7 +189,7 @@ The key is understanding what Watchtower monitors and supplementing it with prac
 
 
 
-## Related Articles
+## Related Reading
 
 - [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)

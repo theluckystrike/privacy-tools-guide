@@ -496,7 +496,7 @@ These measurements quantify Mail Privacy Protection's overhead on your specific 
 
 
 
-## Related Articles
+## Related Reading
 
 - [iPhone Mail Privacy Protection: How It Works](/privacy-tools-guide/iphone-mail-privacy-protection-how-it-works/)
 - [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)

@@ -275,7 +275,7 @@ Storing SSH keys in a password manager transforms scattered key management into 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
 - [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)

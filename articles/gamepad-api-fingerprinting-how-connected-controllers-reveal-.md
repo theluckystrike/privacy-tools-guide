@@ -403,7 +403,7 @@ Clearly document gamepad usage in privacy policies:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)

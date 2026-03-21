@@ -253,7 +253,7 @@ Disable WebRTC in browser settings or use an extension that blocks the leak.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Check Your Browser Fingerprint Uniqueness Score Onlin](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)

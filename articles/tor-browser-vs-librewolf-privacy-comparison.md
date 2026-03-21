@@ -308,7 +308,7 @@ Both browsers can use Firefox extensions, but with caveats:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser vs Epic Privacy Browser Comparison](/privacy-tools-guide/tor-browser-vs-epic-privacy-browser-comparison/)
 - [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/privacy-tools-guide/tor-browser-vs-vpn-comparison-which-is-better/)

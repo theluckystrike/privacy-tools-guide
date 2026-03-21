@@ -275,7 +275,7 @@ For high-threat environments, combine relay calls with additional measures:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Signal Username Feature Privacy Review](/privacy-tools-guide/signal-username-feature-privacy-review/)
 - [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)

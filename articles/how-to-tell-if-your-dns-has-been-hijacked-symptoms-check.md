@@ -199,7 +199,7 @@ Regular DNS health checks and awareness of hijacking symptoms protect your brows
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
 - [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)

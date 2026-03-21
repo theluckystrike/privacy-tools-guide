@@ -331,7 +331,7 @@ Falco detects events like:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
 - [Proton Pass vs Bitwarden Security Comparison for Developers](/privacy-tools-guide/proton-pass-vs-bitwarden-security-comparison/)

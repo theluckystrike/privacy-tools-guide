@@ -209,7 +209,7 @@ This ensures only authenticated Zoom users with verified email domains can join.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [Async Code Review Process Without Zoom Calls Step By Step](/privacy-tools-guide/async-code-review-process-without-zoom-calls-step-by-step/)

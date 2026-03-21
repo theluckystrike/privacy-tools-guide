@@ -228,7 +228,7 @@ Test multiple platforms with sample content before committing. Most open-source 
 *
 
 
-## Related Articles
+## Related Reading
 
 - [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
 - [Best Private Dropbox Alternative 2026: A Developer Guide](/privacy-tools-guide/best-private-dropbox-alternative-2026/)

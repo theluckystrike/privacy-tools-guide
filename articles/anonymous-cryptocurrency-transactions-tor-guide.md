@@ -178,7 +178,7 @@ Confirm your node accepts only onion connections and that your visible IP differ
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 - [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)

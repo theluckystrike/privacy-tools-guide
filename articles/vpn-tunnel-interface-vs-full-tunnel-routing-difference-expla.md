@@ -499,7 +499,7 @@ These technical tools enable precise control over network routing, essential for
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn Tunnel Interface Vs Full Tunnel Routing Difference.](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)

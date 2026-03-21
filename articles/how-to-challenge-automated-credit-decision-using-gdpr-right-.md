@@ -233,7 +233,7 @@ Failure to comply can result in enforcement action and fines. The ICO has issued
 
 
 
-## Related Articles
+## Related Reading
 
 - [Request Human Review of AI Automated Decision That Affects You Legally](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
 - [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)

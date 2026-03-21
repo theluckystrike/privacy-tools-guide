@@ -231,7 +231,7 @@ python -c "from transformers import pipeline; \
 
 
 
-## Related Articles
+## Related Reading
 
 - [Chrome Extension File Sharing Quick Upload](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)

@@ -190,7 +190,7 @@ For Android, verify the security patch level matches the current month. Go to Se
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Tell If Your Phone Has Been Jailbroken Without Consen](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
 - [Prevent Screenshots of Dating Conversations from Being Shared Without Your Co...](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)

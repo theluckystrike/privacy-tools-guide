@@ -367,7 +367,7 @@ The implementation above covers the core technical requirements; consult legal c
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)

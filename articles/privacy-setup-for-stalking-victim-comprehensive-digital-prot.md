@@ -237,7 +237,7 @@ Digital protection must complement physical security. Stalkers may gain access t
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypt Your Entire Digital Life: A Checklist](/privacy-tools-guide/encrypt-entire-digital-life--checklist/)
 - [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)

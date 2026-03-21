@@ -238,7 +238,7 @@ If results appear, a tag manager or plugin is still injecting GA. Find and remov
 
 
 
-## Related Articles
+## Related Reading
 
 - [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
 - [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)

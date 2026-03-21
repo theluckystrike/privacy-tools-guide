@@ -285,7 +285,7 @@ Network instability sometimes breaks DoT connections. Temporarily disabling help
 
 
 
-## Related Articles
+## Related Reading
 
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)

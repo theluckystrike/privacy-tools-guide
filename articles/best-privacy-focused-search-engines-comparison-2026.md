@@ -447,7 +447,7 @@ The trade-off: 5-10% quality loss for 100% privacy gain. For most users, that's 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Focused Search Engines Comparison 2026](/privacy-tools-guide/privacy-focused-search-engines-comparison-2026/)
 - [Right To Be Forgotten In Search Engines How To Request Googl](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)

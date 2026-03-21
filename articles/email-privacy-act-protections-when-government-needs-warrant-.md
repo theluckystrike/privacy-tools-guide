@@ -407,7 +407,7 @@ Understanding when the government needs a warrant to read your emails matters no
 
 
 
-## Related Articles
+## Related Reading
 
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 - [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)

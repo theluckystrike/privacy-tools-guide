@@ -568,7 +568,7 @@ Strategy for Public Figures:
 Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
 - [How to remove yourself from data broker sites step by step.](/privacy-tools-guide/how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/)

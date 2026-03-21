@@ -281,7 +281,7 @@ For privacy-conscious users, this creates a tension: maximizing privacy through 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
 - [Password Manager For Couple Sharing Streaming Accounts Secur](/privacy-tools-guide/password-manager-for-couple-sharing-streaming-accounts-secur/)

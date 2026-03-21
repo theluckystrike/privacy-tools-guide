@@ -184,7 +184,7 @@ Remember that staying informed about local laws regarding internet access tools 
 
 
 
-## Related Articles
+## Related Reading
 
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)
 - [How To Build Portable Censorship Circumvention Kit On Usb Dr](/privacy-tools-guide/how-to-build-portable-censorship-circumvention-kit-on-usb-dr/)

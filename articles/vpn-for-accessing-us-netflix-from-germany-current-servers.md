@@ -256,7 +256,7 @@ The technical ecosystem for geo-access changes frequently. What works today may 
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Accessing Hulu from Canada: Current Working Servers](/privacy-tools-guide/vpn-for-accessing-hulu-from-canada-current-working-servers/)
 - [Best VPN for Accessing French TV Abroad](/privacy-tools-guide/best-vpn-for-accessing-french-tv-abroad-free-servers/)

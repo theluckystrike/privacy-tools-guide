@@ -307,7 +307,7 @@ Combine Briar with other offline media for communication:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)

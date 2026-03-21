@@ -212,7 +212,7 @@ firefox --no-remote -P "LegacyAccounts"
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
 - [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)

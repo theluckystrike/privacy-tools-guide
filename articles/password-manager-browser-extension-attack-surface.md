@@ -283,7 +283,7 @@ chrome.storage.local.set({ vault: encrypted });
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 - [Browser Password Manager Vs Dedicated App](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)

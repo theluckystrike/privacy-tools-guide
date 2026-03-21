@@ -228,7 +228,7 @@ This approach requires multiple trusted parties to combine their shares, providi
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
 - [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)

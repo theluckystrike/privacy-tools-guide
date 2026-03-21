@@ -194,7 +194,7 @@ Both platforms maintain active development and regular updates addressing new pr
 
 
 
-## Related Articles
+## Related Reading
 
 - [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)
 - [Cookie Consent Tools Comparison for Developers 2026](/privacy-tools-guide/cookie-consent-tools-comparison-for-developers-2026/)

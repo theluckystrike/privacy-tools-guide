@@ -166,7 +166,7 @@ The key principle remains consistent: maintain clear boundaries between contexts
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Convince Your Boss to Use a Password Manager at Work](/privacy-tools-guide/how-to-convince-your-boss-to-use-password-manager-at-work/)
 - [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)

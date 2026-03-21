@@ -310,7 +310,7 @@ Building privacy into your API from the start costs less than retrofitting compl
 
 
 
-## Related Articles
+## Related Reading
 
 - [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)

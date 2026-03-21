@@ -213,7 +213,7 @@ Test your setup regularly. Verify you can decrypt messages, sign commits, and ac
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)

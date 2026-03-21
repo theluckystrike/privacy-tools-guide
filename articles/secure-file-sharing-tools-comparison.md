@@ -429,7 +429,7 @@ onionshare-cli --auto-start --no-slugs share leaked-docs.zip
 Start with Wormhole if you're technical. Start with Tresorit Send if you prioritize ease of use. Upgrade to OnionShare for legally sensitive documents.
 
 
-## Related Articles
+## Related Reading
 
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 - [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)

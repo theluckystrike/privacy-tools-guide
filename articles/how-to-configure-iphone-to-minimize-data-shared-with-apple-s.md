@@ -200,7 +200,7 @@ Balance your privacy requirements against convenience. Most users find disabling
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 - [Iphone Significant Locations History What Apple Tracks How T](/privacy-tools-guide/iphone-significant-locations-history-what-apple-tracks-how-t/)

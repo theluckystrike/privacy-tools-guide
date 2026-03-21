@@ -277,7 +277,7 @@ When manually configuring routes, always verify your configuration by checking w
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Tunnel Interface vs Full Tunnel Routing](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 - [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)

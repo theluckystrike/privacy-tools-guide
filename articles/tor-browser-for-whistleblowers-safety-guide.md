@@ -288,7 +288,7 @@ If you suspect compromise, stop using the system immediately. Do not attempt to 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)

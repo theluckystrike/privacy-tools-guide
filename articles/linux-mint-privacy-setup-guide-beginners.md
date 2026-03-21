@@ -319,7 +319,7 @@ Running these checks after each reboot catches any services that failed to start
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)

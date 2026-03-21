@@ -175,7 +175,7 @@ Treat password management as infrastructure rather than convenience—implement 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager For Student Managing University Financial A](/privacy-tools-guide/password-manager-for-student-managing-university-financial-a/)
 - [Privacy Setup For Accountant Handling Client Financial Data](/privacy-tools-guide/privacy-setup-for-accountant-handling-client-financial-data-/)

@@ -251,7 +251,7 @@ Treating DSAR handling as part of your data architecture — not a compliance af
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
 - [How To Submit Subject Access Request To Employer For All Mon](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)

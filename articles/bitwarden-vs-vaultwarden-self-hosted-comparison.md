@@ -535,7 +535,7 @@ Most individual users and small teams find Vaultwarden covers their needs adequa
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
 - [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)

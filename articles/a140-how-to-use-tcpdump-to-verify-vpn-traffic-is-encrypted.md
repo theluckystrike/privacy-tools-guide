@@ -282,7 +282,7 @@ To maintain confidence in your VPN setup:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)

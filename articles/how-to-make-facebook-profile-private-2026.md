@@ -223,7 +223,7 @@ async function auditPrivacySettings(page) {
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)

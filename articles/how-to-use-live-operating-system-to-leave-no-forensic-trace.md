@@ -238,7 +238,7 @@ For maximum security, combine live OS use with:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)

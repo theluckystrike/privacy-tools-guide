@@ -268,7 +268,7 @@ Test your implementation by reviewing the ICO's legitimate interest checklist an
 
 
 
-## Related Articles
+## Related Reading
 
 - [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
 - [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)

@@ -273,7 +273,7 @@ Consider also the metadata problem. Even with anonymous email services, metadata
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)

@@ -207,7 +207,7 @@ For maximum privacy, consider using a separate Google account for Android device
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
 - [Facebook Location History Deletion How To Remove All Stored](/privacy-tools-guide/facebook-location-history-deletion-how-to-remove-all-stored-/)

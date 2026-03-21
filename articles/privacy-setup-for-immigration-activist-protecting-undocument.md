@@ -246,7 +246,7 @@ Prepare for potential device seizure or account compromise:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup for Immigration Activist](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)

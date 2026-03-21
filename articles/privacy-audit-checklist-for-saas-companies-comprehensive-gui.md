@@ -295,7 +295,7 @@ Privacy compliance is not an one-time effort.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Audit Checklist for Web Applications: A Developer](/privacy-tools-guide/privacy-audit-checklist-for-web-applications/)
 - [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)

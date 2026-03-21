@@ -275,7 +275,7 @@ ADB provides a powerful way to reclaim control over your Android device without 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)

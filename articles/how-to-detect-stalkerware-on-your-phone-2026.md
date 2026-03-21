@@ -394,7 +394,7 @@ After removal:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Detect And Remove Stalkerware From Android Phone Comp](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
 - [Detect and Remove Stalkerware From Your iPhone and iPad](/privacy-tools-guide/how-to-detect-remove-stalkerware-ios-iphone/)

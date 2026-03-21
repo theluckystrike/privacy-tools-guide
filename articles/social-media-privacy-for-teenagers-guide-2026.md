@@ -271,7 +271,7 @@ These alternatives have tradeoffs (smaller communities, fewer features) but elim
 
 
 
-## Related Articles
+## Related Reading
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)

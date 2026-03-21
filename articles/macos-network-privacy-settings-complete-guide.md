@@ -280,7 +280,7 @@ Some enterprise networks authenticate by MAC address. Enabling Private WiFi Addr
 
 
 
-## Related Articles
+## Related Reading
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [Macos Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)

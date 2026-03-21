@@ -189,7 +189,7 @@ Several frequent mistakes reduce the effectiveness of disappearing messages:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Signal Disappearing Messages Best Practices for.](/privacy-tools-guide/signal-disappearing-messages-best-practices-for-sensitive-co/)
 - [Signal App Disappearing Messages Guide](/privacy-tools-guide/signal-app-disappearing-messages-guide/)

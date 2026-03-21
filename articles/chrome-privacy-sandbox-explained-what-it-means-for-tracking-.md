@@ -201,7 +201,7 @@ Developers should monitor the Chrome Privacy Sandbox developer documentation for
 
 
 
-## Related Articles
+## Related Reading
 
 - [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
 - [Privacy Regulatory Sandbox Programs Explained](/privacy-tools-guide/privacy-regulatory-sandbox-programs-explained/)

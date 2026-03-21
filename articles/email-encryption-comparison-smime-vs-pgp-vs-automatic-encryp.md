@@ -180,7 +180,7 @@ The right choice depends on your threat model, technical requirements, and the c
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 - [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)

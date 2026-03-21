@@ -195,7 +195,7 @@ For developers building enterprise monitoring tools, prioritize consent workflow
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
 - [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)

@@ -174,7 +174,7 @@ For developers, the message is clear: passkey implementation is no longer experi
 
 
 
-## Related Articles
+## Related Reading
 
 - [Passkey vs Password Security Comparison: A Developer Guide](/privacy-tools-guide/passkey-vs-password-security-comparison/)
 - [Privacy Tools For Adoption Agency Worker Protecting Birth Pa](/privacy-tools-guide/privacy-tools-for-adoption-agency-worker-protecting-birth-pa/)

@@ -228,7 +228,7 @@ def verify_pseudonymization(user_id):
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gdpr Pseudonymization Vs Anonymization Explained](/privacy-tools-guide/gdpr-pseudonymization-vs-anonymization-explained/)
 - [Gdpr Penalties Fines Database Case Examples](/privacy-tools-guide/gdpr-penalties-fines-database-case-examples/)

@@ -221,7 +221,7 @@ The identifier-free design trades some usability for privacy. Users must share n
 
 
 
-## Related Articles
+## Related Reading
 
 - [Simplex Chat Review: No Identifiers Architecture Analysis](/privacy-tools-guide/simplex-chat-review-no-identifiers/)
 - [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)

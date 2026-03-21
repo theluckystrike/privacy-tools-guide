@@ -344,7 +344,7 @@ For maximum reduction of your data footprint, combine broker opt-outs with sourc
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Disappear From People Search Sites Complete Removal G](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)

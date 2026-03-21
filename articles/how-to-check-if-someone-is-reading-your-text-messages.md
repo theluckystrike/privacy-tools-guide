@@ -200,7 +200,7 @@ If you determine someone is reading your messages:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
 - [How To Check If Someone Is Using Your Netflix Without Permis](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permis/)

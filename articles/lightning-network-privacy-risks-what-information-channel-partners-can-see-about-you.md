@@ -374,7 +374,7 @@ The Lightning Network continues to evolve, with proposals like PTLCs (Point Time
 
 
 
-## Related Articles
+## Related Reading
 
 - [Bumble Beeline Data Privacy Who Can See That You Swiped Righ](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)
 - [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)

@@ -313,7 +313,7 @@ Validate your compliance decisions before deploying:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 - [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)

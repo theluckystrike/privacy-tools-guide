@@ -255,7 +255,7 @@ GDPR provides additional rights beyond accessing data:
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)

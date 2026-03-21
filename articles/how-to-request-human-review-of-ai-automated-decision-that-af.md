@@ -285,7 +285,7 @@ def notify_user_of_decision(user_email: str, decision: dict):
 
 
 
-## Related Articles
+## Related Reading
 
 - [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 - [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)

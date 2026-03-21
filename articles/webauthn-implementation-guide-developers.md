@@ -403,7 +403,7 @@ This progressive approach lets you introduce WebAuthn without requiring all user
 
 
 
-## Related Articles
+## Related Reading
 
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)

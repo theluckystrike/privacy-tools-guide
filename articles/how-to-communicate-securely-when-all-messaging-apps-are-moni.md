@@ -219,7 +219,7 @@ Start with Signal, understand its limitations, then add layers as your requireme
 
 
 
-## Related Articles
+## Related Reading
 
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)

@@ -216,7 +216,7 @@ Exercise your GDPR rights systematically. Document everything, escalate formally
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)

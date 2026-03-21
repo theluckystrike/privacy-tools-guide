@@ -188,7 +188,7 @@ Combine these tools with careful protocol documentation review to form a complet
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
 - [How To Rotate Encryption Keys In Messaging Apps Without Losi](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)

@@ -181,7 +181,7 @@ Remote password management for elderly parents requires patience and ongoing mai
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Beneficiary Access For Cloud Password Manager](/privacy-tools-guide/how-to-set-up-beneficiary-access-for-cloud-password-manager-/)
 - [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)

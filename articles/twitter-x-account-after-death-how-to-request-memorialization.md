@@ -285,7 +285,7 @@ Each platform has its own policies and timelines. Building an unified tracking s
 
 
 
-## Related Articles
+## Related Reading
 
 - [Instagram Memorialization Request Process What Happens To Ph](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
 - [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)

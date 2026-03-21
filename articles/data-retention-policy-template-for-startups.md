@@ -210,7 +210,7 @@ Start by auditing your data stores to identify every table containing personal d
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Retention Policy Template What To Keep And For How Long](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
 - [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)

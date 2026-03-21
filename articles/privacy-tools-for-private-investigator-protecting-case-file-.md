@@ -251,7 +251,7 @@ Retention requirements vary by jurisdiction and case type. Most PI licensing boa
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 - [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)

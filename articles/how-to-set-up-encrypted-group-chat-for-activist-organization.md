@@ -246,7 +246,7 @@ For most organizations, a VPS from a provider with a no-logs policy, encrypted s
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Secure Group Chat App 2026](/privacy-tools-guide/best-secure-group-chat-app-2026/)
 - [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)

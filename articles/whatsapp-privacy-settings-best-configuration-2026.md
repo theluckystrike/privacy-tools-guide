@@ -261,7 +261,7 @@ Link previews generate server requests to fetch page metadata. Disable at **Sett
 
 
 
-## Related Articles
+## Related Reading
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)

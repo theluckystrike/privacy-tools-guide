@@ -325,7 +325,7 @@ Total process: 1-2 weeks from recovered key to fiat funds
 
 
 
-## Related Articles
+## Related Reading
 
 - [Ethereum Wallet Inheritance: Using Social Recovery Smart.](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
 - [How To Protect Cryptocurrency Wallet From Being Hacked Secur](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)

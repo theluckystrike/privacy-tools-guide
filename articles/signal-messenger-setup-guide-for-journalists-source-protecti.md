@@ -332,7 +332,7 @@ Distribute this policy during newsroom onboarding. Regular security training rei
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
 - [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)

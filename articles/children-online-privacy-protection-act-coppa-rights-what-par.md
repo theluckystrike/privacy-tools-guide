@@ -294,7 +294,7 @@ Several implementation errors create legal risk:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)

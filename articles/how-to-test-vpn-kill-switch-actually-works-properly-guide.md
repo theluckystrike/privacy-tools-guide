@@ -199,7 +199,7 @@ sudo iptables -L -n -v
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
 - [How to Test if Your Anti-Fingerprinting Setup Actually Works](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)

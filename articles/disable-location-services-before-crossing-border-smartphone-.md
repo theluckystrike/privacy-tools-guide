@@ -196,7 +196,7 @@ For server-side applications processing border-crossing data, implement data min
 
 
 
-## Related Articles
+## Related Reading
 
 - [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
 - [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)

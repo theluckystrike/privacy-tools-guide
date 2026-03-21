@@ -285,7 +285,7 @@ ssh -D 1080 -N user@trusted-server.com
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
 - [Best VPN for Accessing YouTube in China Without Buffering](/privacy-tools-guide/best-vpn-for-accessing-youtube-in-china-without-buffering/)

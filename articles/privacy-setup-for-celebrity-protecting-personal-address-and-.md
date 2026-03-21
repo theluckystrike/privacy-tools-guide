@@ -208,7 +208,7 @@ This layered approach progressively reduces your attack surface while remaining 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)

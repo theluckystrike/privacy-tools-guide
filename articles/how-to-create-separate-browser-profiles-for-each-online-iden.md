@@ -246,7 +246,7 @@ This launches Puppeteer using your existing "work" profile, preserving your logg
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)

@@ -238,7 +238,7 @@ Test each platform with your actual tracking stack before committing. The integr
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Subprocessor Management Guide for Developers](/privacy-tools-guide/gdpr-subprocessor-management-guide-developers/)
 - [GDPR Cookie Consent Banner Best Practices for 2026](/privacy-tools-guide/gdpr-cookie-consent-banner-best-practices-2026/)

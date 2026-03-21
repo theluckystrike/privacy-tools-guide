@@ -209,7 +209,7 @@ Regardless of jurisdiction, there are some limits:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Employee Email Monitoring Legal Requirements And Privacy Bou](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
 - [How To Use Password Manager Across Work And Personal Devices](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)

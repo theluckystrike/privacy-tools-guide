@@ -621,7 +621,7 @@ When evaluating new blocklists, test in a staging configuration before enabling 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
 - [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)

@@ -305,7 +305,7 @@ This isn't about paranoia—it's about recognizing that once photos are online, 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Prevent Dating App Photos From Appearing In Google Im](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)

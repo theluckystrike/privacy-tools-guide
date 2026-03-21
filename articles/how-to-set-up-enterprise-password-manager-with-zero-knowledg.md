@@ -332,7 +332,7 @@ After revoking access, rotate any credentials in collections the departing user 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 - [Best Zero Knowledge Cloud Storage Enterprise](/privacy-tools-guide/best-zero-knowledge-cloud-storage-enterprise/)

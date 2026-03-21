@@ -267,7 +267,7 @@ class AdaptiveMessenger:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted SMS App for Android 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-sms-app-android-2026/)
 - [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)

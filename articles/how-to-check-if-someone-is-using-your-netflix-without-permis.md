@@ -173,7 +173,7 @@ Consider limiting account sharing by creating individual profiles if family memb
 
 
 
-## Related Articles
+## Related Reading
 
 - [Check If Someone Is Using Your Netflix Without Permission](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permission/)
 - [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)

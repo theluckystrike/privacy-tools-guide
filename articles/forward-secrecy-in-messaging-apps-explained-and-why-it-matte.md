@@ -177,7 +177,7 @@ Forward secrecy is not a feature you can add after the fact—it must be archite
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Faraday Bag Properly: When and Why Explained](/privacy-tools-guide/how-to-use-faraday-bag-properly-when-and-why-explained/)
 - [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)

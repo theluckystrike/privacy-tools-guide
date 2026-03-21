@@ -255,7 +255,7 @@ Several tools can analyze app tracking:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
 - [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)

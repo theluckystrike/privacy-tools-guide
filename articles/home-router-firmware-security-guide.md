@@ -220,7 +220,7 @@ Run `https://www.grc.com/x/ne.dll?bh0bkyd2` (Shields Up) from a browser to test 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
 - [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)

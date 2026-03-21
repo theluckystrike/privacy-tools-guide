@@ -176,7 +176,7 @@ If you're an Amazon seller, enable two-step verification for Seller Central and 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Tell If Your Email Account Was Hacked Right Now](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
 - [Best VPN for Accessing Amazon Prime Video Different Regions](/privacy-tools-guide/best-vpn-for-accessing-amazon-prime-video-different-regions/)

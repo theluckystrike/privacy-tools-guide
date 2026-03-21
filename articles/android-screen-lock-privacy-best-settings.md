@@ -244,7 +244,7 @@ Regularly audit your lock screen configuration, particularly after Android updat
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wireguard Android Battery Optimization Settings Without Brea](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
 - [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)

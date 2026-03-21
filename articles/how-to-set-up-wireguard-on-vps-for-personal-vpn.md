@@ -205,7 +205,7 @@ If your connection fails, check these common problems:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 - [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)

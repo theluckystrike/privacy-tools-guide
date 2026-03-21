@@ -198,7 +198,7 @@ The best choice depends on your specific requirements. Neither tool is universal
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser vs Epic Privacy Browser Comparison](/privacy-tools-guide/tor-browser-vs-epic-privacy-browser-comparison/)
 - [Tor Browser vs LibreWolf Privacy Comparison](/privacy-tools-guide/tor-browser-vs-librewolf-privacy-comparison/)

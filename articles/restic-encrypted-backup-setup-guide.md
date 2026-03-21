@@ -379,7 +379,7 @@ Rotate your repository password annually or whenever a credential is exposed. Af
 
 
 
-## Related Articles
+## Related Reading
 
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)

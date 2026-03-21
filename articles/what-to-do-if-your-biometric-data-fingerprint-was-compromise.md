@@ -283,7 +283,7 @@ After immediate containment:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)

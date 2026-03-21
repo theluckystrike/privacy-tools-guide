@@ -435,7 +435,7 @@ Run these tests before deploying to production.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 - [Wire vs Signal for Business Use: A Technical Comparison](/privacy-tools-guide/wire-vs-signal-for-business-use/)

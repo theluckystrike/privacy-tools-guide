@@ -172,7 +172,7 @@ For developers building on or integrating with dating platforms, understanding t
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)

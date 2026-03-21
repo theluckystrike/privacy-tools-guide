@@ -216,7 +216,7 @@ You can script container operations using the Firefox Container API or browser a
 
 
 
-## Related Articles
+## Related Reading
 
 - [Enterprise Privacy Tool Deployment Checklist for.](/privacy-tools-guide/enterprise-privacy-tool-deployment-checklist-for-multi-cloud/)
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)

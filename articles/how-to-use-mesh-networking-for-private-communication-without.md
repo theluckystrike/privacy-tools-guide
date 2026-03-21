@@ -259,7 +259,7 @@ Mesh networking transforms how devices communicate, replacing fragile centralize
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
 - [Matrix/Element vs Signal for Private Group Communication: Detailed Comparison](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)

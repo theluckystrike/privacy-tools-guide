@@ -280,7 +280,7 @@ emergency_access:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Subscription Service Cancellation After Death How Executor C](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-c/)
 - [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)

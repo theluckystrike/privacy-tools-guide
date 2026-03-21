@@ -685,7 +685,7 @@ Use split tunneling for high-bandwidth streaming while keeping your browser and 
 
 
 
-## Related Articles
+## Related Reading
 
 - [WireGuard PostUp/PostDown Scripts for Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
 - [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)

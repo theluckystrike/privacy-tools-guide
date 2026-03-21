@@ -200,7 +200,7 @@ Each handles the performance-compatibility tradeoff differently. Privacy-focused
 
 
 
-## Related Articles
+## Related Reading
 
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
 - [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)

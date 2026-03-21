@@ -207,7 +207,7 @@ Randomized MAC addresses also break location-based services that rely on persist
 
 
 
-## Related Articles
+## Related Reading
 
 - [What To Do If You Accidentally Downloaded Malware On Mac](/privacy-tools-guide/what-to-do-if-you-accidentally-downloaded-malware-on-mac/)
 - [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)

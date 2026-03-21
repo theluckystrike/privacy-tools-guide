@@ -199,7 +199,7 @@ The choice depends on your threat model, technical requirements, and preference 
 
 
 
-## Related Articles
+## Related Reading
 
 - [1Password vs LastPass: Which Survived Their Breaches?](/privacy-tools-guide/1password-vs-lastpass-which-survived-breach/)
 - [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)

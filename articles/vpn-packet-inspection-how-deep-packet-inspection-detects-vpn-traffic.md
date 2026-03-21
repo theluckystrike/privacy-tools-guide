@@ -429,7 +429,7 @@ VPN and DPI evasion legality varies by jurisdiction:
 Before using DPI evasion techniques, understand local laws and organization policies.
 
 
-## Related Articles
+## Related Reading
 
 - [Russia Tspu Deep Packet Inspection Boxes How They Detect And](/privacy-tools-guide/russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/)
 - [VPN MSS Clamping Explained: Fixing Packet Size Related.](/privacy-tools-guide/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)

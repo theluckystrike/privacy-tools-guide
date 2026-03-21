@@ -241,7 +241,7 @@ server.on('stream', (stream, headers) => {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)

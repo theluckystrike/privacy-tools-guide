@@ -202,7 +202,7 @@ While challenging employer policies, protect your own interests:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 - [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)

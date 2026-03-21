@@ -413,7 +413,7 @@ Provider Signature: ________________  Date: ________
 
 
 
-## Related Articles
+## Related Reading
 
 - [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
 - [Privacy Setup For Physical Therapist Patient Exercise Data P](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)

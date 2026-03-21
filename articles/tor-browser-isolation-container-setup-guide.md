@@ -206,7 +206,7 @@ The exit node IP should differ from your host's public IP, and DNS queries shoul
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
 - [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)

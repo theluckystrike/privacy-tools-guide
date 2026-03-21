@@ -179,7 +179,7 @@ For developers and power users, the choice depends on your workflow:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

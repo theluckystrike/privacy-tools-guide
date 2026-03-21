@@ -206,7 +206,7 @@ Regardless of your choice, maintain good security practices. Enable two-factor a
 
 
 
-## Related Articles
+## Related Reading
 
 - [ProtonMail vs Skiff Mail Comparison: A Developer Guide](/privacy-tools-guide/protonmail-vs-skiff-mail-comparison/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)

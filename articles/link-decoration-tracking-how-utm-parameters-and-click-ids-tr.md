@@ -451,7 +451,7 @@ recommendations:
 
 
 
-## Related Articles
+## Related Reading
 
 - [What Happens If You Click A Phishing Link On Chrome Steps](/privacy-tools-guide/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)
 - [What To Do After Clicking Suspicious Link In Email Immediate](/privacy-tools-guide/what-to-do-after-clicking-suspicious-link-in-email-immediate/)

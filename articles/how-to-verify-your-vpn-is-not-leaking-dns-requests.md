@@ -205,7 +205,7 @@ Beyond fixing leaks, consider these additional measures:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [Verify Your VPN Is Actually Bypassing Censorship (Not Leaking Your Real Locat...](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)

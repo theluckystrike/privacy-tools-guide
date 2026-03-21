@@ -390,7 +390,7 @@ These services provide documented vulnerability assessments valuable for securit
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
 - [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)

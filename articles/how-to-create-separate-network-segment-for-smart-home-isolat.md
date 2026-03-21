@@ -187,7 +187,7 @@ Another consideration is device provisioning. Many smart home devices require an
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)

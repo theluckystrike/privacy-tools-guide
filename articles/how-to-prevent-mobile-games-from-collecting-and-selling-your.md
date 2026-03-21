@@ -166,7 +166,7 @@ A layered approach provides the strongest protection:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Factory Reset Mobile Phone Securely Before Selling En](/privacy-tools-guide/how-to-factory-reset-mobile-phone-securely-before-selling-en/)
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)

@@ -257,7 +257,7 @@ F-Droid users should enable auto-updates or periodically check for new versions.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
 - [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)

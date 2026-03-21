@@ -299,7 +299,7 @@ After reducing your footprint, adopt privacy-preserving practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
 - [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)

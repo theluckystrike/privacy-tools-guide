@@ -417,7 +417,7 @@ For organizational deployments:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Real Estate Agent Client Data Protection Privacy Best Practi](/privacy-tools-guide/real-estate-agent-client-data-protection-privacy-best-practi/)

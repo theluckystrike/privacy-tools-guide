@@ -213,7 +213,7 @@ sudo ufw allow out to any port 443 # HTTPS only
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
 - [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)

@@ -269,7 +269,7 @@ The encrypted voice landscape continues evolving. MLS (Messaging Layer Security)
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
 - [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)

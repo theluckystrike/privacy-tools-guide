@@ -553,7 +553,7 @@ All privacy-focused apps allow exporting your notes (essential for preventing lo
 Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps/)
 - [Comparison Of Encrypted Note Taking Apps For Sensitive Infor](/privacy-tools-guide/comparison-of-encrypted-note-taking-apps-for-sensitive-infor/)

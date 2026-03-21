@@ -183,7 +183,7 @@ Schedule this script weekly via cron to catch configuration drift:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Audit Your Digital Footprint And Find All Accounts Li](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
 - [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)

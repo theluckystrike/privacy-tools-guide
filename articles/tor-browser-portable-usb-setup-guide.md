@@ -243,7 +243,7 @@ For extremely sensitive operations, bootable distributions like Tails provide st
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Build Portable Censorship Circumvention Kit On Usb Dr](/privacy-tools-guide/how-to-build-portable-censorship-circumvention-kit-on-usb-dr/)
 - [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)

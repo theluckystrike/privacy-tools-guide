@@ -200,7 +200,7 @@ Start with your next data project by auditing what you collect, why you collect 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

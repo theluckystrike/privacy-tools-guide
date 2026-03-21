@@ -200,7 +200,7 @@ If despite your precautions, you experience doxxing, act quickly:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
 - [How To Protect Your Zoom Meeting From Zoom Bombing Security](/privacy-tools-guide/how-to-protect-your-zoom-meeting-from-zoom-bombing-security/)

@@ -307,7 +307,7 @@ Developers can build privacy-preserving applications using Cwtch's underlying pr
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cwtch Messenger Review: A Decentralized Privacy Solution](/privacy-tools-guide/cwtch-messenger-review-decentralized/)
 - [Session Messenger Decentralized Onion Routing How It Protect](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)

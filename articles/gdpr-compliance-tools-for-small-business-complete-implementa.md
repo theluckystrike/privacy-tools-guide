@@ -220,7 +220,7 @@ Use this checklist when establishing your GDPR compliance program:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Cloud Storage for Small Business 2026](/privacy-tools-guide/encrypted-cloud-storage-for-small-business-2026/)
 - [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)

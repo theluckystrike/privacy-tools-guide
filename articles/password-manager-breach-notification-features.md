@@ -404,7 +404,7 @@ def rotate_secret(secret_type, old_value):
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)

@@ -180,7 +180,7 @@ Passkeys never leave the user's device, cannot be phished, and don't rely on bro
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)

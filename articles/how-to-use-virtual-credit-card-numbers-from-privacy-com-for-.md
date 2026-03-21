@@ -237,7 +237,7 @@ They add friction for subscription management but reduce long-term risk signific
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [What to Do If Your Credit Card Was Used Fraudulently Online](/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/)

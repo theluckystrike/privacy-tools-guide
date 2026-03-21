@@ -198,7 +198,7 @@ The key action: configure emergency access today. The best time was when you cre
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)
 - [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)

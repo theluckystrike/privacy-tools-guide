@@ -191,7 +191,7 @@ The deeper solution requires regulatory reform: mandatory data retention limits,
 
 
 
-## Related Articles
+## Related Reading
 
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)

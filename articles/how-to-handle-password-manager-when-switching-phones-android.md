@@ -193,7 +193,7 @@ Throughout the migration process, maintain these security practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)

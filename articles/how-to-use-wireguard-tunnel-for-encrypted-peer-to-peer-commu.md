@@ -265,7 +265,7 @@ WireGuard provides strong encryption by default, but follow these practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Encrypted Mailing List For Private Group Commu](/privacy-tools-guide/how-to-create-encrypted-mailing-list-for-private-group-commu/)
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)

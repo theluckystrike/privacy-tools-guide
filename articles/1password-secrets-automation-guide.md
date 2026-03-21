@@ -206,7 +206,7 @@ Permission errors indicate the service account or account lacks access to specif
 
 
 
-## Related Articles
+## Related Reading
 
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)

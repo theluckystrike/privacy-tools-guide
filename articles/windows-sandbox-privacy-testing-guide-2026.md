@@ -282,7 +282,7 @@ Windows Sandbox automatically deletes all data when closed. However, follow thes
 
 
 
-## Related Articles
+## Related Reading
 
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 - [Privacy Regulatory Sandbox Programs Explained](/privacy-tools-guide/privacy-regulatory-sandbox-programs-explained/)

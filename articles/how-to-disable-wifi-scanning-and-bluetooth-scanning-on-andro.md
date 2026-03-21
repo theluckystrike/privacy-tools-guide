@@ -396,7 +396,7 @@ The choice depends on your threat model and location accuracy requirements.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Tell if Your Bluetooth Is Being Intercepted Nearby](/privacy-tools-guide/how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/)
 - [Bumble Private Detector Ai Scanning Privacy How Uploaded.](/privacy-tools-guide/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)

@@ -173,7 +173,7 @@ Additionally, monitor network traffic using tools like Wireshark or Windows Perf
 
 
 
-## Related Articles
+## Related Reading
 
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)

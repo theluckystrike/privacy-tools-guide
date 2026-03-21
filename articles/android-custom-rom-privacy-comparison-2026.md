@@ -195,7 +195,7 @@ adb backup -apk -shared -all -f backup.ab
 
 
 
-## Related Articles
+## Related Reading
 
 - [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
 - [Bitwarden Custom Fields Usage Guide](/privacy-tools-guide/bitwarden-custom-fields-usage-guide/)

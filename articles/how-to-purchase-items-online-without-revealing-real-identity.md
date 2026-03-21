@@ -228,7 +228,7 @@ Balance privacy needs against these constraints based on your specific situation
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)

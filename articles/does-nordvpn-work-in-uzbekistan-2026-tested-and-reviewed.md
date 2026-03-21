@@ -224,7 +224,7 @@ Users in Uzbekistan should be aware of local regulations regarding VPN usage. Th
 
 
 
-## Related Articles
+## Related Reading
 
 - [Does NordVPN Work in Russia? Tested from Moscow (2026)](/privacy-tools-guide/does-nordvpn-work-in-russia-2026-tested-from-moscow/)
 - [Does NordVPN Obfuscated Servers Work in China? 2026 Test](/privacy-tools-guide/does-nordvpn-obfuscated-servers-work-in-china-2026-test/)

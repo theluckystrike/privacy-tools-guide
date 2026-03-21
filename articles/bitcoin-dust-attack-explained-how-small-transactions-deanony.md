@@ -201,7 +201,7 @@ Dust attacks are particularly concerning in these scenarios:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Bitcoin Payjoin Transactions For Sender Receiver](/privacy-tools-guide/how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/)
 - [Openvpn Compression Vulnerability Voracle Attack Explained A](/privacy-tools-guide/openvpn-compression-vulnerability-voracle-attack-explained-a/)

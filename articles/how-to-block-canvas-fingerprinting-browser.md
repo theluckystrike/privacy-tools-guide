@@ -240,7 +240,7 @@ Remember that stronger protection sometimes means reduced functionality. Some we
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)

@@ -256,7 +256,7 @@ notifier.notify_group(
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)
 - [How Secure Is Telegram Secret Chat Mode](/privacy-tools-guide/how-secure-is-telegram-secret-chat-mode/)

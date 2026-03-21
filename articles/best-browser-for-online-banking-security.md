@@ -217,7 +217,7 @@ console.log('Configured banking sites:', bankingSites.length);
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Online Banking While Traveling Southeast Asia Safety](/privacy-tools-guide/vpn-for-online-banking-while-traveling-southeast-asia-safety/)
 - [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)

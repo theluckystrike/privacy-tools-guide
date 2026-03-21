@@ -243,7 +243,7 @@ This separation means work communications never leak into personal data streams,
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Work Profile Privacy Separation Guide](/privacy-tools-guide/android-work-profile-privacy-separation-guide/)
 - [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)

@@ -299,7 +299,7 @@ Both are superior to SMS (telecom sees all authentication), push notifications (
 
 
 
-## Related Articles
+## Related Reading
 
 - [TOTP Backup Codes Best Practices: A Developer's Guide](/privacy-tools-guide/totp-backup-codes-best-practices/)
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)

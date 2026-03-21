@@ -174,7 +174,7 @@ These approaches involve significant effort and trade-offs. Evaluate whether you
 
 
 
-## Related Articles
+## Related Reading
 
 - [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
 - [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)

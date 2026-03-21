@@ -240,7 +240,7 @@ For those at higher risk (journalists, activists), the threat model should inclu
 
 
 
-## Related Articles
+## Related Reading
 
 - [Turkey Internet Freedom Index Ranking And Comparison With Ne](/privacy-tools-guide/turkey-internet-freedom-index-ranking-and-comparison-with-ne/)
 - [How to Detect If Your ISP Is Throttling VPN Traffic](/privacy-tools-guide/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)

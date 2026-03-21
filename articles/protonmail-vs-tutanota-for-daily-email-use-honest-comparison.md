@@ -300,7 +300,7 @@ Both are excellent choices. Test each for two weeks using the free tier before c
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)

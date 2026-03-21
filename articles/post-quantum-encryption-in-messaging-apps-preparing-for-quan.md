@@ -203,7 +203,7 @@ The research community continues evolving post-quantum cryptography. NIST expect
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
 - [How To Rotate Encryption Keys In Messaging Apps Without Losi](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)

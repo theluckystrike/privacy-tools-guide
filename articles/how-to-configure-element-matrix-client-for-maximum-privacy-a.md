@@ -258,7 +258,7 @@ This alerts you to unauthorized access attempts.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Matrix/Element vs Signal for Private Group Communication: Detailed Comparison](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
 - [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)

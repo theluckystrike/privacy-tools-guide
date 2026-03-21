@@ -335,7 +335,7 @@ After dating ends, you can:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)

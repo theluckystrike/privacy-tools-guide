@@ -288,7 +288,7 @@ These improvements will address current limitations, though the rate of developm
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
 - [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)

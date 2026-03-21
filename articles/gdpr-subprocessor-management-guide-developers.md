@@ -388,7 +388,7 @@ Maintain this workflow as a living document and test it annually with a tabletop
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gdpr Consent Management Platform Comparison 2026](/privacy-tools-guide/gdpr-consent-management-platform-comparison-2026/)
 - [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)

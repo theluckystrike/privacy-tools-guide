@@ -276,7 +276,7 @@ When analyzing VPN encryption:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)

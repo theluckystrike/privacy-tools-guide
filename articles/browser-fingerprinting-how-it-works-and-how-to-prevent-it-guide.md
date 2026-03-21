@@ -450,7 +450,7 @@ Good results:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)

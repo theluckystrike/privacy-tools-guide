@@ -222,7 +222,7 @@ The arms race between privacy tools and tracking technologies continues, but und
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
 - [Wifi Deauthentication Attack Detection How To Identify And P](/privacy-tools-guide/wifi-deauthentication-attack-detection-how-to-identify-and-p/)

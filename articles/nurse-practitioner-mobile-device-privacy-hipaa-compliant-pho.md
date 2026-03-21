@@ -174,7 +174,7 @@ Use this checklist when configuring a new HIPAA compliant device:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)

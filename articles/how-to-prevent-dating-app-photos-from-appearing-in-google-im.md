@@ -251,7 +251,7 @@ The goal is raising the difficulty barrier rather than achieving absolute protec
 
 
 
-## Related Articles
+## Related Reading
 
 - [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)

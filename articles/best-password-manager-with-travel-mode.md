@@ -243,7 +243,7 @@ Beyond travel mode, several practices strengthen your overall credential securit
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager for Travel Agent Managing Booking Platform Passwords](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

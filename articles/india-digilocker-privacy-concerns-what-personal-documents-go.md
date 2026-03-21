@@ -270,7 +270,7 @@ If you're currently using DigiLocker, perform this audit:
 
 
 
-## Related Articles
+## Related Reading
 
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 - [India Cctv Surveillance Expansion Privacy Implications Of Sm](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)

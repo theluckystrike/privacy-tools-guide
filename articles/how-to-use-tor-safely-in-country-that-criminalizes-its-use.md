@@ -433,7 +433,7 @@ Supplement Tor with:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 - [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)

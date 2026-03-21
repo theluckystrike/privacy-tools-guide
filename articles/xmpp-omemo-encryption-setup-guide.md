@@ -372,7 +372,7 @@ export ALL_PROXY=socks5://127.0.0.1:9050
 
 
 
-## Related Articles
+## Related Reading
 
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)

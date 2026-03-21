@@ -218,7 +218,7 @@ Store your LUKS recovery passphrase in a secure location separate from your devi
 
 
 
-## Related Articles
+## Related Reading
 
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)

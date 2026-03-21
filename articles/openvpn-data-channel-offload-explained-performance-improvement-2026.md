@@ -268,7 +268,7 @@ Remember that real-world performance varies based on your specific hardware, net
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 - [Openvpn Compression Vulnerability Voracle Attack Explained A](/privacy-tools-guide/openvpn-compression-vulnerability-voracle-attack-explained-a/)

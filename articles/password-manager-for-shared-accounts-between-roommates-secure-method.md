@@ -196,7 +196,7 @@ Secure shared password management requires more thought than throwing credential
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager For Couple Sharing Streaming Accounts Secur](/privacy-tools-guide/password-manager-for-couple-sharing-streaming-accounts-secur/)
 - [Password Manager for Family of Four with Kids Accounts Guide](/privacy-tools-guide/password-manager-for-family-of-four-with-kids-accounts-guide/)

@@ -369,7 +369,7 @@ No single password manager is perfect for all use cases. Evaluate your specific 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

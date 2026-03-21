@@ -301,7 +301,7 @@ In 2026 and beyond, MLS will likely become the de facto standard for any applica
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)

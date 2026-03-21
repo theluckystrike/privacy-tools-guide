@@ -198,7 +198,7 @@ server {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)

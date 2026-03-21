@@ -284,7 +284,7 @@ Browser selection matters for users concerned about tracking. Some browsers acti
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [How to Test if Your Anti-Fingerprinting Setup Actually Works](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)

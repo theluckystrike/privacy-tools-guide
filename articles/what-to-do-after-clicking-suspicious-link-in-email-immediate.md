@@ -296,7 +296,7 @@ Contact relevant authorities if necessary, such as the FBI's Internet Crime Comp
 
 
 
-## Related Articles
+## Related Reading
 
 - [Link Decoration Tracking How Utm Parameters And Click Ids Tr](/privacy-tools-guide/link-decoration-tracking-how-utm-parameters-and-click-ids-tr/)
 - [What Happens If You Click A Phishing Link On Chrome Steps](/privacy-tools-guide/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)

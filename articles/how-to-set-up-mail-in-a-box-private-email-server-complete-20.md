@@ -225,7 +225,7 @@ Running your own email server requires ongoing attention but provides unmatched 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)

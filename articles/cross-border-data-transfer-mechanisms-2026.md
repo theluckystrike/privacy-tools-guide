@@ -180,7 +180,7 @@ Building flexible architecture today positions your application to adapt as thes
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Handle Cross Border Data Transfers After Privacy Shie](/privacy-tools-guide/how-to-handle-cross-border-data-transfers-after-privacy-shie/)
 - [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)

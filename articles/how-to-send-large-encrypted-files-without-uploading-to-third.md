@@ -228,7 +228,7 @@ sha256sum largefile.zip > checksums.txt
 
 
 
-## Related Articles
+## Related Reading
 
 - [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
 - [How To Send Encrypted Attachments That Recipients Can Open W](/privacy-tools-guide/how-to-send-encrypted-attachments-that-recipients-can-open-w/)

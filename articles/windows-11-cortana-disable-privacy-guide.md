@@ -315,7 +315,7 @@ Register-ScheduledJob -Name "CortanaDisableMonitoring" `
 
 
 
-## Related Articles
+## Related Reading
 
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)

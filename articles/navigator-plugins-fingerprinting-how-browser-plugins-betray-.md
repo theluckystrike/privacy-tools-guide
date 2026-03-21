@@ -281,7 +281,7 @@ A well-chosen set of 5-6 extensions is significantly more private than 20+ exten
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)

@@ -365,7 +365,7 @@ This creates a trust trade-off: by using a VPN to hide from ISP fingerprinting, 
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)

@@ -200,7 +200,7 @@ Regardless of which tool you choose, enable two-factor authentication on your pa
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 - [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)

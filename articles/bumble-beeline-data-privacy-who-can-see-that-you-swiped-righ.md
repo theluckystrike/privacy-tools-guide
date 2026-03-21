@@ -173,7 +173,7 @@ To request your data under GDPR/CCPA:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
 - [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)

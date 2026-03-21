@@ -293,7 +293,7 @@ This measured approach prevents accidentally blocking legitimate email while bui
 
 
 
-## Related Articles
+## Related Reading
 
 - [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
 - [How To File Gdpr Complaint Against Company That Refuses To D](/privacy-tools-guide/how-to-file-gdpr-complaint-against-company-that-refuses-to-d/)

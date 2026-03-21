@@ -248,7 +248,7 @@ This provides application-level encryption independent of disk encryption.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
 - [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)

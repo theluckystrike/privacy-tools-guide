@@ -339,7 +339,7 @@ This workflow allows journalists to rapidly coordinate protocol changes if a pla
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Screen Sharing Tools That Encrypt Video Stream End To](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)

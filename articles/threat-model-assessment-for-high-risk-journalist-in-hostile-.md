@@ -284,7 +284,7 @@ These organizations provide direct support, financial assistance, and sometimes 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model For Union Organizer In Hostile Employer Environ](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
 - [Threat Model For Source Communicating With Journalist Anonym](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)

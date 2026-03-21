@@ -225,7 +225,7 @@ done
 
 
 
-## Related Articles
+## Related Reading
 
 - [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)

@@ -257,7 +257,7 @@ Run this periodically to monitor unexpected network activity.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)

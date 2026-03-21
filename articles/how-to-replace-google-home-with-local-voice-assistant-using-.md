@@ -195,7 +195,7 @@ Regardless of your choice, several optimizations improve responsiveness:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Home Assistant Esphome For Completely Local Sm](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
 - [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)

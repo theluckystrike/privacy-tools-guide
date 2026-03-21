@@ -216,7 +216,7 @@ Create a clear document for your emergency contact or executor:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
 - [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)

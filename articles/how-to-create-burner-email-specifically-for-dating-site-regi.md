@@ -231,7 +231,7 @@ print("Tinder alias:", manager.get_alias("tinder"))
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
 - [How To Create Throwaway Email Accounts Safely For One Time S](/privacy-tools-guide/how-to-create-throwaway-email-accounts-safely-for-one-time-s/)

@@ -444,7 +444,7 @@ To manage conflicts, configure Privacy Badger to operate in "learning" mode only
 
 
 
-## Related Articles
+## Related Reading
 
 - [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
 - [How To Configure Ublock Origin For Maximum Anti Tracking Pro](/privacy-tools-guide/how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/)

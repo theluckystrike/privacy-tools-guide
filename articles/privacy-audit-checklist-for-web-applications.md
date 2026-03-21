@@ -511,7 +511,7 @@ Run a tabletop exercise once per year: present the team with a breach scenario a
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
 - [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)

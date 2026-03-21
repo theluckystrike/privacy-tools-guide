@@ -453,7 +453,7 @@ print(f'Total activity entries: {len(entries)}')
 
 
 
-## Related Articles
+## Related Reading
 
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)

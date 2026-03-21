@@ -312,7 +312,7 @@ sqlite3 ~/Library/Application\ Support/MobileSync/Backup/*/Health/health.db \
 
 
 
-## Related Articles
+## Related Reading
 
 - [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)

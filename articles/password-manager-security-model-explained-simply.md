@@ -382,7 +382,7 @@ Mitigations:
 
 
 
-## Related Articles
+## Related Reading
 
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)

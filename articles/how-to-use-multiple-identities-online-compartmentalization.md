@@ -225,7 +225,7 @@ finance:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
 - [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)

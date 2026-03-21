@@ -296,7 +296,7 @@ The technical mechanisms enabling cross-platform tracking will continue evolving
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [Spideroak Review Cross Platform Encrypted Cloud](/privacy-tools-guide/spideroak-review-cross-platform-encrypted-cloud/)

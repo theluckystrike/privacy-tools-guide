@@ -402,7 +402,7 @@ def is_same_person(breach1, breach2):
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 - [How To Protect Yourself From Sim Swap Attack Prevention Guid](/privacy-tools-guide/how-to-protect-yourself-from-sim-swap-attack-prevention-guid/)

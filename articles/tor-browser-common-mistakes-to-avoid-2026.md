@@ -313,7 +313,7 @@ For general browsing, "Safer" setting balances security and usability. Switch to
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)

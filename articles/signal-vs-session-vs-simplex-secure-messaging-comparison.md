@@ -517,7 +517,7 @@ SimpleX:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)

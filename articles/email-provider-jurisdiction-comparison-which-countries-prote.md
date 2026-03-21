@@ -411,7 +411,7 @@ Users in GDPR countries gain rights to delete data, restrict processing, and dat
 
 
 
-## Related Articles
+## Related Reading
 
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
 - [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)

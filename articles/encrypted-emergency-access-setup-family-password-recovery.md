@@ -527,7 +527,7 @@ Setup complete when you can answer YES to:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)

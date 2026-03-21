@@ -182,7 +182,7 @@ For maximum protection when accessing PHI:
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Accessing Medical Records Abroad While Traveling.](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-securely/)
 - [VPN for Online Banking While Traveling Southeast Asia Safety](/privacy-tools-guide/vpn-for-online-banking-while-traveling-southeast-asia-safety/)

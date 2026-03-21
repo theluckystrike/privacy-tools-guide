@@ -219,7 +219,7 @@ If verification still fails after following these steps, check these common caus
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)

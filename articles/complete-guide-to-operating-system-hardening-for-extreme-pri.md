@@ -279,7 +279,7 @@ Run this monthly to detect configuration drift. Subscribe to security mailing li
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 - [How to Use Live Operating System to Leave No Forensic Trace](/privacy-tools-guide/how-to-use-live-operating-system-to-leave-no-forensic-trace/)

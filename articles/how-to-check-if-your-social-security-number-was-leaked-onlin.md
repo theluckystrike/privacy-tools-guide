@@ -181,7 +181,7 @@ While you can't prevent breaches at companies you do business with, you can redu
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Check Your Browser Fingerprint Uniqueness Score Onlin](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
 - [How to Check If Your Private Photos Were Leaked Online](/privacy-tools-guide/how-to-check-if-your-private-photos-were-leaked-online/)

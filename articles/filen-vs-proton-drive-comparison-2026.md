@@ -263,7 +263,7 @@ Proton requires more complex OAuth token management, making Filen easier to scri
 
 
 
-## Related Articles
+## Related Reading
 
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
 - [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)

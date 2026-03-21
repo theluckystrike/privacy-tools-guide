@@ -178,7 +178,7 @@ Use this systematic approach when evaluating apps:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
 - [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)

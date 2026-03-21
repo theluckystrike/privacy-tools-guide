@@ -292,7 +292,7 @@ class GoogleTakeoutRequest:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
 - [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)

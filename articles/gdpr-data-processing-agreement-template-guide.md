@@ -381,7 +381,7 @@ Assign each obligation to a named owner. Obligations without owners are obligati
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
 - [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)

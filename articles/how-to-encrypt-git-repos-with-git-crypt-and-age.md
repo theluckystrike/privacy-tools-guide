@@ -374,7 +374,7 @@ The combination of key rotation and secret rotation is the only complete offboar
 
 
 
-## Related Articles
+## Related Reading
 
 - [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

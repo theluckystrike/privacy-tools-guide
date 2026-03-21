@@ -185,7 +185,7 @@ Store this backup securely, preferably offline. Additionally, note your firmware
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)

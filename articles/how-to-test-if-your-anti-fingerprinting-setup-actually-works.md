@@ -205,7 +205,7 @@ Several issues often undermine anti-fingerprinting efforts:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)

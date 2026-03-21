@@ -277,7 +277,7 @@ The key is maintaining discipline—whitelist sparingly, audit frequently, and p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Twitter X Privacy Settings Recommended 2026](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)

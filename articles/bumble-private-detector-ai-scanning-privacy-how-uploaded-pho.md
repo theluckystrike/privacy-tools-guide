@@ -181,7 +181,7 @@ For individuals using Bumble or similar platforms, understanding photo processin
 
 
 
-## Related Articles
+## Related Reading
 
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
 - [Bumble Beeline Data Privacy Who Can See That You Swiped Righ](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)

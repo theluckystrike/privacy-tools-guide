@@ -407,7 +407,7 @@ route add 0.0.0.0 mask 0.0.0.0 VPN_GATEWAY metric 10
 
 
 
-## Related Articles
+## Related Reading
 
 - [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)

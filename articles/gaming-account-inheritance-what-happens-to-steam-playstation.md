@@ -191,7 +191,7 @@ For developers and power users invested in digital game libraries, several proac
 
 
 
-## Related Articles
+## Related Reading
 
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)

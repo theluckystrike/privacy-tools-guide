@@ -172,7 +172,7 @@ When you encounter a privacy practice you're unsure about, look for these indica
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
 - [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)

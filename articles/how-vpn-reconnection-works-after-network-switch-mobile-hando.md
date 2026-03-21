@@ -237,7 +237,7 @@ For users experiencing frequent disconnections during network transitions, sever
 
 
 
-## Related Articles
+## Related Reading
 
 - [How Vpn Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)

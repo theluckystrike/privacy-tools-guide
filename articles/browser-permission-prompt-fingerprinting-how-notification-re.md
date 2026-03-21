@@ -211,7 +211,7 @@ These protections evolve as vendors discover new fingerprinting techniques.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Permission Prompt Fingerprinting](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification/)
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)

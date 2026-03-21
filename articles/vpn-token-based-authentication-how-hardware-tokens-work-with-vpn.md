@@ -208,7 +208,7 @@ Organizations should document their hardware token deployment and establish proc
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
 - [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)

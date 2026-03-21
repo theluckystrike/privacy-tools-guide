@@ -243,7 +243,7 @@ For developers building opt-out into applications, implement proper handling: ho
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)

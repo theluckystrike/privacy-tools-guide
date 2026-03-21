@@ -216,7 +216,7 @@ Create a documented timeline for your digital succession plan:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)

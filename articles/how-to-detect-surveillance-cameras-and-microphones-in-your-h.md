@@ -299,7 +299,7 @@ Post public reviews on the booking platform documenting what you found and that 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Media Devices Enumeration Fingerprinting Cameras Microphones](/privacy-tools-guide/media-devices-enumeration-fingerprinting-cameras-microphones/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)

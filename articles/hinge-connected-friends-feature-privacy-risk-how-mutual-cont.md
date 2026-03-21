@@ -313,7 +313,7 @@ To maximize post-deletion privacy:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car Co](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
 - [How to Create Enterprise Privacy Risk Register Template.](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)

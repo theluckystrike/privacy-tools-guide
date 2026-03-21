@@ -268,7 +268,7 @@ For developers: choose based on your specific requirements. Monero if you need p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 - [Privacy Setup For Underground Railroad Modern Equivalent Pro](/privacy-tools-guide/privacy-setup-for-underground-railroad-modern-equivalent-pro/)

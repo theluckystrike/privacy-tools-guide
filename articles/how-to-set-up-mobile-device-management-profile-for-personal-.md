@@ -213,7 +213,7 @@ Store your profile configurations in a secure location (encrypted external drive
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)

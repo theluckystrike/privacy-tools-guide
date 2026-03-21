@@ -209,7 +209,7 @@ Hash IP addresses if you need to track repeated failed attempts across requests.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
 - [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)

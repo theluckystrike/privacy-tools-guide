@@ -222,7 +222,7 @@ The protocol specifications are open, enabling verification and custom implement
 
 
 
-## Related Articles
+## Related Reading
 
 - [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
 - [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)

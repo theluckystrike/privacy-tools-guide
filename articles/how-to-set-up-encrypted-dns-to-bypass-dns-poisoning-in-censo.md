@@ -203,7 +203,7 @@ Additionally, some networks implement SNI (Server Name Indication) filtering, wh
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
 - [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)

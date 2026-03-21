@@ -222,7 +222,7 @@ Watch for these indicators:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [How To Tell If Someone Has Access To Your Apple Id](/privacy-tools-guide/how-to-tell-if-someone-has-access-to-your-apple-id/)

@@ -475,7 +475,7 @@ signal-cli -u +1234567890 listIdentities
 ```
 
 
-## Related Articles
+## Related Reading
 
 - [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 - [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)

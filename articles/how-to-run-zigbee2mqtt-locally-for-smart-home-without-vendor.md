@@ -232,7 +232,7 @@ Running Zigbee2MQTT locally transforms your smart home from vendor-dependent to 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Smart Doorbell Alternatives That Store Video Locally Without](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)

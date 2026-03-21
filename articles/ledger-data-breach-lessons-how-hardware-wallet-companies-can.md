@@ -220,7 +220,7 @@ The best hardware wallet is one that the manufacturer cannot link to you.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
 - [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)

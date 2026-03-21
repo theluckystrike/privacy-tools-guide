@@ -214,7 +214,7 @@ Choose the method matching your threat model. For most users, a VoIP number comb
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
 - [Jmp Chat Voip Number For Signal Registration Anonymous Phone](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)

@@ -295,7 +295,7 @@ The long-term solution would be for Signal to support usernames or alternative i
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)

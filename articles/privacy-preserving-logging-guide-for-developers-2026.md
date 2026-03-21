@@ -245,7 +245,7 @@ function logUserAction(userId, action, metadata, hasConsent) {
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
 - [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)

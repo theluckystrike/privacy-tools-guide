@@ -270,7 +270,7 @@ gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)

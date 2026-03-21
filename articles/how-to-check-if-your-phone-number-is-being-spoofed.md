@@ -173,7 +173,7 @@ Implement proper phone number validation, require multi-factor authentication fo
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Check If Your Social Security Number Was Leaked Onlin](/privacy-tools-guide/how-to-check-if-your-social-security-number-was-leaked-onlin/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)

@@ -178,7 +178,7 @@ If full location spoofing seems excessive, consider these intermediate approache
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)

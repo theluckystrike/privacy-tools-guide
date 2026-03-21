@@ -244,7 +244,7 @@ The fundamental principle: location data is one of the most sensitive data types
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iphone Significant Locations Tracking How To View And Delete](/privacy-tools-guide/iphone-significant-locations-tracking-how-to-view-and-delete/)
 - [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)

@@ -319,7 +319,7 @@ These services proactively monitor for fraudulent account creation across major 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)

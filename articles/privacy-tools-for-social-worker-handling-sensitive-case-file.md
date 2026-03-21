@@ -369,7 +369,7 @@ For social work agencies implementing privacy-first systems:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 - [Privacy Tools For Private Investigator Protecting Case File](/privacy-tools-guide/privacy-tools-for-private-investigator-protecting-case-file-/)

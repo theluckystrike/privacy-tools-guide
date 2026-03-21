@@ -239,7 +239,7 @@ Technical controls fail when employees don't understand basic threats.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
 - [Privacy Audit Checklist for Web Applications: A Developer](/privacy-tools-guide/privacy-audit-checklist-for-web-applications/)

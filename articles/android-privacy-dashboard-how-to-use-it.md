@@ -221,7 +221,7 @@ Remember: Just because an app requests permission doesn't mean you must grant it
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
 - [How To Build Privacy Dashboard For Customers To Manage Their](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)

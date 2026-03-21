@@ -371,7 +371,7 @@ Achieving reliable banking access from Mexico requires careful configuration, co
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Accessing European Banking Apps from United States](/privacy-tools-guide/vpn-for-accessing-european-banking-apps-from-united-states/)
 - [VPN for Accessing Medical Records Abroad While Traveling.](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-securely/)

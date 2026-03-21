@@ -230,7 +230,7 @@ Building a vendor privacy scorecard takes initial effort but pays dividends acro
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
 - [How To Run Zigbee2mqtt Locally For Smart Home Without Vendor](/privacy-tools-guide/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)

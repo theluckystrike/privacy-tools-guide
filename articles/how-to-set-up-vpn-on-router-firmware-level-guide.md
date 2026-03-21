@@ -418,7 +418,7 @@ uci set dhcp.@domain[-1].ip="1.1.1.1"
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
 - [Set Up DNS-Based Ad Blocking on Travel Router GL-Inet for](/privacy-tools-guide/how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/)

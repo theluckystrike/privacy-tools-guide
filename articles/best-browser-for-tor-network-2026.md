@@ -271,7 +271,7 @@ Additionally, when building production applications that interact with Tor, impl
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)

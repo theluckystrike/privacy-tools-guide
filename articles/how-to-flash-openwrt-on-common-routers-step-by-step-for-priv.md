@@ -331,7 +331,7 @@ scp root@192.168.1.1:/tmp/backup.tar.gz ./
 
 
 
-## Related Articles
+## Related Reading
 
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)

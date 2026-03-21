@@ -212,7 +212,7 @@ The most subtle issue involves derived data. If you combine data from two purpos
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Implement Customer Data Encryption At Rest And In Tra](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)

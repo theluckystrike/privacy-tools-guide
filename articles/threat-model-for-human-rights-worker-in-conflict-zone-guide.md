@@ -173,7 +173,7 @@ Document your threat modeling process even if imperfect. The act of systematical
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)

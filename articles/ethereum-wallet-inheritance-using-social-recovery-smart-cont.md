@@ -222,7 +222,7 @@ For developers, open-source implementations like `inheritance-contracts` on GitH
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)

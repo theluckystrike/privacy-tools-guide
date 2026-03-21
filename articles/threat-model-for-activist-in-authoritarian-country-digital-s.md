@@ -267,7 +267,7 @@ Threat modeling is not about achieving perfect security (impossible) but about m
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model For Religious Minority In Persecuting Country D](/privacy-tools-guide/threat-model-for-religious-minority-in-persecuting-country-d/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)

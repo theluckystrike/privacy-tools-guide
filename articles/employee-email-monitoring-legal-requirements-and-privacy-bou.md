@@ -241,7 +241,7 @@ The legal landscape continues to evolve as legislatures address new monitoring t
 
 
 
-## Related Articles
+## Related Reading
 
 - [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)

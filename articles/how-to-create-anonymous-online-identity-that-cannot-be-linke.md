@@ -217,7 +217,7 @@ Building a truly anonymous online identity requires ongoing vigilance. Start wit
 
 
 
-## Related Articles
+## Related Reading
 
 - [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)

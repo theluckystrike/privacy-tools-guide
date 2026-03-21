@@ -216,7 +216,7 @@ sudo journalctl -u dnscrypt-proxy -f
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 - [How To Set Up Encrypted Dns To Bypass Dns Poisoning In Censo](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)

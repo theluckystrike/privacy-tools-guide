@@ -297,7 +297,7 @@ Some data protection authorities have begun examining redirect-based tracking mo
 
 
 
-## Related Articles
+## Related Reading
 
 - [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)

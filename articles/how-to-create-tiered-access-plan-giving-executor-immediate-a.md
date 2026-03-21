@@ -296,7 +296,7 @@ A well-designed tiered access system provides the flexibility to manage digital 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)

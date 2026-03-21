@@ -376,7 +376,7 @@ Consider how to migrate away from encrypted storage if needed:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gdpr Compliance Tools For Small Business Complete Implementa](/privacy-tools-guide/gdpr-compliance-tools-for-small-business-complete-implementa/)
 - [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)

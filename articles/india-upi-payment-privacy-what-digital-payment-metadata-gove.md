@@ -176,7 +176,7 @@ These regulations mean your UPI data exists in a legal gray area—technically p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)

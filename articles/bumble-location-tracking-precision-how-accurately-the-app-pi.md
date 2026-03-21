@@ -282,7 +282,7 @@ For developers building location-based apps with better privacy:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [How To Prevent Someone From Tracking Your Location Through P](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)

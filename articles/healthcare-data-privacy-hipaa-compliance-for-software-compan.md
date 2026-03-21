@@ -295,7 +295,7 @@ Remember that HIPAA violations can result in significant fines—up to $1.5 mill
 
 
 
-## Related Articles
+## Related Reading
 
 - [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 - [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)

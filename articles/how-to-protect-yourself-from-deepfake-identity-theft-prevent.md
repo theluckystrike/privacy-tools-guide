@@ -201,7 +201,7 @@ The reality of deepfake threats means that assuming authenticity based on visual
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)

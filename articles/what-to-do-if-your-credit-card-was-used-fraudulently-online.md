@@ -257,7 +257,7 @@ If the dispute isn't resolved satisfactorily, escalate to:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)

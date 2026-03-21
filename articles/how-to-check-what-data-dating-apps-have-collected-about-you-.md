@@ -218,7 +218,7 @@ Beyond requesting your data, implement ongoing privacy practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)

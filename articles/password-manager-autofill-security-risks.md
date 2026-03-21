@@ -229,7 +229,7 @@ Autofill requires layered defenses: strict CSP headers, explicit user interactio
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 - [Best Password Manager For Safari Autofill](/privacy-tools-guide/best-password-manager-for-safari-autofill/)

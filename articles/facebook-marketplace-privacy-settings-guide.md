@@ -330,7 +330,7 @@ curl -s "https://www.facebook.com/marketplace/profile/YOUR_ID" | grep -i "locati
 
 
 
-## Related Articles
+## Related Reading
 
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 - [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)

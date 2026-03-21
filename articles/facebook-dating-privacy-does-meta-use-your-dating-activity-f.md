@@ -180,7 +180,7 @@ These changes represent incremental improvements rather than fundamental shifts 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)

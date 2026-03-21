@@ -266,7 +266,7 @@ Microsoft officially supports this on Enterprise editions. On Home and Pro, the 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Safe House Protecting Location From Digita](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)

@@ -182,7 +182,7 @@ Several organizations provide data broker removal services:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)

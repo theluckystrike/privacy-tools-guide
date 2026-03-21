@@ -167,7 +167,7 @@ While developers bear primary responsibility for security, users can take protec
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)

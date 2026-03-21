@@ -175,7 +175,7 @@ This approach enables automatic certificate renewal and deployment through confi
 
 
 
-## Related Articles
+## Related Reading
 
 - [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
 - [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)

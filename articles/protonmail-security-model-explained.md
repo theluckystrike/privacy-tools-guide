@@ -280,7 +280,7 @@ For developers implementing similar systems, critically evaluate ProtonMail's se
 
 
 
-## Related Articles
+## Related Reading
 
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)

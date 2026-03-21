@@ -397,7 +397,7 @@ Daily rotation of the salt means you can count unique sessions within a day (for
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Implement Encrypted Webhooks For Secure Application T](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
 - [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)

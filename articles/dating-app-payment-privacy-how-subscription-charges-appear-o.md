@@ -208,7 +208,7 @@ Stripe's API allows descriptor updates through the dashboard or API, with limita
 
 
 
-## Related Articles
+## Related Reading
 
 - [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 - [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)

@@ -177,7 +177,7 @@ Both systems require careful configuration and understanding of their threat mod
 
 
 
-## Related Articles
+## Related Reading
 
 - [How Browser Supercookies Track You: A Technical Explanation](/privacy-tools-guide/how-browser-supercookies-track-you-explained/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)

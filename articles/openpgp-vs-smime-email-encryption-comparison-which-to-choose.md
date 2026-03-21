@@ -358,7 +358,7 @@ For organizations, S/MIME's enforced renewal cycle ensures regular key rotation 
 
 
 
-## Related Articles
+## Related Reading
 
 - [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)

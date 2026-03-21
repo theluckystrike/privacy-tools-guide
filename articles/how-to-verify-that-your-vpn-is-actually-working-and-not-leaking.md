@@ -266,7 +266,7 @@ Some VPN clients only tunnel IPv4 traffic, leaving IPv6 exposed. Check in privac
 Regular VPN verification is essential security hygiene. Test after major software updates, when switching VPN providers, and quarterly as a security audit. Don't trust VPN marketing claims that promise "bank-grade encryption"—verify directly using the methods in this guide. A VPN providing false security is worse than no VPN, as it creates unwarranted confidence in protection that isn't actually occurring. Test methodically, document results, and only trust VPNs that pass all four verification layers.
 
 
-## Related Articles
+## Related Reading
 
 - [Verify Your VPN Is Actually Bypassing Censorship (Not Leaking Your Real Locat...](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)

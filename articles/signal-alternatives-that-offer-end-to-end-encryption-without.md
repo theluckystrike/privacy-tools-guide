@@ -207,7 +207,7 @@ All these platforms remain under active development in 2026, with SimpleX and Se
 
 
 
-## Related Articles
+## Related Reading
 
 - [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)

@@ -242,7 +242,7 @@ def verify_contact_fingerprint(cwtch_client, contact_onion):
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cwtch Decentralized Metadata Resistant Messenger How It Diff](/privacy-tools-guide/cwtch-decentralized-metadata-resistant-messenger-how-it-diff/)
 - [Session Messenger Decentralized Onion Routing How It Protect](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)

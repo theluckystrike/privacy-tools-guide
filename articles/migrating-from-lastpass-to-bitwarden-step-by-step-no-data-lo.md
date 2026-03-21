@@ -317,7 +317,7 @@ After migration, strengthen your security:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Migrating from Sticky Password to Bitwarden: A Guide](/privacy-tools-guide/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
 - [Bitwarden vs LastPass Migration Guide](/privacy-tools-guide/bitwarden-vs-lastpass-migration-guide/)

@@ -206,7 +206,7 @@ For maximum privacy without breaking functionality:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Stop Browser Fingerprinting On Chrome 2026 Practical](/privacy-tools-guide/how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/)
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)

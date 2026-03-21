@@ -180,7 +180,7 @@ These agencies often provide more responsive handling of individual complaints a
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To File Gdpr Complaint Against Company That Refuses To D](/privacy-tools-guide/how-to-file-gdpr-complaint-against-company-that-refuses-to-d/)
 - [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)

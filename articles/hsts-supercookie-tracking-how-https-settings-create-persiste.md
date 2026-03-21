@@ -174,7 +174,7 @@ add_header Strict-Transport-Security "max-age=3600; includeSubDomains" always;
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iphone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
 - [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)

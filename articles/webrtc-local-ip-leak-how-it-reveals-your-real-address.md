@@ -286,7 +286,7 @@ Researchers studying privacy implementations sometimes discover that studied use
 
 
 
-## Related Articles
+## Related Reading
 
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [How to Disable WebRTC Leaks in Tor Browser](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)

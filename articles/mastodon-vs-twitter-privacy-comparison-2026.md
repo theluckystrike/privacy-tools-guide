@@ -227,7 +227,7 @@ For power users concerned about privacy:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Twitter X Privacy Settings Recommended 2026](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)

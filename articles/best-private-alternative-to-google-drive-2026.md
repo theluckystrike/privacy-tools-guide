@@ -173,7 +173,7 @@ All three options provide APIs and CLI access that developers require for automa
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Private Dropbox Alternative 2026: A Developer Guide](/privacy-tools-guide/best-private-dropbox-alternative-2026/)
 - [Youtube Alternative Private Video Platforms 2026](/privacy-tools-guide/youtube-alternative-private-video-platforms-2026/)

@@ -230,7 +230,7 @@ GPG signing adds friction to email communication, but the authenticity guarantee
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
 - [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)

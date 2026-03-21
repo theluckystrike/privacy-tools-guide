@@ -211,7 +211,7 @@ jobs:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
 - [China VPN Crackdown: Penalties and Consequences for.](/privacy-tools-guide/china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/)

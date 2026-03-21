@@ -195,7 +195,7 @@ Without proper DPO oversight, your business risks:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Protection Officer Role Responsibilities Guide](/privacy-tools-guide/data-protection-officer-role-responsibilities-guide/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

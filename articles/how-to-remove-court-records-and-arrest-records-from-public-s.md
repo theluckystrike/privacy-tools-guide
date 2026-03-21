@@ -226,7 +226,7 @@ Removing court records and arrest records from public search databases requires 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
 - [VPN for Accessing Medical Records Abroad While Traveling](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-sec/)

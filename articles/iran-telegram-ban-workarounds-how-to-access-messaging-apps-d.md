@@ -238,7 +238,7 @@ For developers building tools for Iranian users, prioritize security and anonymi
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Using Telegram in Iran 2026: Working Methods](/privacy-tools-guide/vpn-for-using-telegram-in-iran-2026-working-method/)
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)

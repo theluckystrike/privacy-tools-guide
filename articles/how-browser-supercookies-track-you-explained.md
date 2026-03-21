@@ -349,7 +349,7 @@ The arms race between privacy advocates and tracking interests continues to esca
 
 
 
-## Related Articles
+## Related Reading
 
 - [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)

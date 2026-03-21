@@ -236,7 +236,7 @@ Run this script periodically to audit devices for suspicious permission patterns
 
 
 
-## Related Articles
+## Related Reading
 
 - [Detect and Remove Stalkerware From Your iPhone and iPad](/privacy-tools-guide/how-to-detect-remove-stalkerware-ios-iphone/)
 - [How to Detect Stalkerware on Your Phone 2026](/privacy-tools-guide/how-to-detect-stalkerware-on-your-phone-2026/)

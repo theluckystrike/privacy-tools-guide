@@ -217,7 +217,7 @@ The regulatory landscape continues evolving. Several US states have passed their
 
 
 
-## Related Articles
+## Related Reading
 
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)

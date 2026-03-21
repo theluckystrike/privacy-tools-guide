@@ -227,7 +227,7 @@ A working setup returns your VPN IPv4, no IPv6 response, and no IPv6 default rou
 
 
 
-## Related Articles
+## Related Reading
 
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [Does Expressvpn Still Work In Turkey 2026 Latest Test](/privacy-tools-guide/does-expressvpn-still-work-in-turkey-2026-latest-test/)

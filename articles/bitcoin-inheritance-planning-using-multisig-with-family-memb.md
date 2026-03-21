@@ -231,7 +231,7 @@ Document the date of your last successful test. If circumstances change signific
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
 - [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)

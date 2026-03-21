@@ -172,7 +172,7 @@ Start with one key protecting your highest-value accounts (email, cloud consoles
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 - [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)

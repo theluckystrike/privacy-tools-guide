@@ -245,7 +245,7 @@ Beyond individual settings, consider a broader approach to your Twitter X privac
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser NoScript Settings Recommended 2026](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
 - [Mastodon vs Twitter: Privacy Comparison 2026](/privacy-tools-guide/mastodon-vs-twitter-privacy-comparison-2026/)

@@ -220,7 +220,7 @@ Your choice ultimately depends on your platform requirements and whether you nee
 
 
 
-## Related Articles
+## Related Reading
 
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)

@@ -412,7 +412,7 @@ test_recovery() {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 - [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)

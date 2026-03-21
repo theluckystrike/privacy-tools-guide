@@ -201,7 +201,7 @@ Many email tracking services offer "campaign previews" to test—sign up for a n
 
 
 
-## Related Articles
+## Related Reading
 
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)

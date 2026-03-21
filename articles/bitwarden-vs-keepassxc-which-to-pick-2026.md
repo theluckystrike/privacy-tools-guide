@@ -178,7 +178,7 @@ KeePassXC serves developers who prioritize transparency and local control. The a
 
 
 
-## Related Articles
+## Related Reading
 
 - [KeePass vs KeePassXC: Key Differences for Developers in 2026](/privacy-tools-guide/keepass-vs-keepassxc-differences-2026/)
 - [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)

@@ -188,7 +188,7 @@ The "right" choice depends on your specific threat model, integration requiremen
 
 
 
-## Related Articles
+## Related Reading
 
 - [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
 - [1password Vs Bitwarden 2026 Comparison](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)

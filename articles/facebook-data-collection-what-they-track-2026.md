@@ -204,7 +204,7 @@ Understanding Facebook's data collection practices helps you make informed choic
 
 
 
-## Related Articles
+## Related Reading
 
 - [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 - [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)

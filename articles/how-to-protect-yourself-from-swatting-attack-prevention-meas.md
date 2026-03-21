@@ -342,7 +342,7 @@ Swatting targets experience genuine trauma. Psychological support is as critical
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Protect Yourself From Sim Swap Attack Prevention Guid](/privacy-tools-guide/how-to-protect-yourself-from-sim-swap-attack-prevention-guid/)
 - [Protect Yourself from Credential Stuffing Attack](/privacy-tools-guide/how-to-protect-yourself-from-credential-stuffing-attack-pass/)

@@ -190,7 +190,7 @@ crontab -e
 
 
 
-## Related Articles
+## Related Reading
 
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)

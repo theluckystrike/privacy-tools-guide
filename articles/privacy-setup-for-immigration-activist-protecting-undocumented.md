@@ -227,7 +227,7 @@ Faraday bags prevent passive IMSI catcher surveillance (stingrays) that can iden
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 - [Threat Model for Undocumented Immigrant Protecting.](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)

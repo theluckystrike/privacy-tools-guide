@@ -178,7 +178,7 @@ You can verify your browser's partitioning status by:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Passkey User Experience Comparison Across Chrome.](/privacy-tools-guide/passkey-user-experience-comparison-across-chrome-safari-firefox-edge-2026/)
 - [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)

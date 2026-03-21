@@ -222,7 +222,7 @@ Generate unique, complex passwords for each dating application using a password 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Two-Factor Authentication Setup Guide 2026](/privacy-tools-guide/two-factor-authentication-setup-2026)
 - [ProtonMail Two-Factor Authentication Guide](/privacy-tools-guide/protonmail-two-factor-authentication-guide/)

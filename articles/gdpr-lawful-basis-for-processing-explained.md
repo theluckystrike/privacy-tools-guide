@@ -245,7 +245,7 @@ Under GDPR, you cannot retroactively change your lawful basis to circumvent requ
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 - [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)

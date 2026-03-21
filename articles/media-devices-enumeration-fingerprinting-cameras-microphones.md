@@ -281,7 +281,7 @@ These real-world examples show why defense-in-depth (extensions + settings + mon
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)

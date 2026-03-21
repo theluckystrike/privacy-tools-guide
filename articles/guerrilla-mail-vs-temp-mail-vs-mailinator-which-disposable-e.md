@@ -217,7 +217,7 @@ The answer depends entirely on your threat model:
 
 
 
-## Related Articles
+## Related Reading
 
 - [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)

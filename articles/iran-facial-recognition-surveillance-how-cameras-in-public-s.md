@@ -272,7 +272,7 @@ echo "Checking for photo tagging patterns that indicate recognition"
 
 
 
-## Related Articles
+## Related Reading
 
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)

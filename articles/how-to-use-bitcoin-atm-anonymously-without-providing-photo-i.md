@@ -307,7 +307,7 @@ This guide is informational. Always verify compliance with local regulations bef
 
 
 
-## Related Articles
+## Related Reading
 
 - [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)

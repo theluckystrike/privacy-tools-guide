@@ -257,7 +257,7 @@ Regular reviews catch new accounts you create and identify breaches in newly-com
 
 
 
-## Related Articles
+## Related Reading
 
 - [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 - [How To Minimize Digital Footprint Guide 2026](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)

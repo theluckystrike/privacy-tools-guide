@@ -357,7 +357,7 @@ handler.complete_verification(number_info['number_id'])
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)

@@ -237,7 +237,7 @@ When deploying encrypted webhooks in production, ensure you address these items:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 - [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)

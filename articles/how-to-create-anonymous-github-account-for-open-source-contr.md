@@ -266,7 +266,7 @@ Each platform has different metadata collection and blocking characteristics. Fo
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
 - [Windows Privacy Tools Open Source 2026: A Developer Guide](/privacy-tools-guide/windows-privacy-tools-open-source-2026/)

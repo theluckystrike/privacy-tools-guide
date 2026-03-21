@@ -174,7 +174,7 @@ Use these strategies to minimize your data footprint and make future erasure req
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 - [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)

@@ -304,7 +304,7 @@ For developers managing their own accounts, YubiKey's multi-key support enables 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 - [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)

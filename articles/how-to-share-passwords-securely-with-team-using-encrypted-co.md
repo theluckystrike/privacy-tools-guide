@@ -334,7 +334,7 @@ Document your credential management practices and have legal review them before 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 - [How to Archive Encrypted Email Securely: A Developer Guide](/privacy-tools-guide/how-to-archive-encrypted-email-securely/)

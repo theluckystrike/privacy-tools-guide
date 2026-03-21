@@ -178,7 +178,7 @@ After disabling these features, some Apple services still require certain data t
 
 
 
-## Related Articles
+## Related Reading
 
 - [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
 - [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)

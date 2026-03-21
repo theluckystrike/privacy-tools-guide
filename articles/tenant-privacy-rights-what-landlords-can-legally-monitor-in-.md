@@ -204,7 +204,7 @@ For quick reference, here are key thresholds across major states:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Rental Application Privacy What Information Landlords Can Le](/privacy-tools-guide/rental-application-privacy-what-information-landlords-can-le/)
 - [Baby Monitor Security And Privacy How To Prevent.](/privacy-tools-guide/baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/)

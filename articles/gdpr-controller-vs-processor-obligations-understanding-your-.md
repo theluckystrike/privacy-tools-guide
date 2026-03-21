@@ -220,7 +220,7 @@ Understanding whether you're dealing with a controller or processor—and recogn
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
 - [Ccpa Vs Gdpr Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)

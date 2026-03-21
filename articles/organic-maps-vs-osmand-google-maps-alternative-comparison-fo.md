@@ -184,7 +184,7 @@ Both apps support GPX import for custom routes. Export your planned routes from 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
 - [How To Configure Google Analytics Alternative For Gdpr Compl](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)

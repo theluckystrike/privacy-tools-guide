@@ -256,7 +256,7 @@ cat /etc/resolv.conf
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best VPN for Accessing Amazon Prime Video Different Regions](/privacy-tools-guide/best-vpn-for-accessing-amazon-prime-video-different-regions/)
 - [Configure Little Snitch On Macos To Block All Unnecessary Outbound Connections](/privacy-tools-guide/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)

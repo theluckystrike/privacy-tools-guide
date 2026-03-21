@@ -222,7 +222,7 @@ Test both platforms with your specific use case—file types, user count, and in
 
 
 
-## Related Articles
+## Related Reading
 
 - [Self Hosted Cloud Storage Comparison Nextcloud vs.](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)

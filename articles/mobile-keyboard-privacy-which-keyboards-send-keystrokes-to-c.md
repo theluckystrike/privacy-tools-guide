@@ -293,7 +293,7 @@ for keyboard, config in configs.items():
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
 - [Prevent Android Keyboard From Sending Typing Data To Google Or Samsung](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)

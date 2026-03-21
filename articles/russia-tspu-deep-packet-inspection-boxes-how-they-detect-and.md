@@ -207,7 +207,7 @@ sudo tcpdump -i any -c 100 -A | grep -i "tls|https"
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [VPN MSS Clamping Explained: Fixing Packet Size Related.](/privacy-tools-guide/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)

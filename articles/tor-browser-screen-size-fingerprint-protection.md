@@ -398,7 +398,7 @@ Choose your protection level based on:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)

@@ -187,7 +187,7 @@ Regular security audits help identify vulnerabilities before adversaries exploit
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
 - [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)

@@ -369,7 +369,7 @@ When third parties require vault access:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Password Manager Across Work And Personal Devices](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)
 - [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)

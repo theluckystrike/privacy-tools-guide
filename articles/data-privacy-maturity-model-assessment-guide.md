@@ -444,7 +444,7 @@ Track consent rate (percentage of users with valid, current consent), data subje
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)

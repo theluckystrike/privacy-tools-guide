@@ -509,7 +509,7 @@ This takes 10-15 seconds. Wait for complete shutdown.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 - [How to Use Tails OS for Maximum Privacy Complete Setup Guide](/privacy-tools-guide/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)

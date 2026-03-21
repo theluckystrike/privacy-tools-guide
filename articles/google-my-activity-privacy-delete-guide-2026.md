@@ -203,7 +203,7 @@ class PrivacyconsciousAnalytics:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)

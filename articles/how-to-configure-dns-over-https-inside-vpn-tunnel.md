@@ -355,7 +355,7 @@ bogus-priv
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)

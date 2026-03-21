@@ -223,7 +223,7 @@ Self-hosting SafeNote gives you transparency over how your data is handled, whil
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Throwaway Email Accounts Safely For One Time S](/privacy-tools-guide/how-to-create-throwaway-email-accounts-safely-for-one-time-s/)
 - [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)

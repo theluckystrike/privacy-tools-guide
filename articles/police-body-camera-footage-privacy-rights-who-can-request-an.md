@@ -192,7 +192,7 @@ Several practical challenges affect request outcomes:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)

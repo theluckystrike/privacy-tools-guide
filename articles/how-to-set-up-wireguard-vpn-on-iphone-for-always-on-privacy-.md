@@ -173,7 +173,7 @@ Also ensure your iPhone's remaining security settings are appropriate for your t
 **
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)

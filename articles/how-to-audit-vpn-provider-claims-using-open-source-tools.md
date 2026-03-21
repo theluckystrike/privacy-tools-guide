@@ -207,7 +207,7 @@ After running tests, evaluate your VPN provider honestly:
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)

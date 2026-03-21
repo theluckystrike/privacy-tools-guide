@@ -195,7 +195,7 @@ app.use((req, res, next) => {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Proton Drive Review: Honest Assessment 2026](/privacy-tools-guide/proton-drive-review-honest-assessment-2026/)
 - [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)

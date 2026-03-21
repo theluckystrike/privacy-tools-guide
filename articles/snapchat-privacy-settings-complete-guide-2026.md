@@ -188,7 +188,7 @@ Use this checklist to audit your Snapchat privacy configuration:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)

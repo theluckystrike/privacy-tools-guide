@@ -194,7 +194,7 @@ Self-hosted solutions give you control but transfer compliance responsibility en
 
 
 
-## Related Articles
+## Related Reading
 
 - [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
 - [Best Mouse Pad For Wrist Support During Long Coding Sessions](/privacy-tools-guide/best-mouse-pad-for-wrist-support-during-long-coding-sessions/)

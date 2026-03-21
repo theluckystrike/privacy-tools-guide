@@ -214,7 +214,7 @@ curl -X POST https://your-server.example.com/checkin \
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 - [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)

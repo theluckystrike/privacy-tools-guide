@@ -302,7 +302,7 @@ This check combines DNS, SSL certificate, and pattern matching to identify cloak
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 - [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)

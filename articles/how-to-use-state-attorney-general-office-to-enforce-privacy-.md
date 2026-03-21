@@ -203,7 +203,7 @@ State attorneys general remain powerful allies in enforcing your privacy rights.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
 - [How To Opt Out Of Targeted Advertising Under State Privacy L](/privacy-tools-guide/how-to-opt-out-of-targeted-advertising-under-state-privacy-l/)

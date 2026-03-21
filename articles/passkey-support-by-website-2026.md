@@ -196,7 +196,7 @@ The passkey ecosystem in 2026 offers security for most use cases. While some edg
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Mouse Pad For Wrist Support During Long Coding Sessions](/privacy-tools-guide/best-mouse-pad-for-wrist-support-during-long-coding-sessions/)
 - [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)

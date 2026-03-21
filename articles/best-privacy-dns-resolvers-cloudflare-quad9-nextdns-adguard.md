@@ -548,7 +548,7 @@ Resolve-DnsName google.com
 - Visit https://dns.nextdns.io/ (shows if NextDNS active)
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)

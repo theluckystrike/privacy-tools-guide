@@ -223,7 +223,7 @@ Understanding these collection practices helps you make informed decisions about
 
 
 
-## Related Articles
+## Related Reading
 
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)

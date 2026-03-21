@@ -273,7 +273,7 @@ Regularly review your poster settings, especially after iOS updates that may int
 
 
 
-## Related Articles
+## Related Reading
 
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
 - [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)

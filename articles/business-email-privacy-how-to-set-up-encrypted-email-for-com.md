@@ -188,7 +188,7 @@ tar -czf - .gnupg | gpg --symmetric --cipher-algo AES256 --output backup-$(date 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Email for Business 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-email-for-business-2026/)
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)

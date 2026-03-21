@@ -381,7 +381,7 @@ Remember: Perfect security doesn't exist. Your goal is making surveillance more 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)

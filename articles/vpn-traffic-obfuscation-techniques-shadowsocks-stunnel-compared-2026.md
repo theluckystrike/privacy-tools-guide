@@ -419,7 +419,7 @@ Understanding both tools deeply enables informed decisions about obfuscation str
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)

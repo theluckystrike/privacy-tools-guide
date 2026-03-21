@@ -182,7 +182,7 @@ Developers can examine the source code on GitHub to understand the exact securit
 
 
 
-## Related Articles
+## Related Reading
 
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)

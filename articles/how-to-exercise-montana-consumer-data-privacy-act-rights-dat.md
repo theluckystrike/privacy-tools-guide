@@ -240,7 +240,7 @@ The MCDPA gives you real power over your personal information. Use these rights 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
 - [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)

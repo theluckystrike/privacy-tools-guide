@@ -182,7 +182,7 @@ Third, maintain situational awareness. Before connecting to any network, observe
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wifi Deauthentication Attack Detection How To Identify And P](/privacy-tools-guide/wifi-deauthentication-attack-detection-how-to-identify-and-p/)
 - [Protect Yourself from Credential Stuffing Attack](/privacy-tools-guide/how-to-protect-yourself-from-credential-stuffing-attack-pass/)

@@ -349,7 +349,7 @@ Enable this in your password manager's advanced settings so that if something ha
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager For Couple Sharing Streaming Accounts Secur](/privacy-tools-guide/password-manager-for-couple-sharing-streaming-accounts-secur/)
 - [Password Manager For Shared Accounts Between Roommates.](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)

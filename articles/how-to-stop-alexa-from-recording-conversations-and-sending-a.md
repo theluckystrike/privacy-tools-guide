@@ -174,7 +174,7 @@ For sensitive conversations, muting the device is the only 100% reliable method 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Prevent Android Keyboard From Sending Typing Data To Google Or Samsung](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)

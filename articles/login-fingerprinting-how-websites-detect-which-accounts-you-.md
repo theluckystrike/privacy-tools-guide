@@ -202,7 +202,7 @@ For developers, implementing proper rate limiting, using generic error messages,
 
 
 
-## Related Articles
+## Related Reading
 
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 - [Timezone Fingerprinting How Websites Determine Your Location](/privacy-tools-guide/timezone-fingerprinting-how-websites-determine-your-location/)

@@ -214,7 +214,7 @@ Understanding Iran's smart filtering infrastructure is the first step toward bui
 
 
 
-## Related Articles
+## Related Reading
 
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
 - [Iran Whatsapp Restrictions How Government Monitors And Limit](/privacy-tools-guide/iran-whatsapp-restrictions-how-government-monitors-and-limit/)

@@ -199,7 +199,7 @@ This consistency across sessions is exactly what Tor Browser intends. The goal i
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [Tor Browser Font Fingerprinting Protection](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)

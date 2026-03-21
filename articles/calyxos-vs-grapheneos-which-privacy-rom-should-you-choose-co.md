@@ -261,7 +261,7 @@ For developers testing privacy-sensitive applications, GrapheneOS's binary allow
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
 - [GrapheneOS vs Stock Pixel: What Google Collects on.](/privacy-tools-guide/grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/)

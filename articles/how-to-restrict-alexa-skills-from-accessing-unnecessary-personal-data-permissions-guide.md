@@ -294,7 +294,7 @@ Many power users maintain a spreadsheet tracking each skill, its permissions, an
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
 - [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)

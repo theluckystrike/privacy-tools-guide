@@ -198,7 +198,7 @@ Periodically rotating virtual phone numbers enhances long-term privacy:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [Prevent Screenshots of Dating Conversations from Being Shared Without Your Co...](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)

@@ -222,7 +222,7 @@ The initial configuration requires attention to detail, but the resulting protec
 
 
 
-## Related Articles
+## Related Reading
 
 - [Session Messenger Decentralized Onion Routing How It Protect](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)
 - [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)

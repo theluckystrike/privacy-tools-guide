@@ -339,7 +339,7 @@ Help executives understand the decision:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)

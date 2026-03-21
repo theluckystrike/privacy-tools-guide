@@ -269,7 +269,7 @@ def create_verification_record(name):
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
 - [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)

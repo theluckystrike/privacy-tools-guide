@@ -378,7 +378,7 @@ For users in jurisdictions with aggressive data access laws, Tutanota's model pr
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
 - [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)

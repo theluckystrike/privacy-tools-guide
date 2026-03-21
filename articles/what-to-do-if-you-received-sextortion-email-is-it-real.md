@@ -188,7 +188,7 @@ Schedule this to run weekly via cron.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [Okcupid Data Sharing History What Third Parties Received Use](/privacy-tools-guide/okcupid-data-sharing-history-what-third-parties-received-use/)

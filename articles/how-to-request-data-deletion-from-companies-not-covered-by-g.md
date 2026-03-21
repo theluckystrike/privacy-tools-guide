@@ -276,7 +276,7 @@ I reserve all rights under applicable privacy laws and expect good-faith complia
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Request Algorithmic Transparency From Companies Makin](/privacy-tools-guide/how-to-request-algorithmic-transparency-from-companies-makin/)
 - [Ledger Data Breach Lessons How Hardware Wallet Companies Can](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)

@@ -211,7 +211,7 @@ Even with external impersonation, secure your own accounts:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)

@@ -204,7 +204,7 @@ Both provide genuine end-to-end encryption—a meaningful improvement over conve
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)

@@ -256,7 +256,7 @@ For developers building applications that need to work in censored environments:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best VPN for Using Google in China Without Detection](/privacy-tools-guide/best-vpn-for-using-google-in-china-without-detection/)
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)

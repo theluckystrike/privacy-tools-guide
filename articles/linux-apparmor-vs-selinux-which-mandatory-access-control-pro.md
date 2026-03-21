@@ -234,7 +234,7 @@ Full-disk encryption protects you from physical theft but not from a running sys
 
 
 
-## Related Articles
+## Related Reading
 
 - [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)
 - [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)

@@ -207,7 +207,7 @@ Building trust in dating applications requires prioritizing user privacy over ad
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)

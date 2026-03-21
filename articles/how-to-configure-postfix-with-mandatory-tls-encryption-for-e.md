@@ -194,7 +194,7 @@ sudo update-ca-certificates
 
 
 
-## Related Articles
+## Related Reading
 
 - [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
 - [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)

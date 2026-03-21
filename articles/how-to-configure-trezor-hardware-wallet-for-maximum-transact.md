@@ -216,7 +216,7 @@ Cloudflare (1.1.1.1) and Quad9 (9.9.9.9) both offer strong privacy policies and 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)

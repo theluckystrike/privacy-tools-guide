@@ -203,7 +203,7 @@ Common issues and solutions:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)

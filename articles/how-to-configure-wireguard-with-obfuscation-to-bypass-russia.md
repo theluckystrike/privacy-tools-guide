@@ -274,7 +274,7 @@ sudo tail -f /var/log/syslog | grep udp2tcp
 
 
 
-## Related Articles
+## Related Reading
 
 - [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
 - [Does Surfshark Obfuscation Work In China 2026 Mobile Test](/privacy-tools-guide/does-surfshark-obfuscation-work-in-china-2026-mobile-test/)

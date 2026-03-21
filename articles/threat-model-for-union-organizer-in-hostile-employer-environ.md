@@ -199,7 +199,7 @@ Document these reviews and adjust countermeasures accordingly. Security is an on
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)

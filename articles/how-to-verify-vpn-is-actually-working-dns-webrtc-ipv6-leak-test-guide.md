@@ -449,7 +449,7 @@ Result: **ExpressVPN working correctly, no leaks detected.**
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)

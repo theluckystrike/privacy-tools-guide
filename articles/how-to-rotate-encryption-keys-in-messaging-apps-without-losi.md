@@ -219,7 +219,7 @@ Custom apps: Display explicit "Key rotated" banner with verification option
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
 - [Post Quantum Encryption In Messaging Apps Preparing For Quan](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)

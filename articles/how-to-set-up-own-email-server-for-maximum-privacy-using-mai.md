@@ -206,7 +206,7 @@ Your email infrastructure now operates under your terms, free from algorithmic p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)

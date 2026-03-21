@@ -259,7 +259,7 @@ Secure credential management protects not just your agency but also your clients
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager For Insurance Agent Managing Carrier Portal](/privacy-tools-guide/password-manager-for-insurance-agent-managing-carrier-portal/)
 - [Password Manager For Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)

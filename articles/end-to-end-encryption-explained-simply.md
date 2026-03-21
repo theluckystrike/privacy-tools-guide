@@ -341,7 +341,7 @@ Many services claim E2EE while implementing weak forms or systems with backdoors
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)

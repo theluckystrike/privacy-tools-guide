@@ -215,7 +215,7 @@ Check which accounts have 2FA enabled (and which don't) at `https://2fa.director
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
 - [ProtonMail Two-Factor Authentication Guide](/privacy-tools-guide/protonmail-two-factor-authentication-guide/)

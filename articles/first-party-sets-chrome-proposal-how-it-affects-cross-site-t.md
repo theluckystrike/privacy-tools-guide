@@ -182,7 +182,7 @@ The era of frictionless cross-site tracking is ending. First Party Sets offer a 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 - [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)

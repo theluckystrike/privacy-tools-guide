@@ -394,7 +394,7 @@ If fingerprinting detection shows persistent identifiers:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [Tor Browser Font Fingerprinting Protection](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)

@@ -238,7 +238,7 @@ Before deploying organization-wide, verify that:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Stalking Victim Digital Prot](/privacy-tools-guide/privacy-setup-for-stalking-victim--digital-prot/)
 - [Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)

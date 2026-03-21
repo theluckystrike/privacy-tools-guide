@@ -214,7 +214,7 @@ veracrypt --create --size=500M --volume-type=normal \
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)

@@ -251,7 +251,7 @@ While VPNs are legal in India for legitimate purposes, using them to bypass gove
 
 
 
-## Related Articles
+## Related Reading
 
 - [Russia Vpn Ban Which Services Still Work After Roskomnadzor](/privacy-tools-guide/russia-vpn-ban-which-services-still-work-after-roskomnadzor-/)
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)

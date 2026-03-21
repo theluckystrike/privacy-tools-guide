@@ -184,7 +184,7 @@ Signal provides an Android Service Library for developers integrating secure mes
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted SMS Alternatives for When Data Connection Is.](/privacy-tools-guide/encrypted-sms-alternatives-for-when-data-connection-is-not-a/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)

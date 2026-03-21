@@ -304,7 +304,7 @@ Re-enable this setting only for tabs where you actively use video or voice calli
 
 
 
-## Related Articles
+## Related Reading
 
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
 - [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)

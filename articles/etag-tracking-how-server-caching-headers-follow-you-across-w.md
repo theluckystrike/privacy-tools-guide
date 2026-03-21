@@ -199,7 +199,7 @@ The key takeaway: ETags are a legitimate caching optimization that becomes a tra
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn Server Load Balancing How Providers Distribute Users.](/privacy-tools-guide/vpn-server-load-balancing-how-providers-distribute-users-across-servers/)
 - [Bounce Tracking How Redirects Through Tracker Domains Follow](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)

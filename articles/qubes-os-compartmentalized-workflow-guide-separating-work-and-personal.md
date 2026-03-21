@@ -277,7 +277,7 @@ If copy-paste between qubes fails:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
 - [How To Use Password Manager Across Work And Personal Devices](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)

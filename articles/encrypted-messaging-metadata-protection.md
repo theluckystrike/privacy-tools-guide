@@ -174,7 +174,7 @@ For developers building custom solutions, libsodium provides the cryptographic p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
 - [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)

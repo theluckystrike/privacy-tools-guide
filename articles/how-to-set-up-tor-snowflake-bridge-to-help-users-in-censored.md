@@ -176,7 +176,7 @@ The Snowflake project maintains a list of public proxies at snowflake.torproject
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
 - [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)

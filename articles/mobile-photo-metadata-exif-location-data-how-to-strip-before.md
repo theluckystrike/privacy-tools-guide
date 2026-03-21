@@ -271,7 +271,7 @@ This allows quick GPS removal from the current directory with a single command.
 
 
 
-## Related Articles
+## Related Reading
 
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)

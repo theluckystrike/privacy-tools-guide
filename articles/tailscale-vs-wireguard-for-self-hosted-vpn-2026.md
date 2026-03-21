@@ -270,7 +270,7 @@ For privacy-sensitive workloads where node metadata should not leave your infras
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)

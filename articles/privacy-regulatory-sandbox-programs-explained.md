@@ -219,7 +219,7 @@ Privacy regulatory sandbox programs continue expanding as regulators seek balanc
 
 
 
-## Related Articles
+## Related Reading
 
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 - [Privacy Seal Certification Programs Comparison](/privacy-tools-guide/privacy-seal-certification-programs-comparison/)

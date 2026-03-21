@@ -287,7 +287,7 @@ Save this as `Set-TelemetryFirewall.ps1` and run with `-RemoveRules` to revert.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 - [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)

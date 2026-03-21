@@ -197,7 +197,7 @@ If you've lost access to your old number:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Prevent Screenshots of Dating Conversations from Being Shared Without Your Co...](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
 - [Use Virtual Phone Number For Whatsapp Dating Conversations](/privacy-tools-guide/how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/)

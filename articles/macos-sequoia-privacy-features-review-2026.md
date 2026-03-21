@@ -346,7 +346,7 @@ Run this audit quarterly to identify permission creep over time.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)

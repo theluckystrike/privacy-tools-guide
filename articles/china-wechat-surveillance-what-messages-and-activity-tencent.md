@@ -179,7 +179,7 @@ For sensitive communications, Signal, Telegram (with caution), or other encrypte
 
 
 
-## Related Articles
+## Related Reading
 
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
 - [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)

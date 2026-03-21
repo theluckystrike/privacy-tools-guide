@@ -337,7 +337,7 @@ Provide diagnostic information:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How VPN Subnet Conflicts Happen and How to Fix Them](/privacy-tools-guide/how-vpn-subnet-conflicts-happen-and-how-to-fix-them/)
 - [VPN MSS Clamping Explained: Fixing Packet Size Related.](/privacy-tools-guide/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)

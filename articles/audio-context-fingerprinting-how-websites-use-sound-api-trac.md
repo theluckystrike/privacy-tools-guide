@@ -189,7 +189,7 @@ Developers building legitimate audio applications should minimize privacy risks:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Login Fingerprinting How Websites Detect Which Accounts You](/privacy-tools-guide/login-fingerprinting-how-websites-detect-which-accounts-you-/)
 - [Timezone Fingerprinting How Websites Determine Your Location](/privacy-tools-guide/timezone-fingerprinting-how-websites-determine-your-location/)

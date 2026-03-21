@@ -213,7 +213,7 @@ When implementing email aliasing in production environments:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)

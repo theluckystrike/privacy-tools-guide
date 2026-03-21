@@ -226,7 +226,7 @@ The privacy you achieve comes from understanding your system rather than trustin
 
 
 
-## Related Articles
+## Related Reading
 
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
 - [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)

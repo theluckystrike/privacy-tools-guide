@@ -321,7 +321,7 @@ The goal is not paranoia but disciplined verification. Regular audits catch comp
 
 
 
-## Related Articles
+## Related Reading
 
 - [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)

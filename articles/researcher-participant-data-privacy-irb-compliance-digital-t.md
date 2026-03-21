@@ -244,7 +244,7 @@ Before launching data collection, verify these requirements:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)
 - [Researcher Data Ethics Guide 2026](/privacy-tools-guide/researcher-data-ethics-guide-2026/)

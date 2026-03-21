@@ -250,7 +250,7 @@ The transition from Windows to Linux requires adjustment, but the privacy benefi
 
 
 
-## Related Articles
+## Related Reading
 
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
 - [Github Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)

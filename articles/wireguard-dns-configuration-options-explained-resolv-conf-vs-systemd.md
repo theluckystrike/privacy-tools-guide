@@ -221,7 +221,7 @@ Proper DNS configuration completes your WireGuard privacy setup. Whether you cho
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)

@@ -222,7 +222,7 @@ Document policy changes with version control and maintain a changelog showing wh
 
 
 
-## Related Articles
+## Related Reading
 
 - [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
 - [Data Retention Policy Template for Startups](/privacy-tools-guide/data-retention-policy-template-for-startups/)

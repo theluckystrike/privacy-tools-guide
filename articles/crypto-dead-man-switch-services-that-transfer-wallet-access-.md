@@ -186,7 +186,7 @@ Regardless of implementation choice, follow these security practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)

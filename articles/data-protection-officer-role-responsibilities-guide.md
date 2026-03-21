@@ -301,7 +301,7 @@ class ComplianceAutomation:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Protection Officer Role Responsibilities When Your.](/privacy-tools-guide/data-protection-officer-role-responsibilities-when-your-business-needs-one-guide/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

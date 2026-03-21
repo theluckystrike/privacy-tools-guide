@@ -258,7 +258,7 @@ After migration, enhance your security posture:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Password Manager Vs Dedicated App](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
 - [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)

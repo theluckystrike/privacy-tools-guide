@@ -241,7 +241,7 @@ In benchmark tests, Brave loads tracker-heavy sites 30-40% faster due to blocked
 
 
 
-## Related Articles
+## Related Reading
 
 - [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
 - [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)

@@ -203,7 +203,7 @@ The migration process, while requiring some technical steps, provides an opportu
 
 
 
-## Related Articles
+## Related Reading
 
 - [Migrating from LastPass to Bitwarden No Data Loss](/privacy-tools-guide/migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/)
 - [Sticky Password Review 2026: A Developer's Perspective](/privacy-tools-guide/sticky-password-review-2026/)

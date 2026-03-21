@@ -461,7 +461,7 @@ Most people keep both services running during transition.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
 - [Secure Email Forwarding With Encryption How To Set Up Anonad](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)

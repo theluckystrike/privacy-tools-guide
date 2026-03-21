@@ -227,7 +227,7 @@ Also enable login notifications in your email provider's security settings — m
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
 - [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)

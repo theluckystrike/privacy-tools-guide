@@ -410,7 +410,7 @@ Based on Proton's development patterns, expect these features in late 2026:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Proton Pass Vs Bitwarden Review](/privacy-tools-guide/proton-pass-vs-bitwarden-review/)
 - [Proton Pass vs Bitwarden Security Comparison for Developers](/privacy-tools-guide/proton-pass-vs-bitwarden-security-comparison/)

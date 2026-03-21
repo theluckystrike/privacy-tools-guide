@@ -232,7 +232,7 @@ class GuestDataRetention:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Library Patron Privacy Rights What Information Libraries Can](/privacy-tools-guide/library-patron-privacy-rights-what-information-libraries-can/)
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)

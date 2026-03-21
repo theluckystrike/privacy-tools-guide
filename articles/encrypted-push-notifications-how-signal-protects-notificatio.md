@@ -291,7 +291,7 @@ Formal security audits by third parties (like those performed by Open Whisper Sy
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)

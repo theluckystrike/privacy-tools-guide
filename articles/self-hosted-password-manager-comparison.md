@@ -234,7 +234,7 @@ Regardless of which option you pick:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
 - [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)

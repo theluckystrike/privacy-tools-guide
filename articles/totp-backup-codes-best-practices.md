@@ -423,7 +423,7 @@ This level of documentation becomes important for security audits and compliance
 
 
 
-## Related Articles
+## Related Reading
 
 - [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
 - [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)

@@ -180,7 +180,7 @@ Establish recovery procedures before operational need:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)

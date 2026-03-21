@@ -221,7 +221,7 @@ Prepare for potential device seizure:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Source Communicating With Journalist Anonym](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)

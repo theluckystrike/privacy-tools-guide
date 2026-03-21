@@ -195,7 +195,7 @@ You can enhance this basic implementation:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
 - [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)

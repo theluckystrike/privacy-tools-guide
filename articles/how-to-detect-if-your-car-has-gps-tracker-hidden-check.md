@@ -227,7 +227,7 @@ For those in high-risk situations—activists, journalists, individuals escaping
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
 - [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)

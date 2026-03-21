@@ -213,7 +213,7 @@ EOF
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)

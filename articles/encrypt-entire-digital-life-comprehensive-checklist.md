@@ -703,7 +703,7 @@ Annual:
 ```
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
 - [Privacy Setup For Stalking Victim Digital Prot](/privacy-tools-guide/privacy-setup-for-stalking-victim--digital-prot/)

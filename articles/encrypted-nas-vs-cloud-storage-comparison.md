@@ -189,7 +189,7 @@ echo "Cloud backup: $(rclone lsl cloud:projects-backup | wc -l) files"
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)

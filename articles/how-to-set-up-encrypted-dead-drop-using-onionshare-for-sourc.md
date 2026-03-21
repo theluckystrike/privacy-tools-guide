@@ -201,7 +201,7 @@ done
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)

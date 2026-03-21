@@ -275,7 +275,7 @@ For most developers, rclone provides the best balance of automation and security
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Encrypt Files Before Cloud Upload](/privacy-tools-guide/how-to-encrypt-files-before-cloud-upload/)
 - [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)

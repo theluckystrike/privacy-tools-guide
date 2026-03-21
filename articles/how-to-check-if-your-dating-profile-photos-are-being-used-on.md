@@ -190,7 +190,7 @@ For developers, the Python-based approach using perceptual hashing provides the 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [How to Check If Your Private Photos Were Leaked Online](/privacy-tools-guide/how-to-check-if-your-private-photos-were-leaked-online/)

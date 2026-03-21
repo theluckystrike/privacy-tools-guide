@@ -364,7 +364,7 @@ During estate administration, protect against identity theft:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 - [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)

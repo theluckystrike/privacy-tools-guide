@@ -200,7 +200,7 @@ Run this before connecting to your VPN, and it will block all traffic if the VPN
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
 - [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)

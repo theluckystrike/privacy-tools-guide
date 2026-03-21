@@ -294,7 +294,7 @@ Understanding persistent keepalive helps you make informed decisions about your 
 
 
 
-## Related Articles
+## Related Reading
 
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
 - [Tails Persistent Storage Setup Guide What To Save And What S](/privacy-tools-guide/tails-persistent-storage-setup-guide-what-to-save-and-what-s/)

@@ -392,7 +392,7 @@ Watch for these indicators that Tinder has excessive access:
 
 
 
-## Related Articles
+## Related Reading
 
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
 - [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)

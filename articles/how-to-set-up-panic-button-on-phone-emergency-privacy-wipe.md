@@ -281,7 +281,7 @@ For developers integrating these features into privacy-focused applications, con
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
 - [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)

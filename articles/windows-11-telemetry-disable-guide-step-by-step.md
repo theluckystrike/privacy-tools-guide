@@ -290,7 +290,7 @@ One important note: Disabling Update Orchestrator Service (`UsoSvc`) can interfe
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)

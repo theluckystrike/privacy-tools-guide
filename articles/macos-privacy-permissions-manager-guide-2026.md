@@ -383,7 +383,7 @@ Organizations can deploy standardized privacy configurations:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Macos Privacy Permissions Explained Which Tcc Database.](/privacy-tools-guide/macos-privacy-permissions-explained-which-tcc-database-entries-to-revoke-for-security/)
 - [Best Password Manager For Macos 2026](/privacy-tools-guide/best-password-manager-for-macos-2026/)

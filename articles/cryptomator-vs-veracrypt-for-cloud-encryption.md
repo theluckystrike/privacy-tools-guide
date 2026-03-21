@@ -266,7 +266,7 @@ The choice between Cryptomator and VeraCrypt ultimately depends on your specific
 
 
 
-## Related Articles
+## Related Reading
 
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
 - [Encrypted File Vault Inheritance Using Veracrypt With Split](/privacy-tools-guide/encrypted-file-vault-inheritance-using-veracrypt-with-split-/)

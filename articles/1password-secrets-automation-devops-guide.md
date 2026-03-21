@@ -250,7 +250,7 @@ Access auditing provides visibility into which automation systems accessed which
 
 
 
-## Related Articles
+## Related Reading
 
 - [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)

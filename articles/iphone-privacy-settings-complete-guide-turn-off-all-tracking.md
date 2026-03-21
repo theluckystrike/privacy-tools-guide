@@ -201,7 +201,7 @@ func removeTrackingParams(from url: URL) -> URL {
 
 
 
-## Related Articles
+## Related Reading
 
 - [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)

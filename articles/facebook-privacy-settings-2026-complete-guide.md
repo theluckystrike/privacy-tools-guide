@@ -182,7 +182,7 @@ FB.login(function(response) {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Facebook Marketplace Privacy Settings Guide](/privacy-tools-guide/facebook-marketplace-privacy-settings-guide/)
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)

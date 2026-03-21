@@ -399,7 +399,7 @@ The manufacturers who prioritize user privacy in spatial data handling will buil
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)

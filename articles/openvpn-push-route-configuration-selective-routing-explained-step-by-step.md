@@ -207,7 +207,7 @@ For maximum security, use the full tunnel unless you have specific requirements 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Openvpn Compression Vulnerability Voracle Attack Explained A](/privacy-tools-guide/openvpn-compression-vulnerability-voracle-attack-explained-a/)

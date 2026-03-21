@@ -470,7 +470,7 @@ Result: If anyone sees device, private communications are invisible, no badges r
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Iphone Focus Modes For Privacy How To Limit App Access By Co](/privacy-tools-guide/iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/)
 - [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)

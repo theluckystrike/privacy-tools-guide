@@ -197,7 +197,7 @@ The transition away from third-party cookies represents both a challenge and an 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)

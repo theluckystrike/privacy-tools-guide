@@ -479,7 +479,7 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)

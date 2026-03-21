@@ -207,7 +207,7 @@ These tools integrate with your VLAN architecture without requiring fundamental 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)

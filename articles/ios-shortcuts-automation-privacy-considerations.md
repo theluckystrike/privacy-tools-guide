@@ -250,7 +250,7 @@ iOS Shortcuts are powerful because they give users programmatic control. That po
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
 - [Best Browser for iOS Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-ios-privacy-2026/)

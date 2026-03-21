@@ -222,7 +222,7 @@ Google's solution handles one piece of the puzzle—coordinate it with broader d
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Automatic Account Deletion Triggers If You Bec](/privacy-tools-guide/how-to-set-up-automatic-account-deletion-triggers-if-you-bec/)
 - [Twitter X Account After Death: How to Request.](/privacy-tools-guide/twitter-x-account-after-death-how-to-request-memorialization/)

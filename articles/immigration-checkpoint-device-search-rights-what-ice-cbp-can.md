@@ -248,7 +248,7 @@ diff pre_travel_hashes.txt post_travel_hashes.txt
 
 
 
-## Related Articles
+## Related Reading
 
 - [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)

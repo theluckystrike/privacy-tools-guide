@@ -278,7 +278,7 @@ This documentation becomes evidence if you pursue legal action. Courts heavily w
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Social Media Privacy For Teenagers Guide 2026](/privacy-tools-guide/social-media-privacy-for-teenagers-guide-2026/)
 - [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)

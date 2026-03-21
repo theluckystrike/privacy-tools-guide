@@ -242,7 +242,7 @@ For developers and power users, the stakes extend beyond personal accounts. A co
 
 
 
-## Related Articles
+## Related Reading
 
 - [What Happens If You Click A Phishing Link On Chrome Steps](/privacy-tools-guide/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)
 - [What To Do If Your Personal Data Appears On People Search](/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/)

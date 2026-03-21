@@ -435,7 +435,7 @@ du -sh ./data/*
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 - [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)

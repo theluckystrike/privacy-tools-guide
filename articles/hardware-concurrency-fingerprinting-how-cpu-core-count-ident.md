@@ -184,7 +184,7 @@ The goal is making your core count appear common—typically 2-4 cores—rather 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
 - [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)

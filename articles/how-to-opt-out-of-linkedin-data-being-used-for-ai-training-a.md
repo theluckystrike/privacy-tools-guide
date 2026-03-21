@@ -202,7 +202,7 @@ LinkedIn's privacy policy specifies a designated privacy officer for such reques
 
 
 
-## Related Articles
+## Related Reading
 
 - [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)

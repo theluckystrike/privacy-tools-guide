@@ -196,7 +196,7 @@ All three platforms provide genuine privacy-focused alternatives to Google Analy
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 - [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)

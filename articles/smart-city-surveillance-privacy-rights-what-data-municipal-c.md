@@ -222,7 +222,7 @@ Remaining informed and advocating for transparent policies remains the most effe
 
 
 
-## Related Articles
+## Related Reading
 
 - [School Surveillance Technology Privacy](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
 - [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)

@@ -360,7 +360,7 @@ If you use multiple browsers, WebRTC disabling strategies vary:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)

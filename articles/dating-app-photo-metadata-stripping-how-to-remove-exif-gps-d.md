@@ -330,7 +330,7 @@ Stripping EXIF metadata from your dating app photos is a straightforward privacy
 
 
 
-## Related Articles
+## Related Reading
 
 - [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
 - [How to Remove EXIF Metadata from Photos Before Sharing: Complete Guide](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)

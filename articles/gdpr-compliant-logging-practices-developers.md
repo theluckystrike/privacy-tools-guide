@@ -205,7 +205,7 @@ The effort pays dividends beyond compliance — cleaner logs are easier to searc
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)

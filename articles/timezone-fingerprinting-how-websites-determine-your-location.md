@@ -415,7 +415,7 @@ Timezone detection may implicate privacy regulations:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 - [Login Fingerprinting How Websites Detect Which Accounts You](/privacy-tools-guide/login-fingerprinting-how-websites-detect-which-accounts-you-/)

@@ -182,7 +182,7 @@ This approach creates discoverable aliases that include service name, purpose, a
 
 
 
-## Related Articles
+## Related Reading
 
 - [WebRTC Local IP Leak: How It Reveals Your Real Address](/privacy-tools-guide/webrtc-local-ip-leak-how-it-reveals-your-real-address/)
 - [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)

@@ -258,7 +258,7 @@ Before deploying any system, verify these baseline requirements:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
 - [Privacy Setup for Political Campaign Worker](/privacy-tools-guide/privacy-setup-for-political-campaign-worker-protecting-voter/)

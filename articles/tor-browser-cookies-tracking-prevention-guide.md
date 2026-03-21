@@ -311,7 +311,7 @@ For users combining Tor Browser with Tor network, no single observer can correla
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)

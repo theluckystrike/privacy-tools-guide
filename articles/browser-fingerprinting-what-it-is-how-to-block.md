@@ -320,7 +320,7 @@ Monitor website functionality after enabling each protection. Some sites break w
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)

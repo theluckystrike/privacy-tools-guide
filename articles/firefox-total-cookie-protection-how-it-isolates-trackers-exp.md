@@ -274,7 +274,7 @@ While TCP is, it doesn't prevent:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Firefox Strict Tracking Protection Vs Custom](/privacy-tools-guide/firefox-strict-tracking-protection-vs-custom/)
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)

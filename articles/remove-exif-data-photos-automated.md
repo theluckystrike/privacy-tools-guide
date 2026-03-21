@@ -288,7 +288,7 @@ Online tools for verification (for spot-checks):
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Remove EXIF Metadata from Photos Before Sharing: Complete Guide](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)

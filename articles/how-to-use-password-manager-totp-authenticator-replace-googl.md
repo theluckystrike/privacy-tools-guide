@@ -362,7 +362,7 @@ Enforce TOTP for:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)

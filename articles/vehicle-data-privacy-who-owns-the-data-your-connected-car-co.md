@@ -186,7 +186,7 @@ The data your vehicle generates reveals intimate details about your life: where 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
 - [Anonymous Vehicle Registration Options For Keeping Home Addr](/privacy-tools-guide/anonymous-vehicle-registration-options-for-keeping-home-addr/)

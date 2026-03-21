@@ -234,7 +234,7 @@ The most effective protection combines technology with communication. Technical 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Protect Your Child From Online Predators Safety Setup](/privacy-tools-guide/how-to-protect-your-child-from-online-predators-safety-setup/)
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)

@@ -217,7 +217,7 @@ Browser developer tools also show the GPC header in the Network tab when making 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
 - [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)

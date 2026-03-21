@@ -192,7 +192,7 @@ Set up rate limiting and account lockout. Even strong passwords cannot compensat
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Policy Generator Tools Comparison: A Developer Guide](/privacy-tools-guide/privacy-policy-generator-tools-comparison/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

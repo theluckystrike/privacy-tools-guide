@@ -635,7 +635,7 @@ This handles:
 ```
 
 
-## Related Articles
+## Related Reading
 
 - [Nextcloud vs OwnCloud Self-Hosted Comparison](/privacy-tools-guide/nextcloud-vs-owncloud-self-hosted-comparison/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)

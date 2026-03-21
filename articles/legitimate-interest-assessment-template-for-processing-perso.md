@@ -228,7 +228,7 @@ In these cases, explicit consent is the safer path.
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
 - [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)

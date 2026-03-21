@@ -172,7 +172,7 @@ The difference between a well-handled breach and a problematic one often comes d
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)

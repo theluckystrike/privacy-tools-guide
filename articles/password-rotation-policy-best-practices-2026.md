@@ -233,7 +233,7 @@ Run periodic audits against this registry to identify neglected credentials.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wireguard Key Rotation Best Practices How Often To.](/privacy-tools-guide/wireguard-key-rotation-best-practices-how-often-to-regenerate/)
 - [Password Manager Clipboard Security Best Practices](/privacy-tools-guide/password-manager-clipboard-security-best-practices/)

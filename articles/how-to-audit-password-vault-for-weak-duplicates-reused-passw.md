@@ -285,7 +285,7 @@ Consider using a dedicated machine or container for auditing to isolate the proc
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
 - [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)

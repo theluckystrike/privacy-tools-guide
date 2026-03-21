@@ -395,7 +395,7 @@ Tails OS is designed for users who need maximum privacy and anonymity. The setup
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Tails OS for Maximum Anonymity](/privacy-tools-guide/how-to-use-tails-os-for-maximum-anonymity/)
 - [Tails Persistent Storage Setup Guide What To Save And What S](/privacy-tools-guide/tails-persistent-storage-setup-guide-what-to-save-and-what-s/)

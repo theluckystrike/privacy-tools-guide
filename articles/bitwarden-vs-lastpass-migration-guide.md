@@ -250,7 +250,7 @@ shred -u totp-seeds.txt
 
 
 
-## Related Articles
+## Related Reading
 
 - [Migrating from LastPass to Bitwarden No Data Loss](/privacy-tools-guide/migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/)
 - [Encrypted Cloud Storage Migration Guide Switching](/privacy-tools-guide/encrypted-cloud-storage-migration-guide-switching/)

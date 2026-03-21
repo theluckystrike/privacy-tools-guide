@@ -364,7 +364,7 @@ Best practices for implementation:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

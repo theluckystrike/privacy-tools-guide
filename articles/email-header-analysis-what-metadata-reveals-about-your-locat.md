@@ -189,7 +189,7 @@ For incident response, header timestamps provide precise event timing, while `Re
 
 
 
-## Related Articles
+## Related Reading
 
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
 - [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)

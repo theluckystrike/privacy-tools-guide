@@ -212,7 +212,7 @@ Five EFF words yield ~64 bits of entropy — equivalent to a 12-character random
 
 
 
-## Related Articles
+## Related Reading
 
 - [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)

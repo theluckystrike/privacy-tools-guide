@@ -174,7 +174,7 @@ End-to-end encrypted screen sharing requires trusting your tool's implementation
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)

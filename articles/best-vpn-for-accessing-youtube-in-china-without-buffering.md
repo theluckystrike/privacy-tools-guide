@@ -367,7 +367,7 @@ Run this script before conducting streaming tests to establish baseline optimize
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best VPN for Using Google in China Without Detection](/privacy-tools-guide/best-vpn-for-using-google-in-china-without-detection/)
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)

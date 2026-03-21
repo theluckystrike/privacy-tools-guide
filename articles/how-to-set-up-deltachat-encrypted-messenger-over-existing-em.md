@@ -326,7 +326,7 @@ Metadata—including subject lines, sender, and recipient addresses—remains vi
 
 
 
-## Related Articles
+## Related Reading
 
 - [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 - [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)

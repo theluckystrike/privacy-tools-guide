@@ -187,7 +187,7 @@ if __name__ == "__main__":
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)

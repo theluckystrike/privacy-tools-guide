@@ -197,7 +197,7 @@ macOS provides detailed privacy controls, but they require intentional configura
 
 
 
-## Related Articles
+## Related Reading
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)

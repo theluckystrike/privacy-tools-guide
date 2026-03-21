@@ -206,7 +206,7 @@ External storage excels in several developer-focused scenarios:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Self Hosted Cloud Storage Comparison Nextcloud vs.](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)

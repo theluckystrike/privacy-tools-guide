@@ -360,7 +360,7 @@ DPDPA implementation occurred in phases: April 2025 (core provisions), October 2
 
 
 
-## Related Articles
+## Related Reading
 
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

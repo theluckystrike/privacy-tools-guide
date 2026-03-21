@@ -238,7 +238,7 @@ Regardless of choice, enabling TOTP on critical accounts—GitHub, AWS, producti
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
 - [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)

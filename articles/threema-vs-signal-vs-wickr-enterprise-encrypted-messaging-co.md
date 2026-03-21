@@ -203,7 +203,7 @@ Each platform represents a different tradeoff between privacy, administrative co
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wickr vs Signal for Enterprise Use: A Technical Comparison](/privacy-tools-guide/wickr-vs-signal-for-enterprise-use/)
 - [Threema vs Signal Privacy Comparison 2026](/privacy-tools-guide/threema-vs-signal-privacy-comparison-2026/)

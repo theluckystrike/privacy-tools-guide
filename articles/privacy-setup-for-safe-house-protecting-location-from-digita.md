@@ -182,7 +182,7 @@ Implement these steps in order of impact:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)

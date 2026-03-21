@@ -428,7 +428,7 @@ Find-TeamsRecordings
 
 
 
-## Related Articles
+## Related Reading
 
 - [What To Do If You Accidentally Downloaded Malware On Mac](/privacy-tools-guide/what-to-do-if-you-accidentally-downloaded-malware-on-mac/)
 - [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)

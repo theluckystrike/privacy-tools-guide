@@ -339,7 +339,7 @@ Schedule this via cron to run weekly or monthly.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How Vpn Interacts With Firewall Rules Iptables Nftables.](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
 - [Bounce Tracking How Redirects Through Tracker Domains Follow](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)

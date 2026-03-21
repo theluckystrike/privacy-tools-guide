@@ -309,7 +309,7 @@ Alternatives like KeePassXC completely eliminate this risk by keeping data local
 
 
 
-## Related Articles
+## Related Reading
 
 - [Digital Power of Attorney: What Authority It Grants Over.](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
 - [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)

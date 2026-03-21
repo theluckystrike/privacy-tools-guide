@@ -183,7 +183,7 @@ If you discover leaks, several fixes are available:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)

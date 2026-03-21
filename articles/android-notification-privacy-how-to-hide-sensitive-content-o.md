@@ -207,7 +207,7 @@ When selecting third-party solutions, verify the app's privacy policy and ensure
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 - [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)

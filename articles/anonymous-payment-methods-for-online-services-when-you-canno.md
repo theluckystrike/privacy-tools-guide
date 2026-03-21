@@ -198,7 +198,7 @@ Consider your specific threat model. For pseudonymity (separate identity from ac
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)

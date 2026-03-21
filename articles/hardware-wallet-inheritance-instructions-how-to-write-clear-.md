@@ -328,7 +328,7 @@ The cost ($500-2,000 for professional planning) prevents infinitely more expensi
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)

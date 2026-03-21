@@ -185,7 +185,7 @@ class PrivacyAwareCallServer {
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Using WhatsApp Calls in Saudi Arabia 2026](/privacy-tools-guide/vpn-for-using-whatsapp-calls-in-saudi-arabia-2026/)
 - [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)

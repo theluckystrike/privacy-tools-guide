@@ -295,7 +295,7 @@ Bitwarden's zero-knowledge architecture means even their servers cannot read you
 
 
 
-## Related Articles
+## Related Reading
 
 - [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
 - [Migrating from LastPass to Bitwarden No Data Loss](/privacy-tools-guide/migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/)

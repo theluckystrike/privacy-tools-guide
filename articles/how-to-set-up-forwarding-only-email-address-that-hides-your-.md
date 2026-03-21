@@ -401,7 +401,7 @@ Store your forwarding email setup in a password manager alongside service creden
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Email Forwarding With Encryption How To Set Up Anonad](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)

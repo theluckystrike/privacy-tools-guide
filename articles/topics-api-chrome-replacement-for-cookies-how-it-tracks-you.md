@@ -216,7 +216,7 @@ The API's design includes some privacy safeguards: no user identifiers are share
 
 
 
-## Related Articles
+## Related Reading
 
 - [Attribution Reporting Api How Chrome Replaced Cookies For Ad](/privacy-tools-guide/attribution-reporting-api-how-chrome-replaced-cookies-for-ad/)
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)

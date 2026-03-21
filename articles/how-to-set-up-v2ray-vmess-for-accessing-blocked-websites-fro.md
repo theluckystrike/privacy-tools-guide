@@ -351,7 +351,7 @@ The configuration in this guide provides a foundation. As you become familiar wi
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Accessing US Pharmacy Websites from Europe Safely](/privacy-tools-guide/vpn-for-accessing-us-pharmacy-websites-from-europe-safely/)
 - [How To Use Trojan Gfw Proxy To Disguise Traffic As Https Fro](/privacy-tools-guide/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)

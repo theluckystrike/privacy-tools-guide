@@ -250,7 +250,7 @@ Understanding Tor circuit limitations helps you use it effectively:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)

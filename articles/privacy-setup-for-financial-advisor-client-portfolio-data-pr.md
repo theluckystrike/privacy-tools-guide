@@ -392,7 +392,7 @@ Maintain a current inventory of every third-party integration, what data it rece
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Accountant Handling Client Financial Data](/privacy-tools-guide/privacy-setup-for-accountant-handling-client-financial-data-/)
 - [Tax Preparer Client Financial Data Privacy IRS.](/privacy-tools-guide/tax-preparer-client-financial-data-privacy-irs-compliance-di/)

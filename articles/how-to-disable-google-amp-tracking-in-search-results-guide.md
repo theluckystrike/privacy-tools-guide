@@ -247,7 +247,7 @@ This layered approach ensures protection even if one method fails. For developer
 
 
 
-## Related Articles
+## Related Reading
 
 - [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)

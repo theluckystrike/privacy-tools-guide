@@ -262,7 +262,7 @@ dig +dnssec sigfail.verteiltesysteme.net
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)

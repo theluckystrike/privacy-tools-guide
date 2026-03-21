@@ -205,7 +205,7 @@ The privacy-utility balance depends on your threat model and use cases. MicroG e
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)

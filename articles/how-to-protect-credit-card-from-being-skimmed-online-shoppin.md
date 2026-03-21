@@ -276,7 +276,7 @@ Merchants demonstrating security awareness correlate with lower skimming risk. C
 
 
 
-## Related Articles
+## Related Reading
 
 - [What to Do If Your Credit Card Was Used Fraudulently Online](/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/)
 - [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)

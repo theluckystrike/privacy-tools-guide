@@ -191,7 +191,7 @@ The regulatory landscape continues evolving. Organizations that build assessment
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Privacy Maturity Model Assessment Guide](/privacy-tools-guide/data-privacy-maturity-model-assessment-guide/)
 - [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)

@@ -195,7 +195,7 @@ Spend time configuring your chosen browser properly, and the setup will serve bo
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 - [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)

@@ -270,7 +270,7 @@ Combining good browser choice with a VPN or Tor removes the network-layer correl
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)

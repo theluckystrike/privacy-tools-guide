@@ -314,7 +314,7 @@ Browser password managers fundamentally cannot support this workflow. They were 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
 - [Migrating From Chrome Saved Passwords To Dedicated Manager S](/privacy-tools-guide/migrating-from-chrome-saved-passwords-to-dedicated-manager-s/)

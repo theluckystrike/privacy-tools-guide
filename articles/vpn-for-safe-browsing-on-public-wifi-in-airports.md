@@ -346,7 +346,7 @@ Check with your IT department about approved VPN stacking configurations before 
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Safe Torrent Downloading While Living in Germany](/privacy-tools-guide/vpn-for-safe-torrent-downloading-while-living-in-germany/)
 - [VPN for Remote Desktop Connection from Hotel WiFi Safely](/privacy-tools-guide/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)

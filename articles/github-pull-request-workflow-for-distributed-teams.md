@@ -184,7 +184,7 @@ GitHub Insights provides built-in analytics, or integrate with tools like DevMet
 
 The key is continuous refinement—what works today may need adjustment as team composition and project needs evolve. Measure outcomes and adapt practices to fit the team's specific context.
 
-## Related Articles
+## Related Reading
 
 - [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
 - [Tahoe LAFS Distributed Encrypted Storage Guide](/privacy-tools-guide/tahoe-lafs-distributed-encrypted-storage-guide/)

@@ -236,7 +236,7 @@ Always verify that your chosen methods comply with:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Payment Methods For Online Services When You Canno](/privacy-tools-guide/anonymous-payment-methods-for-online-services-when-you-canno/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)

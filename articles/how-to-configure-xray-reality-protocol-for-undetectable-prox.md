@@ -211,7 +211,7 @@ To optimize throughput:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
 - [How To Set Up Tor Snowflake Bridge To Help Users In Censored](/privacy-tools-guide/how-to-set-up-tor-snowflake-bridge-to-help-users-in-censored/)

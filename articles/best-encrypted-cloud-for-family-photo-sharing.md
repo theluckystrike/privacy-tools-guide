@@ -197,7 +197,7 @@ Start with a provider offering a free trial, upload a few test photos, and verif
 
 
 
-## Related Articles
+## Related Reading
 
 - [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)
 - [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)

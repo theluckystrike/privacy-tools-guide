@@ -224,7 +224,7 @@ Several important considerations when deleting Facebook location data:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)

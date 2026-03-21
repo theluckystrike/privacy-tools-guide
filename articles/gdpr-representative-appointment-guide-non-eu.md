@@ -331,7 +331,7 @@ These roles can coexist and often work together during supervisory authority inq
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)

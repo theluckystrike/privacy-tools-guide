@@ -216,7 +216,7 @@ Each method involves trade-offs between convenience, fees, limits, and privacy. 
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN for Accessing Local Bank Account from Abroad Safely](/privacy-tools-guide/vpn-for-accessing-local-bank-account-from-abroad-safely/)
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)

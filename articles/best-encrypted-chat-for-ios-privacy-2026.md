@@ -383,7 +383,7 @@ WhatsApp's metadata collection makes it unsuitable for privacy-conscious users, 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)

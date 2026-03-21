@@ -252,7 +252,7 @@ No. iOS and iPadOS have a different architecture and different system paths. The
 
 
 
-## Related Articles
+## Related Reading
 
 - [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
 - [Dating App Location Spoofing How To Hide Real Position While](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)

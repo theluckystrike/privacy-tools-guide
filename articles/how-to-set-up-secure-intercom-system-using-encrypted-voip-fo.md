@@ -211,7 +211,7 @@ openssl x509 -in /etc/asterisk/asterisk.pem -noout -dates
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)

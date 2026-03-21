@@ -173,7 +173,7 @@ If you're concerned about video call privacy on Bumble:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
 - [Smart Doorbell Alternatives That Store Video Locally Without](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)

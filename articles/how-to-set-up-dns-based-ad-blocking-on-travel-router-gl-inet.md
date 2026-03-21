@@ -201,7 +201,7 @@ This setup is particularly valuable for sensitive browsing or when working remot
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
 - [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)

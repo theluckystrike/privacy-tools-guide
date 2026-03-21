@@ -182,7 +182,7 @@ curl -O https://download.tails.net/tails/stable/tails-amd64-6.2/tails-amd64-6.2.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Tor Safely in Country That Criminalizes Its Use](/privacy-tools-guide/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
 - [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)

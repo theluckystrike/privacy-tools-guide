@@ -349,7 +349,7 @@ These limitations don't negate Blur's value but should inform your threat model.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
 - [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)

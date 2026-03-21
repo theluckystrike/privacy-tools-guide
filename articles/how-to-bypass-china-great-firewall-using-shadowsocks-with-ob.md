@@ -243,7 +243,7 @@ For persistent connectivity issues, try switching from TLS obfuscation to HTTP m
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn Port Selection Which Ports Bypass Most Firewall.](/privacy-tools-guide/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)

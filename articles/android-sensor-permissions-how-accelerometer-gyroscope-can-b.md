@@ -201,7 +201,7 @@ For users concerned about motion sensor tracking:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/privacy-tools-guide/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)

@@ -303,7 +303,7 @@ MONTHLY_TASKS = """
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)

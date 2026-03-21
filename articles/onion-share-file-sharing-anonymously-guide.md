@@ -238,7 +238,7 @@ echo "Backup available at: $ONION_URL"
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)

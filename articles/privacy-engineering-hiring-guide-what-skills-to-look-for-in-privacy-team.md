@@ -189,7 +189,7 @@ The right privacy engineer doesn't just implement checkbox compliance—they bui
 
 
 
-## Related Articles
+## Related Reading
 
 - [Complete Guide To Social Engineering Defense Protecting Pers](/privacy-tools-guide/complete-guide-to-social-engineering-defense-protecting-pers/)
 - [Restrict Alexa Skills From Accessing Unnecessary Personal Data Permissions](/privacy-tools-guide/how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/)

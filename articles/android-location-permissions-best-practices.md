@@ -230,7 +230,7 @@ Frequent location updates in the background trigger battery drain warnings and p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

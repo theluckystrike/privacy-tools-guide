@@ -256,7 +256,7 @@ When implementing this system, keep these points in mind:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)

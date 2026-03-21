@@ -261,7 +261,7 @@ The peace of mind this system provides comes from knowing that your digital asse
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 - [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)

@@ -181,7 +181,7 @@ The path to algorithmic accountability runs through informed individuals exercis
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [Ios App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)

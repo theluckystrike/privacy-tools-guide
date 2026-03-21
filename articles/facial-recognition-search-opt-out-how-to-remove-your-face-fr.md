@@ -178,7 +178,7 @@ The technical landscape of facial recognition search continues evolving. New ser
 
 
 
-## Related Articles
+## Related Reading
 
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 - [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)

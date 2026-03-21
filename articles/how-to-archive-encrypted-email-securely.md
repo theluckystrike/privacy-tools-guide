@@ -214,7 +214,7 @@ Test recovery on a clean system at least once to ensure your documentation is ac
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Email Service 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-email-service-2026/)
 - [How To Share Passwords Securely With Team Using Encrypted Co](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)

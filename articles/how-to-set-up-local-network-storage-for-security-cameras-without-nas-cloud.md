@@ -301,7 +301,7 @@ Regular maintenance tasks include:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
 - [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)

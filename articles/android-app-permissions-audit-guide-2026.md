@@ -218,7 +218,7 @@ Implement these practices to maintain tight permission control:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)

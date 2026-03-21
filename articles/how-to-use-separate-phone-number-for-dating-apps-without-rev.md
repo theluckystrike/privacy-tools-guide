@@ -300,7 +300,7 @@ Phone number separation forms one layer of a dating privacy strategy. Supplement
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)

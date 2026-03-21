@@ -192,7 +192,7 @@ Configure your application to use `localhost:8080` as a SOCKS5 proxy.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best VPN for Accessing Brazilian Streaming Globoplay.](/privacy-tools-guide/best-vpn-for-accessing-brazilian-streaming-globoplay-from-abroad/)
 - [Best VPN for Accessing Japanese Streaming Services From.](/privacy-tools-guide/best-vpn-for-accessing-japanese-streaming-services-from-abro/)

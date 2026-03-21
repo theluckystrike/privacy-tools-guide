@@ -191,7 +191,7 @@ While complete data protection requires avoiding dating apps entirely, several m
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)

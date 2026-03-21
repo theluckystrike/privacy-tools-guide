@@ -375,7 +375,7 @@ This documentation protects you legally and helps insurers validate claims.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Handle Password Manager When Switching Phones Android](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
 - [What To Do If Ransomware Locks Your Computer Immediate Steps](/privacy-tools-guide/what-to-do-if-ransomware-locks-your-computer-immediate-steps/)

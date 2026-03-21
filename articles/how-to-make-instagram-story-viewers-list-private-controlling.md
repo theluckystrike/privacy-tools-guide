@@ -350,7 +350,7 @@ Trade-offs: Different purpose (time-based rather than topical), smaller network.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Encrypted Mailing List For Private Group Commu](/privacy-tools-guide/how-to-create-encrypted-mailing-list-for-private-group-commu/)
 - [How To Make Facebook Profile Private 2026](/privacy-tools-guide/how-to-make-facebook-profile-private-2026/)

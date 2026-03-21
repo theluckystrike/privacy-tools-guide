@@ -273,7 +273,7 @@ Many jurisdictions now have streamlined online complaint systems that take 5-10 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)

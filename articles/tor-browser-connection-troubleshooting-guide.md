@@ -243,7 +243,7 @@ Most connection issues resolve with proper bridge configuration or firewall adju
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 - [VPN Connection Timeout Troubleshooting](/privacy-tools-guide/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)

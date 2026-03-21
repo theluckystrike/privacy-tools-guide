@@ -171,7 +171,7 @@ Regularly audit your privacy settings, as Windows updates sometimes reset these 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)

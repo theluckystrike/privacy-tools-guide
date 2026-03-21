@@ -215,7 +215,7 @@ The practical takeaway is clear: privacy-respecting defaults are no longer optio
 
 
 
-## Related Articles
+## Related Reading
 
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)

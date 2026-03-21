@@ -402,7 +402,7 @@ jobs:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Policy Generator Tools Comparison: A Developer Guide](/privacy-tools-guide/privacy-policy-generator-tools-comparison/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)

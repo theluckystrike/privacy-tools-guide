@@ -311,7 +311,7 @@ Before committing to a platform, assess against these criteria:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps/)
 - [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)

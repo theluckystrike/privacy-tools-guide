@@ -190,7 +190,7 @@ Understanding how these systems work is the first step toward making informed de
 
 
 
-## Related Articles
+## Related Reading
 
 - [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)

@@ -231,7 +231,7 @@ Test these systems regularly. An untested solution fails when needed most.
 
 
 
-## Related Articles
+## Related Reading
 
 - [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)

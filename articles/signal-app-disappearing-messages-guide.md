@@ -177,7 +177,7 @@ Perform this test on each device type you use, as deletion behavior varies sligh
 
 
 
-## Related Articles
+## Related Reading
 
 - [Signal Disappearing Messages Best Practices for.](/privacy-tools-guide/signal-disappearing-messages-best-practices-for-sensitive-co/)
 - [Signal Disappearing Messages Best Practices](/privacy-tools-guide/signal-disappearing-messages-best-practices/)

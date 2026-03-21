@@ -399,7 +399,7 @@ Optimize for mobile clients:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
 - [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)

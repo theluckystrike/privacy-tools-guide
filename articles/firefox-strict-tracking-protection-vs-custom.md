@@ -356,7 +356,7 @@ Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
 
-## Related Articles
+## Related Reading
 
 - [Firefox Total Cookie Protection How It Isolates Trackers Exp](/privacy-tools-guide/firefox-total-cookie-protection-how-it-isolates-trackers-exp/)
 - [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)

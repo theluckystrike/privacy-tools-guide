@@ -284,7 +284,7 @@ For servers with many users, consider `AuthorizedKeysCommand` to fetch keys from
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
 - [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)

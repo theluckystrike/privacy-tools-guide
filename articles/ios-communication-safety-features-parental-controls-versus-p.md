@@ -191,7 +191,7 @@ Communication Safety features represent an ongoing tension:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Macos Siri Privacy Controls How To Prevent Voice Data From R](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
 - [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)

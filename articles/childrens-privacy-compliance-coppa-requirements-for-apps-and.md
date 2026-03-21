@@ -239,7 +239,7 @@ The FTC has the authority to impose civil penalties for COPPA violations. Recent
 
 
 
-## Related Articles
+## Related Reading
 
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 - [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)

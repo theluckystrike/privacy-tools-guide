@@ -222,7 +222,7 @@ For maximum privacy, consider combining catch-all aliases with encrypted email s
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)

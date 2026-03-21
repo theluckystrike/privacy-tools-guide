@@ -188,7 +188,7 @@ This testing should be an ongoing practice, not an one-time check. Search engine
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
 - [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)

@@ -232,7 +232,7 @@ Detecting unauthorized email forwarding requires vigilance and understanding of 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Check If Someone Is Using Your Netflix Without Permis](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permis/)
 - [Check If Someone Is Using Your Netflix Without Permission](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permission/)

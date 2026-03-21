@@ -383,7 +383,7 @@ All browsers listed are free.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Audit Checklist for Web Applications: A Developer](/privacy-tools-guide/privacy-audit-checklist-for-web-applications/)
 - [Bitwarden Web Vault vs Desktop App Comparison](/privacy-tools-guide/bitwarden-web-vault-vs-desktop-app-comparison/)

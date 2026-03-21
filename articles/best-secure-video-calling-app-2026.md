@@ -198,7 +198,7 @@ Choose based on your threat model. Self-hosted solutions give you infrastructure
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Screen Sharing Tools That Encrypt Video Stream End To](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
 - [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)

@@ -187,7 +187,7 @@ Exercising your right to rectification requires persistence and precision. The l
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)

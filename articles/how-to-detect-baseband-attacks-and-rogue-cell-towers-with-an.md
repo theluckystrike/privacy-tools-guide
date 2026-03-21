@@ -360,7 +360,7 @@ The goal of detection is not necessarily to catch attackers, but to modify behav
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn Certificate Pinning How It Prevents Mitm Attacks.](/privacy-tools-guide/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)
 - [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)

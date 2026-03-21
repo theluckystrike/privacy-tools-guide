@@ -376,7 +376,7 @@ Assign a named policy owner responsible for driving each review. Plans with no n
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)

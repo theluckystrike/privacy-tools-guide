@@ -190,7 +190,7 @@ Use these skills responsibly. These tools protect your privacy—they should not
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)

@@ -190,7 +190,7 @@ Building trust with a new person takes time. Your location data should reflect t
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Public Computers Safely Without Leaving Any Trace](/privacy-tools-guide/how-to-use-public-computers-safely-without-leaving-any-trace/)
 - [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)

@@ -182,7 +182,7 @@ Both services allow IMAP-based migration, but ProtonMail requires Bridge to be a
 
 
 
-## Related Articles
+## Related Reading
 
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [ProtonMail vs Gmail Privacy: A Full Technical Breakdown](/privacy-tools-guide/protonmail-vs-gmail-privacy-full-breakdown/)

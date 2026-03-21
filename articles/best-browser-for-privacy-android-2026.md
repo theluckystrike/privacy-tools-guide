@@ -180,7 +180,7 @@ Test each option with your development workflows before committing. Privacy tool
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)

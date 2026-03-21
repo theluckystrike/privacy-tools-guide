@@ -211,7 +211,7 @@ Magic Wormhole provides a practical, terminal-native solution for secure file tr
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Send Large Encrypted Files Without Uploading To Third](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
 - [Use Steganography to Hide Messages Inside Normal Files](/privacy-tools-guide/how-to-use-steganography-to-hide-messages-inside-normal-file/)

@@ -230,7 +230,7 @@ Cloudflare historically blocked domain fronting via their WAF and SNI enforcemen
 
 
 
-## Related Articles
+## Related Reading
 
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)

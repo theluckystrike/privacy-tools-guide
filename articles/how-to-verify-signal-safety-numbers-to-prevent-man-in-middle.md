@@ -255,7 +255,7 @@ Matching fingerprints prove you're using the same identity keys that generated t
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
 - [How To Use Abine Blur For Masked Emails Phone Numbers And Cr](/privacy-tools-guide/how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/)

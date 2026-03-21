@@ -274,7 +274,7 @@ This is rarely used outside high-risk scenarios (journalists, activists) due to 
 Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [Cryptomator Vs Veracrypt For Cloud Encryption](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)

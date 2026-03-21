@@ -260,7 +260,7 @@ testing ensures your data portability feature works correctly and securely.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
 - [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)

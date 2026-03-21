@@ -185,7 +185,7 @@ Consider maintaining password options when:
 
 
 
-## Related Articles
+## Related Reading
 
 - [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
 - [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)

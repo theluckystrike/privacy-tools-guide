@@ -181,7 +181,7 @@ The Matrix bridge ecosystem supports integration with Signal through various com
 
 
 
-## Related Articles
+## Related Reading
 
 - [Matrix/Element vs Signal for Private Group Communication: Detailed Comparison](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
 - [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)

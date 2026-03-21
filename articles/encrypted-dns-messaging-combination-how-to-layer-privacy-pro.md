@@ -184,7 +184,7 @@ For most users, the privacy benefits outweigh the modest performance cost. Measu
 
 
 
-## Related Articles
+## Related Reading
 
 - [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Zero Knowledge Proof Messaging How Future Protocols Will Pro](/privacy-tools-guide/zero-knowledge-proof-messaging-how-future-protocols-will-pro/)

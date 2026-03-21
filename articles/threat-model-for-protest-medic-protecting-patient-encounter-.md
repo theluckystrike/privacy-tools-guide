@@ -250,7 +250,7 @@ The goal isn't paranoia—it's reasonable protection for the people who trust yo
 
 
 
-## Related Articles
+## Related Reading
 
 - [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)

@@ -175,7 +175,7 @@ Start with Firefox and uBlock Origin, configure the privacy settings mentioned a
 
 
 
-## Related Articles
+## Related Reading
 
 - [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
 - [How to Disable Google AMP Tracking in Search Results Guide](/privacy-tools-guide/how-to-disable-google-amp-tracking-in-search-results-guide/)

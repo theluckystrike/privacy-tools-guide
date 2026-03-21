@@ -192,7 +192,7 @@ sudo wg show wg0 dump
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Rotation Policy Best Practices 2026](/privacy-tools-guide/password-rotation-policy-best-practices-2026/)
 - [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)

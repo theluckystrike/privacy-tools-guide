@@ -300,7 +300,7 @@ Understanding what information platforms store helps assess exposure risk:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)

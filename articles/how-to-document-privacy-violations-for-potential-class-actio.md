@@ -208,7 +208,7 @@ Consult with an attorney before initiating any formal action. This guide provide
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
 - [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)

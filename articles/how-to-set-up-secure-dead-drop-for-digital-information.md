@@ -262,7 +262,7 @@ For additional privacy tools and security guides, explore the Privacy Tools Guid
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Encrypted Dead Drop Using Onionshare For Sourc](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
 - [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)

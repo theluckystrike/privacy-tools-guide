@@ -210,7 +210,7 @@ If using browser-based services, configure link expiration to prevent long-term 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Send Large Encrypted Files Without Uploading To Third](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
 - [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)

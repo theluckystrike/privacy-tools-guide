@@ -173,7 +173,7 @@ veracrypt --text --verify /path/to/volume.vc
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)

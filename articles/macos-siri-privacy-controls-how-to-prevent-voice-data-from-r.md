@@ -351,7 +351,7 @@ Combining multiple approaches provides defense-in-depth for voice privacy:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Disable Macos Analytics Sharing That Sends Crash Data](/privacy-tools-guide/how-to-disable-macos-analytics-sharing-that-sends-crash-data/)
 - [Prevent Android Keyboard From Sending Typing Data To Google Or Samsung](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)

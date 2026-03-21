@@ -230,7 +230,7 @@ File a report at identitytheft.gov to get an official recovery plan and police r
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)

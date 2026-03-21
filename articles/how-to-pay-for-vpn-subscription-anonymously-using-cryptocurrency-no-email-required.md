@@ -201,7 +201,7 @@ fi
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 - [How To Use Bitcoin Atm Anonymously Without Providing Photo I](/privacy-tools-guide/how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/)

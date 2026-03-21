@@ -199,7 +199,7 @@ Legal frameworks vary by jurisdiction. Consult with an estate planning attorney 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How Secure Is Telegram Secret Chat Mode](/privacy-tools-guide/how-secure-is-telegram-secret-chat-mode/)
 - [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)

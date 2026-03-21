@@ -264,7 +264,7 @@ Data minimization reduces your liability and protects users.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Disappear From People Search Sites Complete Removal G](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
 - [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)

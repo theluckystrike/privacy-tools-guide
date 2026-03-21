@@ -330,7 +330,7 @@ Planning consolidation in advance prevents emotional decisions or tax mistakes d
 
 
 
-## Related Articles
+## Related Reading
 
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)

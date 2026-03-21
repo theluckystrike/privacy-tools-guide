@@ -263,7 +263,7 @@ For developers building tools for this population, prioritize privacy by design:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)

@@ -420,7 +420,7 @@ Store these completed reviews in version control alongside your FERPA compliance
 
 
 
-## Related Articles
+## Related Reading
 
 - [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)

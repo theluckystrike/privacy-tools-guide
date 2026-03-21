@@ -284,7 +284,7 @@ Reduce the risk of unauthorized jailbreaking:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 - [How To Tell If Your Phone Camera Is Being Accessed Remotely](/privacy-tools-guide/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)

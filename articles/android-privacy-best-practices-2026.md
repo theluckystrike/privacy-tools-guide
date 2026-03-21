@@ -173,7 +173,7 @@ Consider using third-party permission managers from F-Droid for additional contr
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
 - [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)

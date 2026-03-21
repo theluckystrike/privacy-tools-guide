@@ -179,7 +179,7 @@ done
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
 - [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)

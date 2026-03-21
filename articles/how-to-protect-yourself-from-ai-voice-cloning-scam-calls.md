@@ -203,7 +203,7 @@ If you or someone you know falls victim to an AI voice cloning scam:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)

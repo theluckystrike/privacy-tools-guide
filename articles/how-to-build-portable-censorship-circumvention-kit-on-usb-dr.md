@@ -323,7 +323,7 @@ Preparation before travel prevents panic and poor decisions during interactions.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)

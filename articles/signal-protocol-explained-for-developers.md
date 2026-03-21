@@ -229,7 +229,7 @@ Developers new to Signal-style protocols often make these errors:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
 - [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)

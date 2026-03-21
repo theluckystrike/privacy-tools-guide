@@ -263,7 +263,7 @@ Once you've verified identity, take these additional precautions before your fir
 
 
 
-## Related Articles
+## Related Reading
 
 - [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)

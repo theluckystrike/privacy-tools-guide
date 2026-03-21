@@ -378,7 +378,7 @@ Your display settings matter more than they might initially seem. The pixels on 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
 - [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)

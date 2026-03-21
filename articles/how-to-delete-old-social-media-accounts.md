@@ -274,7 +274,7 @@ Document all correspondence for regulatory complaints or potential litigation.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)

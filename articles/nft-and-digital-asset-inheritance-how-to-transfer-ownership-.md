@@ -240,7 +240,7 @@ The optimal solution depends on your technical comfort level, the value of asset
 
 
 
-## Related Articles
+## Related Reading
 
 - [Digital Business Asset Inheritance How To Transfer Saas Acco](/privacy-tools-guide/digital-business-asset-inheritance-how-to-transfer-saas-acco/)
 - [Domain Name Inheritance How To Transfer Registrar Accounts A](/privacy-tools-guide/domain-name-inheritance-how-to-transfer-registrar-accounts-a/)

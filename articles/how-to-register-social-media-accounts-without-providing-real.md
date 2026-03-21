@@ -247,7 +247,7 @@ Use these methods responsibly. Respect platform terms of service where legal. Co
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)

@@ -173,7 +173,7 @@ This API access enables integration with broader estate planning systems and cus
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)
 - [Bitcoin Inheritance Planning Using Multisig With Family Memb](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)

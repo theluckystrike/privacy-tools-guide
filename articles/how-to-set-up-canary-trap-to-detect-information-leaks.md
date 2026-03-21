@@ -206,7 +206,7 @@ For truly sensitive information, combine canary traps with encryption, access lo
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
 - [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)

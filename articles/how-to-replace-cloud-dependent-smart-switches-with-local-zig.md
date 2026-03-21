@@ -204,7 +204,7 @@ You should see MQTT traffic only on your local network, with no external connect
 
 
 
-## Related Articles
+## Related Reading
 
 - [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)

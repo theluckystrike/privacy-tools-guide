@@ -380,7 +380,7 @@ You'll never achieve total privacy, but you can significantly reduce your exposu
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Audit Your Digital Footprint And Find All Accounts Li](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
 - [How To Minimize Digital Footprint Guide 2026](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)

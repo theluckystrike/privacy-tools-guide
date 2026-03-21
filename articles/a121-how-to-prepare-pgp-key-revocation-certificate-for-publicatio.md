@@ -187,7 +187,7 @@ A PGP key revocation certificate is not optional. It is a fundamental part of ke
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
 - [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)

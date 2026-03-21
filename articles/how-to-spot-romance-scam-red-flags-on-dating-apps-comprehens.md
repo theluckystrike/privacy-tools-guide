@@ -205,7 +205,7 @@ When scam indicators are detected, both users and platforms should follow respon
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [How To Detect Catfish On Dating Apps Using Osint Verificatio](/privacy-tools-guide/how-to-detect-catfish-on-dating-apps-using-osint-verificatio/)

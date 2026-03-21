@@ -180,7 +180,7 @@ Developers building custom solutions should prioritize client-side encryption, p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
 - [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)

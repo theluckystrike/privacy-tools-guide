@@ -186,7 +186,7 @@ To verify your compartmentalization is effective, regularly check:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)

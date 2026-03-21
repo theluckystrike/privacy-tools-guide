@@ -194,7 +194,7 @@ If you experience performance issues with multiple cameras, consider these adjus
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)

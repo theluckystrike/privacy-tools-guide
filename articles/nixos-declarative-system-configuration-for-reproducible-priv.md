@@ -186,7 +186,7 @@ This approach lets you verify configuration changes before applying them to your
 
 
 
-## Related Articles
+## Related Reading
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)

@@ -266,7 +266,7 @@ PayJoin represents one of the most effective practical improvements in Bitcoin t
 
 
 
-## Related Articles
+## Related Reading
 
 - [Bitcoin Dust Attack Explained How Small Transactions Deanony](/privacy-tools-guide/bitcoin-dust-attack-explained-how-small-transactions-deanony/)
 - [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)

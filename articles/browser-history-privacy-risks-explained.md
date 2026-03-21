@@ -289,7 +289,7 @@ Clearing history disables these features but improves privacy. If you want recom
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 - [How to Audit Your Browser Extensions for Privacy Risks](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)

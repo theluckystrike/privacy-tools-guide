@@ -324,7 +324,7 @@ Before relying on your DSAR pipeline, validate it works:
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [How To Submit Subject Access Request To Employer For All Mon](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)

@@ -167,7 +167,7 @@ After removing the registry entry and restarting, Windows will restore SAC to it
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)

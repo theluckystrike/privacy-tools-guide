@@ -329,7 +329,7 @@ Implement defense-in-depth:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Tell If Your Dns Has Been Hijacked Symptoms Check](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
 - [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)

@@ -295,7 +295,7 @@ No single technique guarantees detection, but combining them catches most catfis
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)

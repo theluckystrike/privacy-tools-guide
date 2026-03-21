@@ -200,7 +200,7 @@ Save these resources offline:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Someone Leaving Abusive Relationship Digit](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

@@ -168,7 +168,7 @@ The fundamental tension: Chrome positions Client Hints as a privacy-respecting a
 
 
 
-## Related Articles
+## Related Reading
 
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 - [Attribution Reporting Api How Chrome Replaced Cookies For Ad](/privacy-tools-guide/attribution-reporting-api-how-chrome-replaced-cookies-for-ad/)

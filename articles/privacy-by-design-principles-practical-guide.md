@@ -398,7 +398,7 @@ The manifest returned by this function is your audit trail. Store it in a separa
 
 
 
-## Related Articles
+## Related Reading
 
 - [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 - [Privacy Compliance API Design Best Practices](/privacy-tools-guide/privacy-compliance-api-design-best-practices/)

@@ -170,7 +170,7 @@ The investment in a solid quarterly review process pays dividends during audits,
 ## Conclusion
 
 
-## Related Articles
+## Related Reading
 
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
 - [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)

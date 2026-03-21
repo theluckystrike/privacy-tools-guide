@@ -261,7 +261,7 @@ By treating bookmarks as persistent metadata rather than transient browser state
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)

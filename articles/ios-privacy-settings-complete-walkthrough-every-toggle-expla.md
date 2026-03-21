@@ -188,7 +188,7 @@ For users seeking optimal privacy without sacrificing functionality:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Ios Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)

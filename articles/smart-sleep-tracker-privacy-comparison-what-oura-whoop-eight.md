@@ -234,7 +234,7 @@ The trade-off between sleep optimization insights and biometric data sharing rem
 
 
 
-## Related Articles
+## Related Reading
 
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
 - [Privacy Law Updates Tracker March 2026](/privacy-tools-guide/privacy-law-updates-tracker-march-2026/)

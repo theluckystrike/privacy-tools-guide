@@ -312,7 +312,7 @@ Developers may prefer Bitwarden's open-source approach for transparency and cont
 
 
 
-## Related Articles
+## Related Reading
 
 - [Proton Pass vs Bitwarden Security Comparison for Developers](/privacy-tools-guide/proton-pass-vs-bitwarden-security-comparison/)
 - [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)

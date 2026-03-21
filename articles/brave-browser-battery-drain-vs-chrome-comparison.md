@@ -205,7 +205,7 @@ images.forEach(img => observer.observe(img));
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
 - [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)

@@ -353,7 +353,7 @@ Regularly review and resubmit opt-out requests, as businesses may collect new da
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)

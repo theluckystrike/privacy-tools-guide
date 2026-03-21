@@ -197,7 +197,7 @@ pg_dump -U hockeypuck hockeypuck > hockeypuck-backup-$(date +%Y%m%d).sql
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
 - [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)

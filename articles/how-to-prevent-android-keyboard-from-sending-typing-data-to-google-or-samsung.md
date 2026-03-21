@@ -230,7 +230,7 @@ adb shell tcpdump -i any -c 50 host google.com and port 443
 
 
 
-## Related Articles
+## Related Reading
 
 - [Smart Refrigerator Data Collection What Samsung Family Hub S](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 - [Smart Tv Tracking What Data Samsung Lg Vizio Collect About V](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)

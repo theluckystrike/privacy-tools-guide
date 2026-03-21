@@ -185,7 +185,7 @@ Update encryption software promptly when security patches release. Maintain offl
 
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)

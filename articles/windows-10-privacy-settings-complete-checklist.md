@@ -206,7 +206,7 @@ if ($issues) {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 - [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)

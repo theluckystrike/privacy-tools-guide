@@ -511,7 +511,7 @@ MY RECOMMENDATION:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 - [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)

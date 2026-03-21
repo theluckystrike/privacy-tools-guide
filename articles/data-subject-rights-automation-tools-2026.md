@@ -381,7 +381,7 @@ Automation tools must handle these variations. Ethyca and DataGrail handle multi
 
 
 
-## Related Articles
+## Related Reading
 
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)

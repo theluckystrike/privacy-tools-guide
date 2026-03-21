@@ -192,7 +192,7 @@ The emergency access system provides peace of mind that digital barriers won't p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
 - [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)

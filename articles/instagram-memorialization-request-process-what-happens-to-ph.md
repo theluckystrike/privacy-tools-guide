@@ -260,7 +260,7 @@ Maintain secure records of:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Twitter X Account After Death: How to Request.](/privacy-tools-guide/twitter-x-account-after-death-how-to-request-memorialization/)
 - [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)

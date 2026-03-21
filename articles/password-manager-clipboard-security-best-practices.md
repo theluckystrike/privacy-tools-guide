@@ -241,7 +241,7 @@ Power users should consider implementing monitoring for clipboard access:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)

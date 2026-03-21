@@ -184,7 +184,7 @@ For most users, following these practices provides sufficient privacy. For high-
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Untraceable Email For Anonymous Tips To Report](/privacy-tools-guide/how-to-create-untraceable-email-for-anonymous-tips-to-report/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)

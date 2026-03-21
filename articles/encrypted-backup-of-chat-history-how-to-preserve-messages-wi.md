@@ -286,7 +286,7 @@ Rotate your encryption passwords periodically. Document the rotation process so 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)

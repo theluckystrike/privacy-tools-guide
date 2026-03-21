@@ -403,7 +403,7 @@ echo "Scan complete"
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
 - [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)

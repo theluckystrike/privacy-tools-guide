@@ -174,7 +174,7 @@ For those requiring truly anonymous global connectivity, satellite phones and se
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Domain Registration How To Buy Domain Without Expo](/privacy-tools-guide/anonymous-domain-registration-how-to-buy-domain-without-expo/)
 - [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)

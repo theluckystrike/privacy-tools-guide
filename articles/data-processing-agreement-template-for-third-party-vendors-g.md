@@ -192,7 +192,7 @@ Transfer mechanisms require particular attention. Following the EU-US Data Priva
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 - [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)

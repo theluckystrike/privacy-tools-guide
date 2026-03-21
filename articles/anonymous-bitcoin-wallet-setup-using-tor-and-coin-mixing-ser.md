@@ -353,7 +353,7 @@ Each layer adds friction but increases privacy exponentially.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction P](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
 - [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)

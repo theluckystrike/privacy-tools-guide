@@ -233,7 +233,7 @@ This study prompted browsers to implement restrictions. However, older devices a
 
 
 
-## Related Articles
+## Related Reading
 
 - [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)

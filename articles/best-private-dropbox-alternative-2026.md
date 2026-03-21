@@ -344,7 +344,7 @@ age -d -i ~/.age/keys.txt \
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
 - [Youtube Alternative Private Video Platforms 2026](/privacy-tools-guide/youtube-alternative-private-video-platforms-2026/)

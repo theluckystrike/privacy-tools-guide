@@ -272,7 +272,7 @@ After withdrawing consent:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)

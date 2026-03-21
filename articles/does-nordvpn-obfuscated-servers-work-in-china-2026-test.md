@@ -174,7 +174,7 @@ Test your configuration before traveling to China. Document working server addre
 
 
 
-## Related Articles
+## Related Reading
 
 - [Does Surfshark Obfuscation Work In China 2026 Mobile Test](/privacy-tools-guide/does-surfshark-obfuscation-work-in-china-2026-mobile-test/)
 - [Does NordVPN Work in Russia? Tested from Moscow (2026)](/privacy-tools-guide/does-nordvpn-work-in-russia-2026-tested-from-moscow/)

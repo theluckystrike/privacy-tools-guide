@@ -189,7 +189,7 @@ Major cloud providers (AWS, Azure, Google Cloud) offer HIPAA-eligible services w
 
 
 
-## Related Articles
+## Related Reading
 
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
 - [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)

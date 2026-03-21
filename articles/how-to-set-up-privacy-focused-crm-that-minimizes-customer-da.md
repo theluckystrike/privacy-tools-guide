@@ -274,7 +274,7 @@ Maintain a clear inventory of what customer data you collect, why, and how long 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
 - [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)

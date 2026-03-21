@@ -281,7 +281,7 @@ Participating in Briar development or testing new features helps strengthen the 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)

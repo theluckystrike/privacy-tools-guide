@@ -371,7 +371,7 @@ The improvement is significant: stopping active data collection is the primary b
 
 
 
-## Related Articles
+## Related Reading
 
 - [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 - [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)

@@ -296,7 +296,7 @@ Understanding the technical mechanisms helps you:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)

@@ -188,7 +188,7 @@ For power users handling sensitive information, make verification a standard pra
 
 
 
-## Related Articles
+## Related Reading
 
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [How To Use Steganography Tools To Hide Encrypted Messages In](/privacy-tools-guide/how-to-use-steganography-tools-to-hide-encrypted-messages-in/)

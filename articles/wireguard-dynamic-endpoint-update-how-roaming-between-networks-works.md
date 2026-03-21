@@ -310,7 +310,7 @@ Applications should implement reconnection logic that tolerates 5-30 second inte
 
 
 
-## Related Articles
+## Related Reading
 
 - [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)

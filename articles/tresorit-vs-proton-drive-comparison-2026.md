@@ -358,7 +358,7 @@ A complete financial comparison:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

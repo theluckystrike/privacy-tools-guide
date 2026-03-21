@@ -433,7 +433,7 @@ These organizations provide legal assistance, documentation support, and interna
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Communicate During Internet Shutdown Alternative Netw](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)

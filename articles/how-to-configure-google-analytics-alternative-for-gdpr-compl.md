@@ -230,7 +230,7 @@ Document your data processing activities, update your privacy policy to reflect 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)

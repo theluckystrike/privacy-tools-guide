@@ -214,7 +214,7 @@ for event in data.get("signInEvents", []):
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Tell If Someone Installed Spyware On Your Iphone](/privacy-tools-guide/how-to-tell-if-someone-installed-spyware-on-your-iphone/)
 - [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)

@@ -235,7 +235,7 @@ When using PGP with external recipients:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)

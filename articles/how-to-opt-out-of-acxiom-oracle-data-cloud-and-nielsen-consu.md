@@ -243,7 +243,7 @@ Taking control of your data requires ongoing attention. The steps outlined here 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 - [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)

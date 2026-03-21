@@ -243,7 +243,7 @@ While avoiding school surveillance entirely is difficult, students can reduce th
 
 
 
-## Related Articles
+## Related Reading
 
 - [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 - [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)

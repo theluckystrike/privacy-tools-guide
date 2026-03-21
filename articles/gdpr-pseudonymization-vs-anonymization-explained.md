@@ -315,7 +315,7 @@ Document your technique choice for GDPR Article 30 records of processing:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
 - [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)

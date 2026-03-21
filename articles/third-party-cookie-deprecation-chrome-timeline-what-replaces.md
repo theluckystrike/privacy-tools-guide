@@ -196,7 +196,7 @@ Monitor Google's official deprecation timeline and the W3C Privacy Community Gro
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cookie Alternatives After Third-Party Deprecation: A.](/privacy-tools-guide/cookie-alternatives-after-third-party-deprecation-2026-guide/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)

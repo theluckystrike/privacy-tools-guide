@@ -167,7 +167,7 @@ For developers working with location data:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)

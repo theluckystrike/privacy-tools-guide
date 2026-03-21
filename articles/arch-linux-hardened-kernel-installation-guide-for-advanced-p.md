@@ -264,7 +264,7 @@ The hardened kernel provides substantial security improvements for privacy-consc
 
 
 
-## Related Articles
+## Related Reading
 
 - [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
 - [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)

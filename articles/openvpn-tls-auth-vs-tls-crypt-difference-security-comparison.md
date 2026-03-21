@@ -425,7 +425,7 @@ verb 3
 
 
 
-## Related Articles
+## Related Reading
 
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

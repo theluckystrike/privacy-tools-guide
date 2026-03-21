@@ -296,7 +296,7 @@ Remember: a lost device is recoverable through insurance or replacement. Permane
 
 
 
-## Related Articles
+## Related Reading
 
 - [What to Do If You Find an Unknown Device on Your Network](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)

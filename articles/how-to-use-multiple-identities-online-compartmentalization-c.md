@@ -265,7 +265,7 @@ Effective identity compartmentalization reduces your attack surface and limits d
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
 - [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)

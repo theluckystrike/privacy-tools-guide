@@ -230,7 +230,7 @@ A network security professional can perform advanced diagnostics, check for firm
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [How To Audit Your Digital Footprint And Find All Accounts Li](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)

@@ -284,7 +284,7 @@ For privacy advocates, Turkey represents both a warning and a case study. The te
 
 
 
-## Related Articles
+## Related Reading
 
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
 - [Android Notification Privacy: How to Hide Sensitive.](/privacy-tools-guide/android-notification-privacy-how-to-hide-sensitive-content-o/)

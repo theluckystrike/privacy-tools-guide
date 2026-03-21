@@ -421,7 +421,7 @@ Add erasure tests to your CI pipeline and run them against a staging environment
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
 - [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)

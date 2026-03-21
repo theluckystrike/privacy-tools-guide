@@ -224,7 +224,7 @@ Fourth, prepare for data subject requests. Your consent receipt system should in
 
 
 
-## Related Articles
+## Related Reading
 
 - [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Zero Knowledge Proof Messaging How Future Protocols Will Pro](/privacy-tools-guide/zero-knowledge-proof-messaging-how-future-protocols-will-pro/)

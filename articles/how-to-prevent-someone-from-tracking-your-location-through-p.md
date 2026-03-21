@@ -206,7 +206,7 @@ If your app requires location:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
 - [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)

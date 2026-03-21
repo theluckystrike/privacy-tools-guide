@@ -227,7 +227,7 @@ gpg --decrypt inbox_backup.mbox.gpg > inbox_backup.mbox
 
 
 
-## Related Articles
+## Related Reading
 
 - [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
 - [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)

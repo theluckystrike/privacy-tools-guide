@@ -249,7 +249,7 @@ Regardless of your choice, implement these practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Enterprise Password Manager With Zero Knowledg](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)

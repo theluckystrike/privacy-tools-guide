@@ -219,7 +219,7 @@ When faced with a VPN connection timeout:
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)

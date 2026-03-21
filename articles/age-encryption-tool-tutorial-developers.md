@@ -293,7 +293,7 @@ Age encrypts files in streaming fashion, handling large files efficiently. For v
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
 - [How to Encrypt Git Repos with git-crypt and age](/privacy-tools-guide/how-to-encrypt-git-repos-with-git-crypt-and-age/)

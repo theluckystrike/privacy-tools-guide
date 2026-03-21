@@ -334,7 +334,7 @@ Stay informed about these developments through Android Security & Privacy docume
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)

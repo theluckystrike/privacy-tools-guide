@@ -251,7 +251,7 @@ Test both applications with your specific use case. Run network traffic analysis
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
 - [How Secure Is Telegram Secret Chat Mode](/privacy-tools-guide/how-secure-is-telegram-secret-chat-mode/)

@@ -231,7 +231,7 @@ For maximum security, exempt only the specific hosts you need, not entire subnet
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)

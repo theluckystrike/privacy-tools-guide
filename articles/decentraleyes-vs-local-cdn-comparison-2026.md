@@ -186,7 +186,7 @@ For maximum benefit, you can use both strategies simultaneously. Run Decentraley
 
 
 
-## Related Articles
+## Related Reading
 
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
 - [How to Configure VPN Exempt List for Local Network Access](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)

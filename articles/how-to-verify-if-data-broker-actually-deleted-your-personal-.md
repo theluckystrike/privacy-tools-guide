@@ -230,7 +230,7 @@ Set up recurring checks monthly to catch re-appearance.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)

@@ -416,7 +416,7 @@ curl -X POST "https://www.truthfinder.com/optout" \
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
 - [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)

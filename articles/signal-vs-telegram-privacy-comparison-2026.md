@@ -216,7 +216,7 @@ The choice ultimately depends on threat model. For sensitive communications wher
 
 
 
-## Related Articles
+## Related Reading
 
 - [Telegram Vs Signal Which Is Actually Safer](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)

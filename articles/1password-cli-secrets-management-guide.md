@@ -178,7 +178,7 @@ The 1Password CLI turns secret management into a secure, scriptable workflow. Tr
 
 
 
-## Related Articles
+## Related Reading
 
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)

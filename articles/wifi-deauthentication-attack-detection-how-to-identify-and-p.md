@@ -186,7 +186,7 @@ Integrate this monitoring with alerting systems like Prometheus or Grafana for r
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)

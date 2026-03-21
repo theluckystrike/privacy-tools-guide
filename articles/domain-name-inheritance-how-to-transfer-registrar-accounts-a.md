@@ -185,7 +185,7 @@ Registering domains through an LLC or corporation can simplify transfers if the 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Digital Business Asset Inheritance How To Transfer Saas Acco](/privacy-tools-guide/digital-business-asset-inheritance-how-to-transfer-saas-acco/)
 - [Nft And Digital Asset Inheritance How To Transfer Ownership](/privacy-tools-guide/nft-and-digital-asset-inheritance-how-to-transfer-ownership-/)

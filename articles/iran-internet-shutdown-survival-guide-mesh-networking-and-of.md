@@ -215,7 +215,7 @@ For high-risk scenarios, combining mesh networking with appropriate operational 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Mesh Networking for Private Communication Without](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
 - [How To Communicate During Internet Shutdown Alternative Netw](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)

@@ -232,7 +232,7 @@ Implementing the right to be forgotten requires careful attention to data archit
 
 
 
-## Related Articles
+## Related Reading
 
 - [Right To Be Forgotten In Search Engines How To Request Googl](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)

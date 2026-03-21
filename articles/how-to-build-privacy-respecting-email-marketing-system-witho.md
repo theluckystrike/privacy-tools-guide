@@ -199,7 +199,7 @@ python -m pytest tests/test_unsubscribe.py -v
 
 
 
-## Related Articles
+## Related Reading
 
 - [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
 - [How To Build Privacy Dashboard For Customers To Manage Their](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)

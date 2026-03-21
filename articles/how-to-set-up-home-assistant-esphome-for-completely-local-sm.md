@@ -182,7 +182,7 @@ Even though your sensors operate locally, implement basic security practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)

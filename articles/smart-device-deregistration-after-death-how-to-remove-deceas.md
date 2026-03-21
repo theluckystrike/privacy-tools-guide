@@ -276,7 +276,7 @@ For your own digital estate planning:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)

@@ -407,7 +407,7 @@ Keep this document in a safe location accessible to trusted contacts.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Password Manager For Accountant Managing Client Financial Po](/privacy-tools-guide/password-manager-for-accountant-managing-client-financial-po/)
 - [Password Manager For Insurance Agent Managing Carrier Portal](/privacy-tools-guide/password-manager-for-insurance-agent-managing-carrier-portal/)

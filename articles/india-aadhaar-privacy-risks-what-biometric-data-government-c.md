@@ -195,7 +195,7 @@ The tension between convenience (improved KYC, direct benefit delivery) and priv
 
 
 
-## Related Articles
+## Related Reading
 
 - [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)

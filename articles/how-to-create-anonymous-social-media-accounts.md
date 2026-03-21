@@ -200,7 +200,7 @@ Creating an anonymous account is only the beginning. Maintaining anonymity requi
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 - [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)

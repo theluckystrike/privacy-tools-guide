@@ -248,7 +248,7 @@ No single implementation provides complete protection. The goal is raising the c
 
 
 
-## Related Articles
+## Related Reading
 
 - [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
 - [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)

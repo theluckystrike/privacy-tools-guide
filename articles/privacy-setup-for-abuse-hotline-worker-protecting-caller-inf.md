@@ -195,7 +195,7 @@ Regular training ensures all workers understand both the threats and mitigations
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 - [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)

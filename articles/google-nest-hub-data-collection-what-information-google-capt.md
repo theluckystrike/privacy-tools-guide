@@ -265,7 +265,7 @@ The information collected creates rich profiles about household patterns, daily 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Smart Refrigerator Data Collection What Samsung Family Hub S](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 - [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)

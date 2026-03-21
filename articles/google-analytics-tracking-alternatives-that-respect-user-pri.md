@@ -258,7 +258,7 @@ When selecting a privacy-respecting analytics alternative, evaluate these factor
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 - [How To Configure Google Analytics Alternative For Gdpr Compl](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)

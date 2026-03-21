@@ -173,7 +173,7 @@ Bridge addresses themselves can become blocked. Maintain multiple bridge configu
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)

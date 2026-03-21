@@ -347,7 +347,7 @@ Budget 3-6 months for thorough privacy due diligence on mid-sized companies (100
 
 
 
-## Related Articles
+## Related Reading
 
 - [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)

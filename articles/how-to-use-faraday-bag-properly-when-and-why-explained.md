@@ -174,7 +174,7 @@ If this test passes inside your Faraday bag, you have verified basic isolation.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)
 - [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)

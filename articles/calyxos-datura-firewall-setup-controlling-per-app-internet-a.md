@@ -171,7 +171,7 @@ The Datura firewall provides enterprise-grade network filtering without requirin
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
 - [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)

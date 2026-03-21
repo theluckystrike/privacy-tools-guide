@@ -188,7 +188,7 @@ signal-cli -u +1234567890 verify -n +0987654321
 
 
 
-## Related Articles
+## Related Reading
 
 - [Signal Disappearing Messages Best Practices](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
 - [Signal App Disappearing Messages Guide](/privacy-tools-guide/signal-app-disappearing-messages-guide/)

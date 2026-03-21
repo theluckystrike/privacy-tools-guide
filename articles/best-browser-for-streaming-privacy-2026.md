@@ -195,7 +195,7 @@ Regardless of your choice, regularly test your browser's privacy protections. St
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Browser for iOS Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-ios-privacy-2026/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)

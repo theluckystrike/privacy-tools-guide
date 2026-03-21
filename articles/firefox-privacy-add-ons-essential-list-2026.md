@@ -177,7 +177,7 @@ No extension stack provides complete anonymity — review your configuration whe
 
 
 
-## Related Articles
+## Related Reading
 
 - [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
 - [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)

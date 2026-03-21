@@ -258,7 +258,7 @@ The $50-150 investment in a quality mouse pad typically costs less than a single
 
 
 
-## Related Articles
+## Related Reading
 
 - [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
 - [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)

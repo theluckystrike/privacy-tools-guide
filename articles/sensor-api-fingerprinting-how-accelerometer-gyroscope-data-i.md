@@ -209,7 +209,7 @@ Chrome, Firefox, and Safari have implemented varying levels of sensor protection
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Sensor Permissions How Accelerometer Gyroscope Can B](/privacy-tools-guide/android-sensor-permissions-how-accelerometer-gyroscope-can-b/)
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)

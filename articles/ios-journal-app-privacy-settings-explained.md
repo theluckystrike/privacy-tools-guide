@@ -350,7 +350,7 @@ This migration preserves your journal history while moving to a more privacy-res
 
 
 
-## Related Articles
+## Related Reading
 
 - [Ios Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)

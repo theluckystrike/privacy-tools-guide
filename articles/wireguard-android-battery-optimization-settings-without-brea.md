@@ -179,7 +179,7 @@ Review your peer configuration and reduce the number of endpoints if battery dra
 
 
 
-## Related Articles
+## Related Reading
 
 - [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)

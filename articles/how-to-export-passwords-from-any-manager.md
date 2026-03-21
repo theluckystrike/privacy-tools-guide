@@ -231,7 +231,7 @@ Most modern password managers support CLI export, which gives the most control o
 
 
 
-## Related Articles
+## Related Reading
 
 - [Migrating From Chrome Saved Passwords To Dedicated Manager S](/privacy-tools-guide/migrating-from-chrome-saved-passwords-to-dedicated-manager-s/)
 - [Password Manager for Travel Agent Managing Booking Platform Passwords](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)

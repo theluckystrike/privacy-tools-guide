@@ -283,7 +283,7 @@ Organizations using Proton Drive for regulated data face specific compliance req
 
 
 
-## Related Articles
+## Related Reading
 
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
 - [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)

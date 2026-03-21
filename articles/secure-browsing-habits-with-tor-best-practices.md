@@ -348,7 +348,7 @@ exiftool -all= sensitive-document.pdf
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Tor Alternatives 2026: Privacy Browsing Guide](/privacy-tools-guide/best-tor-alternatives-2026-privacy-browsing/)
 - [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)

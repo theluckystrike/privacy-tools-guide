@@ -181,7 +181,7 @@ electrum -w wallet.seed createnewaddress
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Domain Registration How To Buy Domain Without Expo](/privacy-tools-guide/anonymous-domain-registration-how-to-buy-domain-without-expo/)
 - [Anonymous Prepaid Sim Card Countries Where You Can Buy](/privacy-tools-guide/anonymous-prepaid-sim-card-countries-where-you-can-buy-without-id-2026/)

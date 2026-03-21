@@ -183,7 +183,7 @@ sha256sum document.pdf
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)

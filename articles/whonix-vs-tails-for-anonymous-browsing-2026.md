@@ -316,7 +316,7 @@ Some threat models benefit from combined Whonix+Tails usage:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
 - [Best Tor Alternatives 2026: Privacy Browsing Guide](/privacy-tools-guide/best-tor-alternatives-2026-privacy-browsing/)

@@ -270,7 +270,7 @@ When compartmentalization fails:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)

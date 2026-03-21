@@ -250,7 +250,7 @@ If devices won't connect, verify both have the correct Device ID added and that 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)

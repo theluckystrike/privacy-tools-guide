@@ -284,7 +284,7 @@ Building this sealed envelope system requires careful planning around access con
 
 
 
-## Related Articles
+## Related Reading
 
 - [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
 - [How To Create Offline Digital Library For Accessing Informat](/privacy-tools-guide/how-to-create-offline-digital-library-for-accessing-informat/)

@@ -319,7 +319,7 @@ Libraries with privacy-conscious patrons often implement stronger protections to
 
 
 
-## Related Articles
+## Related Reading
 
 - [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
 - [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)

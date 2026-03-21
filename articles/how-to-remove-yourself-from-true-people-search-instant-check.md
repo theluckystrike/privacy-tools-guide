@@ -175,7 +175,7 @@ Removing your data from people search sites addresses immediate visibility but d
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Disappear From People Search Sites Complete Removal G](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)

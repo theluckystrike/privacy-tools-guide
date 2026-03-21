@@ -430,7 +430,7 @@ The single most important decision: Choose a tracker where cloud sync is optiona
 
 
 
-## Related Articles
+## Related Reading
 
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
 - [Privacy Badger Vs Ublock Origin Which Blocks More Trackers 2](/privacy-tools-guide/privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/)

@@ -487,7 +487,7 @@ As scoped storage matures, expect even more granular user control over what apps
 
 
 
-## Related Articles
+## Related Reading
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

@@ -204,7 +204,7 @@ For development teams, this means building compliance into your current roadmap 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)

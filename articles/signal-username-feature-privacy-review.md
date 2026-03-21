@@ -193,7 +193,7 @@ class SignalRateLimiter:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)

@@ -185,7 +185,7 @@ user your@gmail.com
 
 
 
-## Related Articles
+## Related Reading
 
 - [Protonmail Vs Gmail Privacy Comparison](/privacy-tools-guide/protonmail-vs-gmail-privacy-comparison/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)

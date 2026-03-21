@@ -289,7 +289,7 @@ While you cannot completely eliminate yourself from these databases, you can red
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
-## Related Articles
+## Related Reading
 
 - [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
 - [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)

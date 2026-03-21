@@ -228,7 +228,7 @@ The process of removing yourself from people search sites requires persistence a
 
 
 
-## Related Articles
+## Related Reading
 
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
 - [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)

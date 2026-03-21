@@ -187,7 +187,7 @@ Using Tor Browser for anonymous account creation introduces specific considerati
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)

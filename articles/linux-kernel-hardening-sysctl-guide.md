@@ -307,7 +307,7 @@ Most of these settings have zero measurable performance impact on typical worklo
 
 
 
-## Related Articles
+## Related Reading
 
 - [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
 - [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)

@@ -224,7 +224,7 @@ Users concerned about their data privacy on Her should consider these technical 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)

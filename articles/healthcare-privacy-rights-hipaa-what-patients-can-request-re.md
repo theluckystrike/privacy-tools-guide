@@ -199,7 +199,7 @@ Understanding these rights enables both patients seeking access to their data an
 
 
 
-## Related Articles
+## Related Reading
 
 - [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
 - [Police Body Camera Footage Privacy Rights Who Can Request An](/privacy-tools-guide/police-body-camera-footage-privacy-rights-who-can-request-an/)

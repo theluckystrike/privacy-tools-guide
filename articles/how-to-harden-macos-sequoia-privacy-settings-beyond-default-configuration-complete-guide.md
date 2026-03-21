@@ -206,7 +206,7 @@ These hardening steps transform macOS Sequoia from a consumer-oriented operating
 
 
 
-## Related Articles
+## Related Reading
 
 - [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)

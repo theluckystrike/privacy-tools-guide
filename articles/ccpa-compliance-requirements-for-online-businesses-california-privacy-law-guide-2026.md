@@ -331,7 +331,7 @@ Start with the data inventory—without knowing what you collect, you cannot beg
 
 
 
-## Related Articles
+## Related Reading
 
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
 - [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)

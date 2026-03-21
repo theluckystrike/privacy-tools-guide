@@ -222,7 +222,7 @@ Even after you log out and clear your session:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Cryptocurrency Privately Without Leaving Traceabl](/privacy-tools-guide/how-to-use-cryptocurrency-privately-without-leaving-traceabl/)
 - [How To Safely Share Location With Date Without Giving Perman](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)

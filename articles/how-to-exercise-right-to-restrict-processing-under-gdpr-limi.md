@@ -221,7 +221,7 @@ After submitting your request, verify compliance:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Exercise Right To Rectification Correcting Inaccurate](/privacy-tools-guide/how-to-exercise-right-to-rectification-correcting-inaccurate/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)

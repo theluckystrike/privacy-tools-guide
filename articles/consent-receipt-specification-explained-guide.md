@@ -204,7 +204,7 @@ Additionally, the specification requires careful key management for signatures. 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
 - [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)

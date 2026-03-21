@@ -307,7 +307,7 @@ A full node validates blocks and transactions but does not produce new blocks. A
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
 - [Set Up Bitcoin Payjoin Transactions For Sender Receiver](/privacy-tools-guide/how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/)

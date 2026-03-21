@@ -391,7 +391,7 @@ The transaction anonymity landscape has genuinely shifted—complex transactions
 
 
 
-## Related Articles
+## Related Reading
 
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 - [Bitcoin Dust Attack Explained How Small Transactions Deanony](/privacy-tools-guide/bitcoin-dust-attack-explained-how-small-transactions-deanony/)

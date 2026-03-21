@@ -210,7 +210,7 @@ Regularly test your cross-border transfer controls to ensure they remain effecti
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
 - [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)

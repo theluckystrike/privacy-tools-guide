@@ -182,7 +182,7 @@ Remember that 2FA is just one layer of defense — use strong, unique passwords,
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
 - [Two-Factor Authentication Setup Guide 2026](/privacy-tools-guide/two-factor-authentication-setup-2026)

@@ -274,7 +274,7 @@ Train all team members on a three-step response to device seizure risk:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 - [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)

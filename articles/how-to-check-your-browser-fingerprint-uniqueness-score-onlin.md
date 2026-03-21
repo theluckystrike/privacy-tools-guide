@@ -239,7 +239,7 @@ Set `privacy.resistFingerprinting = true` in about:config to normalize many expo
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Check If Your Social Security Number Was Leaked Onlin](/privacy-tools-guide/how-to-check-if-your-social-security-number-was-leaked-onlin/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)

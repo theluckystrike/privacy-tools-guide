@@ -420,7 +420,7 @@ Joins rooms
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Configure Element Matrix Client For Maximum Privacy A](/privacy-tools-guide/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)

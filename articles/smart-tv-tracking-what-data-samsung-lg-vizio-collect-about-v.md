@@ -281,7 +281,7 @@ If privacy is a priority, consider connecting your TV through a router with VPN 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Smart Refrigerator Data Collection What Samsung Family Hub S](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 - [Prevent Android Keyboard From Sending Typing Data To Google Or Samsung](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)

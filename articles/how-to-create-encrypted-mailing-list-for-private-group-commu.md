@@ -275,7 +275,7 @@ For activists, journalists, and others facing adversarial conditions, Signal Gro
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
 - [Matrix/Element vs Signal for Private Group Communication: Detailed Comparison](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)

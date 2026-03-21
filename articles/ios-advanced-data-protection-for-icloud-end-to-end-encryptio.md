@@ -207,7 +207,7 @@ For high-risk users—journalists, activists, researchers handling sensitive dat
 
 
 
-## Related Articles
+## Related Reading
 
 - [iCloud Private Relay: How It Works vs VPN](/privacy-tools-guide/ios-private-relay-how-it-works-vs-vpn/)
 - [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)

@@ -203,7 +203,7 @@ Consider these factors when evaluating privacy compliance tools:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)

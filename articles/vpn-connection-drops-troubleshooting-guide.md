@@ -206,7 +206,7 @@ Test your kill switch by temporarily disconnecting the VPN and verifying that no
 
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Connection Timeout Troubleshooting](/privacy-tools-guide/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)

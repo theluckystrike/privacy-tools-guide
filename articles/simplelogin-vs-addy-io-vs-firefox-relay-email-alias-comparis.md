@@ -242,7 +242,7 @@ SimpleLogin suits Proton ecosystem users and those who need PGP encryption. Addy
 
 
 
-## Related Articles
+## Related Reading
 
 - [iCloud Private Relay: How It Works vs VPN](/privacy-tools-guide/ios-private-relay-how-it-works-vs-vpn/)
 - [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)

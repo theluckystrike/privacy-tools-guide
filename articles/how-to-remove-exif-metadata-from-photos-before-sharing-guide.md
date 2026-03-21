@@ -484,7 +484,7 @@ EXIF removal is automatic hygiene, like locking your door. Do it always. But don
 
 
 
-## Related Articles
+## Related Reading
 
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)

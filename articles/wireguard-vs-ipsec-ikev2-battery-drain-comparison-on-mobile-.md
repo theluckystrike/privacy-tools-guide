@@ -299,7 +299,7 @@ Consider these guidelines:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
 - [Wireguard Android Battery Optimization Settings Without Brea](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)

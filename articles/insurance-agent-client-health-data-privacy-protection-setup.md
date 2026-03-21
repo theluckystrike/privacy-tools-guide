@@ -772,7 +772,7 @@ sudo ausearch -k phi_access | tail -20
 
 
 
-## Related Articles
+## Related Reading
 
 - [Real Estate Agent Client Data Protection Privacy Best Practi](/privacy-tools-guide/real-estate-agent-client-data-protection-privacy-best-practi/)
 - [Insurance Company Data Collection Privacy What Health.](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)

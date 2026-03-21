@@ -177,7 +177,7 @@ This script demonstrates how developers can create custom notification pipelines
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)

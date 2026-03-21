@@ -171,7 +171,7 @@ Regardless of choice, enabling a password manager significantly reduces credenti
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Handle Password Manager When Switching Phones Android](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

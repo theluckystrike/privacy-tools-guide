@@ -222,7 +222,7 @@ Third, maintain a verification loop. After submitting opt-outs, periodically sea
 
 
 
-## Related Articles
+## Related Reading
 
 - [Data Broker Removal Diy Complete Guide To Opting Out Of Top](/privacy-tools-guide/data-broker-removal-diy-complete-guide-to-opting-out-of-top-/)
 - [How to remove yourself from data broker sites step by step.](/privacy-tools-guide/how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/)

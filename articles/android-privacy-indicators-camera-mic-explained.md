@@ -433,7 +433,7 @@ Future improvements may include:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
 - [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)

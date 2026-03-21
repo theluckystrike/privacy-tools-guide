@@ -180,7 +180,7 @@ Common problems and solutions:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Vpn Over Satellite Internet Latency And Performance Consider](/privacy-tools-guide/vpn-over-satellite-internet-latency-and-performance-consider/)
 - [Gaming Account Inheritance What Happens To Steam Playstation](/privacy-tools-guide/gaming-account-inheritance-what-happens-to-steam-playstation/)

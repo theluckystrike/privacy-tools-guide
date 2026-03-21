@@ -207,7 +207,7 @@ const browser = await puppeteer.launch({
 
 
 
-## Related Articles
+## Related Reading
 
 - [Tor Browser vs LibreWolf Privacy Comparison](/privacy-tools-guide/tor-browser-vs-librewolf-privacy-comparison/)
 - [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/privacy-tools-guide/tor-browser-vs-vpn-comparison-which-is-better/)

@@ -313,7 +313,7 @@ This ensures all developers maintain consistent security postures and blocking p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
 - [How To Run Concurrent Vpn Connections For Different Applicat](/privacy-tools-guide/how-to-run-concurrent-vpn-connections-for-different-applicat/)

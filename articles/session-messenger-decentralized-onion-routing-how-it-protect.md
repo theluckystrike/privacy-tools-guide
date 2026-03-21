@@ -329,7 +329,7 @@ These improvements address current limitations while maintaining core metadata p
 
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [Session Messenger Review 2026: Technical Analysis](/privacy-tools-guide/session-messenger-review-2026/)

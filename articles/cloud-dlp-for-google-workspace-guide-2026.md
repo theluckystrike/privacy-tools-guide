@@ -342,7 +342,7 @@ Regularly review and update custom detectors as your organization introduces new
 
 
 
-## Related Articles
+## Related Reading
 
 - [Aegis Authenticator vs Google Authenticator](/privacy-tools-guide/aegis-authenticator-vs-google-authenticator/)
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)

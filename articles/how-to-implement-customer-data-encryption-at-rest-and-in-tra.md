@@ -222,7 +222,7 @@ Encryption strength depends entirely on key management. Follow these practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 - [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)

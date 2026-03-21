@@ -567,7 +567,7 @@ If any tests fail: VPN has a leak, contact support or switch providers
 | Traffic not encrypted (Wireshark) | No actual encryption | Critical |
 
 
-## Related Articles
+## Related Reading
 
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)

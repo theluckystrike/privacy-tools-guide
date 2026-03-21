@@ -336,7 +336,7 @@ All four browsers offer functional passkey support in 2026, but user experience 
 
 The best browser for passkeys ultimately depends on your device ecosystem and priorities. The most important thing is to start using passkeys—they're more secure and often faster than traditional passwords.
 
-## Related Articles
+## Related Reading
 
 - [Firefox Arkenfox User Js Full Guide](/privacy-tools-guide/firefox-arkenfox-user-js-full-guide/)
 - [How Browser Storage Partitioning Works Firefox Chrome Privac](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)

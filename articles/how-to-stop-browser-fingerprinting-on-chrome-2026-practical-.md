@@ -252,7 +252,7 @@ The goal is not perfect anonymity but reducing your uniqueness to make tracking 
 
 
 
-## Related Articles
+## Related Reading
 
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 - [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)

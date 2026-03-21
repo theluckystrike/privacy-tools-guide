@@ -197,7 +197,7 @@ Multiple companies have faced significant fines in 2025-2026 for dark pattern im
 
 
 
-## Related Articles
+## Related Reading
 
 - [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
