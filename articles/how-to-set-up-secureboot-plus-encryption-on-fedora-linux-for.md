@@ -35,6 +35,16 @@ SecureBoot operates at the firmware level, verifying cryptographic signatures of
 
 This approach protects against bootkits, ransomware targeting the boot process, and physical theft of storage devices.
 
+### SecureBoot vs. Encryption: Complementary Protections
+
+SecureBoot and LUKS encryption address different threat vectors. SecureBoot prevents an attacker with brief physical access from swapping in a malicious bootloader or kernel—the so-called "evil maid" attack scenario. LUKS encryption prevents an attacker who steals your drive from reading your data offline. Neither layer alone is sufficient: a stolen drive bypasses SecureBoot entirely, while a replaced bootloader can silently capture your LUKS passphrase before encryption even initializes.
+
+Together, they form a chain of trust: the firmware trusts only signed boot components, the signed bootloader unlocks encrypted storage, and your data never reaches an unverified system.
+
+### TPM2 and the Chain of Trust
+
+TPM2 (Trusted Platform Module version 2) strengthens this model by binding decryption keys to measured boot state. Platform Configuration Registers (PCRs) record cryptographic hashes of each boot stage. If any component is modified—firmware, bootloader, or kernel—PCR values change and the TPM refuses to release the decryption key, keeping the drive locked against unauthorized boot paths.
+
 ## Step 1: Preparing Fedora Installation with Encryption
 
 During Fedora installation, select the "Advanced Custom" partitioning option to configure encryption properly:
@@ -64,6 +74,8 @@ Replace `YOUR_SECURE_PASSPHRASE` with a strong passphrase meeting these criteria
 - Mix of uppercase, lowercase, numbers, and symbols
 - No dictionary words or personal information
 
+For production systems, use a randomly generated passphrase from a password manager and store it in a hardware security key or offline vault. Splitting a long passphrase across two physical locations—a safe deposit box and a sealed envelope with a trusted contact—reduces single-point-of-failure risk.
+
 ## Step 2: Enrolling SecureBoot Keys
 
 After installation, enroll the Fedora SecureBoot keys through mokutil:
@@ -79,7 +91,28 @@ sudo mokutil --enroll-key /usr/share/shim-signed/shimx64.efi.signed.key
 sudo mokutil --import /usr/share/secureboot/keys/fedora/DB.key
 ```
 
-The system will prompt for an one-time password during enrollment. After reboot, you'll need to confirm key enrollment through the MOK (Machine Owner Key) manager interface.
+The system will prompt for a one-time password during enrollment. After reboot, you will need to confirm key enrollment through the MOK (Machine Owner Key) manager interface. This blue management screen appears once and disappears after a timeout—if you miss it, power off and back on to see it again.
+
+### Custom Key Enrollment for Maximum Control
+
+Fedora ships with its own signing keys, which means Fedora's infrastructure is part of your trust chain. For environments requiring independent key control, generate your own Platform Key (PK), Key Exchange Key (KEK), and Database key (DB):
+
+```bash
+# Generate custom keys (4096-bit RSA for longevity)
+openssl req -new -x509 -newkey rsa:4096 -keyout PK.key -out PK.crt -days 3650 \
+  -nodes -subj "/CN=Custom Platform Key/"
+openssl req -new -x509 -newkey rsa:4096 -keyout KEK.key -out KEK.crt -days 3650 \
+  -nodes -subj "/CN=Custom KEK/"
+openssl req -new -x509 -newkey rsa:4096 -keyout DB.key -out DB.crt -days 3650 \
+  -nodes -subj "/CN=Custom Signing Key/"
+
+# Convert to EFI signature lists
+cert-to-efi-sig-list PK.crt PK.esl
+cert-to-efi-sig-list KEK.crt KEK.esl
+cert-to-efi-sig-list DB.crt DB.esl
+```
+
+Enrolling custom keys requires putting your firmware into Setup Mode first, which clears all existing Secure Boot variables. Only do this if you are prepared to sign every boot component yourself—including shim, grub, and the kernel. This approach suits high-security deployments and air-gapped systems.
 
 ## Step 3: Signing Custom Kernels and Bootloaders
 
@@ -106,9 +139,32 @@ add_drivers+="tpm"
 sudo dracut --force --regenerate-all
 ```
 
+### Automating Kernel Signing with Hooks
+
+Fedora kernel updates are frequent; manual signing after each update is error-prone and easy to forget. Automate signing with a kernel install hook placed in `/etc/kernel/install.d/`:
+
+```bash
+#!/bin/bash
+# /etc/kernel/install.d/99-sign-kernel.install
+
+COMMAND="$1"
+KERNEL_VERSION="$2"
+BOOT_DIR_ABS="$3"
+
+if [[ "$COMMAND" == "add" ]]; then
+    sbsign --key /etc/secureboot/db.key \
+           --cert /etc/secureboot/db.crt \
+           --output "${BOOT_DIR_ABS}/vmlinuz" \
+           "${BOOT_DIR_ABS}/vmlinuz"
+    echo "Kernel ${KERNEL_VERSION} signed for SecureBoot"
+fi
+```
+
+Make it executable with `chmod +x` and store signing keys in `/etc/secureboot/` with permissions `600`. This hook runs automatically on each `dnf upgrade` that installs a new kernel, keeping your chain of trust intact without manual intervention.
+
 ## Step 4: Configuring TPM2-Based Unlocking
 
-TPM2 (Trusted Platform Module) integration allows automatic decryption without compromising security:
+TPM2 integration allows automatic decryption without compromising security:
 
 ```bash
 # Install TPM2 tools
@@ -132,7 +188,22 @@ sudo systemd-cryptenroll /dev/nvme0n1p3 --tpm2-device=auto --tpm2-pcrs=0+1+2+3+4
 sudo systemd-cryptenroll /dev/nvme0n1p3 --tpm2-device=auto
 ```
 
-This setup requires both the TPM measurement and your passphrase for decryption, providing multi-factor authentication for your encrypted drive.
+### Choosing the Right PCRs
+
+The `--tpm2-pcrs` argument controls which boot measurements must match for automatic unlock. Selecting the wrong PCRs either weakens security or causes constant unlock failures after routine updates. Here is a practical breakdown:
+
+| PCRs | What It Covers | Risk If Excluded |
+|------|---------------|------------------|
+| 0 | Firmware code | Firmware-level rootkits go undetected |
+| 1 | Firmware configuration | BIOS setting changes bypass the TPM check |
+| 4 | Bootloader code | Bootloader swap attack succeeds |
+| 7 | SecureBoot state and policy | Disabling SecureBoot bypasses the TPM check |
+| 8 | Kernel command line | Kernel parameter injection attacks succeed |
+| 9 | Initrd and kernel image | Tampered initrd runs before decryption |
+
+For most threat models, PCRs `0+4+7` provides solid protection with minimal disruption from legitimate firmware updates. Adding PCR 8 locks the kernel command line, which can require re-enrollment after any `grubby` change. Adding PCR 1 is appropriate for air-gapped systems where firmware configuration never legitimately changes.
+
+This setup provides multi-factor authentication: the TPM must confirm system integrity, and your passphrase unlocks the key if TPM verification fails.
 
 ## Step 5: Verifying Your Security Configuration
 
@@ -184,19 +255,31 @@ IdleAction=lock
 IdleActionSec=15min
 ```
 
+**Restrict kernel memory access:**
+
+Add these kernel parameters to `/etc/default/grub` to close information-leakage channels an attacker could use to extract encryption keys from a running system:
+
+```bash
+GRUB_CMDLINE_LINUX="... lockdown=confidentiality module.sig_enforce=1"
+```
+
+The `lockdown=confidentiality` parameter prevents userspace processes from reading kernel memory through `/dev/mem`, `/dev/kmem`, and similar interfaces. It also disables loading of unsigned kernel modules. Run `sudo grub2-mkconfig -o /boot/grub2/grub.cfg` after editing to regenerate the bootloader configuration.
+
 ## Troubleshooting Common Issues
 
 If you encounter boot failures after enabling SecureBoot:
 
 1. **No boot device detected**: Re-enroll SecureBoot keys through firmware settings
 2. **LUKS passphrase not accepted**: Boot from live USB and run `fsck` on encrypted partition
-3. **TPM unlock fails**: Ensure TPM2 module loads early in initramfs by adding to `/etc/mkinitcpio.conf`:
+3. **TPM unlock fails**: Ensure TPM2 module loads early in initramfs by adding to `/etc/dracut.conf`:
 
 ```bash
-MODULES=(tpm_tis tpm2_software)
+add_drivers+="tpm_tis tpm_crb"
 ```
 
 4. **Kernel signature verification fails**: Re-sign the kernel or rebuild with signed modules
+5. **PCR mismatch after firmware update**: Firmware updates legitimately change PCR 0. After any BIOS/UEFI update, re-enroll the TPM2 binding with `sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/nvme0n1p3` followed by a fresh `--tpm2-device=auto` enrollment
+6. **MOK enrollment screen not appearing**: The MOK manager has a short timeout. Power cycle and watch immediately after POST to catch the enrollment prompt
 
 ## Maintenance and Recovery
 
@@ -216,8 +299,9 @@ sudo bootctl verify
 
 Store your LUKS recovery passphrase in a secure location separate from your device. Consider using a hardware security key as an additional authentication factor.
 
+Test your recovery procedure at least once per year by booting from a live USB and restoring access using the backup passphrase. An untested recovery plan is not a recovery plan—discovering the backup is wrong during an actual incident causes permanent data loss.
 
-## Related Articles
+## Related Reading
 
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
