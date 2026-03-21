@@ -171,6 +171,379 @@ The passkey ecosystem continues evolving. Upcoming developments include:
 
 For developers, the message is clear: passkey implementation is no longer experimental. Major platforms have stabilized their APIs, and user expectations around passwordless authentication continue rising. The timeline for adoption has passed—now is the time for implementation.
 
+## Server-Side Implementation: Verifying Passkey Credentials
+
+The server's role is to verify that the cryptographic signature is valid:
+
+```python
+# FastAPI example for passkey verification
+from webauthn import (
+    generate_registration_options,
+    verify_registration_response,
+    generate_authentication_options,
+    verify_authentication_response,
+    options_json
+)
+from webauthn.helpers.cose import COSEAlgorithmIdentifier
+
+@app.post("/register/begin")
+async def register_begin(request: RegisterRequest):
+    # Generate challenge for client
+    registration_data = generate_registration_options(
+        rp_id="yourdomain.com",
+        rp_name="Your Service",
+        user_id=request.user_id.encode(),
+        user_name=request.username,
+        user_display_name=request.display_name,
+        authenticator_selection={
+            "authenticator_attachment": "platform",
+            "resident_key": "required"
+        },
+        supported_algs=[
+            COSEAlgorithmIdentifier.ECDSA_SHA_256,
+            COSEAlgorithmIdentifier.RSASSA_PKCS1_v1_5_SHA_256
+        ]
+    )
+
+    # Store challenge in session
+    request.session['registration_challenge'] = options_json(registration_data)
+    return registration_data
+
+@app.post("/register/complete")
+async def register_complete(request: RegisterRequest, session: Session):
+    # Verify credential and store public key
+    try:
+        verification = verify_registration_response(
+            credential=request.credential,
+            expected_challenge=session['registration_challenge'].encode(),
+            expected_origin="https://yourdomain.com",
+            expected_rp_id="yourdomain.com"
+        )
+
+        # Store public key for future authentication
+        store_passkey(
+            user_id=request.user_id,
+            credential_id=verification.credential_id,
+            public_key=verification.credential_public_key,
+            sign_count=verification.sign_count
+        )
+
+        return {"status": "registered"}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/authenticate/begin")
+async def authenticate_begin():
+    # Generate authentication challenge
+    auth_options = generate_authentication_options(
+        rp_id="yourdomain.com",
+        resident_key_requirement="preferred"
+    )
+    return auth_options
+
+@app.post("/authenticate/complete")
+async def authenticate_complete(request: AuthenticateRequest):
+    # Verify signature
+    stored_passkey = get_passkey(request.credential_id)
+
+    try:
+        verification = verify_authentication_response(
+            credential=request.credential,
+            expected_challenge=request.challenge,
+            expected_origin="https://yourdomain.com",
+            expected_rp_id="yourdomain.com",
+            credential_public_key=stored_passkey.public_key,
+            credential_current_sign_count=stored_passkey.sign_count
+        )
+
+        # Update sign count (prevents credential replay)
+        update_sign_count(request.credential_id, verification.new_sign_count)
+
+        # Issue session/JWT
+        return {"token": create_jwt(stored_passkey.user_id)}
+    except Exception as e:
+        raise HTTPException(status_code=401, detail="Authentication failed")
+```
+
+Key security considerations:
+- **Challenge**: Random value included in signature, prevents replay attacks
+- **Sign count**: Tracks authentication attempts, detects credential cloning
+- **Origin verification**: Ensures challenge came from correct domain
+- **Public key binding**: Signature verified against registered public key
+
+## Passkey Security Considerations and Limitations
+
+Despite their strengths, passkeys have limitations developers must understand:
+
+**Limitation 1: Device Loss or Failure**
+If a user loses the device with their passkey, they cannot authenticate unless they have:
+- Synced passkeys to another device (iCloud, Google Password Manager)
+- Recovery codes saved
+- Alternative authentication methods enabled
+
+```javascript
+// Prompt users to add backup authentication during onboarding
+async function onboardingFlow() {
+  // Register primary passkey
+  await registerPasskey();
+
+  // Require backup method
+  const backupMethods = [
+    { method: 'recovery_codes', label: 'Recovery codes' },
+    { method: 'second_passkey', label: 'Register another device' },
+    { method: 'email_2fa', label: 'Email 2FA backup' }
+  ];
+
+  const selected = await selectBackupMethod(backupMethods);
+  await setupBackupMethod(selected);
+}
+```
+
+**Limitation 2: Phishing Through Social Engineering**
+While passkeys resist traditional phishing, attackers can social-engineer users into registering attacker's passkey:
+
+```
+Attacker approach:
+1. Contact user, claiming account compromise
+2. Direct user to legitimate-looking site
+3. Passkey prompt appears (looks authentic)
+4. User registers attacker's passkey through hijacked site
+5. Attacker gains access, original user locked out
+```
+
+Mitigations:
+- Education: Teach users that passkey prompts only appear when they initiate login
+- Email notifications: Notify when new passkey registered
+- Device indicators: Show which device registered the passkey
+
+```python
+# Send notification when new passkey registered
+async def notify_passkey_registered(user_id, device_name):
+    send_email(
+        to=get_user_email(user_id),
+        subject="New passkey registered on your account",
+        body=f"""
+Your account now has a new passkey on {device_name}.
+
+If you didn't register this passkey, immediately:
+1. Go to https://yourdomain.com/account/passkeys
+2. Remove the unauthorized passkey
+3. Contact support if you need help
+
+View all registered passkeys: https://yourdomain.com/account/passkeys
+        """
+    )
+```
+
+**Limitation 3: Cross-Platform Sync**
+Passkeys do not sync across platforms:
+- iOS passkeys (iCloud Keychain) sync to other Apple devices but not to Android
+- Android passkeys (Google Password Manager) sync to other Android devices and Chrome but not to iOS
+- Windows passkeys are device-local unless using Authenticator app
+
+```javascript
+// Provide guidance based on platform
+function getPasskeySyncGuidance(platform) {
+  const guidance = {
+    ios: "Your passkey syncs to other Apple devices (iPhone, iPad, Mac) via iCloud",
+    android: "Your passkey syncs to other Android devices and Chrome browsers via Google Account",
+    windows: "Your passkey is stored locally on this device. Download Microsoft Authenticator for sync.",
+    web: "Passkeys work in your browser. For mobile, use your device's native app."
+  };
+  return guidance[platform];
+}
+```
+
+## Passkey Performance Characteristics
+
+Passkey authentication has measurable performance implications:
+
+```
+Latency comparison:
+Password auth: ~100-200ms (database lookup + hash comparison)
+TOTP auth: ~50ms (time-based code validation)
+Passkey auth: ~300-500ms (cryptographic signature verification)
+
+However, passkey auth prevents account compromise, justifying the overhead.
+```
+
+For latency-critical applications:
+
+```python
+# Cache public key verification in memory
+from functools import lru_cache
+
+@lru_cache(maxsize=10000)
+def get_public_key_cached(credential_id):
+    # Returns cached key, invalidated periodically
+    return get_passkey(credential_id).public_key
+
+# Implement circuit breaker for slow auth endpoints
+from pybreaker import CircuitBreaker
+
+auth_circuit = CircuitBreaker(
+    fail_max=10,
+    reset_timeout=60,
+    listeners=[log_circuit_state]
+)
+
+@auth_circuit
+def verify_passkey_signature(credential, signature):
+    return verify_authentication_response(credential, signature)
+```
+
+## Passkey Registration UX Patterns
+
+User experience during registration varies significantly between platforms:
+
+**Apple platforms (iOS/macOS)**:
+- FaceID or TouchID prompt
+- Quick, natural interaction
+- Passkey saved to iCloud automatically
+
+**Android**:
+- Biometric or pattern/PIN prompt
+- Can feel slower on older devices
+- Saved to Google Password Manager
+
+**Web (desktop Chrome/Edge)**:
+- Windows Hello face/fingerprint
+- Or passkey autofill if phone nearby
+
+For developers:
+
+```javascript
+// Detect platform and customize prompts
+async function registerPasskeyWithPlatformHints() {
+  const isAndroid = /android/i.test(navigator.userAgent);
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isWindows = /windows/i.test(navigator.userAgent);
+
+  let promptText = "Register your passkey";
+  if (isIOS) promptText += " (use FaceID or TouchID)";
+  if (isAndroid) promptText += " (use fingerprint or PIN)";
+  if (isWindows) promptText += " (use Windows Hello)";
+
+  return navigator.credentials.create({
+    publicKey: credentialCreationOptions,
+    mediation: "optional",
+    userInterface: { prompt: promptText }
+  });
+}
+```
+
+## Enterprise Passkey Deployment
+
+Organizations deploying passkeys at scale face additional complexity:
+
+```yaml
+enterprise_deployment_considerations:
+  key_management:
+    - certificate_pinning_to_origin
+    - backup_authentication_for_account_recovery
+    - revocation_procedures
+
+  audit_and_compliance:
+    - log_all_passkey_registration_events
+    - maintain_sign_count_history_for_forensics
+    - implement_anomaly_detection_for_credential_misuse
+
+  user_support:
+    - recovery_process_for_lost_device
+    - procedure_for_compromised_credential
+    - training_to_prevent_social_engineering
+
+  rollout_strategy:
+    - gradual_rollout_with_fallback
+    - parallel_password_support_during_transition
+    - communication_campaign_explaining_benefits
+```
+
+Sample enterprise implementation:
+
+```python
+# Enterprise passkey with audit logging
+class EnterprisePasskeyManager:
+    def register_passkey(self, user_id, credential, organization_id):
+        verification = verify_registration_response(credential)
+
+        # Store with audit trail
+        passkey = {
+            'credential_id': verification.credential_id,
+            'public_key': verification.credential_public_key,
+            'registered_timestamp': datetime.utcnow(),
+            'user_id': user_id,
+            'organization_id': organization_id,
+            'device_name': credential.transports  # e.g., ['internal', 'usb']
+        }
+
+        store_passkey(passkey)
+
+        # Log for compliance
+        audit_log(
+            event='passkey_registered',
+            user_id=user_id,
+            organization_id=organization_id,
+            timestamp=datetime.utcnow(),
+            device_transports=credential.transports
+        )
+
+    def authenticate(self, credential, organization_id):
+        verification = verify_authentication_response(credential)
+
+        # Log authentication attempt
+        audit_log(
+            event='passkey_authentication',
+            user_id=verification.user_id,
+            organization_id=organization_id,
+            timestamp=datetime.utcnow(),
+            success=True
+        )
+
+        return create_session(verification.user_id)
+```
+
+## Monitoring and Troubleshooting Passkey Issues
+
+Track adoption and issues:
+
+```python
+# Passkey health dashboard metrics
+class PasskeyMetrics:
+    def track_registration_attempt(self, platform, success):
+        # Monitor registration success rate by platform
+        metric = f"passkey.registration.{platform}.{'success' if success else 'failure'}"
+        increment_metric(metric)
+
+    def track_authentication_latency(self, latency_ms):
+        # Monitor auth performance
+        histogram_metric('passkey.auth_latency_ms', latency_ms)
+
+    def track_fallback_usage(self, fallback_method):
+        # Monitor how many users fall back to password/email auth
+        increment_metric(f'passkey.fallback.{fallback_method}')
+
+    def get_adoption_report(self):
+        # Percentage of users with passkeys
+        total_users = count_total_users()
+        passkey_users = count_users_with_passkeys()
+        return {
+            'adoption_percentage': (passkey_users / total_users) * 100,
+            'average_passkeys_per_user': avg_passkeys_per_user(),
+            'platform_distribution': get_platform_distribution()
+        }
+```
+
+## Looking Ahead: Post-Passkey Authentication
+
+Future authentication may layer additional factors on top of passkeys:
+
+- **Risk-based authentication**: Require additional factors for suspicious logins (new location, device, etc.)
+- **Behavioral biometrics**: Typing patterns, scrolling speed, app usage patterns as continuous authentication
+- **Decentralized identity**: Verifiable credentials instead of centralized password/passkey database
+
+As a developer, remain flexible in your authentication architecture to support these emerging approaches without major rewrites.
+
 
 ## Related Articles
 
