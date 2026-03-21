@@ -191,6 +191,46 @@ class SignalRateLimiter:
         self.requests.append(time.time())
 ```
 
+## Privacy Threat Modeling: Usernames vs. Phone Numbers
+
+Understanding why usernames matter requires thinking about realistic adversaries and how phone numbers leak across contexts. Your mobile number is frequently shared with government registries, carrier data brokers, and third-party apps that abuse contact sync permissions. When Signal was purely phone-number-based, anyone who obtained your number — a recruiter, a harasser, a data broker — could ping your Signal presence.
+
+Usernames break this chain. The attack surface narrows to people who already know your exact handle and discriminator. Compare the threat models:
+
+**Phone number exposure paths:**
+- Data broker purchases of carrier records
+- App contact sync (Facebook, Google, WhatsApp)
+- Business card or professional profile exposure
+- SIM swap attacks that transfer your number to an attacker
+
+**Username exposure paths:**
+- Direct sharing in a conversation
+- Screenshot or link leak of your username QR code
+- Inference from public social media handles if you reuse names
+
+The username model substantially reduces passive exposure while still enabling two-party communication. For journalists, activists, or anyone operating under a persistent threat model, this distinction is material rather than cosmetic.
+
+## Operational Security When Using Usernames
+
+Several non-obvious operational practices improve your username privacy posture:
+
+**Rotate usernames after high-exposure events.** If you shared your username publicly — in a forum post, a conference talk, or a podcast — rotate it afterward. Signal allows deletion and recreation without losing your contacts or message history.
+
+**Audit username-visible contacts.** Signal distinguishes between contacts who know your phone number and contacts who only know your username. Periodically review which contacts in each category still warrant access. Username-based contacts can be removed without blocking.
+
+**Disable read receipts for username contacts.** Read receipts combined with online status create a timing channel: an observer who sends you a message via username can infer your activity patterns. Disabling both in Settings → Privacy limits this signal.
+
+**Use a dedicated username for sensitive communications.** If you operate multiple Signal accounts via secondary numbers or VoIP lines, assign distinct usernames to each identity. Never reuse a username across identities — that defeats the purpose.
+
+## Common Pitfalls
+
+**Reusing your Twitter or GitHub handle as a Signal username.** This is the most common mistake. If your public social identity is `ghostwriter42`, using that as your Signal username immediately links your two identities for anyone who searches both.
+
+**Sharing your username QR code in a screenshot that retains metadata.** QR code screenshots sometimes include EXIF location or device metadata. Strip metadata before sharing username QR codes publicly.
+
+**Assuming username deletion is instant.** Signal's servers may cache lookup results for a brief window after you delete or change a username. If you are actively being targeted, plan for a propagation delay of several minutes before a rotated username is fully unreachable via the old handle.
+
+**Failing to update stored identifiers in bots or integrations.** If you use signal-cli or an automation that stores your username, remember that discriminator changes will break stored identifiers. Your automation should query and store the full `username#discriminator` form and handle 404 responses by refreshing the stored value.
 
 ## Related Articles
 
