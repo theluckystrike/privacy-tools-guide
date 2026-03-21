@@ -9,7 +9,7 @@ permalink: /how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/
 categories: [guides]
 tags: [privacy-tools-guide, tools, security, encryption]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
