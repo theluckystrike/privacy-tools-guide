@@ -175,6 +175,152 @@ The optimal solution depends on your specific threat model. For general privacy,
 
 Developers building custom solutions should prioritize client-side encryption, peer-to-peer transmission where feasible, and explicit retention policies that can be audited and verified.
 
+## Building Storage-Agnostic Video Systems
+
+For developers creating their own video messaging solutions, architecture decisions determine whether recordings persist unintentionally:
+
+### Memory-Only Recording Processing
+
+The simplest architecture avoids persistent storage entirely by processing video frames in-memory during transmission:
+
+```javascript
+// Simplified example: Process video without disk storage
+class EphemeralVideoProcessor {
+  async processStream(mediaStream) {
+    const recorder = new MediaRecorder(mediaStream, {
+      mimeType: 'video/webm;codecs=vp9',
+      videoBitsPerSecond: 2500000
+    });
+
+    let frameCount = 0;
+    const maxFrames = 7200; // 5 minutes at 24 fps
+
+    return new Promise((resolve) => {
+      const chunks = [];
+
+      recorder.ondataavailable = (event) => {
+        if (frameCount < maxFrames) {
+          chunks.push(event.data);
+          frameCount++;
+        }
+      };
+
+      recorder.onstop = () => {
+        // Process chunks in-memory
+        const blob = new Blob(chunks, { type: 'video/webm' });
+
+        // Encrypt before any network transmission
+        const encrypted = this.encryptBlob(blob);
+
+        // Send encrypted stream
+        this.sendEncryptedStream(encrypted);
+
+        // Explicitly clear all references
+        chunks.length = 0;
+        blob = null;
+        encrypted = null;
+
+        resolve();
+      };
+
+      recorder.start();
+    });
+  }
+
+  encryptBlob(blob) {
+    // Implementation uses TweetNaCl.js or libsodium.js
+    // Video data encrypted with XChaCha20-Poly1305
+  }
+
+  sendEncryptedStream(encryptedData) {
+    // Stream directly to recipient without disk buffering
+  }
+}
+```
+
+This approach ensures no copy of the original video ever touches persistent storage.
+
+### Verifying Server-Side Non-Storage
+
+If using a service provider, audit their infrastructure:
+
+```bash
+# Check Matrix server configuration for media retention
+curl -s https://matrix.example.com/_matrix/media/r0/config | jq '.upload_size'
+
+# Test actual deletion by uploading and verifying removal
+# 1. Upload file
+curl -X POST https://matrix.example.com/_matrix/media/r0/upload \
+  -F "file=@test-video.webm" > upload-response.json
+
+# Extract URL from response
+MEDIA_ID=$(cat upload-response.json | jq -r '.content_uri')
+
+# 2. Schedule deletion (if API available)
+curl -X DELETE https://matrix.example.com/_matrix/media/r0/admin/$MEDIA_ID
+
+# 3. Verify deletion by attempting access (should return 404)
+curl -X GET $MEDIA_ID -w "\nHTTP Status: %{http_code}\n"
+```
+
+## Comparing Technical Approaches
+
+Different architectures have tradeoffs:
+
+| Architecture | Storage Model | Encryption Timing | Speed | Scalability |
+|--------------|---------------|-------------------|-------|-------------|
+| Peer-to-Peer | Memory-only | Before transmission | Excellent | Limited to participants |
+| Relay-based | Ephemeral buffers | Before relay | Good | Medium (relay costs) |
+| Server-stored | Persistent encrypted | Before upload | Fair | High (requires trust) |
+| Client-side cached | Local device only | Before caching | Excellent | N/A (local) |
+
+For most applications, peer-to-peer ephemeral buffering provides the best privacy-performance balance.
+
+## Regulatory Implications
+
+Video retention policies impact compliance with privacy regulations:
+
+**GDPR:** Article 5 requires storage limitation—data retained "no longer than necessary." For transient communications, "necessary" typically means 24-72 hours maximum. Indefinite retention violates GDPR unless you can justify operational need.
+
+**CCPA/CPRA:** California residents have deletion rights. Retention beyond "commonly recognized purposes" creates liability.
+
+**HIPAA:** Health information in video (faces visible during telehealth) must be retained only as long as the law requires. Most jurisdictions allow immediate deletion after clinical relevance expires.
+
+```bash
+# Document retention policy for regulatory compliance
+cat > RETENTION_POLICY.md << 'EOF'
+# Video Message Retention Policy
+
+## Scope
+Applies to all video messages, video calls, and call recordings transmitted through our service.
+
+## Retention Periods
+- Active video calls: Maintained only in memory during call duration
+- Call metadata (participant IDs, timestamps, duration): 90 days
+- Encrypted message content: Until recipient reads, max 30 days
+- Deleted messages: Purged within 24 hours
+- Account deletion: All media purged within 72 hours
+
+## Technical Implementation
+- Media stored in ephemeral buffer with 1-hour TTL
+- Encryption key discarded when recipient retrieves message
+- Automated purge jobs run daily at 02:00 UTC
+- Cloud provider retention SLA audited quarterly
+
+## User Rights
+- Explicit right to delete message before recipient reads
+- Right to request permanent deletion of all messages
+- Access to retention schedule in-app
+
+## Audit Trail
+- Retention violations logged to compliance@company.com
+- Monthly audit of actual vs. policy retention
+- Annual third-party audit by [Audit Firm]
+EOF
+
+git add RETENTION_POLICY.md && git commit -m "Document video retention policy for compliance"
+```
+
 ---
 
 

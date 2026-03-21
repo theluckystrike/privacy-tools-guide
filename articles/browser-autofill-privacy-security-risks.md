@@ -178,6 +178,185 @@ const credential = await navigator.credentials.create({
 
 Passkeys never leave the user's device, cannot be phished, and don't rely on browser autofill mechanisms. For authentication use cases, this is the most privacy-respecting approach available.
 
+## Testing Autofill Vulnerability
+
+Security researchers regularly discover autofill exploits. Test whether your browser is vulnerable:
+
+```html
+<!-- Save this as vulnerability-test.html and open locally -->
+<html>
+<head>
+  <title>Autofill Vulnerability Test</title>
+</head>
+<body>
+  <h1>Autofill Vulnerability Test</h1>
+  <p>This page tests whether your browser's autofill can be exploited via hidden fields.</p>
+
+  <!-- Visible field user expects to see -->
+  <input type="text" name="visible_name" placeholder="Your name">
+
+  <!-- Hidden fields that might capture autofilled data -->
+  <input type="text" name="hidden_email" style="display: none;" autocomplete="email">
+  <input type="text" name="hidden_phone" style="display: none;" autocomplete="tel">
+  <input type="text" name="hidden_cc" style="display: none;" autocomplete="cc-number">
+
+  <button type="button" onclick="reportResults()">Check for Autofill Leaks</button>
+
+  <script>
+  function reportResults() {
+    const email = document.querySelector('input[name="hidden_email"]').value;
+    const phone = document.querySelector('input[name="hidden_phone"]').value;
+    const cc = document.querySelector('input[name="hidden_cc"]').value;
+
+    console.log({
+      'hidden_email': email,
+      'hidden_phone': phone,
+      'hidden_cc': cc
+    });
+
+    if (email || phone || cc) {
+      alert('VULNERABILITY FOUND: Your autofill data was captured by hidden fields.');
+    } else {
+      alert('GOOD: Your autofill system did not populate hidden fields.');
+    }
+  }
+  </script>
+</body>
+</html>
+```
+
+Modern browsers (Chrome 88+, Firefox 86+) have protections against this, but users on older versions remain vulnerable.
+
+## Implementing Zero-Trust Form Design
+
+If you're a developer building forms that handle sensitive data, apply zero-trust principles:
+
+```javascript
+// Framework for preventing unintended autofill
+class SafeFormManager {
+  constructor(formElement) {
+    this.form = formElement;
+    this.sensitiveFields = new Set();
+    this.init();
+  }
+
+  init() {
+    // Find all fields that might receive sensitive data
+    const sensitiveSelectors = [
+      'input[type="password"]',
+      'input[autocomplete*="credit-card"]',
+      'input[autocomplete*="ssn"]'
+    ];
+
+    sensitiveSelectors.forEach(selector => {
+      this.form.querySelectorAll(selector).forEach(field => {
+        this.sensitiveFields.add(field);
+        this.protectField(field);
+      });
+    });
+  }
+
+  protectField(field) {
+    // 1. Disable autofill initially
+    field.setAttribute('autocomplete', 'off');
+
+    // 2. Intercept focus events
+    field.addEventListener('focus', () => {
+      // Only enable autofill when user has clearly focused the field
+      field.setAttribute('autocomplete', 'on');
+    });
+
+    // 3. Log any autofilled values (for security audits)
+    field.addEventListener('change', (event) => {
+      if (this.appearsPrefilled(event.target)) {
+        console.warn(`Field ${event.target.name} may have been autofilled`);
+        this.logSecurityEvent({
+          field: event.target.name,
+          timestamp: new Date(),
+          action: 'potential_autofill_detected'
+        });
+      }
+    });
+
+    // 4. Clear clipboard after paste to prevent recovery
+    field.addEventListener('paste', () => {
+      setTimeout(() => {
+        navigator.clipboard.writeText('');
+      }, 100);
+    });
+  }
+
+  appearsPrefilled(field) {
+    // Heuristic: field has value without user typing
+    return field.value && field.value.length > 0;
+  }
+
+  logSecurityEvent(event) {
+    // Send to server-side logging (HTTPS only, no sensitive data)
+    fetch('/api/security/log', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: event.action,
+        timestamp: event.timestamp,
+        page: window.location.pathname
+      })
+    });
+  }
+}
+
+// Usage
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('#payment-form');
+  new SafeFormManager(form);
+});
+```
+
+## Comparing Password Managers to Browser Autofill
+
+Understanding the differences helps users make informed choices:
+
+| Feature | Browser Autofill | Dedicated Manager |
+|---------|-----------------|------------------|
+| Attack surface | Large (integrated into all browser functions) | Smaller (isolated app) |
+| Data storage | Browser database (varying encryption) | Encrypted vault (strong encryption) |
+| Sync security | Cloud-dependent on provider | VPN-encrypted or local-only |
+| Master password | Optional, weak enforcement | Mandatory, strong enforcement |
+| Hidden field protection | Recent browsers only | Usually protected by design |
+| Emergency access | Limited to device owner | Authorized secondary access possible |
+| Breach impact | Affects all accounts | Limited to one vault breach |
+
+For users handling sensitive data, dedicated password managers like Bitwarden, 1Password, or KeePass offer significantly better security posture than browser autofill.
+
+## Regulatory Compliance for Form Builders
+
+If building forms in regulated industries (finance, healthcare), document your autofill strategy:
+
+```yaml
+# Autofill Security Policy for Compliance
+Form Handling Standards:
+  HIPAA (Healthcare):
+    - Patient data fields: autocomplete="off"
+    - SSN/MRN fields: disabled autofill
+    - Compliance note: "Fields requiring sensitive health data must not rely on browser autofill"
+
+  PCI-DSS (Payment):
+    - Credit card fields: Never enable autofill
+    - CVV fields: Always disabled
+    - Compliance requirement: "No browser autofill for payment card data"
+
+  GLBA (Financial):
+    - Account number fields: autocomplete="off"
+    - Security question fields: no autofill
+    - Policy: "Financial institutions must prevent autofill on sensitive fields"
+
+Implementation:
+  - Code review checklist includes autofill audit
+  - Automated testing verifies autocomplete values
+  - Annual penetration testing includes autofill vulnerability scanning
+  - Documentation reviewed during compliance audits
+```
+
 
 ## Related Articles
 

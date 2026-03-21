@@ -178,6 +178,157 @@ These changes represent incremental improvements rather than fundamental shifts 
 3. **Review permissions regularly**: Monthly audits of connected apps and data sharing settings
 4. **Consider deletion, not just hiding**: Hiding profile doesn't remove data; deletion is the stronger privacy action
 
+## Advanced Privacy Auditing for Dating Features
+
+Power users can perform technical audits of Facebook Dating's actual data flows:
+
+### Network Traffic Analysis
+
+Monitor what data leaves your device when using Facebook Dating:
+
+```bash
+#!/bin/bash
+# facebook-dating-network-audit.sh
+
+# Install mitmproxy for HTTPS inspection
+# brew install mitmproxy
+
+# Start proxy
+mitmproxy --mode regular -p 8080 &
+
+# Configure system to route through proxy
+# Settings > Network > WiFi > Advanced > Proxy
+
+# Record all outbound requests
+tcpdump -i any -n 'host graph.facebook.com or host gateway.facebook.com' \
+  -A > facebook_dating_traffic.pcap
+
+# Alternative: Use Firefox Developer Tools
+# Settings > Network > Filter > graph.facebook.com
+
+# Analyze requests
+# Look for:
+# - POST requests to /dating_* endpoints
+# - Data payloads containing preferences
+# - Third-party domains called from Dating feature
+# - Timing patterns (batch uploads, background syncs)
+```
+
+### API Endpoint Mapping
+
+Document which Graph API endpoints Dating uses:
+
+```bash
+# Common Facebook Dating API endpoints
+# (These are frequently called when using the feature)
+
+# 1. Get user's dating profile
+GET /v18.0/me/dating_profile
+# Payloads: preferences, location, photos
+
+# 2. Get dating matches/recommendations
+GET /v18.0/me/dating_matches
+# Reveals ranking algorithm inputs
+
+# 3. Update dating preferences
+POST /v18.0/me/dating_profile
+# Data: age range, gender, location, interests
+
+# 4. Get dating conversations
+GET /v18.0/me/dating_conversations
+
+# 5. Send dating message
+POST /v18.0/me/dating_conversations/{conversation_id}/messages
+
+# Monitor these requests in Firefox Developer Tools
+# Network tab > Filter "dating" > Inspect request payloads
+```
+
+## Privacy by Regulation
+
+Different regulatory frameworks provide specific Dating privacy rights:
+
+### GDPR (EU Users)
+
+```bash
+# Right to access: Article 15 GDPR
+# Request all your Dating data
+
+curl -X POST "https://www.facebook.com/dsar/request" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "request_type": "data_access",
+    "scope": ["dating_profile", "dating_preferences", "dating_messages"],
+    "format": "portable_format"
+  }'
+
+# Right to rectification: Article 16 GDPR
+# Correct inaccurate Dating data
+
+# Right to erasure: Article 17 GDPR
+# Delete all Dating data specifically
+
+# Right to restrict processing: Article 18 GDPR
+# Stop processing for Dating purposes without deletion
+```
+
+### CCPA (California Users)
+
+```bash
+# Right to know: Business must disclose:
+# - Categories of personal information collected
+# - Sources of collection
+# - Purpose of collection
+# - Recipients of data
+
+# Right to delete: Can request deletion of Dating data
+# Meta must comply within 45 days
+
+# Right to opt-out: Can prevent sale of Dating information
+# Send "Do Not Sell My Personal Information" request
+
+# Right to non-discrimination: Cannot be penalized for exercising rights
+```
+
+## Comparison: Facebook Dating vs Dedicated Apps
+
+Understanding how Facebook Dating's data flows differ from traditional dating apps:
+
+| Aspect | Facebook Dating | Tinder | Bumble |
+|--------|-----------------|--------|--------|
+| Data source | Entire Facebook profile | Account only | Account only |
+| Cross-platform data | Instagram linked | Spotify linked | Photos/verification |
+| Ad targeting integration | Data silo claim | Direct ads | Direct ads |
+| Storage location | Meta servers | Tinder servers | Bumble servers |
+| Third-party sharing | Limited (claimed) | Multiple | Multiple |
+| Account deletion | Requires full account | Dating-specific | Dating-specific |
+
+The key difference: Facebook Dating data ultimately sits in Meta's ecosystem with its history of secondary uses.
+
+## Data Portability and Deletion
+
+Exercise your regulatory rights:
+
+```bash
+# Request data export (GDPR/CCPA)
+# 1. Go to Settings > Your Information > Download Your Information
+# 2. Select "Dating" as category
+# 3. Choose date range and format
+# 4. Meta exports to your email within days
+
+# Automated deletion via API (requires token)
+curl -X DELETE "https://graph.instagram.com/me/media" \
+  -d "access_token=YOUR_ACCESS_TOKEN"
+
+# Request permanent deletion
+# Settings > Account > Deactivation and Deletion
+# Select "Delete Account"
+# 30-day grace period before permanent deletion
+
+# Verify deletion (may take 90 days for full processing)
+# Check Meta Help Center for deletion status
+```
+
 
 ## Related Articles
 

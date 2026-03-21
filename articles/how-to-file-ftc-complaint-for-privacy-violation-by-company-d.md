@@ -178,6 +178,203 @@ The FTC is not your only option. Many states have stronger privacy laws:
 
 These agencies often provide more responsive handling of individual complaints and may pursue enforcement actions under state privacy laws.
 
+## Building a Breach Documentation Package
+
+Professional documentation increases the likelihood that authorities take action:
+
+```python
+# breach_documentation.py - Organize breach evidence systematically
+
+import json
+from datetime import datetime
+from pathlib import Path
+
+class BreachDocumentation:
+    def __init__(self, breach_name):
+        self.name = breach_name
+        self.documentation = {
+            'breach_name': breach_name,
+            'discovery_date': datetime.now().isoformat(),
+            'notification_timeline': [],
+            'affected_data': [],
+            'evidence_files': [],
+            'impact_assessment': {},
+            'communications': []
+        }
+
+    def add_notification(self, date, source, content):
+        """Log breach notification details"""
+        self.documentation['notification_timeline'].append({
+            'date': date,
+            'source': source,
+            'summary': content[:500],  # First 500 chars
+            'full_text': content
+        })
+
+    def add_affected_data(self, data_type, count=None, description=''):
+        """Document what data was exposed"""
+        self.documentation['affected_data'].append({
+            'type': data_type,
+            'estimated_count': count,
+            'description': description
+        })
+
+    def add_evidence_file(self, file_path, description):
+        """Reference evidence documents"""
+        path = Path(file_path)
+        if path.exists():
+            self.documentation['evidence_files'].append({
+                'filename': path.name,
+                'type': path.suffix,
+                'size_bytes': path.stat().st_size,
+                'hash': self.file_hash(path),
+                'description': description
+            })
+
+    def file_hash(self, file_path):
+        """Generate SHA256 hash for file integrity"""
+        import hashlib
+        sha256_hash = hashlib.sha256()
+        with open(file_path, "rb") as f:
+            for byte_block in iter(lambda: f.read(4096), b""):
+                sha256_hash.update(byte_block)
+        return sha256_hash.hexdigest()
+
+    def add_impact_assessment(self, category, impact):
+        """Document financial/personal impact"""
+        self.documentation['impact_assessment'][category] = impact
+
+    def export_for_ftc(self, output_file='breach_documentation.json'):
+        """Generate JSON for FTC submission"""
+        with open(output_file, 'w') as f:
+            json.dump(self.documentation, f, indent=2)
+        return output_file
+
+# Usage
+breach = BreachDocumentation("ExampleCorp Data Breach 2026")
+breach.add_notification(
+    "2026-03-15",
+    "ExampleCorp Security Team",
+    "We discovered unauthorized access to customer accounts..."
+)
+breach.add_affected_data("email_address", count=500000, description="Primary contact email")
+breach.add_affected_data("password_hash", count=500000, description="bcrypt hashed (hopefully)")
+breach.add_evidence_file("breach-notification.pdf", "Official notification email")
+breach.add_impact_assessment("financial", "Spent $500 on credit monitoring")
+breach.add_impact_assessment("psychological", "Concern about identity theft")
+breach.export_for_ftc()
+```
+
+## Timing Your Complaint
+
+Strategic timing affects government responsiveness:
+
+```bash
+# Check for pattern of breaches at company
+curl -s "https://www.hackingvector.com/api/breaches?company=ExampleCorp" | jq
+
+# If multiple breaches in short period, emphasize pattern in complaint
+# FTC weights patterns more heavily than isolated incidents
+
+# File complaint within 1 year for best legal standing
+# Some statutes of limitation are 2-3 years, but fresher complaints get priority
+
+# Consider filing during regulatory scrutiny period
+# If company is already under FTC investigation, mention this
+
+# Submit during business hours (Mon-Fri 9am-5pm EST preferred)
+# Increases likelihood of immediate human review
+```
+
+## Post-Filing Actions
+
+The FTC complaint is step one in a larger process:
+
+### Document All Follow-Up
+
+```yaml
+Post-Filing Checklist:
+  Immediate (Within 24 hours):
+    - Save confirmation number and timestamp
+    - Screenshot entire complaint submission
+    - Email yourself confirmation
+    - Create backup of all evidence files
+
+  Week 1:
+    - Check if complaint appears in FTC database
+    - File with state attorney general (if applicable)
+    - Document with local law enforcement (if local jurisdiction)
+
+  Month 1:
+    - Monitor FTC's public enforcement actions
+    - Search for related complaints against same company
+    - Join class action if discovered
+
+  Ongoing:
+    - Track company's security improvements
+    - Monitor for recurrence of same vulnerability
+    - Document if company repeats negligent behavior
+```
+
+## Advanced: CFAA (Computer Fraud and Abuse Act) Angle
+
+For sophisticated breaches involving system compromise:
+
+```bash
+# Check if breach involved unauthorized computer access (CFAA violation)
+# This is federal crime with different reporting channel
+
+# Evidence of CFAA violation:
+# - Attacker gained unauthorized access
+# - Data was exfiltrated without authorization
+# - System integrity was compromised
+# - Company failed to detect/report promptly
+
+# Report CFAA violations to:
+# 1. FBI Cyber Division: tips.fbi.gov
+# 2. Secret Service (if financial data): FinCEN
+# 3. Local FBI field office for jurisdiction-specific crimes
+```
+
+## Leveraging Class Actions
+
+If breach was large, class actions may already exist:
+
+```bash
+# Search class action databases
+curl -s "https://www.classactioncentralasia.org/search?company=ExampleCorp&breach=2026"
+
+# Register affected accounts
+# Most class actions maintain claim registries
+# Submit evidence of membership in affected group (account email, screenshots)
+
+# Even if you don't receive direct compensation,
+# class settlements fund:
+# - Identity monitoring (often worth $100-500/year)
+# - Data security improvements
+# - Future prevention measures
+
+# Document your participation for tax purposes (potentially deductible as casualty loss)
+```
+
+## Prevention and Monitoring After Filing
+
+Protect yourself post-breach:
+
+```bash
+# Set up breach monitoring
+# 1. Have I Been Pwned alerts
+# 2. Credit freeze/monitoring
+# 3. Google Alerts for your name
+# 4. Regular credit report checks (annualcreditreport.com)
+
+# Create timeline for monitoring
+0 9 * * 1  /usr/local/bin/check-breach-status.sh  # Weekly Monday check
+0 9 * * 1  /usr/local/bin/check-credit-report.sh  # Monthly check
+
+# Document all monitoring activities for future litigation
+```
+
 
 ## Related Articles
 

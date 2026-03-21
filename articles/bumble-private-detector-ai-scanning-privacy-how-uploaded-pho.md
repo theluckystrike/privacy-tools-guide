@@ -179,6 +179,249 @@ For individuals using Bumble or similar platforms, understanding photo processin
 - **Retained data varies**: Moderation decisions and original images may be stored for different durations
 - **You have rights**: Most jurisdictions provide rights to access, correct, or delete your data
 
+## Building Privacy-Preserving Image Moderation Systems
+
+If you're developing dating or social apps with image moderation, implement these privacy-conscious patterns:
+
+### On-Device Classification Without Upload
+
+Process images locally before transmission to avoid server-side storage:
+
+```javascript
+// On-device image classification concept
+import * as tf from '@tensorflow/tfjs';
+import * as mobilenet from '@tensorflow-models/coco-ssd';
+
+class PrivacyPreservingImageModerator {
+  async classifyLocally(imageFile) {
+    // Load model once per session
+    if (!this.model) {
+      this.model = await mobilenet.load();
+    }
+
+    // Read image from file
+    const img = await this.loadImage(imageFile);
+
+    // Classify in browser
+    const predictions = await this.model.detect(img);
+
+    // Analyze predictions locally
+    const isSafe = this.evaluateSafety(predictions);
+
+    // Clear from memory
+    img.dispose();
+
+    return isSafe;
+  }
+
+  evaluateSafety(predictions) {
+    // Check for explicit content patterns
+    // Only boolean result leaves device
+    const unsafeClasses = ['person', 'explicit_content'];
+
+    for (let pred of predictions) {
+      if (unsafeClasses.includes(pred.class) && pred.score > 0.8) {
+        return false;  // Image flagged as explicit
+      }
+    }
+
+    return true;  // Image appears safe
+  }
+
+  async loadImage(file) {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+}
+
+// Usage
+const moderator = new PrivacyPreservingImageModerator();
+const isSafe = await moderator.classifyLocally(userPhotoFile);
+
+if (!isSafe) {
+  alert('Image flagged: Does not comply with guidelines');
+  return;
+}
+
+// Only send safe images to server
+uploadImage(userPhotoFile);
+```
+
+### Server-Side Moderation with Minimal Retention
+
+If server-side analysis is required, implement aggressive deletion:
+
+```python
+# server-side moderation with automatic cleanup
+import os
+import hashlib
+from datetime import datetime, timedelta
+from pathlib import Path
+
+class ServerModerationWithAutoDelete:
+    def __init__(self, temp_storage_path='/tmp/moderation', max_age_hours=1):
+        self.storage = Path(temp_storage_path)
+        self.max_age = max_age_hours
+
+    def process_upload(self, image_data, user_id):
+        # 1. Save to temporary location (not persistent storage)
+        temp_path = self.storage / f"{user_id}_{int(time.time())}.jpg"
+        temp_path.write_bytes(image_data)
+
+        # 2. Run moderation
+        analysis = self.run_moderation(temp_path)
+
+        # 3. Immediately delete original
+        temp_path.unlink(missing_ok=True)
+
+        # 4. Return only the decision (safe/unsafe)
+        return {
+            'approved': analysis['is_safe'],
+            'confidence': analysis['confidence'],
+            # Never return image hash, pixel data, or metadata
+        }
+
+    def run_moderation(self, image_path):
+        # Call AI model
+        from PIL import Image
+        img = Image.open(image_path)
+
+        # Analyze (production would use actual model)
+        is_safe = True  # placeholder
+
+        # Never log pixel data or image content
+        return {'is_safe': is_safe, 'confidence': 0.95}
+
+    def cleanup_old_files(self):
+        """Purge files older than max_age"""
+        cutoff_time = datetime.now() - timedelta(hours=self.max_age)
+
+        for file_path in self.storage.glob('*.jpg'):
+            if datetime.fromtimestamp(file_path.stat().st_mtime) < cutoff_time:
+                file_path.unlink(missing_ok=True)
+                print(f"Deleted: {file_path}")
+
+# Setup automated cleanup via cron or scheduler
+# 0 * * * * python -c "from moderator import ServerModerationWithAutoDelete; \
+#   ServerModerationWithAutoDelete().cleanup_old_files()"
+```
+
+### Privacy-Respecting API Design
+
+If providing image moderation APIs, design with privacy first:
+
+```python
+# Privacy-first API design pattern
+
+from fastapi import FastAPI, UploadFile, File
+from typing import Dict
+import secrets
+
+app = FastAPI()
+
+class PrivacyFirstAPI:
+    def __init__(self):
+        # Session keys that auto-expire
+        self.session_keys = {}
+
+    @app.post("/api/v1/moderate-image")
+    async def moderate_image(file: UploadFile = File(...)) -> Dict:
+        """
+        Moderation API that never stores images
+
+        Privacy guarantees:
+        - Image stored only in RAM during processing
+        - No image copies retained
+        - No hash stored for reference
+        - Only moderation decision returned
+        """
+
+        # Read into memory
+        image_data = await file.read()
+
+        # Process immediately
+        decision = self.classify_image(image_data)
+
+        # Explicitly clear from memory
+        del image_data
+
+        return {
+            "status": decision['approved'],
+            "processed_at": datetime.now().isoformat()
+            # No image reference, hash, or metadata
+        }
+
+    def classify_image(self, data: bytes) -> Dict:
+        """Classify in-memory without persistent storage"""
+        from io import BytesIO
+        from PIL import Image
+
+        img = Image.open(BytesIO(data))
+        # Run classification
+        is_safe = True  # placeholder
+
+        return {'approved': is_safe}
+```
+
+## User Recourse for Data Concerns
+
+If concerned about Bumble's photo handling:
+
+```bash
+# 1. Export your data (GDPR/CCPA right)
+# Settings > Your Profile > Download My Data
+# Includes all photos, metadata, and analysis results
+
+# 2. Request deletion
+# Settings > Account > Deactivate Account
+# Select "Delete all my data"
+
+# 3. Verify deletion (takes 30-90 days)
+# Contact support to confirm deletion timeline
+
+# 4. Monitor for unauthorized use
+# Set up Google Alerts for your images
+google-alerts add "YourImage.jpg"
+
+# 5. File complaint if needed
+# FTC: ftc.gov/complaint
+# State AG: state-specific agency
+```
+
+## Transparency and Accountability
+
+For platforms implementing image AI:
+
+```yaml
+Recommended Transparency Practices:
+  Data Collection:
+    - Explicit notice when AI is analyzing images
+    - Clear explanation of what is being analyzed
+    - Plain language about retention duration
+
+  Algorithm Details:
+    - Publish annual AI audits
+    - Third-party testing of accuracy and bias
+    - Documentation of false positive rates
+
+  User Control:
+    - Right to delete photos at any time
+    - Option to opt-out of AI analysis (use human review)
+    - Access to moderation decisions and reasoning
+
+  Accountability:
+    - Public privacy impact assessment
+    - Complaint mechanism for AI decisions
+    - Regular updates to retention policies
+```
+
 
 ## Related Articles
 

@@ -232,6 +232,200 @@ This gives you per-device DNS filtering without requiring a separate DNS server 
 **DoT requires trusting your resolver.** Switching from your ISP's resolver to Cloudflare or Quad9 moves trust, not eliminates it. Choose a resolver with a clear, audited no-logging policy.
 
 **Port 853 is blockable.** Unlike DoH which uses port 443, DoT's dedicated port can be blocked by network administrators or censorship systems. In environments where port 853 is filtered, DoT silently fails unless you use strict mode—another reason to always set `DNSOverTLS=yes` rather than `opportunistic`.
+## Advanced DoT Configuration for Maximum Privacy
+
+For power users wanting additional hardening beyond basic setup:
+
+### Certificate Pinning for DoT
+
+Instead of trusting the entire certificate authority ecosystem, pin specific resolver certificates:
+
+```bash
+# Extract certificate from DoT resolver and pin it
+# 1. Get the certificate chain
+openssl s_client -connect dns.quad9.net:853 -showcerts < /dev/null 2>/dev/null | \
+  openssl x509 -outform PEM -out quad9.pem
+
+# 2. Calculate certificate hash for pinning
+openssl x509 -in quad9.pem -noout -pubkey | \
+  openssl pkey -pubin -outform DER | \
+  openssl dgst -sha256 -binary | \
+  openssl enc -base64
+
+# 3. Add to systemd-resolved configuration
+# In /etc/systemd/resolved.conf:
+# [Resolve]
+# DNS=9.9.9.9#dns.quad9.net
+# DNSOverTLS=yes
+```
+
+### Multi-Resolver Failover with Health Checks
+
+Implement automatic failover if your primary resolver becomes unreachable:
+
+```bash
+#!/bin/bash
+# dns-failover-monitor.sh
+
+RESOLVERS=(
+  "9.9.9.9#dns.quad9.net"
+  "1.1.1.1#1dot1dot1dot1.cloudflare-dns.com"
+  "89.163.128.29#base.dns.mullvad.net"
+)
+
+HEALTH_CHECK_HOST="example.com"
+ALERT_EMAIL="admin@example.com"
+
+check_resolver_health() {
+  local resolver=$1
+  local ip=$(echo $resolver | cut -d'#' -f1)
+
+  # Test DoT connection with timeout
+  if timeout 2 openssl s_client -connect "$ip:853" -quiet < /dev/null >/dev/null 2>&1; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+for resolver in "${RESOLVERS[@]}"; do
+  if ! check_resolver_health "$resolver"; then
+    echo "Resolver $resolver failed health check"
+    # Switch to next resolver dynamically
+    # Implement via D-Bus call to systemd-resolved
+  fi
+done
+```
+
+### Tor Integration for DNS Anonymity
+
+Combine DoT with Tor for maximum privacy:
+
+```bash
+# 1. Install Tor
+sudo apt install tor
+
+# 2. Configure Tor for DNS over DoT
+# In /etc/tor/torrc:
+# DnsPort 53
+
+# 3. Point systemd-resolved to Tor's DNS port
+sudo nano /etc/systemd/resolved.conf
+# [Resolve]
+# DNS=127.0.0.1
+# DNSOverTLS=yes
+
+# 4. All DNS queries now route through Tor exit nodes
+# Privacy: Your resolver cannot identify you
+# Tradeoff: Slower due to Tor overhead
+```
+
+## Performance Monitoring
+
+DoT adds slight latency. Monitor impact on your system:
+
+```bash
+#!/bin/bash
+# Compare DoT vs standard DNS performance
+
+echo "=== DNS Query Performance Comparison ==="
+
+# Baseline: Standard DNS
+echo "Standard DNS (port 53):"
+time dig @8.8.8.8 +noall +answer example.com
+
+# Test: DoT performance
+echo ""
+echo "DoT (port 853):"
+time dig @9.9.9.9 -p 853 +tls +noall +answer example.com
+
+# Measure latency increase
+STANDARD=$(dig @8.8.8.8 +stats example.com | grep "Query time")
+DOT=$(dig @9.9.9.9 -p 853 +tls +stats example.com | grep "Query time")
+
+echo ""
+echo "Standard DNS latency: $STANDARD"
+echo "DoT latency: $DOT"
+echo ""
+echo "Note: DoT adds ~10-50ms typically, offset by privacy gains"
+```
+
+## Troubleshooting DoT Issues
+
+### Symptom: DNS Queries Still Unencrypted
+
+Verify actual protocol usage:
+
+```bash
+# Monitor traffic in real-time
+sudo tcpdump -i any -n 'dst port 853 or (dst port 53 and not localhost)' | grep -E 'DNS|53|853'
+
+# If you see port 53 traffic, DoT is not active
+# Check systemd-resolved status
+systemctl status systemd-resolved
+
+# Force DoT retry with verbose logging
+SYSTEMD_LOG_LEVEL=debug resolvectl query example.com
+```
+
+### Symptom: Some Domains Won't Resolve
+
+Certain malformed domains or rare cases fail on DoT-only:
+
+```bash
+# Test fallback mechanism
+resolvectl status | grep -A 2 "DNSSEC"
+
+# If DoT fails, verify FallbackDNS is configured
+# In /etc/systemd/resolved.conf:
+# FallbackDNS=9.9.9.9
+
+# Test specific domain resolution
+dig @9.9.9.9 +tls problematic-domain.example
+dig @9.9.9.9 problematic-domain.example  # Compare without TLS
+```
+
+### Symptom: VPN Conflicts with DoT
+
+Some VPNs override DNS settings or block port 853:
+
+```bash
+# Verify whether port 853 is blocked
+nmap -p 853 dns.quad9.net
+
+# If blocked, switch to DoH or use VPN DNS directly
+# Check which DNS your VPN is providing
+resolvectl status
+
+# For better DoT + VPN compatibility:
+# 1. Use VPN DNS from provider that supports DoT
+# 2. Or configure DNS at VPN tunnel level
+# 3. Or use separate network namespace for DoT
+```
+
+## Monitoring DNS Queries
+
+Log which sites are being resolved for privacy audits:
+
+```bash
+# Enable query logging (systemd-resolved)
+sudo systemctl set-property systemd-resolved.service "ExecStart=" ""
+sudo systemctl edit systemd-resolved.service
+
+# Add to [Service] section:
+# ExecStart=
+# ExecStart=/lib/systemd/systemd-resolved --log-target=journal --log-level=debug
+
+sudo systemctl restart systemd-resolved
+
+# View query logs
+journalctl -u systemd-resolved -f | grep "query"
+
+# Analysis: Extract queried domains
+journalctl -u systemd-resolved | grep "query" | \
+  sed 's/.*query //' | \
+  sort | uniq -c | sort -rn | head -20
+```
 
 ## Related Reading
 

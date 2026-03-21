@@ -177,6 +177,181 @@ done
 
 **Self-hosted V2Ray with domain fronting** uses legitimate CDN infrastructure to mask VPN traffic. By configuring your V2Ray server behind Cloudflare or similar CDNs, your traffic appears to be legitimate CDN traffic, making blocking extremely difficult.
 
+## Testing Connectivity Before Full Commitment
+
+Before configuring your entire system with a new VPN protocol, test whether it survives Iranian filtering:
+
+```bash
+#!/bin/bash
+# test-telegram-connectivity.sh
+
+# Test basic connectivity
+test_protocol() {
+  local protocol=$1
+  local endpoint=$2
+
+  echo "Testing $protocol..."
+
+  if ping -c 2 -W 3 $endpoint >/dev/null 2>&1; then
+    echo "✓ Basic connectivity OK"
+  else
+    echo "✗ Cannot reach endpoint"
+    return 1
+  fi
+
+  # Test SSL handshake (if applicable)
+  if timeout 5 openssl s_client -connect "$endpoint:443" -quiet </dev/null >/dev/null 2>&1; then
+    echo "✓ SSL connection works"
+  else
+    echo "✗ SSL handshake failed"
+  fi
+
+  # Test actual Telegram connection (requires Telegram account)
+  # This would involve connecting to telegram servers through your VPN
+}
+
+# Test multiple VPN providers
+PROVIDERS=(
+  "wg-server.example.com"
+  "v2ray-server.example.com"
+  "openvpn-server.example.com"
+)
+
+for provider in "${PROVIDERS[@]}"; do
+  test_protocol "provider" "$provider"
+  echo "---"
+done
+```
+
+## Monitoring for Blocks and Adapting
+
+Even working VPN setups occasionally fail as Iranian filtering systems adapt. Implement monitoring:
+
+```python
+# telegram_connectivity_monitor.py
+
+import requests
+import time
+from datetime import datetime
+
+class TelegramConnectivityMonitor:
+    def __init__(self, vpn_configs):
+        self.configs = vpn_configs
+        self.blocked_until = {}
+
+    def test_telegram_access(self, vpn_config):
+        """Test whether Telegram is accessible through this VPN"""
+        try:
+            # Test API endpoint (simple indicator)
+            response = requests.get(
+                'https://api.telegram.org/bot/getMe',
+                timeout=5,
+                proxies=vpn_config['proxy_dict']
+            )
+            return response.status_code == 200
+        except:
+            return False
+
+    def monitor_all_configs(self):
+        """Continuously monitor all VPN configurations"""
+        results = {}
+
+        for config_name, config in self.configs.items():
+            if self.test_telegram_access(config):
+                results[config_name] = "WORKING"
+                # Reset blocked counter if it was previously blocked
+                self.blocked_until[config_name] = None
+            else:
+                results[config_name] = "BLOCKED"
+                # Mark when we detected blocking
+                self.blocked_until[config_name] = datetime.now()
+
+        # Log results
+        self.log_results(results)
+
+        # Return first working config
+        for config, status in results.items():
+            if status == "WORKING":
+                return config
+
+        return None
+
+    def log_results(self, results):
+        """Log monitoring results for analysis"""
+        with open('telegram_monitor.log', 'a') as f:
+            timestamp = datetime.now().isoformat()
+            for config, status in results.items():
+                blocked_duration = self.blocked_until.get(config)
+                f.write(f"{timestamp}: {config} - {status}")
+                if blocked_duration:
+                    f.write(f" (blocked since {blocked_duration})")
+                f.write("\n")
+
+# Usage: Run every 5 minutes via cron
+# */5 * * * * python /opt/telegram_connectivity_monitor.py
+```
+
+## Understanding the Cat-and-Mouse Game
+
+VPN blocking in Iran involves continuous adaptation. Understand the cycle:
+
+**Week 1:** You deploy WireGuard on port 443. Works perfectly.
+
+**Week 2-3:** Iranian DPI systems begin identifying the WireGuard handshake pattern through traffic analysis.
+
+**Week 4:** Connections start failing intermittently as selective blocking begins.
+
+**Week 5-6:** Systematic blocking of suspected WireGuard servers.
+
+**Your response:** Switch to V2Ray with additional obfuscation, or change port and server.
+
+This cycle repeats indefinitely. The most reliable approach is:
+1. Maintain multiple protocols configured
+2. Test connectivity daily
+3. Switch protocols when primary fails
+4. Keep server infrastructure flexible (easy to spin up new servers)
+
+## Performance Expectations
+
+Different protocols have different tradeoffs when used in Iran:
+
+| Protocol | Speed | Blocking Resistance | Setup Complexity |
+|----------|-------|-------------------|-----------------|
+| WireGuard basic | Very fast | Low | Simple |
+| WireGuard + obfuscation | Fast | High | Medium |
+| OpenVPN | Moderate | Medium | Medium |
+| OpenVPN over SSL | Slower | High | Complex |
+| V2Ray | Fast | Very High | Complex |
+| Shadowsocks | Very fast | Medium | Simple |
+
+**Practical recommendation:** Start with V2Ray + WireGuard failover. If either fails, the other is immediately available.
+
+## Legal and Safety Considerations
+
+Users in Iran attempting to use Telegram face potential legal consequences. Consider these safety measures:
+
+```bash
+# Use separate user account on system
+useradd -m -s /bin/bash vpn_user
+sudo su - vpn_user
+
+# All VPN traffic routes through separate account
+# Makes plausible deniability possible if authorities access system
+
+# Encrypt VPN configuration files
+gpg --symmetric --cipher-algo AES256 ~/.config/vpn/config.json
+
+# Delete command history (prevents recovery)
+cat /dev/null > ~/.bash_history
+export HISTSIZE=0
+
+# Use volatile storage for temporary files
+# /tmp is typically mounted as tmpfs (RAM-based, deleted on reboot)
+# Avoid writing sensitive data to persistent storage
+```
+
+**Important:** These technical measures provide no protection against sophisticated adversaries with physical device access. Evaluate your threat model carefully before attempting circumvention in restrictive environments.
+
 
 ## Related Articles
 
