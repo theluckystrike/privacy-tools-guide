@@ -157,13 +157,187 @@ Regularly audit what information is publicly available about you:
 
 # Use tools like:
 # - Sherlock (username enumeration)
-# - Holehe (email enumeration)  
+# - Holehe (email enumeration)
 # - BlackArch OSINT tools
 ```
 
 ### 8. Build Community Support
 
-Connect with other developers and security professionals who face similar risks. Organizations like the Digital Defense Fund and噪 Security Swarm provide resources and community support for individuals targeted by harassment campaigns.
+Connect with other developers and security professionals who face similar risks. Organizations like the Digital Defense Fund and Security Swarm provide resources and community support for individuals targeted by harassment campaigns.
+
+## Advanced Infrastructure Hardening
+
+For developers managing mission-critical systems or high-profile projects, additional hardening measures provide defense-in-depth against swatting consequences.
+
+### VoIP Caller ID Authentication
+
+Modern telephony exploits rely on unauthenticated caller ID transmission. Implement STIR/SHAKEN authentication to verify legitimate callers:
+
+```bash
+# Configure STIR/SHAKEN on your SIP trunk
+# Example: Using Asterisk for VoIP authentication
+
+cat > /etc/asterisk/stir_shaken.conf << 'EOF'
+[general]
+enabled=yes
+ca_file=/etc/asterisk/trusted_certs.pem
+
+[outbound]
+method=uri
+realm=example.com
+private_key=/etc/asterisk/stir_shaken.key
+certificate=/etc/asterisk/stir_shaken.cert
+ttl=3600
+EOF
+
+asterisk -rx "core reload"
+```
+
+### Decoy Systems and Honeypots
+
+Sophisticated attackers may attempt to gather intelligence about your systems. Honeypot systems provide early warning of reconnaissance:
+
+```python
+# Example: SSH honeypot that logs brute force attempts
+import socket
+import threading
+import logging
+from datetime import datetime
+
+logging.basicConfig(
+    filename='/var/log/honeypot.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+class SSHHoneypot:
+    def __init__(self, host='0.0.0.0', port=2222):
+        self.host = host
+        self.port = port
+        self.attempts = {}
+
+    def log_attempt(self, ip, username, password):
+        """Log unauthorized access attempts"""
+        if ip not in self.attempts:
+            self.attempts[ip] = []
+
+        self.attempts[ip].append({
+            'timestamp': datetime.now(),
+            'username': username,
+            'password': password
+        })
+
+        # Alert if suspicious patterns detected
+        if len(self.attempts[ip]) > 10:
+            logging.warning(
+                f"ALERT: {ip} attempted {len(self.attempts[ip])} "
+                "logins - likely scanner/attacker"
+            )
+
+honeypot = SSHHoneypot()
+# This catches reconnaissance attempts from attackers
+# Logs indicate who's probing your infrastructure
+```
+
+## Reputation Monitoring and Incident Intelligence
+
+Swatting attacks often follow public incidents or harassment campaigns. Monitor your reputation across technical platforms and public databases:
+
+```python
+# Example: Automated reputation monitoring
+import requests
+import json
+from datetime import datetime, timedelta
+
+class ReputationMonitor:
+    def __init__(self, username, email):
+        self.username = username
+        self.email = email
+        self.baseline = {}
+
+    def check_threat_databases(self):
+        """Check major threat intelligence databases"""
+        alerts = []
+
+        # Check HaveIBeenPwned API
+        headers = {'User-Agent': 'ReputationMonitor/1.0'}
+        response = requests.get(
+            f'https://haveibeenpwned.com/api/v3/breachedaccount/{self.email}',
+            headers=headers
+        )
+
+        if response.status_code == 200:
+            breaches = response.json()
+            alerts.append({
+                'type': 'data_breach',
+                'count': len(breaches),
+                'breaches': [b['Title'] for b in breaches]
+            })
+
+        return alerts
+
+    def check_dark_web(self):
+        """Monitor for mentions in known dark web forums"""
+        # In production, integrate with dark web monitoring services
+        # like Recorded Future, Digital Shadows, or SpiderLabs
+        pass
+
+    def generate_report(self):
+        """Generate actionable threat report"""
+        alerts = self.check_threat_databases()
+        return {
+            'timestamp': datetime.now().isoformat(),
+            'user': self.username,
+            'alerts': alerts,
+            'recommendations': self._generate_recommendations(alerts)
+        }
+
+    def _generate_recommendations(self, alerts):
+        """Generate specific actions based on detected threats"""
+        recommendations = []
+        for alert in alerts:
+            if alert['type'] == 'data_breach':
+                recommendations.append(
+                    f"Your email was in {alert['count']} breaches. "
+                    f"Rotate passwords for accounts: "
+                    f"{', '.join(alert['breaches'][:3])}"
+                )
+        return recommendations
+```
+
+## Coordination with ISPs and Hosting Providers
+
+If you host systems that could be targeted, establish emergency contact procedures with your ISP and hosting provider:
+
+```bash
+# Document your emergency escalation points
+cat > ~/.swatting-emergency-contacts << 'EOF'
+ISP Emergency: [ISP Name] - [Emergency Number] - Account #[XXXXX]
+Hosting Provider: [Provider] - [Emergency Number] - Account #[XXXXX]
+Law Enforcement: [Local Police Non-Emergency] - [Number]
+FBI Cybercrime: tips.fbi.gov or 1-800-CALL-FBI
+Local Fire Department: [Station Number] (to pre-warn about false alarms)
+Trusted Colleague: [Name] - [Phone] - [Can verify you're safe]
+
+Request specific actions if emergency services arrive:
+1. Keep emergency responders outside until identity verified
+2. Have officer contact listed law enforcement liaison
+3. Provide this document to officer at door
+EOF
+
+chmod 600 ~/.swatting-emergency-contacts
+
+# Share with trusted contacts and keep near front door
+```
+
+## Psychological Resilience and Support Resources
+
+Swatting targets experience genuine trauma. Psychological support is as critical as technical measures:
+
+- **Crisis Hotlines**: National Suicide Prevention Lifeline (1-800-273-8255) for crisis support
+- **Cyber Civil Rights Initiative**: Resources for online harassment victims
+- **Bug Bounty Programs**: If you work in security, consider managed threat intelligence partnerships
+- **Therapist**: A therapist experienced with technology harassment provides essential support
 
 ## Related Reading
 

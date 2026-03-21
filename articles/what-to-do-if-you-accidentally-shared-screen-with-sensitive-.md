@@ -165,6 +165,266 @@ Sometimes the exposure requires formal incident response. Escalate to your secur
 
 Provide your security team with details: what was exposed, for how long, who was present, and whether recordings exist. This enables them to take appropriate countermeasures, such as rotating compromised credentials or notifying affected parties.
 
+## Forensic Analysis of Screen Share Exposure
+
+For security teams investigating potential data leaks from screen sharing incidents:
+
+### Timeline Reconstruction
+
+```python
+# Incident forensics: Determine what was actually exposed
+
+class ScreenShareIncidentAnalysis:
+    def __init__(self, meeting_platform, incident_report):
+        self.platform = meeting_platform
+        self.report = incident_report
+
+    def determine_actual_exposure(self):
+        """
+        Reconstruct what participants could have observed
+        Accounts for: video resolution, screen position, timing
+        """
+        exposure_factors = {
+            'resolution_quality': 'HD (1080p) = clearer text',
+            'text_size': 'font_size_px >= 16 is readable',
+            'duration': f'{self.report["duration"]} seconds',
+            'distance': 'Assume optimal viewing distance',
+            'participant_attention': 'Assume viewing entire screen'
+        }
+
+        # Calculate what was realistically observable
+        observable_lines_of_code = self.calculate_visible_lines()
+        observable_text = self.estimate_readable_text()
+
+        return {
+            'conservative_estimate': observable_text,
+            'worst_case_estimate': self.report.get('screen_content'),
+            'factors': exposure_factors
+        }
+
+    def calculate_visible_lines(self):
+        """How many lines of terminal/code were visible?"""
+        screen_height = 1080
+        line_height = 25  # pixels per line at readable size
+        visible_lines = screen_height / line_height
+        return int(visible_lines)  # ~43 lines visible
+
+    def estimate_readable_text(self):
+        """What text was actually readable?"""
+        dpi = 96
+        font_size = 12  # At < 12pt, difficult to read on video
+        readable_threshold = 16  # pt
+
+        if font_size < readable_threshold:
+            return "Text likely unreadable in video stream"
+        else:
+            return "Text was likely readable"
+```
+
+### Credential Exposure Classification
+
+```bash
+# Severity classification for different credential types
+
+# CRITICAL - Rotate immediately
+CRITICAL_CREDENTIALS=(
+  "AWS_SECRET_ACCESS_KEY"
+  "PRIVATE_SSH_KEY"
+  "DATABASE_PASSWORD"
+  "API_KEY_SECRET"
+  "ENCRYPTION_KEY"
+  "JWT_SIGNING_KEY"
+  "GPG_PRIVATE_KEY"
+)
+
+# HIGH - Rotate within 24 hours
+HIGH_CREDENTIALS=(
+  "GITHUB_TOKEN"
+  "SLACK_TOKEN"
+  "DOCKER_HUB_TOKEN"
+  "STRIPE_API_KEY"
+)
+
+# MEDIUM - Rotate within 7 days
+MEDIUM_CREDENTIALS=(
+  "PUBLIC_API_KEY"
+  "STAGING_DATABASE_PASSWORD"
+  "SERVICE_ACCOUNT_EMAIL"
+)
+
+# LOW - Monitor but no rotation needed
+LOW_CREDENTIALS=(
+  "PUBLIC_GITHUB_USERNAME"
+  "WEBSITE_URL"
+  "DOCUMENTATION_LINK"
+)
+
+# Automated rotation script
+for credential in "${CRITICAL_CREDENTIALS[@]}"; do
+  rotate_credential "$credential"
+  audit_access_logs "$credential"
+  notify_security_team "$credential" "CRITICAL"
+done
+```
+
+## Automated Detection of Sensitive Content
+
+### Building Screen Share Safeguards
+
+Organizations can implement automated detection that prevents sensitive content visibility:
+
+```javascript
+// Client-side content detection before screen sharing
+class SensitiveContentDetector {
+  constructor() {
+    this.sensitivePatterns = {
+      // API key patterns
+      api_key: /^(sk_live_|pk_live_|ghp_)[A-Za-z0-9_]{20,}/gm,
+      // AWS credentials
+      aws_key: /AKIA[0-9A-Z]{16}/g,
+      // Private keys
+      private_key: /-----BEGIN (PRIVATE|RSA) KEY-----/g,
+      // Database URLs
+      database_url: /postgres:\/\/[^:]+:[^@]+@[^/]+/gi,
+      // Passwords (common patterns)
+      password: /password\s*=\s*['"][^'"]+['"]/gi,
+      // Email in code/config
+      email: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g
+    };
+  }
+
+  async scanScreenBefore Sharing() {
+    try {
+      // Capture current screen
+      const stream = await navigator.mediaDevices.getDisplayMedia({
+        video: { frameRate: 1 }  // Low FPS for analysis
+      });
+
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const video = document.createElement('video');
+      video.srcObject = stream;
+
+      video.onloadedmetadata = () => {
+        ctx.drawImage(video, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+        // Use OCR to extract text from screen
+        this.analyzeContent(imageData);
+
+        // Stop the stream
+        stream.getTracks().forEach(track => track.stop());
+      };
+    } catch (err) {
+      console.error('Screen capture failed:', err);
+    }
+  }
+
+  analyzeContent(imageData) {
+    // Use Tesseract.js for OCR
+    Tesseract.recognize(imageData, 'eng')
+      .then(result => {
+        const text = result.data.text;
+        this.checkForSensitivePatterns(text);
+      });
+  }
+
+  checkForSensitivePatterns(text) {
+    const findings = [];
+
+    for (const [type, pattern] of Object.entries(this.sensitivePatterns)) {
+      const matches = text.match(pattern);
+      if (matches && matches.length > 0) {
+        findings.push({
+          type: type,
+          count: matches.length,
+          severity: this.calculateSeverity(type)
+        });
+      }
+    }
+
+    if (findings.length > 0) {
+      this.warnUser(findings);
+      return false;  // Block screen sharing
+    }
+
+    return true;  // Safe to share
+  }
+
+  calculateSeverity(contentType) {
+    const severities = {
+      'private_key': 'CRITICAL',
+      'aws_key': 'CRITICAL',
+      'api_key': 'CRITICAL',
+      'password': 'HIGH',
+      'database_url': 'HIGH',
+      'email': 'MEDIUM'
+    };
+    return severities[contentType] || 'LOW';
+  }
+
+  warnUser(findings) {
+    const message = findings
+      .map(f => `⚠️ DETECTED: ${f.type} (${f.count} matches) - ${f.severity}`)
+      .join('\n');
+
+    alert(`Do not share screen!\n\n${message}\n\nClose sensitive windows first.`);
+  }
+}
+```
+
+## Platform-Specific Recording Protection
+
+### Zoom Recording Security Measures
+
+```bash
+# Advanced Zoom security configuration to prevent accidental exposure
+
+# Disable local recording (force cloud recording with controls)
+defaults write com.zoom.xos ZoomEnableLocalRecording -bool false
+
+# Disable screen sharing of specific windows
+# (can whitelist only safe applications)
+defaults write com.zoom.xos ZoomScreenShareApplicationsAllowlist -array \
+  "com.apple.Safari" \
+  "com.google.Chrome"
+
+# Require authentication to join meetings
+defaults write com.zoom.xos ZoomRequireAuthToJoin -bool true
+
+# Automatically mute when screen share starts
+defaults write com.zoom.xos ZoomAutoMuteOnScreenShare -bool true
+```
+
+### Teams Meeting Recording Recovery
+
+```powershell
+# PowerShell script to find and audit Teams recordings
+
+function Find-TeamsRecordings {
+    param(
+        [string]$outputPath = "$env:USERPROFILE\Teams Recordings"
+    )
+
+    # Teams stores recordings in OneDrive and SharePoint
+    $teamsRecordings = @(
+        "$env:OneDriveConsumer\Teams Recordings",
+        "$env:OneDrive\Teams Recordings"
+    )
+
+    foreach ($folder in $teamsRecordings) {
+        if (Test-Path $folder) {
+            Get-ChildItem -Path $folder -Include "*.mp4" |
+            Select-Object Name, @{N='Size (MB)';E={[math]::Round($_.Length/1MB,2)}}, CreationTime |
+            Export-Csv "$outputPath\TeamsRecordings.csv" -NoTypeInformation
+        }
+    }
+}
+
+# Find recordings to audit or delete
+Find-TeamsRecordings
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

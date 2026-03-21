@@ -166,6 +166,175 @@ Router manufacturers release firmware updates that patch security vulnerabilitie
 
 Consider installing third-party firmware like OpenWrt, DD-WRT, or Tomato for older devices that no longer receive manufacturer updates. These projects often provide security patches and advanced features not available in stock firmware.
 
+## Advanced Intrusion Detection and Automated Response
+
+For power users managing business networks or concerned about sophisticated attackers, automated intrusion detection provides real-time threat response. These systems monitor network behavior patterns and block suspicious activity without manual intervention.
+
+### Setting Up Suricata for Network IDS
+
+Suricata is an open-source network intrusion detection engine that can run on a separate monitoring machine or directly on advanced routers:
+
+```bash
+# Install Suricata on Linux
+sudo apt install suricata
+
+# Create a monitoring configuration
+cat > /etc/suricata/suricata.yaml << 'EOF'
+inputs:
+  - interface: eth0
+    threads: auto
+    bpf-filter: "tcp"
+
+outputs:
+  - eve-log:
+      enabled: yes
+      filename: eve.json
+      types:
+        - alert:
+          - payload: yes
+          - payload-buffer-size: 4kb
+        - http:
+          - extended: yes
+        - dns:
+          - query: yes
+          - answer: yes
+EOF
+
+sudo systemctl start suricata
+sudo tail -f /var/log/suricata/eve.json | jq '.alert' | grep -i suspicious
+```
+
+This setup monitors all network traffic and alerts you to known malicious patterns. Set rules to block identified intrusions automatically:
+
+```bash
+# Example Suricata rule for brute-force SSH detection
+alert tcp any any -> any 22 (msg:"SSH Brute Force Attempt"; \
+  flow:to_server,established; threshold:type both, track by_dst, \
+  count 5, seconds 60; classtype:attempted-admin; \
+  sid:1000001; rev:1;)
+```
+
+### Identifying Suspicious Devices Through Behavioral Analysis
+
+Beyond simple device enumeration, behavioral analysis reveals unauthorized users by tracking unusual patterns:
+
+```python
+# Example: Behavioral anomaly detection for network devices
+import subprocess
+import time
+from collections import defaultdict
+
+class NetworkMonitor:
+    def __init__(self):
+        self.device_traffic = defaultdict(list)
+        self.baseline_established = False
+
+    def get_device_traffic(self):
+        """Get current traffic statistics per device"""
+        cmd = "arp-scan --localnet -q"
+        output = subprocess.check_output(cmd, shell=True).decode()
+
+        devices = {}
+        for line in output.strip().split('\n'):
+            if '\t' in line:
+                ip, mac, vendor = line.split('\t')
+                devices[ip] = mac
+        return devices
+
+    def detect_anomalies(self):
+        """Detect unusual traffic patterns"""
+        current = self.get_device_traffic()
+
+        # Flag devices that appear only occasionally
+        for ip, mac in current.items():
+            self.device_traffic[ip].append(time.time())
+
+        # Identify devices with erratic connection patterns
+        suspicious = []
+        for ip, timestamps in self.device_traffic.items():
+            if len(timestamps) > 5:
+                intervals = [timestamps[i+1] - timestamps[i]
+                            for i in range(len(timestamps)-1)]
+                avg_interval = sum(intervals) / len(intervals)
+                variance = sum((x - avg_interval)**2
+                             for x in intervals) / len(intervals)
+
+                # High variance suggests devices connecting at odd times
+                if variance > avg_interval ** 2:
+                    suspicious.append((ip, variance))
+
+        return suspicious
+
+monitor = NetworkMonitor()
+anomalies = monitor.detect_anomalies()
+for ip, score in anomalies:
+    print(f"⚠️ Suspicious activity from {ip} (anomaly score: {score})")
+```
+
+## Implementing Rate Limiting and Bandwidth Allocation
+
+Beyond detection, you can throttle unauthorized users' bandwidth to minimize their impact on your network. Most modern routers support QoS (Quality of Service) configuration:
+
+```bash
+# OpenWrt QoS configuration using tc (traffic control)
+tc qdisc add dev wlan0 root handle 1: htb default 12
+
+# Create a class for legitimate traffic (uncapped)
+tc class add dev wlan0 parent 1: classid 1:1 htb rate 100mbit
+
+# Create a class for unknown devices (heavily throttled)
+tc class add dev wlan0 parent 1:1 classid 1:12 htb rate 512kbit
+
+# Assign unknown MAC addresses to the throttled class
+tc filter add dev wlan0 protocol ip parent 1: prio 1 u32 \
+  match u8 0x0 0x0 classid 1:12
+```
+
+This configuration automatically limits any unknown devices to 512 kilobits per second, making bandwidth theft impractical while allowing legitimate traffic to flow normally.
+
+## SSL/TLS Certificate Pinning for Admin Access
+
+Prevent man-in-the-middle attacks on your router's admin panel by implementing certificate pinning. Generate a self-signed certificate for your router and configure clients to trust only that certificate:
+
+```bash
+# Generate self-signed certificate for router
+openssl req -new -x509 -keyout router.key -out router.cert -days 3650 \
+  -subj "/CN=192.168.1.1" -nodes
+
+# Pin the certificate in your monitoring scripts
+curl --cacert router.cert https://192.168.1.1/admin/api
+```
+
+For remote administration, use SSH port forwarding instead of exposing the admin panel directly:
+
+```bash
+# Create SSH tunnel to router admin panel
+ssh -L 8443:192.168.1.1:443 -p 22 admin@router.local
+
+# Access through the secure tunnel
+curl https://localhost:8443/admin/
+```
+
+## Long-Term Security Maintenance Schedule
+
+Establish a regular maintenance cadence to keep your WiFi security current:
+
+**Monthly:**
+- Review connected devices list for unfamiliar names
+- Check router logs for failed authentication attempts
+- Verify WPA2/WPA3 password strength hasn't been written down
+
+**Quarterly:**
+- Update router firmware (test in a non-production environment first)
+- Review and strengthen WPA key if it's been used for >6 months
+- Run network scan with `nmap` to identify all devices
+
+**Annually:**
+- Consider rotating your WiFi password completely
+- Audit which devices still need access (remove IoT devices no longer used)
+- Review router logs for security events from the past year
+- Test guest network isolation and bandwidth limits
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

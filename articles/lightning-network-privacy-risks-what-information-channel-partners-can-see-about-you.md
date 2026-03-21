@@ -153,6 +153,214 @@ done
 
 Watchtowers provide privacy by decrypting HTLC failures and breach attempts on your behalf. However, you must trust the watchtower not to collude with your channel partners. Choose watchtowers operated by parties unlikely to cooperate with your channel counterparties.
 
+## Privacy-Enhanced Lightning Implementations
+
+Several emerging techniques and protocol proposals improve Lightning privacy while maintaining compatibility:
+
+### Trampoline Routing and Privacy
+
+Trampoline routing obscures the payment route from intermediary nodes. Instead of revealing the entire path, you specify intermediate "trampoline" nodes that calculate the remaining route:
+
+```javascript
+// Traditional Lightning: Full route known by all hops
+// A -> B -> C -> D -> E (each node knows full path)
+
+// Trampoline routing: Path obfuscation
+// A -> B (trampoline) -> C (trampoline) -> E
+// B doesn't know if C is final destination
+// C doesn't know about D or E
+
+const trampolineRoute = {
+  source: nodeA,
+  trampoline1: nodeB,  // B calculates route to C
+  trampoline2: nodeC,  // C calculates route to E
+  destination: nodeE
+};
+
+// Privacy benefit: intermediate nodes see fewer hops
+// Trade-off: slightly increased latency for route computation
+```
+
+This approach significantly reduces channel partner knowledge of your payment graph position while maintaining competitive routing efficiency.
+
+### Multi-Path Payments (AMP)
+
+Atomic Multi-Path (AMP) payments split transactions across multiple routes, obscuring the total payment amount:
+
+```bash
+# Using c-lightning with AMP for privacy
+# Send 1 BTC across 3 independent paths
+
+lightning-cli sendpay \
+  --route-all \
+  --amount-msat=100000000 \
+  --bolt11-invoice=lnbc1000...
+
+# Each hop sees only a fraction of the total amount
+# Individual route nodes cannot determine total transaction value
+# Aggregated data still reveals patterns but with noise
+```
+
+For channels with consistent throughput, AMP provides plausible deniability about payment sizes by randomizing amounts across multiple smaller payments.
+
+### PTLCs (Point Time Locked Contracts)
+
+PTLC proposals replace HTLC hashes with elliptic curve points, enabling scriptless scripts that reveal even less information:
+
+```python
+# PTLC vs HTLC comparison
+htlc_payment = {
+    'type': 'HTLC',
+    'hash': sha256('secret123'),  # Reveals hash
+    'timeout': 3 days,
+    'visible_to_hops': ['hash', 'timeout', 'amount']
+}
+
+ptlc_payment = {
+    'type': 'PTLC',
+    'point': G * 'secret123',  # Scalar multiplication, different for each hop
+    'timeout': 3 days,
+    'visible_to_hops': ['timeout', 'amount']  # No hash pattern
+}
+
+# Key difference: Each hop sees different point values
+# Hops cannot correlate PTLCs across the payment route
+# Significantly improves on-chain privacy when settled
+```
+
+## Advanced Node Configuration for Privacy
+
+Developers operating Lightning nodes should consider these configuration optimizations:
+
+### Running Multiple Nodes for Anonymity
+
+Rather than consolidating liquidity on a single node, distribute across multiple node identities:
+
+```bash
+# Node 1: Public infrastructure node (for receiving merchant payments)
+# Node 2: Private personal node (for personal spending)
+# Node 3: Routing node (for collecting routing fees)
+
+# Each node maintains distinct channel partners
+# Attackers cannot correlate activity across identities
+# Channel partners cannot build comprehensive profile
+
+# Generate independent node identities
+for i in {1..3}; do
+  node_id=$(lightning-cli newaddr | jq -r '.address')
+  echo "Node $i identity: $node_id"
+done
+```
+
+### Tor-Only Node Infrastructure
+
+Operating your node exclusively over Tor prevents network-level deanonymization:
+
+```yaml
+# Docker compose for Tor-native Lightning node
+version: '3'
+services:
+  lightning:
+    image: lightningnetwork/lnd:latest
+    environment:
+      - TOR_CONTROL=control:9051
+      - TOR_SOCK5=socks5:9050
+      - LISTEN_ADDR=:9735
+    volumes:
+      - ./lnd:/home/lnd/.lnd
+      - ./torrc:/etc/tor/torrc
+    networks:
+      - onion
+
+  tor:
+    image: getbitti/docker-tor-hidden-service:latest
+    environment:
+      - LND_HID_SRV_PORT=9735
+    ports:
+      - "9051:9051"
+      - "9050:9050"
+    networks:
+      - onion
+
+networks:
+  onion:
+    driver: bridge
+```
+
+This configuration ensures your node's IP address remains hidden from channel partners.
+
+## Monitoring and Detecting Surveillance
+
+Sophisticated adversaries may attempt to gather intelligence about your node through repeated channel operations. Implement detection:
+
+```python
+# Behavioral monitoring for suspicious patterns
+import time
+from collections import Counter
+
+class ChannelPartnerAnalysis:
+    def __init__(self):
+        self.payment_patterns = {}
+        self.suspicious_partners = []
+
+    def analyze_partner_behavior(self, partner_pubkey, payments):
+        """
+        Detect if a channel partner is conducting surveillance
+        by making structured probes rather than legitimate payments
+        """
+        if len(payments) < 5:
+            return None
+
+        amounts = [p['amount'] for p in payments]
+        timings = [p['timestamp'] for p in payments]
+
+        # Detect test payment patterns
+        unique_amounts = len(set(amounts))
+        amount_variance = max(amounts) - min(amounts)
+
+        # Test payments often use identical or incrementing amounts
+        if unique_amounts < len(amounts) * 0.3:
+            self.suspicious_partners.append({
+                'partner': partner_pubkey,
+                'reason': 'repeated_test_amounts',
+                'confidence': 'high'
+            })
+
+        # Detect timing patterns suggesting automated probes
+        intervals = [timings[i+1] - timings[i]
+                    for i in range(len(timings)-1)]
+
+        if all(10 < i < 15 for i in intervals):  # Regular 12-second intervals
+            self.suspicious_partners.append({
+                'partner': partner_pubkey,
+                'reason': 'automated_probing_pattern',
+                'confidence': 'high'
+            })
+
+        return self.suspicious_partners
+
+    def recommended_actions(self, suspicious):
+        """Recommend actions for detected surveillance"""
+        actions = []
+
+        for partner_info in suspicious:
+            if partner_info['reason'] == 'automated_probing_pattern':
+                actions.append({
+                    'action': 'close_channel',
+                    'rationale': 'Partner conducting systematic reconnaissance',
+                    'timeline': 'immediate'
+                })
+
+            elif partner_info['reason'] == 'repeated_test_amounts':
+                actions.append({
+                    'action': 'monitor_closely',
+                    'rationale': 'Potential analysis of your liquidity',
+                    'timeline': 'ongoing'
+                })
+
+        return actions
+```
+
 ## The Bigger Picture
 
 Lightning Network privacy operates on a different model than Bitcoin's on-chain privacy. Your channel partners are not adversaries by default, but the protocol's design means they have access to information that traditional banking counterparties would also see—plus detailed metadata about every transaction.
