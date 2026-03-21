@@ -35,6 +35,20 @@ op signin
 
 This command initiates an authentication flow that opens your default browser. Once authenticated, you can start retrieving secrets programmatically.
 
+### Service Accounts vs. Personal Authentication
+
+The `op signin` flow works well for local development and interactive use, but automated pipelines require a non-interactive authentication method. 1Password Service Accounts provide a token-based authentication mechanism designed for this purpose.
+
+Create a service account through the 1Password web console under Integrations > Service Accounts. Each service account gets a scoped token with access limited to specific vaults. This follows the principle of least privilege: a CI/CD pipeline that only needs production database credentials should not have access to your entire vault.
+
+```bash
+# Authenticate using a service account token
+export OP_SERVICE_ACCOUNT_TOKEN="ops_your_token_here"
+op item list  # no interactive signin needed
+```
+
+Store the service account token in your CI platform's secrets management (GitHub Actions secrets, AWS Secrets Manager, etc.) and inject it as an environment variable. Never hardcode the token in pipeline definition files or Dockerfiles.
+
 ## Retrieving Secrets in Scripts
 
 The fundamental operation involves fetching individual items from your vault. The basic syntax uses the item name or UUID:
@@ -60,6 +74,30 @@ This JSON output integrates cleanly with shell scripts using tools like `jq`:
 API_KEY=$(op item get "API Gateway" --field "client_secret" --format json | jq -r '.value')
 export API_KEY
 ```
+
+### Using Secret References
+
+1Password CLI v2 introduced secret references—a URI scheme that lets you reference vault items without calling the CLI at script time. The format is:
+
+```
+op://vault-name/item-name/field-name
+```
+
+These references work with `op run`, which resolves all secret references in a subprocess's environment before starting the process:
+
+```bash
+# Set environment variable using a secret reference, then run the app
+op run --env-file=.env.1p -- node src/index.js
+```
+
+The `.env.1p` file contains secret references rather than actual values:
+
+```
+DATABASE_PASSWORD=op://Production/PostgreSQL/password
+STRIPE_KEY=op://Production/Stripe/secret_key
+```
+
+This approach is safer than shell-level variable exports because the secrets are only exposed to the child process, not to the parent shell or its history.
 
 ## Environment Variable Integration
 
@@ -126,6 +164,24 @@ jobs:
 
 Using a service account token provides granular access control without exposing your master password in CI environments.
 
+### GitLab CI Integration
+
+For GitLab pipelines, the pattern is similar but uses GitLab's CI variables system:
+
+```yaml
+deploy:
+  image: ubuntu:22.04
+  script:
+    - curl -sS https://downloads.1password.com/linux/debian/amd64/stable/op_2.x.x_amd64.deb -o op.deb
+    - dpkg -i op.deb
+    - export DB_PASSWORD=$(OP_SERVICE_ACCOUNT_TOKEN=$OP_TOKEN op item get ProductionDB --field password)
+    - ./deploy.sh
+  variables:
+    OP_TOKEN: $OP_SERVICE_ACCOUNT_TOKEN
+```
+
+Define `OP_SERVICE_ACCOUNT_TOKEN` as a masked and protected CI/CD variable in your GitLab project settings. Masking prevents the token from appearing in job logs even if a script accidentally prints all environment variables.
+
 ## Kubernetes and Docker Secrets
 
 Containerized applications benefit from proper secret management. You can inject 1Password secrets into Kubernetes using external secrets operators, or simply mount secrets at runtime:
@@ -189,6 +245,16 @@ op item edit "API Keys" "api_key=$NEW_KEY"
 curl -X POST https://yourapp.com/admin/rotate-key -d "key=$NEW_KEY"
 ```
 
+### Detecting Secret Exposure
+
+Even with disciplined secret management, credentials occasionally leak through logs, error messages, or misconfigured services. Integrate secret scanning into your pipeline to detect exposures early:
+
+- Enable GitHub's secret scanning and push protection features on all repositories
+- Use `trufflehog` or `gitleaks` in pre-commit hooks to prevent accidental secret commits
+- Monitor 1Password's activity log for unusual access patterns—a service account accessing dozens of vaults it has never touched before is a strong indicator of token theft
+
+If a secret is exposed, revoke it immediately through 1Password and the credential provider (AWS, Stripe, etc.), then audit logs to determine what was accessed with the exposed credential.
+
 ## Troubleshooting Common Issues
 
 Authentication failures often stem from session expiration. The CLI caches credentials temporarily—re-authenticate when needed:
@@ -204,8 +270,11 @@ op signin
 
 Permission errors indicate the service account or account lacks access to specific vaults. Verify vault access through the 1Password admin console.
 
+If `op run` fails with a secret reference error, verify the vault name, item name, and field name exactly match what is stored in 1Password. Names are case-sensitive. Run `op item list --vault="Production"` to confirm the exact item names, and `op item get "Item Name" --format json | jq '.fields[].label'` to list available field labels.
 
-## Related Articles
+Network errors in CI environments often indicate a firewall or proxy blocking outbound connections to 1Password's API endpoints (`op-connect.1password.com` on port 443). Whitelist this domain in your network egress rules if you operate a restricted CI environment. Alternatively, deploy a 1Password Connect server inside your network to proxy requests through an internal endpoint, eliminating direct internet dependency for secret retrieval during builds.
+
+## Related Reading
 
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
