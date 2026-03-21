@@ -45,7 +45,7 @@ Create an encrypted Borg repository:
 
 ```bash
 # Interactive mode
-borg init --encryption=repokey /backup/borg-repo
+ borg init --encryption=repokey /backup/borg-repo
 
 # Or with environment variable
 export BORG_PASSPHRASE="your-secure-password"
@@ -164,7 +164,147 @@ Borg also supports **verification** that actually restores and checks file integ
 borg verify /backup/borg-repo::archive-1
 ```
 
+## Remote and Cloud Backends
+
+The choice of storage backend is a significant differentiator in real-world deployments.
+
+**Restic** was designed from day one with remote backends as a first-class feature. Supported backends include local filesystem, SFTP, REST server, Amazon S3, Backblaze B2, Microsoft Azure Blob Storage, and Google Cloud Storage. The REST server backend is particularly useful for self-hosted deployments — you can run restic's official server on any VPS and point multiple clients at it:
+
+```bash
+# Start the restic REST server
+rest-server --path /data/restic --no-auth --listen :8000
+
+# Initialize remote repository
+restic -r rest:http://backup-server:8000/myrepo init
+
+# Back up to remote
+restic -r rest:http://backup-server:8000/myrepo backup ~/projects
+```
+
+Because all encryption happens client-side before data is transmitted, the server never sees plaintext regardless of whether the connection uses TLS.
+
+**Borg** was built primarily around local and SSH (SFTP) backends. BorgBase, a commercial hosting service, provides managed Borg repositories with append-only mode — a feature where backup clients can add new archives but cannot delete existing ones, protecting against ransomware that gains access to backup credentials. This is a meaningful security property for production backup systems:
+
+```bash
+# Initialize append-only Borg repository on BorgBase
+borg init --encryption=keyfile-chacha20poly1305 \
+  ssh://xxxxxxxxxx@xxxxxxxxxx.repo.borgbase.com/./repo
+
+# Create archive (append-only mode prevents deletion from client)
+borg create ssh://xxxxxxxxxx@xxxxxxxxxx.repo.borgbase.com/./repo::$(date +%Y%m%d-%H%M%S) ~/data
+```
+
+Restic also supports append-only semantics via repository locks, but BorgBase's server-enforced model is more robust against a compromised client.
+
+## Automation and Scheduling
+
+### Systemd Timer for Restic
+
+```ini
+# /etc/systemd/system/restic-backup.service
+[Unit]
+Description=Restic backup
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/restic/env
+ExecStart=/usr/bin/restic -r ${RESTIC_REPOSITORY} backup /home /etc
+ExecStartPost=/usr/bin/restic -r ${RESTIC_REPOSITORY} forget --keep-daily 7 --keep-weekly 4 --prune
+```
+
+```ini
+# /etc/systemd/system/restic-backup.timer
+[Unit]
+Description=Daily Restic backup
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+### Cron with Borg and Healthchecks.io
+
+Pairing Borg with a dead man's switch service provides alerting when backups stop running:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/borg-backup.sh
+REPO="ssh://backup@nas.local/./repos/workstation"
+export BORG_PASSPHRASE="$(cat /etc/borg/passphrase)"
+
+borg create "$REPO::$(date +%Y-%m-%d-%H%M%S)" \
+  /home /etc /var/lib \
+  --exclude-caches \
+  --compression lz4 \
+  && borg prune "$REPO" --keep-daily=7 --keep-weekly=4 \
+  && curl -fsS --retry 3 https://hc-ping.com/YOUR-UUID > /dev/null
+```
+
+Both tools integrate cleanly with systemd timers, cron, and CI pipelines. The key practice is always pinging a monitoring endpoint on successful completion — silent backup failures are far more dangerous than noisy ones.
+
+## Key Management: The Most Overlooked Risk
+
+Encryption is only as durable as your key management. Both tools are excellent at encrypting data, but many developers lose access to encrypted backups not because of cryptographic failure but because of key loss.
+
+**Restic key management** stores the repository master key in the repository itself, encrypted by your password. You can add multiple keys to a single repository, which is useful for team setups where multiple people need restore access:
+
+```bash
+# Add a second key (e.g., for a colleague)
+restic -r /backup/restic-repo key add
+
+# List all keys
+restic -r /backup/restic-repo key list
+
+# Remove an old key
+restic -r /backup/restic-repo key remove <key-id>
+```
+
+The critical recovery document is your password. If you lose the password, the repository is unrecoverable — there is no vendor reset. Store your Restic password in a password manager, and print a copy stored in a physically secure location.
+
+**Borg keyfile management** is more explicit. In `keyfile` mode, the key lives at `~/.config/borg/keys/`. This file is encrypted with your passphrase, but the file itself must be backed up separately — if you lose the key file and the passphrase, the archive is permanently inaccessible:
+
+```bash
+# Export the key for off-site backup
+borg key export /backup/borg-repo /path/to/safe/borg-key.txt
+
+# Import a key on a new machine
+borg key import /backup/borg-repo /path/to/safe/borg-key.txt
+```
+
+A sound practice is to store the exported key file in your password manager as a secure note, and separately store the passphrase in a different location. This prevents a single point of failure from rendering your backups permanently unrecoverable.
+
+In `repokey` mode (Borg's default), the encrypted key is embedded in the repository. This is more convenient but means a compromised repository server holds the encrypted key. For highly sensitive archives, `keyfile` mode is worth the additional management burden.
+
+## Compression Options
+
+Compression is a significant factor for storage efficiency, especially for text-heavy workloads like source code, logs, and database dumps.
+
+| Tool | Compression Options | Best For |
+|------|--------------------|-|
+| Restic | zstd (default), lz4, gzip, bzip2 | General-purpose workloads |
+| Borg | lz4 (fast), zstd, zlib, lzma | Tunable speed/ratio tradeoffs |
+
+Borg's `--compression auto,lz4` mode automatically detects already-compressed data and skips compression for those chunks, saving CPU without reducing ratios for compressible data. Restic applies compression uniformly across chunks, which is simpler but slightly less efficient for mixed-content backups.
+
 ## Use Case Recommendations
+
+Choose Restic when:
+
+- Simplicity matters more than advanced features
+- You need cross-platform support (Windows, macOS, Linux, BSD)
+- Cloud storage backends (S3, B2, Azure, GCS) are your target
+- You prefer a cleaner CLI with fewer flags
+
+Choose Borg when:
+
+- Local or network-attached storage is your primary target
+- You need faster restore speeds
+- Advanced verification features are important
+- You have many similar machines to back up (deduplication shines)
+- You want better compression ratios
 
 Choose Restic when:
 
