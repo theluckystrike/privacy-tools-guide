@@ -1,7 +1,7 @@
 ---
-title: Privacy-Focused DNS Providers Comparison 2026
+title: "Privacy-Focused DNS Providers Comparison 2026"
 slug: privacy-focused-dns-providers-comparison-2026
-description: Compare Quad9, NextDNS, Mullvad DNS, Control D, AdGuard DNS. Setup guides for all platforms, filtering configs, performance benchmarks.
+description: "Compare Quad9, NextDNS, Mullvad DNS, Control D, AdGuard DNS. Setup guides for all platforms, filtering configs, performance benchmarks."
 author: Privacy Tools Guide
 published: true
 reviewed: true
@@ -9,6 +9,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 date: 2026-03-21
+permalink: /privacy-focused-dns-providers-comparison-2026/
 ---
 
 {% raw %}

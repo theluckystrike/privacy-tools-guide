@@ -6,6 +6,7 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
+permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
 ---
 
 {% raw %}

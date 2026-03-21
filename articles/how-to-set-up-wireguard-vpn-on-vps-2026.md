@@ -1,12 +1,13 @@
 ---
-title: How to Set Up WireGuard VPN on VPS 2026
-description: Complete WireGuard VPN setup guide on a VPS. Includes server and client configuration, DNS leak prevention, kill switch setup, and multi-client management.
+title: "How to Set Up WireGuard VPN on VPS 2026"
+description: "Complete WireGuard VPN setup guide on a VPS. Includes server and client configuration, DNS leak prevention, kill switch setup, and multi-client management."
 author: Privacy Tools Guide
 date: 2026-03-21
 reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
+permalink: /how-to-set-up-wireguard-vpn-on-vps-2026/
 ---
 
 {% raw %}

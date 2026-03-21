@@ -1,12 +1,13 @@
 ---
-title: Privacy Risks of Cloud Document Editors - Google Docs 2026
-description: What Google Docs, Notion, and Office365 collect. Includes collaboration metadata, access logs, privacy risks, and alternatives like CryptPad.
+title: "Privacy Risks of Cloud Document Editors - Google Docs 2026"
+description: "What Google Docs, Notion, and Office365 collect. Includes collaboration metadata, access logs, privacy risks, and alternatives like CryptPad."
 author: Privacy Tools Guide
 date: 2026-03-21
 reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
+permalink: /privacy-risks-of-cloud-document-editors-google-docs-2026/
 ---
 
 {% raw %}
