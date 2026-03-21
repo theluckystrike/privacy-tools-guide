@@ -169,4 +169,159 @@ The Tor network's security model depends on having at least 5 honest authorities
 - [Anonymous Cryptocurrency Transactions Tor Guide: A.](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+## Directory Authority Network Architecture
+
+The nine Tor directory authorities are geographically distributed to prevent coordinated attacks. Each authority maintains independently:
+
+- **Moria1** (MIT): Run by Peter Palfrader, Tor Project
+- **Tor26** (TU Darmstadt, Germany): Operated by Tor Project
+- **Dizum** (Internet Systems Consortium): Tor Project
+- **Baalbek** (Swedish Internet Foundation): Tor Project
+- **Longclaw** (Tor Project): Designated operator
+- **Gabelmoo** (University of Paderborn): Tor Project staff
+- **Dannenberg** (CCC, Germany): Chaos Computer Club
+- **Faravahar** (Iranian diaspora): Community operator
+- **Serpa** (University of Tartu, Estonia): Community operator
+
+### Voting Protocol Details
+
+The consensus generation process follows a strict protocol:
+
+```
+Hour H:00 - Authorities download all relay descriptors
+Hour H:20 - Each authority publishes its vote
+Hour H:25 - Authorities vote on consensus parameters
+Hour H:40 - Final consensus published and distributed
+Hour H+1:00 - Clients use consensus for routing decisions
+```
+
+During the voting window, each authority can propose consensus parameters. If more than half agree, the parameter becomes law for that consensus period. This determines critical settings like:
+
+- Minimum relay bandwidth thresholds
+- Guard selection criteria
+- Exit policy requirements
+- Circuit path construction rules
+
+### Consensus Parameter Examples
+
+```
+bwauthpid=<value>                    # Bandwidth authority measurements
+guard-lifetime-days=<value>          # How long a guard can serve
+max-client-circuits=<value>          # Circuit creation rate limiting
+nf-congestratio-mult=<value>         # Network congestion handling
+```
+
+These parameters change frequently as the Tor network evolves and responds to new attacks.
+
+## Advanced Topics for Network Security
+
+### Detecting Authority Compromise
+
+If multiple authorities became compromised, the consensus could be manipulated. Tor has built-in defenses:
+
+1. **Quorum requirement**: 5 of 9 authorities must sign. An attacker needs to compromise majority
+2. **Authority key pinning**: Clients can verify signatures against hardcoded public keys
+3. **Redundant distribution**: Consensus propagates through both authorities and mirrors, preventing single-point suppression
+
+Operators can verify consensus integrity:
+
+```python
+from stem import descriptor
+import hashlib
+
+def verify_consensus_integrity(consensus_path, known_authority_keys):
+    """Verify consensus meets security thresholds"""
+
+    with open(consensus_path, 'rb') as f:
+        consensus = descriptor.Consensus(f.read())
+
+    # Check signature count
+    sig_count = len(consensus.signatures)
+    if sig_count < 5:
+        print(f"ALERT: Only {sig_count}/9 signatures present")
+        return False
+
+    # Verify each signature matches known authority key
+    valid_sigs = 0
+    for sig in consensus.signatures:
+        authority_id = sig.identity
+        if authority_id in known_authority_keys:
+            valid_sigs += 1
+
+    print(f"Valid authority signatures: {valid_sigs}/{sig_count}")
+    return valid_sigs >= 5
+```
+
+### Bandwidth Authority Measurements
+
+One consensus function is bandwidth measurement. Authorities run bandwidth tests against relays to verify their claimed throughput:
+
+```
+"w" line in consensus:
+w Bandwidth=<kilabytes_per_second>
+```
+
+Lying about bandwidth gets you deprioritized or down-weighted. A relay claiming 10 Mbps but measuring at 1 Mbps loses flag status.
+
+### Exit Policy Parsing
+
+The consensus includes each relay's exit policy. Understanding how to parse these determines what traffic types a relay handles:
+
+```python
+def parse_exit_policy(policy_line):
+    """Parse Tor exit policy (simplified)"""
+    # Format: accept/reject ip:port[, ...]
+
+    # Special cases:
+    # "accept *:80, accept *:443, reject *:*" = web traffic only
+    # "reject *:*" = reject all (middle relay only)
+    # "accept *:*" = accept all (unrestricted exit)
+
+    rules = []
+    for rule in policy_line.split(','):
+        action, spec = rule.strip().split()
+        rules.append({'action': action, 'port_spec': spec})
+
+    return rules
+```
+
+Clients use exit policies to determine which relays can service their requests. A HTTPS request (port 443) cannot use a relay rejecting that port.
+
+## Network Monitoring and Analysis
+
+### Real-Time Consensus Metrics
+
+Organizations and researchers monitor consensus health:
+
+```bash
+# Query Onionoo for current network statistics
+curl -s "https://onionoo.torproject.org/summary" | jq '.relays | length'  # Total relays
+curl -s "https://onionoo.torproject.org/summary?flag=Guard" | jq '.relays | length'  # Guard count
+curl -s "https://onionoo.torproject.org/details?flag=Exit" | jq '.relays | map(.bandwidth) | add'  # Exit bandwidth
+```
+
+A healthy network maintains:
+- 8,000+ relays total
+- 1,200+ Guard-flagged relays
+- 800+ Exit-flagged relays
+- Even bandwidth distribution (prevents choke points)
+
+### Detecting Sybil Attacks
+
+A Sybil attack involves a single entity controlling many relays to increase probability of handling user traffic. Detection mechanisms include:
+
+- **AS path analysis**: Relays from same ASN get downweighted
+- **IP clustering**: Multiple relays from same /16 network face penalties
+- **Uptime correlation**: Relays starting/stopping together trigger investigation
+
+## Historical Consensus Issues
+
+Understanding past problems helps operators maintain integrity:
+
+- **2013 - Directory Authority Attacks**: Attackers attempted to publish false consensus. Signature verification prevented compromise
+- **2018 - Consensus Bandwidth Inflation**: Some authorities over-weighted certain relays. Improved measurement corrected this
+- **2022 - Authority Availability**: Extended downtime of one authority reduced signature count. Network degraded gracefully
+
+The consensus mechanism's redundancy and cryptography have held against sustained attacks for 17+ years.
+
+## Related Reading

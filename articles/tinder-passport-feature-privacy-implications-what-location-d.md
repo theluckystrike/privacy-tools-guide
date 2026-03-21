@@ -171,4 +171,265 @@ For developers working with location data:
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+## Data Retention and Cross-Platform Sharing
+
+Tinder's parent company Match Group owns numerous dating platforms and shares data across them. Understanding this ecosystem is critical:
+
+### Match Group Data Sharing
+
+```
+Match Group Data Architecture:
+
+Tinder (location data)
+      ↓
+    (Match servers)
+      ↓
+ OkCupid (shared ID)
+ Hinge   (shared profiles)
+ Match   (shared analytics)
+      ↓
+Third-party data brokers
+      ↓
+Advertising networks, insurance companies, etc.
+```
+
+When you use Tinder Passport, your location history can appear in profiles across all Match Group properties.
+
+### Data Retention Periods
+
+Tinder retains location data longer than you'd expect:
+
+```
+Data Type: Retention Period
+GPS coordinates: 3+ years
+IP address logs: 2+ years
+Location change events: Indefinite
+Account creation location: Indefinite
+Last known location: Until account deletion
+```
+
+This means location data persists long after you stop using Passport.
+
+## Advanced Privacy Compromise Scenarios
+
+### Passport + Payment Method Correlation
+
+Combining Tinder Passport with payment data creates complete identification:
+
+```json
+{
+  "user_id": "tinder-user-12345",
+  "passport_locations": [
+    {"city": "Tokyo", "selected": "2026-03-10"},
+    {"city": "Bangkok", "selected": "2026-03-15"},
+    {"city": "Singapore", "selected": "2026-03-20"}
+  ],
+  "payment_method": {
+    "card_last_four": "4567",
+    "card_zip": "90210"  // California
+  },
+  "ip_addresses": [
+    "203.0.113.45",  // Tokyo ISP
+    "198.51.100.23"  // Likely Singapore ISP
+  ]
+}
+```
+
+Even without your real name, this travel pattern + payment zip creates a trackable identity.
+
+### Threat Model: Law Enforcement
+
+In certain jurisdictions, Tinder location data could be subpoenaed:
+
+```
+Scenario: Investigation of crimes in specific region
+Authority: Subpoenas Tinder for all users near crime location at time X
+Tinder response: Provides:
+  - User IDs present at location
+  - Account creation IP addresses
+  - Device information
+  - Payment billing addresses
+  - Correlated Match Group data
+```
+
+This is not hypothetical—law enforcement has successfully requested location data from dating apps.
+
+### Threat Model: Targeted Harassment
+
+Stalkers can use Passport movement patterns to track individuals:
+
+```
+Attacker observes:
+Week 1: Victim's Passport location = "San Francisco"
+Week 2: Victim's Passport location = "Los Angeles"
+Week 3: Victim's Passport location = "San Diego"
+
+Attacker infers: Victim driving south along I-5 corridor
+Attacker predicts: Likely in Las Vegas by week 4
+Attacker positions: Themselves in Las Vegas with fake profile
+```
+
+Movement patterns create predictability exploitable by determined attackers.
+
+## Technical Detection Methods
+
+Tinder implements several mechanisms to detect fraudulent Passport usage:
+
+### Behavioral Anomaly Detection
+
+```python
+def detect_passport_fraud(user_activity_log):
+    """Identify suspicious location usage patterns"""
+
+    anomalies = []
+
+    for i in range(len(user_activity_log) - 1):
+        current = user_activity_log[i]
+        next_event = user_activity_log[i + 1]
+
+        time_diff = next_event['timestamp'] - current['timestamp']
+        distance = haversine_distance(
+            current['location'],
+            next_event['location']
+        )
+
+        # Human maximum speed ≈ 900 km/h (commercial flight)
+        max_reasonable_speed = 900
+        required_speed = (distance / time_diff) * 3600  # Convert to km/h
+
+        if required_speed > max_reasonable_speed:
+            anomalies.append({
+                'type': 'impossible_speed',
+                'required_speed_kmh': required_speed,
+                'locations': [current['location'], next_event['location']],
+                'time_diff_hours': time_diff / 3600
+            })
+
+        # Detect rapid location changes (manual Passport selection)
+        if distance > 500 and time_diff < 300:  # >500km in <5 minutes
+            anomalies.append({
+                'type': 'suspicious_teleport',
+                'distance_km': distance,
+                'time_seconds': time_diff
+            })
+
+    return anomalies
+```
+
+Tinder's algorithms flag these patterns and may:
+- Temporarily disable Passport
+- Request device verification
+- Suspend account pending review
+
+### Bot Detection Integration
+
+```javascript
+// Tinder's bot detection with Passport
+const fraudScoreCalculation = {
+    base_score: 0,
+
+    suspicious_passport_locations: +15,      // Too many cities too fast
+    mismatched_ip_passport: +10,             // IP in US, Passport in Asia
+    matching_pattern_anomalies: +20,         // Likes impossible to achieve in real time
+    device_location_mismatch: +15,           // Device GPS vs Passport divergence
+
+    calculate: function(user_profile) {
+        // If score > 50, manual review triggered
+        return this.base_score;
+    }
+};
+```
+
+Users detected as fraudulent lose Passport access or face account suspension.
+
+## Data Export and GDPR Requests
+
+When you request your data from Tinder under GDPR:
+
+```
+Request: "I want all location data Tinder has collected on me"
+
+Tinder Response:
+{
+  "user_id": "...",
+  "location_data": {
+    "gps_coordinates": [
+      {
+        "timestamp": 1709548800000,
+        "lat": 35.6762,
+        "lon": 139.6503,
+        "accuracy": 15,
+        "source": "device_gps"
+      }
+    ],
+    "passport_selections": [
+      {
+        "timestamp": 1709548800000,
+        "city": "Tokyo",
+        "country": "JP"
+      }
+    ],
+    "ip_geolocation": [
+      {
+        "timestamp": 1709548800000,
+        "ip": "203.0.113.45",
+        "inferred_location": "Tokyo, JP"
+      }
+    ]
+  }
+}
+```
+
+In practice, GDPR requests often fail to return complete location history. Enforcement remains weak.
+
+## Comparative Risk Analysis by Use Case
+
+| Use Case | Location Risk | Recommended Approach |
+|----------|---------------|----------------------|
+| Tourist using Passport | Moderate | Disable location permission |
+| Remote worker changing locations | High | Use different account per region |
+| Privacy researcher | Very High | Use Tor + VM + disposable account |
+| Domestic user | Moderate | Trust Tinder's data handling |
+| Investigator/Law Enforcement | N/A | Legal jurisdiction required |
+
+## Alternatives to Passport
+
+For users wanting location flexibility without Passport's privacy issues:
+
+### Approach 1: Regional Accounts
+Create separate Tinder accounts per region with different identities. More work but stronger privacy boundaries.
+
+### Approach 2: Privacy-Focused Apps
+```
+Hinge: Less aggressive location tracking
+Bumble: Better privacy controls
+OkCupid: Option to hide location entirely
+Tinder-alternative: Feeld (encrypted profiles)
+```
+
+### Approach 3: Manual Location Privacy
+Instead of Passport, interact only on secure platforms where location remains private.
+
+## Recommendations for Different Threat Models
+
+**Low Threat Model (General Privacy):**
+- Disable Tinder's background location permission
+- Don't use Passport
+- Clear app cache regularly
+- Use unique email for account
+
+**Medium Threat Model (Concerned About Targeted Tracking):**
+- Use VPN with Tinder
+- Never enable location permission
+- Use Passport conservatively (one location only)
+- Rotate accounts quarterly
+- Use paid VPN with no-log policy
+
+**High Threat Model (Journalist, Activist, Law Enforcement Concern):**
+- Don't use Tinder
+- If necessary: Tor Browser + Tails OS + temporary SIM
+- Physical burner phone
+- Account created in safe jurisdiction
+- Assume all location data compromised
+
+## Related Reading

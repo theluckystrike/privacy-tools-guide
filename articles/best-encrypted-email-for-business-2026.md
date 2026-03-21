@@ -165,6 +165,273 @@ Choose based on your priority:
 - Integrated suite (email + calendar + contacts): Tuta Mail
 - Complete infrastructure control: Self-hosted with Docker-Mailserver or Mail-in-a-Box
 
+## Enterprise Compliance Deep Dive
+
+### HIPAA Compliance Architecture
+
+For healthcare organizations, encrypted email must satisfy HIPAA's covered entity and business associate requirements.
+
+**Proton Mail Business BAA Coverage:**
+```
+Covered Entity (Hospital)
+    ↓ Contracts with BAA
+Business Associate (Proton Mail)
+    ↓ Must comply with:
+    - Minimum necessary rule
+    - Encryption standards (AES-256)
+    - Access controls
+    - Breach notification within 24 hours
+    - Annual risk assessments
+```
+
+When a HIPAA-regulated organization uses Proton Mail, the BAA ensures:
+- Messages containing PHI (Protected Health Information) are encrypted end-to-end
+- Proton cannot access content even if subpoenaed
+- Audit trails prove compliance
+- Data breach response is documented
+
+**Implementation checklist:**
+```
+□ Execute Business Associate Agreement with Proton
+□ Implement mandatory encryption for patient emails
+□ Configure encryption to require recipient authentication
+□ Establish retention policies (typically 7-10 years for medical records)
+□ Train staff on HIPAA email handling
+□ Document annual risk assessments
+□ Implement monitoring for non-compliant email use
+□ Establish breach response procedures
+```
+
+### SOC 2 Type II Certification
+
+For business email, verify the provider's SOC 2 Type II attestation covering:
+
+```
+Security:
+  □ Encryption in transit (TLS 1.3)
+  □ Encryption at rest (AES-256-GCM)
+  □ Access controls with MFA
+  □ Intrusion detection systems
+  □ Vulnerability management
+
+Availability:
+  □ 99.9% uptime SLA
+  □ Geographic redundancy
+  □ Backup and recovery procedures
+  □ DDoS mitigation
+
+Confidentiality:
+  □ Data segregation per customer
+  □ Encryption keys managed separately
+  □ Personnel access controls
+  □ Vendor management procedures
+```
+
+Request the latest SOC 2 report from your provider before signing contracts.
+
+## Advanced Configuration Examples
+
+### Proton Mail + Thunderbird Integration
+
+```python
+# Automated setup script for Thunderbird + Proton Bridge
+import subprocess
+import os
+import json
+
+def configure_proton_thunderbird():
+    bridge_config = {
+        "account": {
+            "email": "team@yourdomain.com",
+            "displayName": "Your Organization",
+            "smtpHost": "127.0.0.1",
+            "smtpPort": 1025,
+            "imapHost": "127.0.0.1",
+            "imapPort": 1143,
+            "username": "team@yourdomain.com",
+            "authMethod": "OAuth"
+        },
+        "security": {
+            "requireEncryption": True,
+            "encryptOutgoingMail": True,
+            "defaultEncryption": "pgp"
+        }
+    }
+
+    return bridge_config
+```
+
+This configuration ensures:
+- All messages encrypted with Proton's keys
+- IMAP/SMTP available locally for legacy client support
+- OAuth authentication prevents password storage
+- Automatic encryption for outgoing mail
+
+### Tuta Mail Custom Domain Setup
+
+```bash
+#!/bin/bash
+# Configure custom domain with Tuta Mail
+
+DOMAIN="yourdomain.com"
+TUTA_ENDPOINT="https://mail.tutanota.com"
+
+# 1. Create team and domain
+curl -X POST "$TUTA_ENDPOINT/api/domain" \
+  -H "Authorization: Bearer $API_TOKEN" \
+  -d "{\"name\": \"$DOMAIN\"}"
+
+# 2. Configure MX records
+# MX 10 mail.tutanota.de
+
+# 3. Add team members
+for email in "ceo@$DOMAIN" "hr@$DOMAIN" "dev@$DOMAIN"; do
+  curl -X POST "$TUTA_ENDPOINT/api/team/user" \
+    -H "Authorization: Bearer $API_TOKEN" \
+    -d "{\"email\": \"$email\", \"role\": \"user\"}"
+done
+
+# 4. Enable organizational contacts (encrypted)
+curl -X PUT "$TUTA_ENDPOINT/api/team/settings" \
+  -H "Authorization: Bearer $API_TOKEN" \
+  -d "{\"contactsEncrypted\": true}"
+```
+
+This provides full encrypted email with custom domain and team management.
+
+### Mailfence OpenPGP Integration
+
+```bash
+# Generate and import organizational PGP key
+gpg --gen-key --batch << EOF
+Key-Type: RSA
+Key-Length: 4096
+Name-Real: Your Organization
+Name-Email: security@yourdomain.com
+Name-Comment: Organizational signing key
+Expire-Date: 3y
+EOF
+
+# Export for Mailfence import
+gpg --armor --export security@yourdomain.com > org_public_key.asc
+gpg --armor --export-secret-keys security@yourdomain.com > org_private_key.asc
+
+# In Mailfence: Settings > Keys > Import Keys
+# Upload both files; Mailfence stores securely
+
+# For team: Distribute public key, import into OpenPGP clients
+gpg --import org_public_key.asc
+```
+
+PGP integration allows existing OpenPGP workflows to integrate seamlessly with Mailfence.
+
+## Email Encryption Standards Comparison
+
+| Standard | Algorithm | Interoperability | Admin Control |
+|----------|-----------|------------------|---------------|
+| PGP (OpenPGP) | RSA-2048/4096 | Excellent (universal) | Full |
+| S/MIME | RSA-2048/4096 | Good (Windows focus) | Full |
+| Proton Encryption | X25519/ChaCha20 | Proton users only | Automatic |
+| Tuta Proprietary | Hybrid AES-256 | Tuta users only | Automatic |
+
+Choose based on your compatibility needs. OpenPGP provides maximum interoperability; proprietary encryption provides better usability.
+
+## Data Residency Certification
+
+For GDPR compliance, verify where provider stores data:
+
+```
+Proton Mail:  EU/Switzerland (optimal for GDPR)
+Tuta Mail:    Germany (GDPR-friendly)
+Mailfence:    Belgium (GDPR-friendly)
+```
+
+All three maintain data within EU, satisfying data residency requirements. Avoid providers storing data in US or other high-surveillance jurisdictions.
+
+## Migration Checklist from Current Email
+
+```
+Current System: G Suite / Office 365 / Traditional Email
+
+Phase 1: Preparation (Week 1)
+  □ Set up new encrypted email system
+  □ Configure custom domain (if applicable)
+  □ Test encryption for common workflows
+  □ Import contact lists
+  □ Verify backup procedures
+
+Phase 2: Parallel Operation (Weeks 2-3)
+  □ Announce encryption email address to stakeholders
+  □ Send encrypted email while maintaining old system
+  □ Redirect new messages to encrypted system
+  □ Test calendar/contacts sync if using integrated suite
+  □ Document user issues
+
+Phase 3: Cutover (Week 4)
+  □ Archive old email to storage
+  □ Update email signature with new address
+  □ Configure forwarding rules
+  □ Decommission old system after 30-day retention
+  □ Train staff on new system
+
+Phase 4: Ongoing (Months 2+)
+  □ Monitor for issues
+  □ Enforce encryption policies
+  □ Audit compliance monthly
+  □ Update encryption keys annually
+```
+
+## Cost Analysis: 3-Year Total Cost of Ownership
+
+```
+Option 1: Proton Mail Business ($60/month)
+  - Monthly license: $60
+  - Setup time: 5 hours × $150/hr = $750
+  - Training: 10 hours × $100/hr = $1,000
+  - Year 1: $720 + $750 + $1,000 = $2,470
+  - Year 2-3: $720/year = $1,440
+  - 3-Year Total: $5,350
+
+Option 2: Docker-Mailserver (self-hosted)
+  - VPS rental: $30/month × 36 = $1,080
+  - Domain: $15/year × 3 = $45
+  - Setup/configuration: 40 hours × $150/hr = $6,000
+  - Maintenance: 5 hours/month × $75/hr = $1,800
+  - Backup storage: $10/month × 36 = $360
+  - 3-Year Total: $9,285
+
+Option 3: Tuta Mail ($10/month)
+  - Monthly license: $10
+  - Setup/training: 3 hours × $150/hr = $450
+  - Year 1: $120 + $450 = $570
+  - Year 2-3: $120/year = $240
+  - 3-Year Total: $1,050
+```
+
+Tuta Mail offers lowest cost for small teams. Self-hosted offers lowest per-user cost for large teams (100+ users).
+
+## Security Testing Before Deployment
+
+```bash
+#!/bin/bash
+# Verify email encryption end-to-end
+
+# Test 1: TLS in transit
+echo | openssl s_client -connect mail.company.com:993 | grep "Cipher"
+
+# Test 2: Client certificate validation
+curl -v --insecure https://mail.company.com/api/check 2>&1 | grep "certificate"
+
+# Test 3: Message encryption verification
+# Send test message, verify in database is encrypted
+# (For self-hosted only)
+
+# Test 4: Key exchange verification
+echo "send test message and verify PGP key" | gpg --encrypt --armor -r recipient@example.com
+```
+
+Run these tests before deploying to production.
+
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)

@@ -171,4 +171,230 @@ Your university network likely provides its own VPN service for remote access—
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+## University VPN Bypass Techniques
+
+Some universities implement sophisticated VPN detection. Understanding their methods helps you choose appropriate solutions:
+
+### IP Reputation Blocking
+
+Many universities maintain blocklists of known VPN provider IP ranges:
+
+```
+# Example university network defense
+VPN_PROVIDERS_BLOCKED = [
+    "203.0.113.0/24",      # NordVPN EU datacenter
+    "198.51.100.0/24",     # ExpressVPN US servers
+    "192.0.2.0/24"         # CyberGhost nodes
+]
+
+def check_ip_reputation(client_ip):
+    if ip_in_blocklist(client_ip):
+        return "vpn_detected"
+    return "residential"
+```
+
+**Bypass strategy**: Use residential proxy services or less-popular VPN providers that haven't been blocklisted. However, check your university's terms first—many explicitly forbid VPN use for access.
+
+### DNS Leakage Detection
+
+Universities can detect VPN users by analyzing DNS queries:
+
+```
+Legitimate university DNS:
+- Queries: library.university.edu, library-db.internal.edu
+- Server IP: 128.2.1.1 (university DNS)
+
+VPN user (DNS leak):
+- Queries: library.university.edu via resolver.external.com
+- Server IP: 8.8.8.8 (Google DNS leaking through VPN)
+- DETECTED!
+```
+
+Prevent this by configuring DNS to route through the VPN:
+
+```bash
+# Ensure all DNS queries go through VPN tunnel
+resolvectl dns wg0 128.2.1.1 128.2.1.2
+resolvectl domain wg0 "university.edu" "~internal.university.edu"
+
+# Verify DNS routes through VPN
+nslookup library-db.internal.edu
+```
+
+### Active Probing Detection
+
+Sophisticated university networks probe incoming connections:
+
+```javascript
+// Universities may run active checks
+function detect_vpn_client() {
+    const checks = [
+        check_mtu_size(),        // VPN default MTU often 1400
+        check_ttl_patterns(),    // TTL may be one hop different
+        check_timing_patterns(), // VPN adds consistent latency
+        check_protocol_headers() // Custom VPN headers visible
+    ];
+
+    return checks.filter(c => c === true).length >= 2;
+}
+```
+
+**Workaround**: Use IKEv2 or custom obfuscation that mimics regular HTTPS traffic. Obfsproxy and related tools disguise VPN traffic as regular web traffic.
+
+## Advanced WireGuard Deployment for Students
+
+For technically skilled students, running your own WireGuard VPN provides the strongest guarantee against blocklisting:
+
+### VPS Provider Selection
+
+Choose VPS providers that universities typically whitelist:
+
+1. **Linode, DigitalOcean, AWS** - Widely used for legitimate services
+2. **Avoid**: Cheap providers associated with VPNs (Hetzner, OVH sometimes flagged)
+3. **Criteria**:
+   - Residential IP address pool (not datacenter-only)
+   - Good reviews from university network admins
+   - Stable ASN reputation
+
+### Optimized Configuration for High Latency Networks
+
+If studying in a country with poor international connectivity, optimize:
+
+```ini
+[Interface]
+PrivateKey = YOUR_KEY
+Address = 10.0.0.2/32
+DNS = 8.8.8.8
+
+[Peer]
+PublicKey = SERVER_KEY
+Endpoint = vpn-server.example.com:51820
+AllowedIPs = 10.0.0.0/24, 128.0.0.0/8  # University network
+PersistentKeepalive = 10  # Aggressive keepalive for mobile networks
+MTU = 1400  # Reduced for high-latency links
+```
+
+### Split Tunneling With Policy Routing
+
+Not all traffic needs VPN routing for legitimate academic use:
+
+```bash
+#!/bin/bash
+# Route only university traffic through VPN
+# General internet traffic uses local connection (faster)
+
+# Create separate routing table for VPN
+ip route add default via 10.0.0.1 table vpn_table
+
+# Route university domains through VPN
+for domain in "library.university.edu" "internal.university.edu"; do
+    ip=$(dig +short $domain)
+    ip rule add from all lookup vpn_table to $ip
+done
+
+# Everything else uses default route (faster)
+```
+
+## VPN Comparison for Student Use
+
+| Feature | Self-Hosted | NordVPN | ExpressVPN | Windscribe |
+|---------|-------------|---------|------------|-----------|
+| Cost | $5-15/month VPS | $12/month | $13/month | Free tier |
+| Unblocking | Excellent | Good | Fair | Variable |
+| Setup Complexity | High | Low | Low | Low |
+| Kill Switch | Yes | Yes | Yes | Yes |
+| Split Tunneling | Yes | Yes | Yes | Yes (paid) |
+| Support | N/A | 24/7 | 24/7 | Limited |
+
+## Detecting University VPN Access Logs
+
+Universities log VPN usage for security and policy compliance:
+
+```sql
+-- Example university VPN access log structure
+SELECT
+    user_id,
+    external_ip,
+    connected_timestamp,
+    disconnected_timestamp,
+    data_transferred_mb,
+    accessed_resources
+FROM vpn_access_log
+WHERE connected_timestamp > NOW() - INTERVAL 7 DAY
+AND user_id = 'student@university.edu';
+```
+
+Understand that your university knows:
+- When you connected from where
+- What resources you accessed
+- How much data you transferred
+
+Using the VPN for legitimate academic purposes is usually permitted, but:
+- Heavy torrent usage will be flagged
+- Accessing blocked regional services may violate terms
+- Some universities require VPN use be disclosed in research ethics
+
+## Troubleshooting Authentication Issues
+
+### IP Changing Detection
+
+Some university systems reject accounts used from rapidly changing IPs:
+
+```
+Standard pattern: Same IP for weeks
+Suspicious pattern: IP changes every 10 minutes
+University defense: Flag accounts with excessive IP variation
+```
+
+**Solution**: Use a stable VPN endpoint. If your provider rotates IPs automatically, disable this or choose a static IP option.
+
+### Certificate Validation Failures
+
+University proxies may intercept HTTPS:
+
+```
+Certificate Error:
+Subject: library.university.edu
+Issuer: University Network Proxy CA (not recognized)
+```
+
+Your browser warns about this. Most university IT will provide a custom CA certificate to install. Add it to your system:
+
+```bash
+# Linux: Add university CA certificate
+sudo cp university-ca.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+```
+
+### Bandwidth Throttling Through VPN
+
+Universities may throttle VPN traffic:
+
+```
+Test 1: Direct connection to university: 50 Mbps
+Test 2: Through VPN: 5 Mbps
+
+Problem: QoS rules throttle VPN traffic
+Solution: Use TCP instead of UDP (less obvious), or contact IT
+```
+
+## Compliance and Ethical Considerations
+
+Before implementing VPN access, understand:
+
+1. **University Terms of Service**: Most permit VPN for legitimate access
+2. **Copyright implications**: Don't use to access pirated content
+3. **Research ethics**: If studying censorship, disclose your methods to ethics boards
+4. **Data sovereignty**: Some countries forbid encryption; understand local laws
+
+Document that you're using VPN for legitimate academic purposes:
+
+```
+Email to IT: "I'm studying abroad and need reliable access to
+university library databases. I use WireGuard VPN to access
+course materials while traveling in [country]. Is this permitted?"
+```
+
+Getting explicit approval prevents misunderstandings later.
+
+## Related Reading
