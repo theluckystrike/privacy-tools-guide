@@ -24,6 +24,8 @@ ESPHome is an ecosystem that converts ESP32 and ESP8266 microcontrollers into sm
 
 The advantages of this approach include zero recurring costs, complete data sovereignty, offline operation during internet outages, and minimal latency for real-time monitoring. You also gain flexibility to create custom sensors tailored to specific needs.
 
+When you use commercial smart home platforms like Tuya, SmartThings, or Google Home, every sensor reading travels through vendor servers before reaching your dashboard. A single vendor outage can leave your automations non-functional. With ESPHome, the network path is entirely local: sensor to ESP chip over GPIO pins, ESP to Home Assistant over your LAN, and Home Assistant to your automation engine. No external DNS queries, no API tokens to manage, no vendor terms of service that can change overnight.
+
 ## Prerequisites
 
 Before starting, ensure you have the following components:
@@ -34,11 +36,25 @@ Before starting, ensure you have the following components:
 - **Sensors** compatible with ESPHome (temperature, humidity, motion, door/window, etc.)
 - **Breadboard and jumper wires** for prototyping
 
+For hardware, the ESP32 is generally preferred over the ESP8266 due to its dual-core processor, more GPIO pins, and built-in support for Bluetooth alongside WiFi. Common ESP32 development boards like the DOIT DevKit V1 or the Wemos D1 Mini32 cost under $5 and are widely available.
+
 ## Installing the ESPHome Addon
 
 Open Home Assistant and navigate to **Settings → Add-ons → Add-on Store**. Search for "ESPHome" and install the official addon. After installation, click **Start** and enable **Show in sidebar** for convenient access.
 
 The ESPHome dashboard provides a web interface for managing your devices. You create device configurations through YAML files, and the addon handles compilation and deployment.
+
+If you run Home Assistant in a Docker container rather than Home Assistant OS, you can install the ESPHome dashboard as a standalone container:
+
+```bash
+docker run --rm --privileged \
+  -v /dev:/dev \
+  -v ~/esphome:/config \
+  -p 6052:6052 \
+  ghcr.io/esphome/esphome:stable
+```
+
+This exposes the ESPHome dashboard on port 6052 and mounts a local directory for configurations.
 
 ## Creating Your First ESPHome Device
 
@@ -93,6 +109,18 @@ esphome:
 
 Replace the IP address with the address assigned to your ESP device. Restart Home Assistant to load the configuration.
 
+To avoid IP address changes breaking your integration, assign the ESP device a static DHCP lease in your router using its MAC address. The ESPHome device's MAC address appears in the ESPHome logs during first boot, or you can add a static WiFi IP to the YAML configuration:
+
+```yaml
+wifi:
+  ssid: "YourNetworkName"
+  password: "YourPassword"
+  manual_ip:
+    static_ip: 192.168.1.150
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+```
+
 ## Adding More Sensor Types
 
 ESPHome supports numerous sensor types. Below are common configurations for expanding your local sensor network.
@@ -146,6 +174,35 @@ sensor:
     update_interval: 60s
 ```
 
+### Water Leak Detection
+
+For basements and appliance monitoring, capacitive water leak sensors paired with an ESP32 provide an affordable solution:
+
+```yaml
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 23
+      mode: INPUT
+    name: "Basement Water Leak"
+    device_class: moisture
+    filters:
+      - delayed_on: 500ms
+```
+
+The `delayed_on` filter prevents false positives from brief moisture contact.
+
+## Common ESPHome Sensor Platform Comparison
+
+| Sensor | Protocol | Precision | Cost | Best For |
+|--------|----------|-----------|------|----------|
+| DHT22 | Single-wire | ±0.5°C | Low | Temperature/humidity |
+| BME280 | I2C/SPI | ±0.5°C | Low-medium | Temp/humidity/pressure |
+| BME680 | I2C | ±0.5°C | Medium | Air quality index |
+| SDS011 | UART | ±15% | Medium | Particulate matter |
+| BH1750 | I2C | ±20% | Low | Ambient light |
+| MCP9808 | I2C | ±0.0625°C | Low-medium | Precision temperature |
+
 ## Automating with Home Assistant
 
 With sensors reporting locally, create automations that respond to sensor events without cloud connectivity. Example automation that turns on lights when motion is detected:
@@ -163,6 +220,23 @@ automation:
           entity_id: light.living_room_lights
 ```
 
+You can also create threshold-based alerts. For example, an automation that sends a local notification when temperature exceeds a set value:
+
+```yaml
+automation:
+  - alias: "High Temperature Alert"
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.living_room_temperature
+        above: 30
+    action:
+      - service: notify.mobile_app_your_phone
+        data:
+          message: "Temperature alert: {{ states('sensor.living_room_temperature') }}°C"
+```
+
+Because everything runs locally, this automation fires even when your internet connection is down.
+
 ## Troubleshooting Common Issues
 
 **Device not connecting to WiFi**: Verify your WiFi credentials and ensure the ESP device is within range. Check the ESPHome logs for connection error messages.
@@ -170,6 +244,10 @@ automation:
 **Sensor returning invalid readings**: Confirm wiring connections match the pin configuration in your YAML. Some sensors require specific libraries—ensure you include the required `library` declarations.
 
 **Home Assistant not discovering the device**: Confirm both devices are on the same network subnet. Verify the API password matches between your ESPHome configuration and Home Assistant ESPHome integration settings.
+
+**OTA updates failing**: If over-the-air updates fail repeatedly, re-flash via USB to restore connectivity. Ensure the OTA password in your YAML matches the one stored in the Home Assistant ESPHome integration entry. Firewall rules blocking UDP port 3232 can also interfere with OTA.
+
+**High CPU usage on the ESP**: Polling sensors too frequently can overwhelm the microcontroller. Start with `update_interval: 60s` for most sensors and reduce only if you genuinely need faster updates. The BME680 in particular benefits from intervals of 30 seconds or longer to allow the gas sensor to stabilize.
 
 ## Securing Your Local Network
 
@@ -180,8 +258,11 @@ Even though your sensors operate locally, implement basic security practices:
 - Keep ESPHome and Home Assistant updated to patch security vulnerabilities
 - Consider isolating IoT devices on a separate VLAN if your router supports it
 
+VLAN isolation is particularly important if you have a mix of ESPHome devices and other IoT hardware that still requires cloud access. By placing cloud-dependent devices on a separate VLAN with restricted LAN access, you contain any compromise to that segment. ESPHome devices on their own VLAN can still communicate with Home Assistant by allowing traffic from the IoT VLAN to the Home Assistant host IP on ports 6053 (native API) and 8123 (web UI), while blocking all other cross-VLAN traffic.
 
-## Related Articles
+Disable the ESPHome dashboard's external access if you do not need it. The dashboard itself does not require authentication by default, so anyone on your local network can modify device configurations. Adding an API key or enabling Home Assistant's built-in authentication layer for the ESPHome addon adds a meaningful layer of protection.
+
+## Related Reading
 
 - [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
