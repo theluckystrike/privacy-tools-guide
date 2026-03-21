@@ -9,7 +9,7 @@ permalink: /how-to-manage-team-password-vault-permissions-across-enterpr/
 categories: [guides]
 tags: [privacy-tools-guide, password-manager, enterprise-security, access-control]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 ---
 
