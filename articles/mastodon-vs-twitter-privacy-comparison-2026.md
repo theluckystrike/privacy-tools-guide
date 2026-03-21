@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mastodon vs Twitter: Privacy Comparison 2026"
-description: "Mastodon vs Twitter: Privacy Comparison 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital identity."
+description: "Mastodon vs Twitter: Privacy Comparison 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital identity"
 date: 2026-03-15
 author: theluckystrike
 permalink: /mastodon-vs-twitter-privacy-comparison-2026/

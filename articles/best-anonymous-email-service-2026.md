@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Anonymous Email Service 2026: A Privacy-Focused Guide"
-description: "A technical guide to anonymous email services for developers and power users in 2026. Covers alias services, self-hosted options, and practical."
+description: "A technical guide to anonymous email services for developers and power users in 2026. Covers alias services, self-hosted options, and practical"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-anonymous-email-service-2026/

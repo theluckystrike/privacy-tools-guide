@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Matrix Vs Signal Decentralized Messaging"
-description: "A technical comparison of Matrix and Signal protocols for developers building decentralized messaging applications. Covers architecture, encryption."
+description: "A technical comparison of Matrix and Signal protocols for developers building decentralized messaging applications. Covers architecture, encryption"
 date: 2026-03-15
 author: theluckystrike
 permalink: /matrix-vs-signal-decentralized-messaging/

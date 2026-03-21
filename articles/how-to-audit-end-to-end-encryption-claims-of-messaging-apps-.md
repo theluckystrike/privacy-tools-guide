@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Audit End To End Encryption Claims Of Messaging Apps"
-description: "Learn how to independently verify end-to-end encryption claims of messaging apps using open source tools, protocol analysis, and practical testing."
+description: "Learn how to independently verify end-to-end encryption claims of messaging apps using open source tools, protocol analysis, and practical testing"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/

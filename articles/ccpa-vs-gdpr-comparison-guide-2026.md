@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ccpa Vs Gdpr Comparison Guide 2026"
-description: "A technical comparison of CCPA and GDPR privacy regulations for developers. Learn the key differences, compliance requirements, and code patterns for."
+description: "GDPR is broader and stricter: it applies to any organization with EU users regardless of size, requires explicit opt-in consent, mandates 72-hour breach"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ccpa-vs-gdpr-comparison-guide-2026/

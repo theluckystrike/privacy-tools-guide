@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy by Design Principles: A Practical Guide"
-description: "Learn how to implement privacy by design principles in your applications with concrete code examples and architectural patterns for developers and."
+description: "Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed"
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-by-design-principles-practical-guide/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Captive Portal Alternative Avoid WiFi Harvesting."
-description: "A technical guide for developers and power users to bypass captive portals without exposing personal data. Learn alternative methods to access WiFi."
+description: "A technical guide for developers and power users to bypass captive portals without exposing personal data. Learn alternative methods to access WiFi"
 date: 2026-03-16
 author: theluckystrike
 permalink: /captive-portal-alternative-avoid-wifi-harvesting-personal-da/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Tell If Your Smart Tv Is Spying On You"
-description: "Learn how to detect if your smart TV is collecting and transmitting data without your knowledge. This guide covers network traffic analysis, privacy."
+description: "Learn how to detect if your smart TV is collecting and transmitting data without your knowledge. This guide covers network traffic analysis, privacy"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-smart-tv-is-spying-on-you/

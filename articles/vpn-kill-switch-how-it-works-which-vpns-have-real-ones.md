@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN Kill Switch: How It Works and Which VPNs Have Real Ones"
-description: "A technical deep-dive into VPN kill switch functionality. Learn how kill switches work at the network level, different implementation types, and which."
+description: "A technical deep-dive into VPN kill switch functionality. Learn how kill switches work at the network level, different implementation types, and which"
 date: 2026-03-17
 author: theluckystrike
 permalink: /vpn-kill-switch-how-it-works-which-vpns-have-real-ones/

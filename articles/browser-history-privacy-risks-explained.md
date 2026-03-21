@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Browser History Privacy Risks Explained: A Developer Guide"
-description: "A technical breakdown of browser history privacy risks, covering data storage mechanisms, third-party access vectors, and practical mitigation."
+description: "A technical breakdown of browser history privacy risks, covering data storage mechanisms, third-party access vectors, and practical mitigation"
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-history-privacy-risks-explained/

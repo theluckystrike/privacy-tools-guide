@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Anonymous Browsing Mobile Devices Guide 2026"
-description: "A practical guide to anonymous browsing on mobile devices in 2026, covering Tor integration, VPN configuration, browser hardening, and custom."
+description: "A practical guide to anonymous browsing on mobile devices in 2026, covering Tor integration, VPN configuration, browser hardening, and custom"
 date: 2026-03-15
 author: theluckystrike
 permalink: /anonymous-browsing-mobile-devices-guide-2026/

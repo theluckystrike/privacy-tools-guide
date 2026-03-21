@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Email Security Headers Dmarc Dkim Spf Setup To Prevent."
-description: "Learn how to configure SPF, DKIM, and DMARC records to prevent email spoofing and protect your domain's reputation. Practical examples for developers."
+description: "Learn how to configure SPF, DKIM, and DMARC records to prevent email spoofing and protect your domain's reputation. Practical examples for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chrome Extension File Sharing Quick Upload"
-description: "Discover the best Chrome extensions for quick file sharing and privacy-preserving uploads. Compare features, encryption, and privacy policies."
+description: "Discover the best Chrome extensions for quick file sharing and privacy-preserving uploads. Compare features, encryption, and privacy policies"
 date: 2026-03-19
 author: "Privacy Tools Guide"
 permalink: /chrome-extension-file-sharing-quick-upload/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Hardware Security Key for Developers: A Practical Guide"
-description: "A hands-on comparison of hardware security keys for developers. Evaluate FIDO2 standards, OpenPGP support, CLI integration, and developer-friendly."
+description: "A hands-on comparison of hardware security keys for developers. Evaluate FIDO2 standards, OpenPGP support, CLI integration, and developer-friendly"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-hardware-security-key-for-developers/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to remove yourself from data broker sites step by step."
-description: "Complete guide to removing your personal information from 50+ major data brokers: manual opt-outs, automated tools, and templates."
+description: "Complete guide to removing your personal information from 50+ major data brokers: manual opt-outs, automated tools, and templates"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/

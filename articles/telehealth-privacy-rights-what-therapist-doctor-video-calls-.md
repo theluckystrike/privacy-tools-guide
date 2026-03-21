@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Telehealth Privacy Rights What Therapist Doctor Video Calls"
-description: "A practical guide for developers and power users on telehealth privacy rights. Learn what healthcare providers can legally record, consent."
+description: "A practical guide for developers and power users on telehealth privacy rights. Learn what healthcare providers can legally record, consent"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /telehealth-privacy-rights-what-therapist-doctor-video-calls-/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Photo Metadata Stripping How To Remove Exif Gps D"
-description: "A developer and power user guide to stripping EXIF GPS metadata from photos before uploading to dating apps. Includes Python, CLI tools, and mobile."
+description: "A developer and power user guide to stripping EXIF GPS metadata from photos before uploading to dating apps. Includes Python, CLI tools, and mobile"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton VPN vs Mullvad Speed Test and Privacy Audit 2026"
-description: "Technical comparison of Proton VPN and Mullvad: speed performance, privacy features, protocol support, and developer-friendly tools for 2026."
+description: "Technical comparison of Proton VPN and Mullvad: speed performance, privacy features, protocol support, and developer-friendly tools for 2026"
 date: 2026-03-16
 author: theluckystrike
 permalink: /proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/

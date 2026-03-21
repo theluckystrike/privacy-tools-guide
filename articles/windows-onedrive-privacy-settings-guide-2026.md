@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows OneDrive Privacy Settings Guide 2026"
-description: "A technical guide to configuring OneDrive privacy settings on Windows for developers and power users. Covers registry tweaks, Group."
+description: "A technical guide to configuring OneDrive privacy settings on Windows for developers and power users. Covers registry tweaks, Group"
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-onedrive-privacy-settings-guide-2026/

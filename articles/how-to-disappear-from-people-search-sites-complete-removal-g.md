@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Disappear From People Search Sites Complete Removal G"
-description: "A practical guide for developers and power users to remove personal data from people search sites using automation, API techniques, and systematic."
+description: "A practical guide for developers and power users to remove personal data from people search sites using automation, API techniques, and systematic"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-disappear-from-people-search-sites-complete-removal-g/

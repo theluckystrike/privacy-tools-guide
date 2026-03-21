@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Attestation Key Privacy What Hardware Backed Keys Re"
-description: "Learn how Android hardware-backed attestation keys work, what device information they expose, and how developers can use them for security while."
+description: "Learn how Android hardware-backed attestation keys work, what device information they expose, and how developers can use them for security while"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /android-attestation-key-privacy-what-hardware-backed-keys-re/

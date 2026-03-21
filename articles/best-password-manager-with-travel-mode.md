@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Password Manager With Travel Mode: A Developer Guide"
-description: "Discover password managers with travel mode for developers and power users. Learn how to protect sensitive credentials when crossing borders while."
+description: "Discover password managers with travel mode for developers and power users. Learn how to protect sensitive credentials when crossing borders while"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-password-manager-with-travel-mode/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Password Manager for Developers: A Technical Guide"
-description: "A practical comparison of password managers with CLI support, API access, and developer-friendly features. Includes configuration examples and security."
+description: "A practical comparison of password managers with CLI support, API access, and developer-friendly features. Includes configuration examples and security"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-password-manager-for-developers/

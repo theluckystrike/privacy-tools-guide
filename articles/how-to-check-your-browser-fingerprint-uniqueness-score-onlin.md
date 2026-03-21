@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Check Your Browser Fingerprint Uniqueness Score Onlin"
-description: "Learn how to check your browser fingerprint uniqueness score with online tools. Practical guide for developers and power users to measure browser."
+description: "Learn how to check your browser fingerprint uniqueness score with online tools. Practical guide for developers and power users to measure browser"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-your-browser-fingerprint-uniqueness-score-onlin/

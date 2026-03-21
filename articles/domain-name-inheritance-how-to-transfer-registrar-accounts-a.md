@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Domain Name Inheritance How To Transfer Registrar Accounts A"
-description: "Learn how to transfer domain names and hosting accounts after death. This guide covers registrar transfer processes, documentation requirements, and."
+description: "Domain names can be transferred after death by providing the registrar with a death certificate, letter of testamentary or administration, and court order"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /domain-name-inheritance-how-to-transfer-registrar-accounts-a/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted Dns Messaging Combination How To Layer Privacy Pro"
-description: "Learn how combining encrypted DNS with secure messaging creates privacy protections for developers and power users."
+description: "Learn how combining encrypted DNS with secure messaging creates privacy protections for developers and power users"
 date: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-dns-messaging-combination-how-to-layer-privacy-pro/

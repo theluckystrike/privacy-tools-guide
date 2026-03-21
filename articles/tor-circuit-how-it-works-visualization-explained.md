@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Circuit: How It Works and Visualization Explained"
-description: "A technical deep dive into Tor circuit mechanics for developers and power users. Understand the onion routing protocol, circuit construction, and how."
+description: "A technical deep dive into Tor circuit mechanics for developers and power users. Understand the onion routing protocol, circuit construction, and how"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-circuit-how-it-works-visualization-explained/

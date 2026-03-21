@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN for Accessing Hulu from Canada: Current Working Servers"
-description: "A technical guide for developers and power users on accessing Hulu from Canada using VPN. Includes server configuration, protocol setup, and testing."
+description: "A technical guide for developers and power users on accessing Hulu from Canada using VPN. Includes server configuration, protocol setup, and testing"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-hulu-from-canada-current-working-servers/

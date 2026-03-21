@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted NAS vs Cloud Storage Comparison: A Developer Guide"
-description: "A practical comparison of encrypted network-attached storage versus cloud storage solutions. Learn the security trade-offs, performance considerations."
+description: "A practical comparison of encrypted network-attached storage versus cloud storage solutions. Learn the security trade-offs, performance considerations"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /encrypted-nas-vs-cloud-storage-comparison/

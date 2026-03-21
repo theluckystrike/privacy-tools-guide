@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Encrypted Dead Drop Using Onionshare For Sourc"
-description: "A practical guide for developers and power users to create secure, anonymous drop boxes using OnionShare."
+description: "A practical guide for developers and power users to create secure, anonymous drop boxes using OnionShare"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Self-Hosted Email Server Privacy Comparison"
-description: "Compare self-hosted email solutions: Mail-in-a-Box, Mailcow, iRedMail, Modoboa, Docker Mailserver. Setup complexity, maintenance burden, spam handling."
+description: "Compare self-hosted email solutions: Mail-in-a-Box, Mailcow, iRedMail, Modoboa, Docker Mailserver. Setup complexity, maintenance burden, spam handling"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /self-hosted-email-privacy-comparison/

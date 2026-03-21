@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How VPN Subnet Conflicts Happen and How to Fix Them"
-description: "A technical guide explaining VPN subnet conflicts, why they occur, and practical solutions for developers and power users managing multiple VPN."
+description: "A technical guide explaining VPN subnet conflicts, why they occur, and practical solutions for developers and power users managing multiple VPN"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-vpn-subnet-conflicts-happen-and-how-to-fix-them/

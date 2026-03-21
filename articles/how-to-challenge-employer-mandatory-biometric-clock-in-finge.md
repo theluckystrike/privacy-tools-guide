@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Challenge Employer Mandatory Biometric Clock"
-description: "A practical guide for developers and power users on challenging mandatory fingerprint and facial recognition time-tracking systems. Learn legal rights."
+description: "A practical guide for developers and power users on challenging mandatory fingerprint and facial recognition time-tracking systems. Learn legal rights"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/

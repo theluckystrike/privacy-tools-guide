@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Threat Model For Protest Medic Protecting Patient Encounter"
-description: "A technical guide for developers and power users on building a threat model to protect patient encounter information as a protest medic."
+description: "A technical guide for developers and power users on building a threat model to protect patient encounter information as a protest medic"
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-protest-medic-protecting-patient-encounter-/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does NordVPN Work in Uzbekistan? 2026 Tested and Reviewed"
-description: "A technical guide testing NordVPN connectivity in Uzbekistan. Includes server recommendations, configuration tips, and troubleshooting for developers."
+description: "A technical guide testing NordVPN connectivity in Uzbekistan. Includes server recommendations, configuration tips, and troubleshooting for developers"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /does-nordvpn-work-in-uzbekistan-2026-tested-and-reviewed/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Communication For Activists"
-description: "A practical guide to end-to-end encrypted messaging for activists and organizers. Covers Signal, Session, Matrix, and self-hosted solutions with code."
+description: "A practical guide to end-to-end encrypted messaging for activists and organizers. Covers Signal, Session, Matrix, and self-hosted solutions with code"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-encrypted-communication-for-activists/

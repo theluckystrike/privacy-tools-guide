@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Briar Messenger Offline Communication"
-description: "Briar Messenger Offline Communication: How It Works for. — privacy guide covering tools, techniques, and best practices to protect your data and."
+description: "When traditional communication networks fail—whether through infrastructure shutdowns, internet blackouts, or deliberate throttling—activists and organizers"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /briar-messenger-offline-communication-how-it-works-for-prote/

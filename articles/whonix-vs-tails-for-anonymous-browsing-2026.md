@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Whonix vs Tails for Anonymous Browsing 2026"
-description: "A technical comparison of Whonix and Tails for anonymous browsing in 2026. Learn the differences in architecture, security model, and use cases."
+description: "A technical comparison of Whonix and Tails for anonymous browsing in 2026. Learn the differences in architecture, security model, and use cases"
 date: 2026-03-15
 author: theluckystrike
 permalink: /whonix-vs-tails-for-anonymous-browsing-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Browser To Use With Tor Hidden Services"
-description: "A technical guide evaluating browsers for accessing Tor hidden services, with configuration examples, security considerations, and practical."
+description: "A technical guide evaluating browsers for accessing Tor hidden services, with configuration examples, security considerations, and practical"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-browser-to-use-with-tor-hidden-services/

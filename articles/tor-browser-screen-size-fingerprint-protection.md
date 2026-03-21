@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Screen Size Fingerprint Protection"
-description: "Learn how Tor Browser protects against screen size fingerprinting and how to configure it for maximum privacy. Practical tips for developers and power."
+description: "Learn how Tor Browser protects against screen size fingerprinting and how to configure it for maximum privacy. Practical tips for developers and power"
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-screen-size-fingerprint-protection/

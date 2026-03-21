@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Enterprise Password Manager With Zero Knowledg"
-description: "A practical guide for developers and power users setting up enterprise password managers with zero knowledge encryption. Includes architecture."
+description: "A practical guide for developers and power users setting up enterprise password managers with zero knowledge encryption. Includes architecture"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-enterprise-password-manager-with-zero-knowledg/

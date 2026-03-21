@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Federated Learning Cohorts: FLoC Replacement Explained"
-description: "Federated Learning Cohorts: FLoC Replacement Explained — privacy guide covering tools, techniques, and best practices to protect your data and digital."
+description: "Federated Learning Cohorts: FLoC Replacement Explained — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 author: theluckystrike
 permalink: /federated-learning-cohorts-floc-replacement-what-happened-ex/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Threat Model For Sex Worker Protecting Real Identity And."
-description: "A practical technical guide for developers and power users on building a threat model to protect real identity and physical location for sex workers."
+description: "A practical technical guide for developers and power users on building a threat model to protect real identity and physical location for sex workers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-sex-worker-protecting-real-identity-and-location/

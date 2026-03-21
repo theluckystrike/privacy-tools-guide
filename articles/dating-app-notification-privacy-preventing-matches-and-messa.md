@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Notification Privacy Preventing Matches And Messa"
-description: "A technical guide for developers and power users on controlling dating app notifications. Learn platform-specific APIs, notification grouping, and."
+description: "Lock screen privacy remains a critical concern for dating app users. When a match sends a message or your profile appears in someone's stack, that notification"
 date: 2026-03-16
 author: theluckystrike
 permalink: /dating-app-notification-privacy-preventing-matches-and-messa/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Audit VPN Provider Claims Using Open Source Tools"
-description: "Learn how to independently verify what your VPN provider claims about privacy, security, and performance using free, open source tools."
+description: "Learn how to independently verify what your VPN provider claims about privacy, security, and performance using free, open source tools"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-audit-vpn-provider-claims-using-open-source-tools/

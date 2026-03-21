@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Teacher Student Data Privacy Ferpa Compliance Digital Tools"
-description: "A technical guide for developers and power users on implementing FERPA compliance for educational digital tools. Covers data handling, API security."
+description: "A technical guide for developers and power users on implementing FERPA compliance for educational digital tools. Covers data handling, API security"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /teacher-student-data-privacy-ferpa-compliance-digital-tools-/

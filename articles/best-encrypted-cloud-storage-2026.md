@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Cloud Storage 2026: A Developer's Guide"
-description: "A practical comparison of encrypted cloud storage services for developers and power users. Evaluate client-side encryption, zero-knowledge."
+description: "A practical comparison of encrypted cloud storage services for developers and power users. Evaluate client-side encryption, zero-knowledge"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-cloud-storage-2026/

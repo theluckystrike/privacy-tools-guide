@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best VPN for Using Google in China Without Detection"
-description: "A technical guide for developers and power users seeking reliable methods to access Google services while in China."
+description: "A technical guide for developers and power users seeking reliable methods to access Google services while in China"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-using-google-in-china-without-detection/

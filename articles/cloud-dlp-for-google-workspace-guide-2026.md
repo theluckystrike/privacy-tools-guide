@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cloud DLP for Google Workspace Guide 2026"
-description: "A practical guide to implementing Cloud Data Loss Prevention in Google Workspace for developers and power users."
+description: "A practical guide to implementing Cloud Data Loss Prevention in Google Workspace for developers and power users"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /cloud-dlp-for-google-workspace-guide-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Migrating from Sticky Password to Bitwarden: A Guide"
-description: "A practical guide for developers and power users migrating passwords from Sticky Password to Bitwarden. Covers export methods, import scripts, and CLI automation."
+description: "A practical guide for developers and power users migrating passwords from Sticky Password to Bitwarden. Covers export methods, import scripts, and CLI"
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-sticky-password-to-bitwarden-step-by-step-gui/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Wifi Deauthentication Attack Detection How To Identify And P"
-description: "A technical guide for developers and power users on detecting, analyzing, and preventing WiFi deauthentication attacks using practical tools and code."
+description: "A technical guide for developers and power users on detecting, analyzing, and preventing WiFi deauthentication attacks using practical tools and code"
 date: 2026-03-16
 author: theluckystrike
 permalink: /wifi-deauthentication-attack-detection-how-to-identify-and-p/

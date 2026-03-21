@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To File Ftc Complaint For Privacy Violation By Company D"
-description: "A practical guide for developers and power users on filing FTC complaints after a company data breach. Includes documentation steps, API references."
+description: "A practical guide for developers and power users on filing FTC complaints after a company data breach. Includes documentation steps, API references"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-file-ftc-complaint-for-privacy-violation-by-company-d/

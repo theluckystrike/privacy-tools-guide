@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Aegis Authenticator vs Google Authenticator"
-description: "A technical comparison of Aegis Authenticator and Google Authenticator for developers and power users. Evaluate security features, import/export."
+description: "A technical comparison of Aegis Authenticator and Google Authenticator for developers and power users. Evaluate security features, import/export"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /aegis-authenticator-vs-google-authenticator/

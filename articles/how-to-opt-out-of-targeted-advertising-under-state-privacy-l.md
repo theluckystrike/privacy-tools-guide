@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Opt Out Of Targeted Advertising Under State Privacy L"
-description: "A practical guide for developers and power users to exercise privacy rights under CCPA, VCDPA, and other state privacy laws. Includes API methods, code."
+description: "A practical guide for developers and power users to exercise privacy rights under CCPA, VCDPA, and other state privacy laws. Includes API methods, code"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-targeted-advertising-under-state-privacy-l/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Configure Firefox for Maximum Privacy Without Breaking"
-description: "Hardened Firefox settings that block trackers, ads, and surveillance while keeping 99% of sites functional."
+description: "Hardened Firefox settings that block trackers, ads, and surveillance while keeping 99% of sites functional"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-configure-firefox-maximum-privacy-without-breaking-sites/

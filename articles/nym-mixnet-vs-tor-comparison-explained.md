@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nym Mixnet vs Tor Comparison Explained: A Technical Guide"
-description: "A detailed technical comparison of Nym Mixnet and Tor for developers and power users. Understand the architectural differences, metadata protection."
+description: "A detailed technical comparison of Nym Mixnet and Tor for developers and power users. Understand the architectural differences, metadata protection"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nym-mixnet-vs-tor-comparison-explained/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Configure Openpgp Key Server For Organization Interna"
-description: "A practical guide to setting up and configuring an internal OpenPGP key server for your organization. Covers server options, deployment, and best."
+description: "A practical guide to setting up and configuring an internal OpenPGP key server for your organization. Covers server options, deployment, and best"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-openpgp-key-server-for-organization-interna/

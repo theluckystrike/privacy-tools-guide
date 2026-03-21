@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Brave Browser Vs Edge Privacy Comparison 2026"
-description: "A detailed privacy comparison between Brave Browser and Microsoft Edge for developers and power users. Analyze tracking protection, fingerprinting."
+description: "A detailed privacy comparison between Brave Browser and Microsoft Edge for developers and power users. Analyze tracking protection, fingerprinting"
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-browser-vs-edge-privacy-comparison-2026/

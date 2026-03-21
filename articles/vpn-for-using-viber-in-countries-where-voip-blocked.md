@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Vpn For Using Viber In Countries Where Voip Blocked"
-description: "A developer-focused guide on VPN solutions for accessing Viber in countries with VoIP restrictions. Covers WireGuard, OpenVPN with obfuscation."
+description: "A developer-focused guide on VPN solutions for accessing Viber in countries with VoIP restrictions. Covers WireGuard, OpenVPN with obfuscation"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-using-viber-in-countries-where-voip-blocked/

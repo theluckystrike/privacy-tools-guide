@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup For Financial Advisor Client Portfolio Data Pr"
-description: "A practical guide for developers and power users implementing privacy controls for financial advisor client portfolio data. Includes encryption, access."
+description: "A practical guide for developers and power users implementing privacy controls for financial advisor client portfolio data. Includes encryption, access"
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-financial-advisor-client-portfolio-data-pr/

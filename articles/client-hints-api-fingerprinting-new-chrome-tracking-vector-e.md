@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Client Hints API: The New Chrome Tracking Vector Explained"
-description: "A technical deep-dive into the Client Hints API and how it enables fingerprinting. Learn what data Chrome exposes, how websites use it, and practical."
+description: "A technical deep-dive into the Client Hints API and how it enables fingerprinting. Learn what data Chrome exposes, how websites use it, and practical"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /client-hints-api-fingerprinting-new-chrome-tracking-vector-e/

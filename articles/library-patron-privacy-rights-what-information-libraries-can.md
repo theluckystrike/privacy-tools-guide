@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Library Patron Privacy Rights What Information Libraries Can"
-description: "A practical guide covering library patron privacy rights, what information libraries can share with law enforcement, and how to protect your reading."
+description: "A practical guide covering library patron privacy rights, what information libraries can share with law enforcement, and how to protect your reading"
 date: 2026-03-16
 author: theluckystrike
 permalink: /library-patron-privacy-rights-what-information-libraries-can/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN for Remote Desktop Connection from Hotel WiFi Safely"
-description: "A practical guide for developers and power users on securing RDP and VNC connections over hotel WiFi using VPN technology. Setup examples included."
+description: "A practical guide for developers and power users on securing RDP and VNC connections over hotel WiFi using VPN technology. Setup examples included"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /vpn-for-remote-desktop-connection-from-hotel-wifi-safely/

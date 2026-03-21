@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Verify That Encrypted Message Was Not Tampered With"
-description: "A technical guide for developers and power users on verifying encrypted message integrity using HMACs, digital signatures, and authenticated encryption."
+description: "A technical guide for developers and power users on verifying encrypted message integrity using HMACs, digital signatures, and authenticated encryption"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-verify-that-encrypted-message-was-not-tampered-with/

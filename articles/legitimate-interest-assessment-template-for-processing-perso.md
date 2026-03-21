@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Legitimate Interest Assessment Template For Processing Perso"
-description: "A practical template and developer guide for conducting legitimate interest assessments under GDPR Article 6(1)(f). Includes code examples and."
+description: "When building applications that process personal data, GDPR requires a lawful basis for each processing activity. While consent (Article 6(1)(a)) gets most of"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /legitimate-interest-assessment-template-for-processing-perso/

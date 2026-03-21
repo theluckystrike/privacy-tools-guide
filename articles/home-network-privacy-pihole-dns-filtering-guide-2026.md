@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Home Network Privacy Pihole Dns Filtering Guide 2026"
-description: "Complete guide to setting up Pi-hole for network-wide ad blocking and DNS privacy filtering with installation and configuration steps."
+description: "Complete guide to setting up Pi-hole for network-wide ad blocking and DNS privacy filtering with installation and configuration steps"
 date: 2026-03-20
 author: theluckystrike
 permalink: /home-network-privacy-pihole-dns-filtering-guide-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Right To Be Forgotten In Search Engines How To Request Googl"
-description: "A practical technical guide for developers and power users on exercising the right to be forgotten. Learn how to request Google remove personal."
+description: "A practical technical guide for developers and power users on exercising the right to be forgotten. Learn how to request Google remove personal"
 date: 2026-03-16
 author: theluckystrike
 permalink: /right-to-be-forgotten-in-search-engines-how-to-request-googl/

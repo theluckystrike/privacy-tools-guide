@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ledger Data Breach Lessons How Hardware Wallet Companies Can"
-description: "Analyzing the 2024 Ledger breach and technical lessons for developers on protecting customer identity data in hardware wallet ecosystems."
+description: "Analyzing the 2024 Ledger breach and technical lessons for developers on protecting customer identity data in hardware wallet ecosystems"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ledger-data-breach-lessons-how-hardware-wallet-companies-can/

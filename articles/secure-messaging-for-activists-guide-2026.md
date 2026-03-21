@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure Messaging for Activists Guide 2026: Signal vs."
-description: "Guide to secure messaging for activists—Signal, Briar, Session, Cwtch. Threat models, group communication, device seizure prep."
+description: "Guide to secure messaging for activists—Signal, Briar, Session, Cwtch. Threat models, group communication, device seizure prep"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /secure-messaging-for-activists-guide-2026/

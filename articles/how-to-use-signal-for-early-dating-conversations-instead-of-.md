@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Use Signal For Early Dating Conversations Instead Of"
-description: "Learn how to use Signal usernames to communicate with dating matches without revealing your personal phone number. Privacy-focused guide for developers."
+description: "Learn how to use Signal usernames to communicate with dating matches without revealing your personal phone number. Privacy-focused guide for developers"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-signal-for-early-dating-conversations-instead-of-/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Revoke Previously Given Consent For Data Processing U"
-description: "Learn how to exercise your GDPR right to withdraw consent, including technical implementation for developers and practical steps for users."
+description: "Learn how to exercise your GDPR right to withdraw consent, including technical implementation for developers and practical steps for users"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-revoke-previously-given-consent-for-data-processing-u/

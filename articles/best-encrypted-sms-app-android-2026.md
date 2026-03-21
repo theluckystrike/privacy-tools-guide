@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted SMS App for Android 2026: A Technical Guide"
-description: "A developer-focused comparison of encrypted SMS apps for Android in 2026. Covers Signal, WhatsApp, Telegram, and emerging alternatives with technical."
+description: "A developer-focused comparison of encrypted SMS apps for Android in 2026. Covers Signal, WhatsApp, Telegram, and emerging alternatives with technical"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-encrypted-sms-app-android-2026/

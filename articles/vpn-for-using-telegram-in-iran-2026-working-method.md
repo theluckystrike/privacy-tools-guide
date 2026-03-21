@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN for Using Telegram in Iran 2026: Working Methods"
-description: "A technical guide for developers and power users on configuring VPNs to access Telegram from Iran. Covers protocol selection, obfuscation techniques."
+description: "A technical guide for developers and power users on configuring VPNs to access Telegram from Iran. Covers protocol selection, obfuscation techniques"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-using-telegram-in-iran-2026-working-method/

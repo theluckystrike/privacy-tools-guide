@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Vpn Reconnection Works After Network Switch Mobile."
-description: "A technical deep-dive into VPN behavior during network transitions on mobile devices, covering handoff mechanisms, reconnection strategies, and."
+description: "VPN reconnection after a network switch works by detecting the broken tunnel via Dead Peer Detection keepalives, then performing a fresh key exchange and"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-vpn-reconnection-works-after-network-switch-mobile-handoff/

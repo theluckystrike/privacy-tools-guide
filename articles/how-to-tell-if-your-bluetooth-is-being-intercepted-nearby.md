@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Tell if Your Bluetooth Is Being Intercepted Nearby"
-description: "A practical guide for developers and power users on detecting Bluetooth interception attempts. Learn the technical indicators, detection methods, and."
+description: "Bluetooth interception—also known as Bluetooth eavesdropping or BlueBorne-style attacks—occurs when an unauthorized party captures or manipulates Bluetooth"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Location Spoofing How To Hide Real Position While"
-description: "Learn technical methods for dating app location spoofing to protect your privacy. This guide covers GPS manipulation, mock location apps, and developer."
+description: "Learn technical methods for dating app location spoofing to protect your privacy. This guide covers GPS manipulation, mock location apps, and developer"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dating-app-location-spoofing-how-to-hide-real-position-while/

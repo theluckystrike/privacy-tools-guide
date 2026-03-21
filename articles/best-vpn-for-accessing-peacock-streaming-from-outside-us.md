@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best VPN for Accessing Peacock Streaming from Outside the US"
-description: "A technical guide for developers and power users on configuring VPNs to access Peacock streaming from outside the US, covering protocol selection, DNS."
+description: "A technical guide for developers and power users on configuring VPNs to access Peacock streaming from outside the US, covering protocol selection, DNS"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-vpn-for-accessing-peacock-streaming-from-outside-us/

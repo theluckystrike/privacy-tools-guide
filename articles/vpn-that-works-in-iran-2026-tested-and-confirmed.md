@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Vpn That Works In Iran 2026 Tested And Confirmed"
-description: "A technical guide to VPNs that work in Iran in 2026. Tested configurations, protocol recommendations, and setup instructions for developers and power."
+description: "A technical guide to VPNs that work in Iran in 2026. Tested configurations, protocol recommendations, and setup instructions for developers and power"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-that-works-in-iran-2026-tested-and-confirmed/

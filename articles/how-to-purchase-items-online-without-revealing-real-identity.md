@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Purchase Items Online Without Revealing Real Identity"
-description: "A technical guide for developers and power users on anonymous online purchasing. Covers throwaway identities, privacy-focused payment methods, shipping."
+description: "A technical guide for developers and power users on anonymous online purchasing. Covers throwaway identities, privacy-focused payment methods, shipping"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-purchase-items-online-without-revealing-real-identity/

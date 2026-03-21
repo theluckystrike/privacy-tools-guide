@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure File Sharing Tools Comparison: E2E Encrypted."
-description: "Compare E2E encrypted file sharing: OnionShare, Tresorit Send, Wormhole, Firefox Send alternatives, Magic Wormhole. CLI examples, size limits, pricing."
+description: "Compare E2E encrypted file sharing: OnionShare, Tresorit Send, Wormhole, Firefox Send alternatives, Magic Wormhole. CLI examples, size limits, pricing"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /secure-file-sharing-tools-comparison/

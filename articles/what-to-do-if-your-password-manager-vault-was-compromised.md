@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What to Do If Your Password Manager Vault Was Compromised"
-description: "A practical guide for developers and power users on recovering from a compromised password manager vault. Includes immediate actions, forensic steps."
+description: "A practical guide for developers and power users on recovering from a compromised password manager vault. Includes immediate actions, forensic steps"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-your-password-manager-vault-was-compromised/

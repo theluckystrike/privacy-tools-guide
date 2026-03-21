@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What To Do If Ransomware Locks Your Computer Immediate Steps"
-description: "A practical guide for developers and power users facing ransomware attacks. Learn immediate response steps, isolation techniques, recovery options, and."
+description: "Ransomware attacks can happen to anyone—whether you're a developer with sensitive projects or a power user with critical data. The moment your screen freezes"
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-ransomware-locks-your-computer-immediate-steps/

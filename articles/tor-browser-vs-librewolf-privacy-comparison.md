@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser vs LibreWolf Privacy Comparison"
-description: "A technical comparison of Tor Browser and LibreWolf for developers and power users. Understand the privacy mechanisms, fingerprint resistance, and use."
+description: "A technical comparison of Tor Browser and LibreWolf for developers and power users. Understand the privacy mechanisms, fingerprint resistance, and use"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-browser-vs-librewolf-privacy-comparison/

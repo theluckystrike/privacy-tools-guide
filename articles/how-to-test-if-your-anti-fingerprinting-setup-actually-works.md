@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Test if Your Anti-Fingerprinting Setup Actually Works"
-description: "A practical guide for developers and power users to verify that anti-fingerprinting protections are working correctly. Includes code examples and."
+description: "Browser fingerprinting has become one of the most sophisticated tracking techniques used across the web. Unlike cookies, which can be blocked or deleted"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-test-if-your-anti-fingerprinting-setup-actually-works/

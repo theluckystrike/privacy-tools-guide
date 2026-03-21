@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity"
-description: "A practical technical guide for developers and power users on how to prevent reverse image search engines from linking your dating profile photos to your real identity using metadata stripping, perceptual hashing countermeasures, and dedicated photos."
+description: "A practical technical guide for developers and power users on how to prevent reverse image search engines from linking your dating profile photos to your real"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-reverse-image-search-from-linking-dating-prof/

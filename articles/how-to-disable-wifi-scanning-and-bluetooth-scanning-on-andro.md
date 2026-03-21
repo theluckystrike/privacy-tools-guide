@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Disable Wifi Scanning And Bluetooth Scanning On Andro"
-description: "A technical guide for developers and power users on disabling WiFi and Bluetooth scanning on Android to enhance privacy. Includes ADB."
+description: "A technical guide for developers and power users on disabling WiFi and Bluetooth scanning on Android to enhance privacy. Includes ADB"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/

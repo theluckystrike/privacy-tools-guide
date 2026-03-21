@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Use Mesh Networking for Private Communication Without"
-description: "A practical guide to implementing mesh networking for offline, private communication. Learn about protocols, tools, and code examples for developers."
+description: "A practical guide to implementing mesh networking for offline, private communication. Learn about protocols, tools, and code examples for developers"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-mesh-networking-for-private-communication-without/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ethereum Wallet Inheritance: Using Social Recovery Smart."
-description: "Learn how to implement Ethereum wallet inheritance using social recovery smart contracts. A technical guide for developers and power users."
+description: "Learn how to implement Ethereum wallet inheritance using social recovery smart contracts. A technical guide for developers and power users"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /ethereum-wallet-inheritance-using-social-recovery-smart-cont/

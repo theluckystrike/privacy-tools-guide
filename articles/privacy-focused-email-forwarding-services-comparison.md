@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Email Forwarding Services Comparison"
-description: "Compare email forwarding services (SimpleLogin, addy.io, Firefox Relay, DuckDuckGo Email, ForwardEmail). Pricing, features, self-hosting, domain support."
+description: "Compare email forwarding services (SimpleLogin, addy.io, Firefox Relay, DuckDuckGo Email, ForwardEmail). Pricing, features, self-hosting, domain support"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-email-forwarding-services-comparison/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up S/MIME Email Encryption: A Practical Guide"
-description: "A technical guide for developers and power users on configuring S/MIME email encryption using OpenSSL, Thunderbird, and Apple Mail with practical."
+description: "A technical guide for developers and power users on configuring S/MIME email encryption using OpenSSL, Thunderbird, and Apple Mail with practical"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-set-up-smime-email-encryption/

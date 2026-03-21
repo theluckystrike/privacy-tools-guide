@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Vpn For Accessing Bbc Iplayer From Australia 2026"
-description: "A technical guide for developers and power users on accessing BBC iPlayer from Australia using VPN configurations, DNS setup, and testing methods."
+description: "A technical guide for developers and power users on accessing BBC iPlayer from Australia using VPN configurations, DNS setup, and testing methods"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-accessing-bbc-iplayer-from-australia-2026/

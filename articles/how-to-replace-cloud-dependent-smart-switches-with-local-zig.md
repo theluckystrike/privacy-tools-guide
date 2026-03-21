@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Replace Cloud Dependent Smart Switches With Local Zig"
-description: "A practical guide for developers and power users on migrating from cloud-dependent smart switches to local Zigbee alternatives for privacy and reliability."
+description: "A practical guide for developers and power users on migrating from cloud-dependent smart switches to local Zigbee alternatives for privacy and reliability"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-replace-cloud-dependent-smart-switches-with-local-zig/

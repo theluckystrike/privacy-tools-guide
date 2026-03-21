@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Store Otp Codes In Password Manager"
-description: "Learn how to store TOTP codes in your password manager for centralized 2FA management. Compare Bitwarden, 1Password, and CLI-based approaches for."
+description: "Managing multiple authenticator apps across devices creates friction. Developers and power users often prefer consolidating OTP (One-Time Password) codes"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-store-otp-codes-in-password-manager/

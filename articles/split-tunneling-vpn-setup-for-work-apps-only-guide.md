@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Split Tunneling VPN Setup for Work Apps Only Guide"
-description: "A practical guide to configuring split tunneling VPN to route only work applications through the VPN while keeping personal traffic on your regular."
+description: "A practical guide to configuring split tunneling VPN to route only work applications through the VPN while keeping personal traffic on your regular"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /split-tunneling-vpn-setup-for-work-apps-only-guide/

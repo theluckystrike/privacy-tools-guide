@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Google My Activity Privacy Delete Guide 2026"
-description: "A guide for developers and power users on managing, reviewing, and deleting your Google My Activity data. Includes automated deletion."
+description: "A guide for developers and power users on managing, reviewing, and deleting your Google My Activity data. Includes automated deletion"
 date: 2026-03-15
 author: theluckystrike
 permalink: /google-my-activity-privacy-delete-guide-2026/

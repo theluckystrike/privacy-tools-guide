@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Retention Policy Template for Startups"
-description: "A practical data retention policy template designed for startups. Includes code examples, retention schedules by data type, and implementation guidance."
+description: "A practical data retention policy template designed for startups. Includes code examples, retention schedules by data type, and implementation guidance"
 date: 2026-03-15
 author: theluckystrike
 permalink: /data-retention-policy-template-for-startups/

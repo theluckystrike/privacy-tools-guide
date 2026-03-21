@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Verify That Your Encrypted Messages Are Not Being Int"
-description: "Learn practical techniques to verify your encrypted messages are not being intercepted. A technical guide for developers and power users."
+description: "Learn practical techniques to verify your encrypted messages are not being intercepted. A technical guide for developers and power users"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-that-your-encrypted-messages-are-not-being-int/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Export Passwords from Any Manager"
-description: "Learn how to export passwords from popular password managers including 1Password, Bitwarden, LastPass, KeePass, and Dashlane. Practical CLI methods and."
+description: "To export passwords from any manager, use its CLI tool for the most control: op vault export for 1Password, bw export --format json for Bitwarden, lpass export"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-export-passwords-from-any-manager/

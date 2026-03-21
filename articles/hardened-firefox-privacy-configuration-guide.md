@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Hardened Firefox Privacy Configuration Guide"
-description: "Complete Firefox hardening guide: about:config tweaks, essential extensions, arkenfox user.js profiles, and step-by-step configuration."
+description: "Complete Firefox hardening guide: about:config tweaks, essential extensions, arkenfox user.js profiles, and step-by-step configuration"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /hardened-firefox-privacy-configuration/

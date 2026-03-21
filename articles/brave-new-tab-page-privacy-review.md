@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Brave New Tab Page Privacy Review"
-description: "Brave New Tab Page Privacy Review: What Developers Need. — privacy guide covering tools, techniques, and best practices to protect your data and."
+description: "The Brave browser has positioned itself as a privacy-first alternative to Chrome and Firefox, but its new tab page deserves closer scrutiny from developers and"
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-new-tab-page-privacy-review/

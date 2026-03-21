@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Check if Your Smart Home Devices Are Compromised"
-description: "A technical guide for developers and power users to detect compromised smart home devices through network analysis, log inspection, and security auditing."
+description: "A technical guide for developers and power users to detect compromised smart home devices through network analysis, log inspection, and security auditing"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-check-if-your-smart-home-devices-are-compromised/

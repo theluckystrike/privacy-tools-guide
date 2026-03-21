@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Vpn For Accessing Us Healthcare Portals From Abroad"
-description: "A technical guide for developers and power users on configuring VPNs to access US healthcare portals while traveling internationally. Covers protocols."
+description: "A technical guide for developers and power users on configuring VPNs to access US healthcare portals while traveling internationally. Covers protocols"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-vpn-for-accessing-us-healthcare-portals-from-abroad/

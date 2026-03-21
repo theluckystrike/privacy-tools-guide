@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Block Tracking Pixels in Email Clients: Setup Guide"
-description: "A practical guide for developers and power users to block email tracking pixels. Learn methods for major email clients, command-line tools, and custom."
+description: "A practical guide for developers and power users to block email tracking pixels. Learn methods for major email clients, command-line tools, and custom"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-block-tracking-pixels-in-email-clients-setup-guide/

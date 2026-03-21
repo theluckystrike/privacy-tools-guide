@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Block Social Media Share Button Tracking on Websites"
-description: "A practical guide for developers and power users to block social media share button tracking. Learn techniques using JavaScript, browser extensions."
+description: "A practical guide for developers and power users to block social media share button tracking. Learn techniques using JavaScript, browser extensions"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-block-social-media-share-button-tracking-on-websites/

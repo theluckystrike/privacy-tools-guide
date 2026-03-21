@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Check What Your Browser Reveals: A Developer Guide"
-description: "Learn how to check what your browser reveals to websites. Practical methods, code examples, and tools for developers to audit browser fingerprinting."
+description: "Learn how to check what your browser reveals to websites. Practical methods, code examples, and tools for developers to audit browser fingerprinting"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-check-what-your-browser-reveals/

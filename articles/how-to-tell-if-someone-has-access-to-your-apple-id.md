@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Tell If Someone Has Access To Your Apple Id"
-description: "Learn how to detect unauthorized access to your Apple ID. This guide covers warning signs, checking active sessions, reviewing sign-in history, and."
+description: "Your Apple ID is the gateway to everything Apple—iCloud, App Store purchases, FaceTime, iMessage, and Find My. If someone gains unauthorized access, they could"
 date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-someone-has-access-to-your-apple-id/

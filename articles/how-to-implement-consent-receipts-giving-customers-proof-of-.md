@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Implement Consent Receipts Giving Customers Proof Of"
-description: "A technical guide for developers on implementing consent receipts that provide customers with verifiable proof of their privacy preferences and consent."
+description: "A technical guide for developers on implementing consent receipts that provide customers with verifiable proof of their privacy preferences and consent"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-consent-receipts-giving-customers-proof-of-/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gdpr Joint Controller Agreement Template"
-description: "Learn how to create a compliant GDPR joint controller agreement with this practical template and code examples designed for developers and technical teams."
+description: "Learn how to create a compliant GDPR joint controller agreement with this practical template and code examples designed for developers and technical teams"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-joint-controller-agreement-template/

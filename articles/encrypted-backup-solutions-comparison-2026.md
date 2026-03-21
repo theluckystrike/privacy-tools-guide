@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted Backup Solutions Comparison 2026"
-description: "Compare encrypted backup tools: Borg, Restic, Duplicati, Arq, Kopia. CLI examples, cloud storage integration, pricing, restore testing."
+description: "Compare encrypted backup tools: Borg, Restic, Duplicati, Arq, Kopia. CLI examples, cloud storage integration, pricing, restore testing"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /encrypted-backup-solutions-comparison-2026/

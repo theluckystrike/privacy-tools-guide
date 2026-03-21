@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Detect And Block Hidden Third Party Trackers On Websi"
-description: "A practical guide for developers and power users to identify, analyze, and block hidden tracking scripts using network analysis, browser tools, and."
+description: "Third-party trackers have become ubiquitous across the web, collecting user data through scripts that load silently in the background. For developers building"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-and-block-hidden-third-party-trackers-on-websi/

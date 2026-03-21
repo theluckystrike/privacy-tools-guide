@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Verify Your VPN is Not Leaking DNS Requests in 2026"
-description: "A practical guide to detecting and fixing DNS leaks in your VPN connection. Learn what DNS leaks are, how to test for them, and what to do if your VPN."
+description: "A practical guide to detecting and fixing DNS leaks in your VPN connection. Learn what DNS leaks are, how to test for them, and what to do if your VPN"
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-verify-your-vpn-is-not-leaking-dns-requests/

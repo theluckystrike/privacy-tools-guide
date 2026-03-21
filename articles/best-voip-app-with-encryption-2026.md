@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Voip App With Encryption 2026"
-description: "A technical comparison of encrypted VoIP solutions featuring self-hosting options, protocol analysis, and implementation examples for developers in 2026."
+description: "A technical comparison of encrypted VoIP solutions featuring self-hosting options, protocol analysis, and implementation examples for developers in 2026"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-voip-app-with-encryption-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Check If Your Phone Number Is Being Spoofed"
-description: "Learn technical methods to detect if your phone number is being spoofed. Includes API tools, carrier diagnostics, and practical code examples for."
+description: "Phone number spoofing occurs when a caller deliberately falsifies the caller ID information transmitted to disguise their identity. For developers and power"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-phone-number-is-being-spoofed/

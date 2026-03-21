@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Threat Model For Religious Minority In Persecuting Country D"
-description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers risk assessment, encryption strategies, communication."
+description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers risk assessment, encryption strategies, communication"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-religious-minority-in-persecuting-country-d/

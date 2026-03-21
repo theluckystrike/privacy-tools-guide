@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Notes App 2026: A Developer Guide"
-description: "Discover the top encrypted notes applications for developers and power users in 2026. Compare E2EE features, CLI support, and self-hosting options."
+description: "Discover the top encrypted notes applications for developers and power users in 2026. Compare E2EE features, CLI support, and self-hosting options"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-encrypted-notes-app-2026/

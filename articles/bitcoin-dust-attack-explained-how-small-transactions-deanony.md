@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bitcoin Dust Attack Explained How Small Transactions Deanony"
-description: "A technical deep-dive into Bitcoin dust attacks, exploring how tiny transactions can be used to track and deanonymize your wallet activity. Includes."
+description: "A technical deep-dive into Bitcoin dust attacks, exploring how tiny transactions can be used to track and deanonymize your wallet activity. Includes"
 date: 2026-03-16
 author: theluckystrike
 permalink: /bitcoin-dust-attack-explained-how-small-transactions-deanony/

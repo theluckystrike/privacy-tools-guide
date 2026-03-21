@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Secure Video Calling App 2026: A Technical Guide"
-description: "A practical guide to secure video conferencing solutions with end-to-end encryption, self-hosting options, and developer integrations for 2026."
+description: "A practical guide to secure video conferencing solutions with end-to-end encryption, self-hosting options, and developer integrations for 2026"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-secure-video-calling-app-2026/

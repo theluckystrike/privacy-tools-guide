@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"
-description: "Technical comparison of passkeys and passwords for authentication. Learn security differences, implementation details, and when to adopt passkeys in."
+description: "Choose passkeys over passwords when your users have modern devices (iOS 16+, Android 9+, recent browsers) and you can implement proper recovery flows --"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /passkey-vs-password-security-comparison/

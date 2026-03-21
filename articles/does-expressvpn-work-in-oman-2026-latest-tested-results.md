@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does ExpressVPN Work in Oman? 2026 Latest Tested Results"
-description: "Technical analysis of ExpressVPN functionality in Oman. Includes real connection tests, protocol recommendations, and scripts for automated VPN testing."
+description: "Technical analysis of ExpressVPN functionality in Oman. Includes real connection tests, protocol recommendations, and scripts for automated VPN testing"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-expressvpn-work-in-oman-2026-latest-tested-results/

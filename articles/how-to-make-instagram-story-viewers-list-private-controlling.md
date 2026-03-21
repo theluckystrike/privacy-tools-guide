@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Make Instagram Story Viewers List Private Controlling"
-description: "Learn how to control your Instagram story viewers list privacy and manage who sees your viewing activity. Practical techniques for power users in 2026."
+description: "Learn how to control your Instagram story viewers list privacy and manage who sees your viewing activity. Practical techniques for power users in 2026"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-make-instagram-story-viewers-list-private-controlling/

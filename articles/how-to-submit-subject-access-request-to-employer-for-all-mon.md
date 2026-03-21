@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Submit Subject Access Request To Employer For All Mon"
-description: "A practical guide for employees to exercise their data subject rights under GDPR and similar privacy laws. Learn how to request all monitoring data."
+description: "A practical guide for employees to exercise their data subject rights under GDPR and similar privacy laws. Learn how to request all monitoring data"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-submit-subject-access-request-to-employer-for-all-mon/

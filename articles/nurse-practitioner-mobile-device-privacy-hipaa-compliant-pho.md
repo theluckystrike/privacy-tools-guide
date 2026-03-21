@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho"
-description: "A practical guide for nurse practitioners setting up HIPAA compliant phones. Covers encryption, MDM solutions, app vetting, and privacy configurations."
+description: "A practical guide for nurse practitioners setting up HIPAA compliant phones. Covers encryption, MDM solutions, app vetting, and privacy configurations"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/

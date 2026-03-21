@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Brave Browser vs Chrome Battery Drain Comparison"
-description: "A practical comparison of Brave browser and Chrome battery consumption. Learn how each browser impacts system resources with benchmarks and."
+description: "Brave uses 20-30% less battery than Chrome during equivalent browsing sessions because it blocks ads and trackers at the network level, reducing JavaScript"
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-browser-battery-drain-vs-chrome-comparison/

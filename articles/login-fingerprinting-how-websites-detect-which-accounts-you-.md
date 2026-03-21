@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Login Fingerprinting How Websites Detect Which Accounts You"
-description: "A technical deep-dive into login fingerprinting techniques that allow websites to identify your accounts without authentication. Learn how timing."
+description: "A technical deep-dive into login fingerprinting techniques that allow websites to identify your accounts without authentication. Learn how timing"
 date: 2026-03-16
 author: theluckystrike
 permalink: /login-fingerprinting-how-websites-detect-which-accounts-you-/

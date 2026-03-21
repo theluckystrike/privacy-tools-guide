@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Facebook Marketplace Privacy Settings Guide"
-description: "A guide to Facebook Marketplace privacy settings for developers and power users. Learn to control your profile visibility, secure."
+description: "A guide to Facebook Marketplace privacy settings for developers and power users. Learn to control your profile visibility, secure"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /facebook-marketplace-privacy-settings-guide/

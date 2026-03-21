@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Compliant User Authentication Design"
-description: "Learn how to design GDPR compliant user authentication systems. This guide covers data minimization, consent mechanisms, secure storage, and."
+description: "Designing GDPR compliant user authentication requires understanding the intersection between security best practices and privacy regulations. The General Data"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-user-authentication-design/

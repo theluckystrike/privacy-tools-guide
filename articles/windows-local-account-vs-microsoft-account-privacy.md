@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows Local Account Vs Microsoft Account Privacy"
-description: "A privacy comparison between Windows local accounts and Microsoft accounts. Learn what data each account type collects, how they affect."
+description: "A privacy comparison between Windows local accounts and Microsoft accounts. Learn what data each account type collects, how they affect"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-local-account-vs-microsoft-account-privacy/

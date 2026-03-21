@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Subscription Service Cancellation After Death How Executor C"
-description: "A practical guide for executors on how to cancel subscription services and recurring payments after death. Includes documentation requirements."
+description: "A practical guide for executors on how to cancel subscription services and recurring payments after death. Includes documentation requirements"
 date: 2026-03-16
 author: theluckystrike
 permalink: /subscription-service-cancellation-after-death-how-executor-c/

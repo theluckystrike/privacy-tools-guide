@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Password Generator Strategy 2026: A Developer's Guide"
-description: "A practical guide to building and implementing secure password generation strategies in 2026, covering entropy, algorithms, and implementation patterns."
+description: "A practical guide to building and implementing secure password generation strategies in 2026, covering entropy, algorithms, and implementation patterns"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-password-generator-strategy-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Browser Supercookies Track You: A Technical Explanation"
-description: "A developer-focused guide explaining browser supercookies, how they persist across sessions, and techniques to detect and prevent supercookie tracking."
+description: "A developer-focused guide explaining browser supercookies, how they persist across sessions, and techniques to detect and prevent supercookie tracking"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-browser-supercookies-track-you-explained/

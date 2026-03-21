@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ProtonMail iOS Android App Review 2026"
-description: "ProtonMail iOS Android App Review 2026: A Developer and. — privacy guide covering tools, techniques, and best practices to protect your data and."
+description: "ProtonMail's 2026 iOS and Android apps are worth it for developers and power users who need reliable encrypted email with full-text search, biometric lock"
 date: 2026-03-15
 author: theluckystrike
 permalink: /protonmail-ios-android-app-review-2026/

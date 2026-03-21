@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Password Manager with YubiKey Hardware Key Setup"
-description: "Learn how to integrate YubiKey with password managers like Bitwarden and 1Password for enhanced security. Step-by-step setup guide for developers and."
+description: "Configure YubiKey as a second authentication factor in Bitwarden or 1Password settings using the FIDO2/WebAuthn protocol: during login, after entering your"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-password-manager-with-yubikey-hardware-key-setup/

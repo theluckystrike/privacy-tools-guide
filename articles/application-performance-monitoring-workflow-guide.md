@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Application Performance Monitoring Workflow Guide"
-description: "Master application performance monitoring workflows for production systems. Learn about metrics collection, alerting strategies, distributed tracing."
+description: "Master application performance monitoring workflows for production systems. Learn about metrics collection, alerting strategies, distributed tracing"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /application-performance-monitoring-workflow-guide/

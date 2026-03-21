@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Preserving Logging Guide for Developers 2026"
-description: "A practical guide to implementing privacy-preserving logging in your applications. Learn data minimization, PII redaction techniques, and secure log."
+description: "A practical guide to implementing privacy-preserving logging in your applications. Learn data minimization, PII redaction techniques, and secure log"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-preserving-logging-guide-for-developers-2026/

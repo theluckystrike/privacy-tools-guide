@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Check If Your Email Is Being Forwarded Without Knowle"
-description: "Learn how to detect unauthorized email forwarding with practical techniques, header analysis, and developer tools. Protect your inbox from silent."
+description: "Learn how to detect unauthorized email forwarding with practical techniques, header analysis, and developer tools. Protect your inbox from silent"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-email-is-being-forwarded-without-knowle/

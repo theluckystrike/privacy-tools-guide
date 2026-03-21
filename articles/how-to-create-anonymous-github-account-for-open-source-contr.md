@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Create Anonymous Github Account For Open Source Contr"
-description: "A practical guide for developers who want to contribute to open source projects while maintaining privacy. Learn how to set up a completely separate."
+description: "A practical guide for developers who want to contribute to open source projects while maintaining privacy. Learn how to set up a completely separate"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-anonymous-github-account-for-open-source-contr/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VeraCrypt Full Disk Encryption Setup Guide"
-description: "Complete VeraCrypt guide for full disk encryption, hidden volumes, system encryption. Step-by-step setup with performance impact and recovery planning."
+description: "Complete VeraCrypt guide for full disk encryption, hidden volumes, system encryption. Step-by-step setup with performance impact and recovery planning"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /veracrypt-full-disk-encryption-setup-guide/

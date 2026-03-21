@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Disable Location Services Before Crossing Border."
-description: "A practical guide for developers and power users to disable location services on smartphones before crossing borders. Includes technical methods, code."
+description: "A practical guide for developers and power users to disable location services on smartphones before crossing borders. Includes technical methods, code"
 date: 2026-03-16
 author: theluckystrike
 permalink: /disable-location-services-before-crossing-border-smartphone-/

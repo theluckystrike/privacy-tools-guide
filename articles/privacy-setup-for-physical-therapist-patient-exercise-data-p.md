@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup For Physical Therapist Patient Exercise Data P"
-description: "A practical guide to securing patient exercise data in physical therapy practice. Learn about encryption, access controls, audit logging, and."
+description: "Protect patient exercise data through full encryption at rest and in transit, role-based access controls limiting therapist viewing to only their patients"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-physical-therapist-patient-exercise-data-p/

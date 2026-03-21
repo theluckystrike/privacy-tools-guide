@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Etag Tracking How Server Caching Headers Follow You Across W"
-description: "Learn how ETag headers work, how they can be used for tracking users across the web, and what developers and privacy-conscious users need to know about."
+description: "Learn how ETag headers work, how they can be used for tracking users across the web, and what developers and privacy-conscious users need to know about"
 date: 2026-03-16
 author: theluckystrike
 permalink: /etag-tracking-how-server-caching-headers-follow-you-across-w/

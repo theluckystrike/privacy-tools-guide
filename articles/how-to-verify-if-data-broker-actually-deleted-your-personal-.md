@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Verify If Data Broker Actually Deleted Your Personal"
-description: "A technical guide for developers and power users to verify data broker deletion claims. Includes API verification methods, automated monitoring."
+description: "A technical guide for developers and power users to verify data broker deletion claims. Includes API verification methods, automated monitoring"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-if-data-broker-actually-deleted-your-personal-/

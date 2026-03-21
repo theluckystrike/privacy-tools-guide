@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Signal Number Privacy Workaround Guide"
-description: "A technical guide to using Signal while protecting your phone number. Learn workarounds for developers and power users who want enhanced privacy."
+description: "A technical guide to using Signal while protecting your phone number. Learn workarounds for developers and power users who want enhanced privacy"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /signal-number-privacy-workaround-guide/

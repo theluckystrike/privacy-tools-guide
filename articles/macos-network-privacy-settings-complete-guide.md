@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "macOS Network Privacy Settings Complete Guide 2026"
-description: "Master macOS network privacy configuration. Learn about firewall settings, DNS configuration, network extension controls, and advanced protection."
+description: "Master macOS network privacy configuration. Learn about firewall settings, DNS configuration, network extension controls, and advanced protection"
 date: 2026-03-15
 author: theluckystrike
 permalink: /macos-network-privacy-settings-complete-guide/

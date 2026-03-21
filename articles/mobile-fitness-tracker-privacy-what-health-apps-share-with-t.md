@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mobile Fitness Tracker Privacy"
-description: "A technical deep-dive into mobile fitness tracker privacy. Learn what data health apps share with third parties, how APIs expose your information, and."
+description: "Fitness apps share your heart rate, sleep data, GPS routes, and biometric readings with analytics services, cloud storage providers, and third-party"
 date: 2026-03-16
 author: theluckystrike
 permalink: /mobile-fitness-tracker-privacy-what-health-apps-share-with-t/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tahoe LAFS Distributed Encrypted Storage Guide"
-description: "A practical guide to implementing Tahoe LAFS for distributed, encrypted storage. Learn to build fault-tolerant, privacy-preserving file systems."
+description: "A practical guide to implementing Tahoe LAFS for distributed, encrypted storage. Learn to build fault-tolerant, privacy-preserving file systems"
 date: 2026-03-15
 author: theluckystrike
 permalink: /tahoe-lafs-distributed-encrypted-storage-guide/

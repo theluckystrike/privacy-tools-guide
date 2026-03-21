@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Calyxos Microg Setup Guide Getting Google Apps Working."
-description: "A practical guide to setting up microG on CalyxOS for running Google apps without Google Play Services. Includes installation steps, signature."
+description: "A practical guide to setting up microG on CalyxOS for running Google apps without Google Play Services. Includes installation steps, signature"
 date: 2026-03-16
 author: theluckystrike
 permalink: /calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/

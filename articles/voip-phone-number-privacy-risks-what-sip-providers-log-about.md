@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Voip Phone Number Privacy Risks What Sip Providers Log About"
-description: "A technical breakdown of the metadata and call logs that SIP/VOIP providers collect, with practical examples for developers evaluating."
+description: "A technical breakdown of the metadata and call logs that SIP/VOIP providers collect, with practical examples for developers evaluating"
 date: 2026-03-16
 author: theluckystrike
 permalink: /voip-phone-number-privacy-risks-what-sip-providers-log-about/

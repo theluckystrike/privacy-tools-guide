@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Russia Vpn Ban Which Services Still Work After Roskomnadzor"
-description: "A technical guide for developers and power users on VPN alternatives that function in Russia after the 2026 Roskomnadzor crackdowns. Includes."
+description: "A technical guide for developers and power users on VPN alternatives that function in Russia after the 2026 Roskomnadzor crackdowns. Includes"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /russia-vpn-ban-which-services-still-work-after-roskomnadzor-/

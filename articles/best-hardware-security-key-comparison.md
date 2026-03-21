@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Hardware Security Key Comparison: A Developer's Guide"
-description: "Compare hardware security keys for developers and power users. Evaluate FIDO2, U2F, YubiKey, SoloKey, and cost-effective alternatives for protecting."
+description: "Compare hardware security keys for developers and power users. Evaluate FIDO2, U2F, YubiKey, SoloKey, and cost-effective alternatives for protecting"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-hardware-security-key-comparison/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Convince Your Boss to Use a Password Manager at Work"
-description: "A practical guide for developers and power users on how to convince management to adopt password managers in the workplace. Includes security."
+description: "A practical guide for developers and power users on how to convince management to adopt password managers in the workplace. Includes security"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-convince-your-boss-to-use-password-manager-at-work/

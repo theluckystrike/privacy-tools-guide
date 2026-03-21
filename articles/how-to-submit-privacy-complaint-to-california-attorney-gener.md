@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement"
-description: "A practical guide for developers and power users on filing privacy complaints to the California Attorney General under CCPA enforcement. Learn the process, requirements, and tools for asserting your consumer rights."
+description: "A practical guide for developers and power users on filing privacy complaints to the California Attorney General under CCPA enforcement. Learn the process"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-submit-privacy-complaint-to-california-attorney-general/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft"
-description: "A practical guide for developers and power users to replace Google Home with privacy-focused local voice assistants. Learn how to set up Rhasspy or."
+description: "Replace Google Home with Rhasspy or Mycroft to process voice commands entirely on your local hardware without cloud connectivity. Both open-source alternatives"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-replace-google-home-with-local-voice-assistant-using-/

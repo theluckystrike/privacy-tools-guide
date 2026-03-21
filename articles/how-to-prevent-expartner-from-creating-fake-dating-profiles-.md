@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Prevent Expartner From Creating Fake Dating Profiles"
-description: "A technical guide for protecting your identity and photos from being used in fake dating profiles. Learn reverse image search, metadata removal, and."
+description: "Immediately reduce your attack surface by making social media profiles private, removing photos from public galleries, and stripping EXIF metadata from any"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/

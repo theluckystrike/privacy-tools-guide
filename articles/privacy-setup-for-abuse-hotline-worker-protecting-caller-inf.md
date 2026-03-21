@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup For Abuse Hotline Worker Protecting Caller Inf"
-description: "A technical guide for developers and power users implementing privacy measures for abuse hotline workers. Learn secure communications, metadata."
+description: "A technical guide for developers and power users implementing privacy measures for abuse hotline workers. Learn secure communications, metadata"
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/

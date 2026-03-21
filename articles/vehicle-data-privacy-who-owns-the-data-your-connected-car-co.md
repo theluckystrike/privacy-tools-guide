@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Vehicle Data Privacy Who Owns The Data Your Connected Car Co"
-description: "Learn who owns the data your connected car collects about driving in 2026. Technical breakdown of vehicle data privacy, OBD-II ports, telematics, and."
+description: "Modern vehicles generate massive amounts of data. Your connected car records where you drive, how fast you accelerate, when you brake hard, and even whether"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vehicle-data-privacy-who-owns-the-data-your-connected-car-co/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gaming Account Inheritance What Happens To Steam Playstation"
-description: "A technical guide covering digital game library inheritance, account transfer policies, and practical steps for preserving gaming assets. Covers Steam."
+description: "A technical guide covering digital game library inheritance, account transfer policies, and practical steps for preserving gaming assets. Covers Steam"
 date: 2026-03-16
 author: theluckystrike
 permalink: /gaming-account-inheritance-what-happens-to-steam-playstation/

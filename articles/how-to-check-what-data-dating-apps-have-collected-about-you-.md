@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Check What Data Dating Apps Have Collected About You"
-description: "Learn how to request your data from dating apps using GDPR, CCPA, and other privacy regulations. Practical guide with code examples for developers."
+description: "Learn how to request your data from dating apps using GDPR, CCPA, and other privacy regulations. Practical guide with code examples for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-what-data-dating-apps-have-collected-about-you-/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows 10 Privacy Settings Complete Checklist"
-description: "A checklist of Windows 10 privacy settings for developers and power users. Learn which settings to disable, registry tweaks, and."
+description: "Windows 10 collects significant telemetry data by default, and while Microsoft has softened some practices since its initial release, privacy-conscious users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-10-privacy-settings-complete-checklist/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Facebook Data Collection: What They Track in 2026"
-description: "Facebook Data Collection: What They Track in 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital."
+description: "Facebook Data Collection: What They Track in 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
 author: theluckystrike
 permalink: /facebook-data-collection-what-they-track-2026/

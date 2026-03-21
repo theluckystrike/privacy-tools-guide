@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Use a Password Manager with Virtual Machines"
-description: "Learn how to set up separate password vaults for each virtual machine to enhance security isolation. Practical configuration examples for Bitwarden, 1Password, and KeePass."
+description: "Learn how to set up separate password vaults for each virtual machine to enhance security isolation. Practical configuration examples for Bitwarden, 1Password"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-password-manager-with-virtual-machines-separate-vaults/

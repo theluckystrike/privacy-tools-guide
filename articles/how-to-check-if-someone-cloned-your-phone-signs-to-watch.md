@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Check if Someone Cloned Your Phone: Signs to Watch"
-description: "A practical guide for developers and power users to detect phone cloning, recognize warning signs, and protect your device using technical methods."
+description: "A practical guide for developers and power users to detect phone cloning, recognize warning signs, and protect your device using technical methods"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-someone-cloned-your-phone-signs-to-watch/

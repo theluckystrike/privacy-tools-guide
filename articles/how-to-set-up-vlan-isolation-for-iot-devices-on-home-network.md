@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Set Up VLAN Isolation for IoT Devices on Home Network 2026"
-description: "A practical guide for developers and power users on implementing VLAN isolation to separate IoT devices from main network using managed switches and."
+description: "Your smart thermostat, doorbell camera, and wireless bulbs all connect to the same network as your laptop and phone. When any of these IoT devices gets"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/

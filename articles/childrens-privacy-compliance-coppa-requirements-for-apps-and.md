@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Children's Privacy Compliance: COPPA Requirements"
-description: "A practical guide to COPPA compliance for developers and businesses building apps and websites that may collect data from children under 13."
+description: "A practical guide to COPPA compliance for developers and businesses building apps and websites that may collect data from children under 13"
 date: 2026-03-16
 author: theluckystrike
 permalink: /childrens-privacy-compliance-coppa-requirements-for-apps-and/

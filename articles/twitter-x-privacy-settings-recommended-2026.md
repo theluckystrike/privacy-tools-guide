@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Twitter X Privacy Settings Recommended 2026"
-description: "Master Twitter X privacy settings in 2026 with this practical guide covering account protection, data controls, API access, and advanced hardening."
+description: "Master Twitter X privacy settings in 2026 with this practical guide covering account protection, data controls, API access, and advanced hardening"
 date: 2026-03-15
 author: theluckystrike
 permalink: /twitter-x-privacy-settings-recommended-2026/

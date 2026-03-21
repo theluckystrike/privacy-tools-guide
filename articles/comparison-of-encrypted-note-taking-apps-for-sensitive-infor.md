@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Comparison Of Encrypted Note Taking Apps For Sensitive Infor"
-description: "A technical comparison of encrypted note-taking applications for developers and power users storing sensitive data. Covers encryption models, CLI."
+description: "A technical comparison of encrypted note-taking applications for developers and power users storing sensitive data. Covers encryption models, CLI"
 date: 2026-03-16
 author: theluckystrike
 permalink: /comparison-of-encrypted-note-taking-apps-for-sensitive-infor/

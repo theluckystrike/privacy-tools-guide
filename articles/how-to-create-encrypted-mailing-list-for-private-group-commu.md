@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Create Encrypted Mailing List For Private Group Commu"
-description: "A practical guide to setting up encrypted mailing lists for private group communication in 2026. Learn about encryption tools, list managers, and."
+description: "Running a private group communication channel requires more than just a shared email address. Whether you're coordinating with developers on a sensitive"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-encrypted-mailing-list-for-private-group-commu/

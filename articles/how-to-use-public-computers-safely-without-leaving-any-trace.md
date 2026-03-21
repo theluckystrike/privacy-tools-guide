@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Public Computers Safely Without Leaving Any Trace"
-description: "A practical guide for developers and power users on using public computers securely, covering browser fingerprinting, data残留清理, and ephemeral session."
+description: "A practical guide for developers and power users on using public computers securely, covering browser fingerprinting, data残留清理, and ephemeral session"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-public-computers-safely-without-leaving-any-trace/

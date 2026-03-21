@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gdpr Pseudonymization Vs Anonymization Explained"
-description: "A technical breakdown of pseudonymization and anonymization under GDPR with code examples, practical implementation patterns, and guidance for."
+description: "Pseudonymization replaces identifiers with tokens while keeping a reversible mapping, so the data remains personal data under GDPR. Anonymization irreversibly"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-pseudonymization-vs-anonymization-explained/

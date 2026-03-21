@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Signal vs Session vs SimpleX: Secure messaging apps compared."
-description: "Deep comparison of Signal, Session, and SimpleX: encryption, metadata leakage, usability, and which app suits your threat model."
+description: "Deep comparison of Signal, Session, and SimpleX: encryption, metadata leakage, usability, and which app suits your threat model"
 date: 2026-03-20
 author: theluckystrike
 permalink: /signal-vs-session-vs-simplex-secure-messaging-comparison/

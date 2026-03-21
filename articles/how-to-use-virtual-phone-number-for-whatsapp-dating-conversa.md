@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Use Virtual Phone Number For Whatsapp Dating Conversations"
-description: "A technical guide for developers and power users on using virtual phone numbers for WhatsApp dating conversations while protecting your real phone."
+description: "A technical guide for developers and power users on using virtual phone numbers for WhatsApp dating conversations while protecting your real phone"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/

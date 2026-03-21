@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Broker Opt Out Automation Tools That Continuously Remov"
-description: "A practical guide for developers and power users on automating data broker opt-out requests. Learn how to build scripts that continuously monitor and."
+description: "Data broker websites compile and sell personal information without your consent. These platforms aggregate public records, social media activity, and purchase"
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-broker-opt-out-automation-tools-that-continuously-remov/

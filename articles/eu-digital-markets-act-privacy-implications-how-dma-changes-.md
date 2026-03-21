@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Eu Digital Markets Act Privacy Implications How Dma Changes"
-description: "A practical guide for developers and power users on how the EU Digital Markets Act (DMA) reshapes big tech data practices, with code examples and."
+description: "The European Union's Digital Markets Act (DMA) represents the most significant shift in platform regulation since GDPR. Now that the enforcement phase has"
 date: 2026-03-16
 author: theluckystrike
 permalink: /eu-digital-markets-act-privacy-implications-how-dma-changes-/

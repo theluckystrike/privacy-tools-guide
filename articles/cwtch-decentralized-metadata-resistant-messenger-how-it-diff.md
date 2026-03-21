@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cwtch Decentralized Metadata Resistant Messenger How It Diff"
-description: "A technical comparison of Cwtch and Signal messenger architectures, exploring how decentralized metadata-resistant messaging differs from traditional."
+description: "A technical comparison of Cwtch and Signal messenger architectures, exploring how decentralized metadata-resistant messaging differs from traditional"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /cwtch-decentralized-metadata-resistant-messenger-how-it-diff/

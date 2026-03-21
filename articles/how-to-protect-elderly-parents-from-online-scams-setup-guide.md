@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Protect Elderly Parents From Online Scams Setup Guide"
-description: "A practical technical guide for developers and power users to help protect elderly parents from online scams. Includes DNS filtering, browser."
+description: "A practical technical guide for developers and power users to help protect elderly parents from online scams. Includes DNS filtering, browser"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-elderly-parents-from-online-scams-setup-guide/

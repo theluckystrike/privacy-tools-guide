@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Passkey Support By Website 2026"
-description: " guide to passkey support across major websites in 2026. Learn which platforms support WebAuthn, FIDO2, and passkey login—plus."
+description: "guide to passkey support across major websites in 2026. Learn which platforms support WebAuthn, FIDO2, and passkey login—plus"
 date: 2026-03-15
 author: theluckystrike
 permalink: /passkey-support-by-website-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Turkey Journalist Digital Safety Guide Protecting Sources An"
-description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using."
+description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/

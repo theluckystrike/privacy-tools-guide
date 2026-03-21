@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton Drive Sharing Links Privacy Review"
-description: "A technical review of Proton Drive sharing links examining link security, access controls, expiration options, privacy implications, and practical."
+description: "A technical review of Proton Drive sharing links examining link security, access controls, expiration options, privacy implications, and practical"
 date: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-sharing-links-privacy-review/

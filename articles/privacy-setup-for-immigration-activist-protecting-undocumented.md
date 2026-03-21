@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup for Immigration Activist"
-description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members."
+description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members"
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Tell If Your Router Has Been Compromised Check Guide"
-description: "Learn how to identify signs of a compromised router with practical detection methods, command-line tools, and security hardening steps for developers."
+description: "Learn how to identify signs of a compromised router with practical detection methods, command-line tools, and security hardening steps for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-router-has-been-compromised-check-guide/

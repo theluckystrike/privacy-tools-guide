@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Instagram Memorialization Request Process What Happens To Ph"
-description: "Instagram Memorialization Request Process: What Happens. — privacy guide covering tools, techniques, and best practices to protect your data and."
+description: "To memorialize a deceased Instagram account, submit a request through Instagram's memorial request form with a death certificate or obituary. The account"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /instagram-memorialization-request-process-what-happens-to-ph/

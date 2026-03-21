@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Password Manager For Couple Sharing Streaming Accounts Secur"
-description: "Learn how couples can securely share streaming accounts using password managers. This guide covers setup, encryption, access controls, and automation."
+description: "Learn how couples can securely share streaming accounts using password managers. This guide covers setup, encryption, access controls, and automation"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-for-couple-sharing-streaming-accounts-secur/

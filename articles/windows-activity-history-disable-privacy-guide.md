@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows Activity History Disable Privacy Guide"
-description: "A practical guide for developers and power users to understand and disable Windows Activity History tracking through Settings, Group Policy, and."
+description: "Disable Windows Activity History through Settings (Privacy & security → Activity history: uncheck 'Store my activity history on this device' and 'Send my"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-activity-history-disable-privacy-guide/

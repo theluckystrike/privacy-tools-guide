@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dashlane vs LastPass After Breach: Security Comparison"
-description: "A technical comparison of Dashlane and LastPass security posture after their respective data breaches. Covers breach timeline, encryption architecture."
+description: "A technical comparison of Dashlane and LastPass security posture after their respective data breaches. Covers breach timeline, encryption architecture"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dashlane-vs-lastpass-after-breach-comparison/

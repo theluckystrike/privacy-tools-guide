@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Screen Resolution Fingerprinting Why Changing Display Settin"
-description: "Learn how screen resolution fingerprinting works, why it threatens your privacy, and practical techniques developers and power users can implement to."
+description: "Websites use the JavaScript screen object to collect your screen resolution, color depth, and pixel ratio, combining these with other browser properties to"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /screen-resolution-fingerprinting-why-changing-display-settin/

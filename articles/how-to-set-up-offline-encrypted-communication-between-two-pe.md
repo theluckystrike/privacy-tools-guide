@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Offline Encrypted Communication Between Two Pe"
-description: "A practical guide for developers and power users to establish secure offline communication channels using encryption tools, air-gapped systems, and."
+description: "When internet connectivity is unavailable or deliberately avoided, establishing secure communication between two parties requires a different approach. Offline"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-offline-encrypted-communication-between-two-pe/

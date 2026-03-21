@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Password Manager for Family of Four with Kids Accounts Guide"
-description: "A practical guide to setting up and managing a password manager for a family of four with kids. Covers vault organization, kid-safe configurations, and."
+description: "Set up a family password manager with separate vaults for each member or a shared vault with organized folders for streaming, banking, and emergency access"
 date: 2026-03-16
 author: theluckystrike
 permalink: /password-manager-for-family-of-four-with-kids-accounts-guide/

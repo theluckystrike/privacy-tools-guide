@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Detect If Your ISP Is Throttling VPN Traffic"
-description: "A technical guide for developers and power users to identify and diagnose VPN traffic throttling by your Internet Service Provider."
+description: "A technical guide for developers and power users to identify and diagnose VPN traffic throttling by your Internet Service Provider"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-your-isp-is-throttling-vpn-traffic/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Spoof Browser User Agent Privacy"
-description: "Learn how to spoof browser user agent strings to enhance privacy, test web applications, and avoid fingerprinting. Practical techniques for developers."
+description: "Learn how to spoof browser user agent strings to enhance privacy, test web applications, and avoid fingerprinting. Practical techniques for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-spoof-browser-user-agent-privacy/

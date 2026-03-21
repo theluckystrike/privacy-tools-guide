@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Browser Autofill Privacy Security Risks"
-description: "A technical deep-dive into browser autofill privacy and security risks, covering data exposure, attack vectors, and mitigation strategies for."
+description: "Browser autofill is one of those conveniences that feels invisible until it becomes a liability. For developers and power users who value privacy"
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-autofill-privacy-security-risks/

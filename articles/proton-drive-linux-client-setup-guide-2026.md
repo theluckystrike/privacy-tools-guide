@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton Drive Linux Client Setup Guide 2026"
-description: "Learn how to set up Proton Drive on Linux with this practical guide covering installation, authentication, mounting, and CLI integration for developers."
+description: "Learn how to set up Proton Drive on Linux with this practical guide covering installation, authentication, mounting, and CLI integration for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-linux-client-setup-guide-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Browser Connection Pooling Fingerprinting How Http2 Connecti"
-description: "Learn how HTTP/2 connection pooling enables browser fingerprinting and what developers can do to protect user privacy."
+description: "Learn how HTTP/2 connection pooling enables browser fingerprinting and what developers can do to protect user privacy"
 date: 2026-03-16
 author: theluckystrike
 permalink: /browser-connection-pooling-fingerprinting-how-http2-connecti/

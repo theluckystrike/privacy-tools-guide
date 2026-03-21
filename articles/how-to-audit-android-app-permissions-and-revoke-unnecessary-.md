@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Audit Android App Permissions And Revoke Unnecessary"
-description: "Learn how to audit Android app permissions, identify unnecessary access, and revoke risky permissions. This guide covers built-in tools, ADB commands."
+description: "Learn how to audit Android app permissions, identify unnecessary access, and revoke risky permissions. This guide covers built-in tools, ADB commands"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-android-app-permissions-and-revoke-unnecessary-/

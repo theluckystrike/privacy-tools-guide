@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "YubiKey vs Titan Security Key: A Developer Comparison"
-description: "A practical comparison of YubiKey and Titan Security Key for developers and power users. Compare hardware security, protocols, pricing, and implementation."
+description: "A practical comparison of YubiKey and Titan Security Key for developers and power users. Compare hardware security, protocols, pricing, and implementation"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /yubikey-vs-titan-security-key-comparison/

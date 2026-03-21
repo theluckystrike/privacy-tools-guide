@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Font Fingerprinting Protection"
-description: "Learn how Tor Browser protects against font fingerprinting, the techniques used, and how to configure settings for maximum privacy."
+description: "Learn how Tor Browser protects against font fingerprinting, the techniques used, and how to configure settings for maximum privacy"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-browser-font-fingerprinting-protection/

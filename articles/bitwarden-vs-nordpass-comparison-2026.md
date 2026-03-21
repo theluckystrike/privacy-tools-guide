@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bitwarden vs NordPass Comparison 2026"
-description: "A technical comparison of Bitwarden and NordPass for developers and power users. Explore encryption, CLI tools, API access, and self-hosting options."
+description: "A technical comparison of Bitwarden and NordPass for developers and power users. Explore encryption, CLI tools, API access, and self-hosting options"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /bitwarden-vs-nordpass-comparison-2026/

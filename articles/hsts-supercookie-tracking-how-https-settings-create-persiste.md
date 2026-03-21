@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Hsts Supercookie Tracking How Https Settings Create Persiste"
-description: "Learn how HSTS supercookies work and how HTTPS settings can be exploited to create persistent tracking identifiers across websites."
+description: "Learn how HSTS supercookies work and how HTTPS settings can be exploited to create persistent tracking identifiers across websites"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /hsts-supercookie-tracking-how-https-settings-create-persiste/

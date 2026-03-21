@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What to Do If Your Cloud Storage Account Was Breached"
-description: "A practical guide for developers and power users on recovering from a cloud storage breach, including detection, containment, and security hardening steps."
+description: "A practical guide for developers and power users on recovering from a cloud storage breach, including detection, containment, and security hardening steps"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-your-cloud-storage-account-was-breached/

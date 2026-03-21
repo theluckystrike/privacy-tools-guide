@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Adb Commands For Removing Bloatware That Tracks User"
-description: "A practical guide for developers and power users on using ADB commands to remove bloatware and trackers from Android devices. Includes essential."
+description: "A practical guide for developers and power users on using ADB commands to remove bloatware and trackers from Android devices. Includes essential"
 date: 2026-03-16
 author: theluckystrike
 permalink: /android-adb-commands-for-removing-bloatware-that-tracks-user/

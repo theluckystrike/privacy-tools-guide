@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Messaging for Journalists: A Technical Guide"
-description: "A developer-focused comparison of encrypted messaging apps for journalists, covering Signal, Matrix, Session, and self-hosted options with code examples."
+description: "A developer-focused comparison of encrypted messaging apps for journalists, covering Signal, Matrix, Session, and self-hosted options with code examples"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-messaging-for-journalists/

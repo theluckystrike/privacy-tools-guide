@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Decentraleyes vs Local CDN Comparison 2026"
-description: "A technical comparison of Decentraleyes browser extension versus self-hosted local CDNs for privacy-conscious developers and power users in 2026."
+description: "A technical comparison of Decentraleyes browser extension versus self-hosted local CDNs for privacy-conscious developers and power users in 2026"
 date: 2026-03-20
 author: theluckystrike
 permalink: /decentraleyes-vs-local-cdn-comparison-2026/

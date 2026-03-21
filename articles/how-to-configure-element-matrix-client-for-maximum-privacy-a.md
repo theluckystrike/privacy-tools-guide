@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Configure Element Matrix Client For Maximum Privacy A"
-description: "A practical guide for developers and power users to harden Element Matrix client settings, manage sessions, enable encryption, and minimize metadata."
+description: "A practical guide for developers and power users to harden Element Matrix client settings, manage sessions, enable encryption, and minimize metadata"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-element-matrix-client-for-maximum-privacy-a/

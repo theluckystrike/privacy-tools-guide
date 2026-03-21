@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Configure Wireguard With Obfuscation To Bypass Russia"
-description: "Learn how to configure WireGuard with obfuscation techniques to bypass Russian DPI blocking systems. This practical guide covers UDP port rotation."
+description: "Learn how to configure WireGuard with obfuscation techniques to bypass Russian DPI blocking systems. This practical guide covers UDP port rotation"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-wireguard-with-obfuscation-to-bypass-russia/

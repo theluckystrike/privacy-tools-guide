@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Fastpeoplesearch Opt Out Guide Step By Step 2026"
-description: "Learn how to remove your personal information from FastPeopleSearch with this opt-out guide. Includes manual steps and automation options."
+description: "Learn how to remove your personal information from FastPeopleSearch with this opt-out guide. Includes manual steps and automation options"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /fastpeoplesearch-opt-out-guide-step-by-step-2026/

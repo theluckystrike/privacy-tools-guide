@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does Proton VPN Stealth Work in Myanmar? 2026 Tested"
-description: "A technical guide testing Proton VPN Stealth connectivity in Myanmar, with configuration steps, troubleshooting, and alternatives for developers and."
+description: "Proton VPN Stealth represents one of the more sophisticated attempts at circumventing network-level censorship. For users in Myanmar, where internet"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-proton-vpn-stealth-work-in-myanmar-2026-tested/

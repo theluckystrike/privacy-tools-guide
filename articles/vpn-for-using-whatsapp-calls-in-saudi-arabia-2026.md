@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN for Using WhatsApp Calls in Saudi Arabia 2026"
-description: "A technical guide for developers and power users on using VPNs to enable WhatsApp voice and video calls in Saudi Arabia. Includes configuration."
+description: "A technical guide for developers and power users on using VPNs to enable WhatsApp voice and video calls in Saudi Arabia. Includes configuration"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-using-whatsapp-calls-in-saudi-arabia-2026/

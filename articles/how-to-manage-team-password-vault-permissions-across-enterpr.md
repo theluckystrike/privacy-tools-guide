@@ -1,8 +1,7 @@
 ---
-
 layout: default
 title: "How to Manage Team Password Vault Permissions Across."
-description: "Learn practical strategies for managing password vault permissions across enterprise departments. This guide covers role-based access control."
+description: "Learn practical strategies for managing password vault permissions across enterprise departments. This guide covers role-based access control"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /how-to-manage-team-password-vault-permissions-across-enterpr/

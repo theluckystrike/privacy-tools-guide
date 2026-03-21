@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Use Steganography Tools To Hide Encrypted Messages In"
-description: "A practical guide for developers and power users on combining encryption with steganography to hide messages in images. Includes Python code examples."
+description: "A practical guide for developers and power users on combining encryption with steganography to hide messages in images. Includes Python code examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-steganography-tools-to-hide-encrypted-messages-in/

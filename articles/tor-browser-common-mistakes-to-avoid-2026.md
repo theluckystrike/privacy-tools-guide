@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Common Mistakes to Avoid in 2026"
-description: "A practical guide for developers and power users on the most common Tor Browser mistakes and how to avoid them. Includes configuration tips, security."
+description: "A practical guide for developers and power users on the most common Tor Browser mistakes and how to avoid them. Includes configuration tips, security"
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-common-mistakes-to-avoid-2026/

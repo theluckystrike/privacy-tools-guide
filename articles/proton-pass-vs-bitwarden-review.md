@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton Pass Vs Bitwarden Review"
-description: "A technical comparison of Proton Pass and Bitwarden for developers and power users. Explore encryption, CLI tools, autofill, and self-hosting capabilities."
+description: "A technical comparison of Proton Pass and Bitwarden for developers and power users. Explore encryption, CLI tools, autofill, and self-hosting capabilities"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /proton-pass-vs-bitwarden-review/

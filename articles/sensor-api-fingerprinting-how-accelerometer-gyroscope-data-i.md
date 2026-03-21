@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sensor Api Fingerprinting How Accelerometer Gyroscope Data I"
-description: "Learn how websites use the Sensor API to fingerprint devices using accelerometer and gyroscope data. Understand the technical mechanisms, code."
+description: "Learn how websites use the Sensor API to fingerprint devices using accelerometer and gyroscope data. Understand the technical mechanisms, code"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/

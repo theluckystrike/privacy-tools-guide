@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Russia Tspu Deep Packet Inspection Boxes How They Detect And"
-description: "Learn how TSPU deep packet inspection boxes work, how they identify and block VPN traffic, and what developers can do to build more resilient privacy."
+description: "Learn how TSPU deep packet inspection boxes work, how they identify and block VPN traffic, and what developers can do to build more resilient privacy"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does ExpressVPN Work in Cuba 2026? Tested from Havana"
-description: "Real-world test results for ExpressVPN usage in Cuba. We tested connectivity, speeds, and streaming performance from Havana in 2026."
+description: "Real-world test results for ExpressVPN usage in Cuba. We tested connectivity, speeds, and streaming performance from Havana in 2026"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-expressvpn-work-in-cuba-2026-tested-from-havana/

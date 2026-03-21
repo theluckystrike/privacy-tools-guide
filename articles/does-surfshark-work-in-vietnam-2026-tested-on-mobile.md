@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does Surfshark Work in Vietnam 2026: Tested on Mobile"
-description: "A technical deep-dive testing Surfshark VPN functionality in Vietnam on mobile devices. Protocol analysis, connection methods, and practical."
+description: "A technical deep-dive testing Surfshark VPN functionality in Vietnam on mobile devices. Protocol analysis, connection methods, and practical"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-surfshark-work-in-vietnam-2026-tested-on-mobile/

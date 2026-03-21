@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nextcloud Collabora Office Setup Guide"
-description: "A complete technical guide for integrating Collabora Online with Nextcloud. Covers Docker deployment, reverse proxy configuration, SSL setup, and."
+description: "Deploy Collabora Online with your Nextcloud instance to enable real-time document editing, spreadsheets, and presentations directly in your private cloud. This"
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-collabora-office-setup-guide/

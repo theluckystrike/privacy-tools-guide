@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Threat Model Assessment For High Risk Journalist In Hostile"
-description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical."
+description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/

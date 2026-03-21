@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dentist Patient Records Privacy Hipaa Compliant Digital Stor"
-description: "A practical guide for developers and dental practice power users implementing HIPAA-compliant digital storage for patient records. Covers encryption."
+description: "A practical guide for developers and dental practice power users implementing HIPAA-compliant digital storage for patient records. Covers encryption"
 date: 2026-03-16
 author: theluckystrike
 permalink: /dentist-patient-records-privacy-hipaa-compliant-digital-stor/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dark Pattern Regulations Which Privacy Laws Ban Manipulative"
-description: "A technical guide for developers on dark pattern regulations and which privacy laws prohibit manipulative consent interface design tricks in 2026."
+description: "A technical guide for developers on dark pattern regulations and which privacy laws prohibit manipulative consent interface design tricks in 2026"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dark-pattern-regulations-which-privacy-laws-ban-manipulative/

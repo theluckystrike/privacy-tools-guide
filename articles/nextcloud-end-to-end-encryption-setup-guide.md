@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nextcloud End to End Encryption Setup Guide"
-description: "A practical guide for developers and power users setting up end-to-end encryption in Nextcloud. Covers server requirements, client configuration, and."
+description: "End-to-end encryption (E2EE) in Nextcloud ensures that your data remains encrypted on the server and can only be decrypted on your client devices. Unlike"
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-end-to-end-encryption-setup-guide/

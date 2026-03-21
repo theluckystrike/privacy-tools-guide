@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Delete Your Google Activity History Completely"
-description: "Step-by-step guide to deleting all Google activity data including search, location, YouTube history. Covers data export, auto-delete settings, and."
+description: "Google tracks everything. Your searches, watched videos, visited websites, location history, and device activity are stored indefinitely. Google Takeout lets"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /how-to-delete-your-google-activity-history-completely/

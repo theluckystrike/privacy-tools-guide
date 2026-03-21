@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Password Manager for Enterprise: A Technical Guide"
-description: "A technical guide to enterprise password managers for developers and power users, covering 1Password, Bitwarden, Keeper, and self-hosted."
+description: "A technical guide to enterprise password managers for developers and power users, covering 1Password, Bitwarden, Keeper, and self-hosted"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-password-manager-for-enterprise/

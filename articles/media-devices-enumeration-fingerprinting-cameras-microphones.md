@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Media Devices Enumeration Fingerprinting Cameras Microphones"
-description: "Discover how websites enumerate your media devices, the privacy risks of device fingerprinting through MediaDevices API, and practical protection."
+description: "Discover how websites enumerate your media devices, the privacy risks of device fingerprinting through MediaDevices API, and practical protection"
 date: 2026-03-16
 author: theluckystrike
 permalink: /media-devices-enumeration-fingerprinting-cameras-microphones/
