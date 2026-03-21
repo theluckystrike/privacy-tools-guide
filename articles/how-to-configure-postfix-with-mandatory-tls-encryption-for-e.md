@@ -9,7 +9,7 @@ permalink: /how-to-configure-postfix-with-mandatory-tls-encryption-for-e/
 categories: [guides]
 tags: [privacy-tools-guide, tools, troubleshooting, encryption]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
