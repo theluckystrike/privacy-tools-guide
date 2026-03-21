@@ -26,6 +26,8 @@ Before diving into implementation, understanding the benefits of local voice pro
 
 Beyond privacy, local assistants offer customization freedom. You can modify wake words, add custom commands, integrate with self-hosted services, and run everything on modest hardware like a Raspberry Pi.
 
+The privacy implications of cloud voice assistants deserve emphasis. Google Home sends every voice interaction—including recordings before and after the wake word—to Google's servers for processing. Google has acknowledged retaining some recordings for quality review by human contractors. Amazon Alexa operates similarly. Research has shown these devices occasionally activate on false wake words, sending unintended audio to the cloud. A local assistant eliminates this entirely: audio is processed on your hardware, by software you control, and never transmitted anywhere.
+
 ## Rhasspy: The Developer-Friendly Option
 
 Rhasspy (pronounced "raspy") is a privacy-first, offline voice assistant toolkit designed for developers who want complete control. It supports multiple speech-to-text engines, natural language understanding systems, and text-to-speech outputs—all running locally.
@@ -95,6 +97,42 @@ Define intents in JSON files within your profile:
 ```
 
 Rhasspy parses these sentences and extracts the room entity, then sends the intent to your home automation system via MQTT, HTTP, or direct command execution.
+
+### Connecting Rhasspy to Home Assistant
+
+Rhasspy integrates natively with Home Assistant through the Rhasspy Home Assistant integration. Configure the connection in Rhasspy's profile settings:
+
+```json
+{
+  "handle": {
+    "system": "hass",
+    "hass": {
+      "url": "http://homeassistant.local:8123",
+      "access_token": "YOUR_LONG_LIVED_ACCESS_TOKEN",
+      "event_type": "rhasspy_intent"
+    }
+  }
+}
+```
+
+Then in Home Assistant, create an automation that listens for these events:
+
+```yaml
+automation:
+  - alias: "Handle Rhasspy TurnOnLights intent"
+    trigger:
+      platform: event
+      event_type: rhasspy_intent
+      event_data:
+        intent:
+          name: TurnOnLights
+    action:
+      service: light.turn_on
+      target:
+        area_id: "{{ trigger.event.data.slots.room }}"
+```
+
+This keeps the entire voice pipeline local: microphone input → Rhasspy wake word detection → local STT → local intent parsing → Home Assistant automation → device control.
 
 ## Mycroft: The Full-Featured Assistant
 
@@ -180,8 +218,15 @@ Configuration in `~/.mycroft/mycroft.conf`:
 | Resource Usage | Lighter | More demanding |
 | Documentation | Good | Extensive |
 | Community | Active | Larger |
+| STT Engine Options | Multiple (Whisper, Kaldi, Vosk) | Primarily Precise STT |
+| Wake Word Training | Built-in Precise trainer | Precise, custom models |
+| MQTT Support | Native | Via plugin |
 
 Choose Rhasspy if you want granular control over every component and are comfortable with Docker-based deployments. Choose Mycroft if you prefer a more integrated system with easier third-party skill installation.
+
+### OpenWakeWord: A Newer Alternative for Wake Word Detection
+
+For users who find training wake words in Rhasspy cumbersome, OpenWakeWord (compatible with both Rhasspy and Home Assistant's Wyoming protocol) offers pre-trained models for dozens of phrases and a simpler training pipeline for custom phrases. It runs on a Raspberry Pi 4 with under 5% CPU utilization, making it viable as a dedicated always-listening microphone node that forwards detected wake words to a more powerful processing machine on the same network.
 
 ## Performance Optimization
 
@@ -193,6 +238,33 @@ Regardless of your choice, several optimizations improve responsiveness:
 
 **Implement caching**. Store frequent command patterns and pre-computed responses to reduce processing latency.
 
+**Select the right Whisper model size**. Whisper comes in five sizes (tiny, base, small, medium, large). For English-only home automation commands, the `base.en` model gives roughly 90% accuracy of the full model at 4x the speed. On a Raspberry Pi 4:
+
+- `tiny.en`: ~0.5s transcription latency, adequate for simple commands
+- `base.en`: ~1.5s latency, good accuracy for most home automation vocabulary
+- `small.en`: ~4s latency, use only if running on a more powerful host
+
+**Separate the wake word node from the processing node**. Run a lightweight wake word detector (OpenWakeWord on a Pi Zero 2W) near your microphone, and send audio snippets over the local network to a more powerful machine running Whisper. This keeps the physical microphone device inexpensive and power-efficient while maintaining accurate transcription.
+
+## Network Isolation
+
+Local voice assistants should be isolated on your network like any other IoT device. Even though Rhasspy and Mycroft don't call home, their MQTT brokers and HTTP APIs should not be exposed to the internet or other untrusted network segments:
+
+```bash
+# Firewall rules to restrict Rhasspy web UI access to local subnet only
+# On the host running Rhasspy:
+sudo iptables -A INPUT -p tcp --dport 12101 -s 192.168.1.0/24 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 12101 -j DROP
+```
+
+For MQTT broker security, require authentication even on your local network. Add user credentials to Mosquitto's configuration and configure Rhasspy to authenticate:
+
+```bash
+# /etc/mosquitto/mosquitto.conf
+listener 1883 127.0.0.1
+allow_anonymous false
+password_file /etc/mosquitto/passwords
+```
 
 ## Related Articles
 
