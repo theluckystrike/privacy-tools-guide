@@ -196,6 +196,76 @@ server {
 }
 ```
 
+## Hardening Your Nextcloud Instance
+
+A standard Nextcloud installation exposes several attack vectors that require explicit mitigation. The built-in security scan at `/settings/admin/overview` surfaces common issues, but the following hardening steps go beyond what the scanner checks.
+
+**Restrict file sharing**: By default, Nextcloud allows public link sharing with no expiration. For sensitive deployments, disable public sharing entirely or enforce mandatory expiration dates and password protection on all public links:
+
+```bash
+# Force expiration on all public shares
+occ config:app:set core shareapi_enforce_expire_date --value=yes
+occ config:app:set core shareapi_expire_after_n_days --value=7
+
+# Require passwords on public links
+occ config:app:set core shareapi_enforce_links_password --value=yes
+```
+
+**Limit login attempts**: The Brute Force Protection app (bundled since Nextcloud 12) slows down repeated failed login attempts, but you should also configure fail2ban to block IP addresses after sustained attacks:
+
+```bash
+# fail2ban filter for Nextcloud
+# /etc/fail2ban/filter.d/nextcloud.conf
+[Definition]
+_groupsre = (?:(?:,?\s*"\w+":(?:"[^"]*"|(?:\[[^\]]*\])|[0-9]+)))
+failregex = ^\{%(_groupsre)s,?\s*"remoteAddr":"<HOST>"%(_groupsre)s,?\s*"message":"Login failed
+ignoreregex =
+```
+
+**Disable unused apps**: Every enabled app expands the attack surface of your Nextcloud instance. Audit enabled apps quarterly and disable anything not actively in use. The `occ app:list` command shows all installed apps and their status.
+
+**Configure Content Security Policy**: Nextcloud sets a default CSP header, but you can tighten it further in your reverse proxy configuration to prevent cross-site scripting and data injection attacks.
+
+## Privacy-Focused Apps Worth Installing
+
+Beyond the core apps, several community-maintained apps address specific privacy needs:
+
+**Mail**: The Nextcloud Mail app provides a webmail interface that keeps email metadata and message bodies on your server rather than passing through a third-party webmail provider. Configure it with your existing IMAP/SMTP server for a fully self-contained email client.
+
+**PhoneTrack**: For users who want location tracking without exposing data to Google or Apple, PhoneTrack records device locations directly to your Nextcloud instance. Paired with the OsmAnd or dedicated PhoneTrack mobile app, it provides family location sharing with zero third-party involvement.
+
+**Recognize**: This on-device photo recognition app runs AI-based face and object recognition locally on your server hardware. Unlike Google Photos, no images or recognition data leave your infrastructure. The trade-off is computational cost — recognition runs significantly slower than cloud services, but the privacy benefit is complete data sovereignty.
+
+**Nextcloud Assistant**: The AI assistant integration allows connecting to self-hosted language models via Ollama or LocalAI rather than commercial APIs. Queries and generated content remain entirely on your infrastructure:
+
+```bash
+# Configure Assistant to use local Ollama
+occ config:app:set assistant openai_api_key --value='local'
+occ config:app:set assistant openai_api_base_url --value='http://localhost:11434/v1'
+```
+
+## Monitoring and Ongoing Maintenance
+
+A self-hosted Nextcloud instance requires active monitoring to maintain both availability and security. The Nextcloud Server Info app exposes system metrics that you can scrape with Prometheus and visualize in Grafana.
+
+Watch for these indicators:
+
+- **Unusual login patterns**: Multiple failed attempts or logins from new geographic locations
+- **Large file transfers**: Sudden uploads or downloads of many gigabytes may indicate data exfiltration or a compromised account
+- **App update lag**: Outdated apps are the most common source of security vulnerabilities in Nextcloud deployments
+
+Configure automated security updates for Nextcloud apps:
+
+```bash
+# Update all apps automatically (run via cron)
+occ app:update --all
+
+# Or update a specific app
+occ app:update files_e2ee
+```
+
+For critical updates, subscribe to the Nextcloud security mailing list and configure monitoring alerts so you can apply patches within 24 hours of a security advisory.
+
 
 ## Related Articles
 
