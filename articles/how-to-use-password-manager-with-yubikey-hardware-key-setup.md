@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-use-password-manager-with-yubikey-hardware-key-setup/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

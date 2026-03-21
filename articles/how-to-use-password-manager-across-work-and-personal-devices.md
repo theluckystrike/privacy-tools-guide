@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-password-manager-across-work-and-personal-devices/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
