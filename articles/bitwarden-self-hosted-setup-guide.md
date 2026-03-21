@@ -265,6 +265,8 @@ The community edition is free for unlimited users. Premium features (advanced 2F
 Yes. In the Bitwarden mobile app, tap the region selector on the login screen and choose "Self-hosted." Enter your server domain and proceed with login normally.
 
 
+## Related Reading
+
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 - [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
