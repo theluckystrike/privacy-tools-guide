@@ -186,6 +186,129 @@ After applying these methods, verify your protections work:
 
 This testing should be an ongoing practice, not an one-time check. Search engine indexing and matching capabilities evolve constantly.
 
+## Advanced: Perceptual Hash Resistance Testing
+
+For developers wanting to validate image transformation effectiveness, compute perceptual hashes:
+
+```python
+#!/usr/bin/env python3
+from PIL import Image
+import imagehash
+
+def compare_image_hashes(original_path, transformed_path):
+    """Compute perceptual hashes to verify transformation effectiveness."""
+    original = Image.open(original_path)
+    transformed = Image.open(transformed_path)
+
+    # Compute different hash types
+    hashes = {
+        'average': imagehash.average_hash(original),
+        'phash': imagehash.phash(original),
+        'dhash': imagehash.dhash(original),
+    }
+
+    trans_hashes = {
+        'average': imagehash.average_hash(transformed),
+        'phash': imagehash.phash(transformed),
+        'dhash': imagehash.dhash(transformed),
+    }
+
+    # Hamming distance shows similarity (0 = identical, 64 = completely different)
+    print("Hash Distance (lower = more similar):")
+    for algo in hashes:
+        distance = hashes[algo] - trans_hashes[algo]
+        print(f"  {algo}: {distance}/64")
+        if distance < 16:
+            print("    WARNING: Images still quite similar")
+        elif distance > 40:
+            print("    GOOD: Images substantially different")
+
+compare_image_hashes('original.jpg', 'transformed.jpg')
+```
+
+## Face Recognition Bypass Techniques
+
+Beyond perceptual hashing, modern reverse image search uses facial recognition. Transformations that fool hashing may not fool face recognition:
+
+**Effective techniques:**
+- Heavy blur on entire image (degrades face detectability)
+- Extreme color shifts (blue or infrared filters)
+- Significant cropping that excludes identifying facial features
+- Adding artistic overlays or emoji (detection systems trained on natural images)
+
+**Ineffective:**
+- Sunglasses/hats (trained systems bypass these)
+- Minor color adjustments (face data encodes identity separately)
+- Small crops (systems use partial face matching)
+
+Test against facial recognition services:
+
+```bash
+# Microsoft Azure Computer Vision API test
+# (requires API key and paid subscription)
+
+curl -X POST \
+  -F "url=https://your-dating-site.com/profile/photo.jpg" \
+  -H "Ocp-Apim-Subscription-Key: YOUR_KEY" \
+  https://westus.api.cognitive.microsoft.com/vision/v3.2/detect
+```
+
+If the API still detects a face, further transformation is needed.
+
+## Legal Considerations for Dating Privacy
+
+Depending on your jurisdiction, dating profile privacy involves different legal risks:
+
+| Jurisdiction | Key Risk | Protection |
+|--------------|----------|-----------|
+| **EU** | GDPR violation if platform misuses data | Consent, explicit opt-out |
+| **US** | CFAA § 1030 (computer fraud) if hacking | Secure account, strong password |
+| **Canada** | Revenge porn laws if intimate images | Avoid intimate photos |
+| **Australia** | Non-consensual intimate image laws | Avoid intimate photos |
+
+Understand your local laws before uploading. In many jurisdictions, uploading intimate photos creates legal liability even if consensual.
+
+## Continuous Monitoring
+
+Implement ongoing monitoring for unauthorized photo use:
+
+```python
+#!/usr/bin/env python3
+import requests
+import json
+from datetime import datetime, timedelta
+
+def monitor_photo_usage(image_path, check_frequency_days=7):
+    """
+    Periodically check if your photo appears in reverse search results.
+    Requires API access (not free).
+    """
+    # Pseudocode - actual implementation requires:
+    # - Image hashing for comparison
+    # - Reverse image search API access
+    # - Scheduled execution
+
+    with open(image_path, 'rb') as f:
+        image_data = f.read()
+
+    # Check TinEye (requires subscription)
+    # Check Yandex (free but may have IP blocks)
+    # Check Google Images (programmatic access limited)
+
+    results = {
+        'timestamp': datetime.now().isoformat(),
+        'image': image_path,
+        'found_in': [],
+    }
+
+    # Log results for pattern detection
+    with open('photo_monitoring.log', 'a') as log:
+        log.write(json.dumps(results) + '\n')
+
+monitor_photo_usage('dating_photo.jpg', check_frequency_days=7)
+```
+
+Run this weekly via cron job to catch unauthorized use quickly.
 
 ## Related Articles
 

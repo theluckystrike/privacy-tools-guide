@@ -185,6 +185,165 @@ To verify your compartmentalization is effective, regularly check:
 5. **Credential isolation**: Check your password manager to ensure each persona has completely separate credentials
 
 
+## Metadata Correlation Attacks
+
+Even when identities are technically separate, metadata can reveal connections. Understand these common correlation vectors:
+
+### IP Address Correlation
+
+Using the same IP for multiple personas is the most obvious leak:
+
+```bash
+# Check what IP addresses reveal about you
+curl -s https://ifconfig.me  # Returns your IP
+
+# Use different VPNs/proxies for each persona
+# Persona 1: ProtonVPN Singapore
+# Persona 2: Mullvad Amsterdam
+# Persona 3: Local network only (no VPN)
+
+# Verify complete IP isolation
+for i in 1 2 3; do
+    echo "Persona $i:"
+    sudo ip netns exec persona$i curl -s https://ifconfig.me
+done
+```
+
+### Browser Fingerprinting Correlation
+
+Fingerprinting techniques identify you despite IP changes:
+
+```javascript
+// Browser fingerprint reveals device/browser combination
+// Even with different logins, this can link personas
+
+// Check your fingerprint at https://browserleaks.com/
+// Device identifiers to watch:
+// - Canvas fingerprinting
+// - WebGL fingerprint
+// - Installed fonts
+// - Screen resolution
+```
+
+Use containers or separate devices to prevent fingerprinting attacks across personas.
+
+### Payment Correlation
+
+Payment methods represent the strongest correlation vector. Never link payment methods across personas:
+
+```bash
+# Persona tracking via payment methods
+
+# WEAK approach (correlated):
+persona1_card="1234 5678 9012 3456"  # Visa ending 3456
+persona2_card="9876 5432 1098 7654"  # Visa ending 7654
+# Both cards bill to same address = correlated
+
+# STRONG approach (compartmentalized):
+persona1_card="Privacy.com virtual card, address A"
+persona2_card="Cash-purchased gift card, address B"
+persona3_payment="Monero to CoinJoin to merchant"
+```
+
+## Advanced: State Inference Attacks
+
+Sophisticated attackers infer connections between personas through behavioral patterns:
+
+### Temporal Correlation
+
+Activities at unusual times can link personas:
+
+```
+Persona A posts on Reddit at 3 AM EST (unusual for USA)
+Persona B posts on Twitter at 4 AM EST (same unusual time)
+Analyst: Likely same person, timezone UTC
+```
+
+Vary your activity times across personas. If your real work is 9-5 EST, have Persona A active during those hours, Persona B in opposite hours.
+
+### Language and Writing Style Analysis
+
+Linguistic analysis can identify authors even across anonymous accounts:
+
+- Favorite phrases ("to be honest", "unfortunately")
+- Punctuation patterns (double spaces, em-dashes)
+- Vocabulary sophistication level
+- Grammar quirks
+
+**Mitigation**: Write differently for each persona. Use grammar checking tools to vary style. If you have a distinctive writing voice, exaggerate that for one persona and adopt a different style for others.
+
+### Content Correlation
+
+Your interests link personas:
+
+```
+Persona A: Posts about Solidity smart contracts
+Persona B: Posts about Ethereum scaling solutions
+Analyst: Same person (specialized interest overlap unlikely)
+```
+
+Intentionally diversify interests across personas. If you're a crypto developer, have one persona focused on crypto, another on completely different topics.
+
+## Monitoring Compartmentalization Integrity
+
+Regularly audit your compartmentalization:
+
+```bash
+#!/bin/bash
+# Quarterly compartmentalization audit
+
+echo "=== Checking Email Separation ==="
+# List all emails associated with each persona
+grep -h "persona.*@" ~/.mailrc
+
+echo "=== Checking Device Usage ==="
+# Verify no cross-usage
+for device in work-laptop personal-laptop anonymous-pi; do
+    echo "$device last access:"
+    stat /path/to/$device | grep Access
+done
+
+echo "=== Checking Password Isolation ==="
+# Bitwarden CLI: count separate vaults
+bw list items | jq '.[] | .organizationId' | sort -u | wc -l
+
+echo "=== Checking Payment Methods ==="
+# Verify no shared payment methods
+echo "Persona 1 payments:"
+grep -i persona1 ~/finance/payments.csv
+echo "Persona 2 payments:"
+grep -i persona2 ~/finance/payments.csv
+```
+
+## Compartmentalization Failure Recovery
+
+If compartmentalization is compromised, respond immediately:
+
+### Immediate Actions
+
+1. **Change all passwords** for compromised persona
+2. **Revoke API keys** and credentials
+3. **Deactivate accounts** if the persona is burned
+4. **Monitor for further leaks** through Google Alerts and data breach feeds
+5. **Notify any partners** relying on compartmentation with that persona
+
+### Post-Incident Analysis
+
+```bash
+# Determine scope of compromise
+# Review access logs from affected persona accounts
+
+# Example: GitHub compromise
+git log --all --reverse | grep "commit by [persona-email]" | head -20
+
+# Example: AWS compromise
+aws cloudtrail lookup-events \
+  --lookup-attributes AttributeKey=Username,AttributeValue=persona-user \
+  --start-time 2026-03-01 --end-time 2026-03-21
+```
+
+Document exactly what was exposed. This informs recovery procedures.
+
 ## Related Articles
 
 - [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)

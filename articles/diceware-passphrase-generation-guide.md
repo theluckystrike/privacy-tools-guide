@@ -187,6 +187,97 @@ Standard dice rolls have about ±0.2% bias per face. For Diceware, this means th
 
 For situations where you want certainty, use the Python `secrets` module implementation above — it uses the OS's CSPRNG which is audited and tested against bias.
 
+## Threat Model: When Diceware Isn't Enough
+
+For certain threat models, even 8-word Diceware passphrases may be insufficient. Consider using longer passphrases for scenarios involving:
+
+- **Cryptocurrency cold wallets**: Keys that control significant value should use 10+ words
+- **Full disk encryption protecting highly sensitive data**: 8-10 words minimum
+- **Master keys for entire digital identities**: 12 words provides headroom against future computing advances
+
+To estimate future security, calculate bits of entropy needed:
+
+| Threat Model | Time Horizon | Entropy Required | Diceware Words |
+|--------------|--------------|------------------|-----------------|
+| Standard account protection | 5 years | 64 bits | 5-6 words |
+| Financial assets | 10 years | 80 bits | 7 words |
+| Secrets lasting decades | 20+ years | 100+ bits | 8-9 words |
+| Quantum-resistant equivalent | 30+ years | 256 bits | 20+ words |
+
+The last row highlights a critical limitation: if cryptographically broken passphrase hashes are captured today and quantum computers emerge in 20 years, no amount of entropy protects you. Use additional protections like time-locked encryption for long-term secrets.
+
+## Advanced: Diceware with Passphrase Stretching
+
+Raw Diceware provides excellent entropy but no computational cost to attackers. Password stretching functions like PBKDF2 or Argon2 make brute-force attacks exponentially harder:
+
+```python
+#!/usr/bin/env python3
+import hashlib
+import hmac
+import os
+
+def stretch_passphrase(passphrase, iterations=200000):
+    """
+    Stretch a Diceware passphrase using PBKDF2.
+    Increases computational cost for attackers.
+    """
+    salt = os.urandom(32)
+
+    stretched = hashlib.pbkdf2_hmac(
+        'sha256',
+        passphrase.encode(),
+        salt,
+        iterations
+    )
+
+    return stretched.hex(), salt.hex()
+
+# Example
+passphrase = "laden corral mulch scone gusto tweed"
+stretched, salt = stretch_passphrase(passphrase)
+print(f"Stretched: {stretched[:32]}...")
+print(f"Salt: {salt}")
+
+# To recover: repeat with same salt and iteration count
+```
+
+Use stretched passphrases in applications where you control the stretching function. For applications like LUKS disk encryption, use the application's built-in key stretching (which it does automatically).
+
+## Verifying Randomness Quality
+
+Before committing a generated passphrase to long-term use, verify the randomness source:
+
+```bash
+#!/bin/bash
+# Test /dev/urandom for quality randomness
+
+# Extract 1MB of random data
+dd if=/dev/urandom of=/tmp/random.bin bs=1M count=1 2>/dev/null
+
+# Run entropy analysis (requires ent tool)
+ent /tmp/random.bin
+
+# Expected output:
+# Entropy = 7.999972 bits per byte (close to 8.0 is good)
+# Chi-square = 234.5 (closer to 256 is better)
+```
+
+Entropy close to 8 bits per byte and chi-square values near 256 indicate high-quality randomness. Values significantly different may suggest problems with your random source.
+
+## Diceware for Multiple Languages
+
+The EFF wordlist exists in English, but multiple language implementations are available:
+
+| Language | List Size | Words | Source |
+|----------|-----------|-------|--------|
+| English (EFF) | 7776 | Common, readable | eff.org |
+| German | 7776 | Diceware original | Benutzerhandbuch |
+| Italian | 7776 | Modern, accessible | Italian crypto community |
+| Spanish | 7776 | Natural phrases | Available on GitHub |
+| French | 7776 | Phonetically distinct | French EFF equivalent |
+
+For international teams, coordinating on a single language (typically English) prevents confusion. Translated wordlists offer benefits for teams in non-English speaking regions who struggle to memorize English word sequences.
+
 ## Related Reading
 
 - [Two-Factor Authentication Setup 2026](/two-factor-authentication-setup-2026/)

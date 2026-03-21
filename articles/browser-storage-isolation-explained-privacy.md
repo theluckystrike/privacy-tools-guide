@@ -186,6 +186,191 @@ function setAnalyticsCookie(userConsents) {
 }
 ```
 
+## Browser-Specific Storage Isolation Features
+
+Different browsers implement storage isolation with varying strength:
+
+### Firefox Enhanced Tracking Protection
+
+Firefox uses First-Party Isolation by default for some storage, isolating IndexedDB and localStorage per site:
+
+```javascript
+// Test Firefox's isolation capability
+console.log(navigator.userAgent); // Identify Firefox
+
+// Each origin gets completely separate storage
+localStorage.setItem('test_firefox', 'value1');
+// Another origin cannot access this
+```
+
+Enable stricter tracking protection in settings: **Privacy & Security > Enhanced Tracking Protection > Strict**.
+
+### Safari Intelligent Tracking Prevention
+
+Safari's ITP actively clears third-party cookies and limits cross-site tracking:
+
+```javascript
+// Check localStorage availability in iframes
+try {
+  localStorage.setItem('test', 'value');
+} catch(e) {
+  // ITP may block this in third-party context
+  console.log("Storage access denied by ITP:", e);
+}
+```
+
+Safari clears cross-site cookies after 7 days, significantly reducing tracker effectiveness.
+
+### Chrome Privacy Sandbox and Storage Partitioning
+
+Chrome is transitioning toward storage partitioning where third-party storage is isolated by top-level site:
+
+```bash
+# Enable Chrome's storage partitioning
+# chrome://flags/#enable-partitioned-cookies
+
+# Storage partitioning example:
+# example.com (top-level) + ads.com (embedded) = partitioned storage
+# othersite.com (top-level) + ads.com (embedded) = different partitioned storage
+```
+
+## Testing Storage Isolation in Your Application
+
+Verify that your application respects storage boundaries:
+
+```python
+#!/usr/bin/env python3
+"""Test storage isolation across different origins."""
+
+import requests
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+def test_storage_isolation():
+    """Verify localStorage isolation."""
+    driver = webdriver.Chrome()
+
+    # Store data on site A
+    driver.get("https://siteA.example.com")
+    driver.execute_script("localStorage.setItem('secret_A', 'value_A')")
+
+    # Attempt to access from site B
+    driver.get("https://siteB.example.com")
+    try:
+        result = driver.execute_script("return localStorage.getItem('secret_A')")
+        if result is None:
+            print("✓ Isolation working: siteB cannot access siteA storage")
+        else:
+            print("✗ SECURITY ISSUE: siteB accessed siteA storage")
+    except Exception as e:
+        print(f"✓ Storage access blocked: {e}")
+
+    driver.quit()
+
+test_storage_isolation()
+```
+
+Run this test against your application to verify isolation is functioning.
+
+## Partitioned Cookie Implementation
+
+Modern browser cookie partitioning enhances privacy by partitioning cookies per top-level site:
+
+```javascript
+// Partitioned cookie example
+// Enables proper isolation when server sets cross-site cookies
+
+// Server-side (express.js example)
+app.use((req, res, next) => {
+  // Set cookie with Partitioned attribute
+  res.cookie('tracking_id', generateId(), {
+    secure: true,
+    sameSite: 'None',
+    partitioned: true,  // New attribute for partitioned cookies
+    maxAge: 1000 * 60 * 60 * 24 * 365  // 1 year
+  });
+  next();
+});
+```
+
+Partitioned cookies maintain third-party functionality while preventing cross-site tracking.
+
+## Storage Quota Limits and User Privacy
+
+Browsers limit storage per origin to prevent abuse:
+
+```javascript
+// Check available storage quota
+navigator.storage.estimate().then(estimate => {
+  const {usage, quota} = estimate;
+  console.log(`Storage: ${usage} / ${quota} bytes`);
+  console.log(`Percentage used: ${(usage/quota)*100}%`);
+
+  // Quota varies by browser and origin
+  // Typically 50MB+ for localStorage/IndexedDB
+  // Less for third-party/cross-site storage
+});
+```
+
+Browsers enforce these limits to prevent denial-of-service attacks where malicious sites fill storage.
+
+## Clearing Browser Storage for Privacy
+
+Users should periodically clear storage to remove tracking data:
+
+```javascript
+// JavaScript to clear all browser storage
+function clearAllStorage() {
+  // Clear localStorage
+  localStorage.clear();
+
+  // Clear sessionStorage
+  sessionStorage.clear();
+
+  // Clear cookies
+  document.cookie.split(";").forEach(c => {
+    document.cookie = c.replace(/^ +/, "")
+      .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+  });
+
+  // Clear IndexedDB
+  indexedDB.databases().then(dbs => {
+    dbs.forEach(db => {
+      indexedDB.deleteDatabase(db.name);
+    });
+  });
+
+  // Clear Cache API
+  caches.keys().then(cacheNames => {
+    cacheNames.forEach(cacheName => {
+      caches.delete(cacheName);
+    });
+  });
+
+  console.log("All storage cleared");
+}
+```
+
+## Storage Isolation Audit Tools
+
+Developers should regularly audit storage isolation:
+
+```bash
+# Browser DevTools Console - audit storage per origin
+for (let key in localStorage) {
+  console.log(`localStorage[${key}] = ${localStorage[key]}`);
+}
+
+# Check all IndexedDB databases
+indexedDB.databases().then(dbs => {
+  dbs.forEach(db => {
+    console.log(`Database: ${db.name}, Version: ${db.version}`);
+  });
+});
+
+# Monitor all fetch/XHR requests (shows what data leaves origin)
+# Open DevTools > Network tab > filter by XHR
+```
 
 ## Related Articles
 

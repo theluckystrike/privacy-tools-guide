@@ -184,8 +184,102 @@ if __name__ == "__main__":
     monitor_camera_connections()
 ```
 
-{% endraw %}
+```
 
+## Advanced: Capturing RTSP Streams with Wireshark
+
+To verify what data Eufy cameras actually transmit, capture and analyze network traffic directly:
+
+```bash
+# Capture RTSP traffic from camera IP
+sudo tcpdump -i en0 -n host 192.168.1.100 -w camera_traffic.pcap
+
+# Analyze in Wireshark
+wireshark camera_traffic.pcap
+
+# Look for these indicators:
+# - RTSP connections to 192.168.1.X (local)
+# - HTTPS connections to external IPs (Eufy servers)
+# - DNS lookups to Eufy domains
+```
+
+Parse captured traffic programmatically:
+
+```python
+#!/usr/bin/env python3
+from scapy.all import rdpcap, IP, TCP
+import json
+
+def analyze_camera_traffic(pcap_file):
+    """Analyze camera PCAP for external connections."""
+    packets = rdpcap(pcap_file)
+    external_ips = set()
+
+    for packet in packets:
+        if IP in packet:
+            dst = packet[IP].dst
+            # Flag non-RFC1918 addresses
+            if not dst.startswith(('10.', '172.', '192.168.')):
+                external_ips.add(dst)
+
+    return external_ips
+
+external = analyze_camera_traffic('camera_traffic.pcap')
+print(f"External IPs contacted: {external}")
+```
+
+This reveals exactly which servers your camera connects to, even when cloud features appear disabled.
+
+## Privacy Camera Comparison Table
+
+| Feature | Reolink | Hikvision | Axis | Home Assistant + Frigate |
+|---------|---------|-----------|------|--------------------------|
+| **Cloud-free option** | Yes | Yes | Yes | Yes (open source) |
+| **Local RTSP access** | Yes | Yes | Yes | Yes |
+| **Setup complexity** | Medium | Medium | Expert | Expert |
+| **Hardware cost** | $100-400 | $150-500 | $400+ | $50-300 (NAS/Pi) |
+| **Cloud features** | Optional | Optional | Optional | None |
+| **Recording speed** | 30fps+ | 30fps+ | 60fps+ | Depends on HW |
+| **Mobile access** | VPN required | VPN required | VPN required | VPN required |
+| **Learning curve** | Moderate | Moderate | Steep | Steep |
+
+## Setting Up IP Whitelisting
+
+Many cameras allow access control via IP whitelisting. Configure this to block unexpected connections:
+
+```bash
+# On Reolink NVR web interface
+# Settings > Network > IP Whitelist
+# Add only trusted local IPs
+
+# Verify via iptables (Linux)
+sudo iptables -L -n | grep camera-ip
+```
+
+## Network Segmentation for Smart Home
+
+Isolate all IoT devices from your main network:
+
+```bash
+# Create VLAN 100 for cameras (example with OpenWrt)
+# In LuCI: Network > Interfaces > Create Interface
+# Name: cameras
+# Protocol: Static Address
+# IPv4 address: 10.0.100.1
+# Netmask: 255.255.255.0
+
+# Block inter-VLAN traffic
+# Network > Firewall > General Settings
+# Block traffic between different zones
+
+# Allow only necessary ports to main network (if needed)
+# Network > Firewall > Traffic Rules
+# Allow TCP 22 to home NVR from management VLAN only
+```
+
+This prevents compromised cameras from accessing your main devices, work laptop, or personal computers.
+
+{% endraw %}
 
 ## Related Reading
 
