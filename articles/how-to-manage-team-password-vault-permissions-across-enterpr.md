@@ -10,6 +10,7 @@ categories: [guides]
 tags: [privacy-tools-guide, password-manager, enterprise-security, access-control]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

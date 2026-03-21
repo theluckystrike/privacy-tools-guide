@@ -9,6 +9,7 @@ categories: [guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}
