@@ -21,6 +21,27 @@ Replace manufacturer Secure Boot keys with your own custom keys to gain complete
 
 Automate kernel signing after updates using kernel hooks, and create encrypted backups of your keys for recovery purposes. This guide includes step-by-step enrollment procedures for different firmware types and troubleshooting for common boot failures.
 
+## Why Custom Keys Rather Than Default Secure Boot
+
+Most Linux distributions ship with Secure Boot support using keys from Microsoft and the distribution's own key exchange key. This works, but it has a critical limitation: your firmware trusts Microsoft's keys, which means any bootloader signed by Microsoft — including those used in certain well-known malware campaigns — can boot on your system.
+
+By replacing manufacturer keys with your own, you close this trust chain to any party other than yourself. The firmware will only boot code you have personally signed. This protection is particularly valuable in environments where physical access to your machine is possible — laptops carried through customs, machines in shared offices, or hardware used in security research.
+
+Custom keys also allow you to enforce Measured Boot more meaningfully. When combined with TPM-based disk encryption, a properly configured custom Secure Boot setup ensures that the TPM will only release disk encryption keys when the exact signed boot chain is present, detecting any firmware or bootloader tampering before the OS loads.
+
+## Key Hierarchy: Understanding the Three-Tier Structure
+
+The Secure Boot key hierarchy has a specific purpose for each tier:
+
+| Key | Role | Who Can Modify It |
+|---|---|---|
+| Platform Key (PK) | Root of trust; controls who can modify KEK | Only the PK itself |
+| Key Exchange Key (KEK) | Controls who can modify the db and dbx | PK |
+| Signature Database (db) | Contains keys that may sign boot executables | KEK |
+| Forbidden Signatures (dbx) | Revoked keys and hashes | KEK |
+
+The dbx (forbidden signatures database) is as important as the db. It allows you to revoke specific executables or keys even if they were previously trusted. Keep it updated — the Linux Vendor Firmware Service (LVFS) publishes dbx updates to revoke known-compromised bootloaders.
+
 ## Prerequisites
 
 Before beginning, gather the following:
@@ -45,27 +66,31 @@ sudo pacman -S sbsigntool efitools
 
 ## Generating Your Custom Keys
 
-Secure Boot uses RSA key pairs—public keys get enrolled in your firmware, while private keys sign your boot components. Generate a 2048-bit key set using OpenSSL:
+Secure Boot uses RSA key pairs — public keys get enrolled in your firmware, while private keys sign your boot components. Generate a 4096-bit key set using OpenSSL for stronger security; 2048-bit is the minimum acceptable, but 4096-bit is preferred for long-lived keys:
 
 ```bash
-# Create a directory for keys
+# Create a directory for keys with restricted permissions
 mkdir -p ~/secureboot/keys
+chmod 700 ~/secureboot/keys
 cd ~/secureboot/keys
 
 # Generate the Platform Key (PK)
-openssl genrsa -out PK.key 2048
-openssl req -new -x509 -key PK.key -out PK.crt -days 3650
+openssl genrsa -out PK.key 4096
+openssl req -new -x509 -key PK.key -out PK.crt -days 3650 \
+    -subj "/CN=Platform Key/"
 
 # Generate the Key Exchange Key (KEK)
-openssl genrsa -out KEK.key 2048
-openssl req -new -x509 -key KEK.key -out KEK.crt -days 3650
+openssl genrsa -out KEK.key 4096
+openssl req -new -x509 -key KEK.key -out KEK.crt -days 3650 \
+    -subj "/CN=Key Exchange Key/"
 
 # Generate the Signature Database key (db)
-openssl genrsa -out db.key 2048
-openssl req -new -x509 -key db.key -out db.crt -days 3650
+openssl genrsa -out db.key 4096
+openssl req -new -x509 -key db.key -out db.crt -days 3650 \
+    -subj "/CN=Signature Database Key/"
 ```
 
-The **Platform Key** serves as the root of trust—only this key can modify other keys in Secure Boot. The **Key Exchange Key** controls what keys can sign executables in the permitted database. The **db** key signs your actual boot components.
+The **Platform Key** serves as the root of trust — only this key can modify other keys in Secure Boot. The **Key Exchange Key** controls what keys can sign executables in the permitted database. The **db** key signs your actual boot components.
 
 Protect your private keys with appropriate filesystem permissions:
 
@@ -103,6 +128,8 @@ sudo efi-updatevar -f PK.esl PK
 
 For systems with limited firmware options, tools like `keytool` from the efitools package provide a graphical interface for key enrollment.
 
+**Important:** Always enroll keys in order — db first, then KEK, then PK last. Enrolling the PK activates Secure Boot enforcement. If you enroll the PK before the db and KEK, you may lock yourself out of being able to add additional keys without first disabling Secure Boot and clearing all keys.
+
 ## Signing Boot Components
 
 With keys enrolled, you must sign every component your system boots. This includes the bootloader, kernel, and any intermediate loaders.
@@ -123,7 +150,7 @@ sbsign --key ~/secureboot/keys/db.key --cert ~/secureboot/keys/db.crt \
     /boot/efi/EFI/systemd/systemd-bootx64.efi
 ```
 
-If you use an unified kernel image, sign the entire kernel bundle:
+If you use a unified kernel image (UKI), sign the entire kernel bundle:
 
 ```bash
 sbsign --key ~/secureboot/keys/db.key --cert ~/secureboot/keys/db.crt \
@@ -151,6 +178,33 @@ sudo chmod +x /etc/kernel/postinst.d/secure-boot-sign
 ```
 
 Adjust paths according to your setup. This hook triggers after kernel installations, automatically signing new kernels.
+
+Store your private keys in a location accessible only to root rather than in a user home directory. On systems where the key directory resides under `/etc/secureboot/`, update the path in the hook accordingly:
+
+```bash
+sudo mkdir -p /etc/secureboot/keys
+sudo chmod 700 /etc/secureboot/keys
+sudo mv ~/secureboot/keys/*.key /etc/secureboot/keys/
+sudo mv ~/secureboot/keys/*.crt /etc/secureboot/keys/
+sudo chmod 600 /etc/secureboot/keys/*.key
+```
+
+## Troubleshooting Common Boot Failures
+
+Custom Secure Boot configurations can fail silently or with cryptic error messages. The most common issues:
+
+**Signature verification failed:** The kernel or bootloader was updated without re-signing. Boot from a live USB, mount your EFI partition, and re-sign the updated binary using your db key.
+
+**Bootloader not found after key enrollment:** Some firmware implementations require a signed EFI application to be designated as the boot entry. Use `efibootmgr` to add an entry pointing to your signed bootloader after enrollment.
+
+**Firmware reverts to Setup Mode:** A small number of consumer laptops have buggy firmware that drops back to Setup Mode after reboot. In this case, you may need to re-enroll keys each time. Consider whether your hardware actually supports stable Secure Boot customization before investing more time.
+
+**Module loading fails:** Kernel modules must also be signed when Secure Boot is active. Use `kmodsign` to sign out-of-tree modules:
+
+```bash
+kmodsign sha256 /etc/secureboot/keys/db.key /etc/secureboot/keys/db.crt \
+    /path/to/module.ko
+```
 
 ## Verification and Testing
 
@@ -181,10 +235,11 @@ tar czf secureboot-keys-backup.tar.gz -C ~/secureboot keys/
 gpg -o secureboot-keys-backup.tar.gz.gpg --symmetric secureboot-keys-backup.tar.gz
 ```
 
-Store this backup securely, preferably offline. Additionally, note your firmware's "Clear Secure Boot Keys" option exists as a last-resort recovery method—this returns to factory defaults.
+Store this backup securely, preferably offline on a USB drive kept in a physically secure location. Additionally, note your firmware's "Clear Secure Boot Keys" or "Restore Factory Keys" option — this returns to manufacturer defaults and allows you to boot unsigned media, giving you a path to re-enroll your keys if something goes wrong.
 
+Document the GUID used when creating your EFI signature lists. If you need to re-enroll from scratch, you should use the same GUID to ensure key continuity across reinstallation.
 
-## Related Articles
+## Related Reading
 
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
