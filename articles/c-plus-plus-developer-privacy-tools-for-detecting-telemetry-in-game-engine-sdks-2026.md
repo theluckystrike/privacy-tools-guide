@@ -6,7 +6,7 @@ date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /c-plus-plus-developer-privacy-tools-for-detecting-telemetry-in-game-engine-sdks-2026/
-categories: [guides, developer-tools]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: false
