@@ -368,7 +368,4 @@ class PrivacyLocationManager(context: Context) {
 ```
 
 This approach gives games the location data they need while protecting user privacy.
-<<<<<<< HEAD
 {% endraw %}
-=======
->>>>>>> 7dfbe9776ee6982b14a443661ed2437ee3b7771c
