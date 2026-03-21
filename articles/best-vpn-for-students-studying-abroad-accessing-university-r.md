@@ -400,7 +400,4 @@ course materials while traveling in [country]. Is this permitted?"
 ```
 
 Getting explicit approval prevents misunderstandings later.
-<<<<<<< HEAD
 {% endraw %}
-=======
->>>>>>> 7dfbe9776ee6982b14a443661ed2437ee3b7771c

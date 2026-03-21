@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-test-vpn-for-webrtc-leaks--testing-guide/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
