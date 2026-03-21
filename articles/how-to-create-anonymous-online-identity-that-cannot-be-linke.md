@@ -29,6 +29,16 @@ Before implementing any anonymity strategy, recognize what makes identities link
 
 True anonymity means preventing all three correlation vectors simultaneously.
 
+## Defining Your Threat Model First
+
+The appropriate level of anonymity depends on your adversary. Answering these questions before building your stack prevents over-engineering for low-risk scenarios and under-engineering for high-risk ones:
+
+- Who is trying to link your identities? (ex-partner, employer, law enforcement, intelligence agency)
+- What resources do they have? (time, money, legal authority)
+- What is the consequence of a linkage failure? (embarrassment, job loss, physical danger)
+
+For a developer testing a side project under a pseudonym, basic browser isolation and a separate email address may suffice. For a journalist working on a sensitive investigation, the full stack described below is warranted. Build to your actual threat, not a theoretical maximum.
+
 ## Layer 1: Network-Level Isolation
 
 Your IP address is the most immediate identifier. Even with a VPN, traffic patterns and DNS queries can reveal your identity.
@@ -58,6 +68,17 @@ git config --global https.proxy socks5h://127.0.0.1:9050
 
 Rotate Tor circuits frequently for new identities, but remember that long-lived sessions can still be fingerprinted.
 
+### VPNs: Useful but Insufficient Alone
+
+A VPN shifts trust from your ISP to the VPN provider. This is useful when your ISP is a higher-risk actor than your VPN, but it does not provide anonymity. A VPN provider who receives a valid legal request will comply. Use a VPN with a verified no-logs policy as a supplementary layer, not a primary anonymity solution.
+
+| Solution | Protects From | Does Not Protect From |
+|----------|-------------|----------------------|
+| VPN | ISP surveillance | VPN provider, legal requests |
+| Tor | Network observers | Exit node traffic analysis |
+| VPN + Tor | ISP + most network observers | Behavioral correlation |
+| Tor + Bridges | ISP + censorship | Determined national adversaries |
+
 ## Layer 2: Browser Fingerprinting
 
 Modern browsers expose dozens of attributes that create persistent fingerprints. Canvas, WebGL, and font rendering all contribute to this.
@@ -80,6 +101,14 @@ webgl.disabled: true
 
 Use the Letterboxing feature to prevent window size fingerprinting. Consider the Tor Browser, which standardizes these protections.
 
+### Tor Browser as the Gold Standard
+
+The Tor Browser modifies its fingerprint to appear identical to all other Tor Browser users. This crowd-hiding approach is more effective than fingerprint blocking because blocking itself creates a distinctive signature. When using Tor Browser:
+
+- Never resize the window from its default size
+- Never install additional extensions beyond the defaults
+- Never log into any account associated with your real identity
+
 ## Layer 3: Identity Segregation
 
 Separate your anonymous identity completely from any account linked to your real identity.
@@ -100,6 +129,8 @@ Forward emails through forwarding services, but never link these to your real ac
 # Example: Using SimpleLogin or similar for alias management
 # Each alias forwards to your anonymous inbox
 ```
+
+For maximum isolation, create your anonymous email account entirely over Tor, paying with Monero or cash for any paid tier. Use a username that contains no personally identifying information and was generated randomly, not chosen based on your preferences.
 
 ### Password Management
 
@@ -136,6 +167,18 @@ gpg --armor --export $KEYID > anonymous-pub.asc
 
 For maximum anonymity, use key-signing parties within Tor to build reputation without identity linkage.
 
+### Dedicated Devices and OS Installations
+
+Software-level isolation has limits. Hardware identifiers, CPU microarchitecture characteristics, and memory timing can leak across VM boundaries. For high-stakes anonymity:
+
+- Use a dedicated physical device purchased with cash
+- Install a privacy-focused OS such as Tails (amnesic, leaves no trace) or Whonix (routes all traffic through Tor)
+- Never connect this device to your home or work network
+
+**Tails** is the strongest option for episodic anonymous work: it boots from a USB drive, stores nothing on the host machine, and routes all traffic through Tor by default. When you shut it down, the session is gone.
+
+**Whonix** splits the environment into a Gateway (runs Tor) and a Workstation (routes through Gateway). Even if the Workstation is compromised, the attacker cannot learn your real IP.
+
 ## Layer 5: Behavioral Discipline
 
 Technical measures fail without consistent behavioral practices.
@@ -147,6 +190,8 @@ Automated stylometry can identify authors with 80%+ accuracy. Countermeasures in
 - Using writing assistants that normalize sentence structure
 - Translating text through multiple languages to flatten style
 - Avoiding domain-specific jargon that correlates to your professional identity
+
+The more content you produce under an anonymous identity, the more material a stylometric analysis has to work with. Keep distinct personas linguistically distinct: vary sentence length, paragraph structure, punctuation habits, and vocabulary register.
 
 ### Timing Analysis
 
@@ -166,7 +211,7 @@ def random_post_time():
     return random.randint(0, 23)
 ```
 
-### compartmentalization Rules
+### Compartmentalization Rules
 
 Maintain strict separation:
 
@@ -201,6 +246,8 @@ Avoid these frequent errors:
 - **Metadata leakage**: Even filenames and document properties can reveal identity
 - **Social engineering**: Attackers may correlate behavioral patterns across extended periods
 - **Legal requests**: Subpoenas can compel service providers to reveal information
+- **Account recovery**: Security questions, phone numbers, and backup emails for anonymous accounts are frequent linkage vectors. Never use a real phone number for account recovery on an anonymous identity.
+- **Payment correlation**: Credit cards and PayPal are fully deanonymizing. Use Monero or cash-purchased gift cards for any payments associated with anonymous identities.
 
 ## When Anonymity Fails
 
@@ -215,7 +262,7 @@ Building a truly anonymous online identity requires ongoing vigilance. Start wit
 ---
 
 
-## Related Articles
+## Related Reading
 
 - [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
