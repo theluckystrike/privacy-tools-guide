@@ -201,6 +201,48 @@ This fingerprinting method is particularly dangerous because:
 3. **Works across domains**: Using shared CDNs or embedded resources
 4. **No cookies required**: Identifies users without storing any state
 
+## HTTP/3 and QUIC: Does It Change the Threat?
+
+HTTP/3 replaces TCP with QUIC (a UDP-based transport protocol), which changes—but does not eliminate—the connection fingerprinting surface. QUIC introduces connection IDs that can persist across IP address changes, creating a new tracking vector even when users switch networks.
+
+Key QUIC fingerprinting signals include:
+
+- **Initial packet size and structure**: QUIC Initial packets contain version negotiation data that differs across implementations
+- **Connection migration behavior**: How aggressively the browser migrates connections to new network paths
+- **Transport parameter frames**: QUIC equivalent of HTTP/2 SETTINGS frames, with browser-specific defaults
+
+```bash
+# Analyze QUIC traffic fingerprint using tshark
+tshark -i eth0 -f "udp port 443" -Y "quic" \
+  -T fields -e quic.version -e quic.connection_id_length \
+  -e quic.initial_packet -w quic_capture.pcap
+```
+
+The practical takeaway: migrating to HTTP/3 does not provide a privacy improvement for fingerprinting resistance. It shifts the attack surface rather than eliminating it.
+
+## Cross-Origin Fingerprinting via Shared Resources
+
+One often-overlooked vector involves shared CDN endpoints. When your browser loads a resource from a CDN shared across thousands of websites, the CDN operator can correlate connection reuse patterns to identify users across those sites without cookies.
+
+This works because:
+
+1. Browser A visits site-one.com, which loads jQuery from cdn.example.com
+2. Browser A visits site-two.com, which also loads from cdn.example.com
+3. The CDN observes the same persistent connection being reused — identifying the same browser across two unrelated sites
+
+The subresource integrity (SRI) mechanism prevents script tampering but does nothing to prevent this connection-level tracking.
+
+```html
+<!-- SRI prevents script tampering but not connection fingerprinting -->
+<script
+  src="https://cdn.example.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous">
+</script>
+```
+
+Developers building privacy-sensitive applications should self-host critical scripts or use service workers to proxy CDN requests through the same origin.
+
 ## Mitigation Strategies
 
 ### For Users
@@ -209,6 +251,7 @@ This fingerprinting method is particularly dangerous because:
 - Enable "Resist Fingerprinting" options in your browser
 - Use privacy-focused DNS resolvers
 - Consider HTTP/3 which uses QUIC and different fingerprinting surfaces
+- Use Tor Browser, which normalizes connection behavior across all users
 
 ### For Developers
 
@@ -232,13 +275,48 @@ server.on('stream', (stream, headers) => {
 });
 ```
 
+### Service Worker Proxy Pattern
+
+A service worker can intercept all outgoing requests and route them through a single origin, reducing the connection diversity visible to external servers:
+
+```javascript
+// service-worker.js
+self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+
+  // Route all third-party requests through your own proxy
+  if (url.hostname !== self.location.hostname) {
+    const proxiedUrl = `/proxy?url=${encodeURIComponent(event.request.url)}`;
+    event.respondWith(fetch(proxiedUrl));
+  }
+});
+```
+
+This approach consolidates connection pools, reducing the number of external endpoints that can observe your browser's connection behavior.
+
 ### For Site Operators
 
 - Minimize connection fingerprint differences across deployments
 - Use standard CDN configurations
 - Avoid browser-specific optimizations that create unique behaviors
 - Implement proper CORS policies to prevent cross-origin probing
+- Audit third-party script dependencies that add external connection pools
+- Consider a Content Security Policy that restricts which origins can be contacted
 
+## Testing Your Application's Fingerprint Surface
+
+Developers can audit their own application's connection fingerprint exposure using browser developer tools and network analysis:
+
+```bash
+# Capture HTTP/2 frames using Wireshark
+tshark -i lo -w capture.pcap -f "port 443"
+
+# Then analyze SETTINGS frames
+tshark -r capture.pcap -Y "http2.type == 4" \
+  -T fields -e http2.settings.id -e http2.settings.value
+```
+
+The Mozilla Observatory and similar tools flag some connection-level issues, but dedicated fingerprinting test suites like coveryourtracks.eff.org provide more actionable data on your browser's uniqueness.
 
 ## Related Articles
 
