@@ -5,11 +5,12 @@ description: "age (Actually Good Encryption) tool guide. CLI examples, integrati
 author: Privacy Tools Guide
 published: true
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 date: 2026-03-21
 permalink: /how-to-use-age-encryption-for-file-sharing-2026/
+tags: [privacy-tools-guide, encryption]
 ---
 
 {% raw %}
