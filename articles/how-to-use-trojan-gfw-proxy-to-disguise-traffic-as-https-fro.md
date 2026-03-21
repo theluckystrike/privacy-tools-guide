@@ -24,6 +24,8 @@ Trojan operates on a deceptively simple principle: it wraps encrypted traffic in
 
 The protocol achieves this by acting as a reverse proxy. Your client connects to the Trojan server on port 443, sends a pre-shared password as the first message, and if authenticated, the server forwards your traffic to its actual destination. This design means that from an external perspective, your connection looks exactly like a standard TLS connection to a web server.
 
+What differentiates Trojan from earlier protocols like Shadowsocks or V2Ray VMess is its use of authentic TLS certificates issued by trusted certificate authorities. When the GFW probes a Trojan server, it receives a valid TLS handshake and then sees what appears to be normal HTTPS responses—because the server also runs a real web server on the fallback port 80. This makes active probing by censors significantly harder than with protocols that use custom encryption schemes.
+
 ## Server-Side Configuration
 
 Setting up a Trojan server requires a Linux VPS with TLS certificate support. You'll need a domain name pointing to your server and root or sudo access.
@@ -95,6 +97,33 @@ EOF
 sudo systemctl enable --now trojan
 ```
 
+## Setting Up the Nginx Fallback Server
+
+A critical component of a convincing Trojan deployment is the fallback web server. When the GFW or any censor probes your server without the Trojan password, they should receive a legitimate website response. Run Nginx on port 80 serving real content:
+
+```bash
+sudo apt install nginx -y
+
+# Create a minimal but convincing site
+sudo tee /etc/nginx/sites-available/default << 'EOF'
+server {
+    listen 80;
+    server_name your-domain.com;
+
+    root /var/www/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+EOF
+
+sudo systemctl enable --now nginx
+```
+
+The content at `/var/www/html` should be a plausible static site. An empty directory or a default Nginx page looks suspicious under active probing. A minimal blog or landing page with a few HTML files significantly reduces the probability that automated scanning identifies the server as a proxy.
+
 ## Client-Side Configuration
 
 On the client side, you have multiple options depending on your operating system. For desktop systems, the Qt-based Trojan-Qt5 or Trojan-GUI clients provide graphical interfaces. For mobile, the ignoring Android client or ShadowRocket on iOS work well.
@@ -156,6 +185,8 @@ curl https://target-website.com
 
 For Docker containers, configure the daemon or individual containers to route through the proxy by adding environment variables in your Dockerfile or docker-compose.yml.
 
+For browsers, both Firefox and Chrome support SOCKS5 proxy configuration. In Firefox, navigate to Settings > Network Settings and select Manual Proxy Configuration. Set SOCKS Host to `127.0.0.1` and Port to `1080`, select SOCKS v5, and enable "Proxy DNS when using SOCKS v5" to prevent DNS leaks—without this setting, DNS queries bypass the proxy and can reveal your browsing activity to local observers.
+
 ## Performance Optimization
 
 Trojan's performance depends heavily on your server's network quality and TLS configuration. Enable TCP Fast Open on both client and server (kernel parameters must support it):
@@ -169,6 +200,20 @@ sudo sysctl -p
 ```
 
 For production deployments, consider running Trojan behind Nginx with WebSocket support for better traffic blending. This allows your server to serve legitimate HTTPS content while simultaneously handling Trojan connections, making traffic analysis even more difficult.
+
+Enable BBR congestion control on your server for better throughput on high-latency connections, which is typical for cross-border traffic:
+
+```bash
+# Enable BBR
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sudo sysctl -p
+
+# Verify BBR is active
+sysctl net.ipv4.tcp_congestion_control
+```
+
+BBR significantly improves performance on connections with packet loss, which is common when traffic traverses the GFW. Real-world throughput improvements of 30 to 50 percent are achievable compared to the default CUBIC congestion control algorithm.
 
 ## Troubleshooting Common Issues
 
@@ -186,6 +231,26 @@ sudo modprobe bbr
 ```
 
 Monitor logs on both client and server to identify authentication failures or network issues. The Trojan protocol is designed to be silent on failure—it simply drops invalid packets rather than sending rejection messages.
+
+If your server is being actively blocked despite correct configuration, the issue may be IP-level blocking rather than DPI detection. Check whether your VPS IP is in commonly blocked ranges using tools like `ping`, `traceroute`, or online GFW checking services. If the IP is blocked at the routing level, switching VPS providers or using CDN fronting through Cloudflare may resolve the issue—configure Cloudflare in front of your domain, set a custom ALPN value, and route Trojan traffic through Cloudflare's 443 port using Websocket mode in trojan-go.
+
+## Certificate Renewal Automation
+
+TLS certificates issued by Let's Encrypt expire after 90 days. Failing to renew them breaks your proxy silently—the client will reject the expired certificate and connections will fail. Automate renewal with a systemd timer:
+
+```bash
+# Check that the renewal timer is active
+sudo systemctl status certbot.timer
+
+# Force a renewal test
+sudo certbot renew --dry-run
+
+# If Certbot was installed via snap, renewal is automatic
+# If installed via apt, add a cron job
+echo "0 3 * * * root certbot renew --quiet --pre-hook 'systemctl stop trojan' --post-hook 'systemctl start trojan'" | sudo tee /etc/cron.d/certbot-trojan
+```
+
+The `--pre-hook` and `--post-hook` options temporarily stop and restart Trojan during renewal, which is necessary if Trojan is binding port 443 and Certbot needs to use the standalone authenticator.
 
 ## Security Considerations
 

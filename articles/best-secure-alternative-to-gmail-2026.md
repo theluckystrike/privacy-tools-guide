@@ -31,6 +31,8 @@ The primary concerns driving migration include:
 
 For developers who understand the implications of these trade-offs, the question becomes: what maintains similar functionality while providing actual privacy?
 
+Google's terms permit the company to process email content for a range of purposes. Even when you enable confidential mode, the messages travel through Google's infrastructure unencrypted at rest on their servers—they are only protected in transit. For developers building applications that handle sensitive user data, or individuals dealing with legally privileged communications, this is an unacceptable risk model.
+
 ## Hosted Secure Email Services
 
 ### Proton Mail
@@ -73,6 +75,8 @@ def send_secure_email(api_key, to, subject, body):
     return response.json()
 ```
 
+The Bridge application is open-source since 2021, allowing independent verification of its encryption implementation. Proton also publishes transparency reports and has a track record of resisting legal requests under Swiss jurisdiction. For developers handling communications that must remain confidential, this combination of technical encryption and legal jurisdiction provides layered protection.
+
 ### Tutanota
 
 Tutanota provides another solid option with automatic end-to-end encryption. Their approach uses a custom encryption protocol rather than PGP, which simplifies key management but reduces interoperability.
@@ -87,6 +91,8 @@ Tutanota provides another solid option with automatic end-to-end encryption. The
 - No IMAP/SMTP on free tiers
 - Proprietary encryption requires trust in Tutanota's implementation
 
+Tutanota's custom protocol does provide one advantage: encrypted subjects. PGP-based systems like Proton Mail encrypt the body but transmit subjects in cleartext when sending to external recipients. If the subject line of your emails reveals sensitive information, Tutanota's approach is more thorough.
+
 ### Mailfence
 
 Based in Belgium, Mailfence offers full OpenPGP support with both hosted and custom domain options. This is particularly valuable for teams that need PGP interoperability.
@@ -95,6 +101,14 @@ Based in Belgium, Mailfence offers full OpenPGP support with both hosted and cus
 - Complete OpenPGP key management
 - SMTP/IMAP access on paid plans
 - Digital signing and timestamps
+
+Mailfence supports S/MIME in addition to OpenPGP, which matters for organizations that interact with corporate environments where S/MIME is the dominant email signing standard. Their group features allow shared calendars, document storage, and team-level key management—making it viable for small teams that want encrypted collaboration without the complexity of self-hosting.
+
+### Fastmail
+
+Fastmail does not offer end-to-end encryption, but it deserves mention for developers who prioritize features and reliability over maximum privacy. It provides exceptional IMAP support, powerful server-side filtering using Sieve scripts, and JMAP access—a modern protocol that is significantly more efficient than IMAP for mobile clients.
+
+If your threat model is primarily about avoiding ad targeting and data monetization rather than state-level surveillance, Fastmail is a reasonable middle ground. They are based in Australia, subject to FISA-equivalent legislation, which limits their appeal for high-sensitivity use cases.
 
 ## Self-Hosted Solutions: Maximum Control
 
@@ -157,6 +171,8 @@ curl -s https://mailinabox.email/bootstrap.sh | bash
 # Automatic SSL, SPF, DKIM, and DMARC setup
 ```
 
+Self-hosting email carries real operational responsibilities. Your server's IP address reputation affects deliverability—sending from a residential IP or a newly provisioned VPS often results in messages landing in spam folders. Use a provider with clean IP ranges and consider a warm-up period where you gradually increase sending volume. Services like MXToolbox and mail-tester.com help diagnose deliverability problems before they affect real communications.
+
 ## Migration Strategies
 
 Moving from Gmail requires planning to ensure you don't lose critical data.
@@ -184,6 +200,8 @@ Configure forwarding rules to ensure you don't miss important emails during tran
 # forward@newdomain.com existing@email.com
 ```
 
+For a zero-downtime migration, run both accounts in parallel for 60 to 90 days. Set up forwarding from Gmail to your new address, and reply from your new address. Most contacts will naturally update their address books. After 90 days, the remaining traffic in Gmail is typically automated notifications and low-priority mailing lists—safe to unsubscribe or ignore.
+
 ## DNS Configuration for Self-Hosted
 
 Proper DNS setup is critical for deliverability:
@@ -197,6 +215,13 @@ v=DKIM1; k=rsa; p=your-public-key
 
 # DMARC record
 v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@yourdomain.com
+```
+
+DMARC reporting is worth enabling even while you are still testing. Aggregate reports sent to your reporting address reveal which servers are sending email claiming to be from your domain—an early warning system for spoofing attempts. Parse these reports with tools like `parsedmarc` to get structured data:
+
+```bash
+pip install parsedmarc
+parsedmarc --save-aggregate /path/to/reports/ *.xml
 ```
 
 ## Making Your Decision
@@ -220,6 +245,8 @@ Regardless of your chosen platform, set up these security measures:
 4. Set up automated backups for self-hosted solutions
 5. Monitor logs regularly for unauthorized access attempts
 6. Keep software updated and subscribe to security advisories
+
+For self-hosted deployments, add Fail2ban to block repeated authentication failures, and configure log shipping to a separate system so that server compromise cannot destroy your audit trail. Run regular certificate renewal checks—expired TLS certificates cause immediate delivery failures and are a common oversight on self-managed mail servers.
 
 
 ## Related Articles
