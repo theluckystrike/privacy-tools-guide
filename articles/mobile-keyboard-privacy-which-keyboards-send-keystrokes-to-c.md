@@ -9,7 +9,7 @@ permalink: /mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
