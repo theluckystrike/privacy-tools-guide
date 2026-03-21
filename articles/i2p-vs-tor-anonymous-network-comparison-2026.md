@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /i2p-vs-tor-anonymous-network-comparison-2026/
 categories: [guides]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]
