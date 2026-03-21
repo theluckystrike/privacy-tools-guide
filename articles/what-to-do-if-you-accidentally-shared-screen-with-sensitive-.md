@@ -7,7 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /what-to-do-if-you-accidentally-shared-screen-with-sensitive-/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
