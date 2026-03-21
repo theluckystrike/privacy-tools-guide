@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Tails OS for Maximum Anonymity"
-description: "Step-by-step guide to using Tails OS for maximum anonymity. Covers USB installation, Tor configuration, persistent storage encryption, and operational security."
+description: "Step-by-step guide to using Tails OS for maximum anonymity. Covers USB installation, Tor configuration, persistent storage encryption, and operational."
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-use-tails-os-for-maximum-anonymity/
@@ -504,5 +504,10 @@ This takes 10-15 seconds. Wait for complete shutdown.
 | Whistleblowing | Tails + ProtonMail | Complete isolation |
 
 {% endraw %}
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
