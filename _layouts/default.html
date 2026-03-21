@@ -31,6 +31,26 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Privacy Tools Guide",
+        "item": "https://theluckystrike.github.io/privacy-tools-guide/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ page.title | escape }}",
+        "item": "{{ page.url | absolute_url }}"
+      }
+    ]
+  }
+  </script>
   {% endif %}
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
@@ -42,6 +62,12 @@
 </head>
 <body>
   <header><a href="{{ site.baseurl }}/">{{ site.title }}</a></header>
+  {% if page.path contains 'articles/' %}
+  <nav aria-label="breadcrumb" style="font-size:0.85em;color:#666;margin-bottom:1em;">
+    <a href="{{ site.baseurl }}/">Home</a> &rsaquo;
+    <span>{{ page.title }}</span>
+  </nav>
+  {% endif %}
   <main>{{ content }}</main>
   <footer>Built by theluckystrike. More tips at <a href="https://zovo.one">zovo.one</a></footer>
   <div class="site-nav-footer" style="background:#f8f9fa;padding:20px;margin-top:40px;border-top:2px solid #e9ecef;text-align:center;">
@@ -57,5 +83,61 @@
     </nav>
     <p style="margin-top:10px;font-size:0.85em;color:#666;">&copy; 2026 <a href="https://theluckystrike.github.io/" style="color:#666;">theluckystrike Developer Guides</a></p>
   </div>
+  {% if page.date %}
+  <script>
+  (function() {
+    var main = document.querySelector('main');
+    if (!main) return;
+    var headings = main.querySelectorAll('h2');
+    var faqHeading = null;
+    for (var i = 0; i < headings.length; i++) {
+      var text = headings[i].textContent.trim().toLowerCase();
+      if (text === 'faq' || text === 'frequently asked questions') {
+        faqHeading = headings[i];
+        break;
+      }
+    }
+    if (!faqHeading) return;
+    var faqItems = [];
+    var el = faqHeading.nextElementSibling;
+    var currentQ = null;
+    var currentA = '';
+    while (el && el.tagName !== 'H2') {
+      if (el.tagName === 'H3') {
+        if (currentQ) {
+          faqItems.push({ q: currentQ, a: currentA.trim() });
+        }
+        currentQ = el.textContent.trim();
+        currentA = '';
+      } else if (currentQ) {
+        currentA += (currentA ? ' ' : '') + el.textContent.trim();
+      }
+      el = el.nextElementSibling;
+    }
+    if (currentQ) {
+      faqItems.push({ q: currentQ, a: currentA.trim() });
+    }
+    if (faqItems.length === 0) return;
+    var schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(function(item) {
+        return {
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        };
+      })
+    };
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  })();
+  </script>
+  {% endif %}
 </body>
 </html>
