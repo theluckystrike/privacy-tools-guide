@@ -15,11 +15,19 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-Start by opening `about:config` and setting `privacy.resistFingerprinting` to `true`, `network.cookie.cookieBehavior` to `1` (block third-party cookies), and `network.trr.mode` to `2` (enable DNS-over-HTTPS with fallback). These three changes form the core of Firefox privacy hardening in 2026. This guide covers every essential `about:config` tweak, extension recommendation, and profile management strategy for developers and power users.
+Start by opening `about:config` and setting `privacy.resistFingerprinting` to `true`, `network.cookie.cookieBehavior` to `1` (block third-party cookies), and `network.trr.mode` to `2` (enable DNS-over-HTTPS with fallback). These three changes form the core of Firefox privacy hardening in 2026. This guide covers every essential `about:config` tweak, extension recommendation, profile management strategy, and verification step for developers and power users.
+
+## Why Firefox for Privacy in 2026
+
+Firefox is not the most private browser by default — that title belongs to hardened Tor Browser. However, Firefox occupies a practical middle ground: it is configurable enough to reach a strong privacy posture while remaining usable for everyday development and browsing work. Chrome's privacy settings are architecturally constrained by Google's advertising business. Safari is competitive on privacy but limited to Apple ecosystems. Firefox gives users the most control per unit of configuration effort.
+
+Mozilla's open-source model also allows external audits of the codebase. Privacy-focused projects like the Arkenfox user.js maintain community-reviewed settings lists that track changes across Firefox versions, giving users a living reference for hardening decisions.
 
 ## Accessing Advanced Settings
 
-The about:config interface exposes Firefox's internal configuration. Type `about:config` in your address bar and press Enter. You'll see a warning—accept it to proceed. The search bar at the top makes finding specific preferences straightforward.
+The about:config interface exposes Firefox's internal configuration. Type `about:config` in your address bar and press Enter. You will see a warning — accept it to proceed. The search bar at the top makes finding specific preferences straightforward.
+
+Changes made through about:config persist across sessions but can be reset to defaults by right-clicking a preference and selecting "Reset." This makes experimentation low-risk.
 
 ## Core Privacy Preferences
 
@@ -33,7 +41,7 @@ Enabling this setting normalizes your browser's fingerprint by reporting generic
 privacy.resistFingerprinting = true
 ```
 
-When enabled, Firefox reports a standard viewport and limits JavaScript access to detailed timing information. This protects against fingerprinting attacks that identify users based on hardware and configuration differences.
+When enabled, Firefox reports a standard viewport and limits JavaScript access to detailed timing information. This protects against fingerprinting attacks that identify users based on hardware and configuration differences. The trade-off is occasional display quirks on sites that rely on accurate viewport dimensions.
 
 **privacy.trackingprotection.enabled** (Boolean, default: true)
 
@@ -43,7 +51,15 @@ Built-in tracking protection blocks known trackers. Ensure this remains enabled:
 privacy.trackingprotection.enabled = true
 ```
 
-Firefox maintains a list of known trackers and automatically blocks requests to those domains. This reduces data leakage to advertisers and third-party analytics providers.
+Firefox maintains a list of known trackers and automatically blocks requests to those domains. This reduces data leakage to advertisers and third-party analytics providers. Setting Enhanced Tracking Protection to "Strict" in Preferences > Privacy & Security catches additional trackers beyond the standard list.
+
+**browser.send_pings** (Boolean, default: true)
+
+Hyperlink ping tracking allows sites to notify a third-party URL when you click a link. Disable it:
+
+```
+browser.send_pings = false
+```
 
 ## Network and Connection Settings
 
@@ -83,6 +99,20 @@ Controls cookie expiration:
 network.cookie.lifetimePolicy = 2
 ```
 
+**network.prefetch-next** (Boolean, default: true)
+
+Firefox prefetches pages it predicts you will visit next. This leaks browsing intent to servers:
+
+```
+network.prefetch-next = false
+```
+
+Also disable DNS prefetching:
+
+```
+network.dns.disablePrefetch = true
+```
+
 ## WebGL and Canvas Protection
 
 WebGL and HTML Canvas APIs can leak hardware information:
@@ -102,6 +132,8 @@ This setting adds noise to canvas readouts, making fingerprinting less reliable:
 ```
 canvas.privacy.image_cipher = true
 ```
+
+Canvas fingerprinting works by rendering an invisible image and reading back the pixel values, which differ slightly based on GPU drivers and rendering engines. Adding noise makes these values less unique.
 
 ## Referrer and Header Control
 
@@ -131,6 +163,8 @@ Reduces timing precision to prevent timing-based attacks:
 privacy.reduceTimerPrecision = true
 ```
 
+High-precision timers enable Spectre-class side-channel attacks and allow fingerprinting through performance measurement. Reducing precision degrades these attack vectors without noticeable impact on normal browsing.
+
 ## DNS and HTTPS Settings
 
 Modern DNS and HTTPS configurations improve privacy:
@@ -156,6 +190,8 @@ Specify your DoH provider. The default is Cloudflare, but you can use other prov
 network.trr.uri = https://dns.google/dns-query
 ```
 
+Privacy-focused alternatives include Mullvad (`https://dns.mullvad.net/dns-query`) and NextDNS. Mullvad does not require an account and does not log queries.
+
 **security.tls.version.min** (Integer, default: 1)
 
 Enforce minimum TLS version:
@@ -164,20 +200,71 @@ Enforce minimum TLS version:
 security.tls.version.min = 3  # TLS 1.2 minimum
 ```
 
+## Telemetry and Data Collection
+
+Firefox collects usage telemetry by default. Disable it:
+
+```
+toolkit.telemetry.unified = false
+toolkit.telemetry.enabled = false
+toolkit.telemetry.server = data:,
+datareporting.healthreport.uploadEnabled = false
+browser.crashReports.unsubmittedCheck.autoSubmit2 = false
+```
+
+These settings stop Firefox from sending usage data to Mozilla. The `toolkit.telemetry.server` value is set to a data URI to prevent any accidental connections to telemetry endpoints.
+
 ## Extension Recommendations
 
 Beyond about:config, Firefox's extension ecosystem enhances privacy:
 
-**uBlock Origin** blocks advertisements and trackers at the network level. Install from addons.mozilla.org and enable built-in filter lists.
+**uBlock Origin** blocks advertisements and trackers at the network level. Install from addons.mozilla.org and enable built-in filter lists including EasyList, EasyPrivacy, and uBlock Filters. The "Medium mode" blocking profile is recommended for users comfortable with occasional site breakage — it blocks all third-party scripts by default.
 
-**Facebook Container** isolates Facebook tracking to prevent cross-site tracking. Firefox includes this natively—enable it in Preferences > Privacy & Security.
+**Facebook Container** isolates Facebook tracking to prevent cross-site tracking. Firefox includes this natively — enable it in Preferences > Privacy & Security.
 
-**Multi-Account Containers** create isolated sessions for different purposes. Use separate containers for work, personal browsing, and testing:
+**Multi-Account Containers** create isolated sessions for different purposes. Use separate containers for work, personal browsing, shopping, and sensitive accounts:
 
 ```bash
 # Containers can be managed via Firefox's built-in container tabs
 # Right-click a tab > "Move to Container" > select container
 ```
+
+Each container has its own cookie jar, local storage, and IndexedDB. A tracker that sets a cookie in your shopping container cannot read that cookie in your banking container.
+
+**LocalCDN** replaces requests to CDNs (Google Fonts, jQuery CDN, Bootstrap CDN) with locally served copies. This prevents CDN providers from tracking which sites you visit based on resource requests.
+
+## Persisting Settings with user.js
+
+Settings entered through about:config survive browser restarts but can be overwritten by Firefox updates. A `user.js` file in your profile directory applies settings at every startup:
+
+```bash
+# Find your profile directory
+firefox --ProfileManager
+# Or check about:profiles in Firefox
+```
+
+Create or edit `~/.mozilla/firefox/YOUR-PROFILE/user.js`:
+
+```javascript
+// Core privacy settings
+user_pref("privacy.resistFingerprinting", true);
+user_pref("privacy.trackingprotection.enabled", true);
+user_pref("network.cookie.cookieBehavior", 1);
+user_pref("network.cookie.lifetimePolicy", 2);
+user_pref("network.trr.mode", 2);
+user_pref("network.trr.uri", "https://dns.mullvad.net/dns-query");
+user_pref("webgl.disabled", true);
+user_pref("browser.send_pings", false);
+user_pref("network.prefetch-next", false);
+user_pref("network.dns.disablePrefetch", true);
+
+// Telemetry
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.enabled", false);
+user_pref("datareporting.healthreport.uploadEnabled", false);
+```
+
+The Arkenfox project maintains an extensively commented `user.js` that covers additional preferences not included here. It is worth reviewing for users who want a community-maintained hardening baseline.
 
 ## Automation and Profiles
 
@@ -194,7 +281,7 @@ firefox -P "privacy-dev"
 firefox --ProfileManager
 ```
 
-Each profile maintains separate settings, extensions, and cookies. Create dedicated profiles for development, testing, and sensitive browsing.
+Each profile maintains separate settings, extensions, and cookies. Create dedicated profiles for development (looser privacy settings, DevTools access), general browsing (hardened settings, uBlock Origin), and sensitive browsing (maximum hardening, no extensions that could exfiltrate data).
 
 ## Verification and Testing
 
@@ -203,12 +290,21 @@ After configuring settings, verify they work:
 1. Visit `about:config` and search for your modified preferences
 2. Check that values match your intended configuration
 3. Test in a fresh profile to confirm changes propagate correctly
-4. Use browser fingerprinting test sites to evaluate your privacy posture
+4. Visit `coveryourtracks.eff.org` to measure your fingerprint uniqueness
+5. Visit `browserleaks.com` to check WebGL, Canvas, and WebRTC leak status
+
+WebRTC can leak your local IP address even through a VPN. Disable it if you do not need real-time communication:
+
+```
+media.peerconnection.enabled = false
+```
+
+Re-enable this setting only for tabs where you actively use video or voice calling.
 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 - [Snapchat Privacy Settings Complete Guide 2026: A.](/privacy-tools-guide/snapchat-privacy-settings-complete-guide-2026/)
 - [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
