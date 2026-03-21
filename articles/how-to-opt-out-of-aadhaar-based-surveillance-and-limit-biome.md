@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]

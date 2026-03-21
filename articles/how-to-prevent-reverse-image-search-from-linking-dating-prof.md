@@ -9,7 +9,7 @@ permalink: /how-to-prevent-reverse-image-search-from-linking-dating-prof/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, security]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
