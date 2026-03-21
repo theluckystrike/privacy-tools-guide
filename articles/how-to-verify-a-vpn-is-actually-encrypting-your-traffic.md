@@ -509,9 +509,9 @@ Frame 3: Client IP:random_port → example.com:443 [TLS encrypted]
          (Bad - leaking real IP as source)
 ```
 
-## Comprehensive VPN Verification Checklist
+## VPN Verification Checklist
 
-Run these tests in order to completely verify your VPN:
+Run these tests to completely verify your VPN:
 
 ```
 Before VPN:
@@ -564,13 +564,5 @@ If any tests fail: VPN has a leak, contact support or switch providers
 | IPv6 leak | VPN only handles IPv4 | High |
 | Kill switch fails | Vulnerable if VPN drops | High |
 | Traffic not encrypted (Wireshark) | No actual encryption | Critical |
-
-## Conclusion
-
-Trust nothing - test everything. These five tests give you complete visibility into whether your VPN actually works. A VPN makes promises; these tests verify those promises.
-
-Run the verification checklist quarterly. VPN configurations change, updates introduce regressions, and new leak vectors emerge. Regular testing catches problems before they compromise your privacy.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

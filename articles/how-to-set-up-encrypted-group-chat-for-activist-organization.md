@@ -176,20 +176,6 @@ For Signal:
 2. Print backup code and store securely
 3. Verify safety numbers with all group members regularly
 
-## Summary: Tool Selection Matrix
-
-| Tool | Self-Hosted | Metadata Resistance | Offline Support | Phone Number Required |
-|------|-------------|---------------------|-----------------|----------------------|
-| Matrix/Synapse | Yes | Moderate | No | No |
-| Signal | No | High | No | Yes |
-| Session | Optional | High | No | No |
-| Briar | N/A | Excellent | Yes | No |
-
-Deploy Matrix when infrastructure control is paramount. Use Signal for ease of adoption with strong security defaults. Choose Session for anonymity without phone numbers. Select Briar for environments with limited connectivity.
-
-Test your chosen solution thoroughly before operational use. Document configuration procedures and ensure all group members understand security protocols. Regular security audits of your communication infrastructure protect both organizational continuity and individual safety.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

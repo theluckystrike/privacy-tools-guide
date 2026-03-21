@@ -123,7 +123,7 @@ Additionally, some TCC entries are protected by System Integrity Protection (SIP
 
 ## Extended TCC Service Reference
 
-Beyond the common services, macOS includes many additional TCC entries that control privacy-sensitive access. Here's a comprehensive reference:
+Beyond the common services, macOS includes many additional TCC entries that control privacy-sensitive access. Here's a reference:
 
 | Service ID | Description | Risk Level |
 |------------|-------------|-----------|
@@ -213,7 +213,7 @@ If the TCC database is locked by a running process, kill that process or restart
 
 ## Automating TCC Management for Security Teams
 
-For developers managing multiple machines, create comprehensive TCC audit and deployment scripts:
+For developers managing multiple machines, create TCC audit and deployment scripts:
 
 ```bash
 #!/bin/bash

@@ -153,7 +153,7 @@ OnionShare works well for asynchronous coordination where participants cannot es
 
 ## Key Management and Recovery Planning
 
-Secure communication requires robust key management that doesn't create single points of failure. Mutual aid networks should implement backup procedures that enable recovery without exposing communications to unauthorized parties.
+Secure communication requires strong key management that doesn't create single points of failure. Mutual aid networks should implement backup procedures that enable recovery without exposing communications to unauthorized parties.
 
 **Recovery phrase storage best practices:**
 

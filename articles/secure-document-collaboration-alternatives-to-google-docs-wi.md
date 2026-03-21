@@ -180,7 +180,5 @@ For developers and power users who value privacy, these alternatives prove that 
 - [Cryptomator vs VeraCrypt for Cloud Encryption: A.](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
 - [Secure Communication Plan Template for Organizations.](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

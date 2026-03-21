@@ -227,7 +227,5 @@ The arms race between privacy tools and tracking technologies continues, but und
 - [How to Detect and Block Hidden Third-Party Trackers on.](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -140,16 +140,6 @@ It's essential to understand what Instagram does not allow:
 - **No viewing analytics for others**: You cannot see who viewed your profile or non-story content
 - **No complete activity history**: Instagram purges older activity data regularly
 
-## Best Practices Summary
-
-1. **Accept bidirectional visibility**: Story viewing creates mutual visibility by design
-2. **Use privacy settings proactively**: Disable activity status and use Close Friends strategically
-3. **Segment your accounts**: Separate personal and consumption-focused accounts
-4. **Review followers regularly**: Remove accounts you no longer want viewing your content
-5. **Understand API constraints**: Developer tools provide limited privacy-related functionality
-
-The reality is that Instagram's architecture prioritizes transparency over privacy for story viewing. Your best approach involves understanding these constraints and making informed decisions about account structure and viewing habits rather than seeking technical workarounds that may violate platform terms of service.
-
 ## Advanced Account Segmentation Strategies
 
 For power users requiring sophisticated privacy controls, multi-account strategies provide practical solutions.
@@ -210,7 +200,7 @@ Power users should understand signals indicating they might be tracked through s
 
 ### Correlated Account Actions
 
-If you view a story on Account A immediately after following someone on Account B, and then that person mentions you personally, they may have tracked the correlation:
+If you view a story on Account an immediately after following someone on Account B, and then that person mentions you personally, they may have tracked the correlation:
 
 - Follow on Account B
 - Story view from Account A within minutes
@@ -225,7 +215,7 @@ Clicking links in stories can expose your identity across accounts:
 
 - Story mentions "click link in bio"
 - You click on Account A, lands on URL with tracking parameters
-- URL reveals Account A username or device ID
+- URL reveals Account an username or device ID
 - Later, your Account C views that link
 - Correlation: Link tracking connects your accounts
 
@@ -356,17 +346,6 @@ BeReal emphasizes authentic sharing without metrics or viewing lists:
 - Decentralized friend network
 
 Trade-offs: Different purpose (time-based rather than topical), smaller network.
-
-## Summary: Realistic Privacy on Instagram
-
-Accept these immutable facts:
-
-1. Instagram will know every story you view (but you can control who sees this knowledge)
-2. People who see your story know you posted it (but you can control who sees your story)
-3. Your activity pattern and timing reveal information about your behavior
-4. Account separation prevents perfect privacy but improves relative privacy
-
-Work within these constraints rather than seeking technical workarounds that may violate terms of service.
 
 ## Related Reading
 

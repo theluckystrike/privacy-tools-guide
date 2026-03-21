@@ -245,7 +245,7 @@ Different scenarios warrant different preparation levels:
 
 **Standard Business Travel**: Basic deletion of sensitive documents, clearing browser history, and erasing temp files provides adequate protection.
 
-**Activist Traveling to Oppressive Regime**: Comprehensive data destruction, device factory reset, and cloud-only workflows needed.
+**Activist Traveling to Oppressive Regime**: data destruction, device factory reset, and cloud-only workflows needed.
 
 **Researcher with Sensitive Sources**: Compartmentalization—keep source contact information nowhere on devices you travel with.
 

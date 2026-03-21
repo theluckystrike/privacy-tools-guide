@@ -26,7 +26,7 @@ Navigate to [myactivity.google.com](https://myactivity.google.com) to access you
 Google provides three auto-delete options that control how long your data persists:
 
 - **Keep until you delete manually**: Data persists indefinitely until you manually remove it
-- **Keep for 18 months**: Activity older than 18 months deletes automatically 
+- **Keep for 18 months**: Activity older than 18 months deletes automatically
 - **Keep for 3 months**: Activity older than 3 months deletes automatically
 
 To change these settings, access the "Auto-delete" option from the activity controls page. Select the duration that matches your privacy requirements. For maximum privacy, choose the 3-month option or manually delete data regularly.
@@ -207,8 +207,6 @@ class PrivacyconsciousAnalytics:
 - [Android Location History Google Timeline: How to Delete.](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [Android Find My Device: Privacy Implications You Need to.](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [How to Minimize Digital Footprint Guide 2026: A.](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

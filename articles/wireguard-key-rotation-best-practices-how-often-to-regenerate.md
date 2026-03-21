@@ -189,19 +189,6 @@ ping -c 4 10.0.0.1
 sudo wg show wg0 dump
 ```
 
-## Best Practices Summary
-
-| Use Case | Rotation Frequency | Trigger Events |
-|----------|-------------------|----------------|
-| Personal | Every 3-6 months | Device loss, suspected compromise |
-| Business | Monthly to quarterly | Security incidents, personnel changes |
-| High-security | Monthly or data-based | Any security event |
-
-WireGuard's modern cryptography provides excellent security, but proper key management remains essential. By implementing regular key rotation—automating it where possible—you maintain strong security posture while minimizing the risk from long-term key exposure.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

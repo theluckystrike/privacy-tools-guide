@@ -214,7 +214,5 @@ Start by auditing your data stores to identify every table containing personal d
 - [GDPR Data Subject Access Request Template: A Developer's Guide](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [Coffee Meets Bagel Data Retention Policy: How Long the.](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

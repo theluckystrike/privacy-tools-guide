@@ -317,7 +317,5 @@ For general browsing, "Safer" setting balances security and usability. Switch to
 - [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
 - [Tor Browser Captcha Issues Workarounds 2026](/privacy-tools-guide/tor-browser-captcha-issues-workarounds-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

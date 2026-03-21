@@ -384,7 +384,7 @@ Flag any vendor you cannot provide a DPA from. If a vendor refuses to sign a DPA
 
 ## Cookie and Tracking Technology Audit
 
-Modern applications use a range of tracking technologies beyond traditional cookies: local storage, session storage, IndexedDB, fingerprinting scripts, and tracking pixels. A comprehensive privacy audit must inventory all of these.
+Modern applications use a range of tracking technologies beyond traditional cookies: local storage, session storage, IndexedDB, fingerprinting scripts, and tracking pixels. A privacy audit must inventory all of these.
 
 The EU's ePrivacy Directive (often called the "Cookie Law") and GDPR together require consent before setting non-essential cookies. Strictly necessary cookies (session management, security tokens) are exempt. Everything else—analytics, personalization, marketing—requires explicit user consent before placement.
 
@@ -514,8 +514,6 @@ Run a tabletop exercise once per year: present the team with a breach scenario a
 - [Privacy Audit Checklist for SaaS Companies.](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
 - [Android Privacy Best Practices 2026: A Developer and.](/privacy-tools-guide/android-privacy-best-practices-2026/)
 - [Windows 10 Privacy Settings Complete Checklist: A.](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

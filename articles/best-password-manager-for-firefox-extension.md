@@ -374,7 +374,5 @@ No single password manager is perfect for all use cases. Evaluate your specific 
 - [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
 - [How to Store OTP Codes in Password Manager: A Developer.](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

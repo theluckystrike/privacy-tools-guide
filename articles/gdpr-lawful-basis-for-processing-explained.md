@@ -242,21 +242,12 @@ Under GDPR, you cannot retroactively change your lawful basis to circumvent requ
 2. Ensure the new basis was valid at collection time
 3. Document the change and reasoning
 
-## Summary: Key Takeaways for Developers
-
-Document your basis choice—regulators will ask what basis you used and you must be able to answer. Implement consent properly by storing proof, enabling withdrawal, and handling withdrawal promptly. Use the contract basis only for genuinely essential features; stretching it beyond scope invites scrutiny. Legitimate interest requires the most documentation, so treat it with care. Revisit your records as the application evolves, because lawful basis decisions are not one-time choices.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [GDPR Data Processing Agreement Template Guide: A Developer's Practical Reference](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 - [GDPR Article 17 Erasure Implementation Code: A Developer.](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 - [Legitimate Interest Assessment Template for Processing.](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

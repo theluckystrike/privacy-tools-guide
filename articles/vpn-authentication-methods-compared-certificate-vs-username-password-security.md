@@ -96,7 +96,7 @@ Additionally, certificate deployment at scale requires mobile device management 
 
 ## Username/Password Authentication Explained
 
-Username/password authentication is the traditional approach most users are familiar with. Users provide credentials—typically a username or email address combined with a password—to authenticate to the VPN server. The server validates these credentials against a user database, which may be local or integrated with directory services like Active Directory, LDAP, or RADIUS.
+Username/password authentication is the traditional approach most users are familiar with. Users provide credentials—typically an username or email address combined with a password—to authenticate to the VPN server. The server validates these credentials against a user database, which may be local or integrated with directory services like Active Directory, LDAP, or RADIUS.
 
 ### How Password Authentication Works
 

@@ -336,7 +336,5 @@ For developers specifically: use Brave for general browsing and personal project
 - [Brave vs Safari Privacy Comparison 2026: A Developer Guide](/privacy-tools-guide/brave-vs-safari-privacy-comparison-2026/)
 - [Sticky Password Review 2026: A Developer's Perspective](/privacy-tools-guide/sticky-password-review-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

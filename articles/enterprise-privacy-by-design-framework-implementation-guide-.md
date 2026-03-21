@@ -198,7 +198,7 @@ privacy-ci scan --config .privacy-ci.yml --target ./src
 
 ## Monitoring and Audit Trails
 
-Privacy compliance requires demonstrating consistent behavior over time. Implement comprehensive logging that captures data access patterns without logging personal data itself:
+Privacy compliance requires demonstrating consistent behavior over time. Implement logging that captures data access patterns without logging personal data itself:
 
 ```python
 import structlog
@@ -218,15 +218,6 @@ def log_data_access(user_id: str, resource: str, action: str):
 ```
 
 This pattern supports both security monitoring and regulatory audits while maintaining the principle of data minimization in your logging infrastructure.
-
-## Summary
-
-Implementing privacy by design requires translating abstract principles into concrete technical patterns. The strategies outlined here—data minimization schemas, privacy-aware serialization, automated retention, consent management, automated impact assessments, and audit logging—provide a foundation for building compliant systems.
-
-Start by auditing your current data flows against these principles. Identify gaps between what you collect and what you actually need. Implement consent mechanisms for any optional data collection. Automate retention policies to prevent data accumulation. Each incremental improvement reduces compliance risk while building user trust.
-
----
-
 
 ## Related Reading
 

@@ -848,23 +848,7 @@ Intermittent unresponsiveness:
 
 ---
 
-## Conclusion
-
-A privacy-friendly smart home is:
-- **Cheaper:** No subscriptions, lower long-term costs
-- **Faster:** No cloud latency
-- **Reliable:** Works without internet
-- **Private:** No tracking, no data sales
-- **Flexible:** Infinite automation possibilities
-
-**Start simple:** Buy one Zigbee coordinator + 2-3 devices. Set up Home Assistant. Once comfortable, expand.
-
-**Total time to setup:** 2-3 hours hands-on work.
-**Total cost:** $300-600 for complete system.
-**Privacy value:** Priceless.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

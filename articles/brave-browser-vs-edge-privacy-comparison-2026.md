@@ -246,7 +246,5 @@ In benchmark tests, Brave loads tracker-heavy sites 30-40% faster due to blocked
 - [Best Browser for Privacy Android 2026: Developer and.](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 - [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

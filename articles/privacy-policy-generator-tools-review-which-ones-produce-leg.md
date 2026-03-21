@@ -69,7 +69,7 @@ The platform provides templates with placeholders that developers fill through a
 
 [Iubenda](https://iubenda.com/) provides one of the more generator options with API access for developers. Their policy templates cover GDPR (EU), CCPA/CPRA (California), LGPD (Brazil), and POPIA (South Africa).
 
-For developers, their GTM cookie consent solution integrates with generated policies, creating a unified compliance system. The generated policies include granular cookie categories matching your actual implementation.
+For developers, their GTM cookie consent solution integrates with generated policies, creating an unified compliance system. The generated policies include granular cookie categories matching your actual implementation.
 
 **Strengths**: Multi-jurisdiction coverage, cookie scanner integration, API access
 **Considerations**: Subscription required for full features; pricing scales with page views

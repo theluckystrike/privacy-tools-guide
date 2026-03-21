@@ -208,16 +208,6 @@ The trade-off:
 
 For privacy-conscious users, Monero remains the more proven choice despite larger blockchain. Mimblewimble's efficiency appeals more to developers and those prioritizing scalability alongside privacy.
 
-## Implementation Differences: Key Takeaways for Privacy Analysis
-
-While both Grin and Beam implement Mimblewimble, their approaches diverge in important ways:
-
-**Grin's Simplicity Focus**: Grin maintains strict protocol minimalism. No optional features means less attack surface but also less flexibility. For privacy researchers, this means Grin's privacy properties are easier to formally verify—the protocol doesn't have different codepaths for different features.
-
-**Beam's Enterprise Approach**: Beam added features like auditable wallets and multi-signature support that Grin deliberately excluded. This makes Beam more suitable for regulated financial institutions but potentially weakens some privacy guarantees if those features are exploited.
-
-The key cryptographic difference: both use the same underlying math (Pedersen commitments, Bulletproofs), so the privacy guarantees are mathematically equivalent. The difference is operational—which features users can employ.
-
 ## Performance Characteristics and Blockchain Size
 
 One major advantage of Mimblewimble over other privacy coins:

@@ -180,7 +180,5 @@ For developers working with sensitive data or testing privacy features:
 - [Best Browser for Privacy Android 2026: Developer and.](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 - [Brave Browser Honest Review 2026: A Developer and Power.](/privacy-tools-guide/brave-browser-honest-review-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

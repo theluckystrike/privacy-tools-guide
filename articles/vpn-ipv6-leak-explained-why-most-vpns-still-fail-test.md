@@ -19,7 +19,7 @@ VPNs leak your real IPv6 address because most were designed for IPv4only—your 
 
 ## What is IPv6 and Why Does It Matter?
 
-IPv6 (Internet Protocol version 6) is the newest version of internet protocol, designed to replace IPv4, which has run out of available addresses. While IPv4 uses 32-bit addresses (like 192.168.1.1), IPv6 uses 128-bit addresses (like 2001:0db8:85a3:0000:0000:8a2e:0370:7334). 
+IPv6 (Internet Protocol version 6) is the newest version of internet protocol, designed to replace IPv4, which has run out of available addresses. While IPv4 uses 32-bit addresses (like 192.168.1.1), IPv6 uses 128-bit addresses (like 2001:0db8:85a3:0000:0000:8a2e:0370:7334).
 
 Most internet service providers (ISPs) now support IPv6, and many devices prefer it automatically. When your computer connects to a website, it may use IPv6 if both the client and server support it—bypassing your VPN entirely if the VPN only handles IPv4 traffic.
 

@@ -185,7 +185,5 @@ Passkeys never leave the user's device, cannot be phished, and don't rely on bro
 - [Password Manager Autofill Security Risks: What.](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Best Browser for Online Banking Security 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-online-banking-security/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -177,7 +177,5 @@ Bridge addresses themselves can become blocked. Maintain multiple bridge configu
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [WireGuard Persistent Keepalive Setting Explained: When to Enable It](/privacy-tools-guide/wireguard-persistent-keepalive-setting-explained-when-to-enable-it/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

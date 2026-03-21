@@ -132,7 +132,7 @@ To remove stored Significant Locations data:
 
 This action clears all location history, significant locations, and resets location service permissions for all apps. You will need to re-authorize location access for each app after this reset.
 
-**Important**: This reset is comprehensive and irreversible. It clears not just Significant Locations but also your calibrated location data used for improving location accuracy. After reset, apps will re-request location permissions. This method is most appropriate for:
+**Important**: This reset is and irreversible. It clears not just Significant Locations but also your calibrated location data used for improving location accuracy. After reset, apps will re-request location permissions. This method is most appropriate for:
 - Before traveling internationally
 - When selling or giving away your iPhone
 - After a security incident or suspected unauthorized access
@@ -235,7 +235,7 @@ This export does not include on-device Significant Locations data but provides i
 
 ## Long-Term Privacy Strategy
 
-Managing location privacy is not a one-time task but an ongoing practice. Quarterly reviews of location permissions, annual reset of location history during security maintenance, and staying informed about new iOS privacy features all contribute to a privacy-respecting lifestyle.
+Managing location privacy is not an one-time task but an ongoing practice. Quarterly reviews of location permissions, annual reset of location history during security maintenance, and staying informed about new iOS privacy features all contribute to a privacy-respecting lifestyle.
 
 As iOS evolves, Apple introduces more granular controls. iOS 17 introduced the ability to limit location precision per app, and future versions may offer additional privacy options. Stay updated on iOS privacy features by reviewing release notes for new iOS versions.
 

@@ -119,9 +119,9 @@ Testing reveals the following performance envelope for mesh operations:
 
 | Transport | Range (meters) | Throughput | Latency (ms) | Battery Impact |
 |-----------|----------------|------------|--------------|----------------|
-| BLE       | 10-30          | ~500 Kbps  | 50-200       | Moderate       |
-| Wi-Fi Dir | 50-200         | ~10 Mbps   | 20-50        | High           |
-| USB       | 2 (cable)      | ~480 Mbps  | <5           | Moderate       |
+| BLE | 10-30 | ~500 Kbps | 50-200 | Moderate |
+| Wi-Fi Dir | 50-200 | ~10 Mbps | 20-50 | High |
+| USB | 2 (cable) | ~480 Mbps | <5 | Moderate |
 
 Message delivery latency depends heavily on network topology. In a dense mesh with frequent connectivity, messages propagate within minutes. Sparse networks with infrequent contact windows may introduce hours of delay.
 
@@ -285,7 +285,5 @@ Participating in Briar development or testing new features helps strengthen the 
 - [Briar Messenger Offline Communication: How It Works for.](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [How to Use Briar Messenger During Iran Internet.](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [Signal Protocol Explained for Developers: A Technical Deep Dive](/privacy-tools-guide/signal-protocol-explained-for-developers/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

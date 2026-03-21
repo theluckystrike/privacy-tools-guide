@@ -246,7 +246,7 @@ Tor Browser isolates WebRTC from the main browsing interface, effectively preven
 
 ### Firefox with Hardening
 
-Firefox users can implement comprehensive protection:
+Firefox users can implement protection:
 
 ```javascript
 // user.js configuration for Firefox

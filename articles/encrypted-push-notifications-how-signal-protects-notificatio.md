@@ -249,7 +249,7 @@ The apps installed on your device affect how you interact with notifications. Pl
 - Your language preference from notification language
 - Your location from timing zone patterns
 
-Comprehensive notification privacy requires reducing what information is exposed beyond message content.
+ notification privacy requires reducing what information is exposed beyond message content.
 
 ## Regulatory and Compliance Considerations
 
@@ -286,7 +286,7 @@ More technical testing involves intercepting network traffic:
 mitmproxy -m transparent --mode reverse --modify-body /pattern/replacement "https://push.signal.org"
 ```
 
-Formal security audits by third parties (like those performed by Open Whisper Systems) provide more comprehensive verification than individual testing.
+Formal security audits by third parties (like those performed by Open Whisper Systems) provide more verification than individual testing.
 
 ## Related Reading
 

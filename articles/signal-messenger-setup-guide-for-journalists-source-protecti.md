@@ -329,17 +329,6 @@ Organizations should establish written policies:
 
 Distribute this policy during newsroom onboarding. Regular security training reinforces these practices.
 
-## Summary
-
-Securing journalist-source communications with Signal requires attention to both application configuration and operational practices. Enable sealed sender for metadata protection, configure disappearing messages to reduce evidence retention, establish registration lock to prevent account takeover, and verify safety numbers for every sensitive conversation.
-
-The most secure approach combines dedicated devices running privacy-focused operating systems with Signal's advanced privacy features. By implementing these configurations, journalists create meaningful protection for their sources while maintaining access to modern messaging convenience.
-
-For organizations handling particularly sensitive communications, consider combining Signal with additional tools like PGP-encrypted email for file transfers and secure password managers for credential storage. Layered security provides defense in depth against various threat vectors.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

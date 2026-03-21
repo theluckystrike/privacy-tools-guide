@@ -150,24 +150,6 @@ When privacy violations occur, use Facebook's built-in reporting mechanisms:
 - Use Facebook's **Safety Center** for resources on digital safety
 - For serious threats, consider legal remedies and law enforcement contact
 
-## Summary of Recommended Settings
-
-| Setting | Recommended Value | Reason |
-|---------|-------------------|--------|
-| Friend list visibility | Only Me | Limits social graph exposure |
-| Profile searchability | Friends of Friends | Reduces discovery by strangers |
-| Location services | Disabled | Prevents location tracking |
-| Marketplace posting | Marketplace only | Limits feed visibility |
-| Message requests | Enabled | Screens unknown contacts |
-| Two-factor authentication | Enabled (hardware key) | Account security |
-
-These configurations balance Marketplace functionality with privacy protection. Adjust based on your specific threat model and comfort level with data exposure.
-
-For developers building privacy tools or analyzing social platform data, always use official APIs, respect user consent, and comply with platform terms of service.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

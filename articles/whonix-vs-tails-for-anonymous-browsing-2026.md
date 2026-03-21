@@ -171,7 +171,5 @@ For bandwidth-intensive tasks, consider that Whonix can dedicate more resources 
 - [Anonymous Browsing Mobile Devices Guide 2026: Techniques.](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
 - [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

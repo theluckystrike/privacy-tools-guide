@@ -171,7 +171,7 @@ For startup founders, the calculation is clear: investing in compliance during d
 
 ## COPPA Safe Harbor Programs
 
-The FTC provides "safe harbor" certifications for companies demonstrating robust COPPA compliance. These programs reduce liability by showing good-faith compliance efforts:
+The FTC provides "safe harbor" certifications for companies demonstrating strong COPPA compliance. These programs reduce liability by showing good-faith compliance efforts:
 
 **Common Sense Media Certification**: Companies can earn certification by meeting third-party privacy standards. This certification becomes evidence of compliance if a violation occurs.
 
@@ -263,7 +263,7 @@ Understanding which category your service falls into helps determine specific co
 
 ## International COPPA Equivalents
 
-COPPA is a US law, but other countries have similar protections:
+COPPA is an US law, but other countries have similar protections:
 
 **GDPR (EU)**: Requires parental consent for children under 16 (member states can lower to 13), provides stronger deletion rights, and emphasizes data minimization.
 

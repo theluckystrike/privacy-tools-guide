@@ -31,7 +31,7 @@ The strongest aliases are entirely separate domains under your control. If you o
 
 ## SimpleLogin (Industry Leader)
 
-SimpleLogin is the most comprehensive email alias service, balancing functionality, security, and usability. It's acquired by Proton, the privacy company behind ProtonMail, ensuring long-term commitment to privacy.
+SimpleLogin is the most email alias service, balancing functionality, security, and usability. It's acquired by Proton, the privacy company behind ProtonMail, ensuring long-term commitment to privacy.
 
 **Features:**
 - Create unlimited aliases on SimpleLogin's domain (name@simplelogin.com)
@@ -62,7 +62,7 @@ SimpleLogin provides open-source code (github.com/simple-login/app). You can sel
 Browser extension available for Chrome, Firefox, Safari. Click the icon to generate a new alias instantly. Native apps for iOS and Android available. Integration with password managers (1Password, Bitwarden, KeePass) makes alias+password generation seamless.
 
 **Pros:**
-- Most comprehensive feature set
+- Most feature set
 - Catch-all addresses eliminate need to pre-generate aliases
 - Open-source and self-hosting option
 - Owned by Proton (strong privacy commitment)
@@ -76,7 +76,7 @@ Browser extension available for Chrome, Firefox, Safari. Click the icon to gener
 - Catch-all on custom domains requires DNS setup knowledge
 - Paid tier only supports 10 custom domains (limiting for domain collectors)
 
-**Best for:** Privacy-conscious professionals, security researchers, anyone valuing comprehensive control. Worth the cost for serious privacy advocates.
+**Best for:** Privacy-conscious professionals, security researchers, anyone valuing control. Worth the cost for serious privacy advocates.
 
 ## AnonAddy (Open Source, Transparent)
 
@@ -203,7 +203,7 @@ Apple's Hide My Email is integrated into iCloud+ subscription, available only to
 No self-hosting. Exclusive to Apple ecosystem.
 
 **Ease of Use:**
-Seamlessly integrated into iOS, macOS, and iCloud web. Siri can generate aliases. Safari autofill suggests aliases when creating accounts. For Apple users, this is the path of least resistance.
+ integrated into iOS, macOS, and iCloud web. Siri can generate aliases. Safari autofill suggests aliases when creating accounts. For Apple users, this is the path of least resistance.
 
 **Pros:**
 - Free with iCloud+ (if you need storage anyway)
@@ -256,7 +256,7 @@ Integrated into Fastmail webmail and apps. Creating masks directly within your e
 
 **Pros:**
 - Unlimited masks with service
-- Part of comprehensive email service (useful if switching primary email)
+- Part of email service (useful if switching primary email)
 - Australian jurisdiction (strong privacy)
 - Good webmail client and mobile apps
 - Professional email setup option

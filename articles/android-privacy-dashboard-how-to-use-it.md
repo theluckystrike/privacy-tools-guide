@@ -226,7 +226,5 @@ Remember: Just because an app requests permission doesn't mean you must grant it
 - [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
 - [Facebook Privacy Settings 2026: A Complete Guide for.](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

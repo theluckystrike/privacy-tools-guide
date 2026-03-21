@@ -78,7 +78,7 @@ sudo mokutil --enroll-key /usr/share/shim-signed/shimx64.efi.signed.key
 sudo mokutil --import /usr/share/secureboot/keys/fedora/DB.key
 ```
 
-The system will prompt for a one-time password during enrollment. After reboot, you'll need to confirm key enrollment through the MOK (Machine Owner Key) manager interface.
+The system will prompt for an one-time password during enrollment. After reboot, you'll need to confirm key enrollment through the MOK (Machine Owner Key) manager interface.
 
 ## Step 3: Signing Custom Kernels and Bootloaders
 

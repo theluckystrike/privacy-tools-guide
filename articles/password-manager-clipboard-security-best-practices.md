@@ -246,7 +246,5 @@ Power users should consider implementing monitoring for clipboard access:
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
 - [Password Manager for Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

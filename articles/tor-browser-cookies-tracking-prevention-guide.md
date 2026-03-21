@@ -297,7 +297,7 @@ These alternatives respect Tor Browser's privacy model without breaking function
 
 ## Integration with Tor for Maximum Privacy
 
-Tor Browser's cookie isolation combines with the Tor network's circuit isolation for comprehensive protection:
+Tor Browser's cookie isolation combines with the Tor network's circuit isolation for protection:
 
 ```
 Your Device → Tor Entry Node → Middle Node → Exit Node → Website
@@ -314,8 +314,6 @@ For users combining Tor Browser with Tor network, no single observer can correla
 - [Tor Browser Screen Size Fingerprint Protection: A.](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [Tor Browser Font Fingerprinting Protection: A Technical Guide](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

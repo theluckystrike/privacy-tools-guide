@@ -398,7 +398,7 @@ Tails OS is designed for users who need maximum privacy and anonymity. The setup
 - [Browser Fingerprinting: How It Works and How to Prevent It](/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [Best VPN Services for Privacy 2026](/best-vpn-services-for-privacy-2026/)
 - [GPG Encryption Guide for Beginners](/gpg-encryption-guide-beginners/)
-- [Tor Browser: Comprehensive Guide](/tor-browser-guide/)
+- [Tor Browser: Guide](/tor-browser-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

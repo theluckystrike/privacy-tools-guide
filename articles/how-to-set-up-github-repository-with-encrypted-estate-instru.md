@@ -347,18 +347,7 @@ Test your recovery procedures before relying on them. Create a test repository w
 
 Store this documentation alongside the keys or with your estate planning documents.
 
-## Best Practices Summary
-
-Use age encryption for the simplest setup with strong security guarantees. Its modern cryptography, small attack surface, and cross-platform support make it ideal for most estate planning use cases. The main trade-off is that key distribution requires manual coordination—each collaborator needs their own recipient key added to every encrypted file.
-
-Use git-crypt if you prefer GPG-based key management and want transparent encryption that integrates smoothly with Git workflows. The main risk is GPG's complexity—mismanaged GPG keys are a common source of lockouts. Ensure your executor understands GPG basics before relying on this method.
-
-Use SOPS when your estate documents include structured configuration files where you want to keep some fields readable while encrypting others. The learning curve is steeper than age, but SOPS excels in CI/CD pipelines if you want automated deployment of decrypted values to servers.
-
-Regardless of method, never commit plaintext secrets to your repository. Use Git's `.gitignore` to exclude unencrypted files, and audit your repository periodically to ensure no sensitive data slipped through. The encrypted repository becomes a powerful tool for organizing your estate—but only if the plaintext never reaches the cloud.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

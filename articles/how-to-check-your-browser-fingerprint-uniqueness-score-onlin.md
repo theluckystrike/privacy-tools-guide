@@ -182,7 +182,7 @@ This collector gathers the most significant fingerprinting vectors and generates
 
 ## Calculating Your Uniqueness Score
 
-To calculate a uniqueness score, you need a reference dataset. The simplest approach compares your fingerprint against a sample population:
+To calculate an uniqueness score, you need a reference dataset. The simplest approach compares your fingerprint against a sample population:
 
 ```javascript
 function calculateUniquenessScore(yourFingerprint, referenceDataset) {
@@ -206,7 +206,7 @@ In practice, reference datasets from projects like AmIUnique contain millions of
 
 ## Interpreting Your Results
 
-After testing, you'll receive a uniqueness score. Here's how to interpret the results:
+After testing, you'll receive an uniqueness score. Here's how to interpret the results:
 
 **Below 10%**: Your browser blends in well. You're difficult to track using fingerprinting alone.
 

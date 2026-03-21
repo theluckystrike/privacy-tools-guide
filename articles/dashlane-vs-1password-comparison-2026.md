@@ -229,7 +229,5 @@ For developers with extensive integrations, plan migration of API keys, environm
 - [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)
 - [Sticky Password Review 2026: A Developer's Perspective](/privacy-tools-guide/sticky-password-review-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

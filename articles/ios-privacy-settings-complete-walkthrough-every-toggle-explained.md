@@ -151,21 +151,6 @@ for app in report.get('privacyAccessedBundleIdentifiers', []):
 "
 ```
 
-## Recommended Privacy Configuration Summary
-
-For maximum iOS privacy, consider these settings:
-
-| Setting | Recommended |
-|---------|-------------|
-| Allow Apps to Request to Track | OFF |
-| Share iPhone Analytics | OFF |
-| Improve Siri & Dictation | OFF |
-| Significant Locations | OFF |
-| Location-Based Suggestions | OFF |
-| Hide IP Address from Trackers | ON |
-| Prevent Cross-Site Tracking | ON |
-| Auto-Join Wi-Fi | OFF |
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

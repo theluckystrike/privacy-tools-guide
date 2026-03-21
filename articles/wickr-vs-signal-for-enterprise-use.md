@@ -61,7 +61,7 @@ Enterprise deployment requires granular administrative controls. Here's how the 
 | User provisioning | Manual | SCIM/SAML integration |
 | Message retention policies | None | Configurable |
 | Device management | Basic | Enterprise MDM |
-| Audit logging | Minimal | Comprehensive |
+| Audit logging | Minimal | |
 
 Wickr's administrative console provides centralized user management, role-based access control, and detailed audit logs. Signal's lack of enterprise-focused admin features makes it better suited for organizations prioritizing simplicity over administrative control.
 

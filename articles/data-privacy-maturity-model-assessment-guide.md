@@ -449,7 +449,5 @@ Track consent rate (percentage of users with valid, current consent), data subje
 - [GDPR Legitimate Interest Assessment Guide: A Developer Framework](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

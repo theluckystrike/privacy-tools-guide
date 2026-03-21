@@ -421,7 +421,7 @@ Scenario: Photographer accidentally deletes recent photos
 - Simple setup
 - Reliable restoration
 - Good customer support
-- Works seamlessly with local and cloud storage
+- Works with local and cloud storage
 
 ### Limitations
 
@@ -526,7 +526,7 @@ Schedule with cron:
 
 - Newer tool (smaller community than Borg/Restic)
 - Repository format still evolving
-- Documentation could be more comprehensive
+- Documentation could be more
 
 ### Pricing
 

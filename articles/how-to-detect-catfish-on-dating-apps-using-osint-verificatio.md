@@ -147,7 +147,7 @@ python3 sherlock.py --timeout 1 "alexsmith92"
 
 If the same username appears on LinkedIn, Instagram, and Twitter with consistent details, the profile gains credibility. If no matches exist or matches show different biographical details, proceed with caution.
 
-### Building a Username Correlation Script
+### Building an Username Correlation Script
 
 ```python
 import requests

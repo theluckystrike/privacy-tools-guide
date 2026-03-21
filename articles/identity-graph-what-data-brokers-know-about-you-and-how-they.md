@@ -143,7 +143,7 @@ Data brokers collect identity information from surprisingly diverse sources:
 - Mobile SDK data collection
 - Location history aggregation
 
-A single person can appear in hundreds of databases across these sources, each with incomplete information but collectively forming a comprehensive profile.
+A single person can appear in hundreds of databases across these sources, each with incomplete information but collectively forming a profile.
 
 ## How Data Brokers Monetize Your Graph
 
@@ -253,7 +253,7 @@ If you live in these states, you can send legal opt-out requests that brokers mu
 
 Understanding why data brokers protect identity graphs helps you understand why removal is difficult:
 
-A single comprehensive identity graph might be worth $10-100 depending on data completeness and demographic value. For major brokers maintaining millions of profiles, identity graphs represent billion-dollar assets. They're incentivized to resist deletion and re-accumulate data.
+A single identity graph might be worth $10-100 depending on data completeness and demographic value. For major brokers maintaining millions of profiles, identity graphs represent billion-dollar assets. They're incentivized to resist deletion and re-accumulate data.
 
 This is why privacy protection requires ongoing effort. Deletion is a temporary intervention against a continuously operating system designed to rebuild graphs.
 

@@ -221,7 +221,5 @@ While technical solutions are limited, some jurisdictions have laws addressing n
 - [How to Withdraw Crypto from Exchange Without Linking to Personal Bank Account](/privacy-tools-guide/how-to-withdraw-crypto-from-exchange-without-linking-to-pers/)
 - [How to Buy Bitcoin Without KYC Verification: Private.](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

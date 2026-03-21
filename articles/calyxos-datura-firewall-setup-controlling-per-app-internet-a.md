@@ -176,7 +176,5 @@ The Datura firewall provides enterprise-grade network filtering without requirin
 - [CalyxOS MicroG Setup Guide: Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
 - [Secure VoIP Setup for Private Phone Calls Without.](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

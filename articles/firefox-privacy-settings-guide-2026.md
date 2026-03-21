@@ -213,7 +213,5 @@ After configuring settings, verify they work:
 - [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -251,19 +251,6 @@ Creates alias email addresses for every site signup. Forwards to your real email
 
 **Why it matters:** Advertisers buy email lists and cross-reference to build profiles. Aliases prevent this linking.
 
-## Step 4: Settings Summary (Table Format)
-
-| Setting | Value | Breakage | Notes |
-|---------|-------|----------|-------|
-| Enhanced Tracking Protection | Strict | <1% | Only exception for broken sites |
-| Cookies | Sites you visit only | <0.5% | Blocks tracker pixels |
-| DNS over HTTPS | Cloudflare | <0.1% | ISP can't see sites |
-| HTTPS only mode | On | <2% | Upgrades http:// to https:// |
-| Telemetry | Disabled | 0% | Just privacy, no breakage |
-| Pocket / Studies | Disabled | 0% | Just privacy, no breakage |
-| uBlock Origin | Installed + configured | <2% | Blocks ads + trackers |
-| Bitwarden | Installed | 0% | Improves security |
-
 ## Testing Your Configuration
 
 ### Test 1: Check Tracker Blocking

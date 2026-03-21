@@ -271,7 +271,7 @@ echo "   - Android: Install Exodus Privacy and review app tracking" >> "$REVIEW_
 echo "Security review completed. Details saved to: $REVIEW_LOG"
 ```
 
-Remember that security is an ongoing process, not a one-time configuration. New threats emerge regularly, and the tools and techniques for protection evolve accordingly. Stay informed, remain vigilant, and prioritize your digital privacy as seriously as your physical security.
+Remember that security is an ongoing process, not an one-time configuration. New threats emerge regularly, and the tools and techniques for protection evolve accordingly. Stay informed, remain vigilant, and prioritize your digital privacy as seriously as your physical security.
 
 The balance between maintaining necessary connectivity and protecting your anonymity requires constant attention. By implementing these measures systematically, you create layers of protection that make digital surveillance significantly more difficult—giving you the space to build your new life with greater confidence and security.
 

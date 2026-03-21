@@ -217,20 +217,6 @@ def encrypt_message(plaintext, message_key, chain_key):
 
 Recipients verify the MAC before decryption, rejecting any tampered messages.
 
-## Security Properties Summary
-
-The Signal Protocol achieves several important security properties:
-
-Forward secrecy: compromise of current message keys does not reveal past messages because symmetric ratchet keys are deleted after use.
-
-Future secrecy: compromise of current keys does not reveal future messages because each new message triggers a DH ratchet operation producing a new shared secret.
-
-Deniable authentication: unlike PGP, Signal provides deniable authentication — recipients can verify messages came from a specific sender, but cannot prove this to third parties.
-
-Asynchronous operation: prekeys allow messages to be sent even when the recipient is offline, critical for practical messaging applications.
-
-Post-compromise security: after a device is compromised, the protocol automatically recovers security within a few message exchanges.
-
 ## Common Implementation Mistakes
 
 Developers new to Signal-style protocols often make these errors:

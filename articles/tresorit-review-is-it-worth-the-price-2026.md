@@ -117,7 +117,7 @@ Choosing Tresorit requires understanding what threats your organization faces:
 | Healthcare practice records | Tresorit Enterprise | Required (HIPAA) |
 | Legal firm client documents | Tresorit | Recommended (Swiss jurisdiction) |
 | Small business file sync | Sync.com, Internxt | Similar protection, lower cost |
-| Multinational corporation | Tresorit + VPN + endpoint mgmt | Part of comprehensive strategy |
+| Multinational corporation | Tresorit + VPN + endpoint mgmt | Part of strategy |
 
 ## Advanced Configuration for Teams
 

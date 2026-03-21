@@ -21,7 +21,7 @@ Link decoration is a tracking technique where query parameters like `utm_source`
 
 Link decoration involves appending specific query parameters to URLs. These parameters serve no functional purpose for the destination resource—they exist solely to transmit information about the link's origin, the marketing campaign that generated it, or the user's journey across sites.
 
-When you encounter a URL like this:
+When you encounter an URL like this:
 
 ```
 https://example.com/product?utm_source=newsletter&utm_medium=email&utm_campaign=spring_sale
@@ -240,7 +240,7 @@ extract_tracking_params "https://example.com/signup?utm_source=twitter&utm_mediu
 
 ## Server-Side Parameter Cleaning Strategies
 
-For developers managing user-visited URLs, comprehensive server-side cleanup prevents tracking parameter leakage:
+For developers managing user-visited URLs, server-side cleanup prevents tracking parameter leakage:
 
 ```python
 # Comprehensive URL sanitization for privacy

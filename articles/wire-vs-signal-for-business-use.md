@@ -228,20 +228,6 @@ Wire offers a tiered model:
 
 For budget-conscious teams prioritizing privacy, Signal provides excellent security. For organizations requiring business features and compliance capabilities, Wire's pricing reflects additional functionality.
 
-## Summary Comparison
-
-| Feature | Signal | Wire |
-|---------|--------|------|
-| End-to-End Encryption | Signal Protocol | Signal Protocol + MLS |
-| Self-Hosted Option | No | Yes (Wire Server) |
-| API Access | Limited | Comprehensive |
-| Group Size Limit | 1000 | Larger with enterprise |
-| Guest Rooms | No | Yes |
-| SSO/SAML | No | Yes |
-| Bot Framework | Basic | Advanced |
-| Phone Number Required | Yes | No |
-| Cost | Free | Free + Paid Tiers |
-
 ## Related Reading
 
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)

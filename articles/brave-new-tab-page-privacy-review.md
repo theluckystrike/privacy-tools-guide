@@ -131,7 +131,7 @@ Understanding the privacy implications of different NTP configurations:
 
 **IP Address Leakage**: Every request to Brave's servers or third-party content loads reveals your IP address (or proxy IP). Network observers can correlate multiple new tab openings to track your active browsing periods.
 
-**Usage Pattern Profiling**: When you open new tabs multiple times per minute, Brave's servers might log this frequency, creating a usage pattern profile even if the NTP itself doesn't load content.
+**Usage Pattern Profiling**: When you open new tabs multiple times per minute, Brave's servers might log this frequency, creating an usage pattern profile even if the NTP itself doesn't load content.
 
 **Geography Fingerprinting**: Your IP address reveals your approximate location. If Brave serves location-specific news or content, they can infer your location from NTP requests.
 
@@ -341,7 +341,5 @@ brave://components
 - [Brave Browser vs Edge Privacy Comparison 2026: A.](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
 - [Browser Autofill Privacy Security Risks: What Developers.](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 - [Android Find My Device: Privacy Implications You Need to.](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

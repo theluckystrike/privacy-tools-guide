@@ -279,7 +279,5 @@ Document all correspondence for regulatory complaints or potential litigation.
 - [How to Create Anonymous Social Media Accounts: A.](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How to Safely Exchange Social Media Handles with Dating.](/privacy-tools-guide/how-to-safely-exchange-social-media-handles-with-dating-matc/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

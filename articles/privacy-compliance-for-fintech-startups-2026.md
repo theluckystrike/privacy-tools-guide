@@ -275,7 +275,7 @@ For most fintech startups, the appropriate Self-Assessment Questionnaire is:
 |----------|-------------|--------------|
 | SAQ A | Fully outsourced card handling | Minimal, but requires third-party processor |
 | SAQ A-EP | E-commerce with minimal merchant data | More controls needed |
-| SAQ D | Merchant handles card data | Most comprehensive |
+| SAQ D | Merchant handles card data | Most |
 
 ## State Privacy Laws in 2026
 

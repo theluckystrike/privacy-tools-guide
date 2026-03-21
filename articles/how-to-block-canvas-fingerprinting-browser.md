@@ -245,7 +245,5 @@ Remember that stronger protection sometimes means reduced functionality. Some we
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 - [Navigator Plugins Fingerprinting: How Browser Plugins.](/privacy-tools-guide/navigator-plugins-fingerprinting-how-browser-plugins-betray-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

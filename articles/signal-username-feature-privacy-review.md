@@ -18,7 +18,7 @@ Signal's username feature is a meaningful privacy upgrade: it lets you communica
 
 ## How Signal Usernames Work
 
-Unlike traditional messaging platforms that tie accounts to phone numbers, Signal usernames allow users to communicate without exposing their phone numbers. The system uses a unique identifier format that combines a username with a numeric suffix:
+Unlike traditional messaging platforms that tie accounts to phone numbers, Signal usernames allow users to communicate without exposing their phone numbers. The system uses a unique identifier format that combines an username with a numeric suffix:
 
 ```
 username.identifier#1234

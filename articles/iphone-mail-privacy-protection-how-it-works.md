@@ -412,7 +412,5 @@ The future of email is less about tracking and analytics, more about genuine use
 - [Firefox Total Cookie Protection: How It Isolates.](/privacy-tools-guide/firefox-total-cookie-protection-how-it-isolates-trackers-exp/)
 - [Email Tracking Pixel Detection: How to Identify and Block Spy Pixels in Messages](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

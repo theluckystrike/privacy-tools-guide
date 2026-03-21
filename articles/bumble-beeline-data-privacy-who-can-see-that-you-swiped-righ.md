@@ -170,13 +170,6 @@ To request your data under GDPR/CCPA:
 2. Submit a formal request if the self-service option is unavailable
 3. Review the export for any Beeline-related entries
 
-## Summary: Key Privacy Takeaways
-
-Understanding Beeline privacy requires recognizing what the feature does and doesn't expose. Your swipe-right actions become visible to other users only through Beeline, and only if they have a premium subscription and you haven't hidden from the feature. The system design prioritizes user choice through privacy controls, though these controls are somewhat limited.
-
-For developers and power users, the key insight is that Beeline creates a **one-way visibility window**—you can see who liked you, but this doesn't reciprocally expose your interests to free users. Premium subscribers gain more insight, creating a tiered information asymmetry that Bumble monetizes while maintaining reasonable privacy boundaries.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

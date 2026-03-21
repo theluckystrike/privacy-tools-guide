@@ -138,7 +138,7 @@ review_required: true
 
 **Just-in-time access**: For sensitive production credentials, implement just-in-time access requests. Users request elevated access for specific items, which requires approval from the vault owner or security team. Access automatically expires after a defined period.
 
-**Audit logging**: Enable comprehensive audit logging for all cross-departmental access. Log who accessed what, when, and from where. Regular audit reviews identify unusual access patterns that might indicate compromise or policy violations.
+**Audit logging**: Enable audit logging for all cross-departmental access. Log who accessed what, when, and from where. Regular audit reviews identify unusual access patterns that might indicate compromise or policy violations.
 
 ## Regular Access Reviews
 
@@ -161,13 +161,6 @@ Despite careful planning, emergencies require immediate access to credentials. E
 Designate emergency access holders outside normal department structures. These individuals should have baseline access to critical vaults but exercise these privileges only during documented emergencies. All emergency access usage requires post-incident review.
 
 Consider implementing a "break glass" procedure where emergency access requires dual authentication, with automatic notification to the security team and department head when triggered.
-
-## Conclusion
-
-Effective password vault permission management across enterprise departments requires thoughtful architecture, automation, and regular review. By implementing department-based vaults, role-based access control, and automated provisioning workflows, organizations maintain security without sacrificing operational efficiency.
-
-The key is establishing clear ownership at the department level while maintaining organizational oversight. Regular access reviews and audit logging provide visibility into how credentials are being used, enabling quick identification of potential security issues.
-
 
 ## Related Reading
 

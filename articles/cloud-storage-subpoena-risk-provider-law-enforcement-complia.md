@@ -169,17 +169,6 @@ Audit your current architecture with these questions:
 
 For teams evaluating cloud providers, request their Law Enforcement Request Guidelines—most major providers publish these documents. Pay attention to whether they support customer-managed encryption and their history of challenging overbroad requests.
 
-## Conclusion
-
-Cloud storage subpoena risk is a solvable problem, but only through intentional architecture. Providers operating under standard models can comply with legal demands for user data. Customer-managed encryption fundamentally changes this equation by ensuring providers possess nothing useful to produce.
-
-For developers building privacy-sensitive applications, the choice is architectural: either accept legal risk as a cost of convenience, or implement encryption schemes where you—even under legal compulsion—cannot disclose what you never possess.
-
-The tradeoff isn't always simplicity versus security. Zero-knowledge architectures require more user education, introduce key recovery challenges, and may limit certain features. But for use cases where privacy from legal threat matters, these constraints are features, not bugs.
-
-Build accordingly, communicate clearly, and let users make informed choices about their threat models.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

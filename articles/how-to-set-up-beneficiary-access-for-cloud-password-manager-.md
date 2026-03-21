@@ -31,7 +31,7 @@ When you designate a beneficiary, the password manager doesn't share your master
 
 1. **Key Derivation**: The beneficiary's access is tied to their own identity and authentication
 2. **Delayed Decryption**: Access to your vault's encrypted items is time-gated at the cryptographic level
-3. **Expiration Windows**: After the delay period passes, a one-time decryption key becomes available
+3. **Expiration Windows**: After the delay period passes, an one-time decryption key becomes available
 
 This approach ensures that even your password manager's servers cannot access your vault—the beneficiary can only decrypt the vault after the waiting period, and only if no denial was triggered during that window.
 

@@ -152,7 +152,7 @@ systemctl start jami
 # Contacts see consistent identity across devices
 ```
 
-This approach maintains a unified identity across devices, though it introduces security trade-offs (both devices access the same private key).
+This approach maintains an unified identity across devices, though it introduces security trade-offs (both devices access the same private key).
 
 ## Group Messaging Limitations
 
@@ -284,13 +284,6 @@ The Jami project (formerly Ring/GNU Ring) is maintained by Savoir-faire Linux wi
 - Better offline capability management
 
 These improvements will address current limitations, though the rate of development remains slower than centralized alternatives.
-
-## Conclusion
-
-For privacy-conscious developers willing to accept the trade-offs in polish and feature pace, Jami provides a solid foundation for secure, decentralized communication. The self-hosting options provide real control over your communication stack, and the learning investment pays dividends if you value understanding exactly how your messages flow through the network.
-
-Jami is most valuable for developers and organizations that prioritize architectural principles over user convenience—where understanding and controlling infrastructure matters more than clicking "next" in an onboarding wizard. The decentralized design creates scenarios where centralized alternatives cannot operate: offline communication, jurisdiction-resistant operation, and local area network integration. However, for teams requiring sophisticated group messaging, multi-device synchronization, or rapid feature development, centralized alternatives like Element or even Signal remain more practical choices.
-
 
 ## Related Reading
 

@@ -128,7 +128,7 @@ Protect the web interface with authentication:
 
 1. Navigate to Settings → GUI
 2. Enable "GUI Authentication"
-3. Set a username and password
+3. Set an username and password
 
 For enhanced security, use environment variables to store credentials rather than storing them in configuration files:
 

@@ -119,7 +119,7 @@ For apps targeting Android 11 (API 30) or higher, scoped storage limits app acce
 
 ## Automating Permission Audits
 
-For users managing multiple devices or performing regular security audits, scripting the permission review process saves time. Here's a comprehensive bash script that identifies apps with unusual permission combinations and exports detailed reports:
+For users managing multiple devices or performing regular security audits, scripting the permission review process saves time. Here's a bash script that identifies apps with unusual permission combinations and exports detailed reports:
 
 ```bash
 #!/bin/bash
@@ -227,7 +227,7 @@ Consider using a custom ROM like **Lineage OS** or **GrapheneOS** (for Pixel dev
 
 ## Best Practices for Ongoing Permission Hygiene
 
-Permission management requires ongoing attention, not a one-time audit. Adopt these habits:
+Permission management requires ongoing attention, not an one-time audit. Adopt these habits:
 
 **Pre-installation audit**: Review permissions before installing any app—the Play Store shows requested permissions before download. Search for user reviews mentioning unusual permission requests or data collection.
 

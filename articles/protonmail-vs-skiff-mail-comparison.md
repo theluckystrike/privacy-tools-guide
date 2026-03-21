@@ -119,7 +119,7 @@ Proton includes encrypted contacts and calendars on all plans, along with their 
 - Pro: 100GB
 - Business: 1TB
 
-Skiff's advantage is bundling email with their workspace tools—Pages, Calendar, Drive—in a unified encrypted experience. If you need a complete productivity suite, Skiff offers more value per dollar.
+Skiff's advantage is bundling email with their workspace tools—Pages, Calendar, Drive—in an unified encrypted experience. If you need a complete productivity suite, Skiff offers more value per dollar.
 
 ## Development Environment Integration
 

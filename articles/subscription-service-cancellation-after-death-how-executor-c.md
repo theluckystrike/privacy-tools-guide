@@ -266,7 +266,7 @@ Create a 90-day action plan:
 **Week 1-2:**
 - Secure all devices and change email passwords if needed
 - Locate all financial accounts and subscription records
-- Create comprehensive inventory of digital assets
+- Create inventory of digital assets
 
 **Week 2-4:**
 - Notify major financial institutions

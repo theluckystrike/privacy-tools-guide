@@ -332,7 +332,7 @@ Familiarize yourself with multiple mixing implementations. If your primary servi
 
 ## Combining Mixing with Other Privacy Techniques
 
-Comprehensive privacy combines multiple approaches:
+ privacy combines multiple approaches:
 
 ```
 Network Privacy: Tor

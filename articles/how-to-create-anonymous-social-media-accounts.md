@@ -204,7 +204,5 @@ Creating an anonymous account is only the beginning. Maintaining anonymity requi
 - [How to Delete Old Social Media Accounts: A Practical.](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 - [How to Use Tor Browser for Creating Anonymous Accounts.](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

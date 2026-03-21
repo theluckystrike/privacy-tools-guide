@@ -21,7 +21,7 @@ Check for email compromise immediately by verifying unfamiliar login locations i
 The most definitive proof of a hack is unfamiliar activity in your account. Check these immediately:
 
 - **New device sign-ins** from locations you don't recognize
-- **Simultaneous sessions** you didn't initiate 
+- **Simultaneous sessions** you didn't initiate
 - **IP addresses** in your login history that aren't yours
 - **Login times** showing activity while you were asleep or offline
 

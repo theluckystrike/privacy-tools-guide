@@ -24,7 +24,7 @@ Windows Sandbox requires Windows 10 Pro, Enterprise, or Windows 11 Pro/Enterpris
 To enable Windows Sandbox:
 
 1. Open **Settings** → **Apps** → **Optional features**
-2. Click "Add a Windows feature" 
+2. Click "Add a Windows feature"
 3. Scroll down and check **Windows Sandbox**
 4. Click OK and restart when prompted
 

@@ -402,7 +402,5 @@ Choose your protection level based on:
 - [Tor Browser Fingerprinting Protection: How It Makes.](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [How to Check Your Browser Fingerprint Uniqueness Score.](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

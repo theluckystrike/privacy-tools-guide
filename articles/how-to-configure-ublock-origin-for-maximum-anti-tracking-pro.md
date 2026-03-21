@@ -79,7 +79,7 @@ Dynamic filtering gives you per-site control over blocking behavior. This is par
 
 ### Default-Deny Policy
 
-A robust approach is to start with everything blocked, then selectively allow functionality:
+A strong approach is to start with everything blocked, then selectively allow functionality:
 
 1. In the dashboard, set "Default" to "block" for all categories
 2. Whitelist only domains that require tracking for core functionality
@@ -172,21 +172,6 @@ After configuration, verify your protection:
 3. Check **webXray.org** – Verify tracker detection rates
 
 Your goal is reducing the "entropy" of your browser fingerprint—the information that makes you uniquely identifiable.
-
-## Summary Configuration Checklist
-
-- [ ] Enable EasyPrivacy and uBlock Privacy filter lists
-- [ ] Add fingerprinting-specific blocklists
-- [ ] Configure custom scriptlets for parameter stripping
-- [ ] Implement default-deny dynamic filtering
-- [ ] Enable Do Not Track in browser settings
-- [ ] Test with fingerprinting verification tools
-- [ ] Review request logs periodically for new trackers
-
-uBlock Origin's flexibility makes it adaptable from basic ad blocking to anti-fingerprinting. The configurations above provide a foundation for developers and power users seeking maximum privacy without sacrificing browsing functionality.
-
----
-
 
 ## Related Reading
 

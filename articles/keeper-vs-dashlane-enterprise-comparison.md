@@ -150,7 +150,7 @@ Dashlane's logging focuses on administrative actions and team sharing events. Fo
 | Feature | Keeper | Dashlane |
 |---------|--------|----------|
 | CLI Automation | Full support with JSON output | Basic support, requires wrappers |
-| API Coverage | Comprehensive vault operations | Focus on team management |
+| API Coverage | vault operations | Focus on team management |
 | Custom Fields | Extensive field types | Standard field types |
 | Secret Sharing | Folder-based with granular permissions | Team-based sharing |
 | Audit Export | CSV, JSON formats | CSV export |

@@ -163,7 +163,7 @@ Comparing Keeper to other enterprise solutions helps organizations choose approp
 - Stronger focus on workflows over security features
 - Good support for small-to-medium teams
 
-Trade-off: 1Password prioritizes usability over advanced security features like Secrets Manager. Organizations requiring robust DevOps integration may prefer Keeper.
+Trade-off: 1Password prioritizes usability over advanced security features like Secrets Manager. Organizations requiring strong DevOps integration may prefer Keeper.
 
 ### Bitwarden ($34/user/year for enterprise)
 

@@ -318,7 +318,7 @@ Sustainable address privacy requires ongoing maintenance:
 - Update addresses when security posture changes
 - Review and adjust threat model based on life circumstances
 
-Address privacy isn't a one-time setup; it requires consistent attention to remain effective.
+Address privacy isn't an one-time setup; it requires consistent attention to remain effective.
 
 ---
 

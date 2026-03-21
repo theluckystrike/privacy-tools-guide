@@ -48,7 +48,7 @@ Each platform has specific reporting workflows. Understanding these processes he
 
 ### Instagram and Facebook (Meta)
 
-Meta uses a unified reporting system. Navigate to the impersonating profile, tap the three dots (⋮), select "Report", then choose "Pretending to be someone else." You'll need to select whether the account is pretending to be you, a celebrity, or a business.
+Meta uses an unified reporting system. Navigate to the impersonating profile, tap the three dots (⋮), select "Report", then choose "Pretending to be someone else." You'll need to select whether the account is pretending to be you, a celebrity, or a business.
 
 For faster resolution, use the dedicated impersonation form at https://help.instagram.com/contact/636276432709114. Provide:
 - Your government-issued ID showing your name

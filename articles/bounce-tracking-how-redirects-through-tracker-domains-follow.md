@@ -200,7 +200,7 @@ function unwrapRedirectUrl(originalUrl) {
 
 ### Network-Level Blocking with DNS Filtering
 
-Pi-hole and similar DNS-level blockers can prevent connections to known tracking redirect domains before any HTTP request occurs. This approach requires maintaining a comprehensive blocklist of tracker infrastructure.
+Pi-hole and similar DNS-level blockers can prevent connections to known tracking redirect domains before any HTTP request occurs. This approach requires maintaining a blocklist of tracker infrastructure.
 
 Common tracking redirect domains include:
 

@@ -38,7 +38,7 @@ docker run -d -p 8080:5000 --name safenote \
   safenote/safenote:latest
 ```
 
-Once running, you can create a one-time note programmatically using the API:
+Once running, you can create an one-time note programmatically using the API:
 
 ```bash
 curl -X POST http://localhost:8080/api/notes \

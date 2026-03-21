@@ -314,7 +314,5 @@ Building privacy into your API from the start costs less than retrofitting compl
 - [How to Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 - [Privacy Compliance for Fintech Startups 2026: A Complete Guide](/privacy-tools-guide/privacy-compliance-for-fintech-startups-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

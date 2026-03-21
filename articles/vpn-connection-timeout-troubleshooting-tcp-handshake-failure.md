@@ -201,7 +201,7 @@ Open the capture file in Wireshark and look for:
 
 When faced with a VPN connection timeout:
 
-1. **Can you ping the VPN server IP?** 
+1. **Can you ping the VPN server IP?**
  - No → Check network routing, try different network
  - Yes → Continue to step 2
 

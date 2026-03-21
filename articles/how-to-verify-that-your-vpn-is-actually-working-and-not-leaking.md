@@ -187,7 +187,7 @@ sudo tcpdump -i any -n -A port 443
 # Host: example.com
 ```
 
-## Comprehensive VPN Verification Checklist
+## VPN Verification Checklist
 
 ```bash
 #!/bin/bash

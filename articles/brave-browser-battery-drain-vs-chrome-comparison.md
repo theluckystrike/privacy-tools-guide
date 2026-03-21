@@ -210,7 +210,5 @@ images.forEach(img => observer.observe(img));
 - [Brave vs Safari Privacy Comparison 2026: A Developer Guide](/privacy-tools-guide/brave-vs-safari-privacy-comparison-2026/)
 - [WireGuard vs IPSec IKEv2 Battery Drain Comparison on.](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

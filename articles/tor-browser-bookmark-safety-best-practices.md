@@ -45,7 +45,7 @@ Bookmarks Toolbar/
 
 ### Use Descriptive Rather Than Revealing Names
 
-Bad: "Whistleblower Sites" 
+Bad: "Whistleblower Sites"
 Good: "Technical Documentation"
 
 The goal is plausible deniability if your device is examined.
@@ -240,7 +240,7 @@ if __name__ == "__main__":
 
 ## Common Mistakes to Avoid
 
-Avoid bookmarking login pages — any such bookmark reveals your account existence. Tor Browser sync sends metadata to Mozilla servers, so disable it. Delete inactive bookmarks quarterly rather than letting them accumulate. Bookmarking a URL on clearnet and then accessing it through Tor creates timing correlation. Deep nested folder hierarchies also create behavioral fingerprints, so keep your structure flat and generic.
+Avoid bookmarking login pages — any such bookmark reveals your account existence. Tor Browser sync sends metadata to Mozilla servers, so disable it. Delete inactive bookmarks quarterly rather than letting them accumulate. Bookmarking an URL on clearnet and then accessing it through Tor creates timing correlation. Deep nested folder hierarchies also create behavioral fingerprints, so keep your structure flat and generic.
 
 ## Quick Reference Checklist
 
@@ -264,8 +264,6 @@ By treating bookmarks as persistent metadata rather than transient browser state
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

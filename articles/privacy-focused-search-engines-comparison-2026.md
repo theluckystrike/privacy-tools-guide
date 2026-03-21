@@ -88,7 +88,7 @@ Compared to Google:
 - **Good result quality**: Bing index is solid
 - **Instant answers**: Converts units, currency, calculations without search
 - **Bangs (!g, !w, !yt)**: Keyboard shortcuts to search other engines
-- **Mobile app:** iOS and Android apps work seamlessly
+- **Mobile app:** iOS and Android apps work
 - **Desktop friendly**: Clean, no ads, fast loading
 
 #### Weaknesses
@@ -308,7 +308,7 @@ This customization is impossible with Google or Startpage.
 
 #### How It Works
 
-Mojeek is a UK-based search engine with its own crawler and index. Unlike Brave, which is newer and building aggressively, Mojeek has been independent since 2004.
+Mojeek is an UK-based search engine with its own crawler and index. Unlike Brave, which is newer and building aggressively, Mojeek has been independent since 2004.
 
 Mojeek focuses on long-tail search (niche topics) where Google's algorithm fails.
 
@@ -618,27 +618,7 @@ A: Use Apple Maps, Google Maps, or Yelp. No privacy engine has location data.
 
 ---
 
-## Conclusion: Which Privacy Search Engine to Use
-
-**For everyday use:** **DuckDuckGo** (free, fast, good results, zero friction)
-
-**For important research:** **Startpage** (Google results with privacy, worth the latency)
-
-**For independence:** **Brave Search** (own index, future-proof, growing better monthly)
-
-**For long-tail niche search:** **Mojeek** (specializes where others fail)
-
-**For maximum privacy:** **SearXNG self-hosted** (ultimate control, highest complexity)
-
-Start with DuckDuckGo as your default. It handles 95% of searches well and requires zero setup. Use Startpage when you need absolute result confidence. Try Brave Search monthly to track how its index improves. For research, Mojeek often beats everyone at finding obscure sources.
-
-The key insight: No single privacy search engine beats Google at everything. Combining 2–3 privacy engines (DuckDuckGo + Startpage + Brave) achieves 98% of Google's capability with actual privacy.
-
-Google's data collection isn't free—it's paid with your privacy. Switching to privacy search engines reclaims that data for yourself. For journalists, activists, researchers, and anyone with sensitive search needs, privacy search is the obvious choice.
-
 {% endraw %}
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

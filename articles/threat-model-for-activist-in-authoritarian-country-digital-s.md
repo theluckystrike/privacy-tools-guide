@@ -167,7 +167,7 @@ Building your security infrastructure requires selecting tools that work in your
 
 ### Essential Operating Systems
 
-**Tails Linux** provides a live-booting operating system designed for activists. Running Tails from a USB drive with no persistent storage means every session starts fresh—malware cannot survive a reboot. Tails routes all traffic through Tor by default, eliminating DNS leaks. For activists facing sophisticated monitoring, Tails provides stronger guarantees than hardening a standard OS.
+**Tails Linux** provides a live-booting operating system designed for activists. Running Tails from an USB drive with no persistent storage means every session starts fresh—malware cannot survive a reboot. Tails routes all traffic through Tor by default, eliminating DNS leaks. For activists facing sophisticated monitoring, Tails provides stronger guarantees than hardening a standard OS.
 
 Boot Tails from a write-protected USB drive. Configure Persistence if you need to save certain files between sessions, but understand this weakens some protections. For maximum security, use a separate Tails USB for sensitive work and another for testing.
 

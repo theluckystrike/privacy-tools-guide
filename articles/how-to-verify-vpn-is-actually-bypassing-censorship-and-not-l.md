@@ -188,7 +188,5 @@ If you discover leaks, several fixes are available:
 - [How to Test VPN Kill Switch: A Practical Guide for Power.](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

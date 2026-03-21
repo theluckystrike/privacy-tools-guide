@@ -182,7 +182,5 @@ Restart-Service -Name "DiagTrack" -Force  # Requires administrator
 - [Windows 10 Privacy Settings Complete Checklist: A.](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

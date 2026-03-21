@@ -214,31 +214,6 @@ Privacy protections are important, but equally important is developing a healthy
 
 **Reality Check on Influencers**: Influencers' lives are heavily curated and often misrepresent reality. Spending hours looking at edited photos and carefully crafted narratives contributes to mental health issues independently of privacy concerns.
 
-## Summary: A Practical Privacy Routine for Teenagers
-
-Effective social media privacy doesn't require becoming a security expert. Implement these habits:
-
-**Weekly (15 minutes)**:
-- Check your most recent posts—any you regret or want to delete?
-- Review your story viewers—do you recognize them?
-- Disable location services on your social media apps
-
-**Monthly (30 minutes)**:
-- Review follower/friend lists and remove accounts you don't know
-- Check third-party app access and remove unused connections
-- Audit your notification settings and disable unnecessary notifications
-
-**Quarterly (1 hour)**:
-- Download your data from each platform
-- Review your privacy settings—platforms change defaults frequently
-- Check for data broker listings and request removal
-- Verify two-factor authentication is enabled on all accounts
-
-**Annually**:
-- Review privacy policies—if a platform changes policies you disagree with, consider whether you want to stay
-- Assess whether you actually use each account or whether you're maintaining them out of habit
-- Update recovery email and phone numbers to current information
-
 ## Understanding Platform Algorithms and Filter Bubbles
 
 Social media platforms use complex algorithms that, while useful for content discovery, can affect your privacy:

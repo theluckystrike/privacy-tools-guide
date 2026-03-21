@@ -25,16 +25,16 @@ This guide examines Turkey's internet freedom ranking relative to neighboring co
 
 The following comparison synthesizes recent data from Freedom House's Freedom on the Net and Reporters Without Borders' Press Freedom indices:
 
-| Country       | Internet Freedom Status | Key Restrictions |
+| Country | Internet Freedom Status | Key Restrictions |
 |---------------|------------------------|-------------------|
-| Turkey        | Not Free               | Social media blocks, VPN restrictions, content removal |
-| Greece        | Free                   | Minimal restrictions, strong privacy laws |
-| Bulgaria      | Free                   | Limited blocking, GDPR compliance |
-| Georgia       | Partly Free            | Occasional pressure on journalists |
-| Armenia       | Partly Free            | Some content filtering |
-| Iran          | Not Free               | Extensive filtering, national intranet |
-| Iraq          | Not Free               | Periodic restrictions |
-| Syria         | Not Free               | Severe internet controls |
+| Turkey | Not Free | Social media blocks, VPN restrictions, content removal |
+| Greece | Free | Minimal restrictions, strong privacy laws |
+| Bulgaria | Free | Limited blocking, GDPR compliance |
+| Georgia | Partly Free | Occasional pressure on journalists |
+| Armenia | Partly Free | Some content filtering |
+| Iran | Not Free | Extensive filtering, national intranet |
+| Iraq | Not Free | Periodic restrictions |
+| Syria | Not Free | Severe internet controls |
 
 Turkey's ranking reflects several specific mechanisms: periodic blocking of social media platforms (including Twitter/X, YouTube, and Instagram), DNS-level filtering of certain websites, and legal frameworks that enable mass data requests. The government has also implemented traffic throttling during protests or sensitive political events.
 

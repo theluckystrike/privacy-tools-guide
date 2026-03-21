@@ -174,7 +174,5 @@ Choose DuckDuckGo Browser when you need:
 - [How Browser Storage Partitioning Works: Firefox, Chrome.](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
 - [Best Browser for Privacy Android 2026: Developer and.](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

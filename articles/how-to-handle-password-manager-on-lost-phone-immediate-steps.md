@@ -380,7 +380,5 @@ This documentation protects you legally and helps insurers validate claims.
 - [How to Store OTP Codes in Password Manager: A Developer.](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

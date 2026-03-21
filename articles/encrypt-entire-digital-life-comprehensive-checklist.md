@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Encrypt Your Entire Digital Life: A Comprehensive Checklist"
+title: "Encrypt Your Entire Digital Life: A Checklist"
 description: "Complete guide to encrypting all data at rest and in transit. Covers device encryption, email, messaging, storage, passwords, and dead man's switches."
 date: 2026-03-20
 author: theluckystrike
-permalink: /encrypt-entire-digital-life-comprehensive-checklist/
+permalink: /encrypt-entire-digital-life--checklist/
 categories: [guides, security]
 reviewed: true
 score: 9
@@ -701,27 +701,7 @@ Annual:
 - Audit all third-party access (app passwords, API keys)
 ```
 
-## Cost Summary
-
-**One-time costs:**
-- Hardware security keys: $45-120 (2x YubiKey)
-- Encrypted external drive: $100-200
-
-**Annual costs:**
-- Proton Plus: $143.88 (Mail + Drive + VPN)
-- Password manager: $0-60 (Bitwarden/1Password)
-- **Total annual: ~$200**
-
-**Compared to:** Identity theft recovery costs ($3,000-10,000+), hacking liability costs ($50,000+)
-
-**ROI:** Priceless
-
----
-
 {% endraw %}
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 ## Related Reading
 
-Explore more comprehensive privacy strategies at [Privacy Tools Guide Guides Hub](/privacy-tools-guide/guides-hub/)
+Explore more privacy strategies at [Privacy Tools Guide Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -178,7 +178,7 @@ Use Content Security Policy (CSP) to restrict API access:
 
 ## Advanced: Reducing Fingerprinting Vectors Comprehensively
 
-The Battery API is one of many fingerprinting sources. A comprehensive approach addresses multiple vectors simultaneously:
+The Battery API is one of many fingerprinting sources. an approach addresses multiple vectors simultaneously:
 
 - **Disable WebGL**: Prevents GPU-based fingerprinting
 - **Randomize screen resolution**: Use browser extension to spoof display metrics

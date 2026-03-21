@@ -319,7 +319,7 @@ Deploy this through Mobile Device Management (MDM) configuration profiles.
 | Facebook Legacy Contact | Facebook only | Death certificate | Free | Easy |
 | Specialized services | All digital assets | Varies | $50-500 | Hard |
 
-Apple's program is comprehensive for iCloud ecosystem but limited to Apple services. For complete digital estate planning, use multiple services.
+Apple's program is for iCloud ecosystem but limited to Apple services. For complete digital estate planning, use multiple services.
 
 ## Documentation Template
 

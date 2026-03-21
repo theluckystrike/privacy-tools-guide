@@ -171,19 +171,6 @@ NEHotspotNetwork.fetchCurrent { network, error in
 
 Remember that iOS restricts certain APIs for privacy reasons—your app cannot enumerate nearby personal hotspots without user consent.
 
-## Best Practices Summary
-
-1. **Change default device name** - Avoid personal identifiers
-2. **Use generic naming** - "iPhone" or random strings work well
-3. **Disable hotspot when not in use** - Reduces exposure window
-4. **Consider MDM solutions** - For consistent corporate policies
-5. **Monitor your digital footprint** - Use tools to verify what you broadcast
-
-By understanding how iPhone personal hotspot naming works, you can make informed decisions about your device configuration. Whether you're a developer testing network applications or a privacy-conscious user, taking control of your device name is a simple but effective step in reducing your digital footprint.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

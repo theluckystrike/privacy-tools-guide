@@ -160,19 +160,6 @@ If you believe your library privacy rights have been violated, several paths exi
 - **File a complaint with your state attorney general**: Many states have laws specifically protecting library records
 - **Pursue legal action**: Depending on your state's laws, you may have civil remedies for improper disclosure
 
-## Key Takeaways
-
-Library patron privacy exists in a gray area between strong principles and legal realities. The key points to remember:
-
-- Law enforcement needs legal process (warrant, court order, or subpoena) to obtain library records
-- The type of legal process determines what information must be disclosed
-- State laws vary significantly, with some offering stronger protections than others
-- You can take practical steps to minimize your library digital footprint
-- Libraries often advocate for patrons but must comply with valid legal requests
-
-Understanding these dynamics helps you use library resources while maintaining appropriate privacy for your reading and research activities.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

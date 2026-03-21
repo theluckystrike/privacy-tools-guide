@@ -417,21 +417,6 @@ Joins rooms
 
 **Time commitment:** 6-8 hours total setup + user training.
 
-## Conclusion and Recommendation
-
-**Use Signal:** If you prioritize simplicity and strong 1:1 encryption. Ideal for personal use, sensitive 1:1 conversations, non-technical users.
-
-**Use Matrix:** If you need team communication, federation, self-hosting, or rich features. Ideal for organizations, complex communication structures, compliance-heavy industries.
-
-**Best hybrid approach:**
-- Signal for 1:1 sensitive conversations with partners/friends
-- Matrix (self-hosted) for team communication
-- Tor relay for accessing self-hosted Matrix if privacy from ISP is critical
-
-For a privacy-conscious individual: **Signal**.
-For a privacy-conscious team: **Matrix (self-hosted)**.
-For a team that doesn't prioritize privacy: **Slack** or **Microsoft Teams** (but with knowledge of metadata costs).
-
 ## Related Reading
 
 - [End-to-End Encryption Explained: Signal Protocol vs. Others](/encryption-guide/)

@@ -10,14 +10,14 @@ title: "Protect Client Photos: Privacy Best Practices"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices."
 date: 2026-03-15
 type: article
-topic: 
+topic:
   - cloud-storage
   - privacy
   - encryption
-categories: 
+categories:
   - privacy-tools
   - cloud-security
-tags: 
+tags:
   - photographer-privacy
   - client-photo-protection
   - encrypted-cloud-storage
@@ -26,7 +26,7 @@ tags:
   - data-protection
   - zero-knowledge-encryption
   - cloud-backup-privacy
-related_articles: 
+related_articles:
   - best-encrypted-cloud-storage-2026
   - best-encrypted-cloud-for-family-photo-sharing
   - how-to-check-if-your-private-photos-were-leaked-online
@@ -611,7 +611,7 @@ Every cloud storage account storing client photos should have 2FA enabled. Use a
 Organize client work into separate, password-protected folders. Many cloud services let you create shareable links with:
 
 - Expiration dates
-- Password protection 
+- Password protection
 - Download limits
 - Access tracking
 
@@ -685,18 +685,6 @@ Despite best practices, breaches can happen. Have an incident response plan:
 3. **Notification**: Inform affected clients within 72 hours (legal requirement under GDPR)
 4. **Remediation**: Work with cybersecurity professionals to prevent future incidents
 5. **Documentation**: Maintain detailed logs for regulatory compliance
-
-## Recommended Tools Summary
-
-| Use Case | Recommended Tools |
-|----------|------------------|
-| Zero-knowledge cloud storage | Proton Drive, Tresorit, Filen |
-| Encryption layer for standard clouds | Cryptomator, Boxcryptor |
-| Metadata removal | ExifCleaner, ExifTool |
-| Secure file transfer | Magic Wormhole, Tresorit Send |
-| Local encryption | VeraCrypt, BitLocker |
-| Password management | Bitwarden, 1Password |
-
 
 ### Strip EXIF Metadata Before Delivery
 

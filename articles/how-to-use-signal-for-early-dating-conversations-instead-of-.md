@@ -33,7 +33,7 @@ Signal addresses these concerns through its username system, which debuted in 20
 
 Before using Signal for dating conversations, configure your username properly:
 
-### Creating a Username
+### Creating an Username
 
 1. Open Signal and navigate to Settings → Profile
 2. Tap on Username

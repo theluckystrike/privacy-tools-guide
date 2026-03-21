@@ -383,7 +383,7 @@ The best approach depends on user priorities. A user wanting perfect privacy cho
 
 ## Future of Smart Home Spatial Data
 
-As LIDAR sensors become ubiquitous—in speakers, light bulbs, security cameras—comprehensive home mapping becomes inevitable. The question shifts from "will my home be mapped?" to "who controls those maps?"
+As LIDAR sensors become ubiquitous—in speakers, light bulbs, security cameras— home mapping becomes inevitable. The question shifts from "will my home be mapped?" to "who controls those maps?"
 
 Privacy-aware users should:
 1. Choose manufacturers prioritizing local processing

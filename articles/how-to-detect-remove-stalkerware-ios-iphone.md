@@ -74,7 +74,7 @@ This shows all devices signed into your iCloud account. Remove any unknown devic
 
 ### Force Sign Out of All Sessions (Nuclear Option)
 
-If you suspect comprehensive account compromise:
+If you suspect account compromise:
 
 ```
 1. Visit iCloud.com (from computer, not phone)
@@ -443,28 +443,7 @@ If experiencing stalking or domestic abuse:
   - Canada: 1-800-363-9010 (Assaulted Women's Helpline)
 ```
 
-## Summary Checklist
-
-If you suspect stalkerware on your iPhone:
-
-1. [ ] Check iCloud active sessions, remove unknown devices
-2. [ ] Change iCloud password immediately
-3. [ ] Enable two-factor authentication
-4. [ ] Check for MDM profiles in Settings → VPN & Device Management
-5. [ ] Review Location Services and enable precision warnings
-6. [ ] Check for jailbreak indicators
-7. [ ] Disable unknown accessibility features
-8. [ ] Delete and recreate iCloud backup
-9. [ ] Consider factory reset if not resolved
-10. [ ] Change all critical passwords
-11. [ ] Contact Apple Support or law enforcement if needed
-
----
-
 {% endraw %}
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 ## Related Reading
 
 Explore more privacy protection techniques at [Privacy Tools Guide Guides Hub](/privacy-tools-guide/guides-hub/)

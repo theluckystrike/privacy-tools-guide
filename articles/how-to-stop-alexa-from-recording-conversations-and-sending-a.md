@@ -161,16 +161,6 @@ Blocking Alexa's network traffic has consequences you should understand:
 
 The only way to have a fully functional Alexa device while preventing data transmission to Amazon is through custom firmware, which is beyond the scope of this guide and may void your warranty.
 
-## What Actually Works: A Practical Summary
-
-For most users, the practical approach combines multiple strategies:
-
-1. **Review and delete recordings regularly** through the Alexa app or privacy dashboard
-2. **Enable automatic deletion** to minimize long-term data retention
-3. **Disable "Help Improve Alexa"** to prevent your data from being used in training
-4. **Use the mute button** when you want complete privacy—this physically disconnects the microphones
-5. **Consider alternative voice assistants** if maximum privacy is critical, such as those that process everything locally
-
 ## The Muting Strategy
 
 The most effective immediate action is using the physical mute button on your Alexa device. This provides a hardware-level guarantee that no audio is being captured:

@@ -247,9 +247,9 @@ Several tools help audit Windows privacy settings:
 
 **PrivateZilla**: Similar to W10Privacy but with cleaner UI. Also open-source.
 
-**O&O ShutUp++**: Commercial tool (paid) with comprehensive privacy auditing and recommendations.
+**O&O ShutUp++**: Commercial tool (paid) with privacy auditing and recommendations.
 
-**PolicyPlus**: Group Policy administration tool for Home edition users. Less intuitive but comprehensive.
+**PolicyPlus**: Group Policy administration tool for Home edition users. Less intuitive but .
 
 Use these tools to audit settings after manual configuration. They help identify missed settings or services that still have telemetry enabled.
 

@@ -441,15 +441,6 @@ test_backup_recovery() {
 test_backup_recovery
 ```
 
-## Conclusion
-
-Keybase Filesystem delivers on its promise of secure, zero-knowledge encrypted storage. The transparent filesystem interface means you don't need to sacrifice usability for security, and the team collaboration features make it practical for both personal and organizational use.
-
-The main limitations—unencrypted metadata and the responsibility of key management—should be understood but don't diminish KBFS's value as a privacy-focused storage solution. For users who need guaranteed confidentiality for their files, particularly when sharing with others, KBFS provides a rare combination of strong security and genuine usability.
-
-If you're evaluating encrypted storage options, KBFS deserves a place on your shortlist. The free tier is generous enough for individual use, and the team pricing remains competitive with less secure alternatives. Combined with proper key management practices, disaster recovery planning, and multi-device security procedures, KBFS provides enterprise-grade encryption for teams and individuals alike.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

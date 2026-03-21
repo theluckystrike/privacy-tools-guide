@@ -6,7 +6,7 @@ keywords: "VPN, medical records, healthcare abroad, telemedicine, HIPAA, patient
 author: "Privacy Tools Guide"
 date: 2026-03-15
 categories: [guides]
-tags: 
+tags:
 permalink: /vpn-for-accessing-medical-records-abroad-while-traveling-securely/
 reviewed: true
 score: 7
@@ -636,7 +636,7 @@ Be aware that:
 
 ### Problem: Portal Blocks VPN Connection
 
-**Solution**: 
+**Solution**:
 - Try connecting to different server locations
 - Use obfuscated or stealth VPN protocols
 - Contact your VPN provider for server recommendations

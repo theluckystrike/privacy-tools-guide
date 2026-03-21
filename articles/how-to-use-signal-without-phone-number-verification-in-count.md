@@ -168,16 +168,6 @@ async function verifySignalRegistration(phoneNumber) {
 
 **Important**: Signal's internal APIs are undocumented and change without notice. Building integrations carries significant maintenance burden.
 
-## Summary Table
-
-| Method | Ease of Use | Reliability | Privacy Level |
-|--------|-------------|-------------|---------------|
-| International SIM | Medium | High | Medium |
-| Linked Device | Easy | Very High | High |
-| Landline | Easy | Medium | Medium |
-| VoIP | Hard | Low | Medium |
-| Temporary Number | Easy | Low | Low |
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

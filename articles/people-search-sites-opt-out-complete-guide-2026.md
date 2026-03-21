@@ -188,7 +188,7 @@ This legal route provides stronger enforcement mechanisms than standard opt-out 
 
 ## Maintaining Privacy Over Time
 
-Opt-out is not a one-time action. Data brokers continuously refresh their databases from new public records. Consider these ongoing strategies:
+Opt-out is not an one-time action. Data brokers continuously refresh their databases from new public records. Consider these ongoing strategies:
 
 1. **Set up Google Alerts** for your name to monitor new appearances
 2. **Regularly check** annually for re-appearances on removed sites

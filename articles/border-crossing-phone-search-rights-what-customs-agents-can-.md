@@ -167,21 +167,6 @@ When facing a device search request:
 4. **Document everything** — note officer names, badge numbers, and times
 5. **Request receipts** — if device is seized, get documentation
 
-## Key Takeaways
-
-Border device search laws continue to evolve, with most democracies expanding powers. The core principle across jurisdictions: anything on your device can potentially be searched. For developers and power users:
-
-- Use travel-specific devices with minimal data
-- Enable full-disk encryption with strong keys you can recall
-- Keep sensitive code and keys in encrypted containers
-- Understand that cloud-synced data may be accessible
-- Consider the legal jurisdiction before traveling with sensitive work
-
-The balance between border security and digital privacy remains contested. Stay informed, prepare technically, and travel wisely.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

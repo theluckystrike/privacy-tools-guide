@@ -62,7 +62,7 @@ When device compromise is suspected and immediate safety is priority, factory re
 ```
 
 For Android, verify the bootloader is locked after reset. Enter recovery mode and confirm:
-- Bootloader status shows "locked" 
+- Bootloader status shows "locked"
 - Verified boot shows "green" or "verified"
 
 ### New Device Procurement
@@ -226,7 +226,7 @@ Review all cloud storage for sensitive data:
 
 ## Ongoing Maintenance
 
-Security isn't a one-time configuration. Establish regular review habits:
+Security isn't an one-time configuration. Establish regular review habits:
 
 - Weekly: Check for unknown devices on accounts
 - Monthly: Review privacy settings on social media

@@ -237,7 +237,7 @@ Removing your data from FastPeopleSearch is one component of a privacy strategy.
 
 Each platform has its own opt-out process, though many follow similar patterns requiring email verification and profile matching.
 
-## Comprehensive Data Broker Removal Strategy
+## Data Broker Removal Strategy
 
 Creating a systematic approach to data broker removal prevents gaps in coverage. Different brokers collect information from different sources—removing from FastPeopleSearch alone leaves you exposed on a dozen other platforms.
 

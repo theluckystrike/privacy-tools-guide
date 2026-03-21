@@ -122,7 +122,7 @@ alias = generateAlias('github')
 
 The free tier supports two-factor authentication codes, a feature often locked behind subscriptions in other managers. Proton's open-source background and Swiss-based infrastructure appeal to developers prioritizing data privacy.
 
-Proton Pass integrates with Proton Mail, allowing seamless password and email alias management. For users building comprehensive privacy infrastructure using Proton products, Pass extends that ecosystem without additional costs.
+Proton Pass integrates with Proton Mail, allowing seamless password and email alias management. For users building privacy infrastructure using Proton products, Pass extends that ecosystem without additional costs.
 
 The zero-knowledge architecture means Proton cannot see your passwords even if requested by law enforcement or compelled by court order. Proton's Swiss jurisdiction and legal commitment to user privacy complement this technical implementation. However, this also means account recovery without your master password is impossible—losing your password results in total vault loss.
 
@@ -268,8 +268,6 @@ For accounts protecting critical infrastructure or high-value assets, consider u
 - [Proton Pass vs Bitwarden Review: Which Password Manager.](/privacy-tools-guide/proton-pass-vs-bitwarden-review/)
 - [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -109,7 +109,7 @@ LastPass stores TOTP secrets in a separate format. For full migration:
 
 1. Open LastPass browser extension
 2. Navigate to Account Settings → Export
-3. Export "Export Generic CSV" 
+3. Export "Export Generic CSV"
 4. Extract the "One-Time Password" column
 
 ### Method 2: Using a Python Script

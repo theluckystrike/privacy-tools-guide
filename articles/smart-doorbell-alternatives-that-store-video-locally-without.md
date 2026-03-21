@@ -201,8 +201,8 @@ When planning local storage capacity, calculate your needs based on resolution, 
 
 | Resolution | Bitrate (avg) | 24h footage | 7 days | 30 days |
 |------------|---------------|-------------|--------|---------|
-| 1080p      | 2 Mbps        | 21 GB       | 147 GB | 630 GB  |
-| 4K         | 8 Mbps        | 84 GB       | 588 GB | 2.5 TB  |
+| 1080p | 2 Mbps | 21 GB | 147 GB | 630 GB |
+| 4K | 8 Mbps | 84 GB | 588 GB | 2.5 TB |
 
 For most homes, a NAS with 1-2TB dedicated to doorbell recording provides sufficient retention. Configure retention policies based on your specific needs—continuous recording requires more storage than motion-triggered recording only.
 

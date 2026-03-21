@@ -242,19 +242,6 @@ function logUserAction(userId, action, metadata, hasConsent) {
 }
 ```
 
-## Key Takeaways
-
-Privacy-preserving logging requires upfront planning but pays dividends in reduced compliance burden and improved security. The essential practices are:
-
-- Classify data before logging and apply the principle of data minimization
-- Implement systematic redaction using structured logging or regex patterns
-- Use hashing for correlation without exposure
-- Configure appropriate log levels per environment
-- Protect log storage with encryption and access controls
-
-Start by auditing your current logs for sensitive data, then implement these patterns incrementally. Your users—and your compliance auditor—will thank you.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

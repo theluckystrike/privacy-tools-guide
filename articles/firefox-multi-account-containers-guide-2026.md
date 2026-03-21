@@ -221,7 +221,5 @@ You can script container operations using the Firefox Container API or browser a
 - [Proton Drive Linux Client Setup Guide 2026: Complete.](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
 - [Twitter X Privacy Settings Recommended 2026: A Complete.](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

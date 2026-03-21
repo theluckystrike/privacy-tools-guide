@@ -345,34 +345,12 @@ exiftool -all= sensitive-document.pdf
 # Modified document has no metadata
 ```
 
-## Best Practices Summary
-
-Maintain these habits for consistent anonymity:
-
-1. **Keep Tor Browser updated** to benefit from security patches and improvements.
-2. **Never log into personal accounts** while using Tor for anonymity.
-3. **Disable JavaScript** unless specifically needed, and only on trusted sites.
-4. **Avoid downloading files** through Tor except when using new circuit per download.
-5. **Use separate browser profiles** for Tor and regular browsing.
-6. **Verify your connection** regularly using check.torproject.org.
-7. **Use bridges** if your ISP or country blocks Tor connections.
-8. **Review extension permissions** and remove unnecessary add-ons.
-9. **Vary your behaviors** to avoid fingerprinting and correlation attacks.
-10. **Disable plugins** and WebGL to minimize fingerprinting surface.
-11. **Strip file metadata** before uploading documents.
-12. **Use HTTPS always** to prevent exit relay monitoring.
-
-Tor provides strong anonymity when used correctly, but no tool guarantees perfect privacy. Understanding its limitations and combining it with other practices—such as using encrypted messaging, varying behavioral patterns, and practicing good operational security—creates a comprehensive privacy strategy. For journalists, activists, and whistleblowers, Tor combined with additional measures like SecureDrop and encrypted communication channels provides meaningful protection against surveillance.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
 - [How to Set Up Secure Communication for Labor Strike.](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

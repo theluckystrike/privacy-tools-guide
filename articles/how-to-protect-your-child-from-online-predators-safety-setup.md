@@ -231,7 +231,7 @@ Create a family agreement document that outlines expectations and consequences. 
 Security requires continuous attention. Schedule regular reviews:
 
 - Weekly: Check device Screen Time reports for unusual patterns
-- Monthly: Review installed apps and remove unused applications 
+- Monthly: Review installed apps and remove unused applications
 - Quarterly: Update router firmware and DNS blocklists
 - Annually: Reassess age-appropriate settings as children mature
 

@@ -15,7 +15,7 @@ intent-checked: true
 
 {% raw %}
 
-Teams handling sensitive data—financial records, health information, legal documents, trade secrets—cannot use consumer file sharing tools like Dropbox or Google Drive. Enterprise-grade secure file sharing requires end-to-end encryption where the provider never has access to plaintext files, granular access controls that define who can view/download/print, comprehensive audit logs showing every action, and compliance certifications for your industry. This guide compares solutions built specifically for sensitive data with features teams need to maintain legal compliance while enabling efficient collaboration.
+Teams handling sensitive data—financial records, health information, legal documents, trade secrets—cannot use consumer file sharing tools like Dropbox or Google Drive. Enterprise-grade secure file sharing requires end-to-end encryption where the provider never has access to plaintext files, granular access controls that define who can view/download/print, audit logs showing every action, and compliance certifications for your industry. This guide compares solutions built specifically for sensitive data with features teams need to maintain legal compliance while enabling efficient collaboration.
 
 ## Why Consumer Tools Fail for Sensitive Data
 
@@ -81,7 +81,7 @@ Box provides enterprise collaboration with administrative controls for regulated
 - Encryption in transit and at rest with customer-managed keys (optional)
 - Advanced classification system (label files as "Confidential," "Internal," etc.)
 - Content-aware DLP (Data Loss Prevention) rules
-- Comprehensive audit trails with admin dashboards
+- audit trails with admin dashboards
 - HIPAA, FedRAMP, SOC 2 Type II certified
 - Advanced user session management
 - API-first architecture for integration
@@ -247,7 +247,7 @@ sudo -u www-data php occ audit log:show
 
 **Finance (SOC 2/PCI-DSS):**
 - Box (strongest admin controls) or Tresorit
-- Requirement: Encryption, comprehensive logging, encryption key management
+- Requirement: Encryption, logging, encryption key management
 
 **Legal (privilege protection):**
 - Tresorit (straightforward encryption) or Nextcloud (total control)

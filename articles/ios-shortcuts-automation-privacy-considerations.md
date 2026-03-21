@@ -151,13 +151,6 @@ HomeKit data includes information about your home environment, and Siri requests
 
 When building HomeKit-connected shortcuts, ask whether the automation truly needs to know specific device states or if a simpler trigger would serve the same purpose.
 
-## Summary: Building Privacy-First Automations
-
-Granting minimum permissions, preferring local processing, keeping credentials out of shared shortcuts, and auditing your automation library regularly are the habits that keep iOS Shortcuts useful without exposing personal data.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
@@ -165,8 +158,6 @@ Granting minimum permissions, preferring local processing, keeping credentials o
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
 - [iOS Privacy Settings Complete Walkthrough: Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -542,7 +542,7 @@ legal_deletion_rights = {
 # 5. If CCPA: Document violation for potential lawsuit
 ```
 
-This provides legal leverage beyond CMB's standard policy.
+This provides legal use beyond CMB's standard policy.
 
 ## Related Reading
 

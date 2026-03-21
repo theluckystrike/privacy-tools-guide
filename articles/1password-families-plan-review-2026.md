@@ -291,7 +291,7 @@ echo "Password rotation month — review and update credentials"
 
 ### Limited Admin Dashboards
 
-Families cannot view aggregate security metrics. The organizer gains Watchtower alerts but not comprehensive dashboards showing account status for all members.
+Families cannot view aggregate security metrics. The organizer gains Watchtower alerts but not dashboards showing account status for all members.
 
 Consider supplementary password strength auditing:
 

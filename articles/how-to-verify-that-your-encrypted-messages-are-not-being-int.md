@@ -53,7 +53,7 @@ Signal provides the most accessible verification mechanism through safety number
 To verify in Signal:
 - Open the conversation thread
 - Tap the contact name at the top
-- Select "Safety Number" 
+- Select "Safety Number"
 - Compare the displayed number with your contact through a separate verified channel
 
 The QR code option allows camera-based verification, which is more secure than reading digits aloud since it prevents transcription errors.

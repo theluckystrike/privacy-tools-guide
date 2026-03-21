@@ -439,8 +439,6 @@ The optimal approach depends on your specific use case: baseline privacy for cas
 - [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
 - [How VPN Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

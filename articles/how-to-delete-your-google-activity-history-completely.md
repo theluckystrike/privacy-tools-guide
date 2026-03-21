@@ -426,28 +426,6 @@ If you want to completely remove yourself from Google:
 
 ---
 
-## Timeline Summary
-
-| Step | Time | What Happens |
-|------|------|--------------|
-| 1. Backup (Takeout) | 10 min | Export begins, takes 10 min–2 hours |
-| 2. Delete Search Activity | 5 min | Immediate, processed within 24 hours |
-| 3. Delete YouTube History | 3 min | Immediate |
-| 4. Delete Location History | 2 min | Immediate |
-| 5. Disable Personalization | 2 min | Immediate |
-| 6. Google Account Settings | 5 min | Immediate (future-proofing) |
-| 7. Chrome Sync | 3 min | Immediate |
-| 8. Verification | 5 min | Check deletion completed |
-| **Total** | **~35 minutes** | Complete privacy reset |
-
----
-
-## Conclusion
-
-Deleting Google's history of you is a 30-minute process using the Activity dashboard, Maps Timeline, and Settings. The key is hitting all three deletion surfaces (search, YouTube, location) and disabling auto-logging to prevent future accumulation. After deletion, verify completion, turn off ad personalization, and disable Chrome sync. Google respects explicit deletion requests; they're processed within 24 hours. This single action removes years of profiling and signals to Google that you value privacy. Combined with a privacy browser (Firefox + uBlock), a VPN, and DuckDuckGo search, you're no longer a profile to be monetized.
-
-
-
 ### Download and Audit Your Google Data
 
 ```bash

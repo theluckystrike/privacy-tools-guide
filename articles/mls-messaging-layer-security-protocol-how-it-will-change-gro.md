@@ -228,7 +228,7 @@ The savings are dramatic at scale. Broadcasting applications with thousands of v
 
 ## Testing and Compatibility
 
-Before production deployment, implement comprehensive testing:
+Before production deployment, implement testing:
 
 ```python
 # Test vector generation for MLS

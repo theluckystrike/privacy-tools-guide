@@ -250,7 +250,7 @@ For brokers not listed above, use this systematic approach:
 
 ## Automated Removal Tools
 
-For comprehensive coverage without manual work, use automation services:
+For coverage without manual work, use automation services:
 
 ### 1. DeleteMe (Best Overall)
 
@@ -296,7 +296,7 @@ Quarterly Re-Removal:
 ```
 
 **DeleteMe Strengths:**
-- Covers 750+ brokers (most comprehensive)
+- Covers 750+ brokers (most )
 - Quarterly re-removal keeps you off long-term
 - Dashboard shows status for each broker
 - Manual intervention for difficult brokers
@@ -425,7 +425,7 @@ US Alternative:
 | Tool | Cost | Coverage | Monitoring | Recheck | Best For |
 |------|------|----------|-----------|---------|----------|
 | Manual | Free | Choose | None | Never | Privacy-focused, patience |
-| DeleteMe | $129/yr | 750+ | Limited | Quarterly | Comprehensive coverage |
+| DeleteMe | $129/yr | 750+ | Limited | Quarterly | coverage |
 | Kanary | $149/yr | 500+ | Real-time | Continuous | Monitoring priority |
 | Privacy Duck | $79/yr | 250+ | Monthly | Monthly | Budget-conscious |
 | OneRep | $90/yr | 300+ | Limited | Quarterly | EU-focused |

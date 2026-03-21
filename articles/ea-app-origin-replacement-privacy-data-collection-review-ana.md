@@ -77,7 +77,7 @@ Several privacy concerns emerge from this data collection model:
 
 **Hardware Telemetry**: The detailed hardware inventory collected enables fingerprinting even across reinstallations. Your specific GPU model, driver version, and system configuration create a unique identifier.
 
-**Cross-Game Tracking**: EA's unified platform means your activity across different games gets linked to a single profile, building a comprehensive behavioral profile.
+**Cross-Game Tracking**: EA's unified platform means your activity across different games gets linked to a single profile, building a behavioral profile.
 
 **Third-Party Data Sharing**: EA's privacy policy indicates sharing data with service providers, advertising partners, and for legal compliance purposes.
 

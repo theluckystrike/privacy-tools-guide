@@ -213,7 +213,5 @@ Hash IP addresses if you need to track repeated failed attempts across requests.
 - [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
 - [GDPR Data Processing Agreement Template Guide: A Developer's Practical Reference](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

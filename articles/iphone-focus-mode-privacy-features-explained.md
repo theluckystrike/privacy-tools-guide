@@ -475,6 +475,4 @@ Result: If anyone sees device, private communications are invisible, no badges r
 - [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

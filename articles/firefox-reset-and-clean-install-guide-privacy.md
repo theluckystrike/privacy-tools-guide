@@ -233,7 +233,5 @@ Run this script after each Firefox update, as some settings may reset.
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
 - [Firefox Privacy Settings Guide 2026: A Practical Guide.](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

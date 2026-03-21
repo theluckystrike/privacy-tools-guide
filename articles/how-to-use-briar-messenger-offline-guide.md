@@ -206,7 +206,7 @@ Residential communities prioritizing communication without corporate oversight c
 
 ## Integration with Other Privacy Tools
 
-Combine Briar with complementary privacy tools for comprehensive protection:
+Combine Briar with complementary privacy tools for protection:
 
 ```bash
 # Running Briar alongside Tor Browser
@@ -297,7 +297,7 @@ This topology ensures that local network segments remain connected even if some 
 
 ## Integration with Offline Media Distribution
 
-Combine Briar with other offline media for comprehensive communication:
+Combine Briar with other offline media for communication:
 
 - **USB sneakernets**: Physical USB drives carrying larger files through Briar contacts
 - **Paper notes**: Critical messages on paper for extremely high-risk scenarios

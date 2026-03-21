@@ -546,27 +546,7 @@ Resolve-DnsName google.com
 - Visit https://dnsleaktest.com/ (tests for DNS leaks)
 - Visit https://dns.nextdns.io/ (shows if NextDNS active)
 
-## Cost Summary
-
-| Resolver | Cost | Devices | Use Case |
-|----------|------|---------|----------|
-| Cloudflare 1.1.1.1 | Free | Unlimited | Simplicity + speed |
-| Quad9 9.9.9.9 | Free | Unlimited | Privacy + malware blocking |
-| AdGuard | Free | Unlimited (same rules) | Ad blocking, no account |
-| NextDNS | Free | 1 device | Try before paid |
-| NextDNS | $2/month | 1 device | Single device family |
-| NextDNS | $4/month | 5 devices | Family of 5 |
-
-**Best value:** Quad9 (free, privacy-first, non-profit)
-
-**Most flexible:** NextDNS (per-device rules, family control)
-
----
-
 {% endraw %}
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 ## Related Reading
 
 Explore more privacy protection strategies at [Privacy Tools Guide Guides Hub](/privacy-tools-guide/guides-hub/)

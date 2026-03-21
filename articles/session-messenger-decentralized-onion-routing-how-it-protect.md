@@ -190,7 +190,7 @@ Real-world adversaries use multiple surveillance techniques. Understanding Sessi
 **Scenario 1: ISP + ISP Passive Observation**
 - Both sender and recipient ISPs observe Session connections
 - Service Node routing prevents ISPs from determining who talks to whom
-- **Result**: ISPs see "user A uses Session" and "user B uses Session" but not "A talks to B"
+- **Result**: ISPs see "user an uses Session" and "user B uses Session" but not "A talks to B"
 - **Mitigation**: Still privacy-protective for metadata
 
 **Scenario 2: Sophisticated Timing Correlation**
@@ -325,13 +325,6 @@ Session's development priorities (as of 2026):
 4. **Integration**: Building APIs for other applications
 
 These improvements address current limitations while maintaining core metadata protection principles.
-
-## Conclusion
-
-Session messenger demonstrates that meaningful metadata protection requires architectural changes, not just encryption improvements. By combining the Signal Protocol for content encryption with onion routing for transport, Session creates a system where communication metadata becomes extraordinarily difficult to collect without sophisticated resource-intensive attacks. The Oxen Service Node network provides the decentralized infrastructure necessary to avoid single points of failure and trust.
-
-However, Session's threat model doesn't protect against network-level observation (ISP seeing Session usage) or sophisticated timing analysis attacks. For activists and journalists in hostile environments, Session works best combined with additional network protection (Tor, VPN) and clear understanding of its limitations. For developers building privacy-sensitive applications, Session's architecture offers a valuable reference model demonstrating how to minimize server-side observability while maintaining practical usability.
-
 
 ## Related Reading
 

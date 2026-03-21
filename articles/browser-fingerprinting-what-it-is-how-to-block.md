@@ -325,7 +325,5 @@ Monitor website functionality after enabling each protection. Some sites break w
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
 - [Browser Permission Prompt Fingerprinting: How.](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

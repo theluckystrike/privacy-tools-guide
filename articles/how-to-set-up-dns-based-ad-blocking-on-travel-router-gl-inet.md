@@ -206,7 +206,5 @@ This setup is particularly valuable for sensitive browsing or when working remot
 - [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
 - [How to Set Up Encrypted DNS to Bypass DNS Poisoning in.](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

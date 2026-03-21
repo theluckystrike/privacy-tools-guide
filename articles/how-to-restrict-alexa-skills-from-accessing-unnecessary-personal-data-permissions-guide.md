@@ -157,18 +157,7 @@ Beyond individual skill permissions, Amazon provides account-level privacy contr
 
 These settings apply globally across all skills and provide baseline privacy protection regardless of individual skill permissions.
 
-## Best Practices Summary
-
-- Review permissions during skill installation, not after
-- Audit enabled skills monthly and remove unused ones
-- Develop skills with minimum necessary permissions
-- Handle permission denials gracefully in skill code
-- Use account-level privacy settings as a safety net
-
-Managing Alexa skill permissions requires ongoing attention rather than a one-time configuration. As you install new skills and existing ones update, permission requirements change. Establishing a regular review habit keeps your data access surface minimized while maintaining useful functionality.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

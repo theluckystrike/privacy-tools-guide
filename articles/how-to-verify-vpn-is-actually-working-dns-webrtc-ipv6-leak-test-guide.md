@@ -345,11 +345,11 @@ Some leak test sites have false positives. Cross-reference:
 - [dnsleak.com](https://dnsleak.com) - DNS leak detection
 - [ipleak.net](https://ipleak.net) - IP, WebRTC, IPv6 leaks
 - [whoami.akamai.com](https://whoami.akamai.com) - Simple IP check
-- [browserleaks.com](https://browserleaks.com) - Comprehensive browser leaks
+- [browserleaks.com](https://browserleaks.com) - browser leaks
 
 Visit 2-3 sites. If they all show the same IP (your VPN's IP), the VPN is working. If they show different IPs, something is wrong.
 
-## Comprehensive Test Checklist
+## Test Checklist
 
 Before you trust a VPN, run this full verification:
 

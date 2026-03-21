@@ -287,7 +287,7 @@ This timeline shows you've thought through logistics, not just "let's buy this t
 
 ## Long-term Password Manager Value
 
-Frame this not as a one-time expense but as continuous infrastructure improvement:
+Frame this not as an one-time expense but as continuous infrastructure improvement:
 
 "A password manager becomes more valuable over time. After 6 months, you have complete credential inventory. After 1 year, you have rotation history and audit trails. By 2 years, you're preventing incidents because you can rapidly rotate compromised credentials."
 

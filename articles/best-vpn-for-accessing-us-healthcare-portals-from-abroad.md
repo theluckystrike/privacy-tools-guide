@@ -245,7 +245,7 @@ If certificate pinning breaks your VPN access, contact the healthcare provider's
 
 Some healthcare portals use MaxMind or similar geolocation databases to identify your location. These databases occasionally provide inaccurate results, particularly for VPN IPs.
 
-If you're consistently blocked despite using a US VPN:
+If you're consistently blocked despite using an US VPN:
 
 1. **Test MaxMind accuracy**: Use MaxMind's GeoIP2 demo tool to verify your VPN's location is reported correctly
 2. **Try different VPN servers**: Different servers from the same VPN provider may have different geolocation database entries

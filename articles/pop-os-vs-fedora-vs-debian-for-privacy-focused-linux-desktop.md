@@ -82,7 +82,7 @@ apt list --upgradable | grep cosmic
 
 All three distributions implement fundamental Linux security features, but the defaults and additional hardening differ.
 
-**Debian** includes AppArmor by default for several system services. The distribution provides SELinux policies but does not enable them by default in the desktop edition. Debian's security team maintains a robust CVE tracking system.
+**Debian** includes AppArmor by default for several system services. The distribution provides SELinux policies but does not enable them by default in the desktop edition. Debian's security team maintains a strong CVE tracking system.
 
 ```bash
 # Enable AppArmor profiles on Debian

@@ -47,7 +47,7 @@ exiftool -tagsfromfile source.jpg dest.jpg
 - Audio: MP3, WAV, FLAC, M4A, OGG
 
 **Strengths:**
-- Works on 150+ file formats (most comprehensive)
+- Works on 150+ file formats (most )
 - Scriptable (automation via bash/Python/PowerShell)
 - Extremely granular (remove specific tags, preserve others)
 - No network required (fully local)
