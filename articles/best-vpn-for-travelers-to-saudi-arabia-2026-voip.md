@@ -171,21 +171,127 @@ nc -zv stun.google.com 19302
 
 For WhatsApp specifically, test both voice and video calls. Some VPN configurations work for messaging but fail during actual calls due to bandwidth constraints or protocol filtering.
 
+## Monitoring VPN Health and Performance
+
+Track your VPN performance to catch issues before they impact calls:
+
+```bash
+# Monitor connection latency continuously
+watch -n 1 'ping -c 1 <vpn-server-ip> | grep "time=" | awk -F"time=" "{print \$2}"'
+
+# Check for packet loss over time
+ping -i 0.2 -c 600 <vpn-server-ip> | tail -1
+
+# Monitor DNS leakage (should show resolver, not ISP DNS)
+dig whoami.cloudflare @1.1.1.1 +short
+
+# Verify IP is from expected country
+curl -s https://ipapi.co/json/ | jq '.country_name'
+```
+
+Set up alerts if latency exceeds 150ms or packet loss exceeds 2%. These thresholds indicate connection problems that will impact call quality.
+
 ## Performance Optimization
 
 VoIP requires stable, low-latency connections. Apply these optimizations:
 
 Use ethernet instead of WiFi when possible. If WiFi is necessary, connect to the 5GHz band and minimize distance to the access point. Adjust MTU in your VPN configuration—1420 works for most networks and prevents fragmentation. If your router supports QoS settings, prioritize UDP traffic for VoIP. Enable the VPN kill switch to prevent accidental data leaks if the connection drops unexpectedly.
 
+Consider using a wired connection (USB tether from phone, or ethernet) during important calls. This eliminates WiFi interference and packet loss that often affects audio quality. Mobile data from a local SIM can serve as backup if WiFi becomes unavailable.
+
+## Testing Before Critical Calls
+
+Never rely on a VPN configuration you haven't tested thoroughly. Before an important business call, validate your setup:
+
+```bash
+# 1. Test basic connectivity
+curl -I https://www.google.com
+
+# 2. Test DNS resolution
+nslookup example.com
+
+# 3. Test UDP (required for VoIP)
+nc -zv stun.l.google.com 19302
+
+# 4. Test call quality with test service
+# Many VoIP providers offer test calls
+
+# 5. Simulate poor network conditions
+# Test call during WiFi interference or on mobile data
+```
+
+Only after successful test calls should you rely on the VPN for critical communication. Plan test calls for low-stakes scenarios first—checking in with a friend works well.
+
 ## Backup Strategies
 
 Network conditions in Saudi Arabia can change rapidly. Maintain multiple connection options:
 
-Keep at least two different VPN providers configured. Consider a self-hosted VPS as a backup solution. Have a mobile data hotspot available as emergency backup. Store offline documentation for reconfiguring your VPN if needed.
+Keep at least two different VPN providers configured (Mullvad and one other provider). Consider a self-hosted VPS as a backup solution using WireGuard—this provides fallback if commercial VPNs face blocking. Have a mobile data hotspot available as emergency backup and test it with your VoIP app before you actually need it. Store offline documentation for reconfiguring your VPN if needed.
+
+Document your working configuration including server addresses, protocols, and settings. If VPN software needs reinstalling, you want to restore working config quickly without trial and error.
+
+## Alternative Strategies When VPNs Fail
+
+Despite best efforts, VPN blocking can sometimes become unavoidable or unreliable. Consider these alternatives:
+
+### Proxy Services and Tunneling
+
+If VPNs face consistent blocking, proxy-based solutions sometimes work better:
+
+```bash
+# SSH tunneling for SOCKS proxy
+ssh -D 1080 -N jump-server.example.com
+
+# Configure application to use SOCKS proxy
+# This works for some applications even when VPN fails
+```
+
+SSH tunneling creates an encrypted tunnel that sometimes bypasses DPI systems better than conventional VPNs.
+
+### Over-the-Top (OTT) Messaging Apps
+
+Apps like Telegram, Signal, and WhatsApp sometimes work without VPN through secondary protocols. However, relying on this is unreliable—always test before depending on it.
+
+### Delayed Communication
+
+In extreme situations, accept that real-time VoIP is not possible and plan accordingly:
+- Use asynchronous communication (email, messaging apps) that don't require real-time connection
+- Schedule calls when you move to less restrictive networks
+- Use messaging apps that work reliably rather than forcing VoIP
+
+### Local SIM Cards and Data
+
+Sometimes using a local mobile number for VoIP (Skype, WhatsApp) works better than trying to use a foreign number through a VPN.
+
+## VPN Performance Troubleshooting
+
+When calls drop or quality degrades after initially working:
+
+```bash
+# Check if still connected to VPN
+ip route | grep vpn
+
+# Restart VPN service
+sudo systemctl restart wireguard@wg0
+# or for OpenVPN
+sudo systemctl restart openvpn@client
+
+# Switch to different protocol if available
+# Try UDP instead of TCP
+# Try different obfuscation options
+# Try different server location
+
+# Check system logs for disconnection reasons
+journalctl -u wireguard@wg0 -n 20
+```
+
+Keep detailed logs of when and why connections fail. This helps you identify patterns and prepare alternatives.
 
 ## Legal Considerations
 
-While this guide focuses on technical solutions, be aware that VPN usage regulations vary by jurisdiction. Ensure your VPN usage complies with local laws and your employer's policies. Many business travelers use company-provided VPN solutions that may have different characteristics than consumer VPNs.
+While this guide focuses on technical solutions, be aware that VPN usage regulations vary by jurisdiction. Ensure your VPN usage complies with local laws and your employer's policies. Many business travelers use company-provided VPN solutions that may have different characteristics than consumer VPNs. Check your employment agreement—some companies explicitly permit VPN use while others restrict it.
+
+For personal travelers, VPN legality in Saudi Arabia exists in a gray area. The government discourages VPN use but enforcement is inconsistent. Exercise caution and consider the risks of traveling to locations with restrictive policies.
 
 
 ## Related Articles

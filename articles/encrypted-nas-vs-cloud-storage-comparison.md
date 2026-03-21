@@ -187,6 +187,180 @@ echo "NAS backup: $(ls -la /mnt/nas/projects | wc -l) files"
 echo "Cloud backup: $(rclone lsl cloud:projects-backup | wc -l) files"
 ```
 
+## Advanced NAS Security Features
+
+Beyond basic encryption, modern NAS systems offer sophisticated security.
+
+### Snapshot-Based Immutable Backups
+
+TrueNAS allows creating immutable snapshots that prevent ransomware from destroying backups:
+
+```bash
+# Create snapshot that cannot be deleted
+zfs snapshot -r pool/data@protection_$(date +%Y%m%d_%H%M%S)
+
+# Configure snapshot hold to prevent deletion
+zfs hold protection_hold pool/data@protection_*
+
+# Snapshots will be retained even if filesystem is compromised
+zfs holds pool/data
+```
+
+This approach defeats ransomware that encrypts your data and demands payment—you maintain immutable copies.
+
+### Secret-Sharing for NAS Access
+
+Distribute NAS access control among multiple administrators:
+
+```bash
+# Using Shamir Secret Sharing (requires ssss utility)
+# Split encryption key into 5 parts, require 3 to reconstruct
+
+ssss-split -t 3 -n 5 -w 128 -x < nas-encryption-key.txt
+
+# Each administrator gets one part
+# NAS access requires consensus of 3+ administrators
+```
+
+This prevents single administrator compromise from giving attacker NAS access.
+
+### Network Isolation for NAS
+
+Deploy NAS on isolated VLAN with strict access controls:
+
+```bash
+# nftables rules for NAS VLAN
+nft add rule ip nas-vlan forward ip daddr 192.168.30.0/24 \
+  ip protocol tcp th dport 22,139,445 accept comment "Allow admin protocols"
+
+# Block everything else
+nft add rule ip nas-vlan forward ip daddr 192.168.30.0/24 drop
+```
+
+This prevents compromised devices from accessing NAS even if on same network.
+
+## Cloud Storage Redundancy Strategy
+
+Maintain backups across multiple cloud providers to avoid vendor lock-in:
+
+```bash
+# Backup to multiple cloud providers simultaneously
+backup_to_clouds() {
+  local source=$1
+
+  # Provider 1: Proton Drive
+  rclone sync "$source" proton:backup --checksum
+
+  # Provider 2: Filen
+  rclone sync "$source" filen:backup --checksum
+
+  # Provider 3: Standard S3 with client-side encryption
+  rclone sync "$source" s3crypt:backup --checksum
+
+  # Verify all backups completed
+  echo "Backups completed: $(date)"
+}
+
+backup_to_clouds ~/important-data
+```
+
+This ensures no single provider failure means data loss.
+
+## Performance Tuning for Real-World Use
+
+Practical optimization for production environments.
+
+### NAS Caching Strategy
+
+For frequently accessed files, use tiered storage:
+
+```bash
+# TrueNAS ARC cache configuration (set in ZFS settings)
+# L2ARC (L2 Adaptive Replacement Cache) on SSD
+# Dramatically speeds up access to warm data
+
+zfs set secondarycache=all pool/data
+# Adds SSD-backed L2 cache to increase performance
+```
+
+### Bandwidth Optimization for Cloud Backups
+
+Prevent cloud backups from saturating your connection:
+
+```bash
+# Limit rclone to specific hours and bandwidth
+rclone sync ~/data cloud:backup \
+  --bwlimit "22:00,512K" \
+  --bwlimit "00:00,5M" \
+  --transfers 1 \
+  --checkers 1
+```
+
+This ensures backups run only at night with minimal bandwidth, so business hours aren't affected.
+
+### Deduplication Across Systems
+
+For efficient storage, implement deduplication:
+
+```bash
+# ZFS deduplication (CPU intensive but saves space)
+zfs set dedup=on pool/data
+
+# Monitor deduplication ratio
+zpool status pool/data | grep "dedup"
+
+# Alternative: Block-level deduplication with rclone
+rclone sync --compare-dest previous_backup ~/data cloud:backup
+# Only uploads changed blocks
+```
+
+## Disaster Recovery Testing
+
+Plan and test recovery procedures before you need them.
+
+### Recovery Time Objective (RTO) Testing
+
+For each backup strategy, verify actual recovery time:
+
+```bash
+# Test: Recover 100GB from each backup source
+time rclone copy proton:backup/test ~/test-restore
+
+# Measure: How long does recovery take?
+# Peak bandwidth: How much network is consumed?
+# Document: Issues encountered, manual steps required
+```
+
+Knowing recovery time prevents surprises during actual disasters.
+
+### Backup Integrity Verification
+
+Periodically verify backups are usable:
+
+```bash
+# Monthly verification script
+verify_backup() {
+  local backup_source=$1
+  local test_file="${backup_source}/verification_test_$(date +%s).txt"
+
+  # Create test file in backup
+  echo "Backup verification test" > "$test_file"
+
+  # Retrieve and compare
+  rclone cat "$test_file" | grep -q "verification test"
+
+  if [ $? -eq 0 ]; then
+    echo "Backup OK at $(date)"
+  else
+    echo "BACKUP FAILED - needs investigation"
+  fi
+}
+
+verify_backup cloud:backup
+```
+
+---
+
 
 ## Related Articles
 

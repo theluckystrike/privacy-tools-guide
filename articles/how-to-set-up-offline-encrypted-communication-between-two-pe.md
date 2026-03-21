@@ -185,6 +185,142 @@ func main() {
 }
 ```
 
+## Using Physical Media for Large Transfers
+
+For scenarios requiring offline transfer of large amounts of data, physical media requires special handling.
+
+### USB-based Transfer Protocol
+
+For large file exchanges between air-gapped systems:
+
+```bash
+# On source machine: Create encrypted USB with password
+gpg --symmetric --cipher-algo AES256 --output large_archive.gpg large_data.tar
+
+# Transfer USB physically
+# Verify USB integrity before trusting content
+sha256sum large_data.tar | tee checksum.txt
+gpg --decrypt --output - large_archive.gpg | sha256sum
+
+# Compare checksums—if they match, USB wasn't corrupted or tampered
+```
+
+### Hard Drive Wiping Before Reuse
+
+After using physical media for sensitive transfers, proper wiping prevents data recovery:
+
+```bash
+# NIST-approved multi-pass wipe
+shred -vfz -n 7 /path/to/file  # 7-pass overwrite
+
+# Or use dedicated tools for complete drive wipe
+sudo zerofree -v /dev/usb-device  # For flash drives
+```
+
+Flash drives require special attention because worn cells may not overwrite reliably. Consider destroying critical-use flash drives rather than reusing them.
+
+## Implementing Perfect Forward Secrecy
+
+Offline communication can implement PFS by rotating session keys:
+
+```bash
+# Generate a sequence of one-time keys
+for i in {1..100}; do
+  age-keygen -o key-$i.txt
+  cat key-$i.txt
+done
+
+# Each message uses the next key in sequence
+# Once used, delete the key—it cannot decrypt future messages
+```
+
+This means even if an attacker obtains your key file, they can only decrypt messages using that specific key, not all past or future messages.
+
+## Disaster Recovery in Air-Gapped Scenarios
+
+For long-term secure storage of encrypted data:
+
+```bash
+# Create redundant backups on different media types
+# Optical media (M-Disc): 50+ year lifespan
+# Store in multiple geographic locations
+# Test recovery procedures annually
+
+# Verify backup integrity
+tar tzf encrypted_backup.tar.gz > /dev/null && echo "Backup OK"
+```
+
+## When to Use Offline Encryption
+
+Offline encryption is appropriate for:
+- State-level threat environments where network monitoring is ubiquitous
+- High-value intellectual property or trade secrets
+- Activist scenarios where digital communication leaves forensic traces
+- Long-term secure archival where internet won't exist in 50 years
+
+For typical use cases, online encrypted communication (Signal, Briar) offers better usability with comparable security.
+
+## Forensic Considerations
+
+Offline communication with encrypted media creates forensic artifacts that must be managed carefully.
+
+### Secure Media Destruction
+
+After transferring encrypted data via physical media, destroy the media:
+
+```bash
+# Secure flash drive destruction
+# Option 1: Multiple overwrite passes
+shred -vfz -n 7 /dev/usb-device
+
+# Option 2: Physical destruction
+# Disassemble flash drive, remove NAND chip, physically destroy with drill press
+
+# Option 3: Thermal destruction
+# Incineration in controlled environment (professional service)
+```
+
+Simply deleting files leaves forensic traces. Physical destruction is most reliable.
+
+### Communication Log Management
+
+Maintain encrypted archives of important communications:
+
+```bash
+# Archive and encrypt old messages
+tar czf messages_archive_2024.tar.gz messages/
+gpg --symmetric --cipher-algo AES256 messages_archive_2024.tar.gz
+
+# Store archive in multiple locations
+# Keep physical backup in fireproof safe
+
+# Document location of backups securely
+# In case of death, executor can access if needed
+```
+
+### Legal Protection Through Documentation
+
+In jurisdictions with mandatory decryption laws, prepare:
+
+1. **Attorney guidance**: Consult attorney about your jurisdiction's rules
+2. **Key recovery procedures**: Document how to prove you cannot access data (e.g., key is destroyed)
+3. **Communication logs**: Keep records of what was communicated and when
+4. **Forensic artifacts**: Preserve evidence of encryption implementation
+
+This documentation protects you if questioned about encrypted communications.
+
+## When Offline Encryption is Overkill
+
+For most people and scenarios, simpler solutions work:
+
+- **Personal correspondence**: Use Signal or ProtonMail instead
+- **File backup**: Use encrypted cloud storage with zero-knowledge provider
+- **Collaborative work**: Use XMPP with E2EE or Matrix
+
+Reserve offline encryption for high-threat scenarios where network monitoring is ubiquitous and consequences of exposure are severe.
+
+---
+
 
 ## Related Articles
 

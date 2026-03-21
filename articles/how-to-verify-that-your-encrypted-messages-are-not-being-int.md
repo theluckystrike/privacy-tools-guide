@@ -140,6 +140,18 @@ def verify_message(secret_key, message):
 
 If an interceptor modifies even a single character in the encrypted message, the signature verification fails, alerting you to the tampering.
 
+## Understanding Perfect Forward Secrecy Limitations
+
+Forward secrecy protects past messages if a current session key is compromised, but it does not protect against interception attacks happening right now. If an attacker intercepts your key exchange today, they can decrypt today's messages even with forward secrecy enabled.
+
+Forward secrecy only helps if the attacker obtains your keys later. In that scenario, past messages remain secure because the session keys were ephemeral and are no longer available.
+
+To verify your app implements forward secrecy correctly, look for:
+- Fresh key generation for each message or conversation
+- Session keys that expire quickly
+- Visible indication in the app's security settings
+- Security documentation mentioning "perfect forward secrecy" or "Double Ratchet"
+
 ## Network-Level Verification
 
 For developers who want to verify that encrypted channels are actually encrypted at the network level, packet capture analysis provides concrete proof:
@@ -162,13 +174,19 @@ openssl s_client -connect mail.example.com:995 -showcerts
 
 # Verify certificate details match expected server
 # Look for: Certificate chain, Server certificate, Signature algorithm
+
+# Check SSL/TLS version and cipher strength
+openssl s_client -connect mail.example.com:995 -tls1_2
+
+# Verify certificate expiration and validity
+openssl x509 -in cert.pem -noout -dates
 ```
 
-This command reveals the certificate chain, allowing you to verify the certificate belongs to the expected entity and uses strong encryption protocols.
+This command reveals the certificate chain, allowing you to verify the certificate belongs to the expected entity and uses strong encryption protocols. For production communication systems, verify that the server uses TLS 1.2 or higher with strong cipher suites—avoid older protocols like SSLv3 or TLS 1.0.
 
 ## Forward Secrecy as a Defense Layer
 
-Forward secrecy ensures that compromise of long-term keys does not retroactively decrypt past conversations. Signal implements forward secrecy through the Double Ratchet algorithm, which generates new encryption keys for each message.
+Forward secrecy ensures that compromise of long-term keys does not retroactively decrypt past conversations. Signal implements forward secrecy through the Double Ratchet algorithm, which generates new encryption keys for each message. This is one of the strongest protections available in modern messaging protocols.
 
 To verify forward secrecy in your messaging app:
 - Check if the app advertises "Double Ratchet" or "Signal Protocol"
@@ -177,15 +195,80 @@ To verify forward secrecy in your messaging app:
 
 Even if an attacker obtains a session key, forward secrecy limits the damage to only that specific conversation window.
 
+### Testing Forward Secrecy in Signal
+
+To verify forward secrecy is working in Signal, perform this simple test. Have a conversation with a contact and document their safety number. Reinstall Signal or use a backup to restore conversations. Continue messaging with the same contact and verify the safety number changes—this indicates fresh key material was generated. Old messages should remain readable, proving that backward compatibility works while forward secrecy protects future messages. If the safety number remains the same after reinstall, something is wrong with your app's implementation.
+
+## Metadata Leakage and Privacy Beyond Encryption
+
+Encrypted messages might be secure, but metadata (who you're talking to, when, how often) can reveal nearly as much as the message content. A sophisticated adversary can build behavioral profiles from metadata alone.
+
+Consider these metadata vectors:
+- **Timing**: When you send messages reveals your sleep schedule, work hours, and location
+- **Message frequency**: Sudden communication spikes might indicate crisis or major project
+- **Contact patterns**: Who you message most reveals your closest relationships
+- **File transfers**: Even encrypted files leak size information
+
+Some privacy-focused apps attempt to minimize metadata leakage through techniques like cover traffic (sending fake messages to obscure patterns) or Tor integration (hiding your IP address). When choosing a messaging app, research its metadata handling practices, not just encryption strength.
+
+## Additional Verification Layers for High-Value Targets
+
+If you handle extremely sensitive information or face sophisticated adversaries, add verification layers beyond basic safety number checks.
+
+### Out-of-Band Key Fingerprint Verification
+
+Exchange key fingerprints through completely separate channels:
+
+```bash
+# Export your complete key fingerprint
+gpg --fingerprint your-key-id | grep "Key fingerprint"
+
+# Share through:
+# - Printed document in person
+# - Phone call (both parties read aloud and confirm)
+# - In-person meeting where fingerprints are read and verified
+# - Video call with ID verification
+```
+
+This prevents MITM attacks on the verification channel itself.
+
+### Third-Party Verification Services
+
+Some threat-modeling scenarios benefit from third-party intermediaries:
+
+```bash
+# Keybase allows public, auditable key verification
+# Your contact publishes their key with Twitter/GitHub proof
+# You verify their public social identity before trusting their encryption key
+
+# This creates a chain: GitHub account → public Keybase profile → encryption key
+# Attacking this chain requires compromising either their GitHub account
+# and your ability to verify they own it through previous interactions
+```
+
+## Escalation Procedures for Compromised Keys
+
+If you suspect your encryption keys have been compromised, have a plan to recover:
+
+1. Immediately notify all contacts that keys may be compromised
+2. Generate new key pairs in a secure environment
+3. Use a different channel to share your new public key and fingerprint
+4. Request that contacts verify your new key through out-of-band methods
+5. Review old conversations for data that may have been exposed
+6. Assess if you need to re-encrypt previously shared data with new keys
+
+For messaging apps like Signal, the app handles key changes automatically. Contacts are notified and can verify the new key has the same safety number.
+
 ## Establishing a Verification Routine
 
 For power users handling sensitive information, make verification a standard practice:
 
-1. **Initial contact verification**: Always verify safety numbers or key fingerprints when starting a new encrypted communication channel
-2. **Periodic re-verification**: Re-verify after device reinstallation, switching to a new phone, or after extended periods without communication
-3. **Out-of-band confirmation**: Use a different communication channel for verification—call someone, meet in person, or use a previously verified method
-4. **Automated alerts**: Some apps notify you when contacts' keys change. Treat these notifications seriously and re-verify
-
+1. **Initial contact verification**: Always verify safety numbers or key fingerprints when starting a new encrypted communication channel. This should happen before any sensitive discussion.
+2. **Periodic re-verification**: Re-verify after device reinstallation, switching to a new phone, or after extended periods without communication.
+3. **Out-of-band confirmation**: Use a different communication channel for verification—call someone, meet in person, or use a previously verified method. Never verify using the same channel you're trying to secure.
+4. **Automated alerts**: Some apps notify you when contacts' keys change. Treat these notifications seriously and re-verify immediately.
+5. **Monitor for inconsistencies**: If a contact's verification number suddenly changes without explanation, investigate before continuing sensitive conversations.
+6. **Audit your contact list**: Periodically review who you have verified. Remove or re-verify contacts you haven't communicated with in months.
 
 ## Related Articles
 

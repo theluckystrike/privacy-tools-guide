@@ -183,6 +183,149 @@ The best defense is proactive security:
 
 Smart home security requires ongoing attention. Establishing regular audit routines—monthly network scans, weekly log reviews—keeps your ecosystem manageable and secure.
 
+## Advanced Detection Techniques
+
+For security professionals and advanced users, additional techniques reveal subtle compromise indicators that standard monitoring might miss.
+
+### DNS Tunneling Detection
+
+Compromised devices sometimes exfiltrate data through DNS queries, encoding stolen information in subdomain requests. Monitor DNS traffic for unusually long domain names or high query volumes to unusual domains:
+
+```bash
+# Use dnstop to identify unusual DNS traffic patterns
+sudo dnstop -l 5 eth0
+
+# Or parse dns logs for suspicious patterns
+grep -E '(\.\.)+' /var/log/dnsmasq.log | wc -l
+```
+
+### Traffic Pattern Analysis with Zeek
+
+Zeek (formerly Bro) provides sophisticated network analysis beyond basic packet capture:
+
+```bash
+# Install Zeek
+sudo apt install zeek zeek-core
+
+# Run on captured traffic
+zeek -r /tmp/capture.pcap
+
+# Analyze connection summaries
+cat conn.log | zeek-cut id.orig_h id.resp_h id.resp_p proto
+```
+
+This reveals unencrypted protocols, unexpected port usage, and anomalous communication patterns.
+
+### Analyzing Device Permissions and Capabilities
+
+Many IoT compromises escalate through privilege escalation. Check what capabilities each process has:
+
+```bash
+# Via SSH on the device (if accessible)
+ssh admin@device-ip "cat /proc/1/status | grep Cap"
+```
+
+Unexpected capabilities like `SYS_ADMIN` or `NET_ADMIN` indicate potential privilege escalation tools.
+
+### Memory Analysis for Rootkits
+
+For devices with SSH access, memory analysis can detect rootkits that hide from filesystem analysis:
+
+```bash
+# Check for kernel modules that might be suspicious
+ssh admin@device-ip "lsmod | sort"
+
+# Compare against baseline list of expected modules
+ssh admin@device-ip "grep -E '(nf_|xt_|ipt_)' /proc/modules"
+```
+
+Unusual kernel modules from unknown vendors warrant further investigation.
+
+## Incident Response Timeline
+
+If you discover compromise, document your response:
+
+**Hour 0**: Isolate the device immediately. Disconnect power and network simultaneously to preserve volatile memory.
+
+**Hour 1**: Preserve evidence. Photograph the device status lights, preserve network traffic captures if available, and document timestamps in logs.
+
+**Hour 2-4**: Full device reset. Reinstall firmware from official sources, update all packages, and reconfigure with strong credentials.
+
+**Day 2**: Assess lateral movement. Check other devices on your network for signs of compromise. Review recent changes to firewall rules or other devices' configurations.
+
+**Week 1**: Review access logs for all networked services. Check for unauthorized access attempts or successful logins during the compromise window.
+
+**Ongoing**: Continue monitoring. Implement the monitoring procedures from this guide as permanent fixtures in your network operations.
+
+## Implementing Continuous Monitoring
+
+One-time analysis isn't sufficient. Establish ongoing monitoring procedures.
+
+### Prometheus + Grafana for IoT Monitoring
+
+Deploy metrics collection for long-term trending:
+
+```bash
+# Install Prometheus and Grafana
+docker-compose up -d prometheus grafana
+
+# Configure Prometheus to scrape device metrics
+# prometheus.yml: add job for IoT VLAN SNMP collection
+```
+
+This creates visual dashboards showing network behavior over time, making anomalies obvious.
+
+### Automated Alert Thresholds
+
+Set up alerts for suspicious patterns:
+
+```bash
+# Example Prometheus alert rules
+# alerts.yml
+- name: IoT Anomalies
+  rules:
+  - alert: UnusualDataTransfer
+    expr: rate(bytes_transmitted[5m]) > 10MB
+    for: 5m
+    annotations:
+      summary: "Device {{ $labels.device }} transferring {{ $value }} MB/s"
+
+  - alert: UnusualPortUsage
+    expr: count(tcp_ports) > 20
+    annotations:
+      summary: "Device {{ $labels.device }} using {{ $value }} unusual ports"
+```
+
+These trigger when devices behave outside expected parameters.
+
+### Regular Security Assessments
+
+Schedule periodic security audits:
+
+```bash
+#!/bin/bash
+# Weekly IoT security audit
+weekly_iot_audit() {
+  echo "$(date): Starting IoT network audit"
+
+  # Scan all devices
+  nmap -sV -p- 192.168.20.0/24 > iot_scan_$(date +%Y%m%d).txt
+
+  # Compare against baseline
+  diff iot_scan_$(date -d yesterday +%Y%m%d).txt iot_scan_$(date +%Y%m%d).txt
+
+  # Check for new services
+  if [ $? -ne 0 ]; then
+    echo "ALERT: Device service changes detected"
+  fi
+}
+
+# Schedule weekly
+0 2 * * 0 /usr/local/bin/weekly_iot_audit
+```
+
+Regular audits catch drift before it becomes a security problem.
+
 ---
 
 
