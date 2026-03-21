@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-detect-stalkerware-on-android-phone-2026/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, android, security]
