@@ -1,14 +1,14 @@
 ---
 layout: default
-title: How to Use WireGuard for Self-Hosted VPN in 2026
+title: "How to Use WireGuard for Self-Hosted VPN in 2026"
 description: Complete guide to setting up WireGuard VPN on a Linux VPS with modern security practices, configuration, and client setup.
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 categories: [security, guides]
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /articles/how-to-use-wireguard-for-self-hosted-vpn-2026/

@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-verify-a-vpn-is-actually-encrypting-your-traffic/
 categories: [guides]
-tags: [privacy-tools-guide, tools]
+tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
