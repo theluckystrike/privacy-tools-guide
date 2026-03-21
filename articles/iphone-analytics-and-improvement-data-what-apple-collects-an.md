@@ -9,7 +9,7 @@ permalink: /iphone-analytics-and-improvement-data-what-apple-collects-an/
 categories: [guides]
 tags: [privacy-tools-guide, ios-privacy, analytics, data-collection, iphone-settings]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
