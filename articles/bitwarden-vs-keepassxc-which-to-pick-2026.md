@@ -28,6 +28,22 @@ Choosing between Bitwarden and KeePassXC comes down to a fundamental decision: d
 
 For threat models: if you're concerned about server-side breaches or mass surveillance, KeePassXC's offline-first design has a smaller attack surface. If you want cross-device sync without manually managing vault files, Bitwarden's architecture is more convenient.
 
+## Feature Comparison at a Glance
+
+| Feature | Bitwarden | KeePassXC |
+|---|---|---|
+| Encryption | AES-256, PBKDF2 600k iters | AES-256/ChaCha20, Argon2id |
+| Cloud sync | Yes (zero-knowledge) | No (self-managed) |
+| Self-hosting | Yes (Docker) | N/A (local only) |
+| CLI | Official CLI (npm) | keepassxc-cli |
+| Browser extension | Yes (all major browsers) | Yes (KeePassXC-Browser) |
+| SSH agent | Limited | Yes (KeeAgent) |
+| TOTP/2FA storage | Yes (premium) | Yes (built-in) |
+| Emergency access | Yes (premium) | Manual (share database) |
+| Audit reports | Yes (premium) | Yes (built-in Health Check) |
+| Price | Free / $10/yr premium | Free and open source |
+| License | GPL-3.0 (clients), proprietary server | GPL-3.0 |
+
 ## Command-Line Interface
 
 Both tools offer CLI access, but with different philosophies.
@@ -101,6 +117,8 @@ nano .env_override
 
 Self-hosting gives you full control over your data while maintaining Bitwarden's sync features. You'll need to handle SSL certificates, backups, and updates yourself. The self-hosted version includes all premium features at no additional cost.
 
+Alternatively, **Vaultwarden** is a community-built Bitwarden-compatible server written in Rust that uses dramatically fewer resources — a single container with 512MB RAM versus the official stack's multiple services and several gigabytes. Vaultwarden is ideal for personal or small-team deployments on low-power hardware like a Raspberry Pi.
+
 ### KeePassXC Local-Only
 
 KeePassXC has no server component by design. Your vault lives wherever you put it. This means:
@@ -110,6 +128,8 @@ KeePassXC has no server component by design. Your vault lives wherever you put i
 - You handle backup and sync manually
 
 For teams wanting KeePassXC with shared vaults, you can use a network share or a sync tool like Syncthing. KeePassXC supports database locking after inactivity and can integrate with `keeagent` for SSH keys.
+
+A practical KeePassXC team setup uses Syncthing to replicate the `.kdbx` file across trusted machines while keeping a read-only copy on a backup NAS. Each team member opens the database with their own key file plus a shared passphrase stored separately, providing two-factor protection for the vault itself.
 
 ## Integration with Development Workflows
 
@@ -152,6 +172,29 @@ export SSH_AUTH_SOCK=/path/to/KeeAgent.socket
 ssh-add -l
 ```
 
+## Security Audit and Transparency
+
+Both projects have undergone independent security audits, though with different scopes.
+
+Bitwarden published results from a 2018 audit by Cure53 and a more recent 2022 audit covering the server infrastructure, browser extensions, and mobile clients. Being a commercial company, Bitwarden's server code was closed-source for years — they eventually open-sourced it, but community scrutiny of server components remains lower than for a purely local tool.
+
+KeePassXC, as a purely local application with no server component, represents a smaller attack surface by definition. The entire codebase is GPL-licensed and auditable. Security researchers have contributed patches and identified vulnerabilities through the normal open-source process. The Argon2id KDF setting is configurable, allowing you to tune memory hardness and parallelism to match your hardware and threat model.
+
+For organizations subject to compliance requirements such as SOC 2, ISO 27001, or FedRAMP, Bitwarden Cloud holds relevant certifications. Self-hosted Bitwarden or KeePassXC would require you to implement those controls independently.
+
+## Mobile and Cross-Platform Support
+
+| Platform | Bitwarden | KeePassXC / KeePass ecosystem |
+|---|---|---|
+| Linux | Yes (AppImage, Snap, Flatpak) | Yes (native) |
+| macOS | Yes | Yes |
+| Windows | Yes | Yes |
+| Android | Yes (official app) | KeePassDX, Keepass2Android |
+| iOS | Yes (official app) | Strongbox, KeePassium |
+| Browser | All major browsers | KeePassXC-Browser (desktop-linked) |
+
+Bitwarden's mobile experience is seamless — install the app, log in, and autofill works everywhere. KeePassXC itself is desktop-only; mobile access requires a companion app that reads the same `.kdbx` format. Strongbox on iOS and KeePassDX on Android are the most polished options, but you still need to get the vault file to your phone via cloud storage or direct transfer.
+
 ## When to Choose Bitwarden
 
 Choose Bitwarden if:
@@ -176,6 +219,11 @@ Choose KeePassXC if:
 
 KeePassXC serves developers who prioritize transparency and local control. The ability to keep your entire password database on encrypted storage with no cloud dependency appeals to those with strict security requirements.
 
+## Migration Between Tools
+
+Switching from Bitwarden to KeePassXC is straightforward: export a CSV from the Bitwarden web vault and import it into a new KeePassXC database. Review the exported file immediately and delete it after import — it contains all your passwords in plain text. Going the other direction, KeePassXC can export CSV or XML that Bitwarden accepts.
+
+Before migrating, generate SHA-256 checksums of your exported files and record them alongside the migration date. This documents the integrity of the transfer should questions arise later.
 
 ## Related Articles
 
