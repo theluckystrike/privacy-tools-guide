@@ -10,7 +10,7 @@ keywords: "wireguard postup postdown scripts for advanced routing configuration 
 author: "Privacy Tools Guide"
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-configuration/
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 
