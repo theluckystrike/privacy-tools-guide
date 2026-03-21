@@ -14,8 +14,6 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
 Activists in authoritarian countries must assume ISP-level traffic monitoring, sophisticated social media analysis, mobile device compromise capabilities, and sophisticated surveillance tools like Pegasus. Protect yourself by using Tails Linux for sensitive work, communicating through Tor, using Signal with disappearing messages, maintaining separate devices for organizing work, storing sensitive documents encrypted locally, and understanding that your location data is constantly harvested by governments. This guide provides a structured threat modeling approach for activists, covering asset identification, adversary capabilities analysis, and practical mitigation strategies using free and open-source tools adapted to real-world constraints in authoritarian environments.
 
 ## Step 1: Identify What You Need to Protect
@@ -275,5 +273,3 @@ Threat modeling is not about achieving perfect security (impossible) but about m
 - [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
