@@ -203,6 +203,146 @@ cryptsetup isLuks /dev/sdb && echo "Encrypted" || echo "NOT encrypted"
 ```
 
 Full-disk encryption protects you from physical theft but not from a running system with an active session. Enable auto-lock after 5 minutes of inactivity.
+## Planning Your Identity Governance Deployment
+
+Before selecting a platform, establish clear success criteria. Identity governance deployments succeed or fail based on adoption and proper configuration, not just technology selection.
+
+**Define Governance Policies First**: Document:
+- How often each type of access must be reviewed (quarterly for sensitive, annually for standard)
+- Who reviews what (managers review their teams, centralized team reviews cross-functional)
+- What happens to access if review is not completed (automatic revocation after 30 days is common)
+- Emergency procedures for urgent access needs
+
+**Assess Current State**: Understanding your starting point prevents unrealistic expectations:
+- How many applications require governance (typically 50-500 in enterprises)
+- Current access review process (manual, partially automated, spreadsheets)
+- Compliance requirements (SOX, HIPAA, GDPR, SOC 2, PCI-DSS)
+- Budget constraints and ROI expectations
+
+**Build Internal Champions**: Identify advocates within each department who will champion the new system. These champions become trainers and resolve adoption resistance.
+
+**Plan for Integration**: Most enterprises use multiple password managers, identity providers, and applications. Ensure your governance platform integrates with:
+- Your primary identity provider (Okta, Azure AD, Ping, OneLogin)
+- Password managers used by teams
+- Applications without standard APIs (legacy systems)
+- Your SIEM for audit logging
+
+## Leading Platform Comparisons
+
+### Okta Identity Governance
+
+Okta offers comprehensive access management with strong integration capabilities. Key features include:
+
+- **Automated Access Review Campaigns**: Configurable review schedules with intelligent pre-population
+- **SoD Detection**: Built-in detection of conflicting access patterns
+- **SCIM Integration**: Seamless synchronization with HR systems
+- **Pricing**: Starting at approximately $8-12 per user monthly for governance features
+- **Strengths**: Market-leading integration ecosystem, strong API documentation
+- **Limitations**: Steeper learning curve, higher implementation costs
+
+### Sailpoint IdentityIQ
+
+Sailpoint specializes in comprehensive identity governance across complex enterprise environments. Capabilities include:
+
+- **Certifications & Reviews**: Sophisticated workflow engine with role-based delegation
+- **Identity Intelligence**: Machine learning detection of anomalous access patterns
+- **Connector Architecture**: 500+ pre-built connectors for legacy and modern systems
+- **Pricing**: Custom pricing starting around $50k+ annually for mid-market
+- **Strengths**: Unmatched legacy system support, identity analytics
+- **Limitations**: Significant implementation overhead, highest cost tier
+
+### Azure AD Identity Governance
+
+Microsoft's native governance solution for organizations already invested in Microsoft ecosystems:
+
+- **Access Packages**: Simplified self-service access request workflows
+- **Entitlement Management**: Time-limited access provisioning
+- **Privileged Identity Management**: Just-in-time admin activation
+- **Pricing**: Included with Azure AD Premium P2 at ~$9/user/month
+- **Strengths**: Seamless Microsoft integration, lower per-user cost
+- **Limitations**: Limited third-party system connectors, narrower scope
+
+## Threat Model Considerations for Access Reviews
+
+Not all access governance addresses the same risk profiles. Consider your organization's primary threat:
+
+**Insider Threat Focus**: Prioritize platforms with anomaly detection and behavior analytics. Sailpoint and Okta's advanced analytics identify unusual access patterns that might indicate compromise or malicious intent.
+
+**Compliance/Audit Focus**: Select platforms with detailed reporting and audit trails. Azure AD and Okta provide superior compliance documentation for SOX, HIPAA, and SOC 2.
+
+**Legacy Integration Focus**: If your environment includes mainframes, proprietary systems, or custom applications, Sailpoint's connector architecture becomes essential. Generic identity governance won't work with systems lacking standard protocols.
+
+**Cost-Conscious Organizations**: Azure AD Identity Governance provides excellent value for Microsoft-centric environments. Organizations using diverse tooling should evaluate total cost of ownership across all integrations.
+
+## Measuring Success and ROI
+
+Identity governance deployments require clear metrics to demonstrate value. Common measurements include:
+
+**Operational Metrics**:
+- Review completion rate (target: 95%+)
+- Time to complete reviews (target: 2-3 weeks)
+- Access removal rate (percentage of access revoked during reviews)
+- Mean time to provision new access (target: <1 day)
+
+**Security Metrics**:
+- SoD violations identified (should increase as detection improves)
+- Orphaned accounts removed (dormant accounts with no user)
+- Unauthorized access attempts detected
+- Compliance audit findings related to access (should decrease over time)
+
+**Business Metrics**:
+- Cost per access review (typically $5-15 per review completed)
+- ROI from prevented breaches
+- Audit findings remediated
+- Compliance certifications achieved or maintained
+
+ROI typically appears 12-18 months post-implementation as:
+- Compliance audit findings decrease (avoiding fines)
+- Fewer breaches from excessive permissions
+- Reduced security incident response time
+- Lower license costs from deprovisioning unused access
+
+Most enterprises see $2-5 return for every dollar spent on identity governance within 24 months, primarily from reduced compliance violations and breach prevention.
+
+## Implementation Strategies
+
+Successful deployments follow a phased approach rather than big-bang implementation:
+
+**Phase 1: Inventory and Mapping**
+- Document all applications and data sources (typically 3-6 months)
+- Map access permissions to business roles
+- Identify orphaned accounts and unused systems
+- Create baseline reports showing current state
+
+**Phase 2: Pilot Rollout**
+- Select a single department or business unit
+- Implement access certification for a limited scope
+- Refine processes based on feedback
+- Measure completion rates and user adoption (2-3 months)
+
+**Phase 3: Expansion**
+- Roll out to additional departments
+- Extend governance to more complex systems
+- Implement advanced features like SoD detection
+- Begin measuring business outcomes (6-12 months)
+
+**Phase 4: Optimization**
+- Refine policies based on collected data
+- Automate remediation where possible
+- Build predictive analytics
+- Continuous improvement (ongoing)
+
+## Technical Debt from Poor Access Governance
+
+Organizations without access reviews accumulate significant technical debt:
+
+- Dormant accounts consuming licenses and resources
+- Separated employees retaining system access
+- Excessive privilege from role consolidation
+- Compliance violation risks and audit findings
+- Insider threat exposure from unnecessary permissions
+
+The cost of addressing this debt years later far exceeds implementing proper governance upfront.
 
 ## Related Reading
 

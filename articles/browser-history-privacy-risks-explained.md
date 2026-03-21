@@ -160,6 +160,132 @@ function clearAllHistory() {
 }
 ```
 
+## Threat Modeling Browser History Exposure
+
+Different users face different risks from history exposure:
+
+**Personal Device, Living Alone**: Lower risk since only you access the device. Main threats: theft, forensic examination by law enforcement, malicious extensions.
+
+**Shared Personal Device**: Higher risk if family members, roommates, or guests use the device. Your history becomes visible during their sessions. Kids' devices require parental controls and monitoring.
+
+**Work Device**: Employer may legally access history on devices they provision. Distinguish between work and personal browsing to avoid misunderstandings.
+
+**Public Computer**: Extreme risk. Anyone using the computer after you can access your history. Always use private mode and manually clear history after session.
+
+**Confiscated Device**: If law enforcement seizes your device, detailed browsing history becomes evidence. This is one of the strongest arguments for regular history deletion.
+
+## History Privacy and Legal Risk
+
+Browser history can create legal problems in certain contexts:
+
+**Criminal Investigations**: Detailed history showing interest in certain topics (illegal drugs, weapons, hacking techniques) can be used in prosecution. Even search queries without purchases create circumstantial evidence.
+
+**Civil Litigation**: In lawsuits, lawyers request device history to prove knowledge or intent. Your browser history could undermine your defense.
+
+**Employment**: An employer subpoenaing your device during an employment dispute gains access to personal history.
+
+**Insurance Claims**: Insurers may request device history in fraud investigations. Searches related to your claim can be used against you.
+
+Mitigation: Regular history deletion reduces what prosecutors/litigators can obtain. Encrypted devices with full-disk encryption are harder to examine. Using privacy modes leaves no searchable history.
+
+## History Privacy Implementation Differences
+
+### Chrome History Storage
+
+Chrome stores history in SQLite database with detailed metadata:
+
+```
+Database fields:
+- url: Full URL including query parameters
+- visit_time: Microseconds since Windows epoch
+- visit_duration: How long you viewed the page
+- transition_type: How you arrived (typed, link, redirect, bookmark)
+- favicon_url: Associated site icon
+- title: Page title at visit time
+```
+
+Sync copies this data to Google servers. Even if you delete local history, synced history may remain on Google's servers for 90 days.
+
+### Firefox History Storage
+
+Firefox stores history in `places.sqlite` with different metadata:
+
+```
+Database fields:
+- url: Full URL
+- visit_date: Microsecond timestamp
+- visit_type: Similar to Chrome's transition_type
+- hidden: Whether visit is hidden (for revisiting)
+- typed: Whether user typed the URL
+```
+
+Firefox's sync uses client-side encryption with keys derived from your password. Mozilla cannot read synced history, but metadata patterns are still transmitted.
+
+## Technical Methods for History Verification
+
+To verify your privacy configurations are working:
+
+**SQLite Inspection**: Close browsers and directly query history databases:
+
+```bash
+# Firefox history inspection (macOS)
+sqlite3 ~/Library/Application\ Support/Firefox/Profiles/*.default/places.sqlite \
+  "SELECT url, visit_date FROM moz_places ORDER BY visit_date DESC LIMIT 5;"
+
+# Chrome history inspection
+sqlite3 ~/Library/Application\ Support/Google/Chrome/Default/History \
+  "SELECT url, visit_count FROM urls WHERE url LIKE '%sensitive%';"
+```
+
+**Network Monitoring**: Monitor what data is sent over the network when syncing:
+
+```bash
+# Monitor Chrome sync traffic with Wireshark
+# or use mitmproxy to inspect encrypted HTTPS traffic (requires proxy setup)
+
+# Command-line: Monitor DNS and HTTP with tcpdump
+sudo tcpdump -i en0 'tcp port 443' -w history-sync.pcap
+```
+
+**File System Monitoring**: Check that history files are actually being deleted:
+
+```bash
+# macOS: Monitor file deletions with fs_usage
+sudo fs_usage -w | grep -i history
+
+# Linux: Monitor with inotify-tools
+inotifywait -r -e delete ~/location/to/chrome/history/database
+```
+
+## Practical Privacy Workflow for Sensitive Research
+
+If conducting research you want to keep private:
+
+1. **Enable Private Mode**: All browsing in incognito/private mode
+2. **Use VPN**: Route through VPN to mask IP from server logs
+3. **Disable Extensions**: Many extensions record history locally
+4. **Disable Autofill**: Prevent form suggestions from revealing patterns
+5. **Clear Cache**: After session, clear cookies, cache, and stored data
+6. **Use Temporary Profile**: Create a browser profile for sensitive work, delete afterward
+
+```bash
+# Create Firefox profile for temporary research
+firefox -new-instance -profile ~/.mozilla/firefox/temp-profile
+
+# After research, delete profile directory and history
+rm -rf ~/.mozilla/firefox/temp-profile
+```
+
+## Browser History and Machine Learning
+
+Modern browsers use browsing history to train recommendation algorithms. Chrome uses history to:
+- Predict sites you'll visit next
+- Suggest queries based on history
+- Optimize performance for frequently visited sites
+- Personalize search results
+
+Clearing history disables these features but improves privacy. If you want recommendations without history storage, use incognito mode exclusively, accepting that recommendations become unavailable.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

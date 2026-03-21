@@ -155,6 +155,153 @@ Firefox's Gecko engine uses less memory per tab in many scenarios due to differe
 
 Chromium's advantage lies in its ubiquity—testing in Chrome ensures compatibility with the browser most users employ. For developers building privacy-conscious applications, testing in both engines reveals different behaviors in cookie handling, storage APIs, and fingerprinting exposure.
 
+## Practical Privacy Configuration Comparison
+
+### Firefox Hardening Configuration
+
+For users prioritizing privacy, Firefox's about:config provides granular control. Here's a privacy-focused configuration:
+
+```javascript
+// Tracking protection
+privacy.trackingprotection.enabled = true
+privacy.trackingprotection.strict_list.enabled = true
+
+// Enhanced cookie protection
+privacy.partition.always_partition_third_party_non_cookie_storage = true
+
+// DNS-over-HTTPS
+network.trr.mode = 2
+network.trr.uri = "https://cloudflare-dns.com/dns-query"
+
+// Fingerprinting resistance
+privacy.resistFingerprinting = true
+privacy.resistFingerprinting.letterboxing = true
+
+// Disable WebGL
+webgl.disabled = true
+
+// Disable Canvas fingerprinting
+html5.canvas.throttle-time = 10000
+
+// First-party isolation
+privacy.firstparty.isolate = true
+
+// Disable geolocation
+geo.enabled = false
+
+// Disable push notifications
+dom.push.enabled = false
+
+// Disable sensor APIs
+sensor.enabled = false
+
+// Disable Bluetooth API
+dom.bluetooth.enabled = false
+```
+
+### Chromium Hardening Configuration
+
+Chromium provides fewer granular settings but includes powerful privacy features:
+
+```bash
+# Launch Chrome with privacy-focused flags
+google-chrome \
+  --disable-background-networking \
+  --disable-breakpad \
+  --disable-client-side-phishing-detection \
+  --disable-component-extensions-with-background-pages \
+  --disable-default-apps \
+  --disable-device-discovery-notifications \
+  --disable-extensions \
+  --disable-extensions-file-access-check \
+  --disable-extensions-http-throttling \
+  --disable-default-extension-apps \
+  --disable-sync \
+  --disable-cloud-import \
+  --no-default-browser-check \
+  --no-pings \
+  --disable-web-resources \
+  --safebrowsing-disable-auto-update \
+  --disable-variations \
+  --disable-plugins \
+  --disable-plugins-power-saver \
+  --enable-features=SitePerProcess \
+  --enable-features=PartitionedCookies \
+  --enable-features=ThirdPartyCookieBlocking
+```
+
+## Security Comparison: Exploit Mitigations
+
+Both browsers implement sophisticated exploit mitigations, but with different approaches:
+
+**Firefox's Approach**: Uses fine-grained compartmentalization and content security policies. The Fission project (similar to Chrome's Site Isolation) provides process-level isolation.
+
+**Chrome's Approach**: Aggressive sandboxing with multiple layers. Each renderer process is sandboxed separately, with a broker process mediating all system calls.
+
+For users concerned about zero-day exploits, Firefox's lower market share provides some security-through-obscurity advantages. Exploit developers typically target the most popular target (Chrome), meaning Firefox has fewer publicly disclosed vulnerabilities at any given time.
+
+## Memory and Resource Comparison
+
+Browser resource usage varies significantly based on extension load and open tabs. Real-world measurements:
+
+**Firefox**:
+- Base memory per tab: ~40-60 MB
+- With 10 privacy extensions: +120-150 MB
+- Performance: Lower CPU overhead with extensions
+
+**Chromium (Chrome)**:
+- Base memory per tab: ~50-75 MB
+- With 10 privacy extensions: +200-300 MB (due to extension process overhead)
+- Performance: Faster JavaScript execution but higher memory baseline
+
+For privacy-conscious users running many extensions (uBlock Origin, Privacy Badger, Bitwarden, etc.), Firefox's resource efficiency becomes significant on older hardware.
+
+## Privacy-Respecting Alternatives
+
+Beyond Firefox and Chromium, several privacy-focused browsers deserve mention:
+
+**Tor Browser**: Based on Firefox with additional privacy features including:
+- Onion routing for anonymity
+- Viewport size spoofing against fingerprinting
+- Automatic HTTPS upgrade
+- Permanent private browsing
+- Starts isolated profiles for each session
+
+**Brave**: Chromium-based with built-in privacy features:
+- Aggressive ad/tracker blocking
+- First-party isolation by default
+- Integrated VPN (paid)
+- Fingerprinting resistance
+- HTTPS upgrade
+
+**LibreWolf**: Hardened Firefox with privacy defaults:
+- Pre-configured about:config for privacy
+- Disabled telemetry and data collection
+- Enhanced fingerprinting resistance
+- Community-maintained builds
+
+For maximum privacy, Tor Browser provides the strongest protection but at the cost of performance and compatibility. For daily use with good privacy, LibreWolf (based on Firefox) or Brave (based on Chromium) offer better balances.
+
+## Testing Your Browser's Privacy Settings
+
+Verify that your privacy configuration actually works:
+
+```bash
+# Firefox: Test if fingerprinting protection is working
+# Visit: https://coveryourtracks.eff.org/
+# Should show randomized fingerprint values
+
+# Test DNS leaks
+# Visit: https://www.dnsleaktest.com/
+
+# Test WebRTC leaks
+# Visit: https://ipleak.net/
+# Should show VPN or proxy IP, not real IP
+
+# Test canvas fingerprinting resistance
+# Firefox with resistFingerprinting: https://browserleaks.com/canvas
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
