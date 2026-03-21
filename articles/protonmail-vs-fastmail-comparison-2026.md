@@ -61,6 +61,14 @@ Key encryption details:
 - **Key management**: Server-side key management
 - **Search**: Full-text search works because they hold the keys
 
+## What Zero-Knowledge Encryption Actually Means in Practice
+
+The ProtonMail zero-knowledge model has concrete operational implications that many users underestimate. When you reset your ProtonMail password without a recovery method, your old emails are permanently unreadable — not inaccessible, but cryptographically destroyed. The encryption keys that protected your inbox were derived from your password via Argon2 (a memory-hard KDF), and without the old password, those keys cannot be reconstructed. This is the correct behavior for a zero-knowledge system, but it surprises users who expect a standard "forgot password" experience.
+
+Practically, this also means subject lines and metadata of messages exchanged between ProtonMail users are encrypted, but messages sent to or from non-ProtonMail addresses travel over standard SMTP and arrive unencrypted on ProtonMail's servers unless you use their encrypted-to-outside feature, which sends a link to a zero-knowledge-encrypted message portal instead of inline content.
+
+FastMail's approach is transparent about its tradeoffs: FastMail employees with appropriate access can technically read your email, and FastMail must comply with lawful Australian government requests (FastMail is incorporated in Australia). For users in Australia's Five Eyes jurisdiction, this is a meaningful legal consideration.
+
 ## Email Protocol Access
 
 ### ProtonMail
@@ -127,6 +135,18 @@ const response = await fetch('https://api.fastmail.com/jmap/api/', {
 });
 ```
 
+## JMAP vs IMAP: Why It Matters for Developers
+
+JMAP (RFC 8620) is a modern replacement for IMAP that solves fundamental protocol inefficiencies. IMAP was designed for sequential, stateful connections — every sync operation requires multiple round trips, and clients must download message UIDs and then fetch individual messages. With JMAP, a single HTTP request can retrieve a list of changed messages, their content, and update mailbox state atomically.
+
+For developers building email clients or integrations on FastMail, JMAP provides push notifications via server-sent events, batch operations in a single request, and a REST-friendly JSON structure that integrates naturally with modern web stacks. ProtonMail has no equivalent — external developers must use Bridge's local IMAP interface or ProtonMail's limited first-party API.
+
+## Security Headers and Deliverability
+
+Both services support full DMARC/DKIM/SPF configuration on custom domains, but the configuration experience differs. FastMail provides a guided DNS setup wizard that validates records in real time and flags conflicts. ProtonMail's custom domain setup requires manual DNS configuration with less active validation.
+
+For deliverability, FastMail has operated email infrastructure since 1999 and maintains high IP reputation scores. ProtonMail's IP reputation has historically been more variable — a consequence of being newer and sharing infrastructure with free-tier users who generate more spam complaints. Users sending high volumes of transactional email from custom domains on ProtonMail sometimes encounter deliverability issues that FastMail does not.
+
 ## Developer Experience
 
 ### ProtonMail
@@ -156,6 +176,14 @@ FastMail provides detailed documentation for their JMAP API, making it viable fo
 | Pro plan | ~€10/month | $9/month |
 | Storage | 5GB-20GB | 30GB-100GB |
 | Custom domain | Paid plans | All plans |
+| Bridge/IMAP | Paid plans only | All plans |
+| JMAP API | Not available externally | Available |
+
+## Jurisdiction and Legal Exposure
+
+ProtonMail operates under Swiss law, which provides some of the strongest privacy protections in the world. Switzerland is not a member of the EU, the Five Eyes, Nine Eyes, or Fourteen Eyes intelligence alliances. Swiss law prohibits warrantless mass surveillance and requires court orders from a Swiss judge for data disclosure to foreign governments. In practice, ProtonMail has disclosed user IP addresses and account creation timestamps under Swiss court orders, but cannot disclose email content because they genuinely do not hold the decryption keys.
+
+FastMail is incorporated in Australia, a Five Eyes member. Australia's Assistance and Access Act (2018) can compel companies to assist with law enforcement access to encrypted communications. FastMail can technically comply with such orders because they hold decryption keys. For users whose threat model includes state-level adversaries, this distinction is significant.
 
 ## What Each Service Does Better
 
