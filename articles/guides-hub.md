@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 permalink: /guides-hub/
 categories: [guides]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
