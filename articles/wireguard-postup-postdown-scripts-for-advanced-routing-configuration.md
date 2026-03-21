@@ -648,6 +648,40 @@ Finally, always clean up resources in your postdown scripts. Network interfaces,
 ---
 
 
+
+## Verifying VPN Leak Protection
+
+Before trusting any VPN for sensitive browsing, verify that DNS and WebRTC leaks are absent.
+
+```bash
+# Check for DNS leaks via CLI
+curl -s https://am.i.mullvad.net/json | python3 -m json.tool
+
+# Test WebRTC leak (requires browser extension or:)
+# Open https://browserleaks.com/webrtc with VPN active
+# Your VPN IP should appear, not your real IP
+
+# Confirm kill-switch is active on Linux
+iptables -L OUTPUT -n | grep -E "DROP|REJECT"
+```
+
+Run these tests immediately after connecting and again after a brief network disruption. A good kill-switch blocks all traffic when the tunnel drops, not just new connections.
+
+## Split Tunneling Configuration
+
+Split tunneling lets you route only specific apps through the VPN while leaving other traffic on your regular connection.
+
+```bash
+# Mullvad CLI split tunneling example
+mullvad split-tunnel add /usr/bin/curl
+mullvad split-tunnel list
+
+# On Linux with NetworkManager, exclude a subnet:
+nmcli connection modify "VPN-Name"   ipv4.routes "10.0.0.0/8"   ipv4.never-default yes
+```
+
+Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

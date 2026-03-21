@@ -166,6 +166,49 @@ Using a YubiKey with your password manager significantly improves your security 
 
 For maximum security, combine your YubiKey-protected password manager with other practices: use unique passwords for every account, enable account alerts for suspicious activity, and maintain encrypted backups of your vault.
 
+
+## Auditing Your Password Vault
+
+Regular audits catch reused, weak, and breached passwords before attackers do.
+
+```bash
+# Export Bitwarden vault and audit with pass-audit
+bw export --format json > vault_export.json
+pip install bitwarden-audit
+bwaudit vault_export.json
+
+# Check HaveIBeenPwned for email breaches
+curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/you@example.com"   -H "hibp-api-key: YOUR_KEY" | python3 -m json.tool
+
+# Remove export immediately after audit
+shred -u vault_export.json
+```
+
+Run a vault audit quarterly. Prioritize fixing reused passwords on financial and email accounts first — those provide the most pivot opportunity for attackers.
+
+## Generating Strong Passphrases
+
+Passphrases (word-based passwords) are easier to remember and often stronger than random character strings.
+
+```bash
+# Generate a 6-word passphrase using /usr/share/dict/words
+shuf -n 6 /usr/share/dict/words | tr '
+' '-' | head -c -1
+
+# Or use the EFF large wordlist (recommended):
+curl -s https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt -o /tmp/eff.txt
+for i in 1 2 3 4 5; do
+  roll=$(( (RANDOM % 6 + 1) * 10000 + (RANDOM % 6 + 1) * 1000 +            (RANDOM % 6 + 1) * 100 + (RANDOM % 6 + 1) * 10 + (RANDOM % 6 + 1) ))
+  grep "^$roll" /tmp/eff.txt | awk '{print $2}'
+done | tr '
+' '-'
+
+# 1Password CLI passphrase generation:
+op item create --category login   --generate-password=words,5,separator=-
+```
+
+Five EFF words yield ~64 bits of entropy — equivalent to a 12-character random string, but far easier to type on mobile.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
