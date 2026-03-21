@@ -166,6 +166,235 @@ For most small to medium deployments, a single well-configured server handles 50
 
 Nextcloud Talk delivers capable video conferencing without sacrificing data sovereignty. With proper TURN server configuration and network setup, you gain a reliable communication platform under your complete control.
 
+## WebRTC Protocol Deep-Dive
+
+Understanding WebRTC internals helps optimize Nextcloud Talk:
+
+### ICE Candidate Gathering
+
+WebRTC gathers multiple candidate addresses for connection:
+
+```javascript
+// ICE candidate types and their usage
+const candidateTypes = {
+    'host': 'Direct IP address (works only for direct P2P)',
+    'srflx': 'Server reflexive - discovered via STUN',
+    'prflx': 'Peer reflexive - discovered during connection',
+    'relay': 'TURN relay - for restrictive firewalls'
+};
+
+// Priority in Nextcloud Talk configuration
+// Relay candidates should have highest priority for privacy
+const icePriorityRanking = [
+    { type: 'relay', priority: 1000 },
+    { type: 'srflx', priority: 100 },
+    { type: 'host', priority: 10 }
+];
+```
+
+### DTLS-SRTP Encryption
+
+Media streams use DTLS (Datagram TLS) for encryption:
+
+```
+WebRTC Encryption Flow:
+1. ICE Connection established to peer/relay
+2. DTLS handshake negotiates symmetric keys
+3. SRTP (Secure RTP) encrypts media with negotiated keys
+4. Media streams encrypted end-to-end
+5. Nextcloud server sees only encrypted packets
+```
+
+Configuration in Nextcloud:
+
+```php
+'spreed' => [
+    // Force DTLS-SRTP encryption
+    'force-dtls' => true,
+    'enable-aes-encryption' => true,
+],
+```
+
+## Media Codec Selection and Quality
+
+Codec choice affects quality, bandwidth, and CPU usage:
+
+```bash
+# Nextcloud Talk supported codecs:
+
+Video Codecs:
+- VP8 (baseline compatibility, lower CPU)
+- VP9 (better quality, higher CPU)
+- H.264 (hardware acceleration on some devices)
+- H.265 (HEVC - future, limited support)
+
+Audio Codecs:
+- Opus (recommended, ~20-40kbps)
+- PCMU (legacy, ~64kbps)
+- PCMA (legacy, ~64kbps)
+
+# Configure codec preferences in config.php
+'media_providers' => [
+    'video_codec_vp8' => true,
+    'video_codec_vp9' => true,
+    'audio_codec_opus' => true,
+],
+```
+
+## Bandwidth Management and QoS
+
+Control bandwidth usage to prevent network saturation:
+
+```bash
+# Configure bandwidth limits per call
+# In config.php:
+'spreed' => [
+    'video_bitrate_limit' => 2500000,  // 2.5 Mbps
+    'audio_bitrate_limit' => 128000,   // 128 kbps
+],
+
+# Linux: tc (traffic control) for QoS
+tc qdisc add dev eth0 root tbf rate 10mbit burst 32kbit latency 400ms
+
+# Monitor real-time bandwidth
+iftop -n -i eth0
+
+# Check Nextcloud-specific bandwidth
+netstat -an | grep established | wc -l
+```
+
+## Recording and Compliance
+
+Nextcloud Talk can record calls for compliance:
+
+```bash
+# Enable recording
+occ config:app:set spreed recording_enabled --value=yes
+
+# Set recording format
+occ config:app:set spreed recording_format --value=mp4
+
+# Configure storage location
+occ config:app:set spreed recording_path --value=/mnt/secure-storage/recordings
+
+# Encrypt recordings at rest
+openssl enc -aes-256-cbc -e -in call-recording.mp4 -out call-recording.mp4.enc
+```
+
+## Integration with Chatbot Services
+
+Automate meeting features with bots:
+
+```bash
+# Nextcloud Talk Bot API
+# Register bot webhook
+curl -X POST https://nextcloud.example.com/ocs/v2.php/apps/spreed/api/v1/bots/start \
+    -u admin:password \
+    -H "OCS-APIREQUEST: true" \
+    -d '{
+        "name": "recording-bot",
+        "webhook": "https://your-bot-server/webhook"
+    }'
+
+# Bot webhook receives events:
+# - conversation started
+# - user joined
+# - user left
+# - message sent
+```
+
+## High-Availability Deployment
+
+For production, ensure redundancy:
+
+```yaml
+# Docker Compose HA setup
+version: '3.8'
+services:
+  nextcloud1:
+    image: nextcloud:latest
+    volumes:
+      - shared_storage:/var/www/html
+    environment:
+      - MYSQL_HOST=mysql-cluster
+      - REDIS_HOST=redis-cluster
+
+  nextcloud2:
+    image: nextcloud:latest
+    volumes:
+      - shared_storage:/var/www/html
+    environment:
+      - MYSQL_HOST=mysql-cluster
+      - REDIS_HOST=redis-cluster
+
+  nginx-lb:
+    image: nginx:latest
+    ports:
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - nextcloud1
+      - nextcloud2
+
+  mysql-cluster:
+    image: mysql:8
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  redis-cluster:
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+
+volumes:
+  shared_storage:
+  mysql-data:
+  redis-data:
+```
+
+## Security Hardening for Talk
+
+Additional hardening measures:
+
+```php
+// config.php - Nextcloud Talk security
+'spreed' => [
+    // Disable anonymous access
+    'public_access_denied' => true,
+
+    // Require password for public shares
+    'share_password_required' => true,
+
+    // Enable call encryption (end-to-end)
+    'call_encryption_enabled' => true,
+
+    // IP address restrictions (whitelist only trusted IPs)
+    'allowed_ips' => ['192.168.1.0/24', '203.0.113.0/24'],
+
+    // Rate limiting
+    'ratelimit_login_attempts' => 5,
+    'ratelimit_window' => 600,
+],
+```
+
+## Mobile App Optimization
+
+Optimize for mobile clients:
+
+```bash
+# Test on mobile networks
+# Use network throttling tools
+# Simulate 4G: ~4 Mbps down, ~1 Mbps up
+# Simulate 3G: ~1 Mbps down, ~0.5 Mbps up
+
+# Mobile-specific configuration
+'spreed' => [
+    'mobile_video_default' => 'vga',  // 640x480 instead of full HD
+    'mobile_max_bitrate' => 1000000,   // 1 Mbps
+    'mobile_codec_preference' => 'vp8', // Lower CPU codec
+],
+```
 
 ## Related Reading
 

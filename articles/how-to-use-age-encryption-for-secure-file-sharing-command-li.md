@@ -167,6 +167,251 @@ Developers familiar with GPG might wonder why age exists. Age prioritizes simpli
 
 For teams already using SSH, age's SSH key compatibility reduces the credential management burden. You can encrypt files using keys you already use for server authentication.
 
+## Age Cryptography Deep-Dive
+
+Understanding age's cryptographic foundation ensures proper security assumptions:
+
+### ChaCha20-Poly1305 Algorithm
+
+Age uses ChaCha20-Poly1305, a modern AEAD cipher providing both confidentiality and authenticity:
+
+```
+ChaCha20: Stream cipher providing confidentiality
+- 256-bit key
+- 96-bit nonce (unique per encryption)
+- Faster on CPUs without AES hardware acceleration
+- No known practical cryptanalysis attacks
+
+Poly1305: Polynomial authentication
+- 128-bit authentication tag
+- Detects any bit manipulation of ciphertext
+- Timing-safe implementation (resistant to timing attacks)
+```
+
+This combination ensures ciphertext cannot be decrypted incorrectly without detection.
+
+### Key Derivation Details
+
+For password-based encryption, age uses Argon2id:
+
+```
+Parameters (default):
+- Time cost: 3 iterations
+- Memory cost: 64 MB
+- Parallelism: 4 threads
+- Output: 256-bit derived key
+
+These defaults resist GPU attacks while remaining fast on modern hardware.
+```
+
+For public-key encryption, age uses Curve25519 for key agreement:
+
+```
+X25519: Elliptic curve Diffie-Hellman
+- 256-bit security level
+- Montgomery form (efficient point operations)
+- No cofactor issues
+- Widely considered cryptographically sound
+```
+
+## Batch Encryption Operations
+
+For processing many files:
+
+```bash
+#!/bin/bash
+# Batch encrypt directory structure
+
+RECIPIENT_KEY="age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq"
+SOURCE_DIR="./sensitive-data"
+OUTPUT_DIR="./encrypted-backup"
+
+mkdir -p "$OUTPUT_DIR"
+
+# Encrypt each file, preserving directory structure
+find "$SOURCE_DIR" -type f | while read -r file; do
+    # Calculate output path
+    relative_path="${file#$SOURCE_DIR/}"
+    output_path="$OUTPUT_DIR/$relative_path.age"
+
+    # Create output directory
+    mkdir -p "$(dirname "$output_path")"
+
+    # Encrypt file
+    age -r "$RECIPIENT_KEY" -o "$output_path" "$file"
+
+    # Print progress
+    echo "Encrypted: $relative_path"
+done
+
+# Create manifest of encrypted files
+find "$OUTPUT_DIR" -type f -exec sha256sum {} \; > "$OUTPUT_DIR/manifest.sha256"
+```
+
+## Integration with Backup Tools
+
+Age integrates seamlessly with backup workflows:
+
+### Restic Backup with Age
+
+```bash
+# Setup restic with age encryption
+restic init -r /mnt/backups -e age
+
+# Create age key for backup
+age-keygen -o restic-key.txt
+
+# Set environment variable
+export RESTIC_PASSWORD_COMMAND="age -d -i restic-key.txt < /tmp/restic.age"
+
+# Backup with encryption
+restic -r /mnt/backups backup /important/data
+
+# Verify backup
+restic -r /mnt/backups check
+
+# Restore when needed
+restic -r /mnt/backups restore latest --target /restore/location
+```
+
+### Tar + Age for Versioned Backups
+
+```bash
+#!/bin/bash
+# Daily incremental backup with age
+
+BACKUP_DATE=$(date +%Y%m%d-%H%M%S)
+RECIPIENT="age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq"
+BACKUP_ROOT="/backups"
+
+# Create tarball with modification time delta
+find /data -type f -newer /tmp/last-backup-marker 2>/dev/null | \
+    tar czf - -T - | \
+    age -r "$RECIPIENT" -o "$BACKUP_ROOT/incremental-$BACKUP_DATE.tar.gz.age"
+
+# Update marker for next run
+touch /tmp/last-backup-marker
+
+# List recent backups
+ls -lh "$BACKUP_ROOT"/incremental-*.age | tail -5
+```
+
+## Secure Key Sharing Protocols
+
+Distributing keys securely is critical:
+
+### Out-of-Band Verification
+
+```bash
+#!/bin/bash
+# Share key through multiple channels
+
+# Primary: encrypted email
+echo "Your age public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq" | \
+    mail -s "Your encryption key" recipient@example.com
+
+# Secondary: SMS with fingerprint (short form)
+FINGERPRINT=$(echo "age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq" | \
+    sha256sum | cut -c1-16)
+echo "Key fingerprint: $FINGERPRINT" | sms recipient
+
+# Verify with voice call
+# "For security, read back the fingerprint you received in SMS"
+```
+
+### Shamir's Secret Sharing for Keys
+
+For high-security scenarios, split keys across trustees:
+
+```bash
+# Install ssss (Shamir's Secret Sharing)
+brew install ssss
+
+# Create key with 3-of-5 splitting
+# Any 3 shares can recover the key
+cat age-identity.txt | \
+    ssss-split -t 3 -n 5 > key-shares.txt
+
+# Distribute each share to separate trustee
+split -n l/5 key-shares.txt share_
+
+# To recover
+cat share_00 share_01 share_02 | \
+    ssss-combine > recovered-key.txt
+```
+
+## Performance and Scalability
+
+Age handles large-scale encryption efficiently:
+
+```bash
+# Performance testing
+# Age on 1GB file (modern CPU)
+time age -r "$KEY" -o file.1gb.age file.1gb
+# Typical: 0.5-1.5 seconds
+
+# Parallel encryption of many files
+find data -type f | \
+    parallel age -r "$KEY" -o {}.age {}
+
+# Memory usage: Minimal (~10MB regardless of file size)
+# This is because age streams data rather than loading entirely
+```
+
+## Decryption in Restricted Environments
+
+Recovering files when tools are limited:
+
+```bash
+# On system without age installed:
+# Compile minimal age decoder or use reference implementation
+
+# Python implementation (partial, for testing)
+import os
+from cryptography.hazmat.primitives.ciphers.aead import ChaCha20Poly1305
+
+# This would require implementing full age format parsing
+# For production, always compile/install proper age binary
+```
+
+## Integration with Git for Encrypted Repositories
+
+Store sensitive config in git with age encryption:
+
+```bash
+# Setup encrypted git attributes
+echo "*.secret.txt diff=age" > .gitattributes
+
+# Configure git filter
+git config filter.age.clean "age -e -r $AGE_PUBLIC_KEY"
+git config filter.age.smudge "age -d -i $AGE_IDENTITY_FILE"
+
+# Track encrypted secrets
+git add config.secret.txt
+git commit -m "Add encrypted configuration"
+
+# Developers with key can decrypt
+git smudge .git/config.secret.txt > config.txt
+```
+
+## Threat Model Analysis
+
+Age provides protection against specific threats:
+
+```
+Protected against:
+- Network eavesdropping during file transfer
+- Cloud storage provider accessing your files
+- Attacker who gains access to encrypted files
+- Key recovery without passphrase (password-based)
+
+NOT protected against:
+- Attacker with your private key
+- Malware on your system during encryption/decryption
+- Brute-force of weak passphrases
+- Side-channel attacks on implementation
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
