@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
 categories: [security, guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, privacy]

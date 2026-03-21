@@ -9,7 +9,7 @@ permalink: /bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
