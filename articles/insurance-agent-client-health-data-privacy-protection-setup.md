@@ -744,6 +744,31 @@ Assess your current state and identify improvement areas:
 - Proactive threat hunting
 - Mature security operations center
 
+
+### Harden File Permissions for PHI Compliance
+
+```bash
+# Audit file permissions on directories holding client health data
+# All PHI (Protected Health Information) dirs should be 700 (owner only)
+
+find /path/to/client-data -type d -not -perm 700 -exec chmod 700 {} \;
+find /path/to/client-data -type f -not -perm 600 -exec chmod 600 {} \;
+
+# Verify no PHI files are world-readable
+find /path/to/client-data -perm -o+r -ls
+
+# Enable macOS FileVault (required for HIPAA endpoint compliance)
+sudo fdesetup enable
+
+# Check FileVault status
+fdesetup status
+
+# Log all file access for audit trail (Linux — auditd)
+sudo auditctl -w /path/to/client-data -p rwxa -k phi_access
+sudo ausearch -k phi_access | tail -20
+```
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -451,6 +451,29 @@ No messaging app protects you from physical torture, legal pressure, or state-ba
 
 {% endraw %}
 
+
+### Verify Signal Setup via CLI
+
+```bash
+# Signal CLI (signal-cli) — send messages programmatically or verify setup
+# Install: https://github.com/AsamK/signal-cli
+
+# Register a number (requires SMS verification)
+signal-cli -u +1234567890 register
+
+signal-cli -u +1234567890 verify 123456
+
+# Send a test message to verify end-to-end delivery
+signal-cli -u +1234567890 send -m "Test secure message" +0987654321
+
+# Check safety numbers (verify contact identity)
+signal-cli -u +1234567890 listIdentities
+
+# For maximum operational security: run Signal on a dedicated device
+# with no other apps, a burner number, and Wi-Fi only (no SIM)
+```
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

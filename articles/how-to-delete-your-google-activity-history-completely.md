@@ -447,6 +447,31 @@ If you want to completely remove yourself from Google:
 Deleting Google's history of you is a 30-minute process using the Activity dashboard, Maps Timeline, and Settings. The key is hitting all three deletion surfaces (search, YouTube, location) and disabling auto-logging to prevent future accumulation. After deletion, verify completion, turn off ad personalization, and disable Chrome sync. Google respects explicit deletion requests; they're processed within 24 hours. This single action removes years of profiling and signals to Google that you value privacy. Combined with a privacy browser (Firefox + uBlock), a VPN, and DuckDuckGo search, you're no longer a profile to be monetized.
 
 
+
+### Download and Audit Your Google Data
+
+```bash
+# Download your Google data before deleting (Google Takeout)
+# 1. Visit https://takeout.google.com — request an export
+# 2. Once downloaded, verify the archive integrity
+sha256sum takeout-*.zip
+
+# Extract and audit what Google stored
+unzip -q takeout-20260101.zip -d google-data/
+find google-data/ -name "*.json" | xargs wc -l | sort -rn | head -20
+
+# Count search history entries
+python3 -c "
+import json, glob
+entries = []
+for f in glob.glob('google-data/**/MyActivity.json', recursive=True):
+    with open(f) as fh:
+        entries.extend(json.load(fh))
+print(f'Total activity entries: {len(entries)}')
+"
+```
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

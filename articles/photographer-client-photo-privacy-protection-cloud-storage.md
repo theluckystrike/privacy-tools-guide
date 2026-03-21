@@ -695,6 +695,30 @@ Despite best practices, breaches can happen. Have an incident response plan:
 | Local encryption | VeraCrypt, BitLocker |
 | Password management | Bitwarden, 1Password |
 
+
+### Strip EXIF Metadata Before Delivery
+
+```bash
+# Strip all EXIF metadata from photos before sharing with clients
+# Install: brew install exiftool  or  apt install libimage-exiftool-perl
+
+# Preview what metadata exists in a file
+exiftool photo.jpg | grep -E "GPS|Location|Camera|Serial"
+
+# Remove ALL metadata from a single file (in-place)
+exiftool -all= photo.jpg
+
+# Batch strip metadata from an entire folder
+exiftool -all= -r ./client-deliverables/
+
+# Verify metadata was removed
+exiftool photo.jpg | wc -l   # should be near zero meaningful fields
+
+# For extra assurance: re-encode the image (removes embedded thumbnails too)
+convert photo.jpg -strip cleaned-photo.jpg    # requires ImageMagick
+```
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

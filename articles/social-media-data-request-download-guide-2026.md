@@ -272,6 +272,32 @@ When collecting data through formal privacy requests, platforms typically provid
 
 Review platform-specific terms of service. Automated data collection should comply with API terms and rate limiting policies. For personal data under GDPR, you have the right to request a complete data portrait—use this right strategically.
 
+
+### Download and Inspect Your Social Media Data
+
+```bash
+# Request your data archive from major platforms via their official APIs
+
+# Twitter/X: request archive (triggers email with download link)
+curl -X POST "https://api.twitter.com/2/users/:id/tweets"               -H "Authorization: Bearer $TWITTER_BEARER_TOKEN"
+
+# LinkedIn: request data export (REST API, requires OAuth)
+curl -s "https://api.linkedin.com/v2/me"               -H "Authorization: Bearer $LINKEDIN_ACCESS_TOKEN" | jq .
+
+# Facebook: download your data via Graph API
+curl -s "https://graph.facebook.com/me?fields=id,name,email"               -d "access_token=$FB_ACCESS_TOKEN" | jq .
+
+# Parse downloaded JSON archive to count data categories
+python3 -c "
+import json, pathlib
+for f in pathlib.Path('download').rglob('*.json'):
+    data = json.loads(f.read_text())
+    if isinstance(data, list):
+        print(f'{f.name}: {len(data)} entries')
+"
+```
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
