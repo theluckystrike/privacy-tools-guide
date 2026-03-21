@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /best-password-manager-for-enterprise/
 categories: [guides, security, enterprise]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
