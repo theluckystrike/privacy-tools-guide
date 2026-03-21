@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Digital Business Asset Inheritance How To Transfer Saas Acco"
+title: "Digital Business Asset Inheritance How To Transfer Saas"
 description: "A practical guide for developers and power users on managing digital business asset inheritance, including SaaS accounts, API keys, and domain transfers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

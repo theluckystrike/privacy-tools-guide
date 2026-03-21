@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Router Firmware Comparison 2026"
-description: "Compare open-source router firmware: OpenWrt, DD-WRT, pfSense, and OPNsense. Evaluate privacy features, DNS blocking, VPN integration, hardware compatibility, and enterprise deployment options."
+description: "Compare open-source router firmware: OpenWrt, DD-WRT, pfSense, and OPNsense. Evaluate privacy features, DNS blocking, VPN integration, hardware"
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-router-firmware-comparison-2026/

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Send Encrypted Attachments That Recipients Can Open W"
+title: "How To Send Encrypted Attachments That Recipients Can Open"
 description: "A practical guide for developers and power users on sending encrypted file attachments that recipients can decrypt and open using only standard tools"
 date: 2026-03-15
 last_modified_at: 2026-03-15

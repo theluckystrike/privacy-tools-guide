@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Check If Your Dating Profile Photos Are Being Used On"
+title: "How To Check If Your Dating Profile Photos Are Being Used"
 description: "Learn how to detect if your dating profile images are being stolen and used elsewhere. This guide covers reverse image search techniques, API-based"
 date: 2026-03-16
 last_modified_at: 2026-03-16

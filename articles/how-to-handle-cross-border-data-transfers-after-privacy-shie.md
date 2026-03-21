@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Handle Cross Border Data Transfers After Privacy Shie"
+title: "How To Handle Cross Border Data Transfers After Privacy"
 description: "Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessments and end-to-end encryption as the primary mechanism for EU-US data"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Canvas Blocker Extension How It Works And Performance Impact"
+title: "Canvas Blocker Extension How It Works And Performance"
 description: "A technical deep dive into canvas blocker browser extensions, explaining the underlying mechanisms, implementation approaches, and real-world"
 date: 2026-03-16
 last_modified_at: 2026-03-16

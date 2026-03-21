@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop"
+title: "Pop Os Vs Fedora Vs Debian For Privacy Focused Linux"
 description: "Choose between Pop!OS, Fedora, and Debian for privacy-focused work by comparing their telemetry policies (Debian: none, Fedora: optional Silverblue, Pop!OS"
 date: 2026-03-16
 last_modified_at: 2026-03-16

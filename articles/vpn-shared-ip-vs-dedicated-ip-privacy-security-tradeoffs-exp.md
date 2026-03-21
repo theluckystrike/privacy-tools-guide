@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Vpn Shared Ip Vs Dedicated Ip Privacy Security Tradeoffs Exp"
+title: "Vpn Shared Ip Vs Dedicated Ip Privacy Security Tradeoffs"
 description: "When choosing a VPN configuration, the decision between shared IP and dedicated IP addresses significantly impacts your privacy, security posture, and"
 date: 2026-03-16
 last_modified_at: 2026-03-16

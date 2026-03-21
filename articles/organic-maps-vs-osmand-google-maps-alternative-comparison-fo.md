@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Organic Maps Vs Osmand Google Maps Alternative Comparison Fo"
+title: "Organic Maps Vs Osmand Google Maps Alternative Comparison"
 description: "A technical comparison of Organic Maps and OsmAnd for privacy-conscious navigation. Learn about offline capabilities, OpenStreetMap data, API"
 date: 2026-03-16
 last_modified_at: 2026-03-16

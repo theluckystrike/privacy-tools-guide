@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Email Encryption with GPG Step by Step"
+title: "Email Encryption with GPG"
 description: "Encrypt and decrypt emails with GPG from scratch. Covers key generation, key exchange, Thunderbird with OpenPGP, and key server publishing."
 date: 2026-03-21
 last_modified_at: 2026-03-21

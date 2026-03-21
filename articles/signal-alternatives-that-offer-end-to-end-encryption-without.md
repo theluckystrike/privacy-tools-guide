@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Signal Alternatives That Offer End To End Encryption Without"
+title: "Signal Alternatives That Offer End To End Encryption"
 description: "A technical guide for developers and power users exploring Signal alternatives that provide E2EE without requiring phone number verification"
 date: 2026-03-16
 last_modified_at: 2026-03-16

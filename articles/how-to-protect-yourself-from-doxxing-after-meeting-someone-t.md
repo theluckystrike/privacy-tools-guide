@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Protect Yourself from Doxxing After Meeting Someone Through"
+title: "Protect Yourself from Doxxing After Meeting Someone"
 description: "A practical security guide for developers and power users on protecting your personal information after meeting someone through online dating"
 date: 2026-03-15
 last_modified_at: 2026-03-15

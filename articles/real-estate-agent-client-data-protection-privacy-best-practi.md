@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Real Estate Agent Client Data Protection Privacy Best Practi"
+title: "Real Estate Agent Client Data Protection Privacy Best"
 description: "A practical guide for developers and power users on implementing client data protection in real estate workflows. Learn encryption, access controls"
 date: 2026-03-15
 last_modified_at: 2026-03-15

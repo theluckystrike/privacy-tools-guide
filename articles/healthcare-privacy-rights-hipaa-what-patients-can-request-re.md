@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Healthcare Privacy Rights Hipaa What Patients Can Request Re"
+title: "Healthcare Privacy Rights Hipaa What Patients Can Request"
 description: "The Health Insurance Portability and Accountability Act (HIPAA) grants patients significant rights over their protected health information (PHI). For"
 date: 2026-03-15
 last_modified_at: 2026-03-15

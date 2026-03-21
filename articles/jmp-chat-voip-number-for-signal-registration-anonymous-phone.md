@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Jmp Chat Voip Number For Signal Registration Anonymous Phone"
+title: "Jmp Chat Voip Number For Signal Registration Anonymous"
 description: "Learn how to use JMP Chat VoIP numbers for Signal registration while maintaining privacy. Complete setup guide with technical details for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Permission Prompt Fingerprinting How Notification Re"
+title: "Browser Permission Prompt Fingerprinting How Notification"
 description: "Browser permission prompts represent an often-overlooked vector for user fingerprinting. While most users understand that websites can request access to their"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Bumble Beeline Data Privacy Who Can See That You Swiped Righ"
+title: "Bumble Beeline Data Privacy Who Can See That You Swiped"
 description: "A technical deep dive into Bumble Beeline privacy controls. Learn exactly what data is exposed, who can see your swipes, and how to manage your"
 date: 2026-03-16
 last_modified_at: 2026-03-16

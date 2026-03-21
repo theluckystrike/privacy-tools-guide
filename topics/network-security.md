@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "Network Security — Firewalls, DNS Privacy & Home Network Protection"
+title: "Network Security — Firewalls, DNS Privacy & Home"
 description: "Network security guides: firewall configuration, DNS privacy, WiFi security, SSH hardening, and home network protection for privacy-conscious users."
 permalink: /topics/network-security/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # Network Security — Firewalls, DNS Privacy & Home Network Protection

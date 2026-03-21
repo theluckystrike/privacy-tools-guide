@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Android Background Location Access Which Apps Track You When"
+title: "Android Background Location Access Which Apps Track You"
 description: "Many Android apps track your location in the background even when closed, including weather apps, fitness trackers, social media platforms, and navigation"
 date: 2026-03-15
 last_modified_at: 2026-03-15

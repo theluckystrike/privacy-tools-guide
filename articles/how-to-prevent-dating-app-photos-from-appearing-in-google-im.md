@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Prevent Dating App Photos From Appearing In Google Im"
+title: "How To Prevent Dating App Photos From Appearing In Google"
 description: "A practical guide for developers and power users to prevent dating app photos from appearing in Google Images. Includes code examples, API strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

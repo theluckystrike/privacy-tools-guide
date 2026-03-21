@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Encrypt External Hard Drive: Complete Guide 2026"
-description: "Encrypt external hard drives with VeraCrypt, LUKS, BitLocker, and FileVault. Compare tools, setup procedures, password strength, and recovery strategies for secure portable storage."
+description: "Encrypt external hard drives with VeraCrypt, LUKS, BitLocker, and FileVault. Compare tools, setup procedures, password strength, and recovery strategies"
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-encrypt-external-hard-drive-guide-2026/

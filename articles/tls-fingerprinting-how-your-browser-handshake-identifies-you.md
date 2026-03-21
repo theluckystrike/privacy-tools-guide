@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tls Fingerprinting How Your Browser Handshake Identifies You"
+title: "Tls Fingerprinting How Your Browser Handshake Identifies"
 description: "Learn how TLS fingerprinting works, what JA3 fingerprints are, and how server-side tools identify browsers and clients through encrypted handshake"
 date: 2026-03-16
 last_modified_at: 2026-03-16

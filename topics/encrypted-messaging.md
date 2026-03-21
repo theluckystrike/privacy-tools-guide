@@ -3,6 +3,9 @@ layout: default
 title: "Encrypted Messaging Apps — Signal, Threema & Secure Chat"
 description: "Compare encrypted messaging apps: Signal, Threema, Wire, Wickr, and WhatsApp privacy. End-to-end encryption explained with setup guides."
 permalink: /topics/encrypted-messaging/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # Encrypted Messaging Apps — Signal, Threema & Secure Chat

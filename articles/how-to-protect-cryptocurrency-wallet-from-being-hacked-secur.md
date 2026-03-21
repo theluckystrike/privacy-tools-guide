@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Protect Cryptocurrency Wallet From Being Hacked Secur"
+title: "How To Protect Cryptocurrency Wallet From Being Hacked"
 description: "A security guide for developers and power users on protecting cryptocurrency wallets from hackers. Covers hardware wallets, key"
 date: 2026-03-16
 last_modified_at: 2026-03-16

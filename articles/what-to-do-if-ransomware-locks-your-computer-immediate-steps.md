@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What To Do If Ransomware Locks Your Computer Immediate Steps"
+title: "What To Do If Ransomware Locks Your Computer Immediate"
 description: "Ransomware attacks can happen to anyone—whether you're a developer with sensitive projects or a power user with critical data. The moment your screen freezes"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Check If Your Private Photos Were Leaked Online"
+title: "How to Check If Your Private Photos Were Leaked"
 description: "Learn technical methods to detect if your private photos have been exposed online. This guide covers reverse image search, haveibeenpwned alternatives"
 date: 2026-03-16
 last_modified_at: 2026-03-16

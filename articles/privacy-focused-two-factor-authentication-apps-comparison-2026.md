@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Focused Two Factor Authentication Apps Comparison 2026"
+title: "Privacy Focused Two Factor Authentication Apps Comparison"
 description: "Compare Aegis, Raivo, 2FAS, and Authy for privacy features, backup options, and open-source transparency"
 date: 2026-03-21
 last_modified_at: 2026-03-21

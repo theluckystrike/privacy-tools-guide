@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Dedicated Hardware Wallet For Each Crypto Spen"
+title: "How To Set Up Dedicated Hardware Wallet For Each Crypto"
 description: "A practical guide for developers and power users on creating separate hardware wallets for different crypto spending purposes. Learn derivation path"
 date: 2026-03-16
 last_modified_at: 2026-03-16

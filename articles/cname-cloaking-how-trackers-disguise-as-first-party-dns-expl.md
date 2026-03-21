@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cname Cloaking How Trackers Disguise As First Party Dns Expl"
+title: "Cname Cloaking How Trackers Disguise As First Party Dns"
 description: "Learn how CNAME cloaking works, how trackers use DNS CNAME records to bypass privacy protections, and practical methods to detect and block first-party"
 date: 2026-03-15
 last_modified_at: 2026-03-15

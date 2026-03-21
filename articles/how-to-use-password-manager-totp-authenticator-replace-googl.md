@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Password Manager Totp Authenticator Replace Googl"
+title: "How To Use Password Manager Totp Authenticator Replace"
 description: "Learn how to migrate from Google Authenticator to your password manager's built-in TOTP authenticator for better security and convenience"
 date: 2026-03-16
 last_modified_at: 2026-03-16

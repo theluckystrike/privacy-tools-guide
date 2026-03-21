@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Configure Openwrt Guest Network With Separate Dns And"
+title: "How To Configure Openwrt Guest Network With Separate Dns"
 description: "A practical guide for developers and power users to set up OpenWRT guest networks with custom DNS servers and strict firewall isolation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

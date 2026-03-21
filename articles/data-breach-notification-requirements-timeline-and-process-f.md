@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Data Breach Notification Requirements Timeline And Process F"
+title: "Data Breach Notification Requirements Timeline And Process"
 description: "GDPR requires notifying authorities within 72 hours of discovering a breach, while CCPA requires notification to California residents without unreasonable"
 date: 2026-03-15
 last_modified_at: 2026-03-15

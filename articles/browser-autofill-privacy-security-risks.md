@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Autofill Privacy Security Risks"
+title: "Browser Autofill Privacy Security"
 description: "Browser autofill is one of those conveniences that feels invisible until it becomes a liability. For developers and power users who value privacy"
 date: 2026-03-15
 last_modified_at: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Encrypted Backup Of Chat History How To Preserve Messages Wi"
+title: "Encrypted Backup Of Chat History How To Preserve Messages"
 description: "Learn practical methods for preserving your chat messages locally using encryption. A developer's guide to offline backup strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

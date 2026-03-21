@@ -21,6 +21,7 @@ score: 8
 voice-checked: true
 author: "Privacy Tools Guide"
 
+intent-checked: true
 ---
 
 {% raw %}

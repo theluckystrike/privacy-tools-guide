@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Attribution Reporting Api How Chrome Replaced Cookies For Ad"
+title: "Attribution Reporting Api How Chrome Replaced Cookies"
 description: "Attribution Reporting API: How Chrome Replaced Cookies. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16

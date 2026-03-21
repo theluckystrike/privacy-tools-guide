@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Living Without Smartphone Digital Privacy Extreme Approach P"
+title: "Living Without Smartphone Digital Privacy Extreme Approach"
 description: "A practical guide for developers and power users on living without a smartphone. Learn about dumb phones, privacy-focused alternatives, communication"
 date: 2026-03-16
 last_modified_at: 2026-03-16

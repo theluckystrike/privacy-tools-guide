@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa"
+title: "Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel"
 description: "A technical comparison of Shadowsocks and stunnel for bypassing network restrictions. Code examples, deployment strategies, and performance analysis"
 date: 2026-03-16
 last_modified_at: 2026-03-16

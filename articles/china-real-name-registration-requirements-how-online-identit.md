@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "China Real Name Registration Requirements How Online Identit"
+title: "China Real Name Registration Requirements How Online"
 description: "A technical guide for developers and power users on China's real name registration system, how online identity verification works, and its impact on digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16

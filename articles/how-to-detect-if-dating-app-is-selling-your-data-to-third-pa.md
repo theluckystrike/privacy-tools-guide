@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Detect If Dating App Is Selling Your Data To Third Pa"
+title: "How To Detect If Dating App Is Selling Your Data To Third"
 description: "Learn how to identify if dating apps are monetizing your personal data through third-party brokers. This technical guide covers network analysis, API"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Multiple Identities Online Compartmentalization C"
+title: "How To Use Multiple Identities Online Compartmentalization"
 description: "A practical guide to managing multiple online identities through compartmentalization. Learn browser isolation, email aliasing, container strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

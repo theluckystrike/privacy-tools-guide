@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Run Background Check On Dating Match Using Public Rec"
+title: "How To Run Background Check On Dating Match Using Public"
 description: "A practical guide for developers and power users on verifying dating matches through public records while respecting privacy laws and ethical boundaries"
 date: 2026-03-16
 last_modified_at: 2026-03-16

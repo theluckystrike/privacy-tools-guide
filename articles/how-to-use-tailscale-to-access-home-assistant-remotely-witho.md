@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Tailscale To Access Home Assistant Remotely Witho"
+title: "How To Use Tailscale To Access Home Assistant Remotely"
 description: "A practical guide for developers and power users on setting up secure remote access to Home Assistant using Tailscale mesh VPN technology"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Disable All Windows 11 Telemetry Endpoints Using Fire"
+title: "How To Disable All Windows 11 Telemetry Endpoints"
 description: "Windows 11 collects telemetry data from your system and sends it to Microsoft servers. While Microsoft uses this data to improve the operating system"
 date: 2026-03-15
 last_modified_at: 2026-03-15

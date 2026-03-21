@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What to Do If You Find an Unknown Device on Your Network"
+title: "What to Do If You Find an Unknown Device on Your"
 description: "A guide for discovering unknown devices on your network, investigating suspicious connections, and securing your home network against"
 date: 2026-03-15
 last_modified_at: 2026-03-15

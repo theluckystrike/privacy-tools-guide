@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 
+intent-checked: true
 ---
 
 A privacy risk register is a living document that tracks, assesses, and mitigates privacy risks across your organization. For enterprise environments conducting quarterly reviews, having a well-structured template saves time and ensures consistency. This guide walks you through creating a practical privacy risk register template tailored for quarterly review cycles in 2026.

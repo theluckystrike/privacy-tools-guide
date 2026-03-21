@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ultrasonic Beacon Tracking How Smart Devices Communicate Thr"
+title: "Ultrasonic Beacon Tracking How Smart Devices Communicate"
 description: "A technical deep-dive into ultrasonic beacon tracking, how devices use inaudible sound waves to communicate and track users, and what developers can do"
 date: 2026-03-16
 last_modified_at: 2026-03-16

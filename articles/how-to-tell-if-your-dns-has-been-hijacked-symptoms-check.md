@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Tell If Your Dns Has Been Hijacked Symptoms Check"
+title: "How To Tell If Your Dns Has Been Hijacked Symptoms"
 description: "A practical guide for developers and power users to detect DNS hijacking. Learn to identify symptoms, use diagnostic tools, and verify your DNS integrity"
 date: 2026-03-15
 last_modified_at: 2026-03-15

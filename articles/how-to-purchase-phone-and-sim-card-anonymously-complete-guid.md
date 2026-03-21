@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Purchase Phone And Sim Card Anonymously Complete Guid"
+title: "How To Purchase Phone And Sim Card Anonymously Complete"
 description: "A technical guide for developers and power users on purchasing mobile phones and SIM cards while maintaining privacy. Covers prepaid options, anonymous"
 date: 2026-03-15
 last_modified_at: 2026-03-15

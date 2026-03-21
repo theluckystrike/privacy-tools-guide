@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp"
+title: "Plausible Vs Matomo Vs Fathom Privacy Focused Analytics"
 description: "A practical comparison of Plausible, Matomo, and Fathom analytics platforms for businesses prioritizing privacy. Learn deployment options, data"
 date: 2026-03-16
 last_modified_at: 2026-03-16

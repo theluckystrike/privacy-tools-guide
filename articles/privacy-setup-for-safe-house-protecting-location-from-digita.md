@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Setup For Safe House Protecting Location From Digita"
+title: "Privacy Setup For Safe House Protecting Location"
 description: "A practical guide for developers and power users to protect location privacy. Learn to secure your address, obscure GPS data, and harden devices"
 date: 2026-03-16
 last_modified_at: 2026-03-16

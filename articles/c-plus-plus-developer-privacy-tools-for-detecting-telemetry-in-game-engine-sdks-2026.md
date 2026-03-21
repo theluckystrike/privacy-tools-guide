@@ -9,7 +9,7 @@ permalink: /c-plus-plus-developer-privacy-tools-for-detecting-telemetry-in-game-
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 tags: [privacy-tools-guide, c++, game-development, telemetry, sdk, privacy]
 

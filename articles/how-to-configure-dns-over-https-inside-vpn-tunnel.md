@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure DNS over HTTPS Inside a VPN Tunnel"
+title: "How to Configure DNS over HTTPS Inside a VPN"
 description: "A technical guide to setting up DNS over HTTPS within your VPN tunnel for enhanced privacy and security"
 date: 2026-03-15
 last_modified_at: 2026-03-15

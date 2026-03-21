@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Anonymize User Data In Production Database For Privac"
+title: "How To Anonymize User Data In Production Database"
 description: "Anonymization allows you to retain user data for analytics and debugging while removing regulatory obligations—true anonymization means data cannot be"
 date: 2026-03-16
 last_modified_at: 2026-03-16

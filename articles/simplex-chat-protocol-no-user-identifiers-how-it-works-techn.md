@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Simplex Chat Protocol No User Identifiers How It Works Techn"
+title: "Simplex Chat Protocol No User Identifiers How It Works"
 description: "A technical deep dive into how SimpleX Chat achieves privacy through absence of user identifiers. Learn the queue-based architecture, DH key exchange"
 date: 2026-03-16
 last_modified_at: 2026-03-16

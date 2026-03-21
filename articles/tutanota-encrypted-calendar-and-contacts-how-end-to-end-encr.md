@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tutanota Encrypted Calendar And Contacts How End To End Encr"
+title: "Tutanota Encrypted Calendar And Contacts How End To End"
 description: "End-to-end encryption has become the gold standard for protecting sensitive data in transit, but many users assume this protection extends automatically to all"
 date: 2026-03-16
 last_modified_at: 2026-03-16

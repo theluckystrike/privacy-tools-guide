@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Employee Email Monitoring Legal Requirements And Privacy Bou"
+title: "Employee Email Monitoring Legal Requirements And Privacy"
 description: "Employee email monitoring legality varies dramatically by jurisdiction: the U.S. permits broad employer monitoring of work email, the EU requires specific"
 date: 2026-03-16
 last_modified_at: 2026-03-16

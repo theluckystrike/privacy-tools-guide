@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Rental Application Privacy What Information Landlords Can Le"
+title: "Rental Application Privacy What Information Landlords Can"
 description: "A practical guide for developers and power users understanding rental application privacy laws, tenant rights, and what information landlords can"
 date: 2026-03-16
 last_modified_at: 2026-03-16

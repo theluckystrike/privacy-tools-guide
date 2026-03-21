@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up WireGuard on VPS for Personal VPN"
+title: "How to Set Up WireGuard on VPS for Personal"
 description: "A practical guide to setting up WireGuard on a VPS to create your own personal VPN for enhanced privacy and secure remote access"
 date: 2026-03-16
 last_modified_at: 2026-03-16

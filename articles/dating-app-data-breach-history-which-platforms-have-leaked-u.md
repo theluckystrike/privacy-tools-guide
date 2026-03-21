@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dating App Data Breach History Which Platforms Have Leaked U"
+title: "Dating App Data Breach History Which Platforms Have Leaked"
 description: "A timeline and technical guide to dating app data breaches, covering major incidents, exposed data types, and actionable protection"
 date: 2026-03-16
 last_modified_at: 2026-03-16

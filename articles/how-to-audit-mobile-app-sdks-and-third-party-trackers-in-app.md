@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Audit Mobile App Sdks And Third Party Trackers In App"
+title: "How To Audit Mobile App Sdks And Third Party Trackers"
 description: "A practical guide for developers and power users to audit mobile app SDKs and identify third-party trackers. Learn static analysis, dynamic testing"
 date: 2026-03-15
 last_modified_at: 2026-03-15

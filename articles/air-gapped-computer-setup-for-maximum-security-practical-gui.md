@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Air Gapped Computer Setup For Maximum Security Practical Gui"
+title: "Air Gapped Computer Setup For Maximum Security Practical"
 description: "To set up an air-gapped computer for maximum security, you need dedicated hardware with all wireless capabilities disabled, a hardened OS like Tails or Qubes"
 date: 2026-03-15
 last_modified_at: 2026-03-15

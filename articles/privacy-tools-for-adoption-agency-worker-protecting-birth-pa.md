@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Tools For Adoption Agency Worker Protecting Birth Pa"
+title: "Privacy Tools For Adoption Agency Worker Protecting Birth"
 description: "A technical guide for adoption agency workers on implementing privacy tools to protect sensitive birth parent data. Covers encryption, secure storage"
 date: 2026-03-16
 last_modified_at: 2026-03-16

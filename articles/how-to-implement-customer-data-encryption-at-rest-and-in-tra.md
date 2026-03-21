@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Implement Customer Data Encryption At Rest And In Tra"
+title: "How To Implement Customer Data Encryption At Rest"
 description: "A developer guide for implementing encryption at rest and in transit. Learn practical techniques with code examples for securing customer"
 date: 2026-03-16
 last_modified_at: 2026-03-16

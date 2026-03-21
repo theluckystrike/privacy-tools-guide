@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Live Operating System to Leave No Forensic Trace"
+title: "How to Use Live Operating System to Leave No Forensic"
 description: "A practical guide to using live operating systems like Tails for privacy. Learn how to boot from USB, use RAM-only computing, and leave no traces on"
 date: 2026-03-17
 last_modified_at: 2026-03-17

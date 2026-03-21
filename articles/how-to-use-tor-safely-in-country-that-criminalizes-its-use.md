@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Tor Safely in Country That Criminalizes Its Use"
+title: "How to Use Tor Safely in Country That Criminalizes Its"
 description: "A technical guide for developers and power users on using Tor securely in regions where its use is criminalized. Includes configuration examples"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Instagram Memorialization Request Process What Happens To Ph"
+title: "Instagram Memorialization Request Process What Happens"
 description: "To memorialize a deceased Instagram account, submit a request through Instagram's memorial request form with a death certificate or obituary. The account"
 date: 2026-03-16
 last_modified_at: 2026-03-16

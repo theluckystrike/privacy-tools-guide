@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Anonymous Resume Submission How To Apply For Jobs Without Re"
+title: "Anonymous Resume Submission How To Apply For Jobs"
 description: "Learn practical methods to submit resumes anonymously, protect your privacy during job searches, and maintain control over your personal information"
 date: 2026-03-16
 last_modified_at: 2026-03-16

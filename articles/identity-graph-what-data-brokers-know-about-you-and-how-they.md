@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Identity Graph What Data Brokers Know About You And How They"
+title: "Identity Graph What Data Brokers Know About You And How"
 description: "Learn how data brokers build identity graphs to track your online activity, connect your records across platforms, and monetize your personal information"
 date: 2026-03-16
 last_modified_at: 2026-03-16

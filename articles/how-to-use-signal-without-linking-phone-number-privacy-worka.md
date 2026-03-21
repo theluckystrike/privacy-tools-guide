@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Signal Without Linking Phone Number Privacy Worka"
+title: "How To Use Signal Without Linking Phone Number Privacy"
 description: "A technical guide for developers and power users on how to use Signal without linking your primary phone number. Practical workarounds including VoIP"
 date: 2026-03-16
 last_modified_at: 2026-03-16

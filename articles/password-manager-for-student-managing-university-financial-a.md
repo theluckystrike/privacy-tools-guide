@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Password Manager For Student Managing University Financial A"
+title: "Password Manager For Student Managing University Financial"
 description: "A practical guide for students managing financial aid portal credentials using password managers. Includes CLI tools, automation tips, and security"
 date: 2026-03-16
 last_modified_at: 2026-03-16

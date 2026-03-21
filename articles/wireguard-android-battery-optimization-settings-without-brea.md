@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Wireguard Android Battery Optimization Settings Without Brea"
+title: "Wireguard Android Battery Optimization Settings"
 description: "Learn how to configure WireGuard on Android for optimal battery life while maintaining stable VPN connections. Practical tips for developers and power"
 date: 2026-03-16
 last_modified_at: 2026-03-16

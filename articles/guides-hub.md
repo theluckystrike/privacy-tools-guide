@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Guides Hub"
+title: "Guides — Complete Guide"
 description: "Browse every privacy and security guide in one place — from VPN setup and password manager reviews to encrypted messaging comparisons and browser"
 date: 2026-03-15
 last_modified_at: 2026-03-15

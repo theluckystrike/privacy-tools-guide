@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Password Manager For Accountant Managing Client Financial Po"
+title: "Password Manager For Accountant Managing Client Financial"
 description: "A practical guide for accountants on using password managers to securely manage multiple client financial portal credentials with code examples and CLI"
 date: 2026-03-16
 last_modified_at: 2026-03-16

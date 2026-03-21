@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Deltachat Encrypted Messenger Over Existing Em"
+title: "How To Set Up Deltachat Encrypted Messenger Over Existing"
 description: "A practical guide for developers and power users to configure DeltaChat for end-to-end encrypted messaging using your existing email infrastructure"
 date: 2026-03-16
 last_modified_at: 2026-03-16

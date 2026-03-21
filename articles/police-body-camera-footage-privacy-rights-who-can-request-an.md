@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Police Body Camera Footage Privacy Rights Who Can Request An"
+title: "Police Body Camera Footage Privacy Rights Who Can Request"
 description: "Police body camera footage is generally public record but with significant state variations: California's SB 1421 requires disclosure of use-of-force"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Safely Exchange Social Media Handles With Dating Matc"
+title: "How To Safely Exchange Social Media Handles With Dating"
 description: "A technical guide for developers and power users on exchanging social media handles with dating matches while protecting privacy. Covers"
 date: 2026-03-15
 last_modified_at: 2026-03-15

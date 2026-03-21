@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit"
+title: "Genetic Data Privacy Rights What 23andme Ancestry Can Do"
 description: "A technical guide for developers and power users on genetic data privacy rights, covering what 23andMe and AncestryDNA can legally do with your DNA"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Proton Mail Bridge With Local Email Client For"
+title: "How To Set Up Proton Mail Bridge With Local Email Client"
 description: "Install Proton Mail Bridge, log in with your Proton Mail credentials, then add the Bridge's local IMAP/SMTP server to your email client (Thunderbird, Apple"
 date: 2026-03-15
 last_modified_at: 2026-03-15

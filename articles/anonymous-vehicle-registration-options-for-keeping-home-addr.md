@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Anonymous Vehicle Registration Options For Keeping Home Addr"
+title: "Anonymous Vehicle Registration Options For Keeping Home"
 description: "A technical guide to vehicle registration alternatives that protect your residential address from public DMV records. Includes state-by-state options"
 date: 2026-03-16
 last_modified_at: 2026-03-16

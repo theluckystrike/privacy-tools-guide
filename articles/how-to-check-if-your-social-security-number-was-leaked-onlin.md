@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Check If Your Social Security Number Was Leaked Onlin"
+title: "How To Check If Your Social Security Number Was Leaked"
 description: "Your Social Security number is one of the most valuable pieces of personal identifying information. Unlike passwords that you can change, your SSN is"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN NAT Traversal: How It Works Behind Carrier-Grade NAT"
+title: "VPN NAT Traversal: How It Works Behind Carrier-Grade"
 description: "A technical guide to understanding NAT traversal for VPNs. Learn how modern VPNs overcome carrier-grade NAT obstacles with STUN, TURN, and ICE protocols"
 date: 2026-03-16
 last_modified_at: 2026-03-16

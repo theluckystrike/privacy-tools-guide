@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Wifi Probe Request Tracking How Your Phone Broadcasts Identi"
+title: "Wifi Probe Request Tracking How Your Phone Broadcasts"
 description: "Learn how WiFi probe requests work, what data your phone broadcasts, and how developers can capture and analyze these signals for privacy research"
 date: 2026-03-16
 last_modified_at: 2026-03-16

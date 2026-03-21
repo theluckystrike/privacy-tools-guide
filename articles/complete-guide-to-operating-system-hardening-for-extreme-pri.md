@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Complete Guide To Operating System Hardening For Extreme Pri"
+title: "Complete Guide To Operating System Hardening For Extreme"
 description: "Operating system hardening involves reducing the attack surface of your system while maximizing privacy controls. For developers and power users seeking"
 date: 2026-03-16
 last_modified_at: 2026-03-16

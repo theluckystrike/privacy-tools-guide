@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Migrating From Icloud Keychain To Bitwarden Complete Transfe"
+title: "Migrating From Icloud Keychain To Bitwarden Complete"
 description: "A technical guide for developers and power users migrating passwords from iCloud Keychain to Bitwarden. Covers export methods, CLI tools, CSV"
 date: 2026-03-15
 last_modified_at: 2026-03-15

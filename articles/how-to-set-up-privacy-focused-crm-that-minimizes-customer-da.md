@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Privacy Focused Crm That Minimizes Customer Da"
+title: "How To Set Up Privacy Focused Crm That Minimizes Customer"
 description: "A practical guide for developers and power users on building or configuring a CRM system that prioritizes data minimization. Includes implementation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

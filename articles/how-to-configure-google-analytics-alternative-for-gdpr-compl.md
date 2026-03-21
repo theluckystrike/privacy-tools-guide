@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Configure Google Analytics Alternative For Gdpr Compl"
+title: "How To Configure Google Analytics Alternative For Gdpr"
 description: "If you operate a website serving European visitors, Google Analytics requires significant configuration to meet GDPR standards. Many organizations now prefer"
 date: 2026-03-15
 last_modified_at: 2026-03-15

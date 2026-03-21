@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Psiphon To Bypass Censorship In Countries With Re"
+title: "How To Use Psiphon To Bypass Censorship In Countries"
 description: "Psiphon is an open-source circumvention tool designed to help users in censored regions access the open internet. Originally developed by the University of"
 date: 2026-03-16
 last_modified_at: 2026-03-16

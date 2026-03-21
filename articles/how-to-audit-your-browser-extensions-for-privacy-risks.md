@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Audit Your Browser Extensions for Privacy Risks"
+title: "How to Audit Your Browser Extensions for Privacy"
 description: "Guide to auditing browser extensions for privacy. Covers permission analysis, network monitoring, and privacy-safe alternatives to common extensions"
 date: 2026-03-21
 last_modified_at: 2026-03-21

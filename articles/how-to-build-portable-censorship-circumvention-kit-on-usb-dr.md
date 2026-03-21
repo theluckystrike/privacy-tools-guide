@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Build Portable Censorship Circumvention Kit On Usb Dr"
+title: "How To Build Portable Censorship Circumvention Kit On Usb"
 description: "Create a portable USB-based toolkit for bypassing internet censorship while traveling. Includes configuration guides for Tor, obfs4 bridges, and secure"
 date: 2026-03-16
 last_modified_at: 2026-03-16
