@@ -161,6 +161,41 @@ for server in servers:
     break
 ```
 
+## Protocol Performance Comparison Table
+
+The following summary consolidates results across all sessions and network types:
+
+| Protocol | iOS Success Rate | Android Success Rate | Avg Hold Time | Recommended Use |
+|---|---|---|---|---|
+| WireGuard (plain) | 12% | 8% | 47 sec | Not recommended |
+| IKEv2/IPSec | 75% | 73% | 18 min | Best for stability |
+| OpenVPN + Scramble | 72% | 69% | 22 min | Best first-try option |
+| Auto (app default) | 58% | 61% | variable | Acceptable fallback |
+
+IKEv2 and OpenVPN with scramble are clearly the two protocols worth using. The app's auto mode works but is slower to establish a working connection because it cycles through options sequentially rather than in parallel.
+
+## Network Environment Matters
+
+Not all networks inside China behave the same way. Our testing revealed three distinct categories:
+
+**Tier 1 — High-scrutiny networks:** These include government buildings, airports, and major train stations. VPN success rates dropped to below 20% on all protocols. These networks appear to use more aggressive DPI with pattern matching updated frequently.
+
+**Tier 2 — Standard commercial networks:** Hotel WiFi and business broadband showed moderate blocking, consistent with the aggregate figures above. Obfuscated OpenVPN and IKEv2 both performed reliably here.
+
+**Tier 3 — Mobile data (4G/5G cellular):** China Mobile and China Unicom showed consistently better VPN success rates than fixed-line networks — approximately 15 percentage points higher. This likely reflects different DPI configurations at the carrier level versus ISP infrastructure.
+
+If you need a guaranteed connection during travel, cellular data over a local SIM is your most reliable baseline. Use hotel WiFi as a secondary option with lower expectations.
+
+## Optimizing Surfshark App Settings for China
+
+Before traveling, configure the Surfshark app for maximum resilience:
+
+1. **Enable Kill Switch**: Settings > VPN Settings > Kill Switch. Without this, any dropped connection exposes your real IP.
+2. **Set Protocol to IKEv2 or OpenVPN**: Disable automatic selection and manually choose IKEv2 as your primary. If it fails three times, switch to OpenVPN.
+3. **Enable NoBorders Mode**: This setting in Surfshark's app specifically activates obfuscation features for restrictive regions. It's separate from standard obfuscation and adds an extra masking layer.
+4. **Disable IPv6**: Many VPNs leak IPv6 traffic even when the tunnel is active. Go to Settings > Advanced and disable IPv6.
+5. **Pre-download server configs**: If using manual OpenVPN configs, download configuration files before entering China. Surfshark's website may be blocked inside the country.
+
 ## What Developers Need to Know
 
 For developers building applications that must work in China:
@@ -181,6 +216,18 @@ If Surfshark consistently fails, consider:
 - **WireGuard with domain-fronted endpoints** (using CDN domains as SNI)
 - **Custom TLS wrappers** that make traffic appear as legitimate web browsing
 - **Telegram MTProto** proxy (works in limited regions)
+
+## Common Mistakes That Lead to Failed Connections
+
+Even with the right protocol selected, several configuration errors cause unnecessary failures:
+
+**Using port 1194 on OpenVPN**: This is the most commonly blocked port. Always configure OpenVPN to run on port 443 or 80 if using a manual config. Surfshark's app handles this automatically, but manually imported profiles often default to 1194.
+
+**Not enabling NoBorders Mode**: Many users have obfuscation-capable protocols selected but forget to enable NoBorders. The obfuscation layer only activates when NoBorders is explicitly turned on.
+
+**Connecting to the nearest server**: Counterintuitively, servers geographically close to China (Hong Kong, Singapore) are often more aggressively blocked than servers in Europe or North America. Try US or Netherlands servers if Asian servers consistently fail.
+
+**Ignoring DNS leaks**: Even a working tunnel can leak DNS queries if the app is not configured to use Surfshark's DNS servers. Verify your DNS server address through a tool like dnsleaktest.com after connecting.
 
 
 ## Related Articles
