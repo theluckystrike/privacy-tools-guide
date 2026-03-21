@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/
 categories: [guides, security, enterprise]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
