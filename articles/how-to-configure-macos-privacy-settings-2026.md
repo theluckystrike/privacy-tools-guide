@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-macos-privacy-settings-2026/
 categories: [guides]
-tags: [privacy-tools-guide, macos, operating-systems]
+tags: [privacy-tools-guide, macos, operating-systems, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
