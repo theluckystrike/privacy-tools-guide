@@ -27,9 +27,29 @@ Always back up the registry or create a system restore point before making modif
 reg export "HKCU\Software\YourKey" "backup.reg" /y
 ```
 
+For a full registry backup, use the built-in tool:
+
+```powershell
+# Create a system restore point first
+Checkpoint-Computer -Description "Before Privacy Tweaks" -RestorePointType MODIFY_SETTINGS
+```
+
+This gives you a reliable rollback option if any tweak causes unexpected behavior.
+
+## What Registry Privacy Tweaks Can and Cannot Do
+
+Registry changes are effective for disabling telemetry services, restricting app permissions, and preventing Windows from sending behavioral data to Microsoft. They cannot:
+
+- Replace a properly configured VPN or firewall for network-level privacy
+- Remove already-collected data from Microsoft's servers
+- Prevent all forms of Windows telemetry (some is embedded at the kernel level and protected by Windows Update)
+- Override Group Policy settings applied by your organization's MDM
+
+Think of registry privacy tweaks as one layer in a broader privacy strategy, not a complete solution.
+
 ## Reducing Windows Telemetry
 
-Windows 10 and 11 collect diagnostic data by default. While some level of telemetry improves security, you can reduce collection significantly without breaking essential functionality.
+Windows 10 and 11 collect diagnostic data by default. While some level of telemetry improves security update targeting, you can reduce collection significantly without breaking essential functionality.
 
 Navigate to `HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection` and create or modify the `AllowTelemetry` DWORD value:
 
@@ -38,15 +58,24 @@ Navigate to `HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection` and create
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Value 0 -Type DWord
 ```
 
+Note that on Windows 11 Home, value `0` maps to "Security" level but Microsoft may still enforce a minimum of level `1` depending on the build. Enterprise and Education editions fully respect `0`.
+
 For Windows 11, additional telemetry controls exist under `HKCU\Software\Microsoft\Windows\CurrentVersion\Privacy`. Setting `TailoredExperiencesWithDiagnosticDataEnabled` to `0` disables personalized tips based on diagnostic data:
 
 ```powershell
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy" -Name "TailoredExperiencesWithDiagnosticDataEnabled" -Value 0 -Type DWord
 ```
 
+Stop the DiagTrack service to immediately halt telemetry uploads:
+
+```powershell
+Stop-Service -Name "DiagTrack" -Force
+Set-Service -Name "DiagTrack" -StartupType Disabled
+```
+
 ## Limiting Activity History and Search
 
-Windows records your activity history to provide personalized experiences. You can disable this recording while maintaining functional search capabilities.
+Windows records your activity history to provide personalized experiences across devices. You can disable this recording while maintaining functional search capabilities.
 
 Disable activity history collection:
 
@@ -66,6 +95,12 @@ Clear existing search history by removing the `WordWheelSuggestions` registry ke
 Remove-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search\WordWheelSuggestions" -Recurse -Force
 ```
 
+Also disable Cortana indexing of your files:
+
+```powershell
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -Value 0 -Type DWord
+```
+
 ## Controlling Application Permissions
 
 Many Windows Store applications access your location, camera, microphone, and contacts by default. Registry modifications can enforce stricter defaults.
@@ -82,7 +117,13 @@ Similarly, restrict location access:
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Value "Deny" -Type String
 ```
 
-Review all app permissions by examining keys under `HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore`.
+Restrict camera access:
+
+```powershell
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam" -Name "Value" -Value "Deny" -Type String
+```
+
+Review all app permissions by examining keys under `HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore`. Each permission type (contacts, calendar, messaging, etc.) has its own subkey where individual app grants are stored.
 
 ## Network Privacy Enhancements
 
@@ -96,10 +137,18 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\NetBT\Parameters
 
 This setting requires identification of specific interface keys, as multiple network adapters may exist. Use `Get-NetAdapter` in PowerShell to identify adapter names, then locate corresponding registry keys.
 
-Disable Link-Local Multicast Name Resolution (LLMNR), which can expose credentials on local networks:
+Disable Link-Local Multicast Name Resolution (LLMNR), which can expose credentials on local networks through responder attacks:
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\DNSClient" -Name "EnableMulticast" -Value 0 -Type DWord
+```
+
+LLMNR is a common vector for credential harvesting on shared networks. Disabling it closes this attack surface at the cost of some name resolution convenience on LANs without DNS.
+
+Disable WPAD (Web Proxy Auto-Discovery), which can be abused to redirect your traffic through a rogue proxy:
+
+```powershell
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name "AutoDetect" -Value 0 -Type DWord
 ```
 
 ## Limiting Windows Update Delivery Optimization
@@ -112,10 +161,23 @@ Disable Delivery Optimization completely:
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Value 0 -Type DWord
 ```
 
-Alternatively, limit peer connections to your local network only:
+Alternatively, limit peer connections to your local network only (value `1`):
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Value 1 -Type DWord
+```
+
+## Disabling Advertising ID
+
+Windows assigns each user an Advertising ID used by apps to serve targeted ads and track behavior across applications:
+
+```powershell
+# Disable Advertising ID
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" -Name "Enabled" -Value 0 -Type DWord
+
+# Disable input personalization (typing and inking data sent to Microsoft)
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "RestrictImplicitInkCollection" -Value 1 -Type DWord
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "RestrictImplicitTextCollection" -Value 1 -Type DWord
 ```
 
 ## Scripting Multiple Tweaks
@@ -135,7 +197,8 @@ $registryChanges = @(
     @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy"; Name="TailoredExperiencesWithDiagnosticDataEnabled"; Value=0; Type="DWord"},
     @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy"; Name="PublishUserActivities"; Value=0; Type="DWord"},
     @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"; Name="BingSearchEnabled"; Value=0; Type="DWord"},
-    @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient"; Name="EnableMulticast"; Value=0; Type="DWord"}
+    @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient"; Name="EnableMulticast"; Value=0; Type="DWord"},
+    @{Path="HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo"; Name="Enabled"; Value=0; Type="DWord"}
 )
 
 if ($Undo) {
@@ -161,6 +224,18 @@ Execute this script with `-Undo` to revert all changes:
 .\PrivacyTweaks.ps1 -Undo  # Revert tweaks
 ```
 
+## Comparing Registry Tweaks vs. GUI-Based Tools
+
+| Method | Reversible | Requires Admin | Scriptable | Survives Updates |
+|--------|-----------|----------------|------------|-----------------|
+| Registry manual edit | Yes (backup) | Sometimes | No | Usually |
+| PowerShell script | Yes (-Undo) | Sometimes | Yes | Usually |
+| Group Policy (gpedit) | Yes | Yes | Via LGPO | Usually |
+| O&O ShutUp10 | Yes | Yes | Partial | Usually |
+| Winaero Tweaker | Yes | Yes | No | Usually |
+
+For single-machine use, PowerShell scripts offer the best combination of transparency and reversibility. Third-party tools like O&O ShutUp10 are convenient but opaque — you are trusting that the tool applies exactly what it claims.
+
 ## Verifying Changes
 
 After applying registry modifications, verify changes using `reg query`:
@@ -174,6 +249,19 @@ For settings requiring system restart, Windows displays a notification. Some cha
 ```powershell
 Restart-Service -Name "DiagTrack" -Force  # Requires administrator
 ```
+
+To confirm telemetry data is not being uploaded, use Windows Resource Monitor or a network monitor like Wireshark to watch for outbound connections to `vortex.data.microsoft.com` and related endpoints after applying your tweaks.
+
+## Frequently Asked Questions
+
+**Will these tweaks break Windows Update?**
+No. Disabling telemetry and Delivery Optimization does not prevent Windows from downloading and installing updates from Microsoft's servers. Updates come from a separate service (wuauserv) that is not affected by these keys.
+
+**Do I need to reapply these tweaks after major Windows updates?**
+Occasionally. Feature updates (like annual Windows 11 version upgrades) can reset some policy keys. Re-running your PowerShell script after a major update ensures settings stay applied.
+
+**Is it safe to set AllowTelemetry to 0 on Windows 11 Home?**
+Microsoft officially supports this on Enterprise editions. On Home and Pro, the system may enforce a minimum of level 1 regardless of this key. Setting it to 0 still reduces telemetry, but some diagnostic uploads may continue.
 
 ## Related Reading
 
