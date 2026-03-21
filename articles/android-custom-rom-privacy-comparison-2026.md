@@ -193,6 +193,42 @@ adb backup -apk -shared -all -f backup.ab
 # Store backup securely before proceeding
 ```
 
+## Verified Boot and Its Privacy Implications
+
+Verified boot is not just a security feature — it is a meaningful privacy control. When verified boot is enforced with a locked bootloader and a custom signing key, the device can cryptographically prove to a remote party (or to itself) that the system software has not been tampered with. This property, called remote attestation, underpins banking app compatibility and device health APIs.
+
+**GrapheneOS** supports relocking the bootloader after flashing, restoring full verified boot. This is unique among custom ROMs and is the primary reason GrapheneOS passes Play Integrity checks that other ROMs fail. Users can install the sandboxed Google Play compatibility layer and still run banking apps while maintaining a verified boot chain.
+
+**CalyxOS** and **LineageOS** both leave the bootloader unlocked in typical installations. Some Pixel devices support relocking with a custom signing key, but neither project officially supports this workflow. The consequence is that any banking app using hardware-backed attestation will detect an unlocked bootloader and may refuse to run or flag the device.
+
+**DivestOS** similarly cannot offer relocked bootloader support at scale given its broad device compatibility mission. For legacy devices, hardware attestation support is often absent entirely.
+
+The practical privacy implication is nuanced: an unlocked bootloader is detectable by apps and services, which may use that signal to restrict functionality or flag the device to backend fraud systems. If your threat model includes not advertising that you run a custom ROM to services you use, GrapheneOS on a Pixel is currently the only viable option.
+
+## App Compatibility and the Google Play Services Gap
+
+The central usability question for any degoogled Android experience is: which apps break, and how badly?
+
+**Apps that work without any Google services:** Most open-source apps, F-Droid catalog apps, anything using pure Android APIs for push notifications (polling or UnifiedPush), offline-only apps, and most productivity software.
+
+**Apps that partially work with microG:** Many popular apps that use Firebase Cloud Messaging for notifications, basic location services, and some SafetyNet checks. Email clients, most social apps, and navigation apps typically fall into this category.
+
+**Apps that require full Google Play Services:** Apps using hardware-backed SafetyNet with CTS profile checks, apps using the DRM Widevine L1 for HD streaming, and some banking apps with aggressive rooting/unlocked bootloader detection.
+
+For GrapheneOS users who need broad app compatibility, the sandboxed Google Play approach is pragmatic. Google Play Services runs in a normal app sandbox with no special system privileges — it cannot access hardware identifiers or bypass permission controls the way it does on stock Android. This is a genuinely novel architecture that provides Google ecosystem compatibility without granting Google services the elevated access they expect.
+
+## Telemetry Comparison by Default Settings
+
+Fresh installs of each ROM phone home differently out of the box:
+
+| ROM | Default Network Connections | Telemetry Opt-Out Required |
+|-----|-----------------------------|---------------------------|
+| GrapheneOS | None (only update checks) | No |
+| CalyxOS | microG check-ins if enabled | Disable microG registration |
+| LineageOS | Update checks, optional crash reporting | Disable in setup wizard |
+| DivestOS | Update checks | None mandatory |
+
+GrapheneOS has the most conservative defaults. CalyxOS's microG, even when enabled, uses Mozilla Location Services rather than Google for geolocation by default — a meaningful reduction in data exposure compared to stock Android. LineageOS requires manual steps during the setup wizard to decline optional telemetry, and some device-specific builds may include manufacturer telemetry that survives the ROM installation if the vendor partition is not wiped. Always verify outbound connections with a network monitor during initial setup to confirm expected behavior on your specific device and build.
 
 ## Related Articles
 
