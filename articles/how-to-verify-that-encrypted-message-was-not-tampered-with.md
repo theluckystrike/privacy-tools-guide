@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-verify-that-encrypted-message-was-not-tampered-with/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-tor-browser-for-creating-anonymous-accounts-witho/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
