@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /russia-data-localization-law-how-requirement-to-store-data-l/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

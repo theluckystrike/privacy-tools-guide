@@ -6,7 +6,7 @@ date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools, vpn]
