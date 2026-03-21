@@ -9,7 +9,7 @@ permalink: /how-to-delete-old-accounts-you-forgot-about-2026/
 categories: [guides]
 tags: [privacy-tools-guide, account-management, data-minimization]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
