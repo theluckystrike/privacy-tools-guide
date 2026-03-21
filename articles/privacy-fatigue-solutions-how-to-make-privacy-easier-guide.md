@@ -195,6 +195,70 @@ Write down your privacy configuration. A simple markdown file in your dotfiles r
 
 Documentation eliminates the need to remember configuration details. When something breaks or you need to rebuild your setup, the documentation guides you through it.
 
+## Use Email Aliases to Reduce Exposure
+
+One of the highest-leverage changes you can make is adopting email aliasing for every service you sign up for. Tools like SimpleLogin, AnonAddy, and Apple Hide My Email generate a unique alias per service. When one gets compromised or sold to spammers, you disable that alias rather than changing your real email address everywhere.
+
+The workflow is simple: when a site asks for your email, generate a new alias and paste it in. Your password manager stores the alias alongside the credentials. You never expose your real address, and you gain instant attribution when spam arrives — you can see exactly which company sold your data.
+
+For developers, you can self-host SimpleLogin using Docker:
+
+```bash
+docker run -d \
+  --name simplelogin \
+  -p 7777:7777 \
+  -e SECRET_KEY=your-secret \
+  -e FLASK_SECRET=your-flask-secret \
+  simpleloginapp/app:latest
+```
+
+This keeps your aliasing infrastructure entirely under your control.
+
+## Reduce Browser Fingerprinting Fatigue
+
+Browser fingerprinting is one of the hardest privacy problems because it requires no cookies or storage. Sites identify you through the combination of your screen size, fonts, hardware, and browser configuration. Managing this manually is exhausting.
+
+The practical solution is using a fingerprint-normalized browser profile for sensitive browsing. Firefox with arkenfox.js (a hardened user.js configuration) normalizes many fingerprinting vectors automatically:
+
+```bash
+# Clone arkenfox user.js
+git clone https://github.com/arkenfox/user.js ~/.mozilla/firefox/your-profile/
+
+# Or fetch just the user.js
+curl -o ~/.mozilla/firefox/your-profile/user.js \
+  https://raw.githubusercontent.com/arkenfox/user.js/master/user.js
+```
+
+Once applied, the profile resists most fingerprinting techniques without requiring ongoing maintenance. Pair it with uBlock Origin in medium mode for network-level filtering, and your browser becomes a privacy-preserving environment by default.
+
+For lower-friction browsing where fingerprinting is less of a concern, a standard Firefox profile with uBlock Origin handles the majority of tracker blocking. Save the hardened profile for financial, medical, and political research.
+
+## Contain App Permissions Proactively
+
+Mobile apps are persistent privacy drains. Many request permissions far beyond what their functionality requires. The fatigue comes from evaluating each request individually.
+
+The easier approach: set restrictive defaults at the OS level and grant permissions only when an app explicitly fails to function. On Android, use App Ops or a privacy dashboard to review which apps have accessed location, microphone, and camera in the last week. On iOS, review Privacy & Security settings quarterly using the same checklist mentioned earlier.
+
+For desktop applications, containerization reduces this burden significantly. Running untrusted or telemetry-heavy applications in a Firejail sandbox on Linux prevents them from accessing data outside their designated directories:
+
+```bash
+# Run an application in a Firejail sandbox
+firejail --private --net=none suspicious-app
+
+# Or create a persistent profile
+firejail --profile=/etc/firejail/generic.profile application-name
+```
+
+The `--private` flag gives the app a clean home directory. `--net=none` cuts network access entirely. Once configured, the sandbox runs transparently — you click the app icon and it launches in a contained environment without any conscious effort.
+
+## Batch Your Privacy Decisions
+
+One underappreciated cause of privacy fatigue is the distribution of decisions across time. You encounter a cookie banner at 9am, a permissions request at 11am, a suspicious privacy policy at 2pm. Each interruption fragments your focus.
+
+Batch these decisions. Install the uBlock Origin extension with the "I am an advanced user" mode enabled, and configure it to block third-party scripts by default. Most cookie banners become irrelevant because the tracking infrastructure they guard is already blocked. Sites that require JavaScript to function will prompt you to allow specific scripts — you make one decision per site rather than one decision per banner.
+
+Similarly, batch your account creation. If you need to sign up for several services in a research session, do it in one sitting using your aliasing tool and password manager. Create all the aliases, generate all the passwords, and store everything before moving on. Context switching between privacy tasks and productive work is where the fatigue accumulates.
+
 
 ## Related Articles
 
