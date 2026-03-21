@@ -385,8 +385,4 @@ Raivo has built-in importer for Authy backups
 Best practice: Set up new device alongside old, gradually migrate accounts
 ```
 
-## Conclusion
-
-For maximum privacy: Use Aegis (Android) or 2FAS (Android/iOS). For iOS convenience: Use Raivo. Avoid Authy unless required by your employer. All four apps support TOTP-based 2FA correctly; the difference is privacy during backup and sync. Prioritize open-source (Aegis, 2FAS) when possible; they allow security audits. Always keep recovery codes from each service (GitHub, Google, bank, crypto exchange) in a separate password manager—they're the ultimate fallback if your authenticator fails.
-
 {% endraw %}

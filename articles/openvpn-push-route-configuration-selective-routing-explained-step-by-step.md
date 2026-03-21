@@ -213,6 +213,5 @@ For maximum security, use the full tunnel unless you have specific requirements 
 - [Vpn Tunnel Interface Vs Full Tunnel Routing Difference.](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
 
-Built by theluckystrike — More at zovo.one
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

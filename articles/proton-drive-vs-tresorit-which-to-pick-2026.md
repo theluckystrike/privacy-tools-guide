@@ -266,7 +266,6 @@ This script demonstrates how both platforms can coexist in a data strategy.
 - [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)
 - [Proton Drive Bridge Desktop Integration Guide](/privacy-tools-guide/proton-drive-bridge-desktop-integration-guide/)
 
-Built by theluckystrike** — More at [zovo.one](https://zovo.one)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

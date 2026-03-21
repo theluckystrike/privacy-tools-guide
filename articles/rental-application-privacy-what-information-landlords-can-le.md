@@ -187,7 +187,7 @@ Key protections by jurisdiction:
 - Ban the Box: Restrictions on when criminal history requested
 - Applicant Screening Report: Landlord must provide summary of findings used for denial
 
-Many states lack robust protections. Use federal Fair Housing Act as baseline.
+Many states lack strong protections. Use federal Fair Housing Act as baseline.
 
 ## Real Threat: Predatory Screening Companies
 

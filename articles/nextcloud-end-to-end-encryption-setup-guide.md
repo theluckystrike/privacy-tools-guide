@@ -174,7 +174,7 @@ Most issues stem from mismatched client versions or corrupted local key storesâ€
 
 ## Advanced Key Recovery and Backup Strategies
 
-Losing your recovery key means permanent data loss. Implement robust backup procedures:
+Losing your recovery key means permanent data loss. Implement strong backup procedures:
 
 ```bash
 # Export your recovery key securely

@@ -329,7 +329,7 @@ Yes. Most networks recognize Tor exit node IP ranges and may assign a Tor-specif
 
 **Is IRC over Tor legal?**
 
-In virtually all jurisdictions, using Tor and IRC together is legal. The combination is used by journalists, security researchers, developers, and privacy advocates worldwide. Legal questions arise from what you say or do, not from the communications technology you use.
+In nearly all jurisdictions, using Tor and IRC together is legal. The combination is used by journalists, security researchers, developers, and privacy advocates worldwide. Legal questions arise from what you say or do, not from the communications technology you use.
 
 **How does this compare to Matrix or XMPP over Tor?**
 

@@ -455,21 +455,6 @@ Obsidian vault folder → Cryptomator encryption → Encrypted disk image
                                                 (unreadable without password)
 ```
 
-## Conclusion
-
-For most users: **Standard Notes** offers best balance of security, usability, and sync reliability.
-
-For privacy paranoia: **Joplin** (self-hosted) or **Notesnook** (zero-knowledge, simple).
-
-For knowledge workers: **Obsidian** (free, offline-first, powerful linking).
-
-For minimalists: **Cryptee** (simple, beautiful, zero-knowledge).
-
-All these apps provide genuine end-to-end encryption. Choosing between them depends on desired features and price tolerance, not security level. You'll get excellent privacy with any of them.
-
-**Get started today**: Download Obsidian (free) or Joplin (free) and migrate one notebook. Experience the difference when your notes are actually private.
-
-
 ## Related Articles
 
 - [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)

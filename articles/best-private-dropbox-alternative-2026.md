@@ -352,7 +352,6 @@ age -d -i ~/.age/keys.txt \
 - [Best Lightweight Private Browser 2026: A Developer Guide](/privacy-tools-guide/best-lightweight-private-browser-2026/)
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
 
-Built by theluckystrike** — More at [zovo.one](https://zovo.one)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

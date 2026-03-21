@@ -183,7 +183,7 @@ Deploy Pi-hole on your network to block tracking domains:
 4. Monitor Nest Hub's DNS queries in the query log
 
 Block lists that help:
-- `https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts` (comprehensive ad/tracker list)
+- `https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts` ( ad/tracker list)
 - Google Analytics and Doubleclick domains (these are optional for Nest Hub functionality)
 
 ### Proxy Server Inspection

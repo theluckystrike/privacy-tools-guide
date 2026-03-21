@@ -15,7 +15,7 @@ intent-checked: true
 
 # Privacy-Focused Email Alias Services Comparison 2026
 
-Email address is the universal identifier for account recovery, marketing tracking, and data broker aggregation. Providing your real email to every service creates a comprehensive tracking profile: what you buy (Amazon), what you read (Medium), what you watch (Netflix), and what you care about (political donations, health forums). Email alias services solve this by generating unlimited disposable email addresses that forward to your real inbox, while hiding your real email entirely.
+Email address is the universal identifier for account recovery, marketing tracking, and data broker aggregation. Providing your real email to every service creates a tracking profile: what you buy (Amazon), what you read (Medium), what you watch (Netflix), and what you care about (political donations, health forums). Email alias services solve this by generating unlimited disposable email addresses that forward to your real inbox, while hiding your real email entirely.
 
 This guide compares the leading privacy-focused email alias services: SimpleLogin, AnonAddy, and Firefox Relay, including pricing, encryption, and real-world privacy testing.
 
@@ -71,7 +71,7 @@ By 2026, the email alias market has matured with three clear leaders:
 **Price:** Free (limited) / $3.99/month (essential) / $4.99/month (premium)
 
 **Overview:**
-SimpleLogin was acquired by Proton in 2022 and has become the most comprehensive email alias service. Every feature is privacy-focused: E2EE encryption, onion address support, custom domain support, catch-all aliasing, and PGPGP key integration.
+SimpleLogin was acquired by Proton in 2022 and has become the most email alias service. Every feature is privacy-focused: E2EE encryption, onion address support, custom domain support, catch-all aliasing, and PGPGP key integration.
 
 **Pricing Tiers:**
 

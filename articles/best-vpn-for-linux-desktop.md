@@ -273,7 +273,7 @@ sudo wg-quick up wg0
 sudo systemctl enable wg-quick@wg0
 ```
 
-### Arch Linux (Cutting Edge)
+### Arch Linux (modern)
 
 ```bash
 sudo pacman -S wireguard-linux wireguard-tools

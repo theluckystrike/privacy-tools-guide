@@ -49,6 +49,18 @@ gsettings get org.gnome.desktop.privacy report-technical-problems
 gsettings set org.gnome.desktop.privacy report-technical-problems false
 ```
 
+
+## Quick Comparison
+
+| Feature | Pop Os | Fedora Vs |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Pricing | See current pricing | See current pricing |
+| Platform Support | Cross-platform | Cross-platform |
+| Compliance | See documentation | See documentation |
+
 ## Package Management and Update Cadence
 
 **Debian** uses APT with a focus on stability. Stable releases receive security updates but rarely include feature updates. The testing and unstable branches offer newer packages, but these trade stability for freshness. For privacy-sensitive work, Debian Stable provides the most predictable and auditable package set.

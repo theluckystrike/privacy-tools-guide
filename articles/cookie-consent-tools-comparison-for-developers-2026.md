@@ -28,6 +28,18 @@ Cookie consent tools fall into three main categories: full-featured CMPs, lightw
 
 **Custom implementations** give maximum control but require building consent storage, UI components, and blocking logic yourself.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Check license |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Self-Hosting | Check availability | Check availability |
+| Pricing | See current pricing | See current pricing |
+
 ## Comparison of Popular Options
 
 ### Cookiebot

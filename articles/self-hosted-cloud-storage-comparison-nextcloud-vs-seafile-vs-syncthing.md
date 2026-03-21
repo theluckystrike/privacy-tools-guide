@@ -458,7 +458,7 @@ Syncthing is extremely lightweight. Performance depends on network, not CPU:
 
 | Hardware | Sync Speed | Notes |
 |----------|-----------|-------|
-| Raspberry Pi Zero | 10 Mbps | Network bottleneck, CPU not utilized |
+| Raspberry Pi Zero | 10 Mbps | Network bottleneck, CPU not used |
 | Raspberry Pi 4 | 100 Mbps | Gigabit network bottleneck |
 | Mini PC (Gigabit) | 500+ Mbps | Fully saturates network |
 

@@ -168,7 +168,7 @@ Create a simple cron job to run these checks weekly:
 
 | Service | Price | Removal Speed | Monitoring | Best For |
 |---------|-------|---|---|---|
-| DeleteMe | $159/yr | 1 month | Monthly | Comprehensive coverage |
+| DeleteMe | $159/yr | 1 month | Monthly | coverage |
 | OneRep | $8.25/mo | 2-4 weeks | Automatic re-checks | Budget-conscious users |
 | PrivacyDuck | $15/mo | 2-3 weeks | Quarterly reporting | Detailed transparency |
 | Incogni | $99/yr | 3-5 days | Continuous monitoring | Speed priority |

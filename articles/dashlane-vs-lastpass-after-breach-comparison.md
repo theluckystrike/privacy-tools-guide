@@ -45,6 +45,18 @@ Dashlane experienced a security incident in early 2022:
 
 The Dashlane incident was limited in scope compared to LastPass, but it raised questions about the duration of unauthorized access before detection.
 
+
+## Quick Comparison
+
+| Feature | Dashlane | Lastpass |
+|---|---|---|
+| Encryption | AES-256 | AES-256 |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Pricing | See current pricing | See current pricing |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+| Documentation | Available | Available |
+
 ## Encryption Architecture Comparison
 
 Understanding the encryption models helps assess the real impact of breaches on your data.

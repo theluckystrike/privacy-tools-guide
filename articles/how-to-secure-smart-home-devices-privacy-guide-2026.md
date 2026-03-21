@@ -318,7 +318,7 @@ Most devices auto-update at night if enabled. Verify the version monthly and man
 
 **Cost:** $35-50 + your time
 
-**More comprehensive setup:**
+**More setup:**
 
 1. Deploy Firewalla ($79+) for network isolation and monitoring
 2. Replace smart speakers with non-connected alternatives (echo off, tablet)
@@ -327,9 +327,5 @@ Most devices auto-update at night if enabled. Verify the version monthly and man
 5. Remove smart locks or disable remote access
 
 **Cost:** $200-500 + hardware refresh
-
-## Conclusion
-
-Smart home devices are convenient but invasive. Isolate them on a separate network, disable cloud features you don't need, update firmware regularly, and monitor what they try to contact. Start with guest network isolation and Pi-hole for $35-50. If you need more control, invest in Firewalla. The goal is not to eliminate smart home devices, but to eliminate their ability to collect or exfiltrate your personal data.
 
 {% endraw %}

@@ -189,7 +189,7 @@ The safest approach is to minimize installed extensions:
 | HTTPS enforcement | Handled by browsers natively now | Not needed in 2026 |
 | Privacy Badger | EFF Privacy Badger | Reputable org, open source |
 
-For every other extension, ask: can I accomplish this without an extension? A browser extension with `<all_urls>` access is essentially a keylogger that you're choosing to install.
+For every other extension, ask: can I accomplish this without an extension? A browser extension with `<all_urls>` access is a keylogger that you're choosing to install.
 
 ## Related Reading
 

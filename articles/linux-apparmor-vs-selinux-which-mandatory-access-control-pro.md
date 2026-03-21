@@ -26,6 +26,18 @@ MAC systems address these limitations by implementing security policies that def
 
 The Linux kernel supports multiple security modules through the Linux Security Module (LSM) framework. Only one MAC system can be active at a time, making the choice between AppArmor and SELinux an important architectural decision for system administrators and security professionals.
 
+
+## Quick Comparison
+
+| Feature | Linux Apparmor | Selinux |
+|---|---|---|
+| Encryption | Supported | Supported |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Pricing | See current pricing | See current pricing |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+| Documentation | Available | Available |
+
 ## SELinux: The Enterprise-Grade Security Framework
 
 SELinux (Security-Enhanced Linux) originated from a research project at the National Security Agency and has been part of the Linux kernel since version 2.6. It implements a type enforcement model where every process and file object receives a security context (type). Policies then define relationships between these types, creating a complex but powerful access control matrix.

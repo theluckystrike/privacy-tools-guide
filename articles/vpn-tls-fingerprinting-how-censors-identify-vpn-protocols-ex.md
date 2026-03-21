@@ -260,7 +260,7 @@ cd ja3
 ```
 
 **TLS Scanner**
-Comprehensive tool for analyzing TLS configurations:
+ tool for analyzing TLS configurations:
 
 ```bash
 # Install TLS Scanner

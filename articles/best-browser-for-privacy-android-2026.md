@@ -179,7 +179,7 @@ Test each option with your development workflows before committing. Privacy tool
 
 ## Advanced Filter List Configuration
 
-Beyond default browser protections, add comprehensive filter lists:
+Beyond default browser protections, add filter lists:
 
 ```bash
 # For uBlock Origin (Firefox/Brave)

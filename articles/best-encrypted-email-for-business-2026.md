@@ -324,7 +324,7 @@ gpg --armor --export-secret-keys security@yourdomain.com > org_private_key.asc
 gpg --import org_public_key.asc
 ```
 
-PGP integration allows existing OpenPGP workflows to integrate seamlessly with Mailfence.
+PGP integration allows existing OpenPGP workflows to integrate with Mailfence.
 
 ## Email Encryption Standards Comparison
 

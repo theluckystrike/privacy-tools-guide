@@ -210,7 +210,6 @@ When implementing MDM for personal privacy, consider these trade-offs:
 Store your profile configurations in a secure location (encrypted external drive or password manager) to recreate them if needed.
 
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
 ## Related Reading

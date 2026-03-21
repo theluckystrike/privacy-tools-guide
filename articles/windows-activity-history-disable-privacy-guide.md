@@ -202,7 +202,7 @@ Additional databases containing activity traces exist in:
 - `%LOCALAPPDATA%\Packages\windows.immersivecontrolpanel_*\LocalState`
 - `%LOCALAPPDATA%\Packages\Microsoft.Windows.Timeline_*`
 
-A comprehensive cleanup involves removing all these locations. For maximum assurance, use a full-disk wiper after disabling Activity History, as deleted files may remain recoverable through unallocated space analysis.
+A cleanup involves removing all these locations. For maximum assurance, use a full-disk wiper after disabling Activity History, as deleted files may remain recoverable through unallocated space analysis.
 
 ## Monitoring and Verification at the System Level
 

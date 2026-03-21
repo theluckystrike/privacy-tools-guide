@@ -42,6 +42,18 @@ const encryptMessage = async (recipientPublicKey, plaintext) => {
 
 The key difference: ProtonMail supports standard OpenPGP, making interoperability with existing workflows easier. Tutanota's proprietary system offers deeper integration but requires their clients for decryption.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Encryption | PGP | PGP |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Check license |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Self-Hosting | Check availability | Check availability |
+
 ## Developer Features and API Access
 
 For power users and developers, API access determines how deeply you can integrate encrypted email into your workflows.

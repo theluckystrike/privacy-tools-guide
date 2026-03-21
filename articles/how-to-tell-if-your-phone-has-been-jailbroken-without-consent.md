@@ -196,7 +196,6 @@ For Android, verify the security patch level matches the current month. Go to Se
 - [Android Guest Mode For Lending Phone Without Exposing Person](/privacy-tools-guide/android-guest-mode-for-lending-phone-without-exposing-person/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 
-Built by theluckystrike — More at zovo.one
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

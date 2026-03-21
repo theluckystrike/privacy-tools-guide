@@ -247,7 +247,7 @@ As a general rule, hide small messages in large files. Embedding a 1KB message i
 
 ### Combining Steganography with Encryption
 
-The most robust approach combines both techniques:
+The most strong approach combines both techniques:
 
 ```bash
 # Step 1: Encrypt the message

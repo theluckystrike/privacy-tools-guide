@@ -46,6 +46,18 @@ def get_space_info(homeserver, access_token, room_id):
 
 Discord provides no equivalent federation capability. Every server exists within Discord's closed ecosystem, and community migration requires exporting and re-importing data—a process that loses message history and requires all members to rejoin.
 
+
+## Quick Comparison
+
+| Feature | Matrix Spaces | Discord |
+|---|---|---|
+| Encryption | END-TO-END | END-TO-END |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Self-Hosting | Check availability | Check availability |
+| Pricing | $15163618289102 | $15163618289102 |
+| Platform Support | Cross-platform | Cross-platform |
+
 ## End-to-End Encryption
 
 Matrix Spaces support end-to-end encryption (E2EE) by default using the Olm and Megolm encryption protocols. This means the homeserver operator cannot read message contents, even if they wanted to. Each device maintains its own encryption keys, and key exchange happens directly between participants.

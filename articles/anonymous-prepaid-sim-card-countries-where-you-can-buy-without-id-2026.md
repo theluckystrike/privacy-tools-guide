@@ -190,7 +190,7 @@ Successfully obtaining anonymous SIM cards requires planning:
 
 **Thailand specifics**: 7-Eleven stores nationwide sell AIS, TrueMove, and DTAC prepaid SIMs without ID. Cost: 99-299 Thai Baht ($2.75-8). Tourist-friendly messaging (English available). Activation requires no registration beyond opening the SIM package. Top-up credit via convenience stores indefinitely. Phone number portability exists, but you can keep the same number active for years through regular top-ups.
 
-**Vietnam updates**: Street vendors in major tourist areas (Hanoi's Old Quarter, Ho Chi Minh City's Backpacker District) sell prepaid SIMs from Viettel, Mobifone, Vinaphone. Cost: 50,000-100,000 Vietnamese Dong ($2-4). Registration process: vendor asks for "address" (you can write your hotel), accepts any answer. Activation immediate. Coverage is comprehensive, especially in cities.
+**Vietnam updates**: Street vendors in major tourist areas (Hanoi's Old Quarter, Ho Chi Minh City's Backpacker District) sell prepaid SIMs from Viettel, Mobifone, Vinaphone. Cost: 50,000-100,000 Vietnamese Dong ($2-4). Registration process: vendor asks for "address" (you can write your hotel), accepts any answer. Activation immediate. Coverage is , especially in cities.
 
 **Cambodia logistics**: Siem Reap and Phnom Penh have multiple vendors. Smart Mobile and Cellcard SIMs available without ID at convenience stores. Cost: 4,000-8,000 Cambodian Riel ($1-2). Slightly more restrictive than Thailand—some vendors ask more questions. Persistence and trying multiple shops yields success.
 

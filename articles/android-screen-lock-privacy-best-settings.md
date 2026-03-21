@@ -191,7 +191,7 @@ adb shell dumpsys notification | grep lock_screen
 
 ## Integration with Device Security Modules
 
-For developers building security-sensitive applications, leverage Android's security modules:
+For developers building security-sensitive applications, use Android's security modules:
 
 **Hardware-Backed Keystore**: Store encryption keys in the TEE (Trusted Execution Environment):
 

@@ -188,7 +188,6 @@ Common problems and solutions:
 - [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 - [Request Human Review of AI Automated Decision That Affects](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
 
-Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

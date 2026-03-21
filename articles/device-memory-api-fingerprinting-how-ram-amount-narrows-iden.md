@@ -237,7 +237,7 @@ Budget device users typically report 1-2GB RAM. Premium device users typically r
 
 ## Browser Extension Implementation: Memory Spoofing
 
-If you're building a privacy extension, here's a more robust implementation for memory spoofing that handles edge cases:
+If you're building a privacy extension, here's a more strong implementation for memory spoofing that handles edge cases:
 
 ```javascript
 // Content script for privacy extension
@@ -320,7 +320,7 @@ Several public tools allow you to test whether your device memory is being repor
 
 - browserleaks.com/device-memory - Visual test with explanation
 - fingerprintjs.com - Full fingerprinting analysis including memory
-- amiunique.org - Comprehensive fingerprint analysis comparing you to other users
+- amiunique.org - fingerprint analysis comparing you to other users
 - webkay.robinlinus.com - Privacy test including hardware APIs
 
 Running these tools with and without VPN/extension protections helps verify your mitigation strategy is working.

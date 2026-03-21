@@ -37,6 +37,18 @@ Installation is straightforward:
 
 From a privacy standpoint, Decentraleyes prevents CDN servers from logging your IP address and browsing patterns. It also protects against CDN-level tracking scripts and reduces fingerprinting by ensuring consistent resource delivery regardless of which websites you visit.
 
+
+## Quick Comparison
+
+| Feature | Decentraleyes | Local Cdn |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Yes |
+| Data Collection | Minimal | Minimal |
+| Self-Hosting | Check availability | Check availability |
+| Pricing | See current pricing | See current pricing |
+| Platform Support | Cross-platform | Cross-platform |
+
 ## What is a Local CDN?
 
 A local CDN refers to self-hosting static assets on infrastructure you control. Instead of relying on Cloudflare, jsDelivr, unpkg, or similar services, you download and serve libraries from your own server or within your application bundle.

@@ -216,7 +216,7 @@ While audits are valuable, security researchers note several important limitatio
 
 **Time-bound assessment:** An audit represents security at a specific moment. New vulnerabilities discovered after audit publication aren't reflected in the report.
 
-**Scope limitations:** Even comprehensive audits can't verify everything:
+**Scope limitations:** Even audits can't verify everything:
 - Employee access controls (who at the company can access servers?)
 - Physical security (is the data center actually secured?)
 - Third-party dependencies (libraries and tools the VPN uses)

@@ -287,7 +287,6 @@ While you cannot completely eliminate yourself from these databases, you can red
 - Check background data usage (stops apps from phoning home location data)
 
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
 ## Related Articles

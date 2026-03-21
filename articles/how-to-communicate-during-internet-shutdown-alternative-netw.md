@@ -24,6 +24,18 @@ Internet shutdowns typically affect connectivity at the ISP level, disrupting DN
 
 The key distinction in alternative networking is between **infrastructure-dependent** methods (which require some existing network hardware) and **infrastructure-independent** methods (which create entirely new network topologies).
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Check license |
+| Jurisdiction | Check provider | Check provider |
+| Platform Support | Cross-platform | Cross-platform |
+| Pricing | See current pricing | See current pricing |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+
 ## Mesh Networking with IBSS/MANET
 
 One of the most solutions involves creating ad-hoc networks between devices using IBSS (Independent Basic Service Set) or MANET (Mobile Ad-hoc Networking) protocols. Linux supports this natively through iw and wpa_supplicant.

@@ -395,7 +395,7 @@ OneRep focuses on GDPR compliance and operates primarily in EU.
 
 **Key Feature - GDPR Enforcement:**
 
-OneRep leverages GDPR "Right to be Forgotten" for European brokers. In EU, companies legally must remove personal data:
+OneRep uses GDPR "Right to be Forgotten" for European brokers. In EU, companies legally must remove personal data:
 
 ```
 GDPR Process:
@@ -565,7 +565,6 @@ Strategy for Public Figures:
 ```
 
 
-Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 
 
 ## Related Reading

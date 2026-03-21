@@ -584,8 +584,4 @@ Resolve-DnsName -Name google.com
 - [ ] Share provider address with family members (group setup)
 - [ ] Optional: Add fallback DNS (Quad9 as backup to Cloudflare)
 
-## Conclusion
-
-Encrypted DNS (DoH/DoT) prevents your ISP from logging every website you visit. Setup takes 5 minutes per device. Use Cloudflare (fast, free) or Quad9 (non-profit, secure). Verify with DNS leak test. Performance impact negligible (3-5ms). Privacy impact significant (ISP surveillance prevented).
-
 {% endraw %}

@@ -52,7 +52,7 @@ This grants access to every website you visit. Extensions need this for legitima
 - Screenshot/video tools (need page access)
 
 **`tabs` or `activeTab`**
-Allows the extension to see which URLs you're visiting. Combined with `all_urls`, this creates comprehensive browsing tracking.
+Allows the extension to see which URLs you're visiting. Combined with `all_urls`, this creates browsing tracking.
 
 **Red flags:**
 - Calculator app requesting tab access

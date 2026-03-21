@@ -200,7 +200,6 @@ For most users in 2026, WireGuard provides the best balance of speed, security, 
 - [Mls Messaging Layer Security Protocol How It Will Change](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Signal Protocol Explained for Developers](/privacy-tools-guide/signal-protocol-explained-for-developers/)
 
-Built by theluckystrike** — More at https://zovo.one
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

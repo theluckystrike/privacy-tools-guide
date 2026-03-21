@@ -88,7 +88,7 @@ DuckDuckGo uses its own crawler and anonymous sources, supplemented by partnersh
 **Weaker areas:**
 - Niche or specialized topics may get less relevant results
 - Conversational queries ("best pizza near me") require more specific phrasing
-- Image search is less comprehensive than Google Images
+- Image search is less than Google Images
 - Autocomplete suggestions are sometimes less intuitive
 
 **Quality score:** 7.5/10 (vs. Google's 9.5/10)
@@ -223,7 +223,7 @@ Unlike DuckDuckGo or Brave, Startpage doesn't store any queries. The proxying ha
 
 ### Search Quality
 
-Because Startpage uses Google's index, search quality is essentially identical to Google (8.5-9/10).
+Because Startpage uses Google's index, search quality is identical to Google (8.5-9/10).
 
 **Advantages over Google:**
 - Same results
@@ -274,7 +274,7 @@ Kagi takes a radically different approach: subscription-based search funded dire
 - Zero ads means zero tracking: Behavioral tracking only makes sense if you're selling ads
 - No user profiling: Kagi doesn't know who you are unless you tell it
 - Optional account features: Can use completely anonymously
-- Transparent privacy: Published privacy policy is comprehensive
+- Transparent privacy: Published privacy policy is 
 
 **Implementation:**
 Because Kagi's revenue comes from subscription fees ($10/month), not advertising, there's no business incentive to profile users. The business model and privacy claims are naturally aligned.

@@ -178,7 +178,7 @@ adb shell dumpsys package com.whatsapp | grep -A 50 "Permissions:"
 
 ## Method 2: Automated Permission Audit Script
 
-Create a comprehensive audit of all apps and their permissions:
+Create an audit of all apps and their permissions:
 
 ```bash
 #!/bin/bash
@@ -496,19 +496,6 @@ Risk categories:
 - MICROPHONE ✗ (deny)
 - CONTACTS ✗ (deny)
 - CALENDAR ✗ (deny)
-
-## Conclusion
-
-Android's permission system provides granular control over app data access. Regular audits using adb identify overly-permissive apps. Revoking unnecessary permissions significantly reduces privacy risks without impacting app functionality.
-
-Most users can dramatically improve privacy by:
-1. Running the audit script monthly
-2. Identifying high-risk apps (10+ permission score)
-3. Revoking 2-3 obvious unnecessary permissions per app
-4. Monitoring access via battery usage and Activity Monitor
-
-Start with one app (Instagram is usually a good example) and see the difference revoking unnecessary permissions makes.
-
 
 ## Related Articles
 

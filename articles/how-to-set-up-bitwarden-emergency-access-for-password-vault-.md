@@ -523,7 +523,7 @@ canada:
     - Update regularly for new accounts
 ```
 
-Emergency access configuration becomes meaningful only when integrated into comprehensive digital estate planning with clear documentation and regular testing.
+Emergency access configuration becomes meaningful only when integrated into digital estate planning with clear documentation and regular testing.
 
 
 ## Related Articles

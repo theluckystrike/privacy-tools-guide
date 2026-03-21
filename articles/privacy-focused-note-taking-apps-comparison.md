@@ -550,7 +550,6 @@ All privacy-focused apps allow exporting your notes (essential for preventing lo
 - Set up web clipper if available
 
 
-Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 
 
 ## Related Reading

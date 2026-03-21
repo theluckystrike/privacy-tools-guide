@@ -38,7 +38,7 @@ Disable location for any apps that don't require it. For developers building loc
 Navigate to Settings > Privacy > Camera and review every app listed. Most productivity applications have no legitimate reason to access your camera or microphone. Disable access for browsers, text editors, and any application that doesn't explicitly require it. The built-in Camera app and communication tools are the only justified exceptions on a developer workstation.
 
 **App Permissions Audit**
-Work through all permission categories: Contacts, Calendar, Call History, Email, Tasks, Messaging, Radios, and Other Devices. Windows 10 grants many of these by default, but virtually no desktop productivity software needs access to your contacts or calendar through the OS permission system. Revoke access liberally and re-grant only when an application specifically requests and justifies it.
+Work through all permission categories: Contacts, Calendar, Call History, Email, Tasks, Messaging, Radios, and Other Devices. Windows 10 grants many of these by default, but nearly no desktop productivity software needs access to your contacts or calendar through the OS permission system. Revoke access liberally and re-grant only when an application specifically requests and justifies it.
 
 ## Disable Telemetry via Group Policy and Registry
 

@@ -177,7 +177,7 @@ This script demonstrates how developers can create custom notification pipelines
 
 ## Complete Migration Checklist
 
-Before going smartphone-free, complete this comprehensive checklist:
+Before going smartphone-free, complete this checklist:
 
 ### Pre-Migration (4-6 weeks)
 

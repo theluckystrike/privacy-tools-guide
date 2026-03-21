@@ -271,7 +271,6 @@ This is rarely used outside high-risk scenarios (journalists, activists) due to 
 5. **Forgetting password in password manager** - Test password recovery procedure with your password manager before needing it.
 
 
-Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 
 
 ## Related Reading

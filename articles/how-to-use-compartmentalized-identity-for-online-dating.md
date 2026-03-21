@@ -189,7 +189,6 @@ If a situation becomes dangerous:
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 - [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
 
-Built by theluckystrike** — More at [zovo.one](https://zovo.one)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -42,7 +42,7 @@ Serial Number                   : F1TL23456789
 
 Some of this is harmless. GPS coordinates, device serial numbers, and owner names are not.
 
-## Tool 1: ExifTool (Most Comprehensive)
+## Tool 1: ExifTool (Most )
 
 ExifTool is the most complete metadata tool available — it handles over 100 file formats.
 

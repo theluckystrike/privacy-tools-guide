@@ -210,7 +210,6 @@ If you or someone you know falls victim to an AI voice cloning scam:
 - [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
 - [Protect Yourself from Doxxing After Meeting Someone Through](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 
-Built by theluckystrike — More at zovo.one
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

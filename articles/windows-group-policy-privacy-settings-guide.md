@@ -244,7 +244,7 @@ Group Policy gives significant control, but it has limits:
 - **Windows Home has no gpedit.msc**: Use the PowerShell registry approach instead. The underlying registry keys are the same.
 - **Microsoft may change what settings do**: The documented behavior of telemetry levels has changed across Windows versions. Treat Group Policy as one layer, not a complete solution.
 
-For a comprehensive hardening approach, combine Group Policy with network-level blocking, minimal installed apps, and regular audits using tools like WireShark or Glasswire to observe what your machine actually transmits.
+For a hardening approach, combine Group Policy with network-level blocking, minimal installed apps, and regular audits using tools like WireShark or Glasswire to observe what your machine actually transmits.
 
 
 ## Related Articles

@@ -47,6 +47,18 @@ brave-browser --brave-shields=down
 
 The `--brave-shields=down` flag disables Shields entirely for testing purposes, useful when debugging network-related issues in web applications.
 
+
+## Quick Comparison
+
+| Feature | Brave Browser Ad Blocking | Ublock Origin |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Pricing | $0 | $0 |
+| Platform Support | Cross-platform | Cross-platform |
+| API Access | Available | Available |
+
 ## uBlock Origin: The Extension Approach
 
 uBlock Origin is a browser extension available for Chrome, Firefox, Edge, and Brave (as an additional layer). It uses the WebExtension API to intercept network requests at the browser level, applying filter rules defined in static and dynamic filter lists.

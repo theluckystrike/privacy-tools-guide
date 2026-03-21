@@ -336,7 +336,7 @@ For sophisticated breaches involving system compromise:
 # 3. Local FBI field office for jurisdiction-specific crimes
 ```
 
-## Leveraging Class Actions
+## using Class Actions
 
 If breach was large, class actions may already exist:
 

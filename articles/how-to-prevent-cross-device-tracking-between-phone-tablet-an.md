@@ -250,7 +250,7 @@ defaults write com.apple.coreservices.useractivityd "NSAllowsUserActivityPicking
 
 ## Advanced Fingerprinting Defense
 
-Modern fingerprinting captures hundreds of subtle device characteristics. Comprehensive defense requires multiple layers:
+Modern fingerprinting captures hundreds of subtle device characteristics. defense requires multiple layers:
 
 ```javascript
 // Disable canvas fingerprinting (Firefox)
