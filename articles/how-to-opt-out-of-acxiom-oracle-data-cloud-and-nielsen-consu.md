@@ -3,6 +3,7 @@ layout: default
 title: "How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu"
 description: "A practical guide for developers and power users to remove personal data from major consumer data brokers. Includes direct URLs, API considerations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/
 categories: [guides]
@@ -240,10 +241,15 @@ For coverage beyond the three companies covered here, consider:
 Taking control of your data requires ongoing attention. The steps outlined here provide a starting point for reducing your digital footprint with major data brokers.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [How To Opt Out Of Linkedin Data Being Used For Ai Training A](/privacy-tools-guide/how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/)
+- [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

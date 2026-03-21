@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model For Medical Marijuana Patient In Non Legal Stat"
 description: "A security and privacy guide for medical marijuana patients in states where cannabis remains illegal. Learn how to protect your digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-medical-marijuana-patient-in-non-legal-stat/
 categories: [guides]
@@ -378,9 +379,14 @@ Ask trusted colleagues to attempt to correlate your identities or find evidence 
 
 Remember: Perfect security doesn't exist. Your goal is making surveillance more effort than it's worth. Implementing the measures above significantly increases the difficulty of tracking your activities.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

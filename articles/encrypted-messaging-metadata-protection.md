@@ -3,6 +3,7 @@ layout: default
 title: "Encrypted Messaging Metadata Protection: A Developer's Guide"
 description: "Learn how encrypted messaging metadata protection works, why it matters for privacy, and how to implement metadata-resistant communication systems"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /encrypted-messaging-metadata-protection/
 categories: [guides]
@@ -171,11 +172,15 @@ Several open-source projects implement these techniques:
 
 For developers building custom solutions, libsodium provides the cryptographic primitives, while frameworks like nym-mixnet offer mixnet infrastructure.
 
-## Related Reading
 
-- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+
+## Related Articles
+
+- [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
+- [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
+- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
+- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Browser Permission Prompt Fingerprinting"
 description: "Learn how websites use browser permission prompts (notifications, camera, microphone) as a fingerprinting vector to track users without cookies"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /browser-permission-prompt-fingerprinting-how-notification/
 categories: [guides, security]
@@ -353,9 +354,14 @@ To check if a site is using permission fingerprinting:
  - Use sites likecovery.org or AmIUnique to see what permissions they can detect
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
+- [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

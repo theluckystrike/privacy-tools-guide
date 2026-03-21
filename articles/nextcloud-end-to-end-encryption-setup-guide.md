@@ -3,6 +3,7 @@ layout: default
 title: "Nextcloud End to End Encryption Setup Guide"
 description: "End-to-end encryption (E2EE) in Nextcloud ensures that your data remains encrypted on the server and can only be decrypted on your client devices. Unlike"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-end-to-end-encryption-setup-guide/
 categories: [guides, security]
@@ -171,10 +172,15 @@ sudo tail -f /var/www/nextcloud/data/nextcloud.log | grep -i encryption
 
 Most issues stem from mismatched client versions or corrupted local key stores—server-side problems are rare since the server performs no cryptographic operations.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
+- [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
+- [Signal Alternatives That Offer End To End Encryption Without](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
+- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

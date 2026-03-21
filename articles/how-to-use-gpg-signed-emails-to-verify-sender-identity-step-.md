@@ -3,6 +3,7 @@ layout: default
 title: "How to Use GPG Signed Emails to Verify Sender Identity"
 description: "Generate a GPG key pair with gpg --gen-key, export your public key with gpg --armor --export [email], and share it with contacts. To sign an email, use gpg"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/
 categories: [guides, security]
@@ -216,10 +217,15 @@ If verification still fails after following these steps, check these common caus
 - **MIME formatting**: Multi-part MIME messages require careful handling
 - **Key trust levels**: Run `gpg --edit-key` and set trust level to "ultimate" for keys you personally verify
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
+- [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)
+- [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
+- [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
+- [How To Use Abine Blur For Masked Emails Phone Numbers And Cr](/privacy-tools-guide/how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

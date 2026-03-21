@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Tools For Election Observer Protecting Witness."
 description: "A practical guide to securing witness testimony and election observation data using encryption, secure communication, and operational security tools"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-election-observer-protecting-witness-testimony/
 categories: [guides]
@@ -245,9 +246,14 @@ class SecureTestimonyStore:
 
 This provides application-level encryption independent of disk encryption.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
+- [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)
+- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

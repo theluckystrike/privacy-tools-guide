@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure VPN Exempt List for Local Network Access"
 description: "Learn how to configure a VPN exempt list to access local network resources like printers, NAS, and smart home devices while your VPN tunnel remains active"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-vpn-exempt-list-for-local-network-access/
 categories: [guides]
@@ -228,10 +229,15 @@ For maximum security, exempt only the specific hosts you need, not entire subnet
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
+- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
+- [VPN for Accessing Local Bank Account from Abroad Safely](/privacy-tools-guide/vpn-for-accessing-local-bank-account-from-abroad-safely/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

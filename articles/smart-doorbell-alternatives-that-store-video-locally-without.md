@@ -3,6 +3,7 @@ layout: default
 title: "Smart Doorbell Alternatives That Store Video Locally Without"
 description: "Discover privacy-focused smart doorbell alternatives that store video footage locally without monthly cloud subscription fees. Technical setup guides"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /smart-doorbell-alternatives-that-store-video-locally-without/
 categories: [guides, security]
@@ -206,10 +207,15 @@ When planning local storage capacity, calculate your needs based on resolution, 
 
 For most homes, a NAS with 1-2TB dedicated to doorbell recording provides sufficient retention. Configure retention policies based on your specific needs—continuous recording requires more storage than motion-triggered recording only.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Run Zigbee2mqtt Locally For Smart Home Without Vendor](/privacy-tools-guide/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
+- [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
+- [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
+- [Signal Alternatives That Offer End To End Encryption Without](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
+- [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

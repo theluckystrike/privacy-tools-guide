@@ -3,6 +3,7 @@ layout: default
 title: "How To Purchase Items Online Without Revealing Real Identity"
 description: "A technical guide for developers and power users on anonymous online purchasing. Covers throwaway identities, privacy-focused payment methods, shipping"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-purchase-items-online-without-revealing-real-identity/
 categories: [guides]
@@ -225,10 +226,15 @@ True anonymity online faces practical and legal constraints:
 
 Balance privacy needs against these constraints based on your specific situation and threat model.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
+- [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
+- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

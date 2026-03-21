@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup for Political Campaign Worker"
 description: "A practical guide for political campaign staff on securing voter data, implementing encryption, and hardening devices against threats in the 2026 threat"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-political-campaign-worker-protecting-voter/
 categories: [guides]
@@ -315,13 +316,15 @@ Security-aware staff become force multipliers, helping educate colleagues and sp
 
 ---
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Setup for Abuse Hotline Worker: Protecting.](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
-- [Privacy Setup for Immigration Activist: Protecting.](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
-- [Privacy Tools for Social Worker Handling Sensitive Case.](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
+
+## Related Articles
+
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Tools For Adoption Agency Worker Protecting Birth Pa](/privacy-tools-guide/privacy-tools-for-adoption-agency-worker-protecting-birth-pa/)
+- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
+- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

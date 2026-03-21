@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Article 17 Erasure Implementation Code"
 description: "Practical implementation guide for GDPR Article 17 right to erasure. Code examples for handling data deletion requests in your applications"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-article-17-erasure-implementation-code/
 intent-checked: true
@@ -418,10 +419,15 @@ Add erasure tests to your CI pipeline and run them against a staging environment
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)
+- [Async Code Review Process Without Zoom Calls Step By Step](/privacy-tools-guide/async-code-review-process-without-zoom-calls-step-by-step/)
+- [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
+- [How To Protect Yourself From Qr Code Phishing Quishing Attac](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

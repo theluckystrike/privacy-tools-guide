@@ -3,6 +3,7 @@ layout: default
 title: "Proton Drive Bridge Desktop Integration Guide"
 description: "A practical guide for developers and power users integrating Proton Drive Bridge with desktop applications. Covers WebDAV configuration, CLI"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-bridge-desktop-integration-guide/
 categories: [guides, security]
@@ -216,10 +217,15 @@ Control upload and download speeds during work hours:
 
 This prevents Bridge from consuming your entire network connection during large transfers.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
+- [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
+- [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
+- [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
+- [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

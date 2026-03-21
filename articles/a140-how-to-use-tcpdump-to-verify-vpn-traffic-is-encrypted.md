@@ -3,6 +3,7 @@ layout: default
 title: "Use Tcpdump to Verify VPN Traffic Is Encrypted"
 description: "When you connect to a VPN, you trust that your traffic is being encrypted and routed through an secure tunnel. But how can you actually verify that your VPN is"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/
 categories: [guides, security]
@@ -279,10 +280,15 @@ To maintain confidence in your VPN setup:
 
 4. After system sleep/wake Some systems don't properly re-establish VPN connections after waking from sleep—always verify after resuming.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
+- [How to Detect If Your ISP Is Throttling VPN Traffic](/privacy-tools-guide/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
+- [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
+- [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

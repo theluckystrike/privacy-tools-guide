@@ -3,6 +3,7 @@ layout: default
 title: "Windows 10 Privacy Settings Complete Checklist"
 description: "Windows 10 collects significant telemetry data by default, and while Microsoft has softened some practices since its initial release, privacy-conscious users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /windows-10-privacy-settings-complete-checklist/
 categories: [guides]
@@ -203,13 +204,15 @@ if ($issues) {
 }
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
-- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
+
+## Related Articles
+
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
+- [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

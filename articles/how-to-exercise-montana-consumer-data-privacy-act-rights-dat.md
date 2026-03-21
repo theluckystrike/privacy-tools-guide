@@ -3,6 +3,7 @@ layout: default
 title: "How To Exercise Montana Consumer Data Privacy Act Rights Dat"
 description: "A practical guide for developers and power users on exercising rights under the Montana Consumer Data Privacy Act. Learn how to request data deletion"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-exercise-montana-consumer-data-privacy-act-rights-dat/
 categories: [guides]
@@ -237,10 +238,15 @@ print(f"Request to {deletion_request.company}: {deletion_request.days_remaining}
 The MCDPA gives you real power over your personal information. Use these rights proactively to minimize your digital footprint and control who has access to your data.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
+- [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Privacy Setup For Physical Therapist Patient Exercise Data P](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

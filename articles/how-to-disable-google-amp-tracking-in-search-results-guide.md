@@ -3,6 +3,7 @@ layout: default
 title: "How to Disable Google AMP Tracking in Search Results Guide"
 description: "Google AMP (Accelerated Mobile Pages) was introduced to speed up mobile web browsing, but it also creates significant privacy concerns. When you click an AMP"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-disable-google-amp-tracking-in-search-results-guide/
 categories: [guides]
@@ -244,9 +245,14 @@ The most effective approach combines multiple methods:
 This layered approach ensures protection even if one method fails. For developers, implementing AMP detection in your own tools helps maintain privacy across all browsing activities.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
+- [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
+- [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [Does ExpressVPN Work in Oman? 2026 Latest Tested Results](/privacy-tools-guide/does-expressvpn-work-in-oman-2026-latest-tested-results/)
+- [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

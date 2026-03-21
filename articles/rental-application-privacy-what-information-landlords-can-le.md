@@ -3,6 +3,7 @@ layout: default
 title: "Rental Application Privacy What Information Landlords Can Le"
 description: "A practical guide for developers and power users understanding rental application privacy laws, tenant rights, and what information landlords can"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /rental-application-privacy-what-information-landlords-can-le/
 categories: [guides]
@@ -348,10 +349,15 @@ Then:
 HUD investigates free. If you win, landlord pays your legal fees.
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Tenant Privacy Rights: What Landlords Can Legally Monitor](/privacy-tools-guide/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)
+- [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
+- [Library Patron Privacy Rights What Information Libraries Can](/privacy-tools-guide/library-patron-privacy-rights-what-information-libraries-can/)
+- [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)
+- [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

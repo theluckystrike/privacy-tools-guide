@@ -3,6 +3,7 @@ layout: default
 title: "Briar Messenger Offline Mesh Review: Technical Deep Dive"
 description: "Briar is worth it if you need a messenger that works without any internet infrastructure -- it delivers genuine offline mesh networking over Bluetooth LE"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "theluckystrike"
 permalink: /briar-messenger-offline-mesh-review/
 reviewed: true
@@ -278,12 +279,14 @@ The Briar project continues evolving. Features under consideration or in develop
 
 Participating in Briar development or testing new features helps strengthen the project. The community welcomes bug reports and feature requests through their official channels.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/) — Practical setup, configuration, and advanced tuning
-- [Briar Messenger Offline Communication: How It Works for.](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
-- [How to Use Briar Messenger During Iran Internet.](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
-- [Signal Protocol Explained for Developers: A Technical Deep Dive](/privacy-tools-guide/signal-protocol-explained-for-developers/)
+
+## Related Articles
+
+- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
+- [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
+- [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [Session Messenger Review 2026: Technical Analysis](/privacy-tools-guide/session-messenger-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

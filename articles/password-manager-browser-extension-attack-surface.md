@@ -3,6 +3,7 @@ layout: default
 title: "Password Manager Browser Extension Attack Surface"
 description: "Explore the security risks and attack vectors of password manager browser extensions. Learn how developers and power users can assess and mitigate"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-browser-extension-attack-surface/
 reviewed: true
@@ -280,13 +281,15 @@ const encrypted = crypto.encrypt(vault, masterPassword);
 chrome.storage.local.set({ vault: encrypted });
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Password Manager Autofill Security Risks: What.](/privacy-tools-guide/password-manager-autofill-security-risks/)
-- [How to Protect Yourself from Browser Extension Malware Installed Secretly](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
-- [Best Password Manager for Firefox Extension: A Developer.](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
+
+## Related Articles
+
+- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
+- [Browser Password Manager Vs Dedicated App](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
+- [Browser Extension Permissions What To Watch](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
+- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

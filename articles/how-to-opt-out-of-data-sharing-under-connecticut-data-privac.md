@@ -3,6 +3,7 @@ layout: default
 title: "Opt Out of Data Sharing Under Connecticut Data Privacy Act"
 description: "A practical guide for developers and power users on exercising opt-out rights under the Connecticut Data Privacy Act. Learn how to control your personal data"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-data-sharing-under-connecticut-data-privac/
 categories: [guides, security]
@@ -269,9 +270,14 @@ Several issues frequently trip up Connecticut residents exercising their rights:
 - **Retention exceptions** - Companies can keep data for security, legal obligations
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [How To Anonymize User Data In Production Database For Privac](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
+- [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
+- [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

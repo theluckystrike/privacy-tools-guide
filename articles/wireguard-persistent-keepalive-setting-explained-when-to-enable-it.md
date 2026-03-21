@@ -3,6 +3,7 @@ layout: default
 title: "WireGuard Persistent Keepalive Setting Explained"
 description: "Learn when to enable WireGuard persistent keepalive. Practical guide covering NAT traversal, firewall timeouts, and configuration examples for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-persistent-keepalive-setting-explained-when-to-enable-it/
 categories: [guides, security]
@@ -291,12 +292,15 @@ systemctl enable wg-adaptive-keepalive.service
 Understanding persistent keepalive helps you make informed decisions about your WireGuard deployment. For most client use cases behind NAT, a keepalive interval of 25 seconds provides reliable connectivity without significant overhead. For direct peer connections or privacy-conscious setups, disabling it entirely remains a valid choice.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [WireGuard DNS Configuration Options Explained: resolv.conf vs systemd-resolved](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
-- [What VPN Logs Actually Mean: No-Log Policy Explained.](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
-- [Tor Network Censorship Resistance Explained: A Technical.](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
+
+## Related Articles
+
+- [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
+- [Tails Persistent Storage Setup Guide What To Save And What S](/privacy-tools-guide/tails-persistent-storage-setup-guide-what-to-save-and-what-s/)
+- [How To Configure Wireguard With Obfuscation To Bypass Russia](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
+- [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Windows 11 Privacy Settings: How to Disable Telemetry"
 description: "A practical guide for developers and power users to disable Windows 11 telemetry through Settings, Group Policy, and Registry modifications"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-11-privacy-settings-disable-telemetry/
 categories: [guides]
@@ -279,10 +280,15 @@ Consider your specific use case:
 - **Server/headless system**: Disable everything—servers don't need user-facing telemetry
 - **Gaming**: Be conservative—Game Bar and Xbox integration provide useful features
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
+- [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

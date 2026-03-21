@@ -3,6 +3,7 @@ layout: default
 title: "Gdpr Penalties Fines Database Case Examples"
 description: "A practical guide to GDPR penalties, notable fines, real case examples, and how to query GDPR enforcement databases. Essential reading for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-penalties-fines-database-case-examples/
 categories: [guides]
@@ -208,12 +209,15 @@ jobs:
           bash scripts/check-encryption.sh
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [GDPR Article 17 Erasure Implementation Code: A Developer.](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
-- [GDPR Data Breach Notification: What Companies Must Tell.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
-- [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
+
+## Related Articles
+
+- [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
+- [China VPN Crackdown: Penalties and Consequences for.](/privacy-tools-guide/china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/)
+- [Privacy Tools For Private Investigator Protecting Case File](/privacy-tools-guide/privacy-tools-for-private-investigator-protecting-case-file-/)
+- [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
+- [How To Anonymize User Data In Production Database For Privac](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

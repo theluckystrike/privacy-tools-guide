@@ -3,6 +3,7 @@ layout: default
 title: "Iphone Focus Modes For Privacy How To Limit App Access By Co"
 description: "Learn how to use iPhone Focus Modes to enhance your privacy by limiting app access based on your current context. A guide for developers and power"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/
 categories: [guides]
@@ -288,9 +289,14 @@ Some common issues and solutions:
 - **Focus Mode not preserving across devices**: Ensure iCloud sync is enabled for Focus Modes in **Settings > [Your Name] > iCloud > Focus**
 - **Location not triggering automation**: Verify location permission is set to "Always" and that location services are enabled for Shortcuts app
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
+- [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
+- [Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

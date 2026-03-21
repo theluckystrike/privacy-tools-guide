@@ -3,6 +3,7 @@ layout: default
 title: "Chromebook Privacy Settings for Students 2026"
 description: "A guide to hardening ChromeOS privacy settings for students. Covers management console policies, DNS configuration, extension"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /chromebook-privacy-settings-for-students-2026/
 categories: [guides]
@@ -193,13 +194,15 @@ Review these settings periodically:
 - [ ] Disable "Make searches and browsing better"
 - [ ] Review site permissions (camera, microphone, location)
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Minimize Digital Footprint Guide 2026: A.](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
-- [WhatsApp Privacy Settings Best Configuration 2026](/privacy-tools-guide/whatsapp-privacy-settings-best-configuration-2026/)
-- [macOS Privacy Settings for Remote Workers 2026: Complete.](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+
+## Related Articles
+
+- [Best Vpn For Students Studying Abroad Accessing University R](/privacy-tools-guide/best-vpn-for-students-studying-abroad-accessing-university-r/)
+- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
+- [Facebook Marketplace Privacy Settings Guide](/privacy-tools-guide/facebook-marketplace-privacy-settings-guide/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [Feeld Privacy Settings For Couples And Alternative Dating Pr](/privacy-tools-guide/feeld-privacy-settings-for-couples-and-alternative-dating-pr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

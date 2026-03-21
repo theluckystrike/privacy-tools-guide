@@ -3,6 +3,7 @@ layout: default
 title: "Dating App Data Breach History Which Platforms Have Leaked U"
 description: "A timeline and technical guide to dating app data breaches, covering major incidents, exposed data types, and actionable protection"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /dating-app-data-breach-history-which-platforms-have-leaked-u/
 reviewed: true
@@ -297,10 +298,15 @@ Understanding what information platforms store helps assess exposure risk:
 | Device | Device ID, OS, language | Medium |
 | Financial | Payment history, cards | High |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
+- [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
+- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [Okcupid Data Sharing History What Third Parties Received Use](/privacy-tools-guide/okcupid-data-sharing-history-what-third-parties-received-use/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

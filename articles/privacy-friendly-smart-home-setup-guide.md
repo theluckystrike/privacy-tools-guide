@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Friendly Smart Home Setup Guide 2026: Home."
 description: "Build a private smart home without cloud services. Home Assistant on Raspberry Pi, local Zigbee/Z-Wave, Pi-hole DNS filtering, VLAN isolation. With"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-friendly-smart-home-setup-guide-2026/
 categories: [guides]
@@ -848,9 +849,13 @@ Intermittent unresponsiveness:
 
 ---
 
+
+## Related Articles
+
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [How To Run Zigbee2mqtt Locally For Smart Home Without Vendor](/privacy-tools-guide/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
+
 {% endraw %}
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-

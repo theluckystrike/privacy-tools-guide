@@ -3,6 +3,7 @@ layout: default
 title: "Jami P2p Messenger Review 2026"
 description: "Jami P2P Messenger Review 2026: A Developer Guide to. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /jami-p2p-messenger-review-2026/
 reviewed: true
@@ -285,10 +286,15 @@ The Jami project (formerly Ring/GNU Ring) is maintained by Savoir-faire Linux wi
 
 These improvements will address current limitations, though the rate of development remains slower than centralized alternatives.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- More guides coming soon.
+
+## Related Articles
+
+- [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
+- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
+- [Cwtch Decentralized Metadata Resistant Messenger How It Diff](/privacy-tools-guide/cwtch-decentralized-metadata-resistant-messenger-how-it-diff/)
+- [Cwtch Messenger Review: A Decentralized Privacy Solution](/privacy-tools-guide/cwtch-messenger-review-decentralized/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

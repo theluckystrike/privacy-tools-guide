@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Home Assistant Esphome For Completely Local Sm"
 description: "A practical guide for developers and power users setting up ESPHome with Home Assistant for privacy-focused, fully local smart home sensors without"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-home-assistant-esphome-for-completely-local-sm/
 categories: [guides]
@@ -179,10 +180,15 @@ Even though your sensors operate locally, implement basic security practices:
 - Keep ESPHome and Home Assistant updated to patch security vulnerabilities
 - Consider isolating IoT devices on a separate VLAN if your router supports it
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
+- [How To Use Tailscale To Access Home Assistant Remotely Witho](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
+- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
+- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

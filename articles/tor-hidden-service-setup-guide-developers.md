@@ -3,6 +3,7 @@ layout: default
 title: "Tor Hidden Service Setup Guide Developers"
 description: "A practical developer guide to setting up Tor hidden services. Learn configuration, security best practices, and deployment workflows for .onion services"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-hidden-service-setup-guide-developers/
 categories: [guides]
@@ -206,10 +207,15 @@ Hidden services introduce latency because traffic bounces through multiple Tor n
 - Consider static site generation over dynamic server-side rendering
 - Monitor circuit build times and rotate to faster relays if needed
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
+- [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
+- [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

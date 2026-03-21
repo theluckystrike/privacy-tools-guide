@@ -3,6 +3,7 @@ layout: default
 title: "Implement Purpose Limitation in Data Architecture"
 description: "Learn practical techniques to implement purpose limitation in your data architecture. Code examples for enforcing data use restrictions based on"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-purpose-limitation-in-data-architecture-res/
 categories: [guides]
@@ -209,10 +210,15 @@ Several mistakes undermine purpose limitation implementations:
 
 The most subtle issue involves derived data. If you combine data from two purposes to create a new field, the derived field inherits the most restrictive purpose. Many teams overlook this and accidentally expand data use beyond consent boundaries.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Implement Customer Data Encryption At Rest And In Tra](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
+- [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
+- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
+- [Simplex Chat Review: No Identifiers Architecture Analysis](/privacy-tools-guide/simplex-chat-review-no-identifiers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

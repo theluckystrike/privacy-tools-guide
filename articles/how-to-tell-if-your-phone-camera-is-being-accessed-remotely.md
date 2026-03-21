@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Your Phone Camera Is Being Accessed Remotely"
 description: "Learn technical methods to detect unauthorized camera access on Android and iOS. Practical verification steps, system logs, and code-level inspection"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-phone-camera-is-being-accessed-remotely/
 categories: [guides]
@@ -194,10 +195,15 @@ For developers building privacy-sensitive applications, always request camera pe
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Tell If Your Phone Has Been Jailbroken Without Consen](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
+- [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
+- [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
+- [How To Use Tailscale To Access Home Assistant Remotely Witho](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
+- [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

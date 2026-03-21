@@ -3,6 +3,7 @@ layout: default
 title: "Eufy Camera Cloud Upload Controversy What Local Storage"
 description: "The Eufy camera cloud upload controversy sparked significant concern among privacy-conscious smart home users in recent years. Anker's Eufy brand, popular for"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /eufy-camera-cloud-upload-controversy-what-local-storage/
 categories: [guides]
@@ -184,9 +185,14 @@ if __name__ == "__main__":
 ```
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [How to Encrypt Files Before Cloud Upload](/privacy-tools-guide/how-to-encrypt-files-before-cloud-upload/)
+- [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
+- [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Nextcloud External Storage Setup Guide 2026"
 description: "A technical guide to configuring external storage in Nextcloud for developers and power users. Connect S3, WebDAV, FTP, and local storage"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nextcloud-external-storage-setup-guide-2026/
 categories: [guides]
@@ -203,10 +204,15 @@ External storage excels in several developer-focused scenarios:
 - **Backup consolidation**: Aggregate backups from multiple servers into a single S3-backed archive
 - **Media libraries**: Connect large media storage without consuming local disk space
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Self Hosted Cloud Storage Comparison Nextcloud vs.](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
+- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
+- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

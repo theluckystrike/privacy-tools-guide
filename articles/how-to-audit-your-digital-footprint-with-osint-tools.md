@@ -3,6 +3,7 @@ layout: default
 title: "Using exiftool on photos:"
 description: "Complete guide to finding your personal data online using open-source intelligence tools to identify exposure and privacy leaks"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-audit-your-digital-footprint-with-osint-tools/
 categories: [guides, security]
@@ -377,9 +378,15 @@ Completely removing yourself from the internet is unrealistic. Your goal is:
 
 You'll never achieve total privacy, but you can significantly reduce your exposure. This audit is the first step.
 
-## Related Reading
 
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Audit Your Digital Footprint And Find All Accounts Li](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
+- [How To Minimize Digital Footprint Guide 2026](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
+- [How To Detect Catfish On Dating Apps Using Osint Verificatio](/privacy-tools-guide/how-to-detect-catfish-on-dating-apps-using-osint-verificatio/)
+- [Metadata Removal Tools Comparison 2026: ExifTool vs MAT2.](/privacy-tools-guide/metadata-removal-tools-comparison-2026/)
+- [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

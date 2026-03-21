@@ -3,6 +3,7 @@ layout: default
 title: "Privacy by Design Principles: A Practical Guide"
 description: "Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /privacy-by-design-principles-practical-guide/
 categories: [guides, security]
@@ -395,11 +396,15 @@ def execute_erasure_request(user_id: str, db) -> Dict:
 
 The manifest returned by this function is your audit trail. Store it in a separate compliance log (which does not contain personal data — just deletion records) so you can demonstrate compliance if a regulator asks.
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+
+## Related Articles
+
+- [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
+- [Privacy Compliance API Design Best Practices](/privacy-tools-guide/privacy-compliance-api-design-best-practices/)
+- [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
+- [GDPR Compliant User Authentication Design](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
+- [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

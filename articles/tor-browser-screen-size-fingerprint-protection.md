@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser Screen Size Fingerprint Protection"
 description: "Learn how Tor Browser protects against screen size fingerprinting and how to configure it for maximum privacy. Practical tips for developers and power"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-screen-size-fingerprint-protection/
 categories: [guides, security]
@@ -395,12 +396,15 @@ Choose your protection level based on:
 - Usability requirements (how much functionality do you need?)
 - Time investment (fingerprinting resistance requires active management)
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
-- [Tor Browser Fingerprinting Protection: How It Makes.](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
-- [How to Check Your Browser Fingerprint Uniqueness Score.](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
+- [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
+- [Tor Browser Font Fingerprinting Protection](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
+- [How To Check Your Browser Fingerprint Uniqueness Score Onlin](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

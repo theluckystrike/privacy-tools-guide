@@ -3,6 +3,7 @@ layout: default
 title: "Macos Spotlight Privacy Settings Disable Tracking"
 description: "Learn how to configure macOS Spotlight privacy settings to minimize tracking, prevent data leakage, and control what information is indexed and shared"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /macos-spotlight-privacy-settings-disable-tracking/
 categories: [guides, security]
@@ -194,13 +195,15 @@ Beyond Spotlight configuration, consider these complementary measures:
 macOS provides detailed privacy controls, but they require intentional configuration. By understanding how Spotlight indexes and exposes your data, you can make informed decisions about what remains searchable and what stays private.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Harden macOS Sequoia Privacy Settings Beyond.](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
-- [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)
-- [iOS Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+
+## Related Articles
+
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [Macos Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Iphone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

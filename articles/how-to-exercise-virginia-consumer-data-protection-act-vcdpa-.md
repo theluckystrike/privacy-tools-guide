@@ -3,6 +3,7 @@ layout: default
 title: "How To Exercise Virginia Consumer Data Protection Act Vcdpa"
 description: "Learn how to exercise your privacy rights under the Virginia Consumer Data Protection Act (VCDPA). This guide covers data access requests, deletion"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/
 categories: [guides]
@@ -292,8 +293,14 @@ Using VCDPA effectively:
 6. Review privacy settings on accounts regularly
 7. Repeat annual audits to maintain control
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Privacy Setup For Physical Therapist Patient Exercise Data P](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

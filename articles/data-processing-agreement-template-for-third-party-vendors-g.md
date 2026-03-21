@@ -3,6 +3,7 @@ layout: default
 title: "Data Processing Agreement Template for Third Party Vendors"
 description: "A practical guide and template for creating GDPR-compliant data processing agreements with third-party vendors. Includes code examples for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /data-processing-agreement-template-for-third-party-vendors-g/
 categories: [guides]
@@ -189,10 +190,15 @@ Neglecting to specify data deletion timelines leaves you without recourse if a v
 
 Transfer mechanisms require particular attention. Following the EU-US Data Privacy Framework adoption in 2023 and subsequent updates, ensure your vendor has documented legal basis for any data transfers outside the EEA.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [Cookie Alternatives After Third-Party Deprecation: A.](/privacy-tools-guide/cookie-alternatives-after-third-party-deprecation-2026-guide/)
+- [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

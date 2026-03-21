@@ -3,6 +3,7 @@ layout: default
 title: "Does NordVPN Work in Russia? Tested from Moscow (2026)"
 description: "Testing VPN connectivity from within Russia presents unique challenges. The Russian Federation maintains an extensive internet filtering system, and as of"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /does-nordvpn-work-in-russia-2026-tested-from-moscow/
 categories: [guides, security]
@@ -198,10 +199,15 @@ Desktop users benefit from manually locking in the obfuscated server option and 
 
 Use of VPN services to access blocked content falls into a legal grey area under Russian law. Roskomnadzor has required VPN providers to connect to a state registry of banned sites since 2019. NordVPN, like most international providers, does not comply with this requirement, which means the service itself occupies an uncertain legal position within Russia. This guide documents technical behavior, not legal advice. Users should consult local legal counsel regarding their specific circumstances.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Does NordVPN Work in Uzbekistan? 2026 Tested and Reviewed](/privacy-tools-guide/does-nordvpn-work-in-uzbekistan-2026-tested-and-reviewed/)
+- [Does NordVPN Obfuscated Servers Work in China? 2026 Test](/privacy-tools-guide/does-nordvpn-obfuscated-servers-work-in-china-2026-test/)
+- [Does ExpressVPN Work in Cuba 2026? Tested from Havana](/privacy-tools-guide/does-expressvpn-work-in-cuba-2026-tested-from-havana/)
+- [Does ExpressVPN Work in Oman? 2026 Latest Tested Results](/privacy-tools-guide/does-expressvpn-work-in-oman-2026-latest-tested-results/)
+- [Does Proton VPN Stealth Work in Myanmar? 2026 Tested](/privacy-tools-guide/does-proton-vpn-stealth-work-in-myanmar-2026-tested/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

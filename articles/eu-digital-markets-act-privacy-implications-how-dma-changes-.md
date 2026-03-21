@@ -3,6 +3,7 @@ layout: default
 title: "Eu Digital Markets Act Privacy Implications How Dma Changes"
 description: "The European Union's Digital Markets Act (DMA) represents the most significant shift in platform regulation since GDPR. Now that the enforcement phase has"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /eu-digital-markets-act-privacy-implications-how-dma-changes-/
 categories: [troubleshooting]
@@ -212,10 +213,15 @@ The practical takeaway is clear: privacy-respecting defaults are no longer optio
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Email Privacy Act Protections When Government Needs Warrant](/privacy-tools-guide/email-privacy-act-protections-when-government-needs-warrant-/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

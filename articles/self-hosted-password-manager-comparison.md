@@ -3,6 +3,7 @@ layout: default
 title: "Self-Hosted Password Manager Comparison"
 description: "Compare Vaultwarden, KeePass, Passbolt, and Padloc for self-hosting. Covers setup complexity, sync, team features, and security model."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: self-hosted-password-manager-comparison
 categories: [guides, security]
@@ -231,11 +232,15 @@ Regardless of which option you pick:
 - **Security-first team with OpenPGP comfort**: Passbolt
 - **Air-gapped or offline-only**: KeePassXC
 
-## Related Reading
 
-- [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide)
-- [Bitwarden vs Vaultwarden Self-Hosted Comparison](/bitwarden-vs-vaultwarden-self-hosted-comparison)
-- [KeePass vs KeePassXC Differences 2026](/keepass-vs-keepassxc-differences-2026)
+
+## Related Articles
+
+- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
+- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
+- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

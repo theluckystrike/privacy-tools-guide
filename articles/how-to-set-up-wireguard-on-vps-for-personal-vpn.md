@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up WireGuard on VPS for Personal VPN"
 description: "A practical guide to setting up WireGuard on a VPS to create your own personal VPN for enhanced privacy and secure remote access"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-wireguard-on-vps-for-personal-vpn/
 categories: [guides]
@@ -202,10 +203,15 @@ If your connection fails, check these common problems:
 - **Network issues**: Ensure your VPS provider allows UDP traffic
 - **DNS leaks**: Confirm your DNS requests also route through the VPN tunnel
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
+- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
+- [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

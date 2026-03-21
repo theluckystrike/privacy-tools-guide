@@ -3,6 +3,7 @@ layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"
 description: "Choose passkeys over passwords when your users have modern devices (iOS 16+, Android 9+, recent browsers) and you can implement proper recovery flows --"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /passkey-vs-password-security-comparison/
 reviewed: true
@@ -192,11 +193,15 @@ The shift from passwords to passkeys represents the most significant authenticat
 ---
 
 
-## Related Reading
 
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+
+## Related Articles
+
+- [Passkey Adoption Timeline by Platform: A Developer Guide](/privacy-tools-guide/passkey-adoption-timeline-by-platform/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
+- [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
+- [Password Manager Clipboard Security Best Practices](/privacy-tools-guide/password-manager-clipboard-security-best-practices/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

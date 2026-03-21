@@ -3,6 +3,7 @@ layout: default
 title: "Consent Receipt Specification Explained: A Developer Guide"
 description: "A practical guide to implementing the Consent Receipt Specification for developers and power users. Learn the JSON structure, key components, and code"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /consent-receipt-specification-explained-guide/
 categories: [guides]
@@ -201,11 +202,15 @@ The specification records consent but does not solve every consent management ch
 
 Additionally, the specification requires careful key management for signatures. If your signing keys are compromised, attackers could create valid-looking consent receipts. Key rotation and proper key management are essential.
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+
+## Related Articles
+
+- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
+- [Cookie Consent Tools Comparison for Developers 2026](/privacy-tools-guide/cookie-consent-tools-comparison-for-developers-2026/)
+- [CookieYes vs Osano Consent Tools Comparison 2026](/privacy-tools-guide/cookieyes-vs-osano-consent-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

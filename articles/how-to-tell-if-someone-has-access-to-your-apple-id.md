@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Someone Has Access To Your Apple Id"
 description: "Your Apple ID is the gateway to everything Apple—iCloud, App Store purchases, FaceTime, iMessage, and Find My. If someone gains unauthorized access, they could"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-someone-has-access-to-your-apple-id/
 categories: [guides]
@@ -211,10 +212,15 @@ for event in data.get("signInEvents", []):
     print(f"{date}  device={device}  ip={ip}")
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Tell If Someone Installed Spyware On Your Iphone](/privacy-tools-guide/how-to-tell-if-someone-installed-spyware-on-your-iphone/)
+- [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
+- [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
+- [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
+- [Iphone Significant Locations History What Apple Tracks How T](/privacy-tools-guide/iphone-significant-locations-history-what-apple-tracks-how-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

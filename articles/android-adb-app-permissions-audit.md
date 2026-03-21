@@ -3,6 +3,7 @@ layout: default
 title: "Audit Android App Permissions with ADB"
 description: "Use ADB to audit and revoke Android app permissions from your computer. Find apps with excessive access to location, camera, and contacts."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: android-adb-app-permissions-audit
 categories: [guides, privacy]
@@ -290,11 +291,15 @@ adb disconnect
 
 Leaving USB debugging enabled is a security risk — a malicious charger or USB cable could silently connect.
 
-## Related Reading
 
-- [Android App Permissions Audit Guide 2026](/android-app-permissions-audit-guide-2026)
-- [Android ADB Commands for Removing Bloatware](/android-adb-commands-for-removing-bloatware-that-tracks-user)
-- [Android Background Location Access](/android-background-location-access-which-apps-track-you-when)
+
+## Related Articles
+
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

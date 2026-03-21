@@ -3,6 +3,7 @@ layout: default
 title: "China Qr Code Tracking How Mandatory Scanning Creates."
 description: "A technical guide for developers and power users exploring how mandatory QR code scanning in China creates surveillance trails, tracking"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/
 categories: [guides]
@@ -318,10 +319,15 @@ For those concerned about movement tracking in any jurisdiction:
 The technical lesson from China's QR system demonstrates how routine convenience can create surveillance infrastructure. Recognizing these patterns helps in evaluating privacy implications of any tracking technology.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Bumble Private Detector Ai Scanning Privacy How Uploaded.](/privacy-tools-guide/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)
+- [How To Disable Wifi Scanning And Bluetooth Scanning On Andro](/privacy-tools-guide/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)
+- [Async Code Review Process Without Zoom Calls Step By Step](/privacy-tools-guide/async-code-review-process-without-zoom-calls-step-by-step/)
+- [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
+- [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

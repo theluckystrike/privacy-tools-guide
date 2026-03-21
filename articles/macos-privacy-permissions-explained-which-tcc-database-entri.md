@@ -3,6 +3,7 @@ layout: default
 title: "Macos Privacy Permissions Explained Which Tcc Database."
 description: "A guide for developers and power users on understanding macOS TCC database, identifying granted permissions, and revoking unnecessary"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /macos-privacy-permissions-explained-which-tcc-database-entries-to-revoke-for-security/
 categories: [guides]
@@ -264,9 +265,14 @@ sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db \
 
 Save as `tcc-audit.sh`, make executable, and run periodically to track permission changes and identify new high-risk grants.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Macos Privacy Permissions Manager Guide 2026](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+- [Macos Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

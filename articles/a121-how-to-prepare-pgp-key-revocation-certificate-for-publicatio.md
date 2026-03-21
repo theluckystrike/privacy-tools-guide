@@ -3,6 +3,7 @@ layout: default
 title: "How To Prepare Pgp Key Revocation Certificate For Publicatio"
 description: "Learn how to generate, securely store, and publish a PGP key revocation certificate to invalidate your keys if compromised. Essential for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/
 categories: [guides]
@@ -184,10 +185,15 @@ Forgetting the passphrase for your backup is equally problematic. Document your 
 A PGP key revocation certificate is not optional. It is a fundamental part of key management that protects you and your correspondents when things go wrong. Generate it, secure it, and know how to use it.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
+- [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)
+- [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
+- [Vpn Certificate Pinning How It Prevents Mitm Attacks.](/privacy-tools-guide/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

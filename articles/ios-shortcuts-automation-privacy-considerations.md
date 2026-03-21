@@ -3,6 +3,7 @@ layout: default
 title: "Ios Shortcuts Automation Privacy Considerations"
 description: "Learn about privacy implications when using iOS Shortcuts automation. Discover security best practices, data access permissions, and how to build"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ios-shortcuts-automation-privacy-considerations/
 categories: [guides]
@@ -247,13 +248,15 @@ iOS Shortcuts are powerful because they give users programmatic control. That po
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
-- [iOS Privacy Settings Complete Walkthrough: Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+
+## Related Articles
+
 - [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
+- [Best Browser for iOS Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-ios-privacy-2026/)
+- [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
+- [iOS Contact Poster Privacy Settings Guide](/privacy-tools-guide/ios-contact-poster-privacy-settings-guide/)
+- [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

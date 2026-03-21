@@ -3,6 +3,7 @@ layout: default
 title: "Configure Little Snitch On Macos To Block All Unnecessary Outbound Connections"
 description: "A practical guide for developers and power users to configure Little Snitch on macOS. Learn to monitor, audit, and block unnecessary outbound network"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/
 categories: [guides, security]
@@ -310,10 +311,15 @@ cp /tmp/rules/*.plist "$RULES_PATH/"
 
 This ensures all developers maintain consistent security postures and blocking policies.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [How To Run Concurrent Vpn Connections For Different Applicat](/privacy-tools-guide/how-to-run-concurrent-vpn-connections-for-different-applicat/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [Restrict Alexa Skills From Accessing Unnecessary Personal Data Permissions](/privacy-tools-guide/how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/)
+- [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

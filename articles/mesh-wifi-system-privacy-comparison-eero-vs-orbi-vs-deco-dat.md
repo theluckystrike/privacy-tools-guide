@@ -3,6 +3,7 @@ layout: default
 title: "Mesh Wifi System Privacy Comparison Eero Vs Orbi Vs Deco Dat"
 description: "A technical breakdown of data collection practices across Amazon Eero, Netgear Orbi, and TP-Link Deco mesh WiFi systems for privacy-conscious users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /mesh-wifi-system-privacy-comparison-eero-vs-orbi-vs-deco-dat/
 categories: [guides]
@@ -302,9 +303,14 @@ Choose based on your specific situation:
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [How To Build Privacy Respecting Email Marketing System Witho](/privacy-tools-guide/how-to-build-privacy-respecting-email-marketing-system-witho/)
+- [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

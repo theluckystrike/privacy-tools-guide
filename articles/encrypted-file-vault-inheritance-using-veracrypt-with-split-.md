@@ -3,6 +3,7 @@ layout: default
 title: "Encrypted File Vault Inheritance Using Veracrypt With Split"
 description: "A technical guide for implementing secure digital estate planning using VeraCrypt's hidden volume feature and split password authentication for executors and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /encrypted-file-vault-inheritance-using-veracrypt-with-split-/
 categories: [guides]
@@ -170,10 +171,15 @@ Regular testing ensures your inheritance system works when needed:
 veracrypt --text --verify /path/to/volume.vc
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
+- [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
+- [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
+- [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

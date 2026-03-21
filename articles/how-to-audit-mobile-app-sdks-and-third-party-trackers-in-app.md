@@ -3,6 +3,7 @@ layout: default
 title: "How To Audit Mobile App Sdks And Third Party Trackers In App"
 description: "A practical guide for developers and power users to audit mobile app SDKs and identify third-party trackers. Learn static analysis, dynamic testing"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/
 categories: [guides]
@@ -267,10 +268,15 @@ Regular auditing of mobile apps reveals the constantly evolving tracking ecosyst
 
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
+- [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)
+- [Cookie Alternatives After Third-Party Deprecation: A.](/privacy-tools-guide/cookie-alternatives-after-third-party-deprecation-2026-guide/)
+- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

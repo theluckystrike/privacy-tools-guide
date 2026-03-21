@@ -3,6 +3,7 @@ layout: default
 title: "CalyxOS Datura Firewall Setup: Controlling Per-App."
 description: "Learn how to configure the Datura firewall in CalyxOS to control per-app internet access without root. Practical examples for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /calyxos-datura-firewall-setup-controlling-per-app-internet-a/
 categories: [security, guides]
@@ -168,13 +169,15 @@ Begin by reviewing all applications with network access in your Datura Firewall 
 
 The Datura firewall provides enterprise-grade network filtering without requiring root access, making CalyxOS an excellent choice for privacy-conscious users who need granular control over their device's network behavior.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Configure Per App VPN on Android Without Root.](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
-- [CalyxOS MicroG Setup Guide: Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
-- [Secure VoIP Setup for Private Phone Calls Without.](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
+
+## Related Articles
+
+- [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
+- [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
+- [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
+- [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
+- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

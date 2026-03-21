@@ -3,6 +3,7 @@ layout: default
 title: "Russia Yarovaya Law Mass Surveillance Requirements What Tele"
 description: "Russia Yarovaya Law: What Data Telecom Companies Must. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /russia-yarovaya-law-mass-surveillance-requirements-what-tele/
 categories: [guides, security]
@@ -234,10 +235,15 @@ Non-compliance with Yarovaya Law requirements carries significant penalties:
 - **Criminal liability**: executives can face criminal charges
 - **Website blocking**: Non-compliant services can be blocked in Russia
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Russia Data Localization Law: How Requirement to Store.](/privacy-tools-guide/russia-data-localization-law-how-requirement-to-store-data-l/)
+- [Russia Sovereign Internet Law What It Means For Vpn Users An](/privacy-tools-guide/russia-sovereign-internet-law-what-it-means-for-vpn-users-an/)
+- [Cloud Storage Subpoena Risk: Provider Law Enforcement.](/privacy-tools-guide/cloud-storage-subpoena-risk-provider-law-enforcement-complia/)
+- [Privacy Law Updates Tracker March 2026](/privacy-tools-guide/privacy-law-updates-tracker-march-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

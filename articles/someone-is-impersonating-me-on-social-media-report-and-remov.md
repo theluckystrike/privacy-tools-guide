@@ -3,6 +3,7 @@ layout: default
 title: "Someone Is Impersonating Me On Social Media Report And."
 description: "A technical guide for developers and power users on how to report and remove impersonation accounts on social media platforms. Includes API approaches"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /someone-is-impersonating-me-on-social-media-report-and-removal/
 categories: [guides]
@@ -208,10 +209,15 @@ Even with external impersonation, secure your own accounts:
 - Use unique emails for each social account
 - Regularly audit connected apps and permissions
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
+- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

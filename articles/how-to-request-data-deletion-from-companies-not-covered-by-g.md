@@ -3,6 +3,7 @@ layout: default
 title: "How To Request Data Deletion From Companies Not Covered By G"
 description: "Learn practical methods to request data deletion from companies that fall outside GDPR and CCPA protections. Includes email templates, legal"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-data-deletion-from-companies-not-covered-by-g/
 categories: [guides]
@@ -273,10 +274,15 @@ I reserve all rights under applicable privacy laws and expect good-faith complia
 [Your details]
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Request Algorithmic Transparency From Companies Makin](/privacy-tools-guide/how-to-request-algorithmic-transparency-from-companies-makin/)
+- [Ledger Data Breach Lessons How Hardware Wallet Companies Can](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
+- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
+- [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
+- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

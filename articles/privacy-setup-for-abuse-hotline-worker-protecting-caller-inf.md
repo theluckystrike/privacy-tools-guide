@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup For Abuse Hotline Worker Protecting Caller Inf"
 description: "A technical guide for developers and power users implementing privacy measures for abuse hotline workers. Learn secure communications, metadata"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/
 categories: [guides, security]
@@ -192,10 +193,15 @@ Technical measures fail without proper procedures. Develop documentation coverin
 
 Regular training ensures all workers understand both the threats and mitigations. Conduct tabletop exercises simulating device confiscation or data breach scenarios.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
+- [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
+- [Privacy Setup for Political Campaign Worker](/privacy-tools-guide/privacy-setup-for-political-campaign-worker-protecting-voter/)
+- [Privacy Tools For Adoption Agency Worker Protecting Birth Pa](/privacy-tools-guide/privacy-tools-for-adoption-agency-worker-protecting-birth-pa/)
+- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

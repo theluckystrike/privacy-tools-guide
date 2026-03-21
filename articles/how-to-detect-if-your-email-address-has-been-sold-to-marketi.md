@@ -3,6 +3,7 @@ layout: default
 title: "How To Detect If Your Email Address Has Been Sold To Marketi"
 description: "Your email address is one of the most valuable pieces of personal data in the advertising ecosystem. Data brokers aggregate, analyze, and sell email addresses"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-your-email-address-has-been-sold-to-marketi/
 categories: [guides]
@@ -413,10 +414,15 @@ curl -X POST "https://www.truthfinder.com/optout" \
 # Some brokers take 30 days to process removal
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
+- [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
+- [How To Use Mac Address Randomization On Linux To Prevent Wif](/privacy-tools-guide/how-to-use-mac-address-randomization-on-linux-to-prevent-wif/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

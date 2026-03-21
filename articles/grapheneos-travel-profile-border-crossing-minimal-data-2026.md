@@ -3,6 +3,7 @@ layout: default
 title: "GrapheneOS Travel Profile Border Crossing Minimal Data 2026"
 description: "A technical guide for developers and power users on configuring GrapheneOS travel profile to minimize data exposure during border crossings"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /grapheneos-travel-profile-border-crossing-minimal-data-2026/
 categories: [guides]
@@ -274,10 +275,15 @@ Border search laws vary dramatically:
 
 Research the specific laws for your destination before traveling. Consult with legal counsel familiar with technology rights in your destination country.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
+- [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [How To Prepare Phone For Crossing Border Into High Surveilla](/privacy-tools-guide/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
+- [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

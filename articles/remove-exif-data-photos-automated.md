@@ -3,6 +3,7 @@ layout: default
 title: "Remove EXIF Data from Photos Automatically"
 description: "Strip EXIF metadata from photos before sharing. Covers ExifTool, mat2, ImageMagick batch scripts, and automatic removal on Linux and macOS."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: remove-exif-data-photos-automated
 categories: [guides, privacy]
@@ -285,11 +286,15 @@ Online tools for verification (for spot-checks):
 - `https://www.metadata2go.com`
 - `https://exifdata.com`
 
-## Related Reading
 
-- [How to Remove EXIF Metadata from Photos Before Sharing](/how-to-remove-exif-metadata-from-photos-before-sharing-guide)
-- [Mobile Photo Metadata EXIF Location Data](/mobile-photo-metadata-exif-location-data-how-to-strip-before)
-- [Dating App Photo Metadata Stripping](/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d)
+
+## Related Articles
+
+- [How to Remove EXIF Metadata from Photos Before Sharing: Complete Guide](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+- [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
+- [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
+- [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

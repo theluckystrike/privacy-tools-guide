@@ -3,6 +3,7 @@ layout: default
 title: "Gamepad Api Fingerprinting How Connected Controllers Reveal"
 description: "The Gamepad API enables web browsers to communicate with game controllers connected via USB or Bluetooth. Originally designed for browser-based gaming, this"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gamepad-api-fingerprinting-how-connected-controllers-reveal-/
 categories: [guides, security]
@@ -400,10 +401,15 @@ Clearly document gamepad usage in privacy policies:
 
 "This application uses the Gamepad API to enable controller support for gameplay. We collect only button and axis state necessary for game functionality. We do not collect or transmit controller vendor IDs, product IDs, or identifying information."
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
+- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
+- [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
+- [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/privacy-tools-guide/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

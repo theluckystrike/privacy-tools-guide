@@ -3,6 +3,7 @@ layout: default
 title: "Turkey Secure Communication Guide For Activists And Ngos Ope"
 description: "A practical technical guide to implementing secure communication channels for activists and NGOs in Turkey. Covers E2EE protocols, Tor, mesh networks"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /turkey-secure-communication-guide-for-activists-and-ngos-ope/
 categories: [guides]
@@ -271,10 +272,15 @@ Train all team members on a three-step response to device seizure risk:
 2. **Pre-commitment deletion**: Set disappearing message timers on all active conversations. One week is a reasonable default; reduce to 24 hours for sensitive operations.
 3. **Key rotation**: After any device is seized, treat all keys that device held as compromised. Rotate Signal safety numbers, Matrix verification, and any stored passwords immediately.
 
-## Related Reading
 
-- [Self-Hosted Matrix Synapse Server Setup](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
+- [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
+- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

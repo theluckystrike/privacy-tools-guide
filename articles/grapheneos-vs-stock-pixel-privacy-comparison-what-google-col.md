@@ -3,6 +3,7 @@ layout: default
 title: "GrapheneOS vs Stock Pixel: What Google Collects on."
 description: "A technical comparison of GrapheneOS and stock Pixel Android for developers and power users. Analyze what Google collects on unmodified Android and how"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/
 categories: [guides]
@@ -203,10 +204,15 @@ For those building privacy-conscious applications or evaluating mobile security 
 ---
 
 *
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
+- [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
+- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)*
 

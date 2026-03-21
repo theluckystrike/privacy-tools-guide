@@ -3,6 +3,7 @@ layout: default
 title: "Ethereum Wallet Inheritance: Using Social Recovery Smart."
 description: "Learn how to implement Ethereum wallet inheritance using social recovery smart contracts. A technical guide for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /ethereum-wallet-inheritance-using-social-recovery-smart-cont/
 reviewed: true
@@ -219,10 +220,15 @@ Several projects implement these patterns:
 
 For developers, open-source implementations like `inheritance-contracts` on GitHub provide audited starting points for custom deployments.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
+- [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
+- [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
+- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

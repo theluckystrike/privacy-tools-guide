@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Compliance API Design Best Practices"
 description: "Privacy-compliant API design requires five core practices: minimize data in responses by returning only required fields, enforce purpose-based consent checks"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-api-design-best-practices/
 categories: [guides]
@@ -307,12 +308,15 @@ Building privacy into your API from the start costs less than retrofitting compl
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
-- [How to Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
-- [Privacy Compliance for Fintech Startups 2026: A Complete Guide](/privacy-tools-guide/privacy-compliance-for-fintech-startups-2026/)
+
+## Related Articles
+
+- [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
+- [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)
+- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

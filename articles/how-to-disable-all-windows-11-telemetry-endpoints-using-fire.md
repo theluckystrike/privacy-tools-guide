@@ -3,6 +3,7 @@ layout: default
 title: "How To Disable All Windows 11 Telemetry Endpoints Using Fire"
 description: "Windows 11 collects telemetry data from your system and sends it to Microsoft servers. While Microsoft uses this data to improve the operating system"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-disable-all-windows-11-telemetry-endpoints-using-fire/
 categories: [guides]
@@ -284,10 +285,15 @@ Write-Host "Telemetry blocking rules applied successfully."
 
 Save this as `Set-TelemetryFirewall.ps1` and run with `-RemoveRules` to revert.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

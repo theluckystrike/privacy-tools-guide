@@ -3,6 +3,7 @@ layout: default
 title: "Disable Location Services Before Crossing Border."
 description: "A practical guide for developers and power users to disable location services on smartphones before crossing borders. Includes technical methods, code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /disable-location-services-before-crossing-border-smartphone-/
 categories: [guides]
@@ -193,10 +194,15 @@ async function checkLocationPermission() {
 
 For server-side applications processing border-crossing data, implement data minimization principles—only collect location data when explicitly necessary, and implement automatic deletion policies.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
+- [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [How To Prepare Phone For Crossing Border Into High Surveilla](/privacy-tools-guide/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

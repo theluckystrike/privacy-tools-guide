@@ -3,6 +3,7 @@ layout: default
 title: "Windows 11 Cortana Disable Privacy Guide"
 description: "A practical guide for developers and power users to disable Cortana in Windows 11, covering Settings, Group Policy, Registry, and PowerShell methods"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-11-cortana-disable-privacy-guide/
 categories: [guides]
@@ -312,10 +313,15 @@ Register-ScheduledJob -Name "CortanaDisableMonitoring" `
     -RunAs32 $true
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
+- [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
+- [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

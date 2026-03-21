@@ -3,6 +3,7 @@ layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real Address"
 description: "Discover how WebRTC local IP leaks can expose your real network address even when using a VPN. Learn practical detection methods and mitigation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/
 categories: [guides, security]
@@ -283,10 +284,15 @@ Agencies investigating online activity may use WebRTC leaks to break pseudonymit
 
 Researchers studying privacy implementations sometimes discover that studied users can be deanonymized through WebRTC leaks when combined with metadata analysis.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
+- [How to Disable WebRTC Leaks in Tor Browser](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
+- [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Macos Privacy Permissions Manager Guide 2026"
 description: "Managing application permissions on macOS is essential for maintaining privacy and security. The macOS privacy permissions system controls which apps can"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /macos-privacy-permissions-manager-guide-2026/
 categories: [guides, security]
@@ -380,13 +381,15 @@ Organizations can deploy standardized privacy configurations:
 </plist>
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)
-- [Android App Permissions Audit Guide 2026: Complete.](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
-- [How to Harden macOS Sequoia Privacy Settings Beyond.](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+
+## Related Articles
+
+- [Macos Privacy Permissions Explained Which Tcc Database.](/privacy-tools-guide/macos-privacy-permissions-explained-which-tcc-database-entries-to-revoke-for-security/)
+- [Best Password Manager For Macos 2026](/privacy-tools-guide/best-password-manager-for-macos-2026/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+- [Macos Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Age Encryption Tool Tutorial for Developers"
 description: "A practical guide to using age encryption for developers and power users. Learn command-line usage, programmatic integration, and advanced workflows"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /age-encryption-tool-tutorial-developers/
 categories: [guides]
@@ -290,11 +291,15 @@ A passphrase mismatch occurs when decrypting files encrypted with `-p` using the
 
 Age encrypts files in streaming fashion, handling large files efficiently. For very large files, consider splitting them first with `split` before encryption.
 
-## Related Reading
 
-- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
+
+## Related Articles
+
+- [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
+- [How to Encrypt Git Repos with git-crypt and age](/privacy-tools-guide/how-to-encrypt-git-repos-with-git-crypt-and-age/)
+- [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
+- [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

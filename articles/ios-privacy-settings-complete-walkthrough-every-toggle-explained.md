@@ -3,6 +3,7 @@ layout: default
 title: "Ios Privacy Settings Complete Walkthrough Every Toggle."
 description: "Review every iOS privacy setting with step-by-step walkthrough: disable tracking (advertising ID), restrict location services (turn off location-based"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-explained/
 categories: [guides]
@@ -309,10 +310,15 @@ sqlite3 ~/Library/Application\ Support/MobileSync/Backup/*/Health/health.db \
   "SELECT * FROM privacy_categories;"
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
+- [iOS Contact Poster Privacy Settings Guide](/privacy-tools-guide/ios-contact-poster-privacy-settings-guide/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)*
 

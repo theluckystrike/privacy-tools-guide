@@ -3,6 +3,7 @@ layout: default
 title: "Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing"
 description: "A practical guide for developers and power users to reduce Aadhaar surveillance exposure. Learn to lock biometrics, revoke consents, and minimize biometric"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
 categories: [guides]
@@ -188,9 +189,14 @@ The deeper solution requires regulatory reform: mandatory data retention limits,
 
 {% endraw %}
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
+- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

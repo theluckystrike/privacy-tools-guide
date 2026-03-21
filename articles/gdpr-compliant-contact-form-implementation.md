@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Compliant Contact Form Implementation"
 description: "A practical guide for developers implementing GDPR-compliant contact forms. Covers consent management, data handling, and code examples for compliant"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-contact-form-implementation/
 categories: [guides]
@@ -364,11 +365,15 @@ The implementation above covers the core technical requirements; consult legal c
 ---
 
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+
+## Related Articles
+
+- [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
+- [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
+- [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
+- [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
+- [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

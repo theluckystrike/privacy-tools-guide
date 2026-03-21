@@ -3,6 +3,7 @@ layout: default
 title: "Use Android Without Google Play Services"
 description: "A technical guide for developers and power users on running Android without Google Play Services using F-Droid, Aurora Store, and other alternative app"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-android-without-google-play-services-alternative-stores/
 categories: [guides]
@@ -236,10 +237,15 @@ Build a privacy-respecting app ecosystem:
 - **Files**: Solid Explorer or Files by Google (open source)
 - **VPN**: WireGuard (built into GrapheneOS) or OpenVPN
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
+- [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
+- [How To Configure Google Analytics Alternative For Gdpr Compl](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
+- [Organic Maps Vs Osmand Google Maps Alternative Comparison Fo](/privacy-tools-guide/organic-maps-vs-osmand-google-maps-alternative-comparison-fo/)
+- [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

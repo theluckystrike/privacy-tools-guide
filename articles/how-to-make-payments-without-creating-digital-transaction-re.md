@@ -3,6 +3,7 @@ layout: default
 title: "How To Make Payments Without Creating Digital Transaction Re"
 description: "A practical guide to conducting transactions without leaving a digital paper trail. Learn methods for privacy-conscious payments"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-make-payments-without-creating-digital-transaction-re/
 categories: [guides]
@@ -225,9 +226,14 @@ Regardless of method chosen, certain practices improve privacy:
 - Consider which entities actually need to know about your finances
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Living Without Smartphone Digital Privacy Extreme Approach P](/privacy-tools-guide/living-without-smartphone-digital-privacy-extreme-approach-p/)
+- [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction P](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
+- [How To Make Facebook Profile Private 2026](/privacy-tools-guide/how-to-make-facebook-profile-private-2026/)
+- [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
+- [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

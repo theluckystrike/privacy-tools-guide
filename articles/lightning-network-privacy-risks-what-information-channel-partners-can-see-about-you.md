@@ -3,6 +3,7 @@ layout: default
 title: "Lightning Network Privacy Risks"
 description: "A technical breakdown of Lightning Network privacy risks and what information channel partners can observe about your transactions, wallet balances, and"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/
 categories: [guides]
@@ -371,13 +372,15 @@ The Lightning Network continues to evolve, with proposals like PTLCs (Point Time
 
 ---
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Bumble Beeline Data Privacy: Who Can See That You Swiped.](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)
-- [Hotel Guest Privacy Rights: What Information Hotels Can.](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
-- [Employee Social Media Privacy: Can Your Employer Fire.](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+
+## Related Articles
+
+- [Bumble Beeline Data Privacy Who Can See That You Swiped Righ](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)
+- [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
+- [Library Patron Privacy Rights What Information Libraries Can](/privacy-tools-guide/library-patron-privacy-rights-what-information-libraries-can/)
+- [Rental Application Privacy What Information Landlords Can Le](/privacy-tools-guide/rental-application-privacy-what-information-landlords-can-le/)
+- [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Implement Data Minimization Principle in Application Design"
 description: "A practical guide for developers on implementing data minimization principle in application design with code examples and real-world scenarios"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-data-minimization-principle-in-application-/
 categories: [guides]
@@ -394,9 +395,14 @@ def anonymize_event(user_id: str, event: dict) -> dict:
 
 Daily rotation of the salt means you can count unique sessions within a day (for DAU metrics) without building a long-term profile that links a user's behavior across weeks or months.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+
+## Related Articles
+
+- [How To Implement Encrypted Webhooks For Secure Application T](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
+- [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)
+- [How To Implement Customer Data Encryption At Rest And In Tra](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
+- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

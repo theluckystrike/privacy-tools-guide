@@ -3,6 +3,7 @@ layout: default
 title: "Syncthing Setup Guide for Private File Sync"
 description: "A practical guide to setting up Syncthing for secure, decentralized file synchronization between your devices. Perfect for developers and power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /syncthing-setup-guide-private-file-sync/
 categories: [guides]
@@ -247,10 +248,15 @@ launchctl load ~/Library/LaunchAgents/com.github.xor-gate.syncthing.plist
 If devices won't connect, verify both have the correct Device ID added and that firewalls allow port 22000. At least one folder must be shared between them. If files aren't syncing, check the `.stignore` file for patterns that block them, then review the Syncthing log for specific error messages. High CPU usage can be reduced by lowering the concurrent file operation limit in Settings → Advanced → Max Concurrent Items.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
+- [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
+- [Privacy Tools For Private Investigator Protecting Case File](/privacy-tools-guide/privacy-tools-for-private-investigator-protecting-case-file-/)
+- [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Preserving Logging Guide for Developers 2026"
 description: "A practical guide to implementing privacy-preserving logging in your applications. Learn data minimization, PII redaction techniques, and secure log"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-preserving-logging-guide-for-developers-2026/
 categories: [guides]
@@ -242,10 +243,15 @@ function logUserAction(userId, action, metadata, hasConsent) {
 }
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
+- [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)
+- [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
+- [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
+- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

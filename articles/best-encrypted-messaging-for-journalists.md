@@ -3,6 +3,7 @@ layout: default
 title: "Best Encrypted Messaging for Journalists: A Technical Guide"
 description: "A developer-focused comparison of encrypted messaging apps for journalists, covering Signal, Matrix, Session, and self-hosted options with code examples"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /best-encrypted-messaging-for-journalists/
 categories: [guides, security]
@@ -438,11 +439,15 @@ validate_communication_network() {
 
 These technical frameworks enable journalists to make informed security decisions based on their specific threat model and operational requirements.
 
-## Related Reading
 
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+
+## Related Articles
+
+- [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
+- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
+- [Encrypted Messaging Metadata Protection: A Developer's Guide](/privacy-tools-guide/encrypted-messaging-metadata-protection/)
+- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

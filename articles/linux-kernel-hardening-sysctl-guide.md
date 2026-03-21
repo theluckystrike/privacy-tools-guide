@@ -3,6 +3,7 @@ layout: default
 title: "Linux Kernel Hardening with sysctl"
 description: "Harden a Linux server with sysctl settings. Covers network stack hardening, kernel pointer hiding, ASLR, dmesg restriction, and persistence."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: linux-kernel-hardening-sysctl-guide
 categories: [guides, security]
@@ -304,11 +305,15 @@ Most of these settings have zero measurable performance impact on typical worklo
 - `log_martians` — generates log entries for spoofed packets (can be noisy on some networks, disable if logs fill up)
 - `rp_filter` — can cause issues on multi-homed servers with asymmetric routing (set to `0` per interface if needed)
 
-## Related Reading
 
-- [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
-- [Arch Linux Hardened Kernel Installation Guide](/arch-linux-hardened-kernel-installation-guide-for-advanced-p)
-- [Container Security Basics for Developers](/container-security-basics-developers)
+
+## Related Articles
+
+- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
+- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
+- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
+- [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

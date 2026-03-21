@@ -3,6 +3,7 @@ layout: default
 title: "Iran Facial Recognition Surveillance How Cameras In Public S"
 description: "A technical breakdown of facial recognition surveillance systems deployed in Iranian public spaces, how they work, and privacy protection strategies"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /iran-facial-recognition-surveillance-how-cameras-in-public-s/
 categories: [guides]
@@ -269,10 +270,15 @@ done
 echo "Checking for photo tagging patterns that indicate recognition"
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
+- [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
+- [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
+- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

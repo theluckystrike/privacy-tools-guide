@@ -3,6 +3,7 @@ layout: default
 title: "TOTP vs FIDO2 Authentication Explained: A Developer's Guide"
 description: "A technical comparison of TOTP and FIDO2 authentication methods. Learn how these protocols work, their security properties, and when to use each"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /totp-vs-fido2-authentication-explained/
 categories: [guides]
@@ -296,11 +297,15 @@ Both are superior to SMS (telecom sees all authentication), push notifications (
 ---
 
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+
+## Related Articles
+
+- [TOTP Backup Codes Best Practices: A Developer's Guide](/privacy-tools-guide/totp-backup-codes-best-practices/)
+- [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
+- [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
+- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

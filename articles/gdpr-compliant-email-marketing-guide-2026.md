@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Compliant Email Marketing Guide 2026: A Developer"
 description: "A technical guide to building GDPR-compliant email marketing systems in 2026. Covers consent management, double opt-in implementation, and practical"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-email-marketing-guide-2026/
 categories: [guides]
@@ -242,11 +243,15 @@ Before launching your email marketing system, verify:
 Proper consent management, audit logging, and automated data subject request handling build systems that satisfy regulators while respecting user privacy. The technical investment upfront prevents costly compliance failures later.
 
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+
+## Related Articles
+
+- [How To Build Privacy Respecting Email Marketing System Witho](/privacy-tools-guide/how-to-build-privacy-respecting-email-marketing-system-witho/)
+- [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
+- [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)
+- [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
+- [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

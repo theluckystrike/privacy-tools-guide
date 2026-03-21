@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Private Bitcoin Full Node At Home For Transact"
 description: "A practical guide for developers and power users to run a Bitcoin full node for private transaction verification. Covers hardware requirements"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-private-bitcoin-full-node-at-home-for-transact/
 categories: [guides]
@@ -304,11 +305,15 @@ An active node uses roughly 20-30GB per month serving blocks to peers. If bandwi
 **What is the difference between a full node and a mining node?**
 A full node validates blocks and transactions but does not produce new blocks. A mining node does both. Home users running full nodes for privacy purposes do not need mining capabilities.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
-- [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
+
+## Related Articles
+
+- [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
+- [Set Up Bitcoin Payjoin Transactions For Sender Receiver](/privacy-tools-guide/how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/)
+- [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
+- [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)
+- [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

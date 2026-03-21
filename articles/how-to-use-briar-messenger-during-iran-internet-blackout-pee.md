@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Briar Messenger During Iran Internet Blackout Pee"
 description: "A practical guide to setting up Briar messenger for decentralized, peer-to-peer communication when traditional internet access is blocked"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-briar-messenger-during-iran-internet-blackout-pee/
 categories: [guides]
@@ -295,10 +296,15 @@ During Iran 2022 protests, Briar enabled communication when cellular networks we
 
 The key lesson: **infrastructure independence is powerful**. When you remove dependency on centralized servers, you gain resilience that oppressive systems cannot easily suppress.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
+- [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
+- [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
+- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

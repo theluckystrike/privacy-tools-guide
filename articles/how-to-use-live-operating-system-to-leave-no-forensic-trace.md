@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Live Operating System to Leave No Forensic Trace"
 description: "A practical guide to using live operating systems like Tails for privacy. Learn how to boot from USB, use RAM-only computing, and leave no traces on"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /how-to-use-live-operating-system-to-leave-no-forensic-trace/
 categories: [guides]
@@ -235,10 +236,15 @@ For maximum security, combine live OS use with:
 - Encrypted persistent volumes
 - Multiple hops before accessing sensitive services
 
-## Related Reading
 
-- [Whonix vs Tails for Anonymous Browsing 2026](/whonix-vs-tails-for-anonymous-browsing-2026/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
+- [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
+- [How to Use Public Computers Safely Without Leaving Any Trace](/privacy-tools-guide/how-to-use-public-computers-safely-without-leaving-any-trace/)
+- [Privacy-Focused Mobile Operating Systems Comparison](/privacy-tools-guide/privacy-mobile-operating-systems-comparison/)
+- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

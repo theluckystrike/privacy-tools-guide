@@ -3,6 +3,7 @@ layout: default
 title: "Dark Pattern Regulations Which Privacy Laws Ban Manipulative"
 description: "A technical guide for developers on dark pattern regulations and which privacy laws prohibit manipulative consent interface design tricks in 2026"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dark-pattern-regulations-which-privacy-laws-ban-manipulative/
 categories: [guides]
@@ -194,10 +195,15 @@ Regulatory bodies have intensified enforcement:
 
 Multiple companies have faced significant fines in 2025-2026 for dark pattern implementations, making compliance a business necessity rather than just a legal requirement.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
+- [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
+- [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
+- [Russia Vpn Ban Which Services Still Work After Roskomnadzor](/privacy-tools-guide/russia-vpn-ban-which-services-still-work-after-roskomnadzor-/)
+- [VPN for Using TikTok in India After Ban 2026](/privacy-tools-guide/vpn-for-using-tiktok-in-india-after-ban-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

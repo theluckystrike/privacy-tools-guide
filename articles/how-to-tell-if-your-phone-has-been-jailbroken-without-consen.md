@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Your Phone Has Been Jailbroken Without Consen"
 description: "For iOS, check for Cydia, Sileo, or Zebra apps (jailbreak package managers) in Settings → General → iPhone Storage. Look for suspicious ssh keys or rock.json"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consen/
 categories: [troubleshooting]
@@ -281,10 +282,15 @@ Reduce the risk of unauthorized jailbreaking:
 - Keep iOS and Android updated with latest security patches
 - Disable developer modes and USB debugging when not needed
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
+- [How To Tell If Your Phone Camera Is Being Accessed Remotely](/privacy-tools-guide/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)
+- [Android Guest Mode For Lending Phone Without Exposing Person](/privacy-tools-guide/android-guest-mode-for-lending-phone-without-exposing-person/)
+- [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
+- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "iPhone Focus Mode Privacy Features Explained: Complete Guide"
 description: "Discover how iPhone Focus Mode protects your privacy. Learn about notification filtering, app restrictions, and hidden metadata protection"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /iphone-focus-mode-privacy-features-explained/
 categories: [guides]
@@ -467,12 +468,14 @@ Result: If anyone sees device, private communications are invisible, no badges r
 ```
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [iPhone Focus Modes for Privacy: How to Limit App Access.](/privacy-tools-guide/iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/)
+
+## Related Articles
+
+- [Iphone Focus Modes For Privacy How To Limit App Access By Co](/privacy-tools-guide/iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/)
 - [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)
+- [Iphone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
+- [Ios Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

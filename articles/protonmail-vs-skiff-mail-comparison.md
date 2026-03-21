@@ -3,6 +3,7 @@ layout: default
 title: "ProtonMail vs Skiff Mail Comparison: A Developer Guide"
 description: "Choose ProtonMail if you need PGP/OpenPGP compatibility, IMAP/SMTP access via Bridge, and a proven security track record with published audits under Swiss"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /protonmail-vs-skiff-mail-comparison/
 reviewed: true
@@ -201,12 +202,15 @@ Regardless of your choice, remember these practices:
 # Alternatively, use their dedicated export tool for accounts
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
-- [Best Encrypted Email Service 2026](/best-encrypted-email-service-2026/)
-- More guides coming soon.
+
+## Related Articles
+
+- [Tuta Mail vs ProtonMail 2026 Review: A Technical Comparison](/privacy-tools-guide/tuta-mail-vs-protonmail-2026-review/)
+- [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
+- [Guerrilla Mail vs Temp Mail vs Mailinator](/privacy-tools-guide/guerrilla-mail-vs-temp-mail-vs-mailinator-which-disposable-e/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

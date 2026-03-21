@@ -3,6 +3,7 @@ layout: default
 title: "Calyxos Microg Setup Guide Getting Google Apps Working."
 description: "A practical guide to setting up microG on CalyxOS for running Google apps without Google Play Services. Includes installation steps, signature"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/
 categories: [guides, security]
@@ -202,10 +203,15 @@ Begin by enabling microG through CalyxOS's built-in installer, then configure si
 The privacy-utility balance depends on your threat model and use cases. MicroG enables running most Google-dependent applications while significantly reducing data collection compared to stock Android. As you use the system, you'll identify which apps work and which require workarounds.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
+- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)
+- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
+- [How To Build Privacy Respecting Email Marketing System Witho](/privacy-tools-guide/how-to-build-privacy-respecting-email-marketing-system-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

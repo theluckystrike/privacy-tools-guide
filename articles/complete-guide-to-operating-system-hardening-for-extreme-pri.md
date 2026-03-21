@@ -3,6 +3,7 @@ layout: default
 title: "Complete Guide To Operating System Hardening For Extreme Pri"
 description: "Operating system hardening involves reducing the attack surface of your system while maximizing privacy controls. For developers and power users seeking"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-operating-system-hardening-for-extreme-pri/
 categories: [guides, security]
@@ -276,10 +277,15 @@ nft list ruleset | grep -c "hook"
 
 Run this monthly to detect configuration drift. Subscribe to security mailing lists for your distribution to apply kernel and package updates promptly.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
+- [How to Use Live Operating System to Leave No Forensic Trace](/privacy-tools-guide/how-to-use-live-operating-system-to-leave-no-forensic-trace/)
+- [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [Living Without Smartphone Digital Privacy Extreme Approach P](/privacy-tools-guide/living-without-smartphone-digital-privacy-extreme-approach-p/)
+- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Workplace Drug Testing Privacy Rights"
 description: "A guide to workplace drug testing privacy rights. Learn what substances employers can test for, state-by-state variations, and legal protections for employees"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /workplace-drug-testing-privacy-rights-what-employers-can-and/
 categories: [guides]
@@ -215,13 +216,15 @@ For developers and power users, understanding workplace drug testing regulations
 
 ---
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Police Body Camera Footage Privacy Rights: Who Can.](/privacy-tools-guide/police-body-camera-footage-privacy-rights-who-can-request-an/)
-- [Employee Social Media Privacy: Can Your Employer Fire.](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
-- [School Surveillance Technology Privacy: Student Rights Against Facial Recognition Tracking in Schools](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
+
+## Related Articles
+
+- [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
+- [Windows Sandbox Privacy Testing Guide 2026](/privacy-tools-guide/windows-sandbox-privacy-testing-guide-2026/)
+- [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

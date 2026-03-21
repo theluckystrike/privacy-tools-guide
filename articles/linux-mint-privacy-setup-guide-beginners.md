@@ -3,6 +3,7 @@ layout: default
 title: "Linux Mint Privacy Setup Guide for Beginners"
 description: "A practical privacy setup guide for Linux Mint. Configure firewall, harden Firefox, enable disk encryption, and secure your system with step-by-step"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /linux-mint-privacy-setup-guide-beginners/
 categories: [guides]
@@ -316,13 +317,15 @@ resolvectl status
 
 Running these checks after each reboot catches any services that failed to start or configurations that did not persist.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
-- [Proton Drive Linux Client Setup Guide 2026: Complete.](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
-- [Android Custom ROM Privacy Comparison 2026: A Technical.](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
-- [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
+
+## Related Articles
+
+- [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+- [Proton Drive Linux Client Setup Guide 2026](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
+- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

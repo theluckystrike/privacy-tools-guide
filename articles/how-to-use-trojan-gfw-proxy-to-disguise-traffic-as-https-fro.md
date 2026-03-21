@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Trojan Gfw Proxy To Disguise Traffic As Https Fro"
 description: "A practical guide for developers and power users on configuring Trojan GFW proxy to mask traffic as HTTPS for use from China"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/
 categories: [guides, security]
@@ -193,10 +194,15 @@ Trojan provides strong traffic obfuscation but remember that no tool guarantees 
 The implementation described here gives you a functional, privacy-respecting proxy suitable for personal use and development work. With proper TLS certificates and secure password practices, your traffic remains encrypted and indistinguishable from normal HTTPS connections.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up V2ray Vmess For Accessing Blocked Websites Fro](/privacy-tools-guide/how-to-set-up-v2ray-vmess-for-accessing-blocked-websites-fro/)
+- [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)
+- [How To Use Naiveproxy To Disguise Censorship Circumvention T](/privacy-tools-guide/how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/)
+- [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
+- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

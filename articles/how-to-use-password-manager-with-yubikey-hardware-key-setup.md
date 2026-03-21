@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Password Manager with YubiKey Hardware Key Setup"
 description: "Configure YubiKey as a second authentication factor in Bitwarden or 1Password settings using the FIDO2/WebAuthn protocol: during login, after entering your"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-password-manager-with-yubikey-hardware-key-setup/
 categories: [guides]
@@ -209,10 +210,15 @@ op item create --category login   --generate-password=words,5,separator=-
 
 Five EFF words yield ~64 bits of entropy — equivalent to a 12-character random string, but far easier to type on mobile.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

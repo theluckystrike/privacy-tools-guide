@@ -3,6 +3,7 @@ layout: default
 title: "China Real Name Registration Requirements How Online Identit"
 description: "A technical guide for developers and power users on China's real name registration system, how online identity verification works, and its impact on digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /china-real-name-registration-requirements-how-online-identit/
 categories: [guides, security]
@@ -590,10 +591,15 @@ minimization_strategies = {
 
 The reality is that true anonymity in China's digital ecosystem is extremely difficult.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
+- [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
+- [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
+- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

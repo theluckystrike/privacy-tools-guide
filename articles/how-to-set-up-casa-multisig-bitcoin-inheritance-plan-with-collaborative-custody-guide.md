@@ -3,6 +3,7 @@ layout: default
 title: "Set Up Casa Multisig Bitcoin Inheritance Plan"
 description: "A technical guide for developers and power users on configuring Casa multisig wallets for Bitcoin inheritance planning using"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/
 categories: [guides, security]
@@ -169,10 +170,15 @@ Developers may prefer completely non-custodial solutions. Consider combining Hou
 
 This approach eliminates third-party dependency but requires more technical expertise and manual key management.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
+- [Bitcoin Inheritance Planning Using Multisig With Family Memb](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
+- [How To Set Up Incident Response Plan For Data Breach Busines](/privacy-tools-guide/how-to-set-up-incident-response-plan-for-data-breach-busines/)
+- [Set Up Bitcoin Payjoin Transactions For Sender Receiver](/privacy-tools-guide/how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/)
+- [How To Set Up Private Bitcoin Full Node At Home For Transact](/privacy-tools-guide/how-to-set-up-private-bitcoin-full-node-at-home-for-transact/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

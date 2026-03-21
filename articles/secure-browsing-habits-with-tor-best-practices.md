@@ -3,6 +3,7 @@ layout: default
 title: "Secure Browsing Habits With Tor Best Practices"
 description: "Tor remains one of the most effective tools for anonymous communication on the internet. Unlike standard browsing, Tor routes your traffic through a"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /secure-browsing-habits-with-tor-best-practices/
 categories: [guides]
@@ -345,12 +346,15 @@ exiftool -all= sensitive-document.pdf
 # Modified document has no metadata
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
-- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
-- [How to Set Up Secure Communication for Labor Strike.](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+
+## Related Articles
+
+- [Best Tor Alternatives 2026: Privacy Browsing Guide](/privacy-tools-guide/best-tor-alternatives-2026-privacy-browsing/)
+- [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)
+- [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
+- [VPN for Safe Browsing on Public WiFi in Airports](/privacy-tools-guide/vpn-for-safe-browsing-on-public-wifi-in-airports/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

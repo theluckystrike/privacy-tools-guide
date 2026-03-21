@@ -3,6 +3,7 @@ layout: default
 title: "WireGuard Dynamic Endpoint Update"
 description: "A technical guide for developers and power users on configuring WireGuard VPN for roaming between networks, covering dynamic endpoint updates"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/
 categories: [guides]
@@ -307,10 +308,15 @@ Applications should implement reconnection logic that tolerates 5-30 second inte
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
+- [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
+- [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
+- [How To Configure Wireguard With Obfuscation To Bypass Russia](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
+- [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

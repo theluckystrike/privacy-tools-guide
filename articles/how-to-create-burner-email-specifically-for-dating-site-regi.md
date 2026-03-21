@@ -3,6 +3,7 @@ layout: default
 title: "How To Create Burner Email Specifically For Dating Site Regi"
 description: "Dating sites represent one of the highest-risk categories for sharing your primary email address. Data breaches expose millions of user emails annually, and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-burner-email-specifically-for-dating-site-regi/
 categories: [guides]
@@ -228,10 +229,15 @@ print("Active aliases:", manager.list_sites())
 print("Tinder alias:", manager.get_alias("tinder"))
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
+- [How To Create Throwaway Email Accounts Safely For One Time S](/privacy-tools-guide/how-to-create-throwaway-email-accounts-safely-for-one-time-s/)
+- [How To Create Untraceable Email Account Using Tor Vpn And An](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
+- [How To Create Untraceable Email For Anonymous Tips To Report](/privacy-tools-guide/how-to-create-untraceable-email-for-anonymous-tips-to-report/)
+- [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

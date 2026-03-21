@@ -3,6 +3,7 @@ layout: default
 title: "Set Up Local Network Storage For Security Cameras Without"
 description: "A practical guide to building private, cloud-free local network storage for your security cameras. Perfect for developers and power users who want full"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/
 categories: [guides]
@@ -298,10 +299,15 @@ Regular maintenance tasks include:
 - Testing backup restoration quarterly
 - Updating camera firmware and recording software monthly
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

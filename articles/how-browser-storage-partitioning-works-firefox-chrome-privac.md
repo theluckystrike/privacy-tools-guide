@@ -3,6 +3,7 @@ layout: default
 title: "How Browser Storage Partitioning Works Firefox Chrome Privac"
 description: "A technical guide to browser storage partitioning explaining how Firefox and Chrome isolate storage to prevent cross-site tracking, with code examples"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-browser-storage-partitioning-works-firefox-chrome-privac/
 categories: [guides, security]
@@ -175,10 +176,15 @@ You can verify your browser's partitioning status by:
 1. **Firefox**: Check that Enhanced Tracking Protection is enabled in privacy settings
 2. **Chrome**: Look for the "Third-party cookies" setting—selecting "Block third-party cookies" enables partitioning
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Passkey User Experience Comparison Across Chrome.](/privacy-tools-guide/passkey-user-experience-comparison-across-chrome-safari-firefox-edge-2026/)
+- [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
+- [How To Stop Browser Fingerprinting On Chrome 2026 Practical](/privacy-tools-guide/how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/)
+- [Firefox Focus Vs Duckduckgo Browser Comparison](/privacy-tools-guide/firefox-focus-vs-duckduckgo-browser-comparison/)
+- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Firefox Arkenfox User Js Full Guide"
 description: "A guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /firefox-arkenfox-user-js-full-guide/
 categories: [guides, security]
@@ -194,13 +195,15 @@ user_pref("privacy.resistFingerprinting", false);
 
 Firefox Sync requires specific settings. Ensure `services.sync.enabled` is true and sign in through the Firefox UI after each profile reset.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
-- [Firefox Reset and Clean Install Guide: Privacy-Focused.](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)
-- [Signal Relay Calls Privacy Feature: A Complete Guide for.](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
+
+## Related Articles
+
+- [Passkey User Experience Comparison Across Chrome.](/privacy-tools-guide/passkey-user-experience-comparison-across-chrome-safari-firefox-edge-2026/)
+- [How To Set Up Private Bitcoin Full Node At Home For Transact](/privacy-tools-guide/how-to-set-up-private-bitcoin-full-node-at-home-for-transact/)
+- [ProtonMail vs Gmail Privacy: A Full Technical Breakdown](/privacy-tools-guide/protonmail-vs-gmail-privacy-full-breakdown/)
+- [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
+- [VPN Tunnel Interface vs Full Tunnel Routing](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

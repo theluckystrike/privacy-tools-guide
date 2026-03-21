@@ -3,6 +3,7 @@ layout: default
 title: "How to Detect if Your Email Is Compromised"
 description: "Practical steps to find out if your email account has been breached. Check breach databases, audit login activity, and secure your account fast."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: detect-email-compromise-guide
 categories: [guides, security]
@@ -224,11 +225,15 @@ curl -s "https://haveibeenpwned.com/api/v3/subscriptionstatus" \
 
 Also enable login notifications in your email provider's security settings — most providers can email or push-notify you on new sign-ins from unfamiliar devices.
 
-## Related Reading
 
-- [Best Encrypted Email Service 2026](/best-encrypted-email-service-2026)
-- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity)
-- [Best Authenticator App 2026 Review](/best-authenticator-app-2026-review)
+
+## Related Articles
+
+- [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
+- [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
+- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Communicate with Lawyer Privately When Device is Compromised](/privacy-tools-guide/how-to-communicate-with-lawyer-privately-when-device-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

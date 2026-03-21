@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up S/MIME Email Encryption: A Practical Guide"
 description: "A technical guide for developers and power users on configuring S/MIME email encryption using OpenSSL, Thunderbird, and Apple Mail with practical"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-set-up-smime-email-encryption/
 categories: [guides, security]
@@ -172,11 +173,15 @@ acme.sh --issue -d you@example.com \
 
 This approach enables automatic certificate renewal and deployment through configuration management tools.
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+
+## Related Articles
+
+- [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [Secure Email Forwarding With Encryption How To Set Up Anonad](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
+- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

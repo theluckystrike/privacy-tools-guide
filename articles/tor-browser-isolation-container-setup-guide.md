@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser Isolation Container Setup Guide"
 description: "A practical guide to running Tor Browser in isolated containers for enhanced privacy. Learn Docker, Firejail, and network namespace configurations"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-browser-isolation-container-setup-guide/
 categories: [guides]
@@ -203,10 +204,15 @@ tcpdump -i any port 53 | grep tor
 
 The exit node IP should differ from your host's public IP, and DNS queries should originate from your Tor proxy rather than your ISP's resolvers.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
+- [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
+- [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
+- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
+- [Browser Storage Isolation Explained Privacy](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How To Configure Cloak Plugin For Shadowsocks To Evade Activ"
 description: "A practical guide for developers and power users on configuring the Cloak plugin with Shadowsocks to resist active probing detection and censorship"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-configure-cloak-plugin-for-shadowsocks-to-evade-activ/
 categories: [guides, security]
@@ -220,10 +221,15 @@ Cloak provides protection against active probing by transforming your Shadowsock
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
+- [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)
+- [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
+- [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
+- [VPN Traffic Obfuscation Techniques](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compared-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

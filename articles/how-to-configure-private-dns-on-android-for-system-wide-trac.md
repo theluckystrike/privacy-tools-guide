@@ -3,6 +3,7 @@ layout: default
 title: "Configure Private DNS on Android for System-Wide Tracker"
 description: "A guide for developers and power users to configure Private DNS on Android devices for blocking trackers system-wide without requiring"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-private-dns-on-android-for-system-wide-trac/
 categories: [guides]
@@ -185,9 +186,14 @@ When choosing a DNS provider, consider:
 
 Providers like AdGuard, Quad9, and NextDNS publish transparency reports and maintain no-logs policies for personal use.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
+- [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
+- [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

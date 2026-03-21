@@ -3,6 +3,7 @@ layout: default
 title: "How to Check What Data Dating Apps Have Collected About You"
 description: "Learn how to request your data from dating apps using GDPR, CCPA, and other privacy regulations. Practical guide with code examples for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-what-data-dating-apps-have-collected-about-you-/
 categories: [guides]
@@ -215,10 +216,15 @@ Beyond requesting your data, implement ongoing privacy practices:
 
 **Consider Privacy Alternatives**: Apps like Hinge and Bumble have stronger privacy policies than others. Research platforms before creating accounts.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
+- [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
+- [How To Run Background Check On Dating Match Using Public Rec](/privacy-tools-guide/how-to-run-background-check-on-dating-match-using-public-rec/)
+- [How To Detect Catfish On Dating Apps Using Osint Verificatio](/privacy-tools-guide/how-to-detect-catfish-on-dating-apps-using-osint-verificatio/)
+- [How To Spot Romance Scam Red Flags On Dating Apps Comprehens](/privacy-tools-guide/how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

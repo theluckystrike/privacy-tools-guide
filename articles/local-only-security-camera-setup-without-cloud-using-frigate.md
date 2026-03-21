@@ -3,6 +3,7 @@ layout: default
 title: "Local-Only Security Camera Setup Without Cloud Using Frigate"
 description: "A practical guide for setting up Frigate NVR for completely local security camera monitoring without cloud dependencies. Keep your video footage private"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /local-only-security-camera-setup-without-cloud-using-frigate/
 categories: [guides]
@@ -191,10 +192,15 @@ If you experience performance issues with multiple cameras, consider these adjus
 - Limit the number of detection zones and object types
 - Use motion-based recording instead of continuous recording to save resources
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
+- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
+- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

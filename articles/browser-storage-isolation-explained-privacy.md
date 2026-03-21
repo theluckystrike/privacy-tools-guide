@@ -3,6 +3,7 @@ layout: default
 title: "Browser Storage Isolation Explained Privacy"
 description: "A technical guide covering browser storage mechanisms, origin-based isolation, SameSite cookies, and privacy best practices for developers building"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /browser-storage-isolation-explained-privacy/
 categories: [guides, security]
@@ -185,13 +186,15 @@ function setAnalyticsCookie(userConsents) {
 }
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
-- [Brave Browser vs Edge Privacy Comparison 2026: A.](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
+
+## Related Articles
+
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
+- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [How Browser Storage Partitioning Works Firefox Chrome Privac](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
+- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Verify Someone's Identity Before Meeting from a Dating App"
 description: "Meeting someone from a dating app in person requires trust, but blind trust can be dangerous. Catfishing—where someone creates a fake identity—remains"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/
 categories: [guides, security]
@@ -260,10 +261,15 @@ Once you've verified identity, take these additional precautions before your fir
 
 **What legal recourse exists for catfishing?** Catfishing itself is not uniformly illegal. However, if it involves impersonating a real person, financial fraud, or in some jurisdictions sexual deception, criminal statutes may apply. Civil remedies vary by jurisdiction. Practical recourse is limited; prevention is more reliable than legal remedy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
+- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [How To Use Compartmentalized Identity For Online Dating Sepa](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

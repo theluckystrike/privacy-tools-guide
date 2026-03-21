@@ -3,6 +3,7 @@ layout: default
 title: "Data Privacy Maturity Model Assessment Guide"
 description: "A technical guide to assessing data privacy maturity levels for developers and security teams, with code examples, implementation patterns, and scoring"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /data-privacy-maturity-model-assessment-guide/
 categories: [guides]
@@ -441,13 +442,15 @@ Track consent rate (percentage of users with valid, current consent), data subje
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Researcher Participant Data Privacy IRB Compliance.](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
-- [GDPR Legitimate Interest Assessment Guide: A Developer Framework](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
-- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+
+## Related Articles
+
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
+- [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
+- [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
+- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

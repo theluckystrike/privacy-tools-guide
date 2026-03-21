@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Tools For Private Investigator Protecting Case File"
 description: "A guide to digital privacy tools and security practices for private investigators handling sensitive case files"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-private-investigator-protecting-case-file-/
 categories: [guides]
@@ -248,10 +249,15 @@ Strong encryption using tools like VeraCrypt is highly resistant to forced decry
 
 Retention requirements vary by jurisdiction and case type. Most PI licensing boards recommend retaining files for at least 5 years after case closure. Store closed case archives in encrypted offline storage with a documented retention schedule showing planned destruction dates.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
+- [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)
+- [Gdpr Penalties Fines Database Case Examples](/privacy-tools-guide/gdpr-penalties-fines-database-case-examples/)
+- [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
+- [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

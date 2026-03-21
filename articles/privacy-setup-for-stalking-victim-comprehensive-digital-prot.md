@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup For Stalking Victim Digital Prot"
 description: "A technical guide for setting up digital privacy protections. Includes step-by-step configurations, code examples, and tools for individuals"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-stalking-victim--digital-prot/
 reviewed: true
@@ -234,10 +235,15 @@ Digital protection must complement physical security. Stalkers may gain access t
 - Consider using a privacy screen in public
 - Use Faraday bags for devices when not in use
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Encrypt Your Entire Digital Life: A Checklist](/privacy-tools-guide/encrypt-entire-digital-life--checklist/)
+- [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
+- [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
+- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
+- [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

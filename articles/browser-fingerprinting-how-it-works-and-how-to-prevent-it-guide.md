@@ -3,6 +3,7 @@ layout: default
 title: "Browser Fingerprinting How It Works and How to Prevent It Guide"
 description: "Technical deep-dive on browser fingerprinting. Covers canvas, WebGL, audio context, font enumeration. Includes detection tools and countermeasures"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/
 categories: [guides]
@@ -447,13 +448,15 @@ Good results:
 - WebRTC shows no local IP leak
 - Sites you care about still work
 
-## Related Reading
 
-- [Tor Browser: Guide](/tor-browser-guide/)
-- [How to Use Tails OS for Maximum Privacy](/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
-- [Best VPN Services for Privacy 2026](/best-vpn-services-for-privacy-2026/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [HTTPS and Encryption: How the Web Works Securely](/https-encryption-guide/)
+
+## Related Articles
+
+- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
+- [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
+- [How to Test if Your Anti-Fingerprinting Setup Actually Works](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)
+- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
+- [How Browser Storage Partitioning Works Firefox Chrome Privac](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

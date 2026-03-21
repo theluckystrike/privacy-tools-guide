@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Briar Messenger Offline: A Developer's Guide"
 description: "A technical guide to using Briar messenger for offline-first, decentralized communication via Bluetooth and Wi-Fi Direct"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-briar-messenger-offline-guide/
 categories: [guides]
@@ -304,11 +305,15 @@ Combine Briar with other offline media for communication:
 - **Radio**: Short-wave radio for area-wide announcements (separate infrastructure)
 - **Bulletin boards**: Public physical boards for non-sensitive community notices
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+
+## Related Articles
+
+- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
+- [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [How To Create Offline Digital Library For Accessing Informat](/privacy-tools-guide/how-to-create-offline-digital-library-for-accessing-informat/)
+- [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

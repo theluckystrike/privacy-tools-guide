@@ -3,6 +3,7 @@ layout: default
 title: "ProtonMail Security Model Explained: A Technical Deep-Dive"
 description: "ProtonMail's security model relies on three pillars: end-to-end encryption (RSA-2048 + AES-256) so only you and your recipient can read messages, zero-access"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /protonmail-security-model-explained/
 reviewed: true
@@ -277,11 +278,14 @@ For developers implementing similar systems, critically evaluate ProtonMail's se
 - Store sensitive communications locally rather than in ProtonMail (email is inherently a poor medium for security)
 - Rotate encryption keys periodically
 
-## Related Reading
 
-- [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+
+## Related Articles
+
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
+- [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
+- [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
+- [ProtonMail vs FastMail Comparison 2026: A Technical Guide](/privacy-tools-guide/protonmail-vs-fastmail-comparison-2026/)
+- [ProtonMail vs Gmail Privacy: A Full Technical Breakdown](/privacy-tools-guide/protonmail-vs-gmail-privacy-full-breakdown/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

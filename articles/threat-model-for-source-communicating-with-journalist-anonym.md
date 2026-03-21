@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model For Source Communicating With Journalist Anonym"
 description: "A threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-source-communicating-with-journalist-anonym/
 categories: [guides]
@@ -169,10 +170,15 @@ Always maintain redundant communication methods:
 - Tertiary: Encrypted dead drop using secure file hosting
 - Emergency: Physical dead drop with pre-arranged location
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
+- [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

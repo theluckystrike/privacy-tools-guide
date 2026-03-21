@@ -3,6 +3,7 @@ layout: default
 title: "Nextcloud Setup Guide Raspberry Pi 2026"
 description: "Running your own cloud storage service gives you complete control over your data. Nextcloud on a Raspberry Pi provides a cost-effective way to host file sync"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-setup-guide-raspberry-pi-2026/
 categories: [guides]
@@ -396,10 +397,15 @@ docker exec --user www-data nextcloud_app php occ upgrade
 docker exec --user www-data nextcloud_app php occ maintenance:mode --off
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
+- [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
+- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
+- [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

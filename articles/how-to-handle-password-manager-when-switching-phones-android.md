@@ -3,6 +3,7 @@ layout: default
 title: "How To Handle Password Manager When Switching Phones Android"
 description: "A practical guide for developers and power users on transferring your password vault from Android to iPhone, covering export methods, import processes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-handle-password-manager-when-switching-phones-android/
 categories: [guides, security]
@@ -190,10 +191,15 @@ Throughout the migration process, maintain these security practices:
 
 **Large vault import timeout**: iOS may kill the app during long imports. Split large exports into smaller batches or use desktop import when available.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
+- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
+- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

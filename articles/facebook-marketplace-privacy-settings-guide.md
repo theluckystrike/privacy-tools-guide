@@ -3,6 +3,7 @@ layout: default
 title: "Facebook Marketplace Privacy Settings Guide"
 description: "A guide to Facebook Marketplace privacy settings for developers and power users. Learn to control your profile visibility, secure"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /facebook-marketplace-privacy-settings-guide/
 categories: [guides, security]
@@ -327,10 +328,15 @@ curl -s "https://www.facebook.com/marketplace/profile/YOUR_ID" | grep -i "locati
 
 **Data Deletion**: After selling an item, remove the listing promptly. Old listings create permanent data points that aggregators may archive. Request deletion within Facebook's settings to ensure removal from search engines.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
+- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
+- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [Feeld Privacy Settings For Couples And Alternative Dating Pr](/privacy-tools-guide/feeld-privacy-settings-for-couples-and-alternative-dating-pr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

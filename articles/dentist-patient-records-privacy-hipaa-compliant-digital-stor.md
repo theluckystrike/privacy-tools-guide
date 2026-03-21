@@ -3,6 +3,7 @@ layout: default
 title: "Dentist Patient Records Privacy Hipaa Compliant Digital Stor"
 description: "A practical guide for developers and dental practice power users implementing HIPAA-compliant digital storage for patient records. Covers encryption"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /dentist-patient-records-privacy-hipaa-compliant-digital-stor/
 categories: [guides]
@@ -186,10 +187,15 @@ When evaluating cloud providers or software vendors, verify:
 
 Major cloud providers (AWS, Azure, Google Cloud) offer HIPAA-eligible services with BAA coverage. Many practice management software vendors also offer HIPAA-compliant versions.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
+- [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
+- [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
+- [Privacy Setup For Physical Therapist Patient Exercise Data P](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)
+- [How To Remove Court Records And Arrest Records From Public S](/privacy-tools-guide/how-to-remove-court-records-and-arrest-records-from-public-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

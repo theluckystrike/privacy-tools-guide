@@ -3,6 +3,7 @@ layout: default
 title: "How To Make Facebook Profile Private 2026"
 description: "If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-make-facebook-profile-private-2026/
 categories: [guides, security]
@@ -220,13 +221,15 @@ async function auditPrivacySettings(page) {
 })();
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Best Private Alternative to Google Drive 2026: A.](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
-- [Dashlane vs 1Password Comparison 2026: A Developer.](/privacy-tools-guide/dashlane-vs-1password-comparison-2026/)
-- [How to Make Instagram Story Viewers List Private.](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
+
+## Related Articles
+
+- [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
+- [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
+- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

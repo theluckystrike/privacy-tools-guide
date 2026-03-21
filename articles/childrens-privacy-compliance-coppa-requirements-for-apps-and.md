@@ -3,6 +3,7 @@ layout: default
 title: "Children's Privacy Compliance: COPPA Requirements"
 description: "A practical guide to COPPA compliance for developers and businesses building apps and websites that may collect data from children under 13"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /childrens-privacy-compliance-coppa-requirements-for-apps-and/
 categories: [guides, enterprise, security]
@@ -236,10 +237,15 @@ The FTC has the authority to impose civil penalties for COPPA violations. Recent
 - Reputational damage
 - Loss of platform distribution (Apple App Store, Google Play)
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
+- [Employee Email Monitoring Legal Requirements And Privacy Bou](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
+- [Privacy Requirements For Mergers And Acquisitions Due Dilige](/privacy-tools-guide/privacy-requirements-for-mergers-and-acquisitions-due-dilige/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

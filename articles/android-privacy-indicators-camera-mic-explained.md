@@ -3,6 +3,7 @@ layout: default
 title: "Android Privacy Indicators: Camera and Mic Access Explained"
 description: "Android privacy indicators provide real-time visual feedback when apps access your camera or microphone. Introduced in Android 12, these indicators address"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /android-privacy-indicators-camera-mic-explained/
 categories: [guides, security]
@@ -430,13 +431,15 @@ Future improvements may include:
 - Real-time detection of unexpected sensor activation
 - Cross-device sensor access coordination (prevent sneaky access on your tablet while you focus on phone)
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Android Custom ROM Privacy Comparison 2026: A Technical.](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
-- [Android Find My Device: Privacy Implications You Need to.](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-- [Browser Storage Isolation Explained for Privacy: A.](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
+
+## Related Articles
+
+- [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
+- [Police Body Camera Footage Privacy Rights Who Can Request An](/privacy-tools-guide/police-body-camera-footage-privacy-rights-who-can-request-an/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [How To Tell If Your Phone Camera Is Being Accessed Remotely](/privacy-tools-guide/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

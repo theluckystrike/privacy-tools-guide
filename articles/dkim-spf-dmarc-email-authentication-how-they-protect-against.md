@@ -3,6 +3,7 @@ layout: default
 title: "Dkim Spf Dmarc Email Authentication How They Protect Against"
 description: "Learn how DKIM, SPF, and DMARC work together to prevent email spoofing. A practical guide for developers and power users configuring email security"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /dkim-spf-dmarc-email-authentication-how-they-protect-against/
 categories: [guides]
@@ -290,10 +291,15 @@ For most organizations, the recommended implementation order is:
 
 This measured approach prevents accidentally blocking legitimate email while building toward protection.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
+- [How To File Gdpr Complaint Against Company That Refuses To D](/privacy-tools-guide/how-to-file-gdpr-complaint-against-company-that-refuses-to-d/)
+- [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
+- [GDPR Compliant User Authentication Design](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
+- [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

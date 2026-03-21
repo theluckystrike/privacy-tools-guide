@@ -3,6 +3,7 @@ layout: default
 title: How to Use WireGuard for Self-Hosted VPN in 2026
 description: Complete guide to setting up WireGuard VPN on a Linux VPS with modern security practices, configuration, and client setup.
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 categories: [security, guides]
 tags: [privacy-tools-guide]
@@ -701,13 +702,14 @@ AllowedIPs = 10.0.0.0/24  # Office A's subnet
 
 Now all devices in Office A can reach Office B's internal IPs (10.0.1.x).
 
-## Related Reading
 
-- [guides-hub: VPN Security Best Practices](https://zovo.one/guides-hub)
-- [guides-hub: DNS Privacy and Leaks](https://zovo.one/guides-hub)
-- [guides-hub: Linux Server Security](https://zovo.one/guides-hub)
-- [guides-hub: Encryption Protocols Comparison](https://zovo.one/guides-hub)
 
----
+## Related Articles
+
+- [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
+- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
+- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
+- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

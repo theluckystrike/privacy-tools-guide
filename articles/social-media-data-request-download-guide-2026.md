@@ -3,6 +3,7 @@ layout: default
 title: "Using curl for LinkedIn API"
 description: "Learn how to request and download your social media data from major platforms. Includes API methods, automation scripts, and best practices for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /social-media-data-request-download-guide-2026/
 categories: [guides]
@@ -298,13 +299,15 @@ for f in pathlib.Path('download').rglob('*.json'):
 ```
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
-- [Social Media Privacy Policy Comparison 2026: A Developer.](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
-- [How to Demand a Company Stop Selling Your Personal Data.](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
+
+## Related Articles
+
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
+- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

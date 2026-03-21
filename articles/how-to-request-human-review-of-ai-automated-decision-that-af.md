@@ -3,6 +3,7 @@ layout: default
 title: "Request Human Review of AI Automated Decision That Affects You Legally"
 description: "A practical guide for developers and power users on exercising your right to human review of AI-mediated decisions. Includes templates, legal basis"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-human-review-of-ai-automated-decision-that-affects-you/
 categories: [guides]
@@ -282,10 +283,15 @@ def notify_user_of_decision(user_email: str, decision: dict):
     send_email(user_email, "Decision Notification", email_content)
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
+- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
+- [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
+- [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
+- [How Vpn Affects Gaming Latency Actual Measurements And.](/privacy-tools-guide/how-vpn-affects-gaming-latency-actual-measurements-and-explanation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

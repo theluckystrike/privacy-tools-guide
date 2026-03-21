@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Tor Safely in Country That Criminalizes Its Use"
 description: "A technical guide for developers and power users on using Tor securely in regions where its use is criminalized. Includes configuration examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-safely-in-country-that-criminalizes-its-use/
 categories: [guides]
@@ -430,12 +431,15 @@ Supplement Tor with:
 - Clearnet account never accessed from Tor
 - Tor account never accessed from clearnet
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
-- [Tor Network Censorship Resistance Explained: A Technical.](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
-- [Does IVPN Work in Belarus? 2026 Latest Confirmed Test](/privacy-tools-guide/does-ivpn-work-in-belarus-2026-latest-confirmed-test/)
+
+## Related Articles
+
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
+- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model For Religious Minority In Persecuting Country D](/privacy-tools-guide/threat-model-for-religious-minority-in-persecuting-country-d/)
+- [How To Create Throwaway Email Accounts Safely For One Time S](/privacy-tools-guide/how-to-create-throwaway-email-accounts-safely-for-one-time-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Protect Yourself from Doxxing After Meeting Someone Through Online Dating Platforms"
 description: "A practical security guide for developers and power users on protecting your personal information after meeting someone through online dating"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-yourself-from-doxxing-after-meeting-someone-t/
 reviewed: true
@@ -197,10 +198,15 @@ If despite your precautions, you experience doxxing, act quickly:
 4. **Consider legal action**: Depending on jurisdiction, doxxing may violate laws
 5. **Change exposed information**: Update phone numbers, emails, and addresses if necessary
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
+- [How To Protect Your Zoom Meeting From Zoom Bombing Security](/privacy-tools-guide/how-to-protect-your-zoom-meeting-from-zoom-bombing-security/)
+- [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
+- [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
+- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

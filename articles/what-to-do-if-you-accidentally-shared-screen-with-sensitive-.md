@@ -3,6 +3,7 @@ layout: default
 title: "What To Do If You Accidentally Shared Screen With Sensitive"
 description: "Learn immediate steps to take when you accidentally expose sensitive information during screen sharing. Covers containment, platform-specific actions"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /what-to-do-if-you-accidentally-shared-screen-with-sensitive-/
 categories: [guides, security]
@@ -425,10 +426,15 @@ function Find-TeamsRecordings {
 Find-TeamsRecordings
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [What To Do If You Accidentally Downloaded Malware On Mac](/privacy-tools-guide/what-to-do-if-you-accidentally-downloaded-malware-on-mac/)
+- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
+- [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
+- [Prevent Screenshots of Dating Conversations from Being Shared Without Your Co...](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
+- [Password Manager For Shared Accounts Between Roommates.](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

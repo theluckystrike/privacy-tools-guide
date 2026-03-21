@@ -3,6 +3,7 @@ layout: default
 title: "Turkey Election Period Internet Throttling"
 description: "A technical guide for developers and power users on maintaining internet access during Turkey's election periods. Includes practical tools, configuration"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /turkey-election-period-internet-throttling-how-to-maintain-a/
 categories: [guides]
@@ -237,10 +238,15 @@ Users in Turkey should understand that while technical tools exist, legal risks 
 For those at higher risk (journalists, activists), the threat model should include device seizure, account compromise, and physical surveillance. In these cases, specialized security training and infrastructure (burner devices, dedicated communication channels) becomes necessary.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Turkey Internet Freedom Index Ranking And Comparison With Ne](/privacy-tools-guide/turkey-internet-freedom-index-ranking-and-comparison-with-ne/)
+- [How to Detect If Your ISP Is Throttling VPN Traffic](/privacy-tools-guide/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
+- [Privacy Risks of Period Tracking Apps 2026](/privacy-tools-guide/privacy-risks-period-tracking-apps/)
+- [Privacy Tools For Election Observer Protecting Witness.](/privacy-tools-guide/privacy-tools-for-election-observer-protecting-witness-testimony/)
+- [Does Expressvpn Still Work In Turkey 2026 Latest Test](/privacy-tools-guide/does-expressvpn-still-work-in-turkey-2026-latest-test/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

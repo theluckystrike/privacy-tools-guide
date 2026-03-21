@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Your Wifi Password Has Been Cracked"
 description: "Learn how to detect if your WiFi password has been compromised. This guide covers network monitoring, log analysis, and practical detection techniques"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-wifi-password-has-been-cracked/
 categories: [guides]
@@ -387,10 +388,15 @@ For high-value networks, consider professional audits:
 
 These services provide documented vulnerability assessments valuable for security hardening and legal proceedings if needed.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
+- [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
+- [How To Disable Wifi Scanning And Bluetooth Scanning On Andro](/privacy-tools-guide/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)
+- [How To Protect Your Wifi From Neighbor Stealing Bandwidth Se](/privacy-tools-guide/how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/)
+- [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

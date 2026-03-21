@@ -3,6 +3,7 @@ layout: default
 title: "Encrypt Your Entire Digital Life: A Checklist"
 description: "Complete guide to encrypting all data at rest and in transit. Covers device encryption, email, messaging, storage, passwords, and dead man's switches"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /encrypt-entire-digital-life--checklist/
 categories: [guides, security]
@@ -701,7 +702,13 @@ Annual:
 - Audit all third-party access (app passwords, API keys)
 ```
 
-{% endraw %}
-## Related Reading
 
-Explore more privacy strategies at [Privacy Tools Guide Guides Hub](/privacy-tools-guide/guides-hub/)
+## Related Articles
+
+- [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
+- [Privacy Setup For Stalking Victim Digital Prot](/privacy-tools-guide/privacy-setup-for-stalking-victim--digital-prot/)
+- [Insurance Company Data Collection Privacy What Health.](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)
+- [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
+- [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
+
+{% endraw %}

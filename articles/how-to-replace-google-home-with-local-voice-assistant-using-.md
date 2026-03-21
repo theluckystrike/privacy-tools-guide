@@ -3,6 +3,7 @@ layout: default
 title: "Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft"
 description: "Replace Google Home with Rhasspy or Mycroft to process voice commands entirely on your local hardware without cloud connectivity. Both open-source alternatives"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-replace-google-home-with-local-voice-assistant-using-/
 categories: [guides]
@@ -192,10 +193,15 @@ Regardless of your choice, several optimizations improve responsiveness:
 
 **Implement caching**. Store frequent command patterns and pre-computed responses to reduce processing latency.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Home Assistant Esphome For Completely Local Sm](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
+- [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
+- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
+- [How To Use Tailscale To Access Home Assistant Remotely Witho](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
+- [How To Set Up Google Voice Number Specifically For Online Da](/privacy-tools-guide/how-to-set-up-google-voice-number-specifically-for-online-da/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

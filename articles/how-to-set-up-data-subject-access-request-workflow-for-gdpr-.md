@@ -3,6 +3,7 @@ layout: default
 title: "Set Up Data Subject Access Request Workflow"
 description: "A practical technical guide for developers building GDPR-compliant data subject access request (DSAR) workflows. Covers automated pipelines, identity"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-data-subject-access-request-workflow-for-gdpr-/
 categories: [guides]
@@ -321,10 +322,15 @@ Before relying on your DSAR pipeline, validate it works:
 4. **Validate erasure** by attempting to access deleted data across all systems
 5. **Audit trail verification** ensuring all actions are logged with timestamps
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
+- [How To Submit Subject Access Request To Employer For All Mon](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)
+- [Github Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
+- [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
+- [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

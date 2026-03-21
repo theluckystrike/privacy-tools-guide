@@ -3,6 +3,7 @@ layout: default
 title: "Email Security Headers Dmarc Dkim Spf Setup To Prevent."
 description: "Learn how to configure SPF, DKIM, and DMARC records to prevent email spoofing and protect your domain's reputation. Practical examples for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/
 categories: [troubleshooting]
@@ -178,10 +179,15 @@ Before going live with DMARC enforcement:
 
 This systematic approach minimizes the risk of legitimate mail being blocked during the enforcement phase.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
+- [Baby Monitor Security And Privacy How To Prevent.](/privacy-tools-guide/baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/)
+- [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [Dating App Location Spoofing How To Hide Real Position While](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

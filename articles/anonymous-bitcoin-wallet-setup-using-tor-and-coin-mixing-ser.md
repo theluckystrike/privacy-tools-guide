@@ -3,6 +3,7 @@ layout: default
 title: "Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing."
 description: "A practical guide to setting up an anonymous Bitcoin wallet using Tor network and coin mixing services. Designed for developers and power users who"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/
 categories: [guides, security]
@@ -350,10 +351,15 @@ Custody Privacy: Cold storage, multisig
 
 Each layer adds friction but increases privacy exponentially.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction P](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
+- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
+- [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
+- [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
+- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Secure Messaging for Activists Guide 2026: Signal vs."
 description: "Guide to secure messaging for activists—Signal, Briar, Session, Cwtch. Threat models, group communication, device seizure prep"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /secure-messaging-for-activists-guide-2026/
 categories: [guides]
@@ -474,8 +475,10 @@ signal-cli -u +1234567890 listIdentities
 ```
 
 
-## Related Reading
+## Related Articles
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-
+- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+- [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
+- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)

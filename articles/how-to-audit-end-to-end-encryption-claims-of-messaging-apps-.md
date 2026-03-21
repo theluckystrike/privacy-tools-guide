@@ -3,6 +3,7 @@ layout: default
 title: "How To Audit End To End Encryption Claims Of Messaging Apps"
 description: "Learn how to independently verify end-to-end encryption claims of messaging apps using open source tools, protocol analysis, and practical testing"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/
 categories: [guides]
@@ -185,9 +186,14 @@ Essential tools for messaging app encryption audits:
 Combine these tools with careful protocol documentation review to form a complete picture of an app's encryption guarantees. The effort rewards you with confidence in your communication security or reveals gaps that other users should know about.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
+- [How To Rotate Encryption Keys In Messaging Apps Without Losi](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
+- [Post Quantum Encryption In Messaging Apps Preparing For Quan](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
+- [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
+- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

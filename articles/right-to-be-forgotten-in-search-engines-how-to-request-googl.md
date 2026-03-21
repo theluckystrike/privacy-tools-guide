@@ -3,6 +3,7 @@ layout: default
 title: "Right To Be Forgotten In Search Engines How To Request Googl"
 description: "A practical technical guide for developers and power users on exercising the right to be forgotten. Learn how to request Google remove personal"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /right-to-be-forgotten-in-search-engines-how-to-request-googl/
 categories: [guides]
@@ -215,9 +216,14 @@ Disallow: /sensitive/
 
 These directives prevent future content from appearing in search results, reducing the need for removal requests.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)
+- [Best Privacy-Focused Search Engines Comparison 2026: DuckDuckGo, Startpage, B...](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
+- [Privacy Focused Search Engines Comparison 2026](/privacy-tools-guide/privacy-focused-search-engines-comparison-2026/)
+- [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

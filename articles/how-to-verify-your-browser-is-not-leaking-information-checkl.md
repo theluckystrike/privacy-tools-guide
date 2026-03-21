@@ -3,6 +3,7 @@ layout: default
 title: "Verify Your Browser is Not Leaking Information"
 description: "A checklist for developers and power users to verify their browser is not leaking sensitive information. Includes code examples and testing methods"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-your-browser-is-not-leaking-information-checkl/
 categories: [guides, security]
@@ -247,11 +248,15 @@ auditBrowserPrivacy('https://example.com')
 
 Run this script periodically to track changes in your browser's privacy posture.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Browser Fingerprinting: What It Is and How to Block](/browser-fingerprinting-what-it-is-how-to-block/)
-- [How to Stop Browser Fingerprinting on Chrome](/how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/)
+
+## Related Articles
+
+- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
+- [Verify Your VPN Is Actually Bypassing Censorship (Not Leaking Your Real Locat...](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
+- [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
+- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
+- [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

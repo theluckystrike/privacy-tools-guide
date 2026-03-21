@@ -3,6 +3,7 @@ layout: default
 title: "Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level"
 description: "A practical guide for developers and power users to configure OPNsense firewall rules that block known tracking domains at the IP level, providing"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-firewall-rules-on-opnsense-to-block-known-t/
 categories: [guides]
@@ -336,9 +337,14 @@ echo "Blocklist updated: $(wc -l < /tmp/blocklist_update.txt) entries"
 
 Schedule this via cron to run weekly or monthly.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How Vpn Interacts With Firewall Rules Iptables Nftables.](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
+- [Bounce Tracking How Redirects Through Tracker Domains Follow](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)
+- [Configure Little Snitch On Macos To Block All Unnecessary Outbound Connections](/privacy-tools-guide/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
+- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

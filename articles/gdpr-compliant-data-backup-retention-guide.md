@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Compliant Data Backup Retention Guide"
 description: "A practical guide to implementing GDPR-compliant data backup and retention policies. Learn retention periods, encryption requirements, and code"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-data-backup-retention-guide/
 categories: [guides]
@@ -273,13 +274,15 @@ def audit_backup_retention(bucket_name, retention_days):
 
 Run this audit weekly and alert on any violations.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
-- [GDPR Compliant Contact Form Implementation: A Technical.](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)
-- [GDPR Data Breach Notification Requirements 2026: A.](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
+
+## Related Articles
+
+- [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
+- [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)
+- [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
+- [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
+- [GDPR Compliant User Authentication Design](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

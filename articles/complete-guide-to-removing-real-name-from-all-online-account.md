@@ -3,6 +3,7 @@ layout: default
 title: "Complete Guide To Removing Real Name From All Online Account"
 description: "Systematically replace your real name with pseudonyms across GitHub, Stack Overflow, social media, e-commerce, and developer platforms, using privacy"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /complete-guide-to-removing-real-name-from-all-online-account/
 categories: [guides]
@@ -381,10 +382,15 @@ ANNUALLY:
 - Update threat model assessment
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
+- [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
+- [Complete Guide To Removing Yourself From Internet Databases](/privacy-tools-guide/complete-guide-to-removing-yourself-from-internet-databases-/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
+- [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

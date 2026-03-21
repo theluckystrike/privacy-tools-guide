@@ -3,6 +3,7 @@ layout: default
 title: "How To Check If Your Phone Number Is Being Spoofed"
 description: "Phone number spoofing occurs when a caller deliberately falsifies the caller ID information transmitted to disguise their identity. For developers and power"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-phone-number-is-being-spoofed/
 categories: [guides, security]
@@ -170,10 +171,15 @@ def verify_call_signature(timestamp, caller_number, signature, shared_secret):
 
 Implement proper phone number validation, require multi-factor authentication for phone-based operations, and log all verification attempts for fraud analysis.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Check If Your Social Security Number Was Leaked Onlin](/privacy-tools-guide/how-to-check-if-your-social-security-number-was-leaked-onlin/)
+- [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
+- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

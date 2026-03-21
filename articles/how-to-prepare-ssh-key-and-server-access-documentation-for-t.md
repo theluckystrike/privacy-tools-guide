@@ -3,6 +3,7 @@ layout: default
 title: "How To Prepare Ssh Key And Server Access Documentation For T"
 description: "A practical guide for developers and power users on documenting SSH keys, server credentials, and access details for technical estate inheritance"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prepare-ssh-key-and-server-access-documentation-for-t/
 categories: [guides, security]
@@ -214,10 +215,15 @@ When actual handover occurs, use this checklist to ensure nothing is missed:
 - [ ] Previous access revoked (where applicable)
 - [ ] Sign-off from both parties
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
+- [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
+- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
+- [How To Configure Openpgp Key Server For Organization Interna](/privacy-tools-guide/how-to-configure-openpgp-key-server-for-organization-interna/)
+- [OpenVPN Access Server vs Community Edition](/privacy-tools-guide/openvpn-access-server-vs-community-edition-differences-features-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

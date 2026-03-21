@@ -3,6 +3,7 @@ layout: default
 title: "Cryptocurrency Wallet Recovery Planning For Heirs How To Pas"
 description: "Learn practical methods for passing cryptocurrency wallet access to heirs without exposing private keys. Covers seed phrase encryption, multi-signature"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/
 categories: [guides]
@@ -322,10 +323,15 @@ Step 6: Handle tax reporting
 Total process: 1-2 weeks from recovered key to fiat funds
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Ethereum Wallet Inheritance: Using Social Recovery Smart.](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
+- [How To Protect Cryptocurrency Wallet From Being Hacked Secur](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
+- [Bitcoin Inheritance Planning Using Multisig With Family Memb](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
+- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

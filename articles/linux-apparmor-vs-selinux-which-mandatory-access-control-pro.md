@@ -3,6 +3,7 @@ layout: default
 title: "Linux Apparmor Vs Selinux Which Mandatory Access Control Pro"
 description: "Mandatory Access Control (MAC) systems represent a critical layer of Linux security beyond the traditional Unix permission model. While Discretionary Access"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /linux-apparmor-vs-selinux-which-mandatory-access-control-pro/
 categories: [guides]
@@ -231,9 +232,14 @@ cryptsetup isLuks /dev/sdb && echo "Encrypted" || echo "NOT encrypted"
 
 Full-disk encryption protects you from physical theft but not from a running system with an active session. Enable auto-lock after 5 minutes of inactivity.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
+- [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
+- [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
+- [How To Configure Postfix With Mandatory Tls Encryption For E](/privacy-tools-guide/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

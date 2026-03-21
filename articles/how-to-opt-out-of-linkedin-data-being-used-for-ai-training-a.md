@@ -3,6 +3,7 @@ layout: default
 title: "How To Opt Out Of Linkedin Data Being Used For Ai Training A"
 description: "A practical guide for developers and power users on how to prevent LinkedIn from using your professional data for AI training and machine learning"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/
 categories: [guides, security]
@@ -199,10 +200,15 @@ If you're located in certain jurisdictions, you have additional legal options:
 
 LinkedIn's privacy policy specifies a designated privacy officer for such requests. Document all communications and keep records of your opt-out attempts.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu](/privacy-tools-guide/how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

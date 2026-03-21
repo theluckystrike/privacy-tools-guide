@@ -3,6 +3,7 @@ layout: default
 title: "How to Flash OpenWRT on Common Routers for Privacy Beginners"
 description: "A guide for developers and power users on flashing OpenWRT firmware on popular router models. Includes step-by-step instructions, troubleshooting tips, and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/
 categories: [guides, security]
@@ -328,10 +329,15 @@ sysupgrade -b /tmp/backup.tar.gz
 scp root@192.168.1.1:/tmp/backup.tar.gz ./
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
+- [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
+- [Nixos Declarative System Configuration For Reproducible Priv](/privacy-tools-guide/nixos-declarative-system-configuration-for-reproducible-priv/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

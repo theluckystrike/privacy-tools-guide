@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Private DNS on Android for All Apps"
 description: "Complete guide to configuring private DNS on Android devices. Learn to encrypt DNS queries system-wide for all apps using Android's built-in Private DNS feature"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-private-dns-on-android-for-all-apps/
 categories: [guides]
@@ -282,10 +283,15 @@ adb logcat | grep -i dns
 
 Network instability sometimes breaks DoT connections. Temporarily disabling helps identify the root cause.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)
+- [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
+- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
+- [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

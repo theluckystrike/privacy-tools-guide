@@ -3,6 +3,7 @@ layout: default
 title: "Github Pull Request Workflow For Distributed Teams"
 description: "Set up an effective distributed PR workflow by adopting trunk-based development with short-lived feature branches (under two days), using PR templates that"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /github-pull-request-workflow-for-distributed-teams/
 reviewed: true
@@ -182,11 +183,14 @@ Track metrics to continuously improve your process:
 GitHub Insights provides built-in analytics, or integrate with tools like DevMetrics for custom dashboards.
 
 The key is continuous refinement—what works today may need adjustment as team composition and project needs evolve. Measure outcomes and adapt practices to fit the team's specific context.
+
+## Related Articles
+
+- [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
+- [Tahoe LAFS Distributed Encrypted Storage Guide](/privacy-tools-guide/tahoe-lafs-distributed-encrypted-storage-guide/)
+- [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
+- [How To Set Up Github Repository With Encrypted Estate Instru](/privacy-tools-guide/how-to-set-up-github-repository-with-encrypted-estate-instru/)
+- [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
+
 {% endraw %}
 
-## Related Reading
-
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Remote Work Tools Guide](/remote-work-tools/){: .cross-repo-linked}
-- [Jami P2P Messenger Review 2026: A Developer Guide to.](/privacy-tools-guide/jami-p2p-messenger-review-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Tell If Your Home Assistant or Alexa Was Compromised"
 description: "A technical guide to detecting if your smart home voice assistants have been compromised. Learn to identify signs of unauthorized access, audit logs"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
 categories: [guides]
@@ -216,9 +217,14 @@ If you determine your device was compromised:
 10. **Consider identity monitoring** if sensitive personal data was exposed
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [How To Set Up Home Assistant Esphome For Completely Local Sm](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
+- [How To Use Tailscale To Access Home Assistant Remotely Witho](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
+- [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

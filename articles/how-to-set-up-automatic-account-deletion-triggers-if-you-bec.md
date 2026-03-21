@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Automatic Account Deletion Triggers If You Bec"
 description: "Learn how to configure automatic account deletion triggers to protect your digital legacy. This guide covers dead man's switches, cron jobs, cloud functions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/
 categories: [guides, security]
@@ -213,10 +214,15 @@ Create a clear document for your emergency contact or executor:
 
 **Partial Solutions**: Even if you can't automate everything, creating an inventory and documented process significantly reduces the burden on your family.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [Facebook Location History Deletion How To Remove All Stored](/privacy-tools-guide/facebook-location-history-deletion-how-to-remove-all-stored-/)
+- [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
+- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

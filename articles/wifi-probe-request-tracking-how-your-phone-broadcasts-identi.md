@@ -3,6 +3,7 @@ layout: default
 title: "Wifi Probe Request Tracking How Your Phone Broadcasts Identi"
 description: "Learn how WiFi probe requests work, what data your phone broadcasts, and how developers can capture and analyze these signals for privacy research"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /wifi-probe-request-tracking-how-your-phone-broadcasts-identi/
 categories: [guides]
@@ -295,10 +296,15 @@ The WiFi standard continues evolving with privacy considerations:
 
 Adopting newer devices with improved privacy standards is the simplest long-term mitigation, but device replacement takes years.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
+- [Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)
+- [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
+- [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
+- [How To Disable Wifi Scanning And Bluetooth Scanning On Andro](/privacy-tools-guide/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
