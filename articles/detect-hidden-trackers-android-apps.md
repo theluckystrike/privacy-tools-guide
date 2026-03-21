@@ -5,7 +5,7 @@ description: "Use ADB, TrackerControl, Exodus Privacy, and network analysis to f
 date: 2026-03-21
 author: theluckystrike
 permalink: /detect-hidden-trackers-android-apps/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
