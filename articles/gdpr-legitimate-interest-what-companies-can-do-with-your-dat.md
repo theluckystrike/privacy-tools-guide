@@ -170,6 +170,186 @@ When you encounter a privacy practice you're unsure about, look for these indica
 3. **No consent mechanism** — If you're not being asked to consent, legitimate interest may apply
 4. **Direct marketing** — Marketing to existing customers often relies on this basis
 
+## Challenging Legitimate Interest Claims
+
+Regulators increasingly scrutinize weak legitimate interest justifications. Here's how to challenge them:
+
+```python
+# Framework for evaluating legitimate interest validity
+
+class LegitimateInterestChallenge:
+    """
+    EDPB Guidelines 5/2022 establish high bar for legitimate interest.
+    Use this to identify weak company claims.
+    """
+
+    def evaluate_company_claim(self, company_basis: str) -> Dict[str, bool]:
+        """Evaluate if company's legitimate interest claim holds up"""
+
+        assessment = {
+            'purpose_legitimate': False,
+            'processing_necessary': False,
+            'balancing_test_documented': False,
+            'user_rights_preserved': False
+        }
+
+        # 1. Purpose legitimacy
+        # Questionable: "improve user experience" (too vague)
+        # Valid: "prevent DDoS attacks" (specific security threat)
+        vague_purposes = [
+            'improve experience',
+            'personalization',
+            'analytics',
+            'business reasons'
+        ]
+        assessment['purpose_legitimate'] = not any(
+            vague in company_basis.lower() for vague in vague_purposes
+        )
+
+        # 2. Necessity test
+        # Company must prove processing is necessary, not just convenient
+        # "We share your data with analytics because we use analytics"
+        # is circular reasoning—not necessary
+        assessment['processing_necessary'] = self._assess_necessity(company_basis)
+
+        # 3. Balancing test documentation
+        # Most companies cannot produce their balancing test
+        # Request it: "Provide your written balancing test assessment"
+        assessment['balancing_test_documented'] = self._check_documentation(company_basis)
+
+        # 4. User rights preserved
+        # Must offer easy opt-out for objection right
+        assessment['user_rights_preserved'] = self._check_objection_mechanism(company_basis)
+
+        return assessment
+
+    def _assess_necessity(self, basis: str) -> bool:
+        """Check if processing is truly necessary or just convenient"""
+        # Examples of necessary: security monitoring, fraud prevention
+        # Examples of convenient: behavior tracking, profiling
+        necessary_keywords = [
+            'prevent', 'detect', 'security', 'fraud', 'compliance',
+            'legal obligation', 'essential'
+        ]
+        convenient_keywords = [
+            'improve', 'optimize', 'enhance', 'analytics', 'insights',
+            'personalize', 'recommendation'
+        ]
+
+        necessary_count = sum(1 for kw in necessary_keywords if kw in basis.lower())
+        convenient_count = sum(1 for kw in convenient_keywords if kw in basis.lower())
+
+        return necessary_count > convenient_count
+
+    def _check_documentation(self, basis: str) -> bool:
+        """Legitimate interest must include documented balancing test"""
+        required_elements = [
+            'company interests',
+            'user interests',
+            'rights and freedoms',
+            'reasonable expectations',
+            'balancing conclusion'
+        ]
+        # Most companies provide 1-2 elements, not all 5
+        return sum(1 for elem in required_elements if elem in basis.lower()) >= 4
+
+    def _check_objection_mechanism(self, basis: str) -> bool:
+        """Easy opt-out mechanism required for objection right"""
+        opt_out_indicators = [
+            'unsubscribe',
+            'opt-out',
+            'object to processing',
+            'manage preferences',
+            'reject marketing'
+        ]
+        return any(indicator in basis.lower() for indicator in opt_out_indicators)
+
+# Example: Evaluate Google's legitimate interest for behavioral targeting
+google_claim = """
+Google uses legitimate interest to show relevant ads.
+We analyze your browsing patterns to understand interests,
+which improves ad relevance and our services.
+"""
+
+challenger = LegitimateInterestChallenge()
+assessment = challenger.evaluate_company_claim(google_claim)
+# Result: purpose_legitimate=True, processing_necessary=False,
+#         balancing_test_documented=False, user_rights_preserved=False
+# Conclusion: Weak claim, likely illegal under GDPR
+```
+
+## Filing DPA Complaints About Illegitimate Interest
+
+If a company's legitimate interest claim is invalid, escalate to data protection authorities:
+
+```bash
+#!/bin/bash
+# Filing GDPR complaint template with your DPA
+
+DPA_CONTACT="support@ico.org.uk"  # ICO for UK
+COMPANY_NAME="Example Corporation"
+PROCESSING_ACTIVITY="Behavioral tracking via cookies"
+
+cat > complaint.txt <<'EOF'
+GDPR Article 77 Complaint - Invalid Legitimate Interest Basis
+
+Data Subject: [Your name]
+Date of Complaint: [Date]
+Controller: [Company name, address]
+Data Protection Authority: [ICO/CNIL/etc]
+
+SUMMARY OF VIOLATION
+
+The above controller is processing my personal data under the legitimate interest
+basis (GDPR Article 6(1)(f)) without a valid balancing test. This processing lacks:
+
+1. Documented necessity assessment
+2. Written balancing test comparing controller interests vs. data subject rights
+3. Clear indication of reasonable expectations
+4. Accessible objection mechanism
+
+EVIDENCE
+
+1. Privacy policy states "[quote from privacy policy]" but provides no balancing test
+2. No documented legitimate interest assessment provided despite formal request
+3. Objection mechanism not provided despite request
+4. Similar companies achieve same purpose through less intrusive means
+
+LEGAL BASIS FOR COMPLAINT
+
+- GDPR Article 6(1)(f) - legitimate interest must be valid and documented
+- GDPR Article 13 - transparency requires disclosure of legitimate interest basis
+- EDPB Guidelines 5/2022 - sets high bar for legitimate interest validity
+
+RELIEF SOUGHT
+
+- Cease processing based on invalid legitimate interest basis
+- Provide documented balancing test assessment or delete data
+- Implement proper objection mechanism
+- Compensate for processing without valid legal basis (Article 82)
+
+I request investigation and enforcement action under Article 84 GDPR.
+
+[Your signature and details]
+EOF
+
+# Mail to DPA
+mail -s "GDPR Complaint - Invalid Legitimate Interest" "$DPA_CONTACT" < complaint.txt
+```
+
+## Recent DPA Decisions on Legitimate Interest
+
+Several authorities have ruled against companies' legitimate interest claims:
+
+**Meta (Facebook) - 2023 EDPB Decision**: Behavioral advertising targeting not justified by legitimate interest. Users cannot "reasonably expect" behavioral profiling. Meta forced to switch to consent-based model in EU.
+
+**Google - Germany 2022**: Refused to accept "service improvement" as legitimate interest for cross-site tracking. Tracking was disproportionate to stated benefit.
+
+**LinkedIn - EDPB Opinion**: Rejecting emails to non-members for marketing violated proportionality test, even if legitimate interest existed.
+
+These decisions show regulators skeptical of broad "improvement" and "analytics" justifications. Companies must prove necessity, not just convenience.
+
+## Related Reading
 
 ## Related Articles
 

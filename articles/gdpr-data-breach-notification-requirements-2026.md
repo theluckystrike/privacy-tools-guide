@@ -170,6 +170,200 @@ Implementing GDPR-compliant breach response requires coordination between techni
 
 The difference between a well-handled breach and a problematic one often comes down to preparation. Organizations that invest in thorough detection, documentation, and response processes are better positioned to meet their regulatory obligations while minimizing impact to affected individuals.
 
+## Automated Breach Detection Systems
+
+Implementing detection systems accelerates the 72-hour response clock:
+
+```python
+# Advanced breach detection using anomaly analysis
+
+import hashlib
+import json
+from datetime import datetime, timedelta
+from typing import List, Dict
+
+class AnomalyBasedBreachDetection:
+    """Detect unauthorized data access patterns"""
+
+    def __init__(self, baseline_window_days: int = 30):
+        self.baseline_window = timedelta(days=baseline_window_days)
+        self.anomalies = []
+
+    def analyze_access_patterns(self, access_logs: List[Dict]) -> Dict:
+        """Detect suspicious access deviations"""
+
+        # Calculate baseline metrics
+        baseline = self._calculate_baseline(access_logs)
+
+        anomalies = {
+            'volume_spike': [],
+            'geographic_anomaly': [],
+            'time_anomaly': [],
+            'privilege_escalation': []
+        }
+
+        for log in access_logs[-1000:]:  # Check recent logs
+            # Volume spike detection
+            if log['byte_count'] > baseline['avg_bytes'] * 5:
+                anomalies['volume_spike'].append(log)
+
+            # Geographic anomaly
+            if self._is_impossible_travel(log['ip'], log['timestamp']):
+                anomalies['geographic_anomaly'].append(log)
+
+            # Time anomaly
+            if self._is_unusual_time(log['timestamp']):
+                anomalies['time_anomaly'].append(log)
+
+            # Privilege escalation
+            if log['action'] == 'permission_grant' and not log['authorized']:
+                anomalies['privilege_escalation'].append(log)
+
+        return anomalies
+
+    def _calculate_baseline(self, logs: List[Dict]) -> Dict:
+        """Calculate normal access patterns"""
+        bytes_accessed = [log['byte_count'] for log in logs]
+        return {
+            'avg_bytes': sum(bytes_accessed) / len(bytes_accessed),
+            'std_dev': self._std_dev(bytes_accessed),
+            'peak_hour': self._find_peak_hour(logs)
+        }
+
+    def _is_impossible_travel(self, ip: str, timestamp: str) -> bool:
+        """Detect impossible geographic transitions"""
+        # Check if IP changed location impossibly quickly
+        previous_location = self._get_previous_location(ip)
+        current_location = self._geolocate_ip(ip)
+
+        time_delta = (datetime.fromisoformat(timestamp) -
+                     self._get_previous_timestamp(ip)).total_seconds()
+
+        distance_km = self._calculate_distance(
+            previous_location, current_location
+        )
+        max_speed_kmh = 900  # ~Mach 1
+
+        return distance_km / (time_delta / 3600) > max_speed_kmh
+
+    def _is_unusual_time(self, timestamp: str) -> bool:
+        """Detect access outside normal working hours"""
+        dt = datetime.fromisoformat(timestamp)
+        return dt.hour < 6 or dt.hour > 22
+
+    @staticmethod
+    def _std_dev(values: List[float]) -> float:
+        """Calculate standard deviation"""
+        mean = sum(values) / len(values)
+        return (sum((x - mean) ** 2 for x in values) / len(values)) ** 0.5
+```
+
+This system flags suspicious patterns for human investigation, potentially catching breaches before data leaves the system.
+
+## Calculating Risk and Reporting Thresholds
+
+Not every security incident requires GDPR notification. Proper risk assessment determines reporting obligations:
+
+```python
+# Risk assessment framework for breach determination
+
+class BreachRiskAssessment:
+    def __init__(self):
+        self.risk_factors = {
+            'data_type_sensitivity': 0,
+            'volume_affected': 0,
+            'likelihood_of_harm': 0,
+            'control_effectiveness': 0
+        }
+
+    def calculate_risk_score(self, incident: Dict) -> float:
+        """
+        GDPR Article 32 risk factors determine notification obligation.
+        Risk = (Sensitivity × Volume × Likelihood) / Control_Effectiveness
+        """
+
+        # 1. Data sensitivity (0-10)
+        sensitivity = self._assess_sensitivity(incident['data_categories'])
+
+        # 2. Volume affected (0-10)
+        volume_score = min(10, incident['affected_subjects'] / 1000)
+
+        # 3. Likelihood of harm (0-10)
+        likelihood = self._assess_harm_likelihood(incident)
+
+        # 4. Control effectiveness (0-10, inverted)
+        controls = self._assess_controls(incident)
+
+        risk_score = (sensitivity * volume_score * likelihood) / (controls or 1)
+
+        return min(risk_score, 10.0)
+
+    def determine_notification_required(self, risk_score: float) -> bool:
+        """
+        GDPR Article 34: Notify individuals if "high risk"
+        No bright-line definition, but ~6+ typically requires notification
+        """
+        return risk_score >= 6.0
+
+    def _assess_sensitivity(self, categories: List[str]) -> float:
+        """Special category data (health, biometric) = 10, name/email = 3"""
+        special_categories = {'health', 'biometric', 'financial', 'genetic'}
+        if any(cat in special_categories for cat in categories):
+            return 10.0
+        return 3.0 if 'personal_data' in categories else 1.0
+
+    def _assess_harm_likelihood(self, incident: Dict) -> float:
+        """
+        Data exfiltrated vs. accessed? Encrypted vs. plaintext?
+        Adversary capabilities?
+        """
+        if incident['exfiltrated']:
+            return 9.0  # High likelihood
+        elif incident['plaintext']:
+            return 6.0  # Medium likelihood
+        else:
+            return 2.0  # Low likelihood (encrypted)
+
+    def _assess_controls(self, incident: Dict) -> float:
+        """Existing security controls that mitigated impact"""
+        mitigations = incident.get('mitigations', [])
+        # Encryption, anonymization, access controls, etc.
+        return len(mitigations) * 2.0  # 2 points per control
+```
+
+Using this framework, a breach of 100 users' encrypted email addresses might score 2.5 (no notification), while 10,000 users' plaintext health records scores 8.5 (notification required).
+
+## Third-Party Breach Notification Chain
+
+When processors breach data, controllers must notify supervisory authorities. Establish clear contractual notification timelines:
+
+```yaml
+# Data Processing Agreement breach notification timeline
+
+breach_notification_chain:
+  processor_discovery: "T+0h"
+  processor_notification_to_controller: "T+0-2h"  # ASAP
+  controller_assessment: "T+2-12h"
+  controller_to_authority: "T+72h"  # Within 72 hours
+  controller_to_individuals: "T+72h"  # If high risk
+
+dpa_requirements:
+  processor_must:
+    - Notify without undue delay
+    - Provide detailed incident information
+    - Support controller's investigation
+    - Preserve evidence for forensics
+    - Document technical details for notification
+
+  controller_must:
+    - Verify processor notification timeliness
+    - Assess combined breach scope
+    - Make independent risk determination
+    - Document assessment rationale
+    - Report to authority, not processor finding
+```
+
+## Related Reading
 
 ## Related Articles
 

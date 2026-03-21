@@ -170,6 +170,161 @@ While accessing geo-restricted content, maintain security practices:
 - Avoid free VPNs—monetization often involves data harvesting
 - Consider using a dedicated browser profile for streaming activities
 
+## Advanced IP Rotation Techniques
+
+For sustained access, implement periodic IP rotation:
+
+```bash
+#!/bin/bash
+# Automated VPN rotation script
+
+VPN_CONFIG_DIR="/etc/openvpn/hotstar-configs"
+ROTATION_INTERVAL=3600  # Rotate hourly
+LOG_FILE="/var/log/vpn-rotation.log"
+
+function rotate_vpn() {
+    # Get random server from Indian pool
+    SERVERS=$(ls $VPN_CONFIG_DIR/*.ovpn | shuf | head -1)
+    CURRENT_IP=$(curl -s ipinfo.io/ip)
+
+    echo "$(date): Rotating from $CURRENT_IP to $SERVERS" >> $LOG_FILE
+
+    # Kill existing connection
+    systemctl stop openvpn@hotstar || true
+
+    # Connect to new server
+    cp "$SERVERS" /etc/openvpn/hotstar.ovpn
+    systemctl start openvpn@hotstar
+
+    sleep 5
+
+    # Verify new IP is different and Indian
+    NEW_IP=$(curl -s ipinfo.io/ip)
+    LOCATION=$(curl -s ipinfo.io/country)
+
+    if [ "$LOCATION" = "IN" ]; then
+        echo "$(date): Successfully rotated to $NEW_IP (India)" >> $LOG_FILE
+    else
+        echo "$(date): ERROR - IP not in India, retrying" >> $LOG_FILE
+        rotate_vpn
+    fi
+}
+
+# Run on schedule
+while true; do
+    rotate_vpn
+    sleep $ROTATION_INTERVAL
+done
+```
+
+## WebRTC Leak Detection and Prevention
+
+Even with VPN connected, WebRTC can expose your real IP:
+
+```javascript
+// Comprehensive WebRTC leak test
+function testWebRTCLeak() {
+    const rtcPeerConnection = window.RTCPeerConnection ||
+                             window.webkitRTCPeerConnection ||
+                             window.mozRTCPeerConnection;
+
+    if (!rtcPeerConnection) {
+        console.log("WebRTC not available (good for privacy)");
+        return;
+    }
+
+    const pc = new rtcPeerConnection({ iceServers: [] });
+
+    pc.createDataChannel("");
+    pc.createOffer().then(offer => pc.setLocalDescription(offer));
+
+    pc.onicecandidate = (ice) => {
+        if (!ice || !ice.candidate) return;
+
+        const candidate = ice.candidate.candidate;
+        const ips = candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3})/);
+
+        if (ips) {
+            console.error("LEAK DETECTED - WebRTC exposed IP:", ips[0]);
+            // This means your real IP is visible despite VPN
+        }
+    };
+}
+
+testWebRTCLeak();
+```
+
+**Prevention**: Disable WebRTC in Firefox with `media.peerconnection.enabled = false` in `about:config`. For Chrome, use a WebRTC leak prevention extension or disable all protocols except "default public interface."
+
+## Custom Streaming Proxy Implementation
+
+For developers requiring maximum control, build a streaming-specific proxy:
+
+```python
+import asyncio
+import aiohttp
+import httpx
+from typing import Optional
+
+class HotstarStreamingProxy:
+    def __init__(self, indian_vpn_endpoint: str, auth_token: Optional[str] = None):
+        self.indian_endpoint = indian_vpn_endpoint
+        self.auth = auth_token
+        self.session = None
+
+    async def initialize(self):
+        # Connect through Indian VPN endpoint
+        connector = httpx.HTTPTransport(
+            proxy=f"socks5://{self.indian_endpoint}:1080"
+        )
+        self.session = httpx.AsyncClient(transport=connector)
+
+    async def fetch_video(self, hotstar_url: str) -> bytes:
+        """
+        Fetch Hotstar video through proxy with spoofing
+        """
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Linux; Android 12)',
+            'Accept-Language': 'en-IN',
+            'X-Forwarded-For': self._generate_indian_ip(),
+            'X-Real-IP': self._generate_indian_ip(),
+        }
+
+        response = await self.session.get(
+            hotstar_url,
+            headers=headers,
+            follow_redirects=True
+        )
+
+        return response.content
+
+    def _generate_indian_ip(self) -> str:
+        """Generate realistic Indian IP address"""
+        # Indian IP ranges
+        ranges = [
+            ("49.0.0.0", "49.255.255.255"),      # BSNL
+            ("121.0.0.0", "121.255.255.255"),    # Various ISPs
+            ("203.0.0.0", "203.255.255.255"),    # MTNL
+        ]
+        import random
+        start, end = random.choice(ranges)
+        return start  # Simplified; real implementation would generate within range
+
+async def stream_hotstar():
+    proxy = HotstarStreamingProxy("in.vpnserver.com:1080")
+    await proxy.initialize()
+
+    # Stream video
+    video_data = await proxy.fetch_video("https://api.hotstar.com/video/stream")
+
+    # Save to file
+    with open("stream.mp4", "wb") as f:
+        f.write(video_data)
+```
+
+This approach requires careful header management and realistic geolocation spoofing.
+
+## Related Reading
 
 ## Related Articles
 

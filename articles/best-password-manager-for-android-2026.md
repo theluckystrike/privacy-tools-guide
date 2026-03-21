@@ -169,6 +169,152 @@ For CLI automation, Bitwarden's CLI is unmatched. You can integrate password gen
 
 Regardless of choice, enabling a password manager significantly reduces credential reuse and improves overall security posture. The best tool is one you'll consistently use.
 
+## Advanced Integration Patterns for Developers
+
+Password managers integrate into broader automation workflows. Here's how to integrate Bitwarden into CI/CD pipelines for secret management:
+
+```bash
+#!/bin/bash
+# Jenkins/GitLab CI integration with Bitwarden
+
+# Export Bitwarden session
+export BW_SESSION=$(bw unlock --email dev@company.com --password "$BW_MASTER_PASSWORD" --raw)
+
+# Retrieve database credentials
+DB_USER=$(bw get item "production-db" --raw --fields username)
+DB_PASS=$(bw get item "production-db" --raw --fields password)
+DB_HOST=$(bw get item "production-db" --raw --fields url)
+
+# Use credentials for deployment
+mysql -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASS" < schema.sql
+
+# Lock session
+bw lock
+```
+
+This pattern enables secret rotation without hardcoding credentials in CI/CD systems.
+
+## Encryption Algorithm Comparison
+
+All major password managers use battle-tested encryption, but implementation details matter:
+
+```python
+# Compare encryption implementations
+
+managers = {
+    'Bitwarden': {
+        'algorithm': 'AES-256-GCM',
+        'key_derivation': 'PBKDF2 (600k iterations)',
+        'key_size': 256,
+        'authentication': 'HMAC-SHA256'
+    },
+    'Aegis': {
+        'algorithm': 'AES-256-GCM',
+        'key_derivation': 'PBKDF2 (310k iterations)',
+        'key_size': 256,
+        'authentication': 'GCM (authenticated encryption)'
+    },
+    'KeePassXC': {
+        'algorithm': 'AES-256 or ChaCha20',
+        'key_derivation': 'Argon2d (tunable iterations)',
+        'key_size': 256,
+        'authentication': 'HMAC-SHA256'
+    },
+    '1Password': {
+        'algorithm': 'AES-256-GCM',
+        'key_derivation': 'PBKDF2 + secret key model',
+        'key_size': 256,
+        'authentication': 'Additional secret key layer'
+    }
+}
+
+# All use authenticated encryption (AEAD)
+# Difference: iteration counts and key derivation functions
+# Higher iteration counts = more resistant to brute force
+# Argon2 (KeePassXC) offers better resistance than PBKDF2
+```
+
+The critical distinction: 1Password's secret key model means even with your master password compromised, an attacker still needs the secret key. Bitwarden and KeePassXC rely solely on master password strength.
+
+## Mobile Security Considerations
+
+Android password managers face unique threats:
+
+```java
+// Android security considerations
+public class PasswordManagerSecurityChecks {
+
+    // 1. Autofill service permissions
+    // Declare in AndroidManifest.xml
+    <service android:name=".MyAutofillService"
+             android:permission="android.permission.BIND_AUTOFILL_SERVICE">
+        <intent-filter>
+            <action android:name="android.service.autofill.AutofillService" />
+        </intent-filter>
+    </service>
+
+    // 2. Verify SSL/TLS certificate pinning
+    // Prevents MITM attacks on sync
+    CertificatePinning pinning = new CertificatePinning()
+        .add("bitwarden.com", "sha256/AAAAAAAAAA=...")
+        .add("vaultwarden.example.com", "sha256/BBBBBBBBBB=...");
+
+    // 3. Protect clipboard access
+    // Clear clipboard after 3 minutes
+    new Handler(Looper.getMainLooper()).postDelayed(
+        () -> clipboardManager.setPrimaryClip(ClipData.newPlainText("", "")),
+        3 * 60 * 1000
+    );
+
+    // 4. Require biometric authentication for sensitive operations
+    BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+        .setTitle("Unlock Vault")
+        .setNegativeButtonText("Cancel")
+        .build();
+}
+```
+
+Android-specific security measures include clipboard auto-clear, biometric unlock requirements, and autofill service validation.
+
+## Data Migration Between Managers
+
+When switching between password managers, ensure clean migration:
+
+```python
+# Secure migration workflow
+
+def migrate_passwords(source_manager, target_manager, master_password):
+    """
+    Migrate passwords between managers securely
+    """
+
+    # Step 1: Export encrypted from source
+    encrypted_export = source_manager.export_encrypted()
+
+    # Step 2: Decrypt locally (not uploaded)
+    decrypted_data = decrypt_locally(encrypted_export, master_password)
+
+    # Step 3: Verify data integrity
+    assert validate_password_format(decrypted_data)
+    assert check_for_duplicates(decrypted_data)
+    assert check_password_strength(decrypted_data)
+
+    # Step 4: Transform to target format
+    target_format = transform_export(decrypted_data, target_manager.format)
+
+    # Step 5: Import into target
+    target_manager.import_encrypted(target_format, master_password)
+
+    # Step 6: Verify completion
+    assert target_manager.item_count() == len(decrypted_data)
+
+    # Step 7: Delete source account only after verification
+    source_manager.delete_account(confirm=True)
+```
+
+Never delete the source account until the target is fully verified and tested.
+
+## Related Reading
 
 ## Related Articles
 
