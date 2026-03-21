@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /border-crossing-phone-search-rights-what-customs-agents-can-/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
