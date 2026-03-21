@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /does-nordvpn-work-in-russia-2026-tested-from-moscow/
 categories: [guides, security]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
