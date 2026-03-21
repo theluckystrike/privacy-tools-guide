@@ -34,6 +34,12 @@ Uncheck "Send my activity history to Microsoft" and clear any existing history. 
 **Location Services**
 Disable location for any apps that don't require it. For developers building location-aware applications, create a separate user account for testing to isolate location data from your primary workflow.
 
+**Camera and Microphone Access**
+Navigate to Settings > Privacy > Camera and review every app listed. Most productivity applications have no legitimate reason to access your camera or microphone. Disable access for browsers, text editors, and any application that doesn't explicitly require it. The built-in Camera app and communication tools are the only justified exceptions on a developer workstation.
+
+**App Permissions Audit**
+Work through all permission categories: Contacts, Calendar, Call History, Email, Tasks, Messaging, Radios, and Other Devices. Windows 10 grants many of these by default, but virtually no desktop productivity software needs access to your contacts or calendar through the OS permission system. Revoke access liberally and re-grant only when an application specifically requests and justifies it.
+
 ## Disable Telemetry via Group Policy and Registry
 
 For enterprise and professional editions, Group Policy provides additional controls. Run `gpedit.msc` and navigate to:
@@ -52,6 +58,19 @@ reg export "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" backup_tele
 
 # Disable telemetry
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
+```
+
+Additional registry keys worth addressing include the advertising ID and app launch tracking:
+
+```powershell
+# Disable advertising ID
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f
+
+# Disable app launch tracking
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_TrackProgs /t REG_DWORD /d 0 /f
+
+# Disable cloud clipboard (syncs clipboard history to Microsoft)
+reg add "HKCU\Software\Microsoft\Clipboard" /v EnableClipboardHistory /t REG_DWORD /d 0 /f
 ```
 
 ## PowerShell Scripts for Complete Privacy
@@ -87,6 +106,26 @@ $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Sunday -At 3am
 Register-ScheduledTask -Action $action -Trigger $trigger -Name "Privacy-Monitor" -Description "Disables telemetry services weekly" -Force
 ```
 
+Additional telemetry-related scheduled tasks that Windows creates by default should also be disabled. Microsoft plants several tasks in the Task Scheduler that run independently of service states:
+
+```powershell
+# Disable telemetry-related scheduled tasks
+$tasksToDisable = @(
+    "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser",
+    "\Microsoft\Windows\Application Experience\ProgramDataUpdater",
+    "\Microsoft\Windows\Autochk\Proxy",
+    "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator",
+    "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip",
+    "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector",
+    "\Microsoft\Windows\Feedback\Siuf\DmClient"
+)
+
+foreach ($task in $tasksToDisable) {
+    Disable-ScheduledTask -TaskPath (Split-Path $task) -TaskName (Split-Path $task -Leaf) -ErrorAction SilentlyContinue
+    Write-Host "Disabled task: $task"
+}
+```
+
 ## Network-Level Blocking
 
 For developers running local networks or managing DNS, block telemetry at the network level. Add these entries to your hosts file (located at `C:\Windows\System32\drivers\etc\hosts`):
@@ -117,6 +156,8 @@ foreach ($rule in $rules) {
 }
 ```
 
+For home users managing Pi-hole or similar network-level DNS filtering, a curated blocklist specifically targeting Microsoft telemetry domains works more reliably than hosts file entries because it catches IPv6 fallback addresses and CDN-routed telemetry that hosts files miss. The hagezi and StevenBlack blocklists both include Microsoft-specific categories.
+
 ## Disable Cortana and Search Indexing
 
 Cortana collects voice data and search queries. Disable it through Group Policy or registry:
@@ -132,6 +173,28 @@ Stop-Service -Name "WSearch" -Force
 
 After disabling Windows Search, expect slower file searches. Consider using Everything or alternative search tools for rapid file discovery.
 
+To prevent Bing search results appearing in the Start menu search box — a privacy concern because queries are sent to Microsoft servers:
+
+```powershell
+# Disable web search in Start menu
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v CortanaConsent /t REG_DWORD /d 0 /f
+```
+
+## OneDrive and Cloud Sync Privacy
+
+Windows 10 aggressively pushes OneDrive integration. Even if you don't actively use it, OneDrive can sync Desktop, Documents, and Pictures folders to Microsoft servers without explicit warning during the initial setup wizard.
+
+```powershell
+# Prevent OneDrive from starting automatically
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "OneDrive" /t REG_SZ /d "" /f
+
+# Disable OneDrive via Group Policy (Enterprise/Pro)
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\OneDrive" /v DisableFileSyncNGSC /t REG_DWORD /d 1 /f
+```
+
+Check which folders are configured for cloud backup in OneDrive settings. Navigate to OneDrive > Settings > Backup > Manage backup and deselect all folders if you prefer local-only storage. Even with cloud backup disabled, OneDrive may still upload "Known Folder Move" data unless explicitly prevented at the registry level.
+
 ## Privacy Settings for Developers
 
 Developers require additional considerations beyond standard privacy hardening.
@@ -140,6 +203,19 @@ Developers require additional considerations beyond standard privacy hardening.
 Visual Studio collects usage data through the VS Feedback system. Disable it via:
 - VS Installer > More > Disable sending feedback
 - Registry: `HKCU\Software\Microsoft\VisualStudio\Feedback` set `IsEnabled` to `0`
+
+**.NET CLI Telemetry**
+The .NET CLI sends telemetry to Microsoft by default. This includes which commands you run, error information, and project types. Disable it with an environment variable:
+
+```powershell
+# Set permanently in system environment variables
+[System.Environment]::SetEnvironmentVariable("DOTNET_CLI_TELEMETRY_OPTOUT", "1", "Machine")
+
+# Or set for current session only
+$env:DOTNET_CLI_TELEMETRY_OPTOUT = "1"
+```
+
+Many other developer tools have similar opt-outs: npm has `npm config set send-telemetry false`, Angular CLI has `ng analytics off`, and Homebrew on WSL respects `HOMEBREW_NO_ANALYTICS=1`.
 
 **Windows Terminal Settings**
 Configure Windows Terminal to avoid sending diagnostics:
@@ -203,6 +279,8 @@ if ($issues) {
  Write-Host "Privacy configuration looks good"
 }
 ```
+
+Major Windows feature updates (the twice-yearly releases) routinely reset some privacy settings to defaults. After every major update, re-run your privacy configuration scripts and verify all settings remain in place. Keep your PowerShell scripts version-controlled so re-applying them takes minutes rather than hours. This is especially important for enterprise environments where IT may also push Group Policy updates that conflict with privacy configurations.
 
 
 ## Related Articles
