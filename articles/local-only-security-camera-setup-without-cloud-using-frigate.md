@@ -192,6 +192,51 @@ If you experience performance issues with multiple cameras, consider these adjus
 - Limit the number of detection zones and object types
 - Use motion-based recording instead of continuous recording to save resources
 
+## Camera Selection Guide
+
+Not all cameras work equally well with Frigate:
+
+| Camera Feature | Why It Matters | Recommended |
+|---------------|---------------|-------------|
+| RTSP support | Required for Frigate integration | Reolink, Amcrest, Hikvision |
+| ONVIF compliance | Standardized camera control | Most commercial IP cameras |
+| PoE (Power over Ethernet) | Single cable for power and data | Reolink RLC-810A, Amcrest IP8M |
+| Local storage | SD card backup if NVR fails | Most Reolink models |
+| No cloud requirement | Camera works without internet | Reolink, Amcrest (avoid Ring, Nest) |
+
+Avoid cameras that require cloud connectivity. Ring, Nest, and Arlo depend on cloud services and may stop working without internet access.
+
+## Network Isolation for Camera Security
+
+Place your cameras on a separate VLAN to prevent them from reaching the internet:
+
+```bash
+# Firewall rule: block camera VLAN from internet
+iptables -A FORWARD -i br-cameras -o eth0 -j DROP
+# Allow cameras to reach Frigate only
+iptables -A FORWARD -i br-cameras -d 192.168.1.100 -p tcp --dport 5000 -j ACCEPT
+```
+
+This prevents compromised cameras from phoning home or being used as entry points into your network.
+
+## Backup Strategy for Recorded Footage
+
+Configure automated backups of critical footage:
+
+```bash
+#!/bin/bash
+# backup-footage.sh
+FRIGATE_MEDIA="/path/to/frigate/media"
+BACKUP_DRIVE="/mnt/backup/cameras"
+
+rsync -av --include='*/' --include='*.mp4' --exclude='*' \
+  "$FRIGATE_MEDIA/recordings/" "$BACKUP_DRIVE/recordings/"
+
+# Clean backups older than 30 days
+find "$BACKUP_DRIVE" -name "*.mp4" -mtime +30 -delete
+```
+
+Run this script nightly to maintain an independent backup without duplicating continuous footage.
 
 ## Related Articles
 

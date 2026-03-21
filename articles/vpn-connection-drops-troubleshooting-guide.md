@@ -204,6 +204,54 @@ sudo iptables -A OUTPUT -o lo -j ACCEPT
 
 Test your kill switch by temporarily disconnecting the VPN and verifying that no traffic leaves your interface.
 
+## WireGuard-Specific Troubleshooting
+
+WireGuard handles connectivity differently from OpenVPN:
+
+```bash
+# Check WireGuard interface status
+sudo wg show
+
+# Verify handshake is recent (should be within last 2 minutes)
+sudo wg show wg0 | grep "latest handshake"
+
+# If no handshake, check if endpoint is reachable
+ping -c 3 YOUR_SERVER_IP
+```
+
+A missing or stale handshake usually indicates a firewall blocking UDP traffic on port 51820. WireGuard stays silent when it cannot connect.
+
+### Persistent Keepalive for NAT Traversal
+
+If you are behind NAT, add persistent keepalive:
+
+```ini
+[Peer]
+PublicKey = SERVER_PUBLIC_KEY
+Endpoint = server.example.com:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
+```
+
+The `PersistentKeepalive = 25` setting sends a keepalive packet every 25 seconds, preventing NAT translation tables from expiring.
+
+## Quick Reference: VPN Drop Diagnosis
+
+| Symptom | Likely Cause | Fix |
+|---------|-------------|-----|
+| Drops after exactly N minutes | Inactivity timeout | Add keepalive setting |
+| Drops during large downloads | MTU mismatch | Reduce MTU to 1400 |
+| Drops on WiFi, stable on ethernet | WiFi power management | Disable WiFi power saving |
+| Drops after system sleep | Session not resuming | Enable auto-reconnect service |
+| TLS handshake errors in logs | Certificate expiry or mismatch | Renew certificates |
+| Connection refused errors | Firewall blocking VPN port | Verify port forwarding rules |
+
+For WiFi-specific drops, disable power management:
+
+```bash
+sudo iwconfig wlan0 power off
+echo 'wireless-power off' | sudo tee -a /etc/network/interfaces
+```
 
 ## Related Articles
 

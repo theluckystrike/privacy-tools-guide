@@ -193,6 +193,46 @@ app.use((req, res, next) => {
 });
 ```
 
+## Global Privacy Control: The DNT Successor
+
+In 2024, the Global Privacy Control (GPC) signal emerged as DNT's more effective replacement. Unlike DNT, GPC has legal backing under CCPA and GDPR:
+
+```javascript
+app.use((req, res, next) => {
+  const gpcHeader = req.get('Sec-GPC');
+  if (gpcHeader === '1') {
+    // GPC is legally binding under CCPA for California residents
+    req.privacySettings = {
+      analytics: false,
+      thirdPartySharing: false,
+      saleOfData: false
+    };
+  }
+  next();
+});
+```
+
+GPC carries legal weight. Under California's CCPA, businesses must honor GPC signals. Violations can result in fines of up to $7,500 per incident.
+
+### Enabling GPC in Your Browser
+
+- **Firefox**: Enabled by default in strict tracking protection mode
+- **Brave**: Enabled by default
+- **DuckDuckGo Browser**: Enabled by default
+- **Chrome**: Not supported natively (requires extension)
+
+## Summary: What Actually Protects Your Privacy
+
+| Method | Effectiveness | Legal Backing | Adoption |
+|--------|-------------|---------------|----------|
+| DNT Header | Very Low | None | Widely ignored |
+| GPC Signal | Moderate | CCPA, GDPR | Growing |
+| uBlock Origin | High | N/A | Technical users |
+| Tor Browser | Very High | N/A | Privacy enthusiasts |
+| Privacy-focused DNS | Moderate | N/A | Growing |
+| VPN | Moderate | N/A | Widespread |
+
+The honest assessment: DNT alone does nothing meaningful in 2026. Combine GPC with technical blocking tools for actual protection.
 
 ## Related Articles
 

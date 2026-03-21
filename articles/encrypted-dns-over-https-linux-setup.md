@@ -260,6 +260,55 @@ dig +dnssec sigfail.verteiltesysteme.net
 # Should return SERVFAIL if DNSSEC validation is working
 ```
 
+## Troubleshooting Common Issues
+
+### DNS Resolution Fails After Configuration
+
+If you lose DNS resolution after enabling DoH, the most likely cause is a configuration syntax error:
+
+```bash
+# Temporary fix: use a direct DNS server
+echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
+
+# Then review your configuration files for typos
+sudo journalctl -u systemd-resolved --no-pager -n 50
+```
+
+### Slow DNS Lookups
+
+DoH adds TLS overhead compared to plain DNS. If lookups feel slow, check latency:
+
+```bash
+time dig @1.1.1.1 example.com
+time dig @9.9.9.9 example.com
+time dig @8.8.8.8 example.com
+```
+
+Choose the provider with the lowest latency from your location. Cloudflare consistently provides the fastest response times due to its CDN presence.
+
+### NetworkManager Overwriting resolv.conf
+
+NetworkManager frequently overwrites `/etc/resolv.conf`. Prevent this:
+
+```bash
+# /etc/NetworkManager/conf.d/dns.conf
+[main]
+dns=systemd-resolved
+```
+
+Then restart: `sudo systemctl restart NetworkManager`
+
+## Performance Comparison: DoH vs Standard DNS
+
+| Metric | Standard DNS (UDP 53) | DNS over TLS | DNS over HTTPS |
+|--------|----------------------|--------------|----------------|
+| First lookup latency | ~20ms | ~80ms | ~100ms |
+| Cached lookup latency | ~1ms | ~1ms | ~1ms |
+| Privacy from ISP | None | Full | Full |
+| Resistance to blocking | None | Moderate (port 853) | High (port 443) |
+| CPU overhead | Minimal | Low | Low-Medium |
+
+The first lookup is slower with DoH due to the TLS handshake, but subsequent lookups use cached connections and perform comparably.
 
 ## Related Articles
 

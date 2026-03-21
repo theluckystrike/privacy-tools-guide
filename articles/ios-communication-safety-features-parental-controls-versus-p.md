@@ -189,6 +189,47 @@ Communication Safety features represent an ongoing tension:
 - Creates precedent for broader content moderation
 - May give false sense of security
 
+## Comparison with Android Parental Controls
+
+| Feature | iOS Communication Safety | Google Family Link |
+|---------|------------------------|--------------------|
+| Content scanning | On-device ML | Cloud-based |
+| Image analysis | Local Neural Engine | Google servers |
+| Data sent to parent | Warning notification only | Activity reports |
+| App restrictions | Screen Time | Family Link app |
+| Location tracking | Find My (optional) | Always-on by default |
+| Browser filtering | Content restrictions | SafeSearch enforcement |
+
+The fundamental philosophical difference: Apple prioritizes on-device processing to minimize data exposure, while Google relies more on cloud-based analysis.
+
+## Configuring Communication Safety Step by Step
+
+1. Open **Settings** on the child's iPhone
+2. Tap the child's **Apple ID** at the top
+3. Select **Communication Safety**
+4. Toggle on **Check for Sensitive Content**
+5. Choose notification preferences
+
+### Additional Screen Time Settings
+
+```
+Content & Privacy Restrictions:
+  - Content Restrictions > Web Content > Limit Adult Websites
+  - Allowed Apps > Disable Safari if using a filtered browser
+  - Privacy > Location Services > Share My Location > Off
+
+Communication Limits:
+  - During Screen Time: Contacts Only
+  - During Downtime: Specific Contacts
+```
+
+## Recommendations for Privacy-Conscious Parents
+
+1. **Prefer on-device features** over third-party monitoring apps that upload data to servers
+2. **Discuss monitoring openly** with children rather than installing hidden surveillance
+3. **Reduce restrictions gradually** as children demonstrate responsible usage
+4. **Review settings quarterly** as iOS updates may change available options
+5. **Avoid third-party apps** that request full device management profiles
 
 ## Related Articles
 

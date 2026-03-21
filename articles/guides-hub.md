@@ -81,6 +81,98 @@ nmcli connection modify "VPN-Name"   ipv4.routes "10.0.0.0/8"   ipv4.never-defau
 
 Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.
 
+## Browser Privacy Hardening Essentials
+
+Browser configuration is one of the highest-impact privacy improvements you can make. Most tracking happens through your browser, making it the first line of defense.
+
+### Firefox Privacy Configuration via about:config
+
+Firefox offers granular privacy controls through its `about:config` interface:
+
+```
+privacy.resistFingerprinting = true
+privacy.trackingprotection.enabled = true
+network.cookie.cookieBehavior = 5
+dom.security.https_only_mode = true
+media.peerconnection.enabled = false
+geo.enabled = false
+```
+
+Set `privacy.resistFingerprinting` to true first -- it changes dozens of settings simultaneously, making your browser harder to uniquely identify. Disabling WebRTC via `media.peerconnection.enabled` prevents IP leaks even when using a VPN.
+
+### Recommended Browser Extensions
+
+| Extension | Purpose | Privacy Impact |
+|-----------|---------|---------------|
+| uBlock Origin | Ad and tracker blocking | High -- blocks most third-party trackers |
+| Privacy Badger | Learning-based tracker blocking | Medium -- catches trackers uBlock misses |
+| HTTPS Everywhere | Force HTTPS connections | Medium -- prevents downgrade attacks |
+| Cookie AutoDelete | Remove cookies after tab closes | High -- limits persistent tracking |
+| Decentraleyes | Local CDN emulation | Low-Medium -- reduces CDN tracking |
+
+Install uBlock Origin first -- it provides the largest single privacy improvement.
+
+## Password Manager Selection Criteria
+
+A password manager is non-negotiable for security. When evaluating options, consider these technical factors:
+
+- **Encryption algorithm**: AES-256 with PBKDF2 or Argon2 key derivation
+- **Zero-knowledge architecture**: The provider should never have access to your vault contents
+- **Audit history**: Look for recent third-party security audits published publicly
+- **Export capability**: You should always be able to export your data in a standard format
+- **2FA support**: TOTP at minimum, FIDO2/WebAuthn preferred
+
+### Quick Comparison
+
+| Manager | Encryption | Zero-Knowledge | Open Source | Audited |
+|---------|-----------|----------------|-------------|---------|
+| Bitwarden | AES-256/PBKDF2 | Yes | Yes | Yes (2023) |
+| 1Password | AES-256/SRP | Yes | Partial | Yes (2022) |
+| KeePassXC | AES-256/Argon2 | Yes (local) | Yes | Community |
+| Proton Pass | AES-256/Argon2 | Yes | Yes | Yes (2024) |
+
+For most users, Bitwarden offers the best combination of security, usability, and cost. Self-hosting Bitwarden via Vaultwarden gives you full control over your credential storage.
+
+## Email Privacy Fundamentals
+
+Email is inherently insecure -- it was designed without encryption in mind. Protecting your email communications requires layering multiple defenses.
+
+### Step 1: Use an Encrypted Email Provider
+
+ProtonMail and Tutanota encrypt your mailbox at rest. Messages between users of the same service are end-to-end encrypted automatically.
+
+### Step 2: Use Email Aliases
+
+Services like SimpleLogin and AnonAddy create unique forwarding addresses for each service you sign up for. When a service gets breached, you disable that single alias.
+
+```bash
+# Check if your email has been in known breaches
+curl -s -H "hibp-api-key: YOUR_KEY" \
+  "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com" | \
+  python3 -m json.tool
+```
+
+### Step 3: Strip Metadata from Outgoing Emails
+
+Email headers reveal your IP address, email client, and operating system. ProtonMail strips most headers automatically. For other providers, use Tor Browser to access webmail.
+
+## Disk Encryption Setup
+
+Full disk encryption protects your data if your device is lost or stolen. Every operating system now includes built-in encryption.
+
+```bash
+# Linux: Check if LUKS encryption is active
+sudo cryptsetup status $(mount | grep ' / ' | cut -d' ' -f1)
+
+# macOS: Check FileVault status
+fdesetup status
+
+# Verify encryption on an external drive
+sudo cryptsetup luksDump /dev/sdb1
+```
+
+Enable encryption before storing sensitive data -- encrypting an existing drive is possible but riskier than starting fresh.
+
 ## Related Reading
 
 - [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/guides-hub/)

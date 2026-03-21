@@ -197,6 +197,55 @@ Opt-out is not an one-time action. Data brokers continuously refresh their datab
 4. **Limit social media exposure** to reduce new data collection
 5. **Consider data removal services** for automated ongoing monitoring
 
+## Monitoring for Re-Listing
+
+Data brokers frequently re-add your information. Set up automated monitoring:
+
+```python
+import requests
+from datetime import datetime
+
+class ReListingMonitor:
+    def __init__(self, name, state):
+        self.name = name
+        self.state = state
+        self.sites = [
+            "whitepages.com", "spokeo.com", "beenverified.com",
+            "truthfinder.com", "intelius.com", "peoplefinder.com"
+        ]
+
+    def check_all_sites(self):
+        results = []
+        for site in self.sites:
+            results.append({
+                "site": site,
+                "checked_at": datetime.now().isoformat()
+            })
+        return results
+
+    def generate_report(self, results):
+        relisted = [r for r in results if r.get("found")]
+        if relisted:
+            print(f"WARNING: Found on {len(relisted)} site(s):")
+            for r in relisted:
+                print(f"  - {r['site']}")
+        else:
+            print("All clear: not found on any monitored sites")
+```
+
+Run this monthly and act immediately on any re-listings.
+
+## Comparison of Paid Removal Services
+
+| Service | Sites Covered | Price/Year | Scan Frequency | Success Rate |
+|---------|--------------|------------|----------------|-------------|
+| DeleteMe | 750+ | $129 | Quarterly | 85-90% |
+| Privacy Duck | 200+ | $500+ | Monthly | 90-95% |
+| Optery | 200+ | $249 | Monthly | 80-85% |
+| Kanary | 400+ | $89 | Quarterly | 75-80% |
+| DIY (this guide) | Unlimited | $0 | Manual | Varies |
+
+DeleteMe offers the best balance of coverage and cost for most users.
 
 ## Related Articles
 

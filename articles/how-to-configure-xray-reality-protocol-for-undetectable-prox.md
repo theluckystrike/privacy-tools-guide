@@ -208,6 +208,51 @@ To optimize throughput:
 - Use kernel-level Xray installation (not the Docker version) for lower latency
 - Place your server geographically closer to your actual location for better speed
 
+## Testing Your Reality Connection
+
+After configuring both server and client, verify the connection works correctly:
+
+```bash
+# Test basic connectivity
+curl --proxy socks5://127.0.0.1:10808 https://ifconfig.me
+
+# Verify TLS fingerprint
+curl --proxy socks5://127.0.0.1:10808 https://tlsfingerprint.io/json
+
+# Run a speed test
+curl --proxy socks5://127.0.0.1:10808 -o /dev/null -w "%{speed_download}" \
+  https://speed.cloudflare.com/__down?bytes=10000000
+```
+
+## Choosing Fronting Targets Wisely
+
+| Criteria | Good Target | Bad Target |
+|----------|------------|------------|
+| TLS version | TLS 1.3 | TLS 1.2 only |
+| Traffic volume | High (major site) | Low (niche site) |
+| Block likelihood | Very low | May be blocked |
+| ALPN support | h2 and http/1.1 | http/1.1 only |
+| Geographic reach | Global CDN | Regional hosting |
+
+Recommended fronting targets: `www.microsoft.com`, `www.apple.com`, `www.amazon.com`, `www.cloudflare.com`. These sites use modern TLS configurations, have high traffic volumes, and are unlikely to be blocked due to their economic significance.
+
+## Automating Server Maintenance
+
+```bash
+#!/bin/bash
+# xray-update.sh
+CURRENT=$(xray version | head -1 | awk '{print $2}')
+LATEST=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep tag_name | cut -d'"' -f4)
+if [ "$CURRENT" != "$LATEST" ]; then
+    echo "Updating Xray from $CURRENT to $LATEST"
+    bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
+    systemctl restart xray
+else
+    echo "Xray is up to date: $CURRENT"
+fi
+```
+
+Run this weekly via cron to stay current with security fixes without manual intervention.
 
 ## Related Articles
 

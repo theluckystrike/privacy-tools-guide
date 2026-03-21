@@ -140,7 +140,7 @@ async def get_workouts(user_id: str):
     ).to_list()
 ```
 
-## Regulatory Landscape in 2026
+## Regulatory Environment in 2026
 
 The regulatory environment for health data has tightened significantly. Key frameworks include:
 
@@ -195,6 +195,39 @@ curl -X POST "https://api.fitnessapp.com/v1/data/export" \
   -d '{"format": "json", "data_types": ["workouts", "heart_rate", "sleep"]}'
 ```
 
+## Network Traffic Analysis: See What Your Fitness App Sends
+
+Inspect exactly what data your fitness app transmits by routing traffic through a proxy:
+
+```bash
+# Install mitmproxy for traffic inspection
+pip install mitmproxy
+
+# Start the proxy
+mitmweb --listen-port 8080
+
+# Configure your phone to use your computer as HTTP proxy
+# iOS: Settings > WiFi > Configure Proxy > Manual > Your IP:8080
+# Android: Settings > WiFi > Modify Network > Proxy > Manual
+```
+
+After setting up the proxy, open your fitness app and perform typical actions. Look for GPS coordinates in workout sync requests, heart rate data sent to analytics endpoints, and advertising IDs included in API calls.
+
+## Privacy-First Fitness App Recommendations
+
+| App | Platform | Data Storage | GPS | Open Source |
+|-----|----------|-------------|-----|-------------|
+| OpenTracks | Android | Local only | On-device | Yes |
+| FitoTrack | Android | Local only | On-device | Yes |
+| Workouts (Apple) | iOS | iCloud (encrypted) | On-device | No |
+| Gadgetbridge | Android | Local only | On-device | Yes |
+
+Gadgetbridge replaces proprietary companion apps for Amazfit, Xiaomi Mi Band, and other popular trackers. Instead of syncing through the manufacturer's cloud, it connects directly via Bluetooth and stores all data locally.
+
+```bash
+# Install Gadgetbridge from F-Droid (privacy-respecting app store)
+# F-Droid: https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/
+```
 
 ## Related Articles
 
