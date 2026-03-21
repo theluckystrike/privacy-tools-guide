@@ -26,6 +26,34 @@ The attack works because the 802.11 standard does not require access points to v
 
 This vulnerability affects both WPA2 and WPA3 networks. While WPA3 introduced Dragonblood protocol enhancements, deauthentication frames remain a problem due to backward compatibility modes that fallback to WPA2-style authentication.
 
+Deauthentication attacks are commonly used as a precursor to more serious attacks. Disconnecting a client forces it to re-authenticate, during which the WPA2 four-way handshake can be captured and subjected to offline dictionary attacks. Attackers also use deauthentication to drive clients toward rogue access points advertising the same SSID, enabling man-in-the-middle interception.
+
+## Putting Your Interface into Monitor Mode
+
+Before running any detection tooling, you need a wireless interface that can capture all 802.11 frames, including management frames not addressed to your device. Not all adapters support monitor mode—chipsets from Atheros, Ralink, and Realtek (specifically RTL8812AU) are widely supported on Linux.
+
+```bash
+# Check available wireless interfaces
+iwconfig
+
+# Bring the interface down and set monitor mode
+ip link set wlan0 down
+iwconfig wlan0 mode monitor
+ip link set wlan0 up
+
+# Alternatively, use airmon-ng (part of Aircrack-ng suite)
+sudo airmon-ng start wlan0
+# This creates wlan0mon as the monitor interface
+```
+
+On macOS, you can enable monitor mode on the built-in WiFi adapter through the Wireless Diagnostics tool or using airport:
+
+```bash
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 sniff 6
+```
+
+This captures frames on channel 6. Specify the channel your target network operates on.
+
 ## Detecting Deauthentication Attacks with Scapy
 
 Python developers can use Scapy, a powerful packet manipulation library, to build custom detection systems. Install Scapy with pip:
@@ -85,6 +113,21 @@ sniff(iface="wlan0mon", prn=packet_handler, store=0)
 
 Run this script with your wireless interface in monitor mode. The detector maintains a sliding window of deauthentication frames and triggers alerts when the threshold is exceeded. Adjust the threshold based on your network's typical disassociation patterns.
 
+## Reading Deauthentication Reason Codes
+
+The 802.11 specification defines reason codes that appear in deauthentication frames, indicating why the disconnection occurred. Legitimate disconnections typically carry specific reason codes, while attacks often use reason code 7 (Class 3 frame received from nonassociated station) or reason code 1 (Unspecified reason) because automated tools default to these values.
+
+| Reason Code | Meaning | Attack Indicator |
+|-------------|---------|-----------------|
+| 1 | Unspecified | Possible (tool default) |
+| 2 | Previous auth no longer valid | Possible |
+| 3 | Station deauthenticated (leaving) | Normal during disconnects |
+| 6 | Class 2 frame from unauth station | Possible |
+| 7 | Class 3 frame from unassoc station | Common in attacks |
+| 8 | Station disassociated (leaving BSS) | Normal |
+
+A burst of reason code 7 frames from a source MAC that does not match your access point's BSSID is a strong indicator of a spoofed deauthentication attack.
+
 ## Using Bettercap for Real-Time Monitoring
 
 Bettercap provides a more attack detection framework with built-in WiFi module support. Install it and run the WiFi reconnaissance:
@@ -121,6 +164,8 @@ wifi
 ```
 
 Setting ieee80211w to 2 enforces mandatory protection. Clients without 802.11w support cannot connect, which may cause issues with older devices.
+
+If mandatory mode causes compatibility problems, setting ieee80211w to 1 enables optional protection. Devices that support 802.11w will use it, while legacy devices can still connect. This provides partial mitigation while maintaining backward compatibility.
 
 ### Deploy Wireless Intrusion Prevention Systems
 
@@ -159,6 +204,8 @@ nmcli con modify "YourSSID" wifi.powersave ignore
 
 This prevents the system from entering power-saving mode that triggers additional disassociation frames.
 
+Additionally, avoid networks with weak pre-shared keys. Even if an attacker successfully captures the four-way handshake triggered by a deauthentication attack, a strong passphrase makes offline dictionary attacks infeasible. WPA2 passphrases should be at least 15 characters with mixed character classes, and WPA3-Personal SAE mode raises the bar further by providing simultaneous authentication of equals with resistance to offline cracking.
+
 ## Building Attack Detection into Applications
 
 Developers integrating wireless security into applications can use the Aircrack-ng suite programmatically. The following bash script logs deauthentication activity for analysis:
@@ -184,8 +231,32 @@ done
 
 Integrate this monitoring with alerting systems like Prometheus or Grafana for real-time dashboard visibility.
 
+## Integrating Detection with SIEM Platforms
 
-## Related Articles
+For organizations running security information and event management platforms, deauthentication detection events should feed into your central event pipeline. Structured log output makes correlation easier:
+
+```python
+import json
+import logging
+from datetime import datetime
+
+def log_deauth_event(src_mac, dst_mac, bssid, reason_code, frame_count):
+    event = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "event_type": "wifi_deauth_detected",
+        "source_mac": src_mac,
+        "target_mac": dst_mac,
+        "bssid": bssid,
+        "reason_code": reason_code,
+        "frame_count_in_window": frame_count,
+        "severity": "high" if frame_count > 20 else "medium"
+    }
+    logging.warning(json.dumps(event))
+```
+
+SIEM rules can then correlate deauthentication events with subsequent authentication failures or rogue AP appearances on the same channel, providing richer attack context than raw frame counts alone. If you observe a burst of deauthentication frames followed within seconds by a new SSID appearing with the same name as your network, you are almost certainly witnessing a coordinated evil twin attack setup.
+
+## Related Reading
 
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
