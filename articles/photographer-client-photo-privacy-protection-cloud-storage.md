@@ -328,9 +328,9 @@
 
 
 =======
->>>>>>> b06c759eead8db94fc2e9780d1fd1dbae38808c1
-=======
 >>>>>>> d135f368b6c8d845070dad41d317408551b31927
+=======
+>>>>>>> 46c020d77d06305a3b6139a2cb39179c211d11ab
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices"
@@ -911,9 +911,9 @@ intent-checked: true
 
 
 =======
->>>>>>> b06c759eead8db94fc2e9780d1fd1dbae38808c1
-=======
 >>>>>>> d135f368b6c8d845070dad41d317408551b31927
+=======
+>>>>>>> 46c020d77d06305a3b6139a2cb39179c211d11ab
 # How to Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage
 
 Protect client photos by using zero-knowledge encrypted cloud storage (Proton Drive, Tresorit, Filen), stripping EXIF metadata before sharing, implementing two-factor authentication, and creating shareable links with expiration dates. Store backups using the 3-2-1 rule: active working copy plus encrypted cloud backup plus offline encrypted external drive. Establish clear data handling agreements with clients and respond to deletion requests within 30 days per GDPR requirements.
@@ -1069,7 +1069,6 @@ exiftool photo.jpg | wc -l   # should be near zero meaningful fields
 # For extra assurance: re-encode the image (removes embedded thumbnails too)
 convert photo.jpg -strip cleaned-photo.jpg    # requires ImageMagick
 ```
-
 
 ## Related Articles
 
