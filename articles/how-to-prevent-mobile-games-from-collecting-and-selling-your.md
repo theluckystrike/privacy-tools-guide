@@ -170,4 +170,198 @@ A layered approach provides the strongest protection:
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+## Advanced SDK Analysis Techniques
+
+Beyond basic permission auditing, analyzing what SDKs actually transmit requires deeper tools:
+
+### Using Frida for Runtime Inspection
+
+Frida allows you to instrument mobile apps at runtime to see exactly what functions are called:
+
+```python
+import frida
+import sys
+
+def on_message(message, data):
+    if message['type'] == 'send':
+        print(message['payload'])
+
+# Hook into location services
+jscode = """
+Interceptor.attach(Module.findExportByName("libcommonutils.so", "GetLocation"), {
+    onEnter: function(args) {
+        console.log("Location request intercepted");
+        console.log("Latitude: " + args[0]);
+        console.log("Longitude: " + args[1]);
+    }
+});
+"""
+
+session = frida.get_usb_device().attach('com.example.game')
+script = session.create_script(jscode)
+script.on('message', on_message)
+script.load()
+sys.stdin.read()
+```
+
+This technique shows exactly when and how games access location APIs, revealing whether collection happens during gameplay or in background processes.
+
+### Decrypting HTTPS Traffic
+
+Using Burp Suite on a jailbroken/rooted device with a custom CA certificate allows inspection of encrypted traffic:
+
+```bash
+# On Android with Burp Suite
+1. Install Burp Suite CA certificate
+2. Configure system-wide proxy to 127.0.0.1:8080
+3. Start Burp's proxy listener
+4. Launch the game
+5. Inspect captured requests for location-related APIs
+```
+
+Look for patterns in the captured requests:
+
+```
+GET /api/v1/analytics/location?lat=37.7749&lng=-122.4194&accuracy=15
+GET /api/v2/user/telemetry
+POST /sdk/event
+  {
+    "event_type": "location_update",
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "accuracy": 15,
+    "timestamp": 1709548800000
+  }
+```
+
+## SDK-Specific Configuration Options
+
+Major analytics SDKs include flags to disable location collection. Developers can implement these:
+
+### Firebase Analytics
+
+```kotlin
+// Disable automatic location collection
+FirebaseAnalytics.getInstance(context).apply {
+    setUserProperty("disable_location", "true")
+    // For Crashlytics
+    FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false)
+}
+```
+
+### AppsFlyer SDK
+
+```kotlin
+AppsFlyerLib.getInstance().apply {
+    // Disable location collection
+    setIsGeoLocationEnabled(false)
+    // Disable OAID collection
+    setSharingFilterForPartners(arrayOf("AppsFlyer"))
+}
+```
+
+### Unity Analytics
+
+```csharp
+// Disable location data in Unity Analytics
+AnalyticsCommonParameters.Location = null;
+
+// Alternatively, disable privacy-sensitive collections
+Analytics.CustomEvent("game_start", new Dictionary<string, object>
+{
+    { "collection_mode", "minimal" }
+});
+```
+
+## Network-Level Filtering Strategy
+
+For power users, creating comprehensive blocklists prevents location data exfiltration:
+
+```
+# /etc/hosts entries to block location analytics
+0.0.0.0 locationservices.googleapis.com
+0.0.0.0 location-services.google.com
+0.0.0.0 adservices.google.com
+0.0.0.0 mobilitydata.googleapis.com
+0.0.0.0 geolocation.onetrust.com
+0.0.0.0 geoservices.tealium.com
+0.0.0.0 localsearch.apple.com
+```
+
+For more sophisticated filtering, use Pi-hole's blocklist functionality to filter these domains across all devices on your network.
+
+## Behavioral Detection Systems
+
+Some games implement detection to flag users who:
+- Disable location permission (may block gameplay features)
+- Mock locations (detected by rapid position changes impossible in real world)
+- Use VPNs (detected through IP geolocation inconsistencies)
+
+Understanding these detections helps you navigate the privacy/functionality trade-off:
+
+```javascript
+// Example detection logic that games implement
+function detectLocationSpoofing() {
+    const positions = getLocationHistory(lastHour);
+
+    for (let i = 1; i < positions.length; i++) {
+        const distance = calculateDistance(positions[i-1], positions[i]);
+        const timeElapsed = positions[i].timestamp - positions[i-1].timestamp;
+        const requiredSpeed = distance / timeElapsed;
+
+        // Human impossible speed = spoofing detected
+        if (requiredSpeed > maxHumanSpeed) {
+            return true;  // Mock location detected
+        }
+    }
+    return false;
+}
+```
+
+## Comparison of Location Privacy Approaches
+
+| Approach | Effectiveness | Usability | Detection Risk |
+|----------|---------------|-----------|-----------------|
+| Deny permission | Very high | Medium | Low |
+| Approximate location | High | High | Very low |
+| Mock location app | High | Low | High |
+| Proxy + location spoofing | Very high | Low | Medium |
+| Emulator with fake location | Very high | Low | N/A |
+
+Emulators provide the strongest protection since they inherently provide fake location data that games cannot distinguish from real GPS.
+
+## Building Privacy-First Mobile Games
+
+For developers creating location-based games, privacy by design reduces liability:
+
+```kotlin
+// Privacy-focused location handling for AR games
+class PrivacyLocationManager(context: Context) {
+
+    fun requestGameLocationWithConsent(): LocationData? {
+        // 1. Request explicit user consent with clear language
+        if (!getExplicitUserConsent("We need location for gameplay features")) {
+            return null
+        }
+
+        // 2. Request minimum necessary accuracy
+        val locationRequest = LocationRequest.Builder(
+            Priority.PRIORITY_BALANCED_POWER_ACCURACY,  // Not high accuracy
+            5000L  // 5 second intervals, not continuous
+        ).build()
+
+        // 3. Obfuscate coordinates before transmission
+        val rawLocation = fusedLocationClient.getCurrentLocation()
+        val obfuscatedLocation = obfuscateCoordinates(rawLocation)
+
+        // 4. Purge location history after session
+        clearLocationHistoryAfterSession()
+
+        return obfuscatedLocation
+    }
+}
+```
+
+This approach gives games the location data they need while protecting user privacy.
+
+## Related Reading

@@ -172,4 +172,317 @@ dig +short myip.opendns.com @resolver1.opendns.com
 - [VPN over Tor vs Tor over VPN: A Technical Comparison](/privacy-tools-guide/vpn-over-tor-vs-tor-over-vpn/)
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Advanced WireGuard Kernel Integration
+
+WireGuard lives in the Linux kernel, providing performance advantages over userspace VPN implementations:
+
+```bash
+# Check WireGuard kernel module status
+lsmod | grep wireguard
+
+# If not present, load it
+sudo modprobe wireguard
+
+# Verify cryptography support
+cat /proc/sys/crypto/fips_enabled  # Should be 0 for WireGuard
+```
+
+The kernel integration means:
+- Direct network packet processing (no userspace overhead)
+- Native eBPF support for advanced packet filtering
+- Integration with netfilter for advanced routing
+- Performance within 1-2% of unencrypted traffic
+
+### Building Custom Wireguard Kernels
+
+For security-focused distributions, compile WireGuard from source:
+
+```bash
+# Download and compile WireGuard kernel module
+git clone https://git.zx2c4.com/wireguard-linux-compat
+cd wireguard-linux-compat
+make KDIR=/usr/src/linux-$(uname -r)
+sudo make install KDIR=/usr/src/linux-$(uname -r)
+
+# Verify compilation
+sudo wg show
+```
+
+This allows verification of cryptographic primitives and removal of unnecessary code.
+
+## OpenVPN vs WireGuard Technical Comparison
+
+### Codebase Complexity
+
+**OpenVPN:**
+- 120,000+ lines of C code
+- Complex state machine for handshakes
+- Multiple protocol versions (V2, V3)
+- Larger attack surface
+
+**WireGuard:**
+- 4,000 lines of C code
+- Simple protocol (single version)
+- Smaller attack surface
+- Cryptographic auditing easier
+
+```bash
+# Compare codebase sizes
+wc -l /usr/src/wireguard-linux-compat/src/*.c
+# Total: ~4,000 lines
+
+dpkg -L openvpn | xargs wc -l | tail -1
+# Total: ~120,000+ lines
+```
+
+### Handshake Performance
+
+**OpenVPN TLS handshake:** 2-3 round trips, 10-100ms
+**WireGuard Noise handshake:** 1 round trip, 1-5ms
+
+For mobile devices switching between networks frequently, WireGuard's minimal handshake dramatically improves reconnection speed.
+
+### Memory Footprint
+
+```bash
+# Running OpenVPN process
+ps aux | grep openvpn | awk '{print $6}'
+# Typical: 8-12 MB
+
+# Running WireGuard
+ps aux | grep wg-quick | awk '{print $6}'
+# Typical: 2-4 MB
+```
+
+WireGuard uses 50-75% less memory, important for resource-constrained devices.
+
+## Linux Distribution-Specific Optimizations
+
+### Fedora / RHEL WireGuard Setup
+
+```bash
+sudo dnf install wireguard-tools kernel-devel
+sudo modprobe wireguard
+sudo wg-quick up wg0
+sudo systemctl enable wg-quick@wg0
+```
+
+### Debian / Ubuntu WireGuard Setup
+
+```bash
+sudo apt update
+sudo apt install wireguard wireguard-tools linux-headers-$(uname -r)
+sudo modprobe wireguard
+sudo wg-quick up wg0
+sudo systemctl enable wg-quick@wg0
+```
+
+### Arch Linux (Cutting Edge)
+
+```bash
+sudo pacman -S wireguard-linux wireguard-tools
+sudo modprobe wireguard
+# WireGuard already in kernel in recent Arch versions
+```
+
+## Advanced Routing Configurations
+
+### Per-Application VPN Routing
+
+Route only specific applications through VPN using network namespaces:
+
+```bash
+#!/bin/bash
+# Create isolated network namespace for VPN-only apps
+
+# 1. Create namespace
+sudo ip netns add vpn_only
+
+# 2. Create veth pair
+sudo ip link add veth_vpn type veth peer name veth_host
+
+# 3. Move to namespaces
+sudo ip link set veth_vpn netns vpn_only
+sudo ip netns exec vpn_only ip addr add 10.0.0.2/24 dev veth_vpn
+sudo ip addr add 10.0.0.1/24 dev veth_host
+
+# 4. Route VPN traffic in namespace
+sudo ip netns exec vpn_only wg-quick up wg0
+
+# 5. Run application in namespace
+sudo ip netns exec vpn_only firefox &
+```
+
+Now Firefox runs entirely through the VPN while other apps use your normal connection.
+
+### DNS Isolation
+
+Prevent DNS leaks with systemd-resolved configuration:
+
+```ini
+# /etc/systemd/resolved.conf.d/vpn-dns.conf
+[Resolve]
+DNS=1.1.1.1 8.8.8.8
+FallbackDNS=
+Domains=~.  # Route all domains through VPN DNS
+DNSSECNegativeTrustAnchors=
+```
+
+Verify DNS leaks with:
+
+```bash
+# Check which DNS server you're using
+dig +short whoami.akamai.net
+
+# Verify it matches your VPN provider
+curl -s https://dnsleaktest.com/ | grep -i "isp\|provider"
+```
+
+## VPN Provider Technical Evaluation
+
+When evaluating commercial VPN providers for Linux, check:
+
+### Protocol Support Verification
+
+```bash
+# Test WireGuard availability
+curl -s https://vpn-provider.com/api/servers | jq '.servers[] | select(.protocol=="wireguard")'
+
+# Test OpenVPN configuration availability
+curl -s https://vpn-provider.com/files/openvpn/ | head -20
+```
+
+### Kill Switch Verification
+
+```bash
+# Test that VPN kill switch actually blocks traffic when disconnected
+
+# Run traffic monitoring
+sudo tcpdump -i any -n | tee traffic.log &
+
+# Disconnect VPN
+sudo wg-quick down wg0
+
+# Check if any traffic leaked
+# Real kill switch: no packets sent
+# Broken kill switch: DNS, DHCP, or other packets visible
+```
+
+### DNS Leak Testing
+
+```bash
+# Run multiple DNS leak tests
+for test_site in "dnsleaktest.com" "test.expressvpn.com" "ipleak.net"; do
+  echo "Testing $test_site"
+  curl -s "https://$test_site" | grep -i "leak\|your\|dns"
+done
+```
+
+## Performance Benchmarking
+
+```bash
+#!/bin/bash
+# Comprehensive VPN performance test
+
+echo "Testing VPN performance..."
+
+# 1. Latency test
+echo "Latency to VPN endpoint:"
+ping -c 10 vpn.provider.com | tail -1
+
+# 2. Throughput test (download 100MB test file)
+echo "Download throughput:"
+time curl -o /dev/null https://vpn.provider.com/speedtest/100mb.iso
+
+# 3. CPU usage while tunneling
+echo "CPU usage during tunnel:"
+top -bn1 | grep "wg-quick\|openvpn"
+
+# 4. Memory usage
+echo "Memory usage:"
+ps aux | grep -E "wg-quick|openvpn" | awk '{print $6 " KB"}'
+```
+
+Expect:
+- Latency: 20-100ms depending on distance
+- Throughput: 80-95% of your actual connection speed
+- CPU: <5% with WireGuard, 10-20% with OpenVPN
+- Memory: 2-4MB with WireGuard, 8-12MB with OpenVPN
+
+## Self-Hosting vs Commercial Trade-offs
+
+```
+Self-Hosted WireGuard:
+  Pros:
+    - Complete control
+    - No logs to trust
+    - One-time setup cost
+    - Full visibility into configuration
+  Cons:
+    - Infrastructure maintenance required
+    - Single point of failure (your VPS)
+    - Less sophisticated anti-detection
+    - Higher complexity
+
+Commercial VPN Provider:
+  Pros:
+    - Easy setup
+    - Distributed servers (load balancing)
+    - Faster speeds (generally)
+    - Technical support
+  Cons:
+    - Must trust provider's no-log claims
+    - Recurring subscription cost
+    - Less visibility into infrastructure
+    - Provider could comply with subpoenas
+```
+
+For developers and power users, self-hosting on a $5-10/month VPS provides better long-term value and transparency.
+
+## Troubleshooting Common VPN Issues on Linux
+
+### Connection Drops with IPv6
+
+Some networks have IPv6 leaks despite IPv4 being tunneled:
+
+```bash
+# Disable IPv6 while using VPN
+echo "net.ipv6.conf.all.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+
+# Or disable per-interface
+sudo ip -6 addr flush dev eth0
+```
+
+### DNS Timeouts
+
+If DNS queries timeout, try changing upstream resolvers:
+
+```ini
+# /etc/wireguard/wg0.conf
+[Interface]
+DNS = 1.1.1.1 1.0.0.1  # Cloudflare
+# Or
+DNS = 8.8.8.8 8.8.4.4  # Google
+# Or
+DNS = 9.9.9.9 149.112.112.112  # Quad9
+```
+
+### MTU-Related Packet Fragmentation
+
+Large packets may fragment through VPN tunnel, causing slowness:
+
+```bash
+# Find optimal MTU
+ip link set dev wg0 mtu 1420
+
+# Test connectivity with different MTU values
+for mtu in 1500 1400 1350 1300 1280; do
+  ip link set dev wg0 mtu $mtu
+  ping -M do -s $((mtu - 28)) vpn.provider.com
+done
+```
+
+Typical optimal MTU for VPN is 1420-1450, not the standard 1500.
+
+## Related Reading
