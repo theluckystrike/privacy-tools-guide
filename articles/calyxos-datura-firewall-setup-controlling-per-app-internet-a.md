@@ -169,6 +169,241 @@ Begin by reviewing all applications with network access in your Datura Firewall 
 
 The Datura firewall provides enterprise-grade network filtering without requiring root access, making CalyxOS an excellent choice for privacy-conscious users who need granular control over their device's network behavior.
 
+## Deep Dive: Netfilter Architecture on Android
+
+Datura uses Linux netfilter (kernel-level packet filtering) adapted for Android. Understanding the architecture explains its power and limitations.
+
+Traditional user-space VPN firewalls (like NetGuard or AFwall+) use the VPN interface to intercept traffic. This means the VPN slot is occupied—you cannot use a real VPN simultaneously. Datura operates at iptables level, below the VPN layer:
+
+```
+Application
+     ↓
+Network Stack
+     ↓
+netfilter (Datura)  ← Filtering happens here
+     ↓
+iptables rules
+     ↓
+VPN/Network interface
+```
+
+This layering allows Datura to coexist with other VPN apps. The trade-off: Datura cannot block traffic at the individual app level if a compromised or malicious app tunnels data through legitimate proxies.
+
+## Examining iptables Rules on CalyxOS
+
+Power users can inspect actual filtering rules from the kernel:
+
+```bash
+# Connect via ADB
+adb shell
+
+# List current iptables rules (requires appropriate permissions)
+su
+iptables -L -n -v
+
+# Filter rules by chain
+iptables -L INPUT -n
+iptables -L OUTPUT -n
+
+# Check for per-app rules
+iptables -L OUTPUT -n | grep -i "com.example"
+```
+
+The output shows how Datura implements rules. For each blocked app, you typically see DROP rules that discard packets matching the app's UID.
+
+## DNS Filtering Within Datura
+
+Datura can filter DNS traffic separately from data traffic. If you want to block ads network-wide, configuring Datura to block DNS to ad servers is one approach:
+
+```bash
+# View current DNS rules
+adb shell su -c "iptables -t nat -L PREROUTING -n | grep 'dns'"
+
+# Common ad server DNS: 216.58.x.x (Google ads), 44.55.82.x (DoubleClick), etc.
+# Blocking DNS prevents apps from resolving these domains
+```
+
+However, modern ad networks use domain shadowing and CDNs, making DNS-level blocking incomplete. App-level blocking through Datura is more effective.
+
+## Combining Datura with Android VPN Services
+
+Unlike VPN-based firewalls, Datura allows a real VPN connection simultaneously:
+
+```
+Setup:
+1. Configure VPN for encrypted tunnel (ProtonVPN, Mullvad, etc.)
+2. Configure Datura to block apps from accessing unencrypted network
+3. Result: Apps blocked at app-level by Datura + encrypted via VPN
+```
+
+This hybrid approach provides defense in depth. Datura acts as an additional filter, preventing accidental data leakage if VPN drops.
+
+## Detecting Datura-Blocked Traffic
+
+Apps sometimes retry blocked connections repeatedly, draining battery. Monitor this:
+
+```bash
+# Check for repeated connection attempts
+adb shell dumpsys connectivity
+
+# High error rates or repeated "connection refused" indicate blocked apps
+# This is expected but useful to identify misconfigured permissions
+```
+
+For developers testing their apps, ensure your app handles network failures gracefully:
+
+```kotlin
+// Graceful degradation when network is blocked
+try {
+    val response = httpClient.get(url)
+} catch (e: IOException) {
+    // Network blocked or unavailable
+    showOfflineMessage()
+    return@launch
+}
+```
+
+## Building Custom Firewall Policies with ADB
+
+Create scripts to apply consistent policies across devices:
+
+```bash
+#!/bin/bash
+# apply_firewall_policy.sh
+# Policy: Block all non-essential apps from mobile data, allow only WiFi
+
+DEVICE=$1
+ADB_CMD="adb -s $DEVICE shell"
+
+# List of apps to restrict to WiFi only
+WIFI_ONLY_APPS=(
+    "com.instagram.android"
+    "com.facebook.katana"
+    "com.twitter.android"
+    "com.reddit.frontpage"
+)
+
+for app in "${WIFI_ONLY_APPS[@]}"; do
+    # Check if app exists
+    if $ADB_CMD pm list packages | grep -q "$app"; then
+        $ADB_CMD cmd firewall set-uid-rule "$app" mobile BLOCK
+        echo "Blocked $app from mobile data"
+    fi
+done
+```
+
+## IPv6 Filtering Considerations
+
+Modern networks use both IPv4 and IPv6. Datura filters both, but misconfiguration is common:
+
+```bash
+# Check if IPv6 is enabled
+adb shell ip -6 route show
+
+# Verify Datura blocks IPv6 for restricted apps
+adb shell su -c "ip6tables -L OUTPUT -n | grep DROP"
+```
+
+If IPv6 is enabled but Datura only filters IPv4, apps can leak traffic through IPv6 tunnels. Ensure your CalyxOS version filters both protocols.
+
+For maximum privacy on networks supporting IPv6, disable IPv6 entirely:
+
+```bash
+adb shell su -c "sysctl -w net.ipv6.conf.all.disable_ipv6=1"
+```
+
+## Identifying Hidden Telemetry Connections
+
+Use Datura to block specific domains and apps systematically, then monitor what breaks:
+
+```bash
+# Approach: Whitelist model (block everything, then allow what's needed)
+
+# 1. Block all apps except critical ones
+adb shell cmd firewall set-uid-rule <PACKAGE> both BLOCK
+
+# 2. Launch app and check if it connects
+# (Wait 30 seconds, most telemetry is eager)
+
+# 3. Check system logs for connection attempts
+adb shell logcat | grep -i "connect\|socket\|network"
+
+# 4. Allow traffic to specific domains as needed
+# Use separate VPN with logging to identify required domains
+```
+
+This approach reveals which apps need which network access, enabling precise firewall rules.
+
+## Datura Rule Persistence and Modifications
+
+Firewall rules persist through reboots and app updates. However, system updates may reset Datura configuration:
+
+```bash
+# Backup current Datura rules
+adb shell dumpsys firewall > datura_rules_backup.txt
+
+# Document your configuration
+# This enables quick restoration if system update resets rules
+```
+
+## Performance Impact Analysis
+
+Datura operates at the kernel level, which is inherently more efficient than user-space VPN filters. However, inspect resource usage:
+
+```bash
+# Check for memory overhead
+adb shell dumpsys meminfo | grep -i "firewall\|datura"
+
+# Monitor CPU usage during active filtering
+adb shell top -n 1 | grep -i "firewall"
+```
+
+Most systems show negligible overhead. If Datura consumes >5% CPU, there may be excessive policy enforcement overhead.
+
+## Troubleshooting Datura Connectivity Issues
+
+When apps fail to connect after Datura configuration:
+
+```bash
+# Step 1: Verify app UID
+adb shell pm list packages -U | grep "com.example.app"
+
+# Step 2: Check current rules for that UID
+adb shell su -c "iptables -L OUTPUT -n | grep <UID>"
+
+# Step 3: Monitor network events as app tries to connect
+adb shell strace -e socket,connect -p <APP_PID>
+
+# Step 4: Review app manifest for required permissions
+adb shell dumpsys packages | grep -A 20 "com.example.app"
+```
+
+These commands narrow down whether blocking is intentional (Datura rules) or accidental (permissions).
+
+## Building Firewall Policies from Network Analysis
+
+Use tcpdump to capture actual network traffic, then determine what to block:
+
+```bash
+# Enable kernel packet capturing
+adb shell su -c "tcpdump -i any -w /sdcard/capture.pcap &"
+
+# Let app run for 30 seconds
+sleep 30
+
+# Pull capture and analyze
+adb pull /sdcard/capture.pcap
+wireshark capture.pcap  # Graphical analysis
+
+# From capture, identify:
+# - Remote IPs/domains contacted
+# - Ports used
+# - Protocols (HTTP, HTTPS, DNS, etc.)
+# - Frequency of connections
+```
+
+Use this data to create targeted blocking rules rather than blanket app blocks.
+
 
 ## Related Articles
 

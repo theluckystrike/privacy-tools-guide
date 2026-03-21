@@ -141,6 +141,139 @@ Tor Browser has no sync or accounts. All history and cookies are cleared on exit
 
 There is no single best browser. Tor Browser provides the most anonymity but is slow and breaks many sites. Mullvad Browser provides near-Tor-level fingerprinting protection with normal browsing speed. Brave works well for daily use with minimal configuration. LibreWolf is the best choice if you want the Firefox ecosystem with strong defaults applied.
 
+## WebGL Fingerprinting and Canvas Defense
+
+WebGL and canvas fingerprinting are particularly effective at identifying users because they expose hardware-specific rendering information. Different GPUs and graphics drivers produce slightly different outputs, creating a persistent identifier.
+
+**Firefox with RFP** returns spoofed WebGL values that don't match your actual hardware. The values are consistent within a session but differ across sites, preventing cross-site tracking.
+
+**Brave's approach** uses randomization — each site sees slightly different WebGL data, degrading fingerprint quality while maintaining compatibility. Test yourself using the WebGL fingerprinting tool at `https://webbrowsertools.com/webgl/`.
+
+**LibreWolf and Mullvad** take the Firefox approach further, disabling some WebGL APIs entirely and spoofing others. This breaks fewer sites than Tor Browser but still provides strong protection.
+
+Test your browser's fingerprinting resistance:
+
+```bash
+# Using browserleaks.com directly
+curl -s https://www.browserleaks.com/webgl | grep -o "WebGL fingerprint.*" | head -1
+
+# Using headless Chrome for automated testing
+chromium --headless --disable-gpu https://browserleaks.com/webgl
+```
+
+## Tracking Cookies vs First-Party Cookies
+
+Modern tracking relies less on third-party cookies (which all these browsers block) and more on first-party cookies set by domains you visit. A site can place a persistent identifier in a first-party cookie and correlate it across visits.
+
+**Firefox Enhanced Tracking Protection** in "Strict" mode isolates first-party cookies by site, preventing persistence across your browsing. However, this breaks site features. Default "Standard" mode does not isolate first-party cookies.
+
+**Brave** uses a cookie partitioning approach — each site's cookies remain isolated to that site by default. This maintains functionality while preventing cross-site correlation.
+
+**LibreWolf and Mullvad** enable `privacy.firstparty.isolate`, which partitions all cookies and storage by first-party domain. This is strict but breaks some sites that rely on cross-domain cookies.
+
+For developers building privacy-respecting sites, use `SameSite=Lax` or `SameSite=Strict` on all cookies:
+
+```javascript
+// Node.js/Express example
+res.cookie('sessionId', token, {
+  sameSite: 'strict',
+  secure: true,
+  httpOnly: true,
+  maxAge: 3600000
+});
+```
+
+## DNS over HTTPS (DoH) Implementation
+
+Default DNS queries are unencrypted, revealing every domain you visit to your ISP. All modern browsers support DoH, but they configure it differently.
+
+**Firefox** allows customizable DoH providers through Settings. Set a custom provider like NextDNS, Quad9, or Cloudflare:
+
+```
+about:preferences#privacy → DNS over HTTPS → Custom provider
+```
+
+**Brave** uses Cloudflare for DoH by default but allows switching in Settings → Privacy → Brave Shields defaults.
+
+**LibreWolf and Mullvad** use configurable DoH through torrc-style configuration files.
+
+```bash
+# Verify DoH is active
+curl -s -H "accept: application/dns-json" https://dns.google/resolve?name=example.com&type=A | jq
+
+# Compare unencrypted vs encrypted DNS query times
+time nslookup example.com  # Unencrypted
+time dig @8.8.8.8 example.com +https  # Over HTTPS
+```
+
+## Rendering Engine Security Patches
+
+The choice between Chromium and Gecko affects how quickly security patches reach you.
+
+**Chromium** (used by Brave) receives patches directly from Google, usually in weekly releases. Brave inherits these patches and can apply additional hardening. However, Google controls the security roadmap.
+
+**Gecko** (Firefox, LibreWolf, Mullvad) has its own security team and release cycle. Mozilla releases updates on a monthly schedule for Firefox, which LibreWolf and Mullvad inherit. This can mean slower patching, but both projects audit upstream changes closely.
+
+For time-sensitive systems, Brave's rapid patch cycle offers an advantage. For long-term privacy philosophy, Gecko's independence from Google appeals to privacy-focused users.
+
+## Network Protocol Analysis
+
+Examine what your browser leaks even before websites load. Use Wireshark or mitmproxy to inspect the actual requests:
+
+```bash
+# Install mitmproxy
+pip install mitmproxy
+
+# Run proxy on localhost:8080
+mitmweb
+
+# Configure browser to route through mitmproxy, then visit a site
+# Inspect connection patterns and DNS queries in the mitmweb dashboard
+```
+
+Key things to watch:
+- Unencrypted DNS requests (should be zero if DoH is working)
+- Connections to telemetry domains (Mozilla, Google, Brave, etc.)
+- SNI (Server Name Indication) leakage — the domain name visible to your ISP even over HTTPS
+
+**Firefox** leaks SNI by default. Enable `network.http.http3.enable` and configure a DoH provider to hide SNI.
+
+**Brave, LibreWolf, Mullvad** have SNI blocking built in, particularly when using HTTPS/3.
+
+## Extension Ecosystem and Manifest V3 Impact
+
+Google's Manifest V3 limits what content-blocking extensions can do. Extensions can no longer use `webRequest` API, only the limited `declarativeNetRequest` API which has per-rule caps.
+
+**Firefox** still supports Manifest V2 fully. uBlock Origin works at full power. This is the primary reason some power users prefer Firefox or LibreWolf.
+
+**Brave** compensates by offering built-in shields that function at the browser engine level, bypassing MV3 limitations entirely. This gives Brave users protection equivalent to or better than uBlock Origin, without installing extensions.
+
+**LibreWolf** comes with uBlock Origin pre-installed in MV2, combining the best of both worlds.
+
+For developers choosing between browser platforms for users: if you cannot guarantee uBlock Origin's availability (corporate environments, locked-down systems), Brave's shields provide superior default protection.
+
+## JavaScript Execution Context
+
+Web pages execute JavaScript with access to global APIs that can leak identifying information. The `navigator` object contains particularly sensitive data:
+
+```javascript
+// These values differ between browsers and hardware
+console.log(navigator.hardwareConcurrency);  // CPU core count
+console.log(navigator.deviceMemory);          // RAM in GB
+console.log(navigator.language);              // UI language
+console.log(navigator.languages);             // Multiple languages
+console.log(navigator.userAgent);             // Browser and OS
+console.log(navigator.plugins);               // Installed plugins (mostly deprecated)
+```
+
+**Firefox with RFP** spoof these to generic values (usually "2" cores, "8GB" RAM).
+
+**Brave** randomizes them per-site or per-session.
+
+**Tor Browser** makes all users look identical, defeating JavaScript-based fingerprinting entirely.
+
+If you're building a web application that needs to identify users, never rely on these APIs. Use authentication tokens and server-side session management instead.
+
 
 ## Related Articles
 

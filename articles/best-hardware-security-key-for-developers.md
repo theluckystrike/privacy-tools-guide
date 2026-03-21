@@ -168,6 +168,238 @@ The "best" hardware security key depends on your specific requirements:
 
 Start with one key protecting your highest-value accounts (email, cloud consoles, code repositories). Expand coverage as you validate the workflow. The learning curve is minimal, and the security improvement over TOTP or SMS 2FA is substantial.
 
+## Hardware vs Software Authenticators
+
+Understanding the threat model helps explain why hardware keys matter more than software authenticators.
+
+**Software authenticators** (Google Authenticator, Authy, TOTP generators) store secrets on your phone. If malware compromises your phone, it steals the TOTP seeds. Additionally, TOTP codes are time-based, meaning a server cannot verify when the code was generated—only that it was valid at some point in the past.
+
+**Hardware keys** store private keys in a tamper-resistant secure element. Malware on your computer or phone cannot extract the key. The private key never leaves the hardware, making it mathematically impossible to compromise without physical access.
+
+For developers particularly—if your phone gets pwned, your TOTP-protected accounts are immediately at risk. Hardware keys prevent this entire class of attack.
+
+## FIDO2 vs FIDO U2F vs OATH Differences
+
+Developers often encounter different FIDO protocol versions. Understanding the differences affects key selection:
+
+**FIDO U2F (Universal Second Factor)** is the older standard. Keys register with a service, then authentication requires a challenge-response. No discoverable credentials (server must provide username first).
+
+**FIDO2** extends U2F with WebAuthn (browser standard) and resident credentials (keys store username, enabling passwordless login). Modern keys support both for backward compatibility.
+
+**OATH** is separate from FIDO—it's for generating time-based or counter-based codes (TOTP/HOTP). Many keys include OATH support as a side feature.
+
+For new implementations, target FIDO2 with resident credentials. For legacy systems requiring TOTP fallback, choose a key that supports both.
+
+Test key capabilities:
+
+```bash
+# List supported protocols on connected key
+ykman list
+ykman info  # Detailed capability report
+
+# Test FIDO2 registration
+# Requires a site with WebAuthn support (GitHub, Google, Amazon)
+```
+
+## Elliptic Curve Cryptography vs RSA
+
+Keys use different cryptographic algorithms. FIDO2 supports multiple:
+
+**ECDSA (Elliptic Curve DSA, algorithm -7)** provides smaller keys with equivalent security. A 256-bit ECDSA key offers security equivalent to 2048-bit RSA.
+
+**EdDSA (Edwards Curve DSA, algorithm -8)** is newer and often faster. Becoming standard in new FIDO2 implementations.
+
+**RS256 (RSA, algorithm -257)** is older but still widely supported. Larger keys mean slower operations.
+
+For new hardware key purchases, prioritize ECDSA and EdDSA support. These provide faster authentication and smaller credentials.
+
+Check your key's supported algorithms:
+
+```bash
+# YubiKey algorithm support
+ykman list
+ykman configure-fido2 --list-algorithms
+
+# For manual testing, FIDO2 servers negotiate algorithm preference
+# Clients send list in priority order; server selects first match
+```
+
+## Security Key Registration and Backup Strategies
+
+Losing your only hardware key locks you out permanently. Multi-key registration is non-optional:
+
+```
+Registration checklist:
+1. Configure primary key on account
+2. Register backup key (different make/model if possible)
+3. Store backup key in physically secure location
+4. Download recovery codes (if service provides them)
+5. Store recovery codes in password manager with encrypted backup
+6. Test recovery codes on test account before relying on them
+```
+
+For development teams, establish policies:
+
+```yaml
+# Hardware key policy for engineering teams
+hardware_key_requirements:
+  github_account:
+    primary: YubiKey 5 NFC or SoloKey
+    backup: YubiKey 5 Ci or SoloKey Tap
+    recovery_codes: Stored in team vault (encrypted)
+
+  aws_root:
+    primary: Physical YubiKey stored in safe
+    backup: Separate key in different location
+    recovery_codes: Printed and sealed in safe deposit box
+
+  git_signing:
+    primary: YubiKey on development machine
+    backup: Not needed (non-critical path)
+```
+
+## SSH Authentication with Hardware Keys
+
+SSH key signing can use hardware keys through gpg-agent:
+
+```bash
+# Generate SSH-capable key on YubiKey
+gpg --edit-key your@email
+# Select addkey → option 11 (authentication)
+
+# Configure gpg-agent for SSH
+echo "enable-ssh-support" >> ~/.gnupg/gpg-agent.conf
+gpgconf --kill gpg-agent
+gpg-agent --daemon
+
+# SSH keys from GPG
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+ssh-keygen -L  # List SSH keys from hardware key
+
+# Use with SSH
+ssh -o PubkeyAcceptedKeyTypes=ecdsa-sha2-nistp256 user@host
+```
+
+This approach means every SSH connection requires touching your hardware key (if configured with `require-touch`), preventing keylogger-based SSH session hijacking.
+
+## TOTP on Hardware Keys for Backward Compatibility
+
+Some services don't support FIDO2, requiring TOTP fallback. Hardware keys with TOTP support are valuable:
+
+```bash
+# Configure TOTP on YubiKey
+ykman oath accounts add GitHub github_account_name
+# Scan QR code or enter secret manually
+
+# List TOTP accounts
+ykman oath list
+
+# Generate TOTP code for account
+ykman oath code GitHub
+
+# Export TOTP secrets (WARNING: breaks the security model!)
+# Only do this if you must maintain a software copy
+ykman oath export
+```
+
+When using hardware TOTP, the key generates the code without exposing the seed to your computer. However, if you're configuring a backup software TOTP generator, you undermine the security. Store software TOTP seeds only in encrypted password managers.
+
+## Windows Hello vs Third-Party Keys
+
+Windows Hello (biometric or PIN-based authentication) is hardware-backed on modern Windows devices but works differently than external keys:
+
+**Advantages**: Built-in, no external device needed, integrated with Windows authentication.
+
+**Disadvantages**: Device-specific (cannot move between machines), requires Windows, less portable for universal use.
+
+**Comparison for developers**:
+- Windows Hello alone: Good for Windows machines, insufficient for cross-platform development
+- External hardware key + Windows Hello: Best approach (Windows Hello for daily login, hardware key for critical accounts)
+
+Configure both:
+
+```powershell
+# Windows Hello setup (GUI-only, Settings → Accounts → Sign-in options)
+
+# Then register external hardware key with GitHub, AWS, etc.
+# Windows Hello protects machine, hardware key protects cloud accounts
+```
+
+## Audit Logging and Key Usage Tracking
+
+For organizations, track which users use which keys:
+
+```bash
+# GitHub API: list user's security keys
+curl -H "Authorization: token YOUR_TOKEN" \
+  https://api.github.com/user/keys
+
+# AWS: list MFA devices
+aws iam list-mfa-devices --user-name your-user
+
+# Check key metadata
+aws iam get-login-profile --user-name your-user
+```
+
+For development teams, periodically audit:
+
+```bash
+#!/bin/bash
+# Audit script: verify all developers have hardware 2FA
+
+REQUIRED_MFA=true
+AUDITORS="security-team@company.com"
+
+for user in $(aws iam list-users --query 'Users[].UserName' --output text); do
+  mfa=$(aws iam list-mfa-devices --user-name $user --query 'MFADevices | length(@)')
+  if [ "$mfa" -eq 0 ]; then
+    echo "ALERT: $user has no MFA configured" | mail -s "MFA Audit Alert" $AUDITORS
+  fi
+done
+```
+
+## Comparison Matrix: YubiKey vs SoloKeys vs Others
+
+```
+Criteria          | YubiKey 5 | YubiKey 5Ci | SoloKeys | Titan Key
+Form factor       | USB-A/NFC | Lightning   | USB-A   | USB-A/NFC
+OpenPGP           | Yes       | Yes        | Yes     | Yes
+FIDO2             | Yes       | Yes        | Yes     | Yes
+OATH HOTP         | Yes       | Yes        | No      | Yes
+Open source       | No        | No         | Yes     | No
+Price             | ~$50      | ~$65       | ~$40    | ~$30
+Cross-platform    | Excellent | iOS only   | Good    | Good
+Device support    | Windows, Mac, iOS (adapter), Android | iOS, macOS | All | All
+Cloud sync        | No        | No         | No      | Yes (Google)
+```
+
+For developers: YubiKey 5 for maximum compatibility, SoloKeys if open-source firmware verification is essential, Google Titan if you're fully invested in Google ecosystem.
+
+## Emergency Access and Account Recovery
+
+Plan for hardware key loss before it happens:
+
+```
+Emergency recovery plan:
+1. List all accounts with hardware key authentication
+2. For each account, generate and securely store recovery codes
+3. Establish out-of-band recovery process (phone call to verify, etc.)
+4. Maintain a secure list of recovery contact information
+5. Test recovery process annually on non-critical accounts
+```
+
+For critical accounts:
+```bash
+# GitHub recovery codes
+# Settings → Security → Two-factor authentication → Recovery codes
+
+# AWS root account recovery
+# Root user → Security credentials → Recovery codes
+
+# Generate new codes periodically
+ykman list  # Verify backup keys are accessible
+```
+
 
 ## Related Articles
 

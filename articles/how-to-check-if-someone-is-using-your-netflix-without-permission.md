@@ -170,6 +170,145 @@ Preventing unauthorized access requires more than just a strong Netflix password
 
 Consider limiting account sharing by creating individual profiles if family members have different viewing preferences. While this does not prevent password sharing, it makes unauthorized use more visible through the viewing activity feature.
 
+## Understanding Netflix's Password Sharing Crackdown
+
+In 2024, Netflix began enforcing stricter password sharing policies. Their system now limits concurrent streams based on account tier and warns about sharing. Understanding these changes helps you monitor whether your account is compliant and not vulnerable to unauthorized use.
+
+Netflix's tier-based stream limits:
+- Basic: 1 stream at a time
+- Standard: 2 streams at a time
+- Premium: 4 streams at a time
+
+If you exceed stream limits during an activity check, either legitimate family members are watching simultaneously, or unauthorized users are accessing your account. Check the concurrent activity feature: while viewing activity shows historical data, some reporting tools show real-time streams.
+
+## Geographic Anomalies as Warning Signs
+
+Netflix tracks approximate location based on IP address. Significant geographic anomalies suggest unauthorized access:
+
+- Watches in two distant cities within minutes suggest account sharing
+- IP addresses from VPNs or residential proxies (not your ISP) indicate hidden access
+- Repeated access from IP ranges you do not recognize warrant investigation
+
+To investigate geographic patterns:
+
+```python
+import requests
+from datetime import datetime
+
+def analyze_netflix_locations(activity_log):
+    """
+    Identify geographic anomalies in Netflix viewing activity.
+    Activity log format: [{'title': str, 'location': str, 'time': datetime}]
+    """
+    locations_by_time = {}
+
+    for entry in activity_log:
+        time_key = entry['time'].isoformat()
+        locations_by_time[time_key] = entry['location']
+
+    suspicious_patterns = []
+
+    # Check for impossible travel (location changes in short time)
+    sorted_entries = sorted(activity_log, key=lambda x: x['time'])
+
+    for i in range(1, len(sorted_entries)):
+        prev_entry = sorted_entries[i - 1]
+        curr_entry = sorted_entries[i]
+
+        time_diff_minutes = (curr_entry['time'] - prev_entry['time']).total_seconds() / 60
+
+        if time_diff_minutes < 60:  # Less than 1 hour between viewing sessions
+            if prev_entry['location'] != curr_entry['location']:
+                suspicious_patterns.append({
+                    'type': 'impossible_travel',
+                    'from': prev_entry['location'],
+                    'to': curr_entry['location'],
+                    'time_diff_minutes': time_diff_minutes
+                })
+
+    return suspicious_patterns
+```
+
+## Setting Up Notifications for Account Changes
+
+While Netflix does not offer real-time alerts directly, you can configure email notifications for account changes through your Netflix email settings. Enable:
+
+- New device login notifications
+- Password change confirmations
+- Account recovery attempts
+
+Additionally, ensure your linked email account has strong security:
+
+1. Use a unique password for your email account
+2. Enable two-factor authentication on your email provider
+3. Review connected apps in your email's security settings
+4. Remove any apps you do not recognize
+
+If unauthorized users have email access, they can reset Netflix passwords before you are aware of the breach.
+
+## Creating Family Sharing Plans Securely
+
+Netflix now allows explicit "add member" functionality rather than simple password sharing. If you want to allow family to watch your account legitimately, use the official family sharing feature:
+
+- Visit Account > Manage Profile & Parental Controls
+- Select "Create a new profile"
+- Choose "Add member to this account"
+- The invited person creates their own login
+- You maintain control over what they can watch
+
+This approach provides audit trails and allows you to remove members without changing your password. Family members get their own profile, which also appears in your viewing activity.
+
+## Recovering Compromised Accounts
+
+If you discover serious unauthorized access, recovery requires aggressive action:
+
+**Immediate steps:**
+1. Change your Netflix password to something very long and unique (20+ characters)
+2. Use "Sign out of all devices" option
+3. Wait 15 minutes for all sessions to terminate
+4. Log back in to your own device
+5. Check viewing activity—it should only show your recent activity
+
+**Follow-up actions (within 24 hours):**
+6. Change your linked email password
+7. Review and revoke any connected apps from your email settings
+8. Check credit card and payment method associated with Netflix
+9. If payment method was changed, immediately update it
+10. Contact Netflix support if any charges are fraudulent
+
+**Long-term hardening:**
+11. Enable two-factor authentication on your email
+12. Use a password manager for all streaming accounts
+13. Conduct quarterly viewing activity audits
+14. Monitor your credit reports for unauthorized accounts
+
+## Advanced Monitoring with Network Analysis
+
+For developers comfortable with network monitoring, analyze traffic patterns to detect Netflix usage:
+
+```bash
+# Monitor Netflix traffic on your network (requires router access)
+tcpdump -i eth0 -n 'host nflxvideo.net or host netflix.com' | tee netflix_traffic.log
+
+# Analyze traffic volume by timestamp to find unusual patterns
+grep "2026-03-21" netflix_traffic.log | wc -l  # Count sessions on specific date
+```
+
+Sustained Netflix traffic during hours when you are not watching suggests unauthorized access. This approach works best with Wi-Fi network monitoring—traffic analysis on shared residential networks is complex.
+
+## Account Recovery with Compromised Email
+
+If an attacker has both your Netflix password and email password, account recovery becomes complex. Netflix requires email access to reset passwords. If you have lost email access:
+
+1. Recover your email account first (use email provider's account recovery process)
+2. Once email is secured, reset your Netflix password through Netflix's "Forgot password" flow
+3. Verify no unauthorized payment methods are stored
+4. Consider deprovisioning and recreating your Netflix account if the compromise was severe
+
+This process can take days if email recovery is difficult. Prevention (two-factor authentication on email) is far simpler than recovery.
+
+---
+
 
 ## Related Articles
 
