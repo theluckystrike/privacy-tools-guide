@@ -7,6 +7,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-create-enterprise-privacy-risk-register-template-for-/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 

@@ -17,6 +17,7 @@ tags:
 permalink: /passkey-user-experience-comparison-across-chrome-safari-firefox-edge-2026/
 reviewed: true
 score: 8
+voice-checked: true
 author: "Privacy Tools Guide"
 ---
 
