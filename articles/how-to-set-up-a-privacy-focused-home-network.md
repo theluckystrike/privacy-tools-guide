@@ -815,7 +815,7 @@ This isn't theoretical—Comcast and AT&T have been prosecuted by FTC for sellin
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)

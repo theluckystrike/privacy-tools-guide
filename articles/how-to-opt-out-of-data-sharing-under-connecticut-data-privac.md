@@ -272,7 +272,7 @@ Several issues frequently trip up Connecticut residents exercising their rights:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 - [How To Anonymize User Data In Production Database For Privac](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)

@@ -708,7 +708,7 @@ nslookup example.com 127.0.0.1
 ---
 
 
-## Related Articles
+## Related Reading
 
 - [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)

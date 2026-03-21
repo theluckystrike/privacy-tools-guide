@@ -356,7 +356,7 @@ To check if a site is using permission fingerprinting:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)

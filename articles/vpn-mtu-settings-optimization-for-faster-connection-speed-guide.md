@@ -218,7 +218,7 @@ After configuring MTU, verify the improvements:
 4. **Ignoring the path:** Your MTU needs to work across your entire network path, not just your local connection.
 
 
-## Related Articles
+## Related Reading
 
 - [VPN MTU Settings Optimization for Faster Connection Speed](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)
 - [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)

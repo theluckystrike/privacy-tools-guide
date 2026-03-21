@@ -302,7 +302,7 @@ Ensure your systems respond to consumer requests within the mandated 45-day wind
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
 - [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)

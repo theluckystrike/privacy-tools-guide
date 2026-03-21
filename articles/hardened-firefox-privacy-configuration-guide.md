@@ -580,7 +580,7 @@ Firefox hardening prevents *tracking*, but doesn't prevent:
 **For privacy-focused user**: All steps = maximum privacy, accept breakage, whitelist sites as needed.
 
 
-## Related Articles
+## Related Reading
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)

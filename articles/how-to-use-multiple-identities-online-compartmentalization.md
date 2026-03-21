@@ -225,7 +225,7 @@ finance:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
 - [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)

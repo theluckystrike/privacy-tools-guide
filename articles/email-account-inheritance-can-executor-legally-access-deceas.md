@@ -292,7 +292,7 @@ class GoogleTakeoutRequest:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
 - [Gaming Account Inheritance What Happens To Steam Playstation](/privacy-tools-guide/gaming-account-inheritance-what-happens-to-steam-playstation/)

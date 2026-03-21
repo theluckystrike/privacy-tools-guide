@@ -337,7 +337,7 @@ brave://components
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Brave Browser Vs Edge Privacy Comparison 2026](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
 - [Brave vs Safari Privacy Comparison 2026: A Developer Guide](/privacy-tools-guide/brave-vs-safari-privacy-comparison-2026/)

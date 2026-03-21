@@ -850,7 +850,7 @@ Intermittent unresponsiveness:
 ---
 
 
-## Related Articles
+## Related Reading
 
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 - [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)

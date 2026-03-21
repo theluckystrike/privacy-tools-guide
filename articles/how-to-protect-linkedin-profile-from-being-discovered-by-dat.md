@@ -219,7 +219,7 @@ Privacy threats evolve constantly:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Linkedin Deceased Member Profile Removal How To Report And M](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
 - [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)

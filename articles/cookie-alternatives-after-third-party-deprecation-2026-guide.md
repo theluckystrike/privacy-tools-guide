@@ -186,7 +186,7 @@ Most applications will combine multiple approaches. A typical implementation mig
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)

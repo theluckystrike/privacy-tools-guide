@@ -278,7 +278,7 @@ sudo -u www-data php occ audit log:show
 Secure file sharing isn't about the strongest encryption—it's about the complete system: encryption plus audit trails, access controls, compliance certifications, and organizational policies. A well-configured Nextcloud instance can be more secure for your organization than a managed service if you have the infrastructure expertise. Conversely, a managed service like Box or Tresorit trades some control for operational simplicity. Evaluate against your specific compliance requirements and IT capabilities. No single solution fits all regulated teams; the best choice depends on your industry, data residency requirements, and technical resources.
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
 - [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)

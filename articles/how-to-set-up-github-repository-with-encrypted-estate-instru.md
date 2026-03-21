@@ -350,7 +350,7 @@ Store this documentation alongside the keys or with your estate planning documen
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Github Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)

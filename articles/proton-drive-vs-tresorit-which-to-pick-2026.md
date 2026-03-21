@@ -258,7 +258,7 @@ This script demonstrates how both platforms can coexist in a data strategy.
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Tresorit Vs Proton Drive Comparison 2026](/privacy-tools-guide/tresorit-vs-proton-drive-comparison-2026/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

@@ -428,7 +428,7 @@ identify_and_block suspicious SSL certificate chains
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
 - [How Vpn Interacts With Firewall Rules Iptables Nftables.](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)

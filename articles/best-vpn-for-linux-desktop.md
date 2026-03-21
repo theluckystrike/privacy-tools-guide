@@ -482,7 +482,7 @@ done
 Typical optimal MTU for VPN is 1420-1450, not the standard 1500.
 
 
-## Related Articles
+## Related Reading
 
 - [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
