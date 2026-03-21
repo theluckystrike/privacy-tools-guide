@@ -46,6 +46,20 @@ browser.management.getAll().then(exts => {
 
 Remove any extension requesting unnecessary permissions. A password manager extension with broad website access creates a high-value target for attackers.
 
+### Container Tabs for Identity Separation
+
+Firefox's Multi-Account Containers extension allows you to isolate different online identities in separate browser contexts. Cookies, local storage, and session data are siloed between containers, preventing cross-site tracking.
+
+Practical container setup:
+
+- **Personal**: Banking, healthcare, government services
+- **Shopping**: E-commerce, deal sites
+- **Social**: Social media platforms (isolated from everything else)
+- **Work**: Professional tools, company resources
+- **Throwaway**: Registration forms, one-time lookups
+
+This prevents the scenario where your social media tracker loads as a "like" button on a shopping site and correlates your identity across both. The Facebook container extension automates this specifically for Facebook and its properties.
+
 ## Network-Level Protection
 
 Your ISP sees every domain you resolve. Running your own DNS over HTTPS (DoH) resolver blocks that observation. Pi-hole provides network-wide ad and tracker blocking while supporting DoH upstream:
@@ -73,6 +87,18 @@ curl --socks5 localhost:9050 https://check.torproject.org/api/ip
 
 Note that Tor exit nodes can be malicious—never expose credentials or run authenticated API calls through Tor without additional encryption (such as WireGuard tunnels over Tor).
 
+### VPN Selection Criteria
+
+A VPN shifts DNS and traffic visibility from your ISP to the VPN provider. This trade is only worthwhile if your VPN provider is more trustworthy than your ISP. Evaluate providers on:
+
+- **Published and audited no-log policy**: Self-attestations are meaningless; look for independent audits by firms like Cure53 or Deloitte
+- **Warrant canary**: Indicates whether the provider has received government data requests
+- **Jurisdiction**: Providers in 14-Eyes countries are subject to intelligence sharing agreements
+- **Open-source clients**: Allows independent review of the software you run
+- **WireGuard support**: Modern protocol with smaller attack surface than OpenVPN
+
+Avoid free VPN services. Operators that offer free VPN access typically monetize through user data collection—directly contradicting the privacy purpose.
+
 ## Email Privacy and Masking
 
 Email addresses serve as unique identifiers across services. Creating separate email aliases for different contexts reduces correlation. For developers comfortable with command-line tools, FastMail's alias system or SimpleLogin (now part of Proton) provide managed solutions.
@@ -87,6 +113,33 @@ newsletter+medium@yourdomain.com you@realemail.com
 ```
 
 This technique allows you to identify which service sold or leaked your email address. When an alias receives spam, delete it and trace the source.
+
+### Metadata Stripping from Documents
+
+When sharing documents, presentations, or images, the embedded metadata can expose your identity, location, hardware, and editing history. The EXIF data in a photo includes GPS coordinates, camera model, and timestamp by default.
+
+```bash
+# Install exiftool
+brew install exiftool  # macOS
+sudo apt install libimage-exiftool-perl  # Debian/Ubuntu
+
+# Strip all metadata from a file
+exiftool -all= photo.jpg
+
+# Strip metadata from all images in a directory
+exiftool -all= -r ~/Documents/images/
+
+# View what was embedded before stripping
+exiftool -json photo.jpg | python3 -m json.tool
+```
+
+For Office documents, metadata stripping is equally important:
+
+```bash
+# LibreOffice: strip metadata via command line
+soffice --headless --infilter="writer8" --convert-to "odt" document.docx
+# Then use exiftool on the output
+```
 
 ## Data Minimization in Development
 
@@ -139,6 +192,46 @@ Modern devices collect substantial telemetry. Disable what you can through opera
 - Disable "Tailored experiences"
 - Turn off "Feedback frequency" or set to "Never"
 - Use Group Policy to disable telemetry via Computer Configuration > Administrative Templates > Windows Components > Data Collection
+
+### Account Minimization: Deleting Old Accounts
+
+One of the highest-impact steps you can take is requesting deletion of accounts you no longer use. Old accounts accumulate breach exposure—every service that holds your email, password hash, and profile data is a liability.
+
+Use JustDeleteMe (justdeleteme.xyz) as a reference for deletion difficulty by service. For hard-to-delete services, submit formal data subject access requests (DSAR) under GDPR (EU users) or CCPA (California users). These legally require companies to delete your data upon request.
+
+Automate a quarterly review:
+
+```bash
+# Keep a list of services in a text file
+# ~/privacy/accounts.txt
+# Format: service | email_used | status | last_reviewed
+
+# Review script
+while IFS='|' read -r service email status date; do
+    if [[ "$status" == "ACTIVE" ]]; then
+        echo "Review: $service ($email) - last reviewed: $date"
+    fi
+done < ~/privacy/accounts.txt
+```
+
+## Social Media Exposure Reduction
+
+Social media platforms are the single largest voluntary data contribution most users make. Even without sharing posts publicly, your interactions—likes, follows, search behavior, and time-on-content—feed extensive behavioral profiles.
+
+Practical reduction steps that don't require abandoning social media entirely:
+
+**Audit your connected apps**: Most social platforms allow third-party apps to connect via OAuth. These apps often retain access indefinitely and collect data independent of your main account settings. Review and revoke access quarterly.
+
+On Twitter/X: Settings > Security and Account Access > Connected Apps
+On Facebook: Settings > Security and Login > Apps and Websites
+On Google: myaccount.google.com/connections
+
+**Opt out of off-platform tracking**: Facebook and Google track your activity across the web even when you're not logged in, through embedded pixels and tracking scripts. Use your account's ad settings to opt out:
+
+- Facebook: Settings > Privacy > Your Facebook Information > Off-Facebook Activity > Clear History
+- Google: myaccount.google.com/data-and-privacy > Ad personalization
+
+**Pseudonymous accounts**: For technical communities where you share work but want separation from your real identity, maintain distinct pseudonymous accounts using separate email addresses and browser containers. Never cross-link them from personal accounts.
 
 ## Automation for Continuous Privacy Hygiene
 
