@@ -185,6 +185,96 @@ grep "AllowedIPs" /etc/wireguard/wg0.conf
 ```
 
 
+## VPN Provider No-Log Verification Checklist
+
+Use this checklist to evaluate VPN no-log claims:
+
+| Criteria | What to Look For | Red Flag |
+|----------|-----------------|----------|
+| **Company jurisdiction** | Switzerland, Iceland, Malaysia, Romania | Five Eyes countries (US, UK, CA, AU, NZ) |
+| **Third-party audit** | Annual audit by reputable firm (Cure53, Deloitte) | No audit or outdated (3+ years old) |
+| **Court test** | Provider tested in court, claims verified | No court cases or provider refused access |
+| **Transparency reports** | Regular disclosure of law enforcement requests | Silent on requests or "we don't keep data" |
+| **Technical implementation** | RAM-only servers or destructive logging | Persistent storage on disk |
+| **Bug bounty program** | Active rewards for finding security issues | No security researcher engagement |
+
+## Demonstrating No-Log Claims
+
+Some providers publish transparency reports that support their claims:
+
+```bash
+# Example: NordVPN transparency report analysis
+# https://nordvpn.com/transparency/
+
+# Data shows:
+# - How many law enforcement requests received (3,400+ in 2023)
+# - How many were actually fulfilled (0 in most cases)
+# - Why most requests were unfulfilled (no data to provide)
+
+# This pattern supports genuine no-log claims
+```
+
+Compare provider behavior against their stated policies. If a provider claims no-logs but compliance reports show fulfilled requests, the claims are suspect.
+
+## IPv6 and Split Tunneling Leaks
+
+Even with no-log policies, technical configuration can leak data:
+
+```bash
+# Test for IPv6 leaks (common with no-log VPNs)
+curl -6 https://ifconfig.me  # Should fail if VPN has IPv6 support
+
+# Test split tunnel leaks
+# Split tunnel: selective traffic through VPN, some local
+# This allows attackers to infer behavior from non-VPN traffic
+
+# Verify complete tunneling
+netstat -tuln | grep ESTABLISHED
+# Should show no connections outside VPN tunnel
+```
+
+If split tunneling is enabled, locally routed traffic is visible to your ISP despite VPN claims.
+
+## Geolocation Verification and Spoofing
+
+VPNs claim to hide your real location, but verification varies:
+
+```bash
+# Check multiple geolocation sources
+curl -s https://ifconfig.me/json | jq .ip
+curl -s https://geoip.example.com  # MaxMind GeoIP database
+curl -s https://api.ipify.org?format=json | jq .ip
+
+# Results should show your VPN server location, not real location
+# Discrepancies indicate leaks
+```
+
+Some VPNs use anycast networks where apparent location varies by query source. This is acceptable if actual IP belongs to VPN provider.
+
+## Payment and Logs Correlation
+
+Your payment method represents a log, even if VPN claims zero logs:
+
+```
+Payment correlation attack:
+1. You purchase VPN with credit card
+2. Law enforcement subpoenas payment processor
+3. Credit card timestamp matched to traffic timestamp
+4. Timeline connects you to activity even without VPN logs
+```
+
+Mitigate this by paying with cryptocurrency:
+
+```bash
+# Better: Pay with Monero through CoinJoin
+# Reduces payment-to-usage correlation
+
+monero-wallet-cli
+(wallet): transfer [address] [amount] [ring-size]
+```
+
+True privacy requires privacy across all layers—encryption, no-logs policy, AND anonymous payment.
+
 ## Related Articles
 
 - [What VPN Logs Actually Mean: No-Log Policy Explained.](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)

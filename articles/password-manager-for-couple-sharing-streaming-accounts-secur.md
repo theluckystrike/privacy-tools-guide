@@ -184,6 +184,148 @@ bw list items \
 
 This outputs all streaming service usernames in your shared vault—useful for auditing what you have.
 
+## Streaming Service Restrictions and Account Sharing
+
+Many streaming services legally restrict account sharing. Understand the terms before relying on a shared vault:
+
+| Service | Official Stance | Account Monitoring | Risk |
+|---------|-----------------|-------------------|------|
+| **Netflix** | Household+ plan for sharing | Tracks simultaneous streams from different IPs | Account suspension if violating terms |
+| **Disney+** | Household sharing allowed | Limited to same network | Account termination risk |
+| **Spotify** | Family plan cheaper than individual | Monitors concurrent streaming | Playlist privacy compromised |
+| **Hulu** | Official multi-profile support | 2 simultaneous streams standard | Enforcement increasing |
+| **Apple TV+** | Family sharing through iCloud | Tied to Apple ecosystem | iCloud compromise affects all |
+| **Amazon Prime** | Household sharing | Tracking geographic location | May require residence verification |
+
+Password managers make sharing convenient, but they don't change the underlying terms of service. Many services increasingly restrict sharing through technical means.
+
+## Setting Up Emergency Access
+
+If your partner needs account access due to emergency (you're hospitalized, deceased, etc.), prepare for this scenario:
+
+```bash
+#!/bin/bash
+# Create emergency access instructions
+
+cat > ~/emergency_access_instructions.txt << 'EOF'
+STREAMING ACCOUNT EMERGENCY ACCESS
+
+In case of medical emergency or death:
+
+1. Contact my emergency contact: [name, phone, relationship]
+2. Provide them with:
+   - Master password to shared vault
+   - Recovery codes for 2FA
+   - Instructions to access streaming accounts
+
+3. For password manager recovery:
+   - Backup recovery codes are stored in: [physical location]
+   - Encrypted backup at: [cloud location]
+   - Decryption key: [stored separately]
+
+4. Streaming service account recovery:
+   - Netflix recovery email: [backup email]
+   - Disney+ backup codes: [stored with important docs]
+   - All recovery codes updated: [date]
+
+Emergency contact authorized to:
+- Access streaming accounts for continued service
+- Update payment methods if needed
+- Deactivate accounts after period specified
+
+This document should be stored with estate planning documents.
+EOF
+
+# Store encrypted copy
+gpg --encrypt --recipient "partner@email.com" emergency_access_instructions.txt
+```
+
+## Threat Modeling for Couples
+
+Different couples face different threat models. Adjust security accordingly:
+
+**Standard couple**: Trusting relationship, account sharing convenience prioritized
+- Biometric unlock on mobile apps (convenience)
+- Auto-sync across devices (usability)
+- Single vault password (acceptable if both trustworthy)
+
+**Separate finances**: Separate accounts, but need to share some services
+- Separate password manager vaults for personal accounts
+- Shared vault for household/streaming accounts only
+- Audit logging enabled to track access
+
+**High-conflict scenario**: Preparing for potential separation
+- Separate vaults immediately
+- Revoke partner access to shared streaming accounts
+- Change recovery emails to non-partner accounts
+- Document who paid for which service (may affect account ownership)
+
+## Streaming Account Ownership and Breakup Scenarios
+
+Understand legal implications before sharing:
+
+```bash
+# Document service ownership and payment method
+
+cat > ~/streaming_services.csv << 'EOF'
+Service,Primary Payer,Primary Email,Secondary Access,Payment Method,Cost/Month
+Netflix,Partner1,partner1@email.com,partner2@email.com,Partner1 Visa,15.99
+Disney+,Partner2,partner2@email.com,partner1@email.com,Shared Debit,13.99
+Spotify,Partner1,partner1@email.com,partner2@email.com,Partner1 Visa,10.99
+EOF
+
+# In a breakup, services paid by one person may remain with that person
+# Services with unclear payment might require negotiation
+```
+
+## Biometric Security for Shared Vaults
+
+Biometric access (fingerprint, face recognition) adds security without memorization burden:
+
+```bash
+# Enable biometric unlock on mobile password managers
+
+# iOS - Biometric authentication
+# Bitwarden app settings > Face ID / Touch ID > Enable
+
+# Android - Biometric unlock
+# Bitwarden app settings > Unlock with Biometrics > Fingerprint
+
+# Both partners can use their own biometrics for shared vault
+# Vault still requires master password on desktop
+```
+
+Biometric requirements force intentional access rather than automatic vault opening. Even if device is stolen, attacker cannot access without your biometric.
+
+## Migration Strategies When Changing Password Managers
+
+If you want to switch from one password manager to another as a couple:
+
+```bash
+#!/bin/bash
+# Safe migration between password managers
+
+# Step 1: Export from old manager (encrypted format if possible)
+bw export --output bitwarden_backup.json
+
+# Step 2: Review all items for sensitive data
+grep -i "credit\|ssn\|token" bitwarden_backup.json
+
+# Step 3: Import into new manager
+# (Use appropriate tool for destination manager)
+
+# Step 4: Verify all items imported correctly
+# Count items before and after
+echo "Items in export: $(jq '.items | length' bitwarden_backup.json)"
+
+# Step 5: Delete old backup securely
+shred -vfz -n 5 bitwarden_backup.json
+
+# Step 6: Notify partner of migration
+# Share new backup location and recovery codes
+```
+
+This ensures no streaming passwords are lost during migration.
 
 ## Related Articles
 

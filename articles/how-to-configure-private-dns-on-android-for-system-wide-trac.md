@@ -187,6 +187,102 @@ When choosing a DNS provider, consider:
 Providers like AdGuard, Quad9, and NextDNS publish transparency reports and maintain no-logs policies for personal use.
 
 
+## Provider Comparison Table
+
+| Provider | Privacy Policy | DoT Support | Ad Blocking | Logging | Cost |
+|----------|----------------|-------------|-------------|---------|------|
+| **AdGuard** | Transparent | Yes | Yes | 0 logs | Free |
+| **NextDNS** | Transparent | Yes | Yes | Configurable | Free/Paid |
+| **Quad9** | Privacy-focused | Yes | Malware only | 0 logs | Free |
+| **Control D** | Transparent | Yes | Yes | Configurable | Free/Paid |
+| **Mullvad** | No-log verified | Yes | Yes | 0 logs | Paid |
+| **Cloudflare** | Enterprise | Yes | No | 24h | Free |
+
+## Rooting Considerations
+
+Rooted Android devices offer more control but introduce security risks. For advanced users, rooting enables:
+
+```bash
+# System-level DNS override (rooted only)
+su
+setprop net.dns1 dns.adguard-dns.com
+
+# Force DNS through iptables
+iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to dns.adguard-dns.com:53
+iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to dns.adguard-dns.com:53
+```
+
+However, rooting invalidates most security patches. For production devices, system-wide Private DNS without rooting is the safer choice.
+
+## Integration with VPN Services
+
+When using both Private DNS and VPN simultaneously, ensure they don't conflict:
+
+```bash
+# Private DNS configuration via adb (unrooted)
+adb shell settings put global private_dns_mode hostname
+adb shell settings put global private_dns_specifier dns.adguard-dns.com
+
+# Verify VPN doesn't override
+adb shell settings list global | grep private_dns
+```
+
+If your VPN provides its own DNS servers, they should match your Private DNS choice. Misconfiguration causes leaks where DNS queries bypass both protections.
+
+## Mobile Carrier DNS Interception
+
+Some carriers intercept port 53 traffic regardless of settings. Test for this:
+
+```bash
+# From your Android device
+nslookup example.com 8.8.8.8  # Should fail if carrier intercepts
+dig @dns.adguard-dns.com example.com  # Should work through DoT
+```
+
+If carrier interception detected, use only DoT providers (all listed above support it). DoT uses port 853 and encrypts DNS in TLS, preventing carrier manipulation.
+
+## Performance Optimization
+
+DNS resolution speed impacts browser performance. Monitor latency:
+
+```bash
+#!/bin/bash
+# Test DNS resolution time for each provider
+
+providers=(
+  "dns.adguard-dns.com"
+  "dns.quad9.net"
+  "dns.controld.com"
+)
+
+for provider in "${providers[@]}"; do
+  echo "Testing $provider..."
+  time nslookup -timeout=1 example.com $provider
+done
+```
+
+If you notice slowness:
+- Try different providers (geographic proximity helps)
+- Ensure port 853 isn't being rate-limited by your carrier
+- Enable caching with a local resolver like systemd-resolved
+
+## DNS Monitoring and Logging
+
+For privacy audits, capture your actual DNS traffic:
+
+```bash
+# Monitor DNS queries (requires root or system shell)
+adb shell tcpdump -i any -n 'port 53 or port 853' -w /sdcard/dns.pcap
+
+# Analyze with Wireshark
+wireshark dns.pcap
+
+# Count queries by domain
+tshark -r dns.pcap -T fields -e dns.qry.name | sort | uniq -c | sort -rn
+```
+
+This reveals which apps are making DNS requests and to which servers. Many apps bypass system DNS entirely—these queries are invisible to Private DNS settings.
+
 ## Related Articles
 
 - [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)

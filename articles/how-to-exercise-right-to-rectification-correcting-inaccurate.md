@@ -184,6 +184,130 @@ Keep these strategies in mind when exercising your rectification rights:
 
 Exercising your right to rectification requires persistence and precision. The legal framework exists to enable you—understanding how to use it effectively transforms abstract rights into practical data control.
 
+## Multi-Jurisdiction Rectification Strategies
+
+If a company operates globally, understand which privacy laws apply:
+
+| Jurisdiction | Law | Key Rights | Enforcement |
+|--------------|-----|-----------|-------------|
+| **EU/EEA** | GDPR | Right to rectification | National DPA |
+| **UK** | UK GDPR | Right to rectification | ICO |
+| **USA** | State laws (CCPA, CPA) | Correction rights | State AG, private right |
+| **Canada** | PIPEDA | Correction rights | Privacy Commissioner |
+| **Australia** | Privacy Act | Correction of personal info | OAIC |
+
+For companies operating in multiple jurisdictions, file requests under the strongest applicable law. A GDPR request triggers compliance obligations even for US companies serving EU customers.
+
+## Coordinated Mass Rectification
+
+If you discover systematic inaccuracies affecting multiple people (e.g., a service's price scraping is recording wrong address formats), coordinate rectification:
+
+```python
+#!/usr/bin/env python3
+"""
+Template for coordinating mass rectification campaigns.
+"""
+
+companies_to_contact = [
+    {
+        'name': 'Acme Data Broker',
+        'privacy_email': 'privacy@acme.com',
+        'inaccuracies': [
+            ('Address', '123 Main St', '456 Oak Ave'),
+            ('Phone', '555-1234', '555-5678'),
+        ]
+    }
+]
+
+# Generate individual request templates
+for company in companies_to_contact:
+    print(f"Subject: GDPR Article 16 Rectification Request - {company['name']}")
+    print(f"To: {company['privacy_email']}")
+    print("\nInaccurate data:")
+    for field, wrong, correct in company['inaccuracies']:
+        print(f"  {field}: {wrong} → {correct}")
+```
+
+Public rectification campaigns increase pressure on companies to respond. Media attention accelerates compliance.
+
+## Building Legal Evidence Files
+
+For regulatory complaints, maintain detailed documentation:
+
+```bash
+#!/bin/bash
+# Create evidence package for DPA complaint
+
+EVIDENCE_DIR="rectification_evidence"
+mkdir -p "$EVIDENCE_DIR"
+
+# 1. Original data export (SAR response)
+cp ~/data_export_from_company.json "$EVIDENCE_DIR/"
+
+# 2. Screenshots of inaccuracies
+cp ~/screenshots/*.png "$EVIDENCE_DIR/"
+
+# 3. Official identity documents proving correct data
+cp ~/passport_scan.pdf "$EVIDENCE_DIR/"
+cp ~/utility_bill.pdf "$EVIDENCE_DIR/"
+
+# 4. Your rectification request (with proof of delivery)
+cp ~/rectification_request_sent.eml "$EVIDENCE_DIR/"
+cp ~/delivery_confirmation.txt "$EVIDENCE_DIR/"
+
+# 5. Company's response (or lack thereof)
+cp ~/company_response.pdf "$EVIDENCE_DIR/"
+
+# 6. Timeline document
+cat > "$EVIDENCE_DIR/timeline.txt" << EOF
+2026-03-01: Sent GDPR Article 15 SAR request
+2026-03-15: Received data export
+2026-03-16: Identified inaccuracy in stored address
+2026-03-20: Sent GDPR Article 16 rectification request
+2026-04-20: No response received (30 days elapsed)
+2026-04-21: Filed complaint with DPA
+EOF
+
+# 7. Compress for submission
+tar -czf rectification_evidence.tar.gz "$EVIDENCE_DIR"
+```
+
+Data Protection Authorities expect this evidence structure. Organized, dated documentation increases your case credibility.
+
+## Technical Verification After Correction
+
+Confirm the company actually made changes:
+
+```python
+#!/usr/bin/env python3
+import json
+from datetime import datetime
+
+# After company confirms correction, request new SAR
+# Compare old vs new data exports
+
+def verify_correction(old_export, new_export, field_name):
+    """Compare field values between two data exports."""
+    old_value = old_export.get(field_name)
+    new_value = new_export.get(field_name)
+
+    if old_value == new_value:
+        return "NOT CORRECTED"
+    elif new_value == "EXPECTED_VALUE":
+        return "CORRECTED PROPERLY"
+    else:
+        return f"CHANGED TO UNEXPECTED VALUE: {new_value}"
+
+# Load exports
+with open('export_before.json') as f:
+    before = json.load(f)
+with open('export_after.json') as f:
+    after = json.load(f)
+
+# Verify corrections
+print(verify_correction(before, after, 'address'))
+print(verify_correction(before, after, 'phone'))
+```
 
 ## Related Articles
 

@@ -185,6 +185,181 @@ GitHub Insights provides built-in analytics, or integrate with tools like DevMet
 The key is continuous refinement—what works today may need adjustment as team composition and project needs evolve. Measure outcomes and adapt practices to fit the team's specific context.
 
 
+## Advanced PR Metrics and Analytics
+
+GitHub Actions can automatically collect metrics about your PR process:
+
+```yaml
+# .github/workflows/pr-metrics.yml
+name: PR Metrics Collection
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  collect-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect PR metrics
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const createdAt = new Date(pr.created_at);
+            const now = new Date();
+            const cycleHours = (now - createdAt) / (1000 * 60 * 60);
+
+            console.log(`PR #${pr.number}`);
+            console.log(`Lines changed: ${pr.additions + pr.deletions}`);
+            console.log(`Reviews: ${pr.review_comments}`);
+            console.log(`Cycle time: ${cycleHours.toFixed(1)} hours`);
+```
+
+Export metrics to a time-series database or spreadsheet to identify trends:
+
+```bash
+# Extract PR cycle times to CSV
+gh pr list --state closed --limit 100 --json number,createdAt,closedAt,reviews \
+  --template '{{range .}}{{.number}},{{.reviews}},{{.closedAt}}\n{{end}}'
+```
+
+## Handling Sensitive Code in PRs
+
+Distributed teams often work with credentials, API keys, or security-sensitive code. Establish patterns to prevent accidental exposure:
+
+### Secrets Detection
+
+```yaml
+# .github/workflows/secrets-check.yml
+name: Secrets Detection
+
+on: pull_request
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: TruffleHog secrets scan
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.pull_request.base.sha }}
+          head: HEAD
+          extra_args: --debug --only-verified
+```
+
+### Code Review Checklist for Security
+
+Add security-focused code review items to PRs touching sensitive code:
+
+```markdown
+## Security Checklist
+
+- [ ] No credentials, API keys, or tokens in code
+- [ ] All external inputs validated and sanitized
+- [ ] Error messages don't leak sensitive information
+- [ ] Cryptographic operations reviewed (if applicable)
+- [ ] Database queries protected against injection
+- [ ] No hardcoded secrets in configuration
+```
+
+## Remote Team Communication Patterns
+
+Asynchronous review across time zones requires deliberate communication patterns:
+
+### Context-Rich PR Descriptions
+
+Include video walkthroughs for complex changes:
+
+```markdown
+## Overview
+This PR refactors the authentication system from token-based to OAuth2.
+
+## Video Walkthrough
+[Watch 5-minute explanation](https://loom.com/share/...)
+
+## Key Changes
+- Migrated from custom JWT implementation to OAuth2
+- Added support for third-party provider login
+- Updated session management for distributed systems
+
+## Testing
+- Unit tests: 45 new tests added
+- Integration tests: Tested with staging environment
+- Manual testing: Verified login flows on iOS and desktop
+```
+
+### Decision Documentation
+
+Document contentious discussions directly in the PR:
+
+```markdown
+## Design Decision: Why OAuth2 over JWT
+
+**Question raised**: Why not continue with JWT tokens?
+
+**Reasoning**:
+- OAuth2 provides better token lifecycle management
+- Enables single sign-on with third parties
+- Reduces our burden maintaining token security
+- Industry standard for distributed systems
+
+**Alternatives considered**:
+- SAML 2.0: Overkill for our use case
+- OpenID Connect: Built on OAuth2, adds complexity
+
+**Decision**: OAuth2 is our standard for new auth systems.
+```
+
+## Performance Implications of Large PRs
+
+Small PRs aren't just about review efficiency—they impact system performance:
+
+```bash
+# Analyze PR complexity vs. review time
+gh pr list --state closed --limit 50 \
+  --json "number,additions,deletions,reviews" \
+  | jq '.[] | "\(.additions + .deletions) lines, \(.reviews) reviews, PR #\(.number)"'
+```
+
+Track the correlation between PR size and review quality. Some teams find that PRs over 300 lines generate fewer useful comments per line reviewed. Others find that very small PRs (under 50 lines) sometimes miss important context.
+
+## Automation Reduces Friction Points
+
+The most successful distributed teams automate everything that doesn't require human judgment:
+
+```yaml
+# .github/workflows/auto-merge.yml
+name: Auto-merge approved PRs
+
+on: pull_request_review
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    if: github.event.review.state == 'approved'
+    steps:
+      - name: Enable auto-merge
+        uses: actions/github-script@v7
+        with:
+          script: |
+            if (context.payload.pull_request.reviews.length >= 2) {
+              github.rest.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                merge_method: 'squash'
+              })
+            }
+```
+
+This eliminates the final approval-to-merge friction point, letting reviews complete the workflow automatically.
+
 ## Related Articles
 
 - [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
