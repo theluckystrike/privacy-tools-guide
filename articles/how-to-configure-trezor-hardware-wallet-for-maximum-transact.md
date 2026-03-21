@@ -171,6 +171,48 @@ def broadcast_with_delay(tx_hex, min_delay=5, max_delay=60):
 
 While this adds minor inconvenience, it prevents observers from correlating your incoming transactions with outgoing broadcasts.
 
+
+## Hardening Browser Privacy Settings
+
+Default browser settings leak data to trackers, advertisers, and DNS providers.
+
+```javascript
+// Firefox: recommended about:config settings
+// Paste each into address bar as about:config
+
+privacy.resistFingerprinting = true
+privacy.firstparty.isolate = true
+network.dns.disablePrefetch = true
+browser.send_pings = false
+geo.enabled = false
+media.navigator.enabled = false
+network.http.sendRefererHeader = 0
+```
+
+Apply these changes, then test at https://coveryourtracks.eff.org to measure your fingerprint uniqueness. The goal is to blend into a crowd of similar fingerprints, not to have a unique "hardened" print.
+
+## DNS-over-HTTPS Configuration
+
+Encrypting DNS queries prevents ISPs and network observers from logging every site you visit.
+
+```bash
+# Test current DNS provider
+dig +short txt whoami.ds.akahelp.net
+nslookup -type=TXT whoami.akamai.net
+
+# Set system-wide DoH on Linux (systemd-resolved):
+sudo nano /etc/systemd/resolved.conf
+# Add:
+# DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net
+# DNSOverTLS=yes
+sudo systemctl restart systemd-resolved
+
+# Verify:
+resolvectl status | grep "DNS over TLS"
+```
+
+Cloudflare (1.1.1.1) and Quad9 (9.9.9.9) both offer strong privacy policies and no-logging commitments. Quad9 adds malware blocking at the DNS layer.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

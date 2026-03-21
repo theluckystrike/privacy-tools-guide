@@ -156,6 +156,54 @@ Organizations frequently encounter obstacles during identity governance implemen
 
 **Solution**: Evaluate platforms with broad connector support or custom integration capabilities. Some solutions offer agent-based connectivity for systems without API access.
 
+
+## Command-Line Privacy Audit
+
+Auditing your system from the command line reveals data leaks that GUI tools miss.
+
+```bash
+# List processes making network connections:
+ss -tulpn | grep ESTABLISHED
+
+# Check which apps have internet access (macOS):
+lsof -i | grep -E "ESTABLISHED|LISTEN" | awk '{print $1}' | sort -u
+
+# Find files modified recently (potential data exfil indicators):
+find /home -mtime -1 -type f -ls 2>/dev/null | grep -v "\.cache"
+
+# Check DNS cache for visited domains (macOS):
+sudo dscacheutil -cachedump -entries Host
+
+# Monitor outbound connections in real time:
+sudo tcpdump -i any -n 'tcp and (dst port 80 or dst port 443)' |   awk '{print $5}' | cut -d. -f1-4 | sort -u
+```
+
+Run this audit monthly and investigate any unfamiliar IP destinations. Cross-reference with https://ipinfo.io to identify the owning organization.
+
+## Filesystem Encryption Verification
+
+Encrypting your disk protects data at rest, but misconfiguration can leave it exposed.
+
+```bash
+# Verify FileVault status (macOS):
+fdesetup status
+diskutil apfs list | grep -E "FileVault|Encrypted"
+
+# Verify LUKS encryption (Linux):
+cryptsetup status /dev/mapper/luks-*
+lsblk -o NAME,FSTYPE,MOUNTPOINT | grep crypt
+
+# Check encryption algorithm strength:
+cryptsetup luksDump /dev/sda2 | grep -E "Cipher|Key"
+# Prefer: aes-xts-plain64 with 512-bit key
+
+# Test that a USB drive is encrypted before storing sensitive data:
+lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT
+cryptsetup isLuks /dev/sdb && echo "Encrypted" || echo "NOT encrypted"
+```
+
+Full-disk encryption protects you from physical theft but not from a running system with an active session. Enable auto-lock after 5 minutes of inactivity.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

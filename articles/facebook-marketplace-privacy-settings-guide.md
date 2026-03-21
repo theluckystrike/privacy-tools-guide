@@ -150,6 +150,50 @@ When privacy violations occur, use Facebook's built-in reporting mechanisms:
 - Use Facebook's **Safety Center** for resources on digital safety
 - For serious threats, consider legal remedies and law enforcement contact
 
+
+## Setting Up Email Encryption with GPG
+
+End-to-end encryption ensures only the intended recipient can read your messages.
+
+```bash
+# Generate a GPG key pair:
+gpg --full-generate-key
+# Choose: RSA and RSA, 4096 bits, 2 years expiry
+
+# Export your public key to share with contacts:
+gpg --armor --export you@example.com > my_public_key.asc
+
+# Encrypt a message to a recipient:
+echo "Secret message" | gpg --armor --encrypt --recipient recipient@example.com
+
+# Decrypt a received message:
+gpg --decrypt received_message.asc
+
+# Sign and encrypt in one step:
+gpg --armor --sign --encrypt --recipient recipient@example.com message.txt
+```
+
+Publish your public key to keys.openpgp.org or attach it to your email signature. Key servers make it easy for contacts to verify your identity.
+
+## Email Aliasing for Privacy
+
+Email aliases let you give each service a unique address, making it easy to identify and block sources of spam.
+
+```bash
+# SimpleLogin CLI (self-hosted or SaaS):
+pip install simple-login
+sl alias create --note "Shopping sites"
+# Returns: randomstring@simplelogin.co
+
+# AnonAddy self-hosted setup (Docker):
+docker run -d   -e APP_KEY=$(openssl rand -base64 32)   -e DB_HOST=localhost   -p 8080:80   anonaddy/anonaddy:latest
+
+# Generate alias via API:
+curl -X POST https://app.anonaddy.com/api/v1/aliases   -H "Authorization: Bearer YOUR_API_KEY"   -H "Content-Type: application/json"   -d '{"domain":"anonaddy.me","description":"Newsletter signup"}'
+```
+
+Use a unique alias for every service signup. When an alias starts receiving spam, delete it immediately to cut off that leak without affecting your primary address.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
