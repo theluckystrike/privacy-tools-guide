@@ -20,6 +20,16 @@ tags: [privacy-tools-guide, privacy]
 
 Immigration activists and organizers face unique security challenges when working with undocumented community members. Beyond standard privacy practices, you must protect people whose safety depends on operational security. This guide provides technical implementation details for setting up a privacy-respecting infrastructure tailored to immigration advocacy work.
 
+## Threat Modeling Before You Configure Anything
+
+Before deploying any tool, map your threat model. Immigration work involves at least three distinct risk profiles that require different mitigations:
+
+- **Organizers and lawyers** — highest technical sophistication, face legal process risks, need deniability for case files
+- **Community outreach workers** — moderate sophistication, face physical surveillance risks, need simple tools that work under stress
+- **Community members** — minimal technical background, face the most severe personal consequences, tools must require no accounts or identifying information
+
+A tool that works for lawyers may be unusable for community members. A communication channel safe for outreach workers may be inadequate for attorneys handling privileged case files. Document these tiers and select tools accordingly rather than applying a single solution across all roles.
+
 ## Secure Communication Channels
 
 End-to-end encrypted messaging forms the foundation of your communication stack. Signal remains the gold standard for secure mobile communication, but developers should consider additional layers for sensitive operations.
@@ -48,6 +58,12 @@ def send_signal_message(recipient, message):
     return result.returncode == 0
 ```
 
+### Registering Signal Without Linking to a Real Number
+
+Community members who cannot safely register Signal with their personal phone number can use a VoIP number from a provider that accepts cash or cryptocurrency payment. MySudo (US-based) offers disposable phone numbers that can receive SMS verification codes. After registration, the VoIP number can be abandoned — Signal accounts persist independently of the registration number once set up.
+
+Alternatively, **Session** requires no phone number at all. It uses the Signal protocol over an onion routing network. The tradeoff is that Session's network is smaller and message delivery can be slower. For community members who need a secure channel but cannot risk linking a phone number, Session is the safer choice. See the [self-hosted Matrix Synapse server guide](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/) for an organization-controlled messaging alternative.
+
 ## Encrypted Storage and Document Management
 
 Undocumented community members often need to store sensitive documents securely. Implement a zero-knowledge encryption system using Cryptomator or similar tools that encrypt files before they touch any cloud service.
@@ -67,6 +83,23 @@ Create a secure document handling workflow:
 2. Store using Veracrypt containers with strong passphrases
 3. Never sync sensitive files to cloud services without encryption
 4. Use secure deletion (shred) when disposing of documents
+
+### VeraCrypt for Community Member Document Vaults
+
+VeraCrypt hidden volumes are particularly valuable for immigration casework. A hidden volume stores sensitive documents behind one passphrase while a decoy volume stores plausible-but-non-sensitive content behind a different passphrase. If a device is seized and an activist is pressured to unlock it, they can provide the decoy passphrase. The existence of the hidden volume is cryptographically undetectable.
+
+Create a hidden volume from the VeraCrypt GUI or CLI:
+
+```bash
+veracrypt --create /path/to/container.vc \
+  --size=2G \
+  --encryption=AES-Twofish \
+  --hash=SHA-512 \
+  --filesystem=FAT \
+  --volume-type=hidden
+```
+
+The wizard prompts for both the outer (decoy) and hidden volume passphrases separately. Keep the outer volume populated with genuine-looking but non-sensitive content — empty outer volumes are a tell.
 
 ## Network Security and VPN Infrastructure
 
@@ -89,6 +122,8 @@ PersistentKeepalive = 25
 ```
 
 Configure client devices to route all traffic through the VPN by default. This prevents metadata leakage about visited websites and protects against local network interception.
+
+Host your WireGuard server in a jurisdiction with strong privacy laws (Switzerland, Iceland, or the Netherlands are common choices) and pay for the VPS with cryptocurrency or a privacy-respecting payment method. Avoid US-based hosting providers for an organization actively working against federal enforcement actions — servers hosted in the US are subject to National Security Letters, which prohibit the provider from notifying you that access has been requested.
 
 ## Device Hardening for Field Work
 
@@ -115,6 +150,8 @@ pmset -a sleep 0
 pmset -a displaysleep 0
 ```
 
+For Android devices used in field work, **GrapheneOS** is the strongest option. It removes Google Play Services entirely, implements hardened memory allocation, and supports a secondary "duress PIN" that wipes the device or opens a clean profile when entered. Purchase Android hardware with cash when possible and activate it over a VPN, never over a SIM that identifies you.
+
 ## Metadata Protection
 
 Metadata can reveal sensitive information even when content is encrypted. Address these vectors:
@@ -132,6 +169,13 @@ def strip_metadata(image_path):
     image_without_exif.save(image_path)
 ```
 
+For batch processing, ExifTool is faster and handles more formats:
+
+```bash
+# Strip all metadata recursively from a directory
+exiftool -all= -r /path/to/event-photos/
+```
+
 **Email Headers:** Use email services that strip metadata by default, or configure your own mail server to remove identifying headers:
 
 ```nginx
@@ -142,6 +186,8 @@ smtp_header_checks = regexp:/etc/postfix/smtp_header_checks
 /^X-Originating-IP:/    IGNORE
 /^User-Agent:/    IGNORE
 ```
+
+ProtonMail strips originating IP addresses from outbound emails and is end-to-end encrypted between ProtonMail accounts. For outbound email to non-ProtonMail recipients, the message content is encrypted in transit via TLS but not end-to-end — use PGP attachments for truly sensitive case information sent to external contacts.
 
 ## Operational Security Practices
 
@@ -163,6 +209,10 @@ Technical tools work only within a framework of consistent operational security:
 - Train all team members on secure device handling
 - Establish clean/dirty device protocols
 
+### Legal Hold Considerations
+
+If your organization is engaged in litigation or anticipates legal proceedings, coordinate with legal counsel before implementing aggressive data deletion policies. Deleting records subject to a legal hold can constitute obstruction. The correct approach is to work with your attorney to identify which categories of records fall under hold requirements, then apply aggressive deletion only to communications not covered by the hold. Compartmentalization between case files and operational communications helps keep these categories clean.
+
 ## Secure Meeting Practices
 
 When meeting undocumented community members, create physical security:
@@ -172,9 +222,10 @@ When meeting undocumented community members, create physical security:
 - Use silent meeting modes with pre-arranged hand signals
 - Establish escape routes and meeting points
 
+Faraday bags prevent passive IMSI catcher surveillance (stingrays) that can identify all phones in an area even without active interception. A basic Faraday bag costs under $20 and is effective when the phone is fully powered down or in airplane mode with the bag sealed. Test your Faraday bag by placing a phone inside, sealing it, and attempting to call — no ring confirms the bag is working.
+
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
