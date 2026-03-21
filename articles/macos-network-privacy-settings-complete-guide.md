@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /macos-network-privacy-settings-complete-guide/
 categories: [guides]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]

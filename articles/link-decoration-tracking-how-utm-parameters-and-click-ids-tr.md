@@ -8,7 +8,7 @@ permalink: /link-decoration-tracking-how-utm-parameters-and-click-ids-tr/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
