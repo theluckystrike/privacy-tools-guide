@@ -24,6 +24,8 @@ NixOS uses the Nix package manager as its foundation. Rather than installing pac
 
 When you modify this configuration and run `sudo nixos-rebuild switch`, NixOS generates a new system profile containing exactly the packages, services, and settings you specified. If something breaks, you boot into a previous generation from the GRUB menu and restore your system to a known-good state. This atomic upgrade mechanism eliminates the fear of breaking your system during updates—a significant advantage when maintaining security-critical configurations.
 
+Traditional Linux distributions accumulate state over time. A server running Ubuntu or Debian for two years likely has orphaned packages, modified configuration files that diverge from their defaults, and services started at some point and forgotten. NixOS eliminates this problem entirely. Every generation is fully specified and reproducible. Moving to a new machine means copying your `configuration.nix` and running a single command—the resulting system is bit-for-bit identical.
+
 ## Building a Privacy-Hardened Configuration
 
 A privacy-focused NixOS configuration starts with minimizing the attack surface. The following example demonstrates a hardened configuration that disables unnecessary services, restricts network exposure, and enforces secure defaults:
@@ -87,6 +89,35 @@ A privacy-focused NixOS configuration starts with minimizing the attack surface.
 
 This configuration disables the X server (replacing it with Wayland where possible), enables a restrictive firewall, hardens kernel parameters, and removes services that commonly introduce attack vectors. The package list remains intentionally small—every installed program represents potential exposure.
 
+## Kernel Hardening with NixOS
+
+One significant advantage of NixOS for security-focused users is the ability to enforce kernel hardening settings declaratively. Beyond the basic `boot.kernelParams`, NixOS provides the `security.lockKernelModules` option, which prevents runtime module loading after boot—eliminating a major privilege escalation vector.
+
+```nix
+{
+  # Lock kernel modules after boot to prevent runtime loading
+  security.lockKernelModules = true;
+
+  # Enable kernel auditing
+  security.audit.enable = true;
+  security.auditd.enable = true;
+
+  # Use a hardened kernel variant
+  boot.kernelPackages = pkgs.linuxPackages_hardened;
+
+  # Additional sysctl hardening
+  boot.kernel.sysctl = {
+    "kernel.yama.ptrace_scope" = 2;
+    "kernel.unprivileged_userns_clone" = 0;
+    "net.core.bpf_jit_enable" = false;
+    "kernel.kexec_load_disabled" = 1;
+    "vm.swappiness" = 1;
+  };
+}
+```
+
+The `linuxPackages_hardened` variant applies the hardened-patches project, which enables KASLR improvements, stack protector, and restricts `/proc` access. These settings would require manual configuration on a traditional distribution and could easily be lost during a system upgrade. On NixOS, they are permanent features of your declared configuration.
+
 ## Reproducible Development Environments
 
 Beyond system configuration, Nix excels at creating reproducible development environments. The following `shell.nix` file ensures every developer on your team uses identical tool versions:
@@ -121,6 +152,21 @@ pkgs.mkShell {
 
 Running `nix-shell` activates this environment with all specified tools. Because Nix pins exact versions, moving this file to another machine produces identical results. You can commit this file to version control and ensure every team member works with the same configuration—eliminating the "it works on my machine" problem while maintaining consistency across systems.
 
+For more precise pinning, use `nix flakes` which lock exact dependency hashes:
+
+```bash
+# Initialize a flake-based project
+nix flake init
+
+# Lock all dependencies to specific commits
+nix flake lock
+
+# Enter reproducible dev shell
+nix develop
+```
+
+Flakes record the exact git commit of nixpkgs used, so rebuilding the same flake six months later produces identical results—critical for audit trails in security-sensitive projects.
+
 ## Secrets Management with NixOps
 
 For managing secrets across multiple machines, NixOps provides declarative infrastructure deployment. Instead of storing secrets in configuration files (which would expose them in version control), you use age encryption with SOPS:
@@ -141,6 +187,25 @@ in
 
 This approach keeps encrypted secrets in your repository while allowing decryption only on machines with the appropriate key. The configuration remains reproducible—applying the same configuration with the same secrets produces identical systems.
 
+A more modern approach uses the `sops-nix` module directly:
+
+```nix
+{
+  imports = [ inputs.sops-nix.nixosModules.sops ];
+
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+
+  sops.secrets."wireguard/private-key" = {
+    owner = "root";
+    group = "systemd-network";
+    mode = "0440";
+  };
+}
+```
+
+The `sops-nix` module decrypts secrets at activation time and stores them in a tmpfs-backed path that never touches disk in plaintext—a meaningful improvement over secrets stored in configuration files.
+
 ## Atomic Updates and Rollback Strategy
 
 The real advantage for security-conscious users emerges during updates. When you run `sudo nixos-rebuild switch`, NixOS builds the new system configuration in isolation, then atomically switches to it. If the new configuration fails to boot, the previous generation remains available.
@@ -159,6 +224,16 @@ sudo nixos-rebuild switch --rollback
 ```
 
 For privacy-critical systems, this rollback capability means you can apply security updates with confidence. If an update introduces unexpected behavior or a vulnerability, restoring a known-good state takes seconds rather than hours of troubleshooting.
+
+You can also test changes in a VM before applying them to your real system:
+
+```bash
+# Build and run a VM from your current configuration
+sudo nixos-rebuild build-vm
+./result/bin/run-nixos-vm
+```
+
+This workflow lets you verify that firewall rules, kernel parameters, and service configurations behave as expected before committing to the change. No other Linux distribution provides this level of pre-deployment verification for production system configuration.
 
 ## Building Your Configuration
 
@@ -183,6 +258,35 @@ nix-build '<nixpkgs/nixos>' -A config.system.build.vm -o vm-test
 ```
 
 This approach lets you verify configuration changes before applying them to your actual system—a valuable practice when experimenting with security settings.
+
+## Maintaining Your System Over Time
+
+A NixOS system does not automatically accumulate cruft, but generations do consume disk space. Periodically clean old generations to reclaim space:
+
+```bash
+# Delete generations older than 30 days
+sudo nix-collect-garbage --delete-older-than 30d
+
+# Remove all old generations and garbage-collect
+sudo nixos-rebuild switch && sudo nix-collect-garbage -d
+```
+
+For automated maintenance, add a systemd timer to your configuration:
+
+```nix
+{
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
+  # Keep store optimized with hard links
+  nix.settings.auto-optimise-store = true;
+}
+```
+
+The combination of declarative configuration, atomic updates, and periodic garbage collection gives you a system that stays consistent and clean over years of use—a meaningful privacy and security advantage over distributions that accumulate persistent state.
 
 
 ## Related Articles
