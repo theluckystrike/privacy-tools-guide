@@ -7,9 +7,9 @@ last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/
 categories: [guides]
-tags: [privacy, data-brokers, personal-information]
+tags: [privacy-tools-guide, privacy, data-brokers, personal-information]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

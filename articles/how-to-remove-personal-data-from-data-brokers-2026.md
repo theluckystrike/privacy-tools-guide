@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 categories: [security, guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /how-to-remove-personal-data-from-data-brokers-2026/
