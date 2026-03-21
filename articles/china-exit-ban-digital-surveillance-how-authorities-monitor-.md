@@ -352,7 +352,7 @@ After exiting China, assume devices may be compromised:
 
 The Chinese surveillance system demonstrates how metadata aggregation creates behavioral profiles without requiring access to encrypted content. For developers, this illustrates a fundamental principle: encryption protects content, but metadata often reveals more than intended.
 
-Modern privacy architecture increasingly focuses on metadata protection—not just encrypting what's sent, but hiding who communicates with whom, when, and how often. Techniques like mixnets (e.g., Nym), private information retrieval, and zero-knowledge proofs represent the cutting edge of this defense.
+Modern privacy architecture increasingly focuses on metadata protection—not just encrypting what's sent, but hiding who communicates with whom, when, and how often. Techniques like mixnets (e.g., Nym), private information retrieval, and zero-knowledge proofs represent the modern of this defense.
 
 Understanding how systems like China's exit ban monitoring work isn't just academic—it's essential for building applications that respect user privacy in an era of ubiquitous surveillance infrastructure. Whether you're a developer building privacy tools or a user navigating restricted regions, awareness of these mechanisms informs better decision-making.
 

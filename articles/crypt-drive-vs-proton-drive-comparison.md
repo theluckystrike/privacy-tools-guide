@@ -139,7 +139,7 @@ Choose **CryptDrive** if you:
 
 Choose **ProtonDrive** if you:
 - Already use ProtonMail or ProtonVPN
-- Want a unified privacy suite under one account
+- Want an unified privacy suite under one account
 - Prioritize Switzerland's legal jurisdiction
 - Need integration with encrypted email
 

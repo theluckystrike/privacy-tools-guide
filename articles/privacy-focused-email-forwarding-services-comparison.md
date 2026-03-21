@@ -168,7 +168,7 @@ dig yourdomain.com MX
 
 ## Firefox Relay: Simple Integration with Mozilla Products
 
-Firefox Relay is Mozilla's email forwarding service. If you use Firefox, accounts.firefox.com, and Mozilla services, Relay integrates seamlessly.
+Firefox Relay is Mozilla's email forwarding service. If you use Firefox, accounts.firefox.com, and Mozilla services, Relay integrates .
 
 **Pricing:**
 - Free tier: 5 aliases
@@ -459,20 +459,7 @@ old-alias@oldservice.com → new-alias@newservice.com
 Most people keep both services running during transition.
 
 
-## Summary
-
-Email forwarding is essential for privacy. Your real email is too valuable to expose to dozens of services. Each of these five services solves the problem differently:
-
-- **SimpleLogin:** Power users with analytics
-- **Addy.io:** Open-source enthusiasts
-- **Firefox Relay:** Mozilla users seeking simplicity
-- **DuckDuckGo:** Minimal-friction free tier
-- **ForwardEmail:** Self-hosting priority
-
-Start with DuckDuckGo Email (free, unlimited) for casual use. Upgrade to SimpleLogin ($40/year) if you want analytics and reply capability. Self-host ForwardEmail if you want complete control.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

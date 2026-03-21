@@ -191,7 +191,7 @@ Titan Security Key is purpose-built for this scenario. Google designed Titan spe
 
 **Scenario 3: Traveling Developer with Mixed Devices**
 
-YubiKey 5Ci with Lightning support provides flexibility. Carry one key that works with your iPhone, Mac, and USB-A equipped computers abroad. The multiple connector options and OATH support enable offline authentication regardless of device type.
+YubiKey 5Ci with Lightning support provides flexibility. Carry one key that works with your iPhone, Mac, and USB-an equipped computers abroad. The multiple connector options and OATH support enable offline authentication regardless of device type.
 
 ## Which Key Should You Choose?
 

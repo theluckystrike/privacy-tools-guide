@@ -294,7 +294,7 @@ def detect_cname_cloaking_comprehensive(domain, timeout=5):
     return results
 ```
 
-This comprehensive check combines DNS, SSL certificate, and pattern matching to identify cloaked trackers with high accuracy.
+This check combines DNS, SSL certificate, and pattern matching to identify cloaked trackers with high accuracy.
 
 ---
 

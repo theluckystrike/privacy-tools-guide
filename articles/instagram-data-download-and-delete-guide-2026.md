@@ -376,7 +376,5 @@ The improvement is significant: stopping active data collection is the primary b
 - [GDPR Right to Erasure: How to Force Companies to Delete.](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
 - [Children's Online Privacy Protection Act: What Parents Can Demand from Companies](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

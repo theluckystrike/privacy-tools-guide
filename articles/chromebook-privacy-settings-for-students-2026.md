@@ -37,7 +37,7 @@ Start by hardening Chrome browser settings. Open `chrome://settings` and navigat
 Chrome's sync feature uploads browsing data to Google's servers. While convenient for cross-device access, it creates a data profile. To minimize this:
 
 1. Navigate to **Settings → You and Google → Sync and Google services**
-2. Disable "Make searches and browsing better" 
+2. Disable "Make searches and browsing better"
 3. Review sync options—consider disabling sync entirely or using sync encryption with a custom passphrase
 
 For students requiring sync across devices, enable end-to-end encryption:
@@ -200,8 +200,6 @@ Review these settings periodically:
 - [How to Minimize Digital Footprint Guide 2026: A.](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
 - [WhatsApp Privacy Settings Best Configuration 2026](/privacy-tools-guide/whatsapp-privacy-settings-best-configuration-2026/)
 - [macOS Privacy Settings for Remote Workers 2026: Complete.](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

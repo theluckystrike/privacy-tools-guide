@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Portable USB Setup Guide"
-description: "A guide for developers and power users on running Tor Browser from a USB drive for enhanced privacy. Includes verification."
+description: "A guide for developers and power users on running Tor Browser from an USB drive for enhanced privacy. Includes verification."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-portable-usb-setup-guide/
@@ -246,8 +246,6 @@ For extremely sensitive operations, bootable distributions like Tails provide st
 - [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
 - [Anonymous Bitcoin Wallet Setup Using Tor and Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

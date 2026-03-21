@@ -166,7 +166,7 @@ Digital business assets have legal implications. Consider:
 
 **LastPass Family** ($17.99/month): Has designated emergency contacts who can access shared vaults. Note: LastPass has had security issues historically—current version is improved but verify current status before using.
 
-## Comprehensive Digital Asset Inventory Template
+## Digital Asset Inventory Template
 
 Create a detailed spreadsheet documenting all digital assets:
 

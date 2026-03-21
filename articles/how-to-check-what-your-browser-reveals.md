@@ -258,7 +258,5 @@ Disable WebRTC in browser settings or use an extension that blocks the leak.
 - [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [Tor Browser Fingerprinting Protection: How It Makes.](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

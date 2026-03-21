@@ -91,7 +91,7 @@ Linux users often have the most diverse font installations due to the distributi
 
 ## Testing Your Font Fingerprint
 
-To verify Tor Browser's font fingerprinting protection, use the Cover Your Tracks (formerly Panopticlick) test from the Electronic Frontier Foundation. This tool analyzes your browser's fingerprint and provides a uniqueness score. A well-configured Tor Browser should show high entropy reduction compared to unprotected browsers.
+To verify Tor Browser's font fingerprinting protection, use the Cover Your Tracks (formerly Panopticlick) test from the Electronic Frontier Foundation. This tool analyzes your browser's fingerprint and provides an uniqueness score. A well-configured Tor Browser should show high entropy reduction compared to unprotected browsers.
 
 Another useful resource is the AmIUnique project, which tracks browser fingerprint distributions across users. Compare your results before and after adjusting Tor Browser's font settings to measure the effectiveness of your configuration changes.
 

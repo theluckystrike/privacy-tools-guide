@@ -220,10 +220,6 @@ open "/System/Library/Frameworks/AddressBook.framework/Resources/AddressBookUI.a
 # Reset all fields and photo to default state
 ```
 
-## Privacy Implications Summary
-
-Contact Posters represent a subtle but significant privacy vector within iOS. Unlike app permissions that trigger explicit prompts, poster data shares passively during every call you make or receive. Taking time to configure these settings according to your privacy preferences ensures your identity information remains visible only to those you intend.
-
 ### Privacy Audit Checklist
 
 Perform quarterly reviews using this checklist:

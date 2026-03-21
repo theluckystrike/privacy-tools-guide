@@ -323,7 +323,5 @@ Security-aware staff become force multipliers, helping educate colleagues and sp
 - [Privacy Setup for Immigration Activist: Protecting.](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 - [Privacy Tools for Social Worker Handling Sensitive Case.](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

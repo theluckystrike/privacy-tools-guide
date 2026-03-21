@@ -269,18 +269,6 @@ done
 echo "Checking for photo tagging patterns that indicate recognition"
 ```
 
-## Conclusion: Realistic Security Posture
-
-Facial recognition in public spaces presents a genuine threat in authoritarian contexts, but protection isn't binary. Practical defenses involve:
-
-1. Understanding your specific threat model (mass vs. targeted surveillance)
-2. Applying proportional countermeasures (physical obfuscation for mass surveillance)
-3. Strengthening digital security alongside physical measures
-4. Supporting policy and advocacy work to limit surveillance expansion
-5. Using privacy-focused tools for sensitive communications
-
-The goal isn't absolute invisibility—that's impossible in modern society—but rather making targeted surveillance against you costlier and slower than surveillance against your neighbors.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

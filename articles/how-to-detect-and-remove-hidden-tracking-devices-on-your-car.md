@@ -169,7 +169,7 @@ Hardwired trackers typically tap into:
 - Existing antenna systems for signal transmission
 - The vehicle's CAN bus for data integration
 
-When properly installed, a hardwired tracker integrates seamlessly with your vehicle's electrical systems. These devices may include their own backup batteries ensuring tracking continues even if the vehicle battery is disconnected.
+When properly installed, a hardwired tracker integrates with your vehicle's electrical systems. These devices may include their own backup batteries ensuring tracking continues even if the vehicle battery is disconnected.
 
 ```bash
 # Example: Locating hardwired connections
@@ -292,7 +292,7 @@ Reduce vulnerability to future tracking attempts:
 - Look for new wires or unfamiliar devices
 
 **Professional sweep services**:
-- Annual comprehensive debugging by professionals
+- Annual debugging by professionals
 - Available in most major cities ($500-2,000 per sweep)
 - Provides detailed report and recommendations
 

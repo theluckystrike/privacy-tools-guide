@@ -203,7 +203,7 @@ Twitter's transparency reports provide concrete data:
 
 These numbers show the scope of content removal and which categories matter most to Turkish authorities.
 
-Facebook similarly discloses thousands of removal requests annually. YouTube faces periodic complete blocking, suggesting resistance to comprehensive removal but eventual compliance through blocking.
+Facebook similarly discloses thousands of removal requests annually. YouTube faces periodic complete blocking, suggesting resistance to removal but eventual compliance through blocking.
 
 ## Monitoring Your Own Internet Access
 
@@ -275,7 +275,7 @@ architecture:
 Turkish content removal mechanisms illustrate principles that apply globally:
 
 1. **Jurisdiction authority exceeds technical ability**: Turkish government can demand content removal, but compliance ultimately depends on platform choice
-2. **Data localization enables surveillance**: Requiring data storage in-country facilitates government access
+2. **Data localization enables surveillance**: Requiring data storage in-country helps government access
 3. **Social media creates unprecedented surveillance infrastructure**: Platforms collecting behavioral data make censorship more effective
 4. **Transparency is critical**: When removal orders are public, they become subject to public and international scrutiny
 

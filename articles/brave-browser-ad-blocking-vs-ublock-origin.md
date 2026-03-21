@@ -418,7 +418,7 @@ Neither solution is "set and forget"—both degrade over time:
 ✓ Test newly added filter lists for false positives
 ```
 
-Maintenance is minimal for Brave (essentially none), and more involved for uBlock Origin if you maintain custom filters.
+Maintenance is minimal for Brave ( none), and more involved for uBlock Origin if you maintain custom filters.
 
 ## Related Reading
 
@@ -427,8 +427,6 @@ Maintenance is minimal for Brave (essentially none), and more involved for uBloc
 - [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
 - [Privacy Badger vs uBlock Origin: Which Blocks More.](/privacy-tools-guide/privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/)
 - [Brave Browser vs Edge Privacy Comparison 2026: A.](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

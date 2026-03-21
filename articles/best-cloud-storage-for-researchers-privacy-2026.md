@@ -241,7 +241,7 @@ The technical challenge arises when researchers need both encryption transparenc
 
 ## Disaster Recovery and Business Continuity
 
-Research data loss affects not just current projects but historical records needed for reproducibility and validation. Implement comprehensive recovery:
+Research data loss affects not just current projects but historical records needed for reproducibility and validation. Implement recovery:
 
 ```yaml
 disaster_recovery_framework:

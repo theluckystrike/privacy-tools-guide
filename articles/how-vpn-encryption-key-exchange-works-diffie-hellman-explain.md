@@ -31,7 +31,7 @@ The protocol relies on the mathematical properties of modular exponentiation. He
 
 2. **Private keys**: Alice generates a private key `a`, and Bob generates a private key `b`. These keys remain secret and never leave each person's device.
 
-3. **Public values**: 
+3. **Public values**:
  - Alice computes `A = g^a mod p` and sends to Bob
  - Bob computes `B = g^b mod p` and sends to Alice
 
@@ -125,10 +125,10 @@ The security of DH depends on the size of the prime `p`. Current recommendations
 
 | DH Key Size | Security Level | Status |
 |-------------|----------------|--------|
-| 1024-bit    | Weak           | Deprecated |
-| 2048-bit    | Standard       | Acceptable |
-| 3072-bit    | Strong         | Recommended |
-| 4096-bit    | Very Strong    | For high-security needs |
+| 1024-bit | Weak | Deprecated |
+| 2048-bit | Standard | Acceptable |
+| 3072-bit | Strong | Recommended |
+| 4096-bit | Very Strong | For high-security needs |
 
 ### Forward Secrecy
 

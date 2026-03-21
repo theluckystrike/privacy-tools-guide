@@ -57,7 +57,7 @@ For maximum privacy, earn cryptocurrency through mining, freelance work paid in 
 
 ## VPN Providers Accepting Cryptocurrency
 
-Several VPN providers accept cryptocurrency directly without requiring email registration. Some allow account creation with just a username and payment.
+Several VPN providers accept cryptocurrency directly without requiring email registration. Some allow account creation with just an username and payment.
 
 | Provider | Cryptocurrency | No Email Required | Notes |
 |----------|---------------|-------------------|-------|

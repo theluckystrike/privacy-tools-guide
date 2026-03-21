@@ -174,7 +174,5 @@ Document your security setup but store that documentation separately from the de
 - [Privacy Setup for Immigration Activist: Protecting.](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 - [Signal Number Privacy Workaround Guide: Protecting Your.](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

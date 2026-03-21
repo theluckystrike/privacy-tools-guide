@@ -234,7 +234,5 @@ For developers building privacy-sensitive applications, Tor provides valuable pr
 - [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [Browser Storage Isolation Explained for Privacy: A.](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

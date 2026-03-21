@@ -266,22 +266,13 @@ This aggressive cleanup approach assumes that customs agents with forensic tools
 
 Border search laws vary dramatically:
 
-- **United States**: CBP can search devices without a warrant at borders, though some courts have limited this for comprehensive searches requiring reasonable suspicion
+- **United States**: CBP can search devices without a warrant at borders, though some courts have limited this for searches requiring reasonable suspicion
 - **European Union**: GDPR provides some protection against bulk data collection without suspicion
 - **Canada**: CBSA requires reasonable suspicion for device searches; citizenship provides some legal protection
 - **UK**: Borders Act allows device search, but data access requires consent or warrant
 - **Australia**: Border Force can search without warrant, but retention is limited
 
 Research the specific laws for your destination before traveling. Consult with legal counsel familiar with technology rights in your destination country.
-
-## Conclusion
-
-The GrapheneOS Travel Profile provides developers and power users with a practical tool for minimizing data exposure during border crossings. By maintaining strict separation between your primary identity and your travel persona, you reduce the information available to customs agents while maintaining plausible deniability.
-
-Configure your travel profile before your trip, follow the minimal data principles, develop a personal protocol for border crossings, and understand your legal rights in target jurisdictions. These steps significantly enhance your digital privacy without sacrificing the convenience of traveling with a smartphone.
-
-Remember: the goal isn't to hide illegal activity—it's to exercise your right to privacy and minimize the personal data you must surrender when crossing borders. Plan ahead, test your setup at home, and carry documentation explaining your security practices if challenged.
-
 
 ## Related Reading
 

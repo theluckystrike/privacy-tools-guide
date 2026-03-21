@@ -5,7 +5,7 @@ description: "A technical comparison of VPN protocol bandwidth overhead. Learn w
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /vpn-protocol-overhead-comparison-which-uses-least-bandwidth-2026/
-categories: 
+categories:
   - vpn
   - privacy
   - security

@@ -127,7 +127,7 @@ Prefer cellular connections over public Wi-Fi when possible. If your practice in
 
 ## Audit Readiness
 
-HIPAA compliance isn't a one-time configuration—it's ongoing. Document your device setup and maintain configuration records.
+HIPAA compliance isn't an one-time configuration—it's ongoing. Document your device setup and maintain configuration records.
 
 ### Logging and Monitoring
 

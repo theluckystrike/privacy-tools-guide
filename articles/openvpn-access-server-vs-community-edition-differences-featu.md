@@ -200,7 +200,5 @@ Both solutions remain viable choices in 2026. The OpenVPN protocol continues to 
 - [How to Prepare SSH Key and Server Access Documentation.](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data: A.](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

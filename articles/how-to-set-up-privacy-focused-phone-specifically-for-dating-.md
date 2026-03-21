@@ -251,12 +251,6 @@ Using a separate phone for dating raises some ethical questions worth considerin
 
 **Information Sharing**: The privacy phone doesn't justify lying in your profile. Age, occupation, and relationship status should be accurate.
 
-## Conclusion
-
-A dedicated Android phone running CalyxOS provides practical isolation between your dating activities and your primary digital identity. This approach protects against both targeted surveillance by dating platforms and against relationship fallout affecting your primary online accounts. The modest investment in hardware and ongoing service costs pays for itself through reduced stress about privacy breaches and the ability to discard or reset the entire dating presence if needed.
-
-The philosophy behind this setup—compartmentalization and isolation—applies well beyond dating. Anyone maintaining multiple distinct online identities (professional, activist, casual) benefits from similar device-level isolation strategies.
-
 ## Managing Multiple Dating Personas
 
 Some people maintain multiple dating profiles on the same platform to appeal to different audiences:
@@ -354,12 +348,6 @@ If your dating phone is lost or stolen:
 - No personal identity leaked (since phone is completely separated)
 
 **Access Prevention**: If someone obtains the dating phone, they have access to your dating identity but nothing connecting to your primary identity. This compartmentalization provides the security value—a compromised dating phone doesn't compromise your entire digital identity.
-
-## Conclusion
-
-A dedicated privacy-focused phone for dating provides genuine protection against platform data harvesting, breach exposure affecting your primary identity, and unwanted correlation of your dating activity with other life areas. The investment in time and money pays for itself through peace of mind knowing your dating privacy is genuinely isolated.
-
-The techniques—device compartmentalization, minimal data collection, strong encryption, separate credentials—extend far beyond dating to any scenario where you want multiple distinct online identities without leakage between them.
 
 ## Related Reading
 

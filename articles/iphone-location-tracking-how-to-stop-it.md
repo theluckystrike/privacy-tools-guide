@@ -211,7 +211,5 @@ For maximum privacy without breaking functionality:
 - [Dating App Background Location Tracking: What Happens.](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

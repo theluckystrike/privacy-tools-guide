@@ -23,7 +23,7 @@ Both providers offer end-to-end encryption, but the implementation details revea
 
 **ProtonMail** uses a hybrid encryption system combining RSA-4096 for key exchange with AES-256 for message encryption. When you create an account, Proton generates encryption keys stored on their servers, but the private key is encrypted with your password using PBKDF2. This means Proton cannot read your emails, but they handle key management internally. The advantage is simplified account recovery—if you forget your password, Proton can reset it without losing access to your emails. The disadvantage is that Proton's systems have access to your encrypted private key, which could theoretically be exploited if their servers are compromised.
 
-Tutanota takes a different approach with its own encryption library. It uses AES-128 for symmetric encryption and RSA-2048 for key exchange. For calendar events and contacts, Tutanota encrypts everything by default—a feature Proton only offers for calendar entries. Tutanota does not store private keys on servers; keys are generated and stored only on your device. This means if you forget your password, there is no password reset mechanism—you lose account access permanently. This is more restrictive but arguably more secure since no server ever holds your private key.
+Tutanota takes a different approach with its own encryption library. It uses AES-128 for symmetric encryption and RSA-2048 for key exchange. For calendar events and contacts, Tutanota encrypts everything by default—a feature Proton only offers for calendar entries. Tutanota does not store private keys on servers; keys are generated and stored only on your device. This means if you forget your password, there is no password reset mechanism—you lose account access permanently. This is more restrictive but more secure since no server ever holds your private key.
 
 For developers interested in the technical details, both support PGP interoperability through different mechanisms:
 
@@ -76,7 +76,7 @@ await api.filters.create({
 });
 ```
 
-**Tutanota** offers a more limited API. Their business plan includes an API for custom integrations, but it's less comprehensive than Proton's offering. Tutanota's API focuses on basic account operations rather than advanced automation. However, Tutanota provides a command-line tool called `tutatanota-cli` and supports SMTP/IMAP for premium users, making it compatible with most email clients. The IMAP support is recent (2024), representing significant progress for Tutanota's interoperability.
+**Tutanota** offers a more limited API. Their business plan includes an API for custom integrations, but it's less than Proton's offering. Tutanota's API focuses on basic account operations rather than advanced automation. However, Tutanota provides a command-line tool called `tutatanota-cli` and supports SMTP/IMAP for premium users, making it compatible with most email clients. The IMAP support is recent (2024), representing significant progress for Tutanota's interoperability.
 
 For organizations choosing between the two:
 - ProtonMail is better if you need extensive API-driven automation
@@ -108,7 +108,7 @@ The search functionality deserves special attention. ProtonMail's search indexes
 For developers building applications or integrating email services, several factors influence the choice:
 
 **ProtonMail advantages:**
-- Comprehensive API documentation with examples
+- API documentation with examples
 - Better third-party tool ecosystem and integrations (IFTTT, Zapier)
 - ProtonVPN integration for network-level privacy
 - Longer market presence (established 2013) with stable codebase
@@ -157,7 +157,7 @@ Tutanota's pricing differs:
 - **Professional** ($7.99/month): 50GB storage, unlimited aliases, API access
 - **Business** ($10.99/month per user): Team management, unlimited storage
 
-Tutanota's free tier is more generous, and their premium pricing is more affordable for individual users. ProtonMail's integration with ProtonVPN in higher tiers adds value for users seeking comprehensive privacy infrastructure.
+Tutanota's free tier is more generous, and their premium pricing is more affordable for individual users. ProtonMail's integration with ProtonVPN in higher tiers adds value for users seeking privacy infrastructure.
 
 ## Migration Considerations
 

@@ -52,19 +52,6 @@ Independent testers across Yangon, Mandalay, and Naypyidaw conducted connectivit
 3. Switching between ports 443 and 8443
 4. Monitoring connection stability over 30-minute sessions
 
-### Test Results Summary
-
-| Server Location | Port | Success Rate | Avg. Latency |
-|-----------------|------|--------------|--------------|
-| Singapore SG-1 | 443  | 62%          | 180ms        |
-| Singapore SG-1 | 8443 | 71%          | 195ms        |
-| Japan JP-1     | 443  | 58%          | 210ms        |
-| Japan JP-1     | 8443 | 65%          | 225ms        |
-| Germany DE-1   | 443  | 45%          | 310ms        |
-| Switzerland CH-1 | 443 | 52%        | 290ms        |
-
-The data indicates that **Singapore servers on port 8443 provide the best success rate**, though latency remains noticeable due to geographical distance.
-
 ## Configuration for Myanmar
 
 Proper configuration significantly impacts connection success. Developers and power users should implement the following setup:

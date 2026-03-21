@@ -168,7 +168,7 @@ Received: from mail.example.com (mail.example.com. [203.0.113.5])
 
 If Authentication-Results shows failures, the email may be spoofed.
 
-## Comprehensive Account Security Audit
+## Account Security Audit
 
 When discovering unauthorized signups, conduct a broader account security review:
 

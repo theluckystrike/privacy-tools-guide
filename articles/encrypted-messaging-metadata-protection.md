@@ -171,15 +171,6 @@ Several open-source projects implement these techniques:
 
 For developers building custom solutions, libsodium provides the cryptographic primitives, while frameworks like nym-mixnet offer mixnet infrastructure.
 
-## Key Takeaways
-
-Metadata protection requires moving beyond content encryption alone. The communication patterns—the who, when, and how often—can be more revealing than message content. Developers building privacy-sensitive applications must consider:
-
-Layer defenses by combining encryption with routing obfuscation. Design for client-side cryptography to minimize what the server knows. Use padding and mixing to defeat traffic analysis. Not every application needs maximum metadata protection — calibrate to the actual threat model.
-
----
-
-
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)

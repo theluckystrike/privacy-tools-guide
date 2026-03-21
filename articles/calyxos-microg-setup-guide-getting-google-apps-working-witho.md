@@ -82,7 +82,7 @@ The output displays a registration token you can use for testing. Note that this
 
 ### UnifiedPush Configuration
 
-UnifiedPush provides a truly Google-free alternative. Install a UnifiedPush-compatible client and a distributor from F-Droid:
+UnifiedPush provides a truly Google-free alternative. Install an UnifiedPush-compatible client and a distributor from F-Droid:
 
 ```bash
 # Install UnifiedPush distributor via F-Droid

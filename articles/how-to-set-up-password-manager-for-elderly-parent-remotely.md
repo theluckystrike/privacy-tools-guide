@@ -186,7 +186,5 @@ Remote password management for elderly parents requires patience and ongoing mai
 - [Password Manager for Shared Accounts Between Roommates.](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
 - [Password Manager for Couple Sharing Streaming Accounts.](/privacy-tools-guide/password-manager-for-couple-sharing-streaming-accounts-secur/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -394,7 +394,7 @@ const blockingStats = {
 };
 ```
 
-uBlock Origin's advantage is immediate, comprehensive blocking. Privacy Badger's advantage emerges after browsing history builds.
+uBlock Origin's advantage is immediate, blocking. Privacy Badger's advantage emerges after browsing history builds.
 
 ## Building Custom Privacy Filter Lists
 
@@ -440,19 +440,6 @@ Potential conflicts:
 ```
 
 To manage conflicts, configure Privacy Badger to operate in "learning" mode only, letting uBlock Origin handle blocking.
-
-## Summary Table: Feature Comparison
-
-| Feature | uBlock Origin | Privacy Badger |
-|---------|----------------|-----------------|
-| **Blocking Approach** | Lists | Learning |
-| **Setup Complexity** | Low | Very Low |
-| **Tracker Coverage** | ~95% (immediate) | ~60% (grows) |
-| **Configuration Options** | Extensive | Minimal |
-| **Memory Usage** | ~50 MB | ~25 MB |
-| **Update Frequency** | Real-time | Continuous learning |
-| **Code Auditing** | Public (open source) | Public (EFF) |
-| **Best Use Case** | Power users | Casual users |
 
 ## Related Reading
 

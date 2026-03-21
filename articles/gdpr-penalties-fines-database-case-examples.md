@@ -215,7 +215,5 @@ jobs:
 - [GDPR Data Breach Notification: What Companies Must Tell.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -119,7 +119,7 @@ DigiLocker doesn't just store document copies—it maintains live links to issui
 
 - Changes to your original documents (address updates, license renewals) automatically reflect in DigiLocker
 - Government agencies can theoretically track document access patterns
-- Revocation of access may not be immediate or 
+- Revocation of access may not be immediate or
 
 ### 3. Third-Party Application Risks
 
@@ -266,19 +266,6 @@ If you're currently using DigiLocker, perform this audit:
 5. **Check permissions**: Review all third-party app permissions and revoke unnecessary access
 6. **Monitor access**: If possible, review access logs for suspicious patterns
 7. **Plan alternatives**: Establish alternative systems for document storage (encrypted cloud, external drives)
-
-## Conclusion
-
-DigiLocker provides convenience for Indian government interactions but centralizes sensitive personal data in a single platform with limited transparency about access and use. For privacy-conscious users, the platform presents meaningful risks that often outweigh convenience benefits.
-
-The most privacy-protective approach involves:
-- Using DigiLocker only when legally required
-- Minimizing documents stored there
-- Maintaining encrypted backups external to DigiLocker
-- Regularly reviewing what data is stored and removing unnecessary information
-- Remaining aware of access patterns and changes to the platform
-
-As India's data protection landscape evolves through implementation of the Digital Personal Data Protection Act, DigiLocker's privacy implications may change. Regularly review the platform's policies and adjust your usage accordingly.
 
 ## Related Reading
 

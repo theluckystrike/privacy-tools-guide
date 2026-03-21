@@ -202,7 +202,5 @@ Firefox Sync requires specific settings. Ensure `services.sync.enabled` is true 
 - [Firefox Reset and Clean Install Guide: Privacy-Focused.](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)
 - [Signal Relay Calls Privacy Feature: A Complete Guide for.](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

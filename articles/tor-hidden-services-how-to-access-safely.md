@@ -216,7 +216,5 @@ response = session.get('https://exampleonion.onion')
 - [How to Set Up Onion Routing for Email Using Tor Hidden.](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

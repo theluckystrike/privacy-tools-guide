@@ -183,7 +183,7 @@ After applying these methods, verify your protections work:
 3. Check if matches reveal your identity
 4. If matches appear with identifiable information, the photo isn't safe for dating use
 
-This testing should be an ongoing practice, not a one-time check. Search engine indexing and matching capabilities evolve constantly.
+This testing should be an ongoing practice, not an one-time check. Search engine indexing and matching capabilities evolve constantly.
 
 ## Related Reading
 
@@ -191,7 +191,5 @@ This testing should be an ongoing practice, not a one-time check. Search engine 
 - [How to Prevent Dating App Photos from Appearing in.](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [How to Prevent Ex-Partner From Creating Fake Dating.](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
 - [Dating Profile Image Recognition: How AI Can Match Your.](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

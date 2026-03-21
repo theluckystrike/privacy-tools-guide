@@ -47,7 +47,7 @@ This handles basic disabling but leaves residual code in the browser executable.
 For granular control beyond the standard settings, Brave provides experimental flags accessible at `brave://flags`. These offer deeper control over individual features:
 
 - **IPFS Integration**: Set to "Disabled" - prevents IPFS node initialization and gateway usage
-- **Brave Wallet**: Set to "Disabled" - removes wallet functionality entirely 
+- **Brave Wallet**: Set to "Disabled" - removes wallet functionality entirely
 - **Native Wallet**: Set to "Disabled" - disables Ethereum provider injection
 - **Solana Wallet**: Set to "Disabled" - removes Solana support
 - **ENS Resolution**: Set to "Disabled" - disables Ethereum Name Service lookups
@@ -209,8 +209,6 @@ However, consider the tradeoffs before disabling everything. IPFS, for instance,
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 - [How to Disable WebRTC Leaks in Tor Browser: A Developer's Guide](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -228,7 +228,5 @@ Regardless of your chosen platform, set up these security measures:
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
 - [PGP Email Encryption Setup Guide 2026: A Developer and.](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

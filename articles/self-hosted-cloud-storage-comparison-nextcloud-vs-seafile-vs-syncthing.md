@@ -373,7 +373,7 @@ Syncthing is fundamentally different—it's peer-to-peer, not client-server. Eve
 
 - No central server needed
 - Works offline (syncs when online)
-- Each device has complete copy (robust)
+- Each device has complete copy (strong)
 - Minimal bandwidth (only between devices)
 - Zero privacy concerns (all data is local)
 - Works on any device (Pi, old PC, laptop)
@@ -632,24 +632,5 @@ This handles:
 - Server compromise (cloud backup with your encryption key)
 - Data corruption (weekly snapshots)
 ```
-
-## Conclusion
-
-Choose based on your constraints:
-
-- **Minimal resources + resilience:** Syncthing
-- **Web access + simplicity:** Seafile
-- **Feature-complete + complexity acceptable:** Nextcloud
-
-The best choice is the one you'll maintain. A perfectly architected Nextcloud that you ignore is worse than functional Syncthing that works reliably.
-
-Start simple: Syncthing between two devices takes 30 minutes to set up and requires zero maintenance. Scale to Nextcloud/Seafile only if you need the extra features.
-
-
-## Related Reading
-
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

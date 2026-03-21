@@ -438,7 +438,5 @@ Future improvements may include:
 - [Android Find My Device: Privacy Implications You Need to.](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [Browser Storage Isolation Explained for Privacy: A.](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

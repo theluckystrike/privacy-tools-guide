@@ -134,7 +134,7 @@ def mtproto_key_exchange():
 
 **Weaknesses and Criticisms:**
 - Less peer review compared to Signal Protocol (used by Signal, WhatsApp)
-- No comprehensive independent security audits published
+- No independent security audits published
 - Key fingerprints use MD5-like truncation, considered less ideal
 - No protection against active man-in-the-middle unless keys are verified out-of-band
 
@@ -276,11 +276,6 @@ If metadata protection is critical, Signal offers:
 - Disappearing messages with better enforcement
 
 For minimal privacy exposure beyond content, Signal is the stronger choice.
-
-## Conclusion
-
-Telegram Secret Chat provides genuine end-to-end encryption with forward secrecy, offering meaningful protection against message content interception. It is not a replacement for Signal when metadata protection and audited open-source protocols are priorities. For high-stakes communications where metadata protection matters, use Signal or combine Secret Chat with additional anonymity tooling like Tor or a VPN (though this adds latency to Telegram).
-
 
 ## Related Reading
 

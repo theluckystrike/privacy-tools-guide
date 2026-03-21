@@ -340,6 +340,4 @@ Developers implementing WebAuthn/FIDO2 in 2026 should monitor these developments
 - [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
 - [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

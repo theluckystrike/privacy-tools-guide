@@ -77,7 +77,7 @@ def classify_data_field(field_name):
 
 ### API Security Implementation
 
-RESTful APIs handling student data require robust authentication and authorization mechanisms. Implement OAuth 2.0 with scoped tokens:
+RESTful APIs handling student data require strong authentication and authorization mechanisms. Implement OAuth 2.0 with scoped tokens:
 
 ```javascript
 // Example: FERPA-compliant API endpoint with scope validation

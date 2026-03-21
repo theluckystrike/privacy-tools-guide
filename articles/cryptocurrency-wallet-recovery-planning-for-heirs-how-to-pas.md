@@ -128,7 +128,7 @@ For users who prefer delegating some responsibility to professionals, several cu
 
 **Unchained Capital** offers a Concierge Onboarding service that guides you through setting up multi-sig wallets with professional custody. They charge $500 setup plus $150/month for ongoing vault monitoring, but provide a streamlined process and professional oversight.
 
-**Coincover** ($120/year for standard coverage) insures your crypto holdings and manages key recovery. In case of death, Coincover facilitates the inheritance process with your designated heirs.
+**Coincover** ($120/year for standard coverage) insures your crypto holdings and manages key recovery. In case of death, Coincover helps the inheritance process with your designated heirs.
 
 Each service trades off some control for convenience and professional support. Evaluate whether the added security and oversight justifies the recurring costs.
 
@@ -230,7 +230,7 @@ Different hardware wallets implement inheritance features differently:
 
 **Coldcard** (Starting at $120): Offers native multisig support and "Duress Passwords" that create decoy wallets if coerced. Advanced users can set up inheritance through multisig configurations directly on the device.
 
-**BitBox02** (Starting at $99): Supports multi-sig configuration with backup and recovery flows designed for inheritance. Their backup tool facilitates sharing encrypted backups across family members.
+**BitBox02** (Starting at $99): Supports multi-sig configuration with backup and recovery flows designed for inheritance. Their backup tool helps sharing encrypted backups across family members.
 
 ## Regulatory and Legal Framework
 

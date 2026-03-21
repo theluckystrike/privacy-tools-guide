@@ -257,14 +257,14 @@ Object.defineProperty(navigator, 'userAgent', {
 Understanding how trackers combine media device info with other signals helps you protect yourself:
 
 **Example 1: Ad Network Tracking**
-A user visits Site A and Site B. Both load ads from Network X. Network X collects:
+A user visits Site an and Site B. Both load ads from Network X. Network X collects:
 - Media device enumeration (FaceTime HD Camera, Built-in Microphone)
 - Canvas fingerprint
 - WebGL information
 - Font list
 - Time zone and language
 
-Across Site A and Site B, these combined signals create a profile that persists despite cookie deletion.
+Across Site an and Site B, these combined signals create a profile that persists despite cookie deletion.
 
 **Example 2: Cross-Site Fingerprinting**
 A third-party analytics script on multiple websites collects device info. The script runs on:

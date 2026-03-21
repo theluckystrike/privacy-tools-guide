@@ -38,7 +38,7 @@ The apps support rich text email composition, custom labels and nested folder st
 
 ### Calendar Integration
 
-ProtonCalendar mobile integration has improved significantly. The calendar app shares the same encryption model, meaning event details remain private even from Proton. For users managing sensitive schedules, this provides a unified encrypted productivity suite.
+ProtonCalendar mobile integration has improved significantly. The calendar app shares the same encryption model, meaning event details remain private even from Proton. For users managing sensitive schedules, this provides an unified encrypted productivity suite.
 
 ### ProtonDrive Mobile
 

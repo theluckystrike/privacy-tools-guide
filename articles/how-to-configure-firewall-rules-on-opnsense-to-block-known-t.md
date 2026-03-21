@@ -135,7 +135,7 @@ Understanding tracking threats helps justify network-level blocking:
 
 **Cross-Device Tracking**: Ad networks use tracker beacons across devices to build unified user profiles. Blocking at the network level prevents this across all devices.
 
-IP-level blocking interrupts the tracking chain before data leaves your network. Combined with DNS blocking, it provides comprehensive protection.
+IP-level blocking interrupts the tracking chain before data leaves your network. Combined with DNS blocking, it provides protection.
 
 ## Advanced Blocklist Management
 

@@ -233,7 +233,7 @@ When accessing dating apps, route traffic through a reliable VPN:
 nslookup whatismyipaddress.com # Should return VPN IP
 ```
 
-IVPN ($6/month) and Mullvad ($5/month or pay-what-you-want) both provide robust kill switches and no-logging policies suitable for sensitive activities.
+IVPN ($6/month) and Mullvad ($5/month or pay-what-you-want) both provide strong kill switches and no-logging policies suitable for sensitive activities.
 
 ## Real-World Threat Scenarios and Responses
 

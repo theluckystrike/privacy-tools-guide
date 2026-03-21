@@ -216,7 +216,7 @@ Removing yourself from hundreds of data brokers requires systematic automation:
 
 ### Data Broker List Compilation
 
-Create a comprehensive list of all aggregators:
+Create a list of all aggregators:
 
 ```bash
 # Major US data brokers to target

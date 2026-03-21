@@ -15,7 +15,7 @@ intent-checked: true
 
 {% raw %}
 
-Android apps request permissions to access sensitive data: camera, microphone, location, contacts, photos. Most users grant all permissions during installation without understanding what access they grant. Auditing app permissions reveals which apps have unnecessary access, which permissions are actually used, and whether you can safely restrict access. This guide provides step-by-step techniques for comprehensive permission audits.
+Android apps request permissions to access sensitive data: camera, microphone, location, contacts, photos. Most users grant all permissions during installation without understanding what access they grant. Auditing app permissions reveals which apps have unnecessary access, which permissions are actually used, and whether you can safely restrict access. This guide provides step-by-step techniques for permission audits.
 
 ## Understanding Android Permission Architecture
 

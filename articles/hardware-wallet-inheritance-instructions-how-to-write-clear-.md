@@ -52,7 +52,7 @@ For a Trezor Model T, your instructions might include:
 
 1. Connect the device to a computer using the USB cable from the box
 2. Visit trezor.io/start in a web browser
-3. Click "Already have a wallet" 
+3. Click "Already have a wallet"
 4. Select "Recover from seed"
 5. Carefully enter each word in order, consulting the word list
 6. Create a new PIN (you can skip this for inheritance purposes)

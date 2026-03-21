@@ -14,7 +14,7 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-Nextcloud's external storage app lets you mount S3 buckets, WebDAV servers, FTP sites, and local directories directly into your Nextcloud file browser, creating a unified interface for all your data regardless of where it physically lives. Enable the External Storage support app in the admin interface, then create mount points by specifying storage type, credentials, and mount path. This guide covers configuration for all major backends with practical examples for developers managing multiple storage sources.
+Nextcloud's external storage app lets you mount S3 buckets, WebDAV servers, FTP sites, and local directories directly into your Nextcloud file browser, creating an unified interface for all your data regardless of where it physically lives. Enable the External Storage support app in the admin interface, then create mount points by specifying storage type, credentials, and mount path. This guide covers configuration for all major backends with practical examples for developers managing multiple storage sources.
 
 ## Prerequisites
 

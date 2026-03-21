@@ -295,7 +295,5 @@ One important note: Disabling Update Orchestrator Service (`UsoSvc`) can interfe
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 - [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

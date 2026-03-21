@@ -288,7 +288,5 @@ chrome.storage.local.set({ vault: encrypted });
 - [How to Protect Yourself from Browser Extension Malware Installed Secretly](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 - [Best Password Manager for Firefox Extension: A Developer.](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

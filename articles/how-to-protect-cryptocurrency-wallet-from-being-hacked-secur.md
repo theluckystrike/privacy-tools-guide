@@ -214,7 +214,7 @@ if (allowance > ethers.utils.parseEther('0.1')) {
 
 ## Wallet Recovery and Backup Verification
 
-Beyond storing seed phrases, implement a comprehensive backup verification system:
+Beyond storing seed phrases, implement a backup verification system:
 
 ```bash
 #!/bin/bash

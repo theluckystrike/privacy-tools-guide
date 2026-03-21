@@ -213,7 +213,5 @@ For developers, understanding these isolation mechanisms is essential for buildi
 - [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [How Browser Storage Partitioning Works: Firefox, Chrome.](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -137,7 +137,7 @@ For developers comfortable with server administration, self-hosted VPN solutions
 
 ### Algo VPN
 
-Algo VPN provides a one-click deployment script for setting up WireGuard and IPSec VPNs on cloud providers:
+Algo VPN provides an one-click deployment script for setting up WireGuard and IPSec VPNs on cloud providers:
 
 ```bash
 # Deploy Algo VPN

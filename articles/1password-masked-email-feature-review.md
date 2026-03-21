@@ -412,7 +412,5 @@ This is a critical trust relationship—you're trusting Apple's security to prot
 - [How to Set Up a Forwarding-Only Email Address That Hides.](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
 - [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -157,7 +157,7 @@ chrome --disable-geolocation \
 
 ### Setting Browser Locale and Timezone
 
-Browser fingerprinting by streaming services often includes timezone and language checks. Even with a Japanese IP, a browser reporting a US timezone creates a mismatch that some services flag. Set your system timezone to Asia/Tokyo while using Japanese streaming services:
+Browser fingerprinting by streaming services often includes timezone and language checks. Even with a Japanese IP, a browser reporting an US timezone creates a mismatch that some services flag. Set your system timezone to Asia/Tokyo while using Japanese streaming services:
 
 ```bash
 # Linux

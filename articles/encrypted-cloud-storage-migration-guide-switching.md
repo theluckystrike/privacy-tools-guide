@@ -64,7 +64,7 @@ find /path/to/encrypted/vault -type f -exec bash -c '
 ' _ {} \; > migration_inventory.csv
 ```
 
-This comprehensive inventory allows verification that every file transferred correctly and hasn't been corrupted during migration.
+This inventory allows verification that every file transferred correctly and hasn't been corrupted during migration.
 
 ## Exporting Data from Your Current Provider
 

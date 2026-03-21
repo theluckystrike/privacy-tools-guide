@@ -163,9 +163,9 @@ Different browsers send different default values, creating a browser identificat
 
 | Browser | Max Concurrent Streams | Initial Window Size |
 |---------|----------------------|---------------------|
-| Chrome  | 100 | 65535 |
+| Chrome | 100 | 65535 |
 | Firefox | 128 | 65535 |
-| Safari  | 200 | 65535 |
+| Safari | 200 | 65535 |
 
 ### 3. Connection Pool Exhaustion
 

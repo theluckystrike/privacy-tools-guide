@@ -245,7 +245,5 @@ For most users, understanding these tradeoffs matters more than achieving absolu
 - [How to Set Up Dedicated Hardware Wallet for Each Crypto.](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
 - [How to Withdraw Crypto from Exchange Without Linking to Personal Bank Account](/privacy-tools-guide/how-to-withdraw-crypto-from-exchange-without-linking-to-pers/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

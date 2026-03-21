@@ -188,7 +188,5 @@ Schedule this script weekly via cron to catch configuration drift:
 - [Best Browser for Streaming Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-streaming-privacy-2026/)
 - [Privacy Setup for Safe House: Protecting Location from.](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

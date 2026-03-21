@@ -88,7 +88,7 @@ The MASQUERADE target automatically uses the IP address of the specified outgoin
 
 ### Modern nftables Approach
 
-The nftables framework provides a more modern and efficient alternative to iptables, with a unified syntax for IPv4, IPv6, and bridge configurations. Here's how to configure nftables for VPN:
+The nftables framework provides a more modern and efficient alternative to iptables, with an unified syntax for IPv4, IPv6, and bridge configurations. Here's how to configure nftables for VPN:
 
 ```bash
 # Create a table for filter rules

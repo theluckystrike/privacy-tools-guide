@@ -85,7 +85,7 @@ bw list items --pretty | jq '
 '
 ```
 
-While basic checks work without Premium, the health dashboard provides a unified view that's harder to replicate with manual CLI queries.
+While basic checks work without Premium, the health dashboard provides an unified view that's harder to replicate with manual CLI queries.
 
 ## Yubikey and Hardware Security Key Support
 

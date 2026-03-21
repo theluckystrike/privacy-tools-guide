@@ -24,7 +24,7 @@ Before configuring 2FA, understand the security properties of each authenticatio
 
 ### SMS-Based Verification
 
-SMS-based 2FA sends a one-time code via text message. While convenient, this method has known vulnerabilities. SIM swapping attacks allow attackers to transfer your phone number to their device, intercepting verification codes. Telecom social engineering remains a prevalent attack vector. Most security experts recommend avoiding SMS 2FA for high-risk accounts.
+SMS-based 2FA sends an one-time code via text message. While convenient, this method has known vulnerabilities. SIM swapping attacks allow attackers to transfer your phone number to their device, intercepting verification codes. Telecom social engineering remains a prevalent attack vector. Most security experts recommend avoiding SMS 2FA for high-risk accounts.
 
 ```python
 # Example: SMS 2FA vulnerability demonstration

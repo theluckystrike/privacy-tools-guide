@@ -24,7 +24,7 @@ Every smartphone operating system maintains persistent connections to manufactur
 When you remove the smartphone from your threat model, you eliminate:
 
 - **Constant GPS tracking** by apps and the operating system
-- **Behavioral profiling** through app usage patterns 
+- **Behavioral profiling** through app usage patterns
 - **Baseband surveillance** and baseband exploits
 - **Push notification metadata** collection
 - **Bluetooth and WiFi scanning** for proximity tracking

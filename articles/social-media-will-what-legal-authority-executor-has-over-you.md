@@ -91,7 +91,7 @@ Microsoft accounts can be managed by executors through their estate planning fea
 
 ## State-by-State Considerations
 
-While RUFADAA provides a uniform framework, states implement it differently:
+While RUFADAA provides an uniform framework, states implement it differently:
 
 | State | Key Provisions |
 |-------|----------------|

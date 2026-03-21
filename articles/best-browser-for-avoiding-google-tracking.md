@@ -150,17 +150,6 @@ network.trr.uri = https://cloudflare-dns.com/dns-query
 
 Consider using DNS resolvers that don't log queries, such as Cloudflare (1.1.1.1) or Quad9 (9.9.9.9).
 
-## Browser Comparison Summary
-
-| Browser | Default Tracking Protection | Web Compatibility | Extension Support | Fingerprinting Protection |
-|---------|---------------------------|-------------------|-------------------|--------------------------|
-| Firefox | Good (Enhanced) | Excellent | Full | Good (with config) |
-| Brave | Excellent (Shields) | Very Good | Limited | Excellent |
-| Tor | Maximum | Limited | Minimal | Excellent |
-| Chromium | None | Excellent | Full | None |
-
-Firefox offers the best balance for developers—full extension support, excellent web compatibility, and with proper configuration, strong privacy protections. Brave provides stronger defaults but limits extension functionality. Tor is reserved for specialized anonymity needs.
-
 ## Practical Implementation Strategy
 
 Implement privacy in layers:

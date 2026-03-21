@@ -53,7 +53,7 @@ Begin by creating a Casa account and establishing a multisig vault. The setup pr
 
 For a 3-of-5 inheritance setup, generate five separate keys. Distribute these to:
 - Primary owner (1 key)
-- Primary successor (1 key) 
+- Primary successor (1 key)
 - Secondary successor (1 key)
 - Trusted advisor or family member (1 key)
 - Cold storage backup (1 key)

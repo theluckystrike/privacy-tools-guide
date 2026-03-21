@@ -228,7 +228,7 @@ China's SCS isn't unique—the underlying risks appear in other systems:
 
 **European GDPR**: While protective on surface, GDPR includes national security exceptions. Data minimization is still the strongest defense.
 
-**Corporate Profiling**: Not government-run but often more comprehensive. Companies profile behavior for targeting, price discrimination, and manipulation.
+**Corporate Profiling**: Not government-run but often more . Companies profile behavior for targeting, price discrimination, and manipulation.
 
 The principle remains universal: aggregated data enables surveillance, regardless of who controls the aggregation.
 

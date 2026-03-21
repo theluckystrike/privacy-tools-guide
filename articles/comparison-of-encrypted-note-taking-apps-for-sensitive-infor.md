@@ -315,7 +315,5 @@ Before committing to a platform, assess against these criteria:
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
 - [Best Encrypted Communication for Activists: A Technical.](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

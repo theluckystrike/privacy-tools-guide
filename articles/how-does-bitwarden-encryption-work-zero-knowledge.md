@@ -281,7 +281,5 @@ Faster key derivation would be less secure. The 600,000 iterations represent a c
 - [Best Zero Knowledge Cloud Storage 2026: A Practical.](/privacy-tools-guide/best-zero-knowledge-cloud-storage-2026/)
 - [How to Set Up Enterprise Password Manager with Zero.](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

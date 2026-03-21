@@ -27,7 +27,7 @@ Before examining specific tools, understand the criteria that matter for technic
 - **Key management**: How are keys generated, stored, and shared among team members? Look for solutions that allow you to control your own keys or at least use secure key exchange protocols.
 - **Self-hosting option**: Some teams prefer running their own sync servers to maintain full control. Evaluate whether the tool supports self-hosted deployments.
 - **CLI and scripting**: Developers need programmatic access for automation, CI/CD integration, and headless server environments.
-- **Conflict resolution and versioning**: When multiple team members edit the same file, robust conflict handling prevents data loss.
+- **Conflict resolution and versioning**: When multiple team members edit the same file, strong conflict handling prevents data loss.
 
 ## SyncThing: Open-Source, Self-Hosted, Free
 
@@ -120,15 +120,6 @@ curl -u "user:password" -T localfile.txt https://your-nextcloud.com/remote.php/d
 ```
 
 **Team features**: Nextcloud offers team collaboration: file sharing,权限管理, calendar, contacts, and collaborative editing via OnlyOffice or Collabora.
-
-## Comparison Summary
-
-| Tool | Encryption Model | Self-Hosted | CLI Quality | Best For |
-|------|-----------------|--------------|-------------|----------|
-| SyncThing | Device-to-device TLS | Yes (P2P) | Excellent | Technical teams wanting free, self-hosted sync |
-| Tresorit | Zero-knowledge AES-256 | No | Limited | Enterprises needing managed E2EE |
-| SpiderOak | Zero-knowledge AES-256 | No | Basic | Backup-focused teams |
-| Nextcloud | Optional E2EE | Yes | Moderate via webDAV | Teams wanting full self-hosted cloud suite |
 
 ## Practical Recommendation
 
@@ -249,7 +240,7 @@ When multiple team members edit the same file simultaneously, sync tools handle 
 
 **Tresorit**: Implements versioning, allowing rollback to previous versions without losing concurrent edits.
 
-Teams sharing code or structured data files need robust conflict resolution. Teams sharing documents benefit from real-time collaborative editing. Choose based on your file types.
+Teams sharing code or structured data files need strong conflict resolution. Teams sharing documents benefit from real-time collaborative editing. Choose based on your file types.
 
 ## Compliance and Audit Requirements
 
@@ -258,7 +249,7 @@ Organizations in regulated industries need specific audit capabilities:
 - **Tresorit**: Full audit logs including who accessed which files, when, and from which IP. SOC 2 certified.
 - **SpiderOak**: Basic access logs. Good for HIPAA compliance.
 - **SyncThing**: No centralized audit capability. For compliance, use filesystem-level audit tools.
-- **Nextcloud**: Comprehensive activity logs available through admin panel. Can integrate with external logging systems (ELK, Splunk).
+- **Nextcloud**: activity logs available through admin panel. Can integrate with external logging systems (ELK, Splunk).
 
 Document your chosen solution's audit capabilities and ensure they match regulatory requirements.
 
@@ -405,17 +396,6 @@ curl -X POST "https://nextcloud.example.com/ocs/v2.php/apps/webhooks/api/v1/webh
 **SpiderOak**: Designed for backup, not CI/CD integration
 
 For development teams, SyncThing or Nextcloud are essential. SpiderOak is unsuitable for build automation.
-
-## Conclusion: Decision Matrix
-
-Choose based on your primary constraint:
-
-- **Cost-focused**: SyncThing (free, self-hosted)
-- **Team features**: Nextcloud (granular permissions, CI/CD integration)
-- **Enterprise compliance**: Tresorit (audit logs, SLA, professional support)
-- **Backup-focused**: SpiderOak (good versioning, less suitable for collaboration)
-
-The right tool depends on your team size, technical capacity, and specific requirements. Don't over-engineer if SyncThing meets your needs. Don't under-invest if compliance requires Tresorit.
 
 ## Related Reading
 

@@ -557,11 +557,6 @@ All services should use HTTPS/TLS (check for padlock icon). Self-hosted requires
 
 ---
 
-## Conclusion
-
-For privacy without friction: **Proton Calendar** ($13/month). For budget + open source: **Tutanota** (€1/month) or **EteSync** (€2.99/month). For absolute control: **Nextcloud** (free self-hosted, +hosting cost). For teams: Nextcloud. For minimalists: Standard Notes. All encrypt your calendar data better than Google, Microsoft, or Apple. Choose based on your tolerance for setup work vs. cost vs. feature needs. Your schedule is intimate; keep it private.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

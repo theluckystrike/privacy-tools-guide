@@ -95,7 +95,7 @@ Microsoft provides privacy controls through your Microsoft account and explicit 
 
 Navigate to **https://account.microsoft.com/privacy** and adjust the following:
 
-- Turn off "Improve inking and typing" 
+- Turn off "Improve inking and typing"
 - Turn off "Tailored experiences based on your choices"
 - Turn off "Search and Bing customization"
 
@@ -132,7 +132,7 @@ def clear_microsoft_search_history(access_token: str) -> bool:
 For EU residents or California residents:
 
 1. Visit **https://account.microsoft.com/privacy**
-2. Scroll to "Cortana and search" 
+2. Scroll to "Cortana and search"
 3. Select "Delete my data"
 4. Or submit via **https://www.microsoft.com/en-us/concern/privacy**
 
@@ -294,19 +294,6 @@ Be realistic about what these deletion requests accomplish:
 - **Derived insights** that influenced model behavior without direct storage may persist
 
 The most effective strategy remains prevention: avoid entering sensitive personal information into AI systems in the first place.
-
-## Summary Checklist
-
-- [ ] Disable training in ChatGPT settings (web + API)
-- [ ] Clear Microsoft Copilot/Bing history
-- [ ] Configure Google Gemini auto-delete
-- [ ] Submit formal GDPR/CCPA deletion requests to each provider
-- [ ] Audit your prompts for PII before sending to AI
-- [ ] Implement local data controls in your applications
-- [ ] Document deletion requests and follow up if needed
-
-The privacy ecosystem for AI continues to evolve. These tools give you the best available options in 2026, but always verify current procedures with each provider's official documentation.
-
 
 ## Related Reading
 

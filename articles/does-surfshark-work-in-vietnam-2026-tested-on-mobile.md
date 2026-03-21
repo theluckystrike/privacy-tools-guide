@@ -127,18 +127,6 @@ For developers building applications for users in Vietnam, implement connection 
 
 Users requiring maximum reliability should consider maintaining multiple VPN services as backups and evaluate the specific threat model relevant to their situation before selecting a single solution.
 
-## Technical Summary
-
-| Protocol | Initial Success | Speed | Stability |
-|----------|----------------|-------|-----------|
-| IKEv2 | ~75% | 15-25 Mbps | Good |
-| WireGuard | ~40% | 40-60 Mbps | Moderate |
-| Auto | ~60% | Variable | Moderate |
-
-These results reflect testing conditions during March 2026 and may change as network conditions and VPN countermeasures evolve. Regular testing and protocol adjustment remain necessary for optimal performance.
-
-For developers and power users, the key takeaway involves treating VPN connectivity in restrictive environments as a dynamic problem requiring ongoing attention rather than a one-time configuration. Understanding the underlying protocols and maintaining flexibility in connection methods provides the most reliable path to maintaining access.
-
 ## Deep Protocol Analysis: Why IKEv2 Succeeds in Vietnam
 
 IKEv2's success rate (75%) in Vietnam reveals important security architecture insights:

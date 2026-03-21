@@ -61,7 +61,7 @@ Several browser extensions strip AMP tracking:
 
 **AMP Blocker** (Chrome Web Store) - Automatically blocks AMP domains and redirects to original content. The extension maintains a blocklist of known AMP trackers.
 
-**Redirect AMP to HTML** - A userscript that converts AMP URLs to their canonical versions. Install with a userscript manager like Tampermonkey:
+**Redirect AMP to HTML** - an userscript that converts AMP URLs to their canonical versions. Install with an userscript manager like Tampermonkey:
 
 ```javascript
 // ==UserScript==

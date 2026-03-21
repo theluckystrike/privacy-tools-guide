@@ -218,7 +218,5 @@ This detects any modified system files—a useful check after installing softwar
 - [Android Custom ROM Privacy Comparison 2026: A Technical.](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

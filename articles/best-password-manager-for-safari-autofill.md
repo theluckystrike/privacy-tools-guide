@@ -184,7 +184,5 @@ For developers and power users, the choice depends on your workflow:
 - [Browser Password Manager vs Dedicated App: A Developer.](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

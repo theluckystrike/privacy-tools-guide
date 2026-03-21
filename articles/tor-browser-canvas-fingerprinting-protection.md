@@ -67,7 +67,7 @@ This randomization means the same webpage produces different canvas fingerprints
 
 ### 2. Resistance Fingerprinting
 
-Tor Browser presents a uniform fingerprint regardless of your actual system configuration. This "resistance" mode makes all Tor users appear identical to websites:
+Tor Browser presents an uniform fingerprint regardless of your actual system configuration. This "resistance" mode makes all Tor users appear identical to websites:
 
 - Standardized screen resolution
 - Common window sizes
@@ -397,8 +397,6 @@ If fingerprinting detection shows persistent identifiers:
 - [Tor Browser Screen Size Fingerprint Protection: A.](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
 - [How to Block Canvas Fingerprinting in Your Browser: A.](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
 - [Tor Browser Font Fingerprinting Protection: A Technical Guide](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

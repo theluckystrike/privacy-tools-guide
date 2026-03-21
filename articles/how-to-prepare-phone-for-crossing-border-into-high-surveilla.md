@@ -126,24 +126,6 @@ After crossing the border, perform immediate security checks:
 
 Consider a full device wipe and restore from your encrypted backup if you have any concerns about device integrity.
 
-## Summary Checklist
-
-| Phase | Action |
-|-------|--------|
-| Pre-travel | Full encrypted backup |
-| Pre-travel | Verify full-disk encryption |
-| Pre-travel | Remove problematic apps |
-| Pre-travel | Clear browser data |
-| Pre-travel | Sign out of cloud services |
-| At border | Enable airplane mode immediately |
-| At border | Use secondary device if available |
-| Post-travel | Change exposed credentials |
-| Post-travel | Verify device integrity |
-
-These measures won't guarantee protection in all scenarios, but they significantly reduce your attack surface. The goal is making your device uninteresting to border agents while ensuring that any data exposure is limited to non-critical information.
-
-For developers and power users, the extra effort pays off: your primary credentials, client data, and intellectual property remain protected even in the worst-case inspection scenario.
-
 ## Detailed Backup and Recovery Procedures
 
 Creating secure backups requires systematic approach:

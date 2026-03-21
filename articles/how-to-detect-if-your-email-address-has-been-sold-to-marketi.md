@@ -157,7 +157,7 @@ Several third-party services automate the broker opt-out process and provide det
 
 **Incogni** ($11.99/month or $85.88/year): Handles removal requests on your behalf with claimed 95%+ success rate. Includes data breach notifications and credit monitoring in premium tier ($19.99/month).
 
-**SafetyDetectives Personal Data Removal** ($89/year): Focuses on US brokers, removes your data from Whitepages, spokeo, and similar services. Less comprehensive than DeleteMe but more affordable entry point.
+**SafetyDetectives Personal Data Removal** ($89/year): Focuses on US brokers, removes your data from Whitepages, spokeo, and similar services. Less than DeleteMe but more affordable entry point.
 
 **DIY Alternative Using Command-Line Tools**: Use `curl` to submit opt-out requests to individual brokers. Many publish opt-out forms:
 

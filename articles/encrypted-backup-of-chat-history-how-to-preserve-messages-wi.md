@@ -167,7 +167,5 @@ Rotate your encryption passwords periodically. Document the rotation process so 
 - [Encrypted Cloud Storage Migration Guide: Switching.](/privacy-tools-guide/encrypted-cloud-storage-migration-guide-switching/)
 - [Mumble Encrypted Voice Chat Server Setup for Private.](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -521,21 +521,7 @@ Instead:
 - Write in encrypted notes (not date-searchable)
 - Handwritten notebook (no digital trail)
 
-## Conclusion
-
-Period tracking app privacy has become a **safety issue post-Dobbs**. Choose:
-
-1. **Drip** if you can self-host (best privacy)
-2. **Apple Health** if on iPhone (encrypted, integrated)
-3. **Clue** if you need app + reasonable privacy (German-based, no data sales)
-4. **Avoid Flo** (US-based, data sales, Facebook tracking, high law enforcement risk)
-
-**For women in abortion-restrictive states**, the safest approach is **no digital tracking**. Memorize your cycle. Trust your body's signals.
-
-If using any app, **assume data is discoverable by law enforcement**. Plan accordingly.
-
 {% endraw %}
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

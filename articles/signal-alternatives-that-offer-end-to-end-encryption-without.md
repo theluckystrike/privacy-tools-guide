@@ -195,7 +195,7 @@ Messages stored on your device are encrypted with keys only you hold. When you c
 For developers building privacy-focused applications:
 
 1. **Use Matrix** for team collaboration—federation and bridges provide the most flexibility
-2. **Use Session** for direct messaging where metadata resistance is paramount 
+2. **Use Session** for direct messaging where metadata resistance is paramount
 3. **Use SimpleX** for threat models requiring zero-identifier architecture
 4. **Use Briar** for scenarios requiring offline-first, mesh-network communication
 

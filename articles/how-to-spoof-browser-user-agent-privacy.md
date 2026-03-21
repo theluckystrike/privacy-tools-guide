@@ -74,7 +74,7 @@ Object.defineProperty(navigator, 'userAgent', {
 console.log(navigator.userAgent);
 ```
 
-This JavaScript override affects only the page where you execute the code and doesn't persist across page reloads. For more persistent modifications, you can inject this code through a userscript manager like Tampermonkey or Violentmonkey.
+This JavaScript override affects only the page where you execute the code and doesn't persist across page reloads. For more persistent modifications, you can inject this code through an userscript manager like Tampermonkey or Violentmonkey.
 
 ## Programmatic Spoofing with Python
 
@@ -145,13 +145,13 @@ For developers testing cross-browser compatibility, use browser developer tools 
 
 For privacy-conscious users, browser extensions offer the easiest entry point, though they should be combined with other privacy tools for better protection. Firefox with `privacy.resistFingerprinting` enabled provides solid baseline protection without additional configuration.
 
-## Comprehensive Browser Fingerprinting Defense
+## Browser Fingerprinting Defense
 
 User-Agent spoofing addresses only one component of browser fingerprinting. A complete defense strategy requires multiple layers.
 
 ### Complete Firefox Hardening Configuration
 
-Create a `user.js` configuration file in your Firefox profile that implements comprehensive privacy:
+Create a `user.js` configuration file in your Firefox profile that implements privacy:
 
 ```javascript
 // Comprehensive Firefox privacy hardening
@@ -421,8 +421,6 @@ For organizational deployments:
 - [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
 - [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
 - [How to Verify Your Browser is Not Leaking Information: A Practical Checklist](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -326,7 +326,5 @@ The goal is not paranoia but disciplined verification. Regular audits catch comp
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 - [How to Verify Your Browser is Not Leaking Information: A Practical Checklist](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

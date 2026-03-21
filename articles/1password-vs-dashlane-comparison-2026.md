@@ -161,7 +161,7 @@ You manage development, staging, and production credentials across AWS, GitHub, 
 
 **1Password wins** because:
 - CLI tool integrates perfectly with shell scripts
-- Environment variable injection works seamlessly
+- Environment variable injection works
 - 1Password Connect allows application-level secret retrieval
 - Better documentation for CI/CD scenarios
 

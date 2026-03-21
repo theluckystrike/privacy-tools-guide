@@ -172,7 +172,5 @@ This automation ensures you always have recent encrypted backups without manual 
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 - [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

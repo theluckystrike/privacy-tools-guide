@@ -191,11 +191,6 @@ The optimal approach depends on your specific constraints:
 
 For most developers, combining methods works best: test HTTPS probe first, then fall back to DNS tunneling or mobile hotspot if needed.
 
-## Conclusion
-
-Captive portals represent a significant vector for personal data collection, but they are not unavoidable. By understanding how these systems operate and leveraging protocols they cannot easily intercept, you can maintain connectivity while minimizing your data exposure. The methods above range from quick tests requiring no infrastructure to full solutions needing dedicated servers—choose based on your threat model and available resources.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -357,23 +357,12 @@ If you use multiple browsers, WebRTC disabling strategies vary:
 | Chromium/Chrome | Enabled | chrome://flags or extensions | DevTools → Network |
 | Brave | Protected by default | Settings → Privacy | Network inspection |
 
-## Conclusion
-
-WebRTC leaks represent a real but often misunderstood threat to Tor Browser users. While the technology provides useful features for web developers, the privacy implications require careful consideration. For developers and power users willing to accept the trade-offs, disabling WebRTC provides additional protection against IP address leakage.
-
-The key is understanding your threat model. Most users do not need to disable WebRTC, but those handling sensitive information or facing targeted attacks should implement these protections. Remember that browser fingerprinting works both ways—any customization makes you more unique, so balance privacy improvements against the cost of increased identifiability.
-
-For maximum effectiveness, combine WebRTC disabling with other hardening measures: use Tor bridges in hostile network environments, disable JavaScript when unnecessary, and employ script blockers for additional protection. Regular testing ensures your configurations remain effective across browser updates.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Tor Browser vs LibreWolf Privacy Comparison: A Developer's Guide](/privacy-tools-guide/tor-browser-vs-librewolf-privacy-comparison/)
 - [Arti Tor Rust Implementation Explained 2026: A Developer's Guide](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

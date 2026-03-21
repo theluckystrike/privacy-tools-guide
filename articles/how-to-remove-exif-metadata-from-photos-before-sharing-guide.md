@@ -461,17 +461,6 @@ while true; do
 done
 ```
 
-## Tools Summary Table
-
-| Tool | Platform | Price | Best For | Learning Curve |
-|---|---|---|---|---|
-| exiftool | All | Free | Batch, scripting, full control | Medium |
-| ImageOptim | macOS | Free | Quick cleanup + compression | Low |
-| ExifTool GUI | Windows | Free | Visual interface, simple | Low |
-| Metapho | iOS | $3.99 | Mobile EXIF editing | Low |
-| Verexif online | All browsers | Free | One-off cleaning, verification | Very low |
-| Cloudconvert | All browsers | Free tier (25/day) | Batch online processing | Low |
-
 ## Final Security Reminder
 
 Removing EXIF is a first step, not complete privacy. Photos still may reveal:

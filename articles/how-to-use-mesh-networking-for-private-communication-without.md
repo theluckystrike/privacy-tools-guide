@@ -264,7 +264,5 @@ Mesh networking transforms how devices communicate, replacing fragile centralize
 - [How to Communicate During Internet Shutdown: Alternative.](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
 - [Briar Messenger Offline Communication: How It Works for.](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

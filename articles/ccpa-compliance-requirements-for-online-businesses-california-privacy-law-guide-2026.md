@@ -40,7 +40,7 @@ California consumers have four primary rights that your system must support:
 
 ## Implementing Consumer Requests
 
-The technical foundation for CCPA compliance is a robust request handling system. Here's a practical implementation pattern for handling "Right to Know" requests:
+The technical foundation for CCPA compliance is a strong request handling system. Here's a practical implementation pattern for handling "Right to Know" requests:
 
 ```python
 from dataclasses import dataclass

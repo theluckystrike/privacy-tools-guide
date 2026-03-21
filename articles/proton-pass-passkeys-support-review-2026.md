@@ -86,7 +86,7 @@ const createOptions = {
 };
 ```
 
-Proton Pass handles both resident keys (discoverable credentials) and non-resident keys. Resident keys enable passwordless login without entering a username, as the authenticator can enumerate stored credentials for the domain.
+Proton Pass handles both resident keys (discoverable credentials) and non-resident keys. Resident keys enable passwordless login without entering an username, as the authenticator can enumerate stored credentials for the domain.
 
 ## Passkey Management via CLI
 
@@ -414,8 +414,6 @@ Based on Proton's development patterns, expect these features in late 2026:
 - [Proton Drive Review: Honest Assessment 2026](/privacy-tools-guide/proton-drive-review-honest-assessment-2026/)
 - [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)
 - [Proton Pass vs Bitwarden Review: Which Password Manager.](/privacy-tools-guide/proton-pass-vs-bitwarden-review/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

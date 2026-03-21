@@ -454,7 +454,7 @@ Evaluate multiple providers using consistent criteria:
 
 Avoid these evaluation pitfalls:
 
-**Trusting marketing claims uncritically** — Virtually all VPN providers claim "no logs" and "Swiss jurisdiction." Verify claims independently.
+**Trusting marketing claims uncritically** — nearly all VPN providers claim "no logs" and "Swiss jurisdiction." Verify claims independently.
 
 **Ignoring infrastructure details** — A provider claiming privacy but leasing from hostile jurisdictions may compromise users regardless of encryption quality.
 

@@ -194,7 +194,7 @@ Threat models require regular updates as conditions change. Schedule quarterly r
 - Technology updates that affect security posture
 - Lessons learned from near-misses or incidents
 
-Document these reviews and adjust countermeasures accordingly. Security is an ongoing process, not a one-time configuration.
+Document these reviews and adjust countermeasures accordingly. Security is an ongoing process, not an one-time configuration.
 
 ## Related Reading
 

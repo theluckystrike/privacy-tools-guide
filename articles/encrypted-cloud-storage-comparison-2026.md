@@ -187,7 +187,7 @@ tresorit upload \
   --destination /team-vault/
 ```
 
-## Comprehensive Encryption Comparison Table
+## Encryption Comparison Table
 
 | Feature | Proton Drive | Filen | Tresorit | Sync.com | Nextcloud | rclone+S3 |
 |---------|--------------|-------|----------|----------|-----------|-----------|

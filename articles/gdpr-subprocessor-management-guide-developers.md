@@ -234,7 +234,7 @@ This workflow prevents infrastructure changes that introduce untracked subproces
 
 ## Maintaining Compliance Over Time
 
-Subprocessor management is not a one-time setup. Implement these ongoing practices:
+Subprocessor management is not an one-time setup. Implement these ongoing practices:
 
 - **Review cycles**: Schedule quarterly reviews of all active subprocessors
 - **Contract expiry alerts**: Track contract dates and flag renewals
@@ -391,8 +391,6 @@ Maintain this workflow as a living document and test it annually with a tabletop
 - [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
 - [GDPR Compliance Tools for Developers in 2026: A.](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
 - [GDPR Lawful Basis for Processing Explained: A Developer.](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

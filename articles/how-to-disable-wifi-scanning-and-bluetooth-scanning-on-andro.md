@@ -198,7 +198,7 @@ data class ScanningStatus(
 
 ## System-Level Scanning Commands Reference
 
-Complete ADB commands for comprehensive scanning control:
+Complete ADB commands for scanning control:
 
 ```bash
 # Disable all location-related scanning

@@ -281,7 +281,5 @@ Run this audit weekly and alert on any violations.
 - [GDPR Compliant Contact Form Implementation: A Technical.](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)
 - [GDPR Data Breach Notification Requirements 2026: A.](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

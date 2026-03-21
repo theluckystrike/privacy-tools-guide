@@ -183,15 +183,6 @@ For maximum benefit, you can use both strategies simultaneously. Run Decentraley
 <!-- No external CDN requests leave your server -->
 ```
 
-## Conclusion
-
-Both Decentraleyes and local CDNs serve the goal of reducing third-party tracking, but they operate at different layers. Decentraleyes provides automatic, browser-level protection requiring no configuration, making it ideal for everyday browsing privacy. Local CDNs offer complete control and are essential for developers building privacy-conscious applications.
-
-For most developers and power users, the combination of both approaches provides the best outcome: transparent privacy protection while browsing alongside full control over your application's assets.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

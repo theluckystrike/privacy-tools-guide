@@ -145,12 +145,6 @@ For developers and organizations requiring cross-border network access, several 
 4. **Maintain operational security**: Minimize logging, use strong encryption, and employ obfuscation where legal
 5. **Consult local legal experts**: Regulations vary by jurisdiction and change frequently
 
-## Key Takeaways
-
-China's VPN regulations create serious legal consequences for unauthorized usage, with penalties ranging from warnings and fines to imprisonment. The regulatory framework specifically targets VPN providers, but users—especially those operating commercial services or repeatedly violating restrictions—also face meaningful liability.
-
-For developers and power users, understanding the technical and legal landscape helps make informed decisions about network infrastructure and cross-border access methods. The key considerations remain: know your jurisdiction, understand detection mechanisms, and weigh the operational requirements against the potential consequences.
-
 ## Practical Detection Evasion Techniques
 
 Understanding detection methods helps developers make informed security decisions:

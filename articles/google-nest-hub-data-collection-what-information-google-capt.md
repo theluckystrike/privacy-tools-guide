@@ -166,7 +166,5 @@ The information collected creates rich profiles about household patterns, daily 
 - [How to Prevent Android Keyboard from Sending Typing Data.](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
 - [Smart Refrigerator Data Collection: What Samsung Family.](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

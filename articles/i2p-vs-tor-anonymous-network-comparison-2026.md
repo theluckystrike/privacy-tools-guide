@@ -171,7 +171,7 @@ Bridge obfs4 IP:PORT
 
 I2P uses a fully distributed peer discovery mechanism, making network-wide blocking theoretically harder. There's no central point of failure. However, I2P's smaller peer pool means blocking the network's current IP space is more feasible.
 
-In practice, Tor's bridge infrastructure proves more robust against actual censorship events. When Turkey temporarily blocked Tor in 2015, the bridge network remained functional.
+In practice, Tor's bridge infrastructure proves more strong against actual censorship events. When Turkey temporarily blocked Tor in 2015, the bridge network remained functional.
 
 ## Network Fingerprinting and Detection
 
@@ -249,7 +249,7 @@ The maturity of development ecosystems differs significantly between the network
 **I2P Development Resources:**
 - i2p-zero (containerized I2P)
 - Limited maintained SDK libraries
-- Less comprehensive documentation
+- Less documentation
 - Smaller research community
 
 For developers integrating anonymous networking into applications, Tor's ecosystem provides more tools, examples, and battle-tested libraries.
@@ -308,8 +308,6 @@ If you're currently using one network and considering switching:
 - [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
 - [Anonymous Browsing Mobile Devices Guide 2026: Techniques.](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
 - [Whonix vs Tails for Anonymous Browsing 2026: A Practical.](/privacy-tools-guide/whonix-vs-tails-for-anonymous-browsing-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

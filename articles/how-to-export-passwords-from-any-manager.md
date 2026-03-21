@@ -21,7 +21,7 @@ To export passwords from any manager, use its CLI tool for the most control: `op
 
 Several legitimate scenarios require password export. Switching to a different password manager is the most common—you might prefer an open-source solution or need features unavailable in your current tool. Creating regular encrypted backups provides insurance against account lockouts or service outages. Developers building integration tools need programmatic access to credential data. Security researchers auditing password practices may need to analyze stored credentials.
 
-Whatever your reason, the export process should preserve your data in a usable format while maintaining security during transfer.
+Whatever your reason, the export process should preserve your data in an usable format while maintaining security during transfer.
 
 ## 1Password Export Methods
 
@@ -235,8 +235,6 @@ Most modern password managers support CLI export, which gives the most control o
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
 - [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

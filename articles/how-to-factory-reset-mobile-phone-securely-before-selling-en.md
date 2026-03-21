@@ -185,21 +185,6 @@ Understand FRP:
 - **Android**: Google FRP asks for previous account after reset—ensure you know credentials or device is removed from your Google account
 - **iOS**: Activation Lock requires previous Apple ID—disable Find My before selling
 
-## Summary Checklist
-
-| Step | Android | iOS |
-|------|---------|-----|
-| Encrypt device | Settings → Security → Encrypt Phone | Built-in (always on modern iOS) |
-| Remove accounts | Remove Google account first | Disable Find My |
-| Factory reset | Recovery mode wipe | Settings → Erase All |
-| Verify | Boot to fresh setup | Boot to fresh setup |
-| Physical removal | Remove SIM/SD | Remove SIM (if applicable) |
-
-Selling your device without proper data sanitization exposes you to identity theft, credential theft, and privacy breaches. The steps above ensure your personal data is cryptographically protected or physically overwritten, giving you confidence that your information stays private.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

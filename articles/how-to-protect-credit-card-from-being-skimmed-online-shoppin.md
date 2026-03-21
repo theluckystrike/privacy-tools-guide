@@ -207,7 +207,7 @@ The Fair Credit Billing Act (FCBA) protects consumers for unauthorized charges u
 
 Consider shifting to payment methods with stronger skimming resilience:
 
-**EMV Chip Technology**: Chip-enabled cards generate one-time transaction codes making captured data unusable for future purchases. Online purchases don't fully leverage this advantage, but chip technology prevents reuse at physical merchants.
+**EMV Chip Technology**: Chip-enabled cards generate one-time transaction codes making captured data unusable for future purchases. Online purchases don't fully use this advantage, but chip technology prevents reuse at physical merchants.
 
 **Contactless/NFC Payments**: Mobile wallet payments (Apple Pay, Google Pay) substitute tokenized card data—a temporary code specific to that transaction—rather than your actual card number. Skimmers capturing tokenized data cannot reuse it elsewhere.
 

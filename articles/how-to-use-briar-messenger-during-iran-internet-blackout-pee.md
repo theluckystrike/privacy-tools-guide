@@ -295,12 +295,6 @@ During Iran 2022 protests, Briar enabled communication when cellular networks we
 
 The key lesson: **infrastructure independence is powerful**. When you remove dependency on centralized servers, you gain resilience that oppressive systems cannot easily suppress.
 
-## Conclusion
-
-Briar represents a fundamentally different approach to communication—one that works when centralized infrastructure fails or is deliberately blocked. During Iran internet blackouts, Briar enables coordination, information spread, and emotional connection when traditional communication becomes impossible. The platform's limitations (speed, no voice, learning curve) are acceptable tradeoffs for genuine censorship resistance.
-
-Organizations and individuals in regions facing potential infrastructure disruption benefit from pre-crisis Briar deployment. The modest barrier to entry (just installing an app) pays enormous dividends when communication matters most.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

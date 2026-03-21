@@ -93,7 +93,7 @@ Choosing the right server significantly impacts success rates. Based on testing,
 | Priority | Server Location | Reason |
 |----------|-----------------|--------|
 | 1st | Switzerland | Strong privacy laws, good connectivity |
-| 2nd | Netherlands | Multiple exit points, robust infrastructure |
+| 2nd | Netherlands | Multiple exit points, strong infrastructure |
 | 3rd | UK (London) | Stable connections, good speeds |
 | 4th | Germany | Reliable fallback option |
 

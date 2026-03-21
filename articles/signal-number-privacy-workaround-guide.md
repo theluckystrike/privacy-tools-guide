@@ -168,7 +168,5 @@ Regardless of which workaround you implement, consider these additional security
 - [JMP Chat VoIP Number for Signal Registration: Anonymous.](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)
 - [Privacy Setup for Confidential Informant: Protecting Your Identity](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

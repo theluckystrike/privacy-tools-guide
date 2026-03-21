@@ -354,7 +354,5 @@ This migration preserves your journal history while moving to a more privacy-res
 - [iOS Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 - [Snapchat Privacy Settings Complete Guide 2026: A.](/privacy-tools-guide/snapchat-privacy-settings-complete-guide-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

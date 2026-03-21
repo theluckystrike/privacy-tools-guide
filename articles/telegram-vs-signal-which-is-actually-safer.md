@@ -45,7 +45,7 @@ const tg = window.Telegram.WebApp;
 Signal implements the Double Ratchet Algorithm with:
 
 - **Forward secrecy**: Compromised session keys don't expose past messages
-- **Future secrecy**: Compromised keys don't expose future messages 
+- **Future secrecy**: Compromised keys don't expose future messages
 - **Deniable authentication**: Parties can prove messages originated from their device but cannot prove this to third parties
 
 The protocol uses ECDH (Elliptic Curve Diffie-Hellman) for key exchange and AES-256 for message encryption. You can inspect Signal's open-source implementation:

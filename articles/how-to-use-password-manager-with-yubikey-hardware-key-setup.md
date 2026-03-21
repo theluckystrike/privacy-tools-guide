@@ -52,7 +52,7 @@ For command-line enthusiasts, Bitwarden's CLI also supports YubiKey authenticati
 bw login your@email.com
 ```
 
-The CLI will output a URL to open in your browser. After authenticating with your YubiKey, return to the CLI and enter the generated code to unlock your vault.
+The CLI will output an URL to open in your browser. After authenticating with your YubiKey, return to the CLI and enter the generated code to unlock your vault.
 
 ### Step 3: Add a Backup YubiKey
 

@@ -95,7 +95,7 @@ sudo arpwatch -i en0
 
 ## Examine Router Logs
 
-Router logs often reveal connection attempts, authentication failures, and device associations. Access them through the admin panel—look for "System Log," "Security Log," or "Advanced > Logs." 
+Router logs often reveal connection attempts, authentication failures, and device associations. Access them through the admin panel—look for "System Log," "Security Log," or "Advanced > Logs."
 
 Key indicators include:
 - Multiple failed login attempts from internal IPs

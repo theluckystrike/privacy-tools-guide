@@ -177,22 +177,6 @@ def create_session_with_retry():
     return session
 ```
 
-## Summary of Recommended Settings
-
-For maximum privacy on Twitter X in 2026, implement these settings:
-
-1. Enable hardware key MFA for account security
-2. Set audience to "Protected tweets" if content isolation is priority
-3. Disable X AI training on your interactions
-4. Review and revoke unused connected apps
-5. Use muted words to filter unwanted content
-6. Limit photo tagging to trusted accounts only
-7. Disable precise location on tweets
-8. Regularly export and delete old data
-
-These recommendations balance security with platform functionality. Adjust based on your threat model and usage patterns.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
@@ -200,8 +184,6 @@ These recommendations balance security with platform functionality. Adjust based
 - [iOS Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 - [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
 - [macOS Privacy Settings for Remote Workers 2026: Complete.](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

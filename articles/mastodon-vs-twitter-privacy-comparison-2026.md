@@ -232,7 +232,5 @@ For power users concerned about privacy:
 - [Android Custom ROM Privacy Comparison 2026: A Technical.](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
 - [Dashlane vs 1Password Comparison 2026: A Developer.](/privacy-tools-guide/dashlane-vs-1password-comparison-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

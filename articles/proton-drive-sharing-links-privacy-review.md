@@ -280,12 +280,6 @@ Organizations using Proton Drive for regulated data face specific compliance req
 
 **PCI-DSS (Payment Card Industry)**: Sharing payment card information through any cloud service violates PCI-DSS. Don't use Proton Drive (or any cloud service) for this data class—maintain offline encryption or use specialized PCI-compliant solutions.
 
-## Conclusion
-
-Proton Drive sharing links provide strong technical privacy protections through end-to-end encryption. For developers and teams implementing secure file sharing workflows, Proton Drive offers a privacy-respecting platform that simplifies deployment while maintaining meaningful security. The platform's limitations—lack of detailed audit logs and access tracking—matter for some use cases but are acceptable tradeoffs for the simplicity and strong fundamental security.
-
-Effective security requires combining Proton Drive's technical capabilities with thoughtful operational practices: time-limited shares, password protection, separate credential channels, and regular audits of active shares.
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

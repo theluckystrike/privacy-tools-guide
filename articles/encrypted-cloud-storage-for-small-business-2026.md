@@ -86,7 +86,7 @@ For developers requiring custom implementations, libsodium provides well-audited
 {% highlight c %}
 #include <sodium.h>
 
-int encrypt_file(const unsigned char *plaintext, 
+int encrypt_file(const unsigned char *plaintext,
  size_t plaintext_len,
  const unsigned char *key,
  unsigned char **ciphertext_out) {
@@ -96,10 +96,10 @@ int encrypt_file(const unsigned char *plaintext,
  
  *ciphertext_out = malloc(plaintext_len + crypto_secretbox_MACBYTES);
  
- crypto_secretbox_easy(*ciphertext_out, 
- plaintext, 
- plaintext_len, 
- nonce, 
+ crypto_secretbox_easy(*ciphertext_out,
+ plaintext,
+ plaintext_len,
+ nonce,
  key);
  
  return 0;
@@ -216,7 +216,7 @@ Technical solutions only work if your team actually uses them. Address adoption 
 
 Encrypted storage helps meet regulatory requirements but doesn't automatically ensure compliance:
 
-**HIPAA (Healthcare)**: Encryption satisfies the "Technical safeguards" requirements but doesn't address administrative and physical safeguards. You need comprehensive compliance beyond encryption.
+**HIPAA (Healthcare)**: Encryption satisfies the "Technical safeguards" requirements but doesn't address administrative and physical safeguards. You need compliance beyond encryption.
 
 **GDPR (EU Personal Data)**: Encryption is mentioned as a technical measure, but GDPR applies to all personal data processing, not just storage. Implement data minimization, retention policies, and access controls alongside encryption.
 
@@ -372,10 +372,6 @@ Consider how to migrate away from encrypted storage if needed:
 **Key Recovery**: If the provider disappears, can you access your encryption keys to recover data? Some providers hold key escrow—avoid this unless necessary.
 
 **Migration Testing**: Before fully adopting a solution, test your ability to export and decrypt data using different tools.
-
-## Conclusion
-
-Encrypted cloud storage balances privacy with practical business needs. Success requires understanding your threat model, choosing tools appropriate for your technical capability, implementing with defense-in-depth, and maintaining discipline around key management and access control. For small businesses handling sensitive data, encrypted storage is not optional—it's essential infrastructure that protects customer data, competitive advantages, and legal compliance.
 
 ## Related Reading
 

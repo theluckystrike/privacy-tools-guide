@@ -41,15 +41,15 @@ The results represent median values across multiple test runs.
 
 ### Proton VPN
 
-Proton VPN utilizes WireGuard and OpenVPN protocols, with proprietary VPN Accelerator technology that claims to improve speeds on distant servers. In our tests:
+Proton VPN uses WireGuard and OpenVPN protocols, with proprietary VPN Accelerator technology that claims to improve speeds on distant servers. In our tests:
 
 | Server Location | WireGuard Speed | OpenVPN Speed |
 |-----------------|-----------------|---------------|
-| US East         | 412 Mbps        | 187 Mbps      |
-| US West         | 298 Mbps        | 142 Mbps      |
-| Germany         | 356 Mbps        | 168 Mbps      |
-| Japan           | 187 Mbps        | 89 Mbps       |
-| Australia       | 124 Mbps        | 58 Mbps       |
+| US East | 412 Mbps | 187 Mbps |
+| US West | 298 Mbps | 142 Mbps |
+| Germany | 356 Mbps | 168 Mbps |
+| Japan | 187 Mbps | 89 Mbps |
+| Australia | 124 Mbps | 58 Mbps |
 
 Proton VPN's performance varies significantly based on server load and distance. The WireGuard implementation shows strong results on North American and European routes, while Asian and Oceania connections show expected degradation due to latency.
 
@@ -59,11 +59,11 @@ Mullvad exclusively uses WireGuard, which provides consistent performance across
 
 | Server Location | WireGuard Speed |
 |-----------------|-----------------|
-| US East         | 445 Mbps        |
-| US West         | 387 Mbps        |
-| Germany         | 398 Mbps        |
-| Japan           | 234 Mbps        |
-| Australia       | 178 Mbps        |
+| US East | 445 Mbps |
+| US West | 387 Mbps |
+| Germany | 398 Mbps |
+| Japan | 234 Mbps |
+| Australia | 178 Mbps |
 
 Mullvad consistently outperformed Proton VPN on international routes, likely due to fewer users on their network and a more direct routing philosophy.
 
@@ -180,15 +180,6 @@ For typical development workflows:
 | Package downloads (npm, pip, cargo) | Mullvad preferable for international CDNs |
 | API testing against regional services | Proton VPN's larger network offers more endpoints |
 | Docker image pulls | Both acceptable; verify registry mirrors |
-
-## Conclusion
-
-For raw speed performance, Mullvad edges ahead with consistent WireGuard performance across their network. Proton VPN offers more server locations and features like Secure Core, which may justify the slight performance penalty for users requiring multi-jurisdictional routing.
-
-Both services maintain strong privacy commitments with independent audits, making either choice suitable for privacy-conscious development workflows. The decision ultimately depends on your specific requirements: maximum speed (Mullvad) versus geographic diversity and advanced features (Proton VPN).
-
-The most important factor remains consistent use of WireGuard protocol on either service, as this provides the best balance of performance and security for modern use cases.
-
 
 ## Related Reading
 

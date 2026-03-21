@@ -31,7 +31,7 @@ Entropy = log2(charset_size^password_length)
 With a 95-character charset (standard keyboard):
 
 - 12 characters: 78 bits
-- 14 characters: 91 bits 
+- 14 characters: 91 bits
 - 16 characters: 105 bits
 - 20 characters: 131 bits
 
@@ -194,8 +194,6 @@ For users managing their vault:
 - [Best Password Generator Strategy 2026: A Developer's Guide](/privacy-tools-guide/best-password-generator-strategy-2026/)
 - [How to Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

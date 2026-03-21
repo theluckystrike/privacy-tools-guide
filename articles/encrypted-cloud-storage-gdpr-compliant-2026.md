@@ -107,7 +107,7 @@ This distinction makes encryption architecture critical for compliance. If your 
 
 ## Key Management Audit and Compliance Logging
 
-Implement comprehensive audit logging for all encryption key operations:
+Implement audit logging for all encryption key operations:
 
 ```python
 import logging

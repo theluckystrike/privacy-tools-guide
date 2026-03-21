@@ -239,7 +239,7 @@ This approach creates maximum visibility into what applications are doing, at th
 
 ## Integration with System Monitoring Tools
 
-Combine Little Snitch with other macOS monitoring tools for comprehensive security visibility:
+Combine Little Snitch with other macOS monitoring tools for security visibility:
 
 **Little Snitch + Activity Monitor**: Use Activity Monitor to identify which processes are making suspicious connections that Little Snitch flags. Sort by network activity to find unexpected traffic.
 

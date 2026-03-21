@@ -173,17 +173,6 @@ Unlike traditional Tor bridges that require registration, Snowflake proxies can 
 
 The Snowflake project maintains a list of public proxies at snowflake.torproject.org, but running your own ensures dedicated capacity for users who need it most. Share your proxy address carefully—consider using encrypted channels or secure paste tools when distributing to users in high-risk environments.
 
-## Impact and Conclusion
-
-Each Snowflake proxy enables dozens of users daily to access an uncensored internet. For users in countries with aggressive network filtering, a working Snowflake connection represents access to information, communication tools, and resources that would otherwise be unavailable.
-
-The setup process takes approximately 15 minutes on a Linux server, and the resource requirements are minimal—Snowflake uses less than 100MB of RAM and negligible CPU under normal operation. Running a proxy on a cheap VPS costs only a few dollars monthly, making it an accessible contribution to digital rights.
-
-By running a Snowflake bridge, you join a global network of volunteers providing critical infrastructure for internet freedom. The technical setup is straightforward, but the impact on users who need to access information freely is substantial.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

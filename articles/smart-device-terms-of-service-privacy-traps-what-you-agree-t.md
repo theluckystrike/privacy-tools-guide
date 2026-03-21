@@ -274,7 +274,7 @@ When evaluating devices, directly compare competitor ToS side-by-side using this
 
 Most importantly, manufacturer privacy policies change. Register devices under your name and enable email notifications for policy updates. When Amazon, Google, Apple, or other manufacturers update their data practices, you receive notification. A single concerning change may justify replacing a device despite sunk costs.
 
-Document when you accepted the original ToS and what changes have occurred. This creates leverage if you later experience issues. In one case, a user demonstrated that data sharing permissions they accepted had been expanded three times without adequate notification, successfully requesting compensation.
+Document when you accepted the original ToS and what changes have occurred. This creates use if you later experience issues. In one case, a user demonstrated that data sharing permissions they accepted had been expanded three times without adequate notification, successfully requesting compensation.
 
 ## Related Reading
 

@@ -245,24 +245,6 @@ diff pre_travel_hashes.txt post_travel_hashes.txt
 | "These files look suspicious" | Request attorney | Remain silent | Possible civil asset forfeiture |
 | "I'm copying your drive" | Allow/allow | Refuse | Likely denial of entry + seizure |
 
-## Recommendations Summary
-
-For developers and power users who value both compliance and privacy:
-
-1. **Minimize data on devices** you intend to travel with—leave sensitive data behind or use secure remote access
-2. **Use encryption** for data at rest and understand biometric compulsion legal issues
-3. **Separate personal and work** devices and accounts when possible
-4. **Prepare for inspection** by organizing files, creating checksums, and documenting pre-travel state
-5. **Know your risk tolerance** and consult legal counsel if you regularly carry highly sensitive materials
-6. **Plan post-travel verification** with checksum validation and forensic analysis capabilities
-7. **Use nested encryption** for sensitive files with plausible deniability
-8. **Consider device rotation**: Have different devices for high-risk travel vs. personal use
-
-The border search exception remains one of the broadest exceptions to Fourth Amendment protections. While reasonable people can debate the policy wisdom, understanding the current legal reality helps you make practical decisions that balance compliance, privacy, and security. Your specific risk profile—journalist, activist, developer, business traveler—should determine which protections matter most.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -369,13 +369,6 @@ export ALL_PROXY=socks5://127.0.0.1:9050
 # In-person if possible; phone call minimum
 ```
 
-## Conclusion
-
-OMEMO encryption transforms XMPP from a metadata-exposed protocol into a privacy-respecting messaging system. When properly configured with fingerprint verification, OMEMO provides end-to-end encryption equivalent to Signal while maintaining the decentralization benefits of XMPP federation. However, metadata protection remains partial—your XMPP server still observes who communicates with whom. For maximum privacy, combine OMEMO with Tor or self-hosted XMPP infrastructure. The setup complexity pays dividends for organizations requiring encrypted communication without trusting centralized servers.
-
----
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

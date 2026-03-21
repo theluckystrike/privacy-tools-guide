@@ -172,7 +172,5 @@ For enterprise deployments, consider using Group Policy Results (gpresult /r) to
 - [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

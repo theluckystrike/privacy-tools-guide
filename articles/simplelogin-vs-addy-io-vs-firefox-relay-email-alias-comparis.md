@@ -191,12 +191,6 @@ Addy.io's self-hosted option removes third-party trust requirements entirely. Wh
 
 Firefox Relay benefits from Mozilla's privacy reputation but offers fewer configuration options. It's a solid choice for casual privacy needs but lacks advanced features developers might require.
 
-## Pricing Summary
-
-- **SimpleLogin**: Free (10 aliases), Premium $3/month (unlimited + custom domains)
-- **Addy.io**: Free (10 aliases), Lite $1/month, Pro $5/month, Self-hosting free
-- **Firefox Relay**: Free (5 aliases), Premium $0.99/month (unlimited)
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

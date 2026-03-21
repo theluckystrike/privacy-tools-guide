@@ -364,13 +364,6 @@ echo "VPN streaming optimizations applied"
 
 Run this script before conducting streaming tests to establish baseline optimized conditions.
 
-## Conclusion
-
-Accessing YouTube in China without buffering requires understanding the intersection of network protocols, server architecture, client optimization, and ISP-specific characteristics. No single solution works universally—the best approach depends on your specific network conditions, technical capability, and the ISP you're using.
-
-Focus on protocol selection that resists DPI detection (Shadowsocks with obfuscation or V2Ray), choose server locations with adequate bandwidth, optimize client-side settings for streaming performance, and implement monitoring to detect when changes become necessary. With proper configuration and willingness to adapt protocols and servers based on real-time performance, smooth 1080p or even 4K playback is achievable, though you may need to experiment with different servers and protocols to find what works best in your specific situation. Advanced users should implement split tunneling to reduce VPN overhead and use bandwidth monitoring to identify when ISP throttling is active.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

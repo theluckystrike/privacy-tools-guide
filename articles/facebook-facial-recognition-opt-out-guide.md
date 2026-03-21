@@ -386,7 +386,5 @@ In 2026, facial recognition regulation continues evolving:
 - [How to Opt Out of Data Sharing Under Connecticut Data Privacy Act (CTDPA) - Complete Guide](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

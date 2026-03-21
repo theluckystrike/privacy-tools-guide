@@ -250,7 +250,5 @@ Both provide solid security for developers, with the choice depending on your sp
 - [1Password vs Bitwarden in 2026: Which Password Manager.](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)
 - [Best Password Manager for macOS 2026: A Developer and.](/privacy-tools-guide/best-password-manager-for-macos-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

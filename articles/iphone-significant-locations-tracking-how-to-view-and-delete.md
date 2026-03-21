@@ -248,7 +248,7 @@ Significant Locations is one tracking mechanism. Other location data collection 
 
 **WiFi Networks**: Your device remembers WiFi networks you've connected to and their locations
 
-Disabling Significant Locations alone doesn't provide complete location privacy. Implement comprehensive location privacy:
+Disabling Significant Locations alone doesn't provide complete location privacy. Implement location privacy:
 
 ```bash
 # Complete location privacy lockdown on iPhone

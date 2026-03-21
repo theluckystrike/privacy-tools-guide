@@ -83,7 +83,7 @@ Your hardened network will have:
 - Can't enforce firewall rules between devices
 - Limited privacy (DNS filtering only, not network segmentation)
 
-**Recommendation:** Option A if you have technical skills. Option B if you want quick wins without major network redesign.
+**Recommendation:** Option an if you have technical skills. Option B if you want quick wins without major network redesign.
 
 ---
 
@@ -593,7 +593,7 @@ When connected:
 - All traffic from iPhone goes through your home network
 - DNS queries go to Pi-hole (DNS filtered)
 - ISP can't see which sites you visit
-- Home network can access iPhone seamlessly
+- Home network can access iPhone
 
 ---
 
@@ -777,19 +777,6 @@ Restart DHCP: Services → DHCP Server
 
 ---
 
-## Cost Summary
-
-| Component | Option | Cost | Notes |
-|-----------|--------|------|-------|
-| Router | Netgate SG-2100 | $500 | Or $100–300 used |
-| Pi-hole | Raspberry Pi 4 | $50 | Including microSD |
-| WiFi AP | Ubiquiti UniFi | $150 | Or use built-in |
-| Cabling | CAT6 | $30 | Ethernet for critical devices |
-| WireGuard | Included | Free | Built into pfSense |
-| **Total** | | **$730** | **~$300 used hardware** |
-
----
-
 ## Maintenance Timeline
 
 - **Day 1**: Install Pi-hole, configure DNS
@@ -824,23 +811,7 @@ This isn't theoretical—Comcast and AT&T have been prosecuted by FTC for sellin
 
 ---
 
-## Conclusion
-
-A privacy-focused home network requires:
-1. **DNS filtering** (Pi-hole) — Block trackers before they load
-2. **Network segmentation** (VLANs) — Isolate untrusted devices
-3. **Firewall rules** — Enforce isolation at network level
-4. **Encrypted remote access** (WireGuard) — Safe external access
-
-This setup takes 1 week to configure, $300–700 in hardware (or less used), and <30 minutes monthly maintenance. The privacy gains are enormous: ISP can't spy on your browsing, trackers can't load, and devices can't cross-contaminate.
-
-Start with Pi-hole alone ($50, 30 min setup). Once comfortable, add pfSense firewall. Complete the setup with VLANs and WireGuard over several weeks as you learn the system.
-
-For security-conscious users, privacy advocates, and anyone tired of ISP snooping, this is the gold standard home network setup.
-
 {% endraw %}
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

@@ -187,22 +187,6 @@ fi
 
 Run this periodically to maintain consistent privacy posture.
 
-## Summary of Recommended Configuration
-
-For couples seeking maximum privacy on Feeld:
-
-1. Enable **Incognito mode** (requires Majors subscription)
-2. Disable **Show my online status**
-3. Set relationship visibility to **Hidden**
-4. Use separate devices or emulators for individual vs. couple profiles
-5. Never import contacts
-6. Use dedicated phone numbers and emails
-7. Route traffic through a trusted VPN
-8. Assume all content can be screenshotted
-
-Feeld's privacy controls provide reasonable protection when properly configured, but no app-level security replaces operational security practices. Your threat model determines which additional measures make sense for your situation.
-
-
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

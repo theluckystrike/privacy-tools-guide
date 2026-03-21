@@ -147,7 +147,7 @@ For developers building applications that use TOTP for user authentication, unde
 
 ### Server-Side TOTP Verification
 
-Implement robust TOTP verification that accounts for clock drift:
+Implement strong TOTP verification that accounts for clock drift:
 
 ```python
 import hmac

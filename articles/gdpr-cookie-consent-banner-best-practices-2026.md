@@ -266,7 +266,5 @@ Use browser DevTools to inspect localStorage and confirm the consent JSON matche
 - [CCPA vs GDPR Comparison Guide 2026: A Developer's.](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
 - [GDPR Compliance Tools for Developers in 2026: A.](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

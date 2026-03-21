@@ -282,7 +282,5 @@ The key is maintaining discipline—whitelist sparingly, audit frequently, and p
 - [Twitter X Privacy Settings Recommended 2026: A Complete.](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
 - [Best Browser for Anonymous Searching 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-anonymous-searching-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -22,7 +22,7 @@ Managing multiple authenticator apps across devices creates friction. Developers
 TOTP (Time-based One-Time Password) codes rely on a shared secret key—the base32-encoded seed that both your authenticator app and the service generate codes from. When you store this secret in your password manager, you generate the same codes any authenticator would produce.
 
 The secret typically arrives in two formats when setting up 2FA:
-- **otpauth:// URI** — A URL containing the secret and parameters
+- **otpauth:// URI** — an URL containing the secret and parameters
 - **Manual entry** — The base32 secret string alone
 
 Password managers like Bitwarden and 1Password capture these automatically during 2FA setup, but you can also manually add them for existing accounts.
@@ -221,8 +221,6 @@ Hardware security keys (YubiKey, SoloKey) provide stronger protection than TOTP 
 - [Browser Password Manager vs Dedicated App: A Developer.](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
 - [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
 - [Password Manager for Travel Agent Managing Booking Platform Passwords: A Practical Guide](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

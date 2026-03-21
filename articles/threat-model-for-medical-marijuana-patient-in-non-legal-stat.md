@@ -304,7 +304,7 @@ Answer these questions:
 1. **How visible is your use?** Do family members, neighbors, or friends know about it?
 2. **How digital is your activity?** Do you order online, discuss via messaging, or operate entirely in-person?
 3. **What's your jurisdiction's enforcement pattern?** Aggressive prosecution or informal tolerance?
-4. **Who's your threat actor?** Law enforcement, family members seeking legal leverage, or just general privacy?
+4. **Who's your threat actor?** Law enforcement, family members seeking legal use, or just general privacy?
 5. **What can you afford to lose?** Job, custody, housing, or just privacy?
 
 Your answers should guide which protections matter most. Someone with a hidden use pattern in a tolerant state needs fewer protections than someone with visible use in an aggressive jurisdiction.

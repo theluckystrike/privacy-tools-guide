@@ -113,9 +113,9 @@ For developers building Facebook-integrated applications, understanding rate lim
 
 | Endpoint Category | Daily Limit | Hourly Limit |
 |-------------------|-------------|--------------|
-| User Data (READ) | 600 calls   | 200 calls    |
-| Publish (WRITE)  | 200 calls   | 50 calls     |
-| Search           | 100 calls   | 25 calls     |
+| User Data (READ) | 600 calls | 200 calls |
+| Publish (WRITE) | 200 calls | 50 calls |
+| Search | 100 calls | 25 calls |
 
 Implement exponential backoff in your applications to handle rate limit errors gracefully:
 
@@ -178,23 +178,6 @@ FB.login(function(response) {
   }
 });
 ```
-
-## Summary of Recommended Settings
-
-For maximum privacy, apply these configurations:
-
-| Setting | Recommended Value |
-|---------|-------------------|
-| Future posts default | Friends only |
-| Who can send friend requests | Friends of friends |
-| Who can see your friends list | Only me |
-| Allow search engines to index | Off |
-| Off-Facebook activity | Clear and disable future |
-
-Facebook's privacy controls continue evolving. Regularly review your privacy settings, especially after platform updates, to maintain your desired level of data protection and visibility.
-
----
-
 
 ## Related Reading
 

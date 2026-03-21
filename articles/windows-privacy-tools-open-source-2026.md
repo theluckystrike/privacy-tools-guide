@@ -175,7 +175,7 @@ autoruns64.exe -accepteula
 
 ### Windows Privacy Dashboard (WPD)
 
-WPD provides a unified interface for configuring Windows privacy settings. It exposes settings that Microsoft hides in various locations.
+WPD provides an unified interface for configuring Windows privacy settings. It exposes settings that Microsoft hides in various locations.
 
 Download from github.com/WPD-Project/WPD:
 ```powershell

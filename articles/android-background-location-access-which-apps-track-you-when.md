@@ -204,7 +204,7 @@ Real-world examples show how major applications handle background location:
 - Frequency: Every 5-10 seconds during rides
 - Data retention: Months (available for support inquiries)
 
-## Comprehensive Audit Process
+## Audit Process
 
 ### Step 1: Android 12+ Privacy Dashboard Analysis
 

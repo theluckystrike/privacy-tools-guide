@@ -155,7 +155,7 @@ def get_reddit_data(username):
 
 ## Automating Cross-Platform Data Collection
 
-For developers managing data across multiple platforms, a unified approach helps:
+For developers managing data across multiple platforms, an unified approach helps:
 
 {% highlight python %}
 import asyncio
@@ -305,8 +305,6 @@ for f in pathlib.Path('download').rglob('*.json'):
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
 - [Social Media Privacy Policy Comparison 2026: A Developer.](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
 - [How to Demand a Company Stop Selling Your Personal Data.](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

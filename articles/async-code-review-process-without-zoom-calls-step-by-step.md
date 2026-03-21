@@ -101,12 +101,6 @@ Collect metrics if useful. Track average time to first review, total review cycl
 
 Be willing to experiment. Try different response time expectations, different PR sizes, or different approval requirements. What works for one team might not work for yours, so iterate until you find the right balance.
 
-## Best Practices Summary
-
-Effective async code review comes down to clear communication, structured processes, and mutual respect for everyone's time and expertise. Use PR templates to ensure consistency. Write detailed, specific feedback in inline comments. Maintain reasonable response time expectations. Handle disagreements thoughtfully. And continuously improve your process based on what you learn.
-
-By following these steps, your team can maintain high code quality while respecting the async nature of remote work. The initial setup takes some effort, but the long-term benefits of faster reviews, better feedback, and improved team collaboration make it worth the investment.
-
 ## Advanced PR Template Examples
 
 **For Security-Sensitive Changes**:

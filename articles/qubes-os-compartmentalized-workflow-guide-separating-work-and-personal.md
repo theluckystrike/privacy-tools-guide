@@ -23,7 +23,7 @@ Modern threat models require more than antivirus software and strong passwords. 
 
 Qubes OS implements a security-through-isolation approach using virtualization. Unlike traditional operating systems where all applications run with equal privilege, Qubes creates multiple isolated environments called "qubes" (virtual machines) that contain specific tasks. If one qube is compromised, the attacker cannot automatically access your other qubes or the data within them.
 
-The architecture rests on Xen hypervisor, which sits between the hardware and all operating systems. Each qube runs its own minimal Linux or Windows instance with its own kernel. The desktop environment provides a unified interface while maintaining strict isolation between compartments.
+The architecture rests on Xen hypervisor, which sits between the hardware and all operating systems. Each qube runs its own minimal Linux or Windows instance with its own kernel. The desktop environment provides an unified interface while maintaining strict isolation between compartments.
 
 This fundamentally differs from simple user accounts or containerization. A compromised application in one qube cannot:
 

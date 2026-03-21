@@ -149,7 +149,7 @@ client.upload_sync("local-file.txt", "my-app-data/remote-file.txt")
 
 Most services provide REST APIs for programmatic file operations. Syncthing offers a REST API for device and folder management, useful for automation scripts.
 
-rclone supports most cloud storage backends, providing a unified CLI for sync operations:
+rclone supports most cloud storage backends, providing an unified CLI for sync operations:
 
 ```bash
 # Sync local directory to encrypted Proton Drive

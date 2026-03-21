@@ -248,7 +248,7 @@ What this does:
 - Restricts font enumeration
 
 Limitations:
-- Not as comprehensive as Tor
+- Not as as Tor
 - WebGL still leaks some information
 - Site compatibility better than Tor, but some sites break
 
@@ -449,7 +449,7 @@ Good results:
 
 ## Related Reading
 
-- [Tor Browser: Comprehensive Guide](/tor-browser-guide/)
+- [Tor Browser: Guide](/tor-browser-guide/)
 - [How to Use Tails OS for Maximum Privacy](/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
 - [Best VPN Services for Privacy 2026](/best-vpn-services-for-privacy-2026/)
 - [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)

@@ -298,7 +298,5 @@ Understanding persistent keepalive helps you make informed decisions about your 
 - [What VPN Logs Actually Mean: No-Log Policy Explained.](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
 - [Tor Network Censorship Resistance Explained: A Technical.](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -209,7 +209,5 @@ Start with circuit changes and security level adjustments — they resolve most 
 - [Best Browser for Anonymous Searching 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-anonymous-searching-2026/)
 - [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
