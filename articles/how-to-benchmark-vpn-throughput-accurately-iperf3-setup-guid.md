@@ -9,7 +9,7 @@ permalink: /how-to-benchmark-vpn-throughput-accurately-iperf3-setup-guid/
 categories: [guides]
 tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
