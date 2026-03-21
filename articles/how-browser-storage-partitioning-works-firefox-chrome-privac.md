@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-browser-storage-partitioning-works-firefox-chrome-privac/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
