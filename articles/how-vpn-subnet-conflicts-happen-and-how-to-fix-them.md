@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-vpn-subnet-conflicts-happen-and-how-to-fix-them/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, troubleshooting, vpn]
