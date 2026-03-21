@@ -148,6 +148,58 @@ env | grep -i "key\|secret\|token\|password"
 
 For developers using containerization, ensure Docker Desktop's file sharing is limited to necessary directories only. Expose only required paths to containers to prevent lateral movement if a container is compromised.
 
+### SSH Key Management and Hardening
+
+Remote development requires SSH access. Implement strict SSH configurations to prevent credential compromise:
+
+```bash
+# Generate hardware-backed SSH keys (requires newer OpenSSH)
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_remote
+
+# Configure SSH permissions strictly
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/config
+chmod 600 ~/.ssh/id_ed25519_remote
+chmod 644 ~/.ssh/id_ed25519_remote.pub
+
+# Disable password authentication and root login in ~/.ssh/config
+Host *
+    PubkeyAuthentication yes
+    PasswordAuthentication no
+    PermitRootLogin no
+```
+
+For developers managing multiple SSH keys, consider using ssh-agent with a short timeout to prevent key exposure if your laptop is briefly compromised:
+
+```bash
+# Add key to agent with 1-hour timeout
+ssh-add -t 3600 ~/.ssh/id_ed25519_remote
+
+# List loaded keys
+ssh-add -l
+```
+
+### Credential Storage and Secrets Management
+
+Never store API keys, database passwords, or credentials in plain text. Use a secrets manager:
+
+```bash
+# Using 1Password CLI for credential retrieval
+eval $(op signin)
+export DATABASE_PASSWORD=$(op read op://vault/database/password)
+
+# Or use AWS Secrets Manager
+aws secretsmanager get-secret-value --secret-id remote-db-password \
+  --query SecretString --output text
+```
+
+Store credentials in your local password manager or cloud secrets system. Configure git to use credential caching with appropriate timeout:
+
+```bash
+# Cache git credentials for 1 hour
+git config credential.helper 'cache --timeout=3600'
+```
+
 ## Browser Privacy for Remote Work
 
 Your browser represents the most frequent attack surface. Configure browser privacy settings aggressively.
@@ -185,7 +237,70 @@ For monitoring, consider logging agents that track permission changes:
 fs_usage -w -f filesys /Library/Application\ Support/com.apple.TCC/
 ```
 
-Remote work offers flexibility but demands vigilance. By implementing these privacy configurations, you reduce your attack surface while maintaining the productivity tools and access that remote work requires.
+## Additional Privacy Considerations for Remote Work Environments
+
+Remote workers often use multiple devices, cloud services, and third-party tools. Each represents an additional privacy surface.
+
+### Managing Multiple Device Identities
+
+Many remote workers maintain work and personal devices. Ensure privacy settings are hardened on both:
+
+```bash
+# Create a separate user account for work vs. personal activities
+# This isolates browsing history, cache, and application access
+
+# Create work user
+sudo dscl . -create /Users/work_account
+sudo dscl . -create /Users/work_account UserShell /bin/zsh
+```
+
+### Cloud Sync and iCloud Privacy
+
+If you use iCloud for syncing documents or mail across your Mac, understand the implications:
+
+```bash
+# Disable Keychain syncing if it contains work credentials
+defaults write com.apple.iCloud DisableKeychainSync -bool true
+
+# Limit iCloud Photos to non-sensitive personal photos
+# Photos are encrypted but still transmitted to Apple servers
+# Don't sync work documents or sensitive files to iCloud
+```
+
+### Printer and Scanner Privacy
+
+Network printers often store documents in memory. Remote workers frequently print sensitive documents:
+
+```bash
+# Disable printer memory if possible
+# Remove all print jobs from the printer's memory after printing
+# Use "Delete after printing" option when available
+```
+
+### Audio and Video Input Privacy
+
+Webcams and microphones represent surveillance vectors. Unlike phones, Macs don't have consistent indicators for when these are active:
+
+```bash
+# Physically cover camera and microphone
+# Or use software to disable:
+defaults write com.apple.pluginkit.pkd DisableSandboxAuditEvents -bool true
+
+# Check Activity Monitor for processes using camera/microphone
+# Look for: com.apple.mediaserver, FaceTime, Zoom, Teams
+```
+
+For highly sensitive work, consider disabling camera and microphone at the system level:
+
+```bash
+# Remove camera access for all apps
+sudo chmod 000 /dev/video*
+
+# Note: This may break Zoom, FaceTime, etc.
+# Restore with: sudo chmod 644 /dev/video*
+```
+
+Remote work offers flexibility but demands vigilance. By implementing these privacy configurations, you reduce your attack surface while maintaining the productivity tools and access that remote work requires. Review and audit these settings quarterly as your work environment and threat model evolve.
 
 
 ## Related Articles

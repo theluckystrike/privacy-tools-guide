@@ -187,6 +187,132 @@ Several frequent mistakes reduce the effectiveness of disappearing messages:
 
 **Mixing conversation contexts**: A single conversation might contain both sensitive and casual communication. Consider separating discussions into different conversations with appropriate timer settings.
 
+## Advanced: Safety Number Verification
+
+When using disappearing messages for highly sensitive communications, verify that your end-to-end encryption keys haven't been compromised through a man-in-the-middle attack.
+
+**Verifying Safety Numbers**
+
+Signal generates unique safety numbers for each contact. These numbers derive from the public keys you exchange:
+
+```bash
+# Manually verify safety numbers out of band
+# 1. Open Signal conversation with contact
+# 2. Tap contact name → Safety Number
+# 3. Have contact read their version of your safety number
+# 4. Compare in person or through verified communication channel
+```
+
+Safety numbers changing indicates a potential MITM attack. This is rare but critical to detect when sharing truly sensitive information.
+
+## Metadata Leakage and Disappearing Messages Limitations
+
+Disappearing messages delete content but not metadata. Be aware of what information persists:
+
+**Information Hidden by Disappearing Messages:**
+- Message content (encrypted and deleted)
+- Cryptographic keys used to decrypt the message
+
+**Information NOT Hidden:**
+- That you communicated with this person
+- When and how often you communicate
+- Message length and timing patterns
+- Your phone number and their phone number
+
+For users with extreme threat models (journalists, activists in hostile regimes), combine disappearing messages with additional metadata-protecting measures:
+
+1. Use Signal over Tor to hide network-level metadata
+2. Vary communication patterns to avoid timing analysis
+3. Use usernames instead of phone numbers where supported
+4. Consider decentralized or mixnet-based messaging for critical communications
+
+## Integration with Device-Level Security
+
+Disappearing messages work best alongside other device security measures:
+
+**Device Lock and Encryption:**
+```bash
+# On iOS: Settings → Face ID & Passcode
+# Require authentication immediately (not after 1 minute)
+
+# On Android: Settings → Security → Lock screen
+# Enable lock screen and set to appear immediately
+```
+
+If someone gains access to your unlocked phone, disappearing messages provide no protection. Enable biometric or PIN-based locking with immediate timeout.
+
+**Notification Security:**
+Disable message previews in notifications to prevent lock screen visibility:
+
+```
+# iOS: Settings → Notifications → Signal → Show Previews → When Unlocked
+# Android: Settings → Notifications → Advanced → Hide sensitive content
+```
+
+## Organizational Deployment of Disappearing Messages
+
+For teams deploying Signal as organizational communication infrastructure, establish clear policies:
+
+### Policy Framework
+
+```yaml
+signal_deployment_policy:
+  critical_security:
+    channels: ["incident_response", "threat_intel"]
+    default_timer: 300          # 5 minutes
+    enforcement: mandatory      # Cannot be disabled
+    logging: separate_system    # Audit trail in separate secure database
+
+  confidential_business:
+    channels: ["strategy", "customer_data", "financials"]
+    default_timer: 3600         # 1 hour
+    enforcement: recommended    # Can be disabled by team lead
+    logging: 24_hour_retention  # Logs kept separately
+
+  standard_communication:
+    channels: ["general", "announcements"]
+    default_timer: 604800       # 1 week
+    enforcement: optional       # User choice
+    logging: no_logging         # No separate audit trail needed
+```
+
+### Compliance Considerations
+
+Organizations in regulated industries face tension between disappearing messages (privacy) and record retention (compliance):
+
+```python
+def handle_compliance_disappearing_messages():
+    """
+    Organizations handling regulated data (healthcare, finance) need both
+    privacy and audit trails.
+    """
+    solution = {
+        "user_view": "Messages disappear after 1 hour",
+        "compliance_view": "Audit system logs all messages separately",
+        "key_principle": "Privacy for users, compliance for organization"
+    }
+
+    # Logging architecture:
+    # 1. Signal handles encryption/deletion for users
+    # 2. Separate system logs message metadata only (who, when, to whom)
+    # 3. Content never appears in compliance logs
+    # 4. Compliance logs protected under attorney-client privilege if possible
+```
+
+This architecture satisfies both privacy goals (users get disappearing messages) and compliance requirements (organization maintains audit trail).
+
+### Training and Awareness
+
+Deploy Signal effectively by training team members:
+
+1. **Explain the security model**: Why disappearing messages are configured this way
+2. **Document the policy**: Clear written policies everyone understands
+3. **Provide examples**: Concrete scenarios showing when to use each timer
+4. **Monitor adoption**: Track compliance with organizational policies
+5. **Update based on incidents**: Adjust policies when security events occur
+
+Organizations that treat disappearing messages as "set and forget" typically see poor adoption. Effective deployment requires ongoing communication about security rationale.
+
 
 ## Related Articles
 

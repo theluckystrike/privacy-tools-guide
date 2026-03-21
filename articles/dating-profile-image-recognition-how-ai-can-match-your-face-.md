@@ -181,11 +181,115 @@ Before signing up, review whether the platform allows complete data deletion, in
 
 Reverse image search your profile photos periodically to detect unauthorized use on other platforms.
 
+## Advanced Defense: Adversarial Perturbations
+
+Emerging research into adversarial perturbations shows promise for defeating face recognition without obviously degrading image quality:
+
+```python
+# Concept: Adversarial patch to confuse face recognizers
+def generate_adversarial_face_image(base_image):
+    """
+    Add imperceptible perturbations to fool face recognition.
+    This is highly specialized and requires careful implementation.
+    """
+    # Use FGSM (Fast Gradient Sign Method) to compute perturbations
+    perturbation = compute_perturbation_fgsm(base_image, target_model)
+
+    # Add perturbation to image
+    adversarial_image = base_image + (perturbation * epsilon)
+
+    # Clip to valid pixel range
+    adversarial_image = np.clip(adversarial_image, 0, 255)
+
+    return adversarial_image
+
+# The resulting image looks normal to humans but fails to match
+# the original in face recognition systems
+```
+
+However, adversarial defenses are in an arms race with better attack detection. Using heavily cropped or blurred photos remains more reliable than subtle adversarial perturbations.
+
+## Federated Learning Approaches
+
+A privacy-preserving alternative to centralized databases is federated learning, where matching happens on your device rather than on centralized servers:
+
+```python
+# Conceptual federated learning for dating apps
+class FederatedDateMatching:
+    def __init__(self, local_preference_model):
+        self.local_model = local_preference_model
+        self.server_model_weights = None
+
+    def get_recommendations(self, other_profiles):
+        """
+        Generate recommendations without uploading your profile.
+        1. Download latest model weights from server
+        2. Score matches locally
+        3. Upload only match scores, not your profile
+        """
+        # Download model (no personal data)
+        self.server_model_weights = fetch_model_weights()
+
+        # Score locally
+        scores = [
+            self.local_model.score(profile)
+            for profile in other_profiles
+        ]
+
+        # Upload only scores (no profile data)
+        submit_scores(scores)
+
+        return ranked_profiles(scores)
+```
+
+This approach allows personalized matching without the dating service ever seeing your profile data.
+
 ## Future Directions
 
 The arms race between privacy tools and recognition systems continues. Emerging technologies like adversarial perturbations—subtle patterns that confuse AI models—show promise but remain imperfect. Researchers are also exploring federated learning approaches that could perform matching without centralizing sensitive biometric data.
 
 Understanding how these systems work is the first step toward making informed decisions about your digital presence. For developers building privacy-focused alternatives, the technical foundation exists to create dating platforms that respect user confidentiality while still providing meaningful matching functionality.
+
+### Building Privacy-Respecting Dating Platforms
+
+If you're developing a dating application, consider these privacy-first approaches:
+
+1. **Client-side face embedding generation**: Users compute embeddings locally; servers never see face vectors
+2. **Ephemeral profiles**: Profiles auto-delete after 30 days or X messages
+3. **No cross-platform linking**: Refuse to link with external data brokers
+4. **Transparent data policy**: Clearly document what data is kept and how long
+5. **User deletion verification**: Confirm all data is actually deleted upon request
+
+```javascript
+// Example: Privacy-first profile handling
+class PrivacyFirstDatingProfile {
+    constructor(userId) {
+        this.userId = userId;
+        this.expirationDate = Date.now() + (30 * 24 * 60 * 60 * 1000); // 30 days
+    }
+
+    uploadPhoto(imageData) {
+        // Compute embedding locally
+        const embedding = computeFaceEmbedding(imageData);
+
+        // Send only embedding to server, not image
+        sendEmbeddingToServer(embedding);
+
+        // Delete local copy
+        secureDelete(imageData);
+    }
+
+    requestProfileDeletion() {
+        // Initiate complete profile removal
+        deleteProfile(this.userId);
+
+        // Verify deletion
+        scheduleVerificationEmail(1, "day");
+    }
+}
+```
+
+The data minimization principle—collecting only what's necessary for core functionality—provides the strongest long-term protection for user privacy.
 
 
 ## Related Articles

@@ -176,6 +176,129 @@ Several common practices create unnecessary risks:
 - **Social media check-ins** that reveal your regular haunts
 - **Photo metadata** that embeds GPS coordinates in images
 
+## Detecting Location Tracking in Dating Apps
+
+Before trusting a dating platform with location, verify it's not secretly tracking you beyond what you've consented to.
+
+### Network-Level Monitoring
+
+For developers, you can detect unauthorized location tracking by analyzing network traffic:
+
+```python
+import subprocess
+import json
+from datetime import datetime
+
+def monitor_location_requests(app_bundle_id):
+    """
+    Monitor network requests from dating app using mitmproxy.
+    Detect if location data is sent when not actively using the app.
+    """
+    # Capture HTTP/HTTPS traffic from specific app
+    process = subprocess.Popen([
+        'mitmproxy',
+        '--mode', 'transparent',
+        '--listen-port', '8080'
+    ], stdout=subprocess.PIPE)
+
+    location_requests = []
+    while True:
+        line = process.stdout.readline()
+        if b'location' in line.lower():
+            location_requests.append({
+                "timestamp": datetime.now(),
+                "request": line.decode('utf-8')
+            })
+
+        # Alert if location requests when app isn't active
+        if is_app_backgrounded() and location_requests:
+            print("WARNING: Location data sent while app backgrounded")
+
+    return location_requests
+```
+
+### Runtime Permission Monitoring
+
+```bash
+# iOS: Monitor location access via system logs
+log stream --predicate 'eventMessage contains "location"' \
+  --level debug
+
+# Android: Monitor permission usage
+adb shell cmd appops get com.dating.app
+# Look for "FINE_LOCATION" and when it's accessed
+```
+
+If the app sends location data when it's not open, uninstall it and use an alternative.
+
+## Building Location Privacy into Your Life
+
+Beyond technical solutions, adopt behavioral practices that minimize location exposure:
+
+### Regular Location Audit
+
+```bash
+#!/bin/bash
+# Monthly audit of location-sharing permissions
+
+echo "=== Location Sharing Audit ==="
+
+# iOS check (requires iCloud access)
+echo "Check: Settings → Privacy & Security → Location Services"
+echo "Review each app's access level"
+
+# Android check
+adb shell pm list packages | while read pkg; do
+    perms=$(dumpsys package $pkg | grep LOCATION)
+    if [ ! -z "$perms" ]; then
+        echo "Package $pkg has location access"
+    fi
+done
+```
+
+### Social Media Check-In Discipline
+
+Disable automatic check-ins and location tagging on social media. Before posting:
+
+1. **Don't include location metadata**: Strip EXIF data before uploading photos
+2. **Avoid real-time check-ins**: Post about venues hours after leaving
+3. **Use vague location terms**: "Coffee shop in downtown" vs. exact address
+4. **Turn off background location**: Disable location access for social apps
+
+### Future-Proofing Your Location Privacy
+
+```javascript
+// If you build location-sharing features, implement these controls:
+
+class PrivacyAwareLocationSharing {
+    constructor() {
+        this.sharing_enabled = false;
+        this.expiration_hours = 1;
+        this.accuracy_degradation = true; // Add noise to coordinates
+    }
+
+    shareLocation(recipient, duration_hours = 1) {
+        // Add location noise
+        noisy_lat = this.latitude + random(-0.001, 0.001);
+        noisy_lng = this.longitude + random(-0.001, 0.001);
+
+        // Generate expiring share token
+        token = generateToken();
+        setExpiration(token, duration_hours);
+
+        // Never store actual location on server
+        storeOnly(token, noisy_location);
+
+        return shareToken(recipient, token);
+    }
+
+    automaticLocationClear() {
+        // Clear location data automatically
+        scheduleClear(token, duration_hours);
+    }
+}
+```
+
 ## Quick Checklist Before Meeting Someone from a Dating App
 
 1. **Share venue address, not your home address**
@@ -184,8 +307,23 @@ Several common practices create unnecessary risks:
 4. **Meet in public** locations with good reviews
 5. **Keep location sharing disabled** until you've built trust
 6. **Review app permissions** monthly and revoke unused access
+7. **Monitor app behavior**: Check if location is sent when app isn't active
+8. **Audit social media**: Remove location tags and check-ins before dating
 
 Building trust with a new person takes time. Your location data should reflect that progression—from venue addresses to temporary shares to permanent sharing only when you've established a genuine connection and multiple in-person meetings. The methods above let you meet safely while maintaining control over your most sensitive personal data.
+
+## Personal Safety Strategies
+
+Location privacy isn't just about data protection—it's about physical safety:
+
+### Meeting Progression
+
+1. **First meeting**: Public venue, shared address (not location), friend informed
+2. **Second/third meeting**: Still public venues, consider temporary location sharing during meetup only
+3. **Established dating**: Consider permanent location sharing, but only after trust is proven
+4. **Long-term relationship**: Share location with partner, but maintain ability to disable
+
+This progression protects you from someone quickly learning where you live or work before you've established trust.
 
 
 ## Related Articles

@@ -187,6 +187,156 @@ Before considering the incident closed, verify that:
 4. Access logs show no continued suspicious activity
 5. Data integrity matches your last known good backup
 
+## Post-Incident Communication and Documentation
+
+After addressing the technical incident, document what happened for compliance, insurance, and internal learning purposes.
+
+### Incident Report Documentation
+
+Create a comprehensive incident report covering:
+
+1. **Timeline**: When was the breach discovered? When did it occur? What did you do and when?
+2. **Scope**: What data was accessed? How many files? What size?
+3. **Root cause**: How did the attacker gain access? Weak password? Malware? Phishing?
+4. **Detection method**: How did you discover the breach?
+5. **Remediation steps**: What did you do to stop further access?
+6. **Impact assessment**: What was the real-world impact?
+
+```yaml
+incident_report:
+  incident_id: "CLOUDBREACH-2026-03-15"
+  discovery_date: "2026-03-15T10:30:00Z"
+  breach_date_estimated: "2026-03-14T22:15:00Z"
+  root_cause: "Weak password + credential reuse"
+  affected_data:
+    - type: "Financial records"
+      count: 150
+      sensitivity: "High"
+    - type: "Customer contact data"
+      count: 5000
+      sensitivity: "Medium"
+  remediation_cost: 2500
+  detection_method: "Unexpected large file transfer"
+  prevention_measures:
+    - "Hardware security key enforcement"
+    - "Anomalous activity alerting"
+    - "Quarterly access audits"
+```
+
+### Legal and Regulatory Considerations
+
+Different jurisdictions have different reporting requirements:
+
+- **GDPR (EU)**: Report to authorities within 72 hours if personal data affected
+- **CCPA (California)**: Report without unreasonable delay
+- **HIPAA (Healthcare)**: Report within 60 days if health information breached
+- **PCI-DSS (Payment Cards)**: Report within specific timeframes to payment processors
+
+Consult with a privacy attorney if you're uncertain about requirements in your jurisdiction.
+
+## Long-Term Account Hardening
+
+After recovery, implement permanent security improvements:
+
+### Hardware Security Keys
+
+Hardware security keys prevent account takeover even if your password is compromised:
+
+```bash
+# Register YubiKey or similar hardware key
+# Most cloud providers support FIDO2 protocol
+
+# Google Account
+# 1. Visit https://myaccount.google.com/security
+# 2. Add security key
+# 3. Set as default 2FA method
+
+# AWS
+# 1. IAM > Users > Security Credentials
+# 2. Add MFA device
+# 3. Choose "Virtual MFA device" or hardware key
+```
+
+### Behavioral Anomaly Detection
+
+Set up alerts for unusual account behavior:
+
+```python
+# Example: Alert configuration for cloud storage
+alert_rules = {
+    "large_transfer": {
+        "threshold": "1000 MB in 1 hour",
+        "action": "notify immediately"
+    },
+    "new_device": {
+        "threshold": "login from new location",
+        "action": "require verification"
+    },
+    "unusual_time": {
+        "threshold": "login outside normal hours",
+        "action": "alert if repeated"
+    },
+    "bulk_download": {
+        "threshold": "100+ files downloaded in 1 hour",
+        "action": "block and notify"
+    }
+}
+```
+
+### Quarterly Security Reviews
+
+Schedule recurring security audits:
+
+1. **Access review**: Who has access to what? Is it still necessary?
+2. **Permission audit**: Are folder permissions set correctly?
+3. **Sharing audit**: Review all shared files and links
+4. **Session review**: Verify no unexpected devices are connected
+5. **Log review**: Check access logs for anomalies
+
+Treat these quarterly reviews as mandatory maintenance, not optional tasks.
+
+## Incident Prevention Best Practices
+
+Before the next breach occurs, implement these preventive measures:
+
+### Password Manager Enforcement
+
+```bash
+# Enforce password manager usage across your team
+# Example: 1Password enterprise deployment
+
+# Generate random passwords
+op generate password --length=32
+
+# Store in vault
+op item create --vault "Work" \
+  --category login \
+  --title "Cloud Storage" \
+  --url "https://cloud.example.com"
+```
+
+### Automated Backup Verification
+
+```bash
+#!/bin/bash
+# Weekly backup integrity check
+
+BACKUP_DIR="/path/to/backups"
+VERIFICATION_FILE="$BACKUP_DIR/verification.log"
+
+for backup in $BACKUP_DIR/*.backup; do
+  # Verify backup is readable
+  if tar -tf "$backup" > /dev/null 2>&1; then
+    echo "OK: $backup" >> $VERIFICATION_FILE
+  else
+    echo "FAIL: $backup" >> $VERIFICATION_FILE
+    # Alert administrator
+  fi
+done
+```
+
+Breaches are not questions of "if" but "when." By implementing these post-incident measures, you dramatically reduce the likelihood and impact of future incidents.
+
 
 ## Related Articles
 
