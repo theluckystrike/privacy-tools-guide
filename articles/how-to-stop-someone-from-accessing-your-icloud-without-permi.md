@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-stop-someone-from-accessing-your-icloud-without-permi/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]

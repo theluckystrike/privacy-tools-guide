@@ -4,10 +4,11 @@ description: "Complete WireGuard VPN setup guide on a VPS. Includes server and c
 author: Privacy Tools Guide
 date: 2026-03-21
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /how-to-set-up-wireguard-vpn-on-vps-2026/
+tags: [privacy-tools-guide, vpn]
 ---
 
 {% raw %}
