@@ -17,90 +17,93 @@ tags: [privacy-tools-guide]
 
 uBlock Origin remains the gold standard for browser-based ad and tracker blocking. Out of the box, it provides solid protection, but power users can unlock significantly stronger anti-tracking capabilities through careful configuration. This guide walks through practical steps to harden uBlock Origin against advanced tracking techniques, including fingerprinting, canvas manipulation, and behavioral profiling.
 
+## Why uBlock Origin vs. Other Blockers
+
+Before diving into configuration, it's worth understanding why uBlock Origin stands out from alternatives like Adblock Plus, Privacy Badger, and Brave's built-in shields:
+
+- **Memory efficiency**: uBlock Origin typically uses 4-6x less RAM than Adblock Plus because it does not maintain a large exception list for paid advertisers (Adblock Plus operates an "Acceptable Ads" program).
+- **No filter list monetization**: uBlock Origin's creator, Raymond Hill, accepts no payments from advertisers. Every domain on the block list stays blocked.
+- **Dynamic filtering**: Unlike most blockers, uBlock Origin supports per-site dynamic rules that give you firewall-level control over which domains load scripts, frames, and media.
+- **Scriptlet injection**: uBlock Origin can inject short JavaScript programs to neutralize tracking code that runs even when its network requests are blocked.
+
+**Important note for 2026**: Manifest V3 (MV3) changes in Chrome and Edge have significantly limited extension blocking capabilities in those browsers. The legacy Manifest V2 uBlock Origin continues to function in Firefox, and Mozilla has committed to maintaining MV2 support. If you use Chrome or Edge for privacy-sensitive browsing, consider switching to Firefox paired with uBlock Origin for the full feature set.
+
 ## Understanding uBlock Origin's Filtering Architecture
 
 uBlock Origin uses filter lists as its core mechanism. These are collections of rules that determine what gets blocked. The extension ships with default lists optimized for broad compatibility, but privacy-focused users should expand these significantly.
 
-You access configuration through the extension's dashboard (click the uBlock Origin icon → ⚙️ icon → "Open the dashboard"). From there, navigate to the "Filter lists" tab to manage available blocklists.
+You access configuration through the extension's dashboard (click the uBlock Origin icon → gear icon → "Open the dashboard"). From there, navigate to the "Filter lists" tab to manage available blocklists.
 
 ### Essential Filter Lists for Anti-Tracking
 
-Add these lists to your configuration for enhanced protection:
+Enable these pre-built lists in the dashboard for enhanced protection:
 
-```
-! Add these to your custom filters or enable in Filter Lists tab
-https://raw.githubusercontent.com/nickhsharp/filter-lists/master/fingerprinting
-https://raw.githubusercontent.com/nickhsharp/filter-lists/master/canvas
-```
+- **uBlock filters – Privacy** — Blocks tracking domains and analytics endpoints
+- **EasyPrivacy** — Removes tracking elements and beacon calls from web pages
+- **Fanboy's Enhanced Tracking List** — Additional fingerprinting and behavioral tracking protection
+- **AdGuard Tracking Protection** — Covers trackers that EasyPrivacy misses, particularly on non-English sites
+- **Peter Lowe's Ad and tracking server list** — Long-running list with minimal false positives
 
-For the most approach, enable these pre-built lists in the dashboard:
-
-- **uBlock filters – Privacy** – Blocks tracking domains and analytics
-- **EasyPrivacy** – Removes tracking elements from web pages
-- **Fanboy's Enhanced Tracking** – Additional fingerprinting protection
-- **AdGuard Base Filter** – Cross-browser consistent blocking
+Under the "Annoyances" category, enabling **uBlock filters – Annoyances** also removes cookie consent banners, which often include embedded tracking scripts.
 
 ## Implementing Advanced Anti-Fingerprinting
 
-Traditional blocking stops requests to known trackers, but fingerprinting operates differently. It collects browser characteristics—screen resolution, installed fonts, WebGL capabilities—to create unique identifiers that persist even without cookies.
+Traditional blocking stops requests to known trackers, but fingerprinting operates differently. It collects browser characteristics — screen resolution, installed fonts, WebGL capabilities, audio context timing — to create unique identifiers that persist even without cookies.
 
 ### Canvas Fingerprint Protection
 
-Canvas fingerprinting renders hidden text or images and converts the result to a hash. Sites can identify users across sessions without storing any data. To block this:
-
-1. Go to uBlock Origin dashboard → "My filters"
-2. Add these rules:
+Canvas fingerprinting renders hidden text or images and converts the result to a hash. Sites can identify users across sessions without storing any data. To block this, add custom rules in the "My filters" tab:
 
 ```
 ! Block canvas fingerprinting read attempts
 ||pixel.facebook.com^$badfilter
 ||connect.facebook.net^$badfilter
 ||canvas.fingerprintjs.com^$domain=~allowlist.com
-
-! Additional canvas protection
-@@||example.com^$canvas
 ```
 
-3. Enable "WebrtcIPAddress" in the "Privacy" settings within the dashboard
+Enable "WebRTC IP Address Leak Prevention" under the "Privacy" tab in the dashboard to prevent your real IP address from leaking through WebRTC even when using a VPN.
 
 ### Font Fingerprinting Mitigation
 
-Websites can detect installed fonts by measuring text width differences. While complete blocking breaks many sites, restricting font access helps:
+Websites detect installed fonts by measuring text width differences. Restricting external font loading reduces this vector:
 
 ```
-! Limit font enumeration
+! Limit external font loading
 ||fonts.googleapis.com^$important
 ||fonts.gstatic.com^$important
 ```
 
+Note that blocking Google Fonts will break the visual design of sites that depend on them. Create per-site exceptions for sites where appearance matters using the popup interface.
+
 ## Configuring Dynamic Filtering Rules
 
-Dynamic filtering gives you per-site control over blocking behavior. This is particularly valuable for developers who need to test how sites behave without trackers.
+Dynamic filtering gives you per-site control over blocking behavior. Access it by clicking the uBlock Origin icon and expanding the panel (click the left/right arrows to show the full panel). This is particularly valuable for developers who need to test how sites behave without trackers.
 
 ### Default-Deny Policy
 
-A strong approach is to start with everything blocked, then selectively allow functionality:
+A strong approach is to start with all third-party scripts blocked by default, then selectively restore functionality:
 
-1. In the dashboard, set "Default" to "block" for all categories
-2. Whitelist only domains that require tracking for core functionality
-3. Use the popup interface to adjust on-the-fly
+1. In the dynamic filtering panel, set the global row to block all third-party scripts and frames
+2. For sites that need specific third-party resources, click the domain row to toggle from block to allow
+3. Use "Save" to persist the rule or leave it temporary for the session
 
-Example custom filter rules for dynamic filtering:
+Example custom filter rules for the "My filters" tab:
 
 ```
-! Block all third-party requests by default
-* * block
-* * block strict
+! Block all third-party scripts and iframes globally
+* * 3p-script block
+* * 3p-frame block
 
-! Allow essential functionality
+! Allow essential CDNs selectively
 @@||cdnjs.cloudflare.com^$script
 @@||fonts.googleapis.com^$font
-@@||github.com^$script
 ```
+
+This configuration blocks roughly 90%+ of third-party trackers while maintaining usability on most sites. You will need to occasionally unblock a domain when a site breaks, which is an intentional design — it trains you to notice what each site loads.
 
 ## Scriptlet Injection for Advanced Blocking
 
-uBlock Origin supports scriptlets—mini JavaScript programs that modify page behavior. These are powerful tools for anti-tracking.
+uBlock Origin supports scriptlets — short JavaScript programs that run in the page context to modify behavior before tracking code can execute. These are powerful tools for anti-tracking that work even when the tracker is hosted on the same domain as the site.
 
 ### Blocking Specific Tracking Methods
 
@@ -110,73 +113,106 @@ Add to "My filters":
 ! Block localStorage-based tracking
 example.com##+js(noweakds, localStorage)
 
-! Prevent session recording
+! Prevent session recording tools from loading
 tracker.example.com##+js(aopr, navigator.sendBeacon)
 
 ! Remove tracking parameters from URLs
 ||example.com##+js(rm-attr, utm_source, utm_medium, utm_campaign)
 ```
 
-The `rm-param` scriptlet automatically strips UTM parameters, Facebook fbclid, and other tracking identifiers from URLs:
+The `rm-params` scriptlet automatically strips UTM parameters, Facebook fbclid, and other tracking identifiers from URLs globally:
 
 ```
 ! Strip common tracking parameters globally
-##+js(rm-params, fbclid, gclid, utm_source, utm_medium, utm_campaign, utm_term, utm_content, mc_cid, mc_eid)
+##+js(rm-params, fbclid, gclid, utm_source, utm_medium, utm_campaign, utm_term, utm_content, mc_cid, mc_eid, msclkid, twclid)
 ```
+
+This prevents analytics platforms from attributing your visit to a specific ad campaign, reducing your trackability across sites even when you click shared links.
 
 ## Network-Level Request Management
 
-For maximum control, use the "Request log" feature in the dashboard to analyze traffic patterns:
+For maximum control, use the "Logger" tab in the dashboard to analyze traffic patterns:
 
 1. Open dashboard → "Logger" tab
 2. Enable logging and visit your target site
-3. Review blocked requests to identify residual trackers
+3. Review blocked and allowed requests to identify residual trackers
 4. Create custom rules for any missed domains
 
-This is particularly useful for identifying first-party tracking that bypasses standard filters.
+The logger shows every network request, DNS lookup, and cosmetic filter applied during the page load. This is particularly useful for identifying first-party tracking — where sites host their own analytics scripts rather than using third-party services — which bypasses standard domain-based filters.
 
 ## Browser-Specific Hardening
 
 uBlock Origin works best when paired with browser privacy settings:
 
 ### Firefox Configuration
+
 ```
-about:config
+about:config settings to enable:
 privacy.trackingprotection.enabled = true
 privacy.trackingprotection.fingerprinting.enabled = true
-webgl.disabled = true (for high-security needs)
+privacy.resistFingerprinting = true
+network.http.referer.XOriginPolicy = 2
 ```
 
-### Chrome/Chromium Configuration
-- Enable "Send Do Not Track" in settings
-- Disable third-party cookies
-- Use `--disable-blink-features=Automation` flag for advanced fingerprinting resistance
+Firefox's built-in Enhanced Tracking Protection and uBlock Origin are complementary. ETP handles some tracking at the browser level; uBlock handles the rest at the extension level. Running both is not redundant.
+
+### Chrome/Chromium Configuration (MV2 still available)
+
+- Install uBlock Origin Legacy (the MV2 version) from the Chrome Web Store if available in your region
+- Enable "Send a 'Do Not Track' request" in settings (limited effect, but signals intent)
+- Disable third-party cookies under Privacy and Security
+- Consider switching to ungoogled-chromium or Firefox for sustained privacy-focused browsing
+
+## Comparing Browser Privacy Extensions
+
+| Extension | Blocking Method | Dynamic Rules | Scriptlets | Memory Use | Paid Allowlist |
+|-----------|----------------|--------------|-----------|------------|---------------|
+| uBlock Origin | Filter lists + dynamic | Yes | Yes | Low | No |
+| Adblock Plus | Filter lists | No | No | High | Yes (Acceptable Ads) |
+| Privacy Badger | Heuristic learning | No | No | Medium | No |
+| Ghostery | Filter lists | Limited | No | Medium | No |
+| Brave Shields | Browser-native | Limited | No | Negligible | No |
+
+For Firefox users, uBlock Origin is the clear recommendation. For Brave users, the built-in shields handle most use cases, but adding uBlock Origin on top provides scriptlet injection and custom filter list support that Shields lacks.
 
 ## Performance Considerations
 
 Aggressive blocking can impact page load times or break functionality. To maintain balance:
 
-1. **Use hostname-based blocking** over regex where possible
-2. **Enable "Strict blocking"** only on trusted sites
-3. **Monitor the logger** for false positives
-4. **Test with uBlock's popup** showing blocked counts
+1. **Use hostname-based blocking** over complex regex patterns where possible — hostname rules are faster to evaluate
+2. **Enable "Strict blocking"** for known bad domains only, not globally
+3. **Monitor the logger** for false positives that break site functionality
+4. **Test with uBlock's popup** to see blocked request counts — over 100 blocked requests on a news site is normal
 
-A reasonable configuration typically blocks 80-95% of tracking attempts while maintaining full site functionality.
+A reasonable configuration typically blocks 80-95% of tracking attempts while maintaining full site functionality. Pursuing 100% blocking will break most modern websites.
 
 ## Verification and Testing
 
 After configuration, verify your protection:
 
-1. Visit **amiunique.org** – Check how unique your browser fingerprint remains
-2. Visit **coveryourtracks.eff.org** – Test fingerprinting resistance
-3. Check **webXray.org** – Verify tracker detection rates
+1. **coveryourtracks.eff.org** — Tests whether your browser fingerprint is unique and which tracking methods succeed against your setup
+2. **amiunique.org** — More detailed fingerprint breakdown showing which attributes contribute most to uniqueness
+3. **deviceinfo.me** — Shows all hardware and browser attributes exposed through standard web APIs
 
-Your goal is reducing the "entropy" of your browser fingerprint—the information that makes you uniquely identifiable.
+Your goal is reducing the "entropy" of your browser fingerprint — the total amount of information that makes you uniquely identifiable. Perfect entropy elimination is not achievable without breaking most websites, but meaningful reduction is realistic with the configuration above.
+
+## Frequently Asked Questions
+
+**Does uBlock Origin work with Firefox on Android?**
+Yes. Firefox for Android supports uBlock Origin, making it one of the few mobile browsers where full ad and tracker blocking is available. Chrome for Android does not support MV2 extensions.
+
+**Should I enable all available filter lists?**
+Not necessarily. More lists mean more rules to evaluate per request, which can slow page loads and increase false positives. Stick to the lists recommended above plus any domain-specific lists for your use case (e.g., a regional language list if relevant).
+
+**Is uBlock Origin compatible with Tor Browser?**
+Tor Browser already includes its own tracking protections and NoScript. Adding uBlock Origin is technically possible but may reduce the uniformity that makes Tor users harder to fingerprint. For Tor Browser, the default configuration is usually better.
 
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
+- [Best Browser for Tor Network 2026](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [macOS Network Privacy Settings Complete Guide](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
