@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-detect-if-your-car-has-gps-tracker-hidden-check/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
