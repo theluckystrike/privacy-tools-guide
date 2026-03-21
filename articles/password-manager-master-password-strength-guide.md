@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-master-password-strength-guide/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true

@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /privacy-fatigue-solutions-how-to-make-privacy-easier-guide/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
