@@ -183,6 +183,167 @@ auth on
 user your@gmail.com
 ```
 
+## Pricing and Plan Comparison
+
+| Feature | Gmail Free | ProtonMail Free | Gmail Workspace | ProtonMail Plus | ProtonMail Business |
+|---------|-----------|---------|---------|---------|---------|
+| Cost/Month | $0 | $0 | $6/user | $6 | $10/user |
+| Storage | 15 GB | 1 GB | 30 GB | 200 GB | 1 TB |
+| Aliases | 1 | 1 | Unlimited | 1 | Unlimited |
+| Custom Domain | No | No | Yes | Yes | Yes |
+| E2EE | No | Yes (internal) | No | Yes (internal) | Yes (internal) |
+| API Access | Yes (limited) | No | Yes (Gmail API) | Limited | Limited |
+| Support | Community | Community | Standard | Email | Priority |
+
+**For individuals**: ProtonMail's $0 tier is unbeatable if you don't need much storage. Gmail's $0 tier gives 15x the storage but trades privacy for convenience.
+
+**For organizations**: Google Workspace costs $6/user/month with full API access, while ProtonMail Business at $10/user adds custom domains and team features.
+
+## Performance and Reliability Metrics
+
+### Gmail Uptime and Response Time
+
+Gmail maintains 99.99% uptime SLA. Average API response time: 200-300ms. Email delivery: typically <2 seconds between Gmail servers.
+
+```javascript
+// Gmail API latency test
+async function testGmailLatency() {
+  const start = performance.now();
+  const results = await gmail.users.messages.list({
+    userId: 'me',
+    maxResults: 10
+  }).execute();
+  const latency = performance.now() - start;
+  console.log(`Gmail API latency: ${latency.toFixed(0)}ms`);
+  // Typical output: Gmail API latency: 240ms
+}
+```
+
+Gmail's infrastructure is distributed globally with edge caches in most regions, resulting in fast, reliable access.
+
+### ProtonMail Uptime and Speed
+
+ProtonMail maintains 99.9% uptime SLA (slightly lower than Gmail). Email delivery: typically 5-10 seconds due to encryption overhead. Clients (web, mobile, Bridge) have occasional slowdowns during peak loads.
+
+```javascript
+// ProtonMail Bridge IMAP latency
+// Latency varies based on local encryption processing
+// Typical: 500-1000ms for initial connection
+// Message sync: 2-5 seconds per message (due to decryption)
+```
+
+ProtonMail's encryption processing adds latency—each message must be decrypted locally before rendering, increasing apparent response time.
+
+## Implementation Challenges
+
+### Gmail Implementation Issues
+
+1. **Credential leakage**: API keys and OAuth tokens are frequently exposed in logs or error messages. Use environment variables exclusively:
+
+```bash
+# WRONG - exposes credentials in .env file checked into git
+GMAIL_API_KEY=AIzaSyD_wVt...
+
+# RIGHT - load from secure secret manager
+const apiKey = process.env.GMAIL_API_KEY;
+// Source from secure service (AWS Secrets Manager, etc)
+```
+
+2. **Rate limiting**: Gmail API rate-limits at 250 requests/second. Heavy workloads hit limits:
+
+```javascript
+// Implement exponential backoff
+async function gmailWithRetry(fn, maxRetries = 3) {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (error.code === 429) { // Rate limited
+        await sleep(Math.pow(2, i) * 1000); // 1s, 2s, 4s
+      } else throw error;
+    }
+  }
+}
+```
+
+### ProtonMail Implementation Challenges
+
+1. **Bridge connectivity**: ProtonMail Bridge requires authentication and maintains a local server. If Bridge crashes, IMAP/SMTP access is lost:
+
+```bash
+# Check Bridge status
+curl -s http://127.0.0.1:1080/healthcheck
+
+# Restart on failure
+systemctl restart protonmail-bridge
+```
+
+2. **Limited API**: ProtonMail's API lacks email search, label management, and most modern features. IMAP is the primary interface:
+
+```python
+# ProtonMail via IMAP (limited functionality)
+import imaplib
+
+imap = imaplib.IMAP4_SSL('127.0.0.1', 1143)
+imap.login('user@protonmail.com', 'password')
+status, messages = imap.select('INBOX')
+
+# Search is basic
+status, data = imap.search(None, 'FROM', 'sender@example.com')
+
+# No label management, no access to custom tags
+```
+
+## Data Residency and Legal Jurisdiction
+
+### Gmail: Multi-Region, US Jurisdiction
+
+Gmail stores data across Google's global data centers, subject to US jurisdiction and potential government access via court orders. GDPR compliance in Europe is enforced through data processing agreements but doesn't prevent US government requests.
+
+### ProtonMail: Swiss Jurisdiction
+
+ProtonMail stores data on servers in Switzerland, subject to Swiss privacy law. Swiss law provides stronger privacy protections against US government access without formal treaty. Metadata logs are minimal and retention is short (typically <7 days).
+
+**Important distinction**: Even encrypted email on ProtonMail servers could theoretically be decrypted if ProtonMail itself is compromised or compelled. The architecture prevents even ProtonMail from reading content, but this assumes the codebase is what users think it is.
+
+## Real-World Usage Patterns
+
+### When Gmail is the Right Choice
+
+- Building email-powered applications requiring full API access
+- Teams already invested in Google Workspace ecosystem
+- Organizations prioritizing uptime and performance
+- Developers who need reliable SMTP/IMAP
+- Content that isn't particularly sensitive
+
+### When ProtonMail is the Right Choice
+
+- Handling genuinely sensitive communications (legal, medical, political)
+- Organizations operating under strict privacy regulations (GDPR, CCPA)
+- Individuals concerned about government surveillance
+- Communications requiring non-repudiation (cryptographic proof of sender)
+- Teams in jurisdictions uncomfortable with US data storage
+
+### Hybrid Strategy Refined
+
+```javascript
+// Production email routing
+const getEmailProvider = (recipient, sensitivity) => {
+  if (sensitivity === 'high' || requiresE2EE(recipient)) {
+    return 'protonmail'; // Use Bridge via SMTP
+  }
+
+  if (needsAPI() || requiresLabels()) {
+    return 'gmail'; // Full Gmail API available
+  }
+
+  return 'gmail'; // Default, sufficient for most use
+};
+
+// In practice: personal account at ProtonMail,
+// project/work account at Gmail
+```
+
 
 ## Related Articles
 

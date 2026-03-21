@@ -87,21 +87,90 @@ Most everyday users do not need Lockdown Mode. The following users can safely sk
 - People who rely heavily on shared albums, FaceTime from unknown callers, or Safari functionality
 - Users without a specific, credible threat model pointing to sophisticated attackers
 
+## Compatibility and Performance Impact
+
+Enabling Lockdown Mode will cause measurable impacts on device functionality. Before committing to this security posture, understand the technical implications:
+
+### Browser and Web Functionality
+
+Safari with JavaScript disabled makes significant portions of the modern web inaccessible. Streaming services like Netflix require JavaScript for playback. Web applications designed with heavy front-end frameworks (React, Vue, Angular) will not function. The exception system helps, but each whitelisted domain represents a potential security boundary crossing.
+
+To manage this effectively:
+
+1. Maintain a list of essential websites that require JavaScript
+2. Test each whitelisted domain thoroughly before adding to the exception list
+3. Consider whether you actually need that service—can you use a native app instead?
+4. Regularly review your exception list and remove unused entries
+
+### Device Compatibility
+
+Lockdown Mode requires iOS 16 or later. Older devices cannot use this feature. For organizations managing device fleets, verify that all devices meet compatibility requirements before rolling out policies.
+
+### Performance Considerations
+
+Lockdown Mode has minimal performance impact on modern devices. However, the disabled link preview feature prevents some websites from loading faster. Your browsing experience may feel slightly slower due to the additional security checks on incoming connections.
+
+## Building Your Threat Model
+
+Determining whether you need Lockdown Mode requires honest assessment of your threat profile. Ask yourself these questions:
+
+**Do you face targeted surveillance threats?**
+- Have security professionals recommended this?
+- Have you received specific threat warnings?
+- Does your work make you a target for state-sponsored actors?
+
+**What is your jurisdiction's legal environment?**
+- Does your government actively surveil journalists or activists?
+- Are there laws criminalizing your speech or activities?
+- Do you have documented evidence of government targeting?
+
+**What resources might your adversary have?**
+- Can they access sophisticated zero-day exploits?
+- Do they have technical capability to conduct espionage?
+- Are they nation-state level actors, criminal enterprises, or individuals?
+
+If you answer yes to questions in each category, Lockdown Mode provides meaningful protection. If you answer no to most questions, standard iOS security practices (strong passwords, two-factor authentication, regular updates) provide adequate protection without Lockdown Mode's usability costs.
+
+## Advanced Hardening Beyond Lockdown Mode
+
+For users with extreme threat models, Lockdown Mode alone is insufficient. Consider implementing additional hardening measures:
+
+### Physical Device Security
+
+- Use a device PIN that combines letters and numbers (not just numeric codes)
+- Enable "USB Restricted Mode" under Settings > Face/Touch ID & Passcode
+- Consider hardware security keys for additional authentication
+
+### Network Security
+
+- Route all traffic through a trusted VPN that implements DNS-over-HTTPS
+- Use a firewall at your network level to block known tracking domains
+- Monitor which servers your device connects to using packet analysis tools
+
+### Data Compartmentalization
+
+- Keep sensitive applications on separate devices when possible
+- Use separate Apple IDs for sensitive communications versus daily use
+- Consider an air-gapped device for handling the most sensitive information
+
 ## What Lockdown Mode Does Not Protect Against
 
 Understanding the limitations matters as much as understanding the features. Lockdown Mode does not protect against:
 
-- **Phishing attacks**: You can still be tricked into entering credentials on fake login pages
-- **Physical access attacks**: Someone with physical access to your unlocked device can still extract data
-- **Basic malware**: Most malware does not use the specific exploits that Lockdown Mode blocks
-- **Network-level surveillance**: Your internet service provider can still see which websites you visit
-- **Compromised accounts**: If your iCloud account gets compromised, attackers can still access your synced data regardless of Lockdown Mode
+- **Phishing attacks**: You can still be tricked into entering credentials on fake login pages. Lockdown Mode prevents zero-day browser exploits, not social engineering
+- **Physical access attacks**: Someone with your device unlocked can still extract data directly. Lockdown Mode doesn't change your passcode requirements
+- **Supply chain compromises**: If malware existed before Apple released Lockdown Mode, it remains on your device. This feature only protects against new exploits
+- **iCloud account compromise**: If attackers control your Apple ID, they can access synced data, disable Find My iPhone, and lock you out of your device
+- **Network-level surveillance**: Your ISP and VPN provider can still see your traffic patterns and which domains you visit (though not content with HTTPS)
+- **Recovery key theft**: If an attacker obtains your recovery key, they can reset your account security without your physical device
 
 ## Final Thoughts
 
 Lockdown Mode represents Apple's most serious response to advanced security threats facing specific user populations. It imposes genuine usability sacrifices in exchange for meaningful security improvements against sophisticated attackers. Most users will find the trade-offs too restrictive for daily use. However, for those facing credible threats from well-funded adversaries, this feature provides defense-in-depth that significantly raises the cost and complexity of successful attacks.
 
-Before enabling Lockdown Mode, consider your actual threat model. If you are unsure whether your situation warrants this level of protection, consult with a security professional who can assess your specific circumstances.
+Before enabling Lockdown Mode, consider your actual threat model honestly. If you are unsure whether your situation warrants this level of protection, consult with a security professional who can assess your specific circumstances. Journalists, activists, and human rights defenders facing documented threats should strongly consider enabling this feature despite its usability costs.
+
+The trade-off between security and functionality is real, but for the right threat model, Lockdown Mode represents one of the strongest protections available on any consumer device platform.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

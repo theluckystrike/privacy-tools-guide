@@ -156,6 +156,120 @@ If you believe someone currently has access to your account:
 4. **Generate a new recovery key**
 5. **Contact Apple Support** if you cannot regain access
 
+## Understanding iCloud Attack Vectors and Prevention
+
+iCloud security threats evolve constantly. Understanding specific attack methods helps you implement targeted defenses.
+
+### Phishing and Social Engineering
+
+The most common iCloud compromise vector is phishing. Attackers send emails claiming to be Apple, requesting password reset or verification of unusual activity. These emails link to fake Apple login pages that capture credentials.
+
+**Protection**:
+- Never click links in unsolicited emails
+- Always navigate to appleid.apple.com directly by typing the URL
+- Enable two-factor authentication to prevent unauthorized account access even with password compromise
+- Be skeptical of urgency ("act now" or "account disabled")
+
+### Weak or Reused Passwords
+
+If your iCloud password is identical to your Netflix password, and Netflix is breached, attackers can try the same password on iCloud.
+
+**Check your passwords**: Use haveibeenpwned.com to see if your email appears in known breaches. This doesn't scan private data, only publicly known breaches.
+
+```bash
+# Command-line check (no transmission of sensitive data)
+curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com" \
+  -H "User-Agent: Mozilla/5.0" || echo "Not in known breaches"
+
+# Better: Check via Apple ID under Sign-In & Security
+```
+
+### Compromised Recovery Contacts
+
+If someone gains access to your recovery phone number or recovery email, they can reset your password without verification.
+
+**Hardening recovery contacts**:
+- Use a trusted phone number you control exclusively
+- Don't share recovery email access with anyone
+- Verify phone number and email are secure
+- Regularly update trusted phone numbers to remove old devices
+
+### Unauthorized iCloud.com Web Access
+
+Someone could access iCloud.com from a different device using your password, without your knowledge.
+
+**Detection and prevention**:
+```
+1. Visit appleid.apple.com
+2. Go to Devices
+3. Look for devices you don't recognize
+4. Tap the device name
+5. If you don't recognize it, select "Remove from Account"
+```
+
+Any device removed from your account immediately loses iCloud access.
+
+## Responding to Suspected Unauthorized Access
+
+If you suspect someone has accessed your account:
+
+### Immediate Actions (First 24 Hours)
+
+1. **Change password immediately** from a different device
+   - Go to appleid.apple.com
+   - Select "Change Password"
+   - Create a strong password (16+ characters, unique to Apple)
+
+2. **Review active sessions**
+   - In Settings > [Your Name] > Sign-In & Security
+   - Check "Devices"
+   - Sign out any unrecognized devices
+
+3. **Check Find My settings**
+   - Verify Find My iPhone/Mac is enabled
+   - Review shared locations and remove unwanted access
+   - Disable screen time if someone has set restrictions
+
+### Follow-up Actions (48 Hours)
+
+4. **Generate recovery key**
+   - Go to appleid.apple.com > Account Security
+   - Create new recovery key
+   - Save in secure location or password manager
+
+5. **Update trusted phone numbers**
+   - Remove old phone numbers from recovery options
+   - Add only current, secure phone numbers
+   - Verify SMS delivery works
+
+6. **Audit third-party app access**
+   - Settings > [Your Name] > Apps & Websites
+   - Review "Apps and Websites that use your Apple ID"
+   - Revoke access for apps you don't recognize
+
+7. **Enable additional 2FA options**
+   - Consider adding a security key (hardware token)
+   - This prevents even sophisticated attackers from accessing your account
+
+### If You've Lost Control of Your Account
+
+If you cannot reset your password and someone else clearly has control:
+
+1. **Contact Apple Support immediately**
+   - Call 1-800-MY-APPLE
+   - Describe the situation, have your recovery email and phone ready
+   - Apple may require identity verification (billing address, last 4 of payment method)
+
+2. **Check for ongoing unauthorized access**
+   - Request Apple disable all sessions
+   - Apple can force logout all devices and require re-authentication
+   - This is a temporary solution but regains immediate control
+
+3. **Monitor billing**
+   - Check Apple ID billing history for unauthorized purchases
+   - Dispute any fraudulent charges with Apple Support
+   - Monitor for unexpected subscriptions or app purchases
+
 ## Developer Considerations
 
 For developers integrating with iCloud:
@@ -180,8 +294,78 @@ container.accountStatus { status, error in
         break
     }
 }
+
+// Secure credential storage example
+import Security
+
+func storeCloudKitToken(_ token: String) {
+    let data = token.data(using: .utf8)!
+    let query: [String: Any] = [
+        kSecClass as String: kSecClassGenericPassword,
+        kSecAttrAccount as String: "cloudkit_token",
+        kSecValueData as String: data
+    ]
+
+    SecItemAdd(query as CFDictionary, nil)
+}
+
+func retrieveCloudKitToken() -> String? {
+    let query: [String: Any] = [
+        kSecClass as String: kSecClassGenericPassword,
+        kSecAttrAccount as String: "cloudkit_token",
+        kSecReturnData as String: true
+    ]
+
+    var result: AnyObject?
+    SecItemCopyMatching(query as CFDictionary, &result)
+
+    if let data = result as? Data,
+       let token = String(data: data, encoding: .utf8) {
+        return token
+    }
+    return nil
+}
 ```
 
+### Implementing Secure Multi-Device Sync
+
+If building apps that sync data across multiple Apple devices:
+
+```swift
+// Implement proper error handling for sync failures
+func syncWithiCloud(completion: @escaping (Result<Void, SyncError>) -> Void) {
+    container.privateCloudDatabase.fetch(withRecordID: recordID) { record, error in
+        if let error = error as? CKError {
+            switch error.code {
+            case .notAuthenticated:
+                // Prompt user to enable iCloud
+                completion(.failure(.notAuthenticated))
+            case .networkFailure:
+                // Retry with exponential backoff
+                retrySync(delay: 2.0, completion: completion)
+            case .permissionFailure:
+                // App lacks required iCloud permissions
+                completion(.failure(.permissionDenied))
+            default:
+                completion(.failure(.unknownError(error)))
+            }
+        } else {
+            completion(.success(()))
+        }
+    }
+}
+```
+
+## Advanced: Using Find My Network for Account Recovery
+
+If your device was stolen and you enabled Find My Device:
+
+1. Go to icloud.com or use Find My app on another Apple device
+2. Select "Find My"
+3. Choose the stolen device from your device list
+4. Enable "Lost Mode"
+
+Lost Mode remotely secures your device and can send a custom message to whoever finds it. More importantly, it prevents the person with your device from accessing your iCloud data without your unlock code.
 
 ## Related Articles
 

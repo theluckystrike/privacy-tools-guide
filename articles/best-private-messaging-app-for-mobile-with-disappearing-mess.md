@@ -109,6 +109,132 @@ All four options outperform mainstream messaging platforms on privacy. The best 
 
 Test each option with a trusted contact before relying on any app for sensitive communications. Verify encryption keys manually when the stakes are high.
 
+## Advanced Security Considerations
+
+Beyond the core privacy features, several additional factors influence security for sensitive communications.
+
+### Perfect Forward Secrecy (PFS)
+
+Perfect Forward Secrecy means that compromise of long-term keys cannot decrypt past messages. This is critical for communications involving sensitive information.
+
+| App | PFS | Implementation |
+|-----|-----|-----------------|
+| Signal | Yes | Uses Diffie-Hellman ratchet |
+| Session | Yes | X3DH with ratcheting |
+| SimpleX | Yes | Forward-secret protocol |
+| Threema | Yes | Per-message key derivation |
+
+All four apps implement PFS correctly, meaning past communications remain protected even if a user's device is compromised today.
+
+### Group Chat Security
+
+Group conversations introduce additional complexity. Messages sent to groups create multiple encrypted copies, and handling group membership changes requires careful protocol design.
+
+**Signal**: Uses a sender key protocol that allows efficient group encryption while maintaining individual message authentication.
+
+**Session**: Uses group keys with periodic rotation. Members who leave cannot decrypt future messages but can still read past group history if they retained previous keys.
+
+**SimpleX**: Implements group chats through encrypted relay servers without revealing group membership to the servers.
+
+**Threema**: Groups require explicit key agreement between all members, with group keys refreshed periodically.
+
+For highly sensitive communications, consider using one-to-one channels rather than group chats to reduce exposure to group key compromise.
+
+### Device-to-Device Verification
+
+Users should verify that conversation partners control the keys they claim to. Each app handles this differently:
+
+**Signal Security Numbers**: 60-digit identifiers that both parties can verify over a separate channel. Scan the QR code in person or read the numbers aloud on a phone call.
+
+**Session**: Sessions IDs are based on the user's seed phrase. Verification involves confirming the ID matches what the application displays for that contact.
+
+**SimpleX**: Requires exchanging invitation links, which implicitly verifies identity (only someone with the link can establish the conversation).
+
+**Threema**: Uses QR code scanning for identity verification. Two users scan each other's codes in person to establish a verified connection.
+
+For communications where impersonation would be catastrophic, implementing device verification is non-negotiable.
+
+### Backup and Recovery
+
+Encrypted communications create a tension between accessibility and security. If your device is lost or destroyed, can you recover your message history?
+
+**Signal**: Offers encrypted backups that lock with your registration PIN. An attacker would need to know both your phone number and PIN to restore your backup.
+
+**Session**: Provides a seed phrase for account recovery. Backing up the seed phrase allows account recovery but creates a secret that must be stored securely.
+
+**SimpleX**: Does not support account recovery. Creating a new account means losing all prior conversation history.
+
+**Threema**: Supports ID backup and recovery using a password-protected backup file.
+
+For long-term private archives, consider backing up sensitive messages to encrypted external storage while accepting that recovery may require manual work.
+
+## Threat Model Examples
+
+Different users face different threats. Here are realistic scenarios:
+
+### Scenario 1: Activist in Hostile Government
+
+Requirements: Strong anonymity, no phone number linkage, protection against government surveillance
+
+**Recommendation**: Session or SimpleX
+
+Rationale: Session provides strong anonymity without phone number registration. SimpleX offers the strongest anonymity guarantees. Both provide protection against nation-state adversaries interested in your social graph.
+
+### Scenario 2: Journalist Protecting Sources
+
+Requirements: Plausible deniability for conversations, protection against subpoena, device compromise resilience
+
+**Recommendation**: Signal with disappearing messages enabled
+
+Rationale: Signal's metadata minimalism means subpoenaing Signal reveals only when the account was created and last accessed. Disappearing messages prevent attackers with device access from recovering historical communications. The large user base means your communications don't stand out as encrypted.
+
+### Scenario 3: Corporate Legal Communications
+
+Requirements: Verifiable audit trails, compliance with retention policies, strong encryption
+
+**Recommendation**: Threema with manual backups
+
+Rationale: Threema stores minimal metadata while providing encryption. The paid service model aligns with enterprise compliance requirements. Third-party audits are available for regulations like HIPAA.
+
+### Scenario 4: Domestic Violence Survivor
+
+Requirements: Complete anonymity, no recovery trace, protection against determined physical stalker
+
+**Recommendation**: SimpleX on a separate device accessed via Tor
+
+Rationale: SimpleX's lack of persistent identifiers prevents pattern analysis. Accessing via Tor masks IP addresses. The combination provides maximum anonymity while maintaining contact with support networks.
+
+## Maintenance and Security Practices
+
+Choosing the right app is only the first step. Operational security matters as much as the encryption algorithm.
+
+**Regularly update apps**: Security fixes are released continuously. Update immediately when new versions become available.
+
+**Review contact lists**: Periodically audit who you communicate with. Remove old contacts you no longer trust or communicate with.
+
+**Monitor for social engineering**: Attackers may impersonate trusted contacts. Verify identities through separate communication channels periodically.
+
+**Secure your unlock method**: If your device is compromised, attackers don't need to break encryption—they can simply read messages from your open session.
+
+**Consider device isolation**: For extremely sensitive communications, use a dedicated device running minimal software. Remove it from active use when not needed.
+
+## Practical Testing Checklist
+
+Before deploying any app for sensitive use:
+
+- [ ] Install the app and create an account
+- [ ] Exchange contact information with a trusted tester
+- [ ] Send test messages with disappearing messages enabled
+- [ ] Verify that messages disappear at the specified time
+- [ ] Enable message expiration in conversation settings
+- [ ] Test group chat functionality (if needed)
+- [ ] Verify your contact's encryption key independently
+- [ ] Test on your actual device and network
+- [ ] Confirm app uses minimal battery while idle
+- [ ] Review all available privacy settings and enable maximum restrictions
+
+Only after confirming the app works reliably should you depend on it for sensitive communications.
+
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -182,6 +182,289 @@ To see how your browser handles this fingerprinting vector:
 
 The goal is making your core count appear common—typically 2-4 cores—rather than distinctive.
 
+## Advanced Fingerprinting Combinations
+
+While hardware concurrency alone is weak, it becomes powerful when combined with other signals.
+
+### Multi-Signal Fingerprinting
+
+Websites combine multiple weak signals to create strong fingerprints:
+
+```javascript
+function buildFingerprint() {
+    const signals = {
+        hardwareConcurrency: navigator.hardwareConcurrency,
+        deviceMemory: navigator.deviceMemory,  // RAM (if available)
+        maxTouchPoints: navigator.maxTouchPoints,  // Touch screen support
+        platform: navigator.platform,  // OS (often inaccurate)
+        userAgent: navigator.userAgent,  // Outdated but still used
+        canvas: canvasFingerprint(),  // Canvas rendering uniqueness
+        webGL: webGLFingerprint(),  // GPU fingerprint
+        fonts: detectInstalledFonts(),  // System fonts
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        language: navigator.language,
+        plugins: Object.values(navigator.plugins).map(p => p.name),
+    };
+
+    return hashSignals(signals);
+}
+
+// Even if each signal has weak entropy, combined entropy multiplies
+// 4-core system (common) × 8GB RAM (common) × Chrome browser (common)
+// × 50 detected fonts (somewhat distinctive) = relatively unique
+```
+
+Hardware concurrency contributes 2-3 bits of entropy to the combined fingerprint. While not decisive alone, it's part of the bundle.
+
+### Entropy Analysis
+
+Fingerprinting researchers measure entropy in bits:
+
+| Signal | Bits of Entropy | Distinctiveness |
+|--------|-----------------|-----------------|
+| Hardware concurrency | 2-3 bits | Weak |
+| Device memory | 3-4 bits | Weak |
+| Screen resolution | 5-7 bits | Moderate |
+| Canvas fingerprint | 10-15 bits | Strong |
+| WebGL fingerprint | 10-20 bits | Strong |
+| Font collection | 5-10 bits | Moderate |
+| **Combined (typical)** | **45-70 bits** | **Very Strong** |
+
+Only ~30 bits are needed to uniquely identify most users. Hardware concurrency provides 2-3 of those 30 bits, making it a minor but measurable contribution.
+
+## Browser-Specific Defenses
+
+Different browsers implement different protections:
+
+### Firefox Fingerprinting Resistance
+
+Firefox provides the most user-friendly protection:
+
+```javascript
+// About:config settings for maximum fingerprinting resistance
+// privacy.resistFingerprinting = true
+
+// What changes:
+// navigator.hardwareConcurrency → 2 (always)
+// navigator.deviceMemory → undefined
+// navigator.maxTouchPoints → 0
+// plugins → empty array
+// Canvas fingerprinting → spoofed with noise
+// WebGL → disabled
+```
+
+Enable this with one setting. Trade-off: Some web applications may not work optimally.
+
+### Brave Browser Protections
+
+Brave randomizes values rather than spoofing:
+
+```javascript
+// Brave's approach: randomize per-site
+// Same site always sees same fingerprint (for functionality)
+// Different sites see different core count
+
+// User visits site1.com: sees 4 cores
+// User visits site2.com: sees 8 cores (different random)
+// User returns to site1.com: sees 4 cores again (consistent)
+
+// This prevents cross-site tracking while maintaining functionality
+```
+
+Brave's randomization is a good balance between privacy and functionality.
+
+### Tor Browser Maximum Protection
+
+Tor Browser uses extreme normalization:
+
+```javascript
+// Tor Browser normalizes to lowest common denominator
+// navigator.hardwareConcurrency = 2 (almost always)
+// navigator.deviceMemory = 8GB (always)
+
+// All Tor Browser users appear identical
+// No fingerprinting is possible
+// Trade-off: Websites can detect Tor Browser by the standardized values
+```
+
+The cost: Tor Browser itself becomes detectable as it stands out from normal browsers.
+
+## Developer Considerations: Building Private Applications
+
+If you're building web applications, avoid relying on hardware concurrency:
+
+### Anti-Pattern: Core-Based Optimization
+
+```javascript
+// DON'T DO THIS - relies on fingerprint
+function initializeWorkerPool() {
+    const cores = navigator.hardwareConcurrency;
+    // User with 16 cores gets different worker count
+    // than user with 4 cores
+    // This is fingerprinting-friendly
+    const workerCount = cores;
+
+    return new WorkerPool(workerCount);
+}
+```
+
+### Pattern: Progressive Enhancement
+
+```javascript
+// DO THIS - graceful degradation
+function initializeWorkerPool() {
+    // Default to safe value
+    const defaultWorkers = 2;
+
+    // Only optimize if explicitly requested
+    const urlParams = new URLSearchParams(window.location.search);
+    const requestedWorkers = urlParams.get('workers');
+
+    if (requestedWorkers && parseInt(requestedWorkers) <= 8) {
+        return new WorkerPool(parseInt(requestedWorkers));
+    }
+
+    return new WorkerPool(defaultWorkers);
+}
+```
+
+Progressive enhancement prevents fingerprinting while allowing power users to optimize if needed.
+
+### Testing for Privacy Issues
+
+```javascript
+// Test whether your application contributes to fingerprinting
+function testPrivacyIssues() {
+    const issues = [];
+
+    // Check if hardware concurrency accessed
+    if (Object.getOwnPropertyNames(navigator).includes('hardwareConcurrency')) {
+        // Not a problem by itself, but note it
+    }
+
+    // Check if device memory queried
+    if (navigator.deviceMemory) {
+        issues.push("Application accesses deviceMemory");
+    }
+
+    // Check for canvas fingerprinting
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.textBaseline = 'top';
+    ctx.font = '17px "Arial"';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = '#f60';
+    ctx.fillRect(125, 1, 62, 20);
+    ctx.fillStyle = '#069';
+    ctx.fillText('Browser fingerprint test', 2, 15);
+
+    if (canvas.toDataURL() !== precomputedCanvasHash) {
+        issues.push("Canvas fingerprinting detected");
+    }
+
+    return issues;
+}
+```
+
+Regular privacy audits catch fingerprinting issues before deployment.
+
+## System-Level Spoof Attempts
+
+Power users sometimes attempt to spoof hardware concurrency at the OS level:
+
+### Linux Core Hiding
+
+```bash
+# Using cgroups to limit visible cores
+# Create cgroup with restricted CPU access
+sudo cgcreate -g cpuset:/limited_cores
+sudo cgset -r cpuset.cpus=0-3 /limited_cores  # Only cores 0-3
+
+# Run browser in this cgroup
+sudo cgexec -g cpuset:/limited_cores chromium-browser
+
+# Browser reports only 4 cores to JavaScript
+# But system still uses all cores for heavy computation
+```
+
+This provides limited protection—JavaScript still reads the true value if restrictions are inadequate.
+
+### Virtual Machine Approach
+
+```bash
+# Use virtual machine with limited cores
+# VirtualBox example
+
+# Create VM with 2 vCPU instead of host's 8 cores
+VBoxManage createvm --name "PrivacyBrowsing" --ostype Ubuntu_64
+VBoxManage modifyvm "PrivacyBrowsing" --cpus 2 --memory 2048
+
+# Run browser in VM
+VBoxManage startvm "PrivacyBrowsing"
+
+# JavaScript reports 2 cores as expected
+```
+
+Virtual machines provide perfect isolation but introduce performance overhead.
+
+## Tracking Fingerprint Consistency
+
+Understanding fingerprint tracking helps identify privacy threats:
+
+```python
+def analyze_fingerprint_tracking():
+    """Analyze how fingerprints are tracked across time."""
+
+    # Scenario 1: Same browser, different sites
+    # Site1: fingerprint_1a
+    # Site2: fingerprint_1b
+    # If fingerprint_1a == fingerprint_1b: cross-site tracking possible
+
+    # Scenario 2: Same browser, over time
+    # Day 1: fingerprint_1
+    # Day 7: fingerprint_1 (unchanged)
+    # Consistency enables temporal tracking
+
+    # Scenario 3: After clearing cookies/history
+    # Before clear: fingerprint_1
+    # After clear: fingerprint_1 (unchanged)
+    # Fingerprint survives cookie deletion
+
+    # Hardware concurrency never changes on same device
+    # So it's maximally consistent for tracking
+
+    return {
+        "cross_site_tracking": True,  # Always same value
+        "persistence": "until hardware upgrade",
+        "clearable_via": "None - truly persistent",
+    }
+```
+
+Hardware concurrency represents a permanent device identifier that survives all standard privacy practices.
+
+## Fingerprinting Resistance Testing
+
+Test your resistance to fingerprint tracking:
+
+```bash
+# Use online fingerprinting tests
+# amiunique.org - Shows your complete fingerprint
+# cover-your-tracks.eff.org - EFF's test suite
+# panopticlick.eff.org - Historic test
+
+# Key metrics to monitor:
+# 1. Entropy (bits) - Lower is better
+# 2. Uniqueness - Percentage of unique fingerprints
+# 3. Hardware concurrency reported - Should be common value
+
+# Repeat tests across:
+# - Multiple browsers
+# - With/without VPN
+# - In incognito/private mode
+# - After browser restart
+
+# Consistent fingerprints across tests = inadequate resistance
+```
 
 ## Related Articles
 

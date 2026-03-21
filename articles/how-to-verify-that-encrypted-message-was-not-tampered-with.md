@@ -180,6 +180,243 @@ The verification step is not optional. Always validate integrity before processi
 
 By implementing proper integrity verification, you ensure that encrypted messages remain trustworthy—even when transported through hostile networks.
 
+## Real-World Protocol Examples
+
+Understanding how real-world protocols implement integrity verification provides practical insights.
+
+### TLS Record Protection
+
+TLS (Transport Layer Security) uses HMAC to protect encrypted records:
+
+```
+TLS Record = [Version][Type][Length][Ciphertext][MAC]
+             [2 bytes][1 byte][2 bytes][variable][variable]
+```
+
+During decryption:
+1. Extract MAC from end of ciphertext
+2. Decrypt remaining ciphertext
+3. Recompute MAC over decrypted plaintext
+4. Compare computed MAC with extracted MAC
+5. If they don't match, connection terminates
+
+This approach protects both content and record boundaries from tampering.
+
+### Signal Protocol Message Format
+
+Signal Protocol messages include authentication tags automatically:
+
+```
+Signal Frame = [Version][Type][Sender Key ID][Counter][Ciphertext][Auth Tag]
+               [1 bit][3 bits][32 bits][32 bits][variable][16 bytes]
+```
+
+Each message is authenticated with the recipient's key. If an attacker modifies any byte of the ciphertext, the authentication tag becomes invalid during decryption.
+
+### PGP Signature Integration
+
+For email, PGP combines encryption and digital signatures:
+
+```bash
+# Sender encrypts and signs
+gpg --encrypt --sign --recipient "recipient@example.com" document.txt
+
+# Results in document.txt.gpg containing:
+# 1. Encrypted plaintext
+# 2. Signature over plaintext (inside encryption)
+# 3. Outer signature (over encrypted content)
+
+# Recipient verifies both integrity and authenticity
+gpg --decrypt document.txt.gpg
+# Automatically verifies both signatures
+```
+
+## Implementation Best Practices
+
+Successful integrity verification requires more than choosing the right algorithm—careful implementation prevents subtle attacks.
+
+### Constant-Time Comparison
+
+Always use constant-time comparison functions to prevent timing attacks:
+
+```python
+# BAD: Standard comparison leaks timing information
+if computed_tag == received_tag:
+    return True
+# Time to return depends on where mismatch occurs
+
+# GOOD: Constant-time comparison
+import hmac
+if hmac.compare_digest(computed_tag, received_tag):
+    return True
+# Always takes same time regardless of mismatch position
+```
+
+Timing attacks are subtle but real. Attackers can measure response times microsecond-by-microsecond to forge valid tags.
+
+### Nonce Management
+
+Reusing nonces with AEAD modes completely breaks security:
+
+```python
+# DANGEROUS: Reusing nonce with same key
+key = os.urandom(32)
+nonce = os.urandom(12)
+
+message1 = aesgcm.encrypt(nonce, "Secret 1", None)
+message2 = aesgcm.encrypt(nonce, "Secret 2", None)
+# Attacker can now compute: "Secret 1" XOR "Secret 2"
+# This reveals relationship between both secrets
+
+# CORRECT: Unique nonce per message
+key = os.urandom(32)
+
+nonce1 = os.urandom(12)
+message1 = aesgcm.encrypt(nonce1, "Secret 1", None)
+
+nonce2 = os.urandom(12)
+message2 = aesgcm.encrypt(nonce2, "Secret 2", None)
+
+# Never reuse nonce with same key
+```
+
+Many real-world vulnerabilities stem from nonce reuse. For counter-based nonces, ensure counter never wraps around with the same key.
+
+### Key Derivation
+
+Never use the same key for encryption and authentication:
+
+```python
+# Use HKDF to derive separate keys
+import hkdf
+import hashlib
+
+master_key = os.urandom(32)
+
+# Derive encryption and authentication keys
+encrypt_key = hkdf.hkdf_expand(
+    hkdf.hkdf_extract(b'', master_key, hashlib.sha256),
+    b'encryption',
+    32,
+    hashlib.sha256
+)
+
+auth_key = hkdf.hkdf_expand(
+    hkdf.hkdf_extract(b'', master_key, hashlib.sha256),
+    b'authentication',
+    32,
+    hashlib.sha256
+)
+
+# Use separate keys for encryption and HMAC
+ciphertext = encrypt_with_key(plaintext, encrypt_key)
+auth_tag = hmac_with_key(ciphertext, auth_key)
+```
+
+Key separation prevents attacks where weaknesses in one operation compromise both.
+
+## Common Implementation Mistakes
+
+Real-world systems often make subtle mistakes:
+
+### Mistake 1: Authenticating Only Plaintext
+
+```python
+# WRONG: Authenticate plaintext, encrypt result
+plaintext = b"Transfer $1000 to account 12345"
+tag = hmac.new(key, plaintext, hashlib.sha256).digest()
+ciphertext = encrypt(plaintext)
+# Send: ciphertext, tag
+
+# PROBLEM: Attacker can swap ciphertexts
+# Original: plaintext1 → ciphertext1 (with tag1)
+# Attack: ciphertext2 (swapped) with tag1
+# Recipient verifies tag over PLAINTEXT after decryption
+# But plaintext came from different ciphertext!
+```
+
+Always authenticate the ciphertext, not plaintext before encryption.
+
+### Mistake 2: Forgetting to Include IV in Authentication
+
+```python
+# WRONG: IV not included in authenticated data
+iv = os.urandom(16)
+ciphertext = cipher.encrypt(iv, plaintext)
+tag = hmac.new(key, ciphertext, hashlib.sha256).digest()
+# Send: iv, ciphertext, tag
+
+# PROBLEM: Attacker modifies IV
+# Recipient decrypts with modified IV
+# Gets different plaintext, but tag is still valid
+# (because tag was only over ciphertext)
+
+# CORRECT: Include IV in authentication
+iv = os.urandom(16)
+ciphertext = cipher.encrypt(iv, plaintext)
+tag = hmac.new(key, iv + ciphertext, hashlib.sha256).digest()
+# Now modification to IV or ciphertext breaks tag
+```
+
+Include all variable components in authenticated data, including IVs and nonces.
+
+### Mistake 3: Accepting Decryption Errors as Integrity Failures
+
+```python
+# WRONG: Trust decryption result
+try:
+    plaintext = aesgcm.decrypt(nonce, ciphertext, None)
+    process(plaintext)  # Trust it succeeded
+except:
+    # Assume tampering
+    pass
+
+# PROBLEM: Exception could indicate other errors
+# Memory corruption, library bugs, etc.
+
+# CORRECT: Explicit integrity check before processing
+try:
+    plaintext = aesgcm.decrypt(nonce, ciphertext, None)
+except cryptography.hazmat.primitives.ciphers.aead.InvalidTag:
+    # Known tampering
+    raise
+except Exception as e:
+    # Unknown error - don't process
+    log_and_exit(f"Decryption error: {e}")
+```
+
+Distinguish between integrity failures (log, reject) and other errors (fail safely).
+
+## Testing Your Implementation
+
+Proper testing catches integrity verification bugs before deployment:
+
+```python
+def test_integrity_detection():
+    """Verify that tampered messages are rejected."""
+    key = os.urandom(32)
+    plaintext = b"Critical data"
+
+    # Encrypt with AEAD
+    nonce, ciphertext = encrypt_aead(plaintext, key)
+
+    # Tamper with ciphertext
+    tampered = bytearray(ciphertext)
+    tampered[0] ^= 0x01  # Flip single bit
+
+    # Verify tampered message is rejected
+    with pytest.raises(ValueError, match="tampered"):
+        decrypt_aead(bytes(tampered), nonce, key)
+
+def test_timing_resistance():
+    """Verify comparison is timing-resistant."""
+    # Placeholder: Real timing tests require nanosecond precision
+    # and analysis of timing distributions
+    pass
+```
+
+Include tampering tests in your test suite. If tampered messages are accepted, your implementation has a critical flaw.
+
 ---
 
 

@@ -175,9 +175,205 @@ NaiveProxy occupies a specific niche between VPNs and Tor. Unlike VPNs, it resis
 
 For users in high-censorship environments who need reliable access to the open internet, NaiveProxy provides a practical balance between security, usability, and resistance to blocking.
 
+## Advanced Deployment Architecture
+
+For organizations or power users, consider deploying NaiveProxy with infrastructure redundancy and failover mechanisms.
+
+### Multi-Region Deployment
+
+Deploy servers in multiple geographies to provide resilience against targeted blocking:
+
+```bash
+# Deploy in geographically distributed regions
+# Recommended: US (Oregon), Europe (Amsterdam), Asia (Singapore)
+
+# Each region serves as failover if others are blocked
+# Configure client with fallback servers:
+
+cat > config.json << 'EOF'
+{
+  "listen": "socks://127.0.0.1:1080",
+  "proxy": [
+    "https://server1.example.com:443",
+    "https://server2.example.com:443",
+    "https://server3.example.com:443"
+  ],
+  "pad": true
+}
+EOF
+
+# Client automatically tries next server if one fails
+```
+
+This architecture ensures that blocking one server doesn't interrupt access.
+
+### Load Balancing and Monitoring
+
+For organizational deployments, implement load balancing across multiple NaiveProxy instances:
+
+```nginx
+# Nginx configuration for NaiveProxy load balancing
+upstream naive_backend {
+    server proxy1.example.com:443;
+    server proxy2.example.com:443;
+    server proxy3.example.com:443;
+}
+
+server {
+    listen 443 ssl;
+    server_name proxy.example.com;
+
+    ssl_certificate /etc/ssl/certs/cert.pem;
+    ssl_certificate_key /etc/ssl/private/key.pem;
+
+    location / {
+        proxy_pass https://naive_backend;
+    }
+}
+```
+
+Load balancing distributes traffic across multiple servers, preventing any single server from becoming a bottleneck.
+
+## Detecting and Evading Detection
+
+While NaiveProxy is difficult to detect, understanding potential detection vectors helps improve your deployment.
+
+### Traffic Pattern Analysis
+
+Advanced censors can identify proxy traffic by analyzing metadata, even without deep packet inspection:
+
+**Detection vectors:**
+- Consistent large data transfers (downloading files)
+- Unusual connection timing patterns
+- Traffic to uncommon destinations
+- Regular connection intervals
+
+**Evasion strategies:**
+
+```bash
+# Add random delays between connections
+# Implement traffic padding to normalize data volumes
+# Vary connection patterns to avoid predictability
+
+# Example: Connection timing randomization
+for i in {1..10}; do
+    delay=$((RANDOM % 3600))  # 0-3600 seconds
+    sleep $delay
+    curl -x socks5://127.0.0.1:1080 https://example.com
+done
+```
+
+### ISP-Level Blocking
+
+Some ISPs implement port-based blocking, preventing connections to non-standard HTTPS ports:
+
+```bash
+# If standard HTTPS ports are blocked:
+# 1. Use port 443 (standard HTTPS)
+# 2. Obfuscate traffic using domain fronting
+# 3. Route through multiple intermediate servers
+
+# Domain fronting example (if CDN supports it)
+# Server sends requests to legitimate domain's CDN
+# But SNI/Host header points to blocked site
+```
+
+## Operational Security Practices
+
+Secure deployment requires careful operational management:
+
+### Credential Management
+
+```bash
+# Generate strong authentication credentials
+openssl rand -base64 32 > auth_key.txt
+
+# Include in server configuration
+cat >> config.json << EOF
+{
+  "listen": "https://your-server-ip:443",
+  "auth": "$(cat auth_key.txt)"
+}
+EOF
+
+# Use same auth credentials in client config
+```
+
+Never expose credentials in version control or logs.
+
+### Logging and Monitoring
+
+```bash
+# Monitor server resource usage
+watch -n 1 'free -h && df -h && ps aux | grep naive'
+
+# Analyze connection logs for anomalies
+tail -f /var/log/syslog | grep -i naive
+
+# Log failed authentication attempts
+# Setup alerts for suspicious activity
+```
+
+Excessive logging creates security risks. Log only essential metrics.
+
+### Key Rotation
+
+```bash
+# Periodically rotate TLS certificates
+# Before expiration, obtain new certificate from Let's Encrypt
+# Deploy new certificate with zero downtime
+
+certbot certonly --standalone -d your-server-ip
+# Verify certificate renewal
+openssl x509 -in /etc/letsencrypt/live/your-domain/cert.pem -text
+
+# Monitor expiration dates
+for cert in /etc/letsencrypt/live/*/cert.pem; do
+    expiry=$(openssl x509 -enddate -noout -in "$cert" | cut -d= -f2)
+    echo "$cert expires: $expiry"
+done
+```
+
+## Testing and Validation
+
+Proper testing ensures your NaiveProxy deployment actually provides the promised protection:
+
+### Speed Testing
+
+```bash
+# Baseline speed without proxy
+curl -o /dev/null -s -w "%{speed_download}\n" https://speed.cloudflare.com/__down
+
+# Speed through NaiveProxy
+curl -x socks5://127.0.0.1:1080 -o /dev/null -s -w "%{speed_download}\n" https://speed.cloudflare.com/__down
+
+# Compare latency
+ping -c 5 speed.cloudflare.com
+# Then through proxy:
+traceroute -m 15 https://example.com  # Via proxy endpoint
+```
+
+### Leak Testing
+
+Verify that your IP address doesn't leak while using NaiveProxy:
+
+```bash
+# Test for WebRTC leaks
+curl -x socks5://127.0.0.1:1080 https://ipleak.net
+
+# Test DNS leaks
+curl -x socks5://127.0.0.1:1080 https://dnsleak.com
+
+# Verify your public IP appears as server location, not your actual location
+```
+
+If you see your real IP address, your configuration has a leak that must be fixed.
+
 ## Getting Started Today
 
 Begin by deploying a test server with minimal configuration. Verify that you can connect and browse normally. Then gradually optimize your setup with padding, multiple server locations, and integrated browser configuration.
+
+Thoroughly test for leaks before relying on NaiveProxy for sensitive communications. The technical sophistication of your setup matters less than ensuring it actually provides the protection you need.
 
 Remember that staying informed about local laws regarding internet access tools remains your responsibility. Use these technologies ethically and in compliance with applicable regulations in your jurisdiction.
 

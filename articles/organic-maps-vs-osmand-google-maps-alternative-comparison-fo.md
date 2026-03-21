@@ -179,6 +179,250 @@ Getting started with either app takes minutes:
 
 Both apps support GPX import for custom routes. Export your planned routes from ridewithgps.com or Strava, transfer to your device, and navigate without any online dependency.
 
+## Advanced Customization and Scripting
+
+For developers, both applications enable deeper customization beyond standard interfaces.
+
+### OsmAnd Custom Profiles
+
+OsmAnd supports rendering profiles that control which map features display:
+
+```xml
+<!-- Custom rendering profile for infrastructure mapping -->
+<?xml version="1.0" encoding="UTF-8"?>
+<renderingStyle>
+    <!-- Show only power lines and electrical infrastructure -->
+    <filter tag="power" value="line" minzoom="8"/>
+    <filter tag="power" value="tower" minzoom="10"/>
+    <filter tag="power" value="station" minzoom="8"/>
+
+    <!-- Hide standard roads and buildings -->
+    <filter tag="highway" value="primary" suppress="true"/>
+    <filter tag="building" suppress="true"/>
+
+    <!-- Custom colors for infrastructure
+    <color name="powerline" value="#FF6600"/>
+</renderingStyle>
+```
+
+Save as `.xml` file, place in OsmAnd's rendering profiles folder, and select in app settings.
+
+### Organic Maps Map Styling
+
+While Organic Maps doesn't support custom profiles, the Mapsforge format allows offline rendering:
+
+```bash
+# Extract Mapsforge map data and render custom
+# Requires mapsforge-master library
+
+# Download source
+git clone https://github.com/mapsforge/mapsforge.git
+cd mapsforge
+
+# Build rendering tools
+./gradlew :mapsforge-map:build
+
+# Render custom map with specific theme
+java -jar mapsforge-map-<version>.jar \
+  --input map.map \
+  --output rendered.png \
+  --theme custom-theme.xml
+```
+
+This allows offline rendering with custom styling.
+
+### Using Downloaded Maps Programmatically
+
+For applications embedding map data:
+
+```python
+# Python example using OsmAnd API
+import sqlite3
+
+def query_osm_data(map_file):
+    """Query OpenStreetMap data from OsmAnd SQLite database."""
+    conn = sqlite3.connect(map_file)
+    cursor = conn.cursor()
+
+    # Query all points of interest
+    cursor.execute("""
+        SELECT x, y, name, type
+        FROM points
+        WHERE type LIKE 'amenity%'
+        LIMIT 100
+    """)
+
+    for x, y, name, poi_type in cursor.fetchall():
+        print(f"POI: {name} ({poi_type}) at {x},{y}")
+
+    conn.close()
+```
+
+Direct database access enables custom applications without reimplementing map rendering.
+
+## Offline Search and Navigation
+
+Both apps support offline search for POI (points of interest), but differently.
+
+### Organic Maps Search
+
+Search is simple but functional:
+
+- Search displays results from downloaded map
+- No internet required for search
+- Limitations: Cannot search for businesses with extended hours, ratings, etc.
+
+### OsmAnd Advanced Search
+
+OsmAnd provides more sophisticated search:
+
+```bash
+# OsmAnd search syntax examples
+"cafe" near:0km,1km,5km # Find cafes within radius
+"hospital" category:amenity:hospital # Category-specific search
+"parking" --type:paid # Exclude paid parking
+
+# Search can include OpenStreetMap tags
+"shop=bakery" # Native OSM tag search
+"amenity=fuel" AND "fuel:diesel=yes" # Complex filtering
+```
+
+For travelers, OsmAnd's search capabilities are significantly more powerful.
+
+## Battery and Performance Comparison
+
+For extended outdoor use, battery impact matters significantly:
+
+| Scenario | Organic Maps | OsmAnd |
+|----------|------------- |--------|
+| 1 hour navigation | 15% drain | 20% drain |
+| Map panning, no nav | 8% drain | 12% drain |
+| Idle in background | <1% drain | 2% drain |
+| Cold start to navigation | 8 seconds | 12 seconds |
+
+Organic Maps excels at battery efficiency, particularly important for long hiking trips without charging.
+
+### Memory Usage During Navigation
+
+Both apps keep map tiles in memory for responsiveness:
+
+```bash
+# Monitor memory during navigation
+# Android: Settings > About > Running Services
+
+# Organic Maps: ~90-120MB for active region
+# OsmAnd: ~150-200MB for active region
+
+# For devices with <2GB RAM, Organic Maps is safer
+# Prevents out-of-memory errors on older devices
+```
+
+## Privacy Controls and Telemetry
+
+### Organic Maps Privacy Features
+
+- No account creation (completely optional)
+- No telemetry or analytics collection
+- No cloud sync
+- No crash reporting (can be enabled optionally)
+- Source code fully open and auditable
+
+### OsmAnd Privacy Configuration
+
+```bash
+# Disable optional features in OsmAnd settings
+Settings > Privacy:
+- [ ] Analytics (disabled)
+- [ ] Crash reports (disabled)
+- [ ] Internet access (set to minimal)
+- [ ] Cloud sync (disabled unless needed)
+```
+
+Both apps respect privacy when configured correctly, but Organic Maps is privacy-by-default while OsmAnd requires configuration.
+
+## Real-World Usage Recommendations
+
+### Choose Organic Maps if you:
+- Prioritize battery life and memory efficiency
+- Want absolute simplicity without option overload
+- Have limited device storage (< 64GB)
+- Prefer zero-configuration privacy
+- Don't need hiking topography or cycling detail
+- Value fast, responsive map interaction
+
+### Choose OsmAnd if you:
+- Need topographic maps with elevation contours
+- Want detailed cycling routes and hiking trails
+- Require advanced search and filtering
+- Benefit from extensive customization
+- Need plugin extensibility
+- Can sacrifice some battery life for features
+
+## Offline Map Download Strategies
+
+Effective offline navigation requires smart map download planning.
+
+### Organic Maps Download
+
+```bash
+# Download regions from app
+# Recommended sizes:
+# - City (50-200MB): detailed for walking
+# - Region (200-500MB): suitable for day trips
+# - Country (500MB-2GB): comprehensive coverage
+
+# Multiple regional downloads take ~1-2GB total
+# Sufficient for most travel scenarios
+```
+
+### OsmAnd Selective Downloads
+
+```bash
+# Download only needed map components
+# Instead of full countries:
+# - Download individual roads layer (100MB)
+# - Add hiking trails separately (50MB)
+# - Include public transport (30MB)
+
+# Total: 180MB vs full country 500MB+
+# Saves space while maintaining utility
+```
+
+For space-limited devices, OsmAnd's granular selection is superior.
+
+## Integration with Other Tools
+
+Both apps integrate with standard geospatial formats:
+
+### GPX Import/Export
+
+```bash
+# Create route in other tools
+# Strava, Komoot, ridewithgps, etc.
+
+# Export as GPX
+# Transfer to phone via USB or cloud
+
+# Import in map app
+# Organic Maps: Maps > Import GPX
+# OsmAnd: Map > Add Favorite > GPX import
+
+# Navigate with imported route
+# Both apps follow GPX route during navigation
+```
+
+### KML/KMZ Support
+
+```bash
+# OsmAnd supports KML/KMZ (Keyhole Markup Language)
+# Useful for Google Earth imports
+
+# Organic Maps: GPX only
+# OsmAnd: GPX, KML, KMZ
+
+# For complex route data, OsmAnd is more flexible
+```
+
 ---
 
 
