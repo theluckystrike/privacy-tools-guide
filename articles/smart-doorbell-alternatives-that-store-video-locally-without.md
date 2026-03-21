@@ -267,6 +267,8 @@ It depends on your setup. A properly configured NAS with RAID redundancy is more
 With local storage, losing internet connectivity has no effect on recording. Cloud-dependent systems stop recording or become inaccessible during outages.
 
 
+## Related Reading
+
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Best Privacy Tools 2026](/privacy-tools-guide/best-privacy-tools-2026/)
 
