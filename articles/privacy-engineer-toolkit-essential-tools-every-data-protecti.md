@@ -9,7 +9,7 @@ categories: [guides, privacy-tools]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, toolkit, data-protection]
+tags: [privacy-tools-guide, toolkit, data-protection, privacy]
 ---
 
 {% raw %}
