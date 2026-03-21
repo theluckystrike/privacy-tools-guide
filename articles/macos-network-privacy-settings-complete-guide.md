@@ -15,11 +15,19 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-Your Mac's network settings significantly impact your digital privacy. Understanding and configuring these options protects your data from prying eyes, whether you're on home WiFi or public networks. This guide covers every network privacy setting available in macOS.
+Your Mac's network settings significantly impact your digital privacy. Every unencrypted DNS query tells your ISP which domains you visit. Every app allowed to receive incoming connections is a potential exposure point. Every saved WiFi network your Mac probes for broadcasts your location history.
+
+macOS ships with reasonable defaults for home users, but anyone handling sensitive work deserves a tighter configuration. The settings below are organized from quickest wins to advanced configurations so you can apply the layers matching your threat model.
 
 ## Understanding macOS Network Architecture
 
-macOS provides multiple layers of network privacy controls. These operate at different levels—from system preferences to advanced terminal configurations. Each layer is covered below to help you build a strong privacy setup.
+macOS provides multiple layers of network privacy controls:
+
+- **Application Firewall** — controls which apps accept incoming connections
+- **pf packet filter** — low-level kernel firewall for port and IP blocking
+- **DNS resolver** — where queries are sent and whether they are encrypted
+- **Network Extensions** — VPN clients, content filters, and DNS proxies installed by apps
+- **System services** — location, Bonjour, AirDrop, and diagnostic uploads
 
 ## Built-in Firewall Configuration
 
@@ -31,7 +39,9 @@ The first line of defense is macOS's built-in firewall:
 2. Enable the firewall if not already active
 3. Click the info icon next to each app to control incoming connections
 
-The Application Firewall differs from traditional packet-filtering firewalls. It operates at the application level, giving you granular control over which apps can accept incoming connections.
+The Application Firewall differs from traditional packet-filtering firewalls. It operates at the application level, giving you granular control over which apps can accept incoming connections. Anything not explicitly allowed is blocked automatically when the firewall is on.
+
+Review the list of allowed applications periodically. Installers and update daemons sometimes add themselves during installation and never get removed when you uninstall the app. Prune this list aggressively.
 
 ### Enabling Stealth Mode
 
@@ -46,33 +56,59 @@ Stealth Mode prevents your Mac from responding to:
 - UDP packets from closed ports
 - Probing attempts from network scanners
 
-This makes your Mac invisible to network scanners.
+This makes your Mac invisible to network scanners on the same segment. On a public WiFi network, this meaningfully reduces your exposure to opportunistic port scans.
+
+### Blocking All Incoming Connections
+
+For the highest firewall setting — useful on untrusted networks — enable "Block all incoming connections":
+
+```bash
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
+```
+
+This blocks everything except basic internet browsing (outbound connections you initiate). Essential services like file sharing and remote login will not work, making it ideal for coffee shop or airport WiFi sessions.
 
 ## DNS Configuration for Privacy
 
+### Why Default DNS Is a Privacy Problem
+
+When you connect to any network, macOS automatically uses the DNS servers provided by the router — typically your ISP's resolvers. Those resolvers log every domain you query. Your ISP can sell aggregated browsing data, comply with surveillance requests, or inject ads via DNS manipulation.
+
 ### Custom DNS Servers
 
-Default DNS queries can be logged by your ISP. Configure privacy-focused DNS:
+Configure privacy-focused DNS:
 
 1. **System Settings** → **Network** → **WiFi** (or Ethernet)
 2. Click **Details** → **DNS**
 3. Add servers like:
- - Cloudflare: `1.1.1.1`, `1.0.0.1`
- - Quad9: `9.9.9.9`
- - Or use encrypted DNS (DoH/DoT)
+   - Cloudflare: `1.1.1.1`, `1.0.0.1`
+   - Quad9: `9.9.9.9` (blocks malicious domains)
+   - NextDNS: custom resolvers with filtering and logging control
 
 ### Enabling DNS Encryption
 
-macOS supports DNS over HTTPS (DoH) and DNS over TLS (DoT):
+macOS supports DNS over HTTPS (DoH) and DNS over TLS (DoT) natively since macOS 11 Big Sur via configuration profiles. The easiest approach for most users is installing a signed `.mobileconfig` profile from Cloudflare, Quad9, or NextDNS:
+
+- Cloudflare DoH profile: `https://1.1.1.1/dns-over-https/cloudflare-dns.mobileconfig`
+- Quad9 DoT profile: provided directly on Quad9's website
+
+After installing, go to **System Settings** → **Privacy & Security** → **Profiles** to verify the DNS profile is active and trusted.
+
+For command-line configuration:
 
 ```bash
-# For Cloudflare DoH
-sudo networksetup -setdnsservers Wi-Fi 1.1.1.1
+# Confirm current DNS assignment per interface
+scutil --dns | grep nameserver
 
-# Then enable DoH via System Settings → Network → DNS → Enable
+# Set resolver manually via networksetup (unencrypted, use as fallback)
+sudo networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1
 ```
 
-This encrypts your DNS queries, preventing network observers from seeing your browsing destinations.
+DNS encryption encrypts your DNS queries, preventing network observers from seeing your browsing destinations even if they capture your traffic.
+
+### NextDNS for Logging Control
+
+NextDNS gives you detailed control over DNS logging, retention, and custom blocklists. Its free tier supports up to 300,000 queries per month. Configure it via the macOS app or by installing their signed configuration profile.
 
 ## Network Extensions and Privacy
 
@@ -84,6 +120,8 @@ Network Extensions can intercept your traffic. Review them regularly:
 2. Review installed content filters, DNS proxies, and VPN plugins
 3. Remove unnecessary extensions
 
+Any VPN app, parental control software, or enterprise MDM profile installed on your Mac may have a Network Extension that routes all traffic through its infrastructure. If you no longer use a VPN service, verify that its extension is fully removed — uninstalling the app does not always remove the extension.
+
 ### VPN Configuration
 
 When using VPNs, ensure proper configuration:
@@ -91,113 +129,153 @@ When using VPNs, ensure proper configuration:
 - Enable **Kill Switch** to prevent data leaks if VPN disconnects
 - Use **IKEv2** or **WireGuard** protocols for better security
 - Configure VPN to connect automatically on untrusted networks
+- Avoid free VPN services — they frequently monetize user traffic
 
 ```bash
-# Check VPN status
+# Check active VPN configurations
 scutil --nc list
+
+# Check VPN connection status
+scutil --nc status "YourVPNName"
 ```
 
 ## Advanced Network Privacy Settings
 
 ### Disabling Bonjour and AirDrop
 
-These services can expose your Mac to local network discovery:
+Bonjour (mDNS) continuously announces your Mac's presence on the local network, broadcasting your hostname and the services you advertise. AirDrop uses Bluetooth and WiFi to make you discoverable. Both expose you to local network enumeration:
 
 ```bash
-# Disable Bonjour
+# Disable Bonjour multicast
 sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array "-NoMulticast"
 
-# Disable AirDrop
+# Set AirDrop to contacts only (or disable in Control Center)
 defaults write com.apple.airdrop allowNoResponderLookup -bool true
 ```
 
+For AirDrop, open **Control Center** → **AirDrop** → **No One** to disable discovery entirely when you don't need it.
+
 ### Firewall with pf.conf
 
-For advanced users, the pf firewall offers extensive control:
+For advanced users, pf offers kernel-level control significantly beyond the Application Firewall:
 
 ```bash
-# Edit /etc/pf.conf
-# Block all incoming by default
-block in all
+# View current pf ruleset
+sudo pfctl -sr
 
-# Allow established connections
+# Edit /etc/pf.conf for custom rules
+block in all
 pass out all keep state
+pass in proto tcp from 192.168.1.0/24 to any port 22
 ```
 
-Always test pf rules carefully to avoid locking yourself out.
+Always test pf rules carefully. Use a second terminal session or recovery plan before applying restrictive inbound rules.
 
 ## Monitoring Network Activity
 
 ### Using Little Snitch or Lulu
 
-Third-party firewalls provide detailed monitoring:
+macOS's built-in firewall only handles incoming connections. To see and control outbound connections — including which apps call home without your knowledge — you need a third-party monitor:
 
-- **Little Snitch**: connection monitoring with alerts
-- **Lulu**: Free, open-source network monitor focusing on apps
+- **Little Snitch** ($60, commercial): Real-time connection monitoring with per-rule alerts. Shows every DNS query, TCP connection, and blocked attempt. Excellent for auditing new app installs.
+- **Lulu** (free, open-source): A simpler outbound firewall that blocks any new connection attempt until you explicitly allow it. Lower overhead, good for privacy-focused users who don't need the full reporting suite.
 
-### Built-in Network Monitor
+Both tools reveal background telemetry calls from apps you thought were offline, system daemons phoning home, and analytics SDKs in otherwise legitimate software.
 
-macOS Network Utility provides basic monitoring:
+### Built-in Network Diagnostics
 
-```bash
-# Monitor network connections in real-time
-sudo ntop
-```
-
-Or use `lsof` to see current connections:
+macOS provides several built-in tools for inspecting connections:
 
 ```bash
+# List all current listening sockets
 lsof -i -P | grep LISTEN
+
+# Monitor all active connections in real-time
+netstat -an | grep ESTABLISHED
+
+# View recent network-related system log entries
+log show --predicate 'subsystem == "com.apple.network"' --last 1h
 ```
+
+Use `netstat -rn` to inspect your routing table and confirm VPN traffic is properly routed through the tunnel interface.
 
 ## WiFi Privacy Considerations
 
 ### Preventing Auto-Joining Networks
 
-Stop your Mac from automatically connecting to unknown networks:
+Your Mac probes for previously joined networks by name when WiFi is active. An attacker nearby can create a hotspot matching a saved network name and intercept your automatic connection:
 
 1. **System Settings** → **Network** → **WiFi**
-2. Disable **Auto-Join** for unknown networks
-3. Remove saved networks you no longer use
+2. Disable **Auto-Join** for any network you don't control
+3. Remove saved networks you no longer use — click the network → **Forget This Network**
 
 ### MAC Address Randomization
 
-macOS can randomize your MAC address for improved privacy:
+macOS supports Private WiFi Address (MAC randomization) per network since macOS 14 Sonoma. Enable it for each network you connect to:
 
-```bash
-# Enable MAC randomization per network
-# System Settings → Network → WiFi → Details → Private WiFi Address
-```
+1. **System Settings** → **Network** → **WiFi**
+2. Click the **Details** button next to a network
+3. Enable **Private WiFi Address** → choose **Rotating** for maximum protection
+
+Rotating mode changes your MAC address on a schedule, further reducing the ability of network operators to track your device across sessions.
 
 ## System Services Network Access
 
 ### Location Services and Networking
 
-Some system services transmit data:
+Some system services transmit data automatically:
 
 1. **System Settings** → **Privacy & Security** → **Location Services**
 2. Review **System Services** → **Networking & Wireless**
-3. Disable location-based networking if unnecessary
+3. Disable location-based networking if unnecessary — this prevents macOS from using known WiFi hotspot locations to supplement GPS positioning data
 
-### Diagnostic Data
+### Diagnostic Data and Analytics
 
 Control what diagnostic data Apple receives:
 
+1. **System Settings** → **Privacy & Security** → **Analytics & Improvements**
+2. Disable **Share Mac Analytics**
+3. Disable **Share with App Developers**
+4. Disable **Share iCloud Analytics** if you use iCloud
+
+These settings limit the amount of usage data, crash reports, and behavioral telemetry sent to Apple's servers.
+
 ```bash
-# Open Privacy settings
-open x-apple.systempreferences:com.apple.Preferences
+# Confirm diagnostics submission daemon is not running
+launchctl list | grep diagnostic
 ```
 
-Navigate to **Privacy & Security** → **Analytics & Improvements** to disable sharing.
+## Comparing Third-Party Firewall Tools
+
+| Tool | Price | Outbound Control | Logging | Open Source |
+|------|-------|-----------------|---------|-------------|
+| macOS Firewall | Free | No | No | No |
+| Lulu | Free | Yes | Basic | Yes |
+| Little Snitch | ~$60 | Yes | Detailed | No |
+| Radio Silence | $9 | Yes | Minimal | No |
+
+Lulu provides strong protection at no cost. Little Snitch is the professional choice when you need detailed logging and network map visualization.
 
 ## Troubleshooting Network Privacy Issues
 
 If you experience connectivity problems after adjusting settings:
 
-- Temporarily disable firewall to identify conflicts
-- Check DNS settings if websites fail to load
-- Verify VPN configuration if connection drops occur
-- Review system logs: `log show --predicate 'subsystem == "com.apple.network"'`
+- Temporarily disable the firewall to identify conflicts with specific applications
+- Check DNS settings if websites fail to load — some corporate DNS setups break when you override with public resolvers
+- Verify VPN configuration if connection drops occur by checking `scutil --nc status`
+- Review system logs: `log show --predicate 'subsystem == "com.apple.network"' --last 30m`
+- If pf rules lock you out of SSH, reboot into Recovery Mode and restore from backup pf.conf
+
+## Frequently Asked Questions
+
+**Does enabling the macOS firewall slow down my internet?**
+No measurable impact for typical home users. The Application Firewall only evaluates incoming connection attempts, not ongoing data transfer.
+
+**Should I use both the built-in firewall and pf?**
+They complement each other. The Application Firewall is the quickest protection; pf gives IP-level and port-level control the Application Firewall cannot provide.
+
+**Does MAC randomization break anything?**
+Some enterprise networks authenticate by MAC address. Enabling Private WiFi Address requires re-authenticating on those networks. For home routers with MAC-based DHCP reservations, disable randomization for your home network specifically.
 
 ## Related Reading
 
