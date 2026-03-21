@@ -20,12 +20,18 @@ Intelius operates one of the largest people-search databases in the United State
 
 This guide covers the Intelius opt-out process, verification techniques, and automation strategies for managing your data removal across multiple data broker platforms.
 
+## What Intelius Actually Shows About You
+
+Before opting out, it helps to understand the scope of data Intelius holds. A typical Intelius profile includes full legal name and known aliases, current and historical home addresses going back 10 or more years, phone numbers (landline and mobile), email addresses, relatives' names and contact information, estimated age and birth year, employment and educational history, and in some cases court records and property ownership data.
+
+For developers, the relative detail is concerning: Intelius cross-references records to infer social graphs. Your relatives listed in your profile are often shown links to their own profiles, which means opting out of your own record does not automatically remove your name from a sibling's or parent's record. Plan your opt-out strategy to cover both your direct record and associated family records.
+
 ## How Intelius Collects and Uses Your Data
 
 Intelius obtains personal information from multiple sources, including:
 
 - **Public records**: Birth certificates, property records, court documents, and voter registrations
-- - **Social media and directories**: Publicly accessible profiles and business listings
+- **Social media and directories**: Publicly accessible profiles and business listings
 - **Marketing data lists**: Information shared by retailers and service providers
 - **Background check aggregators**: Data from consumer reporting agencies
 
@@ -50,6 +56,18 @@ The removal typically processes within 24-72 hours. However, Intelius may requir
 ### Verification Requirements
 
 Intelius requires email verification to process opt-out requests. Use a dedicated email address for privacy requests to track communications and avoid cluttering your primary inbox.
+
+If you have multiple profiles — common when you have lived in several states or used different name variations — you must submit a separate removal request for each record. Intelius does not provide a single consolidated removal for all records tied to an individual. Allow 48-72 hours between submissions for the first removal to process before confirming the next.
+
+### Common Opt-Out Problems
+
+Several issues routinely trip up people attempting to opt out of Intelius:
+
+**Name not found in search:** Intelius may index you under a slightly different spelling or a maiden name. Try variations of your name, including with and without middle initials.
+
+**Confirmation email not arriving:** Check spam folders. If the email does not arrive within 15 minutes, the email address may have been rejected by Intelius's verification system. Try a different provider (Gmail, Proton Mail).
+
+**Record reappears after removal:** Intelius sources data from multiple upstream aggregators. When those aggregators re-send updated records, your profile can regenerate. Repeat the opt-out every 3-6 months.
 
 ## Automating Opt-Out Requests
 
@@ -163,6 +181,18 @@ print(f"Intelius record found: {verification.get('intelius_found', 'Unknown')}")
 
 Note that automated scraping may violate terms of service. Use manual verification or official removal verification tools when available.
 
+## Understanding Your Legal Rights
+
+Depending on your state of residence, you may have stronger legal tools than the voluntary opt-out process:
+
+**California (CCPA/CPRA):** California residents have the right to know what data a business holds, to request deletion, and to opt out of the sale of personal information. Intelius must respond to CCPA deletion requests within 45 days. Submit requests via their privacy portal and reference California Civil Code 1798.100 if they do not respond.
+
+**Virginia (CDPA):** Virginia consumers can request deletion of personal data and appeal denied requests. Intelius is a data broker under CDPA and must honor confirmed deletion requests.
+
+**Colorado (CPA):** Similar to Virginia, Colorado residents have opt-out and deletion rights with mandatory response timelines.
+
+If Intelius does not honor your opt-out within the stated timeframe, file a complaint with your state attorney general's office. For California, file with the California Privacy Protection Agency (CPPA). These complaints create accountability and often prompt faster removal than repeated opt-out form submissions.
+
 ## Ongoing Data Protection
 
 Data broker databases continuously refresh with new information. A single opt-out request does not guarantee permanent removal. Consider these ongoing strategies:
@@ -172,16 +202,32 @@ Data broker databases continuously refresh with new information. A single opt-ou
 - **Use privacy tools** like data removal services for automated monitoring
 - **Limit public data sharing** on social media and public directories
 
+## Data Brokers Related to Intelius
+
+Intelius is owned by PeopleConnect, which also operates Spokeo, Classmates.com, and other people-search properties. Removing data from Intelius alone does not remove it from sibling platforms. Submit separate opt-out requests to each:
+
+| Platform | Opt-Out URL | Processing Time |
+|---|---|---|
+| Intelius | intelius.com/opt-out | 24-72 hours |
+| Spokeo | spokeo.com/optout | 24-48 hours |
+| BeenVerified | beenverified.com/opt-out | 24 hours |
+| Whitepages | whitepages.com/suppression_requests | 24-48 hours |
+| PeopleFinder | peoplefinder.com/optout | 24-72 hours |
+| Radaris | radaris.com/page/how-to-remove | 3-5 business days |
+
+Prioritize the brokers that appear highest in Google search results for your name and city. Those results directly affect who can find your contact information when searching for you.
+
 ## Additional Resources
 
 Several organizations provide data broker removal services:
 
 - **Privacy Rights Clearinghouse**: Maintains a database of data brokers and opt-out links
 - **FTC Consumer Information**: Provides complaint resources for unresponsive brokers
-- **State privacy laws**: California, Virginia, and Colorado residents have additional privacy rights under state laws
+- **EFF's Surveillance Self-Defense**: Guidance on reducing your digital footprint beyond data broker removal
+- **State privacy laws**: California, Virginia, and Colorado residents have additional privacy rights under state laws that go beyond voluntary opt-out
 
 
-## Related Articles
+## Related Reading
 
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
