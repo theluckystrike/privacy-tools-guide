@@ -18,6 +18,17 @@ tags: [privacy-tools-guide, vpn]
 
 As of 2026, standard VPN protocols (OpenVPN, WireGuard) no longer work in Russia due to DPI blocking. Use instead NaiveProxy (disguises as HTTPS), Shadowsocks with obfuscation, or custom proxy solutions that don't announce themselves as VPNs. Self-hosted solutions on foreign VPS providers are more reliable than commercial VPN apps. Pre-position credentials before entering Russia, use multi-hop routing through neighboring countries, and maintain offline copies of circumvention tool setup instructions.
 
+## How Roskomnadzor's DPI System Works
+
+Roskomnadzor operates TSPU (Technical Means for Countering Threats) equipment installed at ISP level across Russian networks. Every major ISP is required by law to route traffic through this hardware, which performs deep packet inspection in real time. The system identifies VPN traffic through several methods:
+
+- **Protocol fingerprinting**: WireGuard's handshake has a distinctive header structure (first byte patterns, packet timing, port defaults). OpenVPN is identified by its TLS certificate structure and control channel behavior.
+- **Statistical traffic analysis**: VPN traffic produces characteristic entropy patterns — high uniformity, consistent packet sizes, regular keepalive intervals — that differ from typical HTTPS browsing.
+- **IP blocklists**: Known VPN server IP ranges are blocked reactively. Major commercial VPN providers' IP ranges are comprehensively listed.
+- **Active probing**: When TSPU suspects a server may be hosting a VPN, it sends connection probes. Servers that respond in VPN-characteristic ways are added to blocklists.
+
+Commercial VPN apps are particularly vulnerable because they use known IP ranges, identifiable app signatures in TLS SNI fields, and server infrastructures that have been catalogued by blocking authorities over years.
+
 ## Technical Approaches That Remain Functional
 
 ### Self-Hosted WireGuard with Custom Ports
@@ -58,7 +69,26 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-This approach works because port 443 traffic cannot be blocked without disrupting legitimate HTTPS browsing.
+This approach works because port 443 traffic cannot be blocked without disrupting legitimate HTTPS browsing. However, TSPU can still perform statistical fingerprinting on WireGuard traffic regardless of port. Pair this with AmneziaWG (a WireGuard fork that randomizes header fields) for better evasion.
+
+### AmneziaWG: WireGuard with Anti-Fingerprinting
+
+AmneziaWG is a fork of WireGuard developed specifically to defeat Russian DPI. It adds configurable junk data injection and packet header obfuscation:
+
+```ini
+# AmneziaWG additional parameters in wg0.conf
+Jc = 4       # Junk packet count (sent before handshake)
+Jmin = 40    # Minimum junk packet size
+Jmax = 70    # Maximum junk packet size
+S1 = 0       # Init packet junk size
+S2 = 0       # Response packet junk size
+H1 = 1       # Custom init packet header
+H2 = 2       # Custom response packet header
+H3 = 3       # Custom cookie reply header
+H4 = 4       # Custom transport header
+```
+
+The randomized headers break the pattern matching TSPU relies on for WireGuard identification. AmneziaWG clients are available for Android, iOS, macOS, Windows, and Linux.
 
 ### Obfsproxy with Tor
 
@@ -184,6 +214,18 @@ ncat -proxy localhost:8443 -shut -exec /usr/bin/wg-quick up wg0
 
 This creates multiple layers of indirection that DPI systems must unwrap to detect the underlying WireGuard traffic.
 
+## Choosing Your VPS Provider
+
+Self-hosted solutions require a foreign VPS. Several practical considerations apply when selecting one for circumvention use:
+
+**Jurisdiction**: Choose providers outside Russia, Belarus, and the CIS. EU-based providers (Hetzner in Germany/Finland, OVHcloud in France) have no legal obligation to assist Roskomnadzor. Singapore and Japan-based providers are also reliable choices.
+
+**Payment privacy**: Pay with cryptocurrency if the service allows it, or use privacy-preserving payment methods. Your account registration creates a legal trail even if your traffic is encrypted.
+
+**IP range freshness**: Avoid VPS providers whose IP ranges are already known to Roskomnadzor. Smaller, less-known providers are less likely to have their ranges pre-blocked. Check your server IP against blocklists before deploying.
+
+**Bandwidth**: Obfuscated protocols are more CPU-intensive than raw WireGuard. A VPS with 1 CPU and 1GB RAM is sufficient for a single user, but increase resources if routing multiple connections.
+
 ## Practical Recommendations
 
 When operating in Russia or connecting to services within the country, consider these practical guidelines:
@@ -209,6 +251,21 @@ while true; do
     sleep 10
 done
 ```
+
+5. **Pre-position credentials**: Download all configuration files, client applications, and setup instructions before traveling to Russia. Access to circumvention tool download sites (GitHub, etc.) may itself be blocked on arrival.
+
+6. **Use mobile data as a fallback**: Russian mobile carriers (MTS, Beeline, MegaFon) sometimes implement DPI less aggressively than fixed-line ISPs, particularly for roaming SIMs from neighboring countries. A Georgian or Armenian SIM used on Russian mobile networks may bypass TSPU entirely, since the roaming traffic is routed through the foreign carrier's network before entering Russia.
+
+## Protocol Comparison Summary
+
+| Protocol | Obfuscation Level | Speed | Setup Complexity | Recommended Use |
+|----------|------------------|-------|-----------------|-----------------|
+| WireGuard (default) | None | Very Fast | Low | Blocked in Russia |
+| AmneziaWG | High | Fast | Medium | Best for WireGuard users |
+| Shadowsocks + AEAD | Medium | Fast | Low | Good general option |
+| VLESS + Reality | Very High | Fast | High | Best resistance to DPI |
+| obfs4 over Tor | Very High | Slow | Medium | Maximum anonymity |
+| WireGuard + Stunnel | Medium | Medium | Medium | Layered fallback |
 
 The technical ecosystem continues evolving rapidly. Roskomnadzor's capabilities advance alongside the detection methods used by privacy-conscious users. Staying informed about new protocols, configuration techniques, and community recommendations provides the best long-term strategy for maintaining internet freedom.
 
