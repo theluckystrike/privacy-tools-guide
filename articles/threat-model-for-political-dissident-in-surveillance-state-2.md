@@ -244,14 +244,13 @@ def send_alert():
     msg['From'] = "sender@example.com"
     msg['To'] = RECIPIENT
     # Send via your configured SMTP
-    
+
 if should_trigger():
     send_alert()
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)

@@ -42,21 +42,21 @@ class MailForwardingService:
     def __init__(self, api_key, service_url):
         self.api_key = api_key
         self.service_url = service_url
-    
+
     def get_unscanned_mail(self):
         response = requests.get(
             f"{self.service_url}/api/v1/mail",
             headers={"Authorization": f"Bearer {self.api_key}"}
         )
         return response.json()["items"]
-    
+
     def request_scan(self, mail_id):
         """Request envelope content scan for specific mail piece"""
         requests.post(
             f"{self.api_key}/api/v1/mail/{mail_id}/scan",
             headers={"Authorization": f"Bearer {self.api_key}"}
         )
-    
+
     def forward_physical(self, mail_id, destination):
         """Request physical forwarding to destination"""
         requests.post(
@@ -80,28 +80,28 @@ Developers can automate mail management through services offering API access. Sc
 // Example: Mail event webhook handler for privacy-focused routing
 const mailWebhookHandler = async (req, res) => {
   const { sender, recipient, mailType, timestamp } = req.body;
-  
+
   // Route based on sender classification
   const isMarketing = await checkMarketingList(sender);
   const isFinancial = await checkFinancialInstitution(sender);
   const isGovernment = checkGovernmentAgency(sender);
-  
+
   const routingRules = {
     marketing: 'auto-shred',
     financial: 'archive-encrypt-notify',
     government: 'archive-full-scan',
     personal: 'notify-review'
   };
-  
+
   const action = routingRules[determineCategory()];
-  
+
   await executeMailAction(action, {
     mailId: req.body.mailId,
     sender,
     recipient,
     timestamp: new Date(timestamp)
   });
-  
+
   res.json({ status: 'processed', action });
 };
 ```
@@ -324,9 +324,7 @@ Address privacy isn't an one-time setup; it requires consistent attention to rem
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)

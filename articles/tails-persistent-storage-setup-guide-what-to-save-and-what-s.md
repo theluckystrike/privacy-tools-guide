@@ -359,8 +359,7 @@ cp -r /mnt/ramdisk/projects /home/amnesia/Persistent/
 Understanding what persists and what disappears is fundamental to using Tails effectively. By strategically selecting what survives reboots, you maintain both operational convenience and the strong anonymity guarantees that make Tails valuable.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Use Tails OS for Maximum Privacy Complete Setup Guide](/privacy-tools-guide/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
 - [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)

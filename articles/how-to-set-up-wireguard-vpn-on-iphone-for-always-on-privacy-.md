@@ -183,4 +183,6 @@ Also ensure your iPhone's remaining security settings are appropriate for your t
 
 Built by theluckystrike** — More at [zovo.one](https://zovo.one)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

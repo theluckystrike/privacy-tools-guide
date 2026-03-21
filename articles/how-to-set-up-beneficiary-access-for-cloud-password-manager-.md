@@ -146,26 +146,26 @@ import sqlite3
 def request_beneficiary_access(beneficiary_id):
     conn = sqlite3.connect('vaultwarden.db')
     cursor = conn.cursor()
-    
+
     # Record the access request
     cursor.execute(
         "INSERT INTO access_requests (beneficiary_id, request_time) VALUES (?, datetime('now'))",
         (beneficiary_id,)
     )
-    
+
     # Get the configured delay
     cursor.execute(
         "SELECT delay_hours FROM beneficiary_access WHERE id = ?",
         (beneficiary_id,)
     )
     delay = cursor.fetchone()[0]
-    
+
     # Calculate release time
     release_time = datetime.now() + timedelta(hours=delay)
-    
+
     conn.commit()
     conn.close()
-    
+
     return jsonify({
         "status": "request_submitted",
         "release_time": release_time.isoformat(),
@@ -214,27 +214,26 @@ def split_secret(secret: str, shares: int, threshold: int) -> list[str]:
     for _ in range(shares - 1):
         share = secrets.token_hex(32)
         shares_list.append(share)
-    
+
     # Last share is derived to make reconstruction work
     combined = bytes.fromhex(secret)
     for share in shares_list:
         combined = bytes(a ^ b for a, b in zip(combined, bytes.fromhex(share)))
     shares_list.append(combined.hex())
-    
+
     return shares_list
 ```
 
 This approach requires multiple trusted parties to combine their shares, providing defense in depth.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
-- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [How To Set Up Enterprise Password Manager With Zero Knowledg](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
+- [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

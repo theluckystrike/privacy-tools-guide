@@ -52,17 +52,17 @@ def check_image_availability(photo_path):
     """Check where your photos appear online."""
     # Using a simple approach with search engines
     # For production, consider using SerpApi or similar services
-    
+
     photo_paths = [
         Path(photo_path),
         # Add paths to all photos you want to monitor
     ]
-    
+
     for photo in photo_paths:
         if not photo.exists():
             print(f"Photo not found: {photo}")
             continue
-            
+
         # Open multiple reverse image search services
         # These services allow uploading your photo to find matches
         search_urls = [
@@ -70,7 +70,7 @@ def check_image_availability(photo_path):
             "https://www.tineye.com/",
             "https://images.google.com/",
         ]
-        
+
         print(f"\nChecking: {photo.name}")
         for url in search_urls:
             print(f"Opening: {url}")
@@ -143,12 +143,12 @@ from pathlib import Path
 def strip_metadata(image_path, output_path=None):
     """Remove all metadata from an image file."""
     img = Image.open(image_path)
-    
+
     # Create a new image without metadata
     data = list(img.getdata())
     clean_img = Image.new(img.mode, img.size)
     clean_img.putdata(data)
-    
+
     # Save without metadata
     output = output_path or image_path
     clean_img.save(output)
@@ -166,7 +166,7 @@ def batch_strip_metadata(directory, extensions={'.jpg', '.jpeg', '.png'}):
 if __name__ == "__main__":
     # Strip metadata from a single image
     strip_metadata("photo.jpg")
-    
+
     # Or batch process
     batch_strip_metadata("/path/to/your/photos")
 ```
@@ -222,7 +222,7 @@ from PIL import Image
 def generate_image_fingerprint(image_path):
     """Generate multiple hashes for image identification."""
     img = Image.open(image_path)
-    
+
     # Different hash algorithms for redundancy
     hashes = {
         'ahash': str(imagehash.average_hash(img)),
@@ -230,20 +230,20 @@ def generate_image_fingerprint(image_path):
         'dhash': str(imagehash.dhash(img)),
         'whash': str(imagehash.whash(img)),
     }
-    
+
     return hashes
 
 def check_image_similarity(image1_path, image2_path):
     """Check if two images are similar using perceptual hashing."""
     hash1 = generate_image_fingerprint(image1_path)
     hash2 = generate_image_fingerprint(image2_path)
-    
+
     # Calculate hamming distance for each hash type
     differences = {}
     for hash_type in hash1:
         diff = imagehash.hex_to_hash(hash1[hash_type]) - imagehash.hex_to_hash(hash2[hash_type])
         differences[hash_type] = diff
-    
+
     return differences
 
 # Usage
@@ -262,16 +262,16 @@ def check_photo_against_database(unknown_photo, known_faces_db):
     """Check if an unknown photo matches any in your database."""
     unknown_image = face_recognition.load_image_file(unknown_photo)
     unknown_encodings = face_recognition.face_encodings(unknown_image)
-    
+
     if len(unknown_encodings) == 0:
         return {"error": "No face detected"}
-    
+
     results = []
     for name, known_encoding in known_faces_db.items():
         match = face_recognition.compare_faces([known_encoding], unknown_encodings[0])
         if match[0]:
             results.append(name)
-    
+
     return {"matches": results}
 ```
 
@@ -303,14 +303,12 @@ This isn't about paranoia—it's about recognizing that once photos are online, 
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Prevent Dating App Photos From Appearing In Google Im](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
-- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
-- [Prevent Screenshots of Dating Conversations from Being Shared Without Your Co...](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
-- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [Prevent Screenshots of Dating Conversations from Being](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

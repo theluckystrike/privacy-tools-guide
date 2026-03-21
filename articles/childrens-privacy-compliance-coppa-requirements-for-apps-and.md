@@ -52,11 +52,11 @@ async function requestParentalConsent(childUserId) {
     timestamp: new Date().toISOString(),
     expiresIn: '24h'
   };
-  
+
   // Send consent request to parent
   const verificationUrl = await createConsentVerification(consentRequest);
   await sendEmailToParent(childUserId.parentEmail, verificationUrl);
-  
+
   return { status: 'pending', verificationUrl };
 }
 ```
@@ -92,21 +92,21 @@ Parents must be able to review the personal information collected from their chi
 // Example: Implementing parental access endpoint
 app.get('/api/child-data/:childId', async (req, res) => {
   const { parentToken } = req.cookies;
-  
+
   // Verify parent identity
   const parentVerification = await verifyParentToken(parentToken);
   if (!parentVerification.isValid) {
     return res.status(403).json({ error: 'Unauthorized' });
   }
-  
+
   const childData = await getChildData(req.params.childId);
   const parent = await getParent(childData.parentId);
-  
+
   // Ensure the parent requesting is the one on file
   if (parentVerification.parentId !== parent.id) {
     return res.status(403).json({ error: 'Parent mismatch' });
   }
-  
+
   res.json({
     data: childData,
     collectedFields: ['username', 'avatar', 'game_progress'],
@@ -118,13 +118,13 @@ app.get('/api/child-data/:childId', async (req, res) => {
 app.delete('/api/child-data/:childId', async (req, res) => {
   const { parentToken } = req.cookies;
   const parentVerification = await verifyParentToken(parentToken);
-  
+
   if (!parentVerification.isValid) {
     return res.status(403).json({ error: 'Unauthorized' });
   }
-  
+
   await deleteAllChildData(req.params.childId);
-  
+
   res.json({ success: true, message: 'Child data has been deleted' });
 });
 ```
@@ -140,7 +140,7 @@ Implement age verification at registration or first visit:
 function AgeGate() {
   const [ageVerified, setAgeVerified] = useState(false);
   const [showParentConsent, setShowParentConsent] = useState(false);
-  
+
   function handleAgeSubmit(age) {
     if (age < 13) {
       setShowParentConsent(true);
@@ -149,11 +149,11 @@ function AgeGate() {
       setCookie('age_verified', 'true', { maxAge: 86400 * 30 });
     }
   }
-  
+
   if (showParentConsent) {
     return <ParentConsentForm onComplete={() => setAgeVerified(true)} />;
   }
-  
+
   return <AgeInput onSubmit={handleAgeSubmit} />;
 }
 ```
@@ -198,7 +198,7 @@ function PrivacyPolicy() {
       <section id="coppa-notice">
         <h2>COPPA Privacy Notice</h2>
         <p>
-          We are committed to complying with the Children's Online Privacy 
+          We are committed to complying with the Children's Online Privacy
           Protection Act (COPPA). For children under 13:
         </p>
         <ul>
@@ -238,11 +238,10 @@ The FTC has the authority to impose civil penalties for COPPA violations. Recent
 - Loss of platform distribution (Apple App Store, Google Play)
 
 
-
-## Related Reading
+## Related Articles
 
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
 - [Employee Email Monitoring Legal Requirements And Privacy Bou](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
 - [Privacy Requirements For Mergers And Acquisitions Due Dilige](/privacy-tools-guide/privacy-requirements-for-mergers-and-acquisitions-due-dilige/)

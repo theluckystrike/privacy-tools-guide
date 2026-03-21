@@ -176,8 +176,7 @@ If you confirm unauthorized access:
 5. **File a report** - Document the incident with relevant authorities
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
 - [How To Check If Someone Is Using Your Netflix Without Permis](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permis/)

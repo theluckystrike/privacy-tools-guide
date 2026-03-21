@@ -131,12 +131,12 @@ For a more automated version, create a monitoring script:
 # Continuous leak monitor
 while true; do
     CURRENT_IP=$(curl -s --max-time 5 https://api.ipify.org?format=json | jq -r '.ip')
-    
+
     if [ -z "$CURRENT_IP" ]; then
         echo "[$(date)] Network unavailable - kill switch may be active"
     else
         echo "[$(date)] IP: $CURRENT_IP"
-        
+
         # Compare with known VPN IP range
         if echo "$CURRENT_IP" | grep -q "^45\."; then
             echo "  → Connected to VPN"
@@ -144,7 +144,7 @@ while true; do
             echo "  → WARNING: Possible IP leak detected!"
         fi
     fi
-    
+
     sleep 10
 done
 ```
@@ -198,13 +198,12 @@ sudo iptables -L -n -v
 **Split tunneling enabled**: Check if split tunneling is accidentally allowing traffic outside the VPN tunnel. Disable split tunneling for protection.
 
 
-
-## Related Reading
+## Related Articles
 
 - [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
 - [How to Test if Your Anti-Fingerprinting Setup Actually Works](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
-- [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [How VPN Reconnection Works After Network Switch Mobile](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [How Vpn Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

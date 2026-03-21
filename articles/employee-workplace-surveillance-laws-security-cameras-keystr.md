@@ -57,7 +57,7 @@ class SurveillanceAuditLog:
         self.logger = logging.getLogger('surveillance')
         handler = logging.FileHandler(log_file)
         self.logger.addHandler(handler)
-    
+
     def log_access(self, event: CameraAccessEvent):
         """Log all camera access for compliance."""
         self.logger.info(
@@ -102,7 +102,7 @@ function validateMonitoringConsent(userConsent, monitoringLevel) {
         [MonitoringLevel.KEYSTROKE]: 'explicit',
         [MonitoringLevel.SCREEN_CAPTURE]: 'explicit'
     };
-    
+
     return userConsent.level === consentMap[monitoringLevel];
 }
 ```
@@ -142,24 +142,24 @@ class GPSComplianceChecker:
         self.notice_required = state in [
             'CA', 'NY', 'TX', 'FL'
         ]
-    
-    def can_track(self, purpose: TrackingPurpose, 
+
+    def can_track(self, purpose: TrackingPurpose,
                   has_consent: bool,
                   is_company_device: bool) -> tuple[bool, str]:
         """Determine if GPS tracking is permissible."""
-        
+
         # Always allow on company devices for asset protection
         if is_company_device and purpose == TrackingPurpose.ASSET_PROTECTION:
             return True, "Permitted: Company asset"
-        
+
         # Personal devices require consent in most states
         if not is_company_device and not has_consent:
             return False, "Consent required for personal devices"
-        
+
         # Check state-specific requirements
         if self.notice_required and not has_consent:
             return False, f"Notice required in {self.state}"
-        
+
         return True, "Permitted"
 ```
 
@@ -193,9 +193,7 @@ For developers building enterprise monitoring tools, prioritize consent workflow
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
 - [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)

@@ -231,9 +231,7 @@ By understanding how iPhone personal hotspot naming works at a technical level, 
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
 - [Wifi Probe Request Tracking How Your Phone Broadcasts Identi](/privacy-tools-guide/wifi-probe-request-tracking-how-your-phone-broadcasts-identi/)

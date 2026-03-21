@@ -60,19 +60,19 @@ import json
 def download_instagram_data(access_token, user_id):
     """Download Instagram data via Graph API"""
     base_url = f"https://graph.facebook.com/v18.0/{user_id}"
-    
+
     # Request media
     media_params = {
         'fields': 'id,caption,media_type,media_url,timestamp',
         'access_token': access_token
     }
     media_response = requests.get(f"{base_url}/media", params=media_params)
-    
+
     # Download each piece of media
     for item in media_response.json().get('data', []):
         # Download logic here
         pass
-    
+
     return media_response.json()
 
 # Note: Requires Instagram Basic Display permission
@@ -370,8 +370,7 @@ The improvement is significant: stopping active data collection is the primary b
 8. **Consider complete Meta exit**: Delete all Meta accounts (Instagram, Facebook, WhatsApp) simultaneously if privacy is your goal
 
 
-
-## Related Reading
+## Related Articles
 
 - [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 - [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)

@@ -184,8 +184,7 @@ Consider maintaining password options when:
 - Account recovery simplicity is critical
 
 
-
-## Related Reading
+## Related Articles
 
 - [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
 - [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)

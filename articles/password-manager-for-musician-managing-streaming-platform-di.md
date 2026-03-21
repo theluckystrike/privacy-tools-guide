@@ -124,7 +124,7 @@ echo ""
 for service in "${CREDENTIALS[@]}"; do
   # Query your password manager for the item
   ITEM=$(bw get item "$service" --session $BW_SESSION 2>/dev/null)
-  
+
   if [ -n "$ITEM" ]; then
     # Extract notes field for rotation tracking
     LAST_ROTATION=$(echo "$ITEM" | jq -r '.notes // empty' | grep -i "last rotation" | awk '{print $3}')
@@ -197,10 +197,9 @@ Streaming platform access is critical to your music career. Establish a recovery
 4. Use your password manager's emergency access feature if available
 
 
+## Related Articles
 
-## Related Reading
-
-- [Password Manager for Travel Agent Managing Booking Platform Passwords](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
+- [Password Manager for Travel Agent Managing Booking Platform](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
 - [Password Manager For Accountant Managing Client Financial Po](/privacy-tools-guide/password-manager-for-accountant-managing-client-financial-po/)
 - [Password Manager For Insurance Agent Managing Carrier Portal](/privacy-tools-guide/password-manager-for-insurance-agent-managing-carrier-portal/)
 - [Password Manager For Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)

@@ -315,8 +315,7 @@ If you share a handle and later regret it:
 Your digital privacy is not about paranoia—it is about maintaining control over your personal narrative. The strategies in this guide provide layers of protection that work for varying threat levels and comfort zones.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)

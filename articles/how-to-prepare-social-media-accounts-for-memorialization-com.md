@@ -79,7 +79,7 @@ def archive_user_tweets(consumer_key, consumer_secret, access_token, access_secr
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     api = tweepy.API(auth)
-    
+
     tweets = []
     for tweet in api.user_timeline(screen_name=username, count=200):
         tweets.append({
@@ -89,10 +89,10 @@ def archive_user_tweets(consumer_key, consumer_secret, access_token, access_secr
             'likes': tweet.favorite_count,
             'retweets': tweet.retweet_count
         })
-    
+
     with open(output_file, 'w') as f:
         json.dump(tweets, f, indent=2)
-    
+
     return len(tweets)
 ```
 
@@ -132,7 +132,7 @@ async function configureInactiveAccountManager(auth, config) {
     notifications: config.notifyDaysBefore,
     dataVisibility: 'VISIBLE_TO_CONTACTS_ONLY',
   };
-  
+
   return settings;
 }
 ```
@@ -212,12 +212,11 @@ EOF
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
 

@@ -182,9 +182,7 @@ Begin by deploying a test server with minimal configuration. Verify that you can
 Remember that staying informed about local laws regarding internet access tools remains your responsibility. Use these technologies ethically and in compliance with applicable regulations in your jurisdiction.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)
 - [How To Build Portable Censorship Circumvention Kit On Usb Dr](/privacy-tools-guide/how-to-build-portable-censorship-circumvention-kit-on-usb-dr/)

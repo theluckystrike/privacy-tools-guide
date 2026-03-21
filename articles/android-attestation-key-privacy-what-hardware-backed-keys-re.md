@@ -39,7 +39,7 @@ fun generateAttestationKey(): KeyPair {
         KeyProperties.KEY_ALGORITHM_EC,
         "AndroidKeyStore"
     )
-    
+
     val spec = KeyGenParameterSpec.Builder(
         "attestation_key",
         KeyProperties.PURPOSE_SIGN
@@ -48,7 +48,7 @@ fun generateAttestationKey(): KeyPair {
         .setDigests(KeyProperties.DIGEST_SHA256)
         .setAttestationChallenge("challenge_bytes_here".toByteArray())
         .build()
-    
+
     keyGenerator.init(spec)
     return keyGenerator.generateKeyPair()
 }
@@ -332,9 +332,7 @@ Stay informed about these developments through Android Security & Privacy docume
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)

@@ -226,8 +226,7 @@ For power users concerned about privacy:
 4. **Backup your data regularly**: Both platforms offer data export options
 
 
-
-## Related Reading
+## Related Articles
 
 - [Twitter X Privacy Settings Recommended 2026](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)

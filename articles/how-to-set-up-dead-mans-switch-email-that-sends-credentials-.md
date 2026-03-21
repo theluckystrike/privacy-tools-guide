@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In"
+title: "Set Up a Dead Man's Switch Email That Sends Credentials If"
 description: "A practical guide for developers and power users to create an automated system that delivers your credentials to trusted contacts if you become inactive"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -125,13 +125,13 @@ if [ "$DIFF_DAYS" -ge "$INACTIVITY_DAYS" ]; then
     mutt -s "Dead Man's Switch Triggered - Credentials" \
          -a "$CREDENTIALS_FILE" -- "$RECIPIENT" << EOF
 
-Your contact has been inactive for $DIFF_DAYS days. 
+Your contact has been inactive for $DIFF_DAYS days.
 The attached file contains their encrypted credentials.
 Use their GPG key to decrypt: gpg --decrypt credentials.gpg
 
 This is an automated message from their dead man's switch system.
 EOF
-    
+
     echo "Dead man's switch triggered - credentials sent at $(date)"
 fi
 ```
@@ -187,10 +187,10 @@ def checkin():
     token = request.headers.get('X-Checkin-Token')
     if token != os.environ.get('CHECKIN_TOKEN'):
         return 'Unauthorized', 401
-    
+
     with open(TIMESTAMP_FILE, 'w') as f:
         f.write(str(int(datetime.now().timestamp())))
-    
+
     return 'OK', 200
 
 if __name__ == '__main__':
@@ -213,11 +213,10 @@ curl -X POST https://your-server.example.com/checkin \
 - **Rotate credentials periodically**: Update the encrypted payload when you change passwords
 
 
-
-## Related Reading
+## Related Articles
 
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-- [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
+- [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
 - [How To Set Up Encrypted Dead Drop Using Onionshare For Sourc](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)

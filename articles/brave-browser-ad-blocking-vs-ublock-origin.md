@@ -422,8 +422,7 @@ Neither solution is "set and forget"—both degrade over time:
 Maintenance is minimal for Brave ( none), and more involved for uBlock Origin if you maintain custom filters.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Configure Ublock Origin For Maximum Anti Tracking Pro](/privacy-tools-guide/how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/)
 - [Privacy Badger Vs Ublock Origin Which Blocks More Trackers 2](/privacy-tools-guide/privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/)

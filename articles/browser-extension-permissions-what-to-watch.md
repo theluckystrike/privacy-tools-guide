@@ -261,8 +261,7 @@ Verify extension authenticity using Chrome's extension ID (which is deterministi
 Malicious actors often create lookalike extensions with similar names. The extension ID is your primary verification tool.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 - [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)

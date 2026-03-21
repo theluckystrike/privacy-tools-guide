@@ -54,21 +54,21 @@ import re
 
 def analyze_breach_notification(email_headers):
     """Extract key GDPR-required fields from breach notification"""
-    
+
     required_fields = [
         'Data-Controller-Contact',
-        'DPO-Contact', 
+        'DPO-Contact',
         'Breach-Description',
         'Categories-of-Data',
         'Likely-Consequences',
         'Measures-Taken'
     ]
-    
+
     results = {}
     for field in required_fields:
         value = email_headers.get(field) or email_headers.get(f'X-{field}')
         results[field] = value if value else "MISSING"
-    
+
     return results
 
 # Example usage with email headers
@@ -105,19 +105,19 @@ from datetime import datetime
 def check_ico_breach_report(company_name, date_range):
     """
     Check if a company has reported a breach to the UK ICO.
-    Note: This is a simplified example; actual API usage requires 
+    Note: This is a simplified example; actual API usage requires
     registration and may have rate limits.
     """
-    
+
     # ICO provides a searchable register of breach notifications
     base_url = "https://ico.org.uk/umbraco/api/breach/getbreaches"
-    
+
     params = {
         'company': company_name,
         'from': date_range['start'],
         'to': date_range['end']
     }
-    
+
     try:
         response = requests.get(base_url, params=params, timeout=10)
         if response.status_code == 200:
@@ -272,8 +272,7 @@ If you decide to file a GDPR complaint:
 Many jurisdictions now have streamlined online complaint systems that take 5-10 minutes to file initially, though investigation may take months or years.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)

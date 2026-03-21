@@ -211,8 +211,7 @@ If arrested, your attorney will advise you whether to produce the phone or asser
 The cost is low relative to legal expenses if you're identified and charged. Even if you never use the burner phone setup, understanding these practices reduces anxiety about protest attendance and government surveillance.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
 - [How to Set Up Panic Button on Phone: Emergency Privacy Wipe](/privacy-tools-guide/how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/)

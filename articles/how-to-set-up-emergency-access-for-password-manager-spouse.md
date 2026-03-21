@@ -105,7 +105,7 @@ check_emergency_requests() {
     emergency_requests=$(curl -s \
         -H "Authorization: Bearer $(bw get token)" \
         "${BW_HOST}/api/emergency-access/requests" 2>/dev/null)
-    
+
     if echo "$emergency_requests" | grep -q "pending"; then
         echo "Emergency access request detected"
         # Add custom notification logic here
@@ -190,15 +190,13 @@ The emergency access system provides peace of mind that digital barriers won't p
 ---
 
 
+## Related Articles
 
-
-## Related Reading
-
-- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [How To Set Up Beneficiary Access For Cloud Password Manager](/privacy-tools-guide/how-to-set-up-beneficiary-access-for-cloud-password-manager-/)
 - [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)
+- [How To Set Up Enterprise Password Manager With Zero Knowledg](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

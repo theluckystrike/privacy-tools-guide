@@ -495,8 +495,7 @@ vm_stat 1 5  # Memory statistics
 These measurements quantify Mail Privacy Protection's overhead on your specific device and configuration.
 
 
-
-## Related Reading
+## Related Articles
 
 - [iPhone Mail Privacy Protection: How It Works](/privacy-tools-guide/iphone-mail-privacy-protection-how-it-works/)
 - [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)

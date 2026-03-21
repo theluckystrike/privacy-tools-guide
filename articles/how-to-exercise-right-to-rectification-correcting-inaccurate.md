@@ -66,7 +66,7 @@ I have attached documentation supporting the correct information:
 - [Document 1: Utility bill / Bank statement / ID]
 - [Document 2: Official correspondence]
 
-Please correct these records within one month as required by GDPR Article 12(3). 
+Please correct these records within one month as required by GDPR Article 12(3).
 If you require additional verification, contact me immediately.
 
 If this request is not fulfilled, I will file a complaint with my local Data Protection Authority.
@@ -103,7 +103,7 @@ def send_rectification_request(company_email, company_name, inaccuracies, attach
     Send a formal GDPR Article 16 rectification request.
     """
     subject = f"GDPR Article 16 Rectification Request - {datetime.now().strftime('%Y%m%d')}"
-    
+
     body = f"""Dear {company_name} Data Protection Team,
 
 I am exercising my right to rectification under GDPR Article 16.
@@ -112,7 +112,7 @@ The following personal data you hold about me is inaccurate:
 """
     for field, recorded, correct in inaccuracies:
         body += f"\n- {field}: Recorded as '{recorded}', should be '{correct}'"
-    
+
     body += """
 Please correct these records within one month as required by GDPR Article 12(3).
 I reserve the right to file a complaint with my local Data Protection Authority if this request is not fulfilled.
@@ -122,15 +122,15 @@ Thank you for your prompt attention to this matter.
 [Your Email]
 [Your Account ID]
 """
-    
+
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = 'your-email@example.com'
     msg['To'] = company_email
-    
+
     # Add attachments for verification documents if needed
     # Attach files using email.mime.multipart
-    
+
     return msg
 
 # Example usage
@@ -185,9 +185,7 @@ Keep these strategies in mind when exercising your rectification rights:
 Exercising your right to rectification requires persistence and precision. The legal framework exists to enable you—understanding how to use it effectively transforms abstract rights into practical data control.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)

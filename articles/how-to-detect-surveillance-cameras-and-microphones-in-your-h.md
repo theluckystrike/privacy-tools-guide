@@ -98,10 +98,10 @@ def analyze_noise_floor(duration=10, sample_rate=44100):
     print(f"Recording {duration} seconds of audio...")
     audio_data = sd.rec(duration * sample_rate, samplerate=sample_rate, channels=1)
     sd.wait()
-    
+
     rms = np.sqrt(np.mean(audio_data**2))
     dbfs = 20 * np.log10(rms)
-    
+
     print(f"Noise floor: {dbfs:.2f} dBFS")
     return dbfs
 
@@ -123,14 +123,14 @@ from scipy import signal
 
 def detect_ultrasonic(sample_rate=192000, duration=5):
     print(f"Listening for ultrasonic activity ({duration}s)...")
-    
+
     audio = sd.rec(duration * sample_rate, samplerate=sample_rate, channels=1)
     sd.wait()
-    
+
     # Focus on ultrasonic frequencies (18kHz - 22kHz)
     freqs, psd = signal.welch(audio[:, 0], fs=sample_rate, nperseg=4096)
     ultrasonic_power = np.sum(psd[(freqs > 18000) & (freqs < 22000)])
-    
+
     print(f"Ultrasonic power: {ultrasonic_power:.6f}")
     return ultrasonic_power
 
@@ -221,14 +221,14 @@ def log_room_scan(room_name: str, scan_positions: list) -> dict:
         "positions_checked": [],
         "findings": []
     }
-    
+
     for position in scan_positions:
         scan_record["positions_checked"].append({
             "location": position,
             "checked_at": datetime.now().isoformat(),
             "clear": True
         })
-    
+
     return scan_record
 
 # Document a standard hotel room scan
@@ -297,9 +297,7 @@ If law enforcement will not respond or the property manager is unresponsive, con
 Post public reviews on the booking platform documenting what you found and that you reported it. This creates accountability and protects future guests.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Media Devices Enumeration Fingerprinting Cameras Microphones](/privacy-tools-guide/media-devices-enumeration-fingerprinting-cameras-microphones/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)

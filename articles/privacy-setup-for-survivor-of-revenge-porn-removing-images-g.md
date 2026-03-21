@@ -65,7 +65,7 @@ class NCIITakedown:
             'twitter': 'https://help.twitter.com/forms/safety/sensitive-content',
             'reddit': 'https://www.reddit.com/report/',
         }
-    
+
     def generate_report(self, image_url, platform, description):
         return {
             'platform': platform,
@@ -74,7 +74,7 @@ class NCIITakedown:
             'timestamp': datetime.utcnow().isoformat(),
             'type': 'non-consensual intimate image'
         }
-    
+
     def send_takedown_email(self, platform_email, report_data):
         # Template for email-based takedown requests
         subject = f"Content Removal Request - Non-Consensual Content"
@@ -82,12 +82,12 @@ class NCIITakedown:
         Date: {report_data['timestamp']}
         Platform: {report_data['platform']}
         URL: {report_data['url']}
-        
+
         Description: {report_data['description']}
-        
+
         This content was shared without my consent. I request immediate removal.
         I am the individual in this image and have not consented to its distribution.
-        
+
         Please remove this content and prevent future uploads.
         """
         # Email sending logic here
@@ -178,11 +178,11 @@ import piexif
 def add_tracking_metadata(image_path, your_identifier):
     """Embed tracking information in image EXIF."""
     exif_dict = piexif.load(image_path)
-    
+
     # Add unique identifier in UserComment field
     exif_dict['0th'][piexif.ImageIFD.ImageDescription] = your_identifier
     exif_dict['Exif'][piexif.ExifIFD.UserComment] = f"DECOY-{your_identifier}"
-    
+
     piexif.dump(exif_dict)
     return exif_dict
 ```
@@ -232,7 +232,7 @@ def monitor_google_images(search_term, webhook_url):
             'searchType': 'image'
         }
     )
-    
+
     if response.json().get('items'):
         # Send alert to your webhook
         requests.post(webhook_url, json={
@@ -254,8 +254,7 @@ Begin with the highest-impact actions:
 The removal process requires persistence. Content may reappear on different platforms or under different URLs. Maintaining your evidence repository and continuing to submit removal requests remains the most effective technical approach.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
 - [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)

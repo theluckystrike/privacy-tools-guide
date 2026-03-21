@@ -302,9 +302,7 @@ ykman oath accounts list # Verify all keys have same accounts
 For developers managing their own accounts, YubiKey's multi-key support enables true key rotation without provider involvement. Titan's integration with Google Account recovery simplifies scenarios where users lose keys but can prove identity through other means.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 - [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)

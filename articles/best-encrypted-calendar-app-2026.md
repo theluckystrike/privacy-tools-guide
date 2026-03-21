@@ -283,8 +283,7 @@ khal new -a your_calendar "Team standup tomorrow 10am"
 This enables scripting calendar operations while maintaining encryption.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
 - [Tutanota Encrypted Calendar And Contacts How End To End Encr](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)

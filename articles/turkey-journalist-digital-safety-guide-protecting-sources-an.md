@@ -220,8 +220,7 @@ Prepare for potential device seizure:
 4. **Legal contacts**: Have digital rights lawyer contact information readily available
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Source Communicating With Journalist Anonym](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)

@@ -80,18 +80,18 @@ import math
 def calculate_entropy(data):
     if not data:
         return 0
-    
+
     byte_counts = [0] * 256
     for byte in data:
         byte_counts[byte] += 1
-    
+
     entropy = 0
     total = len(data)
     for count in byte_counts:
         if count > 0:
             probability = count / total
             entropy -= probability * math.log2(probability)
-    
+
     return entropy
 
 # High entropy (>7.5) suggests encryption
@@ -154,7 +154,7 @@ Using protocols that mimic legitimate traffic makes detection harder:
 # WireGuard packets wrapped in QUIC (HTTP/3) look like web traffic
 # Packet structure:
 # [QUIC header] [HTTP/3 frames] [WireGuard encrypted packet]
-# 
+#
 # To DPI: appears as normal HTTPS traffic to quic.google.com
 ```
 
@@ -206,8 +206,7 @@ sudo tcpdump -i any -c 100 -A | grep -i "tls|https"
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [VPN MSS Clamping Explained: Fixing Packet Size Related.](/privacy-tools-guide/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)

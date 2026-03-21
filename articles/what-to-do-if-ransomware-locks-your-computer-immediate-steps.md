@@ -205,8 +205,7 @@ git clone --bare /path/to/your/project /Volumes/BackupDrive/project-backup.git
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
 - [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)

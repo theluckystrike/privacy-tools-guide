@@ -51,17 +51,17 @@ class ImageModerationPipeline:
     def __init__(self, ai_model, storage_backend):
         self.model = ai_model
         self.storage = storage_backend
-    
+
     async def process_upload(self, image_data, user_id):
         # Generate unique identifier
         image_hash = hashlib.sha256(image_data).hexdigest()
-        
+
         # AI analysis step
         analysis_result = await self.model.analyze(image_data)
-        
+
         # Determine storage and visibility
         storage_params = self._determine_storage_params(analysis_result)
-        
+
         # Store with metadata
         image_id = await self.storage.save(
             data=image_data,
@@ -73,13 +73,13 @@ class ImageModerationPipeline:
             },
             **storage_params
         )
-        
+
         return {
             'image_id': image_id,
             'is_explicit': analysis_result['is_explicit'],
             'blur_required': analysis_result['confidence'] > 0.85
         }
-    
+
     def _determine_storage_params(self, analysis_result):
         if analysis_result['is_explicit']:
             return {
@@ -140,16 +140,16 @@ import * as tf from '@tensorflow/tfjs';
 
 async function classifyImageLocally(imageElement) {
   const model = await tf.loadLayersModel('/models/safety-classifier/model.json');
-  
+
   const tensor = tf.browser.fromPixels(imageElement)
     .resizeNearestNeighbor([224, 224])
     .toFloat()
     .div(255.0)
     .expandDims();
-  
+
   const prediction = model.predict(tensor);
   const results = await prediction.data();
-  
+
   // Return classification scores
   return {
     explicit: results[0],
@@ -180,8 +180,7 @@ For individuals using Bumble or similar platforms, understanding photo processin
 - **You have rights**: Most jurisdictions provide rights to access, correct, or delete your data
 
 
-
-## Related Reading
+## Related Articles
 
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
 - [Bumble Beeline Data Privacy Who Can See That You Swiped Righ](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)

@@ -37,7 +37,7 @@ Here is a simple example of how canvas fingerprinting works:
 function getCanvasFingerprint() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  
+
   // Draw text with various styling
   ctx.textBaseline = 'top';
   ctx.font = '14px Arial';
@@ -47,7 +47,7 @@ function getCanvasFingerprint() {
   ctx.fillText('Fingerprint', 2, 15);
   ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
   ctx.fillText('Test', 4, 17);
-  
+
   // Get the data URL and hash it
   const dataURL = canvas.toDataURL();
   return hashCode(dataURL);
@@ -319,13 +319,12 @@ Privacy protections come with tradeoffs:
 Monitor website functionality after enabling each protection. Some sites break with aggressive blocking—adjust settings per-domain using extension granular controls.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

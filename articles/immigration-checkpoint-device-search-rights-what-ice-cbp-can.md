@@ -247,14 +247,13 @@ diff pre_travel_hashes.txt post_travel_hashes.txt
 | "I'm copying your drive" | Allow/allow | Refuse | Likely denial of entry + seizure |
 
 
-
-## Related Reading
+## Related Articles
 
 - [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 - [Privacy Setup for Immigration Activist](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-- [Best Privacy-Focused Search Engines Comparison 2026: DuckDuckGo, Startpage, B...](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
+- [Best Privacy-Focused Search Engines Comparison 2026](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

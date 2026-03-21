@@ -370,8 +370,7 @@ Google Play Protect automatically scans apps for malicious behavior and permissi
 - For problematic apps, consider uninstalling or using privacy-focused alternative
 
 
-
-## Related Reading
+## Related Articles
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

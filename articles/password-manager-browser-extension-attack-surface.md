@@ -94,7 +94,7 @@ function autofillPassword(password) {
     HTMLInputElement.prototype, "value"
   ).set;
   nativeInputValueSetter.call(input, password);
-  
+
   // Dispatch minimal event only if necessary
   input.dispatchEvent(new Event("input", { bubbles: true }));
 }
@@ -282,8 +282,7 @@ chrome.storage.local.set({ vault: encrypted });
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 - [Browser Password Manager Vs Dedicated App](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)

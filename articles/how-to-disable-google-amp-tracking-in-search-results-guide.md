@@ -169,19 +169,19 @@ from urllib.parse import urlparse
 def is_amp_url(url: str) -> bool:
     """Detect if a URL is an AMP version."""
     parsed = urlparse(url)
-    
+
     # Check for /amp/ path
     if '/amp/' in parsed.path:
         return True
-    
+
     # Check for google amp redirect parameters
     if 'amp' in parsed.query:
         return True
-    
+
     # Check for google domain amp paths
     if 'google' in parsed.netloc and '/amp' in parsed.path:
         return True
-    
+
     return False
 
 def extract_canonical_url(amp_url: str) -> str:
@@ -245,9 +245,7 @@ The most effective approach combines multiple methods:
 This layered approach ensures protection even if one method fails. For developers, implementing AMP detection in your own tools helps maintain privacy across all browsing activities.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)

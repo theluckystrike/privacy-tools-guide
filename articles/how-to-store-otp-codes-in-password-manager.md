@@ -185,12 +185,12 @@ def get_bitwarden_totp(item_name: str) -> str:
         capture_output=True,
         text=True,
         env={**subprocess.os.environ, 'BW_SESSION': subprocess.run(
-            ['bw', 'unlock', '--raw'], 
-            capture_output=True, 
+            ['bw', 'unlock', '--raw'],
+            capture_output=True,
             text=True
         ).stdout.strip()}
     )
-    
+
     data = json.loads(result.stdout)
     return data['login']['totp']
 
@@ -199,7 +199,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: fetch_totp.py <service>")
         sys.exit(1)
-    
+
     print(get_bitwarden_totp(sys.argv[1]))
 ```
 
@@ -216,8 +216,7 @@ Some scenarios warrant keeping authenticator apps separate:
 Hardware security keys (YubiKey, SoloKey) provide stronger protection than TOTP codes stored in software.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)

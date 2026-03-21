@@ -181,14 +181,14 @@ def verify_email_signature(signed_message_path, expected_signer_email=None):
                     sig = result.signatures[0]
                     key = ctx.get_key(sig.fpr)
                     uid = key.uids[0]
-                    
+
                     if expected_signer_email and expected_signer_email not in uid.uid:
                         return False, f"Unexpected signer: {uid.uid}"
-                    
+
                     return True, f"Valid signature from {uid.uid}"
             except gpg.errors.GPGError as e:
                 return False, f"Verification failed: {e}"
-    
+
     return False, "No signature found"
 ```
 
@@ -218,8 +218,7 @@ If verification still fails after following these steps, check these common caus
 - **Key trust levels**: Run `gpg --edit-key` and set trust level to "ultimate" for keys you personally verify
 
 
-
-## Related Reading
+## Related Articles
 
 - [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)

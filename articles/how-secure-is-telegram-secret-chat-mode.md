@@ -279,8 +279,7 @@ If metadata protection is critical, Signal offers:
 For minimal privacy exposure beyond content, Signal is the stronger choice.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Secure Group Chat App 2026](/privacy-tools-guide/best-secure-group-chat-app-2026/)
 - [How To Create Shamir Secret Sharing Backup Of Crypto Seed Ph](/privacy-tools-guide/how-to-create-shamir-secret-sharing-backup-of-crypto-seed-ph/)

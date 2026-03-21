@@ -239,7 +239,7 @@ Combine these tools into a privacy-focused workflow. Start with network monitori
 
 A PowerShell script to audit active connections:
 ```powershell
-Get-NetTCPConnection -State Established | 
+Get-NetTCPConnection -State Established |
  Where-Object { $_.LocalAddress -notlike "127.*" } |
  ForEach-Object {
  $proc = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue
@@ -256,8 +256,7 @@ Get-NetTCPConnection -State Established |
 Run this periodically to monitor unexpected network activity.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)

@@ -175,8 +175,7 @@ Your selection depends on your threat model and technical appetite:
 All five options outperform mainstream cloud storage for privacy. The right choice depends on how much infrastructure you want to manage versus how much you want to trust a provider.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)

@@ -178,9 +178,7 @@ ciphertext = ctx.encrypt(
 The right choice depends on your threat model, technical requirements, and the communication patterns of your organization. All three approaches provide meaningful security improvements over unencrypted email when implemented correctly.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 - [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)

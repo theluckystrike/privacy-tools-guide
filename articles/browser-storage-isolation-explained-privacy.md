@@ -187,8 +187,7 @@ function setAnalyticsCookie(userConsents) {
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 - [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)

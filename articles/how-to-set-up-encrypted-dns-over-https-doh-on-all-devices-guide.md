@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide"
+title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices"
 description: "Step-by-step DoH setup: macOS, Windows, Linux, iOS, Android, routers. Provider comparison (Cloudflare, NextDNS, Quad9). Verification steps included"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -478,8 +478,7 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 **Ongoing:** Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)

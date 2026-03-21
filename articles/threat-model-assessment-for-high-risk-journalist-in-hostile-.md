@@ -283,8 +283,7 @@ Organizations providing support to journalists in hostile environments include:
 These organizations provide direct support, financial assistance, and sometimes physical relocation for journalists facing imminent danger. Establish relationships with these organizations before you need them.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model For Union Organizer In Hostile Employer Environ](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
 - [Threat Model For Source Communicating With Journalist Anonym](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)

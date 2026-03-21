@@ -257,14 +257,13 @@ After migration, enhance your security posture:
 4. Enable vault timeout (auto-lock after inactivity)
 
 
-
-## Related Reading
+## Related Articles
 
 - [Browser Password Manager Vs Dedicated App](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
 - [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
-- [Password Manager for Travel Agent Managing Booking Platform Passwords](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
-- [Vpn Shared Ip Vs Dedicated Ip Privacy Security Tradeoffs Exp](/privacy-tools-guide/vpn-shared-ip-vs-dedicated-ip-privacy-security-tradeoffs-exp/)
+- [How To Share Passwords Securely With Team Using Encrypted Co](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)
+- [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

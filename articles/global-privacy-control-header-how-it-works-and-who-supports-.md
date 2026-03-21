@@ -60,14 +60,14 @@ On the server, you can detect the GPC header in your request processing:
 ```javascript
 app.get('/api/content', (req, res) => {
   const gpcValue = req.headers['sec-gpc'];
-  
+
   if (gpcValue === '1') {
     // User has opted out of data sale
     // Disable analytics, personalization, and third-party sharing
     disableTracking(req.userId);
     disablePersonalization(req.sessionId);
   }
-  
+
   res.json({ /* content */ });
 });
 ```
@@ -78,12 +78,12 @@ app.get('/api/content', (req, res) => {
 @app.route('/api/content')
 def get_content():
     gpc_header = request.headers.get('Sec-GPC')
-    
+
     if gpc_header == '1':
         # Respect user's privacy preference
         disable_tracking()
         disable_personalization()
-    
+
     return jsonify({ /* content */ })
 ```
 
@@ -111,7 +111,7 @@ function shouldBlockTracking() {
   if (navigator.globalPrivacyControl === true) {
     return true;
   }
-  
+
   // Fall back to cookie consent check
   return !hasCookieConsent();
 }
@@ -216,8 +216,7 @@ curl -H "Sec-GPC: 1" https://yourwebsite.com
 Browser developer tools also show the GPC header in the Network tab when making requests.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
 - [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)

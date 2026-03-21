@@ -242,8 +242,7 @@ A typical developer setup for a power user might look like:
 This separation means work communications never leak into personal data streams, while still maintaining functionality for both professional and personal use.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Android Work Profile Privacy Separation Guide](/privacy-tools-guide/android-work-profile-privacy-separation-guide/)
 - [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)

@@ -44,28 +44,28 @@ from sqlalchemy.ext.asyncio import AsyncSession
 class ErasureService:
     def __init__(self, session: AsyncSession):
         self.session = session
-    
+
     async def process_erasure_request(self, user_id: str):
         # Delete from all related tables in proper order
         await self._delete_user_sessions(user_id)
         await self._delete_user_logs(user_id)
         await self._delete_user_profile(user_id)
         await self._delete_user_account(user_id)
-        
+
         await self.session.commit()
-    
+
     async def _delete_user_sessions(self, user_id: str):
         stmt = delete(Session).where(Session.user_id == user_id)
         await self.session.execute(stmt)
-    
+
     async def _delete_user_logs(self, user_id: str):
         stmt = delete(UserActivityLog).where(UserActivityLog.user_id == user_id)
         await self.session.execute(stmt)
-    
+
     async def _delete_user_profile(self, user_id: str):
         stmt = delete(UserProfile).where(UserProfile.user_id == user_id)
         await self.session.execute(stmt)
-    
+
     async def _delete_user_account(self, user_id: str):
         stmt = delete(User).where(User.id == user_id)
         await self.session.execute(stmt)
@@ -77,11 +77,11 @@ Your application needs a dedicated endpoint to receive erasure requests. This en
 
 ```javascript
 // Express.js erasure request handler
-app.delete('/api/v1/data-erasure', 
+app.delete('/api/v1/data-erasure',
   requireAuth,
   async (req, res) => {
     const userId = req.user.id;
-    
+
     // Log the request for audit trail
     await AuditLogger.log({
       action: 'ERASURE_REQUEST',
@@ -89,14 +89,14 @@ app.delete('/api/v1/data-erasure',
       timestamp: new Date(),
       ipAddress: req.ip
     });
-    
+
     // Queue erasure job
     await erasureQueue.add('process-erasure', {
       userId,
       requestId: generateRequestId(),
       requestedAt: new Date()
     });
-    
+
     res.status(202).json({
       message: 'Erasure request received',
       requestId: generateRequestId(),
@@ -124,10 +124,10 @@ class DataRecipient:
 class ThirdPartyNotifier:
     def __init__(self, recipients: list[DataRecipient]):
         self.recipients = recipients
-    
+
     async def notify_all_recipients(self, user_id: str, request_id: str):
         results = []
-        
+
         for recipient in self.recipients:
             try:
                 response = await self._send_erasure_notification(
@@ -149,9 +149,9 @@ class ThirdPartyNotifier:
                     'status': 'failed',
                     'error': str(e)
                 })
-        
+
         return results
-    
+
     async def _send_erasure_notification(self, endpoint: str, payload: dict):
         async with aiohttp.ClientSession() as session:
             async with session.post(endpoint, json=payload) as response:
@@ -166,10 +166,10 @@ You must decide between soft deletion (marking records as deleted) and hard dele
 **Soft delete approach:**
 ```sql
 -- Keep data but mark as deleted
-UPDATE users 
-SET deleted_at = NOW(), 
+UPDATE users
+SET deleted_at = NOW(),
     email = CONCAT(id, '_erased_', UNIX_TIMESTAMP(), '@erased.local'),
-    is_anonymized = true 
+    is_anonymized = true
 WHERE id = ?;
 ```
 
@@ -194,13 +194,13 @@ from datetime import datetime
 class ErasureAuditLogger:
     def __init__(self):
         self.logger = logging.getLogger('gdpr.erasure')
-    
+
     def log_erasure_event(self, event_type: str, user_id: str, details: dict):
         self.logger.info(
             f"ERASURE_EVENT | {datetime.utcnow().isoformat()} | "
             f"{event_type} | user_id={user_id} | details={details}"
         )
-    
+
     def generate_compliance_report(self, user_id: str) -> dict:
         # Return formatted report for data subject
         return {
@@ -247,10 +247,10 @@ class RetentionBlock:
 class ErasureEligibilityChecker:
     def check_eligibility(self, user_id: str) -> dict:
         blocks = self._find_retention_blocks(user_id)
-        
+
         if not blocks:
             return {"eligible": True, "blocks": []}
-        
+
         return {
             "eligible": False,
             "blocks": [
@@ -263,10 +263,10 @@ class ErasureEligibilityChecker:
                 for b in blocks
             ]
         }
-    
+
     def _find_retention_blocks(self, user_id: str) -> List[RetentionBlock]:
         blocks = []
-        
+
         # Check for open legal disputes
         if self._has_open_dispute(user_id):
             blocks.append(RetentionBlock(
@@ -275,7 +275,7 @@ class ErasureEligibilityChecker:
                 expected_expiry=None,
                 legal_reference="GDPR Article 17(3)(e)"
             ))
-        
+
         # Check for financial record retention requirements
         financial_retention_expiry = self._get_financial_retention_expiry(user_id)
         if financial_retention_expiry:
@@ -285,7 +285,7 @@ class ErasureEligibilityChecker:
                 expected_expiry=financial_retention_expiry,
                 legal_reference="GDPR Article 17(3)(b)"
             ))
-        
+
         return blocks
 ```
 
@@ -308,7 +308,7 @@ class ErasureCoordinator:
     def __init__(self, event_bus, services: List[str]):
         self.event_bus = event_bus
         self.services = services
-    
+
     async def initiate_coordinated_erasure(
         self, user_id: str, request_id: str
     ) -> dict:
@@ -320,24 +320,24 @@ class ErasureCoordinator:
             "requested_at": datetime.utcnow().isoformat(),
             "deadline": self._calculate_deadline(days=30)
         }
-        
+
         await self.event_bus.publish("privacy.erasure", erasure_event)
-        
+
         # Track which services have acknowledged
         pending_services = list(self.services)
-        
+
         return {
             "request_id": request_id,
             "status": "processing",
             "pending_services": pending_services,
             "deadline": erasure_event["deadline"]
         }
-    
+
     async def handle_service_confirmation(
         self, request_id: str, service_name: str
     ):
         self._mark_service_complete(request_id, service_name)
-        
+
         if self._all_services_complete(request_id):
             await self._finalize_erasure(request_id)
 
@@ -346,7 +346,7 @@ class NotificationServiceErasureHandler:
     async def handle_erasure(self, event: dict):
         user_id = event["user_id"]
         request_id = event["request_id"]
-        
+
         # Delete from notification service tables
         await self.db.execute(
             "DELETE FROM notification_preferences WHERE user_id = $1", user_id
@@ -354,7 +354,7 @@ class NotificationServiceErasureHandler:
         await self.db.execute(
             "DELETE FROM notification_history WHERE user_id = $1", user_id
         )
-        
+
         # Confirm completion to coordinator
         await self.event_bus.publish("privacy.erasure.confirmed", {
             "request_id": request_id,
@@ -379,21 +379,21 @@ from unittest.mock import AsyncMock
 @pytest.mark.asyncio
 async def test_erasure_removes_all_user_data(db, erasure_service, test_user):
     user_id = test_user.id
-    
+
     # Verify test data exists in all locations before erasure
     assert await db.query_one("SELECT id FROM users WHERE id = $1", user_id)
     assert await db.query_one("SELECT id FROM user_activity WHERE user_id = $1", user_id)
     assert await db.query_one("SELECT id FROM user_sessions WHERE user_id = $1", user_id)
-    
+
     # Execute erasure
     result = await erasure_service.process_erasure_request(user_id)
     assert result["status"] == "completed"
-    
+
     # Verify complete removal from all tables
     assert not await db.query_one("SELECT id FROM users WHERE id = $1", user_id)
     assert not await db.query_one("SELECT id FROM user_activity WHERE user_id = $1", user_id)
     assert not await db.query_one("SELECT id FROM user_sessions WHERE user_id = $1", user_id)
-    
+
     # Verify audit trail was created (this should survive erasure)
     audit = await db.query_one(
         "SELECT id FROM erasure_audit WHERE user_id = $1", user_id
@@ -403,11 +403,11 @@ async def test_erasure_removes_all_user_data(db, erasure_service, test_user):
 @pytest.mark.asyncio
 async def test_erasure_respects_legal_holds(db, erasure_service, test_user_with_dispute):
     user_id = test_user_with_dispute.id
-    
+
     result = await erasure_service.check_eligibility(user_id)
     assert result["eligible"] == False
     assert any(
-        b["reason"] == "legal_claim" 
+        b["reason"] == "legal_claim"
         for b in result["blocks"]
     )
 ```
@@ -415,13 +415,10 @@ async def test_erasure_respects_legal_holds(db, erasure_service, test_user_with_
 Add erasure tests to your CI pipeline and run them against a staging environment that mirrors production's data topology. Database schema changes regularly create new erasure gaps—a new table added without an erasure handler is a compliance defect waiting to surface.
 
 
-
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
 - [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)

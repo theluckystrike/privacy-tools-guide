@@ -310,8 +310,7 @@ Ongoing:
 This phased approach restores privacy while minimizing service disruption.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Iphone Significant Locations History What Apple Tracks How T](/privacy-tools-guide/iphone-significant-locations-history-what-apple-tracks-how-t/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)

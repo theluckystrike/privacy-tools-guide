@@ -105,7 +105,7 @@ from pathlib import Path
 class SecureDrop:
     def __init__(self, gpg_home='/path/to/gpg/home'):
         self.gpg = gnupg.GPG(gnupghome=gpg_home)
-    
+
     def encrypt_file(self, filepath, recipient_keyid):
         with open(filepath, 'rb') as f:
             encrypted = self.gpg.encrypt_file(
@@ -200,12 +200,11 @@ done
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-- [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 

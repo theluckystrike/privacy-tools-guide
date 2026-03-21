@@ -56,7 +56,7 @@ import requests
 def upload_encrypted_file(file_path, tresor_id, access_token):
     """Upload file to Tresorit's zero-knowledge storage"""
     endpoint = f"https://api.tresorit.com/api/v1/tresors/{tresor_id}/files"
-    
+
     with open(file_path, 'rb') as f:
         response = requests.post(
             endpoint,
@@ -66,7 +66,7 @@ def upload_encrypted_file(file_path, tresor_id, access_token):
             },
             data=f
         )
-    
+
     return response.json()['file_id']
 ```
 
@@ -92,13 +92,13 @@ async function createTeamVault(teamId, vaultName) {
     apiKey: process.env.SYNC_API_KEY,
     teamId: teamId
   });
-  
+
   const vault = await client.vaults.create({
     name: vaultName,
     encryption: 'zero-knowledge',
     permissions: ['read', 'write', 'admin']
   });
-  
+
   return vault.id;
 }
 ```
@@ -142,18 +142,18 @@ def migrate_from_s3(bucket_name, filen_dir):
     """Migrate S3 buckets to Filen zero-knowledge storage"""
     s3 = boto3.client('s3')
     filen = FilenClient(auth_token=os.getenv('FILEN_TOKEN'))
-    
+
     paginator = s3.get_paginator('list_objects_v2')
-    
+
     for page in paginator.paginate(Bucket=bucket_name):
         for obj in page.get('Contents', []):
             # Download from S3
             s3.download_file(bucket_name, obj['Key'], '/tmp/file')
-            
+
             # Re-encrypt and upload to Filen
             filen_path = f"{filen_dir}/{obj['Key']}"
             filen.upload_file('/tmp/file', filen_path)
-            
+
             print(f"Migrated: {obj['Key']}")
 ```
 
@@ -170,10 +170,10 @@ async function encryptAndUpload(file, bucket, keyId) {
     true,
     ['encrypt', 'decrypt']
   );
-  
+
   // Generate random IV
   const iv = crypto.getRandomValues(new Uint8Array(12));
-  
+
   // Encrypt file contents
   const fileData = await file.arrayBuffer();
   const encryptedData = await crypto.subtle.encrypt(
@@ -181,7 +181,7 @@ async function encryptAndUpload(file, bucket, keyId) {
     fileKey,
     fileData
   );
-  
+
   // Encrypt file key with master key (Key Encryption Key)
   const masterKey = await loadMasterKey(keyId);
   const exportedKey = await crypto.subtle.exportKey('raw', fileKey);
@@ -190,7 +190,7 @@ async function encryptAndUpload(file, bucket, keyId) {
     masterKey,
     exportedKey
   );
-  
+
   // Upload encrypted blob + encrypted key to storage
   await uploadToStorage(bucket, {
     data: encryptedData,
@@ -211,9 +211,7 @@ Start with a trial of two or three providers, test the API integration with your
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best Zero Knowledge Cloud Storage 2026](/privacy-tools-guide/best-zero-knowledge-cloud-storage-2026/)
 - [How Does Bitwarden Encryption Work Zero Knowledge](/privacy-tools-guide/how-does-bitwarden-encryption-work-zero-knowledge/)

@@ -49,7 +49,7 @@ This API replaces pixel-based conversion tracking. Instead of sharing user ident
 ```javascript
 // Register an attribution source on your site
 document.body.innerHTML += `
-  <a href="https://advertiser.com/product" 
+  <a href="https://advertiser.com/product"
      attributiondestination="https://advertiser.com"
      attributionexpiry="2592000000"
      attributionreportto="/attribution">
@@ -135,7 +135,7 @@ fetch('/api/track', {
 app.post('/api/track', (req, res) => {
   const { event, url, timestamp } = req.body;
   // Store in your analytics database
-  analyticsDb.insert({ event, url, timestamp, 
+  analyticsDb.insert({ event, url, timestamp,
     sessionId: req.sessionID });
   res.status(200).send('tracked');
 });
@@ -148,9 +148,9 @@ If your application requires user login, authenticated user IDs provide the most
 ```javascript
 // Set a first-party user identifier post-login
 function setUserCookie(userId) {
-  document.cookie = `user_id=${userId}; 
-    max-age=31536000; 
-    path=/; 
+  document.cookie = `user_id=${userId};
+    max-age=31536000;
+    path=/;
     SameSite=Strict;
     Secure`;
 }
@@ -194,9 +194,7 @@ Monitor Google's official deprecation timeline and the W3C Privacy Community Gro
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Cookie Alternatives After Third-Party Deprecation: A.](/privacy-tools-guide/cookie-alternatives-after-third-party-deprecation-2026-guide/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)

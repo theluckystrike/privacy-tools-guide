@@ -183,8 +183,7 @@ For typical development workflows:
 | Docker image pulls | Both acceptable; verify registry mirrors |
 
 
-
-## Related Reading
+## Related Articles
 
 - [Does Mullvad VPN Work in Egypt? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-vpn-work-in-egypt-2026-latest-report/)
 - [VPN MTU Settings Optimization for Faster Connection Speed](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)

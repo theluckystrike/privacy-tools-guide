@@ -85,11 +85,11 @@ def log_request(method, url, headers, body):
         "headers": dict(headers),
         "body": body
     }
-    
+
     log_file = Path("privacy_log.jsonl")
     with open(log_file, "a") as f:
         f.write(json.dumps(entry) + "\n")
-    
+
     print(f"[{entry['timestamp']}] {method} {url}")
 
 # Example using mitmproxy's API
@@ -207,8 +207,7 @@ Preserve evidence properly from the start. Chain of custody matters:
 Consult with an attorney before initiating any formal action. This guide provides technical documentation methods, not legal advice.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
 - [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)

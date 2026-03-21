@@ -202,8 +202,7 @@ borg init --encryption=keyfile-chacha20poly1305 \
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Restic Encrypted Backup Setup Guide](/privacy-tools-guide/restic-encrypted-backup-setup-guide)
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)

@@ -119,12 +119,12 @@ verify_vpn_connection() {
     local current_ip=$(curl -s --max-time 5 https://api.ipify.org)
     local vpn_gateway=$(sudo wg show $VPN_INTERFACE 2>/dev/null | \
         grep "endpoint:" | awk '{print $2}')
-    
+
     if [ -z "$vpn_gateway" ]; then
         echo "[ERROR] VPN not connected"
         return 1
     fi
-    
+
     echo "[INFO] Connected via VPN gateway: $vpn_gateway"
     return 0
 }
@@ -132,7 +132,7 @@ verify_vpn_connection() {
 connect_vpn() {
     echo "[INFO] Connecting to VPN..."
     sudo wg-quick up wg-protonmail
-    
+
     sleep 2
     if verify_vpn_connection; then
         echo "[SUCCESS] VPN connection established"
@@ -252,9 +252,7 @@ For developers integrating these tools, automate connection verification in your
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)

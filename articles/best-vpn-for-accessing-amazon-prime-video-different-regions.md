@@ -214,8 +214,7 @@ wg genkey | tee privatekey | wg pubkey > publickey
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Run Concurrent Vpn Connections For Different Applicat](/privacy-tools-guide/how-to-run-concurrent-vpn-connections-for-different-applicat/)
 - [What to Do If Your Amazon Account Was Hacked: Recovery Guide](/privacy-tools-guide/what-to-do-if-your-amazon-account-was-hacked-recovery/)

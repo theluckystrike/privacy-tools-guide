@@ -163,12 +163,12 @@ For developers building privacy applications:
    ```javascript
    // JavaScript/TypeScript Nym SDK
    import { createNym } from '@nymproject/sdk';
-   
+
    const nym = await createNym({
        clientId: 'my-app',
        sockxUrl: 'https://sockx.hop,io:1979'
    });
-   
+
    await nym.connect();
    nym.sendMessage({ payload: 'encrypted-data' });
    ```
@@ -176,8 +176,7 @@ For developers building privacy applications:
 Both systems require careful configuration and understanding of their threat models. Neither provides perfect anonymity, but each addresses different aspects of privacy.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How Browser Supercookies Track You: A Technical Explanation](/privacy-tools-guide/how-browser-supercookies-track-you-explained/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)

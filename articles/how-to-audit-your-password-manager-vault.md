@@ -102,60 +102,60 @@ def analyze_password(password: str) -> Dict[str, any]:
         'is_weak': False,
         'issues': []
     }
-    
+
     if len(password) < 12:
         result['is_weak'] = True
         result['issues'].append('password too short (<12 characters)')
-    
+
     if not result['has_upper'] or not result['has_lower']:
         result['is_weak'] = True
         result['issues'].append('missing case variation')
-    
+
     if not result['has_digit'] or not result['has_special']:
         result['is_weak'] = True
         result['issues'].append('missing character diversity')
-    
+
     # Check for common patterns
     if re.match(r'^[a-zA-Z]+$', password):
         result['issues'].append('letters only')
     if re.match(r'^[0-9]+$', password):
         result['issues'].append('digits only')
-    
+
     return result
 
 def audit_vault(json_file: str):
     """Audit exported Bitwarden vault."""
     with open(json_file, 'r') as f:
         vault = json.load(f)
-    
+
     weak_passwords = []
     items = vault.get('items', [])
-    
+
     for item in items:
         if item.get('type') != 1:  # Skip non-login items
             continue
-            
+
         login = item.get('login', {})
         password = login.get('password', '')
-        
+
         if not password:
             continue
-            
+
         analysis = analyze_password(password)
-        
+
         if analysis['is_weak']:
             weak_passwords.append({
                 'name': item.get('name', 'Unknown'),
                 'url': login.get('uri', ''),
                 'issues': analysis['issues']
             })
-    
+
     # Report results
     print(f"\nVault Audit Results")
     print(f"=" * 50)
     print(f"Total login items: {len(items)}")
     print(f"Weak passwords found: {len(weak_passwords)}\n")
-    
+
     if weak_passwords:
         print("Weak Passwords:")
         for item in weak_passwords:
@@ -188,23 +188,23 @@ Add this function to your analysis script to detect password reuse:
 def find_reused_passwords(vault_data: Dict) -> List[Dict]:
     """Find passwords used across multiple accounts."""
     password_map = {}
-    
+
     for item in vault_data.get('items', []):
         if item.get('type') != 1:
             continue
-        
+
         password = item.get('login', {}).get('password', '')
         if not password:
             continue
-            
+
         if password not in password_map:
             password_map[password] = []
-        
+
         password_map[password].append({
             'name': item.get('name'),
             'url': item.get('login', {}).get('uri', '')
         })
-    
+
     # Return only duplicates
     return [
         {'password': p, 'accounts': accounts}
@@ -230,38 +230,38 @@ def check_compromised(password: str) -> bool:
     # Hash password with SHA-1
     sha1_hash = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
     prefix, suffix = sha1_hash[:5], sha1_hash[5:]
-    
+
     # Query HIBP API with prefix (k-anonymity)
     response = requests.get(
         f'https://api.pwnedpasswords.com/range/{prefix}'
     )
-    
+
     if response.status_code != 200:
         return False
-    
+
     # Check if our hash suffix appears in results
     for line in response.text.splitlines():
         hash_suffix, count = line.split(':')
         if hash_suffix == suffix:
             return True
-    
+
     return False
 
 def audit_compromised(vault_file: str):
     """Check all passwords against breach database."""
     with open(vault_file, 'r') as f:
         vault = json.load(f)
-    
+
     compromised = []
-    
+
     for item in vault.get('items', []):
         if item.get('type') != 1:
             continue
-        
+
         password = item.get('login', {}).get('password', '')
         if password and check_compromised(password):
             compromised.append(item.get('name'))
-    
+
     if compromised:
         print("\nCompromised passwords found in:")
         for name in compromised:
@@ -322,13 +322,12 @@ Beyond passwords, review these vault components:
 **Attachments**: Review large files stored in your vault. Consider moving these to dedicated encrypted storage solutions.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 - [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

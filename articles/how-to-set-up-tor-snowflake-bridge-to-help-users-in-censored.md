@@ -151,7 +151,7 @@ Create a Tor configuration file:
 mkdir -p ~/.tor
 cat > ~/.tor/torrc << 'EOF'
 UseBridges 1
-Bridge snowflake 192.0.2.1:443 URL=https://snowflake.torproject.org/ 
+Bridge snowflake 192.0.2.1:443 URL=https://snowflake.torproject.org/
 ClientTransportPlugin snowflake exec ./snowflake-client
 EOF
 ```
@@ -175,14 +175,13 @@ Unlike traditional Tor bridges that require registration, Snowflake proxies can 
 The Snowflake project maintains a list of public proxies at snowflake.torproject.org, but running your own ensures dedicated capacity for users who need it most. Share your proxy address carefully—consider using encrypted channels or secure paste tools when distributing to users in high-risk environments.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
 - [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
-- [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
 - [Proton Drive Bridge Desktop Integration Guide](/privacy-tools-guide/proton-drive-bridge-desktop-integration-guide/)
+- [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

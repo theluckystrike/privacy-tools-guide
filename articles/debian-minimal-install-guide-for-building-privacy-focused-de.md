@@ -224,9 +224,7 @@ This foundation scales from a simple web-browsing machine to a full development 
 The privacy you achieve comes from understanding your system rather than trusting defaults. Debian minimal install provides the canvas—you paint the picture.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
 - [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)

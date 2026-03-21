@@ -48,27 +48,27 @@ import os
 def export_encrypted_emails(mailbox, output_dir, limit=None):
     """Export encrypted emails from IMAP to MBOX format."""
     mail.select(mailbox)
-    
+
     # Search for all messages
     status, message_ids = mail.search(None, 'ALL')
     ids = message_ids[0].split()
-    
+
     if limit:
         ids = ids[-limit:]
-    
+
     for idx, msg_id in enumerate(ids):
         status, msg_data = mail.fetch(msg_id, '(RFC822)')
         raw_email = msg_data[0][1]
-        
+
         # Parse and write to individual file
         msg = email.message_from_bytes(raw_email, policy=policy.default)
-        
+
         # Preserve encryption headers
         filename = f"{output_dir}/{idx:06d}.eml"
         with open(filename, 'wb') as f:
             generator = BytesGenerator(f)
             generator.flatten(msg)
-        
+
         print(f"Exported: {filename}")
 
 # Usage
@@ -112,12 +112,12 @@ archive:
   retention_days: 2555  # 7 years
   compression: gpg
   destination: /backup/encrypted-archive
-  
+
 imap:
   server: imap.protonmail.com
   port: 993
   user: your@email.com
-  
+
 encryption:
   recipients:
     - your@email.com
@@ -151,24 +151,24 @@ gpg = gnupr.GPG(gnupghome=GPG_HOME)
 
 def create_maildir_archive(source_dir, dest_dir, recipient):
     """Create Maildir with each email encrypted separately."""
-    
+
     Path(dest_dir).mkdir(parents=True, exist_ok=True)
     Path(dest_dir, 'cur').mkdir(exist_ok=True)
     Path(dest_dir, 'new').mkdir(exist_ok=True)
     Path(dest_dir, 'tmp').mkdir(exist_ok=True)
-    
+
     for eml_file in Path(source_dir).glob('*.eml'):
         with open(eml_file, 'rb') as f:
             email_data = f.read()
-        
+
         # Encrypt each email individually
         encrypted = gpg.encrypt(email_data, recipient)
-        
+
         # Write to Maildir
         output_path = Path(dest_dir, 'cur', f'{eml_file.stem}.gpg')
         with open(output_path, 'wb') as f:
             f.write(str(encrypted).encode())
-        
+
         print(f"Encrypted: {eml_file.name} -> {output_path.name}")
 
 # Usage
@@ -213,8 +213,7 @@ Document your recovery process before you need it. Your archival documentation s
 Test recovery on a clean system at least once to ensure your documentation is accurate.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Email Service 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-email-service-2026/)
 - [How To Share Passwords Securely With Team Using Encrypted Co](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)

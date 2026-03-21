@@ -149,23 +149,23 @@ import piexif
 def remove_location_metadata(image_path):
     """Remove GPS metadata from images before sharing."""
     img = Image.open(image_path)
-    
+
     # Check if image has exif data
     exif_dict = {}
     if "exif" in img.info:
         exif_dict = piexif.load(img.info["exif"])
-    
+
     # Remove GPS IFD (International Fingerprint Directory)
     if "GPS" in exif_dict:
         exif_dict["GPS"] = {}
-    
+
     # Create new exif without GPS data
     exif_bytes = piexif.dump(exif_dict)
-    
+
     # Save to new file
     new_path = image_path.replace(".jpg", "_clean.jpg")
     img.save(new_path, "jpeg", exif=exif_bytes)
-    
+
     return new_path
 
 # Usage
@@ -302,8 +302,7 @@ MONTHLY_TASKS = """
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)

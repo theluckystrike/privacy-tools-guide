@@ -37,22 +37,22 @@ A GDPR-compliant contact form starts with proper HTML markup:
 <form id="contact-form" action="/api/contact" method="POST">
   <div class="form-group">
     <label for="name">Name</label>
-    <input 
-      type="text" 
-      id="name" 
-      name="name" 
-      required 
-      minlength="2" 
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      minlength="2"
       maxlength="100"
     >
   </div>
 
   <div class="form-group">
     <label for="email">Email Address</label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
+    <input
+      type="email"
+      id="email"
+      name="email"
       required
       maxlength="254"
     >
@@ -60,24 +60,24 @@ A GDPR-compliant contact form starts with proper HTML markup:
 
   <div class="form-group">
     <label for="message">Message</label>
-    <textarea 
-      id="message" 
-      name="message" 
-      required 
+    <textarea
+      id="message"
+      name="message"
+      required
       maxlength="5000"
       rows="5"
     ></textarea>
   </div>
 
   <div class="consent-group">
-    <input 
-      type="checkbox" 
-      id="consent" 
-      name="consent" 
+    <input
+      type="checkbox"
+      id="consent"
+      name="consent"
       required
     >
     <label for="consent">
-      I consent to my data being processed for responding to this inquiry. 
+      I consent to my data being processed for responding to this inquiry.
       My data will be stored for 30 days and then deleted.
     </label>
   </div>
@@ -95,10 +95,10 @@ Add JavaScript for enhanced validation and consent confirmation:
 ```javascript
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
   e.preventDefault();
-  
+
   const formData = new FormData(e.target);
   const consent = formData.get('consent');
-  
+
   if (!consent) {
     alert('Please provide your consent to process your data.');
     return;
@@ -154,7 +154,7 @@ class ContactFormHandler:
     def __init__(self, db_path='contact_submissions.db'):
         self.db_path = db_path
         self.init_database()
-    
+
     def init_database(self):
         conn = sqlite3.connect(self.db_path)
         conn.execute('''
@@ -173,18 +173,18 @@ class ContactFormHandler:
         ''')
         conn.commit()
         conn.close()
-    
+
     def process_submission(self, data):
         # Validate consent
         if not data.get('consent_given'):
             raise ValueError('Consent is required')
-        
+
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-        
+
         # Store submission with 30-day retention
         cursor.execute('''
-            INSERT INTO submissions 
+            INSERT INTO submissions
             (name, email, message, consent_given, consent_timestamp, ip_address, user_agent, deleted_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now', '+30 days'))
         ''', (
@@ -196,34 +196,34 @@ class ContactFormHandler:
             data.get('ip_address'),
             data.get('user_agent')
         ))
-        
+
         conn.commit()
         conn.close()
-        
+
         return {'status': 'success'}
-    
+
     def handle_deletion_request(self, email):
         """Handle GDPR right to erasure"""
         conn = sqlite3.connect(self.db_path)
-        
+
         # Find and anonymize matching records
         cursor = conn.execute(
             "SELECT id FROM submissions WHERE email = ?",
             (email,)
         )
         records = cursor.fetchall()
-        
+
         for record in records:
             conn.execute(
                 "UPDATE submissions SET name = '[deleted]', message = '[deleted]' WHERE id = ?",
                 (record[0],)
             )
-        
+
         conn.commit()
         conn.close()
-        
+
         return {'status': 'erased', 'records_affected': len(records)}
-    
+
     def cleanup_expired(self):
         """Remove data past retention period"""
         conn = sqlite3.connect(self.db_path)
@@ -233,7 +233,7 @@ class ContactFormHandler:
         deleted_count = cursor.rowcount
         conn.commit()
         conn.close()
-        
+
         return {'deleted': deleted_count}
 ```
 
@@ -293,7 +293,7 @@ def get_user_data(email):
     )
     records = cursor.fetchall()
     conn.close()
-    
+
     return {
         'email': email,
         'submissions': records,
@@ -325,20 +325,20 @@ import time
 
 def rate_limit(max_requests=5, window_seconds=3600):
     requests_log = {}
-    
+
     def decorator(func):
         @wraps(func)
         def wrapper(ip_address, *args, **kwargs):
             now = time.time()
             if ip_address in requests_log:
                 requests_log[ip_address] = [
-                    t for t in requests_log[ip_address] 
+                    t for t in requests_log[ip_address]
                     if now - t < window_seconds
                 ]
-            
+
             if len(requests_log.get(ip_address, [])) >= max_requests:
                 raise ValueError('Rate limit exceeded')
-            
+
             requests_log.setdefault(ip_address, []).append(now)
             return func(ip_address, *args, **kwargs)
         return wrapper
@@ -365,9 +365,7 @@ The implementation above covers the core technical requirements; consult legal c
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)

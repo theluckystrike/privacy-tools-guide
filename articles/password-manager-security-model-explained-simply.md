@@ -70,17 +70,17 @@ This architecture protects you even if the server is compromised. An attacker wi
 async function encryptVault(plaintext, masterPassword) {
     // Derive key from master password (happens locally)
     const key = await deriveKey(masterPassword);
-    
+
     // Generate random IV for each encryption
     const iv = crypto.getRandomValues(new Uint8Array(12));
-    
+
     // Encrypt the vault data
     const encrypted = await crypto.subtle.encrypt(
         { name: 'AES-GCM', iv: iv },
         key,
         plaintext
     );
-    
+
     // Return encrypted data + IV (IV is not secret, just unique)
     return { iv: Array.from(iv), data: Array.from(new Uint8Array(encrypted)) };
 }
@@ -114,14 +114,14 @@ You type your master password on your device. Your client fetches the salt from 
 def unlock_vault(master_password: str, encrypted_vault: bytes, salt: bytes) -> dict:
     # Step 1: Derive the encryption key
     encryption_key = derive_key(master_password, salt)
-    
+
     # Step 2: Decrypt the vault (simplified - real implementations handle IV separately)
     iv = encrypted_vault[:12]
     ciphertext = encrypted_vault[12:]
-    
+
     # Step 3: Decrypt using AES-GCM
     plaintext = aes_gcm_decrypt(encryption_key, iv, ciphertext)
-    
+
     # Step 4: Parse and return vault contents
     return json.loads(plaintext)
 ```
@@ -381,8 +381,7 @@ Mitigations:
 - Implement geolocation alerts for vault access from unusual locations
 
 
-
-## Related Reading
+## Related Articles
 
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)

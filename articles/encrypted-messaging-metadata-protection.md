@@ -44,11 +44,11 @@ The practical implementation involves constructing a circuit:
 class OnionRouter:
     def __init__(self, circuits):
         self.circuits = circuits  # List of relay nodes
-    
+
     def build_onion(self, message, destination):
         # Start with the innermost layer
         encrypted = encrypt(message, destination.public_key)
-        
+
         # Wrap with each relay's encryption in reverse order
         for relay in reversed(self.circuits):
             encrypted = encrypt(encrypted, relay.public_key)
@@ -56,7 +56,7 @@ class OnionRouter:
                 'payload': encrypted,
                 'next_hop': relay.address
             }
-        
+
         return encrypted
 ```
 
@@ -76,16 +76,16 @@ class MixNode {
         this.lambda = lambda;  // Cover traffic rate
         this.buffer = [];
     }
-    
+
     receiveMessage(encryptedMessage) {
         this.buffer.push(encryptedMessage);
-        
+
         // Randomly decide when to flush
         if (Math.random() < this.lambda || this.buffer.length > 100) {
             this.flushMix();
         }
     }
-    
+
     flushMix() {
         // Shuffle and forward in random order
         const shuffled = this.shuffleArray(this.buffer);
@@ -110,15 +110,15 @@ class RatchetSession:
         self.root_key = shared_secret
         self.chain_key = shared_secret
         self.message_number = 0
-    
+
     def send_message(self, plaintext):
         # Derive message key from chain key
         message_key = derive_key(self.chain_key, self.message_number)
         self.message_number += 1
-        
+
         # Ratchet forward—update chain key
         self.chain_key = ratchet_forward(self.chain_key)
-        
+
         # Encrypt with ephemeral key
         ciphertext = encrypt_aes_gcm(plaintext, message_key)
         return ciphertext
@@ -134,20 +134,20 @@ Traditional messengers maintain contact directories that reveal the social graph
 // Private contact discovery pattern using blinded indices
 func PrivateContactDiscovery(userIDs []string, serverIndex map[string]bool) []string {
     var matchedContacts []string
-    
+
     for _, userID := range userIDs {
         // Blind the user ID before sending to server
         blindedID := BlindUserID(userID)
-        
+
         // Server checks against its index without learning the actual ID
         exists := serverIndex[blindedID]
-        
+
         // Unblind only reveals whether there's a match
         if Unblind(exists) {
             matchedContacts = append(matchedContacts, userID)
         }
     }
-    
+
     return matchedContacts
 }
 ```
@@ -173,8 +173,7 @@ Several open-source projects implement these techniques:
 For developers building custom solutions, libsodium provides the cryptographic primitives, while frameworks like nym-mixnet offer mixnet infrastructure.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
 - [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)

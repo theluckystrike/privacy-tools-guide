@@ -306,9 +306,7 @@ Store your plan in a location accessible even if primary systems are compromised
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
 - [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)

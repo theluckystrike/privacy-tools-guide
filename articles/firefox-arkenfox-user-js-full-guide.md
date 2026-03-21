@@ -196,8 +196,7 @@ user_pref("privacy.resistFingerprinting", false);
 Firefox Sync requires specific settings. Ensure `services.sync.enabled` is true and sign in through the Firefox UI after each profile reset.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Passkey User Experience Comparison Across Chrome.](/privacy-tools-guide/passkey-user-experience-comparison-across-chrome-safari-firefox-edge-2026/)
 - [How To Set Up Private Bitcoin Full Node At Home For Transact](/privacy-tools-guide/how-to-set-up-private-bitcoin-full-node-at-home-for-transact/)

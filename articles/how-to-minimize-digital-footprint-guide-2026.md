@@ -102,7 +102,7 @@ class DataMinimizer:
     def __init__(self, key: bytes):
         self.cipher = Fernet(key)
         self.retention_days = 30
-    
+
     def store_data(self, user_id: str, data: dict) -> None:
         payload = {
             'user_id': user_id,
@@ -112,7 +112,7 @@ class DataMinimizer:
         }
         encrypted = self.cipher.encrypt(json.dumps(payload).encode())
         # Store encrypted blob...
-    
+
     def should_delete(self, record: dict) -> bool:
         expiry = datetime.fromisoformat(record['expires'])
         return datetime.utcnow() > expiry
@@ -182,8 +182,7 @@ Schedule this script weekly via cron to catch configuration drift:
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Audit Your Digital Footprint And Find All Accounts Li](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
 - [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)

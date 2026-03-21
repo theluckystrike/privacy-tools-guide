@@ -192,8 +192,7 @@ Some mail will inevitably still arrive at your residential address. Consider the
 - **Address change notifications**: Systematically update accounts as you transition
 
 
-
-## Related Reading
+## Related Articles
 
 - [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)

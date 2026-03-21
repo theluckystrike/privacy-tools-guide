@@ -81,10 +81,10 @@ from stem.control import Listener
 
 with Controller.from_port(port=9051) as controller:
     controller.authenticate()
-    
+
     # Create a new circuit
     circuit = controller.new_circuit([...])
-    
+
     # Get current IP through Tor
     controller.set_conf('HttpProxy', '127.0.0.1:8118')
 ```
@@ -304,8 +304,7 @@ If you're currently using one network and considering switching:
 - Use Bridges if your ISP blocks Tor
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor vs VPN vs I2P: Anonymity Network Comparison 2026](/privacy-tools-guide/tor-vs-vpn-vs-i2p-anonymity-comparison-2026/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)

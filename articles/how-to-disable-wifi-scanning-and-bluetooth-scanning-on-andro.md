@@ -95,7 +95,7 @@ val scanResults = wifiManager.scanResults
 Android 13 introduced additional restrictions on background location access. Request only the permissions your app genuinely needs:
 
 ```kotlin
-if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) 
+if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
     != PackageManager.PERMISSION_GRANTED) {
     // Request minimal permission
     requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1)
@@ -395,8 +395,7 @@ Complete scanning disablement comes with costs:
 The choice depends on your threat model and location accuracy requirements.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Tell if Your Bluetooth Is Being Intercepted Nearby](/privacy-tools-guide/how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/)
 - [Bumble Private Detector Ai Scanning Privacy How Uploaded.](/privacy-tools-guide/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)

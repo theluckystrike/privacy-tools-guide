@@ -107,7 +107,7 @@ def send_emergency_message(message, recipients):
         ttl=5,  # hops
         encryption='aes256'
     )
-    
+
     for recipient in recipients:
         node.send(packet, recipient)
 
@@ -214,8 +214,7 @@ Mesh networking provides resilience but comes with constraints:
 For high-risk scenarios, combining mesh networking with appropriate operational security—limiting communication to essential messages, using dead drops, and rotating devices—reduces exposure.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Use Mesh Networking for Private Communication Without](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
 - [How To Communicate During Internet Shutdown Alternative Netw](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)

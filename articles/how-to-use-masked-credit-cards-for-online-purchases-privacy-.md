@@ -73,7 +73,7 @@ def create_virtual_card(api_key, amount_limit=100.00, merchant="amazon.com"):
         "merchant_id": merchant,
         "type": "single-use"
     }
-    
+
     response = requests.post(url, json=payload, headers=headers)
     return response.json()
 
@@ -106,7 +106,7 @@ async function createVirtualCard() {
     }],
     spending_limits_currency: 'usd'
   });
-  
+
   return {
     id: card.id,
     last4: card.last4,
@@ -196,9 +196,7 @@ For developers building privacy-focused applications, integrating virtual card A
 The next time you enter credit card details on a shopping site, consider whether a masked alternative would serve the same purpose with better privacy protection.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [What to Do If Your Credit Card Was Used Fraudulently Online](/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/)

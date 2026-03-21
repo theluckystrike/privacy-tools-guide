@@ -80,18 +80,18 @@ def remove_gps_data(image_path):
     """Remove GPS EXIF data from an image file."""
     try:
         exif_dict = piexif.load(image_path)
-        
+
         # Remove GPS IFD (Interchangeable Field Directory)
         if 'GPS' in exif_dict:
             exif_dict['GPS'] = {}
-        
+
         # Rebuild EXIF data without GPS
         exif_bytes = piexif.dump(exif_dict)
-        
+
         # Save the cleaned image
         img = Image.open(image_path)
         img.save(image_path, "jpeg", exif=exif_bytes)
-        
+
         print(f"Stripped GPS data from: {image_path}")
     except Exception as e:
         print(f"Error processing {image_path}: {e}")
@@ -209,13 +209,13 @@ Combine stripping with organized file naming:
 
 for file in *.jpg *.jpeg; do
   [ -f "$file" ] || continue
-  
+
   # Get date from EXIF
   date=$(exiftool -DateTimeOriginal -d "%Y%m%d_%H%M%S" -s -s -s "$file")
-  
+
   # Strip GPS
   exiftool -gps:all= -overwrite_original "$file"
-  
+
   # Rename with date prefix
   if [ -n "$date" ]; then
     mv "$file" "${date}_${file}"
@@ -224,8 +224,7 @@ done
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)

@@ -157,7 +157,7 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
   const url = new URL(request.url)
-  
+
   // Front domain (allowed)
   if (url.pathname.startsWith('/google/')) {
     // Actual Google backend
@@ -218,9 +218,7 @@ Remember that network conditions in China change frequently. Maintain multiple f
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best VPN for Using Google in China Without Detection](/privacy-tools-guide/best-vpn-for-using-google-in-china-without-detection/)
 - [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)

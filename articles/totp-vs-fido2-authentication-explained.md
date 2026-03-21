@@ -297,12 +297,10 @@ Both are superior to SMS (telecom sees all authentication), push notifications (
 ---
 
 
+## Related Articles
 
-
-## Related Reading
-
-- [TOTP Backup Codes Best Practices: A Developer's Guide](/privacy-tools-guide/totp-backup-codes-best-practices/)
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
+- [TOTP Backup Codes Best Practices: A Developer's Guide](/privacy-tools-guide/totp-backup-codes-best-practices/)
 - [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
 - [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)

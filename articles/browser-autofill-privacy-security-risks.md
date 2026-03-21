@@ -28,13 +28,13 @@ When you visit a form field, the browser matches the `name`, `id`, and `autocomp
 <form>
   <label for="email">Email</label>
   <input type="email" id="email" name="email" autocomplete="email">
-  
+
   <label for="full-name">Full Name</label>
   <input type="text" id="full-name" name="full-name" autocomplete="name">
-  
+
   <label for="address">Street Address</label>
   <input type="text" id="address" name="address" autocomplete="street-address">
-  
+
   <label for="phone">Phone</label>
   <input type="tel" id="phone" name="phone" autocomplete="tel">
 </form>
@@ -179,8 +179,7 @@ const credential = await navigator.credentials.create({
 Passkeys never leave the user's device, cannot be phished, and don't rely on browser autofill mechanisms. For authentication use cases, this is the most privacy-respecting approach available.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)

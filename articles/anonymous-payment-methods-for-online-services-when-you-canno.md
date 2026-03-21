@@ -143,7 +143,7 @@ def attempt_payment_with_fallback(card_list, merchant):
             # Move to next card, flagged card may be burned
             card_list.remove(card)
             continue
-    
+
     return {"status": "all_cards_failed"}
 ```
 
@@ -154,7 +154,7 @@ class VirtualCardManager:
     def __init__(self, bank_api):
         self.bank_api = bank_api
         self.active_cards = {}
-    
+
     def generate_service_card(self, service_name, limit):
         """Create dedicated card for specific service"""
         card = self.bank_api.create_virtual_card(
@@ -165,7 +165,7 @@ class VirtualCardManager:
         )
         self.active_cards[service_name] = card
         return card
-    
+
     def revoke_service_access(self, service_name):
         """Immediately cancel card for terminated service"""
         if service_name in self.active_cards:
@@ -197,10 +197,9 @@ Consider your specific threat model. For pseudonymity (separate identity from ac
 - Monitor for data breaches at payment processors
 
 
+## Related Articles
 
-## Related Reading
-
-- [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
+- [Anonymous Conference Call Services That Do Not Log](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [Anonymous Online Shopping How To Order Physical Goods.](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)

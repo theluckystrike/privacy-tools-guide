@@ -173,7 +173,7 @@ def send_alert(message):
     msg['Subject'] = 'Family Safety Alert'
     msg['From'] = 'monitoring@family.local'
     msg['To'] = 'parents@family.local'
-    
+
     with smtplib.SMTP('localhost') as server:
         server.send_message(msg)
 
@@ -241,15 +241,13 @@ By combining network-level filtering, device hardening, active monitoring, and o
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Protect Elderly Parents From Online Scams Setup Guide](/privacy-tools-guide/how-to-protect-elderly-parents-from-online-scams-setup-guide/)
 - [VPN for Online Banking While Traveling Southeast Asia Safety](/privacy-tools-guide/vpn-for-online-banking-while-traveling-southeast-asia-safety/)
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
-- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
+- [How To Verify Signal Safety Numbers To Prevent Man In Middle](/privacy-tools-guide/how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

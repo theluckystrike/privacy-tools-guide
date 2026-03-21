@@ -98,11 +98,11 @@ When building applications that interact with Signal:
 // Example: Handling username lookup responses
 async function resolveSignalUsername(fullIdentifier) {
   const [username, discriminator] = fullIdentifier.split('#');
-  
+
   if (!discriminator) {
     throw new Error('Invalid format: missing discriminator');
   }
-  
+
   try {
     const response = await signalApi.lookup(username, discriminator);
     return response; // Contains ACI if found
@@ -179,21 +179,20 @@ class SignalRateLimiter:
         self.max_requests = max_requests
         self.window = window_seconds
         self.requests = []
-    
+
     async def acquire(self):
         now = time.time()
         self.requests = [r for r in self.requests if now - r < self.window]
-        
+
         if len(self.requests) >= self.max_requests:
             wait_time = self.window - (now - self.requests[0])
             await asyncio.sleep(wait_time)
-        
+
         self.requests.append(time.time())
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)

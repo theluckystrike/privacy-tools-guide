@@ -105,7 +105,7 @@ function detectScreenFingerprint() {
     outerHeight: window.outerHeight,
     devicePixelRatio: window.devicePixelRatio
   };
-  
+
   return screenData;
 }
 ```
@@ -397,8 +397,7 @@ Choose your protection level based on:
 - Time investment (fingerprinting resistance requires active management)
 
 
-
-## Related Reading
+## Related Articles
 
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)

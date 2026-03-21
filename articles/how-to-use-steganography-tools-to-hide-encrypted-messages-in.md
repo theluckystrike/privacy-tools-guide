@@ -64,12 +64,12 @@ from cryptography.fernet import Fernet
 
 def encrypt_message(message: str, key: bytes = None) -> tuple[bytes, bytes]:
     """Encrypt message using AES-256-GCM.
-    
+
     Returns: (encrypted_data, key)
     """
     if key is None:
         key = Fernet.generate_key()
-    
+
     f = Fernet(key)
     encrypted = f.encrypt(message.encode())
     return encrypted, key
@@ -94,15 +94,15 @@ def embed_in_image(image_path: str, message: str, output_path: str) -> str:
     """Hide message inside image using LSB steganography."""
     # Convert message to binary
     binary_message = ''.join(format(byte, '08b') for byte in message.encode('utf-8'))
-    
+
     # Add a terminator sequence to know when to stop reading
     terminator = '1111111111111110'  # 16-bit terminator
     full_message = binary_message + terminator
-    
+
     # Hide using stegano library
     secret_image = lsb.hide(image_path, full_message)
     secret_image.save(output_path)
-    
+
     return output_path
 
 def extract_from_image(image_path: str) -> str:
@@ -139,7 +139,7 @@ if terminator_pos != -1:
     binary_data = extracted_binary[:terminator_pos]
     # Convert binary string back to bytes
     encrypted_bytes = int(binary_data, 2).to_bytes(len(binary_data) // 8, byteorder='big')
-    
+
     # Decrypt
     original_message = decrypt_message(encrypted_bytes, key)
     print(f"Decrypted message: {original_message}")
@@ -156,26 +156,26 @@ import numpy as np
 def embed_opencv(image_path: str, data: bytes, output_path: str) -> None:
     """Embed data using OpenCV with better capacity control."""
     img = cv2.imread(image_path)
-    
+
     # Convert data to binary
     binary_data = ''.join(format(byte, '08b') for byte in data)
     binary_data += '00000000'  # Null terminator
-    
+
     data_index = 0
     rows, cols, _ = img.shape
-    
+
     for i in range(rows):
         for j in range(cols):
             if data_index >= len(binary_data):
                 break
-            
+
             # Modify LSB of each color channel
             for k in range(3):  # B, G, R channels
                 if data_index >= len(binary_data):
                     break
                 img[i][j][k] = int(format(img[i][j][k], '08b')[:-1] + binary_data[data_index], 2)
                 data_index += 1
-    
+
     cv2.imwrite(output_path, img)
     print(f"Embedded {len(data)} bytes into {output_path}")
 
@@ -183,17 +183,17 @@ def extract_opencv(image_path: str, data_size: int) -> bytes:
     """Extract data from OpenCV-steganography image."""
     img = cv2.imread(image_path)
     rows, cols, _ = img.shape
-    
+
     binary_data = ""
     data_index = 0
     null_count = 0
-    
+
     for i in range(rows):
         for j in range(cols):
             for k in range(3):
                 binary_data += str(img[i][j][k] & 1)
                 data_index += 1
-                
+
                 # Check for null terminator
                 if len(binary_data) >= 8 and binary_data[-8:] == '00000000':
                     null_count += 1
@@ -203,7 +203,7 @@ def extract_opencv(image_path: str, data_size: int) -> bytes:
                 break
         if null_count > 0:
             break
-    
+
     # Convert binary to bytes
     bytes_data = [binary_data[i:i+8] for i in range(0, len(binary_data) - 8, 8)]
     return bytes(bytes_data)
@@ -237,23 +237,23 @@ def main():
     if len(sys.argv) != 4:
         print("Usage: stego_encrypt.py <image.png> <message> <output.png>")
         return
-    
+
     image_path, message, output_path = sys.argv[1], sys.argv[2], sys.argv[3]
-    
+
     # Generate key and encrypt
     key = Fernet.generate_key()
     f = Fernet(key)
     encrypted = f.encrypt(message.encode())
-    
+
     # Embed in image
     binary_data = ''.join(format(b, '08b') for b in encrypted) + '11111110'
     result = lsb.hide(image_path, binary_data)
     result.save(output_path)
-    
+
     # Save key (in production, use secure key exchange)
     with open(output_path + '.key', 'wb') as key_file:
         key_file.write(key)
-    
+
     print(f"Done. Key saved to {output_path}.key")
 
 if __name__ == "__main__":
@@ -261,8 +261,7 @@ if __name__ == "__main__":
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Use Steganography to Hide Messages Inside Normal Files](/privacy-tools-guide/how-to-use-steganography-to-hide-messages-inside-normal-file/)
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)

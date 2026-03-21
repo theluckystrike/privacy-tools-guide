@@ -112,14 +112,14 @@ Configure your server to receive attribution reports. The browser sends POST req
 // Express.js example for receiving event-level reports
 app.post('/attribution-reporting/report', express.json(), (req, res) => {
   const report = req.body;
-  
+
   console.log('Attribution Report:', {
     attributionDestination: report.attribution_destination,
     reportTime: report.report_time,
     sourceEventId: report.source_event_id,
     triggerData: report.trigger_data
   });
-  
+
   // Process and store report data
   res.status(200).send('OK');
 });
@@ -195,9 +195,7 @@ Begin by auditing your current conversion tracking implementation. Identify the 
 The transition away from third-party cookies represents both a challenge and an opportunity to build more privacy-respecting measurement systems. The Attribution Reporting API provides the technical foundation for continuing to understand advertising effectiveness while respecting user privacy.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)

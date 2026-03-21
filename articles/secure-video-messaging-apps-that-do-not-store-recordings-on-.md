@@ -46,16 +46,16 @@ const signalProtocol = require('libsignal-client');
 async function createEphemeralSession(recipientId, sessionStore) {
   const identityKeyPair = await signalProtocol.generateIdentityKeyPair();
   const registrationId = await signalProtocol.generateRegistrationId();
-  
+
   // Pre-key bundles enable asynchronous encrypted communication
   const preKeyBundle = await generatePreKeyBundle(recipientId);
-  
+
   const session = await signalProtocol.processPreKeyBundle(
     preKeyBundle,
     recipientId,
     sessionStore
   );
-  
+
   return session;
 }
 ```
@@ -74,9 +74,9 @@ The WebRTC standard supports peer-to-peer video streams. Adding an end-to-end en
 // Simplified E2EE video using WebRTC and Insertable Streams
 async function setupSecureVideoStream(localVideo, remoteVideo, key) {
   const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-  
+
   const videoTrack = stream.getVideoTracks()[0];
-  
+
   // Use Insertable Streams API for frame-level encryption
   const transformer = new TransformStream({
     transform(frame, controller) {
@@ -84,12 +84,12 @@ async function setupSecureVideoStream(localVideo, remoteVideo, key) {
       controller.enqueue(encryptedFrame);
     }
   });
-  
+
   const processor = new MediaStreamTrackProcessor({ track: videoTrack });
   const generator = new MediaStreamTrackGenerator({ kind: 'video' });
-  
+
   processor.readable.pipeThrough(transformer).pipeTo(generator.writable);
-  
+
   return new MediaStream([generator, stream.getAudioTracks()[0]]);
 }
 ```
@@ -107,7 +107,7 @@ media:
     enabled: true
     max_lifetime: 86400  # 24 hours in seconds
   auto_delete: true
-  
+
 # This configuration purges media after the defined window
 ```
 
@@ -125,17 +125,17 @@ from session_python import Session
 
 async def initiate_secure_video_call(recipient_session_id):
     session = Session()
-    
+
     # Create an encrypted session without phone number dependency
     await session.create_session(recipient_session_id)
-    
+
     # Video call uses WebRTC with Session's encryption layer
     call = await session.initiate_call(
         recipient_session_id,
         media_type='video',
         ephemeral=True  # No recording stored anywhere
     )
-    
+
     return call
 ```
 
@@ -156,8 +156,8 @@ When evaluating or building privacy-preserving video messaging systems, develope
 function isScreenBeingRecorded() {
   if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
     // Check for multiple display video tracks
-    return navigator.mediaDevices.getDisplayMedia({ 
-      video: true 
+    return navigator.mediaDevices.getDisplayMedia({
+      video: true
     }).then(stream => {
       // Presence of display surface indicates recording active
       return stream.getVideoTracks().length > 0;
@@ -178,15 +178,13 @@ Developers building custom solutions should prioritize client-side encryption, p
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
-- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 - [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
 - [Smart Doorbell Alternatives That Store Video Locally Without](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
+- [Secure Screen Sharing Tools That Encrypt Video Stream End To](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

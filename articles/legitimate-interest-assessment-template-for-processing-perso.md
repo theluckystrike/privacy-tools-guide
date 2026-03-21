@@ -46,7 +46,7 @@ PURPOSES = {
     },
     "analytics_improvement": {
         "description": "Improving product performance through usage analytics",
-        "legal_basis": "legitimate_interest", 
+        "legal_basis": "legitimate_interest",
         "data_categories": ["anonymized_usage_patterns", "feature_interactions"]
     },
     "fraud_prevention": {
@@ -67,7 +67,7 @@ def assess_necessity(purpose, data_requested):
     Assess whether processing is necessary for the stated purpose.
     Returns tuple: (is_necessary, reasoning)
     """
-    
+
     necessity_matrix = {
         "security_monitoring": {
             "ip_address": {
@@ -75,7 +75,7 @@ def assess_necessity(purpose, data_requested):
                 "reasoning": "IP-based rate limiting requires source identification"
             },
             "full_access_logs": {
-                "necessary": True, 
+                "necessary": True,
                 "reasoning": "Incident investigation requires complete audit trails"
             },
             "email_address": {
@@ -94,7 +94,7 @@ def assess_necessity(purpose, data_requested):
             }
         }
     }
-    
+
     return necessity_matrix.get(purpose, {}).get(data_requested, {
         "necessary": False,
         "reasoning": "No assessment documented"
@@ -110,7 +110,7 @@ def perform_interest_balance(purpose, data_subject_context=None):
     """
     Conduct the balancing test between controller interest and data subject rights.
     """
-    
+
     # Factors favoring the controller (positive for legitimate interest)
     controller_factors = {
         "industry_standards": "Similar organizations process similar data",
@@ -118,7 +118,7 @@ def perform_interest_balance(purpose, data_subject_context=None):
         "minimal_impact": "Processing has limited privacy impact",
         "technical_ safeguards": "Data minimized, encrypted, retention limited"
     }
-    
+
     # Factors that might favor the data subject
     data_subject_factors = {
         "sensitive_data": "Special category data requires explicit consent",
@@ -126,14 +126,14 @@ def perform_interest_balance(purpose, data_subject_context=None):
         "power_imbalance": "Employment or subscription relationship",
         "children_involved": "Age verification required if under 16"
     }
-    
+
     # Context-specific adjustments
     if data_subject_context:
         if data_subject_context.get("is_public_figure"):
             data_subject_factors["public_role"] = "Reduced expectation of privacy"
         if data_subject_context.get("explicit_objection"):
             data_subject_factors["objection_received"] = "Must honor opt-out"
-    
+
     return {
         "controller_factors": controller_factors,
         "data_subject_factors": data_subject_factors,
@@ -185,17 +185,17 @@ def handle_data_subject_objection(user_id, processing_type):
     Process a legitimate interest objection from a data subject.
     GDPR Article 21 requires immediate action.
     """
-    
+
     # Log the objection
     log_objection(user_id, processing_type, timestamp=datetime.utcnow())
-    
+
     # Immediately cease processing unless compelling legitimate interest
     # overrides the objection
     cease_processing(user_id, processing_type)
-    
+
     # Notify user of action taken
     send_confirmation(user_id, "We have processed your objection. Processing has ceased.")
-    
+
     # If compelling interest exists, document and notify
     if has_compelling_interest(user_id, processing_type):
         document_overriding_interest(user_id, processing_type)
@@ -227,8 +227,7 @@ Avoid legitimate interest when:
 In these cases, explicit consent is the safer path.
 
 
-
-## Related Reading
+## Related Articles
 
 - [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
 - [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)

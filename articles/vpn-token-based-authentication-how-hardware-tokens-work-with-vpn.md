@@ -175,7 +175,7 @@ Before relying on hardware token authentication in production, verify the setup 
 
 ```bash
 # Test OpenVPN connection with hardware token
-sudo openvpn --config client.ovpn --pkcs11-id 'YubiKey/...' 
+sudo openvpn --config client.ovpn --pkcs11-id 'YubiKey/...'
 
 # Check authentication logs
 journalctl -u openvpn -f
@@ -207,8 +207,7 @@ Hardware tokens create a single point of failure if not properly backed up. Impl
 Organizations should document their hardware token deployment and establish procedures for token loss or failure scenarios.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
 - [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)

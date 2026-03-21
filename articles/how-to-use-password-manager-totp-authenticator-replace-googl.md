@@ -361,8 +361,7 @@ Enforce TOTP for:
 - Security-sensitive roles
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)

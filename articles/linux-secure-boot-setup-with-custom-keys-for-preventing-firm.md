@@ -184,8 +184,7 @@ gpg -o secureboot-keys-backup.tar.gz.gpg --symmetric secureboot-keys-backup.tar.
 Store this backup securely, preferably offline. Additionally, note your firmware's "Clear Secure Boot Keys" option exists as a last-resort recovery method—this returns to factory defaults.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)

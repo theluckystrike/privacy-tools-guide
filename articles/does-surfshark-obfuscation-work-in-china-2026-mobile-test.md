@@ -140,7 +140,7 @@ import time
 
 servers = [
     "cn-gd.prod.surfshark.com",
-    "cn-sh.prod.surfshark.com", 
+    "cn-sh.prod.surfshark.com",
     "cn-bj.prod.surfshark.com"
 ]
 
@@ -183,8 +183,7 @@ If Surfshark consistently fails, consider:
 - **Telegram MTProto** proxy (works in limited regions)
 
 
-
-## Related Reading
+## Related Articles
 
 - [Does Surfshark Work in Vietnam 2026: Tested on Mobile](/privacy-tools-guide/does-surfshark-work-in-vietnam-2026-tested-on-mobile/)
 - [Does NordVPN Obfuscated Servers Work in China? 2026 Test](/privacy-tools-guide/does-nordvpn-obfuscated-servers-work-in-china-2026-test/)

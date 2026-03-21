@@ -192,8 +192,7 @@ Throughout the migration process, maintain these security practices:
 **Large vault import timeout**: iOS may kill the app during long imports. Split large exports into smaller batches or use desktop import when available.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)

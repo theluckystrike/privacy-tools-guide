@@ -270,8 +270,7 @@ Rather than trying to protect yourself on inherently ad-supported platforms, con
 These alternatives have tradeoffs (smaller communities, fewer features) but eliminate the fundamental tension between your privacy and the platform's business model.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)

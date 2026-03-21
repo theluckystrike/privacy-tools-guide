@@ -703,8 +703,7 @@ AllowedIPs = 10.0.0.0/24  # Office A's subnet
 Now all devices in Office A can reach Office B's internal IPs (10.0.1.x).
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)

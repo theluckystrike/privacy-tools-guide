@@ -48,17 +48,17 @@ class MessageSync {
     void synchronizeWithPeer(Peer peer) {
         Set<MessageCatalog> localCatalog = getLocalCatalog();
         Set<MessageCatalog> peerCatalog = peer.getCatalog();
-        
+
         // Find messages the peer needs
         Set<Message> missingFromPeer = difference(localCatalog, peerCatalog);
-        
-        // Find messages we need from peer  
+
+        // Find messages we need from peer
         Set<Message> missingFromUs = difference(peerCatalog, localCatalog);
-        
+
         // Exchange missing messages
         peer.sendMessages(missingFromPeer);
         receiveMessages(missingFromUs);
-        
+
         // Update catalogs atomically
         updateCatalogs(merge(localCatalog, peerCatalog));
     }
@@ -140,10 +140,10 @@ class ContactVerification {
         // Display our verification data
         String ourData = generateVerificationData();
         displayQRCode(ourData);
-        
+
         // Get their verification data
         String theirData = scanQRCode();
-        
+
         // Compare safely
         if (secureCompare(ourData, theirData)) {
             contact.markAsVerified();
@@ -181,11 +181,10 @@ For developers building tools that integrate with or extend Briar's capabilities
 Developers can examine the source code on GitHub to understand the exact security implementations, though full protocol documentation for custom integrations remains limited.
 
 
+## Related Articles
 
-## Related Reading
-
-- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 - [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
 - [Email Provider Jurisdiction Comparison Which Countries Prote](/privacy-tools-guide/email-provider-jurisdiction-comparison-which-countries-prote/)

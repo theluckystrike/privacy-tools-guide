@@ -74,7 +74,7 @@ Developers can address this through several technical approaches:
 def sanitize_email_headers(headers):
     sanitized = {
         k: v for k, v in headers.items()
-        if k.lower() not in ('message-id', 'references', 
+        if k.lower() not in ('message-id', 'references',
                              'x-originating-ip', 'x-sender-ip')
     }
     return sanitized
@@ -405,9 +405,7 @@ Understanding when the government needs a warrant to read your emails matters no
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 - [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)

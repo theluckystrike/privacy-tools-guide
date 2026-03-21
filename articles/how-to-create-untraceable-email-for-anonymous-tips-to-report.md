@@ -132,15 +132,15 @@ def sanitize_email_headers(msg):
         'X-MS-Has-Attach',
         'X-MS-TNEF-Correlator'
     ]
-    
+
     for header in remove_headers:
         if header in msg:
             del msg[header]
-    
+
     # Set generic headers
     msg['Date'] = email.utils.formatdate(time.time(), usegmt=True)
     msg['Message-ID'] = f"<{os.urandom(16).hex()}@anonymous.local>"
-    
+
     return msg
 ```
 
@@ -215,8 +215,7 @@ Your setup works when:
 - Encryption successfully locks message content
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Create Untraceable Email Account Using Tor Vpn And An](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)

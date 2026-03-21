@@ -220,8 +220,7 @@ Follow these guidelines when removing bloatware:
 If your device becomes unstable, perform a factory reset to restore all packages to their original state.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)

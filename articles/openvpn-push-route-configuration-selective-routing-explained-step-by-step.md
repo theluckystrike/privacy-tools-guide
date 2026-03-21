@@ -205,9 +205,7 @@ When implementing selective routing, keep these security principles in mind:
 For maximum security, use the full tunnel unless you have specific requirements for split tunneling. When using selective routing, regularly audit your routing tables to ensure no sensitive traffic is accidentally leaking outside the VPN.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Openvpn Compression Vulnerability Voracle Attack Explained A](/privacy-tools-guide/openvpn-compression-vulnerability-voracle-attack-explained-a/)
@@ -216,3 +214,5 @@ For maximum security, use the full tunnel unless you have specific requirements 
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
 
 Built by theluckystrike — More at zovo.one
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

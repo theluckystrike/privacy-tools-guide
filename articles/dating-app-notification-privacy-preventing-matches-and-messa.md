@@ -215,8 +215,7 @@ unzip -p bugreport.zip bugreport-*/*.txt | grep -i "NotificationManager"
 These commands reveal whether an app is posting notifications and what content they contain.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)

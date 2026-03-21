@@ -62,7 +62,7 @@ class PayjoinSender:
     def __init__(self, node_url="127.0.0.1:8332", wallet_name="payjoin_sender"):
         self.node_url = node_url
         self.wallet_name = wallet_name
-    
+
     def create_payjoin_proposal(self, receiver_url: str, send_amount: int):
         """
         Create a PayJoin proposal for the receiver.
@@ -70,14 +70,14 @@ class PayjoinSender:
         """
         # Parse receiver's PayJoin endpoint
         parsed = urllib.parse.urlparse(receiver_url)
-        
+
         # Get UTXOs from our wallet
         utxos = self.getWalletUtxos()
-        
+
         # Calculate maximum we can contribute
         total_available = sum(u['value'] for u in utxos)
         change_amount = total_available - send_amount
-        
+
         # Create the unsigned transaction
         tx = TxBuilder().add_inputs(utxos).add_output(
             address=parsed.hostname,  # Receiver's address
@@ -86,17 +86,17 @@ class PayjoinSender:
             address=self.get_change_address(),
             amount=change_amount
         ).build()
-        
+
         # Create the PayJoin URL with our PSBT
         psbt = self.tx_to_psbt(tx)
-        
+
         return self.create_payjoin_url(receiver_url, psbt)
-    
+
     def getWalletUtxos(self):
         # Call Bitcoin Core RPC
         # Implementation depends on your setup
         pass
-    
+
     def tx_to_psbt(self, tx):
         # Convert transaction to Partially Signed Transaction
         pass
@@ -118,51 +118,51 @@ class PayjoinReceiver:
     def __init__(self, rpc_connection):
         self.rpc = rpc_connection
         self.extended_private_key = "xprv..."  # Your xpub
-    
+
     def handle_payjoin_request(self, psbt_base64: str):
         """
         Process incoming PayJoin proposal from sender.
         """
         # Decode the PSBT
         psbt = Psbt.from_base64(psbt_base64)
-        
+
         # Verify the transaction is valid so far
         if not self.validate_proposal(psbt):
             return {"error": "Invalid proposal"}, 400
-        
+
         # Add our inputs to the transaction
         psbt = self.add_receiver_inputs(psbt)
-        
+
         # Set up our output (the payment amount we expect to receive)
         psbt = self.add_payment_output(psbt, expected_amount=100000)
-        
+
         # Sign our inputs
         psbt = self.sign_psbt(psbt)
-        
+
         # Return the finalized PSBT
         return {
             "psbt": psbt.to_base64(),
             "originalOutputs": psbt.tx.outputs
         }
-    
+
     def add_receiver_inputs(self, psbt):
         """
         Select our UTXOs to add to the transaction.
         """
         # Get our available UTXOs
         our_utxos = self.get_receiver_utxos()
-        
+
         # We want to contribute enough to make the amount ambiguous
         # but not so much that we create unnecessary change
         receiver_contribution = self.select_receiver_utxo(
             psbt.tx.outputs[0].amount  # Match sender's payment
         )
-        
+
         for utxo in receiver_contribution:
             psbt.add_input(utxo)
-        
+
         return psbt
-    
+
     def validate_proposal(self, psbt):
         """
         Validate the sender's proposal:
@@ -228,7 +228,7 @@ from payjoin import Sender, Receiver, Environment
 def test_payjoin_compliance():
     sender = Sender(Environment.TESTNET)
     receiver = Receiver(Environment.TESTNET)
-    
+
     # Run the compliance test suite
     result = sender.test_receiver_compatibility(receiver)
     assert result.is_valid(), f"Compliance errors: {result.errors}"
@@ -264,9 +264,7 @@ Before deploying PayJoin in production:
 PayJoin represents one of the most effective practical improvements in Bitcoin transaction privacy. By carefully implementing both sender and receiver components, you can significantly reduce on-chain analysis effectiveness while maintaining full Bitcoin security guarantees.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Bitcoin Dust Attack Explained How Small Transactions Deanony](/privacy-tools-guide/bitcoin-dust-attack-explained-how-small-transactions-deanony/)
 - [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)

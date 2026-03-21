@@ -69,9 +69,9 @@ user_data_store = {}
 def handle_access_request():
     """Consumer Right to Access - Section 59.1-542"""
     user_id = verify_identity(request.json.get('email'))
-    
+
     user_data = user_data_store.get(user_id, {})
-    
+
     return jsonify({
         'personal_data': user_data,
         'purposes': ['service_provision', 'account_management'],
@@ -84,18 +84,18 @@ def handle_access_request():
 def handle_deletion_request():
     """Consumer Right to Delete - Section 59.1-543"""
     user_id = verify_identity(request.json.get('email'))
-    
+
     # Remove from all data stores
     if user_id in user_data_store:
         del user_data_store[user_id]
-    
+
     # Remove consent records
     if user_id in user_consents:
         del user_consents[user_id]
-    
+
     # Cascade deletion to third-party processors
     notify_processors(user_id, 'delete')
-    
+
     return jsonify({'status': 'deletion_completed'}), 200
 ```
 
@@ -143,9 +143,9 @@ def process_opt_out():
     data = request.json
     user_id = verify_identity(data['email'])
     opt_out_types = data.get('opt_out_types', [])
-    
+
     user_consents[user_id] = ConsentFlags()
-    
+
     for opt_type in opt_out_types:
         if opt_type == 'sale':
             user_consents[user_id].sale_of_data = True
@@ -156,7 +156,7 @@ def process_opt_out():
         elif opt_type == 'profiling':
             user_consents[user_id].profiling = True
             disable_profiling(user_id)
-    
+
     return jsonify({'opt_out_confirmed': opt_out_types}), 200
 ```
 
@@ -175,18 +175,18 @@ class SecureDataStore:
     def __init__(self, key):
         self.cipher = Fernet(key)
         self.access_log = []
-    
+
     def store(self, user_id, data):
         encrypted = self.cipher.encrypt(data.encode())
         self._log_access(user_id, 'write', len(data))
         return self.db.put(user_id, encrypted)
-    
+
     def retrieve(self, user_id):
         encrypted = self.db.get(user_id)
         decrypted = self.cipher.decrypt(encrypted)
         self._log_access(user_id, 'read', len(decrypted))
         return decrypted
-    
+
     def _log_access(self, user_id, action, data_size):
         logging.info({
             'timestamp': datetime.utcnow().isoformat(),
@@ -203,8 +203,7 @@ VCDPA includes a 30-day cure period for violations, allowing businesses time to 
 For development teams, this means building compliance into your current roadmap rather than treating it as a future concern. The enforcement landscape will tighten significantly after the cure period expires.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)

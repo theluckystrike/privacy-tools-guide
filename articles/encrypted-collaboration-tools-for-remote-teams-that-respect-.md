@@ -425,8 +425,7 @@ Example 30-day pilot:
 - Decision: Commit or iterate
 
 
-
-## Related Reading
+## Related Articles
 
 - [Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)

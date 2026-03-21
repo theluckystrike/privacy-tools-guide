@@ -61,7 +61,7 @@ function validateScopes(requestedScopes) {
   const dangerousScopes = requestedScopes.filter(
     scope => !requiredScopes.includes(scope)
   );
-  
+
   if (dangerousScopes.length > 0) {
     console.warn('Unexpected scopes requested:', dangerousScopes);
     return false;
@@ -278,8 +278,7 @@ Most importantly, manufacturer privacy policies change. Register devices under y
 Document when you accepted the original ToS and what changes have occurred. This creates use if you later experience issues. In one case, a user demonstrated that data sharing permissions they accepted had been expanded three times without adequate notification, successfully requesting compensation.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Smart Device Deregistration After Death How To Remove Deceas](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/privacy-tools-guide/best-anonymous-email-service-2026/)

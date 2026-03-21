@@ -412,8 +412,7 @@ Regulatory considerations vary by jurisdiction. Some regions impose disclosure r
 Hardware wallet users should verify that their device supports Wasabi's signing workflow. Not all hardware wallets integrate equally with CoinJoin functionality.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)

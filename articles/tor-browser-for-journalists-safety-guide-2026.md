@@ -144,12 +144,12 @@ When communicating with sources via custom services, ensure they support HTTPS w
 server {
     listen 443 ssl http2;
     server_name secure-source.example.com;
-    
+
     ssl_certificate /etc/letsencrypt/live/secure-source.example.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/secure-source.example.com/privkey.pem;
     ssl_protocols TLSv1.3 TLSv1.2;
     ssl_ciphers TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256;
-    
+
     # HSTS configuration
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 }
@@ -182,8 +182,7 @@ sha256sum document.pdf
 **Ignoring Tor Browser warnings**: The browser displays warnings for potentially dangerous configurations. Take these seriously—bypassing them often leads to de-anonymization.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)

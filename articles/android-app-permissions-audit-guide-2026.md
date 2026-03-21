@@ -102,7 +102,7 @@ val packageInfo = packageManager.getPackageInfo(
 packageInfo.requestedPermissions?.forEachIndexed { index, permission ->
     val isGranted = packageInfo.requestedPermissionsFlags[index] and
         PackageInfo.REQUESTED_PERMISSION_GRANTED != 0
-    
+
     println("Permission: $permission")
     println("Granted: $isGranted")
 }
@@ -169,7 +169,7 @@ def generate_audit_report():
         'timestamp': datetime.now().isoformat(),
         'apps': []
     }
-    
+
     for pkg in packages:
         try:
             perms = get_package_permissions(pkg)
@@ -181,10 +181,10 @@ def generate_audit_report():
                 })
         except Exception as e:
             print(f"Error processing {pkg}: {e}")
-    
+
     with open(f"permission_audit_{datetime.now().strftime('%Y%m%d')}.json", 'w') as f:
         json.dump(report, f, indent=2)
-    
+
     return report
 
 if __name__ == "__main__":
@@ -217,8 +217,7 @@ Implement these practices to maintain tight permission control:
 6. Check background access Android's Privacy Dashboard shows which apps accessed sensitive permissions recently
 
 
-
-## Related Reading
+## Related Articles
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)

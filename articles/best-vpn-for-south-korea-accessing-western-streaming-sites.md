@@ -156,7 +156,7 @@ def check_streaming_access():
         ("hulu.com", ["69.22.161.0/24", "157.166.224.0/24"]),
         ("disneyplus.com", ["13.225.0.0/16", "18.164.0.0/15"])
     ]
-    
+
     for domain, expected_cidrs in services:
         try:
             ip = socket.gethostbyname(domain)
@@ -244,8 +244,7 @@ When configuring VPN access for streaming, maintain good security practices:
 - Consider using dedicated IP addresses to reduce detection while maintaining privacy
 
 
-
-## Related Reading
+## Related Articles
 
 - [VPN for Accessing Korean Webtoon Sites from Outside Korea](/privacy-tools-guide/vpn-for-accessing-korean-webtoon-sites-from-outside-korea/)
 - [Vpn For Accessing South African Streaming Services Abroad 20](/privacy-tools-guide/vpn-for-accessing-south-african-streaming-services-abroad-20/)

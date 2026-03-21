@@ -229,8 +229,7 @@ As a standalone technique, less so than in 2018. Major CDNs have added detection
 Cloudflare historically blocked domain fronting via their WAF and SNI enforcement. Some configurations still work depending on plan type and server settings, but it is unreliable for sustained use.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)

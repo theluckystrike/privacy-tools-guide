@@ -317,8 +317,7 @@ Security-aware staff become force multipliers, helping educate colleagues and sp
 ---
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
 - [Privacy Tools For Adoption Agency Worker Protecting Birth Pa](/privacy-tools-guide/privacy-tools-for-adoption-agency-worker-protecting-birth-pa/)

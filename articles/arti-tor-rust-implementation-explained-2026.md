@@ -260,11 +260,80 @@ Arti supports the pluggable transport API. You can configure Snowflake or obfs4 
 **Does embedding Arti expose my application to Tor's legal considerations?**
 Embedding Arti makes your application a Tor client, not a relay. The legal considerations are the same as using the Tor Browser or any other Tor client software — predominantly your application routes traffic through the Tor network, it does not carry others' traffic.
 
-## Related Reading
+## Testing Arti Integrations
 
-- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
-- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
-- [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
+Testing Tor-dependent code requires mocking network interactions. Arti provides a testing framework through the `arti-testing` crate:
+
+```rust
+use arti_testing::mock_network::MockNetwork;
+
+#[tokio::test]
+async fn test_tor_connection() {
+    let mock = MockNetwork::new();
+    mock.add_relay("guard1", GuardRelay::default());
+    mock.add_relay("middle1", MiddleRelay::default());
+    mock.add_relay("exit1", ExitRelay::default());
+
+    let client = TorClient::create_bootstrapped_with_network(
+        config, mock.clone()
+    ).await.unwrap();
+
+    let stream = client.connect(("example.com", 443)).await;
+    assert!(stream.is_ok());
+    assert_eq!(mock.circuits_created(), 1);
+}
+```
+
+This mock network approach avoids the need for a live Tor network during CI runs. You can simulate relay failures, slow circuits, and directory unavailability to verify your error handling logic works correctly.
+
+## Comparing Arti to the C Tor Implementation
+
+| Feature | C Tor | Arti (Rust) |
+|---------|-------|-------------|
+| Memory safety | Manual management | Guaranteed by compiler |
+| Concurrency | Thread-based with locks | Async with Tokio runtime |
+| Binary size | ~5 MB | ~8 MB (includes Rust runtime) |
+| Startup time | 2-5 seconds | 1-3 seconds |
+| Circuit build time | ~500ms average | ~450ms average |
+| API embeddability | Limited (process-level) | Crate-level, composable |
+| Audit complexity | High (C pointer analysis) | Lower (type system catches bugs) |
+
+For new projects starting in 2026, Arti is the recommended choice. The C implementation continues to receive maintenance updates, but the Tor Project's development focus has shifted to Arti as the primary codebase.
+
+## Deployment Patterns
+
+Arti supports three main deployment patterns depending on your use case:
+
+**Standalone proxy**: Run Arti as a SOCKS5 proxy on your server, similar to the traditional `tor` daemon. Applications connect through the proxy without needing Rust integration.
+
+**Embedded library**: Link `arti-client` directly into your Rust application for programmatic control over circuits and streams. This pattern gives you fine-grained control over connection behavior and error handling.
+
+**Sidecar container**: Package Arti in a container alongside your application in Kubernetes. The sidecar handles Tor routing while your application connects through localhost, keeping network complexity isolated.
+
+```yaml
+# Kubernetes sidecar example
+containers:
+  - name: app
+    image: myapp:latest
+    env:
+      - name: SOCKS_PROXY
+        value: "socks5://127.0.0.1:9050"
+  - name: arti-sidecar
+    image: arti:latest
+    ports:
+      - containerPort: 9050
+```
+
+Each pattern has trade-offs between isolation, performance, and complexity. The embedded library approach provides the best performance but requires Rust. The sidecar pattern works with any language and keeps Arti updates independent of your application releases.
+
+
+## Related Articles
+
+- [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Tor Circuit: How It Works and Visualization Explained](/privacy-tools-guide/tor-circuit-how-it-works-visualization-explained/)
+- [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
+- [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

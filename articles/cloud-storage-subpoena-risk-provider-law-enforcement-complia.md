@@ -89,7 +89,7 @@ async function encryptFile(file, key) {
     key,
     await file.arrayBuffer()
   );
-  
+
   return {
     iv: Array.from(iv),
     ciphertext: Array.from(new Uint8Array(encryptedContent))
@@ -105,7 +105,7 @@ async function deriveKey(password, salt) {
     false,
     ['deriveKey']
   );
-  
+
   return crypto.subtle.deriveKey(
     {
       name: 'PBKDF2',
@@ -171,8 +171,7 @@ Audit your current architecture with these questions:
 For teams evaluating cloud providers, request their Law Enforcement Request Guidelines—most major providers publish these documents. Pay attention to whether they support customer-managed encryption and their history of challenging overbroad requests.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)

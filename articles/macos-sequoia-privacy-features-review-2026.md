@@ -131,7 +131,7 @@ Originally introduced for iOS, Lockdown Mode arrived with expanded functionality
 
 ```swift
 // Check if Lockdown Mode is active
-let isLockedDown = ProcessInfo.processInfo.isLowPowerModeEnabled 
+let isLockedDown = ProcessInfo.processInfo.isLowPowerModeEnabled
 // Note: This is a simplified check; actual Lockdown detection
 // uses different APIs and requires entitlements
 ```
@@ -344,9 +344,7 @@ Run this audit quarterly to identify permission creep over time.
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)

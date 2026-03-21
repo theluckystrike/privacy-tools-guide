@@ -62,7 +62,7 @@ const { chromium } = require('playwright');
 async function optOutFromBroker(browser, url, formSelector) {
   const context = await browser.newContext();
   const page = await context.newPage();
-  
+
   try {
     await page.goto(url, { timeout: 10000 });
     await page.fill(formSelector + ' input[name="email"]', 'your@email.com');
@@ -89,22 +89,22 @@ from email.mime.text import MIMEText
 
 def send_opt_out_email(broker_name, broker_email, your_email):
     subject = f"Opt-Out Request: {your_email}"
-    body = """I request deletion of all personal data your service maintains 
-    associated with this email address. This request is made pursuant to 
+    body = """I request deletion of all personal data your service maintains
+    associated with this email address. This request is made pursuant to
     applicable privacy laws including CCPA and GDPR.
-    
+
     Please confirm receipt and completion of this deletion request."""
-    
+
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = your_email
     msg['To'] = broker_email
-    
+
     with smtplib.SMTP('smtp.yourprovider.com', 587) as server:
         server.starttls()
         server.login(your_email, os.environ['SMTP_PASSWORD'])
         server.send_message(msg)
-    
+
     print(f"Opt-out sent to {broker_name}")
 ```
 
@@ -141,7 +141,7 @@ def check_data_broker(name_query, broker_url):
     response = requests.get(broker_url + name_query)
     soup = BeautifulSoup(response.text, 'html.parser')
     results = soup.find_all('div', class_='search-result')
-    
+
     if results:
         print(f"WARNING: Data found on {broker_url}")
         return True
@@ -173,8 +173,7 @@ For users with elevated threat models, additional measures reduce data broker ef
 These approaches involve significant effort and trade-offs. Evaluate whether your situation warrants extreme measures.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
 - [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)

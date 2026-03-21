@@ -169,9 +169,7 @@ For operators running hidden services:
 The Tor Browser remains the gold standard for accessing hidden services, but Firefox with Tor proxy offers better developer tooling when configured correctly. The key to secure access lies in understanding your threat model, properly configuring browser settings, and verifying service authenticity.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
 - [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)

@@ -176,8 +176,7 @@ def create_session(user_id):
 Building privacy-respecting applications contributes to a healthier ecosystem while protecting your users.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)

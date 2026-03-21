@@ -29,7 +29,7 @@ The process works like this:
 function getCanvasFingerprint() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  
+
   ctx.textBaseline = 'top';
   ctx.font = '14px Arial';
   ctx.fillText('Hello World', 2, 2);
@@ -39,7 +39,7 @@ function getCanvasFingerprint() {
   ctx.fillText('Tor Browser', 7, 15);
   ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
   ctx.fillText('Privacy', 17, 17);
-  
+
   return canvas.toDataURL();
 }
 ```
@@ -393,8 +393,7 @@ If fingerprinting detection shows persistent identifiers:
 - Consider using Tails OS for even stronger isolation
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [Tor Browser Font Fingerprinting Protection](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)

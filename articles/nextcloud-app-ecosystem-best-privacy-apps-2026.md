@@ -187,7 +187,7 @@ When setting up Nextcloud for privacy-focused use, consider these configurations
 # nginx configuration for Nextcloud with security headers
 server {
     # ... server configuration ...
-    
+
     # Security headers
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-Frame-Options "SAMEORIGIN" always;
@@ -197,8 +197,7 @@ server {
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)

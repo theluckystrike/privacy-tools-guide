@@ -208,8 +208,7 @@ Hidden services introduce latency because traffic bounces through multiple Tor n
 - Monitor circuit build times and rotate to faster relays if needed
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
 - [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)

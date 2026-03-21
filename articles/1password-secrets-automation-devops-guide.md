@@ -249,8 +249,7 @@ export PASSWORD=$(op item get "Item" --field password 2>/dev/null)
 Access auditing provides visibility into which automation systems accessed which secrets. Review the 1Password audit logs regularly to identify unusual access patterns or unauthorized attempts.
 
 
-
-## Related Reading
+## Related Articles
 
 - [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)

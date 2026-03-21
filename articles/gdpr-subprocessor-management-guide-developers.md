@@ -70,19 +70,19 @@ from pathlib import Path
 
 class SubprocessorDetector:
     """Detects and catalogs subprocessors from infrastructure code."""
-    
+
     def __init__(self, project_root: str):
         self.project_root = Path(project_root)
         self.subprocessors = []
-        
+
     def scan_terraform(self) -> list[dict]:
         """Extract cloud resources from Terraform configurations."""
         terraform_files = self.project_root.rglob("*.tf")
         detected = []
-        
+
         for tf_file in terraform_files:
             content = tf_file.read_text()
-            
+
             # Detect common SaaS integrations
             providers = self._extract_providers(content)
             for provider in providers:
@@ -91,21 +91,21 @@ class SubprocessorDetector:
                     'service': provider,
                     'detected_at': datetime.now().isoformat()
                 })
-                
+
         return detected
-    
+
     def _extract_providers(self, content: str) -> list[str]:
         """Identify provider references in Terraform."""
         known_providers = [
             'aws', 'gcp', 'azure', 'stripe', 'sendgrid',
             'mailgun', 's3', 'cloudflare', 'datadog'
         ]
-        
+
         found = []
         for provider in known_providers:
             if provider in content.lower():
                 found.append(provider)
-                
+
         return found
 ```
 
@@ -118,24 +118,24 @@ GDPR requires transparency about which third parties process user data. Build a 
 ```python
 def generate_subprocessor_disclosure(registry: dict) -> str:
     """Generate markdown disclosure from registry data."""
-    
+
     disclosure = ["## Third-Party Data Processors\n"]
     disclosure.append(f"*Last updated: {registry.get('last_updated', 'N/A')}*\n")
-    
+
     for subprocessor in registry.get('subprocessors', []):
         disclosure.append(f"### {subprocessor['name']}")
         disclosure.append(f"- **Purpose**: {subprocessor['purpose']}")
         disclosure.append(f"- **Data processed**: {', '.join(subprocessor['data_types'])}")
         disclosure.append(f"- **Location**: {subprocessor['country']}")
-        
+
         if subprocessor.get('sccs_approved'):
             disclosure.append("- **Transfer mechanism**: Standard Contractual Clauses")
-            
+
         disclosure.append("")
-    
+
     disclosure.append("We will notify users of any material changes to this list.")
     disclosure.append("You may object to new subprocessors by contacting privacy@yourdomain.com.")
-    
+
     return "\n".join(disclosure)
 ```
 
@@ -157,17 +157,17 @@ class SubprocessorConsent:
     consented: bool
     consent_date: Optional[datetime]
     consent_method: str  # 'explicit', 'soft_opt_in', 'legitimate_interest'
-    
+
 class ConsentManager:
     """Manages user consent for subprocessor processing."""
-    
+
     def __init__(self, db_connection):
         self.db = db_connection
-        
-    def record_consent(self, user_id: str, subprocessor_id: str, 
+
+    def record_consent(self, user_id: str, subprocessor_id: str,
                        consent_given: bool, method: str) -> None:
         """Record user consent decision."""
-        
+
         consent = SubprocessorConsent(
             user_id=user_id,
             subprocessor_id=subprocessor_id,
@@ -175,25 +175,25 @@ class ConsentManager:
             consent_date=datetime.now() if consent_given else None,
             consent_method=method
         )
-        
+
         # Store in database with audit trail
         self.db.execute("""
-            INSERT INTO subprocessor_consents 
+            INSERT INTO subprocessor_consents
             (user_id, subprocessor_id, consented, consent_date, method)
             VALUES (%s, %s, %s, %s, %s)
-        """, (consent.user_id, consent.subprocessor_id, 
+        """, (consent.user_id, consent.subprocessor_id,
               consent.consented, consent.consent_date, consent.consent_method))
-        
+
     def check_consent(self, user_id: str, subprocessor_id: str) -> bool:
         """Check if user has consented to specific subprocessor."""
-        
+
         result = self.db.execute("""
             SELECT consented FROM subprocessor_consents
             WHERE user_id = %s AND subprocessor_id = %s
             ORDER BY consent_date DESC
             LIMIT 1
         """, (user_id, subprocessor_id))
-        
+
         return result[0]['consented'] if result else False
 ```
 
@@ -217,12 +217,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Scan for new subprocessors
         id: scan
         run: |
           python scripts/subprocessor_detector.py
-          
+
       - name: Verify contracts exist
         if: steps.scan.outputs.new_subprocessors == 'true'
         run: |
@@ -386,9 +386,7 @@ Maintain this workflow as a living document and test it annually with a tabletop
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Gdpr Consent Management Platform Comparison 2026](/privacy-tools-guide/gdpr-consent-management-platform-comparison-2026/)
 - [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)

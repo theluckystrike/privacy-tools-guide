@@ -142,15 +142,15 @@ get_active_tunnel() {
 failover() {
     local from_if=$1
     local to_if=$2
-    
+
     log "FAILOVER: $from_if failed, switching to $to_if"
-    
+
     # Remove default routes through failed tunnel
     sudo ip route del default dev "$from_if" 2>/dev/null
-    
+
     # Add default route through backup tunnel
     sudo ip route add default dev "$to_if"
-    
+
     # Restart the failed interface for recovery
     sudo wg-quick down "$from_if" 2>/dev/null
     sleep 2
@@ -160,7 +160,7 @@ failover() {
 # Main monitoring loop
 while true; do
     ACTIVE=$(get_active_tunnel)
-    
+
     if [ "$ACTIVE" = "$PRIMARY_IF" ]; then
         if ! check_connectivity "$PRIMARY_IF" "$PRIMARY_GW"; then
             log "Primary tunnel ($PRIMARY_IF) is down"
@@ -174,7 +174,7 @@ while true; do
             sudo ip route add default dev "$PRIMARY_IF"
         fi
     fi
-    
+
     sleep "$CHECK_INTERVAL"
 done
 ```
@@ -289,8 +289,7 @@ This routes sensitive API traffic through provider 1 and general traffic through
 Automatic failover with WireGuard and systemd eliminates single-point failures. Swap providers by updating the `.conf` files — the monitoring script and routing tables stay unchanged.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
 - [Vpn Server Load Balancing How Providers Distribute Users.](/privacy-tools-guide/vpn-server-load-balancing-how-providers-distribute-users-across-servers/)

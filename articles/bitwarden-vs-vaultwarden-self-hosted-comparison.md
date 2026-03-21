@@ -534,8 +534,7 @@ Vaultwarden's simpler architecture makes disaster recovery more straightforward.
 Most individual users and small teams find Vaultwarden covers their needs adequately. The trade-off between features and resources favors Vaultwarden for personal deployments. The official server becomes necessary when organizational requirements exceed what the lightweight implementation provides.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
 - [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)

@@ -129,10 +129,10 @@ def verify_message(secret_key, message):
             plaintext.encode(),
             hashlib.sha256
         ).hexdigest()
-        
+
         if not hmac.compare_digest(signature, expected_signature):
             return None, "Signature mismatch - message may be tampered"
-        
+
         return plaintext, "Verified"
     except ValueError:
         return None, "Invalid message format"
@@ -187,8 +187,7 @@ For power users handling sensitive information, make verification a standard pra
 4. **Automated alerts**: Some apps notify you when contacts' keys change. Treat these notifications seriously and re-verify
 
 
-
-## Related Reading
+## Related Articles
 
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [How To Use Steganography Tools To Hide Encrypted Messages In](/privacy-tools-guide/how-to-use-steganography-tools-to-hide-encrypted-messages-in/)

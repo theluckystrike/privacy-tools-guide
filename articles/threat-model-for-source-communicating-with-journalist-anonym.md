@@ -171,8 +171,7 @@ Always maintain redundant communication methods:
 - Emergency: Physical dead drop with pre-arranged location
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)

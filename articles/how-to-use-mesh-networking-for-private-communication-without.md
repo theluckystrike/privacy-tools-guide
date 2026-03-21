@@ -101,13 +101,13 @@ For hardware-based mesh networks, ESP32 microcontrollers offer an excellent bala
 
 void setup() {
     Serial.begin(115200);
-    
+
     // Initialize mesh configuration
     mesh.init(MESH_PREFIX, MESH_PASSWORD, MESH_ROUTER_NONE, CHANNEL);
-    
+
     // Set mesh to handle routing automatically
     mesh.setAutoConnection(true);
-    
+
     // Register event handler
     mesh.onEvent([](mesh_event_t event) {
         switch(event.type) {
@@ -143,7 +143,7 @@ void sendMessageToNode(mesh_addr_t* nodeAddr, const char* message) {
     data.size = strlen(message);
     data.proto = MESH_PROTO_JSON;
     data.tos = MESH_TOS_P2P;
-    
+
     esp_mesh_send(nodeAddr, &data, 0, NULL, 0);
 }
 
@@ -154,7 +154,7 @@ void broadcastMessage(const char* message) {
     data.size = strlen(message);
     data.proto = MESH_PROTO_JSON;
     data.tos = MESH_TOS_P2P;
-    
+
     mesh_addr_t broadcastAddr = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
     esp_mesh_send(&broadcastAddr, &data, 0, NULL, 0);
 }
@@ -257,14 +257,12 @@ For production deployments, consider using battery-backed nodes for resilience d
 Mesh networking transforms how devices communicate, replacing fragile centralized infrastructure with resilient, distributed systems that continue functioning even when individual nodes fail.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
-- [Matrix/Element vs Signal for Private Group Communication: Detailed Comparison](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
+- [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
-- [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
+- [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

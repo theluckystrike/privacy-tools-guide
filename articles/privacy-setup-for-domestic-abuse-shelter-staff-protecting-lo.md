@@ -211,8 +211,7 @@ Technical measures fail without physical security discipline:
 - Shred all printed materials containing survivor information
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)

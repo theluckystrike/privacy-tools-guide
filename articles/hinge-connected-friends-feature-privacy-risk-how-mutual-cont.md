@@ -41,11 +41,11 @@ def find_mutual_contacts(user_contacts, platform_users):
     """
     user_phone_set = set(hash_phone(contact) for contact in user_contacts)
     matched_users = []
-    
+
     for platform_user in platform_users:
         if platform_user.phone_hash in user_phone_set:
             matched_users.append(platform_user)
-    
+
     return matched_users
 ```
 
@@ -58,10 +58,10 @@ Hinge's integration with Facebook creates additional identification vectors. Whe
 ```javascript
 // Simplified representation of Facebook graph matching
 const identifyMutualFriends = (userId, facebookFriends) => {
-  const mutualOnHinge = facebookFriends.filter(friend => 
+  const mutualOnHinge = facebookFriends.filter(friend =>
     hingeUserDatabase.hasFacebookId(friend.id)
   );
-  
+
   return mutualOnHinge.map(friend => ({
     name: friend.name,
     hingerId: hingerUserDatabase.getUserId(friend.id),
@@ -312,8 +312,7 @@ To maximize post-deletion privacy:
 4. **Monitor data brokers** — Services like Spokeo and PeopleFinders may have retained phone numbers as identifying information
 
 
-
-## Related Reading
+## Related Articles
 
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car Co](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
 - [How to Create Enterprise Privacy Risk Register Template.](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)

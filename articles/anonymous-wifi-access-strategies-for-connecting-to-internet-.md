@@ -156,7 +156,7 @@ AutomapHostsOnResolve 1
 torified_ip=$(cat /var/run/tor/control_port | cut -d: -f1)
 iptables -t nat -A OUTPUT -p tcp --tcp-flags SYN,SYN,ACK SYN -j \
   REDIRECT --to-ports 9040
-  
+
 # DNS through Tor
 iptables -t nat -A OUTPUT -p udp --dport 53 -j \
   REDIRECT --to-ports 5353
@@ -294,9 +294,7 @@ The key principle is defense in depth—combining multiple anonymity techniques 
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 - [Vpn For Remote Workers Connecting To Us Office From Asia](/privacy-tools-guide/vpn-for-remote-workers-connecting-to-us-office-from-asia/)

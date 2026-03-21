@@ -43,28 +43,28 @@ const FFT_SIZE = 2048;
 function detectUltrasonicActivity() {
   const audioContext = new AudioContext();
   const analyser = audioContext.createAnalyser();
-  
+
   analyser.fftSize = FFT_SIZE;
   analyser.smoothingTimeConstant = 0.8;
-  
+
   // Get microphone access
   navigator.mediaDevices.getUserMedia({ audio: true })
     .then(stream => {
       const source = audioContext.createMediaStreamSource(stream);
       source.connect(analyser);
-      
+
       const frequencyData = new Uint8Array(analyser.frequencyBinCount);
-      
+
       // Check for energy in ultrasonic frequencies (18-22kHz)
       // At 44.1kHz sample rate, bin 1765 = ~18kHz, bin 2156 = ~22kHz
       setInterval(() => {
         analyser.getByteFrequencyData(frequencyData);
-        
+
         let ultrasonicEnergy = 0;
         for (let i = 1765; i < 2156; i++) {
           ultrasonicEnergy += frequencyData[i];
         }
-        
+
         if (ultrasonicEnergy > 100) {
           console.log('Potential ultrasonic beacon detected');
         }
@@ -110,21 +110,21 @@ def generate_beacon_signal(identifier: str) -> np.ndarray:
     """Generate an ultrasonic beacon containing an identifier."""
     # Convert identifier to bits
     bits = ''.join(format(ord(c), '08b') for c in identifier)
-    
+
     # Generate carrier wave
     t = np.linspace(0, DURATION, int(SAMPLE_RATE * DURATION))
     carrier = np.sin(2 * np.pi * BEACON_FREQUENCY * t)
-    
+
     # Apply simple on-off keying
     samples_per_bit = len(carrier) // len(bits)
     signal = np.zeros_like(carrier)
-    
+
     for i, bit in enumerate(bits):
         if bit == '1':
             start = i * samples_per_bit
             end = start + samples_per_bit
             signal[start:end] = carrier[start:end]
-    
+
     return signal
 
 # Save as WAV for playback
@@ -182,14 +182,12 @@ For users concerned about this threat vector, the best defense remains awareness
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
 - [Smart Tv Tracking What Data Samsung Lg Vizio Collect About V](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)
+- [How To Communicate During Internet Shutdown Alternative Netw](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

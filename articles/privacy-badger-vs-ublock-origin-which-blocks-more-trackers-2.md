@@ -32,11 +32,11 @@ function analyzeThirdPartyRequest(domain, firstParty) {
   const cookieSet = checkCookieSetting(domain);
   const referrerTracking = checkReferrerLeak(domain);
   const fingerprinting = checkCanvasFingerprinting(domain);
-  
+
   if (cookieSet || referrerTracking || fingerprinting) {
     incrementTrackerScore(domain);
   }
-  
+
   if (getTrackerScore(domain) > THRESHOLD) {
     blockDomain(domain);
   }
@@ -443,8 +443,7 @@ Potential conflicts:
 To manage conflicts, configure Privacy Badger to operate in "learning" mode only, letting uBlock Origin handle blocking.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
 - [How To Configure Ublock Origin For Maximum Anti Tracking Pro](/privacy-tools-guide/how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/)

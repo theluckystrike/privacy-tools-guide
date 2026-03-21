@@ -194,8 +194,7 @@ Technical measures fail without proper procedures. Develop documentation coverin
 Regular training ensures all workers understand both the threats and mitigations. Conduct tabletop exercises simulating device confiscation or data breach scenarios.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 - [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)

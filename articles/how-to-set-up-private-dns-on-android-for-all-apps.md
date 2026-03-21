@@ -284,8 +284,7 @@ adb logcat | grep -i dns
 Network instability sometimes breaks DoT connections. Temporarily disabling helps identify the root cause.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)

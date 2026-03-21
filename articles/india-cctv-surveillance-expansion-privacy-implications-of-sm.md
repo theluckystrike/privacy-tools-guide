@@ -192,8 +192,7 @@ The Digital Personal Data Protection Act continues to evolve. Key developments a
 However, gaps remain significant. No uniform standard governs AI model training on citizen video data, and interoperability between state surveillance systems creates jurisdictional ambiguity.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)

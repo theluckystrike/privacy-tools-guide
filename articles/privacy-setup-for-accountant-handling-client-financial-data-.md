@@ -252,7 +252,7 @@ Configure Bitwarden to log vault access:
 
 ```bash
 # Bitwarden Enterprise/Teams audit logging
-# Events tracked: item view, item edit, item deletion, 
+# Events tracked: item view, item edit, item deletion,
 #                vault access, export attempts
 ```
 
@@ -276,9 +276,7 @@ This setup balances security with usability. The goal isn't perfect security—i
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Financial Advisor Client Portfolio Data Pr](/privacy-tools-guide/privacy-setup-for-financial-advisor-client-portfolio-data-pr/)
 - [Password Manager For Accountant Managing Client Financial Po](/privacy-tools-guide/password-manager-for-accountant-managing-client-financial-po/)

@@ -300,8 +300,7 @@ If you're inheriting digital assets from someone:
 5. **Review third-party integrations**: Deactivate any services the previous owner used
 
 
-
-## Related Reading
+## Related Articles
 
 - [Nft And Digital Asset Inheritance How To Transfer Ownership](/privacy-tools-guide/nft-and-digital-asset-inheritance-how-to-transfer-ownership-/)
 - [Domain Name Inheritance How To Transfer Registrar Accounts A](/privacy-tools-guide/domain-name-inheritance-how-to-transfer-registrar-accounts-a/)

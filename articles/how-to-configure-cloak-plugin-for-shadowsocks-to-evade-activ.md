@@ -221,9 +221,7 @@ Cloak provides protection against active probing by transforming your Shadowsock
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)

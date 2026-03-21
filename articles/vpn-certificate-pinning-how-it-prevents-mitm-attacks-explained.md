@@ -235,8 +235,7 @@ Test your VPN's security periodically. Tools and techniques exist to verify that
 {% endraw %}
 
 
-
-## Related Reading
+## Related Articles
 
 - [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
 - [How To Detect Baseband Attacks And Rogue Cell Towers With An](/privacy-tools-guide/how-to-detect-baseband-attacks-and-rogue-cell-towers-with-an/)

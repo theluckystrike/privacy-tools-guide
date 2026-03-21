@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft"
+title: "Replace Google Home with Local Voice Assistant Using"
 description: "Replace Google Home with Rhasspy or Mycroft to process voice commands entirely on your local hardware without cloud connectivity. Both open-source alternatives"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -131,7 +131,7 @@ class HomeLightsSkill(MycroftSkill):
         MycroftSkill.__init__(self)
 
     def initialize(self):
-        self.register_intent_file('turn.on.lights.intent', 
+        self.register_intent_file('turn.on.lights.intent',
                                    self.handle_turn_on)
 
     def handle_turn_on(self, message):
@@ -194,8 +194,7 @@ Regardless of your choice, several optimizations improve responsiveness:
 **Implement caching**. Store frequent command patterns and pre-computed responses to reduce processing latency.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Home Assistant Esphome For Completely Local Sm](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
 - [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)

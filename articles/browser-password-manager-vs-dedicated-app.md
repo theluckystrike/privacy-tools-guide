@@ -313,8 +313,7 @@ This pattern ensures sensitive credentials never appear in code while remaining 
 Browser password managers fundamentally cannot support this workflow. They were designed for interactive user authentication, not programmatic access by build systems.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
 - [Migrating From Chrome Saved Passwords To Dedicated Manager S](/privacy-tools-guide/migrating-from-chrome-saved-passwords-to-dedicated-manager-s/)

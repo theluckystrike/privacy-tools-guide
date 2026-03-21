@@ -100,7 +100,7 @@ class KeyRotationManager:
     def __init__(self):
         self.root_key = os.urandom(32)
         self.message_keys = {}  # message_id -> key
-        
+
     def derive_message_key(self, root_key, message_index):
         """HKDF-based message key derivation"""
         hkdf = HKDF(
@@ -110,7 +110,7 @@ class KeyRotationManager:
             info=f'message-{message_index}'.encode()
         )
         return hkdf.derive(root_key)
-    
+
     def rotate_session_key(self, old_root_key):
         """Generate new root key while maintaining key hierarchy"""
         # Use key ratcheting: new key depends on old key
@@ -121,7 +121,7 @@ class KeyRotationManager:
             info=b'session-rotation'
         )
         new_root_key = hkdf.derive(old_root_key + os.urandom(32))
-        
+
         # Store mapping for old message decryption
         return new_root_key
 ```
@@ -133,27 +133,27 @@ class SecureMessageStore:
     def __init__(self):
         self.messages = []
         self.key_archive = {}  # Store old keys for decryption
-        
+
     def rotate_keys(self, new_public_key):
         """Rotate encryption keys while preserving history"""
         old_messages = self.messages
-        
+
         # Archive old session key material (not the messages themselves)
         # These enable decryption of old messages
         self.key_archive['previous_session'] = {
             'messages': old_messages,  # Already encrypted with old keys
             'session_id': self.current_session_id
         }
-        
+
         # Start new session with fresh keys
         self.current_session_id = os.urandom(16)
         self.messages = []
-        
+
         return {
             'status': 'rotated',
             'archived_messages_count': len(old_messages)
         }
-    
+
     def decrypt_message(self, encrypted_data, session_context):
         """Decrypt messages using appropriate session key"""
         if session_context == 'previous_session':
@@ -175,7 +175,7 @@ class DoubleRatchet:
     def __init__(self, shared_secret):
         self.root_key = shared_secret
         self.chain_key = shared_secret
-        
+
     def ratchet_message(self):
         """Advance chain for each message (symmetric ratchet)"""
         self.chain_key = hashlib.sha256(self.chain_key + b'message').digest()
@@ -218,14 +218,13 @@ Custom apps: Display explicit "Key rotated" banner with verification option
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
 - [Post Quantum Encryption In Messaging Apps Preparing For Quan](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
-- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)
 - [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
+- [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

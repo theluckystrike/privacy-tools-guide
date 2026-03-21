@@ -260,8 +260,7 @@ For developers testing privacy-sensitive applications, GrapheneOS's binary allow
 - NFC payment functionality is required
 
 
-
-## Related Reading
+## Related Articles
 
 - [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
 - [GrapheneOS vs Stock Pixel: What Google Collects on.](/privacy-tools-guide/grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/)

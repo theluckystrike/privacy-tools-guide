@@ -180,39 +180,39 @@ class SecureDeadDrop:
     def __init__(self, storage_path):
         self.storage = storage_path
         self.codes = {}
-    
+
     def create_drop(self, content, expiry_hours=24):
         """Create a new drop with expiration"""
         drop_id = secrets.token_urlsafe(16)
         access_code = secrets.token_hex(8)
-        
+
         # Hash the code for storage (never store plain codes)
         code_hash = hashlib.sha256(access_code.encode()).hexdigest()
-        
+
         with open(f"{self.storage}/{drop_id}.dat", 'w') as f:
             f.write(content)
-        
+
         self.codes[drop_id] = {
             'hash': code_hash,
             'expires': datetime.now() + timedelta(hours=expiry_hours)
         }
-        
+
         return drop_id, access_code
-    
+
     def retrieve_drop(self, drop_id, access_code):
         """Retrieve drop content if code is valid and not expired"""
         if drop_id not in self.codes:
             return None
-        
+
         code_data = self.codes[drop_id]
         code_hash = hashlib.sha256(access_code.encode()).hexdigest()
-        
+
         if code_hash != code_data['hash']:
             return None  # Wrong code
-        
+
         if datetime.now() > code_data['expires']:
             return None  # Expired
-        
+
         try:
             with open(f"{self.storage}/{drop_id}.dat", 'r') as f:
                 return f.read()
@@ -260,12 +260,10 @@ Each approach trades simplicity for control. The right choice depends on your sp
 For additional privacy tools and security guides, explore the Privacy Tools Guide collection.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Encrypted Dead Drop Using Onionshare For Sourc](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
-- [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 - [How to Set Up a Canary Trap to Detect Information Leaks](/privacy-tools-guide/how-to-set-up-canary-trap-to-detect-information-leaks/)
 - [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)

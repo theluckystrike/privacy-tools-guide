@@ -49,7 +49,7 @@ Companies can process your data to detect and prevent fraud, unauthorized access
 class LegitimateInterestAssessment:
     purpose = "Fraud detection and prevention"
     legal_interest = "Preventing financial losses and protecting other customers"
-    
+
     def balance_test(self, data_subject):
         """
         Balancing test factors:
@@ -144,7 +144,7 @@ class LegitimateInterestRecord:
     balancing_factors: list
     safeguards: list
     review_date: datetime
-    
+
 # Example: Email service security scanning
 security_scanning = LegitimateInterestRecord(
     processing_activity="Email content scanning for malware",
@@ -171,8 +171,7 @@ When you encounter a privacy practice you're unsure about, look for these indica
 4. **Direct marketing** — Marketing to existing customers often relies on this basis
 
 
-
-## Related Reading
+## Related Articles
 
 - [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
 - [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)

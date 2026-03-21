@@ -52,14 +52,14 @@ import requests
 class BisqClient:
     def __init__(self, api_url="http://localhost:8080"):
         self.api_url = api_url
-    
+
     def get_offers(self, currency_pair="BTC_USD"):
         """Fetch available offers for a currency pair"""
         response = requests.get(
             f"{self.api_url}/api/v1/offers/{currency_pair}"
         )
         return response.json()
-    
+
     def get_payment_methods(self):
         """List available payment methods"""
         response = requests.get(
@@ -120,13 +120,13 @@ from typing import List, Dict
 
 class HodlHodlAPI:
     BASE_URL = "https://api.hodlhodl.com/v3"
-    
+
     def __init__(self, api_key: str = None):
         self.headers = {}
         if api_key:
             self.headers["Authorization"] = f"Token {api_key}"
-    
-    def get_offers(self, 
+
+    def get_offers(self,
                    side: str = "buy",
                    currency: str = "USD",
                    payment_method: str = None) -> List[Dict]:
@@ -134,14 +134,14 @@ class HodlHodlAPI:
         params = {"side": side, "currency": currency}
         if payment_method:
             params["payment_method"] = payment_method
-        
+
         response = requests.get(
             f"{self.BASE_URL}/offers",
             headers=self.headers,
             params=params
         )
         return response.json()["offers"]
-    
+
     def create_offer(self, offer_data: Dict) -> Dict:
         """Create a new trade offer"""
         response = requests.post(
@@ -181,8 +181,8 @@ const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
 // Get quote for token swap
 async function getSwapQuote(
-  tokenIn, 
-  tokenOut, 
+  tokenIn,
+  tokenOut,
   amountIn,
   poolFee = 3000 // 0.3% default
 ) {
@@ -192,13 +192,13 @@ async function getSwapQuote(
     poolFee,
     provider
   );
-  
+
   const route = new Route([pool], tokenIn, tokenOut);
-  const trade = new Trade(route, 
+  const trade = new Trade(route,
     CurrencyAmount.fromRawAmount(tokenIn, amountIn),
     TradeType.EXACT_INPUT
   );
-  
+
   return {
     amountOut: trade.outputAmount.toSignificant(6),
     priceImpact: trade.priceImpact.toSignificant(4)
@@ -252,8 +252,7 @@ The options have diminished significantly. Many platforms that advertised "no KY
 For developers building applications, plan accordingly. The integrations above work but expect ongoing maintenance as platforms adjust to regulatory pressures.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 - [Does Expressvpn Still Work In Turkey 2026 Latest Test](/privacy-tools-guide/does-expressvpn-still-work-in-turkey-2026-latest-test/)

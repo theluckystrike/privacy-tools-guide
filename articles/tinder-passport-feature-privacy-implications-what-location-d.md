@@ -38,7 +38,7 @@ const passportLocationUpdate = {
   },
   original_location: {
     // This data may still be stored server-side
-    city: 'San Francisco', 
+    city: 'San Francisco',
     country: 'US',
     latitude: 37.7749,
     longitude: -122.4194
@@ -165,9 +165,7 @@ For developers working with location data:
 - Document what location data your application collects and why
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
@@ -437,4 +435,3 @@ Instead of Passport, interact only on secure platforms where location remains pr
 - Physical burner phone
 - Account created in safe jurisdiction
 - Assume all location data compromised
-

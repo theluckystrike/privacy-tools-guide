@@ -39,7 +39,7 @@ const CONSENT_KEY = 'gdpr_consent_preferences';
 export function getConsentState() {
   const stored = localStorage.getItem(CONSENT_KEY);
   if (!stored) return null;
-  
+
   try {
     return JSON.parse(stored);
   } catch (e) {
@@ -55,7 +55,7 @@ export function saveConsentState(consent) {
     timestamp: new Date().toISOString(),
     version: '1.0'
   };
-  
+
   localStorage.setItem(CONSENT_KEY, JSON.stringify(state));
   return state;
 }
@@ -77,27 +77,27 @@ The banner markup should be accessible and provide clear options:
   <div class="cookie-content">
     <h2>We use cookies</h2>
     <p>We use necessary cookies for basic functionality. With your consent, we may also set analytics and marketing cookies to improve your experience.</p>
-    
+
     <div class="cookie-options">
       <label class="cookie-toggle">
         <input type="checkbox" checked disabled>
         <span>Necessary</span>
         <small>Required for basic site functionality</small>
       </label>
-      
+
       <label class="cookie-toggle">
         <input type="checkbox" id="consent-analytics">
         <span>Analytics</span>
         <small>Help us understand how visitors use our site</small>
       </label>
-      
+
       <label class="cookie-toggle">
         <input type="checkbox" id="consent-marketing">
         <span>Marketing</span>
         <small>Used for personalized content and ads</small>
       </label>
     </div>
-    
+
     <div class="cookie-actions">
       <button id="btn-reject-all" class="btn btn-secondary">Reject All</button>
       <button id="btn-save-preferences" class="btn btn-secondary">Save Preferences</button>
@@ -118,26 +118,26 @@ import { saveConsentState, getConsentState } from './consent-manager.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const banner = document.getElementById('cookie-banner');
-  
+
   // Don't show banner if consent already exists
   if (getConsentState()) {
     banner.style.display = 'none';
     initializeScripts();
     return;
   }
-  
+
   document.getElementById('btn-accept-all').addEventListener('click', () => {
     saveConsentState({ analytics: true, marketing: true });
     banner.style.display = 'none';
     initializeScripts();
   });
-  
+
   document.getElementById('btn-reject-all').addEventListener('click', () => {
     saveConsentState({ analytics: false, marketing: false });
     banner.style.display = 'none';
     initializeScripts();
   });
-  
+
   document.getElementById('btn-save-preferences').addEventListener('click', () => {
     const analytics = document.getElementById('consent-analytics').checked;
     const marketing = document.getElementById('consent-marketing').checked;
@@ -159,20 +159,20 @@ Create a wrapper function that only loads scripts when consent exists:
 ```javascript
 function loadScriptIfConsented(category, src, callback) {
   const { hasConsent } = require('./consent-manager.js');
-  
+
   if (!hasConsent(category)) {
     console.log(`Script blocked: ${src} (no consent for ${category})`);
     return;
   }
-  
+
   const script = document.createElement('script');
   script.src = src;
   script.async = true;
-  
+
   if (callback) {
     script.onload = callback;
   }
-  
+
   document.head.appendChild(script);
 }
 
@@ -186,13 +186,13 @@ For Google Analytics specifically, wrap the initialization:
 ```javascript
 function initAnalytics() {
   const { hasConsent } = require('./consent-manager.js');
-  
+
   if (!hasConsent('analytics')) {
     // Disable Google Analytics tracking
     window['ga-disable-UA-XXXXX'] = true;
     return;
   }
-  
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -213,11 +213,11 @@ document.getElementById('manage-cookies').addEventListener('click', (e) => {
   e.preventDefault();
   const banner = document.getElementById('cookie-banner');
   const state = getConsentState();
-  
+
   // Pre-check checkboxes based on current consent
   document.getElementById('consent-analytics').checked = state?.analytics || false;
   document.getElementById('consent-marketing').checked = state?.marketing || false;
-  
+
   banner.style.display = 'block';
 });
 ```
@@ -231,7 +231,7 @@ For compliance documentation, store consent events on your server when users cre
 ```javascript
 async function recordConsent(consentState) {
   if (!window.userId) return; // Only for logged-in users
-  
+
   await fetch('/api/consent-record', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -261,8 +261,7 @@ Verify your consent system works correctly:
 Use browser DevTools to inspect localStorage and confirm the consent JSON matches expectations.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Cookie Consent Tools Comparison for Developers 2026](/privacy-tools-guide/cookie-consent-tools-comparison-for-developers-2026/)
 - [Gdpr Consent Management Platform Comparison 2026](/privacy-tools-guide/gdpr-consent-management-platform-comparison-2026/)

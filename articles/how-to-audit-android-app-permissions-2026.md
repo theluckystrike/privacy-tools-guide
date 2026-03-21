@@ -206,10 +206,10 @@ DANGEROUS=(
 # Loop through each app
 for package in $PACKAGES; do
     package_name=${package#package:}
-    
+
     # Get permissions for this package
     perms=$(adb shell dumpsys package $package_name 2>/dev/null | grep -A 50 "Permissions:")
-    
+
     # Check if this app has any dangerous permissions
     has_dangerous=false
     for perm in "${DANGEROUS[@]}"; do
@@ -218,7 +218,7 @@ for package in $PACKAGES; do
             break
         fi
     done
-    
+
     # If app has dangerous permissions, report it
     if [ "$has_dangerous" = true ]; then
         echo "App: $package_name"
@@ -510,8 +510,7 @@ Most users can dramatically improve privacy by:
 Start with one app (Instagram is usually a good example) and see the difference revoking unnecessary permissions makes.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

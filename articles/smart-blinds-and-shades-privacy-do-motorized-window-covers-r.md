@@ -195,8 +195,7 @@ For maximum privacy, consider these approaches:
 - **Thread/Matter with border routers**: Newer protocols offer improved privacy through local multicast and end-to-end encryption
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
 - [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)

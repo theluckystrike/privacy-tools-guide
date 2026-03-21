@@ -434,8 +434,7 @@ echo "send test message and verify PGP key" | gpg --encrypt --armor -r recipient
 Run these tests before deploying to production.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 - [Wire vs Signal for Business Use: A Technical Comparison](/privacy-tools-guide/wire-vs-signal-for-business-use/)

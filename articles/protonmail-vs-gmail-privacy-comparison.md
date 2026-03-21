@@ -126,7 +126,7 @@ const sendEmail = async () => {
   ].join('\n');
 
   const encodedMessage = Buffer.from(message).toString('base64');
-  
+
   await gmail.users.messages.send({
     userId: 'me',
     requestBody: { raw: encodedMessage }
@@ -205,7 +205,7 @@ const encryptBeforeSending = async (message, publicKey) => {
     message: await openpgp.createMessage({ text: message }),
     encryptionKeys: await openpgp.readKey({ armoredKey: publicKey })
   });
-  
+
   return gmail.users.messages.send({
     userId: 'me',
     requestBody: { raw: Buffer.from(encrypted).toString('base64') }
@@ -216,8 +216,7 @@ const encryptBeforeSending = async (message, publicKey) => {
 This hybrid approach uses Gmail's API infrastructure while adding an encryption layer that Google cannot decrypt.
 
 
-
-## Related Reading
+## Related Articles
 
 - [ProtonMail vs Gmail Privacy: A Full Technical Breakdown](/privacy-tools-guide/protonmail-vs-gmail-privacy-full-breakdown/)
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)

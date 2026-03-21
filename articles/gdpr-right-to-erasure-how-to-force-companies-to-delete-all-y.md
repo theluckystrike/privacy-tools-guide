@@ -120,23 +120,23 @@ A company claims they deleted your data—how do you verify this? Technical user
 # Pseudocode for deletion verification checklist
 def verify_deletion(company_name, email):
     checks = []
-    
+
     # 1. Check if account login still works
     checks.append(test_login(email, company_name))
-    
+
     # 2. Check data broker databases
     checks.append(not_found_in_data_brokers(email))
-    
+
     # 3. Verify via subject access request
     # Request all data they still hold - should return empty
     data = request_subject_access(company_name, email)
     checks.append(len(data) == 0)
-    
+
     # 4. Check third-party shares
     # Ask specifically who they've shared data with
     shares = request_third_party_shares(company_name, email)
     checks.append(len(shares) == 0)
-    
+
     return all(checks)
 ```
 
@@ -173,13 +173,12 @@ Use these strategies to minimize your data footprint and make future erasure req
 5. **Automate where possible**: Some privacy tools can send GDPR requests automatically. For developers, building automation for recurring erasure requests across services saves significant time.
 
 
-
-## Related Reading
+## Related Articles
 
 - [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 - [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
 - [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 - [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

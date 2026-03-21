@@ -117,7 +117,7 @@ def split_secret(secret, shares=2, threshold=2):
     # Generate random coefficients
     secret_int = int.from_bytes(secret.encode(), 'big')
     coeffs = [secret_int] + [secrets.randbelow(2**128) for _ in range(threshold-1)]
-    
+
     # Generate shares
     return [poly_eval(coeffs, i) for i in range(1, shares + 1)]
 
@@ -133,7 +133,7 @@ def reconstruct_secret(shares):
                 numerator *= - (j + 1)
                 denominator *= (i - j)
         secret_int += yi * numerator // denominator
-    
+
     return secret_int.to_bytes((secret_int.bit_length() + 7) // 8, 'big').decode()
 
 # Example usage
@@ -172,14 +172,13 @@ veracrypt --text --verify /path/to/volume.vc
 ```
 
 
+## Related Articles
 
-## Related Reading
-
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
 - [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
+- [Secure File Sharing Tools Comparison: E2E Encrypted.](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

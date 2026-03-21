@@ -72,7 +72,7 @@ class OptOutRequest:
 class OptOutTracker:
     def __init__(self, csv_path: str):
         self.csv_path = csv_path
-    
+
     def add_request(self, platform: str, email: str) -> OptOutRequest:
         request = OptOutRequest(
             platform=platform,
@@ -81,7 +81,7 @@ class OptOutTracker:
         )
         self._save_to_csv(request)
         return request
-    
+
     def mark_completed(self, platform: str, confirmation_code: str):
         # Update CSV with confirmation code and status
         pass
@@ -143,17 +143,17 @@ def verify_removal(first_name: str, last_name: str, state: str) -> Dict[str, boo
     Note: This is for personal verification purposes only.
     """
     results = {}
-    
+
     # Example search URL pattern (for verification purposes)
     search_url = f"https://www.intelius.com/people-search/{first_name}-{last_name}/{state}"
-    
+
     # Make a HEAD request to check if page returns 200
     try:
         response = requests.head(search_url, timeout=10)
         results['intelius_found'] = response.status_code == 200
     except requests.RequestException:
         results['intelius_found'] = False
-    
+
     return results
 
 # Usage
@@ -181,14 +181,13 @@ Several organizations provide data broker removal services:
 - **State privacy laws**: California, Virginia, and Colorado residents have additional privacy rights under state laws
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
 - [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
 - [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
-- [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [How to Remove Personal Data from Data Brokers](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

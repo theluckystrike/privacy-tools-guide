@@ -70,7 +70,7 @@ def get_transaction_category(transaction_id: str) -> dict:
         headers={"Authorization": f"Bearer {os.environ['BANK_API_KEY']}"}
     )
     data = response.json()
-    
+
     return {
         "merchant_name": data.get("merchant_name"),
         "mcc": data.get("mcc_code"),
@@ -117,28 +117,28 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 async function createSubscriptionWithPrivacy(userId, planId, usePrivacyDescriptor) {
   const customer = await stripe.customers.retrieve(userId);
-  
+
   const subscriptionParams = {
     customer: customer.id,
     items: [{ price: planId }],
     payment_behavior: 'default_incomplete',
     expand: ['latest_invoice.payment_intent'],
   };
-  
+
   // Privacy option: Use generic descriptor
   if (usePrivacyDescriptor) {
     subscriptionParams.payment_behavior = 'default_incomplete';
   }
-  
+
   const subscription = await stripe.subscriptions.create(subscriptionParams);
-  
+
   // Retrieve and check the resulting descriptor
   const invoice = subscription.latest_invoice;
   const paymentIntent = invoice.payment_intent;
-  
+
   console.log(`Statement descriptor: ${paymentIntent.statement_descriptor}`);
   console.log(`Suffix: ${paymentIntent.statement_descriptor_suffix}`);
-  
+
   return subscription;
 }
 ```
@@ -176,12 +176,12 @@ def identify_dating_charge(descriptor: str) -> str | None:
     Returns the app name if found, None otherwise.
     """
     descriptor_upper = descriptor.upper()
-    
+
     # Check for partial matches
     for key, value in DESCRIPTOR_MAPPING.items():
         if key in descriptor_upper:
             return value
-    
+
     return None
 ```
 
@@ -207,8 +207,7 @@ If you're building a dating app or subscription service, implementing proper des
 Stripe's API allows descriptor updates through the dashboard or API, with limitations on character count (typically 22 characters maximum for the descriptor).
 
 
-
-## Related Reading
+## Related Articles
 
 - [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 - [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)

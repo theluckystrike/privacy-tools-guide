@@ -190,9 +190,7 @@ All three approaches give you secure, encrypted access to your home network whil
 Start with the option matching your technical comfort level and network constraints. You can always migrate between solutions as your needs change.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [VPN for Accessing Medical Records Abroad While Traveling](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-sec/)
 - [VPN for Accessing Medical Records Abroad While Traveling.](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-securely/)

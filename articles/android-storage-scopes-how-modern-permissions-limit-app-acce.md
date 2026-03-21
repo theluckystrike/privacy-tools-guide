@@ -83,7 +83,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         MediaStore.Images.Media.DISPLAY_NAME,
         MediaStore.Images.Media.DATE_ADDED
     )
-    
+
     val cursor = contentResolver.query(
         MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
         projection,
@@ -91,7 +91,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         null,
         "${MediaStore.Images.Media.DATE_ADDED} DESC"
     )
-    
+
     cursor?.use {
         while (it.moveToNext()) {
             val name = it.getString(0)
@@ -486,8 +486,7 @@ Google continues reducing app permissions:
 As scoped storage matures, expect even more granular user control over what apps access.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

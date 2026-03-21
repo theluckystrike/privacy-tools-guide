@@ -218,8 +218,7 @@ When faced with a VPN connection timeout:
  - No → Check certificates, try obfuscation, contact provider
 
 
-
-## Related Reading
+## Related Articles
 
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)

@@ -127,7 +127,7 @@ For Firefox users, Enhanced Tracking Protection automatically blocks known track
 If you're building a web application, you can implement tracker blocking at the edge using a Content Security Policy:
 
 ```http
-Content-Security-Policy: 
+Content-Security-Policy:
   default-src 'self';
   script-src 'self';
   connect-src 'self' https://api.yourapp.com;
@@ -200,7 +200,7 @@ class TrackerDetector {
   }
 
   isTracker(hostname) {
-    return this.blockedDomains.some(domain => 
+    return this.blockedDomains.some(domain =>
       hostname === domain || hostname.endsWith(`.${domain}`)
     );
   }
@@ -240,7 +240,7 @@ class TrackerDetector {
         );
         Object.defineProperty(element, 'src', {
           set: function(value) {
-            if (this.ownerDocument && 
+            if (this.ownerDocument &&
                 this.ownerDocument.location &&
                 this.isTracker(new URL(value, this.ownerDocument.location.origin).hostname)) {
               this.onDetect(value);
@@ -265,8 +265,7 @@ const detector = new TrackerDetector({
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
 - [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)

@@ -218,8 +218,7 @@ Control upload and download speeds during work hours:
 This prevents Bridge from consuming your entire network connection during large transfers.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 - [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)

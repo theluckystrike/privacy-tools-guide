@@ -32,10 +32,10 @@ def check_password_breach(password):
     sha1_hash = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
     prefix = sha1_hash[:5]
     suffix = sha1_hash[5:]
-    
+
     response = requests.get(f"https://api.pwnedpasswords.com/range/{prefix}")
     response.raise_for_status()
-    
+
     hashes = response.text.splitlines()
     for h in hashes:
         hash_part, count = h.split(':')
@@ -89,7 +89,7 @@ from typing import Dict, List
 class BreachChecker:
     def __init__(self):
         self.api_base = "https://api.pwnedpasswords.com"
-    
+
     def check_email(self, email: str) -> Dict:
         """Check if an email appears in breaches."""
         response = requests.get(
@@ -103,17 +103,17 @@ class BreachChecker:
             "breached": True,
             "breaches": response.json()
         }
-    
+
     def check_password_batch(self, passwords: List[str]) -> Dict[str, int]:
         """Check multiple passwords efficiently."""
         results = {}
         for password in passwords:
             sha1 = hashlib.sha1(password.encode()).hexdigest().upper()
             prefix, suffix = sha1[:5], sha1[5:]
-            
+
             resp = requests.get(f"{self.api_base}/range/{prefix}")
             resp.raise_for_status()
-            
+
             for line in resp.text.splitlines():
                 hash_part, count = line.split(':')
                 if hash_part == suffix:
@@ -403,13 +403,12 @@ def rotate_secret(secret_type, old_value):
 ```
 
 
+## Related Articles
 
-## Related Reading
-
-- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)
+- [What Happens When Your Password Appears In Data Breach Steps](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

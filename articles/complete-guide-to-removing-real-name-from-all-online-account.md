@@ -383,8 +383,7 @@ ANNUALLY:
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)

@@ -38,22 +38,22 @@ class SchoolSurveillanceSystem:
         self.camera_network = []  # Network of IP cameras
         self.face_database = {}   # Stored face embeddings
         self.alert_system = AlertManager()
-    
+
     def capture_frame(self, camera_id):
         """Capture video frame from specific camera"""
         camera = self.get_camera(camera_id)
         return camera.get_current_frame()
-    
+
     def detect_faces(self, frame):
         """Detect faces using ML model (typically MTCNN or RetinaFace)"""
         detector = FaceDetector(model='retinaface')
         return detector.detect(frame)
-    
+
     def extract_embedding(self, face_image):
         """Extract 128-dimensional face embedding using ArcFace or FaceNet"""
         encoder = FaceEncoder(model='arcface')
         return encoder.encode(face_image)
-    
+
     def match_face(self, embedding, threshold=0.65):
         """Compare embedding against database using cosine similarity"""
         for student_id, stored_embedding in self.face_database.items():
@@ -61,7 +61,7 @@ class SchoolSurveillanceSystem:
             if similarity > threshold:
                 return student_id
         return None
-    
+
     def track_student(self, student_id, location):
         """Log student movement across campus"""
         timestamp = datetime.now()
@@ -124,21 +124,21 @@ Modern surveillance systems go beyond simple identification:
 // Example: Risk scoring algorithm used by some school systems
 function calculateStudentRiskScore(studentId, behaviors) {
     let score = 0;
-    
+
     // Attendance patterns
     if (behaviors.absences > 5) score += 10;
     if (behaviors.tardiness > 3) score += 5;
-    
+
     // Movement patterns
     if (behaviors.loiteringLocations.includes('parking_lot')) score += 15;
     if (behaviors.libraryVisits > 20) score += -5; // Positive indicator
-    
+
     // Social interactions
     if (behaviors.unknownVisitors > 2) score += 20;
-    
+
     // Behavioral anomalies
     if (behaviors.runningIncidents > 0) score += 25;
-    
+
     return {
         riskLevel: score > 50 ? 'high' : score > 25 ? 'medium' : 'low',
         score: score,
@@ -185,11 +185,11 @@ def k_anonymity_check(embeddings, k=5):
     This prevents individual identification in aggregated data.
     """
     from sklearn.neighbors import NearestNeighbors
-    
+
     nn = NearestNeighbors(n_neighbors=k+1)
     nn.fit(embeddings)
     distances, _ = nn.kneighbors(embeddings)
-    
+
     # Check if all points have k neighbors within threshold
     min_distances = np.min(distances[:, 1:], axis=1)
     return np.all(min_distances < 0.5)
@@ -206,7 +206,7 @@ import os
 class BiometricEncryptor:
     def __init__(self, key=None):
         self.key = key or os.urandom(32)  # 256-bit key
-    
+
     def encrypt_embedding(self, embedding):
         """Encrypt face embedding with AES-256-GCM"""
         aesgcm = AESGCM(self.key)
@@ -214,7 +214,7 @@ class BiometricEncryptor:
         embedding_bytes = embedding.tobytes()
         ciphertext = aesgcm.encrypt(nonce, embedding_bytes, None)
         return nonce + ciphertext
-    
+
     def decrypt_embedding(self, encrypted_data):
         """Decrypt face embedding"""
         aesgcm = AESGCM(self.key)
@@ -242,8 +242,7 @@ While avoiding school surveillance entirely is difficult, students can reduce th
 - Support organizations working on biometric privacy legislation
 
 
-
-## Related Reading
+## Related Articles
 
 - [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 - [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)

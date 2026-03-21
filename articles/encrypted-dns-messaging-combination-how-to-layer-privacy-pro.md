@@ -183,10 +183,9 @@ Encrypted DNS adds minimal latency—typically 10-30ms for well-optimized provid
 For most users, the privacy benefits outweigh the modest performance cost. Measure your baseline performance and test after each layer to understand the impact on your specific use case.
 
 
+## Related Articles
 
-## Related Reading
-
-- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
+- [Mls Messaging Layer Security Protocol How It Will Change](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Zero Knowledge Proof Messaging How Future Protocols Will Pro](/privacy-tools-guide/zero-knowledge-proof-messaging-how-future-protocols-will-pro/)
 - [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
 - [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)

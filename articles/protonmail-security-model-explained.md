@@ -61,19 +61,19 @@ import os
 def encrypt_message(public_key, plaintext):
     # Generate random session key
     session_key = os.urandom(32)  # AES-256
-    
+
     # Encrypt message with session key
     iv = os.urandom(16)
     cipher = Cipher(algorithms.AES(session_key), modes.CBC(iv), default_backend())
     encryptor = cipher.encryptor()
     ciphertext = encryptor.update(plaintext) + encryptor.finalize()
-    
+
     # Encrypt session key with recipient's public key
     encrypted_session_key = public_key.encrypt(
         session_key,
         padding.OAEP(mgf=padding.MGF1(algorithm="SHA256"), algorithm="SHA256", label=None)
     )
-    
+
     return {
         "iv": iv,
         "ciphertext": ciphertext,
@@ -97,10 +97,10 @@ The authentication flow involves computing a password verifier that gets stored 
 async function authenticate(email, password) {
   const salt = await fetchSalt(email);
   const verifier = computeVerifier(password, salt);
-  
+
   // Client generates ephemeral key pair
   const clientEphemeral = generateEphemeralKeyPair();
-  
+
   // Proof generation happens entirely client-side
   const clientProof = computeClientProof(
     clientEphemeral.public,
@@ -108,7 +108,7 @@ async function authenticate(email, password) {
     salt,
     password
   );
-  
+
   // Server verifies proof without knowing the password
   const serverProof = await verifyWithServer(email, clientProof);
   return verifyServerProof(serverProof);
@@ -279,8 +279,7 @@ For developers implementing similar systems, critically evaluate ProtonMail's se
 - Rotate encryption keys periodically
 
 
-
-## Related Reading
+## Related Articles
 
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)

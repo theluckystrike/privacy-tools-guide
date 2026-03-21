@@ -61,13 +61,13 @@ def perform_key_exchange(parameters):
     """Perform DH key exchange and return shared secret."""
     # Generate private key
     private_key = parameters.generate_private_key()
-    
+
     # Get peer's public key (in real usage, exchange this over network)
     peer_public_key = None  # Would be received from peer
-    
+
     # Compute shared secret
     shared_secret = private_key.exchange(peer_public_key)
-    
+
     # Derive encryption key using HKDF or similar
     encryption_key = hashlib.sha256(shared_secret).digest()
     return encryption_key
@@ -374,12 +374,11 @@ wireshark capture.pcap
 Incomplete handshakes indicate key exchange issues.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best VPN for Using WhatsApp in China 2026 — Actually Works](/privacy-tools-guide/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
-- [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [How VPN Reconnection Works After Network Switch Mobile](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [How Vpn Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 - [iCloud Private Relay: How It Works vs VPN](/privacy-tools-guide/ios-private-relay-how-it-works-vs-vpn/)
 

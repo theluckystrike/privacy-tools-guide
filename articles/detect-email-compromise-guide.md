@@ -226,8 +226,7 @@ curl -s "https://haveibeenpwned.com/api/v3/subscriptionstatus" \
 Also enable login notifications in your email provider's security settings — most providers can email or push-notify you on new sign-ins from unfamiliar devices.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
 - [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)

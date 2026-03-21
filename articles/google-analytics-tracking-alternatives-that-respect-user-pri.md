@@ -166,7 +166,7 @@ Create a simple endpoint that logs requests:
 // Express.js example for server-side analytics
 app.post('/api/track', (req, res) => {
   const { path, referrer, userAgent } = req.body;
-  
+
   // Store analytics event - customize what you collect
   const event = {
     path,
@@ -175,7 +175,7 @@ app.post('/api/track', (req, res) => {
     timestamp: new Date(),
     // Note: Avoid storing IP addresses or user IDs without consent
   };
-  
+
   analyticsDb.insert(event);
   res.status(204).send();
 });
@@ -257,8 +257,7 @@ When selecting a privacy-respecting analytics alternative, evaluate these factor
 5. **Review data regularly**: Periodically audit what analytics data you collect and delete to maintain minimal footprint.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 - [How To Configure Google Analytics Alternative For Gdpr Compl](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)

@@ -230,13 +230,11 @@ Once running, explore these enhancements:
 Running Zigbee2MQTT locally transforms your smart home from vendor-dependent to self-hosted. You control the network, own the data, and eliminate cloud failure points. The initial setup takes about 30 minutes, and the resulting reliability and privacy benefits justify the effort.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Smart Doorbell Alternatives That Store Video Locally Without](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
 

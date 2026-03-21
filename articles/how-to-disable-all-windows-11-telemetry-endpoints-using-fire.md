@@ -66,10 +66,10 @@ $TelemetryEndpoints = @(
 
 foreach ($endpoint in $TelemetryEndpoints) {
     $ruleName = "Block-Telemetry-$endpoint"
-    
+
     # Check if rule already exists
     $existingRule = Get-NetFirewallRule -DisplayName $ruleName -ErrorAction SilentlyContinue
-    
+
     if (-not $existingRule) {
         # Create outbound rule to block TCP connections to this endpoint
         New-NetFirewallRule -DisplayName $ruleName `
@@ -79,7 +79,7 @@ foreach ($endpoint in $TelemetryEndpoints) {
             -Protocol TCP `
             -Enabled True `
             -Profile Any
-        
+
         Write-Host "Created rule: $ruleName"
     } else {
         Write-Host "Rule already exists: $ruleName"
@@ -105,7 +105,7 @@ $MicrosoftIPRanges = @(
 
 foreach ($ipRange in $MicrosoftIPRanges) {
     $ruleName = "Block-Microsoft-Telemetry-$ipRange"
-    
+
     if (-not (Get-NetFirewallRule -DisplayName $ruleName -ErrorAction SilentlyContinue)) {
         New-NetFirewallRule -DisplayName $ruleName `
             -Direction Outbound `
@@ -179,9 +179,9 @@ After implementing the rules, verify they work correctly:
 
 ```powershell
 # Check all telemetry-related firewall rules
-Get-NetFirewallRule | Where-Object { 
-    $_.DisplayName -like "*Telemetry*" -or 
-    $_.DisplayName -like "*Microsoft*" -and $_.Action -eq "Block" 
+Get-NetFirewallRule | Where-Object {
+    $_.DisplayName -like "*Telemetry*" -or
+    $_.DisplayName -like "*Microsoft*" -and $_.Action -eq "Block"
 } | Select-Object DisplayName, Enabled, Direction, Action | Format-Table
 ```
 
@@ -217,9 +217,9 @@ To remove all telemetry blocking rules:
 
 ```powershell
 # Remove all telemetry blocking rules
-Get-NetFirewallRule | Where-Object { 
-    $_.DisplayName -like "*Telemetry*" -or 
-    $_.DisplayName -like "*Block-Microsoft*" 
+Get-NetFirewallRule | Where-Object {
+    $_.DisplayName -like "*Telemetry*" -or
+    $_.DisplayName -like "*Block-Microsoft*"
 } | Remove-NetFirewallRule -Confirm:$false
 
 Write-Host "All telemetry blocking rules removed."
@@ -251,8 +251,8 @@ param(
 
 if ($RemoveRules) {
     # Removal logic
-    Get-NetFirewallRule | Where-Object { 
-        $_.DisplayName -match "Telemetry|Block-Microsoft" 
+    Get-NetFirewallRule | Where-Object {
+        $_.DisplayName -match "Telemetry|Block-Microsoft"
     } | Remove-NetFirewallRule -Confirm:$false
     Write-Host "All telemetry rules removed."
     exit
@@ -286,8 +286,7 @@ Write-Host "Telemetry blocking rules applied successfully."
 Save this as `Set-TelemetryFirewall.ps1` and run with `-RemoveRules` to revert.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 - [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)

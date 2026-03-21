@@ -223,8 +223,7 @@ These figures represent typical performance and may vary based on your ISP conne
 Users in Uzbekistan should be aware of local regulations regarding VPN usage. The country's internet framework has specific requirements for VPN services. We recommend consulting with local legal expertise to understand the current regulatory ecosystem before configuring VPN services.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Does NordVPN Work in Russia? Tested from Moscow (2026)](/privacy-tools-guide/does-nordvpn-work-in-russia-2026-tested-from-moscow/)
 - [Does NordVPN Obfuscated Servers Work in China? 2026 Test](/privacy-tools-guide/does-nordvpn-obfuscated-servers-work-in-china-2026-test/)

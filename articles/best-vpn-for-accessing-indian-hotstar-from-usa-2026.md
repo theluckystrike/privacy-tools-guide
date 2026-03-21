@@ -139,7 +139,7 @@ def handle_client(client_socket):
     # Relay traffic with Indian DNS resolution
     remote = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     remote.connect(('103.87.66.1', 443))  # Indian endpoint
-    
+
     while True:
         r, w, x = select.select([client_socket, remote], [], [])
         for sock in r:
@@ -171,8 +171,7 @@ While accessing geo-restricted content, maintain security practices:
 - Consider using a dedicated browser profile for streaming activities
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best VPN for Accessing Amazon Prime Video Different Regions](/privacy-tools-guide/best-vpn-for-accessing-amazon-prime-video-different-regions/)
 - [Best Vpn For Accessing Bbc Iplayer From Australia 2026](/privacy-tools-guide/best-vpn-for-accessing-bbc-iplayer-from-australia-2026/)

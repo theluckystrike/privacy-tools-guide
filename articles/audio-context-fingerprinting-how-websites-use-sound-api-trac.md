@@ -26,26 +26,26 @@ The core technique involves creating an audio processing chain that introduces s
 
 ```javascript
 function generateAudioFingerprint() {
-  const audioContext = new (window.OfflineAudioContext || 
+  const audioContext = new (window.OfflineAudioContext ||
     window.webkitOfflineAudioContext)(1, 44100, 44100);
-  
+
   const oscillator = audioContext.createOscillator();
   const compressor = audioContext.createDynamicsCompressor();
-  
+
   oscillator.type = 'triangle';
   oscillator.frequency.setValueAtTime(10000, audioContext.currentTime);
-  
+
   compressor.threshold.setValueAtTime(-50, audioContext.currentTime);
   compressor.knee.setValueAtTime(40, audioContext.currentTime);
   compressor.ratio.setValueAtTime(12, audioContext.currentTime);
   compressor.attack.setValueAtTime(0, audioContext.currentTime);
   compressor.release.setValueAtTime(0.25, audioContext.currentTime);
-  
+
   oscillator.connect(compressor);
   compressor.connect(audioContext.destination);
-  
+
   oscillator.start(0);
-  
+
   return audioContext.startRendering();
 }
 ```
@@ -83,19 +83,19 @@ After rendering the audio buffer, the fingerprinting code analyzes the resulting
 function extractFingerprint(audioBuffer) {
   const channelData = audioBuffer.getChannelData(0);
   let sum = 0;
-  
+
   // Sample specific points in the audio buffer
   for (let i = 1000; i < 1100; i++) {
     sum += Math.abs(channelData[i]);
   }
-  
+
   // Calculate variance in another region
   let variance = 0;
   const mean = sum / 100;
   for (let i = 1000; i < 1100; i++) {
     variance += Math.pow(channelData[i] - mean, 2);
   }
-  
+
   // Return a simplified representation
   return {
     sum: sum.toFixed(6),
@@ -187,9 +187,7 @@ Developers building legitimate audio applications should minimize privacy risks:
 5. **Audit third-party libraries**: Verify that imported audio libraries don't perform fingerprinting
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Login Fingerprinting How Websites Detect Which Accounts You](/privacy-tools-guide/login-fingerprinting-how-websites-detect-which-accounts-you-/)
 - [Timezone Fingerprinting How Websites Determine Your Location](/privacy-tools-guide/timezone-fingerprinting-how-websites-determine-your-location/)

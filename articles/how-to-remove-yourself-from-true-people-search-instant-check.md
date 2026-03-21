@@ -89,7 +89,7 @@ class RemovalRequest:
     status: str
     request_date: datetime.datetime
     completed_date: Optional[datetime.datetime] = None
-    
+
     def to_dict(self):
         return {
             "site": self.site,
@@ -102,7 +102,7 @@ class RemovalRequest:
 class DataRemovalTracker:
     def __init__(self):
         self.requests: List[RemovalRequest] = []
-        
+
     def add_request(self, site: str, url: str):
         request = RemovalRequest(
             site=site,
@@ -112,7 +112,7 @@ class DataRemovalTracker:
         )
         self.requests.append(request)
         self.save()
-        
+
     def mark_complete(self, site: str):
         for request in self.requests:
             if request.site == site and request.status == "pending":
@@ -120,7 +120,7 @@ class DataRemovalTracker:
                 request.completed_date = datetime.datetime.now()
                 self.save()
                 break
-                
+
     def save(self):
         with open("removal_requests.json", "w") as f:
             json.dump([r.to_dict() for r in self.requests], f, indent=2)
@@ -174,8 +174,7 @@ Removing your data from people search sites addresses immediate visibility but d
 - **Request data deletion under privacy laws**: CCPA (California) and GDPR (EU) provide legal frameworks for data removal requests
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Disappear From People Search Sites Complete Removal G](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)

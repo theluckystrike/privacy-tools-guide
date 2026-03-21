@@ -104,17 +104,17 @@ SERVICE_PATTERNS = {
 def analyze_email_file(filepath):
     """Analyze email file and extract service mentions."""
     accounts = defaultdict(list)
-    
+
     service_indicators = [
         (r'welcome to ([a-zA-Z0-9]+)', 'registration'),
         (r'your ([a-zA-Z0-9]+) account', 'account'),
         (r'confirm your email.*?([a-zA-Z0-9]+)', 'verification'),
     ]
-    
+
     # Read and analyze email content
     with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
         content = f.read().lower()
-        
+
         for category, patterns in SERVICE_PATTERNS.items():
             for pattern in patterns:
                 matches = re.findall(pattern, content)
@@ -123,7 +123,7 @@ def analyze_email_file(filepath):
                         'service': match,
                         'type': 'identified',
                     })
-    
+
     return accounts
 
 def generate_inventory_report(accounts, output_file='estate_accounts.csv'):
@@ -131,14 +131,14 @@ def generate_inventory_report(accounts, output_file='estate_accounts.csv'):
     with open(output_file, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(['Category', 'Service', 'Action Required', 'Priority', 'Notes'])
-        
+
         priorities = {
             'financial': 'HIGH',
             'social': 'MEDIUM',
             'streaming': 'MEDIUM',
             'cloud': 'HIGH',
         }
-        
+
         for category, services in accounts.items():
             for service in services:
                 writer.writerow([
@@ -148,25 +148,25 @@ def generate_inventory_report(accounts, output_file='estate_accounts.csv'):
                     priorities.get(category, 'LOW'),
                     ''
                 ])
-    
+
     print(f"Inventory report generated: {output_file}")
 
 if __name__ == '__main__':
     import sys
-    
+
     if len(sys.argv) < 2:
         print("Usage: python account_discovery.py <email_export_directory>")
         sys.exit(1)
-    
+
     email_dir = Path(sys.argv[1])
     all_accounts = defaultdict(list)
-    
+
     for email_file in email_dir.glob('*'):
         if email_file.is_file():
             accounts = analyze_email_file(email_file)
             for category, services in accounts.items():
                 all_accounts[category].extend(services)
-    
+
     generate_inventory_report(all_accounts)
 ```
 
@@ -254,13 +254,13 @@ class EstateAccountManager:
     def __init__(self, inventory_file='estate_inventory.json'):
         self.inventory_file = Path(inventory_file)
         self.data = self._load_inventory()
-    
+
     def _load_inventory(self):
         if self.inventory_file.exists():
             with open(self.inventory_file) as f:
                 return json.load(f)
         return {"accounts": [], "metadata": {}}
-    
+
     def add_account(self, service_name, account_type, priority='medium',
                     monetary_value=0, notes=''):
         account = {
@@ -276,45 +276,45 @@ class EstateAccountManager:
         self.data['accounts'].append(account)
         self._save_inventory()
         return account['id']
-    
+
     def mark_completed(self, account_id):
         for account in self.data['accounts']:
             if account['id'] == account_id:
                 account['completed'] = True
                 account['date_completed'] = datetime.now().isoformat()
         self._save_inventory()
-    
+
     def get_pending_accounts(self, priority=None):
         accounts = [a for a in self.data['accounts'] if not a['completed']]
         if priority:
             accounts = [a for a in accounts if a['priority'] == priority]
         return accounts
-    
+
     def generate_summary(self):
         total = len(self.data['accounts'])
         completed = len([a for a in self.data['accounts'] if a['completed']])
         pending = total - completed
         total_value = sum(a.get('monetary_value', 0) for a in self.data['accounts'])
-        
+
         return {
             "total_accounts": total,
             "completed": completed,
             "pending": pending,
             "total_monetary_value": total_value
         }
-    
+
     def _save_inventory(self):
         with open(self.inventory_file, 'w') as f:
             json.dump(self.data, f, indent=2)
 
 if __name__ == '__main__':
     manager = EstateAccountManager()
-    
+
     # Add discovered accounts
     manager.add_account("Chase Bank", "financial", "high", 50000, "Primary checking")
     manager.add_account("Netflix", "subscription", "low", 15, "Family plan")
     manager.add_account("GitHub", "developer", "medium", 0, "Contains code repositories")
-    
+
     # Print status
     summary = manager.generate_summary()
     print(f"Estate Account Summary:")
@@ -363,8 +363,7 @@ During estate administration, protect against identity theft:
 4. **Document everything** in case of disputes
 
 
-
-## Related Reading
+## Related Articles
 
 - [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 - [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)

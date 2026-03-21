@@ -181,7 +181,7 @@ class PrivacyMetricsCollector {
 
   async recordDataAccess(userId, dataType, accessLevel) {
     const startTime = Date.now();
-    
+
     const accessRecord = {
       userId,
       dataType,
@@ -205,7 +205,7 @@ class PrivacyMetricsCollector {
   async detectAnomalies(accessRecord) {
     // Machine learning-based anomaly detection
     const anomalyScore = await this.mlModel.predict(accessRecord);
-    
+
     if (anomalyScore > 0.8) {
       await this.alertSystem.send({
         type: 'PRIVACY_ANOMALY',
@@ -338,7 +338,7 @@ class PrivacyMaturityAssessment {
 
   async assess() {
     const results = {};
-    
+
     for (const dimension of this.dimensions) {
       const score = await this.evaluateDimension(dimension);
       results[dimension] = {
@@ -391,7 +391,7 @@ async function registerUser(userData) {
       version: '1.0'
     }
   };
-  
+
   return await db.users.insert(user);
 }
 
@@ -442,9 +442,7 @@ Track consent rate (percentage of users with valid, current consent), data subje
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)

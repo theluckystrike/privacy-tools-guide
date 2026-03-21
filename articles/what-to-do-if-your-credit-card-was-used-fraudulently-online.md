@@ -59,7 +59,7 @@ class TransactionMonitor:
 
  # Flag transactions exceeding 3x average
  anomalous = [
- t for t in transactions 
+ t for t in transactions
  if t['amount'] > avg_amount * 3
  ]
  return anomalous
@@ -256,8 +256,7 @@ If the dispute isn't resolved satisfactorily, escalate to:
 - Credit bureau fraud departments (for credit report impact)
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)

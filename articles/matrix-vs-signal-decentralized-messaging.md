@@ -67,7 +67,7 @@ async function createEncryptedRoom(client, roomName) {
       }
     ]
   });
-  
+
   console.log(`Created encrypted room: ${roomId}`);
   return roomId;
 }
@@ -130,10 +130,10 @@ import asyncio
 async def matrix_bot(homeserver, user_id, password, room_id):
     client = AsyncClient(homeserver, user_id)
     await client.login(password)
-    
+
     # Join the specified room
     await client.join(room_id)
-    
+
     # Send a message
     await client.room_send(
         room_id=room_id,
@@ -143,7 +143,7 @@ async def matrix_bot(homeserver, user_id, password, room_id):
             "body": "Bot initialized and ready"
         }
     )
-    
+
     await client.close()
 
 # Run the bot
@@ -180,12 +180,11 @@ Many developers combine both protocols for different use cases. A common pattern
 The Matrix bridge ecosystem supports integration with Signal through various community projects, though official Signal-to-Matrix bridges don't exist due to Signal's terms of service.
 
 
+## Related Articles
 
-## Related Reading
-
-- [Matrix/Element vs Signal for Private Group Communication: Detailed Comparison](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
+- [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
 - [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
-- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
 - [Cwtch Decentralized Metadata Resistant Messenger How It Diff](/privacy-tools-guide/cwtch-decentralized-metadata-resistant-messenger-how-it-diff/)
 

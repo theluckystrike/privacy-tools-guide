@@ -88,7 +88,7 @@ def classify_flow(flow_features):
     """
     Features extracted from network flow:
     - packet_sizes: array of packet sizes
-    - packet_timing: inter-packet arrival times  
+    - packet_timing: inter-packet arrival times
     - byte_counts: total bytes per direction
     """
     if flow_features['avg_packet_size'] > 1400:
@@ -96,7 +96,7 @@ def classify_flow(flow_features):
             return "encrypted_video_stream"  # WhatsApp video call
     elif flow_features['packet_timing_variance'] < 0.1:
         return "real_time_messaging"  # WhatsApp message
-    
+
     return "unknown"
 ```
 
@@ -111,7 +111,7 @@ One effective countermeasure involves encrypting the SNI field using **ESNI** (E
 server {
     listen 443 ssl;
     ssl_ech_config ech.secrets;
-    
+
     # Alternative: use a domain fronted CDN
     server_name cdn-proxy.example.com;
 }
@@ -168,12 +168,12 @@ class ResilientConnection {
   constructor() {
     this.strategies = [
       'direct-tls',
-      'domain-fronted', 
+      'domain-fronted',
       'obfuscated-tunnel',
       'mesh-network'
     ];
   }
-  
+
   async connect(target) {
     for (const strategy of this.strategies) {
       try {
@@ -202,14 +202,12 @@ Understanding these technical dynamics helps developers and power users make inf
 **Note**: The effectiveness of any countermeasure varies based on current filtering rules, infrastructure upgrades, and geographic location within Iran. Users should assess local conditions and legal implications before implementing any of these techniques.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Iran Smart Filtering How Government Selectively Blocks Conte](/privacy-tools-guide/iran-smart-filtering-how-government-selectively-blocks-conte/)
 - [Vpn Port Selection Which Ports Bypass Most Firewall.](/privacy-tools-guide/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
 - [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [Iphone Focus Modes For Privacy How To Limit App Access By Co](/privacy-tools-guide/iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

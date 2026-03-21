@@ -357,8 +357,7 @@ S/MIME is faster due to shorter key sizes, but the difference is negligible for 
 For organizations, S/MIME's enforced renewal cycle ensures regular key rotation but increases administrative overhead. OpenPGP's flexibility requires more discipline.
 
 
-
-## Related Reading
+## Related Articles
 
 - [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)

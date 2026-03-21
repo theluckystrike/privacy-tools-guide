@@ -108,7 +108,7 @@ server {
         proxy_pass https://telegram.org;
         proxy_ssl_server_name on;
         proxy_set_header Host telegram.org;
-        
+
         # Strip identifying headers
         proxy_hide_header X-Telegram-Auth;
         proxy_hide_header X-Telegram-Client-IP;
@@ -137,7 +137,7 @@ class TelegramRelay:
         self.proxy_url = proxy_url
         self.session = requests.Session()
         self.session.proxies = {'http': proxy_url, 'https': proxy_url}
-    
+
     def get_updates(self, offset=0, timeout=60):
         """Poll for updates through the relay"""
         try:
@@ -150,7 +150,7 @@ class TelegramRelay:
         except requests.exceptions.RequestException as e:
             print(f"Connection error: {e}")
             return {'ok': False, 'error': str(e)}
-    
+
     def send_message(self, chat_id, text):
         """Send message through relay"""
         response = self.session.post(
@@ -236,9 +236,7 @@ All bypass methods carry risks. Users in Iran face potential legal consequences 
 For developers building tools for Iranian users, prioritize security and anonymity. The most effective approaches combine multiple techniques and remain flexible as filtering methods evolve.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [VPN for Using Telegram in Iran 2026: Working Methods](/privacy-tools-guide/vpn-for-using-telegram-in-iran-2026-working-method/)
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)

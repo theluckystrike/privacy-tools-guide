@@ -276,8 +276,7 @@ Border search laws vary dramatically:
 Research the specific laws for your destination before traveling. Consult with legal counsel familiar with technology rights in your destination country.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
 - [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)

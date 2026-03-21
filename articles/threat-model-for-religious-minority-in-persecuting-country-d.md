@@ -180,8 +180,7 @@ Religious communities benefit from coordinated security practices:
 - **Deniable communication channels**: Have backup plans when primary tools are blocked
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)

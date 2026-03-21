@@ -41,7 +41,7 @@ class ContentSafetyAnalyzer {
         let model = try! ContentSafetyModel(configuration: .init())
         let input = try model.imageInput(from: imageData)
         let output = try model.prediction(input: input)
-        
+
         return SafetyResult(
             containsSensitiveContent: output.probability > 0.9,
             category: output.category,
@@ -108,7 +108,7 @@ import CommunicationSafety
 func displayMessage(_ message: Message) {
     if #available(iOS 17.0, *) {
         let safetyStatus = message.contentSafetyStatus
-        
+
         switch safetyStatus {
         case .safe:
             displayContent(message.body)
@@ -190,8 +190,7 @@ Communication Safety features represent an ongoing tension:
 - May give false sense of security
 
 
-
-## Related Reading
+## Related Articles
 
 - [Macos Siri Privacy Controls How To Prevent Voice Data From R](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
 - [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)

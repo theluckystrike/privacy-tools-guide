@@ -412,8 +412,7 @@ echo "Testing complete. See results.log"
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Does Surfshark Obfuscation Work In China 2026 Mobile Test](/privacy-tools-guide/does-surfshark-obfuscation-work-in-china-2026-mobile-test/)
 - [Does ExpressVPN Work in Cuba 2026? Tested from Havana](/privacy-tools-guide/does-expressvpn-work-in-cuba-2026-tested-from-havana/)

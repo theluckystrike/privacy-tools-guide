@@ -55,19 +55,19 @@ When you connect to Tor, your client performs a Diffie-Hellman key exchange with
 def extend_circuit(circuit, relay_info):
     # Create handshake with new relay
     public_key = generate_keypair()
-    
+
     # Diffie-Hellman with relay
     shared_secret = diffie_hellman(
         public_key,
         relay_info.identity_key
     )
-    
+
     # Derive session keys
     keys = derive_keys(shared_secret)
-    
+
     # Add hop to circuit
     circuit.add_hop(relay_info, keys)
-    
+
     return circuit
 ```
 
@@ -133,7 +133,7 @@ from stem import Controller
 
 with Controller.from_port(port=9051) as controller:
     controller.authenticate()
-    
+
     # Get all circuits
     for circuit in controller.get_circuits():
         print(f"Circuit {circuit.id}:")
@@ -146,7 +146,7 @@ This outputs something like:
 ```
 Circuit 12:
   Hop 1: Unnamed (86.123.45.67) [Germany]
-  Hop 2: DCHubRelays03 (193.56.78.90) [Netherlands]  
+  Hop 2: DCHubRelays03 (193.56.78.90) [Netherlands]
   Hop 3: tor4you (45.67.89.123) [France]
 ```
 
@@ -184,13 +184,13 @@ This prevents certain attacks:
 # Simplified guard selection logic
 def select_guards(relays, config):
     # Filter stable, fast relays
-    candidates = [r for r in relays 
-                  if r.is_stable and r.is_fast 
+    candidates = [r for r in relays
+                  if r.is_stable and r.is_fast
                   and r.bandwidth > config.min_bandwidth]
-    
+
     # Select weighted by bandwidth
     guards = weighted_selection(candidates, config.num_guards)
-    
+
     return guards
 ```
 
@@ -226,16 +226,16 @@ from stem.control import Controller
 def tor_request(url, session):
     with Controller.from_port(port=9051) as controller:
         controller.authenticate()
-        
+
         # Signal Tor to create new identity
         controller.signal(Signal.NEWNYM)
-        
+
         # Configure session to use Tor
         session.proxies = {
             'http': 'socks5h://127.0.0.1:9050',
             'https': 'socks5h://127.0.0.1:9050'
         }
-        
+
         return session.get(url)
 ```
 
@@ -249,8 +249,7 @@ Understanding Tor circuit limitations helps you use it effectively:
 - **Circuit fingerprinting**: Traffic patterns through a circuit can be fingerprinted
 
 
-
-## Related Reading
+## Related Articles
 
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)

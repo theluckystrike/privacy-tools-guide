@@ -55,7 +55,7 @@ If self-service options are insufficient, submit a formal withdrawal request:
 ```
 Subject: Withdrawal of Consent for Data Processing
 
-I am withdrawing my consent for [organization name] to process my personal data 
+I am withdrawing my consent for [organization name] to process my personal data
 for [specific purpose, e.g., marketing communications].
 
 This withdrawal applies to:
@@ -63,7 +63,7 @@ This withdrawal applies to:
 - Personalized advertising: [account identifier]
 - Data sharing with third parties: [specific categories]
 
-Please confirm receipt and provide a timeline for when my consent withdrawal 
+Please confirm receipt and provide a timeline for when my consent withdrawal
 will take effect.
 
 [Your name]
@@ -94,7 +94,7 @@ CREATE TABLE consent_records (
 
 -- Create index for efficient lookups
 CREATE INDEX idx_consent_user_type ON consent_records(user_id, consent_type);
-CREATE INDEX idx_consent_active ON consent_records(user_id, consent_type) 
+CREATE INDEX idx_consent_active ON consent_records(user_id, consent_type)
 WHERE withdrawn_at IS NULL;
 ```
 
@@ -105,7 +105,7 @@ WHERE withdrawn_at IS NULL;
 app.post('/api/consent/withdraw', requireAuth, async (req, res) => {
     const { consentType, withdrawalReason } = req.body;
     const userId = req.user.id;
-    
+
     // Record the withdrawal with timestamp
     const withdrawal = await db.consent_records.update({
         where: {
@@ -118,20 +118,20 @@ app.post('/api/consent/withdraw', requireAuth, async (req, res) => {
             withdrawal_reason: withdrawalReason || 'user_initiated'
         }
     });
-    
+
     // Trigger downstream systems to stop processing
     await stopDataProcessing(userId, consentType);
-    
+
     // Queue consent receipt notification
     await sendConsentReceipt(userId, 'withdrawal', {
         consentType,
         withdrawnAt: new Date()
     });
-    
-    res.json({ 
-        success: true, 
+
+    res.json({
+        success: true,
         message: 'Consent withdrawal recorded',
-        effectiveFrom: withdrawal.withdrawn_at 
+        effectiveFrom: withdrawal.withdrawn_at
     });
 });
 
@@ -146,7 +146,7 @@ app.get('/api/consent/status', requireAuth, async (req, res) => {
             withdrawn_at: true
         }
     });
-    
+
     res.json({ consents });
 });
 ```
@@ -157,39 +157,39 @@ app.get('/api/consent/status', requireAuth, async (req, res) => {
 # Python example for handling consent withdrawal propagation
 async def process_consent_withdrawal(user_id: str, consent_type: str):
     """Propagate consent withdrawal to all connected systems"""
-    
+
     withdrawal_time = datetime.utcnow()
-    
+
     # Tasks to execute in parallel
     tasks = [
         # Disable marketing emails
         email_service.disable_marketing(user_id),
-        
+
         # Remove from analytics exports
         analytics_service.remove_from_exports(user_id),
-        
+
         # Delete from third-party data sharing
         data_sharing_service.revoke_sharing(user_id, consent_type),
-        
+
         # Update CRM flags
         crm_service.update_consent_flag(user_id, consent_type, False),
-        
+
         # Notify all data processors
         notification_service.notify_processors(
-            user_id, 
-            consent_type, 
+            user_id,
+            consent_type,
             'withdrawn',
             withdrawal_time
         )
     ]
-    
+
     results = await asyncio.gather(*tasks, return_exceptions=True)
-    
+
     # Log any failures for manual review
     failures = [r for r in results if isinstance(r, Exception)]
     if failures:
         await log_consent_withdrawal_failure(user_id, consent_type, failures)
-    
+
     return {"withdrawal_time": withdrawal_time, "failures": len(failures)}
 ```
 
@@ -201,10 +201,10 @@ For critical consents, implement a confirmation flow:
 // Two-step withdrawal for critical consents
 app.post('/api/consent/withdraw/request', requireAuth, async (req, res) => {
     const { consentType } = req.body;
-    
+
     // Generate secure withdrawal token
     const token = crypto.randomBytes(32).toString('hex');
-    
+
     // Store pending withdrawal request
     await db.pending_withdrawals.create({
         user_id: req.user.id,
@@ -212,23 +212,23 @@ app.post('/api/consent/withdraw/request', requireAuth, async (req, res) => {
         token: hashToken(token),
         expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours
     });
-    
+
     // Send confirmation email with token link
     await emailService.sendWithdrawalConfirmation(req.user.email, {
         consentType,
         confirmationLink: `${process.env.FRONTEND_URL}/confirm-withdraw?token=${token}`
     });
-    
+
     res.json({ message: 'Confirmation email sent' });
 });
 
 app.post('/api/consent/withdraw/confirm', async (req, res) => {
     const { token } = req.body;
-    
+
     // Verify and process withdrawal
     const pending = await verifyAndConsumeToken(token);
     await processConsentWithdrawal(pending.user_id, pending.consent_type);
-    
+
     res.json({ success: true });
 });
 ```
@@ -271,8 +271,7 @@ After withdrawing consent:
 4. **Escalate if needed**: Contact the organization's DPO or file a complaint with your local data protection authority
 
 
-
-## Related Reading
+## Related Articles
 
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)

@@ -191,8 +191,7 @@ Configure your application to use `localhost:8080` as a SOCKS5 proxy.
 **Tor Network**: The Tor network can route traffic through German exit nodes, though this approach often results in significant latency unsuitable for streaming.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best VPN for Accessing Brazilian Streaming Globoplay.](/privacy-tools-guide/best-vpn-for-accessing-brazilian-streaming-globoplay-from-abroad/)
 - [Best VPN for Accessing Japanese Streaming Services From.](/privacy-tools-guide/best-vpn-for-accessing-japanese-streaming-services-from-abro/)

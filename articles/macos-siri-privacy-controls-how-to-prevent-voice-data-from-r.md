@@ -350,11 +350,10 @@ Combining multiple approaches provides defense-in-depth for voice privacy:
 6. Keep macOS updated, as Apple periodically changes Siri behavior
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Disable Macos Analytics Sharing That Sends Crash Data](/privacy-tools-guide/how-to-disable-macos-analytics-sharing-that-sends-crash-data/)
-- [Prevent Android Keyboard From Sending Typing Data To Google Or Samsung](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
+- [Prevent Android Keyboard From Sending Typing Data To Google](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
 - [Ios Communication Safety Features Parental Controls Versus P](/privacy-tools-guide/ios-communication-safety-features-parental-controls-versus-p/)
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)

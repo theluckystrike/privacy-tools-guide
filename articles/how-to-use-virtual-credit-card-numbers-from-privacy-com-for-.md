@@ -82,7 +82,7 @@ async function createPrivacyCard(amount, merchantId) {
       purpose: 'anonymous-purchase'
     }
   });
-  
+
   return {
     cardNumber: card.card_number,
     expMonth: card.exp_month,
@@ -120,7 +120,7 @@ for (const sub of subscriptions) {
       max_interval: 'MONTHLY'
     }
   });
-  
+
   console.log(`${sub.service} card: ${card.last4}`);
 }
 ```
@@ -181,7 +181,7 @@ class PrivacyCardManager {
   constructor(apiKey) {
     this.client = new privacyClient({ apiKey });
   }
-  
+
   async provisionCard(service, monthlyLimit) {
     const card = await this.client.cards.create({
       type: 'MERCHANT_LOCKED',
@@ -194,20 +194,20 @@ class PrivacyCardManager {
         auto_renew: true
       }
     });
-    
+
     return {
       last4: card.last4,
       exp: `${card.exp_month}/${card.exp_year}`,
       limit: monthlyLimit
     };
   }
-  
+
   async checkBalance(cardId) {
     const transactions = await client.transactions.list({ card_id: cardId });
     const spent = transactions.reduce((sum, t) => sum + t.amount, 0);
     return spent;
   }
-  
+
   async rotateCard(service) {
     // Create new card, deactivate old one
     const oldCard = await this.findCardByService(service);
@@ -236,8 +236,7 @@ Virtual cards excel in these scenarios:
 They add friction for subscription management but reduce long-term risk significantly.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [What to Do If Your Credit Card Was Used Fraudulently Online](/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/)

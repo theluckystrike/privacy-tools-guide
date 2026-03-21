@@ -169,9 +169,7 @@ For developers, the privacy gains typically outweigh these losses. Code reposito
 Regularly audit your privacy settings, as Windows updates sometimes reset these configurations. Maintaining a deployment script ensures consistent privacy posture across system updates and fresh installations.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)

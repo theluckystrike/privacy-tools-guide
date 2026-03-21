@@ -125,20 +125,20 @@ from androguard.core.bytecodes import apk
 def analyze_network_calls(apk_path):
     a = apk.APK(apk_path)
     permissions = a.get_permissions()
-    
+
     print(f"Permissions requested: {len(permissions)}")
-    
+
     # Check for network-related permissions
     network_perms = [
         "android.permission.INTERNET",
         "android.permission.ACCESS_NETWORK_STATE",
         "android.permission.ACCESS_WIFI_STATE"
     ]
-    
+
     for perm in network_perms:
         if perm in permissions:
             print(f"[+] {perm}")
-    
+
     # Analyze network endpoints (simplified)
     dx = androguard.auto.analyze(apk_path)
     strings = [s.get_value() for s in dx.get_strings()]
@@ -194,8 +194,7 @@ adb backup -apk -shared -all -f backup.ab
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
 - [Bitwarden Custom Fields Usage Guide](/privacy-tools-guide/bitwarden-custom-fields-usage-guide/)

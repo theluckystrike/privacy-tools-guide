@@ -93,9 +93,9 @@ These characteristics combine to narrow user identity significantly. A user with
 The `<link rel="preload">` directive enables tracking through conditional resource loading. Stylesheets can specify preload links that only resolve when certain conditions match:
 
 ```html
-<link rel="preload" href="/track?feature=wide-screen" as="style" 
+<link rel="preload" href="/track?feature=wide-screen" as="style"
       media="(min-width: 1920px)">
-<link rel="preload" href="/track?feature=mobile" as="style" 
+<link rel="preload" href="/track?feature=mobile" as="style"
       media="(max-width: 767px)">
 ```
 
@@ -402,8 +402,7 @@ echo "Scan complete"
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
 - [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)

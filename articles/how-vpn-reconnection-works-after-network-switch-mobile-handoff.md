@@ -46,7 +46,7 @@ class VPNClient:
         self.server = server_endpoint
         self.keepalive = keepalive_interval
         self.last_ping_time = time.time()
-    
+
     def check_connection_health(self):
         elapsed = time.time() - self.last_ping_time
         if elapsed > self.keepalive * 3:  # Three missed keepalives
@@ -128,15 +128,15 @@ Sometimes a network switch mobile handoff is incomplete—your device may have m
 # Android: monitoring network transitions
 connectivity_manager = get_system_service(Context.CONNECTIVITY_SERVICE)
 network_callback = ConnectivityManager.NetworkCallback()
-    
+
 def on_lost(network: Network):
     # Network connection lost - VPN should prepare for reconnection
     vpn_client.prepare_reconnection()
-    
+
 def on_available(network: Network):
     # New network available - initiate VPN reconnection
     vpn_client.reconnect(network)
-    
+
 connectivity_manager.registerDefaultNetworkCallback(network_callback)
 ```
 
@@ -406,10 +406,9 @@ route add 0.0.0.0 mask 0.0.0.0 VPN_GATEWAY metric 10
 ```
 
 
+## Related Articles
 
-## Related Reading
-
-- [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [How VPN Reconnection Works After Network Switch Mobile](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
 - [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
 - [How to Configure VPN Exempt List for Local Network Access](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)

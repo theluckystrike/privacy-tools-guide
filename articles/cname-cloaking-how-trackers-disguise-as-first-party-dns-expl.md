@@ -138,7 +138,7 @@ def check_cname_tracking(domain, known_trackers):
     try:
         answers = dns.resolver.resolve(domain, 'CNAME')
         cname = str(answers[0]).rstrip('.')
-        
+
         # Check against known tracker domains
         for tracker in known_trackers:
             if tracker in cname:
@@ -300,9 +300,7 @@ This check combines DNS, SSL certificate, and pattern matching to identify cloak
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 - [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)

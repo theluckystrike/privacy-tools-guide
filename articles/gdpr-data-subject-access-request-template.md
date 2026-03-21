@@ -95,15 +95,15 @@ class DSARHandler:
         self.data_store = data_store
         self.identity_verifier = identity_verifier
         self.gdpr_retention_days = 30
-    
+
     def create_request(self, email: str, name: str) -> DSARRequest:
         """Create a new DSAR request with statutory deadline."""
         request_id = str(uuid.uuid4())[:8]
         request_date = datetime.utcnow()
-        
+
         # GDPR mandates one month response time
         deadline = request_date + timedelta(days=30)
-        
+
         return DSARRequest(
             request_id=request_id,
             requester_email=email,
@@ -111,11 +111,11 @@ class DSARHandler:
             request_date=request_date,
             deadline=deadline
         )
-    
+
     def collect_user_data(self, user_id: str) -> dict:
         """Collect all personal data associated with a user."""
         user_data = self.data_store.get_user(user_id)
-        
+
         return {
             "profile": user_data.profile,
             "activity_logs": self.data_store.get_activity(user_id),
@@ -123,14 +123,14 @@ class DSARHandler:
             "payments": self.data_store.get_payments(user_id),
             "analytics": self.data_store.get_analytics_events(user_id)
         }
-    
+
     def generate_response(self, dsar_request: DSARRequest) -> dict:
         """Generate a DSAR response with all required information."""
         user_data = self.collect_user_data(dsar_request.requester_email)
         processing_activities = self.data_store.get_processing_activities(
             dsar_request.requester_email
         )
-        
+
         return {
             "request_id": dsar_request.request_id,
             "response_date": datetime.utcnow().isoformat(),
@@ -159,19 +159,19 @@ router.post('/api/dsar/submit', dsarValidation, async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    
+
     const { email, fullName, requestType } = req.body;
-    
+
     // Verify identity before processing
     const identityVerified = await identityService.verifyIdentity(email, fullName);
-    
+
     if (!identityVerified) {
         return res.status(403).json({
             error: 'Identity verification required',
             message: 'Please provide additional verification information'
         });
     }
-    
+
     // Create and store DSAR request
     const request = await dsarService.createRequest({
         email,
@@ -179,7 +179,7 @@ router.post('/api/dsar/submit', dsarValidation, async (req, res) => {
         type: requestType,
         submittedAt: new Date()
     });
-    
+
     res.status(202).json({
         requestId: request.id,
         message: 'DSAR request received',
@@ -208,7 +208,7 @@ data_stores:
       - phone_number
       - ip_address
     retention_policy: "7 years after deletion"
-    
+
   - name: session_logs
     type: Elasticsearch
     contains_pii: true
@@ -216,7 +216,7 @@ data_stores:
       - ip_address
       - user_agent
     retention_policy: "90 days"
-    
+
   - name: email_queue
     type: RabbitMQ
     contains_pii: true
@@ -249,9 +249,7 @@ Manual DSAR handling is error-prone and does not scale — automate data collect
 Treating DSAR handling as part of your data architecture — not a compliance afterthought — is what makes it sustainable. Build templates, automate data discovery, and follow systematic processes to meet GDPR requirements without degrading operational efficiency.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
 - [How To Submit Subject Access Request To Employer For All Mon](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)

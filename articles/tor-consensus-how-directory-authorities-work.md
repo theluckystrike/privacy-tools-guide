@@ -79,7 +79,7 @@ def get_active_guards():
             '199.254.238.52:80',  # moria1
         ]
     ).run()[0]
-    
+
     guards = []
     for relay in consensus:
         if 'Guard' in relay.flags and 'Stable' in relay.flags:
@@ -89,7 +89,7 @@ def get_active_guards():
                 'or_port': relay.or_port,
                 'bandwidth': relay.bandwidth,
             })
-    
+
     return guards
 
 if __name__ == '__main__':
@@ -110,17 +110,17 @@ def verify_consensus(consensus_path):
     """Verify consensus has sufficient authority signatures."""
     with open(consensus_path, 'rb') as f:
         consensus = Consensus(f.read())
-    
+
     valid_signatures = 0
     required = 5  # Quorum threshold
-    
+
     for sig in consensus.signatures:
         if sig.is_valid:
             valid_signatures += 1
-    
+
     if valid_signatures < required:
         raise ValueError(f"Insufficient signatures: {valid_signatures}/{required}")
-    
+
     return True
 ```
 
@@ -163,8 +163,7 @@ For applications that must operate in adversarial environments, consider hardeni
 The Tor network's security model depends on having at least 5 honest authorities. As of 2026, this assumption holds—the nine authorities are operated by diverse, independent organizations. However, for high-value deployments, you should implement the signature verification steps shown above.
 
 
-
-## Related Reading
+## Related Articles
 
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
 - [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
@@ -327,4 +326,3 @@ Understanding past problems helps operators maintain integrity:
 - **2022 - Authority Availability**: Extended downtime of one authority reduced signature count. Network degraded gracefully
 
 The consensus mechanism's redundancy and cryptography have held against sustained attacks for 17+ years.
-

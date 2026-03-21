@@ -51,14 +51,14 @@ def process_turkey_removal_request(request):
     Request contains: content_id, legal_basis, deadline
     """
     content = fetch_content(request.content_id)
-    
+
     # Verify legal basis and deadline
     if verify_legal_order(request.legal_basis):
         # Soft delete - content hidden but not fully removed
         content.hidden = True
         content.removal_reason = "turkey_5651_order"
         content.save()
-        
+
         # Log for transparency reporting
         transparency_log.log_removal(
             country="TR",
@@ -283,8 +283,7 @@ Turkish content removal mechanisms illustrate principles that apply globally:
 For privacy advocates, Turkey represents both a warning and a case study. The technical mechanisms developed to enforce Turkish content removal laws continue evolving and spreading to other jurisdictions.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
 - [Android Notification Privacy: How to Hide Sensitive.](/privacy-tools-guide/android-notification-privacy-how-to-hide-sensitive-content-o/)

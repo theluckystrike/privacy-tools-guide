@@ -85,7 +85,7 @@ function getFingerprint() {
     navigator.hardwareConcurrency,
     navigator.deviceMemory
   ];
-  
+
   // Simple hash of fingerprintable attributes
   return elements.reduce((hash, el) => {
     return ((hash << 5) - hash) + el.charCodeAt(0);
@@ -165,9 +165,9 @@ For sensitive development work, consider using a hardened browser configuration:
 // Content Security Policy for development
 // Add this meta tag to your development index.html
 const cspMeta = `
-<meta http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; 
-               script-src 'self' 'unsafe-inline'; 
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               script-src 'self' 'unsafe-inline';
                connect-src 'self' localhost:*;
                frame-src 'none';">
 `;
@@ -192,10 +192,7 @@ Test your browser's privacy protection regularly using tools like Cover Your Tra
 Spend time configuring your chosen browser properly, and the setup will serve both your productivity and security needs.
 
 
-
-
-
-## Related Reading
+## Related Articles
 
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 - [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)

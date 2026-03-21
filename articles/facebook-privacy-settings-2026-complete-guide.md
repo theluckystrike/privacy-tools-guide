@@ -127,7 +127,7 @@ import requests
 def facebook_api_call(url, token, max_retries=3):
     for attempt in range(max_retries):
         response = requests.get(url, params={'access_token': token})
-        
+
         if response.status_code == 200:
             return response.json()
         elif response.status_code == 429:  # Rate limited
@@ -136,7 +136,7 @@ def facebook_api_call(url, token, max_retries=3):
             time.sleep(wait_time)
         else:
             response.raise_for_status()
-    
+
     raise Exception("Max retries exceeded")
 ```
 
@@ -181,8 +181,7 @@ FB.login(function(response) {
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Facebook Marketplace Privacy Settings Guide](/privacy-tools-guide/facebook-marketplace-privacy-settings-guide/)
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)

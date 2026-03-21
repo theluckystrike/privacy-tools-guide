@@ -78,17 +78,17 @@ The distance calculation typically uses the Haversine formula:
 ```python
 def haversine_distance(lat1, lon1, lat2, lon2):
     R = 6371  # Earth's radius in kilometers
-    
+
     lat1_rad = math.radians(lat1)
     lat2_rad = math.radians(lat2)
     delta_lat = math.radians(lat2 - lat1)
     delta_lon = math.radians(lon2 - lon1)
-    
+
     a = math.sin(delta_lat/2)**2 + \
         math.cos(lat1_rad) * math.cos(lat2_rad) * \
         math.sin(delta_lon/2)**2
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-    
+
     return R * c
 ```
 
@@ -281,8 +281,7 @@ For developers building location-based apps with better privacy:
 8. **Regional servers**: Store location data in user's jurisdiction to limit extraterritorial legal requests
 
 
-
-## Related Reading
+## Related Articles
 
 - [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [How To Prevent Someone From Tracking Your Location Through P](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)

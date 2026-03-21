@@ -246,9 +246,7 @@ Selective Tor routing serves several practical purposes:
 This setup gives you granular control over which applications receive Tor's anonymity properties while maintaining normal performance for everything else.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)

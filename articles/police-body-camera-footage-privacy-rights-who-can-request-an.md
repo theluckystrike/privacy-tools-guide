@@ -95,7 +95,7 @@ class BodyCameraRequest:
     def __init__(self, state_code):
         self.state_code = state_code
         self.rules = self._load_state_rules(state_code)
-    
+
     def _load_state_rules(self, state_code):
         # Map state codes to specific disclosure rules
         rules = {
@@ -104,7 +104,7 @@ class BodyCameraRequest:
             "FL": {"exemptions": ["medical_records", "confidential_source"], "timeline_days": 20}
         }
         return rules.get(state_code, {"exemptions": [], "timeline_days": 30})
-    
+
     def validate_request(self, request_data):
         required_fields = ["date", "location", "requester"]
         return all(field in request_data for field in required_fields)
@@ -130,7 +130,7 @@ To: [Police Department Records Unit]
 Subject: Public Records Request - Body Camera Footage
 
 I am requesting body camera footage from incident on [date] at [location].
-This request falls under California Penal Code 832.18 and SB 1421, 
+This request falls under California Penal Code 832.18 and SB 1421,
 pertaining to an incident involving [officer use of force/discharge of firearm].
 
 I request footage from all officers present at the scene during the incident.
@@ -191,8 +191,7 @@ Several practical challenges affect request outcomes:
 5. **Consider legal counsel**: Complex requests may benefit from attorney involvement
 
 
-
-## Related Reading
+## Related Articles
 
 - [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)

@@ -242,8 +242,7 @@ done
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Satellite Internet As Backup During Government](/privacy-tools-guide/how-to-set-up-satellite-internet-as-backup-during-government/)
 - [How Vpn Affects Gaming Latency Actual Measurements And.](/privacy-tools-guide/how-vpn-affects-gaming-latency-actual-measurements-and-explanation/)

@@ -100,7 +100,7 @@ def get_verification_code(jmp_username, jmp_password):
         auth=(jmp_username, jmp_password)
     )
     messages = response.json()
-    
+
     for msg in messages.get('messages', []):
         if 'Signal' in msg.get('body', ''):
             # Extract 6-digit code
@@ -108,7 +108,7 @@ def get_verification_code(jmp_username, jmp_password):
             code = re.search(r'\b\d{6}\b', msg['body'])
             if code:
                 return code.group(0)
-    
+
     return None
 ```
 
@@ -361,8 +361,7 @@ For enhanced privacy, some users cycle JMP Chat numbers periodically:
 This approach requires Signal's number change feature but provides additional operational security benefits.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Voip Phone Number Privacy Risks What Sip Providers Log About](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)

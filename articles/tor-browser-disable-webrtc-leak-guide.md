@@ -37,10 +37,10 @@ function findIP() {
   const pc = new RTCPeerConnection({
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
   });
-  
+
   pc.createDataChannel('');
   pc.createOffer().then(offer => pc.setLocalDescription(offer));
-  
+
   pc.onicecandidate = (ice) => {
     if (!ice || !ice.candidate || !ice.candidate.candidate) {
       console.log('IPs found:', ips);
@@ -359,8 +359,7 @@ If you use multiple browsers, WebRTC disabling strategies vary:
 | Brave | Protected by default | Settings → Privacy | Network inspection |
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)

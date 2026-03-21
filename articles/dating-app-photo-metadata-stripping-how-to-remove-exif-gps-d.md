@@ -106,12 +106,12 @@ import piexif
 def strip_all_metadata(image_path, output_path):
     """Remove all EXIF metadata from an image."""
     img = Image.open(image_path)
-    
+
     # Create new image without metadata
     data = list(img.getdata())
     clean_img = Image.new(img.mode, img.size)
     clean_img.putdata(data)
-    
+
     # Save without EXIF
     clean_img.save(output_path, img.format)
 
@@ -133,11 +133,11 @@ def remove_gps_only(image_path, output_path):
         with open(image_path, 'rb') as src, open(output_path, 'wb') as dst:
             dst.write(src.read())
         return
-    
+
     # Remove GPS IFD (Interchangeable Field Directory)
     if 'GPS' in exif_dict:
         del exif_dict['GPS']
-    
+
     # Save with remaining metadata
     exif_bytes = piexif.dump(exif_dict)
     piexif.insert(exif_bytes, image_path, output_path)
@@ -156,16 +156,16 @@ import piexif
 def batch_strip_metadata(directory, output_dir):
     """Process all images in a directory."""
     os.makedirs(output_dir, exist_ok=True)
-    
+
     supported_formats = ('.jpg', '.jpeg', '.png', '.tiff')
-    
+
     for filename in os.listdir(directory):
         if not filename.lower().endswith(supported_formats):
             continue
-            
+
         input_path = os.path.join(directory, filename)
         output_path = os.path.join(output_dir, f"clean_{filename}")
-        
+
         try:
             img = Image.open(input_path)
             data = list(img.getdata())
@@ -269,7 +269,7 @@ def process_image(filepath):
     data = list(img.getdata())
     clean_img = Image.new(img.mode, img.size)
     clean_img.putdata(data)
-    
+
     output_path = os.path.join(OUTPUT_DIR, os.path.basename(filepath))
     clean_img.save(output_path, img.format)
     print(f"Cleaned: {output_path}")
@@ -328,12 +328,10 @@ For developers building dating platforms:
 Stripping EXIF metadata from your dating app photos is a straightforward privacy measure that prevents unintended location sharing and device fingerprinting. Whether you use command-line tools, Python scripts, or mobile apps, making metadata removal part of your photo-sharing workflow protects your personal information on platforms you may not fully trust.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
-- [How to Remove EXIF Metadata from Photos Before Sharing: Complete Guide](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
+- [How to Remove EXIF Metadata from Photos Before Sharing](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
 - [Dating App Api Vulnerabilities How Security Researchers Have](/privacy-tools-guide/dating-app-api-vulnerabilities-how-security-researchers-have/)

@@ -189,8 +189,7 @@ fi
 Run this periodically to maintain consistent privacy posture.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)

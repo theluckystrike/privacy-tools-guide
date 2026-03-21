@@ -34,7 +34,7 @@ HTML5 Canvas allows websites to draw graphics programmatically. Different browse
 function getCanvasFingerprint() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  
+
   // Draw various elements that produce rendering differences
   ctx.textBaseline = 'top';
   ctx.font = '14px Arial';
@@ -45,10 +45,10 @@ function getCanvasFingerprint() {
   ctx.fillText('Hello World', 4, 17);
   ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
   ctx.fillText('Hello World', 7, 31);
-  
+
   // Extract the canvas data as a base64 string
   const dataURL = canvas.toDataURL();
-  
+
   // Hash the data to create a fingerprint
   let hash = 0;
   for (let i = 0; i < dataURL.length; i++) {
@@ -56,7 +56,7 @@ function getCanvasFingerprint() {
     hash = ((hash << 5) - hash) + char;
     hash = hash & hash;
   }
-  
+
   return hash.toString(16);
 }
 
@@ -73,20 +73,20 @@ WebGL provides low-level graphics capabilities that expose even more hardware in
 function getWebGLFingerprint() {
   const canvas = document.createElement('canvas');
   const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  
+
   if (!gl) {
     return 'WebGL not supported';
   }
-  
+
   const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-  
+
   if (!debugInfo) {
     return 'Debug info not available';
   }
-  
+
   const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
   const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-  
+
   return {
     vendor: vendor,
     renderer: renderer
@@ -107,33 +107,33 @@ function detectFont(fontName) {
   const baseFonts = ['monospace', 'sans-serif', 'serif'];
   const testString = 'mmmmmmmmmmlli';
   const testSize = '72px';
-  
+
   const span = document.createElement('span');
   span.style.fontSize = testSize;
   span.innerHTML = testString;
   span.style.visibility = 'hidden';
   document.body.appendChild(span);
-  
+
   // Measure with fallback font
   const baseWidths = {};
   for (const baseFont of baseFonts) {
     span.style.fontFamily = baseFont;
     baseWidths[baseFont] = span.offsetWidth;
   }
-  
+
   // Measure with target font
   span.style.fontFamily = `"${fontName}", ${baseFonts[0]}`;
   const targetWidth = span.offsetWidth;
-  
+
   document.body.removeChild(span);
-  
+
   // If width differs from fallback, font exists
   for (const baseFont of baseFonts) {
     if (targetWidth !== baseWidths[baseFont]) {
       return true;
     }
   }
-  
+
   return false;
 }
 
@@ -157,33 +157,33 @@ function getHardwareFingerprint() {
     screenHeight: screen.height,
     colorDepth: screen.colorDepth,
     pixelRatio: window.devicePixelRatio,
-    
+
     // Hardware concurrency (CPU cores)
     hardwareConcurrency: navigator.hardwareConcurrency || 'unknown',
-    
+
     // Device memory (if available)
     deviceMemory: navigator.deviceMemory || 'unknown',
-    
+
     // Platform and user agent
     platform: navigator.platform,
     userAgent: navigator.userAgent,
-    
+
     // Timezone
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     timezoneOffset: new Date().getTimezoneOffset(),
-    
+
     // Touch support
     maxTouchPoints: navigator.maxTouchPoints || 0,
     touchSupport: 'ontouchstart' in window,
-    
+
     // Language
     language: navigator.language,
     languages: navigator.languages,
-    
+
     // Do Not Track setting
     doNotTrack: navigator.doNotTrack || 'unspecified'
   };
-  
+
   return fp;
 }
 
@@ -199,17 +199,17 @@ The Web Audio API can fingerprint audio processing differences:
 ```javascript
 function getAudioFingerprint() {
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  
+
   // Create an oscillator and destination
   const oscillator = audioContext.createOscillator();
   const analyser = audioContext.createAnalyser();
   const gain = audioContext.createGain();
   const scriptProcessor = audioContext.createScriptProcessor(4096, 1, 1);
-  
+
   // Configure oscillator
   oscillator.type = 'triangle';
   oscillator.frequency.setValueAtTime(10000, audioContext.currentTime);
-  
+
   // Connect nodes
   gain.gain.setValueAtTime(0, audioContext.currentTime);
   gain.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.01);
@@ -217,7 +217,7 @@ function getAudioFingerprint() {
   gain.connect(analyser);
   analyser.connect(scriptProcessor);
   scriptProcessor.connect(audioContext.destination);
-  
+
   // Process audio and get result
   const fingerprint = scriptProcessor.onaudioprocess = function(e) {
     const data = e.inputBuffer.getChannelData(0);
@@ -227,9 +227,9 @@ function getAudioFingerprint() {
     }
     return sum;
   };
-  
+
   oscillator.start();
-  
+
   // Return hash of audio processing
   return fingerprint.toString();
 }
@@ -244,9 +244,9 @@ async function getBatteryFingerprint() {
   if (!navigator.getBattery) {
     return 'Battery API not available';
   }
-  
+
   const battery = await navigator.getBattery();
-  
+
   return {
     charging: battery.charging,
     chargingTime: battery.chargingTime,
@@ -281,12 +281,9 @@ The same APIs used for fingerprinting often have legitimate uses, so the challen
 Browser selection matters for users concerned about tracking. Some browsers actively randomize fingerprintable values, but this protection only works when enough users share similar fingerprints—the more unique a configuration, the easier it is to track regardless of browser features.
 
 
+## Related Articles
 
-
-
-## Related Reading
-
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [How to Test if Your Anti-Fingerprinting Setup Actually Works](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)
 - [Tor Circuit: How It Works and Visualization Explained](/privacy-tools-guide/tor-circuit-how-it-works-visualization-explained/)
 - [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)

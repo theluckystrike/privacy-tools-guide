@@ -81,7 +81,7 @@ const consentSchema = {
       version: '1.0'
     },
     analytics: {
-      granted: false, 
+      granted: false,
       timestamp: null,
       version: '1.0'
     },
@@ -91,11 +91,11 @@ const consentSchema = {
 
 // Checking consent before processing
 function requireConsent(userId, consentType) {
-  const consent = db.consents.findOne({ 
-    userId, 
-    [`consents.${consentType}.granted`]: true 
+  const consent = db.consents.findOne({
+    userId,
+    [`consents.${consentType}.granted`]: true
   });
-  
+
   if (!consent) {
     throw new Error(`Consent required for: ${consentType}`);
   }
@@ -126,12 +126,12 @@ class SecurePasswordHasher:
             hash_len=32,
             salt_len=16
         )
-    
+
     def hash_password(self, password: str) -> tuple[str, str]:
         """Returns (hash, salt) - salt is embedded in Argon2 output"""
         hash_output = self.hasher.hash(password)
         return hash_output, ""  # Salt embedded in hash string
-    
+
     def verify_password(self, password: str, stored_hash: str) -> bool:
         try:
             self.hasher.verify(stored_hash, password)
@@ -156,27 +156,27 @@ Your authentication system must support GDPR data subject rights. The right to e
 // Complete account deletion
 async function deleteUserAccount(userId) {
   const db = getDatabase();
-  
+
   // Start transaction for atomic deletion
   await db.transaction(async (trx) => {
     // 1. Delete authentication tokens
     await trx('refresh_tokens').where('user_id', userId).delete();
-    
+
     // 2. Delete sessions
     await trx('sessions').where('user_id', userId).delete();
-    
+
     // 3. Delete backup codes
     await trx('backup_codes').where('user_id', userId).delete();
-    
+
     // 4. Delete the user record
     await trx('users').where('id', userId).delete();
-    
+
     // 5. Anonymize any analytics data linked to this user
     await trx('analytics_events')
       .where('user_id', userId)
       .update({ user_id: null, session_id: null });
   });
-  
+
   // Send confirmation email to registered address
   await sendDeletionConfirmation(userId);
 }
@@ -201,15 +201,14 @@ auth_log = {
 }
 
 # Avoid: Excessive logging
-# DON'T log: plain email, full IP, password attempts, 
+# DON'T log: plain email, full IP, password attempts,
 # browser fingerprint, or detailed device info
 ```
 
 Hash IP addresses if you need to track repeated failed attempts across requests. Use user IDs rather than email addresses in logs to maintain pseudonymization.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
 - [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)

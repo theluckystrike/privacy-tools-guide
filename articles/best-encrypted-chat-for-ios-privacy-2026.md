@@ -55,11 +55,11 @@ Signal uses the Double Ratchet algorithm combined with the Sesame protocol for f
 // Both parties should verify safety numbers periodically
 async function verifySignalSafetyNumber(contact) {
   const safetyNumber = await contact.getSafetyNumber();
-  
+
   // Compare this number through a separate channel
   // (in-person, phone call, etc.)
   console.log('Safety Number:', safetyNumber);
-  
+
   // If numbers match, your encryption is verified
   return {
     verified: safetyNumber === contact.verifiedSafetyNumber,
@@ -219,7 +219,7 @@ If you use iMessage, these settings improve privacy:
 // iMessage privacy settings
 const improveIMessagePrivacy = {
   'Disable Read Receipts': 'reduce metadata',
-  'Disable Typing Indicators': 'reduce metadata', 
+  'Disable Typing Indicators': 'reduce metadata',
   'Filter Unknown Senders': 'reduce spam and metadata',
   'Disable iCloud Backup': 'or enable Advanced Data Protection',
   'Use Contact Key Verification': 'available on iOS 17+'
@@ -382,8 +382,7 @@ Avoid Telegram for sensitive communications unless you meticulously use Secret C
 WhatsApp's metadata collection makes it unsuitable for privacy-conscious users, despite strong message encryption.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)

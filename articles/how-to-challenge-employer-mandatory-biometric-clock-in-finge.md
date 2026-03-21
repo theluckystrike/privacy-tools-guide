@@ -112,23 +112,23 @@ Most workplace biometric systems follow this architecture:
 class BiometricClockSystem:
     def __init__(self, storage_backend):
         self.storage = storage_backend
-    
+
     def capture_biometric(self, employee_id, biometric_type):
         # Capture raw biometric (fingerprint image, face template)
         raw_data = self.sensor.capture(biometric_type)
-        
+
         # Convert to template (one-way transformation)
         template = self.converter.create_template(raw_data)
-        
+
         # Store template, NOT raw biometric
         self.storage.store(employee_id, template)
-        
+
         return template
-    
+
     def verify(self, employee_id, biometric_input):
         stored_template = self.storage.retrieve(employee_id)
         input_template = self.converter.create_template(biometric_input)
-        
+
         # Compare templates
         return self.matcher.compare(stored_template, input_template)
 ```
@@ -155,7 +155,7 @@ class SecureCardClockIn {
   constructor(secretKey) {
     this.secretKey = secretKey;
   }
-  
+
   clockIn(employeeCardId, timestamp) {
     // Create verifiable token without storing PII
     const payload = `${employeeCardId}:${timestamp}`;
@@ -163,7 +163,7 @@ class SecureCardClockIn {
       .createHmac('sha256', this.secretKey)
       .update(payload)
       .digest('hex');
-    
+
     return {
       verified: true,
       token: token.substring(0, 16), // truncated for display
@@ -201,13 +201,12 @@ While challenging employer policies, protect your own interests:
 - Consider biometric-free employment options if privacy is a priority
 
 
-
-## Related Reading
+## Related Articles
 
 - [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 - [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
 - [How To Configure Postfix With Mandatory Tls Encryption For E](/privacy-tools-guide/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

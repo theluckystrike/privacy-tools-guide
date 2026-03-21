@@ -108,7 +108,7 @@ For developers building games that legitimately need location for gameplay (AR g
 ```kotlin
 // Android: Request location only during active gameplay
 class GameLocationManager(private val fusedLocationClient: FusedLocationProviderClient) {
-    
+
     fun startGameLocationUpdates() {
         val locationRequest = LocationRequest.Builder(
             Priority.PRIORITY_HIGH_ACCURACY,
@@ -117,7 +117,7 @@ class GameLocationManager(private val fusedLocationClient: FusedLocationProvider
             setMinUpdateIntervalMillis(5000L)
             setWaitForAccurateLocation(false)
         }.build()
-        
+
         // Only start when user explicitly engages location-based feature
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper())
     }
@@ -165,8 +165,7 @@ A layered approach provides the strongest protection:
 5. **Alternative**: Use emulators or test devices with mock locations for game testing
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Factory Reset Mobile Phone Securely Before Selling En](/privacy-tools-guide/how-to-factory-reset-mobile-phone-securely-before-selling-en/)
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
@@ -369,4 +368,3 @@ class PrivacyLocationManager(context: Context) {
 ```
 
 This approach gives games the location data they need while protecting user privacy.
-

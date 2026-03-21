@@ -418,9 +418,7 @@ Extensions are convenient, but they're a massive privacy surface. Every extensio
 {% endraw %}
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)

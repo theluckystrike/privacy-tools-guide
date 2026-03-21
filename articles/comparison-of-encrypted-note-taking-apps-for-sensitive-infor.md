@@ -310,8 +310,7 @@ Before committing to a platform, assess against these criteria:
 - [ ] Long-term viability of company/project
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps/)
 - [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)

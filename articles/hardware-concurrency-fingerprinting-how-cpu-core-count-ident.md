@@ -66,7 +66,7 @@ function detectCores() {
     if (navigator.hardwareConcurrency) {
         return navigator.hardwareConcurrency;
     }
-    
+
     // Fallback: Estimate via CPU曹
     // This creates a timing attack to estimate parallelism
     const cores = estimateViaTiming();
@@ -76,11 +76,11 @@ function detectCores() {
 function estimateViaTiming() {
     const duration = 1000;
     const start = performance.now();
-    
+
     // Run parallel tasks and measure completion
     // Fewer cores = slower completion for parallel workloads
     // This is imprecise but provides an estimate
-    
+
     return Math.max(navigator.cores || 4, 4);
 }
 ```
@@ -157,13 +157,13 @@ If you're building web applications, consider whether you actually need hardware
 function getOptimalWorkerCount() {
     // Default to a safe assumption
     let cores = 2;
-    
+
     // Only use the API if privacy.resistFingerprinting is not active
-    if (navigator.hardwareConcurrency && 
+    if (navigator.hardwareConcurrency &&
         !window.isFingerprintResistant) {
         cores = Math.min(navigator.hardwareConcurrency, 4);
     }
-    
+
     // Or use a more conservative default
     return cores;
 }
@@ -183,14 +183,13 @@ To see how your browser handles this fingerprinting vector:
 The goal is making your core count appear common—typically 2-4 cores—rather than distinctive.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
-- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

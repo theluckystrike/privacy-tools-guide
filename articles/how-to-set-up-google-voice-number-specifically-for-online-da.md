@@ -96,7 +96,7 @@ Use your Google Voice number exclusively when moving conversations off the datin
 
 ```bash
 # Example text when sharing your Google Voice number:
-# "Hey! I've enjoyed our conversations. Here's my number - feel free to text me there 
+# "Hey! I've enjoyed our conversations. Here's my number - feel free to text me there
 # if you prefer. Looking forward to hearing from you!"
 ```
 
@@ -334,12 +334,11 @@ After dating ends, you can:
 - Archive the account if you don't plan to date again soon
 
 
+## Related Articles
 
-## Related Reading
-
-- [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
-- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [Set Up Google Inactive Account Manager for Automatic Data](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
 - [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
 - [Best Encrypted Voice Call App 2026](/privacy-tools-guide/best-encrypted-voice-call-app-2026/)
 

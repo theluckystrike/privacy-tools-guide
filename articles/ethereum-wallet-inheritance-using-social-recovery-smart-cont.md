@@ -74,7 +74,7 @@ contract SocialRecoveryInheritance {
     function initiateRecovery() external {
         require(!isRecovering, "Recovery already in progress");
         require(msg.sender == heir || isGuardian(msg.sender), "Not authorized");
-        
+
         isRecovering = true;
         recoveryRequestTime = block.timestamp;
         emit RecoveryInitiated(msg.sender, block.timestamp + timelockDuration);
@@ -86,7 +86,7 @@ contract SocialRecoveryInheritance {
             block.timestamp >= recoveryRequestTime + timelockDuration,
             "Timelock active"
         );
-        
+
         emit OwnershipTransferred(owner, heir);
         owner = heir;
         isRecovering = false;
@@ -144,12 +144,12 @@ Rather than replacing MetaMask or hardware wallets entirely, wrap your existing 
 contract WalletWrapper {
     IWallet public wrappedWallet;
     SocialRecoveryInheritance public inheritanceContract;
-    
+
     constructor(address _wallet, address _heir) {
         wrappedWallet = IWallet(_wallet);
         inheritanceContract = new SocialRecoveryInheritance(_heir);
     }
-    
+
     // Forward calls to wrapped wallet
     fallback() external payable {
         // Maintain original wallet functionality
@@ -221,13 +221,12 @@ Several projects implement these patterns:
 For developers, open-source implementations like `inheritance-contracts` on GitHub provide audited starting points for custom deployments.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

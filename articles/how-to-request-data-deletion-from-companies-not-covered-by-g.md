@@ -144,21 +144,21 @@ class DataDeletionRequest:
         self.company = company_config['name']
         self.contact = company_config['contact']
         self.sent_date = None
-        
+
     def generate_request_email(self, subject, body_template):
         msg = MIMEText(body_template.format(email=self.email))
         msg['Subject'] = subject
         msg['From'] = 'your-email@example.com'
         msg['To'] = self.contact
         return msg
-    
+
     def send_via_smtp(self, smtp_config):
         with smtplib.SMTP(smtp_config['host'], smtp_config['port']) as server:
             server.starttls()
             server.login(smtp_config['user'], smtp_config['pass'])
             # Send request
             self.sent_date = datetime.now()
-            
+
 # Usage
 companies = [
     {'name': 'Company A', 'contact': 'privacy@companya.com'},
@@ -275,8 +275,7 @@ I reserve all rights under applicable privacy laws and expect good-faith complia
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Request Algorithmic Transparency From Companies Makin](/privacy-tools-guide/how-to-request-algorithmic-transparency-from-companies-makin/)
 - [Ledger Data Breach Lessons How Hardware Wallet Companies Can](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)

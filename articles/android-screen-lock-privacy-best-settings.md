@@ -42,7 +42,7 @@ val biometricPrompt = BiometricPrompt(this, executor,
             super.onAuthenticationSucceeded(result)
             // Grant access to sensitive data
         }
-        
+
         override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
             super.onAuthenticationError(errorCode, errString)
             // Fall back to device credential if needed
@@ -131,8 +131,8 @@ fun isWorkProfileEnabled(context: Context): Boolean {
 fun shouldHideWorkNotifications(context: Context): Boolean {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.lockScreenApps?.any { 
-            it == devicePolicyManager.profileOwner 
+        notificationManager.lockScreenApps?.any {
+            it == devicePolicyManager.profileOwner
         } ?: false
     } else {
         true // Default to hiding on older versions
@@ -242,9 +242,7 @@ Regularly audit your lock screen configuration, particularly after Android updat
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Wireguard Android Battery Optimization Settings Without Brea](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
 - [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)

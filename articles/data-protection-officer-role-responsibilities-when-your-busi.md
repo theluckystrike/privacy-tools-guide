@@ -150,7 +150,7 @@ const escalateDataBreach = (incident) => {
   notify(dpo);
   notify(legal);
   notify(executiveTeam);
-  
+
   // Regulatory reporting within 72 hours (GDPR)
   if (incident.severity === 'high') {
     reportToAuthority(incident);
@@ -168,7 +168,7 @@ class UserData:
     def __init__(self):
         self.encrypted_fields = ['email', 'phone', 'address']
         self.retention_period = 90  # days
-        
+
     def store(self, user_id, data):
         encrypted = self.encrypt_sensitive(data)
         self.db.save(user_id, encrypted)
@@ -194,8 +194,7 @@ Without proper DPO oversight, your business risks:
 - **Operational Disruptions**: Non-compliance can halt data processing activities
 
 
-
-## Related Reading
+## Related Articles
 
 - [Data Protection Officer Role Responsibilities Guide](/privacy-tools-guide/data-protection-officer-role-responsibilities-guide/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

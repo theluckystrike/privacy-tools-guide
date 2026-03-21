@@ -243,9 +243,7 @@ The gap between "too simple" and "too enterprise" has narrowed considerably. Sma
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

@@ -135,7 +135,7 @@ When building applications that integrate with Snapchat via Kit, user privacy se
 {
   "permissions": [
     "snapchat_basic",
-    "snapchat_email", 
+    "snapchat_email",
     "snapchatFriends"
   ],
   "user_settings": {
@@ -187,8 +187,7 @@ Use this checklist to audit your Snapchat privacy configuration:
 - [ ] Checked third-party app permissions
 
 
-
-## Related Reading
+## Related Articles
 
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)

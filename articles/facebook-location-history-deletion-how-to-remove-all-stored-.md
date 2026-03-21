@@ -62,16 +62,16 @@ from pathlib import Path
 def analyze_facebook_location_data(data_dir):
     """Parse Facebook location data exports."""
     data_path = Path(data_dir)
-    
+
     locations = []
-    
+
     # Parse location history
     location_file = data_path / "location_history.json"
     if location_file.exists():
         with open(location_file) as f:
             data = json.load(f)
             locations.extend(data.get('location_history', []))
-    
+
     # Parse places
     places_file = data_path / "your_places_facebook.json"
     if places_file.exists():
@@ -83,19 +83,19 @@ def analyze_facebook_location_data(data_dir):
                     'timestamp': place.get('timestamp'),
                     'type': 'place'
                 })
-    
+
     print(f"Total location entries: {len(locations)}")
-    
+
     # Group by year
     by_year = {}
     for loc in locations:
         if 'timestamp' in loc:
             year = loc['timestamp'][:4]
             by_year[year] = by_year.get(year, 0) + 1
-    
+
     for year, count in sorted(by_year.items()):
         print(f"  {year}: {count} entries")
-    
+
     return locations
 
 # Usage: python parse_facebook_data.py /path/to/facebook-export/
@@ -150,20 +150,20 @@ import os
 def get_facebook_location_data(access_token):
     """Query location-related data via Graph API."""
     graph = facebook.GraphAPI(access_token)
-    
+
     # Get user's tagged locations
     tagged_locations = graph.get_connections(
-        'me', 
+        'me',
         'tagged_places',
         fields='place,created_at'
     )
-    
+
     # Get location settings
     location_settings = graph.get_object(
         'me',
         fields='location_services'
     )
-    
+
     return {
         'tagged_places': tagged_locations,
         'location_settings': location_settings
@@ -197,16 +197,16 @@ After deletion, verify the process completed successfully:
 def compare_location_exports(old_export, new_export):
     """Compare two Facebook location exports."""
     import json
-    
+
     with open(f"{old_export}/location_history.json") as f:
         old_data = json.load(f)
-    
+
     with open(f"{new_export}/location_history.json") as f:
         new_data = json.load(f)
-    
+
     old_count = len(old_data.get('location_history', []))
     new_count = len(new_data.get('location_history', []))
-    
+
     print(f"Before deletion: {old_count} entries")
     print(f"After deletion: {new_count} entries")
     print(f"Deleted: {old_count - new_count} entries")
@@ -223,14 +223,13 @@ Several important considerations when deleting Facebook location data:
 - **Legal requirements**: Facebook may retain data as required by law
 
 
-
-## Related Reading
+## Related Articles
 
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [How To Set Up Automatic Account Deletion Triggers If You Bec](/privacy-tools-guide/how-to-set-up-automatic-account-deletion-triggers-if-you-bec/)
+- [Secure File Deletion on SSD Drives](/privacy-tools-guide/secure-file-deletion-ssd-drives-guide/)
 - [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
-- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

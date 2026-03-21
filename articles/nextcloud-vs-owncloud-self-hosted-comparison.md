@@ -100,7 +100,7 @@ Both platforms provide desktop clients (Windows, macOS, Linux) and mobile apps (
 # Access Nextcloud files via WebDAV
 curl -u user:password "https://your-nextcloud.example.com/remote.php/dav/files/username/"
 
-# Access OwnCloud files via WebDAV  
+# Access OwnCloud files via WebDAV
 curl -u user:password "https://your-owncloud.example.com/remote.php/webdav/"
 ```
 
@@ -220,9 +220,7 @@ Test both platforms with your specific use case—file types, user count, and in
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Self Hosted Cloud Storage Comparison Nextcloud vs.](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)

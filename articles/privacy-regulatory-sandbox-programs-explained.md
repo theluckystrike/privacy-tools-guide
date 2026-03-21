@@ -60,14 +60,14 @@ class SandboxDataFlow:
         self.purpose = purpose
         self.retention_period = retention_period
         self.safeguards = []
-    
+
     def add_safeguard(self, safeguard_type, implementation):
         self.safeguards.append({
             'type': safeguard_type,
             'implementation': implementation,
             'verified': False
         })
-    
+
     def generate_documentation(self):
         return {
             'data_categories': self.data_categories,
@@ -217,9 +217,7 @@ Privacy regulatory sandbox programs continue expanding as regulators seek balanc
 {% endraw %}
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 - [Privacy Seal Certification Programs Comparison](/privacy-tools-guide/privacy-seal-certification-programs-comparison/)

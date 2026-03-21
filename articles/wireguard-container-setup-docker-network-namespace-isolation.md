@@ -202,8 +202,7 @@ Running WireGuard in Docker adds security layers but requires attention to a few
 For production deployments, consider implementing key rotation and using hardware security modules for key storage. Container logs can reveal sensitive information—ensure log aggregation systems handle this data appropriately.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)

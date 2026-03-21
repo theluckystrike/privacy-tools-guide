@@ -65,10 +65,10 @@ const https = require('https');
 
 async function getAccountStatus(username) {
   const cleanUsername = username.replace('@', '');
-  
+
   // Using Twitter API v2 - requires bearer token
   const bearerToken = process.env.TWITTER_BEARER_TOKEN;
-  
+
   const options = {
     hostname: 'api.twitter.com',
     path: `/2/users/by/username/${cleanUsername}`,
@@ -137,22 +137,22 @@ class TwitterArchiver:
             "Authorization": f"Bearer {bearer_token}",
             "Content-Type": "application/json"
         }
-    
+
     def archive_user_tweets(self, username, max_results=500):
         """Archive tweets from a user's timeline"""
         all_tweets = []
-        
+
         # Get user ID first
         user_response = requests.get(
             f"https://api.twitter.com/2/users/by/username/{username}",
             headers=self.headers
         )
-        
+
         if user_response.status_code != 200:
             raise Exception(f"User not found: {user_response.text}")
-        
+
         user_id = user_response.json()['data']['id']
-        
+
         # Fetch tweets with pagination
         next_token = None
         while len(all_tweets) < max_results:
@@ -162,37 +162,37 @@ class TwitterArchiver:
                 'tweet.fields': 'created_at,public_metrics,source',
                 'sort_order': 'reverse_chronological'
             }
-            
+
             if next_token:
                 params['next_token'] = next_token
-            
+
             response = requests.get(
                 self.base_url,
                 params=params,
                 headers=self.headers
             )
-            
+
             if response.status_code != 200:
                 raise Exception(f"API error: {response.text}")
-            
+
             data = response.json()
             if 'data' in data:
                 all_tweets.extend(data['data'])
-            
+
             if 'next_token' in data.get('meta', {}):
                 next_token = data['meta']['next_token']
             else:
                 break
-            
+
             # Respect rate limits
             time.sleep(1)
-        
+
         return all_tweets
-    
+
     def save_archive(self, username, tweets):
         """Save tweets to a JSON file"""
         filename = f"twitter_archive_{username}_{datetime.now().strftime('%Y%m%d')}.json"
-        
+
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump({
                 'username': username,
@@ -200,7 +200,7 @@ class TwitterArchiver:
                 'tweet_count': len(tweets),
                 'tweets': tweets
             }, f, indent=2, ensure_ascii=False)
-        
+
         return filename
 ```
 
@@ -216,7 +216,7 @@ class DeceasedAccountTracker {
   constructor() {
     this.requests = new Map();
   }
-  
+
   addRequest(accountHandle, requestType, submittedDate, status = 'pending') {
     this.requests.set(accountHandle, {
       handle: accountHandle,
@@ -227,7 +227,7 @@ class DeceasedAccountTracker {
       notes: []
     });
   }
-  
+
   updateStatus(accountHandle, status) {
     if (this.requests.has(accountHandle)) {
       const request = this.requests.get(accountHandle);
@@ -235,7 +235,7 @@ class DeceasedAccountTracker {
       request.lastUpdated = new Date().toISOString();
     }
   }
-  
+
   addNote(accountHandle, note) {
     if (this.requests.has(accountHandle)) {
       this.requests.get(accountHandle).notes.push({
@@ -244,7 +244,7 @@ class DeceasedAccountTracker {
       });
     }
   }
-  
+
   getReport() {
     const report = [];
     for (const [handle, data] of this.requests) {
@@ -284,14 +284,13 @@ For developers building digital estate tools, consider integrating with multiple
 Each platform has its own policies and timelines. Building an unified tracking system helps manage multiple requests across services.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Instagram Memorialization Request Process What Happens To Ph](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
-- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
 - [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 - [Mastodon vs Twitter: Privacy Comparison 2026](/privacy-tools-guide/mastodon-vs-twitter-privacy-comparison-2026/)
-- [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
+- [Password Manager Death Plan](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
+- [Smart Device Deregistration After Death How To Remove Deceas](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

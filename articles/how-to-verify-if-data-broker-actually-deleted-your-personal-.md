@@ -72,12 +72,12 @@ import os
 def verify_deletion(base_url, search_params, expected_missing=True):
     """
     Verify if data has been removed from a broker's database.
-    
+
     Args:
         base_url: The search URL for the data broker
         search_params: Dict of search parameters (name, address, etc.)
         expected_missing: True if we expect data to NOT be found
-    
+
     Returns:
         dict: Status and timestamp
     """
@@ -85,11 +85,11 @@ def verify_deletion(base_url, search_params, expected_missing=True):
     session.headers.update({
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     })
-    
+
     try:
         response = session.get(base_url, params=search_params, timeout=10)
         soup = BeautifulSoup(response.text, 'html.parser')
-        
+
         # Check for common "no results" indicators
         no_results_indicators = [
             'no results found',
@@ -97,16 +97,16 @@ def verify_deletion(base_url, search_params, expected_missing=True):
             'no records match',
             'no match found'
         ]
-        
+
         page_text = soup.get_text().lower()
         found_data = not any(indicator in page_text for indicator in no_results_indicators)
-        
+
         return {
             'status': 'deleted' if not found_data else 'still_present',
             'timestamp': time.time(),
             'url_checked': response.url
         }
-        
+
     except Exception as e:
         return {
             'status': 'error',
@@ -135,17 +135,17 @@ def check_email_breaches(email):
     """Check if email appears in known data breaches."""
     sha1_hash = hashlib.sha1(email.encode('utf-8')).hexdigest().upper()
     prefix, suffix = sha1_hash[:5], sha1_hash[5:]
-    
+
     response = requests.get(
         f"https://api.pwnedpasswords.com/range/{prefix}",
         headers={"Add-Padding": "true"}
     )
-    
+
     hashes = (line.split(':') for line in response.text.splitlines())
     for h, count in hashes:
         if h == suffix:
             return {"breached": True, "count": int(count)}
-    
+
     return {"breached": False, "count": 0}
 ```
 
@@ -229,12 +229,11 @@ Your data may reappear due to:
 Set up recurring checks monthly to catch re-appearance.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [Verify Your VPN Is Actually Bypassing Censorship (Not Leaking Your Real Locat...](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
+- [Verify Your VPN Is Actually Bypassing Censorship (Not](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 

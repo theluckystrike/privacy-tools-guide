@@ -363,8 +363,7 @@ Best practices for implementation:
 6. **Test recovery** — Periodically verify you can access encrypted files
 
 
-
-## Related Reading
+## Related Articles
 
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

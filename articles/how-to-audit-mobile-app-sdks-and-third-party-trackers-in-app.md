@@ -183,10 +183,10 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        
+
         // Analytics initialization
         FirebaseAnalytics.getInstance(this);
-        
+
         // Attribution SDK
         AdjustConfig config = new AdjustConfig(this, "APP_TOKEN", AdjustEnvironment.SANDBOX);
         Adjust.onCreate(config);
@@ -212,10 +212,10 @@ iOS apps initialize SDKs in the App Delegate:
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Configure analytics
     Analytics.configure(with: configuration)
-    
+
     // Initialize attribution
     Adjust.appDidLaunch(adjustConfig)
-    
+
     return true
 }
 ```
@@ -267,10 +267,7 @@ The methods in this guide apply to both iOS and Android, though specific tools d
 Regular auditing of mobile apps reveals the constantly evolving tracking ecosystem. New SDKs emerge, and existing ones change their behavior. Staying current requires ongoing analysis, but the fundamentals—examining binaries, monitoring networks, and reviewing code—remain consistent.
 
 
-
-
-
-## Related Reading
+## Related Articles
 
 - [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
 - [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)

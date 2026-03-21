@@ -301,9 +301,7 @@ Track these as pull requests with legal review before deployment, maintaining ve
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Privacy Policy Generator Tools Comparison: A Developer Guide](/privacy-tools-guide/privacy-policy-generator-tools-comparison/)
 - [Privacy Policy Generator Tools Review Which Ones Produce Leg](/privacy-tools-guide/privacy-policy-generator-tools-review-which-ones-produce-leg/)

@@ -234,8 +234,7 @@ save
 The master signing key stays in cold storage; the encryption subkey goes on your device.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)

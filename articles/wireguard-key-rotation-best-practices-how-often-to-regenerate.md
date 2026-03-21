@@ -145,7 +145,7 @@ def rotate_wireguard_keys(config_path, peer_public_key):
 
  # Generate new key pair
  private_key = subprocess.check_output(['wg', 'genkey']).decode().strip()
- public_key = subprocess.check_output(['wg', 'pubkey'], 
+ public_key = subprocess.check_output(['wg', 'pubkey'],
  input=private_key.encode()).decode().strip()
 
  # Backup current config
@@ -191,8 +191,7 @@ sudo wg show wg0 dump
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Password Rotation Policy Best Practices 2026](/privacy-tools-guide/password-rotation-policy-best-practices-2026/)
 - [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)

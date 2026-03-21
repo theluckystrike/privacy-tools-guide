@@ -190,7 +190,7 @@ class AnonymousPurchase:
         self.payment = payment_method
         self.shipping = shipping_address
         self.email = email
-    
+
     def generate_checkout_payload(self, item_url: str) -> dict:
         """Generate minimal checkout data"""
         return {
@@ -205,7 +205,7 @@ class AnonymousPurchase:
             "payment_method_id": self.payment["token"],
             "item_url": item_url
         }
-    
+
     def check_ip_status(self) -> dict:
         """Verify network anonymity before purchase"""
         result = subprocess.run(
@@ -227,14 +227,13 @@ True anonymity online faces practical and legal constraints:
 Balance privacy needs against these constraints based on your specific situation and threat model.
 
 
+## Related Articles
 
-## Related Reading
-
-- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
+- [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
-- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
+- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

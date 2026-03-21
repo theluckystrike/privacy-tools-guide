@@ -47,14 +47,14 @@ def get_netflix_session_history(email, password):
     Note: This uses unofficial methods and may violate ToS.
     """
     session = requests.Session()
-    
+
     # Netflix uses various endpoints for activity
     # This is a simplified example showing the concept
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         'Accept': 'application/json, text/javascript, */*; q=0.01'
     }
-    
+
     # In practice, you'd need to handle authentication
     # This requires Netflix's internal API endpoints
     print("Direct API access requires authentication token")
@@ -66,10 +66,10 @@ def analyze_activity_for_anomalies(activities):
     """
     suspicious = []
     user_hours = set(range(7, 23))  # Typical awake hours
-    
+
     for activity in activities:
         watch_hour = activity['timestamp'].hour
-        
+
         # Flag if watched during typical sleep hours
         if watch_hour not in user_hours:
             suspicious.append({
@@ -77,7 +77,7 @@ def analyze_activity_for_anomalies(activities):
                 'time': activity['timestamp'],
                 'reason': 'Unusual viewing hour'
             })
-    
+
     return suspicious
 ```
 
@@ -171,9 +171,7 @@ Preventing unauthorized access requires more than just a strong Netflix password
 Consider limiting account sharing by creating individual profiles if family members have different viewing preferences. While this does not prevent password sharing, it makes unauthorized use more visible through the viewing activity feature.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Check If Someone Is Using Your Netflix Without Permission](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permission/)
 - [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)

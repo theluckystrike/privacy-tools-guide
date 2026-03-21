@@ -310,8 +310,7 @@ Different regulations impose different requirements:
 For any use case handling regulated data, consult a privacy attorney before involving third-party AI services.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)

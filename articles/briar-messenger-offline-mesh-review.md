@@ -280,11 +280,10 @@ The Briar project continues evolving. Features under consideration or in develop
 Participating in Briar development or testing new features helps strengthen the project. The community welcomes bug reports and feature requests through their official channels.
 
 
+## Related Articles
 
-## Related Reading
-
-- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
+- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [Session Messenger Review 2026: Technical Analysis](/privacy-tools-guide/session-messenger-review-2026/)

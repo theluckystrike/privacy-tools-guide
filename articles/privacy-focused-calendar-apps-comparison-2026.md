@@ -559,8 +559,7 @@ All services should use HTTPS/TLS (check for padlock icon). Self-hosted requires
 ---
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps/)
 - [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)

@@ -32,12 +32,12 @@ async function testWebRTCLeak() {
   const pc = new RTCPeerConnection({
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
   });
-  
+
   pc.createDataChannel('');
-  
+
   const offer = await pc.createOffer();
   await pc.setLocalDescription(offer);
-  
+
   return new Promise((resolve) => {
     pc.onicecandidate = (event) => {
       if (event.candidate) {
@@ -93,7 +93,7 @@ Create a test to see if your canvas is readable:
 function getCanvasFingerprint() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  
+
   // Draw various elements that affect the fingerprint
   ctx.textBaseline = 'top';
   ctx.font = '14px Arial';
@@ -103,7 +103,7 @@ function getCanvasFingerprint() {
   ctx.fillText('Privacy Test', 2, 15);
   ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
   ctx.fillText('Privacy Test', 4, 17);
-  
+
   return canvas.toDataURL();
 }
 
@@ -122,11 +122,11 @@ Similar to canvas fingerprinting, WebGL can expose your GPU renderer and vendor 
 function getWebGLInfo() {
   const canvas = document.createElement('canvas');
   const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  
+
   if (!gl) return 'WebGL not supported';
-  
+
   const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-  
+
   return {
     vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL),
     renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL),
@@ -149,7 +149,7 @@ Your browser's user agent string and navigator properties reveal significant inf
 ```javascript
 function auditNavigator() {
   const nav = navigator;
-  
+
   return {
     userAgent: nav.userAgent,
     platform: nav.platform,
@@ -178,10 +178,10 @@ Verify that websites cannot access cookies and storage from other domains:
 function testStorageIsolation() {
   // Set a test cookie on current domain
   document.cookie = 'test_cookie=isolation_check; path=/; SameSite=Strict';
-  
+
   // Check if we can read it back
   const canRead = document.cookie.includes('test_cookie');
-  
+
   // Test localStorage
   try {
     localStorage.setItem('test_item', 'value');
@@ -190,7 +190,7 @@ function testStorageIsolation() {
   } catch (e) {
     const localRead = false;
   }
-  
+
   return { cookieAccess: canRead, localStorageAccess: localRead };
 }
 
@@ -224,10 +224,10 @@ async function auditBrowserPrivacy(url) {
     headless: true,
     args: ['--disable-web-security']
   });
-  
+
   const page = await browser.newPage();
   await page.goto(url);
-  
+
   // Inject and run all tests
   const results = await page.evaluate(() => {
     return {
@@ -236,7 +236,7 @@ async function auditBrowserPrivacy(url) {
       // Add other test results here
     };
   });
-  
+
   await browser.close();
   return results;
 }
@@ -249,14 +249,13 @@ auditBrowserPrivacy('https://example.com')
 Run this script periodically to track changes in your browser's privacy posture.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [Verify Your VPN Is Actually Bypassing Censorship (Not Leaking Your Real Locat...](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
 - [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
+- [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

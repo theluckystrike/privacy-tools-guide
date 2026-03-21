@@ -15,7 +15,6 @@ tags: [privacy-tools-guide, vpn]
 ---
 
 
-
 {% raw %}
 
 When you connect to a VPN, you expect all your internet traffic to be encrypted and protected from eavesdropping. But how can you actually verify that the encryption is working? The standard tool for network packet analysis, tcpdump, lets you inspect network traffic directly and confirm that your VPN tunnel is properly encrypting your data. This guide walks through practical tcpdump commands and techniques to verify VPN encryption is active and functioning correctly.
@@ -275,8 +274,7 @@ When analyzing VPN encryption:
 5. **Check both directions** — capture both incoming and outgoing
 
 
-
-## Related Reading
+## Related Articles
 
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
@@ -285,4 +283,7 @@ When analyzing VPN encryption:
 - [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
 
 Built by theluckystrike — More at https://zovo.one
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

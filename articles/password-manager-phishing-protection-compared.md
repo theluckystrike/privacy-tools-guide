@@ -36,7 +36,7 @@ You can verify Bitwarden's domain protection by examining autofill behavior:
 function checkDomainMatch(storedUrl, currentUrl) {
   const stored = new URL(storedUrl);
   const current = new URL(currentUrl);
-  
+
   // Exact match required by default
   return stored.hostname === current.hostname;
 }
@@ -349,8 +349,7 @@ For developers and power users, consider these implementation strategies:
 | Zero-knowledge verified | Yes | Yes (claimed) | Partial | No | Yes |
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)

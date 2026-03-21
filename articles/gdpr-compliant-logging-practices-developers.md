@@ -89,17 +89,17 @@ When legitimate interest or consent forms your legal basis for processing, your 
 class ConsentAwareLogger:
     def __init__(self, consent_service):
         self.consent = consent_service
-    
+
     def log(self, event_type, user_id, data):
         user_consents = self.consent.get_consents(user_id)
-        
+
         if not user_consents.get('analytics_consent'):
             # Log without user correlation
             data = self._remove_identifiers(data)
-        
+
         # Always log the event, but handle correlation appropriately
         logger.info(event_type, extra=data)
-    
+
     def _remove_identifiers(self, data):
         sanitized = data.copy()
         sanitized.pop('user_id', None)
@@ -135,13 +135,13 @@ from datetime import datetime, timedelta
 
 def cleanup_old_logs(retention_days=30):
     cutoff = datetime.now() - timedelta(days=retention_days)
-    
+
     # Delete logs older than cutoff
     deleted_count = LogEntry.delete().where(
         LogEntry.timestamp < cutoff,
         LogEntry.contains_pii == True  # Prioritize PII deletion
     )
-    
+
     return deleted_count
 ```
 
@@ -159,7 +159,7 @@ class SecureLogHandler(logging.Handler):
     def __init__(self, encryption_key):
         super().__init__()
         self.cipher = Fernet(encryption_key)
-    
+
     def emit(self, record):
         if hasattr(record, 'sensitive_data'):
             record.sensitive_data = self.cipher.encrypt(
@@ -176,24 +176,24 @@ When a user requests access or deletion, your logs must be searchable and modifi
 class DataSubjectRequestHandler:
     def find_user_data(self, email):
         user = UserService.find_by_email(email)
-        
+
         # Search all data stores including logs
         results = {
             'database': self.search_database(user.id),
             'logs': self.search_logs(user.id),
             'backups': self.search_backups(user.id)
         }
-        
+
         return self.compile_response(results)
-    
+
     def delete_user_data(self, email):
         user = UserService.find_by_email(email)
-        
+
         # Delete from all systems
         self.delete_from_database(user.id)
         self.delete_from_logs(user.id)
         self.schedule_backup_deletion(user.id)
-        
+
         # Invalidate the pseudonymization mapping
         self.invalidate_pseudonym(user.id)
 ```
@@ -203,9 +203,7 @@ GDPR-compliant logging starts with intentional, privacy-aware design rather than
 The effort pays dividends beyond compliance — cleaner logs are easier to search, cheaper to store, and less risky to maintain.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)

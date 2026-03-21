@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and Core Stack"
+title: "Set Up Secure Communication for Labor Strike Organizing"
 description: "A practical guide for developers and power users setting up secure communication infrastructure for labor strike organizing. Covers encrypted"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -179,8 +179,7 @@ Establish recovery procedures before operational need:
 4. **All**: Designate trusted contacts for emergency access
 
 
-
-## Related Reading
+## Related Articles
 
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)

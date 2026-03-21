@@ -213,19 +213,19 @@ def scan_device():
     print("Scanning device for stalkerware indicators...")
     packages = get_third_party_packages()
     findings = []
-    
+
     for pkg in packages:
         perms = check_permissions(pkg)
         if len(perms) > 2:
             findings.append({"package": pkg, "permissions": perms})
-    
+
     if findings:
         print(f"Found {len(findings)} suspicious applications:")
         for f in findings:
             print(f"  - {f['package']}: {', '.join(f['permissions'])}")
     else:
         print("No suspicious applications detected.")
-    
+
     return findings
 
 if __name__ == "__main__":
@@ -235,8 +235,7 @@ if __name__ == "__main__":
 Run this script periodically to audit devices for suspicious permission patterns.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Detect and Remove Stalkerware From Your iPhone and iPad](/privacy-tools-guide/how-to-detect-remove-stalkerware-ios-iphone/)
 - [How to Detect Stalkerware on Your Phone 2026](/privacy-tools-guide/how-to-detect-stalkerware-on-your-phone-2026/)

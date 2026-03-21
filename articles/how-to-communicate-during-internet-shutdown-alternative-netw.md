@@ -92,7 +92,7 @@ class OfflineMessageServer:
     def __init__(self, port=45678):
         self.port = port
         self.messages = []
-    
+
     def broadcast(self, message, username):
         msg_data = {
             "user": username,
@@ -100,20 +100,20 @@ class OfflineMessageServer:
             "timestamp": datetime.now().isoformat()
         }
         self.messages.append(msg_data)
-        
+
         # Relay to all connected peers
         for client in self.connected_clients:
             try:
                 client.send(json.dumps(msg_data).encode())
             except:
                 pass
-    
+
     def start(self):
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         server.bind(('0.0.0.0', self.port))
         server.listen(5)
-        
+
         while True:
             client, addr = server.accept()
             self.handle_client(client)
@@ -183,31 +183,31 @@ import serial
 class IridiumSBD:
     def __init__(self, port='/dev/ttyUSB0'):
         self.serial = serial.Serial(port, 19200, timeout=10)
-    
+
     def send_message(self, message):
         # Enter AT command mode
         self.serial.write(b"AT\r")
         self._wait_ok()
-        
+
         # Set SBD session parameters
         self.serial.write(b'AT+SBDD0\r')  # Clear buffer
         self._wait_ok()
-        
+
         # Write message to buffer (340 bytes max)
         self.serial.write(f'AT+SBDWB={len(message)}\r'.encode())
         self._wait_ok()
         self.serial.write(message.encode())
         self._wait_ok()
-        
+
         # Initiate SBD session
         self.serial.write(b'AT+SBDI\r')
         response = self._read_response()
         return "SBDIX OK" in response
-    
+
     def _wait_ok(self):
         while not self.serial.readline().strip().endswith(b"OK"):
             pass
-    
+
     def _read_response(self):
         return self.serial.readall().decode()
 
@@ -230,8 +230,7 @@ For developers responsible maintaining communication capabilities, implement def
 Test these systems regularly. An untested solution fails when needed most.
 
 
-
-## Related Reading
+## Related Articles
 
 - [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)

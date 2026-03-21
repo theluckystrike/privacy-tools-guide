@@ -41,17 +41,17 @@ import io
 def check_image_leak(image_path, api_key):
     """Check if an image appears elsewhere on the web"""
     client = vision.ImageAnnotatorClient()
-    
+
     with io.open(image_path, 'rb') as f:
         image = types.Image(content=f.read())
-    
+
     web_detection = client.web_detection(image=image).web_detection
-    
+
     if web_detection.fully_matching_images:
         print("Potential matches found:")
         for match in web_detection.fully_matching_images:
             print(f"  - {match.url}")
-    
+
     return web_detection.fully_matching_images
 ```
 
@@ -67,12 +67,12 @@ import requests
 def check_tineye(image_path, api_key):
     """Check image against TinEye's index"""
     url = "https://api.tineye.com/rest/"
-    
+
     with open(image_path, 'rb') as image:
         files = {'image': image}
         params = {'api_key': api_key}
         response = requests.post(url, files=files, data=params)
-    
+
     return response.json()
 ```
 
@@ -92,9 +92,9 @@ def check_email_breaches(email):
         "User-Agent": "PrivacyToolsGuide",
         "hibp-api-key": "your-api-key"  # Required for API v3
     }
-    
+
     response = requests.get(url, headers=headers)
-    
+
     if response.status_code == 200:
         breaches = response.json()
         return [b['Name'] for b in breaches]
@@ -116,7 +116,7 @@ def monitor_images():
     """Check stored images periodically"""
     image_dir = Path("./private_images")
     api_key = "your-google-vision-api-key"
-    
+
     for image_path in image_dir.glob("*.jpg"):
         matches = check_image_leak(str(image_path), api_key)
         if matches:
@@ -160,7 +160,7 @@ def extract_identifying_metadata(image_path):
     """Extract unique metadata from photo"""
     image = Image.open(image_path)
     exif_data = image._getexif()
-    
+
     if exif_data:
         for tag_id, value in exif_data.items():
             tag = TAGS.get(tag_id, tag_id)
@@ -208,9 +208,7 @@ For professional-grade protection, consider commercial services that specialize 
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Check If Your Social Security Number Was Leaked Onlin](/privacy-tools-guide/how-to-check-if-your-social-security-number-was-leaked-onlin/)
 - [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)

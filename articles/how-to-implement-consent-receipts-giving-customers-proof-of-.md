@@ -60,7 +60,7 @@ class ConsentReceipt:
     user_agent: str
     purpose: str
     data_controller: str
-    
+
     def to_json(self):
         return json.dumps({
             "receipt_id": self.receipt_id,
@@ -73,7 +73,7 @@ class ConsentReceipt:
             "data_controller": self.data_controller,
             "verification_hash": self.generate_hash()
         }, indent=2)
-    
+
     def generate_hash(self):
         data = f"{self.receipt_id}{self.user_id}{self.timestamp.isoformat()}"
         return hashlib.sha256(data.encode()).hexdigest()[:16]
@@ -128,12 +128,12 @@ app = Flask(__name__)
 @app.route('/api/consent', methods=['POST'])
 def update_consent():
     data = request.get_json()
-    
+
     # Validate required fields
     required = ['user_id', 'consents', 'privacy_version']
     if not all(k in data for k in required):
         return jsonify({"error": "Missing required fields"}), 400
-    
+
     receipts = []
     for consent_type, granted in data['consents'].items():
         receipt = ConsentReceipt(
@@ -148,10 +148,10 @@ def update_consent():
             purpose=get_purpose_for_consent(consent_type),
             data_controller="Your Company Name"
         )
-        
+
         save_receipt(receipt)
         receipts.append(receipt.to_json())
-    
+
     return jsonify({
         "status": "success",
         "receipts": receipts
@@ -180,10 +180,10 @@ def get_consent_history():
     user_id = request.headers.get('X-User-Id')
     if not user_id:
         return jsonify({"error": "Authentication required"}), 401
-    
+
     user_hash = hash_user_id(user_id)
     receipts = fetch_receipts_by_hash(user_hash)
-    
+
     return jsonify({
         "user_consents": receipts,
         "last_updated": max(r['timestamp'] for r in receipts) if receipts else None
@@ -199,12 +199,12 @@ For audit purposes or regulatory requests, you need to verify a receipt's authen
 ```python
 def verify_receipt(receipt_json: dict) -> bool:
     stored_hash = receipt_json.get('verification_hash')
-    
+
     # Recalculate hash
     expected_hash = hashlib.sha256(
         f"{receipt_json['receipt_id']}{receipt_json['user_id']}{receipt_json['timestamp']}".encode()
     ).hexdigest()[:16]
-    
+
     return stored_hash == expected_hash
 ```
 
@@ -223,10 +223,9 @@ Third, handle cross-border transfers. If your data processing involves internati
 Fourth, prepare for data subject requests. Your consent receipt system should integrate with your response to GDPR access requests or CCPA consumer rights requests. The ability to export a user's full consent history in a standard format is essential.
 
 
+## Related Articles
 
-## Related Reading
-
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Zero Knowledge Proof Messaging How Future Protocols Will Pro](/privacy-tools-guide/zero-knowledge-proof-messaging-how-future-protocols-will-pro/)
 - [How To Build Privacy Dashboard For Customers To Manage Their](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
 - [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)

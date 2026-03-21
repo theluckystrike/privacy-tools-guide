@@ -298,8 +298,7 @@ PGP encryption provides strong security guarantees but at usability cost:
 For organizations, consider whether PGP is necessary or if simpler transport encryption (TLS) plus authentication might suffice.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)

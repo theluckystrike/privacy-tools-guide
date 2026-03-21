@@ -36,7 +36,7 @@ Check the current status in Firefox:
 
 ```javascript
 // Check if first-party isolation is enabled
-console.log("First-party isolation:", 
+console.log("First-party isolation:",
   Services.prefs.getBoolPref("privacy.firstparty.isolate"));
 ```
 
@@ -182,16 +182,16 @@ Test your browser's isolation with practical examples:
 // Create a test script that simulates cross-site tracking
 function testCookieIsolation() {
   const testDomain = 'example-tracker.test';
-  
+
   // Simulate setting cookie on site A
   document.cookie = `tracking_id=abc123; domain=${testDomain}`;
-  
+
   // Visit site B and check if same tracking ID persists
   // With proper isolation, this should fail
   const cookies = document.cookie.split(';')
     .map(c => c.trim())
     .filter(c => c.startsWith('tracking_id='));
-  
+
   return {
     isolated: cookies.length === 0,
     cookieString: document.cookie
@@ -206,15 +206,13 @@ First-party isolation represents a fundamental shift in how browsers handle web 
 For developers, understanding these isolation mechanisms is essential for building privacy-respecting applications and debugging issues that arise as browsers continue to strengthen their privacy defaults.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)
 - [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 - [Browser Storage Isolation Explained Privacy](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 - [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

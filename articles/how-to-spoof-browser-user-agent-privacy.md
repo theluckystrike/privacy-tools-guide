@@ -416,14 +416,13 @@ For organizational deployments:
 4. Don't spoof User-Agent on internal systems (breaks authentication)
 
 
-
-## Related Reading
+## Related Articles
 
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Real Estate Agent Client Data Protection Privacy Best Practi](/privacy-tools-guide/real-estate-agent-client-data-protection-privacy-best-practi/)
 - [Password Manager For Insurance Agent Managing Carrier Portal](/privacy-tools-guide/password-manager-for-insurance-agent-managing-carrier-portal/)
 - [Password Manager For Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)
-- [Password Manager for Travel Agent Managing Booking Platform Passwords](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
+- [Password Manager for Travel Agent Managing Booking Platform](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

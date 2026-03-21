@@ -62,7 +62,7 @@ func fetchContactPoster(for identifier: String) -> (name: String, hasPoster: Boo
         CNContactFamilyNameKey as CNKeyDescriptor,
         CNContactImageDataAvailableKey as CNKeyDescriptor
     ]
-    
+
     do {
         let contact = try store.unifiedContact(withIdentifier: identifier, keysToFetch: keysToFetch)
         let fullName = [contact.givenName, contact.familyName].joined(separator: " ")
@@ -271,9 +271,7 @@ echo ""
 Regularly review your poster settings, especially after iOS updates that may introduce new sharing options or modify default behaviors. After major iOS updates (e.g., iOS 17, iOS 18), check your poster settings to ensure new features align with your privacy preferences.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
 - [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)

@@ -180,8 +180,7 @@ Before going live with DMARC enforcement:
 This systematic approach minimizes the risk of legitimate mail being blocked during the enforcement phase.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
 - [Baby Monitor Security And Privacy How To Prevent.](/privacy-tools-guide/baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/)

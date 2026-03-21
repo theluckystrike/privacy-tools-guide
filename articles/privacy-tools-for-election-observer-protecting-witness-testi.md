@@ -228,16 +228,16 @@ class SecureTestimonyStore:
     def __init__(self, password: str):
         key = hashlib.sha256(password.encode()).digest()
         self.cipher = Fernet(key)
-    
+
     def store(self, witness_id: str, testimony: str) -> str:
         data = json.dumps({
             "witness": witness_id,
             "content": testimony
         }).encode()
-        
+
         encrypted = self.cipher.encrypt(data)
         return encrypted.hex()
-    
+
     def retrieve(self, encrypted_hex: str) -> dict:
         encrypted = bytes.fromhex(encrypted_hex)
         data = self.cipher.decrypt(encrypted)
@@ -247,8 +247,7 @@ class SecureTestimonyStore:
 This provides application-level encryption independent of disk encryption.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
 - [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)

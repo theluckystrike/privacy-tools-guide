@@ -52,10 +52,10 @@ const privacyMiddleware = (req, res, next) => {
   res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  
+
   // Clear tracking headers
   res.removeHeader('X-Powered-By');
-  
+
   next();
 };
 
@@ -76,14 +76,14 @@ Base = declarative_base()
 
 class User(Base):
     __tablename__ = 'users'
-    
+
     id = Column(String(36), primary_key=True)  # UUID, not sequential
     # Store only what's absolutely necessary
     email_hash = Column(String(64), nullable=True)  # Hashed, not plaintext
     created_at = Column(DateTime, default=datetime.utcnow)
     # Explicit consent tracking
     analytics_consent = Column(String(16), default='denied')
-    
+
     # Never store: full name, phone, address unless explicitly needed
 ```
 
@@ -102,7 +102,7 @@ class PrivacyAnalytics {
   trackEvent(category, action) {
     const key = `${category}:${action}`;
     this.aggregateData.set(key, (this.aggregateData.get(key) || 0) + 1);
-    
+
     // No user IDs, no IP addresses, no cookies
     // Only counts, not individuals
   }
@@ -131,19 +131,19 @@ from datetime import datetime, timedelta
 class SecureUserData:
     def __init__(self, encryption_key):
         self.cipher = Fernet(encryption_key)
-    
+
     def encrypt_data(self, data: str) -> bytes:
         """Encrypt before storage"""
         return self.cipher.encrypt(data.encode())
-    
+
     def decrypt_data(self, encrypted_data: bytes) -> str:
         """Decrypt only when needed"""
         return self.cipher.decrypt(encrypted_data).decode()
-    
+
     def hash_for_index(self, data: str) -> str:
         """Create searchable hash without exposing plaintext"""
         return hashlib.sha256(data.encode()).hexdigest()[:16]
-    
+
     def process_with_ttl(self, data: str, ttl_hours: int) -> dict:
         """Auto-expiring data processing"""
         return {
@@ -167,12 +167,12 @@ privacy_manifest:
       data_types: ["page_views", "feature_usage"]
       retention: "90_days"
       anonymized: true
-  
+
   third_party:
     - name: "Payment Processor"
       data_shared: ["payment_status"]
       privacy_policy: "https://example.com/payment-privacy"
-  
+
   user_controls:
     - "Download all data"
     - "Delete account and data"
@@ -212,18 +212,18 @@ class PrivacyControlPanel {
   // Complete data deletion with verification
   deleteAllUserData(userId) {
     const deleted = [];
-    
+
     // Delete from all data stores
     deleted.push(this.db.users.delete(userId));
     deleted.push(this.db.sessions.deleteByUser(userId));
     deleted.push(this.db.analytics.deleteByUser(userId));
-    
+
     // Verify deletion
     const remaining = await this.db.query(
-      `SELECT COUNT(*) as count FROM all_tables WHERE user_id = ?`, 
+      `SELECT COUNT(*) as count FROM all_tables WHERE user_id = ?`,
       [userId]
     );
-    
+
     return { success: remaining.count === 0, deleted_tables: deleted };
   }
 }
@@ -243,9 +243,9 @@ Regular audits matter. Review your data handling quarterly. Check that retention
 grep -r --include="*.py" "email\|phone\|ssn\|credit_card" --exclude-dir=node_modules
 
 # Check data retention in database
-SELECT table_name, MAX(created_at) as latest_record 
-FROM user_data 
-GROUP BY table_name 
+SELECT table_name, MAX(created_at) as latest_record
+FROM user_data
+GROUP BY table_name
 HAVING DATEDIFF(NOW(), latest_record) > 90;
 
 # Verify encryption at rest
@@ -266,19 +266,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       # Scan for exposed secrets
       - name: Scan for secrets
         uses: trufflesecurity/trufflehog@main
         with:
           args: '--regex --entropy=False'
-      
+
       # Verify no PII in logs
       - name: Check logs for PII
         run: |
           grep -rE "\b\d{3}-\d{2}-\d{4}\b" . || echo "No SSN patterns found"
           grep -rE "\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b" --include="*.log" . || echo "No email patterns found"
-      
+
       # Verify encryption headers
       - name: Check security headers
         run: ./scripts/check-headers.sh
@@ -397,8 +397,7 @@ def execute_erasure_request(user_id: str, db) -> Dict:
 The manifest returned by this function is your audit trail. Store it in a separate compliance log (which does not contain personal data — just deletion records) so you can demonstrate compliance if a regulator asks.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 - [Privacy Compliance API Design Best Practices](/privacy-tools-guide/privacy-compliance-api-design-best-practices/)

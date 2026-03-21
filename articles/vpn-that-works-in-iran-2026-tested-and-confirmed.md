@@ -196,8 +196,7 @@ iperf3 -c 10.0.0.1
 Monitor connection logs for any blocking patterns. If connections drop consistently at specific times, consider scheduling usage during more permissive windows.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Does Proton VPN Stealth Work in Myanmar? 2026 Tested](/privacy-tools-guide/does-proton-vpn-stealth-work-in-myanmar-2026-tested/)
 - [Iran Vpn Usage Risks Legal Consequences And How To Minimize](/privacy-tools-guide/iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/)

@@ -63,10 +63,10 @@ function getBatteryFingerprint() {
       dischargingTime: battery.dischargingTime,
       timestamp: Date.now()
     };
-    
+
     // Create a simple fingerprint string
     const fingerprint = JSON.stringify(data);
-    
+
     // In practice, you'd use a proper hashing function
     return fingerprint;
   });
@@ -75,11 +75,11 @@ function getBatteryFingerprint() {
 // Poll periodically to track changes
 async function trackBatteryChanges() {
   const battery = await navigator.getBattery();
-  
+
   battery.addEventListener('levelchange', () => {
     console.log('Battery level changed:', battery.level);
   });
-  
+
   battery.addEventListener('chargingchange', () => {
     console.log('Charging status changed:', battery.charging);
   });
@@ -232,8 +232,7 @@ Academic research has demonstrated battery-based tracking effectiveness. A 2018 
 This study prompted browsers to implement restrictions. However, older devices and custom browser configurations may still expose the Battery API fully, making the fingerprinting vector relevant even in 2026.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)

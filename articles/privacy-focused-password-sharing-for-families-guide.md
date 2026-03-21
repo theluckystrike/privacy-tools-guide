@@ -692,9 +692,7 @@ No way to revoke their access
 {% endraw %}
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Password Manager For Couple Sharing Streaming Accounts Secur](/privacy-tools-guide/password-manager-for-couple-sharing-streaming-accounts-secur/)
 - [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)

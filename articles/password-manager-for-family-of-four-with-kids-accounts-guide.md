@@ -119,16 +119,16 @@ import requests
 def check_family_security(api_key):
     url = "https://api.bitwarden.com/public/v1/members"
     headers = {"Authorization": f"Bearer {api_key}"}
-    
+
     response = requests.get(url, headers=headers)
     members = response.json()
-    
+
     for member in members:
         if member.get('uses_weak_password'):
             print(f"⚠️ {member['name']} has weak passwords")
         if member.get('2fa_disabled'):
             print(f"🔒 {member['name']} needs 2FA enabled")
-    
+
     return members
 
 if __name__ == "__main__":
@@ -348,12 +348,11 @@ Address this uncomfortable but practical scenario:
 Enable this in your password manager's advanced settings so that if something happens to both parents, a trusted executor can access essential information.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Password Manager For Couple Sharing Streaming Accounts Secur](/privacy-tools-guide/password-manager-for-couple-sharing-streaming-accounts-secur/)
 - [Password Manager For Shared Accounts Between Roommates.](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
 

@@ -175,8 +175,7 @@ Periodically review all connected devices, skills, and applications. Attackers s
 If you're an Amazon seller, enable two-step verification for Seller Central and regularly review your inventory for listing hijacking.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Tell If Your Email Account Was Hacked Right Now](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
 - [Best VPN for Accessing Amazon Prime Video Different Regions](/privacy-tools-guide/best-vpn-for-accessing-amazon-prime-video-different-regions/)

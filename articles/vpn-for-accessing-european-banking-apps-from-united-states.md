@@ -83,7 +83,7 @@ def check_dns_leak():
     # Get current DNS servers
     dns_servers = socket.getaddrinfo(socket.gethostname(), None)
     print("Detected DNS servers:", dns_servers)
-    
+
     # Check against known VPN DNS ranges
     vpn_dns_ranges = ["10.", "172.16.", "192.168."]
     for ip_info in dns_servers:
@@ -162,7 +162,7 @@ import requests
 def verify_eu_ip():
     response = requests.get('https://ipinfo.io/json').json()
     eu_country_codes = ['DE', 'FR', 'NL', 'GB', 'ES', 'IT', 'BE', 'AT', 'PT', 'IE']
-    
+
     if response.get('country') in eu_country_codes:
         print(f"Connected from EU: {response['country']}")
         return True
@@ -180,14 +180,12 @@ Some European banks actively block known VPN IP ranges. In these cases, consider
 For developers building integrations with European banking APIs, understand that PSD2 regulations in the EU require strong customer authentication (SCA). This means banking applications may require additional verification steps when accessed from new IP addresses, even when using a VPN.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Vpn For Accessing Canadian Banking From Mexico Securely 2026](/privacy-tools-guide/vpn-for-accessing-canadian-banking-from-mexico-securely-2026/)
 - [VPN for Online Banking While Traveling Southeast Asia Safety](/privacy-tools-guide/vpn-for-online-banking-while-traveling-southeast-asia-safety/)
-- [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 - [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)
+- [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 - [Best VPN for Accessing Amazon Prime Video Different Regions](/privacy-tools-guide/best-vpn-for-accessing-amazon-prime-video-different-regions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

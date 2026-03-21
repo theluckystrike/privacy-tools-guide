@@ -51,7 +51,7 @@ Launch the application and navigate to the account configuration. Select "Connec
 IMAP Server: yourmail.example.com
 IMAP Port: 993
 IMAP Security: SSL/TLS
-SMTP Server: yourmail.example.com  
+SMTP Server: yourmail.example.com
 SMTP Port: 587
 SMTP Security: STARTTLS
 ```
@@ -325,11 +325,10 @@ While DeltaChat provides strong end-to-end encryption, several supplementary pra
 Metadata—including subject lines, sender, and recipient addresses—remains visible to email providers. For complete anonymity, combine DeltaChat with a privacy-focused email provider (ProtonMail, Tutanota) and consider using Tor or a VPN for email access.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 - [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
 - [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)

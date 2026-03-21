@@ -160,18 +160,18 @@ import tempfile
 
 def upload_file(filepath, node_config_path):
     """Upload a file to Tahoe LAFS and return its capability."""
-    
+
     # Initialize uploader with node configuration
     uploader = upload.Uploader(node_config_path)
-    
+
     # Upload the file
     capability = uploader.upload(filepath)
-    
+
     return str(capability)
 
 def download_file(capability, output_path, node_config_path):
     """Download a file from Tahoe LAFS using its capability."""
-    
+
     downloader = upload.Downloader(node_config_path)
     downloader.download(capability, output_path)
 
@@ -249,9 +249,7 @@ For quick, simple encrypted storage, client-side tools like age or Rclone with e
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
 - [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)

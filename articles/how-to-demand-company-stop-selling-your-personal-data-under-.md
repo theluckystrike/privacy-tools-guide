@@ -72,7 +72,7 @@ import json
 def create_ccpa_opt_out_email(company_name, company_email, user_info):
     """Generate a CCPA-compliant opt-out email template."""
     subject = f"CCPA Opt-Out Request: Do Not Sell My Personal Information"
-    
+
     body = f"""Dear {company_name} Privacy Team,
 
 I am a California resident exercising my right under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA) to opt out of the sale and sharing of my personal information.
@@ -97,7 +97,7 @@ def send_opt_out_email(smtp_config, company_email, subject, body):
     msg['Subject'] = subject
     msg['From'] = smtp_config['sender']
     msg['To'] = company_email
-    
+
     with smtplib.SMTP(smtp_config['server'], smtp_config['port']) as server:
         server.starttls()
         server.login(smtp_config['username'], smtp_config['password'])
@@ -110,7 +110,7 @@ companies = [
 ]
 
 user_info = {"email": "your@email.com", "name": "Your Name"}
-smtp_config = {"server": "smtp.example.com", "port": 587, 
+smtp_config = {"server": "smtp.example.com", "port": 587,
                "username": "your@email.com", "password": "app-specific-password"}
 
 for company in companies:
@@ -168,27 +168,27 @@ const companies = [
 
 async function submitOptOut(page, company, userEmail) {
   await page.goto(company.privacyUrl);
-  
+
   // Look for common opt-out link patterns
   const optOutLink = await page.$('a[href*="do-not-sell"], a[href*="opt-out"], a[title*="Do Not Sell"]');
-  
+
   if (optOutLink) {
     await optOutLink.click();
     await page.waitForNavigation();
   }
-  
+
   // Fill common form patterns
   const emailInput = await page.$('input[type="email"], input[name*="email"], input[id*="email"]');
   if (emailInput) {
     await emailInput.type(userEmail);
   }
-  
+
   // Submit the form
   const submitButton = await page.$('button[type="submit"], input[type="submit"]');
   if (submitButton) {
     await submitButton.click();
   }
-  
+
   console.log(`Submitted opt-out request to ${company.name}`);
 }
 
@@ -199,7 +199,7 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
   const userEmail = 'your-email@example.com';
-  
+
   for (const company of companies) {
     try {
       await submitOptOut(page, company, userEmail);
@@ -207,7 +207,7 @@ const puppeteer = require('puppeteer');
       console.error(`Failed for ${company.name}:`, error.message);
     }
   }
-  
+
   await browser.close();
 })();
 ```
@@ -241,9 +241,7 @@ Global Privacy Control (GPC), a browser signal you can enable, automatically tra
 For developers building opt-out into applications, implement proper handling: honor GPC signals server-side, provide prominent opt-out mechanisms, and maintain audit logs of consumer requests.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)

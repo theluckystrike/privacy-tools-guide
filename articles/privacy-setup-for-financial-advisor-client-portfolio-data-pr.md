@@ -48,10 +48,10 @@ class PortfolioEncryption:
         )
         key = base64.urlsafe_b64encode(kdf.derive(master_key.encode()))
         self.cipher = Fernet(key)
-    
+
     def encrypt_field(self, plaintext: str) -> bytes:
         return self.cipher.encrypt(plaintext.encode())
-    
+
     def decrypt_field(self, ciphertext: bytes) -> str:
         return self.cipher.decrypt(ciphertext).decode()
 
@@ -72,15 +72,15 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- Encrypt sensitive columns using deterministic encryption
 -- for searchable fields like account numbers
-ALTER TABLE client_portfolios 
-ADD COLUMN account_number_encrypted bytea 
+ALTER TABLE client_portfolios
+ADD COLUMN account_number_encrypted bytea
 GENERATED ALWAYS AS (
     pgp_sym_encrypt(account_number::text, current_setting('app.encryption_key'), 'compress-algo=1, cipher-algo=aes256')
 ) STORED;
 
 -- For non-searchable sensitive data, use randomized encryption
 ALTER TABLE client_portfolios
-ADD COLUMN net_worth_value_encrypted bytea 
+ADD COLUMN net_worth_value_encrypted bytea
 GENERATED ALWAYS AS (
     pgp_sym_encrypt(net_worth_value::text, current_setting('app.encryption_key'), 'compress-algo=1, cipher-algo=aes256')
 ) STORED;
@@ -103,17 +103,17 @@ def require_portfolio_access(client_id_param: str = "client_id"):
         def decorated_function(*args, **kwargs):
             advisor_id = g.current_user.advisor_id
             client_id = kwargs.get(client_id_param) or request.json.get(client_id_param)
-            
+
             # Verify advisor-client assignment exists
             assignment = db.query(AdvisorClientAssignment).filter_by(
                 advisor_id=advisor_id,
                 client_id=client_id,
                 active=True
             ).first()
-            
+
             if not assignment:
                 return jsonify({"error": "Access denied to this client portfolio"}), 403
-            
+
             g.client_assignment = assignment
             return f(*args, **kwargs)
         return decorated_function
@@ -141,8 +141,8 @@ class PortfolioAuditLogger:
     def __init__(self):
         self.logger = logging.getLogger("portfolio.audit")
         self.logger.setLevel(logging.INFO)
-        
-    def log_data_access(self, advisor_id: int, client_id: int, 
+
+    def log_data_access(self, advisor_id: int, client_id: int,
                         data_type: str, action: str, ip_address: str):
         audit_entry = {
             "event_id": str(uuid4()),
@@ -155,8 +155,8 @@ class PortfolioAuditLogger:
             "user_agent": request.headers.get("User-Agent"),
         }
         self.logger.info(audit_entry)
-        
-    def log_failed_access(self, advisor_id: int, client_id: int, 
+
+    def log_failed_access(self, advisor_id: int, client_id: int,
                           reason: str, ip_address: str):
         audit_entry = {
             "event_id": str(uuid4()),
@@ -201,7 +201,7 @@ from sqlalchemy.engine import Engine
 def apply_retention_policy(conn, statement, parameters, context, executemany):
     """Example: Automatically archive client data older than retention period."""
     retention_days = 2555  # 7 years for financial records
-    
+
     # This would be implemented as a scheduled job, not on every query
     # Shown here as conceptual example
     pass
@@ -209,11 +209,11 @@ def apply_retention_policy(conn, statement, parameters, context, executemany):
 class RetentionPolicy:
     def __init__(self, retention_days: int = 2555):
         self.retention_days = retention_days
-    
+
     def should_archive(self, record_date: datetime) -> bool:
         age = datetime.now(timezone.utc) - record_date
         return age.days > self.retention_days
-    
+
     def archive_and_delete(self, table, record_id):
         # Move to archive table before deletion
         archive_record = self._prepare_archive(table, record_id)
@@ -229,19 +229,19 @@ Ensure all data transmission uses TLS 1.3 or higher. Configure your web server t
 # nginx.conf - enforce TLS and secure headers
 server {
     listen 443 ssl http2;
-    
+
     ssl_certificate /etc/ssl/certs/portfolio-app.crt;
     ssl_certificate_key /etc/ssl/private/portfolio-app.key;
     ssl_protocols TLSv1.3 TLSv1.2;
     ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;
     ssl_prefer_server_ciphers on;
-    
+
     # HSTS - force HTTPS
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-    
+
     # Prevent clickjacking
     add_header X-Frame-Options "SAMEORIGIN" always;
-    
+
     # XSS protection
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-XSS-Protection "1; mode=block" always;
@@ -301,7 +301,7 @@ class MFAManager:
         secret = pyotp.random_base32()
         self._store_secret(advisor_id, secret)
         return secret
-    
+
     def generate_qr_code(self, advisor_email: str, secret: str) -> bytes:
         totp_uri = pyotp.totp.TOTP(secret).provisioning_uri(
             name=advisor_email,
@@ -311,7 +311,7 @@ class MFAManager:
         buffer = BytesIO()
         img.save(buffer, format='PNG')
         return buffer.getvalue()
-    
+
     def verify_token(self, advisor_id: str, token: str) -> bool:
         secret = self._retrieve_secret(advisor_id)
         totp = pyotp.TOTP(secret)
@@ -327,19 +327,19 @@ from typing import Optional
 class SessionManager:
     SESSION_TIMEOUT_MINUTES = 20
     MAX_CONCURRENT_SESSIONS = 3
-    
+
     def validate_session(self, session_token: str) -> Optional[dict]:
         session = self._fetch_session(session_token)
         if not session:
             return None
-        
+
         last_activity = datetime.fromisoformat(session['last_activity'])
         timeout = timedelta(minutes=self.SESSION_TIMEOUT_MINUTES)
-        
+
         if datetime.utcnow() - last_activity > timeout:
             self._invalidate_session(session_token)
             return None
-        
+
         self._update_last_activity(session_token)
         return session
 ```
@@ -373,26 +373,24 @@ class IntegrationToken:
 
 class PortfolioDataGateway:
     def fetch_for_integration(
-        self, 
-        token: IntegrationToken, 
-        client_id: str, 
+        self,
+        token: IntegrationToken,
+        client_id: str,
         requested_scope: DataScope
     ) -> Dict[str, Any]:
         if client_id not in token.client_ids:
             raise PermissionError(f"Token not authorized for client {client_id}")
-        
+
         if requested_scope not in token.allowed_scopes:
             raise PermissionError(f"Token scope does not include {requested_scope}")
-        
+
         return self._fetch_scoped_data(client_id, requested_scope)
 ```
 
 Maintain a current inventory of every third-party integration, what data it receives, and the legal basis for sharing. Review this inventory quarterly. Integrations that appeared necessary at the time sometimes outlive their purpose—old connections are easy to forget but continue transmitting data until explicitly terminated.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Accountant Handling Client Financial Data](/privacy-tools-guide/privacy-setup-for-accountant-handling-client-financial-data-/)
 - [Tax Preparer Client Financial Data Privacy IRS.](/privacy-tools-guide/tax-preparer-client-financial-data-privacy-irs-compliance-di/)

@@ -124,13 +124,13 @@ For maximum protection, enable alerts for all transactions and configure your ph
 
 app.post('/webhook/transaction', async (req, res) => {
   const transaction = req.body;
-  
+
   if (transaction.amount > 0 && transaction.status === 'completed') {
     await sendPushNotification({
       title: 'New Transaction',
       body: `$${transaction.amount} at ${transaction.merchant}`
     });
-    
+
     if (transaction.amount > 100) {
       await sendSMS({
         to: user.phone,
@@ -138,7 +138,7 @@ app.post('/webhook/transaction', async (req, res) => {
       });
     }
   }
-  
+
   res.status(200).send('OK');
 });
 ```
@@ -148,7 +148,7 @@ app.post('/webhook/transaction', async (req, res) => {
 For developers building e-commerce platforms, implementing Content Security Policy (CSP) headers significantly reduces skimming risk. CSP allows you to define exactly which domains can execute scripts on your payment pages.
 
 ```http
-Content-Security-Policy: 
+Content-Security-Policy:
   script-src 'self' https://js.stripe.com https://www.google-analytics.com;
   frame-src https://js.stripe.com;
   connect-src 'self' https://api.stripe.com;
@@ -275,8 +275,7 @@ When evaluating merchants, their security practices reveal trustworthiness:
 Merchants demonstrating security awareness correlate with lower skimming risk. Conversely, merchants showing poor basic security (no HTTPS, ancient certificates, obvious vulnerabilities) represent elevated risk.
 
 
-
-## Related Reading
+## Related Articles
 
 - [What to Do If Your Credit Card Was Used Fraudulently Online](/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/)
 - [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)

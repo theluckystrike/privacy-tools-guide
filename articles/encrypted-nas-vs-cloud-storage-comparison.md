@@ -76,8 +76,8 @@ For developers who want zero-knowledge cloud storage with full control, tools li
 rclone config
 
 # Create encrypted remote
-# In interactive config: New remote > type "crypt" > 
-# remote "gdrive:" > encryption "standard" > 
+# In interactive config: New remote > type "crypt" >
+# remote "gdrive:" > encryption "standard" >
 # password "your-strong-password" > confirm
 
 # Copy files with automatic client-side encryption
@@ -188,8 +188,7 @@ echo "Cloud backup: $(rclone lsl cloud:projects-backup | wc -l) files"
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)

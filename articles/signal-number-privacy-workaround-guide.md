@@ -39,7 +39,7 @@ Google Voice offers free US numbers with SMS forwarding. While Google Voice isn'
 # Process overview (performed in app/website):
 # 1. Create a new Google Account for privacy separation
 # 2. Navigate to voice.google.com
-# 3. Select "Get a new number" 
+# 3. Select "Get a new number"
 # 4. Search for available numbers
 # 5. Configure SMS forwarding to your primary number
 ```
@@ -95,11 +95,11 @@ const signalProtocol = require('libsignal-protocol');
 async function registerWithUsername(username, password) {
   // Generate identity key pair
   const identityKeyPair = signalProtocol.KeyHelper.generateIdentityKeyPair();
-  
+
   // Store public identity key on Signal servers
   // (This would require server-side changes)
   await signalServer.register(username, identityKeyPair.public);
-  
+
   return identityKeyPair;
 }
 ```
@@ -342,8 +342,7 @@ Different users have different threat models:
 Each scenario calls for different protective measures. Determine your actual threat model before implementing solutions.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 - [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)

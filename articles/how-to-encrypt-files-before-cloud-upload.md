@@ -208,14 +208,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Install age
         run: sudo apt install age
-      
+
       - name: Encrypt files
         run: |
           age -r ${{ secrets.PUBLIC_KEY }} -o backup.tar.age backup.tar
-      
+
       - name: Upload to Cloud Storage
         run: |
           # Example: Upload to AWS S3
@@ -242,8 +242,7 @@ For most use cases, age provides the best balance of security and simplicity. If
 - **Secure Deletion**: After encrypting and uploading, securely delete original files using `shred` or similar tools.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)

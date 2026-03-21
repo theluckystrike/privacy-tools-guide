@@ -70,11 +70,11 @@ For developers building custom solutions, implement encrypted data containers th
 ```kotlin
 // Android: EncryptedSharedPreferences with panic trigger
 class SecureWipeManager(private val context: Context) {
-    
+
     private val masterKey = MasterKey.Builder(context)
         .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
         .build()
-    
+
     private val encryptedPrefs = EncryptedSharedPreferences.create(
         context,
         "secure_prefs",
@@ -82,26 +82,26 @@ class SecureWipeManager(private val context: Context) {
         EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
-    
+
     fun triggerPanicWipe() {
         // Clear encrypted preferences
         encryptedPrefs.edit().clear().apply()
-        
+
         // Delete encryption keys
         val keyStore = KeyStore.getInstance("AndroidKeyStore")
         keyStore.load(null)
         keyStore.deleteEntry("privacy_wipe_key")
-        
+
         // Clear app data programmatically (requires app owns this logic)
         val packageManager = context.packageManager
         val intent = packageManager.getLaunchIntentForPackage(context.packageName)
         intent?.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
-        
+
         // Trigger remote wipe callback
         sendWipeConfirmation()
     }
-    
+
     private fun sendWipeConfirmation() {
         val client = OkHttpClient()
         val request = Request.Builder()
@@ -154,14 +154,14 @@ For MDM-managed devices, developers can trigger enterprise wipe:
 import ManagedSettings
 
 class DeviceWipeManager {
-    
+
     func triggerLocalWipe() {
         let store = ManagedSettingsStore()
-        
+
         // This wipes all managed data
         store.wipeDeviceAndResetPasscode()
     }
-    
+
     func triggerRemoteWipe() {
         // Requires MDM server integration
         let wipeRequest = WipeRequest(
@@ -169,7 +169,7 @@ class DeviceWipeManager {
             wipeType: .enterprise,
             preserveActivationLock: false
         )
-        
+
         MDMService.shared.submitWipeRequest(wipeRequest)
     }
 }
@@ -206,29 +206,29 @@ def trigger_wipe():
     # Mark device for wipe - client polls this
     data = request.json
     device_id = data.get('device_id')
-    
+
     if device_id in devices:
         devices[device_id]['wipe_pending'] = True
         devices[device_id]['wipe_triggered_at'] = datetime.utcnow()
-        
+
         # Push notification to device (Firebase/APNs)
         send_push_wipe_notification(devices[device_id]['token'])
-        
+
         return jsonify({'status': 'wipe_triggered'})
-    
+
     return jsonify({'error': 'device_not_found'}), 404
 
 @app.route('/api/check_wipe', methods=['GET'])
 def check_wipe_status():
     device_id = request.args.get('device_id')
-    
+
     if device_id in devices:
         device = devices[device_id]
         device['last_seen'] = datetime.utcnow()
-        
+
         if device.get('wipe_pending'):
             return jsonify({'wipe': True})
-    
+
     return jsonify({'wipe': False})
 ```
 
@@ -243,22 +243,22 @@ SERVER_URL="https://your-server.com"
 
 while true; do
     RESPONSE=$(curl -s "${SERVER_URL}/api/check_wipe?device_id=${DEVICE_ID}")
-    
+
     if echo "$RESPONSE" | grep -q '"wipe":true'; then
         echo "Wipe triggered remotely - executing local wipe"
-        
+
         # Android: Clear app data
         pm clear com.yourapp.package
-        
+
         # iOS: Clear app via Shortcuts
         shortcuts run "Emergency Wipe"
-        
+
         # Factory reset as final measure
         am start -a android.intent.action.MASTER_CLEAR
-        
+
         break
     fi
-    
+
     # Check every 10 seconds
     sleep 10
 done
@@ -279,14 +279,12 @@ For developers integrating these features into privacy-focused applications, con
 ---
 
 
+## Related Articles
 
-
-## Related Reading
-
-- [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
+- [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
 - [How to Set Up a Burner Phone for Protests](/privacy-tools-guide/how-to-set-up-a-burner-phone-for-protests/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

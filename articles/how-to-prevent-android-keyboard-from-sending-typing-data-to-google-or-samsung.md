@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Prevent Android Keyboard From Sending Typing Data To Google Or Samsung"
+title: "Prevent Android Keyboard From Sending Typing Data To Google"
 description: "Modern Android keyboards collect and transmit typing data to their developers—Google's Gboard and Samsung Keyboard are no exceptions. This guide explains how"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -182,13 +182,13 @@ fun isKeyboardPrivacyEnabled(): Boolean {
         "gboard_personalization_enabled",
         1
     ) == 0
-    
+
     val samsungDisabled = Settings.Secure.getInt(
         contentResolver,
         "samsung_keyboard_learning_enabled",
         1
     ) == 0
-    
+
     return gboardDisabled || samsungDisabled
 }
 ```
@@ -229,8 +229,7 @@ adb shell tcpdump -i any -c 50 host google.com and port 443
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Smart Refrigerator Data Collection What Samsung Family Hub S](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 - [Smart Tv Tracking What Data Samsung Lg Vizio Collect About V](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)

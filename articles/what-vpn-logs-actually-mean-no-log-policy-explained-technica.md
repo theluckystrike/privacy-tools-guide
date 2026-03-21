@@ -230,8 +230,7 @@ For developers and power users concerned about VPN logging:
 5. **Test for leaks regularly** — Use tools like dnsleaktest.com, ipleak.net, and browserleaks.com
 
 
-
-## Related Reading
+## Related Articles
 
 - [What Vpn Logs Actually Mean No Log Policy Explained.](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
 - [Best VPN for Using WhatsApp in China 2026 — Actually Works](/privacy-tools-guide/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)

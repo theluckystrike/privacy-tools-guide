@@ -112,12 +112,12 @@ async def capture_impersonationEvidence(profile_url, output_dir):
         browser = await p.chromium.launch()
         page = await browser.new_page()
         await page.goto(profile_url)
-        
+
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         screenshot_path = f"{output_dir}/impersonation_{timestamp}.png"
-        
+
         await page.screenshot(path=screenshot_path)
-        
+
         # Extract key information
         data = await page.evaluate("""
             () => ({
@@ -128,7 +128,7 @@ async def capture_impersonationEvidence(profile_url, output_dir):
                 url: window.location.href
             })
         """)
-        
+
         await browser.close()
         return {"screenshot": screenshot_path, "data": data}
 
@@ -173,7 +173,7 @@ For persistent impersonators, a formal cease and desist often works. Template:
 ```
 Dear [Name],
 
-This letter serves as notice that you are illegally using my name, photographs, and personal information on [platform]. 
+This letter serves as notice that you are illegally using my name, photographs, and personal information on [platform].
 
 Under [applicable law - e.g., common law right of publicity, GDPR, etc.], you must:
 1. Remove all content using my identity within 72 hours
@@ -210,8 +210,7 @@ Even with external impersonation, secure your own accounts:
 - Regularly audit connected apps and permissions
 
 
-
-## Related Reading
+## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)

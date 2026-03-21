@@ -75,7 +75,7 @@ SSL: SSL/TLS
 Authentication: Normal password
 Username: your@protonmail.com
 
-Outgoing Server: localhost  
+Outgoing Server: localhost
 Port: 1025
 SSL: STARTTLS
 Authentication: Normal password
@@ -225,8 +225,7 @@ Bridge caches emails locally to reduce server round-trips. Adjust cache settings
 Larger caches improve performance but consume disk space. Balance according to your workflow.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
 - [Proton Drive Bridge Desktop Integration Guide](/privacy-tools-guide/proton-drive-bridge-desktop-integration-guide/)

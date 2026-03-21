@@ -195,9 +195,7 @@ Beyond Spotlight configuration, consider these complementary measures:
 macOS provides detailed privacy controls, but they require intentional configuration. By understanding how Spotlight indexes and exposes your data, you can make informed decisions about what remains searchable and what stays private.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)

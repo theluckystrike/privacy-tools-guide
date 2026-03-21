@@ -181,8 +181,7 @@ curl -O https://download.tails.net/tails/stable/tails-amd64-6.2/tails-amd64-6.2.
 | Running Tor in a VM on a shared host | Host can monitor VM traffic | Not sufficient for high-risk use |
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Use Tor Safely in Country That Criminalizes Its Use](/privacy-tools-guide/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
 - [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)

@@ -176,8 +176,7 @@ For developers integrating VPN functionality, audit reports also provide guidanc
 - Security best practices for implementation
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
 - [Russia Vpn Provider Compliance Which Services Handed User Da](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-da/)

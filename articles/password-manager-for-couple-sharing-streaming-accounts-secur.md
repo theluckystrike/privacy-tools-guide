@@ -185,8 +185,7 @@ bw list items \
 This outputs all streaming service usernames in your shared vault—useful for auditing what you have.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Password Manager For Musician Managing Streaming Platform Di](/privacy-tools-guide/password-manager-for-musician-managing-streaming-platform-di/)
 - [Password Manager for Family of Four with Kids Accounts Guide](/privacy-tools-guide/password-manager-for-family-of-four-with-kids-accounts-guide/)

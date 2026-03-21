@@ -42,7 +42,7 @@ import base64
 def create_encrypted_sms_payload(message, recipient_cert):
     """Encrypt a message for SMS transmission using recipient's public key."""
     message_bytes = message.encode('utf-8')
-    
+
     encrypted = recipient_cert.public_key().encrypt(
         message_bytes,
         padding.OAEP(
@@ -51,7 +51,7 @@ def create_encrypted_sms_payload(message, recipient_cert):
             label=None
         )
     )
-    
+
     # Encode as base64 for SMS transmission
     return base64.b64encode(encrypted).decode('utf-8')
 ```
@@ -83,7 +83,7 @@ async function encryptSMS(message, sharedSecret) {
     false,
     ['deriveKey']
   );
-  
+
   const key = await crypto.subtle.deriveKey(
     { name: 'PBKDF2', salt: new Uint8Array(16), iterations: 100000, hash: 'SHA-256' },
     keyMaterial,
@@ -91,7 +91,7 @@ async function encryptSMS(message, sharedSecret) {
     false,
     ['encrypt', 'decrypt']
   );
-  
+
   // Encrypt message
   const iv = crypto.getRandomValues(new Uint8Array(12));
   const encrypted = await crypto.subtle.encrypt(
@@ -99,9 +99,9 @@ async function encryptSMS(message, sharedSecret) {
     key,
     new TextEncoder().encode(message)
   );
-  
+
   // Package: IV (12 bytes) + ciphertext
-  return btoa(String.fromCharCode(...iv)) + ':' + 
+  return btoa(String.fromCharCode(...iv)) + ':' +
          btoa(String.fromCharCode(...new Uint8Array(encrypted)));
 }
 ```
@@ -141,7 +141,7 @@ class MeshMessage:
         self.hop_count = 0
         self.max_hops = 10
         self.message_id = os.urandom(16).hex()
-    
+
     def _encrypt_content(self, content):
         """Simplified encryption - production would use proper AEAD."""
         key = hashlib.sha256(self.sender_id.encode()).digest()
@@ -149,10 +149,10 @@ class MeshMessage:
         for i, char in enumerate(content.encode()):
             encrypted.append(char ^ key[i % len(key)])
         return bytes(encrypted)
-    
+
     def can_forward(self):
         return self.hop_count < self.max_hops
-    
+
     def forward(self):
         self.hop_count += 1
 ```
@@ -176,7 +176,7 @@ class OfflineEncryptedMessageQueue:
         self.conn = sqlite3.connect(db_path)
         self.encryption_key = encryption_key
         self._init_database()
-    
+
     def _init_database(self):
         self.conn.execute('''
             CREATE TABLE IF NOT EXISTS message_queue (
@@ -188,14 +188,14 @@ class OfflineEncryptedMessageQueue:
             )
         ''')
         self.conn.commit()
-    
+
     def _encrypt(self, plaintext):
         """XOR-based encryption for demonstration."""
         key_bytes = self.encryption_key.encode()[:32].ljust(32, b'\0')
         plaintext_bytes = plaintext.encode()
-        return bytes(a ^ b for a, b in zip(plaintext_bytes, 
+        return bytes(a ^ b for a, b in zip(plaintext_bytes,
             (key_bytes * ((len(plaintext_bytes) // len(key_bytes)) + 1))[:len(plaintext_bytes)]))
-    
+
     def queue_message(self, recipient, message):
         encrypted = self._encrypt(message)
         self.conn.execute(
@@ -203,7 +203,7 @@ class OfflineEncryptedMessageQueue:
             (recipient, encrypted)
         )
         self.conn.commit()
-    
+
     def get_pending_messages(self):
         cursor = self.conn.execute(
             'SELECT id, recipient, encrypted_content FROM message_queue WHERE status = ?',
@@ -246,9 +246,9 @@ class AdaptiveMessenger:
         self.config = config
         self.sms_encryptor = SMSEncryptor(config.get('shared_key'))
         self.mesh_client = MeshClient(config.get('mesh_config'))
-        self.queue = OfflineEncryptedMessageQueue(config.get('db_path'), 
+        self.queue = OfflineEncryptedMessageQueue(config.get('db_path'),
                                                    config.get('encryption_key'))
-    
+
     def send(self, recipient, message):
         # Priority order: direct -> queued -> mesh
         if self._has_data_connectivity():
@@ -259,15 +259,14 @@ class AdaptiveMessenger:
             self._send_mesh(recipient, message)
         else:
             self.queue.queue_message(recipient, message)
-    
+
     def _has_data_connectivity(self):
         # Implementation checks actual network status
         pass
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted SMS App for Android 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-sms-app-android-2026/)
 - [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)

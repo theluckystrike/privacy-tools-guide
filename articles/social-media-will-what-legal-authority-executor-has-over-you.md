@@ -189,9 +189,7 @@ To protect your digital legacy:
 The legal ecosystem continues to evolve as states refine their digital asset statutes and platforms update their policies. Review your digital estate plan annually to ensure it reflects both legal changes and your current online presence.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)

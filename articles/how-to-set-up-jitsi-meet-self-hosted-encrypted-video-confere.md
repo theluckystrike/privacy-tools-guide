@@ -248,8 +248,7 @@ Beyond basic setup, implement these hardening measures:
 5. **Backups**: Regularly back up configuration and user data
 
 
-
-## Related Reading
+## Related Articles
 
 - [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)

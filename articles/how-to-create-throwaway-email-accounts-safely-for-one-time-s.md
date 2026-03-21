@@ -109,11 +109,11 @@ def main():
     if len(sys.argv) != 3:
         print("Usage: alias_gen.py <domain> <service>")
         sys.exit(1)
-    
+
     domain = sys.argv[1]
     service = sys.argv[2]
     secret = secrets.token_bytes(32)
-    
+
     alias = generate_alias(domain, service, secret)
     print(f"Service: {service}")
     print(f"Generated alias: {alias}")
@@ -163,12 +163,12 @@ DOMAIN="your-domain.com"
 create_alias() {
     local service_name="$1"
     local alias_name="${service_name}-$(date +%s)@${DOMAIN}"
-    
+
     curl -X POST "https://${ALIAS_SERVICE}/v1/aliases" \
         -H "Authorization: Bearer ${API_KEY}" \
         -H "Content-Type: application/json" \
         -d "{\"name\": \"${alias_name}\", \"description\": \"${service_name} signup\"}"
-    
+
     echo "Created: ${alias_name}"
 }
 
@@ -204,15 +204,13 @@ For most developers and power users, a combination works well: an alias service 
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Use Safenote Or Privnote For One Time Secure Credenti](/privacy-tools-guide/how-to-use-safenote-or-privnote-for-one-time-secure-credenti/)
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
 - [How To Create Untraceable Email Account Using Tor Vpn And An](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
+- [How To Create Untraceable Email For Anonymous Tips To Report](/privacy-tools-guide/how-to-create-untraceable-email-for-anonymous-tips-to-report/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

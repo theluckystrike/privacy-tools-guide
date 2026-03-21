@@ -257,8 +257,7 @@ For technical teams in 2026, Nextcloud remains the more capable platform for sel
 ---
 
 
-
-## Related Reading
+## Related Articles
 
 - [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)

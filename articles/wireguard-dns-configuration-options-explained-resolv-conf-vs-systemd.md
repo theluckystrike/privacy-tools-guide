@@ -220,8 +220,7 @@ sudo resolvectl flush-caches
 Proper DNS configuration completes your WireGuard privacy setup. Whether you choose the simplicity of wg-quick's built-in handling or the flexibility of manual systemd-resolved configuration, ensuring DNS queries travel through your VPN tunnel prevents one of the most common privacy leaks in VPN setups.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)

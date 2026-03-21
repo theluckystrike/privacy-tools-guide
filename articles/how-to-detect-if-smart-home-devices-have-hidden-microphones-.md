@@ -73,24 +73,24 @@ from collections import defaultdict
 
 def analyze_device_traffic(pcap_file, device_ip):
     """Analyze traffic patterns from a specific device."""
-    
+
     # Extract DNS queries to identify communication endpoints
     dns_queries = subprocess.run(
-        ['tshark', '-r', pcap_file, '-Y', f'ip.src == {device_ip} and dns.qry.name', 
+        ['tshark', '-r', pcap_file, '-Y', f'ip.src == {device_ip} and dns.qry.name',
          '-T', 'fields', '-e', 'dns.qry.name'],
         capture_output=True, text=True
     )
-    
+
     endpoints = defaultdict(int)
     for query in dns_queries.stdout.strip().split('\n'):
         if query:
             endpoints[query] += 1
-    
+
     # Check for unexpected cloud services
-    suspicious_domains = [k for k, v in endpoints.items() 
-                         if any(x in k for x in ['aws', 'azure', 'gcp']) 
+    suspicious_domains = [k for k, v in endpoints.items()
+                         if any(x in k for x in ['aws', 'azure', 'gcp'])
                          and 'manufacturer' not in k.lower()]
-    
+
     return dict(endpoints), suspicious_domains
 
 # Example usage
@@ -235,14 +235,13 @@ Once you've identified recording capabilities, take action:
 - **Physical Covers**: Use mechanical shutters for cameras, microphone plugs for audio inputs
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [Media Devices Enumeration Fingerprinting Cameras Microphones](/privacy-tools-guide/media-devices-enumeration-fingerprinting-cameras-microphones/)
 - [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
+- [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

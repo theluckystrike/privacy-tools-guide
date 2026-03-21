@@ -282,8 +282,7 @@ systemctl start trojan
 Monitor your server logs for connection failures and unusual patterns that might indicate probing or impending blocking.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Build Portable Censorship Circumvention Kit On Usb Dr](/privacy-tools-guide/how-to-build-portable-censorship-circumvention-kit-on-usb-dr/)
 - [How To Use Naiveproxy To Disguise Censorship Circumvention T](/privacy-tools-guide/how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/)

@@ -188,8 +188,7 @@ Several frequent mistakes reduce the effectiveness of disappearing messages:
 **Mixing conversation contexts**: A single conversation might contain both sensitive and casual communication. Consider separating discussions into different conversations with appropriate timer settings.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Signal Disappearing Messages Best Practices for.](/privacy-tools-guide/signal-disappearing-messages-best-practices-for-sensitive-co/)
 - [Signal App Disappearing Messages Guide](/privacy-tools-guide/signal-app-disappearing-messages-guide/)

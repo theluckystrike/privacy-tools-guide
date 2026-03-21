@@ -84,7 +84,7 @@ import re
 import json
 
 def run_speedtest():
-    result = subprocess.run(['speedtest-cli', '--json'], 
+    result = subprocess.run(['speedtest-cli', '--json'],
                           capture_output=True, text=True)
     return json.loads(result.stdout)
 
@@ -276,8 +276,7 @@ If you've exhausted all diagnostic steps and optimizations, the issue might be:
 Contact support with your diagnostic results—they can often identify server-specific issues or suggest optimal server configurations.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Vpn For Business Travelers To China Reliable Connection](/privacy-tools-guide/best-vpn-for-business-travelers-to-china-reliable-connection/)
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)

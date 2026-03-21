@@ -56,15 +56,15 @@ from email.parser import BytesParser
 
 def extract_headers(raw_email):
     msg = BytesParser(policy=policy.default).parsebytes(raw_email)
-    
+
     # Extract all received headers (these trace the email's path)
     received = msg.get_all('Received')
-    
+
     # Check for forwarding indicators
     for header in ['X-Forwarded-For', 'X-Originating-IP', 'Received-SPF']:
         if header in msg:
             print(f"{header}: {msg[header]}")
-    
+
     return received
 ```
 
@@ -94,12 +94,12 @@ from googleapiclient.discovery import build
 
 def check_gmail_forwarding(credentials):
     service = build('gmail', 'v1', credentials=credentials)
-    
+
     # Get forwarding settings
     settings = service.users().settings().getForwardingAddress(
         userId='me'
     ).execute()
-    
+
     for forward in settings.get('forwardingEmailAddresses', []):
         print(f"Forwarding to: {forward['forwardingEmail']}")
 ```
@@ -110,12 +110,12 @@ Use the Exchange Online PowerShell module:
 
 ```powershell
 # Check forwarding rules
-Get-InboxRule -Mailbox "user@domain.com" | 
+Get-InboxRule -Mailbox "user@domain.com" |
   Where-Object { $_.ForwardTo -or $_.RedirectTo } |
   Select-Object Name, ForwardTo, RedirectTo, Enabled
 
 # Check mailbox forwarding settings
-Get-Mailbox user@domain.com | 
+Get-Mailbox user@domain.com |
   Select-Object ForwardingSmtpAddress, DeliverToMailboxAndForward
 ```
 
@@ -182,25 +182,25 @@ from googleapiclient.discovery import build
 def monitor_forwarding(credentials_path='token.json'):
     credentials = Credentials.from_authorized_user_file(credentials_path)
     service = build('gmail', 'v1', credentials=credentials)
-    
+
     # Check for recent forwarding rule changes
     history = service.users().history().list(
         userId='me',
         startHistoryId=os.environ.get('LAST_HISTORY_ID', '1'),
         historyTypes=['label']
     ).execute()
-    
+
     # Get current forwarding addresses
     forwarding = service.users().settings().getForwardingAddresses(
         userId='me'
     ).execute()
-    
+
     known_forwarders = ['your-personal@email.com']
-    
+
     for addr in forwarding.get('forwardingEmailAddresses', []):
         if addr['forwardingEmail'] not in known_forwarders:
             print(f"ALERT: Unknown forwarding address: {addr['forwardingEmail']}")
-    
+
     return history.get('historyId')
 
 if __name__ == '__main__':
@@ -230,15 +230,13 @@ If you discover unauthorized forwarding:
 Detecting unauthorized email forwarding requires vigilance and understanding of email metadata. By regularly examining headers, monitoring forwarding rules, and implementing automated checks, you can protect your communications from silent exfiltration.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Check If Someone Is Using Your Netflix Without Permis](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permis/)
 - [Check If Someone Is Using Your Netflix Without Permission](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permission/)
 - [How to Check If Your Email Server Has Been Blacklisted](/privacy-tools-guide/how-to-check-if-your-email-server-has-been-blacklisted/)
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
+- [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

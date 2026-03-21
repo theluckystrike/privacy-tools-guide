@@ -190,8 +190,7 @@ For developers and power users invested in digital game libraries, several proac
 6. **Review platform policies**: Terms of service change; stay informed about current inheritance options
 
 
-
-## Related Reading
+## Related Articles
 
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)

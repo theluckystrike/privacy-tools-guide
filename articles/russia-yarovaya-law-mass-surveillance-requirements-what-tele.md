@@ -40,7 +40,7 @@ Russian telecom operators must store the following data:
 {
   "voice_calls": {
     "caller_number": "required - stored for 6 years",
-    "recipient_number": "required - stored for 6 years", 
+    "recipient_number": "required - stored for 6 years",
     "call_duration": "required - stored for 6 years",
     "imei_numbers": "required - stored for 6 years",
     "imsi_numbers": "required - stored for 6 years",
@@ -78,7 +78,7 @@ ISP_RETENTION_REQUIREMENTS = {
     "network_data": [
         "assigned_ip_address",     # Dynamic/static IP
         "connection_timestamp",
-        "session_duration", 
+        "session_duration",
         "volume_of_data_transferred",
         "protocol_information",
         "destination_ip_addresses",
@@ -236,10 +236,9 @@ Non-compliance with Yarovaya Law requirements carries significant penalties:
 - **Website blocking**: Non-compliant services can be blocked in Russia
 
 
+## Related Articles
 
-## Related Reading
-
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [Russia Data Localization Law: How Requirement to Store.](/privacy-tools-guide/russia-data-localization-law-how-requirement-to-store-data-l/)
 - [Russia Sovereign Internet Law What It Means For Vpn Users An](/privacy-tools-guide/russia-sovereign-internet-law-what-it-means-for-vpn-users-an/)
 - [Cloud Storage Subpoena Risk: Provider Law Enforcement.](/privacy-tools-guide/cloud-storage-subpoena-risk-provider-law-enforcement-complia/)

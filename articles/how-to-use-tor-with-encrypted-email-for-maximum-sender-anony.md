@@ -213,8 +213,7 @@ Several mistakes undermine the anonymity these tools provide:
 - **Forgetting to disable HTML email** — Remote images and tracking pixels leak information
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Use Tails OS for Maximum Anonymity](/privacy-tools-guide/how-to-use-tails-os-for-maximum-anonymity/)
 - [Tor vs VPN vs I2P: Anonymity Network Comparison 2026](/privacy-tools-guide/tor-vs-vpn-vs-i2p-anonymity-comparison-2026/)

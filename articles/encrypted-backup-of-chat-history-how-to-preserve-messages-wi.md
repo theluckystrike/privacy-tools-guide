@@ -107,25 +107,25 @@ def encrypt_chat_backup(chat_data: dict, password: str, output_path: str):
     nonce = os.urandom(12)
     key = derive_key(password, salt)
     aesgcm = AESGCM(key)
-    
+
     json_bytes = json.dumps(chat_data).encode()
     ciphertext = aesgcm.encrypt(nonce, json_bytes, None)
-    
+
     with open(output_path, 'wb') as f:
         f.write(salt + nonce + ciphertext)
 
 def decrypt_chat_backup(encrypted_path: str, password: str) -> dict:
     with open(encrypted_path, 'rb') as f:
         data = f.read()
-    
+
     salt = data[:16]
     nonce = data[16:28]
     ciphertext = data[28:]
-    
+
     key = derive_key(password, salt)
     aesgcm = AESGCM(key)
     plaintext = aesgcm.decrypt(nonce, ciphertext, None)
-    
+
     return json.loads(plaintext.decode())
 ```
 
@@ -266,11 +266,11 @@ import hashlib
 def verify_backup(original_path: str, password: str, backup_path: str):
     with open(original_path, 'rb') as f:
         original_hash = hashlib.sha256(f.read()).hexdigest()
-    
+
     decrypted_data = decrypt_chat_backup(backup_path, password)
     decrypted_bytes = json.dumps(decrypted_data).encode()
     decrypted_hash = hashlib.sha256(decrypted_bytes).hexdigest()
-    
+
     return original_hash == decrypted_hash
 ```
 
@@ -285,8 +285,7 @@ For storage media, consider the 3-2-1 rule: three copies, on two different media
 Rotate your encryption passwords periodically. Document the rotation process so recovery remains possible if you become unavailable.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)

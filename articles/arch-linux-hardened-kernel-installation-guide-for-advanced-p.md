@@ -262,9 +262,7 @@ Typical performance impact ranges from 1-5% for compute-heavy workloads. If perf
 The hardened kernel provides substantial security improvements for privacy-conscious users. Combined with proper system configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
 - [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)

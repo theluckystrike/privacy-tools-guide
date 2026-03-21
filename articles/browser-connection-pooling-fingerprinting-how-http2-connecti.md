@@ -32,12 +32,12 @@ class ConnectionPool {
     if (!this.pool.has(origin)) {
       this.pool.set(origin, []);
     }
-    
+
     const connections = this.pool.get(origin);
     if (connections.length > 0) {
       return connections.pop(); // Reuse existing connection
     }
-    
+
     return this.createNewConnection(origin);
   }
 
@@ -74,7 +74,7 @@ function fingerprintConnection(url) {
   };
 
   const start = performance.now();
-  
+
   fetch(url, { method: 'HEAD' })
     .then(() => {
       timings.total = performance.now() - start;
@@ -115,8 +115,8 @@ const results = {};
 
 protocols.forEach(protocol => {
   const start = performance.now();
-  fetch(`https://example.com`, { 
-    protocol 
+  fetch(`https://example.com`, {
+    protocol
   }).finally(() => {
     results[protocol] = performance.now() - start;
   });
@@ -177,7 +177,7 @@ Fingerprinters can probe connection limits:
 async function exhaustConnections(origin) {
   const connections = [];
   const start = performance.now();
-  
+
   try {
     while (true) {
       connections.push(await fetch(origin + '?conn=' + connections.length));
@@ -240,12 +240,11 @@ server.on('stream', (stream, headers) => {
 - Implement proper CORS policies to prevent cross-origin probing
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 - [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 

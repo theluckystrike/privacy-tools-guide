@@ -97,16 +97,16 @@ class TimeLockedVault:
         self.salt = salt
         self.delay_seconds = delay_seconds
         self.locked_at = None
-    
+
     def lock(self):
         """Initialize the time lock"""
         self.locked_at = time.time()
-    
+
     def unlock(self, current_time=None):
         """Attempt to unlock the vault"""
         if current_time is None:
             current_time = time.time()
-        
+
         elapsed = current_time - self.locked_at
         if elapsed >= self.delay_seconds:
             return True
@@ -114,7 +114,7 @@ class TimeLockedVault:
             remaining = self.delay_seconds - elapsed
             print(f"Vault locked. {remaining/86400:.1f} days remaining")
             return False
-    
+
     def derive_key(self, password):
         """Derive encryption key from password"""
         kdf = PBKDF2HMAC(
@@ -139,15 +139,15 @@ class AccessVerifier {
   constructor(config) {
     this.config = config;
   }
-  
+
   async verifyAccess(request) {
     const { tier_id, claimant_id, evidence } = request;
     const tier = this.config.tiers.find(t => t.tier_id === tier_id);
-    
+
     if (!tier) {
       throw new Error('Invalid tier requested');
     }
-    
+
     // Check activation conditions
     for (const condition of tier.activation.conditions) {
       const satisfied = await this.checkCondition(condition, evidence);
@@ -155,7 +155,7 @@ class AccessVerifier {
         return { granted: false, reason: `Condition not met: ${condition}` };
       }
     }
-    
+
     // Handle delayed access tiers
     if (tier.activation.type === 'delayed') {
       const unlockTime = await this.calculateUnlockTime(tier);
@@ -167,10 +167,10 @@ class AccessVerifier {
         };
       }
     }
-    
+
     return { granted: true, resources: tier.resources };
   }
-  
+
   async checkCondition(condition, evidence) {
     switch (condition) {
       case 'death_verified':
@@ -205,7 +205,7 @@ policies:
       - type: "user_group"
         group: "appointed_executor"
       - type: "mfa_required"
-  
+
   - name: "Heir Delayed Collection"
     enabled: true
     collections:
@@ -247,12 +247,12 @@ from fido2.webauthn import PublicKeyCredentialCreationOptions
 class HardwareKeyAccess:
     def __init__(self, rp_id):
         self.server = Fido2Server(rp_id)
-    
+
     def register_executor_key(self, credential_data):
         """Register executor hardware key with elevated permissions"""
         # Executor keys get immediate access flag
         return self.server.register(credential_data, flags=['immediate_access'])
-    
+
     def register_heir_key(self, credential_data, unlock_date):
         """Register heir key with time-based activation"""
         # Heir keys store unlock date in credential metadata
@@ -260,18 +260,18 @@ class HardwareKeyAccess:
             credential_data,
             metadata={'unlock_date': unlock_date, 'tier': 'heir'}
         )
-    
+
     def authenticate(self, credential, assertion):
         """Verify hardware key and check temporal constraints"""
         result = self.server.authenticate(credential, assertion)
-        
+
         if result.flags.get('immediate_access'):
             return {'access': 'granted', 'tier': 'executor'}
-        
+
         unlock_date = result.metadata.get('unlock_date')
         if unlock_date and datetime.now() >= unlock_date:
             return {'access': 'granted', 'tier': 'heir'}
-        
+
         return {'access': 'denied', 'reason': 'pending_unlock_date'}
 ```
 
@@ -294,15 +294,13 @@ A well-designed tiered access system provides the flexibility to manage digital 
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
-- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
 - [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
 - [How To Safely Share Location With Date Without Giving Perman](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)
 - [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
+- [What To Do After Clicking Suspicious Link In Email Immediate](/privacy-tools-guide/what-to-do-after-clicking-suspicious-link-in-email-immediate/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

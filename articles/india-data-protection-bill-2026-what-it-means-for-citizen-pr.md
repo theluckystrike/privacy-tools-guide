@@ -75,7 +75,7 @@ def handle_dsar_request():
     data = request.get_json()
     user_id = data.get('user_id')
     request_type = data.get('request_type')  # access, correction, erasure
-    
+
     # Must acknowledge within 72 hours
     dsar_record = {
         'request_id': generate_request_id(),
@@ -85,7 +85,7 @@ def handle_dsar_request():
         'status': 'acknowledged',
         'deadline': datetime.utcnow() + timedelta(hours=72)
     }
-    
+
     save_dsar_request(dsar_record)
     return jsonify({'acknowledgment': True, 'request_id': dsar_record['request_id']})
 ```
@@ -359,8 +359,7 @@ DPDPA restricts international data transfers. Critical personal data (health, fi
 DPDPA implementation occurred in phases: April 2025 (core provisions), October 2025 (DPAI established), April 2026 (full enforcement). Enforcement actions are ongoing with WhatsApp and Amazon under review. Expect regulatory clarifications and penalties for non-compliance in 2026.
 
 
-
-## Related Reading
+## Related Articles
 
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

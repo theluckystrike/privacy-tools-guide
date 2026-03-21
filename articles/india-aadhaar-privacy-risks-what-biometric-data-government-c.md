@@ -106,7 +106,7 @@ const aadhaarAuth = {
   uid: 'XXXXXXXXXXXX', // 12-digit Aadhaar number
   deviceId: 'unique-device-identifier',
   timestamp: new Date().toISOString(),
-  
+
   // For OTP-based auth
   otp: async (uid) => {
     const response = await fetch('https://uidai.gov.in/api/v2/auth/otp', {
@@ -145,7 +145,7 @@ If you're building applications that interact with Aadhaar:
 class AadhaarVerification:
     def __init__(self):
         self.uidai_api = "https://uidai.gov.in/api/v2/auth"
-        
+
     def verify_without_storing(self, uid, auth_type):
         """
         Verify Aadhaar and immediately discard after confirmation
@@ -153,7 +153,7 @@ class AadhaarVerification:
         """
         # Process verification
         result = self._authenticate(uid, auth_type)
-        
+
         # Critical: Don't store result with PII
         # Return only verification status
         return {
@@ -193,11 +193,9 @@ The tension between convenience (improved KYC, direct benefit delivery) and priv
 ---
 
 
+## Related Articles
 
-
-## Related Reading
-
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
 - [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
 - [India Data Protection Bill 2026 What It Means For Citizen Pr](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)

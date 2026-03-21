@@ -52,7 +52,7 @@ On Android 10+, MAC randomization prevents permanent association:
 // Verify MAC randomization is enabled
 WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-    Log.d("Privacy", "MAC randomization: " + 
+    Log.d("Privacy", "MAC randomization: " +
         wifiManager.isMacRandomizationSupported());
 }
 ```
@@ -205,8 +205,7 @@ If your app requires location:
 - Consider on-device processing over server transmission
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
 - [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)

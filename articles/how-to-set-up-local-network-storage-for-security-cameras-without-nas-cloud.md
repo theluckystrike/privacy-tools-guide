@@ -300,8 +300,7 @@ Regular maintenance tasks include:
 - Updating camera firmware and recording software monthly
 
 
-
-## Related Reading
+## Related Articles
 
 - [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
 - [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)

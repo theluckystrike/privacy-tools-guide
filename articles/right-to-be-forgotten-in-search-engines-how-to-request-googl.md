@@ -48,17 +48,17 @@ def search_google(query, num_results=10):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     }
     url = f"https://www.google.com/search?q={requests.utils.quote(query)}&num={num_results}"
-    
+
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
-    
+
     urls = []
     for link in soup.find_all('a'):
         href = link.get('href', '')
         if '/url?q=' in href:
             clean_url = href.split('/url?q=')[1].split('&')[0]
             urls.append(clean_url)
-    
+
     return urls
 
 if __name__ == '__main__':
@@ -88,7 +88,7 @@ def submit_google_removal(urls, reason="privacy"):
     Note: This requires manual form submission in most cases
     """
     base_form_url = "https://search.google.com/search-console/remove-legal"
-    
+
     for url in urls:
         print(f"URL to remove: {url}")
         print(f"Form URL: {base_form_url}")
@@ -134,13 +134,13 @@ def submit_removal_multiple_engines(urls, site_name, contact_email):
             "urls": urls
         }
     }
-    
+
     for engine, data in templates.items():
         print(f"\n=== {engine.upper()} Removal Request ===")
         print(f"URL: {data['url']}")
         for url in urls:
             print(f"  - {url}")
-    
+
     return templates
 ```
 
@@ -156,14 +156,14 @@ class RemovalRequestTracker:
     def __init__(self, filename="removal_requests.json"):
         self.filename = filename
         self.requests = self._load()
-    
+
     def _load(self):
         try:
             with open(self.filename, 'r') as f:
                 return json.load(f)
         except FileNotFoundError:
             return []
-    
+
     def add_request(self, url, engine, status="pending"):
         self.requests.append({
             "url": url,
@@ -172,17 +172,17 @@ class RemovalRequestTracker:
             "submitted": datetime.now().isoformat(),
             "last_updated": datetime.now().isoformat()
         })
-    
+
     def update_status(self, url, status):
         for req in self.requests:
             if req['url'] == url:
                 req['status'] = status
                 req['last_updated'] = datetime.now().isoformat()
-    
+
     def save(self):
         with open(self.filename, 'w') as f:
             json.dump(self.requests, f, indent=2)
-    
+
     def get_pending(self):
         return [r for r in self.requests if r['status'] == "pending"]
 ```
@@ -217,11 +217,10 @@ Disallow: /sensitive/
 These directives prevent future content from appearing in search results, reducing the need for removal requests.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)
-- [Best Privacy-Focused Search Engines Comparison 2026: DuckDuckGo, Startpage, B...](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
+- [Best Privacy-Focused Search Engines Comparison 2026](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
 - [Privacy Focused Search Engines Comparison 2026](/privacy-tools-guide/privacy-focused-search-engines-comparison-2026/)
 - [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
 - [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)

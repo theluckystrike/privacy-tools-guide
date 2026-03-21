@@ -318,8 +318,7 @@ If your library has weak privacy practices, you can advocate for improvement:
 Libraries with privacy-conscious patrons often implement stronger protections to meet community expectations and demonstrate commitment to intellectual freedom.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
 - [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)

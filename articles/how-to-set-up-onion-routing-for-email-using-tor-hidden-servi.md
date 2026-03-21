@@ -220,9 +220,7 @@ Start small by setting up a hidden service for receiving email. Configure Tor an
 The initial configuration requires attention to detail, but the resulting protection against traffic analysis justifies the effort. Your email metadata becomes significantly harder to collect and correlate.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Session Messenger Decentralized Onion Routing How It Protect](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)
 - [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)

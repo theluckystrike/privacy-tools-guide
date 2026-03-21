@@ -199,8 +199,7 @@ Save these resources offline:
 - Cyber Civil Rights Initiative: 1-844-878-2274
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Someone Leaving Abusive Relationship Digit](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)

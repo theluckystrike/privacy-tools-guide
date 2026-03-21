@@ -121,7 +121,7 @@ private fun queryImages(contentResolver: ContentResolver): List<Uri> {
     val images = mutableListOf<Uri>()
     val projection = arrayOf(MediaStore.Images.Media._ID)
     val sortOrder = "${MediaStore.Images.Media.DATE_ADDED} DESC"
-    
+
     contentResolver.query(
         MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
         projection, null, null, sortOrder
@@ -171,9 +171,7 @@ Establish a monthly routine to review app permissions, remove unused application
 Consider using third-party permission managers from F-Droid for additional control. However, be cautious about granting accessibility services, as these can expose significant device control to malicious apps.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
 - [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)

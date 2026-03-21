@@ -77,15 +77,15 @@ def authenticate():
     creds = None
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-    
+
     if not creds or not creds.valid:
         flow = InstalledAppFlow.from_client_secrets_file(
             'credentials.json', SCOPES)
         creds = flow.run_local_server(port=0)
-        
+
         with open('token.json', 'w') as token:
             token.write(creds.to_json())
-    
+
     return creds
 
 def delete_activity_by_date_range(start_date, end_date):
@@ -94,11 +94,11 @@ def delete_activity_by_date_range(start_date, end_date):
     Note: Google's API has limitations on direct deletion
     """
     creds = authenticate()
-    
+
     # This demonstrates the concept; actual implementation
     # requires Google Workspace or specific API access
     print(f"Deleting activity from {start_date} to {end_date}")
-    
+
     # Alternative: Use the myactivity.google.com/deleteBy activity
     # This requires browser automation with Selenium
 ```
@@ -121,20 +121,20 @@ def delete_google_activity_auto():
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
-    
+
     driver = webdriver.Chrome(options=options)
     driver.get('https://myactivity.google.com/deleteBy')
-    
+
     # Wait for page load and authentication
     wait = WebDriverWait(driver, 10)
-    
+
     # Navigate to delete options
     # This requires manual authentication in browser first
     print("Please authenticate manually if needed")
-    
+
     # Select delete by date range
     # Implementation depends on current UI structure
-    
+
     driver.quit()
 
 if __name__ == '__main__':
@@ -181,12 +181,12 @@ For applications using Google APIs, always implement proper data handling:
 class PrivacyconsciousAnalytics:
     def __init__(self):
         self.anonymous_id = self._generate_anonymous_id()
-    
+
     def _generate_anonymous_id(self):
         """Generate non-identifiable random ID"""
         import secrets
         return secrets.token_hex(16)
-    
+
     def track_event(self, event_name, metadata=None):
         """
         Track event without PII
@@ -202,8 +202,7 @@ class PrivacyconsciousAnalytics:
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)

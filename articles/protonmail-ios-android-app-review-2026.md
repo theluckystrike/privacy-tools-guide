@@ -285,8 +285,7 @@ On older devices or slow networks, ProtonMail can be slow. Optimize performance:
 For development teams managing encrypted corporate email at scale, these optimizations prevent user friction while maintaining security.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Ios App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)

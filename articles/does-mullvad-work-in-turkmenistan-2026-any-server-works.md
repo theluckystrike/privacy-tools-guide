@@ -107,7 +107,7 @@ check_internet() {
 test_protocol() {
     local protocol=$1
     echo "Testing $protocol..."
-    
+
     case $protocol in
         wireguard)
             $MULLVAD_CLI protocol set wireguard 2>/dev/null || true
@@ -116,10 +116,10 @@ test_protocol() {
             $MULLVAD_CLI bridge set on 2>/dev/null || true
             ;;
     esac
-    
+
     $MULLVAD_CLI connect 2>/dev/null || true
     sleep 10
-    
+
     if check_internet; then
         echo "[SUCCESS] $protocol is working"
         return 0
@@ -220,9 +220,7 @@ Based on technical analysis and user reports, follow these steps to maximize you
 No VPN solution guarantees 100% uptime in Turkmenistan. The blocking technology evolves, and what works today may fail tomorrow. Always maintain offline copies of important documents and have contingency communication methods ready.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Does Mullvad VPN Work in Egypt? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-vpn-work-in-egypt-2026-latest-report/)
 - [Session Messenger Review 2026: Technical Analysis](/privacy-tools-guide/session-messenger-review-2026/)

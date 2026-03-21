@@ -170,14 +170,14 @@ def get_tor_status(control_port=9051, password=None):
         with Controller.from_port(port=control_port) as controller:
             if password:
                 controller.authenticate(password=password)
-            
+
             # Get circuit information
             circuits = controller.get_circuits()
             for circuit in circuits:
                 print(f"Circuit {circuit.id}: {circuit.purpose}")
                 for link in circuit.path:
                     print(f"  → {link}")
-            
+
             # Get network status
             print(f"\nBootstrap phase: {controller.get_info('status/bootstrap-phase')}")
     except Exception as e:
@@ -241,9 +241,7 @@ Most connection issues resolve with proper bridge configuration or firewall adju
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 - [VPN Connection Timeout Troubleshooting](/privacy-tools-guide/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)

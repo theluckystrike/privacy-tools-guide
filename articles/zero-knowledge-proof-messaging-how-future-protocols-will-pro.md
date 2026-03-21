@@ -59,14 +59,14 @@ def generate_message_check_proof(user_private_key, server_public_key):
  Uses zkSNARK to prove knowledge of private key corresponding
  to a public key in the set of users with pending messages.
  """
- # This is conceptual - actual implementation requires 
+ # This is conceptual - actual implementation requires
  # a trusted setup and specific circuit design
 
  user_pubkey = derive_public_key(user_private_key)
  nonce = generate_random_bytes(32)
  commitment = hash(user_pubkey + nonce)
 
- # Generate proof: "I know the private key for one of these 
+ # Generate proof: "I know the private key for one of these
  # public keys, without revealing which one"
  proof = zk_prove(
  statement={
@@ -187,9 +187,7 @@ As these technologies mature, expect to see messaging applications that reveal n
 For developers, now is the time to experiment with these protocols. Libraries like `libsnark`, `bellman`, and `bulletproofs` are becoming more accessible. The privacy-preserving messaging protocols of tomorrow are being built today.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best Zero Knowledge Cloud Storage 2026](/privacy-tools-guide/best-zero-knowledge-cloud-storage-2026/)
 - [Best Zero Knowledge Cloud Storage Enterprise](/privacy-tools-guide/best-zero-knowledge-cloud-storage-enterprise/)

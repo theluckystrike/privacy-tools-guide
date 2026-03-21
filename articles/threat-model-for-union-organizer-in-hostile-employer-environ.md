@@ -126,7 +126,7 @@ def double_encrypt(message, key1, key2):
     f2 = Fernet(key2)
     # First layer
     encrypted = f1.encrypt(message.encode())
-    # Second layer  
+    # Second layer
     double_encrypted = f2.encrypt(encrypted)
     return base64.b64encode(double_encrypted)
 ```
@@ -172,13 +172,13 @@ incident_response:
     - Do not power off (preserves RAM for forensics)
     - Contact technical security support
     - Document everything
-    
+
   account_compromised:
     - Change passwords from clean device
     - Enable two-factor authentication
     - Review recent account activity
     - Notify affected contacts
-    
+
   suspicious_surveillance:
     - Note times, locations, descriptions
     - Photograph vehicles if safe
@@ -198,8 +198,7 @@ Threat models require regular updates as conditions change. Schedule quarterly r
 Document these reviews and adjust countermeasures accordingly. Security is an ongoing process, not an one-time configuration.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)

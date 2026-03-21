@@ -92,14 +92,14 @@ Meta's API requires App Review for most permissions. Here's a basic setup:
 const MetaAuth = {
   accessToken: process.env.META_ACCESS_TOKEN,
   appId: process.env.META_APP_ID,
-  
+
   async getUserData() {
     const response = await fetch(
       `https://graph.facebook.com/v18.0/me?fields=id,name,email&access_token=${this.accessToken}`
     );
     return response.json();
   },
-  
+
   async exportInstagramData() {
     // Request data download via official tool
     const response = await fetch(
@@ -151,19 +151,19 @@ class SocialExport:
     def __init__(self, output_dir="~/social-exports"):
         self.output_dir = os.path.expanduser(output_dir)
         os.makedirs(self.output_dir, exist_ok=True)
-    
+
     def export_to_json(self, platform, data):
         """Save platform data as timestamped JSON"""
         timestamp = datetime.now().strftime("%Y%m%d")
         filename = f"{platform}_{timestamp}.json"
         filepath = os.path.join(self.output_dir, filename)
-        
+
         with open(filepath, "w") as f:
             json.dump(data, f, indent=2, default=str)
-        
+
         print(f"Exported {platform} data to {filepath}")
         return filepath
-    
+
     def create_manifest(self, exports):
         """Create a manifest of all exports"""
         manifest = {
@@ -197,7 +197,7 @@ async function fetchHomeTimeline(maxId = null) {
     limit: 40,
     ...(maxId && { max_id: maxId })
   });
-  
+
   const response = await fetch(
     `https://mastodon.social/api/v1/timelines/home?${params}`,
     {
@@ -206,7 +206,7 @@ async function fetchHomeTimeline(maxId = null) {
       }
     }
   );
-  
+
   return response.json();
 }
 ```
@@ -266,17 +266,17 @@ class PrivacyRequestHandler:
         "facebook": "https://www.facebook.com/help/contact/180237885820906",
         "linkedin": "https://www.linkedin.com/help/linkedin/ask/TS-privacy",
     }
-    
+
     def request_deletion(self, platform, user_id):
         """Submit GDPR deletion request"""
         if platform not in self.PLATFORM_ENDPOINTS:
             raise ValueError(f"Unsupported platform: {platform}")
-        
+
         response = requests.post(
             self.PLATFORM_ENDPOINTS[platform],
             data={"id": user_id, "delete": "true"}
         )
-        
+
         return {
             "platform": platform,
             "requested": datetime.now().isoformat(),
@@ -295,9 +295,7 @@ The social media ecosystem continues evolving. Staying informed about data pract
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [Social Media Privacy For Teenagers Guide 2026](/privacy-tools-guide/social-media-privacy-for-teenagers-guide-2026/)

@@ -135,12 +135,12 @@ Teams with strong engineering resources often prefer Klaro or custom implementat
 // Minimal custom consent manager
 const ConsentManager = {
   storage: localStorage,
-  
+
   getConsent(category) {
     const consent = JSON.parse(this.storage.getItem('consent') || '{}');
     return consent[category] || false;
   },
-  
+
   setConsent(category, granted) {
     const consent = JSON.parse(this.storage.getItem('consent') || '{}');
     consent[category] = granted;
@@ -148,7 +148,7 @@ const ConsentManager = {
     this.storage.setItem('consent', JSON.stringify(consent));
     this.updateScripts(consent);
   },
-  
+
   updateScripts(consent) {
     if (consent.analytics) {
       // Load analytics
@@ -194,9 +194,7 @@ Choose based on your team capacity, compliance burden, and data ownership priori
 The right choice depends on your specific constraints. Test any implementation thoroughly—ensure trackers actually block before consent, scripts load only when permitted, and users can find and modify their preferences.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [GDPR Cookie Consent Banner Best Practices for 2026](/privacy-tools-guide/gdpr-cookie-consent-banner-best-practices-2026/)
 - [Cookie Alternatives After Third-Party Deprecation: A.](/privacy-tools-guide/cookie-alternatives-after-third-party-deprecation-2026-guide/)

@@ -265,8 +265,7 @@ Occasionally. Feature updates (like annual Windows 11 version upgrades) can rese
 Microsoft officially supports this on Enterprise editions. On Home and Pro, the system may enforce a minimum of level 1 regardless of this key. Setting it to 0 still reduces telemetry, but some diagnostic uploads may continue.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Safe House Protecting Location From Digita](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)

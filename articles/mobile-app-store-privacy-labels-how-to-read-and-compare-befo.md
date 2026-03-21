@@ -136,16 +136,16 @@ def audit_data_collection():
         "social": [],          # Social SDKs
         "payments": []        # Payment processors
     }
-    
+
     # Check third-party dependencies
     dependencies = get_third_party_sdks()
-    
+
     for sdk in dependencies:
         if sdk.analytics:
             collection_points["analytics"].append(sdk.name)
         if sdk.advertising:
             collection_points["advertising"].append(sdk.name)
-    
+
     return collection_points
 
 # Review and map to privacy label categories
@@ -155,13 +155,13 @@ def map_to_privacy_labels(collection_points):
         "Data Not Linked to You": [],
         "Data Used to Track You": []
     }
-    
+
     # Categorize based on SDK behavior
     for sdk in collection_points.get("advertising", []):
         privacy_label_mapping["Data Used to Track You"].append(
             f"{sdk}: Advertising ID"
         )
-    
+
     return privacy_label_mapping
 ```
 
@@ -177,8 +177,7 @@ Use this systematic approach when evaluating apps:
 6. **Test before committing** - use the app briefly to evaluate functionality before trusting it with sensitive data
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
 - [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)

@@ -47,23 +47,23 @@ import hashlib
 
 class EncryptedField(models.BinaryField):
     """Custom field that encrypts data before storage."""
-    
+
     def __init__(self, *args, **kwargs):
         self.fernet = Fernet(settings.ENCRYPTION_KEY)
         super().__init__(*args, **kwargs)
-    
+
     def from_db_value(self, value, expression, connection):
         if value is None:
             return value
         return self.fernet.decrypt(value).decode('utf-8')
-    
+
     def to_python(self, value):
         if isinstance(value, str):
             return value
         if value is None:
             return value
         return self.fernet.decrypt(value).decode('utf-8')
-    
+
     def get_prep_value(self, value):
         if value is None:
             return value
@@ -71,41 +71,41 @@ class EncryptedField(models.BinaryField):
 
 class Customer(models.Model):
     """Minimal customer record with encrypted fields."""
-    
+
     # Pseudonymized identifier - not personally identifiable
     customer_id = models.UUIDField(unique=True, default=models.UUIDField)
-    
+
     # Encrypted core contact info - decrypted only when needed
     encrypted_email = EncryptedField(null=True, blank=True)
     encrypted_phone = EncryptedField(null=True, blank=True)
-    
+
     # Hashed identifier for lookups - prevents email enumeration
     email_hash = models.CharField(max_length=64, blank=True, null=True)
-    
+
     # Consent tracking with timestamps
     consent_communications = models.BooleanField(default=False)
     consent_communications_date = models.DateTimeField(null=True, blank=True)
-    
+
     # Automatic data expiration
     record_created = models.DateTimeField(auto_now_add=True)
     data_retention_date = models.DateTimeField(null=True, blank=True)
-    
+
     # Privacy settings
     data_portability_enabled = models.BooleanField(default=True)
     deletion_requested = models.BooleanField(default=False)
-    
+
     def save(self, *args, **kwargs):
         # Hash email for lookup without storing plaintext
         if self.encrypted_email and not self.email_hash:
             self.email_hash = hashlib.sha256(
                 self.encrypted_email.lower().encode()
             ).hexdigest()
-        
+
         # Set retention date (example: 2 years)
         if not self.data_retention_date:
             from datetime import timedelta
             self.data_retention_date = self.record_created + timedelta(days=730)
-        
+
         super().save(*args, **kwargs)
 ```
 
@@ -123,12 +123,12 @@ def require_consent(view_func):
     @wraps(view_func)
     def wrapper(request, *args, **kwargs):
         customer = get_customer_from_request(request)
-        
+
         if not customer.consent_communications:
             return JsonResponse({
                 'error': 'Customer has not opted into communications'
             }, status=403)
-        
+
         # Check if consent has expired
         if customer.consent_communications_date:
             consent_age = timezone.now() - customer.consent_communications_date
@@ -136,40 +136,40 @@ def require_consent(view_func):
                 return JsonResponse({
                     'error': 'Please reconfirm your communication preferences'
                 }, status=403)
-        
+
         return view_func(request, *args, **kwargs)
     return wrapper
 
 class DataRetentionManager:
     """Handles automatic data expiration and deletion requests."""
-    
+
     @staticmethod
     def process_deletion_request(customer):
         """Handle GDPR Article 17 - Right to Erasure."""
         customer.deletion_requested = True
         customer.save()
-        
+
         # Schedule actual deletion (30-day grace period for legal hold)
         from celery import task
         task.process_deletion.apply_async(
             args=[customer.id],
             countdown=30 * 24 * 60 * 60  # 30 days
         )
-    
+
     @staticmethod
     def enforce_retention_policy():
         """Run periodically to expire old records."""
         from .models import Customer
-        
+
         expired_customers = Customer.objects.filter(
             data_retention_date__lt=timezone.now(),
             deletion_requested=False
         )
-        
+
         for customer in expired_customers:
             # Notify customer before deletion
             customer.send_retention_notification()
-            
+
             # After notification period, archive and anonymize
             customer.anonymize_data()
             customer.data_retention_date = None
@@ -194,7 +194,7 @@ const hubspotSettings = {
     // Only essential cookies
     cookiePolicy: 'essential_only'
   },
-  
+
   // Disable activity tracking
   tracking: {
     pageViewTracking: false,
@@ -202,7 +202,7 @@ const hubspotSettings = {
     emailOpenTracking: false,
     linkClickTracking: false
   },
-  
+
   // Data retention settings
   dataRetention: {
     contacts: {
@@ -220,7 +220,7 @@ const hubspotSettings = {
 // Salesforce Apex - Privacy controls
 
 public class PrivacyControls {
-    
+
     public static void enableDataMasking(List<Contact> contacts) {
         for (Contact c : contacts) {
             // Mask sensitive fields
@@ -233,14 +233,14 @@ public class PrivacyControls {
         }
         update contacts;
     }
-    
+
     public static void processDataDeletion(List<Contact> contacts) {
         // Implement deletion with audit trail
         List<Id> contactIds = new List<Id>();
         for (Contact c : contacts) {
             contactIds.add(c.Id);
         }
-        
+
         // Create deletion request
         Data_Deletion_Request__c request = new Data_Deletion_Request__c(
             Status__c = 'Pending',
@@ -273,8 +273,7 @@ Maintain a clear inventory of what customer data you collect, why, and how long 
 5. **Enable field-level encryption** — Protect sensitive data even if the database is compromised
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
 - [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)

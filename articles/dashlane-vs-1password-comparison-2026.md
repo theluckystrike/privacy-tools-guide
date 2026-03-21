@@ -223,8 +223,7 @@ op item list --format csv > 1password-export.csv
 For developers with extensive integrations, plan migration of API keys, environment variables, and automated workflows—this proves more time-consuming than moving basic credentials.
 
 
-
-## Related Reading
+## Related Articles
 
 - [1Password vs Dashlane Comparison 2026: Which Is Better](/privacy-tools-guide/1password-vs-dashlane-comparison-2026/)
 - [Dashlane vs LastPass After Breach: Security Comparison](/privacy-tools-guide/dashlane-vs-lastpass-after-breach-comparison/)

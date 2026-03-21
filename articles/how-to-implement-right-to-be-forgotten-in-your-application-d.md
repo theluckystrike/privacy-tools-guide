@@ -55,8 +55,8 @@ COMMIT;
 For applications requiring audit trails, consider soft deletes that mark records as deleted without physical removal:
 
 ```sql
-UPDATE users 
-SET deleted_at = NOW(), 
+UPDATE users
+SET deleted_at = NOW(),
     email = CONCAT(id, '-deleted-', EXTRACT(EPOCH FROM NOW()), '@deleted.invalid'),
     name = 'Deleted User'
 WHERE id = 'user-uuid-here';
@@ -71,21 +71,21 @@ MongoDB's flexible schema requires a different approach. Use bulk operations for
 ```javascript
 async function deleteUserData(userId) {
   const db = client.db('your_application');
-  
+
   // Define deletion operations for each collection
   const operations = [
     { deleteMany: { filter: { userId: userId } } },           // user_sessions
-    { deleteMany: { filter: { userId: userId } } },           // user_profiles  
+    { deleteMany: { filter: { userId: userId } } },           // user_profiles
     { deleteMany: { filter: { userId: userId } } },           // user_orders
     { deleteMany: { filter: { 'metadata.userId': userId } } }, // activity_logs
     { deleteOne: { filter: { _id: userId } } }                 // users collection
   ];
-  
+
   // Execute all operations
   const results = await Promise.all(
     operations.map(op => db.collection('users').bulkWrite([op]))
   );
-  
+
   return results;
 }
 ```
@@ -110,16 +110,16 @@ app = Flask(__name__)
 @require_authentication
 def request_account_deletion():
     user_id = get_current_user_id()
-    
+
     # Log the deletion request for compliance
     audit_log.info(f"Deletion request: user_id={user_id}")
-    
+
     # Queue async deletion task
     deletion_task = asyncio.create_task(delete_user_data_async(user_id))
-    
+
     # Send confirmation email (using anonymized template)
     send_deletion_confirmation(user_id)
-    
+
     return jsonify({
         'status': 'deletion_scheduled',
         'message': 'Your data deletion has been scheduled',
@@ -151,7 +151,7 @@ async def delete_user_data_async(user_id):
     """Delete user data respecting dependency order"""
     for table in topological_sort(DELETION_DEPENDENCIES):
         await delete_table_data(table, user_id)
-    
+
     # Finally, delete from primary users table
     await db.users.delete_one({'_id': user_id})
 ```
@@ -169,13 +169,13 @@ async def verify_deletion_complete(user_id):
         'search': await check_elasticsearch(user_id),
         'backup': await check_backup_systems(user_id)
     }
-    
+
     remaining = {k: v for k, v in checks.items() if v}
-    
+
     if remaining:
         alert_security_team(f"Incomplete deletion for {user_id}: {remaining}")
         return False
-    
+
     return True
 ```
 
@@ -213,14 +213,14 @@ Thoroughly test your deletion implementation:
 @pytest.mark.asyncio
 async def test_user_deletion_removes_all_data():
     user_id = await create_test_user()
-    
+
     # Add data across systems
     await add_test_order(user_id)
     await add_test_session(user_id)
-    
+
     # Perform deletion
     await delete_user_data_async(user_id)
-    
+
     # Verify removal
     assert await db.users.find_one({'_id': user_id}) is None
     assert await db.user_orders.count_documents({'userId': user_id}) == 0
@@ -230,14 +230,12 @@ async def test_user_deletion_removes_all_data():
 Implementing the right to be forgotten requires careful attention to data architecture, cascade relationships, and verification processes. By building these capabilities into your application from the start, you ensure compliance while respecting user privacy.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Right To Be Forgotten In Search Engines How To Request Googl](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 - [How To Implement Encrypted Webhooks For Secure Application T](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

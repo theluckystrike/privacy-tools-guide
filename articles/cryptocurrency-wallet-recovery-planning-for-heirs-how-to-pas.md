@@ -86,9 +86,9 @@ Ethereum supports multi-sig through smart contracts:
 contract MultiSigWallet {
     address[3] public owners;
     uint public required = 2;
-    
+
     mapping(bytes32 => bool) public executed;
-    
+
     function submitTransaction(address destination, bytes memory data) public {
         // Requires 2 owners to approve any transaction
     }
@@ -324,13 +324,12 @@ Total process: 1-2 weeks from recovered key to fiat funds
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Ethereum Wallet Inheritance: Using Social Recovery Smart.](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
 - [How To Protect Cryptocurrency Wallet From Being Hacked Secur](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
 - [Bitcoin Inheritance Planning Using Multisig With Family Memb](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

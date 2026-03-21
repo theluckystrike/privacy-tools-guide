@@ -387,8 +387,7 @@ Configuration:
 - [ ] Regenerate Firefox profile if feeling paranoid
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Configure Element Matrix Client For Maximum Privacy A](/privacy-tools-guide/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
 - [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)

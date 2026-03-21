@@ -28,16 +28,16 @@ Here's a minimal example of how fingerprinting works from the tracking side:
 function generateCanvasFingerprint() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  
+
   canvas.width = 200;
   canvas.height = 50;
-  
+
   ctx.textBaseline = 'top';
   ctx.font = '14px Arial';
   ctx.fillText('Fingerprint Me', 2, 2);
   ctx.fillStyle = '#f60';
   ctx.fillRect(125, 1, 62, 20);
-  
+
   return canvas.toDataURL();
 }
 ```
@@ -176,11 +176,11 @@ function testCanvasUniqueness() {
   for (let i = 0; i < 10; i++) {
     results.push(generateCanvasFingerprint());
   }
-  
-  const uniqueHashes = new Set(results.map(hash => 
+
+  const uniqueHashes = new Set(results.map(hash =>
     simpleHash(hash)
   ));
-  
+
   console.log(`Unique fingerprints: ${uniqueHashes.size}/10`);
   return uniqueHashes.size > 1; // Should be >1 if blocker works
 }
@@ -199,8 +199,7 @@ Several extensions implement these techniques with varying trade-offs:
 Each handles the performance-compatibility tradeoff differently. Privacy-focused power users often accept some compatibility loss, while general users prefer allowlist-heavy approaches.
 
 
-
-## Related Reading
+## Related Articles
 
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
 - [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)

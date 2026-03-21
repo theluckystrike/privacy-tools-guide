@@ -346,8 +346,7 @@ python3 -c "import pyotp; t = pyotp.TOTP('JBSWY3DPEHPK3PXP'); print(t.now())"
 These tools generate TOTP codes from secrets, useful for automation or in environments where traditional authenticator apps aren't practical.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Authenticator App 2026 Review: A Developer's Guide](/privacy-tools-guide/best-authenticator-app-2026-review/)
 - [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)

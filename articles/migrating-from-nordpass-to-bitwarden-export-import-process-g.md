@@ -164,9 +164,9 @@ For bulk TOTP migration, use this CLI approach:
 while read line; do
   ITEM_NAME=$(echo $line | cut -d',' -f1)
   TOTP_SECRET=$(echo $line | cut -d',' -f6)
-  
+
   ITEM_ID=$(bw list items --search "$ITEM_NAME" | jq -r '.[0].id')
-  
+
   if [ "$ITEM_ID" != "null" ] && [ -n "$TOTP_SECRET" ]; then
     bw get item $ITEM_ID | jq --arg secret "$TOTP_SECRET" '.totp = $secret' | bw edit item $ITEM_ID
     echo "Added TOTP to: $ITEM_NAME"
@@ -300,8 +300,7 @@ iconv -f ISO-8859-1 -t UTF-8 nordpass-export.csv > nordpass-utf8.csv
 **Solution**: Verify the secret key format—Bitwarden requires base32, not otpauth:// URIs
 
 
-
-## Related Reading
+## Related Articles
 
 - [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
 - [ProtonMail Import Export Tool Guide](/privacy-tools-guide/protonmail-import-export-tool-guide/)

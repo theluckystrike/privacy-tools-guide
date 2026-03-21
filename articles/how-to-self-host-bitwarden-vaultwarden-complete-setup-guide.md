@@ -643,8 +643,7 @@ docker-compose start vaultwarden
 For privacy-conscious users who want control, self-hosted Vaultwarden is the best value.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
 - [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)

@@ -195,8 +195,7 @@ Review these settings periodically:
 - [ ] Review site permissions (camera, microphone, location)
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Vpn For Students Studying Abroad Accessing University R](/privacy-tools-guide/best-vpn-for-students-studying-abroad-accessing-university-r/)
 - [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)

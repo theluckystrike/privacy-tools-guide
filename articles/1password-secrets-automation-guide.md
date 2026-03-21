@@ -205,8 +205,7 @@ op signin
 Permission errors indicate the service account or account lacks access to specific vaults. Verify vault access through the 1Password admin console.
 
 
-
-## Related Reading
+## Related Articles
 
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)

@@ -111,42 +111,42 @@ class RFDetector:
         self.sdr.gain = 40
         self.running = False
         self.threshold = 0.015
-        
+
     def analyze_power(self, samples):
         """Detect power spikes indicating transmission bursts"""
         power = np.abs(samples) ** 2
         avg_power = np.mean(power)
         peak_power = np.max(power)
-        
+
         # Bursts typically show higher peak-to-average ratio
         if peak_power > self.threshold:
             return True, avg_power, peak_power
         return False, avg_power, peak_power
-    
+
     def scan_band(self, duration=5):
         """Scan current frequency band for specified duration"""
         print(f"Scanning {self.sdr.center_freq/1e6}MHz for {duration}s...")
-        
+
         samples = self.sdr.read_samples(256 * 1024)
         detected, avg, peak = self.analyze_power(samples)
-        
+
         if detected:
             print(f"  [!] Potential transmission detected!")
             print(f"      Avg: {avg:.6f}, Peak: {peak:.6f}")
         else:
             print(f"      Power levels normal (avg: {avg:.6f})")
-        
+
         return detected
-    
+
     def scan_multiple_bands(self):
         """Scan common cellular frequencies"""
         # GSM bands
         gsm_bands = [850e6, 900e6, 1800e6, 1900e6]
         # LTE bands (sample)
         lte_bands = [700e6, 800e6, 1800e6, 2100e6, 2600e6]
-        
+
         all_bands = list(set(gsm_bands + lte_bands))
-        
+
         for freq in sorted(all_bands):
             self.sdr.center_freq = freq
             self.scan_band(duration=3)
@@ -157,7 +157,7 @@ if __name__ == "__main__":
     print("=== GPS Tracker RF Detection ===")
     print("Park your vehicle in a quiet RF environment for best results")
     print("This scans cellular bands for anomalous transmission bursts\n")
-    
+
     try:
         detector.scan_multiple_bands()
     except Exception as e:
@@ -225,9 +225,7 @@ For those in high-risk situations—activists, journalists, individuals escaping
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
 - [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)

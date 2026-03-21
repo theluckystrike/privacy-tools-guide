@@ -260,8 +260,7 @@ This prevents casual observers from seeing your messages when you're in public.
 Link previews generate server requests to fetch page metadata. Disable at **Settings > Privacy > Link previews** for maximum privacy.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)

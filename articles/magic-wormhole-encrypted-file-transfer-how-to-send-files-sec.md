@@ -209,9 +209,7 @@ For permanent file sharing or collaboration, consider combining Magic Wormhole w
 Magic Wormhole provides a practical, terminal-native solution for secure file transfer without the complexity of setting up encrypted channels manually. The short code exchange model makes it accessible while maintaining strong encryption guarantees.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Send Large Encrypted Files Without Uploading To Third](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
 - [Use Steganography to Hide Messages Inside Normal Files](/privacy-tools-guide/how-to-use-steganography-to-hide-messages-inside-normal-file/)

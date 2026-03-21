@@ -73,7 +73,7 @@ class DataPipeline:
         self.dating_data = []
         self.instagram_data = []
         self.facebook_data = []
-    
+
     def classify_for_ads(self, data_point, source):
         if source == "dating" and data_point.type == "like":
             return "EXCLUDED_FROM_TARGETING"
@@ -179,8 +179,7 @@ These changes represent incremental improvements rather than fundamental shifts 
 4. **Consider deletion, not just hiding**: Hiding profile doesn't remove data; deletion is the stronger privacy action
 
 
-
-## Related Reading
+## Related Articles
 
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)

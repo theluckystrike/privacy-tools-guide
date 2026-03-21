@@ -68,12 +68,12 @@ import requests
 
 def delete_all_tweets(bearer_token, user_id):
     headers = {"Authorization": f"Bearer {bearer_token}"}
-    
+
     # Get all tweet IDs
     tweets_url = f"https://api.twitter.com/2/users/{user_id}/tweets"
     response = requests.get(tweets_url, headers=headers)
     tweets = response.json().get("data", [])
-    
+
     # Delete each tweet
     for tweet in tweets:
         delete_url = f"https://api.twitter.com/2/tweets/{tweet['id']}"
@@ -132,7 +132,7 @@ for email in "${EMAILS[@]}"; do
   # Using curl with jq for JSON parsing
   result=$(curl -s -H "hibp-api-key: YOUR_API_KEY" \
     "https://haveibeenpwned.com/api/v3/breachedaccount/${email}")
-  
+
   if [ "$result" = "[]" ] || [ -z "$result" ]; then
     echo "  No breaches found"
   else
@@ -298,11 +298,10 @@ After reducing your footprint, adopt privacy-preserving practices:
 10. Subscribe to breach notification services for proactive monitoring
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
-- [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
+- [Disable Location Services Completely On Macos While Keeping](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
 - [How To Set Up Home Assistant Esphome For Completely Local Sm](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)

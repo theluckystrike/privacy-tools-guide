@@ -330,9 +330,7 @@ sudo chattr +i /etc/passwd /etc/shadow /etc/group
 This approach ensures consistent security across distributions.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Debian Minimal Install Guide For Building Privacy Focused De](/privacy-tools-guide/debian-minimal-install-guide-for-building-privacy-focused-de/)
 - [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)

@@ -172,8 +172,7 @@ Timing attacks can correlate your traffic patterns across the network. Using bri
 Bridge addresses themselves can become blocked. Maintain multiple bridge configurations and update them regularly. The Tor Project continuously deploys new bridges and updates existing transport configurations.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)

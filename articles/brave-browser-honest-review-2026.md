@@ -329,9 +329,7 @@ For developers specifically: use Brave for general browsing and personal project
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
 - [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)

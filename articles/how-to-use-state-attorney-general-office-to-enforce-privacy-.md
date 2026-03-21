@@ -201,11 +201,9 @@ If state AG enforcement proves insufficient, consider:
 State attorneys general remain powerful allies in enforcing your privacy rights. By documenting violations systematically and submitting well-structured complaints, you contribute to enforcement efforts that hold companies accountable.
 
 
+## Related Articles
 
-
-## Related Reading
-
-- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
 - [How To Opt Out Of Targeted Advertising Under State Privacy L](/privacy-tools-guide/how-to-opt-out-of-targeted-advertising-under-state-privacy-l/)
 - [Digital Power of Attorney: What Authority It Grants Over.](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)

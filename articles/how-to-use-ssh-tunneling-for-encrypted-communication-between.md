@@ -304,9 +304,7 @@ Usage:
 SSH tunneling provides encrypted paths between devices without the overhead of full VPN solutions. Local forwarding reaches services on remote networks. Remote forwarding exposes local services externally. Dynamic forwarding creates personal SOCKS proxies. Combine these patterns with persistent connections for reliable infrastructure.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 - [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)

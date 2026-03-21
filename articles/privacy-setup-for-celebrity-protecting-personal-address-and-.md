@@ -59,12 +59,12 @@ class DataBrokerRemover:
             {"name": "Whitepages", "url": "https://www.whitepages.com/suppression_requests"},
             # Add more brokers as needed
         ]
-    
+
     def submit_optout(self, broker_url):
         # Implementation varies by broker
         # Some require form submission, others email
         pass
-    
+
     def remove_all(self):
         for broker in self.brokers:
             try:
@@ -159,7 +159,7 @@ from google_alerts import GoogleAlerts
 def setup_family_monitoring(family_members):
     ga = GoogleAlerts('your-email@gmail.com')
     ga.login()
-    
+
     for member in family_members:
         # Create alerts for name + address combinations
         query = f'"{member["name"]}" "{member["address"]}"'
@@ -207,8 +207,7 @@ Implementing everything simultaneously overwhelms most people. Prioritize in thi
 This layered approach progressively reduces your attack surface while remaining manageable.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)

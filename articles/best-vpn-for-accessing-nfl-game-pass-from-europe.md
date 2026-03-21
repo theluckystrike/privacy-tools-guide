@@ -100,7 +100,7 @@ The browser's timezone and language settings should match your VPN location. If 
 // Override timezone in JavaScript
 Intl.DateTimeFormat = function() {
     return { resolvedOptions: function() {
-        return { timeZone: 'America/New_York', 
+        return { timeZone: 'America/New_York',
                  locale: 'en-US' };
     }};
 };
@@ -397,9 +397,7 @@ If you cannot achieve reliable access through standard VPN approaches:
 The most sustainable approach combines VPN usage with management expectations—occasional buffering and occasional blocking are normal trade-offs when bypassing geo-restrictions.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [VPN for Accessing US Pharmacy Websites from Europe Safely](/privacy-tools-guide/vpn-for-accessing-us-pharmacy-websites-from-europe-safely/)
 - [VPN for Accessing US Sports Streaming from Europe 2026](/privacy-tools-guide/vpn-for-accessing-us-sports-streaming-from-europe-2026/)

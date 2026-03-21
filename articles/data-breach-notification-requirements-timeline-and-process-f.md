@@ -122,12 +122,12 @@ class SecurityIncident:
     notification_sent: bool = False
     authority_notification_time: Optional[datetime] = None
     individual_notification_time: Optional[datetime] = None
-    
+
     def confirm_breach(self, confirmation_time: datetime, breach_type: BreachType):
         self.confirmation_time = confirmation_time
         self.breach_type = breach_type
         self._assess_risk()
-    
+
     def _assess_risk(self):
         high_risk_indicators = ["ssn", "financial", "health", "biometric"]
         if any(cat in high_risk_indicators for cat in self.data_categories_affected):
@@ -149,7 +149,7 @@ def triage_breach(incident: SecurityIncident) -> dict:
         "deadline_72h": None,
         "deadline_30d": None
     }
-    
+
     # GDPR assessment
     if incident.risk_level in [RiskLevel.HIGH, RiskLevel.CRITICAL]:
         results["gdpr_reportable"] = True
@@ -158,16 +158,16 @@ def triage_breach(incident: SecurityIncident) -> dict:
             results["deadline_72h"] = incident.confirmation_time.replace(
                 hour=incident.confirmation_time.hour + 72
             )
-    
+
     # CCPA assessment
-    if (incident.contains_california_residents and 
+    if (incident.contains_california_residents and
         incident.breach_type == BreachType.CONFIRMED):
         results["ccpa_reportable"] = True
         results["deadline_30d"] = datetime.now()  # Within 30 days recommended
-        
+
         if incident.data_subjects_count >= 500:
             results["ccpa_notify_california_ag"] = True
-    
+
     return results
 ```
 
@@ -181,17 +181,17 @@ def log_incident_evidence(incident: SecurityIncident, evidence: dict):
     """Log incident with cryptographic timestamp for audit trail."""
     import hashlib
     import json
-    
+
     evidence_json = json.dumps(evidence, sort_keys=True)
     evidence_hash = hashlib.sha256(evidence_json.encode()).hexdigest()
-    
+
     log_entry = {
         "incident_id": incident.incident_id,
         "timestamp": datetime.utcnow().isoformat(),
         "evidence_hash": evidence_hash,
         "evidence": evidence  # Store actual evidence securely
     }
-    
+
     # Append to immutable audit log
     with open(f"/secure/audit/incidents/{incident.incident_id}.json", "a") as f:
         f.write(json.dumps(log_entry) + "\n")
@@ -211,7 +211,7 @@ incident_response:
         - alert_security_team
         - create_incident_record
         - preserve_logs
-    
+
     - name: assessment
       sla: 24 hours
       actions:
@@ -219,14 +219,14 @@ incident_response:
         - count_affected_users
         - identify_jurisdictions
         - assess_risk_level
-    
+
     - name: notification_preparation
       sla: 48 hours
       actions:
         - prepare_authority_notification
         - prepare_individual_notification
         - legal_review
-    
+
     - name: notification
       sla: 72 hours (GDPR)
       actions:
@@ -248,8 +248,7 @@ Many organizations struggle with these areas:
 **Inadequate incident response plans**: Having a plan on paper isn't enough. Practice your response through tabletop exercises.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)

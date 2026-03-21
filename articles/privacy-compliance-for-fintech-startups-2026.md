@@ -42,7 +42,7 @@ class LawfulBasis:
     LEGAL_OBLIGATION = "legal_obligation"
     LEGITIMATE_INTEREST = "legitimate_interest"
     CONSENT = "consent"
-    
+
     @staticmethod
     def determine_basis(processing_type, data_category):
         """
@@ -69,10 +69,10 @@ import json
 
 class GDPRRightsHandler:
     """Handle GDPR data subject requests"""
-    
+
     def __init__(self, data_store):
         self.data_store = data_store
-    
+
     def handle_access_request(self, user_id: str) -> Dict:
         """Right to access - provide all personal data"""
         user_data = self.data_store.get_user_data(user_id)
@@ -83,13 +83,13 @@ class GDPRRightsHandler:
             "retention_periods": self.get_retention_info(user_id),
             "rights_available": [
                 "Right to access",
-                "Right to rectification", 
+                "Right to rectification",
                 "Right to erasure",
                 "Right to data portability",
                 "Right to object"
             ]
         }
-    
+
     def handle_erasure_request(self, user_id: str) -> Dict:
         """Right to erasure - delete personal data"""
         # Check if retention is required by law
@@ -99,10 +99,10 @@ class GDPRRightsHandler:
                 "message": "Data retained for legal obligations",
                 "retained_data": ["transaction_records", "regulatory_reports"]
             }
-        
+
         self.data_store.delete_user_data(user_id)
         return {"status": "completed", "message": "Data erased"}
-    
+
     def handle_portability_request(self, user_id: str) -> Dict:
         """Right to data portability - provide data in machine-readable format"""
         user_data = self.data_store.get_user_data(user_id)
@@ -133,7 +133,7 @@ function PrivacyDisclosure() {
           <li>Commercial information (products/services purchased)</li>
           <li>Internet activity (browsing history, interactions)</li>
         </ul>
-        
+
         <h4>Your Rights:</h4>
         <ul>
           <li>Right to know what we collect</li>
@@ -141,7 +141,7 @@ function PrivacyDisclosure() {
           <li>Right to opt-out of sale (we don't sell data)</li>
           <li>Right to non-discrimination</li>
         </ul>
-        
+
         <button id="ccpa-request-btn">Submit Privacy Request</button>
       </div>
     `
@@ -160,19 +160,19 @@ class CCPAController {
     this.cookieManager = cookieManager;
     this.apiClient = apiClient;
   }
-  
+
   init() {
     this.checkDoNotTrack();
     this.setupOptOutLinks();
   }
-  
+
   checkDoNotTrack() {
     const dnt = navigator.doNotTrack || window.doNotTrack;
     if (dnt === "1" || dnt === "yes") {
       this.disableTracking();
     }
   }
-  
+
   setupOptOutLinks() {
     document.querySelectorAll('[data-ccpa-opt-out]').forEach(link => {
       link.addEventListener('click', (e) => {
@@ -181,20 +181,20 @@ class CCPAController {
       });
     });
   }
-  
+
   async submitOptOutRequest() {
     // Store opt-out preference
-    this.cookieManager.set('ccpa_opt_out', 'true', { 
+    this.cookieManager.set('ccpa_opt_out', 'true', {
       expires: 365,
       sameSite: 'strict'
     });
-    
+
     // Notify backend
     await this.apiClient.post('/api/ccpa/opt-out', {
       timestamp: new Date().toISOString(),
       preference: 'opted_out'
     });
-    
+
     this.showConfirmation();
   }
 }
@@ -217,36 +217,36 @@ class PaymentTokenization:
     Implement tokenization to minimize PCI-DSS scope
     Never store actual card numbers - use tokens instead
     """
-    
+
     def __init__(self, encryption_key: bytes):
         self.key = encryption_key
-    
+
     def tokenize(self, card_number: str) -> str:
         """Generate a token from card number"""
         # Token format: first6-last4 + random suffix
         prefix = card_number[:6]
         suffix = card_number[-4:]
         random_part = secrets.token_hex(8)
-        
+
         token = f"{prefix}-{suffix}-{random_part}"
-        
+
         # Store mapping securely (in production, use HSM or vault)
         self.store_token_mapping(token, card_number)
-        
+
         return token
-    
+
     def detokenize(self, token: str) -> Optional[str]:
         """Retrieve card number from token"""
         return self.retrieve_token_mapping(token)
-    
+
     def store_token_mapping(self, token: str, card_number: str):
         """In production, store encrypted mapping in secure vault"""
         # Pseudo-implementation
         pass
-    
+
     def retrieve_token_mapping(self, token: str) -> Optional[str]:
         """In production, retrieve from secure vault"""
-        # Pseudo-implementation  
+        # Pseudo-implementation
         pass
 
 # Example payment flow with tokenization
@@ -254,17 +254,17 @@ class PaymentService:
     def __init__(self, tokenization: PaymentTokenization, payment_gateway):
         self.tokenization = tokenization
         self.gateway = payment_gateway
-    
+
     def process_payment(self, user_id: str, card_number: str, amount: float):
         # Tokenize immediately - card number never touches our database
         token = self.tokenization.tokenize(card_number)
-        
+
         # Store only token, not card number
         self.store_user_token(user_id, token)
-        
+
         # Process with payment gateway using token
         result = self.gateway.charge(token, amount)
-        
+
         return result
 ```
 
@@ -291,7 +291,7 @@ STATE_REQUIREMENTS = {
         "categories": ["personal_data", "sensitive_data"]
     },
     "Colorado": {
-        "name": "CPA", 
+        "name": "CPA",
         "effective": "2023-07-01",
         "rights": ["access", "deletion", "correction", "portability", "opt-out"],
         "universal_opt_out": True
@@ -303,7 +303,7 @@ STATE_REQUIREMENTS = {
         "categories": ["personal_data", "sensitive_data"]
     },
     "Utah": {
-        "name": "UCPA", 
+        "name": "UCPA",
         "effective": "2023-12-31",
         "rights": ["access", "deletion", "portability", "opt-out"],
         "threshold": "$100K revenue or 100K users"
@@ -330,15 +330,15 @@ class ConsentManager {
     this.config = config;
     this.consents = {};
   }
-  
+
   async init(userId) {
     // Load existing consent records
     this.consents = await this.loadConsents(userId);
-    
+
     // Check for consent expiration
     this.checkConsentExpiration();
   }
-  
+
   async requestConsent(consentType, purpose, legalBasis = 'consent') {
     const consentRequest = {
       userId: this.userId,
@@ -348,10 +348,10 @@ class ConsentManager {
       timestamp: new Date().toISOString(),
       version: this.config.policyVersion
     };
-    
+
     // Present appropriate consent UI
     const granted = await this.showConsentDialog(consentRequest);
-    
+
     if (granted) {
       this.consents[consentType] = {
         granted: true,
@@ -360,19 +360,19 @@ class ConsentManager {
       };
       await this.storeConsents();
     }
-    
+
     return granted;
   }
-  
+
   hasConsent(consentType) {
     return this.consents[consentType]?.granted === true;
   }
-  
+
   // GDPR-style data processing agreement
   async acceptDPA() {
     return this.requestConsent('data_processing', 'contract_execution');
   }
-  
+
   // Marketing consent (separate from functional consent)
   async acceptMarketing() {
     return this.requestConsent('marketing', 'direct_marketing');
@@ -399,13 +399,13 @@ class DataAsset:
 
 class DataInventory:
     """Track all personal data assets for compliance"""
-    
+
     def __init__(self):
         self.assets: List[DataAsset] = []
-    
+
     def register_asset(self, asset: DataAsset):
         self.assets.append(asset)
-    
+
     def generate_privacy_report(self) -> dict:
         """Generate data inventory for privacy assessment"""
         return {
@@ -416,7 +416,7 @@ class DataInventory:
             "retention_summary": self._retention_summary(),
             "encryption_coverage": self._encryption_coverage()
         }
-    
+
     def find_data_subject_data(self, user_id: str) -> dict:
         """Find all data related to a specific user for access requests"""
         user_data = {}
@@ -475,11 +475,10 @@ The regulatory landscape will continue evolving. Startups that build flexible, p
 ---
 
 
-
-## Related Reading
+## Related Articles
 
 - [Data Retention Policy Template for Startups](/privacy-tools-guide/data-retention-policy-template-for-startups/)
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 - [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)

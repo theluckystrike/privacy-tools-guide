@@ -188,8 +188,8 @@ This example combines the techniques above into a practical privacy-focused rule
 # /etc/pf.anchors/privacy.rules
 
 # Block known tracking domains
-block drop out quick on en0 proto { tcp, udp } from any to { 
-    doubleclick.net, 
+block drop out quick on en0 proto { tcp, udp } from any to {
+    doubleclick.net,
     googlesyndication.com,
     googleadservices.com,
     facebook.com/tr,
@@ -217,8 +217,7 @@ When configuring macOS firewall for privacy, avoid these mistakes:
 4. **Not testing rules**: Always test new rules in a controlled environment before deploying to production systems.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)

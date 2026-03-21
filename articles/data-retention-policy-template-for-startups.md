@@ -53,17 +53,17 @@ SECURITY DEFINER
 AS $$
 BEGIN
     -- Delete application logs older than 90 days
-    DELETE FROM application_logs 
+    DELETE FROM application_logs
     WHERE created_at < NOW() - INTERVAL '90 days';
 
     -- Delete marketing data where consent expired (2 years inactive)
-    DELETE FROM marketing_consents 
+    DELETE FROM marketing_consents
     WHERE last_interaction < NOW() - INTERVAL '730 days'
     AND withdrawn = true;
 
     -- Anonymize analytics data older than 1 year
-    UPDATE analytics_events 
-    SET user_id = NULL, 
+    UPDATE analytics_events
+    SET user_id = NULL,
         session_id = NULL,
         ip_address = NULL
     WHERE event_timestamp < NOW() - INTERVAL '365 days'
@@ -105,7 +105,7 @@ class DataRetentionEnforcer:
         self.rules: List[RetentionRule] = []
         self.db_pool = db_pool
 
-    def add_rule(self, table: str, column: str, 
+    def add_rule(self, table: str, column: str,
                  retention_days: int, action: str = 'delete'):
         self.rules.append(RetentionRule(
             table=table,
@@ -116,7 +116,7 @@ class DataRetentionEnforcer:
 
     async def run_cleanup(self):
         cutoff_date = datetime.utcnow()
-        
+
         for rule in self.rules:
             async with self.db_pool.acquire() as conn:
                 if rule.action == 'delete':
@@ -132,7 +132,7 @@ class DataRetentionEnforcer:
                         WHERE {rule.column} < $1
                         RETURNING id
                     """
-                
+
                 cutoff = cutoff_date - timedelta(days=rule.retention_days)
                 deleted = await conn.fetch(query, cutoff)
                 print(f"Processed {len(deleted)} records from {rule.table}")
@@ -161,13 +161,13 @@ async def handle_deletion_request(user_id: str, db_pool):
         ("customer_data", "DELETE FROM customer_data WHERE user_id = $1"),
         ("support_tickets", "UPDATE support_tickets SET user_id = NULL, user_email = NULL WHERE user_id = $1"),
     ]
-    
+
     async with db_pool.acquire() as conn:
         async with conn.transaction():
             for table, query in deletion_queries:
                 result = await conn.execute(query, user_id)
                 print(f"Deleted from {table}: {result}")
-    
+
     return {"status": "completed", "user_id": user_id}
 ```
 
@@ -208,9 +208,7 @@ March 2026
 Start by auditing your data stores to identify every table containing personal data. Map each table to a retention category and determine the appropriate retention period. Implement automated cleanup using the database-native approach or application-level code shown above. Schedule regular audits to verify that cleanup jobs execute successfully and retention periods remain accurate as your product evolves.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Data Retention Policy Template What To Keep And For How Long](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
 - [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)

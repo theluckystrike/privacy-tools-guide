@@ -208,8 +208,7 @@ if (window.location.origin !== 'https://your-app.com') {
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Link Decoration Tracking How Utm Parameters And Click Ids Tr](/privacy-tools-guide/link-decoration-tracking-how-utm-parameters-and-click-ids-tr/)
 - [What Happens When Your Password Appears In Data Breach Steps](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)

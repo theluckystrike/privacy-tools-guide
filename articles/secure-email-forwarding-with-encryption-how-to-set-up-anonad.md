@@ -119,7 +119,7 @@ If you're self-hosting or using a custom mail server, route incoming mail throug
   # Forward to encrypted mailbox
   :0 c
   ! encrypted-forward@archive.com
-  
+
   # Keep copy with PGP encryption
   :0 w
   | gpg --encrypt --recipient your@email.com --output ~/mail/encrypted.mbox
@@ -159,7 +159,7 @@ class EmailAliasManager:
             "Authorization": f"Bearer {api_token}",
             "Content-Type": "application/json"
         }
-    
+
     def create_alias(self, domain="@anonaddy.com", prefix=None):
         endpoint = f"{self.base_url}/api/v1/aliases"
         data = {
@@ -170,7 +170,7 @@ class EmailAliasManager:
         }
         response = requests.post(endpoint, json=data, headers=self.headers)
         return response.json()
-    
+
     def list_aliases(self):
         endpoint = f"{self.base_url}/api/v1/aliases"
         response = requests.get(endpoint, headers=self.headers)
@@ -187,7 +187,7 @@ class SimpleLoginClient:
         self.api_key = api_key
         self.base_url = "https://app.simplelogin.io/api"
         self.headers = {"Authentication": api_key}
-    
+
     def create_alias(self, mail_box="default"):
         data = {
             "mailbox": mail_box,
@@ -212,8 +212,7 @@ When implementing email aliasing in production environments:
 - **Separate concerns**: Use different aliases for different purposes (shopping, social media, work)
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)

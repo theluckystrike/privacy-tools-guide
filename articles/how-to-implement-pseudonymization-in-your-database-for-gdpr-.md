@@ -227,12 +227,11 @@ def verify_pseudonymization(user_id):
 **Audit Logging Verification**: Confirm that access to the token mapping table is logged. Any query against the mapping table represents a de-pseudonymization event and should appear in your audit trail for later review.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Gdpr Pseudonymization Vs Anonymization Explained](/privacy-tools-guide/gdpr-pseudonymization-vs-anonymization-explained/)
 - [Gdpr Penalties Fines Database Case Examples](/privacy-tools-guide/gdpr-penalties-fines-database-case-examples/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [How To Anonymize User Data In Production Database For Privac](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 - [Macos Privacy Permissions Explained Which Tcc Database.](/privacy-tools-guide/macos-privacy-permissions-explained-which-tcc-database-entries-to-revoke-for-security/)
 

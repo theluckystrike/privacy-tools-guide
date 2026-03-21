@@ -44,18 +44,18 @@ const https = require('https');
 function encryptAndTransfer(data, recipientPublicKey) {
   // Generate a one-time session key
   const sessionKey = crypto.randomBytes(32);
-  
+
   // Encrypt the data with AES-256-GCM
   const iv = crypto.randomBytes(12);
   const cipher = crypto.createCipheriv('aes-256-gcm', sessionKey, iv);
-  
+
   const encryptedData = Buffer.concat([
     cipher.update(JSON.stringify(data), 'utf8'),
     cipher.final()
   ]);
-  
+
   const authTag = cipher.getAuthTag();
-  
+
   // Encrypt the session key with recipient's public key
   const encryptedKey = crypto.publicEncrypt(
     {
@@ -64,7 +64,7 @@ function encryptAndTransfer(data, recipientPublicKey) {
     },
     sessionKey
   );
-  
+
   return {
     encryptedKey: encryptedKey.toString('base64'),
     iv: iv.toString('base64'),
@@ -92,12 +92,12 @@ def setup_he_parameters():
         0xFFFFFFFF000001,  # 40 bits
     ])
     params.set_plain_modulus(1024)
-    
+
     context = SEALContext.Create(params)
     keygen = KeyGenerator(context)
     public_key = keygen.public_key()
     secret_key = keygen.secret_key()
-    
+
     return context, public_key, secret_key
 
 # Data can now be encrypted before transfer
@@ -116,14 +116,14 @@ Reducing the data transferred across borders reduces compliance burden. Implemen
 // Pseudonymization example
 function pseudonymizeUserData(userData) {
   const { name, email, phone, ...rest } = userData;
-  
+
   // Generate consistent pseudonym
   const pseudonym = crypto
     .createHash('sha256')
     .update(email)
     .digest('hex')
     .substring(0, 16);
-  
+
   return {
     pseudonym,
     category: categorizeUserByBehavior(rest),
@@ -178,15 +178,13 @@ Building flexible architecture today positions your application to adapt as thes
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Handle Cross Border Data Transfers After Privacy Shie](/privacy-tools-guide/how-to-handle-cross-border-data-transfers-after-privacy-shie/)
 - [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
 - [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
-- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
+- [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

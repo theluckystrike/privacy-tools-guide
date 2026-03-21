@@ -90,7 +90,7 @@ let locationManager = CLLocationManager()
 
 func checkLocationStatus() {
     let status = locationManager.authorizationStatus
-    
+
     switch status {
     case .notDetermined:
         print("Location permission not yet requested")
@@ -243,8 +243,7 @@ As iOS evolves, Apple introduces more granular controls. iOS 17 introduced the a
 The fundamental principle: location data is one of the most sensitive data types you generate. It reveals intimate details about your life, relationships, and routines. Protecting it deserves the same attention you give to passwords and financial information.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Iphone Significant Locations Tracking How To View And Delete](/privacy-tools-guide/iphone-significant-locations-tracking-how-to-view-and-delete/)
 - [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)

@@ -377,8 +377,7 @@ For users in jurisdictions with aggressive data access laws, Tutanota's model pr
 - Workaround: Duplicate events in local calendar for non-sensitive items
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
 - [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)

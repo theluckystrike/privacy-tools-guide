@@ -166,7 +166,7 @@ class GDPRComplaint:
         self.submitted_date = submitted_date
         self.status = "submitted"
         self.case_reference = None
-    
+
     def update_status(self, new_status, case_ref=None):
         self.status = new_status
         self.case_reference = case_ref or self.case_reference
@@ -214,14 +214,12 @@ You receive updates throughout the process and can provide additional evidence i
 Exercise your GDPR rights systematically. Document everything, escalate formally, and use regulatory channels when companies ignore their obligations. The process takes time, but enforcement is improving across the EU in 2026.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
-- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
 - [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

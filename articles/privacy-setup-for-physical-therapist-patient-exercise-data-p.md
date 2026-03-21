@@ -86,13 +86,13 @@ Always use TLS 1.3 for data in transit. Configure your web servers to enforce HT
 server {
     listen 443 ssl http2;
     server_name therapy.example.com;
-    
+
     ssl_certificate /etc/ssl/certs/therapy.crt;
     ssl_certificate_key /etc/ssl/private/therapy.key;
     ssl_protocols TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
-    
+
     # HSTS header for强制HTTPS
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 }
@@ -154,7 +154,7 @@ class AuditLogger:
     def __init__(self):
         self.logger = logging.getLogger("patient_data_audit")
         self.logger.setLevel(logging.INFO)
-        
+
     def log_access(
         self,
         user_id: str,
@@ -182,11 +182,11 @@ def get_patient_exercise(therapist_id: str, patient_id: str, ip: str):
     # Verify therapist has access
     if not has_patient_access(therapist_id, patient_id):
         audit.log_access(
-            therapist_id, "READ", "exercise", patient_id, 
+            therapist_id, "READ", "exercise", patient_id,
             success=False, ip_address=ip
         )
         raise PermissionError("Access denied")
-    
+
     audit.log_access(
         therapist_id, "READ", "exercise", patient_id,
         success=True, ip_address=ip
@@ -205,16 +205,16 @@ from datetime import datetime, timedelta
 
 def purge_old_patient_data(db_connection, retention_years=7):
     cutoff_date = datetime.now() - timedelta(days=retention_years * 365)
-    
+
     # Archive to separate storage before deletion
     archive_inactive_patients(db_connection, cutoff_date)
-    
+
     # Delete from active database
     cursor = db_connection.cursor()
     cursor.execute(
         """
-        DELETE FROM patient_exercises 
-        WHERE last_modified < %s 
+        DELETE FROM patient_exercises
+        WHERE last_modified < %s
         AND patient_id NOT IN (
             SELECT id FROM patients WHERE last_visit > %s
         )
@@ -268,9 +268,7 @@ Building privacy-respecting systems for physical therapy practices requires bala
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)

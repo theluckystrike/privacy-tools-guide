@@ -207,7 +207,7 @@ def send_alert(log_data):
     server.starttls()
     server.login('alerts@adoption-agency.org', 'app_password')
     msg = f"Subject: ALERT: After-hours data access detected\n\n{log_data}"
-    server.sendmail('alerts@adoption-agency.org', 
+    server.sendmail('alerts@adoption-agency.org',
                    'security@adoption-agency.org', msg)
 ```
 
@@ -229,14 +229,14 @@ def redact_identifying_info(input_pdf, output_pdf):
     options = redactor.RedactorOptions()
     options.input_stream = open(input_pdf, 'rb')
     options.output_stream = open(output_pdf, 'wb')
-    
+
     # Redact patterns like SSN, phone numbers, emails
     options.filters = [
         redactor.RegexFilter(r'\d{3}-\d{2}-\d{4}'),  # SSN
         redactor.RegexFilter(r'\d{3}[-.]?\d{3}[-.]?\d{4}'),  # Phone
         redactor.RegexFilter(r'[\w.-]+@[\w.-]+\.\w+'),  # Email
     ]
-    
+
     redactor.redactor(options)
 
 if __name__ == '__main__':
@@ -257,8 +257,7 @@ Before deploying any system, verify these baseline requirements:
 8. **Training**: Provide privacy training for all staff handling birth parent data
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
 - [Privacy Setup for Political Campaign Worker](/privacy-tools-guide/privacy-setup-for-political-campaign-worker-protecting-voter/)

@@ -112,12 +112,12 @@ const app = express();
 app.get('/resource', (req, res) => {
   const content = generateContent();
   const etag = crypto.createHash('md5').update(content).digest('hex');
-  
+
   // Check if client has matching ETag
   if (req.headers['if-none-match'] === etag) {
     return res.status(304).end();
   }
-  
+
   res.set('ETag', `"${etag}"`);
   res.send(content);
 });
@@ -132,16 +132,16 @@ app.get('/resource', (req, res) => {
   const content = generateContent();
   // Use content-based ETags, not user identifiers
   const etag = crypto.createHash('sha256').update(content).digest('hex');
-  
+
   res.set('ETag', `"${etag}"`);
-  
+
   // For privacy-sensitive resources, use short cache
   // or disable ETags entirely
   if (req.query.private) {
     res.set('Cache-Control', 'no-store');
     return res.send(content);
   }
-  
+
   res.send(content);
 });
 ```
@@ -197,9 +197,7 @@ The key takeaway: ETags are a legitimate caching optimization that becomes a tra
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Vpn Server Load Balancing How Providers Distribute Users.](/privacy-tools-guide/vpn-server-load-balancing-how-providers-distribute-users-across-servers/)
 - [Bounce Tracking How Redirects Through Tracker Domains Follow](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)

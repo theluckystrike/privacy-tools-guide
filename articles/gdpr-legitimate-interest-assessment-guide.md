@@ -68,15 +68,15 @@ class LegitimateInterestAssessment {
 
   // Part 2: Assess necessity
   assessNecessity(processing, alternative Approaches) {
-    const isNecessary = processing.some(p => 
+    const isNecessary = processing.some(p =>
       alternative Approaches.every(alt => !alt.covers(p))
     );
-    
+
     this.necessity = {
       isNecessary,
       processingRequired: processing,
       alternativesConsidered: alternative Approaches,
-      justification: isNecessary 
+      justification: isNecessary
         ? 'No less intrusive alternative achieves the purpose'
         : 'Less invasive alternatives exist'
     };
@@ -86,9 +86,9 @@ class LegitimateInterestAssessment {
   balanceAgainstIndividual(individualRights, additionalFactors = []) {
     const positiveFactors = thisbalancingFactors.filter(f => f.type === 'positive');
     const negativeFactors = thisbalancingFactors.filter(f => f.type === 'negative');
-    
+
     const balanceResult = this.calculateBalance(
-      positiveFactors, 
+      positiveFactors,
       negativeFactors,
       individualRights
     );
@@ -265,10 +265,7 @@ Treating legitimate interest assessments as part of your development process rat
 Test your implementation by reviewing the ICO's legitimate interest checklist and ensure your documentation addresses each point before deploying new processing activities.
 
 
-
-
-
-## Related Reading
+## Related Articles
 
 - [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
 - [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)

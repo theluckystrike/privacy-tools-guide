@@ -222,8 +222,7 @@ Regardless of your chosen platform, set up these security measures:
 6. Keep software updated and subscribe to security advisories
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Private Dropbox Alternative 2026: A Developer Guide](/privacy-tools-guide/best-private-dropbox-alternative-2026/)
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)

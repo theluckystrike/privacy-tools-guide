@@ -128,7 +128,7 @@ const bumblePrivacyCheck = {
     return {
       appearsInOthersBeeline: settings.show_on_beeline && !settings.hide_from_beeline,
       incognitoActive: settings.incognito_mode,
-      recommendation: settings.hide_from_beeline 
+      recommendation: settings.hide_from_beeline
         ? 'Profile hidden from Beeline - good for privacy'
         : 'Consider disabling Beeline visibility'
     };
@@ -172,8 +172,7 @@ To request your data under GDPR/CCPA:
 3. Review the export for any Beeline-related entries
 
 
-
-## Related Reading
+## Related Articles
 
 - [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
 - [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)

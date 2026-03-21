@@ -29,9 +29,9 @@ async function listMediaDevices() {
   try {
     // Request permission first (required in most browsers)
     await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-    
+
     const devices = await navigator.mediaDevices.enumerateDevices();
-    
+
     devices.forEach(device => {
       console.log('Device Kind:', device.kind);
       console.log('Device Label:', device.label);
@@ -135,10 +135,10 @@ async function requestMediaAccess() {
     video: { width: { ideal: 1280 }, height: { ideal: 720 } },
     audio: { echoCancellation: true, noiseSuppression: true }
   });
-  
+
   // Don't store device IDs for tracking purposes
   // Process streams locally without sending identifiers to servers
-  
+
   return stream;
 }
 ```
@@ -279,9 +279,7 @@ Even without cookies, the analytics provider tracks you across all these sites u
 These real-world examples show why defense-in-depth (extensions + settings + monitoring) is necessary.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)

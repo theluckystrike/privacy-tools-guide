@@ -136,7 +136,7 @@ from email.parser import BytesParser
 
 def sanitize_email(raw_email):
     msg = BytesParser(policy=policy.default).parsebytes(raw_email)
-    
+
     # Remove location-related headers
     headers_to_remove = [
         'X-Originating-IP',
@@ -144,11 +144,11 @@ def sanitize_email(raw_email):
         'Received',
         'X-Gm-Message-State'
     ]
-    
+
     for header in headers_to_remove:
         if header in msg:
             del msg[header]
-    
+
     return msg
 
 # Usage
@@ -212,11 +212,11 @@ def anonymize_location_data(lat: float, lon: float, salt: bytes = None) -> str:
     # Round to ~1km precision
     lat_rounded = round(lat, 2)
     lon_rounded = round(lon, 2)
-    
+
     # Generate salt if not provided
     if salt is None:
         salt = secrets.token_bytes(32)
-    
+
     # Create deterministic but non-reversible identifier
     data = f"{lat_rounded},{lon_rounded}".encode()
     return hashlib.pbkdf2_hmac('sha256', data, salt, 100000).hex()[:16]
@@ -261,9 +261,7 @@ For developers building tools for this population, prioritize privacy by design:
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)

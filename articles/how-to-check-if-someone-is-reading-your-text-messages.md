@@ -86,17 +86,17 @@ def check_sms_metadata():
     """Check SMS message metadata for anomalies"""
     # Query SMS database on Android (requires root)
     result = subprocess.run(
-        ['adb', 'shell', 'content', 'query', 
-         '--uri', 'content://sms/', 
+        ['adb', 'shell', 'content', 'query',
+         '--uri', 'content://sms/',
          '--projection', '_id,date,address,type,status'],
         capture_output=True, text=True
     )
-    
+
     # Look for unusual patterns:
     # - Messages sent when you weren't using your phone
     # - Unusual message types or status codes
     # - Unexpected service center numbers
-    
+
     return result.stdout
 
 # Analyze for timestamps outside your usage patterns
@@ -174,10 +174,10 @@ class SecureSmsReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         // Verify the sender is authorized
         val senderAddress = intent.getStringExtra("address")
-        
+
         // Check for legitimate service center
         val serviceCenter = intent.getStringExtra("service_center")
-        
+
         // Log for security audit (never log message content)
         SecurityLogger.logEvent(
             type = "SMS_RECEIVED",
@@ -199,8 +199,7 @@ If you determine someone is reading your messages:
 5. **Document evidence** before resetting if you plan to pursue legal action
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
 - [How To Check If Someone Is Using Your Netflix Without Permis](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permis/)

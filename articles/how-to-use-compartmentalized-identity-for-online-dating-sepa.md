@@ -120,11 +120,11 @@ app = Flask(__name__)
 def forward_sms():
     from_number = request.form.get('From')
     message_body = request.form.get('Body')
-    
+
     # Forward to your real number via Telegram bot, Signal, etc.
     # Never store the mapping between compartmentalized and real numbers
     send_to_secure_messenger(from_number, message_body)
-    
+
     return '<Response></Response>', 200
 ```
 
@@ -152,17 +152,17 @@ def strip_metadata(image_path, output_path=None):
     """
     if output_path is None:
         output_path = image_path
-    
+
     img = Image.open(image_path)
-    
+
     # Create new image without metadata
     data = list(img.getdata())
     img_no_exif = Image.new(img.mode, img.size)
     img_no_exif.putdata(data)
-    
+
     # Save without EXIF
     img_no_exif.save(output_path, quality=95)
-    
+
     return output_path
 
 # Batch process all dating photos
@@ -268,13 +268,11 @@ When compartmentalization fails:
 4. **Legal consideration**: Consult with privacy attorney if necessary
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
-- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 - [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
 

@@ -47,13 +47,13 @@ const { chromium } = require('playwright');
 async function optOutFromBroker(url, formSelector, email) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  
+
   try {
     await page.goto(url, { waitUntil: 'networkidle' });
     await page.fill(formSelector, email);
     await page.click('button[type="submit"]');
     await page.waitForTimeout(2000);
-    
+
     console.log(`Opt-out submitted to: ${url}`);
     return true;
   } catch (error) {
@@ -94,7 +94,7 @@ class DataBrokerOptOut:
     def __init__(self):
         self.brokers = self.load_broker_config()
         self.last_run = {}
-    
+
     def load_broker_config(self):
         return [
             {
@@ -106,21 +106,21 @@ class DataBrokerOptOut:
             {
                 'name': 'Experian',
                 'url': 'https://www.experian.com/optout/preferences',
-                'method': 'POST', 
+                'method': 'POST',
                 'data': {'email': 'user@example.com'}
             }
         ]
-    
+
     def submit_opt_out(self, broker):
         # Implementation using requests library
         import requests
         response = requests.post(
-            broker['url'], 
+            broker['url'],
             data=broker['data'],
             headers={'User-Agent': 'PrivacyBot/1.0'}
         )
         return response.status_code == 200
-    
+
     def run_daily(self):
         print(f"Running opt-outs at {datetime.now()}")
         for broker in self.brokers:
@@ -149,7 +149,7 @@ Many data brokers accept opt-out requests via email. Automating email-based requ
 
 BROKERS=(
     "optout@acxiom.com"
-    "privacy@experian.com" 
+    "privacy@experian.com"
     "optout@lexisnexis.com"
 )
 
@@ -184,7 +184,7 @@ async function solveAndSubmit(pageUrl, siteKey) {
     googlekey: siteKey,
     pageurl: pageUrl
   });
-  
+
   return result.text;
 }
 ```
@@ -221,14 +221,13 @@ def submit_with_retry(url, max_retries=3):
 Third, maintain a verification loop. After submitting opt-outs, periodically search for your information using people-search sites. If data reappears, your automation system should detect and address it automatically.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Data Broker Removal Diy Complete Guide To Opting Out Of Top](/privacy-tools-guide/data-broker-removal-diy-complete-guide-to-opting-out-of-top-/)
 - [How to remove yourself from data broker sites step by step.](/privacy-tools-guide/how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/)
 - [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
 - [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu](/privacy-tools-guide/how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -78,21 +78,21 @@ def analyze_email_tracking(file_path):
     """Analyze an email file for tracking pixel indicators."""
     with open(file_path, 'rb') as f:
         msg = BytesParser(policy=policy.default).parse(f)
-    
+
     tracking_indicators = []
-    
+
     # Check for known tracking domains in headers
     tracking_domains = [
         'list-manage.com', 'mailchimp.com', 'hubspot.com',
         'sendgrid.net', 'marketo.com', 'pardot.com'
     ]
-    
+
     # Analyze received headers
     for header in msg.get_all('Received'):
         for domain in tracking_domains:
             if domain in header.lower():
                 tracking_indicators.append(f"Found {domain} in routing headers")
-    
+
     # Check for unique image URLs (tracking pixels often have unique IDs)
     if msg.is_multipart():
         for part in msg.walk():
@@ -100,7 +100,7 @@ def analyze_email_tracking(file_path):
                 html = part.get_payload(decode=True).decode()
                 if 'open' in html.lower() and 'pixel' in html.lower():
                     tracking_indicators.append("Potential tracking pixel detected in HTML")
-    
+
     return tracking_indicators
 
 # Usage
@@ -200,14 +200,13 @@ Verify your protection is working:
 Many email tracking services offer "campaign previews" to test—sign up for a newsletter and check what data they collect before and after implementing these protections.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
-- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
-- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -150,7 +150,7 @@ Set-ItemProperty -Path $llmnrPath -Name "EnableMulticast" -Value 0 -Type DWord
 Write-Host "Disabling NetBIOS over TCP/IP..." -ForegroundColor Cyan
 
 # Disable NetBIOS on all enabled adapters
-$adapters = Get-WmiObject Win32_NetworkAdapterConfiguration | 
+$adapters = Get-WmiObject Win32_NetworkAdapterConfiguration |
     Where-Object {$_.IPEnabled -eq $true}
 
 foreach ($adapter in $adapters) {
@@ -164,8 +164,8 @@ Write-Host "`nVerification - Current LLMNR status:" -ForegroundColor Yellow
 Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" -Name "EnableMulticast" -ErrorAction SilentlyContinue
 
 Write-Host "`nVerification - NetBIOS status:" -ForegroundColor Yellow
-Get-WmiObject Win32_NetworkAdapterConfiguration | 
-    Where-Object {$_.IPEnabled -eq $true} | 
+Get-WmiObject Win32_NetworkAdapterConfiguration |
+    Where-Object {$_.IPEnabled -eq $true} |
     Select-Object Description, TcpipNetbiosOptions
 
 Write-Host "`nDone. A restart may be required for changes to take full effect." -ForegroundColor Green
@@ -182,8 +182,8 @@ For quick one-liner execution:
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" -Name "EnableMulticast" -Value 0 -Type DWord -Force
 
 # Disable NetBIOS on all adapters
-Get-NetAdapter | ForEach-Object { 
-    Set-NetAdapterIPConfiguration -InterfaceIndex $_.ifIndex -DisableNetBIOSOverTcpIP 
+Get-NetAdapter | ForEach-Object {
+    Set-NetAdapterIPConfiguration -InterfaceIndex $_.ifIndex -DisableNetBIOSOverTcpIP
 }
 ```
 
@@ -237,8 +237,7 @@ Before deploying organization-wide, verify that:
 - Printers or IoT devices using NetBIOS are documented
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Stalking Victim Digital Prot](/privacy-tools-guide/privacy-setup-for-stalking-victim--digital-prot/)
 - [Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)

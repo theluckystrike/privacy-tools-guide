@@ -99,10 +99,10 @@ from nio import AsyncClient, LoginParams
 
 async def create_encrypted_screen_share_room():
     client = AsyncClient("https://matrix.yourserver.com", "@user:yourserver.com")
-    
+
     # Login with access token
     await client.login("access_token_here")
-    
+
     # Create encrypted room with screen sharing support
     response = await client.room_create(
         visibility="private",
@@ -116,7 +116,7 @@ async def create_encrypted_screen_share_room():
         ],
         name="Secure Screen Share"
     )
-    
+
     print(f"Encrypted room created: {response.room_id}")
     await client.close()
 
@@ -172,9 +172,7 @@ End-to-end encrypted screen sharing requires trusting your tool's implementation
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)

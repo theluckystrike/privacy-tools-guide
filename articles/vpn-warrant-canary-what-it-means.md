@@ -342,8 +342,7 @@ Compare language across years. Legitimate changes appear in new categories (addi
 Verify that signing keys remain consistent. Key rotation is normal but should be announced in advance with cross-signature transitions.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Russia Sovereign Internet Law What It Means For Vpn Users An](/privacy-tools-guide/russia-sovereign-internet-law-what-it-means-for-vpn-users-an/)
 - [Vpn Fragmentation Issues Why Some Websites Break And How Fix](/privacy-tools-guide/vpn-fragmentation-issues-why-some-websites-break-and-how-fix/)

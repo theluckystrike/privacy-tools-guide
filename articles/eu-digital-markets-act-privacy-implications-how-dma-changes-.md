@@ -84,7 +84,7 @@ While Apple implemented ATT globally, DMA has forced additional disclosures and 
 // DMA-compliant tracking request with justification
 func requestTrackingAuthorization() async -> ATTrackingManager.AuthorizationStatus {
     let manager = ATTrackingManager()
-    
+
     // DMA requires clear purpose disclosure
     let purpose = """
     We use tracking to:
@@ -92,7 +92,7 @@ func requestTrackingAuthorization() async -> ATTrackingManager.AuthorizationStat
     - Improve app experience based on your interests
     - Personalize content recommendations
     """
-    
+
     return await manager.requestTrackingAuthorization(withDescription: purpose)
 }
 ```
@@ -117,7 +117,7 @@ class DMADataExporter:
             "Authorization": f"Bearer {access_token}",
             "Content-Type": "application/json"
         }
-    
+
     def request_data_export(self, data_types):
         """Request a copy of user data per DMA requirements"""
         payload = {
@@ -131,7 +131,7 @@ class DMADataExporter:
             headers=self.headers
         )
         return response.json()
-    
+
     def check_export_status(self, export_id):
         """Check if data export is ready for download"""
         response = requests.get(
@@ -168,7 +168,7 @@ class DMAConsentManager {
         if (!this.consentSignals) {
             this.consentSignals = await this.getConsentSignals();
         }
-        
+
         // DMA requires granular consent per purpose
         return {
             consentGiven: this.consentSignals.purposes[purposeId]?.consent || false,
@@ -213,9 +213,7 @@ The practical takeaway is clear: privacy-respecting defaults are no longer optio
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)

@@ -123,17 +123,17 @@ Example PostgreSQL configuration:
 CREATE EXTENSION pgcrypto;
 
 -- Encrypt SSN column using symmetric encryption
-ALTER TABLE clients 
+ALTER TABLE clients
 ADD COLUMN ssn_encrypted bytea;
 
-UPDATE clients 
+UPDATE clients
 SET ssn_encrypted = pgp_sym_encrypt(ssn, current_setting('app.encryption_key'));
 
 ALTER TABLE clients DROP COLUMN ssn;
 
 -- Query encrypted data
-SELECT 
-    id, 
+SELECT
+    id,
     name,
     pgp_sym_decrypt(ssn_encrypted::bytea, current_setting('app.encryption_key')) as ssn
 FROM clients;
@@ -155,7 +155,7 @@ from pathlib import Path
 class AuditLogger:
     def __init__(self, log_file: str = "audit.log"):
         self.log_file = Path(log_file)
-    
+
     def log_access(self, user_id: str, data_type: str, action: str):
         entry = {
             "timestamp": datetime.utcnow().isoformat(),
@@ -203,9 +203,7 @@ Protecting client data in real estate requires layered defenses. Each control â€
 For developers building real estate platforms, these patterns integrate with modern development practices. Containerized deployments, CI/CD pipelines, and infrastructure-as-code all support secure data handling when configured correctly.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Password Manager For Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)

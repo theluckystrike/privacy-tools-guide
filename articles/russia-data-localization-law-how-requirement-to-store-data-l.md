@@ -65,7 +65,7 @@ One approach involves geographic database partitioning, where user data is route
 # Example: Simple geo-routing for user data
 def get_user_database(user_id):
     user = get_user_location(user_id)  # Determine user region
-    
+
     if user.country == 'RU':
         return russia_db_connection
     else:
@@ -92,7 +92,7 @@ class EncryptionManager {
     this.keyStore = this.getRegionalKeyStore(keyRegion);
     this.dataStore = this.getRegionalDataStore(keyRegion);
   }
-  
+
   getRegionalKeyStore(region) {
     // Keys never stored in Russia regardless of data location
     if (region === 'RU') {
@@ -100,7 +100,7 @@ class EncryptionManager {
     }
     return this[`${region}_key_store`];
   }
-  
+
   encrypt(data, userId) {
     const key = this.keyStore.getKey(userId);
     return crypto.aesEncrypt(data, key);
@@ -131,7 +131,7 @@ USER_DATA_SCHEMA = {
 def collect_user_data(country, purpose):
     required_fields = USER_DATA_SCHEMA.get(country, USER_DATA_SCHEMA['US'])
     # Only collect fields appropriate for jurisdiction
-    return [field for field in required_fields 
+    return [field for field in required_fields
             if field in PURPOSE_REQUIREMENTS[purpose]]
 ```
 
@@ -144,14 +144,14 @@ Implement client-side encryption where users maintain control of encryption keys
 async function encryptUserData(data, userKey) {
   // Generate encryption key from user's password
   const key = await deriveKey(userKey);
-  
+
   // Encrypt data before it leaves the client
   const encrypted = await crypto.subtle.encrypt(
     { name: 'AES-GCM', iv: crypto.getRandomValues(new Uint8Array(12)) },
     key,
     new TextEncoder().encode(JSON.stringify(data))
   );
-  
+
   // Only encrypted data sent to server - server cannot decrypt
   return btoa(String.fromCharCode(...new Uint8Array(encrypted)));
 }
@@ -170,9 +170,7 @@ For developers serving Russian users, the choice involves weighing market access
 Users themselves benefit most from applications that implement strong client-side encryption, minimize data collection, and maintain clear separation between encrypted content and decryption keys. These technical measures provide meaningful protection regardless of where data physically resides.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Russia Sovereign Internet Law What It Means For Vpn Users An](/privacy-tools-guide/russia-sovereign-internet-law-what-it-means-for-vpn-users-an/)
 - [Russia Yarovaya Law Mass Surveillance Requirements What Tele](/privacy-tools-guide/russia-yarovaya-law-mass-surveillance-requirements-what-tele/)

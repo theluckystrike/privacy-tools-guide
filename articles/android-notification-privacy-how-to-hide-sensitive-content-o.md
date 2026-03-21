@@ -76,23 +76,23 @@ For users wanting system-wide notification control, implementing a custom `Notif
 
 ```java
 public class NotificationPrivacyService extends NotificationListenerService {
-    
+
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
         PackageName packageName = sbn.getPackageName();
-        
+
         // Define packages requiring privacy
         Set<String> sensitivePackages = Set.of(
             "com.whatsapp",
-            "com.facebook.katana", 
+            "com.facebook.katana",
             "com.google.android.apps.tachyon",
             "com.android.bankapp"
         );
-        
+
         if (sensitivePackages.contains(packageName)) {
             // Cancel the original notification
             cancelNotification(sbn.getKey());
-            
+
             // Optionally post a privacy-preserving version
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                 NotificationChannel channel = new NotificationChannel(
@@ -100,20 +100,20 @@ public class NotificationPrivacyService extends NotificationListenerService {
                     "Private Notifications",
                     NotificationManager.IMPORTANCE_DEFAULT
                 );
-                
+
                 Notification privacyNotification = new Notification.Builder(this, channel.getId())
                     .setSmallIcon(R.drawable.ic_lock)
                     .setContentTitle("New Message")
                     .setContentText("Tap to view")
                     .setVisibility(Notification.VISIBILITY_PUBLIC)
                     .build();
-                
+
                 NotificationManager nm = getSystemService(NotificationManager.class);
                 nm.notify(1001, privacyNotification);
             }
         }
     }
-    
+
     @Override
     public void onNotificationRemoved(StatusBarNotification sbn) {
         // Handle notification removal if needed
@@ -124,7 +124,7 @@ public class NotificationPrivacyService extends NotificationListenerService {
 Register this service in your `AndroidManifest.xml`:
 
 ```xml
-<service 
+<service
     android:name=".NotificationPrivacyService"
     android:exported="false"
     android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
@@ -206,8 +206,7 @@ Several applications in the Google Play Store provide enhanced notification priv
 When selecting third-party solutions, verify the app's privacy policy and ensure it doesn't exfiltrate notification data.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 - [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)

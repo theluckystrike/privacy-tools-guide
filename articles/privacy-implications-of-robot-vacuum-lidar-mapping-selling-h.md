@@ -30,7 +30,7 @@ class LidarScan:
     def __init__(self, timestamp, points):
         self.timestamp = timestamp  # Unix timestamp
         self.points = points  # List of (x, y, z) coordinates
-    
+
     def to_point_cloud(self):
         return {
             "scan_id": hash(self.timestamp),
@@ -398,8 +398,7 @@ The manufacturers who prioritize user privacy in spatial data handling will buil
 ---
 
 
-
-## Related Reading
+## Related Articles
 
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)

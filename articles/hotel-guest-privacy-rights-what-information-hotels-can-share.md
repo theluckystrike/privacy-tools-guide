@@ -128,7 +128,7 @@ def generate_privacy_booking_ref(real_name, departure_date):
     """
     # Combine minimal identifying information
     seed_data = f"{real_name.split()[0]}:{departure_date}"
-    
+
     # Generate a deterministic but private reference
     reference = hashlib.sha256(seed_data.encode()).hexdigest()[:8].upper()
     return reference
@@ -158,13 +158,13 @@ For developers building hotel management systems or privacy tools, consider how 
 const guestSchema = {
   // Required fields only
   required: ['name', 'payment_token', 'id_verified'],
-  
+
   // Optional fields that shouldn't be stored by default
   optional: ['email', 'phone', 'vehicle_info', 'loyalty_number'],
-  
+
   // Fields that should be encrypted at rest
   sensitive: ['id_number', 'payment_details', 'special_requests'],
-  
+
   // Metadata that gets auto-deleted after checkout
   ephemeral: ['check_in_time', 'wifi_login', 'room_access_logs']
 };
@@ -212,7 +212,7 @@ from datetime import datetime, timedelta
 
 class GuestDataRetention:
     """Policy-based data retention for hotel systems."""
-    
+
     RETENTION_PERIODS = {
         'registration': timedelta(days=365),      # 1 year
         'payment': timedelta(days=2555),          # 7 years (tax purposes)
@@ -220,19 +220,18 @@ class GuestDataRetention:
         'room_access': timedelta(days=30),        # 30 days
         'video_surveillance': timedelta(days=30), # 30 days
     }
-    
+
     def should_delete(self, data_type, timestamp):
         """Check if data should be deleted based on policy."""
         retention = self.RETENTION_PERIODS.get(data_type)
         if not retention:
             return True  # Delete unknown types by default
-        
+
         return datetime.now() > timestamp + retention
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Library Patron Privacy Rights What Information Libraries Can](/privacy-tools-guide/library-patron-privacy-rights-what-information-libraries-can/)
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)

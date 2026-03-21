@@ -248,8 +248,7 @@ Regardless of your choice, implement these practices:
 **Test your export procedures.** Vendor lock-in is a real risk with password managers. Periodically export your vault in a standard format and verify you can import it into alternative solutions. This also validates your backup strategy.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Enterprise Password Manager With Zero Knowledg](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)

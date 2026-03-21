@@ -55,7 +55,7 @@ async function getTopics() {
   try {
     // Get topics for the current user
     const topics = await document.browsingTopics();
-    
+
     return topics.map(topic => ({
       topic: topic.topic,
       version: topic.version,
@@ -93,7 +93,7 @@ When the API successfully returns topics, you might receive data structured like
   },
   {
     "topic": "Technology",
-    "version": "chrome.1", 
+    "version": "chrome.1",
     "configVersion": "chrome.1",
     "modelVersion": "20240103"
   }
@@ -170,7 +170,7 @@ If your application relies on third-party cookies for advertising, the Topics AP
 // Fallback strategy for ad targeting
 async function getAdTargetingParams() {
   const topics = await getTopics();
-  
+
   if (topics.length > 0) {
     // Use Topics API for targeting
     return {
@@ -178,7 +178,7 @@ async function getAdTargetingParams() {
       data: topics.map(t => t.topic)
     };
   }
-  
+
   // Fallback to contextual targeting
   return {
     method: 'contextual',
@@ -195,7 +195,7 @@ The Topics API has implications for GDPR and similar privacy regulations. Under 
 async function initializeAds() {
   // Check consent status before accessing topics
   const consent = await getConsentStatus();
-  
+
   if (consent.privacyAdConsent) {
     const topics = await getTopics();
     configurePersonalizedAds(topics);
@@ -214,9 +214,7 @@ For users seeking maximum privacy, the Topics API represents one tracking vector
 The API's design includes some privacy safeguards: no user identifiers are shared, topics are intentionally generic rather than specific, and the three-week delay prevents real-time tracking. Yet these safeguards create a system that trades explicit tracking for inferred interests—a distinction that may feel meaningless when the end result enables the same advertising targeting.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Attribution Reporting Api How Chrome Replaced Cookies For Ad](/privacy-tools-guide/attribution-reporting-api-how-chrome-replaced-cookies-for-ad/)
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)

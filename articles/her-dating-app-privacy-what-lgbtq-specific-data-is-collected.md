@@ -116,19 +116,19 @@ The app's recommendation engine processes identity data to generate matches:
 # Simplified matching algorithm consideration
 def calculate_compatibility(user_a, user_b):
     score = 0
-    
+
     # Identity matching contributes to score
     if user_a.orientation in user_b.seeking:
         score += matching_weight["orientation"]
-    
+
     # Location proximity is weighted heavily
     distance = haversine_distance(user_a.location, user_b.location)
     score += matching_weight["distance"](distance)
-    
+
     # Community membership factors
     if user_a.community_tags & user_b.community_tags:
         score += matching_weight["community"]
-    
+
     return score
 ```
 
@@ -160,7 +160,7 @@ from cryptography.fernet import Fernet
 class SensitiveProfileData:
     def __init__(self, encryption_key):
         self.cipher = Fernet(encryption_key)
-    
+
     def store_identity_fields(self, user_id, identity_data):
         encrypted = {
             "gender_identity": self.cipher.encrypt(
@@ -223,8 +223,7 @@ Users concerned about their data privacy on Her should consider these technical 
 7. **Consider account deletion** rather than simply discontinuing use
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)

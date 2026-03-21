@@ -45,19 +45,19 @@ For developers, detecting the DNT header is straightforward:
 // Node.js/Express example
 app.get('/api/content', (req, res) => {
   const dntHeader = req.get('DNT');
-  
+
   if (dntHeader === '1') {
     // Disable tracking, serve non-personalized content
-    return res.json({ 
+    return res.json({
       content: getContentWithoutTracking(),
-      tracking_used: false 
+      tracking_used: false
     });
   }
-  
+
   // Normal tracking-enabled response
-  res.json({ 
+  res.json({
     content: getPersonalizedContent(),
-    tracking_used: true 
+    tracking_used: true
   });
 });
 ```
@@ -67,13 +67,13 @@ app.get('/api/content', (req, res) => {
 @app.route('/api/data')
 def get_data():
     dnt_value = request.headers.get('DNT')
-    
+
     if dnt_value == '1':
         return jsonify({
             'data': get_anon_data(),
             'tracked': False
         })
-    
+
     return jsonify({
         'data': get_tracked_data(),
         'tracked': True
@@ -160,7 +160,7 @@ If you're building a privacy-conscious application, here's how to properly handl
 // Comprehensive DNT handling
 function handleDNT(req) {
   const dnt = req.get('DNT');
-  
+
   // DNT explicitly set to 1
   if (dnt === '1') {
     return {
@@ -172,7 +172,7 @@ function handleDNT(req) {
       sessionTracking: false
     };
   }
-  
+
   // DNT not set or explicitly 0 - ask for consent instead
   return {
     analytics: 'consent_pending',
@@ -185,17 +185,16 @@ function handleDNT(req) {
 // Apply settings based on DNT
 app.use((req, res, next) => {
   const privacySettings = handleDNT(req);
-  
+
   // Pass settings to downstream middleware
   req.privacySettings = privacySettings;
-  
+
   next();
 });
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Proton Drive Review: Honest Assessment 2026](/privacy-tools-guide/proton-drive-review-honest-assessment-2026/)
 - [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)

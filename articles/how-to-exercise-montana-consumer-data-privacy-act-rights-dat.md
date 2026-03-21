@@ -91,7 +91,7 @@ from email.mime.text import MIMEText
 
 def send_deletion_request(company_email, company_name, user_email):
     """Send a data deletion request via email"""
-    
+
     template = """Subject: MCDPA Data Deletion Request - {email}
 
 I am a Montana resident requesting deletion of all personal data
@@ -102,12 +102,12 @@ including account data, usage data, and any shared third-party data.
 
 I expect confirmation within 45 days as required by law.
 """
-    
+
     msg = MIMEText(template.format(email=user_email))
     msg['Subject'] = f'MCDPA Data Deletion Request - {user_email}'
     msg['From'] = user_email
     msg['To'] = company_email
-    
+
     # Configure your SMTP server
     with smtplib.SMTP('smtp.yourprovider.com', 587) as server:
         server.starttls()
@@ -238,9 +238,7 @@ print(f"Request to {deletion_request.company}: {deletion_request.days_remaining}
 The MCDPA gives you real power over your personal information. Use these rights proactively to minimize your digital footprint and control who has access to your data.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
 - [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)

@@ -74,7 +74,7 @@ const { Vault, CryptoModule } = require('@cryptomator/core');
 async function createSecureVault(masterPassword, vaultPath) {
   const cryptoModule = new CryptoModule();
   const vault = await Vault.create(vaultPath, masterPassword, cryptoModule);
-  
+
   // Now you can add files that auto-encrypt on write
   await vault.write('member-list.enc', sensitiveData);
   return vault;
@@ -151,13 +151,13 @@ async function resolvePrivacyDNS(hostname) {
     name: hostname,
     type: 'A'
   };
-  
+
   const response = await fetch('https://dns.quad9.net:5053/dns-query', {
     method: 'POST',
     headers: { 'Content-Type': 'application/dns-message' },
     body: encodeDNS(dnsQuery)
   });
-  
+
   return decodeDNS(await response.arrayBuffer());
 }
 ```
@@ -200,8 +200,7 @@ Technical tools work best within a culture of privacy awareness:
 - Document destruction protocols for sensitive paper materials
 
 
-
-## Related Reading
+## Related Articles
 
 - [Threat Model For Union Organizer In Hostile Employer Environ](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
 - [Linkedin Deceased Member Profile Removal How To Report And M](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)

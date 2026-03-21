@@ -206,7 +206,7 @@ Create separate credential sets for each context and activate them based on dire
 export AWS_PROFILE=personal
 export NPM_TOKEN=personal-npm-token
 
-# ~/projects/work/.envrc  
+# ~/projects/work/.envrc
 export AWS_PROFILE=work
 export NPM_TOKEN=work-npm-token
 ```
@@ -263,15 +263,13 @@ Options include dedicated physical machines, virtualization with QubesOS, or air
 Effective identity compartmentalization reduces your attack surface and limits data correlation. Start with browser profiles and email aliases, then add network-level isolation as needed. The effort scales with your threat model—most users benefit from basic separation, while high-risk users need more rigorous boundaries.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
-- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
-- [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
+- [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
 - [Anonymous Online Shopping How To Order Physical Goods.](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
+- [Anonymous Payment Methods For Online Services When You Canno](/privacy-tools-guide/anonymous-payment-methods-for-online-services-when-you-canno/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

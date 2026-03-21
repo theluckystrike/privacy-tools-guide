@@ -181,8 +181,7 @@ gpg --export-secret-keys your@email.com > private_keys.asc
 Both services allow IMAP-based migration, but ProtonMail requires Bridge to be active for this.
 
 
-
-## Related Reading
+## Related Articles
 
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [ProtonMail vs Gmail Privacy: A Full Technical Breakdown](/privacy-tools-guide/protonmail-vs-gmail-privacy-full-breakdown/)

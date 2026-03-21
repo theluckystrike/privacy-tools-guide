@@ -213,9 +213,7 @@ Test both options with real workloads before committing. All tools mentioned sup
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
 - [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)

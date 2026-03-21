@@ -91,7 +91,7 @@ const storeConsent = async (userId, consentType, granted) => {
     user_agent: request.headers['user-agent'],
     policy_version: '2026.1'
   });
-  
+
   await redis.setex(
     `consent:${userId}:${consentType}`,
     86400 * 365, // 1 year
@@ -110,26 +110,26 @@ GDPR and CCPA require you to respond to user requests within specific timeframes
 # Data subject request handler
 class DataSubjectRequest:
     RESPONSE_DEADLINE = 30  # days
-    
+
     def handle_deletion_request(self, user_id):
         user = self.db.get_user(user_id)
-        
+
         # Identify all data stores containing user data
         tables_to_clean = [
             'users', 'user_profiles', 'user_sessions',
             'audit_logs', 'analytics_events'
         ]
-        
+
         for table in tables_to_clean:
             self.db.execute(
                 f"DELETE FROM {table} WHERE user_id = ?",
                 [user_id]
             )
-        
+
         # Handle third-party data sharing
         for vendor in self.integrations.list():
             vendor.schedule_deletion(user_id)
-        
+
         # Send confirmation
         self.email.send(
             user.email,
@@ -164,7 +164,7 @@ authentication:
     complexity: true
     breach_check: true
     session_timeout: 3600
-    
+
 authorization:
   rbac_implemented: true
   principle_of_least_privilege: true
@@ -219,18 +219,18 @@ async def handle_suspected_breach():
     # Step 1: Contain
     isolate_affected_systems()
     revoke_compromised_credentials()
-    
+
     # Step 2: Assess
     scope = determine_breach_scope()
     affected_records = count_affected_users()
-    
+
     # Step 3: Notify (within required timeframe)
     if affected_records > 500:
         notify_regulator(72)  # GDPR requirement
-    
+
     for user in affected_users:
         notify_user(user, breach_details)
-    
+
     # Step 4: Document
     await incident_db.create({
         'type': 'data_breach',
@@ -294,8 +294,7 @@ Privacy compliance is not an one-time effort.
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Audit Checklist for Web Applications: A Developer](/privacy-tools-guide/privacy-audit-checklist-for-web-applications/)
 - [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)

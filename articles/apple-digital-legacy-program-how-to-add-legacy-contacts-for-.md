@@ -62,7 +62,7 @@ Generate the recovery key through:
 ```bash
 # Example: Document your legacy contact setup (DO NOT store digitally with your credentials)
 # Store in a secure physical location like a safe deposit box
-# 
+#
 # Legacy Contact Setup Reference:
 # - Date configured: [DATE]
 # - Contact name: [NAME]
@@ -351,8 +351,7 @@ This plan was configured on: [DATE]
 Print and sign this document. Include it in your physical estate planning documents with your will.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
 - [Tutanota Encrypted Calendar And Contacts How End To End Encr](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)

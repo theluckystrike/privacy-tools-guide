@@ -317,8 +317,7 @@ If you're migrating from another provider, consider these migration expenses:
 {% endraw %}
 
 
-
-## Related Reading
+## Related Articles
 
 - [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
 - [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)

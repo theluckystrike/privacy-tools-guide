@@ -120,7 +120,7 @@ def calculate_entropy(password):
         charset_size += 10
     if re.search(r'[^a-zA-Z0-9]', password):
         charset_size += 32
-    
+
     entropy = len(password) * math.log2(charset_size) if charset_size > 0 else 0
     return round(entropy, 2)
 
@@ -130,7 +130,7 @@ ENTROPY_THRESHOLD = 40
 with open('vault_export.json') as f:
     vault = json.load(f)
 
-weak = [item for item in vault 
+weak = [item for item in vault
         if calculate_entropy(item.get('password', '')) < ENTROPY_THRESHOLD]
 
 print(f"Found {len(weak)} passwords below {ENTROPY_THRESHOLD} bits entropy")
@@ -153,7 +153,7 @@ for item in vault:
     if password:
         password_groups[password].append(item.get('title', 'Unknown'))
 
-duplicates = {pwd: titles for pwd, titles in password_groups.items() 
+duplicates = {pwd: titles for pwd, titles in password_groups.items()
               if len(titles) > 1}
 
 print(f"Found {len(duplicates)} passwords used across multiple accounts:")
@@ -195,26 +195,26 @@ def calculate_entropy(password):
 def analyze_vault(vault_file):
     with open(vault_file) as f:
         vault = json.load(f)
-    
+
     results = {
         'total_entries': len(vault),
         'weak_passwords': [],
         'reused_passwords': [],
         'short_passwords': []
     }
-    
+
     password_groups = defaultdict(list)
-    
+
     for item in vault:
         title = item.get('title', 'Unknown')
         password = item.get('password', '')
-        
+
         if not password:
             continue
-            
+
         # Track for duplicate detection
         password_groups[password].append(title)
-        
+
         # Check entropy
         entropy = calculate_entropy(password)
         if entropy < 40:
@@ -222,14 +222,14 @@ def analyze_vault(vault_file):
                 'title': title,
                 'entropy': entropy
             })
-        
+
         # Check length
         if len(password) < 12:
             results['short_passwords'].append({
                 'title': title,
                 'length': len(password)
             })
-    
+
     # Find duplicates
     for password, titles in password_groups.items():
         if len(titles) > 1:
@@ -238,23 +238,23 @@ def analyze_vault(vault_file):
                 'count': len(titles),
                 'accounts': titles
             })
-    
+
     return results
 
 if __name__ == '__main__':
     results = analyze_vault('vault_export.json')
-    
+
     print("=== Password Vault Audit Results ===\n")
     print(f"Total entries analyzed: {results['total_entries']}\n")
-    
+
     print(f"Weak passwords (below 40 bits entropy): {len(results['weak_passwords'])}")
     for item in results['weak_passwords'][:5]:
         print(f"  - {item['title']}: {item['entropy']} bits")
-    
+
     print(f"\nShort passwords (below 12 characters): {len(results['short_passwords'])}")
     for item in results['short_passwords'][:5]:
         print(f"  - {item['title']}: {item['length']} chars")
-    
+
     print(f"\nReused passwords: {len(results['reused_passwords'])}")
     for item in results['reused_passwords'][:5]:
         print(f"  - Used in {item['count']} accounts: {', '.join(item['accounts'])}")
@@ -284,12 +284,11 @@ rm vault_export.json
 Consider using a dedicated machine or container for auditing to isolate the process from your daily workflow. Disable network access during processing if possible to prevent accidental exfiltration.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
 - [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 - [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 

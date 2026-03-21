@@ -279,8 +279,7 @@ Not all Russian internet users face the same risk profile. Your specific threat 
 Tailor your security approach to your actual threat. Overprotecting wastes resources and creates usability friction. Underprotecting leaves you vulnerable.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Russia Data Localization Law: How Requirement to Store.](/privacy-tools-guide/russia-data-localization-law-how-requirement-to-store-data-l/)
 - [Russia Yarovaya Law Mass Surveillance Requirements What Tele](/privacy-tools-guide/russia-yarovaya-law-mass-surveillance-requirements-what-tele/)

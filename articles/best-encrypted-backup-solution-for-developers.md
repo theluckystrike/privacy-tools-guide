@@ -189,8 +189,7 @@ crontab -e
 5. Encrypt before cloud sync: Always use client-side encryption when backing up to third-party services
 
 
-
-## Related Reading
+## Related Articles
 
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)

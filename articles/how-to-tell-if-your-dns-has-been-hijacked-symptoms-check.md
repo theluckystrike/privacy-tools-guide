@@ -163,7 +163,7 @@ TRUSTED_DNS=("8.8.8.8" "1.1.1.1")
 for domain in "${DOMAINS[@]}"; do
     echo "Testing $domain..."
     expected=$(dig @${TRUSTED_DNS[0]} $domain +short)
-    
+
     for dns in "${TRUSTED_DNS[@]}"; do
         result=$(dig @$dns $domain +short)
         if [ "$result" != "$expected" ]; then
@@ -197,9 +197,7 @@ If you confirm DNS hijacking:
 Regular DNS health checks and awareness of hijacking symptoms protect your browsing privacy and security. The methods outlined here work without special equipment, using tools already available on most systems.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
 - [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)

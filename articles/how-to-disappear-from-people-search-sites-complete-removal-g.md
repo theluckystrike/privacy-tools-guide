@@ -47,7 +47,7 @@ def check_site(term, site):
     except:
         return None
 
-sites = ["whitepages.com", "beenverified.com", "instantcheckmate.com", 
+sites = ["whitepages.com", "beenverified.com", "instantcheckmate.com",
          "truthfinder.com", "spokeo.com", "acxiom.com"]
 
 for term in SEARCH_TERMS:
@@ -86,12 +86,12 @@ class PeopleSearchRemover:
         self.session.headers.update({
             'User-Agent': 'Privacy-Remover/1.0'
         })
-    
+
     def remove_whitepages(self, url_to_remove):
         """Remove listing from Whitepages."""
         # Navigate to suppression form
         resp = self.session.get(f"https://www.whitepages.com/suppression_requests/new?url={url_to_remove}")
-        
+
         # Submit removal request
         form_data = {
             'email': self.email,
@@ -104,7 +104,7 @@ class PeopleSearchRemover:
             "https://www.whitepages.com/suppression_requests",
             data=form_data
         )
-    
+
     def remove_spokeo(self, listing_url):
         """Remove from Spokeo via email."""
         return self.session.post(
@@ -132,18 +132,18 @@ export default {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST',
     };
-    
+
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: corsHeaders });
     }
-    
+
     const { site, url, email } = await request.json();
-    
+
     // Respect rate limits
     await new Promise(r => setTimeout(r, 2000));
-    
+
     const results = await submitOptOut(site, url, email);
-    
+
     return new Response(JSON.stringify(results), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
@@ -157,7 +157,7 @@ async function submitOptOut(site, url, email) {
     'whitepages': () => submitWhitepages(url, email),
     'spokeo': () => submitSpokeo(url, email)
   };
-  
+
   return handlers[site]?.() || { error: 'Unknown site' };
 }
 ```
@@ -188,9 +188,9 @@ def init_tracker():
     return conn
 
 def add_removal(conn, site, url):
-    conn.execute('''INSERT INTO removals 
-        (site, url, status, submitted_date) 
-        VALUES (?, ?, 'pending', ?)''', 
+    conn.execute('''INSERT INTO removals
+        (site, url, status, submitted_date)
+        VALUES (?, ?, 'pending', ?)''',
         (site, url, datetime.now().isoformat()))
     conn.commit()
 
@@ -226,9 +226,7 @@ When automated and self-service options fail, formal legal requests citing these
 The process of removing yourself from people search sites requires persistence and systematic tracking. For developers, building automation around discovery, submission, and tracking transforms a tedious process into a manageable workflow. While complete removal from all data brokers remains difficult given the fragmented ecosystem, consistent effort significantly reduces your digital footprint.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
 - [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)

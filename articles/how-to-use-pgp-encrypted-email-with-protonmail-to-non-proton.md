@@ -209,18 +209,18 @@ gpg = gnupr.GPG(gnupghome='/path/to/gnupg/home')
 def encrypt_for_protonmail_recipient(message, recipient_key_path):
     with open(recipient_key_path, 'r') as key_file:
         recipient_key = key_file.read()
-    
+
     # Import key first
     import_result = gpg.import_keys(recipient_key)
     key_id = import_result.fingerprints[0]
-    
+
     # Encrypt
     encrypted = gpg.encrypt(
         message,
         recipients=[key_id],
         always_trust=True
     )
-    
+
     return str(encrypted)
 ```
 
@@ -234,8 +234,7 @@ When using PGP with external recipients:
 - **Forward secrecy**: PGP does not provide forward secrecy; consider Signal for real-time messaging
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)

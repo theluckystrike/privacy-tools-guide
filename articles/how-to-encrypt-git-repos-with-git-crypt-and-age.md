@@ -373,8 +373,7 @@ git commit -m "Rekey git-crypt after team member departure"
 The combination of key rotation and secret rotation is the only complete offboarding. Repository access removal alone is insufficient.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
@@ -383,4 +382,7 @@ The combination of key rotation and secret rotation is the only complete offboar
 - [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
 
 Built by theluckystrike -- More at [zovo.one](https://zovo.one)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

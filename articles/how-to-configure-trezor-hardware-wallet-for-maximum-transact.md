@@ -215,8 +215,7 @@ resolvectl status | grep "DNS over TLS"
 Cloudflare (1.1.1.1) and Quad9 (9.9.9.9) both offer strong privacy policies and no-logging commitments. Quad9 adds malware blocking at the DNS layer.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)

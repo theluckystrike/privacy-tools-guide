@@ -304,8 +304,7 @@ Verify that your privacy configuration actually works:
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
 - [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)

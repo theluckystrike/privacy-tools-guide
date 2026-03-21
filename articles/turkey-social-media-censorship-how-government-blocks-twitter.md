@@ -233,7 +233,7 @@ def check_twitter_access():
         ip = socket.gethostbyname('twitter.com')
     except:
         return "blocked_dns"
-    
+
     # Test 2: Direct connection
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -242,7 +242,7 @@ def check_twitter_access():
         s.close()
     except:
         return "blocked_ip"
-    
+
     # Test 3: HTTP request
     try:
         r = requests.get('https://twitter.com', timeout=5)
@@ -257,9 +257,7 @@ print(f"Twitter access status: {status}")
 Understanding these technical mechanisms allows developers to build more resilient applications and provides power users with practical tools to maintain access to information.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Iran Smart Filtering How Government Selectively Blocks Conte](/privacy-tools-guide/iran-smart-filtering-how-government-selectively-blocks-conte/)
 - [Turkey Content Removal Orders How Government Forces Platform](/privacy-tools-guide/turkey-content-removal-orders-how-government-forces-platform/)

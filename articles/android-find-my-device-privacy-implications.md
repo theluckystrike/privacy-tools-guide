@@ -97,15 +97,15 @@ If you're building applications that request location permissions, implement the
 
 ```kotlin
 // Request location permission with clear rationale
-if (ContextCompat.checkSelfPermission(this, 
-    Manifest.permission.ACCESS_FINE_LOCATION) 
+if (ContextCompat.checkSelfPermission(this,
+    Manifest.permission.ACCESS_FINE_LOCATION)
     != PackageManager.PERMISSION_GRANTED) {
-    
+
     // Explain why you need this permission
     // before requesting it
     if (shouldShowRequestPermissionRationale(
         Manifest.permission.ACCESS_FINE_LOCATION)) {
-        
+
         // Show explanation dialog
         showLocationRationale()
     } else {
@@ -295,8 +295,7 @@ If you're concerned about location privacy:
 Remember: a lost device is recoverable through insurance or replacement. Permanent location history exposure affects every moment of your life.
 
 
-
-## Related Reading
+## Related Articles
 
 - [What to Do If You Find an Unknown Device on Your Network](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)

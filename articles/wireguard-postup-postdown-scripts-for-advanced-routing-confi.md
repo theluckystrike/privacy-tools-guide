@@ -212,8 +212,7 @@ PostUp and PostDown scripts run with root privileges, making security critical:
 - Test scripts in a non-production environment before deployment
 
 
-
-## Related Reading
+## Related Articles
 
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)

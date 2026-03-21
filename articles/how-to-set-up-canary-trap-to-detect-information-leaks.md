@@ -44,46 +44,46 @@ from typing import List, Dict
 def generate_canary_versions(content: str, recipients: List[str]) -> Dict[str, str]:
     """
     Generate unique versions of a document for each recipient.
-    
+
     Args:
         content: The main document content
         recipients: List of recipient identifiers (emails, names, etc.)
-    
+
     Returns:
         Dictionary mapping recipient to their unique document version
     """
     versions = {}
-    
+
     for recipient in recipients:
         # Generate unique canary marker for this recipient
         canary_id = str(uuid.uuid4())[:8]
         timestamp = datetime.now().strftime("%Y%m%d")
-        
+
         # Create unique marker: combines recipient, timestamp, and random component
         marker = f"[CANARY-{canary_id}-{recipient}-{timestamp}]"
-        
+
         # Insert canary marker at the end of the document
         # Using zero-width characters makes markers harder to detect
         unique_content = f"{content}\n\n{marker}"
-        
+
         versions[recipient] = unique_content
-    
+
     return versions
 
 def verify_canary(document: str) -> Dict:
     """
     Extract and verify canary marker from a potentially leaked document.
-    
+
     Args:
         document: The document to check
-    
+
     Returns:
         Dictionary with canary information if found
     """
     import re
     pattern = r'\[CANARY-([a-f0-9]+)-([^-]+)-(\d{8})\]'
     match = re.search(pattern, document)
-    
+
     if match:
         return {
             "found": True,
@@ -91,7 +91,7 @@ def verify_canary(document: str) -> Dict:
             "recipient": match.group(2),
             "date": match.group(3)
         }
-    
+
     return {"found": False}
 ```
 
@@ -105,25 +105,25 @@ For online documents or shared links, URL-based canary trapping provides an eleg
 def generate_tracked_urls(base_url: str, recipients: List[str]) -> Dict[str, str]:
     """
     Generate unique tracked URLs for each recipient.
-    
+
     Args:
         base_url: The base URL of the document or resource
         recipients: List of recipient identifiers
-    
+
     Returns:
         Dictionary mapping recipient to their unique tracked URL
     """
     tracked_urls = {}
-    
+
     for recipient in recipients:
         # Create unique identifier based on recipient
         recipient_hash = hashlib.sha256(recipient.encode()).hexdigest()[:12]
-        
+
         # Append tracking parameter to URL
         tracked_url = f"{base_url}?ref={recipient_hash}&ts={int(datetime.now().timestamp())}"
-        
+
         tracked_urls[recipient] = tracked_url
-    
+
     return tracked_urls
 ```
 
@@ -139,32 +139,32 @@ import base64
 
 class CanaryToken:
     """Generate and verify canary tokens for file or document tracking."""
-    
+
     def __init__(self, secret_key: str):
         self.secret_key = secret_key.encode()
-    
+
     def generate_token(self, recipient_id: str, document_id: str) -> str:
         """Create a canary token for a specific recipient and document."""
         message = f"{recipient_id}:{document_id}".encode()
-        
+
         # Generate HMAC signature
         signature = hmac.new(self.secret_key, message, hashlib.sha256).digest()
-        
+
         # Create token combining ID and signature
         token_data = f"{recipient_id}:{base64.b64encode(signature).decode()}"
-        
+
         return base64.b64encode(token_data.encode()).decode()
-    
+
     def verify_token(self, token: str, expected_recipient: str) -> bool:
         """Verify if a token belongs to the expected recipient."""
         try:
             token_data = base64.b64decode(token.encode()).decode()
             recipient, signature_b64 = token_data.split(":")
-            
+
             # Verify the signature
             message = f"{recipient}:{expected_recipient}".encode()
             expected_signature = hmac.new(self.secret_key, message, hashlib.sha256).digest()
-            
+
             return hmac.compare_digest(
                 base64.b64decode(signature_b64),
                 expected_signature
@@ -204,9 +204,7 @@ Canary traps work best when recipients have a reasonable expectation of privacy 
 For truly sensitive information, combine canary traps with encryption, access logging, and other security controls. A canary trap identifies leaks after they occur—it does not prevent them.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
 - [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
@@ -215,5 +213,7 @@ For truly sensitive information, combine canary traps with encryption, access lo
 - [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
 
 Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

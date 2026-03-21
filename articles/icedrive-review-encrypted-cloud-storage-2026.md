@@ -73,7 +73,7 @@ sudo mount.davfs https://dav.icedrive.net/ /mnt/icedrive -o user=your@email.com
 
 # Or use rclone for more flexible CLI operations
 rclone config
-# Select "WebDAV" 
+# Select "WebDAV"
 # URL: https://dav.icedrive.net/
 # Vendor: Other
 # User: your@email.com
@@ -104,7 +104,7 @@ async function uploadToIceDrive(filePath, remotePath) {
     },
     body: fs.readFileSync(filePath)
   });
-  
+
   return response.ok;
 }
 ```
@@ -303,8 +303,7 @@ Document your data storage provider in your compliance matrix:
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
 - [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)

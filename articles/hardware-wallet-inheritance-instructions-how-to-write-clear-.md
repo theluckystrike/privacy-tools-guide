@@ -37,7 +37,7 @@ Example inventory structure:
 ```
 Location: Home safe, master bedroom closet
 Device: Ledger Nano X (blue casing)
-Contents: 
+Contents:
   - Bitcoin: approximately 1.5 BTC
   - Ethereum: approximately 5 ETH
   - USDT: approximately $10,000
@@ -81,8 +81,8 @@ If you need to access the funds without the device:
   3. Enter words in exact order
   4. Wait for synchronization
 
-IMPORTANT: Never type this phrase into any website unless you are 
-actively restoring a wallet you own. Never share this phrase with 
+IMPORTANT: Never type this phrase into any website unless you are
+actively restoring a wallet you own. Never share this phrase with
 anyone claiming to be support or asking for verification.
 ```
 
@@ -103,7 +103,7 @@ keys:
   - name: "Personal Key"
     location: "Home safe, combined with hardware wallet"
     backup: "Safe deposit box at Chase Bank"
-  - name: "Attorney Key" 
+  - name: "Attorney Key"
     location: "Attorney office safe"
   - name: "Family Member Key"
     location: "Parents' home safe"
@@ -327,8 +327,7 @@ For technical or complex scenarios, professional services can help:
 The cost ($500-2,000 for professional planning) prevents infinitely more expensive confusion and loss later.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)

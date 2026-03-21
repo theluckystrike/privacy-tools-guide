@@ -311,8 +311,7 @@ nslookup gitlab.internal
 5. **Coordinate with IT**: Ensure compliance with organizational security policies
 
 
-
-## Related Reading
+## Related Articles
 
 - [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
 - [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)

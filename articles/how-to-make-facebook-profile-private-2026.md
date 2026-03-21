@@ -91,29 +91,29 @@ async function setFacebookPrivacy() {
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage();
-  
+
   // Navigate to Facebook login
   await page.goto('https://www.facebook.com/login');
-  
+
   // Perform login (credentials should come from environment variables)
   await page.fill('#email', process.env.FB_EMAIL);
   await page.fill('#pass', process.env.FB_PASSWORD);
   await page.click('#loginbutton');
-  
+
   // Wait for navigation to complete
   await page.waitForNavigation();
-  
+
   // Navigate to privacy settings
   await page.goto('https://www.facebook.com/settings?tab=privacy');
-  
+
   // Adjust audience for future posts
   await page.click('text=Who can see your future posts?');
   await page.click('text=Friends'); // Select friends-only
-  
+
   // Limit past posts
   await page.click('text=Limit who can see past posts');
   await page.click('text=Limit Past Posts');
-  
+
   await browser.close();
 }
 
@@ -168,7 +168,7 @@ Regularly review and terminate unused sessions:
 ```javascript
 // Example: List active sessions via Playwright
 await page.goto('https://www.facebook.com/settings?tab=security');
-const sessions = await page.$$eval('.uiListHelperClearfix li', 
+const sessions = await page.$$eval('.uiListHelperClearfix li',
   items => items.map(item => item.textContent));
 console.log('Active sessions:', sessions);
 ```
@@ -192,12 +192,12 @@ const fs = require('fs');
 
 async function auditPrivacySettings(page) {
   await page.goto('https://www.facebook.com/settings?tab=privacy');
-  
+
   // Extract all privacy settings
   const settings = await page.evaluate(() => {
     const sections = document.querySelectorAll('[data-testid="settings_section"]');
     const result = {};
-    
+
     sections.forEach(section => {
       const label = section.querySelector('span')?.textContent;
       const value = section.querySelector('[role="button"]')?.textContent;
@@ -205,10 +205,10 @@ async function auditPrivacySettings(page) {
         result[label] = value;
       }
     });
-    
+
     return result;
   });
-  
+
   return settings;
 }
 
@@ -222,8 +222,7 @@ async function auditPrivacySettings(page) {
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)

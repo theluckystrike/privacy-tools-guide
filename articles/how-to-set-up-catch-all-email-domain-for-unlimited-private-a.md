@@ -79,7 +79,7 @@ If you're using Forward Email, add these DNS records:
 
 ```
 Type: MX
-Name: @ 
+Name: @
 Priority: 10
 Value: mx1.forwardemail.net
 
@@ -221,8 +221,7 @@ While catch-all domains provide excellent privacy, keep these points in mind:
 For maximum privacy, consider combining catch-all aliases with encrypted email services like ProtonMail or Tutanota.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)

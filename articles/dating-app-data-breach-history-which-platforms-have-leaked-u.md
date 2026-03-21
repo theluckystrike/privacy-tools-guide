@@ -139,8 +139,8 @@ Dating apps frequently expose more data than necessary through their mobile APIs
 const getProfile = async (userId) => {
   const response = await fetch(`/api/profiles/${userId}`);
   const data = await response.json();
-  
-  // API returns: id, name, email, phone, location, 
+
+  // API returns: id, name, email, phone, location,
   //              dob, preferences, messages, photos
   // App only needs: id, name, photo
   return {
@@ -180,7 +180,7 @@ Dating apps frequently share data with analytics and advertising partners:
 const analytics = new AnalyticsSDK({
   appId: 'dating-app',
   trackLocation: true,        // Precise GPS
-  trackDeviceId: true,        // Hardware identifiers  
+  trackDeviceId: true,        // Hardware identifiers
   trackIpAddress: true,       // Network location
   trackUserProfiles: true,    // Dating preferences
   shareWithPartners: true     // Data brokering
@@ -209,13 +209,13 @@ def check_haveibeenpwned(email):
     # Hash the email using SHA-1 (required by HIBP API)
     sha1_hash = hashlib.sha1(email.encode('utf-8')).hexdigest().upper()
     prefix, suffix = sha1_hash[:5], sha1_hash[5:]
-    
+
     # Query HIBP range API
     response = requests.get(
         f'https://api.pwnedpasswords.com/range/{prefix}',
         headers={'User-Agent': 'PrivacyToolsGuide'}
     )
-    
+
     if response.status_code == 200:
         hashes = response.text.splitlines()
         for h in hashes:
@@ -226,7 +226,7 @@ def check_haveibeenpwned(email):
                     'count': int(count),
                     'sources': 'Multiple dating app breaches'
                 }
-    
+
     return {'exposed': False, 'count': 0}
 
 # Example usage
@@ -299,14 +299,13 @@ Understanding what information platforms store helps assess exposure risk:
 | Financial | Payment history, cards | High |
 
 
+## Related Articles
 
-## Related Reading
-
-- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
-- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 - [Okcupid Data Sharing History What Third Parties Received Use](/privacy-tools-guide/okcupid-data-sharing-history-what-third-parties-received-use/)
+- [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

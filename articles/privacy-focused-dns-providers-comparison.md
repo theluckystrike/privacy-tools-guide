@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy-Focused DNS Providers Comparison 2026"
+title: "Privacy-Focused DNS Providers Comparison 2026 — Privacy"
 description: "Compare DNS providers: NextDNS, Quad9, Mullvad DNS, AdGuard DNS, Cloudflare 1.1.1.1. Config examples, filtering, logging policies, pricing"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -614,5 +614,6 @@ nslookup google.com
 - [Voip Phone Number Privacy Risks What Sip Providers Log About](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

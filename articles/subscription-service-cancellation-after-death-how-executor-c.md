@@ -95,18 +95,18 @@ from collections import defaultdict
 def analyze_subscriptions(transactions_file):
     """Parse bank CSV and identify potential subscriptions."""
     subscriptions = defaultdict(list)
-    
+
     with open(transactions_file, 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
             amount = float(row['amount'].replace('$', '').replace(',', ''))
             description = row['description']
             date = datetime.strptime(row['date'], '%Y-%m-%d')
-            
+
             # Look for recurring patterns (same amount, similar description)
             key = (description[:20], round(amount, 2))
             subscriptions[key].append({'date': date, 'amount': amount})
-    
+
     # Filter for confirmed subscriptions (3+ months of consistent charges)
     confirmed = {}
     for (desc, amount), txns in subscriptions.items():
@@ -115,7 +115,7 @@ def analyze_subscriptions(transactions_file):
                 'amount': amount,
                 'frequency': f"Monthly (last seen: {txns[-1]['date'].date()})"
             }
-    
+
     return confirmed
 
 if __name__ == '__main__':
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: python subscription_discovery.py <transactions.csv>")
         sys.exit(1)
-    
+
     subs = analyze_subscriptions(sys.argv[1])
     print(f"Found {len(subs)} potential subscriptions:\n")
     for desc, info in sorted(subs.items()):
@@ -302,15 +302,13 @@ This archive protects against unauthorized reactivation and serves as evidence o
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 - [Best Password Manager No Subscription Fee](/privacy-tools-guide/best-password-manager-no-subscription-fee/)
 - [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)
-- [Pay For Vpn Subscription Anonymously Using Cryptocurrency No Email Required](/privacy-tools-guide/how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-email-required/)
-- [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
+- [Pay For Vpn Subscription Anonymously Using Cryptocurrency](/privacy-tools-guide/how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-email-required/)
+- [Password Manager Death Plan](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

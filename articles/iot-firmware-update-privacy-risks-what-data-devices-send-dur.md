@@ -114,7 +114,7 @@ def check_for_update():
         "hardware_class": hardware_type,  # Generic category, not specific model
         # Explicitly exclude: serial numbers, MAC addresses, unique IDs
     }
-    
+
     response = requests.post(
         "https://api.example.com/firmware/check",
         json=payload,
@@ -183,9 +183,7 @@ The IoT industry continues evolving, but transparency around update check data r
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)

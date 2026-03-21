@@ -484,8 +484,7 @@ echo "=== Device Assessment Complete ==="
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Prepare Phone For Crossing Border Into High Surveilla](/privacy-tools-guide/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
 - [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)

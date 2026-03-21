@@ -282,4 +282,6 @@ Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 - [Xmpp Omemo Encryption Setup Guide](/privacy-tools-guide/xmpp-omemo-encryption-setup-guide/)
 - [Encrypted File Vault Inheritance Using Veracrypt With Split](/privacy-tools-guide/encrypted-file-vault-inheritance-using-veracrypt-with-split-/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

@@ -322,8 +322,7 @@ If authorities discover your circumvention kit:
 Preparation before travel prevents panic and poor decisions during interactions.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)

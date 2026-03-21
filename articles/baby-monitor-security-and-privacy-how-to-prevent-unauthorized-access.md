@@ -284,8 +284,7 @@ Tailor your security approach to your actual threat:
 - Consult security researchers before selecting specific monitor
 
 
-
-## Related Reading
+## Related Articles
 
 - [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
 - [Tenant Privacy Rights: What Landlords Can Legally Monitor](/privacy-tools-guide/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)

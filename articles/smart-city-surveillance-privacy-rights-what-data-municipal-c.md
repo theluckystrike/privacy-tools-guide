@@ -53,15 +53,15 @@ def calculate_storage(cameras, resolution_megapixels, fps, compression):
         (2, 30): 4,    # 2MP at 30fps
         (1, 30): 2,    # 1MP at 30fps
     }
-    
-    daily_storage_tb = (bitrates.get((resolution_megapixels, fps), 8) 
-                        * cameras 
-                        * 3600 
-                        * 24 
-                        / 8 
-                        / 1_000_000 
+
+    daily_storage_tb = (bitrates.get((resolution_megapixels, fps), 8)
+                        * cameras
+                        * 3600
+                        * 24
+                        / 8
+                        / 1_000_000
                         * compression)  # H.264/H.265 compression factor
-    
+
     return daily_storage_tb
 
 # Example: 500 cameras at 4MP, 30fps, H.265 compression (~20:1)
@@ -104,7 +104,7 @@ class BluetoothTracker:
     def __init__(self, location_id):
         self.location_id = location_id
         self.detected_devices = {}
-    
+
     def record_detection(self, mac_address, rssi, timestamp):
         """
         Record Bluetooth device detection
@@ -112,13 +112,13 @@ class BluetoothTracker:
         """
         if mac_address not in self.detected_devices:
             self.detected_devices[mac_address] = []
-        
+
         self.detected_devices[mac_address].append({
             'location': self.location_id,
             'timestamp': timestamp,
             'signal_strength': rssi
         })
-    
+
     def get_movement_pattern(self, mac_address):
         """Reconstruct movement pattern from detections"""
         return self.detected_devices.get(mac_address, [])
@@ -191,7 +191,7 @@ def create_private_location_claim(location_id, timestamp, secret):
     claim = hashlib.sha256(
         f"{location_id}:{salt}:{secret}".encode()
     ).hexdigest()[:12]
-    
+
     return {
         "claim": claim,
         "granularity": "hour",
@@ -221,8 +221,7 @@ Remaining informed and advocating for transparent policies remains the most effe
 ---
 
 
-
-## Related Reading
+## Related Articles
 
 - [School Surveillance Technology Privacy](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
 - [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)

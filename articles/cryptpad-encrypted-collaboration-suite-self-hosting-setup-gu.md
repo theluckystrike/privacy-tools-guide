@@ -268,8 +268,7 @@ For teams exceeding 50 users, adjust these settings in `customize/config.json`:
 Consider enabling Redis for session management in high-load scenarios by adding a Redis service to your compose file and configuring `customize/redis.json`.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
 - [Encrypted Collaboration Tools For Remote Teams That Respect](/privacy-tools-guide/encrypted-collaboration-tools-for-remote-teams-that-respect-/)

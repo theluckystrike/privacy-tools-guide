@@ -61,7 +61,7 @@ To verify a contact's fingerprint in Gajim:
 The fingerprint appears as a 64-character hex string. For example:
 
 ```
-e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3 
+e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3
 c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9
 ```
 
@@ -371,8 +371,7 @@ export ALL_PROXY=socks5://127.0.0.1:9050
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)

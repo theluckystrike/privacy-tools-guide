@@ -90,12 +90,12 @@ services:
       POSTGRES_PASSWORD: your_password
     volumes:
       - db-data:/var/lib/postgresql/data
-  
+
   plausible_events_db:
     image: clickhouse/clickhouse-server
     volumes:
       - events-data:/var/lib/clickhouse
-  
+
   plausible:
     image: plausible/plausible:latest
     ports:
@@ -194,9 +194,7 @@ All three platforms provide genuine privacy-focused alternatives to Google Analy
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 - [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)

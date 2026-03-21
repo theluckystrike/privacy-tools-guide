@@ -559,23 +559,23 @@ server:
     do-udp: yes
     do-tcp: yes
     do-ip6: no
-    
+
     # Privacy hardening
     hide-identity: yes
     hide-version: yes
     qname-minimisation: yes
-    
+
     # Performance
     prefetch: yes
     num-threads: 1
     so-rcvbuf: 1m
-    
+
     # Root hints (updated periodically)
     root-hints: "/var/lib/unbound/root.hints"
-    
+
     # Aggressive NSEC for DNSSEC validation
     aggressive-nsec: yes
-    
+
     # Hardened DNSSEC
     harden-dnssec-stripped: yes
     harden-below-nxdomain: yes
@@ -619,12 +619,10 @@ Schedule automated blocklist updates through Pi-hole's built-in gravity update m
 When evaluating new blocklists, test in a staging configuration before enabling network-wide. Import the list, monitor the query log for 24 hours, and review which domains it blocks. Good blocklists block ad servers and trackers without touching CDNs, analytics that users have consented to, or first-party service domains.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
-- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
 - [Is Someone Monitoring My Home WiFi Network? How to Check](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 - [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)

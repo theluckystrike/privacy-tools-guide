@@ -154,7 +154,7 @@ MASTER_KEY=$(openssl rand -base64 32)
 echo "$MASTER_KEY" | age -r age1lawyerpub --passphrase \
     -o envelope.age documents.tar.gz
 
-# Store key separately: lawyer has one share, 
+# Store key separately: lawyer has one share,
 # executor has another, third party has third
 ```
 
@@ -217,29 +217,29 @@ from pathlib import Path
 class EstateEnvelope:
     def __init__(self, base_path: str):
         self.base_path = Path(base_path)
-    
-    def create_envelope(self, documents: list, recipients: list, 
+
+    def create_envelope(self, documents: list, recipients: list,
                         output: str, use_passphrase: bool = False):
         """Create encrypted envelope for recipients."""
         # Create temporary archive
         archive_name = "temp-archive.tar.gz"
-        subprocess.run(["tar", "-czf", archive_name, *documents], 
+        subprocess.run(["tar", "-czf", archive_name, *documents],
                       cwd=self.base_path)
-        
+
         # Build age command
         cmd = ["age", "-o", str(self.base_path / output)]
         for recipient in recipients:
             cmd.extend(["-r", recipient])
-        
+
         if use_passphrase:
             cmd.append("-p")
-        
+
         cmd.append(archive_name)
         subprocess.run(cmd)
-        
+
         # Cleanup
         os.remove(archive_name)
-    
+
     def list_envelopes(self):
         """List all encrypted envelopes."""
         return list(self.base_path.glob("*.age"))
@@ -247,7 +247,7 @@ class EstateEnvelope:
 # Usage example
 if __name__ == "__main__":
     envelope = EstateEnvelope("/path/to/estate-secure")
-    
+
     # Create new sealed envelope
     envelope.create_envelope(
         documents=["01-wills/primary-will.pdf"],
@@ -282,14 +282,12 @@ sha256sum sealed-envelope.age > sealed-envelope.sha256
 Building this sealed envelope system requires careful planning around access control, key management, and clear legal procedures. The technical implementation provides the encryption layer, but the operational procedures determine whether the system actually protects client interests as intended.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
 - [How To Create Offline Digital Library For Accessing Informat](/privacy-tools-guide/how-to-create-offline-digital-library-for-accessing-informat/)
 - [How To Prepare Vpn And Security Tool Credentials For Family](/privacy-tools-guide/how-to-prepare-vpn-and-security-tool-credentials-for-family-/)
-- [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

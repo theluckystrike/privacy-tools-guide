@@ -15,7 +15,6 @@ tags: [privacy-tools-guide, privacy]
 ---
 
 
-
 {% raw %}
 
 Android's Privacy Dashboard has evolved significantly, offering power users and developers tools for auditing app permissions. While the graphical interface provides basic visibility, accessing its full potential requires understanding both the built-in features and supplementary methods available through Android's platform APIs and command-line tools.
@@ -92,13 +91,13 @@ def audit_package_permissions(package):
         ['adb', 'shell', 'dumpsys', 'package', package],
         capture_output=True, text=True
     )
-    
+
     sensitive_perms = []
-    for perm in ['CAMERA', 'RECORD_AUDIO', 'ACCESS_FINE_LOCATION', 
+    for perm in ['CAMERA', 'RECORD_AUDIO', 'ACCESS_FINE_LOCATION',
                  'READ_CONTACTS', 'READ_CALL_LOG', 'READ_SMS']:
         if perm in result.stdout:
             sensitive_perms.append(perm)
-    
+
     return {
         'package': package,
         'sensitive_permissions': sensitive_perms
@@ -191,9 +190,7 @@ Review permissions after any significant app update—developers sometimes add n
 By combining the Privacy Dashboard's visual interface with programmatic audit capabilities, you achieve visibility into how applications interact with your device's sensitive resources. This dual approach provides both immediate awareness and historical analysis capability.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

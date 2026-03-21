@@ -69,7 +69,7 @@ class DeauthDetector:
  current = time.time()
  for client in list(self.packets.keys()):
  self.packets[client] = [
- t for t in self.packets[client] 
+ t for t in self.packets[client]
  if current - t < self.window
  ]
  if not self.packets[client]:
@@ -185,8 +185,7 @@ done
 Integrate this monitoring with alerting systems like Prometheus or Grafana for real-time dashboard visibility.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)

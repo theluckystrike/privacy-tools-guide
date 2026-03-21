@@ -75,7 +75,7 @@ def scan_gsm_frequencies():
     # RTL-SDR frequency range: 500 kHz to 1.766 GHz
     # GSM bands: 850, 900, 1800, 1900 MHz
     bands = [850, 900, 1800, 1900]
-    
+
     for band in bands:
         center_freq = band * 1_000_000  # Convert to Hz
         print(f"Scanning GSM band: {band} MHz")
@@ -99,9 +99,9 @@ from bleak import BleakScanner
 async def detect_ble_devices():
     """Scan for BLE devices that may indicate tracking"""
     devices = await BleakScanner.discover()
-    
+
     tracking_devices = ['AirTag', 'Tile', 'Galaxy SmartTag', 'Find My']
-    
+
     for device in devices:
         name = device.name or "Unknown"
         if any(tag.lower() in name.lower() for tag in tracking_devices):
@@ -347,8 +347,7 @@ Consult professionals if:
 Professional counter-surveillance specialists can often detect threats that consumer tools miss entirely.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Detect if Your Car Has GPS Tracker Hidden Check](/privacy-tools-guide/how-to-detect-if-your-car-has-gps-tracker-hidden-check/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)

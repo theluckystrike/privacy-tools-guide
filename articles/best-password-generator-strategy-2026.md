@@ -49,14 +49,14 @@ def generate_password(length: int = 20, use_symbols: bool = True) -> str:
     alphabet = string.ascii_letters + string.digits
     if use_symbols:
         alphabet += string.punctuation
-    
+
     return ''.join(secrets.choice(alphabet) for _ in range(length))
 
 def generate_passphrase(word_count: int = 6, separator: str = '-') -> str:
     """Generate a memorable passphrase using secure random selection."""
     with open('/usr/share/dict/words', 'r') as f:
         words = [word.strip() for word in f if len(word.strip()) >= 3]
-    
+
     return separator.join(secrets.choice(words) for _ in range(word_count))
 ```
 
@@ -89,7 +89,7 @@ function generateSecurePassword(length = 32) {
   const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
   const randomValues = new Uint32Array(length);
   crypto.getRandomValues(randomValues);
-  
+
   let password = '';
   for (let i = 0; i < length; i++) {
     password += charset[randomValues[i] % charset.length];
@@ -146,23 +146,23 @@ def validate_password_strength(password: str) -> dict:
         'valid': True,
         'issues': []
     }
-    
+
     if len(password) < 16:
         result['valid'] = False
         result['issues'].append('minimum 16 characters required')
-    
+
     if not any(c.isupper() for c in password):
         result['issues'].append('uppercase letter missing')
-    
+
     if not any(c.islower() for c in password):
         result['issues'].append('lowercase letter missing')
-    
+
     if not any(c.isdigit() for c in password):
         result['issues'].append('digit missing')
-    
+
     if not any(c in string.punctuation for c in password):
         result['issues'].append('special character missing')
-    
+
     return result
 ```
 
@@ -191,8 +191,7 @@ Never generate passwords from predictable sources. User input, timestamps, and s
 Set up rate limiting and account lockout. Even strong passwords cannot compensate for authentication systems that permit unlimited login attempts.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Policy Generator Tools Comparison: A Developer Guide](/privacy-tools-guide/privacy-policy-generator-tools-comparison/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

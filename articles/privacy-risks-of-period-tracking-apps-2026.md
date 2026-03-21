@@ -531,4 +531,6 @@ Instead:
 - [How to Audit Your Browser Extensions for Privacy Risks](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

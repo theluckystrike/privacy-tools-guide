@@ -77,13 +77,13 @@ def new_tor_circuit(control_port=9051, password=None):
             controller.authenticate(password=password)
         else:
             controller.authenticate()  # Uses cookie authentication
-        
+
         # Get current circuit and close it to force new path
         for circuit in controller.get_circuits():
             if circuit.status == 'BUILT':
                 controller.close_circuit(circuit.id)
                 break
-        
+
         return "New circuit created"
 
 # Alternatively, use stem to signal NEWNYM for a new circuit
@@ -145,7 +145,7 @@ def create_anonymous_account(target_url, email_service):
     # Start Tor daemon
     subprocess.Popen(['tor'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     time.sleep(5)  # Wait for Tor to establish circuit
-    
+
     # Configure Firefox for Tor
     options = webdriver.FirefoxOptions()
     options.add_argument('-tor')
@@ -153,17 +153,17 @@ def create_anonymous_account(target_url, email_service):
     options.set_preference('network.proxy.socks', '127.0.0.1')
     options.set_preference('network.proxy.socks_port', 9050)
     options.set_preference('privacy.resistFingerprinting', True)
-    
+
     driver = webdriver.Firefox(options=options)
-    
+
     try:
         # Get email alias
         email = email_service.get_new_alias()
-        
+
         # Navigate and create account
         driver.get(target_url)
         # ... perform account creation steps
-        
+
         return email
     finally:
         driver.quit()
@@ -186,8 +186,7 @@ Using Tor Browser for anonymous account creation introduces specific considerati
 **Service detection**: Some services actively block Tor exit nodes. Maintain a list of working exit nodes or use Tor bridges to circumvent blocks.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)

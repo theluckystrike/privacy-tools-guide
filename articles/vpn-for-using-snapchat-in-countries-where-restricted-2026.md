@@ -120,22 +120,22 @@ import NetworkExtension
 
 func configureVPN() {
     let manager = NEVPNManager.shared()
-    
+
     manager.loadFromPreferences { error in
         if let error = error {
             print("Error loading preferences: \(error)")
             return
         }
-        
+
         let protocolConfig = NEVPNProtocolIKEv2()
         protocolConfig.serverAddress = "vpn.example.com"
         protocolConfig.remoteIdentifier = "vpn.example.com"
         protocolConfig.useExtendedAuthentication = true
         protocolConfig.authenticationMethod = .certificate
-        
+
         manager.protocolConfiguration = protocolConfig
         manager.isEnabled = true
-        
+
         manager.saveToPreferences { error in
             if let error = error {
                 print("Error saving: \(error)")
@@ -193,7 +193,7 @@ import requests
 
 def diagnose_snapchat():
     print("=== Snapchat Connectivity Diagnostics ===\n")
-    
+
     # Check DNS resolution
     print("1. DNS Resolution Test:")
     for domain in ["snapchat.com", "sc-cdn.net"]:
@@ -202,7 +202,7 @@ def diagnose_snapchat():
             print(f"   ✓ {domain} -> {ip}")
         except:
             print(f"   ✗ {domain} - Resolution failed")
-    
+
     # Check network path
     print("\n2. Network Path Test:")
     result = subprocess.run(
@@ -210,7 +210,7 @@ def diagnose_snapchat():
         capture_output=True, text=True
     )
     print(result.stdout if result.returncode == 0 else "   Ping failed")
-    
+
     # Check HTTPS access
     print("\n3. HTTPS Connectivity Test:")
     try:
@@ -224,8 +224,7 @@ if __name__ == "__main__":
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Vpn For Accessing Crypto Exchanges In Restricted Countries 2](/privacy-tools-guide/vpn-for-accessing-crypto-exchanges-in-restricted-countries-2/)
 - [Vpn For Using Twitter X In Countries Where Banned](/privacy-tools-guide/vpn-for-using-twitter-x-in-countries-where-banned/)

@@ -136,7 +136,7 @@ async function checkWebRTC() {
   pc.createDataChannel('');
   const offer = await pc.createOffer();
   pc.setLocalDescription(offer);
-  
+
   pc.onicecandidate = (ice) => {
     if (ice.candidate) {
       console.log('WebRTC leak detected:', ice.candidate.candidate);
@@ -182,8 +182,7 @@ Before accessing betting platforms from abroad, verify that:
 - You understand the gambling regulations in your current jurisdiction
 
 
-
-## Related Reading
+## Related Articles
 
 - [Best VPN for South Korea: Accessing Western Streaming Sites](/privacy-tools-guide/best-vpn-for-south-korea-accessing-western-streaming-sites/)
 - [VPN for Accessing Korean Webtoon Sites from Outside Korea](/privacy-tools-guide/vpn-for-accessing-korean-webtoon-sites-from-outside-korea/)

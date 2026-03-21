@@ -113,7 +113,7 @@ def solve_captcha(site_key, page_url, api_key):
     }
     response = requests.post(submit_url, data=data)
     captcha_id = response.text.split('|')[1]
-    
+
     # Poll for solution
     while True:
         result = requests.get(f"https://2captcha.com/res.php?key={api_key}&action=get&id={captcha_id}")
@@ -179,13 +179,13 @@ puppeteer.use(PluginHandleRecaptcha());
     headless: false,
     args: ['--proxy-server=socks5://127.0.0.1:9050']
   });
-  
+
   const page = await browser.newPage();
   await page.goto('https://example.com');
-  
+
   // Solve captchas automatically if present
   const { solved } = await page.solveRecaptchas();
-  
+
   await page.waitForNavigation();
 })();
 ```
@@ -203,9 +203,7 @@ puppeteer.use(PluginHandleRecaptcha());
 Start with circuit changes and security level adjustments — they resolve most captcha friction without touching your privacy settings.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)

@@ -130,7 +130,7 @@ If the deceased used cPanel hosting, you have several transfer options:
 For developers using AWS, Google Cloud, or similar providers:
 
 - **AWS**: Requires a death certificate and legal documentation. The process goes through AWS Trust & Safety. You may need to create a new account and rebuild resources, as direct account transfers aren't supported.
- 
+
 - **Google Cloud**: Similar requirements. Contact Google Cloud Support with documentation proving your authority over the estate.
 
 - **DigitalOcean/Vultr/Linode**: These providers typically allow account access transfers with proper documentation. Open a support ticket explaining the situation.
@@ -143,7 +143,7 @@ SSL certificates are tied to specific domains and may include the organization n
    ```bash
    # Apache
    cat /etc/ssl/certs/domain.crt /etc/ssl/private/domain.key
-   
+
    # Nginx
    cat /etc/nginx/ssl/domain.crt /etc/nginx/ssl/domain.key
    ```
@@ -184,8 +184,7 @@ If using services like Cloudflare or GitHub, add team members or organizations. 
 Registering domains through an LLC or corporation can simplify transfers if the entity survives the owner. The domain becomes an asset of the business rather than personal property.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Digital Business Asset Inheritance How To Transfer Saas Acco](/privacy-tools-guide/digital-business-asset-inheritance-how-to-transfer-saas-acco/)
 - [Nft And Digital Asset Inheritance How To Transfer Ownership](/privacy-tools-guide/nft-and-digital-asset-inheritance-how-to-transfer-ownership-/)

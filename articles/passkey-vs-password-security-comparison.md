@@ -149,7 +149,7 @@ async function authenticateUser(username, credentials) {
       return { success: true, method: 'passkey' };
     }
   }
-  
+
   if (credentials.password) {
     // Fallback to password authentication
     const passwordResult = await verifyPassword(username, credentials.password);
@@ -157,7 +157,7 @@ async function authenticateUser(username, credentials) {
       return { success: true, method: 'password' };
     }
   }
-  
+
   return { success: false };
 }
 ```
@@ -193,9 +193,7 @@ The shift from passwords to passkeys represents the most significant authenticat
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Passkey Adoption Timeline by Platform: A Developer Guide](/privacy-tools-guide/passkey-adoption-timeline-by-platform/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)

@@ -104,12 +104,12 @@ class PrivacyRisk:
         self.status = "open"
         self.owner = None
         self.mitigation = []
-        
+
     def calculate_score(self):
         if self.likelihood and self.impact:
             return self.likelihood * self.impact
         return None
-    
+
     def to_dict(self):
         return {
             "id": self.risk_id,
@@ -166,7 +166,6 @@ A well-designed privacy risk register transforms compliance from a point-in-time
 The investment in a solid quarterly review process pays dividends during audits, incident response, and stakeholder confidence. Your privacy program becomes measurable, repeatable, and defensible.
 
 
-
 ## Conclusion
 
 
@@ -176,6 +175,6 @@ The investment in a solid quarterly review process pays dividends during audits,
 - [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 - [Enterprise Privacy Tool Deployment Checklist for.](/privacy-tools-guide/enterprise-privacy-tool-deployment-checklist-for-multi-cloud/)
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

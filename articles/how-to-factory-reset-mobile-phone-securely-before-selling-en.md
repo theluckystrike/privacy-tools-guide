@@ -187,8 +187,7 @@ Understand FRP:
 - **iOS**: Activation Lock requires previous Apple ID—disable Find My before selling
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Prevent Mobile Games From Collecting And Selling Your](/privacy-tools-guide/how-to-prevent-mobile-games-from-collecting-and-selling-your/)
 - [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)

@@ -157,17 +157,17 @@ However, the security difference narrows significantly when password authenticat
 graph TD
     A[VPN Authentication Methods] --> B[Certificate-Based]
     A --> C[Username/Password]
-    
+
     B --> B1[Mutual TLS mTLS]
     B --> B2[PKI Infrastructure Required]
     B --> B3[No Password-Related Attacks]
     B --> B4[Device-Bound Authentication]
-    
+
     C --> C1[Password + MFA]
     C --> C2[Directory Integration]
     C --> C3[Phishing Vulnerability]
     C --> C4[Password Reuse Risk]
-    
+
     B1 --> E[Higher Security]
     C1 --> E
 ```
@@ -248,8 +248,7 @@ verb 4
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [VPN for Using Telegram in Iran 2026: Working Methods](/privacy-tools-guide/vpn-for-using-telegram-in-iran-2026-working-method/)
 - [Vpn Certificate Pinning How It Prevents Mitm Attacks.](/privacy-tools-guide/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)

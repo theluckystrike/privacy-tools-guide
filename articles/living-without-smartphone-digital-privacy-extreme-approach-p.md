@@ -161,7 +161,7 @@ def check_sms_via_adb():
 def notify_desktop(message):
     """Send notification to desktop using osascript on macOS"""
     subprocess.run([
-        'osascript', '-e', 
+        'osascript', '-e',
         f'display notification "{message}" with title "SMS"'
     ])
 
@@ -176,8 +176,7 @@ while True:
 This script demonstrates how developers can create custom notification pipelines, receiving SMS alerts on their primary computer rather than relying on smartphone notifications.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)

@@ -93,18 +93,18 @@ class LocalGarageController:
     def __init__(self, relay_pin=5):
         self.relay = Pin(relay_pin, Pin.OUT)
         self.door_state = "unknown"
-        
+
     def toggle_door(self):
         """Trigger garage door opening/closing"""
         self.relay.value(1)
         utime.sleep(0.5)  # Brief relay activation
         self.relay.value(0)
-        
+
     def get_local_status(self):
         """Check door status using hardcoded sensors"""
         # Implementation depends on hardware setup
         pass
-    
+
     def log_event_locally(self, event_type):
         """Store event data on local storage only"""
         timestamp = utime.localtime()
@@ -386,8 +386,7 @@ adb shell pm grant com.chamberlain.myq android.permission.INTERNET
 The fundamental issue remains: cloud-connected devices create permanent activity records that persist beyond their operational lifespan and can be repurposed for purposes never contemplated at the time of collection.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
 - [Smart Blinds And Shades Privacy Do Motorized Window Covers R](/privacy-tools-guide/smart-blinds-and-shades-privacy-do-motorized-window-covers-r/)

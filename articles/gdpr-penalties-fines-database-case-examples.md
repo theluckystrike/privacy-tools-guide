@@ -63,14 +63,14 @@ def fetch_edpb_decisions(limit=50):
     """
     # EDPB publishes decisions in various formats
     base_url = "https://edpb.europa.eu"
-    
+
     # For actual implementation, check current EDPB API documentation
     # This demonstrates the pattern for regulatory data fetching
     headers = {
         "Accept": "application/json",
         "User-Agent": "PrivacyTools/1.0"
     }
-    
+
     try:
         response = requests.get(
             f"{base_url}/edpb-decisions",
@@ -88,16 +88,16 @@ def analyze_fine_trends(decisions):
     """Analyze fine amounts and violation types."""
     total_fines = 0
     violation_types = {}
-    
+
     for decision in decisions.get("decisions", []):
         if "fine" in decision:
             amount = decision["fine"].get("amount", 0)
             total_fines += amount
-            
+
             # Categorize violations
             for violation in decision.get("violations", []):
                 violation_types[violation] = violation_types.get(violation, 0) + 1
-    
+
     return {
         "total_fines": total_fines,
         "violation_breakdown": violation_types,
@@ -121,18 +121,18 @@ const https = require('https');
 async function fetchGDPRFines(countryCode = 'DE') {
   // Example: Fetching from a national DPA open data endpoint
   // Different countries have different APIs
-  
+
   const endpoints = {
     'DE': 'https://www.bfdi.bund.de/opendata.json',
     'FR': 'https://www.cnil.fr/sites/cnil/files/regie/ sanctions.json',
     'UK': 'https://ico.org.uk/about-the-ico/media-centre/ announcements.json'
   };
-  
+
   const endpoint = endpoints[countryCode];
   if (!endpoint) {
     throw new Error(`No endpoint for country: ${countryCode}`);
   }
-  
+
   return new Promise((resolve, reject) => {
     https.get(endpoint, (res) => {
       let data = '';
@@ -150,7 +150,7 @@ async function fetchGDPRFines(countryCode = 'DE') {
 
 // Filter fines above threshold
 function filterSignificantFines(data, threshold = 100000) {
-  return data.filter(entry => 
+  return data.filter(entry =>
     entry.fine && entry.fine >= threshold
   ).map(entry => ({
     authority: entry.authority,
@@ -191,18 +191,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Scan for PII in code
         run: |
           # Use tools like git-secrets, branchalyzer
           npm install -g @privacytools/scan
           privacy-scan --strict
-      
+
       - name: Verify data flow documentation
         run: |
           # Check that new data flows are documented
           python scripts/verify-data-flows.py
-      
+
       - name: Check encryption requirements
         run: |
           # Verify sensitive data is encrypted
@@ -210,8 +210,7 @@ jobs:
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
 - [China VPN Crackdown: Penalties and Consequences for.](/privacy-tools-guide/china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/)

@@ -357,8 +357,7 @@ A complete financial comparison:
 **Break-even analysis**: Tresorit becomes cost-effective when your team values API automation and performance enough to justify 50% higher cost.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

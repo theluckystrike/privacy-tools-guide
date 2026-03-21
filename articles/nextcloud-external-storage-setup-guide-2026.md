@@ -205,8 +205,7 @@ External storage excels in several developer-focused scenarios:
 - **Media libraries**: Connect large media storage without consuming local disk space
 
 
-
-## Related Reading
+## Related Articles
 
 - [Self Hosted Cloud Storage Comparison Nextcloud vs.](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)

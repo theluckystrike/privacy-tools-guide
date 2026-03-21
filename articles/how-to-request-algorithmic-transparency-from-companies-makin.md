@@ -179,9 +179,7 @@ The path to algorithmic accountability runs through informed individuals exercis
 - [How to Exercise Your Right to Access Personal Data](/how-to-exercise-right-to-access-personal-data/)
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [Ios App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)

@@ -244,8 +244,7 @@ Beyond individual settings, consider a broader approach to your Twitter X privac
 **Be cautious with third-party login**: If you log into other services using "Sign in with X," you are sharing your Twitter X identity with those services. Where possible, create independent accounts rather than relying on social login, which creates a dependency — if your Twitter X account is suspended or compromised, all services linked to it through social login become inaccessible.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser NoScript Settings Recommended 2026](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
 - [Mastodon vs Twitter: Privacy Comparison 2026](/privacy-tools-guide/mastodon-vs-twitter-privacy-comparison-2026/)

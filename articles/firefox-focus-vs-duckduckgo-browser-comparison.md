@@ -95,7 +95,7 @@ Firefox Focus supports a limited subset of Firefox extensions, primarily those f
 # Firefox Focus extensions are installed via Play Store or F-Droid
 # Available extensions include:
 - uBlock Origin
-- Privacy Badger  
+- Privacy Badger
 - HTTPS Everywhere (now built-in)
 - NoScript (limited functionality)
 ```
@@ -129,7 +129,7 @@ Firefox Focus allows you to configure your preferred search engine during setup:
 // Navigate to: about:preferences#search
 // Default options include:
 // - Google
-// - Bing  
+// - Bing
 // - DuckDuckGo
 // - Yahoo
 // - StartPage
@@ -483,14 +483,13 @@ For developers, each browser offers different capabilities:
 The "best" choice depends on your specific priorities: Firefox Focus for flexibility and customization, DuckDuckGo for simplicity and built-in privacy defaults.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How Browser Storage Partitioning Works Firefox Chrome Privac](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
-- [Best Privacy-Focused Search Engines Comparison 2026: DuckDuckGo, Startpage, B...](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
 - [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)
 - [Iphone Focus Modes For Privacy How To Limit App Access By Co](/privacy-tools-guide/iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/)
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
+- [Firefox Arkenfox User Js Full Guide](/privacy-tools-guide/firefox-arkenfox-user-js-full-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -48,14 +48,14 @@ Replace standard embed codes with static links that open share dialogs in new wi
 function openShareWindow(platform, url, title) {
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
-  
+
   const shareUrls = {
     twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
     reddit: `https://reddit.com/submit?url=${encodedUrl}&title=${title}`
   };
-  
+
   window.open(shareUrls[platform], '_blank', 'width=600,height=400');
 }
 ```
@@ -114,13 +114,13 @@ class PrivacyShare {
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(document.title);
     let shareUrl = this.platforms[platform];
-    
+
     if (platform === 'email') {
       shareUrl = shareUrl.replace('{title}', title).replace('{url}', url);
     } else {
       shareUrl += '?url=' + url + (platform === 'twitter' ? '&text=' + title : '');
     }
-    
+
     window.open(shareUrl, '_blank', 'noopener,noreferrer');
   }
 }
@@ -146,8 +146,8 @@ The `noopener,noreferrer` attributes in the window.open call provide security be
 For static sites or server-rendered applications, generate share links without any client-side JavaScript:
 
 ```html
-<a href="https://twitter.com/intent/tweet?url=https://example.com/page&text=Check+this+out" 
-   target="_blank" 
+<a href="https://twitter.com/intent/tweet?url=https://example.com/page&text=Check+this+out"
+   target="_blank"
    rel="noopener noreferrer">
   Share on Twitter
 </a>
@@ -324,14 +324,13 @@ When building custom share buttons, ensure accessibility:
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 - [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

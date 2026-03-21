@@ -48,10 +48,10 @@ Under GDPR, valid consent requires:
 <div class="consent-form">
   <input type="checkbox" checked id="analytics" name="analytics">
   <label for="analytics">I agree to analytics tracking</label>
-  
+
   <input type="checkbox" checked id="marketing" name="marketing">
   <label for="marketing">I agree to marketing communications</label>
-  
+
   <button>Accept All</button>
 </div>
 
@@ -59,26 +59,26 @@ Under GDPR, valid consent requires:
 <div class="consent-form">
   <fieldset>
     <legend>Cookie Preferences</legend>
-    
+
     <div class="consent-option">
       <input type="checkbox" id="necessary" name="necessary" disabled checked>
       <label for="necessary">Necessary cookies (required)</label>
       <span class="description">Essential for the website to function</span>
     </div>
-    
+
     <div class="consent-option">
       <input type="checkbox" id="analytics" name="analytics">
       <label for="analytics">Analytics cookies</label>
       <span class="description">Help us understand how visitors use our site</span>
     </div>
-    
+
     <div class="consent-option">
       <input type="checkbox" id="marketing" name="marketing">
       <label for="marketing">Marketing cookies</label>
       <span class="description">Used to deliver relevant advertisements</span>
     </div>
   </fieldset>
-  
+
   <div class="button-group">
     <button type="button" class="btn-reject">Reject All Optional</button>
     <button type="button" class="btn-accept">Accept Selected</button>
@@ -141,19 +141,19 @@ const consentPreferences = {
 // Validation: Ensure no defaults other than necessary
 function validateConsent(consent) {
   const violations = [];
-  
+
   if (consent.analytics === true && !consent.timestamp) {
     violations.push('Analytics cannot be pre-checked');
   }
-  
+
   if (consent.marketing === true && !consent.timestamp) {
     violations.push('Marketing cannot be pre-checked');
   }
-  
+
   if (!consent.method) {
     violations.push('Consent method must be recorded');
   }
-  
+
   return violations;
 }
 ```
@@ -165,19 +165,19 @@ The interface must provide clear feedback when users make choices:
 ```javascript
 function updateConsentUI(preferences) {
   const checkboxes = document.querySelectorAll('.consent-option input');
-  
+
   checkboxes.forEach(checkbox => {
     const isDisabled = checkbox.disabled;
     const isChecked = preferences[checkbox.name] === true;
-    
+
     checkbox.checked = isChecked;
-    
+
     // Visual feedback for disabled (necessary) options
     if (isDisabled) {
       checkbox.parentElement.classList.add('disabled');
     }
   });
-  
+
   // Show confirmation with clear summary
   const summary = generateConsentSummary(preferences);
   showConfirmation(summary);
@@ -196,8 +196,7 @@ Regulatory bodies have intensified enforcement:
 Multiple companies have faced significant fines in 2025-2026 for dark pattern implementations, making compliance a business necessity rather than just a legal requirement.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)

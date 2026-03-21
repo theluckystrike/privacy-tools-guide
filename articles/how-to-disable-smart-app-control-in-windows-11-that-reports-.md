@@ -134,16 +134,16 @@ Write-Host "Current Smart App Control status: $currentStatus"
 
 if ($currentStatus -eq "On") {
     Write-Host "Disabling Smart App Control..."
-    
+
     # Method: Registry modification
     $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
-    
+
     if (!(Test-Path $registryPath)) {
         New-Item -Path $registryPath -Force | Out-Null
     }
-    
+
     Set-ItemProperty -Path $registryPath -Name "EnableSmartAppControl" -Value 0 -Type DWord
-    
+
     Write-Host "Restart required for changes to take effect."
     Write-Host "After restart, verify status with: Get-MpComputerStatus | Select-Object -Property SmartAppControlState"
 } else {
@@ -166,8 +166,7 @@ Remove-ItemProperty -Path $registryPath -Name "EnableSmartAppControl" -ErrorActi
 After removing the registry entry and restarting, Windows will restore SAC to its default behavior based on your system configuration.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
@@ -394,4 +393,3 @@ Create a decision matrix for your organization:
 | Privacy-sensitive org | Unacceptable | Required |
 
 Your choice depends on your threat model versus privacy requirements.
-

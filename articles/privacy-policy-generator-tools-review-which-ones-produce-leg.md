@@ -81,9 +81,9 @@ For developers, their GTM cookie consent solution integrates with generated poli
 
 ```html
 <!-- Example: Cookiebot integration snippet -->
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" 
-        data-cbid="your-cbid" 
-        type="text/javascript" 
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
+        data-cbid="your-cbid"
+        type="text/javascript"
         async></script>
 ```
 
@@ -143,16 +143,16 @@ For developers building privacy-first applications, combining tools yields best 
 // Example: Express route for data deletion
 app.delete('/api/account', authenticate, async (req, res) => {
   const userId = req.user.id;
-  
+
   // Delete from database
   await db.users.delete({ where: { id: userId }});
-  
+
   // Delete from analytics
   await analytics.deleteUser(userId);
-  
+
   // Remove from email service
   await emailService.removeSubscriber(userId);
-  
+
   res.json({ message: 'Account deleted successfully' });
 });
 ```
@@ -401,8 +401,7 @@ jobs:
 6. **Forgetting consent mechanisms**: GDPR/CCPA require explicit consent
 
 
-
-## Related Reading
+## Related Articles
 
 - [Privacy Policy Generator Tools Comparison: A Developer Guide](/privacy-tools-guide/privacy-policy-generator-tools-comparison/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)

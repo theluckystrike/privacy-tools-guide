@@ -107,19 +107,19 @@ def authenticate_with_2fa(username, password, two_factor_code):
         "Username": username,
         "Password": password
     })
-    
+
     # Step 2: Submit 2FA code
     session_token = initial_response.json()["Token"]
     twofa_payload = {
         "two_factor_code": two_factor_code,
         "token": session_token
     }
-    
+
     verify_response = requests.post(
         f"{auth_url}/2fa",
         json=twofa_payload
     )
-    
+
     return verify_response.json()["access_token"]
 ```
 
@@ -180,9 +180,7 @@ Remember that 2FA is just one layer of defense — use strong, unique passwords,
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
 - [Two-Factor Authentication Setup Guide 2026](/privacy-tools-guide/two-factor-authentication-setup-2026)

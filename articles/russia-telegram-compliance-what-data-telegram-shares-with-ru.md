@@ -93,7 +93,7 @@ For developers using Telegram's Bot API, additional considerations apply:
 ```javascript
 // Bot developers should be aware:
 // 1. Bot token logging
-// 2. Bot command usage statistics  
+// 2. Bot command usage statistics
 // 3. Group/channel IDs where bots are added
 // 4. Payment provider IDs (for monetization)
 
@@ -140,14 +140,14 @@ However, the metadata around secret chats—timing, participants, duration—rem
 If you build applications on Telegram's platform, consider these technical responses:
 
 ```python
-# Example: Detecting if your Telegram client is connecting 
+# Example: Detecting if your Telegram client is connecting
 # through Russian infrastructure
 import socket
 
 def check_connection_route():
     # Check if IP resolves to Russian ASN
     russian_asns = [ASNs with Russian registry]
-    
+
     # Telegram's actual IP ranges are distributed globally
     # But requests may be routed through Russian points
     pass
@@ -166,7 +166,7 @@ def check_connection_route():
 // - Payment provider data may be subject to disclosure
 // - Bot commands and interactions are logged
 
-// Recommended: 
+// Recommended:
 const webhookConfig = {
     url: "https://your-non-russian-server.com/webhook",
     ip_address: "non-russian-ip",
@@ -194,8 +194,7 @@ For users physically in Russia, the practical reality is:
 - **Account termination risk**: Non-compliance isn't an option for Telegram under current law
 
 
-
-## Related Reading
+## Related Articles
 
 - [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
 - [Russia Vpn Provider Compliance Which Services Handed User Da](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-da/)

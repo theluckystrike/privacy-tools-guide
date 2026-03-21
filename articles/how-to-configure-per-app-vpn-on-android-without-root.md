@@ -210,8 +210,7 @@ Here's a recommended split:
 | Browsing | ✅ | |
 
 
-
-## Related Reading
+## Related Articles
 
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)

@@ -32,7 +32,7 @@ Before you can assess impact, you must map where your data travels. This require
 # Example: Tracking data flows in a Python application
 def identify_data_transfers(request):
     transfers = []
-    
+
     # Database location
     transfers.append({
         "source": "user_pii",
@@ -40,7 +40,7 @@ def identify_data_transfers(request):
         "mechanism": "TLS 1.3",
         "jurisdiction": "US"
     })
-    
+
     # Third-party services
     for service in request.integration_services:
         transfers.append({
@@ -49,7 +49,7 @@ def identify_data_transfers(request):
             "mechanism": "HTTPS",
             "jurisdiction": service.region
         })
-    
+
     # CDN and edge computing
     if request.uses_cdn:
         transfers.append({
@@ -58,7 +58,7 @@ def identify_data_transfers(request):
             "mechanism": "TLS",
             "jurisdiction": "multi-region"
         })
-    
+
     return transfers
 ```
 
@@ -84,7 +84,7 @@ function assessTransferRisk(dataCategory, destinationJurisdiction) {
         'health': 5,
         'biometric': 5
     };
-    
+
     const jurisdictionRiskScores = {
         'eu': 1,
         'switzerland': 1,
@@ -93,10 +93,10 @@ function assessTransferRisk(dataCategory, destinationJurisdiction) {
         'china': 4,
         'russia': 5
     };
-    
+
     const sensitivity = sensitivityScores[dataCategory] || 3;
     const jurisdictionRisk = jurisdictionRiskScores[destinationJurisdiction] || 3;
-    
+
     return sensitivity * jurisdictionRisk;
 }
 ```
@@ -115,11 +115,11 @@ resource "aws_db_instance" "user_data" {
   engine              = "postgres"
   engine_version      = "14.7"
   instance_class      = "db.r6g.xlarge"
-  
+
   # EU data residency
   availability_zone   = "eu-west-1a"
   backup_retention_period = 30
-  
+
   # Encryption with regional keys
   kms_key_id          = aws_kms_key.eu_primary.key_id
 }
@@ -129,10 +129,10 @@ resource "aws_lambda_function" "processing" {
   runtime            = "python3.9"
   role               = aws_iam_role.lambda_exec.arn
   handler            = "handler.process"
-  
+
   # Deploy to EU region only
   provider           = aws.eu_west_1
-  
+
   environment {
     variables = {
       DATA_REGION = "eu-west-1"
@@ -189,15 +189,13 @@ The regulatory landscape continues evolving. Organizations that build assessment
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Data Privacy Maturity Model Assessment Guide](/privacy-tools-guide/data-privacy-maturity-model-assessment-guide/)
 - [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
-- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
 - [Canvas Blocker Extension How It Works And Performance Impact](/privacy-tools-guide/canvas-blocker-extension-how-it-works-and-performance-impact/)
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
+- [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

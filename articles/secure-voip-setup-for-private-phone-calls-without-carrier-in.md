@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure VoIP Setup for Private Phone Calls Without Carrier Involvement"
+title: "Secure VoIP Setup for Private Phone Calls Without Carrier"
 description: "Learn how to set up self-hosted VoIP infrastructure using Asterisk, WebRTC, and encrypted protocols to make private phone calls without relying on"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -235,8 +235,7 @@ apt-get update && apt-get upgrade asterisk
 ```
 
 
-
-## Related Reading
+## Related Articles
 
 - [Jmp Chat Voip Number For Signal Registration Anonymous Phone](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)
 - [Voip Phone Number Privacy Risks What Sip Providers Log About](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)

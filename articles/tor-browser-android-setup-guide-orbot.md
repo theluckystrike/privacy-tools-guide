@@ -159,12 +159,12 @@ def get_circuit_info(control_port=9051):
     """Query Tor circuit status."""
     with Controller.from_port(port=control_port) as controller:
         controller.authenticate(password='your_cookie_or_password')
-        
+
         # Get current circuit
         circuit = controller.get_circuit(controller.get_circuits()[0].id)
         for i, (fingerprint, nickname) in enumerate(circuit.path):
             print(f"Hop {i+1}: {nickname} ({fingerprint})")
-        
+
         # Get bootstrap status
         print(f"Status: {controller.get_info('status/bootstrap-phase')}")
 
@@ -256,8 +256,7 @@ F-Droid users should enable auto-updates or periodically check for new versions.
 ---
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
 - [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)

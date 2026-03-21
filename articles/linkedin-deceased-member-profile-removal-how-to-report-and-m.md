@@ -49,7 +49,7 @@ Here's a bash script that validates a LinkedIn profile URL format before submiss
 
 validate_linkedin_url() {
     local url="$1"
-    
+
     # Check for valid LinkedIn profile URL pattern
     if [[ $url =~ ^https?://(www\.)?linkedin\.com/in/[a-zA-Z0-9-]+/?$ ]]; then
         echo "Valid LinkedIn profile URL"
@@ -83,23 +83,23 @@ import requests
 
 def check_profile_status(profile_url, session):
     """Check if a LinkedIn profile is memorialized."""
-    
+
     # Note: LinkedIn API restrictions apply
     # This is a conceptual example for educational purposes
-    
+
     headers = {
         "Authorization": f"Bearer {session.access_token}",
         "X-Restli-Protocol-Version": "2.0.0"
     }
-    
+
     # Extract profile ID from URL
     profile_id = profile_url.split("/in/")[-1].strip("/")
-    
+
     response = session.get(
         f"https://api.linkedin.com/v2/people/{profile_id}",
         headers=headers
     )
-    
+
     if response.status_code == 200:
         data = response.json()
         # Check for memorialization status
@@ -109,7 +109,7 @@ def check_profile_status(profile_url, session):
             "memorialized": is_memorialized,
             "data": data
         }
-    
+
     return {"exists": False, "error": response.text}
 ```
 
@@ -122,11 +122,11 @@ HR departments and organizations managing employee departures sometimes need to 
 
 def prepare_submission_data(employees_file):
     """Prepare batch submission data for multiple profiles."""
-    
+
     import csv
-    
+
     submissions = []
-    
+
     with open(employees_file, 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -138,7 +138,7 @@ def prepare_submission_data(employees_file):
                 "relationship": row['relationship'],  # family, colleague
                 "contact_email": row['contact_email']
             })
-    
+
     return submissions
 
 # Example usage
@@ -175,9 +175,9 @@ If you're building recruitment tools or professional networking analyzers, add f
 // JavaScript example for handling memorialized profiles
 
 function processLinkedInProfile(profile) {
-    const isMemorialized = profile.headline?.includes('Memorialized') || 
+    const isMemorialized = profile.headline?.includes('Memorialized') ||
                           profile.firstName?.includes('(Deceased)');
-    
+
     if (isMemorialized) {
         return {
             status: 'memorialized',
@@ -189,7 +189,7 @@ function processLinkedInProfile(profile) {
             }
         };
     }
-    
+
     return { status: 'active', shouldExclude: false };
 }
 ```
@@ -206,8 +206,7 @@ Understanding limitations prevents wasted effort:
 For families seeking to preserve professional portfolios, consider archiving the profile manually through screenshots or web archiving tools before requesting memorialization.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Protect Linkedin Profile From Being Discovered By Dat](/privacy-tools-guide/how-to-protect-linkedin-profile-from-being-discovered-by-dat/)
 - [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)

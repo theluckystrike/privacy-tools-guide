@@ -268,8 +268,7 @@ For users wanting maximum permission control, custom Android distributions provi
 These ROMs require technical comfort with flashing, but provide significantly better permission granularity and control than stock Android.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

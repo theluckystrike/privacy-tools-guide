@@ -203,9 +203,7 @@ Begin by enabling microG through CalyxOS's built-in installer, then configure si
 The privacy-utility balance depends on your threat model and use cases. MicroG enables running most Google-dependent applications while significantly reducing data collection compared to stock Android. As you use the system, you'll identify which apps work and which require workarounds.
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)

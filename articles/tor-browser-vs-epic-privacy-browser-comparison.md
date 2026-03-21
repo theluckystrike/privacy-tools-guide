@@ -206,8 +206,7 @@ const browser = await puppeteer.launch({
 - **Chromium dependency**: Built on closed-source Chromium (though mostly open)
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser vs LibreWolf Privacy Comparison](/privacy-tools-guide/tor-browser-vs-librewolf-privacy-comparison/)
 - [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/privacy-tools-guide/tor-browser-vs-vpn-comparison-which-is-better/)

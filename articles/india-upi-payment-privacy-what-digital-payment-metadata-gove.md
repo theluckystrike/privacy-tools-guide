@@ -63,19 +63,19 @@ def get_upi_transaction_metadata(
     Returns transaction ID, timestamp, amount, and counterparty VPA.
     """
     endpoint = "https://api.bank.com/v1/upi/transactions"
-    
+
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
-    
+
     payload = {
         "vpa": vpa,
         "from_date": from_date.isoformat(),
         "to_date": to_date.isoformat(),
         "include_metadata": True
     }
-    
+
     response = requests.post(endpoint, json=payload, headers=headers)
     return response.json()
 
@@ -175,8 +175,7 @@ UPI operates under a complex regulatory framework that balances privacy with fin
 These regulations mean your UPI data exists in a legal gray area—technically private but legally accessible through proper channels.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)

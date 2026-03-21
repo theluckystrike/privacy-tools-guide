@@ -38,26 +38,26 @@ def validate_chinese_id(id_number):
     """Validate Chinese ID number format"""
     if len(id_number) != 18:
         return False
-    
+
     # Check birth date validity
     year = int(id_number[6:10])
     month = int(id_number[10:12])
     day = int(id_number[12:14])
-    
+
     if year < 1900 or year > 2026:
         return False
     if month < 1 or month > 12:
         return False
     if day < 1 or day > 31:
         return False
-    
+
     # Validate checksum (17th digit)
     weights = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
     check_codes = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']
-    
+
     total = sum(int(id_number[i]) * weights[i] for i in range(17))
     check_digit = check_codes[total % 11]
-    
+
     return id_number[17] == check_digit
 ```
 
@@ -117,7 +117,7 @@ async function verifyIdentity(userData) {
       id_image: userData.idImageBase64
     })
   });
-  
+
   return response.json();
 }
 ```
@@ -592,13 +592,12 @@ minimization_strategies = {
 The reality is that true anonymity in China's digital ecosystem is extremely difficult.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

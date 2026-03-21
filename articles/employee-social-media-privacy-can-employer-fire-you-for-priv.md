@@ -36,7 +36,7 @@ If you post about poor pay, unsafe working conditions, or co-worker treatment on
 
 ```python
 # You're a developer at a startup. You post on your private X account:
-# "Our sprint deadlines are unrealistic and management ignores developer input. 
+# "Our sprint deadlines are unrealistic and management ignores developer input.
 #  Developers are burning out. #techworkers"
 
 This could be considered protected concerted activity if it relates to working conditions.
@@ -287,5 +287,7 @@ This documentation becomes evidence if you pursue legal action. Courts heavily w
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 
 Built by theluckystrike** — More at [zovo.one](https://zovo.one)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

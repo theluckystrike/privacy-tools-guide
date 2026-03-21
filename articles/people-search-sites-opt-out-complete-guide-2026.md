@@ -94,13 +94,13 @@ class PeopleSearchOptOut:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'
         })
-    
+
     def opt_out_beenverified(self, email: str) -> bool:
         url = "https://www.beenverified.com/opt-out"
         # Implementation requires handling CAPTCHA and form submission
         # This is a simplified placeholder
         return True
-    
+
     def opt_out_whitepages(self, first_name: str, last_name: str, state: str) -> bool:
         url = f"https://www.whitepages.com/api/v3/person/suppression"
         payload = {
@@ -113,7 +113,7 @@ class PeopleSearchOptOut:
 
 def batch_opt_out(names: List[Dict[str, str]]) -> None:
     opt_out = PeopleSearchOptOut()
-    
+
     for person in names:
         opt_out.opt_out_whitepages(
             person['first_name'],
@@ -198,8 +198,7 @@ Opt-out is not an one-time action. Data brokers continuously refresh their datab
 5. **Consider data removal services** for automated ongoing monitoring
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Disappear From People Search Sites Complete Removal G](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
 - [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)

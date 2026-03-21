@@ -44,14 +44,14 @@ Here's how the flow works conceptually:
 def create_sealed_notification(sender_public_key, recipient_device_token, message):
     # Generate one-time use keypair for this notification
     ephemeral_keypair = generate_ecdh_keypair()
-    
+
     # Create encrypted envelope
     envelope = {
         "sender": encrypt(sender_public_key, ephemeral_keypair.private),
         "recipient": recipient_device_token,
         "timestamp": current_unix_timestamp()
     }
-    
+
     # Server can deliver to recipient but cannot identify sender
     return push_service.deliver(envelope)
 ```
@@ -78,7 +78,7 @@ const encryptedNotification = {
     }),
     key: push_service_key
   )),
-  
+
   // Layer 2: Signal-specific encryption (device-to-device)
   signal_encrypted: base64(sealed_sender_encrypt(
     recipient_device: device_public_key,
@@ -105,11 +105,11 @@ Signal uses a combination of identity keys and one-time ephemeral keys. The iden
 def derive_notification_keys(identity_key, ephemeral_key, recipient_prekey):
     # ECDH key agreement
     shared_secret = ecdh(identity_key, ephemeral_key)
-    
+
     # Derive separate keys for different purposes
     message_key = hkdf(shared_secret, "message-encryption")
     metadata_key = hkdf(shared_secret, "metadata-hiding")
-    
+
     return {"message_key": message_key, "metadata_key": metadata_key}
 ```
 
@@ -290,8 +290,7 @@ mitmproxy -m transparent --mode reverse --modify-body /pattern/replacement "http
 Formal security audits by third parties (like those performed by Open Whisper Systems) provide more verification than individual testing.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)

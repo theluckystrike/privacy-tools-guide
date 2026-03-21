@@ -72,7 +72,7 @@ package main
 import (
     "context"
     "log"
-    
+
     "github.com/Psiphon-Labs/psiphon-tunnel-core/psiphon"
 )
 
@@ -86,16 +86,16 @@ func main() {
         AuthTokenUsername: "your-auth-username",
         AuthTokenPassword: "your-auth-password",
     }
-    
+
     tunnel, err := psiphon.StartTunnel(context.Background(), config)
     if err != nil {
         log.Fatalf("Failed to start tunnel: %v", err)
     }
-    
+
     // Get the local SOCKS/HTTP proxy address
     localProxy := tunnel.LocalSOCKSProxyAddress()
     log.Printf("SOCKS proxy available at: %s", localProxy)
-    
+
     // Use the tunnel for your application's HTTP client
     // tunnel.HTTPClient() returns a configured *http.Client
 }
@@ -444,8 +444,7 @@ Using circumvention tools carries legal risks in some jurisdictions. Before depl
 This does not constitute legal advice. Consult local attorneys familiar with internet law before deploying circumvention infrastructure.
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
 - [How To Configure Wireguard With Obfuscation To Bypass Russia](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)

@@ -144,7 +144,7 @@ def measure_speed(protocol):
 
  # Measure speed
  result = subprocess.run(
- ["curl", "-o", "/dev/null", "-s", "-w", "%{speed_download}", 
+ ["curl", "-o", "/dev/null", "-s", "-w", "%{speed_download}",
  "https://speed.hetzner.de/100MB.bin"],
  capture_output=True,
  text=True
@@ -195,11 +195,13 @@ For most users in 2026, WireGuard provides the best balance of speed, security, 
 ## Related Reading
 
 - [How To Protect Your Wifi From Neighbor Stealing Bandwidth Se](/privacy-tools-guide/how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/)
-- [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
+- [Configure Xray Reality Protocol for Undetectable Proxy from](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
 - [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
-- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
+- [Mls Messaging Layer Security Protocol How It Will Change](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Signal Protocol Explained for Developers](/privacy-tools-guide/signal-protocol-explained-for-developers/)
 
 Built by theluckystrike** — More at https://zovo.one
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

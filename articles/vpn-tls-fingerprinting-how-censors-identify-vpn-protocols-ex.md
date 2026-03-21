@@ -176,9 +176,7 @@ The key takeaway is that TLS encryption alone does not guarantee traffic anonymi
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Tls Fingerprinting How Your Browser Handshake Identifies You](/privacy-tools-guide/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
 - [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)

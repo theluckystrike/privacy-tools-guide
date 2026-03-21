@@ -44,11 +44,11 @@ def compute_private_mean(data, epsilon=1.0):
     """
     accountant = BudgetAccountant(epsilon=epsilon)
     mechanism = Laplace(epsilon=epsilon, sensitivity=1.0)
-    
+
     # Add noise to the actual mean
     actual_mean = np.mean(data)
     private_mean = mechanism.randomise(actual_mean)
-    
+
     return private_mean
 ```
 
@@ -97,13 +97,13 @@ class FederatedClient:
         self.model = model.to(device)
         self.train_loader = train_loader
         self.device = device
-    
+
     def get_model_update(self):
         """Train locally and return model weights delta."""
         self.model.train()
         optimizer = optim.SGD(self.model.parameters(), lr=0.01)
         criterion = nn.CrossEntropyLoss()
-        
+
         for data, target in self.train_loader:
             data, target = data.to(self.device), target.to(self.device)
             optimizer.zero_grad()
@@ -111,24 +111,24 @@ class FederatedClient:
             loss = criterion(output, target)
             loss.backward()
             optimizer.step()
-        
+
         return self.model.state_dict()
 
 class FederatedServer:
     def __init__(self, model):
         self.global_model = model
-    
+
     def aggregate_updates(self, client_updates, weights=None):
         """Weighted average of client model updates."""
         if weights is None:
             weights = [1.0 / len(client_updates)] * len(client_updates)
-        
+
         averaged_state = OrderedDict()
         for key in client_updates[0].keys():
             averaged_state[key] = sum(
                 w * update[key] for w, update in zip(weights, client_updates)
             )
-        
+
         self.global_model.load_state_dict(averaged_state)
         return self.global_model
 ```
@@ -218,8 +218,7 @@ The fundamental challenge is balancing privacy guarantees with model accuracy. H
 - Test utility on holdout data before production deployment
 
 
-
-## Related Reading
+## Related Articles
 
 - [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
 - [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)

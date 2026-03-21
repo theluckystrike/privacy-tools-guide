@@ -101,31 +101,31 @@ function detectFont(fontName) {
   const testString = 'mmmmmmmmmmlli';
   const testSize = '72px';
   const body = document.getElementsByTagName('body')[0];
-  
+
   const span = document.createElement('span');
   span.style.fontSize = testSize;
   span.innerHTML = testString;
   span.style.visibility = 'hidden';
-  
+
   let detected = false;
-  
+
   for (const baseFont of baseFonts) {
     span.style.fontFamily = baseFont;
     body.appendChild(span);
     const defaultWidth = span.offsetWidth;
     body.removeChild(span);
-    
+
     span.style.fontFamily = `'${fontName}', ${baseFont}`;
     body.appendChild(span);
     const fontWidth = span.offsetWidth;
     body.removeChild(span);
-    
+
     if (fontWidth !== defaultWidth) {
       detected = true;
       break;
     }
   }
-  
+
   return detected;
 }
 ```
@@ -198,8 +198,7 @@ You can test Tor Browser's fingerprinting protection using online tools:
 This consistency across sessions is exactly what Tor Browser intends. The goal is not to appear random, but to appear identical to everyone else.
 
 
-
-## Related Reading
+## Related Articles
 
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [Tor Browser Font Fingerprinting Protection](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)

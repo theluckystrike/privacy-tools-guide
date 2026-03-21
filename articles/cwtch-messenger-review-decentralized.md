@@ -60,16 +60,16 @@ Developers can examine the cryptographic implementation in the open-source repos
 func generateKeyPair() (publicKey, privateKey []byte) {
     privateKey = make([]byte, 32)
     publicKey = make([]byte, 32)
-    
+
     // Use cryptographically secure random
     _, err := rand.Read(privateKey)
     if err != nil {
         panic("Key generation failed")
     }
-    
+
     // Generate public key from private key
     curve25519.ScalarBaseMult(&publicKey, &privateKey)
-    
+
     return publicKey, privateKey
 }
 ```
@@ -220,12 +220,12 @@ However, users should understand its limitations:
 def verify_contact_fingerprint(cwtch_client, contact_onion):
     """Verify contact fingerprint through separate channel"""
     contact_info = cwtch_client.get_contact_info(contact_onion)
-    
+
     # Compare fingerprint via:
     # - In-person meeting
     # - Encrypted email
     # - Another verified messenger
-    
+
     return contact_info.fingerprint
 ```
 
@@ -241,14 +241,13 @@ def verify_contact_fingerprint(cwtch_client, contact_onion):
 | Development Activity | Low | High | High |
 
 
-
-## Related Reading
+## Related Articles
 
 - [Cwtch Decentralized Metadata Resistant Messenger How It Diff](/privacy-tools-guide/cwtch-decentralized-metadata-resistant-messenger-how-it-diff/)
 - [Session Messenger Decentralized Onion Routing How It Protect](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
 - [Vpn For Using Instagram In China 2026 Working Solution](/privacy-tools-guide/vpn-for-using-instagram-in-china-2026-working-solution/)
-- [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
+- [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

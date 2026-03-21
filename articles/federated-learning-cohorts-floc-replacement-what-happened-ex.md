@@ -144,7 +144,7 @@ async function joinAudience() {
     auctionSignals: {},
     perBuyerSignals: {}
   };
-  
+
   await navigator.joinAdInterestGroup({
     name: 'custom-audience-1',
     owner: 'https://advertiser.com',
@@ -216,9 +216,7 @@ The story of FLoC demonstrates how difficult it is to balance advertising busine
 ---
 
 
-
-
-## Related Reading
+## Related Articles
 
 - [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)
 - [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)

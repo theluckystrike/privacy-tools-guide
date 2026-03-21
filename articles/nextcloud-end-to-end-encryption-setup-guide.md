@@ -173,8 +173,7 @@ sudo tail -f /var/www/nextcloud/data/nextcloud.log | grep -i encryption
 Most issues stem from mismatched client versions or corrupted local key stores—server-side problems are rare since the server performs no cryptographic operations.
 
 
-
-## Related Reading
+## Related Articles
 
 - [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
