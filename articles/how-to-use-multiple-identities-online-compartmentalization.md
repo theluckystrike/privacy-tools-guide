@@ -49,6 +49,8 @@ Each email should have:
 - No cross-linking between accounts
 - Unique recovery phone numbers when possible
 
+A practical improvement over the alias approach is using a dedicated email domain for each compartment. Services like SimpleLogin and AnonAddy let you create unlimited alias addresses that forward to a real inbox, so you can give every merchant, forum, or service a unique address. When spam arrives, you can disable that alias without touching your real inbox. Cross-compartment linking becomes impossible because no two aliases point to the same domain.
+
 ### 2. Browser Profile Isolation
 
 Use separate browser profiles for different activities:
@@ -71,6 +73,8 @@ Configure each profile with:
 - Separate cookie policies
 - Independent extensions
 - Different sync accounts
+
+Firefox's Multi-Account Containers extension takes this further: within a single browser window, you can open tabs in color-coded containers that share no cookies or storage. A tab in the "Finance" container is completely isolated from a tab in the "Personal" container. This is more convenient than switching browser profiles while maintaining strong isolation for most threat models.
 
 ### 3. Password Manager Vault Separation
 
@@ -147,6 +151,10 @@ Start with basic separation and increase isolation based on your threat model:
 - Network-level routing controls
 - Air-gapped storage for critical credentials
 
+### Threat Model Alignment
+
+The right level depends on your actual risk. A freelancer protecting their privacy from data brokers needs Level 1. A journalist communicating with confidential sources needs Level 3 and possibly additional operational security measures beyond what any software tool can provide. Be honest about your threat model — over-engineering your setup leads to mistakes caused by friction, which introduce the very vulnerabilities you were trying to avoid.
+
 ## Managing Identity Transitions
 
 When moving between identities:
@@ -165,6 +173,8 @@ ip addr show tun0  # For OpenVPN
 wg show            # For WireGuard
 ```
 
+A practical habit: before starting any sensitive session, open a new private window, navigate to a neutral IP-check service, and verify you're connecting through the expected network. This thirty-second check catches configuration mistakes before you expose your identity.
+
 ## Common Compartmentalization Mistakes
 
 ### Avoiding Cross-Contamination
@@ -174,6 +184,12 @@ Never:
 - Use work email for personal registrations
 - Access financial sites on public WiFi
 - Mix browsing contexts without clearing state
+
+Cross-contamination is the most common failure mode. A single login from the wrong device or network creates a data point that can link two compartments. Browser autofill is particularly dangerous — if your financial compartment's browser offers to autofill a credential from your personal compartment, it means both compartments share the same browser profile and are not isolated.
+
+### Behavioral Fingerprinting Beyond Technical Controls
+
+Technical isolation stops data from being shared between compartments at the software level. It does not stop behavioral correlation. If your "work" and "personal" browser profiles always go online at the same time of day, from the same ISP, and with similar typing cadences, a determined adversary with access to both data streams can correlate them. This is a high-sophistication threat that most users do not face, but it explains why the highest-security compartments use dedicated devices on separate networks rather than just separate browser profiles.
 
 ### Payment Isolation
 
@@ -188,6 +204,14 @@ virtual_card      # Online shopping
 prepaid_card      # High-risk merchants
 cryptocurrency    # Sensitive purchases
 ```
+
+## Username and Username Pattern Discipline
+
+A compartment is only as strong as its weakest identifier. If you use the same username pattern across compartments — say, "mike_k_1985" for personal and "mike_k_dev" for professional — a data broker or determined researcher can link them through the shared pattern. Use genuinely distinct usernames for each compartment, generated without reference to your real name or any other compartment.
+
+Password managers can help here too. Generate a random memorable phrase as your username just as you'd generate a random password. Tools like Bitwarden's username generator create pronounceable but random usernames on demand. The goal is that no compartment's username should share words, numbers, or patterns with any other compartment's username.
+
+Profile photos are another cross-compartment linkage risk. Using the same profile photo (or similar photos) across compartments makes visual correlation trivial. Use distinct, AI-generated avatars for compartments where a profile photo is required but your real face is not appropriate.
 
 ## Recovery Planning
 
@@ -212,6 +236,8 @@ finance:
   in_person: bank branch verification
 ```
 
+Store these recovery documents in encrypted storage that is itself compartmentalized — your personal identity's recovery document should not be accessible from your financial compartment's device.
+
 ## Tools for Managing Multiple Identities
 
 | Tool | Purpose | Compartmentalization Use |
@@ -221,6 +247,8 @@ finance:
 | Tor Browser | Anonymous browsing | Sensitive identities |
 | VPN | Network isolation | Traffic routing |
 | YubiKey | Hardware authentication | High-security identities |
+| SimpleLogin | Email aliasing | Per-service unique addresses |
+| Privacy.com | Virtual cards | Per-merchant payment isolation |
 
 {% endraw %}
 
