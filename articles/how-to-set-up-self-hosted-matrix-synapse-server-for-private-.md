@@ -113,6 +113,15 @@ server {
 }
 ```
 
+Add security headers to all responses to prevent clickjacking and content-type sniffing:
+
+```nginx
+    add_header X-Frame-Options "DENY" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "no-referrer" always;
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+```
+
 ## Creating Admin Users and Registering Clients
 
 Create an admin user to manage your server:
@@ -129,11 +138,28 @@ For client connections, you can use Element (formerly Riot.im), the reference Ma
 2. Choose "Advanced" and enter your homeserver URL: `https://matrix.yourdomain.com`
 3. Log in with the credentials you created above
 
+For mobile users, Element is available on Android via F-Droid (preferred for privacy) and both iOS and Android through their respective app stores. The SchildiChat client on Android provides additional privacy-focused defaults including automatic room key backup and improved notification handling.
+
 ## Enabling End-to-End Encryption
 
 Matrix supports end-to-end encryption (E2EE) by default using the Olm and Megolm protocols. When you create a new room in Element, encryption is available by toggling the encryption setting in room settings. Each device gets its own encryption keys stored locally.
 
 For additional security, verify key fingerprints in the settings under "Security & Privacy". This ensures you're communicating with the correct recipients and not victim to man-in-the-middle attacks.
+
+To enforce encryption organization-wide and prevent accidentally creating unencrypted rooms, configure Synapse's room defaults in `homeserver.yaml`:
+
+```yaml
+encryption_enabled_by_default_for_room_presets:
+  private_chat: true
+  trusted_private_chat: true
+  public_chat: false
+```
+
+This ensures any private or trusted private room created on your server defaults to encrypted. Public rooms remain unencrypted since encryption in open rooms provides limited privacy benefit—anyone can join and read messages.
+
+### Cross-Signing for Multi-Device Verification
+
+Matrix's cross-signing system allows you to verify all your devices with a single action rather than verifying each device pair individually. After logging in on a second device, go to **Settings → Security & Privacy → Cross-signing** and verify the new session from an already-verified device. Once cross-signing is set up, new room members appear as verified automatically if they share a verified identity across devices.
 
 ## Hardening Your Synapse Server
 
@@ -146,6 +172,34 @@ Prevent unauthorized users from creating accounts:
 ```yaml
 enable_registration: false
 ```
+
+When you need to add new members, generate single-use registration tokens:
+
+```bash
+docker exec -it synapse register_new_matrix_user -c /data/homeserver.yaml \
+  --generate-registration-token http://localhost:8008
+```
+
+Share the token over a separate encrypted channel. Tokens expire after one use, preventing unauthorized account creation even if a token leaks.
+
+### Rate Limiting
+
+Synapse includes configurable rate limiting to prevent brute-force login attempts and message flooding:
+
+```yaml
+rc_login:
+  address:
+    per_second: 0.15
+    burst_count: 5
+  account:
+    per_second: 0.18
+    burst_count: 4
+  failed_attempts:
+    per_second: 0.19
+    burst_count: 7
+```
+
+Tight rate limits significantly raise the cost of credential-stuffing attacks while having no practical impact on legitimate users.
 
 ### Configure Cross-Origin Resource Sharing
 
@@ -172,6 +226,14 @@ crontab -e
 0 2 * * * /path/to/backup-script.sh
 ```
 
+For PostgreSQL deployments, use `pg_dump` with encryption:
+
+```bash
+#!/bin/bash
+pg_dump -U synapse synapse | gpg --symmetric --cipher-algo AES256 \
+  -o /backup/synapse-$(date +%Y%m%d).sql.gpg
+```
+
 ### Update Synapse Regularly
 
 Stay current with security patches:
@@ -180,6 +242,71 @@ Stay current with security patches:
 docker-compose pull
 docker-compose up -d
 ```
+
+Subscribe to the Matrix Security Disclosure mailing list at matrix.org to receive notifications of new CVEs before they are publicly disclosed.
+
+## Monitoring and Log Management
+
+For a privacy-focused deployment, log retention deserves deliberate attention. Synapse logs contain IP addresses and user identifiers by default. Configure log rotation and minimal retention:
+
+```yaml
+# homeserver.yaml
+log_config: "/data/log.yaml"
+```
+
+In your `/data/log.yaml`:
+
+```yaml
+version: 1
+formatters:
+  precise:
+    format: '%(asctime)s - %(name)s - %(lineno)d - %(levelname)s - %(message)s'
+handlers:
+  file:
+    class: logging.handlers.TimedRotatingFileHandler
+    filename: /data/homeserver.log
+    when: midnight
+    backupCount: 3     # Keep only 3 days of logs
+    encoding: utf8
+    formatter: precise
+root:
+  level: WARNING       # Reduce verbosity to avoid logging user activity
+  handlers: [file]
+```
+
+Three days of log retention at WARNING level captures operational errors without accumulating a detailed record of user sessions. If your server is subpoenaed, there is little to hand over.
+
+## Configuring a Tor Onion Service for Hidden Access
+
+For high-risk deployments where server location must remain unknown, run Synapse behind a Tor onion service. This hides the server's IP address from both users and potential adversaries, and provides a stable address that remains accessible even if the domain is seized or blocked.
+
+Install Tor on the host:
+
+```bash
+sudo apt install tor
+```
+
+Add to `/etc/tor/torrc`:
+
+```
+HiddenServiceDir /var/lib/tor/matrix_hidden/
+HiddenServicePort 443 127.0.0.1:8008
+```
+
+Restart Tor and retrieve your `.onion` address:
+
+```bash
+sudo systemctl restart tor
+sudo cat /var/lib/tor/matrix_hidden/hostname
+```
+
+Update your `homeserver.yaml` to accept connections at the onion address:
+
+```yaml
+public_baseurl: "http://youronionaddress.onion/"
+```
+
+Clients that support onion addresses (Element Desktop with Tor configured as a SOCKS5 proxy on 127.0.0.1:9050) can connect directly without exposing the connection to their ISP. Share the `.onion` address only through already-encrypted channels.
 
 ## Testing Federation
 
@@ -192,6 +319,8 @@ curl -X GET "https://matrix.yourdomain.com/_matrix/federation/v1/version"
 ```
 
 A successful response indicates federation is operational.
+
+Use the Matrix Federation Tester at federationtester.matrix.org to diagnose delegation issues, certificate problems, and firewall misconfiguration without leaving any trace on the target server.
 
 ## Troubleshooting Common Issues
 
@@ -226,9 +355,11 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
 ```
 
+PostgreSQL dramatically improves performance for servers with more than a handful of active users. SQLite is acceptable for personal use or small teams; beyond roughly ten concurrent users, message delivery latency noticeably degrades.
+
 ## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Turkey Secure Communication Guide for Activists and NGOs](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
