@@ -9,7 +9,7 @@ permalink: /first-party-sets-chrome-proposal-how-it-affects-cross-site-t/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

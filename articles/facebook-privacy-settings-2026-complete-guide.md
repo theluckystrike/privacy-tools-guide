@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /facebook-privacy-settings-2026-complete-guide/
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 tags: [privacy-tools-guide, privacy]

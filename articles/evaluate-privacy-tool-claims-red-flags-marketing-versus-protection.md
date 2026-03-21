@@ -7,9 +7,9 @@ date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /evaluate-privacy-tool-claims-red-flags-marketing-versus-protection/
 categories: [guides]
-tags: [tools, security, privacy]
+tags: [privacy-tools-guide, tools, security, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: false
 ---
