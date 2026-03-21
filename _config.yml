@@ -15,6 +15,7 @@ author:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed
 defaults:
   - scope:
       path: "articles"
