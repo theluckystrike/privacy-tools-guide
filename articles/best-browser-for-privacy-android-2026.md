@@ -177,6 +177,220 @@ All options above provide substantial privacy improvements over default Android 
 
 Test each option with your development workflows before committing. Privacy tools should enhance your productivity, not hinder it.
 
+## Advanced Filter List Configuration
+
+Beyond default browser protections, add comprehensive filter lists:
+
+```bash
+# For uBlock Origin (Firefox/Brave)
+# Visit: https://filterlists.com/
+
+# Essential blocklists to add:
+BLOCKLISTS=(
+    "https://adaway.org/hosts.txt"                    # Comprehensive ad/tracker hosts
+    "https://www.i-dont-care-about-cookies.eu/frontend/get-filter/easylist" # Cookie consent removal
+    "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20of%20AdBP%2C%20Part%201%20(No%20thematic%20music).txt"
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt"
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt"
+)
+
+# Installation: In uBlock Origin settings > Filter lists > Import
+# Paste each URL and enable
+```
+
+This multi-layered approach blocks ads, trackers, malware, and cookie banners simultaneously.
+
+## Comparative Privacy Score
+
+Evaluate browsers by specific privacy metrics:
+
+```javascript
+// Privacy scoring framework for Android browsers
+const privacyScores = {
+    "Firefox": {
+        "Ad Blocking": 9,          // Via uBlock Origin
+        "Tracker Blocking": 9,     // Enhanced Tracking Protection
+        "Fingerprinting Resistance": 7,  // Partial
+        "DNS Privacy": 9,          // DoH support
+        "Extension Support": 10,   // Full Firefox ecosystem
+        "Open Source": 10,         // Full transparency
+        "Privacy-Respecting": 10,  // No telemetry with config
+        "Average Score": 9.1
+    },
+    "Brave": {
+        "Ad Blocking": 9,          // Built-in Shields
+        "Tracker Blocking": 9,     // Aggressive by default
+        "Fingerprinting Resistance": 8,  // Good randomization
+        "DNS Privacy": 8,          // DoH available
+        "Extension Support": 9,    // Chromium extensions
+        "Open Source": 8,          // Chromium-based (proprietary Brave features)
+        "Privacy-Respecting": 7,   // BAT program involvement
+        "Average Score": 8.3
+    },
+    "Mull": {
+        "Ad Blocking": 8,          // Via extensions or lists
+        "Tracker Blocking": 10,    // Hardened out-of-box
+        "Fingerprinting Resistance": 10, // Best-in-class
+        "DNS Privacy": 10,         // DoH enforced
+        "Extension Support": 10,   // Full Firefox
+        "Open Source": 10,         // Complete transparency
+        "Privacy-Respecting": 10,  // No tracking whatsoever
+        "Average Score": 9.7
+    }
+};
+
+// Calculate weighted score based on threat model
+const calculateScore = (browser, weights = {}) => {
+    const defaultWeights = {
+        "Tracker Blocking": 0.3,
+        "Fingerprinting Resistance": 0.2,
+        "DNS Privacy": 0.2,
+        "Open Source": 0.15,
+        "Privacy-Respecting": 0.15
+    };
+
+    const w = { ...defaultWeights, ...weights };
+    let score = 0;
+
+    for (const [metric, weight] of Object.entries(w)) {
+        score += privacyScores[browser][metric] * weight;
+    }
+
+    return score;
+};
+
+// For high-threat environments
+console.log("High-threat model scores:");
+const threatWeights = {
+    "Fingerprinting Resistance": 0.4,
+    "Tracker Blocking": 0.3,
+    "Open Source": 0.2,
+    "Privacy-Respecting": 0.1
+};
+
+Object.keys(privacyScores).forEach(browser => {
+    console.log(`${browser}: ${calculateScore(browser, threatWeights).toFixed(1)}/10`);
+});
+```
+
+Results show Mull scoring highest for high-threat scenarios, with Firefox second (when properly configured).
+
+## Browser Extension Recommendations
+
+For developers building privacy tools, install these extensions across all browsers:
+
+### Essential Extensions (All Browsers)
+
+1. **uBlock Origin**
+   ```bash
+   # Firefox: addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+   # Brave: Already included in Shields
+   ```
+
+2. **HTTPS Everywhere**
+   ```bash
+   # Now mostly unnecessary (modern browsers force HTTPS)
+   # But still useful for backwards compatibility
+   ```
+
+3. **Privacy Badger**
+   ```bash
+   # Firefox: addons.mozilla.org/en-US/firefox/addon/privacy-badger/
+   # Tracks which third parties track you
+   ```
+
+### Developer-Specific Extensions
+
+1. **Cookie AutoDelete**
+   - Automatically delete cookies except those on whitelist
+   - Prevents persistent tracking across sessions
+
+2. **Containers (Firefox)**
+   - Isolate websites in separate containers
+   - Test multiple account scenarios simultaneously
+
+3. **LibRedirect**
+   - Redirect to privacy-respecting alternatives
+   - Google → DuckDuckGo, YouTube → Invidious, etc.
+
+## Mobile-Specific Privacy Configuration
+
+Android browsers require special configuration due to OS limitations:
+
+```bash
+# Disable JavaScript for maximum fingerprinting protection
+# Browser Menu > Settings > Privacy > JavaScript: Off
+# Trade-off: many websites break
+
+# Disable WebGL (fingerprinting vector)
+# Chrome: chrome://flags > Search "WebGL" > Disable
+# Firefox: about:config > webgl.disabled = true
+
+# Enable strictest DNS-over-HTTPS
+# Settings > Network & Internet > Private DNS
+# Choose provider: Cloudflare (1.1.1.1), Quad9 (9.9.9.9), NextDNS
+```
+
+## Testing Privacy Protection Effectiveness
+
+Use these tools to verify protections work:
+
+```bash
+# Test tracker blocking effectiveness
+adb shell pm list packages | grep -E "analytics|ads|tracker"
+
+# Capture DNS queries to verify no leaks
+adb logcat | grep "host_"
+
+# Test fingerprinting resistance
+# Visit: https://browserleaks.com
+# Visit: https://www.coveryourtracks.eff.org/
+# Visit: https://arkenfox.github.io/
+
+# Check IP leaks when using VPN
+# Visit: https://ipleak.net/
+# Visit: https://browserleaks.com/dns
+```
+
+A properly configured privacy browser shows:
+- No external IP address (only VPN IP)
+- No DNS leaks (provider's DNS, not ISP's)
+- Random fingerprint on each page load
+- Zero cookie persistence across sessions
+
+## Workflow Optimization for Privacy Browsing
+
+Combine privacy browsers with productivity tools:
+
+```bash
+# Use Firefox Multi-Account Containers for separating contexts
+# Install: addons.mozilla.org/addon/multi-account-containers/
+
+# Workflow:
+# Container 1: Personal email/social (tracked)
+# Container 2: Work accounts (isolated)
+# Container 3: Privacy testing (no tracking)
+# Container 4: Anonymous research (Tor + VPN)
+
+# This prevents cross-site tracking while maintaining productivity
+```
+
+## Hardware Acceleration and Performance
+
+Privacy settings can impact performance. Balance necessary:
+
+| Setting | Performance Impact | Privacy Gain | Recommendation |
+|---------|-------------------|--------------|-----------------|
+| Disable JavaScript | -70% performance | Huge | Selective (allowlist) |
+| Disable WebGL | -30% performance | Large | Enable, monitor |
+| Disable canvas FP | -5% performance | Medium | Always on |
+| Aggressive tracker blocking | -15% performance | Large | Always on |
+| DoH + DoT | -2% performance | Medium | Always on |
+
+For daily browsing, enable everything except JavaScript (use allowlist). For security-critical browsing, accept performance degradation.
+
+---
+
 
 ## Related Articles
 

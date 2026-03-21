@@ -175,6 +175,181 @@ If you confirm unauthorized access:
 4. **Factory reset your device** - This removes any malware helping the cloning
 5. **File a report** - Document the incident with relevant authorities
 
+## Advanced Detection: Analyzing SIM Swap Indicators
+
+Phone cloning often precedes SIM swap attacks. Monitor these specific indicators:
+
+```bash
+# Check SIM card history on Android
+adb shell settings get secure android_id
+
+# Monitor SIM changes
+adb shell getprop gsm.sim.state
+
+# Track SIM serial numbers
+adb shell dumpsys telephony.registry | grep "mSimSerialNumber"
+```
+
+If the SIM serial changes without your action, someone has physically replaced your SIM. This is a critical sign of cloning or SIM swap attack.
+
+## Carrier Security Controls
+
+Most major carriers offer additional protections against cloning and SIM swaps:
+
+### AT&T Extra Security
+```bash
+# Enable Account PIN through AT&T website
+# https://www.att.com/wireless/account-security/
+
+# Specifically:
+# 1. Set up 4-6 digit Account PIN
+# 2. Enable "Number Port Protection"
+# 3. Register trusted devices
+# 4. Set up account alerts
+```
+
+### Verizon Number Lock
+```bash
+# Access Verizon's Number Lock feature
+# https://www.verizonwireless.com/account/device-management/
+
+# Setup:
+# 1. Navigate to Security settings
+# 2. Enable "Number Lock" feature
+# 3. Configure PIN requirements for porting
+# 4. Register device locations
+```
+
+### T-Mobile
+```bash
+# T-Mobile's SCAM SHIELD program
+# Dial *898 to check SIM swap settings
+# Or access https://www.t-mobile.com/security
+```
+
+## Detecting Unauthorized Mileage Monitoring
+
+Cloning often includes location tracking. Monitor for unauthorized location access:
+
+```python
+#!/usr/bin/env python3
+import subprocess
+import json
+from datetime import datetime
+
+def check_location_access():
+    """Monitor location service access on Android"""
+    result = subprocess.run(
+        ['adb', 'shell', 'dumpsys', 'location'],
+        capture_output=True, text=True
+    )
+
+    # Parse location requests
+    lines = result.stdout.split('\n')
+    active_requests = []
+
+    for line in lines:
+        if 'Request' in line or 'Provider' in line:
+            active_requests.append(line.strip())
+
+    # Alert if location requests exceed expected apps
+    print(f"[{datetime.now()}] Active location requests:")
+    for req in active_requests:
+        print(f"  {req}")
+
+    # Expected apps: Maps, Weather, Camera
+    # Unexpected: Unknown packages suggest cloning malware
+
+check_location_access()
+```
+
+## Forensic Analysis for Power Users
+
+If you suspect successful cloning, preserve evidence:
+
+```bash
+# Step 1: Create full forensic image (without modifying original)
+adb shell dumpsys > device_state_$(date +%Y%m%d_%H%M%S).txt
+
+# Step 2: Export call logs (may show intercepted calls)
+adb shell dumpsys telephony.registry | grep -i "call\|imsi\|imei" > forensics.txt
+
+# Step 3: Analyze network connections
+adb shell netstat -an | grep ESTABLISHED > network_forensics.txt
+
+# Step 4: Extract suspicious apps
+adb shell pm list packages -f > installed_packages.txt
+
+# Step 5: Check for hidden app containers (cloning malware)
+adb shell dumpsys package | grep -i "hidden\|shadow\|clone" > suspicious_apps.txt
+```
+
+Document all findings with timestamps and provide to law enforcement if reporting.
+
+## Timeline and Evidence Documentation
+
+Maintain a detailed timeline of events:
+
+```json
+{
+  "incident_timeline": [
+    {
+      "date": "2026-03-21T14:30:00Z",
+      "event": "Unusual data usage spike",
+      "evidence": "Screenshot of data usage stats",
+      "action_taken": "Noted in personal log"
+    },
+    {
+      "date": "2026-03-21T15:45:00Z",
+      "event": "SMS delivery failure notifications",
+      "evidence": "Screenshots of failed delivery messages",
+      "action_taken": "Contacted carrier support"
+    },
+    {
+      "date": "2026-03-21T16:20:00Z",
+      "event": "Unknown device in Google Account",
+      "evidence": "Screenshot of myaccount.google.com/device-management",
+      "action_taken": "Removed unknown device"
+    },
+    {
+      "date": "2026-03-21T17:00:00Z",
+      "event": "2FA code received twice for bank login",
+      "evidence": "Banking app notification logs",
+      "action_taken": "Immediately contacted bank"
+    }
+  ],
+  "report_filed": {
+    "agency": "FBI IC3",
+    "date": "2026-03-21",
+    "case_number": "IC3_XXXXXX"
+  }
+}
+```
+
+This documentation is crucial if you pursue legal action or need to prove the timeline of events.
+
+## Long-Term Monitoring After Incident
+
+Recovery doesn't end after initial remediation:
+
+1. **Monitor credit reports** for 1-2 years
+2. **Set fraud alerts** with credit bureaus (free with Equifax, Experian, TransUnion)
+3. **Check carrier bills monthly** for unauthorized charges
+4. **Review bank statements** weekly for suspicious activity
+5. **Monitor email for account changes** - set up alerts for login from new devices
+
+```bash
+# Automate credit monitoring checks
+# Register with all three bureaus for fraud alerts
+# https://www.experian.com/fraud/center.html
+# https://www.equifax.com/personal/credit-report-services/credit-fraud-alert/
+# https://www.transunion.com/fraud-alerts
+```
+
+Cloning victims have experienced delayed fraudulent activity months after the initial incident. Sustained vigilance is essential.
+
+---
+
 
 ## Related Articles
 

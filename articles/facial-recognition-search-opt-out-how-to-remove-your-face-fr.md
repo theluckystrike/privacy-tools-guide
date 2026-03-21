@@ -173,6 +173,226 @@ Removing your data from Pimeyes and Clearview addresses two services but doesn't
 
 The technical landscape of facial recognition search continues evolving. New services emerge, legal frameworks mature, and removal processes change. Staying informed and maintaining vigilance protects your digital identity in an era where biometric data has become a valuable—and sometimes exploited—commodity.
 
+## Additional Services Requiring Attention
+
+Beyond Pimeyes and Clearview, other facial recognition services warrant opt-out efforts:
+
+### TrueCaller
+Primarily a phone directory, but integrates facial recognition for identity verification:
+
+```bash
+# TrueCaller opt-out
+# Visit: https://www.truecaller.com/unlisting/
+# Requires phone number verification
+```
+
+### Betaface API
+An open facial recognition API used by various third-party applications:
+
+```bash
+# Check if your photos are indexed
+curl -X POST https://api.betaface.com/api/v2/recognizeperson \
+  -F "img_url=https://yourimage.jpg" \
+  -F "api_key=YOUR_API_KEY"
+```
+
+### VGG Face (Academic Project)
+University of Oxford's facial recognition dataset, occasionally used by researchers:
+
+- Request removal: https://www.robots.ox.ac.uk/~vgg/data/feces/
+- Requires formal request with legal justification
+
+## Programmatic Monitoring Strategy
+
+For developers managing multiple opt-out requests, create automated tracking:
+
+```python
+#!/usr/bin/env python3
+import json
+import requests
+from datetime import datetime, timedelta
+from pathlib import Path
+
+class FacialRecognitionOptOutTracker:
+    def __init__(self, config_file='optout_config.json'):
+        self.config_file = config_file
+        self.services = self.load_config()
+
+    def load_config(self):
+        with open(self.config_file) as f:
+            return json.load(f)
+
+    def check_service_status(self, service_name):
+        service = self.services.get(service_name, {})
+        request_date = datetime.fromisoformat(service.get('request_date', ''))
+        days_elapsed = (datetime.now() - request_date).days
+        processing_time = service.get('processing_days', 14)
+
+        return {
+            'service': service_name,
+            'status': 'ready_to_verify' if days_elapsed >= processing_time else 'pending',
+            'days_elapsed': days_elapsed,
+            'days_remaining': max(0, processing_time - days_elapsed)
+        }
+
+    def log_removal_confirmation(self, service_name, test_image_path):
+        """Log when verification confirms removal"""
+        with open('removal_log.json', 'a') as f:
+            json.dump({
+                'service': service_name,
+                'confirmed_removal': True,
+                'date': datetime.now().isoformat(),
+                'test_image': test_image_path
+            }, f)
+            f.write('\n')
+
+# Usage
+tracker = FacialRecognitionOptOutTracker()
+for service in ['pimeyes', 'clearview']:
+    status = tracker.check_service_status(service)
+    print(f"{status['service']}: {status['days_remaining']} days remaining")
+```
+
+## Legal Grounds for Stronger Removal Requests
+
+If initial requests are ignored, escalate using legal frameworks:
+
+### GDPR Article 17 (Right to Erasure)
+
+For EU residents, cite GDPR explicitly:
+
+```
+Subject: Formal GDPR Article 17 Right to Erasure Request
+
+To: [Service Legal Department]
+
+I am a data subject under GDPR Article 4(1) and request immediate erasure of all personal data
+related to my facial biometric identifier.
+
+Legal basis: GDPR Article 17(1)(a) - processing is no longer necessary
+            GDPR Article 17(1)(c) - I withdraw consent
+
+Your lawful basis for processing was consent (GDPR Article 6(1)(a)). I now revoke this consent.
+Your processing is therefore unlawful.
+
+I expect confirmation of deletion within 30 days per Article 12(3).
+
+[Your name, date, signature]
+```
+
+### BIPA (Illinois Biometric Privacy Act)
+
+Illinois residents have strong statutory protection:
+
+```
+Subject: Illinois BIPA Section 15(a) Private Right of Action
+
+To: [Service Legal Department]
+
+Under 740 ILCS 14/15(a), I am asserting my right to recovery of:
+- Liquidated damages of $1,000-5,000 per violation
+- Reasonable costs and attorneys fees
+
+Your company collected my biometric identifier without written consent.
+I demand immediate deletion.
+
+[Your name, date, signature]
+```
+
+Filing actual BIPA claims in Illinois state court has proven effective—many companies settle rather than litigate.
+
+## International Standards and Frameworks
+
+Track emerging international privacy standards that strengthen removal rights:
+
+| Region | Regulation | Key Provision | Enforcement |
+|--------|-----------|---------------|------------|
+| EU | GDPR | Right to erasure (Article 17) | EDPB, National DPAs |
+| Illinois | BIPA | Consent requirement, liquidated damages | Private right of action |
+| California | CCPA/CPRA | Right to know, delete, opt-out | CA AG, private action |
+| Brazil | LGPD | Data subject rights similar to GDPR | ANPD |
+| Canada | PIPEDA | Access and correction rights | Privacy Commissioner |
+
+## Pre-Emptive Measures for New Photos
+
+Implement preventive strategies before facial recognition services index your images:
+
+### Metadata Stripping Automation
+
+Create a script to remove all metadata before uploading anywhere:
+
+```bash
+#!/bin/bash
+# Strip metadata from images before sharing
+
+for image in "$@"; do
+    if command -v exiftool &> /dev/null; then
+        exiftool -all= "$image"
+        echo "Stripped metadata from $image"
+    elif command -v convert &> /dev/null; then
+        convert "$image" -strip "cleaned_$image"
+        echo "Stripped metadata from $image → cleaned_$image"
+    fi
+done
+```
+
+### Website robots.txt Configuration
+
+If you control a website with your photos:
+
+```
+User-agent: Clearview AI
+Disallow: /
+
+User-agent: Pimeyes
+Disallow: /
+
+User-agent: *
+Disallow: /private/
+Allow: /public/
+
+# But note: malicious actors often ignore robots.txt
+```
+
+### Social Media Privacy Settings
+
+Configure maximum privacy on platforms where your images appear:
+
+- **Facebook**: Settings > Privacy > Make posts visible to Friends only
+- **Instagram**: Account > Privacy and security > Private account
+- **LinkedIn**: Profile > Visibility > Change who can see your profile
+- **TikTok**: Account > Privacy > Who can message you: Friends only
+
+## Documenting Your Removal Efforts
+
+Maintain records of all opt-out attempts for legal reference:
+
+```json
+{
+  "removal_history": [
+    {
+      "service": "pimeyes",
+      "request_date": "2026-03-21",
+      "request_method": "official_form",
+      "confirmation_date": "2026-03-28",
+      "verification_date": "2026-04-05",
+      "result": "success",
+      "notes": "Complete removal confirmed"
+    },
+    {
+      "service": "clearview",
+      "request_date": "2026-03-15",
+      "request_method": "gdpr_article_17",
+      "confirmation_date": null,
+      "result": "pending",
+      "notes": "Escalated via GDPR for CA resident"
+    }
+  ]
+}
+```
+
+This documentation proves your diligent efforts if you need to pursue legal action or regulatory complaints.
+
 ---
 
 
