@@ -9,7 +9,7 @@ permalink: /vpn-provider-annual-audit-results-independent-security-verified/
 categories: [guides]
 tags: [privacy-tools-guide, vpn, security, audits]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
