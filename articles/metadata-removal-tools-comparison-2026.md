@@ -482,7 +482,7 @@ exiftool cleaned-photo.jpg | wc -l
 Metadata removal is a core privacy practice. The right tool depends on your platform, workflow, and threat model. ExifTool is the universal standard; use it for critical work.
 
 
-## Related Articles
+## Related Reading
 
 - [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 - [Data Broker Removal Diy Complete Guide To Opting Out Of Top](/privacy-tools-guide/data-broker-removal-diy-complete-guide-to-opting-out-of-top-/)
@@ -490,5 +490,6 @@ Metadata removal is a core privacy practice. The right tool depends on your plat
 - [Linkedin Deceased Member Profile Removal How To Report And M](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
 - [Turkey Content Removal Orders How Government Forces Platform](/privacy-tools-guide/turkey-content-removal-orders-how-government-forces-platform/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

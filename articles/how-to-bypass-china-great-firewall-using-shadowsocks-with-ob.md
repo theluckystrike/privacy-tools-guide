@@ -241,8 +241,6 @@ Connection problems often stem from misconfigured settings. If your client canno
 For persistent connectivity issues, try switching from TLS obfuscation to HTTP mode, which uses different traffic patterns. Some networks may block specific ports, so consider using common ports like 80 or 443 that are less likely to be filtered.
 
 
-
-
 ## Related Articles
 
 - [Vpn Port Selection Which Ports Bypass Most Firewall.](/privacy-tools-guide/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)

@@ -62,14 +62,14 @@ import hashlib
 
 class PrivacyFilter(logging.Filter):
     """Filter that redacts sensitive fields before logging."""
-    
+
     SENSITIVE_FIELDS = {'password', 'token', 'secret', 'ssn', 'credit_card'}
-    
+
     def filter(self, record):
         if hasattr(record, 'msg') and isinstance(record.msg, dict):
             record.msg = self._redact_dict(record.msg)
         return True
-    
+
     def _redact_dict(self, data):
         redacted = {}
         for key, value in data.items():
@@ -146,10 +146,10 @@ func hashIdentifier(input string) string {
 func main() {
     // Instead of logging: "user_email": "john.doe@example.com"
     // Log: "user_email_hash": "a1b2c3d4e5f6..."
-    
+
     email := "john.doe@example.com"
     hashed := hashIdentifier(email)
-    
+
     fmt.Printf("Original: %s\n", email)
     fmt.Printf("Hashed: %s\n", hashed)
 }
@@ -242,7 +242,6 @@ function logUserAction(userId, action, metadata, hasConsent) {
     }
 }
 ```
-
 
 
 ## Related Articles

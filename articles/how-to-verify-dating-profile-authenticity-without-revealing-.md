@@ -60,17 +60,17 @@ def image_hash(image_path):
 def check_against_database(image_path, hash_db_path):
     """Check if image matches any known profiles."""
     current_hash = image_hash(image_path)
-    
+
     if os.path.exists(hash_db_path):
         with open(hash_db_path, 'r') as f:
             known_hashes = f.read().splitlines()
             if current_hash in known_hashes:
                 return True, "Image matches known fake profile"
-    
+
     # Add to database for future reference
     with open(hash_db_path, 'a') as f:
         f.write(f"{current_hash}\n")
-    
+
     return False, "Image not in database"
 
 # Usage
@@ -118,11 +118,11 @@ def cross_reference_profile(photo_url, platforms=['tinder', 'bumble', 'hinge']):
     response = requests.get(photo_url, headers={
         'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X)'
     })
-    
+
     # Generate perceptual hash
     img = Image.open(BytesIO(response.content))
     hash_value = str(imagehash.phash(img))
-    
+
     # Compare against your local database of cross-platform profiles
     # This database would contain hashes from known dating profiles
     return query_local_database(hash_value)
@@ -188,15 +188,13 @@ These techniques have boundaries. They help identify obvious fakes and stolen ph
 Use these skills responsibly. These tools protect your privacy—they should not enable harassment or surveillance of others. Verify profiles to protect yourself from scams, not to invade others privacy.
 
 
-
-
 ## Related Articles
 
-- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 - [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
 - [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
-- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

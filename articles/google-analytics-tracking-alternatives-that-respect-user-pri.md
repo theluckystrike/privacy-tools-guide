@@ -166,7 +166,7 @@ Create a simple endpoint that logs requests:
 // Express.js example for server-side analytics
 app.post('/api/track', (req, res) => {
   const { path, referrer, userAgent } = req.body;
-  
+
   // Store analytics event - customize what you collect
   const event = {
     path,
@@ -175,7 +175,7 @@ app.post('/api/track', (req, res) => {
     timestamp: new Date(),
     // Note: Avoid storing IP addresses or user IDs without consent
   };
-  
+
   analyticsDb.insert(event);
   res.status(204).send();
 });
@@ -255,7 +255,6 @@ When selecting a privacy-respecting analytics alternative, evaluate these factor
 4. **Use consent management intelligently**: Even with privacy-first tools, transparency builds trust. A simple opt-out mechanism demonstrates respect for user preferences.
 
 5. **Review data regularly**: Periodically audit what analytics data you collect and delete to maintain minimal footprint.
-
 
 
 ## Related Articles

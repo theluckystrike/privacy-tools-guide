@@ -142,7 +142,7 @@ For developers, Briar offers integration opportunities through its API (availabl
 BriarContext context = briar.connect(identity);
 MessageEndpoint endpoint = context.getMessageEndpoint();
 
-endpoint.registerMessageType(Message.TYPE_TEXT, 
+endpoint.registerMessageType(Message.TYPE_TEXT,
     (message) -> { processMessage(message); });
 ```
 
@@ -304,7 +304,6 @@ Combine Briar with other offline media for communication:
 - **Paper notes**: Critical messages on paper for extremely high-risk scenarios
 - **Radio**: Short-wave radio for area-wide announcements (separate infrastructure)
 - **Bulletin boards**: Public physical boards for non-sensitive community notices
-
 
 
 ## Related Articles

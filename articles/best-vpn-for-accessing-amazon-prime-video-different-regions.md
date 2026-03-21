@@ -214,7 +214,6 @@ wg genkey | tee privatekey | wg pubkey > publickey
 ```
 
 
-
 ## Related Articles
 
 - [How To Run Concurrent Vpn Connections For Different Applicat](/privacy-tools-guide/how-to-run-concurrent-vpn-connections-for-different-applicat/)

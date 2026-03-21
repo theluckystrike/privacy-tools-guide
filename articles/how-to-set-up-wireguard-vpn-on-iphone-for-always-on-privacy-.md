@@ -173,7 +173,7 @@ Also ensure your iPhone's remaining security settings are appropriate for your t
 **
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
@@ -182,5 +182,7 @@ Also ensure your iPhone's remaining security settings are appropriate for your t
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 
 Built by theluckystrike** — More at [zovo.one](https://zovo.one)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

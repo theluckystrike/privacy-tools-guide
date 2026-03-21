@@ -179,7 +179,7 @@ I'm seeking clarification on the company's policy regarding:
 2. Using personal devices on the corporate network
 3. Expected privacy for personal data on work machines
 
-Please provide the relevant policy documents or direct me to where 
+Please provide the relevant policy documents or direct me to where
 I can review them.
 
 Thanks,
@@ -206,7 +206,6 @@ Regardless of jurisdiction, there are some limits:
 | Canada | Requires meaningful consent | PIPEDA |
 | Australia | Must be reasonable | Privacy Act |
 | Germany | Very strong protections | BDSG, GDPR |
-
 
 
 ## Related Articles

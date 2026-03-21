@@ -65,9 +65,9 @@ def generate_signature(payload: bytes, timestamp: str, secret: bytes) -> str:
     return signature
 
 def verify_webhook_signature(
-    payload: bytes, 
-    signature: str, 
-    timestamp: str, 
+    payload: bytes,
+    signature: str,
+    timestamp: str,
     secret: bytes,
     tolerance_seconds: int = 300
 ) -> bool:
@@ -79,15 +79,15 @@ def verify_webhook_signature(
     try:
         request_time = int(timestamp)
         current_time = int(time.time())
-        
+
         if abs(current_time - request_time) > tolerance_seconds:
             return False
     except ValueError:
         return False
-    
+
     # Compute expected signature
     expected_signature = generate_signature(payload, timestamp, secret)
-    
+
     # Use constant-time comparison to prevent timing attacks
     return hmac.compare_digest(expected_signature, signature)
 
@@ -100,19 +100,19 @@ app = Flask(__name__)
 def handle_webhook():
     signature = request.headers.get('X-Webhook-Signature')
     timestamp = request.headers.get('X-Webhook-Timestamp')
-    
+
     if not signature or not timestamp:
         return jsonify({"error": "Missing signature or timestamp"}), 401
-    
+
     payload = request.get_data()
-    
+
     if not verify_webhook_signature(payload, signature, timestamp, SECRET_KEY):
         return jsonify({"error": "Invalid signature"}), 401
-    
+
     # Process the verified webhook payload
     data = request.get_json()
     process_webhook_data(data)
-    
+
     return jsonify({"status": "received"}), 200
 ```
 
@@ -133,19 +133,19 @@ def encrypt_payload(data: dict, key: bytes) -> Tuple[str, str]:
     """Encrypt payload using AES-256-GCM. Returns (encrypted_data, nonce)."""
     nonce = os.urandom(12)  # 96-bit nonce for GCM
     aesgcm = AESGCM(key)
-    
+
     plaintext = json.dumps(data).encode('utf-8')
     ciphertext = aesgcm.encrypt(nonce, plaintext, None)
-    
+
     return base64.b64encode(ciphertext).decode('utf-8'), base64.b64encode(nonce).decode('utf-8')
 
 def decrypt_payload(encrypted_data: str, nonce: str, key: bytes) -> dict:
     """Decrypt AES-256-GCM encrypted payload."""
     aesgcm = AESGCM(key)
-    
+
     ciphertext = base64.b64decode(encrypted_data)
     nonce_bytes = base64.b64decode(nonce)
-    
+
     plaintext = aesgcm.decrypt(nonce_bytes, ciphertext, None)
     return json.loads(plaintext.decode('utf-8'))
 
@@ -153,21 +153,21 @@ def decrypt_payload(encrypted_data: str, nonce: str, key: bytes) -> dict:
 def send_encrypted_webhook(url: str, payload: dict, secret: bytes, encryption_key: bytes):
     """Send an encrypted and signed webhook request."""
     import httpx
-    
+
     # Encrypt the payload
     encrypted_payload, nonce = encrypt_payload(payload, encryption_key)
-    
+
     # Create the envelope with encrypted data and nonce
     envelope = {
         "encrypted": encrypted_payload,
         "nonce": nonce
     }
-    
+
     # Sign the encrypted payload
     timestamp = str(int(time.time()))
     payload_bytes = json.dumps(envelope).encode('utf-8')
     signature = generate_signature(payload_bytes, timestamp, secret)
-    
+
     # Send the request
     response = httpx.post(
         url,
@@ -179,7 +179,7 @@ def send_encrypted_webhook(url: str, payload: dict, secret: bytes, encryption_ke
             "X-Encryption-Nonce": nonce
         }
     )
-    
+
     return response
 ```
 
@@ -203,17 +203,17 @@ def rate_limit(requests_per_minute: int = 60):
             # Use IP + endpoint as the rate limit key
             client_ip = request.remote_addr
             key = f"rate_limit:{client_ip}:{request.endpoint}"
-            
+
             current = redis_client.get(key)
-            
+
             if current and int(current) >= requests_per_minute:
                 return jsonify({"error": "Rate limit exceeded"}), 429
-            
+
             pipe = redis_client.pipeline()
             pipe.incr(key)
             pipe.expire(key, 60)
             pipe.execute()
-            
+
             return f(*args, **kwargs)
         return decorated_function
     return decorator
@@ -234,7 +234,6 @@ When deploying encrypted webhooks in production, ensure you address these items:
 - **Logging and monitoring**: Log webhook deliveries for debugging while avoiding logging sensitive payload contents. Alert on verification failures or unusual delivery patterns.
 - **Timeout handling**: Set appropriate timeouts for webhook requests. Implement asynchronous processing for webhooks that require lengthy operations.
 - **Failure handling**: Design a retry strategy for failed webhook processing, typically with exponential backoff and a maximum retry count.
-
 
 
 ## Related Articles

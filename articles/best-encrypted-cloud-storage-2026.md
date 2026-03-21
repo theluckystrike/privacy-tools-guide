@@ -408,7 +408,6 @@ du -sh ~/critical-data/*
 ```
 
 
-
 ## Related Articles
 
 - [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)

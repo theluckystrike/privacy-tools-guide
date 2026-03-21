@@ -210,7 +210,6 @@ Here's a recommended split:
 | Browsing | ✅ | |
 
 
-
 ## Related Articles
 
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)

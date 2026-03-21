@@ -39,12 +39,12 @@ private fun isManagedProfile(context: Context): Boolean {
     val devicePolicyManager = context.getSystemService(
         Context.DEVICE_POLICY_SERVICE
     ) as DevicePolicyManager
-    
+
     val adminComponent = ComponentName(
-        context, 
+        context,
         MyDeviceAdminReceiver::class.java
     )
-    
+
     return devicePolicyManager.isAdminActive(adminComponent)
 }
 
@@ -52,7 +52,7 @@ private fun isManagedProfile(context: Context): Boolean {
 private fun enableProfile() {
     val intent = DevicePolicyManagerCompat
         .createManageProfileSetupIntent(this)
-    
+
     if (intent != null) {
         startActivityForResult(intent, REQUEST_MANAGE_PROFILE)
     }
@@ -96,10 +96,10 @@ private fun configureCrossProfile(
 ) {
     // Disable cross-profile copy/paste
     dpm.setProfileName(admin, "Work")
-    
+
     // Restrict copying data from work to personal
     dpm.setSecurityLoggingEnabled(admin, true)
-    
+
     // Control widget visibility across profiles
     dpm.setCrossProfileWidgetsEnabled(admin, false)
 }
@@ -192,7 +192,6 @@ Work Profile provides data separation, not complete isolation. Be aware of these
 - Forensic tools with physical device access can potentially analyze both profiles
 
 For threat models requiring defense against sophisticated adversaries, consider dedicated hardware solutions or fully separate devices rather than relying solely on Work Profile isolation.
-
 
 
 ## Related Articles

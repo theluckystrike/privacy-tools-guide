@@ -36,9 +36,9 @@ class TorServiceManager(context: Context) {
         .setCacheDirectory(File(context.cacheDir, "tor-cache"))
         .setControlPort(9051)
         .build()
-    
+
     private val torDaemon = TorDaemon(torConfig)
-    
+
     suspend fun startTor(): Result<Unit> = withContext(IO) {
         try {
             torDaemon.start()
@@ -49,7 +49,7 @@ class TorServiceManager(context: Context) {
             Result.failure(e)
         }
     }
-    
+
     fun getSocksProxyPort(): Int = torConfig.getSocksPort()
     fun getHttpProxyPort(): Int = torConfig.getHttpPort()
 }
@@ -107,7 +107,7 @@ Android developers can use the VpnService API to build custom VPN implementation
 ```java
 // Android VpnService.Builder setup
 public class AnonymousVpnService extends VpnService {
-    
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Builder builder = new Builder();
@@ -117,13 +117,13 @@ public class AnonymousVpnService extends VpnService {
             .addRoute("0.0.0.0", 0)
             .setMtu(1500)
             .setBlocking(true);
-        
+
         // Establish the interface
         ParcelFileDescriptor interface = builder.establish();
-        
+
         // Start routing traffic through your VPN tunnel
         new Thread(() -> processPackets(interface)).start();
-        
+
         return START_STICKY;
     }
 }
@@ -211,25 +211,25 @@ For Android developers, use the privacy indicators introduced in Android 12. Dis
 ```kotlin
 // Detect camera/mic usage indicators
 fun observeSensorPrivacy(): Flow<Set<SensorPrivacyType>> = callbackFlow {
-    val sensorPrivacyManager = getSystemService(Context.SENSOR_PRIVACY_SERVICE) 
+    val sensorPrivacyManager = getSystemService(Context.SENSOR_PRIVACY_SERVICE)
         as SensorPrivacyManager
-    
+
     val listener = object : SensorPrivacyManager.OnSensorPrivacyChangedListener {
         override fun onSensorPrivacyChanged(
-            enabled: Sensors:Boolean, 
+            enabled: Sensors:Boolean,
             type: SensorPrivacyType
         ) {
             val current = sensorPrivacyManager.getSensorPrivacy(type)
             trySend(setOf(type to current))
         }
     }
-    
+
     sensorPrivacyManager.addOnSensorPrivacyChangedListener(
         MainThreadExecutor(), listener
     )
-    
-    awaitClose { 
-        sensorPrivacyManager.removeOnSensorPrivacyChangedListener(listener) 
+
+    awaitClose {
+        sensorPrivacyManager.removeOnSensorPrivacyChangedListener(listener)
     }
 }
 ```
@@ -245,8 +245,6 @@ Combining these techniques creates a defense-in-depth approach to mobile anonymi
 5. Network Identity Rotate network connections (switch between WiFi and cellular) to prevent timing correlation
 
 For developers building anonymous browsing features, test your implementation using tools like AmIUnique (mobile-friendly version) and Cover Your Tracks (EFF) to verify fingerprinting resistance. The effectiveness of your implementation depends on how consistently you apply these techniques across all layers.
-
-
 
 
 ## Related Articles

@@ -59,7 +59,7 @@ class TransactionMonitor:
 
  # Flag transactions exceeding 3x average
  anomalous = [
- t for t in transactions 
+ t for t in transactions
  if t['amount'] > avg_amount * 3
  ]
  return anomalous
@@ -254,7 +254,6 @@ If the dispute isn't resolved satisfactorily, escalate to:
 - Consumer Financial Protection Bureau (CFPB)
 - Your state's attorney general
 - Credit bureau fraud departments (for credit report impact)
-
 
 
 ## Related Articles

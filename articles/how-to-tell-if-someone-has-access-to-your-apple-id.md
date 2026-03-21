@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 ---
 
 
-
 {% raw %}
 
 Your Apple ID is the gateway to everything Apple—iCloud, App Store purchases, FaceTime, iMessage, and Find My. If someone gains unauthorized access, they could see your photos, messages, location data, purchase history, and even lock you out of your own devices. Knowing how to detect if someone has access to your Apple ID is crucial for maintaining your digital privacy and security.
@@ -211,7 +210,6 @@ for event in data.get("signInEvents", []):
     date = event.get("date", "unknown")
     print(f"{date}  device={device}  ip={ip}")
 ```
-
 
 
 ## Related Articles

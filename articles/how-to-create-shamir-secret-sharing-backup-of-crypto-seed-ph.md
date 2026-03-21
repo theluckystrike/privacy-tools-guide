@@ -48,7 +48,7 @@ from sss import Share, Secret
 def split_seed_phrase(seed_hex, shares=3, threshold=2):
     """
     Split a hex-encoded seed phrase into shares.
-    
+
     Args:
         seed_hex: The seed phrase as a hex string
         shares: Total number of shares to generate
@@ -56,13 +56,13 @@ def split_seed_phrase(seed_hex, shares=3, threshold=2):
     """
     secret = Secret.from_hex(seed_hex)
     share_objects = secret.split(threshold=threshold, shares=shares)
-    
+
     return [share.to_hex() for share in share_objects]
 
 def combine_shares(share_hex_list):
     """
     Reconstruct the original seed from shares.
-    
+
     Args:
         share_hex_list: List of share hex strings
     """
@@ -75,11 +75,11 @@ if __name__ == "__main__":
         print("Usage: python sss_split.py <seed_hex> <threshold> <shares>")
         print("Example: python sss_split.py a1b2c3d4... 3 5")
         sys.exit(1)
-    
+
     seed = sys.argv[1]
     threshold = int(sys.argv[2])
     shares = int(sys.argv[3])
-    
+
     result = split_seed_phrase(seed, shares, threshold)
     print(f"\nGenerated {shares} shares (threshold: {threshold}):\n")
     for i, share in enumerate(result, 1):
@@ -114,7 +114,7 @@ def mnemonic_to_hex(mnemonic_phrase, password=""):
     mnemo = Mnemonic("english")
     if not mnemo.check(mnemonic_phrase):
         raise ValueError("Invalid mnemonic phrase")
-    
+
     seed = mnemo.to_seed(mnemonic_phrase, passphrase=password)
     return seed.hex()
 
@@ -196,7 +196,6 @@ Share loss during your lifetime creates complications. If you lose your primary 
 Estate coordination requires clear documentation. Your will or trust should specify which parties hold shares, how to identify legitimate recovery requests, and any time-locks that prevent premature access.
 
 Legal frameworks vary by jurisdiction. Consult with an estate planning attorney familiar with cryptocurrency to ensure your arrangement complies with local laws and your wishes will be honored.
-
 
 
 ## Related Articles

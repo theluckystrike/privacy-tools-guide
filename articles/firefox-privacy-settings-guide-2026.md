@@ -303,7 +303,6 @@ media.peerconnection.enabled = false
 Re-enable this setting only for tabs where you actively use video or voice calling.
 
 
-
 ## Related Articles
 
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)

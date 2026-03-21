@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /does-nordvpn-work-in-russia-2026-tested-from-moscow/
 categories: [guides, security]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
@@ -198,7 +198,6 @@ Desktop users benefit from manually locking in the obfuscated server option and 
 ## Staying Compliant With Russian Law
 
 Use of VPN services to access blocked content falls into a legal grey area under Russian law. Roskomnadzor has required VPN providers to connect to a state registry of banned sites since 2019. NordVPN, like most international providers, does not comply with this requirement, which means the service itself occupies an uncertain legal position within Russia. This guide documents technical behavior, not legal advice. Users should consult local legal counsel regarding their specific circumstances.
-
 
 
 ## Related Articles

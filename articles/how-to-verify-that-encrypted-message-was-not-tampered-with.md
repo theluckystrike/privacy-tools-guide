@@ -44,18 +44,18 @@ def encrypt_with_hmac(plaintext: bytes, key: bytes) -> tuple[bytes, bytes]:
     iv = os.urandom(16)
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     encryptor = cipher.encryptor()
-    
+
     # PKCS7 padding
     padding_length = 16 - (len(plaintext) % 16)
     plaintext_padded = plaintext + bytes([padding_length] * padding_length)
-    
+
     ciphertext = encryptor.update(plaintext_padded) + encryptor.finalize()
-    
+
     # Compute HMAC over IV || ciphertext
     hmac_key = key  # In practice, use a separate key derived via HKDF
     message_to_authenticate = iv + ciphertext
     tag = hmac.new(hmac_key, message_to_authenticate, hashlib.sha256).digest()
-    
+
     return ciphertext, tag
 
 def decrypt_with_hmac(ciphertext: bytes, tag: bytes, key: bytes, iv: bytes) -> bytes:
@@ -63,14 +63,14 @@ def decrypt_with_hmac(ciphertext: bytes, tag: bytes, key: bytes, iv: bytes) -> b
     hmac_key = key
     message_to_authenticate = iv + ciphertext
     expected_tag = hmac.new(hmac_key, message_to_authenticate, hashlib.sha256).digest()
-    
+
     if not hmac.compare_digest(expected_tag, tag):
         raise ValueError("HMAC verification failed - message tampered")
-    
+
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     decryptor = cipher.decryptor()
     plaintext_padded = decryptor.update(ciphertext) + decryptor.finalize()
-    
+
     # Remove padding
     padding_length = plaintext_padded[-1]
     return plaintext_padded[:-padding_length]
@@ -181,8 +181,6 @@ The verification step is not optional. Always validate integrity before processi
 By implementing proper integrity verification, you ensure that encrypted messages remain trustworthy—even when transported through hostile networks.
 
 ---
-
-
 
 
 ## Related Articles

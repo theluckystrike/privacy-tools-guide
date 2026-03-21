@@ -53,13 +53,13 @@ When you upload a photo to any platform using face recognition, the system extra
 def extract_face_embedding(image_bytes):
     # Detect face region
     face_bbox = face_detector.detect(image_bytes)
-    
+
     # Align and crop face
     aligned_face = face_aligner.align(image_bytes, face_bbox)
-    
+
     # Generate embedding
     embedding = face_model.predict(aligned_face)
-    
+
     return embedding
 ```
 
@@ -109,7 +109,7 @@ import face_recognition
 def create_face_profile(image_path):
     image = face_recognition.load_image_file(image_path)
     encodings = face_recognition.face_encodings(image)
-    
+
     if encodings:
         return {
             "encoding": encodings[0].tolist(),
@@ -122,16 +122,16 @@ def create_face_profile(image_path):
 def compare_faces(known_encoding, unknown_image_path):
     unknown_image = face_recognition.load_image_file(unknown_image_path)
     unknown_encodings = face_recognition.face_encodings(unknown_image)
-    
+
     if not unknown_encodings:
         return {"match": False, "reason": "No face detected"}
-    
+
     results = face_recognition.compare_faces(
-        [known_encoding], 
+        [known_encoding],
         unknown_encodings[0],
         tolerance=0.6
     )
-    
+
     return {"match": results[0]}
 ```
 
@@ -161,11 +161,11 @@ import numpy as np
 def add_anti_recognition_noise(image_path, noise_level=15):
     img = Image.open(image_path)
     img_array = np.array(img)
-    
+
     # Add Gaussian noise
     noise = np.random.normal(0, noise_level, img_array.shape)
     noisy_img = np.clip(img_array + noise, 0, 255).astype(np.uint8)
-    
+
     return Image.fromarray(noisy_img)
 ```
 
@@ -188,11 +188,9 @@ The arms race between privacy tools and recognition systems continues. Emerging 
 Understanding how these systems work is the first step toward making informed decisions about your digital presence. For developers building privacy-focused alternatives, the technical foundation exists to create dating platforms that respect user confidentiality while still providing meaningful matching functionality.
 
 
-
-
 ## Related Articles
 
-- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
 - [How To Run Background Check On Dating Match Using Public Rec](/privacy-tools-guide/how-to-run-background-check-on-dating-match-using-public-rec/)
 - [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)

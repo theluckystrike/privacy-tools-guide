@@ -179,12 +179,11 @@ func main() {
     if err != nil {
         panic(err)
     }
-    
+
     fmt.Printf("Alice's public key: %x\n", pubKey)
     fmt.Printf("Alice's private key (keep secret): %x\n", privKey)
 }
 ```
-
 
 
 ## Related Articles
@@ -192,7 +191,7 @@ func main() {
 - [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
 - [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [How To Set Up Vpn Failover Between Two Providers Automatical](/privacy-tools-guide/how-to-set-up-vpn-failover-between-two-providers-automatical/)
-- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

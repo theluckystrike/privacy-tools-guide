@@ -235,7 +235,6 @@ Test your VPN's security periodically. Tools and techniques exist to verify that
 {% endraw %}
 
 
-
 ## Related Articles
 
 - [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)

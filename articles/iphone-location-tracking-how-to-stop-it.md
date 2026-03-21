@@ -205,7 +205,6 @@ For maximum privacy without breaking functionality:
 5. **Consider MDM profiles for enterprise** — Mobile Device Management allows forced location restrictions on managed devices
 
 
-
 ## Related Articles
 
 - [How To Stop Browser Fingerprinting On Chrome 2026 Practical](/privacy-tools-guide/how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/)

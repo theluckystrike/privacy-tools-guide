@@ -316,7 +316,6 @@ v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com
 Properly configured SPF, DKIM, and DMARC prevent spoofing and reduce spam complaints, which are the primary blacklisting causes.
 
 
-
 ## Related Articles
 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)

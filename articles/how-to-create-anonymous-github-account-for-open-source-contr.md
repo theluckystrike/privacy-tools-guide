@@ -265,7 +265,6 @@ For projects requiring maximum anonymity, consider using GitHub alternatives:
 Each platform has different metadata collection and blocking characteristics. For maximum anonymity, use a different platform per project, rather than consolidating all anonymous work on a single GitHub account.
 
 
-
 ## Related Articles
 
 - [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)

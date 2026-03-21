@@ -69,7 +69,7 @@ def check_ssn_breach(ssn_last_four):
     # Note: HIBP doesn't store full SSNs, this is a hypothetical example
     # Real SSN monitoring requires specialized services
     url = f"https://haveibeenpwned.com/api/v3/breachdomain"
-    
+
     # Use their k-Anonymity API for password checking as reference
     # For SSN, you'll need commercial identity protection services
     pass
@@ -109,20 +109,20 @@ class SSNExposureMonitor:
     def __init__(self, hibp_api_key=None, notify_webhook=None):
         self.hibp_api_key = hibp_api_key
         self.notify_webhook = notify_webhook
-        
+
     def check_hibp_breaches(self, email):
         """Check if email appears in known breaches"""
         if not self.hibp_api_key:
             return {"error": "HIBP API key required"}
-            
+
         url = f"https://haveibeenpwned.com/api/v3/breach/{email}"
         headers = {
             "hibp-api-key": self.hibp_api_key,
             "user-agent": "SSNExposureMonitor/1.0"
         }
-        
+
         response = requests.get(url, headers=headers)
-        
+
         if response.status_code == 200:
             breaches = response.json()
             return {"found": True, "breaches": breaches}
@@ -130,13 +130,13 @@ class SSNExposureMonitor:
             return {"found": False}
         else:
             return {"error": f"API error: {response.status_code}"}
-    
+
     def check_dark_web(self, ssn_partial):
         """Check dark web sources for SSN fragments"""
         # Note: Real implementation requires commercial API integration
         # This demonstrates the pattern only
         return {"status": "requires commercial service"}
-    
+
     def notify(self, message):
         """Send notification when exposure found"""
         if self.notify_webhook:
@@ -180,14 +180,13 @@ While you can't prevent breaches at companies you do business with, you can redu
 - **Use a password manager** — Reduces the risk of credential stuffing attacks that could lead to data exposure.
 
 
-
 ## Related Articles
 
 - [How To Check Your Browser Fingerprint Uniqueness Score Onlin](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
 - [How to Check If Your Private Photos Were Leaked Online](/privacy-tools-guide/how-to-check-if-your-private-photos-were-leaked-online/)
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)
 - [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
+- [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -181,7 +181,6 @@ This ensures only properly routed traffic escapes, preventing leaks that cause c
 - **Avoid 0.0.0.0/0 routes**: Unless necessary, use split tunneling to avoid overriding your entire routing table.
 
 
-
 ## Related Articles
 
 - [Vpn Fragmentation Issues Why Some Websites Break And How Fix](/privacy-tools-guide/vpn-fragmentation-issues-why-some-websites-break-and-how-fix/)

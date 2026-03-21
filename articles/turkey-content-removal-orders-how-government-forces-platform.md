@@ -51,14 +51,14 @@ def process_turkey_removal_request(request):
     Request contains: content_id, legal_basis, deadline
     """
     content = fetch_content(request.content_id)
-    
+
     # Verify legal basis and deadline
     if verify_legal_order(request.legal_basis):
         # Soft delete - content hidden but not fully removed
         content.hidden = True
         content.removal_reason = "turkey_5651_order"
         content.save()
-        
+
         # Log for transparency reporting
         transparency_log.log_removal(
             country="TR",
@@ -281,7 +281,6 @@ Turkish content removal mechanisms illustrate principles that apply globally:
 4. **Transparency is critical**: When removal orders are public, they become subject to public and international scrutiny
 
 For privacy advocates, Turkey represents both a warning and a case study. The technical mechanisms developed to enforce Turkish content removal laws continue evolving and spreading to other jurisdictions.
-
 
 
 ## Related Articles

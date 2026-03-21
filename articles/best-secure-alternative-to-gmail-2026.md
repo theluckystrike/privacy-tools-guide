@@ -222,7 +222,6 @@ Regardless of your chosen platform, set up these security measures:
 6. Keep software updated and subscribe to security advisories
 
 
-
 ## Related Articles
 
 - [Best Private Dropbox Alternative 2026: A Developer Guide](/privacy-tools-guide/best-private-dropbox-alternative-2026/)

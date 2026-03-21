@@ -52,10 +52,10 @@ def generate_temp_location_link(lat, lng, expires_hours=1):
     """Generate a temporary Google Maps location link with expiration."""
     token = secrets.token_urlsafe(16)
     base_url = "https://www.google.com/maps/dir/"
-    
+
     # Store token and expiry in your backend
     expiry = int(time.time()) + (expires_hours * 3600)
-    
+
     # For self-hosted solutions, consider using
     # OpenStreetMap with short-lived tokens
     return f"{base_url}{lat},{lng}/@{lat},{lng},15z", token, expiry
@@ -78,16 +78,16 @@ OwnTracks is an open-source location tracking app that stores data on your own M
 app.get('/temp-location/:token', async (req, res) => {
   const { token } = req.params;
   const record = await db.getLocationByToken(token);
-  
+
   if (!record) {
     return res.status(404).json({ error: 'Token not found' });
   }
-  
+
   if (Date.now() > record.expiresAt) {
     await db.deleteToken(token);
     return res.status(410).json({ error: 'Location link expired' });
   }
-  
+
   res.json({
     latitude: record.latitude,
     longitude: record.longitude,
@@ -118,7 +118,7 @@ def generate_venue_link(venue_name, address):
     # Use OpenStreetMap for privacy (no Google tracking)
     encoded_address = address.replace(' ', '+')
     return f"https://www.openstreetmap.org/search?query={encoded_address}"
-    
+
 # Example usage
 venue_link = generate_venue_link(
     "Central Park Coffee",
@@ -186,8 +186,6 @@ Several common practices create unnecessary risks:
 6. **Review app permissions** monthly and revoke unused access
 
 Building trust with a new person takes time. Your location data should reflect that progression—from venue addresses to temporary shares to permanent sharing only when you've established a genuine connection and multiple in-person meetings. The methods above let you meet safely while maintaining control over your most sensitive personal data.
-
-
 
 
 ## Related Articles

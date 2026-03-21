@@ -79,12 +79,12 @@ import requests
 def search_tineye(api_key, image_url):
     """Query TinEye API for image matches."""
     endpoint = "https://api.tineye.com/rest/"
-    
+
     params = {
         "api_key": api_key,
         "image_url": image_url
     }
-    
+
     response = requests.get(endpoint + "search/", params=params)
     return response.json()
 
@@ -108,14 +108,14 @@ from email.mime.text import MIMEText
 def check_for_new_matches():
     """Scheduled function to check image matches."""
     reference_hash = "your_stored_phash"
-    
+
     # Query multiple reverse search services
     matches = []
-    
+
     # Add your API queries here
     # matches.extend(query_bing_api(reference_hash))
     # matches.extend(query_yandex_api(reference_hash))
-    
+
     if matches:
         send_alert(matches)
 
@@ -125,7 +125,7 @@ def send_alert(matches):
     msg['Subject'] = 'Dating Profile Photo Monitor Alert'
     msg['From'] = 'monitor@example.com'
     msg['To'] = 'your_email@example.com'
-    
+
     with smtplib.SMTP('smtp.example.com', 587) as server:
         server.starttls()
         server.login('monitor@example.com', 'your_password')
@@ -189,13 +189,12 @@ Combine these methods into a systematic workflow:
 For developers, the Python-based approach using perceptual hashing provides the best balance of cost control and customization. Combine it with API access to search engines for coverage.
 
 
-
 ## Related Articles
 
-- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [How to Check If Your Private Photos Were Leaked Online](/privacy-tools-guide/how-to-check-if-your-private-photos-were-leaked-online/)
 - [How To Prevent Dating App Photos From Appearing In Google Im](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
+- [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

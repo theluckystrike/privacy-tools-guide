@@ -158,22 +158,22 @@ puppeteer.use(pluginStealth);
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-  
+
   // Enable anti-fingerprinting
   await page.evaluateOnNewDocument(() => {
     // Additional client-side protections can go here
   });
-  
+
   await page.goto('https://amiunique.org/fingerprint');
   await page.waitForTimeout(3000);
-  
+
   const fingerprint = await page.evaluate(() => {
     return {
       userAgent: navigator.userAgent,
       platform: navigator.platform
     };
   });
-  
+
   console.log('Fingerprint:', fingerprint);
   await browser.close();
 })();
@@ -204,13 +204,12 @@ Several issues often undermine anti-fingerprinting efforts:
 - **Inconsistent usage**: Using both protected and unprotected browsers simultaneously can link your identities through timing analysis or IP addresses.
 
 
-
 ## Related Articles
 
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [Best VPN for Using WhatsApp in China 2026 — Actually Works](/privacy-tools-guide/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

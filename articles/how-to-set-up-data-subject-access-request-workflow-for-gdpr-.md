@@ -55,13 +55,13 @@ const dsarRequests = new Map(); // Replace with database in production
 
 router.post('/api/dsar/request', async (req, res) => {
   const { email, fullName, requestType } = req.body;
-  
+
   // Generate unique request ID
   const requestId = uuidv4();
   const timestamp = new Date();
   const deadline = new Date(timestamp);
   deadline.setDate(deadline.getDate() + 30);
-  
+
   const request = {
     id: requestId,
     email,
@@ -73,12 +73,12 @@ router.post('/api/dsar/request', async (req, res) => {
     verificationToken: crypto.randomBytes(32).toString('hex'),
     dataLocations: [] // To be populated during discovery
   };
-  
+
   dsarRequests.set(requestId, request);
-  
+
   // TODO: Send verification email with token
   // TODO: Log to audit system
-  
+
   res.status(202).json({
     requestId,
     message: 'Request received. Please verify your identity.',
@@ -97,7 +97,7 @@ Send a verification link to the email address on file. This confirms the request
 ```javascript
 async function sendVerificationEmail(request) {
   const verificationUrl = `${process.env.DSAR_PORTAL_URL}/verify/${request.id}/${request.verificationToken}`;
-  
+
   const mailOptions = {
     from: 'privacy@yourcompany.com',
     to: request.email,
@@ -108,7 +108,7 @@ async function sendVerificationEmail(request) {
       <p>This link expires in 48 hours.</p>
     `
   };
-  
+
   await transporter.sendMail(mailOptions);
 }
 ```
@@ -120,13 +120,13 @@ For higher assurance, ask the requester to confirm specific information only the
 async function verifyIdentityByKBA(request, answers) {
   // Example: Check against stored account metadata
   const user = await getUserByEmail(request.email);
-  
+
   const validAnswers = await Promise.all([
     verifyAnswer(user.accountCreated, answers.accountCreated),
     verifyAnswer(user.previousAddresses, answers.previousAddress),
     verifyAnswer(user.lastTransactionDate, answers.lastTransaction)
   ]);
-  
+
   const confidence = validAnswers.filter(Boolean).length / validAnswers.length;
   return confidence >= 0.75; // Require 75% match
 }
@@ -157,7 +157,7 @@ async function discoverUserData(userEmail, requestId) {
     discoveredAt: new Date().toISOString(),
     sources: []
   };
-  
+
   // Query primary database
   const userData = await db.users.findOne({ email: userEmail });
   results.sources.push({
@@ -169,10 +169,10 @@ async function discoverUserData(userEmail, requestId) {
       resetToken: undefined
     }
   });
-  
+
   // Query analytics (with IP anonymization)
   const analyticsEvents = await analytics.query(
-    `SELECT event_type, timestamp, 
+    `SELECT event_type, timestamp,
      GENERATE_UUID() as anonymous_id
      WHERE user_email = @email`,
     { email: userEmail }
@@ -182,14 +182,14 @@ async function discoverUserData(userEmail, requestId) {
     data: analyticsEvents,
     note: 'IP addresses anonymized per GDPR pseudonymization requirements'
   });
-  
+
   // Query support tickets
   const tickets = await zendesk.search({ type: 'ticket', query: `requester:${userEmail}` });
   results.sources.push({
     system: 'support_platform',
     data: tickets
   });
-  
+
   return results;
 }
 ```
@@ -202,7 +202,7 @@ Once you've gathered data from all sources, compile it into a portable format. G
 async function compileResponse(requestId) {
   const request = await getRequest(requestId);
   const discoveryResults = await discoverUserData(request.email, requestId);
-  
+
   const responsePackage = {
     request: {
       id: request.id,
@@ -221,12 +221,12 @@ async function compileResponse(requestId) {
       objection: 'You may object to processing based on legitimate interests'
     }
   };
-  
+
   // Generate downloadable package
   const packagePath = await generateDataPackage(responsePackage);
-  
+
   await updateRequestStatus(requestId, 'completed', { packagePath });
-  
+
   return packagePath;
 }
 ```
@@ -239,17 +239,17 @@ Missing the 30-day deadline is one of the most common compliance failures. Imple
 async function checkAndAlertDeadlines() {
   const thirtyDaysFromNow = new Date();
   thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30);
-  
+
   const approachingDeadlines = await db.dsarRequests.find({
     status: { $ne: 'completed' },
     deadline: { $lte: thirtyDaysFromNow }
   });
-  
+
   for (const request of approachingDeadlines) {
     const daysRemaining = Math.ceil(
       (request.deadline - new Date()) / (1000 * 60 * 60 * 24)
     );
-    
+
     if (daysRemaining <= 7) {
       // Send urgent alert
       await sendAlert({
@@ -272,29 +272,29 @@ A practical pattern marks data for deletion with a grace period, then removes it
 ```javascript
 async function processErasureRequest(requestId) {
   const request = await getRequest(requestId);
-  
+
   // Verify identity before processing
   if (!await verifyIdentity(request)) {
     throw new Error('Identity verification failed');
   }
-  
+
   // Mark for deletion (with 30-day grace period for legal holds)
   await markDataForDeletion(request.email, {
     immediate: ['marketing_preferences', 'session_data'],
     delayed: ['user_profile', 'transaction_history'],
     exclude: ['financial_records', 'legal_compliance']
   });
-  
+
   // Schedule actual deletion
   const deletionDate = new Date();
   deletionDate.setDate(deletionDate.getDate() + 30);
-  
+
   await scheduleDeletionJob({
     email: request.email,
     executeAt: deletionDate,
     systems: ['primary_db', 'analytics', 'backup_s3']
   });
-  
+
   await updateRequestStatus(requestId, 'erasure_scheduled', {
     deletionDate: deletionDate.toISOString()
   });
@@ -321,7 +321,6 @@ Before relying on your DSAR pipeline, validate it works:
 3. **Test deadline handling** by backdating requests and confirming alerts fire
 4. **Validate erasure** by attempting to access deleted data across all systems
 5. **Audit trail verification** ensuring all actions are logged with timestamps
-
 
 
 ## Related Articles

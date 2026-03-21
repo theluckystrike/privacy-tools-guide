@@ -81,10 +81,10 @@ from stem.control import Listener
 
 with Controller.from_port(port=9051) as controller:
     controller.authenticate()
-    
+
     # Create a new circuit
     circuit = controller.new_circuit([...])
-    
+
     # Get current IP through Tor
     controller.set_conf('HttpProxy', '127.0.0.1:8118')
 ```
@@ -302,7 +302,6 @@ If you're currently using one network and considering switching:
 - Benefit from better library support
 - Accept that hidden services are more visible
 - Use Bridges if your ISP blocks Tor
-
 
 
 ## Related Articles

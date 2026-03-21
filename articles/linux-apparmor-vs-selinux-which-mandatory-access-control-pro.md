@@ -233,7 +233,6 @@ cryptsetup isLuks /dev/sdb && echo "Encrypted" || echo "NOT encrypted"
 Full-disk encryption protects you from physical theft but not from a running system with an active session. Enable auto-lock after 5 minutes of inactivity.
 
 
-
 ## Related Articles
 
 - [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)

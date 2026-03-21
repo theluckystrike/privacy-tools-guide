@@ -171,7 +171,6 @@ Developers may prefer completely non-custodial solutions. Consider combining Hou
 This approach eliminates third-party dependency but requires more technical expertise and manual key management.
 
 
-
 ## Related Articles
 
 - [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)

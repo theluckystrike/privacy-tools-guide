@@ -274,7 +274,6 @@ Before any border crossing, complete this checklist:
 The goal isn't paranoia but informed preparation. With proper planning, you can travel securely while maintaining access to important information and protecting your privacy.
 
 
-
 ## Related Articles
 
 - [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)

@@ -33,7 +33,7 @@ The simplest approach replaces sensitive values with static or generated alterna
 
 ```sql
 -- PostgreSQL example: mask email addresses
-UPDATE users 
+UPDATE users
 SET email = CONCAT('user', id, '@anonymized.local');
 ```
 
@@ -51,9 +51,9 @@ def anonymize_email(email, salt=None):
     if salt is None:
         salt = secrets.token_hex(16)
     return hashlib.pbkdf2_hmac(
-        'sha256', 
-        email.encode(), 
-        salt.encode(), 
+        'sha256',
+        email.encode(),
+        salt.encode(),
         100000
     ).hex()[:16] + '@anonymized.local'
 
@@ -89,20 +89,20 @@ Store the tokenization mapping separately and securely if you need reversible an
 
 ```sql
 -- PostgreSQL: randomize names while maintaining consistency per user
-UPDATE users 
-SET 
-    first_name = 
+UPDATE users
+SET
+    first_name =
         (ARRAY['Alex', 'Jordan', 'Casey', 'Morgan', 'Taylor'])[floor(random() * 5 + 1)],
-    last_name = 
+    last_name =
         (ARRAY['Smith', 'Johnson', 'Williams', 'Brown', 'Jones'])[floor(random() * 5 + 1)];
 ```
 
 ### Phone Numbers
 
 ```sql
-UPDATE users 
-SET phone = '+1' || 
-    (ARRAY['555', '556', '557', '558', '559'])[floor(random() * 5 + 1)] || 
+UPDATE users
+SET phone = '+1' ||
+    (ARRAY['555', '556', '557', '558', '559'])[floor(random() * 5 + 1)] ||
     LPAD(floor(random() * 10000)::text, 4, '0');
 ```
 
@@ -110,15 +110,15 @@ SET phone = '+1' ||
 
 ```sql
 -- Generalize location to city level
-UPDATE user_profiles 
-SET location = 
+UPDATE user_profiles
+SET location =
     (ARRAY['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'])[floor(random() * 5 + 1)];
 ```
 
 For stricter privacy, round coordinates to reduce precision:
 
 ```sql
-UPDATE user_locations 
+UPDATE user_locations
 SET latitude = ROUND(latitude, 1),
     longitude = ROUND(longitude, 1);
 ```
@@ -166,21 +166,21 @@ def anonymize_in_batches(batch_size=10000):
     conn = psycopg2.connect("dbname=prod user=admin")
     conn.set_session(autocommit=False)
     cursor = conn.cursor()
-    
+
     while True:
         cursor.execute("""
-            UPDATE users 
+            UPDATE users
             SET email = CONCAT('user', id, '@anonymized.local')
             WHERE email NOT LIKE '%@anonymized.local'
             LIMIT %s
         """, (batch_size,))
-        
+
         if cursor.rowcount == 0:
             break
-            
+
         conn.commit()
         print(f"Anonymized {cursor.rowcount} rows")
-    
+
     cursor.close()
     conn.close()
 ```
@@ -207,8 +207,6 @@ For GDPR compliance, document your anonymization approach in your data processin
 Choose based on your specific compliance requirements and whether you need to retain the ability to reverse the process. Pure anonymization provides the strongest legal protection under privacy regulations.
 
 ---
-
-
 
 
 ## Related Articles

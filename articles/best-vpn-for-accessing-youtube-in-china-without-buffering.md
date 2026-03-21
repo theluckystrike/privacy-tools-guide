@@ -366,7 +366,6 @@ echo "VPN streaming optimizations applied"
 Run this script before conducting streaming tests to establish baseline optimized conditions.
 
 
-
 ## Related Articles
 
 - [Best VPN for Using Google in China Without Detection](/privacy-tools-guide/best-vpn-for-using-google-in-china-without-detection/)

@@ -350,7 +350,6 @@ HUD investigates free. If you win, landlord pays your legal fees.
 ```
 
 
-
 ## Related Articles
 
 - [Tenant Privacy Rights: What Landlords Can Legally Monitor](/privacy-tools-guide/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)

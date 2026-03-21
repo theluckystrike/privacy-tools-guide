@@ -387,7 +387,6 @@ Configuration:
 - [ ] Regenerate Firefox profile if feeling paranoid
 
 
-
 ## Related Articles
 
 - [How To Configure Element Matrix Client For Maximum Privacy A](/privacy-tools-guide/how-to-configure-element-matrix-client-for-maximum-privacy-a/)

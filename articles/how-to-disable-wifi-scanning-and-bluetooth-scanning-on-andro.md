@@ -95,7 +95,7 @@ val scanResults = wifiManager.scanResults
 Android 13 introduced additional restrictions on background location access. Request only the permissions your app genuinely needs:
 
 ```kotlin
-if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) 
+if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
     != PackageManager.PERMISSION_GRANTED) {
     // Request minimal permission
     requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1)
@@ -393,7 +393,6 @@ Complete scanning disablement comes with costs:
 - Use alternative location services that don't require scanning
 
 The choice depends on your threat model and location accuracy requirements.
-
 
 
 ## Related Articles

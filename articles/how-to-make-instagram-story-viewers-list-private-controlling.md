@@ -120,10 +120,10 @@ const rateLimiter = {
 };
 
 async function safeViewStory(viewer, targetUser) {
-  const delay = Math.random() * 
-    (rateLimiter.maxDelay - rateLimiter.minDelay) + 
+  const delay = Math.random() *
+    (rateLimiter.maxDelay - rateLimiter.minDelay) +
     rateLimiter.minDelay;
-  
+
   await sleep(delay);
   await viewer.navigateToStory(targetUser);
   await sleep(Math.random() * 3000 + 2000); // 2-5 second view time
@@ -347,7 +347,6 @@ BeReal emphasizes authentic sharing without metrics or viewing lists:
 - Decentralized friend network
 
 Trade-offs: Different purpose (time-based rather than topical), smaller network.
-
 
 
 ## Related Articles

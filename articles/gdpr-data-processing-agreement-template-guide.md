@@ -58,8 +58,8 @@ GDPR grants data subjects specific rights. Your DPA must address how these are h
 
 ```markdown
 ## 4. Data Subject Rights
-The processor shall assist the controller by appropriate technical and organizational 
-measures, insofar as this is possible, for the fulfillment of the controller's 
+The processor shall assist the controller by appropriate technical and organizational
+measures, insofar as this is possible, for the fulfillment of the controller's
 obligation to respond to requests for exercising the data subject's rights:
 
 - Right of access (Article 15)
@@ -100,7 +100,7 @@ If you use subprocessors, track them properly:
 
 ```markdown
 ## 6. Subprocessors
-The controller authorizes the processor to engage subprocessors for specific 
+The controller authorizes the processor to engage subprocessors for specific
 processing activities. The processor shall:
 
 1. Maintain a list of approved subprocessors
@@ -115,7 +115,7 @@ GDPR requires notification within 72 hours:
 
 ```markdown
 ## 7. Data Breach Notification
-The processor shall notify the controller without undue delay upon becoming aware 
+The processor shall notify the controller without undue delay upon becoming aware
 of any personal data breach. The notification shall include:
 
 - Nature of the breach
@@ -162,9 +162,9 @@ def generate_dpa(
     subprocessors: List[str] = None
 ) -> str:
     """Generate a DPA document from structured data."""
-    
+
     template = f"""# Data Processing Agreement
-    
+
 **Effective Date:** {datetime.now().strftime('%Y-%m-%d')}
 **Controller:** {controller_name}
 **Processor:** {processor_name}
@@ -204,11 +204,11 @@ from typing import List, Optional
 class SubprocessorRegistry:
     def __init__(self):
         self.subprocessors: List[dict] = []
-    
+
     def add_subprocessor(
-        self, 
-        name: str, 
-        purpose: str, 
+        self,
+        name: str,
+        purpose: str,
         data_types: List[str],
         privacy_shield: bool = False
     ) -> dict:
@@ -222,13 +222,13 @@ class SubprocessorRegistry:
         }
         self.subprocessors.append(subprocessor)
         return subprocessor
-    
+
     def notify_controller(self, subprocessor_name: str) -> bool:
         """Simulate controller notification for new subprocessors."""
         # In production, this would send email/Slack/PM notification
         print(f"Notifying controller about new subprocessor: {subprocessor_name}")
         return True
-    
+
     def export_list(self) -> str:
         return json.dumps(self.subprocessors, indent=2)
 
@@ -281,17 +281,17 @@ class DPAVersion:
 class DPAVersionHistory:
     def __init__(self):
         self.versions: List[DPAVersion] = []
-    
+
     def add_version(self, version: DPAVersion):
         self.versions.append(version)
-    
+
     def get_current(self) -> Optional[DPAVersion]:
         approved = [v for v in self.versions if v.approved_by_controller]
         return approved[-1] if approved else None
-    
+
     def pending_approval(self) -> List[DPAVersion]:
         return [v for v in self.versions if not v.approved_by_controller]
-    
+
     def export_changelog(self) -> str:
         lines = ["# DPA Change History\n"]
         for v in sorted(self.versions, key=lambda x: x.effective_date):
@@ -333,9 +333,9 @@ Structure your DPA to make the applicable mechanism explicit:
 | Cloudflare | US/Global | SCCs (Module 2) | Incorporated by reference |
 
 ### Transfer Impact Assessment
-A Transfer Impact Assessment was completed on [DATE] for transfers to the United States. 
-The assessment concluded that the SCCs, in combination with the technical and contractual 
-safeguards documented herein, provide an essentially equivalent level of protection to 
+A Transfer Impact Assessment was completed on [DATE] for transfers to the United States.
+The assessment concluded that the SCCs, in combination with the technical and contractual
+safeguards documented herein, provide an essentially equivalent level of protection to
 that guaranteed within the EU.
 
 Assessment reference: [INTERNAL-TIA-REF]
@@ -359,14 +359,14 @@ obligations:
     verification: "Quarterly security review"
     last_verified: "2026-01-15"
     evidence: "security-review-2026-q1.pdf"
-  
+
   - clause: "7. Breach Notification"
     obligation: "Notify controller within 24 hours of breach discovery"
     owner: "@security-lead"
     verification: "Annual incident response drill"
     last_verified: "2026-02-20"
     evidence: "ir-drill-2026-q1.pdf"
-  
+
   - clause: "6. Subprocessors"
     obligation: "Notify controller 30 days before adding new subprocessors"
     owner: "@legal-ops"
@@ -376,9 +376,6 @@ obligations:
 ```
 
 Assign each obligation to a named owner. Obligations without owners are obligations that will eventually be missed. Review this mapping when you update your DPA, when ownership changes, and as part of annual compliance reviews.
-
-
-
 
 
 ## Related Articles

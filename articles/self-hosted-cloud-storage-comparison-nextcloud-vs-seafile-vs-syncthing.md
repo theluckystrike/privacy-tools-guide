@@ -635,7 +635,7 @@ This handles:
 ```
 
 
-## Related Articles
+## Related Reading
 
 - [Nextcloud vs OwnCloud Self-Hosted Comparison](/privacy-tools-guide/nextcloud-vs-owncloud-self-hosted-comparison/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
@@ -643,5 +643,6 @@ This handles:
 - [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
 - [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

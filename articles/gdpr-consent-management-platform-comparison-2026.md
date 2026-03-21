@@ -67,7 +67,7 @@ function initConsent() {
     // Consent has been updated
     const consentCategories = OneTrust.GetActiveGroups();
     console.log('Consent granted for:', consentCategories);
-    
+
     // Trigger analytics based on consent
     if (consentCategories.includes('C0002')) {
       initializeAnalytics();
@@ -126,7 +126,7 @@ UC_UI.init({
     // consentData contains all consent preferences
     const marketingConsent = consentData.marketing;
     const analyticsConsent = consentData.statistics;
-    
+
     // Dynamically load scripts based on consent
     if (analyticsConsent) {
       window.dataLayer = window.dataLayer || [];
@@ -157,7 +157,7 @@ window.osanoCM.init({
     const necessary = osanoConsent.necessary;
     const analytics = osanoConsent.analytics;
     const marketing = osanoConsent.marketing;
-    
+
     if (analytics === 'allow') {
       enableTracking();
     }
@@ -234,8 +234,6 @@ Select a CMP based on your specific requirements:
 Small sites with straightforward needs are well served by Cookiebot or Osano. Enterprise environments requiring multi-jurisdiction compliance should evaluate OneTrust or TrustArc. Usercentrics suits developer-focused projects that need customization flexibility. Budget-conscious projects can start with Osano's free tier.
 
 Test each platform with your actual tracking stack before committing. The integration pattern that works in theory may reveal complications when connected to your real analytics and marketing tools.
-
-
 
 
 ## Related Articles

@@ -173,7 +173,6 @@ Use this checklist when configuring a new HIPAA compliant device:
 10. **Establish a regular review schedule** for ongoing compliance
 
 
-
 ## Related Articles
 
 - [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)

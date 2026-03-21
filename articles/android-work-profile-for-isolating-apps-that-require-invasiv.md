@@ -242,7 +242,6 @@ A typical developer setup for a power user might look like:
 This separation means work communications never leak into personal data streams, while still maintaining functionality for both professional and personal use.
 
 
-
 ## Related Articles
 
 - [Android Work Profile Privacy Separation Guide](/privacy-tools-guide/android-work-profile-privacy-separation-guide/)

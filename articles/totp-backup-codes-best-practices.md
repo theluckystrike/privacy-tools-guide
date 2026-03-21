@@ -45,7 +45,7 @@ def generate_backup_code(length=8):
 # Generate 10 codes
 backup_codes = [generate_backup_code() for _ in range(10)]
 # Format as pairs: XK7M-9NP3...
-formatted = [backup_codes[i] + '-' + backup_codes[i+1] 
+formatted = [backup_codes[i] + '-' + backup_codes[i+1]
              for i in range(0, len(backup_codes), 2)]
 ```
 
@@ -94,17 +94,17 @@ class BackupCodeManager:
     """Manages backup codes with secure hashing for verification."""
     codes: List[str]
     used_codes: List[str]
-    
+
     def __init__(self, codes: List[str]):
         # Hash codes on storage for security
         self.hashed_codes = {self._hash(code): False for code in codes}
         self.used_codes = []
-    
+
     def _hash(self, code: str) -> str:
         """Hash code with per-code salt."""
         salt = secrets.token_hex(16)
         return salt + ':' + hashlib.sha256((salt + code).encode()).hexdigest()
-    
+
     def verify_and_consume(self, code: str) -> bool:
         """Verify a code and mark it as used."""
         for hashed, used in self.hashed_codes.items():
@@ -420,7 +420,6 @@ Audit:
 ```
 
 This level of documentation becomes important for security audits and compliance certifications.
-
 
 
 ## Related Articles

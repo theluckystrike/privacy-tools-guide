@@ -76,28 +76,28 @@ def extract_qr_url(image_path):
 def analyze_url(url):
     """Analyze URL for suspicious characteristics."""
     parsed = urlparse(url)
-    
+
     warnings = []
-    
+
     # Check for URL shorteners
     shorteners = ['bit.ly', 'tinyurl.com', 'goo.gl', 't.co', 'is.gd']
     if any(shortener in parsed.netloc for shortener in shorteners):
         warnings.append("URL uses a shortening service")
-    
+
     # Check for suspicious TLDs
     suspicious_tlds = ['.xyz', '.top', '.gq', '.tk', '.ml', '.cf']
     if any(parsed.netloc.endswith(tld) for tld in suspicious_tlds):
         warnings.append("Unusual top-level domain")
-    
+
     # Check for excessive subdomains
     if parsed.netloc.count('.') > 3:
         warnings.append("Excessive subdomain depth")
-    
+
     # Check for IP address usage
     import re
     if re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', parsed.netloc):
         warnings.append("URL uses IP address instead of domain")
-    
+
     return warnings
 
 # Example usage
@@ -135,24 +135,24 @@ function QRNavigator({ extractedUrl }) {
 
   const analyzeUrl = (urlString) => {
     const warnings = [];
-    
+
     // Check for URL shorteners
     const shorteners = ['bit.ly', 'tinyurl.com', 'goo.gl'];
     if (shorteners.some(s => urlString.includes(s))) {
       warnings.push('URL uses a shortening service');
     }
-    
+
     // Check for IP addresses
     if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(new URL(urlString).hostname)) {
       warnings.push('Destination uses an IP address');
     }
-    
+
     // Check for suspicious TLDs
     const suspiciousTlds = ['.xyz', '.top', '.gq', '.tk'];
     if (suspiciousTlds.some(tld => urlString.endsWith(tld))) {
       warnings.push('Unusual domain extension');
     }
-    
+
     return warnings;
   };
 
@@ -161,7 +161,7 @@ function QRNavigator({ extractedUrl }) {
   return (
     <div className="qr-navigator">
       <p>Destination: <strong>{url}</strong></p>
-      
+
       {warnings.length > 0 ? (
         <div className="warning-box">
           <h3>⚠️ Security Warnings</h3>
@@ -234,12 +234,12 @@ If you or your organization encounters a quishing attempt:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 - [Protect Yourself from Credential Stuffing Attack](/privacy-tools-guide/how-to-protect-yourself-from-credential-stuffing-attack-pass/)
 - [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
-- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [Protect Yourself from Doxxing After Meeting Someone Through](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

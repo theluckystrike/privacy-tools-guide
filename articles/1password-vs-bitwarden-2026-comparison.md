@@ -119,14 +119,14 @@ class BitwardenClient:
             data={"grant_type": "password", "username": "email", "password": master_password}
         )
         self.token = response.json()["access_token"]
-    
+
     def get_password(self, item_name):
         items = requests.get(
             "https://api.bitwarden.com/objects/ciphers",
             headers={"Authorization": f"Bearer {self.token}"}
         )
         # Filter and return password
-        return next((i["login"]["password"] for i in items.json()["data"] 
+        return next((i["login"]["password"] for i in items.json()["data"]
                      if i["name"] == item_name), None)
 ```
 
@@ -206,8 +206,6 @@ For individual developers, Bitwarden offers exceptional value with its free tier
 Both are excellent choices in 2026—the decision ultimately depends on your infrastructure requirements and budget constraints.
 
 ---
-
-
 
 
 ## Related Articles

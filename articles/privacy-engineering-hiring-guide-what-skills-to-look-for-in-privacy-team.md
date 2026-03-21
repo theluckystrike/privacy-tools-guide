@@ -88,7 +88,7 @@ Strong candidates demonstrate proficiency with data anonymization techniques:
 
 ```sql
 -- Example: Pseudonymization using hashing with salt in SQL
-SELECT 
+SELECT
     CONCAT(
         'USER_',
         SUBSTRING(SHA2(CONCAT(user_id, 'salt_value_12345'), 256), 1, 12)
@@ -98,8 +98,8 @@ SELECT
     NULL AS phone_number,
     -- Keep quasi-identifiers for analysis
     FLOOR(DATEDIFF(CURDATE(), birth_date) / 365.25) AS age_years,
-    CASE 
-        WHEN LOWER(city) IN ('san francisco', 'new york', 'seattle') 
+    CASE
+        WHEN LOWER(city) IN ('san francisco', 'new york', 'seattle')
         THEN 'major_metro'
         ELSE 'other'
     END AS metro_area
@@ -116,13 +116,13 @@ Privacy engineers should understand secure API design:
 // Example: Implementing privacy-preserving API responses
 function sanitizeUserProfile(user) {
     const privacyLevel = user.privacy_settings.disclosure_level;
-    
+
     const response = {
         id: user.pseudonymous_id,  // Never expose internal IDs
         username: user.username,
         created_at: user.created_at
     };
-    
+
     if (privacyLevel === 'public') {
         response.display_name = user.display_name;
         response.bio = user.bio;
@@ -131,7 +131,7 @@ function sanitizeUserProfile(user) {
         response.display_name = user.display_name;
     }
     // For private: only return pseudonymous_id
-    
+
     return response;
 }
 ```
@@ -187,12 +187,10 @@ The right privacy engineer doesn't just implement checkbox compliance—they bui
 ---
 
 
-
-
 ## Related Articles
 
 - [Complete Guide To Social Engineering Defense Protecting Pers](/privacy-tools-guide/complete-guide-to-social-engineering-defense-protecting-pers/)
-- [Restrict Alexa Skills From Accessing Unnecessary Personal Data Permissions](/privacy-tools-guide/how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/)
+- [Restrict Alexa Skills From Accessing Unnecessary Personal](/privacy-tools-guide/how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/)
 - [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
 - [How To Share Passwords Securely With Team Using Encrypted Co](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)
 - [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)

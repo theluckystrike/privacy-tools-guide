@@ -63,17 +63,17 @@ async def submit_opt_out(session, site, first_name, last_name, state):
         "StateRecords": "/optout/",
         "BackgroundChecks": "/consumer-removal/",
     }
-    
+
     path = opt_out_paths.get(site["name"], "/contact/")
     url = urljoin(site["base_url"], path)
-    
+
     payload = {
         "firstname": first_name,
         "lastname": last_name,
         "state": state,
         "removal_reason": "privacy",
     }
-    
+
     try:
         async with session.post(url, data=payload, timeout=10) as resp:
             return {
@@ -88,14 +88,14 @@ async def main():
     first_name = input("First name: ")
     last_name = input("Last name: ")
     state = input("State (2-letter code): ")
-    
+
     async with aiohttp.ClientSession() as session:
         tasks = [
             submit_opt_out(session, site, first_name, last_name, state)
             for site in SITES
         ]
         results = await asyncio.gather(*tasks)
-        
+
         for result in results:
             print(f"{result['site']}: {result.get('status', result.get('error', 'unknown'))}")
 
@@ -184,7 +184,7 @@ add_record() {
     local court="$2"
     local status="$3"
     local date_filed="$4"
-    
+
     echo "{
         \"case_number\": \"$case_num\",
         \"court\": \"$court\",
@@ -222,8 +222,6 @@ For those with sealed or expunged records, prevent re-aggregation through:
 - Data broker exposure reduction: Minimize digital footprint to reduce cross-referencing
 
 Removing court records and arrest records from public search databases requires understanding both the technical aggregation systems and the legal pathways at the source. The process takes time—typically three to twelve months for court-ordered expungement—but succeeds for eligible cases.
-
-
 
 
 ## Related Articles

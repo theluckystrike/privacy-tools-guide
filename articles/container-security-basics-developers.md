@@ -330,7 +330,6 @@ Falco detects events like:
 - [ ] Container logs shipped to centralized logging
 
 
-
 ## Related Articles
 
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)

@@ -226,7 +226,6 @@ echo "IPv6 interfaces:" && ip -6 addr show scope global | head -5 || echo "none"
 A working setup returns your VPN IPv4, no IPv6 response, and no IPv6 default route.
 
 
-
 ## Related Articles
 
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)

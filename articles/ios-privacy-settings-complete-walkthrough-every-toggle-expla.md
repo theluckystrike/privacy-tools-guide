@@ -187,7 +187,6 @@ For users seeking optimal privacy without sacrificing functionality:
 5. **Limit Third-Party Keyboards**: Use only Apple's built-in keyboard for sensitive input
 
 
-
 ## Related Articles
 
 - [Ios Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)

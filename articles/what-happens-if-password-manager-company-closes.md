@@ -209,7 +209,6 @@ op item create --category login --generate-password=words,5,separator=-
 Five EFF words yield ~64 bits of entropy — equivalent to a 12-character random string, but far easier to type on mobile.
 
 
-
 ## Related Articles
 
 - [What Happens When Your Password Appears In Data Breach Steps](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)

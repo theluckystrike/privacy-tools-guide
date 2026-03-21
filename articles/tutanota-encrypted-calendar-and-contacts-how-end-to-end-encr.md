@@ -377,7 +377,6 @@ For users in jurisdictions with aggressive data access laws, Tutanota's model pr
 - Workaround: Duplicate events in local calendar for non-sensitive items
 
 
-
 ## Related Articles
 
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)

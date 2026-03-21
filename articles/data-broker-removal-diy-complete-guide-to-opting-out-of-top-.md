@@ -91,12 +91,12 @@ async def submit_opt_out(session: aiohttp.ClientSession, broker: DataBroker, ema
         "User-Agent": "Mozilla/5.0 (compatible; PrivacyBot/1.0)",
         "Accept": "text/html,application/xhtml+xml"
     }
-    
+
     payload = {
         "email": email,
         "confirmation": email
     }
-    
+
     try:
         async with session.post(broker.opt_out_url, data=payload, headers=headers, timeout=30) as response:
             return {
@@ -117,11 +117,11 @@ async def opt_out_all(brokers: list, email: str):
     async with aiohttp.ClientSession() as session:
         tasks = [submit_opt_out(session, broker, email) for broker in brokers]
         results = await asyncio.gather(*tasks)
-        
+
         for result in results:
             status = "✓" if result["success"] else "✗"
             print(f"{status} {result['broker']}: {result.get('status', 'N/A')}")
-        
+
         return results
 
 if __name__ == "__main__":
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python3 opt_out.py your@email.com")
         sys.exit(1)
-    
+
     print(f"Starting opt-out process for {sys.argv[1]}...")
     asyncio.run(opt_out_all(BROKERS, sys.argv[1]))
 ```
@@ -183,7 +183,7 @@ class DataRemovalService:
     def __init__(self, api_key: str):
         self.api_key = api_key
         self.base_url = "https://api.removalservice.example/v1"
-    
+
     def submit_removal_request(self, email: str, sites: list) -> dict:
         response = requests.post(
             f"{self.base_url}/removal",
@@ -195,7 +195,7 @@ class DataRemovalService:
             headers={"Authorization": f"Bearer {self.api_key}"}
         )
         return response.json()
-    
+
     def check_status(self, request_id: str) -> dict:
         response = requests.get(
             f"{self.base_url}/removal/{request_id}",
@@ -252,9 +252,9 @@ When submitting requests, cite the applicable regulation:
 Subject: CCPA Deletion Request
 To: privacy@broker-site.com
 
-I am a California resident requesting deletion of all personal information 
-you maintain about me under the California Consumer Privacy Act (CCPA). 
-My email is [your email]. Please confirm receipt and completion within 
+I am a California resident requesting deletion of all personal information
+you maintain about me under the California Consumer Privacy Act (CCPA).
+My email is [your email]. Please confirm receipt and completion within
 45 days as required by law.
 ```
 
@@ -341,7 +341,6 @@ Even after successful opt-outs, some data sources fall outside individual broker
 - **Social media** — any public posts, profile information, or tagged content remains indexed even after broker opt-outs.
 
 For maximum reduction of your data footprint, combine broker opt-outs with source-level actions: set social profiles to private, use a PO box for any address that enters public records, and register to vote using a privacy address if your state allows it.
-
 
 
 ## Related Articles

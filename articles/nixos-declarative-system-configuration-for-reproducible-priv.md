@@ -185,7 +185,6 @@ nix-build '<nixpkgs/nixos>' -A config.system.build.vm -o vm-test
 This approach lets you verify configuration changes before applying them to your actual system—a valuable practice when experimenting with security settings.
 
 
-
 ## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)

@@ -142,7 +142,7 @@ connect() {
     log "Connecting to Polish VPN..."
     sudo wg-quick up "$VPN_CONF"
     sleep 3
-    
+
     COUNTRY=$(curl -s https://ipapi.co/json/ | jq -r '.country_code')
     if [ "$COUNTRY" = "PL" ]; then
         log "Connected successfully. Country: Poland"
@@ -196,7 +196,7 @@ def check_vpn_status():
     """Check if VPN is connected to Poland."""
     try:
         ip_info = get_ip_info()
-        
+
         if ip_info.get('country_code') == 'PL':
             return {
                 'connected': True,
@@ -218,7 +218,7 @@ def test_streaming_domains():
     """Test DNS resolution for Polish streaming domains."""
     domains = ['tvp.pl', 'canalplus.com', 'polsatbox.pl']
     results = {}
-    
+
     for domain in domains:
         try:
             result = subprocess.run(
@@ -232,14 +232,14 @@ def test_streaming_domains():
             results[domain] = 'Timeout'
         except Exception as e:
             results[domain] = f'Error: {e}'
-    
+
     return results
 
 if __name__ == '__main__':
     print("=== Polish VPN Status ===")
     status = check_vpn_status()
     print(json.dumps(status, indent=2))
-    
+
     print("\n=== Streaming Domain Tests ===")
     domain_results = test_streaming_domains()
     for domain, result in domain_results.items():
@@ -286,7 +286,6 @@ Optimize your connection by:
 1. Selecting a VPN server closest to your physical location within Poland
 2. Using WireGuard instead of OpenVPN for lower latency
 3. Enabling hardware acceleration in your browser
-
 
 
 ## Related Articles

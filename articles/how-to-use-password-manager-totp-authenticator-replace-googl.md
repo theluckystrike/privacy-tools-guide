@@ -361,7 +361,6 @@ Enforce TOTP for:
 - Security-sensitive roles
 
 
-
 ## Related Articles
 
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

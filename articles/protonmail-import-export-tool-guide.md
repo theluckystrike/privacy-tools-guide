@@ -75,7 +75,7 @@ def export_folder_to_mbox(mail, folder_name, output_file):
     mail.select(folder_name)
     typ, messages = mail.search(None, 'ALL')
     message_ids = messages[0].split()
-    
+
     with open(output_file, 'wb') as f:
         for msg_id in message_ids:
             typ, msg_data = mail.fetch(msg_id, '(RFC822)')
@@ -83,7 +83,7 @@ def export_folder_to_mbox(mail, folder_name, output_file):
                 if isinstance(response_part, tuple):
                     msg_content = response_part[1]
                     f.write(msg_content)
-    
+
     print(f"Exported {len(message_ids)} messages to {output_file}")
 
 # Usage example
@@ -115,10 +115,10 @@ def get_oauth_token():
     """Obtain OAuth token for API access"""
     oauth = OAuth2Session(CLIENT_ID, redirect_uri=REDIRECT_URI)
     authorization_url, state = oauth.authorization_url(AUTH_URL)
-    
+
     print(f"Visit this URL to authorize: {authorization_url}")
     authorization_response = input("Enter the callback URL: ")
-    
+
     token = oauth.fetch_token(
         TOKEN_URL,
         client_secret=CLIENT_SECRET,
@@ -136,19 +136,19 @@ def fetch_emails(access_token, label_id='0', limit=100, offset=0):
         'Authorization': f'Bearer {access_token}',
         'Content-Type': 'application/json'
     }
-    
+
     params = {
         'LabelID': label_id,
         'Limit': limit,
         'Offset': offset
     }
-    
+
     response = requests.get(
         'https://api.protonmail.ch/api/messages',
         headers=headers,
         params=params
     )
-    
+
     return response.json()
 
 def export_emails_to_json(access_token, output_file='emails.json'):
@@ -156,19 +156,19 @@ def export_emails_to_json(access_token, output_file='emails.json'):
     all_emails = []
     offset = 0
     limit = 100
-    
+
     while True:
         emails = fetch_emails(access_token, limit=limit, offset=offset)
         if not emails.get('Messages'):
             break
-            
+
         all_emails.extend(emails['Messages'])
         offset += limit
         print(f"Fetched {len(all_emails)} emails...")
-    
+
     with open(output_file, 'w') as f:
         json.dump(all_emails, f, indent=2)
-    
+
     print(f"Exported {len(all_emails)} emails to {output_file}")
     return all_emails
 ```
@@ -187,16 +187,16 @@ def import_mbox_to_proton(mail, mbox_file, target_folder='Import'):
         mail.create(target_folder)
     except:
         pass
-    
+
     mail.select(target_folder)
-    
+
     with open(mbox_file, 'rb') as f:
         # Parse MBOX and add each message
         for message in email.message_from_file(f).walk():
             if message.get_payload():
                 # Add to IMAP
                 mail.append(target_folder, None, None, message.as_bytes())
-    
+
     print(f"Imported messages from {mbox_file}")
 ```
 
@@ -224,7 +224,6 @@ gpg --symmetric --cipher-algo AES256 inbox_backup.mbox
 # Decrypt when needed
 gpg --decrypt inbox_backup.mbox.gpg > inbox_backup.mbox
 ```
-
 
 
 ## Related Articles

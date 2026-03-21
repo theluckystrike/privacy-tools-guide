@@ -205,7 +205,6 @@ sudo iptables -A OUTPUT -o lo -j ACCEPT
 Test your kill switch by temporarily disconnecting the VPN and verifying that no traffic leaves your interface.
 
 
-
 ## Related Articles
 
 - [VPN Connection Timeout Troubleshooting](/privacy-tools-guide/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)

@@ -38,26 +38,26 @@ contract DigitalAssetInheritance {
         uint256 percentage;
         bool claimed;
     }
-    
+
     mapping(address => Beneficiary[]) public beneficiaries;
     mapping(address => uint256) public balances;
     address public owner;
     uint256 public unlockTime;
     bool public isActive;
-    
+
     modifier onlyOwner() {
         require(msg.sender == owner, "Not the owner");
         _;
     }
-    
+
     constructor() {
         owner = msg.sender;
         isActive = true;
     }
-    
-    function setBeneficiaries(address[] memory _beneficiaries, uint256[] memory _percentages) 
-        external 
-        onlyOwner 
+
+    function setBeneficiaries(address[] memory _beneficiaries, uint256[] memory _percentages)
+        external
+        onlyOwner
     {
         require(_beneficiaries.length == _percentages.length, "Length mismatch");
         uint256 total;
@@ -65,7 +65,7 @@ contract DigitalAssetInheritance {
             total += _percentages[i];
         }
         require(total == 100, "Must total 100%");
-        
+
         delete beneficiaries[msg.sender];
         for (uint256 i = 0; i < _beneficiaries.length; i++) {
             beneficiaries[msg.sender].push(
@@ -73,15 +73,15 @@ contract DigitalAssetInheritance {
             );
         }
     }
-    
+
     function setInactivityPeriod(uint256 _days) external onlyOwner {
         unlockTime = block.timestamp + (_days * 1 days);
     }
-    
+
     function claim() external {
         require(isActive, "Contract inactive");
         require(block.timestamp > unlockTime, "Inactivity period not met");
-        
+
         Beneficiary[] storage bens = beneficiaries[owner];
         for (uint256 i = 0; i < bens.length; i++) {
             require(!bens[i].claimed, "Already claimed");
@@ -90,7 +90,7 @@ contract DigitalAssetInheritance {
             bens[i].claimed = true;
         }
     }
-    
+
     receive() external payable {
         balances[owner] += msg.value;
     }
@@ -154,20 +154,20 @@ def create_inheritance_transfer():
     parser.add_argument('--delay-days', type=int, default=30, help='Days to wait before transfer')
     parser.add_argument('--config', default='inheritance_config.json')
     args = parser.parse_args()
-    
+
     with open(args.config) as f:
         config = json.load(f)
-    
+
     w3 = Web3(Web3.HTTPProvider(config['rpc_url']))
-    
+
     # Check last activity
     last_activity = config.get('last_activity_timestamp', 0)
     days_since_activity = (time.time() - last_activity) / 86400
-    
+
     if days_since_activity < args.delay_days:
         print(f"Still within grace period. {args.delay_days - days_since_activity:.1f} days remaining.")
         return
-    
+
     # Transfer NFTs
     for nft in config['nfts']:
         token_contract = w3.eth.contract(
@@ -183,11 +183,11 @@ def create_inheritance_transfer():
             'nonce': w3.eth.get_transaction_count(config['owner']),
             'gas': 100000
         })
-        
+
         signed = w3.eth.account.sign_transaction(tx, config['private_key'])
         tx_hash = w3.eth.send_raw_transaction(signed.rawTransaction)
         print(f"Transferred NFT {nft['token_id']}: {tx_hash.hex()}")
-    
+
     # Transfer ERC-20 tokens
     for token in config['tokens']:
         token_contract = w3.eth.contract(
@@ -195,12 +195,12 @@ def create_inheritance_transfer():
             abi=['function transfer(address to, uint256 amount) returns (bool)']
         )
         balance = token_contract.functions.balanceOf(config['owner']).call()
-        
+
         tx = token_contract.functions.transfer(args.beneficiary, balance).buildTransaction({
             'from': config['owner'],
             'nonce': w3.eth.get_transaction_count(config['owner']) + 1
         })
-        
+
         signed = w3.eth.account.sign_transaction(tx, config['private_key'])
         tx_hash = w3.eth.send_raw_transaction(signed.rawTransaction)
         print(f"Transferred {balance} tokens: {tx_hash.hex()}")
@@ -238,15 +238,13 @@ The optimal solution depends on your technical comfort level, the value of asset
 ---
 
 
-
-
 ## Related Articles
 
 - [Digital Business Asset Inheritance How To Transfer Saas Acco](/privacy-tools-guide/digital-business-asset-inheritance-how-to-transfer-saas-acco/)
 - [Domain Name Inheritance How To Transfer Registrar Accounts A](/privacy-tools-guide/domain-name-inheritance-how-to-transfer-registrar-accounts-a/)
 - [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
-- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

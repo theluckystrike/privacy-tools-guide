@@ -178,7 +178,6 @@ done
 **Self-hosted V2Ray with domain fronting** uses legitimate CDN infrastructure to mask VPN traffic. By configuring your V2Ray server behind Cloudflare or similar CDNs, your traffic appears to be legitimate CDN traffic, making blocking extremely difficult.
 
 
-
 ## Related Articles
 
 - [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)

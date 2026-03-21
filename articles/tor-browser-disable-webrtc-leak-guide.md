@@ -37,10 +37,10 @@ function findIP() {
   const pc = new RTCPeerConnection({
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
   });
-  
+
   pc.createDataChannel('');
   pc.createOffer().then(offer => pc.setLocalDescription(offer));
-  
+
   pc.onicecandidate = (ice) => {
     if (!ice || !ice.candidate || !ice.candidate.candidate) {
       console.log('IPs found:', ips);
@@ -357,7 +357,6 @@ If you use multiple browsers, WebRTC disabling strategies vary:
 | Firefox ESR | Enabled | about:config flag | Developer Tools |
 | Chromium/Chrome | Enabled | chrome://flags or extensions | DevTools → Network |
 | Brave | Protected by default | Settings → Privacy | Network inspection |
-
 
 
 ## Related Articles

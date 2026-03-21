@@ -15,7 +15,6 @@ tags: [privacy-tools-guide, comparison, vpn]
 ---
 
 
-
 {% raw %}
 
 When you connect to a VPN, one of the most critical configuration decisions involves how your network traffic is routed. The distinction between **tunnel interface routing** and **full tunnel routing** fundamentally affects your privacy, security, connection speed, and overall VPN experience. Understanding these differences helps you make informed decisions about your VPN configuration and troubleshoot connectivity issues more effectively.
@@ -277,7 +276,7 @@ When manually configuring routes, always verify your configuration by checking w
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [VPN Tunnel Interface vs Full Tunnel Routing](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 - [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)

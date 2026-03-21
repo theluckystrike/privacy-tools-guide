@@ -115,35 +115,35 @@ class DSARRequest:
     request_type: str  # ACCESS, DELETE, PORTABILITY
     jurisdiction: str
     status: str = "pending"
-    
+
 class DSARPipeline:
     def __init__(self, discovery_service, storage_service, notification_service):
         self.discovery = discovery_service
         self.storage = storage_service
         self.notification = notification_service
-    
+
     async def process_request(self, request: DSARRequest) -> dict:
         # Step 1: Data discovery across all systems
         data_locations = await self.discovery.find_user_data(request.email)
-        
+
         # Step 2: Aggregate data or prepare deletion
         if request.request_type == "ACCESS":
             aggregated_data = await self._aggregate_data(data_locations)
             await self.storage.store_response(request.request_id, aggregated_data)
         elif request.request_type == "DELETE":
             await self._execute_deletion(data_locations)
-        
+
         # Step 3: Notify data subject
         await self.notification.send_confirmation(request.email, request.request_type)
-        
+
         return {"status": "completed", "request_id": request.request_id}
-    
+
     async def _aggregate_data(self, locations: List[dict]) -> dict:
         results = await asyncio.gather(
             *[self.discovery.query_source(loc) for loc in locations]
         )
         return {"data": results, "sources": len(locations)}
-    
+
     async def _execute_deletion(self, locations: List[dict]) -> None:
         await asyncio.gather(
             *[self.discovery.delete_from_source(loc) for loc in locations]
@@ -160,22 +160,22 @@ For real-time consent synchronization across systems, implement a webhook handle
 // Express.js consent webhook endpoint
 app.post('/webhooks/consent-update', async (req, res) => {
   const { userId, consents, timestamp, source } = req.body;
-  
+
   // Validate webhook signature
   if (!validateSignature(req.headers['x-webhook-signature'], req.body)) {
     return res.status(401).json({ error: 'Invalid signature' });
   }
-  
+
   // Update user preferences in your database
   await updateUserConsents(userId, consents);
-  
+
   // Sync with marketing automation
   if (consents.marketing) {
     await syncToMarketingPlatform(userId, { email_consent: true });
   } else {
     await removeFromMarketingPlatform(userId);
   }
-  
+
   // Log for compliance audit
   await logConsentEvent({
     userId,
@@ -184,7 +184,7 @@ app.post('/webhooks/consent-update', async (req, res) => {
     source,
     processedAt: new Date().toISOString()
   });
-  
+
   res.status(200).json({ received: true });
 });
 ```
@@ -202,10 +202,9 @@ Consider these factors when evaluating privacy compliance tools:
 **Compliance scope**: If operating exclusively in California, CCPA-specific tools may provide better value. Multi-jurisdictional operations generally require GDPR-first platforms with CCPA add-ons.
 
 
-
 ## Related Articles
 
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
 - [Ccpa Vs Gdpr Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
 - [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)

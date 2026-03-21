@@ -46,9 +46,9 @@ def reverse_image_search(image_path):
         'num': 5,
         'fileType': 'jpg|png',
     }
-    
+
     gis.search(search_params, image_path=image_path)
-    
+
     results = []
     for image in gis.results():
         results.append({
@@ -56,7 +56,7 @@ def reverse_image_search(image_path):
             'title': image.title,
             'source': image.source
         })
-    
+
     return results
 
 # Usage
@@ -97,15 +97,15 @@ def extract_exif(image_path):
     """Extract and display EXIF metadata from an image."""
     image = Image.open(image_path)
     exif_data = image._getexif()
-    
+
     if not exif_data:
         return "No EXIF data found"
-    
+
     metadata = {}
     for tag_id, value in exif_data.items():
         tag = TAGS.get(tag_id, tag_id)
         metadata[tag] = str(value)
-    
+
     return metadata
 
 # Example usage
@@ -168,11 +168,11 @@ async def check_username(session, platform, username):
 async def username_investigation(username):
     """Search multiple platforms for username."""
     platforms = ['instagram', 'twitter', 'linkedin', 'github', 'reddit']
-    
+
     async with aiohttp.ClientSession() as session:
         tasks = [check_username(session, p, username) for p in platforms]
         results = await asyncio.gather(*tasks)
-    
+
     found = {p: exists for p, exists in results if exists}
     return found
 ```
@@ -212,26 +212,26 @@ def analyze_message_authenticity(messages):
         'vague_answers': 0,
         'question_avoidance': 0
     }
-    
+
     vague_patterns = [
         r'i work (in|at|for)',
         r'i live (in|near)',
         r'good question',
         r'that.*complicated'
     ]
-    
+
     for msg in messages:
         word_count = len(msg.split())
-        
+
         if word_count < 5:
             indicators['short_responses'] += 1
-            
+
         if any(re.search(p, msg.lower()) for p in vague_patterns):
             indicators['vague_answers'] += 1
-            
+
         if '?' not in msg and 'what about you' in msg.lower():
             indicators['question_avoidance'] += 1
-    
+
     return indicators
 ```
 
@@ -245,7 +245,7 @@ class CatfishDetector:
         self.photos = profile_data.get('photos', [])
         self.username = profile_data.get('username')
         self.bio = profile_data.get('bio', '')
-        
+
     async def full_verification(self):
         results = {
             'image_checks': await self.verify_images(),
@@ -253,7 +253,7 @@ class CatfishDetector:
             'metadata_check': await self.verify_metadata(),
             'risk_score': 0
         }
-        
+
         # Calculate risk score
         if results['image_checks']['matches_found']:
             results['risk_score'] += 40
@@ -261,17 +261,17 @@ class CatfishDetector:
             results['risk_score'] += 30
         if results['metadata_check']['inconsistencies']:
             results['risk_score'] += 20
-            
+
         return results
-    
+
     async def verify_images(self):
         # Implement reverse image search
         pass
-    
+
     async def verify_username(self):
         # Implement username enumeration
         pass
-    
+
     async def verify_metadata(self):
         # Implement EXIF analysis
         pass
@@ -293,14 +293,12 @@ No single technique guarantees detection, but combining them catches most catfis
 ---
 
 
-
-
 ## Related Articles
 
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [How To Spot Romance Scam Red Flags On Dating Apps Comprehens](/privacy-tools-guide/how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/)
-- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

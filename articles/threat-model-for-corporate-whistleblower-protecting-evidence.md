@@ -323,7 +323,6 @@ echo "All systems functional. Ready for deployment."
 ```
 
 
-
 ## Related Articles
 
 - [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)

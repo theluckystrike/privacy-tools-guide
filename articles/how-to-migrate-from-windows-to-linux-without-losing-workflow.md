@@ -40,7 +40,7 @@ sudo apt install git curl wget vim neovim build-essential
 # Download from: https://code.visualstudio.com/
 # Or install via snap: sudo snap install code
 
-# JetBrains tools (IntelliJ, PyCharm, WebStorm) 
+# JetBrains tools (IntelliJ, PyCharm, WebStorm)
 # All have native Linux builds with identical features
 ```
 
@@ -246,8 +246,6 @@ A successful migration requires ongoing maintenance:
 4. **Documentation**: Record any custom setups for future reference
 
 The transition from Windows to Linux requires adjustment, but the privacy benefits and system control justify the learning curve. Your development workflow will not only persist but improve as you gain visibility into your system's operation.
-
-
 
 
 ## Related Articles

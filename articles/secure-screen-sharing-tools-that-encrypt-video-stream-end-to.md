@@ -99,10 +99,10 @@ from nio import AsyncClient, LoginParams
 
 async def create_encrypted_screen_share_room():
     client = AsyncClient("https://matrix.yourserver.com", "@user:yourserver.com")
-    
+
     # Login with access token
     await client.login("access_token_here")
-    
+
     # Create encrypted room with screen sharing support
     response = await client.room_create(
         visibility="private",
@@ -116,7 +116,7 @@ async def create_encrypted_screen_share_room():
         ],
         name="Secure Screen Share"
     )
-    
+
     print(f"Encrypted room created: {response.room_id}")
     await client.close()
 
@@ -170,8 +170,6 @@ Regardless of your tool choice, verify encryption is active before sharing sensi
 End-to-end encrypted screen sharing requires trusting your tool's implementation. Prefer open-source solutions with independent audits, reproducible builds, and transparent cryptographic design. Your screen often contains more sensitive information than your communications—protect it accordingly.
 
 ---
-
-
 
 
 ## Related Articles

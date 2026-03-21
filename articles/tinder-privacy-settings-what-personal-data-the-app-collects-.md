@@ -391,7 +391,6 @@ Watch for these indicators that Tinder has excessive access:
    - Indicates: Data sharing with ad network
 
 
-
 ## Related Articles
 
 - [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)

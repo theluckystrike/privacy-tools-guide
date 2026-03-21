@@ -333,14 +333,13 @@ Credential sharing affects compliance:
 Document your credential management practices and have legal review them before adopting. Proper documentation during normal operations prevents compliance issues later.
 
 
-
 ## Related Articles
 
 - [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 - [How to Archive Encrypted Email Securely: A Developer Guide](/privacy-tools-guide/how-to-archive-encrypted-email-securely/)
-- [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
-- [Privacy Engineering Hiring Guide What Skills To Look For.](/privacy-tools-guide/privacy-engineering-hiring-guide-what-skills-to-look-for-in-privacy-team/)
 - [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
+- [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
+- [Migrating From Chrome Saved Passwords To Dedicated Manager S](/privacy-tools-guide/migrating-from-chrome-saved-passwords-to-dedicated-manager-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

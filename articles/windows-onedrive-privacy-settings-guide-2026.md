@@ -172,7 +172,6 @@ Get-ItemProperty -Path $key | Select-Object TelemetryLevel, DisablePersonalizedR
 Additionally, monitor network traffic using tools like Wireshark or Windows Performance Monitor to confirm no unexpected connections to Microsoft servers occur during idle periods.
 
 
-
 ## Related Articles
 
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)

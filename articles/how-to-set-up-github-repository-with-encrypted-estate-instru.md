@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 ---
 
 
-
 {% raw %}
 
 Storing sensitive estate planning documents, password vaults, and financial instructions requires AES-256 encryption before they ever touch a cloud repository. This guide shows you how to set up a GitHub repository with encrypted files using age encryption, ensuring that even if your repository is compromised, your most sensitive information remains unreadable. We'll cover three production-ready approaches: age (the modern, Go-based encryption tool favored by the Tor Project), git-crypt (for Git-aware transparent encryption), and SOPS (for YAML/JSON-based secret management used by Mozilla and Discord). Each method has distinct trade-offs in key management, CI/CD integration, and recovery workflows that matter for estate planning where losing access means your heirs cannot recover anything.
@@ -351,12 +350,12 @@ Store this documentation alongside the keys or with your estate planning documen
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Github Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
 - [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

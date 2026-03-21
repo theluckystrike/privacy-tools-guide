@@ -236,7 +236,6 @@ Location data requires enhanced security measures:
 - Prepare incident response procedures
 
 
-
 ## Related Articles
 
 - [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)

@@ -255,10 +255,9 @@ When implementing this system, keep these points in mind:
 - **Regular testing**: Verify recovery process works annually
 
 
-
 ## Related Articles
 
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
 - [How To Build Portable Censorship Circumvention Kit On Usb Dr](/privacy-tools-guide/how-to-build-portable-censorship-circumvention-kit-on-usb-dr/)

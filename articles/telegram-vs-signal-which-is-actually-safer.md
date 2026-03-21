@@ -98,7 +98,7 @@ Signal collects almost no metadata:
 ```bash
 # Signal's server stores only:
 # - Account creation timestamp
-# - Last connection timestamp  
+# - Last connection timestamp
 # - Phone number (for routing)
 # - Encrypted message batches (deleted after delivery)
 ```
@@ -251,7 +251,7 @@ Test both applications with your specific use case. Run network traffic analysis
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
 - [How Secure Is Telegram Secret Chat Mode](/privacy-tools-guide/how-secure-is-telegram-secret-chat-mode/)

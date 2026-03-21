@@ -129,19 +129,19 @@ def convert_to_bitwarden(input_file, output_file):
     """Convert LastPass export to Bitwarden format."""
     field_map = {
         'url': 'login_uri',
-        'username': 'login_username', 
+        'username': 'login_username',
         'password': 'login_password',
         'name': 'name',
         'notes': 'notes'
     }
-    
+
     with open(input_file, 'r', encoding='utf-8') as f_in:
         reader = csv.DictReader(f_in)
-        
+
         with open(output_file, 'w', newline='', encoding='utf-8') as f_out:
             writer = csv.DictWriter(f_out, fieldnames=field_map.keys())
             writer.writeheader()
-            
+
             for row in reader:
                 # Map LastPass fields to Bitwarden format
                 converted = {k: row.get(v, '') for k, v in field_map.items()}
@@ -183,10 +183,10 @@ def add_totp_to_item(item_id, totp_secret):
         capture_output=True, text=True
     )
     item = json.loads(result.stdout)
-    
+
     # Add TOTP to the item
     item['login']['totp'] = totp_secret
-    
+
     # Save back
     subprocess.run(
         ['bw', 'edit', 'item', item_id],
@@ -211,7 +211,7 @@ Run comparison checks to ensure nothing was lost:
 # Count LastPass entries
 echo "LastPass entries: $(tail -n +2 lastpass-export.csv | wc -l)"
 
-# Count Bitwarden entries  
+# Count Bitwarden entries
 echo "Bitwarden entries: $(bw list items | jq length)"
 
 # List Bitwarden folders
@@ -314,7 +314,6 @@ After migration, strengthen your security:
 3. **Audit login history**: Check for unauthorized access
 4. **Delete LastPass data**: Remove your vault after confirming migration success
 5. **Update recovery options**: Ensure your email and phone are current
-
 
 
 ## Related Articles

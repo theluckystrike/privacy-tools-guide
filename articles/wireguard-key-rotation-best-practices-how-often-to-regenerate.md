@@ -145,7 +145,7 @@ def rotate_wireguard_keys(config_path, peer_public_key):
 
  # Generate new key pair
  private_key = subprocess.check_output(['wg', 'genkey']).decode().strip()
- public_key = subprocess.check_output(['wg', 'pubkey'], 
+ public_key = subprocess.check_output(['wg', 'pubkey'],
  input=private_key.encode()).decode().strip()
 
  # Backup current config
@@ -189,7 +189,6 @@ ping -c 4 10.0.0.1
 # Verify encryption is working
 sudo wg show wg0 dump
 ```
-
 
 
 ## Related Articles

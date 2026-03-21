@@ -175,8 +175,6 @@ On resource-constrained systems, switch uBlock Origin to lite mode and disable u
 No extension stack provides complete anonymity — review your configuration when tools release major updates or new tracking techniques emerge.
 
 
-
-
 ## Related Articles
 
 - [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)

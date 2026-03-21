@@ -236,7 +236,6 @@ Digital protection must complement physical security. Stalkers may gain access t
 - Use Faraday bags for devices when not in use
 
 
-
 ## Related Articles
 
 - [Encrypt Your Entire Digital Life: A Checklist](/privacy-tools-guide/encrypt-entire-digital-life--checklist/)

@@ -76,7 +76,7 @@ from sqlalchemy.orm import sessionmaker
 def cleanup_old_logs(engine, days=180):
     """Delete authentication and API logs older than specified days."""
     cutoff = datetime.utcnow() - timedelta(days=days)
-    
+
     with sessionmaker(bind=engine) as session:
         result = session.execute(
             f"DELETE FROM api_logs WHERE created_at < '{cutoff.isoformat()}'"
@@ -105,7 +105,7 @@ CREATE TABLE data_retention_policies (
 
 -- Example retention policies
 INSERT INTO data_retention_policies (table_name, column_name, retention_days)
-VALUES 
+VALUES
     ('api_logs', 'created_at', 180),
     ('user_sessions', 'last_activity', 30),
     ('password_reset_tokens', 'created_at', 1),
@@ -126,7 +126,7 @@ use Carbon\Carbon;
 class DataRetentionCommand extends Command
 {
     protected $signature = 'data:retention {--dry-run : Show what would be deleted}';
-    
+
     public function handle()
     {
         $policies = [
@@ -134,11 +134,11 @@ class DataRetentionCommand extends Command
             ['table' => 'user_sessions', 'column' => 'last_activity', 'days' => 30],
             ['table' => 'password_reset_tokens', 'column' => 'created_at', 'days' => 1],
         ];
-        
+
         foreach ($policies as $policy) {
             $query = \DB::table($policy['table'])
                 ->where($policy['column'], '<', Carbon::now()->subDays($policy['days']));
-            
+
             if ($this->option('dry-run')) {
                 $count = $query->count();
                 $this->info("Would delete {$count} rows from {$policy['table']}");
@@ -176,11 +176,11 @@ When processing GDPR deletion requests, you must remove data from all systems in
 def process_deletion_request(user_id):
     """Handle a complete user data deletion request."""
     tables = ['users', 'user_profiles', 'api_tokens', 'sessions']
-    
+
     with sessionmaker(bind=engine) as session:
         for table in tables:
             session.execute(f"DELETE FROM {table} WHERE user_id = {user_id}")
-        
+
         # Create tombstone for audit purposes
         session.execute(
             "INSERT INTO deletion_tombstones (user_id, deleted_at) VALUES (%s, NOW())",
@@ -204,7 +204,7 @@ CREATE TABLE legal_holds (
 );
 
 -- Exclude data under legal hold from cleanup
-DELETE FROM api_logs 
+DELETE FROM api_logs
 WHERE created_at < NOW() - INTERVAL '180 days'
 AND user_id NOT IN (SELECT user_id FROM legal_holds WHERE hold_until > NOW());
 ```
@@ -219,7 +219,6 @@ A data retention policy is not a set-and-forget document. Schedule quarterly rev
 - **Risk tolerance**: Your organization's position on data risk may evolve
 
 Document policy changes with version control and maintain a changelog showing when retention periods changed and why.
-
 
 
 ## Related Articles

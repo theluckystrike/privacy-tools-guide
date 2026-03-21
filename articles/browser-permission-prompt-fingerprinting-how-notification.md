@@ -65,7 +65,7 @@ function detectBrowserViaPermissions() {
     hasPush: 'PushManager' in window,
     notificationPermission: Notification.permission
   };
-  
+
   // Different browsers return different combinations
   return results;
 }
@@ -84,13 +84,13 @@ The timing of your response to permission prompts creates a unique signature:
 ```javascript
 function fingerprintPermissionTiming() {
   const results = [];
-  
+
   // Request notification permission and measure response time
   const startTime = performance.now();
-  
+
   Notification.requestPermission().then(permission => {
     const responseTime = performance.now() - startTime;
-    
+
     // Different users have different response times
     // Some immediately deny, others take time to read the prompt
     results.push({
@@ -98,7 +98,7 @@ function fingerprintPermissionTiming() {
       responseTimeMs: responseTime,
       timestamp: Date.now()
     });
-    
+
     // Send fingerprint data to server
     sendFingerprintData(results);
   });
@@ -132,15 +132,15 @@ function getGeoPermission() {
 // Check camera/mic permission status
 function getMediaPermissions() {
   const permissions = {};
-  
+
   if ('mediaDevices' in navigator) {
     navigator.permissions.query({ name: 'camera' })
       .then(result => permissions.camera = result.state);
-    
+
     navigator.permissions.query({ name: 'microphone' })
       .then(result => permissions.microphone = result.state);
   }
-  
+
   return permissions;
 }
 ```
@@ -175,7 +175,7 @@ function getCompletePermissionFingerprint() {
     backgroundSync: null,
     notificationsEnabled: Notification.permission === 'granted'
   };
-  
+
   const queries = [
     navigator.permissions.query({ name: 'geolocation' }),
     navigator.permissions.query({ name: 'camera' }),
@@ -185,15 +185,15 @@ function getCompletePermissionFingerprint() {
     navigator.permissions.query({ name: 'persistent-storage' }),
     navigator.permissions.query({ name: 'background-sync' })
   ];
-  
-  const names = ['geolocation', 'camera', 'microphone', 'clipboard', 
+
+  const names = ['geolocation', 'camera', 'microphone', 'clipboard',
                  'midi', 'persistentStorage', 'backgroundSync'];
-  
+
   return Promise.all(queries).then(results => {
     results.forEach((result, index) => {
       fingerprint[names[index]] = result.state;
     });
-    
+
     // Generate unique hash from combined permissions
     return hashPermissionFingerprint(fingerprint);
   });
@@ -237,12 +237,12 @@ function checkNotificationServices() {
     { name: 'Pushwoosh', url: 'https://pushwoosh.com' },
     { name: 'Airship', url: 'https://urbanairship.com' }
   ];
-  
+
   // Attempt to detect which push services user has subscribed to
   services.forEach(service => {
     // Check localStorage for service-specific tokens
     const hasToken = localStorage.getItem(service.name.toLowerCase() + '_token');
-    
+
     // Cross-reference with permission state
     if (Notification.permission === 'granted' && hasToken) {
       trackUserPreference(service.name);
@@ -263,22 +263,22 @@ function detectExtensionsViaPermissions() {
     { id: 'gighmmpiobklfepjocnamgkkbiglidom', name: 'AdBlock' },
     { id: 'nmioekflnmbiannmkhjbbplncbdcarge', name: 'Privacy Badger' }
   ];
-  
+
   // Check if certain permissions are blocked by extensions
   const blocked = [];
-  
+
   // Try to access APIs that extensions might block
   try {
     // Extensions often block certain fingerprinting APIs
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    
+
     // If certain APIs fail or return unexpected results,
     // it may indicate extension interference
   } catch (e) {
     blocked.push('canvas');
   }
-  
+
   return blocked;
 }
 ```
@@ -356,12 +356,12 @@ To check if a site is using permission fingerprinting:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

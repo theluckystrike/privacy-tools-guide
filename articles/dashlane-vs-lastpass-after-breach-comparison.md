@@ -66,10 +66,10 @@ def derive_lastpass_key(master_password, salt, iterations=100100):
     """Simulate LastPass key derivation for understanding"""
     key = master_password.encode('utf-8')
     salt_bytes = bytes.fromhex(salt)
-    
+
     for _ in range(iterations):
         key = hashlib.sha256(key + salt_bytes).digest()
-    
+
     return key.hex()
 ```
 
@@ -195,8 +195,6 @@ Bitwarden is open-source and self-hostable with a strong CLI. 1Password offers a
 The choice depends on your threat model, technical requirements, and preference for cloud versus local-only solutions.
 
 ---
-
-
 
 
 ## Related Articles

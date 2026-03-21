@@ -262,7 +262,6 @@ check_ooni_data('yourservice.com')
 Integrating this type of monitoring into your infrastructure alerting gives you early warning when your services become inaccessible to Turkish users, allowing you to communicate proactively and recommend bypass options before users encounter problems.
 
 
-
 ## Related Articles
 
 - [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)

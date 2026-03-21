@@ -429,12 +429,14 @@ VPN and DPI evasion legality varies by jurisdiction:
 Before using DPI evasion techniques, understand local laws and organization policies.
 
 
-## Related Articles
+## Related Reading
 
 - [Russia Tspu Deep Packet Inspection Boxes How They Detect And](/privacy-tools-guide/russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/)
 - [VPN MSS Clamping Explained: Fixing Packet Size Related.](/privacy-tools-guide/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

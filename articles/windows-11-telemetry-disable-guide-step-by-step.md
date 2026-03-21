@@ -288,8 +288,6 @@ For developers building applications that integrate with Windows telemetry APIs,
 One important note: Disabling Update Orchestrator Service (`UsoSvc`) can interfere with Windows Updates. If you disable this service, use Windows Update manually through Settings or configure WSUS if managing multiple machines in an organization.
 
 
-
-
 ## Related Articles
 
 - [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)

@@ -292,7 +292,6 @@ For most organizations, the recommended implementation order is:
 This measured approach prevents accidentally blocking legitimate email while building toward protection.
 
 
-
 ## Related Articles
 
 - [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)

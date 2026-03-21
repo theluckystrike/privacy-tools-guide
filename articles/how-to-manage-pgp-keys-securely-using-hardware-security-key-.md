@@ -211,8 +211,6 @@ For high-threat scenarios, use an air-gapped computer for key generation, then t
 Test your setup regularly. Verify you can decrypt messages, sign commits, and access your keys after system reboots. Document your recovery procedures—lost YubiKeys without revocation certificates create permanent identity loss.
 
 
-
-
 ## Related Articles
 
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)

@@ -432,7 +432,6 @@ Supplement Tor with:
 - Tor account never accessed from clearnet
 
 
-
 ## Related Articles
 
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)

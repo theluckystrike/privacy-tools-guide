@@ -269,7 +269,6 @@ gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 ```
 
 
-
 ## Related Articles
 
 - [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)

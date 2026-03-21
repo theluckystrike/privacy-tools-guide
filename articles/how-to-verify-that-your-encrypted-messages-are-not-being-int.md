@@ -129,10 +129,10 @@ def verify_message(secret_key, message):
             plaintext.encode(),
             hashlib.sha256
         ).hexdigest()
-        
+
         if not hmac.compare_digest(signature, expected_signature):
             return None, "Signature mismatch - message may be tampered"
-        
+
         return plaintext, "Verified"
     except ValueError:
         return None, "Invalid message format"
@@ -185,7 +185,6 @@ For power users handling sensitive information, make verification a standard pra
 2. **Periodic re-verification**: Re-verify after device reinstallation, switching to a new phone, or after extended periods without communication
 3. **Out-of-band confirmation**: Use a different communication channel for verification—call someone, meet in person, or use a previously verified method
 4. **Automated alerts**: Some apps notify you when contacts' keys change. Treat these notifications seriously and re-verify
-
 
 
 ## Related Articles

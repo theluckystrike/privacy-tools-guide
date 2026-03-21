@@ -274,12 +274,14 @@ This is rarely used outside high-risk scenarios (journalists, activists) due to 
 Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [Cryptomator Vs Veracrypt For Cloud Encryption](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
 - [Xmpp Omemo Encryption Setup Guide](/privacy-tools-guide/xmpp-omemo-encryption-setup-guide/)
 - [Encrypted File Vault Inheritance Using Veracrypt With Split](/privacy-tools-guide/encrypted-file-vault-inheritance-using-veracrypt-with-split-/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

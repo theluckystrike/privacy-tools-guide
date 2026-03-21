@@ -103,7 +103,7 @@ class IdentityGraph:
     def add_identifier(self, identifier, id_type, linked_ids=None):
         node = IdentityNode(identifier, id_type)
         self.nodes[identifier] = node
-        
+
         if linked_ids:
             for linked_id in linked_ids:
                 if linked_id in self.nodes:
@@ -289,12 +289,15 @@ While you cannot completely eliminate yourself from these databases, you can red
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
+
 ## Related Articles
 
 - [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
-- [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [How to Remove Personal Data from Data Brokers](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 - [Best Enterprise Identity Governance Platform for.](/privacy-tools-guide/best-enterprise-identity-governance-platform-for-managing-team-access-reviews-2026/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
 - [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

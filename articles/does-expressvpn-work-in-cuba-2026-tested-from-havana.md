@@ -207,7 +207,6 @@ Plan for intermittent connectivity. While ExpressVPN works in Cuba, you should n
 VPN usage in Cuba exists in a legal gray area. The government technically restricts VPN services, but enforcement against tourists and business travelers appears minimal. We recommend researching current regulations before your trip and using VPNs primarily for legitimate purposes like protecting sensitive communications.
 
 
-
 ## Related Articles
 
 - [Does ExpressVPN Work in Oman? 2026 Latest Tested Results](/privacy-tools-guide/does-expressvpn-work-in-oman-2026-latest-tested-results/)

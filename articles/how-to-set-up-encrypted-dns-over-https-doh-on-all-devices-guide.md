@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide"
+title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices"
 description: "Step-by-step DoH setup: macOS, Windows, Linux, iOS, Android, routers. Provider comparison (Cloudflare, NextDNS, Quad9). Verification steps included"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -476,7 +476,6 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 **Day 4-5:** If you have network access, configure router for network-wide DoH.
 
 **Ongoing:** Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
-
 
 
 ## Related Articles

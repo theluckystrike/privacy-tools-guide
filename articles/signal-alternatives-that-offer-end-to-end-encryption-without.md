@@ -39,7 +39,7 @@ Session builds on the Signal Protocol but adds several privacy layers:
 // 1. Generate identity key pair from seed
 const identityKey = deriveKeyPair(seed, 'identity');
 
-// 2. Generate signing key for message authenticity  
+// 2. Generate signing key for message authenticity
 const signingKey = deriveKeyPair(seed, 'signing');
 
 // 3. Generate encryption key for session establishment
@@ -203,8 +203,6 @@ For developers building privacy-focused applications:
 For end users prioritizing privacy without technical overhead, Session offers the best balance—Signal-level encryption without phone number requirements, with a growing feature set and active development.
 
 All these platforms remain under active development in 2026, with SimpleX and Session seeing the most rapid feature expansion. The choice depends on your specific threat model: whether you prioritize usability, maximum anonymity, or developer integration capabilities.
-
-
 
 
 ## Related Articles

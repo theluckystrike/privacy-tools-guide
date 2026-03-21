@@ -121,7 +121,7 @@ class FingerprintCollector {
   collectWebGL() {
     const canvas = document.createElement('canvas');
     const gl = canvas.getContext('webgl');
-    
+
     if (!gl) {
       this.data.webgl = { error: 'WebGL not supported' };
       return;
@@ -139,10 +139,10 @@ class FingerprintCollector {
   collectCanvas() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    
+
     canvas.width = 200;
     canvas.height = 50;
-    
+
     ctx.textBaseline = 'top';
     ctx.font = '14px Arial';
     ctx.fillStyle = '#f60';
@@ -151,7 +151,7 @@ class FingerprintCollector {
     ctx.fillText('Test', 2, 15);
     ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
     ctx.fillText('Test', 4, 17);
-    
+
     this.data.canvasHash = this.hashCode(canvas.toDataURL());
   }
 
@@ -189,13 +189,13 @@ To calculate an uniqueness score, you need a reference dataset. The simplest app
 function calculateUniquenessScore(yourFingerprint, referenceDataset) {
   let matches = 0;
   const total = referenceDataset.length;
-  
+
   for (const fp of referenceDataset) {
     if (fp.hash === yourFingerprint.hash) {
       matches++;
     }
   }
-  
+
   // Calculate uniqueness as percentage
   // Lower matches = Higher uniqueness
   const uniqueness = ((total - matches) / total) * 100;
@@ -236,7 +236,6 @@ Set `privacy.resistFingerprinting = true` in about:config to normalize many expo
 **Use common screen resolutions** rather than maximizing windows on unusual monitor sizes.
 
 **Limit installed extensions** as they add to your fingerprint.
-
 
 
 ## Related Articles

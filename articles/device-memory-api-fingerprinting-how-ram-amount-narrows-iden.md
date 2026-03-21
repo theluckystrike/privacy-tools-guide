@@ -9,7 +9,7 @@ permalink: /device-memory-api-fingerprinting-how-ram-amount-narrows-iden/
 categories: [guides]
 tags: [privacy-tools-guide, tools, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -36,7 +36,7 @@ The API requires no explicit permission in most browsers, making it immediately 
 // Practical example: adapt content based on device capabilities
 function adjustForDeviceMemory() {
   const memory = navigator.deviceMemory || 4; // Default fallback
-  
+
   if (memory < 1) {
     // Disable animations and heavy graphics
     document.body.classList.add('low-memory-mode');
@@ -66,7 +66,7 @@ function collectFingerprint() {
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     language: navigator.language
   };
-  
+
   return fingerprint;
 }
 
@@ -92,7 +92,7 @@ function getMemoryInfo() {
       isPrecise: false // Always bucketed
     };
   }
-  
+
   return {
     supported: false,
     value: null,
@@ -113,10 +113,10 @@ For privacy tools and extensions, detecting API usage requires monitoring JavaSc
 // Detection script for privacy tools
 (function() {
   const originalDeviceMemory = Object.getOwnPropertyDescriptor(
-    Navigator.prototype, 
+    Navigator.prototype,
     'deviceMemory'
   );
-  
+
   if (originalDeviceMemory) {
     console.log('Device Memory API is accessible');
     console.log('Value:', navigator.deviceMemory);
@@ -346,8 +346,6 @@ if (userConsent.allowHardwareOptimization) {
 ```
 
 This server-side principle means developers should avoid collecting and storing device memory unless absolutely necessary for functionality. If collected, store it separately from user identity information to limit fingerprinting opportunities.
-
-
 
 
 ## Related Articles

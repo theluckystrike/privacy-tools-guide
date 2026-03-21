@@ -893,7 +893,7 @@ All self-hosted options cost ~$19/month for VPS + domain. The choice is about ti
 Start with Mail-in-a-Box. Migrate later if needed (easy process). The hardest part is fighting spam, and all five solutions handle that adequately.
 
 
-## Related Articles
+## Related Reading
 
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 - [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
@@ -901,5 +901,6 @@ Start with Mail-in-a-Box. Migrate later if needed (easy process). The hardest pa
 - [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
 - [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

@@ -56,7 +56,7 @@ fun getRecentSensorAccess(): List<UsageStats> {
     val usageStatsManager = getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
     val endTime = System.currentTimeMillis()
     val startTime = endTime - 3600000 // Last hour
-    
+
     return usageStatsManager.queryUsageStats(
         UsageStatsManager.INTERVAL_DAILY,
         startTime,
@@ -73,7 +73,7 @@ For advanced monitoring, users can create a custom accessibility service that ob
 
 ```kotlin
 class PrivacyMonitorService : AccessibilityService() {
-    
+
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         if (event?.eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             val packageName = event.packageName?.toString()
@@ -81,23 +81,23 @@ class PrivacyMonitorService : AccessibilityService() {
             checkSensorAccess(packageName)
         }
     }
-    
+
     private fun checkSensorAccess(packageName: String?) {
         val appOps = getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager
-        
+
         val cameraMode = appOps.unsafeCheckOpNoThrow(
             AppOpsManager.OPSTR_CAMERA,
             android.os.Process.myUid(),
             packageName
         )
-        
+
         val micMode = appOps.unsafeCheckOpNoThrow(
             AppOpsManager.OPSTR_RECORD_AUDIO,
             android.os.Process.myUid(),
             packageName
         )
-        
-        if (cameraMode == AppOpsManager.MODE_ALLOWED || 
+
+        if (cameraMode == AppOpsManager.MODE_ALLOWED ||
             micMode == AppOpsManager.MODE_ALLOWED) {
             Log.d("PrivacyMonitor", "App $packageName has sensor permissions")
         }
@@ -430,7 +430,6 @@ Future improvements may include:
 - Automatic sensor access recording/logging
 - Real-time detection of unexpected sensor activation
 - Cross-device sensor access coordination (prevent sneaky access on your tablet while you focus on phone)
-
 
 
 ## Related Articles

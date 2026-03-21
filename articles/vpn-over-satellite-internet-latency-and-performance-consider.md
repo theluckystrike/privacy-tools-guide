@@ -242,7 +242,6 @@ done
 ```
 
 
-
 ## Related Articles
 
 - [How To Set Up Satellite Internet As Backup During Government](/privacy-tools-guide/how-to-set-up-satellite-internet-as-backup-during-government/)

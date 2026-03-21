@@ -273,7 +273,6 @@ While TCP is, it doesn't prevent:
 **First-Party Tracking**: Tracking from the website you're actually visiting isn't prevented by TCP. Use privacy settings to minimize first-party data collection.
 
 
-
 ## Related Articles
 
 - [Firefox Strict Tracking Protection Vs Custom](/privacy-tools-guide/firefox-strict-tracking-protection-vs-custom/)

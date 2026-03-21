@@ -214,7 +214,6 @@ Check which accounts have 2FA enabled (and which don't) at `https://2fa.director
 **Not storing backup codes** — Skipping this step is the single most common reason people get locked out of accounts permanently.
 
 
-
 ## Related Articles
 
 - [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)

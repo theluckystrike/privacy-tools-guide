@@ -48,12 +48,12 @@ def process_venue_entry(user_id, venue_id, timestamp):
         "location_coordinates": fetch_gps_coordinates(),
         "device_fingerprint": generate_device_hash()
     }
-    
+
     # Data transmits to multiple backend systems
     transmit_to_health_authority(checkin_data)
     transmit_to_public_security(checkin_data)
     transmit_to_venue_records(checkin_data)
-    
+
     return {"status": "registered", "record_id": generate_record_id()}
 ```
 
@@ -89,7 +89,7 @@ For developers building applications that interact with Chinese infrastructure, 
 
 const analyzeQRData = (qrUrl) => {
   const url = new URL(qrUrl);
-  
+
   // Common parameters that may expose information
   const data = {
     venueId: url.searchParams.get('venueId'),
@@ -97,7 +97,7 @@ const analyzeQRData = (qrUrl) => {
     location: url.searchParams.get('loc'),
     signature: url.searchParams.get('sign')
   };
-  
+
   // Each parameter potentially reveals information
   // to the scanning application and backend systems
   return data;
@@ -317,8 +317,6 @@ For those concerned about movement tracking in any jurisdiction:
 - Support regulations requiring data minimization and purpose limitation
 
 The technical lesson from China's QR system demonstrates how routine convenience can create surveillance infrastructure. Recognizing these patterns helps in evaluating privacy implications of any tracking technology.
-
-
 
 
 ## Related Articles

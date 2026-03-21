@@ -160,18 +160,18 @@ import tempfile
 
 def upload_file(filepath, node_config_path):
     """Upload a file to Tahoe LAFS and return its capability."""
-    
+
     # Initialize uploader with node configuration
     uploader = upload.Uploader(node_config_path)
-    
+
     # Upload the file
     capability = uploader.upload(filepath)
-    
+
     return str(capability)
 
 def download_file(capability, output_path, node_config_path):
     """Download a file from Tahoe LAFS using its capability."""
-    
+
     downloader = upload.Downloader(node_config_path)
     downloader.download(capability, output_path)
 
@@ -247,8 +247,6 @@ Tahoe LAFS excels in scenarios requiring:
 For quick, simple encrypted storage, client-side tools like age or Rclone with encryption may be more practical. For building truly distributed systems where multiple parties share storage infrastructure without mutual trust, Tahoe LAFS remains a powerful choice.
 
 ---
-
-
 
 
 ## Related Articles

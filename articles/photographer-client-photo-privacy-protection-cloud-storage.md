@@ -4,6 +4,7 @@
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -37,6 +38,15 @@
 
 
 
+
+
+
+
+
+
+
+=======
+>>>>>>> 45b44d7ba2f7c521fc959f69b2a2adb979d61eb0
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices"
@@ -75,6 +85,7 @@ author: "Privacy Tools Guide"
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -321,310 +332,18 @@ author: "Privacy Tools Guide"
 
 
 
+
+
+
+
+
+
+
+=======
+>>>>>>> 45b44d7ba2f7c521fc959f69b2a2adb979d61eb0
 categories: [guides]
 intent-checked: true
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # How to Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage
@@ -782,8 +501,6 @@ exiftool photo.jpg | wc -l   # should be near zero meaningful fields
 # For extra assurance: re-encode the image (removes embedded thumbnails too)
 convert photo.jpg -strip cleaned-photo.jpg    # requires ImageMagick
 ```
-
-
 
 
 ## Related Articles

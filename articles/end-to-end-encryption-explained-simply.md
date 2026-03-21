@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /end-to-end-encryption-explained-simply/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
@@ -171,19 +171,19 @@ int main() {
     unsigned char client_publickey[crypto_box_PUBLICKEYBYTES];
     unsigned char client_secretkey[crypto_box_SECRETKEYBYTES];
     crypto_box_keypair(client_publickey, client_secretkey);
-    
+
     // Encrypt a message
     unsigned char nonce[crypto_box_NONCEBYTES];
     unsigned char message[] = "Sensitive data";
     unsigned char ciphertext[sizeof(message) + crypto_box_SEALBYTES];
-    
+
     crypto_box_seal(ciphertext, message, sizeof(message), client_publickey);
-    
+
     // Only the holder of client_secretkey can decrypt
     unsigned char decrypted[sizeof(message)];
-    crypto_box_seal_open(decrypted, ciphertext, sizeof(ciphertext), 
+    crypto_box_seal_open(decrypted, ciphertext, sizeof(ciphertext),
                          client_publickey, client_secretkey);
-    
+
     return 0;
 }
 ```
@@ -338,7 +338,6 @@ When evaluating whether a service provides genuine E2EE:
 5. **Test Yourself**: Can you verify encryption is happening locally on your device?
 
 Many services claim E2EE while implementing weak forms or systems with backdoors. Proper evaluation requires technical knowledge or trust in third-party security audits.
-
 
 
 ## Related Articles

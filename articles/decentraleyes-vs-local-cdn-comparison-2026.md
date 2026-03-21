@@ -185,13 +185,12 @@ For maximum benefit, you can use both strategies simultaneously. Run Decentraley
 ```
 
 
-
 ## Related Articles
 
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
 - [How to Configure VPN Exempt List for Local Network Access](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
-- [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

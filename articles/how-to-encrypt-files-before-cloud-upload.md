@@ -208,14 +208,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Install age
         run: sudo apt install age
-      
+
       - name: Encrypt files
         run: |
           age -r ${{ secrets.PUBLIC_KEY }} -o backup.tar.age backup.tar
-      
+
       - name: Upload to Cloud Storage
         run: |
           # Example: Upload to AWS S3
@@ -240,7 +240,6 @@ For most use cases, age provides the best balance of security and simplicity. If
 - **Strong Passphrases**: Use a password generator. A 20+ character passphrase with high entropy is recommended.
 - **Verify Decryption**: Always test decryption after encrypting critical files.
 - **Secure Deletion**: After encrypting and uploading, securely delete original files using `shred` or similar tools.
-
 
 
 ## Related Articles

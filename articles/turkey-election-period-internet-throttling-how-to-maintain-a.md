@@ -62,13 +62,13 @@ const dohQuery = (domain) => {
       method: 'GET',
       headers: { 'accept': 'application/dns-json' }
     };
-    
+
     const req = https.request(options, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => resolve(JSON.parse(data)));
     });
-    
+
     req.on('error', reject);
     req.end();
   });
@@ -210,7 +210,7 @@ def measure_latency(host, count=10):
                 lat = float(parts[1].split()[0])
                 latencies.append(lat)
         time.sleep(1)
-    
+
     return latencies
 
 # Test baseline and compare
@@ -236,8 +236,6 @@ Before election periods, verify these items:
 Users in Turkey should understand that while technical tools exist, legal risks vary. VPN usage itself is not criminalized, but circumvention tools should be used responsibly. Documentation of censorship (screenshots, logs) can be valuable for advocacy organizations.
 
 For those at higher risk (journalists, activists), the threat model should include device seizure, account compromise, and physical surveillance. In these cases, specialized security training and infrastructure (burner devices, dedicated communication channels) becomes necessary.
-
-
 
 
 ## Related Articles

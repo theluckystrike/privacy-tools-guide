@@ -355,7 +355,7 @@ Consider these tools to improve documentation and reduce manual effort:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
 - [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)

@@ -173,7 +173,6 @@ ip6tables -A FORWARD -i tun+ -p tcp --tcp-flags SYN,RST SYN -m tcpmss --mss 1400
 5. **Test without VPN**: Determine if the problem is VPN-related or network-related
 
 
-
 ## Related Articles
 
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)

@@ -257,7 +257,7 @@ All browsers support the complete WebAuthn API:
 // Standard WebAuthn flow works across all browsers
 async function registerPasskey() {
   const challenge = await getChallengeFromServer();
-  
+
   const credential = await navigator.credentials.create({
     publicKey: {
       challenge: new Uint8Array(challenge),
@@ -277,7 +277,7 @@ async function registerPasskey() {
       }
     }
   });
-  
+
   return credential;
 }
 ```
@@ -336,6 +336,7 @@ All four browsers offer functional passkey support in 2026, but user experience 
 
 The best browser for passkeys ultimately depends on your device ecosystem and priorities. The most important thing is to start using passkeys—they're more secure and often faster than traditional passwords.
 
+
 ## Related Articles
 
 - [Firefox Arkenfox User Js Full Guide](/privacy-tools-guide/firefox-arkenfox-user-js-full-guide/)
@@ -344,5 +345,6 @@ The best browser for passkeys ultimately depends on your device ecosystem and pr
 - [Best Password Manager For Safari Autofill](/privacy-tools-guide/best-password-manager-for-safari-autofill/)
 - [Brave vs Safari Privacy Comparison 2026: A Developer Guide](/privacy-tools-guide/brave-vs-safari-privacy-comparison-2026/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dating-app-api-vulnerabilities-how-security-researchers-have/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
@@ -41,7 +41,7 @@ import requests
 
 def enumerate_profiles(base_url, token, start_id, end_id):
     headers = {"Authorization": f"Bearer {token}"}
-    
+
     for user_id in range(start_id, end_id):
         response = requests.get(
             f"{base_url}/api/v1/profile/{user_id}",
@@ -100,11 +100,11 @@ def fuzz_location(lat, lon, accuracy_km=1):
     """Add random noise to location to protect user privacy"""
     import random
     import math
-    
+
     # Approximate km to degrees
     lat_noise = (random.random() - 0.5) * (accuracy_km / 111)
     lon_noise = (random.random() - 0.5) * (accuracy_km / 111) / math.cos(math.radians(lat))
-    
+
     return round(lat + lat_noise, 6), round(lon + lon_noise, 6)
 ```
 
@@ -164,7 +164,6 @@ While developers bear primary responsibility for security, users can take protec
 - Avoid linking social media accounts to dating profiles
 - Use unique passwords for dating platforms
 - Consider using privacy-focused alternatives or disposable contact information
-
 
 
 ## Related Articles
@@ -448,4 +447,7 @@ Many dating apps now offer bug bounty programs:
 - HackerOne: Tinder, Bumble, Match Group
 - Bugcrowd: Various platforms
 - Direct programs: Check individual app websites
+<<<<<<< HEAD
 {% endraw %}
+=======
+>>>>>>> 7dfbe9776ee6982b14a443661ed2437ee3b7771c

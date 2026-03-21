@@ -107,7 +107,7 @@ def send_emergency_message(message, recipients):
         ttl=5,  # hops
         encryption='aes256'
     )
-    
+
     for recipient in recipients:
         node.send(packet, recipient)
 
@@ -212,7 +212,6 @@ Mesh networking provides resilience but comes with constraints:
 - **Metadata risks**: Even encrypted traffic reveals who communicates with whom
 
 For high-risk scenarios, combining mesh networking with appropriate operational security—limiting communication to essential messages, using dead drops, and rotating devices—reduces exposure.
-
 
 
 ## Related Articles

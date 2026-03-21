@@ -116,7 +116,7 @@ fun requestBackgroundLocation() {
                 enableBackgroundTracking()
             }
         }
-        
+
         backgroundPermissionRequest.launch(
             Manifest.permission.ACCESS_BACKGROUND_LOCATION
         )
@@ -146,7 +146,7 @@ Build features that function without location access. Show appropriate messaging
 ```kotlin
 fun getUserLocation(): LiveData<Location?> {
     val result = MutableLiveData<Location?>()
-    
+
     if (hasLocationPermission()) {
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
             result.value = location
@@ -156,7 +156,7 @@ fun getUserLocation(): LiveData<Location?> {
         result.value = null
         showLocationRequestPrompt()
     }
-    
+
     return result
 }
 ```
@@ -183,7 +183,7 @@ Users frequently deny location permissions. Your app must handle this gracefully
 private fun handleLocationPermissionDenied() {
     val preferences = getSharedPreferences("permission_tracking", MODE_PRIVATE)
     val deniedCount = preferences.getInt("location_denied_count", 0)
-    
+
     when {
         deniedCount >= 2 -> {
             // User has denied multiple times
@@ -227,7 +227,6 @@ Test these scenarios:
 Google Play policies strictly regulate location permissions. Background location access requires a prominent in-app disclosure and is reviewed manually. Avoid requesting background location unless your app's core functionality genuinely depends on it—such as fitness tracking apps, family safety utilities, or delivery services tracking drivers.
 
 Frequent location updates in the background trigger battery drain warnings and potential Play Store warnings. Use geofencing APIs for event-driven location needs instead of continuous polling.
-
 
 
 ## Related Articles

@@ -305,7 +305,6 @@ gocryptfs ~/research-encrypted ~/research-vault
 ```
 
 
-
 ## Related Articles
 
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)

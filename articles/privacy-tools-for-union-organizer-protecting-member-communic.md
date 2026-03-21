@@ -74,7 +74,7 @@ const { Vault, CryptoModule } = require('@cryptomator/core');
 async function createSecureVault(masterPassword, vaultPath) {
   const cryptoModule = new CryptoModule();
   const vault = await Vault.create(vaultPath, masterPassword, cryptoModule);
-  
+
   // Now you can add files that auto-encrypt on write
   await vault.write('member-list.enc', sensitiveData);
   return vault;
@@ -151,13 +151,13 @@ async function resolvePrivacyDNS(hostname) {
     name: hostname,
     type: 'A'
   };
-  
+
   const response = await fetch('https://dns.quad9.net:5053/dns-query', {
     method: 'POST',
     headers: { 'Content-Type': 'application/dns-message' },
     body: encodeDNS(dnsQuery)
   });
-  
+
   return decodeDNS(await response.arrayBuffer());
 }
 ```
@@ -198,7 +198,6 @@ Technical tools work best within a culture of privacy awareness:
 - Minimize data collection to what is strictly necessary
 - Regular security audits of organizing materials
 - Document destruction protocols for sensitive paper materials
-
 
 
 ## Related Articles

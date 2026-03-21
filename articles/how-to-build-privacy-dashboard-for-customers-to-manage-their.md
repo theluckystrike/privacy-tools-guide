@@ -79,7 +79,7 @@ async def get_privacy_settings(current_user = Depends(get_current_user)):
     settings = db.query(UserPrivacySettings).filter(
         UserPrivacySettings.user_id == current_user.id
     ).first()
-    
+
     return {
         "marketing_emails": settings.marketing_emails,
         "analytics_tracking": settings.analytics_tracking,
@@ -97,7 +97,7 @@ async def update_privacy_settings(
     settings = db.query(UserPrivacySettings).filter(
         UserPrivacySettings.user_id == current_user.id
     ).first()
-    
+
     # Record consent history for each change
     for field, value in updates.dict(exclude_unset=True):
         if value is not None:
@@ -107,10 +107,10 @@ async def update_privacy_settings(
                 consent_type=field,
                 granted=value
             )
-    
+
     settings.updated_at = datetime.utcnow()
     db.commit()
-    
+
     return {"status": "updated", "updated_at": settings.updated_at.isoformat()}
 
 @app.get("/api/v1/privacy/data-export")
@@ -122,7 +122,7 @@ async def request_data_export(current_user = Depends(get_current_user)):
         "privacy_settings": get_privacy_settings(current_user.id),
         "consent_history": get_consent_history(current_user.id)
     }
-    
+
     # In production, generate async and email the file
     return {
         "export_id": str(uuid.uuid4()),
@@ -159,7 +159,7 @@ function PrivacyDashboard({ userId }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ [setting]: value })
     });
-    
+
     if (response.ok) {
       setSettings(prev => ({ ...prev, [setting]: value }));
     }
@@ -178,10 +178,10 @@ function PrivacyDashboard({ userId }) {
   return (
     <div className="privacy-dashboard">
       <h2>Privacy Settings</h2>
-      
+
       <section className="preferences">
         <h3>Communication Preferences</h3>
-        
+
         <label className="toggle-setting">
           <span>Marketing Emails</span>
           <input
@@ -190,7 +190,7 @@ function PrivacyDashboard({ userId }) {
             onChange={(e) => handleToggle('marketing_emails', e.target.checked)}
           />
         </label>
-        
+
         <label className="toggle-setting">
           <span>Analytics & Improvement</span>
           <input
@@ -199,7 +199,7 @@ function PrivacyDashboard({ userId }) {
             onChange={(e) => handleToggle('analytics_tracking', e.target.checked)}
           />
         </label>
-        
+
         <label className="toggle-setting">
           <span>Third-Party Data Sharing</span>
           <input
@@ -212,17 +212,17 @@ function PrivacyDashboard({ userId }) {
 
       <section className="data-rights">
         <h3>Your Data Rights</h3>
-        
+
         <button onClick={requestExport} className="btn-secondary">
           Download Your Data
         </button>
-        
+
         {exportStatus && (
           <div className="export-status">
             Export ready: {exportStatus.generated_at}
           </div>
         )}
-        
+
         <button className="btn-danger">
           Delete My Account
         </button>
@@ -247,24 +247,24 @@ def delete_user_data(user_id: str):
     """Asynchronous deletion of all user data"""
     # 1. Anonymize rather than delete for analytics
     anonymize_user_data(user_id)
-    
+
     # 2. Delete from primary database
     db.query(User).filter(User.id == user_id).delete()
-    
+
     # 3. Delete from auth system
     auth_service.delete_user(user_id)
-    
+
     # 4. Remove from third-party integrations
     analytics_service.delete_user(user_id)
     email_service.unsubscribe(user_id)
-    
+
     # 5. Log deletion for audit
     log_audit_event(
         event_type='account_deletion',
         user_id=user_id,
         completed_at=datetime.utcnow()
     )
-    
+
     return {"status": "deleted", "user_id": user_id}
 ```
 
@@ -299,22 +299,22 @@ class RateLimiter:
     def __init__(self):
         self._locks = defaultdict(threading.Lock)
         self._request_counts = defaultdict(list)
-    
-    def check_rate_limit(self, user_id: str, action: str, 
+
+    def check_rate_limit(self, user_id: str, action: str,
                          max_requests: int, window_seconds: int) -> bool:
         key = f"{user_id}:{action}"
         now = datetime.utcnow()
         cutoff = now - timedelta(seconds=window_seconds)
-        
+
         with self._locks[key]:
             # Remove requests outside window
             self._request_counts[key] = [
                 t for t in self._request_counts[key] if t > cutoff
             ]
-            
+
             if len(self._request_counts[key]) >= max_requests:
                 return False
-            
+
             self._request_counts[key].append(now)
             return True
 
@@ -357,23 +357,23 @@ class DeletionConfirmationService:
     def initiate_deletion(self, user_id: str, user_email: str) -> str:
         token = secrets.token_urlsafe(32)
         expires_at = datetime.utcnow() + timedelta(hours=24)
-        
+
         # Store token with expiry
         self._store_deletion_token(user_id, token, expires_at)
-        
+
         # Email user with confirmation link
         self._send_confirmation_email(
             user_email,
             confirmation_url=f"https://app.example.com/confirm-deletion?token={token}"
         )
-        
+
         return token
-    
+
     def confirm_deletion(self, token: str) -> bool:
         record = self._fetch_deletion_token(token)
         if not record or datetime.utcnow() > record['expires_at']:
             return False
-        
+
         # Proceed with actual deletion
         self._queue_deletion(record['user_id'])
         self._invalidate_token(token)
@@ -466,8 +466,6 @@ Review privacy event logs weekly during the first month after launch. Establish 
 
 
 ---
-
-
 
 
 ## Related Articles

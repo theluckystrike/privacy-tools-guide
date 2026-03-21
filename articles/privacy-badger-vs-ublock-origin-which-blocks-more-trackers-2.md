@@ -32,11 +32,11 @@ function analyzeThirdPartyRequest(domain, firstParty) {
   const cookieSet = checkCookieSetting(domain);
   const referrerTracking = checkReferrerLeak(domain);
   const fingerprinting = checkCanvasFingerprinting(domain);
-  
+
   if (cookieSet || referrerTracking || fingerprinting) {
     incrementTrackerScore(domain);
   }
-  
+
   if (getTrackerScore(domain) > THRESHOLD) {
     blockDomain(domain);
   }
@@ -441,7 +441,6 @@ Potential conflicts:
 ```
 
 To manage conflicts, configure Privacy Badger to operate in "learning" mode only, letting uBlock Origin handle blocking.
-
 
 
 ## Related Articles

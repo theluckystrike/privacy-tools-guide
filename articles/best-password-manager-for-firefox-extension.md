@@ -368,7 +368,6 @@ Choose your password manager based on:
 No single password manager is perfect for all use cases. Evaluate your specific workflow—do you need CLI access? Do you work offline frequently? Do you need family sharing? Does cost matter significantly? Answer these questions first, then match to the best option.
 
 
-
 ## Related Articles
 
 - [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)

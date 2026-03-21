@@ -245,7 +245,6 @@ If you determine your webcam has been compromised:
 7. **Enable two-factor authentication** on all critical accounts
 
 
-
 ## Related Articles
 
 - [How To Tell If Your Email Account Was Hacked Right Now](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)

@@ -132,15 +132,15 @@ def sanitize_email_headers(msg):
         'X-MS-Has-Attach',
         'X-MS-TNEF-Correlator'
     ]
-    
+
     for header in remove_headers:
         if header in msg:
             del msg[header]
-    
+
     # Set generic headers
     msg['Date'] = email.utils.formatdate(time.time(), usegmt=True)
     msg['Message-ID'] = f"<{os.urandom(16).hex()}@anonymous.local>"
-    
+
     return msg
 ```
 
@@ -213,7 +213,6 @@ Your setup works when:
 - No WebRTC leaks exist
 - Email headers don't reveal your IP
 - Encryption successfully locks message content
-
 
 
 ## Related Articles

@@ -178,7 +178,6 @@ For developers and power users, the choice depends on your workflow:
 - Want modern encryption with simple UX
 
 
-
 ## Related Articles
 
 - [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)

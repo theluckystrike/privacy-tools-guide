@@ -40,13 +40,13 @@ class Pseudonymizer:
     def __init__(self, secret_key: str):
         self.secret = secret_key.encode()
         self.token_map = {}
-    
+
     def pseudonymize(self, email: str) -> str:
         if email not in self.token_map:
             token = secrets.token_urlsafe(16)
             self.token_map[email] = token
         return self.token_map[email]
-    
+
     def hash_pseudonymize(self, email: str) -> str:
         return hashlib.pbkdf2_hmac(
             'sha256',
@@ -314,14 +314,13 @@ Document your technique choice for GDPR Article 30 records of processing:
 ```
 
 
-
 ## Related Articles
 
 - [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
 - [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Ccpa Vs Gdpr Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
+- [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

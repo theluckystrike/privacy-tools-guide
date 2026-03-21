@@ -178,7 +178,6 @@ Regularly delete chat history and avoid backing up WeChat data to cloud services
 For sensitive communications, Signal, Telegram (with caution), or other encrypted messaging platforms offer better privacy protections.
 
 
-
 ## Related Articles
 
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)

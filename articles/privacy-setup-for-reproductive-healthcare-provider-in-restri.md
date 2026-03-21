@@ -45,7 +45,7 @@ ssl_key_file = '/path/to/server.key'
 CREATE EXTENSION pgcrypto;
 
 -- Encrypt sensitive columns
-UPDATE patients 
+UPDATE patients
 SET sensitive_data = pgp_sym_encrypt(data, 'your-key')
 WHERE sensitive_data IS NOT NULL;
 ```
@@ -63,12 +63,12 @@ const patientRecord = {
   medical_record_number: generateUUID(),
   date_of_birth: null, // Store age range only if possible
   gestational_age: required,
-  
+
   // Avoid collecting
   // - Full address (use ZIP code only)
   // - Employer information
   // - Emergency contact details that could be shared
-  
+
   // Required but encrypted
   clinical_notes: encrypt(gpg, patient.clinical_notes),
 };
@@ -89,16 +89,16 @@ from signal_protocol import Curve, Session, PreKey
 def create_patient_session(patient_phone):
     """Create an encrypted session for patient communications"""
     identity_key_pair = Curve.generate_identity_key_pair()
-    
+
     # Generate pre-keys for asynchronous key exchange
     pre_keys = [Curve.generate_pre_key() for _ in range(100)]
-    
+
     # Create signed pre-key for key exchange
     signed_pre_key = Curve.generate_signed_pre_key(
         identity_key_pair.private_key,
         int(time.time())
     )
-    
+
     return SessionBuilder(
         recipient_id=patient_phone,
         identity_key=identity_key_pair,
@@ -244,8 +244,6 @@ Technical tools require consistent operational practices:
 No single implementation provides complete protection. The goal is raising the cost of data access beyond what most adversaries can sustain while maintaining the ability to provide essential healthcare services.
 
 ---
-
-
 
 
 ## Related Articles

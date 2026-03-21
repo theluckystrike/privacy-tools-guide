@@ -53,39 +53,39 @@ class Subscriber:
 class ConsentManager:
     def __init__(self, db_connection):
         self.db = db_connection
-    
-    def create_pending_subscription(self, email: str, ip_address: str, 
+
+    def create_pending_subscription(self, email: str, ip_address: str,
                                      consent_text: str) -> str:
         """Create a pending subscription requiring confirmation."""
         token = secrets.token_urlsafe(32)
-        
+
         # Hash email for storage (PII protection)
         email_hash = hashlib.sha256(email.encode()).hexdigest()
-        
+
         self.db.execute("""
-            INSERT INTO consent_records 
-            (email_hash, ip_address, consent_text, consent_timestamp, 
+            INSERT INTO consent_records
+            (email_hash, ip_address, consent_text, consent_timestamp,
              confirmation_token, status)
             VALUES (?, ?, ?, ?, ?, 'pending')
-        """, (email_hash, ip_address, consent_text, 
+        """, (email_hash, ip_address, consent_text,
               datetime.utcnow().isoformat(), token))
-        
+
         # Send confirmation email
         confirmation_link = f"https://yoursite.com/confirm?token={token}"
         self.send_confirmation_email(email, confirmation_link)
-        
+
         return token
-    
+
     def confirm_subscription(self, token: str) -> bool:
         """Process confirmation link and update consent status."""
         result = self.db.execute("""
-            UPDATE consent_records 
+            UPDATE consent_records
             SET status = 'confirmed',
                 confirmed_at = ?
-            WHERE confirmation_token = ? 
+            WHERE confirmation_token = ?
             AND status = 'pending'
         """, (datetime.utcnow().isoformat(), token))
-        
+
         return result.rowcount > 0
 ```
 
@@ -114,8 +114,8 @@ Regulators may request proof of your consent practices. Maintain an audit trail:
 class ConsentAuditLog:
     def __init__(self, storage_client):
         self.storage = storage_client
-    
-    def log_consent_event(self, event_type: str, email_hash: str, 
+
+    def log_consent_event(self, event_type: str, email_hash: str,
                           metadata: dict):
         """Log all consent-related events for compliance."""
         event = {
@@ -125,15 +125,15 @@ class ConsentAuditLog:
             "metadata": metadata,
             # Immutable - append only
         }
-        
+
         # Append to immutable log (e.g., WORM storage)
         self.storage.append("consent_audit.log", event)
-    
+
     def generate_compliance_report(self, email_hash: str) -> dict:
         """Generate consent history for a specific user."""
         events = self.storage.read("consent_audit.log")
         user_events = [e for e in events if e["email_hash"] == email_hash]
-        
+
         return {
             "email_hash": email_hash,
             "consent_history": user_events,
@@ -150,30 +150,30 @@ class DataSubjectRequestHandler:
     def handle_deletion_request(self, email: str) -> dict:
         """Handle GDPR Article 17 - Right to Erasure."""
         email_hash = hashlib.sha256(email.encode()).hexdigest()
-        
+
         # Delete from all systems
-        tables = ['subscribers', 'consent_records', 'email_events', 
+        tables = ['subscribers', 'consent_records', 'email_events',
                   'analytics', 'third_party_data']
-        
+
         for table in tables:
             self.db.execute(
                 f"DELETE FROM {table} WHERE email_hash = ?",
                 (email_hash,)
             )
-        
+
         # Log the deletion for audit purposes
         self.audit_log.log_consent_event(
             "data_deletion",
             email_hash,
             {"request_type": "erasure", "completed_at": datetime.utcnow()}
         )
-        
+
         return {"status": "deleted", "email_hash": email_hash}
-    
+
     def handle_access_request(self, email: str) -> dict:
         """Handle GDPR Article 15 - Right of Access."""
         email_hash = hashlib.sha256(email.encode()).hexdigest()
-        
+
         # Gather all data about this user
         data = {
             "consent_records": self.db.query(
@@ -186,7 +186,7 @@ class DataSubjectRequestHandler:
             ),
             "exported_at": datetime.utcnow().isoformat()
         }
-        
+
         return data
 ```
 
@@ -200,13 +200,13 @@ Remove unengaged subscribers after 12–18 months, remove hard bounces immediate
 def cleanup_inactive_subscribers(db, days_inactive: int = 547):
     """Remove subscribers who haven't engaged in 18 months."""
     cutoff_date = datetime.utcnow() - timedelta(days=days_inactive)
-    
+
     result = db.execute("""
-        DELETE FROM subscribers 
+        DELETE FROM subscribers
         WHERE last_engagement_at < ?
         AND status = 'unsubscribed'
     """, (cutoff_date,))
-    
+
     return result.rowcount
 ```
 
@@ -241,8 +241,6 @@ Before launching your email marketing system, verify:
 - [ ] Data retention policy defined
 
 Proper consent management, audit logging, and automated data subject request handling build systems that satisfy regulators while respecting user privacy. The technical investment upfront prevents costly compliance failures later.
-
-
 
 
 ## Related Articles

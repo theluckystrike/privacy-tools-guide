@@ -95,11 +95,11 @@ async function fetchDigilockerDocument(accessToken, docId) {
       'Accept': 'application/pdf'
     }
   });
-  
+
   if (!response.ok) {
     throw new Error('Failed to fetch document: ' + response.status);
   }
-  
+
   return await response.blob();
 }
 ```
@@ -132,7 +132,7 @@ The OAuth-based permission system allows numerous third-party applications to re
 
 # Scope examples:
 # - "documents:read" - Access to all stored documents
-# - "profile:read" - Basic profile information  
+# - "profile:read" - Basic profile information
 # - "eid:read" - Electronic ID access
 ```
 
@@ -267,7 +267,6 @@ If you're currently using DigiLocker, perform this audit:
 5. **Check permissions**: Review all third-party app permissions and revoke unnecessary access
 6. **Monitor access**: If possible, review access logs for suspicious patterns
 7. **Plan alternatives**: Establish alternative systems for document storage (encrypted cloud, external drives)
-
 
 
 ## Related Articles

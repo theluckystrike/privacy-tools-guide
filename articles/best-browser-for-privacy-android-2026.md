@@ -109,7 +109,7 @@ function testCanvasFingerprinting() {
   canvas.width = 200;
   canvas.height = 50;
   const ctx = canvas.getContext('2d');
-  
+
   // Draw various elements that contribute to fingerprinting
   ctx.fillStyle = '#f0f0f0';
   ctx.fillRect(0, 0, 200, 50);
@@ -119,7 +119,7 @@ function testCanvasFingerprinting() {
   ctx.beginPath();
   ctx.arc(100, 25, 20, 0, 2 * Math.PI);
   ctx.stroke();
-  
+
   const dataUrl = canvas.toDataURL();
   return dataUrl.length; // Stable fingerprints have consistent lengths
 }
@@ -129,13 +129,13 @@ function testWebGLFingerprinting() {
   const canvas = document.createElement('canvas');
   const gl = canvas.getContext('webgl');
   if (!gl) return 'WebGL not available';
-  
+
   const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
   if (!debugInfo) return 'Debug info not available';
-  
+
   const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
   const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-  
+
   return { vendor, renderer };
 }
 
@@ -176,8 +176,6 @@ Select based on your workflow requirements:
 All options above provide substantial privacy improvements over default Android browsers. The key is configuring your chosen browser to match your threat model—whether that's blocking ad trackers, resisting fingerprinting, or encrypting all DNS queries.
 
 Test each option with your development workflows before committing. Privacy tools should enhance your productivity, not hinder it.
-
-
 
 
 ## Related Articles

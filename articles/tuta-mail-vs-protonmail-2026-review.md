@@ -119,13 +119,13 @@ For developers building applications that handle sensitive data, understanding h
 // Simplified ProtonMail encryption concept
 async function encryptEmail(plaintext, recipientPublicKey) {
   const sessionKey = await crypto.randomBytes(32);
-  
+
   // Encrypt message with session key (AES)
   const encryptedMessage = await aesEncrypt(plaintext, sessionKey);
-  
+
   // Encrypt session key with recipient's RSA public key
   const encryptedSessionKey = await rsaEncrypt(sessionKey, recipientPublicKey);
-  
+
   return {
     encryptedMessage,
     encryptedSessionKey
@@ -202,8 +202,6 @@ Regardless of your choice, maintain good security practices. Enable two-factor a
 ```
 
 ---
-
-
 
 
 ## Related Articles

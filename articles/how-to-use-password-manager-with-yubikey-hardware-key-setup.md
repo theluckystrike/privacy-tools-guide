@@ -211,7 +211,6 @@ op item create --category login   --generate-password=words,5,separator=-
 Five EFF words yield ~64 bits of entropy — equivalent to a 12-character random string, but far easier to type on mobile.
 
 
-
 ## Related Articles
 
 - [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)

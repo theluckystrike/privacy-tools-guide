@@ -470,7 +470,6 @@ echo "Post-search findings: [any suspicious changes]" >> border_travel_log.txt
 ```
 
 
-
 ## Related Articles
 
 - [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)

@@ -304,8 +304,6 @@ If repeated abuse occurs, document everything for potential legal claims:
 
 This documentation becomes valuable if you need to file a report with law enforcement or pursue civil action against the abuser or negligent service provider.
 
-## Related Services for Account Monitoring
-
 Several commercial services can monitor for unauthorized account creation on your behalf:
 
 | Service | Cost | Features |
@@ -318,14 +316,13 @@ Several commercial services can monitor for unauthorized account creation on you
 These services proactively monitor for fraudulent account creation across major platforms.
 
 
-
 ## Related Articles
 
-- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
 - [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
 - [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
+- [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

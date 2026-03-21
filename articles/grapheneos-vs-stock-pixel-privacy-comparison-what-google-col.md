@@ -206,7 +206,7 @@ For those building privacy-conscious applications or evaluating mobile security 
 *
 
 
-## Related Articles
+## Related Reading
 
 - [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)

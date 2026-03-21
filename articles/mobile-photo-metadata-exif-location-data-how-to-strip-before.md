@@ -59,10 +59,10 @@ from PIL.ExifTags import TAGS, GPSTAGS
 def get_exif_data(image_path):
     image = Image.open(image_path)
     exif_data = image._getexif()
-    
+
     if not exif_data:
         return {}
-    
+
     gps_info = {}
     for tag, value in exif_data.items():
         tag_name = TAGS.get(tag, tag)
@@ -70,7 +70,7 @@ def get_exif_data(image_path):
             for gps_tag in value:
                 gps_tag_name = GPSTAGS.get(gps_tag, gps_tag)
                 gps_info[gps_tag_name] = value[gps_tag]
-    
+
     return gps_info
 
 gps_data = get_exif_data("photo.jpg")
@@ -122,16 +122,16 @@ import os
 
 def strip_exif(input_path, output_path=None):
     image = Image.open(input_path)
-    
+
     # Create a new image without EXIF data
     data = list(image.getdata())
     clean_image = Image.new(image.mode, image.size)
     clean_image.putdata(data)
-    
+
     # Save without EXIF
     if output_path is None:
         output_path = input_path
-    
+
     clean_image.save(output_path, image.format)
     print(f"Stripped EXIF from {input_path}")
 
@@ -150,16 +150,16 @@ def strip_exif_efficient(input_path, output_path=None):
     with Image.open(input_path) as image:
         # Correct orientation based on EXIF
         image = ImageOps.exif_transpose(image)
-        
+
         # Save without metadata
         if output_path is None:
             output_path = input_path
-        
+
         # Preserve format and quality
         save_kwargs = {}
         if image.format == "JPEG":
             save_kwargs["quality"] = 95
-        
+
         image.save(output_path, **save_kwargs)
 ```
 
@@ -174,7 +174,7 @@ import androidx.exifinterface.media.ExifInterface
 
 fun removeExifFromFile(filePath: String) {
     val exif = ExifInterface(filePath)
-    
+
     // Clear all GPS-related tags
     exif.setAttribute(ExifInterface.TAG_GPS_LATITUDE, null)
     exif.setAttribute(ExifInterface.TAG_GPS_LONGITUDE, null)
@@ -182,7 +182,7 @@ fun removeExifFromFile(filePath: String) {
     exif.setAttribute(ExifInterface.TAG_GPS_LONGITUDE_REF, null)
     exif.setAttribute(ExifInterface.TAG_GPS_ALTITUDE, null)
     exif.setAttribute(ExifInterface.TAG_GPS_ALTITUDE_REF, null)
-    
+
     exif.saveAttributes()
 }
 ```
@@ -204,14 +204,14 @@ func stripEXIF(from url: URL) -> Data? {
           let destination = CGImageDestinationCreateWithData(mutableData, uti, 1, nil) else {
         return nil
     }
-    
+
     let removeProperties: [CFString: Any] = [
         kCGImageDestinationLossyCompressionQuality: 1.0
     ]
-    
+
     CGImageDestinationAddImageFromSource(destination, source, 0, removeProperties as CFDictionary)
     CGImageDestinationFinalize(destination)
-    
+
     return mutableData as Data
 }
 ```
@@ -270,12 +270,11 @@ alias strip-gps='exiftool -gps:all= -overwrite_original'
 This allows quick GPS removal from the current directory with a single command.
 
 
-
 ## Related Articles
 
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
-- [How to Remove EXIF Metadata from Photos Before Sharing: Complete Guide](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
+- [How to Remove EXIF Metadata from Photos Before Sharing](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 

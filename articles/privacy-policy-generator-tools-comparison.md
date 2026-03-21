@@ -125,16 +125,16 @@ Shopbox's approach to privacy policy templates demonstrates a modular design pat
 
 ```javascript
 const policySections = {
-  introduction: (company, website) => 
+  introduction: (company, website) =>
     `This privacy policy describes how ${company} collects and uses information from users of ${website}.`,
-  
-  dataCollection: (dataTypes) => 
+
+  dataCollection: (dataTypes) =>
     `We collect the following types of information: ${dataTypes.join(', ')}.`,
-  
+
   cookies: (cookieList) =>
-    `Our website uses cookies to improve your experience.${cookieList.length > 0 ? 
+    `Our website uses cookies to improve your experience.${cookieList.length > 0 ?
     ' Specifically, we use cookies for: ' + cookieList.join(', ') + '.' : ''}`,
-  
+
   userRights: (jurisdiction) => {
     if (jurisdiction === 'EU') {
       return 'Under GDPR, you have rights to access, correct, delete, and port your data.';
@@ -174,9 +174,6 @@ For startups and small projects, the open-source approach provides the best bala
 For larger applications requiring ongoing compliance, API-driven services handle regulatory updates automatically. The subscription cost is justified when you consider the time saved on legal language maintenance.
 
 For agencies managing multiple client projects, look for tools that support multi-tenant configurations or white-label options.
-
-
-
 
 
 ## Related Articles

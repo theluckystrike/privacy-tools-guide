@@ -266,7 +266,6 @@ sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db \
 Save as `tcc-audit.sh`, make executable, and run periodically to track permission changes and identify new high-risk grants.
 
 
-
 ## Related Articles
 
 - [Macos Privacy Permissions Manager Guide 2026](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)

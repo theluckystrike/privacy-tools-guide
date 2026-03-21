@@ -86,14 +86,14 @@ async function queryDoH(domain) {
     0x00, 0x00, // Answer RRs: 0
     0x00, 0x00, // Additional RRs: 0
   ]);
-  
+
   // Add domain name in DNS format
   const domainParts = domain.split('.');
   for (const part of domainParts) {
     dnsQuery.push(part.length, ...part.charCodeAt(0));
   }
   dnsQuery.push(0x00, 0x00, 0x01, 0x00, 0x01);
-  
+
   return new Promise((resolve, reject) => {
     const req = https.request({
       hostname: 'cloudflare-dns.com',
@@ -142,8 +142,8 @@ headers = {
 }
 
 # This technique requires a running proxy that handles domain fronting
-response = requests.get('https://1.1.1.1/cdn-cgi/trace', 
-                        headers=headers, 
+response = requests.get('https://1.1.1.1/cdn-cgi/trace',
+                        headers=headers,
                         proxies=proxies)
 ```
 
@@ -172,7 +172,7 @@ async def fetch_with_fallback(url, timeout=5):
             'curl', '-s', url, stdout=asyncio.subprocess.PIPE
         ), timeout=timeout),
     ]
-    
+
     for method in methods:
         try:
             proc = await method()
@@ -180,7 +180,7 @@ async def fetch_with_fallback(url, timeout=5):
             return stdout.decode()
         except:
             continue
-    
+
     raise Exception("All connection methods failed")
 ```
 
@@ -210,8 +210,6 @@ When implementing circumvention strategies, consider these technical constraints
 Understanding Iran's smart filtering infrastructure is the first step toward building systems that can operate in restrictive network environments. The techniques described here represent current approaches, but filtering technology continues to evolve. Developers should stay informed about both detection and evasion methods to maintain operational security in changing conditions.
 
 ---
-
-
 
 
 ## Related Articles

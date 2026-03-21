@@ -144,7 +144,7 @@ async function joinAudience() {
     auctionSignals: {},
     perBuyerSignals: {}
   };
-  
+
   await navigator.joinAdInterestGroup({
     name: 'custom-audience-1',
     owner: 'https://advertiser.com',
@@ -214,8 +214,6 @@ For developers, the practical guidance remains:
 The story of FLoC demonstrates how difficult it is to balance advertising business models with user privacy. While the Topics API represents an improvement over the original FLoC design, it continues to face scrutiny. Developers should stay informed about developments in this space and prioritize building trust with users through transparency and respect for their privacy choices.
 
 ---
-
-
 
 
 ## Related Articles

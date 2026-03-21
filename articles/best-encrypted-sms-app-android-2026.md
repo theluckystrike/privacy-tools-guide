@@ -50,7 +50,7 @@ class SignalClient(private val context: Context) {
         SessionStore(context),
         SignedPreKeyStore(context)
     )
-    
+
     fun initializeRegistration() {
         val registration = RegistrationManager.getInstance()
         registration.registerPushToken(
@@ -97,8 +97,8 @@ Telegram's encryption model differs significantly. Default chats are server-side
 from telethon import TelegramClient
 
 client = TelegramClient(
-    session_name, 
-    api_id=YOUR_API_ID, 
+    session_name,
+    api_id=YOUR_API_ID,
     api_hash=YOUR_API_HASH
 )
 
@@ -168,20 +168,19 @@ For custom implementations, consider these Android security configurations:
     <application
         android:allowBackup="false"
         android:hardwareAccelerated="false">
-        
-        <activity 
+
+        <activity
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"
             android:windowSoftInputMode="adjustResize" />
     </application>
-    
+
     <!-- Biometric authentication -->
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 </manifest>
 ```
 
 Signal provides an Android Service Library for developers integrating secure messaging into custom applications. The library handles key management, session establishment, and message encryption.
-
 
 
 ## Related Articles

@@ -175,7 +175,7 @@ Before relying on hardware token authentication in production, verify the setup 
 
 ```bash
 # Test OpenVPN connection with hardware token
-sudo openvpn --config client.ovpn --pkcs11-id 'YubiKey/...' 
+sudo openvpn --config client.ovpn --pkcs11-id 'YubiKey/...'
 
 # Check authentication logs
 journalctl -u openvpn -f
@@ -205,7 +205,6 @@ Hardware tokens create a single point of failure if not properly backed up. Impl
 - **Maintain fallback**: Keep a secondary authentication method (like an authenticator app) as emergency backup
 
 Organizations should document their hardware token deployment and establish procedures for token loss or failure scenarios.
-
 
 
 ## Related Articles

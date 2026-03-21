@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Fingerprinting How It Works and How to Prevent It Guide"
+title: "Browser Fingerprinting How It Works and How to Prevent It"
 description: "Technical deep-dive on browser fingerprinting. Covers canvas, WebGL, audio context, font enumeration. Includes detection tools and countermeasures"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -447,7 +447,6 @@ Good results:
 - WebGL shows "blocked"
 - WebRTC shows no local IP leak
 - Sites you care about still work
-
 
 
 ## Related Articles

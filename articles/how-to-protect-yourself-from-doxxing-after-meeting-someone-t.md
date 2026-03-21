@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Protect Yourself from Doxxing After Meeting Someone Through Online Dating Platforms"
+title: "Protect Yourself from Doxxing After Meeting Someone Through"
 description: "A practical security guide for developers and power users on protecting your personal information after meeting someone through online dating"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -116,16 +116,16 @@ import sys
 def strip_exif(input_path, output_path=None):
     """Remove all EXIF data from an image."""
     img = Image.open(input_path)
-    
+
     # Create a new image without EXIF data
     data = list(img.getdata())
     img_without_exif = Image.new(img.mode, img.size)
     img_without_exif.putdata(data)
-    
+
     if output_path is None:
         base, ext = os.path.splitext(input_path)
         output_path = f"{base}_clean{ext}"
-    
+
     img_without_exif.save(output_path)
     print(f"Saved cleaned image to: {output_path}")
 
@@ -199,14 +199,13 @@ If despite your precautions, you experience doxxing, act quickly:
 5. **Change exposed information**: Update phone numbers, emails, and addresses if necessary
 
 
-
 ## Related Articles
 
 - [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
 - [How To Protect Your Zoom Meeting From Zoom Bombing Security](/privacy-tools-guide/how-to-protect-your-zoom-meeting-from-zoom-bombing-security/)
-- [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
 - [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Protect Yourself from Credential Stuffing Attack](/privacy-tools-guide/how-to-protect-yourself-from-credential-stuffing-attack-pass/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

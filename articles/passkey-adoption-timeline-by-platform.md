@@ -97,7 +97,7 @@ async function registerPasskey() {
   const credential = await navigator.credentials.create({
     publicKey
   });
-  
+
   return credential;
 }
 ```
@@ -138,7 +138,7 @@ if (window.PublicKeyCredential &&
   const publicKey = {
     // ... standard WebAuthn options
   };
-  
+
   const credential = await navigator.credentials.get({
     publicKey,
     mediation: "conditional"
@@ -170,8 +170,6 @@ The passkey ecosystem continues evolving. Upcoming developments include:
 - Deeper integration with password managers across platforms
 
 For developers, the message is clear: passkey implementation is no longer experimental. Major platforms have stabilized their APIs, and user expectations around passwordless authentication continue rising. The timeline for adoption has passed—now is the time for implementation.
-
-
 
 
 ## Related Articles

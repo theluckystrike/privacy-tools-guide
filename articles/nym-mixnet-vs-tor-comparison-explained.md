@@ -163,18 +163,17 @@ For developers building privacy applications:
    ```javascript
    // JavaScript/TypeScript Nym SDK
    import { createNym } from '@nymproject/sdk';
-   
+
    const nym = await createNym({
        clientId: 'my-app',
        sockxUrl: 'https://sockx.hop,io:1979'
    });
-   
+
    await nym.connect();
    nym.sendMessage({ payload: 'encrypted-data' });
    ```
 
 Both systems require careful configuration and understanding of their threat models. Neither provides perfect anonymity, but each addresses different aspects of privacy.
-
 
 
 ## Related Articles

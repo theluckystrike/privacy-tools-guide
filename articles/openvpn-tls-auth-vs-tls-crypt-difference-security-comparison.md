@@ -424,7 +424,6 @@ verb 3
 ```
 
 
-
 ## Related Articles
 
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)

@@ -239,7 +239,6 @@ Write these into a team security policy document:
 - Production credentials are never on developer laptops (use a secrets manager for CI/CD)
 
 
-
 ## Related Articles
 
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)

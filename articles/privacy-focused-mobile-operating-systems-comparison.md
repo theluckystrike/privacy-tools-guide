@@ -851,7 +851,7 @@ Start with LineageOS on a used phone. If you need better privacy, migrate to Cal
 Each step is optional; you can stop when you reach your privacy/usability sweet spot.
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 - [Mobile App Store Privacy Labels How To Read And Compare Befo](/privacy-tools-guide/mobile-app-store-privacy-labels-how-to-read-and-compare-befo/)
@@ -859,5 +859,6 @@ Each step is optional; you can stop when you reach your privacy/usability sweet 
 - [Mobile Keyboard Privacy: Which Keyboards Send Keystrokes.](/privacy-tools-guide/mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/)
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

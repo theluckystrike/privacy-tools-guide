@@ -75,8 +75,8 @@ for (CellInfo cellInfo : cellInfoList) {
         int pci = cellInfoLte.getCellIdentity().getPci();
         int tac = cellInfoLte.getCellIdentity().getTac();
         int signalStrength = cellInfoLte.getCellSignalStrength().getDbm();
-        
-        Log.d("CellInfo", "PCI: " + pci + ", TAC: " + tac + 
+
+        Log.d("CellInfo", "PCI: " + pci + ", TAC: " + tac +
               ", Signal: " + signalStrength + " dBm");
     }
 }
@@ -356,8 +356,6 @@ If you detect IMSI catcher activity, follow these steps:
 The goal of detection is not necessarily to catch attackers, but to modify behavior in response to likely targeting.
 
 ---
-
-
 
 
 ## Related Articles

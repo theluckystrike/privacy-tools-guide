@@ -29,9 +29,9 @@ async function listMediaDevices() {
   try {
     // Request permission first (required in most browsers)
     await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-    
+
     const devices = await navigator.mediaDevices.enumerateDevices();
-    
+
     devices.forEach(device => {
       console.log('Device Kind:', device.kind);
       console.log('Device Label:', device.label);
@@ -135,10 +135,10 @@ async function requestMediaAccess() {
     video: { width: { ideal: 1280 }, height: { ideal: 720 } },
     audio: { echoCancellation: true, noiseSuppression: true }
   });
-  
+
   // Don't store device IDs for tracking purposes
   // Process streams locally without sending identifiers to servers
-  
+
   return stream;
 }
 ```
@@ -277,8 +277,6 @@ A third-party analytics script on multiple websites collects device info. The sc
 Even without cookies, the analytics provider tracks you across all these sites using combined fingerprints.
 
 These real-world examples show why defense-in-depth (extensions + settings + monitoring) is necessary.
-
-
 
 
 ## Related Articles

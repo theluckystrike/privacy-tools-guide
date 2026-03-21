@@ -368,7 +368,6 @@ For social work agencies implementing privacy-first systems:
 **Incident response**: Written procedures, tested annually
 
 
-
 ## Related Articles
 
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)

@@ -315,7 +315,6 @@ Some threat models benefit from combined Whonix+Tails usage:
 ```
 
 
-
 ## Related Articles
 
 - [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)

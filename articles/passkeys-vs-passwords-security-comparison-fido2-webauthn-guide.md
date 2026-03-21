@@ -430,7 +430,6 @@ By 2027-2028, expect:
 - Cross-service credential syncing improving
 
 
-
 ## Related Articles
 
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)

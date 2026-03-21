@@ -244,11 +244,10 @@ def send_alert():
     msg['From'] = "sender@example.com"
     msg['To'] = RECIPIENT
     # Send via your configured SMTP
-    
+
 if should_trigger():
     send_alert()
 ```
-
 
 
 ## Related Articles

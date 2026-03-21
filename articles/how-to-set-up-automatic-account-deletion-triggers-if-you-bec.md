@@ -86,14 +86,14 @@ const { spawn } = require('child_process');
 exports.handler = async (event) => {
   // This function is called by the health check service
   // If it stops being called, the service notifies your emergency contact
-  
+
   const accountDeletion = async () => {
     const scripts = [
       'python3 /scripts/delete-gmail.py',
       'bash /scripts/delete-social.sh',
       'node /scripts/remove-aws-access.js'
     ];
-    
+
     for (const script of scripts) {
       await new Promise((resolve, reject) => {
         const proc = spawn('sh', ['-c', script]);
@@ -102,7 +102,7 @@ exports.handler = async (event) => {
       });
     }
   };
-  
+
   return { statusCode: 200, body: 'OK' };
 };
 ```
@@ -132,11 +132,11 @@ def time_lock(data, days=30):
     # Calculate iterations based on desired delay
     # Each iteration adds approximately 1 second
     iterations = days * 24 * 60 * 60
-    
+
     key = os.urandom(32)
     for _ in range(iterations):
         key = hashlib.sha256(key).digest()
-    
+
     # Encrypt the data with the derived key
     encrypted = encrypt(data, key)
     return encrypted, key
@@ -147,7 +147,7 @@ def decrypt_with_proof(encrypted, key_proof, target_iterations):
     verified_key = key_proof
     for _ in range(target_iterations):
         verified_key = hashlib.sha256(verified_key).digest()
-    
+
     return decrypt(encrypted, verified_key)
 ```
 
@@ -215,14 +215,13 @@ Create a clear document for your emergency contact or executor:
 **Partial Solutions**: Even if you can't automate everything, creating an inventory and documented process significantly reduces the burden on your family.
 
 
-
 ## Related Articles
 
-- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [Set Up Google Inactive Account Manager for Automatic Data](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
 - [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
 - [Facebook Location History Deletion How To Remove All Stored](/privacy-tools-guide/facebook-location-history-deletion-how-to-remove-all-stored-/)
 - [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
-- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
+- [Secure File Deletion on SSD Drives](/privacy-tools-guide/secure-file-deletion-ssd-drives-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

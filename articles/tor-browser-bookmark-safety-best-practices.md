@@ -64,20 +64,20 @@ from pathlib import Path
 
 def export_bookmarks(profile_path):
     db_path = Path(profile_path) / "browser" / "profiles" / "default" / "places.sqlite"
-    
+
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    
+
     cursor.execute("""
         SELECT b.title, b.url, p.title as folder
         FROM moz_bookmarks b
         JOIN moz_bookmarks p ON b.parent = p.id
         WHERE b.type = 1
     """)
-    
+
     bookmarks = [{"title": row[0], "url": row[1], "folder": row[2]} for row in cursor.fetchall()]
     conn.close()
-    
+
     return bookmarks
 
 # Usage
@@ -98,11 +98,11 @@ from datetime import datetime
 def sanitize_bookmark(url, title):
     # Remove query parameters that leak intent
     clean_url = re.sub(r'\?.*', '', url)
-    
+
     # Genericize titles
     clean_title = re.sub(r'\d{4}-\d{2}-\d{2}', '[DATE]', title)
     clean_title = re.sub(r'\b\w+@\w+\.\w+\b', '[EMAIL]', clean_title)
-    
+
     return clean_url, clean_title
 
 # Example
@@ -130,7 +130,7 @@ import urllib.parse
 
 def check_onion_availability(url):
     parsed = urllib.parse.urlparse(url)
-    
+
     if parsed.hostname.endswith('.onion'):
         try:
             socket.setdefaulttimeout(5)
@@ -223,16 +223,16 @@ CHECKLIST = [
 def main():
     print("Bookmark Security Checklist")
     print("=" * 40)
-    
+
     for description, check_func in CHECKLIST:
         try:
             result = check_func()
             status = "✓ PASS" if result else "✗ FAIL"
         except Exception as e:
             status = f"✗ ERROR: {e}"
-        
+
         print(f"{status}: {description}")
-    
+
     print("=" * 40)
 
 if __name__ == "__main__":
@@ -257,8 +257,6 @@ Avoid bookmarking login pages — any such bookmark reveals your account existen
 ---
 
 By treating bookmarks as persistent metadata rather than transient browser state, you maintain better operational security. These practices align with defense-in-depth principles—each layer adds friction against correlation attacks. Adapt these scripts to your threat model, and remember that bookmark hygiene is one component of a broader Tor Browser usage strategy.
-
-
 
 
 ## Related Articles

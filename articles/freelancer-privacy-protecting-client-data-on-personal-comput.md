@@ -207,8 +207,6 @@ Review your setup quarterly. Check that encryption keys haven't expired, backup 
 ---
 
 
-
-
 ## Related Articles
 
 - [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)

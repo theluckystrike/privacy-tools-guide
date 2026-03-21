@@ -76,8 +76,8 @@ For developers who want zero-knowledge cloud storage with full control, tools li
 rclone config
 
 # Create encrypted remote
-# In interactive config: New remote > type "crypt" > 
-# remote "gdrive:" > encryption "standard" > 
+# In interactive config: New remote > type "crypt" >
+# remote "gdrive:" > encryption "standard" >
 # password "your-strong-password" > confirm
 
 # Copy files with automatic client-side encryption
@@ -186,7 +186,6 @@ rclone sync ~/projects cloud:projects-backup \
 echo "NAS backup: $(ls -la /mnt/nas/projects | wc -l) files"
 echo "Cloud backup: $(rclone lsl cloud:projects-backup | wc -l) files"
 ```
-
 
 
 ## Related Articles

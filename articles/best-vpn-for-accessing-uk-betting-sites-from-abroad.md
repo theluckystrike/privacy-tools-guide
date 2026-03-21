@@ -136,7 +136,7 @@ async function checkWebRTC() {
   pc.createDataChannel('');
   const offer = await pc.createOffer();
   pc.setLocalDescription(offer);
-  
+
   pc.onicecandidate = (ice) => {
     if (ice.candidate) {
       console.log('WebRTC leak detected:', ice.candidate.candidate);
@@ -180,7 +180,6 @@ Before accessing betting platforms from abroad, verify that:
 - Your account remains in good standing
 - You comply with the terms of service of both the VPN provider and betting site
 - You understand the gambling regulations in your current jurisdiction
-
 
 
 ## Related Articles

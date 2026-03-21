@@ -73,7 +73,7 @@ sudo mount.davfs https://dav.icedrive.net/ /mnt/icedrive -o user=your@email.com
 
 # Or use rclone for more flexible CLI operations
 rclone config
-# Select "WebDAV" 
+# Select "WebDAV"
 # URL: https://dav.icedrive.net/
 # Vendor: Other
 # User: your@email.com
@@ -104,7 +104,7 @@ async function uploadToIceDrive(filePath, remotePath) {
     },
     body: fs.readFileSync(filePath)
   });
-  
+
   return response.ok;
 }
 ```
@@ -301,7 +301,6 @@ Document your data storage provider in your compliance matrix:
 | Max File Size | 10GB | 5GB | 2GB |
 | Cost | $5/50GB | $4/200GB | $12/100GB |
 ```
-
 
 
 ## Related Articles

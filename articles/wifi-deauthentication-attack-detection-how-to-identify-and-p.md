@@ -69,7 +69,7 @@ class DeauthDetector:
  current = time.time()
  for client in list(self.packets.keys()):
  self.packets[client] = [
- t for t in self.packets[client] 
+ t for t in self.packets[client]
  if current - t < self.window
  ]
  if not self.packets[client]:
@@ -183,7 +183,6 @@ done
 ```
 
 Integrate this monitoring with alerting systems like Prometheus or Grafana for real-time dashboard visibility.
-
 
 
 ## Related Articles

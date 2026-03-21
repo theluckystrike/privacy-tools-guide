@@ -164,10 +164,10 @@ def create_privacy_profile(output_path):
         'PayloadUUID': str(uuid.uuid4()),
         'PayloadVersion': 1,
     }
-    
+
     with open(output_path, 'wb') as f:
         plistlib.dump(profile, f)
-    
+
     print(f"Profile created: {output_path}")
 
 if __name__ == '__main__':
@@ -213,12 +213,14 @@ Store your profile configurations in a secure location (encrypted external drive
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
 - [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

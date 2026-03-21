@@ -63,8 +63,8 @@ const bisqAPI = require('bisq-rest-api');
 
 async function findCashTrades() {
   const offers = await bisqAPI.getOffers('BTC_USD', 'FUNDING');
-  return offers.filter(offer => 
-    offer.payment_method === 'CASH_DEPOSIT' && 
+  return offers.filter(offer =>
+    offer.payment_method === 'CASH_DEPOSIT' &&
     offer.is_maker_fee_paid_by_receiver === false
   );
 }
@@ -306,12 +306,11 @@ Switzerland/Other:
 This guide is informational. Always verify compliance with local regulations before purchase.
 
 
-
 ## Related Articles
 
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
-- [Pay For Vpn Subscription Anonymously Using Cryptocurrency No Email Required](/privacy-tools-guide/how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-email-required/)
+- [Pay For Vpn Subscription Anonymously Using Cryptocurrency](/privacy-tools-guide/how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-email-required/)
 - [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 - [Onion Share File Sharing Anonymously Guide](/privacy-tools-guide/onion-share-file-sharing-anonymously-guide/)
 

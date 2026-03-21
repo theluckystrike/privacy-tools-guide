@@ -344,7 +344,7 @@ age -d -i ~/.age/keys.txt \
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
 - [Youtube Alternative Private Video Platforms 2026](/privacy-tools-guide/youtube-alternative-private-video-platforms-2026/)
@@ -353,5 +353,7 @@ age -d -i ~/.age/keys.txt \
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
 
 Built by theluckystrike** — More at [zovo.one](https://zovo.one)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

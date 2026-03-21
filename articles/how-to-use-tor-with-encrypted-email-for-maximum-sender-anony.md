@@ -213,7 +213,6 @@ Several mistakes undermine the anonymity these tools provide:
 - **Forgetting to disable HTML email** — Remote images and tracking pixels leak information
 
 
-
 ## Related Articles
 
 - [How to Use Tails OS for Maximum Anonymity](/privacy-tools-guide/how-to-use-tails-os-for-maximum-anonymity/)

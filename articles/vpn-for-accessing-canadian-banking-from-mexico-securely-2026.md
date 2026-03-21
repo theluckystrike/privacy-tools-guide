@@ -129,13 +129,13 @@ LOGFILE="$HOME/vpn-monitor.log"
 while true; do
   STATUS=$(wg show wg0 latest-handshakes 2>/dev/null | awk '{print $2}')
   TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
-  
+
   if [ -n "$STATUS" ] && [ "$STATUS" -gt 0 ]; then
     echo "$TIMESTAMP: Connection active" >> "$LOGFILE"
   else
     echo "$TIMESTAMP: WARNING - Connection lost" >> "$LOGFILE"
   fi
-  
+
   sleep 60
 done
 ```
@@ -367,8 +367,6 @@ adb logcat | grep -i "vpn\|network"
 ```
 
 Achieving reliable banking access from Mexico requires careful configuration, continuous monitoring, and fallback plans for critical scenarios.
-
-
 
 
 ## Related Articles

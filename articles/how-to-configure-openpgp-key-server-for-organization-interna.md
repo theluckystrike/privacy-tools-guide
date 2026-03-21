@@ -196,7 +196,6 @@ pg_dump -U hockeypuck hockeypuck > hockeypuck-backup-$(date +%Y%m%d).sql
 **Slow query performance**: Index the database properly. For large keyrings, consider adding a Redis cache layer for frequently queried keys.
 
 
-
 ## Related Articles
 
 - [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)

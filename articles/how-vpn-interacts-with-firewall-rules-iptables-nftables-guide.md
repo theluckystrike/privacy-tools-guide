@@ -286,9 +286,9 @@ tcpdump -i eth0 -n port 1194 or port 51820  # Monitor VPN server communication
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
-- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [Configure Firewall Rules on OPNsense to Block Known](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
 - [Vpn Port Selection Which Ports Bypass Most Firewall.](/privacy-tools-guide/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)

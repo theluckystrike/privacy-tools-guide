@@ -195,8 +195,6 @@ For developers building privacy-sensitive applications, always request camera pe
 ---
 
 
-
-
 ## Related Articles
 
 - [How To Tell If Your Phone Has Been Jailbroken Without Consen](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)

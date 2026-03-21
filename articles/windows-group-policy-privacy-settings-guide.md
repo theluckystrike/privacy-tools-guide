@@ -247,7 +247,6 @@ Group Policy gives significant control, but it has limits:
 For a comprehensive hardening approach, combine Group Policy with network-level blocking, minimal installed apps, and regular audits using tools like WireShark or Glasswire to observe what your machine actually transmits.
 
 
-
 ## Related Articles
 
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)

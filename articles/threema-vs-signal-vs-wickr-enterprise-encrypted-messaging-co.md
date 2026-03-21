@@ -137,7 +137,7 @@ def signal_webhook():
     data = request.json
     message = data['envelope']['message']
     sender = data['envelope']['source']['number']
-    
+
     # Process message and respond
     response = process_message(message)
     send_signal_message(sender, response)
@@ -201,15 +201,13 @@ async function createSession(recipientId, recipientDevice) {
 Each platform represents a different tradeoff between privacy, administrative control, and compliance. Evaluate based on your organization's regulatory requirements, user privacy commitments, and integration complexity.
 
 
-
-
 ## Related Articles
 
 - [Wickr vs Signal for Enterprise Use: A Technical Comparison](/privacy-tools-guide/wickr-vs-signal-for-enterprise-use/)
 - [Threema vs Signal Privacy Comparison 2026](/privacy-tools-guide/threema-vs-signal-privacy-comparison-2026/)
 - [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 - [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
-- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -389,9 +389,9 @@ sudo tcpdump -i any 'udp port 3478 or udp port 5349' -n
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
-- [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [How To Set Up Home Assistant Esphome For Completely Local Sm](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
 - [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
 - [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)

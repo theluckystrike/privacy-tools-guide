@@ -119,12 +119,12 @@ verify_vpn_connection() {
     local current_ip=$(curl -s --max-time 5 https://api.ipify.org)
     local vpn_gateway=$(sudo wg show $VPN_INTERFACE 2>/dev/null | \
         grep "endpoint:" | awk '{print $2}')
-    
+
     if [ -z "$vpn_gateway" ]; then
         echo "[ERROR] VPN not connected"
         return 1
     fi
-    
+
     echo "[INFO] Connected via VPN gateway: $vpn_gateway"
     return 0
 }
@@ -132,7 +132,7 @@ verify_vpn_connection() {
 connect_vpn() {
     echo "[INFO] Connecting to VPN..."
     sudo wg-quick up wg-protonmail
-    
+
     sleep 2
     if verify_vpn_connection; then
         echo "[SUCCESS] VPN connection established"
@@ -250,8 +250,6 @@ Combining ProtonMail with a VPN strengthens your privacy posture but does not ma
 For developers integrating these tools, automate connection verification in your applications rather than relying on manual checks. The scripts and configurations above provide a foundation for building reliable, privacy-preserving workflows.
 
 ---
-
-
 
 
 ## Related Articles

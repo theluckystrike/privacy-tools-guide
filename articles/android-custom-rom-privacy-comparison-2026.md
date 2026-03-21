@@ -125,20 +125,20 @@ from androguard.core.bytecodes import apk
 def analyze_network_calls(apk_path):
     a = apk.APK(apk_path)
     permissions = a.get_permissions()
-    
+
     print(f"Permissions requested: {len(permissions)}")
-    
+
     # Check for network-related permissions
     network_perms = [
         "android.permission.INTERNET",
         "android.permission.ACCESS_NETWORK_STATE",
         "android.permission.ACCESS_WIFI_STATE"
     ]
-    
+
     for perm in network_perms:
         if perm in permissions:
             print(f"[+] {perm}")
-    
+
     # Analyze network endpoints (simplified)
     dx = androguard.auto.analyze(apk_path)
     strings = [s.get_value() for s in dx.get_strings()]
@@ -192,7 +192,6 @@ All privacy-focused ROMs require:
 adb backup -apk -shared -all -f backup.ab
 # Store backup securely before proceeding
 ```
-
 
 
 ## Related Articles

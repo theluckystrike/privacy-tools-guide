@@ -204,7 +204,6 @@ images.forEach(img => observer.observe(img));
 ```
 
 
-
 ## Related Articles
 
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)

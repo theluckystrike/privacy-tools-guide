@@ -48,7 +48,7 @@ def generate_identity_keys():
     """Generate identity key pair for a user."""
     identity_key_pair = KeyHelper.generate_identity_key_pair()
     registration_id = KeyHelper.generate_registration_id(False)
-    
+
     return {
         'identity_key': identity_key_pair,
         'registration_id': registration_id,
@@ -62,7 +62,7 @@ def create_pre_key_bundle(identity_key_pair, signed_pre_key_id):
     signed_pre_key_pair = KeyHelper.generate_signed_pre_key(
         identity_key_pair, signed_pre_key_id
     )
-    
+
     return PreKeyBundle(
         registration_id=1,
         device_id=1,
@@ -215,8 +215,6 @@ For most developers and power users, the implementation hierarchy is:
 The reality is that perfect security does not exist. Every layer of protection adds cost in usability, performance, or both. The goal is raising the bar high enough that interception becomes expensive and risky for your specific threat model.
 
 Start with Signal, understand its limitations, then add layers as your requirements demand. Document your threat model, implement controls, and test them regularly.
-
-
 
 
 ## Related Articles

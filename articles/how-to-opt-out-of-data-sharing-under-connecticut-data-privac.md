@@ -154,7 +154,7 @@ If you build applications serving Connecticut users, you must respect opt-out si
 app.use((req, res, next) => {
   const gpc = req.headers['sec-gpc'];
   const doNotTrack = req.headers['dnt'] === '1';
-  
+
   if (gpc === '1' || doNotTrack) {
     req.userOptsOut = true;
     // Apply opt-out logic
@@ -169,7 +169,7 @@ app.use((req, res, next) => {
 def check_gpc_signal():
     gpc_header = request.headers.get('Sec-GPC')
     dnt_header = request.headers.get('DNT')
-    
+
     if gpc_header == '1' or dnt_header == '1':
         g.session.user_opts_out = True
         # Disable data sale, targeted advertising
@@ -186,15 +186,15 @@ from datetime import datetime, timedelta
 class CTDPARequestHandler:
     def __init__(self, db_connection):
         self.db = db_connection
-    
+
     def handle_deletion_request(self, user_id, request_id):
         """Process CTDPA deletion request within 45-day window"""
-        
+
         # Step 1: Verify user identity
         user = self.db.get_user(user_id)
         if not user:
             return {"error": "User not found"}, 404
-        
+
         # Step 2: Create audit trail
         self.db.log_request(
             request_id=request_id,
@@ -203,22 +203,22 @@ class CTDPARequestHandler:
             timestamp=datetime.now(),
             deadline=datetime.now() + timedelta(days=45)
         )
-        
+
         # Step 3: Delete from all data stores
         tables = ['users', 'profiles', 'activity_log', 'payments', 'analytics']
-        
+
         for table in tables:
             self.db.execute(
                 f"DELETE FROM {table} WHERE user_id = ?",
                 (user_id,)
             )
-        
+
         # Step 4: Handle third-party data sharing
         self.revoke_third_party_access(user_id)
-        
+
         # Step 5: Confirm deletion
         return {"status": "deleted", "request_id": request_id}
-    
+
     def revoke_third_party_access(self, user_id):
         """Remove user data from third-party integrations"""
         # Remove from email marketing platforms
@@ -244,7 +244,7 @@ def export_user_data(user_id, format='json'):
         'preferences': get_preferences(user_id),
         'payments': get_payment_history(user_id)
     }
-    
+
     if format == 'json':
         return json.dumps(user_data, indent=2)
     elif format == 'csv':
@@ -272,12 +272,12 @@ Several issues frequently trip up Connecticut residents exercising their rights:
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 - [How To Anonymize User Data In Production Database For Privac](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
 - [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

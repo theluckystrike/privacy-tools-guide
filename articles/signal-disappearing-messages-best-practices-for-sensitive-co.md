@@ -85,13 +85,13 @@ Never share API keys, tokens, or passwords through unencrypted channels. When sh
 def share_credential_via_signal(credential, recipient, timer_seconds=30):
     # Enable disappearing messages first
     signal.enable_disappearing_messages(recipient, timer_seconds)
-    
+
     # Wait for confirmation that disappearing is active
     wait_for_confirmation()
-    
+
     # Send credential
     signal.send_message(recipient, credential)
-    
+
     # Verify delivery
     signal.verify_message_status(recipient, credential)
 ```
@@ -185,7 +185,6 @@ signal-cli -u +1234567890 list-identities
 # Verify encryption status
 signal-cli -u +1234567890 verify -n +0987654321
 ```
-
 
 
 ## Related Articles

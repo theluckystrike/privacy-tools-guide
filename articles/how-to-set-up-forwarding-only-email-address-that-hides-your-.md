@@ -75,30 +75,30 @@ def forward_unread_emails():
     mail = imaplib.IMAP4_SSL(IMAP_SERVER)
     mail.login(SOURCE_EMAIL, SOURCE_PASSWORD)
     mail.select('inbox')
-    
+
     status, messages = mail.search(None, 'UNSEEN')
     email_ids = messages[0].split()
-    
+
     for email_id in email_ids:
         status, msg_data = mail.fetch(email_id, '(RFC822)')
         raw_email = msg_data[0][1]
-        
+
         # Create forward message
         msg = MIMEText(raw_email, 'plain')
         msg['Subject'] = f"FWD: {raw_email.decode().split('Subject: ')[1].split(chr(10))[0]}"
         msg['From'] = SOURCE_EMAIL
         msg['To'] = DESTINATION_EMAIL
-        
+
         # Send forwarded email
         smtp = smtplib.SMTP(SMTP_SERVER, 587)
         smtp.starttls()
         smtp.login(SOURCE_EMAIL, SOURCE_PASSWORD)
         smtp.send_message(msg)
         smtp.quit()
-        
+
         # Mark original as read
         mail.store(email_id, '+FLAGS', '\\Seen')
-    
+
     mail.logout()
 
 if __name__ == '__main__':
@@ -401,12 +401,14 @@ Store your forwarding email setup in a password manager alongside service creden
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
-## Related Articles
+## Related Reading
 
 - [Secure Email Forwarding With Encryption How To Set Up Anonad](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
 - [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
-- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 - [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [Set Up Catch All Email Domain For Unlimited Private Aliases](/privacy-tools-guide/how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

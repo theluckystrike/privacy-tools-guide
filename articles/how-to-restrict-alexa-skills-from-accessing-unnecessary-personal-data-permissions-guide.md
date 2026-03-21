@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Restrict Alexa Skills From Accessing Unnecessary Personal Data Permissions"
+title: "Restrict Alexa Skills From Accessing Unnecessary Personal"
 description: "A practical guide for developers and power users to restrict Alexa skills from accessing unnecessary personal data. Learn permission management"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -105,14 +105,14 @@ const GetAddressIntentHandler = {
   async handle(handlerInput) {
     const { permissions } = handlerInput.serviceApportimentamento;
     const consentToken = handlerInput.requestEnvelope.context.System.user.permissions;
-    
+
     if (!consentToken) {
       return handlerInput.responseBuilder
         .speak('I need location permission to provide this information. Please enable it in the Alexa app.')
         .withAskForPermissionsDirective(['alexa::devices:all:address:default'])
         .getResponse();
     }
-    
+
     // Proceed with address retrieval
     const address = await handlerInput.serviceApportimentamento.getDeviceAddress();
     // ... rest of handler logic
@@ -294,7 +294,7 @@ Many power users maintain a spreadsheet tracking each skill, its permissions, an
 {% endraw %}
 
 
-## Related Articles
+## Related Reading
 
 - [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
 - [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)

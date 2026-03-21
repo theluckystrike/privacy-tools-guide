@@ -195,7 +195,6 @@ Review these settings periodically:
 - [ ] Review site permissions (camera, microphone, location)
 
 
-
 ## Related Articles
 
 - [Best Vpn For Students Studying Abroad Accessing University R](/privacy-tools-guide/best-vpn-for-students-studying-abroad-accessing-university-r/)

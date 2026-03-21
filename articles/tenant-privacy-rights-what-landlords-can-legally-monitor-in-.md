@@ -63,7 +63,7 @@ class SurveillanceLogger:
         self.log_dir = Path(log_dir)
         self.log_dir.mkdir(exist_ok=True)
         self.log_file = self.log_dir / f"evidence_{datetime.now().strftime('%Y%m%d')}.jsonl"
-    
+
     def log_event(self, event_type, description, location, evidence_hash=None):
         """Log potential surveillance event with cryptographic timestamp."""
         entry = {
@@ -74,10 +74,10 @@ class SurveillanceLogger:
             "evidence_hash": evidence_hash,
             "device_状态": "logged"
         }
-        
+
         with open(self.log_file, 'a') as f:
             f.write(json.dumps(entry) + '\n')
-        
+
         return entry
 
 # Usage for documenting landlord surveillance
@@ -203,14 +203,13 @@ For quick reference, here are key thresholds across major states:
 - California, Washington, Colorado, Nevada
 
 
-
 ## Related Articles
 
 - [Rental Application Privacy What Information Landlords Can Le](/privacy-tools-guide/rental-application-privacy-what-information-landlords-can-le/)
 - [Baby Monitor Security And Privacy How To Prevent.](/privacy-tools-guide/baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/)
+- [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 - [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
-- [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

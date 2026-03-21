@@ -181,7 +181,6 @@ sudo tail -f /var/log/murmur/murmur.log
 Periodically regenerate SSL certificates before expiration to prevent connection issues.
 
 
-
 ## Related Articles
 
 - [How To Share Passwords Securely With Team Using Encrypted Co](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)

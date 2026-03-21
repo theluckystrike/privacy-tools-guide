@@ -199,7 +199,6 @@ Whonix excels for users requiring isolation from their host system, particularly
 Nym represents the future of mixnet technology, though the network continues maturing. Early adopters benefit from participating in its development while gaining privacy advantages.
 
 
-
 ## Related Articles
 
 - [Secure Browsing Habits With Tor Best Practices](/privacy-tools-guide/secure-browsing-habits-with-tor-best-practices/)

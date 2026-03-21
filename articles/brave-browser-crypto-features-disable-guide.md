@@ -204,7 +204,6 @@ However, consider the tradeoffs before disabling everything. IPFS, for instance,
 **Performance degradation persists**: Background processes may continue even after UI disabling. Use process monitoring tools to verify crypto-related processes terminate completely.
 
 
-
 ## Related Articles
 
 - [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)

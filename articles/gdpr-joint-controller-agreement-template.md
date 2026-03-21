@@ -124,7 +124,7 @@ const jointControllerAgreement = {
     },
     {
       name: "Partner Inc",
-      role: "secondary", 
+      role: "secondary",
       responsibilities: [
         "data_analysis",
         "support_requests"
@@ -189,8 +189,6 @@ This template provides a starting point, but complex processing activities, cros
 ---
 
 A well-drafted joint controller agreement protects all parties and, more importantly, protects the data subjects whose information you're handling. Take time to get it right—it'll save headaches later.
-
-
 
 
 ## Related Articles

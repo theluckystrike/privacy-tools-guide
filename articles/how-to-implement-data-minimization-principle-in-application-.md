@@ -65,19 +65,19 @@ Base = declarative_base()
 
 class UserSession(Base):
     __tablename__ = 'user_sessions'
-    
+
     id = Column(UUID(as_uuid=True), primary_key=True)
     user_id = Column(UUID(as_uuid=True), nullable=False)
     token_hash = Column(String(64), nullable=False)
     expires_at = Column(DateTime, nullable=False)
     is_revoked = Column(Boolean, default=False)
-    
+
     def is_active(self):
         return (
-            not self.is_revoked and 
+            not self.is_revoked and
             self.expires_at > datetime.datetime.utcnow()
         )
-    
+
     @classmethod
     def cleanup_expired(cls, session):
         """Remove expired sessions older than 30 days"""
@@ -101,20 +101,20 @@ Design APIs that allow clients to specify which fields they need. This pattern, 
 app.get('/api/users/:id', async (req, res) => {
     const { fields } = req.query;
     const user = await getUserById(req.params.id);
-    
+
     // If no fields specified, return only public basics
     const defaultFields = ['id', 'username', 'createdAt'];
-    
+
     // Parse requested fields, defaulting to minimal set
-    const requestedFields = fields 
+    const requestedFields = fields
         ? fields.split(',').filter(f => allowedFields.includes(f))
         : defaultFields;
-    
+
     const response = {};
     for (const field of requestedFields) {
         response[field] = user[field];
     }
-    
+
     res.json(response);
 });
 ```
@@ -136,14 +136,14 @@ def get_user_logs(user_id, cursor=None, limit=50):
     ).order_by(
         LogEntry.timestamp.desc()
     ).limit(limit)
-    
+
     if cursor:
         query = query.filter(LogEntry.id < cursor)
-    
+
     results = query.all()
-    
+
     next_cursor = results[-1].id if len(results) == limit else None
-    
+
     return {
         'logs': [{
             'id': log.id,
@@ -173,14 +173,14 @@ def process_payment_card(card_number, cvv, expiry):
     # Validate format without storing
     if not validate_card_format(card_number):
         raise ValueError("Invalid card format")
-    
+
     # Generate a one-way hash for fraud detection
     # This allows detection of repeated cards without storing the number
     card_hash = hashlib.sha256(card_number.encode()).hexdigest()[:16]
-    
+
     # Tokenize through payment processor (never handle raw numbers)
     token = tokenize_card(card_number)
-    
+
     # Store only the token and hash, never the raw number
     return {
         'token': token,
@@ -201,7 +201,7 @@ function validateEmailForRateLimit(email) {
     // Do not log the email address itself
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValid = emailPattern.test(email);
-    
+
     // For rate limiting, hash the email (truncation provides
     // enough entropy without storing PII)
     const rateLimitKey = crypto
@@ -209,7 +209,7 @@ function validateEmailForRateLimit(email) {
         .update(email.toLowerCase())
         .digest('hex')
         .substring(0, 16);
-    
+
     return {
         isValid,
         rateLimitKey
@@ -236,7 +236,7 @@ def enforce_retention_policy(conn, cursor, statement, parameters, context, execu
 
 class DataRetentionPolicy:
     """Define retention periods based on data category"""
-    
+
     RETENTION_PERIODS = {
         'session': datetime.timedelta(days=90),
         'login_history': datetime.timedelta(days=30),
@@ -244,13 +244,13 @@ class DataRetentionPolicy:
         'user_uploads': datetime.timedelta(days=180),
         'audit_logs': datetime.timedelta(days=365),
     }
-    
+
     @classmethod
     def should_delete(cls, data_type, created_at):
         """Check if data has exceeded retention period"""
         if data_type not in cls.RETENTION_PERIODS:
             return True  # Delete unknown types by default
-        
+
         retention = cls.RETENTION_PERIODS[data_type]
         return datetime.datetime.utcnow() > (created_at + retention)
 ```
@@ -268,24 +268,24 @@ class PrivacyAwareLogger:
     """
     Logger that automatically redacts PII before storage.
     """
-    
+
     SENSITIVE_FIELDS = {
         'password', 'secret', 'token', 'key',
         'ssn', 'credit_card', 'full_name', 'address'
     }
-    
+
     @classmethod
     def _redact(cls, data):
         if isinstance(data, dict):
             return {
-                k: '[REDACTED]' if k.lower() in cls.SENSITIVE_FIELDS 
+                k: '[REDACTED]' if k.lower() in cls.SENSITIVE_FIELDS
                    else cls._redact(v)
                 for k, v in data.items()
             }
         elif isinstance(data, (list, tuple)):
             return [cls._redact(item) for item in data]
         return data
-    
+
     @classmethod
     def log_action(cls, action, **kwargs):
         """Log an action with automatic PII redaction"""
@@ -396,13 +396,12 @@ def anonymize_event(user_id: str, event: dict) -> dict:
 Daily rotation of the salt means you can count unique sessions within a day (for DAU metrics) without building a long-term profile that links a user's behavior across weeks or months.
 
 
-
 ## Related Articles
 
 - [How To Implement Encrypted Webhooks For Secure Application T](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
 - [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)
 - [How To Implement Customer Data Encryption At Rest And In Tra](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

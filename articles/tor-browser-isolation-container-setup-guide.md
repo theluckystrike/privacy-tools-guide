@@ -205,7 +205,6 @@ tcpdump -i any port 53 | grep tor
 The exit node IP should differ from your host's public IP, and DNS queries should originate from your Tor proxy rather than your ISP's resolvers.
 
 
-
 ## Related Articles
 
 - [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)

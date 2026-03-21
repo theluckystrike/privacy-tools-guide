@@ -180,15 +180,13 @@ The era of frictionless cross-site tracking is ending. First Party Sets offer a 
 ---
 
 
-
-
 ## Related Articles
 
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 - [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)
 - [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
 - [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
-- [Request Human Review of AI Automated Decision That Affects You Legally](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
+- [Request Human Review of AI Automated Decision That Affects](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

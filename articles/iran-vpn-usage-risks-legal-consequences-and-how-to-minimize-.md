@@ -283,7 +283,6 @@ Technical tools are only part of OpSec:
 VPN provides transport security. OpSec provides the broader protection against surveillance and forensic analysis.
 
 
-
 ## Related Articles
 
 - [China VPN Crackdown: Penalties and Consequences for.](/privacy-tools-guide/china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/)

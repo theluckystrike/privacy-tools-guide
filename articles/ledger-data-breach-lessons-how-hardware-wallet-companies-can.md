@@ -83,14 +83,14 @@ const customerDataPolicy = {
     encryption: 'AES-256-GCM',
     access: 'logistics-only namespace'
   },
-  
+
   // Email for warranty/updates - but consider alternatives
   email: {
     retention: 'account lifetime',
     encryption: 'AES-256-GCM',
     hashing: 'salt + SHA-256 for lookups'
   },
-  
+
   // Phone numbers - rare to need for hardware wallets
   phone: {
     retention: 'deletion recommended',
@@ -153,7 +153,7 @@ impl DeviceCommitment {
         let secret = Scalar::hash_from_bytes::<Keccak256>(secret.as_bytes());
         DeviceCommitment { serial_hash, secret }
     }
-    
+
     fn verify(&self, proof: &DeviceProof) -> bool {
         // Verify proof of knowledge without revealing identity
         proof.verify(&self.serial_hash)
@@ -173,13 +173,13 @@ access_policies:
     requires_mfa: true
     audit_logging: mandatory
     session_timeout: 15  # minutes
-    
+
   customer_address:
     roles: [logistics]
     requires_mfa: true
     audit_logging: mandatory
     retention: 30_days
-    
+
   # Nobody needs direct access to customer PII for most operations
   # Use aggregated or anonymized data instead
 ```
@@ -216,8 +216,6 @@ For developers, the lesson is clear: the security of your cryptographic hardware
 The best hardware wallet is one that the manufacturer cannot link to you.
 
 ---
-
-
 
 
 ## Related Articles

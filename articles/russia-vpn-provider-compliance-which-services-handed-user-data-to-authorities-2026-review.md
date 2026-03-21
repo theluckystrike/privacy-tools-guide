@@ -206,7 +206,7 @@ For developers building applications that may be used in Russia, understanding t
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Russia Vpn Provider Compliance Which Services Handed User Da](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-da/)
 - [Russia Telegram Compliance What Data Telegram Shares With Ru](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)

@@ -546,7 +546,6 @@ legal_deletion_rights = {
 This provides legal use beyond CMB's standard policy.
 
 
-
 ## Related Articles
 
 - [Data Retention Policy Template What To Keep And For How Long](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)

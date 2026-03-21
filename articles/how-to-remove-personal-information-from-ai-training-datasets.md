@@ -73,10 +73,10 @@ def remove_secrets_from_code(code_content):
         r'token\s*=\s*["\'][^"\']+["\']',
         r'aws_access_key_id\s*=\s*[^\\s]+',
     ]
-    
+
     for pattern in patterns:
         code_content = re.sub(pattern, 'REDACTED', code_content, flags=re.IGNORECASE)
-    
+
     return code_content
 ```
 
@@ -127,7 +127,7 @@ import torch
 def identify_sensitive_neurons(model, sensitive_embeddings, layer_names):
     """Identify neurons that activate strongly for sensitive concepts."""
     sensitive_neurons = {}
-    
+
     for name, module in model.named_modules():
         if name in layer_names:
             activations = []
@@ -135,10 +135,10 @@ def identify_sensitive_neurons(model, sensitive_embeddings, layer_names):
                 with torch.no_grad():
                     output = module(emb.unsqueeze(0))
                 activations.append(output.mean().item())
-            
+
             # Find neurons with high activation
             sensitive_neurons[name] = [i for i, a in enumerate(activations) if a > 0.5]
-    
+
     return sensitive_neurons
 
 def ablate_neurons(model, neurons_to_ablate):
@@ -162,18 +162,18 @@ def unlearn_example(model, forget_data, retain_data, epochs=5):
     Increases loss on forget_data while maintaining performance on retain_data.
     """
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
-    
+
     for epoch in range(epochs):
         # Gradient on forget data (maximize loss = forget)
         model.train()
         forget_loss = model.loss(forget_data)
-        
+
         # Gradient on retain data (minimize loss = retain)
         retain_loss = model.loss(retain_data)
-        
+
         # Combined loss
         loss = retain_loss - 0.1 * forget_loss
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -224,22 +224,22 @@ class PrivacyAwareGenerator:
             "list all personal information",
             "repeat after me",
         ]
-    
+
     def generate(self, prompt):
         # Rate limiting
         now = time.time()
         self.request_timestamps = [t for t in self.request_timestamps if now - t < 60]
-        
+
         if len(self.request_timestamps) >= self.max_requests:
             raise RateLimitException("Too many requests")
-        
+
         # Check for suspicious patterns
         prompt_lower = prompt.lower()
         for pattern in self.suspicious_patterns:
             if pattern in prompt_lower:
                 self.log_suspicious_request(prompt)
                 return "I cannot help with that request."
-        
+
         self.request_timestamps.append(now)
         return self.model.generate(prompt)
 ```
@@ -256,13 +256,12 @@ When building privacy into your AI pipeline, consider these stages:
 6. **Incident Response**: Have procedures for handling discovered privacy leaks
 
 
-
 ## Related Articles
 
 - [Intelius Opt-Out Guide: Remove Personal Information in 2026](/privacy-tools-guide/intelius-opt-out-guide-remove-personal-information-2026/)
 - [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
 - [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
-- [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [How to Remove Personal Data from Data Brokers](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 - [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

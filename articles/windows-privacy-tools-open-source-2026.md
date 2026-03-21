@@ -239,7 +239,7 @@ Combine these tools into a privacy-focused workflow. Start with network monitori
 
 A PowerShell script to audit active connections:
 ```powershell
-Get-NetTCPConnection -State Established | 
+Get-NetTCPConnection -State Established |
  Where-Object { $_.LocalAddress -notlike "127.*" } |
  ForEach-Object {
  $proc = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue
@@ -254,7 +254,6 @@ Get-NetTCPConnection -State Established |
 ```
 
 Run this periodically to monitor unexpected network activity.
-
 
 
 ## Related Articles

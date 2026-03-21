@@ -82,7 +82,7 @@ class ProtonDrive:
             "Authorization": f"Bearer {access_token}",
             "Content-Type": "application/json"
         }
-    
+
     def list_files(self, folder_id="root"):
         response = requests.get(
             f"{BASE_URL}/files",
@@ -90,7 +90,7 @@ class ProtonDrive:
             headers=self.headers
         )
         return response.json()
-    
+
     def upload_file(self, folder_id, filename, data):
         # Create upload session
         create_resp = requests.post(
@@ -102,11 +102,11 @@ class ProtonDrive:
             },
             headers=self.headers
         )
-        
+
         # Upload the actual content
         upload_url = create_resp.json()["upload_url"]
         requests.put(upload_url, data=data)
-        
+
         return create_resp.json()
 
 # Usage
@@ -134,7 +134,7 @@ const client = new TresorClient({
 
 async function uploadEncrypted(filePath) {
   const tresor = await client.connect();
-  
+
   await tresor.upload({
     path: '/company-docs/specifications',
     file: filePath,
@@ -143,7 +143,7 @@ async function uploadEncrypted(filePath) {
     // Set retention policy
     retention: { days: 365 }
   });
-  
+
   console.log('File encrypted and uploaded');
 }
 ```
@@ -181,12 +181,12 @@ services:
     depends_on:
       - db
       - redis
-  
+
   db:
     image: postgres:15
     volumes:
       - ./postgres:/var/lib/postgresql/data
-  
+
   redis:
     image: redis:7-alpine
 ```
@@ -258,7 +258,7 @@ This script demonstrates how both platforms can coexist in a data strategy.
 **
 
 
-## Related Articles
+## Related Reading
 
 - [Tresorit Vs Proton Drive Comparison 2026](/privacy-tools-guide/tresorit-vs-proton-drive-comparison-2026/)
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
@@ -267,4 +267,7 @@ This script demonstrates how both platforms can coexist in a data strategy.
 - [Proton Drive Bridge Desktop Integration Guide](/privacy-tools-guide/proton-drive-bridge-desktop-integration-guide/)
 
 Built by theluckystrike** — More at [zovo.one](https://zovo.one)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

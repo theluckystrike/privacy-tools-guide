@@ -107,7 +107,7 @@ def create_decryptable_html(filename, data, password):
     key = base64.urlsafe_b64encode(password.ljust(32)[:32].encode())
     f = Fernet(key)
     encrypted = f.encrypt(data)
-    
+
     html = f'''<!DOCTYPE html>
 <html><head><title>{filename}</title></head>
 <body>
@@ -154,15 +154,15 @@ import os
 def encrypt_for_sharing(filepath, password):
     with open(filepath, 'rb') as f:
         data = f.read()
-    
+
     key = Fernet.generate_key()
     f = Fernet(key)
     encrypted = f.encrypt(data)
-    
+
     # Save encrypted file
     with open(filepath + '.encrypted', 'wb') as f:
         f.write(encrypted)
-    
+
     # Save key separately (send through different channel)
     with open(filepath + '.key', 'w') as f:
         f.write(password)
@@ -207,7 +207,6 @@ If using browser-based services, configure link expiration to prevent long-term 
 | Browser encryption | Browser only | Varies | High (client-side) |
 | Self-decrypting EXE | Windows + trust | Unlimited | Moderate |
 | Cloud encryption | Service app | Limited by service | High |
-
 
 
 ## Related Articles

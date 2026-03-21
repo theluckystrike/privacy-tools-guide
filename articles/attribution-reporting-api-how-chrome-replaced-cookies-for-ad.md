@@ -112,14 +112,14 @@ Configure your server to receive attribution reports. The browser sends POST req
 // Express.js example for receiving event-level reports
 app.post('/attribution-reporting/report', express.json(), (req, res) => {
   const report = req.body;
-  
+
   console.log('Attribution Report:', {
     attributionDestination: report.attribution_destination,
     reportTime: report.report_time,
     sourceEventId: report.source_event_id,
     triggerData: report.trigger_data
   });
-  
+
   // Process and store report data
   res.status(200).send('OK');
 });
@@ -193,8 +193,6 @@ Always implement proper consent interfaces before collecting any measurement dat
 Begin by auditing your current conversion tracking implementation. Identify the key events you measure and the decisions those measurements inform. Then implement the Attribution Reporting API for at least one conversion type, comparing results against your existing setup during a testing phase.
 
 The transition away from third-party cookies represents both a challenge and an opportunity to build more privacy-respecting measurement systems. The Attribution Reporting API provides the technical foundation for continuing to understand advertising effectiveness while respecting user privacy.
-
-
 
 
 ## Related Articles

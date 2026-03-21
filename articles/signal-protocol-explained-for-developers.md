@@ -39,29 +39,29 @@ The key generation process involves three Diffie-Hellman operations:
 class X3DH:
     def __init__(self):
         self.curve = Curve25519()
-    
+
     def generate_keypair(self):
         private_key = self.curve.generate_private()
         public_key = self.curve.generate_public(private_key)
         return private_key, public_key
-    
+
     def dh(self, private_key, public_key):
         return self.curve.exchange(private_key, public_key)
-    
-    def init_session(self, alice_identity, alice_ephemeral, 
+
+    def init_session(self, alice_identity, alice_ephemeral,
                      bob_identity, bob_signed_prekey, bob_onetime_prekey):
         # DH1: Alice's identity key with Bob's signed prekey
         dh1 = self.dh(alice_identity.private, bob_signed_prekey.public)
-        
-        # DH2: Alice's ephemeral with Bob's signed prekey  
+
+        # DH2: Alice's ephemeral with Bob's signed prekey
         dh2 = self.dh(alice_ephemeral.private, bob_signed_prekey.public)
-        
+
         # DH3: Alice's ephemeral with Bob's identity key
         dh3 = self.dh(alice_ephemeral.private, bob_identity.public)
-        
+
         # DH4: Alice's ephemeral with Bob's one-time prekey
         dh4 = self.dh(alice_ephemeral.private, bob_onetime_prekey.public)
-        
+
         # Combined master secret
         master_secret = dh1 || dh2 || dh3 || dh4
         return self.derive_keys(master_secret)
@@ -81,16 +81,16 @@ Each message uses a unique message key derived from a chain key. Once used, the 
 class SymmetricRatchet:
     def __init__(self, chain_key):
         self.chain_key = chain_key
-    
+
     def advance(self):
         # Derive message key from current chain key
         message_key = HKDF(self.chain_key, info="message_key", length=32)
-        
+
         # Update chain key for next message
         self.chain_key = HKDF(self.chain_key, info="chain_key", length=32)
-        
+
         return message_key
-    
+
     def skip(self, count):
         """Skip ahead in the chain without deriving keys"""
         for _ in range(count):
@@ -108,43 +108,43 @@ class DoubleRatchet:
         self.root_key = root_key
         self.sending_ratchet = SymmetricRatchet(root_key)
         self.receiving_ratchet = SymmetricRatchet(root_key)
-    
+
     def encrypt(self, plaintext):
         # Generate new DH keypair for this message
         dh_private, dh_public = generate_keypair()
-        
+
         # Perform DH with recipient's current key
         shared_secret = dh(dh_private, self.remote_public_key)
-        
+
         # Derive new root and chain keys
-        self.root_key, chain_key = HKDF(shared_secret, 
+        self.root_key, chain_key = HKDF(shared_secret,
                                          input_key_material=self.root_key,
                                          info="ratchet")
-        
+
         # Use the new chain key for this message
         message_key = HKDF(chain_key, info="message_key", length=32)
         ciphertext = encrypt_aesgcm(message_key, plaintext)
-        
+
         # Update our DH key for next message
         self.remote_public_key = dh_public
-        
+
         return ciphertext, dh_public
-    
+
     def decrypt(self, ciphertext, their_dh_public):
         # Perform DH with their new key
         shared_secret = dh(self.sending_ratchet.chain_key, their_dh_public)
-        
+
         # Update root and chain keys
         self.root_key, chain_key = HKDF(shared_secret,
                                          input_key_material=self.root_key,
                                          info="ratchet")
-        
+
         message_key = HKDF(chain_key, info="message_key", length=32)
         plaintext = decrypt_aesgcm(message_key, ciphertext)
-        
+
         # Update to track their next expected key
         self.remote_public_key = their_dh_public
-        
+
         return plaintext
 ```
 
@@ -182,12 +182,12 @@ class SessionStore {
       JSON.stringify(session)
     );
   }
-  
+
   async getSession(recipientId) {
     const data = await secureStorage.get(`session:${recipientId}`);
     return data ? JSON.parse(data) : null;
   }
-  
+
   async deleteSession(recipientId) {
     await secureStorage.delete(`session:${recipientId}`);
   }
@@ -202,13 +202,13 @@ Signal Protocol includes **message authentication** to prevent tampering. Each c
 def encrypt_message(plaintext, message_key, chain_key):
     # Generate unique nonce
     nonce = random(12)
-    
+
     # Encrypt with AES-256-GCM
     ciphertext = aesgcm_encrypt(message_key, nonce, plaintext)
-    
+
     # Calculate authentication tag
     mac = hmac_sha256(chain_key, ciphertext)
-    
+
     return {
         'ciphertext': ciphertext,
         'nonce': nonce,
@@ -228,13 +228,12 @@ Developers new to Signal-style protocols often make these errors:
 4. Weak random number generation: use cryptographically secure RNG for all key generation
 
 
-
 ## Related Articles
 
 - [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
-- [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
+- [Configure Xray Reality Protocol for Undetectable Proxy from](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
 - [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
-- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
+- [Mls Messaging Layer Security Protocol How It Will Change](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

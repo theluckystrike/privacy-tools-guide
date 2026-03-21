@@ -46,7 +46,7 @@ To verify GPC is working, developers can check for this header in their server-s
 function checkGPC(req) {
   const gpcHeader = req.headers['sec-gpc'];
   const gpcParam = req.query.gpc;
-  
+
   return gpcHeader === '1' || gpcParam === 'true';
 }
 
@@ -54,7 +54,7 @@ function checkGPC(req) {
 app.get('/api/data', (req, res) => {
   if (checkGPC(req)) {
     // Process opt-out request
-    return res.status(226).json({ 
+    return res.status(226).json({
       status: 'opt-out-honored',
       processing: 'none'
     });
@@ -85,14 +85,14 @@ class PrivacyRequestHandler:
     def __init__(self, user_db, marketing_db):
         self.user_db = user_db
         self.marketing_db = marketing_db
-    
+
     def process_targeted_advertising_opt_out(self, user_id):
         """
         Process opt-out request for targeted advertising.
         This should disable all profiling and ad targeting.
         """
         user = self.user_db.get(user_id)
-        
+
         # Disable advertising identifiers
         self.user_db.update(user_id, {
             'advertising_id': None,
@@ -101,17 +101,17 @@ class PrivacyRequestHandler:
             'opt_out_timestamp': datetime.utcnow().isoformat(),
             'opt_out_type': 'targeted_advertising'
         })
-        
+
         # Remove from marketing segments
         self.marketing_db.remove_from_segments(user_id, [
             'behavioral_ads',
             'interest-based_ads',
             'lookalike_audiences'
         ])
-        
+
         # Delete any stored ad tracking data
         self.marketing_db.delete_ad_data(user_id)
-        
+
         return {'status': 'opt-out-complete'}
 ```
 
@@ -154,7 +154,7 @@ The Google Analytics GA4 API allows developers to implement opt-outs at the trac
 function disableGATracking() {
   // Disable all GA cookies
   window['ga-disable-GA_MEASUREMENT_ID'] = true;
-  
+
   // For GA4 gtag implementation
   gtag('consent', 'update', {
     'ad_storage': 'denied',
@@ -194,7 +194,7 @@ class PrivacyOptOut:
     def __init__(self, identity_verification=None):
         self.session = requests.Session()
         self.verification = identity_verification
-    
+
     def send_ccpa_opt_out(self, business_email, business_name):
         """
         Send a CCPA opt-out request to a business.
@@ -208,24 +208,24 @@ class PrivacyOptOut:
             "consumer": self.verification,
             "response_required": True
         }
-        
+
         headers = {
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {self._get_auth_token()}'
         }
-        
+
         response = self.session.post(
             f'{business_email}/privacy/request',
             json=request_data,
             headers=headers
         )
-        
+
         return {
             'status': response.status_code,
             'request_id': response.headers.get('Request-Id'),
             'response_deadline': self._calculate_deadline()
         }
-    
+
     def _calculate_deadline(self):
         """CCPA requires response within 45 days"""
         return (datetime.utcnow() + timedelta(days=45)).isoformat()
@@ -282,7 +282,7 @@ If you're building applications that serve users in privacy-law states, implemen
 function honorGlobalPrivacyControl(req, res, next) {
   const gpcHeader = req.headers['sec-gpc'];
   const gpcParam = req.query.gpc;
-  
+
   if (gpcHeader === '1' || gpcParam === 'true') {
     // Immediately disable all tracking
     disableAllTracking(req.userId);
@@ -298,21 +298,21 @@ function honorGlobalPrivacyControl(req, res, next) {
 <!-- Privacy settings page snippet -->
 <section id="privacy-controls">
   <h2>Privacy Preferences</h2>
-  
+
   <div class="opt-out-option">
     <label for="targeted-ads">
-      <input type="checkbox" 
-             id="targeted-ads" 
-             name="targeted_advertising" 
+      <input type="checkbox"
+             id="targeted-ads"
+             name="targeted_advertising"
              checked>
       Disable targeted advertising
     </label>
     <p class="description">
-      We will stop using your browsing behavior and profile 
+      We will stop using your browsing behavior and profile
       to deliver personalized advertisements.
     </p>
   </div>
-  
+
   <button type="submit" class="btn-primary">
     Save Preferences
   </button>
@@ -332,7 +332,7 @@ def log_privacy_request(request_type, user_id, timestamp=None):
         'user_agent': get_user_agent(),
         'processing_completed': False
     }
-    
+
     audit_db.insert('privacy_requests', log_entry)
     return log_entry['timestamp']
 ```
@@ -349,8 +349,6 @@ State privacy law opt-outs have boundaries:
 Regularly review and resubmit opt-out requests, as businesses may collect new data or update their practices.
 
 ---
-
-
 
 
 ## Related Articles

@@ -132,13 +132,13 @@ def check_processing_restriction(user):
 def restrict_processing(user_id: str, reason: str):
     """Apply processing restriction to a user."""
     user = db.get_user(user_id)
-    
+
     # Update user record
     user.processing_restricted = True
     user.restriction_reason = reason
     user.restriction_requested_at = datetime.utcnow()
     db.save_user(user)
-    
+
     # Log the action
     db.log_gdpr_action(
         user_id=user_id,
@@ -146,12 +146,12 @@ def restrict_processing(user_id: str, reason: str):
         reason=reason,
         timestamp=datetime.utcnow()
     )
-    
+
     # Disable all non-essential processing
     disable_marketing_emails(user_id)
     disable_analytics_tracking(user_id)
     disable_data_sharing(user_id)
-    
+
     return {"status": "restricted", "timestamp": datetime.utcnow()}
 ```
 
@@ -161,16 +161,16 @@ def restrict_processing(user_id: str, reason: str):
 // Middleware to check processing restrictions
 function checkProcessingRestriction(req, res, next) {
   const userId = req.user?.id;
-  
+
   if (!userId) return next();
-  
+
   db.query(
     'SELECT processing_restricted, restriction_reason FROM users WHERE id = ?',
     [userId]
   ).then(user => {
     if (user.processing_restricted) {
       const allowedRoutes = ['/api/privacy/status', '/api/account'];
-      
+
       if (!allowedRoutes.includes(req.path)) {
         return res.status(403).json({
           error: 'Processing Restricted',
@@ -217,8 +217,6 @@ After submitting your request, verify compliance:
 5. **Document everything** — Keep copies of your request and their response
 
 ---
-
-
 
 
 ## Related Articles

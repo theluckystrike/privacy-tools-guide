@@ -139,7 +139,7 @@ def handle_client(client_socket):
     # Relay traffic with Indian DNS resolution
     remote = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     remote.connect(('103.87.66.1', 443))  # Indian endpoint
-    
+
     while True:
         r, w, x = select.select([client_socket, remote], [], [])
         for sock in r:
@@ -169,7 +169,6 @@ While accessing geo-restricted content, maintain security practices:
 - Use providers with no-logging policies
 - Avoid free VPNs—monetization often involves data harvesting
 - Consider using a dedicated browser profile for streaming activities
-
 
 
 ## Related Articles

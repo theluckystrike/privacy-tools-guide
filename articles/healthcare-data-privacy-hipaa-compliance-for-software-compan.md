@@ -69,7 +69,7 @@ server {
     ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384';
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
-    
+
     # Enforce HTTPS
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 }
@@ -128,14 +128,14 @@ def check_access(user_role: Role, resource: str, action: str) -> bool:
     policy = ACCESS_POLICIES.get(user_role)
     if not policy:
         return False
-    
+
     if action == "read":
         return policy.can_read and resource in policy.allowed_fields
     elif action == "write":
         return policy.can_write and resource in policy.allowed_fields
     elif action == "delete":
         return policy.can_delete
-    
+
     return False
 ```
 
@@ -157,7 +157,7 @@ from typing import Optional
 class AuditLogger:
     def __init__(self, log_destination: str):
         self.log_destination = log_destination
-    
+
     def log_phi_access(
         self,
         user_id: str,
@@ -178,11 +178,11 @@ class AuditLogger:
             "ip_address": ip_address,
             "event_type": "PHI_ACCESS"
         }
-        
+
         # Write to immutable audit log (append-only storage)
         with open(self.log_destination, "a") as f:
             f.write(json.dumps(audit_entry) + "\n")
-        
+
         return audit_entry
 
 # Usage in your application
@@ -200,7 +200,7 @@ def retrieve_patient_record(user_id: str, patient_id: str, ip: str):
             ip_address=ip
         )
         raise PermissionError("Access denied to patient record")
-    
+
     # Log successful access
     audit_logger.log_phi_access(
         user_id=user_id,
@@ -210,7 +210,7 @@ def retrieve_patient_record(user_id: str, patient_id: str, ip: str):
         patient_id=patient_id,
         ip_address=ip
     )
-    
+
     return fetch_medical_record(patient_id)
 ```
 
@@ -227,18 +227,18 @@ import re
 
 def sanitize_for_logging(data: dict) -> dict:
     """Remove PHI from data before logging."""
-    sensitive_fields = ["ssn", "date_of_birth", "medical_record_number", 
+    sensitive_fields = ["ssn", "date_of_birth", "medical_record_number",
                         "insurance_id", "patient_name", "address"]
-    
+
     sanitized = data.copy()
     for field in sensitive_fields:
         if field in sanitized:
             sanitized[field] = "[REDACTED]"
-    
+
     # Also check nested structures
     if "patient" in sanitized and isinstance(sanitized["patient"], dict):
         sanitized["patient"] = sanitize_for_logging(sanitized["patient"])
-    
+
     return sanitized
 ```
 
@@ -260,7 +260,7 @@ class BreachNotifier:
     def __init__(self, hhs_portal_url: str, compliance_officer_email: str):
         self.hhs_portal = hhs_portal_url
         self.officer_email = compliance_officer_email
-    
+
     def report_breach(self, breach_details: dict):
         """Prepare and submit breach notification to HHS."""
         notification = {
@@ -270,12 +270,12 @@ class BreachNotifier:
             "number_of_affected_individuals": breach_details["affected_count"],
             "description": breach_details["description"]
         }
-        
+
         # In production, this would submit to HHS portal
         # For now, prepare documentation
         with open(f"breach_report_{breach_details['id']}.json", "w") as f:
             json.dump(notification, f, indent=2)
-        
+
         # Alert compliance officer immediately
         send_email(
             to=self.officer_email,
@@ -291,8 +291,6 @@ Building HIPAA-compliant software requires attention to security fundamentals: e
 Remember that HIPAA violations can result in significant fines—up to $1.5 million per violation category per year. Investing in proper security architecture from the start is far less expensive than dealing with breaches and compliance penalties later.
 
 ---
-
-
 
 
 ## Related Articles

@@ -45,20 +45,20 @@ echo ""
 
 for protocol in "${PROTOCOLS[@]}"; do
     echo "Testing protocol: $protocol"
-    
+
     # Set protocol
     expressvpn protocol "$protocol" 2>/dev/null
-    
+
     # Attempt connection
     expressvpn connect 2>/dev/null &
     PID=$!
-    
+
     # Wait for connection with timeout
     COUNTER=0
     while [ $COUNTER -lt $TIMEOUT ]; do
         if expressvpn status 2>/dev/null | grep -q "Connected"; then
             echo "  ✓ Connected via $protocol"
-            
+
             # Test basic connectivity
             for host in "${TEST_HOSTS[@]}"; do
                 if ping -c 1 -W 3 "$host" &>/dev/null; then
@@ -67,18 +67,18 @@ for protocol in "${PROTOCOLS[@]}"; do
                     echo "    ✗ Failed to reach $host"
                 fi
             done
-            
+
             expressvpn disconnect 2>/dev/null
             break
         fi
         sleep 1
         COUNTER=$((COUNTER + 1))
     done
-    
+
     if [ $COUNTER -eq $TIMEOUT ]; then
         echo "  ✗ Connection failed via $protocol (timeout)"
     fi
-    
+
     sleep 2
 done
 
@@ -145,7 +145,7 @@ Network fluctuations are common in restricted regions. Implement a watchdog scri
 
 while true; do
     STATUS=$(expressvpn status 2>/dev/null | grep -o "Connected\|Disconnected")
-    
+
     if [ "$STATUS" = "Disconnected" ]; then
         echo "$(date): Connection lost. Reconnecting..."
         expressvpn connect
@@ -153,7 +153,7 @@ while true; do
     else
         echo "$(date): Connection active"
     fi
-    
+
     # Check every 30 seconds
     sleep 30
 done
@@ -193,8 +193,8 @@ def connect_vpn(protocol='lightway'):
 
 def check_connection():
     result = subprocess.run(
-        ['expressvpn', 'status'], 
-        capture_output=True, 
+        ['expressvpn', 'status'],
+        capture_output=True,
         text=True
     )
     return 'Connected' in result.stdout
@@ -206,7 +206,6 @@ if not check_connection():
 ```
 
 This pattern integrates VPN management into automated build processes, ensuring your development environment maintains network access during restricted connectivity periods.
-
 
 
 ## Related Articles

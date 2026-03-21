@@ -141,42 +141,42 @@ func main() {
     if err != nil {
         panic(err)
     }
-    
+
     fmt.Println("Public Key:", identity.PublicKey().String())
-    
+
     // Encrypt data
     plaintext := []byte("Sensitive data to encrypt")
-    
+
     // Create recipient from public key
     recipient, err := age.ParseX25519Recipient(identity.PublicKey().String())
     if err != nil {
         panic(err)
     }
-    
+
     var buf bytes.Buffer
     w, err := age.Encrypt(&buf, recipient)
     if err != nil {
         panic(err)
     }
-    
+
     if _, err := w.Write(plaintext); err != nil {
         panic(err)
     }
     if err := w.Close(); err != nil {
         panic(err)
     }
-    
+
     // Decrypt data
     r, err := age.Decrypt(bytes.NewReader(buf.Bytes()), identity)
     if err != nil {
         panic(err)
     }
-    
+
     decrypted, err := ioutil.ReadAll(r)
     if err != nil {
         panic(err)
     }
-    
+
     fmt.Println("Decrypted:", string(decrypted))
 }
 ```
@@ -290,7 +290,6 @@ If you see an invalid key format error, verify the public key format—age publi
 A passphrase mismatch occurs when decrypting files encrypted with `-p` using the wrong passphrase. There is no recovery mechanism for lost passphrases.
 
 Age encrypts files in streaming fashion, handling large files efficiently. For very large files, consider splitting them first with `split` before encryption.
-
 
 
 ## Related Articles

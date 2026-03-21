@@ -36,9 +36,6 @@ Here's an example template you can adapt:
 ## Description
 What does this PR change and why is it needed?
 
-## Related Issues
-- Closes #issue-number
-
 ## Type of Change
 - [ ] Bug fix
 - [ ] New feature
@@ -367,10 +364,9 @@ echo "Quality Metric"
 {% endraw %}
 
 
-
 ## Related Articles
 
-- [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
+- [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [How To Protect Your Zoom Meeting From Zoom Bombing Security](/privacy-tools-guide/how-to-protect-your-zoom-meeting-from-zoom-bombing-security/)
 - [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)

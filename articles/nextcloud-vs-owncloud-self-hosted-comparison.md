@@ -100,7 +100,7 @@ Both platforms provide desktop clients (Windows, macOS, Linux) and mobile apps (
 # Access Nextcloud files via WebDAV
 curl -u user:password "https://your-nextcloud.example.com/remote.php/dav/files/username/"
 
-# Access OwnCloud files via WebDAV  
+# Access OwnCloud files via WebDAV
 curl -u user:password "https://your-owncloud.example.com/remote.php/webdav/"
 ```
 
@@ -218,8 +218,6 @@ For most developers and self-hosting enthusiasts, Nextcloud's fully open model a
 Test both platforms with your specific use case—file types, user count, and integration requirements—before committing. Containerized deployment makes this evaluation straightforward with minimal infrastructure investment.
 
 ---
-
-
 
 
 ## Related Articles

@@ -51,7 +51,7 @@ class PrivacyPreservingCounter:
     def __init__(self, aggregation_window_minutes=60):
         self.window = timedelta(minutes=aggregation_window_minutes)
         self.buckets = defaultdict(lambda: defaultdict(int))
-    
+
     def record_event(self, event_type, user_segment):
         """Record an event without storing user identifiers."""
         window_key = datetime.now().replace(
@@ -61,7 +61,7 @@ class PrivacyPreservingCounter:
         )
         # Store only aggregate counts by segment
         self.buckets[window_key][event_type, user_segment] += 1
-    
+
     def get_counts(self, event_type=None, window_start=None):
         """Retrieve aggregate counts, never individual records."""
         results = {}
@@ -85,15 +85,15 @@ For more sophisticated analysis, group users into segments rather than tracking 
 ```python
 class SegmentAnalytics:
     SEGMENTS = ['free_tier', 'pro_tier', 'enterprise', 'new_user', 'active_30d']
-    
+
     def track_action(self, action, user_tier, days_since_signup):
         # Assign user to a segment instead of tracking their identity
         segment = self._get_segment(user_tier, days_since_signup)
-        
+
         # Process and store only segment-level data
         self._increment(f"action:{action}", segment)
         self._increment(f"segment:{segment}:daily_active", datetime.now().date())
-    
+
     def _get_segment(self, tier, days_since_signup):
         if days_since_signup < 30:
             return 'new_user'
@@ -102,7 +102,7 @@ class SegmentAnalytics:
         elif tier == 'pro':
             return 'pro_tier'
         return 'enterprise'
-    
+
     def get_segment_stats(self):
         """Return only aggregate segment statistics."""
         return {
@@ -130,13 +130,13 @@ class DifferentialPrivacy:
         Lower values = more privacy, less accuracy.
         """
         self.epsilon = epsilon
-    
+
     def add_laplace_noise(self, true_count, sensitivity=1):
         """Add Laplace noise for differential privacy."""
         scale = sensitivity / self.epsilon
         noise = np.random.laplace(0, scale)
         return max(0, round(true_count + noise))
-    
+
     def private_count_query(self, base_counts, min_contributions=10):
         """
         Return counts with differential privacy guarantees.
@@ -178,7 +178,7 @@ class PrivacyAnalytics {
   track(eventName, properties = {}) {
     // Remove any potential PII from properties
     const safeProperties = this.sanitize(properties);
-    
+
     // Send only anonymized, aggregate-ready data
     this.send({
       event: eventName,
@@ -253,19 +253,19 @@ class PrivacyPipeline:
     def process_event(self, raw_event):
         # Step 1: Validate and extract non-PII fields
         sanitized = self.sanitize(raw_event)
-        
+
         # Step 2: Immediate aggregation
         self.aggregate(sanitized)
-        
+
         # Step 3: Raw event is not stored
         # (function ends here - raw data is gone)
-    
+
     def query(self, query_params):
         # Apply differential privacy to all queries
         results = self.differential_privacy.apply(
             self.aggregate_store.query(query_params)
         )
-        
+
         # Apply minimum threshold
         return self.apply_thresholds(results)
 ```
@@ -279,8 +279,6 @@ Start with server-side aggregation for the simplest implementation. Add differen
 The best analytics respect user privacy while still answering the questions that matter for product decisions.
 
 ---
-
-
 
 
 ## Related Articles

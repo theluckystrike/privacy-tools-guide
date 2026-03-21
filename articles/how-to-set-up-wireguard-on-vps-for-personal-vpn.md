@@ -204,7 +204,6 @@ If your connection fails, check these common problems:
 - **DNS leaks**: Confirm your DNS requests also route through the VPN tunnel
 
 
-
 ## Related Articles
 
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)

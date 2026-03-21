@@ -177,7 +177,6 @@ shred -u sensitive-file.pdf
 ```
 
 
-
 ## Related Articles
 
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)

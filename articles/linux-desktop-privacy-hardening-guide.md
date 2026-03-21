@@ -519,7 +519,7 @@ Quarterly:
 This hardened Linux desktop now refuses telemetry, limits network exposure, encrypts sensitive data, and sandboxes applications. The trade-off: slightly more complex to manage, but vastly more privacy-respecting.
 
 
-## Related Articles
+## Related Reading
 
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
 - [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
@@ -527,5 +527,6 @@ This hardened Linux desktop now refuses telemetry, limits network exposure, encr
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

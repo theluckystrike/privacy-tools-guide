@@ -155,22 +155,22 @@ def verify_consent_receipt(receipt_json, issuer_public_key):
     """Verify a consent receipt's signature and structure."""
     try:
         receipt = json.loads(receipt_json)
-        
+
         # Verify required fields exist
         required = ['version', 'consent_timestamp', 'issuer', 'services']
         for field in required:
             if field not in receipt:
                 raise ValueError(f"Missing required field: {field}")
-        
+
         # Verify signature
         payload = jwt.decode(
             receipt['signature']['value'],
             issuer_public_key,
             algorithms=[receipt['signature']['algorithm']]
         )
-        
+
         return True, "Valid consent receipt"
-        
+
     except (json.JSONDecodeError, KeyError, jwt.InvalidSignatureError) as e:
         return False, f"Verification failed: {str(e)}"
 ```
@@ -201,7 +201,6 @@ The consent receipt becomes valuable in several real-world scenarios:
 The specification records consent but does not solve every consent management challenge. It does not define how to present consent requests, how to handle consent withdrawal, or how to manage consent across complex organizational structures. These remain implementation decisions.
 
 Additionally, the specification requires careful key management for signatures. If your signing keys are compromised, attackers could create valid-looking consent receipts. Key rotation and proper key management are essential.
-
 
 
 ## Related Articles
