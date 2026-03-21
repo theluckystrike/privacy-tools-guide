@@ -193,6 +193,99 @@ config interface 'guest_vlan'
 
 Tag VLAN 10 on your switch ports and configure separate DHCP pools for each virtual guest network.
 
+## Preventing DNS Leaks on the Guest Network
+
+One common gap in guest network configurations is DNS leak prevention. Even after assigning custom DNS servers through DHCP, a determined guest device may attempt to use hardcoded DNS servers, bypassing your configuration entirely.
+
+To intercept and redirect all DNS traffic on the guest interface, add a NAT rule that forces all DNS queries to your router's dnsmasq instance:
+
+```bash
+config rule
+    option name 'Redirect-Guest-DNS'
+    option src 'guest'
+    option dest_port '53'
+    option proto 'tcpudp'
+    option target 'DNAT'
+    option dest_ip '10.0.2.1'
+```
+
+This redirects any DNS query destined for an external server to your local resolver. Combined with a blocklist-enabled dnsmasq configuration, this approach stops tracking domains at the DNS layer for all guest devices, regardless of their individual DNS settings.
+
+Additionally, consider blocking DNS-over-HTTPS at the firewall level. Applications like Chrome and Firefox will attempt DoH using well-known IP addresses. You can block the most common DoH providers:
+
+```bash
+# Block Cloudflare DoH
+config rule
+    option name 'Block-Guest-DoH-Cloudflare'
+    option src 'guest'
+    option dest 'wan'
+    option dest_ip '1.1.1.1'
+    option dest_port '443'
+    option proto 'tcp'
+    option target 'REJECT'
+```
+
+This is an advanced mitigation. For most home use cases, redirecting port 53 is sufficient.
+
+## Captive Portal for Guest Authentication
+
+In shared living situations, small offices, or AirBnB setups, you may want guests to acknowledge terms of service before accessing the internet. OpenWRT supports this through the `nodogsplash` captive portal package:
+
+```bash
+opkg install nodogsplash
+
+# Basic nodogsplash configuration at /etc/config/nodogsplash
+config nodogsplash
+    option enabled '1'
+    option gatewayinterface 'br-guest'
+    option maxclients '20'
+    option sessiontimeout '86400'
+    option preauthidletimeout '30'
+    option authauthidletimeout '3600'
+```
+
+When a guest connects and opens a browser, nodogsplash intercepts the request and redirects to your splash page. After the guest clicks through, the portal logs their MAC address and session start time and grants access. This provides a lightweight accountability layer without requiring login credentials.
+
+## Rate Limiting and Bandwidth Fairness
+
+Guest networks benefit from bandwidth limits so a single guest cannot saturate your connection. OpenWRT's traffic shaping supports per-interface limits through the `qosify` or `tc` utilities:
+
+```bash
+# Install simple bandwidth limiter
+opkg install luci-app-sqm
+
+# Set download/upload limits for guest interface
+uci set sqm.guest=queue
+uci set sqm.guest.interface='br-guest'
+uci set sqm.guest.download='20000'
+uci set sqm.guest.upload='10000'
+uci commit sqm
+/etc/init.d/sqm restart
+```
+
+This example limits guest traffic to 20 Mbps down and 10 Mbps up. Adjust values based on your connection capacity and how many guests you expect.
+
+## Monitoring Guest Activity
+
+Maintaining visibility into what your guest network is doing is good security hygiene. The `ntopng` package provides a lightweight traffic analysis dashboard:
+
+```bash
+opkg install ntopng
+```
+
+After installation, configure it to monitor the `br-guest` interface specifically. You can see active connections, bandwidth usage per client, and flagged suspicious domains in real time. This is particularly useful if you run a guest network for a small business or AirBnB situation where you want to ensure the network is not being misused.
+
+For simpler logging, the standard dnsmasq query log captures all DNS lookups on the guest interface:
+
+```bash
+# /etc/config/dhcp - enable query logging
+config dnsmasq
+    option logqueries '1'
+    option logfacility '/var/log/dnsmasq-guest.log'
+```
+
+Review this log periodically to identify unusual lookup patterns that might indicate a compromised guest device.
+
 ## Troubleshooting
 
 Common issues and solutions:
@@ -200,6 +293,9 @@ Common issues and solutions:
 - **Guest devices can't get IP**: Verify the DHCP server is enabled and the interface is in the correct firewall zone
 - **DNS not working**: Ensure the dnsmasq instance is listening on the guest interface and firewall allows port 53
 - **Guest can access LAN**: Check that the `block-guest-to-lan` firewall rule exists and is before any forwarding rules
+- **Guest devices see each other**: Confirm `option isolate '1'` is set in the wireless configuration and restart the wireless subsystem
+- **Slow DNS on guest**: If using dnscrypt-proxy or DoH forwarding, verify the upstream resolver is responding; fall back to direct DNS temporarily to isolate the bottleneck
+- **VLAN traffic not tagging correctly**: Use `swconfig show` to inspect your switch port configuration and confirm the VLAN is properly tagged on the uplink port
 
 
 ## Related Articles
