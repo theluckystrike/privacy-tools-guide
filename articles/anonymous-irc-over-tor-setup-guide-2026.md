@@ -187,12 +187,11 @@ After connecting, verify your anonymity:
 /quote USERIP yournick
 ```
 
-Test for DNS leaks using Wireshark or tcpdump on your local interface. If you see any DNS queries to port 53 originating from your IRC client process, your client is leaking hostnames:
+Test for DNS leaks with tcpdump on your local interface. You should see zero DNS queries when correctly proxied:
 
 ```bash
 sudo tcpdump -i any -n port 53 &
-# Then connect to IRC and watch for queries
-# You should see zero DNS traffic if everything is correctly proxied
+# Connect to IRC — any DNS traffic indicates a leak
 ```
 
 ## Operational Security Best Practices
@@ -207,11 +206,11 @@ Avoid changing nicknames frequently — correlation attacks can link your identi
 /set irc.server.default.nicks "your_persistent_nick"
 ```
 
-Keep separate IRC personas completely isolated. If you need multiple identities, run separate Tor instances on different ports for each persona, or use different machines.
+Keep separate IRC personas completely isolated — use different machines or separate Tor instances on different ports for each identity.
 
 ### TLS Certificate Pinning
 
-Verify server certificates to prevent man-in-the-middle attacks. When you first connect to a server, record its certificate fingerprint and configure your client to reject any future changes:
+Record server certificate fingerprints on first connection and configure your client to reject changes:
 
 ```bash
 # WeeChat: Display SSL certificate fingerprint
