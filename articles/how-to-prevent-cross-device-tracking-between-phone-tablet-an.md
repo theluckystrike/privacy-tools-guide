@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-prevent-cross-device-tracking-between-phone-tablet-an/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
