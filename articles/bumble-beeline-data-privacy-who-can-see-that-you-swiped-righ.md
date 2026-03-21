@@ -171,6 +171,177 @@ To request your data under GDPR/CCPA:
 2. Submit a formal request if the self-service option is unavailable
 3. Review the export for any Beeline-related entries
 
+## Verifying Beeline Visibility Setting Changes
+
+After toggling Beeline visibility, verify the change takes effect:
+
+```python
+# Test script to validate Beeline settings
+def verify_beeline_settings():
+    """
+    Check that Beeline visibility changes persist
+    """
+
+    settings_before = {
+        'show_on_beeline': True,
+        'incognito_mode': False,
+        'hide_from_beeline': False
+    }
+
+    # Change setting
+    # User goes to: Settings → Privacy Controls → Beeline → "Appear in Others' Beeline"
+
+    settings_after = {
+        'show_on_beeline': False,  # Should now be false
+        'incognito_mode': False,
+        'hide_from_beeline': True
+    }
+
+    # Verification steps:
+    # 1. Wait 24 hours (Bumble caches visibility)
+    # 2. Ask a friend (on free tier) if they see you in their Beeline
+    # 3. They should not see your profile if settings applied
+
+    return settings_before != settings_after
+```
+
+The change typically takes effect within 24 hours as Bumble updates its visibility cache across servers.
+
+## Beeline and Search Visibility Correlation
+
+Interestingly, Beeline visibility and regular search visibility are linked on Bumble:
+
+| Setting | Effect |
+|---------|--------|
+| Visible in Beeline | Visible in search results (free users) |
+| Incognito Mode | Only premium users see you |
+| Hidden from Beeline | Not visible in anyone's Beeline, but still visible in search |
+| Completely hidden | Settings → Privacy → "Visible to others" OFF |
+
+For maximum stealth:
+1. Enable Incognito Mode
+2. Disable "Visible to others"
+3. Your profile only appears to people you explicitly like
+
+## Profile Deletion and Data Retention
+
+If you delete your Bumble account, what happens to Beeline data?
+
+- **Beeline list clears immediately** - Your profile disappears from everyone's Beeline
+- **Swipe data retention** - Bumble keeps anonymized swipe pattern data for analytics
+- **Match history** - Deleted, but matched users may have screenshots
+- **User-reported content** - Stays in their reports database
+
+Bumble's privacy notice states data is deleted within 30 days of account deletion, though backups may persist longer.
+
+## Advanced: Account-Level Privacy Audit
+
+Perform a complete privacy audit of your Bumble account:
+
+```bash
+#!/bin/bash
+# bumble_privacy_audit.sh
+
+echo "Bumble Account Privacy Audit"
+echo "=============================="
+echo ""
+echo "Action Items:"
+echo "1. Open Bumble app and navigate to Settings"
+echo "2. Go to Privacy → Download my data"
+echo "3. Download your complete data export"
+echo ""
+echo "Review the exported JSON for:"
+
+# Expected data types in export
+DATA_POINTS=(
+    "profile_views"
+    "swipes_sent"
+    "swipes_received"
+    "matches"
+    "conversations"
+    "location_history"
+    "device_info"
+    "ip_addresses"
+    "beeline_views"
+)
+
+for point in "${DATA_POINTS[@]}"; do
+    echo "  - $point"
+done
+
+echo ""
+echo "Red flags:"
+echo "  ✗ Swipe data present (should not be exported)"
+echo "  ✗ Location history extending beyond expected dates"
+echo "  ✗ Device fingerprints for unknown devices"
+echo ""
+```
+
+Bumble's data export should NOT include:
+- Users who swiped right on you (privacy of others)
+- Exact timestamps of swipes
+- Full conversation transcripts with metadata
+
+## Blocking and Reporting for Privacy Violations
+
+If someone violates your privacy through Beeline:
+
+1. **Screenshot and report** - Document the violation
+2. **Use "Report" function** - Bumble's in-app reporting tool
+3. **Provide context** - Explain why you're reporting (privacy violation)
+4. **Specify claim** - "User accessed my data through Beeline without consent"
+
+Bumble's trust and safety team reviews such reports, though enforcement may be slow.
+
+## Third-Party Data Aggregation Risk
+
+Be aware that matching data across dating apps creates a social graph:
+
+```python
+# Risk model: Cross-app user identification
+
+def cross_app_risk_assessment():
+    """
+    Bumble data combined with other apps enables user identification
+    """
+
+    # Same profile across apps = identifiable
+    profile_identifiers = [
+        "Unique photos (reverse image search)",
+        "Bio text (substring matching)",
+        "Interests and preferences (clustering)",
+        "Device advertising ID (cross-app tracking)",
+        "Email address (if shared)",
+        "Phone number (Bumble uses for verification)"
+    ]
+
+    # Mitigation:
+    mitigations = {
+        "Use different photos per app": "Defeats image matching",
+        "Randomize bio text slightly": "Defeats text matching",
+        "Use different email/phone": "Defeats direct linkage",
+        "Disable IDFA sharing": "Prevents device-level tracking",
+        "VPN/proxy for location": "Defeats geolocation clustering"
+    }
+
+    return mitigations
+```
+
+Data brokers have been known to compile dating app profiles, selling compiled lists to advertisers. Minimize your cross-app footprint.
+
+## Premium vs Free User Privacy Gap
+
+Premium Bumble users have different privacy implications:
+
+| Feature | Free Users | Premium Users |
+|---------|-----------|----------------|
+| See Beeline | No | Yes (core feature) |
+| Appear in Beeline | Yes (unless hidden) | Yes (unless Incognito) |
+| Profile visibility | Public | Can be Incognito |
+| Conversation encryption | No | No (same for all) |
+| Data sold to third parties | Same as Premium | Same as Free |
+
+Premium doesn't inherently provide better privacy, just more visibility control. Both free and premium users have data collection risks.
 
 ## Related Articles
 

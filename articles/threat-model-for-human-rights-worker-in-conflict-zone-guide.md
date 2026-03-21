@@ -171,6 +171,110 @@ A threat model is not an one-time document but a living reference that requires 
 
 Document your threat modeling process even if imperfect. The act of systematically thinking through assets, adversaries, and attack vectors significantly improves your security posture compared to ad-hoc security decisions.
 
+## Building a Tiered Security Approach
+
+Not all assets require the same level of protection. A tiered approach allocates resources efficiently:
+
+**Tier 1 (Maximum Protection)**: Source identities and raw documentation
+- Store on encrypted, air-gapped devices
+- Never transmitted over public internet
+- Backup only in secure locations controlled by trusted organizations
+- Access limited to 1-2 people maximum
+
+**Tier 2 (Strong Protection)**: Processed analysis and reports
+- Encrypted at rest and in transit
+- Can be shared with trusted international organizations
+- No personally identifiable information about sources
+- Transmission via Signal, not email
+
+**Tier 3 (Standard Protection)**: Public-facing statements and published reports
+- Standard website hosting and distribution
+- No sensitive information
+- Encrypted transport (HTTPS) only
+
+Separating data by sensitivity tier prevents a single security breach from compromising everything. A device containing processed reports can be seized without exposing raw source identities if properly segregated.
+
+## Technical Infrastructure for Sensitive Documentation
+
+For organizations handling human rights documentation, infrastructure decisions have security implications:
+
+**Cloud storage considerations**: Services like Google Drive and Dropbox are convenient but create centralized targets. Compromise of a single account exposes all stored materials. Consider instead:
+
+```bash
+# Self-hosted encrypted storage with Nextcloud
+docker run -d --name nextcloud -v /data/nextcloud:/var/www/html -p 8080:80 nextcloud
+
+# All data encrypted locally before uploading
+gpg --symmetric --cipher-algo AES256 sensitive_report.pdf
+# Verify encryption: file sensitive_report.pdf.gpg
+```
+
+Self-hosted storage using Nextcloud requires managing your own server infrastructure but eliminates a commercial vendor as a weakness. Encrypting files locally before uploading ensures even if the server is compromised, data remains protected.
+
+**Off-the-grid backup strategy**: Critical evidence should exist in locations completely independent of internet-connected systems. Consider:
+
+1. **Encrypted hard drives in geographically distributed locations**: Send encrypted drives to trusted partner organizations in different countries. Geographically dispersed backups mean seizure of one location doesn't eliminate all evidence.
+
+2. **Dead drops for critical documentation**: Arrange secure locations (unattended) where encrypted drives are deposited and picked up by trusted contacts. Eliminates surveillance of handoff meetings.
+
+3. **Paper backup of critical evidence**: Print high-resolution photos of key evidence on archival-quality paper stored in secure locations. Digital systems fail, but properly stored paper lasts decades.
+
+## Understanding Institutional Pressure Techniques
+
+Sophisticated state actors don't always attack directly. They apply pressure through institutional channels:
+
+**Visa denial and travel restriction**: Journalists and human rights workers find themselves unable to travel, attend conferences, or meet with donors. This isn't a security vulnerability you can patch—it's institutional pressure requiring political response.
+
+**Banking discrimination**: Organizations get flagged in banking systems, making wire transfers impossible or extremely slow. International funding becomes inaccessible despite no formal sanctions.
+
+**Regulatory harassment**: Governments demand documentation, threaten closure, increase compliance overhead. Legitimate but designed to exhaust resources.
+
+**Device interdiction**: Laptops are "lost" in transit, phones go missing, equipment gets confiscated. Mitigate by:
+- Never travel with equipment containing sensitive data
+- Use temporary devices that can be abandoned if seized
+- Carry decoys that can be surrendered to authorities
+- Ship sensitive equipment separately rather than carrying
+
+## Incident Response Drills
+
+A security plan fails if no one knows how to execute it during actual crisis. Run drills quarterly:
+
+**Drill 1: Device compromise scenario**: Someone reports suspicious activity. Assume the device is compromised. Can you wipe it cleanly? Can you restore your communications within 2 hours? Do team members know the emergency contact procedure?
+
+**Drill 2: Communication interception**: Assume your primary communication channel is compromised. Activate backup channel. Can all team members reach you through the secondary method? Does the secondary channel actually work or was it never tested?
+
+**Drill 3: Arrest scenario**: A team member is detained. Have you documented their recovery phrases? Can someone else access their accounts to disable them if needed? Have you prepared a legal response? (Many organizations have retainer agreements with lawyers who specialize in activist defense.)
+
+Document drill results. Each drill reveals gaps in your procedures. Fix gaps before actual emergencies.
+
+## Working with International Organizations
+
+Many human rights workers coordinate with UN agencies, international NGOs, and diplomatic missions. These relationships create both security and vulnerability:
+
+**Secure communication with international bodies**: UN agencies and embassy staff use varied security standards. Never assume their systems meet your security requirements:
+
+```bash
+# Before sharing sensitive information:
+# 1. Ask about their encryption and retention policies
+# 2. Request written confirmation of their security procedures
+# 3. Consider all communications with them may be accessible to their government
+# 4. Use intermediary organizations with documented security if direct contact is unsafe
+```
+
+UN offices and embassies in conflict zones may be targets themselves or may have been compromised by hostile actors. Verify independently that the person you're communicating with is actually who they claim to be. Use out-of-band verification (phone call to known number, in-person meeting with verified identity).
+
+## Ongoing Threat Assessment
+
+Conflict zones evolve. Threats that existed last month may be replaced by new threats this month:
+
+**Monitor changing surveillance tactics**: If adversaries shift from physical surveillance to digital interception, your mitigations need to shift. An organization focused on preventing physical device seizure while ignoring network eavesdropping is unprepared.
+
+**Track adversary capability changes**: When new surveillance tools become available, update your threat model. Commercial spyware platforms like NSO's Pegasus or Candiru represent significant capability jumps.
+
+**Adjust for organizational evolution**: As your organization grows, your threat model changes. A solo researcher has different threats than a coordinated network of 50 people. Revisit your model as team size changes.
+
+**Update after near-misses**: If someone almost gets caught, investigate what went wrong. Did your procedures fail, or did they reveal new threat vectors? Update accordingly.
+
 
 ## Related Articles
 

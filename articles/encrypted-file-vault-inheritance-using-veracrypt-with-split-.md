@@ -171,6 +171,298 @@ Regular testing ensures your inheritance system works when needed:
 veracrypt --text --verify /path/to/volume.vc
 ```
 
+## Advanced Scenarios: Multiple Inheritance Layers
+
+For complex inheritance scenarios, implement layered vaults:
+
+```bash
+#!/bin/bash
+# Multi-layer inheritance vault setup
+
+# Layer 1: Executor-accessible vault (immediate documents)
+veracrypt --text --create outer_volume.vc \
+    --size 2G --encryption AES-256 --hash SHA-512 \
+    --filesystem NTFS
+
+# Layer 2: Attorney-accessible vault (conditional documents)
+# Mount Layer 1, then create hidden volume inside
+
+veracrypt --text --mount outer_volume.vc /media/outer \
+    --stdin <<< "executor_password"
+
+# While mounted, create hidden volume
+veracrypt --text --create /media/outer/inner_hidden.vc \
+    --hidden --size 1G --encryption AES-256 \
+    --outer-password "executor_password" \
+    --hidden-password "attorney_password"
+
+# Layer 3: Cold storage backup (encrypted backup of all)
+# Encrypted external drive with both passphrases documented separately
+```
+
+This three-layer approach ensures:
+- Executor can access immediate documents
+- Attorney verifies inheritance terms
+- Backup exists if both parties unavailable
+
+## Implementing Time-Based Access Control
+
+For inheritance that triggers on specific dates:
+
+```python
+#!/usr/bin/env python3
+# Time-based inheritance trigger
+
+import datetime
+import subprocess
+import json
+
+class TimedInheritanceVault:
+    def __init__(self, vault_path, executor_pass, attorney_pass):
+        self.vault_path = vault_path
+        self.executor_pass = executor_pass
+        self.attorney_pass = attorney_pass
+        self.activation_date = None
+
+    def set_activation_date(self, year, month, day):
+        """
+        Set date when inheritance becomes accessible
+        Could be death date, incapacity date, or predetermined date
+        """
+        self.activation_date = datetime.date(year, month, day)
+
+    def check_if_activated(self):
+        """
+        Verify if inheritance conditions are met
+        In practice, this would check external proof of death/incapacity
+        """
+        today = datetime.date.today()
+        return today >= self.activation_date
+
+    def attempt_unlock(self, provided_executor, provided_attorney):
+        """
+        Only allows access when activation_date is reached
+        AND both passwords are correct
+        """
+        if not self.check_if_activated():
+            days_remaining = (self.activation_date - datetime.date.today()).days
+            raise Exception(f"Vault not yet accessible. {days_remaining} days remaining.")
+
+        if (provided_executor == self.executor_pass and
+            provided_attorney == self.attorney_pass):
+            return self.mount_vault()
+        else:
+            raise Exception("Incorrect passwords")
+
+    def mount_vault(self):
+        """Mount the vault for authorized access"""
+        cmd = [
+            'veracrypt', '--text', '--mount',
+            self.vault_path, '/mnt/inheritance',
+            '--stdin'
+        ]
+        # Implementation details...
+        return True
+```
+
+This prevents access before the intended time, even if both parties have passwords.
+
+## Documenting Vault Access Procedures
+
+Create clear documentation for successors:
+
+```markdown
+# INHERITANCE VAULT ACCESS GUIDE
+
+## Quick Start
+1. Both executor and attorney must be present
+2. Executor password: [STORED SEPARATELY - give to executor]
+3. Attorney password: [STORED SEPARATELY - give to attorney]
+4. Activation: [DATE] (or upon death certificate/incapacity proof)
+
+## Step-by-Step Mount Procedure
+
+### Prerequisites
+- VeraCrypt installed on Linux/Windows/Mac
+- Both passwords available
+- USB drive with vault file
+
+### Mounting Instructions
+1. Insert USB drive containing vault file
+2. Open terminal/command prompt
+3. Run: `veracrypt --mount /path/to/vault.vc /mnt/inheritance`
+4. Provide EXECUTOR password when prompted
+5. Run again with --mount to access hidden volume
+6. Provide ATTORNEY password when prompted
+
+### What's Inside
+- Investment account details
+- Cryptocurrency wallet access (separate from this vault)
+- Digital asset inventory
+- Estate instructions
+- Emergency contacts
+
+## Troubleshooting
+- Wrong password → Try again (3 attempts before 24-hour lockout)
+- File corrupted → Use backup USB drive
+- Technical issues → Contact [attorney contact]
+
+## Post-Access
+1. Keep mounted volume secure
+2. Do not screenshot contents
+3. Log out after 30 minutes of inactivity
+4. Unmount: `veracrypt --dismount`
+```
+
+Clear procedures increase likelihood of successful access when needed.
+
+## Integration with Estate Planning Documents
+
+Link the VeraCrypt vault to legal documents:
+
+```bash
+# Reference structure in your will/trust
+
+# Example will excerpt:
+cat > will_excerpt.txt << 'EOF'
+DIGITAL ESTATE PLAN
+
+The testator maintains encrypted digital assets stored in a VeraCrypt container located at:
+[Physical location: Safety deposit box 123, Bank Name]
+
+Access requires both:
+1. Executor password (held by John Smith)
+2. Attorney password (held by Attorney Jane Doe)
+
+The vault contains:
+- Inventory of digital assets
+- Cryptocurrency seed phrases
+- Email account recovery information
+- Investment account credentials
+
+INSTRUCTIONS:
+1. Retrieve physical USB drive from safety deposit box
+2. Contact both executor and attorney
+3. Both must be present for access
+4. Follow instructions in "INHERITANCE_VAULT_ACCESS_GUIDE.md" included with vault
+
+The vault is encrypted with AES-256, preventing any single party from accessing contents.
+EOF
+```
+
+Integration with legal documents ensures proper procedure is followed.
+
+## Auditing Access Attempts
+
+Monitor who tried to access the vault:
+
+```bash
+#!/bin/bash
+# Access audit log for inheritance vault
+
+VAULT_PATH="/secure/inheritance_vault.vc"
+ACCESS_LOG="/secure/vault_access.log"
+
+# Every mount attempt logs timestamp
+# VeraCrypt tracks in system logs, but custom logging adds clarity
+
+function log_access_attempt() {
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    local user=$(whoami)
+    local hostname=$(hostname)
+
+    echo "$timestamp | User: $user | Host: $hostname | Status: $1" >> $ACCESS_LOG
+}
+
+# Wrap mount command with logging
+veracrypt_mount_with_log() {
+    log_access_attempt "Attempted"
+
+    if veracrypt --text --mount "$VAULT_PATH" /mnt/inheritance --stdin; then
+        log_access_attempt "Success"
+        return 0
+    else
+        log_access_attempt "Failed"
+        return 1
+    fi
+}
+```
+
+Access logs provide audit trail for estate executors.
+
+## Key Rotation and Updates
+
+Periodically refresh keys to maintain security:
+
+```bash
+#!/bin/bash
+# Annual vault key rotation
+
+echo "Starting annual vault security review..."
+
+# Step 1: Mount current vault
+veracrypt --text --mount old_vault.vc /mnt/old --stdin
+
+# Step 2: Create new vault with fresh passwords
+echo "Enter NEW executor password:"
+read -s new_exec_pass
+
+echo "Enter NEW attorney password:"
+read -s new_atty_pass
+
+# Step 3: Copy contents to new vault
+cp -r /mnt/old/* /mnt/new/
+
+# Step 4: Unmount old vault
+veracrypt --text --dismount /mnt/old
+
+# Step 5: Archive old vault
+mv old_vault.vc old_vault.vc.bak.$(date +%Y%m%d)
+
+# Step 6: Securely delete old vault
+# This requires secure deletion (shred, srm, etc.)
+shred -vfz -n 5 old_vault.vc.bak.*
+
+echo "Vault rotation complete. Distribute new passwords to executor and attorney."
+```
+
+Annual updates ensure passwords haven't been compromised and inheritance system stays current.
+
+## Testing Without Revealing Contents
+
+Verify vault functionality without exposing sensitive data:
+
+```bash
+#!/bin/bash
+# Quarterly functionality test without content access
+
+# Create test markers (dummy files)
+echo "Test execution time: $(date)" > TEST_MARKER.txt
+
+# Mount vault
+veracrypt --text --mount inheritance.vc /mnt/test --stdin
+
+# Add marker file
+cp TEST_MARKER.txt /mnt/test/
+
+# Verify marker was written
+if [ -f /mnt/test/TEST_MARKER.txt ]; then
+    echo "✓ Vault is mountable and writable"
+else
+    echo "✗ Vault mount or write failed"
+fi
+
+# Unmount
+veracrypt --text --dismount /mnt/test
+
+# Clean up
+rm TEST_MARKER.txt
+
+# Log result
+echo "$(date) - Quarterly test: PASSED" >> inheritance_vault_test.log
+```
+
+This quarterly testing confirms the vault works without revealing sensitive contents to testers.
 
 ## Related Articles
 

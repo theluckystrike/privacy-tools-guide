@@ -171,6 +171,369 @@ for key_holder in required_signers:
 
 This API access enables integration with broader estate planning systems and custom workflows.
 
+## Real-World Casa Setup: Complete Walkthrough
+
+Step-by-step implementation for a practical 2-of-3 inheritance setup:
+
+```bash
+#!/bin/bash
+# Complete Casa inheritance setup
+
+echo "=== Casa Multisig Bitcoin Inheritance Setup ==="
+echo ""
+echo "This setup creates a 2-of-3 multisig wallet requiring:"
+echo "  - Primary owner's key"
+echo "  - ONE of: Successor's key OR Trusted advisor's key"
+echo ""
+
+# Step 1: Account Creation
+echo "Step 1: Create Casa Account"
+echo "  - Visit casa.io"
+echo "  - Sign up with email address"
+echo "  - Complete KYC verification"
+echo "  - Note Casa Account ID"
+CASA_ACCOUNT_ID="read from dashboard"
+
+# Step 2: Vault Setup
+echo "Step 2: Create Multisig Vault"
+echo "  - Click 'Create Vault'"
+echo "  - Select '2 of 3 multisig'"
+echo "  - Name: 'Bitcoin Inheritance - [Your Name]'"
+
+# Step 3: Key Generation (offline recommended)
+echo "Step 3: Generate Cryptographic Keys"
+echo "  Keys location:"
+echo "    Key 1: Keep with primary owner (safety deposit box)"
+echo "    Key 2: Give to successor (separate safety deposit box)"
+echo "    Key 3: Give to trusted advisor/attorney (secure location)"
+
+# Step 4: Initial Funding Test
+echo "Step 4: Test with small amount (0.001 BTC)"
+echo "  - Send 0.001 BTC to generated address"
+echo "  - Test 2-of-3 signature requirement"
+echo "  - Verify all keys function correctly"
+
+# Step 5: Document Configuration
+cat > inheritance_config.json << 'EOF'
+{
+  "vault_type": "multisig_2_of_3",
+  "purpose": "Bitcoin inheritance planning",
+  "key_holders": [
+    {
+      "name": "Primary Owner",
+      "key_location": "Safety Deposit Box A, Bank XYZ",
+      "contact": "owner@email.com",
+      "responsibility": "Initiates inheritance transfer"
+    },
+    {
+      "name": "Primary Successor",
+      "key_location": "Safety Deposit Box B, Bank XYZ",
+      "contact": "successor@email.com",
+      "responsibility": "Authorizes inheritance transfer"
+    },
+    {
+      "name": "Trusted Advisor",
+      "key_location": "Attorney's office, secure safe",
+      "contact": "attorney@law.com",
+      "responsibility": "Verifies inheritance legitimacy"
+    }
+  ],
+  "total_btc": 2.5,
+  "inheritance_addresses": [
+    "bc1q...primary_heir",
+    "bc1q...secondary_heir"
+  ],
+  "annual_test_date": "2026-06-15",
+  "last_tested": "2026-03-20"
+}
+EOF
+
+echo "Configuration saved to inheritance_config.json"
+```
+
+This walkthrough ensures systematic setup without mistakes.
+
+## Collaborative Custody Best Practices
+
+When multiple parties hold keys:
+
+```python
+# Best practices for multi-key management
+
+class MultiKeyBestPractices:
+    """
+    Guidelines for distributed key custody
+    """
+
+    practices = {
+        "Key Storage": [
+            "Each key holder maintains their own secure backup",
+            "Use hardware wallet (Ledger, Trezor) for key storage",
+            "Do NOT share seeds or private keys",
+            "Multiple physical copies in geographically distributed locations"
+        ],
+
+        "Communication Protocol": [
+            "Establish secure communication method (e.g., Signal)",
+            "Key holders coordinate outside primary communication",
+            "Never discuss complete wallet details in single message",
+            "Verify requests through multiple channels"
+        ],
+
+        "Authorization Process": [
+            "Primary owner initiates transaction (must sign)",
+            "Secondary key holder verifies transaction (must sign)",
+            "Third party confirms legitimacy (may sign or approve)",
+            "Transaction broadcast only after threshold met"
+        ],
+
+        "Disaster Recovery": [
+            "Backup procedures documented separately from keys",
+            "Recovery can proceed even if one key holder unavailable",
+            "2-of-3 design means one party can't hold funds hostage",
+            "Executor can recover with successor + advisor cooperation"
+        ],
+
+        "Social Engineering Defense": [
+            "Verify requests through out-of-band channels",
+            "Don't assume email/phone calls are legitimate",
+            "Require video verification for high-value transactions",
+            "Maintain contact verification database"
+        ]
+    }
+```
+
+These practices prevent single-party attacks and ensure legitimate access.
+
+## Handling Key Holder Incapacity or Death
+
+Design for scenarios where a keyholder becomes unavailable:
+
+```bash
+#!/bin/bash
+# Key holder succession procedures
+
+# Scenario 1: Primary owner dies (most common inheritance case)
+# Solution: Successor + Advisor can recover wallet
+# - Successor uses their key
+# - Advisor uses their key
+# - Together they can execute any transaction
+
+# Scenario 2: Key holder loses access (forgot location, death)
+# Problem: Need 2-of-3, but only 2 keys available
+# Solution: Implement recovery address
+
+# Create recovery address owned by only 2 parties:
+# Create 2-of-2 address with Successor + Advisor
+recovery_address="bc1q...only_successor_and_advisor_keys"
+
+# In inheritance planning:
+# - 3-of-3 vault contains most funds
+# - 2-of-2 recovery vault contains backup (10-20% of total)
+# - If any keyholder becomes unavailable, recovery vault accessible
+
+# Scenario 3: Key compromise (one key stolen/hacked)
+# Solution: Implement spending limits
+
+# A 2-of-3 wallet with spending limits:
+# - Small transactions (< 0.1 BTC) require 2-of-3
+# - Large transactions (> 1 BTC) require 3-of-3
+# - Prevents theft with single compromised key
+# (Not natively Casa, requires custom implementation)
+```
+
+Plan for key holder changes and emergencies.
+
+## Verifying Casa's Security Model
+
+Before entrusting Bitcoin to Casa's infrastructure:
+
+```bash
+# Security verification checklist
+
+# 1. Key custody verification
+[ ] Casa explicitly states: "We never hold your keys"
+[ ] Keys generated on your device, not Casa's servers
+[ ] Casa can't access or recover keys
+
+# 2. Non-custodial verification
+[ ] Your keys are ONLY necessary to move funds
+[ ] Casa cannot unilaterally transfer your Bitcoin
+[ ] Wallet address is standard Bitcoin address (Casa has no special access)
+
+# 3. Infrastructure verification
+[ ] Casa uses standard BIP-39/BIP-44 derivation
+[ ] Wallet is compatible with other multisig tools
+[ ] You can recover without Casa's servers
+
+# 4. Third-party audit
+[ ] Casa has undergone security audit (check website)
+[ ] Audit results publicly available
+[ ] Audit from reputable firm (Coinbase, Least Authority, etc.)
+
+# 5. Regulatory compliance
+[ ] Casa is US-based, subject to US law
+[ ] No asset custody (keys with you, not Casa)
+[ ] Insurance available (optional, additional cost)
+
+Verification resources:
+- casa.io/security
+- casa.io/blog (security announcements)
+- GitHub: casa/casa-node-launcher (open source components)
+```
+
+Verification ensures Casa is genuinely non-custodial.
+
+## Cost-Benefit Analysis: Self-Hosted vs Casa
+
+Compare custody approaches:
+
+```
+CASA MULTISIG:
+Pros:
+  + User-friendly interface
+  + Casa provides coordination support
+  + Insurance available (optional)
+  + Professional interface for complex operations
+
+Cons:
+  - Casa subscription fee ($10-50/month)
+  - Dependency on Casa servers for UI
+  - Company can be shut down (UI offline, wallets still functional)
+  - Less privacy (Casa sees transaction patterns)
+
+SELF-HOSTED MULTISIG:
+Pros:
+  + No monthly fees
+  + Complete privacy (no third party)
+  + Full control over hardware
+  + Compatible with any wallet software
+
+Cons:
+  - Technical expertise required
+  - No company support
+  - You responsible for key security
+  - UI/UX less polished
+
+RECOMMENDATION:
+Casa: For non-technical users, inheritance primary purpose
+Self-hosted: For developers, or multi-use (trading + inheritance)
+Hybrid: Use Casa as UI layer, but compatible with self-hosted backup
+```
+
+Casa offers simplicity at the cost of monthly fees.
+
+## Integration with Legal Estate Planning
+
+Link Bitcoin inheritance to will:
+
+```markdown
+# Will Excerpt: Digital Assets
+
+## Bitcoin Inheritance Plan
+
+The testator holds Bitcoin in a 2-of-3 multisig wallet with the following terms:
+
+### Wallet Details
+- Platform: Casa (casa.io)
+- Address: [main vault address]
+- Approximate value: $X,XXX (updated annually)
+- Custodial method: Non-custodial (Casa does not hold keys)
+
+### Key Distribution
+- Key 1: With primary estate (safety deposit box)
+- Key 2: With named successor (separate location)
+- Key 3: With estate attorney (secure location)
+
+### Access Procedure
+1. Both successor and attorney must cooperate
+2. Successor initiates transaction to heir addresses
+3. Attorney authorizes transaction
+4. Funds transferred without need for third-party
+
+### Inheritance Instructions
+- 50% to primary heir
+- 30% to secondary heir
+- 20% to charity [name]
+
+### Security
+- Annual verification testing required
+- Key holder change procedures in appendix
+- Recovery procedures in appendix
+
+This method ensures:
+- No single party can steal funds
+- Estate maintains control even if one party unavailable
+- Transparent, auditable process
+```
+
+Legal documentation ensures proper execution of Bitcoin inheritance.
+
+## Advanced: Custom Smart Contract Integration
+
+For maximum control, implement smart contract inheritance:
+
+```solidity
+// Ethereum equivalent (not directly for Bitcoin, but concept)
+// Bitcoin multisig inheritance is non-custodial;
+// Smart contracts require on-chain keys
+
+// For Bitcoin-specific, use timelocks:
+// If primary owner doesn't move funds for 2 years,
+// successor can access with single signature
+
+// Timelock example (pseudo-code for Bitcoin Script):
+// IF <2_YEAR_TIMEOUT> THEN
+//   <successor_pubkey> CHECKSIG  // Successor can access alone
+// ELSE
+//   <2_of_3_multisig>             // Before timeout, need 2-of-3
+// ENDIF
+```
+
+Timelocks add automated fallback without smart contracts.
+
+## Monitoring and Annual Maintenance
+
+Schedule regular reviews:
+
+```bash
+#!/bin/bash
+# Annual Bitcoin inheritance plan maintenance
+
+REVIEW_DATE="2026-03-20"
+
+# Task 1: Verify all key holders still accessible
+echo "Contacting key holders for accessibility confirmation..."
+# Email: "Please confirm you still have access to your Bitcoin inheritance key"
+
+# Task 2: Test wallet with small transaction
+echo "Testing 2-of-3 signing..."
+# Send 0.0001 BTC from vault to test address
+# Requires primary owner + successor signature
+# Confirm functionality
+
+# Task 3: Update documentation
+echo "Updating inheritance plan documentation..."
+# Check if any key holders changed roles
+# Update contact information
+# Verify addresses still valid
+
+# Task 4: Review market value
+echo "Bitcoin current value: $(check_btc_price)"
+# Update estimated inheritance value in will
+# Notify heirs if significant change
+
+# Task 5: Backup verification
+echo "Verifying backup keys in physical locations..."
+# Physically inspect key storage
+# Verify no degradation (paper fading, etc.)
+# Replace if necessary
+
+# Log completion
+echo "$REVIEW_DATE - Annual maintenance completed" >> inheritance_maintenance.log
+```
+
+Annual maintenance ensures system remains functional.
 
 ## Related Articles
 
