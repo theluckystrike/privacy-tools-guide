@@ -8,7 +8,7 @@ permalink: /best-vpn-for-students-studying-abroad-accessing-university-r/
 categories: [guides]
 tags: [privacy-tools-guide, tools, best-of, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

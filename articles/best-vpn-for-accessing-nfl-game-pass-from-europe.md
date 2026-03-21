@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /best-vpn-for-accessing-nfl-game-pass-from-europe/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, vpn]

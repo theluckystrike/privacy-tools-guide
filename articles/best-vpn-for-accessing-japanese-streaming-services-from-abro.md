@@ -8,7 +8,7 @@ permalink: /best-vpn-for-accessing-japanese-streaming-services-from-abro/
 categories: [guides]
 tags: [privacy-tools-guide, tools, best-of, vpn]
 reviewed: true
-score: 7
+score: 8
 voice-checked: true
 intent-checked: true
 ---
