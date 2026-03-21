@@ -251,7 +251,7 @@ find "$OUTPUT_DIR" -type f -exec sha256sum {} \; > "$OUTPUT_DIR/manifest.sha256"
 
 ## Integration with Backup Tools
 
-Age integrates seamlessly with backup workflows:
+Age integrates with backup workflows:
 
 ### Restic Backup with Age
 

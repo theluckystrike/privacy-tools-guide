@@ -30,6 +30,18 @@ Before examining specific tools, understand the criteria that matter for technic
 - **CLI and scripting**: Developers need programmatic access for automation, CI/CD integration, and headless server environments.
 - **Conflict resolution and versioning**: When multiple team members edit the same file, strong conflict handling prevents data loss.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Encryption | END-TO-END | END-TO-END |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Check license |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Self-Hosting | Check availability | Check availability |
+
 ## SyncThing: Open-Source, Self-Hosted, Free
 
 SyncThing is an open-source, decentralized file synchronization program that operates without a central server. It uses peer-to-peer connections, making it ideal for teams that want complete control over their infrastructure.

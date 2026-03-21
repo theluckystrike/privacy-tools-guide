@@ -280,7 +280,7 @@ Analytics.CustomEvent("game_start", new Dictionary<string, object>
 
 ## Network-Level Filtering Strategy
 
-For power users, creating comprehensive blocklists prevents location data exfiltration:
+For power users, creating blocklists prevents location data exfiltration:
 
 ```
 # /etc/hosts entries to block location analytics

@@ -358,7 +358,7 @@ Self-hosting ensures no one but you controls the encryption.
 
 ## Privacy Comparison Table: All Screen Sharing Tools
 
-Comprehensive comparison for different privacy levels:
+ comparison for different privacy levels:
 
 ```
 Tool | E2EE | Open Source | Self-Host | Server Sees | Metadata |

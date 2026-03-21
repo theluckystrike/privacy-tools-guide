@@ -396,7 +396,7 @@ This layering is why tls-crypt is more effective than just relying on TLS alone.
 
 ## Operational Recommendations
 
-Comprehensive deployment strategy:
+ deployment strategy:
 
 ```yaml
 # Complete OpenVPN hardening configuration

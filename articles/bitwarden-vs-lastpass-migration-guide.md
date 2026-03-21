@@ -32,6 +32,18 @@ Several technical factors make Bitwarden the preferred choice for developers:
 
 The security architecture difference is also meaningful. LastPass uses PBKDF2-SHA256 with a default of 600,000 iterations as of 2023, but older accounts may still use much lower iteration counts inherited from years ago. Bitwarden also uses PBKDF2-SHA256 with 600,000 iterations by default, but additionally supports Argon2id — a memory-hard algorithm that provides stronger resistance against GPU-accelerated cracking attacks. For high-risk environments or security-conscious individuals, Bitwarden's Argon2id option represents a meaningful security upgrade.
 
+
+## Quick Comparison
+
+| Feature | Bitwarden | Lastpass |
+|---|---|---|
+| Encryption | Supported | Supported |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Yes | Yes |
+| Security Audit | See documentation | See documentation |
+| Self-Hosting | Check availability | Check availability |
+| Pricing | $10/year | $10/year |
+
 ## Preparing for Migration
 
 Before starting, ensure you have:
@@ -213,7 +225,7 @@ docker run -d --name vaultwarden \
   vaultwarden/server:latest
 ```
 
-After deployment, configure the Bitwarden desktop and mobile clients to point to your self-hosted server instead of bitwarden.com. The clients accept a custom server URL in their settings. All Bitwarden official clients work seamlessly with Vaultwarden.
+After deployment, configure the Bitwarden desktop and mobile clients to point to your self-hosted server instead of bitwarden.com. The clients accept a custom server URL in their settings. All Bitwarden official clients work with Vaultwarden.
 
 For production deployments, place Vaultwarden behind an nginx reverse proxy with a valid TLS certificate:
 

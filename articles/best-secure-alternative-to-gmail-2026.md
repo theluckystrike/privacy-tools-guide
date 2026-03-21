@@ -33,6 +33,18 @@ For developers who understand the implications of these trade-offs, the question
 
 Google's terms permit the company to process email content for a range of purposes. Even when you enable confidential mode, the messages travel through Google's infrastructure unencrypted at rest on their servers—they are only protected in transit. For developers building applications that handle sensitive user data, or individuals dealing with legally privileged communications, this is an unacceptable risk model.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Encryption | END-TO-END | END-TO-END |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Check license |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Self-Hosting | Check availability | Check availability |
+
 ## Hosted Secure Email Services
 
 ### Proton Mail

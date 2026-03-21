@@ -57,6 +57,18 @@ Mastodon operates as a federated network. Individual servers (instances) communi
 
 The key difference: Twitter's data structure reveals engagement metrics publicly. Mastodon's ActivityPub format focuses on content attribution while allowing instance operators to control visibility.
 
+
+## Quick Comparison
+
+| Feature | Mastodon | Twitter |
+|---|---|---|
+| Encryption | Supported | END-TO-END |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Self-Hosting | Check availability | Check availability |
+| Pricing | Free tier available | Free tier available |
+
 ## Data Collection Analysis
 
 ### Twitter's Data Practices

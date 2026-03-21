@@ -30,6 +30,18 @@ Dedicated password managers like Bitwarden, 1Password, and KeePass take a differ
 
 For developers working across multiple browsers, testing applications in various environments, or needing CLI access, the dedicated app model typically offers better flexibility.
 
+
+## Quick Comparison
+
+| Feature | Browser Password Manager | Dedicated |
+|---|---|---|
+| Encryption | AES-256 | Supported |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Pricing | $2.99/month | $10/year |
+| Platform Support | Cross-platform | Cross-platform |
+| Compliance | See documentation | See documentation |
+
 ## Command-Line Access: The Developer Requirement
 
 The practical difference becomes apparent when you need programmatic access. Browser password managers lack native CLI tools. While Chrome and Firefox store credentials in SQLite databases that are technically accessible, querying them requires workarounds and breaks when browsers update their schema.

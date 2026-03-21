@@ -20,7 +20,7 @@ When crossing international borders, your smartphone becomes a potential liabili
 
 ## What Is the GrapheneOS Travel Profile
 
-GrapheneOS is a privacy-focused Android operating system that hardening the platform against exploitation. Among its advanced features is the Profile system, which allows you to maintain completely separate user profiles on a single device. The Travel Profile leverages this architecture to create an isolated environment with minimal personal data.
+GrapheneOS is a privacy-focused Android operating system that hardening the platform against exploitation. Among its advanced features is the Profile system, which allows you to maintain completely separate user profiles on a single device. The Travel Profile uses this architecture to create an isolated environment with minimal personal data.
 
 The core principle is simple: when you approach a border checkpoint, you switch to a clean profile that contains only essential apps and data. This profile appears as a fresh device to inspection tools, while your actual data remains protected in your primary profile.
 

@@ -273,7 +273,7 @@ Value is good if you need multiple Proton services.
 
 **For most people**: Bitwarden free tier. Open-source, zero-knowledge, no cost. Set up in 10 minutes.
 
-**For Mac/iOS users who don't care about cost**: 1Password. Integrates seamlessly with Apple ecosystem. $36/year is acceptable for convenience.
+**For Mac/iOS users who don't care about cost**: 1Password. Integrates with Apple ecosystem. $36/year is acceptable for convenience.
 
 **For paranoid people**: KeePassXC + Nextcloud self-hosting + encrypted backups. Maximum privacy, maximum effort.
 

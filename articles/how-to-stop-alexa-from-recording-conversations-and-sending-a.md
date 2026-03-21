@@ -425,7 +425,7 @@ Understand legal implications of voice recording in your location.
 
 ## Complete Privacy Auditing Checklist
 
-Comprehensive Alexa privacy audit:
+ Alexa privacy audit:
 
 ```bash
 #!/bin/bash

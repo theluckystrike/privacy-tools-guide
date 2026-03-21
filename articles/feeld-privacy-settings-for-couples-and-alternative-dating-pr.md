@@ -48,6 +48,18 @@ Feeld collects and exposes metadata that reveals behavioral patterns:
 - **Reaction timestamps**: Displays when you liked or messaged someone
 - **Read receipts**: Notifies users when you've viewed their messages
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Platform Support | Cross-platform | Cross-platform |
+| API Access | Available | Available |
+| Pricing | See current pricing | See current pricing |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+
 ## Configuring Privacy Settings for Couples
 
 When creating a Couple profile, Feeld generates a linked entity that connects individual accounts. However, the platform's default behavior may expose both partners' individual profiles to mutual connections.

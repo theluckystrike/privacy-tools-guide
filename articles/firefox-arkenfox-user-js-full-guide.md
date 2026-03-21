@@ -178,7 +178,7 @@ Consider using a browser extension like uBlock Origin to block WebGL-based finge
 
 Arkenfox is one of several hardening approaches for Firefox. Understanding the alternatives helps you choose the right level of hardening:
 
-**Arkenfox**: Most comprehensive and actively maintained Firefox hardening configuration. Requires manual setup and periodic updates. Best for power users comfortable with occasional site breakage.
+**Arkenfox**: Most and actively maintained Firefox hardening configuration. Requires manual setup and periodic updates. Best for power users comfortable with occasional site breakage.
 
 **Hardened Firefox guide (Privacy Guides)**: A curated subset of Arkenfox settings, designed for users who want strong protection with minimal breakage. Less aggressive on fingerprinting resistance.
 

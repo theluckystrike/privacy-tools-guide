@@ -33,6 +33,18 @@ Data breaches expose password databases. While bcrypt and Argon2 slow attackers,
 
 Consider the attack surface: every password stored in your database represents a liability. Even with proper hashing, the mere presence of password-equivalent secrets creates risk.
 
+
+## Quick Comparison
+
+| Feature | Passkey | Password |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Platform Support | Cross-platform | Cross-platform |
+| Two-Factor Auth | Supported | Supported |
+| Pricing | See current pricing | See current pricing |
+
 ## How Passkeys Work
 
 Passkeys are cryptographic credential pairs based on the FIDO2/WebAuthn standard. Each passkey consists of:

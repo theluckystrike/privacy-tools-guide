@@ -244,7 +244,7 @@ If you discover leaked photos:
 5. **Submit to StopNCII**: Prevents the same image from being re-uploaded to participating platforms
 6. **Consult an attorney**: For serious cases, legal action may be necessary
 
-Many jurisdictions now have specific laws covering non-consensual intimate image sharing. In the United States, most states have enacted revenge porn statutes. The UK's Online Safety Act 2023 criminalized sharing intimate images without consent. Knowing your legal options before acting gives you stronger leverage when demanding removal.
+Many jurisdictions now have specific laws covering non-consensual intimate image sharing. In the United States, most states have enacted revenge porn statutes. The UK's Online Safety Act 2023 criminalized sharing intimate images without consent. Knowing your legal options before acting gives you stronger use when demanding removal.
 
 ## Limitations and Considerations
 

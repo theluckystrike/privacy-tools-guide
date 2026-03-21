@@ -372,7 +372,7 @@ def remove_fingerprinting_headers(response):
 
 ## Testing Your CSS Fingerprinting Defenses
 
-Validate that your website isn't facilitating fingerprinting:
+Validate that your website isn't helping fingerprinting:
 
 ```bash
 #!/bin/bash

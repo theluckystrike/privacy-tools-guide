@@ -308,7 +308,7 @@ Oura excels at sleep tracking. The ring is passive (you wear it, it works). No G
 **Best Not For:**
 - Runners/cyclists wanting GPS tracking
 - Users needing continuous heart rate
-- Those wanting comprehensive fitness tracking
+- Those wanting fitness tracking
 
 ## Comparison Table: Privacy Scores
 
@@ -415,19 +415,6 @@ Beyond tracker choice, protect health data with these practices:
 - **UK:** Online Safety Bill will include health data protections
 
 **Impact:** Withings (EU) and Apple (GDPR-compliant) have better legal protections than Fitbit.
-
-## Conclusion
-
-For privacy-conscious users, **Garmin epix** and **Withings ScanWatch** are the gold standards. Both process data on-device, make cloud sync optional, and respect data deletion requests. Cost is $299-499, but you get offline functionality and genuine privacy.
-
-For iPhone users who trust Apple's privacy claims, **Apple Watch Series 9** is practical, though cloud sync is default. Disable iCloud Health sync manually.
-
-**Avoid Fitbit** if privacy matters. Google's data monetization model conflicts with user privacy interests, regardless of contractual promises.
-
-**Oura Ring** is excellent for sleep-specific privacy, though it's not a complete fitness tracker.
-
-The single most important decision: Choose a tracker where cloud sync is optional, not mandatory. This fundamental difference separates privacy-respecting from surveillance-oriented hardware.
-
 
 ## Related Articles
 

@@ -24,6 +24,18 @@ The General Data Protection Regulation imposes strict requirements on how you co
 
 GDPR requires explicit consent before setting non-essential cookies, the right to access collected data, and the ability to delete user data upon request. Google Analytics 4 provides these features, but implementation remains complex. Self-hosted alternatives simplify compliance by design, often requiring no cookie consent banners at all.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Check license |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Jurisdiction | Check provider | Check provider |
+| Self-Hosting | Check availability | Check availability |
+
 ## Self-Hosted Analytics Solutions
 
 Several open-source and commercial alternatives provide analytics without the GDPR complications. The most popular options include Matomo, Plausible, Fathom, and Umami. Each offers different trade-offs between features, hosting requirements, and pricing.

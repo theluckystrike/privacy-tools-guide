@@ -294,7 +294,7 @@ systemctl restart systemd-resolved
 
 ## Connection State Machine
 
-A robust VPN client implements careful state management:
+A strong VPN client implements careful state management:
 
 ```
 States:

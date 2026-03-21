@@ -270,7 +270,7 @@ For developers or organizations requiring maximum privacy:
 5. **Never connect same wallet from different IPs** without Tor routing between connections
 6. **Implement account-specific Tor circuits** to prevent correlation
 
-The combination of Tor, privacy coins, CoinJoin, and operational security creates a robust privacy architecture. No single component guarantees anonymity—the strength comes from layering multiple protections.
+The combination of Tor, privacy coins, CoinJoin, and operational security creates a strong privacy architecture. No single component guarantees anonymity—the strength comes from layering multiple protections.
 
 ---
 

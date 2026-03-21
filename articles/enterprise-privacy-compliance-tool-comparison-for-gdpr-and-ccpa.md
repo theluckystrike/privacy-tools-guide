@@ -25,6 +25,18 @@ GDPR and CCPA share foundational requirements but differ in critical areas. GDPR
 
 For development teams, the challenge extends beyond forms and workflows. You need systems that integrate with your existing data infrastructure, maintain compliance across multiple jurisdictions, and scale as data volumes grow.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Pricing | See current pricing | See current pricing |
+| Platform Support | Cross-platform | Cross-platform |
+| Compliance | See documentation | See documentation |
+
 ## Tool Comparison: Architecture and Integration
 
 ### OneTrust Privacy Management

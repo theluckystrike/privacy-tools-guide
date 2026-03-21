@@ -31,6 +31,18 @@ For developers, hardware keys protect:
 - Password managers (Bitwarden, 1Password)
 - Private npm/crate/gem registries
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Yes | Yes |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Pricing | See current pricing | See current pricing |
+| Platform Support | Cross-platform | Cross-platform |
+
 ## Key Comparison Factors
 
 Before examining specific devices, understand what matters for developer use cases:

@@ -26,6 +26,18 @@ CCPA applies to for-profit businesses that meet one of three thresholds: annual 
 
 For developers, this means your application's compliance obligations depend on your user base geography and your company's scale. A startup with EU users must implement GDPR compliance from day one, while an US-only service might only need CCPA compliance if it meets the thresholds.
 
+
+## Quick Comparison
+
+| Feature | Ccpa | Gdpr |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Jurisdiction | Check provider | Check provider |
+| Pricing | $25 | $25 |
+| Compliance | See documentation | See documentation |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+| Documentation | Available | Available |
+
 ## Data Subject Rights
 
 Both regulations grant individuals rights over their personal data, but the specifics differ significantly.

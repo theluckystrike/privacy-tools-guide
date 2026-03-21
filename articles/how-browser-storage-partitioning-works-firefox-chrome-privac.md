@@ -328,7 +328,7 @@ This API requires user interaction (click), so it's not a complete solution. Exp
 
 ### Pattern 3: Server-Side Sessions (Most Reliable)
 
-The most robust approach is moving away from client-side storage:
+The most strong approach is moving away from client-side storage:
 
 ```javascript
 // Old approach (breaks with partitioning):

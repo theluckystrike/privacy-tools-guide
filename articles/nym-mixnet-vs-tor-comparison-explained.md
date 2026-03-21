@@ -44,6 +44,18 @@ UseBridges 1
 Bridge obfs4 192.0.2.1:443 0123456789ABCDEF0123456789ABCDEF01234567
 ```
 
+
+## Quick Comparison
+
+| Feature | Nym Mixnet | Tor |
+|---|---|---|
+| Encryption | END-TO-END | END-TO-END |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Pricing | See current pricing | See current pricing |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+| Documentation | Available | Available |
+| Community | Active | Active |
+
 ## Understanding Nym Mixnet's Sphinx Packets
 
 Nym takes a different approach by focusing on metadata protection at the packet level. Instead of onion routing, Nym uses Sphinx packets—a cryptographic packet format that makes all packets look identical regardless of their content, size, or destination.

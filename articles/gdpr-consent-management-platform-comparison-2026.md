@@ -24,6 +24,18 @@ Under GDPR, websites must obtain explicit consent before collecting personal dat
 
 The challenge is finding a platform that balances compliance requirements with good user experience and minimal performance impact. The key technical considerations when evaluating CMPs follow.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Jurisdiction | Check provider | Check provider |
+| Pricing | See current pricing | See current pricing |
+| Platform Support | Cross-platform | Cross-platform |
+
 ## Key Technical Criteria for Comparison
 
 When evaluating consent management platforms, developers should focus on these factors:

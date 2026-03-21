@@ -194,7 +194,7 @@ borg init --encryption=keyfile-chacha20poly1305 \
 borg create ssh://xxxxxxxxxx@xxxxxxxxxx.repo.borgbase.com/./repo::$(date +%Y%m%d-%H%M%S) ~/data
 ```
 
-Restic also supports append-only semantics via repository locks, but BorgBase's server-enforced model is more robust against a compromised client.
+Restic also supports append-only semantics via repository locks, but BorgBase's server-enforced model is more strong against a compromised client.
 
 ## Automation and Scheduling
 

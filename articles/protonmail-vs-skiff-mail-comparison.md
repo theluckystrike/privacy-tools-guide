@@ -30,6 +30,18 @@ Both services offer end-to-end encryption, but their approaches differ significa
 
 For developers, the practical difference matters: ProtonMail has a longer track record with published security audits and a more mature key management system. Skiff's approach is newer and simpler but has faced scrutiny around key handling during account recovery flows.
 
+
+## Quick Comparison
+
+| Feature | Protonmail | Skiff |
+|---|---|---|
+| Encryption | PGP | PGP |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Open Source | Check license | Yes |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Pricing | Free tier available | Free tier available |
+
 ## PGP and OpenPGP Support
 
 For developers who need interoperability with existing cryptographic infrastructure, PGP support is critical.

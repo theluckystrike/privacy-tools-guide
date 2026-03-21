@@ -241,7 +241,7 @@ In practice, top services do both:
 - Jurisdiction: New Zealand (privacy-friendly)
 - Best for: Budget users, less critical data
 
-**IDrive e2 (Comprehensive):**
+**IDrive e2 ():**
 - Pricing: 5TB $52.50/year
 - Encryption: AES-256
 - Jurisdiction: US
@@ -270,7 +270,7 @@ In practice, top services do both:
 - Surveillance requires warrant (PIPEDA Section 4)
 - Can refuse unreasonable requests
 - No Five Eyes deep integration (vs US/UK)
-- Cost: Foreign companies leverage Canadian protection
+- Cost: Foreign companies use Canadian protection
 
 ### EU (Tresorit, others)
 
@@ -529,26 +529,5 @@ sha256sum ~/backup_location/test_file.zip
 
 # Should match: Backup integrity confirmed
 ```
-
-## Conclusion
-
-Privacy-focused cloud backup requires:
-
-1. **Zero-knowledge encryption** (Sync.com, Tresorit, Proton)
-2. **AES-256 algorithm** (unbreakable standard)
-3. **Client-side key management** (you control keys)
-4. **Trusted jurisdiction** (EU > Canada > Switzerland > US)
-
-**Recommended provider by use case:**
-
-| Use Case | Provider | Price | Reason |
-|----------|----------|-------|--------|
-| Medical/legal data | Tresorit | $17.99/mo | GDPR protection |
-| Photo backup | Wasabi | $7/mo | Cheap unlimited storage |
-| Multi-device sync | Sync.com | $8/mo | Best balance |
-| Business team | Tresorit | $29.99/mo | Collaboration + encryption |
-| Budget user | Proton Drive | $4.99/mo | Cheap + Swiss privacy |
-
-Setup takes 30 minutes. Encryption automatic thereafter. Test restoration monthly. Update passwords annually.
 
 {% endraw %}

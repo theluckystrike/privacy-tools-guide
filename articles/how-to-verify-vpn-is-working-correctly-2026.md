@@ -90,7 +90,7 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 - **Safari:** WebRTC leaks are common in Safari; disable if privacy is critical, use Firefox instead.
 - **Electron apps (Discord, Slack):** No direct WebRTC control; these apps are at risk. Consider using web versions instead.
 
-**Comprehensive test:** ipleak.net has a more thorough WebRTC test. Click "Show my IPv4 + IPv6 + DNS + WebRTC leak status". Comprehensive but slower.
+** test:** ipleak.net has a more thorough WebRTC test. Click "Show my IPv4 + IPv6 + DNS + WebRTC leak status". but slower.
 
 ---
 
@@ -206,7 +206,7 @@ ping 8.8.8.8
    - If kill switch works, page won't load (internet is blocked).
    - If kill switch fails, page loads and shows your real IP. **Leak.**
 
-**Alternative:** Use BrowserLeaks.com for comprehensive leak testing. It tests:
+**Alternative:** Use BrowserLeaks.com for leak testing. It tests:
 - IP address
 - WebRTC
 - DNS
@@ -265,21 +265,6 @@ dig @8.8.8.8 google.com
 **If you see variance:**
 - Contact VPN support with specific server locations.
 - Use only servers where kill switch verified.
-
----
-
-## Summary Checklist: VPN Verification
-
-| Test | Tool | Status | Action |
-|------|------|--------|--------|
-| DNS leak | ipleak.net | PASS / FAIL | If FAIL: change DNS settings in VPN config |
-| WebRTC leak | ipleak.net/webrtc | PASS / FAIL | If FAIL: disable WebRTC in browser |
-| IPv6 leak | ipleak.net/ipv6 | PASS / FAIL | If FAIL: disable IPv6 on system |
-| Real IP leak | ipify.org | PASS / FAIL | If FAIL: reconnect VPN, try diff server |
-| Kill switch | Manual disconnect | PASS / FAIL | If FAIL: enable in VPN app settings |
-| Browser leak | BrowserLeaks.com | PASS / FAIL | Comprehensive check |
-| DNS over time | nslookup / dig | PASS / FAIL | Intermittent leaks harder to spot |
-| Multi-server kill switch | Manual test | PASS / FAIL | Test across 3+ servers |
 
 ---
 

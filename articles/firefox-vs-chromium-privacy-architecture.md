@@ -36,6 +36,18 @@ Chrome enables Site Isolation through the `--enable-features=SitePerProcess` fla
 
 Firefox achieves similar isolation through its `browser.tabs.remote.separatePrivileged` preference and content process management. The `privacy.firstparty.isolate` preference provides additional first-party isolation, treating each top-level domain as a distinct security context.
 
+
+## Quick Comparison
+
+| Feature | Firefox | Chromium |
+|---|---|---|
+| Encryption | Supported | Supported |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Platform Support | Cross-platform | Cross-platform |
+| API Access | Available | Available |
+
 ## Cookie Handling and Storage Partitioning
 
 ### Chromium Storage Model

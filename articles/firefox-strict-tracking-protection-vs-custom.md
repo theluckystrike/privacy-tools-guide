@@ -24,6 +24,18 @@ Firefox's Enhanced Tracking Protection (ETP) blocks known trackers across three 
 
 The core technology uses Disconnect.me's tracker lists, categorizing trackers into social media trackers, cross-site tracking cookies, fingerprinters, and cryptominers. Firefox maintains these lists and updates them regularly through Firefox Monitor.
 
+
+## Quick Comparison
+
+| Feature | Firefox Strict Tracking Protection | Custom |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Platform Support | Cross-platform | Cross-platform |
+| Pricing | See current pricing | See current pricing |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+
 ## The Strict Setting
 
 The Strict preset enables all tracking protections with a single click. Here's what it blocks:
@@ -352,7 +364,6 @@ Organizations can deploy custom tracking protection policies:
 This configuration forces Strict tracking protection while allowing exceptions for specific trusted domains.
 
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
 

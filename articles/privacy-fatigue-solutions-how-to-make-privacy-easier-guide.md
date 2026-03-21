@@ -197,7 +197,7 @@ Documentation eliminates the need to remember configuration details. When someth
 
 ## Use Email Aliases to Reduce Exposure
 
-One of the highest-leverage changes you can make is adopting email aliasing for every service you sign up for. Tools like SimpleLogin, AnonAddy, and Apple Hide My Email generate a unique alias per service. When one gets compromised or sold to spammers, you disable that alias rather than changing your real email address everywhere.
+One of the highest-use changes you can make is adopting email aliasing for every service you sign up for. Tools like SimpleLogin, AnonAddy, and Apple Hide My Email generate a unique alias per service. When one gets compromised or sold to spammers, you disable that alias rather than changing your real email address everywhere.
 
 The workflow is simple: when a site asks for your email, generate a new alias and paste it in. Your password manager stores the alias alongside the credentials. You never expose your real address, and you gain instant attribution when spam arrives — you can see exactly which company sold your data.
 

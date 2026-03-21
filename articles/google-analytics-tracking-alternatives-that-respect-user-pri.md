@@ -24,6 +24,18 @@ Google Analytics remains the dominant web analytics platform, but it comes with 
 
 Beyond regulatory concerns, many developers and users prefer analytics solutions that align with privacy-by-design principles. Self-hosted analytics give you complete control over data collection, storage, and retention. Privacy-focused platforms often eliminate the need for consent banners entirely by minimizing or eliminating personal data collection.
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Data Collection | Minimal | Minimal |
+| Self-Hosting | Check availability | Check availability |
+| Pricing | See current pricing | See current pricing |
+| Platform Support | Cross-platform | Cross-platform |
+| Compliance | See documentation | See documentation |
+
 ## Self-Hosted Analytics Solutions
 
 ### Plausible Analytics

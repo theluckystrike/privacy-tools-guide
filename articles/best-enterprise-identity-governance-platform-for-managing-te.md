@@ -233,7 +233,7 @@ Before selecting a platform, establish clear success criteria. Identity governan
 
 ### Okta Identity Governance
 
-Okta offers comprehensive access management with strong integration capabilities. Key features include:
+Okta offers access management with strong integration capabilities. Key features include:
 
 - **Automated Access Review Campaigns**: Configurable review schedules with intelligent pre-population
 - **SoD Detection**: Built-in detection of conflicting access patterns
@@ -244,7 +244,7 @@ Okta offers comprehensive access management with strong integration capabilities
 
 ### Sailpoint IdentityIQ
 
-Sailpoint specializes in comprehensive identity governance across complex enterprise environments. Capabilities include:
+Sailpoint specializes in identity governance across complex enterprise environments. Capabilities include:
 
 - **Certifications & Reviews**: Sophisticated workflow engine with role-based delegation
 - **Identity Intelligence**: Machine learning detection of anomalous access patterns

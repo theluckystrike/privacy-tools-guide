@@ -31,6 +31,18 @@ Consider these typical situations:
 
 **Hybrid scenario**: A marketplace platform where you set policies but sellers also make decisions about data use. This can create joint controller situations with complex responsibility分配.
 
+
+## Quick Comparison
+
+| Feature | Gdpr Controller | Processor Obligations |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Platform Support | Cross-platform | Cross-platform |
+| Compliance | See documentation | See documentation |
+| API Access | Available | Available |
+| Pricing | See current pricing | See current pricing |
+| Ease of Use | Moderate learning curve | Moderate learning curve |
+
 ## Your Rights Against Controllers
 
 When you interact with organizations as a data subject, you typically deal with controllers. GDPR grants you specific rights:

@@ -142,16 +142,6 @@ For the highest assurance — decommissioning a drive containing highly sensitiv
 
 This is overkill for most situations but appropriate for threat models involving well-resourced adversaries with physical access and forensic lab capabilities.
 
-## Summary: Which Method for Which Scenario
-
-| Scenario | Recommended method |
-|----------|--------------------|
-| Disposing of old SSD | ATA Secure Erase or NVMe Format |
-| Ongoing sensitive data storage | Full-drive encryption (LUKS/FileVault) |
-| Deleting specific files on unencrypted SSD | Best-effort overwrite + TRIM, accept limitations |
-| High-threat disposal | Physical destruction of NAND chips |
-| Apple Silicon Mac disposal | Disk Utility erase (hardware crypto erase) |
-
 ## Verifying the Erasure
 
 After ATA Secure Erase or NVMe Format, you can spot-check that data is gone:

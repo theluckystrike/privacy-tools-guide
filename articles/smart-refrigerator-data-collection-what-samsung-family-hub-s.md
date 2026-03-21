@@ -224,7 +224,6 @@ If you want to reduce the data footprint:
 - **Avoid linking accounts**: Use the refrigerator without a Samsung account where possible
 
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
 ## Related Reading

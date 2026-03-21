@@ -398,7 +398,6 @@ Store your forwarding email setup in a password manager alongside service creden
 - You're using the same service long-term and trust it
 
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 
 ## Related Reading

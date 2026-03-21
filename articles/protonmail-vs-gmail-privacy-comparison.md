@@ -58,6 +58,18 @@ const gmailEncryption = {
 
 The key distinction: ProtonMail's zero-access model means they physically cannot read your emails. Gmail's encryption protects against external attackers but Google retains the ability to process message content internally.
 
+
+## Quick Comparison
+
+| Feature | Protonmail | Gmail |
+|---|---|---|
+| Encryption | OPENPGP | AES-256 |
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Data Collection | Minimal | Minimal |
+| Jurisdiction | Check provider | Check provider |
+| Self-Hosting | Check availability | Check availability |
+
 ## Data Ownership and Harvesting
 
 ### ProtonMail Data Practices

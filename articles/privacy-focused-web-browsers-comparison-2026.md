@@ -54,7 +54,7 @@ Brave is Chromium-based (so websites work like Chrome), but with privacy by defa
 Test: Visit 100 websites, check tracking pixels and cookies
 - Chrome: 847 tracking attempts blocked per 100 sites (no blocking)
 - Firefox: 412 tracking attempts (selective blocking)
-- Brave: 0 tracking attempts (comprehensive blocking)
+- Brave: 0 tracking attempts ( blocking)
 
 Test: DNS leak testing (dnsleaktest.com)
 - Chrome: Leaks to Google DNS and ISP

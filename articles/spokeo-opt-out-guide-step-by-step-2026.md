@@ -256,7 +256,7 @@ The comparison table below shows how Spokeo's data depth compares to other major
 | Intelius | Limited | Yes | Yes | No |
 | FastPeopleSearch | No | Yes | Yes | No |
 
-This table illustrates why Spokeo often represents the highest-priority removal target for people concerned about online privacy—its broader data aggregation creates more comprehensive and potentially more harmful profiles.
+This table illustrates why Spokeo often represents the highest-priority removal target for people concerned about online privacy—its broader data aggregation creates more and potentially more harmful profiles.
 
 ## Other Data Brokers
 

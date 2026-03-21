@@ -108,7 +108,7 @@ def enable_bucket_versioning(bucket_name, s3_client):
 
 ### 2024-2025: AI-Enhanced Attack Patterns
 
-Attackers began leveraging AI to identify vulnerabilities in cloud deployments. Automated scanning tools discovered misconfigurations at scale, leading to several high-profile breaches:
+Attackers began using AI to identify vulnerabilities in cloud deployments. Automated scanning tools discovered misconfigurations at scale, leading to several high-profile breaches:
 
 - **Startup X**: Exposed 50TB of customer data due to publicly accessible database
 - **Enterprise Y**: Compromised through stolen service account credentials

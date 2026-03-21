@@ -22,7 +22,7 @@ Choosing the best password manager for enterprise requires understanding securit
 
 Most organizations frame password management as a security concern — preventing credential theft, reducing phishing success rates, eliminating password reuse. These are valid goals. But enterprise password management is equally a privacy concern, specifically around what data the password manager vendor can access about your organization.
 
-When you store credentials in a cloud-hosted password manager, you are trusting that vendor with a comprehensive map of your organization's infrastructure: every service you use, every account, every secret. A vendor with server-side access to your vaults can see which cloud providers you use, which SaaS tools your teams depend on, and potentially extract credentials if their encryption implementation is weaker than marketed.
+When you store credentials in a cloud-hosted password manager, you are trusting that vendor with a map of your organization's infrastructure: every service you use, every account, every secret. A vendor with server-side access to your vaults can see which cloud providers you use, which SaaS tools your teams depend on, and potentially extract credentials if their encryption implementation is weaker than marketed.
 
 The questions that matter from a privacy-first perspective:
 

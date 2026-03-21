@@ -43,6 +43,18 @@ window.osanoCmDiagnostics = {
 };
 ```
 
+
+## Quick Comparison
+
+| Feature | Cookieyes | Osano |
+|---|---|---|
+| Privacy Policy | Privacy-focused | Privacy-focused |
+| Security Audit | See documentation | See documentation |
+| Jurisdiction | Check provider | Check provider |
+| Pricing | See current pricing | $10/month |
+| Platform Support | Cross-platform | Cross-platform |
+| Compliance | See documentation | See documentation |
+
 ## API Capabilities and Developer Integration
 
 For developers building custom consent flows, the API capabilities determine how flexibly you can implement consent management. CookieYes provides a JavaScript API that allows checking consent status, retrieving user preferences, and triggering consent refreshes:

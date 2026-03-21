@@ -254,7 +254,7 @@ If you're using a temporary or shared virtual number, Signal's Registration Lock
 # - Write the PIN down somewhere secure immediately after setting
 ```
 
-The Registration Lock essentially ties your account to the phone number you registered with. Even if someone obtains your verification code, they cannot claim your account without the PIN. This is your primary defense against SIM reassignment attacks.
+The Registration Lock ties your account to the phone number you registered with. Even if someone obtains your verification code, they cannot claim your account without the PIN. This is your primary defense against SIM reassignment attacks.
 
 ## Risk Mitigation Checklist
 

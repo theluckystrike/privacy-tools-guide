@@ -359,7 +359,7 @@ Location spoofing exists in a legal gray area:
 - Your profile data may be retained even after deletion
 
 **Ethical considerations:**
-- Are you misrepresenting yourself to others? (Arguably yes if you hide location)
+- Are you misrepresenting yourself to others? ( yes if you hide location)
 - Could you be harming other users' experience? (Depends on intent)
 - What's your threat model? (Personal safety vs. privacy preservation)
 

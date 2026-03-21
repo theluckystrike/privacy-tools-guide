@@ -276,7 +276,6 @@ sudo ausearch -k phi_access | tail -20
 - [Privacy Setup For Accountant Handling Client Financial Data](/privacy-tools-guide/privacy-setup-for-accountant-handling-client-financial-data-/)
 - [Privacy Setup For Financial Advisor Client Portfolio Data Pr](/privacy-tools-guide/privacy-setup-for-financial-advisor-client-portfolio-data-pr/)
 
-Built by theluckystrike — More at zovo.one*
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

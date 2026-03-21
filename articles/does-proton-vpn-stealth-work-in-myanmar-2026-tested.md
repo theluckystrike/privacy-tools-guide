@@ -201,7 +201,6 @@ iptables -An OUTPUT -j DROP
 - [Does NordVPN Work in Uzbekistan? 2026 Tested and Reviewed](/privacy-tools-guide/does-nordvpn-work-in-uzbekistan-2026-tested-and-reviewed/)
 - [Does Surfshark Work in Vietnam 2026: Tested on Mobile](/privacy-tools-guide/does-surfshark-work-in-vietnam-2026-tested-on-mobile/)
 
-Built by theluckystrike** — More at [zovo.one](https://zovo.one)
 ```
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

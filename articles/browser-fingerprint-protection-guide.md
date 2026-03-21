@@ -47,7 +47,7 @@ No single property is unique. The combination is. A 2023 study found that combin
 
 Before making changes, establish a baseline:
 
-- `https://coveryourtracks.eff.org` — EFF's comprehensive fingerprint test
+- `https://coveryourtracks.eff.org` — EFF's fingerprint test
 - `https://browserleaks.com` — detailed breakdown of each fingerprint vector
 - `https://amiunique.org` — shows how unique your browser is across their dataset
 

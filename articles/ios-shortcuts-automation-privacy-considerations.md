@@ -237,17 +237,6 @@ A practical example: Location-based lunch reminder
 
 The only difference is the addition of unnecessary data access and external services.
 
-## Summary: Building Privacy-First Automations
-
-Granting minimum permissions, preferring local processing, keeping credentials out of shared shortcuts, and auditing your automation library regularly are the habits that keep iOS Shortcuts useful without exposing personal data.
-
-For developers building shortcuts for teams or distribution, the same principles apply at scale: never embed secrets, request only needed permissions, process locally when possible, and provide clear documentation of what data your shortcut accesses.
-
-iOS Shortcuts are powerful because they give users programmatic control. That power creates privacy responsibility—use it wisely, audit regularly, and default to caution when adding new capabilities.
-
----
-
-
 ## Related Articles
 
 - [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
