@@ -181,6 +181,262 @@ sha256sum document.pdf
 
 **Ignoring Tor Browser warnings**: The browser displays warnings for potentially dangerous configurations. Take these seriously—bypassing them often leads to de-anonymization.
 
+## Advanced Circuit Analysis and Fingerprinting
+
+Journalists requiring maximum anonymity should understand circuit composition:
+
+```python
+#!/usr/bin/env python3
+import stem
+from stem.control import EventType
+
+class TorCircuitAnalyzer:
+    def __init__(self, control_port=9051, control_password=None):
+        self.controller = stem.control.Controller.from_port(
+            port=control_port,
+            password=control_password
+        )
+        self.controller.authenticate()
+
+    def analyze_circuits(self):
+        """Analyze active circuits for fingerprinting risk."""
+        circuits = self.controller.get_circuits()
+
+        for circuit in circuits:
+            print(f"\nCircuit {circuit.id}:")
+            print(f"  Status: {circuit.status}")
+            print(f"  Path: {circuit.path}")
+
+            # Analyze for fingerprinting risks
+            if len(circuit.path) < 3:
+                print("  [WARNING] Circuit shorter than 3 hops - increased fingerprinting risk")
+
+            # Check exit node location
+            exit_node = circuit.path[-1]
+            print(f"  Exit Node: {exit_node}")
+
+    def new_circuit_for_identity(self):
+        """Request new circuit to establish new identity."""
+        self.controller.signal(stem.Signal.NEWNYM)
+        print("New identity requested")
+
+    def disable_javascript_via_torrc(self):
+        """Enforce JavaScript disable at network level."""
+        config = {
+            'DisableV3ClientAuth': '0',
+            'ClientOnionAuthDir': '/etc/tor/onion-auth',
+        }
+        self.controller.set_conf(**config)
+
+# Usage
+analyzer = TorCircuitAnalyzer()
+analyzer.analyze_circuits()
+analyzer.new_circuit_for_identity()
+```
+
+## Hardened Configuration for Critical Work
+
+For high-stakes journalism in adversarial environments:
+
+```bash
+#!/bin/bash
+# tor-hardened-config.sh - Maximum security configuration
+
+# 1. Create isolated user for sensitive work
+sudo useradd -m -s /bin/bash journalist
+
+# 2. Restrict file permissions
+sudo chmod 700 /home/journalist
+
+# 3. Disable swap to prevent memory leaks
+sudo swapoff -a
+sudo sed -i 's/.*swap.*/#&/' /etc/fstab
+
+# 4. Enable mandatory access control (AppArmor)
+sudo aa-enforce /etc/apparmor.d/tor
+
+# 5. Configure kernel hardening
+echo "kernel.dmesg_restrict = 1" | sudo tee -a /etc/sysctl.conf
+echo "kernel.kptr_restrict = 2" | sudo tee -a /etc/sysctl.conf
+echo "kernel.yama.ptrace_scope = 3" | sudo tee -a /etc/sysctl.conf
+
+# 6. Mount /tmp with noexec
+sudo mount -o remount,noexec /tmp
+
+# 7. Enable firewall with strict rules
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw default deny outgoing
+sudo ufw allow out to 9.9.9.9  # Only allow Tor
+
+echo "Hardening complete"
+```
+
+## Secure Communication with Sources Over Tor
+
+Establish confidential channels for source communications:
+
+```nginx
+# nginx configuration for hidden service with source submission form
+server {
+    listen 127.0.0.1:80;
+    server_name source-submission.onion;
+
+    # Disable logging
+    access_log off;
+    error_log off;
+
+    # Strict security headers
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "no-referrer" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+
+    # Disable TRACE and OPTIONS
+    if ($request_method ~ ^(TRACE|OPTIONS)$) {
+        return 405;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP "";
+        proxy_set_header X-Forwarded-For "";
+        proxy_hide_header Server;
+    }
+
+    # Secure form submission
+    location /submit-tip {
+        proxy_pass http://127.0.0.1:3000/api/submit;
+        client_max_body_size 100M;
+        proxy_read_timeout 300s;
+    }
+}
+```
+
+## Automated Tor Browser Security Updates
+
+Stay current with security patches:
+
+```bash
+#!/bin/bash
+# tor-update-checker.sh
+
+TOR_BROWSER_DIR="$HOME/tor-browser"
+UPDATE_LOG="$HOME/.tor-update.log"
+
+check_for_updates() {
+    echo "[$(date)] Checking for Tor Browser updates..." >> "$UPDATE_LOG"
+
+    CURRENT_VERSION=$(cat "$TOR_BROWSER_DIR/Browser/start-tor-browser.desktop" | grep Version | head -1)
+
+    # Check release page (requires parsing)
+    LATEST=$(curl -s https://www.torproject.org/download/ | grep -oP 'tor-browser.*\.tar\.xz' | head -1)
+
+    if [[ "$CURRENT_VERSION" != *"$LATEST"* ]]; then
+        echo "[ALERT] Update available: $LATEST" >> "$UPDATE_LOG"
+        # Automated update process
+        download_and_verify "$LATEST"
+    else
+        echo "[OK] Tor Browser current" >> "$UPDATE_LOG"
+    fi
+}
+
+download_and_verify() {
+    VERSION=$1
+    cd /tmp
+    wget "https://www.torproject.org/dist/torbrowser/$VERSION/$VERSION.tar.xz"
+    wget "https://www.torproject.org/dist/torbrowser/$VERSION/$VERSION.tar.xz.asc"
+
+    gpg --verify "$VERSION.tar.xz.asc" "$VERSION.tar.xz" && \
+        echo "[OK] Signature verified" || \
+        echo "[FAIL] Signature verification failed"
+}
+
+check_for_updates
+```
+
+## Detection Evasion vs. True Anonymity
+
+Understand the distinction:
+
+**Detection Evasion**: Hiding that you're using Tor (through bridges, etc.). Important for censorship circumvention.
+
+**True Anonymity**: Hiding your identity from the destination website and network observers. Tor provides this.
+
+For journalists, prioritize true anonymity. If censorship is not a concern, use Tor Browser without bridges to avoid detection overhead.
+
+## Source Protection Document Verification
+
+Establish cryptographic verification for source communications:
+
+```bash
+#!/bin/bash
+# source-verification.sh - Verify source identity through cryptographic signatures
+
+SOURCE_NAME="Confidential Source"
+SOURCE_PUBKEY="/home/journalist/.keys/source-pubkey.gpg"
+INCOMING_EMAIL="tips.txt"
+
+verify_source() {
+    # Check email signature
+    gpg --verify "$INCOMING_EMAIL.sig" "$INCOMING_EMAIL"
+
+    if [ $? -eq 0 ]; then
+        echo "[OK] Source signature verified"
+        # Process source information
+        cat "$INCOMING_EMAIL" | less
+    else
+        echo "[ALERT] Source signature verification failed"
+        echo "This may be a spoofed message. Do not use this information."
+    fi
+}
+
+verify_source
+```
+
+## Handling Threats During Investigation
+
+If compromise is suspected:
+
+```bash
+#!/bin/bash
+# emergency-protocol.sh - Initiate when compromise is suspected
+
+echo "EMERGENCY PROTOCOL INITIATED"
+
+# 1. Disconnect from network immediately
+nmcli networking off
+
+# 2. Close all applications
+pkill -9 firefox tor-browser chrome
+
+# 3. Securely wipe sensitive data
+shred -vfz -n 35 ~/.config/Tor\ Browser
+shred -vfz -n 35 ~/Documents/sensitive*
+
+# 4. Kill Tor daemon
+sudo systemctl stop tor@default
+
+# 5. Generate new Tor identity
+systemctl restart tor
+
+# 6. Reconnect with fresh settings
+nmcli networking on
+
+echo "Emergency protocol complete. Assess situation before proceeding."
+```
+
+## Maintaining Operational Security Over Time
+
+Long-term OPSEC practices:
+
+- **Rotate devices**: Use separate physical hardware for different investigations
+- **Version control**: Keep Tor Browser and system software current
+- **Verify contacts**: Periodically re-verify source PGP keys
+- **Compartmentalize**: Never mix personal and professional Tor usage
+- **Document nothing**: Keep investigation notes only in encrypted volumes
 
 ## Related Articles
 

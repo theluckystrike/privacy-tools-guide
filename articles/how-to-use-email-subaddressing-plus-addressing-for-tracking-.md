@@ -180,6 +180,208 @@ class EmailAliasManager {
 
 This approach creates discoverable aliases that include service name, purpose, and a timestamp for uniqueness while remaining readable.
 
+## Domain-Based Aliasing for Professional Separation
+
+For developers and power users managing separate professional identities, custom domain aliases provide stronger separation than plus addressing:
+
+```bash
+# Set up Mailgun (or equivalent) for email routing
+curl -X POST https://api.mailgun.net/v3/mg.yourdomain.com/routes \
+  -F priority=0 \
+  -F pattern='github-*@yourdomain.com' \
+  -F action='forward("github@forwarding.address")' \
+  -F action='stop()' \
+  -u api:YOUR_API_KEY
+```
+
+This approach scales better than plus addressing and provides professional aliases for different personas (dev@yourdomain.com, security@yourdomain.com, etc.).
+
+## Integrating with Password Managers for Tracking
+
+Store subaddresses in your password manager with metadata tags to correlate with leak detection:
+
+```json
+{
+  "id": "github_2026_01",
+  "name": "GitHub Account",
+  "login": {
+    "email": "developer+github@example.com",
+    "username": "dev-github"
+  },
+  "notes": "Service: GitHub, Purpose: Development",
+  "tags": ["service-tracking", "github", "dev-work"],
+  "fields": {
+    "service_domain": "github.com",
+    "service_type": "code-repository",
+    "created_date": "2026-01-15"
+  }
+}
+```
+
+When you receive unexpected mail to `developer+github@example.com`, look up the entry in your password manager to immediately identify the source.
+
+## Advanced: Automated Leak Detection System
+
+Build a tracking system that monitors aliases in real-time:
+
+```python
+#!/usr/bin/env python3
+import imaplib
+import json
+from datetime import datetime, timedelta
+from collections import defaultdict
+
+class AliasLeakDetector:
+    def __init__(self, email, password, imap_server='imap.gmail.com'):
+        self.email = email
+        self.imap = imaplib.IMAP4_SSL(imap_server)
+        self.imap.login(email, password)
+        self.leak_log = defaultdict(list)
+
+    def get_emails_since(self, minutes=60):
+        """Fetch emails from the last N minutes."""
+        self.imap.select('INBOX')
+
+        # Search for recent emails
+        since_date = (datetime.now() - timedelta(minutes=minutes)).strftime('%d-%b-%Y')
+        status, messages = self.imap.search(None, f'SINCE {since_date}')
+
+        email_ids = messages[0].split()
+        return email_ids
+
+    def parse_email(self, email_id):
+        """Extract sender and recipient alias."""
+        status, data = self.imap.fetch(email_id, '(RFC822)')
+
+        import email as email_lib
+        msg = email_lib.message_from_bytes(data[0][1])
+
+        to_addr = msg['To']
+        from_addr = msg['From']
+
+        # Extract alias from recipient address
+        if '+' in to_addr:
+            alias = to_addr.split('+')[1].split('@')[0]
+            return {
+                'alias': alias,
+                'from': from_addr,
+                'to': to_addr,
+                'date': msg['Date']
+            }
+        return None
+
+    def detect_leaks(self):
+        """Identify unexpected senders for each alias."""
+        email_ids = self.get_emails_since()
+
+        for email_id in email_ids:
+            parsed = self.parse_email(email_id)
+            if parsed:
+                alias = parsed['alias']
+                from_domain = parsed['from'].split('@')[-1].rstrip('>')
+
+                self.leak_log[alias].append({
+                    'from': parsed['from'],
+                    'domain': from_domain,
+                    'date': parsed['date']
+                })
+
+    def report_leaks(self, expected_domains_file='expected_domains.json'):
+        """Compare against expected senders."""
+        with open(expected_domains_file, 'r') as f:
+            expected = json.load(f)
+
+        for alias, senders in self.leak_log.items():
+            unique_domains = set(s['domain'] for s in senders)
+            allowed_domains = set(expected.get(alias, []))
+
+            unexpected = unique_domains - allowed_domains
+            if unexpected:
+                print(f"[LEAK] {alias}: unexpected sender(s): {unexpected}")
+            else:
+                print(f"[OK] {alias}: all senders are expected")
+
+# Usage
+detector = AliasLeakDetector('your@email.com', 'password')
+detector.detect_leaks()
+detector.report_leaks()
+```
+
+## Service-Level Comparison: Which Services Leak Most
+
+Track which services expose your address to unexpected senders:
+
+```python
+import json
+from collections import defaultdict
+
+# Log structure
+leak_report = {
+    "github": {
+        "registration_date": "2026-01-15",
+        "expected_senders": ["noreply@github.com", "support@github.com"],
+        "unexpected_senders": [
+            "marketing@github-partner.com",
+            "survey@external-analytics.com"
+        ],
+        "leak_confirmed": True
+    },
+    "amazon": {
+        "registration_date": "2026-01-20",
+        "expected_senders": ["order-confirmation@amazon.com", "ads@amazon.com"],
+        "unexpected_senders": [],
+        "leak_confirmed": False
+    }
+}
+
+# Calculate leak rates
+total_services = len(leak_report)
+leaked_services = sum(1 for s in leak_report.values() if s['leak_confirmed'])
+leak_rate = (leaked_services / total_services) * 100
+
+print(f"Leak rate: {leak_rate}% of services ({leaked_services}/{total_services})")
+```
+
+## Gmail-Specific Advanced Filters
+
+Gmail's powerful filter system enables sophisticated leak detection without third-party tools:
+
+1. Create labels for each service: `services/github`, `services/aws`, etc.
+2. Create filters with these expressions:
+
+```
+from:(developer+github@example.com) OR to:(developer+github@example.com)
+```
+
+3. Assign multiple labels:
+   - `services/github` (primary)
+   - `services/github-unexpected` (for unexpected senders)
+
+4. Use label hierarchy to organize:
+
+```
+services/
+  ├── github/
+  │   ├── expected
+  │   └── unexpected
+  ├── aws/
+  │   ├── expected
+  │   └── unexpected
+```
+
+## Preventing Cross-Service Correlation
+
+When aliases are leaked and sold to data brokers, multiple services can correlate your activity. Mitigate this by:
+
+1. **Using unique patterns per service**:
+   ```
+   github: developer+gh-abc123@example.com
+   aws: developer+aws-xyz789@example.com
+   linkedin: developer+li-def456@example.com
+   ```
+
+2. **Rotating aliases periodically**: Every 90 days, create new aliases and migrate accounts
+3. **Monitoring for pattern-based tracking**: Check if multiple leaked emails follow a predictable sequence
 
 ## Related Articles
 

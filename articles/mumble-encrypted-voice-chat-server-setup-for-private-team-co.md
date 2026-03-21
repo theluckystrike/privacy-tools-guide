@@ -180,6 +180,297 @@ sudo tail -f /var/log/murmur/murmur.log
 
 Periodically regenerate SSL certificates before expiration to prevent connection issues.
 
+## Advanced Security Hardening
+
+For teams handling sensitive information, implement additional security layers:
+
+### ACL Configuration for Role-Based Access
+
+Configure fine-grained permissions using Mumble's ACL system:
+
+```ini
+# Root channel ACL (inherited by all subchannels)
+acl_add=Auth
+acl_perm=Auth, write+enter
+acl_add=~user1
+acl_perm=~user1, none+enter
+
+# Management channel (only admins)
+channel_acl_add=management
+channel_acl_add_user=@admin
+channel_acl_perm_admin=write+enter+link
+channel_acl_add_user=@others
+channel_acl_perm_others=none
+```
+
+### Voice Activity Detection (VAD) Configuration
+
+Optimize VAD settings to prevent audio leaks:
+
+```ini
+# Client-side VAD settings in murmur.ini
+voicecodec=opus
+opusthreshold=32000  # Higher = less sensitive, fewer ambient sounds
+
+# Server-side bandwidth enforcement
+bandwidth=128000  # 128 kbps for high-quality audio
+```
+
+### Integration with LDAP for Enterprise Authentication
+
+For organizations with existing directory services:
+
+```ini
+# LDAP integration
+auth=ldap
+ldapserver=ldap.yourdomain.com
+ldapport=389
+ldapbasedn=cn=users,dc=yourdomain,dc=com
+ldapusername=cn=mumble,cn=users,dc=yourdomain,dc=com
+ldappassword=service_password
+ldapfilter=(uid=%{username})
+```
+
+## Containerized Mumble Deployment
+
+Deploy Mumble in a Kubernetes cluster for high availability:
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mumble-config
+data:
+  murmur.ini: |
+    welcometext=Secure Team Server
+    registerName=Private Voice
+    bandwidth=128000
+    maxusers=200
+    sslCert=/etc/mumble-certs/cert.pem
+    sslKey=/etc/mumble-certs/key.pem
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mumble-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mumble
+  template:
+    metadata:
+      labels:
+        app: mumble
+    spec:
+      containers:
+      - name: murmur
+        image: golang/murmur:latest
+        ports:
+        - containerPort: 64738
+          protocol: TCP
+        - containerPort: 64738
+          protocol: UDP
+        volumeMounts:
+        - name: config
+          mountPath: /etc/mumble
+        - name: certs
+          mountPath: /etc/mumble-certs
+        - name: data
+          mountPath: /var/lib/murmur
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+      volumes:
+      - name: config
+        configMap:
+          name: mumble-config
+      - name: certs
+        secret:
+          secretName: mumble-certs
+      - name: data
+        persistentVolumeClaim:
+          claimName: mumble-data
+```
+
+## Monitoring and Security Auditing
+
+Set up comprehensive logging and monitoring:
+
+```bash
+#!/bin/bash
+# Mumble server audit script
+
+echo "=== MUMBLE SERVER AUDIT ==="
+
+# 1. Check SSL certificate validity
+echo "SSL Certificate Status:"
+openssl x509 -in /etc/murmur/ssl_cert.pem -text -noout | grep -E "Issuer:|Subject:|Not Valid"
+
+# 2. Verify service is running
+echo ""
+echo "Service Status:"
+systemctl status murmur --no-pager | head -5
+
+# 3. Check network ports
+echo ""
+echo "Network Status:"
+netstat -tuln | grep 64738
+
+# 4. Monitor active users
+echo ""
+echo "Active Connections:"
+netstat -tu | grep 64738 | wc -l
+
+# 5. Review recent logs for errors
+echo ""
+echo "Recent Log Errors:"
+grep ERROR /var/log/murmur/murmur.log | tail -5
+
+# 6. Verify database integrity
+echo ""
+echo "Database Check:"
+sqlite3 /var/lib/murmur/murmur.sqlite ".tables"
+
+# 7. Check disk usage
+echo ""
+echo "Database Size:"
+du -h /var/lib/murmur/murmur.sqlite
+```
+
+## Client-Side Security Hardening
+
+Configure clients for maximum security:
+
+```python
+#!/usr/bin/env python3
+# mumble-client-hardener.py - Automates client security configuration
+
+import os
+import json
+
+class MumbleClientHardener:
+    def __init__(self, config_dir):
+        self.config_dir = config_dir
+        self.config_file = os.path.join(config_dir, 'mumble.ini')
+
+    def harden_settings(self):
+        """Apply security hardening to client configuration."""
+        settings = {
+            # Audio settings
+            'audio/input_mictype': 0,  # Push-to-talk
+            'audio/input_micboost': 0,  # No microphone boost
+            'audio/mute_when_away': True,
+            'audio/output_maximumvolume': 100,
+
+            # Security settings
+            'security/tls_min_version': 'TLSv1.2',
+            'security/verify_certificate': True,
+            'security/force_https': True,
+
+            # Privacy settings
+            'privacy/allow_html': False,
+            'privacy/allow_external_links': False,
+            'privacy/certificate_required': True,
+
+            # Network settings
+            'network/protocol': 'TCP',  # Force TCP over UDP if on restricted network
+            'network/keepalive': 30,
+
+            # UI settings
+            'ui/always_enable_push_to_talk': True,
+            'ui/hide_frames': True,  # Hide window frames when minimized
+        }
+
+        return settings
+
+    def generate_config(self):
+        """Generate hardened configuration."""
+        settings = self.harden_settings()
+
+        config_content = "[General]\n"
+        for key, value in settings.items():
+            config_content += f"{key}={value}\n"
+
+        with open(self.config_file, 'w') as f:
+            f.write(config_content)
+
+        print(f"Hardened config written to {self.config_file}")
+
+# Usage
+hardener = MumbleClientHardener(os.path.expanduser('~/.config/Mumble'))
+hardener.generate_config()
+```
+
+## Backup and Disaster Recovery
+
+Implement automated backup strategy:
+
+```bash
+#!/bin/bash
+# Mumble server backup script
+
+BACKUP_DIR="/backup/mumble"
+RETENTION_DAYS=30
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+
+# Create backup directory
+mkdir -p "$BACKUP_DIR"
+
+# Backup configuration
+tar -czf "$BACKUP_DIR/murmur_config_$TIMESTAMP.tar.gz" /etc/murmur/
+
+# Backup database
+cp /var/lib/murmur/murmur.sqlite "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite"
+gzip "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite"
+
+# Encrypt backup (optional)
+openssl enc -aes-256-cbc -in "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz" \
+    -out "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc" -pass pass:backup_password
+
+# Remove unencrypted backup
+rm "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz"
+
+# Rotate old backups
+find "$BACKUP_DIR" -name "murmur_*.sqlite.gz.enc" -mtime +$RETENTION_DAYS -delete
+
+echo "Backup completed: $BACKUP_DIR"
+
+# Verify backup integrity
+if [ -f "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc" ]; then
+    ls -lh "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc"
+fi
+```
+
+## Performance Tuning for Large Teams
+
+For teams exceeding 50 users, apply performance optimizations:
+
+```ini
+# /etc/murmur.ini - Large team configuration
+
+# Threading for concurrent users
+threads=4
+
+# Database optimization
+sqliteWAL=true
+sqliteCacheSize=1000000
+
+# Network optimization
+tcpTimeout=30
+bandwidth=128000
+
+# User limits
+usersperchannel=50
+maxconcurrentconnections=500
+
+# Buffer optimization
+timeout=30
+```
 
 ## Related Articles
 
