@@ -30,6 +30,10 @@ Email services collect multiple data points that can identify users:
 
 To create an untraceable account, you must address each of these vectors.
 
+### What Email Headers Reveal About You
+
+Even after creating an account anonymously, every email you send carries metadata in its headers. The `Received` chain shows each mail server that handled the message. If you send from a webmail interface over Tor, only the sending mail server's IP appears — your Tor exit node. But if you use a mail client like Thunderbird connected over IMAP, your client's IP (or exit node IP) appears in the headers too. Services like ProtonMail strip identifying IP information from outbound headers by default. Tutanota also strips this. Gmail does not — it embeds your IP in `X-Originating-IP` or `X-Forwarded-To` headers. This alone is a strong reason to choose a privacy-first provider.
+
 ## Setting Up Your Anonymous Environment
 
 ### Using Tor Browser for Network Isolation
@@ -45,6 +49,12 @@ Configure Tor Browser with the highest security settings:
 - Set `security.slider` to "Safest"
 - Disable JavaScript where possible
 - Use the "New Circuit for this Site" option frequently
+
+### Tails OS: The Stronger Starting Point
+
+For the highest level of protection, use Tails OS rather than Tor Browser on your regular operating system. Tails boots from a USB drive, routes all traffic through Tor by default, and leaves no trace on the host machine. Every session starts clean. This matters because your operating system can leak identifying information through font rendering, timezone settings, and installed software versions — all components of browser fingerprinting.
+
+To boot Tails: download the ISO from tails.boum.org, verify the signature with GPG, write it to a USB drive with Balena Etcher, and boot from USB. You do not need to modify your primary system.
 
 ### VPN as a Complementary Layer
 
@@ -148,6 +158,25 @@ echo "email: anonymous123@protonmail.com" | gocryptfs -passfile ~/.encrypted.pas
 
 Consider using KeePassXC with the database stored on encrypted storage.
 
+### PGP Encryption for Email Content
+
+Even with an anonymous account, the email provider can read your messages unless you use end-to-end encryption. PGP (Pretty Good Privacy) encrypts message content so only the recipient's key can decrypt it. Both ProtonMail and Tutanota support PGP-style encryption natively for messages between their users. For communication with external recipients, you need to exchange public keys manually.
+
+Generate a PGP key pair using GnuPG:
+
+```bash
+# Generate a new PGP key (use Tails for this)
+gpg --full-generate-key
+
+# Export your public key to share with recipients
+gpg --armor --export your-anon@protonmail.com > public_key.asc
+
+# Encrypt a message to a recipient
+gpg --encrypt --armor --recipient recipient@example.com message.txt
+```
+
+Never generate PGP keys tied to your anonymous identity on a machine that is also used for your real identity. The key generation process records the system clock, which may correlate with other activity.
+
 ## Operational Security Practices
 
 ### Maintaining Anonymity Over Time
@@ -160,6 +189,10 @@ Once created, an untraceable account requires ongoing discipline:
 - **Use PGP encryption for sensitive communications**
 - **Rotate accounts periodically**
 
+### Timing Correlation Attacks
+
+One underappreciated threat to anonymous email is timing correlation. If you consistently access your anonymous account within minutes of accessing your regular accounts — even over Tor — an adversary with broad network visibility can correlate the activity patterns. The defense is to introduce deliberate randomness: access your anonymous account at irregular intervals, not immediately after normal browsing sessions. Tails' amnesic design helps here since there's no browser history to leak patterns, but the timing of network connections themselves can still reveal behavioral fingerprints to a sophisticated observer.
+
 ### Email Header Analysis
 
 Understand that email headers reveal metadata. When sending from anonymous accounts:
@@ -171,6 +204,18 @@ openssl s_client -connect protonmail.com:993 -quiet
 
 Avoid including any identifying information in email content or subject lines.
 
+## Compartmentalizing Your Anonymous Email Use
+
+A single anonymous account becomes less anonymous over time if you use it carelessly. Compartmentalization means creating distinct accounts for distinct purposes rather than one catch-all anonymous address:
+
+- **Account A**: Journalist tips and source communications — accessed exclusively via Tails from a coffee shop
+- **Account B**: Forum registrations for privacy research — accessed via Tor Browser on a dedicated VM
+- **Account C**: Temporary registrations you expect to abandon — use Guerrilla Mail or Mailinator with no login at all
+
+Avoid sending email from Account A to Account B. Any cross-contamination between compartments is a potential correlation point. If an adversary can prove that both accounts received the same email or refer to the same event, they can link the compartments.
+
+The discipline required here is the hardest part of maintaining anonymous email. Technical controls help, but the most common failure mode is human error — using the wrong account, replying from the wrong address, or including identifying details in message content.
+
 ## Limitations and Threat Models
 
 Perfect anonymity is practically impossible. Consider your actual threat model:
@@ -180,8 +225,7 @@ Perfect anonymity is practically impossible. Consider your actual threat model:
 - **Service cooperation**: Subpoenas can force providers to log future activity
 - **Human error**: Slip-ups in operational security compromise everything
 
-For most users, following these practices provides sufficient privacy. For high-risk scenarios, consult specialized security guides.
-
+For most users, following these practices provides sufficient privacy. For high-risk scenarios (journalists, activists, whistleblowers), pair these techniques with specialized operational security training. The Tor Project and EFF both publish updated guides for high-risk individuals.
 
 ## Related Articles
 
