@@ -185,6 +185,53 @@ data:
 
 Bitwarden's free tier remains competitive for individual users, supporting unlimited vault items, sync across devices, and 2FA authenticator.
 
+## Audit Trail and Compliance
+
+Enterprise environments increasingly require verifiable audit trails. The two products handle this very differently in practice.
+
+**1Password** surfaces event logs through its Activity Log dashboard and the Events API, which streams JSON-formatted events to SIEMs like Splunk or Datadog. Every vault access, item edit, and team member login is recorded with a timestamp and IP. On Business and Enterprise plans, you can configure automatic event export so logs leave 1Password servers for your own long-term retention.
+
+**Bitwarden** self-hosted deployments write events to your own database, giving you direct SQL access for custom reporting. The cloud-hosted Business plan exposes an Event Logs API with comparable fields. For compliance-sensitive organizations, the self-hosted path is significant: your auditors can inspect the database directly rather than trusting a third-party vendor's export format.
+
+Neither solution should be treated as a primary SIEM. Both are good at generating events, but event correlation across your full infrastructure still requires a dedicated log aggregation platform.
+
+## Threat Model: What Each Architecture Protects Against
+
+Understanding which attacks each product actually prevents helps cut through marketing claims.
+
+**1Password's secret key model** protects against a specific, realistic threat: a server-side breach where an attacker exfiltrates the encrypted vault database. Without your locally-stored secret key, the encrypted blob is computationally unrecoverable regardless of master password strength. The weakness is device compromise: if an attacker has persistent access to your unlocked machine, the secret key and master password are both present.
+
+**Bitwarden's PBKDF2 model** protects against the same server-side breach scenario, with the strength of protection scaling with iteration count and master password entropy. With 600,000 PBKDF2 iterations and a strong password, the theoretical cost of a brute-force attack is high. Self-hosted users additionally protect against third-party cloud provider compromise by keeping ciphertext on infrastructure they control.
+
+Both products are vulnerable to phishing for the master password and to local machine compromise. Neither protects you if your endpoint is fully controlled by an adversary.
+
+## Migration Between Platforms
+
+Switching password managers is a meaningful operational risk. Both tools support import and export but with different caveats.
+
+Exporting from 1Password produces a CSV or a 1PIF file. The CSV format drops custom field types — secure notes, one-time-password seeds, and linked items may require manual cleanup after import. Use the 1PIF format when possible:
+
+```bash
+# Export from 1Password CLI
+op export --output 1password-export.1pif
+```
+
+Bitwarden imports the 1Password 1PIF format natively via `bw import 1password1pif`. After import, verify item counts match and spot-check several credentials — particularly TOTP seeds and custom fields — before decommissioning the source vault.
+
+Going the other direction (Bitwarden to 1Password) requires exporting Bitwarden's encrypted JSON format and importing it through 1Password's web interface. The process is reliable for standard login items but loses Bitwarden-specific features like custom field types.
+
+Always test a migration with a non-critical subset of credentials before committing. Keep both vaults active during a 30-day parallel operation period.
+
+## Two-Factor Authentication Integration
+
+Both products support TOTP, hardware security keys, and passkeys, but the implementation details affect security posture in different ways.
+
+**1Password** stores TOTP seeds inside the vault itself — convenient, but it means your second factor is stored in the same location as your first factor. If your vault is compromised and your master password and secret key are known to an attacker, TOTP codes are also accessible. For high-assurance accounts, use a separate TOTP app (Aegis on Android, Raivo OTP on iOS) and keep seeds out of your password manager.
+
+Hardware key support in 1Password uses WebAuthn at the account login level, which hardens the browser-based unlock flow against phishing. The SSH agent integration additionally supports FIDO2 keys for SSH authentication, which is a meaningful hardening option for developers with SSH access to production systems.
+
+**Bitwarden** similarly stores TOTP seeds in vault items and supports WebAuthn hardware keys for account authentication. On the self-hosted path, you can configure Duo as a mandatory second factor for all vault access, which is useful for team deployments requiring enforced MFA. Bitwarden's open-source codebase means the TOTP implementation has received independent scrutiny, which is a genuine advantage over closed-source alternatives.
+
 ## Use Case Recommendations
 
 **Choose 1Password if:**
