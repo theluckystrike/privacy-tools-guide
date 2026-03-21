@@ -9,7 +9,7 @@ categories: [guides]
 tags:
 permalink: /vpn-for-accessing-medical-records-abroad-while-traveling-securely/
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 ---
