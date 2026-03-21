@@ -57,7 +57,13 @@ Security Level: Safest
 - Letterboxing enabled
 ```
 
-When testing web applications over Tor, you may need to adjust these settings temporarily or use a separate profile with custom settings.
+When testing web applications over Tor, you may need to adjust these settings temporarily or use a separate profile with custom settings. Keep in mind that each adjustment you make to Tor Browser's defaults can increase your browser fingerprint uniqueness, potentially reducing anonymity even within the Tor network.
+
+### Why Tor Browser Beats Rolling Your Own Configuration
+
+Some users attempt to harden Firefox manually and then route it through Tor, reasoning that they can pick the settings they prefer. This approach has a significant flaw: the resulting browser fingerprint is unique, making it far easier to correlate browsing sessions. Tor Browser's defaults are deliberately designed to make all users look identical to surveillance systems. Deviating from those defaults defeats the primary purpose.
+
+The same logic applies to using Chromium or Chrome through the Tor SOCKS proxy. Chromium sends many background requests that bypass proxy settings, including update checks, component downloads, and Safe Browsing requests. These requests can leak your real IP before a page has even loaded.
 
 ## Using the Tor SOCKS Proxy with Other Browsers
 
@@ -73,6 +79,8 @@ network.proxy.socks_port: 9050
 network.proxy.socks_remote_dns: true
 ```
 
+The `socks_remote_dns` setting is critical. Without it, Firefox resolves DNS locally before sending the request through the proxy, leaking the hostnames of every site you visit to your ISP. Setting this to `true` ensures DNS resolution happens inside the Tor circuit.
+
 ### Chrome via Command Line
 
 ```bash
@@ -80,7 +88,25 @@ google-chrome --proxy-server="socks5://127.0.0.1:9050" \
   --host-resolver-rules="MAP localhost 127.0.0.1"
 ```
 
-This approach is useful for debugging application behavior when accessed through Tor.
+This approach is useful for debugging application behavior when accessed through Tor. However, Chrome's background telemetry and update processes may send traffic outside the proxy. For development testing this is generally acceptable, but not for anonymity-sensitive use.
+
+### Proxychains as a Fallback
+
+For tools that lack proxy support, `proxychains` can intercept system calls and redirect connections through Tor:
+
+```bash
+# Install and configure proxychains
+sudo apt install proxychains4
+
+# Edit /etc/proxychains4.conf
+# Set: socks5 127.0.0.1 9050
+
+# Use with any command-line tool
+proxychains4 curl https://check.torproject.org/api/ip
+proxychains4 wget https://example.com/file.tar.gz
+```
+
+This is particularly useful for testing command-line tools, scripts, or build systems that you want routed through Tor.
 
 ## Verifying Tor Connectivity Programmatically
 
@@ -123,6 +149,8 @@ except requests.exceptions.RequestException as e:
     print(f"Connection failed: {e}")
 ```
 
+Note the `socks5h://` scheme rather than `socks5://`. The `h` suffix instructs the requests library to resolve hostnames through the proxy rather than locally, preventing DNS leaks at the Python layer.
+
 This pattern is essential for developers building applications that must operate over Tor.
 
 ## Onion Services and Hidden Web Applications
@@ -136,6 +164,15 @@ HiddenServicePort 80 127.0.0.1:8080
 ```
 
 After restarting Tor, your hidden service key appears in `/var/lib/tor/hidden_service/hostname`. This allows you to develop and test .onion-specific functionality without exposing your service to the clearnet.
+
+### Version 3 Onion Addresses
+
+All new onion services should use version 3 addresses, which provide stronger cryptography (ed25519 keys, 256-bit addresses). These addresses are 56 characters long and end in `.onion`. Version 2 addresses were deprecated in 2021 and are no longer supported by current Tor releases. If you maintain older services still using version 2 addresses, migrating to version 3 is overdue.
+
+```bash
+# Force v3 in torrc (should already be default in modern Tor)
+HiddenServiceVersion 3
+```
 
 ## Performance Considerations
 
@@ -153,7 +190,19 @@ FastFirstHopCP 1
 FastDirectoryGuards 1
 ```
 
-However, these settings reduce security guarantees and should only be used for testing.
+However, these settings reduce security guarantees and should only be used for testing. In a production or anonymity-sensitive deployment, never tune the Tor client for performance at the expense of security.
+
+### Isolating Circuits per Application
+
+When running multiple applications through Tor simultaneously, circuit isolation prevents cross-application correlation:
+
+```bash
+# /etc/tor/torrc
+SocksPort 9050 IsolateDestAddr IsolateDestPort
+SocksPort 9051 IsolateClientAddr
+```
+
+Assigning each application to its own SOCKS port with isolation flags means that connections to different destinations use different Tor circuits, even if they happen at the same time.
 
 ## Advanced: Tor Control Protocol Integration
 
@@ -164,7 +213,7 @@ from stem import Controller
 
 with Controller.from_port(port=9051) as controller:
     controller.authenticate()
-    
+
     # Get current circuit information
     for circ in controller.get_circuits():
         if circ.status == 'BUILT':
@@ -172,12 +221,12 @@ with Controller.from_port(port=9051) as controller:
             for fp in circ.path:
                 relay = controller.get_network_status(fp)
                 print(f"  {relay.nickname} ({fp})")
-    
+
     # Create new circuit for fresh exit node
     controller.new_circuit()
 ```
 
-This level of control enables building sophisticated applications that require Tor integration.
+This level of control enables building sophisticated applications that require Tor integration. The stem library also exposes event listeners, so you can react to circuit failures and automatically reconnect without user intervention.
 
 ## Security Recommendations
 
@@ -190,13 +239,38 @@ Regardless of which browser you choose, follow these practices:
 - Keep your Tor software updated to patch security vulnerabilities
 - Review browser console warnings related to Tor exit node detection
 
+### Verifying the Tor Browser Download
+
+Before running any Tor Browser release, verify the GPG signature:
+
+```bash
+# Import Tor Project signing key
+gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
+
+# Verify downloaded files
+gpg --verify tor-browser-linux-x86_64-14.0.1.tar.xz.asc \
+    tor-browser-linux-x86_64-14.0.1.tar.xz
+```
+
+A valid signature produces output beginning with `Good signature from "Tor Browser Developers (signing key)`. If the signature check fails for any reason, delete the download and start over from the official site.
+
+### Operational Security While Using Tor
+
+Technical configuration alone is not sufficient. Operational habits determine whether anonymity holds in practice:
+
+- **Do not log into personal accounts over Tor.** Logging into Gmail, Facebook, or any service that knows your identity links that browsing session to you, negating Tor's anonymity properties. Use separate dedicated accounts created over Tor if you need authenticated access.
+- **Do not open documents downloaded through Tor while online.** PDFs and Office files can load remote resources, revealing your real IP to the document's server. Open them only after disconnecting from the network, or use a sandboxed viewer.
+- **Avoid torrenting over Tor.** BitTorrent clients frequently make direct UDP connections that bypass the SOCKS proxy, leaking your IP and adding unnecessary load to the Tor network.
+- **Keep your Tor Browser window at its default size.** Maximizing the window exposes your screen resolution, which contributes to browser fingerprinting even within Tor.
+
+These habits apply whether you are using Tor Browser directly or routing another browser through the Tor SOCKS proxy. The technical controls and the operational discipline work together — neither is complete without the other.
+
 Additionally, when building production applications that interact with Tor, implement proper error handling for network failures, timeouts, and circuit breaks. Log suspicious activity without capturing user-identifying information to maintain operational security while debugging issues.
 
 {% endraw %}
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
 - [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
 - [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
