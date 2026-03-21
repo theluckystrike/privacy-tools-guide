@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /smart-doorbell-alternatives-that-store-video-locally-without/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
