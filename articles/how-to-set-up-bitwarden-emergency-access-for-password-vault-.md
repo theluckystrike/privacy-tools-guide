@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death"
+title: "Set Up Bitwarden Emergency Access for Password Vault"
 description: "A technical guide for developers and power users on configuring Bitwarden emergency access for password vault inheritance, covering trust delegation, API"
 date: 2026-03-16
 last_modified_at: 2026-03-16

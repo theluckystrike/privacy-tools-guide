@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide"
+title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices"
 description: "Step-by-step DoH setup: macOS, Windows, Linux, iOS, Android, routers. Provider comparison (Cloudflare, NextDNS, Quad9). Verification steps included"
 date: 2026-03-20
 last_modified_at: 2026-03-20

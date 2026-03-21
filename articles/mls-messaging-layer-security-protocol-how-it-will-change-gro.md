@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Mls Messaging Layer Security Protocol How It Will Change Group Encryption"
+title: "Mls Messaging Layer Security Protocol How It Will Change"
 description: "If you build messaging applications, coordinate teams, or manage sensitive group communications, you have likely encountered the complexity of end-to-end"
 date: 2026-03-16
 last_modified_at: 2026-03-16

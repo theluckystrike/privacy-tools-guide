@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Matrix/Element vs Signal for Private Group Communication: Detailed Comparison"
+title: "Matrix/Element vs Signal for Private Group Communication"
 description: "Compare Matrix/Element vs Signal for group messaging. Cover self-hosting, federation, metadata privacy, features, cost, and usability"
 date: 2026-03-20
 last_modified_at: 2026-03-20

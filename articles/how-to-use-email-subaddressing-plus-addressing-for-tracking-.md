@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your Address"
+title: "Use Email Subaddressing Plus Addressing For Tracking Which"
 description: "A practical guide to using email subaddressing and addressing techniques to track which services leak your email address. Perfect for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

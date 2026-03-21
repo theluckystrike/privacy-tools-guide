@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem and Solutions"
+title: "How VPN Reconnection Works After Network Switch Mobile"
 description: "A technical deep-dive into VPN reconnection mechanisms during network transitions, mobile handoffs, and IP changes. Includes code examples for developers"
 date: 2026-03-15
 last_modified_at: 2026-03-15

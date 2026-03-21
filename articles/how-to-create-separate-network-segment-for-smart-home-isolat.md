@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Create Separate Network Segment for Smart Home Isolating From Personal Devices"
+title: "Create Separate Network Segment for Smart Home Isolating"
 description: "A practical guide for developers and power users on creating isolated network segments to separate smart home devices from personal computers and phones"
 date: 2026-03-16
 last_modified_at: 2026-03-16

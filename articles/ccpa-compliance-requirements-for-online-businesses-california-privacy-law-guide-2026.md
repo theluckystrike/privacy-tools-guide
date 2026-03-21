@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ccpa Compliance Requirements For Online Businesses California Privacy Law"
+title: "Ccpa Compliance Requirements For Online Businesses"
 description: "A practical developer guide to CCPA compliance for online businesses. Learn about consumer rights, data handling requirements, technical"
 date: 2026-03-15
 last_modified_at: 2026-03-15

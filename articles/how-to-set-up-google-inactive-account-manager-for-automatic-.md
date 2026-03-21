@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Google Inactive Account Manager for Automatic Data Transfer After Death"
+title: "Set Up Google Inactive Account Manager for Automatic Data"
 description: "A technical guide for developers and power users on configuring Google Inactive Account Manager to automatically transfer data to trusted contacts when"
 date: 2026-03-16
 last_modified_at: 2026-03-16

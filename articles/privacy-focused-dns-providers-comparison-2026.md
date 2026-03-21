@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused DNS Providers Comparison 2026"
-description: "Compare privacy-respecting DNS providers: Quad9, NextDNS, Mullvad DNS, Cloudflare, Pi-hole. Includes real configurations, performance benchmarks, no-log policies, and feature tables."
+description: "Compare privacy-respecting DNS providers: Quad9, NextDNS, Mullvad DNS, Cloudflare, Pi-hole."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"

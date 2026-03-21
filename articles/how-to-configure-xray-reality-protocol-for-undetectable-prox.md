@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries"
+title: "Configure Xray Reality Protocol for Undetectable Proxy from"
 description: "Learn how to configure Xray Reality protocol to create an undetectable proxy that works in countries with strict internet censorship. Step-by-step guide with"
 date: 2026-03-16
 last_modified_at: 2026-03-16

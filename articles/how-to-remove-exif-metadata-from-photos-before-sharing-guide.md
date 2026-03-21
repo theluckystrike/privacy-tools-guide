@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Remove EXIF Metadata from Photos Before Sharing: Complete Guide"
+title: "How to Remove EXIF Metadata from Photos Before Sharing"
 description: "Remove EXIF metadata with exiftool, GUI tools, and mobile workflows. Learn what metadata reveals, bulk processing techniques, and privacy risks"
 date: 2026-03-20
 last_modified_at: 2026-03-20

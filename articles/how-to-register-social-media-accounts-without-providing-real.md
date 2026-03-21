@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Register Social Media Accounts Without Providing Real Phone Number or Email"
+title: "Register Social Media Accounts Without Providing Real Phone"
 description: "Learn privacy-focused methods for creating social media accounts without exposing personal phone numbers or email addresses. Tools, techniques, and code"
 date: 2026-03-16
 last_modified_at: 2026-03-16

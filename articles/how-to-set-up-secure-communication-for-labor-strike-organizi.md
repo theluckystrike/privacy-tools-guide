@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and Core Stack"
+title: "Set Up Secure Communication for Labor Strike Organizing"
 description: "A practical guide for developers and power users setting up secure communication infrastructure for labor strike organizing. Covers encrypted"
 date: 2026-03-16
 last_modified_at: 2026-03-16

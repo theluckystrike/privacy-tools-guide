@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Verify Your VPN Is Actually Bypassing Censorship (Not Leaking Your Real Location)"
+title: "Verify Your VPN Is Actually Bypassing Censorship (Not"
 description: "Learn practical methods to confirm your VPN is bypassing censorship and not leaking your real IP address or location. Includes code examples and diagnostic"
 date: 2026-03-16
 last_modified_at: 2026-03-16

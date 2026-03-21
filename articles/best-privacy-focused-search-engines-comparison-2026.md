@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Privacy-Focused Search Engines Comparison 2026: DuckDuckGo, Startpage, Brave Search"
+title: "Best Privacy-Focused Search Engines Comparison 2026"
 description: "Compare DuckDuckGo, Startpage, Brave Search, Mojeek, SearXNG. Privacy policies, result quality, self-hosting, and search accuracy benchmarks"
 date: 2026-03-20
 last_modified_at: 2026-03-20

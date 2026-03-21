@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement"
+title: "Submit a Privacy Complaint to California Attorney General"
 description: "A practical guide for developers and power users on filing privacy complaints to the California Attorney General under CCPA enforcement. Learn the process"
 date: 2026-03-16
 last_modified_at: 2026-03-16

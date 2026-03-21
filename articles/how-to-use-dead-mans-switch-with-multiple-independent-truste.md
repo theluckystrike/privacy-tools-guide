@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Credential Release"
+title: "Use Dead Man's Switch with Multiple Independent Trustees"
 description: "How to Use Dead Man — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in 2026"
 date: 2026-03-16
 last_modified_at: 2026-03-16

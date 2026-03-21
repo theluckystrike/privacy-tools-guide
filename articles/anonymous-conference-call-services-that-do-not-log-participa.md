@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Anonymous Conference Call Services That Do Not Log Participant Phone Numbers"
+title: "Anonymous Conference Call Services That Do Not Log"
 description: "A practical guide to anonymous conference call services that protect participant privacy by not logging phone numbers. Ideal for developers and power users"
 date: 2026-03-16
 last_modified_at: 2026-03-16
