@@ -151,6 +151,102 @@ HomeKit data includes information about your home environment, and Siri requests
 
 When building HomeKit-connected shortcuts, ask whether the automation truly needs to know specific device states or if a simpler trigger would serve the same purpose.
 
+## Real-World Threat Scenarios
+
+Understanding attack vectors helps you build safer shortcuts:
+
+**Scenario 1: Shared Shortcut with Embedded API Key**
+```
+Attacker creates seemingly useful shortcut (weather app enhancement)
+Includes hardcoded API key for weather service
+Shares publicly in iOS Shortcuts Gallery
+Recipient runs shortcut - their device sends data through attacker's API
+Attacker harvests location, usage patterns, and API requests
+```
+
+Defense: Never hardcode keys. Always use Keychain.
+
+**Scenario 2: Permission Creep in Automation**
+```
+You create time-based automation: "At 8am, send daily summary"
+Initially requests calendar access (needed for schedule)
+Over time, other actions added: contacts check, health data, location
+Automation now accesses far more than it needs
+You forget what permissions are granted
+```
+
+Defense: Review automations monthly. Remove unused actions immediately.
+
+**Scenario 3: Malicious Third-Party Service**
+```
+Shortcut sends your calendar events to analysis service
+Service claims to be privacy-respecting, uses HTTPS
+Actually sells aggregated location/schedule patterns to data brokers
+You have no visibility into this transfer
+```
+
+Defense: Use only established services. Prefer on-device processing. Review actual network requests if suspicious.
+
+## Practical: Auditing Your Shortcuts Library
+
+Create a regular audit habit:
+
+```
+Monthly Audit Checklist:
+□ Open Settings > Shortcuts
+□ List all automations currently enabled
+□ For each automation, review:
+  - What triggers it runs
+  - What permissions it uses
+  - What external services it contacts
+  - Whether you still need it
+□ Delete unused automations immediately
+□ Review recently modified shortcuts for unexpected changes
+□ Check Keychain for abandoned credentials
+```
+
+## Building Privacy-Safe Shortcuts: Real Example
+
+A practical example: Location-based lunch reminder
+
+**What it needs**:
+- Trigger: When you arrive at a location
+- Action: Notification reminder
+- Data accessed: Your location
+
+**Privacy-safe implementation**:
+```
+1. Create automation: Personal Automation > Arrive at Location
+2. Select your regular lunch location (home, office, restaurant)
+3. Add action: Show Result
+4. Set notification: "Time for lunch?"
+5. NO other actions
+6. No API calls, no credential requests
+7. All data stays on device
+```
+
+**Privacy-unsafe implementation** (to avoid):
+```
+1. Same as above, but:
+2. Add "Get Contacts" action (unnecessary)
+3. Add "Send HTTP Request" to external service
+4. Send location + time + contact list to service
+5. Service tracks when you visit locations + who you're with
+```
+
+The only difference is the addition of unnecessary data access and external services.
+
+## Summary: Building Privacy-First Automations
+
+Granting minimum permissions, preferring local processing, keeping credentials out of shared shortcuts, and auditing your automation library regularly are the habits that keep iOS Shortcuts useful without exposing personal data.
+
+For developers building shortcuts for teams or distribution, the same principles apply at scale: never embed secrets, request only needed permissions, process locally when possible, and provide clear documentation of what data your shortcut accesses.
+
+iOS Shortcuts are powerful because they give users programmatic control. That power creates privacy responsibility—use it wisely, audit regularly, and default to caution when adding new capabilities.
+
+---
+
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

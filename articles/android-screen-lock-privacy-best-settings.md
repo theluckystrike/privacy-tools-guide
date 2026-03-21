@@ -147,13 +147,96 @@ GrapheneOS defaults to strong biometric with no fallback, supports per-app authe
 
 These ROMs often include additional lock screen hardening unavailable in stock Android, such as preventing screenshots and screen recording from the lock screen.
 
+## Threat Model: Who Should Use Which Lock Method?
+
+Your appropriate lock method depends on your realistic threat model:
+
+**Standard User** (Public WiFi, Casual Theft Risk): 6-digit PIN + biometric is sufficient. Risk: phone theft from coffee shop, opportunistic access.
+
+**Developer/Business User** (Corporate Access, Sensitive Data): 12+ character alphanumeric password + fingerprint mandatory. Disable Smart Lock, USB debugging. Risk: targeted phone theft, forensic analysis of work data.
+
+**High-Value Target** (Activist, Journalist, Executive): Strong alphanumeric password + iris recognition where available, disable biometric fallback entirely. Use custom ROM with additional security hardening. Risk: adversarial access attempts, law enforcement seizure, state-level surveillance.
+
+The weakest link in Android security is often not the lock screen itself, but what happens after unlock—background apps accessing location, contacts, or messages. A strong lock screen doesn't matter if granted permissions allow wholesale data exfiltration.
+
+## Real-World Attack Vectors on Android Lock Screens
+
+Understanding actual attack methods helps you choose appropriate defenses:
+
+**Smudge Attacks on Pattern Locks**: Attackers observe finger oil residue on the screen to deduce your unlock pattern. Solution: use PIN or password instead.
+
+**Shoulder Surfing on PIN Entry**: Observer watches you enter your PIN. Mitigation: position your phone away from surveillance cameras and observers; use a longer PIN (8+ digits) to reduce memorization by observation.
+
+**Biometric Spoofing**: High-quality fingerprint duplicates or photographs of faces bypass some biometric systems. Modern devices (Pixel 6+, Samsung Galaxy S20+) use liveness detection and spoofing resistance. Older devices remain vulnerable.
+
+**USB Debugging Exploitation**: With USB debugging enabled, attackers can sideload apps, install backdoors, or dump device data. Always disable USB debugging when not in use, and enable "Require Authentication for USB" in Developer Options.
+
+**Lock Screen Notification Leaks**: Notifications on the lock screen reveal sensitive information (banking alerts, dating app matches, work emails) without requiring unlock. Solution: Settings > Notifications > Device & app notifications > "Hide sensitive content on lock screen."
+
+## Testing Your Lock Screen Configuration
+
+Verify your settings are working correctly:
+
+```bash
+# Check if device credential is set (requires Android Debug Bridge)
+adb shell settings get secure lock_pattern_visible_pattern
+
+# Verify Smart Lock is disabled
+adb shell settings get secure lock_smart_lock_active
+
+# Test notification visibility - check that sensitive notifications are hidden
+adb shell dumpsys notification | grep lock_screen
+```
+
+## Integration with Device Security Modules
+
+For developers building security-sensitive applications, leverage Android's security modules:
+
+**Hardware-Backed Keystore**: Store encryption keys in the TEE (Trusted Execution Environment):
+
+```kotlin
+// Access hardware-backed keystore
+val keyGenerator = KeyGenerator.getInstance(
+    KeyProperties.KEY_ALGORITHM_AES,
+    "AndroidKeyStore"
+)
+
+val keySpec = KeyGenParameterSpec.Builder(
+    "my_secure_key",
+    KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
+)
+    .setBlockModes(KeyProperties.BLOCK_MODE_GCM)
+    .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
+    .setUserAuthenticationRequired(true)
+    .build()
+
+keyGenerator.init(keySpec)
+val key = keyGenerator.generateKey()
+```
+
+This ensures even if the device's storage is physically accessed, encryption keys remain protected within the secure element.
+
+**Strongbox Keymaster**: On devices with a dedicated security chip (Samsung Knox, Google Titan), authentication parameters are verified in hardware rather than the main processor:
+
+```kotlin
+val keySpec = KeyGenParameterSpec.Builder(
+    "strongbox_key",
+    KeyProperties.PURPOSE_SIGN or KeyProperties.PURPOSE_VERIFY
+)
+    .setIsStrongBoxBacked(true)
+    .setUserAuthenticationRequired(true)
+    .build()
+```
+
 ## Practical Security Considerations
 
 Physical device security depends on threat model. For most users, a 6-digit PIN combined with fingerprint provides reasonable convenience while maintaining security. For developers handling sensitive data or high-value targets:
 
 Use strong alphanumeric passwords and disable Smart Lock entirely. Enable USB debugging only when needed, then disable it afterward. Hardware security keys via NFC add another layer for critical authentication.
 
-Regularly audit your lock screen configuration, particularly after Android updates that may reset privacy settings. The lock screen represents the gateway to all device data—invest time in configuring it appropriately.
+For maximum protection, implement automatic lock after 15 seconds of inactivity, enable power button instant lock, disable lock screen widgets entirely, and require eyes-open verification on Face Unlock.
+
+Regularly audit your lock screen configuration, particularly after Android updates that may reset privacy settings. The lock screen represents the gateway to all device data—invest time in configuring it appropriately. Consider running a monthly audit checklist covering biometric settings, notification visibility, Smart Lock status, and USB debugging state.
 
 ---
 

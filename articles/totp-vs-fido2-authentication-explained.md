@@ -158,6 +158,141 @@ Many modern services implement both TOTP and FIDO2, allowing users to choose the
 
 Progressive enrollment strategies work well: start users with TOTP, then prompt them to add FIDO2 credentials once familiar with the system. This reduces support burden while improving security for willing users.
 
+## Real Tools and Pricing (2026)
+
+**TOTP Authenticators**:
+- Google Authenticator: Free (iOS, Android)
+- Microsoft Authenticator: Free (iOS, Android)
+- Authy: Free (iOS, Android, desktop) — supports backup
+- FreeOTP: Free, open source (iOS, Android)
+- Bitwarden: Free password manager with built-in TOTP
+
+**FIDO2 Hardware Keys**:
+- YubiKey 5 Series: $45-65 (USB-C, NFC, Lightning variants)
+- Google Titan Security Key: $30 (USB-A/USB-C)
+- Nitrokey: $50-100 (open source options)
+- SoloKey: $25 (open source, affordable)
+
+For users, starting with a password manager's TOTP support (Bitwarden free, 1Password) costs nothing. Hardware keys become worthwhile for financial accounts, email, and work systems.
+
+## Deployment Considerations for Developers
+
+When implementing authentication, these factors matter:
+
+**User Experience Trade-offs**:
+
+TOTP: 3-5 seconds (user opens app, reads code, enters it)
+FIDO2: 1-2 seconds (user taps authenticator or uses biometric)
+
+FIDO2 is faster, but requires hardware. TOTP works on phones users already have.
+
+**Recovery and Backup**:
+
+TOTP secrets can be backed up (password managers do this automatically)
+FIDO2 keys cannot be backed up—if you lose the key, you've lost access unless you have backup credentials
+
+Design your recovery process accordingly. Require users to store backup codes or add secondary FIDO2 keys.
+
+**Attestation Requirements**:
+
+FIDO2 supports attestation—verifying that the key is a real security device, not spoofed software.
+
+```python
+# Example: Validating FIDO2 attestation
+from webauthn.helpers.structs import AuthenticatorSelectionCriteria, AttestationConveyancePreference
+
+def require_strong_attestation():
+    return {
+        'attestation': AttestationConveyancePreference.DIRECT,
+        'authenticatorSelection': AuthenticatorSelectionCriteria(
+            authenticatorAttachment='cross-platform',  # Hardware key, not platform
+            userVerification='required'
+        )
+    }
+```
+
+For high-security applications (financial, government), requiring hardware attestation prevents phishing through software authentication.
+
+## Attack Scenarios and Mitigations
+
+**Scenario 1: TOTP Code Phishing**
+
+Attacker creates fake login page, captures TOTP code in real-time.
+
+Mitigation: FIDO2 (domain binding prevents this). Or TOTP with slow code acceptance (require 2-3 seconds before accepting).
+
+**Scenario 2: FIDO2 Security Key Theft**
+
+Attacker steals physical security key.
+
+Mitigation: Require PIN on key. Store key in secure location. Add backup authentication method.
+
+**Scenario 3: Server-Side TOTP Secret Compromise**
+
+Database breach exposes TOTP secrets.
+
+Mitigation: Hash TOTP secrets server-side (though this complicates validation). Use FIDO2 which has no shared secrets.
+
+**Scenario 4: Backup Code Theft**
+
+Attacker accesses backup codes stored with TOTP secrets.
+
+Mitigation: Store backup codes separately. Use FIDO2 backup keys instead of codes.
+
+## Transition Strategy: Phasing Out TOTP
+
+If you're moving from TOTP to FIDO2:
+
+```javascript
+// Example: Phased FIDO2 migration
+
+class AuthenticationStrategy {
+  async requireFido2WithTotp fallback() {
+    try {
+      // First attempt FIDO2
+      const credential = await this.verifyFido2(userId);
+      return credential;
+    } catch (e) {
+      // Fall back to TOTP if FIDO2 fails
+      console.log("FIDO2 unavailable, falling back to TOTP");
+      return this.verifyTotp(userId);
+    }
+  }
+
+  async encourageFido2Adoption(userId) {
+    // Track FIDO2 adoption rate
+    const hasFido2 = await this.userHasFido2Credential(userId);
+
+    if (!hasFido2) {
+      // Show prompt after successful TOTP login
+      return {
+        authenticated: true,
+        prompt: "Add a security key for faster login"
+      };
+    }
+  }
+}
+```
+
+This approach maintains backward compatibility while encouraging adoption.
+
+## Privacy Comparison: TOTP vs FIDO2
+
+Both are privacy-respecting compared to alternatives:
+
+**TOTP Privacy**:
+- Server stores hashed secret
+- Authenticator app never contacts service
+- No tracking possible (codes are time-based)
+
+**FIDO2 Privacy**:
+- Server stores public key only
+- Authenticator never transmits private key
+- Each service gets unique credentials (no cross-service tracking)
+- Actually provides more privacy than TOTP (unique per service)
+
+Both are superior to SMS (telecom sees all authentication), push notifications (centralizes risk), and one-click approval (lowest security).
+
 ---
 
 

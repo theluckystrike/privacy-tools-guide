@@ -158,9 +158,169 @@ This works for users with JavaScript disabled and provides a baseline sharing ca
 
 Verify that tracking scripts are blocked using browser developer tools. Open the Network tab and filter by domain names like facebook.com, twitter.com, or linkedin.com. Reload your page and confirm no requests go to these domains.
 
-Use online privacy testing tools to check for residual tracking. These tools analyze your site and report any detected trackers.
+Use online privacy testing tools to check for residual tracking:
+
+- **WebKit Privacy Test** (privacytest.org): Shows which trackers load on your site
+- **Freedom to Tinker** (webcensus.org): Tracks third-party scripts and data flows
+- **Lighthouse Audit** (Chrome DevTools): Includes web performance metrics that flag tracking
 
 Test share functionality manually across different browsers and devices. Ensure users can still share content through all intended platforms.
+
+## Real-World Tracking Threat Model
+
+Understanding what data social media platforms capture helps justify implementation effort:
+
+**Standard Share Button**: When Facebook's Like button loads, it:
+- Receives your real IP address
+- Gets any Facebook cookies you've previously stored
+- Learns you're visiting this specific URL
+- Receives browser fingerprint data (user agent, screen size, language)
+- Shares this data with third-party data brokers and advertisers
+
+This occurs without any user interaction—simply visiting a page with the button triggers tracking.
+
+**Cumulative Profile Building**: Across multiple sites, a single user might be tracked by share buttons hundreds of times monthly. This creates:
+- Complete browsing history profiles
+- Interest and behavioral patterns
+- Demographic inference (through visited sites)
+- Shopping behavior (if you visit retailer sites with embedded buttons)
+
+For users in regulated regions (EU under GDPR, California under CPRA), this tracking without explicit consent violates privacy law. Website operators face legal liability.
+
+## Implementation Tools and Best Practices
+
+### Using a Privacy-First CDN
+
+For deployments at scale, use a privacy-respecting CDN for your share button implementation:
+
+```javascript
+// Load privacy-respecting share script from privacy-first CDN
+<script src="https://privacy-cdn.example.com/share-buttons.js"
+        data-cookie-consent="required"
+        async defer></script>
+```
+
+Ensure your CDN doesn't log user data or sell metrics to advertisers.
+
+### Implementing Cookie Consent Before Loading
+
+The GDPR/CCPA-compliant approach requires consent before loading tracking scripts:
+
+```javascript
+class TrackingConsentManager {
+  constructor() {
+    this.consentGiven = localStorage.getItem('share_tracking_consent') === 'true';
+  }
+
+  requestConsent() {
+    if (!this.consentGiven) {
+      // Show consent banner
+      const banner = document.createElement('div');
+      banner.innerHTML = `
+        <div class="consent-banner">
+          <p>This website uses social sharing. Accept to enable sharing features?</p>
+          <button onclick="trackingConsent.acceptTracking()">Accept</button>
+          <button onclick="trackingConsent.declineTracking()">Decline</button>
+        </div>
+      `;
+      document.body.prepend(banner);
+    }
+  }
+
+  acceptTracking() {
+    localStorage.setItem('share_tracking_consent', 'true');
+    this.consentGiven = true;
+    this.loadSocialScripts();
+  }
+
+  declineTracking() {
+    localStorage.setItem('share_tracking_consent', 'false');
+    this.consentGiven = false;
+    this.showPrivacyFriendlyButtons();
+  }
+
+  loadSocialScripts() {
+    // Only load Facebook, Twitter scripts if consent given
+    const script = document.createElement('script');
+    script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1';
+    document.body.appendChild(script);
+  }
+
+  showPrivacyFriendlyButtons() {
+    // Use privacy-friendly buttons instead
+    const sharer = new PrivacyShare();
+    // Initialize buttons without loading tracking scripts
+  }
+}
+
+const trackingConsent = new TrackingConsentManager();
+trackingConsent.requestConsent();
+```
+
+### Measuring Share Impact Without Tracking
+
+Replace invasive analytics with privacy-respecting alternatives:
+
+```javascript
+// Track shares without sending data to social platforms
+class AnonymousShareAnalytics {
+  logShare(platform) {
+    // Send only platform name and timestamp to your own server
+    // Never send user data or identifying information
+    fetch('/api/share', {
+      method: 'POST',
+      body: JSON.stringify({
+        platform: platform,
+        timestamp: new Date().toISOString()
+        // Never include: user ID, IP, location, device info, etc.
+      })
+    });
+  }
+}
+
+const analytics = new AnonymousShareAnalytics();
+document.querySelector('[data-share="twitter"]').addEventListener('click', () => {
+  analytics.logShare('twitter');
+});
+```
+
+## Performance Benefits
+
+Removing social tracking scripts provides measurable performance improvements:
+
+- **Faster page load**: Average 300-500ms improvement (Facebook Like button alone loads ~150KB)
+- **Reduced JavaScript overhead**: Fewer third-party scripts mean less main thread blocking
+- **Better Core Web Vitals**: Improved Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS)
+- **Mobile improvements**: Especially noticeable on slower 4G connections
+
+Sites that removed social share buttons report 10-15% reduction in page load time and corresponding improvements in user engagement.
+
+## Accessibility Considerations
+
+When building custom share buttons, ensure accessibility:
+
+```html
+<!-- Accessible share buttons with ARIA labels -->
+<div class="share-buttons" role="list">
+  <button
+    onclick="sharer.share('twitter')"
+    role="listitem"
+    aria-label="Share this article on Twitter"
+    title="Share on Twitter">
+    <span class="sr-only">Share on Twitter</span>
+    <svg><!-- Twitter icon --></svg>
+  </button>
+
+  <button
+    onclick="sharer.share('email')"
+    role="listitem"
+    aria-label="Share this article via email"
+    title="Share via email">
+    <span class="sr-only">Share via email</span>
+    <svg><!-- Email icon --></svg>
+  </button>
+</div>
+```
 
 ## Related Reading
 

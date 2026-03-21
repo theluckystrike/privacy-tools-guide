@@ -150,9 +150,113 @@ Key API endpoints for developers include:
 
 Authentication requires OAuth 2.0 flow with appropriate scopes for smart home control.
 
+## Network Isolation Techniques for Nest Hub
+
+For privacy-conscious users, network isolation can limit data transmission while maintaining core functionality:
+
+### VLAN Segmentation on Home Networks
+
+Create a dedicated IoT VLAN for your Nest Hub:
+
+```bash
+# Example: pfSense firewall configuration
+# Create VLAN 100 for IoT devices
+ifconfig re1 100 inet 192.168.100.1 netmask 255.255.255.0 up
+
+# Create rules to restrict traffic
+pass in on vlan100 proto tcp to any port 443  # Allow HTTPS outbound
+pass in on vlan100 proto udp port 53          # Allow DNS only
+pass in on vlan100 proto icmp                 # Allow ICMP for diagnostics
+block in on vlan100 to <private_networks>     # Block access to internal network
+```
+
+This approach allows the Nest Hub to reach Google's services while preventing it from accessing personal devices (NAS, security cameras, other smart home devices).
+
+### DNS-Level Filtering with Pi-hole
+
+Deploy Pi-hole on your network to block tracking domains:
+
+1. Install Pi-hole on a Raspberry Pi or Docker container
+2. Set Nest Hub's DNS to your Pi-hole instance
+3. Add block lists for Google analytics and tracking domains
+4. Monitor Nest Hub's DNS queries in the query log
+
+Block lists that help:
+- `https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts` (comprehensive ad/tracker list)
+- Google Analytics and Doubleclick domains (these are optional for Nest Hub functionality)
+
+### Proxy Server Inspection
+
+Route Nest Hub through a transparent proxy to inspect traffic:
+
+```python
+# mitmproxy configuration for Nest Hub inspection
+from mitmproxy import ctx
+
+class NestHubInspector:
+    def response(self, flow):
+        # Log all HTTPS requests from Nest Hub
+        if flow.request.host.endswith('google.com') or flow.request.host.endswith('googleapis.com'):
+            ctx.log.info(f"Nest Hub request: {flow.request.url}")
+            ctx.log.info(f"Headers: {flow.request.headers}")
+
+            # Block requests to advertising domains if desired
+            if 'doubleclick' in flow.request.host or 'ads' in flow.request.host:
+                ctx.log.warn(f"Blocking ad request: {flow.request.url}")
+                # Return empty response
+                flow.response = Response(200)
+                flow.response.text = ""
+
+addons = [NestHubInspector()]
+```
+
+Run with: `mitmproxy -s nest_hub_filter.py --listen-host 192.168.1.xxx`
+
+## Threat Model: What Nest Hub Exposure Means
+
+Understanding your threat model helps decide if these mitigations are necessary:
+
+**Consumer/Home User**: Default Google data collection is acceptable in exchange for convenience. Risk: Google builds advertising profile, uses data for targeting.
+
+**Privacy-Conscious User**: Network isolation is worthwhile. Risk: Data still reaches Google, but you limit information about other devices and activities.
+
+**High-Privacy Requirement** (Journalist, Activist, Executive): Avoid Nest Hub entirely. Use open-source alternatives like Home Assistant with local processing only.
+
+## Open Source Alternatives
+
+If you want voice control without cloud data collection:
+
+**Home Assistant** (Free, self-hosted): Install on a Raspberry Pi or NAS. Supports voice control through Rhasspy (wake word detection) or Snips. All data stays on your local network.
+
+```yaml
+# Home Assistant configuration.yaml
+homeassistant:
+  latitude: !secret latitude
+  longitude: !secret longitude
+
+group: !include groups.yaml
+automation: !include automations.yaml
+
+# Local voice control with Rhasspy
+shell_command:
+  voice_command: "curl http://192.168.1.50:12101/api/text-to-speech -d '{{ text }}'"
+```
+
+**Mycroft** (Open source, optional cloud): Provides voice assistant with local wake word detection. Can run entirely offline or use optional cloud services.
+
+**Snips** (Lightweight): Single-board computer voice assistant. Acquired by Sonos but original code remains open source.
+
 ## Understanding the Tradeoffs
 
 The Nest Hub's convenience features—voice control, remote access, automation—directly depend on cloud data processing. Google designs these devices with the expectation of continuous connectivity and data sharing.
+
+The choice between convenience and privacy isn't binary. Several strategies provide reasonable middle ground:
+
+1. **Use Nest Hub for non-sensitive features** (weather, time, general news) while avoiding voice queries about finances, health, or personal matters
+2. **Implement network isolation** to prevent access to other smart home devices
+3. **Create a separate Google Account** used only for Nest Hub, not linked to your primary account
+4. **Review and delete voice history regularly** (monthly minimum)
+5. **Disable features you don't use** (sleep sensing, temperature sensors, microphone if possible)
 
 For developers and power users, the path forward involves informed decision-making: understanding what data you sacrifice for functionality, implementing network-level controls where possible, and advocating for more transparent data practices through consumer pressure and regulatory compliance requirements.
 

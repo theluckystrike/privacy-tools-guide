@@ -155,13 +155,90 @@ Work Profile isn't a perfect solution. Be aware of these constraints:
 - Limited isolation Some system APIs remain accessible across profiles; Work Profile doesn't protect against all attack vectors
 - Not a replacement for vetting Always review app permissions before installation, even within Work Profile
 
+## Practical Threat Model: When Work Profile Saves You
+
+Consider these real-world scenarios where Work Profile prevents serious privacy breaches:
+
+**Banking App with Excessive Permissions**: Your bank's app demands contacts, photos, location, and SMS access. Without Work Profile, granting these permissions gives the app—and any malicious code it loads—access to your entire contact list and location history. With Work Profile, the app sees only the contacts it needs and cannot access your personal location data.
+
+**Gaming App with Ad Network Integration**: Free mobile games include ad networks that track location, build user profiles, and sell data to brokers. Placing the game in Work Profile prevents it from accessing your personal contacts, email accounts, or browsing history while still allowing game functionality.
+
+**Emerging Market Utility App**: Apps required for services in developing regions (payment apps, government services) sometimes use aggressive data collection. Work Profile contains this without affecting your primary profile.
+
+## Limitations to Understand
+
+Work Profile isn't a perfect solution. Be aware of these constraints:
+
+- **Cross-profile notifications**: Notifications from Work Profile apps appear on your lock screen, potentially exposing sensitive data
+- **Battery drain**: Running two profiles increases memory and battery consumption (typically 10-15% extra drain)
+- **Limited isolation**: Some system APIs remain accessible across profiles; Work Profile doesn't protect against all attack vectors
+- **Not a replacement for vetting**: Always review app permissions before installation, even within Work Profile
+- **Enterprise MDM complications**: If your workplace provides an MDM profile, it may conflict with manual Work Profile setup
+
+## Performance Impact Assessment
+
+On most modern devices (Snapdragon 8 Gen 1+, Exynos 1280+), Work Profile overhead is minimal. However:
+
+- **Storage overhead**: Each profile uses 500MB-1GB additional storage
+- **Memory footprint**: Increases RAM usage by 200-400MB depending on active apps
+- **Battery impact**: 10-15% additional drain on moderate usage, up to 30% with heavy background activity in both profiles
+
+For devices with 4GB or less RAM, this overhead becomes noticeable. Test by monitoring Settings > Battery > Battery Usage before and after enabling Work Profile.
+
+## Advanced Troubleshooting
+
+### Apps Won't Install to Work Profile
+
+Some apps refuse to install to Work Profile. Check:
+
+```bash
+# List apps that can't be installed to Work Profile
+adb shell pm list packages --user 10 | wc -l
+# Compare to personal profile for missing apps
+adb shell pm list packages --user 0 | wc -l
+```
+
+Solution: Some apps detect Work Profile and refuse installation for policy reasons (banks, corporate apps). In this case, you may need to install to personal profile with minimal permissions.
+
+### Cross-Profile Data Leaks
+
+Verify data isn't leaking between profiles:
+
+```bash
+# Check which apps have permission to interact across profiles
+adb shell dumpsys package-manager | grep -i "cross"
+
+# Test inter-profile communication
+adb shell run-as com.work.profile.app getprop ro.build.fingerprint
+# Should fail with "Operation not allowed"
+```
+
 ## Alternatives and Complementary Tools
 
 While Work Profile is the native solution, consider these alternatives for specific use cases:
 
-- Shelter An open-source app (F-Droid) that creates a "work profile" without full Android management
-- Island/Shelter Provides additional features like "frozen" apps that cannot run in the background
-- Cross-profile limitations Android 14+ introduced better restrictions for cross-profile intent handling
+**Shelter** (Open source, F-Droid): Creates a lightweight isolated container without full Android Device Admin requirements. Good for users who want Work Profile benefits without device policy overhead. Download from F-Droid since it won't work properly installed from Play Store.
+
+**Island** (Paid, Play Store): Provides "frozen" apps that cannot run in background, scheduled unfreezing (useful for battery optimization), and simplified dual-profile management. Works well on Samsung and MIUI devices.
+
+**Cross-profile limitations in Android 14+**: The operating system now restricts what information crosses profile boundaries by default, making the baseline privacy even stronger regardless of which isolation method you use.
+
+## Real-World Configuration Example: Developer Setup
+
+A typical developer setup for a power user might look like:
+
+**Personal Profile**:
+- Privacy-respecting apps (Signal, Bitwarden, ProtonMail, open-source tools)
+- Custom ROM with minimal Google Play Services
+- Development tools and IDEs
+
+**Work Profile**:
+- Corporate communication (Slack, Teams, Outlook)
+- Apps that require location tracking
+- Gaming and social media apps
+- Any app with questionable privacy practices
+
+This separation means work communications never leak into personal data streams, while still maintaining functionality for both professional and personal use.
 
 ## Related Reading
 

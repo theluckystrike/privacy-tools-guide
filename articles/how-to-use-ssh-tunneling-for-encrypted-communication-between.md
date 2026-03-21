@@ -152,6 +152,146 @@ This prevents the key from being used for interactive sessions while allowing tu
 
 Avoid forwarding to sensitive services over tunnels if the SSH server itself isn't trusted. The server can observe forwarded traffic, though it cannot decrypt it without compromising the connection endpoints.
 
+## Troubleshooting SSH Tunnels
+
+Common issues and solutions:
+
+**Connection Refused on Local Port**:
+```bash
+# Port already in use - try a higher number
+ssh -L 9306:192.168.1.100:3306 user@ssh_server
+# Or kill existing process
+lsof -i :3306 | grep -v COMMAND | awk '{print $2}' | xargs kill
+```
+
+**Tunnel Works Briefly Then Drops**:
+```bash
+# Enable connection keep-alive
+ssh -o ServerAliveInterval=60 -L 3306:192.168.1.100:3306 user@ssh_server
+
+# Or configure in ~/.ssh/config
+Host jump-server
+  HostName ssh_server
+  User user
+  ServerAliveInterval 60
+  ServerAliveCountMax 10
+```
+
+**SOCKS Proxy Stops Working**:
+```bash
+# Verify SOCKS is listening
+netstat -an | grep 1080
+
+# Test proxy is actually being used
+curl -x socks5://localhost:1080 https://example.com -v
+# Should show "* SOCKS 5 connect"
+```
+
+## Advanced Pattern: Recursive Tunneling
+
+For multi-hop scenarios (access server A through server B through server C):
+
+```bash
+# Connection chain: local → server_b → server_a → internal_service
+# First establish tunnel from local to server_b
+ssh -L 3307:server_a:3306 user@server_b
+
+# Then in another terminal, connect to server_a through first tunnel
+ssh -L 3306:internal_server:3306 -p 3307 localhost
+# Now localhost:3306 reaches the internal service through 2 hops
+```
+
+For complex setups, use SSH ProxyJump instead:
+
+```bash
+# Single command equivalent
+ssh -J user@server_b user@server_a -L 3306:internal_server:3306
+```
+
+## Threat Model: SSH Tunneling Security Assumptions
+
+SSH tunneling provides encryption but has limitations:
+
+**What it protects**:
+- Encrypts traffic between tunnel endpoints
+- Prevents ISP/network monitoring from seeing what you're accessing
+- Prevents man-in-the-middle attacks on the tunnel itself
+
+**What it doesn't protect**:
+- The SSH server can see all forwarded traffic (unless encrypted end-to-end)
+- DNS queries may leak (outside the tunnel)
+- IP addresses of tunnel endpoints are visible to any network observer
+- The SSH server can be compromised, exposing all traffic it handles
+
+**Risk scenarios**:
+- **Untrusted network + untrusted SSH server**: Traffic is encrypted but SSH server operator has complete visibility
+- **Public WiFi + trusted SSH server**: Good protection against WiFi monitoring, but trust server completely
+- **Compromised SSH server**: All forwarded traffic is compromised
+
+For high-security scenarios, use VPN or tor instead. For standard privacy protection, SSH tunneling to a trusted server works well.
+
+## Production-Ready SSH Tunnel Wrapper
+
+For real deployments, wrap SSH tunneling in a management script:
+
+```bash
+#!/bin/bash
+# ssh-tunnel-manager.sh
+
+TUNNEL_NAME="db_tunnel"
+TUNNEL_HOST="user@ssh_server"
+LOCAL_PORT="3306"
+REMOTE_HOST="192.168.1.100"
+REMOTE_PORT="3306"
+PIDFILE="/tmp/${TUNNEL_NAME}.pid"
+
+start_tunnel() {
+    echo "Starting SSH tunnel..."
+    autossh -M 0 -f -N -L ${LOCAL_PORT}:${REMOTE_HOST}:${REMOTE_PORT} ${TUNNEL_HOST}
+    PID=$!
+    echo $PID > $PIDFILE
+    echo "Tunnel started (PID: $PID)"
+}
+
+stop_tunnel() {
+    if [ -f $PIDFILE ]; then
+        PID=$(cat $PIDFILE)
+        kill $PID 2>/dev/null
+        rm $PIDFILE
+        echo "Tunnel stopped"
+    fi
+}
+
+status_tunnel() {
+    if [ -f $PIDFILE ]; then
+        PID=$(cat $PIDFILE)
+        if kill -0 $PID 2>/dev/null; then
+            echo "Tunnel is running (PID: $PID)"
+        else
+            echo "Tunnel is not running"
+            rm $PIDFILE
+        fi
+    else
+        echo "Tunnel is not running"
+    fi
+}
+
+case "$1" in
+    start) start_tunnel ;;
+    stop) stop_tunnel ;;
+    restart) stop_tunnel; start_tunnel ;;
+    status) status_tunnel ;;
+    *) echo "Usage: $0 {start|stop|restart|status}" ;;
+esac
+```
+
+Usage:
+```bash
+./ssh-tunnel-manager.sh start
+./ssh-tunnel-manager.sh status
+./ssh-tunnel-manager.sh stop
+```
+
 ## Quick Reference
 
 | Tunnel Type | Use Case | Command |

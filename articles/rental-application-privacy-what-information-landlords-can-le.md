@@ -159,8 +159,194 @@ For developers and technically-minded renters, consider these approaches:
 
 Understanding your rights helps you navigate the rental process confidently. Landlords have legitimate interests in evaluating prospective tenants, but those interests have clear boundaries. By knowing what information you can legitimately be asked to provide—and what information falls outside those boundaries—you protect both your privacy and your legal rights.
 
----
+## State-Specific Resource Guide (2026)
 
+Key protections by jurisdiction:
+
+**California**:
+- Ban the Box: Landlords cannot ask about criminal history until conditional offer made
+- SCRA: Cannot consider eviction records older than 5 years
+- Source of Income: Protected—cannot discriminate based on income source (subsidies, freelance, etc.)
+- Contact: California Department of Consumer Affairs
+
+**New York**:
+- Ban the Box: Severe restrictions on criminal background requests
+- Eviction Records: Cannot consider evictions older than 3 years
+- Fair Housing Act strictly enforced
+- Contact: NYC Department of Housing & Community Development
+
+**Texas**:
+- Minimal protections beyond federal Fair Housing Act
+- Landlords can consider all criminal history
+- Eviction records considered for any period
+- Recommendation: Document interactions carefully for any federal violations
+
+**Washington State**:
+- Source of Income: Protected—includes unemployment, subsidies, worker's comp
+- Ban the Box: Restrictions on when criminal history requested
+- Applicant Screening Report: Landlord must provide summary of findings used for denial
+
+Many states lack robust protections. Use federal Fair Housing Act as baseline.
+
+## Real Threat: Predatory Screening Companies
+
+Rental screening companies sometimes use problematic data sources:
+
+```
+How predatory screening works:
+1. Landlord requests background check from company
+2. Company aggregates data from multiple sources (some public, some not)
+3. Inaccurate data included (wrong person's eviction, criminal record)
+4. Landlord denies rental based on inaccurate information
+5. You have difficulty learning what was reported
+6. Even with correction, damage is done
+```
+
+**Tools to combat this**:
+
+```bash
+#!/bin/bash
+# Tracking your applications
+
+# Create a folder for rental tracking
+mkdir -p ~/rental-applications/$(date +%Y-%m)
+
+# Template for each application
+cat > ~/rental-applications/application-log.txt << 'EOF'
+Property: [Address]
+Date Applied: [Date]
+Company/Landlord: [Name]
+Contact: [Phone/Email]
+Documents Requested: [List]
+Documents Provided: [List]
+Application Status: [Status]
+Interview Date: [Date]
+Outcome: [Approved/Denied]
+Reason for Denial (if applicable): [Description]
+Screening Report Obtained: [Yes/No]
+Report Accuracy: [Verified/Errors Found]
+Follow-up Date: [Date]
+EOF
+```
+
+## Decoding Screening Reports
+
+If denied based on a screening report, you have FCRA rights to obtain and challenge it:
+
+```
+Key sections to check in screening report:
+
+1. Personal Information:
+   - Verify name, date of birth, SSN match
+   - Wrong SSN can result in someone else's data
+
+2. Credit Section:
+   - Check for accounts you don't recognize
+   - Verify account statuses (paid in full, collections, etc.)
+   - Note any inquiries you don't remember authorizing
+
+3. Criminal History:
+   - Verify any criminal records are actually yours
+   - Check conviction dates (some states exclude by age)
+   - Look for sealed/expunged records improperly included
+
+4. Eviction History:
+   - Verify you were actually evicted
+   - Check timeframe (some states exclude old evictions)
+   - Ensure property address is correct
+
+5. Rental History:
+   - Verify previous landlord information
+   - Check payment history accuracy
+   - Challenge if previous landlord information is wrong
+```
+
+## Requesting and Challenging Reports
+
+Process for obtaining and challenging:
+
+```python
+# FCRA Dispute Letter Template
+
+class FcraDisputeLetter:
+    def __init__(self, consumer_name, report_company, dispute_items):
+        self.consumer_name = consumer_name
+        self.report_company = report_company
+        self.dispute_items = dispute_items
+
+    def generate_letter(self):
+        letter = f"""
+        {self.consumer_name}
+        [Your Address]
+        [Date]
+
+        {self.report_company}
+        Disputes Department
+        [Company Address]
+
+        Re: FCRA Dispute - Fair Credit Reporting Act Section 611
+
+        Dear Dispute Department,
+
+        I am disputing the following information in my consumer report:
+
+        """
+
+        for item in self.dispute_items:
+            letter += f"\n- {item['description']}: {item['reason']}"
+
+        letter += f"""
+
+        Please investigate and correct these errors within 30 days as required
+        by the Fair Credit Reporting Act. I have attached supporting documentation.
+
+        Sincerely,
+        {self.consumer_name}
+        """
+
+        return letter
+
+# Usage
+dispute_items = [
+    {
+        'description': 'Eviction record dated 2019',
+        'reason': 'This property dispute was resolved in 2019, not an eviction'
+    },
+    {
+        'description': 'Criminal conviction 1995',
+        'reason': 'This record was sealed and should not appear'
+    }
+]
+
+letter_generator = FcraDisputeLetter('Your Name', 'Screening Company', dispute_items)
+print(letter_generator.generate_letter())
+```
+
+Send via certified mail with return receipt. The company must investigate within 30 days and correct errors.
+
+## Documenting Discrimination
+
+If you suspect Fair Housing Act violation:
+
+```
+Document evidence:
+1. Date and time of interaction
+2. Exact questions asked
+3. Your responses
+4. Landlord's reaction/statements
+5. Any written communications
+6. How other applicants were treated (if you have information)
+7. Application denial reason (get in writing)
+
+Then:
+1. File complaint with HUD within 1 year
+2. Include all documentation
+3. Describe how you were treated differently
+4. Include comparable applications (if possible)
+5. Request relief (usually damages + injunctive relief)
+
+HUD investigates free. If you win, landlord pays your legal fees.
+```
 
 ## Related Reading
 

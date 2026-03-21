@@ -150,17 +150,125 @@ If you suffer material or non-material damage due to a breach, you may be entitl
 ### Right to Lodge a Complaint
 You can file a complaint with the relevant supervisory authority if you believe the company failed to meet its GDPR obligations.
 
+## Understanding Supervisory Authority Responses
+
+After a company notifies the authority, you can track the response through public registers:
+
+**UK Information Commissioner's Office (ICO)** maintains a publicly searchable register of breaches at ico.org.uk/about-the-ico/our-work/our-work-with-organisations/data-security/data-breaches/. You can search by organization name and date.
+
+**European Data Protection Board** publishes breach notification guidelines and tracks high-profile enforcement actions at edpb.europa.eu.
+
+**CNIL (France)** publishes breach notifications at cnil.fr and includes enforcement actions taken against companies.
+
+These registers help verify that companies actually reported breaches as required rather than attempting to conceal them.
+
+## Building Your Own Data Breach Response Toolkit
+
+As a developer or technical person, you can automate breach monitoring:
+
+```python
+import requests
+import hashlib
+import json
+from datetime import datetime
+
+class DataBreachMonitor:
+    def __init__(self):
+        self.breaches_tracked = {}
+
+    def check_haveibeenpwned(self, email):
+        """Check if email appears in known breaches"""
+        # Note: Use the Have I Been Pwned API responsibly
+        headers = {'User-Agent': 'DataBreachMonitor'}
+        url = f'https://haveibeenpwned.com/api/v3/breachedaccount/{email}'
+
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            if response.status_code == 200:
+                return response.json()
+            return None
+        except requests.RequestException as e:
+            return {"error": str(e)}
+
+    def log_breach_notification(self, company, date, categories, measures):
+        """Track received breach notifications"""
+        breach_record = {
+            "company": company,
+            "notification_date": date,
+            "categories_affected": categories,
+            "measures_taken": measures,
+            "received_at": datetime.utcnow().isoformat(),
+            "follow_up_required": True
+        }
+        self.breaches_tracked[company] = breach_record
+        return breach_record
+
+    def generate_timeline(self):
+        """Create timeline of breaches for complaint filing"""
+        sorted_breaches = sorted(
+            self.breaches_tracked.items(),
+            key=lambda x: x[1]["notification_date"]
+        )
+        return sorted_breaches
+
+# Usage
+monitor = DataBreachMonitor()
+monitor.log_breach_notification(
+    "Example Corp",
+    "2026-03-01",
+    ["email", "hashed_password"],
+    ["password resets", "security audit"]
+)
+```
+
+## Threat Model: Who Should Be Most Concerned?
+
+Your risk level depends on what data was compromised:
+
+**Low Risk** (Email address, username): Expect spam and phishing attempts. Use the breach notification email address as a signal that you're worth targeting.
+
+**Medium Risk** (Email + password): If you reused this password anywhere, immediately change it across all services. Attackers now have valid credentials to attempt account takeover.
+
+**High Risk** (Financial data, health information, identity documents): Monitor financial accounts closely, place fraud alerts with credit bureaus, and consider credit freezes. Health data breaches can lead to insurance discrimination or medical identity theft.
+
+**Critical Risk** (Social Security number, passport, government ID): File a complaint with relevant authorities immediately. Consider identity theft protection services. These breaches enable sophisticated fraud schemes that can affect your life for years.
+
+## The 72-Hour Window in Practice
+
+The GDPR's 72-hour deadline often creates pressure on companies to report quickly. This can mean:
+
+1. **Initial notification is incomplete**: You may receive a brief notification quickly, followed by additional details within days
+2. **Ongoing investigation**: The 72-hour clock starts when they "become aware," but investigation continues afterward
+3. **Multiple notifications**: Large breaches may result in notifications in waves as scope is determined
+
+In practice, the most thorough notifications arrive 1-2 weeks after the initial 72-hour notification as companies complete their analysis.
+
 ## Practical Steps When You Receive a Breach Notification
 
 1. **Assess the data compromised**: Determine if your sensitive information (passwords, financial data, health records) was affected
 
-2. **Change passwords immediately**: If credentials were compromised, change your password on that service and any other services using the same password
+2. **Verify the notification source**: Check the sender email domain, call the company's main number (not any number in the email), and confirm on their official website
 
-3. **Enable two-factor authentication**: Add an extra layer of security to your accounts
+3. **Change passwords immediately**: If credentials were compromised, change your password on that service and any other services using the same password. Use a password manager to ensure unique passwords everywhere.
 
-4. **Monitor for suspicious activity**: Watch for unauthorized access attempts or unusual account behavior
+4. **Enable two-factor authentication**: Add an extra layer of security to your accounts. Use hardware security keys (YubiKey, Titan) where available, FIDO2 where not, TOTP as fallback.
 
-5. **Document everything**: Keep copies of the breach notification for potential legal proceedings
+5. **Monitor for suspicious activity**: Watch for unauthorized access attempts or unusual account behavior. Set up alerts through your bank and email provider.
+
+6. **Document everything**: Keep copies of the breach notification, your response dates, and any follow-up actions. Save email headers and original messages.
+
+7. **File a complaint if appropriate**: If you believe the company violated GDPR requirements, file with the supervisory authority in your jurisdiction.
+
+## Complaint Filing Timeline
+
+If you decide to file a GDPR complaint:
+
+- **Within 6 months** of the breach: File with supervisory authority
+- **Any time thereafter**: File a private lawsuit if you suffered damages (Article 82)
+- **Collect evidence**: Keep all breach notifications, correspondence, and evidence of impact
+- **Document damages**: If you experienced financial loss (fraud, identity theft services purchased), save all receipts and records
+
+Many jurisdictions now have streamlined online complaint systems that take 5-10 minutes to file initially, though investigation may take months or years.
 
 ## Related Reading
 

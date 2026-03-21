@@ -163,6 +163,124 @@ dig +short myip.opendns.com @resolver1.opendns.com
 # Compare with and without VPN active
 ```
 
+## Real-World VPN Pricing and Tools (2026)
+
+Understanding your options helps make informed choices:
+
+**Commercial VPN Services** (with obfuscation support):
+- ExpressVPN: $12.95/month (proprietary obfuscation, no logs policy)
+- NordVPN: $6.99/month (NordLynx protocol, no logs)
+- ProtonVPN: $9.99/month (open source, based in Switzerland)
+- Mullvad: $5/month (paid account optional, no logs, no registration)
+
+Cost-benefit note: In Iran, using commercial VPN services may actually increase visibility if the service is blocklisted. Open-source alternatives you run on your own infrastructure may provide better protection.
+
+**Open-Source VPN Tools**:
+- OpenVPN: Free, mature, requires configuration
+- WireGuard: Free, modern, smaller codebase
+- Shadowsocks: Free, censorship-focused design
+- V2Ray: Free, complex, designed for GFW evasion (similar to Iran's firewall)
+
+For Iran specifically, V2Ray has better reputation for evading DPI than standard VPN protocols.
+
+## Legal Landscape Evolution
+
+Iran's approach to VPN enforcement has evolved:
+
+**2020**: CRA publicly condemned VPN use, enforcement sporadic
+**2021**: Law amendments increased penalties, some reported arrests
+**2022-2023**: Increased sophistication of DPI systems
+**2024-2025**: ISP-level VPN detection using machine learning
+**2026**: Current situation remains restrictive with active enforcement
+
+Recent sources indicate CRA is using behavioral analysis rather than just signature matching—meaning even obfuscated VPNs might be detected through patterns (consistent tunnel establishment times, usage amounts, etc.).
+
+## Advanced Obfuscation Techniques
+
+Beyond standard configurations:
+
+**Stealth Tunneling with Wireguard + Obfuscation Wrapper**:
+
+```bash
+# Wrap WireGuard in obfuscation layer
+# Using cloak-proxy or similar
+
+# WireGuard generates packets
+# Cloak wrapper makes them appear as random HTTPS traffic
+# To DPI system, looks like normal browsing
+
+# Configuration requires:
+1. WireGuard server in uncensored region
+2. Obfuscation proxy layer
+3. Client-side unwrapping
+```
+
+This layered approach is more complex but significantly harder to detect than raw WireGuard.
+
+**Application-Level Tunneling**:
+
+Instead of system-level VPN, tunnel specific applications through proxies:
+
+```python
+# Route only critical apps through VPN
+# Keep other traffic on normal connection
+# Reduces "suspicious constant VPN usage" pattern
+
+import subprocess
+
+# Configure routing for specific apps
+apps_to_tunnel = [
+    'firefox',      # Web browser
+    'thunderbird',  # Email
+]
+
+for app in apps_to_tunnel:
+    subprocess.run([
+        'sudo', 'ip', 'rule', 'add',
+        'from', f'{get_app_uid(app)}',
+        'table', '100'
+    ])
+
+# Table 100 routes through VPN
+# All other traffic uses default gateway
+```
+
+This creates less suspicious traffic patterns than constant VPN usage.
+
+## Threat Model: Who Is Actually at Risk?
+
+Understanding your actual threat level helps determine appropriate tools:
+
+**Low Risk**:
+- General internet access, avoiding political content
+- Standard obfuscated VPN sufficient
+- Risk: ISP account suspension if detected
+
+**Medium Risk**:
+- Accessing opposition news, activism-adjacent content
+- Need stealth VPN + obfuscation + device security
+- Risk: Account suspension, device seizure
+
+**High Risk**:
+- Active dissident work, journalism, activism
+- Need professional-grade infrastructure
+- Risk: Legal prosecution, imprisonment
+
+For high-risk scenarios, consult with organizations like Committee to Protect Journalists or Access Now who provide regional guidance. Consumer VPN services alone are insufficient for individuals facing serious state opposition.
+
+## Operational Security Beyond VPN
+
+Technical tools are only part of OpSec:
+
+- **Device security**: Use encrypted device (GrapheneOS if possible), enable full-disk encryption
+- **Communication security**: Use Signal (Signal+ now requires payment but most reliable), not Telegram
+- **Account security**: Different email addresses for different services, never link accounts
+- **Device presence**: Don't leave device unattended, establish secure locations
+- **Backup strategy**: Maintain secure offline backups of critical data
+- **Contact discipline**: Limit who has your contact information
+
+VPN provides transport security. OpSec provides the broader protection against surveillance and forensic analysis.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
