@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /cwtch-decentralized-metadata-resistant-messenger-how-it-diff/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
