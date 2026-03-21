@@ -3,6 +3,7 @@ layout: default
 title: "Wifi Deauthentication Attack Detection How To Identify And P"
 description: "A technical guide for developers and power users on detecting, analyzing, and preventing WiFi deauthentication attacks using practical tools and code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /wifi-deauthentication-attack-detection-how-to-identify-and-p/
 categories: [guides]
@@ -183,10 +184,15 @@ done
 
 Integrate this monitoring with alerting systems like Prometheus or Grafana for real-time dashboard visibility.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
+- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
+- [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
+- [Best VPN for Using Google in China Without Detection](/privacy-tools-guide/best-vpn-for-using-google-in-china-without-detection/)
+- [China Golden Shield Project How Censorship Detection Works T](/privacy-tools-guide/china-golden-shield-project-how-censorship-detection-works-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

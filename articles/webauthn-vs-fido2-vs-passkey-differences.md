@@ -3,6 +3,7 @@ layout: default
 title: "WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained"
 description: "A technical breakdown of WebAuthn, FIDO2, and passkeys for developers. Understand the standards, protocols, and implementations driving passwordless"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /webauthn-vs-fido2-vs-passkey-differences/
 reviewed: true
@@ -331,13 +332,14 @@ The passwordless authentication landscape continues evolving:
 
 Developers implementing WebAuthn/FIDO2 in 2026 should monitor these developments and plan for eventual migration when standards stabilize.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [AI Tools Compared](/ai-tools-compared/){: .cross-repo-linked}
-- More guides coming soon.
-- [Passkey Adoption Timeline by Platform: A Developer Guide](/privacy-tools-guide/passkey-adoption-timeline-by-platform/)
-- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+
+## Related Articles
+
+- [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
+- [KeePass vs KeePassXC: Key Differences for Developers in 2026](/privacy-tools-guide/keepass-vs-keepassxc-differences-2026/)
 - [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
+- [OpenVPN Access Server vs Community Edition](/privacy-tools-guide/openvpn-access-server-vs-community-edition-differences-features-2026/)
+- [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

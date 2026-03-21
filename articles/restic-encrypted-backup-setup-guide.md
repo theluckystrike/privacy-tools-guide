@@ -3,6 +3,7 @@ layout: default
 title: "Restic Encrypted Backup Setup Guide"
 description: "Set up automated encrypted backups with restic. Covers local, S3, and Backblaze B2 backends, snapshot policies, and scheduled automation."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: restic-encrypted-backup-setup-guide
 categories: [guides, security]
@@ -376,11 +377,15 @@ Rotate your repository password annually or whenever a credential is exposed. Af
 
 **How does restic compare to Borg Backup?** Both are excellent. Borg has faster deduplication and is slightly more efficient for large repos, but only supports Linux/macOS natively. Restic supports Windows and has broader storage backend support. For cross-platform environments, restic is the safer choice.
 
-## Related Reading
 
-- [Restic vs Borg Backup Encrypted Comparison](/restic-vs-borg-backup-encrypted-comparison)
-- [Best Encrypted Backup Solution for Developers](/best-encrypted-backup-solution-for-developers)
-- [Best Encrypted Cloud Storage 2026](/best-encrypted-cloud-storage-2026)
+
+## Related Articles
+
+- [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
+- [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
+- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
+- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
+- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

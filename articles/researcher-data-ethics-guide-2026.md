@@ -3,6 +3,7 @@ layout: default
 title: "Researcher Data Ethics Guide 2026"
 description: "Data ethics has become a critical discipline for anyone handling sensitive information in 2026. Whether you are a developer building research platforms, a data"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /researcher-data-ethics-guide-2026/
 categories: [guides]
@@ -197,10 +198,15 @@ The researcher data ethics guide for 2026 emphasizes practical implementation ov
 Start with your next data project by auditing what you collect, why you collect it, and how long you retain it. Every improvement reduces risk and builds trust.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
+- [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
+- [Bumble Beeline Data Privacy Who Can See That You Swiped Righ](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)
+- [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
 
 Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
 

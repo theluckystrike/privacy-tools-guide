@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup for Immigration Activist"
 description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/
 categories: [guides]
@@ -224,9 +225,15 @@ When meeting undocumented community members, create physical security:
 
 Faraday bags prevent passive IMSI catcher surveillance (stingrays) that can identify all phones in an area even without active interception. A basic Faraday bag costs under $20 and is effective when the phone is fully powered down or in airplane mode with the bag sealed. Test your Faraday bag by placing a phone inside, sealing it, and attempting to call — no ring confirms the bag is working.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Threat Model for Undocumented Immigrant Protecting.](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
+- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

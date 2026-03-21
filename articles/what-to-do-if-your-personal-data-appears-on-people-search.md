@@ -3,6 +3,7 @@ layout: default
 title: "What To Do If Your Personal Data Appears On People Search"
 description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-personal-data-appears-on-people-search/
 categories: [guides]
@@ -261,10 +262,15 @@ function anonymizeUserData(user) {
 
 Data minimization reduces your liability and protects users.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Disappear From People Search Sites Complete Removal G](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
+- [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
+- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
+- [What Happens When Your Password Appears In Data Breach Steps](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)
+- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

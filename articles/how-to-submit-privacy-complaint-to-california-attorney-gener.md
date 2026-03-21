@@ -3,6 +3,7 @@ layout: default
 title: "Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement"
 description: "A practical guide for developers and power users on filing privacy complaints to the California Attorney General under CCPA enforcement. Learn the process"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-submit-privacy-complaint-to-california-attorney-general/
 categories: [guides]
@@ -299,9 +300,14 @@ class CCPARequestProcessor:
 Ensure your systems respond to consumer requests within the mandated 45-day window. Implement automated tracking for request deadlines to avoid unintentional violations. Set up calendar alerts at day 30 and day 40 to ensure you don't miss deadlines.
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
+- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
+- [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
+- [Cloud Storage Subpoena Risk: Provider Law Enforcement.](/privacy-tools-guide/cloud-storage-subpoena-risk-provider-law-enforcement-complia/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

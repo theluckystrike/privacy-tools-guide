@@ -3,6 +3,7 @@ layout: default
 title: "How to Destroy Data on Device Before Border Crossing Guide"
 description: "A practical guide for developers and power users on securely destroying data on devices before crossing borders. Learn command-line tools, techniques"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/
 categories: [guides]
@@ -272,10 +273,15 @@ Before any border crossing, complete this checklist:
 
 The goal isn't paranoia but informed preparation. With proper planning, you can travel securely while maintaining access to important information and protecting your privacy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
+- [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [How To Prepare Phone For Crossing Border Into High Surveilla](/privacy-tools-guide/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
+- [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

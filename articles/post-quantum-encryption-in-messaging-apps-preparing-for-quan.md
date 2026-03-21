@@ -3,6 +3,7 @@ layout: default
 title: "Post Quantum Encryption In Messaging Apps Preparing For Quan"
 description: "A practical guide for developers and power users on post-quantum cryptography in messaging apps, featuring code examples and implementation strategies"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/
 categories: [guides, security]
@@ -200,10 +201,15 @@ Early adopters of post-quantum cryptography gain competitive advantage and risk 
 
 The research community continues evolving post-quantum cryptography. NIST expects to select additional algorithms for different use cases. Organizations building post-quantum systems should maintain flexibility to incorporate new standards as they emerge, rather than locking into today's selections as final solutions.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
+- [How To Rotate Encryption Keys In Messaging Apps Without Losi](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
+- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
+- [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)
+- [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

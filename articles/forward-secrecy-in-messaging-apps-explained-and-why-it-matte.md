@@ -3,6 +3,7 @@ layout: default
 title: "Forward Secrecy In Messaging Apps Explained And Why It."
 description: "A technical guide to forward secrecy in messaging apps: how it works, why it protects your conversations, and how to identify apps that implement it"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /forward-secrecy-in-messaging-apps-explained-and-why-it-matters/
 categories: [guides, security]
@@ -174,10 +175,15 @@ def compute_safety_number(identity_key_a, identity_key_b,
 Forward secrecy is not a feature you can add after the fact—it must be architected into the protocol from the beginning. Understanding these mechanisms helps you make informed choices about which tools deserve your sensitive communications.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Use Faraday Bag Properly: When and Why Explained](/privacy-tools-guide/how-to-use-faraday-bag-properly-when-and-why-explained/)
+- [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
+- [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
+- [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
+- [How To Rotate Encryption Keys In Messaging Apps Without Losi](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

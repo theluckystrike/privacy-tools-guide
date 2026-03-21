@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Tools For Whistle Blower Preparing Disclosure Protec"
 description: "A practical guide to privacy tools and techniques for whistleblowers preparing to disclose sensitive information securely. Covers encryption, secure"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
 categories: [guides, security]
@@ -233,10 +234,15 @@ Before disclosing, assess your actual threat level:
 
 Honestly assess which category applies to you. Over-preparing creates operational friction; under-preparing creates legal vulnerability.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Post Quantum Encryption In Messaging Apps Preparing For Quan](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
+- [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

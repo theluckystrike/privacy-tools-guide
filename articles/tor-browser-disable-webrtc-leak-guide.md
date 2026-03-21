@@ -3,6 +3,7 @@ layout: default
 title: "How to Disable WebRTC Leaks in Tor Browser"
 description: "Learn how to identify and mitigate WebRTC IP address leaks in Tor Browser. Practical techniques for developers and power users concerned about privacy"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-disable-webrtc-leak-guide/
 categories: [guides]
@@ -357,11 +358,14 @@ If you use multiple browsers, WebRTC disabling strategies vary:
 | Chromium/Chrome | Enabled | chrome://flags or extensions | DevTools → Network |
 | Brave | Protected by default | Settings → Privacy | Network inspection |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Tor Browser vs LibreWolf Privacy Comparison: A Developer's Guide](/privacy-tools-guide/tor-browser-vs-librewolf-privacy-comparison/)
-- [Arti Tor Rust Implementation Explained 2026: A Developer's Guide](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
+
+## Related Articles
+
+- [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
+- [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
+- [WebRTC Local IP Leak: How It Reveals Your Real Address](/privacy-tools-guide/webrtc-local-ip-leak-how-it-reveals-your-real-address/)
+- [Brave Browser Crypto Features Disable Guide](/privacy-tools-guide/brave-browser-crypto-features-disable-guide/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Secureboot Plus Encryption On Fedora Linux For"
 description: "Combine SecureBoot with LUKS full disk encryption on Fedora to create multi-layer security protecting against bootkits and physical theft. SecureBoot verifies"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/
 categories: [guides]
@@ -215,9 +216,14 @@ sudo bootctl verify
 
 Store your LUKS recovery passphrase in a secure location separate from your device. Consider using a hardware security key as an additional authentication factor.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
+- [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
+- [Secure Email Forwarding With Encryption How To Set Up Anonad](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
+- [C++ Developer Privacy Tools for Detecting Telemetry in.](/privacy-tools-guide/c-plus-plus-developer-privacy-tools-for-detecting-telemetry-in-game-engine-sdks-2026/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

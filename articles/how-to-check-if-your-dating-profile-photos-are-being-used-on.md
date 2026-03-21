@@ -3,6 +3,7 @@ layout: default
 title: "How To Check If Your Dating Profile Photos Are Being Used On"
 description: "Learn how to detect if your dating profile images are being stolen and used elsewhere. This guide covers reverse image search techniques, API-based"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-dating-profile-photos-are-being-used-on/
 categories: [guides, security]
@@ -187,10 +188,15 @@ Combine these methods into a systematic workflow:
 
 For developers, the Python-based approach using perceptual hashing provides the best balance of cost control and customization. Combine it with API access to search engines for coverage.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [How to Check If Your Private Photos Were Leaked Online](/privacy-tools-guide/how-to-check-if-your-private-photos-were-leaked-online/)
+- [How To Prevent Dating App Photos From Appearing In Google Im](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
+- [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
+- [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Device Memory Api Fingerprinting How Ram Amount Narrows Iden"
 description: "Learn how the Device Memory API enables browser fingerprinting by exposing available RAM, and how developers can detect and mitigate this tracking vector"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /device-memory-api-fingerprinting-how-ram-amount-narrows-iden/
 categories: [guides]
@@ -347,10 +348,15 @@ if (userConsent.allowHardwareOptimization) {
 This server-side principle means developers should avoid collecting and storing device memory unless absolutely necessary for functionality. If collected, store it separately from user identity information to limit fingerprinting opportunities.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
+- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
+- [Gamepad Api Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
+- [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/privacy-tools-guide/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

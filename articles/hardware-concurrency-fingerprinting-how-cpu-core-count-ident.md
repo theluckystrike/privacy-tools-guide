@@ -3,6 +3,7 @@ layout: default
 title: "Hardware Concurrency Fingerprinting"
 description: "Learn how websites use hardware concurrency (CPU core count) for browser fingerprinting, and practical techniques to protect your privacy as a developer or"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /hardware-concurrency-fingerprinting-how-cpu-core-count-ident/
 categories: [guides, security]
@@ -181,12 +182,15 @@ To see how your browser handles this fingerprinting vector:
 
 The goal is making your core count appear common—typically 2-4 cores—rather than distinctive.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Browser Fingerprinting: What It Is and How to Block It](/browser-fingerprinting-what-it-is-how-to-block/)
-- [How to Block Canvas Fingerprinting in Your Browser](/how-to-block-canvas-fingerprinting-browser/)
+
+## Related Articles
+
+- [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
+- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

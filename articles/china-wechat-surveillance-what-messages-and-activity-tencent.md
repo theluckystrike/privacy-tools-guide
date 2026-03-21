@@ -3,6 +3,7 @@ layout: default
 title: "China Wechat Surveillance What Messages And Activity Tencent"
 description: "A technical guide for developers and power users exploring what data Tencent collects, how government requests work, and what activity triggers data"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-wechat-surveillance-what-messages-and-activity-tencent/
 reviewed: true
@@ -176,10 +177,15 @@ Regularly delete chat history and avoid backing up WeChat data to cloud services
 **Consider Alternatives**
 For sensitive communications, Signal, Telegram (with caution), or other encrypted messaging platforms offer better privacy protections.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
+- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
+- [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
+- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

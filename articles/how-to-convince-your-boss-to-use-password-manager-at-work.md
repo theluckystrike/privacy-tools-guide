@@ -3,6 +3,7 @@ layout: default
 title: "How to Convince Your Boss to Use a Password Manager at Work"
 description: "A practical guide for developers and power users on how to convince management to adopt password managers in the workplace. Includes security"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-convince-your-boss-to-use-password-manager-at-work/
 categories: [guides]
@@ -293,10 +294,15 @@ Frame this not as an one-time expense but as continuous infrastructure improveme
 
 This long-term framing appeals to leadership thinking about multi-year planning.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Use Password Manager Across Work And Personal Devices](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
+- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
+- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

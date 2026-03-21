@@ -3,6 +3,7 @@ layout: default
 title: "Canvas Blocker Extension How It Works And Performance Impact"
 description: "A technical deep dive into canvas blocker browser extensions, explaining the underlying mechanisms, implementation approaches, and real-world"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /canvas-blocker-extension-how-it-works-and-performance-impact/
 categories: [guides]
@@ -197,10 +198,15 @@ Several extensions implement these techniques with varying trade-offs:
 
 Each handles the performance-compatibility tradeoff differently. Privacy-focused power users often accept some compatibility loss, while general users prefer allowlist-heavy approaches.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
+- [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
+- [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
+- [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
+- [Encrypted Cloud Storage Performance Benchmarks 2026](/privacy-tools-guide/encrypted-cloud-storage-performance-benchmarks-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Abine Blur For Masked Emails Phone Numbers And Cr"
 description: "A practical guide for developers and power users on implementing Abine Blur's masked contact details to protect your real identity across websites and services"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/
 categories: [guides]
@@ -346,10 +347,15 @@ While Blur provides excellent data segregation, remember:
 
 These limitations don't negate Blur's value but should inform your threat model.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
+- [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
+- [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

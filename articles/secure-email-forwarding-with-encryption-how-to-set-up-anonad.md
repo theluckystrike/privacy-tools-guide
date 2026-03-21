@@ -3,6 +3,7 @@ layout: default
 title: "Secure Email Forwarding With Encryption How To Set Up Anonad"
 description: "A practical guide to setting up secure email forwarding with encryption using Anonaddy and SimpleLogin. Learn how to protect your inbox with alias"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /secure-email-forwarding-with-encryption-how-to-set-up-anonad/
 categories: [guides, security]
@@ -210,10 +211,15 @@ When implementing email aliasing in production environments:
 - **Enable 2FA**: Protect your alias service account with hardware keys or TOTP
 - **Separate concerns**: Use different aliases for different purposes (shopping, social media, work)
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
+- [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
+- [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
+- [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
+- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

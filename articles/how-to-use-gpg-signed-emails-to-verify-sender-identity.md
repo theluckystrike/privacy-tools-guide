@@ -3,6 +3,7 @@ layout: default
 title: "Use GPG Signed Emails to Verify Sender Identity"
 description: "Learn how to use GPG signed emails to verify sender identity with this practical guide for developers and power users. Includes setup, signing"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity/
 categories: [guides]
@@ -227,10 +228,15 @@ Start by generating a GPG key if you don't have one. Configure your primary emai
 GPG signing adds friction to email communication, but the authenticity guarantees are valuable for technical collaboration. Start with low-stakes communications to build familiarity before relying on signatures for sensitive matters.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
+- [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)
+- [How To Use Abine Blur For Masked Emails Phone Numbers And Cr](/privacy-tools-guide/how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/)
+- [Someone Signed Up for Services Using My Email — What to Do](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

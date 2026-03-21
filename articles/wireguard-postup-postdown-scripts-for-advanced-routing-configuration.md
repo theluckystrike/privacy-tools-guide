@@ -3,6 +3,7 @@ layout: default
 title: "Wireguard Postup Postdown Scripts For Advanced Routing."
 description: "WireGuard Postup Postdown Scripts for Advanced Routing. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 categories: [guides]
 tags:
 keywords: "wireguard postup postdown scripts for advanced routing configuration guide"
@@ -682,9 +683,14 @@ nmcli connection modify "VPN-Name"   ipv4.routes "10.0.0.0/8"   ipv4.never-defau
 
 Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
+- [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
+- [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Ios Advanced Data Protection For Icloud End To End.](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Browser Autofill Privacy Security Risks"
 description: "Browser autofill is one of those conveniences that feels invisible until it becomes a liability. For developers and power users who value privacy"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /browser-autofill-privacy-security-risks/
 categories: [guides, security]
@@ -177,13 +178,15 @@ const credential = await navigator.credentials.create({
 
 Passkeys never leave the user's device, cannot be phished, and don't rely on browser autofill mechanisms. For authentication use cases, this is the most privacy-respecting approach available.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Troubleshooting Hub](/privacy-tools-guide/troubleshooting-hub/)
+
+## Related Articles
+
+- [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
-- [Password Manager Autofill Security Risks: What.](/privacy-tools-guide/password-manager-autofill-security-risks/)
-- [Best Browser for Online Banking Security 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-online-banking-security/)
+- [How to Audit Your Browser Extensions for Privacy Risks](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
+- [Best Browser for Online Banking Security 2026](/privacy-tools-guide/best-browser-for-online-banking-security/)
+- [Chatgpt Privacy Risks What Openai Stores From Your.](/privacy-tools-guide/chatgpt-privacy-risks-what-openai-stores-from-your-conversations-detailed-breakdown/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

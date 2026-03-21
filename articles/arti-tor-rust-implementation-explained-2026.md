@@ -3,6 +3,7 @@ layout: default
 title: "Arti Tor Rust Implementation Explained 2026"
 description: "Learn how Arti, the Rust implementation of Tor, works under the hood. Practical examples and code snippets for developers and power users in 2026"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /arti-tor-rust-implementation-explained-2026/
 categories: [guides]
@@ -175,12 +176,15 @@ Avoid disabling security features for convenience. Features like strict node sel
 Arti's modular crates support integrations from simple anonymous connections through `arti-client` to custom deployments using `tor-proto` and `tor-circmgr` directly.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
-- [Best Authenticator App 2026 Review: A Developer's Guide](/privacy-tools-guide/best-authenticator-app-2026-review/)
-- [Data Privacy Framework EU US Explained 2026: A Developer.](/privacy-tools-guide/data-privacy-framework-eu-us-explained-2026/)
+
+## Related Articles
+
+- [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Tor Circuit: How It Works and Visualization Explained](/privacy-tools-guide/tor-circuit-how-it-works-visualization-explained/)
+- [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
+- [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Adb To Disable Android System Apps That Spy On Yo"
 description: "Enable Developer Mode on your Android device, connect it to a computer via USB with ADB tools installed, then run adb shell pm disable-user [package.name] for"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/
 categories: [guides]
@@ -272,10 +273,15 @@ Begin by listing installed packages and identifying apps you don't use or trust.
 ADB provides a powerful way to reclaim control over your Android device without voiding warranties or rooting. The disabled apps remain on your device but stop consuming resources or collecting data until you choose to re-enable them.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
+- [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

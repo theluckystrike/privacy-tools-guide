@@ -3,6 +3,7 @@ layout: default
 title: "How to Check If Your Private Photos Were Leaked Online"
 description: "Learn technical methods to detect if your private photos have been exposed online. This guide covers reverse image search, haveibeenpwned alternatives"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-private-photos-were-leaked-online/
 categories: [guides, security]
@@ -207,10 +208,15 @@ For professional-grade protection, consider commercial services that specialize 
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Check If Your Social Security Number Was Leaked Onlin](/privacy-tools-guide/how-to-check-if-your-social-security-number-was-leaked-onlin/)
+- [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
+- [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
+- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
+- [How To Prevent Dating App Photos From Appearing In Google Im](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

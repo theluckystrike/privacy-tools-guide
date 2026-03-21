@@ -3,6 +3,7 @@ layout: default
 title: "How To Revoke Previously Given Consent For Data Processing U"
 description: "Learn how to exercise your GDPR right to withdraw consent, including technical implementation for developers and practical steps for users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-revoke-previously-given-consent-for-data-processing-u/
 categories: [guides]
@@ -269,10 +270,15 @@ After withdrawing consent:
 3. **Request audit**: For sensitive processing, ask for a data processing audit report
 4. **Escalate if needed**: Contact the organization's DPO or file a complaint with your local data protection authority
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
+- [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

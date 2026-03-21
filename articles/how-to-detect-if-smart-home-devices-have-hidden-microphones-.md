@@ -3,6 +3,7 @@ layout: default
 title: "Detect If Smart Home Devices Have Hidden Microphones or"
 description: "A technical guide for developers and power users to identify hidden microphones and cameras in smart home devices. Learn network analysis, firmware"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/
 categories: [guides]
@@ -233,10 +234,15 @@ Once you've identified recording capabilities, take action:
 - **Power Control**: Use smart plugs to cut power when not in use
 - **Physical Covers**: Use mechanical shutters for cameras, microphone plugs for audio inputs
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Media Devices Enumeration Fingerprinting Cameras Microphones](/privacy-tools-guide/media-devices-enumeration-fingerprinting-cameras-microphones/)
+- [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

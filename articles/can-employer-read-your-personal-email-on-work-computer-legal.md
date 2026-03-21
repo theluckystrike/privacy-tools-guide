@@ -3,6 +3,7 @@ layout: default
 title: "Can Employer Read Your Personal Email On Work Computer Legal"
 description: "The question of whether your employer can read your personal email on a work computer has a nuanced answer: it depends on your jurisdiction, the company's"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /can-employer-read-your-personal-email-on-work-computer-legal/
 categories: [guides]
@@ -206,10 +207,15 @@ Regardless of jurisdiction, there are some limits:
 | Australia | Must be reasonable | Privacy Act |
 | Germany | Very strong protections | BDSG, GDPR |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Employee Email Monitoring Legal Requirements And Privacy Bou](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
+- [How To Use Password Manager Across Work And Personal Devices](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)
+- [Qubes OS Compartmentalized Workflow Guide](/privacy-tools-guide/qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/)
+- [Mobile App Store Privacy Labels How To Read And Compare Befo](/privacy-tools-guide/mobile-app-store-privacy-labels-how-to-read-and-compare-befo/)
+- [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

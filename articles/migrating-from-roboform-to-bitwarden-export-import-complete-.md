@@ -3,6 +3,7 @@ layout: default
 title: "Migrating from RoboForm to Bitwarden"
 description: "A technical guide for developers and power users migrating password data from RoboForm to Bitwarden, covering export methods, CSV parsing, and import scripts"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /migrating-from-roboform-to-bitwarden-export-import-complete-/
 categories: [guides, security]
@@ -253,12 +254,15 @@ bw list items | jq 'group_by(.name) | map(select(length > 1))'
 
 Some RoboForm entries might have empty password fields (like WiFi passwords or secure notes). These won't appear in Bitwarden's login items—manually recreate them or import as secure notes.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Bitwarden CLI Documentation](https://bitwarden.com/help/cli/)
-- [Migrating from LastPass to Bitwarden](/migrating-from-lastpass-to-bitwarden-step-by-step/)
+
+## Related Articles
+
+- [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
+- [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
+- [Migrating from Safari Keychain to Bitwarden](/privacy-tools-guide/migrating-from-safari-keychain-to-bitwarden-complete-migration-guide/)
+- [ProtonMail Import Export Tool Guide](/privacy-tools-guide/protonmail-import-export-tool-guide/)
+- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

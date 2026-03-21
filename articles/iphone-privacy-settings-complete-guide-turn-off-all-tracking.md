@@ -3,6 +3,7 @@ layout: default
 title: "Iphone Privacy Settings Complete Guide Turn Off All Tracking"
 description: "A technical guide for developers and power users to disable all tracking features on iPhone. Includes Settings app navigation, Shortcuts"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /iphone-privacy-settings-complete-guide-turn-off-all-tracking/
 categories: [guides]
@@ -198,10 +199,15 @@ func removeTrackingParams(from url: URL) -> URL {
 | iCloud | Share iCloud Analytics | OFF |
 | Siri | Listen for "Hey Siri" | OFF (optional) |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
+- [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

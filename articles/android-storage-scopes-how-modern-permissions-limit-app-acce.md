@@ -3,6 +3,7 @@ layout: default
 title: "Android Storage Scopes How Modern Permissions Limit App Acce"
 description: "Scoped storage (introduced in Android 10 and mandatory since Android 12) limits apps to their own sandbox directories and prevents broad read-write access to"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /android-storage-scopes-how-modern-permissions-limit-app-acce/
 categories: [guides]
@@ -484,10 +485,15 @@ Google continues reducing app permissions:
 
 As scoped storage matures, expect even more granular user control over what apps access.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

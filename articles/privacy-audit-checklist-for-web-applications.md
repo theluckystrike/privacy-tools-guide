@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Audit Checklist for Web Applications: A Developer"
 description: "A practical privacy audit checklist for web applications with implementation code. Covers data collection audit, consent management, encryption"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /privacy-audit-checklist-for-web-applications/
 categories: [guides]
@@ -508,12 +509,15 @@ Verify you have the actual contact details for your relevant supervisory authori
 Run a tabletop exercise once per year: present the team with a breach scenario and walk through the response process. This surfaces gaps between your documented procedure and your team's actual readiness. Common failures include not knowing which vendor to contact first, missing the 72-hour window due to unclear ownership, and lacking a pre-drafted notification template.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Audit Checklist for SaaS Companies.](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
-- [Android Privacy Best Practices 2026: A Developer and.](/privacy-tools-guide/android-privacy-best-practices-2026/)
-- [Windows 10 Privacy Settings Complete Checklist: A.](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+
+## Related Articles
+
+- [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
+- [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)
+- [Privacy-Focused Web Browsers Comparison 2026](/privacy-tools-guide/articles/privacy-focused-web-browsers-comparison-2026/)
+- [Enterprise Privacy Tool Deployment Checklist for.](/privacy-tools-guide/enterprise-privacy-tool-deployment-checklist-for-multi-cloud/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

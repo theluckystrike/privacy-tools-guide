@@ -3,6 +3,7 @@ layout: default
 title: "How To Replace Cloud Dependent Smart Switches With Local Zig"
 description: "A practical guide for developers and power users on migrating from cloud-dependent smart switches to local Zigbee alternatives for privacy and reliability"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-replace-cloud-dependent-smart-switches-with-local-zig/
 categories: [guides]
@@ -201,10 +202,15 @@ sudo ngrep -d eth0 '' host <hub_ip>
 
 You should see MQTT traffic only on your local network, with no external connections to manufacturer servers.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

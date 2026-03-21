@@ -3,6 +3,7 @@ layout: default
 title: "WebAuthn Implementation Guide for Developers"
 description: "A practical developer guide to implementing WebAuthn authentication. Code examples for registration, authentication, and best practices"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "theluckystrike"
 permalink: /webauthn-implementation-guide-developers/
 reviewed: true
@@ -400,11 +401,15 @@ async function login(username, password) {
 
 This progressive approach lets you introduce WebAuthn without requiring all users to migrate simultaneously, reducing support burden during the transition.
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+
+## Related Articles
+
+- [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
+- [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
+- [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
+- [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
+- [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

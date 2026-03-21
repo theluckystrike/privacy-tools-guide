@@ -3,6 +3,7 @@ layout: default
 title: "International Data Transfer Impact Assessment"
 description: "A practical guide to conducting international data transfer impact assessments for developers and power users building global applications"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /international-data-transfer-impact-assessment/
 categories: [guides]
@@ -188,11 +189,15 @@ The regulatory landscape continues evolving. Organizations that build assessment
 ---
 
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Privacy Regulatory Sandbox Programs Explained: A.](/privacy-tools-guide/privacy-regulatory-sandbox-programs-explained/)
+
+## Related Articles
+
+- [Data Privacy Maturity Model Assessment Guide](/privacy-tools-guide/data-privacy-maturity-model-assessment-guide/)
+- [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
+- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [Canvas Blocker Extension How It Works And Performance Impact](/privacy-tools-guide/canvas-blocker-extension-how-it-works-and-performance-impact/)
+- [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

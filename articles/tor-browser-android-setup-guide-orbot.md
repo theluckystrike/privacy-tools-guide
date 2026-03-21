@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser Android Setup Guide with Orbot"
 description: "A guide for setting up Tor Browser on Android using Orbot. Learn how to configure Orbot as a VPN, integrate with Tor Browser, and maximize privacy on"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-android-setup-guide-orbot/
 categories: [guides, security]
@@ -254,11 +255,15 @@ F-Droid users should enable auto-updates or periodically check for new versions.
 
 ---
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Best Browser for Tor Network 2026](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-- [Anonymous Browsing on Mobile Devices Guide](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
+
+## Related Articles
+
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
+- [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
+- [Best Browser For Privacy Android 2026](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

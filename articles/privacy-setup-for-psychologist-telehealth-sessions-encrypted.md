@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup For Psychologist Telehealth Sessions Encrypted"
 description: "Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
 categories: [guides, security]
@@ -191,10 +192,15 @@ While this guide focuses on technical privacy implementation, remember that HIPA
 
 Self-hosted solutions give you control but transfer compliance responsibility entirely to your infrastructure. Document your technical setup and conduct regular security audits if handling sensitive patient information.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
+- [Best Mouse Pad For Wrist Support During Long Coding Sessions](/privacy-tools-guide/best-mouse-pad-for-wrist-support-during-long-coding-sessions/)
+- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

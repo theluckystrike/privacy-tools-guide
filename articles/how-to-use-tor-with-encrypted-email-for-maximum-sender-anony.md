@@ -3,6 +3,7 @@ layout: default
 title: "Use Tor With Encrypted Email for Maximum Sender Anonymity"
 description: "A technical guide for developers and power users combining Tor network routing with PGP encryption for maximum email sender anonymity. Includes setup"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/
 categories: [guides, security]
@@ -211,10 +212,15 @@ Several mistakes undermine the anonymity these tools provide:
 - **Relying on webmail over Tor** — Browser fingerprinting and JavaScript can compromise anonymity
 - **Forgetting to disable HTML email** — Remote images and tracking pixels leak information
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Use Tails OS for Maximum Anonymity](/privacy-tools-guide/how-to-use-tails-os-for-maximum-anonymity/)
+- [Tor vs VPN vs I2P: Anonymity Network Comparison 2026](/privacy-tools-guide/tor-vs-vpn-vs-i2p-anonymity-comparison-2026/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
+- [How To Create Untraceable Email Account Using Tor Vpn And An](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

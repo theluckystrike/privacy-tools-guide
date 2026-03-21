@@ -3,6 +3,7 @@ layout: default
 title: "Social Media Will What Legal Authority Executor Has Over You"
 description: "A guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /social-media-will-what-legal-authority-executor-has-over-you/
 reviewed: true
@@ -188,10 +189,15 @@ To protect your digital legacy:
 The legal ecosystem continues to evolve as states refine their digital asset statutes and platforms update their policies. Review your digital estate plan annually to ensure it reflects both legal changes and your current online presence.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
+- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

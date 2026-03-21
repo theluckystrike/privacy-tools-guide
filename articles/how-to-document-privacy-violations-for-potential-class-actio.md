@@ -3,6 +3,7 @@ layout: default
 title: "How To Document Privacy Violations For Potential Class Actio"
 description: "A practical guide for developers and power users on collecting and preserving digital evidence of privacy violations for potential class action lawsuits"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-document-privacy-violations-for-potential-class-actio/
 categories: [guides]
@@ -205,10 +206,15 @@ Preserve evidence properly from the start. Chain of custody matters:
 
 Consult with an attorney before initiating any formal action. This guide provides technical documentation methods, not legal advice.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
+- [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)
+- [Secure Document Collaboration Alternatives to Google.](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
+- [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

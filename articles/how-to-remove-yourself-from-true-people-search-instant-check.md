@@ -3,6 +3,7 @@ layout: default
 title: "How To Remove Yourself From True People Search Instant Check"
 description: "A practical guide for developers and power users to remove personal data from people search sites. Includes automation scripts and API strategies"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-remove-yourself-from-true-people-search-instant-check/
 categories: [guides]
@@ -172,10 +173,15 @@ Removing your data from people search sites addresses immediate visibility but d
 - **Monitor your digital footprint regularly**: Set up Google Alerts for your name and contact information
 - **Request data deletion under privacy laws**: CCPA (California) and GDPR (EU) provide legal frameworks for data removal requests
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Disappear From People Search Sites Complete Removal G](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
+- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
+- [What To Do If Your Personal Data Appears On People Search](/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/)
+- [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [How to remove yourself from data broker sites step by step.](/privacy-tools-guide/how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

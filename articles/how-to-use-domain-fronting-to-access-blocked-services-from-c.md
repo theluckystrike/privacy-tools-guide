@@ -3,6 +3,7 @@ layout: default
 title: "How To Use Domain Fronting To Access Blocked Services From C"
 description: "Learn how domain fronting works and how to use it to bypass network restrictions. Technical guide with code examples for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-domain-fronting-to-access-blocked-services-from-c/
 categories: [guides]
@@ -227,12 +228,15 @@ As a standalone technique, less so than in 2018. Major CDNs have added detection
 **Can I use Cloudflare for domain fronting?**
 Cloudflare historically blocked domain fronting via their WAF and SNI enforcement. Some configurations still work depending on plan type and server settings, but it is unreliable for sustained use.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [How To Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
-- [Turkey Secure Communication Guide for Activists and NGOs](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
-- [Best Browser for Tor Network 2026](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+
+## Related Articles
+
+- [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
+- [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
+- [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
+- [How To Set Up V2ray Vmess For Accessing Blocked Websites Fro](/privacy-tools-guide/how-to-set-up-v2ray-vmess-for-accessing-blocked-websites-fro/)
+- [Vpn For Using Viber In Countries Where Voip Blocked](/privacy-tools-guide/vpn-for-using-viber-in-countries-where-voip-blocked/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Firefox Reset And Clean Install Guide Privacy"
 description: "To reset Firefox while keeping your data, go to about:support and click 'Refresh Firefox' -- this preserves bookmarks and passwords but removes extensions and"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /firefox-reset-and-clean-install-guide-privacy/
 categories: [guides]
@@ -225,13 +226,15 @@ echo "Privacy settings applied to $PROFILE_DIR"
 
 Run this script after each Firefox update, as some settings may reset.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Firefox Arkenfox User.js Full Guide: Complete Privacy.](/privacy-tools-guide/firefox-arkenfox-user-js-full-guide/)
+
+## Related Articles
+
+- [Debian Minimal Install Guide For Building Privacy Focused De](/privacy-tools-guide/debian-minimal-install-guide-for-building-privacy-focused-de/)
+- [How To Factory Reset Mobile Phone Securely Before Selling En](/privacy-tools-guide/how-to-factory-reset-mobile-phone-securely-before-selling-en/)
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
-- [Firefox Privacy Settings Guide 2026: A Practical Guide.](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
+- [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
+- [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

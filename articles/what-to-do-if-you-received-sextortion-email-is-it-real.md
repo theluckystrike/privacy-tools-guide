@@ -3,6 +3,7 @@ layout: default
 title: "What to Do If You Received Sextortion Email: Is It Real?"
 description: "Learn how to identify and handle sextortion emails. Technical analysis, verification steps, and actionable advice for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
 categories: [guides]
@@ -185,10 +186,15 @@ fi
 
 Schedule this to run weekly via cron.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Okcupid Data Sharing History What Third Parties Received Use](/privacy-tools-guide/okcupid-data-sharing-history-what-third-parties-received-use/)
+- [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
+- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
+- [Dating App Location Spoofing How To Hide Real Position While](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

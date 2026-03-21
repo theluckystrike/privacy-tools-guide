@@ -3,6 +3,7 @@ layout: default
 title: "Telehealth Privacy Rights What Therapist Doctor Video Calls"
 description: "A practical guide for developers and power users on telehealth privacy rights. Learn what healthcare providers can legally record, consent"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /telehealth-privacy-rights-what-therapist-doctor-video-calls-/
 categories: [guides]
@@ -410,10 +411,15 @@ Patient Signature: ________________  Date: ________
 Provider Signature: ________________  Date: ________
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
+- [Privacy Setup For Physical Therapist Patient Exercise Data P](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)
+- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
+- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
+- [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

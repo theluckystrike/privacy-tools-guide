@@ -3,6 +3,7 @@ layout: default
 title: "Tor Circuit: How It Works and Visualization Explained"
 description: "A technical deep dive into Tor circuit mechanics for developers and power users. Understand the onion routing protocol, circuit construction, and how"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-circuit-how-it-works-visualization-explained/
 categories: [guides]
@@ -247,10 +248,15 @@ Understanding Tor circuit limitations helps you use it effectively:
 - **Protocol leakage**: Applications must be configured to avoid leaking identifying information outside the Tor circuit
 - **Circuit fingerprinting**: Traffic patterns through a circuit can be fingerprinted
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
+- [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
+- [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

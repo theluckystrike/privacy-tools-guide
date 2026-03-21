@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model For Activist In Authoritarian Country Digital S"
 description: "A practical threat modeling guide for political activists in authoritarian countries. Identify assets, analyze threats, and implement effective digital"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-activist-in-authoritarian-country-digital-s/
 categories: [guides]
@@ -264,10 +265,15 @@ You'll know your threat model is effective when:
 
 Threat modeling is not about achieving perfect security (impossible) but about making calculated decisions about risk acceptable to you and your organization. Regular reassessment ensures your model stays relevant as threats evolve.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model For Religious Minority In Persecuting Country D](/privacy-tools-guide/threat-model-for-religious-minority-in-persecuting-country-d/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
+- [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How to Export Passwords from Any Manager"
 description: "To export passwords from any manager, use its CLI tool for the most control: op vault export for 1Password, bw export --format json for Bitwarden, lpass export"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-export-passwords-from-any-manager/
 categories: [guides, security]
@@ -228,13 +229,15 @@ Schedule this with cron for regular automated backups:
 Most modern password managers support CLI export, which gives the most control over output format and automation. Encrypt the file immediately after export and verify it contains all expected entries before removing source data.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
+
+## Related Articles
+
+- [Migrating From Chrome Saved Passwords To Dedicated Manager S](/privacy-tools-guide/migrating-from-chrome-saved-passwords-to-dedicated-manager-s/)
+- [Password Manager for Travel Agent Managing Booking Platform Passwords](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
+- [Does Mullvad Work in Turkmenistan? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-work-in-turkmenistan-2026-any-server-works/)
+- [How to Use Public Computers Safely Without Leaving Any Trace](/privacy-tools-guide/how-to-use-public-computers-safely-without-leaving-any-trace/)
+- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Migrating From NordPass to Bitwarden"
 description: "A technical guide for developers and power users migrating passwords from NordPass to Bitwarden. Covers CLI export, import automation, custom fields"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-nordpass-to-bitwarden-export-import-process-guide/
 categories: [guides]
@@ -298,10 +299,15 @@ iconv -f ISO-8859-1 -t UTF-8 nordpass-export.csv > nordpass-utf8.csv
 
 **Solution**: Verify the secret key format—Bitwarden requires base32, not otpauth:// URIs
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
+- [ProtonMail Import Export Tool Guide](/privacy-tools-guide/protonmail-import-export-tool-guide/)
+- [Bitwarden vs NordPass Comparison 2026](/privacy-tools-guide/bitwarden-vs-nordpass-comparison-2026/)
+- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

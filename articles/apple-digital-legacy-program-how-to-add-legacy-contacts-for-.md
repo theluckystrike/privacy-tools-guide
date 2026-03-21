@@ -3,6 +3,7 @@ layout: default
 title: "Apple Digital Legacy Program How To Add Legacy Contacts For"
 description: "Learn how to set up Apple Digital Legacy contacts to ensure your iCloud data is transferred to trusted individuals. A technical guide for power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /apple-digital-legacy-program-how-to-add-legacy-contacts-for-/
 reviewed: true
@@ -349,10 +350,15 @@ This plan was configured on: [DATE]
 
 Print and sign this document. Include it in your physical estate planning documents with your will.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
+- [Tutanota Encrypted Calendar And Contacts How End To End Encr](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
+- [Mailbox Forwarding Service Comparison For Using Business Add](/privacy-tools-guide/mailbox-forwarding-service-comparison-for-using-business-add/)
+- [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

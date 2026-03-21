@@ -3,6 +3,7 @@ layout: default
 title: "Set Up Catch All Email Domain For Unlimited Private Aliases"
 description: "A practical guide to configuring catch-all email domains for creating unlimited private email aliases. Perfect for developers and power users who want"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/
 categories: [guides, security]
@@ -219,10 +220,15 @@ While catch-all domains provide excellent privacy, keep these points in mind:
 
 For maximum privacy, consider combining catch-all aliases with encrypted email services like ProtonMail or Tutanota.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)
+- [How To Set Up Private Bitcoin Full Node At Home For Transact](/privacy-tools-guide/how-to-set-up-private-bitcoin-full-node-at-home-for-transact/)
+- [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

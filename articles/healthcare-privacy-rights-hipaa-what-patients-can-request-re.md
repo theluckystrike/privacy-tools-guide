@@ -3,6 +3,7 @@ layout: default
 title: "Healthcare Privacy Rights Hipaa What Patients Can Request Re"
 description: "The Health Insurance Portability and Accountability Act (HIPAA) grants patients significant rights over their protected health information (PHI). For"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /healthcare-privacy-rights-hipaa-what-patients-can-request-re/
 categories: [guides]
@@ -196,10 +197,15 @@ Understanding these rights enables both patients seeking access to their data an
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
+- [Police Body Camera Footage Privacy Rights Who Can Request An](/privacy-tools-guide/police-body-camera-footage-privacy-rights-who-can-request-an/)
+- [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
+- [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
+- [Privacy Setup For Reproductive Healthcare Provider In Restri](/privacy-tools-guide/privacy-setup-for-reproductive-healthcare-provider-in-restri/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

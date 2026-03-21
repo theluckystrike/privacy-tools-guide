@@ -3,6 +3,7 @@ layout: default
 title: "Windows Local Account Vs Microsoft Account Privacy"
 description: "A privacy comparison between Windows local accounts and Microsoft accounts. Learn what data each account type collects, how they affect"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-local-account-vs-microsoft-account-privacy/
 categories: [guides]
@@ -316,10 +317,15 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [VPN for Accessing Local Bank Account from Abroad Safely](/privacy-tools-guide/vpn-for-accessing-local-bank-account-from-abroad-safely/)
+- [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

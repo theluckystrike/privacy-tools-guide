@@ -3,6 +3,7 @@ layout: default
 title: "How To Audit Android App Permissions And Revoke Unnecessary"
 description: "Learn how to audit Android app permissions, identify unnecessary access, and revoke risky permissions. This guide covers built-in tools, ADB commands"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-android-app-permissions-and-revoke-unnecessary-/
 categories: [guides]
@@ -266,10 +267,15 @@ For users wanting maximum permission control, custom Android distributions provi
 
 These ROMs require technical comfort with flashing, but provide significantly better permission granularity and control than stock Android.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)
+- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

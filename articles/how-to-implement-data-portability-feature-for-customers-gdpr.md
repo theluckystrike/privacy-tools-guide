@@ -3,6 +3,7 @@ layout: default
 title: "Implement Data Portability Feature For Customers Gdpr Right Explained"
 description: "A technical guide for developers on implementing GDPR data portability features. Learn API design, data export formats, authentication"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/
 categories: [guides]
@@ -257,10 +258,15 @@ testing ensures your data portability feature works correctly and securely.
 
 **Format Validation**: Ensure exports validate against their declared schemas. JSON exports should parse without errors. CSV exports should open correctly in spreadsheet applications.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
+- [How To Implement Right To Be Forgotten In Your Application D](/privacy-tools-guide/how-to-implement-right-to-be-forgotten-in-your-application-d/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
+- [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Hsts Supercookie Tracking How Https Settings Create Persiste"
 description: "Learn how HSTS supercookies work and how HTTPS settings can be exploited to create persistent tracking identifiers across websites"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /hsts-supercookie-tracking-how-https-settings-create-persiste/
 categories: [guides, security]
@@ -171,10 +172,15 @@ add_header Strict-Transport-Security "max-age=3600; includeSubDomains" always;
 # Production: max-age=31536000; includeSubDomains; preload
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Iphone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
+- [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

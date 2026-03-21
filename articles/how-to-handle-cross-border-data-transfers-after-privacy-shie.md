@@ -3,6 +3,7 @@ layout: default
 title: "How To Handle Cross Border Data Transfers After Privacy Shie"
 description: "Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessments and end-to-end encryption as the primary mechanism for EU-US data"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-handle-cross-border-data-transfers-after-privacy-shie/
 categories: [guides]
@@ -207,9 +208,14 @@ Regularly test your cross-border transfer controls to ensure they remain effecti
 
 4. **Breach Response Testing**: Simulate scenarios where data is accessed inappropriately and verify your response procedures.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
+- [How To Handle Password Manager When Switching Phones Android](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

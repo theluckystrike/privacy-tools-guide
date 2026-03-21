@@ -3,6 +3,7 @@ layout: default
 title: "Bitcoin Inheritance Planning Using Multisig With Family Memb"
 description: "A technical guide for developers and power users on setting up Bitcoin multisig inheritance planning with family members and estate lawyers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /bitcoin-inheritance-planning-using-multisig-with-family-memb/
 categories: [guides]
@@ -228,10 +229,15 @@ Before finalizing your setup, verify each recovery component works:
 
 Document the date of your last successful test. If circumstances change significantly—key holders relocate, wallet software updates, or exchange rates shift dramatically—retest your setup annually.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
+- [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)
+- [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
+- [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
+- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

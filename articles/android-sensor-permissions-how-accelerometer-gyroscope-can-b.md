@@ -3,6 +3,7 @@ layout: default
 title: "Android Sensor Permissions How Accelerometer Gyroscope Can B"
 description: "Modern Android devices contain a variety of sensors that measure physical phenomena. Among the most common are the accelerometer and gyroscope, which detect"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /android-sensor-permissions-how-accelerometer-gyroscope-can-b/
 categories: [guides, security]
@@ -198,10 +199,15 @@ For users concerned about motion sensor tracking:
 2. Use security-focused ROMs Some privacy-oriented Android distributions offer sensor access controls
 3. Restrict background access Ensure apps cannot access sensors when not in use
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/privacy-tools-guide/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

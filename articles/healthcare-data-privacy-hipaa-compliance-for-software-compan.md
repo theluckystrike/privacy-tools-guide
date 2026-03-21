@@ -3,6 +3,7 @@ layout: default
 title: "Healthcare Data Privacy Hipaa Compliance For Software Compan"
 description: "A practical technical guide for developers building healthcare software. Covers PHI handling, encryption requirements, access controls, audit logging"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /healthcare-data-privacy-hipaa-compliance-for-software-compan/
 categories: [guides]
@@ -292,10 +293,15 @@ Remember that HIPAA violations can result in significant fines—up to $1.5 mill
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
+- [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [Tax Preparer Client Financial Data Privacy IRS.](/privacy-tools-guide/tax-preparer-client-financial-data-privacy-irs-compliance-di/)
+- [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)
+- [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

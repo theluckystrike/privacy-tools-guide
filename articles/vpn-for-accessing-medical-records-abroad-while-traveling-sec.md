@@ -3,6 +3,7 @@ layout: default
 title: "VPN for Accessing Medical Records Abroad While Traveling"
 description: "A technical guide for developers and power users on setting up VPN tunnels to securely access healthcare portals and medical records while traveling"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-medical-records-abroad-while-traveling-sec/
 categories: [guides]
@@ -179,9 +180,14 @@ For maximum protection when accessing PHI:
 
 **Session drops after a few minutes**: Increase `PersistentKeepalive` to 15 seconds and ensure your VPN client reconnects automatically on disconnect.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [VPN for Accessing Medical Records Abroad While Traveling.](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-securely/)
+- [VPN for Online Banking While Traveling Southeast Asia Safety](/privacy-tools-guide/vpn-for-online-banking-while-traveling-southeast-asia-safety/)
+- [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
+- [Best VPN for Accessing Brazilian Streaming Globoplay.](/privacy-tools-guide/best-vpn-for-accessing-brazilian-streaming-globoplay-from-abroad/)
+- [Best VPN for Accessing French TV Abroad](/privacy-tools-guide/best-vpn-for-accessing-french-tv-abroad-free-servers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

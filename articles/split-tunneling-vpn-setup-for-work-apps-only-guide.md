@@ -3,6 +3,7 @@ layout: default
 title: "Split Tunneling VPN Setup for Work Apps Only Guide"
 description: "A practical guide to configuring split tunneling VPN to route only work applications through the VPN while keeping personal traffic on your regular"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /split-tunneling-vpn-setup-for-work-apps-only-guide/
 categories: [guides]
@@ -309,9 +310,14 @@ nslookup gitlab.internal
 4. **Monitor bandwidth**: Ensure personal activities don't consume corporate VPN resources
 5. **Coordinate with IT**: Ensure compliance with organizational security policies
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
+- [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
+- [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
+- [Does Mullvad VPN Work in Egypt? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-vpn-work-in-egypt-2026-latest-report/)
+- [Does Proton VPN Stealth Work in Myanmar? 2026 Tested](/privacy-tools-guide/does-proton-vpn-stealth-work-in-myanmar-2026-tested/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

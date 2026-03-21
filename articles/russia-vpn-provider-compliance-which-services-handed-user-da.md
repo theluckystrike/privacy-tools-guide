@@ -3,6 +3,7 @@ layout: default
 title: "Russia Vpn Provider Compliance Which Services Handed User Da"
 description: "A technical analysis of VPN provider compliance with Russian data requests. Learn which services cooperated with authorities, what data was disclosed"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /russia-vpn-provider-compliance-which-services-handed-user-da/
 categories: [guides, security]
@@ -261,10 +262,15 @@ For organizations supporting users in restricted regions:
 
 There is no middle ground that satisfies both privacy and Russian law. Organizations must choose one strategy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
+- [Russia Vpn Ban Which Services Still Work After Roskomnadzor](/privacy-tools-guide/russia-vpn-ban-which-services-still-work-after-roskomnadzor-/)
+- [Russia Telegram Compliance What Data Telegram Shares With Ru](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)
+- [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
+- [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

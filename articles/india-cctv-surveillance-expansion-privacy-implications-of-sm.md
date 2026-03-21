@@ -3,6 +3,7 @@ layout: default
 title: "India Cctv Surveillance Expansion Privacy Implications Of Sm"
 description: "India has deployed over 28 million CCTV cameras across smart cities with real-time facial recognition and AI tracking integrated into surveillance networks. To"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-cctv-surveillance-expansion-privacy-implications-of-sm/
 categories: [guides]
@@ -190,10 +191,15 @@ The Digital Personal Data Protection Act continues to evolve. Key developments a
 
 However, gaps remain significant. No uniform standard governs AI model training on citizen video data, and interoperability between state surveillance systems creates jurisdictional ambiguity.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
+- [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
+- [India Digilocker Privacy Concerns What Personal Documents Go](/privacy-tools-guide/india-digilocker-privacy-concerns-what-personal-documents-go/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "SSH Server Hardening Config Guide"
 description: "Step-by-step guide to hardening sshd_config on Linux servers. Disable root login, enforce key auth, restrict ciphers, and set up fail2ban"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: ssh-server-hardening-config-guide
 categories: [guides, security]
@@ -281,11 +282,15 @@ For servers with many users, consider `AuthorizedKeysCommand` to fetch keys from
 - Warning banner enabled
 - Log level set to VERBOSE
 
-## Related Reading
 
-- [How to Use SSH Tunneling for Encrypted Communication](/how-to-use-ssh-tunneling-for-encrypted-communication-between)
-- [How to Set Up Password Manager for Home Server SSH Keys](/how-to-set-up-password-manager-for-home-server-ssh-keys)
-- [Air-Gapped Computer Setup for Maximum Security](/air-gapped-computer-setup-for-maximum-security-practical-gui)
+
+## Related Articles
+
+- [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
+- [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
+- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
+- [How To Use Ssh Tunneling For Encrypted Communication Between](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
+- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

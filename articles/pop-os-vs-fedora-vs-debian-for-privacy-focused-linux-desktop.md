@@ -3,6 +3,7 @@ layout: default
 title: "Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop"
 description: "Choose between Pop!OS, Fedora, and Debian for privacy-focused work by comparing their telemetry policies (Debian: none, Fedora: optional Silverblue, Pop!OS"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/
 categories: [guides]
@@ -329,10 +330,15 @@ sudo chattr +i /etc/passwd /etc/shadow /etc/group
 This approach ensures consistent security across distributions.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Debian Minimal Install Guide For Building Privacy Focused De](/privacy-tools-guide/debian-minimal-install-guide-for-building-privacy-focused-de/)
+- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
+- [How To Set Up Secureboot Plus Encryption On Fedora Linux For](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
+- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+- [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

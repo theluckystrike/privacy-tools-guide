@@ -3,6 +3,7 @@ layout: default
 title: "Android Background Location Access Which Apps Track You When"
 description: "Many Android apps track your location in the background even when closed, including weather apps, fitness trackers, social media platforms, and navigation"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /android-background-location-access-which-apps-track-you-when/
 categories: [guides]
@@ -388,10 +389,15 @@ Run this monthly to catch silent permission escalations during app updates.
 Understanding background location access enables you to audit which apps track you when not open and implement practical restrictions. Regular permission reviews, careful app selection, and using Android's built-in privacy controls provide meaningful protection against unnecessary location surveillance while preserving functionality for applications that genuinely need it.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
+- [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
+- [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
+- [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
+- [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

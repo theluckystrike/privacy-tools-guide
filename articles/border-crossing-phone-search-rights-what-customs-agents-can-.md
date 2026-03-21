@@ -3,6 +3,7 @@ layout: default
 title: "Border Crossing Phone Search Rights What Customs Agents Can"
 description: "A practical guide for developers and power users on phone search rights at international borders. Learn what customs agents can legally access"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /border-crossing-phone-search-rights-what-customs-agents-can-/
 categories: [guides]
@@ -482,10 +483,15 @@ echo "=== Device Assessment Complete ==="
 # If anything appears suspicious, consider device compromise
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Prepare Phone For Crossing Border Into High Surveilla](/privacy-tools-guide/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
+- [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [Immigration Checkpoint Device Search Rights What Ice Cbp Can](/privacy-tools-guide/immigration-checkpoint-device-search-rights-what-ice-cbp-can/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

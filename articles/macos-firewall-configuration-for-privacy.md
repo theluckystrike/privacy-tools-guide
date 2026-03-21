@@ -3,6 +3,7 @@ layout: default
 title: "MacOS Firewall Configuration for Privacy"
 description: "Configure macOS firewall for privacy using pf, Application Firewall, and command-line tools. Block trackers, control inbound connections, and secure your"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /macos-firewall-configuration-for-privacy/
 categories: [guides, security]
@@ -215,12 +216,15 @@ When configuring macOS firewall for privacy, avoid these mistakes:
 
 4. **Not testing rules**: Always test new rules in a controlled environment before deploying to production systems.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [macOS Privacy Permissions Manager Guide 2026](/macos-privacy-permissions-manager-guide-2026/)
-- [macOS Spotlight Privacy Settings](/macos-spotlight-privacy-settings-disable-tracking/)
+
+## Related Articles
+
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
+- [WhatsApp Privacy Settings Best Configuration 2026](/privacy-tools-guide/whatsapp-privacy-settings-best-configuration-2026/)
+- [Macos Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

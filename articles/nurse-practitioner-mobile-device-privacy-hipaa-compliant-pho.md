@@ -3,6 +3,7 @@ layout: default
 title: "Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho"
 description: "A practical guide for nurse practitioners setting up HIPAA compliant phones. Covers encryption, MDM solutions, app vetting, and privacy configurations"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/
 categories: [guides]
@@ -171,10 +172,15 @@ Use this checklist when configuring a new HIPAA compliant device:
 9. **Test audit logging** to ensure events capture correctly
 10. **Establish a regular review schedule** for ongoing compliance
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
+- [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
+- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [Bumble Private Detector Ai Scanning Privacy How Uploaded.](/privacy-tools-guide/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)
+- [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -10,6 +10,7 @@ intent-checked: true
 voice-checked: true
 layout: default
 date: 2026-03-15
+last_modified_at: 2026-03-15
 ---
 
 Check if your mail server IP is blacklisted by querying multiple blocklists (Spamhaus, SORBS, Barracuda) using lookup tools or direct DNS queries. Blacklisting occurs from spam complaints, compromised accounts sending malware, or reputation damage from abandoned IPs. Once blacklisted, remediate the underlying issue (enforce authentication, reduce spam complaints), then request delisting from each DNSBL to restore email deliverability.
@@ -314,9 +315,14 @@ v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com
 
 Properly configured SPF, DKIM, and DMARC prevent spoofing and reduce spam complaints, which are the primary blacklisting causes.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
+- [How To Check If Your Email Is Being Forwarded Without Knowle](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
+- [Does Mullvad Work in Turkmenistan? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-work-in-turkmenistan-2026-any-server-works/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

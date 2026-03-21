@@ -3,6 +3,7 @@ layout: default
 title: "Firefox Privacy Settings Guide 2026"
 description: "Master Firefox privacy settings in 2026. This guide covers about:config tweaks, resistFingerprinting, container extensions, and advanced configurations"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /firefox-privacy-settings-guide-2026/
 categories: [guides]
@@ -301,13 +302,15 @@ media.peerconnection.enabled = false
 
 Re-enable this setting only for tabs where you actively use video or voice calling.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
-- [Snapchat Privacy Settings Complete Guide 2026: A.](/privacy-tools-guide/snapchat-privacy-settings-complete-guide-2026/)
-- [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
-- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+
+## Related Articles
+
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
+- [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)
+- [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
+- [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
+- [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

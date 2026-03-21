@@ -3,6 +3,7 @@ layout: default
 title: "Xmpp Omemo Encryption Setup Guide"
 description: "A practical guide to setting up OMEMO encryption for XMPP messaging. Learn how to configure your client, manage identity keys, and achieve end-to-end"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /xmpp-omemo-encryption-setup-guide/
 categories: [guides]
@@ -369,10 +370,15 @@ export ALL_PROXY=socks5://127.0.0.1:9050
 # In-person if possible; phone call minimum
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- More guides coming soon.
+
+## Related Articles
+
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
+- [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
+- [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
+- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
+- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

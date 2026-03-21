@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser Font Fingerprinting Protection"
 description: "Learn how Tor Browser protects against font fingerprinting, the techniques used, and how to configure settings for maximum privacy"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-browser-font-fingerprinting-protection/
 categories: [guides, security]
@@ -360,13 +361,15 @@ Subscribe to:
 
 The threat landscape continuously evolves. New JavaScript APIs (like Font Metrics API) may introduce new vectors requiring Tor Project updates.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Tor Browser Fingerprinting Protection: How It Makes.](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
+
+## Related Articles
+
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
-- [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
+- [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
+- [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

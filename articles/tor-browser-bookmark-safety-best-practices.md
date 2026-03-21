@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser Bookmark Safety Best Practices"
 description: "Learn essential bookmark security practices for Tor Browser to protect your privacy and avoid metadata leaks"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-bookmark-safety-best-practices/
 categories: [guides]
@@ -258,12 +259,15 @@ Avoid bookmarking login pages — any such bookmark reveals your account existen
 By treating bookmarks as persistent metadata rather than transient browser state, you maintain better operational security. These practices align with defense-in-depth principles—each layer adds friction against correlation attacks. Adapt these scripts to your threat model, and remember that bookmark hygiene is one component of a broader Tor Browser usage strategy.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
+
+## Related Articles
+
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
+- [Secure Browsing Habits With Tor Best Practices](/privacy-tools-guide/secure-browsing-habits-with-tor-best-practices/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

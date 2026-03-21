@@ -3,6 +3,7 @@ layout: default
 title: "Register Social Media Accounts Without Providing Real Phone Number or Email"
 description: "Learn privacy-focused methods for creating social media accounts without exposing personal phone numbers or email addresses. Tools, techniques, and code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-register-social-media-accounts-without-providing-real/
 categories: [security]
@@ -244,11 +245,15 @@ The techniques in this guide serve legitimate privacy purposes: protecting perso
 
 Use these methods responsibly. Respect platform terms of service where legal. Consider the potential impact of your actions on platform communities and other users.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [1Password CLI Secrets Management Guide](/1password-cli-secrets-management-guide/)
+
+## Related Articles
+
+- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
+- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
+- [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

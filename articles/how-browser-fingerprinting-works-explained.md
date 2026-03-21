@@ -3,6 +3,7 @@ layout: default
 title: "How Browser Fingerprinting Works Explained"
 description: "A developer-focused explanation of browser fingerprinting techniques, with practical code examples showing how trackers identify users without cookies"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-browser-fingerprinting-works-explained/
 categories: [guides, security]
@@ -281,12 +282,15 @@ Browser selection matters for users concerned about tracking. Some browsers acti
 
 
 
-## Related Reading
 
-- [Remote Work Tools Guide](/remote-work-tools/){: .cross-repo-linked}
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+
+## Related Articles
+
+- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [How to Test if Your Anti-Fingerprinting Setup Actually Works](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)
+- [Tor Circuit: How It Works and Visualization Explained](/privacy-tools-guide/tor-circuit-how-it-works-visualization-explained/)
+- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
+- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

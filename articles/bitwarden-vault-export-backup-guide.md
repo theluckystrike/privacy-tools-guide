@@ -3,6 +3,7 @@ layout: default
 title: "Bitwarden Vault Export Backup Guide"
 description: "A practical guide to exporting and backing up your Bitwarden vault. Learn CLI methods, automation scripts, and recovery strategies for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /bitwarden-vault-export-backup-guide/
 categories: [guides, security]
@@ -204,11 +205,15 @@ bw send --file ~/secret-document.txt --max-access-count 1
 
 This generates a link that works once, then disappears—useful for sharing recovery keys or emergency credentials with trusted contacts.
 
-## Related Reading
 
-- [Best Password Manager for Small Business: A Developer Guide](/privacy-tools-guide/best-password-manager-for-small-business/)
-- [1Password Watchtower Feature Review: A Developer's Guide](/privacy-tools-guide/1password-watchtower-feature-review/)
-- [Best Password Manager for Developers: A Practical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+
+## Related Articles
+
+- [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
+- [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
+- [Bitwarden Web Vault vs Desktop App Comparison](/privacy-tools-guide/bitwarden-web-vault-vs-desktop-app-comparison/)
+- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your Address"
 description: "A practical guide to using email subaddressing and addressing techniques to track which services leak your email address. Perfect for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/
 categories: [guides, security]
@@ -179,10 +180,15 @@ class EmailAliasManager {
 
 This approach creates discoverable aliases that include service name, purpose, and a timestamp for uniqueness while remaining readable.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [WebRTC Local IP Leak: How It Reveals Your Real Address](/privacy-tools-guide/webrtc-local-ip-leak-how-it-reveals-your-real-address/)
+- [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
+- [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
+- [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
+- [Someone Signed Up for Services Using My Email — What to Do](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model For Religious Minority In Persecuting Country D"
 description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers risk assessment, encryption strategies, communication"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-religious-minority-in-persecuting-country-d/
 categories: [guides]
@@ -178,10 +179,15 @@ Religious communities benefit from coordinated security practices:
 - **Distributed trust**: No single point of failure in leadership communication
 - **Deniable communication channels**: Have backup plans when primary tools are blocked
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
+- [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

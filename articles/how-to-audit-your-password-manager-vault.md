@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit Your Password Manager Vault: A Practical Guide"
 description: "Learn how to audit your password manager vault with CLI tools and automated scripts. Find weak passwords, reused credentials, and security gaps"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-audit-your-password-manager-vault/
 categories: [guides, security]
@@ -320,11 +321,15 @@ Beyond passwords, review these vault components:
 
 **Attachments**: Review large files stored in your vault. Consider moving these to dedicated encrypted storage solutions.
 
-## Related Reading
 
-- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Password Rotation Policy Best Practices: A Developer's Guide.](/privacy-tools-guide/password-rotation-policy-best-practices-2026/)
+
+## Related Articles
+
+- [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
+- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
+- [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
+- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How To Delete Old Social Media Accounts"
 description: "Learn how to permanently delete old social media accounts with step-by-step instructions, automation scripts, and privacy-focused tools. Includes code"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-delete-old-social-media-accounts/
 categories: [guides, security]
@@ -271,13 +272,15 @@ Some platforms resist deletion requests:
 
 Document all correspondence for regulatory complaints or potential litigation.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Prepare Social Media Accounts for.](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
-- [How to Create Anonymous Social Media Accounts: A.](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
-- [How to Safely Exchange Social Media Handles with Dating.](/privacy-tools-guide/how-to-safely-exchange-social-media-handles-with-dating-matc/)
+
+## Related Articles
+
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
+- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

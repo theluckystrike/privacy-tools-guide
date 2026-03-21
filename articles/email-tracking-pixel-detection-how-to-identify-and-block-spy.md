@@ -3,6 +3,7 @@ layout: default
 title: "Email Tracking Pixel Detection"
 description: "Learn technical methods to detect, identify, and block email tracking pixels. Practical code examples for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /email-tracking-pixel-detection-how-to-identify-and-block-spy/
 categories: [security, guides]
@@ -219,13 +220,15 @@ Start by configuring your email client to block external images by default. This
 
 The arms race between privacy tools and tracking technologies continues, but understanding how tracking pixels operate puts you in control. Whether you choose simple client settings or custom-built filtering systems, detecting and blocking these invisible spies represents a meaningful step toward reclaiming your email privacy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
 - [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
-- [How to Detect and Block Hidden Third-Party Trackers on.](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
-- [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
+- [Wifi Deauthentication Attack Detection How To Identify And P](/privacy-tools-guide/wifi-deauthentication-attack-detection-how-to-identify-and-p/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

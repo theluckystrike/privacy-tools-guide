@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup For Immigration Activist Protecting Undocument"
 description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-immigration-activist-protecting-undocument/
 categories: [guides, security]
@@ -243,10 +244,15 @@ Prepare for potential device seizure or account compromise:
 3. **Maintain encrypted backups** - Offline backups prevent data loss from remote wipe
 4. **Establish pre-agreed communication plans** - If detained, how do others know?
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup for Immigration Activist](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocumented/)
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
+- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
+- [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

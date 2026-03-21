@@ -3,6 +3,7 @@ layout: default
 title: "Brave Browser Crypto Features Disable Guide"
 description: "A practical guide for developers and power users on how to disable built-in cryptocurrency features in Brave Browser for enhanced privacy and security"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /brave-browser-crypto-features-disable-guide/
 reviewed: true
@@ -202,13 +203,15 @@ However, consider the tradeoffs before disabling everything. IPFS, for instance,
 
 **Performance degradation persists**: Background processes may continue even after UI disabling. Use process monitoring tools to verify crypto-related processes terminate completely.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
-- [How to Disable WebRTC Leaks in Tor Browser: A Developer's Guide](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
-- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+
+## Related Articles
+
+- [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
+- [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
+- [Brave Browser Honest Review 2026](/privacy-tools-guide/brave-browser-honest-review-2026/)
+- [Brave Browser Vs Edge Privacy Comparison 2026](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
+- [How to Disable WebRTC Leaks in Tor Browser](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

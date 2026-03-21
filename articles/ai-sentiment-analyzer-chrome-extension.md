@@ -3,6 +3,7 @@ layout: default
 title: "Ai Sentiment Analyzer Chrome Extension"
 description: "Discover privacy-focused AI sentiment analyzer Chrome extensions that analyze text emotion locally. Compare top tools, understand their data handling"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /ai-sentiment-analyzer-chrome-extension/
 categories: [guides]
@@ -228,11 +229,15 @@ python -c "from transformers import pipeline; \
     print(p('I love this tool'))"
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
+## Related Articles
+
+- [Chrome Extension File Sharing Quick Upload](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
+- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
+- [Browser Extension Permissions What To Watch](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
+- [Canvas Blocker Extension How It Works And Performance Impact](/privacy-tools-guide/canvas-blocker-extension-how-it-works-and-performance-impact/)
+- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

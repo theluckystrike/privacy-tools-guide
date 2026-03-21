@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Fatigue Solutions: How to Make Privacy Easier Guide"
 description: "Practical strategies and tools to overcome privacy fatigue. Learn automation techniques, privacy-focused tooling, and habits that reduce cognitive load"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /privacy-fatigue-solutions-how-to-make-privacy-easier-guide/
 categories: [guides]
@@ -194,10 +195,15 @@ Write down your privacy configuration. A simple markdown file in your dotfiles r
 
 Documentation eliminates the need to remember configuration details. When something breaks or you need to rebuild your setup, the documentation guides you through it.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
+- [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [How To Make Facebook Profile Private 2026](/privacy-tools-guide/how-to-make-facebook-profile-private-2026/)
+- [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
+- [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

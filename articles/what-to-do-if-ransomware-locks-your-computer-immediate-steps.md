@@ -3,6 +3,7 @@ layout: default
 title: "What To Do If Ransomware Locks Your Computer Immediate Steps"
 description: "Ransomware attacks can happen to anyone—whether you're a developer with sensitive projects or a power user with critical data. The moment your screen freezes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-ransomware-locks-your-computer-immediate-steps/
 categories: [guides]
@@ -203,10 +204,15 @@ For developers, consider implementing a git-based backup system for code:
 git clone --bare /path/to/your/project /Volumes/BackupDrive/project-backup.git
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
+- [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
+- [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
+- [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

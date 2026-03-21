@@ -3,6 +3,7 @@ layout: default
 title: "Air Gapped Computer Setup For Maximum Security Practical Gui"
 description: "To set up an air-gapped computer for maximum security, you need dedicated hardware with all wireless capabilities disabled, a hardened OS like Tails or Qubes"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /air-gapped-computer-setup-for-maximum-security-practical-gui/
 categories: [guides]
@@ -183,10 +184,15 @@ A developer working with sensitive cryptographic keys might structure their work
 
 This workflow ensures private keys never exist on a network-connected machine while maintaining productive development capability.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [How to Use Tails OS for Maximum Privacy Complete Setup Guide](/privacy-tools-guide/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
+- [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [Migrating from Sticky Password to Bitwarden: A Guide](/privacy-tools-guide/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

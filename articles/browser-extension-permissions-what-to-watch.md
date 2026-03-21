@@ -3,6 +3,7 @@ layout: default
 title: "Browser Extension Permissions What To Watch"
 description: "Learn which browser extension permissions pose security risks and how to evaluate them. Practical guide for developers and power users on"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /browser-extension-permissions-what-to-watch/
 categories: [guides]
@@ -259,13 +260,15 @@ Verify extension authenticity using Chrome's extension ID (which is deterministi
 
 Malicious actors often create lookalike extensions with similar names. The extension ID is your primary verification tool.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
-- [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
-- [How to Disable WebRTC Leaks in Tor Browser: A Developer's Guide](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
+
+## Related Articles
+
+- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
+- [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
+- [Ai Sentiment Analyzer Chrome Extension](/privacy-tools-guide/ai-sentiment-analyzer-chrome-extension/)
+- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

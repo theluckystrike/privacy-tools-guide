@@ -3,6 +3,7 @@ layout: default
 title: "Secure Document Collaboration Alternatives to Google."
 description: "When you need to collaborate on sensitive documents, Google Docs offers convenience but falls short on privacy. Most 'collaborative' document tools store your"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /secure-document-collaboration-alternatives-to-google-docs-wi/
 categories: [guides]
@@ -173,12 +174,15 @@ The common thread across all these options is that the encryption happens in you
 For developers and power users who value privacy, these alternatives prove that you do not have to choose between collaboration convenience and data security. The tools exist, they work, and they are actively maintained by communities that understand what genuine end-to-end encryption means.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
-- [Cryptomator vs VeraCrypt for Cloud Encryption: A.](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
-- [Secure Communication Plan Template for Organizations.](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
+
+## Related Articles
+
+- [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
+- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
+- [Encrypted Collaboration Tools For Remote Teams That Respect](/privacy-tools-guide/encrypted-collaboration-tools-for-remote-teams-that-respect-/)
+- [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

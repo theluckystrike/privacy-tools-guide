@@ -3,6 +3,7 @@ layout: default
 title: "Bitwarden Custom Fields Usage Guide"
 description: "To use Bitwarden custom fields, open any vault item, scroll to the 'Custom Fields' section, and click 'Add Item' to create Text (visible metadata), Hidden"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /bitwarden-custom-fields-usage-guide/
 reviewed: true
@@ -296,11 +297,15 @@ Track credential usage for compliance:
 
 Document this in custom fields for regulatory audits.
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+
+## Related Articles
+
+- [Iran Vpn Usage Risks Legal Consequences And How To Minimize](/privacy-tools-guide/iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
+- [Firefox Strict Tracking Protection Vs Custom](/privacy-tools-guide/firefox-strict-tracking-protection-vs-custom/)
+- [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

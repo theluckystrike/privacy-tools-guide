@@ -3,6 +3,7 @@ layout: default
 title: "Restrict Alexa Skills From Accessing Unnecessary Personal Data Permissions"
 description: "A practical guide for developers and power users to restrict Alexa skills from accessing unnecessary personal data. Learn permission management"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/
 categories: [guides, security]
@@ -291,9 +292,14 @@ Regularly audit what skills are actually doing:
 Many power users maintain a spreadsheet tracking each skill, its permissions, and last used date. This documentation helps quickly identify and remove problematic skills.
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
+- [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
+- [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
+- [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

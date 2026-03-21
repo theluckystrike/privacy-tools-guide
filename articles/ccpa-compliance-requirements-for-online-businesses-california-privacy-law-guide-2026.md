@@ -3,6 +3,7 @@ layout: default
 title: "Ccpa Compliance Requirements For Online Businesses California Privacy Law"
 description: "A practical developer guide to CCPA compliance for online businesses. Learn about consumer rights, data handling requirements, technical"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/
 categories: [guides]
@@ -328,10 +329,15 @@ Start with the data inventory—without knowing what you collect, you cannot beg
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
+- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
+- [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
+- [Russia Yarovaya Law Mass Surveillance Requirements What Tele](/privacy-tools-guide/russia-yarovaya-law-mass-surveillance-requirements-what-tele/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

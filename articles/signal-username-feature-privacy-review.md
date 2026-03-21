@@ -3,6 +3,7 @@ layout: default
 title: "Signal Username Feature Privacy Review"
 description: "Signal Username Feature Privacy Review — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in 2026"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "theluckystrike"
 permalink: /signal-username-feature-privacy-review/
 reviewed: true
@@ -190,10 +191,14 @@ class SignalRateLimiter:
         self.requests.append(time.time())
 ```
 
-## Related Reading
 
-- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+
+## Related Articles
+
+- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
+- [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
+- [Tinder Passport Feature Privacy Implications What Location D](/privacy-tools-guide/tinder-passport-feature-privacy-implications-what-location-d/)
+- [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
+- [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

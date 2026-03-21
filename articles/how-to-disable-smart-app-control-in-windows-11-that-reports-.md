@@ -3,6 +3,7 @@ layout: default
 title: "How To Disable Smart App Control In Windows 11 That Reports"
 description: "A practical guide for developers and power users to disable Windows 11 Smart App Control through Settings, Group Policy, and Registry modifications"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-disable-smart-app-control-in-windows-11-that-reports-/
 categories: [guides]
@@ -164,10 +165,15 @@ Remove-ItemProperty -Path $registryPath -Name "EnableSmartAppControl" -ErrorActi
 
 After removing the registry entry and restarting, Windows will restore SAC to its default behavior based on your system configuration.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
+- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
@@ -389,4 +395,3 @@ Create a decision matrix for your organization:
 
 Your choice depends on your threat model versus privacy requirements.
 
-## Related Reading

@@ -3,6 +3,7 @@ layout: default
 title: "Simplex Chat Review: No Identifiers Architecture Analysis"
 description: "Simplex Chat is worth it if metadata protection is your top priority. It is the only production messaging app that operates without any persistent user"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /simplex-chat-review-no-identifiers/
 categories: [guides]
@@ -219,10 +220,14 @@ msgs <- pollMessages addr
 
 The protocol specifications are open, enabling verification and custom implementations.
 
-## Related Reading
 
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+
+## Related Articles
+
+- [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
+- [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
+- [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
+- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

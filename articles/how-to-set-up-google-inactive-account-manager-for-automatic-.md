@@ -3,6 +3,7 @@ layout: default
 title: "Set Up Google Inactive Account Manager for Automatic Data Transfer After Death"
 description: "A technical guide for developers and power users on configuring Google Inactive Account Manager to automatically transfer data to trusted contacts when"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-google-inactive-account-manager-for-automatic-/
 categories: [guides, security]
@@ -219,10 +220,15 @@ Google's solution handles one piece of the puzzle—coordinate it with broader d
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Automatic Account Deletion Triggers If You Bec](/privacy-tools-guide/how-to-set-up-automatic-account-deletion-triggers-if-you-bec/)
+- [Twitter X Account After Death: How to Request.](/privacy-tools-guide/twitter-x-account-after-death-how-to-request-memorialization/)
+- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
+- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

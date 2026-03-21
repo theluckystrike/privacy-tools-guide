@@ -3,6 +3,7 @@ layout: default
 title: "Captive Portal Alternative Avoid WiFi Harvesting."
 description: "A technical guide for developers and power users to bypass captive portals without exposing personal data. Learn alternative methods to access WiFi"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /captive-portal-alternative-avoid-wifi-harvesting-personal-da/
 categories: [guides]
@@ -191,10 +192,15 @@ The optimal approach depends on your specific constraints:
 
 For most developers, combining methods works best: test HTTPS probe first, then fall back to DNS tunneling or mobile hotspot if needed.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
+- [Password Manager For Insurance Agent Managing Carrier Portal](/privacy-tools-guide/password-manager-for-insurance-agent-managing-carrier-portal/)
+- [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
+- [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
+- [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser for Journalists Safety Guide 2026"
 description: "A technical guide to Tor Browser configuration for journalists. Learn advanced security settings, configuration tweaks, and best"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-for-journalists-safety-guide-2026/
 categories: [guides, security]
@@ -180,12 +181,15 @@ sha256sum document.pdf
 
 **Ignoring Tor Browser warnings**: The browser displays warnings for potentially dangerous configurations. Take these seriously—bypassing them often leads to de-anonymization.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-- [Tor Browser NoScript Settings Recommended 2026: A Practical Guide](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
+- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

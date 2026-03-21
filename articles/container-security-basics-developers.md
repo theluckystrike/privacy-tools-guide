@@ -3,6 +3,7 @@ layout: default
 title: "Container Security Basics for Developers"
 description: "Practical container security for developers. Covers image hardening, non-root users, secrets management, network policies, and runtime security."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: container-security-basics-developers
 categories: [guides, security]
@@ -328,11 +329,15 @@ Falco detects events like:
 - [ ] Health checks defined
 - [ ] Container logs shipped to centralized logging
 
-## Related Reading
 
-- [WireGuard Container Setup Docker Network Namespace Isolation](/wireguard-container-setup-docker-network-namespace-isolation)
-- [Air-Gapped Computer Setup for Maximum Security](/air-gapped-computer-setup-for-maximum-security-practical-gui)
-- [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
+
+## Related Articles
+
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [Proton Pass vs Bitwarden Security Comparison for Developers](/privacy-tools-guide/proton-pass-vs-bitwarden-security-comparison/)
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
+- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
+- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

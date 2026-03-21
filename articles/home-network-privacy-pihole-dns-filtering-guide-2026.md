@@ -3,6 +3,7 @@ layout: default
 title: "Home Network Privacy Pihole Dns Filtering Guide 2026"
 description: "Complete guide to setting up Pi-hole for network-wide ad blocking and DNS privacy filtering with installation and configuration steps"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /home-network-privacy-pihole-dns-filtering-guide-2026/
 categories: [guides, security]
@@ -618,9 +619,15 @@ Schedule automated blocklist updates through Pi-hole's built-in gravity update m
 When evaluating new blocklists, test in a staging configuration before enabling network-wide. Import the list, monitor the query log for 24 hours, and review which domains it blocks. Good blocklists block ad servers and trackers without touching CDNs, analytics that users have consented to, or first-party service domains.
 
 
-## Related Reading
 
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
+- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
+- [Is Someone Monitoring My Home WiFi Network? How to Check](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
+- [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

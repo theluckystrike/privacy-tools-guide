@@ -3,6 +3,7 @@ layout: default
 title: "How to Verify Your VPN is Not Leaking DNS Requests in 2026"
 description: "A practical guide to detecting and fixing DNS leaks in your VPN connection. Learn what DNS leaks are, how to test for them, and what to do if your VPN"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /how-to-verify-your-vpn-is-not-leaking-dns-requests/
 categories: [guides]
@@ -202,10 +203,15 @@ Beyond fixing leaks, consider these additional measures:
 - **Regularly test your VPN**: Network changes, app updates, or OS updates can introduce new leak vectors
 - **Keep your VPN app updated**: Providers frequently release patches for security issues
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
+- [Verify Your VPN Is Actually Bypassing Censorship (Not Leaking Your Real Locat...](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
+- [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
+- [Verify Your Browser is Not Leaking Information](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

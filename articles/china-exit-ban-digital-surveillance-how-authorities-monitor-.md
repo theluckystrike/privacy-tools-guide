@@ -3,6 +3,7 @@ layout: default
 title: "China Exit Ban Digital Surveillance How Authorities Monitor"
 description: "Understand how Chinese authorities use digital surveillance to monitor travel plans, enforce exit bans, and track online activity. Technical deep-dive"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-exit-ban-digital-surveillance-how-authorities-monitor-/
 categories: [security, guides]
@@ -356,10 +357,15 @@ Modern privacy architecture increasingly focuses on metadata protection—not ju
 
 Understanding how systems like China's exit ban monitoring work isn't just academic—it's essential for building applications that respect user privacy in an era of ubiquitous surveillance infrastructure. Whether you're a developer building privacy tools or a user navigating restricted regions, awareness of these mechanisms informs better decision-making.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [China Wechat Surveillance What Messages And Activity Tencent](/privacy-tools-guide/china-wechat-surveillance-what-messages-and-activity-tencent/)
+- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [Baby Monitor Security And Privacy How To Prevent.](/privacy-tools-guide/baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/)
+- [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
+- [Tenant Privacy Rights: What Landlords Can Legally Monitor](/privacy-tools-guide/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

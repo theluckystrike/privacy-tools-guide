@@ -10,6 +10,7 @@ intent-checked: true
 voice-checked: true
 layout: default
 date: 2026-03-15
+last_modified_at: 2026-03-15
 ---
 
 Check for email compromise immediately by verifying unfamiliar login locations in account activity logs, reviewing password reset emails you didn't send, and checking connected apps and recovery email addresses. If compromised, change your password from a different device, enable two-factor authentication, disconnect suspicious sessions, and reset passwords on critical accounts (banking, cryptocurrency, cloud storage). Email compromise is a gateway to your entire digital identity, so treating it as a critical emergency is essential.
@@ -277,9 +278,14 @@ Or check manually: Gmail Settings → See all settings → Filters tab, then che
 | **Yahoo** | Security → Recent activity | Security → 2-Step Verification |
 | **iCloud Mail** | Mail Settings → Accounts | Apple ID → Security |
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Tell If Your Webcam Has Been Hacked: Indicator Signs](/privacy-tools-guide/how-to-tell-if-your-webcam-has-been-hacked-indicator-signs/)
+- [What to Do If Your Amazon Account Was Hacked: Recovery Guide](/privacy-tools-guide/what-to-do-if-your-amazon-account-was-hacked-recovery/)
+- [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
+- [How To Create Untraceable Email Account Using Tor Vpn And An](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
+- [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

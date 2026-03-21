@@ -3,6 +3,7 @@ layout: default
 title: "How To Check Your Browser Fingerprint Uniqueness Score Onlin"
 description: "Learn how to check your browser fingerprint uniqueness score with online tools. Practical guide for developers and power users to measure browser"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-your-browser-fingerprint-uniqueness-score-onlin/
 categories: [guides, security]
@@ -236,10 +237,15 @@ Set `privacy.resistFingerprinting = true` in about:config to normalize many expo
 
 **Limit installed extensions** as they add to your fingerprint.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Check If Your Social Security Number Was Leaked Onlin](/privacy-tools-guide/how-to-check-if-your-social-security-number-was-leaked-onlin/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
+- [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
+- [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

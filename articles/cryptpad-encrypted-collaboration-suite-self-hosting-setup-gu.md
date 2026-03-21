@@ -3,6 +3,7 @@ layout: default
 title: "Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu"
 description: "Learn how to self-host CryptPad for end-to-end encrypted document collaboration. This practical guide covers Docker deployment, configuration, security"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/
 categories: [guides, security]
@@ -266,10 +267,15 @@ For teams exceeding 50 users, adjust these settings in `customize/config.json`:
 
 Consider enabling Redis for session management in high-load scenarios by adding a Redis service to your compose file and configuring `customize/redis.json`.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
+- [Encrypted Collaboration Tools For Remote Teams That Respect](/privacy-tools-guide/encrypted-collaboration-tools-for-remote-teams-that-respect-/)
+- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
+- [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
+- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

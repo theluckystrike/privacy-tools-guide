@@ -3,6 +3,7 @@ layout: default
 title: "How To Safely Exchange Social Media Handles With Dating Matc"
 description: "A technical guide for developers and power users on exchanging social media handles with dating matches while protecting privacy. Covers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-safely-exchange-social-media-handles-with-dating-matc/
 categories: [guides, security]
@@ -313,10 +314,15 @@ If you share a handle and later regret it:
 
 Your digital privacy is not about paranoia—it is about maintaining control over your personal narrative. The strategies in this guide provide layers of protection that work for varying threat levels and comfort zones.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
+- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
+- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

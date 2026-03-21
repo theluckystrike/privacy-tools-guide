@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model For Corporate Whistleblower Protecting Evidence"
 description: "A practical threat modeling guide for corporate whistleblowers. Learn to protect evidence, secure communications, and maintain anonymity using proven"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
 categories: [guides, security]
@@ -321,10 +322,15 @@ echo ""
 echo "All systems functional. Ready for deployment."
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
+- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Threat Model For Transgender Person Protecting Deadname And](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
+- [Threat Model for Undocumented Immigrant Protecting.](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

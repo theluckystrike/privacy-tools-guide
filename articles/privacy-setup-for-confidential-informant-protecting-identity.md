@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Setup for Confidential Informant"
 description: "A practical guide to privacy setup for confidential informant protection. Learn technical strategies, tools, and code examples to protect your identity"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-confidential-informant-protecting-identity/
 categories: [guides, security]
@@ -503,12 +504,15 @@ Prepare for worst-case scenarios:
 
 The CI protection setup must be continuously updated as threats evolve and new vulnerabilities are discovered. Regular security audits and threat reassessments are non-negotiable for maintaining protection.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Setup for Safe House: Protecting Location from.](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
-- [Privacy Setup for Immigration Activist: Protecting.](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
-- [Signal Number Privacy Workaround Guide: Protecting Your.](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
+
+## Related Articles
+
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
+- [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
+- [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

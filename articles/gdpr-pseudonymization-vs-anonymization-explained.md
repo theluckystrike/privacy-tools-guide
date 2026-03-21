@@ -3,6 +3,7 @@ layout: default
 title: "Gdpr Pseudonymization Vs Anonymization Explained"
 description: "Pseudonymization replaces identifiers with tokens while keeping a reversible mapping, so the data remains personal data under GDPR. Anonymization irreversibly"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-pseudonymization-vs-anonymization-explained/
 categories: [guides, security]
@@ -312,11 +313,15 @@ Document your technique choice for GDPR Article 30 records of processing:
 **Validation**: Annual third-party audit confirms irreversibility
 ```
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+
+## Related Articles
+
+- [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
+- [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Ccpa Vs Gdpr Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
+- [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

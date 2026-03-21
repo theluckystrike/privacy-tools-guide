@@ -3,6 +3,7 @@ layout: default
 title: "Android Work Profile Privacy Separation Guide"
 description: "Learn how to implement and manage Android Work Profiles for complete privacy separation between personal and work data. Technical guide for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /android-work-profile-privacy-separation-guide/
 categories: [guides, security]
@@ -192,12 +193,15 @@ Work Profile provides data separation, not complete isolation. Be aware of these
 
 For threat models requiring defense against sophisticated adversaries, consider dedicated hardware solutions or fully separate devices rather than relying solely on Work Profile isolation.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Android App Permissions Audit Guide](/android-app-permissions-audit-guide-2026/)
-- [Android Privacy Best Practices 2026](/android-privacy-best-practices-2026/)
+
+## Related Articles
+
+- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [Android Notification Privacy: How to Hide Sensitive.](/privacy-tools-guide/android-notification-privacy-how-to-hide-sensitive-content-o/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

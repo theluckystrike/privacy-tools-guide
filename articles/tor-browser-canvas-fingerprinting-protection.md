@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser Canvas Fingerprinting Protection"
 description: "A guide to understanding how Tor Browser protects against canvas fingerprinting. Learn about Tor's built-in protections, configuration settings, and best"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-canvas-fingerprinting-protection/
 categories: [guides, security]
@@ -391,12 +392,15 @@ If fingerprinting detection shows persistent identifiers:
 - Verify privacy.resistFingerprinting is enabled in about:config
 - Consider using Tails OS for even stronger isolation
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Tor Browser Screen Size Fingerprint Protection: A.](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
-- [How to Block Canvas Fingerprinting in Your Browser: A.](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
-- [Tor Browser Font Fingerprinting Protection: A Technical Guide](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
+
+## Related Articles
+
+- [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
+- [Tor Browser Font Fingerprinting Protection](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
+- [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

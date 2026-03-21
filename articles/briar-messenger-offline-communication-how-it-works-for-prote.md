@@ -3,6 +3,7 @@ layout: default
 title: "Briar Messenger Offline Communication"
 description: "When traditional communication networks fail—whether through infrastructure shutdowns, internet blackouts, or deliberate throttling—activists and organizers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /briar-messenger-offline-communication-how-it-works-for-prote/
 categories: [guides]
@@ -179,10 +180,15 @@ For developers building tools that integrate with or extend Briar's capabilities
 
 Developers can examine the source code on GitHub to understand the exact security implementations, though full protocol documentation for custom integrations remains limited.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
+- [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
+- [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
+- [Email Provider Jurisdiction Comparison Which Countries Prote](/privacy-tools-guide/email-provider-jurisdiction-comparison-which-countries-prote/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

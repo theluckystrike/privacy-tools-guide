@@ -3,6 +3,7 @@ layout: default
 title: "Signal Protocol Explained for Developers"
 description: "A developer-focused explanation of the Signal Protocol's cryptographic mechanisms, including Double Ratchet Algorithm, X3DH key agreement, and practical"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /signal-protocol-explained-for-developers/
 categories: [guides, security]
@@ -226,11 +227,15 @@ Developers new to Signal-style protocols often make these errors:
 3. Ignoring signature verification: always verify signed prekeys belong to the claimed identity
 4. Weak random number generation: use cryptographically secure RNG for all key generation
 
-## Related Reading
 
-- [Telegram vs Signal: Which Is Actually Safer? A Technical Comparison](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [End-to-End Encryption Basics for Application Developers](/privacy-tools-guide/end-to-end-encryption-basics-for-developers/)
+
+## Related Articles
+
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
+- [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
+- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
+- [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

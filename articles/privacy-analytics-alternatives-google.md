@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Alternatives to Google Analytics"
 description: "Compare Plausible, Umami, Matomo, and Fathom as Google Analytics replacements. Covers self-hosted setup, GDPR compliance, and feature gaps."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: privacy-analytics-alternatives-google
 categories: [guides, privacy]
@@ -235,11 +236,15 @@ curl -s https://yoursite.com | grep -E "googletagmanager|google-analytics|gtag"
 
 If results appear, a tag manager or plugin is still injecting GA. Find and remove it.
 
-## Related Reading
 
-- [How to Configure Google Analytics Alternative for GDPR Compliance](/how-to-configure-google-analytics-alternative-for-gdpr-compl)
-- [Small Business Privacy Audit Checklist](/small-business-privacy-audit-checklist)
-- [Privacy-Focused DNS Providers Comparison](/privacy-focused-dns-providers-comparison)
+
+## Related Articles
+
+- [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
+- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
+- [How To Configure Google Analytics Alternative For Gdpr Compl](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
+- [Secure Document Collaboration Alternatives to Google.](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

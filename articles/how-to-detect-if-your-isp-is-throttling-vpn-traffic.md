@@ -3,6 +3,7 @@ layout: default
 title: "How to Detect If Your ISP Is Throttling VPN Traffic"
 description: "A technical guide for developers and power users to identify and diagnose VPN traffic throttling by your Internet Service Provider"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-your-isp-is-throttling-vpn-traffic/
 categories: [guides]
@@ -287,10 +288,15 @@ Document throttling for potential complaints to regulatory bodies:
 **Conclusion**: Selective throttling of non-standard ports indicates deliberate VPN targeting
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
+- [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
+- [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

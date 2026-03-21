@@ -3,6 +3,7 @@ layout: default
 title: "Complete Guide To Social Engineering Defense Protecting Pers"
 description: "Learn practical social engineering defense strategies for developers and power users. This guide covers psychological manipulation tactics, real-world"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /complete-guide-to-social-engineering-defense-protecting-pers/
 categories: [guides]
@@ -203,10 +204,15 @@ When you suspect a social engineering attempt:
 4. **Verify** through independent channels if the request might be legitimate
 5. **Alert** colleagues who might be targeted
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Withdraw Crypto from Exchange Without Linking to Personal Bank Account](/privacy-tools-guide/how-to-withdraw-crypto-from-exchange-without-linking-to-pers/)
+- [Privacy Engineering Hiring Guide What Skills To Look For.](/privacy-tools-guide/privacy-engineering-hiring-guide-what-skills-to-look-for-in-privacy-team/)
+- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [Ethereum Wallet Inheritance: Using Social Recovery Smart.](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

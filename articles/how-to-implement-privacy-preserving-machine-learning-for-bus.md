@@ -3,6 +3,7 @@ layout: default
 title: "Implement Privacy Preserving Machine Learning"
 description: "A practical guide for developers and power users implementing privacy-preserving ML in business analytics. Covers differential privacy, federated"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/
 categories: [guides]
@@ -216,10 +217,15 @@ The fundamental challenge is balancing privacy guarantees with model accuracy. H
 - Consider local differential privacy for stronger guarantees
 - Test utility on holdout data before production deployment
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
+- [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)
+- [Federated Learning Cohorts: FLoC Replacement Explained](/privacy-tools-guide/federated-learning-cohorts-floc-replacement-what-happened-ex/)
+- [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
+- [How To Implement Customer Data Encryption At Rest And In Tra](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

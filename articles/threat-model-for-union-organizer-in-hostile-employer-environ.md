@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model For Union Organizer In Hostile Employer Environ"
 description: "A technical guide for union organizers to build threat models when operating in hostile employer environments. Includes practical"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-union-organizer-in-hostile-employer-environ/
 categories: [guides]
@@ -196,10 +197,15 @@ Threat models require regular updates as conditions change. Schedule quarterly r
 
 Document these reviews and adjust countermeasures accordingly. Security is an ongoing process, not an one-time configuration.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)
+- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

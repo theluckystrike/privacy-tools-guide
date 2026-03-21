@@ -3,6 +3,7 @@ layout: default
 title: "Screen Resolution Fingerprinting Why Changing Display Settin"
 description: "Websites use the JavaScript screen object to collect your screen resolution, color depth, and pixel ratio, combining these with other browser properties to"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /screen-resolution-fingerprinting-why-changing-display-settin/
 categories: [guides, security]
@@ -375,10 +376,15 @@ For developers building privacy tools, understanding these techniques helps crea
 
 Your display settings matter more than they might initially seem. The pixels on your screen create a digital signature that websites can and do exploit. By understanding how this works and implementing appropriate countermeasures, you take meaningful steps toward reclaiming your online privacy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
+- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
+- [Secure Screen Sharing Tools That Encrypt Video Stream End To](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
+- [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
+- [What To Do If You Accidentally Shared Screen With Sensitive](/privacy-tools-guide/what-to-do-if-you-accidentally-shared-screen-with-sensitive-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

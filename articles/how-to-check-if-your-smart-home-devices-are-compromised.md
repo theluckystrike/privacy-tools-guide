@@ -3,6 +3,7 @@ layout: default
 title: "How to Check if Your Smart Home Devices Are Compromised"
 description: "A technical guide for developers and power users to detect compromised smart home devices through network analysis, log inspection, and security auditing"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-check-if-your-smart-home-devices-are-compromised/
 categories: [guides]
@@ -185,10 +186,15 @@ Smart home security requires ongoing attention. Establishing regular audit routi
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Verify Your Devices Are Not Compromised: A Complete Audit](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
+- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

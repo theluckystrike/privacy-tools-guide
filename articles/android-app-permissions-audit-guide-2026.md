@@ -3,6 +3,7 @@ layout: default
 title: "Android App Permissions Audit Guide 2026"
 description: "A guide to auditing Android app permissions in 2026. Learn how to review, manage, and control app access using ADB, Play Store insights"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /android-app-permissions-audit-guide-2026/
 categories: [guides, security]
@@ -215,13 +216,15 @@ Implement these practices to maintain tight permission control:
 5. Remove unused apps Uninstall applications no longer in use rather than leaving them installed
 6. Check background access Android's Privacy Dashboard shows which apps accessed sensitive permissions recently
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How to Audit Android App Permissions and Revoke.](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
-- [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
-- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
+
+## Related Articles
+
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

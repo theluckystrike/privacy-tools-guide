@@ -3,6 +3,7 @@ layout: default
 title: "How To Rotate Encryption Keys In Messaging Apps Without Losi"
 description: "A practical guide for developers and power users on rotating encryption keys in messaging apps while preserving chat history. Covers Signal, WhatsApp"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-rotate-encryption-keys-in-messaging-apps-without-losi/
 categories: [guides]
@@ -216,10 +217,15 @@ WhatsApp: "Number changed" for new device installations
 Custom apps: Display explicit "Key rotated" banner with verification option
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
+- [Post Quantum Encryption In Messaging Apps Preparing For Quan](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
+- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
+- [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)
+- [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

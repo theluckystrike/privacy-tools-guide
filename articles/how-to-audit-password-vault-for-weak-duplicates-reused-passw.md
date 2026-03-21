@@ -3,6 +3,7 @@ layout: default
 title: "Audit Password Vault for Weak, Duplicate, and Reused"
 description: "Learn practical methods to audit your password vault for weak passwords, duplicates, and reused credentials. Includes code examples and automated checking"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-password-vault-for-weak-duplicates-reused-passw/
 categories: [guides]
@@ -282,13 +283,15 @@ rm vault_export.json
 
 Consider using a dedicated machine or container for auditing to isolate the process from your daily workflow. Disable network access during processing if possible to prevent accidental exfiltration.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
 - [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
-- [How to Share Passwords Securely with Team Using.](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)
-- [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
+- [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
+- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
+- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

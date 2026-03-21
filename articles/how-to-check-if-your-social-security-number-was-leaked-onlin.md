@@ -3,6 +3,7 @@ layout: default
 title: "How To Check If Your Social Security Number Was Leaked Onlin"
 description: "Your Social Security number is one of the most valuable pieces of personal identifying information. Unlike passwords that you can change, your SSN is"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-check-if-your-social-security-number-was-leaked-onlin/
 categories: [guides]
@@ -178,10 +179,15 @@ While you can't prevent breaches at companies you do business with, you can redu
 - **Shred documents** — Physical documents containing SSN should be securely destroyed.
 - **Use a password manager** — Reduces the risk of credential stuffing attacks that could lead to data exposure.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Check Your Browser Fingerprint Uniqueness Score Onlin](/privacy-tools-guide/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
+- [How to Check If Your Private Photos Were Leaked Online](/privacy-tools-guide/how-to-check-if-your-private-photos-were-leaked-online/)
+- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)
+- [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

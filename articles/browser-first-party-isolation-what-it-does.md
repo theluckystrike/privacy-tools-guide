@@ -3,6 +3,7 @@ layout: default
 title: "Browser First-Party Isolation: What It Does and How It Works"
 description: "A technical guide to browser first-party isolation. Learn what it is, how it protects your privacy, and how to configure it for secure web browsing"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /browser-first-party-isolation-what-it-does/
 categories: [guides, security]
@@ -205,13 +206,15 @@ First-party isolation represents a fundamental shift in how browsers handle web 
 For developers, understanding these isolation mechanisms is essential for building privacy-respecting applications and debugging issues that arise as browsers continue to strengthen their privacy defaults.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Browser Storage Isolation Explained for Privacy: A.](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
-- [How Browser Fingerprinting Works Explained: A Technical.](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
-- [How Browser Storage Partitioning Works: Firefox, Chrome.](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
+
+## Related Articles
+
+- [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)
+- [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
+- [Browser Storage Isolation Explained Privacy](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

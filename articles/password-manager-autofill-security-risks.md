@@ -3,6 +3,7 @@ layout: default
 title: "Password Manager Autofill Security Risks"
 description: "The main security risks of password manager autofill are hidden-form credential theft (invisible login fields that capture autofilled data), XSS-based"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /password-manager-autofill-security-risks/
 categories: [security, guides]
@@ -226,11 +227,15 @@ Most password managers allow disabling autofill for specific websites — disabl
 Autofill requires layered defenses: strict CSP headers, explicit user interaction requirements, regular security audits, and informed user behavior. No single mitigation eliminates the risk entirely, but the combination significantly reduces the likelihood of credential compromise.
 
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
-- [GDPR Joint Controller Agreement Template: A Developer Guide](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
+
+## Related Articles
+
+- [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
+- [Best Password Manager For Safari Autofill](/privacy-tools-guide/best-password-manager-for-safari-autofill/)
+- [Password Manager Clipboard Security Best Practices](/privacy-tools-guide/password-manager-clipboard-security-best-practices/)
+- [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
+- [Passkey vs Password Security Comparison: A Developer Guide](/privacy-tools-guide/passkey-vs-password-security-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

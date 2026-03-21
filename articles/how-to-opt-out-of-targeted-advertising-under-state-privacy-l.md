@@ -3,6 +3,7 @@ layout: default
 title: "How To Opt Out Of Targeted Advertising Under State Privacy L"
 description: "A practical guide for developers and power users to exercise privacy rights under CCPA, VCDPA, and other state privacy laws. Includes API methods, code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-targeted-advertising-under-state-privacy-l/
 categories: [guides]
@@ -350,10 +351,15 @@ Regularly review and resubmit opt-out requests, as businesses may collect new da
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [Threat Model For Political Dissident In Surveillance State 2](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
+- [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

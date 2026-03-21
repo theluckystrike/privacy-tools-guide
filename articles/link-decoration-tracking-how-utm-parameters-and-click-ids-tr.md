@@ -3,6 +3,7 @@ layout: default
 title: "Link Decoration Tracking How Utm Parameters And Click Ids Tr"
 description: "Link decoration is a tracking technique where query parameters like utmsource, fbclid, gclid, and ga are appended to URLs to carry user identity and campaign"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /link-decoration-tracking-how-utm-parameters-and-click-ids-tr/
 categories: [guides]
@@ -448,10 +449,15 @@ recommendations:
   - Provide user dashboard showing what's tracked
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [What Happens If You Click A Phishing Link On Chrome Steps](/privacy-tools-guide/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)
+- [What To Do After Clicking Suspicious Link In Email Immediate](/privacy-tools-guide/what-to-do-after-clicking-suspicious-link-in-email-immediate/)
+- [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
+- [Bounce Tracking How Redirects Through Tracker Domains Follow](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)
+- [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

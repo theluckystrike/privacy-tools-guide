@@ -3,6 +3,7 @@ layout: default
 title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools."
 description: "Step-by-step guide to hardware, networking, OS hardening, and containerized privacy tools on local infrastructure"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/
 categories: [guides]
@@ -432,13 +433,15 @@ du -sh ./data/*
 → Trim old backups: `find ./data -type f -mtime +30 -delete`
 → Check logs: `docker logs <container> | tail -100`
 
-## Related Reading
 
-- [Best password managers with emergency access features compared](/privacy-tools-guide/guides-hub/)
-- [How to configure Firefox for maximum privacy without breaking sites](/privacy-tools-guide/guides-hub/)
-- [Air-gapped computer setup for maximum security](/privacy-tools-guide/guides-hub/)
 
----
+## Related Articles
+
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
+- [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
+- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
+- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

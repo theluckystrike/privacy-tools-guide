@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Tools For Adoption Agency Worker Protecting Birth Pa"
 description: "A technical guide for adoption agency workers on implementing privacy tools to protect sensitive birth parent data. Covers encryption, secure storage"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-adoption-agency-worker-protecting-birth-pa/
 categories: [guides]
@@ -255,10 +256,15 @@ Before deploying any system, verify these baseline requirements:
 7. **Incident Response**: Document procedures for breach notification
 8. **Training**: Provide privacy training for all staff handling birth parent data
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [Privacy Setup for Political Campaign Worker](/privacy-tools-guide/privacy-setup-for-political-campaign-worker-protecting-voter/)
+- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
+- [Passkey Adoption Timeline by Platform: A Developer Guide](/privacy-tools-guide/passkey-adoption-timeline-by-platform/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

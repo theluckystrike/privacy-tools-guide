@@ -3,6 +3,7 @@ layout: default
 title: "Communicate with Lawyer Privately When Device is Compromised"
 description: "A practical guide for individuals who need to maintain attorney-client privilege while dealing with a compromised device. Learn secure communication methods"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-communicate-with-lawyer-privately-when-device-compromised/
 categories: [guides, security]
@@ -352,11 +353,14 @@ If your attorney:
 
 These red flags suggest limited security awareness. Consider consulting an attorney at a firm with dedicated security practices, especially for sensitive legal matters.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
-- [Best Encrypted Email Service 2026](/privacy-tools-guide/best-encrypted-email-service-2026/)
-- [How to Use Signal Disappearing Messages Best Practices](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
+
+## Related Articles
+
+- [How To Use Cryptocurrency Privately Without Leaving Traceabl](/privacy-tools-guide/how-to-use-cryptocurrency-privately-without-leaving-traceabl/)
+- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
+- [How To Communicate During Internet Shutdown Alternative Netw](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
+- [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
+- [Ultrasonic Beacon Tracking How Smart Devices Communicate Thr](/privacy-tools-guide/ultrasonic-beacon-tracking-how-smart-devices-communicate-thr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

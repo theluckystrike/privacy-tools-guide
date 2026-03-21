@@ -3,6 +3,7 @@ layout: default
 title: "Verify Your Devices Are Not Compromised"
 description: "A practical guide for developers and power users to audit device security, detect compromises, and verify system integrity through command-line tools"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-your-devices-are-not-compromised-complete-audi/
 categories: [guides]
@@ -224,10 +225,15 @@ If your audit reveals compromise indicators:
 - Rotate all credentials, API keys, and passwords that were accessible from the device
 - Enable two-factor authentication on all accounts
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Verify Your Devices Are Not Compromised: A Complete Audit](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
+- [Communicate with Lawyer Privately When Device is Compromised](/privacy-tools-guide/how-to-communicate-with-lawyer-privately-when-device-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

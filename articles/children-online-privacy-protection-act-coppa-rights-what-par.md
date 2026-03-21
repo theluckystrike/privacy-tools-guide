@@ -3,6 +3,7 @@ layout: default
 title: "Children's Online Privacy Protection Act"
 description: "Learn what rights parents have under COPPA and what companies must do to protect children's privacy online"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /children-online-privacy-protection-act-coppa-rights-what-par/
 categories: [guides]
@@ -291,10 +292,15 @@ Several implementation errors create legal risk:
 
 **Allowing behavioral tracking**: Even without explicitly storing data, behavioral tracking (through pixels, analytics, or ad networks) violates COPPA requirements for children.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
+- [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)
+- [Email Privacy Act Protections When Government Needs Warrant](/privacy-tools-guide/email-privacy-act-protections-when-government-needs-warrant-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

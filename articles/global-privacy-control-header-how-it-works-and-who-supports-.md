@@ -3,6 +3,7 @@ layout: default
 title: "Global Privacy Control Header How It Works And Who Supports"
 description: "A technical guide to the GPC header for developers. Learn how this privacy signal works, which browsers and companies support it, and how to implement it"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /global-privacy-control-header-how-it-works-and-who-supports-/
 categories: [guides]
@@ -214,10 +215,15 @@ curl -H "Sec-GPC: 1" https://yourwebsite.com
 
 Browser developer tools also show the GPC header in the Network tab when making requests.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
+- [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
+- [Linux Apparmor Vs Selinux Which Mandatory Access Control Pro](/privacy-tools-guide/linux-apparmor-vs-selinux-which-mandatory-access-control-pro/)
+- [iPhone Mail Privacy Protection: How It Works](/privacy-tools-guide/iphone-mail-privacy-protection-how-it-works/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Intelius Opt-Out Guide: Remove Personal Information in 2026"
 description: "A practical guide for developers and power users to remove personal data from Intelius. Includes automation scripts, API verification, and batch"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /intelius-opt-out-guide-remove-personal-information-2026/
 categories: [guides]
@@ -179,10 +180,15 @@ Several organizations provide data broker removal services:
 - **FTC Consumer Information**: Provides complaint resources for unresponsive brokers
 - **State privacy laws**: California, Virginia, and Colorado residents have additional privacy rights under state laws
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
+- [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
+- [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
+- [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Email Encryption with GPG Step by Step"
 description: "Encrypt and decrypt emails with GPG from scratch. Covers key generation, key exchange, Thunderbird with OpenPGP, and key server publishing."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: gpg-email-encryption-step-by-step
 categories: [guides, privacy]
@@ -267,11 +268,15 @@ gpg --import yourname-revoke.asc
 gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 ```
 
-## Related Reading
 
-- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity)
-- [Best Encrypted Email Service 2026](/best-encrypted-email-service-2026)
-- [Best Encrypted Email for Business 2026](/best-encrypted-email-for-business-2026)
+
+## Related Articles
+
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
+- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

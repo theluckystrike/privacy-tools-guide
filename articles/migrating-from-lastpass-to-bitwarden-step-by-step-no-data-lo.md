@@ -3,6 +3,7 @@ layout: default
 title: "Migrating from LastPass to Bitwarden No Data Loss"
 description: "A technical guide for developers and power users migrating from LastPass to Bitwarden without losing any passwords, TOTP codes, or custom"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/
 categories: [guides]
@@ -314,10 +315,15 @@ After migration, strengthen your security:
 4. **Delete LastPass data**: Remove your vault after confirming migration success
 5. **Update recovery options**: Ensure your email and phone are current
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Migrating from Sticky Password to Bitwarden: A Guide](/privacy-tools-guide/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
+- [Bitwarden vs LastPass Migration Guide](/privacy-tools-guide/bitwarden-vs-lastpass-migration-guide/)
+- [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
+- [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
+- [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

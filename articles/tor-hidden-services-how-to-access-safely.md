@@ -3,6 +3,7 @@ layout: default
 title: "Tor Hidden Services: How to Access Safely"
 description: "A practical guide for developers and power users on accessing Tor hidden services safely. Learn configuration, security best practices, and real-world"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-hidden-services-how-to-access-safely/
 categories: [guides, security]
@@ -209,12 +210,15 @@ session.timeout = 30  # Increase timeout
 response = session.get('https://exampleonion.onion')
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Best Browser to Use with Tor Hidden Services: A.](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
-- [How to Set Up Onion Routing for Email Using Tor Hidden.](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
+
+## Related Articles
+
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
+- [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
+- [How to Use Tor Safely in Country That Criminalizes Its Use](/privacy-tools-guide/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

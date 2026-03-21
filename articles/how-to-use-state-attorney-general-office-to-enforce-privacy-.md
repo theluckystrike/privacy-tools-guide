@@ -3,6 +3,7 @@ layout: default
 title: "How To Use State Attorney General Office To Enforce Privacy"
 description: "A practical guide for developers and power users on using state attorney general offices to enforce privacy rights against companies collecting"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-state-attorney-general-office-to-enforce-privacy-/
 categories: [guides]
@@ -200,10 +201,15 @@ If state AG enforcement proves insufficient, consider:
 State attorneys general remain powerful allies in enforcing your privacy rights. By documenting violations systematically and submitting well-structured complaints, you contribute to enforcement efforts that hold companies accountable.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [How To Opt Out Of Targeted Advertising Under State Privacy L](/privacy-tools-guide/how-to-opt-out-of-targeted-advertising-under-state-privacy-l/)
+- [Digital Power of Attorney: What Authority It Grants Over.](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
+- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Threat Model For Political Dissident In Surveillance State 2](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

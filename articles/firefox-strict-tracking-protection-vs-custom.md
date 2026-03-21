@@ -3,6 +3,7 @@ layout: default
 title: "Firefox Strict Tracking Protection Vs Custom"
 description: "Firefox Strict Tracking Protection vs Custom: A. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /firefox-strict-tracking-protection-vs-custom/
 categories: [guides]
@@ -350,13 +351,17 @@ Organizations can deploy custom tracking protection policies:
 
 This configuration forces Strict tracking protection while allowing exceptions for specific trusted domains.
 
-## Related Reading
-
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
+
+## Related Articles
+
+- [Firefox Total Cookie Protection How It Isolates Trackers Exp](/privacy-tools-guide/firefox-total-cookie-protection-how-it-isolates-trackers-exp/)
+- [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)
+- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
+- [Bitwarden Custom Fields Usage Guide](/privacy-tools-guide/bitwarden-custom-fields-usage-guide/)
+- [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

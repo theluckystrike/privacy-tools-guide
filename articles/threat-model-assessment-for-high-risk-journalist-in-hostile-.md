@@ -3,6 +3,7 @@ layout: default
 title: "Threat Model Assessment For High Risk Journalist In Hostile"
 description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
 reviewed: true
@@ -281,9 +282,14 @@ Organizations providing support to journalists in hostile environments include:
 
 These organizations provide direct support, financial assistance, and sometimes physical relocation for journalists facing imminent danger. Establish relationships with these organizations before you need them.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Threat Model For Union Organizer In Hostile Employer Environ](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
+- [Threat Model For Source Communicating With Journalist Anonym](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
+- [Data Privacy Maturity Model Assessment Guide](/privacy-tools-guide/data-privacy-maturity-model-assessment-guide/)
+- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

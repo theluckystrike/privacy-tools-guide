@@ -3,6 +3,7 @@ layout: default
 title: "How Vpn Interacts With Firewall Rules Iptables Nftables."
 description: "A technical guide explaining how VPN traffic flows through firewall rules, covering iptables and nftables configuration for secure VPN"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/
 categories: [guides]
@@ -283,9 +284,14 @@ tcpdump -i eth0 -n port 1194 or port 51820  # Monitor VPN server communication
 ```
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [Vpn Port Selection Which Ports Bypass Most Firewall.](/privacy-tools-guide/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
+- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
+- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

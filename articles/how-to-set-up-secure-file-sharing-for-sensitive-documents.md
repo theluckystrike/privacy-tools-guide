@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Secure File Sharing for Sensitive Documents"
 description: "A practical guide for developers and power users to implement secure file sharing using encryption, self-hosted solutions, and command-line tools"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-file-sharing-for-sensitive-documents/
 categories: [guides, security]
@@ -175,10 +176,15 @@ exiftool -all= document-scan.jpg
 shred -u sensitive-file.pdf
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
+- [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
+- [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [Secure File Sharing Tools Comparison: E2E Encrypted.](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
+- [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

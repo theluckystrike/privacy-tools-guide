@@ -3,6 +3,7 @@ layout: default
 title: "How To Set Up Enterprise Password Manager With Zero Knowledg"
 description: "A practical guide for developers and power users setting up enterprise password managers with zero knowledge encryption. Includes architecture"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-enterprise-password-manager-with-zero-knowledg/
 categories: [guides]
@@ -329,10 +330,15 @@ curl -X PUT "https://password.yourdomain.com/api/organizations/${ORG_ID}/users/$
 
 After revoking access, rotate any credentials in collections the departing user had access to. This is the same discipline as git-crypt key rotation after offboarding: vault access revocation does not retroactively protect credentials already seen in plaintext. The rotation is the protection.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [How to Encrypt Git Repos with git-crypt and age](/privacy-tools-guide/how-to-encrypt-git-repos-with-git-crypt-and-age/)
+
+## Related Articles
+
+- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
+- [Best Zero Knowledge Cloud Storage Enterprise](/privacy-tools-guide/best-zero-knowledge-cloud-storage-enterprise/)
+- [How To Set Up Beneficiary Access For Cloud Password Manager](/privacy-tools-guide/how-to-set-up-beneficiary-access-for-cloud-password-manager-/)
+- [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
+- [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

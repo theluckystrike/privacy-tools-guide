@@ -3,6 +3,7 @@ layout: default
 title: "Tor Browser NoScript Settings Recommended 2026"
 description: "Learn the recommended NoScript settings for Tor Browser in 2026. This guide covers configuration options, security tradeoffs, and practical tips for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-noscript-settings-recommended-2026/
 categories: [guides]
@@ -274,13 +275,15 @@ For developers working with sensitive research or testing privacy-focused applic
 
 The key is maintaining discipline—whitelist sparingly, audit frequently, and prioritize security over convenience when feasible. Your privacy benefits from the additional effort.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
-- [Twitter X Privacy Settings Recommended 2026: A Complete.](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
-- [Best Browser for Anonymous Searching 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-anonymous-searching-2026/)
+
+## Related Articles
+
+- [Twitter X Privacy Settings Recommended 2026](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
+- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
+- [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

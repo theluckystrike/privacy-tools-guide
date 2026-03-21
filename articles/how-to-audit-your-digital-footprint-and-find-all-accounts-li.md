@@ -3,6 +3,7 @@ layout: default
 title: "How To Audit Your Digital Footprint And Find All Accounts Li"
 description: "A practical guide for developers and power users to discover, audit, and manage all accounts linked to your email addresses. Learn CLI tools, automated"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-your-digital-footprint-and-find-all-accounts-li/
 categories: [guides]
@@ -254,10 +255,15 @@ Automate recurring audits with scheduled scripts:
 
 Regular reviews catch new accounts you create and identify breaches in newly-compromised services.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
+- [How To Minimize Digital Footprint Guide 2026](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [What to Do If You Find an Unknown Device on Your Network](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [Domain Name Inheritance How To Transfer Registrar Accounts A](/privacy-tools-guide/domain-name-inheritance-how-to-transfer-registrar-accounts-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

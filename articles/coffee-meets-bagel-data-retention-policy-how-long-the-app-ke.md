@@ -3,6 +3,7 @@ layout: default
 title: "Coffee Meets Bagel Data Retention Policy How Long The App Ke"
 description: "Coffee Meets Bagel Data Retention Policy: How Long the. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/
 categories: [guides]
@@ -544,10 +545,15 @@ legal_deletion_rights = {
 
 This provides legal use beyond CMB's standard policy.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Data Retention Policy Template What To Keep And For How Long](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
+- [Data Retention Policy Template for Startups](/privacy-tools-guide/data-retention-policy-template-for-startups/)
+- [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
+- [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
+- [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

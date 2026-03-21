@@ -3,6 +3,7 @@ layout: default
 title: "How To Create Shamir Secret Sharing Backup Of Crypto Seed Ph"
 description: "A technical guide for developers and power users on implementing Shamir Secret Sharing to secure cryptocurrency seed phrases for inheritance planning"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-shamir-secret-sharing-backup-of-crypto-seed-ph/
 categories: [guides]
@@ -196,10 +197,15 @@ Estate coordination requires clear documentation. Your will or trust should spec
 
 Legal frameworks vary by jurisdiction. Consult with an estate planning attorney familiar with cryptocurrency to ensure your arrangement complies with local laws and your wishes will be honored.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How Secure Is Telegram Secret Chat Mode](/privacy-tools-guide/how-secure-is-telegram-secret-chat-mode/)
+- [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
+- [Brave Browser Crypto Features Disable Guide](/privacy-tools-guide/brave-browser-crypto-features-disable-guide/)
+- [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
+- [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "GDPR Subprocessor Management Guide for Developers"
 description: "A practical developer guide to implementing GDPR-compliant subprocessor management. Learn how to track, document, and manage third-party data"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-subprocessor-management-guide-developers/
 categories: [guides, security]
@@ -385,12 +386,15 @@ Maintain this workflow as a living document and test it annually with a tabletop
 ---
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [GDPR Compliant User Authentication Design: A Developer's Practical Guide](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
-- [GDPR Compliance Tools for Developers in 2026: A.](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
-- [GDPR Lawful Basis for Processing Explained: A Developer.](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
+
+## Related Articles
+
+- [Gdpr Consent Management Platform Comparison 2026](/privacy-tools-guide/gdpr-consent-management-platform-comparison-2026/)
+- [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
+- [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
+- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

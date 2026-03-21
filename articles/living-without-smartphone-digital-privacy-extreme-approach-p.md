@@ -3,6 +3,7 @@ layout: default
 title: "Living Without Smartphone Digital Privacy Extreme Approach P"
 description: "A practical guide for developers and power users on living without a smartphone. Learn about dumb phones, privacy-focused alternatives, communication"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /living-without-smartphone-digital-privacy-extreme-approach-p/
 categories: [guides]
@@ -174,10 +175,15 @@ while True:
 
 This script demonstrates how developers can create custom notification pipelines, receiving SMS alerts on their primary computer rather than relying on smartphone notifications.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
+- [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
+- [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [VPN for Safe Torrent Downloading While Living in Germany](/privacy-tools-guide/vpn-for-safe-torrent-downloading-while-living-in-germany/)
+- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

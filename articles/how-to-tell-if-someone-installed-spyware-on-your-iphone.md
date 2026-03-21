@@ -3,6 +3,7 @@ layout: default
 title: "How To Tell If Someone Installed Spyware On Your Iphone"
 description: "Watch for behavioral red flags: unusual battery drain, unexpected data usage spikes, overheating, slow performance, or strange app behavior. Check Settings →"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-someone-installed-spyware-on-your-iphone/
 categories: [guides]
@@ -283,10 +284,15 @@ Organizations working with journalists, activists, or human rights defenders sho
 
 The threat landscape changes constantly. Maintaining awareness through security research communities, following updates from organizations like Amnesty Tech, and understanding emerging attack vectors helps keep defensive measures current.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Tell If Someone Has Access To Your Apple Id](/privacy-tools-guide/how-to-tell-if-someone-has-access-to-your-apple-id/)
+- [How To Detect If Government Malware Is Installed On Your Pho](/privacy-tools-guide/how-to-detect-if-government-malware-is-installed-on-your-pho/)
+- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [How to Tell if Your Bluetooth Is Being Intercepted Nearby](/privacy-tools-guide/how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Nixos Declarative System Configuration For Reproducible Priv"
 description: "Learn how to use NixOS to create reproducible, privacy-hardened Linux systems through declarative configuration. This guide covers declarative package"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nixos-declarative-system-configuration-for-reproducible-priv/
 categories: [guides, security]
@@ -183,10 +184,15 @@ nix-build '<nixpkgs/nixos>' -A config.system.build.vm -o vm-test
 
 This approach lets you verify configuration changes before applying them to your actual system—a valuable practice when experimenting with security settings.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
+- [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
+- [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

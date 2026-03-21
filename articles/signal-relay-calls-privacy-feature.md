@@ -3,6 +3,7 @@ layout: default
 title: "Signal Relay Calls Privacy Feature"
 description: "Signal's relay calls feature represents a significant advancement in protecting user privacy during voice and video communications. When enabled, this feature"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /signal-relay-calls-privacy-feature/
 categories: [guides, security]
@@ -272,11 +273,15 @@ For high-threat environments, combine relay calls with additional measures:
 - Employ physical security measures preventing device access
 - Consider using air-gapped devices for the most sensitive communications
 
-## Related Reading
 
-- [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+
+## Related Articles
+
+- [Signal Username Feature Privacy Review](/privacy-tools-guide/signal-username-feature-privacy-review/)
+- [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
+- [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
+- [Tinder Passport Feature Privacy Implications What Location D](/privacy-tools-guide/tinder-passport-feature-privacy-implications-what-location-d/)
+- [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

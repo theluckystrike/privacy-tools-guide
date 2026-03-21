@@ -3,6 +3,7 @@ layout: default
 title: "Set Up a Personal VPN with WireGuard"
 description: "Build a personal WireGuard VPN on a cheap VPS. Covers server setup, key generation, client configs for Linux, macOS, Windows, iOS, and Android."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: wireguard-personal-vpn-setup-guide
 categories: [guides, security]
@@ -287,11 +288,15 @@ sudo wg set wg0 peer <newclient-public-key> allowed-ips 10.0.0.5/32
 echo -e "\n[Peer]\nPublicKey = $(cat /tmp/newclient-public.key)\nAllowedIPs = 10.0.0.5/32" | sudo tee -a /etc/wireguard/wg0.conf
 ```
 
-## Related Reading
 
-- [How to Set Up WireGuard on VPS for Personal VPN](/how-to-set-up-wireguard-on-vps-for-personal-vpn)
-- [WireGuard DNS Configuration Options Explained](/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd)
-- [Tailscale vs WireGuard for Self-Hosted VPN 2026](/tailscale-vs-wireguard-for-self-hosted-vpn-2026)
+
+## Related Articles
+
+- [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
+- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
+- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

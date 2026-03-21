@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Tools For Social Worker Handling Sensitive Case File"
 description: "A guide to privacy tools for social workers handling sensitive case files digitally. Learn about encrypted storage, secure communication"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-social-worker-handling-sensitive-case-file/
 categories: [guides, security]
@@ -366,10 +367,15 @@ For social work agencies implementing privacy-first systems:
 **Backups**: Encrypted offline backups in secure location
 **Incident response**: Written procedures, tested annually
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
+- [Privacy Tools For Private Investigator Protecting Case File](/privacy-tools-guide/privacy-tools-for-private-investigator-protecting-case-file-/)
+- [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
+- [Privacy Setup For Accountant Handling Client Financial Data](/privacy-tools-guide/privacy-setup-for-accountant-handling-client-financial-data-/)
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

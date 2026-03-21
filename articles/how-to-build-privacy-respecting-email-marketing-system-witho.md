@@ -3,6 +3,7 @@ layout: default
 title: "How To Build Privacy Respecting Email Marketing System Witho"
 description: "Learn how to build email marketing systems that respect user privacy while remaining effective. This guide covers consent-based tracking, privacy-first"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-build-privacy-respecting-email-marketing-system-witho/
 categories: [guides]
@@ -196,10 +197,15 @@ grep -r "img.*tracking" emails/templates/
 python -m pytest tests/test_unsubscribe.py -v
 ```
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
+- [How To Build Privacy Dashboard For Customers To Manage Their](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
+- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
+- [Mesh Wifi System Privacy Comparison Eero Vs Orbi Vs Deco Dat](/privacy-tools-guide/mesh-wifi-system-privacy-comparison-eero-vs-orbi-vs-deco-dat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit Android App Permissions: Step-by-Step Guide"
 description: "Technical guide to auditing Android app permissions using ADB, permission groups, automation scripts, and recommended permission configurations"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-android-app-permissions-guide/
 categories: [guides]
@@ -368,9 +369,15 @@ Google Play Protect automatically scans apps for malicious behavior and permissi
 - Some system apps require permissions by default
 - For problematic apps, consider uninstalling or using privacy-focused alternative
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

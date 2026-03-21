@@ -3,6 +3,7 @@ layout: default
 title: "Facebook Facial Recognition Opt Out Guide"
 description: "A developer-focused guide to understanding and disabling Facebook's facial recognition system. Includes API references, Graph Explorer examples, and"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /facebook-facial-recognition-opt-out-guide/
 categories: [guides, security]
@@ -379,12 +380,15 @@ In 2026, facial recognition regulation continues evolving:
 
 ---
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Facial Recognition Search Opt-Out: How to Remove Your.](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
-- [How to Opt Out of Data Sharing Under Connecticut Data Privacy Act (CTDPA) - Complete Guide](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
-- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
+
+## Related Articles
+
+- [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
+- [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
+- [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
+- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

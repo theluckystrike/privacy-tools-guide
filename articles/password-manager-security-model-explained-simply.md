@@ -3,6 +3,7 @@ layout: default
 title: "Password Manager Security Model Explained Simply"
 description: "Understand how password managers secure your data. This guide breaks down encryption, zero-knowledge architecture, and key derivation for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-security-model-explained-simply/
 categories: [guides]
@@ -379,15 +380,15 @@ Mitigations:
 - Enable device registration/approval for new device sync
 - Implement geolocation alerts for vault access from unusual locations
 
-## Related Reading
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
-- [How Does Bitwarden Encryption Work: Zero-Knowledge.](/privacy-tools-guide/how-does-bitwarden-encryption-work-zero-knowledge/)
-- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
+## Related Articles
+
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
+- [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
+- [Password Manager Clipboard Security Best Practices](/privacy-tools-guide/password-manager-clipboard-security-best-practices/)
+- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

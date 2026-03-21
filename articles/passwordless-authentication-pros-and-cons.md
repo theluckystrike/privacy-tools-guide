@@ -3,6 +3,7 @@ layout: default
 title: "Passwordless Authentication Pros and Cons: A Developer Guide"
 description: "A technical analysis of passwordless authentication methods for developers and power users. Explore FIDO2, passkeys, biometrics, and implementation"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /passwordless-authentication-pros-and-cons/
 reviewed: true
@@ -182,11 +183,15 @@ Consider maintaining password options when:
 - Requiring maximum compatibility across legacy systems
 - Account recovery simplicity is critical
 
-## Related Reading
 
-- [Bitwarden Vault Export Backup Guide: Complete Technical.](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [Aegis Authenticator vs Google Authenticator: A Developer's Comparison](/privacy-tools-guide/aegis-authenticator-vs-google-authenticator/)
-- [Telegram vs Signal: Which Is Actually Safer? A Technical.](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)
+
+## Related Articles
+
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
+- [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
+- [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
+- [GDPR Compliant User Authentication Design](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
+- [ProtonMail Two-Factor Authentication Guide](/privacy-tools-guide/protonmail-two-factor-authentication-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

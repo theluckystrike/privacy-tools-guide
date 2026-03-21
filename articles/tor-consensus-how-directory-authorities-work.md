@@ -3,6 +3,7 @@ layout: default
 title: "Tor Consensus: How Directory Authorities Work"
 description: "A technical deep-dive into Tor network consensus mechanism and directory authorities. Learn how relay information is validated, how clients bootstrap"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-consensus-how-directory-authorities-work/
 categories: [guides, security]
@@ -161,12 +162,15 @@ For applications that must operate in adversarial environments, consider hardeni
 
 The Tor network's security model depends on having at least 5 honest authorities. As of 2026, this assumption holds—the nine authorities are operated by diverse, independent organizations. However, for high-value deployments, you should implement the signature verification steps shown above.
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
+- [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
+- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
 - [Android Work Profile Privacy Separation Guide](/privacy-tools-guide/android-work-profile-privacy-separation-guide/)
-- [How to Use Tor with Specific Application Routing: Select.](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
-- [Anonymous Cryptocurrency Transactions Tor Guide: A.](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
+- [Best No Kyc Cryptocurrency Exchanges That Still Work In 2026](/privacy-tools-guide/best-no-kyc-cryptocurrency-exchanges-that-still-work-in-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Directory Authority Network Architecture
@@ -324,4 +328,3 @@ Understanding past problems helps operators maintain integrity:
 
 The consensus mechanism's redundancy and cryptography have held against sustained attacks for 17+ years.
 
-## Related Reading

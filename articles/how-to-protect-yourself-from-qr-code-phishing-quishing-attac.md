@@ -3,6 +3,7 @@ layout: default
 title: "How To Protect Yourself From Qr Code Phishing Quishing Attac"
 description: "A practical guide for developers and power users on detecting, preventing, and mitigating QR code phishing attacks. Includes code examples and security"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-yourself-from-qr-code-phishing-quishing-attac/
 categories: [guides]
@@ -231,9 +232,14 @@ If you or your organization encounters a quishing attempt:
 5. **Block malicious domains**: Add identified malicious URLs to blocklists
 
 {% endraw %}
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
+- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Protect Yourself from Credential Stuffing Attack](/privacy-tools-guide/how-to-protect-yourself-from-credential-stuffing-attack-pass/)
+- [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
+- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

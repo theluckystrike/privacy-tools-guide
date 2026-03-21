@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up a Password Manager for Home Server SSH Keys"
 description: "A practical guide for developers on storing SSH keys in a password manager. Covers Bitwarden, 1Password, and KeePassXC with CLI examples and automation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-password-manager-for-home-server-ssh-keys/
 categories: [guides, security]
@@ -272,10 +273,15 @@ Regardless of your password manager choice, follow these practices:
 Storing SSH keys in a password manager transforms scattered key management into a centralized, auditable system. The initial setup takes about 30 minutes, but the operational benefits of automatic backup, easy rotation, and cross-device access are substantial for anyone managing multiple servers.
 
 
-## Related Reading
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+
+## Related Articles
+
+- [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
+- [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
+- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
+- [How To Set Up Beneficiary Access For Cloud Password Manager](/privacy-tools-guide/how-to-set-up-beneficiary-access-for-cloud-password-manager-/)
+- [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

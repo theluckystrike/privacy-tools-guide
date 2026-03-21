@@ -3,6 +3,7 @@ layout: default
 title: "Configure Firefox for Maximum Privacy Without Breaking"
 description: "Hardened Firefox settings that block trackers, ads, and surveillance while keeping 99% of sites functional"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-configure-firefox-maximum-privacy-without-breaking-sites/
 categories: [guides]
@@ -385,13 +386,15 @@ Configuration:
 - [ ] Audit installed extensions (remove unused ones)
 - [ ] Regenerate Firefox profile if feeling paranoid
 
-## Related Reading
 
-- [Best password managers with emergency access features compared](/privacy-tools-guide/guides-hub/)
-- [How to set up a secure home server for self-hosting privacy tools](/privacy-tools-guide/guides-hub/)
-- [Android privacy dashboard: how to use it to audit app access](/privacy-tools-guide/guides-hub/)
 
----
+## Related Articles
+
+- [How To Configure Element Matrix Client For Maximum Privacy A](/privacy-tools-guide/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
+- [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
+- [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)
+- [How To Configure Ublock Origin For Maximum Anti Tracking Pro](/privacy-tools-guide/how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/)
+- [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

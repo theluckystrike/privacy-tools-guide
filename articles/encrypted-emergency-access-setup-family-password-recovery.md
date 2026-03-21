@@ -3,6 +3,7 @@ layout: default
 title: "How to set up encrypted emergency access your family can use."
 description: "Step-by-step guide to giving family encrypted access to critical passwords and accounts if something happens to you, using 1Password, Bitwarden, and more"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /encrypted-emergency-access-setup-family-password-recovery/
 categories: [guides]
@@ -524,12 +525,15 @@ Setup complete when you can answer YES to:
 ✓ Test done annually (access still works)
 ```
 
-## Related Reading
-- [How to Set Up Bitwarden Emergency Access for Password Manager](/privacy-tools-guide/guides-hub/)
-- [How to Set Up 1Password Emergency Access for Spouse](/privacy-tools-guide/guides-hub/)
-- [Cryptocurrency Seed Phrase Storage: Hardware Wallets and Emergency Access](/privacy-tools-guide/guides-hub/)
 
----
+
+## Related Articles
+
+- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
+- [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)
+- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
+- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
