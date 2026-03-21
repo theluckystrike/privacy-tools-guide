@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Passkey User Experience Comparison Across Chrome."
-description: "A comprehensive comparison of passkey authentication user experience across major browsers—Chrome, Safari, Firefox, and Edge—in 2026.
+description: "A comprehensive comparison of passkey authentication user experience across major browsers—Chrome, Safari, Firefox, and Edge—in 2026."
 date: 2026-03-16
 categories:
 - Security
@@ -20,8 +20,6 @@ score: 8
 voice-checked: true
 author: "Privacy Tools Guide"
 ---
-categories: [guides]
-
 
 {% raw %}
 Passkeys represent the biggest shift in digital authentication since the password was invented. Instead of remembering complex strings, users can authenticate using biometric data (fingerprint, face recognition) or device PINs. This guide compares the passkey user experience across Chrome, Safari, Firefox, and Edge as of 2026.
