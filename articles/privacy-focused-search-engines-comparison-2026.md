@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-search-engines-comparison-2026/
 categories: [guides]
-tags: [privacy-tools-guide, search-engines, comparison]
+tags: [privacy-tools-guide, search-engines, comparison, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

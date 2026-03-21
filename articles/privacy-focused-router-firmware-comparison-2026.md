@@ -6,9 +6,9 @@ date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-router-firmware-comparison-2026/
 categories: [security, guides]
-tags: [privacy-tools-guide, router-security, network-privacy, firmware]
+tags: [privacy-tools-guide, router-security, network-privacy, firmware, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
