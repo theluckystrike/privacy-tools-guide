@@ -32,6 +32,19 @@ TOTP works offline and gives you control over where your secrets are stored. Web
 
 For developers building applications that integrate with ProtonMail, understanding these options helps when designing authentication flows for users who prioritize security.
 
+### Comparing TOTP vs. WebAuthn for ProtonMail
+
+| Feature | TOTP | WebAuthn/FIDO2 |
+|---------|------|----------------|
+| Setup complexity | Low | Medium |
+| Phishing resistance | Partial | Full (origin-bound) |
+| Works offline | Yes | Yes (key is local) |
+| Cost | Free (app) | $25-$60 (hardware key) |
+| Backup options | Export secret; print codes | Register multiple keys |
+| Best for | Most users; quick setup | High-value accounts; journalists; activists |
+
+For most users, TOTP with a local authenticator app (Aegis on Android, Raivo on iOS) is the right starting point. If you handle sensitive communications or are a high-value target for phishing, invest in a FIDO2 hardware key.
+
 ## Setting Up TOTP-Based 2FA
 
 ### Step 1: Access Security Settings
@@ -80,6 +93,17 @@ console.log(`Your 2FA code: ${token}`);
 
 Enter the 6-digit code from your authenticator app to complete setup. ProtonMail displays a set of recovery codes—store these securely, preferably in a password manager.
 
+### Step 5: Back Up Your TOTP Secret
+
+Before closing the setup screen, save the raw Base32 secret string in your password manager alongside your ProtonMail credentials. This lets you regenerate the TOTP entry if you switch authenticator apps or lose your phone.
+
+Export it from Aegis (Android) or Raivo (iOS) as an encrypted backup after setup:
+
+- **Aegis**: Settings → Backups → Export → Encrypted (AES-256)
+- **Raivo**: Settings → Export OTPs → Password-protected ZIP
+
+Store the encrypted backup on a different device or offline media from your primary phone.
+
 ## Setting Up WebAuthn Security Keys
 
 Hardware security keys provide stronger protection against phishing. To set this up in ProtonMail:
@@ -90,6 +114,17 @@ Hardware security keys provide stronger protection against phishing. To set this
 4. Name your key (e.g., "YubiKey Work")
 
 ProtonMail supports multiple keys, which is useful for redundancy.
+
+### Registering a Backup Key
+
+Always register at least two hardware keys. If your primary key is lost or damaged, you need a registered backup key to regain access. A YubiKey 5 NFC as the primary and a cheaper Security Key Series as the backup is a common and cost-effective setup.
+
+```
+Key 1: YubiKey 5C NFC (daily carry, USB-C + NFC)
+Key 2: YubiKey Security Key NFC (stored in home safe, backup)
+```
+
+Store the backup key separately from your primary — different bag, different location. A lost wallet or stolen backpack should not take both keys simultaneously.
 
 ## Automating 2FA with ProtonMail API
 
@@ -171,11 +206,39 @@ encrypted_secret = cipher.encrypt(secret.encode())
 # Store encrypted_secret in your database
 ```
 
+## Auditing Active Sessions
+
+After enabling 2FA, audit which devices have active ProtonMail sessions. Any session you do not recognize should be revoked immediately:
+
+1. Go to **Settings → Security → Active sessions**
+2. Review each session — the list shows device type, approximate location, and last active time
+3. Click "Revoke" on any unrecognized session
+4. If you see a session from an unexpected location, change your password and rotate your recovery codes
+
+Make session audits part of your regular security routine — monthly is a reasonable interval for most users, weekly if you handle sensitive communications.
+
 ## Common Pitfalls
 
 Always print and store your recovery codes — losing them can mean permanent lockout. Export your TOTP secrets before switching phones, since changing devices without transferring your authenticator will cut off access. ProtonMail does not support SMS 2FA, which is an advantage given how common SIM swapping attacks are.
 
 Remember that 2FA is just one layer of defense — use strong, unique passwords, keep your recovery information updated, and regularly audit your active sessions.
+
+## Frequently Asked Questions
+
+**Can I use the same authenticator app for ProtonMail and other services?**
+Yes. TOTP is a standard protocol (RFC 6238), and any compliant authenticator app works with any service that supports TOTP. Aegis (Android) and Raivo (iOS) support multiple accounts and offer encrypted backups, making them suitable for managing all your 2FA entries in one place.
+
+**What happens if I lose my phone and my recovery codes?**
+Without a recovery code, registered backup key, or secondary email, ProtonMail cannot restore access. This is intentional — ProtonMail's zero-knowledge architecture means they cannot bypass 2FA on your behalf. This makes the backup setup steps in this guide non-optional. Register a backup hardware key or store recovery codes offline before you need them.
+
+**Does ProtonMail 2FA protect against phishing?**
+TOTP provides partial protection — a phishing site that captures your code in real time can relay it within the 30-second window. WebAuthn/FIDO2 provides complete protection because the key's response is bound to the exact origin domain; a phishing domain gets a response that the real site cannot use.
+
+**Can I disable 2FA temporarily if I lose my key?**
+No. Once 2FA is enabled, it cannot be disabled without completing a 2FA challenge or using a recovery code. This is the expected behavior — an attacker who has your password cannot disable 2FA either.
+
+**Should I use Authy or Aegis?**
+Aegis is preferred for privacy-conscious users because it is open source, stores secrets locally, and does not require an account. Authy stores encrypted secrets in the cloud, which is convenient for multi-device sync but requires trusting Authy's infrastructure. Use Aegis with a manual encrypted backup for the most secure configuration.
 
 ---
 
