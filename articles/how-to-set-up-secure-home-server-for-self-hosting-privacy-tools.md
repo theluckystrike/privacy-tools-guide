@@ -9,7 +9,7 @@ permalink: /how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, self-hosting, security, networking, infrastructure]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

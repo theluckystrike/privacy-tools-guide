@@ -9,7 +9,7 @@ permalink: /how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/
 categories: [guides]
 tags: [privacy-tools-guide, tools, encryption]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
