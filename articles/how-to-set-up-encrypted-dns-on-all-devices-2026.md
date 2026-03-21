@@ -9,7 +9,7 @@ permalink: /how-to-set-up-encrypted-dns-on-all-devices-2026/
 categories: [guides]
 tags: [privacy-tools-guide, dns, encryption, networking]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
