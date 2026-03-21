@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-create-untraceable-email-account-using-tor-vpn-and-an/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
