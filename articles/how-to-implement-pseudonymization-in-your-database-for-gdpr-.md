@@ -9,7 +9,7 @@ permalink: /how-to-implement-pseudonymization-in-your-database-for-gdpr-/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 ---

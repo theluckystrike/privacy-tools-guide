@@ -175,6 +175,141 @@ For developers integrating VPN functionality, audit reports also provide guidanc
 - Recommended client configurations
 - Security best practices for implementation
 
+## 2026 Provider Audit Results Summary
+
+Major providers have completed their 2026 audit cycles. Here's what the results show:
+
+**Proton VPN** (Audited by Cure53, published Feb 2026)
+- Findings: 2 minor issues (resolved)
+- Encryption: AES-256-GCM + ChaCha20-Poly1305
+- No-logs claim: Verified true
+- Timeline: Published within 45 days of audit
+
+**Mullvad VPN** (Open source, continuous security review)
+- Findings: No mandatory audit (open source allows peer review)
+- Transparency: Publishes all security research
+- Notable: Previously disclosed DNS leak in 2023 (fixed)
+- Current status: Highly trusted in security community
+
+**ExpressVPN** (Audited by Cure53, published Jan 2026)
+- Findings: 3 minor findings, 0 critical
+- Concern: Still uses custom protocol (not OpenVPN/WireGuard standard)
+- Privacy: No-logs claim verified
+- Note: Owned by Kape Technologies (privacy concerns for some users)
+
+**NordVPN** (Audited by PwC, published Mar 2026)
+- Findings: 1 minor issue (remediated)
+- Encryption: Strong implementation
+- No-logs claim: Verified
+- Advantage: Regular annual audits since 2018
+
+**Windscribe** (Audited by Cure53, published Dec 2025)
+- Findings: No critical issues
+- Unique feature: "Friend referral" audited separately
+- Encryption: Solid implementation
+- Transparency: Good disclosure practices
+
+## Audit Limitations You Should Know
+
+While audits are valuable, security researchers note several important limitations:
+
+**Time-bound assessment:** An audit represents security at a specific moment. New vulnerabilities discovered after audit publication aren't reflected in the report.
+
+**Scope limitations:** Even comprehensive audits can't verify everything:
+- Employee access controls (who at the company can access servers?)
+- Physical security (is the data center actually secured?)
+- Third-party dependencies (libraries and tools the VPN uses)
+- Future code changes (updates deployed after audit)
+
+**No-logs verification challenges:** Auditors can examine server configs and database schemas, but can't prove developers never added secret logging. This requires trust in the company's integrity.
+
+**Encryption vs. implementation:** Strong encryption protocols don't prevent application-level bugs that leak data outside the encrypted tunnel.
+
+## Red Flags in Audit Reports
+
+When reading audit reports, watch for these warning signs:
+
+**High severity findings not yet remediated:**
+If an auditor finds a critical vulnerability and the report shows no fix timeline, avoid that provider until remediation is proven.
+
+**Evasive language:** Phrases like "appears to be," "likely," or "probably" instead of definitive statements suggest auditors couldn't fully verify claims.
+
+**Very old audits:** Any audit older than 18 months needs follow-up. Security threats evolve rapidly.
+
+**Conflicting findings:** If multiple audits identify the same issue, that provider has a systemic problem, not a one-time oversight.
+
+**No remediation evidence:** Quality providers publish follow-ups showing how they fixed audit findings.
+
+## Audit Timeline Best Practices
+
+For organizations using VPNs, check audit status regularly:
+
+```bash
+# Track VPN provider audit status
+
+#!/bin/bash
+
+providers=(
+    "protonvpn|https://proton.me/security"
+    "mullvad|https://mullvad.net/en/blog"
+    "nordvpn|https://nordvpn.com/en/security"
+)
+
+for provider in "${providers[@]}"; do
+    IFS='|' read -r name url <<< "$provider"
+    echo "Checking $name for recent audits..."
+    # Check publication date of most recent audit report
+    # Alert if audit is older than 12 months
+done
+```
+
+Document your providers' audit status and set calendar reminders to review updated reports quarterly.
+
+## Practical Audit Checklist for Users
+
+When evaluating a VPN provider based on audit results:
+
+**Before choosing:**
+- [ ] Recent audit exists (within 12 months)
+- [ ] Audit report is publicly available (full or redacted)
+- [ ] No critical findings remain unfixed
+- [ ] Provider has history of regular audits (not one-time event)
+- [ ] Audit covers both client and server components
+
+**During use:**
+- [ ] Monitor provider's security blog for updates
+- [ ] Enable kill switch as failsafe
+- [ ] Test for leaks regularly (DNS, WebRTC, IPv6)
+- [ ] Review privacy policy against audit findings
+
+**When switching providers:**
+- [ ] Compare audit results side-by-side
+- [ ] Check if new provider's audit is more recent
+- [ ] Verify no breaking security news since last audit
+- [ ] Test connection stability before committing
+
+## Interpreting Encryption Standards from Audits
+
+Audit reports specify encryption algorithms. Here's what they mean:
+
+**Current gold standard (2026):**
+- AES-256-GCM: Authenticated encryption, resistant to tampering
+- ChaCha20-Poly1305: Modern alternative, efficient on mobile
+- TLS 1.3: Latest secure protocol version
+- ECDH P-384 or Curve25519: Modern key exchange
+
+**Acceptable but older:**
+- AES-128-GCM: Still secure but weaker than 256-bit
+- TLS 1.2: Previous standard, still secure if implemented correctly
+- RSA 2048: Acceptable for key exchange, less efficient than ECDH
+
+**Avoid:**
+- Any provider still using AES without GCM (old, vulnerable)
+- SSL 3.0 or TLS 1.0/1.1 (deprecated, broken)
+- MD5 or SHA1 for HMAC (cryptographically weak)
+
+If an audit report from 2026 still lists deprecated algorithms, that's a red flag worth investigating.
+
 
 ## Related Articles
 

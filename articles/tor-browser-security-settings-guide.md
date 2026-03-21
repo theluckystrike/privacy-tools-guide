@@ -157,6 +157,204 @@ Obfs4 bridges obfuscate Tor traffic to look like random HTTPS traffic. Snowflake
 # Send empty email to: bridges@torproject.org
 ```
 
+## Advanced Configuration: The Torrc File
+
+For developers and power users, Tor Browser allows direct configuration through `torrc` files. Access the Tor Browser data directory and edit configuration directly:
+
+**macOS/Linux:**
+```bash
+# Locate Tor Browser profile
+open ~/.var/app/torbrowser/data/Tor/
+
+# Or if running Tor separately:
+# Edit /etc/tor/torrc
+```
+
+**Windows:**
+```
+C:\Users\[Username]\AppData\Roaming\Tor Browser\Browser\TorBrowser\Data\Tor\torrc
+```
+
+**Key configurations for privacy:**
+
+```bash
+# Use specific exit nodes only (advanced - can reduce anonymity)
+ExitNodes {us},{gb},{ca}  # Only exit through these countries
+StrictNodes 1              # Fail if specified exits unavailable
+
+# Disable directory caching to prevent metadata collection
+DirCache 0
+
+# Increase circuit timeout for heavy users
+CircuitBuildTimeout 120
+
+# Use obfuscated bridges if Tor is blocked
+UseBridges 1
+ClientTransportPlugin obfs4 exec /path/to/obfs4proxy
+
+# Set SOCKS5 proxy to non-standard port if needed
+SocksPort 9999
+
+# Request specific guard nodes (advanced)
+UseEntryGuards 1
+NumEntryGuards 3
+```
+
+## Testing Tor Browser Configuration
+
+After configuration changes, verify your anonymity:
+
+**DNS Leak Test:**
+```bash
+# Within Tor Browser, visit:
+dnsleaktest.com
+
+# All DNS queries should resolve through Tor exit nodes
+# NOT through your ISP
+```
+
+**IP Leak Test:**
+```bash
+# Within Tor Browser, visit:
+ipleak.net
+
+# Your IP should be the Tor exit node IP, NOT your real IP
+# IPv6 addresses should be cleared or only show exit node addresses
+```
+
+**WebRTC Leak Test:**
+```bash
+# Within Tor Browser, visit:
+browserleaks.com/webrtc
+
+# Should show only Tor exit node IP
+# If shows your ISP IP, WebRTC is leaking
+```
+
+## Tor Browser Fingerprinting Risks
+
+Tor Browser specifically minimizes browser fingerprinting, but users often accidentally re-enable it:
+
+**Common fingerprinting mistakes:**
+
+1. **Installing fonts** - Browser fonts are fingerprint vectors. Tor Browser intentionally ships with limited fonts.
+
+2. **Changing default zoom level** - Tor Browser zooms at 100%. Changing zoom creates a unique fingerprint:
+   ```
+   Ctrl+0 (Windows/Linux) or Cmd+0 (macOS) to reset zoom to default
+   ```
+
+3. **Resizing window** - Window size is a fingerprint vector. Use Ctrl+Alt+U for fullscreen with maximum consistency.
+
+4. **Accessing about:config** - Modifying `browser.sessionstore.privacy_level` or other settings creates fingerprints. Don't customize unless absolutely necessary.
+
+5. **Using multiple profiles** - Each profile is a separate fingerprint. Tor Browser intentionally uses one profile per instance.
+
+## Timing Attack Mitigation
+
+Tor protects against IP leaks but not against traffic analysis by powerful network observers:
+
+**Timing attack example:**
+```
+Observer notes:
+- Your home IP connects to Tor at 14:23:15
+- Tor exit node connects to target site at 14:23:18 (3 second delay)
+- Message sent at 14:23:20
+- Your home IP disconnects at 14:24:15
+- Tor exit disconnects at 14:24:18
+
+Observer correlates: Your timing matches the exit node timing.
+```
+
+**Mitigation:**
+- Use Tor Browser during high-traffic periods (avoiding unusual times)
+- Avoid accessing Tor right before/after accessing target in clearnet
+- Use Tor exclusively for sensitive sessions (don't mix with regular browsing)
+- Add random delays to your actions using `xdotool` on Linux or Automator on macOS
+
+**Timing noise script (Linux):**
+```bash
+#!/bin/bash
+# Add random delays to confuse timing attacks
+
+delay=$((RANDOM % 60 + 30))  # Random 30-90 second delay
+echo "Waiting ${delay} seconds before action..."
+sleep $delay
+
+# Now perform your Tor activity
+torsocks curl https://example.com
+```
+
+## Using Tails with Tor Browser
+
+Tails OS (The Amnesic Incognito Live System) combines Tor Browser with system-level protections:
+
+**Tails advantages over Tor Browser alone:**
+- Entire OS routes through Tor (not just browser)
+- No disk storage (runs from RAM)
+- Automatic application whitelisting (prevents accidental non-Tor traffic)
+- Built-in VPN kill switch (Tor circuit fails if network changes)
+- No persistent browsing history
+
+**Running Tails:**
+```bash
+# Boot Tails from USB or DVD
+# Create persistence volume if you need to save settings:
+# Use Tails Installer to create persistent storage
+
+# Everything you do in Tails is routed through Tor
+# SSH, DNS queries, all network traffic
+
+# On shutdown, Tails clears all RAM
+# No evidence of activity remains
+```
+
+## When Tor Browser Is Not Enough
+
+Recognize when additional protections are needed:
+
+**When browser anonymity is insufficient:**
+- Accessing hidden services from a hostile network (use Tails instead)
+- Communicating with extremely high-risk contacts (add ProtonMail encryption)
+- Operating in environment with physical surveillance (use Tails on air-gapped machine)
+- Expecting state-level adversary (combine Tor + VPN + Tails)
+
+**Tor Browser plus email setup:**
+```bash
+# ProtonMail in Tor Browser for additional email privacy
+# 1. Install Tor Browser
+# 2. Access: https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/
+#    (ProtonMail's .onion address - only accessible via Tor)
+# 3. Create account with security questions only (no recovery email)
+# 4. Enable two-factor authentication
+# 5. Use Tor Browser exclusively for that account
+```
+
+## Troubleshooting Tor Browser Issues
+
+**Issue: Tor Browser won't connect**
+```bash
+# Check if Tor service is running
+ps aux | grep tor
+
+# Restart Tor:
+killall tor
+# Then restart Tor Browser
+
+# Check torrc for syntax errors:
+tor --validate-config -f /etc/tor/torrc
+```
+
+**Issue: Very slow connections**
+- Try New Circuit (may help with congested relay)
+- Use obfuscated bridges (meek, snowflake) which may have better capacity
+- Test at different times (relay capacity varies by hour)
+
+**Issue: Websites blocking Tor traffic**
+- Some sites block known Tor exit nodes
+- Use obfuscated bridges to disguise Tor traffic
+- Contact site operators to request Tor support (many major sites now support it)
+
 ## Related Reading
 
 - [Privacy-Focused Web Browser Comparison 2026](/privacy-browser-comparison-2026/)

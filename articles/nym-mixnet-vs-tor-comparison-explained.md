@@ -175,6 +175,303 @@ For developers building privacy applications:
 
 Both systems require careful configuration and understanding of their threat models. Neither provides perfect anonymity, but each addresses different aspects of privacy.
 
+## Setting Up Each System: Practical Comparison
+
+**Setting up Tor (quick start):**
+
+```bash
+# Install Tor
+sudo apt-get install tor torsocks
+
+# Start Tor service
+sudo systemctl start tor
+sudo systemctl status tor
+
+# Use immediately - Tor Browser or torsocks
+torsocks curl https://example.com
+torsocks ssh user@example.com
+
+# Configuration file located at:
+# /etc/tor/torrc (editable for advanced users)
+```
+
+**Setting up Nym (more complex):**
+
+```bash
+# Install Nym (requires Rust)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install nym-cli
+
+# Generate credentials
+nym-cli init --id my-nym-client
+
+# Start the gateway
+nym-cli mixnet client --id my-nym-client
+
+# Results in SOCKS5 proxy at localhost:1080
+# Configure applications to use as proxy
+```
+
+**Setup complexity:**
+- Tor: 2-3 commands, runs immediately
+- Nym: Requires Rust, credential setup, gateway selection
+
+## Network Analysis Resistance: Detailed Comparison
+
+The critical difference is how each resists traffic analysis:
+
+**Tor's timing analysis weakness:**
+
+```
+Observer at exit relay position notes:
+- Client A connects to Tor at 14:23:15
+- Tor circuit to exit node established
+- Traffic to target.com at 14:23:18
+- Traffic pattern: 50KB per minute
+- Duration: 10 minutes
+- Total traffic: 500KB
+
+Observer can correlate:
+- Timing: Client A → Tor → Target matches timing
+- Volume: Traffic volume might match user's pattern
+- Conclusion: Client A likely accessed Target
+
+Probability of correlation: Medium (requires assumptions)
+```
+
+**Nym's mixing defense:**
+
+```
+Observer at gateway position notes:
+- Client connects at 14:23:15
+- Packets sent through Nym network
+- Packets mixed with cover traffic
+- Packets routed through mix nodes in random order
+- All packets same size (Sphinx format)
+
+Observer cannot correlate:
+- Incoming packet (14:23:16) doesn't match outgoing
+- Multiple clients' traffic mixed together
+- Cover traffic obscures patterns
+- Exit payload encrypted, indistinguishable
+
+Probability of correlation: Very low
+```
+
+## Cost/Benefit Analysis
+
+Choosing between systems involves trade-offs:
+
+**Tor advantages:**
+- Mature (15+ years of development)
+- Fast (suitable for browsing)
+- Access to .onion services
+- Large network (7,000+ relays)
+- Well-understood threat model
+
+**Tor disadvantages:**
+- Exit nodes can monitor plaintext traffic
+- Timing attacks possible with sophisticated observer
+- Not defended against global network adversary
+- Relay operators may have access to traffic metadata
+
+**Nym advantages:**
+- Stronger metadata protection
+- Defended against global passive adversary
+- Sphinx packet design prevents fingerprinting
+- Cover traffic obscures communication patterns
+- Better for high-risk scenarios
+
+**Nym disadvantages:**
+- Younger project (less battle-tested)
+- Slower performance (mixing introduces latency)
+- Smaller network (fewer mix nodes)
+- More complex to deploy and maintain
+- Limited application support
+
+## Selection Decision Tree
+
+```
+Do you need anonymity right now?
+├─ Yes, and speed matters? → Choose Tor
+├─ No, and strongest protection? → Choose Nym
+
+Are you accessing .onion services?
+├─ Yes → Tor (Nym doesn't support .onion)
+└─ No → Either (check other factors)
+
+What's your threat model?
+├─ Privacy from ISP/network observer → Tor is sufficient
+├─ Privacy from exit nodes → Use HTTPS + Tor, or Nym
+├─ Privacy from global adversary → Nym better
+└─ Privacy from state actor → Consider Tails + Tor, or Nym
+
+Performance requirements?
+├─ Real-time applications (video, gaming) → Tor
+├─ Browsing, email → Either
+└─ Just privacy, speed irrelevant → Nym
+
+Deployment complexity tolerance?
+├─ "Plug and play" preference → Tor Browser
+├─ Willing to configure services → Either
+└─ Can handle complex setups → Nym
+```
+
+## Hybrid Approaches: Combining Systems
+
+Advanced users can gain benefits of both:
+
+**Tor + Nym layering:**
+
+```
+Architecture:
+Device → Tor Browser → Nym Gateway
+                    → Mix Nodes
+                    → Nym Destination
+                    → Target Service
+
+Effect:
+- Tor hides ISP level metadata
+- Nym hides Tor exit node from target
+- Double encryption provides defense in depth
+
+Performance impact: Significant (both systems add latency)
+Use case: Journalists accessing sensitive sources
+```
+
+**Configuration:**
+
+```bash
+# Start Tor normally
+tor
+
+# Configure Nym to route through Tor
+# In nym-cli config: use Tor's SOCKS5 port (9050)
+
+nym-cli client --id my-client --socks5-proxy 127.0.0.1:9050
+```
+
+## Future Evolution: Post-Quantum Considerations
+
+Both systems are developing quantum-resistant variants:
+
+**Tor's post-quantum roadmap:**
+- Experimenting with hybrid key exchange (Curve25519 + lattice-based)
+- No timeline for deployment yet
+- Research phase with academic partners
+
+**Nym's post-quantum roadmap:**
+- Designed with pluggable cryptography
+- Easier to upgrade to post-quantum primitives
+- More flexibility for future changes
+
+**When quantum threat matters:**
+- If you need information protected for 20+ years (documents, secrets)
+- If you're storing encrypted data today for future decryption
+- If you communicate with state-level adversaries who save traffic
+
+## Real-World Usage Scenarios
+
+**Scenario 1: Journalist in hostile environment**
+
+```
+Requirements:
+- High metadata protection
+- Can't be traced communicating with sources
+- Performance acceptable (not real-time)
+
+Recommendation: Nym
+Rationale:
+- Sphinx packets prevent traffic analysis
+- Cover traffic obscures communication patterns
+- Global adversary can't correlate connections
+
+Setup:
+1. Run Nym client on isolated machine
+2. Use separate email account for communication
+3. Access via Nym gateway
+4. Sources also use Nym for outbound communications
+```
+
+**Scenario 2: General privacy-conscious user**
+
+```
+Requirements:
+- Protection from ISP monitoring
+- Quick and easy setup
+- Access to normal websites (not .onion)
+- Adequate performance for browsing
+
+Recommendation: Tor Browser
+Rationale:
+- Mature, stable, proven
+- "Works out of box"
+- Sufficient for ISP-level adversary
+- Excellent compatibility
+
+Setup:
+1. Download Tor Browser
+2. Open, connect
+3. Browse normally
+```
+
+**Scenario 3: Enterprise secure communication**
+
+```
+Requirements:
+- Network-wide protection
+- Metadata confidentiality
+- Scalable to many users
+- Controlled environment
+
+Recommendation: Nym
+Rationale:
+- Can be deployed at network gateway
+- All traffic benefits from metadata protection
+- Mix network scales with user count
+- Enterprise support available
+
+Setup:
+1. Deploy Nym gateway at network border
+2. Configure enterprise firewall to route sensitive traffic through Nym
+3. Audit logging for compliance
+```
+
+## Monitoring and Logging Considerations
+
+Neither Tor nor Nym should maintain logs, but verification matters:
+
+**Verifying Tor doesn't log:**
+
+```bash
+# Check Tor configuration for logging directives
+grep -i "log" /etc/tor/torrc
+
+# Tor default: No persistent logging
+# Only stdout/stderr if running in foreground
+
+# Verify directory has no logs
+ls -la ~/.tor/
+# Should show no log files
+
+# Check system journal (Tor relays might log here)
+journalctl -u tor
+# Should show connection info, not full traffic
+```
+
+**Verifying Nym doesn't log:**
+
+```bash
+# Check Nym client configuration
+cat ~/.nym/clients/*/config.toml | grep -i log
+
+# Nym doesn't create persistent logs by default
+# If debug mode, logs go to stderr only
+
+# Verify no database files contain traffic records
+ls -la ~/.nym/clients/*/
+# Only configuration, no traffic records should exist
+```
 
 ## Related Articles
 
