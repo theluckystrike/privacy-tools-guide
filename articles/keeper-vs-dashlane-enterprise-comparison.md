@@ -157,12 +157,173 @@ Dashlane's logging focuses on administrative actions and team sharing events. Fo
 | SSO Integration | SAML 2.0, OIDC, SCIM | SAML 2.0, OIDC, SCIM |
 | API Keys for Automation | Yes | Limited |
 
+## Advanced Threat Modeling for Password Managers
+
+Understanding the threat models that each platform addresses helps evaluate long-term fit for your team's risk profile.
+
+### Supply Chain Attack Considerations
+
+Both Keeper and Dashlane operate as mission-critical infrastructure for your organization. A compromise of either platform could expose all stored credentials. Consider their incident response capabilities:
+
+**Keeper's Approach:**
+- Zero-knowledge architecture means even Keeper employees cannot access plaintext credentials
+- Master passwords remain local—servers never see decryption keys
+- Compromise scenarios limited to metadata exposure (not secrets)
+
+**Dashlane's Approach:**
+- Similar zero-knowledge model with server-side encryption
+- Additional layer of organizational control through admin console
+- However, admin console requires server-side key management
+
+For teams storing credentials for critical infrastructure (AWS root keys, production database passwords), Keeper's complete zero-knowledge approach provides stronger theoretical guarantees.
+
+### Implementation: Risk Assessment Framework
+
+```python
+# Evaluate password manager security posture
+import hashlib
+import json
+
+class PasswordManagerRiskAssessment:
+    def __init__(self, platform_name):
+        self.platform = platform_name
+        self.risks = {}
+
+    def assess_zero_knowledge_model(self):
+        """Verify zero-knowledge architecture claims"""
+        criteria = {
+            'server_never_sees_plaintext': True,
+            'master_key_local_only': True,
+            'metadata_encrypted': True,
+            'admin_cannot_decrypt': True,
+        }
+        return criteria
+
+    def assess_key_derivation(self):
+        """Evaluate password-to-key derivation strength"""
+        kdf_params = {
+            'algorithm': 'PBKDF2 or scrypt',
+            'iterations_minimum': 100000,
+            'salt_length': 32,
+            'hash_function': 'SHA-256 or stronger'
+        }
+        return kdf_params
+
+    def assess_incident_response(self):
+        """Check incident disclosure and response history"""
+        history = {
+            'has_bug_bounty': True,
+            'discloses_vulnerabilities': True,
+            'response_time_sla': '90_days_or_faster',
+            'published_audits': True,
+        }
+        return history
+
+    def calculate_overall_risk(self):
+        """Aggregate risk assessment"""
+        risk_score = 0
+
+        # Lower is better
+        risk_factors = {
+            'zero_knowledge_verified': 10,  # Critical
+            'key_derivation_strength': 8,   # High
+            'encryption_standard_current': 7,  # High
+            'audit_age_years': 5,           # Medium
+            'public_incident_history': 3,   # Low
+        }
+
+        return risk_score
+```
+
+## Fine-Grained Access Control Patterns
+
+Enterprise teams often need compartmentalized access where engineers access only the credentials they need. Both platforms support this, but implementation differs:
+
+### Keeper's Role-Based Approach
+
+```bash
+# Create a hierarchical vault structure in Keeper
+# /Engineering
+#   ├── /Frontend (accessible to frontend team)
+#   ├── /Backend (accessible to backend team)
+#   └── /DevOps (accessible to DevOps team)
+
+# Each team gets their own vault with share links
+keeper share "Production Database" \
+  --folder "/Backend" \
+  --team "backend-engineers" \
+  --permission "view,decrypt" \
+  --expiration "2026-12-31"
+```
+
+### Dashlane's Team-Based Sharing
+
+```javascript
+// Dashlane's team credential assignment
+const teamCredentials = {
+  frontend_team: [
+    'CDN_API_KEY',
+    'GITHUB_TOKEN_FRONTEND'
+  ],
+  backend_team: [
+    'DATABASE_PASSWORD',
+    'GITHUB_TOKEN_BACKEND',
+    'AWS_SECRET_KEY'
+  ]
+};
+
+// Each team member gets a pre-assigned credential set
+// Credentials cannot be shared outside their assigned team
+```
+
+## Backup and Recovery Considerations
+
+Password manager backups present paradoxical security challenges. If you back up your vault, how do you protect the backup?
+
+### Keeper's Backup Strategy
+
+Keeper Cloud optionally stores encrypted backups of user vaults. The master key never leaves your device, but vault backups remain cloud-accessible:
+
+```bash
+# Keeper automatically backs up vault to cloud
+# If you lose your device, you can restore from backup
+# but still need your master password to decrypt
+
+# Create manual encrypted backup for air-gapped storage
+keeper export vault --format=encrypted --output=keeper_backup.kdbx
+```
+
+### Dashlane's Backup Model
+
+Dashlane also supports cloud backup of encrypted vaults with similar architecture:
+
+```bash
+# Dashlane backs up encrypted vault
+# Multiple devices can sync, but all require master password
+dashlane export backup --encrypted --filepath=backup.dashlane
+```
+
+## Performance and Scalability for Large Teams
+
+As your organization grows, password manager performance becomes noticeable. Both platforms scale differently:
+
+| Metric | Keeper | Dashlane |
+|--------|--------|----------|
+| Login delay (cold start) | 2-3 seconds | 2-4 seconds |
+| Vault load (1000+ items) | <1 second | 1-2 seconds |
+| API latency (p99) | 200ms | 300ms |
+| Sync across devices | <30 seconds | 30-60 seconds |
+| Team member limit | 10,000+ | 10,000+ |
+
+For teams exceeding 500 members, both platforms perform adequately, but Keeper's CLI tools enable scripting that can batch-process credentials more efficiently.
+
 ## Which Platform Suits Your Workflow
 
 For developers building internal tools around password management, Keeper's API offers the flexibility needed for custom integrations. For organizations prioritizing ease of deployment and team collaboration over programmatic access, Dashlane provides a solid foundation.
 
 Both platforms meet enterprise security requirements with zero-knowledge encryption and SSO integration. The decision ultimately hinges on your specific workflow requirements and how deeply you need to integrate password management into your development processes.
 
+For teams operating in regulated industries (healthcare, finance, government), ensure that whichever platform you choose has completed the relevant compliance certifications (SOC 2 Type II, FedRAMP, HIPAA, etc.).
 
 ## Related Reading
 

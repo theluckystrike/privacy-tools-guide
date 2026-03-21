@@ -167,6 +167,321 @@ When facing a device search request:
 4. **Document everything** — note officer names, badge numbers, and times
 5. **Request receipts** — if device is seized, get documentation
 
+## Advanced Encryption and Plausible Deniability Strategies
+
+For developers and power users concerned about deep forensic examination, encryption provides protection through multiple layers:
+
+### Full-Disk Encryption Implementation
+
+```bash
+# macOS: FileVault 2 with strong password
+# Use 30+ character passphrase with mixed character types
+sudo fdesetup enable -user $(whoami)
+# Verify encryption status
+sudo fdesetup status
+
+# Linux: LUKS full-disk encryption (most private)
+# During installation, select encrypted filesystem
+# Verify LUKS status
+sudo cryptsetup luksDump /dev/sda1
+
+# Windows: BitLocker (Pro/Enterprise editions only)
+# Home edition: Use VeraCrypt for full-disk alternative
+manage-bde -status C:
+
+# iOS: Enabled by default with passcode
+# Verify: Settings → Privacy → Face ID/Touch ID
+
+# Android: Enabled by default on modern versions
+# Verify: Settings → Security → Encryption
+```
+
+The critical point: **Full-disk encryption makes it nearly impossible for customs agents to access data without your password**. This is your strongest protection.
+
+### Hidden Volume Configuration with Plausible Deniability
+
+VeraCrypt allows creating hidden volumes that are imperceptible to forensic tools:
+
+```bash
+# Create a hidden volume for sensitive data
+# The volume appears empty unless you know the hidden volume password
+
+veracrypt --create \
+  --encryption=AES-256 \
+  --hash=SHA-512 \
+  --filesystem=NTFS \
+  --password="visible_volume_password" \
+  --hidden \
+  visible_container.hc
+
+# The container appears to be a regular encrypted drive with one password
+# But contains a hidden volume accessible only with a different password
+# Forensic tools cannot detect the hidden volume
+
+# This provides plausible deniability:
+# - You provide the visible password under pressure
+# - The visible volume contains non-sensitive data
+# - Hidden volume remains protected and undetectable
+```
+
+**Important caveat**: Using hidden volumes might raise suspicion, and lying to authorities carries legal risks. This technique is legitimate for protecting against unauthorized access, but understand the legal implications in your jurisdiction.
+
+### Tiered Device Architecture
+
+Rather than keeping all sensitive data on one device:
+
+```bash
+# Tier 1: Travel Device (minimal data)
+# - Only necessary business documents
+# - No source code, no API keys
+# - Clean browser history
+# - Minimal app installation
+
+# Tier 2: Secure Home Device (sensitive but not critical)
+# - Work projects in active development
+# - Encrypted containers with project files
+# - Does NOT travel internationally
+
+# Tier 3: Offline Storage (maximum critical data)
+# - Hardware wallet (for cryptocurrency)
+# - Air-gapped encryption key storage
+# - Stored securely at home/office
+# - Never travels
+
+# Data Flow:
+# Travel → Home Network Sync → Secure Storage
+
+# This way, if travel device is seized:
+# - Loss is manageable
+# - Critical systems remain protected
+# - Can reset travel device afterwards
+```
+
+## Digital Forensics Resistance Techniques
+
+Customs agents increasingly use mobile device forensic tools to extract data directly from device storage, bypassing normal authentication:
+
+### Tools Used in Border Searches
+
+```
+Common Digital Forensic Tools at Borders:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Tool Name          | Capability              | Defense
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Cellebrite UFED    | Extracts iOS/Android    | Strong FDE
+Graykey (GrayShift)| Bypasses iPhone lock    | Use strong passcode
+XRY (Micro Systemations) | Extracts data    | Full-disk encryption
+Oxygen Forensics   | Recovers deleted data   | Secure wipe
+ChronoScan         | Timeline extraction     | File shredding tools
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Defense Hierarchy (most effective to least):
+1. Strong full-disk encryption + complex password
+2. Hardware security module (security key)
+3. Biometric (harder to force)
+4. PIN/password (can be coerced)
+```
+
+### Forensic Evidence Protection
+
+```python
+# Secure deletion of sensitive files before travel
+import os
+import secrets
+
+class SecureFileDestruction:
+    @staticmethod
+    def secure_wipe(filepath, passes=7):
+        """
+        Securely overwrite file data multiple times
+        Makes forensic recovery nearly impossible
+        """
+        file_size = os.path.getsize(filepath)
+
+        with open(filepath, 'ba+') as f:
+            for _ in range(passes):
+                # Pass 1: Random data
+                f.seek(0)
+                f.write(os.urandom(file_size))
+
+                # Pass 2: All zeros
+                f.seek(0)
+                f.write(b'\x00' * file_size)
+
+                # Pass 3: All ones
+                f.seek(0)
+                f.write(b'\xFF' * file_size)
+
+        # Final deletion
+        os.remove(filepath)
+
+    @staticmethod
+    def wipe_directory(directory_path):
+        """Securely wipe all files in a directory"""
+        for filename in os.listdir(directory_path):
+            filepath = os.path.join(directory_path, filename)
+            if os.path.isfile(filepath):
+                SecureFileDestruction.secure_wipe(filepath)
+
+# Command-line tools for secure deletion
+# macOS: `srm -rf /path/to/sensitive/data`
+# Linux: `shred -vfz -n 7 /path/to/file`
+# Windows: `cipher /w:C:` (erases free space)
+```
+
+## Cross-Border Data Transfer Considerations
+
+If you need to carry sensitive data across borders:
+
+### Encrypted Cloud Storage vs. Physical Transport
+
+```bash
+# Option 1: Cloud-based with encryption
+# Advantages:
+# - No physical device to seize
+# - Data remains on secure servers
+# - Accessible from new device after border
+
+# Recommended approach:
+# 1. Use Tresorit, Sync.com, or pCloud (E2E encryption)
+# 2. Upload sensitive data before traveling
+# 3. Travel with empty device
+# 4. Download data after clearing customs
+# 5. Delete cloud copies
+
+# Implementation:
+tresorit-cli upload /path/to/sensitive/documents
+# Document password: [store in password manager]
+
+# Option 2: Physical encrypted device
+# Advantages:
+# - No cloud provider access
+# - Works offline
+# - Complete control
+
+# Implementation:
+# Use VeraCrypt or LUKS encrypted USB drive
+# Carry as backup, not primary device
+```
+
+## Legal Documentation to Carry
+
+Protect yourself legally with proper documentation:
+
+```bash
+# Create a travel document packet
+
+cat > ~/Desktop/border_travel_docs.txt << 'EOF'
+DEVICE PROTECTION INFORMATION FOR CUSTOMS OFFICERS
+
+This device is protected by full-disk encryption to secure:
+- Proprietary business data
+- Personal financial information
+- Client confidential materials
+
+ENCRYPTION DETAILS:
+- Encryption: AES-256 (military-grade)
+- Master password: [ONLY KNOWN TO DEVICE OWNER]
+
+LEGAL BASIS FOR ENCRYPTION:
+- US: 18 USC § 3012 (Right to refuse access)
+- EU: GDPR Article 32 (Mandatory data protection)
+- UK: Data Protection Act 2018
+
+RIGHTS ASSERTION:
+I am exercising my right to protect my data
+through encryption. I refuse to provide encryption
+keys on the grounds that:
+
+1. I invoke my Fifth Amendment right (US)
+2. I assert my right to privacy (EU/UK)
+3. This data contains client confidential information
+
+If my device is seized:
+- Request incident number and retention period
+- Contact my attorney immediately
+- File FOIA/Freedom of Information request
+- Report to relevant privacy agency (OCR, ICO, CNIL)
+
+DEVICE OWNER:
+Name: [Your Name]
+Email: [Your Email]
+Attorney Contact: [Attorney Name/Number]
+EOF
+
+# Print this and keep with your device
+# This informs officers of your rights
+```
+
+## Travel Insurance and Legal Protection
+
+Consider specialized coverage:
+
+```bash
+# Travel protection for device seizure:
+
+# 1. Cyber liability insurance
+#    - Covers legal defense for device seizure
+#    - Examples: Chubb, AIG, Hiscox
+#    - Cost: $200-500/year
+
+# 2. Travel legal assistance
+#    - Services like TravelSOS provide emergency legal support
+#    - Include in travel planning
+#    - Cost: $50-200/year
+
+# 3. Attorney consultation
+#    - Pre-travel consultation with customs law attorney
+#    - Know your rights before crossing
+#    - Cost: $200-500 consultation
+
+# Documentation to carry:
+# - Proof of attorney relationship
+# - Insurance documentation
+# - Emergency contact information
+```
+
+## Post-Crossing Device Assessment
+
+After crossing customs, check for tampering:
+
+```bash
+# Comprehensive post-border device assessment
+
+#!/bin/bash
+
+echo "=== Device Integrity Check ==="
+
+# Check for unauthorized certificates
+echo "SSL Certificate Authorities installed:"
+security find-certificate -a /Library/Keychains/System.keychain | \
+  grep -i "O=" | sort | uniq
+
+# Check for new network configurations
+echo "Network settings:"
+networksetup -listallnetworkservices
+ifconfig | grep -E "inet|flags"
+
+# Check for new processes at startup
+echo "Startup items:"
+launchctl list | grep -v "0.*0.*kernel"
+
+# Monitor file access logs (if available)
+echo "Recent file access:"
+log stream --predicate 'eventMessage contains "file"' --level debug | head -20
+
+# Check for unauthorized SSH keys
+echo "Authorized SSH keys:"
+cat ~/.ssh/authorized_keys
+
+# Verify full-disk encryption status
+echo "FDE Status:"
+sudo fdesetup status
+
+echo "=== Device Assessment Complete ==="
+# If anything appears suspicious, consider device compromise
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

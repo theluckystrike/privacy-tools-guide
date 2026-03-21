@@ -151,6 +151,225 @@ psbt.addInput({
 });
 ```
 
+## Analyzing On-Chain Privacy Improvements
+
+Quantifying the privacy improvements from Taproot requires understanding what chain analysts observe:
+
+### Pre-Taproot Privacy Problems
+
+Before Taproot, transactions revealed extensive information:
+
+```
+Legacy Multi-Sig Transaction:
+┌─────────────────────────────────────┐
+│ Input 1: signature + pubkey1         │
+│ Input 2: signature + pubkey2         │
+│ Input 3: signature + pubkey3         │
+│ Reveals: 2-of-3 multisig structure   │
+│ Size: ~380 bytes                     │
+│ Analyst learns: All 3 parties        │
+│ involved, ratio requirements, etc.   │
+└─────────────────────────────────────┘
+
+Pay-to-Script-Hash (P2SH):
+┌─────────────────────────────────────┐
+│ scriptPubKey: OP_HASH160 <hash160>   │
+│ redeemScript: OP_2 <pk1> <pk2> ...   │
+│ Reveals: When spent, all terms       │
+│ Size: ~200 bytes for 2-of-3         │
+│ Analyst learns: Exact structure      │
+└─────────────────────────────────────┘
+```
+
+### Post-Taproot Privacy Gains
+
+```
+Taproot Single-Sig Spending (key path):
+┌─────────────────────────────────────┐
+│ signature: <schnorr_sig>             │
+│ No script revelation                 │
+│ Size: ~64 bytes (73% reduction!)     │
+│ Analyst learns: Nothing              │
+│ Indistinguishable from P2PKH         │
+└─────────────────────────────────────┘
+
+Taproot Script Path (MAST usage):
+┌─────────────────────────────────────┐
+│ Only spent condition revealed         │
+│ Merkle tree hides other branches      │
+│ Size: ~98 bytes                       │
+│ Analyst learns: Only what was used    │
+│ Cannot infer alternative paths        │
+└─────────────────────────────────────┘
+```
+
+**Privacy improvement quantification:**
+- 73% smaller on-chain footprint
+- Hides contract complexity
+- Makes timing analysis harder (less data)
+- Reduces fingerprinting attack surface
+
+## Advanced Privacy Constructs Using Taproot
+
+### Blind Swaps with Taproot
+
+Blind swaps allow atomic exchange of assets without revealing swap details:
+
+```rust
+// Simplified Taproot blind swap construction
+use secp256k1::{Keypair, XOnlyPublicKey};
+
+struct BlindSwap {
+    alice_key: Keypair,
+    bob_key: Keypair,
+    alice_asset: u64,      // Amount Alice sends
+    bob_asset: u64,        // Amount Bob sends
+    timelock: u32,         // Refund condition
+}
+
+impl BlindSwap {
+    fn create_taproot_output() -> TaprootOutput {
+        // Spending paths:
+        // Path 1: Alice + Bob jointly (successful swap)
+        // Path 2: Alice alone after timelock (refund)
+        // Path 3: Bob alone after timelock (refund)
+
+        let alice_key = self.alice_key.x_only_public_key().0;
+        let bob_key = self.bob_key.x_only_public_key().0;
+
+        // On-chain: looks like a standard Taproot output
+        // Analyst cannot determine this is a swap contract
+        TaprootOutput::new(alice_key, timelock)
+    }
+}
+
+// Result: Swap structure completely hidden on-chain
+```
+
+### Covenants for Private Payment Channels
+
+Taproot enables more sophisticated covenant structures for payment channels:
+
+```javascript
+// Taproot-based payment channel (simplified)
+const channelStructure = {
+    // Initial funding state
+    state0: {
+        alice_output: { amount: 500000, key: alice_pubkey },
+        bob_output: { amount: 500000, key: bob_pubkey },
+        timelock: 14400  // 4 hours
+    },
+
+    // Update state (off-chain state change)
+    state1: {
+        alice_output: { amount: 400000, key: alice_pubkey },
+        bob_output: { amount: 600000, key: bob_pubkey },
+        timelock: 14400
+    }
+
+    // On-chain: only final state reveals
+    // Analyst sees: one Taproot output
+    // Cannot determine: how many updates occurred
+};
+
+// This enables privacypreserving payment channels
+// that reveal minimal information about off-chain activity
+```
+
+## Lightning Network Taproot Integration
+
+Lightning channels using Taproot improve both privacy and efficiency:
+
+### Comparison: SegWit v0 vs Taproot Channels
+
+```python
+# Channel funding transaction comparison
+
+segwit_v0_channel = {
+    'witness': ['signature1', 'signature2'],
+    'witnessScript': 'OP_2 pubkey1 pubkey2 OP_2 OP_CHECKMULTISIG',
+    'size': 248,  # bytes
+    'observable': ['2-of-2 multisig', 'channel capacity']
+}
+
+taproot_channel = {
+    'witness': ['schnorr_aggregate_sig'],  # Single sig
+    'taprootScript': 'hidden',  # MAST obscures details
+    'size': 99,  # bytes (60% smaller!)
+    'observable': ['looks like P2PKH', 'indistinguishable from payments']
+}
+```
+
+### Benefits for Lightning Users
+
+```
+Privacy improvements from Taproot in Lightning:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Feature          | SegWit v0 | Taproot
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Channel visible? | Yes       | Maybe (looks normal)
+Multisig obvious?| Yes       | No
+Transaction size | Larger    | Smaller
+HTLC privacy     | Low       | Improved
+Script hiding    | No        | Yes (MAST)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+## Measuring Privacy Improvements in Production
+
+Developers should understand how to measure Taproot's privacy impact:
+
+```python
+# Analysis framework for measuring privacy improvements
+
+class TaprootPrivacyAnalysis:
+    def __init__(self, blockchain_data):
+        self.blockchain = blockchain_data
+
+    def measure_transaction_fingerprinting(self):
+        """Analyze how easily Taproot transactions can be identified"""
+        stats = {
+            'legacy_transactions': 0,
+            'p2sh_transactions': 0,
+            'segwit_v0_transactions': 0,
+            'taproot_transactions': 0,
+        }
+
+        for tx in self.blockchain.transactions:
+            if tx.is_taproot():
+                stats['taproot_transactions'] += 1
+            # ... classify others
+
+        # Calculate "anonymity set"
+        # Higher Taproot adoption = better privacy for all
+        anonymity_set = stats['taproot_transactions']
+        privacy_quality = 1.0 / anonymity_set if anonymity_set > 0 else 0
+
+        return {
+            'transaction_stats': stats,
+            'privacy_quality': privacy_quality,
+            'recommendation': (
+                'Low Taproot adoption = easy to identify' if anonymity_set < 100
+                else 'Strong anonymity from high Taproot usage'
+            )
+        }
+
+    def analyze_coinjoin_improvements(self):
+        """Measure CoinJoin privacy with Taproot signatures"""
+        coinjoin_metrics = {
+            'input_count': 0,
+            'output_count': 0,
+            'signature_size_savings': 0,
+            'observable_indicators': []
+        }
+
+        # With Schnorr signatures, CoinJoins appear as single-sig
+        # Previously: obvious pattern of multiple inputs with multiple sigs
+        # Now: indistinguishable from regular multi-input transactions
+
+        return coinjoin_metrics
+```
+
 ## Looking Forward in 2026
 
 As the Bitcoin ecosystem matures, Taproot's privacy benefits compound with other developments:
@@ -158,6 +377,8 @@ As the Bitcoin ecosystem matures, Taproot's privacy benefits compound with other
 - **Scriptless scripts** enable smart contract logic without revealing terms on-chain
 - **Cross-input signature aggregation** (proposed) would further reduce fingerprinting
 - **Vaults and DLCs** use Taproot for improved privacy-preserving structures
+- **Silent payments** protocol reduces address reuse and linking
+- **Nostr and Taproot integration** enables censorship-resistant communication
 
 The Taproot upgrade demonstrated Bitcoin's ability to evolve while maintaining its core properties. For developers and power users, understanding these privacy improvements is essential for building or using Bitcoin in ways that respect user confidentiality.
 
