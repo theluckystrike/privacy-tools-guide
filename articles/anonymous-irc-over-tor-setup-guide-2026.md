@@ -18,6 +18,12 @@ tags: [privacy-tools-guide]
 
 To set up anonymous IRC over Tor, install the Tor daemon, configure your IRC client (like WeeChat or Irssi) to connect through SOCKS5 on localhost:9050, then connect to Tor-hidden IRC networks that operate as .onion services for near-complete anonymity. Standard IRC exposes your IP address to all network observers, while running IRC over Tor hides your IP and adds multiple layers of routing obfuscation, protecting you from traffic analysis and deanonymization.
 
+## Why Standard IRC Leaks Your Identity
+
+Before diving into configuration, it helps to understand exactly what IRC exposes. When you connect to a standard IRC server, every person in every channel can see your hostmask — typically a string that includes your IP address or your ISP's reverse DNS. Network operators and IRC staff see your full IP. Many IRC networks log connection data for months.
+
+Even if you use a VPN, the VPN provider sees your traffic and can be compelled to hand over logs. Tor's layered encryption with circuit rotation provides meaningfully stronger anonymity because no single node ever sees both who you are and what you're sending.
+
 ## Installing and Configuring the Tor Daemon
 
 The foundation of anonymous IRC is a properly configured Tor installation. On Linux, install the Tor daemon:
@@ -48,34 +54,42 @@ ExcludeExitNodes {us},{gb},{de},{fr}
 
 # Set circuit build timeout for IRC
 CircuitBuildTimeout 10
+
+# Isolate streams by destination to prevent cross-connection correlation
+SOCKSPort 9050 IsolateDestAddr IsolateDestPort
 ```
+
+The `IsolateDestAddr` and `IsolateDestPort` flags are particularly important for IRC: they force Tor to use separate circuits for each destination, preventing a compromised server from correlating your connections to different IRC networks.
 
 Restart Tor to apply changes:
 
 ```bash
 sudo systemctl restart tor
+# or on macOS:
+brew services restart tor
 ```
 
 Verify the SOCKS proxy is listening:
 
 ```bash
 netstat -an | grep 9050
+# Expected: tcp 0.0.0.0:9050 LISTEN
 ```
 
 ## IRC Client Configuration
 
-Several IRC clients support Tor natively. This guide focuses on three popular options: HexChat (GUI), WeeChat (terminal), and irssi (terminal).
+Several IRC clients support Tor natively. This guide focuses on three popular options: HexChat (GUI), WeeChat (terminal), and Irssi (terminal).
 
 ### HexChat Configuration
 
 HexChat provides a straightforward GUI for Tor connections:
 
 1. Open HexChat → Network List → Add a new network
-2. Set the server hostname to a Tor-based IRC network (e.g., `irc.oftc.net.onion`)
+2. Set the server hostname to a Tor-based IRC network (e.g., `irc6.oftc.net.onion`)
 3. Navigate to the server and enable "Proxy" with these settings:
- - Proxy type: SOCKS5
- - Proxy host: 127.0.0.1
- - Proxy port: 9050
+   - Proxy type: SOCKS5
+   - Proxy host: 127.0.0.1
+   - Proxy port: 9050
 
 For OFTC, which maintains an official Tor hidden service:
 
@@ -87,18 +101,22 @@ Use SSL: Yes
 Proxy: 127.0.0.1:9050 (SOCKS5)
 ```
 
+One critical HexChat setting: disable DNS lookups through the local resolver. If HexChat resolves hostnames before passing them to the SOCKS proxy, it leaks your DNS queries outside Tor. In the Network List, ensure "Use proxy for DNS lookups" is enabled, or better yet, always use .onion addresses that require no DNS resolution.
+
 ### WeeChat Configuration
 
 WeeChat is highly scriptable and works well for advanced users. Configure Tor support:
 
 ```bash
-# Set up the relay plugin
-/set relay.network.socks_proxy "127.0.0.1:9050"
-
-# Add OFTC with Tor
+# Add OFTC with Tor proxy
 /server add oftc-tor irc6.oftc.net.onion/6697 -ssl
 /set irc.server.oftc-tor.proxy "socks5://127.0.0.1:9050"
 /set irc.server.oftc-tor.autoconnect on
+
+# Force WeeChat to resolve hostnames through the proxy (prevents DNS leaks)
+/proxy add tor socks5 127.0.0.1 9050
+/set irc.server.oftc-tor.proxy "tor"
+
 /connect oftc-tor
 ```
 
@@ -106,17 +124,29 @@ Verify the connection shows a .onion address:
 
 ```bash
 /server
+# Should show: oftc-tor [irc6.oftc.net.onion/6697] (connected)
 ```
 
 ### Irssi Configuration
 
-For minimal resource usage, configure irssi with Tor:
+For minimal resource usage, configure Irssi with Tor. Irssi requires the proxy plugin:
 
-```perl
-# In irassi, run:
+```bash
+# Load the proxy plugin
+/load proxy
+
+# Configure SOCKS5 proxy
+/set proxy_host 127.0.0.1
+/set proxy_port 9050
+/set proxy_type socks5
+
+# Add network
 /network add -socks_proxy 127.0.0.1 9050 oftc
 /server add -net oftc -hostname irc6.oftc.net.onion -port 6697 -ssl
+/connect oftc
 ```
+
+Irssi's configuration is stored in `~/.irssi/config`. Back this file up securely — it contains your server list, and losing it means reconfiguring all your anonymous connections.
 
 ## Connecting to Tor-Based IRC Networks
 
@@ -124,7 +154,7 @@ Several IRC networks operate Tor hidden services, providing inherent protection 
 
 ### OFTC (Open and Free Technology Community)
 
-OFTC hosts numerous Linux distribution and open-source project channels:
+OFTC hosts numerous Linux distribution and open-source project channels. It has operated a Tor hidden service for years and is considered one of the most reliable options:
 
 ```bash
 # WeeChat connection
@@ -133,25 +163,15 @@ OFTC hosts numerous Linux distribution and open-source project channels:
 /connect oftc
 ```
 
-### IRCnet Tor Bridge
+OFTC will assign your connection a cloak based on your Tor exit node, displaying something like `~user@tor-exit.example.net` rather than your real IP. This is not a substitute for Tor — it is in addition to Tor's own protections.
 
-IRCnet provides a Tor bridge for users who cannot connect via regular IRC:
+### Libera.Chat Tor Access
 
-```conf
-# torrc configuration
-HiddenServiceDir /var/lib/tor/ircd/
-HiddenServicePort 6667 irc.xxxiybernoobxxxi.onion:6667
-```
+Libera.Chat (the successor to Freenode) supports Tor connections through their hidden service at `libera75jm6of4wxpxt4aynol3xjmbtxgfyjpu34ss4d7r7q2v5zrpyd.onion`. Connect on port 6667 or 6697 (SSL). You must register a nickname with NickServ using SASL authentication over Tor to bypass the requirement for email verification.
 
-### Custom Server Connections
+### IRCnet and Custom Server Connections
 
-Many networks allow connections through Tor exits. Use caution—exit nodes can be monitored:
-
-```bash
-# WeeChat: Connect through Tor exit nodes
-/set irc.server.example.proxy "socks5://127.0.0.1:9050"
-/server add example irc.example.org/6697 -ssl
-```
+Many networks allow connections through Tor exits. Use caution — exit nodes can be monitored for unencrypted traffic. Always use SSL/TLS on port 6697 rather than plaintext port 6667, even when routing through Tor, to protect against malicious exit nodes.
 
 ## Verifying Anonymity
 
@@ -160,38 +180,50 @@ After connecting, verify your anonymity:
 ```bash
 # In WeeChat, check your hostmask
 /whois yournick
-
 # The response should show the Tor exit node IP, not your real IP
 # Example: yournick!~user@<random>.tor-exit.node.net
+
+# Check what IP the IRC server sees
+/quote USERIP yournick
 ```
 
-Test for DNS leaks:
+Test for DNS leaks using Wireshark or tcpdump on your local interface. If you see any DNS queries to port 53 originating from your IRC client process, your client is leaking hostnames:
 
 ```bash
-# Check what DNS resolver was used
-/dns yournick
+sudo tcpdump -i any -n port 53 &
+# Then connect to IRC and watch for queries
+# You should see zero DNS traffic if everything is correctly proxied
 ```
 
 ## Operational Security Best Practices
 
-Running IRC over Tor requires additional operational practices:
+Running IRC over Tor requires additional operational practices beyond the technical setup.
 
-### Nickname Consistency
+### Nickname Consistency and Compartmentalization
 
-Avoid changing nicknames frequently—correlation attacks can link your identities. Choose a single pseudonym for all Tor-based IRC activity:
+Avoid changing nicknames frequently — correlation attacks can link your identities. Choose a single pseudonym for all Tor-based IRC activity and never reuse it on non-Tor connections:
 
 ```weechat
 /set irc.server.default.nicks "your_persistent_nick"
 ```
 
+Keep separate IRC personas completely isolated. If you need multiple identities, run separate Tor instances on different ports for each persona, or use different machines.
+
 ### TLS Certificate Pinning
 
-Verify server certificates to prevent man-in-the-middle attacks:
+Verify server certificates to prevent man-in-the-middle attacks. When you first connect to a server, record its certificate fingerprint and configure your client to reject any future changes:
 
 ```bash
 # WeeChat: Display SSL certificate fingerprint
 /set irc.server.oftc.tls_verify on
+/set irc.server.oftc.tls_fingerprint "SHA256:xxxx..."
 /save
+```
+
+Get the fingerprint on first connection:
+
+```bash
+openssl s_client -connect irc6.oftc.net.onion:6697 2>/dev/null | openssl x509 -fingerprint -sha256 -noout
 ```
 
 ### Automatic Reconnection
@@ -201,15 +233,28 @@ Configure reliable reconnection to maintain anonymity during network disruptions
 ```weechat
 /set irc.server.oftc.autoreconnect on
 /set irc.server.oftc.autoreconnect_delay 30
+/set irc.server.oftc.autoreconnect_delay_growing 2
 ```
 
 ### Logging Considerations
 
-Disable logging of sensitive channels, or encrypt logs:
+Disable logging of sensitive channels, or encrypt logs at rest. Cleartext IRC logs stored on disk are a significant operational risk:
 
 ```weechat
+# Disable all IRC logging
 /set logger.level.irc 0
-/set logger.mask.irc "$plugin/$channel.isc.log"
+
+# Or encrypt with GPG using a post-processing script
+# Pipe WeeChat log output through: gpg --symmetric --cipher-algo AES256
+```
+
+For Irssi, configure autolog with encryption:
+
+```perl
+# ~/.irssi/config
+settings = {
+  autolog = "no";
+};
 ```
 
 ## Troubleshooting Common Issues
@@ -218,39 +263,78 @@ Connection failures often stem from Tor circuit issues:
 
 ```bash
 # Check Tor circuit status
-torctl status
+sudo -u debian-tor arm
+# or use nyx (the modern Tor monitor)
+sudo apt install nyx && nyx
 
 # Force new circuits
-killall -HUP tor
+sudo kill -HUP $(pidof tor)
 
-# Increase timeout in torrc
+# Increase timeout in torrc if circuits take too long to build
 CircuitBuildTimeout 30
+LearnCircuitBuildTimeout 0
 ```
 
-SSL certificate errors typically indicate Tor exit node issues:
+SSL certificate errors typically indicate Tor exit node issues or clock skew:
 
-```weechat
-# Temporarily disable SSL verification (use sparingly)
-/set irc.server.oftc.tls_verify off
+```bash
+# Verify system clock is accurate (Tor is sensitive to time drift)
+timedatectl status
+# Sync if needed:
+sudo ntpdate pool.ntp.org
 ```
+
+If you see `Connection refused` when using .onion addresses, the hidden service may be temporarily unreachable. Wait a few minutes and try again — .onion services sometimes have brief interruptions as their introduction points rotate.
 
 ## Advanced: Running Your Own Tor-Enabled IRC Server
 
-For complete control, run an IRC daemon with a Tor hidden service:
+For complete control and to eliminate exit node exposure entirely, run an IRC daemon with a Tor hidden service:
 
 ```conf
-# torrc configuration
+# /etc/tor/torrc additions
 HiddenServiceDir /var/lib/tor/irc_server/
 HiddenServicePort 6667 127.0.0.1:6667
-
-# ircd.conf (inspircd example)
-<bind address="127.0.0.1" port="6667">
+HiddenServicePort 6697 127.0.0.1:6697
 ```
 
-This allows users to connect directly to your .onion address, eliminating exit node exposure entirely.
+Configure InspIRCd (a modern IRC daemon) on the same host:
 
-The setup requires a Tor daemon, a compatible IRC client, and attention to operational security practices. Start with a trusted network like OFTC and verify your anonymity through hostmask checks before adding advanced configurations.
+```xml
+<!-- inspircd.conf excerpt -->
+<bind address="127.0.0.1" port="6667" type="clients">
+<bind address="127.0.0.1" port="6697" type="clients" ssl="gnutls">
 
+<gnutls certfile="cert.pem" keyfile="key.pem" priority="SECURE256">
+```
+
+After starting both Tor and InspIRCd, the .onion address appears in `/var/lib/tor/irc_server/hostname`. Share this with trusted users. Because connections never leave the Tor network, there is no exit node to monitor — traffic stays end-to-end within Tor's encrypted overlay.
+
+## Security Considerations
+
+IRC over Tor provides strong anonymity but has limits. Correlation attacks by a global passive adversary watching large portions of Tor traffic are theoretically possible, though difficult. The most practical risks are:
+
+- **Behavioral fingerprinting**: Your writing style, timezone (inferred from activity patterns), and topic focus can deanonymize you even without IP exposure.
+- **Malicious exit nodes**: Always use SSL (port 6697) to protect against exit node eavesdropping when connecting to clearnet IRC servers.
+- **Client-side exploits**: IRC bots sometimes share URLs or files. Never click links from untrusted sources in your Tor IRC session, as these could load content outside Tor.
+- **Metadata leakage**: Joining and leaving channels at predictable times creates a behavioral fingerprint.
+
+## Frequently Asked Questions
+
+**Can I use Tor Browser for IRC?**
+
+Tor Browser does not support IRC natively. You must use a standalone IRC client configured to use Tor's SOCKS proxy. Some users run Tor Browser alongside a separate Tor daemon, but this is inefficient — a single Tor daemon serving both is the correct approach.
+
+**Will IRC operators know I'm using Tor?**
+
+Yes. Most networks recognize Tor exit node IP ranges and may assign a Tor-specific cloak or display a generic Tor exit hostname. Some networks ban Tor users entirely; others have dedicated Tor-accessible hidden services precisely to welcome privacy-conscious users.
+
+**Is IRC over Tor legal?**
+
+In virtually all jurisdictions, using Tor and IRC together is legal. The combination is used by journalists, security researchers, developers, and privacy advocates worldwide. Legal questions arise from what you say or do, not from the communications technology you use.
+
+**How does this compare to Matrix or XMPP over Tor?**
+
+Matrix (Element) and XMPP both support Tor routing and offer end-to-end encryption, which IRC lacks natively. For high-security communications, Signal or a properly configured XMPP client with OMEMO encryption is preferable. IRC over Tor is best suited for communities that already use IRC and want privacy improvements without switching platforms.
 
 ## Related Articles
 
