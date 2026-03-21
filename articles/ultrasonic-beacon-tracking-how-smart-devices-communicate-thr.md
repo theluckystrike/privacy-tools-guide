@@ -182,7 +182,7 @@ For users concerned about this threat vector, the best defense remains awareness
 ---
 
 
-## Comprehensive Detection Methods
+## Detection Methods
 
 Beyond Web Audio API detection, several approaches can identify ultrasonic activity:
 
@@ -432,10 +432,6 @@ Privacy-aware users should understand ultrasonic tracking:
 - Watch security research for new ultrasonic techniques
 - Support privacy-focused browser and OS development
 ```
-
-## Conclusion
-
-Ultrasonic beacon tracking represents an invisible surveillance vector that operates below human perception. While the technology has legitimate uses in retail environments and proximity detection, its weaponization for cross-device tracking creates privacy risks most users don't understand. Technical solutions exist—from Web Audio API blocking to SDR-based detection—but the ultimate protection requires user awareness, platform accountability, and regulatory oversight. As audio-based tracking techniques become more sophisticated, security researchers, platforms, and users must remain vigilant in identifying and blocking these covert communication channels.
 
 ## Related Articles
 

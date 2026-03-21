@@ -408,10 +408,6 @@ Religious communities defending against persecution must maintain ethical princi
 - **Compassion**: Support vulnerable members (elderly, children, disabled)
 - **Legal compliance**: Choose resistance methods that don't harm uninvolved persons
 
-## Conclusion
-
-Religious minorities in persecuting countries face extraordinary threats requiring sophisticated defensive architectures. Technical tools—encryption, VPNs, Tor, secure messaging—form one layer, but complete security requires coordinated operational security, community discipline, psychological resilience, and ethical principles. No single solution exists; instead, communities must layer defenses across technical, behavioral, and social dimensions while maintaining the spiritual and community principles that define their identity.
-
 ## Related Articles
 
 - [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)

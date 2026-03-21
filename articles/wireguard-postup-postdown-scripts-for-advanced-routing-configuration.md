@@ -375,10 +375,6 @@ PostDown = sysctl -w net.core.rmem_max=131072
 PostDown = sysctl -w net.core.wmem_max=131072
 ```
 
-## Conclusion
-
-PostUp and PostDown scripts transform WireGuard from a basic VPN tool into a sophisticated networking component. Proper implementation requires careful attention to environment variables, absolute paths, error handling, and cleanup. Start with simple configurations, test thoroughly in isolation, implement comprehensive logging, and gradually add complexity as your understanding grows. The power of WireGuard scripting comes not from complex individual commands, but from systematic, well-tested automation of network infrastructure tasks.
-
 ## Related Articles
 
 - [WireGuard PostUp/PostDown Scripts for Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)

@@ -367,7 +367,7 @@ check_provider_security_feed()
 
 ## Long-term Key Management Strategy
 
-For individuals serious about encrypted email, develop a comprehensive key strategy:
+For individuals serious about encrypted email, develop a key strategy:
 
 1. **Master Key**: Long-term 4096-bit RSA key, stored securely offline
 2. **Subkeys**: Encryption subkey (for daily use), Signing subkey (for authenticity)
@@ -385,10 +385,6 @@ Expire-Date: 2y
 Sign-Key: <master-key-id>
 EOF
 ```
-
-## Conclusion
-
-The choice of encrypted email service depends on your specific threat model, technical comfort, and compliance requirements. No single solution works universally—Proton Mail excels for consumer users seeking simplicity, Mailfence for teams needing PGP interoperability, and self-hosted solutions for organizations requiring complete infrastructure control. Regardless of choice, remember that encryption at rest and in transit is only one component of email security. Key management, credential security, metadata protection, and regular security audits determine whether your encrypted email actually protects your sensitive communications.
 
 ## Related Articles
 
