@@ -100,6 +100,21 @@ push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4"
 ```
 
+## Choosing a Japanese VPS Provider
+
+The quality of your Japanese IP address is as important as the VPN protocol itself. Streaming services maintain databases of known datacenter IP ranges and block them. Look for VPS providers that offer residential or ISP-class IP addresses rather than pure datacenter blocks.
+
+Providers with Japanese server locations that have historically worked well for streaming include:
+
+| Provider | IP Type | Approximate Cost | Notes |
+|---|---|---|---|
+| Vultr (Tokyo) | Datacenter | ~$6/mo | May be blocked by some services |
+| DigitalOcean (Tokyo) | Datacenter | ~$6/mo | Similar datacenter detection risk |
+| Sakura Internet | ISP-adjacent | ~$5/mo | Japanese domestic provider, better acceptance |
+| ConoHa | ISP-adjacent | ~$4/mo | Popular among Japanese residents abroad |
+
+Sakura Internet and ConoHa are Japanese-headquartered providers. Their IP allocations originate from within Japan's domestic ISP ecosystem rather than large global cloud providers, which significantly reduces the chance of being flagged as a VPN exit node.
+
 ## DNS Configuration for Streaming Services
 
 Beyond tunnel routing, proper DNS configuration prevents leaks:
@@ -118,6 +133,8 @@ iptables -A OUTPUT -p tcp --dport 53 -j REJECT
 ```
 
 The `Domains=~.` directive ensures all queries route through the specified DNS servers rather than local network resolvers.
+
+For even stronger DNS leak prevention, configure your WireGuard interface to use a Japanese DNS resolver. NTT's public DNS (202.12.27.33) or IIJ's resolver (210.130.0.1) may produce slightly different geo-resolution results than Google's 8.8.8.8, which can help in edge cases where the streaming service checks DNS origin.
 
 ## Browser Configuration for Maximum Compatibility
 
@@ -138,6 +155,20 @@ chrome --disable-geolocation \
        --host-resolver-rules="MAP * 127.0.0.1 EXCLUDE localhost"
 ```
 
+### Setting Browser Locale and Timezone
+
+Browser fingerprinting by streaming services often includes timezone and language checks. Even with a Japanese IP, a browser reporting a US timezone creates a mismatch that some services flag. Set your system timezone to Asia/Tokyo while using Japanese streaming services:
+
+```bash
+# Linux
+sudo timedatectl set-timezone Asia/Tokyo
+
+# macOS
+sudo systemsetup -settimezone Asia/Tokyo
+```
+
+In Firefox, the `privacy.resistFingerprinting` setting can interfere with timezone spoofing because it locks the timezone to UTC. Instead, change the system timezone and keep `privacy.resistFingerprinting` disabled for streaming sessions.
+
 ## Japanese Streaming Platform Detection Evasion
 
 Major platforms employ specific detection methods requiring tailored responses:
@@ -148,6 +179,8 @@ Major platforms employ specific detection methods requiring tailored responses:
 | dTV | ISP attribution + payment JPY | WireGuard with Japanese IP |
 | Paravi | Akamai CDN geo-filtering | Server located in Japan |
 | U-NEXT | Credit card JPY validation | Gift card payment methods |
+
+AbemaTV is the most actively maintained geo-block implementation among Japanese streaming services. It updates its IP blocklists frequently and has historically been the first to block newly popular VPN server ranges. If AbemaTV stops working, the most reliable fix is migrating to a different Japanese VPS and generating a fresh WireGuard keypair rather than trying to work around the block from the same IP.
 
 ## Performance Optimization
 
@@ -163,6 +196,8 @@ ping -M do -s 1472 google.co.jp
 MTU = 1420
 ```
 
+Incorrect MTU settings cause packet fragmentation, which manifests as stuttering or buffering during playback even when raw throughput is adequate. The 1420 byte MTU is a safe starting point; reduce further if fragmentation persists on higher-latency paths.
+
 ### Kill Switch Implementation
 
 Prevent data leaks during connection drops:
@@ -172,6 +207,12 @@ Prevent data leaks during connection drops:
 iptables -A OUTPUT ! -o wg0 -j REJECT
 iptables -A INPUT ! -i wg0 -j REJECT
 ```
+
+## Account Creation and Payment
+
+Creating accounts for services like U-NEXT and dTV often requires a Japanese payment method. Gift cards (available on Amazon Japan or at convenience stores during Japan visits) bypass the need for a Japanese credit card. Some services accept PayPal with a Japanese account.
+
+Free trial access on AbemaTV does not require a payment method, making it the easiest service to test your VPN setup against before investing in paid account setup.
 
 ## Troubleshooting Common Issues
 
@@ -184,6 +225,8 @@ iptables -A INPUT ! -i wg0 -j REJECT
 media.peerconnection.enabled = false
 ```
 
+WebRTC can expose your real IP address even through a VPN tunnel, because WebRTC uses STUN servers to discover and communicate the local IP. Disabling it entirely is the safest fix for streaming use cases where you do not need real-time communication.
+
 **Problem**: Buffering on high-definition streams.
 
 **Solution**: Test throughput and adjust protocol:
@@ -192,6 +235,10 @@ media.peerconnection.enabled = false
 # Test Japanese server performance
 iperf3 -c jp-server.example.com -R
 ```
+
+**Problem**: Service works initially but stops after 30-60 minutes.
+
+**Solution**: Some services track session duration and trigger re-verification after extended viewing. Refreshing the player page while maintaining the VPN connection typically resolves this without re-authentication.
 
 ---
 
