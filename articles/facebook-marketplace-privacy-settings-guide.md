@@ -9,7 +9,7 @@ permalink: /facebook-marketplace-privacy-settings-guide/
 categories: [guides, security]
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
