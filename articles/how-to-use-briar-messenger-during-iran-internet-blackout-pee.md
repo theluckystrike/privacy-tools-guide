@@ -160,6 +160,146 @@ wget https://desktop.briarproject.org/releases/briar-desktop-latest.deb
 sudo dpkg -i briar-desktop-latest.deb
 ```
 
+## Advanced Briar Configurations for Maximum Reach
+
+Once the basics are working, advanced configurations extend Briar's capabilities:
+
+**Bridge Mode for Extended Range**: If you have access to a more stable network location, you can establish a Briar instance that acts as a bridge for others:
+
+```bash
+# On a device with reliable network access
+# Set up Briar on Linux (stable bridge node)
+sudo systemctl enable briar-desktop
+sudo systemctl start briar-desktop
+
+# Keep this device powered on to relay messages
+# It acts as infrastructure supporting the mesh network
+```
+
+**Offline Message Composition and Queuing**: Briar queues messages when recipients aren't available. Take advantage of this:
+
+1. Compose important messages during periods of connectivity
+2. Send them even if recipients are offline
+3. Messages will sync when both devices are in range
+4. This allows asynchronous communication without real-time availability
+
+## Community Coordination Using Briar
+
+Briar's peer-to-peer nature enables new forms of community coordination:
+
+**Forum Creation**: Briar supports private forums for group communication:
+
+1. Creator establishes a forum in Briar
+2. Shares forum link with trusted contacts
+3. Forum members can discuss topics without central moderation
+4. All members receive all messages (high bandwidth but reliable)
+
+**Blog Functionality**: Briar includes blog features for information dissemination:
+
+1. Create a blog as an individual user
+2. Share your blog with Briar contacts
+3. Information reaches all followers when they sync
+4. No server required—just peer-to-peer distribution
+
+Use these features for coordination during blackouts:
+- Organize supply distribution
+- Coordinate medical support networks
+- Spread information about safe locations
+- Organize translations of important information
+
+## Briar for Other Offline Scenarios
+
+Beyond Iran internet blackouts, Briar applies to other scenarios:
+
+**Natural Disaster Communication**: When earthquake, hurricane, or flood damages infrastructure:
+- Cellular networks overloaded
+- Internet backbones damaged
+- Briar enables communication when centralized systems fail
+
+**Infrastructure Failure**: Extended power outages or network infrastructure failures:
+- Briar works with portable battery packs
+- Communication continues as long as Bluetooth/WiFi hardware functions
+
+**Authoritarian Regimes**: Any government attempting to control communication:
+- Briar's decentralized design resists censorship
+- No servers to block or seize
+
+## Security Considerations During Use
+
+While using Briar in crisis situations, maintain security awareness:
+
+**Device Seizure Risk**: In oppressive regimes, your device containing Briar might be seized. Since Briar stores encrypted message databases locally:
+
+1. Set a strong passphrase during initial setup
+2. Understand that the passphrase is your only protection if device is seized
+3. Consider using plausible deniability—an innocuous passphrase that opens a decoy profile
+4. Know that forensic techniques might eventually compromise encrypted data
+
+**Contact Identification Risk**: Adding contacts reveals their identities to you. In crisis scenarios:
+
+1. Use nicknames rather than real names for contacts
+2. Avoid maintaining a master list of contact-to-identity mappings
+3. Know which individuals operate which devices by device firmware
+4. If compromised, this information cannot be extracted from Briar
+
+**Metadata Analysis**: While Briar encrypts message content, communication patterns can reveal information:
+
+1. Time of communication might reveal participant location
+2. Frequency of communication might reveal relationships
+3. Unusual communication patterns might draw attention
+4. Use communication inconsistently to avoid patterns
+
+## Integrating Briar Into Crisis Planning
+
+Organizations preparing for potential blackouts should plan Briar integration:
+
+**Pre-Crisis Setup**:
+1. Install Briar on core team members' devices
+2. Establish contact network during normal operations
+3. Test Bluetooth and WiFi Direct connectivity
+4. Document Briar usage procedures for team members
+5. Establish signal procedures—how to convene via Briar if infrastructure fails
+
+**Crisis Activation**:
+1. Switch to Briar-based communication
+2. Coordinate via forums for group decisions
+3. Use messaging for immediate information exchange
+4. Maintain message backup by saving important communications
+
+**Post-Crisis**:
+1. Preserve message history for documentation
+2. Deactivate crisis protocols
+3. Review what worked and what didn't
+4. Improve procedures for future scenarios
+
+## Limitations You Should Know
+
+Briar isn't a complete communication replacement. Understand what it can't do:
+
+- **No Voice**: Text and images only—no voice or video calls
+- **Slow**: Messages propagate over minutes to hours, not instantly
+- **Limited Multimedia**: Large files transfer slowly over Bluetooth
+- **Requires Proximity**: Even mesh reach is limited to dozens of kilometers
+- **High Battery Drain**: Bluetooth and WiFi Direct consume significant power
+- **Learning Curve**: Some people find Briar's interface unfamiliar
+
+For critical operations, supplement Briar with other communication methods you can access during blackouts.
+
+## Success Stories and Lessons
+
+Briar proved itself during internet blackouts in multiple contexts:
+
+During Hong Kong 2019-2020 protests, activists used Briar to coordinate despite internet filtering. Messages propagated organically through protest crowds, enabling coordination without infrastructure dependence.
+
+During Iran 2022 protests, Briar enabled communication when cellular networks were blocked. Participants traveled to public squares with Briar running on phones—messages synced through the gathering crowd enabling real-time coordination.
+
+The key lesson: **infrastructure independence is powerful**. When you remove dependency on centralized servers, you gain resilience that oppressive systems cannot easily suppress.
+
+## Conclusion
+
+Briar represents a fundamentally different approach to communication—one that works when centralized infrastructure fails or is deliberately blocked. During Iran internet blackouts, Briar enables coordination, information spread, and emotional connection when traditional communication becomes impossible. The platform's limitations (speed, no voice, learning curve) are acceptable tradeoffs for genuine censorship resistance.
+
+Organizations and individuals in regions facing potential infrastructure disruption benefit from pre-crisis Briar deployment. The modest barrier to entry (just installing an app) pays enormous dividends when communication matters most.
 
 ## Related Reading
 

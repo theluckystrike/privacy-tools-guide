@@ -160,6 +160,214 @@ The severity of a WebRTC leak depends on your threat model. For average users, I
 
 WebRTC leaks are particularly dangerous because they're invisible to most users—you won't notice them in normal browsing. Regular testing, especially after browser updates or VPN configuration changes, is essential for maintaining privacy. Combine WebRTC protection with other privacy tools like HTTPS Everywhere, a quality VPN, and privacy-focused search engines for defense in depth.
 
+## Advanced Testing with tcpdump
+
+For sophisticated verification, use packet capture to observe actual network traffic:
+
+```bash
+# Install tcpdump if needed
+sudo apt-get install tcpdump  # Linux
+brew install tcpdump  # macOS
+
+# Capture WebRTC traffic (listen on all interfaces)
+sudo tcpdump -i any -n 'tcp port 3478 or udp port 3478' -w webrtc_capture.pcap
+
+# In another terminal, trigger WebRTC connection and then Ctrl+C the capture
+
+# Analyze captured packets
+tcpdump -r webrtc_capture.pcap -X | head -50
+```
+
+This approach reveals exactly which IP addresses your device contacts, providing definitive evidence of leaks that testing tools might miss.
+
+## Testing Across Different Network Conditions
+
+WebRTC behavior varies depending on network conditions. Test in multiple scenarios:
+
+**Test 1: Connected VPN on Home WiFi**
+```bash
+# Connect VPN first
+vpn_status=$(systemctl status wireguard@wg0 | grep active)
+
+# Run leak test
+echo "VPN Status: $vpn_status"
+python3 test_webrtc.py
+
+# Expected: Only VPN IP should appear
+```
+
+**Test 2: Mobile Hotspot (4G/5G)**
+Network providers sometimes implement different blocking for cellular data. Test your VPN performance on mobile networks:
+
+```bash
+# Connect to phone hotspot, then test
+# Mobile carriers may have different STUN blocking characteristics
+```
+
+**Test 3: Untrusted Public WiFi**
+Coffee shop WiFi represents a realistic threat scenario. Test there:
+
+```bash
+# Connect to public WiFi first, then VPN, then test
+# Verify VPN connection quality and leak status
+```
+
+**Test 4: Corporate Network**
+If accessing from office networks with proxies, test WebRTC behavior:
+
+```bash
+# Behind corporate proxy, test whether WebRTC respects proxy settings
+# Some proxies interfere with VPN/STUN interactions
+```
+
+## Interpreting Test Results
+
+Understanding what results mean matters as much as getting them:
+
+**Pass Result**: Only your VPN-assigned IP appears in tests. This indicates your WebRTC implementation is correctly routing through the VPN.
+
+**Fail Result**: Your real IP appears alongside your VPN IP. You have a WebRTC leak requiring mitigation.
+
+**Incomplete Result**: Some tests show your VPN IP but not your real IP. This might indicate:
+- Partial leak (some STUN servers reveal real IP, others don't)
+- VPN routing leak that needs VPN provider attention
+- Browser-specific behavior that differs between testing methods
+
+## Browser-Specific Testing Matrix
+
+Different browsers leak differently. Test comprehensively:
+
+```bash
+#!/bin/bash
+# Test WebRTC leaks across all installed browsers
+
+BROWSERS=("google-chrome" "firefox" "microsoft-edge" "brave-browser")
+
+for browser in "${BROWSERS[@]}"; do
+    if command -v $browser &> /dev/null; then
+        echo "Testing $browser..."
+        $browser http://localhost:8000/webrtc-test.html &
+        sleep 5
+        pkill $browser
+        echo "---"
+    fi
+done
+```
+
+Record results for each browser. You may find that one browser needs different configuration than others.
+
+## WebRTC Leak Severity Assessment
+
+Not all WebRTC leaks are equally severe:
+
+**Severe**: Your real IP is exposed while you believe you're using a VPN. This indicates the VPN itself may be misconfigured or ineffective.
+
+**Moderate**: Your real IP is exposed alongside your VPN IP. This reveals you're using a VPN (potentially suspicious to ISPs or networks) but your traffic is still encrypted through the VPN.
+
+**Minimal**: Only your VPN IP appears, but additional analysis shows it's slightly different from your VPN's public announcement. This level of leak has minimal practical impact.
+
+## VPN Provider Comparison for WebRTC Handling
+
+Some VPN providers handle WebRTC better than others:
+
+| Provider | Default WebRTC | Blocking Method | Leak Risk |
+|----------|---|---|---|
+| Mullvad VPN | Leaks | Network isolation | Low |
+| ProtonVPN | Leaks | Requires extension | Medium |
+| IVPN | Leaks | Network isolation | Low |
+| Perfect Privacy | Filters | VPN-level filtering | Very Low |
+| Windscribe | Mixed | Depends on protocol | Medium |
+
+Test your specific VPN provider rather than relying on general reputation. Implementations vary.
+
+## Automating Regular WebRTC Leak Testing
+
+Set up automated testing to catch regressions:
+
+```python
+#!/usr/bin/env python3
+import subprocess
+import time
+from datetime import datetime
+import stun
+
+def test_webrtc_leaks():
+    """Run WebRTC leak test and log results"""
+
+    results = {
+        'timestamp': datetime.utcnow().isoformat(),
+        'ips': set(),
+        'leaked': False
+    }
+
+    # Get real IP (without VPN)
+    try:
+        real_ip = subprocess.check_output(
+            ['curl', '-s', 'https://api.ipify.org'],
+            timeout=5
+        ).decode().strip()
+    except:
+        real_ip = "unknown"
+
+    # Get VPN IP
+    try:
+        vpn_ip = subprocess.check_output(
+            ['curl', '-s', '--socks5', 'localhost:9050', 'https://api.ipify.org'],
+            timeout=5
+        ).decode().strip()
+    except:
+        vpn_ip = "unknown"
+
+    # Test WebRTC
+    for server in stun.STUN_SERVERS[:3]:
+        try:
+            nat_type, external_ip, _ = stun.get_ip_info(server)
+            results['ips'].add(external_ip)
+        except:
+            pass
+
+    # Check for leak
+    if real_ip in results['ips']:
+        results['leaked'] = True
+
+    return results
+
+def alert_on_leak(results):
+    """Send alert if leak detected"""
+    if results['leaked']:
+        # Send email or Slack notification
+        print(f"ALERT: WebRTC leak detected at {results['timestamp']}")
+        print(f"Leaked IPs: {results['ips']}")
+
+# Run test
+if __name__ == "__main__":
+    results = test_webrtc_leaks()
+    alert_on_leak(results)
+    print(f"Test results: {results}")
+```
+
+Run this script daily via cron to catch new leaks automatically:
+
+```bash
+# Add to crontab -e
+0 9 * * * /home/user/test-webrtc.py >> /home/user/webrtc-test.log 2>&1
+```
+
+## Defense-in-Depth Strategy
+
+WebRTC leak testing is one component of comprehensive VPN protection:
+
+1. **Network Level**: Use VPN with firewall rules blocking WebRTC
+2. **Browser Level**: Install extension blocking WebRTC or configure browser settings
+3. **Testing Level**: Regular WebRTC leak testing to catch failures
+4. **Monitoring Level**: Automated testing with alerts for regressions
+5. **Trust Level**: Verify your VPN provider's commitment to WebRTC protection
+
+This layered approach ensures WebRTC leaks become extremely unlikely even if one component fails.
+
+## Conclusion
+
+WebRTC leaks represent a significant privacy vulnerability that many VPN users ignore. Regular testing—using multiple methods across different browsers and network conditions—is essential for verifying your actual privacy. The tools and scripts provided enable both one-time verification and ongoing automated monitoring. Combine WebRTC protection with other privacy practices for comprehensive protection against IP exposure.
 
 ## Related Reading
 

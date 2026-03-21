@@ -161,6 +161,176 @@ Regardless of which encryption tool you choose, follow these principles:
 - **Set expiration policies** — Credentials should have defined lifetimes
 - **Use key revocation lists** — Remove access immediately when team members leave
 
+## Building Credential Sharing Into Team Culture
+
+Technical tools alone don't solve credential sharing—team practices matter equally:
+
+**No Passwords in Code**: Establish a non-negotiable rule that credentials never appear in source code, configuration files, or documentation. Use environment variables and secret management services exclusively.
+
+**Audit Access**: Track who accessed which credentials and when. This enables detecting unauthorized access and supporting incident investigation:
+
+```bash
+# Example: Using age audit logging
+#!/bin/bash
+
+log_credentials_access() {
+    local user=$1
+    local credential=$2
+    local action=$3
+
+    echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) | $user | $credential | $action" >> ~/credential_access.log
+
+    # Rotate credentials if accessing from unusual location
+    if [[ $(hostname) != "office-workstation" ]]; then
+        echo "Access from non-standard location: $(hostname)"
+    fi
+}
+
+# Usage
+log_credentials_access "$USER" "db_password_prod" "viewed"
+```
+
+**Rotation Discipline**: Establish a credential rotation schedule. Many teams have "credential rotation day" monthly or quarterly where all shared credentials are regenerated. This limits the window where stolen credentials provide access.
+
+## Integrating Credential Sharing Into CI/CD Pipelines
+
+Developers often need credentials for automated deployment. Implement this safely:
+
+**GitHub Secrets**: For GitHub-based workflows, use repository secrets:
+
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        env:
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          API_KEY: ${{ secrets.API_KEY }}
+        run: ./deploy.sh
+```
+
+**GitLab CI/CD Variables**: Similarly, GitLab supports protected variables:
+
+```yaml
+# .gitlab-ci.yml
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying with credentials..."
+    - ./deploy-app.sh
+  variables:
+    DATABASE_URL: $DATABASE_URL  # Set in CI/CD Variables
+    API_TOKEN: $API_TOKEN
+  only:
+    - main
+```
+
+These systems mask credential values in logs, preventing accidental exposure in build output.
+
+## Credential Sharing for Contractors and Temporary Access
+
+Temporary team members create special challenges:
+
+**Time-Limited Credentials**: Generate credentials specifically for contractors that expire after the contract ends:
+
+```bash
+#!/bin/bash
+# Generate temporary AWS IAM user for contractor
+
+CONTRACTOR_NAME="jane-doe"
+CONTRACT_END_DATE="2026-09-30"
+
+# Create IAM user
+aws iam create-user --user-name $CONTRACTOR_NAME
+
+# Attach temporary policy
+aws iam attach-user-policy --user-name $CONTRACTOR_NAME \
+  --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess
+
+# Set expiration (requires custom Lambda for automatic deletion)
+echo "Reminder: Delete $CONTRACTOR_NAME on $CONTRACT_END_DATE"
+```
+
+**Separate Credential Scope**: Never give contractors access to production databases or payment systems. Create read-only or development-only accounts:
+
+```python
+def create_contractor_credentials(contractor_email, access_level="readonly"):
+    """Generate limited-scope credentials for contractors"""
+
+    if access_level == "readonly":
+        permissions = ["s3:GetObject", "dynamodb:Scan"]
+    elif access_level == "development":
+        permissions = ["s3:*", "dynamodb:*"]
+    else:
+        raise ValueError("Invalid access level")
+
+    # Never grant production or payment access
+    return generate_iam_credentials(contractor_email, permissions)
+```
+
+## Credential Sharing for Multiple Organizations
+
+Developers working across organizations face credential management complexity:
+
+**Separate Password Managers**: Use completely separate password managers for work credentials versus personal accounts. This prevents a single breach from compromising both.
+
+**Alias Email Addresses**: Use email aliases for different organizations:
+- main.email+work-company-a@example.com
+- main.email+freelance-client@example.com
+
+This prevents account enumeration and makes it harder to correlate accounts across organizations.
+
+## Incident Response for Credential Leaks
+
+Despite precautions, credentials sometimes leak. Have a response plan:
+
+**Detection**: Monitor for credential leaks using services like BreachNotification.com or GitHub's built-in secret scanning. These services alert when credentials appear in public repositories.
+
+**Immediate Response**:
+1. Immediately revoke the leaked credential
+2. Alert all team members who used that credential
+3. Check logs for any unauthorized access since the leak
+4. Generate a new credential
+5. Document the incident for audit purposes
+
+**Post-Incident Analysis**:
+- How did the credential leak occur?
+- Why wasn't it caught earlier?
+- What process improvements prevent recurrence?
+
+## Cost-Benefit Analysis
+
+Choosing credential management approaches requires understanding tradeoffs:
+
+| Approach | Cost | Security | Usability |
+|----------|------|----------|-----------|
+| Shared documents | Free | Poor | Easy |
+| Pass via email | Free | Very Poor | Easy |
+| Age encryption | $0/month | Excellent | Medium |
+| Dedicated password manager | $10-50/user/month | Good | Good |
+| Vault/HashiCorp | $1-5/month | Excellent | Medium |
+
+Small teams under 10 people often find age encryption sufficient. Larger teams benefit from dedicated tools. Very large teams (50+) should use enterprise solutions like Vault, AWS Secrets Manager, or HashiCorp Terraform Cloud.
+
+## Legal and Compliance Aspects
+
+Credential sharing affects compliance:
+
+**SOC 2 Type II**: Auditors expect documented credential management procedures and access logs. Implement audit trails from day one.
+
+**HIPAA (Healthcare)**: Access to healthcare systems must be logged and audited. Each person must have individual credentials (no shared accounts). Implement the tools and practices described here to demonstrate compliance.
+
+**PCI-DSS**: Similar to HIPAA, each user needs individual credentials. Shared service accounts violate PCI-DSS requirements.
+
+Document your credential management practices and have legal review them before adopting. Proper documentation during normal operations prevents compliance issues later.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
