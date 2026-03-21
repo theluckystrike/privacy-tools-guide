@@ -36,17 +36,21 @@ For enterprise deployments, you can enforce this setting via Mobile Device Manag
 <true/>
 ```
 
+When you disable tracking requests entirely, iOS returns an all-zeros IDFA (`00000000-0000-0000-0000-000000000000`) to any app that queries it. This is meaningfully different from simply denying individual app requests — apps cannot even prompt the user for permission, which removes the possibility that users will accidentally grant it.
+
 ### Location Services Tracking
 
 Location data reveals significant personal information. Review and restrict:
 
 1. **Settings** → **Privacy & Security** → **Location Services**
-2. Review each app's location access—set to **Never** for apps that don't need it
+2. Review each app's location access — set to **Never** for apps that don't need it
 3. Tap **System Services** at the bottom:
- - Disable **Location-Based Suggestions**
- - Disable **Location-Based Alerts**
- - Disable **Significant Locations** (clear history first)
- - Disable **Product Improvement**
+   - Disable **Location-Based Suggestions**
+   - Disable **Location-Based Alerts**
+   - Disable **Significant Locations** (clear history first)
+   - Disable **Product Improvement**
+
+**What "Significant Locations" stores:** Apple builds a private semantic map of places you visit frequently — your home, office, gym, and so on. This data is used to power features like predictive routing in Maps. The data is stored encrypted on-device and synced to iCloud Keychain. Even so, disabling it entirely prevents the database from being built.
 
 For developers testing location-dependent features, use the location simulation APIs:
 
@@ -56,6 +60,15 @@ For developers testing location-dependent features, use the location simulation 
 // Set latitude/longitude for repeatable tests
 CLLocationManager.simulateLocation(with: CLLocation(latitude: 37.7749, longitude: -122.4194))
 ```
+
+### Background App Refresh
+
+Background App Refresh allows apps to update content when you're not using them — and to ping their analytics endpoints. Restrict it globally or per-app:
+
+1. **Settings** → **General** → **Background App Refresh**
+2. Set the top toggle to **OFF** to disable for all apps, or review each app individually
+
+Social media apps are the most aggressive users of background refresh for analytics purposes. Disabling refresh for apps like Instagram or TikTok prevents passive profile-building while your phone sits idle.
 
 ## Safari and Web Tracking
 
@@ -86,6 +99,15 @@ For automated cleanup, create a Shortcut:
 2. Clear All Notifications
 ```
 
+### Private Browsing and Link Tracking Protection
+
+iOS 17 introduced **Link Tracking Protection**, which strips tracking parameters from URLs when you tap links in Safari, Mail, and Messages. Ensure it is active:
+
+1. **Settings** → **Safari** → **Advanced** → **Advanced Tracking and Fingerprinting Protection**
+2. Set to **All Browsing** (not just Private Browsing)
+
+Common tracking parameters removed include `fbclid`, `gclid`, `utm_source`, `utm_medium`, `utm_campaign`, and `msclkid`. These parameters allow advertisers to correlate your clicks across sessions. With Link Tracking Protection active, URLs shared between apps lose this correlation data before they are opened.
+
 ## App Privacy Labels and Data Collection
 
 ### Analyzing App Data Collection
@@ -95,13 +117,21 @@ iOS requires apps to disclose data collection in App Store listings. To review o
 1. **Settings** → **Privacy & Security** → **App Privacy Report** (iOS 15+)
 2. Enable the feature and use apps normally for 24 hours
 3. Review which apps are accessing:
- - Location
- - Contacts
- - Calendars
- - Photos
- - Microphone
- - Camera
- - Network activity
+   - Location
+   - Contacts
+   - Calendars
+   - Photos
+   - Microphone
+   - Camera
+   - Network activity
+
+### Reading the App Privacy Report Effectively
+
+The App Privacy Report shows domains that apps contact. Focus on the **Website Data** section, which reveals third-party domains that apps reach — including analytics and advertising networks — separate from the app's stated first-party servers.
+
+A social media app contacting `graph.facebook.com`, `doubleclick.net`, and `branch.io` simultaneously tells you the app is sharing data with Facebook's ad network, Google's DoubleClick, and Branch.io's attribution platform. This happens regardless of whether you have a Facebook account.
+
+Look for apps contacting domains you don't recognize, particularly any that appear across multiple unrelated apps. These are likely analytics brokers or identity resolution services.
 
 ### Network Traffic Monitoring
 
@@ -123,10 +153,16 @@ Apple collects usage data from iCloud:
 
 1. **Settings** → **[Your Name]** → **iCloud** → **Manage Account Storage**
 2. Scroll to **iCloud+** features and disable:
- - **Share My Location** (if not needed)
+   - **Share My Location** (if not needed)
 3. **Settings** → **Privacy & Security** → **Analytics & Improvements**
- - Disable **Share iPhone Analytics**
- - Disable **Share iCloud Analytics**
+   - Disable **Share iPhone Analytics**
+   - Disable **Share iCloud Analytics**
+
+### What iPhone Analytics Sends
+
+iPhone Analytics (formerly "Diagnostics & Usage") sends daily reports to Apple containing device model, iOS version, battery health, crash logs with stack traces, and aggregate usage patterns by app category. The data is anonymized using differential privacy techniques, but disabling it entirely opts you out of Apple's aggregate behavioral modeling.
+
+iCloud Analytics is separate — it covers usage of iCloud services like Drive, Photos sync, and Notes. Both toggles are independent and both should be disabled for a thorough opt-out.
 
 ### Siri and Dictation Privacy
 
@@ -135,6 +171,12 @@ Siri processes voice data on-device in iOS 17+, but network features still trans
 1. **Settings** → **Siri & Search**
 2. Disable **Listen for "Hey Siri"** if not used
 3. Disable **Suggested Apps** and **Suggested Shortcuts**
+
+### Siri Suggestions as a Tracking Vector
+
+Siri Suggestions learns from your behavior across apps — when you open apps, which contacts you message, what you search. This data feeds a local on-device model, but also interacts with iCloud to sync suggestions across your Apple devices. Disabling **Show App Suggestions** in **Settings** → **Siri & Search** stops Siri from indexing individual apps. You can disable this per-app or globally.
+
+Disabling **Suggestions in Search** and **Suggestions in Look Up** prevents Apple from sending your search queries to its Spotlight Suggestions backend when you use Search. These queries include partial search terms typed in real time.
 
 ## Advanced: Shortcuts for Privacy Automation
 
@@ -185,6 +227,15 @@ func removeTrackingParams(from url: URL) -> URL {
 }
 ```
 
+## Lockdown Mode for Extreme Threat Models
+
+If you face targeted surveillance rather than passive data collection, iOS includes **Lockdown Mode**:
+
+1. **Settings** → **Privacy & Security** → **Lockdown Mode**
+2. Tap **Turn On Lockdown Mode**
+
+Lockdown Mode severely restricts the attack surface: it blocks most message attachment types, disables wired connections to computers when the phone is locked, blocks link previews in Messages, disables certain web technologies (WebAssembly, JIT compilation), and prevents configuration profiles from being installed. It is designed for journalists, activists, and human rights workers under active threat — not for everyday privacy hardening. The tradeoffs in usability are significant, but so is the reduction in exploitable surface area.
+
 ## Quick Reference: Privacy Settings Checklist
 
 | Category | Setting | Recommended State |
@@ -193,11 +244,14 @@ func removeTrackingParams(from url: URL) -> URL {
 | Tracking | Reset Advertising Identifier | Clear Data |
 | Location | Location Services | Review per-app |
 | Location | Significant Locations | OFF |
+| Location | Background App Refresh | OFF or per-app |
 | Safari | Hide IP Address | ON |
 | Safari | Block All Cookies | ON |
+| Safari | Advanced Tracking Protection | All Browsing |
 | iCloud | Share iPhone Analytics | OFF |
 | iCloud | Share iCloud Analytics | OFF |
 | Siri | Listen for "Hey Siri" | OFF (optional) |
+| Siri | Suggestions in Search | OFF |
 
 
 ## Related Articles
