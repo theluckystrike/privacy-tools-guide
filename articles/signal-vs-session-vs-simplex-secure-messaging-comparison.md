@@ -1,4 +1,3 @@
-{% raw %}
 ---
 layout: default
 title: "Signal vs Session vs SimpleX: Secure messaging apps compared."
@@ -13,6 +12,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+
+{% raw %}
 
 Signal, Session, and SimpleX are the gold standard for encrypted messaging—but they make different security/usability trade-offs. Signal is user-friendly but relies on phone numbers (metadata leakage). Session removes phone numbers but has slower usability. SimpleX adds another layer (no user IDs at all) but requires manual contact exchange. This deep comparison helps you choose based on your actual threat model and who you're messaging.
 

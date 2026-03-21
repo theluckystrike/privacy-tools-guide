@@ -1,4 +1,3 @@
-{% raw %}
 ---
 layout: default
 title: "How to set up encrypted emergency access your family can use."
@@ -13,6 +12,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+
+{% raw %}
 
 If something happens to you—death, injury, incapacity—your family needs access to critical accounts: bank accounts, insurance, property deeds, digital assets. But you don't want passwords lying around in plain text. This guide shows how to set up encrypted emergency access: your family gets temporary decryption keys only if something happens, using password managers, encrypted document vaults, and legal frameworks.
 
