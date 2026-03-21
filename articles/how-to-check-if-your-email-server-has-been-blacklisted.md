@@ -5,7 +5,7 @@ permalink: /how-to-check-if-your-email-server-has-been-blacklisted/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 layout: default

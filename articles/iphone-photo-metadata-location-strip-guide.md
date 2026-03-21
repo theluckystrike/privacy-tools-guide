@@ -233,4 +233,84 @@ done
 - [How To Use Bitcoin Atm Anonymously Without Providing Photo I](/privacy-tools-guide/how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Preventing Metadata at Capture Time
+
+Stripping metadata after the fact works, but preventing collection at capture time is cleaner. On iOS, disable location access for the Camera app: **Settings** > **Privacy and Security** > **Location Services** > **Camera** > **Never**.
+
+With location disabled for Camera, GPS fields are never written to EXIF. You still get `DateTimeOriginal` and device model embedded, but the privacy-critical coordinates are absent from the start.
+
+For developers building apps that process user photos, always request `PHAccessLevel.addOnly` rather than full photo library access. When you receive image data in a share extension, strip EXIF before any network upload:
+
+```swift
+import ImageIO
+import CoreImage
+
+func stripExif(from imageData: Data) -> Data? {
+    guard let source = CGImageSourceCreateWithData(imageData as CFData, nil),
+          let type = CGImageSourceGetType(source) else { return nil }
+
+    let mutableData = NSMutableData()
+    guard let dest = CGImageDestinationCreateWithData(mutableData, type, 1, nil) else { return nil }
+
+    let options: [CFString: Any] = [
+        kCGImageDestinationMetadata: [:],
+        kCGImageMetadataShouldExcludeGPS: true
+    ]
+
+    CGImageDestinationAddImageFromSource(dest, source, 0, options as CFDictionary)
+    CGImageDestinationFinalize(dest)
+    return mutableData as Data
+}
+```
+
+## Metadata Tool Comparison
+
+Different tools suit different workflows. Here is how the main options compare:
+
+| Tool | GPS Strip | Full EXIF Strip | Batch Support | Handles HEIC | Platform |
+|------|-----------|-----------------|---------------|--------------|----------|
+| exiftool | Yes | Yes | Yes | Yes | macOS, Linux, Windows |
+| ImageMagick | Yes | Yes | Yes | Limited | macOS, Linux, Windows |
+| Pillow + piexif | Yes | Yes | Scripted | No | macOS, Linux, Windows |
+| iOS Shortcuts | Yes | Limited | No | Yes | iOS only |
+| macOS Automator | Partial | Partial | Yes | No | macOS only |
+
+For CI/CD pipelines, exiftool is the clear choice because it handles every image format, including HEIC files produced by modern iPhones. When processing HEIC files directly:
+
+```bash
+# Strip GPS from HEIC files
+exiftool -gps:all= -overwrite_original *.heic
+
+# Convert HEIC to JPEG while stripping all metadata
+exiftool -o output_dir/ -all= -ext heic .
+```
+
+## Integrating Metadata Stripping into Upload Pipelines
+
+If you build applications that accept user photo uploads, enforce metadata stripping server-side as defense in depth. Users may upload photos from older apps or devices that ignore client-side stripping:
+
+```python
+from PIL import Image
+import piexif
+import io
+
+def process_upload(file_bytes: bytes) -> bytes:
+    """Strip EXIF metadata from uploaded image bytes."""
+    img = Image.open(io.BytesIO(file_bytes))
+    output = io.BytesIO()
+
+    if img.format == "JPEG" and "exif" in img.info:
+        exif_dict = piexif.load(img.info["exif"])
+        exif_dict["GPS"] = {}
+        exif_bytes = piexif.dump(exif_dict)
+        img.save(output, format="JPEG", exif=exif_bytes, quality=90)
+    else:
+        img.save(output, format=img.format or "JPEG")
+
+    return output.getvalue()
+```
+
+Add this to your upload handler in Django, FastAPI, or any framework before writing to your storage layer. Store the returned bytes, not the original upload.
+
 {% endraw %}
