@@ -209,7 +209,7 @@ If your connection fails, check these common problems:
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 - [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
 - [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/guides-hub/how-to-use-wireguard-for-self-hosted-vpn-2026/)
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

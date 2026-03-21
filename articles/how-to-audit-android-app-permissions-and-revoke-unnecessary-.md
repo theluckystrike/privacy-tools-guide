@@ -272,7 +272,7 @@ These ROMs require technical comfort with flashing, but provide significantly be
 
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
-- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/audit-android-app-permissions/)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/android-adb-app-permissions-audit/)
 - [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
 - [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 

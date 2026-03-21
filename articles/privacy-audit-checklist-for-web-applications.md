@@ -512,7 +512,7 @@ Run a tabletop exercise once per year: present the team with a breach scenario a
 - [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
 - [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)
 - [Privacy-Focused Web Browser Comparison 2026](/privacy-tools-guide/privacy-browser-comparison-2026/)
-- [Privacy-Focused Web Browsers Comparison 2026](/privacy-tools-guide/articles/privacy-focused-web-browsers-comparison-2026/)
+- [Privacy-Focused Web Browsers Comparison 2026](/privacy-tools-guide/guides-hub/privacy-focused-web-browsers-comparison-2026/)
 - [Enterprise Privacy Tool Deployment Checklist for.](/privacy-tools-guide/enterprise-privacy-tool-deployment-checklist-for-multi-cloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

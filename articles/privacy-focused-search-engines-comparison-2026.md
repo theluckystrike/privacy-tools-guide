@@ -532,10 +532,10 @@ For most users, free privacy search (DuckDuckGo or Brave) provides excellent val
 
 ## Related Articles
 
-- [How to Prevent Google From Tracking Your Location](/privacy-tools-guide/how-prevent-google-tracking-your-location/)
-- [Best Privacy DNS Services Compared 2026](/privacy-tools-guide/best-privacy-dns-services-compared-2026/)
-- [VPN Provider Comparison and Privacy Analysis 2026](/privacy-tools-guide/vpn-provider-comparison-privacy-analysis-2026/)
-- [Browser Privacy Settings Optimization Guide 2026](/privacy-tools-guide/browser-privacy-settings-optimization-guide-2026/)
+- [How to Prevent Google From Tracking Your Location](/privacy-tools-guide/guides-hub/)
+- [Best Privacy DNS Services Compared 2026](/privacy-tools-guide/guides-hub/)
+- [VPN Provider Comparison and Privacy Analysis 2026](/privacy-tools-guide/guides-hub/)
+- [Browser Privacy Settings Optimization Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

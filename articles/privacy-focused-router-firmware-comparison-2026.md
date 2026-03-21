@@ -422,7 +422,7 @@ OPNsense: Automatic monthly updates recommended
 
 - [How to Encrypt External Hard Drive Guide 2026](/privacy-tools-guide/how-to-encrypt-external-hard-drive-guide-2026/)
 - [Best Browser for Avoiding Google Tracking](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
-- [Anonymous WiFi Access Strategies](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet/)
+- [Anonymous WiFi Access Strategies](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

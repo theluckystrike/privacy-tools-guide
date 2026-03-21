@@ -272,7 +272,7 @@ For critical updates, subscribe to the Nextcloud security mailing list and confi
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
 - [Privacy Focused Calendar Apps Comparison 2026](/privacy-tools-guide/privacy-focused-calendar-apps-comparison-2026/)
-- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps/)
+- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 - [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

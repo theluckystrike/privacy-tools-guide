@@ -561,7 +561,7 @@ All services should use HTTPS/TLS (check for padlock icon). Self-hosted requires
 
 ## Related Articles
 
-- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps/)
+- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 - [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
 - [Tutanota Encrypted Calendar And Contacts How End To End Encr](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)

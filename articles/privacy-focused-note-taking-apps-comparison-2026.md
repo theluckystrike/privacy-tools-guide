@@ -5,7 +5,7 @@ last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 title: "Privacy-Focused Note-Taking Apps Comparison (2026)"
 description: "Compare privacy-respecting note applications including Standard Notes, Joplin, Obsidian, and more. Includes encryption methods, sync options, and pricing."
-permalink: /privacy-tools-guide/privacy-focused-note-taking-apps/
+permalink: /privacy-tools-guide/privacy-focused-note-taking-apps-comparison/
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true

@@ -379,10 +379,10 @@ Every installed extension is a potential attack surface. Minimalism—installing
 
 ## Related Articles
 
-- [Best Privacy-Focused Browser Settings 2026](/privacy-tools-guide/best-privacy-focused-browser-settings-2026/)
-- [How to Detect and Remove Spyware from Your Computer](/privacy-tools-guide/how-detect-remove-spyware-from-computer/)
-- [VPN Extension Privacy Comparison Guide](/privacy-tools-guide/vpn-extension-privacy-comparison-guide/)
-- [Browser Fingerprinting Prevention Techniques](/privacy-tools-guide/browser-fingerprinting-prevention-techniques/)
+- [Best Privacy-Focused Browser Settings 2026](/privacy-tools-guide/guides-hub/)
+- [How to Detect and Remove Spyware from Your Computer](/privacy-tools-guide/guides-hub/)
+- [VPN Extension Privacy Comparison Guide](/privacy-tools-guide/guides-hub/)
+- [Browser Fingerprinting Prevention Techniques](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

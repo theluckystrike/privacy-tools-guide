@@ -484,7 +484,7 @@ mount /dev/sdb1 /mnt/test
 ## Related Reading
 
 - [Best Encrypted Cloud Storage 2026](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
-- [How to Use VeraCrypt for Complete Disk Encryption](/privacy-tools-guide/how-to-use-veracrypt-for-complete-disk-encryption/)
+- [How to Use VeraCrypt for Complete Disk Encryption](/privacy-tools-guide/guides-hub/)
 - [Hardware Security Key Setup for DevOps](/privacy-tools-guide/best-hardware-security-key-for-developers/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
 

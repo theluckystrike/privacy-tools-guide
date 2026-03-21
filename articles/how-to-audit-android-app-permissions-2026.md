@@ -5,7 +5,7 @@ last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 title: "How to Audit Android App Permissions (2026)"
 description: "Technical guide to auditing and restricting Android app permissions. Includes adb commands, permission groups, risk assessment, and practical examples."
-permalink: /privacy-tools-guide/audit-android-app-permissions/
+permalink: /privacy-tools-guide/android-adb-app-permissions-audit/
 categories: [security, guides]
 tags: [privacy-tools-guide]
 reviewed: true
