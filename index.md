@@ -73,11 +73,32 @@ Browse articles by topic for focused reading:
 ## Browse by Keyword
 
 {% assign vpn_articles = all_articles | where_exp: "p", "p.path contains 'vpn'" %}
-{% assign password_mgr = all_articles | where_exp: "p", "p.path contains 'password' or p.path contains '1password' or p.path contains 'bitwarden' or p.path contains 'lastpass' or p.path contains 'keeper' or p.path contains 'dashlane'" %}
-{% assign encryption = all_articles | where_exp: "p", "p.path contains 'encrypt' or p.path contains 'pgp' or p.path contains 'gpg' or p.path contains 'age-encryption'" %}
-{% assign messaging = all_articles | where_exp: "p", "p.path contains 'signal' or p.path contains 'matrix' or p.path contains 'messaging' or p.path contains 'e2e' or p.path contains 'secure-communication'" %}
+{% assign _pw1 = all_articles | where_exp: "p", "p.path contains 'password'" %}
+{% assign _pw2 = all_articles | where_exp: "p", "p.path contains '1password'" %}
+{% assign _pw3 = all_articles | where_exp: "p", "p.path contains 'bitwarden'" %}
+{% assign _pw4 = all_articles | where_exp: "p", "p.path contains 'lastpass'" %}
+{% assign _pw5 = all_articles | where_exp: "p", "p.path contains 'keeper'" %}
+{% assign _pw6 = all_articles | where_exp: "p", "p.path contains 'dashlane'" %}
+{% assign password_mgr = _pw1 | concat: _pw2 | concat: _pw3 | concat: _pw4 | concat: _pw5 | concat: _pw6 | uniq %}
+{% assign _enc1 = all_articles | where_exp: "p", "p.path contains 'encrypt'" %}
+{% assign _enc2 = all_articles | where_exp: "p", "p.path contains 'pgp'" %}
+{% assign _enc3 = all_articles | where_exp: "p", "p.path contains 'gpg'" %}
+{% assign _enc4 = all_articles | where_exp: "p", "p.path contains 'age-encryption'" %}
+{% assign encryption = _enc1 | concat: _enc2 | concat: _enc3 | concat: _enc4 | uniq %}
+{% assign _msg1 = all_articles | where_exp: "p", "p.path contains 'signal'" %}
+{% assign _msg2 = all_articles | where_exp: "p", "p.path contains 'matrix'" %}
+{% assign _msg3 = all_articles | where_exp: "p", "p.path contains 'messaging'" %}
+{% assign _msg4 = all_articles | where_exp: "p", "p.path contains 'e2e'" %}
+{% assign _msg5 = all_articles | where_exp: "p", "p.path contains 'secure-communication'" %}
+{% assign messaging = _msg1 | concat: _msg2 | concat: _msg3 | concat: _msg4 | concat: _msg5 | uniq %}
 {% assign android = all_articles | where_exp: "p", "p.path contains 'android'" %}
-{% assign browser = all_articles | where_exp: "p", "p.path contains 'browser' or p.path contains 'firefox' or p.path contains 'chrome' or p.path contains 'tor' or p.path contains 'cookie' or p.path contains 'tracker'" %}
+{% assign _br1 = all_articles | where_exp: "p", "p.path contains 'browser'" %}
+{% assign _br2 = all_articles | where_exp: "p", "p.path contains 'firefox'" %}
+{% assign _br3 = all_articles | where_exp: "p", "p.path contains 'chrome'" %}
+{% assign _br4 = all_articles | where_exp: "p", "p.path contains 'tor'" %}
+{% assign _br5 = all_articles | where_exp: "p", "p.path contains 'cookie'" %}
+{% assign _br6 = all_articles | where_exp: "p", "p.path contains 'tracker'" %}
+{% assign browser = _br1 | concat: _br2 | concat: _br3 | concat: _br4 | concat: _br5 | concat: _br6 | uniq %}
 {% assign threat_model = all_articles | where_exp: "p", "p.path contains 'threat-model'" %}
 {% assign how_to = all_articles | where_exp: "p", "p.path contains 'how-to'" %}
 
