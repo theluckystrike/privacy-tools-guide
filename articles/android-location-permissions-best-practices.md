@@ -175,6 +175,39 @@ val locationRequest = LocationRequest.Builder(
 }.build()
 ```
 
+### Use Geofencing Instead of Continuous Polling
+
+Geofencing is a privacy-preserving alternative to continuous location updates for many use cases. Instead of polling for location every few seconds, you define geographic boundaries and receive events only when the device crosses them. This dramatically reduces the frequency of location data collection.
+
+```kotlin
+val geofenceList = listOf(
+    Geofence.Builder()
+        .setRequestId("store_entrance")
+        .setCircularRegion(
+            storeLatitude,
+            storeLongitude,
+            100f  // radius in meters
+        )
+        .setExpirationDuration(Geofence.NEVER_EXPIRE)
+        .setTransitionTypes(
+            Geofence.GEOFENCE_TRANSITION_ENTER or Geofence.GEOFENCE_TRANSITION_EXIT
+        )
+        .build()
+)
+
+val geofencingRequest = GeofencingRequest.Builder().apply {
+    setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
+    addGeofences(geofenceList)
+}.build()
+
+geofencingClient.addGeofences(geofencingRequest, geofencePendingIntent).run {
+    addOnSuccessListener { /* Geofences registered */ }
+    addOnFailureListener { e -> Log.e(TAG, "Geofence registration failed", e) }
+}
+```
+
+Geofencing uses the system's own location capabilities and doesn't keep your app continuously active, which satisfies both battery and privacy concerns—making it far less likely to be flagged by Play Store reviewers.
+
 ## Handling Permission Denials
 
 Users frequently deny location permissions. Your app must handle this gracefully without degrading the entire experience.
@@ -206,6 +239,50 @@ private fun handleLocationPermissionDenied() {
 }
 ```
 
+## Privacy Disclosure Requirements
+
+Android 12 introduced the Privacy Dashboard, which shows users a timeline of which apps accessed sensitive data including location. Users can now see exactly when your app read their location and revoke permissions directly from this interface.
+
+This places a practical burden on developers: every unnecessary location access is now visible to the user. Design your app to access location only at the precise moment it's needed and to cache that result rather than making repeated requests.
+
+For apps targeting Android 12 (API level 31) or higher, you must also declare your data handling practices in the Play Store Data Safety section, including:
+
+- Whether location data is collected
+- Whether it is shared with third parties
+- Whether it is used for tracking
+- Your data retention and deletion practices
+
+Inaccurate Data Safety disclosures can result in app removal. Review your third-party SDKs carefully—advertising and analytics libraries often collect location data without explicit notification to your users.
+
+## Location Data on the Server Side
+
+Even with proper client-side permission handling, the data your app transmits to your backend deserves careful consideration. Location coordinates are personally identifiable information under GDPR, CCPA, and most modern privacy regulations.
+
+Server-side best practices for location data:
+
+**Precision reduction**: Store location at the precision your feature actually requires. If you need neighborhood-level data, round coordinates to 2 decimal places (about 1km precision) rather than storing GPS-accurate coordinates (6 decimal places, about 10cm precision). This minimizes the sensitivity of your stored data.
+
+**Retention limits**: Define and enforce retention windows. A delivery tracking app may need location data for 7 days to handle disputes; after that, purge it automatically. Implement database jobs that regularly delete expired location records.
+
+**Access control**: Restrict who in your organization can query raw location data. Use role-based access control and audit logs. Location history is sensitive enough that engineering access to production data should require approval.
+
+**Aggregation before storage**: For analytics use cases, aggregate location data into zone-level statistics before persisting it. Instead of storing "user X was at coordinates 40.7128, -74.0060 at 8:34am", store "1 user entered zone Z at 8:30-9:00am block". Individual coordinates are discarded.
+
+```python
+# Example: Python function to reduce coordinate precision
+def reduce_precision(lat: float, lon: float, decimal_places: int = 2) -> tuple:
+    """
+    Round coordinates to limit precision.
+    2 decimal places ≈ 1km accuracy
+    3 decimal places ≈ 100m accuracy
+    """
+    return round(lat, decimal_places), round(lon, decimal_places)
+
+# Store neighborhood-level, not GPS-level
+stored_lat, stored_lon = reduce_precision(40.712776, -74.005974, 2)
+# Result: (40.71, -74.01)
+```
+
 ## Testing Location Permissions
 
 Verify your permission handling across scenarios. Use Android Emulator's location controls to simulate different scenarios:
@@ -222,11 +299,30 @@ Test these scenarios:
 - Background location scenarios
 - Multiple denial cycles
 
+Use the Android instrumentation test framework to automate permission testing:
+
+```kotlin
+@get:Rule
+val permissionRule = GrantPermissionRule.grant(
+    Manifest.permission.ACCESS_FINE_LOCATION
+)
+
+@Test
+fun testLocationFeatureWithPermission() {
+    // Test runs with location permission automatically granted
+    onView(withId(R.id.map_view)).check(matches(isDisplayed()))
+}
+```
+
+For testing denied permissions, use `UiAutomator` to programmatically interact with system permission dialogs rather than relying on `GrantPermissionRule`.
+
 ## Platform Compliance
 
 Google Play policies strictly regulate location permissions. Background location access requires a prominent in-app disclosure and is reviewed manually. Avoid requesting background location unless your app's core functionality genuinely depends on it—such as fitness tracking apps, family safety utilities, or delivery services tracking drivers.
 
 Frequent location updates in the background trigger battery drain warnings and potential Play Store warnings. Use geofencing APIs for event-driven location needs instead of continuous polling.
+
+Apps that request background location without a valid use case face manual review delays of several weeks and risk rejection. If your app is rejected, Play Console provides a path to appeal with supplementary materials explaining your use case. Prepare this documentation before submitting an app that needs background location, including screenshots of the in-app disclosure and a clear description of the user-facing feature.
 
 
 ## Related Articles
