@@ -79,6 +79,33 @@ print(' '.join(secrets.choice(words) for _ in range(6)))
 
 However, avoid famous quotes, song lyrics, or common phrases—attackers include these in dictionary attacks.
 
+### EFF Wordlist vs System Dictionary
+
+The EFF large wordlist (7,776 words) is specifically designed for passphrase generation. System dictionaries like `/usr/share/dict/words` often include proper nouns, abbreviations, and uncommon terms that reduce memorability. The EFF wordlist provides:
+
+- Exactly 7,776 words (matching 5 dice rolls: 6^5)
+- No profanity or offensive terms
+- Memorable, concrete words
+- Consistent entropy: log2(7776^n) bits per word
+
+For a 6-word EFF passphrase: log2(7776^6) ≈ 77.5 bits. For 7 words: ≈ 90.5 bits. Seven words is the recommended minimum when passphrases are your only factor.
+
+```bash
+# Download EFF wordlist and generate passphrase
+curl -O https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+
+python3 << 'EOF'
+import secrets
+
+with open('eff_large_wordlist.txt') as f:
+    words = [line.split()[1] for line in f if line.strip()]
+
+passphrase = ' '.join(secrets.choice(words) for _ in range(7))
+print(f"Passphrase: {passphrase}")
+print(f"Word count: 7 | Entropy: ~90.5 bits")
+EOF
+```
+
 ## Key Derivation Functions: Why They Matter
 
 Password managers don't store your master password directly. Instead, they derive an encryption key using a key derivation function (KDF). This process is intentionally slow to hinder brute-force attacks.
@@ -126,6 +153,26 @@ key = derive_key_argon2("your-master-password", salt)
 print(f"Derived key: {key.hex()[:32]}...")
 ```
 
+### KDF Performance Comparison
+
+Understanding the relationship between KDF parameters and attack resistance helps you make informed configuration choices.
+
+With Argon2id configured at 64MB memory and 3 iterations, an attacker using consumer hardware can attempt roughly 500-2,000 guesses per second. Compare this to:
+
+- **Unsalted SHA-256**: 10+ billion guesses/second (GPU cluster)
+- **PBKDF2 at 10,000 iterations**: ~100 million guesses/second
+- **PBKDF2 at 600,000 iterations**: ~1-5 million guesses/second
+- **bcrypt at cost factor 12**: ~100,000 guesses/second
+- **Argon2id (64MB, 3 iterations)**: ~1,000 guesses/second
+
+This means a 70-bit entropy passphrase would take:
+
+- Against SHA-256: seconds
+- Against PBKDF2 at 600K: hours to days
+- Against Argon2id: centuries
+
+The memory-hardness of Argon2id matters because GPU-based attacks depend on parallelism. Requiring 64MB per hash attempt limits the number of simultaneous attacks a GPU can run, degrading GPU advantage dramatically.
+
 ## What Makes a Master Password Vulnerable
 
 Even with high entropy, certain patterns weaken master passwords:
@@ -171,6 +218,35 @@ print(estimate_crack_time("Tr0ub4dor&3", 1000))  # With Argon2
 print(estimate_crack_time("Tr0ub4dor&3", 100e9))  # With fast hash
 ```
 
+## Memorization Strategies for Strong Passwords
+
+A common objection to long random passphrases is memorability. Structured memorization techniques make 7-word passphrases reliable:
+
+**Method of loci (memory palace)**: Associate each word with a location in a familiar mental space—your home, for example. Walk through the rooms in order, placing a vivid mental image of each word's meaning in each room. With practice, a 7-word passphrase becomes retrievable in seconds.
+
+**Spaced repetition**: After generating your passphrase, test yourself at increasing intervals: immediately, 1 hour later, 24 hours later, 1 week later, then monthly. Free tools like Anki can automate this schedule. Most people achieve reliable recall after 5-7 retrieval sessions.
+
+**Chunking**: Break the passphrase into 2-3 word groups and associate a mini-story with each group. "correct horse battery" becomes a mental image of a horse correctly jumping over a battery. The narrative structure reduces working memory load.
+
+For character-based passwords, consider storing a hint (not the password itself) in your vault: a cryptic clue that helps you reconstruct the pattern without exposing the actual credential to someone who reads the hint.
+
+## Password Manager Security Architecture
+
+Understanding how your password manager processes your master password clarifies what you're protecting against.
+
+The standard flow for a well-designed password manager:
+
+1. You enter your master password
+2. The client hashes it locally using Argon2id with a user-specific salt
+3. The resulting key never leaves your device
+4. An additional HKDF step derives separate keys: one for encrypting your vault, one for authentication
+5. The authentication key is sent to the server to verify your identity
+6. The server stores only the authentication key hash—never the encryption key or master password
+
+This architecture means that even a complete server breach exposes only encrypted vault data. The attacker still needs your master password to derive the decryption key. This is why master password strength matters even when you trust your provider.
+
+Bitwarden's open-source implementation demonstrates this pattern and can be self-audited. LastPass's 2022 breach illustrated what happens when this architecture fails—their key derivation used insufficient iterations (PBKDF2 at 100,001 iterations client-side, with some accounts at much lower values), allowing attackers to crack vaults offline.
+
 ## Practical Recommendations
 
 For developers implementing password manager features:
@@ -179,14 +255,17 @@ For developers implementing password manager features:
 2. **Enforce minimum lengths** of 12 characters, recommend 16+
 3. **Provide entropy meters** but don't trust them blindly—they can't detect compromised passwords
 4. **Implement account recovery options carefully**—recovery mechanisms often become attack vectors
+5. **Never transmit the master password** to your servers; all key derivation must happen client-side
 
 For users managing their vault:
 
-1. Generate a 6-8 word passphrase or 16+ character random string
+1. Generate a 6-8 word EFF passphrase or 16+ character random string
 2. Never reuse your master password anywhere
 3. Store a paper backup in a secure location (safe deposit box)
 4. Enable two-factor authentication on your password manager account
 5. Test your master password strength using the calculation methods above
+6. Verify your password manager uses Argon2id—check their security whitepaper or open-source code
+7. Set up an emergency access contact so vault recovery doesn't require bypassing security controls
 
 
 ## Related Articles
