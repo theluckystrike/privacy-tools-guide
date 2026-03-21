@@ -450,7 +450,6 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 No messaging app protects you from physical torture, legal pressure, or state-backed surveillance. Use encrypted messaging as one tool in a broader OPSEC strategy. Combine with dead drops, offline planning, legal support, and—most importantly—community networks you trust.
 
-{% endraw %}
 
 
 ### Verify Signal Setup via CLI
