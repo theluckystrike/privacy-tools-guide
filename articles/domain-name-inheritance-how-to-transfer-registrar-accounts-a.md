@@ -183,6 +183,120 @@ If using services like Cloudflare or GitHub, add team members or organizations. 
 
 Registering domains through an LLC or corporation can simplify transfers if the entity survives the owner. The domain becomes an asset of the business rather than personal property.
 
+## Transfer Checklist for Executors
+
+When handling domain transfers after death, use this checklist:
+
+```
+Domain: __________________________
+Registrar: ______________________
+Transfer Status: ________________
+
+Documentation:
+☐ Death certificate (certified copy)
+☐ Letter of testamentary/administration
+☐ Court order appointing personal representative
+☐ ID verification of requester
+☐ Any existing transfer-on-death designations
+
+Technical Steps:
+☐ Locate all registrar accounts
+☐ Find associated email addresses
+☐ Identify all domains under each account
+☐ Check for active renewals or subscriptions
+☐ Download any domain configurations/DNS settings
+
+Communication:
+☐ Initial contact with registrar's legal team
+☐ Submit documentation (keep copies)
+☐ Obtain transfer authorization codes (EPP)
+☐ Initiate transfer at receiving registrar
+☐ Confirm transfer approval via email
+☐ Verify propagation after 5-7 days
+
+Post-Transfer:
+☐ Update DNS records if changed
+☐ Verify website accessibility
+☐ Check email forwarding
+☐ Update nameserver settings if needed
+☐ Export all configuration for records
+```
+
+## Registrar-Specific Procedures
+
+**GoDaddy**: Requires notarized letter of testamentary and certified death certificate. Processing time: 2-3 weeks. Contact their Estate & Trust department.
+
+**Namecheap**: Accepts letters of administration. Can usually process in 1-2 weeks. Requires scan of government-issued ID plus estate documentation.
+
+**Cloudflare**: Stricter requirements. Requires full probate documentation and court order. May require 4+ weeks for processing.
+
+**Google Domains**: Recently acquired by Squarespace. Check current procedures via their registrar support, as policies may change.
+
+## Email and DNS Impact During Transfer
+
+Transferring a domain can disrupt email and DNS resolution if done incorrectly. To prevent service interruption:
+
+1. **Before transfer**: Export current DNS records from the old registrar
+   ```bash
+   # If you have access to APIs or DNS manager:
+   dig @ns1.old-registrar.com domain.com ANY
+   ```
+
+2. **During transfer**: Keep the domain locked at the old registrar until transfer initiates at the new registrar
+
+3. **After transfer**: Immediately import DNS records at the new registrar
+   ```
+   Option A: Use zone file import if available
+   Option B: Manually recreate each DNS record
+   Option C: Point nameservers to original provider (keeps DNS intact)
+   ```
+
+4. **Verification**: Test DNS resolution
+   ```bash
+   nslookup domain.com
+   dig domain.com MX # Check mail records
+   dig domain.com TXT # Check verification records
+   ```
+
+## Handling Subdomains and Email Services
+
+When transferring domains with existing subdomains or email services:
+
+- **Email forwarding**: If domain had email forwarding, recreate it at new registrar
+- **Subdomains**: Verify all subdomains resolve correctly post-transfer
+- **CNAME records**: Update any CNAME records pointing to external services (CDN, email, etc.)
+- **SPF/DKIM/DMARC**: Email authentication records must stay intact for mail delivery
+
+For Gmail, Yahoo, or other email services accessing the domain:
+
+```bash
+# Verify email records before transfer
+dig domain.com MX
+dig domain.com TXT | grep "v=spf1"
+```
+
+## Cost Considerations
+
+Domain transfers have financial implications:
+
+- **Transfer fee**: Most registrars charge $8-15 per domain for transfers
+- **Renewal extension**: Transfer often auto-renews for 1 year; this costs varies ($8-35+)
+- **Bulk transfers**: If managing multiple domains, some registrars offer discounts
+- **Hosting account transfer**: Moving hosting separately may incur additional fees
+
+Budget 2-4 weeks and $15-50 per domain for straightforward transfers, potentially more if hosting is included.
+
+## Long-Term Planning for Digital Assets
+
+Prevent future transfer delays by establishing these practices now:
+
+1. **Digital asset inventory**: Create a document listing all domains, registrars, and credentials
+2. **Passwords**: Store in a password manager with emergency access for heirs
+3. **Transfer authorization**: Pre-authorize trusted individuals as account contacts where possible
+4. **Beneficiary instructions**: Leave clear written instructions for digital asset handling
+5. **Regular updates**: Review and update the inventory annually, especially after changing registrars
+
+Store this inventory with other critical documents (will, financial accounts) or designate a trusted executor with secure access.
 
 ## Related Articles
 

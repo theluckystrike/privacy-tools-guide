@@ -185,6 +185,150 @@ For developers and power users, Bitwarden's self-hosting capability, open-source
 
 The "right" choice depends on your specific threat model, integration requirements, and philosophy around software transparency. Both represent strong options in 2026—just ensure you're using one rather than reusing passwords across services.
 
+## Migration Strategies
+
+If you're switching between password managers, understand the process to avoid losing data:
+
+**Exporting from NordPass**:
+```bash
+# NordPass CLI export (if available)
+npx nordpass-cli export --format csv > passwords.csv
+
+# Format: title,username,password,url,notes
+```
+
+**Importing into Bitwarden**:
+1. Export from NordPass as CSV
+2. Log into Bitwarden web vault (vault.bitwarden.com)
+3. Click "Tools" → "Import data"
+4. Select CSV file and map columns correctly
+5. Review imported items—fix any parsing errors
+6. Verify all entries imported successfully
+7. Delete export file securely
+
+**Data cleanup post-import**:
+- Consolidate duplicate entries (manually created + imported)
+- Update folder structure to match your organization
+- Verify TOTP codes exported correctly (some managers drop these)
+- Test logging into critical services with imported credentials
+
+The entire migration typically takes 30-60 minutes for 100-200 passwords.
+
+## Team Password Sharing
+
+Developers often need to share API keys, database credentials, or staging environment passwords with teammates:
+
+**Bitwarden Organizations** ($3-5/user/month):
+- Create shared collections
+- Fine-grained access control (read-only, edit, manage)
+- Audit logs tracking who accessed what
+- Emergency access delegation
+
+```json
+// Bitwarden Organization structure
+{
+  "collections": [
+    {
+      "name": "Staging Databases",
+      "access": ["qa-team", "devops"],
+      "items": ["staging-postgres", "staging-redis"]
+    },
+    {
+      "name": "Production (Secrets Only)",
+      "access": ["devops-lead"],
+      "items": ["prod-api-key", "prod-db-password"]
+    }
+  ]
+}
+```
+
+**NordPass Teams** ($3.99/user/month):
+- Similar collection-based sharing
+- Vault storage with role-based permissions
+- Automated password rotation (premium feature)
+
+For small teams (< 5 people), either solution works. For larger teams requiring complex permission hierarchies, Bitwarden's fine-grained controls typically win.
+
+## Threat Model Considerations
+
+Your password manager choice should match your threat profile:
+
+**Low-threat scenario** (personal use, standard internet threats):
+- Either Bitwarden or NordPass acceptable
+- Focus on usability and feature set
+- Price differences matter more
+
+**Medium-threat scenario** (developer storing API keys, staging credentials):
+- Prefer Bitwarden's self-hosting for infrastructure control
+- Use Bitwarden Organizations for team credential sharing
+- Implement IP-based access restrictions on self-hosted instance
+
+**High-threat scenario** (storing credentials for accounts managing sensitive data):
+- Self-hosted Bitwarden mandatory
+- Use airgapped backup for encryption keys
+- Implement MFA on master password
+- Consider hardware security keys (YubiKey) for account protection
+- Store master password offline in physical safe
+
+## Cost of Ownership Analysis
+
+Total cost includes more than subscription price:
+
+**Bitwarden Premium** ($10/year):
+- Software cost: $10
+- Self-hosting (optional): $5-15/month VPS
+- Management overhead: 5-10 hours/year for self-hosted instance
+- **5-year total**: ~$10 (cloud) or ~$400-500 (self-hosted)
+
+**NordPass Premium** ($36/year or promotional rates):
+- Software cost: $36/year (often discounted to $1.99/month)
+- No self-hosting option
+- Zero management overhead
+- **5-year total**: ~$180-300 (cloud only)
+
+For pure cloud use, NordPass costs less upfront if you catch promotional pricing. For self-hosting needs, Bitwarden's flexibility justifies the technical overhead.
+
+## Integration with Development Workflows
+
+Developers benefit from password managers integrated directly into workflows:
+
+**Bitwarden CLI in scripts**:
+```bash
+#!/bin/bash
+# Automatically rotate API key in .env file
+
+OLD_KEY=$(bw get field "api-key" --itemid 12345abc | jq -r '.data.value')
+NEW_KEY=$(curl -s https://api.service.com/generate-key)
+
+# Update Bitwarden
+bw edit "api-service" --password "$NEW_KEY"
+
+# Update local .env
+sed -i "s/$OLD_KEY/$NEW_KEY/" .env
+echo "API key rotated successfully"
+```
+
+**NordPass CLI limitations**:
+- More limited API surface
+- Fewer scripting options
+- Better suited for manual lookups than automation
+
+For teams automating credential management, Bitwarden's CLI flexibility provides measurable advantages.
+
+## Hardware Security Key Support
+
+Both support FIDO2/U2F hardware keys for enhanced account protection:
+
+**Bitwarden with YubiKey**:
+1. Enable two-factor authentication in settings
+2. Register YubiKey as second factor
+3. Login requires Bitwarden password + physical YubiKey touch
+
+**NordPass with FIDO2 keys**:
+- Similar setup process
+- Limited to supported key models (check documentation)
+
+Hardware keys prevent account compromise even if your master password is compromised. Recommended for anyone storing production credentials.
 
 ## Related Articles
 

@@ -183,6 +183,91 @@ class PrivacyAwareCallServer {
 
 4. **Consider self-hosted solutions**: For organizations with strict requirements, self-hosted alternatives like Matrix with VoIP support provide more control over metadata.
 
+## Real-World Metadata Collection Examples
+
+### Signal Voice Call Scenario
+
+Alice calls Bob over Signal on a hotel WiFi network. Here's what different observers can determine:
+
+- **Signal server logs**: Only that an encrypted message was relayed to Bob. No timing, no duration, no indication it was a call.
+- **Network observer (hotel WiFi)**: Sees encrypted traffic to Signal servers but cannot determine content, caller, or call duration.
+- **Bob's phone**: Has the call in recent calls history, but this stays on his device—Signal doesn't share it.
+- **iCloud/backup services**: Nothing (Signal doesn't sync call logs to cloud by default).
+
+### WhatsApp Voice Call Scenario
+
+The same call over WhatsApp reveals more:
+
+- **Meta servers**: Logs the call happened, duration, both parties' phone numbers, device information, IP addresses.
+- **Network observer**: Sees encrypted traffic but Meta can still analyze patterns.
+- **Bob's phone**: Call logged plus metadata syncs to WhatsApp backups (stored in Google Drive or iCloud).
+- **WhatsApp backups**: Encrypted locally but subject to device backup ecosystem policies.
+
+This metadata can be subpoenaed by law enforcement in most jurisdictions.
+
+### FaceTime Scenario
+
+FaceTime call between Alice and Bob:
+
+- **Apple servers**: Relay the call but theoretically don't log duration or participants (though Apple doesn't publish transparency reports on this).
+- **iCloud**: If iCloud backup is enabled (default), call history syncs there.
+- **Network observer**: Detects FaceTime traffic pattern and can correlate with Apple's known server IPs.
+- **Device backup**: Call history appears in local and cloud backups indefinitely until manually deleted.
+
+## Privacy-Focused Call Recommendations by Use Case
+
+**For journalists protecting sources**: Use Signal exclusively. The minimal metadata and no-logging design make it the standard for sensitive communications.
+
+**For activists in surveillance states**: Layer Signal with Tor or a commercial VPN to mask the fact you're using Signal. Session provides phone-number-free calls but with smaller user adoption.
+
+**For families prioritizing convenience**: FaceTime is acceptable if you accept Apple's data handling. Disable iCloud backups for call history if privacy is a concern.
+
+**For teams requiring infrastructure control**: Self-hosted Matrix with OMEMO encryption (E2EE) gives full metadata control but requires technical setup.
+
+## Testing Encryption Claims
+
+To verify an app's call encryption claims:
+
+```bash
+# 1. Capture traffic during a call
+sudo tcpdump -i any -w call-capture.pcap host app-server.example.com
+
+# 2. Analyze with Wireshark
+wireshark call-capture.pcap
+
+# 3. Check if payloads are encrypted (should see only ciphertext)
+# 4. Verify TLS is in use (should see valid certificates)
+
+# 5. Extract certificate details
+openssl s_client -connect app-server.example.com:443 -showcerts
+```
+
+If call data appears in plaintext or lacks proper TLS protection, the encryption claims are suspect.
+
+## Server Architecture and Encryption Design
+
+The strength of end-to-end encryption depends on server architecture:
+
+| Server Type | Metadata Exposure | Practical Security |
+|-------------|------------------|-------------------|
+| Centralized (WhatsApp) | High | Medium |
+| Relay-only (Signal) | Minimal | Excellent |
+| Decentralized (Session) | Very low | Very good |
+| Self-hosted (Matrix) | Zero | Excellent |
+
+Relay-only servers like Signal's are optimal because they forward encrypted traffic without decryption capability.
+
+## Metadata Retention Policies
+
+Ask these questions before selecting a voice call platform:
+
+- How long does the service retain call metadata (participant, timestamp, duration)?
+- Can law enforcement request call metadata without content?
+- Does the service delete metadata automatically or upon request?
+- Are backups encrypted at rest?
+- Can deleted calls be recovered from backups?
+
+Signal publishes these answers transparently. Most commercial platforms do not.
 
 ## Related Articles
 

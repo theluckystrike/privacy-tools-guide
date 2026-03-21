@@ -185,6 +185,171 @@ Essential tools for messaging app encryption audits:
 
 Combine these tools with careful protocol documentation review to form a complete picture of an app's encryption guarantees. The effort rewards you with confidence in your communication security or reveals gaps that other users should know about.
 
+## Advanced Audit Techniques
+
+### API Reverse Engineering
+
+For closed-source apps, analyze API requests to understand encryption implementation:
+
+```bash
+# Monitor app network traffic in real-time
+mitmproxy -p 8080 --mode regular
+
+# Configure app to use proxy, then review HTTP requests/responses
+# Look for: Key exchange requests, message encryption, auth tokens
+```
+
+Check if:
+- Encryption keys are exchanged with the server (red flag—should be client-only)
+- Message payloads are base64-encoded (often indicates encryption)
+- Authentication tokens are bearer tokens (vulnerable) or signed JWTs (better)
+
+### Cryptographic Primitive Analysis
+
+Examine which encryption algorithms are used:
+
+```python
+# Parse app binaries for crypto library references
+import re
+
+with open('/path/to/app.apk', 'rb') as f:
+    content = f.read()
+
+# Search for known crypto library signatures
+patterns = {
+    'AES': b'AES',
+    'RSA': b'RSA',
+    'HMAC': b'HMAC',
+    'SHA': b'SHA-',
+    'libsodium': b'sodium',
+}
+
+for name, pattern in patterns.items():
+    if pattern in content:
+        print(f"Found: {name}")
+```
+
+**Acceptable algorithms**: AES-256-GCM, ChaCha20-Poly1305, Ed25519, Curve25519
+**Red flags**: DES, MD5, SHA1 (deprecated), RC4
+
+### Key Derivation Function (KDF) Testing
+
+Proper encryption uses strong KDFs to derive keys from passwords:
+
+```bash
+# If app uses password-based encryption, test KDF strength
+# Weak KDF = fast password cracking
+
+# Test with Hashcat
+hashcat -m 10500 -a 0 hash.txt wordlist.txt
+
+# If cracking succeeds quickly, KDF is weak
+```
+
+Strong KDFs use Argon2, bcrypt, or scrypt with appropriate cost parameters.
+
+## Encryption Audit Checklist
+
+Use this checklist when evaluating any messaging app's encryption:
+
+```
+Protocol Analysis:
+☐ App publishes complete protocol documentation
+☐ Documentation describes key exchange mechanism
+☐ Forward secrecy is explicitly mentioned
+☐ Perfect forward secrecy (PFS) is implemented
+☐ Key rotation happens automatically per-message
+
+Implementation Verification:
+☐ Crypto uses established libraries (not custom)
+☐ Uses AEAD modes (GCM, ChaCha20-Poly1305)
+☐ Uses modern key sizes (256-bit symmetric, 2048-bit RSA minimum)
+☐ Uses secure random number generation
+☐ Implements constant-time comparison (prevents timing attacks)
+
+Server-Side Security:
+☐ Server never has access to message keys
+☐ Server cannot decrypt messages
+☐ Recovery mechanisms don't bypass encryption
+☐ Server-side key storage doesn't exist
+☐ Backup encryption is separate from message encryption
+
+User Experience:
+☐ Users can verify encryption keys (safety numbers/fingerprints)
+☐ App warns when key changes (potential MITM)
+☐ Safety numbers are documented and explainable
+☐ App encourages out-of-band verification
+
+Metadata:
+☐ Minimal metadata collection
+☐ No call logs stored server-side
+☐ User activity not logged
+☐ IP addresses not permanently stored
+☐ Deletion is permanent, not soft-deleted
+```
+
+## Cross-Platform Verification
+
+When auditing, test encryption across platforms:
+
+```bash
+# Send message from app on iOS, intercept on Android network
+# Verify both platforms send identical encryption formats
+
+# Check if message encryption differs by platform
+# (indicates inconsistent security)
+
+# Verify safety numbers match across platforms
+```
+
+Inconsistent encryption between iOS and Android indicates incomplete security implementation.
+
+## Vulnerability Disclosure Pathways
+
+Before publishing audit findings:
+
+1. **Contact the app developers** through responsible disclosure
+2. **Allow 90 days** for them to fix vulnerabilities
+3. **Document the fix** in your audit report
+4. **Publish findings** after the app has patched or 90 days pass
+
+This gives developers time to respond without giving attackers zero-day information.
+
+## Building an Audit Workflow
+
+Create a repeatable audit process:
+
+```bash
+#!/bin/bash
+# Messaging App Encryption Audit Script
+
+APP_NAME="$1"
+AUDIT_DATE=$(date +%Y-%m-%d)
+REPORT_FILE="audit-${APP_NAME}-${AUDIT_DATE}.md"
+
+# 1. Network traffic capture
+echo "Capturing network traffic..."
+sudo tcpdump -i any -w traffic.pcap host "${APP_DOMAIN}" &
+TCPDUMP_PID=$!
+
+# 2. Analyze with Wireshark (headless)
+sleep 60
+kill $TCPDUMP_PID
+tshark -r traffic.pcap -Y "tcp.flags.syn" > handshakes.txt
+
+# 3. TLS analysis
+echo "Analyzing TLS configuration..."
+openssl s_client -connect "${APP_DOMAIN}:443" -showcerts > certs.txt
+
+# 4. Generate report
+echo "# Audit Report: ${APP_NAME}" > "${REPORT_FILE}"
+echo "Date: ${AUDIT_DATE}" >> "${REPORT_FILE}"
+echo "" >> "${REPORT_FILE}"
+echo "## Findings" >> "${REPORT_FILE}"
+# ... add analysis results
+
+echo "Audit complete. Report: ${REPORT_FILE}"
+```
 
 ## Related Articles
 

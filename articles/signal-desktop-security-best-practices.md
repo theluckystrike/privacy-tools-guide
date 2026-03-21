@@ -185,6 +185,96 @@ Settings → Chats → Default Timer for New Chats: 1 week or 1 month
 
 This applies only to new conversations. For existing conversations, open each one and set the timer via the conversation name at the top.
 
+## Step 9: Monitor Signal Desktop for Updates Manually
+
+On Linux with Snap installations, monitor for updates in the snap listing:
+
+```bash
+snap refresh --list
+snap refresh signal-desktop
+```
+
+For Flatpak installations:
+```bash
+flatpak update --app org.signal.Signal
+flatpak info --show org.signal.Signal | grep Version
+```
+
+## Step 10: Network-Level Logging Considerations
+
+Signal Desktop may leak metadata about your Signal usage through DNS and traffic patterns. Even with Signal's minimal server logging, analyzing traffic volume and frequency can reveal communication patterns. For maximum privacy:
+
+- Use a system-wide VPN or Tor to mask Signal usage patterns from network observers
+- Configure a local DNS resolver that supports encryption (systemd-resolved with DNS over TLS)
+- Avoid using Signal on public networks where traffic analysis is practical
+
+```bash
+# Check current DNS resolver
+resolvectl status
+
+# Configure encrypted DNS on Linux (via systemd-resolved)
+sudo mkdir -p /etc/systemd/resolved.conf.d/
+sudo tee /etc/systemd/resolved.conf.d/encrypted-dns.conf > /dev/null <<EOF
+[Resolve]
+DNS=1.1.1.1#cloudflare-dns.com
+FallbackDNS=8.8.8.8#dns.google.com
+DNSSECNegativeTrustAnchors=
+EOF
+
+sudo systemctl restart systemd-resolved
+```
+
+## Step 11: Backup and Export Considerations
+
+Signal Desktop stores your entire message history locally. Before reinstalling or switching devices:
+
+- Export your conversation backups if available (Settings → Advanced)
+- Note that Signal Desktop cannot be directly migrated between machines
+- Create a new linked device on the new computer rather than attempting to transfer the database
+- The local database will not follow to the new machine, though message history will sync from Signal's servers for conversation participants you message post-migration
+
+## Step 12: Disappearing Messages Timing
+
+Beyond setting a default, understand how Signal's disappearing message timer works on Desktop:
+
+- Timer starts immediately when you send the message, not when the recipient reads it
+- The recipient's device deletes the message after the timer expires, but your local copy also disappears
+- Disabling disappearing messages mid-conversation requires manual management of older messages
+
+To manually delete conversation history on Desktop:
+
+```bash
+# Linux: Clear local message cache
+rm -rf ~/.config/Signal/sql/
+
+# This will require re-downloading recent conversation history
+# Do NOT do this unless you want to lose local message history permanently
+```
+
+## Step 13: Threat Modeling for Desktop Usage
+
+Signal Desktop introduces vulnerabilities that don't exist on mobile:
+
+**Physical access threats**: Anyone with access to an unlocked desktop can read Signal messages without knowing your password if the screen lock is disabled. Screen lock timeout of 5 minutes means brief absences risk exposure.
+
+**Shared computer threats**: Family members or colleagues on the same computer can access Signal if your user account isn't logged out. Set strong OS passwords and ensure Signal locks on logout.
+
+**Malware threats**: Desktop malware with user-level access can read Signal messages from RAM or the database before encryption. This is the most serious practical threat to Signal Desktop security.
+
+For high-threat scenarios, consider Signal Mobile only, accessed through a dedicated device kept physically secure.
+
+## Step 14: Audit Your Signal Desktop Security Checklist
+
+Run through this quarterly:
+
+1. Verify screen lock is enabled and timeout is 5 minutes or less
+2. Review linked devices in Signal Mobile and remove any unfamiliar ones
+3. Check that notification privacy is set to "No name or message"
+4. Confirm Signal is updated to the latest version
+5. Review disappearing message settings on frequently-used conversations
+6. On Linux, verify keyring integration is working (`gpg-connect-agent UPDATESTARTUPTTY /bye` should succeed)
+7. If using VPN/Tor, test that Signal traffic routes through the proxy correctly
+
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices](/signal-disappearing-messages-best-practices/)

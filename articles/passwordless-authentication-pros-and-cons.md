@@ -183,6 +183,173 @@ Consider maintaining password options when:
 - Requiring maximum compatibility across legacy systems
 - Account recovery simplicity is critical
 
+## Security Key Configuration for Development
+
+For developers deploying passwordless systems, configure WebAuthn with proper security:
+
+```javascript
+// Complete WebAuthn registration flow
+const registrationOptions = {
+  challenge: new Uint8Array(32), // Server generates this
+  rp: {
+    name: "Your Application",
+    id: "example.com"
+  },
+  user: {
+    id: new Uint8Array(16),
+    name: "user@example.com",
+    displayName: "User Name"
+  },
+  pubKeyCredParams: [
+    { alg: -7, type: "public-key" } // ES256
+  ],
+  authenticatorSelection: {
+    authenticatorAttachment: "cross-platform", // Security key
+    userVerification: "required",
+    residentKey: "preferred"
+  },
+  timeout: 60000,
+  attestation: "direct"
+};
+
+const credential = await navigator.credentials.create({
+  publicKey: registrationOptions
+});
+
+// Store credential.id and credential.response.attestationObject
+// Verify attestation from trusted authenticators
+```
+
+## Recovery Code Generation
+
+When implementing passwordless, generate recovery codes during setup:
+
+```javascript
+// Generate recovery codes
+function generateRecoveryCodes(count = 10) {
+  const codes = [];
+  for (let i = 0; i < count; i++) {
+    const code = Array.from({ length: 8 }, () =>
+      Math.floor(Math.random() * 36).toString(36)
+    ).join('-');
+    codes.push(code);
+  }
+  return codes;
+}
+
+// Usage during registration:
+const recoveryCodes = generateRecoveryCodes();
+console.log("Save these codes in a secure location:");
+recoveryCodes.forEach(code => console.log(code));
+```
+
+Users must store these offline—they're one-time use codes that work when the security key is lost.
+
+## Passkey Synchronization Across Devices
+
+Passkeys sync across an individual's devices (iPhone, iPad, Mac) via iCloud Keychain:
+
+```javascript
+// Request passkey that syncs across devices
+const attestationOptions = {
+  ...registrationOptions,
+  authenticatorSelection: {
+    authenticatorAttachment: "platform", // Uses device's built-in authenticator
+    residentKey: "required", // Enables passkey sync
+    userVerification: "required"
+  }
+};
+```
+
+Users can authenticate on any of their devices after registering a passkey. This simplifies recovery if they lose one device—they can sign in on another.
+
+## Conditional UI for Passwordless
+
+Modern browsers support "conditional UI" which presents passwordless options when available:
+
+```html
+<input
+  type="email"
+  id="username"
+  autocomplete="username webauthn"
+/>
+```
+
+Adding `webauthn` to autocomplete hints the browser to offer passwordless sign-in when compatible authenticators are available.
+
+## Fallback Authentication Strategies
+
+Design fallback flows for when passwordless authentication fails:
+
+```javascript
+async function authenticateWithFallback(username) {
+  try {
+    // Primary: Try WebAuthn
+    return await webauthnAuthenticate(username);
+  } catch (webauthnError) {
+    // Fallback 1: Try recovery codes
+    const recoveryCode = prompt("Enter recovery code:");
+    if (await verifyRecoveryCode(username, recoveryCode)) {
+      return { method: "recovery_code", username };
+    }
+
+    // Fallback 2: Try backup email
+    const emailCode = await sendEmailCode(username);
+    const userCode = prompt("Check your email for code:");
+    if (userCode === emailCode) {
+      return { method: "email_code", username };
+    }
+
+    // Fallback 3: Account recovery process
+    throw new Error("All authentication methods failed. Contact support.");
+  }
+}
+```
+
+## User Education Materials
+
+Create these for users setting up passwordless auth:
+
+1. **Setup guide**: Screenshots showing which button to click, what to name their security key
+2. **Recovery code instructions**: Emphasis on storing them offline
+3. **Device replacement flow**: What to do when they lose a device
+4. **Support contact**: Clear escalation path when authentication fails
+
+Poor user education causes support costs to spike when users forget recovery code storage.
+
+## Passwordless Implementation Timeline
+
+**Phase 1 (Months 1-2)**: Build WebAuthn support, test with security keys and platform authenticators
+
+**Phase 2 (Months 3-4)**: Launch optional passwordless (users can choose to try it), collect feedback
+
+**Phase 3 (Months 5-6)**: Improve recovery flows based on real-world usage patterns
+
+**Phase 4 (Months 7+)**: Make passwordless the default for new signups while maintaining password fallback for existing users
+
+This phased approach prevents locking out users while you learn what works.
+
+## Threat Model for Passwordless Systems
+
+Consider these attacks:
+
+**Social engineering**: Users tricked into allowing unauthorized WebAuthn confirmation. Mitigation: Show relying party identity prominently during authentication.
+
+**Authenticator loss**: User loses the only registered security key. Mitigation: Mandate backup codes and at least two authenticators.
+
+**Credential stuffing attacks**: No longer possible (no passwords to steal), but attackers can still compromise accounts via recovery codes. Mitigation: Rotate recovery codes regularly.
+
+**Phishing**: Reduced because WebAuthn binds to origin, but URL spoofing still works. Mitigation: Use HTTPS only, implement domain verification, use certificate pinning.
+
+## Passwordless Authentication Decision Matrix
+
+| Scenario | Recommended Approach |
+|----------|-------------------|
+| Existing users, high security | Optional passwordless + password fallback |
+| New greenfield app | WebAuthn + recovery codes from start |
+| Legacy mobile app | Passkeys + backup phone number |
+| Enterprise/government | FIDO2 hardware keys + air-gapped backups |
+| High-friction tolerance | Magic links + WebAuthn option |
 
 ## Related Articles
 

@@ -183,6 +183,104 @@ ssh -L 3389:localhost:3389 user@your-server
 
 This approach encrypts your traffic and provides authentication without the overhead of a full VPN stack. However, it only protects a single connection rather than all your network traffic.
 
+## Security Comparison Table
+
+| Method | Security | Latency | Complexity | Cost |
+|--------|----------|---------|-----------|------|
+| Self-Hosted WireGuard | Excellent | Low | Medium | Low (VPS) |
+| Self-Hosted OpenVPN | Excellent | Medium | Medium | Low (VPS) |
+| Commercial VPN | Good | Medium | Low | Medium |
+| SSH Tunnel Only | Good | Low | Low | Variable |
+| No VPN (unencrypted) | Dangerous | Zero | Zero | Free |
+
+## Advanced WireGuard Configuration for Stability
+
+For extended hotel stays, harden your WireGuard setup with persistent connections and reconnection handling:
+
+```ini
+[Interface]
+PrivateKey = <key>
+Address = 10.0.0.2/32
+DNS = 1.1.1.1
+ListenPort = 51820
+
+[Peer]
+PublicKey = <server-key>
+AllowedIPs = 0.0.0.0/0
+Endpoint = your-vpn-server.com:51820
+PersistentKeepalive = 25
+```
+
+The key addition is `PersistentKeepalive = 25` which sends keepalive packets every 25 seconds, preventing NAT timeout on unstable networks.
+
+## Certificate Validation for VPN Connections
+
+When using OpenVPN, validate that certificate pinning is configured to prevent MITM attacks even within the VPN tunnel:
+
+```bash
+# Extract certificate fingerprint for pinning
+openssl x509 -in ca.crt -noout -fingerprint -sha256
+```
+
+Add to your OpenVPN config:
+
+```ini
+ca ca.crt
+verify-x509-name your-vpn-server.com
+remote-cert-tls server
+```
+
+## Monitoring Connection Health
+
+Create a monitoring script to ensure your VPN remains stable:
+
+```bash
+#!/bin/bash
+VPN_INTERFACE="wg0"
+CHECK_HOST="8.8.8.8"
+
+while true; do
+  if ! ping -I $VPN_INTERFACE -c 1 $CHECK_HOST &>/dev/null; then
+    echo "[$(date)] VPN connection lost! Restarting..."
+    sudo wg-quick down $VPN_INTERFACE
+    sleep 5
+    sudo wg-quick up $VPN_INTERFACE
+  else
+    echo "[$(date)] VPN connection OK"
+  fi
+  sleep 30
+done
+```
+
+Run this in a separate terminal to catch disconnections immediately.
+
+## Firewall Rules for RDP Over VPN
+
+Configure the VPN server's firewall to accept RDP only from the VPN subnet:
+
+```bash
+# On VPN server - Allow RDP only from VPN clients
+sudo ufw allow from 10.0.0.0/24 to any port 3389/tcp comment "RDP over WireGuard"
+sudo ufw deny from any to any port 3389/tcp comment "Block direct RDP access"
+```
+
+This prevents accidental exposure of RDP on the public internet.
+
+## Troubleshooting Hotel Network Issues
+
+Hotel networks often have captive portals that interfere with VPN connections. Before connecting to hotel WiFi:
+
+1. Test plain HTTP connectivity to establish the captive portal
+2. Complete authentication on the open HTTP page
+3. Then establish your VPN connection
+
+Some hotels block VPN protocols entirely. If WireGuard port 51820 is blocked, configure it to use port 443 (HTTPS) or implement obfuscation:
+
+```ini
+ListenPort = 443
+```
+
+For maximum compatibility, layer WireGuard over Wireguard (using a service like Ubiquiti EdgeOS) or use OpenVPN with TLS obfuscation enabled.
 
 ## Related Articles
 

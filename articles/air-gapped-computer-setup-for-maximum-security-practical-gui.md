@@ -184,6 +184,228 @@ A developer working with sensitive cryptographic keys might structure their work
 
 This workflow ensures private keys never exist on a network-connected machine while maintaining productive development capability.
 
+## Detailed Hardware Disabling Procedures
+
+### Disable Wireless on Linux
+
+```bash
+# Permanently disable wireless adapters at BIOS level (best)
+# Access BIOS setup during boot and disable:
+# - Integrated WiFi adapter
+# - Bluetooth controller
+# - Cellular modem (if present)
+
+# If not possible at BIOS, disable via kernel
+sudo modprobe -r wifi
+sudo modprobe -r bluetooth
+sudo modprobe -r iwlwifi
+
+# Prevent module reloading
+echo "blacklist wifi" | sudo tee /etc/modprobe.d/disable-wifi.conf
+echo "blacklist bluetooth" | sudo tee /etc/modprobe.d/disable-bluetooth.conf
+
+# Remove USB wireless adapters physically
+# Disable built-in adapters via:
+echo "disable" | sudo tee /sys/class/net/wlan0/device/powerdown
+```
+
+### Windows Air-Gapping
+
+```powershell
+# Disable network adapters via PowerShell (run as Administrator)
+Get-NetAdapter | Where-Object {$_.Name -match 'WiFi|Bluetooth'} | Disable-NetAdapter -Confirm:$false
+
+# Disable device drivers permanently
+devmgmt.msc
+# Right-click network adapters → Disable or Uninstall
+
+# Disable network discovery
+Set-NetFirewallProfile -Profile Domain,Public,Private -EnableRuleGroup "Network Discovery" -Enabled:$False
+```
+
+## Advanced Encryption with LUKS and KeyFile
+
+For maximum security, use a keyfile stored on encrypted removable media:
+
+```bash
+# Create encrypted keyfile on secure USB
+# (Only the air-gapped machine accesses this)
+dd if=/dev/urandom of=keyfile.bin bs=1 count=4096
+
+# Create encrypted partition using keyfile
+sudo cryptsetup luksFormat --key-file keyfile.bin /dev/sdX1
+
+# Mount without typing password
+sudo cryptsetup luksOpen --key-file keyfile.bin /dev/sdX1 secure_volume
+
+# Create filesystem
+sudo mkfs.ext4 /dev/mapper/secure_volume
+
+# Mount
+sudo mount /dev/mapper/secure_volume /mnt/secure
+```
+
+The keyfile must be transferred to the air-gapped system via secure media.
+
+## Package Verification Procedures
+
+When installing software on an air-gapped system, verify signatures:
+
+```bash
+# 1. Download package on internet-connected machine
+wget https://example.com/package.tar.gz
+wget https://example.com/package.tar.gz.sig
+
+# 2. Download GPG key from keyserver
+gpg --keyserver keyserver.ubuntu.com --recv-key KEYID
+
+# 3. Verify signature
+gpg --verify package.tar.gz.sig package.tar.gz
+
+# 4. Transfer to air-gapped system via USB
+# 5. On air-gapped system, verify again
+gpg --import /path/to/pub.key
+gpg --verify package.tar.gz.sig package.tar.gz
+
+# 6. Install only if signature is valid
+tar -xzf package.tar.gz
+```
+
+Always verify checksums match across all systems:
+```bash
+sha256sum package.tar.gz
+# Compare on all systems before proceeding
+```
+
+## Secure Deletion on Air-Gapped Systems
+
+Data deleted normally can be recovered. On air-gapped systems, use secure deletion:
+
+```bash
+# Install secure deletion tools
+sudo apt install secure-delete
+
+# Securely wipe a file (overwrite 38 times)
+shred -vfz -n 38 /path/to/sensitive_file
+
+# Or use wipe for entire directories
+wipe -r /path/to/directory
+
+# For sensitive data, use physical destruction
+# Destroy the drive entirely if it contains private keys
+sudo dd if=/dev/zero of=/dev/sdX bs=1M status=progress
+```
+
+## Access Logging for Physical Security
+
+Document all access to the air-gapped system:
+
+```bash
+#!/bin/bash
+# /var/log/airgap-access.log logging script
+
+LOG_FILE="/var/log/airgap-access.log"
+
+# Log all sudo commands
+echo "[$(date)] User $USER executed: $BASH_COMMAND" >> $LOG_FILE
+
+# Restrict log access
+chmod 600 $LOG_FILE
+
+# Review regularly
+tail -100 $LOG_FILE
+```
+
+Add to sudoers:
+
+```
+Defaults log_file="/var/log/airgap-access.log"
+Defaults log_inputs, log_output
+```
+
+All system modifications are logged for audit purposes.
+
+## Tails OS Alternative
+
+For extremely high-threat scenarios, use Tails OS instead of hardening Linux:
+
+```bash
+# Tails is a hardened, amnesic Linux designed for privacy
+# Download from https://tails.net/
+
+# Create Tails USB
+sudo dd if=tails-amd64-*.iso of=/dev/sdX bs=4M status=progress
+sync
+
+# Boot from USB on air-gapped hardware
+# All changes disappear on shutdown (amnesic)
+# No persistent data unless explicitly configured
+```
+
+Tails advantages:
+- Designed specifically for security
+- Boots from read-only media
+- No filesystem modifications persist
+- Tor integrated for remote operations
+
+## Qubes OS for Compartmentalization
+
+For developers managing multiple types of secrets, Qubes OS provides VM-based isolation:
+
+```bash
+# Create separate VMs for different purposes
+# Dom0 remains offline, separate VMs handle:
+# - Cryptographic operations
+# - Document review
+# - Source code signing
+
+# Each VM is independent; compromise doesn't cross VMs
+# VMs can be created, used, destroyed without persistence
+
+# Transfer data between VMs via secure mechanism:
+qvm-copy-to-vm source-vm /path/to/file target-vm
+```
+
+Qubes is more complex but provides stronger isolation than traditional air-gapping.
+
+## Maintenance Schedule for Air-Gapped Systems
+
+Create a regular maintenance routine:
+
+```markdown
+## Monthly Tasks
+- [ ] Review access logs
+- [ ] Check for physical tampering indicators
+- [ ] Verify all wireless is disabled
+- [ ] Test backup recovery procedures
+
+## Quarterly Tasks
+- [ ] Review encryption keys are still secure
+- [ ] Update OS/packages via verified media
+- [ ] Check for disk errors or failures
+- [ ] Test emergency restoration procedures
+
+## Annually
+- [ ] Replace batteries in UPS/backup power
+- [ ] Inspect physical security measures
+- [ ] Review threat model and adjust setup
+- [ ] Replace data transfer USB drives
+```
+
+## Cost and Time Investment
+
+Typical air-gapped setup costs:
+
+| Component | Cost |
+|-----------|------|
+| Dedicated hardware (used ThinkPad) | $200-400 |
+| Encrypted USB drives (2) | $50 |
+| Write-once media (DVDs, USB write-lock) | $30 |
+| Safe deposit box (annual) | $75 |
+| **Total first year** | **$355-555** |
+| **Maintenance (annual)** | **$75-100** |
+
+Time investment: 4-6 hours initial setup, 1-2 hours monthly maintenance.
 
 ## Related Articles
 

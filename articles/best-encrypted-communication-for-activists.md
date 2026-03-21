@@ -184,6 +184,387 @@ Encryption alone does not guarantee security. Implement these complementary prac
 # Each device shows a fingerprint you can verify out-of-band
 ```
 
+## Detailed Tool Comparison Table
+
+| Feature | Signal | Session | Matrix | Briar |
+|---------|--------|---------|--------|-------|
+| **Protocol** | Signal Protocol | Signal Protocol + Onion Routing | OMEMO E2EE | Briar Protocol |
+| **Phone Number** | Required | Not required | Optional | Not required |
+| **User Base** | 40M+ | 50K+ | 100K+ | 10K+ |
+| **Server Logs** | Minimal | None (decentralized) | Varies | N/A (offline-first) |
+| **Internet Required** | Yes | Yes | Yes | Optional (mesh) |
+| **Desktop App** | Yes | Yes | Yes | No (Android only) |
+| **Group Chats** | 250 max | Unlimited | Unlimited | Limited |
+| **Setup Time** | 5 minutes | 10 minutes | 1 hour | 10 minutes |
+| **Offline-First** | No | No | No | Yes |
+| **Metadata Privacy** | Excellent | Excellent | Good | Excellent |
+
+## Threat Model Decision Tree
+
+Use this to select the right tool:
+
+```
+1. Do you need desktop support?
+   NO → Consider Briar (Android mesh)
+   YES → Continue
+
+2. Are you concerned about phone number tracking?
+   YES → Use Session or Matrix
+   NO → Signal is fine
+
+3. Do you have technical capacity for self-hosting?
+   YES → Self-host Matrix (best control)
+   NO → Continue
+
+4. Is internet access reliable?
+   YES → Signal (best usability)
+   NO → Briar (mesh fallback)
+
+5. Final selection:
+   ├─ Democratic country, usability priority → Signal
+   ├─ Surveillance state, anonymity priority → Session
+   ├─ High-security org, infrastructure control → Matrix
+   └─ Internet-restricted area → Briar
+```
+
+## Real-World Deployment Examples
+
+Different threat environments call for different tool stacks:
+
+**Scenario 1: Democratic country activist (protest coordination)**
+- Primary: Signal for day-to-day organizing
+- Backup: Telegram groups (not E2EE by default, but accessible)
+- Philosophy: Usability prioritized; government not expected to execute targeted decryption
+
+**Scenario 2: Authoritarian context (government surveillance active)**
+- Primary: Session (phone number independence)
+- Secondary: Self-hosted Matrix for organizational infrastructure
+- Fallback: Briar for offline mesh when internet blocked
+- Philosophy: Assume adversary may break encryption; focus on metadata protection
+
+**Scenario 3: Underground network (actual persecution)**
+- No single message platform; compartmentalized approaches
+- In-person meetings for sensitive information
+- Written notes destroyed after reading
+- Dead drops or coded messages in public forums if necessary
+- Philosophy: Minimize digital footprint; assume all digital communications compromised
+
+The stronger the threat, the more offline and compartmentalized your communication becomes.
+
+## Group Size Implications
+
+Different tools scale differently for group communications:
+
+**Signal groups** (limited to ~500 members):
+- Good for local chapters and working groups
+- Metadata still visible to Signal (group membership, timestamps)
+- If one person is compromised, they see all recent messages
+
+**Matrix rooms** (thousands of members):
+- Better for large organizations
+- Federated—doesn't require everyone on same server
+- Can create private, invite-only rooms for sensitive discussions
+- Audit logs track who said what (important for transparency)
+
+**Session groups** (also limited):
+- Smaller practical limit (~100 active members)
+- Better privacy than Signal groups
+- Slower message delivery due to onion routing
+
+Choose tools by anticipated group size. A protest coordination network using Signal works fine with 50-100 people. Organizational infrastructure needing 500+ users requires Matrix.
+
+## Device Security Interdependencies
+
+Communication tool security depends entirely on device security. An encrypted message app on a compromised phone provides zero protection:
+
+**Device hardening checklist**:
+- Enable full-disk encryption (BitLocker on Windows, FileVault on macOS)
+- Keep OS and apps updated (critical security patches)
+- Disable unnecessary services (Bluetooth when not needed)
+- Use strong device password or biometric with fallback
+- Install security tools (Malwarebytes for Windows)
+- Regular backups in case device is stolen/seized
+
+For activists under real threat:
+- Consider dedicated phones for sensitive communications only
+- Use phones from manufacturers with stronger security (Google Pixels, recent iPhones)
+- Avoid devices running Android versions older than 2 years
+- Disable cloud backups that might leak encryption keys
+
+## Emergency Procedures
+
+Activists need procedures for scenarios when compromise is suspected:
+
+**Signal compromise detection**:
+1. Notice unusual activity (messages you didn't send, delivery failures)
+2. Stop using Signal immediately
+3. Verify with contacts out-of-band (phone call, in-person) that account is actually compromised
+4. Create new Signal account with new phone number
+5. Notify trusted contacts of your new account key
+6. Don't reuse contacts list—manually add verified individuals only
+
+**Session compromise**:
+1. Note the Session ID you're using
+2. If hacked, create new Session ID immediately
+3. Notify contacts through Signal or another verified channel
+4. Old Session ID cannot be recovered; all messages from that ID should be considered exposed
+
+**Matrix instance compromise**:
+1. If self-hosted instance is breached, assume all messages compromised
+2. Move to secondary Matrix instance immediately or switch to Signal
+3. Notify users to change passwords on all other services (keys might be stored in vault)
+
+Plan for these scenarios before they happen.
+
+## Tool Combinations for Maximum Resilience
+
+The strongest approach uses multiple tools as failsafes:
+
+```
+Primary: Signal for general coordination
+├─ Works for 95% of activist work
+├─ High usability, everyone has it
+└─ Metadata exposed to Signal
+
+Secondary: Session for sensitive discussions
+├─ Used when phone linkage is unacceptable
+├─ Lower user base (coordinate out-of-band first)
+└─ Slower delivery, stronger metadata protection
+
+Tertiary: Matrix for organizational infrastructure
+├─ Used for group coordination, publishing
+├─ Requires technical setup and maintenance
+└─ Complete control, but operational complexity
+
+Emergency: Briar for internet-blocked scenarios
+├─ Mesh networking over Bluetooth/WiFi
+├─ Android-only, small user base
+└─ Completely different communication model
+```
+
+This redundancy ensures that if one tool is compromised, infiltrated, or unavailable, activists can shift to alternatives with existing relationships already established.
+
+## Testing Your Communication Setup
+
+Before needing these tools in real scenarios, test them:
+
+1. Install Signal, Session, and Briar on test phones
+2. Create accounts and verify contact key fingerprints
+3. Send test messages and verify E2EE is enabled
+4. Try self-hosting a Matrix instance locally (using Docker)
+5. Test Briar's mesh networking with 2-3 devices
+6. Document the process—you'll need this knowledge under pressure
+
+This testing prevents surprises when real adversarial pressure starts.
+
+## Practical Deployment Examples
+
+### Small Activist Cell (5-10 People)
+
+```
+Primary: Signal for day-to-day coordination
+- Create group chat for all members
+- Set disappearing messages to 1 week
+- Members verify each other's safety numbers in-person
+
+Backup: Session for members in countries with heavy censorship
+- Same group chat structure
+- No phone numbers required (important in some jurisdictions)
+
+Contingency: Briar for scenarios where internet is blocked
+- Install on all members' phones
+- Exchange keys via in-person QR code scanning
+- Mesh network activates if internet goes down
+```
+
+### Larger Organization (50+ People)
+
+```
+Tier 1: Self-hosted Matrix server
+- Full control over infrastructure
+- Enables secure group communication
+- Supports encrypted file sharing and voice
+
+Tier 2: Signal for quick coordination
+- Faster than Matrix for urgent messages
+- Better mobile UX for spontaneous communication
+
+Tier 3: Offline backup system
+- Written codebook for shutdown scenarios
+- Pre-arranged meeting locations
+- No digital component (cannot be intercepted)
+```
+
+### High-Risk Context (Heavy Government Surveillance)
+
+```
+Devices:
+- Dedicated phone for encrypted comms only
+- Separate from daily smartphone
+- IMEI and phone number obscured (prepaid, anonymous)
+
+Tools:
+1. Session (no phone number linking)
+2. Briar (mesh, works offline)
+3. Courier-delivered written messages (for critical info)
+
+Operational discipline:
+- Change Session profile monthly
+- Rotate devices quarterly
+- Never use encrypted comms outside encrypted VM
+- Air-gap signal phone when not in use
+```
+
+## Technical Hardening for Activists
+
+### Device Isolation
+
+```bash
+# Dedicated Linux user for encrypted comms
+sudo useradd -m activist
+sudo -u activist -s
+
+# Use separate Firefox profile for encrypted tools
+firefox -P "activist" &
+
+# Network isolation (optional):
+sudo iptables -A OUTPUT -m owner --uid-owner activist \
+  -j ACCEPT
+# Only allows activist user traffic through VPN/Tor
+```
+
+### Metadata Minimization
+
+Create aliases that don't reveal identity:
+
+```
+Signal: Avoid real names. Use "gardener1" or similar
+Session: Generate new ID periodically
+Matrix: Use different username than other platforms
+Briar: Select random username, don't reuse across contacts
+```
+
+### Contact Verification
+
+```
+Signal safety numbers: Exchange in-person or via secure video call
+Session: Exchange QR codes in-person
+Matrix: Verify device fingerprints in Settings > Security
+Briar: Exchange contact details via QR code scanning
+```
+
+All methods require **out-of-band verification** (not through the same app).
+
+## Operational Security Beyond Encryption
+
+### Message Discipline
+
+```
+What to avoid saying digitally:
+- Specific dates/times of actions
+- Real names or identifying details
+- Location information
+- Planning details (say "meeting with group A" not where/when)
+
+Share details through:
+- In-person conversations
+- Encrypted meetings via video (if necessary)
+- Delayed communication (don't respond immediately)
+```
+
+### Device Management
+
+```bash
+# Minimize digital footprint
+# 1. Use Tor browser for any web access
+# 2. Disable location services
+# 3. Use airplane mode by default
+# 4. Enable disk encryption
+# 5. Set strong unlock password
+
+# Regular security audits
+# - Check installed apps for spyware
+# - Review permissions granted to each app
+# - Monitor battery drain (indicating background processes)
+```
+
+### Communication Discipline
+
+- Assume adversaries monitor all communications
+- Plan for communications being compromised
+- Minimize what you say digitally
+- Verify all critical information through multiple channels
+
+## Training Materials for Activists
+
+Create these before deploying tools:
+
+### Setup Guide (2-3 pages)
+- Step-by-step installation screenshots
+- Safety number verification process
+- What to do if phone is lost/seized
+- Emergency protocols
+
+### Quick Reference Card (wallet-sized)
+```
+ENCRYPTED COMMS SETUP
+
+Signal:
+- Download from official app store
+- Verify safety numbers in-person
+- Set disappearing messages to 1 week
+
+Session:
+- Download from getsession.org
+- No phone number
+- Create new ID monthly
+
+Briar:
+- F-Droid only (not Google Play)
+- Mesh network backup
+- Verify QR codes in-person
+
+EMERGENCY:
+- Phone seized? Use recovery phrase in new app
+- Unsure if safe? Switch to in-person only
+- Exposed? Change all identities immediately
+```
+
+### Video Training
+- Installation walkthrough (5 minutes)
+- Safety number verification (3 minutes)
+- What happens when compromised (2 minutes)
+- Offline-first contingency planning (5 minutes)
+
+## Legal Considerations
+
+Activists in certain jurisdictions should understand:
+
+- Using encryption is legal in most democracies
+- Some authoritarian countries criminalize encryption use
+- Possessing revocation certificates is legal protection
+- Refusing to disclose passwords is protected in some jurisdictions
+- Consult local lawyers before deploying
+
+## Common Deployment Mistakes
+
+```
+AVOID:
+✗ Using same username across platforms
+✗ Sharing identity with one person in the network
+✗ Discussing sensitive details via voice calls
+✗ Backups stored in cloud (assume compromised)
+✗ Not verifying safety numbers in-person
+✗ Mixing personal and activist communications on same device
+
+DO:
+✓ Use unique identifiers per platform
+✓ Distribute information across separate channels
+✓ Use written/coded language for sensitive topics
+✓ Store backups offline and encrypted
+✓ Verify keys through separate secure channel
+✓ Dedicated device or separate user account for activism
+```
 
 ## Related Articles
 

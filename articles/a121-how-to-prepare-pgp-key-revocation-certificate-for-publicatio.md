@@ -166,6 +166,75 @@ save
 
 Neither method replaces the revocation certificate, which remains the authoritative way to permanently invalidate a key.
 
+## Revocation Certificate Storage Best Practices
+
+### Physical Storage Options
+
+**Metal Storage (Most Secure)**
+```bash
+# Print the revocation certificate on paper
+gpg --export-secret-key 3AA5C6F7 | qrencode -o revocation-qrcode.png
+
+# Options:
+# 1. Etch QR code onto metal plate (fireproof, permanent)
+# 2. Photograph certificate and store in safe deposit box
+# 3. Use metal card engraved with key fingerprint and certificate hash
+```
+
+**USB Drive Storage**
+```bash
+# Create encrypted backup on USB
+gpg --symmetric --cipher-algo AES256 revocation-certificate.asc
+cp revocation-certificate.asc.gpg /media/usb-backup/
+
+# Physical security:
+# - Store in safe or lockbox
+# - Use hardware-write-lock USB to prevent modification
+# - Keep in separate location from main computer
+```
+
+**Distributed Storage**
+```bash
+# Use Shamir Secret Sharing to split certificate into parts
+# Any 2 of 3 parts can reconstruct the certificate
+# Distribute to trusted contacts
+
+# Install ssss-split
+sudo apt install ssss
+
+# Split certificate into 3 parts (need 2 to reconstruct)
+cat revocation-certificate.asc | ssss-split -t 2 -n 3
+
+# Each part is useless alone, but any 2 reconstruct the certificate
+```
+
+### Secure Storage Documentation
+
+Create a document describing where you've stored your revocation certificate:
+
+```markdown
+# PGP Key Recovery Instructions (CONFIDENTIAL)
+
+Key ID: 3AA5C6F7
+Fingerprint: 4A7C8E9F2B3D1A6C5E4F7890ABCDEF01
+
+Revocation Certificate Locations:
+1. Primary: Safe deposit box at [Bank Name], Box [Number]
+2. Backup: Metal storage at [Location]
+3. Emergency: USB encrypted backup with [Trusted Contact Name]
+
+Access Instructions:
+- Safe deposit box requires [ID Type] and signature
+- USB drive password: [Stored separately in sealed envelope]
+- If primary is lost, contact trusted contact for emergency backup
+
+Review Schedule:
+- Annual: Verify all copies are intact and accessible
+- Upon address change: Update safe deposit box location
+```
+
+Store this document with your will or estate documents.
+
 ## Testing Your Revocation Setup
 
 Periodically verify that your revocation certificate is valid and would work if needed. This is a dry run—you import the certificate, check that your key shows as revoked, then restore the original state.
@@ -179,6 +248,175 @@ The most common mistake is generating the revocation certificate after a key is 
 Another error is storing the revocation certificate on the same device as the key itself. If that device is stolen or destroyed, you lose both. Use offline, separate storage.
 
 Forgetting the passphrase for your backup is equally problematic. Document your backup procedures in a way you can recover but others cannot access.
+
+## Advanced Revocation Scenarios
+
+### Revoking Expired Keys
+
+If a key has expired (either naturally or by setting an expiration), you may want to revoke it:
+
+```bash
+# Check key expiration
+gpg --list-keys 3AA5C6F7
+
+# Revoke an expired key
+gpg --gen-revoke 3AA5C6F7
+
+# Publish revocation
+gpg --send-keys 3AA5C6F7
+```
+
+An expired key marked as revoked prevents future use more authoritatively than simply expiring.
+
+### Revoking Subkeys Without Revoking Master Key
+
+If a subkey is compromised but your master key is safe:
+
+```bash
+# Revoke only the subkey
+gpg --edit-key 3AA5C6F7
+# At prompt: key <subkey-number>
+# At prompt: revkey
+# At prompt: save
+
+# This invalidates only that subkey, not the entire key
+```
+
+This approach is better than revoking the whole key—you can create a new subkey and continue using the master key.
+
+### Emergency Key Revocation
+
+If your key is actively compromised and you need immediate revocation:
+
+```bash
+# Generate revocation certificate immediately if you haven't yet
+gpg --gen-revoke 3AA5C6F7 -a > emergency-revoke.asc
+
+# Import it
+gpg --import emergency-revoke.asc
+
+# Send to multiple keyservers simultaneously
+for server in keyserver.ubuntu.com pgp.mit.edu keys.openpgp.org; do
+  gpg --keyserver "$server" --send-keys 3AA5C6F7 &
+done
+wait
+
+# Announce via other channels (email, social media, website)
+# "My PGP key [3AA5C6F7] has been revoked due to compromise"
+```
+
+## Key Rotation After Revocation
+
+When you revoke a key, you need to create a new one:
+
+```bash
+# Generate new key with transition statement
+gpg --full-generate-key
+
+# Create signed statement linking old key to new key
+gpg --armor --output transition.asc \
+  --sign <<EOF
+This is a signed message stating that:
+
+Old key: 3AA5C6F7 (REVOKED)
+Fingerprint: 4A7C8E9F2B3D1A6C5E4F7890ABCDEF01
+
+New key: 7X8Y9Z0A
+Fingerprint: [New key fingerprint]
+
+The old key was revoked due to [reason].
+All future communications should use the new key.
+
+Signed by the old key holder.
+EOF
+
+# Send transition statement to your contacts via multiple channels
+```
+
+## Verifying Revocation Worked
+
+After publishing a revocation certificate:
+
+```bash
+# Wait 1 hour for keyserver propagation
+sleep 3600
+
+# Check that your key shows as revoked
+gpg --keyserver keyserver.ubuntu.com --recv-keys 3AA5C6F7
+gpg --list-keys 3AA5C6F7
+
+# The output should show [revoked: YYYY-MM-DD]
+```
+
+If the revocation doesn't appear after 24 hours, try:
+```bash
+# Refresh keyserver
+gpg --refresh-keys 3AA5C6F7
+
+# Send to alternate keyservers
+gpg --keyserver pgp.mit.edu --send-keys 3AA5C6F7
+gpg --keyserver keys.openpgp.org --send-keys 3AA5C6F7
+```
+
+## Revocation Certificate for Team Keys
+
+For organizational signing keys shared among team members:
+
+```bash
+# Generate revocation with organizational designation
+gpg --gen-revoke ORG_KEY_ID
+
+# Designate multiple revokers so any authorized person can revoke
+gpg --edit-key ORG_KEY_ID
+# prompt: addrevoker [team-member-key-id]
+# Repeat for multiple members
+# prompt: save
+
+# Distribute revocation certificate to all team members
+# Store securely in team credentials manager
+```
+
+When the team member leaves:
+```bash
+# Any other team member can revoke using their authority
+gpg --gen-revoke ORG_KEY_ID
+```
+
+## Documentation Checklist for Revocation
+
+Keep this with your key backup:
+
+```markdown
+# Revocation Certificate Information
+
+## Key Details
+- Key ID: 3AA5C6F7
+- Fingerprint: 4A7C8E9F2B3D1A6C5E4F7890ABCDEF01
+- Created: [Date]
+- Type: [RSA-4096 / Ed25519]
+
+## Revocation Storage
+- Location 1: [Specific location and access method]
+- Location 2: [Specific location and access method]
+- Emergency contact: [Name and contact method]
+
+## Usage Instructions
+1. Recover revocation certificate from storage location
+2. Import: `gpg --import revocation-certificate.asc`
+3. Publish: `gpg --send-keys 3AA5C6F7`
+4. Notify contacts via [email/website/social media]
+5. Generate new key if creating ongoing communications
+
+## Keyserver Details
+Primary keyservers:
+- keyserver.ubuntu.com
+- pgp.mit.edu
+- keys.openpgp.org
+
+## Transition Plan
+New key location: [Where new key is stored]
+Transition statement: [Link to signed transition statement]
+```
 
 ---
 

@@ -36,9 +36,19 @@ Not all privacy features provide equal protection. Before examining specific app
 
 ## Signal: The Gold Standard for Metadata Minimalism
 
-Signal stands as the most widely trusted option for privacy-conscious users. It offers end-to-end encryption by default using the Signal Protocol, disappearing messages configurable from five seconds to one week, and minimal metadata retention.
+Signal stands as the most widely trusted option for privacy-conscious users. It offers end-to-end encryption by default using the Signal Protocol (independently audited multiple times), disappearing messages configurable from five seconds to one week, and minimal metadata retention.
 
-The app stores almost no metadata. Signal only retains when your account was created and the last connection date. It cannot read your messages, see your contacts, or track whom you message.
+The app stores almost no metadata. Signal only retains when your account was created and the last connection date. It cannot read your messages, see your contacts, or track whom you message. This minimalist approach means even if Signal's servers are subpoenaed, law enforcement can only learn that you created an account and when you last accessed it—nothing about who you communicated with or what you said.
+
+### Technical Details: Signal Protocol
+
+Signal Protocol uses several advanced cryptographic techniques:
+
+- **Double Ratchet Algorithm**: Each message generates new encryption keys, ensuring compromise of a single key doesn't expose past or future messages
+- **Extended Triple Diffie-Hellman (X3DH)**: Establishes initial encryption keys between previously unknown parties
+- **Curve25519**: Elliptic curve cryptography providing strong encryption with fast key agreement
+
+These cryptographic primitives work together to provide perfect forward secrecy—if Signal's servers are fully compromised today, all your past messages remain protected.
 
 ### Setting Up Signal for Maximum Privacy
 
@@ -87,7 +97,19 @@ SimpleX requires more technical comfort than Signal or Session. The interface pr
 
 Threema, based in Switzerland, operates under strict Swiss privacy laws. It requires a phone number or email for registration but stores minimal data. The app can delete all message metadata after delivery and offers ephemeral messages with configurable timers.
 
-Switzerland's jurisdiction provides legal protection against foreign data requests. Threema's source code is publicly audited, and the company publishes transparency reports showing government requests.
+Switzerland's jurisdiction provides legal protection against foreign data requests—Switzerland is not part of EU or NATO intelligence sharing agreements. Threema's source code is publicly audited, and the company publishes transparency reports showing government requests (typically very few, as Threema stores so little data that requests often have nothing to return).
+
+### Threema's Unique Privacy Architecture
+
+Threema implements several distinctive privacy features:
+
+- **User-generated IDs**: Instead of phone numbers or email, Threema generates an 8-digit ID for each user
+- **Offline functionality**: User IDs work even if you're offline; messages queue on servers until you reconnect
+- **End-to-end encryption**: All messages encrypted from sender to recipient
+- **Contact verification**: QR code scanning allows in-person verification of contact authenticity
+- **No server-side decryption**: Threema cannot decrypt messages even if required by law
+
+The paid model (typically $3-4 USD per platform) means no ads and no incentive to monetize user data through advertising targeting.
 
 ### Getting Started with Threema
 
@@ -96,8 +118,9 @@ Switzerland's jurisdiction provides legal protection against foreign data reques
 3. Verify contacts by scanning QR codes in person when possible
 4. Enable "Delete messages automatically" in privacy settings
 5. Disable "Allow contact requests" to limit exposure
+6. Use Threema Gateway for secure business communications
 
-Threema requires payment, which some users consider a privacy advantage (no monetization incentives) while others see as a barrier.
+Threema's paid model removes advertising incentives that plague free messaging apps. The cost is low but represents a commitment to using the service seriously rather than casually.
 
 ## Choosing the Right App for Your Threat Model
 
@@ -240,6 +263,20 @@ Before deploying any app for sensitive use:
 - [ ] Review all available privacy settings and enable maximum restrictions
 
 Only after confirming the app works reliably should you depend on it for sensitive communications.
+
+## Long-Term Usage Practices
+
+After selecting and deploying a messaging app:
+
+**Regular account hygiene**: Delete old conversations periodically. Even with disappearing messages, some apps retain metadata.
+
+**Contact verification cadence**: Re-verify contacts' keys annually. This catches potential MITM compromises.
+
+**Backup strategy**: For important conversations, export and securely archive messages before disappearing features delete them.
+
+**Provider monitoring**: Track news about your chosen app's security. If vulnerabilities emerge, be prepared to switch.
+
+**Personal operational security**: Disable messaging app when not needed. This reduces exposure window for device compromise attacks.
 
 ---
 
