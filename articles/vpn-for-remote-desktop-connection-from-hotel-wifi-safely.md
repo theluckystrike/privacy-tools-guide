@@ -9,7 +9,7 @@ permalink: /vpn-for-remote-desktop-connection-from-hotel-wifi-safely/
 categories: [guides]
 tags: [privacy-tools-guide, tools, best-of, vpn, remote-work]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /vpn-for-accessing-european-banking-apps-from-united-states/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
