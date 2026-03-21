@@ -21,6 +21,24 @@ GDPR explicitly recognizes pseudonymization in Article 4(5) as a processing safe
 
 The core principle involves separating direct identifiers from the data itself. When a database breach occurs, pseudonymized information provides minimal value to attackers since the meaningful identifiers are not present.
 
+### Pseudonymization vs. Anonymization
+
+These terms are frequently confused, and the distinction carries significant legal weight:
+
+| Property | Pseudonymization | Anonymization |
+|---|---|---|
+| Re-identification possible? | Yes, with key/mapping | No (irreversible) |
+| Still personal data under GDPR? | Yes | No |
+| Subject to GDPR? | Yes, but with reduced obligations | No |
+| Useful for analytics? | Yes, with careful key management | Yes |
+| Right to erasure compliant? | Yes, by deleting keys | Built-in |
+
+True anonymization — where re-identification is irreversible — is extremely difficult to achieve in practice because datasets can often be re-identified through combination attacks. Pseudonymization is the pragmatic middle ground that GDPR explicitly endorses.
+
+### Lawful Basis Implications
+
+Using pseudonymization can broaden what you are permitted to do with data. Recital 29 of GDPR states that applying pseudonymization to personal data can reduce the risks to the data subjects and help controllers and processors meet their data protection obligations. Practically, this means pseudonymized data is more defensible when used for secondary purposes such as internal analytics, fraud detection model training, or cross-team data sharing.
+
 ## Database-Level Pseudonymization Techniques
 
 ### Column-Level Encryption with Application Keys
@@ -29,10 +47,10 @@ The most straightforward approach involves encrypting sensitive columns using sy
 
 ```sql
 -- PostgreSQL example: Encrypting email column
-ALTER TABLE users 
+ALTER TABLE users
 ADD COLUMN email_encrypted BYTEA;
 
-UPDATE users 
+UPDATE users
 SET email_encrypted = pgp_sym_encrypt(email, current_setting('app.key'));
 ```
 
@@ -47,10 +65,10 @@ class Pseudonymizer:
         with open(key_path, 'rb') as f:
             self.key = f.read()
         self.cipher = Fernet(self.key)
-    
+
     def encrypt_value(self, plaintext):
         return self.cipher.encrypt(plaintext.encode())
-    
+
     def decrypt_value(self, ciphertext):
         return self.cipher.decrypt(ciphertext).decode()
 ```
@@ -99,10 +117,12 @@ def generate_salt():
 Store the salt alongside the hash for future re-identification:
 
 ```sql
-ALTER TABLE users 
+ALTER TABLE users
 ADD COLUMN email_pseudonym VARCHAR(64),
 ADD COLUMN email_salt VARCHAR(32);
 ```
+
+Note that hash-based pseudonymization is one-way without the salt. If you need to look up a user by their original email (for login, for example), you must either retain the salt and recompute the hash for comparison, or store the token mapping separately. Hash-based approaches work best for analytics use cases where you want to count or group by a pseudonymous identifier without ever needing to resolve it back to the original.
 
 ## Key Management Considerations
 
@@ -114,6 +134,8 @@ Effective pseudonymization relies on proper key management. Keys should never be
 
 **Key Storage**: Store keys in dedicated hardware security modules (HSMs) or key management services such as AWS KMS, Google Cloud KMS, or HashiCorp Vault. Never commit keys to version control or store them in configuration files.
 
+**Key Separation Across Environments**: Use entirely separate keys in development, staging, and production environments. Production keys must never exist in development environments. This prevents accidental exposure through developer tooling and log aggregation systems.
+
 ## Implementation Patterns
 
 ### On-Insert Pseudonymization
@@ -123,10 +145,10 @@ Handle pseudonymization at the application layer during data insertion:
 ```python
 def create_user(db_connection, email, name):
     pseudonymizer = get_pseudonymizer()
-    
+
     # Store original in token mapping
     token_id = store_token(email)
-    
+
     # Insert pseudonymized record
     cursor = db_connection.cursor()
     cursor.execute(
@@ -143,26 +165,46 @@ When pseudonymizing existing databases, use transactional updates:
 ```python
 def pseudonymize_existing_users(db_connection):
     pseudonymizer = get_pseudonymizer()
-    
+
     cursor = db_connection.cursor()
     cursor.execute("SELECT id, email FROM users WHERE email_token IS NULL")
-    
+
     batch_size = 1000
     while True:
         rows = cursor.fetchmany(batch_size)
         if not rows:
             break
-            
+
         for user_id, email in rows:
             token_id = pseudonymizer.create_token(email)
             cursor.execute(
                 "UPDATE users SET email_token = %s WHERE id = %s",
                 (token_id, user_id)
             )
-        
+
         db_connection.commit()
         print(f"Processed {len(rows)} records")
 ```
+
+Run batch jobs during low-traffic windows and monitor for lock contention on large tables. On PostgreSQL, consider using `SELECT ... FOR UPDATE SKIP LOCKED` to safely parallelize the batch job across multiple workers.
+
+## Handling the Right to Erasure
+
+GDPR Article 17 grants data subjects the right to request erasure of their personal data. Pseudonymization makes this significantly easier to implement technically: delete the mapping entry (or the encryption key) and the pseudonymized data in your main tables becomes effectively unresolvable.
+
+For tokenization implementations:
+
+```sql
+-- Erase a user's personal data while retaining their records
+DELETE FROM token_mapping WHERE token_id = (
+    SELECT email_token FROM users WHERE id = :user_id
+);
+
+-- The users row remains; email_token now references a deleted mapping
+-- No re-identification is possible
+```
+
+Document this erasure pattern in your Records of Processing Activities (RoPA) required under GDPR Article 30. Data protection authorities expect to see a clear procedure for handling erasure requests, and a pseudonymization-based approach is straightforward to describe and audit.
 
 ## Testing Your Implementation
 
@@ -174,12 +216,14 @@ Verify pseudonymization effectiveness through these validation steps:
 def verify_pseudonymization(user_id):
     cursor.execute("SELECT email_token FROM users WHERE id = %s", (user_id,))
     token_id = cursor.fetchone()[0]
-    
+
     original_email = retrieve_token(token_id)
     return original_email is not None
 ```
 
-**Security Testing**: Attempt re-identification using compromised credentials or database access to ensure pseudonymized values remain protected.
+**Security Testing**: Attempt re-identification using compromised credentials or database access to ensure pseudonymized values remain protected. Specifically, test what an attacker who has read access to the main `users` table but not the `token_mapping` table can learn. They should see only UUIDs with no path to the original PII.
+
+**Audit Logging Verification**: Confirm that access to the token mapping table is logged. Any query against the mapping table represents a de-pseudonymization event and should appear in your audit trail for later review.
 
 ## Related Reading
 
