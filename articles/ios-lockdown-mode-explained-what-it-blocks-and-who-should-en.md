@@ -2,10 +2,12 @@
 layout: default
 title: "iOS Lockdown Mode Explained: What It Blocks and Who Should Enable It 2026"
 description: "A comprehensive guide to Apple's Lockdown Mode on iOS—what it blocks, how to enable it, and whether it's right for your threat model."
-date: 2026-03-21
-author: theluckystrike
+date: 2026-03-16
+author: "Privacy Tools Guide"
 permalink: /ios-lockdown-mode-explained-what-it-blocks-and-who-should-en/
 categories: [security, privacy, guides]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
