@@ -193,6 +193,41 @@ sudo update-ca-certificates
 **Performance degradation**: TLS handshakes add latency. The session cache settings included in this guide help mitigate this by reusing established sessions.
 
 
+## Monitoring TLS Compliance
+
+After configuring mandatory TLS, monitor your mail logs to verify all connections use encryption:
+
+```bash
+# Check for TLS version in mail logs
+grep "TLS connection established" /var/log/mail.log | tail -20
+
+# Count connections by TLS version
+grep -oP 'TLSv[\d.]+' /var/log/mail.log | sort | uniq -c | sort -rn
+
+# Find any plaintext connections (should be zero with mandatory TLS)
+grep "Anonymous TLS connection" /var/log/mail.log
+grep "Untrusted TLS connection" /var/log/mail.log
+```
+
+Set up automated monitoring that alerts you when a connection falls back to an older TLS version or when certificate verification fails. A simple cron job that parses mail logs and sends alerts can catch configuration drift before it becomes a security issue.
+
+## Testing Your Configuration
+
+Before deploying to production, verify your Postfix TLS setup:
+
+```bash
+# Test outbound TLS from command line
+openssl s_client -connect mail.example.com:25 -starttls smtp
+
+# Verify certificate chain
+echo | openssl s_client -connect mail.example.com:587 -starttls smtp 2>/dev/null | openssl x509 -noout -dates
+
+# Check cipher strength
+nmap --script ssl-enum-ciphers -p 25 mail.example.com
+```
+
+Use online testing services like CheckTLS.com or SSL Labs to validate your configuration from external networks. These tools identify weak ciphers, expired certificates, and missing intermediate certificates that internal testing might miss.
+
 ## Related Articles
 
 - [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
