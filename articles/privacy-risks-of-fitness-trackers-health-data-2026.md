@@ -6,6 +6,7 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
+permalink: /privacy-risks-of-fitness-trackers-health-data-2026/
 ---
 
 {% raw %}
