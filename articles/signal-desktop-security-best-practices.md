@@ -280,6 +280,8 @@ Run through this quarterly:
 - [Signal Disappearing Messages Best Practices](/signal-disappearing-messages-best-practices/)
 - [Signal Messenger Setup Guide for Journalists](/signal-messenger-setup-guide-for-journalists-source-protecti/)
 - [How to Verify Signal Safety Numbers](/how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

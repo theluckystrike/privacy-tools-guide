@@ -249,6 +249,8 @@ sudo iptables -t nat -D POSTROUTING -s 10.200.200.0/30 -j MASQUERADE
 - [VPN Kill Switch Configuration on Linux](/vpn-kill-switch-linux-iptables-setup/)
 - [How to Use WireGuard for a Self-Hosted VPN 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
 - [OpenWrt VPN Router Setup with WireGuard](/openwrt-vpn-router-wireguard-setup/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

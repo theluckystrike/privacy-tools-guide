@@ -432,6 +432,8 @@ journalctl -u systemd-resolved | grep "query" | \
 - [Android Privacy Best Practices 2026](/android-privacy-best-practices-2026/)
 - [VPN Kill Switch Configuration on Linux](/vpn-kill-switch-linux-iptables-setup/)
 - [How to Set Up Encrypted DNS over HTTPS on All Devices](/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

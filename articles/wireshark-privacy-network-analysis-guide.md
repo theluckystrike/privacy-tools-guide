@@ -230,6 +230,8 @@ tshark -r capture.pcapng -Y "http.request.method == POST" -V | grep -A5 "Host:"
 - [How to Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
 - [How to Detect Hidden Trackers in Android Apps](/detect-hidden-trackers-android-apps/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

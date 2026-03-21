@@ -317,6 +317,8 @@ This allows only explicitly approved extensions and blocks all others.
 - [How to Audit Chrome Extensions for Privacy](/audit-chrome-extensions-privacy-guide/)
 - [Privacy-Focused Web Browser Comparison 2026](/privacy-browser-comparison-2026/)
 - [Firefox Privacy Add-ons Essential List 2026](/firefox-privacy-add-ons-essential-list-2026/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

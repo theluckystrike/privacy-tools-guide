@@ -196,6 +196,8 @@ For every other extension, ask: can I accomplish this without an extension? A br
 - [Privacy Implications of Browser Extensions](/privacy-implications-browser-extensions/)
 - [Privacy-Focused Web Browser Comparison 2026](/privacy-browser-comparison-2026/)
 - [Firefox Privacy Add-ons Essential List 2026](/firefox-privacy-add-ons-essential-list-2026/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

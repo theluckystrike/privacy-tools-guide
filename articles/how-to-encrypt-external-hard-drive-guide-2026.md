@@ -487,6 +487,7 @@ mount /dev/sdb1 /mnt/test
 - [How to Use VeraCrypt for Complete Disk Encryption](/privacy-tools-guide/guides-hub/)
 - [Hardware Security Key Setup for DevOps](/privacy-tools-guide/best-hardware-security-key-for-developers/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

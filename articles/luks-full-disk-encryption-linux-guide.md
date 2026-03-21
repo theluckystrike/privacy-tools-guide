@@ -214,6 +214,8 @@ Store this backup encrypted (ironically, in another LUKS container or encrypted 
 - [VeraCrypt Full Disk Encryption Setup Guide](/veracrypt-full-disk-encryption-setup-guide/)
 - [Secure File Deletion on SSD Drives](/secure-file-deletion-ssd-drives-guide/)
 - [Air-Gapped Computer Setup for Maximum Security](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [How to Evaluate AI Coding Tool Encryption Standards](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

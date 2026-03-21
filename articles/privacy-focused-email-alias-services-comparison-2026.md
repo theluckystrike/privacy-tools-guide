@@ -586,6 +586,7 @@ A: Rarely, some services (banks, government) require "verified" emails. For thes
 - [Email Encryption and PGP Guide](https://guides.zovo.one/email-encryption)
 - [Data Broker Removal Guide](https://guides.zovo.one/data-broker-removal)
 - [Privacy-Focused Browser Comparison](https://guides.zovo.one/privacy-browsers)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 ---
 

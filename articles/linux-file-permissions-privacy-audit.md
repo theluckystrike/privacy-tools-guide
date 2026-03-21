@@ -244,6 +244,8 @@ sudo rkhunter --checkall
 - [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
 - [How to Set Up a Privacy-Focused Home Server](/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
 - [Suricata Home Network IDS Setup Guide](/suricata-home-network-ids-setup/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
