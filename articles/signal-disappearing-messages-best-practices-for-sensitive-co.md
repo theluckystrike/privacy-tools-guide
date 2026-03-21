@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Signal Disappearing Messages Best Practices"
+title: "Signal Disappearing Messages Best Practices: Sensitive"
 description: "A guide to Signal disappearing messages best practices for developers and power users. Learn how to configure timers, implement proper"
 date: 2026-03-16
 last_modified_at: 2026-03-16

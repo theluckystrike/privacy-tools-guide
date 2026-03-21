@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How VPN Reconnection Works After Network Switch Mobile"
+title: "How VPN Reconnection Works After Network Switch: Detecting"
 description: "VPN reconnection after a network switch works by detecting the broken tunnel via Dead Peer Detection keepalives, then performing a fresh key exchange and"
 date: 2026-03-16
 last_modified_at: 2026-03-16

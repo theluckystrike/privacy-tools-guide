@@ -1,6 +1,6 @@
 ---
 title: How to Audit Android App Permissions Privacy Guide 2026
-description: Step-by-step guide to auditing Android app permissions. ADB commands, permission groups, dangerous permissions list, automation scripts, and mitigation strategies.
+description: Step-by-step guide to auditing Android app permissions. ADB commands, permission groups, dangerous permissions list, automation scripts, and mitigation
 author: Privacy Tools Guide
 date: 2026-03-21
 permalink: /privacy-tools-guide/how-to-audit-android-app-permissions-privacy-guide-2026/

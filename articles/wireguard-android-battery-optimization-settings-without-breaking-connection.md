@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Wireguard Android Battery Optimization Settings: Without"
+title: "Wireguard Android Battery Optimization Settings: Breaking"
 description: "Learn how to optimize WireGuard VPN battery usage on Android without breaking your connection. Practical settings for staying protected while extending"
 date: 2026-03-17
 last_modified_at: 2026-03-17

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Secure Communication For Labor Strike Organizing"
+title: "Set Up Secure Communication For Labor Strike: Practical"
 description: "A practical technical guide for developers and power users to build secure communication infrastructure for labor strike organizing. Covers encryption"
 date: 2026-03-15
 last_modified_at: 2026-03-15
