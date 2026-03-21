@@ -180,6 +180,231 @@ electrum -w wallet.seed createnewaddress
 - **Avoid mobile data** for sensitive transactions (cell towers create location records)
 
 
+## Coinjoin and Privacy-Enhanced Transactions
+
+After acquiring Bitcoin, enhance privacy through mixing services. CoinJoin consolidates transactions from multiple users, breaking the blockchain analysis link between inputs and outputs:
+
+```bash
+# Using Wasabi Wallet for CoinJoin
+# Download: https://www.wasabiwallet.io/
+
+# Or command-line using Mix-to approach
+./coinJoinCLI.py \
+  --input-address bc1q1... \
+  --coordinator wasabi-coordinator \
+  --amount 0.5 \
+  --rounds 3
+```
+
+CoinJoin rounds increase privacy at the cost of time and small fees. Three rounds provides good privacy against transaction analysis for most threat models.
+
+## Cold Storage and Self-Custody
+
+Non-custodial storage prevents exchanges from holding your Bitcoin:
+
+```bash
+# Create cold storage on air-gapped machine
+# Download Bitcoin Core on internet-connected machine
+wget https://bitcoin.org/bin/bitcoin-core-27.0/bitcoin-27.0-x86_64-linux-gnu.tar.gz
+
+# Transfer via USB to air-gapped computer
+# Generate private key on air-gapped machine
+./bitcoin-cli getnewaddress
+
+# Never connect the air-gapped machine to internet after key generation
+# For spending, use hardware wallet or partially-signed transactions
+```
+
+### Hardware Wallet Considerations
+
+Hardware wallets like Ledger and Trezor provide cold storage without requiring air-gapped computers:
+
+```python
+from trezorlib.client import TrezorClient
+from trezorlib import btc
+
+# Initialize connection to hardware wallet
+client = TrezorClient(transport)
+
+# Get receiving address without exposing private key
+address = btc.get_address(client, "Bitcoin", [0, 0])
+
+# Sign transaction on device (key never leaves device)
+signature = btc.sign_tx(client, "Bitcoin", [txdata], [private_key])
+```
+
+## Tax Implications and Record Keeping
+
+Different jurisdictions have varying tax treatment of Bitcoin purchases. Maintain detailed records:
+
+```python
+#!/usr/bin/env python3
+"""Track Bitcoin acquisition for tax purposes"""
+
+from datetime import datetime
+from decimal import Decimal
+
+class BitcoinTransaction:
+    def __init__(self, date, amount_btc, method, cost_basis, notes=""):
+        self.date = date
+        self.amount_btc = amount_btc
+        self.method = method  # P2P, ATM, DEX, etc.
+        self.cost_basis = cost_basis  # USD or local currency spent
+        self.notes = notes
+
+    def tax_summary(self):
+        return {
+            "date": self.date,
+            "amount": self.amount_btc,
+            "cost_basis": self.cost_basis,
+            "method": self.method
+        }
+
+# Log all transactions
+transactions = []
+transactions.append(BitcoinTransaction(
+    date="2026-03-21",
+    amount_btc=Decimal("0.5"),
+    method="Bisq",
+    cost_basis=Decimal("23500.00"),
+    notes="First purchase via peer-to-peer"
+))
+
+# Generate tax report
+for tx in transactions:
+    print(tx.tax_summary())
+```
+
+Consult a tax professional in your jurisdiction for specific guidance. Many countries treat Bitcoin acquisition as a taxable event.
+
+## Advanced Privacy Techniques
+
+For higher threat models, additional techniques improve privacy:
+
+### Monero Atomic Swaps
+
+Some developers prefer Monero's stronger privacy guarantees. Atomic swaps enable Bitcoin to Monero conversion without third-party intermediaries:
+
+```bash
+# Using atomic swap CLI
+./atomic_swap \
+  --from bitcoin \
+  --to monero \
+  --amount 0.5 \
+  --output-monero-address 4ABCD...
+```
+
+### Using Privacy Wallets
+
+Privacy-focused wallets manage address rotation and coin selection to prevent analysis:
+
+```bash
+# Using Sparrow Wallet with Tor
+java -jar sparrow.jar --network tor
+
+# In Sparrow: Tools > Provider > Enable Tor
+# This routes all blockchain queries through Tor
+```
+
+### Transaction Timing and Amount Variation
+
+Avoid patterns that link multiple transactions:
+
+```python
+# WRONG: Regular purchases of same amount
+purchases = [0.5, 0.5, 0.5, 0.5]  # Obvious pattern
+
+# CORRECT: Varied amounts, irregular timing
+purchases = [0.47, 0.53, 0.49, 0.51]  # Similar amounts, no obvious pattern
+purchases_dates = [
+    "2026-01-15",
+    "2026-02-18",
+    "2026-04-02",
+    "2026-05-30"
+]  # Varied intervals
+```
+
+## Lightning Network for Transaction Privacy
+
+The Lightning Network provides payment channel privacy without on-chain footprint:
+
+```bash
+# Install Lightning wallet (c-lightning, lnd)
+lightning-cli newaddr
+
+# Receive and send payments off-chain
+lightning-cli pay <invoice>
+
+# Periodically settle channels on-chain
+lightning-cli close <channel_id>
+```
+
+Lightning payments don't appear on the blockchain, providing superior transaction privacy for frequent trading or spending.
+
+## Bridge Liquidity and Cross-Chain Privacy
+
+Some acquisition methods require bridging between different blockchains:
+
+```javascript
+// Using Thorswap for cross-chain atomic swaps
+const thorswap = new ThorSwapSDK({
+  network: 'mainnet',
+  inboundAddress: 'your-receiving-address'
+});
+
+const swap = await thorswap.swap({
+  sourceAsset: 'ETH.USDC',
+  targetAsset: 'BTC.BTC',
+  amount: '5000'
+});
+
+// No KYC required, atomic swap ensures trustlessness
+```
+
+## Long-Term Privacy Maintenance
+
+After acquiring Bitcoin, maintain privacy over time:
+
+```bash
+# Privacy wallet software (long-term)
+# Use separate addresses for each purpose
+# Rotate receiving addresses frequently
+# Consolidate coins carefully to avoid clustering
+
+# Example address lifecycle
+# Address 1: First purchase (receive)
+# Address 2: Privacy enhancement (send via CoinJoin)
+# Address 3: Long-term storage (hardware wallet)
+
+# Never link addresses publicly
+# Use Tor for all blockchain queries
+# Consider VPN + Tor stacking for additional network privacy
+```
+
+## Regulatory Landscape for Non-KYC Bitcoin
+
+The regulatory environment continues to evolve. Stay informed about changes:
+
+- **FATF Travel Rule**: Exchanges must share sender/recipient information above certain thresholds
+- **MiCA (Markets in Crypto-Assets)**: EU regulation requires exchanges to implement KYC
+- **FinCEN Regulations**: US requires reporting of large cash transactions
+
+Non-KYC methods remain legal in most jurisdictions for personal use, but regulatory scrutiny is increasing. Use these techniques responsibly and understand your local legal environment.
+
+## Opsec Reminder
+
+Throughout Bitcoin acquisition:
+
+- **Never reuse addresses**: Each transaction should use a fresh address
+- **Disconnect after transactions**: Don't remain logged into exchange accounts
+- **Use Tor for all connectivity**: Network-level privacy prevents ISP correlation
+- **Avoid bragging**: Public discussion of Bitcoin holdings creates theft targets
+- **Maintain physical security**: Hardware wallets and cold storage must be physically protected
+
+## Conclusion
+
+Acquiring Bitcoin without KYC remains possible through multiple pathways: peer-to-peer platforms like Bisq, Bitcoin ATMs with reasonable limits, and in-person cash trades. Each method presents different privacy and convenience tradeoffs. Regardless of acquisition method, privacy requires ongoing attention—proper address management, transaction mixing, cold storage, and network-level protection. The technical aspects are well-understood; success comes from disciplined operational security and avoiding common mistakes that link transactions and create analysis opportunities for blockchain surveillance companies.
+
 ## Related Articles
 
 - [Anonymous Domain Registration How To Buy Domain Without Expo](/privacy-tools-guide/anonymous-domain-registration-how-to-buy-domain-without-expo/)

@@ -181,6 +181,204 @@ Before going live with DMARC enforcement:
 This systematic approach minimizes the risk of legitimate mail being blocked during the enforcement phase.
 
 
+## BIMI (Brand Indicators for Message Identification)
+
+BIMI is an emerging standard that combines DMARC alignment with visual authentication. When properly configured, your brand logo appears alongside emails in supported clients:
+
+```
+default._bimi.yourdomain.com IN TXT "v=BIMI1; l=https://yourdomain.com/logo.svg; a=self;"
+```
+
+BIMI requires:
+- DMARC policy enforcement (p=quarantine or p=reject)
+- DKIM alignment
+- VMC (Verified Mark Certificate) from approved CAs
+
+### Benefits and Implementation
+
+BIMI increases email deliverability and user trust. Recipients see your verified logo alongside messages, making phishing attacks harder to execute:
+
+```bash
+# Create BIMI-compliant logo
+# Requirements:
+# - SVG format
+# - 200x200px or larger
+# - Hosted on HTTPS
+# - Accessible from yourdomain.com
+
+curl -v https://yourdomain.com/logo.svg | head -50
+```
+
+## Email Authentication Monitoring and Analysis
+
+Automated analysis of authentication results helps identify configuration issues:
+
+```python
+#!/usr/bin/env python3
+"""Analyze DMARC report data for authentication insights"""
+
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+
+def analyze_dmarc_report(xml_file):
+    """Extract authentication metrics from DMARC report"""
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+
+    results = defaultdict(lambda: {
+        'spf_pass': 0, 'spf_fail': 0,
+        'dkim_pass': 0, 'dkim_fail': 0,
+        'dmarc_pass': 0, 'dmarc_fail': 0
+    })
+
+    for record in root.findall('.//record'):
+        ip = record.find('.//source_ip').text
+        spf = record.find('.//policy_evaluated/spf').text
+        dkim = record.find('.//policy_evaluated/dkim').text
+        dmarc = record.find('.//policy_evaluated/disposition').text
+
+        if spf == 'pass':
+            results[ip]['spf_pass'] += 1
+        else:
+            results[ip]['spf_fail'] += 1
+
+        if dkim == 'pass':
+            results[ip]['dkim_pass'] += 1
+        else:
+            results[ip]['dkim_fail'] += 1
+
+        if dmarc == 'pass':
+            results[ip]['dmarc_pass'] += 1
+
+    return results
+
+# Generate summary
+data = analyze_dmarc_report('dmarc_report.xml')
+for ip, metrics in sorted(data.items()):
+    total = metrics['spf_pass'] + metrics['spf_fail']
+    spf_rate = (metrics['spf_pass'] / total * 100) if total > 0 else 0
+    print(f"IP {ip}: SPF {spf_rate:.1f}% pass rate")
+```
+
+## Subdomain DMARC Policies
+
+Organizations with many subdomains need strategic DMARC policies:
+
+```
+# Parent domain policy
+_dmarc.yourdomain.com IN TXT "v=DMARC1; p=reject; rua=mailto:dmarc@yourdomain.com"
+
+# Subdomain-specific policy (overrides parent)
+_dmarc.mail.yourdomain.com IN TXT "v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com"
+
+# Development subdomain with minimal restrictions
+_dmarc.dev.yourdomain.com IN TXT "v=DMARC1; p=none; rua=mailto:dmarc-dev@yourdomain.com"
+```
+
+## Troubleshooting Authentication Failures
+
+When emails fail authentication despite proper configuration:
+
+```bash
+# Debug SPF failures
+dig yourdomain.com txt | grep spf
+
+# Check for SPF syntax errors
+python3 -c "
+import spf
+results = spf.query('192.0.2.1', 'user@yourdomain.com', 'mail.yourdomain.com')
+print(f'SPF Result: {results[0]} - {results[2]}')
+"
+
+# Test DKIM signature
+echo "test" | openssl dgst -sha256 -sign dkim_private.pem | openssl enc -base64
+```
+
+## Email Authentication for Different Service Types
+
+Different service categories have unique authentication requirements:
+
+### Marketing Emails
+
+Marketing platforms like Mailchimp require SPF includes. Their servers send on your behalf:
+
+```
+v=spf1 include:mailchimp.com include:_spf.google.com ~all
+```
+
+### Transactional Emails
+
+Transactional email services (SendGrid, AWS SES) need dedicated DKIM keys:
+
+```
+# SendGrid DKIM setup
+sendgrid._domainkey.yourdomain.com IN CNAME sendgrid.net
+```
+
+### Password Reset and Notification Emails
+
+Internal services sending from your domain should use your own DKIM key:
+
+```bash
+# Internal service example: app.yourdomain.com
+# Configure to sign with your domain's DKIM key
+# Don't create separate keys for each subdomain
+```
+
+## DMARC Forensic Reports
+
+Forensic reports (ruf) provide detailed information about failed messages:
+
+```
+_dmarc.yourdomain.com IN TXT "v=DMARC1; p=quarantine; ruf=mailto:forensics@yourdomain.com"
+```
+
+Processing forensic reports automatically:
+
+```python
+#!/usr/bin/env python3
+"""Process DMARC forensic reports for detailed failure analysis"""
+
+import email
+import gzip
+import io
+from email import policy
+
+def process_forensic_report(message_bytes):
+    """Extract forensic report from DMARC email"""
+    msg = email.message_from_bytes(message_bytes, policy=policy.default)
+
+    for part in msg.iter_parts():
+        if part.get_content_type() == 'application/gzip':
+            # Decompress gzipped XML
+            compressed = part.get_payload(decode=True)
+            xml_data = gzip.decompress(compressed)
+
+            print("Forensic report contents:")
+            print(xml_data.decode('utf-8')[:500])  # First 500 chars
+```
+
+## Email Authentication Best Practices Summary
+
+### Implementation Checklist
+
+- [ ] Publish SPF record listing all authorized senders
+- [ ] Generate and configure DKIM keys for primary sending domain
+- [ ] Deploy DMARC monitoring (p=none) for 2-4 weeks
+- [ ] Review DMARC aggregate reports to identify unauthorized senders
+- [ ] Resolve any legitimate failures before enforcement
+- [ ] Deploy DMARC quarantine policy (p=quarantine)
+- [ ] After confirming stability, move to reject policy (p=reject)
+- [ ] Set up forensic reporting (ruf) for failure investigation
+- [ ] Consider BIMI implementation for visual authentication
+- [ ] Document authentication infrastructure in runbooks
+- [ ] Schedule quarterly DKIM key rotation
+- [ ] Monitor for new third-party email senders requiring SPF updates
+
+## Conclusion
+
+Email authentication through SPF, DKIM, and DMARC represents the fundamental defense against domain spoofing and unauthorized email. While implementation requires careful planning and gradual enforcement, the benefits extend beyond security: improved deliverability, brand protection, and compliance with modern email standards. Start with SPF, add DKIM, implement DMARC monitoring, and progress to enforcement only after thoroughly validating legitimate email sources. Regular maintenance, monitoring, and updates ensure your email authentication infrastructure remains effective against evolving threats.
+
 ## Related Articles
 
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)

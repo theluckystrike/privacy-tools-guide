@@ -182,6 +182,203 @@ nmcli connection modify "VPN-Name" ipv4.routes "10.0.0.0/8" ipv4.never-default y
 Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.
 
 
+## Debugging PostUp and PostDown Scripts
+
+When scripts fail silently, debugging becomes difficult since errors occur outside normal shell contexts. Implement proper logging:
+
+```ini
+[Interface]
+PrivateKey = your-private-key
+Address = 10.0.0.2/24
+
+PostUp = echo "PostUp started at $(date)" >> /var/log/wireguard.log
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT || echo "iptables failed" >> /var/log/wireguard.log
+PostDown = echo "PostDown started at $(date)" >> /var/log/wireguard.log
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT || echo "iptables deletion failed" >> /var/log/wireguard.log
+```
+
+### Testing Scripts Before Deployment
+
+Always test scripts independently before adding them to WireGuard configuration:
+
+```bash
+# Test iptables rules in isolation
+iptables -A FORWARD -i wg0 -j ACCEPT
+echo "Rule added: $?"
+
+# Verify rule was added
+iptables -L FORWARD -n | grep wg0
+
+# Remove test rule
+iptables -D FORWARD -i wg0 -j ACCEPT
+echo "Rule deleted: $?"
+```
+
+### Common Error Patterns
+
+**Problem**: PostUp script uses relative paths that don't exist at startup time.
+
+```ini
+# WRONG: Uses PATH that may not exist
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT
+
+# CORRECT: Uses absolute path
+PostUp = /usr/sbin/iptables -A FORWARD -i wg0 -j ACCEPT
+```
+
+**Problem**: Scripts fail because variables aren't available in WireGuard's environment.
+
+```bash
+# WRONG: Uses shell variable
+interface_name=wg0
+PostUp = iptables -A FORWARD -i $interface_name -j ACCEPT
+
+# CORRECT: Hardcodes the interface name
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT
+```
+
+## Notification and Monitoring Integration
+
+Trigger notifications when VPN states change:
+
+```ini
+[Interface]
+PrivateKey = your-private-key
+Address = 10.0.0.2/24
+
+# Send notification when interface comes up
+PostUp = curl -X POST http://localhost:3000/vpn/connected || true
+PostUp = echo "IP: $(hostname -I | awk '{print $1}')" | mail -s "VPN Connected" admin@example.com
+
+# Send notification when interface goes down
+PostDown = curl -X POST http://localhost:3000/vpn/disconnected || true
+PostDown = echo "VPN disconnected at $(date)" | mail -s "VPN Disconnected" admin@example.com
+```
+
+For systemd integration, use explicit notification:
+
+```bash
+# Using systemd-notify for notification
+PostUp = systemd-notify --ready
+
+# Check status
+systemctl is-system-running
+```
+
+## Advanced Firewall Integration
+
+Combine WireGuard with sophisticated firewall rules using nftables (modern replacement for iptables):
+
+```ini
+[Interface]
+PrivateKey = your-private-key
+Address = 10.0.0.2/24
+
+# Create nftables ruleset for VPN
+PostUp = nft add table ip vpn_rules
+PostUp = nft add chain ip vpn_rules input { type filter hook input priority 0 \; policy accept \; }
+PostUp = nft add rule ip vpn_rules input iifname "wg0" counter accept
+PostUp = nft add rule ip vpn_rules input iifname "eth0" icmp type echo-request counter drop
+
+# Clean up on disconnect
+PostDown = nft flush ruleset
+```
+
+## Policy Routing for Advanced Traffic Control
+
+Advanced users can implement policy-based routing where different traffic follows different paths:
+
+```ini
+[Interface]
+PrivateKey = your-private-key
+Address = 10.0.0.2/24
+
+# Create custom routing tables
+PostUp = ip rule add fwmark 100 table 100
+PostUp = ip route add default via 10.0.0.1 dev wg0 table 100
+
+# Mark traffic from specific applications
+PostUp = iptables -t mangle -A OUTPUT -p tcp --dport 443 -j MARK --set-mark 100
+
+# Clean up on disconnect
+PostDown = iptables -t mangle -D OUTPUT -p tcp --dport 443 -j MARK --set-mark 100
+PostDown = ip rule del fwmark 100 table 100
+```
+
+## Automatic MTU Discovery
+
+Some networks require MTU adjustment for VPN tunnels to function properly:
+
+```ini
+[Interface]
+PrivateKey = your-private-key
+Address = 10.0.0.2/24
+MTU = 1420
+
+# Test MTU and adjust if needed
+PostUp = bash -c 'mtu=$(ip link show eth0 | grep -oP "mtu \K\d+"); if [ $mtu -lt 1500 ]; then ip link set wg0 mtu $(($mtu - 80)); fi'
+```
+
+## Persistent Logging for Audit Trails
+
+Maintain audit logs of VPN connections for compliance:
+
+```ini
+[Interface]
+PrivateKey = your-private-key
+Address = 10.0.0.2/24
+
+PostUp = (echo "VPN CONNECTED"; echo "Time: $(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "User: $(whoami)"; ip addr show wg0) >> /var/log/vpn-audit.log
+PostDown = (echo "VPN DISCONNECTED"; echo "Time: $(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "User: $(whoami)") >> /var/log/vpn-audit.log
+
+# Ensure log file has restricted permissions
+PostUp = chmod 600 /var/log/vpn-audit.log
+```
+
+## Integration with Service Managers
+
+For systemd-managed WireGuard, integrate PostUp/PostDown with service lifecycle:
+
+```ini
+[Unit]
+Description=WireGuard VPN
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/wg-quick up wg0
+ExecStop=/usr/bin/wg-quick down wg0
+ExecReload=/bin/bash -c 'wg syncconf wg0 <(wg-quick strip wg0)'
+
+# On service restart, clean up old rules
+ExecStopPost=/bin/bash -c 'iptables-save | grep -v wg0 | iptables-restore'
+```
+
+## Performance Tuning with PostUp Scripts
+
+Optimize kernel parameters for high-throughput VPN usage:
+
+```ini
+[Interface]
+PrivateKey = your-private-key
+Address = 10.0.0.2/24
+
+# Increase buffer sizes for high-speed links
+PostUp = sysctl -w net.core.rmem_max=134217728
+PostUp = sysctl -w net.core.wmem_max=134217728
+PostUp = sysctl -w net.ipv4.tcp_rmem="4096 87380 67108864"
+PostUp = sysctl -w net.ipv4.tcp_wmem="4096 65536 67108864"
+
+# Restore defaults on disconnect
+PostDown = sysctl -w net.core.rmem_max=131072
+PostDown = sysctl -w net.core.wmem_max=131072
+```
+
+## Conclusion
+
+PostUp and PostDown scripts transform WireGuard from a basic VPN tool into a sophisticated networking component. Proper implementation requires careful attention to environment variables, absolute paths, error handling, and cleanup. Start with simple configurations, test thoroughly in isolation, implement comprehensive logging, and gradually add complexity as your understanding grows. The power of WireGuard scripting comes not from complex individual commands, but from systematic, well-tested automation of network infrastructure tasks.
+
 ## Related Articles
 
 - [WireGuard PostUp/PostDown Scripts for Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)

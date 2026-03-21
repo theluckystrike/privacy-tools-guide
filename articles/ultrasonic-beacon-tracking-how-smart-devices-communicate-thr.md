@@ -182,6 +182,261 @@ For users concerned about this threat vector, the best defense remains awareness
 ---
 
 
+## Comprehensive Detection Methods
+
+Beyond Web Audio API detection, several approaches can identify ultrasonic activity:
+
+### Software Defined Radio (SDR) Detection
+
+Specialized radio hardware can detect ultrasonic signals:
+
+```bash
+# Using RTLSDR dongle to monitor ultrasonic frequencies
+# Requires: RTL-SDR dongle (~$25), antenna, software
+
+# Install RTL-SDR tools
+sudo apt install rtl-sdr sox
+
+# Monitor frequencies around 18-22kHz
+rtl_fm -f 20M:22M:20k -s 192k -g 50 | \
+  sox -t raw -r 192k -e signed-integer -b 16 - -t wav output.wav
+
+# Analyze for patterns
+# Presence of consistent tones = potential ultrasonic beacon
+
+# Use Audacity or Sonic Visualiser for spectral analysis
+# Look for spikes in 18-22kHz range
+```
+
+### Frequency Analysis Tools
+
+```python
+#!/usr/bin/env python3
+"""Analyze audio files for ultrasonic beacon presence"""
+
+import numpy as np
+from scipy import signal
+from scipy.io import wavfile
+
+def detect_ultrasonic_patterns(audio_file):
+    """Detect patterns in ultrasonic range"""
+
+    sample_rate, audio_data = wavfile.read(audio_file)
+
+    # Compute spectrogram (time-frequency representation)
+    frequencies, times, spectrogram = signal.spectrogram(
+        audio_data,
+        fs=sample_rate,
+        nperseg=1024
+    )
+
+    # Look for energy in ultrasonic range (18-22kHz)
+    ultrasonic_mask = (frequencies >= 18000) & (frequencies <= 22000)
+    ultrasonic_energy = spectrogram[ultrasonic_mask, :].sum(axis=0)
+
+    # Detect peaks (potential beacon transmissions)
+    peaks, properties = signal.find_peaks(
+        ultrasonic_energy,
+        height=np.mean(ultrasonic_energy) * 2,  # 2x average
+        distance=1000  # At least 1000 samples apart
+    )
+
+    print(f"Potential ultrasonic signals detected: {len(peaks)}")
+    for peak in peaks:
+        print(f"  Signal at {times[peak]:.2f}s")
+
+    return peaks, ultrasonic_energy
+
+# Usage
+peaks, energy = detect_ultrasonic_patterns("audio_sample.wav")
+```
+
+## Browser-Level Protections
+
+Beyond extensions, implement browser-level protections:
+
+### Disabling Web Audio API
+
+```javascript
+// Completely disable Web Audio API
+Object.defineProperty(window, 'AudioContext', {
+    value: undefined,
+    writable: false,
+    configurable: false
+});
+
+Object.defineProperty(window, 'webkitAudioContext', {
+    value: undefined,
+    writable: false,
+    configurable: false
+});
+
+// Disable navigator.mediaDevices.getUserMedia for audio
+const originalGetUserMedia = navigator.mediaDevices.getUserMedia;
+navigator.mediaDevices.getUserMedia = function(constraints) {
+    if (constraints && constraints.audio) {
+        throw new DOMException('Audio access denied', 'NotAllowedError');
+    }
+    return originalGetUserMedia.call(this, constraints);
+};
+```
+
+### Content Security Policy (CSP)
+
+Website operators can disable certain media capabilities:
+
+```html
+<!-- Prevent any page from accessing microphone -->
+<meta http-equiv="Content-Security-Policy"
+      content="microphone-stream 'none'">
+
+<!-- Block audio sources from specific domains -->
+<meta http-equiv="Content-Security-Policy"
+      content="media-src 'self'">
+```
+
+## Mobile Device Protections
+
+### Android Permission Management
+
+```bash
+# Revoke microphone permission from specific apps
+adb shell pm revoke [package.name] android.permission.RECORD_AUDIO
+
+# List apps with microphone access
+adb shell pm list permissions -d | grep RECORD_AUDIO
+
+# For each app with microphone, review necessity
+# Uninstall if microphone access isn't justified
+```
+
+### iOS Auditing
+
+```bash
+# iOS 15+ shows microphone indicator in Control Center
+# Swipe down > Microphone icon shows apps currently using mic
+
+# Review microphone access:
+# Settings > Privacy & Security > Microphone
+# Remove access for apps that don't need it
+
+# iOS 16+ offers "Approximate Location"
+# Helps prevent location-based tracking
+```
+
+## Organizational Defenses
+
+For companies protecting user privacy:
+
+```bash
+#!/bin/bash
+# Corporate policy: Disable ultrasonic tracking
+
+# 1. Audit software for ultrasonic code
+grep -r "18000\|19000\|20000\|21000\|22000" src/
+grep -r "ultrasonic\|beacon\|inaudible" src/
+
+# 2. Review third-party libraries
+npm audit
+pip audit
+
+# 3. Implement app review process
+# - All microphone access must be justified
+# - Microphone access only while app in foreground
+# - Annual audits of microphone usage
+
+# 4. Provide user transparency
+# - Show when microphone is active
+# - Explain why microphone is needed
+# - Provide opt-out mechanism
+```
+
+## Industry Developments
+
+The privacy landscape around ultrasonic tracking continues to evolve:
+
+### Platform Responses
+
+- **Apple**: iOS audits third-party SDK usage, flags suspicious audio patterns
+- **Google**: Play Store policies prohibit ultrasonic tracking; regular audits
+- **Mozilla**: Working on limiting Web Audio API capabilities in Firefox
+- **Chromium**: Considering runtime permissions for audio processing
+
+### Research and Documentation
+
+Academic research continues documenting the threat:
+
+```
+Key papers on ultrasonic tracking:
+- "Imperceptible Acoustic Tracking" (2013)
+- "Your Phone's Ultrasonic Speaker is Spying on You" (2014)
+- "The Price of Ultrasound" (2016)
+
+All describe variations of the same core technique:
+Encoding tracking IDs in 18-22kHz signals
+```
+
+## Future-Proofing Against Ultrasonic Threats
+
+Anticipate evolved ultrasonic techniques:
+
+### Modulation Beyond Standard Encoding
+
+Future ultrasonic tracking may use:
+
+```
+- Spread spectrum (FHSS) for resilience
+- Frequency hopping across ultrasonic band
+- Variable data rates to evade detection
+- Composite signals spanning multiple frequencies
+```
+
+### Countermeasures
+
+```bash
+# Broadband ultrasonic noise generation (white noise jammer)
+# Emit noise across entire ultrasonic band
+# Disrupts any beacon-based communication
+
+# ffmpeg to generate ultrasonic noise
+ffmpeg -f lavfi -i anullsrc=r=44100:cl=mono -filter_complex \
+  'highpass=f=15000[a]; [a]anoise=amount=0.1' \
+  -t 3600 ultrasonic_noise.wav
+
+# Play continuously
+ffplay -autoexit ultrasonic_noise.wav
+```
+
+## User Education
+
+Privacy-aware users should understand ultrasonic tracking:
+
+```markdown
+# Ultrasonic Beacon Quick Guide
+
+## Signs an app might be using ultrasonic tracking:
+- Requests microphone access but doesn't explicitly use it
+- Audio-related permissions in advertising SDKs
+- Battery drain from audio processing
+- Unusual Web Audio API calls in network logs
+
+## Immediate protections:
+1. Revoke unnecessary microphone permissions
+2. Check app reviews for complaints about "listening"
+3. Use browser extensions blocking Web Audio API
+4. Monitor background app activity for unexpected audio usage
+
+## Long-term vigilance:
+- Review microphone permissions quarterly
+- Keep operating systems updated
+- Watch security research for new ultrasonic techniques
+- Support privacy-focused browser and OS development
+```
+
+## Conclusion
+
+Ultrasonic beacon tracking represents an invisible surveillance vector that operates below human perception. While the technology has legitimate uses in retail environments and proximity detection, its weaponization for cross-device tracking creates privacy risks most users don't understand. Technical solutions exist—from Web Audio API blocking to SDR-based detection—but the ultimate protection requires user awareness, platform accountability, and regulatory oversight. As audio-based tracking techniques become more sophisticated, security researchers, platforms, and users must remain vigilant in identifying and blocking these covert communication channels.
+
 ## Related Articles
 
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
