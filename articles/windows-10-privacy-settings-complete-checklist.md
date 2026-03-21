@@ -61,20 +61,20 @@ PowerShell automation improves privacy configuration across multiple machines. T
 ```powershell
 # Run as Administrator
 $services = @(
-    "DiagTrack",          # Connected User Experiences and Telemetry
-    "dmwappushservice",   # WAP Push Service
-    "WbioSrvc",           # Windows Biometric Service (if unused)
-    "OneSyncSvc",         # Sync Service
-    "RemoteRegistry"      # Remote Registry
+ "DiagTrack", # Connected User Experiences and Telemetry
+ "dmwappushservice", # WAP Push Service
+ "WbioSrvc", # Windows Biometric Service (if unused)
+ "OneSyncSvc", # Sync Service
+ "RemoteRegistry" # Remote Registry
 )
 
 foreach ($service in $services) {
-    $svc = Get-Service -Name $service -ErrorAction SilentlyContinue
-    if ($svc) {
-        Stop-Service -Name $service -Force -ErrorAction SilentlyContinue
-        Set-Service -Name $service -StartupType Disabled -ErrorAction SilentlyContinue
-        Write-Host "Disabled: $service"
-    }
+ $svc = Get-Service -Name $service -ErrorAction SilentlyContinue
+ if ($svc) {
+ Stop-Service -Name $service -Force -ErrorAction SilentlyContinue
+ Set-Service -Name $service -StartupType Disabled -ErrorAction SilentlyContinue
+ Write-Host "Disabled: $service"
+ }
 }
 ```
 
@@ -106,14 +106,14 @@ On Windows 10 Pro or Enterprise, configure Windows Firewall to block all outboun
 ```powershell
 # Block telemetry via Windows Firewall
 $rules = @(
-    @{Name="Block-Telemetry-1"; Prog="System"; Dir="Outbound"; RemotePort="443"; RemoteAddr="v10.vortex-win.data.microsoft.com"},
-    @{Name="Block-Telemetry-2"; Prog="System"; Dir="Outbound"; RemotePort="443"; RemoteAddr="settings-win.data.microsoft.com"}
+ @{Name="Block-Telemetry-1"; Prog="System"; Dir="Outbound"; RemotePort="443"; RemoteAddr="v10.vortex-win.data.microsoft.com"},
+ @{Name="Block-Telemetry-2"; Prog="System"; Dir="Outbound"; RemotePort="443"; RemoteAddr="settings-win.data.microsoft.com"}
 )
 
 foreach ($rule in $rules) {
-    New-NetFirewallRule -DisplayName $rule.Name -Direction $rule.Dir `
-        -Program $rule.Prog -RemotePort $rule.RemotePort `
-        -RemoteAddress $rule.RemoteAddr -Action Block -Enabled True -ErrorAction SilentlyContinue
+ New-NetFirewallRule -DisplayName $rule.Name -Direction $rule.Dir `
+ -Program $rule.Prog -RemotePort $rule.RemotePort `
+ -RemoteAddress $rule.RemoteAddr -Action Block -Enabled True -ErrorAction SilentlyContinue
 }
 ```
 
@@ -146,15 +146,15 @@ Configure Windows Terminal to avoid sending diagnostics:
 
 ```json
 {
-    "settings": {
-        "diagnostics": {
-            "pointerTelemetry": false
-        },
-        "privacy": {
-            "sendCursorFeatures": false,
-            "sendModulePaths": false
-        }
-    }
+ "settings": {
+ "diagnostics": {
+ "pointerTelemetry": false
+ },
+ "privacy": {
+ "sendCursorFeatures": false,
+ "sendModulePaths": false
+ }
+ }
 }
 ```
 
@@ -189,18 +189,18 @@ Microsoft periodically updates Windows with new telemetry endpoints. Create a mo
 $issues = @()
 
 if ((Get-Service DiagTrack).StartType -ne "Disabled") {
-    $issues += "DiagTrack is not disabled"
+ $issues += "DiagTrack is not disabled"
 }
 
 $hostsContent = Get-Content "C:\Windows\System32\drivers\etc\hosts"
 if ($hostsContent -notmatch "telemetry.microsoft.com") {
-    $issues += "Hosts file missing telemetry blocks"
+ $issues += "Hosts file missing telemetry blocks"
 }
 
 if ($issues) {
-    Write-Host "Privacy issues found:" $issues
+ Write-Host "Privacy issues found:" $issues
 } else {
-    Write-Host "Privacy configuration looks good"
+ Write-Host "Privacy configuration looks good"
 }
 ```
 

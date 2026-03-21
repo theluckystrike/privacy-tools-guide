@@ -81,21 +81,21 @@ For developers who manage multiple machines or want reproducible configurations,
 # Disable telemetry via Registry
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
 if (!(Test-Path $registryPath)) {
-    New-Item -Path $registryPath -Force | Out-Null
+ New-Item -Path $registryPath -Force | Out-Null
 }
 Set-ItemProperty -Path $registryPath -Name "AllowTelemetry" -Value 0 -Type DWord
 
 # Disable connected user experience
 $cuPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
 if (!(Test-Path $cuPath)) {
-    New-Item -Path $cuPath -Force | Out-Null
+ New-Item -Path $cuPath -Force | Out-Null
 }
 Set-ItemProperty -Path $cuPath -Name "DisableWindowsConsumerFeatures" -Value 1 -Type DWord
 
 # Disable feedback notifications
 $feedbackPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection\Preview"
 if (!(Test-Path $feedbackPath)) {
-    New-Item -Path $feedbackPath -Force | Out-Null
+ New-Item -Path $feedbackPath -Force | Out-Null
 }
 Set-ItemProperty -Path $feedbackPath -Name "AllowPreviewFlighting" -Value 0 -Type DWord
 
@@ -170,24 +170,24 @@ For maximum privacy, block Microsoft's telemetry endpoints at the firewall level
 ```powershell
 # Common Microsoft telemetry endpoints
 $endpoints = @(
-  "telemetry.microsoft.com",
-  "telemetry-inm.trafficmanager.net",
-  "vortex.data.microsoft.com",
-  "telemetry.appex.bing.net",
-  "watson.telemetry.microsoft.com",
-  "ceuswatson.telemetry.microsoft.com",
-  "telemetry.urs.microsoft.com",
-  "wd-prod-ms-winttd.trafficmanager.net",
-  "settings-win.data.microsoft.com"
+ "telemetry.microsoft.com",
+ "telemetry-inm.trafficmanager.net",
+ "vortex.data.microsoft.com",
+ "telemetry.appex.bing.net",
+ "watson.telemetry.microsoft.com",
+ "ceuswatson.telemetry.microsoft.com",
+ "telemetry.urs.microsoft.com",
+ "wd-prod-ms-winttd.trafficmanager.net",
+ "settings-win.data.microsoft.com"
 )
 
 foreach ($endpoint in $endpoints) {
-  # Create outbound firewall rule to block DNS resolution
-  New-NetFirewallRule -DisplayName "Block $endpoint" `
-    -Direction Outbound `
-    -Action Block `
-    -RemoteAddress $endpoint `
-    -Protocol TCP, UDP
+ # Create outbound firewall rule to block DNS resolution
+ New-NetFirewallRule -DisplayName "Block $endpoint" `
+ -Direction Outbound `
+ -Action Block `
+ -RemoteAddress $endpoint `
+ -Protocol TCP, UDP
 }
 ```
 

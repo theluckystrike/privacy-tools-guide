@@ -37,12 +37,12 @@ Here's a basic configuration example for a Shadowsocks server:
 
 ```json
 {
-    "server": "0.0.0.0",
-    "server_port": 8388,
-    "password": "your-secure-password",
-    "method": "chacha20-ietf-poly1305",
-    "mode": "tcp_only",
-    "fast_open": true
+ "server": "0.0.0.0",
+ "server_port": 8388,
+ "password": "your-secure-password",
+ "method": "chacha20-ietf-poly1305",
+ "mode": "tcp_only",
+ "fast_open": true
 }
 ```
 
@@ -182,26 +182,26 @@ import scapy.all as scapy
 import hashlib
 
 def analyze_traffic_pattern(pcap_file):
-    """Analyze packet patterns for obfuscation detection"""
-    packets = scapy.rdpcap(pcap_file)
+ """Analyze packet patterns for obfuscation detection"""
+ packets = scapy.rdpcap(pcap_file)
 
-    # Calculate packet size distribution
-    packet_sizes = [len(pkt) for pkt in packets]
+ # Calculate packet size distribution
+ packet_sizes = [len(pkt) for pkt in packets]
 
-    # TLS has predictable handshake sizes
-    # Shadowsocks has random-looking sizes
-    entropy = calculate_entropy(packet_sizes)
+ # TLS has predictable handshake sizes
+ # Shadowsocks has random-looking sizes
+ entropy = calculate_entropy(packet_sizes)
 
-    print(f"Packet entropy: {entropy}")
-    print("High entropy: likely Shadowsocks")
-    print("Low entropy: likely TLS/HTTPS")
+ print(f"Packet entropy: {entropy}")
+ print("High entropy: likely Shadowsocks")
+ print("Low entropy: likely TLS/HTTPS")
 
 def calculate_entropy(data):
-    """Shannon entropy of data distribution"""
-    from collections import Counter
-    counter = Counter(data)
-    return -sum((count/len(data)) * log2(count/len(data))
-                for count in counter.values())
+ """Shannon entropy of data distribution"""
+ from collections import Counter
+ counter = Counter(data)
+ return -sum((count/len(data)) * log2(count/len(data))
+ for count in counter.values())
 ```
 
 **Statistical Analysis Resistance**:
@@ -223,20 +223,20 @@ make && sudo make install
 
 # Configure with simple-obfs plugin
 ss-server -c server.json \
-  --plugin obfs-server \
-  --plugin-opts "obfs=http"
+ --plugin obfs-server \
+ --plugin-opts "obfs=http"
 ```
 
 The `simple-obfs` plugin makes Shadowsocks traffic appear as HTTP:
 
 ```json
 {
-    "server": "0.0.0.0",
-    "server_port": 8388,
-    "password": "your-password",
-    "method": "chacha20-ietf-poly1305",
-    "plugin": "obfs-server",
-    "plugin_opts": "obfs=http;obfs-host=www.example.com"
+ "server": "0.0.0.0",
+ "server_port": 8388,
+ "password": "your-password",
+ "method": "chacha20-ietf-poly1305",
+ "plugin": "obfs-server",
+ "plugin_opts": "obfs=http;obfs-host=www.example.com"
 }
 ```
 
@@ -244,8 +244,8 @@ The `simple-obfs` plugin makes Shadowsocks traffic appear as HTTP:
 ```bash
 # Generate self-signed certificate (minimal security)
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-    -keyout /etc/stunnel/stunnel.key \
-    -out /etc/stunnel/stunnel.pem
+ -keyout /etc/stunnel/stunnel.key \
+ -out /etc/stunnel/stunnel.pem
 
 # For maximum stealth, use legitimate certificate
 # from Let's Encrypt (appears as legitimate HTTPS)
@@ -261,17 +261,17 @@ Performance comparison under various network conditions:
 # Benchmark obfuscation methods
 
 test_speed() {
-    local method=$1
-    local target=$2
+ local method=$1
+ local target=$2
 
-    # Download 100MB file
-    time curl -s "http://$target/100mb-test" > /dev/null
+ # Download 100MB file
+ time curl -s "http://$target/100mb-test" > /dev/null
 
-    # Measure TCP retransmissions
-    netstat -s | grep "retransmitted"
+ # Measure TCP retransmissions
+ netstat -s | grep "retransmitted"
 
-    # CPU usage during transfer
-    top -b -n 1 | grep "obfuscation-process"
+ # CPU usage during transfer
+ top -b -n 1 | grep "obfuscation-process"
 }
 
 # Test Shadowsocks
@@ -297,14 +297,14 @@ import socket
 import ssl
 
 def mixed_protocol_tunnel():
-    """Send both Shadowsocks and HTTPS traffic"""
+ """Send both Shadowsocks and HTTPS traffic"""
 
-    # 70% legitimate HTTPS
-    # 30% Shadowsocks (obfuscated as HTTP)
+ # 70% legitimate HTTPS
+ # 30% Shadowsocks (obfuscated as HTTP)
 
-    # Censors analyzing traffic see mostly normal HTTPS
-    # Actual data flows through Shadowsocks channel
-    pass
+ # Censors analyzing traffic see mostly normal HTTPS
+ # Actual data flows through Shadowsocks channel
+ pass
 ```
 
 **Rotating Obfuscation**:
@@ -327,15 +327,15 @@ WantedBy=multi-user.target
 # rotate-obfs.sh
 #!/bin/bash
 while true; do
-    # Use Shadowsocks for one hour
-    systemctl start shadowsocks-obfs
-    sleep 3600
-    systemctl stop shadowsocks-obfs
+ # Use Shadowsocks for one hour
+ systemctl start shadowsocks-obfs
+ sleep 3600
+ systemctl stop shadowsocks-obfs
 
-    # Use Stunnel for one hour
-    systemctl start stunnel
-    sleep 3600
-    systemctl stop stunnel
+ # Use Stunnel for one hour
+ systemctl start stunnel
+ sleep 3600
+ systemctl stop stunnel
 done
 ```
 
@@ -363,9 +363,9 @@ watch -n 1 'netstat -an | grep ESTABLISHED | wc -l'
 ```bash
 # Client setup (Linux)
 ss-local -s your-server.com -p 8388 \
-  -k your-password -m chacha20-ietf-poly1305 \
-  -l 1080 --plugin obfs-local \
-  --plugin-opts "obfs=http;obfs-host=www.example.com"
+ -k your-password -m chacha20-ietf-poly1305 \
+ -l 1080 --plugin obfs-local \
+ --plugin-opts "obfs=http;obfs-host=www.example.com"
 
 # Browser configuration: SOCKS5 localhost:1080
 # Application-level proxying required
@@ -403,15 +403,15 @@ As detection techniques advance, consider:
 # Automated failover script
 #!/bin/bash
 primary_test() {
-    timeout 5 curl -s --socks5 localhost:1080 https://check.torproject.org
+ timeout 5 curl -s --socks5 localhost:1080 https://check.torproject.org
 }
 
-if ! primary_test; then
-    echo "Shadowsocks failed, switching to Stunnel"
-    systemctl stop shadowsocks-local
-    systemctl start stunnel5
-    # Notify user of failover
-    notify-send "VPN Obfuscation switched to Stunnel"
+if ! Primary_test; then
+ echo "Shadowsocks failed, switching to Stunnel"
+ systemctl stop shadowsocks-local
+ systemctl start stunnel5
+ # Notify user of failover
+ notify-send "VPN Obfuscation switched to Stunnel"
 fi
 ```
 

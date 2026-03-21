@@ -188,7 +188,7 @@ Services like HaveIBeenPwned (haveibeenpwned.com) can alert you when your email 
 ```bash
 # Check via API (requires API key from haveibeenpwned.com)
 curl -H "hibp-api-key: YOUR_API_KEY" \
-  "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com"
+ "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com"
 ```
 
 ## Prevention Strategies

@@ -88,7 +88,7 @@ Alternatively, you can apply these changes programmatically using PowerShell. Th
 # Disable Activity History via Registry
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
 if (-not (Test-Path $registryPath)) {
-    New-Item -Path $registryPath -Force | Out-Null
+ New-Item -Path $registryPath -Force | Out-Null
 }
 Set-ItemProperty -Path $registryPath -Name "PublishUserActivities" -Value 0 -Type DWord
 Write-Host "Activity History disabled via Registry"
@@ -103,40 +103,40 @@ For developers managing multiple workstations or seeking repeatable deployment m
 ```powershell
 # Comprehensive Activity History Disabler
 param(
-    [switch]$Force
+ [switch]$Force
 )
 
 function Disable-ActivityHistory {
-    Write-Host "Disabling Windows Activity History..." -ForegroundColor Yellow
-    
-    # Registry-based disable
-    $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
-    if (-not (Test-Path $regPath)) {
-        New-Item -Path $regPath -Force | Out-Null
-    }
-    Set-ItemProperty -Path $regPath -Name "PublishUserActivities" -Value 0 -Type DWord
-    
-    # Disable cloud sync
-    $cloudPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
-    if (-not (Test-Path $cloudPath)) {
-        New-Item -Path $cloudPath -Force | Out-Null
-    }
-    Set-ItemProperty -Path $cloudPath -Name "DisableWindowsConsumerFeatures" -Value 1 -Type DWord
-    
-    # Clear existing activity history
-    $activityPath = "$env:APPDATA\Microsoft\Windows\Activity"
-    if (Test-Path $activityPath) {
-        Get-ChildItem -Path $activityPath -Recurse | Remove-Item -Force -Recurse
-        Write-Host "Cleared local activity cache"
-    }
-    
-    Write-Host "Activity History successfully disabled" -ForegroundColor Green
+ Write-Host "Disabling Windows Activity History..." -ForegroundColor Yellow
+
+ # Registry-based disable
+ $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
+ if (-not (Test-Path $regPath)) {
+ New-Item -Path $regPath -Force | Out-Null
+ }
+ Set-ItemProperty -Path $regPath -Name "PublishUserActivities" -Value 0 -Type DWord
+
+ # Disable cloud sync
+ $cloudPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
+ if (-not (Test-Path $cloudPath)) {
+ New-Item -Path $cloudPath -Force | Out-Null
+ }
+ Set-ItemProperty -Path $cloudPath -Name "DisableWindowsConsumerFeatures" -Value 1 -Type DWord
+
+ # Clear existing activity history
+ $activityPath = "$env:APPDATA\Microsoft\Windows\Activity"
+ if (Test-Path $activityPath) {
+ Get-ChildItem -Path $activityPath -Recurse | Remove-Item -Force -Recurse
+ Write-Host "Cleared local activity cache"
+ }
+
+ Write-Host "Activity History successfully disabled" -ForegroundColor Green
 }
 
 # Run with elevation check
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Host "Administrator privileges required. Re-run as Administrator." -ForegroundColor Red
-    exit 1
+ Write-Host "Administrator privileges required. Re-run as Administrator." -ForegroundColor Red
+ exit 1
 }
 
 Disable-ActivityHistory

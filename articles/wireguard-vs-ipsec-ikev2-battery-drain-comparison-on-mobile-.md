@@ -50,38 +50,38 @@ import threading
 import time
 
 class WireGuardMonitor:
-    def __init__(self, interface='wg0'):
-        self.interface = interface
-        self.running = False
-    
-    def check_connection(self):
-        try:
-            result = subprocess.run(
-                ['wg', 'show', self.interface, 'latest-handshakes'],
-                capture_output=True, text=True, timeout=5
-            )
-            return result.returncode == 0
-        except:
-            return False
-    
-    def restart_tunnel(self):
-        subprocess.run(['wg-quick', 'down', f'/etc/wireguard/{self.interface}.conf'])
-        time.sleep(1)
-        subprocess.run(['wg-quick', 'up', f'/etc/wireguard/{self.interface}.conf'])
-    
-    def monitor_loop(self, callback=None):
-        self.running = True
-        while self.running:
-            if not self.check_connection():
-                self.restart_tunnel()
-                if callback:
-                    callback()
-            time.sleep(10)
-    
-    def start_monitoring(self, callback=None):
-        thread = threading.Thread(target=self.monitor_loop, args=(callback,))
-        thread.daemon = True
-        thread.start()
+ def __init__(self, interface='wg0'):
+ self.interface = interface
+ self.running = False
+
+ def check_connection(self):
+ try:
+ result = subprocess.run(
+ ['wg', 'show', self.interface, 'latest-handshakes'],
+ capture_output=True, text=True, timeout=5
+ )
+ return result.returncode == 0
+ except:
+ return False
+
+ def restart_tunnel(self):
+ subprocess.run(['wg-quick', 'down', f'/etc/wireguard/{self.interface}.conf'])
+ time.sleep(1)
+ subprocess.run(['wg-quick', 'up', f'/etc/wireguard/{self.interface}.conf'])
+
+ def monitor_loop(self, callback=None):
+ self.running = True
+ while self.running:
+ if not self.check_connection():
+ self.restart_tunnel()
+ if callback:
+ callback()
+ time.sleep(10)
+
+ def start_monitoring(self, callback=None):
+ thread = threading.Thread(target=self.monitor_loop, args=(callback,))
+ thread.daemon = True
+ thread.start()
 ```
 
 This simple monitor checks tunnel health every 10 seconds and restarts if needed—useful for maintaining connectivity during network transitions.
@@ -112,7 +112,7 @@ For IPSec IKEv2, adjust the NAT keepalive interval in strongSwan configuration:
 ```bash
 # /etc/strongswan.conf
 charon {
-  keepalive = 30
+ keepalive = 30
 }
 ```
 
@@ -191,17 +191,17 @@ For IPSec IKEv2, the DPD (Dead Peer Detection) timeout provides equivalent funct
 ```bash
 # /etc/strongswan.d/vpn.conf
 connections {
-  vpn_connection {
-    dpd_action = restart
-    dpd_delay = 30
-    dpd_timeout = 90
-  }
+ vpn_connection {
+ dpd_action = restart
+ dpd_delay = 30
+ dpd_timeout = 90
+ }
 }
 ```
 
 ## Kernel vs Userspace VPN
 
-Many mobile VPN implementations run in userspace (app process), consuming more battery than kernel-space implementations. iOS includes kernel-space IPSec support, giving native IPSec a battery advantage. Android's VpnService API is userspace-only, affecting both protocols equally.
+Many mobile VPN implementations run in userspace (app process), consuming more battery than kernel-space implementations. IOS includes kernel-space IPSec support, giving native IPSec a battery advantage. Android's VpnService API is userspace-only, affecting both protocols equally.
 
 If your platform supports it, kernel-space WireGuard (available in Linux kernel 5.6+) provides additional battery benefits over userspace implementations.
 

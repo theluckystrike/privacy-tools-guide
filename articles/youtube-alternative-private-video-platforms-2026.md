@@ -54,9 +54,9 @@ PeerTube supports resumable uploads via tus-js-client, making it suitable for la
 ```bash
 # Upload video via PeerTube API
 curl -X POST \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -F "videofile=@/path/to/video.mp4" \
-  "https://your-instance.com/api/v1/videos/upload"
+ -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+ -F "videofile=@/path/to/video.mp4" \
+ "https://your-instance.com/api/v1/videos/upload"
 ```
 
 **Considerations:** PeerTube requires significant storage and bandwidth resources. The platform uses P2P video streaming to reduce bandwidth costs, which works well for popular content but may introduce latency for niche videos.
@@ -86,21 +86,21 @@ import requests
 
 # Upload video to MediaCMS
 def upload_video(file_path, title, api_url, token):
-    with open(file_path, 'rb') as f:
-        response = requests.post(
-            f"{api_url}/api/videos/",
-            headers={"Authorization": f"Token {token}"},
-            files={"file": f},
-            data={"title": title, "privacy": "private"}
-        )
-    return response.json()
+ with open(file_path, 'rb') as f:
+ response = requests.post(
+ f"{api_url}/api/videos/",
+ headers={"Authorization": f"Token {token}"},
+ files={"file": f},
+ data={"title": title, "privacy": "private"}
+ )
+ return response.json()
 
 # Usage
 result = upload_video(
-    '/path/to/video.mp4',
-    'Private Team Recording',
-    'https://cms.yourdomain.com',
-    'your-api-token'
+ '/path/to/video.mp4',
+ 'Private Team Recording',
+ 'https://cms.yourdomain.com',
+ 'your-api-token'
 )
 ```
 
@@ -113,10 +113,10 @@ For users who want to consume YouTube content without Google's tracking, privacy
 ```bash
 # Using the official Docker image
 docker run -d \
-  --name invidious \
-  -p "8080:8080" \
-  -e "INVIDIOUS_CONFIG=db.enabled: true" \
-  quay.io/invidious/invidious:latest
+ --name invidious \
+ -p "8080:8080" \
+ -e "INVIDIOUS_CONFIG=db.enabled: true" \
+ quay.io/invidious/invidious:latest
 ```
 
 These frontends remove YouTube ads, prevent account tracking, and support RSS feeds for subscriptions. However, they access YouTube's infrastructure, so uptime depends on YouTube's API availability.
@@ -134,24 +134,24 @@ Vimeo remains a strong contender for professional video hosting without advertis
 const vimeo = require('@vimeo/vimeo');
 
 const client = new vimeo(
-  process.env.VIMEO_CLIENT_ID,
-  process.env.VIMEO_CLIENT_SECRET,
-  process.env.VIMEO_ACCESS_TOKEN
+ process.env.VIMEO_CLIENT_ID,
+ process.env.VIMEO_CLIENT_SECRET,
+ process.env.VIMEO_ACCESS_TOKEN
 );
 
 client.upload(
-  './video.mp4',
-  {
-    name: 'Private Team Update',
-    privacy: {
-      view: 'password',
-      embed: 'whitelist',
-      download: false
-    }
-  },
-  (uri) => {
-    console.log(`Video uploaded: ${uri}`);
-  }
+ './video.mp4',
+ {
+ name: 'Private Team Update',
+ privacy: {
+ view: 'password',
+ embed: 'whitelist',
+ download: false
+ }
+ },
+ (uri) => {
+ console.log(`Video uploaded: ${uri}`);
+ }
 );
 ```
 
@@ -177,9 +177,9 @@ For developers requiring complete control, combining open-source tools creates a
 ```bash
 # Record screen with FFmpeg
 ffmpeg -f avfoundation -i "1:0" \
-  -c:v libx264 -preset fast -crf 23 \
-  -c:a aac -b:a 128k \
-  output.mp4
+ -c:v libx264 -preset fast -crf 23 \
+ -c:a aac -b:a 128k \
+ output.mp4
 ```
 
 **Hosting:** Deploy PeerTube or MediaCMS on cloud infrastructure (Hetzner, DigitalOcean, or self-owned hardware)
@@ -193,18 +193,18 @@ ffmpeg -f avfoundation -i "1:0" \
 import requests
 
 def track_view(page_url, referrer=None):
-    requests.post(
-        'https://plausible.io/api/event',
-        json={
-            'name': 'pageview',
-            'url': page_url,
-            'referrer': referrer
-        },
-        headers={
-            'User-Agent': 'VideoPlatform/1.0',
-            'Authorization': f'Bearer {PLAUSIBLE_API_KEY}'
-        }
-    )
+ requests.post(
+ 'https://plausible.io/api/event',
+ json={
+ 'name': 'pageview',
+ 'url': page_url,
+ 'referrer': referrer
+ },
+ headers={
+ 'User-Agent': 'VideoPlatform/1.0',
+ 'Authorization': f'Bearer {PLAUSIBLE_API_KEY}'
+ }
+ )
 ```
 
 ## Choosing the Right Platform

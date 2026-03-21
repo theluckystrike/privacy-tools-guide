@@ -31,9 +31,9 @@ import secrets
 import base64
 
 def generate_challenge():
-    """Generate a 32-byte random challenge."""
-    challenge = secrets.token_bytes(32)
-    return base64.urlsafe_b64encode(challenge).rstrip(b'=')
+ """Generate a 32-byte random challenge."""
+ challenge = secrets.token_bytes(32)
+ return base64.urlsafe_b64encode(challenge).rstrip(b'=')
 ```
 
 Store the challenge in your session or temporary storage with an expiration. The client returns this challenge signed, and you verify the signature matches.
@@ -50,78 +50,78 @@ import uuid
 from datetime import datetime, timedelta
 
 def get_registration_options(user_id, username):
-    """Generate WebAuthn registration options."""
-    
-    challenge = generate_challenge()
-    # Store challenge for verification later
-    session_store[user_id] = {
-        'challenge': challenge,
-        'type': 'registration',
-        'expires': datetime.utcnow() + timedelta(minutes=5)
-    }
-    
-    options = {
-        'challenge': challenge,
-        'rp': {
-            'name': 'Your Application',
-            'id': 'yourdomain.com'
-        },
-        'user': {
-            'id': base64.urlsafe_b64encode(user_id.encode()).rstrip(b'='),
-            'name': username,
-            'displayName': username
-        },
-        'pubKeyCredParams': [
-            {'type': 'public-key', 'alg': -7},   # ES256
-            {'type': 'public-key', 'alg': -257}  # RS256
-        ],
-        'authenticatorSelection': {
-            'authenticatorAttachment': 'platform',
-            'requireResidentKey': True,
-            'userVerification': 'preferred'
-        },
-        'timeout': 60000,
-        'attestation': 'direct'
-    }
-    
-    return json.dumps(options)
+ """Generate WebAuthn registration options."""
+
+ challenge = generate_challenge()
+ # Store challenge for verification later
+ session_store[user_id] = {
+ 'challenge': challenge,
+ 'type': 'registration',
+ 'expires': datetime.utcnow() + timedelta(minutes=5)
+ }
+
+ options = {
+ 'challenge': challenge,
+ 'rp': {
+ 'name': 'Your Application',
+ 'id': 'yourdomain.com'
+ },
+ 'user': {
+ 'id': base64.urlsafe_b64encode(user_id.encode()).rstrip(b'='),
+ 'name': username,
+ 'displayName': username
+ },
+ 'pubKeyCredParams': [
+ {'type': 'public-key', 'alg': -7}, # ES256
+ {'type': 'public-key', 'alg': -257} # RS256
+ ],
+ 'authenticatorSelection': {
+ 'authenticatorAttachment': 'platform',
+ 'requireResidentKey': True,
+ 'userVerification': 'preferred'
+ },
+ 'timeout': 60000,
+ 'attestation': 'direct'
+ }
+
+ return json.dumps(options)
 ```
 
 ### Client: Create Credential
 
 ```javascript
 async function registerCredential(options) {
-  const publicKeyOptions = {
-    ...JSON.parse(options),
-    challenge: Uint8Array.from(atob(options.challenge), c => c.charCodeAt(0)),
-    user: {
-      ...options.user,
-      id: Uint8Array.from(atob(options.user.id), c => c.charCodeAt(0))
-    }
-  };
-  
-  try {
-    const credential = await navigator.credentials.create({
-      publicKey: publicKeyOptions
-    });
-    
-    return serializeCredential(credential);
-  } catch (error) {
-    console.error('Registration failed:', error);
-    throw error;
-  }
+ const publicKeyOptions = {
+ ...JSON.parse(options),
+ challenge: Uint8Array.from(atob(options.challenge), c => c.charCodeAt(0)),
+ user: {
+ ...options.user,
+ id: Uint8Array.from(atob(options.user.id), c => c.charCodeAt(0))
+ }
+ };
+
+ try {
+ const credential = await navigator.credentials.create({
+ publicKey: publicKeyOptions
+ });
+
+ return serializeCredential(credential);
+ } catch (error) {
+ console.error('Registration failed:', error);
+ throw error;
+ }
 }
 
 function serializeCredential(credential) {
-  return {
-    id: credential.id,
-    rawId: Array.from(new Uint8Array(credential.rawId)),
-    response: {
-      attestationObject: Array.from(new Uint8Array(credential.response.attestationObject)),
-      clientDataJSON: Array.from(new Uint8Array(credential.response.clientDataJSON))
-    },
-    type: credential.type
-  };
+ return {
+ id: credential.id,
+ rawId: Array.from(new Uint8Array(credential.rawId)),
+ response: {
+ attestationObject: Array.from(new Uint8Array(credential.response.attestationObject)),
+ clientDataJSON: Array.from(new Uint8Array(credential.response.clientDataJSON))
+ },
+ type: credential.type
+ };
 }
 ```
 
@@ -133,29 +133,29 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 
 def verify_registration(user_id, credential_data):
-    """Verify the registration credential."""
-    
-    stored = session_store.get(user_id)
-    if not stored or stored['type'] != 'registration':
-        raise ValueError("Invalid registration session")
-    
-    # Decode attestation object
-    attestation_obj = credential_data['response']['attestationObject']
-    # Verify signature, parse CBOR, extract public key
-    # In production, use a library like py_webauthn
-    
-    # Extract public key and store securely
-    public_key = parse_attestation(attestation_obj)
-    
-    # Store credential with user
-    db.credentials.insert({
-        'user_id': user_id,
-        'credential_id': credential_data['id'],
-        'public_key': public_key,
-        'created': datetime.utcnow()
-    })
-    
-    return True
+ """Verify the registration credential."""
+
+ stored = session_store.get(user_id)
+ if not stored or stored['type'] != 'registration':
+ raise ValueError("Invalid registration session")
+
+ # Decode attestation object
+ attestation_obj = credential_data['response']['attestationObject']
+ # Verify signature, parse CBOR, extract public key
+ # In production, use a library like py_webauthn
+
+ # Extract public key and store securely
+ public_key = parse_attestation(attestation_obj)
+
+ # Store credential with user
+ db.credentials.insert({
+ 'user_id': user_id,
+ 'credential_id': credential_data['id'],
+ 'public_key': public_key,
+ 'created': datetime.utcnow()
+ })
+
+ return True
 ```
 
 ## Authentication Implementation
@@ -166,49 +166,49 @@ Authentication (login) follows a similar pattern but verifies rather than create
 
 ```python
 def get_authentication_options(user_id):
-    """Generate authentication options for user login."""
-    
-    challenge = generate_challenge()
-    credentials = db.credentials.find({'user_id': user_id})
-    
-    session_store[f"auth_{user_id}"] = {
-        'challenge': challenge,
-        'type': 'authentication',
-        'expires': datetime.utcnow() + timedelta(minutes=5)
-    }
-    
-    options = {
-        'challenge': challenge,
-        'rpId': 'yourdomain.com',
-        'allowCredentials': [
-            {'id': cred['credential_id'], 'type': 'public-key'}
-            for cred in credentials
-        ],
-        'userVerification': 'preferred',
-        'timeout': 60000
-    }
-    
-    return json.dumps(options)
+ """Generate authentication options for user login."""
+
+ challenge = generate_challenge()
+ credentials = db.credentials.find({'user_id': user_id})
+
+ session_store[f"auth_{user_id}"] = {
+ 'challenge': challenge,
+ 'type': 'authentication',
+ 'expires': datetime.utcnow() + timedelta(minutes=5)
+ }
+
+ options = {
+ 'challenge': challenge,
+ 'rpId': 'yourdomain.com',
+ 'allowCredentials': [
+ {'id': cred['credential_id'], 'type': 'public-key'}
+ for cred in credentials
+ ],
+ 'userVerification': 'preferred',
+ 'timeout': 60000
+ }
+
+ return json.dumps(options)
 ```
 
 ### Client: Get Assertion
 
 ```javascript
 async function authenticate(options) {
-  const authOptions = {
-    ...JSON.parse(options),
-    challenge: Uint8Array.from(atob(options.challenge), c => c.charCodeAt(0)),
-    allowCredentials: options.allowCredentials.map(cred => ({
-      ...cred,
-      id: Uint8Array.from(atob(cred.id), c => c.charCodeAt(0))
-    }))
-  };
-  
-  const assertion = await navigator.credentials.get({
-    publicKey: authOptions
-  });
-  
-  return serializeAssertion(assertion);
+ const authOptions = {
+ ...JSON.parse(options),
+ challenge: Uint8Array.from(atob(options.challenge), c => c.charCodeAt(0)),
+ allowCredentials: options.allowCredentials.map(cred => ({
+ ...cred,
+ id: Uint8Array.from(atob(cred.id), c => c.charCodeAt(0))
+ }))
+ };
+
+ const assertion = await navigator.credentials.get({
+ publicKey: authOptions
+ });
+
+ return serializeAssertion(assertion);
 }
 ```
 
@@ -216,34 +216,34 @@ async function authenticate(options) {
 
 ```python
 def verify_authentication(user_id, assertion_data):
-    """Verify the authentication assertion."""
-    
-    stored = session_store.get(f"auth_{user_id}")
-    if not stored or stored['type'] != 'authentication':
-        raise ValueError("Invalid authentication session")
-    
-    credential = db.credentials.find_one({
-        'user_id': user_id,
-        'credential_id': assertion_data['id']
-    })
-    
-    if not credential:
-        raise ValueError("Credential not found")
-    
-    # Verify signature using stored public key
-    client_data = assertion_data['response']['clientDataJSON']
-    signature = assertion_data['response']['signature']
-    
-    # Verify the signature
-    verify_signature(
-        credential['public_key'],
-        stored['challenge'],
-        client_data,
-        signature
-    )
-    
-    # Login successful - create session
-    return create_session(user_id)
+ """Verify the authentication assertion."""
+
+ stored = session_store.get(f"auth_{user_id}")
+ if not stored or stored['type'] != 'authentication':
+ raise ValueError("Invalid authentication session")
+
+ credential = db.credentials.find_one({
+ 'user_id': user_id,
+ 'credential_id': assertion_data['id']
+ })
+
+ if not credential:
+ raise ValueError("Credential not found")
+
+ # Verify signature using stored public key
+ client_data = assertion_data['response']['clientDataJSON']
+ signature = assertion_data['response']['signature']
+
+ # Verify the signature
+ verify_signature(
+ credential['public_key'],
+ stored['challenge'],
+ client_data,
+ signature
+ )
+
+ # Login successful - create session
+ return create_session(user_id)
 ```
 
 ## Implementation Best Practices
@@ -263,8 +263,8 @@ For passwordless flows where users don't enter usernames, implement the user han
 ```javascript
 // During registration, request a resident key
 authenticatorSelection: {
-  requireResidentKey: true,
-  residentKey: 'required'
+ requireResidentKey: true,
+ residentKey: 'required'
 }
 ```
 
@@ -276,21 +276,21 @@ WebAuthn operations can fail for various reasons:
 
 ```javascript
 try {
-  credential = await navigator.credentials.create({ publicKey: options });
+ credential = await navigator.credentials.create({ publicKey: options });
 } catch (error) {
-  switch (error.name) {
-    case 'InvalidStateError':
-      // Authenticator already registered
-      break;
-    case 'NotAllowedError':
-      // User cancelled or timeout
-      break;
-    case 'SecurityError':
-      // HTTPS required or context invalid
-      break;
-    default:
-      // Handle unknown errors
-  }
+ switch (error.name) {
+ case 'InvalidStateError':
+ // Authenticator already registered
+ break;
+ case 'NotAllowedError':
+ // User cancelled or timeout
+ break;
+ case 'SecurityError':
+ // HTTPS required or context invalid
+ break;
+ default:
+ // Handle unknown errors
+ }
 }
 ```
 
@@ -308,40 +308,40 @@ The verification snippets above show the conceptual flow. For production code, u
 
 ```python
 from webauthn import (
-    generate_registration_options,
-    verify_registration_response,
-    generate_authentication_options,
-    verify_authentication_response,
+ generate_registration_options,
+ verify_registration_response,
+ generate_authentication_options,
+ verify_authentication_response,
 )
 from webauthn.helpers.structs import (
-    PublicKeyCredentialDescriptor,
-    UserVerificationRequirement,
+ PublicKeyCredentialDescriptor,
+ UserVerificationRequirement,
 )
 
 # Registration options
 options = generate_registration_options(
-    rp_id="yourdomain.com",
-    rp_name="Your Application",
-    user_id=user_id.encode(),
-    user_name=username,
-    user_display_name=display_name,
+ rp_id="yourdomain.com",
+ rp_name="Your Application",
+ user_id=user_id.encode(),
+ user_name=username,
+ user_display_name=display_name,
 )
 
 # Verify registration response from client
 verification = verify_registration_response(
-    credential=credential_response,   # JSON from client
-    expected_challenge=stored_challenge,
-    expected_rp_id="yourdomain.com",
-    expected_origin="https://yourdomain.com",
+ credential=credential_response, # JSON from client
+ expected_challenge=stored_challenge,
+ expected_rp_id="yourdomain.com",
+ expected_origin="https://yourdomain.com",
 )
 
 # Store the returned credential
 db.credentials.insert({
-    "user_id": user_id,
-    "credential_id": verification.credential_id,
-    "public_key": verification.credential_public_key,
-    "sign_count": verification.sign_count,
-    "created_at": datetime.utcnow().isoformat(),
+ "user_id": user_id,
+ "credential_id": verification.credential_id,
+ "public_key": verification.credential_public_key,
+ "sign_count": verification.sign_count,
+ "created_at": datetime.utcnow().isoformat(),
 })
 ```
 
@@ -354,14 +354,14 @@ Users should be able to register multiple devices (laptop, phone, hardware secur
 ```python
 # Schema that supports multiple credentials per user
 CREATE TABLE webauthn_credentials (
-    id          SERIAL PRIMARY KEY,
-    user_id     UUID NOT NULL REFERENCES users(id),
-    credential_id  BYTEA NOT NULL UNIQUE,
-    public_key  BYTEA NOT NULL,
-    sign_count  INTEGER NOT NULL DEFAULT 0,
-    device_name TEXT,          -- User-assigned label: "Work YubiKey"
-    created_at  TIMESTAMPTZ DEFAULT NOW(),
-    last_used   TIMESTAMPTZ
+ id SERIAL PRIMARY KEY,
+ user_id UUID NOT NULL REFERENCES users(id),
+ credential_id BYTEA NOT NULL UNIQUE,
+ public_key BYTEA NOT NULL,
+ sign_count INTEGER NOT NULL DEFAULT 0,
+ device_name TEXT, -- User-assigned label: "Work YubiKey"
+ created_at TIMESTAMPTZ DEFAULT NOW(),
+ last_used TIMESTAMPTZ
 );
 ```
 
@@ -383,19 +383,19 @@ Most teams add WebAuthn as a second factor before removing passwords entirely. T
 ```javascript
 // Login flow that supports both paths
 async function login(username, password) {
-  const user = await authenticateWithPassword(username, password);
-  if (!user) throw new Error("Invalid credentials");
+ const user = await authenticateWithPassword(username, password);
+ if (!user) throw new Error("Invalid credentials");
 
-  const credentials = await getCredentials(user.id);
+ const credentials = await getCredentials(user.id);
 
-  if (credentials.length > 0) {
-    // Upgrade: use passkey for second factor
-    const authOptions = await getAuthenticationOptions(user.id);
-    const assertion = await authenticate(authOptions);
-    await verifyAuthenticationOnServer(assertion);
-  }
+ if (credentials.length > 0) {
+ // Upgrade: use passkey for second factor
+ const authOptions = await getAuthenticationOptions(user.id);
+ const assertion = await authenticate(authOptions);
+ await verifyAuthenticationOnServer(assertion);
+ }
 
-  return createSession(user.id);
+ return createSession(user.id);
 }
 ```
 

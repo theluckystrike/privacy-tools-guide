@@ -50,10 +50,10 @@ bot = SignalBot()
 
 @bot.handler()
 async def handle_message(message: utils.Message):
-    if "help" in message.text.lower():
-        await message.reply("Available commands: status, docs, support")
-    elif "status" in message.text.lower():
-        await message.reply("System operational")
+ if "help" in message.text.lower():
+ await message.reply("Available commands: status, docs, support")
+ elif "status" in message.text.lower():
+ await message.reply("System operational")
 
 bot.start()
 ```
@@ -69,17 +69,17 @@ Wire provides a more API surface for business integrations:
 const { WireClient } = require('@wireapp/bot-api');
 
 const bot = new WireClient({
-  token: process.env.WIRE_BOT_TOKEN,
-  url: 'https://conv-team.example.com'
+ token: process.env.WIRE_BOT_TOKEN,
+ url: 'https://conv-team.example.com'
 });
 
 bot.on('message', async (conversation, message) => {
-  if (message.content === '/status') {
-    await bot.sendText({
-      conversationId: conversation.id,
-      text: 'Team status: All systems operational'
-    });
-  }
+ if (message.content === '/status') {
+ await bot.sendText({
+ conversationId: conversation.id,
+ text: 'Team status: All systems operational'
+ });
+ }
 });
 
 bot.start();
@@ -108,15 +108,15 @@ Wire provides **Wire Server** as an open-source, self-hostable option:
 # docker-compose.yml for Wire Server
 version: '3'
 services:
-  wire-server:
-    image: wire/wire-server:latest
-    ports:
-      - "8080:8080"
-    environment:
-      - DOMAIN=your-company.com
-      - AWS_REGION=us-east-1
-    volumes:
-      - ./wire-env:/etc/wire
+ wire-server:
+ image: wire/wire-server:latest
+ ports:
+ - "8080:8080"
+ environment:
+ - DOMAIN=your-company.com
+ - AWS_REGION=us-east-1
+ volumes:
+ - ./wire-env:/etc/wire
 ```
 
 Self-hosting enables:
@@ -185,15 +185,15 @@ Wire provides broader integration options:
 ```javascript
 // Wire webhook configuration
 const webhookConfig = {
-  events: [
-    'conversation.create',
-    'conversation.memberJoin',
-    'conversation.messageAdd'
-  ],
-  url: 'https://your-server.com/webhooks/wire',
-  auth: {
-    header: 'X-Webhook-Signature'
-  }
+ events: [
+ 'conversation.create',
+ 'conversation.memberJoin',
+ 'conversation.messageAdd'
+ ],
+ url: 'https://your-server.com/webhooks/wire',
+ auth: {
+ header: 'X-Webhook-Signature'
+ }
 };
 ```
 

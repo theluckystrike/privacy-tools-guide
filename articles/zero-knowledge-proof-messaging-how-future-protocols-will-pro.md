@@ -48,43 +48,43 @@ from dataclasses import dataclass
 
 @dataclass
 class MessageRetrievalProof:
-    """Zero knowledge proof for private message checking"""
-    commitment: bytes      # H(public_key || random_nonce)
-    proof: bytes          # zkSNARK proof
-    ciphertext: bytes     # encrypted message payload
+ """Zero knowledge proof for private message checking"""
+ commitment: bytes # H(public_key || random_nonce)
+ proof: bytes # zkSNARK proof
+ ciphertext: bytes # encrypted message payload
 
 def generate_message_check_proof(user_private_key, server_public_key):
-    """
-    Generate proof that user has messages without revealing identity.
-    Uses zkSNARK to prove knowledge of private key corresponding
-    to a public key in the set of users with pending messages.
-    """
-    # This is conceptual - actual implementation requires 
-    # a trusted setup and specific circuit design
-    
-    user_pubkey = derive_public_key(user_private_key)
-    nonce = generate_random_bytes(32)
-    commitment = hash(user_pubkey + nonce)
-    
-    # Generate proof: "I know the private key for one of these 
-    # public keys, without revealing which one"
-    proof = zk_prove(
-        statement={
-            "committed_key": commitment,
-            "message_exists": True
-        },
-        witness={
-            "private_key": user_private_key,
-            "public_key": user_pubkey,
-            "nonce": nonce
-        }
-    )
-    
-    return MessageRetrievalProof(
-        commitment=commitment,
-        proof=proof,
-        ciphertext=None  # Server fills this if proof validates
-    )
+ """
+ Generate proof that user has messages without revealing identity.
+ Uses zkSNARK to prove knowledge of private key corresponding
+ to a public key in the set of users with pending messages.
+ """
+ # This is conceptual - actual implementation requires 
+ # a trusted setup and specific circuit design
+
+ user_pubkey = derive_public_key(user_private_key)
+ nonce = generate_random_bytes(32)
+ commitment = hash(user_pubkey + nonce)
+
+ # Generate proof: "I know the private key for one of these 
+ # public keys, without revealing which one"
+ proof = zk_prove(
+ statement={
+ "committed_key": commitment,
+ "message_exists": True
+ },
+ witness={
+ "private_key": user_private_key,
+ "public_key": user_pubkey,
+ "nonce": nonce
+ }
+ )
+
+ return MessageRetrievalProof(
+ commitment=commitment,
+ proof=proof,
+ ciphertext=None # Server fills this if proof validates
+ )
 ```
 
 The server validates the proof without learning which specific user is checking messages. Only authorized users can successfully retrieve their messages.
@@ -99,22 +99,22 @@ When two users want to discover if they share contacts or have mutual conversati
 
 ```python
 def private_contact_discovery(user_a_contacts, user_b_contacts):
-    """
-    Find mutual contacts without revealing full contact lists.
-    Uses polynomial-based PSI (Private Set Intersection).
-    """
-    # Each user encodes their contacts as polynomial roots
-    poly_a = polynomial_from_set(user_a_contacts)
-    poly_b = polynomial_from_set(user_b_contacts)
-    
-    # Exchange polynomial evaluations (not the polynomials themselves)
-    # Each user can only compute intersection from their own polynomial
-    # and the other user's evaluations
-    eval_a = evaluate_at_points(poly_a, random_points)
-    eval_b = evaluate_at_points(poly_b, random_points)
-    
-    mutual = intersect_polynomials(poly_a, eval_b)
-    return mutual  # Only contains actual mutual contacts
+ """
+ Find mutual contacts without revealing full contact lists.
+ Uses polynomial-based PSI (Private Set Intersection).
+ """
+ # Each user encodes their contacts as polynomial roots
+ poly_a = polynomial_from_set(user_a_contacts)
+ poly_b = polynomial_from_set(user_b_contacts)
+
+ # Exchange polynomial evaluations (not the polynomials themselves)
+ # Each user can only compute intersection from their own polynomial
+ # and the other user's evaluations
+ eval_a = evaluate_at_points(poly_a, random_points)
+ eval_b = evaluate_at_points(poly_b, random_points)
+
+ mutual = intersect_polynomials(poly_a, eval_b)
+ return mutual # Only contains actual mutual contacts
 ```
 
 ### 2. Silent Circle's Approach
@@ -133,7 +133,7 @@ Nym combines mixnets with ZKP authentication:
 
 For developers implementing ZKP-based messaging:
 
-1. **Choose your proof system carefully**: zkSNARKs offer compact proofs but require trusted setup. zkSTARKs avoid trusted setup but produce larger proofs. Bulletproofs offer middle ground without trusted setup.
+1. **Choose your proof system carefully**: zkSNARKs offer compact proofs but require trusted setup. ZkSTARKs avoid trusted setup but produce larger proofs. Bulletproofs offer middle ground without trusted setup.
 
 2. **Design for adversarial servers**: Assume the server will try to learn metadata. ZKP should provide meaningful security even if servers are compromised or malicious.
 
@@ -144,29 +144,29 @@ For developers implementing ZKP-based messaging:
 ```python
 # Example: Simplified ZKP authentication flow
 class ZKPAuthenticator:
-    def __init__(self, user_identity_key):
-        self.identity_key = user_identity_key
-        self.proving_key = generate_proving_key()
-        
-    def create_auth_proof(self, challenge: bytes) -> bytes:
-        """Create ZK proof of identity without revealing identity"""
-        return zk_prove(
-            circuit="authentication",
-            public_input=challenge,
-            private_input={
-                "identity_key": self.identity_key
-            },
-            proving_key=self.proving_key
-        )
-        
-    def verify_auth_proof(self, proof: bytes, challenge: bytes) -> bool:
-        """Server verifies proof without learning user identity"""
-        return zk_verify(
-            circuit="authentication",
-            public_input=challenge,
-            proof=proof,
-            verification_key=self.proving_key.verification_key
-        )
+ def __init__(self, user_identity_key):
+ self.identity_key = user_identity_key
+ self.proving_key = generate_proving_key()
+
+ def create_auth_proof(self, challenge: bytes) -> bytes:
+ """Create ZK proof of identity without revealing identity"""
+ return zk_prove(
+ circuit="authentication",
+ public_input=challenge,
+ private_input={
+ "identity_key": self.identity_key
+ },
+ proving_key=self.proving_key
+ )
+
+ def verify_auth_proof(self, proof: bytes, challenge: bytes) -> bool:
+ """Server verifies proof without learning user identity"""
+ return zk_verify(
+ circuit="authentication",
+ public_input=challenge,
+ proof=proof,
+ verification_key=self.proving_key.verification_key
+ )
 ```
 
 ## Limitations and Challenges

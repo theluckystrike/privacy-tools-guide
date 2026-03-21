@@ -84,25 +84,25 @@ from scapy.all import sniff, TCP, Raw
 import re
 
 def parse_tls_clienthello(packet):
-    """Extract TLS ClientHello fingerprint from packet."""
-    if not packet.haslayer(Raw):
-        return None
-    
-    data = bytes(packet[Raw].load)
-    
-    # Check for TLS Handshake type (0x16 = Handshake)
-    # and ClientHello (0x01)
-    if len(data) < 6:
-        return None
-        
-    if data[0] == 0x16 and data[5] == 0x01:
-        # Extract handshake data for fingerprinting
-        return {
-            'tls_version': (data[1], data[2]),
-            'handshake_length': int.from_bytes(data[3:6], 'big'),
-            'raw': data.hex()
-        }
-    return None
+ """Extract TLS ClientHello fingerprint from packet."""
+ if not packet.haslayer(Raw):
+ return None
+
+ data = bytes(packet[Raw].load)
+
+ # Check for TLS Handshake type (0x16 = Handshake)
+ # and ClientHello (0x01)
+ if len(data) < 6:
+ return None
+
+ if data[0] == 0x16 and data[5] == 0x01:
+ # Extract handshake data for fingerprinting
+ return {
+ 'tls_version': (data[1], data[2]),
+ 'handshake_length': int.from_bytes(data[3:6], 'big'),
+ 'raw': data.hex()
+ }
+ return None
 
 # Capture packets on port 443
 print("Capturing TLS handshakes...")
@@ -125,27 +125,27 @@ Projects like **Fram出海** and **v2ray** can be configured to mimic popular br
 
 ```json
 {
-  "outbounds": [
-    {
-      "protocol": "vmess",
-      "settings": {
-        "vnext": [
-          {
-            "address": "your-server.com",
-            "port": 443,
-            "users": [{"id": "your-uuid"}]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "tls",
-        "tlsSettings": {
-          "fingerprint": "chrome"
-        }
-      }
-    }
-  ]
+ "outbounds": [
+ {
+ "protocol": "vmess",
+ "settings": {
+ "vnext": [
+ {
+ "address": "your-server.com",
+ "port": 443,
+ "users": [{"id": "your-uuid"}]
+ }
+ ]
+ },
+ "streamSettings": {
+ "network": "tcp",
+ "security": "tls",
+ "tlsSettings": {
+ "fingerprint": "chrome"
+ }
+ }
+ }
+ ]
 }
 ```
 

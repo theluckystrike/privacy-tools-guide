@@ -68,18 +68,18 @@ For developers, here's a quick risk assessment framework:
 ```bash
 # Quick severity assessment
 case "$EXPOSURE_TYPE" in
-  "api_key"|"secret_token"|"password")
-    SEVERITY="critical"
-    ACTION="rotate immediately"
-    ;;
-  "email"|"username"|"non-sensitive-config")
-    SEVERITY="low"
-    ACTION="monitor for anomalies"
-    ;;
-  "customer_data"|"pii")
-    SEVERITY="high"
-    ACTION="report to security team"
-    ;;
+ "api_key"|"secret_token"|"password")
+ SEVERITY="critical"
+ ACTION="rotate immediately"
+ ;;
+ "email"|"username"|"non-sensitive-config")
+ SEVERITY="low"
+ ACTION="monitor for anomalies"
+ ;;
+ "customer_data"|"pii")
+ SEVERITY="high"
+ ACTION="report to security team"
+ ;;
 esac
 
 echo "Severity: $SEVERITY - Action: $ACTION"
@@ -131,10 +131,10 @@ Prevention is more effective than reaction. Implement these strategies to reduce
 # Create a clean shell profile for presentations
 # Add to ~/.bashrc or ~/.zshrc
 if [ "$PRESENTATION_MODE" = "1" ]; then
-    export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$ "
-    unset API_KEY AWS_SECRET GITHUB_TOKEN
-    # Load only safe-to-show configs
-    source ~/.safe-env
+ export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$ "
+ unset API_KEY AWS_SECRET GITHUB_TOKEN
+ # Load only safe-to-show configs
+ source ~/.safe-env
 fi
 ```
 
@@ -143,12 +143,12 @@ fi
 ```lua
 -- Hammerspoon example: alert when sensitive windows activate
 hs.window.filter.new()
-    :subscribe(hs.window.filter.windowFocused, function(window, app)
-        local title = window:title()
-        if title:match("API") or title:match("secret") or title:match("password") then
-            hs.alert.show("⚠️ Sensitive window focused - check your screen share!", 3)
-        end
-    end)
+ :subscribe(hs.window.filter.windowFocused, function(window, app)
+ local title = window:title()
+ if title:match("API") or title:match("secret") or title:match("password") then
+ hs.alert.show("⚠️ Sensitive window focused - check your screen share!", 3)
+ end
+ end)
 ```
 
 **Configure your IDE to hide sensitive content.** Many IDEs offer features to obscure sensitive values in the editor. VS Code extensions like "Hide Secrets" replace displayed values with asterisks while keeping the actual content in memory.
@@ -176,50 +176,50 @@ For security teams investigating potential data leaks from screen sharing incide
 # Incident forensics: Determine what was actually exposed
 
 class ScreenShareIncidentAnalysis:
-    def __init__(self, meeting_platform, incident_report):
-        self.platform = meeting_platform
-        self.report = incident_report
+ def __init__(self, meeting_platform, incident_report):
+ self.platform = meeting_platform
+ self.report = incident_report
 
-    def determine_actual_exposure(self):
-        """
-        Reconstruct what participants could have observed
-        Accounts for: video resolution, screen position, timing
-        """
-        exposure_factors = {
-            'resolution_quality': 'HD (1080p) = clearer text',
-            'text_size': 'font_size_px >= 16 is readable',
-            'duration': f'{self.report["duration"]} seconds',
-            'distance': 'Assume optimal viewing distance',
-            'participant_attention': 'Assume viewing entire screen'
-        }
+ def determine_actual_exposure(self):
+ """
+ Reconstruct what participants could have observed
+ Accounts for: video resolution, screen position, timing
+ """
+ exposure_factors = {
+ 'resolution_quality': 'HD (1080p) = clearer text',
+ 'text_size': 'font_size_px >= 16 is readable',
+ 'duration': f'{self.report["duration"]} seconds',
+ 'distance': 'Assume optimal viewing distance',
+ 'participant_attention': 'Assume viewing entire screen'
+ }
 
-        # Calculate what was realistically observable
-        observable_lines_of_code = self.calculate_visible_lines()
-        observable_text = self.estimate_readable_text()
+ # Calculate what was realistically observable
+ observable_lines_of_code = self.calculate_visible_lines()
+ observable_text = self.estimate_readable_text()
 
-        return {
-            'conservative_estimate': observable_text,
-            'worst_case_estimate': self.report.get('screen_content'),
-            'factors': exposure_factors
-        }
+ return {
+ 'conservative_estimate': observable_text,
+ 'worst_case_estimate': self.report.get('screen_content'),
+ 'factors': exposure_factors
+ }
 
-    def calculate_visible_lines(self):
-        """How many lines of terminal/code were visible?"""
-        screen_height = 1080
-        line_height = 25  # pixels per line at readable size
-        visible_lines = screen_height / line_height
-        return int(visible_lines)  # ~43 lines visible
+ def calculate_visible_lines(self):
+ """How many lines of terminal/code were visible?"""
+ screen_height = 1080
+ line_height = 25 # pixels per line at readable size
+ visible_lines = screen_height / line_height
+ return int(visible_lines) # ~43 lines visible
 
-    def estimate_readable_text(self):
-        """What text was actually readable?"""
-        dpi = 96
-        font_size = 12  # At < 12pt, difficult to read on video
-        readable_threshold = 16  # pt
+ def estimate_readable_text(self):
+ """What text was actually readable?"""
+ dpi = 96
+ font_size = 12 # At < 12pt, difficult to read on video
+ readable_threshold = 16 # pt
 
-        if font_size < readable_threshold:
-            return "Text likely unreadable in video stream"
-        else:
-            return "Text was likely readable"
+ if font_size < readable_threshold:
+ return "Text likely unreadable in video stream"
+ else:
+ return "Text was likely readable"
 ```
 
 ### Credential Exposure Classification
@@ -229,42 +229,42 @@ class ScreenShareIncidentAnalysis:
 
 # CRITICAL - Rotate immediately
 CRITICAL_CREDENTIALS=(
-  "AWS_SECRET_ACCESS_KEY"
-  "PRIVATE_SSH_KEY"
-  "DATABASE_PASSWORD"
-  "API_KEY_SECRET"
-  "ENCRYPTION_KEY"
-  "JWT_SIGNING_KEY"
-  "GPG_PRIVATE_KEY"
+ "AWS_SECRET_ACCESS_KEY"
+ "PRIVATE_SSH_KEY"
+ "DATABASE_PASSWORD"
+ "API_KEY_SECRET"
+ "ENCRYPTION_KEY"
+ "JWT_SIGNING_KEY"
+ "GPG_PRIVATE_KEY"
 )
 
 # HIGH - Rotate within 24 hours
 HIGH_CREDENTIALS=(
-  "GITHUB_TOKEN"
-  "SLACK_TOKEN"
-  "DOCKER_HUB_TOKEN"
-  "STRIPE_API_KEY"
+ "GITHUB_TOKEN"
+ "SLACK_TOKEN"
+ "DOCKER_HUB_TOKEN"
+ "STRIPE_API_KEY"
 )
 
 # MEDIUM - Rotate within 7 days
 MEDIUM_CREDENTIALS=(
-  "PUBLIC_API_KEY"
-  "STAGING_DATABASE_PASSWORD"
-  "SERVICE_ACCOUNT_EMAIL"
+ "PUBLIC_API_KEY"
+ "STAGING_DATABASE_PASSWORD"
+ "SERVICE_ACCOUNT_EMAIL"
 )
 
 # LOW - Monitor but no rotation needed
 LOW_CREDENTIALS=(
-  "PUBLIC_GITHUB_USERNAME"
-  "WEBSITE_URL"
-  "DOCUMENTATION_LINK"
+ "PUBLIC_GITHUB_USERNAME"
+ "WEBSITE_URL"
+ "DOCUMENTATION_LINK"
 )
 
 # Automated rotation script
 for credential in "${CRITICAL_CREDENTIALS[@]}"; do
-  rotate_credential "$credential"
-  audit_access_logs "$credential"
-  notify_security_team "$credential" "CRITICAL"
+ rotate_credential "$credential"
+ audit_access_logs "$credential"
+ notify_security_team "$credential" "CRITICAL"
 done
 ```
 
@@ -277,100 +277,100 @@ Organizations can implement automated detection that prevents sensitive content 
 ```javascript
 // Client-side content detection before screen sharing
 class SensitiveContentDetector {
-  constructor() {
-    this.sensitivePatterns = {
-      // API key patterns
-      api_key: /^(sk_live_|pk_live_|ghp_)[A-Za-z0-9_]{20,}/gm,
-      // AWS credentials
-      aws_key: /AKIA[0-9A-Z]{16}/g,
-      // Private keys
-      private_key: /-----BEGIN (PRIVATE|RSA) KEY-----/g,
-      // Database URLs
-      database_url: /postgres:\/\/[^:]+:[^@]+@[^/]+/gi,
-      // Passwords (common patterns)
-      password: /password\s*=\s*['"][^'"]+['"]/gi,
-      // Email in code/config
-      email: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g
-    };
-  }
+ constructor() {
+ this.sensitivePatterns = {
+ // API key patterns
+ api_key: /^(sk_live_|pk_live_|ghp_)[A-Za-z0-9_]{20,}/gm,
+ // AWS credentials
+ aws_key: /AKIA[0-9A-Z]{16}/g,
+ // Private keys
+ private_key: /-----BEGIN (PRIVATE|RSA) KEY-----/g,
+ // Database URLs
+ database_url: /postgres:\/\/[^:]+:[^@]+@[^/]+/gi,
+ // Passwords (common patterns)
+ password: /password\s*=\s*['"][^'"]+['"]/gi,
+ // Email in code/config
+ email: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g
+ };
+ }
 
-  async scanScreenBefore Sharing() {
-    try {
-      // Capture current screen
-      const stream = await navigator.mediaDevices.getDisplayMedia({
-        video: { frameRate: 1 }  // Low FPS for analysis
-      });
+ async scanScreenBefore Sharing() {
+ try {
+ // Capture current screen
+ const stream = await navigator.mediaDevices.getDisplayMedia({
+ video: { frameRate: 1 } // Low FPS for analysis
+ });
 
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      const video = document.createElement('video');
-      video.srcObject = stream;
+ const canvas = document.createElement('canvas');
+ const ctx = canvas.getContext('2d');
+ const video = document.createElement('video');
+ video.srcObject = stream;
 
-      video.onloadedmetadata = () => {
-        ctx.drawImage(video, 0, 0);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+ video.onloadedmetadata = () => {
+ ctx.drawImage(video, 0, 0);
+ const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-        // Use OCR to extract text from screen
-        this.analyzeContent(imageData);
+ // Use OCR to extract text from screen
+ this.analyzeContent(imageData);
 
-        // Stop the stream
-        stream.getTracks().forEach(track => track.stop());
-      };
-    } catch (err) {
-      console.error('Screen capture failed:', err);
-    }
-  }
+ // Stop the stream
+ stream.getTracks().forEach(track => track.stop());
+ };
+ } catch (err) {
+ console.error('Screen capture failed:', err);
+ }
+ }
 
-  analyzeContent(imageData) {
-    // Use Tesseract.js for OCR
-    Tesseract.recognize(imageData, 'eng')
-      .then(result => {
-        const text = result.data.text;
-        this.checkForSensitivePatterns(text);
-      });
-  }
+ analyzeContent(imageData) {
+ // Use Tesseract.js for OCR
+ Tesseract.recognize(imageData, 'eng')
+ .then(result => {
+ const text = result.data.text;
+ this.checkForSensitivePatterns(text);
+ });
+ }
 
-  checkForSensitivePatterns(text) {
-    const findings = [];
+ checkForSensitivePatterns(text) {
+ const findings = [];
 
-    for (const [type, pattern] of Object.entries(this.sensitivePatterns)) {
-      const matches = text.match(pattern);
-      if (matches && matches.length > 0) {
-        findings.push({
-          type: type,
-          count: matches.length,
-          severity: this.calculateSeverity(type)
-        });
-      }
-    }
+ for (const [type, pattern] of Object.entries(this.sensitivePatterns)) {
+ const matches = text.match(pattern);
+ if (matches && matches.length > 0) {
+ findings.push({
+ type: type,
+ count: matches.length,
+ severity: this.calculateSeverity(type)
+ });
+ }
+ }
 
-    if (findings.length > 0) {
-      this.warnUser(findings);
-      return false;  // Block screen sharing
-    }
+ if (findings.length > 0) {
+ this.warnUser(findings);
+ return false; // Block screen sharing
+ }
 
-    return true;  // Safe to share
-  }
+ return true; // Safe to share
+ }
 
-  calculateSeverity(contentType) {
-    const severities = {
-      'private_key': 'CRITICAL',
-      'aws_key': 'CRITICAL',
-      'api_key': 'CRITICAL',
-      'password': 'HIGH',
-      'database_url': 'HIGH',
-      'email': 'MEDIUM'
-    };
-    return severities[contentType] || 'LOW';
-  }
+ calculateSeverity(contentType) {
+ const severities = {
+ 'private_key': 'CRITICAL',
+ 'aws_key': 'CRITICAL',
+ 'api_key': 'CRITICAL',
+ 'password': 'HIGH',
+ 'database_url': 'HIGH',
+ 'email': 'MEDIUM'
+ };
+ return severities[contentType] || 'LOW';
+ }
 
-  warnUser(findings) {
-    const message = findings
-      .map(f => `⚠️ DETECTED: ${f.type} (${f.count} matches) - ${f.severity}`)
-      .join('\n');
+ warnUser(findings) {
+ const message = findings
+ .map(f => `⚠️ DETECTED: ${f.type} (${f.count} matches) - ${f.severity}`)
+ .join('\n');
 
-    alert(`Do not share screen!\n\n${message}\n\nClose sensitive windows first.`);
-  }
+ alert(`Do not share screen!\n\n${message}\n\nClose sensitive windows first.`);
+ }
 }
 ```
 
@@ -387,8 +387,8 @@ defaults write com.zoom.xos ZoomEnableLocalRecording -bool false
 # Disable screen sharing of specific windows
 # (can whitelist only safe applications)
 defaults write com.zoom.xos ZoomScreenShareApplicationsAllowlist -array \
-  "com.apple.Safari" \
-  "com.google.Chrome"
+ "com.apple.Safari" \
+ "com.google.Chrome"
 
 # Require authentication to join meetings
 defaults write com.zoom.xos ZoomRequireAuthToJoin -bool true
@@ -403,23 +403,23 @@ defaults write com.zoom.xos ZoomAutoMuteOnScreenShare -bool true
 # PowerShell script to find and audit Teams recordings
 
 function Find-TeamsRecordings {
-    param(
-        [string]$outputPath = "$env:USERPROFILE\Teams Recordings"
-    )
+ param(
+ [string]$outputPath = "$env:USERPROFILE\Teams Recordings"
+ )
 
-    # Teams stores recordings in OneDrive and SharePoint
-    $teamsRecordings = @(
-        "$env:OneDriveConsumer\Teams Recordings",
-        "$env:OneDrive\Teams Recordings"
-    )
+ # Teams stores recordings in OneDrive and SharePoint
+ $teamsRecordings = @(
+ "$env:OneDriveConsumer\Teams Recordings",
+ "$env:OneDrive\Teams Recordings"
+ )
 
-    foreach ($folder in $teamsRecordings) {
-        if (Test-Path $folder) {
-            Get-ChildItem -Path $folder -Include "*.mp4" |
-            Select-Object Name, @{N='Size (MB)';E={[math]::Round($_.Length/1MB,2)}}, CreationTime |
-            Export-Csv "$outputPath\TeamsRecordings.csv" -NoTypeInformation
-        }
-    }
+ foreach ($folder in $teamsRecordings) {
+ if (Test-Path $folder) {
+ Get-ChildItem -Path $folder -Include "*.mp4" |
+ Select-Object Name, @{N='Size (MB)';E={[math]::Round($_.Length/1MB,2)}}, CreationTime |
+ Export-Csv "$outputPath\TeamsRecordings.csv" -NoTypeInformation
+ }
+ }
 }
 
 # Find recordings to audit or delete

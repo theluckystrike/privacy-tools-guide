@@ -39,22 +39,22 @@ Your profile photo can reveal identity across platforms. Configure at **Settings
 ```yaml
 # Recommended privacy tier list for profile visibility
 tier_1_maximum_privacy:
-  last_seen: "Nobody"
-  profile_photo: "Nobody"
-  about: "Nobody"
-  status: "My Contacts"
-  
+ last_seen: "Nobody"
+ profile_photo: "Nobody"
+ about: "Nobody"
+ status: "My Contacts"
+
 tier_2_balanced:
-  last_seen: "My Contacts except..."
-  profile_photo: "My Contacts except..."
-  about: "My Contacts"
-  status: "My Contacts"
-  
+ last_seen: "My Contacts except..."
+ profile_photo: "My Contacts except..."
+ about: "My Contacts"
+ status: "My Contacts"
+
 tier_3_minimal:
-  last_seen: "My Contacts"
-  profile_photo: "My Contacts"
-  about: "Everyone"
-  status: "Everyone"
+ last_seen: "My Contacts"
+ profile_photo: "My Contacts"
+ about: "Everyone"
+ status: "Everyone"
 ```
 
 ## Two-Step Verification: Your Primary Defense
@@ -74,28 +74,28 @@ The PIN prevents your account from being verified on a new device without this c
 ```python
 # Example: Risk assessment for WhatsApp account security
 def assess_whatsapp_security(phone_number):
-    """
-    Evaluates account security posture based on known factors
-    """
-    risks = []
-    
-    # Check if phone number is publicly available
-    if is_phone_public(phone_number):
-        risks.append("SIM swapping attack vector")
-    
-    # Check 2SV status
-    if not has_two_step_verification(phone_number):
-        risks.append("Account vulnerable to hijacking")
-    
-    # Check registration on data breach databases
-    if phone_in_breach(phone_number):
-        risks.append("Target for social engineering")
-        
-    return {
-        "security_score": 100 - (len(risks) * 25),
-        "risks": risks,
-        "recommendations": generate_recommendations(risks)
-    }
+ """
+ Evaluates account security posture based on known factors
+ """
+ risks = []
+
+ # Check if phone number is publicly available
+ if is_phone_public(phone_number):
+ risks.append("SIM swapping attack vector")
+
+ # Check 2SV status
+ if not has_two_step_verification(phone_number):
+ risks.append("Account vulnerable to hijacking")
+
+ # Check registration on data breach databases
+ if phone_in_breach(phone_number):
+ risks.append("Target for social engineering")
+
+ return {
+ "security_score": 100 - (len(risks) * 25),
+ "risks": risks,
+ "recommendations": generate_recommendations(risks)
+ }
 ```
 
 ## Read Receipts and Typing Indicators
@@ -115,18 +115,18 @@ For developers building WhatsApp integrations, the presence API provides limited
 const { Client } = require('whatsapp-business-api');
 
 const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: { headless: true }
+ authStrategy: new LocalAuth(),
+ puppeteer: { headless: true }
 });
 
 client.on('change_state', state => {
-    console.log('Connection state:', state);
+ console.log('Connection state:', state);
 });
 
 // Presence changes are limited in official API
 client.on('presence_update', (notification, contact) => {
-    // Only available for groups and limited use cases
-    console.log(`${contact} is now ${notification.getBody()}`);
+ // Only available for groups and limited use cases
+ console.log(`${contact} is now ${notification.getBody()}`);
 });
 ```
 
@@ -163,17 +163,17 @@ For sensitive communications, enable 90-day auto-deletion. This limits exposure 
 ```yaml
 # Disappearing messages workflow
 disappearing_messages:
-  recommended_config:
-    default_duration: "90 days"  # Maximum available
-    per_conversation: true       # Enable manually for sensitive chats
-    
-  sensitive_conversations:
-    - name: "Work discussions"
-      duration: "7 days"
-    - name: "Personal finances"
-      duration: "90 days"
-    - name: "Family updates"
-      duration: "24 hours"  # Quick sharing, less sensitive
+ recommended_config:
+ default_duration: "90 days" # Maximum available
+ per_conversation: true # Enable manually for sensitive chats
+
+ sensitive_conversations:
+ - name: "Work discussions"
+ duration: "7 days"
+ - name: "Personal finances"
+ duration: "90 days"
+ - name: "Family updates"
+ duration: "24 hours" # Quick sharing, less sensitive
 ```
 
 ## Live Location and Geographic Privacy
@@ -198,16 +198,16 @@ echo "Checking privacy settings status..."
 echo ""
 echo "1. Two-step verification:"
 adb shell am start -a android.settings.SETTINGS
-echo "   Navigate: Account > Two-step verification"
+echo " Navigate: Account > Two-step verification"
 echo ""
 echo "2. Last seen visibility:"
-echo "   Settings > Privacy > Last seen and online"
+echo " Settings > Privacy > Last seen and online"
 echo ""
 echo "3. Group privacy:"
-echo "   Settings > Privacy > Groups"
+echo " Settings > Privacy > Groups"
 echo ""
 echo "4. Live location:"
-echo "   Settings > Privacy > Live location"
+echo " Settings > Privacy > Live location"
 ```
 
 ## Data Export and Account Management
@@ -241,15 +241,15 @@ Enable biometric or PIN lock at **Settings > Privacy > Screen lock**.
 // Settings > Privacy > Screen Lock
 
 struct WhatsAppPrivacySettings {
-    var screenLockEnabled: Bool = true
-    var screenLockType: LockType = .biometric  // Face ID / Touch ID
-    var lockTimeout: TimeInterval = 60  // Immediate or 1 minute
-    
-    var additionalProtections: [Protection] = [
-        .blockScreenshots,      // Prevents screenshot capture
-        .blockScreenRecording,  // Blocks screen recording
-        .disableLinkPreviews    // Prevents URL metadata leakage
-    ]
+ var screenLockEnabled: Bool = true
+ var screenLockType: LockType = .biometric // Face ID / Touch ID
+ var lockTimeout: TimeInterval = 60 // Immediate or 1 minute
+
+ var additionalProtections: [Protection] = [
+ .blockScreenshots, // Prevents screenshot capture
+ .blockScreenRecording, // Blocks screen recording
+ .disableLinkPreviews // Prevents URL metadata leakage
+ ]
 }
 ```
 

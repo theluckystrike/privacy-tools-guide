@@ -125,21 +125,21 @@ PowerShell scripting enables consistent privacy hardening across multiple machin
 ```powershell
 # OneDrive Privacy Hardening Script
 param(
-    [switch]$DisableAll = $false
+ [switch]$DisableAll = $false
 )
 
 $ErrorActionPreference = "Stop"
 
 function Set-OneDrivePrivacySetting {
-    param($Name, $Value)
-    
-    $key = "HKCU:\Software\Microsoft\OneDrive"
-    if (-not (Test-Path $key)) {
-        New-Item -Path $key -Force | Out-Null
-    }
-    
-    Set-ItemProperty -Path $key -Name $Name -Value $Value -Type DWord
-    Write-Host "Set $Name to $Value"
+ param($Name, $Value)
+
+ $key = "HKCU:\Software\Microsoft\OneDrive"
+ if (-not (Test-Path $key)) {
+ New-Item -Path $key -Force | Out-Null
+ }
+
+ Set-ItemProperty -Path $key -Name $Name -Value $Value -Type DWord
+ Write-Host "Set $Name to $Value"
 }
 
 # Disable telemetry
@@ -150,8 +150,8 @@ Set-OneDrivePrivacySetting -Name "DisablePersonalizedRecommendations" -Value 1
 
 # Disable sharing integration
 if ($DisableAll) {
-    Set-OneDrivePrivacySetting -Name "DisableSharePointIntegration" -Value 1
-    Set-OneDrivePrivacySetting -Name "DisableOfficeIntegration" -Value 1
+ Set-OneDrivePrivacySetting -Name "DisableSharePointIntegration" -Value 1
+ Set-OneDrivePrivacySetting -Name "DisableOfficeIntegration" -Value 1
 }
 
 Write-Host "OneDrive privacy settings applied. Restart OneDrive to apply changes."

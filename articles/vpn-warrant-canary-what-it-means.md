@@ -95,26 +95,26 @@ If you're building privacy tools, implementing a warrant canary requires careful
 ```javascript
 // Example warrant canary data structure
 const warrantCanary = {
-  lastUpdated: "2026-03-15",
-  statements: [
-    {
-      type: "national_security_letter",
-      received: false,
-      since: "2020-01-01"
-    },
-    {
-      type: "gag_order",
-      received: false,
-      since: "2020-01-01"
-    },
-    {
-      type: "subpoena",
-      received: false,
-      since: "2020-01-01"
-    }
-  ],
-  // Hash of previous canary for integrity
-  previousHash: "sha256:abc123..."
+ lastUpdated: "2026-03-15",
+ statements: [
+ {
+ type: "national_security_letter",
+ received: false,
+ since: "2020-01-01"
+ },
+ {
+ type: "gag_order",
+ received: false,
+ since: "2020-01-01"
+ },
+ {
+ type: "subpoena",
+ received: false,
+ since: "2020-01-01"
+ }
+ ],
+ // Hash of previous canary for integrity
+ previousHash: "sha256:abc123..."
 };
 ```
 
@@ -132,8 +132,8 @@ PREVIOUS_HASH=$(cat ~/.canary_hash 2>/dev/null)
 CURRENT_HASH=$(curl -s "$CANARY_URL" | sha256sum | cut -d' ' -f1)
 
 if [ "$PREVIOUS_HASH" != "$CURRENT_HASH" ]; then
-    echo "WARRANT CANARY CHANGED - CHECK IMMEDIATELY" | mail -s "Alert" your@email.com
-    echo "$CURRENT_HASH" > ~/.canary_hash
+ echo "WARRANT CANARY CHANGED - CHECK IMMEDIATELY" | mail -s "Alert" your@email.com
+ echo "$CURRENT_HASH" > ~/.canary_hash
 fi
 ```
 
@@ -261,63 +261,63 @@ from datetime import datetime, timedelta
 import json
 
 class CanaryMonitor:
-    def __init__(self, config_file='canaries.json'):
-        with open(config_file) as f:
-            self.providers = json.load(f)
-        self.history_file = '.canary_history.json'
+ def __init__(self, config_file='canaries.json'):
+ with open(config_file) as f:
+ self.providers = json.load(f)
+ self.history_file = '.canary_history.json'
 
-    def check_canary(self, provider):
-        url = provider['canary_url']
-        try:
-            response = requests.get(url, timeout=10)
-            response.raise_for_status()
+ def check_canary(self, provider):
+ url = provider['canary_url']
+ try:
+ response = requests.get(url, timeout=10)
+ response.raise_for_status()
 
-            content = response.text
-            content_hash = hashlib.sha256(content.encode()).hexdigest()
+ content = response.text
+ content_hash = hashlib.sha256(content.encode()).hexdigest()
 
-            # Check date freshness
-            fetch_date = datetime.now().isoformat()
+ # Check date freshness
+ fetch_date = datetime.now().isoformat()
 
-            return {
-                'provider': provider['name'],
-                'status': 'accessible',
-                'hash': content_hash,
-                'fetch_date': fetch_date,
-                'size': len(content)
-            }
-        except requests.RequestException as e:
-            return {
-                'provider': provider['name'],
-                'status': 'error',
-                'error': str(e),
-                'fetch_date': datetime.now().isoformat()
-            }
+ return {
+ 'provider': provider['name'],
+ 'status': 'accessible',
+ 'hash': content_hash,
+ 'fetch_date': fetch_date,
+ 'size': len(content)
+ }
+ except requests.RequestException as e:
+ return {
+ 'provider': provider['name'],
+ 'status': 'error',
+ 'error': str(e),
+ 'fetch_date': datetime.now().isoformat()
+ }
 
-    def analyze_changes(self, previous, current):
-        """Detect changes in canary content"""
-        if previous['hash'] != current['hash']:
-            return {
-                'changed': True,
-                'message': f"Canary content changed for {current['provider']}"
-            }
-        return {'changed': False}
+ def analyze_changes(self, previous, current):
+ """Detect changes in canary content"""
+ if previous['hash'] != current['hash']:
+ return {
+ 'changed': True,
+ 'message': f"Canary content changed for {current['provider']}"
+ }
+ return {'changed': False}
 ```
 
 Configuration file format:
 
 ```json
 [
-  {
-    "name": "ProtonVPN",
-    "canary_url": "https://protonvpn.com/blog/transparency-report",
-    "signature_url": "https://protonvpn.com/blog/transparency-report.sig",
-    "pubkey_fingerprint": "A37CB5C1"
-  },
-  {
-    "name": "Mullvad",
-    "canary_url": "https://mullvad.net/en/download/windows",
-    "check_interval_days": 7
-  }
+ {
+ "name": "ProtonVPN",
+ "canary_url": "https://protonvpn.com/blog/transparency-report",
+ "signature_url": "https://protonvpn.com/blog/transparency-report.sig",
+ "pubkey_fingerprint": "A37CB5C1"
+ },
+ {
+ "name": "Mullvad",
+ "canary_url": "https://mullvad.net/en/download/windows",
+ "check_interval_days": 7
+ }
 ]
 ```
 

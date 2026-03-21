@@ -141,28 +141,28 @@ import datetime
 import os
 
 def rotate_wireguard_keys(config_path, peer_public_key):
-    """Automate WireGuard key rotation."""
-    
-    # Generate new key pair
-    private_key = subprocess.check_output(['wg', 'genkey']).decode().strip()
-    public_key = subprocess.check_output(['wg', 'pubkey'], 
-                                          input=private_key.encode()).decode().strip()
-    
-    # Backup current config
-    backup_path = f"{config_path}.backup.{datetime.date.today()}"
-    os.rename(config_path, backup_path)
-    
-    # Update and write new config
-    with open(backup_path, 'r') as f:
-        config = f.read()
-    
-    config = config.replace(peer_public_key, public_key)
-    # Add new PrivateKey line if needed
-    
-    with open(config_path, 'w') as f:
-        f.write(config)
-    
-    return private_key, public_key
+ """Automate WireGuard key rotation."""
+
+ # Generate new key pair
+ private_key = subprocess.check_output(['wg', 'genkey']).decode().strip()
+ public_key = subprocess.check_output(['wg', 'pubkey'], 
+ input=private_key.encode()).decode().strip()
+
+ # Backup current config
+ backup_path = f"{config_path}.backup.{datetime.date.today()}"
+ os.rename(config_path, backup_path)
+
+ # Update and write new config
+ with open(backup_path, 'r') as f:
+ config = f.read()
+
+ config = config.replace(peer_public_key, public_key)
+ # Add new PrivateKey line if needed
+
+ with open(config_path, 'w') as f:
+ f.write(config)
+
+ return private_key, public_key
 ```
 
 ## Security Considerations

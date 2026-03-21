@@ -228,16 +228,16 @@ Adapt your configuration based on detected network conditions:
 ```bash
 # Pseudo-code for network-aware optimization
 if (currentNetwork == "WiFi" AND isOnTrustedNetwork) {
-    # Can use shorter keepalive on trusted home/office WiFi
-    setKeepalive(60)
+ # Can use shorter keepalive on trusted home/office WiFi
+ setKeepalive(60)
 }
 else if (currentNetwork == "Cellular") {
-    # Use longer keepalive for cellular to save data and battery
-    setKeepalive(120)
+ # Use longer keepalive for cellular to save data and battery
+ setKeepalive(120)
 }
 else if (currentNetwork == "PublicWiFi") {
-    # Unknown networks need VPN active
-    setKeepalive(30)  # More reliable at cost of battery
+ # Unknown networks need VPN active
+ setKeepalive(30) # More reliable at cost of battery
 }
 ```
 
@@ -246,16 +246,16 @@ else if (currentNetwork == "PublicWiFi") {
 ```java
 // Detect current network type
 public void optimizeForNetwork() {
-    ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+ ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+ NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
 
-    if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
-        // WiFi detected - can use lower power settings
-        setKeepalive(90);
-    } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-        // Cellular detected - prioritize battery
-        setKeepalive(120);
-    }
+ if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+ // WiFi detected - can use lower power settings
+ setKeepalive(90);
+ } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+ // Cellular detected - prioritize battery
+ setKeepalive(120);
+ }
 }
 ```
 
@@ -283,16 +283,16 @@ public void optimizeForNetwork() {
 ```kotlin
 // Adjust settings based on Android version
 fun optimizeForAndroidVersion() {
-    val apiLevel = Build.VERSION.SDK_INT
+ val apiLevel = Build.VERSION.SDK_INT
 
-    val keepaliveInterval = when {
-        apiLevel >= Build.VERSION_CODES.TIRAMISU -> 120  // Android 13+
-        apiLevel >= Build.VERSION_CODES.S -> 90         // Android 12+
-        apiLevel >= Build.VERSION_CODES.R -> 60         // Android 11+
-        else -> 25                                        // Android 10 and earlier
-    }
+ val keepaliveInterval = when {
+ apiLevel >= Build.VERSION_CODES.TIRAMISU -> 120 // Android 13+
+ apiLevel >= Build.VERSION_CODES.S -> 90 // Android 12+
+ apiLevel >= Build.VERSION_CODES.R -> 60 // Android 11+
+ else -> 25 // Android 10 and earlier
+ }
 
-    applyKeepaliveInterval(keepaliveInterval)
+ applyKeepaliveInterval(keepaliveInterval)
 }
 ```
 
@@ -303,22 +303,22 @@ fun optimizeForAndroidVersion() {
 ```
 Diagnostic Steps:
 1. Check Settings → Battery → Battery usage
-   - Is WireGuard listed as top consumer?
-   - Compare to baseline without VPN
+ - Is WireGuard listed as top consumer?
+ - Compare to baseline without VPN
 
 2. Check background app refresh settings
-   - Settings → Apps → WireGuard → Permissions
-   - Verify "Background execution" is allowed
+ - Settings → Apps → WireGuard → Permissions
+ - Verify "Background execution" is allowed
 
 3. Monitor network activity
-   - Use Android's built-in Network Monitor
-   - Settings → Developer options → Network Monitor
-   - Check if excessive data is transmitting
+ - Use Android's built-in Network Monitor
+ - Settings → Developer options → Network Monitor
+ - Check if excessive data is transmitting
 
 4. Test with different DNS settings
-   - Switch from VPN DNS to system DNS
-   - May reduce processing overhead
-   - Trade-off: DNS queries visible to ISP
+ - Switch from VPN DNS to system DNS
+ - May reduce processing overhead
+ - Trade-off: DNS queries visible to ISP
 ```
 
 **Frequent Disconnections After Optimization**:
@@ -326,23 +326,23 @@ Diagnostic Steps:
 ```
 Resolution:
 1. Reduce keepalive interval incrementally
-   - If 120 sec causes disconnects, try 90 sec
-   - Test for 24 hours before adjusting further
+ - If 120 sec causes disconnects, try 90 sec
+ - Test for 24 hours before adjusting further
 
 2. Check NAT timeout characteristics
-   - Contact VPN provider for their network's NAT timeout
-   - Set keepalive interval to 50% of NAT timeout
-   - Example: 120 second NAT timeout = 60 second keepalive
+ - Contact VPN provider for their network's NAT timeout
+ - Set keepalive interval to 50% of NAT timeout
+ - Example: 120 second NAT timeout = 60 second keepalive
 
 3. Enable Always-On VPN
-   - Helps reconnection succeed quickly
-   - Prevents persistent disconnection state
+ - Helps reconnection succeed quickly
+ - Prevents persistent disconnection state
 
 4. Check for MTU issues
-   - Some networks require smaller MTU
-   - Standard: 1500 bytes
-   - VPN: 1420 bytes (accounting for VPN overhead)
-   - Test by setting MTU to 1280 if issues persist
+ - Some networks require smaller MTU
+ - Standard: 1500 bytes
+ - VPN: 1420 bytes (accounting for VPN overhead)
+ - Test by setting MTU to 1280 if issues persist
 ```
 
 **DNS Resolution Failures**:
@@ -350,21 +350,21 @@ Resolution:
 ```
 Testing DNS:
 1. In WireGuard config, specify multiple DNS servers:
-   DNS = 1.1.1.1, 8.8.8.8, 9.9.9.9
+ DNS = 1.1.1.1, 8.8.8.8, 9.9.9.9
 
 2. Test connectivity:
-   - Open browser and navigate to a site
-   - Verify you can resolve domains
-   - If failing, try system DNS instead
+ - Open browser and navigate to a site
+ - Verify you can resolve domains
+ - If failing, try system DNS instead
 
 3. DNS privacy trade-off:
-   - VPN DNS: Private but may be slower
-   - System DNS: Visible to ISP but potentially faster/more reliable
+ - VPN DNS: Private but may be slower
+ - System DNS: Visible to ISP but potentially faster/more reliable
 
 4. Optimal settings:
-   - Use VPN DNS on public networks
-   - Use system DNS on trusted networks
-   - Use on-demand rules to switch automatically
+ - Use VPN DNS on public networks
+ - Use system DNS on trusted networks
+ - Use on-demand rules to switch automatically
 ```
 
 ## Verification and Monitoring

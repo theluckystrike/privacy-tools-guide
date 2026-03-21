@@ -64,9 +64,9 @@ The key settings include:
 ```json
 // Wasabi configuration file (~/.wasabi/WalletWasabi.Client/settings.json)
 {
-  "AnonymitySetTarget": 50,
-  "AutoStartCoinJoin": true,
-  "RemixThreshold": 10
+ "AnonymitySetTarget": 50,
+ "AutoStartCoinJoin": true,
+ "RemixThreshold": 10
 }
 ```
 
@@ -132,7 +132,7 @@ Developers can interact with Wasabi through its built-in RPC interface. This ena
 
 # List available coins with privacy scores
 curl -s --data-binary '{"jsonrpc":"2.0","method":"listcoins","params":[]}' \
-  -H 'content-type: text/plain;' http://localhost:37150/
+ -H 'content-type: text/plain;' http://localhost:37150/
 ```
 
 The RPC interface provides access to wallet operations including coin listing, transaction building, and broadcasting. Documentation for these endpoints appears in Wasabi's GitHub repository.
@@ -329,9 +329,9 @@ Different strategies work best depending on how much Bitcoin you're mixing:
 - Strategy: Break into smaller pieces, mix separately
 - Rationale: Avoid suspiciously perfect anonymity sets
 - Approach:
-  1. Split 1 BTC into 0.1 BTC pieces
-  2. Mix each piece in different rounds over days
-  3. Mix outputs through additional rounds
+ 1. Split 1 BTC into 0.1 BTC pieces
+ 2. Mix each piece in different rounds over days
+ 3. Mix outputs through additional rounds
 - Cost: $50-$150 in fees
 - Time: Multiple days to weeks
 
@@ -351,13 +351,13 @@ Mixing is just the first step. Post-mix behavior can undo all privacy gains:
 Post-mix workflow:
 
 Day 1: Mix coins (anonymity set 50+)
-       ↓
+ ↓
 Days 2-3: Wait (avoid immediate spending pattern)
-          ↓
+ ↓
 Day 4+: Spend only 1-2 mixed outputs per transaction
-        Never consolidate mixed outputs
-        Never mix with unmixed coins later
-        Use Tor when checking address status
+ Never consolidate mixed outputs
+ Never mix with unmixed coins later
+ Use Tor when checking address status
 ```
 
 Simulate your spending behavior:
@@ -365,7 +365,7 @@ Simulate your spending behavior:
 ```bash
 # Monitor your mixed outputs (use Tor)
 torify curl -s https://blockstream.info/api/address/your-mixed-address | \
-  jq '.chain_stats.tx_count'
+ jq '.chain_stats.tx_count'
 
 # But DON'T check from your regular IP
 # And DON'T check frequently (monitoring is suspicious)

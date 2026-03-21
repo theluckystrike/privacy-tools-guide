@@ -32,7 +32,7 @@ For Google Workspace, you can revoke all sessions via the admin console or indiv
 # AWS: List and deactivate access keys
 aws iam list-access-keys --user-name your-username
 aws iam update-access-key --access-key-id AKIAIOSFODNN7EXAMPLE \
-  --status Inactive --user-name your-username
+ --status Inactive --user-name your-username
 
 # Generate a new key
 aws iam create-access-key --user-name your-username
@@ -63,8 +63,8 @@ Most cloud providers maintain detailed access logs. Google Drive users can check
 ```bash
 # Query CloudTrail for S3 bucket access
 aws cloudtrail lookup-events \
-  --lookup-attributes AttributeKey=EventSource,AttributeValue=s3.amazonaws.com \
-  --start-time 2026-03-01T00:00:00Z
+ --lookup-attributes AttributeKey=EventSource,AttributeValue=s3.amazonaws.com \
+ --start-time 2026-03-01T00:00:00Z
 ```
 
 ### 2. Identify Compromised Files
@@ -143,7 +143,7 @@ Implement client-side encryption for sensitive files before uploading. Tools lik
 ```bash
 # Example: Encrypting a directory with GPG before cloud upload
 gpg --symmetric --cipher-algo AES256 --compress-algo ZLIB \
-  --output sensitive-files.tar.gz.gpg sensitive-files.tar.gz
+ --output sensitive-files.tar.gz.gpg sensitive-files.tar.gz
 ```
 
 For developers, integrate encryption into CI/CD pipelines using tools like SOPS or age:
@@ -151,10 +151,10 @@ For developers, integrate encryption into CI/CD pipelines using tools like SOPS 
 ```yaml
 # .sops.yaml configuration
 creation_rules:
-  - path_regex: secrets/.*
-    key_groups:
-      - age:
-          - age1your-age-key-here
+ - path_regex: secrets/.*
+ key_groups:
+ - age:
+ - age1your-age-key-here
 ```
 
 ### Monitoring and Alerting

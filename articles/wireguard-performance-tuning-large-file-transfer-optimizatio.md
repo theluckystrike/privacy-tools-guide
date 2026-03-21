@@ -187,7 +187,7 @@ Some networks throttle WireGuard's default UDP port 51820. Consider alternate po
 ListenPort = 51821
 
 # Or common alternative ports
-ListenPort = 443  # May work behind restrictive firewalls
+ListenPort = 443 # May work behind restrictive firewalls
 ```
 
 ### Bonding Multiple Connections

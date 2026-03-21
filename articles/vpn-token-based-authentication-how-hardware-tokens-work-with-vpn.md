@@ -43,19 +43,19 @@ Most enterprise VPN solutions now support FIDO2, the authentication standard beh
 ```javascript
 // Simplified WebAuthn authentication flow
 async function authenticateWithHardwareToken(vpnServer) {
-  const credential = await navigator.credentials.get({
-    publicKey: {
-      challenge: vpnServer.generateChallenge(),
-      timeout: 60000,
-      userVerification: "preferred",
-      extensions: {
-        appid: "https://vpn.example.com"
-      }
-    }
-  });
-  
-  // Send signed response to VPN server
-  return vpnServer.verifySignature(credential);
+ const credential = await navigator.credentials.get({
+ publicKey: {
+ challenge: vpnServer.generateChallenge(),
+ timeout: 60000,
+ userVerification: "preferred",
+ extensions: {
+ appid: "https://vpn.example.com"
+ }
+ }
+ });
+
+ // Send signed response to VPN server
+ return vpnServer.verifySignature(credential);
 }
 ```
 
@@ -72,7 +72,7 @@ pkcs11-pin-cache 300
 
 # Example OpenVPN client config
 plugin /usr/local/lib/openvpn/plugins/openvpn-plugin-auth-pkcs11.so \
-  '/usr/lib/librtpkcs11ecp.so;0'
+ '/usr/lib/librtpkcs11ecp.so;0'
 ```
 
 This configuration directs OpenVPN to use the cryptographic operations on your hardware token rather than software-based keys.
@@ -84,7 +84,7 @@ WireGuard's simplicity extends to hardware token integration. The private key ca
 ```bash
 # Generate key on hardware token (YubiKey 5)
 ykman openpgp keys import --encrypted-recovery-key \
-  --key-type rsa4096 private-key.pem
+ --key-type rsa4096 private-key.pem
 
 # Configure WireGuard to use external key
 [Interface]
