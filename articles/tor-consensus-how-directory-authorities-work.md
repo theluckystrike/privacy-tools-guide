@@ -326,3 +326,7 @@ Understanding past problems helps operators maintain integrity:
 - **2022 - Authority Availability**: Extended downtime of one authority reduced signature count. Network degraded gracefully
 
 The consensus mechanism's redundancy and cryptography have held against sustained attacks for 17+ years.
+<<<<<<< HEAD
+{% endraw %}
+=======
+>>>>>>> 7dfbe9776ee6982b14a443661ed2437ee3b7771c

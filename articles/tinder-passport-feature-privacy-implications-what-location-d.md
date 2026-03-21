@@ -435,3 +435,7 @@ Instead of Passport, interact only on secure platforms where location remains pr
 - Physical burner phone
 - Account created in safe jurisdiction
 - Assume all location data compromised
+<<<<<<< HEAD
+{% endraw %}
+=======
+>>>>>>> 7dfbe9776ee6982b14a443661ed2437ee3b7771c

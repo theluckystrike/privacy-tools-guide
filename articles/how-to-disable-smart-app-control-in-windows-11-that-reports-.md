@@ -393,3 +393,7 @@ Create a decision matrix for your organization:
 | Privacy-sensitive org | Unacceptable | Required |
 
 Your choice depends on your threat model versus privacy requirements.
+<<<<<<< HEAD
+{% endraw %}
+=======
+>>>>>>> 7dfbe9776ee6982b14a443661ed2437ee3b7771c
