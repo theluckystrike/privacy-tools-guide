@@ -172,6 +172,171 @@ Use this checklist when configuring a new HIPAA compliant device:
 9. **Test audit logging** to ensure events capture correctly
 10. **Establish a regular review schedule** for ongoing compliance
 
+## Common HIPAA Violations and How to Prevent Them
+
+Real-world HIPAA breaches often stem from preventable mistakes:
+
+**Unsecured messaging**: Using unencrypted SMS or email for patient communication. **Prevention**: Use only HIPAA-compliant messaging apps (Signal with BAA, or dedicated healthcare platforms) and disable iMessage/email notifications on lock screen.
+
+**Unencrypted screen content**: Patient information visible on device screen in public. **Prevention**: Enable auto-lock (5 minutes max), disable lock screen notifications, use privacy screen protectors for clinical settings.
+
+**Shared devices**: Multiple practitioners using one device without proper isolation. **Prevention**: Each practitioner gets a dedicated device enrolled in MDM with unique credentials. Never share devices.
+
+**Unvetted applications**: Installing convenience apps that may exfiltrate PHI. **Prevention**: Only install apps with written Business Associate Agreements. Pre-approve all apps through your practice's information security officer.
+
+**Unencrypted backups**: Cloud backups of healthcare data without encryption. **Prevention**: Disable cloud backup services (iCloud backup, Google backup) entirely. Use only on-device encrypted storage or encrypted enterprise backups.
+
+## Network Security for Mobile Healthcare Workflows
+
+Mobile devices frequently connect to untrusted networks. Implement network security controls:
+
+```json
+{
+  "vpn_policy": {
+    "require_vpn_for_healthcare_apps": true,
+    "vpn_protocols": ["WireGuard", "IKEv2"],
+    "block_unsecured_networks": true,
+    "enforce_for_all_data": true
+  },
+  "wifi_security": {
+    "require_wpa3": "preferred",
+    "block_open_networks": true,
+    "disable_auto_connect": true,
+    "dns_over_https": true
+  },
+  "cellular_settings": {
+    "prefer_cellular_over_wifi": "for healthcare apps",
+    "disable_bluetooth_when_not_in_use": true,
+    "disable_nfc": true
+  }
+}
+```
+
+For practitioners working in patient homes or clinics with public WiFi, a device-wide VPN is mandatory—not optional.
+
+## Handling Lost or Stolen Devices
+
+If a device containing patient data is lost or stolen:
+
+```bash
+#!/bin/bash
+# Incident response checklist
+
+# 1. Immediate notification (within 24 hours)
+# - Notify practice management
+# - Contact device MDM provider
+# - Initiate remote wipe
+
+mdm_remote_wipe "device-serial-number"
+
+# 2. Notify affected patients
+# - Determine which patients' data was on device
+# - Send notification letter within 30 days
+# - Document notification in compliance file
+
+# 3. Update breach log
+breach_log_entry=$(cat <<EOF
+{
+  "date": "$(date -u +%Y-%m-%d)",
+  "device": "iPhone Pro Max - Practitioner ID",
+  "patients_affected": 0,
+  "data_types": "Potential: Patient notes, contact info",
+  "response": "Remote wipe initiated",
+  "notification_sent": false,
+  "risk_assessment": "Low due to encryption"
+}
+EOF
+)
+
+echo "$breach_log_entry" >> compliance/breach_log.json
+
+# 4. Follow up and document
+# - Verify remote wipe completed
+# - Check MDM logs for unauthorized access attempts
+# - Interview practitioner about device usage
+```
+
+Documentation of your response is as important as the response itself for regulatory compliance.
+
+## Biometric Authentication for Healthcare Apps
+
+Implement biometric authentication beyond just device unlock:
+
+```xml
+<!-- Android Enterprise Biometric Policy -->
+<biometric_policy>
+  <requirement>
+    <allow_biometric>true</allow_biometric>
+    <require_confidence_level>strong</require_confidence_level>
+    <allow_fallback_passcode>false</allow_fallback_passcode>
+  </requirement>
+  <healthcare_app_specific>
+    <require_reauthentication_interval>15_minutes</require_reauthentication_interval>
+    <disable_biometric_in_public>true</disable_biometric_in_public>
+  </healthcare_app_specific>
+</biometric_policy>
+```
+
+Force re-authentication for sensitive operations—viewing patient records, sending prescriptions, or accessing PHI databases—even if the device is unlocked.
+
+## Annual HIPAA Compliance Training and Audits
+
+Regulatory compliance requires documented training and regular audits:
+
+```bash
+# Annual audit checklist
+
+# 1. Device inventory audit
+mdm_list_all_devices > device_inventory_$(date +%Y-%m-%d).json
+
+# 2. Policy compliance verification
+# - Verify all devices have encryption enabled
+# - Confirm all apps have BAA documentation
+# - Check that remote wipe is enabled and tested
+
+# 3. Threat assessment
+# - Review MDM breach logs for unauthorized access
+# - Check for jailbroken or rooted devices
+# - Verify no unmanaged apps were installed
+
+# 4. Staff training verification
+# - Document that all staff completed HIPAA training
+# - Confirm device security training was provided
+# - Test staff knowledge (random audit interviews)
+
+# 5. Incident review
+# - Document any near-misses or incidents
+# - Analyze root causes
+# - Update policies to prevent recurrence
+```
+
+Schedule annual compliance audits and maintain documentation of all activities for regulatory review.
+
+## Multi-Tenant Security for Group Practices
+
+If multiple practitioners share practice infrastructure:
+
+```json
+{
+  "segregation": {
+    "each_practitioner_device": "separate, dedicated",
+    "shared_infrastructure": "separate from mobile devices",
+    "data_access_controls": {
+      "practitioner_a": ["patients_assigned_to_a"],
+      "practitioner_b": ["patients_assigned_to_b"],
+      "enforce_at_app_level": true
+    }
+  },
+  "audit_logging": {
+    "track_all_access": "who accessed which patients",
+    "log_retention": "minimum 6 years",
+    "monthly_review": "verify no unauthorized access"
+  }
+}
+```
+
+Implement role-based access control at both the device level (MDM) and application level (healthcare app configurations).
+
 
 ## Related Articles
 
