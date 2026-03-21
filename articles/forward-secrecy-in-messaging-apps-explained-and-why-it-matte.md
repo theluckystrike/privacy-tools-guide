@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /forward-secrecy-in-messaging-apps-explained-and-why-it-matters/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

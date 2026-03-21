@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /firefox-privacy-add-ons-essential-list-2026/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
