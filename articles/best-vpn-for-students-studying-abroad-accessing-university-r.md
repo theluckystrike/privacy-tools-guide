@@ -402,4 +402,4 @@ course materials while traveling in [country]. Is this permitted?"
 ```
 
 Getting explicit approval prevents misunderstandings later.
-
+{% endraw %}

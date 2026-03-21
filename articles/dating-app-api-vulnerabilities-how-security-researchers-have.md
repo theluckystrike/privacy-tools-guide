@@ -448,4 +448,4 @@ Many dating apps now offer bug bounty programs:
 - HackerOne: Tinder, Bumble, Match Group
 - Bugcrowd: Various platforms
 - Direct programs: Check individual app websites
-
+{% endraw %}

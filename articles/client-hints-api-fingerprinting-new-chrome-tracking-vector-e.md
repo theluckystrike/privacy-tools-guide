@@ -449,4 +449,4 @@ All these APIs face similar concerns: they provide tracking capabilities without
 | Journalist/Activist | Tor Browser | Already hardened |
 
 For maximum protection, Tor Browser standardizes all Client Hints to identical values, eliminating fingerprinting differences.
-
+{% endraw %}

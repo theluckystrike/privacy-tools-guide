@@ -440,4 +440,4 @@ For small communities (under 100 users), Discord is cheaper. For large communiti
 - Server compromised → you can restore from backup
 - Full audit trail available → trace attacker's actions
 - Ability to fork/migrate if homeserver is compromised
-
+{% endraw %}
