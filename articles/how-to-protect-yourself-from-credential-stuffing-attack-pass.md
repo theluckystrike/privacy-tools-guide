@@ -164,6 +164,240 @@ Security requires layering multiple defenses. No single measure provides complet
 
 Start by auditing your password habits today. Ensure every important account uses a unique password stored in a manager, enable MFA on all services that support it, and check HaveIBeenPwned to identify compromised accounts. If you develop applications, implement the protections outlined above to safeguard your users from credential stuffing attacks.
 
+## Advanced Threat Modeling for Credential Stuffing
+
+Developers and users should understand the broader threat landscape:
+
+### Attack Sophistication Levels
+
+**Script Kiddie Level**: Uses pre-built tools, no customization. High detection rates, minimal success.
+
+**Professional Syndicates**: Sophisticated proxy rotation, custom botnet infrastructure, carrier phase evasion. Success rates 0.5-2% per site.
+
+**Nation-State Actors**: Government-level resources. May target specific individuals rather than bulk attacks.
+
+### Credential Stuffing Economics
+
+Understanding attacker economics reveals why defenses matter:
+
+```
+Cost to attacker:
+- Credential database: $100-$5,000 (varies by size)
+- Proxy service: $20-$100/month
+- CAPTCHA bypass: $0.50-$2.00 per bypass
+- Computing resources: Negligible (cloud-based)
+
+Revenue if 0.1% success on 10 million targets:
+- 10,000 compromised accounts
+- Average account value: $50-$500 (credentials, personal data)
+- Expected revenue: $500,000-$5,000,000
+
+ROI: Extremely favorable for attackers
+```
+
+This is why credential stuffing remains endemic—the economics are overwhelmingly favorable.
+
+## Zero-Knowledge Proof Authentication
+
+The future of authentication uses cryptographic proofs instead of passwords:
+
+```python
+# Zero-knowledge password proof concept
+# User proves knowledge of password without revealing it
+
+from zksnark_library import ZKProof
+
+class ZKPasswordAuth:
+    def __init__(self, password):
+        self.password_hash = hash(password)
+        self.proof_key = generate_random()
+
+    def create_authentication_proof(self, challenge):
+        # Create proof that you know the password
+        # Without revealing the password
+        proof = ZKProof.create(
+            statement=f"I know password P such that hash(P) = {self.password_hash}",
+            witness=self.password,
+            challenge=challenge
+        )
+        return proof
+
+    def verify_proof(proof, stored_hash, challenge):
+        # Verify proof without ever seeing password
+        return ZKProof.verify(proof, challenge)
+```
+
+## Hardware-Based Authentication Security
+
+For highest security, use hardware authenticators:
+
+```bash
+# YubiKey: Hardware security key
+# Setup FIDO2 authentication
+
+# Test FIDO2 support
+curl https://webauthn.me
+
+# Common hardware authenticators:
+# - YubiKey 5 Series ($45-$80)
+# - Google Titan ($30-$50)
+# - Ledger Nano S ($60)
+# - SoloKey ($50, open-source)
+```
+
+Hardware keys are phishing-resistant because authentication is tied to specific domain names cryptographically.
+
+## Behavioral Biometrics Implementation
+
+Advanced applications use behavioral analysis for continuous authentication:
+
+```javascript
+// Behavioral biometrics - passive authentication
+class BehavioralBiometrics {
+    constructor() {
+        this.mouse_data = [];
+        this.typing_data = [];
+        this.touch_data = [];
+    }
+
+    capture_mouse_movement(event) {
+        // Track speed, acceleration, path patterns
+        this.mouse_data.push({
+            timestamp: event.timeStamp,
+            x: event.clientX,
+            y: event.clientY,
+            velocity: this.calculate_velocity()
+        });
+    }
+
+    capture_typing_rhythm(event) {
+        // Track key press timing patterns (digraph timing)
+        this.typing_data.push({
+            key: event.key,
+            hold_time: this.measure_hold_duration(),
+            interval_to_next: null
+        });
+    }
+
+    calculate_confidence_score() {
+        // ML model scores likelihood this is legitimate user
+        const features = this.extract_features();
+        return ml_model.predict(features);
+    }
+}
+
+// Continuous monitoring during session
+document.addEventListener('mousemove',
+    e => biometrics.capture_mouse_movement(e)
+);
+document.addEventListener('keydown',
+    e => biometrics.capture_typing_rhythm(e)
+);
+```
+
+## Geographic Velocity Analysis
+
+Detecting impossible travel patterns:
+
+```python
+def detect_impossible_travel(login_events):
+    """
+    Flag logins from geographically impossible locations
+    (e.g., user in New York 10 minutes after login in Tokyo)
+    """
+    for i in range(len(login_events) - 1):
+        current = login_events[i]
+        next_login = login_events[i+1]
+
+        time_delta = next_login['timestamp'] - current['timestamp']
+        distance = haversine_distance(
+            current['location'],
+            next_login['location']
+        )
+
+        # Maximum realistic travel speed (jet, ~900 mph = 0.25 miles/second)
+        max_distance_possible = (time_delta / 3600) * 900 * 1.609  # km
+
+        if distance > max_distance_possible:
+            return {
+                'alert': 'IMPOSSIBLE_TRAVEL',
+                'distance_km': distance,
+                'time_hours': time_delta / 3600,
+                'risk_score': 0.95
+            }
+```
+
+## Credential Rotation Strategies
+
+Organizations should implement regular credential rotation:
+
+```bash
+#!/bin/bash
+# Automated credential rotation script
+
+ROTATION_INTERVAL_DAYS=90
+PASSWORD_MANAGER_API="https://password-manager.example.com"
+
+rotate_password() {
+    service=$1
+    old_password=$(get_stored_password "$service")
+
+    # Generate new password
+    new_password=$(openssl rand -base64 32)
+
+    # Update password at service
+    update_service_password "$service" "$old_password" "$new_password"
+
+    # Update password manager
+    curl -X POST "$PASSWORD_MANAGER_API/rotate" \
+        -H "Authorization: Bearer $TOKEN" \
+        -d "{\"service\": \"$service\", \"password\": \"$new_password\"}"
+}
+
+# Find accounts needing rotation
+for account in $(list_accounts); do
+    last_rotated=$(get_last_rotation_date "$account")
+    days_since=$(($(date +%s) - last_rotated)) / 86400)
+
+    if [ $days_since -gt $ROTATION_INTERVAL_DAYS ]; then
+        rotate_password "$account"
+    fi
+done
+```
+
+## Account Linkage Detection
+
+Identify when multiple breaches expose the same person:
+
+```python
+# Cross-breach analysis
+breaches = [
+    {'email': 'user@example.com', 'breach': 'LinkedIn'},
+    {'email': 'user.name@example.com', 'breach': 'Equifax'},
+    {'phone': '+1-555-0123', 'breach': 'T-Mobile'}
+]
+
+def find_linked_accounts(breaches):
+    """
+    Group breaches belonging to same individual
+    Uses email patterns, phone numbers, recovery info
+    """
+    linked_groups = []
+
+    for breach1 in breaches:
+        for breach2 in breaches:
+            if is_same_person(breach1, breach2):
+                linked_groups.append((breach1, breach2))
+
+    return linked_groups
+
+def is_same_person(breach1, breach2):
+    # Match email variations
+    # Match phone numbers
+    # Match recovery emails
+    # Match security answers
+    pass
+```
 
 ## Related Reading
 
