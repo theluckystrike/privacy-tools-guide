@@ -9,7 +9,7 @@ permalink: /openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/
 categories: [guides]
 tags: [privacy-tools-guide, tools, comparison, security, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -9,7 +9,7 @@ permalink: /nym-mixnet-vs-tor-comparison-explained/
 categories: [guides]
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 tags: [privacy-tools-guide, comparison]
 ---
