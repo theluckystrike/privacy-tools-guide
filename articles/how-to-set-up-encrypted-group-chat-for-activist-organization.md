@@ -244,6 +244,128 @@ Where you host your Synapse server matters as much as how you configure it. Cons
 
 For most organizations, a VPS from a provider with a no-logs policy, encrypted storage, and a history of resisting government requests is sufficient. Run your Synapse instance with full-disk encryption enabled at the OS level, and ensure the decryption key is not stored on the server itself — this prevents offline analysis of seized disks.
 
+## Comparing Communication Needs Across Org Types
+
+Different activist contexts require different communication infrastructure:
+
+**Local protest coordination**: Needs fast, ephemeral, peer-to-peer communication. Signal groups or Briar work better than self-hosted infrastructure. Assume phones may be seized, so minimize message history. Enable disappearing messages on 1-hour timers.
+
+**International human rights documentation**: Requires reliable, archivable communication with long history. Matrix self-hosted with persistent storage makes sense. Coordinate with international partners who may use less secure systems—focus on preventing internal compromise rather than protecting against foreign governments.
+
+**Decentralized autonomous networks**: Participants separated geographically with minimal trust between subgroups. Briar's peer-to-peer mesh becomes attractive since no single server represents a single point of failure or legal jurisdiction problem.
+
+**Advocacy organization with public-facing work**: Mix of public (website, social media) and private (board communications, sensitive campaigns) channels. Use Matrix for internal communications, separate Signal groups for time-sensitive operational coordination.
+
+## Disaster Recovery: When Infrastructure Fails
+
+Your communications system will eventually fail. Be prepared:
+
+**Scenario 1: Server seized**
+- Impact: All encrypted messages still encrypted (attacker only gets ciphertext)
+- Impact: Member list exposed (unless you didn't store it)
+- Recovery: Migrate members to new server within 4 hours, reset all encryption keys
+- Prevention: Keep member list encrypted. Backup member roster separately from server.
+
+**Scenario 2: Hosting provider terminates service**
+- Impact: Server goes offline, members lose access
+- Recovery: Migrate to backup hosting provider within 2 hours
+- Prevention: Keep backup VPS account at different provider, pre-configured with replica of your server
+
+**Scenario 3: Ransomware infection**
+- Impact: Database encrypted, all messages inaccessible even to members
+- Recovery: Restore from clean backup
+- Prevention: Keep offline backups not connected to live server. Test restore procedures quarterly.
+
+**Scenario 4: Losing admin credentials**
+- Impact: No one can manage the server, add members, reset permissions
+- Recovery: Boot into recovery mode, reset admin passwords
+- Prevention: Document recovery procedures. Store in encrypted form with trusted contact outside organization.
+
+Run at least one disaster recovery drill annually. Test server migration to a backup provider. Test member communication during service downtime. Each drill reveals gaps in your documented procedures.
+
+## Advanced: Using Matrix for Sensitive Operations
+
+For organizations coordinating across multiple locations or time zones with high-security needs:
+
+**Room-level access control**: Create separate Matrix rooms by operational need:
+- `#general` - broadcast announcements, open to all
+- `#coordinating-committee` - strategic decisions, 5 people
+- `#operations-wednesday-march-22` - time-limited room for specific action, expires/archives after operation
+- `#evidence-secure` - documentation of human rights violations, restricted access, permanent archive
+
+```yaml
+# Advanced room config for secure operations room
+m.room.encryption:
+  algorithm: m.megolm.v1.aes-sha2
+  rotation_period_ms: 604800000  # Weekly rotation
+  rotation_period_msgs: 100
+
+# Visibility settings
+m.room.visibility:
+  type: private
+
+# Access control
+join_rule: invite
+history_visibility: members
+
+# Audit trail
+audit_log: enabled  # Track who accessed room
+audit_retention: 90  # Keep audit logs 90 days
+```
+
+**Time-limited operations rooms**: Create rooms for specific operations that self-delete after the operation concludes. This prevents the room becoming a permanent archive of sensitive tactical information if the server is later compromised.
+
+```python
+# Create ephemeral operation room
+import requests
+
+def create_operation_room(matrix_server, access_token, operation_name, duration_days=7):
+    room_body = {
+        "name": f"OP_{operation_name}_{date_today}",
+        "visibility": "private",
+        "join_rule": "invite",
+        "encryption": "enabled",
+        "retention": {
+            "max_lifetime_ms": duration_days * 24 * 60 * 60 * 1000
+        }
+    }
+
+    response = requests.post(
+        f"{matrix_server}/_matrix/client/r0/createRoom",
+        json=room_body,
+        headers={"Authorization": f"Bearer {access_token}"}
+    )
+    return response.json()
+
+# Room automatically deletes after 7 days
+```
+
+## Monitoring for Compromise Indicators
+
+Even encrypted infrastructure can be compromised. Watch for these warning signs:
+
+- Unexpected new members in rooms (someone added accounts they shouldn't have access to)
+- Messages appearing to come from known members but with unusual content/timing
+- Sudden server performance degradation (indicator of resource-intensive surveillance tool running)
+- Members reporting unusual phone behavior or location tracking despite using your secure system
+- Law enforcement action targeting organization members despite encrypted communications (indicates intelligence source within organization)
+
+If compromise is suspected, treat it as urgent. Initiate immediate credential rotation, alert all members, consider server migration. Document the incident for post-action analysis.
+
+## Scaling: Beyond 50 People
+
+As your organization grows, communication becomes more complex. Some guidance:
+
+**Split into geographic or functional subgroups**: Don't have all 200 members in single chat room. Create subgroups, use higher-level coordination rooms sparingly.
+
+**Implement role-based access**: Not everyone needs access to everything. Coordinating committee has different room access than general members.
+
+**Introduce formal quorum/decision procedures**: With 200 asynchronous voices, clear decision-making procedures prevent endless discussion.
+
+**Separate operational and strategic communication**: Real-time tactical coordination uses one system, strategic planning uses different channel with asynchronous discussion.
+
+**Regular audit of access**: As org grows, review who has access to what rooms. Remove departed members immediately.
+
 
 ## Related Articles
 

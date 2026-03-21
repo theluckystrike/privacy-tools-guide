@@ -171,6 +171,315 @@ Get-ItemProperty -Path $key | Select-Object TelemetryLevel, DisablePersonalizedR
 
 Additionally, monitor network traffic using tools like Wireshark or Windows Performance Monitor to confirm no unexpected connections to Microsoft servers occur during idle periods.
 
+## Windows 11/10 Registry Deep Dive
+
+Beyond the primary settings, OneDrive configurations lurk throughout the Windows registry. A complete privacy audit requires checking multiple locations:
+
+```powershell
+# Complete registry audit for OneDrive
+
+# Primary OneDrive settings
+Get-Item "HKCU:\Software\Microsoft\OneDrive" | Select-Object -ExpandProperty Property
+
+# Sync engine settings
+Get-Item "HKCU:\Software\Microsoft\OneDrive\SyncEngine" | Select-Object -ExpandProperty Property
+
+# Accounts and multi-account configurations
+Get-Item "HKCU:\Software\Microsoft\OneDrive\Accounts" | Get-ChildItem
+
+# File association settings (OneDrive integration)
+Get-Item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts" | Get-ChildItem
+
+# Shell integration (right-click menus)
+Get-Item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\ContextMenuHandlers" | Get-ChildItem
+
+# Recent files list (exposes sync activity)
+Get-Item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Recent" | Select-Object -ExpandProperty Property | Where-Object { $_ -match "OneDrive" }
+```
+
+**Key findings**:
+- `SyncEngine\Settings\ExcludedFileExtensions`: Files never synced (read-only unless modified)
+- `TelemetryLevel`: Telemetry intensity (1=basic, 2=enhanced, 3=full)
+- `DisablePersonalizedRecommendations`: Recommendations based on your usage data
+- `ClientPolicy`: Corporate policy enforcement (if Intune-managed)
+
+## Detecting Intune Management Constraints
+
+Organizations using Intune to manage devices often lock down OneDrive settings to enforce compliance. Check your status:
+
+```powershell
+# Check Intune enrollment status
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Enrollment" | Select-Object -ExpandProperty *
+
+# Check applied Intune policies
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\EnterpriseResourceManager\Tracked" | Select-Object -ExpandProperty *
+
+# View enforced OneDrive policies
+Get-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\OneDrive" | Select-Object -ExpandProperty *
+```
+
+If your device is Intune-managed, your administrator can:
+- Force OneDrive auto-sync
+- Lock sync folder location
+- Prevent access to shared content
+- Mandate encryption
+
+These policies override user settings. You may not be able to disable OneDrive completely without unenrolling from Intune (which requires admin action).
+
+## OneDrive Diagnostic Collection
+
+Microsoft collects diagnostic data through OneDrive that goes beyond typical telemetry:
+
+```powershell
+# View diagnostic settings
+Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack"
+
+# Diagnostic settings levels:
+# 0 = Diagnostic data off (requires group policy to enforce)
+# 1 = Basic diagnostic data
+# 2 = Enhanced diagnostic data (default)
+# 3 = Full diagnostic data
+
+# Change diagnostic level
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack" -Name "DiagTrackAutorizationLevel" -Value 1
+```
+
+Even with telemetry "off," OneDrive still sends:
+- Sync errors and performance metrics
+- Storage quota usage
+- Feature adoption statistics
+- Crash reports
+
+True opt-out requires disabling the diagnostic tracking service itself:
+
+```powershell
+# Disable Connected User Experiences and Telemetry service
+Stop-Service -Name DiagTrack -Force
+Disable-NetFirewallRule -DisplayName "*DiagTrack*"
+Set-Service -Name DiagTrack -StartupType Disabled
+
+# However, this service restarts on Windows updates
+# For permanent disabling, use Group Policy (see below)
+```
+
+## Group Policy Configuration for Enterprise Lockdown
+
+For organizations, Group Policy provides centralized control:
+
+```powershell
+# Edit local group policy (Home editions don't support this)
+# Run: gpedit.msc
+
+# Navigate to:
+# Computer Configuration → Administrative Templates → Windows Components → OneDrive
+
+# Policies available:
+# - "Restrict OneDrive usage to organization"
+# - "Prevent users from changing the local sync root folder location"
+# - "Set the default location for OneDrive shared libraries"
+# - "Prevent users from redirecting personal folders to OneDrive"
+
+# For Home editions, use registry equivalent:
+$policies = @{
+    "DisableSyncOnCellular" = 1
+    "DisableTailoredExperiences" = 1
+    "DisableGeolocation" = 1
+}
+
+foreach ($key in $policies.Keys) {
+    Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\OneDrive" -Name $key -Value $policies[$key]
+}
+```
+
+## Third-Party OneDrive Blocking and Alternatives
+
+For users wanting to completely bypass OneDrive, alternatives exist:
+
+```bash
+# Completely uninstall OneDrive (requires admin)
+taskkill /f /im onedrive.exe
+"C:\Windows\System32\OneDriveSetup.exe" /uninstall
+
+# Remove OneDrive from startup
+reg delete "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f
+
+# Remove OneDrive from File Explorer sidebar
+reg delete "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f
+```
+
+**Alternatives to OneDrive**:
+
+1. **Syncthing** — Peer-to-peer, no central server, fully private
+2. **Nextcloud** — Self-hosted, full control over encryption
+3. **MEGA** — Zero-knowledge encryption (though centralized)
+4. **Proton Drive** — Privacy-focused, end-to-end encrypted
+5. **Local storage + external backup** — No cloud, maximum privacy
+
+## Monitoring OneDrive Network Activity
+
+Track exactly what OneDrive sends to Microsoft:
+
+```powershell
+# Use built-in Windows tools
+# 1. Launch Network Monitor (Wireshark alternative)
+# 2. Filter for OneDrive traffic
+
+# Or use PowerShell network monitoring:
+Get-NetTCPConnection | Where-Object { $_.OwningProcess -eq (Get-Process OneDrive).ID }
+
+# This shows all TCP connections made by OneDrive process
+# IP addresses should resolve to Microsoft-owned ASNs (AS8075, AS14061)
+
+# Check DNS queries
+Get-DnsClientQueryStatistics | Where-Object { $_.QueryType -eq "A" -and $_.Name -like "*onedrive*" }
+
+# Analyze with Fiddler (proxy intercepts HTTPS traffic)
+# Warning: Requires installing Fiddler's HTTPS certificate
+```
+
+**Expected OneDrive connections**:
+- onedrive.live.com (authentication)
+- onedrive.com (sync service)
+- microsoft.akamaized.net (content delivery)
+- vortex.data.microsoft.com (telemetry)
+- aria.microsoft.com (activity tracking)
+
+**Unexpected connections**:
+- Ad networks (doubleclick, adroll, etc.) — indicates tracking
+- Analytics services (segment, mixpanel) — user behavior tracking
+- Third-party domains — possible data sharing
+
+## File Sharing and Permission Leakage
+
+OneDrive sharing creates extensive metadata about file permissions and sharing:
+
+```powershell
+# Query shared files and their permissions
+Get-ItemProperty -Path "HKCU:\Software\Microsoft\OneDrive\Accounts\Personal\SyncMetadata" | Select-Object -ExpandProperty *
+
+# Files with permissions stored locally include:
+# - Share recipients
+# - Permission levels (edit/view)
+# - Sharing date
+# - Expiration dates
+
+# Clear sharing metadata after unsharing
+# (Metadata persists even after unsharing)
+Remove-ItemProperty -Path "HKCU:\Software\Microsoft\OneDrive\Accounts\Personal\SyncMetadata" -Name "*Share*" -Force
+```
+
+To prevent permission leakage:
+1. Share through link rather than direct recipient invites (prevents recipient list exposure)
+2. Use expiring links (require periodic renewal)
+3. Unshare immediately after task completes
+4. Monitor who has access through Account → Manage access
+
+## CloudSync vs OneDrive Sync Behavior
+
+Windows 11 introduced "CloudSync" — a different sync mechanism than traditional OneDrive:
+
+```powershell
+# Check if CloudSync is active
+Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CloudSync"
+
+# CloudSync syncs:
+# - Desktop files
+# - Documents folder
+# - Pictures folder
+# - OneDrive content
+
+# Even if you disable OneDrive specifically, CloudSync may re-sync content
+# Disable CloudSync for complete control:
+
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CloudSync" -Name "CloudSyncDisabled" -Value 1
+
+# Restart Windows Explorer
+Stop-Process -Name explorer -Force
+Start-Process explorer
+```
+
+## Encryption Key Management for Sensitive Files
+
+For files stored in OneDrive that contain sensitive data, layer encryption:
+
+```powershell
+# Use BitLocker to encrypt OneDrive folder
+Enable-BitLocker -MountPoint $env:OneDriveCommercial -EncryptionMethod XtsAes256 -UsedSpaceOnly
+
+# Or use VeraCrypt for file-level encryption
+# VeraCrypt container before syncing to OneDrive
+
+# PowerShell script to encrypt files before sync:
+function Encrypt-ForOneDrive {
+    param($FilePath)
+
+    # Encrypt with AES-256 (built-in)
+    $cipher = New-Object System.Security.Cryptography.AesCryptoServiceProvider
+    $cipher.KeySize = 256
+    $cipher.GenerateKey()
+    $cipher.GenerateIV()
+
+    # File encryption code...
+    Write-Host "Encrypted $FilePath with AES-256"
+    Write-Host "Key: $([System.Convert]::ToBase64String($cipher.Key))" # Store safely!
+}
+
+# Only sync encrypted containers, never plaintext
+```
+
+## Post-Sync Cleanup and Activity Hiding
+
+After sensitive syncing, clean OneDrive activity logs:
+
+```powershell
+# Clear OneDrive activity history
+# Navigate to: OneDrive Settings → Version history → Delete all versions
+
+# PowerShell automation:
+$versionDays = 0  # Delete all versions
+Remove-Item -Path "$env:OneDriveCommercial\*" -Include "~*" -Force -Recurse
+
+# Clear Windows Recent Files list (exposes OneDrive access)
+Remove-Item -Path "$env:APPDATA\Microsoft\Windows\Recent" -Force -Recurse
+
+# Clear Search index (may index OneDrive content)
+$searchPath = "C:\ProgramData\Microsoft\Search\Data\Applications\Windows\GathererCache"
+if (Test-Path $searchPath) {
+    Stop-Service -Name WSearch -Force
+    Remove-Item -Path $searchPath -Force -Recurse
+    Start-Service -Name WSearch
+}
+```
+
+## Verification of Privacy Settings
+
+After applying all above changes, verify the configuration:
+
+```powershell
+# Comprehensive privacy verification script
+
+function Verify-OneDrivePrivacy {
+    $privacyStatus = @{
+        "Telemetry disabled" = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\OneDrive" -Name "TelemetryLevel" -ErrorAction SilentlyContinue).TelemetryLevel -eq 1
+        "Personalization disabled" = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\OneDrive" -Name "DisablePersonalizedRecommendations" -ErrorAction SilentlyContinue).DisablePersonalizedRecommendations -eq 1
+        "Shell integration disabled" = -not (Test-Path "HKCU:\Software\Classes\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}")
+        "CloudSync disabled" = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CloudSync" -Name "CloudSyncDisabled" -ErrorAction SilentlyContinue).CloudSyncDisabled -eq 1
+        "Diagnostics disabled" = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack" -Name "DiagTrackAutorizationLevel" -ErrorAction SilentlyContinue).DiagTrackAutorizationLevel -le 1
+    }
+
+    $privacyStatus.GetEnumerator() | ForEach-Object {
+        $status = if ($_.Value) { "✓ ENABLED" } else { "✗ DISABLED" }
+        Write-Host "$($_.Name): $status"
+    }
+
+    return $privacyStatus
+}
+
+Verify-OneDrivePrivacy
+```
+
+Run this after configuration to confirm all settings applied correctly.
+
 
 ## Related Articles
 
