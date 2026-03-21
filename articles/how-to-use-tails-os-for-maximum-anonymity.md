@@ -8,7 +8,7 @@ permalink: /how-to-use-tails-os-for-maximum-anonymity/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
