@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "CalyxOS Datura Firewall Setup: Controlling Per-App."
+title: "CalyxOS Datura Firewall Setup: Controlling Per-App"
 description: "Learn how to configure the Datura firewall in CalyxOS to control per-app internet access without root. Practical examples for developers and power users"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

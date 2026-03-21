@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cloud Storage Subpoena Risk: Provider Law Enforcement."
+title: "Cloud Storage Subpoena Risk: Provider Law Enforcement"
 description: "When you store data in the cloud, you trust a provider to keep it secure. But that trust has legal boundaries. Law enforcement agencies can compel cloud"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -11,6 +11,7 @@ tags: [privacy-tools-guide, cloud-storage, subpoena, law-enforcement, privacy]
 reviewed: true
 score: 9
 voice-checked: true
+
 ---
 
 {% raw %}

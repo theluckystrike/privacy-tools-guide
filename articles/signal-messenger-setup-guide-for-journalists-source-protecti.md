@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Signal Messenger Setup Guide for Journalists: Source."
+title: "Signal Messenger Setup Guide for Journalists: Source"
 description: "A practical guide to configuring Signal Messenger for journalists who need secure communications with confidential sources. Covers phone number"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
+
 ---
 
 

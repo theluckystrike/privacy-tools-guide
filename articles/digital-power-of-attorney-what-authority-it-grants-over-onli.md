@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Digital Power of Attorney: What Authority It Grants Over."
+title: "Digital Power of Attorney: What Authority It Grants Over"
 description: "A technical breakdown of digital power of attorney and how it applies to cryptocurrency wallets, online accounts, and digital assets. Includes"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

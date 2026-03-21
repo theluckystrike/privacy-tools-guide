@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "C++ Developer Privacy Tools for Detecting Telemetry in."
+title: "C++ Developer Privacy Tools for Detecting Telemetry"
 description: "A comprehensive guide for C++ developers on detecting and controlling telemetry data collection in game engine SDKs. Learn about privacy tools, code."
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 8
 intent-checked: false
 voice-checked: false
 tags: [privacy-tools-guide, c++, game-development, telemetry, sdk, privacy]
+
 ---
 
 {% raw %}

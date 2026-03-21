@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Metadata Removal Tools Comparison 2026: ExifTool vs MAT2."
+title: "Metadata Removal Tools Comparison 2026: ExifTool vs MAT2"
 description: "Compare metadata removal tools—ExifTool, MAT2, ExifCleaner, Metapho, Scrambled Exif. CLI examples, supported formats, automation"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
+
 ---
 {% raw %}
 

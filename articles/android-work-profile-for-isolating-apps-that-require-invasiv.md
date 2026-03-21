@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Android Work Profile for Isolating Apps That Require."
+title: "Android Work Profile for Isolating Apps That Require"
 description: "A practical guide for developers and power users on using Android Work Profile to isolate apps with invasive permissions, enhancing privacy and security"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

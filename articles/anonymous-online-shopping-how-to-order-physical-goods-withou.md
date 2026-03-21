@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Anonymous Online Shopping How To Order Physical Goods."
+title: "Anonymous Online Shopping How To Order Physical Goods"
 description: "Ordering physical goods online typically requires shipping to a real address, which creates a direct link between your purchases and your physical location"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ intent-checked: true
 voice-checked: true
 score: 8
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

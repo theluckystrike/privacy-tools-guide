@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Someone Is Impersonating Me On Social Media Report And."
+title: "Someone Is Impersonating Me On Social Media Report"
 description: "A technical guide for developers and power users on how to report and remove impersonation accounts on social media platforms. Includes API approaches"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ intent-checked: true
 voice-checked: true
 score: 8
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

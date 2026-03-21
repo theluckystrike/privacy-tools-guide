@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure Messaging for Activists Guide 2026: Signal vs."
+title: "Secure Messaging for Activists Guide 2026: Signal vs"
 description: "Guide to secure messaging for activists—Signal, Briar, Session, Cwtch. Threat models, group communication, device seizure prep"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
+
 ---
 {% raw %}
 

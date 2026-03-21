@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Blockchain Analysis Companies Track Your Crypto."
+title: "How Blockchain Analysis Companies Track Your Crypto"
 description: "Chainalysis and Elliptic track cryptocurrency transactions through cluster analysis (linking multiple addresses to single entities), exchange transaction"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -12,6 +12,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

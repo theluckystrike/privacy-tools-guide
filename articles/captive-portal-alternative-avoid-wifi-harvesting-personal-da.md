@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Captive Portal Alternative Avoid WiFi Harvesting."
+title: "Captive Portal Alternative Avoid WiFi Harvesting"
 description: "A technical guide for developers and power users to bypass captive portals without exposing personal data. Learn alternative methods to access WiFi"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

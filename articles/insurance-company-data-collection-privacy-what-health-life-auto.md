@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Insurance Company Data Collection Privacy What Health."
+title: "Insurance Company Data Collection Privacy What Health"
 description: "A technical guide for developers and power users explaining exactly what data insurance companies collect, how they obtain it, and the legal frameworks"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
+
 ---
 
 {% raw %}

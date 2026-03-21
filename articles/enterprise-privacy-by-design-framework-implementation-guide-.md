@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Enterprise Privacy by Design Framework Implementation."
+title: "Enterprise Privacy by Design Framework Implementation"
 description: "A practical implementation guide for developers building privacy-first enterprise applications. Learn framework integration, data minimization"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -11,6 +11,7 @@ tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 voice-checked: true
+
 ---
 
 {% raw %}

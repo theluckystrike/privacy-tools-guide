@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools."
+title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools"
 description: "Step-by-step guide to hardware, networking, OS hardening, and containerized privacy tools on local infrastructure"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
+
 ---
 
 {% raw %}

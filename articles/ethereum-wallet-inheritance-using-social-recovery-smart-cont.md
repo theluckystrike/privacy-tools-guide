@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ethereum Wallet Inheritance: Using Social Recovery Smart."
+title: "Ethereum Wallet Inheritance: Using Social Recovery Smart"
 description: "Learn how to implement Ethereum wallet inheritance using social recovery smart contracts. A technical guide for developers and power users"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 intent-checked: true
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

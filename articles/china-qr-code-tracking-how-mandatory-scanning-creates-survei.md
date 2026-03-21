@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "China Qr Code Tracking How Mandatory Scanning Creates."
+title: "China Qr Code Tracking How Mandatory Scanning Creates"
 description: "A technical guide for developers and power users exploring how mandatory QR code scanning in China creates surveillance trails, tracking"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
+
 ---
 
 {% raw %}

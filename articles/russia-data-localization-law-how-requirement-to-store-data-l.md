@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Russia Data Localization Law: How Requirement to Store."
+title: "Russia Data Localization Law: How Requirement to Store"
 description: "A technical guide for developers and power users exploring Russia's data localization requirements, how they impact privacy, and strategies for protecting user"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
+
 ---
 
 {% raw %}

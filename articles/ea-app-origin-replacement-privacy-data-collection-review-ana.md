@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "EA App Origin Replacement Privacy Data Collection Review."
+title: "EA App Origin Replacement Privacy Data Collection Review"
 description: "A technical analysis of EA app data collection practices, privacy implications, and alternatives for privacy-conscious gamers. Code examples included"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
+
 ---
 
 {% raw %}

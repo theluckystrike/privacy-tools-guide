@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Enterprise Identity Governance Platform for."
+title: "Best Enterprise Identity Governance Platform"
 description: "Managing team access reviews at scale represents one of the most challenging aspects of enterprise security. As organizations grow, the number of applications"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, identity-governance, access-reviews, enterprise-security, best-of]
+
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes."
+title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes"
 description: "A technical comparison of mobile keyboard privacy policies. Learn which keyboards send keystrokes to cloud servers and how to protect your data"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
+
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GrapheneOS vs Stock Pixel: What Google Collects on."
+title: "GrapheneOS vs Stock Pixel: What Google Collects"
 description: "A technical comparison of GrapheneOS and stock Pixel Android for developers and power users. Analyze what Google collects on unmodified Android and how"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -12,6 +12,7 @@ voice-checked: true
 reviewed: true
 score: 8
 tags: [privacy-tools-guide, comparison, privacy]
+
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Passkey User Experience Comparison Across Chrome."
+title: "Passkey User Experience Comparison Across Chrome"
 description: "A comprehensive comparison of passkey authentication user experience across major browsers—Chrome, Safari, Firefox, and Edge—in 2026."
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -20,6 +20,7 @@ reviewed: true
 score: 8
 voice-checked: true
 author: "Privacy Tools Guide"
+
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Data Protection Officer Role Responsibilities When Your."
+title: "Data Protection Officer Role Responsibilities When Your"
 description: "A guide to understanding when your business needs a DPO, their key responsibilities, and how to implement effective data protection"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
+
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure Document Collaboration Alternatives to Google."
+title: "Secure Document Collaboration Alternatives to Google"
 description: "When you need to collaborate on sensitive documents, Google Docs offers convenience but falls short on privacy. Most 'collaborative' document tools store your"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, collaboration]
+
 ---
 
 {% raw %}

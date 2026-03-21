@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Enterprise Privacy Compliance Tool Comparison for GDPR."
+title: "Enterprise Privacy Compliance Tool Comparison for GDPR"
 description: "A practical comparison of enterprise privacy compliance tools for GDPR and CCPA. Includes code examples, API integrations, and implementation guidance"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, gdpr, ccpa, privacy-compliance, enterprise, privacy]
+
 ---
 
 {% raw %}

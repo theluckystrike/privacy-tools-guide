@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Subscription Service Cancellation After Death How."
+title: "Subscription Service Cancellation After Death"
 description: "A technical guide for executors and power users on how to identify, access, and cancel subscription services after someone passes away. Includes"
 date: 2026-03-18
 last_modified_at: 2026-03-18
@@ -12,6 +12,7 @@ categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
 intent-checked: true
+
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Business Email Privacy: How to Set Up Encrypted Email."
+title: "Business Email Privacy: How to Set Up Encrypted Email"
 description: "Email remains the primary communication channel for businesses, yet standard email protocols transmit messages in plaintext. Anyone intercepting traffic"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -12,6 +12,7 @@ voice-checked: true
 reviewed: true
 score: 8
 tags: [privacy-tools-guide, privacy]
+
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure Communication Plan Template for Organizations."
+title: "Secure Communication Plan Template for Organizations"
 description: "Organizations handling sensitive information—whether client data, proprietary code, legal documents, or healthcare records—need more than ad-hoc secure"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
+
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tax Preparer Client Financial Data Privacy IRS."
+title: "Tax Preparer Client Financial Data Privacy IRS"
 description: "A practical technical guide for tax professionals on securing client financial data, meeting IRS requirements, and implementing digital privacy"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -12,6 +12,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
+
 ---
 
 {% raw %}
