@@ -1,0 +1,196 @@
+---
+layout: default
+title: "Signal Desktop Security Best Practices"
+description: "How to harden Signal Desktop on Windows, macOS, and Linux with screen lock, proxy settings, notification privacy, linked device audits, and local database protection"
+date: 2026-03-21
+author: theluckystrike
+permalink: /signal-desktop-security-best-practices/
+categories: [guides, security]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide]
+---
+
+{% raw %}
+
+Signal Desktop is a convenient way to use Signal on a computer, but it introduces security considerations that don't exist on mobile. Your desktop is more likely to be physically accessible to others, shared by multiple users, or compromised through software. Signal's end-to-end encryption protects data in transit — it does not protect the Signal database on your hard drive, notification content visible on your lock screen, or messages readable by anyone who sits down at your unlocked computer.
+
+These settings and practices close those gaps.
+
+## Step 1: Enable Screen Lock in Signal Desktop
+
+Signal Desktop has a built-in screen lock that requires your system password after a period of inactivity. This is separate from your OS screen saver.
+
+Settings → Privacy → Screen Lock:
+- Enable "Screen Lock"
+- Set timeout to 5 minutes or less for sensitive environments
+
+This prevents someone who picks up your unlocked laptop from reading your Signal messages without also knowing your system password.
+
+On Linux, Signal's screen lock uses your system's D-Bus authentication. Ensure your desktop environment's lock screen integration is working:
+
+```bash
+# Test that Signal can invoke the system lock screen
+dbus-send --session --dest=org.freedesktop.ScreenSaver \
+  --type=method_call /ScreenSaver \
+  org.freedesktop.ScreenSaver.Lock
+```
+
+## Step 2: Configure Notification Privacy
+
+By default, Signal Desktop shows message previews in system notifications — this means your message content appears in the notification center even when Signal is locked.
+
+Settings → Notifications:
+- Set "Show" to **"No name or message"** for maximum privacy
+- This means notifications say only "Signal message" with no sender or content preview
+
+On macOS, also check System Settings → Notifications → Signal:
+- Set "Show previews" to "Never"
+- Disable "Show on Lock Screen" if you're in a shared environment
+
+## Step 3: Audit Linked Devices
+
+Every Signal Desktop installation is a "linked device" attached to your phone's Signal account. Anyone who had access to your phone at any point could have linked an additional device — including Signal Desktop installations you no longer use.
+
+On Signal mobile (iOS or Android):
+- Signal Settings → Linked Devices
+- Remove any devices you don't recognize or no longer use
+- Linked device names are set by the device itself, so check by creation date if names are unclear
+
+On Signal Desktop, your device name is visible to you. You can change it:
+Settings → General → Device Name
+
+## Step 4: Protect the Local Signal Database
+
+Signal Desktop stores your message history in a SQLite database on disk, encrypted with a locally-generated key. On macOS and Windows, this key is stored in the OS keychain. On Linux, the key is stored in a configuration file unless you configure a keyring.
+
+**Linux: Configure encrypted keyring**
+
+Without a keyring configured, Signal Desktop on Linux falls back to an unencrypted passphrase for the database key. Fix this:
+
+```bash
+# Install gnome-keyring or kwallet
+sudo apt install gnome-keyring libsecret-1-0
+
+# Ensure your desktop session starts the keyring daemon
+# For GNOME, this is automatic.
+# For other DEs, add to your session startup:
+eval $(gnome-keyring-daemon --start --components=pkcs11,secrets)
+export SSH_AUTH_SOCK
+```
+
+**All platforms: Database location**
+
+Signal Desktop database is stored here:
+
+```
+macOS:   ~/Library/Application Support/Signal/
+Windows: %APPDATA%\Signal\
+Linux:   ~/.config/Signal/
+```
+
+The key file:
+```
+macOS/Windows: Stored in OS keychain
+Linux:         ~/.config/Signal/config.json (contains encrypted key)
+```
+
+The SQLite database file:
+```
+<Signal dir>/sql/db.sqlite
+```
+
+Ensure this directory is on an encrypted drive (FileVault, BitLocker, or LUKS). An unencrypted drive negates Signal Desktop's database encryption entirely.
+
+To check what Signal has stored:
+
+```bash
+# List Signal data directory contents (Linux)
+ls -la ~/.config/Signal/
+ls -la ~/.config/Signal/sql/
+
+# Check database size (approximates stored message history)
+du -sh ~/.config/Signal/sql/db.sqlite
+```
+
+## Step 5: Use Signal Over a Proxy
+
+If your threat model includes network-level surveillance or you're in a country where Signal access is restricted, route Signal Desktop traffic through a proxy or Tor.
+
+Signal Desktop has built-in proxy support:
+Settings → Privacy → Advanced → Use proxy:
+- SOCKS5 proxy: enter your proxy address and port
+
+For Tor integration via Orbot or a local Tor SOCKS proxy:
+
+```
+Proxy type: SOCKS5
+Server: 127.0.0.1
+Port: 9050  (default Tor SOCKS port)
+```
+
+Note: Signal's certificate pinning and sealed sender feature continue to operate through a proxy. The proxy provides network-layer anonymity but does not change Signal's encryption behavior.
+
+## Step 6: Note Permissions and Prevent Data Leaks
+
+**Minimize clipboard exposure**
+
+Signal Desktop can read and write your system clipboard when you copy messages. On shared systems, clipboard managers (common on Windows and some Linux setups) may log everything you copy from Signal.
+
+Check for running clipboard managers:
+```bash
+# Linux
+ps aux | grep -i "clipboard\|clipman\|copyq\|parcellite"
+```
+
+Disable any clipboard history tool if you regularly copy sensitive Signal content.
+
+**Screen sharing**
+
+Signal messages are visible in screenshots and screen shares. When screen sharing in a meeting or remote session:
+- Minimize Signal Desktop
+- Use "Do Not Disturb" mode to suppress incoming notifications
+
+**Memory considerations**
+
+Signal message content exists in plaintext in RAM while Signal is running. On systems with hibernation enabled, RAM contents can be written to disk. For sensitive environments:
+
+```bash
+# Linux: disable hibernation/swap to prevent RAM-to-disk
+sudo swapoff -a
+# Or encrypt swap with LUKS (best practice for encrypted systems)
+```
+
+## Step 7: Keep Signal Desktop Updated
+
+Signal Desktop updates automatically on macOS and Windows through Squirrel. On Linux, the Snap or Flatpak versions also auto-update.
+
+For the Debian/Ubuntu repo installation, update manually:
+
+```bash
+sudo apt update && sudo apt upgrade signal-desktop
+```
+
+Verify you're on the current release: `signal-desktop --version`
+
+Check Signal's release notes for security-relevant changes: https://github.com/signalapp/Signal-Desktop/releases
+
+## Step 8: Disappearing Messages Default
+
+Set a default disappearing message timer for all new conversations so that message history does not accumulate indefinitely:
+
+Settings → Chats → Default Timer for New Chats: 1 week or 1 month
+
+This applies only to new conversations. For existing conversations, open each one and set the timer via the conversation name at the top.
+
+## Related Reading
+
+- [Signal Disappearing Messages Best Practices](/signal-disappearing-messages-best-practices/)
+- [Signal Messenger Setup Guide for Journalists](/signal-messenger-setup-guide-for-journalists-source-protecti/)
+- [How to Verify Signal Safety Numbers](/how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
