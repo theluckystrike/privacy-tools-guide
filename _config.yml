@@ -21,3 +21,4 @@ defaults:
       path: "articles"
     values:
       layout: default
+      image: /privacy-tools-guide/assets/og-default.svg
