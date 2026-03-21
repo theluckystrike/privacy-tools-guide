@@ -450,7 +450,6 @@ recommendations:
 ```
 
 
-
 ## Related Articles
 
 - [What Happens If You Click A Phishing Link On Chrome Steps](/privacy-tools-guide/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)

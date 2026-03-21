@@ -190,7 +190,7 @@ class InsuranceDataConsent:
     def __init__(self, user_id):
         self.user_id = user_id
         self.consents = {}
-    
+
     def grant_consent(self, data_type, scope, expires_at):
         self.consents[data_type] = {
             "granted": True,
@@ -198,7 +198,7 @@ class InsuranceDataConsent:
             "timestamp": datetime.utcnow(),
             "expires_at": expires_at
         }
-    
+
     def revoke_consent(self, data_type):
         if data_type in self.consents:
             self.consents[data_type]["granted"] = False
@@ -219,8 +219,6 @@ For power users concerned about insurance data collection:
 5. **Consider pay-per-mile insurance** if privacy is paramount (though this shares more location data)
 
 Understanding these collection practices helps you make informed decisions about what data you share and how you structure your insurance relationships.
-
-
 
 
 ## Related Articles

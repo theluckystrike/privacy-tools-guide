@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Pay For Vpn Subscription Anonymously Using Cryptocurrency No Email Required"
+title: "Pay For Vpn Subscription Anonymously Using Cryptocurrency"
 description: "A practical guide for developers and power users on paying for VPN subscriptions anonymously using cryptocurrency without requiring email. Covers"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -198,7 +198,6 @@ if [ "$BALANCE" -gt 0.001 ]; then
     bitcoin-cli sendtoaddress "<vpn_provider_address>" 0.001 "" "" true
 fi
 ```
-
 
 
 ## Related Articles

@@ -90,12 +90,12 @@ services:
       POSTGRES_PASSWORD: your_password
     volumes:
       - db-data:/var/lib/postgresql/data
-  
+
   plausible_events_db:
     image: clickhouse/clickhouse-server
     volumes:
       - events-data:/var/lib/clickhouse
-  
+
   plausible:
     image: plausible/plausible:latest
     ports:
@@ -192,8 +192,6 @@ Choose **Fathom** if you want a balance between simplicity and privacy with stra
 All three platforms provide genuine privacy-focused alternatives to Google Analytics. Your specific requirements—budget, technical capacity, compliance needs, and analytical depth—will determine the best fit for your organization.
 
 ---
-
-
 
 
 ## Related Articles

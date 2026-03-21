@@ -184,7 +184,6 @@ user your@gmail.com
 ```
 
 
-
 ## Related Articles
 
 - [Protonmail Vs Gmail Privacy Comparison](/privacy-tools-guide/protonmail-vs-gmail-privacy-comparison/)

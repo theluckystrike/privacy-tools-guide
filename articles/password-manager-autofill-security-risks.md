@@ -141,7 +141,7 @@ function detectHiddenForms() {
   forms.forEach(form => {
     const rect = form.getBoundingClientRect();
     // Check if form is hidden or extremely small
-    if (rect.width < 5 || rect.height < 5 || 
+    if (rect.width < 5 || rect.height < 5 ||
         getComputedStyle(form).display === 'none' ||
         getComputedStyle(form).visibility === 'hidden') {
       hiddenForms.push(form);
@@ -164,9 +164,9 @@ function detectHiddenForms() {
 }
 
 function isOverlapping(rect1, rect2) {
-  return !(rect1.right < rect2.left || 
-           rect1.left > rect2.right || 
-           rect1.bottom < rect2.top || 
+  return !(rect1.right < rect2.left ||
+           rect1.left > rect2.right ||
+           rect1.bottom < rect2.top ||
            rect1.top > rect2.bottom);
 }
 ```
@@ -176,8 +176,8 @@ function isOverlapping(rect1, rect2) {
 Implement strict CSP headers to limit XSS impact:
 
 ```
-Content-Security-Policy: 
-  default-src 'self'; 
+Content-Security-Policy:
+  default-src 'self';
   script-src 'self' https://trusted-cdn.com;
   connect-src 'self' https://your-api.com;
   frame-ancestors 'none';
@@ -189,9 +189,9 @@ For high-security applications, consider requiring manual copy-paste instead of 
 
 ```javascript
 // Disable autocomplete on sensitive fields
-<input 
-  type="password" 
-  name="password" 
+<input
+  type="password"
+  name="password"
   autocomplete="off"
   autocorrect="off"
   autocapitalize="off"
@@ -225,8 +225,6 @@ Most password managers allow disabling autofill for specific websites — disabl
 ## The Path Forward
 
 Autofill requires layered defenses: strict CSP headers, explicit user interaction requirements, regular security audits, and informed user behavior. No single mitigation eliminates the risk entirely, but the combination significantly reduces the likelihood of credential compromise.
-
-
 
 
 ## Related Articles

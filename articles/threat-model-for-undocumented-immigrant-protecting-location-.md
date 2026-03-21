@@ -442,7 +442,6 @@ echo "=== Threat Model Verification Complete ==="
 Run this verification monthly and after any system changes. Adjust your threat model if tests reveal unexpected exposure.
 
 
-
 ## Related Articles
 
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)

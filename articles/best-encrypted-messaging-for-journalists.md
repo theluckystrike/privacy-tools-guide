@@ -440,7 +440,6 @@ validate_communication_network() {
 These technical frameworks enable journalists to make informed security decisions based on their specific threat model and operational requirements.
 
 
-
 ## Related Articles
 
 - [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)

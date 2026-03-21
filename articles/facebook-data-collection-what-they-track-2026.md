@@ -202,8 +202,6 @@ The export process typically takes 30 days and delivers data in JSON or HTML for
 Understanding Facebook's data collection practices helps you make informed choices about platform usage. Review your privacy settings regularly, minimize third-party app connections, and stay aware of how your data contributes to Meta's advertising ecosystem.
 
 
-
-
 ## Related Articles
 
 - [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)

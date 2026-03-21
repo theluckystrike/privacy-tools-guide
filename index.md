@@ -25,6 +25,21 @@ Every guide includes actionable steps, threat model considerations, and honest a
 
 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 1.5rem 0;">
 
+## Topic Guides
+
+Browse articles by topic:
+
+- [VPN Guides](/privacy-tools-guide/topics/vpn-guides/) — WireGuard, OpenVPN, setup, troubleshooting
+- [Password Managers](/privacy-tools-guide/topics/password-managers/) — 1Password, Bitwarden, Dashlane, Keeper
+- [Encrypted Messaging](/privacy-tools-guide/topics/encrypted-messaging/) — Signal, Threema, Wire, WhatsApp privacy
+- [Browser Privacy](/privacy-tools-guide/topics/browser-privacy/) — Tor, Firefox, Brave, anti-fingerprinting
+- [Email Privacy](/privacy-tools-guide/topics/email-privacy/) — ProtonMail, Tutanota, PGP encryption
+- [Network Security](/privacy-tools-guide/topics/network-security/) — firewalls, DNS privacy, SSH hardening
+- [Data Removal Guides](/privacy-tools-guide/topics/data-removal-guides/) — opt-out, people search, identity protection
+- [Privacy for Developers](/privacy-tools-guide/topics/privacy-for-developers/) — encrypted backups, secrets, containers
+
+<hr style="border: none; border-top: 1px solid #e0e0e0; margin: 1.5rem 0;">
+
 ## Recently Published
 
 <div style="display: grid; gap: 0.75rem; margin-bottom: 2rem;">

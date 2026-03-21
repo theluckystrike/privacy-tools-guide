@@ -184,7 +184,6 @@ Consider maintaining password options when:
 - Account recovery simplicity is critical
 
 
-
 ## Related Articles
 
 - [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)

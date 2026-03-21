@@ -160,16 +160,16 @@ class TransferHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(403, "Transfer limit reached")
                 return
             download_count += 1
-        
+
         # Verify hash to ensure file integrity
         self.send_response(200)
         self.send_header('Content-Type', 'application/zip')
         self.send_header('Content-Disposition', f'attachment; filename="{os.path.basename(FILE_PATH)}"')
         self.end_headers()
-        
+
         with open(FILE_PATH, 'rb') as f:
             self.wfile.write(f.read())
-        
+
         print(f"File transferred. Server shutting down.")
         threading.Timer(1, lambda: os._exit(0)).start()
 
@@ -225,7 +225,6 @@ sha256sum largefile.zip > checksums.txt
 **Set expiration on transfers.** When using Onion Share or similar tools, configure automatic link expiration. The recipient should download and verify immediately.
 
 **Consider forward secrecy.** Tools like Signal and similar messaging apps provide automatic forward secrecy—the same file sent through these channels gets new encryption keys for each session. For files, age with ephemeral keys or GPG with proper key management provides similar properties when keys rotate.
-
 
 
 ## Related Articles

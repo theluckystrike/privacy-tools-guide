@@ -97,12 +97,12 @@ def get_temp_mail_address():
     # Using 1secmail API (alternative with similar features)
     domain_response = requests.get('https://www.1secmail.com/api/v1/?action=getDomainList')
     domains = domain_response.json()
-    
+
     # Generate random address
     username = ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
     domain = random.choice(domains)
     email = f"{username}@{domain}"
-    
+
     return email
 
 def check_inbox(email):
@@ -145,17 +145,17 @@ def check_inbox(email):
 // Mailinator public inbox check
 async function checkMailinatorInbox(emailAddress) {
   const [username, domain] = emailAddress.split('@');
-  
+
   const response = await fetch(
     `https://www.mailinator.com/api/v2/domains/${domain}/inboxes/${username}/messages`
   );
-  
+
   if (!response.ok) {
     throw new Error(`Failed to fetch: ${response.status}`);
   }
-  
+
   const messages = await response.json();
-  
+
   // Get full message content
   for (const msg of messages.records) {
     const detailResponse = await fetch(
@@ -164,7 +164,7 @@ async function checkMailinatorInbox(emailAddress) {
     const detail = await detailResponse.json();
     console.log(detail);
   }
-  
+
   return messages;
 }
 ```
@@ -214,7 +214,6 @@ The answer depends entirely on your threat model:
 4. **Verify the service's current status**: Disposable email services frequently change ownership, policies, and availability. Verify before relying on any service for critical workflows.
 
 5. **Consider self-hosted alternatives**: Services like Mailcow, Mailu, or simple Postfix setups provide full control over email handling for advanced use cases.
-
 
 
 ## Related Articles

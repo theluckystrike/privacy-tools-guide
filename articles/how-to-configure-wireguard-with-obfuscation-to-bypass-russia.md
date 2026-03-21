@@ -273,7 +273,6 @@ sudo tail -f /var/log/syslog | grep udp2tcp
 ```
 
 
-
 ## Related Articles
 
 - [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)

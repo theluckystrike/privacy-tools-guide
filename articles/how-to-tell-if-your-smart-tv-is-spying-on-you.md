@@ -221,7 +221,6 @@ Watch for these indicators:
 5. **Ads in menu interfaces**: Free ad-supported models often transmit more data
 
 
-
 ## Related Articles
 
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)

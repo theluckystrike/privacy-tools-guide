@@ -172,7 +172,6 @@ for key_holder in required_signers:
 This API access enables integration with broader estate planning systems and custom workflows.
 
 
-
 ## Related Articles
 
 - [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)

@@ -374,7 +374,6 @@ Document your incident timeline meticulously:
 This documentation protects you legally and helps insurers validate claims.
 
 
-
 ## Related Articles
 
 - [How To Handle Password Manager When Switching Phones Android](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)

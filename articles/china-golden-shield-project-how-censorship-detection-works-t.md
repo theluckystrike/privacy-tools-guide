@@ -46,11 +46,11 @@ def detect_shadowsocks_packet(packet_data):
         rb'\x03\x00',  # Common header pattern
         rb'\x05\x01\x00',  # SOCKS5 greeting
     ]
-    
+
     for pattern in shadowsocks_patterns:
         if pattern in packet_data:
             return True, "Shadowsocks protocol detected"
-    
+
     return False, None
 
 def detect_openvpn_packet(packet_data):
@@ -88,10 +88,10 @@ def resolve_with_fallback(domain):
     try:
         # First attempt - may return poisoned result
         ip = socket.gethostbyname(domain)
-        
+
         # Check if IP is in known blocked ranges
         blocked_ranges = ['104.16.0.0/12', '172.16.0.0/12']
-        
+
         return ip
     except socket.gaierror:
         return None
@@ -126,7 +126,7 @@ def extract_sni_from_tls_packet(packet):
     # TLS handshake type (0x01 = ClientHello)
     # SNI extension type (0x0000)
     # SNI list length and hostname
-    
+
     # The GFW can read this and match against blocklists
     blocked_snis = [
         'google.com',
@@ -136,7 +136,7 @@ def extract_sni_from_tls_packet(packet):
         'youtube.com',
         't.co',
     ]
-    
+
     # If SNI matches blocked list, connection gets terminated
     return sni_matches(sni, blocked_snis)
 ```
@@ -168,7 +168,7 @@ class TrafficAnalyzer:
     def __init__(self):
         self.packet_sizes = []
         self.timing_intervals = []
-    
+
     def analyze_connection(self, packets):
         """
         The GFW analyzes:
@@ -178,21 +178,21 @@ class TrafficAnalyzer:
         - Connection duration
         - Number of concurrent connections
         """
-        
+
         # Tor-like patterns: small fixed-size packets, regular timing
         if self.is_tor_pattern(packets):
             return "BLOCK", "Tor-like traffic detected"
-        
+
         # VPN patterns: large encrypted packets
         if self.is_vpn_pattern(packets):
             return "BLOCK", "VPN protocol detected"
-        
+
         # WireGuard pattern: very small headers
         if self.is_wireguard_pattern(packets):
             return "BLOCK", "WireGuard detected"
-        
+
         return "ALLOW", None
-    
+
     def is_tor_pattern(self, packets):
         """Tor cells are exactly 514 bytes."""
         cell_size = 514
@@ -253,7 +253,6 @@ For developers building applications that need to work in censored environments:
 2. **Meek-like techniques**: Hiding traffic inside legitimate service connections
 3. **Regular protocol rotation**: Changing protocols to avoid blocklists
 4. **Custom TLS fingerprints**: Making traffic appear as common browsers
-
 
 
 ## Related Articles

@@ -84,14 +84,14 @@ const { trace, context } = require('@opentelemetry/api');
 
 function handleRequest(req, res) {
   const tracer = trace.getTracer('my-service');
-  
+
   return tracer.startActiveSpan('http.request', (span) => {
     // Extract trace context from incoming request
     const ctx = context.extract('http.headers', req.headers);
-    
+
     span.setAttribute('http.method', req.method);
     span.setAttribute('http.url', req.url);
-    
+
     try {
       // Process request
       const result = processRequest(req);
@@ -167,14 +167,14 @@ def anonymize_request_data(data):
     """Remove or hash sensitive fields from request data."""
     sensitive_fields = ['email', 'name', 'phone', 'credit_card']
     anonymized = data.copy()
-    
+
     for field in sensitive_fields:
         if field in anonymized:
             # Hash the value instead of storing plain text
             anonymized[field] = hashlib.sha256(
                 anonymized[field].encode()
             ).hexdigest()[:12]
-    
+
     return anonymized
 ```
 
@@ -249,7 +249,6 @@ Start with foundational monitoring before adding complexity:
 3. Phase 3: Build dashboards for different audiences (executives, on-call engineers, developers). Establish runbooks for common incidents.
 
 4. Phase 4: Implement advanced features like anomaly detection, custom business metrics, and automated remediation.
-
 
 
 ## Related Articles

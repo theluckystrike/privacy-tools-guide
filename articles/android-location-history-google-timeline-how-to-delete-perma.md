@@ -67,25 +67,25 @@ from webdriver_manager.chrome import ChromeDriverManager
 def delete_timeline_range(start_date, end_date):
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://timeline.google.com/maps/timeline")
-    
+
     # Note: This requires manual login and CAPTCHA completion
     # Automation of login is not recommended due to TOS
-    
+
     print("After logging in manually, navigate to the date range.")
     print("Press Enter when ready to begin deletion...")
     input()
-    
+
     # Example: Delete entries by finding and clicking delete buttons
     # This is site-specific and may require inspection of current DOM
     delete_buttons = driver.find_elements(By.CSS_SELECTION, "[aria-label*='Delete']")
-    
+
     for button in delete_buttons:
         try:
             button.click()
             time.sleep(0.5) # Rate limiting
         except:
             continue
-    
+
     driver.quit()
 
 if __name__ == "__main__":
@@ -157,18 +157,18 @@ from datetime import datetime
 def analyze_location_history(json_file):
     with open(json_file) as f:
         data = json.load(f)
-    
+
     locations = data.get("locationHistory", [])
-    
+
     date_counts = {}
     for entry in locations:
         timestamp = entry.get("timestamp", 0)
         date = datetime.fromtimestamp(timestamp / 1000).date()
         date_counts[date] = date_counts.get(date, 0) + 1
-    
+
     print(f"Total location points: {len(locations)}")
     print(f"Date range: {min(date_counts)} to {max(date_counts)}")
-    
+
     return date_counts
 
 analyze_location_history("Location History.json")
@@ -204,7 +204,6 @@ Complete deletion faces several challenges:
 - Some deletion requests may take 30-60 days to propagate
 
 For maximum privacy, consider using a separate Google account for Android devices, enabling Location History only when necessary, and regularly auditing activity controls.
-
 
 
 ## Related Articles

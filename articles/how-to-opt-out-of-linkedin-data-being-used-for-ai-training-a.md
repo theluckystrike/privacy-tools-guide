@@ -58,12 +58,12 @@ def check_ai_training_optout(access_token):
         'Authorization': f'Bearer {access_token}',
         'X-Restli-Protocol-Version': '2.0.0'
     }
-    
+
     response = requests.get(
         'https://api.linkedin.com/v2/me',
         headers=headers
     )
-    
+
     if response.status_code == 200:
         profile = response.json()
         # Check for privacy-related flags
@@ -105,26 +105,26 @@ def download_linkedin_data(email, password):
     """Automated data download request"""
     driver = webdriver.Chrome()
     driver.get('https://www.linkedin.com/login')
-    
+
     # Login process
     driver.find_element(By.ID, 'username').send_keys(email)
     driver.find_element(By.ID, 'password').send_keys(password)
     driver.find_element(By.ID, 'password').submit()
-    
+
     # Navigate to data download
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.LINK_TEXT, 'Settings & Privacy'))
     )
-    
+
     driver.get('https://www.linkedin.com/psettings/privacy/data')
-    
+
     # Click request download
     download_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, 
+        EC.element_to_be_clickable((By.XPATH,
             '//button[contains(text(), "Get a copy of your data")]'))
     )
     download_button.click()
-    
+
     driver.quit()
 ```
 
@@ -165,27 +165,27 @@ const { chromium } = require('playwright');
 async function checkPrivacySettings(credentials) {
     const browser = await chromium.launch();
     const page = await browser.newPage();
-    
+
     await page.goto('https://www.linkedin.com/login');
     await page.fill('#username', credentials.email);
     await page.fill('#password', credentials.password);
     await page.click('#password');
-    
+
     await page.waitForNavigation();
     await page.goto(
         'https://www.linkedin.com/psettings/privacy/ai-training'
     );
-    
+
     // Check if opt-out toggle exists and its state
     const aiTrainingToggle = await page.$(
         'input[type="checkbox"][data-test-privacy-consent]'
     );
-    
+
     if (aiTrainingToggle) {
         const isChecked = await aiTrainingToggle.isChecked();
         console.log(`AI Training opt-out status: ${!isChecked ? 'OPTED OUT' : 'OPTED IN'}`);
     }
-    
+
     await browser.close();
 }
 ```
@@ -201,14 +201,13 @@ If you're located in certain jurisdictions, you have additional legal options:
 LinkedIn's privacy policy specifies a designated privacy officer for such requests. Document all communications and keep records of your opt-out attempts.
 
 
-
 ## Related Articles
 
 - [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu](/privacy-tools-guide/how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -60,7 +60,7 @@ function getScreenFingerprint() {
         pixelRatio: window.devicePixelRatio,
         orientation: screen.orientation ? screen.orientation.type : 'undefined'
     };
-    
+
     // Create a simple hash from the data
     const fingerprint = Object.values(screenData).join('|');
     return fingerprint;
@@ -104,16 +104,16 @@ If you're a developer, you can help protect users by detecting fingerprinting at
 function detectScreenFingerprinting() {
     const realWidth = screen.width;
     const realHeight = screen.height;
-    
+
     // Check if values match common patterns
     const commonResolutions = [
-        '1920|1080', '1366|768', '1536|864', 
+        '1920|1080', '1366|768', '1536|864',
         '1440|900', '1280|720', '2560|1440'
     ];
-    
+
     const current = `${realWidth}|${realHeight}`;
     const isCommon = commonResolutions.some(res => current.includes(res));
-    
+
     return {
         resolution: current,
         isCommonResolution: isCommon,
@@ -138,7 +138,7 @@ Here's a privacy-respecting approach to responsive design:
 ```javascript
 function getResponsiveBreakpoint() {
     const width = window.innerWidth;
-    
+
     if (width < 576) return 'xs';
     if (width < 768) return 'sm';
     if (width < 992) return 'md';
@@ -375,7 +375,6 @@ Privacy protection requires addressing multiple fingerprinting vectors simultane
 For developers building privacy tools, understanding these techniques helps create more effective countermeasures. The cat-and-mouse game between privacy advocates and trackers continues evolving, making it essential to stay informed about new fingerprinting methods and defenses.
 
 Your display settings matter more than they might initially seem. The pixels on your screen create a digital signature that websites can and do exploit. By understanding how this works and implementing appropriate countermeasures, you take meaningful steps toward reclaiming your online privacy.
-
 
 
 ## Related Articles

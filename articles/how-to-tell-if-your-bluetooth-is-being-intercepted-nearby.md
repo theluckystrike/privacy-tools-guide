@@ -175,7 +175,6 @@ If you confirm active interception, the safest response is to:
 For enterprise environments, engage professional security auditors with proper authorization.
 
 
-
 ## Related Articles
 
 - [How To Disable Wifi Scanning And Bluetooth Scanning On Andro](/privacy-tools-guide/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)

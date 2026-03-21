@@ -99,14 +99,14 @@ Simplex Chat implements double-ratchet encryption ensuring forward secrecy:
 fn send_message(sender_key: &PrivateKey, recipient_queue: &QueueAddress, plaintext: &[u8]) -> Vec<u8> {
     // Generate ephemeral key for this message
     let ephemeral_key = generate_ephemeral_keypair();
-    
+
     // Encrypt message with recipient's known public key
     let ciphertext = encrypt_aead(
         plaintext,
         &ephemeral_key.public,
         &recipient_queue.public_key
     );
-    
+
     // Send to queue - server sees only encrypted blob
     server.push_message(recipient_queue.id, ciphertext);
 }
@@ -221,13 +221,12 @@ msgs <- pollMessages addr
 The protocol specifications are open, enabling verification and custom implementations.
 
 
-
 ## Related Articles
 
 - [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
 - [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
 - [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
-- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 - [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

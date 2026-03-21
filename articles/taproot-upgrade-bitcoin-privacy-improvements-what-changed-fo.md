@@ -51,7 +51,7 @@ Previously, complex scripts revealed all possible spending conditions at spend t
 ```python
 # Example: MAST structure for a contract with multiple redemption paths
 # Path 1: Alice alone after 30 days
-# Path 2: Bob and Alice jointly at any time  
+# Path 2: Bob and Alice jointly at any time
 # Path 3: Charlie if he provides a secret
 
 merkle_tree = MerkleTree([
@@ -104,7 +104,7 @@ fn cointjoin_sign(
         .iter()
         .map(|sk| sk.sign(message))
         .collect();
-    
+
     // Aggregated into single signature
     aggregate(partial_sigs)
 }
@@ -387,8 +387,6 @@ The transaction anonymity landscape has genuinely shifted—complex transactions
 {% endraw %}
 
 ---
-
-
 
 
 ## Related Articles

@@ -281,7 +281,6 @@ Consider your specific use case:
 - **Gaming**: Be conservative—Game Bar and Xbox integration provide useful features
 
 
-
 ## Related Articles
 
 - [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)

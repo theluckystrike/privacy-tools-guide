@@ -237,7 +237,6 @@ curl -s https://yoursite.com | grep -E "googletagmanager|google-analytics|gtag"
 If results appear, a tag manager or plugin is still injecting GA. Find and remove it.
 
 
-
 ## Related Articles
 
 - [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)

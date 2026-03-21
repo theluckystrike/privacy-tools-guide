@@ -56,13 +56,13 @@ Here's a practical example of how a site might implement hint-based fingerprinti
 
 ```javascript
 // Server sends this response header to request Client Hints
-Accept-CH: Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Platform, 
+Accept-CH: Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Platform,
            Sec-CH-UA-Model, Device-Memory, Downlink
 
 // JavaScript can also access hints via the Permissions API
 async function getClientHints() {
   if (!window.clientHintsInfrastructure) return;
-  
+
   const hints = await document.clientHintsInfrastructure.getHintsDeprecation();
   console.log('Available hints:', hints);
 }
@@ -96,12 +96,12 @@ def track_fingerprint():
         'memory': request.headers.get('Device-Memory'),
         'arch': request.headers.get('Sec-CH-UA-Arch'),
     }
-    
+
     # Create fingerprint hash from combined hints
     fingerprint = hashlib.sha256(
         '|'.join(str(v) for v in user_hints.values() if v)
     ).hexdigest()
-    
+
     # Store or correlate with existing user data
     return jsonify({'fingerprint': fingerprint})
 ```
@@ -165,7 +165,6 @@ If you're building web applications, consider the privacy implications before im
 Client Hints exist within Google's larger Privacy Sandbox framework, which includes APIs like Topics, Attribution Reporting, and FLEDGE. While marketed as privacy improvements, these APIs create new tracking mechanisms that operate without traditional cookies.
 
 The fundamental tension: Chrome positions Client Hints as a privacy-respecting alternative to fingerprinting, while the API itself enables fingerprinting at scale.
-
 
 
 ## Related Articles
@@ -449,4 +448,3 @@ All these APIs face similar concerns: they provide tracking capabilities without
 | Journalist/Activist | Tor Browser | Already hardened |
 
 For maximum protection, Tor Browser standardizes all Client Hints to identical values, eliminating fingerprinting differences.
-

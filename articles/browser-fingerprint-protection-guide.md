@@ -269,7 +269,6 @@ No browser is completely un-fingerprintable on the open web. The goal is to:
 Combining good browser choice with a VPN or Tor removes the network-layer correlation that would otherwise link your anonymized fingerprint to your real IP.
 
 
-
 ## Related Articles
 
 - [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)

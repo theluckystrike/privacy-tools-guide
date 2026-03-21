@@ -48,10 +48,10 @@ def extract_ips_from_headers(email_bytes):
     """Extract all IP addresses from email headers."""
     parser = BytesParser(policy=policy.default)
     msg = parser.parsebytes(email_bytes)
-    
+
     # Get all Received headers
     received_headers = msg.get_all('Received')
-    
+
     ips = []
     if received_headers:
         for header in received_headers:
@@ -59,17 +59,17 @@ def extract_ips_from_headers(email_bytes):
             ipv4_pattern = r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'
             # Match IPv6 addresses
             ipv6_pattern = r'\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b'
-            
+
             ips.extend(re.findall(ipv4_pattern, header))
             ips.extend(re.findall(ipv6_pattern, header))
-    
+
     # Get X-Originating-IP if present
     originating_ip = msg.get('X-Originating-IP')
     if originating_ip:
         ip_match = re.findall(r'[\d.]+', originating_ip)
         if ip_match:
             ips.insert(0, ip_match[0])
-    
+
     return list(set(ips))
 
 def analyze_ip_geolocation(ips):
@@ -114,9 +114,9 @@ def identify_email_client(headers):
     user_agent = headers.get('User-Agent', '')
     x_mailer = headers.get('X-Mailer', '')
     x_originating_ip = headers.get('X-Originating-IP', '')
-    
+
     clients = []
-    
+
     # Check User-Agent
     if 'Gmail' in user_agent or 'Gmail' in x_mailer:
         clients.append('Gmail (Web/Mobile)')
@@ -130,11 +130,11 @@ def identify_email_client(headers):
         clients.append('iOS Mail')
     if 'ProtonMail' in x_mailer:
         clients.append('ProtonMail')
-    
+
     # X-Mailer often has more specific version info
     if x_mailer and not clients:
         clients.append(f"Email client: {x_mailer}")
-    
+
     return clients if clients else ['Unknown client']
 ```
 
@@ -185,8 +185,6 @@ Online tools like MessageHeader and Google Admin Toolbox provide visual analysis
 Header analysis serves critical security functions. Phishing investigations use header analysis to trace message origins, identify compromised infrastructure, and gather evidence for reports. Security teams correlate header data with threat intelligence feeds to detect credential harvesting campaigns and malware distribution networks.
 
 For incident response, header timestamps provide precise event timing, while `Received` chains map attacker infrastructure through relay servers. The `Message-ID` field helps track campaign attribution across multiple targeted organizations.
-
-
 
 
 ## Related Articles

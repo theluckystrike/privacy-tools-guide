@@ -114,7 +114,7 @@ def check_for_update():
         "hardware_class": hardware_type,  # Generic category, not specific model
         # Explicitly exclude: serial numbers, MAC addresses, unique IDs
     }
-    
+
     response = requests.post(
         "https://api.example.com/firmware/check",
         json=payload,
@@ -181,8 +181,6 @@ Until manufacturers adopt stronger privacy defaults, consider these defensive me
 The IoT industry continues evolving, but transparency around update check data remains inconsistent. By understanding what transmits during these routine operations, you gain power over your device ecosystem's privacy footprint.
 
 ---
-
-
 
 
 ## Related Articles

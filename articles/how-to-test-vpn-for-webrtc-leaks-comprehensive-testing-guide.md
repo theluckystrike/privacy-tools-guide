@@ -15,7 +15,6 @@ tags: [privacy-tools-guide, vpn]
 ---
 
 
-
 {% raw %}
 
 WebRTC (Real-Time Communication) is a browser feature that enables direct peer-to-peer communication for services like Google Meet, Discord, and Zoom. However, it can inadvertently reveal your real IP address even when you're connected to a VPN—a vulnerability known as a WebRTC leak. This guide walks you through testing methods to detect WebRTC leaks, understand the risks, and implement effective mitigation strategies.
@@ -46,27 +45,27 @@ Open your browser's developer tools (F12 or right-click and select Inspect), the
 async function testWebRTCLeak() {
   const peerConnections = [];
   const seenIPs = new Set();
-  
+
   // Override RTCPeerConnection to capture instances
   const OriginalRTCPeerConnection = window.RTCPeerConnection;
   window.RTCPeerConnection = function(...args) {
     const pc = new OriginalRTCPeerConnection(...args);
     peerConnections.push(pc);
-    
+
     pc.createDataChannel('');
     return pc;
   };
-  
+
   // Create a test connection
   const pc = new RTCPeerConnection({
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
   });
-  
+
   pc.createOffer().then(offer => pc.setLocalDescription(offer));
-  
+
   // Wait for ICE candidates
   await new Promise(resolve => setTimeout(resolve, 2000));
-  
+
   // Check for leaked IPs
   peerConnections.forEach(p => {
     p.getReceivers().forEach(r => {
@@ -79,9 +78,9 @@ async function testWebRTCLeak() {
       }
     });
   });
-  
+
   console.log('Potential leaked IPs:', [...seenIPs]);
-  
+
   // Cleanup
   peerConnections.forEach(p => p.close());
 }
@@ -113,10 +112,10 @@ async def test_webrtc_leak():
     nat_type, external_ip, external_port = stun.get_ip_info(
         stun.STUN_SERVERS[0]
     )
-    
+
     print(f"Detected external IP: {external_ip}")
     print("If this IP differs from your VPN IP, you have a WebRTC leak")
-    
+
     # Test with multiple STUN servers for completeness
     for server in stun.STUN_SERVERS[:3]:
         try:
@@ -365,7 +364,6 @@ WebRTC leak testing is one component of VPN protection:
 5. **Trust Level**: Verify your VPN provider's commitment to WebRTC protection
 
 This layered approach ensures WebRTC leaks become extremely unlikely even if one component fails.
-
 
 
 ## Related Articles

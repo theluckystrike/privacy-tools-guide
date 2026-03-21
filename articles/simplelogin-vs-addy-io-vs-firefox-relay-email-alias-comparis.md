@@ -241,7 +241,6 @@ SimpleLogin operates under Swiss law (similar in many respects to GDPR). Addy.io
 SimpleLogin suits Proton ecosystem users and those who need PGP encryption. Addy.io is the right call for developers who want API access without a premium subscription, or anyone willing to self-host. Firefox Relay is best for non-technical users who want simple alias management integrated into their browser with minimal friction.
 
 
-
 ## Related Articles
 
 - [iCloud Private Relay: How It Works vs VPN](/privacy-tools-guide/ios-private-relay-how-it-works-vs-vpn/)

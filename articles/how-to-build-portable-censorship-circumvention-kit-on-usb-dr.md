@@ -322,7 +322,6 @@ If authorities discover your circumvention kit:
 Preparation before travel prevents panic and poor decisions during interactions.
 
 
-
 ## Related Articles
 
 - [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)

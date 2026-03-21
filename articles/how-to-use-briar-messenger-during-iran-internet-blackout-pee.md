@@ -297,7 +297,6 @@ During Iran 2022 protests, Briar enabled communication when cellular networks we
 The key lesson: **infrastructure independence is powerful**. When you remove dependency on centralized servers, you gain resilience that oppressive systems cannot easily suppress.
 
 
-
 ## Related Articles
 
 - [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)

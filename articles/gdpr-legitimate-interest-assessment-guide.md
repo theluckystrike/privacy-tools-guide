@@ -68,15 +68,15 @@ class LegitimateInterestAssessment {
 
   // Part 2: Assess necessity
   assessNecessity(processing, alternative Approaches) {
-    const isNecessary = processing.some(p => 
+    const isNecessary = processing.some(p =>
       alternative Approaches.every(alt => !alt.covers(p))
     );
-    
+
     this.necessity = {
       isNecessary,
       processingRequired: processing,
       alternativesConsidered: alternative Approaches,
-      justification: isNecessary 
+      justification: isNecessary
         ? 'No less intrusive alternative achieves the purpose'
         : 'Less invasive alternatives exist'
     };
@@ -86,9 +86,9 @@ class LegitimateInterestAssessment {
   balanceAgainstIndividual(individualRights, additionalFactors = []) {
     const positiveFactors = thisbalancingFactors.filter(f => f.type === 'positive');
     const negativeFactors = thisbalancingFactors.filter(f => f.type === 'negative');
-    
+
     const balanceResult = this.calculateBalance(
-      positiveFactors, 
+      positiveFactors,
       negativeFactors,
       individualRights
     );
@@ -263,9 +263,6 @@ Create assessment templates for common processing activities, and version them a
 Treating legitimate interest assessments as part of your development process rather than a legal afterthought keeps the flexibility this lawful basis provides intact.
 
 Test your implementation by reviewing the ICO's legitimate interest checklist and ensure your documentation addresses each point before deploying new processing activities.
-
-
-
 
 
 ## Related Articles

@@ -248,7 +248,6 @@ Understanding what Tails does not protect against is critical:
 For threat models requiring protection against physical access, consider combining Tails with Qubes OS or air-gapped machines.
 
 
-
 ## Related Articles
 
 - [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)

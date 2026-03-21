@@ -132,17 +132,17 @@ from pathlib import Path
 def backup_to_encrypted_cloud(cloud_path):
     """Backup .env files to encrypted cloud storage."""
     env_files = list(Path('.').glob('**/.env*'))
-    
+
     with tempfile.TemporaryDirectory() as tmpdir:
         for env_file in env_files:
             # Copy to temp directory
             subprocess.run(['cp', str(env_file), tmpdir])
-        
+
         # Encrypt temp directory
         subprocess.run([
             'tar', '-czf', '-', '-C', tmpdir, '.'
         ], stdout=open(f'{tmpdir}/backup.tar.gz', 'wb'))
-        
+
         # Upload via rclone
         subprocess.run([
             'rclone', 'copy',
@@ -228,7 +228,6 @@ Regardless of which service you choose, follow these practices:
 3. **Export recovery keys** and store them offline
 4. **Verify encryption** using CLI tools after upload
 5. **Consider local encryption** (GPG or age) for extra-sensitive files before cloud upload
-
 
 
 ## Related Articles

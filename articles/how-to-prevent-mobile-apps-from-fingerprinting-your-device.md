@@ -254,7 +254,6 @@ Several tools can analyze app tracking:
 - **Privacy grade calculators**: Various services that rate app privacy
 
 
-
 ## Related Articles
 
 - [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)

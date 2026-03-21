@@ -196,7 +196,6 @@ curl -X POST "https://api.fitnessapp.com/v1/data/export" \
 ```
 
 
-
 ## Related Articles
 
 - [How to Prevent Mobile Apps From Fingerprinting Your Device](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)

@@ -99,7 +99,7 @@ def get_instagram_media(access_token):
 def get_all_media(access_token):
  all_media = []
  url = "https://graph.instagram.com/me/media"
- 
+
  while url:
  params = {
  "fields": "id,caption,media_type,media_url,timestamp,permalink,next_page",
@@ -108,7 +108,7 @@ def get_all_media(access_token):
  response = requests.get(url, params=params).json()
  all_media.extend(response.get("data", []))
  url = response.get("paging", {}).get("next")
- 
+
  return all_media
 {% endhighlight %}
 
@@ -141,7 +141,7 @@ reddit = praw.Reddit(
 def get_reddit_data(username):
  user = reddit.redditor(username)
  submissions = []
- 
+
  for post in user.submissions.new(limit=None):
  submissions.append({
  "id": post.id,
@@ -150,7 +150,7 @@ def get_reddit_data(username):
  "created_utc": post.created_utc,
  "subreddit": str(post.subreddit)
  })
- 
+
  return submissions
 {% endhighlight %}
 
@@ -169,7 +169,7 @@ class SocialDataConfig:
  platform: str
  access_token: str
  data_types: List[str]
- 
+
 async def collect_platform_data(config: SocialDataConfig) -> Dict:
  """Unified data collection across platforms."""
  collectors = {
@@ -178,15 +178,15 @@ async def collect_platform_data(config: SocialDataConfig) -> Dict:
  "instagram": collect_instagram_data,
  "reddit": collect_reddit_data
  }
- 
+
  collector = collectors.get(config.platform)
  if not collector:
  raise ValueError(f"Unsupported platform: {config.platform}")
- 
+
  results = {}
  for data_type in config.data_types:
  results[data_type] = await collector(config.access_token, data_type)
- 
+
  return results
 
 async def main():
@@ -195,10 +195,10 @@ async def main():
  SocialDataConfig("twitter", tw_token, ["tweets"]),
  SocialDataConfig("reddit", rd_token, ["submissions"])
  ]
- 
+
  tasks = [collect_platform_data(config) for config in configs]
  all_data = await asyncio.gather(*tasks)
- 
+
  return all_data
 
 # Run with: asyncio.run(main())
@@ -244,14 +244,14 @@ from pathlib import Path
 
 def save_data_secure(data, filename, encryption_key=None):
  filepath = Path(filename)
- 
+
  with open(filepath, 'w') as f:
  json.dump(data, f, indent=2, default=str)
- 
+
  # Verify integrity
  with open(filepath, 'rb') as f:
  checksum = hashlib.sha256(f.read()).hexdigest()
- 
+
  return {"path": str(filepath), "checksum": checksum}
 {% endhighlight %}
 
@@ -297,8 +297,6 @@ for f in pathlib.Path('download').rglob('*.json'):
         print(f'{f.name}: {len(data)} entries')
 "
 ```
-
-
 
 
 ## Related Articles

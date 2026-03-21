@@ -105,7 +105,7 @@ def verify_privacy_registration_service(service):
         "insurance_compliant": verify_insurance_requirements(service),
         "clear_contracts": service.provides_written_agreements(),
     }
-    
+
     return all(checks.values())
 
 # Critical requirements:
@@ -136,7 +136,7 @@ class VehiclePrivacyManager {
   // Return only non-sensitive registration data
   getPublicRegistrationRecord(plate) {
     const record = this.dmvLookup(plate);
-    
+
     return {
       vehicle_info: {
         make: record.make,
@@ -175,7 +175,7 @@ func VerifyVehicleForService(plate string, serviceID string) (VehicleVerificatio
         IncludeVehicleDetails: true,
         Purpose: serviceID,
     })
-    
+
     return VehicleVerification{
         Valid: err == nil && record != nil,
         VehicleDetails: record.Details, // Make, model, year only
@@ -207,12 +207,11 @@ Resale challenges Selling a vehicle registered to an LLC or through a privacy se
 Maintenance and repairs Service shops will need to know the actual owner for warranty work and parts ordering.
 
 
-
 ## Related Articles
 
 - [Anonymous Domain Registration How To Buy Domain Without Expo](/privacy-tools-guide/anonymous-domain-registration-how-to-buy-domain-without-expo/)
 - [Jmp Chat Voip Number For Signal Registration Anonymous Phone](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)
-- [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
+- [Disable Location Services Completely On Macos While Keeping](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car Co](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
 

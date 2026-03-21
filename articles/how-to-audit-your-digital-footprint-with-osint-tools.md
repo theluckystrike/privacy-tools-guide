@@ -379,7 +379,6 @@ Completely removing yourself from the internet is unrealistic. Your goal is:
 You'll never achieve total privacy, but you can significantly reduce your exposure. This audit is the first step.
 
 
-
 ## Related Articles
 
 - [How To Audit Your Digital Footprint And Find All Accounts Li](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)

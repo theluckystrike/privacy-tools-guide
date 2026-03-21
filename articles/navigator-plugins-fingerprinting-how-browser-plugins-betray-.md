@@ -27,7 +27,7 @@ The `navigator.plugins` property returns a `PluginArray` containing details abou
 function getPluginFingerprint() {
   const plugins = navigator.plugins;
   const pluginList = [];
-  
+
   for (let i = 0; i < plugins.length; i++) {
     const plugin = plugins[i];
     pluginList.push({
@@ -37,7 +37,7 @@ function getPluginFingerprint() {
       version: plugin.version
     });
   }
-  
+
   return pluginList;
 }
 
@@ -65,7 +65,7 @@ function generateFingerprint() {
       description: p.description
     })),
     pluginCount: navigator.plugins.length,
-    
+
     // Additional fingerprint vectors
     userAgent: navigator.userAgent,
     platform: navigator.platform,
@@ -75,11 +75,11 @@ function generateFingerprint() {
     hardwareConcurrency: navigator.hardwareConcurrency,
     deviceMemory: navigator.deviceMemory
   };
-  
+
   // Hash the combined data for tracking
   const fingerprintString = JSON.stringify(fp);
   const fingerprint = btoa(fingerprintString); // Base64 encode
-  
+
   return fingerprint;
 }
 ```
@@ -280,12 +280,11 @@ If you're concerned about your plugin fingerprint, follow this audit:
 A well-chosen set of 5-6 extensions is significantly more private than 20+ extensions, even if those extensions themselves are privacy-focused.
 
 
-
 ## Related Articles
 
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 - [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 

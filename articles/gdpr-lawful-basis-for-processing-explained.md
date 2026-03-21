@@ -81,14 +81,14 @@ function handleConsentWithdrawal(userId, purpose) {
   // Update consent record
   db.users.update(
     { _id: userId },
-    { 
-      $set: { 
+    {
+      $set: {
         [`consents.${purpose}.granted`]: false,
         [`consents.${purpose}.withdrawnAt`]: new Date().toISOString()
-      } 
+      }
     }
   );
-  
+
   // Trigger data deletion for that purpose
   if (purpose === 'marketing_emails') {
     deleteUserMarketingData(userId);
@@ -185,7 +185,7 @@ class LegitimateInterestAssessment {
     this.legitimateInterest = this.validateInterest();
     this.necessary = this.checkNecessity();
     this.balanceResult = this.balanceAgainstRights();
-    
+
     return {
       isValid: this.legitimateInterest && this.necessary && this.balanceResult,
       documentation: this.generateDocumentation()
@@ -216,22 +216,22 @@ def select_lawful_basis(use_case, user_context, processing_type):
     # Check if processing is legally required
     if is_legally_required(processing_type):
         return {'basis': 'legal_obligation', 'requires_documentation': True}
-    
+
     # Check if processing is necessary for contract
     if use_case == 'contract_fulfillment' and is_essential_for_contract(processing_type):
         return {'basis': 'contract', 'requires_documentation': False}
-    
+
     # Check vital interests (rare)
     if use_case == 'emergency' and protects_life(processing_type):
         return {'basis': 'vital_interests', 'requires_documentation': True}
-    
+
     # Default to consent or legitimate interest for most cases
     if has_user_consent(user_context, processing_type):
         return {'basis': 'consent', 'requires_documentation': True}
-    
+
     if can_demonstrate_legitimate_interest(processing_type):
         return {'basis': 'legitimate_interest', 'requires_documentation': True}
-    
+
     # No valid basis found - do not process
     return {'basis': None, 'error': 'No lawful basis available'}
 ```
@@ -244,14 +244,13 @@ Under GDPR, you cannot retroactively change your lawful basis to circumvent requ
 3. Document the change and reasoning
 
 
-
 ## Related Articles
 
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 - [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 - [Gdpr Pseudonymization Vs Anonymization Explained](/privacy-tools-guide/gdpr-pseudonymization-vs-anonymization-explained/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [How To Revoke Previously Given Consent For Data Processing U](/privacy-tools-guide/how-to-revoke-previously-given-consent-for-data-processing-u/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -91,31 +91,31 @@ function validateFERPAToken(req, res, next) {
   if (!authHeader?.startsWith('Bearer ')) {
     return res.status(401).json({ error: 'Missing authentication token' });
   }
-  
+
   const token = authHeader.split(' ')[1];
-  
+
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    
+
     // Verify token has required FERPA scopes
     const requiredScopes = ['education-records:read'];
     const hasScope = requiredScopes.every(
       scope => decoded.scopes.includes(scope)
     );
-    
+
     if (!hasScope) {
-      return res.status(403).json({ 
-        error: 'Insufficient permissions for education records' 
+      return res.status(403).json({
+        error: 'Insufficient permissions for education records'
       });
     }
-    
+
     // Verify legitimate educational interest
     if (!decoded.educational_interest) {
-      return res.status(403).json({ 
-        error: 'No documented educational interest' 
+      return res.status(403).json({
+        error: 'No documented educational interest'
       });
     }
-    
+
     req.user = decoded;
     next();
   } catch (err) {
@@ -124,8 +124,8 @@ function validateFERPAToken(req, res, next) {
 }
 
 // Protected endpoint for student records
-app.get('/api/v1/students/:studentId/records', 
-  validateFERPAToken, 
+app.get('/api/v1/students/:studentId/records',
+  validateFERPAToken,
   auditLogMiddleware,
   getStudentRecords
 );
@@ -144,16 +144,16 @@ from hashlib import sha256
 class FERPSAAuditLogger:
     def __init__(self, db_connection):
         self.db = db_connection
-    
-    def log_access(self, user_id, student_id, action, resource_type, 
+
+    def log_access(self, user_id, student_id, action, resource_type,
                    educational_interest, ip_address):
         """Log all access to student education records"""
         timestamp = datetime.utcnow().isoformat()
-        
+
         # Create tamper-evident log entry
         log_entry = f"{timestamp}|{user_id}|{student_id}|{action}|{resource_type}"
         entry_hash = sha256(log_entry.encode()).hexdigest()
-        
+
         audit_record = {
             "timestamp": timestamp,
             "user_id": user_id,
@@ -165,10 +165,10 @@ class FERPSAAuditLogger:
             "entry_hash": entry_hash,
             "previous_hash": self._get_last_hash()
         }
-        
+
         self.db.audit_log.insert_one(audit_record)
         self._update_last_hash(entry_hash)
-    
+
     def _anonymize_id(self, student_id):
         """Hash student ID to protect identity in logs"""
         return sha256(student_id.encode()).hexdigest()[:16]
@@ -201,17 +201,17 @@ const consentSchema = {
 
 async function checkConsent(studentId, purpose) {
   const consent = await ConsentModel.findOne({ studentId });
-  
+
   if (!consent) return false;
   if (consent.withdrawnAt) return false;
-  
+
   const purposeConsent = consent.consents.find(c => c.purpose === purpose);
   if (!purposeConsent?.granted) return false;
-  
+
   if (purposeConsent.expiresAt && purposeConsent.expiresAt < new Date()) {
     return false;
   }
-  
+
   return true;
 }
 ```
@@ -229,41 +229,41 @@ class FERPADataRetention:
         "graduation_records": None,      # permanent
         "communication_logs": 1095       # 3 years
     }
-    
+
     def __init__(self, database):
         self.db = database
-    
+
     async def schedule_deletion(self, record_type, record_id, created_at):
         retention_days = self.RETENTION_PERIODS.get(record_type)
-        
+
         if retention_days is None:
             return  # Permanent retention
-            
+
         deletion_date = created_at + timedelta(days=retention_days)
-        
+
         await self.db.deletion_queue.insert_one({
             "record_type": record_type,
             "record_id": record_id,
             "deletion_date": deletion_date,
             "status": "scheduled"
         })
-    
+
     async def process_deletion_queue(self):
         now = datetime.utcnow()
-        
+
         for record in self.db.deletion_queue.find({
             "deletion_date": {"$lte": now},
             "status": "scheduled"
         }):
             await self._execute_deletion(record)
-            
+
     async def _execute_deletion(self, record):
         """Securely delete student data"""
         # Permanent deletion from all storage systems
         await self.db[record["record_type"]].delete_one(
             {"_id": record["record_id"]}
         )
-        
+
         # Record deletion in audit log
         await self.log_deletion(record)
 ```
@@ -417,7 +417,6 @@ approved_by: "@privacy-officer"
 ```
 
 Store these completed reviews in version control alongside your FERPA compliance documentation. When an incident occurs, having a dated approval record with a named reviewer demonstrates due diligence.
-
 
 
 ## Related Articles

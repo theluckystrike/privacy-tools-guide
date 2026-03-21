@@ -179,9 +179,9 @@ val devicePolicyManager = getSystemService(Context.DEVICE_POLICY_SERVICE) as Dev
 val adminComponent = ComponentName(context, MyDeviceAdminReceiver::class.java)
 
 // Restrict user control
-devicePolicyManager.addUserRestriction(adminComponent, 
+devicePolicyManager.addUserRestriction(adminComponent,
     UserManager.DISALLOW_CONFIG_WIFI)
-devicePolicyManager.addUserRestriction(adminComponent, 
+devicePolicyManager.addUserRestriction(adminComponent,
     UserManager.DISALLOW_CONFIG_BLUETOOTH)
 ```
 
@@ -239,12 +239,11 @@ fi
 ```
 
 
-
 ## Related Articles
 
 - [How To Detect And Remove Stalkerware From Android Phone Comp](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [How To Tell If Your Phone Has Been Jailbroken Without Consen](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
 - [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 

@@ -174,7 +174,6 @@ acme.sh --issue -d you@example.com \
 This approach enables automatic certificate renewal and deployment through configuration management tools.
 
 
-
 ## Related Articles
 
 - [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)

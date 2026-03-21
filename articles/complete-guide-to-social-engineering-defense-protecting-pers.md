@@ -60,9 +60,9 @@ def verify_email_domain(sender_email, expected_domain):
     match = re.search(r'@([a-zA-Z0-9.-]+)', sender_email)
     if not match:
         return False
-    
+
     sender_domain = match.group(1)
-    
+
     # Check SPF record
     try:
         spf_records = dns.resolver.resolve(sender_domain, 'TXT')
@@ -74,7 +74,7 @@ def verify_email_domain(sender_email, expected_domain):
                 return True
     except dns.resolver.NXDOMAIN:
         return False
-    
+
     return False
 ```
 
@@ -91,7 +91,7 @@ function verifyTOTP(secret, token, window = 1) {
     for (let i = -window; i <= window; i++) {
         const timeStep = Math.floor(Date.now() / 30000) + i;
         const expectedToken = generateTOTP(secret, timeStep);
-        
+
         // Use constant-time comparison to prevent timing attacks
         if (crypto.timingSafeEqual(
             Buffer.from(token.padStart(6, '0')),
@@ -111,26 +111,26 @@ Implement strict input validation that warns users about potential phishing atte
 ```javascript
 function validateLoginAttempt(email, ipAddress, userAgent) {
     const signals = [];
-    
+
     // Check for known phishing domains
     const emailDomain = email.split('@')[1];
     if (isKnownPhishingDomain(emailDomain)) {
         signals.push({ type: 'phishing_domain', severity: 'high' });
     }
-    
+
     // Analyze login location against user history
     const loginCountry = getCountryFromIP(ipAddress);
     const userTypicalCountries = getTypicalCountries(email);
-    
+
     if (!userTypicalCountries.includes(loginCountry)) {
         signals.push({ type: 'unusual_location', severity: 'medium' });
     }
-    
+
     // Check for new device patterns
     if (isNewDevice(email, userAgent)) {
         signals.push({ type: 'new_device', severity: 'low' });
     }
-    
+
     return signals;
 }
 ```
@@ -205,10 +205,9 @@ When you suspect a social engineering attempt:
 5. **Alert** colleagues who might be targeted
 
 
-
 ## Related Articles
 
-- [Withdraw Crypto from Exchange Without Linking to Personal Bank Account](/privacy-tools-guide/how-to-withdraw-crypto-from-exchange-without-linking-to-pers/)
+- [Withdraw Crypto from Exchange Without Linking to Personal](/privacy-tools-guide/how-to-withdraw-crypto-from-exchange-without-linking-to-pers/)
 - [Privacy Engineering Hiring Guide What Skills To Look For.](/privacy-tools-guide/privacy-engineering-hiring-guide-what-skills-to-look-for-in-privacy-team/)
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)

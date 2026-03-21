@@ -213,7 +213,6 @@ PostDown = iptables -D OUTPUT ! -o wg0 -j DROP
 - Solution: Verify with dnsleaktest.com and use encrypted DNS
 
 
-
 ## Related Articles
 
 - [VPN for Using Snapchat in Countries Where Restricted 2026](/privacy-tools-guide/vpn-for-using-snapchat-in-countries-where-restricted-2026/)

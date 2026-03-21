@@ -42,7 +42,7 @@ val biometricPrompt = BiometricPrompt(this, executor,
             super.onAuthenticationSucceeded(result)
             // Grant access to sensitive data
         }
-        
+
         override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
             super.onAuthenticationError(errorCode, errString)
             // Fall back to device credential if needed
@@ -131,8 +131,8 @@ fun isWorkProfileEnabled(context: Context): Boolean {
 fun shouldHideWorkNotifications(context: Context): Boolean {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.lockScreenApps?.any { 
-            it == devicePolicyManager.profileOwner 
+        notificationManager.lockScreenApps?.any {
+            it == devicePolicyManager.profileOwner
         } ?: false
     } else {
         true // Default to hiding on older versions
@@ -240,8 +240,6 @@ For maximum protection, implement automatic lock after 15 seconds of inactivity,
 Regularly audit your lock screen configuration, particularly after Android updates that may reset privacy settings. The lock screen represents the gateway to all device data—invest time in configuring it appropriately. Consider running a monthly audit checklist covering biometric settings, notification visibility, Smart Lock status, and USB debugging state.
 
 ---
-
-
 
 
 ## Related Articles

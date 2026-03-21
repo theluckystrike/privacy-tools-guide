@@ -306,7 +306,6 @@ An active node uses roughly 20-30GB per month serving blocks to peers. If bandwi
 A full node validates blocks and transactions but does not produce new blocks. A mining node does both. Home users running full nodes for privacy purposes do not need mining capabilities.
 
 
-
 ## Related Articles
 
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)

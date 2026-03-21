@@ -181,7 +181,6 @@ curl --interface wg0 https://graph.instagram.com
 ```
 
 
-
 ## Related Articles
 
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)

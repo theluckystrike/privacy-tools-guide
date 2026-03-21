@@ -165,26 +165,26 @@ import re
 def anonymizeParticipantData(dataframe, salt):
     """Remove direct identifiers and hash quasi-identifiers."""
     df = dataframe.copy()
-    
+
     # Remove direct identifiers
     columns_to_remove = ['name', 'email', 'phone', 'address', 'ssn', 'mrn']
     for col in columns_to_remove:
         if col in df.columns:
             df = df.drop(columns=[col])
-    
+
     # Hash quasi-identifiers
     def hash_with_salt(value, salt):
         return hashlib.sha256(f"{value}{salt}".encode()).hexdigest()[:12]
-    
+
     if 'postal_code' in df.columns:
         # Keep only first 3 digits for general geographic data
         df['postal_code'] = df['postal_code'].astype(str).str[:3]
-    
+
     if 'age' in df.columns:
         # Convert to age ranges
-        df['age'] = pd.cut(df['age'], bins=[0, 17, 29, 49, 64, 200], 
+        df['age'] = pd.cut(df['age'], bins=[0, 17, 29, 49, 64, 200],
                           labels=['0-17', '18-29', '30-49', '50-64', '65+'])
-    
+
     return df
 ```
 
@@ -241,7 +241,6 @@ Before launching data collection, verify these requirements:
 5. **Backup procedures**: Encrypt backups with separate keys
 6. **Incident response**: Document procedures for data breach scenarios
 7. **Staff training**: Verify all team members complete CITI or equivalent
-
 
 
 ## Related Articles

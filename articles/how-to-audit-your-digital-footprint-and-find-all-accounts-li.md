@@ -45,9 +45,9 @@ def check_breaches(email, api_key):
         "user-agent": "digital-footprint-audit"
     }
     params = {"truncateResponse": "false"}
-    
+
     response = requests.get(url, headers=headers, params=params)
-    
+
     if response.status_code == 200:
         breaches = response.json()
         print(f"Found {len(breaches)} breaches for {email}")
@@ -101,7 +101,7 @@ Gmail's search operators enable finding account registrations:
 # Search for account confirmation emails
 subject:(confirm OR verify OR welcome OR注册) from:(*@*)
 
-# Search for password reset emails  
+# Search for password reset emails
 subject:("password reset" OR "reset your password" OR "change your password")
 
 # Find subscription confirmations
@@ -164,7 +164,7 @@ SERVICES = {
     "npm": "https://registry.npmjs.org/-/user/{email}",
 }
 
-async def check_service(session: aiohttp.ClientSession, 
+async def check_service(session: aiohttp.ClientSession,
                         service: str, email: str) -> bool:
     """Check if email exists on service"""
     url = SERVICES[service].format(email=email.replace('@', '%40'))
@@ -182,7 +182,7 @@ async def main():
             for service in SERVICES
         ]
         results = await asyncio.gather(*tasks)
-        
+
         for service, exists in zip(SERVICES.keys(), results):
             status = "FOUND" if exists else "not found"
             print(f"{service}: {status}")
@@ -254,7 +254,6 @@ Automate recurring audits with scheduled scripts:
 ```
 
 Regular reviews catch new accounts you create and identify breaches in newly-compromised services.
-
 
 
 ## Related Articles

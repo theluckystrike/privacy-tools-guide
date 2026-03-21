@@ -90,7 +90,7 @@ let locationManager = CLLocationManager()
 
 func checkLocationStatus() {
     let status = locationManager.authorizationStatus
-    
+
     switch status {
     case .notDetermined:
         print("Location permission not yet requested")
@@ -241,7 +241,6 @@ Managing location privacy is not an one-time task but an ongoing practice. Quart
 As iOS evolves, Apple introduces more granular controls. iOS 17 introduced the ability to limit location precision per app, and future versions may offer additional privacy options. Stay updated on iOS privacy features by reviewing release notes for new iOS versions.
 
 The fundamental principle: location data is one of the most sensitive data types you generate. It reveals intimate details about your life, relationships, and routines. Protecting it deserves the same attention you give to passwords and financial information.
-
 
 
 ## Related Articles

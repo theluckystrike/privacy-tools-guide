@@ -206,7 +206,6 @@ After running tests, evaluate your VPN provider honestly:
 - **Log-keeping incidents** = Proven privacy failures
 
 
-
 ## Related Articles
 
 - [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)

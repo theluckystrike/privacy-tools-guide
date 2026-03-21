@@ -324,7 +324,6 @@ shred -vfz -n 3 vault-export.json
 ```
 
 
-
 ## Related Articles
 
 - [Macos Privacy Permissions Manager Guide 2026](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)

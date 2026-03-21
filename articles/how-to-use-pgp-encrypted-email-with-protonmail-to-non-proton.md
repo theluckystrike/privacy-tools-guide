@@ -209,18 +209,18 @@ gpg = gnupr.GPG(gnupghome='/path/to/gnupg/home')
 def encrypt_for_protonmail_recipient(message, recipient_key_path):
     with open(recipient_key_path, 'r') as key_file:
         recipient_key = key_file.read()
-    
+
     # Import key first
     import_result = gpg.import_keys(recipient_key)
     key_id = import_result.fingerprints[0]
-    
+
     # Encrypt
     encrypted = gpg.encrypt(
         message,
         recipients=[key_id],
         always_trust=True
     )
-    
+
     return str(encrypted)
 ```
 
@@ -232,7 +232,6 @@ When using PGP with external recipients:
 - **Trust model**: Use web of trust or verify fingerprints personally
 - **Metadata**: Remember that subject lines and headers remain unencrypted
 - **Forward secrecy**: PGP does not provide forward secrecy; consider Signal for real-time messaging
-
 
 
 ## Related Articles

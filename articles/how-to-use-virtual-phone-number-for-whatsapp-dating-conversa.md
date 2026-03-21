@@ -166,7 +166,7 @@ function handleIncomingMessage(payload) {
     const message = payload.entry[0].changes[0].value.messages[0];
     const from = message.from;
     const text = message.text.body;
-    
+
     // Route to your primary device through your preferred channel
     return {
         sender: from,
@@ -197,11 +197,10 @@ Periodically rotating virtual phone numbers enhances long-term privacy:
 5. Update your dating app profiles with the new WhatsApp number
 
 
-
 ## Related Articles
 
-- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
-- [Prevent Screenshots of Dating Conversations from Being Shared Without Your Co...](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
+- [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [Prevent Screenshots of Dating Conversations from Being](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
 - [How To Use Signal For Early Dating Conversations Instead Of](/privacy-tools-guide/how-to-use-signal-for-early-dating-conversations-instead-of-/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)

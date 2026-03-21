@@ -165,14 +165,14 @@ For developers who want to verify encryption is working, examine network traffic
 
 const uploadPhoto = async (file) => {
   const encryptedData = await encryptFile(file); // Client-side encryption
-  
+
   // Verify the encrypted blob contains no recognizable data
   const response = await fetch('https://provider.example/upload', {
     method: 'POST',
     body: encryptedData,
     headers: { 'Content-Type': 'application/octet-stream' }
   });
-  
+
   console.log('Uploaded bytes:', encryptedData.byteLength);
   // The server receives ONLY encrypted bytes
 };
@@ -195,12 +195,10 @@ All options outperform mainstream services like Google Photos or iCloud when pri
 Start with a provider offering a free trial, upload a few test photos, and verify that the encryption workflow matches your expectations before committing to a paid plan.
 
 
-
-
 ## Related Articles
 
 - [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
 - [Secure File Sharing Tools Comparison: E2E Encrypted.](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)

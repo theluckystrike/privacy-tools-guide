@@ -245,7 +245,6 @@ Prepare for potential device seizure or account compromise:
 4. **Establish pre-agreed communication plans** - If detained, how do others know?
 
 
-
 ## Related Articles
 
 - [Privacy Setup for Immigration Activist](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocumented/)

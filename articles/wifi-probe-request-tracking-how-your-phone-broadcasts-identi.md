@@ -297,7 +297,6 @@ The WiFi standard continues evolving with privacy considerations:
 Adopting newer devices with improved privacy standards is the simplest long-term mitigation, but device replacement takes years.
 
 
-
 ## Related Articles
 
 - [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)

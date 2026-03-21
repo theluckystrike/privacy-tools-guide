@@ -59,18 +59,18 @@ class SecureTaxClientDB:
     def __init__(self, db_path, encryption_key):
         self.db_path = db_path
         self.cipher = Fernet(encryption_key)
-    
+
     def store_client_data(self, client_id, sensitive_data):
         """Encrypt sensitive fields before storage."""
         encrypted = self.cipher.encrypt(
             sensitive_data.encode()
         )
-        
+
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         cursor.execute(
-            """INSERT OR REPLACE INTO clients 
-               (id, encrypted_data, updated_at) 
+            """INSERT OR REPLACE INTO clients
+               (id, encrypted_data, updated_at)
                VALUES (?, ?, datetime('now'))""",
             (client_id, encrypted)
         )
@@ -95,7 +95,7 @@ class TaxPreparerAuth {
       name: `TaxPrep_${userId}`,
       issuer: 'YourFirmName'
     });
-    
+
     // Store secret temporarily for user setup
     // In production, encrypt this secret in your database
     return {
@@ -103,7 +103,7 @@ class TaxPreparerAuth {
       otpauth_url: secret.otpauth_url
     };
   }
-  
+
   static verifyToken(secret, token) {
     return speakeasy.totp.verify({
       secret: secret,
@@ -125,27 +125,27 @@ Client data moving between systems must use TLS 1.2 or higher. For tax professio
 # Nginx configuration for tax data transmission endpoint
 server {
     listen 443 ssl http2;
-    
+
     # TLS configuration - IRS recommends these settings
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    
+
     # HSTS header for强制HTTPS
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-    
+
     # Client data endpoint
     location /api/client-data {
         # Require valid client certificate for EFIN holders
         ssl_client_certificate /etc/ssl/certs/irs-efin-ca.crt;
         ssl_verify_client on;
-        
+
         # Additional request validation
         proxy_request_buffering off;
         proxy_buffering off;
-        
+
         # Backend application
         proxy_pass https://backend-tax-server:8443;
     }
@@ -164,7 +164,7 @@ from datetime import datetime
 class TaxDataAuditLogger:
     def __init__(self, log_destination):
         self.log_dest = log_destination
-    
+
     def log_access(self, user_id, client_id, action, ip_address):
         """Create tamper-evident audit log entry."""
         entry = {
@@ -175,13 +175,13 @@ class TaxDataAuditLogger:
             "ip_address": ip_address,
             "session_id": self._get_session_id()
         }
-        
+
         # Hash chain for tamper detection
         entry["previous_hash"] = self._get_last_hash()
         entry["entry_hash"] = self._compute_hash(entry)
-        
+
         self._write_log(entry)
-    
+
     def _compute_hash(self, entry):
         """SHA-256 hash for log integrity."""
         content = json.dumps(entry, sort_keys=True)
@@ -200,35 +200,35 @@ import secure_delete
 
 class TaxDataRetentionManager:
     RETENTION_YEARS = 7
-    
+
     def __init__(self, db_connection):
         self.db = db_connection
-    
+
     def enforce_retention_policy(self):
         """Remove client data exceeding retention period."""
         cutoff_date = datetime.now() - timedelta(
             years=self.RETENTION_YEARS
         )
-        
+
         # Get IDs of records to purge
         expired_clients = self.db.execute(
-            """SELECT id FROM clients 
+            """SELECT id FROM clients
                WHERE last_filed < ?""",
             (cutoff_date,)
         ).fetchall()
-        
+
         for client_id in expired_clients:
             # Secure deletion - overwrite before removal
             self._secure_delete_client(client_id)
-            
+
             # Remove from database
             self.db.execute(
                 "DELETE FROM clients WHERE id = ?",
                 (client_id,)
             )
-        
+
         self.db.commit()
-    
+
     def _secure_delete_client(self, client_id):
         """Overwrite data before deletion."""
         # Retrieve existing data size
@@ -236,11 +236,11 @@ class TaxDataRetentionManager:
             "SELECT LENGTH(encrypted_data) FROM clients WHERE id = ?",
             (client_id,)
         ).fetchone()[0]
-        
+
         # Overwrite with random data
         random_data = os.urandom(data_size)
         self.db.execute(
-            """UPDATE clients SET encrypted_data = ? 
+            """UPDATE clients SET encrypted_data = ?
                WHERE id = ?""",
             (random_data, client_id)
         )
@@ -265,8 +265,6 @@ Review these implementation points against your tax preparation workflow:
 Implementing these technical measures requires initial investment but pays dividends in compliance assurance and client trust. Start with the highest-risk data (SSNs and bank account numbers) and expand protection outward. The IRS continues tightening requirements—building a solid technical foundation now prepares you for whatever compliance landscape emerges next.
 
 ---
-
-
 
 
 ## Related Articles

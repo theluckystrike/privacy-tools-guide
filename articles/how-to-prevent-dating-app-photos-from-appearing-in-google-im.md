@@ -46,18 +46,18 @@ import os
 def check_image_uniqueness(image_path, existing_hashes):
     """Check if an image is unique by comparing perceptual hashes."""
     img = Image.open(image_path)
-    
+
     # Convert to grayscale and resize for consistent hashing
     img = img.convert('L').resize((256, 256))
-    
+
     # Calculate average hash
     pixels = list(img.getdata())
     avg = sum(pixels) / len(pixels)
-    
+
     # Generate binary hash
     hash_bits = ''.join('1' if pixel > avg else '0' for pixel in pixels)
     image_hash = hashlib.sha256(hash_bits.encode()).hexdigest()
-    
+
     return image_hash not in existing_hashes
 
 # Usage: Maintain a database of hashes from your other online photos
@@ -77,28 +77,28 @@ import numpy as np
 def transform_for_privacy(input_path, output_path):
     """Apply transformations to alter perceptual hash."""
     img = Image.open(input_path)
-    
+
     # Apply slight rotation (under 3 degrees to avoid detection)
     angle = np.random.uniform(-2.5, 2.5)
     img = img.rotate(angle, resample=Image.BICUBIC, expand=False)
-    
+
     # Adjust brightness and contrast slightly
     enhancer = ImageEnhance.Brightness(img)
     img = enhancer.enhance(0.97 + np.random.uniform(0, 0.06))
-    
+
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(0.98 + np.random.uniform(0, 0.04))
-    
+
     # Apply minimal gaussian blur
     img = img.filter(ImageFilter.GaussianBlur(radius=0.3))
-    
+
     # Slight color shift
     if img.mode == 'RGB':
         r, g, b = img.split()
         r = ImageEnhance.Brightness(r).enhance(1.01)
         b = ImageEnhance.Brightness(b).enhance(0.99)
         img = Image.merge('RGB', (r, g, b))
-    
+
     img.save(output_path, quality=92, optimize=True)
 ```
 
@@ -117,10 +117,10 @@ server {
         if ($http_user_agent ~* (googlebot|bingbot|yandex|baiduspider|facebookexternalhit)) {
             return 403;
         }
-        
+
         # Set headers to prevent indexing
         add_header X-Robots-Tag "noindex, nofollow, noarchive" always;
-        
+
         # Prevent caching of potentially private images
         add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0" always;
         add_header Pragma "no-cache" always;
@@ -158,22 +158,22 @@ def add_invisible_watermark(input_path, output_path):
     """Add noise patterns that disrupt perceptual hashing."""
     img = Image.open(input_path)
     pixels = img.load()
-    
+
     width, height = img.size
-    
+
     # Add minimal pixel modifications in less-visible areas
     for _ in range(min(width * height // 5000, 1000)):
         x = random.randint(0, width - 1)
         y = random.randint(0, height - 1)
-        
+
         # Modify only the least significant bit
         r, g, b = pixels[x, y]
         if img.mode == 'RGB':
             new_r = r ^ 1 if r > 0 else r
-            new_g = g ^ 1 if g > 0 else g  
+            new_g = g ^ 1 if g > 0 else g
             new_b = b ^ 1 if b > 0 else b
             pixels[x, y] = (new_r, new_g, new_b)
-    
+
     img.save(output_path)
 ```
 
@@ -196,8 +196,8 @@ For immediate action, add this to your page's `<head>`:
 For images specifically:
 
 ```html
-<img src="private-photo.jpg" 
-     alt="Profile photo" 
+<img src="private-photo.jpg"
+     alt="Profile photo"
      robots-nofollow="true"
      referrerpolicy="no-referrer">
 ```
@@ -215,7 +215,7 @@ def check_google_indexing(image_url):
     # Use Google Lens API or manual search
     encoded_url = quote(image_url)
     search_url = f"https://lens.google.com/uploadbyurl?url={encoded_url}"
-    
+
     # For automated checking, use Google's Custom Search API
     # Requires API key setup
     return search_url
@@ -249,15 +249,13 @@ The goal is raising the difficulty barrier rather than achieving absolute protec
 ---
 
 
-
-
 ## Related Articles
 
-- [Prevent Reverse Image Search from Linking Dating Profile Photos to Real Identity](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
 - [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
-- [Prevent Android Keyboard From Sending Typing Data To Google Or Samsung](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
+- [Prevent Android Keyboard From Sending Typing Data To Google](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
 - [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
+- [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

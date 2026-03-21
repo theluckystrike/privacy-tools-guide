@@ -50,11 +50,11 @@ def establish_voip_session(recipient_id, our_identity_key, their_identity_key):
         our_identity_key,
         their_identity_key
     )
-    
+
     # Pre-key bundles enable asynchronous session establishment
     # Essential for VoIP where both parties may not be online simultaneously
     session = session_builder.process_pre_key_bundle()
-    
+
     return SessionCipher(session)
 ```
 
@@ -146,10 +146,10 @@ voip:
   turn_uris:
     - turn:turn.your-matrix-server.com:3478
     - turns:turn.your-matrix-server.com:443
-  
+
   # TURN server credentials
   turn_shared_secret: "your-generated-secret"
-  
+
   # Enable IP discovery for NAT traversal
   turn_allow_guests: false
 
@@ -171,17 +171,17 @@ import { MatrixClient } from "matrix-js-sdk";
 
 async function startEncryptedCall(client, roomId) {
     const room = client.getRoom(roomId);
-    
+
     // Matrix handles key distribution automatically
     // The call uses DTLS-SRTP for media encryption
     const call = room.callEventToCallMapper(
         room.createCall("voice")
     );
-    
+
     // Encryption state is verifiable via the client
     // Check the call's encryption specification
     console.log("Call encryption:", call.getEncryptionType());
-    
+
     return call;
 }
 ```
@@ -218,7 +218,7 @@ core.add_proxy_config(proxy_config)
 def make_secure_call(core, remote_uri):
     params = core.create_call_params(None)
     params.media_encryption = linphone.MediaEncryption.ZRTP
-    
+
     call = core.invite_with_params(remote_uri, params)
     return call
 
@@ -250,15 +250,13 @@ For most developers and power users in 2026, the combination of Jitsi for team c
 Watch for MLS adoption across platforms and increasing browser support for WebRTC-based encrypted VoIP as the encryption landscape continues to develop.
 
 
-
-
 ## Related Articles
 
 - [Best VPN for Expats in UAE Accessing VoIP 2026](/privacy-tools-guide/best-vpn-for-expats-in-uae-accessing-voip-2026/)
 - [Best VPN for Travelers to Saudi Arabia 2026 VoIP](/privacy-tools-guide/best-vpn-for-travelers-to-saudi-arabia-2026-voip/)
 - [How To Set Up Secure Intercom System Using Encrypted Voip Fo](/privacy-tools-guide/how-to-set-up-secure-intercom-system-using-encrypted-voip-fo/)
 - [Jmp Chat Voip Number For Signal Registration Anonymous Phone](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)
-- [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
+- [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

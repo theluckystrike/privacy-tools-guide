@@ -54,7 +54,7 @@ class TaggedField:
     def __init__(self, value, purpose_tag: PurposeTag):
         self.value = value
         self.purpose_tag = purpose_tag
-    
+
     def can_use_for(self, requested_purpose: ProcessingPurpose) -> bool:
         return self.purpose_tag.purpose == requested_purpose
 ```
@@ -70,21 +70,21 @@ class PurposeAwareRepository:
     def __init__(self, db_connection, allowed_purpose: ProcessingPurpose):
         self.db = db_connection
         self.allowed_purpose = allowed_purpose
-    
+
     def get_user_email(self, user_id: str) -> Optional[str]:
         query = """
             SELECT email, purpose_tag->>'purpose' as collection_purpose
-            FROM users 
+            FROM users
             WHERE id = %s
         """
         result = self.db.execute(query, (user_id,))
-        
+
         if result and result[0]['collection_purpose'] != self.allowed_purpose.value:
             raise PurposeViolationError(
                 f"Cannot access email for purpose {self.allowed_purpose.value}. "
                 f"Data was collected for {result[0]['collection_purpose']}"
             )
-        
+
         return result[0]['email'] if result else None
 ```
 
@@ -112,7 +112,7 @@ class PurposeLimitationEnforcer:
     def __init__(self, consent_store, audit_logger):
         self.consent_store = consent_store
         self.audit_logger = audit_logger
-    
+
     def check_access(self, user_id: str, field: str, context: AccessContext) -> bool:
         # Check if user has purpose-specific consent
         has_consent = self.consent_store.check_consent(
@@ -120,7 +120,7 @@ class PurposeLimitationEnforcer:
             purpose=context.purpose,
             data_category=field
         )
-        
+
         # Log the access attempt regardless of result
         self.audit_logger.log_data_access(
             user_id=user_id,
@@ -128,7 +128,7 @@ class PurposeLimitationEnforcer:
             context=context,
             access_granted=has_consent
         )
-        
+
         return has_consent
 ```
 
@@ -145,7 +145,7 @@ CREATE POLICY account_email_access_policy ON users
     USING (
         -- Only allow access when current_purpose() matches collection purpose
         current_purpose() = (purpose_metadata->>'collection_purpose')::purpose_type
-        OR 
+        OR
         -- Or when user has explicit override consent
         has_consent_for_purpose(user_id, current_purpose())
     );
@@ -161,15 +161,15 @@ This approach provides defense in depth. Even if application-level controls are 
 When business requirements change and you need to use data for a new purpose, the technical approach must involve fresh consent collection and clear user communication.
 
 ```python
-async def request_purpose_expansion(user_id: str, new_purpose: ProcessingPurpose, 
+async def request_purpose_expansion(user_id: str, new_purpose: ProcessingPurpose,
                                     reason: str) -> bool:
     """Handle request to use existing data for new purpose."""
-    
+
     # Check if purpose expansion is already allowed
     existing_consent = await consent_store.get_consent(user_id, new_purpose)
     if existing_consent and existing_consent.is_active:
         return True
-    
+
     # Create consent request record
     request = ConsentRequest(
         user_id=user_id,
@@ -177,10 +177,10 @@ async def request_purpose_expansion(user_id: str, new_purpose: ProcessingPurpose
         explanation=reason,
         created_at=datetime.utcnow()
     )
-    
+
     # Notify user through appropriate channel
     await notification_service.send_consent_request(user_id, request)
-    
+
     return False  # Returns False until user explicitly consents
 ```
 
@@ -211,12 +211,11 @@ Several mistakes undermine purpose limitation implementations:
 The most subtle issue involves derived data. If you combine data from two purposes to create a new field, the derived field inherits the most restrictive purpose. Many teams overlook this and accidentally expand data use beyond consent boundaries.
 
 
-
 ## Related Articles
 
 - [How To Implement Customer Data Encryption At Rest And In Tra](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
 - [Simplex Chat Review: No Identifiers Architecture Analysis](/privacy-tools-guide/simplex-chat-review-no-identifiers/)
 

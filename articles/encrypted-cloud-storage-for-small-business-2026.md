@@ -91,18 +91,18 @@ int encrypt_file(const unsigned char *plaintext,
  size_t plaintext_len,
  const unsigned char *key,
  unsigned char **ciphertext_out) {
- 
+
  unsigned char nonce[crypto_secretbox_NONCEBYTES];
  randombytes_buf(nonce, sizeof(nonce));
- 
+
  *ciphertext_out = malloc(plaintext_len + crypto_secretbox_MACBYTES);
- 
+
  crypto_secretbox_easy(*ciphertext_out,
  plaintext,
  plaintext_len,
  nonce,
  key);
- 
+
  return 0;
 }
 {% endhighlight %}
@@ -373,7 +373,6 @@ Consider how to migrate away from encrypted storage if needed:
 **Key Recovery**: If the provider disappears, can you access your encryption keys to recover data? Some providers hold key escrow—avoid this unless necessary.
 
 **Migration Testing**: Before fully adopting a solution, test your ability to export and decrypt data using different tools.
-
 
 
 ## Related Articles

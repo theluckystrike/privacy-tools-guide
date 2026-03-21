@@ -138,20 +138,20 @@ import sqlite3
 def show_cdr_data(db_path='/var/log/asterisk/cdr.db'):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    
+
     # Show what columns are being recorded
     cursor.execute("PRAGMA table_info(cdr)")
     columns = cursor.fetchall()
     print("CDR Columns stored:")
     for col in columns:
         print(f"  - {col[1]} ({col[2]})")
-    
+
     # Show sample data (sanitized)
     cursor.execute("SELECT src, dst, duration, calldate FROM cdr LIMIT 5")
     print("\nSample CDR data:")
     for row in cursor.fetchall():
         print(f"  From: {row[0]} -> To: {row[1]}, Duration: {row[2]}s, Date: {row[3]}")
-    
+
     conn.close()
 
 if __name__ == '__main__':
@@ -165,7 +165,7 @@ import sqlite3
 import time
 from datetime import datetime, timedelta
 
-def sanitize_cdr_for_privacy(db_path='/var/log/asterisk/cdr.db', 
+def sanitize_cdr_for_privacy(db_path='/var/log/asterisk/cdr.db',
                               keep_days=7):
     """
     Remove sensitive CDR data after retention period
@@ -173,19 +173,19 @@ def sanitize_cdr_for_privacy(db_path='/var/log/asterisk/cdr.db',
     """
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    
+
     cutoff_date = datetime.now() - timedelta(days=keep_days)
-    
+
     # Delete detailed records older than retention period
     cursor.execute(
         "DELETE FROM cdr WHERE calldate < ?",
         (cutoff_date.strftime('%Y-%m-%d'),)
     )
-    
+
     deleted = cursor.rowcount
     conn.commit()
     conn.close()
-    
+
     print(f"Deleted {deleted} CDR records older than {keep_days} days")
 
 # Run daily via cron: 0 3 * * * /usr/bin/python3 /path/to/sanitize_cdr.py
@@ -217,15 +217,13 @@ Complete metadata elimination is difficult because some information exchange is 
 The reality is that SIP was designed for functionality, not privacy. Understanding what your provider logs is the first step toward making informed decisions about the services you use and the systems you build.
 
 
-
-
 ## Related Articles
 
 - [Jmp Chat Voip Number For Signal Registration Anonymous Phone](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
-- [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
-- [Secure VoIP Setup for Private Phone Calls Without Carrier Involvement](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
+- [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
+- [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

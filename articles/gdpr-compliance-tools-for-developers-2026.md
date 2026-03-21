@@ -138,10 +138,10 @@ BEGIN
   DELETE FROM userPreferences WHERE user_id = delete_user_data.user_id;
   DELETE FROM audit_logs WHERE user_id = delete_user_data.user_id;
   DELETE FROM login_history WHERE user_id = delete_user_data.user_id;
-  
+
   -- Finally, delete the user record
   DELETE FROM users WHERE id = delete_user_data.user_id;
-  
+
   -- Log the erasure for compliance records
   INSERT INTO data_erasure_log (user_id, erased_at, request_id)
   VALUES (user_id, NOW(), currval('erasure_request_seq'));
@@ -222,7 +222,7 @@ app.get('/api/user/export-data', authenticateUser, async (req, res) => {
   // Set headers for download
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Content-Disposition', `attachment; filename="user-data-${userId}.json"`);
-  
+
   res.json(exportData);
 });
 ```
@@ -294,8 +294,6 @@ Audit your current data flow first — map where personal data enters, travels, 
 5. Replace cookie-based analytics with a cookieless or self-hosted solution.
 
 Revisit your data flows regularly, update consent mechanisms, and keep audit logs for every processing activity.
-
-
 
 
 ## Related Articles

@@ -186,15 +186,13 @@ Smart home security requires ongoing attention. Establishing regular audit routi
 ---
 
 
-
-
 ## Related Articles
 
-- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
 - [Verify Your Devices Are Not Compromised: A Complete Audit](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
+- [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

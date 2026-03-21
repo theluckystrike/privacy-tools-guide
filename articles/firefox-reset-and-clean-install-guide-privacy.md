@@ -40,8 +40,8 @@ Each profile folder contains a randomly generated identifier. Locate your active
 # Using Firefox's places.sqlite
 # This requires sqlite3 installed
 sqlite3 ~/.mozilla/firefox/*.default-release/places.sqlite \
-  "SELECT p.title, b.url FROM moz_places b 
-   JOIN moz_bookmarks p ON b.id = p.fk 
+  "SELECT p.title, b.url FROM moz_places b
+   JOIN moz_bookmarks p ON b.id = p.fk
    ORDER BY p.parent, p.position;" > bookmarks_export.html
 ```
 
@@ -225,7 +225,6 @@ echo "Privacy settings applied to $PROFILE_DIR"
 ```
 
 Run this script after each Firefox update, as some settings may reset.
-
 
 
 ## Related Articles

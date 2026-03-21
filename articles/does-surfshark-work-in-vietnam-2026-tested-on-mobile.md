@@ -412,7 +412,6 @@ echo "Testing complete. See results.log"
 ```
 
 
-
 ## Related Articles
 
 - [Does Surfshark Obfuscation Work In China 2026 Mobile Test](/privacy-tools-guide/does-surfshark-obfuscation-work-in-china-2026-mobile-test/)

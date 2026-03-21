@@ -294,7 +294,6 @@ Using VCDPA effectively:
 7. Repeat annual audits to maintain control
 
 
-
 ## Related Articles
 
 - [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)

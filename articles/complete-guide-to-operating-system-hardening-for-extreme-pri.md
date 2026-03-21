@@ -90,39 +90,39 @@ table inet filter {
     # Drop all incoming by default
     chain input {
         type filter hook input priority 0; policy drop;
-        
+
         # Allow established connections
         ct state established,related accept
-        
+
         # Allow localhost
         iif lo accept
-        
+
         # Allow SSH (change port if non-standard)
         tcp dport 22 accept
-        
+
         # Allow ping
         icmp type echo-request accept
     }
-    
+
     # Drop all forwarding
     chain forward {
         type filter hook forward priority 0; policy drop;
     }
-    
+
     # Drop all outgoing by default (strict policy)
     chain output {
         type filter hook output priority 0; policy drop;
-        
+
         # Allow established connections
         ct state established,related accept
-        
+
         # Allow DNS
         udp dport 53 accept
         tcp dport 53 accept
-        
+
         # Allow HTTPS
         tcp dport 443 accept
-        
+
         # Allow NTP
         udp dport 123 accept
     }
@@ -276,7 +276,6 @@ nft list ruleset | grep -c "hook"
 ```
 
 Run this monthly to detect configuration drift. Subscribe to security mailing lists for your distribution to apply kernel and package updates promptly.
-
 
 
 ## Related Articles

@@ -173,8 +173,6 @@ This isolation prevents Google from correlating your privacy-focused browsing wi
 Start with Firefox and uBlock Origin, configure the privacy settings mentioned above, and iterate based on your workflow requirements. Profile isolation for Google services you must access prevents correlation with your privacy-focused browsing.
 
 
-
-
 ## Related Articles
 
 - [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)

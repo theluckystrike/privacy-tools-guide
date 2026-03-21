@@ -338,7 +338,6 @@ done
 This script creates a baseline that helps identify unusual changes.
 
 
-
 ## Related Articles
 
 - [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)

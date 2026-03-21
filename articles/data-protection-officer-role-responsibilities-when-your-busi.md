@@ -150,7 +150,7 @@ const escalateDataBreach = (incident) => {
   notify(dpo);
   notify(legal);
   notify(executiveTeam);
-  
+
   // Regulatory reporting within 72 hours (GDPR)
   if (incident.severity === 'high') {
     reportToAuthority(incident);
@@ -168,7 +168,7 @@ class UserData:
     def __init__(self):
         self.encrypted_fields = ['email', 'phone', 'address']
         self.retention_period = 90  # days
-        
+
     def store(self, user_id, data):
         encrypted = self.encrypt_sensitive(data)
         self.db.save(user_id, encrypted)
@@ -192,7 +192,6 @@ Without proper DPO oversight, your business risks:
 - **Regulatory Fines**: GDPR violations can reach €20 million or 4% of annual global revenue
 - **Reputational Damage**: Data breaches erode user trust
 - **Operational Disruptions**: Non-compliance can halt data processing activities
-
 
 
 ## Related Articles

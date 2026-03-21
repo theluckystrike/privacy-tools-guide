@@ -298,7 +298,6 @@ Consider these guidelines:
 - **Custom applications**: WireGuard for application-embedded VPN with fine-grained power control
 
 
-
 ## Related Articles
 
 - [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)

@@ -360,7 +360,6 @@ Websites may break with aggressive privacy settings. Solutions: whitelist domain
 iOS browsers receive regular security updates. Check App Store for updates monthly.
 
 
-
 ## Related Articles
 
 - [Best Browser for Streaming Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-streaming-privacy-2026/)

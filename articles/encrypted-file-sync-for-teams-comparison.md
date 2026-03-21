@@ -399,7 +399,6 @@ curl -X POST "https://nextcloud.example.com/ocs/v2.php/apps/webhooks/api/v1/webh
 For development teams, SyncThing or Nextcloud are essential. SpiderOak is unsuitable for build automation.
 
 
-
 ## Related Articles
 
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)

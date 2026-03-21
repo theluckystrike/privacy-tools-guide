@@ -123,7 +123,7 @@ import sys
 def parse_totp_from_csv(input_file, output_file):
     """Extract TOTP secrets from LastPass export"""
     totp_entries = []
-    
+
     with open(input_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -141,12 +141,12 @@ def parse_totp_from_csv(input_file, output_file):
                                 'name': row['name'],
                                 'secret': secret
                             })
-    
+
     # Output for manual TOTP entry
     with open(output_file, 'w') as f:
         for entry in totp_entries:
             f.write(f"{entry['name']}: {entry['secret']}\n")
-    
+
     print(f"Found {len(totp_entries)} TOTP entries")
     return totp_entries
 
@@ -247,7 +247,6 @@ During migration:
 shred -u lastpass-export.csv
 shred -u totp-seeds.txt
 ```
-
 
 
 ## Related Articles

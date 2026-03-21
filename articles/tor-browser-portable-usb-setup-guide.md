@@ -137,13 +137,13 @@ def get_circuit_info():
     try:
         controller = stem.control.Controller.from_port(port=CONTROL_PORT)
         controller.authenticate(password=TOR_PASSWORD)
-        
+
         for circuit in controller.get_circuits():
             if circuit.status == 'BUILT':
                 print(f"Circuit {circuit.id}:")
                 for fingerprint, nickname in circuit.path:
                     print(f"  -> {nickname} ({fingerprint})")
-        
+
         controller.close()
     except stem.SocketError:
         print("Tor control port not available")
@@ -187,15 +187,15 @@ def test_tor_connection():
     options.add_argument("--headless")
     # Path to portable Tor Browser
     options.binary_location = "/path/to/usb/tor-browser/Browser/firefox"
-    
+
     driver = webdriver.Firefox(options=options)
     driver.get("https://check.torproject.org")
-    
+
     if "Congratulations" in driver.page_source:
         print("Tor connection verified")
     else:
         print("Connection failed")
-    
+
     driver.quit()
 ```
 
@@ -239,8 +239,6 @@ Several mistakes undermine portable security:
 USB 2.0 ports severely limit Tor Browser performance due to latency in every circuit operation. USB 3.0 or newer provides acceptable experience. Consider a high-quality USB drive with high IOPS ratings for better responsiveness.
 
 For extremely sensitive operations, bootable distributions like Tails provide stronger guarantees, but sacrifice the convenience of persistent configurations.
-
-
 
 
 ## Related Articles

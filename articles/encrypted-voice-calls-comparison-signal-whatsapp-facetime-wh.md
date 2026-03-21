@@ -85,7 +85,7 @@ WhatsApp's encryption uses the Signal Protocol, so the call content itself remai
 # WhatsApp metadata collection (conceptual)
 whatsapp_metadata_collected = {
     "caller_id": "phone_number",
-    "callee_id": "phone_number", 
+    "callee_id": "phone_number",
     "timestamp": "unix_time",
     "duration": "seconds",
     "device_model": "string",
@@ -164,7 +164,7 @@ class PrivacyAwareCallServer {
     // - caller/callee identities
     // - call duration
     // - IP addresses beyond connection lifetime
-    
+
     // Only log operational metrics
     this.metrics = {
       activeConnections: 0,
@@ -172,7 +172,7 @@ class PrivacyAwareCallServer {
       // No PII or call metadata
     };
   }
-  
+
   relayCall(encryptedPacket) {
     // Forward only — no logging of who, when, or how long
     this.metrics.packetsRelayed++;
@@ -182,7 +182,6 @@ class PrivacyAwareCallServer {
 ```
 
 4. **Consider self-hosted solutions**: For organizations with strict requirements, self-hosted alternatives like Matrix with VoIP support provide more control over metadata.
-
 
 
 ## Related Articles

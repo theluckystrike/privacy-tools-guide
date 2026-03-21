@@ -185,8 +185,6 @@ Forgetting the passphrase for your backup is equally problematic. Document your 
 A PGP key revocation certificate is not optional. It is a fundamental part of key management that protects you and your correspondents when things go wrong. Generate it, secure it, and know how to use it.
 
 
-
-
 ## Related Articles
 
 - [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)

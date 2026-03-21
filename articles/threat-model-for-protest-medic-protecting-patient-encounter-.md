@@ -64,11 +64,11 @@ class SecureEncounterLog:
     def __init__(self, encryption_key=None):
         self.encounters = []
         self.encryption_key = encryption_key  # Optional: AES key for storage encryption
-        
+
     def log_encounter(self, treatment_codes, notes="", location="", timestamp=None):
         """
         Log encounter using treatment codes instead of patient identifiers
-        
+
         treatment_codes: List of standardized codes (e.g., ["BLK", "TEAR", "HYP"])
         - BLK: Basic life support
         - TEAR: Tear gas exposure treatment
@@ -78,7 +78,7 @@ class SecureEncounterLog:
         """
         if timestamp is None:
             timestamp = datetime.now().isoformat()
-            
+
         # Create anonymized encounter record
         encounter = {
             "timestamp": timestamp,
@@ -91,26 +91,26 @@ class SecureEncounterLog:
             "notes": notes,
             "incident_id": self._generate_incident_id(timestamp, location)
         }
-        
+
         self.encounters.append(encounter)
         return encounter["incident_id"]
-    
+
     def _anonymize_location(self, location):
         """Convert specific location to area code only"""
         if not location:
             return "UNK"
         # Return only neighborhood/area, not specific address
         return hashlib.sha256(location.encode()).hexdigest()[:8].upper()
-    
+
     def _generate_incident_id(self, timestamp, location):
         """Generate non-sequential incident ID"""
         data = f"{timestamp}{location}".encode()
         return hashlib.sha256(data).hexdigest()[:12].upper()
-    
+
     def export_encounters(self, filepath):
         """Export to encrypted JSON"""
         data = json.dumps(self.encounters, indent=2)
-        
+
         if self.encryption_key:
             # Use cryptography library for actual encryption
             from cryptography.fernet import Fernet
@@ -246,8 +246,6 @@ Use this checklist when setting up your protest medic security:
 - [ ] Use separate phone if possible
 
 The goal isn't paranoia—it's reasonable protection for the people who trust you with their care. By implementing these measures, you reduce the risk that patient information becomes evidence, gets leaked, or harms the people you treated.
-
-
 
 
 ## Related Articles

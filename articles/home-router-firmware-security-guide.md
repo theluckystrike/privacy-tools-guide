@@ -219,7 +219,6 @@ Run `https://www.grc.com/x/ne.dll?bh0bkyd2` (Shields Up) from a browser to test 
 - [ ] Quarterly firmware check scheduled
 
 
-
 ## Related Articles
 
 - [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)

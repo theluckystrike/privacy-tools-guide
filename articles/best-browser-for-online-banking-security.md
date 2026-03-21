@@ -87,7 +87,7 @@ function checkFingerprintResistance() {
     webgl: testWebGLFingerprinting(),
     fonts: navigator.fonts || 'unavailable'
   };
-  
+
   return tests;
 }
 
@@ -121,10 +121,10 @@ Enable enhanced protection in Chrome:
 if (navigator.userAgent.includes('Chrome')) {
   console.log('Platform:', navigator.platform);
   console.log('Plugins count:', navigator.plugins.length);
-  
+
   // Detect if Safe Browsing is likely active
-  const hasSafeBrowsing = typeof window.chrome !== 'undefined' 
-    && window.chrome.safeBrowsing 
+  const hasSafeBrowsing = typeof window.chrome !== 'undefined'
+    && window.chrome.safeBrowsing
     && window.chrome.safeBrowsing.getState;
 }
 ```
@@ -173,7 +173,7 @@ function analyzeConnectionSecurity() {
     httpsUpgrade: checkHttpsUpgrade(),
     certificate: getCertificateInfo()
   };
-  
+
   return security;
 }
 
@@ -207,7 +207,7 @@ Configure site-specific settings:
 // brave://settings/shields?site=yourbank.com
 const bankingSites = [
   'chase.com',
-  'bankofamerica.com', 
+  'bankofamerica.com',
   'wellsfargo.com',
   'citi.com'
 ];
@@ -216,11 +216,10 @@ console.log('Configured banking sites:', bankingSites.length);
 ```
 
 
-
 ## Related Articles
 
 - [VPN for Online Banking While Traveling Southeast Asia Safety](/privacy-tools-guide/vpn-for-online-banking-while-traveling-southeast-asia-safety/)
-- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 - [Vpn For Accessing Canadian Banking From Mexico Securely 2026](/privacy-tools-guide/vpn-for-accessing-canadian-banking-from-mexico-securely-2026/)
 - [VPN for Accessing European Banking Apps from United States](/privacy-tools-guide/vpn-for-accessing-european-banking-apps-from-united-states/)

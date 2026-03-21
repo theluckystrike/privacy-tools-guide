@@ -61,7 +61,7 @@ To verify a contact's fingerprint in Gajim:
 The fingerprint appears as a 64-character hex string. For example:
 
 ```
-e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3 
+e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3
 c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9
 ```
 
@@ -369,7 +369,6 @@ export ALL_PROXY=socks5://127.0.0.1:9050
 # 8. Verify contacts through multiple independent channels
 # In-person if possible; phone call minimum
 ```
-
 
 
 ## Related Articles

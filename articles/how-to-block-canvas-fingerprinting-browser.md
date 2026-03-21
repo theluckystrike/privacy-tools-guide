@@ -29,7 +29,7 @@ The fingerprinting script typically works like this:
 function getCanvasFingerprint() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  
+
   // Draw various elements that produce different results
   // across different systems
   ctx.textBaseline = 'top';
@@ -40,7 +40,7 @@ function getCanvasFingerprint() {
   ctx.fillText('Fingerprint Test', 2, 15);
   ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
   ctx.fillText('Canvas', 4, 17);
-  
+
   // Get the data URL - this contains the rendered pixels
   return canvas.toDataURL();
 }
@@ -162,34 +162,34 @@ Create a test page to verify your browser's canvas fingerprinting protection:
 <body>
   <h1>Canvas Fingerprint Test</h1>
   <pre id="result"></pre>
-  
+
   <script>
     function testCanvasFingerprint() {
       const canvas = document.createElement('canvas');
       canvas.width = 200;
       canvas.height = 50;
       const ctx = canvas.getContext('2d');
-      
+
       // Draw a consistent pattern
       ctx.fillStyle = '#000';
       ctx.fillRect(0, 0, 200, 50);
       ctx.fillStyle = '#fff';
       ctx.font = '16px Arial';
       ctx.fillText('Test String 12345', 10, 30);
-      
+
       return canvas.toDataURL();
     }
-    
+
     // Test consistency across reads
     const results = [];
     for (let i = 0; i < 3; i++) {
       results.push(testCanvasFingerprint().substring(0, 80));
     }
-    
-    document.getElementById('result').textContent = 
+
+    document.getElementById('result').textContent =
       results.map((r, i) => `Read ${i+1}: ${r}`).join('\n\n') +
-      '\n\n' + (results[0] === results[1] ? 
-        'FINGERPRINTABLE: Same results across reads' : 
+      '\n\n' + (results[0] === results[1] ?
+        'FINGERPRINTABLE: Same results across reads' :
         'PROTECTED: Different results across reads');
   </script>
 </body>
@@ -216,7 +216,7 @@ Monitor your site for canvas fingerprinting scripts:
 // Monitor canvas API usage on your site
 (function() {
   const originalGetContext = HTMLCanvasElement.prototype.getContext;
-  
+
   HTMLCanvasElement.prototype.getContext = function(type) {
     if (type === '2d') {
       console.warn('Canvas 2D context accessed:', window.location.href);
@@ -238,15 +238,13 @@ The right level of canvas fingerprinting protection depends on your threat model
 Remember that stronger protection sometimes means reduced functionality. Some websites may not work correctly with aggressive fingerprinting protection enabled, so maintaining separate profiles for different activities is often the best approach.
 
 
-
-
 ## Related Articles
 
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

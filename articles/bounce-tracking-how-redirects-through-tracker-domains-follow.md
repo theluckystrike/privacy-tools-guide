@@ -73,7 +73,7 @@ const tracker = http.createServer((req, res) => {
   const url = new URL(req.url, `https://${req.headers.host}`);
   const redirectUrl = url.searchParams.get('redirect');
   const sourceId = url.searchParams.get('src');
-  
+
   // Log the click event
   console.log({
     timestamp: new Date().toISOString(),
@@ -83,13 +83,13 @@ const tracker = http.createServer((req, res) => {
     source: sourceId,
     destination: redirectUrl
   });
-  
+
   // Set tracking cookie if not present
   if (!req.headers['cookie']?.includes('btk=')) {
     const trackingId = generateUniqueId();
     res.setHeader('Set-Cookie', `btk=${trackingId}; Max-Age=31536000; Path=/`);
   }
-  
+
   // Perform the redirect
   res.writeHead(302, { Location: redirectUrl });
   res.end();
@@ -295,15 +295,13 @@ Some data protection authorities have begun examining redirect-based tracking mo
 ---
 
 
-
-
 ## Related Articles
 
-- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
 - [Etag Tracking How Server Caching Headers Follow You Across W](/privacy-tools-guide/etag-tracking-how-server-caching-headers-follow-you-across-w/)
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [How to Detect if Your Car Has GPS Tracker Hidden Check](/privacy-tools-guide/how-to-detect-if-your-car-has-gps-tracker-hidden-check/)
+- [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -290,7 +290,6 @@ Some common issues and solutions:
 - **Location not triggering automation**: Verify location permission is set to "Always" and that location services are enabled for Shortcuts app
 
 
-
 ## Related Articles
 
 - [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)

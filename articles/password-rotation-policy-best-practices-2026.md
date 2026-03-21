@@ -95,7 +95,7 @@ import vault "github.com/hashicorp/vault/api"
 func getDatabaseCredentials() (*vault.Secret, error) {
     config := vault.DefaultConfig()
     client, _ := vault.NewClient(config)
-    
+
     secret, err := client.Logical().Read("my-database/creds/my-role")
     if err != nil {
         return nil, err
@@ -136,27 +136,27 @@ from datetime import datetime, timedelta
 class APIKeyManager:
     def __init__(self, db):
         self.db = db
-    
+
     def rotate_key(self, user_id, key_id):
         # Invalidate old key
         self.db.execute(
             "UPDATE api_keys SET active = FALSE WHERE id = ?",
             (key_id,)
         )
-        
+
         # Generate new key
         new_key = os.urandom(32).hex()
         expires_at = datetime.utcnow() + timedelta(days=90)
-        
+
         self.db.execute(
-            """INSERT INTO api_keys 
+            """INSERT INTO api_keys
                (user_id, key_hash, created_at, expires_at, active)
                VALUES (?, ?, ?, ?, TRUE)""",
             (user_id, hash(new_key), datetime.utcnow(), expires_at)
         )
-        
+
         return new_key
-    
+
     def enforce_rotation(self, max_age_days=90):
         cutoff = datetime.utcnow() - timedelta(days=max_age_days)
         return self.db.execute(
@@ -184,7 +184,7 @@ groups:
       severity: warning
     annotations:
       summary: "API credential expiring in less than 7 days"
-      
+
   - alert: SSHKeyNotRotated
     expr: time() - ssh_key_last_rotated > 15552000  # 180 days
     for: 24h
@@ -230,7 +230,6 @@ Run periodic audits against this registry to identify neglected credentials.
 5. Test recovery procedures to verify you can access systems after rotation.
 6. Monitor compliance and alert on credentials approaching rotation deadlines.
 7. Review quarterly and adjust schedules based on incident data and team feedback.
-
 
 
 ## Related Articles

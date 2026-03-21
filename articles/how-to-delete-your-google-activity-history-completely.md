@@ -451,15 +451,13 @@ print(f'Total activity entries: {len(entries)}')
 ```
 
 
-
-
 ## Related Articles
 
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [How to Delete All Traces of Your Online Presence Completely](/privacy-tools-guide/how-to-delete-all-traces-of-your-online-presence-completely/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
-- [Disable Location Services Completely On Macos While Keeping Apps Functional](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
+- [Disable Location Services Completely On Macos While Keeping](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

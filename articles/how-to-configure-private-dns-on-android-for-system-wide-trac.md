@@ -187,7 +187,6 @@ When choosing a DNS provider, consider:
 Providers like AdGuard, Quad9, and NextDNS publish transparency reports and maintain no-logs policies for personal use.
 
 
-
 ## Related Articles
 
 - [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)

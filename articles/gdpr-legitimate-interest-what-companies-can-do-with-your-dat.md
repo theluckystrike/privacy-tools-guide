@@ -49,7 +49,7 @@ Companies can process your data to detect and prevent fraud, unauthorized access
 class LegitimateInterestAssessment:
     purpose = "Fraud detection and prevention"
     legal_interest = "Preventing financial losses and protecting other customers"
-    
+
     def balance_test(self, data_subject):
         """
         Balancing test factors:
@@ -144,7 +144,7 @@ class LegitimateInterestRecord:
     balancing_factors: list
     safeguards: list
     review_date: datetime
-    
+
 # Example: Email service security scanning
 security_scanning = LegitimateInterestRecord(
     processing_activity="Email content scanning for malware",
@@ -169,7 +169,6 @@ When you encounter a privacy practice you're unsure about, look for these indica
 2. **Opt-out options** — Legitimate interest activities must offer ways to opt-out
 3. **No consent mechanism** — If you're not being asked to consent, legitimate interest may apply
 4. **Direct marketing** — Marketing to existing customers often relies on this basis
-
 
 
 ## Related Articles

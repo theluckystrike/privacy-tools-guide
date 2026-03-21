@@ -344,8 +344,6 @@ If your corporate VPN uses split tunneling (routes only corporate destinations t
 Check with your IT department about approved VPN stacking configurations before traveling. Using unauthorized VPN software on corporate devices may violate acceptable use policies.
 
 
-
-
 ## Related Articles
 
 - [VPN for Safe Torrent Downloading While Living in Germany](/privacy-tools-guide/vpn-for-safe-torrent-downloading-while-living-in-germany/)

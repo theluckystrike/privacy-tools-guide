@@ -48,7 +48,6 @@ Browse every privacy and security guide in one place — from VPN setup and pass
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 
 
-
 ## Verifying VPN Leak Protection
 
 Before trusting any VPN for sensitive browsing, verify that DNS and WebRTC leaks are absent.

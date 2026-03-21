@@ -289,7 +289,6 @@ Document throttling for potential complaints to regulatory bodies:
 ```
 
 
-
 ## Related Articles
 
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)

@@ -201,7 +201,7 @@ class AliasManager:
     def __init__(self, db_path="aliases.db"):
         self.conn = sqlite3.connect(db_path)
         self.create_table()
-    
+
     def create_table(self):
         self.conn.execute("""
             CREATE TABLE IF NOT EXISTS aliases (
@@ -213,14 +213,14 @@ class AliasManager:
                 is_active BOOLEAN DEFAULT 1
             )
         """)
-    
+
     def add_alias(self, email, purpose):
         self.conn.execute(
             "INSERT INTO aliases VALUES (NULL, ?, ?, ?, NULL, 1)",
             (email, purpose, datetime.now())
         )
         self.conn.commit()
-    
+
     def get_aliases(self, purpose=None):
         cursor = self.conn.execute(
             "SELECT * FROM aliases WHERE is_active=1" +
@@ -272,12 +272,11 @@ Consider also the metadata problem. Even with anonymous email services, metadata
 ---
 
 
-
 ## Related Articles
 
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)
-- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
 - [Privacy Focused Cloud Email Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-email-comparison-2026/)
+- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
 - [Best Encrypted Email Service 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-email-service-2026/)
 

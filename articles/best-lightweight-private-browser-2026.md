@@ -222,7 +222,6 @@ firefox -P research     # Privacy-hardened profile
 This separation prevents cross-site tracking between your development work and personal browsing.
 
 
-
 ## Related Articles
 
 - [Best Private Dropbox Alternative 2026: A Developer Guide](/privacy-tools-guide/best-private-dropbox-alternative-2026/)

@@ -85,7 +85,7 @@ function getFingerprint() {
     navigator.hardwareConcurrency,
     navigator.deviceMemory
   ];
-  
+
   // Simple hash of fingerprintable attributes
   return elements.reduce((hash, el) => {
     return ((hash << 5) - hash) + el.charCodeAt(0);
@@ -165,9 +165,9 @@ For sensitive development work, consider using a hardened browser configuration:
 // Content Security Policy for development
 // Add this meta tag to your development index.html
 const cspMeta = `
-<meta http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; 
-               script-src 'self' 'unsafe-inline'; 
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               script-src 'self' 'unsafe-inline';
                connect-src 'self' localhost:*;
                frame-src 'none';">
 `;
@@ -190,9 +190,6 @@ Regardless of which browser you choose, regularly audit your configuration and e
 Test your browser's privacy protection regularly using tools like Cover Your Tracks (formerly Panopticlick) to understand what information your browser exposes. This knowledge helps you configure your development environment appropriately and build more privacy-conscious applications.
 
 Spend time configuring your chosen browser properly, and the setup will serve both your productivity and security needs.
-
-
-
 
 
 ## Related Articles

@@ -128,7 +128,7 @@ from OsmAndHelper import OsmAndUtils
 
 def filter_hiking_pois(osm_data):
     """Filter only hiking-relevant points of interest"""
-    return [poi for poi in osm_data 
+    return [poi for poi in osm_data
             if poi.tags.get('tourism') == 'hiking'
             or poi.tags.get('leisure') == 'hiking']
 ```
@@ -180,8 +180,6 @@ Getting started with either app takes minutes:
 Both apps support GPX import for custom routes. Export your planned routes from ridewithgps.com or Strava, transfer to your device, and navigate without any online dependency.
 
 ---
-
-
 
 
 ## Related Articles

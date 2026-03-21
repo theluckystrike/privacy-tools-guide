@@ -235,7 +235,6 @@ Security isn't an one-time configuration. Establish regular review habits:
 - After any concerning incident: Immediate password change on potentially compromised accounts
 
 
-
 ## Related Articles
 
 - [Privacy Setup for Someone Hiding from Abusive Ex](/privacy-tools-guide/privacy-setup-for-someone-hiding-from-abusive-ex-comprehensi/)

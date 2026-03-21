@@ -60,14 +60,14 @@ class SandboxDataFlow:
         self.purpose = purpose
         self.retention_period = retention_period
         self.safeguards = []
-    
+
     def add_safeguard(self, safeguard_type, implementation):
         self.safeguards.append({
             'type': safeguard_type,
             'implementation': implementation,
             'verified': False
         })
-    
+
     def generate_documentation(self):
         return {
             'data_categories': self.data_categories,
@@ -215,8 +215,6 @@ Some progressive jurisdictions are also experimenting with "sandboxes for sandbo
 
 Privacy regulatory sandbox programs continue expanding as regulators seek balanced approaches to data protection and innovation. For developers and organizations working with personal data in innovative ways, these programs offer valuable pathways to test and refine solutions within structured regulatory frameworks.
 {% endraw %}
-
-
 
 
 ## Related Articles

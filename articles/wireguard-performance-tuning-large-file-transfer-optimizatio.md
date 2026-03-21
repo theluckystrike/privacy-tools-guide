@@ -268,7 +268,6 @@ sudo watch -n1 'sudo wg show wg0'
 ```
 
 
-
 ## Related Articles
 
 - [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)

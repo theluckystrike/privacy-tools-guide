@@ -44,7 +44,7 @@ def check_breaches(email):
     url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
     headers = {"User-Agent": "Privacy-Tools-Guide"}
     response = requests.get(url, headers=headers)
-    
+
     if response.status_code == 200:
         breaches = response.json()
         print(f"Found {len(breaches)} breaches for {email}")
@@ -77,7 +77,7 @@ Separating your identities requires a systematic approach. Use dedicated email a
 # - notes: "Use for legacy accounts only"
 #
 # Identity: New Name
-# - email: new.name@provider.com  
+# - email: new.name@provider.com
 # - notes: "Use for professional and new accounts"
 ```
 
@@ -103,7 +103,7 @@ ACCOUNTS = {
         "email": "yourname@protonmail.com"
     },
     "deadname_archive": {
-        "imap_server": "imap.oldprovider.com", 
+        "imap_server": "imap.oldprovider.com",
         "email": "old.name@oldprovider.com",
         "auto_forward": "yourname@protonmail.com"
     }
@@ -162,7 +162,7 @@ from datetime import datetime
 class IdentityMigration:
     def __init__(self):
         self.accounts = []
-        
+
     def add_account(self, service, old_email, new_email, status):
         self.accounts.append({
             "service": service,
@@ -171,11 +171,11 @@ class IdentityMigration:
             "status": status,  # pending, updated, deprecated
             "updated": datetime.now().isoformat()
         })
-        
+
     def generate_report(self):
         pending = [a for a in self.accounts if a["status"] == "pending"]
         updated = [a for a in self.accounts if a["status"] == "updated"]
-        
+
         print(f"Migration Status:")
         print(f"- Completed: {len(updated)}")
         print(f"- Pending: {len(pending)}")
@@ -209,7 +209,6 @@ firefox --no-remote -P "NewIdentity"
 # Create separate profile for legacy accounts
 firefox --no-remote -P "LegacyAccounts"
 ```
-
 
 
 ## Related Articles

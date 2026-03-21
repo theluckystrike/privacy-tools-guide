@@ -15,7 +15,6 @@ tags: [privacy-tools-guide, privacy]
 ---
 
 
-
 {% raw %}
 
 Managing application permissions on macOS is essential for maintaining privacy and security. The macOS privacy permissions system controls which apps can access sensitive resources like your camera, microphone, contacts, calendar, and files. For developers and power users, understanding how to audit, modify, and automate these permissions provides granular control beyond what the graphical interface offers.
@@ -380,7 +379,6 @@ Organizations can deploy standardized privacy configurations:
   </dict>
 </plist>
 ```
-
 
 
 ## Related Articles

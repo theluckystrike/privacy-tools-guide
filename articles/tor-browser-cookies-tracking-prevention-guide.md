@@ -310,7 +310,6 @@ Result: Behavior cannot be correlated across sites or time
 For users combining Tor Browser with Tor network, no single observer can correlate your browsing activities across different identities or sites.
 
 
-
 ## Related Articles
 
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)

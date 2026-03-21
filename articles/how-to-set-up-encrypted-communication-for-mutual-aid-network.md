@@ -186,11 +186,10 @@ Technical encryption tools provide limited protection without consistent operati
 Regular security audits help identify vulnerabilities before adversaries exploit them. Schedule monthly reviews of participant device security, application configurations, and recovery procedure accessibility.
 
 
-
 ## Related Articles
 
 - [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
-- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 - [How To Use Ssh Tunneling For Encrypted Communication Between](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)

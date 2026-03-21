@@ -289,7 +289,6 @@ echo -e "\n[Peer]\nPublicKey = $(cat /tmp/newclient-public.key)\nAllowedIPs = 10
 ```
 
 
-
 ## Related Articles
 
 - [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)

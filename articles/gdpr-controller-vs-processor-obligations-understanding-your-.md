@@ -70,10 +70,10 @@ def handle_deletion_request(user_id: str) -> dict:
     Must remove all personal data unless exceptions apply.
     """
     user = database.get_user(user_id)
-    
+
     if not user:
         return {"status": "not_found"}
-    
+
     # Check if any legal retention requirements exist
     if has_legal_obligation(user_id):
         return {
@@ -81,12 +81,12 @@ def handle_deletion_request(user_id: str) -> dict:
             "retained_data": "Tax records (legal requirement)",
             "message": "Some data retained per legal obligations"
         }
-    
+
     # Perform deletion
     database.delete_user(user_id)
     analytics.delete_user_data(user_id)
     backup_service.schedule_deletion(user_id)
-    
+
     return {"status": "deleted", "deletion_date": "2026-03-16"}
 ```
 
@@ -139,7 +139,7 @@ interface VendorAssessment {
   // Processing details
   processesDataOnOurBehalf: boolean;
   determinatesPurposes: boolean; // If true, they're likely a controller
-  
+
   // GDPR Article 28 compliance
   hasDPA: boolean;
   dpaIncludes: {
@@ -151,7 +151,7 @@ interface VendorAssessment {
     subprocessorList: boolean;
     auditRights: boolean;
   };
-  
+
   // Technical measures
   encryptionAtRest: boolean;
   encryptionInTransit: boolean;
@@ -161,7 +161,7 @@ interface VendorAssessment {
 }
 
 function assessVendor(vendor: string): VendorAssessment {
-  // Implementation would check vendor documentation, 
+  // Implementation would check vendor documentation,
   // DPA terms, and technical security measures
 }
 ```
@@ -216,8 +216,6 @@ Fines for controller non-compliance reach €20 million or 4% of global annual r
 ---
 
 Understanding whether you're dealing with a controller or processor—and recognizing your position as a data subject—helps you navigate GDPR effectively. Whether you're asserting your own rights or building compliant systems, this framework provides the foundation for protecting personal data in the digital ecosystem.
-
-
 
 
 ## Related Articles

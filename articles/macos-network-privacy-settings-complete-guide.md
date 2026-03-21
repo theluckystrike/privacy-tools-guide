@@ -279,7 +279,6 @@ They complement each other. The Application Firewall is the quickest protection;
 Some enterprise networks authenticate by MAC address. Enabling Private WiFi Address requires re-authenticating on those networks. For home routers with MAC-based DHCP reservations, disable randomization for your home network specifically.
 
 
-
 ## Related Articles
 
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)

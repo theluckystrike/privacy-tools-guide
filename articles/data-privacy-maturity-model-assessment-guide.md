@@ -181,7 +181,7 @@ class PrivacyMetricsCollector {
 
   async recordDataAccess(userId, dataType, accessLevel) {
     const startTime = Date.now();
-    
+
     const accessRecord = {
       userId,
       dataType,
@@ -205,7 +205,7 @@ class PrivacyMetricsCollector {
   async detectAnomalies(accessRecord) {
     // Machine learning-based anomaly detection
     const anomalyScore = await this.mlModel.predict(accessRecord);
-    
+
     if (anomalyScore > 0.8) {
       await this.alertSystem.send({
         type: 'PRIVACY_ANOMALY',
@@ -338,7 +338,7 @@ class PrivacyMaturityAssessment {
 
   async assess() {
     const results = {};
-    
+
     for (const dimension of this.dimensions) {
       const score = await this.evaluateDimension(dimension);
       results[dimension] = {
@@ -391,7 +391,7 @@ async function registerUser(userData) {
       version: '1.0'
     }
   };
-  
+
   return await db.users.insert(user);
 }
 
@@ -440,8 +440,6 @@ Track these key metrics to measure your maturity journey:
 Track consent rate (percentage of users with valid, current consent), data subject request time (average time to fulfill DSARs), classification coverage (percentage of data fields classified), retention compliance (percentage of data within retention policies), incident response time (mean time to detect and respond to breaches), and training completion (percentage of staff completing privacy training).
 
 ---
-
-
 
 
 ## Related Articles

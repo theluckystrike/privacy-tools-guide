@@ -128,16 +128,16 @@ Configure Signal's privacy settings to match your comfort level:
 privacy:
   # Disable read receipts for lower visibility
   read_receipts: false
-  
+
   # Hide typing indicators
   typing_indicators: false
-  
+
   # Set disappearing messages (recommended for new dates)
   disappearing_messages: 24h
-  
+
   # Block unknown contact requests
   block_unknown: true
-  
+
   # Enable relay calls (hides your IP)
   relay_calls: true
 ```
@@ -196,10 +196,9 @@ If you've lost access to your old number:
 - Contact Signal support with your recovery key if completely locked out
 
 
-
 ## Related Articles
 
-- [Prevent Screenshots of Dating Conversations from Being Shared Without Your Co...](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
+- [Prevent Screenshots of Dating Conversations from Being](/privacy-tools-guide/how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/)
 - [Use Virtual Phone Number For Whatsapp Dating Conversations](/privacy-tools-guide/how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/)
 - [Stop Alexa From Recording Conversations and Sending Audio to](/privacy-tools-guide/how-to-stop-alexa-from-recording-conversations-and-sending-a/)
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)

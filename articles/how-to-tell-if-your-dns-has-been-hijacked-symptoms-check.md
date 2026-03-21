@@ -163,7 +163,7 @@ TRUSTED_DNS=("8.8.8.8" "1.1.1.1")
 for domain in "${DOMAINS[@]}"; do
     echo "Testing $domain..."
     expected=$(dig @${TRUSTED_DNS[0]} $domain +short)
-    
+
     for dns in "${TRUSTED_DNS[@]}"; do
         result=$(dig @$dns $domain +short)
         if [ "$result" != "$expected" ]; then
@@ -195,8 +195,6 @@ If you confirm DNS hijacking:
 - Monitor your network for unusual DNS traffic patterns
 
 Regular DNS health checks and awareness of hijacking symptoms protect your browsing privacy and security. The methods outlined here work without special equipment, using tools already available on most systems.
-
-
 
 
 ## Related Articles

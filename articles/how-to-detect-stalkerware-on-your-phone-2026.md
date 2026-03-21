@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Detect Stalkerware on Your Phone 2026"
-description: "Technical guide to detecting spyware and stalkerware on iOS and Android. Real app names, system indicators, detection commands, and evidence preservation techniques."
+description: "Technical guide to detecting spyware and stalkerware on iOS and Android. Real app names, system indicators, detection commands, and evidence preservation"
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
@@ -391,7 +391,6 @@ After removal:
 7. Disable location history on Google/Apple accounts
 8. Review Privacy Dashboard regularly (iOS 15+, Android 12+)
 ```
-
 
 
 ## Related Articles

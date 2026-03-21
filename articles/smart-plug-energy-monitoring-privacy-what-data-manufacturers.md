@@ -121,13 +121,13 @@ void sample_power(power_reading_t *reading) {
         current_sum += adc_read(I_CHANNEL);
         delay_us(SAMPLE_INTERVAL_US);
     }
-    
+
     // Calculate RMS values
     reading->voltage_rms = calculate_rms(voltage_sum);
     reading->current_rms = calculate_rms(current_sum);
     reading->real_power = calculate_real_power(voltage_sum, current_sum);
     reading->timestamp = get_unix_timestamp();
-    
+
     // Transmit to cloud
     transmit_to_cloud(reading);
 }
@@ -191,12 +191,12 @@ sensor:
     sensor: ads1118_adc
     name: "Current"
     update_interval: 60s
-    
+
   - platform: template
     name: "Power"
     lambda: |-
       return id(current).state * 230.0;  # Assuming 230V supply
-    
+
 wifi:
   ssid: "YourLocalNetwork"
   password: "YourPassword"
@@ -225,7 +225,7 @@ config interface 'iot'
     option ipaddr '192.168.20.1'
     option netmask '255.255.255.0'
     option bridge 'br-iot'
-    
+
 config firewall
     option name 'IoT-Isolation'
     option input 'REJECT'
@@ -260,8 +260,6 @@ If you're building IoT products or integrating smart plug data:
 The smart plug market demonstrates how convenient features can mask extensive data collection. Understanding what happens behind the scenes allows developers and power users to make informed decisions about the devices they use and recommend to others.
 
 ---
-
-
 
 
 ## Related Articles

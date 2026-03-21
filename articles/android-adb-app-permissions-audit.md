@@ -292,7 +292,6 @@ adb disconnect
 Leaving USB debugging enabled is a security risk — a malicious charger or USB cable could silently connect.
 
 
-
 ## Related Articles
 
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)

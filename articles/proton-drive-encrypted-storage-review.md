@@ -354,7 +354,6 @@ rclone delete --drive-use-trash gdrive:/
 This approach ensures files are encrypted during transfer and at rest on Proton's servers.
 
 
-
 ## Related Articles
 
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

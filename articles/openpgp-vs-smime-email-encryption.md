@@ -214,8 +214,6 @@ Both protocols significantly improve email security over plaintext. The "right" 
 ---
 
 
-
-
 ## Related Articles
 
 - [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)

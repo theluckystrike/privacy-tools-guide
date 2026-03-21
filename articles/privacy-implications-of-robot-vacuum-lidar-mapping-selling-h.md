@@ -30,7 +30,7 @@ class LidarScan:
     def __init__(self, timestamp, points):
         self.timestamp = timestamp  # Unix timestamp
         self.points = points  # List of (x, y, z) coordinates
-    
+
     def to_point_cloud(self):
         return {
             "scan_id": hash(self.timestamp),
@@ -396,7 +396,6 @@ Privacy-aware users should:
 The manufacturers who prioritize user privacy in spatial data handling will build lasting trust and customer loyalty as privacy concerns intensify.
 
 ---
-
 
 
 ## Related Articles

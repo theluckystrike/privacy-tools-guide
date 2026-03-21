@@ -281,7 +281,6 @@ To maintain confidence in your VPN setup:
 4. After system sleep/wake Some systems don't properly re-establish VPN connections after waking from sleep—always verify after resuming.
 
 
-
 ## Related Articles
 
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)

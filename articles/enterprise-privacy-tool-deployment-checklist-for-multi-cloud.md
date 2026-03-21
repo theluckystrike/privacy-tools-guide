@@ -104,10 +104,10 @@ def verify_encryption(clients):
     for bucket in buckets:
         enc = s3_client.get_bucket_encryption(Bucket=bucket['Name'])
         results[f"aws:{bucket['Name']}"] = 'encrypted' if enc.get('ServerSideEncryptionConfiguration') else 'UNENCRYPTED'
-    
+
     # Azure Blob
     # Similar verification logic
-    
+
     return results
 ```
 
@@ -291,7 +291,6 @@ gcloud kms keyrings list --location global >> compliance-report.md
 ```
 
 Package and timestamp these reports for each audit cycle. Retention periods vary by regulation—default to 7 years minimum.
-
 
 
 ## Related Articles

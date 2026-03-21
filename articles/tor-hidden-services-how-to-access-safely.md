@@ -95,20 +95,20 @@ from stem.control import Controller
 def access_hidden_service(onion_address, controller_port=9051):
     """
     Access a hidden service through Tor.
-    
+
     Args:
         onion_address: The .onion address to connect to
         controller_port: The Tor control port (default 9051 for Tor daemon)
     """
     with Controller.from_port(port=controller_port) as controller:
         controller.authenticate()
-        
+
         # Create a new circuit to the hidden service
         circuit = controller.new_circuit(
             purpose=Circuit.PURPOSE_SERVICE,
             build_flags=[Circuit.BUILD_FLAG_ONEHOP_TUNNEL]
         )
-        
+
         # Get the descriptor for the hidden service
         try:
             descriptor = controller.get_hidden_service_descriptor(onion_address)
@@ -209,7 +209,6 @@ session.timeout = 30  # Increase timeout
 
 response = session.get('https://exampleonion.onion')
 ```
-
 
 
 ## Related Articles

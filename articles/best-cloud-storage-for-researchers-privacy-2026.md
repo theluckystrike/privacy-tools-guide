@@ -298,7 +298,6 @@ Research institutions impose specific storage requirements:
 Before selecting any solution, consult your institution's compliance office. Many universities maintain approved vendor lists and pre-negotiated contracts providing better security terms than individual researchers could obtain.
 
 
-
 ## Related Articles
 
 - [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)

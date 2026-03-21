@@ -229,8 +229,6 @@ For maximum security, exempt only the specific hosts you need, not entire subnet
 ---
 
 
-
-
 ## Related Articles
 
 - [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)

@@ -417,14 +417,13 @@ uci set dhcp.@domain[-1].ip="1.1.1.1"
 ```
 
 
-
 ## Related Articles
 
 - [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
 - [Set Up DNS-Based Ad Blocking on Travel Router GL-Inet for](/privacy-tools-guide/how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/)
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
 - [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
+- [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

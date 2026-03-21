@@ -859,5 +859,6 @@ Each step is optional; you can stop when you reach your privacy/usability sweet 
 - [Mobile Keyboard Privacy: Which Keyboards Send Keystrokes.](/privacy-tools-guide/mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/)
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

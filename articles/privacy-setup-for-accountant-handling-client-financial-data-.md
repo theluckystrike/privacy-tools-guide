@@ -252,7 +252,7 @@ Configure Bitwarden to log vault access:
 
 ```bash
 # Bitwarden Enterprise/Teams audit logging
-# Events tracked: item view, item edit, item deletion, 
+# Events tracked: item view, item edit, item deletion,
 #                vault access, export attempts
 ```
 
@@ -274,8 +274,6 @@ Complete these steps to establish your accountant privacy setup:
 This setup balances security with usability. The goal isn't perfect security—it's making your client data significantly harder to compromise than alternatives, while maintaining the workflow efficiency your practice requires.
 
 ---
-
-
 
 
 ## Related Articles

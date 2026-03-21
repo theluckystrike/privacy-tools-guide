@@ -279,7 +279,6 @@ curl -H "Authorization: Bearer $ADMIN_TOKEN" \
 Separate vaults for separate VMs creates meaningful security boundaries. A compromise of your browsing VM remains isolated to that context's credentials, protecting your production systems and development environments from lateral movement.
 
 
-
 ## Related Articles
 
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

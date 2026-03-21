@@ -92,7 +92,7 @@ import asyncio
 async def main():
     client = AsyncClient("https://chat.yourdomain.com", "@bot:chat.yourdomain.com")
     await client.login("your-access-token")
-    
+
     # Respond to messages in rooms
     async def message_callback(room, event):
         if "deploy" in event.body.lower():
@@ -101,7 +101,7 @@ async def main():
                 "m.room.message",
                 {"msgtype": "m.text", "body": "Deployment triggered! 🚀"}
             )
-    
+
     client.add_event_callback(message_callback, RoomMessageText)
     await client.sync_forever()
 
@@ -187,8 +187,6 @@ When integrating encrypted messaging into your development workflow, consider th
 **Regulatory compliance** may dictate platform choice. Healthcare communications requiring HIPAA compliance, financial services subject to SEC recording rules, or EU data subject to GDPR all have specific requirements that some platforms meet and others don't.
 
 For most developers in 2026, Matrix provides the best balance of control, integration capability, and security. Signal remains the default recommendation for individual use where infrastructure ownership isn't required. The "best" choice ultimately depends on your specific threat model, technical requirements, and willingness to manage self-hosted infrastructure.
-
-
 
 
 ## Related Articles

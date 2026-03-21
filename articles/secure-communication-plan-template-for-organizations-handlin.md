@@ -255,7 +255,7 @@ def check_channel_compliance():
         "mfa_enabled": False,
         "audit_logs_active": False
     }
-    
+
     # Check Signal registration
     try:
         result = subprocess.run(
@@ -266,7 +266,7 @@ def check_channel_compliance():
         results["signal_configured"] = result.returncode == 0
     except FileNotFoundError:
         pass
-    
+
     # Check PGP key expiration
     try:
         result = subprocess.run(
@@ -277,21 +277,21 @@ def check_channel_compliance():
         results["pgp_keys_valid"] = "pub:" in result.stdout
     except FileNotFoundError:
         pass
-    
+
     return results
 
 def generate_compliance_report():
     """Generate periodic compliance report."""
     results = check_channel_compliance()
     timestamp = datetime.now().isoformat()
-    
+
     report = f"Compliance Report - {timestamp}\n"
     report += "=" * 40 + "\n"
-    
+
     for check, status in results.items():
         status_str = "✓ PASS" if status else "✗ FAIL"
         report += f"{check}: {status_str}\n"
-    
+
     return report
 
 if __name__ == "__main__":
@@ -375,10 +375,9 @@ Communication security plans become stale as tools change, teams grow, and threa
 Assign a named policy owner responsible for driving each review. Plans with no named owner drift until a security incident forces an emergency update.
 
 
-
 ## Related Articles
 
-- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 - [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)

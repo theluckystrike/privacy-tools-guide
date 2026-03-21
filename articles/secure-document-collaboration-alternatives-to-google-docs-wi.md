@@ -39,16 +39,16 @@ The encryption model uses a unique approach: each document generates a random en
 async function encryptDocument(content, key) {
   const encoder = new TextEncoder();
   const data = encoder.encode(content);
-  
+
   // Generate a random IV for each encryption
   const iv = crypto.getRandomValues(new Uint8Array(12));
-  
+
   const encrypted = await crypto.subtle.encrypt(
     { name: 'AES-GCM', iv: iv },
     key,
     data
   );
-  
+
   return { iv, encrypted };
 }
 ```
@@ -152,7 +152,7 @@ async function deriveSharedSecret(myKeyPair, theirPublicKey) {
     myKeyPair.privateKey,
     256
   );
-  
+
   return await crypto.subtle.importKey(
     'raw',
     sharedBits,
@@ -172,8 +172,6 @@ Selecting the right E2EE collaboration tool depends on your specific requirement
 The common thread across all these options is that the encryption happens in your browser before data reaches any server. This architectural choice—sometimes called "zero-knowledge" or "client-side encryption"—ensures that even if the service provider is compromised or compelled to disclose data, your content remains unreadable.
 
 For developers and power users who value privacy, these alternatives prove that you do not have to choose between collaboration convenience and data security. The tools exist, they work, and they are actively maintained by communities that understand what genuine end-to-end encryption means.
-
-
 
 
 ## Related Articles

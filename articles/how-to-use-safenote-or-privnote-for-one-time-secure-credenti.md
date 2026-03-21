@@ -135,13 +135,13 @@ def create_privnote(secret_message, burn_on_read=True):
         "burn_on_read": "1" if burn_on_read else "0",
         "expiration": "7d"  # 7 days max for free tier
     }
-    
+
     response = requests.post(
         "https://privnote.com/api/v1/create",
         data=payload,
         auth=HTTPBasicAuth("your-api-key", "")
     )
-    
+
     result = response.json()
     return {
         "link": result["note_link"],
@@ -187,7 +187,7 @@ import secrets
 def create_verified_note_link(base_url, secret, verification_code):
     """Create a note link that requires separate verification."""
     note_data = f"{secret}\n\nVerification: {verification_code}"
-    
+
     response = requests.post(
         f"{base_url}/api/notes",
         json={
@@ -195,7 +195,7 @@ def create_verified_note_link(base_url, secret, verification_code):
             "burn_after_reading": True
         }
     )
-    
+
     note_link = response.json()["url"]
     return f"{note_link}?code={verification_code}"
 
@@ -220,7 +220,6 @@ For developers and power users, the choice depends on your requirements:
 | Cost | Server costs | Free tier / Premium |
 
 Self-hosting SafeNote gives you transparency over how your data is handled, while PrivNote offers convenience for quick, ad-hoc sharing without infrastructure management.
-
 
 
 ## Related Articles

@@ -128,7 +128,7 @@ function testCanvasFingerprinting() {
   ctx.font = '14px Arial';
   ctx.fillText('Streaming Test', 2, 2);
   const data1 = canvas.toDataURL();
-  
+
   // Repeat to check for consistency
   const canvas2 = document.createElement('canvas');
   const ctx2 = canvas2.getContext('2d');
@@ -136,7 +136,7 @@ function testCanvasFingerprinting() {
   ctx2.font = '14px Arial';
   ctx2.fillText('Streaming Test', 2, 2);
   const data2 = canvas2.toDataURL();
-  
+
   return data1 === data2 ? 'Protected' : 'Vulnerable';
 }
 ```
@@ -152,10 +152,10 @@ function testWebRTCLeak() {
     const pc = new RTCPeerConnection({
       iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
     });
-    
+
     pc.createDataChannel('');
     pc.createOffer().then(offer => pc.setLocalDescription(offer));
-    
+
     pc.onicecandidate = (ice) => {
       if (ice.candidate) {
         const leak = ice.candidate.candidate.length > 0;
@@ -163,7 +163,7 @@ function testWebRTCLeak() {
         pc.close();
       }
     };
-    
+
     setTimeout(() => resolve(false), 1000);
   });
 }
@@ -190,9 +190,6 @@ The best browser for streaming privacy in 2026 depends on your specific needs:
 - **Tor Browser** is essential when maximum anonymity is required, despite streaming performance limitations
 
 Regardless of your choice, regularly test your browser's privacy protections. Streaming services continuously develop new tracking techniques, and browser developers respond with new countermeasures. Stay informed about updates to maintain effective privacy protection while streaming.
-
-
-
 
 
 ## Related Articles

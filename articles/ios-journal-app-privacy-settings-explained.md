@@ -41,7 +41,7 @@ The Journal app requests access to several system frameworks. Understanding thes
 The Journal app can access your photo library to suggest content based on your memories. This access operates through iOS's constrained photo picker, meaning the app cannot scan your entire library indiscriminately. Instead, it receives only photos you explicitly select or photos from specific curated collections.
 
 ```swift
-// When the Journal app requests photo access, iOS presents 
+// When the Journal app requests photo access, iOS presents
 // a limited picker rather than full library access
 PHAuthorizationStatus.limited
 ```
@@ -346,8 +346,6 @@ echo "[ ] Delete old app from device"
 This migration preserves your journal history while moving to a more privacy-respecting platform.
 
 ---
-
-
 
 
 ## Related Articles

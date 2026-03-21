@@ -468,7 +468,6 @@ Avoid these evaluation pitfalls:
 **Forgetting about payment and metadata** — Even with perfect no-logs policies, payment processors and metadata (connection times, bytes transferred) can be revealing.
 
 
-
 ## Related Articles
 
 - [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)

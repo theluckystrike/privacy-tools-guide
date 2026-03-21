@@ -244,8 +244,6 @@ iperf3 -c jp-server.example.com -R
 ---
 
 
-
-
 ## Related Articles
 
 - [VPN for Accessing Polish Streaming Services from UK 2026](/privacy-tools-guide/vpn-for-accessing-polish-streaming-services-from-uk-2026/)

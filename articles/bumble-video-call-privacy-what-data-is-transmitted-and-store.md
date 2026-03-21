@@ -172,7 +172,6 @@ If you're concerned about video call privacy on Bumble:
 5. **Consider alternatives**: For highly sensitive conversations, use dedicated encrypted communication apps
 
 
-
 ## Related Articles
 
 - [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)

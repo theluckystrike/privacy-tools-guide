@@ -292,8 +292,6 @@ systemctl enable wg-adaptive-keepalive.service
 Understanding persistent keepalive helps you make informed decisions about your WireGuard deployment. For most client use cases behind NAT, a keepalive interval of 25 seconds provides reliable connectivity without significant overhead. For direct peer connections or privacy-conscious setups, disabling it entirely remains a valid choice.
 
 
-
-
 ## Related Articles
 
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)

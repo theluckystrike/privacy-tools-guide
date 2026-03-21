@@ -247,7 +247,6 @@ unset DB_PASSWORD
 This approach keeps credentials out of your shell history and environment files while maintaining automation capabilities.
 
 
-
 ## Related Articles
 
 - [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)

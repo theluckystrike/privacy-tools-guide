@@ -232,8 +232,6 @@ Begin by downloading Proton Mail Bridge and logging in with your account. Genera
 Once configured, you gain the flexibility of using any email client while maintaining Proton Mail's encryption standards. The Bridge application runs quietly in the background, handling all encryption transparently.
 
 
-
-
 ## Related Articles
 
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)

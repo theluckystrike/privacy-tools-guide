@@ -125,9 +125,9 @@ def route_gdpr_inquiry(email_subject, email_body, sender_location):
     Route GDPR-related inquiries to the appropriate handler.
     """
     gdpr_keywords = ['gdpr', 'data protection', 'right to', ' Erasure', 'rectification']
-    
+
     is_gdpr_related = any(keyword in email_subject.lower() for keyword in gdpr_keywords)
-    
+
     if is_gdpr_related and sender_location in ['EU', 'EEA', 'UK']:
         return "forward_to_representative"
     elif is_gdpr_related:
@@ -328,7 +328,6 @@ If your organization has a Data Protection Officer (DPO), clarify roles:
 - **DPO**: Internal compliance advisor, audits data processing, handles complex matters
 
 These roles can coexist and often work together during supervisory authority inquiries.
-
 
 
 ## Related Articles

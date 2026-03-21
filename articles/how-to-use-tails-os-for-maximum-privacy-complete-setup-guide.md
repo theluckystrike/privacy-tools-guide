@@ -394,7 +394,6 @@ Fix:
 Tails OS is designed for users who need maximum privacy and anonymity. The setup is straightforward, but the security model requires understanding what Tails protects against and what it doesn't. Use it appropriately, keep it updated, and don't defeat the privacy through behavioral mistakes (like logging into identifying accounts).
 
 
-
 ## Related Articles
 
 - [How to Use Tails OS for Maximum Anonymity](/privacy-tools-guide/how-to-use-tails-os-for-maximum-anonymity/)

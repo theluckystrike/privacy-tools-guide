@@ -201,7 +201,6 @@ When selecting a VPN specifically for healthcare access, prioritize:
 5. **DNS leak protection**: Prevents your actual location from being revealed through DNS queries
 
 
-
 ## Related Articles
 
 - [VPN for Accessing Medical Records Abroad While Traveling](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-sec/)
@@ -211,3 +210,5 @@ When selecting a VPN specifically for healthcare access, prioritize:
 - [Best VPN for Accessing Brazilian Streaming Globoplay.](/privacy-tools-guide/best-vpn-for-accessing-brazilian-streaming-globoplay-from-abroad/)
 
 Built by theluckystrike — More at zovo.one
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

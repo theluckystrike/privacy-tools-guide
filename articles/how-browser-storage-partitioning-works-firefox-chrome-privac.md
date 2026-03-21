@@ -119,10 +119,10 @@ Here's a complete example demonstrating storage partitioning behavior:
 function demonstratePartitioning() {
   // Set a value in localStorage
   localStorage.setItem('user-preference', 'dark-mode');
-  
+
   // Set a cookie with Partitioned attribute (Firefox, some Chrome versions)
   document.cookie = 'session=abc123; SameSite=None; Secure; Partitioned';
-  
+
   // Log current storage state
   console.log('LocalStorage value:', localStorage.getItem('user-preference'));
   console.log('Cookies:', document.cookie);
@@ -152,7 +152,7 @@ async function requestStorageAccess() {
   if (document.hasStorageAccess()) {
     return true;
   }
-  
+
   try {
     const granted = await document.requestStorageAccess();
     return granted;
@@ -177,14 +177,13 @@ You can verify your browser's partitioning status by:
 2. **Chrome**: Look for the "Third-party cookies" setting—selecting "Block third-party cookies" enables partitioning
 
 
-
 ## Related Articles
 
 - [Passkey User Experience Comparison Across Chrome.](/privacy-tools-guide/passkey-user-experience-comparison-across-chrome-safari-firefox-edge-2026/)
 - [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
 - [How To Stop Browser Fingerprinting On Chrome 2026 Practical](/privacy-tools-guide/how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/)
 - [Firefox Focus Vs Duckduckgo Browser Comparison](/privacy-tools-guide/firefox-focus-vs-duckduckgo-browser-comparison/)
-- [Browser Fingerprinting How It Works and How to Prevent It Guide](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
+- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

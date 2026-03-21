@@ -138,7 +138,7 @@ def check_cname_tracking(domain, known_trackers):
     try:
         answers = dns.resolver.resolve(domain, 'CNAME')
         cname = str(answers[0]).rstrip('.')
-        
+
         # Check against known tracker domains
         for tracker in known_trackers:
             if tracker in cname:
@@ -298,8 +298,6 @@ def detect_cname_cloaking_comprehensive(domain, timeout=5):
 This check combines DNS, SSL certificate, and pattern matching to identify cloaked trackers with high accuracy.
 
 ---
-
-
 
 
 ## Related Articles

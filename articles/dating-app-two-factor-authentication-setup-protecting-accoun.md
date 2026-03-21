@@ -56,30 +56,30 @@ import time
 def generate_totp(secret, time_step=30):
     """
     Generate a TOTP code using the RFC 6238 algorithm.
-    
+
     Args:
         secret: Base32-encoded shared secret
         time_step: Code validity duration in seconds (default 30)
-    
+
     Returns:
         6-digit TOTP code
     """
     current_time = int(time.time()) // time_step
-    
+
     # Convert time to 8-byte big-endian format
     time_bytes = struct.pack('>Q', current_time)
-    
+
     # Generate HMAC-SHA1 using shared secret
     hmac_hash = hmac.new(
         base64.b32decode(secret),
         time_bytes,
         hashlib.sha1
     ).digest()
-    
+
     # Dynamic truncation to obtain 6-digit code
     offset = hmac_hash[-1] & 0x0f
     code = (struct.unpack('>I', hmac_hash[offset:offset+4])[0] & 0x7fffffff) % 1000000
-    
+
     return f'{code:06d}'
 ```
 
@@ -128,22 +128,22 @@ from rest_framework.response import Response
 
 class TwoFactorAuthService:
     """Service class handling TOTP generation and verification."""
-    
+
     def __init__(self, secret: str):
         self.secret = secret
         self.totp = pyotp.TOTP(secret)
-    
+
     def generate_qr_uri(self, account_name: str, issuer: str) -> str:
         """
         Generate otpauth:// URI for QR code scanning.
-        
+
         Format: otpauth://totp/issuer:account?secret=SECRET&issuer=issuer
         """
         return self.totp.provisioning_uri(
             name=account_name,
             issuer_name=issuer
         )
-    
+
     def verify_code(self, code: str) -> bool:
         """Verify a TOTP code with window tolerance."""
         # Allow for clock drift with a 1-step window
@@ -153,17 +153,17 @@ class TwoFactorAuthService:
 def verify_2fa(request):
     """
     Endpoint to verify user's 2FA code.
-    
+
     Expected payload: {"code": "123456"}
     """
     code = request.data.get('code')
     user_secret = request.user.totp_secret  # Retrieved from database
-    
+
     totp_service = TwoFactorAuthService(user_secret)
-    
+
     if totp_service.verify_code(code):
         return Response({"status": "authenticated"})
-    
+
     return Response(
         {"error": "Invalid verification code"},
         status=status.HTTP_401_UNAUTHORIZED
@@ -219,7 +219,6 @@ curl -H "Authorization: Bearer $API_TOKEN" \
 ### Password Manager Integration
 
 Generate unique, complex passwords for each dating application using a password manager. Combine this with TOTP-based 2FA stored in the same manager for centralized credential management. For sensitive accounts, consider keeping 2FA seeds separate from passwords in dedicated hardware security keys.
-
 
 
 ## Related Articles

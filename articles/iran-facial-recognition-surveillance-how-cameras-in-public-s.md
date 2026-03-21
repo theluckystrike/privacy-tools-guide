@@ -65,13 +65,13 @@ def extract_face_embedding(image_path):
     """
     image = cv2.imread(image_path)
     rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    
+
     # Detect face locations
     face_locations = face_recognition.face_locations(rgb_image)
-    
+
     # Generate encodings (embeddings)
     face_encodings = face_recognition.face_encodings(rgb_image, face_locations)
-    
+
     return face_encodings[0] if face_encodings else None
 
 def compare_faces(known_encoding, probe_encoding, threshold=0.6):
@@ -132,12 +132,12 @@ def blur_faces(image_path, output_path):
     )
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
-    
+
     for (x, y, w, h) in faces:
         face_region = image[y:y+h, x:x+w]
         blurred = cv2.GaussianBlur(face_region, (51, 51), 0)
         image[y:y+h, x:x+w] = blurred
-    
+
     cv2.imwrite(output_path, image)
 ```
 
@@ -269,7 +269,6 @@ done
 # Using archived imagery of public events you attended
 echo "Checking for photo tagging patterns that indicate recognition"
 ```
-
 
 
 ## Related Articles

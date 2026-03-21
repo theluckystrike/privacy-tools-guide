@@ -74,14 +74,14 @@ import subprocess
 def get_safari_passwords():
     """Extract Safari passwords from Keychain"""
     passwords = []
-    
+
     # Query Keychain for Safari entries
     result = subprocess.run(
         ['security', 'dump-keychain'],
         capture_output=True,
         text=True
     )
-    
+
     # Parse the output for Safari passwords
     current_entry = {}
     for line in result.stdout.split('\n'):
@@ -92,21 +92,21 @@ def get_safari_passwords():
         elif 'password' in line.lower() and 'password\00' not in line.lower():
             # Extract password value
             current_entry['password'] = line.split('=')[-1].strip().strip('"')
-            
+
             if current_entry.get('url') and 'safari' in current_entry.get('url', '').lower():
                 passwords.append(current_entry)
             current_entry = {}
-    
+
     return passwords
 
 def export_to_csv(passwords, filename='bitwarden_import.csv'):
     """Export to Bitwarden-compatible CSV format"""
     with open(filename, 'w', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['folder', 'favorite', 'type', 'name', 'notes', 
-                        'fields', 'login_uri', 'login_username', 
+        writer.writerow(['folder', 'favorite', 'type', 'name', 'notes',
+                        'fields', 'login_uri', 'login_username',
                         'login_password', 'login_totp'])
-        
+
         for entry in passwords:
             writer.writerow([
                 '',  # folder
@@ -242,7 +242,6 @@ When migrating passwords, follow these security practices:
 - **Encrypt exports**: If storing the CSV temporarily, encrypt it with GPG
 - **Verify checksums**: Confirm file integrity before deletion
 - **Update master password**: Consider rotating your Bitwarden master password after migration
-
 
 
 ## Related Articles

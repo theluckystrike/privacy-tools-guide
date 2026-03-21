@@ -33,7 +33,7 @@ First, establish the contractual framework:
 const dataProcessingAddendum = {
   parties: {
     exporter: "EUCompany",
-    importer: "USCompany"  
+    importer: "USCompany"
   },
   transferMechanism: "SCCs_2021",
   modules: {
@@ -69,7 +69,7 @@ import os
 class CrossBorderEncryption:
     def __init__(self, master_key: bytes):
         self.master_key = master_key
-    
+
     def derive_key(self, salt: bytes, purpose: str) -> bytes:
         kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
@@ -79,12 +79,12 @@ class CrossBorderEncryption:
             backend=default_backend()
         )
         return base64.urlsafe_b64encode(kdf.derive(self.master_key))
-    
+
     def encrypt_for_transfer(self, data: str, recipient_id: str) -> dict:
         salt = os.urandom(16)
         purpose = f"transfer-{recipient_id}"
         key = self.derive_key(salt, purpose)
-        
+
         cipher = Cipher(
             algorithms.AES(key),
             modes.GCM(os.urandom(12)),
@@ -92,7 +92,7 @@ class CrossBorderEncryption:
         )
         encryptor = cipher.encryptor()
         ciphertext = encryptor.update(data.encode()) + encryptor.finalize()
-        
+
         return {
             'ciphertext': base64.b64encode(ciphertext).decode(),
             'nonce': base64.b64encode(encryptor.nonce).decode(),
@@ -140,15 +140,15 @@ Design your architecture to minimize data exposure during cross-border transfers
 server {
     listen 443 ssl;
     server_name api.example.com;
-    
+
     # SSL termination in EU
     ssl_certificate /etc/ssl/certs/euissued.crt;
     ssl_certificate_key /etc/ssl/private/euissued.key;
-    
+
     location / {
         # Forward to US backend but don't expose raw data
         proxy_pass https://us-backend.internal;
-        
+
         # Re-encrypt before forwarding
         proxy_ssl_server_name on;
         proxy_set_header X-Reencrypted "true";
@@ -174,8 +174,8 @@ from datetime import datetime
 class TransferLogger:
     def __init__(self, logger_name):
         self.logger = logging.getLogger(logger_name)
-    
-    def log_transfer(self, transfer_id, data_categories, 
+
+    def log_transfer(self, transfer_id, data_categories,
                      mechanism, supplementary_measures):
         self.logger.info({
             'timestamp': datetime.utcnow().isoformat(),
@@ -185,7 +185,7 @@ class TransferLogger:
             'supplementary_technical_measures': supplementary_measures,
             'compliance_verified': True
         })
-    
+
     def log_access(self, transfer_id, accessor, purpose):
         self.logger.warning({
             'timestamp': datetime.utcnow().isoformat(),
@@ -207,7 +207,6 @@ Regularly test your cross-border transfer controls to ensure they remain effecti
 3. **Legal Review Updates**: Monitor changes in US surveillance laws and update your Transfer Impact Assessments accordingly.
 
 4. **Breach Response Testing**: Simulate scenarios where data is accessed inappropriately and verify your response procedures.
-
 
 
 ## Related Articles

@@ -318,7 +318,6 @@ resolvectl status
 Running these checks after each reboot catches any services that failed to start or configurations that did not persist.
 
 
-
 ## Related Articles
 
 - [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)

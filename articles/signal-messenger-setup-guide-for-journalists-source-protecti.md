@@ -331,7 +331,6 @@ Organizations should establish written policies:
 Distribute this policy during newsroom onboarding. Regular security training reinforces these practices.
 
 
-
 ## Related Articles
 
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)

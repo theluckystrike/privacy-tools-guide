@@ -181,7 +181,6 @@ For maximum protection when accessing PHI:
 **Session drops after a few minutes**: Increase `PersistentKeepalive` to 15 seconds and ensure your VPN client reconnects automatically on disconnect.
 
 
-
 ## Related Articles
 
 - [VPN for Accessing Medical Records Abroad While Traveling.](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-securely/)

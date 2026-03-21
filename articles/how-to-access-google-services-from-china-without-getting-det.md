@@ -157,7 +157,7 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
   const url = new URL(request.url)
-  
+
   // Front domain (allowed)
   if (url.pathname.startsWith('/google/')) {
     // Actual Google backend
@@ -216,8 +216,6 @@ For casual access, Shadowsocks provides the best balance of usability and detect
 Remember that network conditions in China change frequently. Maintain multiple fallback options and stay informed about current effective methods through developer communities.
 
 ---
-
-
 
 
 ## Related Articles

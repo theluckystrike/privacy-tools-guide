@@ -274,7 +274,6 @@ For high-threat environments, combine relay calls with additional measures:
 - Consider using air-gapped devices for the most sensitive communications
 
 
-
 ## Related Articles
 
 - [Signal Username Feature Privacy Review](/privacy-tools-guide/signal-username-feature-privacy-review/)

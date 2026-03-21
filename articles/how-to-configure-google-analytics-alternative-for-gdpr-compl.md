@@ -73,7 +73,7 @@ server {
 
     # Disable access logs for full IP addresses
     access_log /var/log/nginx/matomo.access.log combined;
-    
+
     # Ensure Matomo processes IP in GDPR-compliant manner
     # Configure IP anonymization in Matomo dashboard:
     # Administration > Privacy > Data Anonymization
@@ -211,7 +211,7 @@ Add the corresponding HTML to your site's footer:
 
 ```html
 <div id="consent-banner" style="display:none; position:fixed; bottom:0; background:#333; color:white; padding:20px; width:100%;">
-    <p>We use privacy-focused analytics to understand site traffic. 
+    <p>We use privacy-focused analytics to understand site traffic.
        <button id="accept-consent">Accept</button>
        <button id="deny-consent">Decline</button>
     </p>
@@ -227,7 +227,6 @@ After configuration, verify your setup meets GDPR requirements. Check that IP ad
 Test the anonymization features by visiting your site and checking whether your full IP appears in analytics reports. With Matomo, the admin dashboard should show truncated IP addresses. Plausible never collects full IP addresses by design.
 
 Document your data processing activities, update your privacy policy to reflect your analytics choice, and maintain records of consent when applicable. These steps demonstrate compliance during regulatory inquiries.
-
 
 
 ## Related Articles

@@ -49,18 +49,18 @@ The JavaScript `Date` object provides additional timezone context:
 ```javascript
 function extractTimezoneDetails() {
   const now = new Date();
-  
+
   // Get timezone offset in minutes
   const offsetMinutes = now.getTimezoneOffset();
-  
+
   // Get timezone from Intl API
   const ianaTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  
+
   // Get locale-based timezone name
   const formatted = new Intl.DateTimeFormat('en-US', {
     timeZoneName: 'long'
   }).format(now);
-  
+
   return {
     offset: offsetMinutes,
     timezone: ianaTimezone,
@@ -93,7 +93,7 @@ function generateBasicFingerprint() {
     timezoneOffset: new Date().getTimezoneOffset(),
     language: navigator.languages ? navigator.languages.join(',') : navigator.language
   };
-  
+
   return fingerprint;
 }
 ```
@@ -113,12 +113,12 @@ For developers building privacy-conscious applications, consider these implement
 function detectTimezoneAnomaly() {
   const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const systemOffset = new Date().getTimezoneOffset();
-  
+
   // Some privacy extensions report UTC
   if (browserTimezone === 'UTC' && systemOffset !== 0) {
     return { spoofed: true, reason: 'UTC reported but offset non-zero' };
   }
-  
+
   return { spoofed: false };
 }
 
@@ -412,7 +412,6 @@ Timezone detection may implicate privacy regulations:
 - Avoid using timezone for identification without consent
 
 ---
-
 
 
 ## Related Articles

@@ -128,7 +128,7 @@ const bumblePrivacyCheck = {
     return {
       appearsInOthersBeeline: settings.show_on_beeline && !settings.hide_from_beeline,
       incognitoActive: settings.incognito_mode,
-      recommendation: settings.hide_from_beeline 
+      recommendation: settings.hide_from_beeline
         ? 'Profile hidden from Beeline - good for privacy'
         : 'Consider disabling Beeline visibility'
     };
@@ -170,7 +170,6 @@ To request your data under GDPR/CCPA:
 1. Go to Settings → Privacy → "Download my data"
 2. Submit a formal request if the self-service option is unavailable
 3. Review the export for any Beeline-related entries
-
 
 
 ## Related Articles

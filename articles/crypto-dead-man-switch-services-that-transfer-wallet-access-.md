@@ -48,10 +48,10 @@ contract DeadManSwitch {
     uint256 public lastActivity;
     uint256 public inactivityPeriod;
     bool public triggered;
-    
+
     event ActivityUpdated(uint256 timestamp);
     event SwitchTriggered(address beneficiary);
-    
+
     constructor(address _beneficiary, uint256 _inactivityPeriodInSeconds) {
         owner = msg.sender;
         beneficiary = _beneficiary;
@@ -59,27 +59,27 @@ contract DeadManSwitch {
         lastActivity = block.timestamp;
         triggered = false;
     }
-    
+
     function updateActivity() external {
         require(msg.sender == owner, "Only owner can update");
         lastActivity = block.timestamp;
         emit ActivityUpdated(block.timestamp);
     }
-    
+
     function checkAndExecute() external {
         require(!triggered, "Already triggered");
         require(
             block.timestamp > lastActivity + inactivityPeriod,
             "Inactivity period not met"
         );
-        
+
         triggered = true;
         emit SwitchTriggered(beneficiary);
-        
+
         // Transfer remaining ETH to beneficiary
         payable(beneficiary).transfer(address(this).balance);
     }
-    
+
     receive() external payable {
         // Allow receiving ETH deposits
         lastActivity = block.timestamp;
@@ -127,17 +127,17 @@ class WalletMonitor:
         self.web3 = Web3(Web3.HTTPProvider(rpc_url))
         self.check_interval = check_interval
         self.last_tx_block = self._get_last_transaction_block()
-    
+
     def _get_last_transaction_block(self):
         # Get the most recent transaction block for the wallet
         return self.web3.eth.get_transaction_count(self.wallet)
-    
+
     def check_inactivity(self, grace_period_blocks):
         current_block = self.web3.eth.block_number
         if current_block - self.last_tx_block > grace_period_blocks:
             return True
         return False
-    
+
     def run(self, callback):
         while True:
             if self.check_inactivity( grace_period_blocks=525600):  # ~1 year
@@ -185,12 +185,11 @@ Regardless of implementation choice, follow these security practices:
 5. **Legal considerations**: Consult with legal professionals about the enforceability of your arrangement
 
 
-
 ## Related Articles
 
-- [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-- [Use Dead Man's Switch with Multiple Independent Trustees for Decentralized Cr...](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
+- [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
 

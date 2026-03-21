@@ -209,7 +209,6 @@ Not necessarily. More lists mean more rules to evaluate per request, which can s
 Tor Browser already includes its own tracking protections and NoScript. Adding uBlock Origin is technically possible but may reduce the uniformity that makes Tor users harder to fingerprint. For Tor Browser, the default configuration is usually better.
 
 
-
 ## Related Articles
 
 - [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)

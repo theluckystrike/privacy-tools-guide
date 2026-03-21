@@ -267,10 +267,13 @@ It depends on your setup. A properly configured NAS with RAID redundancy is more
 With local storage, losing internet connectivity has no effect on recording. Cloud-dependent systems stop recording or become inaccessible during outages.
 
 
-## Related Reading
+## Related Articles
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Best Privacy Tools 2026](/privacy-tools-guide/best-privacy-tools-2026/)
+- [How To Run Zigbee2mqtt Locally For Smart Home Without Vendor](/privacy-tools-guide/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
+- [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
+- [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
+- [Signal Alternatives That Offer End To End Encryption Without](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
+- [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -213,10 +213,9 @@ veracrypt --create --size=500M --volume-type=normal \
 ```
 
 
-
 ## Related Articles
 
-- [Set Up Secure Communication for Labor Strike Organizing: Threat Modeling and ...](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 - [Secure Communication Plan Template for Organizations.](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
 - [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)

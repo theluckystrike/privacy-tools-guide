@@ -87,16 +87,16 @@ def spokeo_optout_request(email, profile_url):
     match = re.search(r'/([a-z0-9]+)$', profile_url.rstrip('/'))
     if not match:
         raise ValueError("Invalid Spokeo profile URL")
-    
+
     profile_id = match.group(1)
-    
+
     # Submit opt-out request
     session = requests.Session()
     response = session.get(
         "https://www.spokeo.com/optout",
         params={"email": email}
     )
-    
+
     # Note: Manual email verification required
     print(f"Check {email} for confirmation link")
     return response.status_code
@@ -113,27 +113,27 @@ def discover_spokeo_profiles(name, city, state):
     """
     base_url = "https://www.spokeo.com"
     search_url = f"{base_url}/search"
-    
+
     profiles = []
-    
+
     # Try different name formats
     name_variations = [
         name,
         name.replace(" ", "-"),
         f"{name}-1",
     ]
-    
+
     for name_var in name_variations:
         url = f"{search_url}/{name_var}/{state}/{city}"
         response = requests.get(url)
-        
+
         # Extract profile links from search results
         profile_links = re.findall(
             r'href="(/[^"]+/[a-z0-9]+)"',
             response.text
         )
         profiles.extend([f"{base_url}{link}" for link in profile_links])
-    
+
     return list(set(profiles))
 ```
 
@@ -162,14 +162,14 @@ class SpokeoOptOutTracker:
     def __init__(self, log_file="spokeo_removals.json"):
         self.log_file = log_file
         self.requests = self._load_log()
-    
+
     def _load_log(self):
         try:
             with open(self.log_file, 'r') as f:
                 return json.load(f)
         except FileNotFoundError:
             return {}
-    
+
     def log_removal(self, name, email, profile_url, status="pending"):
         entry = {
             "timestamp": datetime.now().isoformat(),
@@ -178,7 +178,7 @@ class SpokeoOptOutTracker:
             "status": status
         }
         self.requests[profile_url] = entry
-        
+
         with open(self.log_file, 'w') as f:
             json.dump(self.requests, f, indent=2)
 ```
@@ -227,14 +227,13 @@ Spokeo operates within a larger ecosystem. Similar removal processes apply to:
 Systematically removing from each broker reduces your overall digital footprint.
 
 
-
 ## Related Articles
 
 - [Fastpeoplesearch Opt Out Guide Step By Step 2026](/privacy-tools-guide/fastpeoplesearch-opt-out-guide-step-by-step-2026/)
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
+- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

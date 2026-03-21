@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 ---
 
 
-
 {% raw %}
 
 A botnet is a network of compromised computers that attackers control remotely to perform malicious activities—sending spam, launching DDoS attacks, stealing data, or mining cryptocurrency. Your computer can become part of a botnet without you noticing, making botnet detection critical for your digital security. This guide walks you through the warning signs, diagnostic steps, and removal procedures to determine if your system has been recruited into a botnet.
@@ -326,7 +325,6 @@ Implement defense-in-depth:
 6. **Monitoring alerts**: Setup SIEM or network monitoring for anomalies
 7. **Incident response plan**: Know what to do if infection occurs
 8. **Regular backups**: Offline backups protect against ransomware
-
 
 
 ## Related Articles

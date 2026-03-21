@@ -436,7 +436,6 @@ benchmark_results = {
 ```
 
 
-
 ## Related Articles
 
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)

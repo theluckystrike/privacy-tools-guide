@@ -165,7 +165,7 @@ Subject: CCPA Deletion Request
 
 To: privacy@[sitename].com
 
-I am a California resident requesting deletion of my personal information 
+I am a California resident requesting deletion of my personal information
 pursuant to the California Consumer Privacy Act (CCPA).
 
 Identifying information:
@@ -175,7 +175,7 @@ Identifying information:
 - Email: [Your Email]
 - Phone: [Your Phone]
 
-Please delete all personal information you have collected about me 
+Please delete all personal information you have collected about me
 and confirm deletion within 45 days.
 
 Sincerely,
@@ -261,7 +261,6 @@ function anonymizeUserData(user) {
 ```
 
 Data minimization reduces your liability and protects users.
-
 
 
 ## Related Articles

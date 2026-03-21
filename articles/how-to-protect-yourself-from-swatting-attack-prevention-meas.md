@@ -84,15 +84,15 @@ def detect_emergency_siren(audio_buffer, sample_rate=44100):
     that indicate approaching emergency vehicles
     """
     frequencies, times, spectrogram = signal.spectrogram(
-        audio_buffer, 
+        audio_buffer,
         fs=sample_rate,
         nperseg=1024
     )
-    
+
     # Monitor for characteristic wailing patterns
     siren_range = (frequencies > 450) & (frequencies < 2000)
     energy_in_range = np.mean(spectrogram[siren_range])
-    
+
     return energy_in_range > threshold
 ```
 
@@ -339,7 +339,6 @@ Swatting targets experience genuine trauma. Psychological support is as critical
 - **Cyber Civil Rights Initiative**: Resources for online harassment victims
 - **Bug Bounty Programs**: If you work in security, consider managed threat intelligence partnerships
 - **Therapist**: A therapist experienced with technology harassment provides essential support
-
 
 
 ## Related Articles

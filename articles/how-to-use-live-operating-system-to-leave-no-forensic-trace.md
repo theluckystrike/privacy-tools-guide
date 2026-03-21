@@ -237,7 +237,6 @@ For maximum security, combine live OS use with:
 - Multiple hops before accessing sensitive services
 
 
-
 ## Related Articles
 
 - [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)

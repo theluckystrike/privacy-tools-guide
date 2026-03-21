@@ -82,18 +82,18 @@ def convert_roboform_to_bitwarden(input_file, output_file):
     """
     with open(input_file, 'r', encoding='utf-8-sig') as f_in:
         reader = csv.DictReader(f_in)
-        
+
         # Write Bitwarden format
         with open(output_file, 'w', newline='', encoding='utf-8') as f_out:
             fieldnames = ['name', 'login_uri', 'login_username', 'login_password', 'notes']
             writer = csv.DictWriter(f_out, fieldnames=fieldnames)
             writer.writeheader()
-            
+
             for row in reader:
                 # Skip empty passwords
                 if not row.get('password'):
                     continue
-                    
+
                 # Build Bitwarden entry
                 entry = {
                     'name': row.get('name', 'Unnamed'),
@@ -103,7 +103,7 @@ def convert_roboform_to_bitwarden(input_file, output_file):
                     'notes': row.get('note', '')
                 }
                 writer.writerow(entry)
-    
+
     print(f"Converted {input_file} to {output_file}")
 
 if __name__ == '__main__':
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     parser.add_argument('input', help='Input CSV file')
     parser.add_argument('output', help='Output CSV file')
     args = parser.parse_args()
-    
+
     convert_roboform_to_bitwarden(args.input, args.output)
 ```
 
@@ -179,7 +179,7 @@ def parse_custom_fields(notes_text):
     """
     fields = []
     lines = notes_text.split('\n')
-    
+
     for line in lines:
         if ':' in line:
             key, value = line.split(':', 1)
@@ -188,7 +188,7 @@ def parse_custom_fields(notes_text):
                 'value': value.strip(),
                 'type': 0  # 0 = text, 1 = hidden
             })
-    
+
     return fields
 ```
 
@@ -253,7 +253,6 @@ bw list items | jq 'group_by(.name) | map(select(length > 1))'
 ### Missing Passwords
 
 Some RoboForm entries might have empty password fields (like WiFi passwords or secure notes). These won't appear in Bitwarden's login items—manually recreate them or import as secure notes.
-
 
 
 ## Related Articles

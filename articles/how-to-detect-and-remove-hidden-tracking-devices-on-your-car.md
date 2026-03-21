@@ -75,7 +75,7 @@ def scan_gsm_frequencies():
     # RTL-SDR frequency range: 500 kHz to 1.766 GHz
     # GSM bands: 850, 900, 1800, 1900 MHz
     bands = [850, 900, 1800, 1900]
-    
+
     for band in bands:
         center_freq = band * 1_000_000  # Convert to Hz
         print(f"Scanning GSM band: {band} MHz")
@@ -99,9 +99,9 @@ from bleak import BleakScanner
 async def detect_ble_devices():
     """Scan for BLE devices that may indicate tracking"""
     devices = await BleakScanner.discover()
-    
+
     tracking_devices = ['AirTag', 'Tile', 'Galaxy SmartTag', 'Find My']
-    
+
     for device in devices:
         name = device.name or "Unknown"
         if any(tag.lower() in name.lower() for tag in tracking_devices):
@@ -345,7 +345,6 @@ Consult professionals if:
 - Your vehicle is high-value or you're high-profile
 
 Professional counter-surveillance specialists can often detect threats that consumer tools miss entirely.
-
 
 
 ## Related Articles

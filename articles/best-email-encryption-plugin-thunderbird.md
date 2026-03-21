@@ -324,7 +324,6 @@ auto_revoke_expired: true
 ```
 
 
-
 ## Related Articles
 
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)

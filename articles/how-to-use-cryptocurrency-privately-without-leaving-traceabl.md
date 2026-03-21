@@ -394,7 +394,6 @@ xmrig --cpu-affinity 0 -t $(nproc)  # Mine with all cores
 ```
 
 
-
 ## Related Articles
 
 - [How to Use Public Computers Safely Without Leaving Any Trace](/privacy-tools-guide/how-to-use-public-computers-safely-without-leaving-any-trace/)

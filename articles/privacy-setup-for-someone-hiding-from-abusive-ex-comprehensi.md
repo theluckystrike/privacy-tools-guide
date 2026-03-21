@@ -199,7 +199,6 @@ Save these resources offline:
 - Cyber Civil Rights Initiative: 1-844-878-2274
 
 
-
 ## Related Articles
 
 - [Privacy Setup For Someone Leaving Abusive Relationship Digit](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
