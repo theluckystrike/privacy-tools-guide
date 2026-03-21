@@ -28,9 +28,9 @@ const twitClient = require('twitter-api-v2').client;
 
 async function checkSecuritySettings(bearerToken) {
   const client = new twitClient(bearerToken);
-  
+
   const settings = await client.v2.get('users/me/settings');
-  
+
   return {
     twoFactorEnabled: settings.data.two_factor_authentication_enabled,
     loginVerification: settings.data.login_verification,
@@ -40,6 +40,16 @@ async function checkSecuritySettings(bearerToken) {
 ```
 
 For developers building applications that interact with Twitter X, implement OAuth 2.0 with PKCE (Proof Key for Code Exchange) to handle user authentication securely. This flow prevents authorization code interception attacks.
+
+### Choosing the Right MFA Method
+
+Twitter X supports three MFA approaches, each with different tradeoff profiles:
+
+- **SMS-based MFA**: The weakest option. SMS is vulnerable to SIM-swapping attacks where an adversary convinces your carrier to transfer your number. Avoid this if possible.
+- **Authenticator app (TOTP)**: Significantly stronger than SMS. Apps like Aegis (Android) or Raivo (iOS) generate time-based codes that cannot be intercepted in transit. The downside is that losing your device without a backup of the TOTP seeds locks you out.
+- **Hardware security key (FIDO2/WebAuthn)**: The strongest available option. Keys like YubiKey bind authentication to a physical device that must be present. Phishing attacks that capture your password still cannot access your account without the key.
+
+Enroll at least two MFA methods — your primary method and a backup. Losing access to your only MFA method typically requires going through account recovery, which may involve providing personal information.
 
 ## Protecting Your Data
 
@@ -67,6 +77,17 @@ For developers integrating Twitter widgets, use the `data-dnt="true"` attribute 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 ```
 
+### Understanding What Twitter X Tracks
+
+Beyond the data you explicitly provide, Twitter X collects behavioral data from both on-platform activity and off-platform browsing (via partner integrations). The "Data about you" section in Settings → Privacy reveals what categories of inferred interests Twitter X has built from this data.
+
+To reduce behavioral profiling:
+
+1. Disable "Allow personalization based on your inferred identity" in Settings → Privacy → Ads preferences
+2. Turn off "Allow use of where you see Twitter content across the web" to stop cross-site tracking
+3. Review and remove linked phone numbers and email addresses not required for account recovery
+4. Under Privacy → Location, disable "Add location information to your Tweets" and revoke precise location access
+
 ## API Access and Developer Controls
 
 If you use Twitter X for development or automation, carefully manage your API keys and access tokens. Create separate tokens for different applications rather than sharing credentials across projects.
@@ -83,15 +104,15 @@ class TwitterCredentialsManager:
         self.api_secret = api_secret
         self.access_token = None
         self.token_expiry = None
-    
+
     def get_valid_token(self):
         if self.access_token and self.token_expiry > datetime.now():
             return self.access_token
-        
+
         # Implement token refresh logic here
         self.refresh_token()
         return self.access_token
-    
+
     def rotate_credentials(self):
         """Rotate credentials every 90 days as recommended"""
         self.revoke_token()
@@ -99,6 +120,22 @@ class TwitterCredentialsManager:
 ```
 
 The Twitter API v2 provides granular permission scopes. Request only the minimum permissions necessary for your application. Avoid requesting `tweet.read`, `users.read`, and `offline.access` unless your use case genuinely requires them.
+
+### Managing API Tokens Safely
+
+Never embed API keys or access tokens in client-side code, public repositories, or build artifacts. Use environment variables and a secrets manager:
+
+```python
+import os
+
+# Load from environment — never hardcode
+API_KEY = os.environ['TWITTER_API_KEY']
+API_SECRET = os.environ['TWITTER_API_SECRET']
+ACCESS_TOKEN = os.environ['TWITTER_ACCESS_TOKEN']
+ACCESS_TOKEN_SECRET = os.environ['TWITTER_ACCESS_TOKEN_SECRET']
+```
+
+Audit your connected applications periodically. Any app authorized to access your Twitter X account has a long-lived token that remains valid until explicitly revoked. Applications you authorized years ago for a one-time use still have that access unless you have removed it. Go to Settings → Apps and sessions → Connected apps and revoke everything you do not actively use.
 
 ## Content Visibility Controls
 
@@ -110,12 +147,12 @@ For public accounts, use the Muted words and Blocked accounts features to filter
 // Example: Managing muted words via Twitter API
 async function addMutedWord(client, word) {
   const mutedWords = await client.v2.get('users/me/muted_words');
-  
+
   const newWord = {
     keyword: word,
     token_type: 'word'
   };
-  
+
   await client.v2.post('users/me/muted_words', {
     data: newWord
   });
@@ -135,12 +172,12 @@ For developers, implement proper OAuth token management:
 const tokenStorage = {
   // Use environment variables in production
   store: new Map(),
-  
+
   set(key, value, ttl = 3600000) {
     const expiry = Date.now() + ttl;
     this.store.set(key, { value, expiry });
   },
-  
+
   get(key) {
     const entry = this.store.get(key);
     if (!entry) return null;
@@ -177,10 +214,37 @@ def create_session_with_retry():
     return session
 ```
 
+### Direct Message Privacy
+
+Direct messages on Twitter X are not end-to-end encrypted. Twitter X can read DM content, and these messages are included in law enforcement responses. For sensitive conversations, do not rely on Twitter X DMs. Use Signal or another end-to-end encrypted messaging application for anything you want kept private.
+
+If you use DMs for general coordination, enable the "Allow message requests from everyone" setting only if you want to be reachable by non-followers. Otherwise, limit DMs to people you follow to reduce unwanted contact and potential phishing attempts sent via direct message.
+
+## Monitoring Account Activity
+
+Track login sessions and account activity to detect unauthorized access early:
+
+- **Sessions**: Settings → Apps and sessions → Sessions shows all active sessions with device and location data. Terminate any sessions you do not recognize.
+- **Login history**: Review the login history periodically for unexpected locations or devices.
+- **Email notifications**: Enable "Email me when there's a new login" under Settings → Security → Additional password protection.
+
+Prompt action on suspicious activity matters. If you see a login you do not recognize, change your password immediately, revoke all active sessions, and rotate your MFA enrollment if you believe your authentication factors may be compromised.
+
+## Reducing Your Attack Surface Long-Term
+
+Beyond individual settings, consider a broader approach to your Twitter X privacy posture:
+
+**Use a dedicated email address**: The email address linked to your Twitter X account should not be the same address you use for other services. A breach or phishing attack targeting one account is less likely to cascade to the other if they use separate inboxes.
+
+**Avoid linking your phone number unnecessarily**: Twitter X prompts users to add phone numbers for account recovery. However, phone numbers can be used to identify you across services and are susceptible to SIM-swapping. Only link a phone number if you have exhausted other recovery options and accept the associated risks.
+
+**Set a strong, unique password**: Reusing passwords across services is one of the most common causes of account compromise. Use a password manager to generate and store a unique, random password for Twitter X. Credentials from breaches at other services are routinely tested against social media accounts in automated credential stuffing attacks.
+
+**Be cautious with third-party login**: If you log into other services using "Sign in with X," you are sharing your Twitter X identity with those services. Where possible, create independent accounts rather than relying on social login, which creates a dependency — if your Twitter X account is suspended or compromised, all services linked to it through social login become inaccessible.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 - [iOS Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 - [macOS Privacy Permissions Manager Guide 2026: Complete.](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
 - [macOS Privacy Settings for Remote Workers 2026: Complete.](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
