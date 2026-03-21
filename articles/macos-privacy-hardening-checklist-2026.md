@@ -5,7 +5,7 @@ description: "A complete macOS privacy checklist covering Gatekeeper, Siri, tele
 date: 2026-03-21
 author: theluckystrike
 permalink: /macos-privacy-hardening-checklist-2026/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "Configure DNS over TLS (DoT) on Linux with systemd-resolved and on
 date: 2026-03-21
 author: theluckystrike
 permalink: /dns-over-tls-setup-linux-android/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

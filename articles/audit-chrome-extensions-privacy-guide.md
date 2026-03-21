@@ -5,7 +5,7 @@ description: "Step-by-step guide to reviewing Chrome extension permissions, netw
 date: 2026-03-21
 author: theluckystrike
 permalink: /audit-chrome-extensions-privacy-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

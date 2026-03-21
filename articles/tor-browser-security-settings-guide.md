@@ -5,7 +5,7 @@ description: "How to configure Tor Browser's security levels, circuit controls, 
 date: 2026-03-21
 author: theluckystrike
 permalink: /tor-browser-security-settings-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

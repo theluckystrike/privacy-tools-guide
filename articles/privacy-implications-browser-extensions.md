@@ -5,7 +5,7 @@ description: "What browser extensions can technically access, how extension stor
 date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-implications-browser-extensions/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
