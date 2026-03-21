@@ -9,7 +9,7 @@ permalink: /audio-context-fingerprinting-how-websites-use-sound-api-trac/
 categories: [guides]
 tags: [privacy-tools-guide, tools, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

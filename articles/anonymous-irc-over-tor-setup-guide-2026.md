@@ -9,7 +9,7 @@ permalink: /anonymous-irc-over-tor-setup-guide-2026/
 categories: [guides]
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 tags: [privacy-tools-guide]
 ---
