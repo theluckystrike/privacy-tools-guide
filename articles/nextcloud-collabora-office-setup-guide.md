@@ -34,6 +34,18 @@ Before starting, verify these requirements:
 - nginx as your reverse proxy (other web servers work but this guide uses nginx)
 - SSL certificates (Let's Encrypt recommended)
 
+## Architecture Overview
+
+Understanding the communication flow between components helps during troubleshooting. When a user opens a document in Nextcloud, the following happens:
+
+1. Nextcloud generates a WOPI (Web Application Open Platform Interface) token for the document
+2. The browser receives a redirect to the Collabora iframe with the WOPI token
+3. Collabora fetches the document from Nextcloud using the WOPI token and your internal network
+4. The user edits in the browser; changes are saved back via WOPI calls to Nextcloud
+5. All document content stays within your infrastructure — only the rendered interface reaches the browser
+
+This architecture means Collabora and Nextcloud must be able to reach each other over the network, either on the same Docker network or via your public hostnames. Placing them on a shared Docker network is more efficient and avoids hairpin NAT issues on some hosting environments.
+
 ## Step 1: Deploy Collabora Online via Docker
 
 Create a Docker Compose file for Collabora. The official Collabora image includes everything needed for the office suite.
@@ -216,6 +228,18 @@ Restart the container after changes:
 docker-compose down && docker-compose up -d
 ```
 
+### Firewall Rules
+
+Collabora's port 9980 should never be exposed directly to the internet. nginx handles all external access. Enforce this with a firewall rule:
+
+```bash
+# Block direct access to Collabora port from outside
+ufw deny in 9980
+ufw allow in on lo to any port 9980
+```
+
+If you run nginx on the same host as Docker, use `127.0.0.1:9980` as the proxy target rather than `0.0.0.0:9980` in Docker's port binding. This prevents the Docker daemon from opening the port on the public interface, which can bypass UFW rules on some configurations.
+
 ## Step 5: Verify the Integration
 
 Test your setup by:
@@ -233,7 +257,54 @@ docker logs collabora-online
 
 Monitor nginx access logs for connection issues:
 
-```tail -f /var/log/nginx/office.access.log```
+```bash
+tail -f /var/log/nginx/office.access.log
+```
+
+## Multi-User and Team Configuration
+
+For teams using Nextcloud collaboratively, configure Collabora to support concurrent document editing. By default, multiple users opening the same document each get independent sessions. Enable collaborative editing in the Nextcloud richdocuments app settings:
+
+```bash
+occ config:app:set richdocuments federation_enable --value="1"
+```
+
+Set a unique federation server ID so Nextcloud can coordinate sessions across Collabora instances if you later scale to multiple Collabora containers:
+
+```bash
+occ config:app:set richdocuments wopi_url --value="https://office.yourdomain.com"
+occ config:app:set richdocuments token_ttl --value="86400"
+```
+
+The `token_ttl` value controls how long WOPI tokens remain valid in seconds. The default is 12 hours; increase it for long editing sessions where users keep documents open all day without reloading.
+
+For guest access — allowing external collaborators to edit documents via shared links without Nextcloud accounts — ensure the `allow_local_remote_links` setting in `loolwsd.xml` is enabled and that your Collabora instance's `domain` regex pattern would match any hostnames used in the WOPI callback URLs.
+
+## Backup and Update Strategy
+
+### Backing Up Collabora Configuration
+
+The primary backup concern for Collabora is the `loolwsd.xml` configuration file. The application itself is stateless — all documents live in Nextcloud. Back up your Docker Compose file and mounted configuration:
+
+```bash
+tar -czf collabora-config-$(date +%Y%m%d).tar.gz \
+  /opt/collabora/docker-compose.yml \
+  /opt/collabora/loolwsd.xml
+```
+
+Store this archive alongside your Nextcloud backup. When restoring after a server failure, you only need to restore Nextcloud's data directory and database; Collabora requires only its configuration file.
+
+### Updating Collabora
+
+Update the image tag in `docker-compose.yml` to the latest Collabora release, then pull and restart:
+
+```bash
+cd /opt/collabora
+docker-compose pull
+docker-compose up -d
+```
+
+Check the Collabora release notes before updating — major version bumps occasionally require changes to the WOPI configuration or nginx proxy headers. Testing on a staging Nextcloud instance before updating production avoids document loading failures during business hours.
 
 ## Troubleshooting Common Issues
 
@@ -251,9 +322,9 @@ Increase container memory limits:
 
 ```yaml
 deploy:
- resources:
- limits:
- memory: 4G
+  resources:
+    limits:
+      memory: 4G
 ```
 
 ### SSL Certificate Errors
@@ -275,12 +346,13 @@ For deployments with multiple users, consider these optimizations:
 
 ```nginx
 location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
- proxy_pass http://127.0.0.1:9980;
- proxy_cache_valid 200 1h;
- add_header Cache-Control "public, immutable";
+  proxy_pass http://127.0.0.1:9980;
+  proxy_cache_valid 200 1h;
+  add_header Cache-Control "public, immutable";
 }
 ```
 
+Collabora allocates a separate process per open document. On a shared server, set the `max_connections` parameter in `loolwsd.xml` to prevent the service from consuming all available memory when many users open documents simultaneously. A starting point for small teams is 20 concurrent documents; monitor container memory usage and adjust accordingly.
 
 ## Related Articles
 
@@ -291,5 +363,4 @@ location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
 - [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-```
 {% endraw %}
