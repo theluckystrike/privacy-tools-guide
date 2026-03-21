@@ -6,7 +6,7 @@ date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-tor-snowflake-bridge-to-help-users-in-censored/
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools]
