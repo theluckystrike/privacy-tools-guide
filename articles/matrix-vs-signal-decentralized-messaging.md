@@ -73,6 +73,23 @@ async function createEncryptedRoom(client, roomName) {
 }
 ```
 
+A practical consequence of these different approaches: Signal's per-message key rotation means that even if an attacker compromises a session key at one point in time, they cannot decrypt past messages. Matrix's Megolm sessions rotate on a configurable schedule (default: every 100 messages or once per week), which offers weaker forward secrecy but dramatically better performance in large rooms with many participants.
+
+## Protocol Feature Comparison
+
+| Feature | Signal | Matrix |
+|---------|--------|--------|
+| Architecture | Centralized | Federated |
+| E2E encryption | Always on | Optional per room |
+| Forward secrecy | Per-message | Per session (configurable) |
+| Group size limit | ~1000 | Effectively unlimited |
+| Self-hosting | Not supported | Full homeserver control |
+| Phone number required | Yes | No |
+| Bridging to other protocols | No | Extensive bridge ecosystem |
+| Open server registration | No | Depends on homeserver |
+| Sealed sender | Yes | No |
+| Multi-device sync | Yes | Yes |
+
 ## Federation and Decentralization
 
 Matrix's federation model enables true decentralization. Any organization or individual can run a homeserver, and these servers interconnect to form the Matrix network. This architectural choice provides several advantages:
@@ -87,6 +104,8 @@ Signal's centralized model offers different benefits:
 - **Simpler implementation**: Single server infrastructure reduces complexity
 - **Faster protocol development**: Changes don't require federation-wide coordination
 - **Easier discovery**: Centralized user directories simplify finding contacts
+
+The cost of federation in Matrix is operational complexity. Running a Synapse or Dendrite homeserver requires database management (PostgreSQL is recommended for production), ongoing maintenance, and bandwidth proportional to the number of federated rooms your users participate in. A room with 500 users spread across 50 homeservers means your server receives and replicates every message to maintain the shared event graph. Signal's centralized model offloads all this infrastructure cost to the Signal Foundation.
 
 ## Metadata Considerations
 
@@ -105,6 +124,14 @@ Matrix servers can see:
 - Federation traffic with other servers
 
 Self-hosting Matrix homeservers gives organizations control over this metadata. Running your own homeserver means you decide what data to retain and can implement additional privacy measures.
+
+Signal's sealed sender feature partially addresses the metadata problem by hiding which user sent a message, even from Signal's own servers. Matrix has no equivalent mechanism, meaning homeserver administrators can observe the sender and recipient of every message routed through their server.
+
+## Phone Number Dependency
+
+Signal requires a valid phone number for registration. This is both a feature and a limitation. Phone numbers provide a familiar contact discovery mechanism—you can message anyone in your contacts who has Signal installed. But phone numbers are real-world identifiers tied to SIM cards and carrier accounts, which creates linkability between your Signal identity and your physical identity.
+
+Matrix has no such requirement. Users register with a username and password on any homeserver. Many homeservers allow anonymous registration. This makes Matrix significantly more suitable for pseudonymous or anonymous communication use cases, or for organizations that want to provision accounts without requiring employees to use personal phone numbers.
 
 ## Developer Integration
 
@@ -155,6 +182,8 @@ asyncio.run(matrix_bot(
 ))
 ```
 
+Matrix Application Services allow developers to build bridges, bots, and integrations that appear as native Matrix users. This capability has produced a rich ecosystem of bridges to IRC, Slack, Discord, Telegram, and WhatsApp. Developers can also use Application Services to build custom moderation bots, notification systems, or workflow automation tools that integrate directly into encrypted Matrix rooms.
+
 ## When to Choose Each Protocol
 
 Choose **Signal** when:
@@ -162,6 +191,7 @@ Choose **Signal** when:
 - User experience outweighs infrastructure control
 - Mobile-first applications are the target
 - Cross-platform consistency matters without self-hosting
+- Your threat model includes compromised infrastructure (sealed sender matters)
 
 Choose **Matrix** when:
 - Decentralization and data sovereignty are priorities
@@ -169,6 +199,30 @@ Choose **Matrix** when:
 - Integrating with existing infrastructure
 - Need for bridging to other protocols (IRC, Slack, Discord)
 - Organization requires self-hosted solutions
+- Anonymous or pseudonymous communication is required
+- You need large persistent rooms with hundreds or thousands of members
+
+## Running Your Own Matrix Homeserver
+
+For organizations that want complete control over their messaging infrastructure, deploying a Matrix homeserver is straightforward. The reference implementation, Synapse, runs as a Python application backed by PostgreSQL:
+
+```bash
+# Install Synapse via pip
+pip install matrix-synapse
+
+# Generate a configuration template
+python -m synapse.app.homeserver \
+  --server-name yourdomain.com \
+  --config-path /etc/matrix-synapse/homeserver.yaml \
+  --generate-config \
+  --report-stats no
+
+# Start the server
+python -m synapse.app.homeserver \
+  --config-path /etc/matrix-synapse/homeserver.yaml
+```
+
+The lighter-weight Dendrite homeserver, written in Go, is a better fit for smaller deployments and consumes significantly less memory than Synapse. Neither requires any commercial cloud services—a $5/month VPS can host a homeserver for a small team.
 
 ## Hybrid Approaches
 
@@ -179,8 +233,7 @@ Many developers combine both protocols for different use cases. A common pattern
 
 The Matrix bridge ecosystem supports integration with Signal through various community projects, though official Signal-to-Matrix bridges don't exist due to Signal's terms of service.
 
-
-## Related Articles
+## Related Reading
 
 - [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
 - [Secure Messaging for Activists Guide 2026: Signal vs.](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
