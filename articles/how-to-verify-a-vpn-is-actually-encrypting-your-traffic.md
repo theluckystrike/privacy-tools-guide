@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Verify a VPN Is Actually Encrypting Your Traffic"
-description: "Practical guide to verifying your VPN is actually encrypting traffic. Covers Wireshark inspection, DNS leak tests, kill switch verification, and WebRTC detection."
+description: "Practical guide to verifying your VPN is actually encrypting traffic. Covers Wireshark inspection, DNS leak tests, kill switch verification, and WebRTC."
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-verify-a-vpn-is-actually-encrypting-your-traffic/
