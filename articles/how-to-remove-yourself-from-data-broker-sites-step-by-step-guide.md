@@ -1,4 +1,3 @@
-{% raw %}
 ---
 layout: default
 title: "How to remove yourself from data broker sites step by step."
@@ -13,6 +12,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+
+{% raw %}
 
 Data brokers collect, aggregate, and sell your personal information: your address, phone number, relatives' names, financial estimates, purchase history. Hundreds of these companies operate in the shadows. But you can remove yourself from most of them. This guide gives the exact step-by-step process to delete your data from the major brokers, templates for sending removal requests, and automation tools for the tedious work.
 
