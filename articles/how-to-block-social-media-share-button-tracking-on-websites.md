@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-block-social-media-share-button-tracking-on-websites/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
