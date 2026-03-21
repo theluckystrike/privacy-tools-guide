@@ -187,6 +187,108 @@ signal-cli -u +1234567890 list-identities
 signal-cli -u +1234567890 verify -n +0987654321
 ```
 
+## Disaster Recovery and Operational Procedures
+
+When disappearing messages are central to your security posture, establish clear procedures for handling edge cases and failures.
+
+### Handling Failed Message Deletion
+
+Occasionally, disappearing messages may fail to delete due to network interruptions, app crashes, or device issues. When this occurs:
+
+1. Check both devices to confirm deletion status
+2. If messages persist beyond expiration, manually delete them
+3. Restart the app to force synchronization
+4. Report persistent issues to Signal through official channels
+
+### Backup and Recovery Implications
+
+Signal does not back up message contents to cloud services by default. This means disappearing messages cannot be recovered from backups. However, if you enable Signal's optional backup feature, consider:
+
+- Excluding sensitive conversations from automatic backups
+- Using encrypted local backups stored offline
+- Manually deleting backups after backup completion
+
+```python
+# Script to audit Signal backup configuration
+def check_signal_backup_status():
+    backup_config = {
+        "cloud_backup_enabled": False,  # Disable for sensitive data
+        "local_backup_enabled": True,   # Only if encrypted and local
+        "backup_retention_days": 7      # Delete after one week
+    }
+    return backup_config
+```
+
+## Scaling Disappearing Messages to Teams
+
+For engineering teams handling sensitive infrastructure, extend disappearing messages to group protocols:
+
+### Incident Response Channels with Automatic Cleanup
+
+```yaml
+# Channel classification for incident response
+channels:
+  critical_incidents:
+    timer: 300          # 5 minutes
+    retention: none     # No persistent logs
+    access_control: soc_only
+
+  service_degradation:
+    timer: 3600         # 1 hour
+    retention: 24h_logs # Separate logging system
+    access_control: engineering_oncall
+
+  post_mortems:
+    timer: 604800       # 1 week
+    retention: archive  # Permanent logging
+    access_control: team_leads
+```
+
+This tiered approach maintains appropriate security levels while ensuring critical incidents are coordinated securely, and post-mortems are available for future reference.
+
+## Limitations Under Device Compromise
+
+Disappearing messages provide strong protection against many threat models, but they have critical limitations if your device is compromised before message deletion.
+
+### Threat Model: Pre-Deletion Compromise
+
+If an attacker gains access to your device (malware, physical seizure) before the disappearing message timer expires, they can potentially:
+
+1. Extract the message from app memory before deletion
+2. Bypass the deletion process through forensic techniques
+3. Access encryption keys before they're deleted
+
+For this reason, disappearing messages work best alongside:
+
+- **Device encryption** (FileVault on macOS, encrypted storage on Android)
+- **Screen lock** with immediate timeout
+- **Malware prevention** through system hardening
+- **Regular security updates** to patch device vulnerabilities
+
+### Mitigating Pre-Deletion Risk
+
+```python
+# Implementation: Force early key deletion
+class EarlyKeyDeletion:
+    def __init__(self, timer_seconds=30):
+        self.timer_seconds = timer_seconds
+        # Delete keys in half the displayed timer
+        self.early_deletion_seconds = timer_seconds // 2
+
+    def handle_deletion(self):
+        """
+        Delete cryptographic keys early, before user-facing timer expires.
+        Message persists on device but becomes unreadable.
+        """
+        # Delete key at halfway point
+        schedule_deletion(self.early_deletion_seconds)
+
+        # Message still visible but encrypted with deleted key
+        # Provides defense-in-depth if device is compromised
+```
+
+This approach makes messages "technically" readable longer than they're actually recoverable, adding security margin.
+
 
 ## Related Articles
 

@@ -160,6 +160,77 @@ codesign -d --entitlements - /path/to/app.app
 # Appear in the app's privacy manifest
 ```
 
+## Notification Privacy and Message Preview
+
+Notifications represent a significant privacy leak on shared devices. When notifications display message previews on the lock screen, anyone with physical access can read your communications without unlocking your phone.
+
+### Controlling Notification Content
+
+Navigate to **Settings → Notifications → [App Name]** to configure each app's notification display:
+
+- **Show Previews**: Controls whether message content appears. Set to "When Unlocked" or "Never" for sensitive apps like messaging and email.
+- **Show on Lock Screen**: Disable for apps containing sensitive information. This forces users to unlock the phone before notifications reveal details.
+- **Badge App Icon**: Consider disabling badges for apps you don't want to advertise activity on your home screen.
+
+For maximum privacy with messaging apps like Signal or iMessage, set notifications to "When Unlocked" or disable them entirely. You can still retrieve messages by opening the app.
+
+### Clipboard Access Monitoring
+
+iOS 14+ includes a feature that notifies you when apps access the clipboard. However, you have limited control over this. Instead:
+
+1. Use app-specific passwords rather than copy-pasting your primary password
+2. Clear the clipboard after copying sensitive information
+3. Be aware which apps show unusual clipboard access patterns
+
+## Microphone and Camera Management
+
+These represent the highest-risk permissions. Developers using surveillance features in their applications should understand how iOS manages this.
+
+### Device-Level Indicators
+
+iOS shows a visual indicator (orange dot) when apps use the microphone, and a green dot when the camera is active. This appears in the status bar and in Control Center history.
+
+### Configuring Camera and Microphone Access
+
+**Settings → Privacy & Security → Camera** and **Microphone** show which applications have requested access. Remove permissions from apps that don't need them.
+
+For developers:
+```swift
+import AVFoundation
+
+// Check camera authorization status
+AVCaptureDevice.requestAccess(for: .video) { granted in
+    if granted {
+        // User authorized camera access
+    } else {
+        // User denied camera access
+    }
+}
+
+// Check microphone authorization
+AVCaptureDevice.requestAccess(for: .audio) { granted in
+    if granted {
+        // User authorized microphone access
+    }
+}
+```
+
+## Health and Fitness Data Privacy
+
+The Health app centralizes sensitive biometric data. Apple segregates access carefully, but review permissions quarterly.
+
+**Settings → Privacy & Security → Health** controls which apps can read or modify your health data. Each permission is granular—an app can request read access to heart rate without requesting sleep data access.
+
+For remote workers, be cautious about fitness tracking apps that may reveal your work schedule through activity patterns. If you log workouts, consider whether those patterns reveal anything about your location or routine.
+
+## DNS and Network Settings Privacy
+
+Advanced users can configure DNS-over-HTTPS to encrypt DNS queries from the system level.
+
+**Settings → Wi-Fi → [Network Name] → Configure DNS → Automatic (or Manual)**
+
+Use encrypted DNS providers like Cloudflare (1.1.1.1) or Quad9 to prevent ISP visibility into which domains you visit. This works at the system level, protecting all app traffic.
+
 ## Lockdown Mode for Sensitive Deployments
 
 iOS Lockdown Mode provides extreme privacy protection for users requiring maximum security.
@@ -176,6 +247,17 @@ When enabled, Lockdown Mode restricts:
 
 This mode is designed for high-risk users such as journalists, activists, and executives handling sensitive information.
 
+### When to Enable Lockdown Mode
+
+Lockdown Mode trades convenience for security. Enable it if:
+
+- You're a journalist covering sensitive topics
+- You're an activist or dissident in restrictive environments
+- You handle classified or legally privileged information
+- You work in security research or vulnerability assessment
+
+Disable it if you need normal messaging capabilities. The restrictions are severe and will break many app features.
+
 ## Configuration Recommendations
 
 For users seeking optimal privacy without sacrificing functionality:
@@ -185,6 +267,8 @@ For users seeking optimal privacy without sacrificing functionality:
 3. **Enable Safari Protections**: Keep cross-site tracking prevention active
 4. **Regular Privacy Audits**: Check App Privacy Report weekly for anomalies
 5. **Limit Third-Party Keyboards**: Use only Apple's built-in keyboard for sensitive input
+6. **Disable Siri on Lock Screen**: Prevents voice-activated access to personal information
+7. **Enable Face ID/Touch ID With Caution**: Biometric authentication is convenient but riskier than PIN codes for high-security scenarios
 
 
 ## Related Articles
