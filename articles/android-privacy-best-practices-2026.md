@@ -170,6 +170,328 @@ Establish a monthly routine to review app permissions, remove unused application
 
 Consider using third-party permission managers from F-Droid for additional control. However, be cautious about granting accessibility services, as these can expose significant device control to malicious apps.
 
+## Advanced Permission Model: Restricted Access Levels
+
+Android 16 introduces new permission tiers beyond the traditional "allow/deny" model:
+
+**Permission Levels in Android 16+**:
+1. **Normal**: No special UI, automatically granted (INTERNET, ACCESS_NETWORK_STATE)
+2. **Signature**: Apps signed with same certificate (less common for third-party)
+3. **Dangerous**: User approval required at runtime (CAMERA, LOCATION, CONTACTS)
+4. **Special**: Apps must request from Settings (SYSTEM_ALERT_WINDOW, WRITE_SETTINGS)
+5. **Development-only**: Requires developer mode enabled
+
+For developers, understand what permission level your feature requires:
+
+```kotlin
+// Permission level detection
+when (PermissionChecker.checkSelfPermission(context, permission)) {
+    PermissionChecker.PERMISSION_GRANTED -> {
+        // App has permission
+    }
+    PermissionChecker.PERMISSION_GRANTED_BY_DEFAULT -> {
+        // Permission automatically allowed (normal level)
+    }
+    PermissionChecker.PERMISSION_DENIED -> {
+        // Must prompt user or fail gracefully
+    }
+}
+```
+
+This allows your app to distinguish between normal and dangerous permissions, providing better UX.
+
+## Intent-Based Data Sharing and Data Leakage
+
+Android apps communicate through Intents, which can inadvertently leak data:
+
+```kotlin
+// UNSAFE: Explicit Intent with sensitive data exposed
+val sensitiveData = "user-secret-value"
+val intent = Intent(Intent.ACTION_SEND)
+intent.putExtra("secret", sensitiveData)
+intent.type = "text/plain"
+startActivity(Intent.createChooser(intent, "Share"))
+
+// SAFE: Only send necessary data, explicitly target secure app
+val intent = Intent(Intent.ACTION_SEND)
+intent.putExtra("file_uri", contentUri)  // Content URI, not raw data
+intent.type = "application/pdf"
+intent.setPackage("com.trusted.secure.app")
+try {
+    startActivity(intent)
+} catch (e: ActivityNotFoundException) {
+    showError("Secure app not installed")
+}
+```
+
+Users should review what data apps can access via intent sharing:
+
+```bash
+# List all apps that can handle Share intent
+adb shell cmd package query-activities \
+  --action android.intent.action.SEND \
+  --mime-type "text/*"
+```
+
+Review this list — remove apps that shouldn't have access to certain data types.
+
+## File Descriptor Leakage and Process Inspection
+
+Open file descriptors can leak sensitive data if not properly managed. Inspect your app's file descriptor table:
+
+```bash
+# List file descriptors for running app
+adb shell su
+ls -la /proc/$(pidof com.example.app)/fd/
+
+# Each FD shows what's open
+# /dev/pts/X = console
+# /dev/null = discarded writes
+# /data/data/com.example.app/* = local app storage
+# /dev/socket/* = network sockets
+```
+
+If you see unexpected open files, investigate:
+
+```kotlin
+// Check open files in your app
+fun logOpenFiles() {
+    val fd = File("/proc/self/fd")
+    fd.listFiles()?.forEach { file ->
+        try {
+            val link = File("/proc/self/fd").canonicalPath
+            Log.d("OpenFDs", "FD ${file.name}: ${link}")
+        } catch (e: Exception) {
+            Log.d("OpenFDs", "FD ${file.name}: error reading")
+        }
+    }
+}
+```
+
+## Memory Permissions and Code Execution Risk
+
+Modern Android restricts memory mapping to prevent code execution exploits:
+
+```kotlin
+// Old approach (disabled on Android 16+):
+val nativeCode = byteArrayOf(...) // Malicious code
+val buffer = ByteBuffer.allocateDirect(nativeCode.size)
+buffer.put(nativeCode)
+
+// Android 16+ prevents this; use only signed native libraries
+// Load native library through proper APK inclusion
+System.loadLibrary("my_native")  // Must be in APK, signed by developer
+```
+
+Developers should avoid:
+- Runtime code generation (JIT compilation from untrusted sources)
+- Loading native libraries from external storage
+- Reflective instantiation of privileged classes
+
+## Secure Enclave and Hardware Key Storage
+
+Android's Secure Enclave (when available) stores encryption keys isolated from the main OS:
+
+```kotlin
+// Check for Secure Enclave support
+val keyManager = context.getSystemService(KeyguardManager::class.java)
+val hasBiometric = keyManager?.isDeviceSecure == true
+
+// Generate key that requires Secure Enclave
+val keySpec = KeyGenParameterSpec.Builder(
+    "secure_key",
+    KeyProperties.PURPOSE_SIGN or KeyProperties.PURPOSE_VERIFY
+)
+    .setKeySize(256)
+    .setAlgorithm(KeyProperties.KEY_ALGORITHM_EC)
+    .setDigests(KeyProperties.DIGEST_SHA256)
+    .setUserAuthenticationRequired(true)
+    .setUserAuthenticationParameters(
+        30,  // validity: 30 seconds
+        KeyProperties.AUTH_BIOMETRIC_STRONG
+    )
+    .setInvalidatedByBiometricEnrollment(true)  // Invalidate if biometric changes
+    .build()
+
+val keyGenerator = KeyGenerator.getInstance(
+    KeyProperties.KEY_ALGORITHM_EC, "AndroidKeyStore"
+)
+keyGenerator.init(keySpec)
+keyGenerator.generateKey()
+```
+
+This key is generated in Secure Enclave and never leaves it. Signing operations happen inside the enclave.
+
+## Network Security Configuration and Certificate Pinning
+
+Android allows certificate pinning — only trusting specific TLS certificates or certificate chains:
+
+```xml
+<!-- res/xml/network_security_config.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <domain-config cleartextTrafficPermitted="false">
+    <domain includeSubdomains="true">example.com</domain>
+    <pin-set expiration="2026-12-31">
+      <!-- Pin the public key hash of certificate -->
+      <pin digest="SHA-256">
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+      </pin>
+      <!-- Backup pin in case cert rotates -->
+      <pin digest="SHA-256">
+        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=
+      </pin>
+    </pin-set>
+  </domain-config>
+</network-security-config>
+```
+
+Pinning prevents MITM attacks even if an attacker compromises a certificate authority:
+
+```bash
+# Extract certificate pin from a domain
+# 1. Get certificate
+openssl s_client -connect example.com:443 < /dev/null
+
+# 2. Extract public key and hash
+openssl x509 -in cert.pem -pubkey -noout | openssl asn1parse -strparse 19 -out - | openssl dgst -sha256 -binary | base64
+```
+
+## Detecting Instrumentation and Debug Hooks
+
+Malicious instrumentation frameworks can hook app methods. Detect this:
+
+```kotlin
+// Detect common instrumentation frameworks
+fun detectInstrumentation(): Boolean {
+    // Check for Xposed Framework
+    try {
+        Class.forName("de.robv.android.xposed.XposedHelpers")
+        return true
+    } catch (e: ClassNotFoundException) {}
+
+    // Check for Frida
+    try {
+        System.loadLibrary("frida")
+        return true
+    } catch (e: UnsatisfiedLinkError) {}
+
+    // Check for debugger attachment
+    if (Debug.isDebuggerConnected()) {
+        return true
+    }
+
+    // Check for ptrace attachment
+    try {
+        val traceStatus = File("/proc/self/status").readText()
+        if (traceStatus.contains("TracerPid:") && !traceStatus.contains("TracerPid:\t0")) {
+            return true
+        }
+    } catch (e: Exception) {}
+
+    return false
+}
+```
+
+If instrumentation is detected, avoid processing sensitive data or raise an alert.
+
+## Data at Rest in Shared Preferences
+
+SharedPreferences data is stored unencrypted by default on most Android versions:
+
+```kotlin
+// UNSAFE: Sensitive data in SharedPreferences
+val prefs = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+prefs.edit {
+    putString("api_token", "secret_token")
+    putString("refresh_token", "refresh_secret")
+}
+
+// SAFE: Use EncryptedSharedPreferences
+val encryptedPrefs = EncryptedSharedPreferences.create(
+    context,
+    "secret_shared_prefs",
+    MasterKey.Builder(context).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build(),
+    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+)
+
+encryptedPrefs.edit {
+    putString("api_token", "secret_token")
+}
+```
+
+EncryptedSharedPreferences is part of the AndroidX Security library and should be used for any sensitive data.
+
+## Process and Thread Isolation
+
+Android provides process isolation through the sandbox, but apps within the same UID can access each other's data:
+
+```kotlin
+// Apps can access data of other apps with shared UID
+// Force unique UID for sensitive apps
+// In AndroidManifest.xml:
+<application android:sharedUserId="null" ...>
+```
+
+Within your app, sensitive operations should occur in isolated processes:
+
+```xml
+<!-- Create isolated service process -->
+<service
+    android:name=".SecretService"
+    android:process=":secret_process"
+    android:isolatedProcess="true"
+    android:exported="false" />
+```
+
+Isolated processes cannot access app resources, preventing compromise of sensitive data even if the main process is pwned.
+
+## Third-Party SDK Privacy Auditing
+
+Most app security breaches originate from third-party SDKs. Audit their behavior:
+
+```bash
+# Extract all HTTP/HTTPS calls from app binaries
+# Using Frida to intercept at runtime:
+
+frida -U -l hook_networking.js -f com.example.app
+
+# hook_networking.js hooks all network calls
+# Log what domains are contacted and what data is sent
+```
+
+Key things to check:
+- Does SDK collect unnecessary data? (device ID, advertising ID, location)
+- Does SDK transmit data unencrypted?
+- Does SDK phone home without user consent?
+- Does SDK request unnecessary permissions?
+
+Create an SDK audit matrix:
+
+```yaml
+sdk_audit_matrix:
+  firebase_analytics:
+    data_collected: [event, timestamp, app_version, locale]
+    encrypted_in_transit: true
+    user_control: partial  # Limited opt-out options
+    risky: false
+
+  facebook_sdk:
+    data_collected: [device_id, advertising_id, location, usage_patterns]
+    encrypted_in_transit: true
+    user_control: none  # No opt-out, inherent to SDK
+    risky: true  # Consider replacing with privacy-focused alternative
+
+  custom_analytics:
+    data_collected: [screen_name, button_clicks, time_spent]
+    encrypted_in_transit: true
+    user_control: full
+    risky: false
+```
+
+Remove or replace SDKs that collect unnecessary data.
+
 
 ## Related Articles
 
