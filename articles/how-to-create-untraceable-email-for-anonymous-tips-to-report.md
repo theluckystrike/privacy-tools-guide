@@ -29,6 +29,8 @@ Every email leaves traces. Even when you use a "fake" email address, the underly
 
 Reporters and investigative journalists often receive tips through secure channels. Understanding these attack vectors helps you design better anonymous communication systems.
 
+Most people assume that registering a new email account with a fake name provides sufficient anonymity. It does not. The webmail interface logs your browser fingerprint, the registration IP address is recorded and often subpoenaed, and if you access the account from the same network where you check personal email, traffic correlation makes de-anonymization trivial. True operational security requires layering multiple protections simultaneously.
+
 ## Using Tor for Network Anonymity
 
 The first layer of protection involves routing your traffic through Tor to hide your IP address. Never access email services directly from your regular internet connection.
@@ -53,6 +55,21 @@ torsocks git push origin main
 ```
 
 Always verify your Tor circuit before accessing sensitive services. The Tor Browser shows your exit node and new identity option.
+
+On Linux you can also run the system Tor daemon and route all traffic through it with `torify`:
+
+```bash
+# Install Tor daemon on Debian/Ubuntu
+sudo apt install tor
+
+# Check that it is listening
+ss -tlnp | grep 9050
+
+# Route any command through Tor
+torify wget -qO- https://check.torproject.org/api/ip
+```
+
+A critical point: never mix Tor and non-Tor traffic in the same session. If you open your personal Gmail in one tab and your anonymous email in another tab of the same browser, both sessions can be correlated by timing analysis. Use the Tor Browser in a dedicated virtual machine or on Tails OS, completely separated from your regular workflow.
 
 ## Creating Isolated Email Infrastructure
 
@@ -82,6 +99,8 @@ relay:
       Reply-To: "reply@anonymous.example"
 ```
 
+When creating accounts over Tor, avoid services that require phone number verification. Phone numbers are strongly tied to real identity—even a prepaid SIM purchased with cash is often trackable through tower geolocation at the time of purchase. Services like ProtonMail, Disroot, and RiseUp allow registration over Tor without phone verification, though ProtonMail sometimes requires it for new accounts during periods of high abuse.
+
 ## Implementing GPG Encryption
 
 Encryption protects message content but metadata remains visible. Combine GPG encryption with onion-routed delivery for defense in depth.
@@ -108,6 +127,8 @@ echo "Sensitive tip content here" | gpg --encrypt \
 ```
 
 Share your public key through secure channels. Reporters should verify fingerprints through multiple independent paths.
+
+When generating keys for anonymous use, be precise about what information you embed. The default GPG key generation embeds a name and email address that you choose—use names completely unrelated to your real identity. Do not upload the key to public keyservers, because keyserver entries are permanent and timestamped, providing a historical record that can later be correlated with your activity. Instead, share the armored public key directly with the journalist through a secure channel.
 
 ## Hardening Your Email Client
 
@@ -153,6 +174,8 @@ disable_delivery_confirmation = true
 strip_metadata = true
 ```
 
+Most email clients, including Thunderbird and Mutt, send detailed headers about the client version and operating system. On Tails OS, the Tor Browser's built-in webmail approach avoids this problem by presenting a uniform browser fingerprint. If you must use a local client, Thunderbird with the "Header modification" extension allows you to strip or replace identifying headers before messages leave your machine.
+
 ## Practical Tip Submission Workflow
 
 A complete workflow for submitting anonymous tips:
@@ -177,6 +200,8 @@ onionshare --title "Anonymous Tip" --server \
 
 OnionShare creates ephemeral Tor hidden services for secure file transfer without leaving server logs.
 
+SecureDrop is purpose-built for this use case. It runs entirely as a Tor hidden service, accepts document uploads, and strips all file metadata server-side using the Dangerzone tool. Major newsrooms including The Guardian, The New York Times, and Der Spiegel operate SecureDrop instances—check their contact pages for .onion addresses, which should only be visited through Tor Browser.
+
 ## Additional Security Considerations
 
 Metadata sometimes reveals more than content. Consider these points:
@@ -191,6 +216,19 @@ Use ephemeral email services like Guerrilla Mail for one-time communications, bu
 ```bash
 # API call to Guerrilla Mail for disposable addresses
 curl "https://api.guerrillamail.com/ajax.php?f=get_email_address&agent=myapp"
+```
+
+Writing style analysis—sometimes called stylometry—is an underappreciated threat. Academic research has demonstrated that authors can be identified from short text samples by analyzing word choice, sentence length distribution, and punctuation habits. For tips that might trigger a serious investigation, consider composing in a foreign language and then translating, or using software like Anonymouth to detect stylometric fingerprints before sending.
+
+Document metadata is another frequent operational failure. A DOCX file embeds the author name from the Word settings, revision history, and printer information. A PDF may contain GPS coordinates from the device that generated it. Strip metadata using:
+
+```bash
+# Strip metadata from documents using mat2
+mat2 --inplace sensitive-document.pdf
+mat2 --inplace photo-evidence.jpg
+
+# Verify metadata is gone
+mat2 --show sensitive-document.pdf
 ```
 
 ## Verification and Testing
@@ -213,6 +251,8 @@ Your setup works when:
 - No WebRTC leaks exist
 - Email headers don't reveal your IP
 - Encryption successfully locks message content
+
+Run through a complete test by sending an encrypted message to yourself through the anonymous account, then verifying the received headers contain no identifying information. Many email providers, including ProtonMail, display full headers on received messages—inspect these carefully. If you see your real IP address or any ISP-specific strings, something in your setup is leaking before Tor.
 
 
 ## Related Articles
