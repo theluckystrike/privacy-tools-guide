@@ -566,3 +566,8 @@ If any tests fail: VPN has a leak, contact support or switch providers
 | Traffic not encrypted (Wireshark) | No actual encryption | Critical |
 
 {% endraw %}
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
+
