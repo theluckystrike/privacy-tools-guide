@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /vpn-shared-ip-vs-dedicated-ip-privacy-security-tradeoffs-exp/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison, security, privacy, vpn]
