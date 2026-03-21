@@ -9,7 +9,7 @@ permalink: /best-secure-file-sharing-tools-for-teams-handling-sensitive-data/
 categories: [guides, security]
 tags: [privacy-tools-guide, collaboration, security, best-of]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
