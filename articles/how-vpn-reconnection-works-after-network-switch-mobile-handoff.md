@@ -169,6 +169,241 @@ When building VPN-aware applications, handle network transitions gracefully:
 4. **Provide user feedback**: Clearly indicate VPN status during and after network changes
 5. **Test thoroughly**: Simulate network transitions during development using airplane mode toggling or network link conditions
 
+## Detailed Protocol Behavior During Transitions
+
+### TCP-Based VPN Protocols (OpenVPN TCP)
+
+TCP connections are connection-oriented and maintain state:
+
+```
+Network switch sequence:
+1. System switches network interface
+2. TCP keepalive timeout (default 2-4 minutes without packets)
+3. OpenVPN detects connection failure
+4. Client initiates reconnection
+5. Fresh TCP handshake to VPN server
+6. New TLS session establishment
+```
+
+This is why TCP-based VPNs are slower to recover—TCP must re-establish the entire connection.
+
+### UDP-Based Protocols (OpenVPN UDP, WireGuard)
+
+UDP is connectionless, allowing faster adaptation:
+
+```
+Network switch sequence:
+1. System switches network interface
+2. New source IP immediately changes
+3. VPN server detects invalid source IP
+4. Client detects immediate packet loss
+5. Client sends from new IP address
+6. Server accepts packets from new source (if valid)
+7. Connection recovers in <100ms
+```
+
+### IPv6 Transition Handling
+
+Modern networks may transition between IPv4 and IPv6:
+
+```python
+# Detecting and handling address family changes
+class DualStackVPNClient:
+    def __init__(self):
+        self.current_family = socket.AF_INET  # IPv4 or IPv6
+
+    def detect_address_family(self):
+        """Check available network families"""
+        try:
+            # Test IPv4 connectivity
+            socket.create_connection(('8.8.8.8', 53), timeout=2)
+            self.current_family = socket.AF_INET
+        except:
+            try:
+                # Test IPv6 connectivity
+                socket.create_connection(('2001:4860:4860::8888', 53), timeout=2)
+                self.current_family = socket.AF_INET6
+            except:
+                # No connectivity
+                self.current_family = None
+
+    def reconnect_with_detected_family(self):
+        """Reconnect using appropriate address family"""
+        if self.current_family == socket.AF_INET:
+            self.connect_ipv4()
+        elif self.current_family == socket.AF_INET6:
+            self.connect_ipv6()
+```
+
+## MTU and Path MTU Discovery
+
+Network transitions can change Maximum Transmission Unit (MTU):
+
+```
+WiFi: Typical MTU = 1500 bytes
+Cellular: Typical MTU = 1500 bytes
+VPN tunnel overhead: -20 to -100 bytes
+
+If MTU drops without re-negotiation:
+- Packets larger than new MTU will fail
+- Must fragment or resend smaller packets
+```
+
+Management:
+
+```bash
+# Check current MTU
+ip link show | grep mtu
+
+# Set VPN tunnel MTU
+# In OpenVPN config:
+# mtu 1400  # Conservative to avoid fragmentation
+
+# In WireGuard config:
+# Table of MTU by interface:
+# eth0: 1500, wg0: 1420 (accounting for WireGuard overhead)
+```
+
+## DNS Resolution During Transitions
+
+DNS leaks often occur during network switches:
+
+```bash
+# During network transition:
+# 1. System DNS servers change (ISP DNS or local gateway)
+# 2. VPN DNS settings may not apply immediately
+# 3. Browser caches DNS results
+# 4. Leaked queries go to ISP or network observer
+
+# Protection:
+# Use VPN-provided DNS exclusively
+
+# Linux: Override systemd-resolved
+cat > /etc/systemd/resolved.conf << EOF
+[Resolve]
+# Only use VPN DNS
+DNS=10.0.0.1
+FallbackDNS=10.0.0.2
+Domains=~.  # Route all domains through VPN DNS
+EOF
+
+systemctl restart systemd-resolved
+```
+
+## Connection State Machine
+
+A robust VPN client implements careful state management:
+
+```
+States:
+├── DISCONNECTED
+│   └── [connect initiated]
+├── CONNECTING
+│   ├── [authentication successful]
+│   └── [authentication failed]
+├── CONNECTED
+│   ├── [network lost]
+│   └── [user initiated disconnect]
+├── RECONNECTING
+│   ├── [connection restored]
+│   └── [exhausted retry attempts]
+└── DISCONNECTING
+
+Transitions must be carefully ordered:
+- Kill switch activated before attempting reconnection
+- Routes cleared before transitioning away from VPN
+- Connection timeout prevents infinite hangs
+```
+
+Implementation pattern:
+
+```python
+class VPNStateMachine:
+    STATES = ['DISCONNECTED', 'CONNECTING', 'CONNECTED',
+              'RECONNECTING', 'DISCONNECTING']
+
+    def __init__(self):
+        self.state = 'DISCONNECTED'
+        self.transition_lock = threading.Lock()
+
+    def transition(self, new_state):
+        with self.transition_lock:
+            if self.is_valid_transition(self.state, new_state):
+                self.state = new_state
+                self.on_state_changed(new_state)
+            else:
+                raise InvalidStateTransition()
+
+    def on_network_lost(self):
+        if self.state == 'CONNECTED':
+            self.transition('RECONNECTING')
+            self.attempt_reconnect()
+```
+
+## Monitoring VPN Health
+
+Proactive health monitoring detects issues before user impact:
+
+```bash
+#!/bin/bash
+# VPN health monitoring script
+
+check_vpn_health() {
+    # Check if tunnel is active
+    if ! ip link | grep -q "vpn0"; then
+        echo "ALARM: VPN tunnel down"
+        return 1
+    fi
+
+    # Check for DNS leaks
+    dns_ip=$(dig +short google.com | head -1)
+    vpn_ip=$(curl -s ifconfig.me)
+
+    if [ "$dns_ip" != "$vpn_ip" ]; then
+        echo "ALARM: DNS leak detected"
+        return 1
+    fi
+
+    # Check throughput (ensure not throttled)
+    throughput=$(speedtest-cli --simple | cut -d',' -f2)
+    if [ "$throughput" -lt 1 ]; then
+        echo "ALARM: VPN throughput critically low"
+        return 1
+    fi
+
+    echo "OK: VPN healthy"
+    return 0
+}
+
+# Run every 60 seconds
+while true; do
+    check_vpn_health || trigger_alert
+    sleep 60
+done
+```
+
+## Network Interface Priority
+
+Modern systems with multiple network interfaces require priority rules:
+
+```bash
+# Linux: Explicitly route VPN traffic
+# Assuming VPN interface is tun0 with IP 10.0.0.2
+
+# Route everything through VPN by default
+ip route add default via 10.0.0.1 dev tun0 metric 10
+
+# Ensure VPN server is reachable through original interface
+ip route add VPN_SERVER_IP/32 via ORIGINAL_GATEWAY metric 5
+
+# Check routing table
+ip route show
+
+# Windows: Metric-based priority
+# Lower metric = higher priority
+route add 0.0.0.0 mask 0.0.0.0 VPN_GATEWAY metric 10
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

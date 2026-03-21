@@ -164,6 +164,191 @@ Choose Custom mode when you need to maintain specific site functionality while s
 
 The optimal configuration depends on your threat model and workflow. Most power users benefit from a Custom setup that enables cross-site cookie blocking and fingerprinting protection while allowing exceptions for development and critical web applications.
 
+## Deep-Dive: Tracker List Management
+
+Firefox's tracking protection relies on Disconnect.me's curated blocklists. Understanding these lists helps you make informed choices:
+
+### Blocklist Categories
+
+**Advertising**: Third-party ad networks (Google Ads, Facebook Pixel, AdRoll). These track you across sites to build behavioral profiles and target ads.
+
+**Analytics**: Tracking services collecting visitor behavior (Google Analytics, Mixpanel, Heap). Even if you disable ads, these services analyze how you use websites.
+
+**Social Media**: Embedded social widgets (Facebook Like button, Twitter Share, LinkedIn Tracking). These send information back to social networks even without interaction.
+
+**Content Delivery Networks (CDNs)**: Some CDNs bundle tracking. Blocking these breaks content delivery; this is why exceptions matter.
+
+### Updating Tracker Lists
+
+Firefox updates blocklists periodically, but you can check the current list composition:
+
+```javascript
+// Check tracker list in Firefox console (F12)
+fetch('resource://url-classifier/content-track-digest256.json')
+    .then(r => r.json())
+    .then(data => console.log(data))
+
+// Lists are stored locally:
+// ~/.mozilla/firefox/profile/safebrowsing/
+```
+
+## Fingerprinting Resistance in Detail
+
+The `privacy.resistFingerprinting` setting normalizes dozens of browser properties:
+
+### Properties Normalized
+
+```javascript
+// With resistFingerprinting enabled, these properties are spoofed:
+// Screen dimensions: Normalized to 1000x1000
+// Color depth: Set to 24-bit
+// Timezone: Set to UTC (unless overridden)
+// User agent: Simplified to generic version
+// Canvas fingerprint: Randomized per-domain
+// WebGL properties: Reduced precision
+// Font list: Restricted to standard fonts
+// Hardware info: Omitted or generalized
+```
+
+### Testing Your Fingerprint
+
+Verify your protection is working:
+
+```bash
+# Visit fingerprinting test websites
+# Check results before/after enabling protection
+firefox about:config
+
+# Search for: privacy.resistFingerprinting
+# Toggle true/false and revisit test sites
+```
+
+Browser fingerprinting tests like panopticlick.eff.org reveal your uniqueness across the web.
+
+## Cookie Handling Deep-Dive
+
+Firefox's cookie isolation is more sophisticated than simple blocking:
+
+### First-Party Isolation (FPI)
+
+```about:config
+# Enable first-party isolation
+privacy.firstparty.isolate = true
+```
+
+This isolates all cookies, local storage, and cache by first-party domain. A tracking cookie set by Google cannot be read when you visit a different domain, even though Google might embed tracking code on both.
+
+### Storage Partitioning
+
+```about:config
+# Dynamic storage partitioning (Firefox 98+)
+privacy.partition.always_partition_third_party_non_cookie_storage = true
+```
+
+This restricts IndexedDB, Web Storage (localStorage), and service worker data to the first-party context. Previously, a tracker could store persistent state across domains.
+
+### CookieJar Validation
+
+```javascript
+// Check what cookies Firefox is storing
+// Browser console
+document.cookie  // Shows first-party cookies only
+
+// Check storage usage
+navigator.storage.estimate().then(estimate => {
+    console.log(`Using ${estimate.usage} / ${estimate.quota} bytes`);
+});
+```
+
+## HTTPS-Only Mode Integration
+
+Strict tracking protection works best with HTTPS enforcement:
+
+```about:config
+# Enable HTTPS-only mode
+dom.security.https_only_mode = true
+
+# Log warnings when downgrading
+dom.security.https_only_mode_ever_enabled = true
+```
+
+This prevents trackers from using unencrypted HTTP connections, which are easier to intercept and analyze.
+
+## Phishing and Malware Protection Interaction
+
+Firefox integrates Safe Browsing protection alongside tracking protection:
+
+```about:config
+# Enable Safe Browsing
+browser.safebrowsing.enabled = true
+browser.safebrowsing.malware.enabled = true
+browser.safebrowsing.phishing.enabled = true
+```
+
+These settings work independently from tracking protection but benefit from the same list updates.
+
+## Extension Interaction and Conflicts
+
+Some extensions conflict with Firefox's native tracking protection:
+
+```javascript
+// Extensions that may conflict:
+// - uBlock Origin (can bypass native protection)
+// - Privacy Badger (duplicates some protections)
+// - Disconnect (similar to Firefox's lists)
+// - Ghostery (data-sharing concerns)
+
+// Best combination: Strict + uBlock Origin (basic mode)
+// uBlock Origin handles more granular filtering
+// Firefox native protects against fingerprinting
+```
+
+Configure uBlock Origin to complement Firefox:
+
+1. Enable **Medium** or **Hard** mode in uBlock
+2. Disable redundant blocklists to reduce overhead
+3. Create exceptions for sites you trust
+
+## Performance Impact Analysis
+
+Tracking protection affects page load times measurably:
+
+```javascript
+// Measure page load impact
+let start = performance.now();
+
+// Simulate page load with tracking blocked
+document.addEventListener('DOMContentLoaded', () => {
+    let load_time = performance.now() - start;
+    console.log(`Page load: ${load_time}ms`);
+
+    // Compare with trackers disabled
+});
+```
+
+Typical results show 15-40% faster loads with Strict protection due to eliminated tracker requests.
+
+## Custom Rules for Enterprise Environments
+
+Organizations can deploy custom tracking protection policies:
+
+```json
+{
+  "policies": {
+    "TrackingProtection": {
+      "value": true,
+      "locked": true,
+      "exceptions": ["*.company-internal.local"]
+    },
+    "ContentBlocking": {
+      "Strict": true,
+      "Exceptions": ["trusted-partner.com"]
+    }
+  }
+}
+```
+
+This configuration forces Strict tracking protection while allowing exceptions for specific trusted domains.
 
 ## Related Reading
 

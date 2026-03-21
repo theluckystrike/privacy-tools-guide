@@ -165,6 +165,113 @@ Power users should understand several constraints:
 
 Signal's relay feature strikes a practical balance between privacy and usability. For most users, the privacy benefits outweigh these trade-offs.
 
+## Advanced Configuration and Optimization
+
+For developers and power users needing finer control over relay behavior, Signal exposes several advanced options through configuration files on desktop platforms.
+
+### Desktop Platform Configuration
+
+Signal Desktop stores configuration in a platform-specific location. On Linux, this is typically `~/.config/Signal`. You can override relay behavior by modifying the configuration:
+
+```json
+{
+  "callRtcConfig": {
+    "forceTurn": true,
+    "turnServers": [
+      {
+        "urls": ["turn:relay.signal.org:3478"],
+        "username": "relay-user",
+        "credential": "relay-password"
+      }
+    ]
+  }
+}
+```
+
+The `forceTurn` flag ensures all media routes through relay servers, eliminating any direct peer-to-peer fallback even if conditions permit it.
+
+### Performance Metrics and Monitoring
+
+Understanding call quality metrics helps identify when relay calls are working optimally. Signal collects telemetry about:
+
+- **Round-trip time (RTT)**: Measures latency between your device and the relay server
+- **Packet loss percentage**: Indicates network reliability
+- **Jitter**: Variation in packet arrival times affecting audio quality
+- **Bandwidth utilization**: Media stream bitrate
+
+Monitor these metrics during calls to detect network problems early. Elevated RTT (>150ms) or packet loss (>2%) suggests switching to a closer relay server.
+
+### Network Conditions and Adaptive Streaming
+
+Signal implements adaptive bitrate control that responds to network conditions. When relay calls detect degradation, Signal automatically reduces video quality to maintain audio reliability. This prioritization acknowledges that voice clarity matters more than video resolution in most scenarios.
+
+Developers integrating similar features should implement aggressive monitoring of network conditions and be willing to degrade non-critical features to preserve core functionality.
+
+### Relay Server Geolocation Strategy
+
+Signal operates relay servers in multiple geographic regions. The client automatically selects the nearest server, but latency-sensitive applications benefit from understanding the topology:
+
+```python
+# Pseudocode for relay server selection
+def select_optimal_relay(user_location, available_relays):
+    # Calculate latency to each relay
+    latencies = measure_latency_to_all(available_relays)
+
+    # Select relay with minimum RTT
+    best_relay = min(latencies, key=latencies.get)
+
+    # Use secondary relay as fallback
+    secondary = second_min(latencies, key=latencies.get)
+
+    return {
+        'primary': best_relay,
+        'backup': secondary,
+        'measured_latency': latencies[best_relay]
+    }
+```
+
+This dual-relay approach provides seamless failover if the primary relay experiences problems.
+
+### Comparing Relay Implementations
+
+Different VoIP platforms implement relaying differently. Signal's approach—using TURN servers managed directly by Signal—differs from alternatives:
+
+- **WhatsApp**: Uses proprietary relay infrastructure with minimal transparency
+- **Telegram**: Supports relaying but requires explicit user configuration
+- **Wire**: Implements corporate-grade relay with audit logging
+- **Jami** (GNU Ring): Peer-to-peer without centralized relay servers
+
+Each approach involves trade-offs between privacy guarantees, reliability, and control.
+
+### Debugging Relay Issues
+
+When relay calls fail or perform poorly, diagnostic tools help identify the problem:
+
+```bash
+# Test connectivity to Signal's relay servers (on Linux)
+nc -zvu relay.signal.org 3478
+# Should show open (Connection accepted)
+
+# Monitor media stream quality during a call
+strace -e trace=network -p $(pgrep Signal) 2>&1 | grep -i relay
+```
+
+These diagnostics help distinguish between local network issues, ISP blocking, and actual relay server problems.
+
+### Operational Security with Relay Calls
+
+While relay calls protect your IP address, they do not protect metadata. Signal's servers still log:
+- When you made calls
+- Call duration
+- Which contacts you communicate with
+- Approximate data volumes
+
+For high-threat environments, combine relay calls with additional measures:
+- Route Signal through Tor on supported platforms
+- Use multiple Signal accounts for distinct contact groups
+- Employ physical security measures preventing device access
+- Consider using air-gapped devices for the most sensitive communications
+
 ## Related Reading
 
 - [Signal Disappearing Messages Best Practices: Security.](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
