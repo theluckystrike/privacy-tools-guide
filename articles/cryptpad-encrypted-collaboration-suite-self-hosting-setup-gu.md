@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu"
+title: "Cryptpad Encrypted Collaboration Suite Self Hosting Setup"
 description: "Learn how to self-host CryptPad for end-to-end encrypted document collaboration. This practical guide covers Docker deployment, configuration, security"
 date: 2026-03-16
 last_modified_at: 2026-03-16

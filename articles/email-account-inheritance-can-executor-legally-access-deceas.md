@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Email Account Inheritance Can Executor Legally Access Deceas"
+title: "Email Account Inheritance Can Executor Legally Access"
 description: "When a person dies, their digital assets—including email accounts—become part of their estate. For executors and administrators handling an estate, accessing"
 date: 2026-03-16
 last_modified_at: 2026-03-16

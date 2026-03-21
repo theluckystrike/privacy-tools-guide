@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Detect Surveillance Cameras And Microphones In Your H"
+title: "How To Detect Surveillance Cameras And Microphones In Your"
 description: "Learn technical methods to identify hidden surveillance devices in your home using network scanning, RF detection, and audio analysis tools"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Tor Browser For Creating Anonymous Accounts Witho"
+title: "How To Use Tor Browser For Creating Anonymous Accounts"
 description: "A practical guide for developers and power users on using Tor Browser to create anonymous accounts without phone verification. Configuration tips"
 date: 2026-03-16
 last_modified_at: 2026-03-16

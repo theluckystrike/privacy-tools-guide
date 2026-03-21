@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Firefox Total Cookie Protection How It Isolates Trackers Exp"
+title: "Firefox Total Cookie Protection How It Isolates Trackers"
 description: "Firefox Total Cookie Protection: How It Isolates. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16

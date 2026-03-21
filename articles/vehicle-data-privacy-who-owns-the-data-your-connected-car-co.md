@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Vehicle Data Privacy Who Owns The Data Your Connected Car Co"
+title: "Vehicle Data Privacy Who Owns The Data Your Connected Car"
 description: "Modern vehicles generate massive amounts of data. Your connected car records where you drive, how fast you accelerate, when you brake hard, and even whether"
 date: 2026-03-16
 last_modified_at: 2026-03-16

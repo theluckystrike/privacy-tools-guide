@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Threat Model For Union Organizer In Hostile Employer Environ"
+title: "Threat Model For Union Organizer In Hostile Employer"
 description: "A technical guide for union organizers to build threat models when operating in hostile employer environments. Includes practical"
 date: 2026-03-15
 last_modified_at: 2026-03-15

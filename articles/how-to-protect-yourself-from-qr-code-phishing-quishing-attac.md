@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Protect Yourself From Qr Code Phishing Quishing Attac"
+title: "How To Protect Yourself From Qr Code Phishing Quishing"
 description: "A practical guide for developers and power users on detecting, preventing, and mitigating QR code phishing attacks. Includes code examples and security"
 date: 2026-03-15
 last_modified_at: 2026-03-15

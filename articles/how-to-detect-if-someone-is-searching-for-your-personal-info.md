@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Detect If Someone Is Searching For Your Personal Info"
+title: "How To Detect If Someone Is Searching For Your Personal"
 description: "Learn technical methods and developer tools to monitor when someone searches for your personal data online, including alerts, APIs, and automation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

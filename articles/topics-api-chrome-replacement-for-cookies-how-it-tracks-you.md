@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Topics Api Chrome Replacement For Cookies How It Tracks You"
+title: "Topics Api Chrome Replacement For Cookies How It Tracks"
 description: "Topics API: Chrome Replacement for Cookies and How It. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16

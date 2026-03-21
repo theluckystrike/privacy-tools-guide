@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co"
+title: "Calyxos Vs Grapheneos Which Privacy Rom Should You Choose"
 description: "Choosing a privacy-focused Android ROM requires understanding the technical tradeoffs between CalyxOS and GrapheneOS. Both platforms prioritize user privacy"
 date: 2026-03-16
 last_modified_at: 2026-03-16

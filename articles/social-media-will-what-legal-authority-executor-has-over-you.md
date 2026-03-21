@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Social Media Will What Legal Authority Executor Has Over You"
+title: "Social Media Will What Legal Authority Executor Has Over"
 description: "A guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states"
 date: 2026-03-16
 last_modified_at: 2026-03-16

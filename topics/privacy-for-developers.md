@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "Privacy for Developers — Secure Coding & DevOps Privacy Tools"
+title: "Privacy for Developers"
 description: "Developer privacy guides: encrypted backup solutions, Git security, container isolation, secrets management, and privacy-focused development workflows."
 permalink: /topics/privacy-for-developers/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # Privacy for Developers — Secure Coding & DevOps Privacy Tools

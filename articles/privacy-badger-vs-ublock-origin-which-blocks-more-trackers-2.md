@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Badger Vs Ublock Origin Which Blocks More Trackers 2"
+title: "Privacy Badger Vs Ublock Origin Which Blocks More Trackers"
 description: "If you care about blocking trackers, you've likely encountered both Privacy Badger and uBlock Origin. These two browser extensions represent fundamentally"
 date: 2026-03-16
 last_modified_at: 2026-03-16

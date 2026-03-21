@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure Screen Sharing Tools That Encrypt Video Stream End To"
+title: "Secure Screen Sharing Tools That Encrypt Video Stream End"
 description: "A practical guide to screen sharing solutions with true end-to-end encryption for developers and power users who need to protect sensitive visual data"
 date: 2026-03-16
 last_modified_at: 2026-03-16

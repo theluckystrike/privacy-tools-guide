@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iran Facial Recognition Surveillance How Cameras In Public S"
+title: "Iran Facial Recognition Surveillance How Cameras In Public"
 description: "A technical breakdown of facial recognition surveillance systems deployed in Iranian public spaces, how they work, and privacy protection strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

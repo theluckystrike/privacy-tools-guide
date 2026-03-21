@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Protect Yourself From Ai Voice Cloning Scam Calls"
+title: "How To Protect Yourself From Ai Voice Cloning Scam"
 description: "Learn how to recognize and protect yourself from AI voice cloning scam calls. Discover warning signs, verification techniques, and technical solutions"
 date: 2026-03-17
 last_modified_at: 2026-03-17

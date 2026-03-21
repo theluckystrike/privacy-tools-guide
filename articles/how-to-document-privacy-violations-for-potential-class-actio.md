@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Document Privacy Violations For Potential Class Actio"
+title: "How To Document Privacy Violations For Potential Class"
 description: "A practical guide for developers and power users on collecting and preserving digital evidence of privacy violations for potential class action lawsuits"
 date: 2026-03-16
 last_modified_at: 2026-03-16

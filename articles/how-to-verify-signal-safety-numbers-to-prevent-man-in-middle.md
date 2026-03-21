@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Verify Signal Safety Numbers To Prevent Man In Middle"
+title: "How To Verify Signal Safety Numbers To Prevent Man"
 description: "A technical guide for developers and power users on verifying Signal safety numbers. Learn to protect your encrypted communications from MITM attacks"
 date: 2026-03-15
 last_modified_at: 2026-03-15

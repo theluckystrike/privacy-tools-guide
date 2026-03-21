@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Vpn For Remote Workers Connecting To Us Office From Asia"
+title: "Vpn For Remote Workers Connecting To Us Office"
 description: "A practical guide for developers and power users setting up VPN connections from Asia to US office networks. Covers protocols, configuration"
 date: 2026-03-15
 last_modified_at: 2026-03-15

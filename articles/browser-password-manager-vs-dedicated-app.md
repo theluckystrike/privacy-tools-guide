@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Password Manager Vs Dedicated App"
+title: "Browser Password Manager Vs Dedicated"
 description: "A technical comparison of browser-based password managers versus standalone applications, covering security models, CLI access, and integration"
 date: 2026-03-15
 last_modified_at: 2026-03-15

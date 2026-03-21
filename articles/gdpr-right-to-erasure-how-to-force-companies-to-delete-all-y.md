@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gdpr Right To Erasure How To Force Companies To Delete All Y"
+title: "Gdpr Right To Erasure How To Force Companies To Delete All"
 description: "A practical guide for developers and power users on exercising GDPR Article 17 erasure rights. Learn how to request data deletion, escalate complaints"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Bypass China Great Firewall Using Shadowsocks With Ob"
+title: "How To Bypass China Great Firewall Using Shadowsocks"
 description: "A practical guide for developers and power users on setting up Shadowsocks with obfuscation to bypass China's Great Firewall. Configuration examples, protocol"
 date: 2026-03-16
 last_modified_at: 2026-03-16

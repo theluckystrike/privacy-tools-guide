@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Password Manager For Musician Managing Streaming Platform Di"
+title: "Password Manager For Musician Managing Streaming Platform"
 description: "A practical guide to managing multiple streaming platform distributor accounts securely using password managers. Includes CLI workflows and automation"
 date: 2026-03-15
 last_modified_at: 2026-03-15

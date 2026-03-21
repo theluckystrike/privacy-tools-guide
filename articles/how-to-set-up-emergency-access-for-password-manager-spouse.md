@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Emergency Access For Password Manager Spouse"
+title: "How To Set Up Emergency Access For Password Manager"
 description: "Learn how to configure emergency access for your password manager so your spouse can retrieve critical accounts if you're unavailable. Step-by-step setup for"
 date: 2026-03-16
 last_modified_at: 2026-03-16

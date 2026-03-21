@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Smart Tv Tracking What Data Samsung Lg Vizio Collect About V"
+title: "Smart Tv Tracking What Data Samsung Lg Vizio Collect About"
 description: "Samsung TVs use ACR (Automatic Content Recognition) to track everything displayed, even on external HDMI devices, and collect voice command recordings; LG TVs"
 date: 2026-03-15
 last_modified_at: 2026-03-15

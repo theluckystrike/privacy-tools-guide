@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Detect Baseband Attacks And Rogue Cell Towers With An"
+title: "How To Detect Baseband Attacks And Rogue Cell Towers"
 description: "A practical guide for developers and power users on detecting baseband attacks and rogue cell towers using Android applications. Includes code examples"
 date: 2026-03-15
 last_modified_at: 2026-03-15

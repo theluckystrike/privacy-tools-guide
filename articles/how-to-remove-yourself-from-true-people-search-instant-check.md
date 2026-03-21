@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Remove Yourself From True People Search Instant Check"
+title: "How To Remove Yourself From True People Search Instant"
 description: "A practical guide for developers and power users to remove personal data from people search sites. Includes automation scripts and API strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

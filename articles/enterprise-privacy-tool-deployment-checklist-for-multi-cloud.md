@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 
+intent-checked: true
 ---
 
 {% raw %}

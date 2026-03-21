@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Incident Response Plan For Data Breach Busines"
+title: "How To Set Up Incident Response Plan For Data Breach"
 description: "A practical guide for developers and power users to create an effective incident response plan for data breaches. Includes templates, code examples"
 date: 2026-03-16
 last_modified_at: 2026-03-16

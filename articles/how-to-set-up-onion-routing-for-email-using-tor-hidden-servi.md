@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Onion Routing For Email Using Tor Hidden Servi"
+title: "How To Set Up Onion Routing For Email Using Tor Hidden"
 description: "A practical guide for developers and power users to route email through Tor hidden services for enhanced privacy and anonymity"
 date: 2026-03-15
 last_modified_at: 2026-03-15

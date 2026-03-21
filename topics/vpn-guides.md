@@ -3,6 +3,9 @@ layout: default
 title: "VPN Guides — Setup, Comparisons & Troubleshooting"
 description: "Complete VPN guides: WireGuard setup, OpenVPN configuration, VPN comparisons for privacy, troubleshooting connection issues, and bypassing censorship."
 permalink: /topics/vpn-guides/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # VPN Guides — Setup, Comparisons & Troubleshooting

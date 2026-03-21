@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Freelancer Privacy Protecting Client Data On Personal Comput"
+title: "Freelancer Privacy Protecting Client Data On Personal"
 description: "A practical guide for freelancers on securing client data on personal computers. Learn encryption, access controls, and workflows that keep sensitive"
 date: 2026-03-15
 last_modified_at: 2026-03-15

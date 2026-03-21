@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Abine Blur For Masked Emails Phone Numbers And Cr"
+title: "How To Use Abine Blur For Masked Emails Phone Numbers"
 description: "A practical guide for developers and power users on implementing Abine Blur's masked contact details to protect your real identity across websites and services"
 date: 2026-03-16
 last_modified_at: 2026-03-16

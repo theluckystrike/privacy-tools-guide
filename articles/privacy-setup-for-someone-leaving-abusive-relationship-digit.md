@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Setup For Someone Leaving Abusive Relationship Digit"
+title: "Privacy Setup For Someone Leaving Abusive Relationship"
 description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure"
 date: 2026-03-15
 last_modified_at: 2026-03-15

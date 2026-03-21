@@ -3,6 +3,9 @@ layout: default
 title: "Email Privacy — Encrypted Email Services & Protection Guides"
 description: "Encrypted email guides: ProtonMail, Tutanota, email encryption plugins, anonymous email services, and protecting your inbox from tracking."
 permalink: /topics/email-privacy/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # Email Privacy — Encrypted Email Services & Protection Guides

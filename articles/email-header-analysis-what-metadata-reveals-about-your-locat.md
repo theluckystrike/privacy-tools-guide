@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Email Header Analysis What Metadata Reveals About Your Locat"
+title: "Email Header Analysis What Metadata Reveals About Your"
 description: "Every email you send or receive contains a wealth of metadata hidden within its headers. While the email body remains encrypted or private, header fields"
 date: 2026-03-16
 last_modified_at: 2026-03-16

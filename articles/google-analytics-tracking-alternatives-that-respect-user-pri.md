@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Google Analytics Tracking Alternatives That Respect User Pri"
+title: "Google Analytics Tracking Alternatives That Respect User"
 description: "As web analytics become increasingly regulated and user privacy expectations rise, developers seek Google Analytics alternatives that provide meaningful"
 date: 2026-03-16
 last_modified_at: 2026-03-16

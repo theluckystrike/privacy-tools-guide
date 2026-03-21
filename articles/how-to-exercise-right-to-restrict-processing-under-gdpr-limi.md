@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Exercise Right To Restrict Processing Under Gdpr Limi"
+title: "How To Exercise Right To Restrict Processing Under Gdpr"
 description: "Learn how to exercise your right to restrict processing under GDPR. Practical guide for developers and power users on limiting data use with code examples"
 date: 2026-03-16
 last_modified_at: 2026-03-16

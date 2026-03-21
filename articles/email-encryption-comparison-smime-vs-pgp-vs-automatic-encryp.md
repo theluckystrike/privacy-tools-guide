@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp"
+title: "Email Encryption Comparison Smime Vs Pgp Vs Automatic"
 description: "S/MIME uses certificate-based encryption, integrates with most email clients natively, but requires certificate authorities; PGP offers superior privacy and"
 date: 2026-03-15
 last_modified_at: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co"
+title: "How To Set Up Casa Multisig Bitcoin Inheritance Plan"
 description: "A technical guide for developers and power users on implementing Bitcoin inheritance planning using Casa multisig wallets with collaborative custody"
 date: 2026-03-16
 last_modified_at: 2026-03-16

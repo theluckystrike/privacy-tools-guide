@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Tell If Your Webcam Has Been Hacked: Indicator Signs"
+title: "How to Tell If Your Webcam Has Been Hacked: Indicator"
 description: "Webcam compromises represent a serious threat to privacy. Whether you're a developer working with sensitive code or a power user who values digital security"
 date: 2026-03-16
 last_modified_at: 2026-03-16

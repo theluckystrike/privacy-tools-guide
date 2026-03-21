@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GDPR Compliant User Authentication Design"
+title: "GDPR Compliant User Authentication"
 description: "Designing GDPR compliant user authentication requires understanding the intersection between security best practices and privacy regulations. The General Data"
 date: 2026-03-15
 last_modified_at: 2026-03-15

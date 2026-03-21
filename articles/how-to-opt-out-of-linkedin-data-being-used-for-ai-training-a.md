@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Opt Out Of Linkedin Data Being Used For Ai Training A"
+title: "How To Opt Out Of Linkedin Data Being Used For Ai Training"
 description: "A practical guide for developers and power users on how to prevent LinkedIn from using your professional data for AI training and machine learning"
 date: 2026-03-16
 last_modified_at: 2026-03-16

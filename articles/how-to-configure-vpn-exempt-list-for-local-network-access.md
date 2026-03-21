@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure VPN Exempt List for Local Network Access"
+title: "How to Configure VPN Exempt List for Local Network"
 description: "Learn how to configure a VPN exempt list to access local network resources like printers, NAS, and smart home devices while your VPN tunnel remains active"
 date: 2026-03-16
 last_modified_at: 2026-03-16

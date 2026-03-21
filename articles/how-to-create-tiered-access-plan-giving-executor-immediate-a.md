@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Create Tiered Access Plan Giving Executor Immediate A"
+title: "How To Create Tiered Access Plan Giving Executor Immediate"
 description: "Learn how to build a tiered digital estate system where executors get immediate access to critical accounts while heirs receive delayed access"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Tor With Specific Application Routing Only Select"
+title: "How To Use Tor With Specific Application Routing Only"
 description: "When you need onion routing for specific tasks without routing your entire system through Tor, selective application routing provides the solution. This"
 date: 2026-03-16
 last_modified_at: 2026-03-16

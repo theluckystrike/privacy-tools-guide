@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Briar Messenger During Iran Internet Blackout Pee"
+title: "How To Use Briar Messenger During Iran Internet Blackout"
 description: "A practical guide to setting up Briar messenger for decentralized, peer-to-peer communication when traditional internet access is blocked"
 date: 2026-03-16
 last_modified_at: 2026-03-16

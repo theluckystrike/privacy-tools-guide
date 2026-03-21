@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cryptocurrency Wallet Recovery Planning For Heirs How To Pas"
+title: "Cryptocurrency Wallet Recovery Planning For Heirs How"
 description: "Learn practical methods for passing cryptocurrency wallet access to heirs without exposing private keys. Covers seed phrase encryption, multi-signature"
 date: 2026-03-16
 last_modified_at: 2026-03-16

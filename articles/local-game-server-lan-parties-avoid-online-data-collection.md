@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Local Game Server Setup for LAN Parties: Avoiding Online Data Collection"
+title: "Local Game Server Setup for LAN Parties"
 description: "A guide to setting up local game servers for LAN parties that keep your gaming activity private and away from online data collection."
 date: 2026-03-21
 author: "Privacy Tools Guide"
@@ -9,7 +9,7 @@ permalink: /local-game-server-lan-parties-avoid-online-data-collection/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: false
 ---
 

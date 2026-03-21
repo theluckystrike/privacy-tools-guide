@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Naiveproxy To Disguise Censorship Circumvention T"
+title: "How To Use Naiveproxy To Disguise Censorship Circumvention"
 description: "A practical guide for developers and power users on using NaiveProxy to disguise censorship circumvention traffic as normal web browsing"
 date: 2026-03-16
 last_modified_at: 2026-03-16

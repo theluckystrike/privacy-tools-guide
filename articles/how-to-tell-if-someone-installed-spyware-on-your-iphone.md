@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Tell If Someone Installed Spyware On Your Iphone"
+title: "How To Tell If Someone Installed Spyware On Your"
 description: "Watch for behavioral red flags: unusual battery drain, unexpected data usage spikes, overheating, slow performance, or strange app behavior. Check Settings →"
 date: 2026-03-15
 last_modified_at: 2026-03-15

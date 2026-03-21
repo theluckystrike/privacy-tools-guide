@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu"
+title: "How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen"
 description: "A practical guide for developers and power users to remove personal data from major consumer data brokers. Includes direct URLs, API considerations"
 date: 2026-03-16
 last_modified_at: 2026-03-16

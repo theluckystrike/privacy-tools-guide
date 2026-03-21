@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "Data Removal & Identity Protection — Opt-Out Guides"
+title: "Data Removal & Identity Protection — Opt-Out"
 description: "Remove your personal data from people search sites, data brokers, and social media. Step-by-step opt-out guides and identity protection strategies."
 permalink: /topics/data-removal-guides/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # Data Removal & Identity Protection — Opt-Out Guides

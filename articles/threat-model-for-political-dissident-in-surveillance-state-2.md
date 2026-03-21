@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Threat Model For Political Dissident In Surveillance State 2"
+title: "Threat Model For Political Dissident In Surveillance State"
 description: "A practical technical guide for developers and power users on building a threat model when living under surveillance. Includes actionable"
 date: 2026-03-16
 last_modified_at: 2026-03-16

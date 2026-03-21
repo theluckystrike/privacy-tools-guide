@@ -11,6 +11,7 @@ tags: [privacy-tools-guide, privacy, data-ethics, research, compliance]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 

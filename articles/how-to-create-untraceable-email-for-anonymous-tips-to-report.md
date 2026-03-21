@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Create Untraceable Email For Anonymous Tips To Report"
+title: "How To Create Untraceable Email For Anonymous Tips"
 description: "A technical guide for developers and power users on setting up untraceable email accounts for submitting anonymous tips. Covers Tor, GPG encryption"
 date: 2026-03-16
 last_modified_at: 2026-03-16

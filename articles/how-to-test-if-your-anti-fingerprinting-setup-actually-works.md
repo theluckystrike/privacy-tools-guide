@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Test if Your Anti-Fingerprinting Setup Actually Works"
+title: "How to Test if Your Anti-Fingerprinting Setup Actually"
 description: "Browser fingerprinting has become one of the most sophisticated tracking techniques used across the web. Unlike cookies, which can be blocked or deleted"
 date: 2026-03-16
 last_modified_at: 2026-03-16

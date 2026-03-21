@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Setup For Physical Therapist Patient Exercise Data P"
+title: "Privacy Setup For Physical Therapist Patient Exercise Data"
 description: "Protect patient exercise data through full encryption at rest and in transit, role-based access controls limiting therapist viewing to only their patients"
 date: 2026-03-15
 last_modified_at: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Threat Model For Activist In Authoritarian Country Digital S"
+title: "Threat Model For Activist In Authoritarian Country Digital"
 description: "A practical threat modeling guide for political activists in authoritarian countries. Identify assets, analyze threats, and implement effective digital"
 date: 2026-03-15
 last_modified_at: 2026-03-15

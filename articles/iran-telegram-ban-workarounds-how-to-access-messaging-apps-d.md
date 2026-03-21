@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iran Telegram Ban Workarounds How To Access Messaging Apps D"
+title: "Iran Telegram Ban Workarounds How To Access Messaging Apps"
 description: "Technical guide for developers and power users on accessing Telegram and messaging apps despite Iran's internet restrictions. Includes VPN configuration"
 date: 2026-03-16
 last_modified_at: 2026-03-16

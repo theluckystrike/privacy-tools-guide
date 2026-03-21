@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Comparison Of Encrypted Note Taking Apps For Sensitive Infor"
+title: "Comparison Of Encrypted Note Taking Apps For Sensitive"
 description: "A technical comparison of encrypted note-taking applications for developers and power users storing sensitive data. Covers encryption models, CLI"
 date: 2026-03-16
 last_modified_at: 2026-03-16

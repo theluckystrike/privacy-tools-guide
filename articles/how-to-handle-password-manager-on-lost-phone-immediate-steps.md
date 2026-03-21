@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Handle Password Manager on Lost Phone: Immediate Steps"
+title: "Handle Password Manager on Lost Phone: Immediate"
 description: "A practical guide for developers and power users on securing your password manager when your phone goes missing. Learn immediate actions to protect your"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy-Focused DNS Providers Comparison 2026 — Privacy"
+title: "Privacy-Focused DNS Providers Comparison 2026: Privacy"
 description: "Compare DNS providers: NextDNS, Quad9, Mullvad DNS, AdGuard DNS, Cloudflare 1.1.1.1. Config examples, filtering, logging policies, pricing"
 date: 2026-03-20
 last_modified_at: 2026-03-20

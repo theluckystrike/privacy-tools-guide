@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Setup For Reproductive Healthcare Provider In Restri"
+title: "Privacy Setup For Reproductive Healthcare Provider"
 description: "A technical guide for developers and power users securing patient data and operational communications in states with restricted reproductive healthcare"
 date: 2026-03-15
 last_modified_at: 2026-03-15

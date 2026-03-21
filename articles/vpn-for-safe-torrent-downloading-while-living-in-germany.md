@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN for Safe Torrent Downloading While Living in Germany"
+title: "VPN for Safe Torrent Downloading While Living"
 description: "A technical guide to using VPNs for secure torrent downloading in Germany, covering legal considerations, configuration, and privacy best practices"
 date: 2026-03-16
 last_modified_at: 2026-03-16

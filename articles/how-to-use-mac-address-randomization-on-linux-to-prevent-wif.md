@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Mac Address Randomization On Linux To Prevent Wif"
+title: "How To Use Mac Address Randomization On Linux To Prevent"
 description: "A practical guide for developers and power users to implement MAC address randomization on Linux, preventing WiFi tracking while maintaining network"
 date: 2026-03-16
 last_modified_at: 2026-03-16

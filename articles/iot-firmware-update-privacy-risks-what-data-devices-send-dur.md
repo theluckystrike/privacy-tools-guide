@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iot Firmware Update Privacy Risks What Data Devices Send Dur"
+title: "Iot Firmware Update Privacy Risks What Data Devices Send"
 description: "Discover what data your IoT devices transmit during firmware update checks. A technical guide for developers and power users on privacy implications"
 date: 2026-03-16
 last_modified_at: 2026-03-16

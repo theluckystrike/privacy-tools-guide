@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Communicate Securely When All Messaging Apps Are Moni"
+title: "How To Communicate Securely When All Messaging Apps Are"
 description: "When mainstream messaging platforms become compromised, monitored, or coerced into backdooring their encryption, developers and security-conscious users need"
 date: 2026-03-16
 last_modified_at: 2026-03-16

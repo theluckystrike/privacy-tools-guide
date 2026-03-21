@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Secure Is Telegram Secret Chat Mode"
+title: "How Secure Is Telegram Secret Chat"
 description: "A developer and power-user analysis of Telegram Secret Chat encryption, MTProto protocol, and practical security implications with code examples"
 date: 2026-03-15
 last_modified_at: 2026-03-15

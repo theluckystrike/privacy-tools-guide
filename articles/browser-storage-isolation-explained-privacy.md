@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Storage Isolation Explained Privacy"
+title: "Browser Storage Isolation Explained"
 description: "A technical guide covering browser storage mechanisms, origin-based isolation, SameSite cookies, and privacy best practices for developers building"
 date: 2026-03-15
 last_modified_at: 2026-03-15

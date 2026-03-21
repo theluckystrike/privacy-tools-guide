@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Burner Devices for Protest Organization Safety"
+title: "How to Set Up Burner Devices for Protest Organization"
 description: "A technical guide for developers and power users on configuring secure burner phones and tablets for protest coordination. Covers OS hardening"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Use Domain Fronting To Access Blocked Services From C"
+title: "How To Use Domain Fronting To Access Blocked Services"
 description: "Learn how domain fronting works and how to use it to bypass network restrictions. Technical guide with code examples for developers and power users"
 date: 2026-03-16
 last_modified_at: 2026-03-16

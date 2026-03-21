@@ -3,6 +3,9 @@ layout: default
 title: "Password Managers — Reviews, Comparisons & Setup Guides"
 description: "Compare password managers: 1Password, Bitwarden, Dashlane, Keeper, and LastPass. CLI integration, secrets automation, and family plan reviews."
 permalink: /topics/password-managers/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # Password Managers — Reviews, Comparisons & Setup Guides

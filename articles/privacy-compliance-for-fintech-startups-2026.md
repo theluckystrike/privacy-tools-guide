@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy Compliance for Fintech Startups 2026: A"
+title: "Privacy Compliance for Fintech Startups 2026"
 description: "A technical guide to privacy compliance requirements for fintech startups in 2026. Covers GDPR, CCPA, PCI-DSS, and practical implementation strategies for"
 date: 2026-03-15
 last_modified_at: 2026-03-15

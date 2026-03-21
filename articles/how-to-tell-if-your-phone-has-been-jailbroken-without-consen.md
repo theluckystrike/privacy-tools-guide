@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Tell If Your Phone Has Been Jailbroken Without Consen"
+title: "How To Tell If Your Phone Has Been Jailbroken"
 description: "For iOS, check for Cydia, Sileo, or Zebra apps (jailbreak package managers) in Settings → General → iPhone Storage. Look for suspicious ssh keys or rock.json"
 date: 2026-03-15
 last_modified_at: 2026-03-15

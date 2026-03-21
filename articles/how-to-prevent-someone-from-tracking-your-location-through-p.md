@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Prevent Someone From Tracking Your Location Through P"
+title: "How To Prevent Someone From Tracking Your Location"
 description: "technical guide for developers and power users on preventing phone location tracking. Covers GPS, network-based tracking, app"
 date: 2026-03-15
 last_modified_at: 2026-03-15

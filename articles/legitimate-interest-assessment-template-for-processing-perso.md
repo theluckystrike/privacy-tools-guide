@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Legitimate Interest Assessment Template For Processing Perso"
+title: "Legitimate Interest Assessment Template For Processing"
 description: "When building applications that process personal data, GDPR requires a lawful basis for each processing activity. While consent (Article 6(1)(a)) gets most of"
 date: 2026-03-15
 last_modified_at: 2026-03-15

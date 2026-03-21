@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VPN for Accessing European Banking Apps from United States"
+title: "VPN for Accessing European Banking Apps from United"
 description: "A technical guide for developers and power users on using VPN to access European banking applications while physically located in the US. Includes"
 date: 2026-03-15
 last_modified_at: 2026-03-15

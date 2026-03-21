@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Mobile Photo Metadata Exif Location Data How To Strip Before"
+title: "Mobile Photo Metadata Exif Location Data How To Strip"
 description: "When you capture a photo with your smartphone, the image file contains more than just pixel data. Modern mobile phones embed extensive metadata within each"
 date: 2026-03-16
 last_modified_at: 2026-03-16

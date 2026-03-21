@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Does IVPN Work in Belarus? 2026 Latest Confirmed Test"
+title: "Does IVPN Work in Belarus? 2026 Latest Confirmed"
 description: "Belarus presents unique challenges for VPN users. The country's regulatory environment has evolved significantly, and understanding the technical realities is"
 date: 2026-03-16
 last_modified_at: 2026-03-16

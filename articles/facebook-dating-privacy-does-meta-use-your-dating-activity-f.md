@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Facebook Dating Privacy Does Meta Use Your Dating Activity F"
+title: "Facebook Dating Privacy Does Meta Use Your Dating Activity"
 description: "Facebook Dating represents Meta's attempt to compete in the crowded online dating market by using its massive social graph. Since launching in 2019, the"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Configure Iphone To Minimize Data Shared With Apple S"
+title: "How To Configure Iphone To Minimize Data Shared With Apple"
 description: "A guide for developers and power users to minimize data shared with Apple servers through iOS settings, configurations, and network-level"
 date: 2026-03-16
 last_modified_at: 2026-03-16

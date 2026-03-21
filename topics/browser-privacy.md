@@ -3,6 +3,9 @@ layout: default
 title: "Browser Privacy — Tor, Firefox, Brave & Anti-Fingerprinting"
 description: "Browser privacy guides: Tor Browser setup, Firefox hardening, Brave configuration, fingerprinting protection, and cookie tracking prevention."
 permalink: /topics/browser-privacy/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # Browser Privacy — Tor, Firefox, Brave & Anti-Fingerprinting

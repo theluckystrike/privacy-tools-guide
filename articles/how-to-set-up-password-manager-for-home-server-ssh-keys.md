@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up a Password Manager for Home Server SSH Keys"
+title: "How to Set Up a Password Manager for Home Server SSH"
 description: "A practical guide for developers on storing SSH keys in a password manager. Covers Bitwarden, 1Password, and KeePassXC with CLI examples and automation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Complete Guide To Social Engineering Defense Protecting Pers"
+title: "Complete Guide To Social Engineering Defense Protecting"
 description: "Learn practical social engineering defense strategies for developers and power users. This guide covers psychological manipulation tactics, real-world"
 date: 2026-03-15
 last_modified_at: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Vpn Fragmentation Issues Why Some Websites Break And How Fix"
+title: "Vpn Fragmentation Issues Why Some Websites Break And How"
 description: "Understand VPN fragmentation issues that cause websites to break, load slowly, or refuse connections, and learn practical solutions"
 date: 2026-03-15
 last_modified_at: 2026-03-15

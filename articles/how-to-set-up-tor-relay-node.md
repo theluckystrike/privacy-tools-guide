@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up a Tor Relay Node"
+title: "How to Set Up a Tor Relay"
 description: "Step-by-step guide to configuring a Tor middle relay on Linux, including torrc settings, bandwidth limits, firewall rules, and monitoring your relay"
 date: 2026-03-21
 author: theluckystrike

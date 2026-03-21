@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What to Do If Your Credit Card Was Used Fraudulently Online"
+title: "What to Do If Your Credit Card Was Used Fraudulently"
 description: "A practical technical guide for developers and power users on handling fraudulent credit card charges online. Includes API integration patterns"
 date: 2026-03-15
 last_modified_at: 2026-03-15
