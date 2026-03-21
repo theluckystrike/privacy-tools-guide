@@ -1,0 +1,712 @@
+---
+title: How to Set Up WireGuard VPN on VPS 2026
+description: Complete WireGuard VPN setup guide on a VPS. Includes server and client configuration, DNS leak prevention, kill switch setup, and multi-client management.
+author: Privacy Tools Guide
+date: 2026-03-21
+reviewed: true
+score: 8
+voice-checked: true
+intent-checked: true
+---
+
+{% raw %}
+
+# How to Set Up WireGuard VPN on VPS 2026
+
+WireGuard is the fastest, simplest VPN protocol available. Unlike OpenVPN (500+ lines of config), WireGuard is 4,000 lines of code and readable. Here's how to deploy your own VPN server on a cheap VPS.
+
+## Why Self-Hosted WireGuard?
+
+Commercial VPNs:
+- Trust the provider (they can see your traffic)
+- $5-15/month
+- Shared infrastructure (your IP mixed with others)
+- No-log promises, but not verifiable
+
+Self-hosted on your VPS:
+- Full control (you own the server)
+- $5/month for VPS (Linode, Hetzner, DigitalOcean)
+- Dedicated IP or shared with your devices only
+- Transparent logs (you see what's on your server)
+- Can route specific traffic or everything through VPN
+
+Typical use case:
+- Remote worker in coffee shop wants encrypted connection to company network
+- Traveling and want to access home devices securely
+- Privacy-conscious user hiding from ISP
+
+## 1. VPS Selection
+
+Requirements:
+- Linux (Ubuntu 20.04+ recommended)
+- Outbound unrestricted ports
+- At least 512MB RAM (more if supporting 20+ clients)
+- Static IP (not required but helpful)
+
+Cheap options:
+```
+Hetzner Cloud: €2.49/month (Ubuntu 22.04 minimal)
+DigitalOcean: $4/month (Ubuntu 22.04 minimal droplet)
+Linode: $5/month (Nanode 1GB)
+Vultr: $2.50/month (1GB RAM)
+```
+
+For most use cases: Hetzner or DigitalOcean.
+
+This guide assumes Ubuntu 22.04 LTS (most common, easiest setup).
+
+---
+
+## 2. Server-Side Setup
+
+### Step 1: SSH Into VPS
+
+```bash
+ssh root@your.vps.ip
+```
+
+### Step 2: Install WireGuard
+
+```bash
+apt update && apt upgrade -y
+apt install wireguard wireguard-tools -y
+```
+
+Verify:
+```bash
+wg --version
+# Expected: wireguard-tools v1.0.20210914
+```
+
+### Step 3: Enable IP Forwarding
+
+WireGuard needs to forward traffic between clients and internet.
+
+```bash
+echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+sysctl -p
+```
+
+Verify:
+```bash
+sysctl net.ipv4.ip_forward
+# Expected: net.ipv4.ip_forward = 1
+```
+
+### Step 4: Generate Server Keys
+
+```bash
+umask 077  # Restrict permissions on generated files
+wg genkey | tee /etc/wireguard/privatekey | wg pubkey > /etc/wireguard/publickey
+
+# Verify keys created
+cat /etc/wireguard/privatekey
+cat /etc/wireguard/publickey
+```
+
+Output should be:
+```
+Private key: uKx8r... (44 characters)
+Public key: gI6E... (44 characters)
+```
+
+### Step 5: Create Server Configuration
+
+```bash
+cat > /etc/wireguard/wg0.conf << EOF
+[Interface]
+PrivateKey = $(cat /etc/wireguard/privatekey)
+Address = 10.0.0.1/24
+ListenPort = 51820
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
+# Clients will be added here
+EOF
+```
+
+Breakdown:
+- `PrivateKey`: Server's private key
+- `Address = 10.0.0.1/24`: VPN subnet (10.0.0.0 to 10.0.0.254)
+- `ListenPort = 51820`: UDP port for VPN
+- `PostUp`: iptables rules to forward traffic through VPN
+- `PostDown`: Remove rules when VPN stops
+
+### Step 6: Start WireGuard
+
+```bash
+wg-quick up wg0
+```
+
+Verify:
+```bash
+wg show
+# Expected: interface wg0 with public key, listening port 51820
+```
+
+Enable on startup:
+```bash
+systemctl enable wg-quick@wg0
+systemctl status wg-quick@wg0
+```
+
+### Step 7: Configure Firewall
+
+If VPS has a firewall:
+
+```bash
+# Allow SSH (don't lock yourself out)
+ufw allow 22/tcp
+
+# Allow WireGuard
+ufw allow 51820/udp
+
+# Enable firewall
+ufw enable
+```
+
+Check status:
+```bash
+ufw status
+# Expected: 22/tcp ALLOW and 51820/udp ALLOW
+```
+
+---
+
+## 3. Client Setup (Linux/Mac)
+
+### Step 1: Generate Client Keys
+
+On your client device (not VPS):
+
+```bash
+umask 077
+wg genkey | tee client1_privatekey | wg pubkey > client1_publickey
+```
+
+### Step 2: Add Client to Server
+
+Back on VPS, add client to wg0.conf:
+
+```bash
+cat >> /etc/wireguard/wg0.conf << EOF
+
+[Peer]
+PublicKey = $(cat /etc/wireguard/client1_publickey)
+AllowedIPs = 10.0.0.2/32
+EOF
+```
+
+Reload:
+```bash
+wg-quick down wg0 && wg-quick up wg0
+```
+
+Verify client is listed:
+```bash
+wg show
+# Expected: [Peer] section with client public key and 10.0.0.2
+```
+
+### Step 3: Create Client Config
+
+On client machine, create `/etc/wireguard/wg0.conf`:
+
+```bash
+cat > /etc/wireguard/wg0.conf << EOF
+[Interface]
+PrivateKey = <CLIENT_PRIVATE_KEY>
+Address = 10.0.0.2/32
+DNS = 1.1.1.1, 8.8.8.8
+
+[Peer]
+PublicKey = <SERVER_PUBLIC_KEY>
+Endpoint = your.vps.ip:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+EOF
+```
+
+Key fields:
+- `PrivateKey`: Client's private key
+- `Address = 10.0.0.2/32`: Client's VPN IP
+- `DNS`: DNS servers to use (critical for DNS leak prevention, see below)
+- `AllowedIPs = 0.0.0.0/0`: Route ALL traffic through VPN
+- `PersistentKeepalive = 25`: Keep connection alive every 25 seconds (important for mobile)
+
+### Step 4: Connect on Linux/Mac
+
+```bash
+# Install WireGuard (if not already)
+# Ubuntu: sudo apt install wireguard
+# Mac: brew install wireguard-tools
+
+# Create client config (copy content from Step 3)
+sudo nano /etc/wireguard/wg0.conf
+# Paste the [Interface] and [Peer] blocks from above
+
+# Connect
+sudo wg-quick up wg0
+
+# Verify connection
+sudo wg show
+
+# Test (should show VPS IP, not your actual IP)
+curl icanhazip.com
+```
+
+---
+
+## 4. Client Setup (Windows)
+
+### Step 1: Download WireGuard
+
+Go to wireguard.com/install, download Windows installer.
+
+### Step 2: Create Configuration File
+
+Create a file `client1.conf` with content:
+
+```
+[Interface]
+PrivateKey = <CLIENT_PRIVATE_KEY>
+Address = 10.0.0.2/32
+DNS = 1.1.1.1, 8.8.8.8
+
+[Peer]
+PublicKey = <SERVER_PUBLIC_KEY>
+Endpoint = your.vps.ip:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+```
+
+### Step 3: Import in WireGuard App
+
+1. Open WireGuard application
+2. "Add Tunnel" → "Import tunnel(s) from file"
+3. Select `client1.conf`
+4. Click "Activate"
+
+Status will show "Active" when connected.
+
+---
+
+## 5. Mobile Setup (Android/iOS)
+
+### Android
+
+1. Install WireGuard app from Google Play
+2. Generate QR code from server:
+```bash
+# On server, generate QR for mobile device
+wg-quick up wg0  # If not already running
+# Use website to convert config to QR: https://www.neilpatel.com/blog/qr-code-generator
+
+# Or use qrencode tool:
+apt install qrencode -y
+cat /path/to/client_config.conf | qrencode -t ansiutf8
+```
+
+3. In WireGuard app, "Create from scratch" or scan QR code
+4. Configure with same settings as Linux client
+5. Tap toggle to activate
+
+### iOS
+
+Same as Android, but app from Apple App Store.
+
+---
+
+## 6. DNS Leak Prevention (Critical)
+
+A DNS leak exposes your browsing even if traffic is encrypted.
+
+Problem:
+```
+Your ISP normally handles DNS (domain → IP lookups)
+With VPN, some systems still query ISP's DNS
+Result: ISP sees your browsing, VPN doesn't
+
+Example:
+- You visit example.com through VPN
+- Traffic encrypted
+- But DNS query for "example.com" goes to ISP (leaked)
+- ISP sees you visited example.com
+```
+
+Solution: Force VPN-specific DNS servers.
+
+### Method 1: Configure in WireGuard Config (Recommended)
+
+Already done in step 3 above:
+```
+DNS = 1.1.1.1, 8.8.8.8
+```
+
+This tells WireGuard to use Cloudflare (1.1.1.1) and Google (8.8.8.8) DNS instead of ISP.
+
+Verify no leak:
+```bash
+# After connecting VPN, run DNS test
+nslookup google.com
+
+# Output should show:
+# Server: 1.1.1.1
+# Not: Your ISP's nameserver (e.g., 192.168.1.1)
+```
+
+Online test: dnsleaktest.com (after connecting VPN, should show Cloudflare/Google, not ISP)
+
+### Method 2: System-Wide (Linux)
+
+If WireGuard DNS isn't working:
+
+```bash
+# Check if resolvectl available
+resolvectl status
+
+# If not using VPN DNS, manually set:
+resolvectl dns wg0 1.1.1.1 8.8.8.8
+```
+
+### Method 3: pfSense/Router Level
+
+If VPN server is router:
+1. Set DNS upstream to 1.1.1.1, 8.8.8.8
+2. All devices using VPN inherit clean DNS
+
+---
+
+## 7. Kill Switch (Prevent Leaks When VPN Drops)
+
+Kill switch stops all traffic if VPN disconnects (prevents accidental unencrypted traffic).
+
+### Linux Kill Switch
+
+Add to client's wg0.conf:
+
+```
+[Interface]
+PostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT; ip6tables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
+PostDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT; ip6tables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
+```
+
+Simpler approach using ufw:
+
+```bash
+# Allow only wg0 interface
+ufw default deny outgoing
+ufw allow out on wg0
+ufw allow out to any port 51820  # Allow VPN server IP
+
+# When disconnected, no traffic flows (kill switch active)
+```
+
+### Windows Kill Switch
+
+WireGuard app has built-in kill switch:
+1. Right-click system tray icon
+2. Settings
+3. "Route all traffic through WireGuard"
+4. This is default (enabled)
+
+### macOS Kill Switch
+
+In WireGuard app:
+1. Preferences
+2. "Activate at login" (keeps VPN connected)
+3. For automatic kill switch, third-party tools needed
+
+---
+
+## 8. Multi-Client Setup
+
+To add more clients (up to 255):
+
+```bash
+# Generate keys for client 2
+umask 077
+wg genkey | tee client2_privatekey | wg pubkey > client2_publickey
+
+# Add to server config
+cat >> /etc/wireguard/wg0.conf << EOF
+
+[Peer]
+PublicKey = $(cat client2_publickey)
+AllowedIPs = 10.0.0.3/32
+EOF
+
+# Reload
+wg-quick down wg0 && wg-quick up wg0
+
+# Verify
+wg show
+# Expected: 2 peers listed
+```
+
+Create client config with AllowedIPs = 10.0.0.3/32 and connect.
+
+### Client Management Script
+
+For managing many clients:
+
+```bash
+#!/bin/bash
+# add-wireguard-client.sh
+
+CLIENT_NAME=$1
+VPS_IP=$2
+
+# Generate keys
+umask 077
+wg genkey | tee ${CLIENT_NAME}_privatekey | wg pubkey > ${CLIENT_NAME}_publickey
+
+# Get server private key
+SERVER_PUBKEY=$(cat /etc/wireguard/publickey)
+
+# Find next available IP in 10.0.0.0/24 range
+NEXT_IP=$(wg show wg0 | grep "allowed ips:" | tail -1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | sed 's/\([0-9]*\)$/\1/' | awk -F. '{print $1"."$2"."$3"."+($4+1)}')
+
+# Add peer to server config
+echo "" >> /etc/wireguard/wg0.conf
+echo "[Peer]" >> /etc/wireguard/wg0.conf
+echo "PublicKey = $(cat ${CLIENT_NAME}_publickey)" >> /etc/wireguard/wg0.conf
+echo "AllowedIPs = ${NEXT_IP}/32" >> /etc/wireguard/wg0.conf
+
+# Reload WireGuard
+wg-quick down wg0 && wg-quick up wg0
+
+# Create client config
+cat > ${CLIENT_NAME}.conf << EOF
+[Interface]
+PrivateKey = $(cat ${CLIENT_NAME}_privatekey)
+Address = ${NEXT_IP}/32
+DNS = 1.1.1.1, 8.8.8.8
+
+[Peer]
+PublicKey = ${SERVER_PUBKEY}
+Endpoint = ${VPS_IP}:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+EOF
+
+echo "Client config saved to ${CLIENT_NAME}.conf"
+```
+
+Usage:
+```bash
+chmod +x add-wireguard-client.sh
+./add-wireguard-client.sh client2 your.vps.ip
+```
+
+---
+
+## 9. Server Monitoring
+
+Monitor VPN usage:
+
+```bash
+# Real-time traffic
+wg show wg0
+# Shows: received/sent bytes per peer
+
+# Example output:
+# interface: wg0
+#   public key: gI6E...
+#   private key: (hidden)
+#   listening port: 51820
+#
+# peer: ABC123...
+#   endpoint: 192.168.1.100:12345
+#   allowed ips: 10.0.0.2/32
+#   latest handshake: 2 minutes, 15 seconds ago
+#   transfer: 1.25 MB received, 840 MB sent
+#   persistent keepalive: every 25 seconds
+```
+
+Check server logs:
+```bash
+journalctl -u wg-quick@wg0 -f
+# Shows status changes, errors
+
+# Example:
+# Mar 21 08:30:10 vps systemd[1]: Started WireGuard via wg-quick(8) for wg0.
+# Mar 21 08:35:15 vps kernel: [wg0] peer ABC123 made first handshake
+```
+
+---
+
+## 10. Troubleshooting
+
+### Connection Hangs
+
+```bash
+# Check server is listening
+netstat -ulpn | grep 51820
+# Expected: udp 0 0 0.0.0.0:51820 0.0.0.0:* LISTEN
+
+# Check firewall allows port
+ufw status | grep 51820
+# Expected: 51820/udp ALLOW
+```
+
+### Client Can't Reach Server
+
+```bash
+# From client, test connectivity
+ping your.vps.ip
+# Should work (simple ICMP)
+
+# Test UDP connectivity to port 51820
+# On server: nc -u -l 51820
+# On client: echo "test" | nc -u your.vps.ip 51820
+# Should see "test" on server
+```
+
+### DNS Still Leaking
+
+```bash
+# Force DNS via terminal (Linux)
+sudo resolvectl dns wg0 1.1.1.1 8.8.8.8
+
+# Verify
+cat /etc/resolv.conf
+# Should show: nameserver 1.1.1.1, nameserver 8.8.8.8
+```
+
+### Slow Speed
+
+```bash
+# Test speed
+iperf3 -s  # On server
+iperf3 -c your.vps.ip  # On client
+
+# WireGuard typical speeds:
+# Gigabit connection: 600-800 Mbps through VPN (expected, not max)
+# Slow connection: Check server CPU (may be maxed)
+```
+
+### Can't Access Local Network
+
+If you want to reach local devices through VPN (not internet):
+
+```bash
+# In client config, change AllowedIPs:
+# Instead of: AllowedIPs = 0.0.0.0/0
+# Use: AllowedIPs = 192.168.1.0/24, 10.0.0.0/24
+
+# This routes only local networks through VPN
+# Other traffic goes through normal internet
+```
+
+---
+
+## 11. Maintenance
+
+### Regular Tasks
+
+Check logs monthly:
+```bash
+journalctl -u wg-quick@wg0 --since "30 days ago" | grep -i error
+```
+
+Remove inactive clients:
+```bash
+wg show wg0 | grep -B1 "latest handshake: [3-9][0-9]\+ days"
+# Edit wg0.conf to remove their [Peer] block
+wg-quick down wg0 && wg-quick up wg0
+```
+
+Update Ubuntu regularly:
+```bash
+apt update && apt upgrade -y
+systemctl restart wg-quick@wg0
+```
+
+### Backup Configuration
+
+```bash
+# Backup VPN config
+cp /etc/wireguard/wg0.conf ~/wg0.conf.backup
+
+# Store safely (encrypted cloud storage, password manager, etc.)
+```
+
+---
+
+## Cost Analysis
+
+Self-hosted WireGuard vs commercial VPN:
+
+```
+Self-hosted:
+- VPS: $2.50-5/month
+- Electricity/maintenance: Included in VPS cost
+- Dedicated IP: Yes
+- Setup time: 30 minutes
+- Annual cost: $30-60
+
+Commercial VPN:
+- $5-15/month
+- Shared infrastructure
+- Setup time: 2 minutes
+- Annual cost: $60-180
+```
+
+Break-even: 3-6 months of usage.
+
+Long-term savings: Self-hosted is 50-70% cheaper.
+
+---
+
+## Security Considerations
+
+### What WireGuard Protects
+
+- Traffic encryption (ISP can't see content)
+- IP privacy (websites see VPN server IP, not yours)
+- DNS privacy (if configured correctly)
+
+### What It Doesn't Protect
+
+- Malware (still need antivirus)
+- Phishing (still need caution)
+- Browser fingerprinting (websites still identify you via browser)
+- Account login credentials (use strong passwords)
+
+### VPS Security
+
+After setup, harden:
+
+```bash
+# Disable root login
+sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+
+# Use SSH keys only (no passwords)
+# Generate: ssh-keygen -t ed25519
+# Upload public key to ~/.ssh/authorized_keys
+
+# Restart SSH
+systemctl restart ssh
+
+# Enable UFW firewall (done above)
+
+# Automatic security updates
+apt install unattended-upgrades
+```
+
+---
+
+## Conclusion
+
+WireGuard on a cheap VPS gives you:
+- Complete privacy (you control the server)
+- Better security than commercial VPNs
+- 50-70% cost savings long-term
+- Full transparency (source code is readable)
+
+Setup takes 30 minutes. Once working, it's hands-off.
+
+Start with one client. Add more as needed (up to 255 per VPN instance).
+
+{% endraw %}

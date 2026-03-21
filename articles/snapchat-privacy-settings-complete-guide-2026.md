@@ -186,6 +186,102 @@ Use this checklist to audit your Snapchat privacy configuration:
 - [ ] Reviewed friend list and removed unknown contacts
 - [ ] Checked third-party app permissions
 
+## Advanced Privacy Configurations
+
+For users with elevated threat models, additional configurations further restrict data exposure.
+
+### Disabling Location Services at OS Level
+
+Beyond Snapchat's settings, restrict the app's system permissions:
+
+**iOS**: Settings → Privacy → Location Services → Snapchat → Never
+
+**Android**: Settings → Apps → Snapchat → Permissions → Location → Don't Allow
+
+This prevents Snapchat from accessing location data even if you forget to enable Ghost Mode.
+
+### Network-Level Monitoring
+
+Monitor what servers Snapchat contacts:
+
+```bash
+# On iOS with mitmproxy or similar
+# Capture Snapchat traffic to identify telemetry endpoints
+
+# Common Snapchat servers to block via firewall:
+# - analytics.snapchat.com
+# - geofilter-service.snapchat.com
+# - mq-platform.snapchat.com
+```
+
+Blocking these endpoints at the network level (via Pi-hole or router firewall) prevents data transmission even if Snapchat's app sends it.
+
+### Limiting Snap History
+
+Beyond auto-delete, further restrict what Snapchat retains:
+
+1. Disable "Memories" feature entirely (it stores all snaps indefinitely)
+2. Disable cloud backup if available
+3. Regularly export and delete snap memories locally
+4. Use "One-time Snap" setting for sensitive communications
+
+### Account Hygiene Practices
+
+Implement regular security maintenance:
+
+```
+Monthly:
+- Change password from new device/IP
+- Review active sessions and sign out old devices
+- Check "Who I'm Friends With" list for unknown accounts
+
+Quarterly:
+- Download and review your data export
+- Check third-party app permissions
+- Review login verification history
+```
+
+## Privacy Implications of Snap Map
+
+Snap Map presents unique privacy challenges beyond standard location sharing. Snapchat displays your location on a map visible to selected users, but implementation details matter significantly.
+
+### Snap Map Heat Mapping
+
+When multiple users share locations, Snapchat can create heat maps showing where your social group frequents. This reveals patterns about your daily routine.
+
+**Mitigation**: Enable Ghost Mode continuously, not just occasionally. Use temporary Ghost Mode timers only for specific events where you need to share location temporarily.
+
+### Snapcode Privacy Risks
+
+Your unique Snapcode—visible in your profile and when shared—contains encoded account information.
+
+**Protection**: Set "Who Can See My Snapcode" to "My Friends" or disable public snapcode scanning entirely. Never post your snapcode publicly on social media.
+
+### Bitmoji Avatar Tracking
+
+Your Bitmoji avatar's location appears on Snap Map, serving as a proxy for your real location. Some users assume turning off location stops Bitmoji tracking—it doesn't.
+
+**Safest approach**: Disable Bitmoji entirely if location privacy matters, or use a completely generic avatar.
+
+## Detecting Account Compromise
+
+Even with strong settings, accounts can be compromised. Watch for these signs:
+
+- Unusual stories you didn't create
+- Snap Streaks with unfamiliar accounts
+- Unexpected friend requests accepted
+- Location appearing in places you weren't
+- Friends reporting seeing your snaps from different locations
+
+If compromised, immediately:
+1. Change password from a different device
+2. Sign out all active sessions
+3. Review and revoke third-party app access
+4. Check and reset recovery phone number
+5. Enable 2FA with new authenticator app
+
+---
+
 
 ## Related Articles
 

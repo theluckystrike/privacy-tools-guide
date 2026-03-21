@@ -186,6 +186,111 @@ Understand FRP:
 - **Android**: Google FRP asks for previous account after reset—ensure you know credentials or device is removed from your Google account
 - **iOS**: Activation Lock requires previous Apple ID—disable Find My before selling
 
+## Verification for Enterprise and Developers
+
+For organizations selling devices at scale, additional verification ensures compliance and data protection.
+
+### Device Forensic Verification
+
+After resetting, perform forensic tests to confirm data destruction:
+
+```bash
+# Using dd to read raw device (requires physical access)
+# WARNING: This will fail with encrypted devices (expected behavior)
+dd if=/dev/disk0 of=/tmp/image.bin bs=4096 count=1000
+strings /tmp/image.bin | grep -i "password\|email\|credit"
+```
+
+No sensitive data should appear in raw dumps from encrypted devices.
+
+### Secure Media Sanitization Standards
+
+For devices handling sensitive data, follow NIST guidelines:
+
+```bash
+# NIST SP 800-88 compliant wipe using shred
+# (Requires SSH access or rooted device)
+shred -vfz -n 3 /path/to/file
+```
+
+The `-n 3` flag performs three-pass overwrite, meeting DOD 5220.22-M standards for sensitive environments.
+
+### Testing with DBAN (Darik's Boot and Nuke)
+
+For devices with bootloader access:
+
+```bash
+# Create DBAN boot USB
+dd if=dban.iso of=/dev/usb-device bs=4M
+# Boot device from USB and run full wipe
+```
+
+DBAN provides verified data destruction with detailed reporting for compliance documentation.
+
+## Post-Wipe Configuration
+
+After resetting a device intended for resale:
+
+**Don't re-register**: Leave the device without accounts or personalization. Let the new owner complete the setup themselves.
+
+**Remove Google/Apple account**: Verify in Settings that no accounts are linked before selling.
+
+**Check for residual backups**: Some devices cache backup data. Clear Settings → Accounts → [Old Account] → Remove Account.
+
+**Test device functionality**: Boot the device, verify key hardware works (camera, mic, speaker), then power it down for shipping.
+
+**Document the wipe method**: For B2B transactions, provide documentation of the secure wipe procedure used.
+
+## Legal Compliance Considerations
+
+Different jurisdictions require different documentation:
+
+**GDPR (EU)**: Document data deletion procedures and retain verification for 3 years if selling to EU customers.
+
+**CCPA (California)**: Provide deletion confirmation upon request. Some customers may request attestation of destruction.
+
+**HIPAA (if applicable)**: Medical-related devices may require certified destruction documentation.
+
+Consider obtaining a secure wipe certification from your device vendor if available, particularly for business transactions.
+
+## Comparative Secure Wipe Methods
+
+Different approaches offer different guarantees. Understanding the trade-offs helps you choose appropriately.
+
+**Factory reset alone**: Quickest but least secure. Suitable only for devices with no sensitive data or those already encrypted.
+
+**Factory reset plus overwrite**: More secure. Filling storage with random data then resetting ensures unencrypted data is overwritten. Takes longer but provides measurable security improvement.
+
+**Encrypted then reset**: Most secure for non-forensic environments. Pre-encryption before reset ensures residual data is unreadable. Recommended for devices with sensitive business data.
+
+**DFU mode restore (iOS) or bootloader flash (Android)**: Highest security for specific device types. Rewrites all partitions including recovery firmware. Essential for devices with custom firmware.
+
+### Timeline Comparison
+
+Different methods require different amounts of time:
+
+- Factory reset: 5-15 minutes
+- Factory reset + single overwrite: 2-6 hours (depends on storage size)
+- Factory reset + triple overwrite: 6-18 hours
+- DFU restore: 20-45 minutes
+- Full NIST-compliant secure wipe: 8-24 hours
+
+Plan wipe operations accordingly. An 8-hour wipe makes sense for high-value devices; shorter wipes work for routine device refresh.
+
+## Device-Specific Considerations
+
+Different manufacturer implementations vary significantly.
+
+**Samsung devices**: Support Knox platform with hardware-backed security. Samsung's factory reset is generally more reliable than stock Android. Enable Knox from settings before reset to leverage platform security.
+
+**Apple devices with Secure Enclave**: Provide the strongest guarantee of data destruction. Secure Enclave deletes encryption keys on erase, making data unrecoverable.
+
+**Pixel devices with Titan M2**: Google's custom security processor offers similar guarantees to iPhone Secure Enclave. Factory reset destroys encryption keys in hardware module.
+
+**Budget devices without security processors**: Require more careful handling. Pre-encrypt, then reset. Avoid selling devices that were used for very sensitive data.
+
+---
+
 
 ## Related Articles
 

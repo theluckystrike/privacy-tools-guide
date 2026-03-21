@@ -185,6 +185,164 @@ If you need occasional access—such as debugging a misbehaving device—create 
 
 Another consideration is device provisioning. Many smart home devices require an initial setup process using a mobile app on your phone. Keep your phone on the trusted network during setup, then move the device to the IoT segment via DHCP reservations or static IPs.
 
+## Advanced Isolation Techniques
+
+For users seeking more granular control, additional strategies enhance segmentation effectiveness.
+
+### Per-Device Isolation Rules
+
+Rather than treating all IoT devices identically, apply fine-grained policies based on device purpose:
+
+```bash
+# Create device-specific rules using nftables
+nft add rule ip iot forward ip saddr 192.168.2.50 accept comment "Allow camera to trusted for NTP"
+nft add rule ip iot forward ip saddr 192.168.2.100 ip dport 443 accept comment "Allow hub HTTPS access"
+```
+
+This approach grants only necessary permissions while blocking everything else.
+
+### Bandwidth Rate Limiting
+
+Prevent compromised devices from saturating your network:
+
+```bash
+# Linux tc (traffic control) for rate limiting IoT segment
+tc qdisc add dev eth1 root tbf rate 10mbit burst 32kbit latency 400ms
+
+# Monitor actual usage
+iftop -i eth1
+```
+
+### DNS Sinkholing within IoT Segment
+
+Deploy Pi-hole or Adguard Home specifically for IoT traffic to block known malicious domains:
+
+```bash
+# Configure gravity update to pull threat intelligence
+pihole --update
+pihole admin -a -q gravity
+```
+
+This creates a passive monitoring layer that logs all DNS queries from IoT devices without intercepting traffic.
+
+### VLAN Trunk Configuration
+
+For advanced users with multi-switch setups, trunk configuration enables scaling:
+
+```
+# On primary switch, configure trunk
+Switch> enable
+Switch# configure terminal
+Switch(config)# interface GigabitEthernet 0/1
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk allowed vlan 10,20,30
+```
+
+This allows multiple VLANs to traverse a single physical connection, essential for expanding your network while maintaining isolation.
+
+### Monitoring VLAN Effectiveness
+
+Regularly verify your isolation is working:
+
+```bash
+# From IoT VLAN, attempt to reach trusted VLAN gateway
+ping -c 5 10.0.20.1
+
+# Check neighbor discovery
+arp -a | grep 10.0.20
+
+# Monitor firewall drop statistics
+iptables -L -v | grep DROP
+```
+
+Successful isolation shows zero responses and zero neighbor entries.
+
+## Troubleshooting Common Problems
+
+**Devices not getting IP addresses**: Verify DHCP is configured for the IoT VLAN. Check DHCP server logs and ensure the scope includes available addresses.
+
+**Cloud features stop working**: This is expected. Verify internet access is still available from IoT segment by pinging external IPs.
+
+**Cannot manage devices remotely**: Deploy a management VLAN with broader permissions, or configure temporary exception rules when needed.
+
+**Performance degradation**: Check QoS and rate limiting settings. MTU mismatches can also cause throughput issues—test with different MTU values (1500, 1492, 1480).
+
+## Scaling Network Segmentation
+
+As your network grows, managing segmentation complexity increases. Implement automation and documentation.
+
+### Infrastructure as Code (IaC)
+
+Define your network configuration in code for reproducibility:
+
+```yaml
+# network-config.yml - Define your entire network
+vlans:
+  trusted:
+    id: 20
+    subnet: 10.0.20.0/24
+    dhcp: true
+
+  iot:
+    id: 10
+    subnet: 10.0.10.0/24
+    dhcp: true
+
+firewall_rules:
+  - name: block-iot-to-trusted
+    from_vlan: iot
+    to_vlan: trusted
+    action: drop
+```
+
+Use Ansible, Terraform, or similar tools to apply this configuration consistently across your infrastructure.
+
+### Network Monitoring Dashboard
+
+Create a visual representation of network health:
+
+```bash
+# Script for dashboard generation
+#!/bin/bash
+echo "=== IoT Network Status ==="
+echo "Connected devices:"
+arp-scan 10.0.10.0/24 | grep "10.0.10" | wc -l
+
+echo "Firewall rule violations:"
+iptables -L -v | grep DROP | awk '{print $1}' | sum
+
+echo "DHCP pool usage:"
+ps aux | grep dnsmasq | grep -v grep
+```
+
+Run periodically and display on monitoring screen to catch issues quickly.
+
+### Multi-Site Segmentation
+
+For homes with multiple network locations:
+
+```bash
+# Site A: Home network
+# Site B: Vacation property
+# Site C: Office
+
+# Configure redundant connectivity between sites
+# Create encrypted tunnels so devices can reach corporate services
+
+wireguard:
+  site_a_to_site_b:
+    endpoint: site_b.example.com:51820
+    allowed_ips: 10.0.0.0/8
+
+  site_a_to_site_c:
+    endpoint: site_c.example.com:51820
+    allowed_ips: 10.0.0.0/8
+```
+
+This enables seamless device roaming across locations while maintaining isolation.
+
+---
+
 
 ## Related Articles
 

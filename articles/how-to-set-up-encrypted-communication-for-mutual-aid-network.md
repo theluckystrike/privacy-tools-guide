@@ -185,6 +185,139 @@ Technical encryption tools provide limited protection without consistent operati
 
 Regular security audits help identify vulnerabilities before adversaries exploit them. Schedule monthly reviews of participant device security, application configurations, and recovery procedure accessibility.
 
+## Scaling Communication Infrastructure
+
+As mutual aid networks grow, centralized communication channels become bottlenecks and single points of failure. Distributed architectures improve resilience.
+
+### Using XMPP for Federated Messaging
+
+XMPP (Extensible Messaging and Presence Protocol) allows deploying multiple independent servers that can communicate:
+
+```bash
+# Deploy Ejabberd (XMPP server)
+docker pull ejabberd/ecs
+docker run -d --name ejabberd -p 5222:5222 -p 5269:5269 ejabberd/ecs
+
+# Configure federation in ejabberd.yml
+# This allows users@server1.org to message users@server2.org
+federation:
+  enabled: true
+  domains:
+    - server1.org
+    - server2.org
+```
+
+This architecture enables participant networks to maintain local servers while maintaining inter-network communication.
+
+### Resilience Through Redundancy
+
+Critical communication networks require backup procedures:
+
+```bash
+# Implement message queueing for offline delivery
+# Configure XMPP with Message Archive Management
+mod_mam:
+  enabled: true
+  cache_size: 10000
+  default_mode: roster
+```
+
+When participants go offline, messages queue until reconnection, ensuring critical coordination information is never lost.
+
+### Monitoring Network Health
+
+Track communication infrastructure reliability:
+
+```bash
+#!/bin/bash
+# Check XMPP server availability
+check_xmpp_health() {
+  openssl s_client -connect server.org:5222 -starttls xmpp 2>/dev/null | grep -q "CONNECTED"
+  if [ $? -eq 0 ]; then
+    echo "XMPP server online"
+  else
+    echo "XMPP server DOWN - activate backup"
+    # Trigger failover procedures
+  fi
+}
+
+# Run every 5 minutes
+while true; do
+  check_xmpp_health
+  sleep 300
+done
+```
+
+## Training and Documentation
+
+Secure communication systems require participant training. Create documentation covering:
+
+**Basic operations**: How to send messages, create groups, verify contacts. New participants should understand core functionality within 30 minutes.
+
+**Security practices**: Why disappearing messages matter, how to verify contacts, what to avoid discussing in messages. Regular refreshers prevent complacency.
+
+**Emergency procedures**: How to coordinate if primary communication channels fail, backup contact methods, escalation procedures for urgent situations.
+
+**Key recovery**: How to recover accounts if devices are lost, importance of storing recovery phrases securely, procedures for accessing backups.
+
+Distribute training materials offline or through low-bandwidth channels that don't reveal participant involvement.
+
+## Incident Response for Compromised Channels
+
+Prepare for scenarios where communication infrastructure is compromised or infiltrated.
+
+### Detecting Compromise
+
+Recognize signs of compromised communication:
+
+- Messages arriving out of order
+- Unusual delays in message delivery
+- New members with limited history or questions about procedures
+- Requests for participant lists or contact information
+- Discrepancies between messages reported by different participants
+
+When any of these occur, pause sensitive communications and assess.
+
+### Channel Rotation Procedures
+
+Establish protocols for quickly migrating to new communication channels:
+
+```
+Step 1: Identify compromise (consensus required—don't act on suspicion alone)
+Step 2: Generate new identities in backup platform (pre-established offline)
+Step 3: Notify participants through out-of-band communication (in-person, phone call)
+Step 4: Migrate to new channel
+Step 5: Deactivate old accounts
+```
+
+Pre-planning this procedure prevents panic and ensures organized migration.
+
+### Backup Communication Methods
+
+Prepare low-tech alternatives for emergencies:
+
+- Agreed-upon dead drops with encrypted information
+- Phone trees for notification in sequence
+- In-person meeting locations and times
+- Written protocols stored offline
+
+Mutual aid networks in disaster scenarios may lack reliable internet. Having offline procedures ensures continuity of operations.
+
+### Recovery from Infiltration
+
+If law enforcement or hostile actors infiltrated your network:
+
+1. **Preserve evidence**: Don't delete anything immediately—preservation is important for legal defense
+2. **Notify participants**: Warn others quickly, allowing them to secure evidence
+3. **Cease sensitive operations**: Stop sharing information that could endanger people
+4. **Legal consultation**: Contact attorney familiar with activist law before further action
+5. **Assess damage**: Determine what information was compromised
+6. **Learn and improve**: After incident resolution, identify what allowed infiltration
+
+Recovery from infiltration is primarily operational and legal rather than technical.
+
+---
+
 
 ## Related Articles
 
