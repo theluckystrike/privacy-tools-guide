@@ -18,15 +18,21 @@ tags: [privacy-tools-guide, best-of]
 
 When privacy matters, choosing the right messaging app requires understanding what actually protects your conversations versus what merely claims to. The strongest options combine end-to-end encryption with disappearing messages and minimal metadata retention. This guide examines the apps that genuinely deliver on these promises.
 
+The stakes of choosing wrong are significant. A poorly chosen messaging app could expose your conversations to the company operating it, to government requests, or to attackers exploiting weaknesses in the encryption implementation. More subtly, weak metadata protection reveals your social relationships, communication frequency, and patterns even if message contents remain hidden.
+
 ## Understanding the Privacy Features That Matter
 
 Not all privacy features provide equal protection. Before examining specific apps, focus on three capabilities that directly impact your security:
 
-**Disappearing messages** automatically delete conversations after a set time, reducing the data footprint if a device is compromised or subpoenaed. The best implementations delete messages from both sender and recipient devices simultaneously.
+**End-to-end encryption** ensures that only the sender and recipient can read message contents. True end-to-end encryption means the messaging provider cannot decrypt messages even if compelled by law enforcement. Some apps claim encryption but use weak implementations or retain decryption keys, which is functionally equivalent to no encryption.
+
+**Disappearing messages** automatically delete conversations after a set time, reducing the data footprint if a device is compromised or subpoenaed. The best implementations delete messages from both sender and recipient devices simultaneously, leaving no trace on servers.
 
 **Metadata logging** refers to records of who contacted whom, when, and for how long. Even with encrypted message content, metadata can reveal your social graph. Apps that minimize or eliminate metadata logging provide stronger protection than those that retain communication records.
 
 **Phone number requirements** create a persistent identifier tied to your identity. Some apps require phone numbers for registration, while others allow completely anonymous account creation.
+
+**Key verification** enables you to confirm that the encryption keys belong to your contact and not an attacker performing a man-in-the-middle attack. Without key verification, you have no proof you're communicating with whom you think.
 
 ## Signal: The Gold Standard for Metadata Minimalism
 

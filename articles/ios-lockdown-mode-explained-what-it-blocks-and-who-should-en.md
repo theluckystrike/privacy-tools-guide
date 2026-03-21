@@ -12,13 +12,27 @@ score: 8
 
 {% raw %}
 
-Apple's Lockdown Mode represents one of the most aggressive privacy features available on iOS devices today. Introduced as a response to sophisticated spyware threats, this security feature dramatically reduces the attack surface of your iPhone or iPad by disabling certain functionalities that attackers commonly exploit. Understanding what Lockdown Mode does and whether you need it can help you make an informed decision about your device security.
+Apple's Lockdown Mode represents one of the most aggressive privacy features available on iOS devices today. Introduced as a response to sophisticated spyware threats like Pegasus, this security feature dramatically reduces the attack surface of your iPhone or iPad by disabling certain functionalities that attackers commonly exploit. Understanding what Lockdown Mode does and whether you need it can help you make an informed decision about your device security.
+
+Lockdown Mode is not a mainstream feature for typical users. It's designed specifically for people facing advanced threats from well-funded adversaries including state-sponsored spyware operators, corporate espionage actors, and other sophisticated threat groups. The feature makes deliberate trade-offs, sacrificing convenience and functionality for security that only matters if you face a specific threat profile.
 
 ## What Is iOS Lockdown Mode?
 
-Lockdown Mode is an optional security feature that iPhones and iPads ships with. When enabled, it restricts several system capabilities that could potentially be exploited by sophisticated attackers, such as those working for state-sponsored spyware companies. This feature was originally designed for high-risk users including journalists, activists, business executives, and individuals who might be targeted by advanced persistent threats.
+Lockdown Mode is an optional security feature that iPhones and iPads ship with starting from iOS 16. When enabled, it restricts several system capabilities that could potentially be exploited by sophisticated attackers, such as those working for state-sponsored spyware companies. This feature was originally designed for high-risk users including journalists, activists, business executives, and individuals who might be targeted by advanced persistent threats.
 
 The mode takes an extreme approach to security by disabling features that, while useful for everyday functionality, also represent potential vectors for malware or spyware injection. It is not designed for the average user who wants basic privacy. Instead, it targets users facing serious threats to their digital safety.
+
+### The Threat Model Behind Lockdown Mode
+
+Apple's research into spyware exploitation revealed that sophisticated attacks often use several common vectors:
+
+- **Browser exploitation**: JavaScript vulnerabilities in Safari that execute malicious code
+- **Media file processing**: Malicious PDFs, videos, or images that exploit media handling code
+- **Network attacks**: Compromised wireless networks that inject malicious content
+- **Communication exploits**: Shared albums and FaceTime connections that execute code
+- **Device management**: Configuration profiles that silently modify device behavior
+
+Lockdown Mode attempts to mitigate each of these vectors by eliminating the features that enable them or severely restricting their functionality. The assumption is that attackers will move to more expensive or visible attack methods if standard vectors become unusable.
 
 ## What Lockdown Mode Blocks
 
@@ -51,6 +65,17 @@ If you determine that Lockdown Mode aligns with your security needs, follow thes
 7. Your device will restart to apply the changes
 
 After enabling, you will notice a black border around your screen in the Lockdown Mode enabled state, and the status bar will display a distinct indicator showing that Lockdown Mode is active.
+
+### Before Enabling: Preparation Checklist
+
+Before committing to Lockdown Mode, prepare your device:
+
+- **Test websites you use frequently**: Many sites require JavaScript to function properly. Try your banking site, email provider, and other regular destinations to confirm they work without JavaScript.
+- **Set up JavaScript exceptions beforehand**: Identify which sites absolutely require JavaScript and prepare to whitelist them.
+- **Download offline content**: Offline maps, documents, and reference material become more important when web functionality is restricted.
+- **Backup your device**: Create a full encrypted backup before enabling, in case you need to revert.
+- **Inform contacts**: Let people know you're using Lockdown Mode so they understand if you don't immediately respond to FaceTime calls from unknown numbers.
+- **Review your subscriptions**: Ensure critical services like payment apps aren't affected by the restrictions.
 
 ## Managing Exceptions
 
