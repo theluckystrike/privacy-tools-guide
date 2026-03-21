@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-check-if-someone-is-using-your-netflix-without-permission/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
