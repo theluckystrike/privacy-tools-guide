@@ -25,6 +25,8 @@ Private photo leaks typically occur through several vectors: account breaches at
 
 The challenge lies in detection—you cannot monitor every platform manually. Instead, you need automated approaches that use existing tools and services designed for this purpose.
 
+Understanding where leaks commonly surface helps prioritize your search. High-risk destinations include image hosting boards like Imgur, adult content aggregators, Telegram channels focused on leaked content, dark web paste sites, and Discord servers. Each requires a different detection approach since not all are indexed by mainstream search engines.
+
 ## Reverse Image Search Methods
 
 ### Using Google Images
@@ -78,6 +80,12 @@ def check_tineye(image_path, api_key):
 
 TinEye offers both free and commercial tiers depending on your volume needs.
 
+### Bing Visual Search and Yandex Images
+
+Do not overlook Bing Visual Search and Yandex Images—both maintain separate indexes from Google and regularly surface results that Google misses. Yandex in particular has very strong facial recognition capabilities and indexes a large volume of Eastern European and Russian-language sites where leaked content sometimes appears before it spreads elsewhere.
+
+To use Yandex reverse image search: navigate to yandex.com/images, click the camera icon, and upload your file. The results page groups visually similar images and shows pages that contain them. For systematic checking, you can integrate multiple search engines into a single workflow rather than relying on Google alone.
+
 ## HaveIBeenPwned and Data Breach Monitoring
 
 While HaveIBeenPwned focuses on email addresses and passwords, its API can help identify if your accounts were compromised—often the vector for photo leaks.
@@ -102,6 +110,12 @@ def check_email_breaches(email):
 ```
 
 When your email appears in a breach, change passwords immediately and enable two-factor authentication on affected services.
+
+### Specialized Breach Databases for Photo Leaks
+
+Beyond HIBP, several specialized services track image-specific breaches. StopNCII (Stop Non-Consensual Intimate Images) maintains a hash database that allows platforms to automatically detect and remove matching content. If you submit your images to StopNCII, participating platforms compare uploaded content against your hashes without storing the actual images. This is one of the most effective proactive tools available for preventing further spread.
+
+The Cyber Civil Rights Initiative (CCRI) also maintains a resource list of removal services specific to non-consensual intimate image sharing, which goes beyond general data breach monitoring.
 
 ## Building Your Own Monitoring System
 
@@ -137,6 +151,28 @@ while True:
 
 This approach requires hosting costs and API credits, making it more suitable for users with technical backgrounds or organizations managing sensitive image collections.
 
+### Generating Perceptual Hashes for Comparison
+
+Exact-match image search misses cropped, resized, or color-adjusted versions of your photos. Perceptual hashing creates a fingerprint that remains similar even after minor edits:
+
+```python
+from PIL import Image
+import imagehash
+
+def generate_phash(image_path):
+    """Generate perceptual hash for similarity matching"""
+    img = Image.open(image_path)
+    return str(imagehash.phash(img))
+
+def images_are_similar(hash1, hash2, threshold=10):
+    """Compare two perceptual hashes"""
+    h1 = imagehash.hex_to_hash(hash1)
+    h2 = imagehash.hex_to_hash(hash2)
+    return (h1 - h2) < threshold
+```
+
+Store hashes for all your sensitive photos locally, then compare against hashes extracted from suspected matches. A difference score below 10 typically indicates the same image, while scores under 20 suggest a modified version.
+
 ## Platform-Specific Detection
 
 ### Social Media Monitoring
@@ -169,6 +205,12 @@ def extract_identifying_metadata(image_path):
 
 Use unique identifiers (camera serial numbers, GPS coordinates) in Google Alerts to detect matches.
 
+### Dark Web and Telegram Monitoring
+
+Standard search engines do not index Telegram channels or dark web sites. For Telegram monitoring, tools like Telepathy (an open-source OSINT tool) can search across public channels. For dark web monitoring, services like Flare or DarkBeast aggregate content from .onion sites and dark web forums. These commercial services are expensive but thorough.
+
+A more accessible approach: dark web exposure can sometimes be identified indirectly by monitoring whether your personal identifiers (username, phone number, email) appear in breach data dumps posted to paste sites. Tools like Dehashed aggregate this data and allow email or username searches across leaked databases.
+
 ## Prevention Strategies
 
 Detection is only half the battle. Implement these preventive measures:
@@ -189,6 +231,8 @@ Detection is only half the battle. Implement these preventive measures:
 
 4. **Use encrypted storage**: Services like Tresorit or SpiderOak offer zero-knowledge encryption
 
+5. **Watermark sensitive images invisibly**: Invisible watermarking embeds a unique identifier that survives basic editing. If a leak is detected, the watermark identifies which copy was distributed, helping narrow down the source of the breach.
+
 ## Taking Action
 
 If you discover leaked photos:
@@ -197,11 +241,16 @@ If you discover leaked photos:
 2. **Contact platform abuse teams**: Most platforms have removal request forms
 3. **File DMCA takedowns**: If you own the copyright
 4. **Report to law enforcement**: Especially if the content is illegal
-5. **Consult an attorney**: For serious cases, legal action may be necessary
+5. **Submit to StopNCII**: Prevents the same image from being re-uploaded to participating platforms
+6. **Consult an attorney**: For serious cases, legal action may be necessary
+
+Many jurisdictions now have specific laws covering non-consensual intimate image sharing. In the United States, most states have enacted revenge porn statutes. The UK's Online Safety Act 2023 criminalized sharing intimate images without consent. Knowing your legal options before acting gives you stronger leverage when demanding removal.
 
 ## Limitations and Considerations
 
 Automated detection has boundaries. Images must be visually similar to be matched, and heavily edited versions may evade detection. Additionally, private forums and encrypted platforms remain inaccessible to web crawlers.
+
+Perceptual hashing improves on exact matching but still fails against heavy filters, significant cropping, or conversion to grayscale. No single technique catches everything, which is why combining multiple approaches—reverse image search, platform-specific monitoring, and hash databases like StopNCII—gives the best coverage.
 
 For professional-grade protection, consider commercial services that specialize in digital footprint monitoring—they aggregate data from multiple sources and provide more coverage than individual tools.
 
