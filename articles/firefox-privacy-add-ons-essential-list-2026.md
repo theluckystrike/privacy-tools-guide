@@ -174,6 +174,229 @@ On resource-constrained systems, switch uBlock Origin to lite mode and disable u
 
 No extension stack provides complete anonymity — review your configuration when tools release major updates or new tracking techniques emerge.
 
+## Advanced uBlock Origin Configuration
+
+Beyond basic setup, configure uBlock like a power user:
+
+```
+# Advanced uBlock Origin settings (uBlock Origin > Dashboard > Advanced settings)
+
+parseCosmeticFilters: true
+ignoreRedirectFilters: false
+ignoreScriptletFilters: false
+
+# Custom block rules for development sites
+// Block Google Analytics completely
+||google-analytics.com^
+||googletagmanager.com^
+
+// Allow GitHub but block Travis CI analytics
+@@||github.com^
+||travis-ci.com/api/
+
+// Block cloudflare analytics proxy
+||beacon.getclicky.com^
+
+# Whitelist internal services
+@@||localhost^
+@@||127.0.0.1^
+@@||192.168.*.^
+```
+
+Use "I am an advanced user" mode to access filter syntax directly. Test rules on test sites before deployment.
+
+## Privacy Extension Interaction Testing
+
+Extensions sometimes conflict. Test your stack:
+
+```bash
+#!/bin/bash
+# test-extension-interactions.sh
+
+# Test 1: Load a tracking-heavy site with each extension independently
+TEST_SITES=(
+  "https://www.theguardian.com"
+  "https://www.bbc.com"
+  "https://www.nytimes.com"
+)
+
+# Test 2: Check request blocking count
+# Open Firefox DevTools > Network tab > filter by status
+# Count blocked requests (show as 0 bytes)
+
+# Expected results:
+# uBlock Origin alone: 60-80% requests blocked
+# Privacy Badger alone: 40-50% requests blocked
+# Both together: 80-90% requests blocked (not 160%)
+
+# Test 3: Check for false positives
+# Visit each site and verify functionality:
+# - Images load
+# - Videos play
+# - Forms submit
+# - Popups don't break layout
+```
+
+Disable extensions one at a time to identify which is breaking functionality.
+
+## Fingerprinting Resistance Testing
+
+Verify your anti-fingerprinting configuration:
+
+```javascript
+// Test canvas fingerprinting resistance
+// Run in Firefox console on https://canvas.fingerprint.ai
+
+// Expected: Different hash on each page load
+// With Trace enabled: Should see different values
+// Without: Will see consistent fingerprint (bad)
+
+// Test WebGL fingerprinting
+const canvas = document.createElement('canvas');
+const gl = canvas.getContext('webgl');
+const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+
+// Expected with randomization: Varies between page loads
+// Expected without: Consistent and identifying
+
+// Test font enumeration
+const fonts = ['Arial', 'Courier', 'Georgia', 'Helvetica'];
+fonts.forEach(font => {
+  const canvas = document.createElement('canvas');
+  // Measure text width with font
+});
+// Expected: Return limited/generic fonts (not your actual system fonts)
+```
+
+Verify these tests show different results on page reloads after enabling fingerprinting protection.
+
+## Firefox about:config Privacy Settings Deep Dive
+
+Advanced configuration for maximum privacy:
+
+```javascript
+// Disable everything that can be disabled
+privacy.trackingprotection.enabled = true
+privacy.trackingprotection.fingerprinting.enabled = true
+privacy.trackingprotection.cryptomining.enabled = true
+privacy.trackingprotection.socialtracking.enabled = true
+
+// Disable telemetry
+datareporting.healthreport.uploadEnabled = false
+datareporting.policy.dataSubmissionPolicyAcceptedVersion = 0
+toolkit.telemetry.enabled = false
+toolkit.telemetry.reportingpolicy.firstRun = false
+
+// Disable WebRTC
+media.peerconnection.enabled = false
+
+// Disable location services
+geo.enabled = false
+geo.provider.use_corelocation = false
+
+// Disable document properties
+dom.max_script_run_time = 10  // Kill hanging scripts
+
+// Disable push notifications
+dom.push.enabled = false
+dom.serviceWorkers.enabled = false
+
+// Disable permissions
+permissions.default.geolocation = 2
+permissions.default.camera = 2
+permissions.default.microphone = 2
+
+// Disable referer
+network.http.referer.XOriginPolicy = 2  // Only same-site
+
+// Disable DNS prefetching
+network.dns.disablePrefetch = true
+network.dns.disablePrefetchFromHTTPS = true
+
+// Disable link prefetching
+network.prefetch-next = false
+network.predictor.enabled = false
+```
+
+Test each setting to ensure sites still function properly. Some settings are too aggressive for general browsing.
+
+## Managing Extension Updates and Security
+
+Keep your privacy stack secure:
+
+```bash
+#!/bin/bash
+# firefox-extension-audit.sh
+
+# Check for outdated extensions
+firefox_profile="$HOME/.mozilla/firefox/*.default-release"
+extensions_dir="$firefox_profile/extensions"
+
+# List all extensions with installation date
+for ext in "$extensions_dir"/*.xpi; do
+    unzip -p "$ext" manifest.json | jq '.version'
+done
+
+# Compare against latest versions on mozilla.org
+# Update Firefox monthly
+# Firefox > Settings > About Firefox
+
+# Watch for security advisories
+# Subscribe to: https://www.mozilla.org/en-US/security/advisories/
+```
+
+Extensions are a prime attack vector. Keep them updated and monitor for security issues.
+
+## Browser Profile Hardening Checklist
+
+Complete privacy setup procedure:
+
+```bash
+# 1. Create new profile
+firefox -P
+
+# 2. Install extensions in this order:
+#    - uBlock Origin first
+#    - Privacy Badger second
+#    - Others after successful testing
+
+# 3. Configure about:config (see list above)
+
+# 4. Set privacy settings in UI:
+#    - Settings > Privacy > Enhanced Tracking Protection (Strict)
+#    - Settings > Privacy > Cookies > Block third-party
+#    - Settings > Privacy > Logins and Passwords > Suggest strong passwords
+
+# 5. Test functionality
+#    - Visit major sites (Amazon, Google, Facebook)
+#    - Verify images load
+#    - Verify video plays
+#    - Verify forms submit
+
+# 6. Create shell alias for quick launch
+# Add to ~/.bashrc or ~/.zshrc:
+alias firefox-private="firefox -P Privacy-2026"
+```
+
+Complete this checklist once per year or when Firefox major version updates.
+
+## Performance Tuning for Privacy Extensions
+
+Optimize without sacrificing privacy:
+
+```javascript
+// In Firefox Developer Tools > Console
+// Check extension memory usage and performance
+browser.management.getAll().then(exts => {
+  exts.forEach(ext => {
+    console.log(`${ext.name}: ${ext.enabled}`);
+  });
+});
+```
+
+Disable extensions you don't actively use. Test frequently to ensure privacy extensions aren't degrading browser performance.
+
 
 ## Related Articles
 

@@ -172,6 +172,114 @@ This isolation prevents Google from correlating your privacy-focused browsing wi
 
 Start with Firefox and uBlock Origin, configure the privacy settings mentioned above, and iterate based on your workflow requirements. Profile isolation for Google services you must access prevents correlation with your privacy-focused browsing.
 
+## Monitoring Your Tracking Exposure
+
+Track how many requests are being blocked to understand your exposure baseline:
+
+```bash
+#!/bin/bash
+# track-blocked-requests.sh - Monitor blocking effectiveness
+
+# Test 1: Baseline - Visit a major site
+# Check DevTools Network tab > Requests count
+
+# Example results:
+# Without blocking: 150+ requests
+# With uBlock Origin: 40-50 requests (75% blocked)
+# With uBlock + Privacy Badger: 35-40 requests (80% blocked)
+
+# Test 2: Specific tracker domains
+# Look in Network tab for these domains
+# If present, blocking is incomplete:
+# - google-analytics.com
+# - facebook.com
+# - doubleclick.net
+# - googleadservices.com
+
+# Test 3: Third-party content
+# Filter Network tab by "Third-party"
+# Count remaining requests
+# Should be 10-20% of total in strict mode
+```
+
+Regular monitoring helps identify new tracking vectors that may have emerged.
+
+## Testing Your Configuration
+
+Verify that your privacy setup actually works by testing for information leaks. Use these services regularly to identify privacy weaknesses:
+
+```bash
+# WebRTC leak test - IP should NOT be exposed
+# Visit: https://ipleak.net (check WebRTC section)
+# Look for: Only VPN IP, not your real IP
+# If real IP appears: Enable media.peerconnection.enabled = false
+
+# Canvas fingerprinting test
+# Visit: https://canvas.fingerprint.ai
+# Result should be different on each page load
+# Consistency indicates fingerprinting vulnerability
+
+# DNS leak test
+# Visit: https://www.dnsleaktest.com
+# Your ISP DNS should not appear
+# If ISP appears: Use DNS-over-HTTPS instead
+
+# IPv6 leak test
+# Visit: https://ipleak.net
+# Check IPv6 section
+# If IPv6 revealed: Disable IPv6 in about:config
+#    network.dns.disableIPv6 = true
+```
+
+Document which tests pass and fail. Iterate your configuration to address failures.
+
+## Practical Workflow Integration
+
+For developers, integrate privacy tools into your development environment:
+
+```bash
+# Create a privacy-focused browser launcher
+#!/bin/bash
+# safe-browse.sh
+
+# Disable geolocation, camera, microphone prompts
+export MOZ_ALLOW_DOWNGRADE=1
+
+firefox \
+  -new-private-window "about:blank" \
+  -pref privacy.trackingprotection.enabled=true \
+  -pref privacy.trackingprotection.fingerprinting.enabled=true \
+  "$@"
+```
+
+For testing ad-blocking effectiveness, compare your configured browser against the default. Visit a known tracker-heavy site (news publications are common) and observe how many requests are blocked. In a properly configured Firefox with uBlock Origin, you should see 60-80% of requests blocked.
+
+## Extension Maintenance and Updates
+
+Privacy extensions require ongoing attention. The threat landscape changes regularly, and new tracking techniques emerge constantly. Subscribe to security mailing lists from Mozilla and the extensions themselves. uBlock Origin releases updates monthly—ensure you're running the latest filter lists.
+
+Monitor your privacy extensions for performance impact. Open `about:debugging#/runtime/this-firefox` to inspect memory usage of each extension. If browser performance degrades significantly, consider switching to lite mode for uBlock Origin or disabling rarely-needed extensions.
+
+## Combining Browsers for Different Contexts
+
+Consider a multi-browser strategy for maximum privacy:
+
+- **Firefox (primary)**: All general browsing with full privacy hardening
+- **Brave (secondary)**: For Chromium compatibility testing, and as a fallback for sites that break with strict filtering
+- **Tor Browser (isolated)**: Only for research requiring strong anonymity guarantees
+
+This approach prevents a single browser compromise from exposing all your activities while letting you maintain workflow efficiency.
+
+## Privacy Extension Conflicts and Solutions
+
+Privacy extensions sometimes conflict with each other or with legitimate site functionality:
+
+- **uBlock Origin + Privacy Badger**: Generally compatible, but redundant at scale. Choose one as primary and disable the other's network blocking.
+- **NoScript + uBlock Origin**: Both block scripts, but from different rule sets. Use either NoScript (aggressive) or uBlock's script control (granular), not both.
+- **Multiple cookie blockers**: Disable redundant cookie-blocking extensions—one is sufficient.
+
+Test your configuration on sites you use regularly. If a site breaks, use the browser's developer tools to identify which extension blocks critical resources, then whitelist selectively.
+
 
 ## Related Articles
 
