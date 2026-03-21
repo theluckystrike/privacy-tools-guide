@@ -443,7 +443,4 @@ Bitwarden Emergency Access feature:
 3. After 7 days, they get access to your vault
 4. Useful for: medical emergencies, death, incapacity
 ```
-<<<<<<< HEAD
 {% endraw %}
-=======
->>>>>>> 7dfbe9776ee6982b14a443661ed2437ee3b7771c
