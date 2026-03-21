@@ -44,7 +44,7 @@ Your encrypted queries still end up at a resolver that can see them. Choose care
 | NextDNS | `[id].dns.nextdns.io` | Configurable, logs optional | Optional |
 | dns.sb | `dot.sb` | No logging | None |
 
-For most users, Quad9 provides a good balance: no logging, malware blocking, and operated by a non-profit.
+For most users, Quad9 provides a good balance: no logging, malware blocking, and operated by a non-profit. Cloudflare offers better performance in many regions but retains some logs for up to 24 hours. If you use Mullvad VPN, their resolver is the most privacy-preserving option since it operates entirely within their no-log infrastructure.
 
 ## Linux: systemd-resolved Configuration
 
@@ -102,6 +102,22 @@ dig @9.9.9.9 -p 853 +tls example.com
 # Should show only your chosen resolver, not your ISP's DNS
 ```
 
+### Handling the DNSOverTLS=opportunistic vs. yes difference
+
+The `DNSOverTLS` setting accepts three values with meaningfully different behavior:
+
+- `no`: No encryption, plaintext DNS only
+- `opportunistic`: Attempt DoT but fall back to plaintext if unavailable
+- `yes`: Require DoT, fail if TLS cannot be established
+
+For privacy, always use `yes`. The `opportunistic` mode silently falls back to unencrypted DNS when port 853 is blocked or the resolver doesn't support TLS, giving a false sense of security. Using `yes` ensures that if DoT fails, DNS queries fail entirely rather than leaking in plaintext.
+
+```bash
+# Verify your setting is enforced
+sudo grep DNSOverTLS /etc/systemd/resolved.conf
+# Should output: DNSOverTLS=yes
+```
+
 ### Using Stubby for More Control
 
 `stubby` is a DoT-specific resolver stub that provides finer-grained configuration:
@@ -145,6 +161,27 @@ sudo nano /etc/systemd/resolved.conf
 # DNSOverTLS=no   (stubby handles TLS before resolved sees it)
 ```
 
+Stubby's key advantage over systemd-resolved's built-in DoT is support for public key pinning. The `tls_pubkey_pinset` directive pins the expected certificate fingerprint for each resolver, preventing MITM attacks even if a fraudulent certificate is issued. This matters in corporate or state-level network environments where TLS interception is practiced.
+
+### Fixing Split DNS and VPN Conflicts
+
+When you run a VPN, DNS traffic may route through the VPN's DNS servers rather than your configured DoT resolver. Check the effective resolver:
+
+```bash
+# While VPN is active
+resolvectl status
+# Look for the interface used by your VPN (e.g., tun0, wg0)
+# and what DNS server is configured for that interface
+```
+
+To force all interfaces to use your DoT resolver regardless of VPN, add the per-link configuration:
+
+```bash
+# For WireGuard interfaces
+sudo resolvectl dns wg0 9.9.9.9
+sudo resolvectl dnsovertls wg0 yes
+```
+
 ## Android: Built-In Private DNS
 
 Android 9 (Pie) and later include native DoT support called "Private DNS."
@@ -165,12 +202,26 @@ adb shell settings put global private_dns_mode hostname
 adb shell settings put global private_dns_specifier dns.quad9.net
 ```
 
-### Verify Android DoT is working
+### Verifying Android Private DNS is actually working
 
-Use the DNS leak test:
-1. Open Quad9's test page: https://on.quad9.net
-2. Or visit dnsleaktest.com → "Extended Test"
-3. Check that the responding DNS server is your chosen resolver, not your ISP's
+The Private DNS setting is easy to configure but easy to get wrong. Many users set it and assume it is working without verifying. Use these steps to confirm:
+
+1. Open Quad9's test page: https://on.quad9.net — if DoT is working through Quad9, this page confirms it
+2. Visit dnsleaktest.com → "Extended Test" — the responding server should be your chosen resolver
+3. Run a packet capture using Android's built-in VPN feature with a packet capture app (PCAPdroid is open source) and look for traffic on port 853
+
+One common failure mode: some carrier APN configurations intercept DNS traffic at the network level. In these cases, Private DNS may appear to be set correctly but queries are intercepted before reaching port 853. If dnsleaktest.com consistently shows your carrier's DNS despite correct Private DNS configuration, you may need a VPN to bypass this interception.
+
+### NextDNS for Android: Per-Device Filtering and Logging Control
+
+NextDNS deserves special mention for Android users who want both DoT privacy and DNS-level content filtering. After creating a free NextDNS account:
+
+1. Navigate to your NextDNS dashboard and copy your profile ID
+2. Set Private DNS to `[your-id].dns.nextdns.io`
+3. In the NextDNS dashboard, enable the blocklists you want (ads, malware, trackers)
+4. Under "Privacy," disable logging if you don't want query logs stored
+
+This gives you per-device DNS filtering without requiring a separate DNS server or VPN, all running through standard Android DoT.
 
 ## Limitations of DoT
 
@@ -179,6 +230,8 @@ Use the DNS leak test:
 **DoT does not provide anonymity.** Your chosen DoT resolver still sees all your queries. DoT is ISP-privacy, not anonymity. For full DNS anonymity, route queries through Tor or use a DNS resolver accessible only through a VPN.
 
 **DoT requires trusting your resolver.** Switching from your ISP's resolver to Cloudflare or Quad9 moves trust, not eliminates it. Choose a resolver with a clear, audited no-logging policy.
+
+**Port 853 is blockable.** Unlike DoH which uses port 443, DoT's dedicated port can be blocked by network administrators or censorship systems. In environments where port 853 is filtered, DoT silently fails unless you use strict mode—another reason to always set `DNSOverTLS=yes` rather than `opportunistic`.
 
 ## Related Reading
 
