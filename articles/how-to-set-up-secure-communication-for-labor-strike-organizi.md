@@ -30,6 +30,18 @@ Before deploying any communication tools, establish a clear threat model. Strike
 
 Your threat model determines which tools and configurations are appropriate. No solution provides absolute security, but layered defenses significantly reduce your attack surface.
 
+### Mapping Threats to Countermeasures
+
+| Threat | Primary Countermeasure | Secondary Countermeasure |
+|--------|----------------------|-------------------------|
+| Employer network monitoring | Avoid workplace WiFi; use mobile data | VPN for all organizing traffic |
+| Device seizure | Full-disk encryption; remote wipe enabled | Disappearing messages on all channels |
+| Legal subpoena | No plaintext records; Signal sealed sender | Briar for offline mesh coordination |
+| Infiltration | Verify safety numbers; vet new members out-of-band | Compartmentalize by function |
+| Service disruption | Pre-configured Briar pairs; offline fallback plan | Designated physical runners |
+
+Revisit your threat model before each major action phase. Threats escalate as organizing becomes more visible.
+
 ## Core Communication Stack
 
 ### Primary Channel: Signal
@@ -142,6 +154,24 @@ services:
 
 Configure lobby mode to require explicit admission for sensitive meetings.
 
+## Choosing Devices for Organizing
+
+Hardware choices matter as much as software. Where budget allows, use dedicated devices for organizing — phones and laptops that never touch employer-managed accounts, networks, or MDM systems.
+
+### Recommended Device Configuration
+
+**Phones:**
+- Enable full-disk encryption (enabled by default on modern Android and iOS)
+- Use a strong alphanumeric passcode, not a 6-digit PIN or biometrics for high-risk situations (biometrics can be legally compelled in some jurisdictions)
+- Install only the apps required for organizing
+- Enable Find My Device with remote wipe authorized
+
+**Laptops:**
+- Enable FileVault (macOS) or LUKS (Linux) full-disk encryption
+- Create a separate user account exclusively for organizing work
+- Configure the firewall to block all inbound connections
+- Use a privacy screen filter in public spaces
+
 ## Operational Security Practices
 
 Technical tools require operational discipline to be effective.
@@ -169,6 +199,19 @@ Technical tools require operational discipline to be effective.
 - Assume all non-encrypted communications may be intercepted
 - Delete sensitive messages after action items are completed
 
+## Compartmentalization Strategy
+
+Not every organizer needs access to every channel. Compartmentalizing information limits damage from infiltration or device seizure.
+
+**Recommended structure:**
+
+- **Public channel** (Signal group, open to all members): Announcements, public picket schedules, general updates
+- **Core committee channel** (Signal, verified safety numbers): Tactical decisions, vote counts, legal strategy
+- **Operations channel** (Session or Matrix, tighter access controls): Specific action coordination, time-sensitive logistics
+- **Emergency channel** (Briar, pre-paired): Fallback when internet-based channels are unavailable
+
+Assign different people as administrators for each tier. If one tier is compromised, the others remain intact.
+
 ## Backup and Recovery
 
 Establish recovery procedures before operational need:
@@ -177,6 +220,30 @@ Establish recovery procedures before operational need:
 2. **Matrix**: Export 4S recovery key, store offline
 3. **Session**: Record recovery phrase in secure location
 4. **All**: Designate trusted contacts for emergency access
+
+## Handling Key Management and Credential Handoff
+
+Strike organizing requires planning for leadership transitions. If an organizer is removed, resigns, or is unavailable, access to shared channels must transfer smoothly without exposing credentials.
+
+**Signal groups**: Signal group admin rights can be transferred by any current admin. Designate at least two admins per group — never a single point of failure.
+
+**Matrix homeserver**: Store the admin credentials in a shared password manager (Bitwarden or Vaultwarden self-hosted) accessible to two or more trusted organizers with hardware key 2FA.
+
+**Jitsi and other self-hosted services**: Document server credentials and SSH keys in an encrypted file stored offline with a designated backup administrator. Use a break-glass procedure: the backup credentials envelope is opened only when the primary admin is unavailable.
+
+## Frequently Asked Questions
+
+**Is Signal safe if management subpoenas our records?**
+Signal stores minimal metadata and no message content on its servers. With disappearing messages enabled, there is nothing to produce in discovery. Signal has responded to government subpoenas with only account creation date and last connection date — no message content.
+
+**What if an infiltrator joins our Signal group?**
+This is an operational risk, not a technical one. Verify new member identities through in-person contact or trusted referrals before granting access to sensitive channels. Compartmentalization limits what any single infiltrator can see. Rotate groups and channels if you suspect compromise.
+
+**Should we use encrypted email instead of Signal?**
+Email is better for asynchronous, document-heavy communication — attaching legal notices, sharing union authorization forms, or communicating with legal counsel. Signal is better for real-time coordination. Use both: ProtonMail for documentation, Signal for day-to-day coordination.
+
+**Can the employer monitor Signal on a company-issued phone?**
+Yes, through MDM software that can log keystrokes or take screenshots at the OS level, regardless of app-level encryption. Never use company-issued devices for organizing communications. Use your personal device on mobile data, not workplace WiFi.
 
 
 ## Related Articles
