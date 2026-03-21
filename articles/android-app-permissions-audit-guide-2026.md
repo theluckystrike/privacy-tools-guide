@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android App Permissions Audit Guide 2026"
-description: "A guide to auditing Android app permissions in 2026. Learn how to review, manage, and control app access using ADB, Play Store insights."
+description: "A guide to auditing Android app permissions in 2026. Learn how to review, manage, and control app access using ADB, Play Store insights"
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-app-permissions-audit-guide-2026/

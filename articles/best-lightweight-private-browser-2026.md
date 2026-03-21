@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Lightweight Private Browser 2026: A Developer Guide"
-description: "A technical comparison of lightweight privacy-focused browsers in 2026, with code examples for testing fingerprinting protection and configuring."
+description: "A technical comparison of lightweight privacy-focused browsers in 2026, with code examples for testing fingerprinting protection and configuring"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-lightweight-private-browser-2026/

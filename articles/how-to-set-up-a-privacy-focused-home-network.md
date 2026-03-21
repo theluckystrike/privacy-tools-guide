@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up a Privacy Focused Home Network"
-description: "Guide to building a privacy-hardened home network with Pi-hole, pfSense, VLAN segmentation, DNS over HTTPS, and WireGuard VPN configuration."
+description: "Guide to building a privacy-hardened home network with Pi-hole, pfSense, VLAN segmentation, DNS over HTTPS, and WireGuard VPN configuration"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-a-privacy-focused-home-network/

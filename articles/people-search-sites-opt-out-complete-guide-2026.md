@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "People Search Sites Opt Out Complete Guide 2026"
-description: "A practical guide for developers and power users on opting out of people search sites. Includes automated removal scripts, API approaches, and direct."
+description: "A practical guide for developers and power users on opting out of people search sites. Includes automated removal scripts, API approaches, and direct"
 date: 2026-03-20
 author: theluckystrike
 permalink: /people-search-sites-opt-out-complete-guide-2026/

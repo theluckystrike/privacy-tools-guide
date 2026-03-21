@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Lawful Basis for Processing Explained"
-description: "A technical guide explaining GDPR lawful bases for processing personal data. Covers all 6 bases with code examples, practical implementation patterns."
+description: "A technical guide explaining GDPR lawful bases for processing personal data. Covers all 6 bases with code examples, practical implementation patterns"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-lawful-basis-for-processing-explained/

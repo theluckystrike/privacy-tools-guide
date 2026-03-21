@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Detect And Remove Stalkerware From Android Phone Comp"
-description: "A technical guide for detecting and removing stalkerware from Android devices. Includes ADB commands, detection scripts, and removal."
+description: "A technical guide for detecting and removing stalkerware from Android devices. Includes ADB commands, detection scripts, and removal"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-and-remove-stalkerware-from-android-phone-comp/

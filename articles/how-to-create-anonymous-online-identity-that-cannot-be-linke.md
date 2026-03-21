@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Create Anonymous Online Identity That Cannot Be Linke"
-description: "A practical guide for developers and power users on creating unlinkable anonymous online identities using cryptographic techniques."
+description: "A practical guide for developers and power users on creating unlinkable anonymous online identities using cryptographic techniques"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-create-anonymous-online-identity-that-cannot-be-linke/

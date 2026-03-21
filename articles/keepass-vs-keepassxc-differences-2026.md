@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "KeePass vs KeePassXC: Key Differences for Developers in 2026"
-description: "A technical comparison of KeePass and KeePassXC for developers and power users, covering plugin ecosystems, cross-platform support, security features."
+description: "A technical comparison of KeePass and KeePassXC for developers and power users, covering plugin ecosystems, cross-platform support, security features"
 date: 2026-03-15
 author: theluckystrike
 permalink: /keepass-vs-keepassxc-differences-2026/

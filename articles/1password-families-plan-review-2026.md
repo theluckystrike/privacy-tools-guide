@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "1Password Families Plan Review 2026: Is It Worth It"
-description: "A technical deep-dive into 1Password Families, covering vault organization, sharing features, admin controls, and CLI integration for developers and power users."
+description: "A technical deep-dive into 1Password Families, covering vault organization, sharing features, admin controls, and CLI integration for developers and power users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /1password-families-plan-review-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Vpn Over Satellite Internet Latency And Performance Consider"
-description: "A technical guide covering VPN performance over satellite internet. Learn about latency implications, protocol selection, and optimization strategies."
+description: "A technical guide covering VPN performance over satellite internet. Learn about latency implications, protocol selection, and optimization strategies"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-over-satellite-internet-latency-and-performance-consider/

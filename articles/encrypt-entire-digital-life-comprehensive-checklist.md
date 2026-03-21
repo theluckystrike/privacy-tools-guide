@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypt Your Entire Digital Life: A Checklist"
-description: "Complete guide to encrypting all data at rest and in transit. Covers device encryption, email, messaging, storage, passwords, and dead man's switches."
+description: "Complete guide to encrypting all data at rest and in transit. Covers device encryption, email, messaging, storage, passwords, and dead man's switches"
 date: 2026-03-20
 author: theluckystrike
 permalink: /encrypt-entire-digital-life--checklist/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN for Accessing Polish Streaming Services from UK 2026"
-description: "A technical guide for developers and power users on using VPNs to access Polish streaming services from the UK. Covers protocol configuration, DNS."
+description: "A technical guide for developers and power users on using VPNs to access Polish streaming services from the UK. Covers protocol configuration, DNS"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-accessing-polish-streaming-services-from-uk-2026/

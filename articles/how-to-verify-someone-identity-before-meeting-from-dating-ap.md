@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Verify Someone's Identity Before Meeting from a Dating App"
-description: "Learn practical techniques to verify identity before meeting someone from a dating app. Includes reverse image search, social media validation, and."
+description: "Meeting someone from a dating app in person requires trust, but blind trust can be dangerous. Catfishing—where someone creates a fake identity—remains"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/

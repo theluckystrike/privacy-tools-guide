@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Processing Agreement Template for Third Party Vendors"
-description: "A practical guide and template for creating GDPR-compliant data processing agreements with third-party vendors. Includes code examples for developers."
+description: "A practical guide and template for creating GDPR-compliant data processing agreements with third-party vendors. Includes code examples for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /data-processing-agreement-template-for-third-party-vendors-g/

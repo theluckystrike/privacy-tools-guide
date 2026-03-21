@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Make Facebook Profile Private 2026"
-description: "Learn how to make your Facebook profile private in 2026 using the Facebook Graph API, browser automation, and manual settings. Complete guide for."
+description: "If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-make-facebook-profile-private-2026/

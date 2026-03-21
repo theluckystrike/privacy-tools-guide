@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Data Processing Agreement Template Guide"
-description: "A practical guide to GDPR data processing agreements for developers. Learn what clauses to include, how to implement DPA handling in code, and ensure."
+description: "A practical guide to GDPR data processing agreements for developers. Learn what clauses to include, how to implement DPA handling in code, and ensure"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /gdpr-data-processing-agreement-template-guide/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Handle Cross Border Data Transfers After Privacy Shie"
-description: "A practical technical guide for developers on managing EU-US data transfers following the Privacy Shield invalidation, covering SCCs, BCRs, and."
+description: "Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessments and end-to-end encryption as the primary mechanism for EU-US data"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-handle-cross-border-data-transfers-after-privacy-shie/

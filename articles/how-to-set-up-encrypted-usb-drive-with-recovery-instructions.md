@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Encrypted Usb Drive With Recovery Instructions"
-description: "A technical guide for setting up encrypted USB drives with recovery instructions. Perfect for developers and power users managing digital."
+description: "A technical guide for setting up encrypted USB drives with recovery instructions. Perfect for developers and power users managing digital"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-encrypted-usb-drive-with-recovery-instructions/

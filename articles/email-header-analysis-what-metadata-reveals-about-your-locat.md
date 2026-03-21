@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Email Header Analysis What Metadata Reveals About Your Locat"
-description: "Learn how to analyze email headers to uncover sender location, email client information, and hidden tracking data. Practical guide for developers and."
+description: "Every email you send or receive contains a wealth of metadata hidden within its headers. While the email body remains encrypted or private, header fields"
 date: 2026-03-16
 author: theluckystrike
 permalink: /email-header-analysis-what-metadata-reveals-about-your-locat/

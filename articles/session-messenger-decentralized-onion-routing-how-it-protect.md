@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Session Messenger Decentralized Onion Routing How It Protect"
-description: "A technical breakdown of how Session messenger uses onion routing to protect communication metadata. Learn about the Oxen Service Node network."
+description: "A technical breakdown of how Session messenger uses onion routing to protect communication metadata. Learn about the Oxen Service Node network"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /session-messenger-decentralized-onion-routing-how-it-protect/

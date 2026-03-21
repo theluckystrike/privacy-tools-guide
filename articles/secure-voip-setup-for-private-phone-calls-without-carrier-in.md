@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure VoIP Setup for Private Phone Calls Without Carrier Involvement"
-description: "Learn how to set up self-hosted VoIP infrastructure using Asterisk, WebRTC, and encrypted protocols to make private phone calls without relying on."
+description: "Learn how to set up self-hosted VoIP infrastructure using Asterisk, WebRTC, and encrypted protocols to make private phone calls without relying on"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /secure-voip-setup-for-private-phone-calls-without-carrier-in/

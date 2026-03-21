@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Set Up Bitcoin Payjoin Transactions For Sender Receiver"
-description: "A practical guide for developers and power users to implement Bitcoin PayJoin, a privacy-enhancing technique that breaks common transaction heuristics."
+description: "A practical guide for developers and power users to implement Bitcoin PayJoin, a privacy-enhancing technique that breaks common transaction heuristics"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/

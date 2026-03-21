@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Request Data Deletion From Companies Not Covered By G"
-description: "Learn practical methods to request data deletion from companies that fall outside GDPR and CCPA protections. Includes email templates, legal."
+description: "Learn practical methods to request data deletion from companies that fall outside GDPR and CCPA protections. Includes email templates, legal"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-data-deletion-from-companies-not-covered-by-g/

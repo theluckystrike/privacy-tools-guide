@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Implement Data Minimization Principle in Application Design"
-description: "A practical guide for developers on implementing data minimization principle in application design with code examples and real-world scenarios."
+description: "A practical guide for developers on implementing data minimization principle in application design with code examples and real-world scenarios"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-data-minimization-principle-in-application-/

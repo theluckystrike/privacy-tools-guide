@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Turkey Social Media Censorship How Government Blocks Twitter"
-description: "A technical guide for developers and power users on how Turkey blocks Twitter, YouTube, and other social media platforms, plus practical workarounds."
+description: "A technical guide for developers and power users on how Turkey blocks Twitter, YouTube, and other social media platforms, plus practical workarounds"
 date: 2026-03-16
 author: theluckystrike
 permalink: /turkey-social-media-censorship-how-government-blocks-twitter/

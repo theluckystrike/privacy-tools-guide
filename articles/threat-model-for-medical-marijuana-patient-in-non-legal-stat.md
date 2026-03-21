@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Threat Model For Medical Marijuana Patient In Non Legal Stat"
-description: "A security and privacy guide for medical marijuana patients in states where cannabis remains illegal. Learn how to protect your digital."
+description: "A security and privacy guide for medical marijuana patients in states where cannabis remains illegal. Learn how to protect your digital"
 date: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-medical-marijuana-patient-in-non-legal-stat/

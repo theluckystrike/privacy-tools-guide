@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"
-description: "Learn how to strip GPS location data from iPhone photos using command-line tools, Python scripts, and automation workflows. Complete guide for."
+description: "Every photo your iPhone captures contains embedded metadata—Exchangeable Image File Format (EXIF) data—that reveals more than just the image itself. This"
 date: 2026-03-15
 author: theluckystrike
 permalink: /iphone-photo-metadata-location-strip-guide/

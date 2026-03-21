@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Destroy Data on Device Before Border Crossing Guide"
-description: "A practical guide for developers and power users on securely destroying data on devices before crossing borders. Learn command-line tools, techniques."
+description: "A practical guide for developers and power users on securely destroying data on devices before crossing borders. Learn command-line tools, techniques"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/

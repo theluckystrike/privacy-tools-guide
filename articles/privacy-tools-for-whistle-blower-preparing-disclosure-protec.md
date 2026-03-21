@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Tools For Whistle Blower Preparing Disclosure Protec"
-description: "A practical guide to privacy tools and techniques for whistleblowers preparing to disclose sensitive information securely. Covers encryption, secure."
+description: "A practical guide to privacy tools and techniques for whistleblowers preparing to disclose sensitive information securely. Covers encryption, secure"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/

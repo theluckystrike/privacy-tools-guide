@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What Happens If Password Manager Company Closes"
-description: "Learn what occurs when password manager services shut down, how to protect your data, and strategies for ensuring continuity. Essential reading for."
+description: "If your password manager company shuts down, you lose access to cloud sync and web interfaces, but your locally cached vault remains intact and your passwords"
 date: 2026-03-15
 author: theluckystrike
 permalink: /what-happens-if-password-manager-company-closes/

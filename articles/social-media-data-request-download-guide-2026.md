@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Using curl for LinkedIn API"
-description: "Learn how to request and download your social media data from major platforms. Includes API methods, automation scripts, and best practices for developers."
+description: "Learn how to request and download your social media data from major platforms. Includes API methods, automation scripts, and best practices for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /social-media-data-request-download-guide-2026/

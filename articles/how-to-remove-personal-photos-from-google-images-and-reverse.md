@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Remove Personal Photos From Google Images And Reverse"
-description: "A practical guide for developers and power users to remove personal photos from Google Images and reverse image search results. Includes code examples."
+description: "A practical guide for developers and power users to remove personal photos from Google Images and reverse image search results. Includes code examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-remove-personal-photos-from-google-images-and-reverse/

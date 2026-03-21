@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Check If Someone Is Reading Your Text Messages"
-description: "A technical guide for developers and power users on detecting SMS interception, checking for message forwarding, and securing your text communications."
+description: "A technical guide for developers and power users on detecting SMS interception, checking for message forwarding, and securing your text communications"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-check-if-someone-is-reading-your-text-messages/

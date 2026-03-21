@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up a Canary Trap to Detect Information Leaks"
-description: "Learn how to implement a canary trap system to identify the source of information leaks. Practical guide for developers and power users with code examples."
+description: "Learn how to implement a canary trap system to identify the source of information leaks. Practical guide for developers and power users with code examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-canary-trap-to-detect-information-leaks/

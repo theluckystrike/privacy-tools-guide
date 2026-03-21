@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iCloud Private Relay: How It Works vs VPN"
-description: "iCloud Private Relay: How It Works vs VPN — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in 2026."
+description: "iCloud Private Relay: How It Works vs VPN — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in 2026"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ios-private-relay-how-it-works-vs-vpn/

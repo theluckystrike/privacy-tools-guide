@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Password Manager CLI Tools: A Developer's Guide"
-description: "A technical comparison of command-line password managers for developers, with practical examples for secure credential management in terminal workflows."
+description: "A technical comparison of command-line password managers for developers, with practical examples for secure credential management in terminal workflows"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-password-manager-cli-tools/

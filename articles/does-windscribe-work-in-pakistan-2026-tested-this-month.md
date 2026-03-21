@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does Windscribe Work in Pakistan? 2026 Tested This Month"
-description: "A technical guide testing Windscribe VPN connectivity in Pakistan, with troubleshooting steps and configuration options for developers and power users."
+description: "A technical guide testing Windscribe VPN connectivity in Pakistan, with troubleshooting steps and configuration options for developers and power users"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-windscribe-work-in-pakistan-2026-tested-this-month/

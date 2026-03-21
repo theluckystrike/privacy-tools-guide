@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Private Bitcoin Full Node At Home For Transact"
-description: "A practical guide for developers and power users to run a Bitcoin full node for private transaction verification. Covers hardware requirements."
+description: "A practical guide for developers and power users to run a Bitcoin full node for private transaction verification. Covers hardware requirements"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-private-bitcoin-full-node-at-home-for-transact/

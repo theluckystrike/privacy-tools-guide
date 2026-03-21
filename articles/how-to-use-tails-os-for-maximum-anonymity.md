@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Tails OS for Maximum Anonymity"
-description: "Step-by-step guide to using Tails OS for maximum anonymity. Covers USB installation, Tor configuration, persistent storage encryption, and operational."
+description: "Step-by-step guide to using Tails OS for maximum anonymity. Covers USB installation, Tor configuration, persistent storage encryption, and operational"
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-use-tails-os-for-maximum-anonymity/

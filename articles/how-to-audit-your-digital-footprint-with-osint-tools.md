@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Using exiftool on photos:"
-description: "Complete guide to finding your personal data online using open-source intelligence tools to identify exposure and privacy leaks."
+description: "Complete guide to finding your personal data online using open-source intelligence tools to identify exposure and privacy leaks"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-audit-your-digital-footprint-with-osint-tools/

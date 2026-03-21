@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Encrypt Google Drive Files: A Developer Guide"
-description: "Learn the most effective methods for encrypting files before uploading to Google Drive. Covers client-side encryption, rclone, Cryptomator, and CLI."
+description: "Learn the most effective methods for encrypting files before uploading to Google Drive. Covers client-side encryption, rclone, Cryptomator, and CLI"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-way-to-encrypt-google-drive-files/

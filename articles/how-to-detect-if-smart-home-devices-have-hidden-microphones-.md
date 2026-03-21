@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Detect If Smart Home Devices Have Hidden Microphones or"
-description: "A technical guide for developers and power users to identify hidden microphones and cameras in smart home devices. Learn network analysis, firmware."
+description: "A technical guide for developers and power users to identify hidden microphones and cameras in smart home devices. Learn network analysis, firmware"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/

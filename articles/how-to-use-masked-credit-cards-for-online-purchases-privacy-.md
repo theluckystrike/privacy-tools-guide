@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Use Masked Credit Cards For Online Purchases Privacy"
-description: "Master masked credit cards for private online transactions. Learn API integration, virtual card generation, and privacy-first spending strategies for."
+description: "Online shopping leaves a financial footprint that data brokers actively harvest. Every transaction links your identity, purchasing habits, and payment details"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-masked-credit-cards-for-online-purchases-privacy-/

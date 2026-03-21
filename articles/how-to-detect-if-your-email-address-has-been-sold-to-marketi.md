@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Detect If Your Email Address Has Been Sold To Marketi"
-description: "Learn practical techniques to discover if your email address has been compromised and sold to marketing data brokers. Includes code examples and."
+description: "Your email address is one of the most valuable pieces of personal data in the advertising ecosystem. Data brokers aggregate, analyze, and sell email addresses"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-detect-if-your-email-address-has-been-sold-to-marketi/

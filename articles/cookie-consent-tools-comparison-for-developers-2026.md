@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cookie Consent Tools Comparison for Developers 2026"
-description: "A technical comparison of cookie consent solutions for developers. Evaluate implementation complexity, customization options, and compliance features."
+description: "A technical comparison of cookie consent solutions for developers. Evaluate implementation complexity, customization options, and compliance features"
 date: 2026-03-20
 author: theluckystrike
 permalink: /cookie-consent-tools-comparison-for-developers-2026/

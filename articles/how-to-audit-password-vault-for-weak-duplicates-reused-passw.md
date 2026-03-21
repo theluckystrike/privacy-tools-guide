@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Audit Password Vault for Weak, Duplicate, and Reused"
-description: "Learn practical methods to audit your password vault for weak passwords, duplicates, and reused credentials. Includes code examples and automated checking."
+description: "Learn practical methods to audit your password vault for weak passwords, duplicates, and reused credentials. Includes code examples and automated checking"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-password-vault-for-weak-duplicates-reused-passw/

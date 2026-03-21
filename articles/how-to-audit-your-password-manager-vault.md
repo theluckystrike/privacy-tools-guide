@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Audit Your Password Manager Vault: A Practical Guide"
-description: "Learn how to audit your password manager vault with CLI tools and automated scripts. Find weak passwords, reused credentials, and security gaps."
+description: "Learn how to audit your password manager vault with CLI tools and automated scripts. Find weak passwords, reused credentials, and security gaps"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-audit-your-password-manager-vault/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Note-Taking Apps Comparison 2026"
-description: "Compare private note apps: Standard Notes, Joplin, Notesnook, Obsidian with sync, Cryptee. Includes E2E encryption details, pricing, sync options, and export formats."
+description: "Compare private note apps: Standard Notes, Joplin, Notesnook, Obsidian with sync, Cryptee. Includes E2E encryption details, pricing, sync options, and export"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-note-taking-apps-comparison/

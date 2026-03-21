@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Multi Account Containers Guide 2026"
-description: "A guide for developers and power users on managing multiple Firefox containers, automating container switching, and integrating."
+description: "A guide for developers and power users on managing multiple Firefox containers, automating container switching, and integrating"
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-multi-account-containers-guide-2026/

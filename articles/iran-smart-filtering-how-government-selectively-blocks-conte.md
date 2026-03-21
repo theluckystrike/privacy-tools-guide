@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Iran Smart Filtering How Government Selectively Blocks Conte"
-description: "Iran Smart Filtering: How Government Selectively Blocks. — privacy guide covering tools, techniques, and best practices to protect your data and."
+description: "Iran operates one of the most sophisticated internet filtering systems in the world. Unlike simple IP blocking or DNS blackholing, the country's 'Smart"
 date: 2026-03-16
 author: theluckystrike
 permalink: /iran-smart-filtering-how-government-selectively-blocks-conte/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Data Subject Access Request Template"
-description: "Learn how to create and process GDPR data subject access requests. Includes practical templates, code examples, and automation strategies for developers."
+description: "Learn how to create and process GDPR data subject access requests. Includes practical templates, code examples, and automation strategies for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-data-subject-access-request-template/

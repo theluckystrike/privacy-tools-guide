@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mumble Encrypted Voice Chat Server Setup For Private Team Co"
-description: "A practical guide to setting up a self-hosted Mumble server with encryption for private team voice communication. Complete installation, configuration."
+description: "A practical guide to setting up a self-hosted Mumble server with encryption for private team voice communication. Complete installation, configuration"
 date: 2026-03-16
 author: theluckystrike
 permalink: /mumble-encrypted-voice-chat-server-setup-for-private-team-co/

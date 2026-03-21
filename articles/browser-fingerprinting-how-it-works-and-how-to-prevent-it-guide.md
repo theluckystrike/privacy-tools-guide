@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Browser Fingerprinting How It Works and How to Prevent It Guide"
-description: "Technical deep-dive on browser fingerprinting. Covers canvas, WebGL, audio context, font enumeration. Includes detection tools and countermeasures."
+description: "Technical deep-dive on browser fingerprinting. Covers canvas, WebGL, audio context, font enumeration. Includes detection tools and countermeasures"
 date: 2026-03-20
 author: theluckystrike
 permalink: /browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/

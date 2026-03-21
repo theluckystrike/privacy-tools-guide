@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Linkedin Deceased Member Profile Removal How To Report And M"
-description: "A technical guide for reporting and memorializing LinkedIn profiles of deceased members. Includes official processes, API considerations, and."
+description: "Report a deceased LinkedIn member's profile through the memorial request form in profile settings or via LinkedIn's support page. Provide a death certificate"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /linkedin-deceased-member-profile-removal-how-to-report-and-m/

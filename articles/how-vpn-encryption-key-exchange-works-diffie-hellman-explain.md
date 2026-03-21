@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Vpn Encryption Key Exchange Works Diffie Hellman."
-description: "A technical deep-dive into how Diffie-Hellman key exchange enables secure VPN encryption. Includes mathematical foundations, code examples, and."
+description: "Diffie-Hellman key exchange enables two parties to establish a shared encryption secret over an insecure channel without transmitting the secret itself—by each"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-vpn-encryption-key-exchange-works-diffie-hellman-explained/

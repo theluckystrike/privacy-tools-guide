@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Audit Android App Permissions: Step-by-Step Guide"
-description: "Technical guide to auditing Android app permissions using ADB, permission groups, automation scripts, and recommended permission configurations."
+description: "Technical guide to auditing Android app permissions using ADB, permission groups, automation scripts, and recommended permission configurations"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /how-to-audit-android-app-permissions-guide/

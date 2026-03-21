@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Github Pull Request Workflow For Distributed Teams"
-description: "Master pull request best practices for remote and distributed software teams. Learn about branch strategies, code review workflows, automation, and."
+description: "Set up an effective distributed PR workflow by adopting trunk-based development with short-lived feature branches (under two days), using PR templates that"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /github-pull-request-workflow-for-distributed-teams/

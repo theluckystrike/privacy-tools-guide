@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Simplelogin Vs Addy Io Vs Firefox Relay Email Alias Comparis"
-description: "A technical comparison of SimpleLogin, Addy.io, and Firefox Relay for developers in 2026, covering API access, self-hosting, pricing, and practical."
+description: "A technical comparison of SimpleLogin, Addy.io, and Firefox Relay for developers in 2026, covering API access, self-hosting, pricing, and practical"
 date: 2026-03-16
 author: theluckystrike
 permalink: /simplelogin-vs-addy-io-vs-firefox-relay-email-alias-comparis/

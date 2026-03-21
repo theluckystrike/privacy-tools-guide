@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ai Sentiment Analyzer Chrome Extension"
-description: "Discover privacy-focused AI sentiment analyzer Chrome extensions that analyze text emotion locally. Compare top tools, understand their data handling."
+description: "Discover privacy-focused AI sentiment analyzer Chrome extensions that analyze text emotion locally. Compare top tools, understand their data handling"
 date: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /ai-sentiment-analyzer-chrome-extension/

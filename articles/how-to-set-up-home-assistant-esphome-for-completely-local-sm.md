@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Home Assistant Esphome For Completely Local Sm"
-description: "A practical guide for developers and power users setting up ESPHome with Home Assistant for privacy-focused, fully local smart home sensors without."
+description: "A practical guide for developers and power users setting up ESPHome with Home Assistant for privacy-focused, fully local smart home sensors without"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-home-assistant-esphome-for-completely-local-sm/

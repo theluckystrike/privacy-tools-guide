@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Wire vs Signal for Business Use: A Technical Comparison"
-description: "A developer-focused comparison of Wire and Signal for business communications, covering encryption, API access, self-hosting, and integration capabilities."
+description: "A developer-focused comparison of Wire and Signal for business communications, covering encryption, API access, self-hosting, and integration capabilities"
 date: 2026-03-15
 author: theluckystrike
 permalink: /wire-vs-signal-for-business-use/

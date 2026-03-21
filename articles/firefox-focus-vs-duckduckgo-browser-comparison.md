@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Focus Vs Duckduckgo Browser Comparison"
-description: "A technical comparison of Firefox Focus and DuckDuckGo Browser for privacy-conscious developers, with code examples for testing tracker blocking and."
+description: "When choosing a privacy-focused mobile browser, developers and power users need more than marketing claims. Firefox Focus and DuckDuckGo Browser represent two"
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-focus-vs-duckduckgo-browser-comparison/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Complete Guide To Removing Real Name From All Online Account"
-description: "A practical walkthrough for developers and power users on how to systematically remove your real name from online accounts, with automation scripts and."
+description: "Systematically replace your real name with pseudonyms across GitHub, Stack Overflow, social media, e-commerce, and developer platforms, using privacy"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /complete-guide-to-removing-real-name-from-all-online-account/

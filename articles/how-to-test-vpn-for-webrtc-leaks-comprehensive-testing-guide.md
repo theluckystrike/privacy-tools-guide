@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Test Vpn For Webrtc Leaks Testing Guide"
-description: "Learn how to identify and prevent WebRTC leaks that can expose your real IP address even when using a VPN. This guide covers testing methods, browser."
+description: "Learn how to identify and prevent WebRTC leaks that can expose your real IP address even when using a VPN. This guide covers testing methods, browser"
 date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /how-to-test-vpn-for-webrtc-leaks--testing-guide/

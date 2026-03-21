@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Custom ROM Privacy Comparison 2026"
-description: "A developer-focused comparison of GrapheneOS, CalyxOS, LineageOS, and DivestOS privacy features, sandboxing, and degoogled Android experiences."
+description: "A developer-focused comparison of GrapheneOS, CalyxOS, LineageOS, and DivestOS privacy features, sandboxing, and degoogled Android experiences"
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-custom-rom-privacy-comparison-2026/

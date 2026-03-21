@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Tell If Your Computer Is Part Of Botnet Check"
-description: "Learn how to identify if your computer has been compromised and added to a botnet. This guide covers warning signs, detection methods, and removal steps."
+description: "Learn how to identify if your computer has been compromised and added to a botnet. This guide covers warning signs, detection methods, and removal steps"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cross Border Data Transfer Mechanisms 2026"
-description: "A technical overview of cross-border data transfer mechanisms in 2026. Covers legal frameworks, technical implementations, and code examples for."
+description: "To legally transfer personal data across borders in 2026, use the EU-US Data Privacy Framework (DPF) for US transfers, Standard Contractual Clauses (SCCs) for"
 date: 2026-03-15
 author: theluckystrike
 permalink: /cross-border-data-transfer-mechanisms-2026/

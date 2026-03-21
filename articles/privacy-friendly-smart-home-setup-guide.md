@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Friendly Smart Home Setup Guide 2026: Home."
-description: "Build a private smart home without cloud services. Home Assistant on Raspberry Pi, local Zigbee/Z-Wave, Pi-hole DNS filtering, VLAN isolation. With."
+description: "Build a private smart home without cloud services. Home Assistant on Raspberry Pi, local Zigbee/Z-Wave, Pi-hole DNS filtering, VLAN isolation. With"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-friendly-smart-home-setup-guide-2026/

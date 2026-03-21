@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Cross Platform Tracking How Ad Networks Follow Yo"
-description: "Learn how ad networks track users across dating apps like Tinder and social platforms like Instagram. Technical deep-dive with code examples for."
+description: "Ad networks track you across dating apps and social platforms using device fingerprinting (IDFA, Android ID), shared SDKs, and behavioral signal correlation"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dating-app-cross-platform-tracking-how-ad-networks-follow-yo/

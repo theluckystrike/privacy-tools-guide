@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ProtonMail vs FastMail Comparison 2026: A Technical Guide"
-description: "A detailed technical comparison of ProtonMail and FastMail for developers and power users in 2026. Covers encryption, API access, SMTP/IMAP, and more."
+description: "A detailed technical comparison of ProtonMail and FastMail for developers and power users in 2026. Covers encryption, API access, SMTP/IMAP, and more"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /protonmail-vs-fastmail-comparison-2026/

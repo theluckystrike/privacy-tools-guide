@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Researcher Participant Data Privacy Irb Compliance Digital T"
-description: "A practical guide for researchers on protecting participant data, maintaining IRB compliance, and selecting privacy-respecting digital tools for human."
+description: "A practical guide for researchers on protecting participant data, maintaining IRB compliance, and selecting privacy-respecting digital tools for human"
 date: 2026-03-16
 author: theluckystrike
 permalink: /researcher-participant-data-privacy-irb-compliance-digital-t/

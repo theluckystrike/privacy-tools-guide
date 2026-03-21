@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Hidden Service Setup Guide Developers"
-description: "A practical developer guide to setting up Tor hidden services. Learn configuration, security best practices, and deployment workflows for .onion services."
+description: "A practical developer guide to setting up Tor hidden services. Learn configuration, security best practices, and deployment workflows for .onion services"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-hidden-service-setup-guide-developers/

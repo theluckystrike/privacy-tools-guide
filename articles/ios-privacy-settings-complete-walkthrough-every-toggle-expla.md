@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "IOS Privacy Settings: Complete Walkthrough"
-description: "A technical guide to iOS privacy settings covering Location Services, App Tracking Transparency, Safari privacy features, and advanced."
+description: "A technical guide to iOS privacy settings covering Location Services, App Tracking Transparency, Safari privacy features, and advanced"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-expla/

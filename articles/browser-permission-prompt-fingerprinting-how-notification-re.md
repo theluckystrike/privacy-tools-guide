@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Browser Permission Prompt Fingerprinting How Notification Re"
-description: "Learn how websites use browser permission prompts for fingerprinting and tracking. Technical analysis of notification request APIs, code examples, and."
+description: "Browser permission prompts represent an often-overlooked vector for user fingerprinting. While most users understand that websites can request access to their"
 date: 2026-03-16
 author: theluckystrike
 permalink: /browser-permission-prompt-fingerprinting-how-notification-re/

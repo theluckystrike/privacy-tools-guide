@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to set up encrypted emergency access your family can use."
-description: "Step-by-step guide to giving family encrypted access to critical passwords and accounts if something happens to you, using 1Password, Bitwarden, and more."
+description: "Step-by-step guide to giving family encrypted access to critical passwords and accounts if something happens to you, using 1Password, Bitwarden, and more"
 date: 2026-03-20
 author: theluckystrike
 permalink: /encrypted-emergency-access-setup-family-password-recovery/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Implement Right To Be Forgotten In Your Application D"
-description: "A practical developer guide for implementing the right to be forgotten (data deletion) in your application's database. Includes code examples for SQL, MongoDB, and user data sanitization patterns."
+description: "A practical developer guide for implementing the right to be forgotten (data deletion) in your application's database. Includes code examples for SQL, MongoDB"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-implement-right-to-be-forgotten-in-your-application-d/

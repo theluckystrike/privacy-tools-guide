@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted Push Notifications How Signal Protects Notificatio"
-description: "Learn how Signal implements encrypted push notifications to prevent Google and Apple from reading your message previews and metadata."
+description: "Learn how Signal implements encrypted push notifications to prevent Google and Apple from reading your message previews and metadata"
 date: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-push-notifications-how-signal-protects-notificatio/

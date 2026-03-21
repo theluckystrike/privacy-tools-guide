@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Signal Disappearing Messages Best Practices"
-description: "Master Signal disappearing messages with developer-focused best practices. Learn timer selection, automation via Signal CLI, cryptographic cleanup, and."
+description: "Set Signal disappearing messages to 30 seconds-5 minutes for sharing credentials or API keys, 1 hour-1 day for team communications, and 1 week-4 weeks for"
 date: 2026-03-15
 author: theluckystrike
 permalink: /signal-disappearing-messages-best-practices/

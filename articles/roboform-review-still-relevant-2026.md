@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "RoboForm Review: Still Relevant in 2026 for Power Users?"
-description: "A technical review of RoboForm password manager evaluating its CLI capabilities, API access, form filling features, and developer-focused capabilities."
+description: "A technical review of RoboForm password manager evaluating its CLI capabilities, API access, form filling features, and developer-focused capabilities"
 date: 2026-03-15
 author: theluckystrike
 permalink: /roboform-review-still-relevant-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Anonymous Domain Registration How To Buy Domain Without Expo"
-description: "A practical guide for developers and power users on registering domain names privately. Learn about privacy-protected registrars, WHOIS guard services."
+description: "A practical guide for developers and power users on registering domain names privately. Learn about privacy-protected registrars, WHOIS guard services"
 date: 2026-03-16
 author: theluckystrike
 permalink: /anonymous-domain-registration-how-to-buy-domain-without-expo/

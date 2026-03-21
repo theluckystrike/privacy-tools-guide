@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns"
-description: "Learn how to configure DNSCrypt Proxy on Linux to encrypt DNS queries with authentication. This guide covers installation, configuration, and."
+description: "DNS encryption is a critical layer of privacy infrastructure. While DoH (DNS over HTTPS) and DoT (DNS over TLS) have gained popularity, DNSCrypt offers an"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/

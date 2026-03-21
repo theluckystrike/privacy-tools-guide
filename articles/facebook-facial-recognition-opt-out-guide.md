@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Facebook Facial Recognition Opt Out Guide"
-description: "A developer-focused guide to understanding and disabling Facebook's facial recognition system. Includes API references, Graph Explorer examples, and programmatic methods for privacy-conscious users."
+description: "A developer-focused guide to understanding and disabling Facebook's facial recognition system. Includes API references, Graph Explorer examples, and"
 date: 2026-03-15
 author: theluckystrike
 permalink: /facebook-facial-recognition-opt-out-guide/

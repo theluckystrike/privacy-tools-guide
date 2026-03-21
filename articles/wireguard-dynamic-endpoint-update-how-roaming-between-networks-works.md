@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "WireGuard Dynamic Endpoint Update"
-description: "A technical guide for developers and power users on configuring WireGuard VPN for roaming between networks, covering dynamic endpoint updates."
+description: "A technical guide for developers and power users on configuring WireGuard VPN for roaming between networks, covering dynamic endpoint updates"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/

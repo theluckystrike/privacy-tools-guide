@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Secure Dead Drop for Digital Information"
-description: "A practical guide to creating secure digital dead drops for anonymous information exchange. Learn to build encrypted drop points using GPG, Tor onion."
+description: "A practical guide to creating secure digital dead drops for anonymous information exchange. Learn to build encrypted drop points using GPG, Tor onion"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secure-dead-drop-for-digital-information/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Remove Personal Data from Data Brokers: Step-by-Step Guide"
-description: "Step-by-step guide to removing info from Spokeo, WhitePages, BeenVerified, Radaris, and 100+ brokers. Includes opt-out URLs, automation tools (DeleteMe, Kanary, Privacy Duck), and pricing."
+description: "Step-by-step guide to removing info from Spokeo, WhitePages, BeenVerified, Radaris, and 100+ brokers. Includes opt-out URLs, automation tools (DeleteMe"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /how-to-remove-personal-data-from-data-brokers/

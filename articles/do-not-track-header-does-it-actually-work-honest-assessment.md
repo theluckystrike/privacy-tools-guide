@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Do Not Track Header Does It Actually Work Honest Assessment"
-description: "A technical deep-dive into the DNT header for developers. Learn how it works, why most trackers ignore it, and what alternatives actually protect your."
+description: "A technical deep-dive into the DNT header for developers. Learn how it works, why most trackers ignore it, and what alternatives actually protect your"
 date: 2026-03-16
 author: theluckystrike
 permalink: /do-not-track-header-does-it-actually-work-honest-assessment/

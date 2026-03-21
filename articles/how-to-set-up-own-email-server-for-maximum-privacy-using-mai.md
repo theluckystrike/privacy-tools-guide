@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Set Up Own Email Server For Maximum Privacy Using Mail In"
-description: "A practical guide for developers and power users to self-host email using Mail-in-a-Box. Learn how to achieve complete control over your email."
+description: "A practical guide for developers and power users to self-host email using Mail-in-a-Box. Learn how to achieve complete control over your email"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/

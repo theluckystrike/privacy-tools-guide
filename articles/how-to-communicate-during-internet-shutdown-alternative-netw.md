@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Communicate During Internet Shutdown Alternative Netw"
-description: "A practical guide to alternative communication methods when the internet goes down. Learn about mesh networks, offline messaging, and peer-to-peer."
+description: "A practical guide to alternative communication methods when the internet goes down. Learn about mesh networks, offline messaging, and peer-to-peer"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-communicate-during-internet-shutdown-alternative-netw/

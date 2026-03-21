@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "macOS Sequoia Privacy Features Review 2026: Complete Guide"
-description: "Explore macOS Sequoia privacy features for developers and power users. Learn about Privacy Manifests, App Sandbox enhancements, Private Relay, and more."
+description: "Explore macOS Sequoia privacy features for developers and power users. Learn about Privacy Manifests, App Sandbox enhancements, Private Relay, and more"
 date: 2026-03-15
 author: theluckystrike
 permalink: /macos-sequoia-privacy-features-review-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Taproot Upgrade Bitcoin Privacy Improvements What Changed Fo"
-description: "Explore how the Taproot upgrade enhanced Bitcoin privacy through Schnorr signatures, MAST, and improved transaction anonymity for developers and power."
+description: "Explore how the Taproot upgrade enhanced Bitcoin privacy through Schnorr signatures, MAST, and improved transaction anonymity for developers and power"
 date: 2026-03-16
 author: theluckystrike
 permalink: /taproot-upgrade-bitcoin-privacy-improvements-what-changed-fo/

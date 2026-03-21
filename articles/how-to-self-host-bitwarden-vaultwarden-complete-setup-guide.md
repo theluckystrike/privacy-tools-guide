@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide"
-description: "Complete Vaultwarden self-hosting guide. Docker setup, reverse proxy, SSL, backups, updates, and security hardening for password vault."
+description: "Complete Vaultwarden self-hosting guide. Docker setup, reverse proxy, SSL, backups, updates, and security hardening for password vault"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/

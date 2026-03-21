@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Smart Refrigerator Data Collection What Samsung Family Hub S"
-description: "A technical analysis of Samsung Family Hub refrigerator network traffic, data endpoints, and privacy implications for developers and power users."
+description: "A technical analysis of Samsung Family Hub refrigerator network traffic, data endpoints, and privacy implications for developers and power users"
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-refrigerator-data-collection-what-samsung-family-hub-s/

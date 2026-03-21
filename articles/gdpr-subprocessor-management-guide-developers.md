@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Subprocessor Management Guide for Developers"
-description: "A practical developer guide to implementing GDPR-compliant subprocessor management. Learn how to track, document, and manage third-party data."
+description: "A practical developer guide to implementing GDPR-compliant subprocessor management. Learn how to track, document, and manage third-party data"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-subprocessor-management-guide-developers/

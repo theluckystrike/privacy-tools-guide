@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Automatic Account Deletion Triggers If You Bec"
-description: "Learn how to configure automatic account deletion triggers to protect your digital legacy. This guide covers dead man's switches, cron jobs, cloud functions, and practical implementations for developers."
+description: "Learn how to configure automatic account deletion triggers to protect your digital legacy. This guide covers dead man's switches, cron jobs, cloud functions"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/

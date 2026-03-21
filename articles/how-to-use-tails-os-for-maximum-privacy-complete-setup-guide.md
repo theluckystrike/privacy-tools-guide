@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Tails OS for Maximum Privacy Complete Setup Guide"
-description: "Complete Tails OS setup guide. Covers USB creation, persistent storage, Tor configuration, common workflows, security considerations."
+description: "Complete Tails OS setup guide. Covers USB creation, persistent storage, Tor configuration, common workflows, security considerations"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/

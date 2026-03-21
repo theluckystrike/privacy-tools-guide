@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Complete Guide To Operating System Hardening For Extreme Pri"
-description: "A practical guide to hardening your operating system for maximum privacy. Learn kernel parameters, sysctl settings, firewall configuration, and."
+description: "Operating system hardening involves reducing the attack surface of your system while maximizing privacy controls. For developers and power users seeking"
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-operating-system-hardening-for-extreme-pri/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows 11 Cortana Disable Privacy Guide"
-description: "A practical guide for developers and power users to disable Cortana in Windows 11, covering Settings, Group Policy, Registry, and PowerShell methods."
+description: "A practical guide for developers and power users to disable Cortana in Windows 11, covering Settings, Group Policy, Registry, and PowerShell methods"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-11-cortana-disable-privacy-guide/

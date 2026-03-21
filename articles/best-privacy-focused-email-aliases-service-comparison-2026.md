@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Privacy-Focused Email Aliases Service Comparison 2026"
-description: "Compare email alias services: SimpleLogin, AnonAddy, Firefox Relay, Apple Hide My Email, Fastmail masks. Pricing, features, and self-hosting options."
+description: "Compare email alias services: SimpleLogin, AnonAddy, Firefox Relay, Apple Hide My Email, Fastmail masks. Pricing, features, and self-hosting options"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-privacy-focused-email-aliases-service-comparison-2026/

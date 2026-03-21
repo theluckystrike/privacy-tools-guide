@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Protect Yourself from Evil Twin WiFi Attack Detection"
-description: "Learn how to detect and protect against evil twin WiFi attacks. Practical detection techniques, network monitoring tools, and security best practices."
+description: "Learn how to detect and protect against evil twin WiFi attacks. Practical detection techniques, network monitoring tools, and security best practices"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-evil-twin-wifi-attack-detection/

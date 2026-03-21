@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Smart Doorbell Alternatives That Store Video Locally Without"
-description: "Discover privacy-focused smart doorbell alternatives that store video footage locally without monthly cloud subscription fees. Technical setup guides."
+description: "Discover privacy-focused smart doorbell alternatives that store video footage locally without monthly cloud subscription fees. Technical setup guides"
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-doorbell-alternatives-that-store-video-locally-without/

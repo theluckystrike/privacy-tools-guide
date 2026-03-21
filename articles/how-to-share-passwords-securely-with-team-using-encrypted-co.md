@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Share Passwords Securely With Team Using Encrypted Co"
-description: "A practical guide for developers and power users on sharing passwords securely within teams using encrypted communication channels, command-line tools."
+description: "A practical guide for developers and power users on sharing passwords securely within teams using encrypted communication channels, command-line tools"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-share-passwords-securely-with-team-using-encrypted-co/

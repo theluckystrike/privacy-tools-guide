@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What To Do If Your Personal Data Appears On People Search"
-description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal."
+description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal"
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-your-personal-data-appears-on-people-search/

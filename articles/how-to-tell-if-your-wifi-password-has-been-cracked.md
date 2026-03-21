@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Tell If Your Wifi Password Has Been Cracked"
-description: "Learn how to detect if your WiFi password has been compromised. This guide covers network monitoring, log analysis, and practical detection techniques."
+description: "Learn how to detect if your WiFi password has been compromised. This guide covers network monitoring, log analysis, and practical detection techniques"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-wifi-password-has-been-cracked/

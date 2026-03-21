@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Verify That Your VPN Is Actually Working and Not Leaking"
-description: "Learn how to verify your VPN is genuinely protecting your traffic. Test methods for DNS leaks, IP leaks, WebRTC leaks, and confirm encryption is working."
+description: "Learn how to verify your VPN is genuinely protecting your traffic. Test methods for DNS leaks, IP leaks, WebRTC leaks, and confirm encryption is working"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/

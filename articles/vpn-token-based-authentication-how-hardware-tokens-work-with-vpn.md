@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN Token-Based Authentication"
-description: "A practical guide to implementing hardware token authentication with your VPN. Learn how YubiKey, Titan Security Key, and other hardware tokens enhance."
+description: "A practical guide to implementing hardware token authentication with your VPN. Learn how YubiKey, Titan Security Key, and other hardware tokens enhance"
 date: 2026-03-17
 author: "Privacy Tools Guide"
 permalink: /vpn-token-based-authentication-how-hardware-tokens-work-with-vpn/

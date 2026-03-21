@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Compliance API Design Best Practices"
-description: "A practical guide to building APIs that respect user privacy while meeting GDPR, CCPA, and other regulatory requirements. Includes code examples and."
+description: "Privacy-compliant API design requires five core practices: minimize data in responses by returning only required fields, enforce purpose-based consent checks"
 date: 2026-03-15
 author: theluckystrike
 permalink: /privacy-compliance-api-design-best-practices/

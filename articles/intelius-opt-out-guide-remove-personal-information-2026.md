@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Intelius Opt-Out Guide: Remove Personal Information in 2026"
-description: "A practical guide for developers and power users to remove personal data from Intelius. Includes automation scripts, API verification, and batch."
+description: "A practical guide for developers and power users to remove personal data from Intelius. Includes automation scripts, API verification, and batch"
 date: 2026-03-20
 author: theluckystrike
 permalink: /intelius-opt-out-guide-remove-personal-information-2026/

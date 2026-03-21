@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Identity Compartmentalization Strategy Separating Real Name"
-description: "A practical guide for developers and power users on implementing identity compartmentalization to separate your real identity from online personas."
+description: "A practical guide for developers and power users on implementing identity compartmentalization to separate your real identity from online personas"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /identity-compartmentalization-strategy-separating-real-name-/

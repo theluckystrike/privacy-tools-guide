@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev"
-description: "Technical analysis of iPhone personal hotspot naming behavior. Learn how your device broadcasts your name to nearby users and how to change it for privacy."
+description: "Technical analysis of iPhone personal hotspot naming behavior. Learn how your device broadcasts your name to nearby users and how to change it for privacy"
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/

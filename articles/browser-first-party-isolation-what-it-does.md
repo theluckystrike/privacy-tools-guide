@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Browser First-Party Isolation: What It Does and How It Works"
-description: "A technical guide to browser first-party isolation. Learn what it is, how it protects your privacy, and how to configure it for secure web browsing."
+description: "A technical guide to browser first-party isolation. Learn what it is, how it protects your privacy, and how to configure it for secure web browsing"
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-first-party-isolation-what-it-does/

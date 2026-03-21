@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Focused File Transfer Tools Comparison 2026"
-description: "Compare privacy-focused file transfer tools: OnionShare, Magic Wormhole, Croc, and Send. Covers encryption, speed, ease of use with real examples."
+description: "Compare privacy-focused file transfer tools: OnionShare, Magic Wormhole, Croc, and Send. Covers encryption, speed, ease of use with real examples"
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-file-transfer-tools-comparison-2026/

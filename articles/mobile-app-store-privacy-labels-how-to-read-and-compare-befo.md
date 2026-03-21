@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mobile App Store Privacy Labels How To Read And Compare Befo"
-description: "A technical guide for developers and power users on understanding Apple App Store and Google Play privacy labels. Learn what each data category means."
+description: "A technical guide for developers and power users on understanding Apple App Store and Google Play privacy labels. Learn what each data category means"
 date: 2026-03-16
 author: theluckystrike
 permalink: /mobile-app-store-privacy-labels-how-to-read-and-compare-befo/

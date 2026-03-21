@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Privacy Focused Phone Specifically For Dating"
-description: "A technical guide for developers and power users to configure a privacy-focused phone for dating apps, secure meetup planning, and safe online dating."
+description: "A technical guide for developers and power users to configure a privacy-focused phone for dating apps, secure meetup planning, and safe online dating"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-privacy-focused-phone-specifically-for-dating-/

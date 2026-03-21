@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What To Do After Clicking Suspicious Link In Email Immediate"
-description: "Learn the critical steps to take immediately after clicking a suspicious link in an email. This guide covers isolation, detection, and recovery for."
+description: "Immediately disconnect from the network, force-quit your browser, and do not enter any credentials or interact with the page that loaded. Once isolated, check"
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-after-clicking-suspicious-link-in-email-immediate/

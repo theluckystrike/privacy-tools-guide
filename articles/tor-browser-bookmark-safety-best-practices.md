@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Bookmark Safety Best Practices"
-description: "Learn essential bookmark security practices for Tor Browser to protect your privacy and avoid metadata leaks."
+description: "Learn essential bookmark security practices for Tor Browser to protect your privacy and avoid metadata leaks"
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-bookmark-safety-best-practices/

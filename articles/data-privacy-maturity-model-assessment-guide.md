@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Privacy Maturity Model Assessment Guide"
-description: "A technical guide to assessing data privacy maturity levels for developers and security teams, with code examples, implementation patterns, and scoring."
+description: "A technical guide to assessing data privacy maturity levels for developers and security teams, with code examples, implementation patterns, and scoring"
 date: 2026-03-15
 author: theluckystrike
 permalink: /data-privacy-maturity-model-assessment-guide/

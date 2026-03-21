@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Business Email Privacy: How to Set Up Encrypted Email."
-description: "A practical technical guide for developers and power users setting up encrypted email for business teams. Covers PGP, S/MIME, hosted solutions, and."
+description: "Email remains the primary communication channel for businesses, yet standard email protocols transmit messages in plaintext. Anyone intercepting traffic"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /business-email-privacy-how-to-set-up-encrypted-email-for-com/

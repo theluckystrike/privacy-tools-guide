@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Self Hosted Matrix Synapse Server For Private"
-description: "A practical guide to deploying your own Matrix Synapse server for secure, encrypted private messaging. Includes Docker setup, configuration, and."
+description: "Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse instance"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-self-hosted-matrix-synapse-server-for-private-/

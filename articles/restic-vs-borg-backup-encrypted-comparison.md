@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Restic vs Borg Backup: Encrypted Comparison for Developers"
-description: "A technical comparison of Restic and Borg backup tools focusing on encryption, deduplication, and performance for developers and power users."
+description: "A technical comparison of Restic and Borg backup tools focusing on encryption, deduplication, and performance for developers and power users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /restic-vs-borg-backup-encrypted-comparison/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Hardware Wallet Inheritance Instructions How To Write Clear"
-description: "A practical guide for developers and power users on creating hardware wallet inheritance documentation that enables non-technical heirs."
+description: "A practical guide for developers and power users on creating hardware wallet inheritance documentation that enables non-technical heirs"
 date: 2026-03-16
 author: theluckystrike
 permalink: /hardware-wallet-inheritance-instructions-how-to-write-clear-/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Private Alternative To Google Drive 2026"
-description: "Discover privacy-focused Google Drive alternatives with self-hosting options, end-to-end encryption, and CLI access for developers and power users."
+description: "Discover privacy-focused Google Drive alternatives with self-hosting options, end-to-end encryption, and CLI access for developers and power users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-private-alternative-to-google-drive-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Migrating from Safari Keychain to Bitwarden"
-description: "A technical guide for developers and power users migrating passwords from Safari Keychain to Bitwarden. Covers CLI export, CSV conversion, and automation."
+description: "A technical guide for developers and power users migrating passwords from Safari Keychain to Bitwarden. Covers CLI export, CSV conversion, and automation"
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrating-from-safari-keychain-to-bitwarden-complete-migration-guide/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Private DNS on Android for All Apps"
-description: "Complete guide to configuring private DNS on Android devices. Learn to encrypt DNS queries system-wide for all apps using Android's built-in Private DNS feature."
+description: "Complete guide to configuring private DNS on Android devices. Learn to encrypt DNS queries system-wide for all apps using Android's built-in Private DNS feature"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-private-dns-on-android-for-all-apps/

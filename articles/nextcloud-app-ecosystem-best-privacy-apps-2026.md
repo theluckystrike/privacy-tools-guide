@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nextcloud App Ecosystem: Best Privacy Apps for 2026"
-description: "A practical guide to the best Nextcloud apps for privacy-conscious developers and power users in 2026. Explore end-to-end encryption, secure file sync."
+description: "A practical guide to the best Nextcloud apps for privacy-conscious developers and power users in 2026. Explore end-to-end encryption, secure file sync"
 date: 2026-03-15
 author: theluckystrike
 permalink: /nextcloud-app-ecosystem-best-privacy-apps-2026/

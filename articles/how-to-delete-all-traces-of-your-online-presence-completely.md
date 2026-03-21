@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Delete All Traces of Your Online Presence Completely"
-description: "A practical guide for developers and power users to remove personal data from the internet, covering data broker opt-outs, social media deletion, and."
+description: "Removing yourself from the internet requires a systematic approach. Most people believe complete deletion is impossible, but with the right tools and"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-delete-all-traces-of-your-online-presence-completely/

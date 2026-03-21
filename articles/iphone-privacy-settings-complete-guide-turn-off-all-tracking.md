@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Iphone Privacy Settings Complete Guide Turn Off All Tracking"
-description: "A technical guide for developers and power users to disable all tracking features on iPhone. Includes Settings app navigation, Shortcuts."
+description: "A technical guide for developers and power users to disable all tracking features on iPhone. Includes Settings app navigation, Shortcuts"
 date: 2026-03-16
 author: theluckystrike
 permalink: /iphone-privacy-settings-complete-guide-turn-off-all-tracking/

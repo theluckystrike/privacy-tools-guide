@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup For Immigration Activist Protecting Undocument"
-description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection."
+description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-immigration-activist-protecting-undocument/

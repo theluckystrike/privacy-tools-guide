@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN Warrant Canary: What It Means and Why It Matters"
-description: "A technical guide to understanding VPN warrant canaries, how they work, and how to interpret them for your security posture."
+description: "A technical guide to understanding VPN warrant canaries, how they work, and how to interpret them for your security posture"
 date: 2026-03-15
 author: theluckystrike
 permalink: /vpn-warrant-canary-what-it-means/

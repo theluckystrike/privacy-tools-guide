@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Voice Mode Not Working Fix 2026"
-description: "Having trouble with ChatGPT voice mode? This guide covers all the common issues and proven solutions to get your voice conversations."
+description: "Having trouble with ChatGPT voice mode? This guide covers all the common issues and proven solutions to get your voice conversations"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /chatgpt-voice-mode-not-working-fix-2026/

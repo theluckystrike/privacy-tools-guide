@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison"
-description: "A practical comparison of Bitwarden and Vaultwarden for self-hosted password management. Covers installation, features, security, and performance for."
+description: "Running your own password manager gives you full control over your data, eliminates subscription costs, and removes dependencies on third-party services. Two"
 date: 2026-03-15
 author: theluckystrike
 permalink: /bitwarden-vs-vaultwarden-self-hosted-comparison/

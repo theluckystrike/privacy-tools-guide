@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Browser Fingerprinting Works Explained"
-description: "A developer-focused explanation of browser fingerprinting techniques, with practical code examples showing how trackers identify users without cookies."
+description: "A developer-focused explanation of browser fingerprinting techniques, with practical code examples showing how trackers identify users without cookies"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-browser-fingerprinting-works-explained/

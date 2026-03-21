@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Remove Personal Information From Ai Training Datasets"
-description: "A practical guide for developers on identifying, removing, and preventing personal data in AI training pipelines and deployed language models."
+description: "A practical guide for developers on identifying, removing, and preventing personal data in AI training pipelines and deployed language models"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-remove-personal-information-from-ai-training-datasets/

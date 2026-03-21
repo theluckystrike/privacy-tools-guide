@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Focused Calendar Apps Comparison 2026"
-description: "Compare privacy-focused calendar apps with end-to-end encryption. Reviews Proton Calendar, Tutanota, EteSync, Nextcloud Calendar, and self-hosted options."
+description: "Compare privacy-focused calendar apps with end-to-end encryption. Reviews Proton Calendar, Tutanota, EteSync, Nextcloud Calendar, and self-hosted options"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-calendar-apps-comparison-2026/

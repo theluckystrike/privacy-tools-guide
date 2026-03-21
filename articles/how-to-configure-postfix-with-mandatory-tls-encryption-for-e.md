@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Configure Postfix With Mandatory Tls Encryption For E"
-description: "A practical guide to securing your email server with mandatory TLS encryption in Postfix. Learn configuration steps, certificate setup, and security."
+description: "A practical guide to securing your email server with mandatory TLS encryption in Postfix. Learn configuration steps, certificate setup, and security"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-postfix-with-mandatory-tls-encryption-for-e/

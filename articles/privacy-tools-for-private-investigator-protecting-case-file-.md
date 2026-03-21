@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Tools For Private Investigator Protecting Case File"
-description: "A guide to digital privacy tools and security practices for private investigators handling sensitive case files."
+description: "A guide to digital privacy tools and security practices for private investigators handling sensitive case files"
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-private-investigator-protecting-case-file-/

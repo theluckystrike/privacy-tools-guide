@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Browser Extension Permissions What To Watch"
-description: "Learn which browser extension permissions pose security risks and how to evaluate them. Practical guide for developers and power users on."
+description: "Learn which browser extension permissions pose security risks and how to evaluate them. Practical guide for developers and power users on"
 date: 2026-03-15
 author: theluckystrike
 permalink: /browser-extension-permissions-what-to-watch/

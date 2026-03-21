@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted Cloud Storage Comparison 2026: A Practical Guide"
-description: "A technical comparison of encrypted cloud storage options for developers. Evaluate encryption models, API access, CLI tools, and zero-knowledge."
+description: "A technical comparison of encrypted cloud storage options for developers. Evaluate encryption models, API access, CLI tools, and zero-knowledge"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /encrypted-cloud-storage-comparison-2026/

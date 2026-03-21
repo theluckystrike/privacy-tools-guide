@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Snapchat Privacy Settings Complete Guide 2026"
-description: "Snapchat Privacy Settings Complete Guide 2026: A. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
+description: "Snapchat Privacy Settings Complete Guide 2026: A. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
 author: theluckystrike
 permalink: /snapchat-privacy-settings-complete-guide-2026/

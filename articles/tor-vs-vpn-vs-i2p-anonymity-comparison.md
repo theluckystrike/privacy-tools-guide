@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor vs VPN vs I2P: Anonymity Network Comparison 2026"
-description: "Compare anonymity networks: Tor, VPN, I2P, and Lokinet. Speed, use cases, threat models, setup examples, DNS leaks, and when to use each for privacy."
+description: "Compare anonymity networks: Tor, VPN, I2P, and Lokinet. Speed, use cases, threat models, setup examples, DNS leaks, and when to use each for privacy"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /tor-vs-vpn-vs-i2p-anonymity-comparison-2026/

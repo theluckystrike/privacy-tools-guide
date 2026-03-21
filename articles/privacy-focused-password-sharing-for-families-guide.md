@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Focused Password Sharing for Families Guide"
-description: "Guide to securely sharing passwords within families using Bitwarden Organizations, 1Password Families, and KeePass shared vaults with setup instructions."
+description: "Guide to securely sharing passwords within families using Bitwarden Organizations, 1Password Families, and KeePass shared vaults with setup instructions"
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-password-sharing-for-families-guide/

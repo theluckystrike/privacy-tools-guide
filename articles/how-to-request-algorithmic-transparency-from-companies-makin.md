@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Request Algorithmic Transparency From Companies Makin"
-description: "A practical guide for developers and power users on exercising your right to understand how automated systems impact your life. Includes templates."
+description: "A practical guide for developers and power users on exercising your right to understand how automated systems impact your life. Includes templates"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-request-algorithmic-transparency-from-companies-makin/

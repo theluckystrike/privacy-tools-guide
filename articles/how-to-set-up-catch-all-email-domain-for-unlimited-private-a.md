@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Set Up Catch All Email Domain For Unlimited Private Aliases"
-description: "A practical guide to configuring catch-all email domains for creating unlimited private email aliases. Perfect for developers and power users who want."
+description: "A practical guide to configuring catch-all email domains for creating unlimited private email aliases. Perfect for developers and power users who want"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/

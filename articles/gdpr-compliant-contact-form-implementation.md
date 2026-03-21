@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Compliant Contact Form Implementation"
-description: "A practical guide for developers implementing GDPR-compliant contact forms. Covers consent management, data handling, and code examples for compliant."
+description: "A practical guide for developers implementing GDPR-compliant contact forms. Covers consent management, data handling, and code examples for compliant"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-contact-form-implementation/

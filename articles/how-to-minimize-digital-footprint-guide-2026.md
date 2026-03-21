@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Minimize Digital Footprint Guide 2026"
-description: "Master digital footprint reduction in 2026 with this practical guide covering browser hardening, data minimization, network-level protection, and."
+description: "Your digital footprint encompasses every data point you leave behind while using the internet—search queries, browsing history, social media activity, device"
 date: 2026-03-15
 author: theluckystrike
 permalink: /how-to-minimize-digital-footprint-guide-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "I2P vs Tor: Anonymous Network Comparison 2026"
-description: "A technical comparison of I2P and Tor anonymous networks for developers and power users. Architecture differences, use cases, performance benchmarks."
+description: "A technical comparison of I2P and Tor anonymous networks for developers and power users. Architecture differences, use cases, performance benchmarks"
 date: 2026-03-15
 author: theluckystrike
 permalink: /i2p-vs-tor-anonymous-network-comparison-2026/

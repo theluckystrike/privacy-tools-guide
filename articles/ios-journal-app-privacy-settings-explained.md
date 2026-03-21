@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iOS Journal App Privacy Settings Explained: A Complete Guide"
-description: "A technical breakdown of iOS Journal app privacy settings for developers and power users."
+description: "A technical breakdown of iOS Journal app privacy settings for developers and power users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ios-journal-app-privacy-settings-explained/

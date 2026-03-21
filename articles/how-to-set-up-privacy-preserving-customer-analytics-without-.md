@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Privacy Preserving Customer Analytics Without"
-description: "A practical guide for developers to implement privacy-first customer analytics. Learn differential privacy, anonymization techniques, and building."
+description: "A practical guide for developers to implement privacy-first customer analytics. Learn differential privacy, anonymization techniques, and building"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-privacy-preserving-customer-analytics-without-/

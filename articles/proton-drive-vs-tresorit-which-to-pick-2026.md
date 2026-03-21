@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton Drive vs Tresorit: Which to Pick in 2026"
-description: "A technical comparison of Proton Drive and Tresorit for developers and power users in 2026, covering encryption, CLI tools, self-hosting options, and."
+description: "Choosing between Proton Drive and Tresorit in 2026 requires examining their encryption models, developer tooling, pricing structures, and integration"
 date: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-vs-tresorit-which-to-pick-2026/

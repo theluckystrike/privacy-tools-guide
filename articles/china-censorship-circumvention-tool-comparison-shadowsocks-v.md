@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "China Censorship Circumvention Tool Comparison Shadowsocks V"
-description: "A technical comparison of Shadowsocks, V2Ray, and Trojan for bypassing China's Great Firewall. Code examples, protocol analysis, and deployment guidance for developers."
+description: "A technical comparison of Shadowsocks, V2Ray, and Trojan for bypassing China's Great Firewall. Code examples, protocol analysis, and deployment guidance for"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /china-censorship-circumvention-tool-comparison-shadowsocks-v/

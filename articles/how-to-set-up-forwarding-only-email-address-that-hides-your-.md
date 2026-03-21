@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Forwarding Only Email Address That Hides Your"
-description: "Learn how to set up a forwarding-only email address to protect your primary inbox from spam, trackers, and unwanted newsletters. Complete guide for."
+description: "Every developer knows the pain of exposing their primary email address across the internet. Whether you're signing up for a new service, contributing to open"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-forwarding-only-email-address-that-hides-your-/

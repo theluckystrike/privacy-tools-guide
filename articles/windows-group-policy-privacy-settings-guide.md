@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows Group Policy Privacy Settings Guide"
-description: "A guide to configuring Windows Group Policy privacy settings for developers and power users. Learn to disable telemetry, manage data."
+description: "A guide to configuring Windows Group Policy privacy settings for developers and power users. Learn to disable telemetry, manage data"
 date: 2026-03-15
 author: theluckystrike
 permalink: /windows-group-policy-privacy-settings-guide/

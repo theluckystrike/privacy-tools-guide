@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up WireGuard VPN on iPhone for Always-On Privacy"
-description: "A technical guide for developers and power users to configure WireGuard VPN on iPhone with always-on functionality for maximum privacy protection."
+description: "A technical guide for developers and power users to configure WireGuard VPN on iPhone with always-on functionality for maximum privacy protection"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/

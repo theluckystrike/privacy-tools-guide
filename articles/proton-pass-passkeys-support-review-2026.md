@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton Pass Passkeys Support Review 2026"
-description: "A technical review of Proton Pass passkeys support for developers and power users. Explore WebAuthn integration, CLI passkey management, and."
+description: "This review examines Proton Pass passkeys support in 2026—its technical capabilities, implementation details, and practical considerations for developers and"
 date: 2026-03-15
 author: theluckystrike
 permalink: /proton-pass-passkeys-support-review-2026/

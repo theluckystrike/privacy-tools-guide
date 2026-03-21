@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Brave vs Safari Privacy Comparison 2026: A Developer Guide"
-description: "A technical privacy comparison between Brave and Safari browsers for developers and power users. Analyze tracking prevention, fingerprinting."
+description: "A technical privacy comparison between Brave and Safari browsers for developers and power users. Analyze tracking prevention, fingerprinting"
 date: 2026-03-15
 author: theluckystrike
 permalink: /brave-vs-safari-privacy-comparison-2026/

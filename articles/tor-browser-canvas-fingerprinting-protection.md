@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Canvas Fingerprinting Protection"
-description: "A guide to understanding how Tor Browser protects against canvas fingerprinting. Learn about Tor's built-in protections, configuration settings, and best practices for maintaining privacy in 2026."
+description: "A guide to understanding how Tor Browser protects against canvas fingerprinting. Learn about Tor's built-in protections, configuration settings, and best"
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-canvas-fingerprinting-protection/

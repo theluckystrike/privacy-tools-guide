@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Consensus: How Directory Authorities Work"
-description: "A technical deep-dive into Tor network consensus mechanism and directory authorities. Learn how relay information is validated, how clients bootstrap."
+description: "A technical deep-dive into Tor network consensus mechanism and directory authorities. Learn how relay information is validated, how clients bootstrap"
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-consensus-how-directory-authorities-work/

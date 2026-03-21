@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Reset And Clean Install Guide Privacy"
-description: "Complete guide to resetting and performing a clean install of Firefox for maximum privacy. Learn backup strategies, profile management, and."
+description: "To reset Firefox while keeping your data, go to about:support and click 'Refresh Firefox' -- this preserves bookmarks and passwords but removes extensions and"
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-reset-and-clean-install-guide-privacy/

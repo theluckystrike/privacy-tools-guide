@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Prepare Social Media Accounts For Memorialization Com"
-description: "A practical checklist and technical guide for preparing social media accounts for memorialization across all major platforms in 2026."
+description: "A practical checklist and technical guide for preparing social media accounts for memorialization across all major platforms in 2026"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-prepare-social-media-accounts-for-memorialization-com/

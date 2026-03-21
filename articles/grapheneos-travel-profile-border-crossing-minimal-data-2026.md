@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GrapheneOS Travel Profile Border Crossing Minimal Data 2026"
-description: "A technical guide for developers and power users on configuring GrapheneOS travel profile to minimize data exposure during border crossings."
+description: "A technical guide for developers and power users on configuring GrapheneOS travel profile to minimize data exposure during border crossings"
 date: 2026-03-16
 author: theluckystrike
 permalink: /grapheneos-travel-profile-border-crossing-minimal-data-2026/

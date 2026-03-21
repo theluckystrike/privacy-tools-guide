@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Vpn Mtu Settings Optimization For Faster Connection."
-description: "Learn how to optimize VPN MTU settings to reduce fragmentation, improve throughput, and eliminate connection issues. A technical guide for beginners."
+description: "Learn how to optimize VPN MTU settings to reduce fragmentation, improve throughput, and eliminate connection issues. A technical guide for beginners"
 date: 2026-03-18
 author: theluckystrike
 permalink: /vpn-mtu-settings-optimization-for-faster-connection-speed-guide/

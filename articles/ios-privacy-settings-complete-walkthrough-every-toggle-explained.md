@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ios Privacy Settings Complete Walkthrough Every Toggle."
-description: "A technical guide covering every privacy toggle in iOS settings. Learn how to lock down your iPhone or iPad with detailed explanations of."
+description: "Review every iOS privacy setting with step-by-step walkthrough: disable tracking (advertising ID), restrict location services (turn off location-based"
 date: 2026-03-18
 author: theluckystrike
 permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-explained/

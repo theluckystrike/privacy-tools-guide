@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Simplex Chat Review: No Identifiers Architecture Analysis"
-description: "Simplex Chat Review: No Identifiers Architecture Analysis — privacy guide covering tools, techniques, and best practices to protect your data and."
+description: "Simplex Chat is worth it if metadata protection is your top priority. It is the only production messaging app that operates without any persistent user"
 date: 2026-03-15
 author: theluckystrike
 permalink: /simplex-chat-review-no-identifiers/

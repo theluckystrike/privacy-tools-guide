@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "WireGuard PostUp/PostDown Scripts for Advanced Routing"
-description: "Master WireGuard PostUp and PostDown scripts for advanced routing. Learn to implement split tunneling, kill switches, custom DNS, and selective traffic."
+description: "Master WireGuard PostUp and PostDown scripts for advanced routing. Learn to implement split tunneling, kill switches, custom DNS, and selective traffic"
 date: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/

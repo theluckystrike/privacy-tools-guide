@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted SMS Alternatives for When Data Connection Is."
-description: "A technical guide for developers and power users exploring encrypted SMS alternatives that work without active data connectivity. Covers carrier-based."
+description: "A technical guide for developers and power users exploring encrypted SMS alternatives that work without active data connectivity. Covers carrier-based"
 date: 2026-03-16
 author: theluckystrike
 permalink: /encrypted-sms-alternatives-for-when-data-connection-is-not-a/

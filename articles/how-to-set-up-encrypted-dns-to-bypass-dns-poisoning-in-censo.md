@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Encrypted Dns To Bypass Dns Poisoning In Censo"
-description: "A technical guide for developers and power users on configuring DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) to bypass DNS poisoning attacks in."
+description: "DNS poisoning represents one of the most common censorship techniques employed by governments and network administrators to block access to specific websites"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Audio Context Fingerprinting How Websites Use Sound Api Trac"
-description: "Learn how websites exploit the Web Audio API to create unique browser fingerprints, and what developers and privacy-conscious users can do about it."
+description: "Learn how websites exploit the Web Audio API to create unique browser fingerprints, and what developers and privacy-conscious users can do about it"
 date: 2026-03-16
 author: theluckystrike
 permalink: /audio-context-fingerprinting-how-websites-use-sound-api-trac/

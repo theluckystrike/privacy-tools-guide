@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tinder Passport Feature Privacy Implications What Location D"
-description: "A technical analysis of how Tinder Passport exposes location data, what information is transmitted during region changes, and privacy considerations."
+description: "A technical analysis of how Tinder Passport exposes location data, what information is transmitted during region changes, and privacy considerations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /tinder-passport-feature-privacy-implications-what-location-d/

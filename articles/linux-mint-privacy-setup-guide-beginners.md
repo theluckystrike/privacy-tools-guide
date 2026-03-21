@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Linux Mint Privacy Setup Guide for Beginners"
-description: "A practical privacy setup guide for Linux Mint. Configure firewall, harden Firefox, enable disk encryption, and secure your system with step-by-step."
+description: "A practical privacy setup guide for Linux Mint. Configure firewall, harden Firefox, enable disk encryption, and secure your system with step-by-step"
 date: 2026-03-15
 author: theluckystrike
 permalink: /linux-mint-privacy-setup-guide-beginners/

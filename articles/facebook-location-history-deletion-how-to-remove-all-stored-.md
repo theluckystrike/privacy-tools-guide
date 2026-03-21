@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Facebook Location History Deletion How To Remove All Stored"
-description: "A technical guide for developers and power users on deleting Facebook location history and removing stored places data from your account using the Data."
+description: "A technical guide for developers and power users on deleting Facebook location history and removing stored places data from your account using the Data"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /facebook-location-history-deletion-how-to-remove-all-stored-/

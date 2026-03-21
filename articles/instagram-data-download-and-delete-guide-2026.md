@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Instagram Data Download and Delete Guide 2026"
-description: "Learn how to download your Instagram data and permanently delete your account with this privacy guide for developers and power users."
+description: "Learn how to download your Instagram data and permanently delete your account with this privacy guide for developers and power users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /instagram-data-download-and-delete-guide-2026/

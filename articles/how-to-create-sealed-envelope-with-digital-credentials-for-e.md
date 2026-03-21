@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Create Sealed Envelope With Digital Credentials For E"
-description: "A practical guide for developers and power users on creating encrypted digital credential envelopes for estate planning. Includes code examples using."
+description: "A practical guide for developers and power users on creating encrypted digital credential envelopes for estate planning. Includes code examples using"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-sealed-envelope-with-digital-credentials-for-e/

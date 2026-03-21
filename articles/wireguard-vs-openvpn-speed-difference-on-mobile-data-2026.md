@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "WireGuard vs OpenVPN Speed Difference on Mobile Data"
-description: "Technical comparison of WireGuard and OpenVPN performance on mobile networks. Includes benchmarks, protocol overhead analysis, and configuration."
+description: "Technical comparison of WireGuard and OpenVPN performance on mobile networks. Includes benchmarks, protocol overhead analysis, and configuration"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/

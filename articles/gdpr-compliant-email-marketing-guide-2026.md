@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Compliant Email Marketing Guide 2026: A Developer"
-description: "A technical guide to building GDPR-compliant email marketing systems in 2026. Covers consent management, double opt-in implementation, and practical."
+description: "A technical guide to building GDPR-compliant email marketing systems in 2026. Covers consent management, double opt-in implementation, and practical"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gdpr-compliant-email-marketing-guide-2026/

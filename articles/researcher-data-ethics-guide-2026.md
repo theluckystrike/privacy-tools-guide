@@ -1,8 +1,7 @@
 ---
-
 layout: default
 title: "Researcher Data Ethics Guide 2026"
-description: "A practical researcher data ethics guide for 2026 covering data collection, storage, consent, privacy-preserving techniques, and compliance for."
+description: "Data ethics has become a critical discipline for anyone handling sensitive information in 2026. Whether you are a developer building research platforms, a data"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /researcher-data-ethics-guide-2026/

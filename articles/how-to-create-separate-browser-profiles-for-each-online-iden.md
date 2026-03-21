@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Create Separate Browser Profiles For Each Online Identity Compartmentalization"
-description: "Learn how to create and manage separate browser profiles to compartmentalize your online identities. Practical examples and CLI tools for developers."
+description: "Learn how to create and manage separate browser profiles to compartmentalize your online identities. Practical examples and CLI tools for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/

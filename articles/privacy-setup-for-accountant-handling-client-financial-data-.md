@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup For Accountant Handling Client Financial Data"
-description: "A practical guide to securing client financial data as an accountant. Covers encryption, password management, secure communication, and workflow."
+description: "A practical guide to securing client financial data as an accountant. Covers encryption, password management, secure communication, and workflow"
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-accountant-handling-client-financial-data-/

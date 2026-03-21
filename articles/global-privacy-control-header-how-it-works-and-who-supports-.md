@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Global Privacy Control Header How It Works And Who Supports"
-description: "A technical guide to the GPC header for developers. Learn how this privacy signal works, which browsers and companies support it, and how to implement it."
+description: "A technical guide to the GPC header for developers. Learn how this privacy signal works, which browsers and companies support it, and how to implement it"
 date: 2026-03-16
 author: theluckystrike
 permalink: /global-privacy-control-header-how-it-works-and-who-supports-/

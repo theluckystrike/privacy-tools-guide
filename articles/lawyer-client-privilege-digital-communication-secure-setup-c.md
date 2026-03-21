@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lawyer Client Privilege Digital Communication Secure Setup C"
-description: "A practical guide for developers and power users setting up secure digital communication channels that maintain lawyer-client privilege. Covers."
+description: "A practical guide for developers and power users setting up secure digital communication channels that maintain lawyer-client privilege. Covers"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /lawyer-client-privilege-digital-communication-secure-setup-c/

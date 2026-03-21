@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Guerrilla Mail vs Temp Mail vs Mailinator"
-description: "A technical comparison of Guerrilla Mail, Temp Mail, and Mailinator for developers and power users. Evaluate security, privacy, and API capabilities."
+description: "A technical comparison of Guerrilla Mail, Temp Mail, and Mailinator for developers and power users. Evaluate security, privacy, and API capabilities"
 date: 2026-03-16
 author: theluckystrike
 permalink: /guerrilla-mail-vs-temp-mail-vs-mailinator-which-disposable-e/

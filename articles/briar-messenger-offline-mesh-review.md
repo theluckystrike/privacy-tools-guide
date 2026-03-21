@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Briar Messenger Offline Mesh Review: Technical Deep Dive"
-description: "Briar Messenger Offline Mesh Review: Technical Deep Dive — privacy guide covering tools, techniques, and best practices to protect your data and."
+description: "Briar is worth it if you need a messenger that works without any internet infrastructure -- it delivers genuine offline mesh networking over Bluetooth LE"
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /briar-messenger-offline-mesh-review/

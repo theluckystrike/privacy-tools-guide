@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Send Large Encrypted Files Without Uploading To Third"
-description: "A guide for developers and power users on sending large encrypted files peer-to-peer without relying on cloud services. Covers age."
+description: "A guide for developers and power users on sending large encrypted files peer-to-peer without relying on cloud services. Covers age"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-send-large-encrypted-files-without-uploading-to-third/

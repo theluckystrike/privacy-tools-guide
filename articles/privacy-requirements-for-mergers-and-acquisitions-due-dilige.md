@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Requirements For Mergers And Acquisitions Due Dilige"
-description: "A technical guide covering privacy requirements, data handling protocols, and compliance checks for M&A due diligence processes."
+description: "A technical guide covering privacy requirements, data handling protocols, and compliance checks for M&A due diligence processes"
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-requirements-for-mergers-and-acquisitions-due-dilige/

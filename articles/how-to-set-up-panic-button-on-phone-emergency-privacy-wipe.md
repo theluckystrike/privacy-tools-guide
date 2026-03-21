@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Panic Button on Phone: Emergency Privacy Wipe"
-description: "A practical guide for developers and power users to set up panic button emergency privacy wipe on Android and iOS. Includes Tasker, Shortcuts, and."
+description: "Setting up a panic button on your phone enables rapid data destruction when you face an emergency situation. Whether you're a journalist protecting sources, a"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/

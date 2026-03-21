@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Tools For Union Organizer Protecting Member Communic"
-description: "A practical guide for union organizers on securing member communications. Covers encrypted messaging, secure file sharing, metadata protection, and."
+description: "Union organizers face unique challenges when protecting member communications. Unlike typical enterprise environments, union communications often involve"
 date: 2026-03-16
 author: theluckystrike
 permalink: /privacy-tools-for-union-organizer-protecting-member-communic/

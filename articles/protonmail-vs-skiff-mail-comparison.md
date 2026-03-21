@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ProtonMail vs Skiff Mail Comparison: A Developer Guide"
-description: "A technical comparison of ProtonMail vs Skiff Mail for developers. Covers encryption models, PGP support, SMTP/IMAP access, API options, and."
+description: "Choose ProtonMail if you need PGP/OpenPGP compatibility, IMAP/SMTP access via Bridge, and a proven security track record with published audits under Swiss"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /protonmail-vs-skiff-mail-comparison/

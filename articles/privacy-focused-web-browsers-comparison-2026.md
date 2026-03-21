@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Web Browsers Comparison 2026"
-description: "Compare privacy browsers: Brave, Firefox hardened, Tor, Mullvad Browser, LibreWolf. Fingerprinting resistance, speed, compatibility, default settings tested."
+description: "Compare privacy browsers: Brave, Firefox hardened, Tor, Mullvad Browser, LibreWolf. Fingerprinting resistance, speed, compatibility, default settings tested"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-web-browsers-comparison-2026/

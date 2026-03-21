@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bitwarden vs KeePassXC: Which to Pick in 2026"
-description: "A practical comparison of Bitwarden and KeePassXC for developers and power users. Evaluate encryption, CLI tools, self-hosting, and workflow integration."
+description: "A practical comparison of Bitwarden and KeePassXC for developers and power users. Evaluate encryption, CLI tools, self-hosting, and workflow integration"
 date: 2026-03-15
 author: theluckystrike
 permalink: /bitwarden-vs-keepassxc-which-to-pick-2026/

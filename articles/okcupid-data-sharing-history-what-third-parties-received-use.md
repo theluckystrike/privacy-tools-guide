@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Okcupid Data Sharing History What Third Parties Received Use"
-description: "OkCupid Data Sharing History: What Third Parties. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
+description: "OkCupid Data Sharing History: What Third Parties. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 author: theluckystrike
 permalink: /okcupid-data-sharing-history-what-third-parties-received-use/

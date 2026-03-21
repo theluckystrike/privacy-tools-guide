@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ProtonMail vs Gmail Privacy: A Full Technical Breakdown"
-description: "A technical comparison of ProtonMail vs Gmail privacy features for developers and power users. Covers encryption, data collection, API access, and."
+description: "Choose ProtonMail if you need true end-to-end encryption where the provider cannot read your emails, minimal data collection, and Swiss legal jurisdiction that"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /protonmail-vs-gmail-privacy-full-breakdown/

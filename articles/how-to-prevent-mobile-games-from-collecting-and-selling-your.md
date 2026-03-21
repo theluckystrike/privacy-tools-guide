@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Prevent Mobile Games From Collecting And Selling Your"
-description: "A technical guide for developers and power users on stopping mobile games from harvesting location data. Learn API-level controls, app analysis, and."
+description: "Stop mobile games from collecting your location data using app permission controls, network traffic inspection, and specialized privacy tools. Games harvest"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-mobile-games-from-collecting-and-selling-your/

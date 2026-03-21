@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mesh Wifi System Privacy Comparison Eero Vs Orbi Vs Deco Dat"
-description: "A technical breakdown of data collection practices across Amazon Eero, Netgear Orbi, and TP-Link Deco mesh WiFi systems for privacy-conscious users."
+description: "A technical breakdown of data collection practices across Amazon Eero, Netgear Orbi, and TP-Link Deco mesh WiFi systems for privacy-conscious users"
 date: 2026-03-16
 author: theluckystrike
 permalink: /mesh-wifi-system-privacy-comparison-eero-vs-orbi-vs-deco-dat/

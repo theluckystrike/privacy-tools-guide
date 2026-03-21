@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Guides Hub"
-description: "Complete guide to guides topics — all articles in one place."
+description: "Browse every privacy and security guide in one place — from VPN setup and password manager reviews to encrypted messaging comparisons and browser"
 date: 2026-03-15
 permalink: /guides-hub/
 categories: [guides]

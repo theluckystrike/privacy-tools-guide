@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Syncthing Setup Guide for Private File Sync"
-description: "A practical guide to setting up Syncthing for secure, decentralized file synchronization between your devices. Perfect for developers and power users."
+description: "A practical guide to setting up Syncthing for secure, decentralized file synchronization between your devices. Perfect for developers and power users"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /syncthing-setup-guide-private-file-sync/

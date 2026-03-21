@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Private Cloud Storage for Android in 2026"
-description: "A technical comparison of self-hosted and encrypted cloud storage solutions for Android. Evaluate privacy, sync performance, and developer-friendly."
+description: "A technical comparison of self-hosted and encrypted cloud storage solutions for Android. Evaluate privacy, sync performance, and developer-friendly"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-private-cloud-storage-for-android-2026/

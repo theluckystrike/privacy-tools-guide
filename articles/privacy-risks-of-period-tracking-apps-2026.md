@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Risks of Period Tracking Apps 2026"
-description: "Analysis of privacy risks in menstrual tracking apps (Clue, Flo, Stardust, Drip). Data collection, legal risks post-Dobbs, self-hosted alternatives."
+description: "Analysis of privacy risks in menstrual tracking apps (Clue, Flo, Stardust, Drip). Data collection, legal risks post-Dobbs, self-hosted alternatives"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-risks-period-tracking-apps/

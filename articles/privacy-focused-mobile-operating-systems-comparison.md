@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Mobile Operating Systems Comparison"
-description: "Compare privacy mobile OS: GrapheneOS, CalyxOS, LineageOS, /e/OS, Ubuntu Touch. Device support, banking apps, privacy features, app compatibility."
+description: "Compare privacy mobile OS: GrapheneOS, CalyxOS, LineageOS, /e/OS, Ubuntu Touch. Device support, banking apps, privacy features, app compatibility"
 date: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-mobile-operating-systems-comparison/

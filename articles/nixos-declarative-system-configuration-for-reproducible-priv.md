@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nixos Declarative System Configuration For Reproducible Priv"
-description: "Learn how to use NixOS to create reproducible, privacy-hardened Linux systems through declarative configuration. This guide covers declarative package."
+description: "Learn how to use NixOS to create reproducible, privacy-hardened Linux systems through declarative configuration. This guide covers declarative package"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nixos-declarative-system-configuration-for-reproducible-priv/

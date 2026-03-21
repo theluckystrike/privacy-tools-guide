@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Configure Trezor Hardware Wallet For Maximum Transact"
-description: "A practical technical guide for developers and power users to configure Trezor hardware wallets with privacy-focused settings. Learn coin control, Tor."
+description: "A practical technical guide for developers and power users to configure Trezor hardware wallets with privacy-focused settings. Learn coin control, Tor"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-trezor-hardware-wallet-for-maximum-transact/

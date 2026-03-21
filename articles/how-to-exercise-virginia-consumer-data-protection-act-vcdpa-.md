@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Exercise Virginia Consumer Data Protection Act Vcdpa"
-description: "Learn how to exercise your privacy rights under the Virginia Consumer Data Protection Act (VCDPA). This guide covers data access requests, deletion."
+description: "Learn how to exercise your privacy rights under the Virginia Consumer Data Protection Act (VCDPA). This guide covers data access requests, deletion"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/

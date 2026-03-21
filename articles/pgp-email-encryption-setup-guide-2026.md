@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "PGP Email Encryption Setup Guide 2026"
-description: "A technical guide to setting up PGP email encryption in 2026. Covers GPG key generation, key management, client configuration, and practical usage."
+description: "A technical guide to setting up PGP email encryption in 2026. Covers GPG key generation, key management, client configuration, and practical usage"
 date: 2026-03-15
 author: theluckystrike
 permalink: /pgp-email-encryption-setup-guide-2026/

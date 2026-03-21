@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mimblewimble Protocol Privacy Features How Grin And Beam Pro"
-description: "A technical deep dive into the Mimblewimble protocol's privacy mechanisms, covering Confidential Transactions, Pederson commitments, cut-through, and implementation differences between Grin and Beam."
+description: "A technical deep dive into the Mimblewimble protocol's privacy mechanisms, covering Confidential Transactions, Pederson commitments, cut-through, and"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/

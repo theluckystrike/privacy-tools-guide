@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Smart Garage Door Opener Privacy What Myq Chamberlain Track"
-description: "A technical deep dive into the data collection practices of MyQ and Chamberlain smart garage door openers, including API analysis and privacy."
+description: "A technical deep dive into the data collection practices of MyQ and Chamberlain smart garage door openers, including API analysis and privacy"
 date: 2026-03-16
 author: theluckystrike
 permalink: /smart-garage-door-opener-privacy-what-myq-chamberlain-track-/

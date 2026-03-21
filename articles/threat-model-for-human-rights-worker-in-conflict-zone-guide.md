@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Threat Model For Human Rights Worker In Conflict Zone Guide"
-description: "A threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement."
+description: "A threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/

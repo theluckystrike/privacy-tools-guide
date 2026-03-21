@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bitwarden Custom Fields Usage Guide"
-description: "A guide to using Bitwarden custom fields for developers and power users. Learn how to organize credentials, automate workflows, and."
+description: "To use Bitwarden custom fields, open any vault item, scroll to the 'Custom Fields' section, and click 'Add Item' to create Text (visible metadata), Hidden"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /bitwarden-custom-fields-usage-guide/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Vs Chromium Privacy Architecture"
-description: "A deep technical comparison of Firefox and Chromium browser privacy architectures. Learn about process isolation, cookie handling, storage."
+description: "A deep technical comparison of Firefox and Chromium browser privacy architectures. Learn about process isolation, cookie handling, storage"
 date: 2026-03-15
 author: theluckystrike
 permalink: /firefox-vs-chromium-privacy-architecture/

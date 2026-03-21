@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Post Quantum Encryption In Messaging Apps Preparing For Quan"
-description: "A practical guide for developers and power users on post-quantum cryptography in messaging apps, featuring code examples and implementation strategies."
+description: "A practical guide for developers and power users on post-quantum cryptography in messaging apps, featuring code examples and implementation strategies"
 date: 2026-03-16
 author: theluckystrike
 permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/

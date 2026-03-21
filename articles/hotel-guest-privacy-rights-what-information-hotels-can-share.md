@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Hotel Guest Privacy Rights What Information Hotels Can Share"
-description: "A practical guide for developers and power users on hotel guest privacy rights. Learn what information hotels can legally share with law enforcement."
+description: "A practical guide for developers and power users on hotel guest privacy rights. Learn what information hotels can legally share with law enforcement"
 date: 2026-03-16
 author: theluckystrike
 permalink: /hotel-guest-privacy-rights-what-information-hotels-can-share/

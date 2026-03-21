@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Screen Lock Privacy Best Settings"
-description: "Configure Android screen lock privacy settings for maximum security. Expert guide covering lock screen options, biometric authentication, and advanced."
+description: "Configure Android screen lock privacy settings for maximum security. Expert guide covering lock screen options, biometric authentication, and advanced"
 date: 2026-03-15
 author: theluckystrike
 permalink: /android-screen-lock-privacy-best-settings/

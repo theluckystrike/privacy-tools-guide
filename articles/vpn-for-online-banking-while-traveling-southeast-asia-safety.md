@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN for Online Banking While Traveling Southeast Asia Safety"
-description: "A technical guide to securing your online banking with VPN while traveling through Southeast Asia. Learn setup, configuration, and security best practices."
+description: "A technical guide to securing your online banking with VPN while traveling through Southeast Asia. Learn setup, configuration, and security best practices"
 date: 2026-03-16
 author: theluckystrike
 permalink: /vpn-for-online-banking-while-traveling-southeast-asia-safety/

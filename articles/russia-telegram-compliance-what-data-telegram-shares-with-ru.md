@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Russia Telegram Compliance What Data Telegram Shares With Ru"
-description: "Russia Telegram Compliance: What Data Telegram Shares. — privacy guide covering tools, techniques, and best practices to protect your data and digital."
+description: "Russia Telegram Compliance: What Data Telegram Shares. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 author: theluckystrike
 permalink: /russia-telegram-compliance-what-data-telegram-shares-with-ru/

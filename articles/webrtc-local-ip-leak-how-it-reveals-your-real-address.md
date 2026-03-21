@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real Address"
-description: "Discover how WebRTC local IP leaks can expose your real network address even when using a VPN. Learn practical detection methods and mitigation."
+description: "Discover how WebRTC local IP leaks can expose your real network address even when using a VPN. Learn practical detection methods and mitigation"
 date: 2026-03-16
 author: theluckystrike
 permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/

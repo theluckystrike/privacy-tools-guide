@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Background Location Tracking What Happens When Ap"
-description: "Understand how dating apps track your location in the background, what data they collect, and the privacy implications for developers and power users."
+description: "Understand how dating apps track your location in the background, what data they collect, and the privacy implications for developers and power users"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /dating-app-background-location-tracking-what-happens-when-ap/

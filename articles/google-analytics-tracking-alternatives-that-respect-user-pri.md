@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Google Analytics Tracking Alternatives That Respect User Pri"
-description: "A practical guide to privacy-first analytics solutions for developers and power users. Compare self-hosted options, privacy-focused platforms, and."
+description: "As web analytics become increasingly regulated and user privacy expectations rise, developers seek Google Analytics alternatives that provide meaningful"
 date: 2026-03-16
 author: theluckystrike
 permalink: /google-analytics-tracking-alternatives-that-respect-user-pri/

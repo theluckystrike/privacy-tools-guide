@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gdpr Compliance Tools For Small Business Complete Implementa"
-description: "A practical checklist of GDPR compliance tools for small businesses. Learn which software and processes you need to meet requirements."
+description: "A practical checklist of GDPR compliance tools for small businesses. Learn which software and processes you need to meet requirements"
 date: 2026-03-16
 author: theluckystrike
 permalink: /gdpr-compliance-tools-for-small-business-complete-implementa/

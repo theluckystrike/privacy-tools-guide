@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Set Up Data Subject Access Request Workflow"
-description: "A practical technical guide for developers building GDPR-compliant data subject access request (DSAR) workflows. Covers automated pipelines, identity."
+description: "A practical technical guide for developers building GDPR-compliant data subject access request (DSAR) workflows. Covers automated pipelines, identity"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-data-subject-access-request-workflow-for-gdpr-/

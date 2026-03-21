@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Browser Storage Partitioning Works Firefox Chrome Privac"
-description: "A technical guide to browser storage partitioning explaining how Firefox and Chrome isolate storage to prevent cross-site tracking, with code examples."
+description: "A technical guide to browser storage partitioning explaining how Firefox and Chrome isolate storage to prevent cross-site tracking, with code examples"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-browser-storage-partitioning-works-firefox-chrome-privac/

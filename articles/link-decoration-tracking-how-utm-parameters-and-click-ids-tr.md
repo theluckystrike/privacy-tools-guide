@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Link Decoration Tracking How Utm Parameters And Click Ids Tr"
-description: "A technical deep-dive into link decoration tracking, UTM parameters, click IDs, and how they enable cross-site user tracking. Learn to identify and."
+description: "Link decoration is a tracking technique where query parameters like utmsource, fbclid, gclid, and ga are appended to URLs to carry user identity and campaign"
 date: 2026-03-16
 author: theluckystrike
 permalink: /link-decoration-tracking-how-utm-parameters-and-click-ids-tr/

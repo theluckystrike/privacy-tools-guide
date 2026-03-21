@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Privacy-Focused DNS Resolvers Compared"
-description: "Technical comparison of 2026 DNS resolvers. Includes privacy policies, logging practices, speed benchmarks, and configuration for all major devices."
+description: "Technical comparison of 2026 DNS resolvers. Includes privacy policies, logging practices, speed benchmarks, and configuration for all major devices"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/

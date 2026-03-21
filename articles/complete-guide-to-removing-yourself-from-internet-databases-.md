@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Complete Guide To Removing Yourself From Internet Databases"
-description: "A practical technical guide for removing your data from people search sites and data broker databases. Includes automated opt-out scripts, API."
+description: "A practical technical guide for removing your data from people search sites and data broker databases. Includes automated opt-out scripts, API"
 date: 2026-03-16
 author: theluckystrike
 permalink: /complete-guide-to-removing-yourself-from-internet-databases-/

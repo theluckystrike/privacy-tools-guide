@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "1password Cli Secrets Management Guide"
-description: "Learn how to use 1Password CLI for secure secrets management. This guide covers authentication, retrieving secrets, environment variables, and best."
+description: "Learn how to use 1Password CLI for secure secrets management. This guide covers authentication, retrieving secrets, environment variables, and best"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /1password-cli-secrets-management-guide/

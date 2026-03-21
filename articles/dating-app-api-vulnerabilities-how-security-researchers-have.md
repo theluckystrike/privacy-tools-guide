@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Api Vulnerabilities How Security Researchers Have"
-description: "A guide to dating app API vulnerabilities and how security researchers have discovered and reported data exposure flaws in popular platforms."
+description: "A guide to dating app API vulnerabilities and how security researchers have discovered and reported data exposure flaws in popular platforms"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /dating-app-api-vulnerabilities-how-security-researchers-have/

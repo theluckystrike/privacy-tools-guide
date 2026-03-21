@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Local-Only Security Camera Setup Without Cloud Using Frigate"
-description: "A practical guide for setting up Frigate NVR for completely local security camera monitoring without cloud dependencies. Keep your video footage private."
+description: "A practical guide for setting up Frigate NVR for completely local security camera monitoring without cloud dependencies. Keep your video footage private"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /local-only-security-camera-setup-without-cloud-using-frigate/

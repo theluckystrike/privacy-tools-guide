@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does NordVPN Obfuscated Servers Work in China? 2026 Test"
-description: "A technical deep-dive testing NordVPN obfuscated servers in China. Includes connection methods, protocol analysis, and practical configuration examples."
+description: "A technical deep-dive testing NordVPN obfuscated servers in China. Includes connection methods, protocol analysis, and practical configuration examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-nordvpn-obfuscated-servers-work-in-china-2026-test/

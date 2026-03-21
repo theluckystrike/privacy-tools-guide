@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Healthcare Privacy Rights Hipaa What Patients Can Request Re"
-description: "A practical guide for developers and power users on patient rights under HIPAA, including medical record access requests, amendments, and accounting of."
+description: "The Health Insurance Portability and Accountability Act (HIPAA) grants patients significant rights over their protected health information (PHI). For"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /healthcare-privacy-rights-hipaa-what-patients-can-request-re/

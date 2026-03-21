@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Connection Troubleshooting Guide"
-description: "A guide for troubleshooting Tor Browser connection issues in 2026. Learn how to diagnose and resolve common connection problems, bridge."
+description: "A guide for troubleshooting Tor Browser connection issues in 2026. Learn how to diagnose and resolve common connection problems, bridge"
 date: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-connection-troubleshooting-guide/

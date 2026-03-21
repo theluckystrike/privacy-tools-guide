@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Secureboot Plus Encryption On Fedora Linux For"
-description: "A guide to configuring SecureBoot and full disk encryption on Fedora Linux for enhanced security. Step-by-step instructions for."
+description: "Combine SecureBoot with LUKS full disk encryption on Fedora to create multi-layer security protecting against bootkits and physical theft. SecureBoot verifies"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/

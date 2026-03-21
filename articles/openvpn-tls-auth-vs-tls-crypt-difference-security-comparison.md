@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison"
-description: "A technical comparison of OpenVPN tls-auth and tls-crypt options for securing VPN connections. Learn which method provides better protection for your."
+description: "A technical comparison of OpenVPN tls-auth and tls-crypt options for securing VPN connections. Learn which method provides better protection for your"
 date: 2026-03-16
 author: theluckystrike
 permalink: /openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Authenticator App 2026 Review: A Developer's Guide"
-description: "A practical comparison of authenticator apps for developers and power users. Evaluate TOTP generation, CLI tools, backup options, and self-hosted."
+description: "A practical comparison of authenticator apps for developers and power users. Evaluate TOTP generation, CLI tools, backup options, and self-hosted"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-authenticator-app-2026-review/

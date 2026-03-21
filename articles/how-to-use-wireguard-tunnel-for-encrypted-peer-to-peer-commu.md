@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Use Wireguard Tunnel For Encrypted Peer To Peer Commu"
-description: "A practical guide for developers and power users on setting up WireGuard tunnels for secure, encrypted peer-to-peer communication between devices."
+description: "A practical guide for developers and power users on setting up WireGuard tunnels for secure, encrypted peer-to-peer communication between devices"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-wireguard-tunnel-for-encrypted-peer-to-peer-commu/

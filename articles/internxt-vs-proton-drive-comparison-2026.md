@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Internxt Vs Proton Drive Comparison 2026"
-description: "A technical comparison of Internxt and Proton Drive for developers. Analyze encryption models, API capabilities, CLI tools, pricing, and integration."
+description: "A technical comparison of Internxt and Proton Drive for developers. Analyze encryption models, API capabilities, CLI tools, pricing, and integration"
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /internxt-vs-proton-drive-comparison-2026/
