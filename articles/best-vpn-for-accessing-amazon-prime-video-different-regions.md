@@ -32,6 +32,20 @@ Amazon employs several detection methods to identify and block VPN connections:
 
 5. **Account Behavior Analysis**: Login patterns and payment method billing addresses may trigger additional verification.
 
+## Commercial VPN Comparison for Prime Video
+
+Not all commercial VPNs handle Prime Video equally. Here is how the major options compare on the criteria that matter most for streaming:
+
+| VPN | Dedicated Streaming IPs | Obfuscation | Kill Switch | Avg. Speed | No-Log Audited |
+|-----|------------------------|-------------|-------------|------------|----------------|
+| ExpressVPN | Yes | Yes (Lightway) | Yes | Excellent | Yes |
+| NordVPN | Yes (IP Rotation) | Yes (Obfuscated) | Yes | Very Good | Yes |
+| Surfshark | Yes | Yes (NoBorders) | Yes | Good | Yes |
+| Private Internet Access | Dedicated IP add-on | Yes (Shadowsocks) | Yes | Good | Yes |
+| Mullvad | No | Yes (DAITA) | Yes | Very Good | Yes |
+
+For Prime Video specifically, ExpressVPN and NordVPN have the most consistent track record because they actively rotate streaming IPs when Amazon blacklists them. Mullvad, while excellent for privacy, does not offer streaming-optimized servers and is more likely to encounter blocks.
+
 ## Essential VPN Configuration for Prime Video
 
 For developers who want to integrate VPN testing or configuration into their workflows, here are the key parameters to understand:
@@ -149,6 +163,71 @@ Different VPN protocols offer varying levels of obfuscation:
 | OpenVPN TCP | Moderate | Strong | Stunnel |
 | Shadowsocks | Good | Moderate | Built-in |
 
+## Step-by-Step: Self-Hosted WireGuard Setup
+
+Self-hosting gives you a clean IP that Amazon has never seen. Here is the full setup on DigitalOcean:
+
+### 1. Provision the Server
+
+```bash
+# Deploy WireGuard on DigitalOcean
+doctl compute droplet create vpn-server \
+  --image ubuntu-22-04-x64 \
+  --size s-1vcpu-1gb \
+  --region nyc1
+```
+
+Choose a region that matches the Prime Video catalog you want to access. `nyc1` gives you access to the US catalog; `lon1` gives you the UK catalog.
+
+### 2. Install and Configure WireGuard
+
+```bash
+# Install WireGuard
+apt-get update && apt-get install -y wireguard
+
+# Generate keys
+wg genkey | tee /etc/wireguard/privatekey | wg pubkey > /etc/wireguard/publickey
+
+# Create server config
+cat > /etc/wireguard/wg0.conf << EOF
+[Interface]
+PrivateKey = $(cat /etc/wireguard/privatekey)
+Address = 10.0.0.1/24
+ListenPort = 51820
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+EOF
+
+# Enable IP forwarding
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+sysctl -p
+
+# Start WireGuard
+systemctl enable wg-quick@wg0
+systemctl start wg-quick@wg0
+```
+
+### 3. Configure Your Client
+
+Add a peer entry in the server config for each client device, then create the corresponding client config:
+
+```ini
+[Interface]
+PrivateKey = <client-private-key>
+Address = 10.0.0.2/32
+DNS = 1.1.1.1
+
+[Peer]
+PublicKey = <server-public-key>
+Endpoint = <droplet-ip>:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
+```
+
+### 4. Verify Before Streaming
+
+After connecting, verify your visible IP matches the Droplet's public IP, run a DNS leak test, and check WebRTC exposure in a browser before loading Prime Video. A clean self-hosted IP typically works on the first attempt.
+
 ## Common Issues and Solutions
 
 ### Error Message: "Unable to Verify Subscription"
@@ -196,22 +275,19 @@ For developers seeking more programmatic solutions:
 3. **Smart DNS Services**: Less secure but faster for streaming
 4. **Self-Hosted VPN**: Complete control over server infrastructure
 
-Building your own VPN server on a cloud provider gives you a clean IP that isn't in blocklists:
+## Frequently Asked Questions
 
-```bash
-# Deploy WireGuard on DigitalOcean
-doctl compute droplet create vpn-server \
-  --image ubuntu-22-04-x64 \
-  --size s-1vcpu-1gb \
-  --region nyc1
+**Why does Prime Video work with some VPN servers but not others on the same provider?**
+Amazon blacklists IP ranges, not entire VPN services. A provider may have hundreds of servers but only a dozen with clean IPs at any given time. Most streaming-optimized VPNs publish server recommendations or offer a "streaming" filter in their app — use those rather than selecting by lowest ping.
 
-# Install WireGuard
-apt-get update
-apt-get install wireguard
+**Does using a VPN for regional streaming violate Amazon's terms of service?**
+Amazon's terms prohibit using tools to circumvent geographic restrictions. The risk is account suspension rather than legal liability, and enforcement is rare for personal use. Check the current terms if this is a concern.
 
-# Generate keys
-wg genkey | tee privatekey | wg pubkey > publickey
-```
+**Will a VPN slow down 4K HDR streaming?**
+A well-configured WireGuard VPN adds 5-15 ms of latency and negligible throughput overhead for most connections. For 4K HDR, you need approximately 25 Mbps; any modern VPN server on a gigabit connection handles this comfortably. OpenVPN TCP on congested servers is more likely to cause buffering.
+
+**Can I use a VPN on a smart TV for Prime Video?**
+Smart TVs rarely support VPN clients natively. Options include: installing the VPN on your router (router-level coverage), sharing a VPN connection from a laptop via WiFi hotspot, or using a travel router flashed with OpenWrt that supports WireGuard.
 
 
 ## Related Articles
