@@ -451,7 +451,7 @@ Recommended only if high threat model justifies it
 - [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 - [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/guides-hub/how-to-use-wireguard-for-self-hosted-vpn-2026/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/guides-hub/)
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 
 Built by theluckystrike** — More at [zovo.one](https://zovo.one)
