@@ -82,6 +82,79 @@ Message 3: Key = KDF(Key_from_Message2, 3)
 
 This creates a chain where each message key depends on all previous keys, making retroactively decrypting messages computationally infeasible.
 
+## Cryptographic Foundations
+
+To deeply understand E2EE, grasp the foundational concepts:
+
+**Symmetric vs Asymmetric Encryption**:
+- Symmetric: One key encrypts and decrypts. Fast but requires sharing the key somehow. Used for bulk data encryption.
+- Asymmetric: Public key encrypts, private key decrypts. Slower but solves the key-sharing problem.
+
+E2EE uses both: asymmetric encryption to securely share session keys, then symmetric encryption for bulk message encryption.
+
+**Key Derivation Functions (KDF)**: When you have a password, you can't use it directly as a key (wrong length, insufficient entropy). KDFs like PBKDF2, Argon2, and scrypt repeatedly hash the password with a salt to produce a proper key:
+
+```python
+# Simple KDF concept
+def simple_kdf(password: str, salt: bytes, iterations: int) -> bytes:
+    result = password.encode() + salt
+    for _ in range(iterations):
+        result = hash(result)  # Slow iteration makes brute-force expensive
+    return result[:32]  # 256-bit key
+
+# Production: Use Argon2, which is memory-hard (resists GPU attacks)
+from argon2 import PasswordHasher
+hasher = PasswordHasher()
+key = hasher.hash(password)
+```
+
+**Initialization Vectors (IV) and Nonces**: The same plaintext encrypted twice should produce different ciphertexts (otherwise patterns emerge). IVs and nonces are random values that ensure this:
+
+```python
+import os
+from Crypto.Cipher import AES
+
+def encrypt_with_iv(plaintext: bytes, key: bytes) -> bytes:
+    iv = os.urandom(16)  # Random initialization vector
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+
+    # Ciphertext = IV + encrypted_data
+    ciphertext = iv + cipher.encrypt(plaintext)
+    return ciphertext
+
+def decrypt_with_iv(ciphertext: bytes, key: bytes) -> bytes:
+    iv = ciphertext[:16]  # Extract IV
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    return cipher.decrypt(ciphertext[16:])
+```
+
+**Authentication Tags**: Encryption alone doesn't verify data hasn't been modified. Authenticated encryption (like AES-GCM) produces a tag proving the data is authentic:
+
+```python
+from Crypto.Cipher import AES
+
+def encrypt_authenticated(plaintext: bytes, key: bytes, associated_data: bytes):
+    nonce = os.urandom(12)
+    cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
+
+    # Include additional data (like metadata) in authentication without encrypting it
+    cipher.update(associated_data)
+
+    ciphertext, tag = cipher.encrypt_and_digest(plaintext)
+    return nonce + tag + ciphertext
+
+def decrypt_authenticated(encrypted_package: bytes, key: bytes, associated_data: bytes):
+    nonce = encrypted_package[:12]
+    tag = encrypted_package[12:28]
+    ciphertext = encrypted_package[28:]
+
+    cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
+    cipher.update(associated_data)
+
+    plaintext = cipher.decrypt_and_verify(ciphertext, tag)
+    return plaintext
+```
+
 ## Implementing E2EE in Your Application
 
 For developers building secure applications, several libraries provide production-ready E2EE:
@@ -155,6 +228,115 @@ E2EE is often misread as meaning the server can't see anything. That's true for 
 End-to-end encrypted does not mean perfectly secure. Implementation matters: poor random number generation, key management flaws, or compromised devices can break the encryption guarantees. Use well-audited libraries rather than implementing cryptography yourself.
 
 E2EE is not only for messaging. Any application handling sensitive data can benefit: file storage, note-taking, password managers, and video calls all use E2EE principles.
+
+## Perfect Forward Secrecy and Key Rotation
+
+A critical limitation of simple RSA encryption is its lack of forward secrecy. If an attacker ever compromises your private key, they can retroactively decrypt all past messages encrypted with that key.
+
+The Signal Protocol addresses this through ratcheting:
+
+```
+Session Start:
+  - Exchange initial Diffie-Hellman shared secret (DH_initial)
+  - Derive root key: root_key = KDF(DH_initial, context)
+
+For each message:
+  - Generate ephemeral DH pair
+  - Create new root key: root_key_new = KDF(root_key, DH_ephemeral)
+  - Derive message key: msg_key = KDF(root_key_new, counter)
+  - Encrypt message with msg_key
+  - Delete msg_key and old root keys immediately
+
+Key Property: Compromising current keys doesn't reveal past keys (forward secrecy)
+```
+
+This design means even if an attacker captures your device containing your current key, they cannot decrypt old messages. Each message's key is derived from previous state and then deleted.
+
+## Implementing E2EE: TweetNaCl Example
+
+For practical implementation, TweetNaCl provides a minimal, auditable crypto library:
+
+```javascript
+// TweetNaCl example: Simple E2EE message exchange
+const nacl = require('tweetnacl');
+nacl.setPRNG(function(x, n) {
+  for (let i = 0; i < n; i++) x[i] = Math.floor(Math.random() * 256);
+});
+
+// Alice's keypair
+const alice_keypair = nacl.box.keyPair();
+
+// Bob's keypair
+const bob_keypair = nacl.box.keyPair();
+
+// Alice sends message to Bob
+const message = "Secret message";
+const nonce = nacl.randomBytes(nacl.box.nonceLength);
+const ciphertext = nacl.box(
+  nacl.util.decodeUTF8(message),
+  nonce,
+  bob_keypair.publicKey,
+  alice_keypair.secretKey
+);
+
+// Bob receives and decrypts
+const decrypted = nacl.box.open(
+  ciphertext,
+  nonce,
+  alice_keypair.publicKey,
+  bob_keypair.secretKey
+);
+
+console.log("Decrypted:", nacl.util.encodeUTF8(decrypted));
+```
+
+## E2EE in Different Application Domains
+
+E2EE isn't limited to messaging. Consider its applications across different domains:
+
+**Note-taking Applications**: Apps like Standard Notes and Obsidian with encryption plugins ensure your notes remain private from the provider. The server stores only encrypted blobs; only your device can decrypt them.
+
+**File Storage**: Tresorit, Sync.com, and Proton Drive use E2EE to store files on untrusted servers. Sharing encrypted files with others requires sharing your encryption key through a separate secure channel.
+
+**Video Conferencing**: Signal, Jami, and Briar provide E2EE video calls. The servers see the connection metadata but cannot access audio or video streams.
+
+**Password Management**: Password managers like Bitwarden and 1Password encrypt vault data before transmission. Your master password never reaches their servers.
+
+## Threat Models E2EE Solves and Doesn't Solve
+
+**E2EE Protects Against**:
+- Server compromise: Even if attackers access the server, messages remain encrypted
+- Network interception: Traffic captures reveal only ciphertext
+- Data breaches: Leaked data contains only unusable encrypted blobs
+- Subpoena attacks: Providers cannot comply with requests for plaintext
+
+**E2EE Does NOT Protect Against**:
+- Metadata collection: Servers still see who communicates with whom and when
+- Compromised devices: If your device is compromised, E2EE cannot protect while you're using it
+- Side-channel attacks: Timing patterns, length of messages, or frequency of communication
+- Implementation flaws: Poor random number generation or key management breaks the security
+
+## Real-World Vulnerabilities in E2EE Systems
+
+Several production E2EE systems have experienced implementation vulnerabilities:
+
+**WhatsApp Double-ratchet Implementation**: In 2020, researchers discovered potential vulnerabilities in how WhatsApp handles certain ratchet states. WhatsApp addressed these through software updates, demonstrating the importance of ongoing security audits.
+
+**Telegram MTProto Issues**: Telegram's custom encryption protocol (rather than using Signal Protocol) has faced criticism from security researchers. Custom crypto implementations introduce risk compared to well-vetted protocols.
+
+**Encryption Key Escrow**: Systems that allow "emergency access" to encrypted data (like certain corporate communications tools) fundamentally weaken E2EE guarantees. These backdoors can be exploited.
+
+## Evaluating E2EE in Products
+
+When evaluating whether a service provides genuine E2EE:
+
+1. **Check Protocol**: Does it use Signal Protocol, TLS 1.3 with perfect forward secrecy, or a custom implementation?
+2. **Verify Key Ownership**: Who holds the encryption keys—you, the provider, or both?
+3. **Review Open Source**: Is the crypto implementation auditable by independent researchers?
+4. **Check Audits**: Have security firms conducted independent audits of the implementation?
+5. **Test Yourself**: Can you verify encryption is happening locally on your device?
+
+Many services claim E2EE while implementing weak forms or systems with backdoors. Proper evaluation requires technical knowledge or trust in third-party security audits.
 
 ## Related Reading
 

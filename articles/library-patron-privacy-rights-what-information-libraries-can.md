@@ -193,6 +193,128 @@ nmcli connection modify "VPN-Name"   ipv4.routes "10.0.0.0/8"   ipv4.never-defau
 ```
 
 Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.
+## Threat Model Analysis: Library Privacy Risks
+
+Different user groups face different library privacy risks:
+
+**Journalists and Researchers**: Law enforcement may seek to identify sources or research targets. The most sensitive risk involves NSLs where you receive no notice. Best practices: use pseudonymous library cards, access research through secure library sessions, consider using Tor through library computers.
+
+**Political Activists**: Government surveillance may target reading patterns to identify organizers or movement participants. Library records showing interest in activism topics create evidence. Mitigation: use guest computer access, avoid placing holds on sensitive materials, use VPN tunneling through library WiFi.
+
+**Medical Privacy**: Seeking health information may reveal conditions you prefer to keep private. If accessed from a monitored device or account, this creates a documented health profile. Solution: use anonymous library computer access, use VPN to mask queries, consider requesting materials directly from medical professionals rather than through libraries.
+
+**Vulnerable Populations**: Homeless individuals using libraries for internet access may have their location and activities documented. Immigration enforcement agents have targeted libraries. Marginalized communities should understand what library records might reveal about them.
+
+**High-Profile Individuals**: Public figures maintaining privacy may use libraries for research. Their library activity could become public through subpoena or leaks. Consider: using completely anonymous access, researching sensitive topics through other channels.
+
+## State-Level Privacy Protections
+
+Several states have enacted privacy laws stronger than federal protections:
+
+**California**: Library records explicitly protected from disclosure without warrant or court order. Even subpoenas may be challengeable. Libraries must notify patrons when possible.
+
+**Connecticut**: One of the strongest protections—libraries cannot disclose records even with subpoena in many cases without specific court findings.
+
+**New York**: Libraries must fight overly broad requests and notify patrons of disclosure requests when possible.
+
+**Illinois**: Libraries must have written policies on data retention and clearly communicate these to patrons.
+
+**Washington State**: Protects both circulation and computer usage records.
+
+Researchers and activists should understand their state's specific protections. Some states provide little additional protection beyond federal ECPA requirements.
+
+## Legal Recourse and Advocacy Resources
+
+If your library privacy rights are violated, multiple pathways exist for resolution:
+
+**American Library Association (ALA) Resources**:
+- Office for Intellectual Freedom: Maintains database of privacy incidents
+- Freedom to Read Foundation: Provides legal resources and support
+- Library Bill of Rights: Establishes intellectual freedom principles
+
+**State Library Associations**: Each state has a library association advocacy group that:
+- Monitors state legislation affecting library privacy
+- Provides model privacy policies
+- Offers training on privacy best practices
+- May provide legal assistance for members
+
+**Privacy Organizations**:
+- Electronic Frontier Foundation (EFF): Provides legal resources and advocacy
+- Privacy Rights Clearinghouse: Educational resources on privacy issues
+- Center for Democracy and Technology: Policy advocacy and resources
+
+**Legal Action Options**:
+- State attorney general complaints (free, investigative)
+- Private lawsuits for damages (requires attorney)
+- Civil rights organizations may take on cases pro bono
+
+Document any privacy violations: dates, what information was disclosed, to whom, under what legal process. Detailed documentation strengthens any legal action.
+
+## Creating a Minimal Digital Footprint at Libraries
+
+For users prioritizing maximum library privacy:
+
+**Device Preparation**:
+```bash
+# Before visiting library computer, prepare private session setup
+# 1. Use Firefox Private Browsing
+# 2. Enable Tor Browser if library allows it
+# 3. Use temporary operating system (Tails live USB) if possible
+# 4. Clear all caches after session
+```
+
+**Network Security**:
+- Route traffic through VPN before accessing library WiFi
+- Monitor network activity with tools like Wireshark to verify encryption
+- Avoid logging into personal accounts during library sessions
+- Use temporary throwaway accounts for library logins
+
+**Physical Security**:
+- Use privacy screens to prevent shoulder surfing
+- Disable webcams if using personal laptop (tape over camera)
+- Cover the microphone if recording is a concern
+- Position monitor away from other patrons' sight
+
+**Metadata Minimization**:
+- Don't use real name for library card when alternatives exist
+- Avoid placing holds on sensitive materials (access them directly from shelves)
+- Don't create accounts on library systems for online resources
+- Use anonymous email addresses for digital library access
+
+## Digital Tools for Enhanced Library Privacy
+
+Several tools provide additional privacy layers for library research:
+
+**Tor Browser**: If libraries permit, Tor Browser provides maximum anonymity for all web research conducted through library computers:
+```bash
+# Verify Tor connection is working
+# Visit: https://check.torproject.org/
+# Should show "Congratulations" confirming Tor usage
+```
+
+**Temporary Operating Systems**: Live USB distributions like Tails leave no persistent data on the library computer and automatically route all traffic through Tor.
+
+**VPN Services**: A quality VPN masks your IP address from library logs and provides additional encryption. Providers like Mullvad, ProtonVPN, and Windscribe are privacy-focused:
+```bash
+# Connect to VPN before accessing library WiFi
+# Verify VPN is working
+curl https://ipleak.net/
+# Should show VPN provider's IP, not your real IP
+```
+
+**Encrypted Note-Taking**: If researching sensitive topics, use encrypted note applications (Standard Notes, Joplin with encryption) to keep notes private, even if accessed from library computers.
+
+## Advocating for Better Library Privacy
+
+If your library has weak privacy practices, you can advocate for improvement:
+
+- **Request Privacy Policies**: Ask to review your library's written privacy policies
+- **Request Retention Schedules**: Ask how long circulation and computer usage records are retained
+- **Suggest Improvements**: Recommend automatic deletion of circulation history after returns, shorter computer log retention
+- **Support Privacy Initiatives**: Many libraries are implementing better privacy practices—support and publicly praise these efforts
+- **Contact Library Administration**: Respectfully propose stronger privacy protections and data retention policies
+
+Libraries with privacy-conscious patrons often implement stronger protections to meet community expectations and demonstrate commitment to intellectual freedom.
 
 ## Related Reading
 
