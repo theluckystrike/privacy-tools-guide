@@ -578,6 +578,7 @@ grep "Accepted publickey" /var/log/auth.log | \
 - [GPG and Email Encryption Guide](https://guides.zovo.one/gpg-encryption)
 - [Hardware Security Keys Comparison](https://guides.zovo.one/hardware-security-keys)
 - [Secrets Management for DevOps](https://guides.zovo.one/secrets-management)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 ---
 

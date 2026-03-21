@@ -424,6 +424,7 @@ OPNsense: Automatic monthly updates recommended
 - [Best Browser for Avoiding Google Tracking](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
 - [Anonymous WiFi Access Strategies](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

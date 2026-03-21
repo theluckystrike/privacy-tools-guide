@@ -251,6 +251,8 @@ gpg --fingerprint KEYID
 - [How to Manage PGP Keys Using a Hardware Security Key](/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 - [GPG Email Encryption Step by Step](/gpg-email-encryption-step-by-step/)
 - [YubiKey Setup for Multiple Services Guide](/yubikey-setup-multiple-services-guide/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Best AI Tools for Container Security Scanning in Deployment](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

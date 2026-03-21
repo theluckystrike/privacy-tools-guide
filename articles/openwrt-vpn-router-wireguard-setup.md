@@ -247,6 +247,8 @@ curl -s --max-time 5 https://api.ipify.org
 - [How to Flash OpenWrt on Common Routers Step by Step](/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
 - [VPN Kill Switch Configuration on Linux](/vpn-kill-switch-linux-iptables-setup/)
 - [How to Use WireGuard for a Self-Hosted VPN 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Best AI Tools for Container Security Scanning in Deployment](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

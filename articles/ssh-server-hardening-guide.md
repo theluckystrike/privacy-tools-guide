@@ -276,6 +276,8 @@ A well-hardened server should score an "A" or "A+" on ssh-audit with no flagged 
 - [How to Set Up a Privacy-Focused Home Server](/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
 - [How to Set Up a Tor Relay Node](/how-to-set-up-tor-relay-node/)
 - [YubiKey Setup for Multiple Services Guide](/yubikey-setup-multiple-services-guide/)
+- [Best AI Tools for Container Security Scanning in Deployment](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

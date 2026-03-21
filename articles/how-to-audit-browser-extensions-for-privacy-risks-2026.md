@@ -383,6 +383,7 @@ Every installed extension is a potential attack surface. Minimalism—installing
 - [How to Detect and Remove Spyware from Your Computer](/privacy-tools-guide/guides-hub/)
 - [VPN Extension Privacy Comparison Guide](/privacy-tools-guide/guides-hub/)
 - [Browser Fingerprinting Prevention Techniques](/privacy-tools-guide/guides-hub/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
