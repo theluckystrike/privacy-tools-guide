@@ -29,6 +29,23 @@ Most commercial smart home hubs require cloud accounts—Philips Hue wants a Sig
 
 Zigbee2MQTT bridges Zigbee devices directly to your local MQTT broker, bypassing cloud infrastructure entirely. Your devices communicate on your local network, and you own the data.
 
+Beyond privacy, the practical reliability improvement is significant. When your ISP has an outage, your lights still turn on and your motion sensors still trigger automations. The Zigbee mesh itself operates at 2.4GHz using the IEEE 802.15.4 standard, with each powered device acting as a router that extends coverage to battery-powered end devices like sensors and buttons.
+
+## Coordinator Hardware Selection
+
+The coordinator is the single most important hardware decision. It acts as the USB radio dongle that your Linux host uses to communicate with the Zigbee mesh.
+
+| Coordinator | Chip | Zigbee Version | Max Devices | Price (approx) |
+|---|---|---|---|---|
+| Sonoff Zigbee 3.0 USB Dongle Plus | CC2652P | Zigbee 3.0 | 50+ | $20 |
+| ITead Zigbee 3.0 USB Dongle Plus-E | EFR32MG21 | Zigbee 3.0 | 50+ | $20 |
+| Tube's CC2652P2 | CC2652P2 | Zigbee 3.0 | 200+ | $35 |
+| Electrolama zzh! | CC2652R | Zigbee 3.0 | 50+ | $25 |
+
+The CC2652P-based dongles are the most widely supported. Avoid the older CC2531 USB dongle — it uses the deprecated Z-Stack 1.x firmware, supports far fewer devices, and causes instability in larger networks.
+
+If your Linux machine is in a metal case or rackmount, use a USB extension cable to position the dongle away from interference sources. WiFi routers in particular cause substantial 2.4GHz interference; keep at least 1 meter of separation between the coordinator and any WiFi hardware.
+
 ## Prerequisites
 
 Before starting, gather these components:
@@ -59,9 +76,23 @@ docker run -d \
 
 Create a minimal `mosquitto.conf`:
 
-```persistence false
+```
+persistence false
 listener 1883
 allow_anonymous true
+```
+
+For production use, enable authentication in Mosquitto before exposing it beyond localhost. Generate a password file:
+
+```bash
+docker exec mosquitto mosquitto_passwd -c /mosquitto/config/passwd homeuser
+```
+
+Then update `mosquitto.conf` to require credentials:
+
+```
+listener 1883
+password_file /mosquitto/config/passwd
 ```
 
 ## Installing Zigbee2MQTT
@@ -92,6 +123,8 @@ Replace `/dev/serial/by-id/usb-XXXXXXX` with your coordinator's device path. Fin
 ls -la /dev/serial/by-id/
 ```
 
+Using the `by-id` path rather than `/dev/ttyUSB0` directly ensures the correct device is used even if other USB serial devices are connected, and survives reboots where device enumeration order may change.
+
 ## Configuring Zigbee2MQTT
 
 Edit the `configuration.yaml` in your data directory:
@@ -112,7 +145,9 @@ advanced:
   channel: 15
 ```
 
-The `network_key: GENERATE` option creates a unique 16-byte key for your Zigbee network on first startup. Save this key—you'll need it if you ever restore from backup.
+The `network_key: GENERATE` option creates a unique 16-byte key for your Zigbee network on first startup. Save this key — you will need it if you ever restore from backup. After first launch, the key is written into `configuration.yaml` as an array of 16 integers. Back it up immediately.
+
+Channel selection matters for interference avoidance. Zigbee channels 15, 20, 25, and 26 avoid overlap with the most common WiFi channels (1, 6, 11). Channel 25 or 26 offer the best separation from WiFi in most home environments, at the cost of slightly reduced range on older devices.
 
 ## Starting the Service
 
@@ -154,10 +189,16 @@ zigbee2mqtt:info  2026-03-16 10:05:00: Starting interview for '0x00158d000123456
 
 After pairing, devices appear in the MQTT topic hierarchy under `zigbee2mqtt/[device_id]`. A temperature sensor might publish:
 
+```json
+{
+  "battery": 100,
+  "temperature": 21.5,
+  "humidity": 45,
+  "linkquality": 78
+}
 ```
-zigbee2mqtt/0x00158d0001234567
-{"battery":100,"temperature":21.5,"humidity":45,"linkquality":78}
-```
+
+The `linkquality` field (0-255) tells you signal strength. Values below 50 indicate marginal connectivity; below 20, the device will frequently drop offline. Add a powered router device (plug or bulb) between the coordinator and weak end devices to extend mesh coverage.
 
 ## Integrating with Home Automation
 
@@ -177,6 +218,13 @@ sensor:
     state_topic: "zigbee2mqtt/0x00158d0001234567"
     value_template: "{{ value_json.temperature }}"
     unit_of_measurement: "°C"
+```
+
+Zigbee2MQTT also supports Home Assistant's MQTT discovery protocol, which auto-registers devices without manual configuration. Enable it in `configuration.yaml`:
+
+```yaml
+homeassistant:
+  discovery: true
 ```
 
 **Node-RED:**
@@ -203,20 +251,32 @@ client.loop_forever()
 While running locally, implement basic security measures:
 
 1. **Enable MQTT authentication**: Remove `allow_anonymous true` and create user credentials
-2. **Restrict network access**: Bind MQTT to localhost or use firewall rules
-3. **Backup configuration**: Regularly export your `configuration.yaml` and network key
-4. **Update regularly**: Pull new Zigbee2MQTT images to receive security patches
+2. **Restrict network access**: Bind MQTT to localhost or use firewall rules to limit which hosts can reach port 1883
+3. **Disable the frontend externally**: The web UI on port 8080 should not be reachable from outside your LAN; use a VPN or SSH tunnel if you need remote access
+4. **Backup configuration**: Regularly export your `configuration.yaml` and network key
+5. **Update regularly**: Pull new Zigbee2MQTT images to receive security patches
+
+Block external access to the MQTT port with a simple iptables rule:
+
+```bash
+sudo iptables -A INPUT -p tcp --dport 1883 ! -s 192.168.1.0/24 -j DROP
+```
+
+Adjust the subnet to match your local network range.
 
 ## Troubleshooting Common Issues
 
 **Coordinator not detected:**
-Verify the device path matches your USB dongle. Check Docker has access to the device with `docker exec zigbee2mqtt ls -la /dev/ttyUSB0`.
+Verify the device path matches your USB dongle. Check Docker has access to the device with `docker exec zigbee2mqtt ls -la /dev/ttyUSB0`. If the device is absent, ensure the user running Docker has permission to access serial devices (`sudo usermod -aG dialout $USER`).
 
 **Devices dropping offline:**
-Weak signal strength often causes disconnections. Add routers (powered bulbs or plugs) to extend your mesh network. Check link quality in MQTT messages—values below 30 indicate poor connectivity.
+Weak signal strength often causes disconnections. Add routers (powered bulbs or plugs) to extend your mesh network. Check link quality in MQTT messages — values below 30 indicate poor connectivity. Also verify no neighboring Zigbee network is using the same channel; channel conflicts cause intermittent drops that are difficult to diagnose otherwise.
 
 **Pairing fails:**
-Ensure no other Zigbee hubs are active nearby. Some devices require specific pairing procedures—consult manufacturer documentation.
+Ensure no other Zigbee hubs are active nearby — two coordinators on the same channel will interfere. Some devices require specific pairing procedures; consult the Zigbee2MQTT supported devices list at zigbee2mqtt.io/supported-devices/ before purchasing hardware.
+
+**High CPU on Raspberry Pi:**
+The Zigbee2MQTT process is lightweight, but Mosquitto logging at debug level can generate substantial disk I/O on SD cards. Set the MQTT log level to `info` and consider using a USB SSD instead of an SD card for the data directory.
 
 ## Extending the Setup
 
@@ -224,13 +284,13 @@ Once running, explore these enhancements:
 
 - **Persistent storage**: Map configuration to host directories for backup capability
 - **Zigbee routers**: Add powered devices to improve mesh reliability
-- **Custom converters**: Write JavaScript modules for unsupported devices
-- **Prometheus metrics**: Enable `/metrics` endpoint for monitoring
+- **Custom converters**: Write JavaScript modules for unsupported devices; Zigbee2MQTT loads converters from the `data/` directory automatically
+- **Prometheus metrics**: Enable the `/metrics` endpoint and scrape it with Prometheus for historical graphing in Grafana
 
 Running Zigbee2MQTT locally transforms your smart home from vendor-dependent to self-hosted. You control the network, own the data, and eliminate cloud failure points. The initial setup takes about 30 minutes, and the resulting reliability and privacy benefits justify the effort.
 
 
-## Related Articles
+## Related Reading
 
 - [Smart Doorbell Alternatives That Store Video Locally Without](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
