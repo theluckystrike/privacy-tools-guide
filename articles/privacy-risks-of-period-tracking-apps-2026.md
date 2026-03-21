@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-risks-of-period-tracking-apps-2026/
 categories: [guides]
-tags: [privacy-tools-guide, reproductive-health, data-privacy, app-security]
+tags: [privacy-tools-guide, reproductive-health, data-privacy, app-security, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

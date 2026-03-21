@@ -5,9 +5,10 @@ author: Privacy Tools Guide
 date: 2026-03-21
 permalink: /privacy-tools-guide/privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

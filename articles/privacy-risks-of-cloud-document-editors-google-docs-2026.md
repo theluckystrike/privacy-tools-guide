@@ -4,10 +4,11 @@ description: "What Google Docs, Notion, and Office365 collect. Includes collabor
 author: Privacy Tools Guide
 date: 2026-03-21
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /privacy-risks-of-cloud-document-editors-google-docs-2026/
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}
