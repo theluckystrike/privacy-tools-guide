@@ -220,8 +220,6 @@ Many developers use a combination—Matrix for work and community, Session or Si
 ---
 
 
-
-
 ## Related Articles
 
 - [Signal Messenger Setup Guide for Journalists: Source.](/privacy-tools-guide/signal-messenger-setup-guide-for-journalists-source-protecti/)

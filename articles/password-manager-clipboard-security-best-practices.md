@@ -51,19 +51,19 @@ class SecureClipboard {
   async copyToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
-      
+
       // Clear any existing timer
       if (this.timer) {
         clearTimeout(this.timer);
       }
-      
+
       // Set auto-clear timer
       if (this.clearOnCopy) {
         this.timer = setTimeout(() => {
           this.clearClipboard();
         }, this.clearDelay);
       }
-      
+
       return true;
     } catch (error) {
       console.error('Clipboard write failed:', error);
@@ -75,12 +75,12 @@ class SecureClipboard {
     try {
       // Write empty string to clear clipboard
       await navigator.clipboard.writeText('');
-      
+
       // For additional security, write random data then clear
       const randomData = this.generateRandomString(32);
       await navigator.clipboard.writeText(randomData);
       await navigator.clipboard.writeText('');
-      
+
       console.log('Clipboard cleared successfully');
       return true;
     } catch (error) {
@@ -117,7 +117,7 @@ Provide users with manual clipboard clearing options. Some users prefer explicit
 document.getElementById('clear-clipboard-btn').addEventListener('click', async () => {
   const clipboard = new SecureClipboard({ clearOnCopy: false });
   await clipboard.clearClipboard();
-  
+
   // Show confirmation to user
   showNotification('Clipboard cleared', 'success');
 });
@@ -139,10 +139,10 @@ class ClipboardMonitor {
     this.monitorInterval = setInterval(async () => {
       try {
         const currentContent = await navigator.clipboard.readText();
-        
+
         // Detect unexpected clipboard changes
-        if (this.lastContent && 
-            currentContent !== this.lastContent && 
+        if (this.lastContent &&
+            currentContent !== this.lastContent &&
             currentContent.length > 0) {
           this.onAccessDetected({
             timestamp: Date.now(),
@@ -150,7 +150,7 @@ class ClipboardMonitor {
             newLength: currentContent.length
           });
         }
-        
+
         this.lastContent = currentContent;
       } catch (error) {
         // Clipboard access denied - may indicate another app has focus
@@ -216,14 +216,14 @@ For maximum security, implement zero-clearing techniques that overwrite memory l
 async function secureClipboardClear() {
   const clipboard = navigator.clipboard;
   const overwriteCount = 3;
-  
+
   for (let i = 0; i < overwriteCount; i++) {
     // Overwrite with zeros
     await clipboard.writeText('\0'.repeat(64));
     // Small delay between overwrites
     await new Promise(resolve => setTimeout(resolve, 10));
   }
-  
+
   // Final clear
   await clipboard.writeText('');
 }
@@ -238,7 +238,6 @@ Power users should consider implementing monitoring for clipboard access:
 - Use endpoint detection and response (EDR) tools that monitor clipboard access by applications
 - Set up alerts for unusual clipboard read operations
 - Review system logs for applications repeatedly accessing clipboard data
-
 
 
 ## Related Articles

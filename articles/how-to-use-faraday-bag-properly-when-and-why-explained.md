@@ -173,7 +173,6 @@ fi
 If this test passes inside your Faraday bag, you have verified basic isolation.
 
 
-
 ## Related Articles
 
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)

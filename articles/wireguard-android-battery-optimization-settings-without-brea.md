@@ -178,7 +178,6 @@ High battery consumption despite optimizations typically indicates:
 Review your peer configuration and reduce the number of endpoints if battery drain persists.
 
 
-
 ## Related Articles
 
 - [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)

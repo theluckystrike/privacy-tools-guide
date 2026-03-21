@@ -283,7 +283,6 @@ khal new -a your_calendar "Team standup tomorrow 10am"
 This enables scripting calendar operations while maintaining encryption.
 
 
-
 ## Related Articles
 
 - [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)

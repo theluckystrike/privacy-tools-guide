@@ -82,14 +82,14 @@ def search_county_court(county_url, first_name, last_name):
         "firstName": first_name,
         "searchType": "name"
     }
-    
+
     response = requests.get(search_url, params=params, timeout=30)
     return response.json() if response.status_code == 200 else None
 
 # Usage
 # results = search_county_court(
 #     "https://www.example-county.gov/courts",
-#     "John", 
+#     "John",
 #     "Doe"
 # )
 ```
@@ -133,17 +133,17 @@ def check_sex_offender_registry(first_name, last_name, zip_code):
     Uses the NSOPW API endpoints.
     """
     base_url = "https://www.nsopw.gov/api"
-    
+
     # Note: This requires understanding the specific API
     # implementation and terms of use
-    
+
     search_endpoint = f"{base_url}/search"
     params = {
         "firstName": first_name,
         "lastName": last_name,
         "zip": zip_code
     }
-    
+
     response = requests.get(search_endpoint, params=params)
     return response.json()
 ```
@@ -181,12 +181,12 @@ def verify_social_media_presence(name, location):
         "linkedin": f"https://www.linkedin.com/search/results/all/?keywords={quote(name)}",
         "twitter": f"https://twitter.com/search?q={quote(name)}",
     }
-    
+
     results = {}
     for platform, url in platforms.items():
         # In practice, use official APIs
         results[platform] = url
-    
+
     return results
 ```
 
@@ -266,7 +266,6 @@ def create_verification_record(name):
         "notes": ""
     }
 ```
-
 
 
 ## Related Articles

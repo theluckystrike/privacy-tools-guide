@@ -77,7 +77,7 @@ For maximum control, pair subaddressing with a custom domain. This approach prov
 # 3. Configure catch-all to forward to your primary inbox
 # 4. Start using aliases like:
 #    - dev@yourdomain.com
-#    - dev+shop@yourdomain.com  
+#    - dev+shop@yourdomain.com
 #    - dev+travel@yourdomain.com
 ```
 
@@ -181,14 +181,13 @@ class EmailAliasManager {
 This approach creates discoverable aliases that include service name, purpose, and a timestamp for uniqueness while remaining readable.
 
 
-
 ## Related Articles
 
-- [WebRTC Local IP Leak: How It Reveals Your Real Address](/privacy-tools-guide/webrtc-local-ip-leak-how-it-reveals-your-real-address/)
-- [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
-- [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
-- [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
-- [Someone Signed Up for Services Using My Email — What to Do](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
+- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
+- [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
+- [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)
+- [C++ Developer Privacy Tools for Detecting Telemetry in.](/privacy-tools-guide/c-plus-plus-developer-privacy-tools-for-detecting-telemetry-in-game-engine-sdks-2026/)
+- [How To Set Up Secureboot Plus Encryption On Fedora Linux For](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

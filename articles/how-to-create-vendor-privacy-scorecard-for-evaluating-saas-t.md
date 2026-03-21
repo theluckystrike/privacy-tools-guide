@@ -71,7 +71,7 @@ def calculate_privacy_score(vendor_responses):
     Calculate privacy score based on vendor responses.
     Returns a score from 0-100 with breakdown by category.
     """
-    
+
     categories = {
         'data_handling': {
             'weight': 25,
@@ -117,27 +117,27 @@ def calculate_privacy_score(vendor_responses):
             }
         }
     }
-    
+
     total_score = 0
     max_score = 0
     breakdown = {}
-    
+
     for category, config in categories.items():
         category_score = 0
         category_max = 0
-        
+
         for criterion, max_points in config['criteria'].criteria():
             response = vendor_responses.get(f"{category}_{criterion}", 0)
             category_score += response * max_points
             category_max += max_points
-        
+
         weighted_score = (category_score / category_max) * config['weight']
         breakdown[category] = weighted_score
         total_score += weighted_score
         max_score += config['weight']
-    
+
     final_score = (total_score / max_score) * 100
-    
+
     return {
         'total_score': round(final_score, 1),
         'breakdown': breakdown,
@@ -226,8 +226,6 @@ Document your evaluations. Future you will thank present you when revisiting a v
 ---
 
 Building a vendor privacy scorecard takes initial effort but pays dividends across every SaaS purchase you make. You will make faster decisions, identify problems before they become issues, and build a consistent standard for evaluating tools. The privacy ecosystem continues to evolve, and your scorecard should evolve with it. Periodically review and update your criteria as regulations change and new threats emerge.
-
-
 
 
 ## Related Articles

@@ -107,11 +107,11 @@ async function registerPasskey() {
       { type: "public-key", alg: -7 }
     ]
   };
-  
+
   const credential = await navigator.credentials.create({
     publicKey: publicKeyCredentialCreationOptions
   });
-  
+
   // Store the credential ID for authentication
   return credential;
 }
@@ -155,7 +155,7 @@ Configure your tools to default to privacy-preserving settings:
 # .gitconfig - avoid committing sensitive data
 [secrets]
     staging = true
-    
+
 # Or use git-secrets
 git secrets --install
 git secrets --add 'password\s*=\s*.*'
@@ -196,14 +196,13 @@ Write down your privacy configuration. A simple markdown file in your dotfiles r
 Documentation eliminates the need to remember configuration details. When something breaks or you need to rebuild your setup, the documentation guides you through it.
 
 
-
 ## Related Articles
 
 - [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
-- [How VPN Reconnection Works After Network Switch Mobile Handoff: Core Problem ...](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [How To Make Facebook Profile Private 2026](/privacy-tools-guide/how-to-make-facebook-profile-private-2026/)
 - [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
+- [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

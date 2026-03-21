@@ -193,7 +193,6 @@ sudo update-ca-certificates
 **Performance degradation**: TLS handshakes add latency. The session cache settings included in this guide help mitigate this by reusing established sessions.
 
 
-
 ## Related Articles
 
 - [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)

@@ -38,10 +38,10 @@ Developers should examine the target's data infrastructure with specific attenti
 
 ```sql
 -- Example query to identify potential PII columns
-SELECT table_name, column_name, data_type 
-FROM information_schema.columns 
-WHERE column_name LIKE '%email%' 
-   OR column_name LIKE '%phone%' 
+SELECT table_name, column_name, data_type
+FROM information_schema.columns
+WHERE column_name LIKE '%email%'
+   OR column_name LIKE '%phone%'
    OR column_name LIKE '%name%'
    OR column_name LIKE '%address%'
    OR column_name LIKE '%ssn%'
@@ -64,20 +64,20 @@ Review the target's consent management implementation. This includes checking wh
 // Example: Checking consent storage implementation
 function verifyConsentMechanism(consentRecord) {
   const required = ['timestamp', 'ip_address', 'consent_type', 'version'];
-  
+
   for (const field of required) {
     if (!consentRecord[field]) {
       console.error(`Missing required field: ${field}`);
       return false;
     }
   }
-  
+
   // Verify consent is tied to specific privacy policy version
   if (!consentRecord.policy_version) {
     console.error('No policy version linked to consent');
     return false;
   }
-  
+
   return true;
 }
 ```
@@ -109,7 +109,7 @@ Modern businesses frequently transfer personal data across borders. During M&A d
 # Example: Assessment script for transfer mechanism documentation
 def assess_transfer_compliance(data_flows):
     transfer_issues = []
-    
+
     for flow in data_flows:
         if flow['destination_country'] != flow['source_country']:
             if not flow.get('transfer_mechanism'):
@@ -125,7 +125,7 @@ def assess_transfer_compliance(data_flows):
                         'flow_id': flow['id'],
                         'issue': 'SCC version not specified'
                     })
-    
+
     return transfer_issues
 ```
 
@@ -346,10 +346,9 @@ Effective due diligence requires cross-functional expertise:
 Budget 3-6 months for thorough privacy due diligence on mid-sized companies (100+ employees).
 
 
-
 ## Related Articles
 
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [Employee Email Monitoring Legal Requirements And Privacy Bou](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)

@@ -303,8 +303,6 @@ Choose based on your specific situation:
 ---
 
 
-
-
 ## Related Articles
 
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)

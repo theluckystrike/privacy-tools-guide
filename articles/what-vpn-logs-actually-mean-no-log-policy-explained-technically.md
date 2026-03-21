@@ -184,7 +184,6 @@ grep "AllowedIPs" /etc/wireguard/wg0.conf
 ```
 
 
-
 ## Related Articles
 
 - [What VPN Logs Actually Mean: No-Log Policy Explained.](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)

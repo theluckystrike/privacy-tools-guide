@@ -135,7 +135,7 @@ def verify_passkey_login(assertion, stored_credential):
         credential_public_key=stored_credential.public_key,
         credential_current_sign_count=stored_credential.sign_count,
     )
-    
+
     # Update sign count to prevent replay attacks
     update_credential_sign_count(stored_credential.id, verification.new_sign_count)
     return verification.user_verified
@@ -192,8 +192,6 @@ If you're adopting passkeys as your primary authentication method:
 5. **Test regularly** — Verify you can authenticate from different devices before you need to
 
 The passkey ecosystem in 2026 offers security for most use cases. While some edge cases still require password fallback, the majority of users can operate with passkeys as their primary authentication method across major platforms.
-
-
 
 
 ## Related Articles

@@ -56,7 +56,7 @@ from google.home.graph.api import HomeGraphService
 def remove_user_from_home_graph(user_id: str, home_id: str):
     """Remove a user from Google Home ecosystem"""
     service = HomeGraphService.from_service_account_file('service-account.json')
-    
+
     request = {
         "agentUserId": user_id,
         "homegraph": {
@@ -65,7 +65,7 @@ def remove_user_from_home_graph(user_id: str, home_id: str):
             }
         }
     }
-    
+
     # Delete user's device associations
     service.deleteAgentDevice(request)
 ```
@@ -138,18 +138,18 @@ import requests
 def deauthorize_nest_device(access_token: str, device_id: str):
     """Deauthorize a Nest device from a deceased user's account"""
     url = "https://smartdevicemanagement.googleapis.com/v1/enterprises/{project_id}:unregisterDevice"
-    
+
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
-    
+
     payload = {
         "device": {
             "name": f"enterprises/{project_id}/devices/{device_id}"
         }
     }
-    
+
     response = requests.post(url, json=payload, headers=headers)
     return response.status_code == 200
 ```
@@ -194,13 +194,13 @@ class DeviceDeregistration:
         with open(config_path) as f:
             self.config = json.load(f)
         self.log = []
-    
+
     def remove_google_devices(self) -> bool:
         """Remove Google/Nest devices"""
         try:
             from google.cloud import homegraph_v1
             client = homegraph_v1.HomeGraphServiceClient()
-            
+
             for device in self.config.get('google_devices', []):
                 # Implement device removal logic
                 self.log.append(f"Removed Google device: {device}")
@@ -208,17 +208,17 @@ class DeviceDeregistration:
         except Exception as e:
             self.log.append(f"Google removal failed: {e}")
             return False
-    
+
     def remove_amazon_alexa(self) -> bool:
         """Remove Amazon Alexa associations"""
         try:
             import boto3
-            
+
             client = boto3.client('alexaforbusiness',
                 aws_access_key_id=self.config['aws_key'],
                 aws_secret_access_key=self.config['aws_secret'],
                 region_name='us-east-1')
-            
+
             for room in self.config.get('alexa_rooms', []):
                 client.delete_room(RoomArn=room)
                 self.log.append(f"Deleted Alexa room: {room}")
@@ -226,13 +226,13 @@ class DeviceDeregistration:
         except Exception as e:
             self.log.append(f"Amazon removal failed: {e}")
             return False
-    
+
     def remove_apple_homekit(self) -> bool:
         """Remove Apple HomeKit users (requires local access)"""
         # HomeKit management requires on-device or MDM enrollment
         self.log.append("Apple HomeKit: Manual removal required via device or MDM")
         return True
-    
+
     def generate_report(self) -> str:
         """Generate removal report"""
         report = f"Device Deregistration Report - {datetime.now()}\n"
@@ -244,12 +244,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Bulk device deregistration')
     parser.add_argument('--config', default='config.json', help='Config file path')
     args = parser.parse_args()
-    
+
     dereg = DeviceDeregistration(args.config)
     dereg.remove_google_devices()
     dereg.remove_amazon_alexa()
     dereg.remove_apple_homekit()
-    
+
     print(dereg.generate_report())
 ```
 
@@ -275,14 +275,13 @@ For your own digital estate planning:
 5. Create runbooks for your trusted contacts
 
 
-
 ## Related Articles
 
 - [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
-- [Set Up Google Inactive Account Manager for Automatic Data Transfer After Death](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
-- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
+- [Password Manager Death Plan](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
+- [Subscription Service Cancellation After Death How Executor C](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-c/)
+- [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

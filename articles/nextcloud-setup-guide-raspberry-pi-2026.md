@@ -398,7 +398,6 @@ docker exec --user www-data nextcloud_app php occ maintenance:mode --off
 ```
 
 
-
 ## Related Articles
 
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)

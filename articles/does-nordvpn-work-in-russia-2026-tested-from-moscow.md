@@ -200,7 +200,6 @@ Desktop users benefit from manually locking in the obfuscated server option and 
 Use of VPN services to access blocked content falls into a legal grey area under Russian law. Roskomnadzor has required VPN providers to connect to a state registry of banned sites since 2019. NordVPN, like most international providers, does not comply with this requirement, which means the service itself occupies an uncertain legal position within Russia. This guide documents technical behavior, not legal advice. Users should consult local legal counsel regarding their specific circumstances.
 
 
-
 ## Related Articles
 
 - [Does NordVPN Work in Uzbekistan? 2026 Tested and Reviewed](/privacy-tools-guide/does-nordvpn-work-in-uzbekistan-2026-tested-and-reviewed/)

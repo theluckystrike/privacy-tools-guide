@@ -176,7 +176,6 @@ If you confirm unauthorized access:
 5. **File a report** - Document the incident with relevant authorities
 
 
-
 ## Related Articles
 
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)

@@ -287,7 +287,6 @@ Watch for these indicators that something may be wrong:
 If you suspect compromise, stop using the system immediately. Do not attempt to investigate while continuing to use the same device for sensitive activities. Consider consulting with a lawyer or civil liberties organization before taking further action.
 
 
-
 ## Related Articles
 
 - [Tor Browser Bookmark Safety Best Practices](/privacy-tools-guide/tor-browser-bookmark-safety-best-practices/)

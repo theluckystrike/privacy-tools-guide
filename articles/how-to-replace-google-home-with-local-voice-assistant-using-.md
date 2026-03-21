@@ -131,7 +131,7 @@ class HomeLightsSkill(MycroftSkill):
         MycroftSkill.__init__(self)
 
     def initialize(self):
-        self.register_intent_file('turn.on.lights.intent', 
+        self.register_intent_file('turn.on.lights.intent',
                                    self.handle_turn_on)
 
     def handle_turn_on(self, message):
@@ -192,7 +192,6 @@ Regardless of your choice, several optimizations improve responsiveness:
 **Run heavy processing on a networked server**. Offload Whisper transcription or intent parsing to a more powerful machine while keeping the wake word detector local for instant response.
 
 **Implement caching**. Store frequent command patterns and pre-computed responses to reduce processing latency.
-
 
 
 ## Related Articles

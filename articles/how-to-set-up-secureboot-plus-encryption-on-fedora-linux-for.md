@@ -217,13 +217,12 @@ sudo bootctl verify
 Store your LUKS recovery passphrase in a secure location separate from your device. Consider using a hardware security key as an additional authentication factor.
 
 
-
 ## Related Articles
 
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 - [Secure Email Forwarding With Encryption How To Set Up Anonad](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
 - [C++ Developer Privacy Tools for Detecting Telemetry in.](/privacy-tools-guide/c-plus-plus-developer-privacy-tools-for-detecting-telemetry-in-game-engine-sdks-2026/)
-- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -160,7 +160,7 @@ def random_delay():
     # Random delay between 1 second and 10 minutes
     delay = random.expovariate(0.1)
     time.sleep(min(delay, 600))
-    
+
 def random_post_time():
     # Generate random hour for posting
     return random.randint(0, 23)
@@ -215,15 +215,13 @@ Building a truly anonymous online identity requires ongoing vigilance. Start wit
 ---
 
 
-
-
 ## Related Articles
 
-- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
-- [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
-- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
-- [How To Create Untraceable Email For Anonymous Tips To Report](/privacy-tools-guide/how-to-create-untraceable-email-for-anonymous-tips-to-report/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
+- [How To Use Compartmentalized Identity For Online Dating Sepa](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
+- [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

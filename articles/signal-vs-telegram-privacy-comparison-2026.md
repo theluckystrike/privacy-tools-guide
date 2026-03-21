@@ -214,8 +214,6 @@ The choice ultimately depends on threat model. For sensitive communications wher
 ---
 
 
-
-
 ## Related Articles
 
 - [Telegram Vs Signal Which Is Actually Safer](/privacy-tools-guide/telegram-vs-signal-which-is-actually-safer/)

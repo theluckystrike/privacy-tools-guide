@@ -149,7 +149,7 @@ useEffect(() => {
             showPrivacyAlert();
         }
     );
-    
+
     return () => subscription.remove();
 }, []);
 ```
@@ -164,10 +164,10 @@ class EphemeralMessage(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
-    
+
     def is_expired(self):
         return timezone.now() > self.expires_at
-    
+
     def delete_if_expired(self):
         if self.is_expired():
             self.delete()
@@ -213,7 +213,6 @@ For users concerned about dating conversation screenshots:
 ## Legal Considerations
 
 While technical solutions are limited, some jurisdictions have laws addressing non-consensual intimate image sharing. These laws typically cover intimate photos, not text conversations, but evolve as technology changes. Consult legal resources specific to your jurisdiction for current protections.
-
 
 
 ## Related Articles

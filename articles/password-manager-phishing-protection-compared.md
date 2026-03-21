@@ -36,7 +36,7 @@ You can verify Bitwarden's domain protection by examining autofill behavior:
 function checkDomainMatch(storedUrl, currentUrl) {
   const stored = new URL(storedUrl);
   const current = new URL(currentUrl);
-  
+
   // Exact match required by default
   return stored.hostname === current.hostname;
 }
@@ -347,7 +347,6 @@ For developers and power users, consider these implementation strategies:
 | Master password strength requirements | 12+ chars | Strong | Strong | 12+ chars | Strong |
 | Emergency access | Yes | Yes | No | Yes | Yes |
 | Zero-knowledge verified | Yes | Yes (claimed) | Partial | No | Yes |
-
 
 
 ## Related Articles

@@ -158,13 +158,13 @@ For power users, combining multiple techniques creates privacy:
 ```
 Layer 1: Anonymous Payment
     └── Prepaid card or virtual card
-    
+
 Layer 2: Shipping Address
     └── Forwarding service or PMB
-    
+
 Layer 3: Delivery Method
     └── Carrier hold or in-person pickup
-    
+
 Layer 4: Identity Separation
     └── Business name for all transactions
 ```
@@ -179,14 +179,14 @@ from datetime import datetime
 
 class AnonymousOrderConfig:
     """Configuration for anonymous ordering system"""
-    
+
     # Payment layer - rotate these
     payment_methods = [
         "prepaid_visa_ending_1234",
-        "privacy_card_ending_5678", 
+        "privacy_card_ending_5678",
         "bitcoin_new_address"
     ]
-    
+
     # Address layer - use different ones for different order types
     addresses = {
         "shipito": {
@@ -205,13 +205,13 @@ class AnonymousOrderConfig:
             "zip": "80202"
         }
     }
-    
+
     # Merchant-specific configurations
     merchant_rules = {
         "amazon": {"address": "shipito", "payment": "prepaid_visa_ending_1234"},
         "ebay": {"address": "pmb", "payment": "privacy_card_ending_5678"}
     }
-    
+
     @classmethod
     def get_config(cls, merchant):
         """Get appropriate config for a merchant"""
@@ -233,7 +233,6 @@ Always verify that your chosen methods comply with:
 - Merchant shipping policies
 - Carrier terms of service
 - Local and federal laws
-
 
 
 ## Related Articles

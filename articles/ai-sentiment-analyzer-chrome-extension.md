@@ -230,7 +230,6 @@ python -c "from transformers import pipeline; \
 ```
 
 
-
 ## Related Articles
 
 - [Chrome Extension File Sharing Quick Upload](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)

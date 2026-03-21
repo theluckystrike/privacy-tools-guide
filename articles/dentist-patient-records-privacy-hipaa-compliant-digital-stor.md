@@ -48,12 +48,12 @@ Base = declarative_base()
 
 class PatientRecord(Base):
     __tablename__ = 'patient_records'
-    
+
     id = Column(Integer, primary_key=True)
     patient_name_encrypted = Column(String(500))
     treatment_notes_encrypted = Column(String(5000))
     ssn_last_four_encrypted = Column(String(10))
-    
+
     def __init__(self, patient_name, treatment_notes, ssn_last_four):
         cipher = Fernet(os.environ['ENCRYPTION_KEY'])
         self.patient_name_encrypted = cipher.encrypt(patient_name.encode())
@@ -76,7 +76,7 @@ server {
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
     ssl_prefer_server_ciphers on;
-    
+
     # HSTS header
     add_header Strict-Transport-Security "max-age=31536000" always;
 }
@@ -100,12 +100,12 @@ async function setupMFA(user) {
         name: `DentalPractice-${user.email}`,
         issuer: 'Dental Practice Management'
     });
-    
+
     // Store secret in database (encrypted) for verification
     await user.update({
         mfa_secret_encrypted: encrypt(secret.base32)
     });
-    
+
     // Generate QR code for user to scan with authenticator app
     const qrCodeUrl = await QRCode.toDataURL(secret.otpauth_url);
     return qrCodeUrl;
@@ -186,7 +186,6 @@ When evaluating cloud providers or software vendors, verify:
 5. **Data residency**: Control over where data is stored geographically
 
 Major cloud providers (AWS, Azure, Google Cloud) offer HIPAA-eligible services with BAA coverage. Many practice management software vendors also offer HIPAA-compliant versions.
-
 
 
 ## Related Articles

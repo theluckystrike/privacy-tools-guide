@@ -49,7 +49,7 @@ async function createMultiSig(threshold, owners) {
     threshold,
     network: 'mainnet'
   });
-  
+
   const safeAddress = await safeSdk.getAddress();
   console.log(`Multi-sig wallet created at: ${safeAddress}`);
   return safeAddress;
@@ -58,7 +58,7 @@ async function createMultiSig(threshold, owners) {
 // Example: 2-of-3 setup for organizational treasury
 createMultiSig(2, [
   '0xOwner1Address...',
-  '0xOwner2Address...', 
+  '0xOwner2Address...',
   '0xOwner3Address...'
 ]);
 ```
@@ -90,13 +90,13 @@ const Transport = require('@ledgerhq/hw-transport-node-hid');
 async function signTransactionWithLedger(txParams) {
   const transport = await Transport.create();
   const eth = new Eth(transport);
-  
+
   // Derive path for the wallet (standard Ethereum path)
   const path = "44'/60'/0'/0/0";
-  
+
   // Sign transaction - private key never leaves device
   const signature = await eth.signTransaction(path, txParams);
-  
+
   await transport.close();
   return signature;
 }
@@ -278,7 +278,6 @@ Japan: Requires tax reporting for cryptocurrency gains and holdings
 ```
 
 For privacy-conscious users, this creates a tension: maximizing privacy through non-custodial self-hosted wallets versus accepting regulatory visibility through licensed exchanges for compliance.
-
 
 
 ## Related Articles

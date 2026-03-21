@@ -179,7 +179,6 @@ Establish recovery procedures before operational need:
 4. **All**: Designate trusted contacts for emergency access
 
 
-
 ## Related Articles
 
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)

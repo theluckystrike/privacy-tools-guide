@@ -76,7 +76,7 @@ class TorCircuit:
             'cookie_isolation': True,
             'no_persistent_state': True
         }
-    
+
     def request(self, url):
         # Each domain gets a fresh circuit
         if self.should_new_circuit(url):
@@ -145,13 +145,13 @@ def create_isolated_circuit(controller, remote_host):
             await_build=True,
             purpose=Circuit.Purpose.General
         )
-        
+
         # Attach stream to circuit
         stream = controller.attach_stream(
             stream_id=None,
             circuit_id=circuit_id
         )
-        
+
         return circuit_id
 
 # Usage with your HTTP library
@@ -178,7 +178,7 @@ async function verifyTorConnection() {
     // This endpoint returns your exit node IP
     const response = await fetch('https://check.torproject.org/api/ip');
     const data = await response.json();
-    
+
     return {
       isTor: data.IsTor,
       ip: data.IP,
@@ -226,8 +226,6 @@ When deciding whether Tor fits your threat model, ask:
 Tor Browser provides strong protection for its intended use case: anonymous web browsing against network-level adversaries. It is not a security solution and should be understood as one component in a broader security architecture.
 
 For developers building privacy-sensitive applications, Tor provides valuable primitives for network-level anonymity—but requires careful integration and understanding of its limitations to be effective.
-
-
 
 
 ## Related Articles

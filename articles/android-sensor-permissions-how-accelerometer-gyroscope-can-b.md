@@ -141,8 +141,8 @@ To detect significant device movement, you can calculate the magnitude of accele
 ```java
 public float calculateMagnitude(float[] values) {
     return (float) Math.sqrt(
-        values[0] * values[0] + 
-        values[1] * values[1] + 
+        values[0] * values[0] +
+        values[1] * values[1] +
         values[2] * values[2]
     );
 }
@@ -151,16 +151,16 @@ public float calculateMagnitude(float[] values) {
 public float[] removeGravity(float[] accelerometerData) {
     float[] linear = new float[3];
     final float alpha = 0.8f;
-    
+
     // Simple high-pass filter to isolate user motion
     linear[0] = alpha * accelerometerData[0] + (1 - alpha) * previousX;
     linear[1] = alpha * accelerometerData[1] + (1 - alpha) * previousY;
     linear[2] = alpha * accelerometerData[2] + (1 - alpha) * previousZ;
-    
+
     previousX = linear[0];
     previousY = linear[1];
     previousZ = linear[2];
-    
+
     return linear;
 }
 ```
@@ -176,7 +176,7 @@ private float[] orientationAngles = new float[3];
 public void calculateOrientation(SensorEvent event) {
     SensorManager.getRotationMatrixFromVector(rotationMatrix, event.values);
     SensorManager.getOrientation(rotationMatrix, orientationAngles);
-    
+
     // Convert to degrees
     float azimuth = (float) Math.toDegrees(orientationAngles[0]);
     float pitch = (float) Math.toDegrees(orientationAngles[1]);
@@ -198,7 +198,6 @@ For users concerned about motion sensor tracking:
 1. Review app permissions Check which apps have access to sensors (visible in Android settings under "Physical activity")
 2. Use security-focused ROMs Some privacy-oriented Android distributions offer sensor access controls
 3. Restrict background access Ensure apps cannot access sensors when not in use
-
 
 
 ## Related Articles

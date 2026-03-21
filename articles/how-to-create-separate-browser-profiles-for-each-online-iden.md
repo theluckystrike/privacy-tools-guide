@@ -218,7 +218,7 @@ const puppeteer = require('puppeteer');
     args: ['--profile-directory=ProfileWork'],
     headless: false
   });
-  
+
   const page = await browser.newPage();
   await page.goto('https://github.com');
   // You'll be logged into your work account
@@ -245,14 +245,13 @@ This launches Puppeteer using your existing "work" profile, preserving your logg
 | New profile | Use Chrome's built-in "Add profile" feature |
 
 
-
 ## Related Articles
 
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
-- [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
-- [Create Separate Network Segment for Smart Home Isolating From Personal Devices](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
-- [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
-- [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
+- [How To Use Compartmentalized Identity For Online Dating Sepa](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

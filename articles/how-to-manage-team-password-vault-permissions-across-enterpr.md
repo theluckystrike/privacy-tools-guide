@@ -368,13 +368,12 @@ When third parties require vault access:
 - Maintain detailed audit trails for compliance
 
 
-
 ## Related Articles
 
 - [How To Use Password Manager Across Work And Personal Devices](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)
 - [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
 - [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

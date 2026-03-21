@@ -56,7 +56,7 @@ I request the following categories of data:
 9. All network traffic logs involving my devices
 10. All analytics or reports generated about my activity
 
-Please provide this data in a commonly used electronic format (such as CSV, JSON, or PDF). 
+Please provide this data in a commonly used electronic format (such as CSV, JSON, or PDF).
 
 I am employed by [Company Name] as [job title] from [start date] to present. My employee ID is [if known]. I can be reached at [your email] and [your phone].
 
@@ -254,12 +254,11 @@ GDPR provides additional rights beyond accessing data:
 - India: Information Technology Act provides limited access rights
 
 
-
 ## Related Articles
 
 - [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
-- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
 - [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
 - [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
 

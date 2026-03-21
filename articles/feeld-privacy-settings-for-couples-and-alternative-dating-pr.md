@@ -189,7 +189,6 @@ fi
 Run this periodically to maintain consistent privacy posture.
 
 
-
 ## Related Articles
 
 - [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)

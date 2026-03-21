@@ -478,7 +478,6 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 **Ongoing:** Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
 
 
-
 ## Related Articles
 
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)

@@ -93,9 +93,9 @@ These characteristics combine to narrow user identity significantly. A user with
 The `<link rel="preload">` directive enables tracking through conditional resource loading. Stylesheets can specify preload links that only resolve when certain conditions match:
 
 ```html
-<link rel="preload" href="/track?feature=wide-screen" as="style" 
+<link rel="preload" href="/track?feature=wide-screen" as="style"
       media="(min-width: 1920px)">
-<link rel="preload" href="/track?feature=mobile" as="style" 
+<link rel="preload" href="/track?feature=mobile" as="style"
       media="(max-width: 767px)">
 ```
 
@@ -400,7 +400,6 @@ curl -s "$TARGET_URL" | grep -E "background.*url.*tracker"
 
 echo "Scan complete"
 ```
-
 
 
 ## Related Articles

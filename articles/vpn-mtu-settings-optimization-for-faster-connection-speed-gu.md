@@ -199,7 +199,6 @@ Host vpn.example.com
 ```
 
 
-
 ## Related Articles
 
 - [Vpn Mtu Settings Optimization For Faster Connection.](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-guide/)

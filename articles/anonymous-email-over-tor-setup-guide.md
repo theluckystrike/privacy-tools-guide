@@ -212,7 +212,6 @@ Confirm your email traffic routes through Tor:
 Your headers should show connections from `.onion` domains or Tor exit node IPs, never your ISP-assigned address.
 
 
-
 ## Related Articles
 
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)

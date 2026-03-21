@@ -418,8 +418,6 @@ Extensions are convenient, but they're a massive privacy surface. Every extensio
 {% endraw %}
 
 
-
-
 ## Related Articles
 
 - [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)

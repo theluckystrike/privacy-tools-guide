@@ -187,14 +187,13 @@ fi
 Schedule this to run weekly via cron.
 
 
-
 ## Related Articles
 
-- [Register Social Media Accounts Without Providing Real Phone Number or Email](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [Okcupid Data Sharing History What Third Parties Received Use](/privacy-tools-guide/okcupid-data-sharing-history-what-third-parties-received-use/)
 - [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 - [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
 - [Dating App Location Spoofing How To Hide Real Position While](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

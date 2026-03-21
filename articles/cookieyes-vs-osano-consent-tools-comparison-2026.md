@@ -192,8 +192,6 @@ Both platforms maintain active development and regular updates addressing new pr
 ---
 
 
-
-
 ## Related Articles
 
 - [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)

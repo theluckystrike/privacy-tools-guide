@@ -106,13 +106,13 @@ Graphics card details are particularly valuable for fingerprinting. Use WebGL:
 function getGpuInfo() {
   const canvas = document.createElement('canvas');
   const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  
+
   if (!gl) return { error: 'WebGL not supported' };
-  
+
   const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-  
+
   if (!debugInfo) return { error: 'Debug info not available' };
-  
+
   return {
     vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL),
     renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
@@ -132,10 +132,10 @@ Canvas fingerprinting works by drawing a hidden image and extracting its hash. D
 function getCanvasFingerprint() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  
+
   canvas.width = 200;
   canvas.height = 50;
-  
+
   ctx.textBaseline = 'top';
   ctx.font = '14px Arial';
   ctx.fillStyle = '#f60';
@@ -144,7 +144,7 @@ function getCanvasFingerprint() {
   ctx.fillText('Fingerprint Test', 2, 15);
   ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
   ctx.fillText('Fingerprint Test', 4, 17);
-  
+
   return canvas.toDataURL();
 }
 
@@ -166,13 +166,13 @@ function detectFonts(baseFonts, testFonts) {
   span.style.position = 'absolute';
   span.style.left = '-9999px';
   document.body.appendChild(span);
-  
+
   const detected = [];
-  
+
   baseFonts.forEach(font => {
     span.style.fontFamily = font;
     const baseWidth = span.offsetWidth;
-    
+
     testFonts.forEach(testFont => {
       span.style.fontFamily = `'${testFont}', ${font}`;
       if (span.offsetWidth !== baseWidth) {
@@ -180,7 +180,7 @@ function detectFonts(baseFonts, testFonts) {
       }
     });
   });
-  
+
   document.body.removeChild(span);
   return detected;
 }
@@ -200,10 +200,10 @@ WebRTC can expose your real IP address even behind a VPN:
 ```javascript
 async function checkWebRTC() {
   const rtc = new RTCPeerConnection({ iceServers: [] });
-  
+
   return new Promise((resolve) => {
     rtc.createDataChannel('');
-    
+
     rtc.onicecandidate = (e) => {
       if (e.candidate) {
         const candidate = e.candidate.candidate;
@@ -214,9 +214,9 @@ async function checkWebRTC() {
         }
       }
     };
-    
+
     rtc.createOffer().then(o => rtc.setLocalDescription(o));
-    
+
     setTimeout(() => {
       resolve({ error: 'No WebRTC leak detected within timeout' });
       rtc.close();
@@ -250,7 +250,6 @@ privacy.resistFingerprinting = true
 ```
 
 Disable WebRTC in browser settings or use an extension that blocks the leak.
-
 
 
 ## Related Articles

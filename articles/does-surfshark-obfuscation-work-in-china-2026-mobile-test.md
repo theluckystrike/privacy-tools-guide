@@ -140,7 +140,7 @@ import time
 
 servers = [
     "cn-gd.prod.surfshark.com",
-    "cn-sh.prod.surfshark.com", 
+    "cn-sh.prod.surfshark.com",
     "cn-bj.prod.surfshark.com"
 ]
 
@@ -181,7 +181,6 @@ If Surfshark consistently fails, consider:
 - **WireGuard with domain-fronted endpoints** (using CDN domains as SNI)
 - **Custom TLS wrappers** that make traffic appear as legitimate web browsing
 - **Telegram MTProto** proxy (works in limited regions)
-
 
 
 ## Related Articles

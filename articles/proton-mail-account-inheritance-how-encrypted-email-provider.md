@@ -35,7 +35,7 @@ const crypto = require('crypto');
 function derivePrivateKey(password, salt) {
   const iterations = 100000;
   const keyLength = 32;
-  
+
   return crypto.pbkdf2Sync(
     password,
     Buffer.from(salt, 'base64'),
@@ -80,11 +80,11 @@ def create_escrow_shares(secret, k, n):
     # This is a simplified illustration
     shares = []
     coefficients = [secret] + [secrets.randbelow(256) for _ in range(k - 1)]
-    
+
     for x in range(1, n + 1):
         y = sum(c * (x ** i) for i, c in enumerate(coefficients))
         shares.append((x, y))
-    
+
     return shares
 
 # Distribute shares to: attorney, family member, secure storage
@@ -215,11 +215,10 @@ Create a documented timeline for your digital succession plan:
 - **Upon death**: Executor accesses documented procedures and pre-distributed keys/shares
 
 
-
 ## Related Articles
 
-- [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
+- [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
 - [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Gaming Account Inheritance What Happens To Steam Playstation](/privacy-tools-guide/gaming-account-inheritance-what-happens-to-steam-playstation/)
 - [Email Provider Jurisdiction Comparison Which Countries Prote](/privacy-tools-guide/email-provider-jurisdiction-comparison-which-countries-prote/)

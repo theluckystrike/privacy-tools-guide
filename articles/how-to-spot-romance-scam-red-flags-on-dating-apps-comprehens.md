@@ -51,41 +51,41 @@ from datetime import datetime, timedelta
 class RomanceScamDetector:
     def __init__(self):
         self.red_flags = []
-        
+
     def analyze_profile(self, profile):
         """Calculate risk score based on multiple indicators"""
         risk_score = 0
-        
+
         # Check account age vs. message volume
         account_age = datetime.now() - profile.created_at
         if account_age < timedelta(days=7) and profile.message_count > 500:
             risk_score += 30
             self.red_flags.append("High message volume from new account")
-            
+
         # Analyze photo metadata consistency
         if not self.verify_photo_metadata(profile.photos):
             risk_score += 25
             self.red_flags.append("Inconsistent photo metadata")
-            
+
         # Check for template-like bio patterns
         if self.detect_template_bio(profile.bio):
             risk_score += 20
             self.red_flags.append("Template-detected bio text")
-            
+
         # Timezone-location mismatch detection
         if self.check_timezone_mismatch(profile):
             risk_score += 15
             self.red_flags.append("Timezone-location mismatch")
-            
+
         return risk_score, self.red_flags
-    
+
     def verify_photo_metadata(self, photos):
         """Verify photo EXIF data consistency"""
         for photo in photos:
             if not photo.exif_data:
                 return False
         return True
-    
+
     def detect_template_bio(self, bio_text):
         """Detect common scam template phrases"""
         template_patterns = [
@@ -93,9 +93,9 @@ class RomanceScamDetector:
             r"love is.*what.*matters",
             r"God.*first.*family.*then"
         ]
-        return any(re.search(pattern, bio_text, re.IGNORECASE) 
+        return any(re.search(pattern, bio_text, re.IGNORECASE)
                    for pattern in template_patterns)
-    
+
     def check_timezone_mismatch(self, profile):
         """Check if stated location matches IP timezone"""
         # Implementation would compare IP geolocation
@@ -172,16 +172,16 @@ For developers building dating applications, implementing verification requires 
 function detectSuspiciousVelocity(messages, timeWindowMinutes = 60) {
     const now = Date.now();
     const windowStart = now - (timeWindowMinutes * 60 * 1000);
-    
+
     const recentMessages = messages.filter(
         m => m.timestamp > windowStart
     );
-    
+
     // Scammers often maintain high message volume
     // across multiple victims simultaneously
-    const avgMessagesPerHour = recentMessages.length / 
+    const avgMessagesPerHour = recentMessages.length /
         (timeWindowMinutes / 60);
-        
+
     return avgMessagesPerHour > 50; // Threshold configurable
 }
 ```
@@ -204,12 +204,11 @@ When scam indicators are detected, both users and platforms should follow respon
 4. Implement account-level blocks across platform network
 
 
-
 ## Related Articles
 
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [How To Detect Catfish On Dating Apps Using Osint Verificatio](/privacy-tools-guide/how-to-detect-catfish-on-dating-apps-using-osint-verificatio/)
-- [Use Separate Phone Number for Dating Apps Without Revealing Real Number](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
+- [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
 - [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
 

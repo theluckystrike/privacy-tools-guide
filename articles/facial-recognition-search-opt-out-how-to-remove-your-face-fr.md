@@ -97,20 +97,20 @@ def check_opt_out_status(service_name: str) -> dict:
     service = OPT_OUT_SERVICES.get(service_name)
     if not service:
         return {"error": "Unknown service"}
-    
+
     if not service["last_request"]:
         return {"status": "no_request", "service": service_name}
-    
+
     request_date = datetime.fromisoformat(service["last_request"])
     days_elapsed = (datetime.now() - request_date).days
-    
+
     if days_elapsed >= service["processing_time_days"]:
         return {
             "status": "ready_to_verify",
             "service": service_name,
             "days_elapsed": days_elapsed
         }
-    
+
     return {
         "status": "pending",
         "service": service_name,
@@ -174,8 +174,6 @@ Removing your data from Pimeyes and Clearview addresses two services but doesn't
 The technical landscape of facial recognition search continues evolving. New services emerge, legal frameworks mature, and removal processes change. Staying informed and maintaining vigilance protects your digital identity in an era where biometric data has become a valuable—and sometimes exploited—commodity.
 
 ---
-
-
 
 
 ## Related Articles

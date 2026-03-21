@@ -58,7 +58,7 @@ def analyze_router_logs(log_content):
     failed_auth = re.findall(r'auth.*fail', log_content, re.IGNORECASE)
     new_devices = re.findall(r'new device.*?([0-9a-fA-F:]{17})', log_content)
     successful = re.findall(r'connected.*?([0-9a-fA-F:]{17})', log_content)
-    
+
     return {
         'failed_attempts': len(failed_auth),
         'new_devices': set(new_devices),
@@ -90,18 +90,18 @@ from scapy.all import rdpcap, TCP, IP
 
 def analyze_network_traffic(pcap_file):
     packets = rdpcap(pcap_file)
-    
+
     # Count connections per destination IP
     dest_ips = {}
     for pkt in packets:
         if IP in pkt:
             dst = pkt[IP].dst
             dest_ips[dst] = dest_ips.get(dst, 0) + 1
-    
+
     # Identify high-traffic destinations
-    suspicious = {ip: count for ip, count in dest_ips.items() 
+    suspicious = {ip: count for ip, count in dest_ips.items()
                   if count > 1000 and not ip.startswith('192.168.')}
-    
+
     return suspicious
 
 # Identify potential data exfiltration
@@ -387,7 +387,6 @@ For high-value networks, consider professional audits:
 - **Traffic analysis**: $2,000-10,000, forensic analysis of network patterns
 
 These services provide documented vulnerability assessments valuable for security hardening and legal proceedings if needed.
-
 
 
 ## Related Articles

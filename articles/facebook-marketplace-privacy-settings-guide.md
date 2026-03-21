@@ -86,14 +86,14 @@ import facebook
 
 def get_marketplace_privacy_settings(access_token):
     graph = facebook.GraphAPI(access_token)
-    
+
     # Get profile settings that affect Marketplace
     profile = graph.get_object("me", fields="id,name,location,hometown")
-    
+
     # Check friend list visibility setting
     # This requires additional permissions
     friends = graph.get_object("me", fields="friends.summary(true)")
-    
+
     return {
         "location_sharing": profile.get("location", {}),
         "hometown": profile.get("hometown", {}),
@@ -327,7 +327,6 @@ curl -s "https://www.facebook.com/marketplace/profile/YOUR_ID" | grep -i "locati
 ```
 
 **Data Deletion**: After selling an item, remove the listing promptly. Old listings create permanent data points that aggregators may archive. Request deletion within Facebook's settings to ensure removal from search engines.
-
 
 
 ## Related Articles

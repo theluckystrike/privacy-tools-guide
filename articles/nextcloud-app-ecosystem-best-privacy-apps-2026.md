@@ -187,7 +187,7 @@ When setting up Nextcloud for privacy-focused use, consider these configurations
 # nginx configuration for Nextcloud with security headers
 server {
     # ... server configuration ...
-    
+
     # Security headers
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-Frame-Options "SAMEORIGIN" always;
@@ -195,7 +195,6 @@ server {
     add_header Referrer-Policy "no-referrer" always;
 }
 ```
-
 
 
 ## Related Articles

@@ -184,6 +184,7 @@ GitHub Insights provides built-in analytics, or integrate with tools like DevMet
 
 The key is continuous refinement—what works today may need adjustment as team composition and project needs evolve. Measure outcomes and adapt practices to fit the team's specific context.
 
+
 ## Related Articles
 
 - [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
@@ -192,5 +193,6 @@ The key is continuous refinement—what works today may need adjustment as team 
 - [How To Set Up Github Repository With Encrypted Estate Instru](/privacy-tools-guide/how-to-set-up-github-repository-with-encrypted-estate-instru/)
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

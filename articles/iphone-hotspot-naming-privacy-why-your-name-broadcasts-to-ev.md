@@ -231,8 +231,6 @@ By understanding how iPhone personal hotspot naming works at a technical level, 
 ---
 
 
-
-
 ## Related Articles
 
 - [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)

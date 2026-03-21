@@ -363,7 +363,6 @@ Best practices for implementation:
 6. **Test recovery** — Periodically verify you can access encrypted files
 
 
-
 ## Related Articles
 
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)

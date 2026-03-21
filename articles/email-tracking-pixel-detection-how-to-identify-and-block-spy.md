@@ -61,38 +61,38 @@ TRACKING_DOMAINS = [
 
 def detect_tracking_pixels(email_message):
     html_content = None
-    
+
     for part in email_message.walk():
         if part.get_content_type() == 'text/html':
             html_content = part.get_payload(decode=True)
             break
-    
+
     if not html_content:
         return []
-    
+
     # Find all image tags
     img_pattern = r'<img[^>]+src=["\']([^"\']+)["\'][^>]*>'
     images = re.findall(img_pattern, html_content.decode('utf-8', errors='ignore'))
-    
+
     tracking_pixels = []
     for img_url in images:
         # Check for 1x1 dimensions or tracking domains
         if 'width=' in img_url.lower() or 'height=' in img_url.lower():
             if 'width="1"' in img_url.lower() or 'height="1"' in img_url.lower():
                 tracking_pixels.append(img_url)
-        
+
         # Check for known tracking domains
         for domain in TRACKING_DOMAINS:
             if domain in img_url:
                 tracking_pixels.append(img_url)
                 break
-    
+
     return tracking_pixels
 
 # Usage
 with open('email.eml', 'rb') as f:
     msg = BytesParser().parse(f)
-    
+
 pixels = detect_tracking_pixels(msg)
 for pixel in pixels:
     print(f"Potential tracking pixel: {pixel}")
@@ -137,28 +137,28 @@ class TrackingPixelFilter:
             re.compile(r'<img[^>]+height=["\']?1["\']?[^>]*>', re.I),
             re.compile(r'src=["\'][^"\']*(?:track|pixel|beacon|open)[^"\']*["\']', re.I),
         ]
-        
+
         self.tracking_domains = {
             'mailtrack.io', 'yesware.com', 'streak.com',
             'bananatag.com', 'getnotify.com', 'readnotify.com'
         }
-    
+
     def analyze_email(self, email_html):
         found_pixels = []
-        
+
         for pattern in self.patterns:
             matches = pattern.findall(email_html)
             found_pixels.extend(matches)
-        
+
         # Check URLs against known tracking domains
         url_pattern = re.compile(r'src=["\']([^"\']+)["\']')
         for match in url_pattern.findall(email_html):
             for domain in self.tracking_domains:
                 if domain in match:
                     found_pixels.append(match)
-        
+
         return found_pixels
-    
+
     def sanitize_email(self, email_html):
         """Remove or replace tracking pixels"""
         # Replace 1x1 images with placeholder
@@ -190,7 +190,7 @@ if msg.is_multipart():
             html = part.get_payload(decode=True).decode('utf-8')
             filter_obj = TrackingPixelFilter()
             pixels = filter_obj.analyze_email(html)
-            
+
             if pixels:
                 print(f"Found {len(pixels)} tracking pixels")
                 # Sanitize the content
@@ -221,14 +221,13 @@ Start by configuring your email client to block external images by default. This
 The arms race between privacy tools and tracking technologies continues, but understanding how tracking pixels operate puts you in control. Whether you choose simple client settings or custom-built filtering systems, detecting and blocking these invisible spies represents a meaningful step toward reclaiming your email privacy.
 
 
-
 ## Related Articles
 
 - [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
 - [Wifi Deauthentication Attack Detection How To Identify And P](/privacy-tools-guide/wifi-deauthentication-attack-detection-how-to-identify-and-p/)
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
-- [Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
-- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [Use Email Subaddressing Plus Addressing For Tracking Which](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

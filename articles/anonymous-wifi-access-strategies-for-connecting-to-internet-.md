@@ -156,7 +156,7 @@ AutomapHostsOnResolve 1
 torified_ip=$(cat /var/run/tor/control_port | cut -d: -f1)
 iptables -t nat -A OUTPUT -p tcp --tcp-flags SYN,SYN,ACK SYN -j \
   REDIRECT --to-ports 9040
-  
+
 # DNS through Tor
 iptables -t nat -A OUTPUT -p udp --dport 53 -j \
   REDIRECT --to-ports 5353
@@ -292,8 +292,6 @@ Each layer adds latency and complexity, so balance your anonymity needs against 
 The key principle is defense in depth—combining multiple anonymity techniques ensures that compromising one layer does not expose your identity. Network-level identifiers like MAC addresses can be randomized, but application-level fingerprinting requires browser configuration and extension usage. Building a complete anonymous WiFi access strategy requires addressing every layer where identity can leak.
 
 ---
-
-
 
 
 ## Related Articles

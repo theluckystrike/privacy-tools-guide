@@ -273,8 +273,6 @@ Regardless of your password manager choice, follow these practices:
 Storing SSH keys in a password manager transforms scattered key management into a centralized, auditable system. The initial setup takes about 30 minutes, but the operational benefits of automatic backup, easy rotation, and cross-device access are substantial for anyone managing multiple servers.
 
 
-
-
 ## Related Articles
 
 - [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)

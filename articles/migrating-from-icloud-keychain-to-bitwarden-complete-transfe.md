@@ -87,45 +87,45 @@ def get_keychain_passwords():
         '-a',  # Account
         '-l',  # Label
     ]
-    
+
     # Alternative: Use a simpler approach with the keychain dump
     result = subprocess.run(
         ['security', 'dump-keychain'],
         capture_output=True,
         text=True
     )
-    
+
     passwords = []
     current_item = {}
-    
+
     for line in result.stdout.split('\n'):
         if '0x00000007' in line:  # Password data follows
             # Parse the password entry
             pass
-        
+
         if 'acct' in line:  # Account/username
             current_item['username'] = line.split('=')[1].strip('"<>"')
         if 'svce' in line:  # Service/server
             current_item['server'] = line.split('=')[1].strip('"<>"')
-    
+
     return passwords
 
 def convert_to_bitwarden_csv(input_file, output_file):
     """Convert iCloud Keychain export to Bitwarden CSV format."""
-    
-    bitwarden_fields = ['folder', 'favorite', 'type', 'name', 'notes', 
+
+    bitwarden_fields = ['folder', 'favorite', 'type', 'name', 'notes',
                         'login_uri', 'login_username', 'login_password',
                         'login_totp']
-    
+
     with open(input_file, 'r', encoding='utf-8-sig') as infile:
         # Read your source format here
         # This is a placeholder - adapt based on your actual export
         reader = csv.DictReader(infile)
-        
+
         with open(output_file, 'w', newline='', encoding='utf-8') as outfile:
             writer = csv.DictWriter(outfile, fieldnames=bitwarden_fields)
             writer.writeheader()
-            
+
             for row in reader:
                 writer.writerow({
                     'folder': '',
@@ -138,14 +138,14 @@ def convert_to_bitwarden_csv(input_file, output_file):
                     'login_password': row.get('password', ''),
                     'login_totp': ''
                 })
-    
+
     print(f"Converted {output_file} ready for Bitwarden import")
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         print("Usage: python3 convert.py <input.csv> <output.csv>")
         sys.exit(1)
-    
+
     convert_to_bitwarden_csv(sys.argv[1], sys.argv[2])
 ```
 
@@ -245,7 +245,6 @@ During migration, follow these practices:
 - **Delete exports securely**: Use `shred` or `rm -P` for sensitive files
 - **Update master password**: Consider rotating your Bitwarden master password after migration
 - **Enable 2FA on Bitwarden**: Use YubiKey or a hardware token for vault protection
-
 
 
 ## Related Articles

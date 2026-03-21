@@ -125,7 +125,7 @@ class OptOutTracker:
     def __init__(self, filepath="optout_status.csv"):
         self.filepath = filepath
         self.init_file()
-    
+
     def init_file(self):
         try:
             with open(self.filepath, 'x', newline='') as f:
@@ -133,7 +133,7 @@ class OptOutTracker:
                 writer.writerow(['company', 'request_date', 'status', 'confirmation_id'])
         except FileExistsError:
             pass
-    
+
     def add_request(self, company, confirmation_id=''):
         with open(self.filepath, 'a', newline='') as f:
             writer = csv.writer(f)
@@ -143,7 +143,7 @@ class OptOutTracker:
                 'pending',
                 confirmation_id
             ])
-    
+
     def verify_after_days(self, company, days=14):
         # Check if enough time has passed
         cutoff = datetime.now() - timedelta(days=days)
@@ -201,16 +201,16 @@ def handle_deletion_request(user_id):
     """Delete all user data across systems"""
     # Delete from primary database
     delete_user_from_db(user_id)
-    
+
     # Delete from analytics
     delete_from_analytics(user_id)
-    
+
     # Delete from backups (schedule for next cycle)
     schedule_deletion_from_backup(user_id)
-    
+
     # Send confirmation
     send_deletion_confirmation(user_id)
-    
+
     return {"status": "deletion_scheduled", "timeline": "72_hours"}
 ```
 
@@ -241,15 +241,13 @@ For coverage beyond the three companies covered here, consider:
 Taking control of your data requires ongoing attention. The steps outlined here provide a starting point for reducing your digital footprint with major data brokers.
 
 
-
-
 ## Related Articles
 
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
-- [Opt Out of Aadhaar-Based Surveillance and Limit Biometric Data Sharing](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [How To Opt Out Of Linkedin Data Being Used For Ai Training A](/privacy-tools-guide/how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/)
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
+- [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -47,7 +47,7 @@ Here's a practical example of how websites collect sensor data for fingerprintin
 // Check sensor availability
 if ('Accelerometer' in window) {
   const accel = new Accelerometer({ frequency: 50 });
-  
+
   accel.addEventListener('reading', () => {
     console.log('Accelerometer:', {
       x: accel.x,
@@ -56,13 +56,13 @@ if ('Accelerometer' in window) {
       timestamp: Date.now()
     });
   });
-  
+
   accel.start();
 }
 
 if ('Gyroscope' in window) {
   const gyro = new Gyroscope({ frequency: 50 });
-  
+
   gyro.addEventListener('reading', () => {
     console.log('Gyroscope:', {
       x: gyro.x,
@@ -71,7 +71,7 @@ if ('Gyroscope' in window) {
       timestamp: Date.now()
     });
   });
-  
+
   gyro.start();
 }
 ```
@@ -95,14 +95,14 @@ function collectBaseline(readings, duration = 5000) {
   return new Promise((resolve) => {
     const samples = [];
     const startTime = Date.now();
-    
+
     const interval = setInterval(() => {
       samples.push({
         accel: { x: accel.x, y: accel.y, z: accel.z },
         gyro: { x: gyro.x, y: gyro.y, z: gyro.z },
         time: Date.now() - startTime
       });
-      
+
       if (Date.now() - startTime >= duration) {
         clearInterval(interval);
         resolve(analyzeFingerprint(samples));
@@ -137,12 +137,12 @@ More sophisticated techniques induce specific motions and analyze the response. 
 // Example: Dynamic fingerprinting through controlled motion
 function generateMotionSignature() {
   const readings = [];
-  
+
   // Request user to rotate device
   return new Promise((resolve) => {
     let stage = 0;
     const stages = ['hold', 'rotate90', 'hold', 'rotate180', 'hold'];
-    
+
     const motionHandler = (event) => {
       readings.push({
         rotationRate: {
@@ -153,7 +153,7 @@ function generateMotionSignature() {
         stage: stages[stage]
       });
     };
-    
+
     // Cycle through orientations with visual cues
     const interval = setInterval(() => {
       stage++;
@@ -206,7 +206,6 @@ Chrome, Firefox, and Safari have implemented varying levels of sensor protection
 - **Chrome**: Requires explicit permission, offers `disableSensorFingerprinting` flag
 - **Firefox**: Blocks sensor access in third-party contexts by default
 - **Safari**: Implements intelligent tracking prevention including sensor spoofing
-
 
 
 ## Related Articles

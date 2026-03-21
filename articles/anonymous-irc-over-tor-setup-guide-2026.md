@@ -252,8 +252,6 @@ This allows users to connect directly to your .onion address, eliminating exit n
 The setup requires a Tor daemon, a compatible IRC client, and attention to operational security practices. Start with a trusted network like OFTC and verify your anonymity through hostmask checks before adding advanced configurations.
 
 
-
-
 ## Related Articles
 
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)

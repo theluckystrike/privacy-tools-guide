@@ -255,14 +255,13 @@ cat /etc/resolv.conf
 ```
 
 
-
 ## Related Articles
 
 - [Best VPN for Accessing Amazon Prime Video Different Regions](/privacy-tools-guide/best-vpn-for-accessing-amazon-prime-video-different-regions/)
-- [Configure Little Snitch On Macos To Block All Unnecessary Outbound Connections](/privacy-tools-guide/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
 - [How To Run Background Check On Dating Match Using Public Rec](/privacy-tools-guide/how-to-run-background-check-on-dating-match-using-public-rec/)
 - [How To Run Zigbee2mqtt Locally For Smart Home Without Vendor](/privacy-tools-guide/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
 - [How To Diagnose Slow Vpn Connection Speeds Step By Step](/privacy-tools-guide/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

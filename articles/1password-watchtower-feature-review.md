@@ -167,7 +167,7 @@ ITEMS=$(op list items --vault "$VAULT_NAME")
 echo "Scanning $VAULT_NAME vault..."
 echo "$ITEMS" | jq -r '.[] | "\(.overview.title) \(.id)"' | while read title id; do
   ITEM=$(op get item "$id")
-  
+
   # Check for weak passwords (simple heuristic)
   PASSWORD=$(echo "$ITEM" | jq -r '.details.password // empty')
   if [ ${#PASSWORD} -lt 16 ]; then
@@ -187,13 +187,11 @@ Rotate credentials regularly—set calendar reminders, since Watchtower's expira
 The key is understanding what Watchtower monitors and supplementing it with practices it doesn't cover—master password strength, account-level security, and systematic rotation schedules. For developers already using 1Password, reviewing Watchtower findings weekly takes minutes but provides ongoing visibility into credential health, and the CLI and API make it scalable across teams and projects.
 
 
-
-
 ## Related Articles
 
 - [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 - [Signal Username Feature Privacy Review](/privacy-tools-guide/signal-username-feature-privacy-review/)
 

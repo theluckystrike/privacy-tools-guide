@@ -336,7 +336,6 @@ Provide diagnostic information:
 - VPN client and version
 
 
-
 ## Related Articles
 
 - [How VPN Subnet Conflicts Happen and How to Fix Them](/privacy-tools-guide/how-vpn-subnet-conflicts-happen-and-how-to-fix-them/)

@@ -48,14 +48,14 @@ class SignalVoiceRatchet:
         self.root_key = x25519.X25519PrivateKey.generate()
         self.sending_chain_key = None
         self.receiving_chain_key = None
-    
+
     def initialize_session(self, our_private, their_public):
         shared_secret = our_private.exchange(their_public)
         # HKDF-like key derivation for forward secrecy
         self.root_key = self._derive_key(shared_secret, b"root")
         self.sending_chain_key = self._derive_key(shared_secret, b"send")
         self.receiving_chain_key = self._derive_key(shared_secret, b"recv")
-    
+
     def ratchet_step(self):
         # Generate new key for each message (forward secrecy)
         self.sending_chain_key = self._derive_key(
@@ -173,10 +173,10 @@ core.add_account(account)
 def initiate_secure_call(core, recipient):
     params = core.create_call_params(None)
     params.media_encryption = linphone.MediaEncryption.ZRTP
-    
+
     # Enable ZRTP key verification (SAS)
     params.zrtp_features = linphone.ZRTPFeatureFlags.SAS_VERIFICATION
-    
+
     call = core.invite_with_params(recipient, params)
     return call
 
@@ -208,7 +208,7 @@ const { Account, Client, PayloadBundleType } = require('@wireapp/core');
 
 async function setupEncryptedVoice() {
     const client = new Client();
-    
+
     // Initialize with encrypted storage
     await client.init({
         store: {
@@ -216,13 +216,13 @@ async function setupEncryptedVoice() {
             encryptionKey: process.env.DB_ENCRYPTION_KEY
         }
     });
-    
+
     // Login with client credentials
     await client.login({
         user: process.env.WIRE_USER,
         password: process.env.WIRE_PASSWORD
     });
-    
+
     // Start encrypted voice call
     const conversationId = 'target-conversation-id';
     const call = await client.call.invokeCall({
@@ -230,11 +230,11 @@ async function setupEncryptedVoice() {
         type: 'voice',
         timeout: 30000
     });
-    
+
     // Verify encryption state
     console.log('Call encrypted:', call.isEncrypted());
     console.log('Protocol:', call.getProtocol());
-    
+
     return call;
 }
 ```
@@ -265,8 +265,6 @@ Custom application development: Linphone offers the most flexibility with its SI
 Enterprise environments: Wire combines encrypted voice with business features like guest rooms and self-destructing messages. Self-hosting option available for data sovereignty requirements.
 
 The encrypted voice landscape continues evolving. MLS (Messaging Layer Security) adoption is growing across platforms, promising improved group call efficiency. Your choice should support standard protocols like SRTP and ZRTP to ensure future compatibility.
-
-
 
 
 ## Related Articles

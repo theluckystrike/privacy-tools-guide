@@ -47,18 +47,18 @@ class UserRegistration:
     # Required fields only
     email: str
     account_type: str
-    
+
     # Optional fields with explicit consent tracking
     display_name: Optional[str] = None
     phone: Optional[str] = None
-    
+
     # Consent tracking for each optional field
     consent_phone: bool = False
     consent_marketing: bool = False
-    
+
     # Automatic metadata
     registered_at: datetime = None
-    
+
     def __post_init__(self):
         if self.registered_at is None:
             self.registered_at = datetime.utcnow()
@@ -75,14 +75,14 @@ class PrivacyAwareSerializer:
     def __init__(self, user_context: dict):
         self.user_context = user_context
         self.field_permissions = self._load_permissions()
-    
+
     def serialize(self, resource: dict, view: str) -> dict:
         allowed_fields = self.field_permissions.get(view, [])
         return {
-            k: v for k, v in resource.items() 
+            k: v for k, v in resource.items()
             if k in allowed_fields
         }
-    
+
     def _load_permissions(self) -> dict:
         # Load from user role or consent preferences
         return {
@@ -103,11 +103,11 @@ class RetentionPolicy:
     def __init__(self, data_class: str, retention_days: int):
         self.data_class = data_class
         self.retention_days = retention_days
-    
+
     def is_expired(self, record_timestamp: datetime) -> bool:
         cutoff = datetime.utcnow() - timedelta(days=self.retention_days)
         return record_timestamp < cutoff
-    
+
     def get_deletion_query(self) -> str:
         return f"""
             DELETE FROM {self.data_class}
@@ -122,13 +122,13 @@ Run retention jobs as scheduled database tasks. For GDPR compliance, implement t
 def handle_deletion_request(user_id: str, db_pool):
     # Soft delete immediately for user-facing compliance
     await db_pool.execute("""
-        UPDATE users 
-        SET deleted_at = NOW(), 
+        UPDATE users
+        SET deleted_at = NOW(),
             email_hash = NULL,
             personal_data_encrypted = NULL
         WHERE id = $1
     """, user_id)
-    
+
     # Queue full deletion through retention policy
     await queue_retention_job('user_data', user_id)
 ```
@@ -156,14 +156,14 @@ When processing any operation involving personal data, verify consent status fir
 ```python
 async def require_consent(user_id: str, consent_type: str) -> bool:
     result = await db.fetchrow("""
-        SELECT consent_given 
-        FROM consent_records 
-        WHERE user_id = $1 
+        SELECT consent_given
+        FROM consent_records
+        WHERE user_id = $1
         AND consent_type = $2
-        ORDER BY recorded_at DESC 
+        ORDER BY recorded_at DESC
         LIMIT 1
     """, user_id, consent_type)
-    
+
     return result['consent_given'] if result else False
 ```
 
@@ -177,15 +177,15 @@ privacy_checks:
   - name: PII in logs
     pattern: '\b\d{3}-\d{2}-\d{4}\b|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b'
     severity: critical
-    
+
   - name: Unencrypted storage
     check: database_encryption_enabled
     severity: critical
-    
+
   - name: Data retention policy
     check: retention_policy_defined
     severity: warning
-    
+
   - name: Consent mechanism
     check: consent_collection_present
     severity: critical
@@ -219,7 +219,6 @@ def log_data_access(user_id: str, resource: str, action: str):
 ```
 
 This pattern supports both security monitoring and regulatory audits while maintaining the principle of data minimization in your logging infrastructure.
-
 
 
 ## Related Articles

@@ -233,7 +233,6 @@ Regardless of which option you pick:
 - **Air-gapped or offline-only**: KeePassXC
 
 
-
 ## Related Articles
 
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)

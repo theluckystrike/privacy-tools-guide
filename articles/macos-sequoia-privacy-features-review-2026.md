@@ -131,7 +131,7 @@ Originally introduced for iOS, Lockdown Mode arrived with expanded functionality
 
 ```swift
 // Check if Lockdown Mode is active
-let isLockedDown = ProcessInfo.processInfo.isLowPowerModeEnabled 
+let isLockedDown = ProcessInfo.processInfo.isLowPowerModeEnabled
 // Note: This is a simplified check; actual Lockdown detection
 // uses different APIs and requires entitlements
 ```
@@ -342,8 +342,6 @@ Run this audit quarterly to identify permission creep over time.
 - Use password manager (1Password, Bitwarden) for credential management
 
 ---
-
-
 
 
 ## Related Articles

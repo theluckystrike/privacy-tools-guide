@@ -72,7 +72,7 @@ def create_invitation(client_keypair):
         "queue_id": generate_queue_id(),
         "public_key": client_keypair.public_key,
         "ratchet_key": generate_ratchet_keypair().public_key,
-        "signature": sign(client_keypair.private_key, 
+        "signature": sign(client_keypair.private_key,
                           queue_id + public_key + ratchet_key)
     }
     return encode_invitation(invitation)
@@ -88,17 +88,17 @@ When Bob receives the invitation, his client performs a Diffie-Hellman key excha
 def process_invitation(invitation):
     # Generate ephemeral keypair for DH
     bob_ephemeral = generate_keypair()
-    
+
     # Perform DH with Alice's keys
     shared_secret = dh(
         bob_ephemeral.private_key,
         invitation['public_key']
     )
-    
+
     # Derive initial symmetric key
-    symmetric_key = kdf(shared_secret, 
+    symmetric_key = kdf(shared_secret,
                        context="simpleX-v1")
-    
+
     # Store established key
     return {
         "session_key": symmetric_key,
@@ -116,19 +116,19 @@ After establishing the initial connection, both clients immediately rotate to ne
 def rotate_queue(session):
     new_queue = generate_new_queue()
     new_ratchet_key = generate_ratchet_keypair()
-    
+
     # Encrypt new address using existing session key
     encrypted_address = encrypt(
         new_queue.address + new_ratchet_key.public_key,
         session.session_key
     )
-    
+
     # Send rotation message through old queue
     send_message(session, {
         "type": "QUEUE_ROTATION",
         "payload": encrypted_address
     })
-    
+
     return new_queue, new_ratchet_key
 ```
 
@@ -158,10 +158,10 @@ def send_message_via_smp(server, queue_id, encrypted_payload):
         message=encrypted_payload,
         timestamp=current_time()
     )
-    
+
     # Recipient polls for new messages
     messages = server.get_messages(queue_id=recipient_queue)
-    
+
     # Only recipient can decrypt messages for their queue
     for msg in messages:
         decrypted = decrypt(msg, recipient_session_key)
@@ -178,13 +178,13 @@ class SimpleXRatchet:
     def __init__(self, shared_secret):
         self.root_key = shared_secret
         self.chain_key = hash(shared_secret)
-        
+
     def ratchet_step(self, peer_ratchet_key):
         # DH ratchet - derive new chain from peer's ratchet key
         new_shared = dh(self.private_key, peer_ratchet_key)
         self.root_key = kdf(self.root_key + new_shared, "ratchet")
         self.chain_key = hash(self.root_key)
-        
+
     def encrypt_message(self, plaintext):
         # Symmetric ratchet - advance chain for each message
         self.chain_key, message_key = derive_keys(self.chain_key)
@@ -219,15 +219,13 @@ The identifier-free design trades some usability for privacy. Users must share n
 ---
 
 
-
-
 ## Related Articles
 
 - [Simplex Chat Review: No Identifiers Architecture Analysis](/privacy-tools-guide/simplex-chat-review-no-identifiers/)
-- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
-- [Configure Xray Reality Protocol for Undetectable Proxy from Censored Countries](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
+- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Configure Xray Reality Protocol for Undetectable Proxy from](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
 - [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
-- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
+- [Mls Messaging Layer Security Protocol How It Will Change](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

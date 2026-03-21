@@ -614,5 +614,6 @@ nslookup google.com
 - [Voip Phone Number Privacy Risks What Sip Providers Log About](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

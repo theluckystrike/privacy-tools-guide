@@ -226,7 +226,6 @@ When meeting undocumented community members, create physical security:
 Faraday bags prevent passive IMSI catcher surveillance (stingrays) that can identify all phones in an area even without active interception. A basic Faraday bag costs under $20 and is effective when the phone is fully powered down or in airplane mode with the bag sealed. Test your Faraday bag by placing a phone inside, sealing it, and attempting to call — no ring confirms the bag is working.
 
 
-
 ## Related Articles
 
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)

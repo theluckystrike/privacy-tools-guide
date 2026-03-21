@@ -215,7 +215,6 @@ unzip -p bugreport.zip bugreport-*/*.txt | grep -i "NotificationManager"
 These commands reveal whether an app is posting notifications and what content they contain.
 
 
-
 ## Related Articles
 
 - [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)

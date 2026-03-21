@@ -93,7 +93,7 @@ class CCPARequestLogger:
         self.business_id = business_id
         self.logger = logging.getLogger(f"ccpa_{business_id}")
         self.logger.setLevel(logging.DEBUG)
-        
+
     def log_request(self, request_type, payload, response):
         log_entry = {
             "timestamp": datetime.utcnow().isoformat(),
@@ -108,7 +108,7 @@ class CCPARequestLogger:
             ).hexdigest()[:16]
         }
         self.logger.info(json.dumps(log_entry))
-        
+
     def generate_complaint_doc(self):
         # Export logs for complaint documentation
         pass
@@ -305,9 +305,9 @@ Ensure your systems respond to consumer requests within the mandated 45-day wind
 ## Related Articles
 
 - [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
-- [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
-- [Cloud Storage Subpoena Risk: Provider Law Enforcement.](/privacy-tools-guide/cloud-storage-subpoena-risk-provider-law-enforcement-complia/)
+- [How To Submit Subject Access Request To Employer For All Mon](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)
+- [Digital Power of Attorney: What Authority It Grants Over.](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

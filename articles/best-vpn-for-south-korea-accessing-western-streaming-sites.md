@@ -156,7 +156,7 @@ def check_streaming_access():
         ("hulu.com", ["69.22.161.0/24", "157.166.224.0/24"]),
         ("disneyplus.com", ["13.225.0.0/16", "18.164.0.0/15"])
     ]
-    
+
     for domain, expected_cidrs in services:
         try:
             ip = socket.gethostbyname(domain)
@@ -242,7 +242,6 @@ When configuring VPN access for streaming, maintain good security practices:
 - Keep VPN software updated to patch security vulnerabilities
 - Avoid free VPN services that may harvest data or inject advertisements
 - Consider using dedicated IP addresses to reduce detection while maintaining privacy
-
 
 
 ## Related Articles

@@ -82,7 +82,7 @@ Maintain records demonstrating your compliance approach:
 
 ```python
 class DataTransferRecord:
-    def __init__(self, transfer_id, source_system, destination_system, 
+    def __init__(self, transfer_id, source_system, destination_system,
                  data_categories, legal_basis, framework_status):
         self.transfer_id = transfer_id
         self.source_system = source_system
@@ -91,7 +91,7 @@ class DataTransferRecord:
         self.legal_basis = legal_basis
         self.framework_status = framework_status  # "certified", "sccs", "bcr"
         self.timestamp = datetime.utcnow()
-    
+
     def to_dict(self):
         return {
             'transfer_id': self.transfer_id,
@@ -112,7 +112,7 @@ GDPR grants EU residents rights over their personal data, including access, rect
 // Example: Data subject request handler
 async function handleDataSubjectRequest(request, userId) {
   const userData = await getUserData(userId, ['eu', 'us']);
-  
+
   switch (request.type) {
     case 'access':
       return formatDataForExport(userData);
@@ -312,14 +312,13 @@ Validate your compliance decisions before deploying:
 7. Perform quarterly reviews to catch undocumented data flows
 
 
-
 ## Related Articles
 
 - [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Openvpn Data Channel Offload Explained Performance](/privacy-tools-guide/openvpn-data-channel-offload-explained-performance-improvement-2026/)
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [Browser Storage Isolation Explained Privacy](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

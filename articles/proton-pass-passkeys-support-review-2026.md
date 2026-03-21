@@ -409,7 +409,6 @@ Based on Proton's development patterns, expect these features in late 2026:
 - **Batch passkey import**: Direct import from other password managers
 
 
-
 ## Related Articles
 
 - [Proton Pass Vs Bitwarden Review](/privacy-tools-guide/proton-pass-vs-bitwarden-review/)

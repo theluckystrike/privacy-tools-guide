@@ -235,7 +235,6 @@ apt-get update && apt-get upgrade asterisk
 ```
 
 
-
 ## Related Articles
 
 - [Jmp Chat Voip Number For Signal Registration Anonymous Phone](/privacy-tools-guide/jmp-chat-voip-number-for-signal-registration-anonymous-phone/)

@@ -121,7 +121,7 @@ private fun queryImages(contentResolver: ContentResolver): List<Uri> {
     val images = mutableListOf<Uri>()
     val projection = arrayOf(MediaStore.Images.Media._ID)
     val sortOrder = "${MediaStore.Images.Media.DATE_ADDED} DESC"
-    
+
     contentResolver.query(
         MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
         projection, null, null, sortOrder
@@ -169,8 +169,6 @@ keyGenerator.generateKey()
 Establish a monthly routine to review app permissions, remove unused applications, and verify security settings. Android's Privacy Dashboard makes this straightforward—look for apps with unusually high permission usage or frequent location access when idle.
 
 Consider using third-party permission managers from F-Droid for additional control. However, be cautious about granting accessibility services, as these can expose significant device control to malicious apps.
-
-
 
 
 ## Related Articles

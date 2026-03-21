@@ -183,10 +183,10 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        
+
         // Analytics initialization
         FirebaseAnalytics.getInstance(this);
-        
+
         // Attribution SDK
         AdjustConfig config = new AdjustConfig(this, "APP_TOKEN", AdjustEnvironment.SANDBOX);
         Adjust.onCreate(config);
@@ -212,10 +212,10 @@ iOS apps initialize SDKs in the App Delegate:
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Configure analytics
     Analytics.configure(with: configuration)
-    
+
     // Initialize attribution
     Adjust.appDidLaunch(adjustConfig)
-    
+
     return true
 }
 ```
@@ -265,9 +265,6 @@ Begin by auditing an app you frequently use. Start with static analysis to ident
 The methods in this guide apply to both iOS and Android, though specific tools differ. As you gain experience, you'll recognize tracker signatures quickly and understand what data flows where. This knowledge helps you build more privacy-respecting apps and make informed choices about the software you use.
 
 Regular auditing of mobile apps reveals the constantly evolving tracking ecosystem. New SDKs emerge, and existing ones change their behavior. Staying current requires ongoing analysis, but the fundamentals—examining binaries, monitoring networks, and reviewing code—remain consistent.
-
-
-
 
 
 ## Related Articles

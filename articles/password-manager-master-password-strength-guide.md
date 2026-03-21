@@ -45,17 +45,17 @@ def calculate_entropy(password: str) -> float:
         'digits': 10,
         'symbols': 33
     }
-    
+
     has_lower = any(c.islower() for c in password)
     has_upper = any(c.isupper() for c in password)
     has_digits = any(c.isdigit() for c in password)
     has_symbols = any(not c.isalnum() for c in password)
-    
+
     size = sum(charset_sizes[k] for k, v in {
         'lower': has_lower, 'upper': has_upper,
         'digits': has_digits, 'symbols': has_symbols
     }.items() if v)
-    
+
     return len(password) * (size.bit_length() - 1)
 
 # Example
@@ -93,7 +93,7 @@ Common KDFs and their parameters:
 import hashlib
 import secrets
 
-def derive_key_argon2(password: str, salt: bytes, memory_kb: int = 65536, 
+def derive_key_argon2(password: str, salt: bytes, memory_kb: int = 65536,
                      iterations: int = 3, parallelism: int = 4) -> bytes:
     """Derive encryption key using Argon2id."""
     try:
@@ -142,7 +142,7 @@ import hashlib
 
 def estimate_crack_time(password: str, hash_rate: float = 100e9) -> str:
     """Estimate crack time at given hash rate (guesses per second).
-    
+
     Modern GPU rig: ~100 billion guesses/second for fast hashes
     Password manager (Argon2): ~1000 guesses/second
     """
@@ -151,10 +151,10 @@ def estimate_crack_time(password: str, hash_rate: float = 100e9) -> str:
     if any(c.isupper() for c in password): charset += 26
     if any(c.isdigit() for c in password): charset += 10
     if any(not c.isalnum() for c in password): charset += 33
-    
+
     combinations = charset ** len(password)
     seconds = combinations / hash_rate
-    
+
     if seconds < 60:
         return f"{seconds:.0f} seconds"
     elif seconds < 3600:
@@ -187,7 +187,6 @@ For users managing their vault:
 3. Store a paper backup in a secure location (safe deposit box)
 4. Enable two-factor authentication on your password manager account
 5. Test your master password strength using the calculation methods above
-
 
 
 ## Related Articles

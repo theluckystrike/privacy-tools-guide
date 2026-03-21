@@ -102,18 +102,18 @@ import os
 def send_data_request(app_name, privacy_email, user_email, username):
     subject = f"Data Access Request - {user_email}"
     body = f"""I am requesting access to all personal data stored about my account.
-    
+
     Email: {user_email}
     Username: {username}
-    
+
     Please provide all personal data pursuant to GDPR Article 15 / CCPA.
     """
-    
+
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = user_email
     msg['To'] = privacy_email
-    
+
     with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.starttls()
         server.login(user_email, os.environ['SMTP_PASSWORD'])
@@ -187,18 +187,18 @@ After reviewing your data, submit deletion requests for information you want rem
 def send_deletion_request(app_name, privacy_email, user_email, reason="General privacy concerns"):
     subject = f"Data Deletion Request - {user_email}"
     body = f"""I request immediate deletion of all personal data associated with my account.
-    
+
     Email: {user_email}
     Reason: {reason}
-    
+
     Please confirm deletion within the legally required timeframe.
     """
-    
+
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = user_email
     msg['To'] = privacy_email
-    
+
     # Send via SMTP (same method as access request)
 ```
 
@@ -215,7 +215,6 @@ Beyond requesting your data, implement ongoing privacy practices:
 **Regular Data Downloads**: Periodically request your data to track changes in collection practices.
 
 **Consider Privacy Alternatives**: Apps like Hinge and Bumble have stronger privacy policies than others. Research platforms before creating accounts.
-
 
 
 ## Related Articles

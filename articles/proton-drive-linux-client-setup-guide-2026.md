@@ -282,7 +282,6 @@ chmod 700 ~/.config/Proton\ Drive
 ```
 
 
-
 ## Related Articles
 
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)

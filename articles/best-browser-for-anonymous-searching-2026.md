@@ -47,7 +47,7 @@ Tor Browser provides three security levels accessible through the shield icon me
 ```javascript
 // Tor Browser security levels affect these settings:
 // - Safest: JavaScript disabled on HTTP sites, some font rendering disabled
-// - Standard: JavaScript enabled, some features restricted  
+// - Standard: JavaScript enabled, some features restricted
 // - Safer: Balanced usability and protection
 ```
 
@@ -96,7 +96,7 @@ Install these extensions from addons.mozilla.org to enhance Firefox's privacy ca
 # uBlock Origin - efficient network-level ad and tracker blocking
 # https://addons.mozilla.org/addon/ublock-origin/
 
-# NoScript - JavaScript control on a per-site basis  
+# NoScript - JavaScript control on a per-site basis
 # https://addons.mozilla.org/addon/noscript/
 
 # ClearURLs - removes tracking parameters from URLs
@@ -190,7 +190,7 @@ For applications requiring additional anonymity, consider spoofing your user age
 general.useragent.override
 
 // Use a common user agent string to blend in:
-// Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
+// Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 // (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 ```
 
@@ -206,7 +206,6 @@ For developers needing anonymous search capabilities, combine these tools into a
 4. Verification: Check your fingerprint atcovery.com or amiunique.org periodically
 
 Each approach balances usability against anonymity. Choose the appropriate level based on your threat model and the sensitivity of your searches.
-
 
 
 ## Related Articles

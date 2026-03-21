@@ -173,7 +173,6 @@ For developers and power users requiring reliable access from China, consider im
 Test your configuration before traveling to China. Document working server addresses, as some may become blocked over time. Regularly update your connection scripts to adapt to changing network conditions.
 
 
-
 ## Related Articles
 
 - [Does Surfshark Obfuscation Work In China 2026 Mobile Test](/privacy-tools-guide/does-surfshark-obfuscation-work-in-china-2026-mobile-test/)

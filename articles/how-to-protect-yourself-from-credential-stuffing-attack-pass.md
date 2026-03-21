@@ -91,13 +91,13 @@ def authenticate_user(username, password, failed_attempts):
     # Add delay based on failed attempts
     delay = min(2 ** failed_attempts, 60)  # Cap at 60 seconds
     time.sleep(delay)
-    
+
     # Verify credentials
     user = get_user(username)
     if user and verify_password(password, user.hash):
         reset_failed_attempts(username)
         return True
-    
+
     increment_failed_attempts(username)
     return False
 ```
@@ -117,7 +117,7 @@ function getDeviceFingerprint() {
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
         hardwareConcurrency: navigator.hardwareConcurrency
     };
-    
+
     return btoa(JSON.stringify(fingerprint));
 }
 ```
@@ -137,16 +137,16 @@ import requests
 def check_password_breach(password):
     sha1_hash = hashlib.sha1(password.encode()).hexdigest().upper()
     prefix, suffix = sha1_hash[:5], sha1_hash[5:]
-    
+
     response = requests.get(
         f"https://api.pwnedpasswords.com/range/{prefix}"
     )
-    
+
     for line in response.text.splitlines():
         hash_suffix, count = line.split(':')
         if hash_suffix == suffix:
             return int(count)
-    
+
     return 0
 
 # Usage
@@ -399,7 +399,6 @@ def is_same_person(breach1, breach2):
     # Match security answers
     pass
 ```
-
 
 
 ## Related Articles

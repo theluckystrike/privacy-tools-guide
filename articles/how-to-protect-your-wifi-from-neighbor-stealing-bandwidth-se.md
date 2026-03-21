@@ -337,7 +337,6 @@ Establish a regular maintenance cadence to keep your WiFi security current:
 - Test guest network isolation and bandwidth limits
 
 
-
 ## Related Articles
 
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)

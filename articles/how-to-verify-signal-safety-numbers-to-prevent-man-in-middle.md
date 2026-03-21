@@ -132,8 +132,8 @@ cursor = conn.cursor()
 
 # Get recipient identity info
 cursor.execute('''
-    SELECT recipient_id, identity_key, identity_key_verified 
-    FROM recipient 
+    SELECT recipient_id, identity_key, identity_key_verified
+    FROM recipient
     WHERE recipient_id = ?
 ''', (contact_id,))
 
@@ -164,7 +164,7 @@ fi
 
 # Query current identity state
 sqlite3 "$DB_PATH" "
-SELECT 
+SELECT
     r.phone_number,
     hex(i.identity_key) as identity_key,
     i.verified_time
@@ -254,14 +254,13 @@ echo -n "$THEIR_KEY" | sha256sum | cut -d' ' -f1
 Matching fingerprints prove you're using the same identity keys that generated the safety number.
 
 
-
 ## Related Articles
 
-- [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
 - [How To Use Abine Blur For Masked Emails Phone Numbers And Cr](/privacy-tools-guide/how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/)
 - [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
-- [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

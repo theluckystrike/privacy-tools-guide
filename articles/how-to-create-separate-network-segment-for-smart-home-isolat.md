@@ -186,14 +186,13 @@ If you need occasional access—such as debugging a misbehaving device—create 
 Another consideration is device provisioning. Many smart home devices require an initial setup process using a mobile app on your phone. Keep your phone on the trusted network during setup, then move the device to the IoT segment via DHCP reservations or static IPs.
 
 
-
 ## Related Articles
 
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
-- [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
-- [Create Separate Browser Profiles For Each Online Identity Compartmentalization](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
-- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

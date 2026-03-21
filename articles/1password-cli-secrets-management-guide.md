@@ -176,8 +176,6 @@ Begin by installing the CLI and authenticating with your account. Start with a s
 The 1Password CLI turns secret management into a secure, scriptable workflow. Treating credentials as programmable data rather than static text makes your systems more secure by design.
 
 
-
-
 ## Related Articles
 
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)

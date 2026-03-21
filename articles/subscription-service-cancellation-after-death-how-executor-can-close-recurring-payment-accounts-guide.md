@@ -69,17 +69,17 @@ from datetime import datetime
 
 def find_subscriptions(bank_csv_path):
     charges = defaultdict(list)
-    
+
     with open(bank_csv_path, 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
             description = row['Description'].lower()
             amount = float(row['Amount'])
-            
+
             # Common subscription keywords
-            keywords = ['spotify', 'netflix', 'amazon prime', 'adobe', 
+            keywords = ['spotify', 'netflix', 'amazon prime', 'adobe',
                        'microsoft', 'apple', 'google', 'hulu', 'disney']
-            
+
             for keyword in keywords:
                 if keyword in description:
                     charges[keyword].append({
@@ -87,7 +87,7 @@ def find_subscriptions(bank_csv_path):
                         'amount': amount,
                         'description': row['Description']
                     })
-    
+
     return charges
 
 # Usage
@@ -152,13 +152,13 @@ from bs4 import BeautifulSoup
 class SubscriptionCanceler:
     def __init__(self, session):
         self.session = session
-    
+
     def attempt_cancel_netflix(self, email, password):
         """Attempt Netflix cancellation via web automation"""
         # Note: Most services require manual cancellation
         # This is for educational purposes only
         pass
-    
+
     def check_active_subscriptions(self, email):
         """Check which subscriptions are associated with an email"""
         # Many services don't expose this programmatically
@@ -210,7 +210,7 @@ class CancellationLogger:
         self.estate_id = estate_id
         self.log_file = f"cancellation_log_{estate_id}.json"
         self.logs = []
-    
+
     def log_attempt(self, service, method, result, notes=""):
         entry = {
             "timestamp": datetime.now().isoformat(),
@@ -221,11 +221,11 @@ class CancellationLogger:
         }
         self.logs.append(entry)
         self._save()
-    
+
     def _save(self):
         with open(self.log_file, 'w') as f:
             json.dump(self.logs, f, indent=2)
-    
+
     def generate_report(self):
         return json.dumps({
             "total_attempts": len(self.logs),
@@ -261,12 +261,12 @@ subscriptions:
     login: "stored in Bitwarden vault"
     billing_day: 15
     cost: 15.99
-    
+
   - name: "GitHub Pro"
     email: "user@example.com"
     billing_day: 1
     cost: 4.00
-    
+
   - name: "Adobe Creative Cloud"
     email: "user@example.com"
     billing_day: 22
@@ -277,7 +277,6 @@ emergency_access:
   emergency_contact: "John Doe"
   vault_access_method: "Emergency access feature"
 ```
-
 
 
 ## Related Articles

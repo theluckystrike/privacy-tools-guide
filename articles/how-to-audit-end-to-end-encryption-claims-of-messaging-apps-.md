@@ -186,8 +186,6 @@ Essential tools for messaging app encryption audits:
 Combine these tools with careful protocol documentation review to form a complete picture of an app's encryption guarantees. The effort rewards you with confidence in your communication security or reveals gaps that other users should know about.
 
 
-
-
 ## Related Articles
 
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)

@@ -490,5 +490,6 @@ Metadata removal is a core privacy practice. The right tool depends on your plat
 - [Linkedin Deceased Member Profile Removal How To Report And M](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
 - [Turkey Content Removal Orders How Government Forces Platform](/privacy-tools-guide/turkey-content-removal-orders-how-government-forces-platform/)
 
-{% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}

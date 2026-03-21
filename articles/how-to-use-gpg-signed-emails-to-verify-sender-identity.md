@@ -228,8 +228,6 @@ Start by generating a GPG key if you don't have one. Configure your primary emai
 GPG signing adds friction to email communication, but the authenticity guarantees are valuable for technical collaboration. Start with low-stakes communications to build familiarity before relying on signatures for sensitive matters.
 
 
-
-
 ## Related Articles
 
 - [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)

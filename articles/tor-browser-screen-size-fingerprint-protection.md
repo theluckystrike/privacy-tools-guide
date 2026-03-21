@@ -105,7 +105,7 @@ function detectScreenFingerprint() {
     outerHeight: window.outerHeight,
     devicePixelRatio: window.devicePixelRatio
   };
-  
+
   return screenData;
 }
 ```
@@ -395,7 +395,6 @@ Choose your protection level based on:
 - Threat model (are you evading determined adversary?)
 - Usability requirements (how much functionality do you need?)
 - Time investment (fingerprinting resistance requires active management)
-
 
 
 ## Related Articles

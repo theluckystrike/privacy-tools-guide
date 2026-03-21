@@ -67,15 +67,15 @@ import hashlib
 class PostQuantumChannel:
     def __init__(self, algorithm="ML-KEM-768"):
         self.kem = KeyEncapsulation(algorithm)
-    
+
     def generate_keypair(self):
         public_key = self.kem.generate_keypair()
         return public_key, self.kem.export_secret_key()
-    
+
     def encapsulate(self, recipient_public_key):
         ciphertext, shared_secret = self.kem.encaps_secret(recipient_public_key)
         return ciphertext, shared_secret
-    
+
     def decapsulate(self, ciphertext):
         shared_secret = self.kem.decaps_secret(ciphertext)
         return shared_secret
@@ -134,7 +134,7 @@ function deriveHybridKey(classicalSecret, pqSecret) {
     classicalSecret,
     pqSecret
   ]);
-  
+
   return crypto.createHash('sha3-512')
     .update(combined)
     .digest();
@@ -202,14 +202,13 @@ Early adopters of post-quantum cryptography gain competitive advantage and risk 
 The research community continues evolving post-quantum cryptography. NIST expects to select additional algorithms for different use cases. Organizations building post-quantum systems should maintain flexibility to incorporate new standards as they emerge, rather than locking into today's selections as final solutions.
 
 
-
 ## Related Articles
 
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
 - [How To Rotate Encryption Keys In Messaging Apps Without Losi](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
-- [Mls Messaging Layer Security Protocol How It Will Change Group Encryption](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)
 - [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
+- [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

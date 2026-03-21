@@ -227,7 +227,6 @@ onionshare-cli --tor-control-port 9051 --use-system-tor /path/to/file
 This approach provides better resource management for servers handling multiple concurrent shares.
 
 
-
 ## Related Articles
 
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)

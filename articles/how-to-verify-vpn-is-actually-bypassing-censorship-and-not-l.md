@@ -182,14 +182,13 @@ If you discover leaks, several fixes are available:
 5. **Consider custom DNS**: Configure your system to use privacy-focused DNS servers (like Cloudflare 1.1.1.1 or Quad9) that support DNS-over-HTTPS
 
 
-
 ## Related Articles
 
-- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
+- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
-- [Verify Your Browser is Not Leaking Information](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
+- [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
+- [Best VPN for Using WhatsApp in China 2026 — Actually Works](/privacy-tools-guide/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

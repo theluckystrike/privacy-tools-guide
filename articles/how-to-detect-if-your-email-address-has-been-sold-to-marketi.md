@@ -415,14 +415,13 @@ curl -X POST "https://www.truthfinder.com/optout" \
 ```
 
 
-
 ## Related Articles
 
 - [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
-- [Use Email Subaddressing Plus Addressing For Tracking Which Services Leak Your...](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 - [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
 - [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
 - [How To Use Mac Address Randomization On Linux To Prevent Wif](/privacy-tools-guide/how-to-use-mac-address-randomization-on-linux-to-prevent-wif/)
+- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

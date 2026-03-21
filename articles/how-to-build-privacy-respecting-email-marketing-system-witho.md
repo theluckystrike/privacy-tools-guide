@@ -55,15 +55,15 @@ class ConsentPreferences {
     // Validate and store preferences
     const allowedKeys = ['emailTracking', 'personalization', 'thirdPartySharing'];
     const updates = {};
-    
+
     for (const key of allowedKeys) {
       if (typeof preferences[key] === 'boolean') {
         updates[key] = preferences[key];
       }
     }
-    
+
     updates.consentTimestamp = new Date().toISOString();
-    
+
     await this.storeConsent(this.userId, updates);
     return updates;
   }
@@ -92,14 +92,14 @@ class EmailSubscriber:
         self.list_id = list_id
         self.status = 'pending'  # pending, active, unsubscribed
         self.created_at = datetime.utcnow()
-        
+
         # Store preferences as JSON, not separate columns
         # This makes it easier to add new preference types
         self.preferences_json = json.dumps({
             'tracking': 'aggregate',  # aggregate, none, or detailed
             'format': 'html'          # html, text, or both
         })
-    
+
     def _normalize_email(self, email):
         # Basic normalization for deduplication
         return email.strip().lower()
@@ -118,17 +118,17 @@ function generateClickUrl(baseUrl, campaignId) {
     c: campaignId,           // Campaign identifier
     t: Date.now() // Timestamp for aggregate timing analysis
   });
-  
+
   return `${baseUrl}?${params.toString()}`;
 }
 
 // On the redirect server
 app.get('/track/click', (req, res) => {
   const { c, t } = req.query;
-  
+
   // Increment campaign click counter (no user data stored)
   await redis.incr(`campaign:${c}:clicks`);
-  
+
   // Redirect to destination
   res.redirect(req.query.d);
 });
@@ -149,12 +149,12 @@ def handle_unsubscribe(email, list_id):
     """
     # Immediate, complete removal
     db.execute("""
-        UPDATE subscribers 
-        SET status = 'unsubscribed', 
+        UPDATE subscribers
+        SET status = 'unsubscribed',
             unsubscribed_at = NOW()
         WHERE email = %s
     """, (email,))
-    
+
     # Honor suppressions across all future sends
     # Never re-add unsubscribed users, even if they subscribe again
     db.execute("""
@@ -162,7 +162,7 @@ def handle_unsubscribe(email, list_id):
         VALUES (%s, 'user_requested', NOW())
         ON CONFLICT (email) DO NOTHING
     """, (email,))
-    
+
     return {"status": "unsubscribed", "message": "You have been removed from all emails"}
 ```
 
@@ -196,7 +196,6 @@ grep -r "img.*tracking" emails/templates/
 # Check unsubscribe processing
 python -m pytest tests/test_unsubscribe.py -v
 ```
-
 
 
 ## Related Articles

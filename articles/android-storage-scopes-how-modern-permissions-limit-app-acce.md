@@ -83,7 +83,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         MediaStore.Images.Media.DISPLAY_NAME,
         MediaStore.Images.Media.DATE_ADDED
     )
-    
+
     val cursor = contentResolver.query(
         MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
         projection,
@@ -91,7 +91,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         null,
         "${MediaStore.Images.Media.DATE_ADDED} DESC"
     )
-    
+
     cursor?.use {
         while (it.moveToNext()) {
             val name = it.getString(0)
@@ -484,7 +484,6 @@ Google continues reducing app permissions:
 - **Likely**: Tighter integration with privacy dashboard
 
 As scoped storage matures, expect even more granular user control over what apps access.
-
 
 
 ## Related Articles

@@ -121,17 +121,17 @@ async def submit_human_review_request(request: HumanReviewRequest):
     # Validate request contains required information
     if not request.decision_type or not request.description:
         raise HTTPException(
-            status_code=400, 
+            status_code=400,
             detail="decision_type and description are required"
         )
-    
+
     # Log the request for tracking
     request_id = f"HRR-{datetime.utcnow().timestamp()}"
     logging.info(
         f"Human review request {request_id}: "
         f"type={request.decision_type}, user={request.user_id}"
     )
-    
+
     # Create ticket in review queue
     review_ticket = {
         "request_id": request_id,
@@ -143,10 +143,10 @@ async def submit_human_review_request(request: HumanReviewRequest):
         "created_at": datetime.utcnow(),
         "required_response_deadline": datetime.utcnow()  # Set based on regulation
     }
-    
+
     # Store in database (implementation depends on your stack)
     # await db.human_review_requests.insert(review_ticket)
-    
+
     return {
         "request_id": request_id,
         "status": "submitted",
@@ -161,14 +161,14 @@ async def submit_human_review_request(request: HumanReviewRequest):
 app.get('/api/v1/decision/:decisionId/explanation', async (req, res) => {
   const { decisionId } = req.params;
   const { userId } = req.query;
-  
+
   // Verify user owns this decision
   const decision = await getDecisionFromDatabase(decisionId);
-  
+
   if (!decision || decision.userId !== userId) {
     return res.status(403).json({ error: 'Unauthorized' });
   }
-  
+
   // Return decision explanation per GDPR Article 22
   res.json({
     decisionId: decision.id,
@@ -191,8 +191,8 @@ from datetime import datetime
 
 class DecisionAuditLogger:
     """Audit log for automated decisions - GDPR Article 22 compliance"""
-    
-    def log_decision(self, user_id: str, decision_type: str, 
+
+    def log_decision(self, user_id: str, decision_type: str,
                      outcome: str, factors: list):
         audit_entry = {
             "timestamp": datetime.utcnow().isoformat(),
@@ -204,17 +204,17 @@ class DecisionAuditLogger:
             "human_review_outcome": None,
             "request_id": None
         }
-        
+
         # Store audit entry
         # This supports demonstrating compliance during regulatory inquiries
-        
+
         return audit_entry["request_id"]  # Returns reference ID
-    
+
     def log_human_review_request(self, user_id: str, request_id: str):
         """Record when a user requests human review"""
         # Update the original decision audit entry
         # Mark that human review was requested and processed
-        
+
     def _hash_identifier(self, user_id: str) -> str:
         """Hash user identifiers for audit log privacy"""
         return hashlib.sha256(user_id.encode()).hexdigest()[:16]
@@ -266,32 +266,31 @@ def notify_user_of_decision(user_email: str, decision: dict):
     """
     email_content = f"""
     A decision has been made regarding your application.
-    
+
     Decision: {decision['outcome']}
     Date: {decision['timestamp']}
-    
+
     You have the right to request human review of this decision.
     To request review, visit: {config.HUMAN_REVIEW_URL}
-    
+
     You may also request:
     - Explanation of the decision logic
     - Access to data used in the decision
     - Correction of inaccurate data
-    
+
     Response timeline: 30 days per GDPR Article 22
     """
     send_email(user_email, "Decision Notification", email_content)
 ```
 
 
-
 ## Related Articles
 
 - [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 - [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
-- [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 - [How Vpn Affects Gaming Latency Actual Measurements And.](/privacy-tools-guide/how-vpn-affects-gaming-latency-actual-measurements-and-explanation/)
+- [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

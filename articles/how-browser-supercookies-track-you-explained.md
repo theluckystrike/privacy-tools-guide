@@ -114,10 +114,10 @@ Several browsers actively block known supercookie techniques:
 You can prevent some supercookie techniques using Content Security Policy headers:
 
 ```http
-Content-Security-Policy: 
-  default-src 'self'; 
-  script-src 'self'; 
-  img-src 'self' https:; 
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self';
+  img-src 'self' https:;
   cache-control: no-store;
   HSTS: max-age=0;
 ```
@@ -346,7 +346,6 @@ As browser vendors tighten privacy controls, trackers continue innovating. Emerg
 - **Sensor data analysis**: Accelerometer and gyroscope fingerprinting
 
 The arms race between privacy advocates and tracking interests continues to escalate. Users seeking genuine privacy must remain vigilant, use privacy-focused tools, and understand that no solution is permanent.
-
 
 
 ## Related Articles

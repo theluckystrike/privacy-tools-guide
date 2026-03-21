@@ -237,7 +237,6 @@ echo "Backup available at: $ONION_URL"
 ```
 
 
-
 ## Related Articles
 
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)

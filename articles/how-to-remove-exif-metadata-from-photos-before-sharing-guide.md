@@ -483,13 +483,12 @@ EXIF removal is automatic hygiene, like locking your door. Do it always. But don
 ---
 
 
-
 ## Related Articles
 
-- [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
 - [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
-- [Cwtch Decentralized Metadata Resistant Messenger How It Diff](/privacy-tools-guide/cwtch-decentralized-metadata-resistant-messenger-how-it-diff/)
+- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

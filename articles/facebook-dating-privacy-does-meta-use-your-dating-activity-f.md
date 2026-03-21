@@ -73,7 +73,7 @@ class DataPipeline:
         self.dating_data = []
         self.instagram_data = []
         self.facebook_data = []
-    
+
     def classify_for_ads(self, data_point, source):
         if source == "dating" and data_point.type == "like":
             return "EXCLUDED_FROM_TARGETING"
@@ -177,7 +177,6 @@ These changes represent incremental improvements rather than fundamental shifts 
 2. **Use separate identity**: Create an Instagram account specifically for Dating to minimize cross-contamination
 3. **Review permissions regularly**: Monthly audits of connected apps and data sharing settings
 4. **Consider deletion, not just hiding**: Hiding profile doesn't remove data; deletion is the stronger privacy action
-
 
 
 ## Related Articles

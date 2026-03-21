@@ -180,7 +180,6 @@ electrum -w wallet.seed createnewaddress
 - **Avoid mobile data** for sensitive transactions (cell towers create location records)
 
 
-
 ## Related Articles
 
 - [Anonymous Domain Registration How To Buy Domain Without Expo](/privacy-tools-guide/anonymous-domain-registration-how-to-buy-domain-without-expo/)

@@ -380,7 +380,6 @@ Ask trusted colleagues to attempt to correlate your identities or find evidence 
 Remember: Perfect security doesn't exist. Your goal is making surveillance more effort than it's worth. Implementing the measures above significantly increases the difficulty of tracking your activities.
 
 
-
 ## Related Articles
 
 - [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)

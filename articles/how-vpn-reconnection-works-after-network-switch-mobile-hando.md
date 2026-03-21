@@ -92,7 +92,7 @@ def monitor_network_changes(callback):
         stderr=subprocess.PIPE,
         text=True
     )
-    
+
     for line in process.stdout:
         if 'inet ' in line and 'inet6' not in line:
             # IPv4 address changed
@@ -104,7 +104,7 @@ def on_network_change(change_info):
 
 # Run the monitor in a background thread
 monitor_thread = threading.Thread(
-    target=monitor_network_changes, 
+    target=monitor_network_changes,
     args=(on_network_change,),
     daemon=True
 )
@@ -128,20 +128,20 @@ val networkCallback = object : NetworkCallback() {
         // Network connection lost - might trigger VPN reconnection
         Log.d("VPN", "Network lost: ${network}")
     }
-    
+
     override fun onAvailable(network: Network) {
         // New network available - trigger VPN reconnection
         Log.d("VPN", "Network available: ${network}")
         reconnectVPN()
     }
-    
+
     override fun onCapabilitiesChanged(
         network: Network,
         networkCapabilities: NetworkCapabilities
     ) {
         val hasWifi = networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
         val hasCellular = networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
-        
+
         Log.d("VPN", "Transport changed: WiFi=$hasWifi, Cellular=$hasCellular")
     }
 }
@@ -164,7 +164,7 @@ monitor.pathUpdateHandler = { path in
         } else if path.usesInterfaceType(.cellular) {
             print("Connected via Cellular")
         }
-        
+
         // Trigger VPN reconnection if needed
         reconnectVPN()
     } else {
@@ -198,11 +198,11 @@ def vpn_reconnect_with_backoff(max_retries=5, base_delay=1.0):
             delay = base_delay * (2 ** attempt)
             jitter = random.uniform(0, delay * 0.5)
             wait_time = delay + jitter
-            
+
             print(f"Connection attempt {attempt + 1} failed, "
                   f"retrying in {wait_time:.2f}s")
             time.sleep(wait_time)
-    
+
     print("Max retries exceeded")
     return False
 ```
@@ -234,7 +234,6 @@ For users experiencing frequent disconnections during network transitions, sever
 2. **Enable kill switches** to prevent data leaks during reconnection periods
 3. **Configure your router** to prioritize consistent connections if running a VPN at the network level
 4. **Use split tunneling** to reduce VPN overhead on stable connections while maintaining privacy on sensitive traffic
-
 
 
 ## Related Articles

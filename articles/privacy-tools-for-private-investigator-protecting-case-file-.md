@@ -250,7 +250,6 @@ Strong encryption using tools like VeraCrypt is highly resistant to forced decry
 Retention requirements vary by jurisdiction and case type. Most PI licensing boards recommend retaining files for at least 5 years after case closure. Store closed case archives in encrypted offline storage with a documented retention schedule showing planned destruction dates.
 
 
-
 ## Related Articles
 
 - [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)

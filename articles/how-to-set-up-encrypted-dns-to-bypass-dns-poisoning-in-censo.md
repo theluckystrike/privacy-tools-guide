@@ -117,13 +117,13 @@ import ssl
 def query_dot(hostname, query_type='A'):
     """Query DNS over TLS directly."""
     context = ssl.create_default_context()
-    
+
     with socket.create_connection(('dns.google', 853)) as sock:
         with context.wrap_socket(sock, server_hostname='dns.google') as ssock:
             # Construct DNS query (simplified)
             domain = hostname.encode() + b'\x00'
             qtype = b'\x00\x01'  # A record
-            
+
             # Build DNS message
             transaction_id = b'\x00\x01'
             flags = b'\x01\x00'
@@ -131,13 +131,13 @@ def query_dot(hostname, query_type='A'):
             ancount = b'\x00\x00'
             nscount = b'\x00\x00'
             arcount = b'\x00\x00'
-            
-            dns_query = (transaction_id + flags + qdcount + ancount 
+
+            dns_query = (transaction_id + flags + qdcount + ancount
                         + nscount + arcount + domain + qtype + b'\x00\x00\x01')
-            
+
             ssock.send(dns_query)
             response = ssock.recv(4096)
-            
+
     return response
 
 # Example usage
@@ -201,12 +201,10 @@ Encrypted DNS addresses DNS poisoning but does not make you invisible online. Yo
 Additionally, some networks implement SNI (Server Name Indication) filtering, which can block access to DoH servers by inspecting HTTPS handshake metadata. In these cases, VPN-based solutions provide more circumvention.
 
 
-
-
 ## Related Articles
 
 - [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
-- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices Guide](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
+- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 - [Set Up DNS-Based Ad Blocking on Travel Router GL-Inet for](/privacy-tools-guide/how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/)
 - [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)

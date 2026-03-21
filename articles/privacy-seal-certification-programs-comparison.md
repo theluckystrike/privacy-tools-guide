@@ -59,7 +59,7 @@ const vendorCompliance = {
 
 // Check if vendor meets your requirements
 const requiredCriteria = ["security", "privacy"];
-const hasRequired = requiredCriteria.every(criterion => 
+const hasRequired = requiredCriteria.every(criterion =>
   vendorCompliance.trustCriteria.includes(criterion)
 );
 ```
@@ -153,7 +153,7 @@ def get_user_profile(user_id: str) -> dict:
     Demonstrates data minimization principle.
     """
     user = database.get_user(user_id)
-    
+
     # Return only necessary fields
     return {
         "id": user.id,
@@ -179,7 +179,6 @@ For developers and power users, privacy certifications provide a useful signal w
 - How the certification aligns with your users' regulatory requirements
 
 The right combination of certifications depends on your specific context—your user base, geographic reach, and the sensitivity of data you handle.
-
 
 
 ## Related Articles

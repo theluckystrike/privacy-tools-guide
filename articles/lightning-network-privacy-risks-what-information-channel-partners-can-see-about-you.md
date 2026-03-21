@@ -373,7 +373,6 @@ The Lightning Network continues to evolve, with proposals like PTLCs (Point Time
 ---
 
 
-
 ## Related Articles
 
 - [Bumble Beeline Data Privacy Who Can See That You Swiped Righ](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)

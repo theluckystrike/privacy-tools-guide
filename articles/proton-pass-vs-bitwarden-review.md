@@ -32,7 +32,7 @@ const deriveKey = (masterPassword, salt) => {
     "PBKDF2",
     false,
     ["deriveBits"]
-  ).then(key => 
+  ).then(key =>
     crypto.subtle.deriveBits(
       { name: "PBKDF2", salt, iterations: 600000, hash: "SHA-256" },
       key,
@@ -309,7 +309,6 @@ Understanding the underlying technology helps anticipate future development:
 - Closed-source relies on security through obscurity model
 
 Developers may prefer Bitwarden's open-source approach for transparency and contribution opportunities. Organizations may prefer Proton's dedicated focus on privacy even without source visibility.
-
 
 
 ## Related Articles

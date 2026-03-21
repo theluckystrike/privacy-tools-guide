@@ -226,7 +226,6 @@ If your audit reveals compromise indicators:
 - Enable two-factor authentication on all accounts
 
 
-
 ## Related Articles
 
 - [Verify Your Devices Are Not Compromised: A Complete Audit](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)

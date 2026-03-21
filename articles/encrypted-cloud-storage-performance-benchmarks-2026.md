@@ -87,7 +87,7 @@ Icedrive surprised with the lowest overhead, using an improved encryption pipeli
 
 ```bash
 # Testing parallel upload capability
-time for i in {1..10}; do 
+time for i in {1..10}; do
   curl -X PUT "https://api.filen.io/v1/upload/$i" \
     -H "Authorization: Bearer $KEY" \
     --data-binary "@file-$i.dat" &
@@ -129,7 +129,7 @@ import time
 async def benchmark_upload(service, file_size_mb=50):
     # Pre-encrypt the file
     encrypted_data = encrypt_file(f"{file_size_mb}mb_test.dat")
-    
+
     start = time.perf_counter()
     async with aiohttp.ClientSession() as session:
         await session.post(
@@ -237,7 +237,6 @@ Identify your bottleneck to choose the right service:
 | Privacy enthusiast | Proton Drive | Open-source, Swiss jurisdiction |
 | Power user with large files | Icedrive | Lowest overhead |
 | Technical users with S3 | Cryptomator + S3 | Best delta sync performance |
-
 
 
 ## Related Articles

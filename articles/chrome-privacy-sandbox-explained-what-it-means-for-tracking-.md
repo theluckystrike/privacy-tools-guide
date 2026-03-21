@@ -122,7 +122,7 @@ Server-side tracking provides an alternative path. Moving analytics and tracking
 // Server-side tracking example (Node.js)
 app.post('/analytics/event', (req, res) => {
   const { event, userId, timestamp } = req.body;
-  
+
   // Store in your analytics system
   analyticsDB.insert({
     event,
@@ -131,7 +131,7 @@ app.post('/analytics/event', (req, res) => {
     userAgent: req.headers['user-agent'],
     referer: req.headers['referer']
   });
-  
+
   res.status(204).send();
 });
 ```
@@ -164,13 +164,13 @@ function trackEvent(eventName, properties = {}) {
       timestamp: Date.now()
     }
   };
-  
+
   // Send to your server, not third parties
   navigator.sendBeacon('/api/analytics', JSON.stringify(payload));
 }
 
 // Usage
-trackEvent('button_click', { 
+trackEvent('button_click', {
   button_id: 'signup-free-trial',
   page_section: 'hero'
 });
@@ -197,8 +197,6 @@ The Privacy Sandbox continues to evolve as regulators and the web community prov
 Developers should monitor the Chrome Privacy Sandbox developer documentation for updates and participate in W3C standards discussions to shape the future of web privacy.
 
 ---
-
-
 
 
 ## Related Articles

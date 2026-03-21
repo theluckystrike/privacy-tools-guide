@@ -67,10 +67,10 @@ class PrivacyRequest:
 class PrivacyRequestHandler:
     def __init__(self, db_connection):
         self.db = db_connection
-    
+
     def submit_request(self, email: str, request_type: RequestType) -> str:
         request_id = self._generate_request_id()
-        
+
         # CCPA requires responding within 45 days
         privacy_request = PrivacyRequest(
             request_id=request_id,
@@ -80,31 +80,31 @@ class PrivacyRequestHandler:
             verification_date=None,
             status="pending_verification"
         )
-        
+
         self._store_request(privacy_request)
         self._send_verification_email(email, request_id)
-        
+
         return request_id
-    
+
     def verify_and_process(self, request_id: str, verification_code: str) -> dict:
         request = self._get_request(request_id)
-        
+
         if not self._verify_code(request, verification_code):
             raise ValueError("Invalid verification code")
-        
+
         request.verification_date = datetime.utcnow()
-        
+
         if request.request_type == RequestType.KNOW:
             return self._process_know_request(request)
         elif request.request_type == RequestType.DELETE:
             return self._process_delete_request(request)
-        
+
         return {"status": "processed"}
-    
+
     def _process_know_request(self, request: PrivacyRequest) -> dict:
         # Gather personal information from all data stores
         personal_data = self._gather_user_data(request.consumer_email)
-        
+
         # Format according to CCPA requirements
         return {
             "request_id": request.request_id,
@@ -149,7 +149,7 @@ function trackDataCollection(collectionPoint, category, purpose, retention) {
       source: collectionPoint,
       legal_basis: 'consent'
     });
-    
+
     return descriptor;
   };
 }
@@ -158,10 +158,10 @@ function trackDataCollection(collectionPoint, category, purpose, retention) {
 class User extends Model {
   @trackDataCollection('registration_form', 'IDENTIFIERS', 'account_creation', '7_years')
   email;
-  
+
   @trackDataCollection('checkout', 'COMMERCIAL', 'order_fulfillment', '7_years')
   purchaseHistory;
-  
+
   @trackDataCollection('analytics', 'INTERNET_ANALYTICS', 'improvement', '2_years')
   browseHistory;
 }
@@ -201,7 +201,7 @@ class OptOutService:
     def __init__(self, cache, event_bus):
         self.cache = cache
         self.event_bus = event_bus
-    
+
     def register_opt_out(self, email: str) -> dict:
         # Store opt-out preference - this should be persistent
         opt_out_record = {
@@ -211,17 +211,17 @@ class OptOutService:
             "sharing": True,
             "targeted_advertising": True
         }
-        
+
         # Cache for fast lookups in data pipelines
-        self.cache.set(f"opt_out:{opt_out_record['email_hash']}", 
-                      opt_out_record, 
+        self.cache.set(f"opt_out:{opt_out_record['email_hash']}",
+                      opt_out_record,
                       ttl=86400 * 365)  # 1 year
-        
+
         # Emit event for downstream systems
         self.event_bus.publish("consumer_opt_out", opt_out_record)
-        
+
         return {"status": "opt_out_registered", "effective_date": datetime.utcnow().isoformat()}
-    
+
     def check_opt_out(self, email: str) -> bool:
         email_hash = hashlib.sha256(email.encode()).hexdigest()
         return self.cache.exists(f"opt_out:{email_hash}")
@@ -232,12 +232,12 @@ Before any data sale or sharing operation, check this opt-out status:
 ```python
 def share_data_with_third_party(third_party_id: str, user_email: str, data: dict):
     opt_out_service = get_opt_out_service()
-    
+
     if opt_out_service.check_opt_out(user_email):
         raise PermissionError(
             "Cannot share data - consumer has opted out of data selling/sharing"
         )
-    
+
     # Proceed with data sharing
     third_party_api.send(third_party_id, data)
 ```
@@ -253,10 +253,10 @@ from datetime import datetime
 class RetentionManager:
     def __init__(self, db):
         self.db = db
-    
+
     def schedule_deletion(self, user_id: str, data_category: str, retention_days: int):
         deletion_date = datetime.utcnow() + timedelta(days=retention_days)
-        
+
         self.db.retention_schedules.insert({
             "user_id": user_id,
             "data_category": data_category,
@@ -264,14 +264,14 @@ class RetentionManager:
             "deletion_date": deletion_date,
             "status": "pending"
         })
-    
+
     def run_deletion_job(self):
         # Find records past their retention period
         expired = self.db.retention_schedules.find({
             "deletion_date": {"$lte": datetime.utcnow()},
             "status": "pending"
         })
-        
+
         for record in expired:
             self._delete_user_data(record["user_id"], record["data_category"])
             self.db.retention_schedules.update(
@@ -329,15 +329,13 @@ Start with the data inventory—without knowing what you collect, you cannot beg
 ---
 
 
-
-
 ## Related Articles
 
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
-- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [Russia Yarovaya Law Mass Surveillance Requirements What Tele](/privacy-tools-guide/russia-yarovaya-law-mass-surveillance-requirements-what-tele/)
+- [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -63,7 +63,7 @@ def get_access_points():
     )
     aps = []
     current_ap = {}
-    
+
     for line in result.stdout.split('\n'):
         if 'Cell' in line:
             if current_ap:
@@ -73,7 +73,7 @@ def get_access_points():
             current_ap['ssid'] = line.split('"')[1]
         elif 'Channel' in line:
             current_ap['channel'] = line.split()[-1]
-            
+
     if current_ap:
         aps.append(current_ap)
     return aps
@@ -84,12 +84,12 @@ def detect_evil_twins(aps):
     for ap in aps:
         if 'ssid' in ap:
             ssid_map[ap['ssid']].append(ap['bssid'])
-    
+
     evil_twins = {}
     for ssid, bssids in ssid_map.items():
         if len(set(bssids)) > 1:
             evil_twins[ssid] = bssids
-    
+
     return evil_twins
 
 if __name__ == '__main__':
@@ -97,12 +97,12 @@ if __name__ == '__main__':
     while True:
         aps = get_access_points()
         twins = detect_evil_twins(aps)
-        
+
         if twins:
             print(f"[ALERT] Potential evil twin detected: {twins}")
         else:
             print(f"[OK] No suspicious networks found ({len(aps)} APs)")
-        
+
         time.sleep(30)
 ```
 
@@ -179,7 +179,6 @@ These rules prevent common lateral movement techniques attackers use after compr
 Second, establish a strict policy for handling sensitive operations. Never access production systems, code repositories, or financial accounts on public WiFi without VPN protection. Use password managers with secure clipboard handling to minimize credential exposure.
 
 Third, maintain situational awareness. Before connecting to any network, observe your surroundings for suspicious activity. Attackers often operate from vehicles or inconspicuous positions near target locations. If multiple networks share identical names in a small area, treat the environment as potentially hostile.
-
 
 
 ## Related Articles

@@ -42,22 +42,22 @@ def generate_shares(secret: str, num_shares: int, threshold: int) -> list[str]:
     """
     if threshold > num_shares:
         raise ValueError("Threshold cannot exceed number of shares")
-    
+
     # Pad secret to multiple of threshold for even distribution
     secret_bytes = secret.encode()
     padding = (threshold - len(secret_bytes) % threshold) % threshold
     secret_bytes += b'\x00' * padding
-    
+
     # Split into chunks
-    chunks = [secret_bytes[i:i+threshold] 
+    chunks = [secret_bytes[i:i+threshold]
               for i in range(0, len(secret_bytes), threshold)]
-    
+
     shares = []
     for i in range(num_shares):
-        share = bytes(chunk[i] if i < len(chunk) else 0 
+        share = bytes(chunk[i] if i < len(chunk) else 0
                      for chunk in chunks)
         shares.append(share.hex())
-    
+
     return shares
 
 # Example usage
@@ -99,7 +99,7 @@ class DeadManSwitch:
     def __init__(self, config_path: str = "~/.deadmanswitch/config.json"):
         self.config_path = Path(config_path).expanduser()
         self.config = self._load_config()
-    
+
     def _load_config(self) -> dict:
         if self.config_path.exists():
             with open(self.config_path) as f:
@@ -110,26 +110,26 @@ class DeadManSwitch:
             "trustees": [],
             "threshold": 3
         }
-    
+
     def checkin(self):
         """Update the last check-in timestamp."""
         self.config["last_checkin"] = time.time()
         self._save_config()
         print(f"Check-in successful. Next due in {self.config['checkin_interval_seconds']/86400} days.")
-    
+
     def _save_config(self):
         self.config_path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.config_path, 'w') as f:
             json.dump(self.config, f, indent=2)
-    
+
     def is_expired(self) -> bool:
         """Check if the dead man's switch has expired."""
         if self.config["last_checkin"] is None:
             return True
-        
+
         elapsed = time.time() - self.config["last_checkin"]
         return elapsed > self.config["checkin_interval_seconds"]
-    
+
     def trigger_if_expired(self):
         """Trigger the release mechanism if check-in has expired."""
         if self.is_expired():
@@ -137,7 +137,7 @@ class DeadManSwitch:
             self._notify_trustees()
             return True
         return False
-    
+
     def _notify_trustees(self):
         """Send notification to trustees (implement your notification logic)."""
         for trustee in self.config["trustees"]:
@@ -235,7 +235,7 @@ def encrypt_share_for_trustee(share: str, public_key) -> bytes:
     aesgcm = AESGCM(aes_key)
     nonce = token_bytes(12)
     encrypted_share = aesgcm.encrypt(nonce, share.encode(), None)
-    
+
     # Encrypt AES key with RSA public key
     encrypted_key = public_key.encrypt(
         aes_key,
@@ -245,7 +245,7 @@ def encrypt_share_for_trustee(share: str, public_key) -> bytes:
             label=None
         )
     )
-    
+
     return nonce + encrypted_share + encrypted_key
 ```
 
@@ -258,16 +258,13 @@ Set up your automated check-in system immediately, and test the full flow at lea
 The peace of mind this system provides comes from knowing that your digital assets remain accessible to your chosen trustees if something happens to you, without creating a single point of failure that could compromise your security.
 
 
-
-
-
 ## Related Articles
 
+- [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-- [Set Up a Dead Man's Switch Email That Sends Credentials If You Stop Checking In](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
-- [Protect Yourself from Credential Stuffing Attack](/privacy-tools-guide/how-to-protect-yourself-from-credential-stuffing-attack-pass/)
 - [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
+- [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

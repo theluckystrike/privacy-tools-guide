@@ -526,14 +526,13 @@ canada:
 Emergency access configuration becomes meaningful only when integrated into comprehensive digital estate planning with clear documentation and regular testing.
 
 
-
 ## Related Articles
 
-- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
 - [Best Password Managers With Emergency Access Features.](/privacy-tools-guide/best-password-managers-emergency-access-features-compared/)
 - [How To Set Up Beneficiary Access For Cloud Password Manager](/privacy-tools-guide/how-to-set-up-beneficiary-access-for-cloud-password-manager-/)
+- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

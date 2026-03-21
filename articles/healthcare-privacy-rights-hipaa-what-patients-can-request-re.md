@@ -46,12 +46,12 @@ class HIPAARecordRequest:
         self.request_type = request_type  # access, amendment, accounting
         self.date_range = date_range
         self.status = "pending"
-    
+
     def validate_request(self):
         # Verify patient identity per HIPAA requirements
         required_fields = ['patient_id', 'signed_authorization', 'request_date']
         return all(getattr(self, field) for field in required_fields)
-    
+
     def process_access_request(self):
         # Must respond within 30 calendar days
         deadline = datetime.now() + timedelta(days=30)
@@ -83,7 +83,7 @@ const amendmentRequest = {
 function processAmendment(request) {
   // Provider must respond within 60 days
   const responseDeadline = addDays(new Date(), 60);
-  
+
   return {
     requestId: generateUUID(),
     status: "pending_review",
@@ -139,10 +139,10 @@ Please provide records from [start date] to [end date], including:
 - Laboratory results
 - Imaging reports
 
-I request the records in electronic format, preferably as PDF files 
+I request the records in electronic format, preferably as PDF files
 via secure email or patient portal upload.
 
-Please contact me at [your phone/email] if you require additional 
+Please contact me at [your phone/email] if you require additional
 information to process this request.
 
 Sincerely,
@@ -195,8 +195,6 @@ The Office for Civil Rights (OCR) within the Department of Health and Human Serv
 Understanding these rights enables both patients seeking access to their data and developers building systems that must respect and help those rights. HIPAA provides mechanisms for patient control over health information — knowing how to exercise these rights or implement them in code is a valuable skill for anyone working with healthcare data.
 
 ---
-
-
 
 
 ## Related Articles

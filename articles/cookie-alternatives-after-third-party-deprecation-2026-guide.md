@@ -32,10 +32,10 @@ The simplest migration path involves moving functionality to first-party cookies
 function setConsentCookie(userId, preferences) {
   const expiryDays = 365;
   const cookieValue = btoa(JSON.stringify({ userId, preferences }));
-  
-  document.cookie = `user_prefs=${cookieValue}; 
-    max-age=${expiryDays * 24 * 60 * 60}; 
-    path=/; 
+
+  document.cookie = `user_prefs=${cookieValue};
+    max-age=${expiryDays * 24 * 60 * 60};
+    path=/;
     SameSite=Strict;
     Secure`;
 }
@@ -82,18 +82,18 @@ app.secret_key = os.environ.get('SESSION_SECRET')
 def login():
     user_data = validate_credentials(request.json)
     session_id = str(uuid.uuid4())
-    
+
     # Store session server-side
     sessions[session_id] = {
         'user_id': user_data['id'],
         'created_at': datetime.now(),
         'preferences': user_data['preferences']
     }
-    
+
     response = jsonify({'status': 'logged_in'})
-    response.set_cookie('session_id', session_id, 
-                        httponly=True, 
-                        secure=True, 
+    response.set_cookie('session_id', session_id,
+                        httponly=True,
+                        secure=True,
                         samesite='Lax')
     return response
 ```

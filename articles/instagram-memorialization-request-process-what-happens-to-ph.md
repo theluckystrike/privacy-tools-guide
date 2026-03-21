@@ -77,7 +77,7 @@ def verify_family_relationship(requester, deceased):
         "government_id",
         "birth_certificate_or_legal_doc"
     ]
-    
+
     for doc in required_documents:
         if not requester.has_document(doc):
             return {
@@ -85,7 +85,7 @@ def verify_family_relationship(requester, deceased):
                 "missing": doc,
                 "message": f"Please provide {doc}"
             }
-    
+
     return {"status": "pending_review"}
 ```
 
@@ -138,8 +138,8 @@ For developers building death-tech applications:
 // - No access to account settings
 
 const memorializedAccountData = await instagramAPI.getUser('username');
-// Returns: { 
-//   id: '...', 
+// Returns: {
+//   id: '...',
 //   username: 'username',
 //   name: 'Remembering [Name]',
 //   media_count: ...,
@@ -192,19 +192,19 @@ For developers building estate management platforms:
 class InstagramEstateHandler:
     def __init__(self, access_token):
         self.api = InstagramAPI(access_token)
-    
+
     def check_account_status(self, username):
         """Check if account is active, memorialized, or deleted"""
         # Note: No public API for memorialization status
         # Must rely on UI indicators
         pass
-    
+
     def request_data_preservation(self, death_certificate):
         """Request data hold before memorialization"""
         # Instagram doesn't publicly offer this
         # Contact: https://help.instagram.com/contact/282079222292260
         pass
-    
+
     def document_legacy_contact(self, user_id, contact_username):
         """Document legacy contact designation"""
         # This is set by the user in their Instagram settings
@@ -257,7 +257,6 @@ Maintain secure records of:
 - Legacy contact designation
 - Data backup locations
 - Any special instructions for digital executor
-
 
 
 ## Related Articles

@@ -120,7 +120,7 @@ if __name__ == '__main__':
     if len(sys.argv) != 4:
         print("Usage: obfs_bridge.py <listen_port> <target_port> <node_id>")
         sys.exit(1)
-    
+
     start_obfs_bridge(int(sys.argv[1]), int(sys.argv[2]), sys.argv[3])
 ```
 
@@ -224,7 +224,7 @@ func handleConnection(client net.Conn, target string) {
         log.Printf("Failed to connect to target: %v", err)
         return
     }
-    
+
     go io.Copy(server, client)
     go io.Copy(client, server)
 }
@@ -234,15 +234,15 @@ func main() {
     if err != nil {
         log.Fatalf("Failed to load certificates: %v", err)
     }
-    
+
     listener, err := tls.Listen("tcp", "0.0.0.0:443", &tls.Config{
         Certificates: []tls.Certificate{cert},
         MinVersion:   tls.VersionTLS12,
     })
     defer listener.Close()
-    
+
     log.Println("TLS tunnel listening on port 443")
-    
+
     for {
         client, err := listener.Accept()
         if err != nil {
@@ -292,8 +292,6 @@ dig +short myip.opendns.com @resolver1.opendns.com
 ```
 
 The ecosystem changes frequently. What works today may be blocked tomorrow. Stay informed through communities like the [AzireVPN forums](https://azirevpn.com) and follow developers who actively maintain obfuscation tools.
-
-
 
 
 ## Related Articles

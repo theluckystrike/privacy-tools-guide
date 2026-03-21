@@ -190,7 +190,6 @@ While complete data protection requires avoiding dating apps entirely, several m
 5. **Use privacy-focused alternatives**: Platforms like [Signal](https://signal.org) for dating or decentralized options provide better privacy
 
 
-
 ## Related Articles
 
 - [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)

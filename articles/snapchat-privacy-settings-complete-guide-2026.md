@@ -135,7 +135,7 @@ When building applications that integrate with Snapchat via Kit, user privacy se
 {
   "permissions": [
     "snapchat_basic",
-    "snapchat_email", 
+    "snapchat_email",
     "snapchatFriends"
   ],
   "user_settings": {
@@ -185,7 +185,6 @@ Use this checklist to audit your Snapchat privacy configuration:
 - [ ] Downloaded and reviewed your data
 - [ ] Reviewed friend list and removed unknown contacts
 - [ ] Checked third-party app permissions
-
 
 
 ## Related Articles

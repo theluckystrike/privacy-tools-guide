@@ -330,7 +330,6 @@ scp root@192.168.1.1:/tmp/backup.tar.gz ./
 ```
 
 
-
 ## Related Articles
 
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)

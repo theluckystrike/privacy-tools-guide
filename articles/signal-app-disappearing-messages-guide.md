@@ -91,7 +91,7 @@ Establish organization-wide defaults based on conversation sensitivity:
 # Example: Document recommended timer durations
 #
 # Security discussions: 1 hour
-# Code reviews: 1 day  
+# Code reviews: 1 day
 # General chat: 1 week
 # External contacts: 30 seconds or 5 minutes
 ```
@@ -114,13 +114,13 @@ while IFS= read -r contact; do
     # Skip comments and empty lines
     [[ "$contact" =~ ^#.*$ ]] && continue
     [[ -z "$contact" ]] && continue
-    
+
     TIMER=$(echo "$contact" | cut -d: -f2)
     NUMBER=$(echo "$contact" | cut -d: -f1)
-    
+
     echo "Setting $NUMBER to ${TIMER}s"
     signal-cli -u "$SENDER" setExpiration "$NUMBER" "$TIMER"
-    
+
 done < "$CONTACTS_FILE"
 ```
 
@@ -174,7 +174,6 @@ Verify disappearing messages work correctly before relying on them for sensitive
 6. Check that restoring from backup does not recover the message
 
 Perform this test on each device type you use, as deletion behavior varies slightly between platforms.
-
 
 
 ## Related Articles

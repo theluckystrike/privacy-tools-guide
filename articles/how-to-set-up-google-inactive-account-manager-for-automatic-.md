@@ -60,7 +60,7 @@ Configure how long Google should wait before considering your account inactive:
 ```
 Inactivity period options:
 - 3 months
-- 6 months  
+- 6 months
 - 12 months
 - 18 months
 - 24 months
@@ -132,18 +132,18 @@ def verify_takeout_backup(backup_path: str) -> dict:
     backup_dir = Path(backup_path)
     expected_services = [
         'Gmail',
-        'Drive', 
+        'Drive',
         'Photos',
         'Calendar',
         'Contacts'
     ]
-    
+
     found_services = []
     for service in expected_services:
         # Check for service-specific folders
         if any(service.lower() in f.name.lower() for f in backup_dir.rglob('*')):
             found_services.append(service)
-    
+
     return {
         'backup_path': backup_path,
         'expected': expected_services,
@@ -220,15 +220,13 @@ Google's solution handles one piece of the puzzle—coordinate it with broader d
 ---
 
 
-
-
 ## Related Articles
 
 - [How To Set Up Automatic Account Deletion Triggers If You Bec](/privacy-tools-guide/how-to-set-up-automatic-account-deletion-triggers-if-you-bec/)
-- [Twitter X Account After Death: How to Request.](/privacy-tools-guide/twitter-x-account-after-death-how-to-request-memorialization/)
-- [Password Manager Death Plan: Which Managers Have Built-in Emergency Access Fe...](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
-- [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
+- [How To Set Up Google Voice Number Specifically For Online Da](/privacy-tools-guide/how-to-set-up-google-voice-number-specifically-for-online-da/)
+- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
+- [Prevent Android Keyboard From Sending Typing Data To Google](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
+- [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

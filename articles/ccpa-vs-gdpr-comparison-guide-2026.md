@@ -62,16 +62,16 @@ class PrivacyRequestHandler:
     def __init__(self, user_repository, data_processor):
         self.user_repo = user_repository
         self.processor = data_processor
-    
+
     def handle_request(self, request: DataRequest) -> dict:
         if request.regulation == Regulation.GDPR:
             return self._handle_gdpr_request(request)
         elif request.regulation == Regulation.CCPA:
             return self._handle_ccpa_request(request)
-    
+
     def _handle_gdpr_request(self, request: DataRequest) -> dict:
         user_data = self.user_repo.get_user_data(request.user_id)
-        
+
         if request.request_type == "access":
             return {
                 "data": user_data,
@@ -80,26 +80,26 @@ class PrivacyRequestHandler:
                 "purposes": self._get_processing_purposes(request.user_id),
                 "recipients": self._get_data_recipients(request.user_id),
                 "retention": self._get_retention_periods(request.user_id),
-                "rights": ["access", "rectification", "erasure", 
+                "rights": ["access", "rectification", "erasure",
                           "restriction", "portability", "objection"]
             }
-        
+
         elif request.request_type == "deletion":
             # GDPR requires erasure unless exceptions apply
             self.user_repo.delete_user_data(request.user_id)
             self._notify_processors(request.user_id, "deletion")
             return {"status": "completed", "deletion_date": "2026-03-15"}
-        
+
         elif request.request_type == "portability":
             return {
                 "data": user_data,
                 "format": "json",
                 "schema": "http://json-schema.org/draft-07/schema#"
             }
-    
+
     def _handle_ccpa_request(self, request: DataRequest) -> dict:
         user_data = self.user_repo.get_user_data(request.user_id)
-        
+
         if request.request_type == "know":
             return {
                 "categories_collected": self._categorize_data(user_data),
@@ -108,12 +108,12 @@ class PrivacyRequestHandler:
                 "business_purpose": self._get_business_purposes(),
                 "third_party_categories": self._get_third_party_categories()
             }
-        
+
         elif request.request_type == "delete":
             # CCPA allows exceptions for legal obligations
             self.user_repo.mark_for_deletion(request.user_id)
             return {"status": "completed", "deletion_date": "2026-03-15"}
-        
+
         elif request.request_type == "opt_out":
             self.user_repo.set_sale_flag(request.user_id, False)
             return {"status": "opt_out_registered"}
@@ -132,7 +132,7 @@ class ConsentManager {
         this.regulation = regulation;
         this.consents = new Map();
     }
-    
+
     // GDPR consent requires granular control
     gdprConsent(userId, purposes) {
         const consentRecord = {
@@ -147,11 +147,11 @@ class ConsentManager {
             source: 'cookie_banner',
             proof: this.generate_consent_proof()
         };
-        
+
         this.consents.set(userId, consentRecord);
         return consentRecord;
     }
-    
+
     // CCPA focuses on opt-out of sale
     ccpaOptOut(userId) {
         return {
@@ -161,15 +161,15 @@ class ConsentManager {
             categories_included: this.get_sale_categories()
         };
     }
-    
+
     checkConsent(userId, purpose) {
         const consent = this.consents.get(userId);
         if (!consent) return false;
-        
+
         if (this.regulation === 'gdpr') {
             return consent.granular[purpose] === true;
         }
-        
+
         return true; // CCPA defaults to allowed until opt-out
     }
 }
@@ -214,16 +214,13 @@ Build your systems with privacy by design principles: collect less data, retain 
 The regulatory landscape continues evolving. Several US states have passed their own privacy laws, and the EU continues to refine GDPR through guidance and Schrems II implications. Stay current with your legal counsel and adjust your implementations as requirements change.
 
 
-
-
-
 ## Related Articles
 
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
-- [Ccpa Compliance Requirements For Online Businesses California Privacy Law](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
-- [Submit a Privacy Complaint to California Attorney General Under CCPA Enforcement](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
+- [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

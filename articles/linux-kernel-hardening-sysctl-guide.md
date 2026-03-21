@@ -306,7 +306,6 @@ Most of these settings have zero measurable performance impact on typical worklo
 - `rp_filter` — can cause issues on multi-homed servers with asymmetric routing (set to `0` per interface if needed)
 
 
-
 ## Related Articles
 
 - [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)

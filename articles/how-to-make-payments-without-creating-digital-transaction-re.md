@@ -50,7 +50,7 @@ class CashLedger:
     def __init__(self, storage_path="~/.cash_ledger"):
         self.path = Path(storage_path).expanduser()
         self.path.mkdir(parents=True, exist_ok=True)
-    
+
     def add_expense(self, amount, category, merchant="cash"):
         entry = {
             "date": datetime.now().isoformat(),
@@ -61,7 +61,7 @@ class CashLedger:
         }
         with open(self.path / "expenses.jsonl", "a") as f:
             f.write(json.dumps(entry) + "\n")
-    
+
     def get_balance(self):
         # Only works if you track income too
         total = 0
@@ -111,12 +111,12 @@ const coinJoin = async (inputs, outputs) => {
     inputs: combinedInputs,
     outputs: outputs // Each user receives their output here
   });
-  
+
   // All participants sign
   for (const user of participants) {
     await user.sign(tx);
   }
-  
+
   return tx.broadcast();
 };
 ```
@@ -192,12 +192,12 @@ def generate_trade_invoice():
         "Technical consulting",
         "Code review"
     ]
-    
+
     invoice = {
         "invoice_number": f"TRADE-{random.randint(1000,9999)}",
         "date": fake.date_between(start_date='-1y', end_date='today'),
         "items": [
-            {"description": random.choice(items), 
+            {"description": random.choice(items),
              "hours": random.randint(1, 20),
              "rate": random.randint(50, 200)}
         ],

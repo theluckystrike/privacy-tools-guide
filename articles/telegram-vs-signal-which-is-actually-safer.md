@@ -98,7 +98,7 @@ Signal collects almost no metadata:
 ```bash
 # Signal's server stores only:
 # - Account creation timestamp
-# - Last connection timestamp  
+# - Last connection timestamp
 # - Phone number (for routing)
 # - Encrypted message batches (deleted after delivery)
 ```

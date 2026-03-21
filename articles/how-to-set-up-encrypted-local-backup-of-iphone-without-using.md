@@ -348,8 +348,6 @@ Create a documented disaster recovery plan:
 ---
 
 
-
-
 ## Related Articles
 
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)

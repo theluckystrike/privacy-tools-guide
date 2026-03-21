@@ -248,7 +248,6 @@ Beyond basic setup, implement these hardening measures:
 5. **Backups**: Regularly back up configuration and user data
 
 
-
 ## Related Articles
 
 - [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)

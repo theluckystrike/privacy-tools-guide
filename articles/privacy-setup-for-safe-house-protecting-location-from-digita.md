@@ -181,7 +181,6 @@ Implement these steps in order of impact:
 8. **Use Tor for sensitive browsing** — Maximum anonymity
 
 
-
 ## Related Articles
 
 - [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)

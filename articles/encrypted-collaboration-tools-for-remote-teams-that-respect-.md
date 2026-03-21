@@ -425,7 +425,6 @@ Example 30-day pilot:
 - Decision: Commit or iterate
 
 
-
 ## Related Articles
 
 - [Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)

@@ -338,7 +338,6 @@ Help executives understand the decision:
 | Total Year 1 | $80,000+ | Regulatory compliance + security |
 
 
-
 ## Related Articles
 
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)

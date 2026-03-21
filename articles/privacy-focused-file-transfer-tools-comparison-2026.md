@@ -458,8 +458,6 @@ All four are free, open-source, and actively maintained. Pick one based on your 
 {% endraw %}
 
 
-
-
 ## Related Articles
 
 - [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)

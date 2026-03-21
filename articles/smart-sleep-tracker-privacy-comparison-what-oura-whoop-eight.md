@@ -91,7 +91,7 @@ const csv = require('csv-parser');
 
 function parseWhoopExport(filePath) {
   const results = [];
-  
+
   fs.createReadStream(filePath)
     .pipe(csv())
     .on('data', (data) => {
@@ -105,7 +105,7 @@ function parseWhoopExport(filePath) {
     .on('end', () => {
       console.log(`Processed ${results.length} days of Whoop data`);
     });
-  
+
   return results;
 }
 ```
@@ -139,15 +139,15 @@ import requests
 
 def sync_eight_sleep_to_health(eight_sleep_token, health_token):
     """Sync sleep data from Eight Sleep to Apple Health"""
-    
+
     # Fetch Eight Sleep data
     eight_response = requests.get(
         "https://api.eightsleep.com/v3/sleep",
         headers={"Authorization": f"Bearer {eight_sleep_token}"}
     )
-    
+
     sleep_records = eight_response.json()["sleep"]
-    
+
     # Push to Apple Health (requires HealthKit permissions)
     for record in sleep_records:
         health_payload = {
@@ -156,7 +156,7 @@ def sync_eight_sleep_to_health(eight_sleep_token, health_token):
             "endDate": record["end_time"],
             "value": record["stage"]  # inBed, asleepCore, etc.
         }
-        
+
         requests.post(
             "https://api.apple.com/healthkit/v1/samples",
             headers={"Authorization": f"Bearer {health_token}"},
@@ -230,8 +230,6 @@ For users prioritizing privacy in their sleep tracking:
 5. **Consider the device form factor**—mattresses and rings may feel less intrusive than wrist-worn devices but collect equivalent data
 
 The trade-off between sleep optimization insights and biometric data sharing remains a personal decision. Understanding what each platform collects provides the foundation for making informed choices about your most intimate health data.
-
-
 
 
 ## Related Articles

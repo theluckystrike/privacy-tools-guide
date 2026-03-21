@@ -238,7 +238,6 @@ Build a privacy-respecting app ecosystem:
 - **VPN**: WireGuard (built into GrapheneOS) or OpenVPN
 
 
-
 ## Related Articles
 
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)

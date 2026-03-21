@@ -359,7 +359,6 @@ plink --vcf yourdata.vcf --freq --out analysis
 This approach requires technical skill but provides maximum privacy.
 
 
-
 ## Related Articles
 
 - [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)

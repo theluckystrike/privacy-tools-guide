@@ -378,7 +378,6 @@ Rotate your repository password annually or whenever a credential is exposed. Af
 **How does restic compare to Borg Backup?** Both are excellent. Borg has faster deduplication and is slightly more efficient for large repos, but only supports Linux/macOS natively. Restic supports Windows and has broader storage backend support. For cross-platform environments, restic is the safer choice.
 
 
-
 ## Related Articles
 
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)

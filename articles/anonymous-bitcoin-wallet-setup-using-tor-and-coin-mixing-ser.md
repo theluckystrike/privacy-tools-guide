@@ -352,7 +352,6 @@ Custody Privacy: Cold storage, multisig
 Each layer adds friction but increases privacy exponentially.
 
 
-
 ## Related Articles
 
 - [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction P](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)

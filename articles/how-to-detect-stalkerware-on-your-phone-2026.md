@@ -393,7 +393,6 @@ After removal:
 ```
 
 
-
 ## Related Articles
 
 - [How To Detect And Remove Stalkerware From Android Phone Comp](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)

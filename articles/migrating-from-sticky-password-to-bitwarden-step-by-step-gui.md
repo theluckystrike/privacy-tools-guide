@@ -70,7 +70,7 @@ import sys
 
 def convert_sticky_to_bitwarden(input_file, output_file):
     """Convert Sticky Password CSV export to Bitwarden import format."""
-    
+
     field_mapping = {
         'URL': 'login_uri',
         'Login': 'login_username',
@@ -78,20 +78,20 @@ def convert_sticky_to_bitwarden(input_file, output_file):
         'Notes': 'notes',
         'Title': 'name'
     }
-    
+
     bitwarden_fields = [
         'folder', 'favorite', 'type', 'name', 'login_uri',
         'login_username', 'login_password', 'login_totp',
         'notes', 'fields', 'reprompt'
     ]
-    
+
     with open(input_file, 'r', encoding='utf-8-sig') as infile:
         reader = csv.DictReader(infile)
-        
+
         with open(output_file, 'w', newline='', encoding='utf-8') as outfile:
             writer = csv.DictWriter(outfile, fieldnames=bitwarden_fields)
             writer.writeheader()
-            
+
             for row in reader:
                 new_row = {
                     'folder': '',
@@ -107,14 +107,14 @@ def convert_sticky_to_bitwarden(input_file, output_file):
                     'reprompt': ''
                 }
                 writer.writerow(new_row)
-    
+
     print(f"Converted {input_file} to Bitwarden format: {output_file}")
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         print("Usage: convert.py input.csv output.csv")
         sys.exit(1)
-    
+
     convert_sticky_to_bitwarden(sys.argv[1], sys.argv[2])
 ```
 
@@ -200,7 +200,6 @@ After successfully migrating, take time to update your browser extensions and en
 For developers using Bitwarden for secrets management, explore the Bitwarden Send feature for sharing sensitive information securely, and consider integrating the CLI into your development workflow for programmatic secret retrieval.
 
 The migration process, while requiring some technical steps, provides an opportunity to audit your password inventory and remove outdated entries. This periodic cleanup improves your overall security posture and reduces the attack surface of your password vault.
-
 
 
 ## Related Articles

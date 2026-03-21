@@ -230,14 +230,13 @@ Before finalizing your setup, verify each recovery component works:
 Document the date of your last successful test. If circumstances change significantly—key holders relocate, wallet software updates, or exchange rates shift dramatically—retest your setup annually.
 
 
-
 ## Related Articles
 
 - [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
 - [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)
 - [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
 - [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
-- [How to set up encrypted emergency access your family can use.](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

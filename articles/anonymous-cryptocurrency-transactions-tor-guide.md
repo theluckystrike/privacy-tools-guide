@@ -177,7 +177,6 @@ bitcoin-cli getpeerinfo | grep -E "addronnet.*onion"
 Confirm your node accepts only onion connections and that your visible IP differs from your actual IP.
 
 
-
 ## Related Articles
 
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)

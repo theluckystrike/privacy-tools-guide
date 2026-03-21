@@ -181,14 +181,14 @@ def verify_email_signature(signed_message_path, expected_signer_email=None):
                     sig = result.signatures[0]
                     key = ctx.get_key(sig.fpr)
                     uid = key.uids[0]
-                    
+
                     if expected_signer_email and expected_signer_email not in uid.uid:
                         return False, f"Unexpected signer: {uid.uid}"
-                    
+
                     return True, f"Valid signature from {uid.uid}"
             except gpg.errors.GPGError as e:
                 return False, f"Verification failed: {e}"
-    
+
     return False, "No signature found"
 ```
 
@@ -216,7 +216,6 @@ If verification still fails after following these steps, check these common caus
 - **Whitespace changes**: Some mail gateways modify whitespace, breaking signatures
 - **MIME formatting**: Multi-part MIME messages require careful handling
 - **Key trust levels**: Run `gpg --edit-key` and set trust level to "ultimate" for keys you personally verify
-
 
 
 ## Related Articles

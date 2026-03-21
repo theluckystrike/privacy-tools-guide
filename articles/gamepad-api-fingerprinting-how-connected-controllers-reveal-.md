@@ -63,7 +63,7 @@ Websites can collect gamepad information using straightforward JavaScript. Here'
 // Polling function to check for connected gamepads
 function pollGamepads() {
   const gamepads = navigator.getGamepads();
-  
+
   for (const gamepad of gamepads) {
     if (gamepad) {
       const fingerprint = {
@@ -77,7 +77,7 @@ function pollGamepads() {
         })),
         timestamp: Date.now()
       };
-      
+
       console.log('Gamepad fingerprint:', fingerprint);
     }
   }
@@ -400,7 +400,6 @@ function requestGamepadAccess() {
 Clearly document gamepad usage in privacy policies:
 
 "This application uses the Gamepad API to enable controller support for gameplay. We collect only button and axis state necessary for game functionality. We do not collect or transmit controller vendor IDs, product IDs, or identifying information."
-
 
 
 ## Related Articles

@@ -94,7 +94,7 @@ function autofillPassword(password) {
     HTMLInputElement.prototype, "value"
   ).set;
   nativeInputValueSetter.call(input, password);
-  
+
   // Dispatch minimal event only if necessary
   input.dispatchEvent(new Event("input", { bubbles: true }));
 }
@@ -280,7 +280,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 const encrypted = crypto.encrypt(vault, masterPassword);
 chrome.storage.local.set({ vault: encrypted });
 ```
-
 
 
 ## Related Articles

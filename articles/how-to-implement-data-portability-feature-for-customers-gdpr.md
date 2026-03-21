@@ -47,14 +47,14 @@ def request_data_export():
     Initiates an async job to compile user data.
     """
     user_id = get_current_user_id()
-    
+
     # Validate the request
     if not user_id:
         return jsonify({'error': 'Authentication required'}), 401
-    
+
     # Create export job
     export_job = create_export_job(user_id)
-    
+
     return jsonify({
         'job_id': export_job.id,
         'status': 'processing',
@@ -118,14 +118,14 @@ def export_transactions(user_id, start_date=None, end_date=None):
     Export user transaction data with filtering support.
     """
     query = db.query(Transaction).filter(Transaction.user_id == user_id)
-    
+
     if start_date:
         query = query.filter(Transaction.created_at >= start_date)
     if end_date:
         query = query.filter(Transaction.created_at <= end_date)
-    
+
     transactions = query.order_by(Transaction.created_at.desc()).all()
-    
+
     return [{
         'id': t.id,
         'type': t.type,
@@ -155,24 +155,24 @@ def require_data_export_permission(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         auth_token = request.headers.get('Authorization')
-        
+
         if not auth_token:
             return jsonify({'error': 'Missing authorization'}), 401
-        
+
         token = validate_token(auth_token)
-        
+
         if not token:
             return jsonify({'error': 'Invalid token'}), 401
-        
+
         if not token.has_permission('data_export'):
             return jsonify({'error': 'Insufficient permissions'}), 403
-        
+
         # Verify token belongs to the requesting user
         if token.user_id != request.json.get('user_id'):
             return jsonify({'error': 'Cannot export other user data'}), 403
-        
+
         return f(*args, **kwargs)
-    
+
     return decorated_function
 ```
 
@@ -196,7 +196,7 @@ def notify_export_ready(user_id, export_job):
     Send notification when data export is ready for download.
     """
     user = get_user(user_id)
-    
+
     send_email(
         to=user.email,
         subject="Your Data Export is Ready",
@@ -223,9 +223,9 @@ def setup_scheduled_exports(user_id, frequency='monthly'):
     Configure automatic periodic data exports for a user.
     """
     user_preferences = get_user_preferences(user_id)
-    
+
     scheduler = BackgroundScheduler()
-    
+
     if frequency == 'monthly':
         scheduler.add_job(
             func=generate_monthly_export,
@@ -242,7 +242,7 @@ def setup_scheduled_exports(user_id, frequency='monthly'):
             hour=3,
             args=[user_id]
         )
-    
+
     scheduler.start()
 ```
 
@@ -257,7 +257,6 @@ testing ensures your data portability feature works correctly and securely.
 **Performance Testing**: Measure export generation time with realistic data volumes. Large accounts should complete within the one-month regulatory window, though target completion within 24-48 hours for typical requests.
 
 **Format Validation**: Ensure exports validate against their declared schemas. JSON exports should parse without errors. CSV exports should open correctly in spreadsheet applications.
-
 
 
 ## Related Articles

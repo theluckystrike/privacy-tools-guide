@@ -157,17 +157,17 @@ However, the security difference narrows significantly when password authenticat
 graph TD
     A[VPN Authentication Methods] --> B[Certificate-Based]
     A --> C[Username/Password]
-    
+
     B --> B1[Mutual TLS mTLS]
     B --> B2[PKI Infrastructure Required]
     B --> B3[No Password-Related Attacks]
     B --> B4[Device-Bound Authentication]
-    
+
     C --> C1[Password + MFA]
     C --> C2[Directory Integration]
     C --> C3[Phishing Vulnerability]
     C --> C4[Password Reuse Risk]
-    
+
     B1 --> E[Higher Security]
     C1 --> E
 ```
@@ -246,7 +246,6 @@ log /var/log/openvpn.log
 status /var/log/openvpn-status.log
 verb 4
 ```
-
 
 
 ## Related Articles

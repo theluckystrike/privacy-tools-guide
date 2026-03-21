@@ -184,19 +184,19 @@ class ZeroKnowledgeStore:
             dklen=32
         )
         self.box = SecretBox(self.key)
-    
+
     def encrypt(self, plaintext: str) -> bytes:
         """Encrypt data with a random nonce"""
         nonce = random(SecretBox.NONCE_SIZE)
         ciphertext = self.box.encrypt(plaintext.encode(), nonce)
         return base64.b64encode(self.salt + ciphertext)
-    
+
     def decrypt(self, encrypted_data: str) -> str:
         """Decrypt data - requires same master password"""
         data = base64.b64decode(encrypted_data)
         salt = data[:16]
         ciphertext = data[16:]
-        
+
         # Re-derive key with stored salt
         key = hashlib.pbkdf2_hmac(
             'sha256',
@@ -329,7 +329,6 @@ curl -X PUT "https://password.yourdomain.com/api/organizations/${ORG_ID}/users/$
 ```
 
 After revoking access, rotate any credentials in collections the departing user had access to. This is the same discipline as git-crypt key rotation after offboarding: vault access revocation does not retroactively protect credentials already seen in plaintext. The rotation is the protection.
-
 
 
 ## Related Articles

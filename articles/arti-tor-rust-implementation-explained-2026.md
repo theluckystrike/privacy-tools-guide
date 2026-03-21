@@ -54,15 +54,15 @@ use tor-config::load_cfg;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = load_cfg()?;
     let mut client = TorClient::create_bootstrapped(config).await?;
-    
+
     // Create an anonymous stream through Tor
     let mut stream = client.connect(("check.torproject.org", 443)).await?;
-    
+
     stream.write_all(b"GET / HTTP/1.1\r\nHost: check.torproject.org\r\n\r\n").await?;
-    
+
     let mut response = Vec::new();
     stream.read_to_end(&mut response).await?;
-    
+
     println!("{}", String::from_utf8_lossy(&response));
     Ok(())
 }
@@ -240,6 +240,7 @@ containers:
 ```
 
 Each pattern has trade-offs between isolation, performance, and complexity. The embedded library approach provides the best performance but requires Rust. The sidecar pattern works with any language and keeps Arti updates independent of your application releases.
+
 
 ## Related Articles
 

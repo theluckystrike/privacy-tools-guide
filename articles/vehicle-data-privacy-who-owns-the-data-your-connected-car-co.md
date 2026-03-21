@@ -184,8 +184,6 @@ Vehicle data privacy remains an evolving area. Regulations like the California C
 The data your vehicle generates reveals intimate details about your life: where you live, where you work, your daily routines, and your driving habits. Taking control of this data requires understanding who can access it and choosing your connections wisely.
 
 
-
-
 ## Related Articles
 
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)

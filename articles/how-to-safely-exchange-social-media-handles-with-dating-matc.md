@@ -315,7 +315,6 @@ If you share a handle and later regret it:
 Your digital privacy is not about paranoia—it is about maintaining control over your personal narrative. The strategies in this guide provide layers of protection that work for varying threat levels and comfort zones.
 
 
-
 ## Related Articles
 
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)

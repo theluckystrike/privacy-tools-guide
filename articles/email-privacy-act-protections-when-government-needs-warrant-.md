@@ -74,7 +74,7 @@ Developers can address this through several technical approaches:
 def sanitize_email_headers(headers):
     sanitized = {
         k: v for k, v in headers.items()
-        if k.lower() not in ('message-id', 'references', 
+        if k.lower() not in ('message-id', 'references',
                              'x-originating-ip', 'x-sender-ip')
     }
     return sanitized
@@ -403,8 +403,6 @@ For developers, building privacy-respecting systems means assuming that any data
 Understanding when the government needs a warrant to read your emails matters not just for legal compliance, but for making informed architectural and operational decisions about digital communications. Combine legal understanding with strong encryption, operational security practices, and jurisdictional considerations to create email privacy strategies.
 
 ---
-
-
 
 
 ## Related Articles

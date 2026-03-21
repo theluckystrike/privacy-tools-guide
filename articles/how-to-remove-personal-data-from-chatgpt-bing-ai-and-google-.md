@@ -52,7 +52,7 @@ import requests
 def delete_chatgpt_conversation(conversation_id: str, api_key: str) -> dict:
     """
     Delete a conversation from ChatGPT history.
-    Note: This removes it from your visible history but 
+    Note: This removes it from your visible history but
     may not remove it from training datasets.
     """
     response = requests.delete(
@@ -116,7 +116,7 @@ def clear_microsoft_search_history(access_token: str) -> bool:
         "https://api.bing.com/osjson.aspx?action=history",
         headers={"Authorization": "Bearer {}".format(access_token)}
     )
-    
+
     # Then delete each item
     for item in history_response.json().get("items", []):
         requests.delete(
@@ -124,7 +124,7 @@ def clear_microsoft_search_history(access_token: str) -> bool:
             params={"action": "delete", "id": item["id"]},
             headers={"Authorization": "Bearer {}".format(access_token)}
         )
-    
+
     return True
 ```
 
@@ -160,7 +160,7 @@ async function deleteCopilotData(accessToken) {
       })
     }
   );
-  
+
   return response.json();
 }
 ```
@@ -191,7 +191,7 @@ def configure_gemini_autodelete(credentials, days: int = 3):
     Options: 3 months, 18 months, 36 months, or manual
     """
     service = build('myactivity', 'v1', credentials=credentials)
-    
+
     # Note: This uses Google's Activity Controls API
     settings = {
         "kind": "myactivity#activitySettings",
@@ -200,7 +200,7 @@ def configure_gemini_autodelete(credentials, days: int = 3):
             "retentionPeriod": "{} days".format(days)
         }
     }
-    
+
     result = service.settings().update(body=settings).execute()
     return result
 ```
@@ -245,7 +245,7 @@ class UserAIPreferences:
         self.allow_training = False
         self.auto_delete_days = 30
         self.audit_log = []
-    
+
     def to_privacy_header(self) -> dict:
         """Generate privacy headers for API calls"""
         return {
@@ -268,20 +268,20 @@ def sanitize_for_ai(prompt: str, user_preferences: UserAIPreferences) -> str:
     """
     # Remove email addresses
     sanitized = re.sub(r'[\w.-]+@[\w.-]+\.\w+', '[EMAIL]', prompt)
-    
+
     # Remove phone numbers
     sanitized = re.sub(r'\b\d{3}[-.]?\d{3}[-.]?\d{4}\b', '[PHONE]', sanitized)
-    
+
     # Remove SSN patterns
     sanitized = re.sub(r'\b\d{3}[-]?\d{2}[-]?\d{4}\b', '[SSN]', sanitized)
-    
+
     # Log the sanitization for audit
     user_preferences.audit_log.append({
         "action": "sanitize",
         "original_length": len(prompt),
         "sanitized_length": len(sanitized)
     })
-    
+
     return sanitized
 ```
 
@@ -297,12 +297,11 @@ Be realistic about what these deletion requests accomplish:
 The most effective strategy remains prevention: avoid entering sensitive personal information into AI systems in the first place.
 
 
-
 ## Related Articles
 
 - [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
 - [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
-- [How to Remove Personal Data from Data Brokers: Step-by-Step Guide](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [How to Remove Personal Data from Data Brokers](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 - [Intelius Opt-Out Guide: Remove Personal Information in 2026](/privacy-tools-guide/intelius-opt-out-guide-remove-personal-information-2026/)
 

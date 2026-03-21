@@ -349,8 +349,6 @@ Test your setup thoroughly before relying on it for important work. Verify DNS r
 The configuration in this guide provides a foundation. As you become familiar with V2Ray's capabilities, you can explore additional features like routing rules, traffic statistics, and load balancing across multiple servers.
 
 
-
-
 ## Related Articles
 
 - [VPN for Accessing US Pharmacy Websites from Europe Safely](/privacy-tools-guide/vpn-for-accessing-us-pharmacy-websites-from-europe-safely/)

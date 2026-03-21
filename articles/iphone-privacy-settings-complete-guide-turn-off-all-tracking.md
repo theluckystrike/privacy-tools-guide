@@ -147,7 +147,7 @@ Automation:
   Action 1: Set Airplane Mode to ON (wait 5 seconds)
   Action 2: Set Airplane Mode to OFF
   Action 3: Open Settings > Privacy > Location Services
-  
+
 # This forces apps to re-request permissions
 # and clears cached location data
 ```
@@ -161,16 +161,16 @@ For developers implementing deep links, understand tracking vectors:
 
 ```swift
 // Swift: Handle Universal Links securely
-func scene(_ scene: UIScene, 
+func scene(_ scene: UIScene,
            continue userActivity: NSUserActivity) {
     guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
           let url = userActivity.webpageURL else { return }
-    
+
     // Validate URL against allowlist
     guard let host = url.host, allowedHosts.contains(host) else {
         return // Reject unknown domains
     }
-    
+
     // Strip tracking parameters
     let cleanURL = removeTrackingParams(from: url)
     handleDeepLink(cleanURL)
@@ -179,7 +179,7 @@ func scene(_ scene: UIScene,
 func removeTrackingParams(from url: URL) -> URL {
     var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
     components?.queryItems = components?.queryItems?
-        .filter { !$0.name.hasPrefix("utm_") && 
+        .filter { !$0.name.hasPrefix("utm_") &&
                    !trackingParams.contains($0.name) }
     return components?.url ?? url
 }
@@ -198,7 +198,6 @@ func removeTrackingParams(from url: URL) -> URL {
 | iCloud | Share iPhone Analytics | OFF |
 | iCloud | Share iCloud Analytics | OFF |
 | Siri | Listen for "Hey Siri" | OFF (optional) |
-
 
 
 ## Related Articles

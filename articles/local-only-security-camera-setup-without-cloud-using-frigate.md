@@ -193,7 +193,6 @@ If you experience performance issues with multiple cameras, consider these adjus
 - Use motion-based recording instead of continuous recording to save resources
 
 
-
 ## Related Articles
 
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)

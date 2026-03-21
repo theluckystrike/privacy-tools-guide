@@ -281,7 +281,6 @@ Windows Sandbox automatically deletes all data when closed. However, follow thes
 - Store your `.wsb` configuration files in version control to track changes to your testing environment over time
 
 
-
 ## Related Articles
 
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)

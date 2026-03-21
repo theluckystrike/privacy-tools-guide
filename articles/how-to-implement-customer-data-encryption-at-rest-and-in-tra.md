@@ -49,7 +49,7 @@ VALUES (
 );
 
 -- Decrypt when needed
-SELECT email, 
+SELECT email,
        pgp_sym_decrypt(encrypted_ssn::bytea, 'your-encryption-key') AS ssn
 FROM customers;
 ```
@@ -124,20 +124,20 @@ Transport Layer Security protects data in transit. Configure your web server to 
 # Nginx TLS configuration
 server {
     listen 443 ssl http2;
-    
+
     ssl_certificate /etc/ssl/certs/your-certificate.crt;
     ssl_certificate_key /etc/ssl/private/your-private-key.key;
-    
+
     # TLS 1.3 only (most secure)
     ssl_protocols TLSv1.3;
-    
+
     # Strong cipher suites
     ssl_ciphers 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:ECDHE-RSA-AES256-GCM-SHA384';
     ssl_prefer_server_ciphers on;
-    
+
     # HSTS header
     add_header Strict-Transport-Security "max-age=63072000" always;
-    
+
     # Additional security headers
     add_header X-Frame-Options DENY;
     add_header X-Content-Type-Options nosniff;
@@ -177,11 +177,11 @@ from cryptography.hazmat.primitives import hashes
 # Client-side encryption before transmission
 def encrypt_for_server(public_key_bytes: bytes, plaintext: bytes) -> bytes:
     public_key = serialization.load_pem_public_key(public_key_bytes)
-    
+
     # Generate random AES key
     aes_key = os.urandom(32)
     iv = os.urandom(16)
-    
+
     # Encrypt data with AES
     cipher = Cipher(
         algorithms.AES(aes_key),
@@ -189,12 +189,12 @@ def encrypt_for_server(public_key_bytes: bytes, plaintext: bytes) -> bytes:
         backend=default_backend()
     )
     encryptor = cipher.encryptor()
-    
+
     # Pad data to block size
     padder = padding.PKCS7(128).padder()
     padded_data = padder.update(plaintext) + padder.finalize()
     ciphertext = encryptor.update(padded_data) + encryptor.finalize()
-    
+
     # Encrypt AES key with RSA public key
     encrypted_key = public_key.encrypt(
         aes_key,
@@ -204,7 +204,7 @@ def encrypt_for_server(public_key_bytes: bytes, plaintext: bytes) -> bytes:
             label=None
         )
     )
-    
+
     return encrypted_key + iv + ciphertext
 ```
 
@@ -221,11 +221,10 @@ Encryption strength depends entirely on key management. Follow these practices:
 5. **Monitor key usage**: Log and monitor key access patterns for anomaly detection
 
 
-
 ## Related Articles
 
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
-- [Implement Data Portability Feature For Customers Gdpr Right Explained](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
 - [How To Set Up Privacy Focused Crm That Minimizes Customer Da](/privacy-tools-guide/how-to-set-up-privacy-focused-crm-that-minimizes-customer-da/)
 - [How To Set Up Privacy Preserving Customer Analytics Without](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)

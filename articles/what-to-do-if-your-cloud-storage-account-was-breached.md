@@ -79,7 +79,7 @@ Check for unauthorized file modifications, deletions, or new uploads. Look for:
 For self-hosted Nextcloud, audit logs are available through the admin panel or directly in the database:
 
 ```sql
-SELECT * FROM oc_activity 
+SELECT * FROM oc_activity
 WHERE timestamp > DATE_SUB(NOW(), INTERVAL 7 DAY)
 AND (fileid IS NOT NULL OR message LIKE '%share%')
 ORDER BY timestamp DESC;
@@ -186,7 +186,6 @@ Before considering the incident closed, verify that:
 3. No unauthorized sessions remain active
 4. Access logs show no continued suspicious activity
 5. Data integrity matches your last known good backup
-
 
 
 ## Related Articles

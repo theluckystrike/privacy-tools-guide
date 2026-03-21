@@ -307,7 +307,6 @@ Both browsers can use Firefox extensions, but with caveats:
 - Decentraleyes (provides local CDN content) useful addition
 
 
-
 ## Related Articles
 
 - [Tor Browser vs Epic Privacy Browser Comparison](/privacy-tools-guide/tor-browser-vs-epic-privacy-browser-comparison/)

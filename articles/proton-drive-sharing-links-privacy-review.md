@@ -46,7 +46,7 @@ const createProtectedShare = async (fileId, password) => {
     password: true,  // Enables password protection
     expiration: null  // Or set expiration timestamp
   });
-  
+
   return response.shareUrl; // Contains special token requiring password
 };
 ```
@@ -58,7 +58,7 @@ const createProtectedShare = async (fileId, password) => {
 const shareWithExpiration = async (fileId, daysValid) => {
   const expirationDate = new Date();
   expirationDate.setDate(expirationDate.getDate() + daysValid);
-  
+
   return await protonApi.createShareLink({
     fileId,
     expiration: expirationDate.toISOString(),
@@ -108,9 +108,9 @@ const createSecureShare = async (fileId, options = {}) => {
     allowDownload: options.allowDownload !== false,
     allowPreview: options.allowPreview !== false
   };
-  
+
   const shareLink = await proton.files.createShareLink(fileId, shareOptions);
-  
+
   return {
     url: shareLink.url,
     expires: shareLink.expiration,
@@ -280,7 +280,6 @@ Organizations using Proton Drive for regulated data face specific compliance req
 **HIPAA (US Healthcare)**: While Proton Drive provides encryption, HIPAA requires specific audit logging for healthcare data. Proton's limited audit capabilities may require supplementary logging through your own systems.
 
 **PCI-DSS (Payment Card Industry)**: Sharing payment card information through any cloud service violates PCI-DSS. Don't use Proton Drive (or any cloud service) for this data class—maintain offline encryption or use specialized PCI-compliant solutions.
-
 
 
 ## Related Articles

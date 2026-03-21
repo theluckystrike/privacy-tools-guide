@@ -41,7 +41,7 @@ class ContentSafetyAnalyzer {
         let model = try! ContentSafetyModel(configuration: .init())
         let input = try model.imageInput(from: imageData)
         let output = try model.prediction(input: input)
-        
+
         return SafetyResult(
             containsSensitiveContent: output.probability > 0.9,
             category: output.category,
@@ -108,7 +108,7 @@ import CommunicationSafety
 func displayMessage(_ message: Message) {
     if #available(iOS 17.0, *) {
         let safetyStatus = message.contentSafetyStatus
-        
+
         switch safetyStatus {
         case .safe:
             displayContent(message.body)
@@ -188,7 +188,6 @@ Communication Safety features represent an ongoing tension:
 - Any content scanning raises privacy concerns
 - Creates precedent for broader content moderation
 - May give false sense of security
-
 
 
 ## Related Articles

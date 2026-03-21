@@ -75,7 +75,7 @@ SSL: SSL/TLS
 Authentication: Normal password
 Username: your@protonmail.com
 
-Outgoing Server: localhost  
+Outgoing Server: localhost
 Port: 1025
 SSL: STARTTLS
 Authentication: Normal password
@@ -223,7 +223,6 @@ Bridge caches emails locally to reduce server round-trips. Adjust cache settings
 ```
 
 Larger caches improve performance but consume disk space. Balance according to your workflow.
-
 
 
 ## Related Articles

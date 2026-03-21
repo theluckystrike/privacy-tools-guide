@@ -100,12 +100,12 @@ class TelehealthRecording:
         self.session_id = session_id
         self.patient_id = patient_id
         self.encryption_key = self.generate_key()
-        
+
     def store_recording(self, audio_data):
         encrypted_data = self.encrypt(audio_data, self.encryption_key)
         # Store in encrypted format with access logging
         return self.save_to_secure_storage(encrypted_data)
-    
+
     def generate_audit_log(self, action, user_id):
         log_entry = {
             "timestamp": datetime.utcnow().isoformat(),
@@ -124,18 +124,18 @@ class TelehealthRecording:
 async function verifyRecordingConsent(sessionId) {
   const session = await getSession(sessionId);
   const consent = await getConsentRecord(session.patientId);
-  
+
   if (!consent.recording) {
     await disableRecordingFeatures(sessionId);
     console.log("Recording disabled: no consent on file");
     return false;
   }
-  
+
   // Check consent expiration
   if (new Date(consent.expirationDate) < new Date()) {
     throw new Error("Consent expired - re-authorization required");
   }
-  
+
   return true;
 }
 ```
@@ -410,7 +410,6 @@ TELEHEALTH PATIENT PRIVACY RIGHTS ACKNOWLEDGMENT
 Patient Signature: ________________  Date: ________
 Provider Signature: ________________  Date: ________
 ```
-
 
 
 ## Related Articles

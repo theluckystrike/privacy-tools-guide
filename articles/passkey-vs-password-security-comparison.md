@@ -149,7 +149,7 @@ async function authenticateUser(username, credentials) {
       return { success: true, method: 'passkey' };
     }
   }
-  
+
   if (credentials.password) {
     // Fallback to password authentication
     const passwordResult = await verifyPassword(username, credentials.password);
@@ -157,7 +157,7 @@ async function authenticateUser(username, credentials) {
       return { success: true, method: 'password' };
     }
   }
-  
+
   return { success: false };
 }
 ```
@@ -191,8 +191,6 @@ Many services benefit from supporting both: passkeys as the primary method with 
 The shift from passwords to passkeys represents the most significant authentication improvement in decades. While not universally applicable yet, passkeys address the core security flaws that have plagued password-based systems.
 
 ---
-
-
 
 
 ## Related Articles

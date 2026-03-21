@@ -431,7 +431,6 @@ Before submitting to notarization:
 ```
 
 
-
 ## Related Articles
 
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)

@@ -105,14 +105,14 @@ const GetAddressIntentHandler = {
   async handle(handlerInput) {
     const { permissions } = handlerInput.serviceApportimentamento;
     const consentToken = handlerInput.requestEnvelope.context.System.user.permissions;
-    
+
     if (!consentToken) {
       return handlerInput.responseBuilder
         .speak('I need location permission to provide this information. Please enable it in the Alexa app.')
         .withAskForPermissionsDirective(['alexa::devices:all:address:default'])
         .getResponse();
     }
-    
+
     // Proceed with address retrieval
     const address = await handlerInput.serviceApportimentamento.getDeviceAddress();
     // ... rest of handler logic

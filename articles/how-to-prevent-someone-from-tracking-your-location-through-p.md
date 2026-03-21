@@ -52,7 +52,7 @@ On Android 10+, MAC randomization prevents permanent association:
 // Verify MAC randomization is enabled
 WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-    Log.d("Privacy", "MAC randomization: " + 
+    Log.d("Privacy", "MAC randomization: " +
         wifiManager.isMacRandomizationSupported());
 }
 ```
@@ -203,7 +203,6 @@ If your app requires location:
 - Implement permission rationale before system prompt
 - Provide clear privacy policy
 - Consider on-device processing over server transmission
-
 
 
 ## Related Articles

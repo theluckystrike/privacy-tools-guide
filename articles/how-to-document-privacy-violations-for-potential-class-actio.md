@@ -85,11 +85,11 @@ def log_request(method, url, headers, body):
         "headers": dict(headers),
         "body": body
     }
-    
+
     log_file = Path("privacy_log.jsonl")
     with open(log_file, "a") as f:
         f.write(json.dumps(entry) + "\n")
-    
+
     print(f"[{entry['timestamp']}] {method} {url}")
 
 # Example using mitmproxy's API
@@ -205,7 +205,6 @@ Preserve evidence properly from the start. Chain of custody matters:
 - Avoid modifying original files
 
 Consult with an attorney before initiating any formal action. This guide provides technical documentation methods, not legal advice.
-
 
 
 ## Related Articles

@@ -245,7 +245,6 @@ Where you host your Synapse server matters as much as how you configure it. Cons
 For most organizations, a VPS from a provider with a no-logs policy, encrypted storage, and a history of resisting government requests is sufficient. Run your Synapse instance with full-disk encryption enabled at the OS level, and ensure the decryption key is not stored on the server itself — this prevents offline analysis of seized disks.
 
 
-
 ## Related Articles
 
 - [Best Secure Group Chat App 2026](/privacy-tools-guide/best-secure-group-chat-app-2026/)

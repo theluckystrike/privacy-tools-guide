@@ -263,7 +263,6 @@ Never write your master password down, share it, or store it in your password ma
 For accounts protecting critical infrastructure or high-value assets, consider using a password manager solely as a record of what passwords should be, while storing the actual passwords separately. This "separation of duties" approach prevents a single point of failure.
 
 
-
 ## Related Articles
 
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)

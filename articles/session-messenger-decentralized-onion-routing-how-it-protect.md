@@ -75,21 +75,21 @@ For developers interested in the technical details, Session's open-source codeba
 def create_onion_packet(message, path):
     # path is [node_a, node_b, node_c]
     # Each node receives: {next_hop, encrypted_payload}
-    
+
     payload = message
-    
+
     # Layer 3 (exit node) - innermost
     payload = encrypt(payload, node_c.public_key)
     packet_c = {'next_hop': node_c.address, 'payload': payload}
-    
+
     # Layer 2 (middle node)
     payload = encrypt(packet_c, node_b.public_key)
     packet_b = {'next_hop': node_b.address, 'payload': payload}
-    
+
     # Layer 1 (entry node) - outermost
     payload = encrypt(packet_b, node_a.public_key)
     packet_a = {'next_hop': node_a.address, 'payload': payload}
-    
+
     return packet_a
 ```
 
@@ -326,7 +326,6 @@ Session's development priorities (as of 2026):
 4. **Integration**: Building APIs for other applications
 
 These improvements address current limitations while maintaining core metadata protection principles.
-
 
 
 ## Related Articles

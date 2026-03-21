@@ -46,7 +46,7 @@ class ProcessingActivity:
         self.recipients = recipients
         self.retention_period = retention_period
         self.security_measures = security_measures
-        
+
     def to_record(self):
         return {
             "activity_name": self.name,
@@ -86,10 +86,10 @@ class DPIA {
     this.risks = [];
     this.mitigations = [];
   }
-  
+
   assessNecessity(processing, alternativeOptions) {
     // Check if the processing is necessary and proportionate
-    const isNecessary = processing.benefitsOutweighRisks && 
+    const isNecessary = processing.benefitsOutweighRisks &&
                         !alternativeOptions.withLessPrivacyImpact;
     return {
       necessary: isNecessary,
@@ -97,18 +97,18 @@ class DPIA {
       alternativesConsidered: alternativeOptions
     };
   }
-  
+
   calculateRiskScore(likelihood, severity) {
     // Risk = Likelihood × Severity
     // Scale: 1-5 for each dimension
     return {
       score: likelihood * severity,
-      level: likelihood * severity >= 15 ? 'High' : 
+      level: likelihood * severity >= 15 ? 'High' :
              likelihood * severity >= 8 ? 'Medium' : 'Low',
       requires_consultation: likelihood * severity >= 15
     };
   }
-  
+
   addMitigation(measure, effectiveness, residualRisk) {
     this.mitigations.push({
       measure,
@@ -225,7 +225,7 @@ class PrivacyProgram:
         self.policies = []
         self.processing_activities = []
         self.data_subject_rights_workflows = {}
-        
+
     def establish_policies(self):
         return {
             "data_retention_policy": "Define retention periods by data category",
@@ -234,7 +234,7 @@ class PrivacyProgram:
             "incident_response_plan": "Breach detection and notification procedures",
             "third_party_processor_policy": "Due diligence and contract requirements"
         }
-    
+
     def implement_data_subject_rights(self):
         """Map technical implementations to data subject rights"""
         return {
@@ -255,7 +255,7 @@ from datetime import datetime, timedelta
 
 class ComplianceAutomation:
     """Automate routine DPO tasks"""
-    
+
     @staticmethod
     def schedule_retention_review(data_category, retention_period):
         """Schedule automatic review before retention period ends"""
@@ -266,7 +266,7 @@ class ComplianceAutomation:
             "action_required": "Review necessity of continued retention",
             "automated_notification": True
         }
-    
+
     @staticmethod
     def generate_breach_notification_template(breach_id):
         """Generate required breach notification to supervisory authority"""
@@ -281,14 +281,14 @@ class ComplianceAutomation:
             "breach_id": breach_id,
             "deadline": "72 hours from discovery"
         }
-    
+
     @staticmethod
     def create_consent_record(individual_id, purpose, granted_at):
         """Maintain audit trail for consent"""
         consent_id = hashlib.sha256(
             f"{individual_id}{purpose}{granted_at}".encode()
         ).hexdigest()[:16]
-        
+
         return {
             "consent_id": consent_id,
             "individual_id": individual_id,
@@ -298,7 +298,6 @@ class ComplianceAutomation:
             "withdraw_mechanism": "available"
         }
 ```
-
 
 
 ## Related Articles

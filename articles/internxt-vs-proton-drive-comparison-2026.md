@@ -66,7 +66,7 @@ const protonAuth = async () => {
       Password: 'your-password'
     })
   });
-  
+
   const { AccessToken, RefreshToken } = await response.json();
   return AccessToken;
 };
@@ -94,7 +94,7 @@ const internxtUpload = async (token, fileData) => {
     },
     body: fileData
   });
-  
+
   return await response.json();
 };
 ```
@@ -216,7 +216,6 @@ backup_to_proton() {
 ```
 
 The script demonstrates that Internxt's CLI enables more straightforward automation.
-
 
 
 ## Related Articles

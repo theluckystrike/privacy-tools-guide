@@ -69,7 +69,7 @@ def process_surveillance_feed(camera_id, frame):
         person_id = identify(face)
         location = get_camera_location(camera_id)
         timestamp = get_current_time()
-        
+
         # Data sent to regional SCS database
         record_behavior(
             person_id=person_id,
@@ -77,7 +77,7 @@ def process_surveillance_feed(camera_id, frame):
             timestamp=timestamp,
             context="public_space"
         )
-        
+
         # Check for blacklist triggers
         if check_scs_score(person_id) < 550:
             trigger_alert(camera_id, person_id)
@@ -110,11 +110,11 @@ For developers working on international applications, minimizing data collection
 const userProfile = {
   // Required for service
   userId: "user_123",
-  
+
   // Avoid unless absolutely necessary
   // locationHistory: [...],  // DON'T STORE
   // socialConnections: [...], // DON'T STORE
-  
+
   // Aggregate instead of raw data
   interactionCount: 1423,
   accountAge: 730 // days, not exact dates
@@ -293,7 +293,6 @@ Understanding the technical mechanisms helps you:
 2. Protect yourself through technical means where legal
 3. Advocate for policy changes from informed position
 4. Build applications that respect user privacy from the ground up
-
 
 
 ## Related Articles

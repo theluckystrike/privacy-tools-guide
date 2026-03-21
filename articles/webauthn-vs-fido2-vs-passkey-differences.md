@@ -333,7 +333,6 @@ The passwordless authentication landscape continues evolving:
 Developers implementing WebAuthn/FIDO2 in 2026 should monitor these developments and plan for eventual migration when standards stabilize.
 
 
-
 ## Related Articles
 
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)

@@ -190,17 +190,17 @@ class BurnerEmailManager:
     def __init__(self, storage_path="~/.burner_emails.json"):
         self.storage_path = Path(os.path.expanduser(storage_path))
         self.aliases = self._load()
-    
+
     def _load(self):
         if self.storage_path.exists():
             with open(self.storage_path) as f:
                 return json.load(f)
         return {}
-    
+
     def _save(self):
         with open(self.storage_path, 'w') as f:
             json.dump(self.aliases, f, indent=2)
-    
+
     def add_alias(self, site, alias, notes=""):
         self.aliases[site] = {
             "alias": alias,
@@ -208,13 +208,13 @@ class BurnerEmailManager:
             "notes": notes
         }
         self._save()
-    
+
     def get_alias(self, site):
         return self.aliases.get(site, {}).get("alias")
-    
+
     def list_sites(self):
         return list(self.aliases.keys())
-    
+
     def revoke_alias(self, site):
         if site in self.aliases:
             del self.aliases[site]
@@ -228,7 +228,6 @@ manager.add_alias("bumble", "bumble2026@yourdomain.com", "Created after Tinder b
 print("Active aliases:", manager.list_sites())
 print("Tinder alias:", manager.get_alias("tinder"))
 ```
-
 
 
 ## Related Articles

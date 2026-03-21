@@ -38,7 +38,7 @@ The most common mechanism is the Diffie-Hellman key exchange. Here's a simplifie
 # Alice: shared_secret = public_b^private_a mod p
 # Bob: shared_secret = public_a^private_b mod p
 
-# Result: Both have the same shared_secret without ever 
+# Result: Both have the same shared_secret without ever
 # transmitting the private components
 ```
 
@@ -66,14 +66,14 @@ class RatchetState:
         self.root_key = shared_secret
         self.send_chain = []
         self.receive_chain = []
-    
+
     def ratchet_step(self, their_public_key):
         # DH ratchet: derive new root key from old root and new DH output
         dh_output = compute_dh(self.dh_keypair.private, their_public_key)
         self.root_key, new_chain_key = derive_keys(self.root_key + dh_output)
         self.send_chain = [new_chain_key]
         self.receive_chain = []
-    
+
     def encrypt(self, plaintext):
         # Use current chain key, then advance the chain
         chain_key = self.send_chain.pop(0)
@@ -140,10 +140,10 @@ def process_message(stored_state, ciphertext):
     # Reconstruct ephemeral state from minimal stored data
     session = reconstruct_session(stored_state)
     plaintext = session.decrypt(ciphertext)
-    
+
     # Immediately clear sensitive material from memory
     session.clear_temporary_keys()
-    
+
     return plaintext
 ```
 
@@ -154,7 +154,7 @@ Forward secrecy is meaningless if you can't verify the keys are actually being u
 ```python
 # Safety number = hash of both parties' identity keys + ratchet keys
 # Both parties should verify they have the same safety number
-def compute_safety_number(identity_key_a, identity_key_b, 
+def compute_safety_number(identity_key_a, identity_key_b,
                            ratchet_key_a, ratchet_key_b):
     data = b''.join(sorted([
         identity_key_a,
@@ -173,8 +173,6 @@ def compute_safety_number(identity_key_a, identity_key_b,
 4. **Update regularly**: Forward secrecy implementations have improved significantly in recent years
 
 Forward secrecy is not a feature you can add after the fact—it must be architected into the protocol from the beginning. Understanding these mechanisms helps you make informed choices about which tools deserve your sensitive communications.
-
-
 
 
 ## Related Articles

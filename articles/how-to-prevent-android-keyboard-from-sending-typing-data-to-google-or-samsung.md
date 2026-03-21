@@ -182,13 +182,13 @@ fun isKeyboardPrivacyEnabled(): Boolean {
         "gboard_personalization_enabled",
         1
     ) == 0
-    
+
     val samsungDisabled = Settings.Secure.getInt(
         contentResolver,
         "samsung_keyboard_learning_enabled",
         1
     ) == 0
-    
+
     return gboardDisabled || samsungDisabled
 }
 ```
@@ -227,7 +227,6 @@ After implementing changes, verify data transmission is blocked:
 # Monitor Gboard connections
 adb shell tcpdump -i any -c 50 host google.com and port 443
 ```
-
 
 
 ## Related Articles

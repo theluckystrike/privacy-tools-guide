@@ -185,7 +185,6 @@ Encryption alone does not guarantee security. Implement these complementary prac
 ```
 
 
-
 ## Related Articles
 
 - [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)

@@ -579,7 +579,6 @@ Your encryption key is critical. If lost, backups are unrecoverable:
 - [ ] Never commit passphrases to git or config files
 
 
-
 ## Related Articles
 
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)

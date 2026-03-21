@@ -135,7 +135,7 @@ with open('keepass_export.json', 'r') as f:
 with open('bitwarden_import.csv', 'w', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(['title', 'username', 'password', 'url', 'notes', 'folder'])
-    
+
     for entry in entries:
         folder = entry.get('tags', [''])[0] if entry.get('tags') else ''
         writer.writerow([
@@ -173,7 +173,7 @@ def export_keepass(db_path, password, output_json):
     """Export KeePass database to JSON."""
     kp = PyKeePass(db_path, password=password)
     entries = []
-    
+
     for entry in kp.entries:
         entries.append({
             'title': entry.title,
@@ -183,25 +183,25 @@ def export_keepass(db_path, password, output_json):
             'notes': entry.notes,
             'tags': entry.tags,
             'custom_fields': [
-                {'name': cf.key, 'value': cf.value} 
+                {'name': cf.key, 'value': cf.value}
                 for cf in entry.custom_properties
             ]
         })
-    
+
     with open(output_json, 'w') as f:
         json.dump(entries, f, indent=2)
-    
+
     return len(entries)
 
 def json_to_csv(json_file, csv_file):
     """Convert JSON export to Bitwarden CSV format."""
     with open(json_file, 'r') as f:
         entries = json.load(f)
-    
+
     with open(csv_file, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(['title', 'username', 'password', 'url', 'notes', 'folder'])
-        
+
         for entry in entries:
             folder = entry.get('tags', [''])[0] if entry.get('tags') else ''
             writer.writerow([
@@ -225,20 +225,20 @@ def main():
     if len(sys.argv) != 4:
         print("Usage: migrate.py <keepass.db> <password> <output_dir>")
         sys.exit(1)
-    
+
     db_path, password, output_dir = sys.argv[1], sys.argv[2], sys.argv[3]
     os.makedirs(output_dir, exist_ok=True)
-    
+
     json_file = os.path.join(output_dir, 'keepass_export.json')
     csv_file = os.path.join(output_dir, 'bitwarden_import.csv')
-    
+
     print(f"Exporting {db_path}...")
     count = export_keepass(db_path, password, json_file)
     print(f"Exported {count} entries")
-    
+
     print("Converting to CSV...")
     json_to_csv(json_file, csv_file)
-    
+
     print("Importing to Bitwarden...")
     if import_to_bitwarden(csv_file):
         print("Migration completed successfully!")
@@ -292,7 +292,6 @@ During migration, your passwords briefly exist in unencrypted files. Work in an 
 - Delete temporary files immediately after verification
 
 Bitwarden's zero-knowledge architecture means even their servers cannot read your vault. Your master password is the only key—ensure it's strong and unique.
-
 
 
 ## Related Articles

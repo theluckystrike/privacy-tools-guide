@@ -59,17 +59,17 @@ from bitcoinlib.services.bitcoind import BitcoindClient
 def check_for_dust(addresses, dust_threshold_satoshis=1000):
     """
     Check if any addresses have received dust amounts.
-    
+
     Args:
         addresses: List of Bitcoin addresses to monitor
         dust_threshold_satoshis: Amount below which is considered dust
-    
+
     Returns:
         List of tuples: (address, dust_amount_satoshis, txid)
     """
     client = BitcoindClient()
     dust_utxos = []
-    
+
     for address in addresses:
         try:
             utxos = client.getutxos(address)
@@ -83,7 +83,7 @@ def check_for_dust(addresses, dust_threshold_satoshis=1000):
                     ))
         except Exception as e:
             print(f"Error checking {address}: {e}")
-    
+
     return dust_utxos
 
 # Example usage
@@ -108,13 +108,13 @@ def check_dust_with_blockstream(address):
     """Check address for small UTXOs using Blockstream API"""
     url = f"https://blockstream.info/api/address/{address}/utxo"
     response = requests.get(url, timeout=10)
-    
+
     if response.status_code != 200:
         return []
-    
+
     utxos = response.json()
     dust = []
-    
+
     for utxo in utxos:
         # Less than 300 sats is almost certainly dust
         if utxo['value'] < 300:
@@ -123,7 +123,7 @@ def check_dust_with_blockstream(address):
                 'vout': utxo['vout'],
                 'satoshis': utxo['value']
             })
-    
+
     return dust
 
 # Check for dust
@@ -161,7 +161,7 @@ def list_utxos(wallet_name):
     )
     import json
     utxos = json.loads(result.stdout)
-    
+
     # Filter out small UTXOs
     return [u for u in utxos if u['amount'] * 1e8 > 5460]
 ```
@@ -198,7 +198,6 @@ Dust attacks are particularly concerning in these scenarios:
 - **Business use**: Corporate treasuries face more sophisticated tracking
 - **Regulatory environments**: In jurisdictions where Bitcoin ownership is sensitive
 - **OTC trading**: Over-the-counter traders receiving payments from multiple sources
-
 
 
 ## Related Articles

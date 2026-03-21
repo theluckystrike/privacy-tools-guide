@@ -177,7 +177,6 @@ Choose KeePassXC if:
 KeePassXC serves developers who prioritize transparency and local control. The ability to keep your entire password database on encrypted storage with no cloud dependency appeals to those with strict security requirements.
 
 
-
 ## Related Articles
 
 - [KeePass vs KeePassXC: Key Differences for Developers in 2026](/privacy-tools-guide/keepass-vs-keepassxc-differences-2026/)

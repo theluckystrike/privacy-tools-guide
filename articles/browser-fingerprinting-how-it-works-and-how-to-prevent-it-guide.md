@@ -449,7 +449,6 @@ Good results:
 - Sites you care about still work
 
 
-
 ## Related Articles
 
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)

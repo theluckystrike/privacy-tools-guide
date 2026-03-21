@@ -340,8 +340,6 @@ Adopt a phased deployment starting with detection-only rules, then progressively
 Regularly review and update custom detectors as your organization introduces new data types or changes existing formats. Integrate DLP into your data classification framework to ensure consistent protection across all storage locations. Combine Cloud DLP with endpoint protection and network monitoring for defense-in-depth.
 
 
-
-
 ## Related Articles
 
 - [Aegis Authenticator vs Google Authenticator](/privacy-tools-guide/aegis-authenticator-vs-google-authenticator/)

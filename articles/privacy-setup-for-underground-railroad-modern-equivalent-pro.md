@@ -217,7 +217,6 @@ Privacy tools require ongoing attention:
 - **Air-gapped backups**: Keep sensitive keys on devices without network interfaces
 
 
-
 ## Related Articles
 
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)

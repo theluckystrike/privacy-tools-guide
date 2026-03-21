@@ -41,17 +41,17 @@ def encrypt_voice_message(audio_file, recipient_public_key):
         'ffmpeg', '-i', audio_file, '-acodec', 'libopus',
         '-b:a', '32k', 'audio.opus'
     ])
-    
+
     # Read the compressed audio
     with open('audio.opus', 'rb') as f:
         audio_data = f.read()
-    
+
     # Encrypt using Signal protocol (simplified)
     encrypted = signal_protocol.encrypt(
-        audio_data, 
+        audio_data,
         recipient_public_key
     )
-    
+
     return encrypted
 ```
 
@@ -78,7 +78,7 @@ services:
       - SYNAPSE_REGISTRATION_SECRET=your-secret
     ports:
       - "8008:8008"
-    
+
   element:
     image: vectorim/element-web:latest
     volumes:
@@ -123,12 +123,12 @@ int encrypt_voice_message(
 ) {
     unsigned char nonce[crypto_box_NONCEBYTES];
     randombytes_buf(nonce, sizeof(nonce));
-    
+
     // Generate ephemeral keypair for this message
     unsigned char ephemeral_pk[crypto_box_PUBLICKEYBYTES];
     unsigned char ephemeral_sk[crypto_box_SECRETKEYBYTES];
     crypto_box_keypair(ephemeral_pk, ephemeral_sk);
-    
+
     // Encrypt the audio data
     return crypto_box_easy_afternm(
         ciphertext,
@@ -337,15 +337,13 @@ This workflow allows journalists to rapidly coordinate protocol changes if a pla
 ---
 
 
-
-
 ## Related Articles
 
 - [Secure Screen Sharing Tools That Encrypt Video Stream End To](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
 - [How To Audit End To End Encryption Claims Of Messaging Apps](/privacy-tools-guide/how-to-audit-end-to-end-encryption-claims-of-messaging-apps-/)
 - [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
-- [Signal vs Session vs SimpleX: Secure messaging apps compared.](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 - [Forward Secrecy In Messaging Apps Explained And Why It.](/privacy-tools-guide/forward-secrecy-in-messaging-apps-explained-and-why-it-matters/)
+- [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

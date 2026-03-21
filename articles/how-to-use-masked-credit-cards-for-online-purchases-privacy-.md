@@ -73,7 +73,7 @@ def create_virtual_card(api_key, amount_limit=100.00, merchant="amazon.com"):
         "merchant_id": merchant,
         "type": "single-use"
     }
-    
+
     response = requests.post(url, json=payload, headers=headers)
     return response.json()
 
@@ -106,7 +106,7 @@ async function createVirtualCard() {
     }],
     spending_limits_currency: 'usd'
   });
-  
+
   return {
     id: card.id,
     last4: card.last4,
@@ -194,8 +194,6 @@ Before deploying masked cards in your workflow:
 For developers building privacy-focused applications, integrating virtual card APIs provides users with meaningful financial privacy without requiring complete cash-only lifestyles.
 
 The next time you enter credit card details on a shopping site, consider whether a masked alternative would serve the same purpose with better privacy protection.
-
-
 
 
 ## Related Articles

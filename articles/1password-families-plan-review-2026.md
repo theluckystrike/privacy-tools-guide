@@ -322,7 +322,6 @@ Choose alternative solutions if:
 - Minimal credential sharing is needed (use individual managers)
 
 
-
 ## Related Articles
 
 - [Privacy Focused Password Sharing for Families Guide](/privacy-tools-guide/privacy-focused-password-sharing-for-families-guide/)

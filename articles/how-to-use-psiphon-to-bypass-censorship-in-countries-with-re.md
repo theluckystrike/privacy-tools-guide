@@ -72,7 +72,7 @@ package main
 import (
     "context"
     "log"
-    
+
     "github.com/Psiphon-Labs/psiphon-tunnel-core/psiphon"
 )
 
@@ -86,16 +86,16 @@ func main() {
         AuthTokenUsername: "your-auth-username",
         AuthTokenPassword: "your-auth-password",
     }
-    
+
     tunnel, err := psiphon.StartTunnel(context.Background(), config)
     if err != nil {
         log.Fatalf("Failed to start tunnel: %v", err)
     }
-    
+
     // Get the local SOCKS/HTTP proxy address
     localProxy := tunnel.LocalSOCKSProxyAddress()
     log.Printf("SOCKS proxy available at: %s", localProxy)
-    
+
     // Use the tunnel for your application's HTTP client
     // tunnel.HTTPClient() returns a configured *http.Client
 }
@@ -442,7 +442,6 @@ Using circumvention tools carries legal risks in some jurisdictions. Before depl
 4. **Document business case** — Legitimate need for internet access (journalism, human rights work) provides legal defense in some contexts
 
 This does not constitute legal advice. Consult local attorneys familiar with internet law before deploying circumvention infrastructure.
-
 
 
 ## Related Articles

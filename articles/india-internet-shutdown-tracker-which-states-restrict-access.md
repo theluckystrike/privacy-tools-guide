@@ -100,7 +100,7 @@ def check_internet_connectivity():
         "https://www.cloudflare.com",
         "https://api.github.com"
     ]
-    
+
     for host in test_hosts:
         try:
             response = requests.get(host, timeout=5)
@@ -113,19 +113,19 @@ def check_internet_connectivity():
 def monitor_connection(interval=60):
     """Monitor connectivity and log interruptions."""
     log_file = "connectivity_log.txt"
-    
+
     while True:
         timestamp = datetime.now().isoformat()
         is_connected = check_internet_connectivity()
-        
+
         with open(log_file, "a") as f:
             status = "ONLINE" if is_connected else "OFFLINE"
             f.write(f"{timestamp}: {status}\n")
-        
+
         if not is_connected:
             # Send notification (implement your preferred method)
             print(f"[ALERT] Connectivity lost at {timestamp}")
-        
+
         time.sleep(interval)
 
 if __name__ == "__main__":
@@ -430,7 +430,6 @@ These figures support advocacy for legal limitations on government shutdown auth
 | NetBlocks | Network monitoring | netblocks.org |
 
 These organizations provide legal assistance, documentation support, and international coordination.
-
 
 
 ## Related Articles

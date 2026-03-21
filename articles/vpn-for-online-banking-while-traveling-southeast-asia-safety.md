@@ -305,8 +305,6 @@ echo "[ ] Reviewed and removed any unauthorized devices from account"
 ---
 
 
-
-
 ## Related Articles
 
 - [VPN for Accessing Medical Records Abroad While Traveling](/privacy-tools-guide/vpn-for-accessing-medical-records-abroad-while-traveling-sec/)

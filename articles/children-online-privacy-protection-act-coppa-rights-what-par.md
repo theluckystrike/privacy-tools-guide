@@ -55,18 +55,18 @@ function checkAge(dateOfBirth) {
   const birthDate = new Date(dateOfBirth);
   let age = today.getFullYear() - birthDate.getFullYear();
   const monthDiff = today.getMonth() - birthDate.getMonth();
-  
+
   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
     age--;
   }
-  
+
   return age;
 }
 
 function handleAgeGate(request) {
   const dob = request.body.dateOfBirth;
   const age = checkAge(dob);
-  
+
   if (age < 13) {
     // Redirect to parental consent flow
     return {
@@ -74,7 +74,7 @@ function handleAgeGate(request) {
       data: { requiresParentalConsent: true }
     };
   }
-  
+
   // Allow access for users 13 and older
   return { allowed: true };
 }
@@ -86,7 +86,7 @@ For parental consent workflows, you might implement an email verification system
 // Example: Parental Consent Email Template
 function generateParentalConsentEmail(parentEmail, childUsername, verificationToken) {
   const consentUrl = `https://yourservice.com/verify-parental-consent?token=${verificationToken}`;
-  
+
   return {
     to: parentEmail,
     subject: 'Parental Consent Required for Your Child\'s Account',
@@ -129,10 +129,10 @@ function processChildUserData(user, collectedData) {
     // Retain only aggregation-ready data
     lastActivity: user.lastLogin.toISOString().split('T')[0]
   };
-  
+
   // Delete full birthdate after processing
   delete user.dateOfBirth;
-  
+
   return minimalData;
 }
 ```
@@ -291,7 +291,6 @@ Several implementation errors create legal risk:
 **Inadequate parental notification**: Simply burying consent in privacy policies doesn't meet COPPA requirements. Explicit email consent with clear descriptions is necessary.
 
 **Allowing behavioral tracking**: Even without explicitly storing data, behavioral tracking (through pixels, analytics, or ad networks) violates COPPA requirements for children.
-
 
 
 ## Related Articles

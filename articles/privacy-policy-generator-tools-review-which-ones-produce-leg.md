@@ -81,9 +81,9 @@ For developers, their GTM cookie consent solution integrates with generated poli
 
 ```html
 <!-- Example: Cookiebot integration snippet -->
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" 
-        data-cbid="your-cbid" 
-        type="text/javascript" 
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
+        data-cbid="your-cbid"
+        type="text/javascript"
         async></script>
 ```
 
@@ -143,16 +143,16 @@ For developers building privacy-first applications, combining tools yields best 
 // Example: Express route for data deletion
 app.delete('/api/account', authenticate, async (req, res) => {
   const userId = req.user.id;
-  
+
   // Delete from database
   await db.users.delete({ where: { id: userId }});
-  
+
   // Delete from analytics
   await analytics.deleteUser(userId);
-  
+
   // Remove from email service
   await emailService.removeSubscriber(userId);
-  
+
   res.json({ message: 'Account deleted successfully' });
 });
 ```
@@ -399,7 +399,6 @@ jobs:
 4. **Ignoring international requirements**: If global users, address GDPR minimum
 5. **Missing implementation**: Policy claims you must actually implement
 6. **Forgetting consent mechanisms**: GDPR/CCPA require explicit consent
-
 
 
 ## Related Articles

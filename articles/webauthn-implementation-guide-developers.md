@@ -402,7 +402,6 @@ async function login(username, password) {
 This progressive approach lets you introduce WebAuthn without requiring all users to migrate simultaneously, reducing support burden during the transition.
 
 
-
 ## Related Articles
 
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)

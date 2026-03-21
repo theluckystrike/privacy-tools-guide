@@ -34,14 +34,14 @@ Consider a typical login endpoint:
 # Server-side pseudocode for login processing
 def handle_login(email, password):
     user = database.find_user(email)
-    
+
     if not user:
         return {"error": "Invalid credentials"}, 401
-    
+
     # Account exists - verify password
     if not verify_password(password, user.hash):
         return {"error": "Invalid credentials"}, 401
-    
+
     return create_session(user)
 ```
 
@@ -54,18 +54,18 @@ import time
 
 def handle_login_secure(email, password):
     user = database.find_user(email)
-    
+
     # Always perform password verification to prevent timing leaks
     # Use a dummy hash for non-existent accounts
     stored_hash = user.hash if user else get_dummy_hash()
     verify_password(password, stored_hash)
-    
+
     # Always delay to normalize response times
     time.sleep(0.1)  # 100ms delay
-    
+
     if not user or not verify_password(password, user.hash):
         return {"error": "Invalid credentials"}, 401
-    
+
     return create_session(user)
 ```
 
@@ -83,7 +83,7 @@ async function handleOAuthCallback(provider) {
             method: 'POST',
             body: JSON.stringify({ code: getAuthorizationCode() })
         });
-        
+
         if (result.status === 200) {
             // Account linked successfully or new account created
             window.location.href = '/dashboard';
@@ -118,7 +118,7 @@ Many sites still use enumeration-prone messages:
 // Vulnerable error handling
 function loginResponse(email) {
     const user = getUserByEmail(email);
-    
+
     if (!user) {
         return {
             success: false,
@@ -126,7 +126,7 @@ function loginResponse(email) {
             errorCode: "USER_NOT_FOUND"  // Leaks account existence
         };
     }
-    
+
     if (!verifyPassword(user)) {
         return {
             success: false,
@@ -143,10 +143,10 @@ Compare this to a privacy-respecting approach:
 function loginResponse(email) {
     const user = getUserByEmail(email);
     const hash = user ? user.passwordHash : getDummyHash();
-    
+
     // Always attempt password verification
     verifyPassword(inputPassword, hash);
-    
+
     // Return identical response regardless of failure reason
     return {
         success: false,
@@ -170,18 +170,18 @@ Login pages themselves serve as fingerprinting vectors. The combination of JavaS
 function fingerprintLoginCapabilities() {
     const capabilities = {
         webauthn: typeof PublicKeyCredential !== 'undefined',
-        touchId: typeof window.PublicKeyCredential === 'function' && 
+        touchId: typeof window.PublicKeyCredential === 'function' &&
                  PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable(),
         passwordManager: false,
         localStorage: typeof localStorage !== 'undefined',
         indexedDB: typeof indexedDB !== 'undefined'
     };
-    
+
     // Detect password manager presence
     if (window.PasswordCredential || window.FederatedCredential) {
         capabilities.passwordManager = true;
     }
-    
+
     return capabilities;
 }
 ```
@@ -199,7 +199,6 @@ If you're concerned about login fingerprinting, several strategies reduce your e
 4. **Monitor Have I Been Pwned** - Check if your email appears in data breaches, which may indicate enumeration has occurred.
 
 For developers, implementing proper rate limiting, using generic error messages, and employing constant-time comparisons are essential defenses against login fingerprinting.
-
 
 
 ## Related Articles

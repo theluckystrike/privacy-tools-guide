@@ -147,10 +147,10 @@ from datetime import datetime, timedelta
 
 def create_encrypted_backup(db_config, output_dir, retention_days=30):
     """Create an encrypted database backup with automatic cleanup."""
-    
+
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     backup_name = f"backup_{timestamp}"
-    
+
     # Create uncompressed backup
     dump_cmd = [
         'pg_dump',
@@ -160,12 +160,12 @@ def create_encrypted_backup(db_config, output_dir, retention_days=30):
         '-f', f"/tmp/{backup_name}.sql"
     ]
     subprocess.run(dump_cmd, check=True)
-    
+
     # Compress
     with open(f"/tmp/{backup_name}.sql", 'rb') as f_in:
         with gzip.open(f"/tmp/{backup_name}.sql.gz", 'wb') as f_out:
             f_out.writelines(f_in)
-    
+
     # Encrypt using GPG
     encrypt_cmd = [
         'gpg', '--encrypt',
@@ -174,11 +174,11 @@ def create_encrypted_backup(db_config, output_dir, retention_days=30):
         f"/tmp/{backup_name}.sql.gz"
     ]
     subprocess.run(encrypt_cmd, check=True)
-    
+
     # Clean up temp files
     os.remove(f"/tmp/{backup_name}.sql")
     os.remove(f"/tmp/{backup_name}.sql.gz")
-    
+
     # Enforce retention policy
     cutoff = datetime.now() - timedelta(days=retention_days)
     for filename in os.listdir(output_dir):
@@ -187,7 +187,7 @@ def create_encrypted_backup(db_config, output_dir, retention_days=30):
             if datetime.fromtimestamp(os.path.getmtime(filepath)) < cutoff:
                 os.remove(filepath)
                 print(f"Removed expired backup: {filename}")
-    
+
     return f"{backup_name}.sql.gz.gpg"
 ```
 
@@ -206,16 +206,16 @@ import subprocess
 
 def delete_data_subject_backup(subject_id, key_id):
     """Securely delete a data subject's backup using key rotation."""
-    
+
     # The backup is encrypted with a specific key
     backup_file = f"/backups/user_data_{subject_id}.sql.gz.gpg"
-    
+
     if os.path.exists(backup_file):
         # Overwrite with random data before deletion
         subprocess.run([
             'shred', '-u', '-n', '3', backup_file
         ], check=True)
-        
+
         # Log the erasure for compliance
         log_erasure(subject_id, 'backup')
 ```
@@ -245,12 +245,12 @@ from datetime import datetime, timedelta
 
 def audit_backup_retention(bucket_name, retention_days):
     """Audit S3 bucket for compliance with retention policy."""
-    
+
     s3 = boto3.client('s3')
     violations = []
-    
+
     cutoff = datetime.now() - timedelta(days=retention_days)
-    
+
     # List all objects in backup prefix
     paginator = s3.get_paginator('list_objects_v2')
     for page in paginator.paginate(Bucket=bucket_name, Prefix='backups/'):
@@ -263,17 +263,16 @@ def audit_backup_retention(bucket_name, retention_days):
                         'last_modified': str(last_modified),
                         'age_days': (datetime.now() - last_modified).days
                     })
-    
+
     if violations:
         print(f"Found {len(violations)} retention violations:")
         for v in violations:
             print(f"  - {v['key']}: {v['age_days']} days old")
-    
+
     return violations
 ```
 
 Run this audit weekly and alert on any violations.
-
 
 
 ## Related Articles

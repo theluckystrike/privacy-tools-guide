@@ -78,7 +78,7 @@ class BreachReport:
     likely_consequences: str
     measures_taken: str
     root_cause: Optional[str] = None
-    
+
     def time_to_report_hours(self) -> float:
         """Calculate hours from detection to reporting deadline"""
         return (self.confirmation_time - self.detection_time).total_seconds() / 3600
@@ -138,7 +138,7 @@ class BreachLogger:
     def __init__(self, log_file: str = "breach_log.jsonl"):
         self.logger = logging.getLogger("breach_incident")
         self.log_file = log_file
-        
+
     def log_incident(self, incident_data: Dict[str, Any]) -> None:
         """Log incident with tamper-evident timestamp"""
         record = {
@@ -149,7 +149,7 @@ class BreachLogger:
         }
         with open(self.log_file, "a") as f:
             f.write(json.dumps(record) + "\n")
-    
+
     def _compute_hash(self, data: Dict[str, Any]) -> str:
         """Compute hash for integrity verification"""
         import hashlib
@@ -169,7 +169,6 @@ Implementing GDPR-compliant breach response requires coordination between techni
 6. **Pre-build templates**: Have notification templates ready to customize when needed
 
 The difference between a well-handled breach and a problematic one often comes down to preparation. Organizations that invest in thorough detection, documentation, and response processes are better positioned to meet their regulatory obligations while minimizing impact to affected individuals.
-
 
 
 ## Related Articles

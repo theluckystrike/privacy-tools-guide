@@ -216,7 +216,6 @@ When actual handover occurs, use this checklist to ensure nothing is missed:
 - [ ] Sign-off from both parties
 
 
-
 ## Related Articles
 
 - [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)

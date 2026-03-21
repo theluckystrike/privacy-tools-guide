@@ -208,10 +208,9 @@ Configure meetings to require authentication:
 This ensures only authenticated Zoom users with verified email domains can join.
 
 
-
 ## Related Articles
 
-- [Protect Yourself from Doxxing After Meeting Someone Through Online Dating Pla...](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [Protect Yourself from Doxxing After Meeting Someone Through](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [Async Code Review Process Without Zoom Calls Step By Step](/privacy-tools-guide/async-code-review-process-without-zoom-calls-step-by-step/)
 - [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)

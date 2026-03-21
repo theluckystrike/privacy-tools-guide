@@ -381,7 +381,6 @@ In 2026, facial recognition regulation continues evolving:
 ---
 
 
-
 ## Related Articles
 
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)

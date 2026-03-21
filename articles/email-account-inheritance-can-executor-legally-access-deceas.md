@@ -46,7 +46,7 @@ import json
 
 class EmailProviderRequest:
     """Base class for executor data requests to email providers."""
-    
+
     def __init__(self, provider_name):
         self.provider = provider_name
         self.required_documents = [
@@ -54,7 +54,7 @@ class EmailProviderRequest:
             "court_letters",
             "letter_of_authority"
         ]
-    
+
     def prepare_request(self, deceased_info, executor_info):
         """Prepare documentation package for provider submission."""
         return {
@@ -96,21 +96,21 @@ The GDPR does not specifically address deceased persons' data, leaving it to mem
 ```python
 class EUExecutorRequest:
     """Handle GDPR-based executor requests under member state laws."""
-    
+
     STATE_SPECIFIC_RIGHTS = {
         "Germany": "Inheritance Act (§1922 BGB) applies to digital assets",
         "France": "Heirs have right to deceased's digital identity under LCEN",
         "Italy": "Italian Civil Code Art. 518 covers digital property",
         "Spain": "Law 3/2018 on Data Protection applies to deceased"
     }
-    
+
     def __init__(self, member_state):
         self.jurisdiction = member_state
-    
+
     def get_applicable_law(self):
-        return self.STATE_SPECIFIC_RIGHTS.get(self.jurisdiction, 
+        return self.STATE_SPECIFIC_RIGHTS.get(self.jurisdiction,
             "No specific law - rely on general inheritance principles")
-    
+
     def create_data_request(self, provider, deceased_email, executor_authority):
         """Create GDPR-based request citing applicable member state law."""
         return {
@@ -141,16 +141,16 @@ Canada's privacy laws (PIPEDA) do not apply to deceased individuals. However, pr
 ```python
 class CanadianExecutorRequest:
     """Provincial variation in digital asset access."""
-    
+
     PROVINCIAL_APPROACHES = {
         "Ontario": "Executor has authority under Estate Administration Act",
         "British Columbia": "WESA (Wills, Estates and Succession Act) applies",
         "Quebec": "Civil Code of Quebec recognizes digital assets"
     }
-    
+
     def __init__(self, province):
         self.province = province
-    
+
     def request_provider_access(self, provider, documents):
         """Submit request to email provider."""
         return {
@@ -187,25 +187,25 @@ from email.policy import default
 
 class EmailArchiveExtractor:
     """Extract email data from deceased person's account via IMAP."""
-    
+
     def __init__(self, imap_server, credentials):
         self.server = imap_server
         self.credentials = credentials
         self.connection = None
-    
+
     def connect(self):
         """Establish IMAP connection."""
         self.connection = imaplib.IMAP4_SSL(self.server)
         self.connection.login(self.credentials["email"], self.credentials["password"])
         return self.connection
-    
+
     def extract_all_messages(self, output_format="json"):
         """Download all messages from all folders."""
         self.connection.select("INBOX")
-        
+
         result, data = self.connection.search(None, "ALL")
         message_ids = data[0].split()
-        
+
         messages = []
         for msg_id in message_ids:
             result, msg_data = self.connection.fetch(msg_id, "(RFC822)")
@@ -218,9 +218,9 @@ class EmailArchiveExtractor:
                 "date": msg["date"],
                 "body": self._extract_body(msg)
             })
-        
+
         return messages
-    
+
     def _extract_body(self, message):
         """Extract message body, handling multipart messages."""
         body = ""
@@ -253,15 +253,15 @@ Some providers offer programmatic exports:
 # Google Takeout API example (requires proper authorization)
 class GoogleTakeoutRequest:
     """Programmatically request Google data export."""
-    
+
     SCOPES = [
         "https://www.googleapis.com/auth/drive.file",
         "https://www.googleapis.com/auth/gmail.readonly"
     ]
-    
+
     def __init__(self, service_account_file):
         self.credentials_file = service_account_file
-    
+
     def create_export_job(self, email_address):
         """Request data export for deceased account."""
         # Note: This requires proper legal authorization and Google API setup
@@ -295,9 +295,9 @@ class GoogleTakeoutRequest:
 ## Related Articles
 
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
-- [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
 - [Gaming Account Inheritance What Happens To Steam Playstation](/privacy-tools-guide/gaming-account-inheritance-what-happens-to-steam-playstation/)
-- [Set Up Bitwarden Emergency Access for Password Vault Inheritance After Death](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
 - [How To Create Untraceable Email Account Using Tor Vpn And An](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
+- [How To Tell If Your Email Account Was Hacked Right Now](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
