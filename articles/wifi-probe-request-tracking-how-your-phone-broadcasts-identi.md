@@ -56,7 +56,7 @@ Capture probe requests with `tshark` filtering for management frames:
 
 ```bash
 sudo tshark -i wlan0mon -Y "wlan.fc.type_subtype == 0x04" \
-  -T fields -e wlan.sa -e wlan.ssid -e wlan.rsn.akm
+ -T fields -e wlan.sa -e wlan.ssid -e wlan.rsn.akm
 ```
 
 This command extracts the source MAC address, SSID, and authentication suite from each probe request. Running this in a public space reveals the networks devices in range have connected to previously.
@@ -117,12 +117,12 @@ from collections import defaultdict
 probe_requests = defaultdict(list)
 
 def analyze_packets(pkt):
-    if pkt.haslayer(Dot11) and pkt.type == 0 and pkt.subtype == 4:
-        ssid = pkt.info.decode('utf-8', errors='ignore')
-        mac = pkt.addr2
-        probe_requests[mac].append(ssid)
-        
-        print(f"MAC: {mac} | SSID: {ssid}")
+ if pkt.haslayer(Dot11) and pkt.type == 0 and pkt.subtype == 4:
+ ssid = pkt.info.decode('utf-8', errors='ignore')
+ mac = pkt.addr2
+ probe_requests[mac].append(ssid)
+
+ print(f"MAC: {mac} | SSID: {ssid}")
 
 # Sniff on monitor interface (requires root)
 sniff(iface="wlan0mon", prn=analyze_packets, store=0)
@@ -159,22 +159,22 @@ from statistics import stdev
 probe_timestamps = []
 
 def capture_probes(pkt):
-    if pkt.haslayer(Dot11ProbeReq):
-        probe_timestamps.append(time.time())
+ if pkt.haslayer(Dot11ProbeReq):
+ probe_timestamps.append(time.time())
 
-        if len(probe_timestamps) > 5:
-            intervals = [probe_timestamps[i+1] - probe_timestamps[i] for i in range(len(probe_timestamps)-1)]
-            avg_interval = sum(intervals) / len(intervals)
-            interval_variance = stdev(intervals) if len(intervals) > 1 else 0
+ if len(probe_timestamps) > 5:
+ intervals = [probe_timestamps[i+1] - probe_timestamps[i] for i in range(len(probe_timestamps)-1)]
+ avg_interval = sum(intervals) / len(intervals)
+ interval_variance = stdev(intervals) if len(intervals) > 1 else 0
 
-            print(f"Avg interval: {avg_interval:.2f}s, Variance: {interval_variance:.2f}")
-            # Devices from same manufacturer tend to have similar patterns
-            # This pattern alone doesn't identify individual devices but narrows fingerprint
+ print(f"Avg interval: {avg_interval:.2f}s, Variance: {interval_variance:.2f}")
+ # Devices from same manufacturer tend to have similar patterns
+ # This pattern alone doesn't identify individual devices but narrows fingerprint
 
 sniff(iface="wlan0mon", prn=capture_probes, store=0)
 ```
 
-Different phone models exhibit different probe request intervals. iPhone X sends requests every 10-20 seconds, while Android 11 devices use different intervals. Aggregating multiple fingerprinting signals (timing, supported data rates, vendor OUI, beacon interval tolerance) enables tracking despite MAC randomization.
+Different phone models exhibit different probe request intervals. IPhone X sends requests every 10-20 seconds, while Android 11 devices use different intervals. Aggregating multiple fingerprinting signals (timing, supported data rates, vendor OUI, beacon interval tolerance) enables tracking despite MAC randomization.
 
 ### Rate Negotiation Analysis
 
@@ -183,8 +183,8 @@ Different phone models exhibit different probe request intervals. iPhone X sends
 ```bash
 # Using tshark to extract supported data rates
 sudo tshark -i wlan0mon -Y "wlan.fc.type_subtype == 0x04" \
-  -T fields -e frame.time -e wlan.sa -e wlan.supported_rates \
-  > probe_analysis.csv
+ -T fields -e frame.time -e wlan.sa -e wlan.supported_rates \
+ > probe_analysis.csv
 ```
 
 iPhone 14 Pro supports specific rate sets different from iPhone 13 Pro. Similarly, Android devices vary by manufacturer and OS version. While not unique per-device, these patterns narrow identification significantly.
@@ -260,27 +260,27 @@ from datetime import datetime
 conn = sqlite3.connect('wifi_probes.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS probes
-             (timestamp TEXT, mac_address TEXT, ssid TEXT, signal_strength INTEGER)''')
+ (timestamp TEXT, mac_address TEXT, ssid TEXT, signal_strength INTEGER)''')
 
 def process_packet(pkt):
-    if pkt.haslayer(Dot11ProbeReq):
-        ssid = pkt.info.decode('utf-8', errors='ignore')
-        mac = pkt.addr2
-        # Note: Some devices report signal in additional fields
-        signal = getattr(pkt, 'dBm_AntSignal', 0)
+ if pkt.haslayer(Dot11ProbeReq):
+ ssid = pkt.info.decode('utf-8', errors='ignore')
+ mac = pkt.addr2
+ # Note: Some devices report signal in additional fields
+ signal = getattr(pkt, 'dBm_AntSignal', 0)
 
-        timestamp = datetime.now().isoformat()
-        c.execute("INSERT INTO probes VALUES (?,?,?,?)",
-                  (timestamp, mac, ssid, signal))
-        conn.commit()
+ timestamp = datetime.now().isoformat()
+ c.execute("INSERT INTO probes VALUES (?,?,?,?)",
+ (timestamp, mac, ssid, signal))
+ conn.commit()
 
 # Start sniffing
 print("Monitoring WiFi probes... Press Ctrl+C to stop")
 try:
-    sniff(iface="wlan0mon", prn=process_packet, store=0)
+ sniff(iface="wlan0mon", prn=process_packet, store=0)
 except KeyboardInterrupt:
-    conn.close()
-    print("Monitoring stopped. Data saved.")
+ conn.close()
+ print("Monitoring stopped. Data saved.")
 ```
 
 This system allows researchers to understand probe request patterns in their local area, validate fingerprinting techniques, and study MAC randomization effectiveness.

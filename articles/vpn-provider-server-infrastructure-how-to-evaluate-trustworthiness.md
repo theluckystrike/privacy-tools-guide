@@ -76,15 +76,15 @@ echo ""
 # Check server certificate information
 echo "1. Certificate Analysis:"
 echo | openssl s_client -connect "$VPN_DOMAIN:443" 2>/dev/null | \
-    openssl x509 -noout -issuer -subject -dates
+ openssl x509 -noout -issuer -subject -dates
 
 # Check DNS resolution locations
 echo ""
 echo "2. DNS Geolocation (may indicate server locations):"
 dig +short "$VPN_DOMAIN" | while read ip; do
-    echo "IP: $ip"
-    # Use whois to check jurisdiction
-    echo "Jurisdiction check: $(whois "$ip" | grep -i country | head -1)"
+ echo "IP: $ip"
+ # Use whois to check jurisdiction
+ echo "Jurisdiction check: $(whois "$ip" | grep -i country | head -1)"
 done
 
 # Check for transparency report existence
@@ -96,13 +96,13 @@ curl -s -I "https://$VPN_DOMAIN/transparency-report/" | head -5
 echo ""
 echo "4. Bug Bounty Program:"
 curl -s "https://$VPN_DOMAIN/.well-known/security.txt" 2>/dev/null || \
-    echo "No security.txt found - check provider website for bug bounty policy"
+ echo "No security.txt found - check provider website for bug bounty policy"
 
 # Check SSL certificate chain depth
 echo ""
 echo "5. Certificate Chain Analysis:"
 echo | openssl s_client -connect "$VPN_DOMAIN:443" 2>/dev/null | \
-    grep "Certificate chain" -A 20
+ grep "Certificate chain" -A 20
 ```
 
 Run this script to gather baseline infrastructure information about any VPN provider. The results help you understand the provider's transparency level and geographic footprint.
@@ -183,7 +183,7 @@ SSL certificates provide indicators of server operations:
 ```bash
 # Examine SSL certificate chain
 echo | openssl s_client -connect vpn-provider.com:443 2>/dev/null | \
-    openssl x509 -noout -issuer -subject -dates -pubkey
+ openssl x509 -noout -issuer -subject -dates -pubkey
 
 # Check certificate history
 # Use crt.sh (Certificate Transparency Logs)
@@ -207,11 +207,11 @@ IP_ADDRESS="1.2.3.4"
 
 # MaxMind GeoIP
 curl -s "https://geoip.maxmind.com/geoip/v2.1/enterprise/$IP_ADDRESS" \
-    -H "Authorization: Bearer YOUR_API_KEY" | jq '.location'
+ -H "Authorization: Bearer YOUR_API_KEY" | jq '.location'
 
 # IP Quality Score
 curl -s "https://ipqualityscore.com/api/json/ip/$IP_ADDRESS?strictness=0" | \
-    jq '{country: .country_code, organization: .organization}'
+ jq '{country: .country_code, organization: .organization}'
 
 # Compare results
 # If all three sources agree on location, claim is likely accurate
@@ -335,8 +335,8 @@ curl -s "https://cve.mitre.org/cgi-bin/cvename.cgi?keyword=$PROVIDER" | grep -i 
 
 # Search security news
 curl -s "https://news.ycombinator.com/search?p=1" \
-    | grep -i "$PROVIDER" \
-    | grep -i "security\|breach\|hack"
+ | grep -i "$PROVIDER" \
+ | grep -i "security\|breach\|hack"
 
 # Check provider's security advisories page
 curl -s "https://$PROVIDER-vpn.com/security-advisories"
@@ -384,30 +384,30 @@ max_score=100
 
 # Infrastructure (20 points)
 # Does provider own servers?
-owns_servers=$([ "$provider_infrastructure" = "owned" ] && echo 20 || echo 10)
+Owns_servers=$([ "$provider_infrastructure" = "owned" ] && echo 20 || echo 10)
 score=$((score + owns_servers))
 
 # Jurisdiction (20 points)
 # Is provider in privacy-friendly country?
-jurisdiction=$([ "$provider_country" = "Switzerland" ] && echo 20 || echo 10)
+Jurisdiction=$([ "$provider_country" = "Switzerland" ] && echo 20 || echo 10)
 score=$((score + jurisdiction))
 
 # Transparency (20 points)
 # Published audits?
-audits=$([ -n "$published_audits" ] && echo 20 || echo 5)
+Audits=$([ -n "$published_audits" ] && echo 20 || echo 5)
 # Transparency reports?
-reports=$([ -n "$transparency_reports" ] && echo 10 || echo 0)
+Reports=$([ -n "$transparency_reports" ] && echo 10 || echo 0)
 transparency=$((audits + reports))
 score=$((score + transparency))
 
 # No-logs Validation (20 points)
 # Court-validated?
-court_tested=$([ -n "$court_case_results" ] && echo 20 || echo 10)
+Court_tested=$([ -n "$court_case_results" ] && echo 20 || echo 10)
 score=$((score + court_tested))
 
 # Open Source (10 points)
 # Open-source client/server?
-open_source=$([ "$is_open_source" = "true" ] && echo 10 || echo 0)
+Open_source=$([ "$is_open_source" = "true" ] && echo 10 || echo 0)
 score=$((score + open_source))
 
 # Additional Factors (10 points)
@@ -422,13 +422,13 @@ echo "$PROVIDER_NAME Score: $score/$max_score"
 
 # Scoring interpretation
 if [ $score -ge 80 ]; then
-    echo "Excellent - Strong privacy protections"
+ echo "Excellent - Strong privacy protections"
 elif [ $score -ge 60 ]; then
-    echo "Good - Acceptable for most users"
+ echo "Good - Acceptable for most users"
 elif [ $score -ge 40 ]; then
-    echo "Moderate - Some privacy concerns"
+ echo "Moderate - Some privacy concerns"
 else
-    echo "Poor - Significant concerns"
+ echo "Poor - Significant concerns"
 fi
 ```
 

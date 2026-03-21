@@ -180,40 +180,40 @@ $ErrorActionPreference = "Stop"
 
 # Create registry keys if they don't exist
 $keys = @(
-    "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection",
-    "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent",
-    "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System",
-    "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo",
-    "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU",
-    "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy",
-    "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
+ "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection",
+ "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent",
+ "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System",
+ "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo",
+ "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU",
+ "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy",
+ "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
 )
 
 foreach ($key in $keys) {
-    if (!(Test-Path $key)) {
-        New-Item -Path $key -Force | Out-Null
-    }
+ if (!(Test-Path $key)) {
+ New-Item -Path $key -Force | Out-Null
+ }
 }
 
 # Apply privacy settings
 @{
-    "AllowTelemetry" = 0
-    "DisableWindowsConsumerFeatures" = 1
-    "PublishUserActivities" = 0
-    "UploadUserActivities" = 0
-    "DisabledByGroupPolicy" = 1
-    "DoNotShowFeedbackNotifications" = 1
-    "NoAutoRebootWithLoggedOnUsers" = 1
+ "AllowTelemetry" = 0
+ "DisableWindowsConsumerFeatures" = 1
+ "PublishUserActivities" = 0
+ "UploadUserActivities" = 0
+ "DisabledByGroupPolicy" = 1
+ "DoNotShowFeedbackNotifications" = 1
+ "NoAutoRebootWithLoggedOnUsers" = 1
 } | ForEach-Object {
-    $name = $_.Keys[0]
-    $value = $_.Values[0]
-    $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
-    if ($name -eq "DisableWindowsConsumerFeatures") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" }
-    elseif ($name -eq "PublishUserActivities" -or $name -eq "UploadUserActivities") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" }
-    elseif ($name -eq "DisabledByGroupPolicy") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" }
-    elseif ($name -eq "NoAutoRebootWithLoggedOnUsers") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" }
+ $name = $_.Keys[0]
+ $value = $_.Values[0]
+ $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
+ if ($name -eq "DisableWindowsConsumerFeatures") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" }
+ elseif ($name -eq "PublishUserActivities" -or $name -eq "UploadUserActivities") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" }
+ elseif ($name -eq "DisabledByGroupPolicy") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" }
+ elseif ($name -eq "NoAutoRebootWithLoggedOnUsers") { $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" }
 
-    Set-ItemProperty -Path $path -Name $name -Value $value -Type DWord
+ Set-ItemProperty -Path $path -Name $name -Value $value -Type DWord
 }
 
 Write-Host "Privacy settings applied successfully"

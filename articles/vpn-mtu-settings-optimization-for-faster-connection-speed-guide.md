@@ -168,8 +168,8 @@ CURRENT_MTU=$(ip link show | grep -A1 "tun0" | grep "mtu" | awk '{print $2}')
 TARGET_MTU=1400
 
 if [ "$CURRENT_MTU" != "$TARGET_MTU" ]; then
-    ip link set tun0 mtu $TARGET_MTU
-    logger "VPN MTU adjusted to $TARGET_MTU"
+ ip link set tun0 mtu $TARGET_MTU
+ logger "VPN MTU adjusted to $TARGET_MTU"
 fi
 ```
 
@@ -178,24 +178,24 @@ fi
 After configuring MTU, verify the improvements:
 
 1. **Check for fragmentation:**
-   ```bash
-   ping -c 10 -M do -s 1400 your-vpn-server.com
-   ```
+ ```bash
+ ping -c 10 -M do -s 1400 your-vpn-server.com
+ ```
 
 2. **Test actual throughput:**
-   ```bash
-   curl -o /dev/null http://speedtest.tele2.net/10MB.zip
-   ```
+ ```bash
+ curl -o /dev/null http://speedtest.tele2.net/10MB.zip
+ ```
 
 3. **Monitor for packet loss:**
-   ```bash
-   ping -c 100 your-vpn-server.com
-   ```
+ ```bash
+ ping -c 100 your-vpn-server.com
+ ```
 
 4. **Check VPN logs for MTU-related errors:**
-   ```bash
-   journalctl -u openvpn -n 50 | grep -i mtu
-   ```
+ ```bash
+ journalctl -u openvpn -n 50 | grep -i mtu
+ ```
 
 ## Quick Troubleshooting Checklist
 
@@ -218,7 +218,6 @@ After configuring MTU, verify the improvements:
 4. **Ignoring the path:** Your MTU needs to work across your entire network path, not just your local connection.
 
 
-
 ## Related Articles
 
 - [VPN MTU Settings Optimization for Faster Connection Speed](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)
@@ -228,4 +227,7 @@ After configuring MTU, verify the improvements:
 - [How To Diagnose Slow Vpn Connection Speeds Step By Step](/privacy-tools-guide/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
 
 Built by theluckystrike — More at zovo.one*
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

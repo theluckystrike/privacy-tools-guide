@@ -61,8 +61,8 @@ To check if you're behind CGNAT:
 
 ```bash
 # Compare your public IP with what your router reports
-curl -s ifconfig.me        # Your apparent public IP
-curl -s ipinfo.io/ip       # Alternative check
+curl -s ifconfig.me # Your apparent public IP
+curl -s ipinfo.io/ip # Alternative check
 # If these differ from your router's WAN IP, you're likely behind CGNAT
 ```
 
@@ -79,8 +79,8 @@ import stun
 
 # Simple STUN query
 nat_type, external_ip, external_port = stun.get_ip_info(
-    stun_host='stun.l.google.com',
-    stun_port=19302
+ stun_host='stun.l.google.com',
+ stun_port=19302
 )
 print(f"Public endpoint: {external_ip}:{external_port}")
 ```
@@ -94,14 +94,14 @@ TURN relays all traffic through an intermediate server. When direct peer-to-peer
 ```javascript
 // Example TURN configuration for WebRTC
 const iceServers = {
-  iceServers: [
-    { urls: 'stun:stun.l.google.com:19302' },
-    {
-      urls: 'turn:turn.example.com:3478',
-      username: 'user',
-      credential: 'password'
-    }
-  ]
+ iceServers: [
+ { urls: 'stun:stun.l.google.com:19302' },
+ {
+ urls: 'turn:turn.example.com:3478',
+ username: 'user',
+ credential: 'password'
+ }
+ ]
 };
 
 const pc = new RTCPeerConnection(iceServers);
@@ -125,7 +125,7 @@ candidates = []
 
 # Gather host candidates
 for iface in get_network_interfaces():
-    candidates.append(f"candidate:1 1 UDP {iface.ip} {iface.port} typ host")
+ candidates.append(f"candidate:1 1 UDP {iface.ip} {iface.port} typ host")
 
 # Gather srflx candidates via STUN
 stun_response = query_stun_server(public_stun_server)
@@ -158,7 +158,7 @@ Most modern VPN protocols handle NAT traversal automatically. WireGuard, for ins
 [Peer]
 PublicKey = <server-public-key>
 Endpoint = vpn.example.com:51820
-PersistentKeepalive = 25  # Send keepalive every 25 seconds
+PersistentKeepalive = 25 # Send keepalive every 25 seconds
 AllowedIPs = 0.0.0.0/0
 ```
 

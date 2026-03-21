@@ -31,38 +31,38 @@ import requests
 from datetime import datetime, timedelta
 
 class TransactionMonitor:
-    def __init__(self, api_key, account_id):
-        self.api_key = api_key
-        self.account_id = account_id
-        self.base_url = "https://api.yourbank.com/v1"
-    
-    def get_transactions(self, days=7):
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json"
-        }
-        params = {
-            "account_id": self.account_id,
-            "start_date": (datetime.now() - timedelta(days=days)).isoformat()
-        }
-        response = requests.get(
-            f"{self.base_url}/transactions",
-            headers=headers,
-            params=params
-        )
-        return response.json()
-    
-    def detect_anomalies(self, transactions):
-        # Calculate average transaction amount
-        amounts = [t['amount'] for t in transactions]
-        avg_amount = sum(amounts) / len(amounts)
-        
-        # Flag transactions exceeding 3x average
-        anomalous = [
-            t for t in transactions 
-            if t['amount'] > avg_amount * 3
-        ]
-        return anomalous
+ def __init__(self, api_key, account_id):
+ self.api_key = api_key
+ self.account_id = account_id
+ self.base_url = "https://api.yourbank.com/v1"
+
+ def get_transactions(self, days=7):
+ headers = {
+ "Authorization": f"Bearer {self.api_key}",
+ "Content-Type": "application/json"
+ }
+ params = {
+ "account_id": self.account_id,
+ "start_date": (datetime.now() - timedelta(days=days)).isoformat()
+ }
+ response = requests.get(
+ f"{self.base_url}/transactions",
+ headers=headers,
+ params=params
+ )
+ return response.json()
+
+ def detect_anomalies(self, transactions):
+ # Calculate average transaction amount
+ amounts = [t['amount'] for t in transactions]
+ avg_amount = sum(amounts) / len(amounts)
+
+ # Flag transactions exceeding 3x average
+ anomalous = [
+ t for t in transactions 
+ if t['amount'] > avg_amount * 3
+ ]
+ return anomalous
 
 # Usage
 monitor = TransactionMonitor("your_api_key", "account_123")
@@ -70,7 +70,7 @@ transactions = monitor.get_transactions(days=30)
 anomalies = monitor.detect_anomalies(transactions)
 
 for tx in anomalies:
-    print(f"ANOMALY: ${tx['amount']} at {tx['merchant']} on {tx['date']}")
+ print(f"ANOMALY: ${tx['amount']} at {tx['merchant']} on {tx['date']}")
 ```
 
 This pattern helps you catch fraud early rather than waiting for a monthly statement.
@@ -107,16 +107,16 @@ After a card number changes, update all subscriptions and services using the old
 # Example: Find services with stored card credentials
 # This would run against your password manager or subscription tracker
 def find_card_usage(vault_data, last_four):
-    services = []
-    for entry in vault_data:
-        if 'card' in entry.get('type', '').lower():
-            if entry.get('card_number', '').endswith(last_four):
-                services.append({
-                    'service': entry.get('name'),
-                    'url': entry.get('url'),
-                    'account': entry.get('username')
-                })
-    return services
+ services = []
+ for entry in vault_data:
+ if 'card' in entry.get('type', '').lower():
+ if entry.get('card_number', '').endswith(last_four):
+ services.append({
+ 'service': entry.get('name'),
+ 'url': entry.get('url'),
+ 'account': entry.get('username')
+ })
+ return services
 
 # Example output:
 # [{'service': 'AWS', 'url': 'aws.amazon.com', 'account': 'my@email.com'}]
@@ -139,9 +139,9 @@ Review your API key usage logs for any suspicious activity:
 ```bash
 # Check AWS CloudTrail for unauthorized API calls
 aws cloudtrail lookup-events \
-  --lookup-attributes AttributeKey=EventSource,AttributeValue=ec2.amazonaws.com \
-  --start-time "2026-03-01T00:00:00Z" \
-  --region us-east-1
+ --lookup-attributes AttributeKey=EventSource,AttributeValue=ec2.amazonaws.com \
+ --start-time "2026-03-01T00:00:00Z" \
+ --region us-east-1
 
 # Check GitHub for suspicious OAuth access
 # Review Settings > Applications > Authorized OAuth Apps
@@ -163,20 +163,20 @@ import hmac
 import hashlib
 
 def verify_stripe_signature(payload, signature, secret):
-    expected = hmac.new(
-        secret.encode('utf-8'),
-        payload.encode('utf-8'),
-        hashlib.sha256
-    ).hexdigest()
-    return hmac.compare_digest(expected, signature)
+ expected = hmac.new(
+ secret.encode('utf-8'),
+ payload.encode('utf-8'),
+ hashlib.sha256
+ ).hexdigest()
+ return hmac.compare_digest(expected, signature)
 
 # In your webhook handler
 @app.route('/webhook', methods=['POST'])
 def stripe_webhook():
-    signature = request.headers.get('Stripe-Signature')
-    if not verify_stripe_signature(request.data, signature, STRIPE_WEBHOOK_SECRET):
-        return 'Invalid signature', 400
-    # Process event...
+ signature = request.headers.get('Stripe-Signature')
+ if not verify_stripe_signature(request.data, signature, STRIPE_WEBHOOK_SECRET):
+ return 'Invalid signature', 400
+ # Process event...
 ```
 
 ## Preventing Future Fraud
@@ -198,24 +198,24 @@ Configure real-time alerts for all transactions above a low threshold:
 # Example: Setting up card-notification rules via API
 # Most banks support this through their mobile app or API
 def setup_alerts(bank_api, threshold=0.01):
-    rules = [
-        {
-            "type": "transaction_amount",
-            "operator": "greater_than",
-            "value": threshold,
-            "notification_channels": ["push", "sms", "email"]
-        },
-        {
-            "type": "card_present",
-            "operator": "equals",
-            "value": "false",
-            "notification_channels": ["push", "email"]
-        }
-    ]
-    
-    for rule in rules:
-        response = bank_api.create_alert_rule(rule)
-        print(f"Alert rule created: {response['id']}")
+ rules = [
+ {
+ "type": "transaction_amount",
+ "operator": "greater_than",
+ "value": threshold,
+ "notification_channels": ["push", "sms", "email"]
+ },
+ {
+ "type": "card_present",
+ "operator": "equals",
+ "value": "false",
+ "notification_channels": ["push", "email"]
+ }
+ ]
+
+ for rule in rules:
+ response = bank_api.create_alert_rule(rule)
+ print(f"Alert rule created: {response['id']}")
 ```
 
 ### Implement Network-Level Blocks
@@ -225,14 +225,14 @@ For developers managing infrastructure:
 ```hcl
 # Example: AWS VPC endpoint policy to restrict payment API access
 {
-  "Statement": [{
-    "Effect": "Deny",
-    "Action": ["aws-portal:*"],
-    "Resource": "*",
-    "Condition": {
-      "Bool": {"aws:SecureTransport": "false"}
-    }
-  }]
+ "Statement": [{
+ "Effect": "Deny",
+ "Action": ["aws-portal:*"],
+ "Resource": "*",
+ "Condition": {
+ "Bool": {"aws:SecureTransport": "false"}
+ }
+ }]
 }
 ```
 

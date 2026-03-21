@@ -45,7 +45,7 @@ Several services track credential and biometric breaches:
 # Check if your email appears in known breaches
 # Using HaveIBeenPwned's API (note: biometric-specific breaches are rare but tracked)
 curl -H "hibp-api-key: YOUR_API_KEY" \
-  https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com
+ https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com
 ```
 
 For enterprise environments, check if your organization uses services that store biometric data:
@@ -54,19 +54,19 @@ For enterprise environments, check if your organization uses services that store
 import requests
 
 def check_biometric_breach(organization_name):
-    """Query known breach databases for biometric-related incidents."""
-    # Check for breaches involving biometric vendors
-    response = requests.get(
-        "https://haveibeenpwned.com/api/v3/breach/" + organization_name
-    )
-    if response.status_code == 200:
-        breach = response.json()
-        return {
-            'name': breach['Name'],
-            'data_types': breach['DataClasses'],
-            'description': breach['Description']
-        }
-    return None
+ """Query known breach databases for biometric-related incidents."""
+ # Check for breaches involving biometric vendors
+ response = requests.get(
+ "https://haveibeenpwned.com/api/v3/breach/" + organization_name
+ )
+ if response.status_code == 200:
+ breach = response.json()
+ return {
+ 'name': breach['Name'],
+ 'data_types': breach['DataClasses'],
+ 'description': breach['Description']
+ }
+ return None
 ```
 
 ### Technical Analysis: Identifying Exposure Vectors
@@ -79,64 +79,64 @@ import hashlib
 import os
 
 def audit_biometric_storage(storage_path):
-    """
-    Audit biometric template storage for security issues.
-    """
-    findings = []
-    
-    # Check encryption status
-    for root, dirs, files in os.walk(storage_path):
-        for file in files:
-            filepath = os.path.join(root, file)
-            
-            # Check file permissions
-            stat_info = os.stat(filepath)
-            mode = stat_info.st_mode
-            
-            if mode & 0o077:  # World-readable or group-readable
-                findings.append({
-                    'file': filepath,
-                    'issue': 'excessive_permissions',
-                    'severity': 'critical'
-                })
-            
-            # Check for encrypted storage
-            # (In practice, verify the encryption mechanism)
-            if not is_encrypted(filepath):
-                findings.append({
-                    'file': filepath,
-                    'issue': 'unencrypted_storage',
-                    'severity': 'critical'
-                })
-    
-    return findings
+ """
+ Audit biometric template storage for security issues.
+ """
+ findings = []
+
+ # Check encryption status
+ for root, dirs, files in os.walk(storage_path):
+ for file in files:
+ filepath = os.path.join(root, file)
+
+ # Check file permissions
+ stat_info = os.stat(filepath)
+ mode = stat_info.st_mode
+
+ if mode & 0o077: # World-readable or group-readable
+ findings.append({
+ 'file': filepath,
+ 'issue': 'excessive_permissions',
+ 'severity': 'critical'
+ })
+
+ # Check for encrypted storage
+ # (In practice, verify the encryption mechanism)
+ if not is_encrypted(filepath):
+ findings.append({
+ 'file': filepath,
+ 'issue': 'unencrypted_storage',
+ 'severity': 'critical'
+ })
+
+ return findings
 
 def is_encrypted(filepath):
-    """Check if file appears to be encrypted."""
-    # Read first bytes - encrypted data should show high entropy
-    with open(filepath, 'rb') as f:
-        sample = f.read(1024)
-    
-    entropy = calculate_entropy(sample)
-    return entropy > 7.5  # High entropy suggests encryption
+ """Check if file appears to be encrypted."""
+ # Read first bytes - encrypted data should show high entropy
+ with open(filepath, 'rb') as f:
+ sample = f.read(1024)
+
+ entropy = calculate_entropy(sample)
+ return entropy > 7.5 # High entropy suggests encryption
 
 def calculate_entropy(data):
-    """Calculate Shannon entropy of data."""
-    from collections import Counter
-    import math
-    
-    if not data:
-        return 0
-    
-    counter = Counter(data)
-    length = len(data)
-    
-    entropy = 0
-    for count in counter.values():
-        probability = count / length
-        entropy -= probability * math.log2(probability)
-    
-    return entropy
+ """Calculate Shannon entropy of data."""
+ from collections import Counter
+ import math
+
+ if not data:
+ return 0
+
+ counter = Counter(data)
+ length = len(data)
+
+ entropy = 0
+ for count in counter.values():
+ probability = count / length
+ entropy -= probability * math.log2(probability)
+
+ return entropy
 ```
 
 ## Containment: Limiting the Damage
@@ -187,39 +187,39 @@ For developers implementing biometric authentication:
 # Use multi-factor approach
 
 class BiometricAuthService:
-    def __init__(self):
-        self.requires_additional_factor = True
-    
-    def authenticate(self, biometric_data, additional_factor=None):
-        """
-        Never rely solely on biometric data.
-        Always require additional verification.
-        """
-        if not additional_factor:
-            return {
-                'success': False,
-                'reason': 'additional_factor_required',
-                'message': 'Biometric alone is insufficient for authentication'
-            }
-        
-        # Verify biometric
-        biometric_valid = self.verify_biometric(biometric_data)
-        
-        # Verify additional factor
-        factor_valid = self.verify_factor(additional_factor)
-        
-        return {
-            'success': biometric_valid and factor_valid,
-            'factors_verified': ['biometric', 'factor']
-        }
-    
-    def verify_biometric(self, data):
-        # Biometric verification logic
-        pass
-    
-    def verify_factor(self, factor):
-        # Additional factor verification (TOTP, hardware key, etc.)
-        pass
+ def __init__(self):
+ self.requires_additional_factor = True
+
+ def authenticate(self, biometric_data, additional_factor=None):
+ """
+ Never rely solely on biometric data.
+ Always require additional verification.
+ """
+ if not additional_factor:
+ return {
+ 'success': False,
+ 'reason': 'additional_factor_required',
+ 'message': 'Biometric alone is insufficient for authentication'
+ }
+
+ # Verify biometric
+ biometric_valid = self.verify_biometric(biometric_data)
+
+ # Verify additional factor
+ factor_valid = self.verify_factor(additional_factor)
+
+ return {
+ 'success': biometric_valid and factor_valid,
+ 'factors_verified': ['biometric', 'factor']
+ }
+
+ def verify_biometric(self, data):
+ # Biometric verification logic
+ pass
+
+ def verify_factor(self, factor):
+ # Additional factor verification (TOTP, hardware key, etc.)
+ pass
 ```
 
 ### Moving Away from Fingerprint-Only Systems
@@ -239,21 +239,21 @@ import schedule
 import time
 
 def periodic_biometric_audit():
-    """
-    Run periodic audits of biometric authentication systems.
-    """
-    audit_results = {
-        'template_storage': audit_biometric_storage('/secure/biometrics'),
-        'recent_auth_events': check_recent_auth_events(hours=24),
-        'failed_attempts': check_failed_auth_patterns(),
-        'new_registrations': check_new_fingerprint_registrations()
-    }
-    
-    # Alert on anomalies
-    if audit_results['failed_attempts']['count'] > threshold:
-        send_security_alert(audit_results)
-    
-    return audit_results
+ """
+ Run periodic audits of biometric authentication systems.
+ """
+ audit_results = {
+ 'template_storage': audit_biometric_storage('/secure/biometrics'),
+ 'recent_auth_events': check_recent_auth_events(hours=24),
+ 'failed_attempts': check_failed_auth_patterns(),
+ 'new_registrations': check_new_fingerprint_registrations()
+ }
+
+ # Alert on anomalies
+ if audit_results['failed_attempts']['count'] > threshold:
+ send_security_alert(audit_results)
+
+ return audit_results
 
 # Schedule daily audits
 schedule.every().day.at("02:00").do(periodic_biometric_audit)

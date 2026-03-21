@@ -28,12 +28,12 @@ Connection logs record metadata about your VPN sessions. Typical entries include
 
 ```json
 {
-  "timestamp": "2026-03-16T14:32:00Z",
-  "user_ip": "203.0.113.42",
-  "server_ip": "45.33.32.156",
-  "bytes_sent": 1523489,
-  "bytes_received": 8347212,
-  "session_duration": 3600
+ "timestamp": "2026-03-16T14:32:00Z",
+ "user_ip": "203.0.113.42",
+ "server_ip": "45.33.32.156",
+ "bytes_sent": 1523489,
+ "bytes_received": 8347212,
+ "session_duration": 3600
 }
 ```
 
@@ -53,13 +53,13 @@ Traffic logs go further, recording the websites you visit or applications you us
 ```python
 # Example: What a traffic log entry might contain
 log_entry = {
-    "timestamp": "2026-03-16T14:35:22Z",
-    "src_ip": "10.8.0.2",        # Your VPN-assigned IP
-    "dst_ip": "142.250.185.46", # Google server
-    "dst_port": 443,
-    "protocol": "TCP",
-    "sni": "mail.google.com",  # Visible in TLS ClientHello
-    "dns_query": None
+ "timestamp": "2026-03-16T14:35:22Z",
+ "src_ip": "10.8.0.2", # Your VPN-assigned IP
+ "dst_ip": "142.250.185.46", # Google server
+ "dst_port": 443,
+ "protocol": "TCP",
+ "sni": "mail.google.com", # Visible in TLS ClientHello
+ "dns_query": None
 }
 ```
 
@@ -71,12 +71,12 @@ These record login events and authentication attempts:
 
 ```json
 {
-  "timestamp": "2026-03-16T14:30:00Z",
-  "username": "user@example.com",
-  "auth_method": "password",
-  "success": true,
-  "mfa_used": true,
-  "client_fingerprint": "abc123..."
+ "timestamp": "2026-03-16T14:30:00Z",
+ "username": "user@example.com",
+ "auth_method": "password",
+ "success": true,
+ "mfa_used": true,
+ "client_fingerprint": "abc123..."
 }
 ```
 
@@ -108,11 +108,11 @@ Many VPNs collect aggregate statistics that don't identify individual users:
 ```python
 # Server load data (no user identification)
 server_stats = {
-    "server": "us-west-1",
-    "timestamp": "2026-03-16T14:00:00Z",
-    "total_bandwidth": "45TB",
-    "active_connections": 1247,
-    "avg_session_duration": "23min"
+ "server": "us-west-1",
+ "timestamp": "2026-03-16T14:00:00Z",
+ "total_bandwidth": "45TB",
+ "active_connections": 1247,
+ "avg_session_duration": "23min"
 }
 ```
 
@@ -142,19 +142,19 @@ True no-log VPNs often implement network architectures that prevent logging:
 ```python
 # Conceptual: How a no-log VPN handles connections
 class NoLogVPNServer:
-    def __init__(self):
-        self.session_storage = None  # Intentionally disabled
-    
-    def handle_connection(self, client):
-        # Process packets without recording origin
-        packet = client.receive()
-        destination = packet.destination
-        
-        # Forward to destination - no logging
-        self.forward(packet)
-        
-        # Session ends - no record kept
-        return  # Nothing persisted
+ def __init__(self):
+ self.session_storage = None # Intentionally disabled
+
+ def handle_connection(self, client):
+ # Process packets without recording origin
+ packet = client.receive()
+ destination = packet.destination
+
+ # Forward to destination - no logging
+ self.forward(packet)
+
+ # Session ends - no record kept
+ return # Nothing persisted
 ```
 
 ### Cryptographic Verification

@@ -122,9 +122,9 @@ CURRENT_IP=$(curl -s https://api.ipify.org)
 
 # Update DDNS (example for Cloudflare)
 curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID" \
-  -H "Authorization: Bearer $DDNS_API_KEY" \
-  -H "Content-Type: application/json" \
-  --data "{\"type\":\"A\",\"name\":\"$DDNS_HOSTNAME\",\"content\":\"$CURRENT_IP\"}"
+ -H "Authorization: Bearer $DDNS_API_KEY" \
+ -H "Content-Type: application/json" \
+ --data "{\"type\":\"A\",\"name\":\"$DDNS_HOSTNAME\",\"content\":\"$CURRENT_IP\"}"
 ```
 
 Trigger this script via network manager hooks or systemd services that run on interface changes.
@@ -148,7 +148,7 @@ Mobile carrier networks use carrier-grade NAT (CGNAT) with aggressive timeout va
 [Peer]
 PublicKey = <server-public-key>
 AllowedIPs = 0.0.0.0/0
-PersistentKeepalive = 10  # Send keepalive every 10 seconds
+PersistentKeepalive = 10 # Send keepalive every 10 seconds
 ```
 
 However, frequent keepalive packets increase battery consumption. Balance connectivity against power usage based on application requirements.
@@ -197,7 +197,7 @@ For security-sensitive deployments, restrict allowed source IPs:
 [Peer]
 PublicKey = <client-public-key>
 AllowedIPs = 10.0.0.2/32
-# Endpoint = 198.51.100.0/24  # Uncomment to restrict to specific range
+# Endpoint = 198.51.100.0/24 # Uncomment to restrict to specific range
 ```
 
 Note: Restricting endpoints prevents roaming entirely. Only use this for fixed-location clients.
@@ -276,7 +276,7 @@ Address = 10.0.0.8/24
 PublicKey = <server-public-key>
 AllowedIPs = 10.0.0.0/24, 192.168.100.0/24
 Endpoint = fleet.example.com:51820
-PersistentKeepalive = 15  # More frequent for cellular
+PersistentKeepalive = 15 # More frequent for cellular
 ```
 
 The reduced keepalive interval (15 seconds) accommodates aggressive carrier NAT while minimizing disconnection risk.

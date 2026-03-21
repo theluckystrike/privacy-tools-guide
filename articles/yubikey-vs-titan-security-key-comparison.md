@@ -55,30 +55,30 @@ const challenge = generateRandomBytes(32);
 const userId = getUserIdFromDatabase(user);
 
 const publicKeyCredentialCreationOptions = {
-  challenge: base64urlEncode(challenge),
-  rp: {
-    name: "Your Application",
-    id: "yourdomain.com"
-  },
-  user: {
-    id: base64urlEncode(userId),
-    name: user.email,
-    displayName: user.name
-  },
-  pubKeyCredParams: [
-    { type: "public-key", alg: -7 },
-    { type: "public-key", alg: -257 }
-  ],
-  authenticatorSelection: {
-    authenticatorAttachment: "cross-platform",
-    requireResidentKey: false,
-    userVerification: "preferred"
-  }
+ challenge: base64urlEncode(challenge),
+ rp: {
+ name: "Your Application",
+ id: "yourdomain.com"
+ },
+ user: {
+ id: base64urlEncode(userId),
+ name: user.email,
+ displayName: user.name
+ },
+ pubKeyCredParams: [
+ { type: "public-key", alg: -7 },
+ { type: "public-key", alg: -257 }
+ ],
+ authenticatorSelection: {
+ authenticatorAttachment: "cross-platform",
+ requireResidentKey: false,
+ userVerification: "preferred"
+ }
 };
 
 // Client calls WebAuthn API
 const credential = await navigator.credentials.create({
-  publicKey: publicKeyCredentialCreationOptions
+ publicKey: publicKeyCredentialCreationOptions
 });
 ```
 
@@ -222,8 +222,8 @@ ykman list
 
 # Configure OATH on multiple keys programmatically
 for serial in $(ykman list | awk '{print $NF}'); do
-    ykman --device $serial oath accounts add \
-        -t production-github "GitHub" JBSWY3DPEBLW64TMMQ======
+ ykman --device $serial oath accounts add \
+ -t production-github "GitHub" JBSWY3DPEBLW64TMMQ======
 done
 
 # Set PIN on YubiKey
@@ -288,7 +288,7 @@ Both keys require backup strategies for business continuity.
 # One key on desk, one in safe, one in backup location
 
 # Test rotation periodically
-ykman oath accounts list  # Verify all keys have same accounts
+ykman oath accounts list # Verify all keys have same accounts
 ```
 
 **Titan backup approach:**

@@ -39,22 +39,22 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 
 def attempt_login(email, password, target_url):
-    """Simulates a credential stuffing attempt"""
-    session = requests.Session()
-    response = session.post(target_url, data={
-        'email': email,
-        'password': password
-    })
-    return response.status_code == 200
+ """Simulates a credential stuffing attempt"""
+ session = requests.Session()
+ response = session.post(target_url, data={
+ 'email': email,
+ 'password': password
+ })
+ return response.status_code == 200
 
 def test_credentials(breach_list, target_service):
-    """Tests breached credentials against a target service"""
-    with ThreadPoolExecutor(max_workers=50) as executor:
-        results = executor.map(
-            lambda cred: attempt_login(cred['email'], cred['password'], target_service),
-            breach_list
-        )
-    return sum(results)
+ """Tests breached credentials against a target service"""
+ with ThreadPoolExecutor(max_workers=50) as executor:
+ results = executor.map(
+ lambda cred: attempt_login(cred['email'], cred['password'], target_service),
+ breach_list
+ )
+ return sum(results)
 ```
 
 The scary part: this happens automatically and at scale. Attackers don't manually try each credential—they automate the process across entire breach databases.
@@ -80,7 +80,7 @@ Before panicking, confirm whether your credentials actually appeared in a breach
 ```bash
 # Check your email against known breaches using curl
 curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com" \
-  -H "hibp-api-key: your-api-key"
+ -H "hibp-api-key: your-api-key"
 ```
 
 For a more developer-friendly approach, check specific breach databases programmatically:
@@ -90,25 +90,25 @@ import requests
 import hashlib
 
 def check_password_breach(password):
-    """Check if password appears in HIBP database"""
-    sha1_hash = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
-    prefix, suffix = sha1_hash[:5], sha1_hash[5:]
-    
-    response = requests.get(
-        f"https://api.pwnedpasswords.com/range/{prefix}",
-        headers={'Add-Padding': 'true'}
-    )
-    
-    for line in response.text.splitlines():
-        hash_suffix, count = line.split(':')
-        if hash_suffix == suffix:
-            return int(count)
-    return 0
+ """Check if password appears in HIBP database"""
+ sha1_hash = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
+ prefix, suffix = sha1_hash[:5], sha1_hash[5:]
+
+ response = requests.get(
+ f"https://api.pwnedpasswords.com/range/{prefix}",
+ headers={'Add-Padding': 'true'}
+ )
+
+ for line in response.text.splitlines():
+ hash_suffix, count = line.split(':')
+ if hash_suffix == suffix:
+ return int(count)
+ return 0
 
 # Usage
 compromised_count = check_password_breach("your-password-here")
 if compromised_count > 0:
-    print(f"Password found in {compromised_count} breaches!")
+ print(f"Password found in {compromised_count} breaches!")
 ```
 
 ### 2. Change Compromised Passwords Immediately
@@ -138,7 +138,7 @@ MFA is your strongest defense after a breach. For developer accounts specificall
 
 # AWS: Enable MFA for root and IAM users
 aws iam enable-mfa-device --serial-number arn:aws:iam::ACCOUNT:mfa/USERNAME \
-  --authentication-code1 123456 --authentication-code2 789012
+ --authentication-code1 123456 --authentication-code2 789012
 ```
 
 ### 4. Check for Unauthorized Access
@@ -163,7 +163,7 @@ gh auth refresh -h github.com -s admin:public_key,repo,workflow
 
 # AWS: Rotate access keys
 aws iam update-access-key --access-key-id AKIAIOSFODNN7EXAMPLE \
-  --status Inactive --user-name YourUserName
+ --status Inactive --user-name YourUserName
 ```
 
 ## Long-Term Protection Strategies
@@ -174,11 +174,11 @@ The only real defense against credential stuffing is using unique passwords for 
 
 ```json
 {
-  "vault": {
-    "github": "truly-unique-random-string-23-chars-minimum",
-    "aws": "different-unique-random-string",
-    "email": "another-completely-different-password"
-  }
+ "vault": {
+ "github": "truly-unique-random-string-23-chars-minimum",
+ "aws": "different-unique-random-string",
+ "email": "another-completely-different-password"
+ }
 }
 ```
 
@@ -189,14 +189,14 @@ Passkeys eliminate the password reuse problem entirely by using cryptographic ke
 ```javascript
 // WebAuthn passkey registration (simplified)
 const credential = await navigator.credentials.create({
-  publicKey: {
-    challenge: serverChallenge,
-    rp: { name: "Your Service" },
-    user: { id: userId, name: username },
-    pubKeyCredParams: [
-      { type: "public-key", alg: -7 }
-    ]
-  }
+ publicKey: {
+ challenge: serverChallenge,
+ rp: { name: "Your Service" },
+ user: { id: userId, name: username },
+ pubKeyCredParams: [
+ { type: "public-key", alg: -7 }
+ ]
+ }
 });
 ```
 
@@ -209,14 +209,14 @@ import schedule
 import time
 
 def check_breach_status():
-    response = requests.get(
-        f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}",
-        headers={'hibp-api-key': API_KEY}
-    )
-    if response.status_code == 200:
-        breaches = response.json()
-        for breach in breaches:
-            send_alert(f"New breach detected: {breach['Name']}")
+ response = requests.get(
+ f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}",
+ headers={'hibp-api-key': API_KEY}
+ )
+ if response.status_code == 200:
+ breaches = response.json()
+ for breach in breaches:
+ send_alert(f"New breach detected: {breach['Name']}")
 
 schedule.every().day.do(check_breach_status)
 ```

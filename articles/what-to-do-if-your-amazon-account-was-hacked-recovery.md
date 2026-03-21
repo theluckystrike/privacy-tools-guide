@@ -83,9 +83,9 @@ Amazon offers several two-step verification methods. For maximum security, use a
 ```yaml
 # If you use 1Password, you can store your TOTP seed securely:
 amazon_totp:
-  service: Amazon
-  secret: JBSWY3DPEHPK3PXP  # Store actual seed here
-  note: "Recovery account - store in secure vault"
+ service: Amazon
+ secret: JBSWY3DPEHPK3PXP # Store actual seed here
+ note: "Recovery account - store in secure vault"
 ```
 
 ### Review and Revoke Active Sessions
@@ -132,28 +132,28 @@ from datetime import datetime, timedelta
 import os
 
 def check_amazon_activity(webhook_url: str) -> None:
-    """
-    In production, use Amazon Order Report API or third-party tools
-    This is a conceptual example for monitoring unauthorized orders
-    """
-    # Your implementation would use Amazon SP-API
-    # or monitor specific account endpoints
-    
-    recent_orders = get_recent_orders()  # Your implementation
-    
-    for order in recent_orders:
-        if not is_authorized_order(order):
-            send_alert(webhook_url, f"Unauthorized order: {order['id']}")
-            print(f"ALERT: Suspicious order detected - {order['id']}")
+ """
+ In production, use Amazon Order Report API or third-party tools
+ This is a conceptual example for monitoring unauthorized orders
+ """
+ # Your implementation would use Amazon SP-API
+ # or monitor specific account endpoints
+
+ recent_orders = get_recent_orders() # Your implementation
+
+ for order in recent_orders:
+ if not is_authorized_order(order):
+ send_alert(webhook_url, f"Unauthorized order: {order['id']}")
+ print(f"ALERT: Suspicious order detected - {order['id']}")
 
 def send_alert(webhook_url: str, message: str) -> None:
-    """Send alert to configured webhook (Slack, Discord, etc.)"""
-    requests.post(webhook_url, json={"text": message})
+ """Send alert to configured webhook (Slack, Discord, etc.)"""
+ requests.post(webhook_url, json={"text": message})
 
 if __name__ == "__main__":
-    WEBHOOK_URL = os.environ.get("ALERT_WEBHOOK")
-    if WEBHOOK_URL:
-        check_amazon_activity(WEBHOOK_URL)
+ WEBHOOK_URL = os.environ.get("ALERT_WEBHOOK")
+ if WEBHOOK_URL:
+ check_amazon_activity(WEBHOOK_URL)
 ```
 
 ## Prevention Strategies

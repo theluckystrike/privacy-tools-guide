@@ -6,7 +6,7 @@ date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: small-business-privacy-audit-checklist
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

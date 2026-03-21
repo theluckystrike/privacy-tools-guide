@@ -143,11 +143,11 @@ Many VPN providers offer stealth modes that obfuscate VPN traffic. Here's how th
 ```
 Regular OpenVPN Traffic Pattern:
 [TLS Handshake] → [OpenVPN Protocol Header] → [Encrypted Data]
-                    ^ Detectable signature
+ ^ Detectable signature
 
 Stealth Mode Traffic Pattern:
 [TLS Handshake] → [Obfuscation Layer] → [OpenVPN Protocol Header] → [Encrypted Data]
-                    ^ Appears as normal HTTPS
+ ^ Appears as normal HTTPS
 ```
 
 Popular stealth implementations:
@@ -156,15 +156,15 @@ Popular stealth implementations:
 ```bash
 # OpenVPN with obfuscation plugin (Stunnel)
 openvpn --config config.ovpn \
-  --plugin /usr/lib/openvpn/plugins/openvpn-plugin-auth-pam.so \
-  --obfuscate SCRAMBLE \
-  --obfuscate-key "random-key"
+ --plugin /usr/lib/openvpn/plugins/openvpn-plugin-auth-pam.so \
+ --obfuscate SCRAMBLE \
+ --obfuscate-key "random-key"
 ```
 
 **Mullvad Bridge Mode:**
 ```bash
 # Mullvad automatically rotates through bridges to avoid DPI
-mullvad relay set location se  # Swedish relay
+mullvad relay set location se # Swedish relay
 mullvad bridge set custom https://bridge.example.com
 # Traffic appears as normal HTTPS to DPI
 ```
@@ -185,39 +185,39 @@ import random
 import subprocess
 
 class HoppingVPNClient:
-    def __init__(self, vpn_provider):
-        self.provider = vpn_provider
-        self.available_ports = [443, 80, 8443, 8080, 8888, 3389, 445]
-        self.current_port = None
-        self.connection = None
+ def __init__(self, vpn_provider):
+ self.provider = vpn_provider
+ self.available_ports = [443, 80, 8443, 8080, 8888, 3389, 445]
+ self.current_port = None
+ self.connection = None
 
-    def connect(self):
-        """Connect to VPN using random port."""
-        self.current_port = random.choice(self.available_ports)
+ def connect(self):
+ """Connect to VPN using random port."""
+ self.current_port = random.choice(self.available_ports)
 
-        self.connection = subprocess.Popen([
-            'openvpn',
-            '--remote', self.provider,
-            '--port', str(self.current_port),
-            '--proto', 'tcp'  # TCP on non-standard ports better evades DPI
-        ])
+ self.connection = subprocess.Popen([
+ 'openvpn',
+ '--remote', self.provider,
+ '--port', str(self.current_port),
+ '--proto', 'tcp' # TCP on non-standard ports better evades DPI
+ ])
 
-    def handle_detection(self):
-        """Switch ports if current one is detected/blocked."""
-        self.connection.terminate()
-        self.available_ports.remove(self.current_port)
-        self.connect()
+ def handle_detection(self):
+ """Switch ports if current one is detected/blocked."""
+ self.connection.terminate()
+ self.available_ports.remove(self.current_port)
+ self.connect()
 
-    def monitor_connectivity(self):
-        """Monitor for DPI detection and adapt."""
-        while True:
-            if not self.is_connected():
-                self.handle_detection()
-            time.sleep(60)
+ def monitor_connectivity(self):
+ """Monitor for DPI detection and adapt."""
+ while True:
+ if not self.is_connected():
+ self.handle_detection()
+ time.sleep(60)
 
-    def is_connected(self):
-        """Check if VPN connection is active."""
-        return self.connection.poll() is None
+ def is_connected(self):
+ """Check if VPN connection is active."""
+ return self.connection.poll() is None
 ```
 
 ## Deep Packet Inspection Under TLS
@@ -227,11 +227,11 @@ Even with TLS encryption, DPI can extract information. Understanding this is cru
 ```
 DPI-Safe HTTPS Flow:
 Client → [TLS Encrypted] → Server
-          Contains:
-          - Server Name Indication (SNI) - which domain
-          - Certificate chain - who operates server
-          - Ciphersuites selected
-          - TLS record patterns
+ Contains:
+ - Server Name Indication (SNI) - which domain
+ - Certificate chain - who operates server
+ - Ciphersuites selected
+ - TLS record patterns
 
 Modern DPI (JA3/JA4 fingerprinting):
 - Extracts these metadata elements
@@ -244,23 +244,23 @@ DPI can identify specific VPN client software even with stealth mode:
 ```python
 # JA3 fingerprinting concept (simplified)
 def create_ja3_fingerprint():
-    """
-    JA3 captures:
-    - TLS Version
-    - Accepted Cipher Suites (in order)
-    - Supported Extensions
-    - Elliptic Curves
-    - EC Formats
+ """
+ JA3 captures:
+ - TLS Version
+ - Accepted Cipher Suites (in order)
+ - Supported Extensions
+ - Elliptic Curves
+ - EC Formats
 
-    Different VPN clients have unique combinations:
-    OpenVPN: specific cipher suite order
-    Wireguard: unique extension set
-    Custom VPN: may have custom ciphers
-    """
-    ja3_string = "771,49195,49196,165,..etc"
-    # MD5 hash creates 32-char fingerprint
-    ja3_fingerprint = hashlib.md5(ja3_string).hexdigest()
-    return ja3_fingerprint
+ Different VPN clients have unique combinations:
+ OpenVPN: specific cipher suite order
+ Wireguard: unique extension set
+ Custom VPN: may have custom ciphers
+ """
+ ja3_string = "771,49195,49196,165,..etc"
+ # MD5 hash creates 32-char fingerprint
+ ja3_fingerprint = hashlib.md5(ja3_string).hexdigest()
+ return ja3_fingerprint
 
 # This fingerprint persists even with encryption
 # Different clients create different fingerprints
@@ -340,37 +340,37 @@ import subprocess
 import time
 
 def test_vpn_connectivity():
-    """Test if VPN connection is active."""
-    try:
-        result = subprocess.run(
-            ['curl', '-s', 'https://api.ipify.org'],
-            timeout=5,
-            capture_output=True
-        )
-        return result.returncode == 0
-    except:
-        return False
+ """Test if VPN connection is active."""
+ try:
+ result = subprocess.run(
+ ['curl', '-s', 'https://api.ipify.org'],
+ timeout=5,
+ capture_output=True
+ )
+ return result.returncode == 0
+ except:
+ return False
 
 def rotate_vpn_port():
-    """Switch to different port if blocked."""
-    ports = [443, 8443, 80, 8080]
-    current_port = 443
+ """Switch to different port if blocked."""
+ ports = [443, 8443, 80, 8080]
+ current_port = 443
 
-    while not test_vpn_connectivity():
-        current_port = ports[(ports.index(current_port) + 1) % len(ports)]
-        reconnect_vpn(current_port)
-        time.sleep(10)
+ while not test_vpn_connectivity():
+ current_port = ports[(ports.index(current_port) + 1) % len(ports)]
+ reconnect_vpn(current_port)
+ time.sleep(10)
 
 def reconnect_vpn(port):
-    """Restart VPN with new port."""
-    subprocess.run(['killall', 'openvpn'], capture_output=True)
-    subprocess.Popen([
-        'openvpn',
-        '--remote', 'vpn.example.com',
-        '--port', str(port),
-        '--proto', 'tcp',
-        '--config', 'vpn.conf'
-    ])
+ """Restart VPN with new port."""
+ subprocess.run(['killall', 'openvpn'], capture_output=True)
+ subprocess.Popen([
+ 'openvpn',
+ '--remote', 'vpn.example.com',
+ '--port', str(port),
+ '--proto', 'tcp',
+ '--config', 'vpn.conf'
+ ])
 ```
 
 ### 4. Testing for DPI Detection

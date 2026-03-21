@@ -33,24 +33,24 @@ Here's a simple example of how a server selection algorithm might work:
 
 ```python
 def select_best_server(servers, user_location):
-    """Select the optimal server based on load and proximity"""
-    candidate_servers = []
-    
-    for server in servers:
-        # Calculate distance score (lower is better)
-        distance = calculate_distance(user_location, server.location)
-        
-        # Calculate load score (lower is better)
-        load_score = server.current_users / server.max_capacity
-        
-        # Combined score considering both factors
-        # Weight distance more heavily for better user experience
-        score = (distance * 0.7) + (load_score * 0.3)
-        
-        candidate_servers.append((server, score))
-    
-    # Return the server with the lowest combined score
-    return min(candidate_servers, key=lambda x: x[1])[0]
+ """Select the optimal server based on load and proximity"""
+ candidate_servers = []
+
+ for server in servers:
+ # Calculate distance score (lower is better)
+ distance = calculate_distance(user_location, server.location)
+
+ # Calculate load score (lower is better)
+ load_score = server.current_users / server.max_capacity
+
+ # Combined score considering both factors
+ # Weight distance more heavily for better user experience
+ score = (distance * 0.7) + (load_score * 0.3)
+
+ candidate_servers.append((server, score))
+
+ # Return the server with the lowest combined score
+ return min(candidate_servers, key=lambda x: x[1])[0]
 ```
 
 ### Geographic Distribution Strategies
@@ -82,7 +82,7 @@ This approach directs new users to the server with the fewest active connections
 
 ```bash
 # Check connection counts and route to least loaded
-ssh user@server1 "who | wc -l"  # Returns connection count
+ssh user@server1 "who | wc -l" # Returns connection count
 ssh user@server2 "who | wc -l"
 ssh user@server3 "who | wc -l"
 # Route to server with lowest count
@@ -94,14 +94,14 @@ More sophisticated providers assign weight scores to servers based on their capa
 
 ```python
 def weighted_select(servers):
-    total_weight = sum(s.capacity_weight for s in servers)
-    random_value = random.uniform(0, total_weight)
-    
-    cumulative = 0
-    for server in servers:
-        cumulative += server.capacity_weight
-        if random_value <= cumulative:
-            return server
+ total_weight = sum(s.capacity_weight for s in servers)
+ random_value = random.uniform(0, total_weight)
+
+ cumulative = 0
+ for server in servers:
+ cumulative += server.capacity_weight
+ if random_value <= cumulative:
+ return server
 ```
 
 ## Server Capacity and Performance
@@ -133,9 +133,9 @@ To get the best performance from your VPN's load balancing:
 ```bash
 # Test different servers to find the fastest
 for i in {1..5}; do
-    server="us$i.vpn-provider.com"
-    ping_result=$(ping -c 3 $server | tail -1 | awk -F'/' '{print $5}')
-    echo "$server: $ping_result ms"
+ server="us$i.vpn-provider.com"
+ ping_result=$(ping -c 3 $server | tail -1 | awk -F'/' '{print $5}')
+ echo "$server: $ping_result ms"
 done
 ```
 
@@ -155,17 +155,17 @@ Here's a simplified view of how this layering works:
 
 ```
 User in Denver chooses "US Servers"
-    ↓
+ ↓
 Geographic load balancer routes to nearest US data center
-    (Denver data center is closest)
-    ↓
+ (Denver data center is closest)
+ ↓
 Data center load balancer evaluates current conditions:
-    - us-denver-1: 45% load
-    - us-denver-2: 68% load
-    - us-denver-3: 52% load
-    ↓
+ - us-denver-1: 45% load
+ - us-denver-2: 68% load
+ - us-denver-3: 52% load
+ ↓
 Routes user to us-denver-1 (lowest load)
-    ↓
+ ↓
 Server-level load balancer (some providers) may distribute
 across multiple processors/cores on the same server
 ```
@@ -213,60 +213,60 @@ Sophisticated providers monitor server conditions and adjust load balancing in r
 ```python
 # Simplified monitoring and adjustment pseudocode
 class VPNLoadBalancer:
-    def __init__(self, servers):
-        self.servers = servers
-        self.thresholds = {
-            'cpu_critical': 90,
-            'bandwidth_critical': 95,
-            'connection_critical': 95
-        }
+ def __init__(self, servers):
+ self.servers = servers
+ self.thresholds = {
+ 'cpu_critical': 90,
+ 'bandwidth_critical': 95,
+ 'connection_critical': 95
+ }
 
-    def get_server_metrics(self):
-        """Fetch current metrics for all servers"""
-        metrics = {}
-        for server in self.servers:
-            metrics[server.id] = {
-                'cpu': server.get_cpu_usage(),
-                'bandwidth': server.get_bandwidth_usage(),
-                'connections': server.get_active_connections(),
-                'latency': server.get_ping_latency()
-            }
-        return metrics
+ def get_server_metrics(self):
+ """Fetch current metrics for all servers"""
+ metrics = {}
+ for server in self.servers:
+ metrics[server.id] = {
+ 'cpu': server.get_cpu_usage(),
+ 'bandwidth': server.get_bandwidth_usage(),
+ 'connections': server.get_active_connections(),
+ 'latency': server.get_ping_latency()
+ }
+ return metrics
 
-    def select_optimal_server(self, user_location):
-        """Select best server considering real-time metrics"""
-        metrics = self.get_server_metrics()
-        candidates = []
+ def select_optimal_server(self, user_location):
+ """Select best server considering real-time metrics"""
+ metrics = self.get_server_metrics()
+ candidates = []
 
-        for server in self.servers:
-            m = metrics[server.id]
+ for server in self.servers:
+ m = metrics[server.id]
 
-            # Reject servers at critical levels
-            if m['cpu'] > self.thresholds['cpu_critical']:
-                continue
-            if m['bandwidth'] > self.thresholds['bandwidth_critical']:
-                continue
-            if m['connections'] > self.thresholds['connection_critical']:
-                continue
+ # Reject servers at critical levels
+ if m['cpu'] > self.thresholds['cpu_critical']:
+ continue
+ if m['bandwidth'] > self.thresholds['bandwidth_critical']:
+ continue
+ if m['connections'] > self.thresholds['connection_critical']:
+ continue
 
-            # Calculate score for remaining candidates
-            distance_score = calculate_distance(user_location, server.location)
-            load_score = (m['cpu'] + m['bandwidth']) / 2
-            latency_score = m['latency']
+ # Calculate score for remaining candidates
+ distance_score = calculate_distance(user_location, server.location)
+ load_score = (m['cpu'] + m['bandwidth']) / 2
+ latency_score = m['latency']
 
-            combined_score = (
-                distance_score * 0.4 +
-                load_score * 0.4 +
-                latency_score * 0.2
-            )
+ combined_score = (
+ distance_score * 0.4 +
+ load_score * 0.4 +
+ latency_score * 0.2
+ )
 
-            candidates.append((server, combined_score))
+ candidates.append((server, combined_score))
 
-        if not candidates:
-            # All preferred servers at capacity, return least loaded
-            return min(self.servers, key=lambda s: metrics[s.id]['connections'])
+ if not candidates:
+ # All preferred servers at capacity, return least loaded
+ return min(self.servers, key=lambda s: metrics[s.id]['connections'])
 
-        return min(candidates, key=lambda x: x[1])[0]
+ return min(candidates, key=lambda x: x[1])[0]
 ```
 
 This approach prioritizes server health—rejecting overloaded servers entirely rather than distributing to them.

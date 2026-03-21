@@ -27,14 +27,14 @@ When you use Zoosk, the platform records each action as a data point:
 ```javascript
 // Simplified representation of behavioral tracking events
 const behavioralEvent = {
-  userId: "user_abc123",
-  action: "profile_view",
-  targetProfileId: "user_xyz789",
-  timestamp: "2026-03-15T14:32:00Z",
-  sessionDuration: 340,
-  scrollDepth: 0.85,
-  deviceType: "iOS",
-  appVersion: "4.15.2"
+ userId: "user_abc123",
+ action: "profile_view",
+ targetProfileId: "user_xyz789",
+ timestamp: "2026-03-15T14:32:00Z",
+ sessionDuration: 340,
+ scrollDepth: 0.85,
+ deviceType: "iOS",
+ appVersion: "4.15.2"
 };
 ```
 
@@ -74,19 +74,19 @@ The Zoosk mobile application tracks events at multiple touchpoints:
 ```kotlin
 // Example: Tracking swipe events in Android SDK
 class SwipeEventTracker {
-    fun trackSwipe(direction: SwipeDirection, profileId: String) {
-        val eventData = mapOf(
-            "event_type" to "swipe_action",
-            "direction" to direction.name,
-            "target_profile" to profileId,
-            "time_on_profile" to calculateViewDuration(),
-            "photos_viewed" to countPhotosViewed(),
-            "bio_read" to wasBioExpanded()
-        )
-        
-        analyticsService.track("swipe_performed", eventData)
-        behavioralLearning.submitToModel(eventData)
-    }
+ fun trackSwipe(direction: SwipeDirection, profileId: String) {
+ val eventData = mapOf(
+ "event_type" to "swipe_action",
+ "direction" to direction.name,
+ "target_profile" to profileId,
+ "time_on_profile" to calculateViewDuration(),
+ "photos_viewed" to countPhotosViewed(),
+ "bio_read" to wasBioExpanded()
+ )
+
+ analyticsService.track("swipe_performed", eventData)
+ behavioralLearning.submitToModel(eventData)
+ }
 }
 ```
 
@@ -99,25 +99,25 @@ On the backend, Zoosk processes these events through their behavioral scoring sy
 ```python
 # Simplified behavioral scoring algorithm
 def calculate_compatibility_score(user_a, user_b):
-    # Direct preference matching
-    preference_score = compare_preferences(user_a.preferences, user_b.profile)
-    
-    # Behavioral similarity scoring
-    behavioral_a = get_behavioral_profile(user_a)
-    behavioral_b = get_behavioral_profile(user_b)
-    behavioral_score = cosine_similarity(behavioral_a.embedding, behavioral_b.embedding)
-    
-    # Engagement pattern matching
-    engagement_score = compare_response_patterns(
-        user_a.message_timing,
-        user_b.message_timing
-    )
-    
-    return weighted_average(
-        preference_score, 0.3,
-        behavioral_score, 0.5,
-        engagement_score, 0.2
-    )
+ # Direct preference matching
+ preference_score = compare_preferences(user_a.preferences, user_b.profile)
+
+ # Behavioral similarity scoring
+ behavioral_a = get_behavioral_profile(user_a)
+ behavioral_b = get_behavioral_profile(user_b)
+ behavioral_score = cosine_similarity(behavioral_a.embedding, behavioral_b.embedding)
+
+ # Engagement pattern matching
+ engagement_score = compare_response_patterns(
+ user_a.message_timing,
+ user_b.message_timing
+ )
+
+ return weighted_average(
+ preference_score, 0.3,
+ behavioral_score, 0.5,
+ engagement_score, 0.2
+ )
 ```
 
 The algorithm assigns significant weight (50%) to behavioral patterns, meaning your actual behavior influences matches more than your stated preferences.

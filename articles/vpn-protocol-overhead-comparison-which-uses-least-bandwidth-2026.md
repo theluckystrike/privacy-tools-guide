@@ -7,10 +7,10 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /vpn-protocol-overhead-comparison-which-uses-least-bandwidth-2026/
 categories:
-  - vpn
-  - privacy
-  - security
-  - guides
+ - vpn
+ - privacy
+ - security
+ - guides
 reviewed: true
 score: 8
 voice-checked: true
@@ -133,24 +133,24 @@ import subprocess
 import time
 
 def measure_speed(protocol):
-    """Measure download speed for a given VPN protocol"""
-    # Bring up VPN with specific protocol
-    if protocol == "wireguard":
-        subprocess.run(["sudo", "wg-quick", "up", "wg0"])
-    elif protocol == "openvpn":
-        subprocess.run(["sudo", "openvpn", "--config", "client.ovpn", "--proto", "udp"])
-    
-    time.sleep(2)  # Allow connection to stabilize
-    
-    # Measure speed
-    result = subprocess.run(
-        ["curl", "-o", "/dev/null", "-s", "-w", "%{speed_download}", 
-         "https://speed.hetzner.de/100MB.bin"],
-        capture_output=True,
-        text=True
-    )
-    
-    return float(result.stdout)
+ """Measure download speed for a given VPN protocol"""
+ # Bring up VPN with specific protocol
+ if protocol == "wireguard":
+ subprocess.run(["sudo", "wg-quick", "up", "wg0"])
+ elif protocol == "openvpn":
+ subprocess.run(["sudo", "openvpn", "--config", "client.ovpn", "--proto", "udp"])
+
+ time.sleep(2) # Allow connection to stabilize
+
+ # Measure speed
+ result = subprocess.run(
+ ["curl", "-o", "/dev/null", "-s", "-w", "%{speed_download}", 
+ "https://speed.hetzner.de/100MB.bin"],
+ capture_output=True,
+ text=True
+ )
+
+ return float(result.stdout)
 
 # Compare speeds
 wireguard_speed = measure_speed("wireguard")

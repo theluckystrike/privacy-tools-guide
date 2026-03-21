@@ -106,10 +106,10 @@ For power users managing multiple contacts, manual verification becomes tedious.
 import json
 
 with open('~/.config/gajim/plugins/omemo/trust.db', 'r') as f:
-    trusts = json.load(f)
-    
+ trusts = json.load(f)
+
 for jid, data in trusts.items():
-    print(f"{jid}: {data['fingerprint']}")
+ print(f"{jid}: {data['fingerprint']}")
 ```
 
 Store this export securely—anyone with access can impersonate your contacts if they control the keys.
@@ -163,26 +163,26 @@ plaintext = "This is a secret message"
 recipient_jid = 'friend@xmpp.example.com'
 
 try:
-    # Get recipient's identity keys
-    recipient_keys = state.get_recipient_keys(recipient_jid)
+ # Get recipient's identity keys
+ recipient_keys = state.get_recipient_keys(recipient_jid)
 
-    # Encrypt for each of recipient's devices
-    encrypted_messages = state.encrypt_message(
-        plaintext,
-        recipient_jid,
-        recipient_keys
-    )
+ # Encrypt for each of recipient's devices
+ encrypted_messages = state.encrypt_message(
+ plaintext,
+ recipient_jid,
+ recipient_keys
+ )
 
-    # Send encrypted messages via XMPP
-    for device_id, encrypted_payload in encrypted_messages.items():
-        send_xmpp_message(
-            to=recipient_jid,
-            encrypted_payload=encrypted_payload,
-            device_id=device_id
-        )
+ # Send encrypted messages via XMPP
+ for device_id, encrypted_payload in encrypted_messages.items():
+ send_xmpp_message(
+ to=recipient_jid,
+ encrypted_payload=encrypted_payload,
+ device_id=device_id
+ )
 
 except OMEMOException as e:
-    print(f"Encryption failed: {e}")
+ print(f"Encryption failed: {e}")
 ```
 
 This approach allows building custom tools that use OMEMO's encryption without being limited to standard chat clients.
@@ -244,7 +244,7 @@ Many modern XMPP clients (particularly Conversations) support QR code scanning f
 ```bash
 # Using qrencode
 echo "alice@example.com:e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3" | \
-  qrencode -o alice_fingerprint.png
+ qrencode -o alice_fingerprint.png
 ```
 
 Distribute QR codes through your organization's channels (printed badge at conference, email, shared document). Other users scan the code to automatically trust the fingerprint.
@@ -255,19 +255,19 @@ Publish fingerprint lists through authenticated channels:
 ```python
 # Example: Publish fingerprints in JSON format
 {
-  "verified_users": [
-    {
-      "jid": "alice@example.com",
-      "fingerprints": [
-        {
-          "device": 12345,
-          "fingerprint": "e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3c4d5e6f"
-        }
-      ],
-      "verified_date": "2026-03-15",
-      "verifier": "bob@example.com"
-    }
-  ]
+ "verified_users": [
+ {
+ "jid": "alice@example.com",
+ "fingerprints": [
+ {
+ "device": 12345,
+ "fingerprint": "e8f2a8b3c9d1f4e5a7b6c8d9e0f1a2b3c4d5e6f"
+ }
+ ],
+ "verified_date": "2026-03-15",
+ "verifier": "bob@example.com"
+ }
+ ]
 }
 ```
 
@@ -287,14 +287,14 @@ sudo apt-get install prosody prosody-modules
 # 2. Enable required modules in prosody config
 cat >> /etc/prosody/prosody.cfg.lua << EOF
 modules_enabled = {
-    "roster",
-    "offline",
-    "pep",           -- Personal Eventing Protocol (required for OMEMO)
-    "private",       -- Private XML storage
-    "vcard",
-    "version",
-    "disco",
-    "time",
+ "roster",
+ "offline",
+ "pep", -- Personal Eventing Protocol (required for OMEMO)
+ "private", -- Private XML storage
+ "vcard",
+ "version",
+ "disco",
+ "time",
 };
 EOF
 
