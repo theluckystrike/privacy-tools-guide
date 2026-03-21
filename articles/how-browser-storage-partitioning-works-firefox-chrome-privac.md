@@ -176,6 +176,242 @@ You can verify your browser's partitioning status by:
 1. **Firefox**: Check that Enhanced Tracking Protection is enabled in privacy settings
 2. **Chrome**: Look for the "Third-party cookies" setting—selecting "Block third-party cookies" enables partitioning
 
+## Storage Partitioning in Edge and Safari
+
+Major browsers are converging on storage partitioning, though with different implementation details:
+
+### Microsoft Edge Implementation
+
+Edge follows Chrome's approach but with some variations:
+
+```javascript
+// Check Edge's partitioning status
+if (navigator.userAgentData?.brands?.some(b => b.brand === 'Microsoft Edge')) {
+  // Edge partitions localStorage similar to Chrome
+  // But has additional restrictions on ServiceWorker storage
+
+  // This code demonstrates partition awareness:
+  if (window.isSecureContext) {
+    localStorage.setItem('edge-partition-test', 'value');
+    console.log('LocalStorage is partitioned in Edge');
+  }
+}
+```
+
+Edge provides a setting under **Settings > Privacy > Third-party cookies** with options:
+- **Block**: Partitions all third-party cookies (strict)
+- **Block third-party:** Partitions some, allows specific services (balanced)
+- **Allow:** No partitioning (permissive)
+
+### Safari's Intelligent Tracking Prevention (ITP)
+
+Safari takes an even more aggressive approach than Firefox. Its Intelligent Tracking Prevention (ITP) features:
+
+1. **Partitions all third-party storage** by default
+2. **Caps first-party cookies** to 7 days if the site is in Safari's tracking list
+3. **Blocks cross-domain cookies** entirely in certain scenarios
+
+Safari's approach is nuanced—it maintains a dynamic list of known trackers and applies stricter rules to them:
+
+```javascript
+// Test if you're running on Safari
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+if (isSafari) {
+  // Safari may have stricter storage isolation
+  // Check if localStorage persists across iframes
+  try {
+    localStorage.setItem('safari-itp-test', Date.now());
+    console.log('First-party storage available');
+  } catch (e) {
+    console.log('Possible ITP restriction on storage');
+  }
+}
+```
+
+## Practical Testing: Verifying Partitioning in Your Browser
+
+Here's a complete test suite you can run locally:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Storage Partitioning Test</title>
+</head>
+<body>
+  <h1>Storage Partitioning Verification</h1>
+
+  <div id="results"></div>
+
+  <script>
+    async function testPartitioning() {
+      const results = document.getElementById('results');
+
+      // Test 1: LocalStorage partitioning
+      localStorage.setItem('partition-test', 'main-frame-' + Date.now());
+      const mainFrameValue = localStorage.getItem('partition-test');
+      results.innerHTML += `<p>Main frame localStorage: ${mainFrameValue}</p>`;
+
+      // Test 2: IndexedDB partitioning
+      const dbRequest = indexedDB.open('partitionTestDB', 1);
+      dbRequest.onsuccess = () => {
+        const db = dbRequest.result;
+        const store = db.createObjectStore('storage', { keyPath: 'id' });
+        store.add({ id: 1, value: 'test', timestamp: Date.now() });
+        results.innerHTML += `<p>IndexedDB partition established</p>`;
+      };
+
+      // Test 3: Check DevTools for partition info
+      results.innerHTML += `<p style="color: #666; font-size: 12px;">
+        Open DevTools > Application > Storage to see partition keys:
+        <br/>In Firefox: Look for "partition" column
+        <br/>In Chrome: Look for "Partition key" in Storage Inspector
+      </p>`;
+
+      // Test 4: Cookie partitioning
+      document.cookie = 'partition-test=value; SameSite=None; Secure; Partitioned';
+      results.innerHTML += `<p>Partitioned cookie set (if supported)</p>`;
+    }
+
+    testPartitioning();
+  </script>
+</body>
+</html>
+```
+
+Save this as `test-partitioning.html`, open in your browser, and check DevTools to observe partition behavior.
+
+## Building Sites That Work With Partitioning
+
+For developers maintaining websites that embed third-party content, partitioning requires architectural changes:
+
+### Pattern 1: First-Party Requests (No Changes Needed)
+
+If your site is the top-level site, partitioning doesn't affect you:
+
+```javascript
+// On your website (e.g., example.com)
+// This always works the same way:
+localStorage.setItem('user-preference', 'dark-mode');
+// Stored in: ("https://example.com", "https://example.com")
+```
+
+### Pattern 2: Embedded Content (Needs Storage Access API)
+
+If your company's analytics script is embedded on customer websites:
+
+```javascript
+// Before: This worked everywhere
+localStorage.setItem('user-session', 'uuid-123');
+
+// After partitioning: This fails if embedded
+// Solution: Request storage access
+async function ensureStorageAccess() {
+  if (document.hasStorageAccess?.()) {
+    return true;
+  }
+
+  try {
+    await document.requestStorageAccess?.();
+    // Storage access granted, now we can use localStorage
+    localStorage.setItem('user-session', 'uuid-123');
+    return true;
+  } catch (e) {
+    // Storage access denied, fall back to server-side sessions
+    return false;
+  }
+}
+```
+
+This API requires user interaction (click), so it's not a complete solution. Expect some users to deny storage access.
+
+### Pattern 3: Server-Side Sessions (Most Reliable)
+
+The most robust approach is moving away from client-side storage:
+
+```javascript
+// Old approach (breaks with partitioning):
+// Client stores session token in localStorage
+// Used for all API requests
+// Problem: Doesn't work for third-party embeds
+
+// New approach:
+// 1. Server sets httpOnly cookie for session
+// 2. API requests include cookie automatically (no JavaScript access)
+// 3. Works across partitions because httpOnly cookies
+//    follow slightly different rules
+
+// Example: Set session via Set-Cookie header
+// Server sends: Set-Cookie: session=abc123; HttpOnly; Secure; SameSite=Lax
+
+// Client code (simplified):
+fetch('/api/user', {
+  credentials: 'include' // Include httpOnly cookies
+});
+
+// This works across partitions because the browser handles cookie
+// inclusion automatically, not via JavaScript access
+```
+
+## Performance Implications of Partitioning
+
+Storage partitioning has subtle performance impacts:
+
+### Memory Overhead
+Each partition maintains separate storage:
+
+```markdown
+## Memory Calculation Example
+
+Without partitioning:
+- 1 localStorage instance per origin
+- 10 MB per origin × 100 origins = 1 GB total
+
+With partitioning:
+- 1 localStorage instance per (origin, top-level-site) pair
+- A third-party on 1,000 websites = 1,000 separate partitions
+- 10 MB × 1,000 = 10 GB total (hypothetically)
+
+In practice, browsers limit storage (typically 50-100 MB per origin),
+so multiple partitions are constrained by this limit total.
+```
+
+### Caching Behavior Change
+
+Applications that cached data across sites now can't:
+
+```javascript
+// Before partitioning: This cached globally
+const userData = await fetch('/api/user');
+// Same data served to requests from different top-level sites
+
+// After partitioning: Cache is per-partition
+// If script runs on siteA.com and siteB.com
+// Each gets its own cached copy
+// Result: More API requests, slightly higher server load
+```
+
+## Migration Timeline: What You Need to Do
+
+Different browsers enable partitioning on different schedules:
+
+| Browser | Status | Action Required |
+|---------|--------|-----------------|
+| Firefox | Enabled | Deploy code with Storage Access API fallback |
+| Chrome | Rolling out | Test with `chrome://flags` now, prepare migration |
+| Edge | Enabled | Same as Chrome; test now |
+| Safari | Enabled | iOS apps need native location permissions alternative |
+
+For most applications, the migration path is:
+
+**Phase 1 (Now):** Test your app with storage partitioning enabled in DevTools
+**Phase 2 (Next 3 months):** Implement Storage Access API request for critical features
+**Phase 3 (Next 6 months):** Migrate to server-side sessions for all cross-site functionality
+**Phase 4 (Ongoing):** Monitor for issues as browsers finalize their implementations
+
+---
+
 
 ## Related Articles
 

@@ -224,6 +224,146 @@ KeePassXC serves developers who prioritize transparency and local control. The a
 Switching from Bitwarden to KeePassXC is straightforward: export a CSV from the Bitwarden web vault and import it into a new KeePassXC database. Review the exported file immediately and delete it after import — it contains all your passwords in plain text. Going the other direction, KeePassXC can export CSV or XML that Bitwarden accepts.
 
 Before migrating, generate SHA-256 checksums of your exported files and record them alongside the migration date. This documents the integrity of the transfer should questions arise later.
+## Advanced KeePassXC Setup: Syncthing Integration
+
+For developers wanting local-first password management with sync across devices, combining KeePassXC with Syncthing provides privacy-respecting synchronization without any cloud:
+
+```bash
+# Step 1: Install Syncthing on all devices
+brew install syncthing  # macOS
+sudo apt-get install syncthing  # Linux
+# Download from https://syncthing.net for Windows
+
+# Step 2: Start Syncthing background service
+syncthing -home ~/.config/syncthing &
+
+# Step 3: Add your KeePassXC database directory to sync
+# Web UI: http://localhost:8384/
+# Create new folder, select /path/to/passwords.kdbx location
+```
+
+Once configured, your `.kdbx` file syncs across all devices with end-to-end encryption. Changes appear instantly without cloud intermediaries.
+
+## Bitwarden Self-Hosting Deep Dive
+
+For teams wanting Bitwarden's convenience with full data control, self-hosting is viable:
+
+```bash
+# Step 1: Clone the official self-hosted deployment
+git clone https://github.com/bitwarden/self-host.git
+cd self-host
+
+# Step 2: Download and configure installation
+curl -s https://bitwarden.com/download/
+./bitwarden.sh install
+
+# Step 3: Edit .env_override for your setup
+cat > .env_override << 'EOF'
+DOMAIN=vault.yourdomain.com
+MAIL_FROM=noreply@vault.yourdomain.com
+MAIL_SMTP_HOST=mail.yourdomain.com
+MAIL_SMTP_PORT=587
+MAIL_SMTP_SSL=true
+EOF
+
+# Step 4: Generate or install SSL certificates
+# Using Let's Encrypt (requires DNS validation)
+sudo certbot certonly --manual --preferred-challenges dns -d vault.yourdomain.com
+
+# Step 5: Start the stack
+./bitwarden.sh start
+
+# Step 6: Access via web
+# https://vault.yourdomain.com
+```
+
+Maintenance requirements include:
+- Automatic SSL renewal (configure certbot renewal timer)
+- Database backups (automate with cron)
+- Log rotation and monitoring
+- Regular updates via `./bitwarden.sh update`
+
+## Encryption Key Derivation Comparison
+
+For security-conscious developers, understand the cryptographic differences:
+
+| Component | Bitwarden | KeePassXC |
+|-----------|-----------|-----------|
+| Master Key Derivation | PBKDF2-SHA256 (600k iterations) | Argon2id (default) |
+| Vault Encryption | AES-256-CBC | AES-256-GCM |
+| HMAC Algorithm | SHA256 | Part of AES-GCM |
+| Iteration Cost | 600,000 | ~64MB RAM, 3 iterations |
+| GPU Resistance | Moderate | Excellent (Argon2id) |
+
+KeePassXC's use of Argon2id provides better resistance against GPU-based brute force attacks. If your threat model includes well-resourced attackers (state actors, law enforcement), KeePassXC's key derivation is technically superior.
+
+## Migration Path: Switching Between Managers
+
+If you start with Bitwarden and later decide to switch to KeePassXC:
+
+```bash
+# Step 1: Export from Bitwarden (encrypted format)
+bw export --format csv
+
+# Step 2: Import into KeePassXC
+# Open KeePassXC > Database > Import > CSV
+# Map CSV columns to KeePassXC fields
+
+# Step 3: Clean up sensitive fields
+# Review all entries for metadata that doesn't need migration
+# Delete temporary export file securely: shred -vfz export.csv
+
+# Step 4: Verify all entries migrated correctly
+# Check particularly multi-factor authentication codes
+```
+
+The reverse migration (KeePassXC to Bitwarden):
+
+```bash
+# From KeePassXC CLI:
+keepassxc-cli export -d passwords.kdbx --format csv export.csv
+
+# Import into Bitwarden via web interface
+# User > Settings > Import data > Select CSV file
+```
+
+## Performance and Scalability
+
+**Bitwarden** handles vault sizes of 10,000+ items efficiently due to server-side indexing and caching. Sync is instantaneous across devices.
+
+**KeePassXC** shows minimal slowdown even with 5,000+ items, though opening very large databases (10,000+ entries) requires 2-3 seconds. Sync depends on file transfer tool performance.
+
+For teams with massive credential collections, Bitwarden's server-side search and indexing outperforms local solutions.
+
+## Threat Model Decision Matrix
+
+Use this decision tree:
+
+```
+Do you need cross-device sync without manual file management?
+├─ Yes → Bitwarden (cloud) or Bitwarden self-hosted
+└─ No → KeePassXC
+
+Do you trust external cloud infrastructure?
+├─ Yes → Bitwarden SaaS
+├─ No → KeePassXC + Syncthing
+└─ Maybe → Bitwarden self-hosted
+
+Do you need CLI automation for DevOps?
+├─ Yes → 1Password or Bitwarden CLI
+└─ No → Either option works
+
+Do you require full source code auditability?
+├─ Yes → KeePassXC (FOSS)
+└─ No → Bitwarden (published audit reports)
+
+Is your primary platform Windows/Android?
+├─ Yes → Bitwarden (superior UX)
+└─ No → Either option
+```
+
+---
+
 
 ## Related Articles
 
