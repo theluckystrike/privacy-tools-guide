@@ -7,9 +7,9 @@ last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /encrypted-emergency-access-setup-family-password-recovery/
 categories: [guides]
-tags: [password-management, emergency, family, encryption]
+tags: [privacy-tools-guide, password-management, emergency, family, encryption]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
