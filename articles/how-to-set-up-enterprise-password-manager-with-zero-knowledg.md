@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-set-up-enterprise-password-manager-with-zero-knowledg/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
