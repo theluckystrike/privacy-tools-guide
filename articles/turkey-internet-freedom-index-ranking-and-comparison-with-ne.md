@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /turkey-internet-freedom-index-ranking-and-comparison-with-ne/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /turkey-secure-communication-guide-for-activists-and-ngos-ope/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
