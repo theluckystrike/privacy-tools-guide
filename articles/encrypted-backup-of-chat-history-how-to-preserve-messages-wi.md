@@ -132,6 +132,129 @@ This implementation uses PBKDF2 with 480,000 iterations—a balance between secu
 
 Store your password separately from backups. Consider using a password manager or writing it on paper kept in a secure location.
 
+## Threat Model Considerations for Chat Backups
+
+Different users face different risks from unencrypted chat backups:
+
+**Subpoena Risk**: Law enforcement can demand chat exports. Encrypted local backups stored offline are harder to locate and demand. If you're in a high-surveillance jurisdiction or activism context, encrypted local backups protect you from forced disclosure.
+
+**Data Breach Risk**: Cloud storage services (Google Drive, Dropbox, iCloud) experience breaches. Encrypted backups mean breached data remains useless to attackers. Even if your backup is exposed in a cloud breach, encryption ensures the data remains private.
+
+**Device Theft Risk**: If someone steals your laptop containing chat backups, encrypted storage prevents them from reading your conversations. The encryption key remains separate (in your memory or a password manager), so physical access to the device doesn't compromise the data.
+
+**Service Shutdown Risk**: Messaging services shut down (remember Telegram's various servers or WhatsApp spinoffs). Local encrypted backups ensure you can preserve conversations even after services disappear.
+
+**Regulatory Risk**: Some jurisdictions require data retention. By maintaining local encrypted backups instead of relying on service provider storage, you maintain control over what gets retained and when it's deleted.
+
+## Advanced Backup Strategies for High-Risk Users
+
+For journalists, activists, or those in surveillance environments:
+
+**Distributed Storage**: Don't keep all backups in one location. Use the 3-2-1 rule:
+- 3 copies of data
+- 2 different media types
+- 1 copy in a different physical location
+
+```bash
+# Example: Distributed backup strategy
+# Copy 1: Local SSD (encrypted)
+cp encrypted-backup.bin ~/.backup/local-copy.bin
+
+# Copy 2: External USB drive (encrypted, kept in secure location)
+cp encrypted-backup.bin /Volumes/encrypted-usb/backup-copy.bin
+
+# Copy 3: Cloud provider with client-side encryption (Tresorit, Sync.com)
+# Upload manually with additional encryption layer
+```
+
+**Immutable Backups**: Once backups are created, make them immutable. Prevent accidental deletion or encryption by ransomware:
+
+```bash
+# Make backup immutable on macOS
+chflags uchg encrypted-backup.bin
+
+# Prevent modification
+chmod 000 encrypted-backup.bin
+
+# Verify immutability
+lsattr encrypted-backup.bin
+```
+
+**Decoy Backups**: For the paranoid, maintain decoy backups with false information. If someone forces decryption of a backup, they access false data while your real backup remains hidden.
+
+## Chat Platform-Specific Export Recommendations
+
+### Signal Export
+
+Signal provides the most privacy-friendly export:
+
+```bash
+# Signal exports include metadata timestamps but omit sender IP data
+# Export via Settings > Chats > Export chats
+# Exports as plaintext JSON, then encrypt with your own tools
+```
+
+### WhatsApp Export
+
+WhatsApp exports vary by platform:
+
+```bash
+# Android: Settings > Chats > Chat backup
+# Exports to local storage or Google Drive
+# Always re-encrypt before cloud storage
+
+# iOS: Settings > Chats > Chat Backup
+# Limited to iCloud backup integration
+# Disable iCloud sync, use local export instead
+```
+
+### Telegram Export
+
+Telegram's export includes extensive metadata:
+
+```bash
+# Desktop Client: Settings > Advanced > Export Telegram data
+# Exports include contact network, message metadata, media
+# More comprehensive than other platforms
+```
+
+## Decryption Verification and Testing
+
+Before relying on encrypted backups, verify they actually work:
+
+```bash
+# Create test backup
+echo "Test data" > test.txt
+gpg --encrypt --recipient your-email@example.com test.txt
+
+# Delete original
+rm test.txt
+
+# Verify you can decrypt on a fresh system
+gpg --decrypt test.txt.gpg > test-recovered.txt
+cat test-recovered.txt  # Should output "Test data"
+
+# Compare checksums to confirm integrity
+sha256sum original-file.json > original.sha256
+sha256sum decrypted-file.json > decrypted.sha256
+diff original.sha256 decrypted.sha256
+```
+
+## Long-Term Storage Considerations
+
+Chat backups may need to remain secure for decades. Consider:
+
+**Key Storage Longevity**: Your encryption key must survive as long as your backup. Hardware degradation affects USB drives and external SSDs:
+- USB drives: 5-10 years typical lifespan
+- External SSDs: 5-7 years with moderate use
+- M-Disc DVDs: 50+ years theoretical lifespan
+
+For long-term archival, consider migrating backups to new media every 5-7 years.
+
+**Passphrase Memorability**: If you encrypt with a passphrase, ensure you can remember it decades later. Don't rely solely on password managers that may become inaccessible. Write passphrases on paper kept in a secure location.
+
+**Algorithm Longevity**: AES-256-GCM is considered secure through 2040+. For backups intended to remain private longer, consider upgrading to post-quantum algorithms as they become standardized (though this is premature for most users).
+
 ## Verifying Backup Integrity
 
 Always verify that your encrypted backups can actually be decrypted. After creating a backup, immediately test decryption and compare checksums against the original data:

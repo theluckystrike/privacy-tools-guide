@@ -184,6 +184,130 @@ nmcli connection modify "VPN-Name"   ipv4.routes "10.0.0.0/8"   ipv4.never-defau
 ```
 
 Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.
+## Developer-Focused API Privacy Auditing
+
+For developers and security professionals, iOS provides diagnostic tools to audit privacy configurations programmatically. The App Privacy Report data can be extracted and analyzed:
+
+**App Privacy Report API**: iOS 17+ provides an Activity API that allows your own apps to check privacy permissions:
+
+```swift
+import AppKit
+
+// Check if app has location permission
+let locationPermission = PrivacyManager.locationAccessLevel()
+
+// Permission levels:
+// .notDetermined - never asked
+// .denied - user denied access
+// .denied - user denied access (temporary, for this app)
+// .allowed - always allow
+// .allowedWhenInUse - only when using app
+
+switch locationPermission {
+case .allowedAlways:
+    print("App has continuous location access")
+case .allowedWhenInUse:
+    print("App can access location only while in use")
+case .denied:
+    print("Location access denied")
+case .notDetermined:
+    print("Privacy choice not yet made")
+}
+```
+
+**Examining Network Privacy**: Monitor DNS and VPN usage on your device:
+
+```bash
+# On macOS, check active VPN profiles
+networksetup -listallvpnservices
+
+# Monitor DNS resolution with mDNSResponder
+sudo log stream --level debug --predicate 'process == "mDNSResponder"'
+
+# Check secure DNS configuration
+dns -configuration show
+```
+
+## Privacy Hardening for High-Risk Scenarios
+
+Standard settings provide good privacy for most users. For journalists, activists, or high-risk users, additional hardening is necessary:
+
+**Disable iCloud Sync Entirely**: Navigate to **Settings > [Your Name] > iCloud** and turn off syncing for:
+- iCloud Keychain (handle passwords locally)
+- Health data
+- Photos
+- Notes
+- Siri data
+
+**Enable Advanced Data Protection**: Available in Settings > [Your Name] > iCloud > Advanced Data Protection. This provides end-to-end encryption for sensitive data:
+
+```
+- Notes and memos
+- Photos and videos
+- Health records
+- Contacts
+- Calendar
+- Reminders
+```
+
+**Use Airplane Mode + Cellular**: For maximum privacy during sensitive work, enable Airplane Mode, then selectively re-enable Cellular only when needed. This prevents background WiFi connectivity and location triangulation:
+
+```bash
+# iOS WiFi scan enumeration prevention
+# Settings > WiFi > Turn WiFi completely off, not just "disconnect"
+# This prevents passive WiFi beacon scanning
+```
+
+**Restrict Bluetooth**: Bluetooth enables proximity tracking. Disable it except when actively using Bluetooth devices:
+
+```
+Settings > Bluetooth > Turn completely off
+```
+
+**Photo Privacy**: Strip EXIF data from photos before sharing:
+
+```bash
+# On macOS connected to iPhone, use ImageMagick to strip metadata
+mogrify -strip /path/to/photo.jpg
+
+# Or use ExifTool
+exiftool -all= -overwrite_original /path/to/photo.jpg
+```
+
+## Testing Privacy Settings Effectiveness
+
+Verify your privacy configuration actually works:
+
+**Check Internet Connectivity Isolation**:
+```bash
+# Monitor all DNS queries on your network
+sudo tcpdump -i en0 -n 'udp port 53'
+
+# Use privacy-focused DNS analyzers
+# Tools like DNSCrypt can proxy and verify all DNS resolution
+```
+
+**Verify Clipboard Access Prevention**:
+- Copy text from one app
+- Open Settings > Privacy & Security > Clipboard
+- Review which apps accessed clipboard
+- Revoke unnecessary permissions
+
+**Test Location Privacy**:
+- Enable location services for a single app
+- Walk into another room
+- Check if location updates still occur
+- Verify precision degradation works as expected
+
+## Privacy Configuration Backup
+
+Export your privacy settings for documentation:
+
+```bash
+# On macOS, extract iOS privacy configuration from device backup
+sqlite3 ~/Library/Application\ Support/MobileSync/Backup/*/Health/health.db \
+  "SELECT * FROM privacy_categories;"
+```
 
 ## Related Reading
 

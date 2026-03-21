@@ -157,6 +157,139 @@ Beyond individual skill permissions, Amazon provides account-level privacy contr
 
 These settings apply globally across all skills and provide baseline privacy protection regardless of individual skill permissions.
 
+## Auditing Alexa Data Collection
+
+Amazon's transparency mechanisms allow you to inspect what data Alexa has collected:
+
+**Access Your Alexa Data**: Navigate to **Amazon.com > Your Account > Alexa Privacy Hub > Download Your Data**. This generates a report of:
+- All voice recordings stored (with dates and transcripts)
+- Skill permissions granted over time
+- Device-pairing history
+- Deleted recordings (Amazon may retain these temporarily)
+
+For developers, understanding what data Alexa collects helps inform privacy-first skill design:
+
+```python
+# Example: Accessing Alexa Data API to understand permissions
+import requests
+
+def get_alexa_permissions(access_token):
+    """Retrieve permissions for authenticated user"""
+    headers = {"Authorization": f"Bearer {access_token}"}
+    response = requests.get(
+        "https://api.amazonalexa.com/v1/devices/me",
+        headers=headers
+    )
+    return response.json()
+
+# Data returned includes device list and paired skills
+# Each skill entry shows requested permissions and grant status
+```
+
+## Privacy-First Skill Design Patterns
+
+For developers building Alexa skills, several patterns minimize user data exposure:
+
+**Stateless Skills**: Design skills to be stateless where possible. Store no user data on Amazon's servers. Ask users for data in each session if needed:
+
+```javascript
+const RequestHandler = {
+  canHandle(handlerInput) {
+    return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
+  },
+  handle(handlerInput) {
+    // Request data dynamically rather than storing it
+    return handlerInput.responseBuilder
+      .speak('What would you like me to help with?')
+      .reprompt('Ask me anything.')
+      .getResponse();
+  }
+};
+```
+
+**Progressive Permissions**: Only request permissions when actually needed. Ask for location access when a skill needs it, not during initial setup:
+
+```json
+{
+  "manifest": {
+    "permissions": [
+      {
+        "name": "alexa::devices:all:address:default",
+        "reason": "Only requested when user asks for delivery address"
+      }
+    ],
+    "is_progressive": true
+  }
+}
+```
+
+**Data Minimization**: Collect the minimum data required for core functionality. If a weather skill only needs zipcode, don't request full address including street number:
+
+```javascript
+function handleWeatherIntent(handlerInput) {
+  const zipcode = handlerInput.requestEnvelope.context.System.device.address.zipCode;
+  // Use only zipcode, ignore address details
+  return getWeatherForZipcode(zipcode);
+}
+```
+
+## Threat Modeling for Alexa Usage
+
+Different users face different risks from Alexa data:
+
+**Household Privacy**: In shared homes, anyone with voice access to Alexa can interact with it. Children, guests, or malicious actors can ask for personal information if skills are poorly designed. Restrict enabled skills to only those actively used.
+
+**Voice Biometrics**: Amazon can theoretically identify users by voice. If you don't want voice identification, avoid using features that rely on speaker identification.
+
+**Third-party Skill Compromises**: Malicious skills or compromised third-party skills can potentially access permitted data. Review skill ratings and permissions carefully before enabling anything from unknown developers.
+
+**Data Retention Risks**: Amazon may retain voice data longer than disclosed. For highly sensitive conversations, disable the microphone physically when not in use, or use a Faraday bag to block signal.
+
+## Device-Level Privacy Controls
+
+Beyond skill permissions, device settings affect overall privacy:
+
+**Disable Microphone**: Most Alexa devices have a physical microphone mute button. The device ignores voice commands when muted, but remains connected to WiFi for updates and cloud features.
+
+**WiFi Privacy**: Ensure your WiFi network is WPA3 encrypted with a strong password. A compromised WiFi network could intercept Alexa communications.
+
+**Device Updates**: Enable automatic updates to ensure security patches are applied promptly:
+
+```bash
+# Check device update status via Alexa app
+# Settings > Device Settings > [Device Name] > Device Software Version
+# Enable automatic updates if available
+```
+
+**Local Processing**: Some Alexa features process voice locally without sending to AWS servers (like wake word detection). Prefer local-processing features when available:
+
+```yaml
+# Alexa privacy modes by processing location
+Local Processing:
+  - Wake word detection
+  - Some voice commands
+
+Cloud Processing:
+  - Context-based responses
+  - Skill fulfillment
+  - Learning patterns
+```
+
+## Monitoring Skill Activity
+
+Regularly audit what skills are actually doing:
+
+```bash
+# Create a monthly audit checklist
+- Review enabled skills
+- Check permissions for each active skill
+- Look at skill usage in Alexa history
+- Disable skills not used in past month
+- Review any new skills added
+```
+
+Many power users maintain a spreadsheet tracking each skill, its permissions, and last used date. This documentation helps quickly identify and remove problematic skills.
+
 {% endraw %}
 ## Related Reading
 

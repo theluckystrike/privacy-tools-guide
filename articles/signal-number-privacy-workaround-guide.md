@@ -160,6 +160,186 @@ Regardless of which workaround you implement, consider these additional security
 - Keep Signal updated: security patches address discovered vulnerabilities
 - Review linked devices: regularly audit and remove unused linked devices
 
+## Platform-Specific VoIP Solutions
+
+Different VoIP providers offer different trade-offs for Signal registration:
+
+### Google Voice
+
+**Advantages**:
+- Free US numbers
+- SMS forwarding to primary device
+- Integrated with Google Workspace
+- Reliable for most purposes
+
+**Limitations**:
+- May not accept Signal verification codes
+- Google links Voice number to Google Account
+- Requires US address
+- Potential account suspension if not used regularly
+
+**Setup for Signal**:
+```bash
+# 1. Create separate Google Account (privacy-focused)
+# 2. Visit voice.google.com
+# 3. Set up SMS forwarding
+# 4. Use number for Signal registration
+# 5. Note: May face verification issues
+```
+
+### Twilio
+
+**Advantages**:
+- Reliable SMS/call handling
+- Professional API for verification
+- International number support
+- Good for developers
+
+**Limitations**:
+- Requires payment ($1/month minimum)
+- Requires identity verification
+- May be flagged by Signal's abuse detection
+
+**Pricing and Setup**:
+```bash
+# Twilio pricing: ~$1/month for number + SMS costs
+# API-based verification
+from twilio.rest import Client
+
+client = Client("account_sid", "auth_token")
+messages = client.messages.list()
+# Can programmatically check for Signal verification SMS
+```
+
+### Burner
+
+**Advantages**:
+- Temporary numbers
+- No identity verification
+- Monthly plans available
+- Good for short-term privacy
+
+**Limitations**:
+- Numbers are temporary (recycle after use)
+- Highest cost per number ($4.99/month)
+- May not retain number for extended Signal use
+
+## Phone Number Privacy Architecture
+
+Understanding Signal's architecture helps understand phone number privacy:
+
+Signal doesn't prevent someone from finding your account if they have your phone number. The architecture works like this:
+
+```
+User A (known number) searches for User B:
+  1. User A sends hash(User B's number) to Signal server
+  2. Signal server checks if User B's number matches hash
+  3. Server returns whether user exists (but no other info)
+  4. User A can then contact User B
+```
+
+This prevents Signal from knowing most phone numbers (they only see hashes), but it also means:
+- Anyone with your number can verify you use Signal
+- Someone doing bulk verification can identify all Signal users in their contact list
+- Your number becomes the permanent link to your Signal account
+
+## Advanced: Username-Based Registration (Future)
+
+Signal has discussed implementing username-based registration, though this remains in development. Here's what that would look like:
+
+```javascript
+// Hypothetical: Future Signal with username registration
+async function registerWithUsername(username, password) {
+  // Generate identity key pair
+  const identityKeyPair = libsignal.KeyHelper.generateIdentityKeyPair();
+  const registrationId = libsignal.KeyHelper.generateRegistrationId();
+
+  // Create username-based account (no phone number)
+  const account = {
+    username: username,
+    passwordHash: await hashPassword(password),
+    identityPublicKey: identityKeyPair.public,
+    registrationId: registrationId
+  };
+
+  // Register with Signal servers
+  const response = await signalServer.register(account);
+
+  return {
+    username: username,
+    identityKeyPair: identityKeyPair,
+    registrationId: registrationId
+  };
+}
+
+// Contact discovery via username (more private)
+async function lookupContact(targetUsername) {
+  // Server never sees the lookup request
+  // Or lookup is blinded so server doesn't know who you searched for
+  const contactExists = await signalServer.usernameLookup(targetUsername);
+  return contactExists;
+}
+```
+
+While this isn't available yet, monitoring Signal's GitHub for username-based registration discussions shows the team recognizing this limitation.
+
+## Metadata Minimization Beyond Phone Numbers
+
+Even with number privacy, Signal still transmits metadata:
+
+**Connection Metadata**:
+- When you send messages (timing)
+- How many messages you exchange
+- Message length and frequency
+- Your IP address (unless using Tor/VPN)
+
+**Mitigation**:
+```bash
+# Route Signal through Tor for additional privacy
+# On macOS with Tor Browser running
+export SOCKS_PROXY=socks5://127.0.0.1:9050
+
+# Or use full VPN
+# Use ProtonVPN, Mullvad, or similar privacy-focused provider
+# Ensures ISP can't see Signal usage
+```
+
+**Social Graph Metadata**:
+- Who you communicate with and how often
+- Message patterns reveal relationships
+- Could be used to identify activist networks or journalists
+
+Signal addresses this through:
+- No message read receipts option
+- No typing indicators option
+- Disappearing messages (reduce time window for monitoring)
+
+## Threat Modeling Signal Privacy
+
+Different users have different threat models:
+
+**Scenario 1: Law Enforcement Surveillance**
+- Threat: Investigators identify you as Signal user
+- Protection: Use VoIP number, avoid linking to real identity
+- Risk: VoIP numbers may be flagged as privacy-focused, attracting scrutiny
+
+**Scenario 2: Employer Monitoring**
+- Threat: Employer links your Signal number to corporate network
+- Protection: Use separate SIM card or device
+- Risk: Expensive, difficult to maintain separate identity
+
+**Scenario 3: Social Engineering**
+- Threat: Someone uses your number to register Signal on their device (SIM swap)
+- Protection: Registration lock (requires PIN for re-registration)
+- Risk: PIN must be strong and memorable
+
+**Scenario 4: Intimate Partner Violence**
+- Threat: Abuser uses your number to verify you use Signal
+- Protection: Use completely separate number/device, avoid linking to primary identity
+- Risk: Highest protection requires maximum separation
+
+Each scenario calls for different protective measures. Determine your actual threat model before implementing solutions.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
