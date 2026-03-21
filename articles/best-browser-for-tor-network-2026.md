@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users selecting the bes
 date: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-browser-for-tor-network-2026/
-score: 8
+score: 9
 categories: [guides]
 tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
