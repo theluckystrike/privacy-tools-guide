@@ -161,6 +161,126 @@ Prepare for the scenario where your security fails:
 
 Create a security cone—a set of trusted contacts who can trigger pre-planned responses if you become unreachable. This provides resilience against detention or forced communication.
 
+## Signal Verification and Trust Models
+
+Signal provides end-to-end encrypted messaging but requires you to verify contacts' keys to prevent man-in-the-middle attacks. For high-risk journalists, key verification is non-negotiable.
+
+```bash
+# Signal security number verification
+# On both journalist and source devices, compare security numbers
+# This 60-digit code ensures you're communicating with the right person
+
+# Example: Generate security numbers for verification
+signal-cli --show-device-identifiers +1234567890
+```
+
+Trust existing contacts in person before establishing Signal communication. Meeting physically in a secure location to verify security numbers prevents adversary interception during initial contact establishment.
+
+Maintain a written record of verified contacts' security numbers in a secure location—a hardware-encrypted USB drive or paper notebook kept in a safe. If a device is compromised, you can verify contacts through this backup record.
+
+## Physical Countermeasures
+
+Digital security means little if physical security fails. Design your workspace accordingly:
+
+**Communications location security:**
+- Conduct sensitive conversations in locations where you're not under observation
+- Use counter-surveillance techniques: vary travel patterns, use different routes, check for surveillance
+- Conduct meetings in locations with legitimate reasons for your presence (coffee shop, library, government office)
+
+**Device security:**
+- Use a Faraday bag when traveling with sensitive devices—blocks RF signals and prevents remote activation
+- Keep devices on you or in your direct control—never leave them unattended
+- Use full-disk encryption that requires a password even after forced shutdown
+
+```bash
+# Full disk encryption command (Linux)
+sudo cryptsetup luksFormat /dev/sda1
+sudo cryptsetup luksOpen /dev/sda1 secure_storage
+
+# Even if device is seized, data remains encrypted without password
+```
+
+## Asset Categorization and Separation
+
+Separate your digital assets by risk level:
+
+```python
+# Asset categorization for journalists
+assets = {
+    "RED (Highest Risk)": [
+        "Source contact information",
+        "Unpublished investigative notes",
+        "Encrypted communication keys"
+    ],
+    "YELLOW (High Risk)": [
+        "Published work",
+        "Professional contacts",
+        "Meeting notes with timestamps"
+    ],
+    "GREEN (Lower Risk)": [
+        "Public biographical information",
+        "Social media presence",
+        "General writing samples"
+    ]
+}
+```
+
+Store RED assets on air-gapped devices with physical access controls. YELLOW assets can be on encrypted devices with careful network isolation. GREEN assets can exist on devices with network connectivity.
+
+## Emergency Preparation
+
+Prepare for scenarios where your security is compromised:
+
+**Indicators of compromise:**
+- Unexpected device behavior (unexpected reboots, strange processes)
+- Interception of source communications (source reports government contacted them)
+- Physical surveillance indicators (following vehicles, repeated faces)
+- Network monitoring signs (DNS failures, unusual latency)
+
+When compromise indicators appear, activate emergency procedures:
+
+```bash
+#!/bin/bash
+# Emergency security lockdown
+
+# 1. Cease communication with sources
+# 2. Disable all networks
+sudo systemctl stop networking
+
+# 3. Document time and indicators
+echo "$(date): Emergency activation - suspicious network activity" >> ~/.emergency_log
+
+# 4. Boot into restricted mode
+# (requires pre-boot configuration)
+```
+
+Have a secure communication channel to your support network—journalists' organizations, legal counsel, international press freedom groups—that you can activate if detained.
+
+## Long-Term Operational Sustainability
+
+High-risk journalism is emotionally and technically exhausting. Unsustainable threat models fail over time when operational fatigue sets in.
+
+Be realistic about what you can maintain:
+
+- Use automation for repetitive security tasks (backup scripts, key rotation)
+- Establish routines you'll actually follow (device updates, password changes, contact verification)
+- Work with organizational support—don't shoulder the entire threat model alone
+- Cycle between high-vigilance periods and recovery periods
+
+A threat model you follow 80% of the time provides better protection than a perfect model you abandon when overwhelmed.
+
+## Resources and Support
+
+Organizations providing support to journalists in hostile environments include:
+
+- Committee to Protect Journalists (CPJ)
+- Freedom of the Press Foundation
+- International Federation of Journalists
+- Article 19
+- Reporters Without Borders
+
+These organizations provide direct support, financial assistance, and sometimes physical relocation for journalists facing imminent danger. Establish relationships with these organizations before you need them.
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

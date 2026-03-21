@@ -160,6 +160,133 @@ Once you confirm throttling, several approaches may help:
 4. **Contact your ISP**: Request clarification on their traffic management policies
 5. **Document findings**: Keep logs and speed tests as evidence if pursuing complaints
 
+## Deep Packet Inspection (DPI) Detection
+
+If your ISP uses DPI to identify VPN traffic, certain markers reveal their approach. OpenVPN uses specific handshake patterns that DPI systems can recognize without decrypting content. The TLS version, certificate size, and timing information provide fingerprints.
+
+Detect DPI throttling by testing protocol variations:
+
+```bash
+#!/bin/bash
+# DPI detection script - test protocol variations
+
+test_protocol() {
+    local protocol=$1
+    local port=$2
+    local description=$3
+
+    echo "Testing $description (port $port)..."
+
+    # Test 10 packets to assess loss
+    LOSS=$(ping -c 10 -p $port vpn.example.com 2>/dev/null | grep "%" | awk '{print $6}')
+
+    echo "Packet loss for $description: $LOSS"
+}
+
+# Test different protocols
+test_protocol "tcp" "443" "OpenVPN over TCP port 443"
+test_protocol "tcp" "1194" "OpenVPN over TCP port 1194"
+test_protocol "udp" "1194" "OpenVPN over UDP port 1194"
+test_protocol "udp" "443" "Custom UDP port 443"
+```
+
+If port 443 shows significantly better performance than port 1194, your ISP likely recognizes VPN traffic by port number. If all VPN protocols show degradation, DPI-based identification is occurring.
+
+## ISP Throttling Mitigation Strategies
+
+Once you've confirmed throttling, several technical approaches may improve performance.
+
+### Port Obfuscation
+
+Configure your VPN to use port 443 (standard HTTPS), which ISPs rarely throttle since blocking it would break legitimate web traffic:
+
+```bash
+# OpenVPN obfuscation configuration
+proto tcp
+remote vpn.example.com 443
+port 443
+
+# Enable obfsproxy for additional masking
+plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so /etc/openvpn/auth openvpn
+```
+
+### Protocol Switching Strategy
+
+Create a fallback chain testing multiple protocols:
+
+```python
+#!/usr/bin/env python3
+"""
+VPN protocol fallback strategy for throttling circumvention.
+"""
+
+import subprocess
+import time
+
+protocols = [
+    {"name": "WireGuard", "port": 51820, "proto": "udp"},
+    {"name": "OpenVPN-TCP", "port": 443, "proto": "tcp"},
+    {"name": "IKEv2", "port": 500, "proto": "udp"},
+    {"name": "OpenVPN-UDP", "port": 1194, "proto": "udp"},
+]
+
+def test_protocol_speed(protocol):
+    """Test speed with specific VPN protocol."""
+    config = f"/etc/vpn/{protocol['name'].lower()}.conf"
+
+    # Connect with protocol
+    subprocess.run([f"vpn-connect", config], capture_output=True)
+
+    # Measure speed
+    result = subprocess.run(["speedtest"], capture_output=True, text=True)
+    speed = float(result.stdout.split('\n')[0])
+
+    # Disconnect
+    subprocess.run(["vpn-disconnect"], capture_output=True)
+
+    return speed
+
+# Find fastest protocol
+best_protocol = max(protocols, key=test_protocol_speed)
+print(f"Fastest protocol: {best_protocol['name']}")
+```
+
+### Split Tunneling Optimization
+
+If allowed by your ISP and threat model, route only traffic requiring privacy through the VPN:
+
+```bash
+# Linux systemd-networkd split tunneling
+[Match]
+Name=tun0
+
+[Route]
+Destination=10.0.0.0/8
+Gateway=10.8.0.1
+```
+
+This reduces VPN throughput pressure on ISP throttling, though it exposes non-VPN traffic to ISP monitoring.
+
+## Regulatory Context
+
+In several jurisdictions, ISP throttling of specific traffic types has legal implications. The FCC's 2015 Open Internet rules prohibited blocking and throttling, though the rules faced legal challenges. In Europe, the Specialised Services Framework allows ISP traffic management but requires transparency.
+
+Document throttling for potential complaints to regulatory bodies:
+
+```markdown
+# ISP Throttling Complaint Documentation
+
+**Date**: 2026-03-21
+**ISP**: [Your ISP Name]
+**Evidence**:
+- Baseline speed without VPN: 100 Mbps
+- Speed with OpenVPN UDP port 1194: 15 Mbps (85% reduction)
+- Speed with OpenVPN TCP port 443: 92 Mbps (8% reduction)
+- Speed with non-VPN traffic: 98 Mbps
+
+**Conclusion**: Selective throttling of non-standard ports indicates deliberate VPN targeting
+```
+
 ## Related Reading
 
 - [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)

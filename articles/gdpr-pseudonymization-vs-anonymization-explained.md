@@ -157,6 +157,160 @@ Document pseudonymization keys and anonymization methods. This supports accounta
 
 Pseudonymization provides a practical balance for most developer scenarios—operational capability is maintained while data subject risk is demonstrably reduced. Anonymization becomes necessary when data leaves a controlled environment or when true data minimization is the goal. Apply both as layers in your data processing architecture based on your use case, regulatory requirements, and acceptable risk profile.
 
+## Re-Identification Risk Assessment
+
+The critical differentiator between pseudonymization and anonymization is irreversibility. GDPR regulators assess whether techniques truly prevent re-identification even with access to auxiliary information. The following scenario illustrates the difference:
+
+A telecom company collects CDR (Call Detail Record) data. They pseudonymize by replacing phone numbers with random tokens. However, if an attacker obtains the customer list with phone numbers, they can re-identify records. This pseudonymization failed the irreversibility test.
+
+True anonymization of the same dataset would remove temporal patterns, merge calls into time buckets, and aggregate across regions—making it impossible to reconstruct individual communication patterns even with auxiliary data.
+
+## Checking Anonymization Quality
+
+Before releasing data, validate that anonymization is actually irreversible. Perform re-identification attacks against your anonymized dataset:
+
+```python
+import pandas as pd
+import itertools
+
+def assess_re_identification_risk(anonymized_df, quasi_identifiers):
+    """
+    Estimate re-identification risk using uniqueness analysis.
+    Higher uniqueness = higher re-identification risk.
+    """
+    # Check how many records are unique combinations of quasi-identifiers
+    unique_records = anonymized_df.groupby(quasi_identifiers).size()
+
+    # Records that appear only once are uniquely identifiable
+    unique_count = (unique_records == 1).sum()
+    uniqueness_rate = unique_count / len(unique_records)
+
+    return {
+        'uniqueness_rate': uniqueness_rate,
+        'unique_records': unique_count,
+        'risk_level': 'high' if uniqueness_rate > 0.5 else 'medium' if uniqueness_rate > 0.1 else 'low'
+    }
+
+# Example usage
+df = pd.DataFrame({
+    'age_group': ['20-30', '20-30', '31-40', '31-40'],
+    'zipcode': ['10001', '10001', '10002', '10002'],
+    'gender': ['M', 'M', 'F', 'F']
+})
+
+risk = assess_re_identification_risk(df, ['age_group', 'zipcode', 'gender'])
+print(f"Re-identification risk: {risk['risk_level']}")
+```
+
+If your anonymization yields high uniqueness rates, the technique is insufficient.
+
+## Regulatory Precedent
+
+The European Data Protection Board (EDPB) published guidance in Opinion 2014/905 clarifying that truly anonymized data is outside GDPR scope. However, they also warned that many techniques marketed as anonymization fail to achieve irreversibility in practice. The burden is on your organization to prove irreversibility, not on regulators to prove reversibility.
+
+Courts have reinforced this: in the Breyer v. Bundesrepublik Deutschland case, the German Federal Constitutional Court determined that dynamic IP addresses could still constitute personal data because they could be linked back to individuals through ISPs. This suggests that proximity to reversibility through auxiliary data is sufficient for GDPR to apply.
+
+## Practical Architecture Patterns
+
+### Data Tier Architecture
+
+Implement pseudonymization at the database level using separate tiers:
+
+```sql
+-- Tier 1: Original data (behind strict access controls)
+CREATE TABLE PII (
+    user_id UUID PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    phone TEXT NOT NULL
+);
+
+-- Tier 2: Pseudonymized data (accessible to analytics team)
+CREATE TABLE ANALYTICS (
+    user_token TEXT PRIMARY KEY,
+    cohort TEXT,
+    usage_metrics JSONB
+);
+
+-- Token mapping (encrypted, restricted access)
+CREATE TABLE TOKEN_MAPPING (
+    user_token TEXT PRIMARY KEY,
+    user_id_encrypted BYTEA,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+This architecture separates concerns: the analytics team never accesses original data, but authorized staff can perform re-identification when necessary.
+
+### Event-Driven Anonymization
+
+For systems requiring time-based anonymization, implement triggers:
+
+```python
+from datetime import datetime, timedelta
+import asyncio
+
+class ScheduledAnonymizer:
+    def __init__(self, db, retention_days=90):
+        self.db = db
+        self.retention_days = retention_days
+
+    async def anonymize_old_records(self):
+        """
+        Automatically anonymize records older than retention period.
+        """
+        cutoff_date = datetime.now() - timedelta(days=self.retention_days)
+
+        # Find records to anonymize
+        old_records = await self.db.query(
+            "SELECT id FROM events WHERE created_at < $1",
+            cutoff_date
+        )
+
+        # Apply anonymization
+        for record_id in old_records:
+            await self.anonymize_record(record_id)
+
+    async def anonymize_record(self, record_id):
+        """Replace identifiable data with generalized values."""
+        await self.db.execute(
+            "UPDATE events SET name = 'REDACTED', email = 'REDACTED' WHERE id = $1",
+            record_id
+        )
+```
+
+## Compliance Demonstration
+
+Document your technique choice for GDPR Article 30 records of processing:
+
+```markdown
+# Processing Activity: User Analytics
+
+## Data Pseudonymization
+
+**Technique**: Hashed email addresses with separate key storage
+
+**Reversibility**: Keys stored in separate, access-controlled system with audit logging
+
+**Risk Mitigation**:
+- Keys encrypted with HSM-backed key management
+- Key access limited to authorized personnel with logging
+- Regular re-identification risk assessments
+
+**Regulatory Basis**: GDPR Article 4(11) - Pseudonymized personal data
+
+---
+
+## Data Anonymization
+
+**Technique**: Age range generalization + geographic bucketing
+
+**Irreversibility Assessment**: Re-identification testing shows <0.01% risk of unique identification
+
+**Documentation**: EDPB Opinion 2014/905 - Data is outside GDPR scope
+
+**Validation**: Annual third-party audit confirms irreversibility
+```
 
 ## Related Reading
 

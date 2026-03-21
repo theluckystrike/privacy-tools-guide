@@ -159,6 +159,137 @@ Proton Pass makes sense when you prioritize:
 
 For production applications, consider dedicated secrets management solutions like HashiCorp Vault or AWS Secrets Manager. Password managers serve personal credential management well, but infrastructure secrets benefit from purpose-built tools with rotation capabilities, audit trails, and fine-grained access control.
 
+## Password Generation and Strength Testing
+
+Both managers offer password generation, but their approaches differ.
+
+Bitwarden's password generator provides customizable length, character types, and passphrase generation using EFF wordlists:
+
+```javascript
+// Bitwarden password generation options
+const generatorConfig = {
+  type: 'password',
+  length: 32,
+  uppercase: true,
+  lowercase: true,
+  numbers: true,
+  symbols: true,
+  excludeAmbiguous: true,
+};
+```
+
+Proton Pass similarly generates strong passwords but provides less fine-grained customization in its free tier.
+
+Test password entropy before storing:
+
+```bash
+# Estimate password entropy
+python3 -c "
+import math
+
+password = 'your_generated_password'
+charset_size = 94  # All printable ASCII
+
+entropy = len(password) * math.log2(charset_size)
+print(f'Entropy: {entropy:.2f} bits')
+print(f'Time to crack (10^12 guesses/sec): {2**entropy / (10**12 * 3600)} hours')
+"
+```
+
+For most purposes, 128 bits of entropy (about 22 random characters) is sufficient. Bitwarden's defaults meet this standard.
+
+## Audit and Certification Status
+
+Security audits provide independent verification of claimed protections.
+
+**Bitwarden**: Has undergone multiple third-party audits by Cure53 and others. Results are published publicly, showing no critical vulnerabilities. The most recent (2023) audit found the codebase follows security best practices.
+
+**Proton Pass**: As of 2026, published audit results are limited compared to Bitwarden. Proton's broader ecosystem (Mail, VPN, Drive) has undergone audits, but Pass-specific audits are less visible.
+
+For compliance-sensitive environments, Bitwarden's transparent audit trail is a significant advantage.
+
+## Breach Response and Transparency
+
+How managers handle security incidents reveals their commitment to transparency.
+
+Bitwarden's 2019 incident (accidentally logging some server data) was disclosed publicly with detailed remediation steps. No user credentials were compromised.
+
+Proton's incident history is similarly transparent across their services.
+
+Both managers maintain security pages documenting known vulnerabilities and fixes. Choose based on which organization's transparency practices align with your requirements.
+
+## Cost and Plan Breakdown
+
+### Bitwarden Pricing
+
+- Free: Password manager + browser extension + mobile apps
+- Premium: $0.99/month - 1TB encrypted file storage, TOTP authentication, emergency access
+- Families (5 users): $3.99/month
+- Team/Business: $3/user/month
+
+The free tier is remarkably complete; premium adds modest conveniences rather than essential features.
+
+### Proton Pass Pricing
+
+- Free: Password manager with limited features
+- Premium: $1.99/month or bundled with Proton Unlimited (€3.99/month for Mail + Drive + Pass + VPN)
+- Proton Unlimited ($12.99/year or €12.99/month) includes all Proton services
+
+Proton's value proposition strengthens if you use multiple Proton services. The bundled pricing is competitive for users already committed to the Proton ecosystem.
+
+## Integration Scenarios
+
+### Development Team Usage
+
+For development teams managing shared credentials:
+
+```bash
+# Bitwarden team organization
+# Each developer gets vault access to shared credentials
+
+# Using Bitwarden CLI in CI/CD
+bw login
+bw unlock --raw > ~/.bw-session.env
+export BW_SESSION=$(cat ~/.bw-session.env)
+
+# Retrieve credentials in pipeline
+DATABASE_PASSWORD=$(bw get item "prod-database" | jq -r '.login.password')
+```
+
+Bitwarden's mature API and CLI make this pattern secure and manageable.
+
+Proton Pass doesn't yet offer equivalent CI/CD integration, limiting its usefulness in development workflows.
+
+### Shared Family Credentials
+
+For families needing to share streaming service credentials:
+
+```
+Bitwarden Family Organization → Create shared vault
+- View: Parents can see streaming passwords
+- Edit: Children can use but not change credentials
+```
+
+Both support sharing, but Bitwarden's UI for family vault management feels more polished in 2026.
+
+## Final Recommendation Framework
+
+Choose **Bitwarden** if you:
+- Need self-hosting flexibility
+- Value open-source transparency
+- Require CLI/API automation
+- Operate development infrastructure
+- Prefer simpler pricing
+
+Choose **Proton Pass** if you:
+- Already use Proton's ecosystem (Mail, Drive, VPN)
+- Prioritize absolute best-in-class key derivation
+- Want integrated data protection across services
+- Prefer simplicity over advanced features
+- Accept closed-source components
+
+For most developers and technical users, Bitwarden's mature ecosystem and automation capabilities provide better long-term value in 2026.
+
 ## Related Reading
 
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
