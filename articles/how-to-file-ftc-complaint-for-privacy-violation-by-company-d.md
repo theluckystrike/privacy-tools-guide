@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-file-ftc-complaint-for-privacy-violation-by-company-d/
 categories: [guides, security, enterprise]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
