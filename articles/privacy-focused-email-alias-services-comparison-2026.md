@@ -5,7 +5,7 @@ author: "Privacy Tools Guide"
 categories: [security, guides]
 tags: [privacy-tools-guide, privacy]
 title: "Privacy-Focused Email Alias Services Comparison 2026"
-description: Compare email alias services SimpleLogin, AnonAddy, and Firefox Relay. Features, pricing, encryption, and real-world privacy performance testing.
+description: "Compare email alias services SimpleLogin, AnonAddy, and Firefox Relay. Features, pricing, encryption, and real-world privacy performance testing."
 permalink: /articles/privacy-focused-email-alias-services-comparison-2026/
 reviewed: true
 score: 9

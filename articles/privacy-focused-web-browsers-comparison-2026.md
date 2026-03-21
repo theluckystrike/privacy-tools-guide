@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Web Browsers Comparison 2026"
-description: Compare top privacy browsers (Brave, Firefox, Tor, Mullvad, LibreWolf) with security features, pricing, performance, and real-world testing.
+description: "Compare top privacy browsers (Brave, Firefox, Tor, Mullvad, LibreWolf) with security features, pricing, performance, and real-world testing."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
