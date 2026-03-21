@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Verify a VPN Is Actually Encrypting Your Traffic"
-description: "Practical guide to verifying your VPN is actually encrypting traffic. Covers Wireshark inspection, DNS leak tests, kill switch verification, and WebRTC detection."
+description: "Practical guide to verifying your VPN is actually encrypting traffic. Covers Wireshark inspection, DNS leak tests, kill switch verification, and WebRTC."
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-verify-a-vpn-is-actually-encrypting-your-traffic/
@@ -570,6 +570,11 @@ If any tests fail: VPN has a leak, contact support or switch providers
 Trust nothing - test everything. These five tests give you complete visibility into whether your VPN actually works. A VPN makes promises; these tests verify those promises.
 
 Run the verification checklist quarterly. VPN configurations change, updates introduce regressions, and new leak vectors emerge. Regular testing catches problems before they compromise your privacy.
+
+
+## Related Reading
+
+- [Privacy Tools Guide Hub](/privacy-tools-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
