@@ -180,6 +180,171 @@ Second, establish a strict policy for handling sensitive operations. Never acces
 
 Third, maintain situational awareness. Before connecting to any network, observe your surroundings for suspicious activity. Attackers often operate from vehicles or inconspicuous positions near target locations. If multiple networks share identical names in a small area, treat the environment as potentially hostile.
 
+## Advanced Monitoring with Wireshark Deep Packet Inspection
+
+For developers and security professionals, Wireshark enables analysis beyond simple network enumeration. Configure Wireshark to detect attack indicators by monitoring frame patterns that indicate deauthentication attacks or unauthorized access points:
+
+```bash
+# Capture wireless traffic with tcpdump while in monitor mode
+sudo tcpdump -i wlan0mon -w capture.pcap -c 10000
+
+# Analyze with Wireshark
+wireshark capture.pcap &
+```
+
+In Wireshark, apply these filters to identify attacks:
+
+```
+# Find deauthentication frames (frequent deauth = active attack)
+wlan.fc.type == 0x0c && wlan.fc.subtype == 0x0c
+
+# Find disassociation frames (another attack indicator)
+wlan.fc.type == 0x0c && wlan.fc.subtype == 0x0a
+
+# Find SSID probes from client devices
+wlan_mgt.ssid == "target_network" && wlan.fc.type == 0x00
+```
+
+When analyzing captures, watch for patterns: legitimate networks rarely send burst deauthentication frames. If you see 50+ deauth frames in a minute targeting specific MAC addresses, an active attack is underway.
+
+## Threat Modeling for Different Environments
+
+Different locations require different security postures. Tailor your protection strategy to your environment:
+
+**Coffee Shop/Co-working Space**: Medium threat. Enable VPN before connecting. Use certificate pinning for sensitive services. Monitor network behavior with `netstat` periodically.
+
+```bash
+# Monitor established connections
+netstat -tuln | grep ESTABLISHED | wc -l
+```
+
+**Airport/Transit Hub**: High threat. Assume hostile network. Use VPN with kill switch. Do not access financial or development systems. Only access read-only content.
+
+**Corporate Network**: Medium-high threat. Assume network is monitored. Use VPN if policy permits. Enable host-based firewall with strict egress rules.
+
+```bash
+# macOS pf firewall example for high-risk networks
+echo "pass in all" | sudo pfctl -ef -
+```
+
+**Public Event (Conference, Protest)**: High threat. These venues attract sophisticated attackers and state actors. Use Tor Browser for sensitive activities. Prefer wired connections where available. Consider air-gapping sensitive devices.
+
+## Implementation: Building a Secure Work Environment
+
+For developers who frequently work in hostile environments, implement a dedicated secure workstation setup:
+
+```bash
+#!/bin/bash
+# secure-workstation.sh - Initialize secure work environment
+
+# 1. Enable firewall
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# 2. Disable auto-connect
+nmcli connection modify $(nmcli connection list | awk '{print $1}' | head -1) connection.autoconnect no
+
+# 3. Create firewall rules blocking private ranges
+sudo ufw deny from 192.168.0.0/16 to any
+sudo ufw deny from 10.0.0.0/8 to any
+sudo ufw deny from 172.16.0.0/12 to any
+
+# 4. Require VPN for internet
+VPN_GATEWAY=$(ip route | grep tun0 | awk '{print $3}')
+sudo ufw allow out to $VPN_GATEWAY
+sudo ufw deny out to any port 53  # Prevent DNS leaks
+sudo ufw allow out 1.1.1.1 port 53  # Only allow Cloudflare DNS
+
+echo "Secure workstation initialized"
+```
+
+Run this script before connecting to untrusted networks to establish a defense-in-depth posture.
+
+## Monitoring Tools Comparison
+
+| Tool | Capability | Best For | Learning Curve |
+|------|-----------|----------|-----------------|
+| aircrack-ng | Low-level WiFi analysis | Penetration testing | Moderate |
+| iwlist | Basic network scanning | Quick checks | Easy |
+| nmcli | NetworkManager control | Daily work | Easy |
+| Wireshark | Deep packet inspection | Forensic analysis | Steep |
+| kismet | Automated detection | Continuous monitoring | Moderate |
+
+Kismet deserves special mention—it runs in the background and automatically detects suspicious networks:
+
+```bash
+# Install kismet on Ubuntu
+sudo apt install kismet
+
+# Run as daemon
+sudo kismet
+```
+
+Kismet maintains a database of known good networks and flags anomalies like unexpected MAC addresses or duplicate SSIDs.
+
+## Detection Automation Script
+
+Create a continuous monitoring script that alerts you in real-time:
+
+```python
+#!/usr/bin/env python3
+import subprocess
+import hashlib
+import time
+import signal
+import sys
+
+class EvilTwinMonitor:
+    def __init__(self):
+        self.known_networks = {}
+        self.running = True
+        signal.signal(signal.SIGINT, self.shutdown)
+
+    def get_networks(self):
+        """Get all visible networks."""
+        result = subprocess.run(
+            ['sudo', 'iw', 'dev', 'wlan0', 'scan'],
+            capture_output=True, text=True
+        )
+        networks = {}
+        for line in result.stdout.split('\n'):
+            if 'SSID:' in line:
+                ssid = line.split('SSID:')[1].strip()
+                networks[ssid] = hashlib.md5(ssid.encode()).hexdigest()[:8]
+        return networks
+
+    def check_for_threats(self, networks):
+        """Identify suspicious networks."""
+        for ssid, sig in networks.items():
+            if ssid not in self.known_networks:
+                print(f"[NEW] SSID detected: {ssid}")
+                self.known_networks[ssid] = sig
+            elif self.known_networks[ssid] != sig:
+                print(f"[ALERT] {ssid} signature changed - possible evil twin!")
+
+    def monitor_loop(self):
+        """Continuous monitoring loop."""
+        while self.running:
+            try:
+                networks = self.get_networks()
+                self.check_for_threats(networks)
+                time.sleep(30)
+            except Exception as e:
+                print(f"Error: {e}")
+                time.sleep(30)
+
+    def shutdown(self, sig, frame):
+        print("\nShutting down monitor...")
+        self.running = False
+        sys.exit(0)
+
+if __name__ == '__main__':
+    monitor = EvilTwinMonitor()
+    monitor.monitor_loop()
+```
+
+Run this continuously on a laptop used in public spaces for real-time threat detection.
 
 ## Related Articles
 

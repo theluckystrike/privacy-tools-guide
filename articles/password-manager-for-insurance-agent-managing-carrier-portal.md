@@ -181,6 +181,266 @@ Consider complementing your password manager with:
 
 For teams, consider Bitwarden Organizations or 1Password Business to manage shared carrier credentials with appropriate access controls and audit logging.
 
+## Advanced: Automation with Password Manager APIs
+
+For high-volume management, integrate your password manager with business tools:
+
+```python
+#!/usr/bin/env python3
+import bitwarden_cli
+import requests
+import json
+
+class InsuranceCredentialManager:
+    def __init__(self, master_password):
+        self.bw = bitwarden_cli.BitwardenCLI(master_password)
+
+    def sync_carrier_list_to_vault(self, carrier_spreadsheet_url):
+        """Automatically create password entries from carrier list."""
+        response = requests.get(carrier_spreadsheet_url)
+        carriers = response.json()
+
+        for carrier in carriers:
+            # Check if entry exists
+            existing = self.bw.list_items(f"--search {carrier['name']}")
+
+            if not existing:
+                # Create new entry
+                entry = {
+                    "type": "login",
+                    "name": f"{carrier['name']} Portal",
+                    "login": {
+                        "username": carrier['agent_username'],
+                        "password": self.generate_secure_password(),
+                        "uri": carrier['portal_url']
+                    },
+                    "notes": f"Carrier: {carrier['name']}\nAgency: {carrier['agency_code']}",
+                    "fields": [
+                        {
+                            "name": "Agency Code",
+                            "value": carrier['agency_code'],
+                            "type": "text"
+                        },
+                        {
+                            "name": "NPN",
+                            "value": carrier['npn'],
+                            "type": "text"
+                        }
+                    ]
+                }
+
+                self.bw.create_item(entry)
+                print(f"Created entry for {carrier['name']}")
+
+    def generate_secure_password(self, length=32):
+        """Generate cryptographically secure password."""
+        import secrets
+        import string
+
+        alphabet = string.ascii_letters + string.digits + "!@#$%^&*"
+        return ''.join(secrets.choice(alphabet) for i in range(length))
+
+    def audit_passwords(self, days_since_change=90):
+        """Identify passwords not changed in N days."""
+        items = self.bw.list_items()
+
+        old_passwords = []
+        for item in items:
+            if 'login' in item and item['edit'] > days_since_change:
+                old_passwords.append({
+                    'name': item['name'],
+                    'days_old': item['edit']
+                })
+
+        return old_passwords
+
+# Usage
+manager = InsuranceCredentialManager('your-master-password')
+manager.sync_carrier_list_to_vault('https://api.company.com/carriers')
+old_passes = manager.audit_passwords(90)
+
+if old_passes:
+    print("Passwords needing update:")
+    for pwd in old_passes:
+        print(f"  {pwd['name']}: {pwd['days_old']} days old")
+```
+
+## Carrier Portal Credential Patterns
+
+Different carriers enforce different password policies. Create a reference matrix:
+
+```json
+{
+  "password_policies": {
+    "state_farm": {
+      "min_length": 8,
+      "max_length": 20,
+      "requires_uppercase": true,
+      "requires_numbers": true,
+      "requires_special": false,
+      "rotation_days": 90
+    },
+    "progressive": {
+      "min_length": 8,
+      "max_length": 128,
+      "requires_uppercase": true,
+      "requires_numbers": true,
+      "requires_special": true,
+      "rotation_days": 365
+    },
+    "allstate": {
+      "min_length": 6,
+      "max_length": 16,
+      "requires_uppercase": false,
+      "requires_numbers": true,
+      "requires_special": false,
+      "rotation_days": 180
+    }
+  }
+}
+```
+
+Store this reference alongside your credentials to generate compliant passwords:
+
+```python
+def generate_carrier_compliant_password(carrier_name, policy_file='policies.json'):
+    """Generate password matching carrier requirements."""
+    import json
+    import secrets
+    import string
+
+    with open(policy_file) as f:
+        policies = json.load(f)
+
+    policy = policies['password_policies'].get(carrier_name, {})
+
+    password_chars = []
+    if policy.get('requires_uppercase'):
+        password_chars.append(secrets.choice(string.ascii_uppercase))
+    if policy.get('requires_numbers'):
+        password_chars.append(secrets.choice(string.digits))
+    if policy.get('requires_special'):
+        password_chars.append(secrets.choice('!@#$%^&*'))
+
+    # Fill remainder with random characters
+    all_chars = string.ascii_letters + string.digits + ('!@#$%^&*' if policy.get('requires_special') else '')
+    min_len = policy.get('min_length', 8)
+
+    while len(password_chars) < min_len:
+        password_chars.append(secrets.choice(all_chars))
+
+    # Shuffle to avoid predictable patterns
+    secrets.SystemRandom().shuffle(password_chars)
+    return ''.join(password_chars[:policy.get('max_length', 32)])
+```
+
+## MFA Management for Multiple Portals
+
+Organize MFA across carrier portals:
+
+```bash
+#!/bin/bash
+# MFA backup codes management
+
+# Store MFA backup codes in encrypted notes
+bw create item secure-note \
+  --name "State Farm MFA Backup Codes" \
+  --notes "
+  Backup Codes (Generated: 2026-03-15)
+  Codes valid until account deletion
+
+  123456789012
+  234567890123
+  345678901234
+  456789012345
+  567890123456
+  678901234567
+  789012345678
+  890123456789
+
+  Expiration Check Date: 2027-03-15
+  " \
+  --favorite true
+
+# Encrypt backup codes file
+openssl enc -aes-256-cbc -in mfa_codes.txt -out mfa_codes.txt.enc
+
+# Store encrypted file reference in password manager
+bw create item secure-note \
+  --name "Encrypted MFA Backup Location" \
+  --notes "MFA codes stored at: /encrypted/mfa_codes.txt.enc"
+```
+
+## Handling Password Changes Across Portals
+
+Create a checklist for systematic password updates:
+
+```python
+class CarrierPasswordUpdateChecklist:
+    def __init__(self):
+        self.checklist = {
+            "state_farm": {
+                "portal_url": "https://agents.statefarm.com",
+                "password_change_location": "My Account > Change Password",
+                "estimated_time": "5 minutes",
+                "mfa_required": True,
+                "status": "pending"
+            },
+            "progressive": {
+                "portal_url": "https://agents.progressive.com",
+                "password_change_location": "Settings > Password",
+                "estimated_time": "3 minutes",
+                "mfa_required": True,
+                "status": "pending"
+            },
+            "allstate": {
+                "portal_url": "https://agents.allstateagent.com",
+                "password_change_location": "Profile > Security > Change Password",
+                "estimated_time": "4 minutes",
+                "mfa_required": False,
+                "status": "pending"
+            }
+        }
+
+    def mark_complete(self, carrier):
+        """Mark password change as complete."""
+        self.checklist[carrier]['status'] = 'complete'
+        self.checklist[carrier]['completed_date'] = str(datetime.now())
+
+    def get_pending_updates(self):
+        """List carriers requiring password updates."""
+        return [k for k, v in self.checklist.items() if v['status'] == 'pending']
+
+    def get_estimated_time(self):
+        """Calculate total time for all updates."""
+        pending = self.get_pending_updates()
+        return sum(self.checklist[c]['estimated_time'].split()[0] for c in pending)
+```
+
+## Compliance and Audit Logging
+
+Track credential access for compliance purposes:
+
+```bash
+#!/bin/bash
+# Audit credential access log
+
+# Enable credential access logging in Bitwarden
+bw config set --web-vault https://vault.bitwarden.com
+
+# View audit logs
+bw get organization audit > audit_log.json
+
+# Extract relevant entries
+jq '.[] | select(.type == "Access") | {date: .date, user: .user, resource: .resource}' audit_log.json
+
+# Monthly compliance report
+echo "=== CREDENTIAL ACCESS AUDIT ==="
+echo "Period: $(date +'%B %Y')"
+echo "Total Access Events: $(jq 'length' audit_log.json)"
+echo "Unique Users: $(jq -r '.[].user' audit_log.json | sort -u | wc -l)"
+echo "Portals Accessed: $(jq -r '.[].resource' audit_log.json | sort -u)"
+```
 
 ## Related Articles
 

@@ -182,6 +182,311 @@ For custom implementations, consider these Android security configurations:
 
 Signal provides an Android Service Library for developers integrating secure messaging into custom applications. The library handles key management, session establishment, and message encryption.
 
+## Advanced: Threat Model-Based Messaging Selection
+
+Choose apps based on your specific threat model:
+
+```python
+#!/usr/bin/env python3
+from enum import Enum
+from dataclasses import dataclass
+
+class ThreatModel(Enum):
+    CASUAL_PRIVACY = 1  # Protect from ISP/advertisers
+    SURVEILLANCE_STATE = 2  # Protect from government
+    HIGH_RISK = 3  # Activist/journalist/dissident
+    ENCRYPTION_STANDARD = 4  # Enterprise compliance
+
+@dataclass
+class MessagingApp:
+    name: str
+    forward_secrecy: bool
+    metadata_protection: bool
+    open_source: bool
+    requires_phone: bool
+    supports_groups: bool
+    supports_files: bool
+    threat_model_fit: list
+
+# Application database
+MESSAGING_APPS = [
+    MessagingApp(
+        name="Signal",
+        forward_secrecy=True,
+        metadata_protection=True,
+        open_source=True,
+        requires_phone=True,
+        supports_groups=True,
+        supports_files=True,
+        threat_model_fit=[
+            ThreatModel.CASUAL_PRIVACY,
+            ThreatModel.SURVEILLANCE_STATE,
+            ThreatModel.ENCRYPTION_STANDARD
+        ]
+    ),
+    MessagingApp(
+        name="XMPP+OMEMO",
+        forward_secrecy=True,
+        metadata_protection=True,
+        open_source=True,
+        requires_phone=False,
+        supports_groups=True,
+        supports_files=True,
+        threat_model_fit=[
+            ThreatModel.SURVEILLANCE_STATE,
+            ThreatModel.HIGH_RISK
+        ]
+    ),
+    MessagingApp(
+        name="WhatsApp",
+        forward_secrecy=True,
+        metadata_protection=False,
+        open_source=False,
+        requires_phone=True,
+        supports_groups=True,
+        supports_files=True,
+        threat_model_fit=[ThreatModel.CASUAL_PRIVACY]
+    ),
+    MessagingApp(
+        name="Telegram",
+        forward_secrecy=False,  # Only in Secret Chats
+        metadata_protection=False,
+        open_source=False,
+        requires_phone=True,
+        supports_groups=True,
+        supports_files=True,
+        threat_model_fit=[]  # Not recommended for security
+    )
+]
+
+def select_messaging_app(threat_model):
+    """Select appropriate messaging app for threat model."""
+    suitable_apps = [app for app in MESSAGING_APPS
+                    if threat_model in app.threat_model_fit]
+
+    if suitable_apps:
+        # Rank by feature completeness
+        ranked = sorted(suitable_apps,
+                       key=lambda x: sum([x.forward_secrecy, x.metadata_protection,
+                                        x.open_source, x.supports_groups]),
+                       reverse=True)
+        return ranked[0]
+    return None
+
+# Usage
+recommended = select_messaging_app(ThreatModel.HIGH_RISK)
+print(f"Recommended for high-risk: {recommended.name}")
+```
+
+## Signal Server Self-Hosting for Enterprise
+
+For organizations requiring complete control:
+
+```bash
+#!/bin/bash
+# Deploy Signal server on Ubuntu 20.04
+
+# Prerequisites
+sudo apt update
+sudo apt install -y docker.io docker-compose postgresql postgresql-contrib
+
+# Clone Signal server repository
+git clone https://github.com/signalapp/Signal-Server.git
+cd Signal-Server
+
+# Configure environment
+cat > .env << 'EOF'
+DOMAIN=your-signal-domain.com
+SIGNAL_POSTGRES_PASSWORD=$(openssl rand -base64 32)
+SIGNAL_REDIS_PASSWORD=$(openssl rand -base64 32)
+SIGNAL_KEYS_BACKUP_SERVICE_USER_AUTH_TOKEN=$(openssl rand -base64 32)
+EOF
+
+# Deploy
+docker-compose up -d
+
+# Verify deployment
+docker-compose logs signal-server | grep "Server started"
+
+# Configure TLS certificates
+# Use Let's Encrypt with certbot:
+sudo certbot certonly --standalone -d your-signal-domain.com
+
+# Update Signal server config with certificates
+cp /etc/letsencrypt/live/your-signal-domain.com/fullchain.pem ./certs/
+cp /etc/letsencrypt/live/your-signal-domain.com/privkey.pem ./certs/
+
+# Restart
+docker-compose restart signal-server
+```
+
+## Encrypted Backup and Account Recovery
+
+Implementing secure backup for messaging apps:
+
+```python
+#!/usr/bin/env python3
+import json
+import cryptography.fernet
+from datetime import datetime
+
+class SecureMessagingBackup:
+    def __init__(self, backup_password):
+        # Derive encryption key from password
+        salt = b'signal_backup_salt'  # Should be random
+        kdf = cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2(
+            algorithm=cryptography.hazmat.primitives.hashes.SHA256(),
+            length=32,
+            salt=salt,
+            iterations=100000,
+        )
+        key = kdf.derive(backup_password.encode())
+        self.cipher_suite = cryptography.fernet.Fernet(key)
+
+    def backup_signal_keys(self, keys_file):
+        """Backup Signal protocol keys to encrypted file."""
+        with open(keys_file, 'rb') as f:
+            keys_data = f.read()
+
+        encrypted = self.cipher_suite.encrypt(keys_data)
+
+        backup = {
+            'timestamp': datetime.now().isoformat(),
+            'app': 'Signal',
+            'backup_format': 'v1',
+            'encrypted_data': encrypted.decode()
+        }
+
+        with open('signal_backup.json', 'w') as f:
+            json.dump(backup, f)
+
+        print(f"Encrypted backup saved to signal_backup.json")
+
+    def restore_signal_keys(self, backup_file, restore_location):
+        """Restore Signal keys from encrypted backup."""
+        with open(backup_file) as f:
+            backup = json.load(f)
+
+        encrypted_data = backup['encrypted_data'].encode()
+        decrypted = self.cipher_suite.decrypt(encrypted_data)
+
+        with open(restore_location, 'wb') as f:
+            f.write(decrypted)
+
+        print(f"Keys restored to {restore_location}")
+
+# Usage
+backup = SecureMessagingBackup("your-secure-backup-password")
+backup.backup_signal_keys("~/.local/share/Signal/")
+```
+
+## Group Chat Security Considerations
+
+Managing encrypted group communications:
+
+```markdown
+# Group Chat Security Matrix
+
+## Signal Groups
+- Encryption: End-to-end (all members)
+- Admin control: Yes (creator can remove members)
+- Metadata: Minimal
+- Group limits: 500 members
+- Risk: Admin can see full member list
+
+## XMPP MUC (Multi-User Chat) with OMEMO
+- Encryption: Per-message encryption (complex distribution)
+- Admin control: Granular (roles, permissions)
+- Metadata: Exposed to MUC server
+- Group limits: Unlimited
+- Risk: Server sees all participants
+
+## WhatsApp Groups
+- Encryption: End-to-end (group keys)
+- Admin control: Yes (remove members, change settings)
+- Metadata: Extensive collection (member joins/leaves, timestamps)
+- Group limits: 256 members
+- Risk: Meta collects extensive group metadata
+```
+
+## Fallback Communication Protocols
+
+When primary messaging apps are unavailable:
+
+```bash
+#!/bin/bash
+# Fallback communication setup
+
+# 1. Email encryption (Signal-compatible)
+# Install: Openpgp4FDroid (or OpenKeychain on Android)
+sudo apt install gnupg2
+
+# Generate/export GPG public key
+gpg --gen-key
+gpg --armor --export user@example.com > public_key.asc
+
+# 2. XMPP with TLS
+# Client: Conversations or Blabber.im (Android)
+# Server: xmpp.example.com
+# TLS enforcement: Required
+
+# 3. Matrix/Riot.im (as last resort)
+# More decentralized than Signal, reasonable security
+# Client: Element.io
+# Server: matrix.example.com
+
+# 4. Briar (mesh network messaging)
+# Works without internet (Bluetooth/WiFi direct)
+# Install from: https://briarproject.org/
+```
+
+## Android App Permissions Audit for Messaging Apps
+
+Verify that messaging apps don't request unnecessary permissions:
+
+```bash
+#!/bin/bash
+# audit-messaging-app-permissions.sh
+
+MESSAGING_APPS=("org.signal.android" "org.briarproject.briar.android" "org.conversations.im")
+
+for app in "${MESSAGING_APPS[@]}"; do
+    echo "=== Auditing $app ==="
+
+    # Get app permissions
+    adb shell dumpsys package $app | grep "permission" | head -20
+
+    # Check for suspicious permissions
+    adb shell pm list permissions -g | grep "$app"
+done
+
+# Recommended MINIMAL permissions:
+# - READ_CONTACTS (if contact sync needed)
+# - CALL_PHONE (if VoIP enabled)
+# - CAMERA/RECORD_AUDIO (if calling enabled)
+# - INTERNET
+# - BIND_NOTIFICATION_LISTENER_SERVICE
+
+# RED FLAGS if app also requests:
+# - READ_SMS/SEND_SMS
+# - READ_CALL_LOG
+# - ACCESS_FINE_LOCATION
+# - READ_CALENDAR
+# - PACKAGE_USAGE_STATS
+```
+
+## Comparing Messaging App Cryptographic Protocols
+
+Technical comparison of underlying encryption:
+
+| Protocol | Key Exchange | Encryption | Authentication | Forward Secrecy |
+|----------|--------------|-----------|-----------------|-----------------|
+| Signal Protocol | X3DH | AES-256-GCM | HMAC-SHA256 | Yes (Double Ratchet) |
+| OMEMO | X3DH variant | AES-128-CBC | GCM | Yes (Double Ratchet) |
+| MTProto 2.0 | Custom DH | AES-256-IGE | Custom | No (default chats) |
+| TLS 1.3 | ECDHE | AES-256-GCM | ECDSA | Yes (limited) |
+
+**Key Insight**: Signal and OMEMO use identical underlying cryptography (Double Ratchet). The difference is metadata protection and deployment model.
 
 ## Related Articles
 

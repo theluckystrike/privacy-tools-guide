@@ -181,6 +181,203 @@ If you discover leaks, several fixes are available:
 4. **Use a different VPN protocol**: Some protocols handle leaks better than others (WireGuard typically performs well)
 5. **Consider custom DNS**: Configure your system to use privacy-focused DNS servers (like Cloudflare 1.1.1.1 or Quad9) that support DNS-over-HTTPS
 
+## Comprehensive Leak Testing Script
+
+Automate all verification tests into a single comprehensive script:
+
+```bash
+#!/bin/bash
+# Complete VPN verification suite
+
+echo "=== VPN LEAK VERIFICATION SUITE ==="
+echo "Start time: $(date)"
+echo ""
+
+# Test 1: IP Address Verification
+echo "[TEST 1] IP Address Detection"
+REAL_IP=$(curl -s https://api.ipify.org)
+echo "Real IP: $REAL_IP"
+
+VPN_IP=$(curl -s --socks5 127.0.0.1:9050 https://api.ipify.org 2>/dev/null || echo "SOCKS failed")
+echo "VPN IP: $VPN_IP"
+
+if [ "$REAL_IP" != "$VPN_IP" ]; then
+    echo "[PASS] IP addresses differ"
+else
+    echo "[FAIL] IP addresses match - possible leak"
+fi
+
+# Test 2: DNS Leak Detection
+echo ""
+echo "[TEST 2] DNS Leak Detection"
+echo "Resolving google.com..."
+nslookup google.com | grep "^Server:"
+
+# Test 3: WebRTC Leak Detection
+echo ""
+echo "[TEST 3] WebRTC Leak Detection (requires browser)"
+echo "Visit https://browserleaks.com/webrtc in your VPN browser"
+echo "Check for IP addresses outside VPN range"
+
+# Test 4: IPv6 Leak Detection
+echo ""
+echo "[TEST 4] IPv6 Leak Detection"
+IPV6=$(curl -s https://ipv6.icanhazip.com 2>/dev/null || echo "No IPv6")
+echo "IPv6 Address: $IPV6"
+
+# Test 5: Routing Path Verification
+echo ""
+echo "[TEST 5] Traceroute Analysis"
+echo "Tracing route to 8.8.8.8..."
+traceroute -m 5 8.8.8.8 | head -10
+
+# Test 6: Port Leak Detection
+echo ""
+echo "[TEST 6] Port Scan for Leaks"
+netstat -tuln | grep ESTABLISHED | wc -l
+echo "Established connections (should all be to VPN server)"
+
+echo ""
+echo "=== VERIFICATION COMPLETE ==="
+```
+
+## Geographic Bypass Verification
+
+For censorship bypass validation, test whether you can access services blocked in your region:
+
+```bash
+#!/bin/bash
+# Test access to commonly blocked services
+
+BLOCKED_SITES=(
+    "https://news.ycombinator.com"      # Blocked in some countries
+    "https://www.reddit.com"            # Blocked in some regions
+    "https://www.bbc.com"               # Blocked in some countries
+    "https://www.wikipedia.org"         # Blocked in some regions
+)
+
+for site in "${BLOCKED_SITES[@]}"; do
+    echo "Testing access to $site..."
+
+    # Test without VPN
+    response=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 5 "$site")
+    echo "  Direct: HTTP $response"
+
+    # Test with VPN (requires VPN setup)
+    vpn_response=$(curl -s -o /dev/null -w "%{http_code}" --socks5 127.0.0.1:9050 "$site")
+    echo "  Via VPN: HTTP $vpn_response"
+
+    if [ "$response" != "200" ] && [ "$vpn_response" = "200" ]; then
+        echo "  [PASS] Bypass successful"
+    else
+        echo "  [CHECK] Verify manually"
+    fi
+
+    echo ""
+done
+```
+
+## Advanced: Traffic Flow Verification with tcpdump
+
+For technical users, analyze actual packet flow to confirm encryption:
+
+```bash
+# Start packet capture on VPN interface
+sudo tcpdump -i tun0 -w vpn_traffic.pcap -c 1000 "tcp or udp"
+
+# Stop capture with Ctrl+C, then analyze
+file vpn_traffic.pcap
+strings vpn_traffic.pcap | head -20
+
+# Look for plaintext data (encrypted traffic shows random bytes)
+# If you see recognizable text, encryption may have failed
+```
+
+All encrypted VPN traffic should appear as random bytes when captured. If you see recognizable strings like HTTP headers or domain names, the traffic is not properly encrypted.
+
+## Censorship Detection: Identifying Block Methods
+
+Different censorship methods require different verification approaches:
+
+| Block Method | Detection Technique | VPN Effectiveness |
+|--------------|-------------------|-------------------|
+| IP Blocking | Direct access fails, traceroute blocked | High |
+| DNS Blocking | nslookup fails, alternative DNS needed | High |
+| DPI (Deep Packet Inspection) | Connections reset after handshake | Medium |
+| SNI Blocking | TLS handshake fails | Medium-High |
+| BGP Hijacking | Routes redirected to fake servers | Very High |
+
+For each method:
+
+```bash
+# 1. Test IP blocking
+curl -v https://BLOCKED_IP
+
+# 2. Test DNS blocking
+nslookup blocked.site.com
+dig blocked.site.com
+
+# 3. Test DPI detection (watch for connection reset)
+timeout 10 curl -v https://blocked-site.com
+
+# 4. Test SNI blocking (try ClientHello analysis)
+openssl s_client -connect blocked-site.com:443 -servername blocked-site.com
+```
+
+## VPN Provider Evaluation Checklist
+
+When selecting a VPN for censorship bypass, verify:
+
+```bash
+# 1. Check if VPN supports IPv6 (prevents IPv6 leaks)
+curl -6 https://ipv6.icanhazip.com
+
+# 2. Verify DNS-over-HTTPS availability
+nslookup -class=CH -type=TXT whoami.ds.akahelp.net
+
+# 3. Test multiple exit nodes
+# Switch to different VPN server and repeat IP tests
+
+# 4. Check for metadata leaks
+# Monitor firewall logs while connected
+sudo ufw status numbered
+
+# 5. Verify kill switch functionality
+# Manually kill VPN process and verify network access stops
+sudo kill -9 $(pgrep -f openvpn)
+```
+
+## Performance Impact Testing
+
+Beyond functionality, verify that bypass VPN maintains usable performance:
+
+```bash
+#!/bin/bash
+# Performance baseline establishment
+
+echo "=== VPN PERFORMANCE TEST ==="
+
+# Baseline: Direct connection
+echo "Direct connection speed test:"
+time curl -O https://speed.cloudflare.com/__down?bytes=10485760 &>/dev/null
+rm -f __down*
+
+# VPN connection
+echo "VPN connection speed test:"
+# Ensure VPN is active before this
+time curl -O https://speed.cloudflare.com/__down?bytes=10485760 &>/dev/null
+rm -f __down*
+
+# Latency test
+echo "Latency comparison:"
+echo "Direct ping to 8.8.8.8:"
+ping -c 5 8.8.8.8
+
+echo "VPN exit node ping:"
+ping -c 5 $(curl -s https://api.ipify.org)
+```
+
+For censorship bypass to be practical, VPN latency should remain under 200ms and bandwidth loss under 50% of direct connection speed.
 
 ## Related Articles
 

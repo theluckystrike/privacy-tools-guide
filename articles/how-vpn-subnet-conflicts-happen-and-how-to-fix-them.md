@@ -180,6 +180,273 @@ This ensures only properly routed traffic escapes, preventing leaks that cause c
 - **Prefer WireGuard**: WireGuard's simple design makes configuration clearer and conflicts easier to spot.
 - **Avoid 0.0.0.0/0 routes**: Unless necessary, use split tunneling to avoid overriding your entire routing table.
 
+## Diagnosing Conflicts with Advanced Tools
+
+When basic route inspection shows conflicts, use specialized tools:
+
+```bash
+# Linux: Use netstat with verbose output
+netstat -rne | sort -k1
+
+# macOS: Detailed route information
+netstat -nr | awk '{print $1}' | sort | uniq -c | grep -v "1 "
+
+# Windows: Route with gateway information
+route print -4 | findstr /C:"0.0.0.0"
+
+# Check MTU compatibility
+ip link show | grep mtu
+# Conflicts can occur if MTU differs: ensure all tunnels have MTU >= 1500
+```
+
+For complex environments, visualize your network topology:
+
+```python
+#!/usr/bin/env python3
+import subprocess
+import re
+
+def parse_routing_table():
+    """Parse routing table and identify overlaps."""
+    result = subprocess.run(
+        ['route', '-n'], capture_output=True, text=True
+    )
+
+    routes = {}
+    for line in result.stdout.split('\n'):
+        if '/' in line:
+            parts = line.split()
+            if len(parts) >= 3:
+                destination = parts[0]
+                gateway = parts[2]
+                routes[destination] = gateway
+
+    # Check for overlapping routes
+    destinations = list(routes.keys())
+    conflicts = []
+
+    from ipaddress import ip_network
+
+    for i, dest1 in enumerate(destinations):
+        for dest2 in destinations[i+1:]:
+            try:
+                net1 = ip_network(dest1, strict=False)
+                net2 = ip_network(dest2, strict=False)
+
+                if net1.overlaps(net2):
+                    conflicts.append((dest1, dest2, routes[dest1], routes[dest2]))
+            except:
+                pass
+
+    if conflicts:
+        print("[ALERT] Routing conflicts detected:")
+        for dest1, dest2, gw1, gw2 in conflicts:
+            print(f"  {dest1} via {gw1}")
+            print(f"  overlaps with")
+            print(f"  {dest2} via {gw2}")
+    else:
+        print("[OK] No routing conflicts detected")
+
+    return conflicts
+
+parse_routing_table()
+```
+
+## Dynamic Conflict Resolution
+
+Create a script that automatically detects and fixes conflicts:
+
+```bash
+#!/bin/bash
+# auto-fix-vpn-conflicts.sh
+
+CONFLICT_DETECTED=0
+
+# Function: Check for routing conflicts
+check_conflicts() {
+    echo "Checking for routing conflicts..."
+
+    # Get all routes
+    ROUTES=$(ip route show)
+
+    # Check for duplicate destinations
+    DUPLICATES=$(echo "$ROUTES" | awk '{print $1}' | sort | uniq -c | awk '$1 > 1')
+
+    if [ -n "$DUPLICATES" ]; then
+        CONFLICT_DETECTED=1
+        echo "[CONFLICT] Duplicate routes detected:"
+        echo "$DUPLICATES"
+    fi
+}
+
+# Function: Resolve conflicts
+resolve_conflicts() {
+    if [ $CONFLICT_DETECTED -eq 0 ]; then
+        return
+    fi
+
+    echo "Attempting automatic conflict resolution..."
+
+    # Remove all VPN-related routes
+    VPN_ROUTES=$(ip route | grep -E "tun|tap|wg")
+    echo "$VPN_ROUTES" | while read route; do
+        echo "Removing: $route"
+        DEST=$(echo $route | awk '{print $1}')
+        sudo ip route del $DEST 2>/dev/null || true
+    done
+
+    # Re-add routes with proper metrics
+    echo "Re-adding routes with conflict-free configuration..."
+    # This should be customized based on your VPN setup
+}
+
+# Main execution
+check_conflicts
+resolve_conflicts
+```
+
+## Windows-Specific Subnet Conflict Resolution
+
+Windows handles routing differently than Linux. Use these Windows-specific commands:
+
+```cmd
+# View all routes with interface details
+route print -4 -v
+
+# Find overlapping routes
+netsh routing ip show scope
+
+# Set route metrics to prioritize VPN
+netsh interface ipv4 set route "0.0.0.0/0" interface=VPN metric=10
+netsh interface ipv4 set route "0.0.0.0/0" interface=Ethernet metric=100
+
+# Force specific services through VPN
+netsh int ipv4 add route 10.0.0.0/8 1.2.3.4 metric=1
+
+# Verify routes
+route print | find "10.0.0.0"
+```
+
+## Multi-VPN Management Framework
+
+For users connecting to multiple VPNs simultaneously (corporate + privacy VPN):
+
+```python
+#!/usr/bin/env python3
+import subprocess
+from dataclasses import dataclass
+from typing import List
+
+@dataclass
+class VPNConnection:
+    name: str
+    tunnel_interface: str
+    tunnel_subnet: str
+    allowed_ips: List[str]
+    priority: int
+
+class MultiVPNManager:
+    def __init__(self, vpn_connections: List[VPNConnection]):
+        self.vpns = vpn_connections
+        self.vpns.sort(key=lambda x: x.priority)
+
+    def assign_non_overlapping_subnets(self):
+        """Assign subnets to VPNs without conflicts."""
+        used_subnets = set()
+
+        for vpn in self.vpns:
+            from ipaddress import ip_network
+
+            try:
+                net = ip_network(vpn.tunnel_subnet, strict=False)
+                if any(used_subnets & ip_network(f"{net.network_address}/{net.prefixlen}")):
+                    print(f"[CONFLICT] {vpn.name} subnet conflicts with existing VPN")
+                    # Assign alternative subnet
+                    alt_subnet = self.find_free_subnet(used_subnets)
+                    print(f"  Reassigning to {alt_subnet}")
+                    vpn.tunnel_subnet = alt_subnet
+
+                used_subnets.add(vpn.tunnel_subnet)
+            except Exception as e:
+                print(f"Error processing {vpn.name}: {e}")
+
+    def find_free_subnet(self, used_subnets):
+        """Find an available /24 subnet."""
+        from ipaddress import ip_network
+
+        for i in range(200, 255):
+            candidate = f"10.{i}.0.0/24"
+            if candidate not in used_subnets:
+                return candidate
+
+        return "10.255.0.0/24"
+
+    def generate_config(self):
+        """Generate conflict-free VPN configuration."""
+        for vpn in self.vpns:
+            print(f"\n# {vpn.name}")
+            print(f"Interface: {vpn.tunnel_interface}")
+            print(f"Subnet: {vpn.tunnel_subnet}")
+            print(f"AllowedIPs: {', '.join(vpn.allowed_ips)}")
+
+# Usage
+vpns = [
+    VPNConnection(
+        name="Corporate VPN",
+        tunnel_interface="tun0",
+        tunnel_subnet="10.0.0.0/24",
+        allowed_ips=["10.0.0.0/8", "172.16.0.0/12"],
+        priority=1
+    ),
+    VPNConnection(
+        name="Privacy VPN",
+        tunnel_interface="tun1",
+        tunnel_subnet="192.168.200.0/24",
+        allowed_ips=["0.0.0.0/0"],
+        priority=2
+    )
+]
+
+manager = MultiVPNManager(vpns)
+manager.assign_non_overlapping_subnets()
+manager.generate_config()
+```
+
+## Testing Subnet Conflict Fixes
+
+After implementing fixes, verify connectivity:
+
+```bash
+#!/bin/bash
+# Verify subnet conflict resolution
+
+echo "=== SUBNET CONFLICT VERIFICATION ==="
+
+# 1. Test connectivity to each VPN
+echo "Testing VPN 1 connectivity..."
+ping -c 3 10.0.0.1 && echo "  [OK]" || echo "  [FAIL]"
+
+echo "Testing VPN 2 connectivity..."
+ping -c 3 10.1.0.1 && echo "  [OK]" || echo "  [FAIL]"
+
+# 2. Verify routing decisions
+echo ""
+echo "Route table:"
+ip route show | grep -E "tun|10\."
+
+# 3. Test split tunneling works
+echo ""
+echo "Testing split tunnel traffic..."
+# Should route to VPN 1
+curl -s https://api.ipify.org --interface 10.0.0.2
+# Should route to VPN 2
+curl -s https://api.ipify.org --interface 10.1.0.2
+
+# 4. Verify no default route conflicts
+echo ""
+echo "Checking default route:"
+ip route show | grep "^default"
+```
 
 ## Related Articles
 
