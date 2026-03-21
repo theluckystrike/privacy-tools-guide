@@ -175,6 +175,124 @@ Verify disappearing messages work correctly before relying on them for sensitive
 
 Perform this test on each device type you use, as deletion behavior varies slightly between platforms.
 
+## Disappearing Messages with Signal Groups
+
+Group conversations have different disappearing message behavior than one-on-one chats:
+
+**Group timer behavior:**
+- Timer is set per-group, not per-message
+- All group members see the same timer duration
+- Messages disappear for everyone simultaneously
+- Group admins can change the timer at any time
+
+**Implementation in groups:**
+
+1. Open the group conversation
+2. Click the group name at the top
+3. Select "Disappearing messages"
+4. Choose timer duration (affects all future messages)
+5. Past messages are not affected by timer changes
+
+**Important caveat:** In groups, one compromised member's device could screenshot messages before deletion. The disappearing timer only protects against server-side log retention, not against active recording by other members.
+
+For truly sensitive group communications, combine disappearing messages with other practices:
+- Use Signal's disappearing messages primarily for ephemeral group chat
+- For sensitive discussions, use one-on-one conversations instead
+- Assume any group member could theoretically capture messages
+
+## Interoperability and Multi-Device Synchronization
+
+Signal's end-to-end encrypted sync mechanism maintains disappearing message state across devices:
+
+**Linked device behavior:**
+- Primary device: Full Signal account with all conversations
+- Linked devices: Secondary phones, tablets, computers
+- Timer state syncs: If you set a timer on phone, it syncs to linked devices
+- Messages persist: Synced messages follow same timer schedule
+
+**Restoring from backup:**
+If you restore Signal backup on a new device:
+- Backup includes conversations and metadata
+- Disappearing message timers may reset based on backup timestamp
+- Messages within the timer window appear on restore
+- Timers resume from restoration point, not original send time
+
+To protect against this:
+1. Avoid restoring from old backups with recent sensitive messages
+2. Manually delete sensitive conversation backups
+3. Enable airplane mode during sensitive conversations to prevent backup sync
+
+## Using Signal for Team Communication
+
+Organizations using Signal for team communication can establish disappearing message policies:
+
+**Template team guidelines:**
+
+```bash
+# TEAM SIGNAL GUIDELINES
+
+## Disappearing Message Policy
+
+Confidentiality Level | Timer Duration
+--------------------|----------------
+Public team updates  | None (permanent)
+Project discussions  | 1 week
+Personnel matters    | 1 day
+Security incidents   | 1 hour
+Financial/legal      | 30 minutes
+
+## Implementation
+
+1. All team members should know these guidelines
+2. Respect the timer duration for each conversation type
+3. Don't circumvent timers with screenshots (against policy)
+4. Use one-on-one Signal for sensitive topics requiring 30-minute timers
+```
+
+**Enforcement challenges:**
+- Signal cannot prevent screenshots on most platforms
+- Team members must agree to honor guidelines voluntarily
+- Android 12+ allows screen blocking, but not on iOS
+- Consider legal agreements if information is truly sensitive
+
+## Performance Impact and Storage Considerations
+
+Disappearing messages have minimal performance impact but worth understanding:
+
+**Storage overhead:**
+- Messages use same storage as regular messages until timer expires
+- Deletion happens asynchronously (may not be immediate on mobile)
+- Each message pair (send/receive) counts as one storage entry
+- Deleting thousands of messages with short timers can cause brief lag
+
+**Optimization for high-volume conversations:**
+If your team sends thousands of messages daily:
+- Group timers are more efficient than per-message handling
+- 1-hour or 1-day timers balance privacy and performance
+- Avoid 30-second timers at scale (deletion process stresses device)
+
+## Signal's Threat Model Assumptions
+
+Understanding what disappearing messages do and don't protect:
+
+**Protected against:**
+- Server-side message logging (Signal doesn't store)
+- Retroactive device theft (encrypted keys are deleted)
+- Account compromise after timer expires (messages gone)
+- Law enforcement accessing server data (nothing to access)
+
+**Not protected against:**
+- Screenshot during message lifetime
+- Recipient forwarding before timer
+- Compromised device capturing message in-flight
+- Network traffic interception (Signal uses TLS, but someone snooping network could see metadata)
+- Metadata analysis (recipients/timing visible to observers)
+
+For maximum privacy, combine disappearing messages with:
+- V-call or Signal phone calls (encrypted, no recording on servers)
+- Closed groups with trusted members only
+- Short session windows (finite time, not continuous exposure)
+
 
 ## Related Articles
 

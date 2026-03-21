@@ -172,8 +172,275 @@ With accurate throughput measurements, you can make informed decisions about VPN
 
 iperf3 transforms VPN evaluation from subjective feeling to objective measurement. The setup effort is minimal, the results are reproducible, and the insights are valuable for anyone relying on VPN connections for their work.
 
----
+## Data Analysis and Interpretation
 
+Once you have benchmark data, analyze it properly:
+
+**Parsing iperf3 JSON output:**
+
+```bash
+#!/bin/bash
+# iperf3 produces JSON output that's easier to parse and archive
+
+# Run test with JSON output
+iperf3 -c server-ip -p 5201 -t 30 -J > benchmark-result.json
+
+# Extract key metrics
+cat benchmark-result.json | jq '.end.sum_received.bits_per_second / 1000000' # Mbps
+
+# Extract packet loss (UDP only)
+cat benchmark-result.json | jq '.end.sum.lost_packets'
+
+# Extract retransmits (TCP)
+cat benchmark-result.json | jq '.end.sum.retransmits'
+```
+
+**Python analysis of multiple benchmarks:**
+
+```python
+#!/usr/bin/env python3
+"""
+Analyze VPN benchmarks across multiple tests and VPN providers
+"""
+
+import json
+import statistics
+from datetime import datetime
+from pathlib import Path
+
+class VPNBenchmarkAnalyzer:
+    def __init__(self, results_dir):
+        self.results = self._load_results(results_dir)
+
+    def _load_results(self, results_dir):
+        """Load all iperf3 JSON files from directory"""
+        results = []
+        for json_file in Path(results_dir).glob('*.json'):
+            with open(json_file) as f:
+                results.append(json.load(f))
+        return results
+
+    def analyze_throughput(self):
+        """Statistical analysis of throughput across tests"""
+        throughputs = [
+            r['end']['sum_received']['bits_per_second'] / 1e6
+            for r in self.results
+        ]
+
+        return {
+            'mean': statistics.mean(throughputs),
+            'median': statistics.median(throughputs),
+            'stdev': statistics.stdev(throughputs) if len(throughputs) > 1 else 0,
+            'min': min(throughputs),
+            'max': max(throughputs),
+            'samples': len(throughputs)
+        }
+
+    def identify_outliers(self):
+        """Find anomalies in test results"""
+        throughputs = [
+            r['end']['sum_received']['bits_per_second'] / 1e6
+            for r in self.results
+        ]
+
+        mean = statistics.mean(throughputs)
+        stdev = statistics.stdev(throughputs)
+
+        outliers = []
+        for i, tp in enumerate(throughputs):
+            # Mark results >2 std deviations from mean as outliers
+            if abs(tp - mean) > 2 * stdev:
+                outliers.append({
+                    'test': i,
+                    'throughput': tp,
+                    'deviation': (tp - mean) / stdev
+                })
+
+        return outliers
+
+    def compare_protocols(self):
+        """Compare throughput between VPN protocols"""
+        by_protocol = {}
+
+        for result in self.results:
+            protocol = result.get('test_name', 'Unknown')
+            throughput = result['end']['sum_received']['bits_per_second'] / 1e6
+
+            if protocol not in by_protocol:
+                by_protocol[protocol] = []
+            by_protocol[protocol].append(throughput)
+
+        comparison = {}
+        for protocol, throughputs in by_protocol.items():
+            comparison[protocol] = {
+                'mean': statistics.mean(throughputs),
+                'median': statistics.median(throughputs),
+                'samples': len(throughputs)
+            }
+
+        return comparison
+
+# Example usage
+analyzer = VPNBenchmarkAnalyzer('/path/to/benchmark/results')
+print("Throughput analysis:", analyzer.analyze_throughput())
+print("Outliers:", analyzer.identify_outliers())
+print("Protocol comparison:", analyzer.compare_protocols())
+```
+
+## VPN-Specific Testing Considerations
+
+Different VPN protocols require different testing approaches:
+
+**WireGuard benchmarking:**
+```bash
+# WireGuard is UDP-based, test accordingly
+iperf3 -c server-ip -p 5201 -u -b 1000M -t 30 -R
+
+# WireGuard often shows:
+# - Higher throughput than OpenVPN
+# - Lower latency (milliseconds vs hundreds)
+# - Minimal retransmissions (excellent packet efficiency)
+```
+
+**OpenVPN benchmarking:**
+```bash
+# OpenVPN is TCP-based (typically), but supports UDP
+# Test with UDP variant for better performance
+iperf3 -c server-ip -p 5201 -t 30 -R
+
+# OpenVPN shows:
+# - 30-60% throughput reduction vs WireGuard
+# - Higher CPU usage (more encryption overhead)
+# - More retransmissions on poor connections
+```
+
+**IKEv2 benchmarking:**
+```bash
+# IKEv2 over UDP
+iperf3 -c server-ip -p 5201 -u -t 30 -R
+
+# IKEv2 performance is protocol-dependent
+# Generally faster than OpenVPN, slower than WireGuard
+```
+
+## Environmental Factors Affecting Results
+
+These factors skew your measurements:
+
+**Network congestion:**
+- Test at different times (peak vs off-peak)
+- ISP throttling during peak hours reduces apparent VPN performance
+- Cell network congestion affects mobile VPN tests
+
+**Server location impact:**
+- Geographically distant servers have higher latency
+- Oceanic latency adds 150-300ms vs continental servers
+- Test to servers you'll actually use, not extremes
+
+**CPU limitations:**
+- If server CPU maxes at 100%, results show server limits, not VPN performance
+- Use `top` or `htop` on server during tests
+- If CPU high, results are invalid—upgrade server or reduce parallel streams
+
+**WiFi interference (when testing mobile):**
+- Use wired connections for baseline measurements
+- WiFi adds 10-30ms latency and 5-20% throughput reduction
+- Document when WiFi testing is unavoidable
+
+**Buffer bloat:**
+- VPN protocols sometimes interact poorly with ISP buffering
+- Run `iperf3 -c server -p 5201 -t 30 -w 256k` to test different buffer sizes
+- Look for throughput variations with different window sizes
+
+## Creating Reproducible Test Reports
+
+For actionable results, document your testing methodology:
+
+**Benchmark report template:**
+
+```markdown
+# VPN Benchmark Report
+
+## Test Environment
+- Date: 2026-03-21
+- Tester: Your Name
+- Client OS: Ubuntu 22.04
+- Client Network: Home WiFi 5GHz
+- Server: DigitalOcean NYC (Geonode VPS)
+- Baseline internet (no VPN): 100 Mbps down / 50 Mbps up
+
+## VPN Configuration
+- Protocol: WireGuard v1.0.20210606
+- Cipher: ChaCha20-Poly1305
+- Key Exchange: Curve25519
+- Server Location: New York, USA
+
+## Test Results
+- Download (VPN): 82 Mbps (82% of baseline)
+- Upload (VPN): 41 Mbps (82% of baseline)
+- Latency (ICMP): 45 ms (baseline: 2 ms)
+- Packet Loss: 0%
+- CPU Usage (server): 45%
+- Test Duration: 30 seconds
+- Parallel Streams: 1
+
+## Analysis
+- VPN overhead: ~18% throughput reduction (expected for WireGuard)
+- Latency increase: 43 ms (acceptable for distance)
+- No packet loss indicates stable connection
+- Server CPU at 45% allows 2x scaling before bottleneck
+
+## Recommendations
+✓ This VPN configuration suitable for 4K video streaming
+✓ Acceptable for video conferencing (45 ms latency)
+✓ No concerns for file transfers up to 1 GB+
+```
+
+## Trending Performance Over Time
+
+Monitor VPN performance degradation:
+
+```bash
+#!/bin/bash
+# Long-term VPN performance tracking
+
+RESULTS_FILE="vpn-performance-trends.csv"
+SERVER="vpn.example.com"
+PORT="5201"
+
+# Initialize CSV header if file doesn't exist
+if [ ! -f "$RESULTS_FILE" ]; then
+    echo "timestamp,protocol,throughput_mbps,latency_ms,packet_loss" > "$RESULTS_FILE"
+fi
+
+# Run weekly benchmark
+# (Add to crontab: 0 2 * * 0 /path/to/benchmark.sh)
+
+run_benchmark() {
+    local protocol=$1
+    local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+    # Run iperf3 and capture results
+    result=$(iperf3 -c $SERVER -p $PORT -t 30 -J 2>/dev/null)
+
+    throughput=$(echo $result | jq '.end.sum_received.bits_per_second / 1000000')
+    latency=$(echo $result | jq '.end.streams[0].sender.mean_rtt')
+    packet_loss=0  # TCP doesn't report packet loss in standard output
+
+    # Append to CSV
+    echo "$timestamp,$protocol,$throughput,$latency,$packet_loss" >> "$RESULTS_FILE"
+
+    echo "Logged: $protocol - $throughput Mbps at $timestamp"
+}
+
+# Run for each protocol you're testing
+run_benchmark "wireguard"
+
+# Analyze trends
+echo ""
+echo "30-day throughput average:"
+tail -30 "$RESULTS_FILE" | awk -F',' '{sum+=$3; count++} END {print sum/count " Mbps"}'
+```
 
 ## Related Articles
 

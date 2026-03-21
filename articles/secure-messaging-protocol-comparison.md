@@ -152,6 +152,124 @@ No messaging protocol protects against:
 - Server-side analysis of contact graphs even where message content is protected
 - Legal demands backed by device seizure rather than server requests
 
+## Practical Implementation: Verifying Protocol Claims
+
+When selecting a messaging platform, the protocol matters more than the brand. Here's how to verify actual protocol implementation and what to look for in the code:
+
+**Understanding protocol architecture:**
+
+The protocol is the mathematical foundation. Before trusting any app:
+1. Identify which protocol it uses (Signal, Matrix, MLS, etc.)
+2. Verify the protocol has been formally audited (published research papers)
+3. Check if the specific implementation matches the published protocol
+4. Ensure transport security uses modern TLS (1.3+)
+
+Here's how to verify actual protocol implementation:
+
+**Signal Protocol verification:**
+- Download the client app from official sources only (signal.org)
+- Enable registration lock in settings to prevent SIM swap attacks
+- Verify contact safety numbers for sensitive communications (40-digit number in app settings)
+- Monitor the app's update changelog for security patches
+
+**Matrix client verification:**
+- Encrypt sensitive rooms (Matrix calls this "E2EE for room members")
+- In Element app: Room settings → Security & Privacy → Enable encryption
+- Cross-sign devices to prevent spoofed devices from intercepting messages
+- Use stable release versions (avoid nightly builds for sensitive communications)
+
+**OMEMO for XMPP:**
+- Requires a server supporting Message Archive Management (XEP-0313)
+- Clients like Conversations (Android) provide automatic OMEMO pairing
+- Manually verify device fingerprints the first time you connect from a new device
+
+## Comparing Real-World Deployments
+
+A protocol's security on paper differs from security in production. These differences matter:
+
+| Aspect | Signal | WhatsApp | Telegram | Matrix | Session |
+|--------|--------|----------|----------|--------|---------|
+| Protocol maturity | RFC 8949 equivalent | Signal-based | Custom MTProto | OMEMO+Megolm | Signal-based |
+| Security audits | Multiple formal proofs | Third-party audits | Limited disclosure | Moderate audits | Fewer audits |
+| Key escrow | None | None | None | Partial (backups) | None |
+| Metadata protection | Sealed sender enabled | Limited | Limited | Server-dependent | Tor-integrated |
+| Backup encryption | Optional, keys stored locally | iCloud/Google Drive keys | Server-side keys | Optional sync | Minimal |
+| Group chat scaling | 250+ members practical | Tested at scale | Thousands | Varies by server | Hundreds |
+
+## Threat Models and Protocol Choices
+
+Different threat models require different protocols:
+
+**Threat: ISP or network observer monitoring your activity**
+- Solution: Any end-to-end encrypted app works. Signal, WhatsApp, and Telegram all hide message content from network observers.
+
+**Threat: Authoritarian government with legal intercept capability**
+- Solution: Signal or Session. Both support sealed sender and provide no decryptable metadata to servers. Tor-integrated apps like Session add network-level protection.
+
+**Threat: Accidental past message disclosure (device theft)**
+- Solution: Protocols with forward secrecy. Signal, Session, and Telegram secret chats protect past messages even after key compromise.
+
+**Threat: Server operator snooping (untrusted provider)**
+- Solution: Matrix with strong server-side encryption, or Briar's peer-to-peer model eliminates server entirely.
+
+## Code-Level Protocol Differences
+
+For developers integrating secure messaging:
+
+**Signal Protocol in code:**
+```python
+# Signal Protocol flow
+from signal_protocol_python import (
+    SessionBuilder, SessionCipher,
+    SignalProtocolAddress, KeyPair
+)
+
+# Initialize session with contact
+session_builder = SessionBuilder(store, contact_address)
+session_builder.process_pre_key_bundle(contact_pre_key_bundle)
+
+# Encrypt message using Double Ratchet
+cipher = SessionCipher(store, contact_address)
+ciphertext = cipher.encrypt_message(b"sensitive message")
+
+# Each message advances the ratchet: new keys for every message
+```
+
+**Matrix room encryption in code:**
+```javascript
+// Matrix E2E encryption (Megolm for groups)
+const room = client.getRoom(roomId);
+
+// For group messages, Megolm shares a session key with all members
+const encrypted = await megolm.encryptEvent({
+    roomId: roomId,
+    eventType: "m.room.message",
+    content: { body: "message" }
+});
+
+// Session key must be re-shared when members join
+// This is more complex than Signal's 1:1 DH ratchet
+```
+
+## Post-Quantum Considerations
+
+In 2026, quantum computing remains theoretical for cryptanalysis, but protocols are beginning post-quantum transitions:
+
+- **Signal Protocol**: No built-in post-quantum protection yet. Discussions ongoing for hybrid approaches.
+- **Matrix**: XMPP community discussing post-quantum hybrid modes using Kyber alongside Curve25519.
+- **MLS**: IETF working on post-quantum variant (hybrid classical + lattice-based).
+- **Briar**: Uses standard curves, but peer-to-peer architecture reduces long-term key exposure risk.
+
+## Deployment Checklist for Teams
+
+If you're choosing a protocol for team communication:
+
+1. **Audit the client code** - For closed-source clients (WhatsApp), rely on third-party audits
+2. **Check metadata handling** - Does your provider see who messages whom? At what granularity?
+3. **Test key rotation** - Does protocol recover from key leaks? Test by simulating compromise
+4. **Verify implementations** - Different implementations of the same protocol vary (Signal Desktop vs Signal iOS)
+5. **Plan for protocol updates** - Build systems that can handle protocol version negotiation
+
 ## Related Reading
 
 - [Signal vs Session vs SimpleX Secure Messaging Comparison](/signal-vs-session-vs-simplex-secure-messaging-comparison/)

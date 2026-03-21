@@ -174,6 +174,295 @@ Periodically review all connected devices, skills, and applications. Attackers s
 
 If you're an Amazon seller, enable two-step verification for Seller Central and regularly review your inventory for listing hijacking.
 
+## Post-Compromise Forensics
+
+After recovery, determine how you were compromised to prevent recurrence:
+
+**Possible compromise vectors:**
+
+1. **Credential reuse** - Your Amazon password used elsewhere that was breached
+   - Check haveibeenpwned.com for your email address
+   - If found, that explains the attack vector
+   - Change passwords everywhere
+
+2. **Phishing attack** - Attacker posed as Amazon in email
+   - Check email for suspicious "verify account" emails
+   - Amazon never requests passwords via email links
+   - Check your email forwarding rules for hidden redirects
+
+3. **Weak password** - Account brute-forced
+   - Check if your password was simple or dictionary-based
+   - Amazon's security doesn't prevent brute force after certain attempts
+   - Implement minimum 16-character passwords with high entropy
+
+4. **Malware or keylogger** - Attacker logged keystrokes
+   - Run full antivirus scan on your computer
+   - Change passwords from a different device
+   - Consider complete OS reinstall if malware found
+
+**Detection script for compromised device:**
+
+```bash
+#!/bin/bash
+# Check for suspicious processes that might indicate compromise
+
+echo "Checking for common malware indicators..."
+
+# Monitor network connections
+echo "=== Unexpected network connections ==="
+sudo netstat -tlnp | grep ESTABLISHED
+
+# Check browser extensions
+echo "=== Chrome extensions ==="
+ls -la ~/.config/google-chrome/Default/Extensions/
+
+# Look for suspicious cron jobs
+echo "=== Cron jobs ==="
+crontab -l
+sudo crontab -l
+
+# Check for rootkits
+if command -v rkhunter &> /dev/null; then
+    echo "=== Rootkit scan ==="
+    sudo rkhunter --check --skip-keypress
+fi
+```
+
+## Establishing Trust After Compromise
+
+Once your Amazon account is secure, rebuild authentication carefully:
+
+**Multi-factor authentication setup timeline:**
+
+```
+Day 1: Password reset
+  ↓
+Day 2: Enable 2FA with authenticator app
+  ↓
+Day 3: Register new device as trusted (don't mark immediately)
+  ↓
+Day 7: Remove old/compromised devices from trusted list
+  ↓
+Day 14: Review all connected services (Prime, Audible, Twitch, etc.)
+  ↓
+Day 30: Verify no new payment methods added since recovery
+```
+
+**Authenticator app setup for Amazon:**
+
+```bash
+# Use a TOTP authenticator instead of SMS
+# (Authenticator apps are more secure than SMS 2FA)
+
+# Recommended apps:
+# - Authy (cloud-synced, more convenient)
+# - Google Authenticator (minimal, simple)
+# - Microsoft Authenticator (enterprise option)
+
+# After enabling 2FA in Amazon settings:
+# 1. Scan QR code with authenticator app
+# 2. Save backup codes in secure vault (not email, not documents)
+# 3. Test: Enter 6-digit code immediately
+# 4. Wait 30 seconds, refresh, code expires (verify this works)
+```
+
+## Monitoring for Secondary Compromise
+
+Attackers often maintain persistence after account takeover:
+
+**Hidden account recovery methods:**
+
+Attackers might set up secondary recovery methods:
+- Backup email address (not your primary)
+- Recovery phone number (not your known number)
+- Security questions answered by attacker
+
+Check Amazon Login & Security page for:
+```
+1. Email address on file (should be YOUR email only)
+2. Phone number (should be YOUR number only)
+3. Recovery email (should not exist unless you created it)
+4. Security questions (answers should match your responses only)
+```
+
+**Persistence persistence technique to watch for:**
+
+Some attackers add a secondary email that looks similar to yours:
+- Your email: `john@gmail.com`
+- Attacker email: `johñ@gmail.com` (different character encoding)
+
+Check your email for password reset confirmations. If you see "confirmed secondary email," that's compromise.
+
+## Linked Account Compromise Audit
+
+Since attackers often exploit connected services:
+
+```bash
+#!/bin/bash
+# Audit all Amazon-linked services
+
+echo "=== Checking linked services ==="
+
+services=(
+    "AWS (amazon.com/ap)"
+    "Prime Video (primevideo.com)"
+    "Audible (audible.com)"
+    "Twitch (twitch.tv)"
+    "Alexa (alexa.amazon.com)"
+    "Ring (ring.com)"
+    "Whole Foods (wholefoodsmarket.com)"
+    "GrubHub (grubhub.com if linked)"
+)
+
+for service in "${services[@]}"; do
+    echo "Checking: $service"
+    echo "  - Login and verify account settings"
+    echo "  - Check for unrecognized devices"
+    echo "  - Remove old sessions"
+    echo ""
+done
+```
+
+**AWS account compromise** (if you use AWS):
+- Check IAM users for unauthorized accounts
+- Verify EC2 instances (running instances cost money)
+- Review S3 buckets for unauthorized access logs
+- Check CloudTrail for API calls from unknown IPs
+
+## Long-Term Protection: Password Manager Strategy
+
+After recovery, optimize your password management:
+
+```yaml
+# Recommended password manager setup for Amazon:
+
+1Password or Bitwarden configuration:
+  Amazon Master Account:
+    password_length: 32  # Characters
+    entropy: High (mix uppercase, lowercase, numbers, symbols)
+    rotation: Every 90 days after incident
+    storage: In password manager vault with additional encryption
+
+  Vault Security:
+    master_password: 20+ characters, memorized
+    two_factor: YubiKey + Backup authenticator
+    family_sharing: Enable for emergency access
+
+  Policy:
+    never_write_passwords: In documents, emails, notebooks
+    never_share_passwords: Even with family (use shared vault feature)
+    never_reuse: Each account gets unique password
+```
+
+## Credit and Financial Monitoring Post-Hack
+
+If attacker had access to payment methods:
+
+```bash
+# Month 1: Active monitoring
+- Check credit card statements daily (automated alerts)
+- Check bank accounts for unauthorized transfers
+- Place fraud alert with credit bureaus (1 year)
+
+# Month 3: Extended monitoring
+- Run credit report checks (freeze if necessary)
+- Check for new accounts opened in your name
+- Monitor for unusual credit inquiries
+
+# Year 1: Ongoing vigilance
+- Monitor credit reports quarterly
+- Review bank statements monthly
+- Set calendar reminders for password rotation
+```
+
+**Placing fraud alert:**
+
+```bash
+# US credit bureaus (free fraud alert):
+
+# Equifax:
+# Phone: 1-888-378-4329
+# Online: equifax.com/personal/credit-report-services
+
+# Experian:
+# Phone: 1-888-397-3742
+# Online: experian.com/fraud
+
+# TransUnion:
+# Phone: 1-888-909-8872
+# Online: transunion.com/fraud-alert
+
+# A fraud alert lasts 1 year (renewable)
+# Credit freeze lasts indefinitely (must request removal)
+```
+
+## Automation for Ongoing Protection
+
+After recovery, automate security monitoring:
+
+```python
+#!/usr/bin/env python3
+"""
+Amazon account security monitor
+Runs monthly to check for unauthorized activity
+"""
+
+import requests
+from datetime import datetime, timedelta
+import json
+
+def check_amazon_security(username, password_hash):
+    """
+    In production, use Amazon's official APIs
+    This is a conceptual example
+    """
+
+    checks = {
+        'login_locations': [],
+        'new_devices': [],
+        'payment_methods': [],
+        'address_changes': [],
+        'order_anomalies': []
+    }
+
+    # Conceptual checks (implementation requires Amazon API access)
+    try:
+        # Check recent login activity
+        logins = get_recent_logins()
+        for login in logins:
+            if login['location'] not in TRUSTED_LOCATIONS:
+                checks['login_locations'].append(login)
+
+        # Check for new devices
+        devices = get_registered_devices()
+        expected_devices = load_known_devices()
+        for device in devices:
+            if device['id'] not in expected_devices:
+                checks['new_devices'].append(device)
+
+        # Check payment methods
+        payment_methods = get_payment_methods()
+        if len(payment_methods) > len(KNOWN_PAYMENT_METHODS):
+            checks['payment_methods'] = payment_methods
+
+        # Generate alert if issues found
+        if any(checks.values()):
+            send_alert(f"Security issues detected: {checks}")
+
+    except Exception as e:
+        send_alert(f"Error checking Amazon security: {e}")
+
+def send_alert(message):
+    """Send alert to your phone/email"""
+    # Implement via SNS, email service, or webhook
+    pass
+
+if __name__ == "__main__":
+    check_amazon_security(
+        username="your-email@example.com",
+        password_hash="stored-securely"
+    )
+```
 
 ## Related Articles
 

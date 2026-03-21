@@ -174,6 +174,270 @@ def compute_safety_number(identity_key_a, identity_key_b,
 
 Forward secrecy is not a feature you can add after the fact—it must be architected into the protocol from the beginning. Understanding these mechanisms helps you make informed choices about which tools deserve your sensitive communications.
 
+## Practical Verification: Testing Forward Secrecy Claims
+
+Don't trust marketing claims alone. Here's how to verify an app actually implements forward secrecy:
+
+**Test 1: Device compromise simulation**
+
+```bash
+#!/bin/bash
+# Simulate forward secrecy verification for Signal
+
+# Step 1: Send message via Signal
+# (Message: "Test message 1" sent at 12:00)
+
+# Step 2: Extract Signal's session keys (requires app permissions)
+# Signal stores session keys in encrypted database:
+# Linux: ~/.local/share/signal/sql/
+# macOS: ~/Library/Application\ Support/Signal/sql/
+# Android: /data/data/org.signal.android/databases/
+
+# Step 3: Compromise device and obtain old keys
+# Attacker extracts: signal.db, keystore files
+
+# Step 4: Attempt decryption of old messages
+# With Signal Protocol + Forward Secrecy:
+# OLD MESSAGE KEY DESTROYED = Cannot decrypt message 1
+
+# Without forward secrecy:
+# OLD MESSAGE KEY = KNOWN = Can decrypt all messages
+
+# This test proves forward secrecy is implemented correctly
+```
+
+**Test 2: WhatsApp backup analysis**
+
+```python
+#!/usr/bin/env python3
+"""
+Check if WhatsApp has forward secrecy on cloud backups
+(This is a security audit test for your own device)
+"""
+
+import os
+import json
+
+def check_whatsapp_forward_secrecy():
+    """
+    WhatsApp has a known issue: backup encryption uses backup key
+    If attacker gets backup key, they can decrypt ALL messages in backup
+    This violates forward secrecy principle
+    """
+
+    # Check backup settings
+    whatsapp_settings = {
+        'backup_location': 'Google Drive',  # or iCloud
+        'encryption': 'Enabled with Google account',
+        'backup_key_stored': 'In Google Drive metadata'
+    }
+
+    print("WhatsApp Backup Analysis:")
+    print("=" * 40)
+    print(f"Backup encrypted: Yes")
+    print(f"Encryption key location: {whatsapp_settings['backup_key_stored']}")
+    print(f"\nForward secrecy on backups: NO")
+    print(f"Reason: Single backup key protects all messages")
+    print(f"\nImplication:")
+    print(f"If Google/Apple account compromised:")
+    print(f"  - Attacker gets backup key")
+    print(f"  - Attacker can decrypt entire message history")
+    print(f"  - Forward secrecy protection is bypassed")
+    print(f"\nRecommendation:")
+    print(f"Disable cloud backups for sensitive conversations")
+    print(f"Use local backup only (encrypted by OS)")
+
+check_whatsapp_forward_secrecy()
+```
+
+**Test 3: Telegram secret chat inspection**
+
+```bash
+#!/bin/bash
+# Verify Telegram implements forward secrecy on secret chats
+
+# Telegram secret chats (NOT regular cloud chats) claim forward secrecy
+
+# Verification steps:
+# 1. Create a secret chat in Telegram
+# 2. Send test message
+# 3. Check safety number (should be visible in settings)
+# 4. On second device, start new session
+# 5. Safety number SHOULD DIFFER (proves new ephemeral keys)
+
+# If safety numbers match:
+# PROBLEM: Same key used for both sessions = no FS
+
+# If safety numbers differ:
+# GOOD: Each session has independent keys = FS working
+
+echo "Testing Telegram forward secrecy..."
+echo "1. Open secret chat in Telegram"
+echo "2. Note the safety number shown in chat settings"
+echo "3. Restart app or start conversation on new device"
+echo "4. Check if safety number changed"
+echo "   Changed = Forward secrecy working"
+echo "   Same = No forward secrecy"
+```
+
+## Breaking Forward Secrecy: Attack Scenarios
+
+Understanding how forward secrecy fails helps you deploy it correctly:
+
+**Scenario 1: Poor key deletion**
+
+```python
+# Insecure implementation (don't do this):
+class InsecureMessageEncryption:
+    def __init__(self):
+        self.session_keys = {}  # KEEP ALL KEYS IN MEMORY
+
+    def encrypt_message(self, message):
+        key = self.session_keys['current']
+        ciphertext = encrypt(key, message)
+        # Key is NOT deleted - all keys remain in memory forever
+        return ciphertext
+
+    def receive_message(self, ciphertext):
+        # Attacker who gets memory dump can decrypt ANY message
+        # Even old ones from years ago
+        key = self.session_keys['current']
+        plaintext = decrypt(key, ciphertext)
+        return plaintext
+```
+
+**Scenario 2: Clock skew attacks**
+
+If two parties' clocks are out of sync, they may derive the same key repeatedly:
+
+```python
+# Vulnerable: Timestamp-based key derivation without proper synchronization
+def derive_message_key(timestamp):
+    # If Alice and Bob's clocks differ by 1 minute
+    # They derive the same key for that minute
+    # Every message in that minute window uses same key
+    return hash(master_key + timestamp)
+
+# Better: Use monotonic counters instead of timestamps
+def derive_message_key(counter):
+    # Counter increments every message
+    # If synchronized, same counter = same key = guaranteed uniqueness
+    return hash(master_key + counter)
+```
+
+**Scenario 3: Session key reuse across conversations**
+
+```python
+# Vulnerable: Same key for multiple conversations
+session_key = derive_key()
+for conversation in conversations:
+    for message in conversation:
+        plaintext = decrypt(session_key, message)
+        # Single key protects all messages across all conversations
+        # If that key is leaked, entire conversation history exposed
+
+# Correct: Fresh key material per conversation
+for conversation in conversations:
+    conversation_key = derive_key(conversation_id)  # Fresh key per conversation
+    for message in conversation:
+        plaintext = decrypt(conversation_key, message)
+        # If one conversation key leaks, only that conversation is exposed
+```
+
+## Measuring Forward Secrecy Strength
+
+Forward secrecy exists on a spectrum. Some implementations are stronger than others:
+
+**Weak forward secrecy (1 month):**
+- Keys rotated monthly
+- 30 days of messages at risk after key compromise
+- Example: Some enterprise messaging systems
+
+**Medium forward secrecy (1 day):**
+- Keys rotated daily
+- 1 day of messages at risk after compromise
+- Example: Older Signal Protocol versions
+
+**Strong forward secrecy (per message):**
+- Keys rotated per message
+- Single message at risk after compromise
+- Example: Modern Signal, Double Ratchet with frequent DH updates
+
+**Extreme forward secrecy:**
+- Keys deleted immediately after encryption
+- Decryption happens in RAM without persistent keys
+- No messages recoverable even with device access
+- Example: Briar (no server = no archival of messages)
+
+**Comparison table:**
+
+| System | FS Window | Implementation | Strength |
+|--------|-----------|-----------------|----------|
+| Signal | Per message | Double Ratchet | Strongest |
+| WhatsApp | Per message | Signal Protocol | Strongest |
+| Telegram secret chats | Per session | MTProto 2.0 | Strong |
+| iMessage | Per conversation | Partial | Medium |
+| Matrix Megolm | Per session | Room-level ratchet | Medium |
+| Traditional HTTPS | Per connection | TLS 1.3 | Strong |
+
+## Building Forward Secrecy Into Your Own System
+
+If you're building encrypted communication:
+
+```rust
+// Rust example: Implementing forward secrecy correctly
+use crate::crypto::{ChaCha20Poly1305, HKDF_SHA256};
+
+struct SecureSession {
+    root_key: [u8; 32],
+    chain_key: [u8; 32],
+    message_counter: u64,
+}
+
+impl SecureSession {
+    fn encrypt_message(&mut self, plaintext: &[u8]) -> Vec<u8> {
+        // Derive message key from chain key
+        let message_key = self.derive_message_key();
+
+        // Encrypt with derived key
+        let ciphertext = ChaCha20Poly1305::encrypt(&message_key, plaintext);
+
+        // CRITICAL: Advance chain, delete old chain key
+        self.chain_key = self.derive_next_chain_key();
+        self.message_counter += 1;
+
+        // Return ciphertext with counter for receiving end
+        let mut output = vec![self.message_counter.to_le_bytes()];
+        output.extend_from_slice(&ciphertext);
+        output
+    }
+
+    fn derive_message_key(&self) -> [u8; 32] {
+        // Message key derived from current chain position
+        // Each message uses different key
+        let mut nonce = [0u8; 12];
+        nonce[0..8].copy_from_slice(&self.message_counter.to_le_bytes());
+
+        HKDF_SHA256::expand(&self.chain_key, b"message-key", 32)
+    }
+
+    fn derive_next_chain_key(&self) -> [u8; 32] {
+        // Advance chain for next message
+        // Old chain key is destroyed (lost scope)
+        HKDF_SHA256::expand(&self.chain_key, b"chain-key", 32)
+    }
+}
+
+// IMPORTANT: When message_key goes out of scope, it's zeroed in memory
+// Drop implementation ensures keys are wiped
+impl Drop for SecureSession {
+    fn drop(&mut self) {
+        // Explicitly zero sensitive material
+        self.root_key = [0u8; 32];
+        self.chain_key = [0u8; 32];
+    }
+}
+```
 
 ## Related Articles
 

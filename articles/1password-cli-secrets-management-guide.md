@@ -175,6 +175,262 @@ Begin by installing the CLI and authenticating with your account. Start with a s
 
 The 1Password CLI turns secret management into a secure, scriptable workflow. Treating credentials as programmable data rather than static text makes your systems more secure by design.
 
+## Advanced Usage: CI/CD Integration
+
+For automated workflows, the CLI shines in CI/CD pipelines. Here's how to integrate securely:
+
+**GitHub Actions integration:**
+
+```yaml
+name: Deploy with 1Password Secrets
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Load 1Password secrets
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+        run: |
+          # Authenticate with 1Password service account
+          op account add \
+            --address my-team.1password.com \
+            --email service@company.com \
+            --signin
+
+          # Export secrets for use in subsequent steps
+          echo "DB_PASSWORD=$(op item get Database --field password)" >> $GITHUB_ENV
+          echo "API_KEY=$(op item get ApiKey --field value)" >> $GITHUB_ENV
+
+      - name: Run deployment
+        run: ./deploy.sh
+        env:
+          DATABASE_PASSWORD: ${{ env.DB_PASSWORD }}
+          SERVICE_API_KEY: ${{ env.API_KEY }}
+```
+
+**GitLab CI integration:**
+
+```yaml
+deploy:
+  stage: deploy
+  image: ubuntu:latest
+  script:
+    # Install 1Password CLI
+    - curl -sS https://downloads.1password.com/linux/keys/1password.asc | apt-key add -
+    - apt-get update && apt-get install -y 1password-cli
+
+    # Authenticate
+    - eval $(op signin --account $OP_TEAM --email $OP_EMAIL)
+
+    # Retrieve and use secrets
+    - export DB_PASSWORD=$(op item get "Production Database" --field password)
+    - export API_KEY=$(op item get "API Keys" --field service-key)
+
+    # Run deployment
+    - ./scripts/deploy.sh
+  environment:
+    name: production
+  only:
+    - main
+```
+
+**Docker container approach:**
+
+```dockerfile
+FROM ubuntu:22.04
+
+# Install 1Password CLI
+RUN apt-get update && apt-get install -y \
+    curl \
+    jq \
+    && curl -sS https://downloads.1password.com/linux/keys/1password.asc | apt-key add - \
+    && apt-get install -y 1password-cli
+
+# Copy deployment scripts
+COPY ./scripts /app/scripts
+WORKDIR /app
+
+# Runtime: Pass OP_SERVICE_ACCOUNT_TOKEN as environment variable
+ENTRYPOINT ["/app/scripts/entrypoint.sh"]
+```
+
+**Docker entrypoint script:**
+
+```bash
+#!/bin/bash
+# entrypoint.sh - Authenticate and run deployment
+
+set -e
+
+# Verify service account token exists
+if [ -z "$OP_SERVICE_ACCOUNT_TOKEN" ]; then
+    echo "ERROR: OP_SERVICE_ACCOUNT_TOKEN not set"
+    exit 1
+fi
+
+# Authenticate (service account uses token directly)
+op account add \
+    --address my-team.1password.com \
+    --email deployment@company.com \
+    --signin
+
+# Export secrets for application
+export DATABASE_URL=$(op item get "Database Connection" --field url)
+export API_SECRET=$(op item get "API Credentials" --field secret)
+
+# Run the actual deployment
+exec "$@"
+```
+
+## Audit and Compliance
+
+Organizations using the 1Password CLI should implement audit controls:
+
+**Audit logging setup:**
+
+```bash
+#!/bin/bash
+# Monitor 1Password CLI usage for audit trails
+
+# 1Password Business accounts log all access
+# Configure audit exporting:
+
+# Export activity logs weekly
+op activity list --days 7 > /secure/logs/1password-activity-$(date +%Y%m%d).json
+
+# Monitor for suspicious access patterns
+grep -i "unauthorized\|failed\|error" /secure/logs/1password-activity-*.json
+
+# Alert on access from unexpected locations
+op activity list --days 1 | jq '.[] | select(.location != "Expected-Office-IP")'
+```
+
+**Compliance checklist:**
+
+```
+1Password CLI Audit Checklist:
+
+☐ Service accounts created for CI/CD (not using personal accounts)
+☐ Service account tokens rotated quarterly
+☐ Access logs exported and archived monthly
+☐ Unauthorized access attempts reviewed weekly
+☐ Vaults with sensitive secrets limited to 2-3 team members
+☐ Screen sharing and clipboard access restricted during demonstrations
+☐ Session timeouts configured (default 30 min is reasonable)
+☐ Device approval required for new CLI sessions (if available)
+☐ Master password changed after team member departures
+```
+
+## Troubleshooting Common Issues
+
+**Issue: "op: command not found"**
+
+```bash
+# Installation path issue
+which op  # Should return /usr/local/bin/op or similar
+
+# Add to PATH if not found
+export PATH="/usr/local/bin:$PATH"
+
+# Verify installation
+op --version
+```
+
+**Issue: Session expires during long scripts**
+
+```bash
+# Extend session timeout
+eval $(op signin --account myteam --cache)
+
+# For long-running processes, re-authenticate periodically
+op item get "Secret Name" --field value || {
+    eval $(op signin --account myteam)
+    op item get "Secret Name" --field value
+}
+```
+
+**Issue: "Invalid master password"**
+
+```bash
+# Biometric authentication failed
+op signin --account myteam
+
+# Explicitly provide password
+OP_MASTER_PASSWORD="your-password" op item get "Secret" --field value
+
+# Or use session-based auth instead
+eval $(op signin --account myteam)
+```
+
+**Issue: "Access denied to vault"**
+
+```bash
+# Your account lacks permissions
+# Check available vaults:
+op vault list
+
+# If vault not listed, request access from vault owner
+# Then specify the exact vault name:
+op item get "ItemName" --vault "Vault Name" --field password
+```
+
+## Performance Optimization
+
+For scripts making many CLI calls:
+
+```bash
+#!/bin/bash
+# Retrieve multiple secrets efficiently
+
+# BAD: New authentication per call (slow)
+op item get "Secret1" --field password
+op item get "Secret2" --field password
+op item get "Secret3" --field password
+
+# GOOD: Authenticate once, reuse session
+eval $(op signin --account myteam)
+
+SECRET1=$(op item get "Secret1" --field password)
+SECRET2=$(op item get "Secret2" --field password)
+SECRET3=$(op item get "Secret3" --field password)
+
+# BETTER: Batch retrieve from same item
+SECRETS=$(op item get "AllSecrets")
+DB_HOST=$(echo $SECRETS | jq -r '.fields[] | select(.label=="db-host") | .value')
+DB_USER=$(echo $SECRETS | jq -r '.fields[] | select(.label=="db-user") | .value')
+DB_PASS=$(echo $SECRETS | jq -r '.fields[] | select(.label=="db-pass") | .value')
+```
+
+## Migrating from .env Files
+
+If you're transitioning from `.env` files:
+
+```bash
+#!/bin/bash
+# Migration script: .env to 1Password
+
+# Read existing .env file
+while IFS='=' read -r key value; do
+    if [ -n "$key" ] && [[ ! "$key" =~ ^#.* ]]; then
+        # Create item in 1Password for each variable
+        op item create --category password \
+            --title "$key" \
+            --generate-password=24 \
+            value="$value"
+
+        echo "Migrated: $key"
+    fi
+done < .env
+
+# Delete original .env (securely)
+shred -vfz -n 3 .env
+echo ".env file securely deleted"
+```
 
 ## Related Articles
 

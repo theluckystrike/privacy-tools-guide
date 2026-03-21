@@ -168,10 +168,283 @@ While WireGuard provides strong encryption, remember that VPN protection is only
 
 Also ensure your iPhone's remaining security settings are appropriate for your threat model: enable Face ID or a strong passcode, keep iOS updated, and review app permissions regularly.
 
----
+## Advanced Networking: Dual Tunnels and Chaining
 
-**
+For additional privacy layers, advanced users can run multiple VPNs simultaneously:
 
+**Chaining VPNs (VPN over VPN):**
+
+```
+Configuration 1: VPN → Tor
+- Connect to WireGuard VPN first
+- Then connect to Tor Browser on top
+- Result: Traffic encrypted twice, routed through VPN then Tor
+- Advantage: ISP only sees VPN connection, not Tor
+- Disadvantage: Performance penalty from double encryption
+
+Configuration 2: Tor → VPN
+- Connect to Tor Browser first
+- Then use Tor to connect to VPN provider
+- Result: VPN provider doesn't know your real IP
+- More complex setup, less common
+```
+
+**Implementing dual VPN on iOS:**
+iOS doesn't natively support multiple simultaneous VPN connections. However:
+
+```
+Workaround: Use split tunneling
+- Route web traffic through WireGuard
+- Route specific apps through regular connection
+- Not true chaining, but privacy for most traffic
+```
+
+## Connecting to Self-Hosted WireGuard Servers
+
+If you host your own VPN server, additional configuration is needed:
+
+**Home WireGuard server setup (overview):**
+
+```
+Home Server Setup:
+1. Install WireGuard on Linux server (home NAS, Raspberry Pi, etc.)
+2. Generate server keypair
+3. Generate client keypair for iPhone
+4. Configure firewall to port forward (e.g., 51820 UDP)
+5. Share QR code or config with iPhone
+
+iOS Configuration:
+1. Import config with server public IP (your home IP)
+2. Set persistent keepalive to 25 seconds (NAT traversal)
+3. Enable always-on VPN
+
+Result: iOS always routes through your home network
+Use case: Access files on home network securely while traveling
+```
+
+**Dynamic DNS for mobile compatibility:**
+
+Since home IP addresses change, use dynamic DNS:
+
+```bash
+# On home server running WireGuard
+#!/bin/bash
+# ddns-update.sh - Update DNS when IP changes
+
+PREV_IP_FILE="/tmp/home_ip_prev"
+DDNS_PROVIDER="freedns.afraid.org"  # Or duckdns.org, noip.com
+DDNS_TOKEN="your-ddns-token"
+DOMAIN="yourhome.freedns.afraid.org"
+
+current_ip=$(curl -s https://api.ipify.org)
+previous_ip=$(cat $PREV_IP_FILE 2>/dev/null)
+
+if [ "$current_ip" != "$previous_ip" ]; then
+    # IP changed, update DDNS
+    curl -s "http://$DDNS_PROVIDER/update?token=$DDNS_TOKEN&address=$current_ip"
+    echo $current_ip > $PREV_IP_FILE
+
+    # Update WireGuard clients with new IP
+    echo "Home IP updated to $current_ip"
+    # Distribute new config to iOS devices
+fi
+
+# Add to crontab: */10 * * * * /path/to/ddns-update.sh
+```
+
+## DNS and IPv6 Configuration
+
+Proper DNS configuration prevents leaks:
+
+**DNS configuration in WireGuard:**
+
+```
+[Interface]
+PrivateKey = ...
+Address = 10.0.0.2/24
+DNS = 1.1.1.1, 9.9.9.9  # Cloudflare and Quad9
+
+[Peer]
+PublicKey = ...
+AllowedIPs = 0.0.0.0/0, ::/0  # Route all traffic (IPv4 and IPv6)
+Endpoint = vpn.example.com:51820
+```
+
+**IPv6 considerations:**
+
+Modern networks have IPv6, but many VPNs only tunnel IPv4:
+
+```
+Problem: All IPv6 traffic bypasses VPN
+Solution: Disable IPv6 on iPhone when using VPN
+
+Settings → General → VPN & Device Management → [Your Tunnel]
+Look for IPv6 settings and disable if available
+
+Or ensure your VPN provider handles IPv6:
+- AllowedIPs should include ::/0 (all IPv6)
+- VPN server must have IPv6 support
+```
+
+**Testing for DNS leaks:**
+
+```
+Within WireGuard tunnel:
+1. Open Safari, visit dnsleaktest.com
+2. Run Extended Test
+3. All DNS servers should show your VPN provider's nameservers
+4. Never show your ISP's DNS servers
+
+If ISP DNS shows:
+- You have a DNS leak
+- Check iPhone's DNS settings
+- Verify WireGuard config specifies DNS servers
+- Try changing DNS to public (1.1.1.1, 8.8.8.8)
+```
+
+## Performance Tuning for Different Network Types
+
+WireGuard adapts well to different networks, but optimization helps:
+
+**WiFi-optimized settings:**
+
+```
+[Interface]
+Address = 10.0.0.2/24
+DNS = 1.1.1.1
+MTU = 1280  # Smaller packets avoid fragmentation on WiFi
+
+[Peer]
+PersistentKeepalive = 30  # More frequent pings through WiFi NAT
+AllowedIPs = 0.0.0.0/0, ::/0
+```
+
+**Cellular-optimized settings:**
+
+```
+[Interface]
+Address = 10.0.0.2/24
+DNS = 1.1.1.1
+MTU = 1280
+
+[Peer]
+PersistentKeepalive = 60  # Less frequent pings, saves cellular data
+AllowedIPs = 0.0.0.0/0, ::/0
+```
+
+**High-latency network settings (satellite, weak signal):**
+
+```
+[Interface]
+Address = 10.0.0.2/24
+DNS = 1.1.1.1
+MTU = 576  # Very small packets for unreliable connections
+
+[Peer]
+PersistentKeepalive = 15  # More aggressive keepalive
+ListenPort = 51820
+AllowedIPs = 0.0.0.0/0, ::/0
+```
+
+## Troubleshooting Connection Issues
+
+Common problems and solutions:
+
+**Issue: "VPN not connecting, stuck on 'Connecting'**
+
+```
+1. Check internet connectivity (WiFi or cellular working?)
+2. Verify WireGuard endpoint is correct and reachable
+   - In Terminal: nslookup vpn.example.com
+   - Should resolve to an IP address
+
+3. Check port is reachable
+   - Endpoint should be IP:port format
+   - Default: vpn.example.com:51820
+
+4. Reset VPN configuration
+   - Delete tunnel in WireGuard app
+   - Reimport configuration
+   - Try connecting again
+
+5. Restart WireGuard app
+   - Close completely (swipe up)
+   - Reopen from home screen
+   - Attempt connection
+```
+
+**Issue: Connected but no internet access**
+
+```
+1. Verify AllowedIPs includes all traffic:
+   - Should show: 0.0.0.0/0 and ::/0
+   - If limited to specific IP ranges, only those route through VPN
+
+2. Check server routing
+   - Log into VPS running WireGuard
+   - Verify IP forwarding enabled: sysctl net.ipv4.ip_forward
+   - Verify NAT configured: iptables -t nat -L
+
+3. Check firewall on server
+   - UDP port (default 51820) must be open
+   - ufw allow 51820/udp
+
+4. Verify client can reach server
+   - From another device, ping server IP
+   - If unreachable, firewall or network blocking connection
+```
+
+**Issue: High battery drain with always-on VPN**
+
+```
+1. Disable VPN on trusted home network
+   - Settings → VPN → On Demand
+   - Add trusted SSID rule: Disconnect when home
+
+2. Increase PersistentKeepalive interval
+   - Change from 25 to 60 or 120 seconds
+   - Trade-off: Less frequent reconnection checks
+
+3. Disable location-based features
+   - VPN + Location Services = extra GPS polling
+   - Settings → Privacy → Location Services
+
+4. Use lower security settings on WiFi
+   - Connect On Demand → WiFi only
+   - Disable on cellular to save battery
+```
+
+## Integration with Privacy Services
+
+Enhance WireGuard with other privacy tools:
+
+**Combined with Pi-hole (ad blocker on home network):**
+
+```
+Home setup:
+- Pi-hole running on home network
+- WireGuard tunnels to home
+- iPhone requests routed through Pi-hole
+- Results: Ads blocked, malware filtered
+
+DNS in WireGuard config should point to Pi-hole:
+[Interface]
+DNS = 192.168.1.100  # Your Pi-hole IP on home network
+```
+
+**Combined with ProtonVPN for additional layer:**
+
+```
+Security model:
+1. iPhone connects to WireGuard (your server)
+2. WireGuard server connects to ProtonVPN
+3. All iPhone traffic encrypted 2x
+4. ProtonVPN can't see iPhone IP
+5. VPN provider can't see your server IP
+
+Drawback: Significant performance impact
+Recommended only if high threat model justifies it
+```
 
 ## Related Reading
 
