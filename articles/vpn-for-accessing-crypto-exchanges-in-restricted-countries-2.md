@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /vpn-for-accessing-crypto-exchanges-in-restricted-countries-2/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
