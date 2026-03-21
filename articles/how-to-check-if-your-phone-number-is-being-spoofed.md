@@ -171,6 +171,293 @@ def verify_call_signature(timestamp, caller_number, signature, shared_secret):
 
 Implement proper phone number validation, require multi-factor authentication for phone-based operations, and log all verification attempts for fraud analysis.
 
+## Investigating Caller ID Spoofing: Technical Deep Dive
+
+Phone spoofing works at the protocol level. Understanding the mechanics helps identify when it's happening:
+
+```bash
+# SS7 (Signaling System 7) - legacy phone network protocol
+# Vulnerable to spoofing because it was designed on trust
+
+# When a call comes in, your carrier receives:
+# INVITE sip:+15551234567@carrier.com SIP/2.0
+# From: "Caller Name" <sip:+15559876543@attacker.com>
+# To: <sip:+15551234567@you.com>
+
+# The "From" header contains the spoofed number
+# Your phone displays whatever is in the From header
+# No verification occurs
+
+# Modern STIR/SHAKEN adds cryptographic signature:
+# P-Asserted-Identity: <sip:+15559876543@verified-carrier.com>;alg=RS256;ppt=shaken;iat=timestamp
+
+# This signature proves the calling carrier verified the number
+# But only if both carriers support STIR/SHAKEN
+```
+
+## Detailed CDR Analysis for Spoofing Detection
+
+Call Detail Records (CDRs) from your carrier can reveal patterns:
+
+```python
+#!/usr/bin/env python3
+# CDR analysis for spoofing detection
+
+import csv
+from datetime import datetime
+from collections import defaultdict
+
+def analyze_cdr_for_spoofing(cdr_file):
+    """
+    Analyze call detail records for spoofing patterns
+    CDR format: timestamp, called_number, calling_number, duration, status
+    """
+
+    calling_numbers = defaultdict(list)
+    suspicious_patterns = []
+
+    with open(cdr_file, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            calling_num = row['calling_number']
+            timestamp = datetime.fromisoformat(row['timestamp'])
+
+            calling_numbers[calling_num].append({
+                'time': timestamp,
+                'duration': int(row['duration']),
+                'status': row['status']
+            })
+
+    # Pattern 1: Calls from your own number
+    if '+1555' + '1234567' in calling_numbers:  # Your number
+        suspicious_patterns.append({
+            'type': 'Self-call',
+            'severity': 'Critical',
+            'explanation': 'Calls appearing from your own number'
+        })
+
+    # Pattern 2: Geographic impossibilities
+    for number, calls in calling_numbers.items():
+        for i in range(len(calls) - 1):
+            call1 = calls[i]
+            call2 = calls[i + 1]
+
+            # Two calls from same number with impossible location distance
+            time_diff = (call2['time'] - call1['time']).total_seconds() / 60
+            if time_diff < 60:  # Less than 60 minutes
+                suspicious_patterns.append({
+                    'type': 'Geographic_Impossible',
+                    'number': number,
+                    'calls': [call1['time'], call2['time']],
+                    'explanation': 'Multiple calls in timeframe requiring impossible travel'
+                })
+
+    # Pattern 3: Premium rate calls to toll fraud numbers
+    premium_destinations = [
+        '1900',  # 900 numbers (toll fraud)
+        '1976',  # 976 numbers (pay-per-call)
+        '1-809', # Caribbean number mills
+    ]
+
+    for number, calls in calling_numbers.items():
+        for call in calls:
+            for premium in premium_destinations:
+                if str(call['time']).startswith(premium):
+                    suspicious_patterns.append({
+                        'type': 'Toll_Fraud',
+                        'number': number,
+                        'destination': premium,
+                        'severity': 'High',
+                        'cost_risk': 'High'
+                    })
+
+    # Pattern 4: Very short call durations (potential hangup testing)
+    for number, calls in calling_numbers.items():
+        short_calls = [c for c in calls if c['duration'] < 2]
+        if len(short_calls) > 5:
+            suspicious_patterns.append({
+                'type': 'Hangup_Testing',
+                'number': number,
+                'short_calls': len(short_calls),
+                'explanation': 'Multiple failed/immediate hangup calls (number validation)'
+            })
+
+    return suspicious_patterns
+
+# Usage
+suspicious = analyze_cdr_for_spoofing('my_cdr.csv')
+for pattern in suspicious:
+    print(f"Alert: {pattern['type']} - {pattern['explanation']}")
+```
+
+These patterns, combined with CDR data, strongly indicate active spoofing.
+
+## SIM Swapping vs Number Spoofing
+
+Important distinction: SIM swapping is different from spoofing:
+
+```
+NUMBER SPOOFING:
+- Attacker calls using your number in the CallerID
+- Your number isn't compromised
+- Your phone isn't affected
+- People get calls appearing from you
+
+SIM SWAPPING:
+- Attacker claims to be you to carrier
+- Carrier moves your number to attacker's SIM
+- You lose phone service immediately
+- Attacker receives SMS codes for password resets
+- Your actual phone number is now hijacked
+
+RESPONSE:
+Spoofing: Change Netflix password, add 2FA to email
+SIM Swap: Contact carrier immediately, file police report, change ALL passwords, enable account locks
+```
+
+SIM swapping is much more serious and requires immediate carrier intervention.
+
+## Carrier Cooperation and Reporting
+
+Your carrier has tools to investigate spoofing:
+
+```bash
+# Request from your carrier (speak to fraud department):
+
+1. "Please flag my number for anti-spoofing monitoring"
+   - Carriers can tag numbers that are being spoofed
+   - They monitor and block spoofed calls impersonating you
+
+2. "Provide STIR/SHAKEN authentication status for my line"
+   - Is your number STIR/SHAKEN authenticated?
+   - Can your calls be spoofed by others?
+   - Status codes: A (verified), B (partial), C (unverified)
+
+3. "Generate full origination report for outbound calls"
+   - Shows every call claiming to originate from your number
+   - Helps identify patterns
+   - Can help carrier block spoofing
+
+4. "Enable additional authentication on my account"
+   - PIN or security word for account changes
+   - Port freeze (prevents number porting to attacker)
+   - Call protection service at no cost (depends on carrier)
+```
+
+These steps give carriers ability to protect your number.
+
+## Personal Network Notification Protocol
+
+If your number is being spoofed, notify your contacts:
+
+```
+Email Template:
+
+Subject: Security Alert - My Phone Number May Have Been Spoofed
+
+Hi everyone,
+
+I wanted to let you know that my phone number (+1-555-123-4567) may be
+being used by scammers to call people without my knowledge or consent.
+
+If you receive a call from my number:
+- It may NOT actually be from me
+- Be wary of any requests for money, passwords, or personal information
+- Contact me through a different method to verify
+
+To verify it's really me:
+- Call me back at [alternate number]
+- Text me at [Signal/Telegram/other encrypted app]
+- Email me
+
+Do NOT:
+- Give out personal information to unknown callers
+- Click links or download files from unsolicited calls
+- Share passwords or verification codes
+
+I apologize for any inconvenience. The carrier is investigating.
+
+Thanks,
+[Your name]
+```
+
+Preemptive notification prevents scammers from successfully impersonating you.
+
+## For Developers: Phone Verification Best Practices
+
+If you're implementing phone-based verification:
+
+```python
+# Anti-spoofing verification system
+
+import hashlib
+import secrets
+from datetime import datetime, timedelta
+
+class PhoneVerificationSystem:
+    def __init__(self):
+        self.verification_attempts = {}
+        self.verified_numbers = set()
+
+    def send_verification_code(self, phone_number):
+        """
+        Send verification code with anti-spoofing measures
+        """
+
+        # Check for excessive attempts (sign of attack)
+        if phone_number in self.verification_attempts:
+            attempts = self.verification_attempts[phone_number]
+            if len(attempts) > 5:
+                recent = [t for t in attempts if t > datetime.now() - timedelta(hours=1)]
+                if len(recent) > 3:
+                    raise Exception("Too many verification attempts - account locked")
+
+        # Generate code
+        code = secrets.randbelow(1000000)  # 6-digit code
+        code_str = f"{code:06d}"
+
+        # Send via SMS
+        send_sms(phone_number, f"Your verification code is: {code_str}")
+
+        # Record attempt
+        if phone_number not in self.verification_attempts:
+            self.verification_attempts[phone_number] = []
+        self.verification_attempts[phone_number].append(datetime.now())
+
+        # Store for verification (hashed for security)
+        stored_hash = hashlib.sha256(code_str.encode()).hexdigest()
+        self.pending_verifications[phone_number] = {
+            'code_hash': stored_hash,
+            'timestamp': datetime.now(),
+            'expires': datetime.now() + timedelta(minutes=10)
+        }
+
+    def verify_code(self, phone_number, provided_code):
+        """
+        Verify the code with anti-spoofing checks
+        """
+
+        if phone_number not in self.pending_verifications:
+            raise Exception("No pending verification")
+
+        record = self.pending_verifications[phone_number]
+
+        # Check expiration
+        if datetime.now() > record['expires']:
+            raise Exception("Code expired")
+
+        # Check code (hash comparison to avoid timing attacks)
+        provided_hash = hashlib.sha256(provided_code.encode()).hexdigest()
+        if secrets.compare_digest(provided_hash, record['code_hash']):
+            # Verification successful
+            self.verified_numbers.add(phone_number)
+            del self.pending_verifications[phone_number]
+            return True
+        else:
+            raise Exception("Invalid code")
+```
+
+This implementation provides rate limiting and secure code verification.
 
 ## Related Articles
 
