@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-block-tracking-pixels-in-email-clients-setup-guide/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

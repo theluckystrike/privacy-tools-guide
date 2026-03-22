@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-build-privacy-preserving-webhook-relay-that-strips-pi/
+description: "Follow this guide to how to build privacy preserving webhook relay that strips pi with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "How to Build a Privacy-Preserving Webhook Relay That Strips"
