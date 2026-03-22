@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 China's exit ban system automatically triggers when authorities detect specific patterns in your online activity—including travel-related searches, VPN usage, sensitive communications, or unusual financial activity. The system integrates network monitoring, WeChat surveillance, search query analysis, and travel booking data to create behavioral risk profiles without explicit court orders. Understanding how metadata aggregation flags individuals is essential for developers building privacy tools and users navigating regions with ubiquitous surveillance infrastructure.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Whether you're a developer**: building privacy tools or a user navigating restricted regions, awareness of these mechanisms informs better decision-making.
+- **Use minimal permissions (iOS/Android**: restrictions) // 2.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use burner SIM card**: (local China SIM) # - Separate from home country identity # - Don't associate with personal data # 6.
+- **Password changes # -**: Change all important passwords # - Do this on different network (not home/work) # - Use new password manager # 3.
+
 ## Understanding the Exit Ban Mechanism
 
 China's "chujing zheng" (exit permit) system allows authorities to restrict citizens from leaving the country. What makes this particularly relevant for technical users is how these bans are triggered—not through explicit court orders alone, but through automated analysis of online activity, communications metadata, and behavioral patterns.

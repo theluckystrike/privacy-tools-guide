@@ -17,6 +17,21 @@ tags: [privacy-tools-guide]---
 
 Every time you connect to public WiFi at airports, hotels, or coffee shops, you encounter captive portals that demand personal information before granting internet access. These portals often harvest email addresses, phone numbers, and social media profiles—data that gets sold to advertisers or breached in security incidents. This guide provides practical alternatives for developers and power users who need connectivity without surrendering personal data.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **The business model behind**: "free" public WiFi increasingly relies on monetizing user data rather than subscription fees.
+- **By running your own**: HTTPS server or using established protocols that use port 443, you can often bypass captive portal restrictions.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Configure your browser to prefer HTTP/3**: Firefox (about:config):
+```
+network.http.http3.enabled = true
+```
+
+Chrome:
+HTTP/3 is enabled by default in Chrome.
+- **Check email portal acceptance**: (often allows access after 20 seconds) 2.
+
 ## Understanding Captive Portal Data Collection
 
 Captive portals operate at the network level by intercepting your initial HTTP requests and redirecting you to a login or splash page. While presented as authentication mechanisms, many serve primarily as data collection tools. The information requested ranges from annoying (email address for "free" access) to invasive (phone number verification, social media login via OAuth).

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 GDPR is broader and stricter: it applies to any organization with EU users regardless of size, requires explicit opt-in consent, mandates 72-hour breach notification, and carries fines up to 4% of global revenue. CCPA is narrower: it only applies to for-profit businesses exceeding $25 million in revenue (or meeting other thresholds), defaults to opt-out rather than opt-in, and imposes penalties of $2,500-$7,500 per violation. For developers, implementing GDPR compliance first covers most CCPA requirements -- the key additions for CCPA are the "Do Not Sell" opt-out mechanism and the 45-day response window for data requests.
 
+## Key Takeaways
+
+- **CCPA penalties are $2**:500 per unintentional violation and $7,500 per intentional violation, enforced by the California Attorney General.
+- **There's no private right**: of action for most violations, though users can sue for data breaches involving unencrypted or unredacted personal information.
+- **For developers**: implementing GDPR compliance first covers most CCPA requirements -- the key additions for CCPA are the "Do Not Sell" opt-out mechanism and the 45-day response window for data requests.
+- **A startup with EU**: users must implement GDPR compliance from day one, while an US-only service might only need CCPA compliance if it meets the thresholds.
+- **Users can request their**: data in a commonly used electronic format, and you must respond within one month.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## Scope and Applicability
 
 GDPR applies to any organization processing personal data of EU residents, regardless of where the organization is located. The threshold is straightforward: if you have users in the EU, GDPR likely applies to you. The regulation defines personal data broadly, covering anything that can identify an individual directly or indirectly.
