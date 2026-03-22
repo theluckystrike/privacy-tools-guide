@@ -46,7 +46,17 @@ Modern attack vectors have evolved beyond network-based intrusions. Supply chain
 
 The trade-off is inconvenience. Data transfer requires deliberate action, software updates demand manual intervention, and the system cannot use cloud services. For those whose threat model justifies this trade-off, the isolation provides peace of mind that no remote exploitation can reach their sensitive work.
 
-## Hardware Selection and Preparation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Select and Prepare Hardware
 
 The foundation of a secure air-gapped setup begins with hardware. Avoid refurbished machines from unknown sources, as these may contain hardware-level compromises. Purchase a dedicated machine from a reputable vendor, ideally with all wireless capabilities removed or disabled.
 
@@ -60,7 +70,7 @@ A typical air-gapped workstation configuration includes:
 
 Before first boot, verify the machine's integrity. Inspect all cables and components for tampering indicators. Update the BIOS firmware from a trusted source using a verified medium before proceeding with OS installation.
 
-## Operating System Hardening
+### Step 2: Harden the Operating System
 
 For an air-gapped system, choose an operating system that minimizes attack surface and supports encryption. Linux distributions like Qubes OS or Debian with the hardened kernel provide excellent baselines. Alternatively, Windows with BitLocker and rigorous group policies works for enterprise environments.
 
@@ -105,7 +115,7 @@ gsettings set org.gnome.desktop.session idle-delay 300
 gsettings set org.gnome.screensaver lock-enabled true
 ```
 
-## Encrypted Storage and Partitions
+### Step 3: Set Up Encrypted Storage and Partitions
 
 Full-disk encryption protects data if the physical machine is stolen. For Linux systems, LUKS (Linux Unified Key Setup) provides encryption:
 
@@ -125,7 +135,7 @@ sudo mount /dev/mapper/secure_volume /mnt/secure
 
 Store the LUKS header backup on separate, secure media. The header contains the master key—losing it means losing access to all data.
 
-## Data Transfer Methods
+### Step 4: Set Up Data Transfer Methods
 
 Transferring data to and from an air-gapped system requires deliberate, controlled mechanisms. The method chosen depends on security requirements and convenience tolerance.
 
@@ -165,7 +175,7 @@ zbarimg data.png
 
 This method creates an air gap at the data transfer level—no physical media enters both systems.
 
-## Maintenance and Updates
+### Step 5: Perform Maintenance and Updates
 
 Keeping an air-gapped system secure requires different update procedures than connected machines.
 
@@ -269,7 +279,7 @@ sudo mount /dev/mapper/secure_volume /mnt/secure
 
 The keyfile must be transferred to the air-gapped system via secure media.
 
-## Package Verification Procedures
+### Step 6: Package Verification Procedures
 
 When installing software on an air-gapped system, verify signatures:
 
@@ -299,7 +309,7 @@ sha256sum package.tar.gz
 # Compare on all systems before proceeding
 ```
 
-## Secure Deletion on Air-Gapped Systems
+### Step 7: Secure Deletion on Air-Gapped Systems
 
 Data deleted normally can be recovered. On air-gapped systems, use secure deletion:
 
@@ -318,7 +328,7 @@ wipe -r /path/to/directory
 sudo dd if=/dev/zero of=/dev/sdX bs=1M status=progress
 ```
 
-## Access Logging for Physical Security
+### Step 8: Access Logging for Physical Security
 
 Document all access to the air-gapped system:
 
@@ -428,6 +438,21 @@ Typical air-gapped setup costs:
 | **Maintenance (annual)** | **$75-100** |
 
 Time investment: 4-6 hours initial setup, 1-2 hours monthly maintenance.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

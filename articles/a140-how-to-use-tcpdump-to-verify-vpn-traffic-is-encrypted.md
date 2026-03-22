@@ -55,7 +55,17 @@ When you're connected to a VPN, your traffic goes through two main stages: first
 
 This level of verification is particularly important for privacy-sensitive activities, journalists working in restrictive environments, or anyone who genuinely needs to verify their VPN is functioning as expected.
 
-## Installing tcpdump
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install tcpdump
 
 Most Unix-like operating systems come with tcpdump pre-installed, but if you need to install it, here are the common methods:
 
@@ -86,7 +96,7 @@ tcpdump --version
 
 Note that capturing packets often requires root privileges, so you may need to use `sudo` when running tcpdump commands.
 
-## Capturing VPN Traffic with tcpdump
+### Step 2: Capturing VPN Traffic with tcpdump
 
 Before you can analyze your VPN traffic, you need to capture it. First, identify your network interfaces:
 
@@ -122,7 +132,7 @@ For real-time viewing with filtering:
 sudo tcpdump -i any -v | grep -i vpn
 ```
 
-## Analyzing the Captured Traffic
+### Step 3: Analyzing the Captured Traffic
 
 Once you've captured some traffic, it's time to analyze it. The key question is: is the traffic encrypted?
 
@@ -196,7 +206,7 @@ In Wireshark, you can:
 - Decode VPN protocols automatically
 - Compare encrypted vs unencrypted traffic visually
 
-## Verifying Specific VPN Protocols
+### Step 4: Verify Specific VPN Protocols
 
 Different VPN protocols have different characteristics when analyzed with tcpdump.
 
@@ -301,6 +311,21 @@ To maintain confidence in your VPN setup:
 3. After network changes Verify again after router changes, network configuration updates, or VPN software updates.
 
 4. After system sleep/wake Some systems don't properly re-establish VPN connections after waking from sleep—always verify after resuming.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

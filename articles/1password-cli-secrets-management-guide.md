@@ -50,7 +50,17 @@ The 1Password CLI (`op`) is a command-line tool that allows you to interact with
 
 The CLI supports various authentication methods, including biometric authentication via Touch ID or Windows Hello, as well as session-based authentication for automated workflows. This flexibility makes it suitable for both interactive development sessions and CI/CD environments.
 
-## Installing the 1Password CLI
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install the 1Password CLI
 
 On macOS, the simplest installation method uses Homebrew:
 
@@ -64,7 +74,7 @@ For Linux or Windows Subsystem for Linux (WSL), download the appropriate binary 
 op --version
 ```
 
-## Authenticating with 1Password
+### Step 2: Authenticate with 1Password
 
 Before retrieving secrets, you must authenticate with your 1Password account. For interactive use, run:
 
@@ -82,7 +92,7 @@ eval $(op signin --account myteam)
 
 This command exports the session credentials to your shell environment, valid for a configurable duration.
 
-## Retrieving Secrets
+### Step 3: Retrieve Secrets
 
 Once authenticated, retrieving a secret is straightforward. The basic syntax uses the item name and field you want to access:
 
@@ -102,7 +112,7 @@ You can also retrieve secrets by their UUID if you know it:
 op item get u7w8x9y2z --field password
 ```
 
-## Integrating with Environment Variables
+### Step 4: Integrate with Environment Variables
 
 One of the most practical applications of the 1Password CLI is populating environment variables for your applications. This approach keeps credentials out of configuration files while making them available at runtime.
 
@@ -126,7 +136,7 @@ alias prod-db='op item get "Production DB" --field password'
 
 Add this to your shell configuration file (`.bashrc` or `.zshrc`) for persistent access.
 
-## Working with Multiple Vaults
+### Step 5: Work with Multiple Vaults
 
 Larger organizations often use multiple vaults to separate secrets by environment or team. By default, `op` queries your personal vault. To access a specific vault, use the `--vault` flag:
 
@@ -142,7 +152,7 @@ op vault list
 
 This command displays all vaults your account can access, including shared team vaults.
 
-## Scripting with 1Password CLI
+### Step 6: Script with 1Password CLI
 
 For more complex automation, shell scripts provide greater control. Here's an example that retrieves multiple secrets and exports them for a database migration:
 
