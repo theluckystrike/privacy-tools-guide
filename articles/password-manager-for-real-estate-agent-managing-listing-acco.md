@@ -216,6 +216,88 @@ if [ $EXPIRING -gt 0 ]; then
 fi
 ```
 
+## Compliance and Regulatory Requirements
+
+Real estate professionals must comply with specific credential handling regulations. Many state real estate commissions require secure credential storage and access auditing. Some brokerages enforce additional requirements based on their E&O (Errors and Omissions) insurance policies.
+
+### CCPA and Privacy Law Compliance
+
+If you're storing client data alongside credential management, understand your obligations under CCPA, VCDPA, and similar state privacy laws. Your password manager should:
+
+- Support data export for subject access requests
+- Allow credential deletion without backup retention
+- Maintain audit logs of access
+- Integrate with broader data governance processes
+
+## Integration with Existing Systems
+
+Real estate agents often work within brokerage-provided CRM systems (Salesforce, Nucleus, Inside Real Estate). Your password manager should integrate cleanly with these systems rather than competing with them.
+
+### API Integration Strategies
+
+```bash
+# For developers: Check whether your password manager supports API access
+# Bitwarden API example for programmatic secret retrieval
+curl -X POST https://identity.bitwarden.com/identity/connect/token \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=client_credentials&scope=api&client_id=YOUR_CLIENT_ID&client_secret=YOUR_SECRET"
+```
+
+Consider whether you need password manager integration with your CRM's authentication layer. Some agents use password managers only for administrative access, while others manage all platform credentials through it.
+
+### Team Coordination Without Over-Sharing
+
+When working with transaction coordinators or lead coordinators, secure credential sharing prevents the "everybody has everyone's password" antipattern. Define clear credential ownership and sharing boundaries:
+
+- **Agent-specific**: Login credentials only the agent uses
+- **Role-based**: Shared by coordinator role (listing coordinator, closing coordinator)
+- **Client-specific**: Per-property access for specialists like photographers or inspectors
+
+### Performance Testing
+
+Password managers add latency to your workflow. Test your chosen solution with real tasks:
+
+```bash
+# Measure credential retrieval time
+time bw get item "MLS Credentials" --output json > /dev/null
+
+# Benchmark your typical workflow: login to 3-5 platforms and measure total time
+```
+
+For agents handling multiple transactions simultaneously, even small delays accumulate. A well-configured password manager should add less than 5 seconds total to your login workflow.
+
+## Advanced Configuration for Power Users
+
+### Custom Fields and Metadata
+
+Store additional information beyond standard password fields:
+
+```bash
+# Using Bitwarden CLI to add custom fields
+bw get item "Regional MLS" | jq '.fields += [
+  {"name": "License Number", "value": "CA-12345", "type": 0},
+  {"name": "Commission Rate", "value": "2.5%", "type": 0},
+  {"name": "Password Expiration", "value": "2026-06-15", "type": 0}
+]' > updated-item.json
+
+bw update item < updated-item.json
+```
+
+### Automating Password Rotation
+
+Many platforms require password rotation on schedules (typically 90 days). Automate reminders:
+
+```bash
+#!/bin/bash
+# Script to find expiring passwords
+
+VAULT_ITEMS=$(bw list items)
+
+echo "$VAULT_ITEMS" | jq -r '.[] | select(.login.passwordRevisionDate < now - (30 * 86400)) | .name'
+```
+
+Schedule this to run weekly and alert you to credentials needing renewal.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

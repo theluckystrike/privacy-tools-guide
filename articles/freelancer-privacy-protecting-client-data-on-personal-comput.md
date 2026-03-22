@@ -210,6 +210,131 @@ Document your security practices in a simple policy you can share with clients. 
 
 Include details about: encryption at rest, access controls, data retention and deletion policies, and incident response procedures. Clients handling sensitive data (healthcare, legal, financial) may have specific requirements—accommodate their compliance needs.
 
+## Compliance Documentation and Client Contracts
+
+Protect yourself legally by documenting your security practices and ensuring client contracts acknowledge your data handling approach. Many clients increasingly ask about your security posture, and having clear documentation demonstrates professionalism while setting expectations.
+
+### Creating a Data Security Policy
+
+Document your practices in a simple policy document:
+
+```markdown
+# Freelancer Data Security Policy
+
+## Encryption
+- All client files encrypted at rest using AES-256
+- All file transfers use TLS 1.3 or higher
+- Encryption keys stored separately from data
+
+## Access Controls
+- Client work isolated in dedicated encrypted VM
+- Access requires biometric authentication
+- No automatic login persistence
+
+## Data Retention
+- Client files deleted within 30 days of project completion
+- Backups retained for 90 days
+- No copying to cloud services without explicit permission
+
+## Incident Response
+- Data breaches reported within 24 hours
+- Affected clients notified immediately
+- Full incident documentation provided
+```
+
+Share this with clients during onboarding. Some clients will have specific compliance requirements (HIPAA, SOC 2 certification, etc.) that may require adjustments to your standard practices.
+
+### Client Data Request Procedures
+
+Establish clear processes for client data access requests:
+
+```bash
+#!/bin/bash
+# Client data access logging script
+
+log_access() {
+    local client=$1
+    local file=$2
+    local action=$3
+
+    echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] $client - $file - $action" >> client_access.log
+}
+
+# Log when you retrieve client files
+log_access "ClientName" "project_files.zip" "RETRIEVED"
+
+# Maintain immutable log file
+chmod 444 client_access.log
+```
+
+This demonstrates to clients (or auditors) that you maintain formal access records.
+
+## Network Segmentation Strategies
+
+Beyond VM isolation, implement network-level separation:
+
+### Dedicated Network Profile
+
+Create a separate Wi-Fi network or Ethernet connection for client work:
+
+```bash
+# macOS: Create separate network location
+networksetup -createlocation "Client Work" populate
+
+# Linux: Separate network namespace
+sudo ip netns add client-work
+sudo ip netns exec client-work bash
+```
+
+This prevents accidentally connecting to personal networks that might expose your activity to family members or roommates.
+
+### Firewall Rules for Client Work
+
+Restrict outbound connections during client work sessions:
+
+```bash
+# macOS firewall rules
+/usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on
+
+# Ubuntu: UFW rules for VM-specific interface
+ufw default deny outgoing from 192.168.100.x
+ufw allow out from 192.168.100.x to 8.8.8.8 port 53  # DNS only
+```
+
+Prevent client data from leaking through background sync services or unexpected connections.
+
+## Hardware Considerations
+
+Your physical hardware affects data security as much as software practices:
+
+### Disk Failure Protection
+
+Encrypted disks that fail suddenly can be expensive to recover. Implement redundancy:
+
+```bash
+# Create RAID 1 (mirrored) encrypted volume
+mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sda1 /dev/sdb1
+
+# Encrypt the mirror
+cryptsetup luksFormat /dev/md0
+
+# Monitor disk health
+smartctl -a /dev/sda | grep FAIL
+```
+
+Regular backups prevent situations where a disk failure means losing client data permanently.
+
+### Laptop Security Hardware
+
+If you work with particularly sensitive data (legal, medical, financial), consider hardware security keys for authentication:
+
+```bash
+# Using YubiKey for local authentication
+sudo auth required pam_yubico.so
+```
+
+This prevents someone with physical access from using your computer even if they bypass the login password.
+
 ## Building Sustainable Habits
 
 Security works best when it fits naturally into your workflow. Start with disk encryption, then add password management, then layer on additional protections as needed. Avoid over-engineering solutions that become burdens—you're more likely to maintain consistent practices that provide real security.

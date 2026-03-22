@@ -221,6 +221,223 @@ Deploying DNS blocking on a travel router provides consistent protection across 
 
 This setup is particularly valuable for sensitive browsing or when working remotely. The router acts as a privacy firewall, filtering traffic at the DNS level before it reaches your devices.
 
+## Advanced Filter Management
+
+As your block list grows, performance optimization becomes necessary. Managing hundreds of thousands of blocking rules requires strategy.
+
+### Filter List Performance Tuning
+
+```bash
+# Check block list size and compilation time
+# Larger lists = more memory usage and lookup latency
+
+# Get rule count per list
+curl -s https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt | wc -l
+
+# Benchmark DNS query time
+# Before/after adding lists
+dig @192.168.8.1 google.com +stats
+
+# Expected overhead: <50ms per query with large filter lists
+```
+
+Very large filter lists (millions of rules) can introduce latency. Select lists balancing coverage and performance.
+
+### Custom Block List Creation
+
+```bash
+# Create organization-specific block list
+cat > custom_blocks.txt << EOF
+# Local organization blocklist (generated 2026-03-22)
+
+# Block Instagram tracking infrastructure
+0.0.0.0 scontent-*.cdninstagram.com
+0.0.0.0 instagram.com
+0.0.0.0 *.instagram.com
+
+# Block TikTok ecosystem
+0.0.0.0 tiktok.com
+0.0.0.0 *.tiktok.com
+0.0.0.0 bytedance.com
+
+# Block specific Ad networks
+0.0.0.0 googleadservices.com
+0.0.0.0 doubleclick.net
+EOF
+
+# Host this on your router or a Git repository
+```
+
+Custom lists let you block services specific to your organization or threat model without forcing entire lists on all users.
+
+## Multi-Device Configuration and Testing
+
+DNS filtering effectiveness depends on proper device configuration. Test across your device ecosystem:
+
+### Device-Specific DNS Settings
+
+```bash
+# macOS - Set DNS at system level
+networksetup -setdnsservers Wi-Fi 192.168.8.1
+
+# Linux - Using systemd-resolved
+cat >> /etc/systemd/resolved.conf << EOF
+DNS=192.168.8.1
+FallbackDNS=1.1.1.1
+EOF
+
+# Android - Private DNS (system-wide)
+# Settings → System → Advanced → Private DNS
+# Server hostname: router.local (or IP)
+
+# iOS - DNS over HTTPS configuration
+# Settings → Wi-Fi → Info icon → DNS → Configure DNS
+```
+
+Each platform's DNS configuration differs. Comprehensive testing ensures all devices use your DNS filter.
+
+### Validation and Testing Tools
+
+```bash
+#!/bin/bash
+# DNS filtering validation script
+
+echo "=== DNS Filter Validation ==="
+
+# Test that blocking is active
+echo "1. Testing blocked domain:"
+nslookup doubleclick.net 192.168.8.1 | grep -q "NXDOMAIN" && echo "✓ Blocked" || echo "✗ Not blocked"
+
+# Test that legitimate queries work
+echo "2. Testing legitimate domain:"
+nslookup google.com 192.168.8.1 | grep -q "has address" && echo "✓ Resolves" || echo "✗ Failed"
+
+# Check query log in AdGuard Home
+curl -s http://192.168.8.1:3000/api/querylog | jq '.data | length'
+
+# Verify all connected devices are using router DNS
+arp-scan -l | grep "192.168.8.1"
+```
+
+Regular testing confirms DNS blocking remains active across all devices.
+
+## Failover and Redundancy
+
+Critical applications require DNS availability. Implement failover:
+
+### Dual DNS Resolver Setup
+
+```bash
+# Configure secondary DNS resolver on different host
+# Primary: 192.168.8.1 (AdGuard on router)
+# Secondary: 192.168.8.100 (Pi-hole on Raspberry Pi)
+
+# Router DHCP configuration
+uci set dhcp.@dnsmasq[0].server='192.168.8.1'
+uci set dhcp.@dnsmasq[0].server='192.168.8.100'
+uci commit dhcp
+/etc/init.d/dnsmasq restart
+```
+
+If one DNS resolver fails, devices automatically use the other. This prevents complete loss of internet connectivity.
+
+### Health Check Monitoring
+
+```bash
+#!/bin/bash
+# Monitor DNS resolver health
+
+check_dns() {
+    local resolver=$1
+    local test_domain="google.com"
+
+    response_time=$(dig @$resolver $test_domain | grep "Query time" | awk '{print $4}')
+
+    if [ -z "$response_time" ]; then
+        echo "FAIL: $resolver"
+        return 1
+    else
+        echo "OK: $resolver (${response_time}ms)"
+        return 0
+    fi
+}
+
+# Monitor both resolvers
+check_dns 192.168.8.1
+check_dns 192.168.8.100
+
+# If primary fails, trigger failover
+if ! check_dns 192.168.8.1; then
+    echo "Primary resolver failed, switching to secondary"
+    uci set dhcp.@dnsmasq[0].server='192.168.8.100'
+    uci commit dhcp
+    /etc/init.d/dnsmasq restart
+fi
+```
+
+Automated monitoring detects resolver failures and triggers failover automatically.
+
+## Privacy-First DNS Configuration
+
+Beyond blocking, optimize for privacy by choosing DNS upstreams carefully:
+
+### Upstream Provider Comparison
+
+| Provider | Logging | Speed | Censorship | Privacy |
+|----------|---------|-------|-----------|---------|
+| Cloudflare (1.1.1.1) | Minimal | Fast | Low | Medium |
+| Quad9 | No logs | Medium | High (blocks malware) | High |
+| NextDNS | Yes (optional) | Medium | Customizable | Medium |
+| Mullvad | No logs | Medium | None | High |
+| Privacy-friendly ISP | Depends | Varies | Varies | Depends |
+
+For maximum privacy, combine encrypted DNS (DoH/DoT) with no-log providers:
+
+```bash
+# AdGuard Home upstream configuration for privacy
+# Use multiple upstreams for load balancing and redundancy
+
+# Quad9 with DoH
+https://dns.quad9.net/dns-query
+
+# Mullvad with DoH
+https://doh.mullvad.net/dns-query
+
+# Cloudflare with DoH (for fallback)
+https://dns1.1.1.1.1.1.1.1:8443/dns-query
+```
+
+This setup routes all upstream queries through HTTPS, preventing your ISP from seeing your DNS requests while blocking ads locally.
+
+## Maintenance and Update Management
+
+DNS blocking requires ongoing maintenance:
+
+### Automatic Block List Updates
+
+```bash
+# Schedule AdGuard Home update checks
+0 3 * * * /usr/bin/adguardhome --update-filters
+
+# Verify updates completed successfully
+30 3 * * * /usr/bin/curl -s http://localhost:3000/api/status | jq '.rules_count'
+```
+
+Schedule updates during low-traffic hours to prevent query latency spikes.
+
+### Log Analysis and Optimization
+
+```bash
+# Find top blocked domains
+curl -s http://192.168.8.1:3000/api/querylog | \
+  jq '.data[] | select(.status=="BLOCKED") | .question.name' | \
+  sort | uniq -c | sort -rn | head -20
+```
+
+Analyzing what's getting blocked helps you identify which filter lists are most effective and which might be overly aggressive.
+
+This setup is particularly valuable for sensitive browsing or when working remotely. The router acts as a privacy firewall, filtering traffic at the DNS level before it reaches your devices.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

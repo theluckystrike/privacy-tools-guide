@@ -238,7 +238,121 @@ Possibly. Services like WiGLE.net crowdsource Wi-Fi network locations from contr
 6. **Periodically verify** — Use Wi-Fi scanning tools to confirm what you're actually broadcasting
 
 By understanding how iPhone personal hotspot naming works at a technical level, you can make informed decisions about your device configuration and know exactly when your privacy is at risk. The fix is simple, takes under a minute, and eliminates a persistent low-cost identification method that most people never think to address.
----
+
+## Advanced Detection and Testing
+
+Power users concerned about verification should test their own device to confirm exposure elimination. Several tools allow you to observe what your device broadcasts in real-time.
+
+### Wi-Fi Frame Analysis
+
+Using Wireshark with a compatible Wi-Fi adapter, you can observe the beacon frames your device sends:
+
+```bash
+# Install Wireshark
+brew install wireshark
+
+# Launch with capture interface
+open /Applications/Wireshark.app
+
+# Filter for your device's SSID in beacon frames
+# Display filter: (wlan.fc.type_subtype == 8) && (wlan.ssid == "yourSSID")
+```
+
+Beacon frames transmit every 100 milliseconds when hotspot is enabled. Verify your changed name appears correctly and that no additional identifiers leak through beacon content.
+
+### mDNS Observation with Avahi
+
+```bash
+# Monitor Bonjour announcements in real-time
+dns-sd -B _services._dns-sd._udp local.
+
+# Watch your specific hotspot
+dns-sd -B _airplay._tcp local.
+```
+
+After changing your device name, these tools should show only your new generic name, not any personal identifiers.
+
+### Network Sniffer Verification
+
+For comprehensive verification, capture packets while hotspot is active:
+
+```bash
+# Capture Wi-Fi probe requests
+sudo tcpdump -i en0 -y IEEE802_11 'wlan.fc.type_subtype == 4'
+
+# Filter for your device's MAC address
+sudo tcpdump -i en0 'wlan.sa == "XX:XX:XX:XX:XX:XX" and (wlan.fc.type_subtype == 4)'
+```
+
+No results should contain your personal device name if renaming was successful.
+
+## Situational Awareness and Threat Modeling
+
+Different environments carry different Wi-Fi broadcast risks. Assess whether hotspot broadcasting matters in your threat model:
+
+### Low-Risk Situations
+
+- Home network (known, trusted environment)
+- Corporate office (controlled network environment)
+- Casual socializing (no targeting concern)
+
+In these cases, hotspot naming matters minimally. Broadcasting a generic name provides defense-in-depth without active threat.
+
+### Medium-Risk Situations
+
+- Public libraries and coffee shops (mixed-trust environment)
+- Travel (potential observers who might use location data)
+- Industry conferences (competitive intelligence risks)
+- Legal proceedings (opposing parties may be present)
+
+These situations warrant generic naming and potentially temporary disabling of hotspot.
+
+### High-Risk Situations
+
+- Active surveillance (domestic violence, stalking, investigative targets)
+- Activist and protest contexts
+- Border crossings (government scanning)
+- Opposition research (political campaigns, corporate espionage)
+
+In these cases, combine generic naming with additional operational security: disable hotspot entirely when not actively using it, use completely random device names, or rotate names frequently.
+
+## Organizational Deployment Considerations
+
+If you manage iPhones for an organization, deployment matters beyond individual privacy.
+
+### MDM Configuration Best Practices
+
+Mobile Device Management policies can enforce device naming across all corporate iPhones:
+
+```xml
+<!-- Apple Configuration Profile Example -->
+<dict>
+  <key>DeviceName</key>
+  <string>Corporate-{{SERIAL_SHORT}}</string>
+  <key>RestrictHotspotPersonalization</key>
+  <true/>
+</dict>
+```
+
+Using serial number last digits ensures uniqueness for IT staff while preventing personal identification by external observers.
+
+### Policy Recommendations
+
+- **Never allow personal device names** for corporate devices
+- **Auto-hide hotspot SSID** when not actively used
+- **Enforce offline usage** for sensitive meetings or court appearances
+- **Train employees** on why generic naming matters
+
+## Long-Term Privacy Hygiene
+
+Device naming represents one layer of a comprehensive privacy approach. Consistent naming hygiene across all your devices prevents inadvertent identification:
+
+- **Mac names**: Use generic names (MacBook, MacBook-Work)
+- **Android devices**: Disable "Show this device as…" personalization
+- **Tablets**: Consistent anonymous naming
+- **Smart watches**: Avoid personal names
+
+The cumulative effect of multiple devices with personal names creates multiple identification vectors. Standardizing on generic naming eliminates many of them simultaneously.
 
 
 ## Related Articles

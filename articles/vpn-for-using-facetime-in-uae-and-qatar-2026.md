@@ -170,6 +170,173 @@ dig +short TXT whoami.cloudflare @1.1.1.1
 
 For FaceTime specifically, ensure your VPN provides consistent bandwidth of at least 1.5 Mbps for standard video calls, or 3 Mbps for HD video. Test both incoming and outgoing call quality.
 
+## Mobile VPN Optimization for FaceTime
+
+Mobile implementations of VPN require special optimization for cellular connections which are more unstable than wired connections.
+
+### iOS-Specific VPN Configuration
+
+```swift
+import NetworkExtension
+
+class FaceTimeOptimizedVPN {
+    func setupOptimizedVPN() {
+        let settings = NEVPNProtocolIKEv2()
+
+        // Optimize for mobile: keepalive to prevent NAT timeout
+        settings.serverAddress = "vpn-server.example.com"
+        settings.username = "your_username"
+        settings.passwordReference = try? loadKeychain()
+
+        // Critical for FaceTime on cellular:
+        // Prevent connection drop during brief signal loss
+        settings.disconnectOnSleep = false
+
+        // Enable mobility (survives network changes)
+        settings.useExtendedAuthentication = true
+
+        // DNS settings for FaceTime server resolution
+        let dnsSettings = NEDNSSettings(servers: ["1.1.1.1", "8.8.8.8"])
+        dnsSettings.matchDomains = [] // Route all DNS through VPN
+
+        let vpnConfig = NEVPNConfiguration()
+        vpnConfig.protocolConfiguration = settings
+        vpnConfig.dnsSettings = dnsSettings
+
+        try? vpnConfig.saveToPreferences()
+        try? NEVPNManager.shared().loadFromPreferences()
+        try? NEVPNManager.shared().connection.startVPNTunnel()
+    }
+}
+```
+
+This configuration ensures VPN survives brief network transitions (switching from cellular to Wi-Fi) without dropping FaceTime calls.
+
+### Android VPN Optimization
+
+```xml
+<!-- Android NetworkSecurityConfig for VPN -->
+<domain-config cleartextTrafficPermitted="false">
+    <domain includeSubdomains="true">vpn-server.example.com</domain>
+
+    <!-- Force VPN for all traffic -->
+    <pin-set expiration="2027-03-22">
+        <pin digest="SHA-256">your-certificate-pin</pin>
+    </pin-set>
+</domain-config>
+```
+
+Certificate pinning prevents man-in-the-middle attacks while forcing all traffic through your VPN even if system settings change.
+
+## Real-Time Protocol Optimization
+
+FaceTime's real-time requirements demand specific network optimizations beyond basic VPN setup.
+
+### QoS Priority for VoIP
+
+```bash
+# Linux kernel network prioritization
+# Prioritize UDP port ranges used by FaceTime
+
+# Create HTB qdisc for bandwidth management
+tc qdisc add dev eth0 root handle 1: htb default 11
+
+# High-priority class for VoIP (50% of bandwidth guaranteed)
+tc class add dev eth0 parent 1: classid 1:1 htb rate 100mbps
+
+# VoIP subclass
+tc class add dev eth0 parent 1:1 classid 1:10 htb rate 50mbps burst 100kb
+
+# Other traffic
+tc class add dev eth0 parent 1:1 classid 1:11 htb rate 50mbps
+
+# Apply to UDP traffic (FaceTime)
+tc filter add dev eth0 parent 1: protocol ip prio 1 u32 match ip proto 17 flowid 1:10
+```
+
+This ensures FaceTime traffic gets priority during congestion, maintaining call quality even when bandwidth is limited.
+
+### Latency Monitoring and Adjustment
+
+```python
+import subprocess
+import time
+from collections import deque
+
+class LatencyMonitor:
+    def __init__(self, target='vpn-server.example.com'):
+        self.target = target
+        self.latencies = deque(maxlen=10)  # Track last 10 measurements
+        self.threshold_ms = 150  # FaceTime quality degrades above 150ms
+
+    def monitor_and_adjust(self):
+        while True:
+            latency = self.measure_latency()
+            self.latencies.append(latency)
+
+            avg_latency = sum(self.latencies) / len(self.latencies)
+
+            if avg_latency > self.threshold_ms:
+                print(f"Warning: High latency ({avg_latency:.0f}ms)")
+                self.switch_server()  # Try different VPN server
+            else:
+                print(f"Latency OK: {avg_latency:.0f}ms")
+
+            time.sleep(30)
+
+    def measure_latency(self):
+        result = subprocess.run(
+            ['ping', '-c', '1', self.target],
+            capture_output=True,
+            text=True
+        )
+        # Parse latency from output
+        import re
+        match = re.search(r'time=(\d+\.?\d*)', result.stdout)
+        return float(match.group(1)) if match else 999
+```
+
+Continuous latency monitoring identifies when to switch servers for better call quality.
+
+## Obfuscation Techniques for DPI Evasion
+
+Deep packet inspection can detect VPN traffic even with encryption. Advanced obfuscation helps.
+
+### Protocol Multiplexing
+
+```bash
+# Mix VPN traffic with normal HTTPS
+# This makes filtering profile harder to detect
+
+# Using Shadowsocks with obfs plugin
+ss-server -s 0.0.0.0 -p 443 -k password -m aes-256-gcm \
+  --plugin obfs-server --plugin-opts "obfs=http;obfs-host=www.example.com"
+```
+
+Traffic appears as normal HTTP to DPI systems while actually carrying VPN data.
+
+### DNS Tunneling (Last Resort)
+
+```bash
+# DNSCrypt tunnel - encodes traffic in DNS queries
+# Used when all other methods blocked
+
+# Install dnscrypt-proxy
+sudo apt install dnscrypt-proxy
+
+# Configure for tunnel mode
+cat > /etc/dnscrypt-proxy/dnscrypt-proxy.toml << EOF
+server_names = ['cloudflare']
+listen_addresses = ['127.0.0.1:53']
+
+# Enable DNS-based tunneling
+tunnel_mode = true
+tunnel_port = 443
+EOF
+```
+
+DNS tunneling encodes VPN traffic as DNS queries, harder to block without breaking legitimate DNS entirely.
+
 ## Troubleshooting Common Issues
 
 ### Connection Drops
