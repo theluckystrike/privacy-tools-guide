@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Storing sensitive estate planning documents, password vaults, and financial instructions requires AES-256 encryption before they ever touch a cloud repository. This guide shows you how to set up a GitHub repository with encrypted files using age encryption, ensuring that even if your repository is compromised, your most sensitive information remains unreadable. We'll cover three production-ready approaches: age (the modern, Go-based encryption tool favored by the Tor Project), git-crypt (for Git-aware transparent encryption), and SOPS (for YAML/JSON-based secret management used by Mozilla and Discord). Each method has distinct trade-offs in key management, CI/CD integration, and recovery workflows that matter for estate planning where losing access means your heirs cannot recover anything.
 
+## Key Takeaways
+
+- **Encryption at rest in**: your repository ensures that even complete repository access by an attacker yields only useless ciphertext.
+- **It uses X25519 for**: key exchange and ChaCha20-Poly1305 for encryption, meeting modern cryptographic standards while remaining approachable for non-cryptographers.
+- **You can track when**: you added a new bank account, see the history of changes to your funeral preferences, and revert mistakes without physically managing multiple versions of spreadsheets or PDFs.
+- **This provides tamper-resistant storage**: and requires physical presence to use.
+- **Use LUKS (Linux) or**: FileVault (macOS) encryption with a strong passphrase separate from your everyday passwords.
+- **Consider a time-locked approach**: where keys become accessible after a specified period of inactivity, or use a safe deposit box that your executor can access with proper documentation after your death.
+
 ## Why Encrypt Estate Documents in GitHub?
 
 Estate planning documents contain some of the most sensitive information a person can store digitally: master passwords to password managers, bank account credentials, locations of safety deposit keys, social security numbers, medical directives, and funeral preferences. Storing unencrypted versions of these documents in any cloud service creates a single point of failure that hackers, data breaches, or government subpoenas can exploit. Encryption before commit transforms your GitHub repository from a liability into a secure, version-controlled vault that your executor or family members can access using keys you've separately provided.

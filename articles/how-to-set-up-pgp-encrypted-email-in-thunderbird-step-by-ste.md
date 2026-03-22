@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Email encryption remains one of the most effective ways to protect sensitive communications. PGP (Pretty Good Privacy) provides end-to-end encryption that ensures only the intended recipient can read your messages. This guide walks through configuring PGP encryption in Thunderbird, from key generation to sending your first encrypted email.
 
+## Key Takeaways
+
+- **Use third-party plugin "GPGTools"**: ($9 one-time, open-source).
+- **Choose a key size**: of 4096 bits for strong security.
+- **For inline PGP (legacy format)**: Thunderbird supports this through add-ons, but the default envelope encryption (PGP/MIME) provides better compatibility and security.
+- **Use signed emails**: Sign all emails even if not encrypted (builds trust)
+4.
+- **Use "Gpg4Win" for Windows**: or Thunderbird.
+- **For maximum compatibility**: Thunderbird remains the strongest open-source option with built-in PGP support.
+
 ## Prerequisites
 
 Before beginning, ensure you have:

@@ -31,6 +31,18 @@ voice-checked: true---
 
 Build a privacy-focused CRM by collecting only name and contact method (email or phone), storing all data encrypted at rest, and implementing automatic data deletion after defined retention periods. Use pseudonymized interaction logs instead of user profiles, provide customers with data download/deletion dashboards, and separate transactional data (what was purchased) from behavioral data (browsing patterns). This approach requires schema redesign but reduces compliance risk, breach impact, and customer distrust while enabling your team to maintain customer relationships.
 
+## Key Takeaways
+
+- **Build a privacy-focused CRM**: by collecting only name and contact method (email or phone), storing all data encrypted at rest, and implementing automatic data deletion after defined retention periods.
+- **Encrypt at rest and in transit**: All customer data should use strong encryption, preferably with customer-controlled keys
+3.
+- **Implement consent management**: Track and honor preferences at the field level
+4.
+- **Most commercial CRMs collect far more than necessary by default**: location data, device fingerprints, social media profiles, and behavioral predictions.
+- **A privacy-focused approach requires**: intentional design decisions at every layer.
+- **Collect by default, not by design**: Ask for information only when the customer provides it voluntarily
+2.
+
 ## Understanding Data Minimization in CRM Design
 
 Data minimization means collecting only the personal data strictly necessary for your specific, explicit, and legitimate purposes. For a CRM, this typically means contact information required for communication, transaction data needed for service delivery, and interaction history that improves customer support.

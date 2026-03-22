@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Deploying a self-hosted Jitsi Meet instance with end-to-end encryption gives you complete control over your video conferencing infrastructure. This guide walks through setting up Jitsi Meet with Docker, enabling encryption, and hardening the deployment for production use in 2026.
 
+## Key Takeaways
+
+- **For organizations requiring E2EE**: communicate these limitations to users before deployment.
+- **Jitsi Meet can use coturn**: an open-source TURN server.
+- **Rate limiting**: Prevent abuse through nginx rate limits
+4.
+- **This guide walks through**: setting up Jitsi Meet with Docker, enabling encryption, and hardening the deployment for production use in 2026.
+- **Jitsi Meet supports E2EE**: using the WebRTC Insertable Streams API, which allows JavaScript to process media frames before transmission.
+- **Guests can still join**: meetings started by authenticated users, but they cannot initiate new conferences.
+
 ## Understanding Jitsi Meet Encryption
 
 Jitsi Meet provides two layers of encryption: transport layer security (TLS) for the connection between clients and the server, and end-to-end encryption (E2EE) for the actual media streams. The distinction matters significantly for privacy-conscious deployments.

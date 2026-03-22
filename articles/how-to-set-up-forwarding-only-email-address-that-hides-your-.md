@@ -31,6 +31,19 @@ tags: [privacy-tools-guide]---
 
 Every developer knows the pain of exposing their primary email address across the internet. Whether you're signing up for a new service, contributing to open source projects, or testing your own applications, your inbox becomes a target for spam, phishing attempts, and relentless marketing newsletters. A forwarding-only email address acts as a protective buffer—receiving messages at a disposable address and automatically forwarding them to your real inbox while keeping your actual email hidden from prying eyes.
 
+## Key Takeaways
+
+- **Update service with new**: address echo "Update your account at service.com to use: $NEW_ADDRESS" # 5.
+- **Disable forwarding curl -X**: DELETE "https://${FORWARDING_SERVICE}/api/forwards/${COMPROMISED_ADDRESS}" \ -H "Authorization: Bearer YOUR_API_TOKEN" # 2.
+- **Log the incident
+echo "$(date)**: $COMPROMISED_ADDRESS compromised" >> forwarding_incidents.log
+
+# 3.
+- **When you use a forwarding-only address**: messages sent to the disposable alias arrive at your real inbox automatically.
+- **First**: use unique addresses for each service or purpose.
+- **Replacement**: Create a new address for future use with that service
+6.
+
 ## Why Use a Forwarding-Only Email Address
 
 Your primary email address is your digital identity. Once it circulates across enough databases, it becomes nearly impossible to escape the constant stream of spam and unwanted communications. A forwarding-only email address solves this problem by creating an intermediary layer between your real inbox and the outside world.

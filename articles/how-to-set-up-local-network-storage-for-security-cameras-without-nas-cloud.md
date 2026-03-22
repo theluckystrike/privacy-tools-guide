@@ -31,6 +31,14 @@ tags: [privacy-tools-guide, security]---
 
 Set up a dedicated Linux PC or Raspberry Pi with large external drives running Frigate or MotionEye to record directly from IP cameras over your local network—no cloud required, no subscriptions. Alternatively, configure your router to attach external storage and set up Samba network shares where cameras record directly. Both methods cost $50-200 in hardware for a complete system that stores months of footage locally while avoiding cloud vendor dependence.
 
+## Key Takeaways
+
+- **Both methods cost $50-200**: in hardware for a complete system that stores months of footage locally while avoiding cloud vendor dependence.
+- **Consider these factors when**: planning your storage: - Resolution and frame rate: 4K cameras use substantially more storage than 720p - **Motion detection vs.
+- **Most modern IP cameras**: support writing directly to network shares via SMB/CIFS protocol.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Your Storage Requirements
 
 Before implementing a solution, calculate your storage needs. Security cameras generate significant data volumes. A single 1080p camera recording continuously at medium quality produces approximately 30GB per day. Higher resolutions or multiple cameras multiply this requirement quickly.
