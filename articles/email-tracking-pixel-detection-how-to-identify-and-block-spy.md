@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /email-tracking-pixel-detection-how-to-identify-and-block-spy/
 categories: [security, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

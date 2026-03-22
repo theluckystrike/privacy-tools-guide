@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /does-expressvpn-still-work-in-turkey-2026-latest-test/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
