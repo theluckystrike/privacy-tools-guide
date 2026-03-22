@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ledger-data-breach-lessons-how-hardware-wallet-companies-can/
 categories: [guides, security]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
