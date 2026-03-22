@@ -58,7 +58,7 @@ Before implementing Arkenfox, ensure you have:
 
 Avoid using Firefox Beta or standard Release for Arkenfox, as these channels receive updates more frequently and may reset some preferences. Firefox ESR is recommended because it receives security patches without feature churn, giving you a stable base for long-term hardening.
 
-## Installing Arkenfox user.js
+### Step 1: Install Arkenfox user.js
 
 First, locate your Firefox profile directory. Open `about:support` in your browser and find the "Profile Directory" path. Common locations include:
 
@@ -82,7 +82,7 @@ cp arkenfox/user.js ~/Library/Application\ Support/Firefox/Profiles/YOUR-PROFILE
 
 Replace `YOUR-PROFILE` with your actual profile folder name found in `about:support`.
 
-## Understanding the Configuration
+### Step 2: Understand the Configuration
 
 Arkenfox user.js contains hundreds of settings organized by category. Key sections include:
 
@@ -161,7 +161,7 @@ user_pref("privacy.clearOnShutdown.offlineApps", true);
 
 Setting `cookieBehavior` to 5 enables dFPI (dynamic First Party Isolation), the same technology that powers Total Cookie Protection. Cookies set by third-party frames are isolated per top-level site, breaking cross-site tracking without blocking third-party cookies outright.
 
-## Essential Customizations
+### Step 3: Essential Customizations
 
 While Arkenfox provides excellent defaults, you may need to adjust settings for your workflow. Create a `user-overrides.js` file in the same directory as `user.js` for personal exceptions:
 
@@ -196,7 +196,7 @@ The `webgl.disabled` setting breaks some legitimate applications including Googl
 
 Consider using a browser extension like uBlock Origin to block WebGL-based fingerprinting scripts site-by-site rather than disabling WebGL globally.
 
-## Arkenfox vs Alternatives
+### Step 4: Arkenfox vs Alternatives
 
 Arkenfox is one of several hardening approaches for Firefox. Understanding the alternatives helps you choose the right level of hardening:
 
@@ -210,7 +210,7 @@ Arkenfox is one of several hardening approaches for Firefox. Understanding the a
 
 For most users who want strong privacy without the overhead of Tor Browser, Arkenfox with a `user-overrides.js` for site exceptions is the best balance.
 
-## Verifying Your Configuration
+### Step 5: Verify Your Configuration
 
 After applying Arkenfox, verify that settings are active:
 
@@ -227,7 +227,7 @@ Use the Arkenfox diagnostic tool for validation:
 
 This script checks for conflicts, missing settings, and recommends updates. Also visit `coveryourtracks.eff.org` to test your fingerprinting resistance and `browserleaks.com` to check for WebRTC and canvas leaks.
 
-## Updating Arkenfox
+### Step 6: Updating Arkenfox
 
 Mozilla regularly updates Firefox, which may reset or conflict with user.js settings. Use the included update script:
 

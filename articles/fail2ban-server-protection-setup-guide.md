@@ -39,7 +39,17 @@ Log file → Filter (regex) → Jail policy (maxretry, findtime, bantime) → Ac
 
 ---
 
-## Install Fail2ban
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Fail2ban
 
 ```bash
 # Debian/Ubuntu
@@ -60,7 +70,7 @@ fail2ban-client status
 
 ---
 
-## Basic Configuration
+### Step 2: Basic Configuration
 
 Fail2ban's configuration has two layers:
 - `/etc/fail2ban/jail.conf` — default settings (don't edit this, it gets overwritten on updates)
@@ -98,7 +108,7 @@ banaction_allports = nftables[type=allports]
 
 ---
 
-## SSH Jail
+### Step 3: SSH Jail
 
 ```ini
 # In /etc/fail2ban/jail.local, add:
@@ -133,7 +143,7 @@ sudo fail2ban-client set sshd unbanip 1.2.3.4
 
 ---
 
-## Nginx and Apache Jails
+### Step 4: Nginx and Apache Jails
 
 ```ini
 # /etc/fail2ban/jail.local
@@ -177,7 +187,7 @@ bantime = 86400
 
 ---
 
-## Custom Jail and Filter
+### Step 5: Custom Jail and Filter
 
 Create a jail for any service that logs authentication failures. Example: protecting a WordPress login:
 
@@ -211,7 +221,7 @@ fail2ban-regex /var/log/nginx/access.log /etc/fail2ban/filter.d/wordpress-xmlrpc
 
 ---
 
-## Email Alerts
+### Step 6: Email Alerts
 
 ```bash
 # Configure email notifications for each ban event
@@ -265,7 +275,7 @@ if __name__ == '__main__':
 
 ---
 
-## Persistent Bans (Database)
+### Step 7: Persistent Bans (Database)
 
 By default, fail2ban forgets bans on restart. Enable persistent bans via its database:
 
@@ -278,7 +288,7 @@ dbpurgeage = 86400  # Keep ban history for 24 hours
 
 ---
 
-## Aggressive Mode: Increasing Ban Times for Repeat Offenders
+### Step 8: Aggressive Mode: Increasing Ban Times for Repeat Offenders
 
 ```bash
 # Install fail2ban-extras for recidive jail (bans IPs that get banned repeatedly)
@@ -297,7 +307,7 @@ maxretry = 5       # 5 bans in 24 hours = 1 week ban
 
 ---
 
-## Monitoring and Statistics
+### Step 9: Monitor and Statistics
 
 ```bash
 # Overall status
@@ -326,7 +336,7 @@ grep "Ban " /var/log/fail2ban.log | \
 
 ---
 
-## Test Your Configuration
+### Step 10: Test Your Configuration
 
 ```bash
 # Deliberately trigger the SSH jail using a test (from a safe IP)
@@ -347,6 +357,21 @@ sudo iptables -L f2b-sshd -n --line-numbers
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

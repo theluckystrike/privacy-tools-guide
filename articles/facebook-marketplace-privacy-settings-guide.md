@@ -40,7 +40,17 @@ Facebook Marketplace exposes your name, profile photo, location (city-level mini
 - **Use a Dedicated Email**: Consider using a separate email address for your Marketplace account distinct from your primary Facebook account.
 - **Phone Number Privacy**: Use a secondary phone number for Marketplace communications.
 
-## Understanding What Facebook Marketplace Exposes
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand What Facebook Marketplace Exposes
 
 When you list an item on Facebook Marketplace, the platform makes several data points visible to potential buyers:
 
@@ -54,7 +64,7 @@ When you list an item on Facebook Marketplace, the platform makes several data p
 
 This integration differs significantly from platforms like Craigslist or OfferUp, where listings are largely anonymous. The connected nature of Facebook Marketplace means your buying and selling activity becomes part of your broader social presence.
 
-## Profile-Level Privacy Controls
+### Step 2: Profile-Level Privacy Controls
 
 The foundation of Marketplace privacy starts with your Facebook profile settings. Navigate to **Settings & Privacy > Settings > Profile and Tagging** to access controls that affect your Marketplace experience.
 
@@ -76,7 +86,7 @@ Your Marketplace profile automatically uses your current Facebook profile pictur
 - Avoid images that reveal your workplace, neighborhood markers, or family members
 - Ensure the image doesn't contain metadata with location information
 
-## Marketplace-Specific Settings
+### Step 3: Marketplace-Specific Settings
 
 Facebook provides some settings directly within the Marketplace interface. Access these via the Marketplace icon > your profile icon > **Settings**.
 
@@ -92,7 +102,7 @@ Manage who can contact you through Marketplace:
 
 All messages initially arrive in "Message Requests" rather than your inbox, giving you screening ability. Enable offer filters for minimum price or specific categories to reduce unwanted inquiries. Maintain a block list for persistent unwanted contacts.
 
-## Technical Considerations for Developers
+### Step 4: Technical Considerations for Developers
 
 For developers building applications that interact with Facebook Marketplace or analyzing privacy implications, several API and data points are relevant.
 
@@ -164,7 +174,7 @@ Regularly audit your Marketplace presence:
 
 Use an alternate account to search for yourself and see what buyers see. Review your listing history — past listings remain visible for some time. Search `site:facebook.com/marketplace yourname` periodically to check Google indexing. Note which friends appear as mutual connections on your Marketplace profile.
 
-## Reporting and Dispute Resolution
+### Step 5: Reporting and Dispute Resolution
 
 When privacy violations occur, use Facebook's built-in reporting mechanisms:
 
@@ -173,7 +183,7 @@ When privacy violations occur, use Facebook's built-in reporting mechanisms:
 - Use Facebook's **Safety Center** for resources on digital safety
 - For serious threats, consider legal remedies and law enforcement contact
 
-## Setting Up Email Encryption with GPG
+### Step 6: Set Up Email Encryption with GPG
 
 End-to-end encryption ensures only the intended recipient can read your messages.
 
@@ -197,7 +207,7 @@ gpg --armor --sign --encrypt --recipient recipient@example.com message.txt
 
 Publish your public key to keys.openpgp.org or attach it to your email signature. Key servers make it easy for contacts to verify your identity.
 
-## Email Aliasing for Privacy
+### Step 7: Email Aliasing for Privacy
 
 Email aliases let you give each service a unique address, making it easy to identify and block sources of spam.
 
@@ -215,7 +225,7 @@ curl -X POST https://app.anonaddy.com/api/v1/aliases   -H "Authorization: Bearer
 ```
 
 Use a unique alias for every service signup. When an alias starts receiving spam, delete it immediately to cut off that leak without affecting your primary address.
-## Account Security for Marketplace
+### Step 8: Account Security for Marketplace
 
 Beyond privacy, protecting your Marketplace account from compromise is critical:
 
@@ -263,7 +273,7 @@ Successful privacy-aware transactions require operational discipline:
 - Count and verify payment before handing over items
 - Never accept personal checks or unusual payment methods
 
-## Marketplace Scam Prevention
+### Step 9: Marketplace Scam Prevention
 
 Understanding common Marketplace scams helps you avoid becoming a victim:
 
@@ -310,7 +320,7 @@ exiftool stripped-photo.jpg
 
 **Parallel Marketplace Alternatives**: For maximum privacy, consider OfferUp, Craigslist, or Nextdoor instead of Facebook Marketplace for transactions. These platforms require less personal information and provide more anonymity during the transaction process.
 
-## Privacy Tools Integration
+### Step 10: Privacy Tools Integration
 
 Several privacy tools integrate with Marketplace usage:
 
@@ -320,7 +330,7 @@ Several privacy tools integrate with Marketplace usage:
 
 **Phone Number Privacy**: Use a secondary phone number for Marketplace communications. Google Voice or Twilio numbers provide temporary contact points that you can discard after the transaction completes.
 
-## Marketplace for Developers and Technical Users
+### Step 11: Marketplace for Developers and Technical Users
 
 Developers building tools that interact with Marketplace should understand privacy implications. The Marketplace API exposes structured data that organizations may collect at scale.
 
@@ -348,6 +358,21 @@ curl -s "https://www.facebook.com/marketplace/profile/YOUR_ID" | grep -i "locati
 ```
 
 **Data Deletion**: After selling an item, remove the listing promptly. Old listings create permanent data points that aggregators may archive. Request deletion within Facebook's settings to ensure removal from search engines.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

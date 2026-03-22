@@ -42,7 +42,17 @@ This guide covers practical methods for managing your Google My Activity data, f
 - **Power users often maintain separate Google accounts**: one for YouTube activity and another for sensitive searches.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Accessing Your Google My Activity Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Access Your Google My Activity Data
 
 Navigate to [myactivity.google.com](https://myactivity.google.com) to access your complete activity timeline. The interface displays data organized by product—Search, YouTube, Assistant, and Location History. Each entry contains timestamps, device information, and the specific activity details.
 
@@ -54,7 +64,7 @@ Google provides three auto-delete options that control how long your data persis
 
 To change these settings, access the "Auto-delete" option from the activity controls page. Select the duration that matches your privacy requirements. For maximum privacy, choose the 3-month option or manually delete data regularly.
 
-## Deleting Activity Manually
+### Step 2: Delete Activity Manually
 
 The web interface supports several deletion methods. From the main My Activity page, you can:
 
@@ -64,13 +74,13 @@ The web interface supports several deletion methods. From the main My Activity p
 
 For bulk deletion, use the "Delete activity by" option. You can specify date ranges and product categories. This proves useful when removing specific time periods, such as eliminating all search activity during a particular week.
 
-## Programmatic Deletion with Google Takeout
+### Step 3: Implement Programmatic Deletion with Google Takeout
 
 For users who want complete control, Google Takeout allows downloading your entire activity history. While Takeout doesn't provide direct deletion functionality, it serves as a backup before implementing aggressive deletion strategies. Download your data periodically to maintain a personal archive independent of Google's servers.
 
 Access Takeout at [takeout.google.com](https://takeout.google.com) and select the products whose data you want to export. The export includes My Activity data, search history, YouTube history, and location timeline.
 
-## Automated Deletion Using Python
+### Step 4: Automated Deletion Using Python
 
 Developers can automate activity deletion using Google's official APIs. The following Python script demonstrates how to delete search history programmatically:
 
@@ -163,7 +173,7 @@ if __name__ == '__main__':
     delete_google_activity_auto()
 ```
 
-## Location History Management
+### Step 5: Location History Management
 
 Location History represents particularly sensitive data. Access this data through My Activity by selecting "Location History" from the sidebar. Google provides a separate timeline view at [timeline.google.com](https://timeline.google.com).
 
@@ -176,7 +186,7 @@ To delete Location History:
 
 For Android users, disabling "Location History" in your Google Account pauses collection, but note that "App activity" settings may still record location data through individual apps.
 
-## YouTube History Considerations
+### Step 6: YouTube History Considerations
 
 YouTube watch and search history directly influences recommendations. Deleting this data removes personalization but also resets algorithmic suggestions. Power users often maintain separate Google accounts—one for YouTube activity and another for sensitive searches.
 
@@ -222,6 +232,21 @@ class PrivacyconsciousAnalytics:
         }
         # Send to analytics endpoint
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

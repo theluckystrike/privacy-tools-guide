@@ -26,13 +26,23 @@ Control Facebook privacy through Settings > Privacy by restricting "Who can see 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Accessing Your Privacy Dashboard
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Access Your Privacy Dashboard
 
 Navigate to **Settings & Privacy → Settings → Privacy** to access the central hub for all privacy controls. The interface organizes settings into three categories: **Who can see your content**, **Who can contact you**, and **Your Facebook information**.
 
 For developers building applications that interact with Facebook data, understanding these controls is essential because user-configured restrictions directly impact what your application can access through the API.
 
-## Audience Selection Fundamentals
+### Step 2: Audience Selection Fundamentals
 
 The audience selector appears throughout Facebook, but the default settings determine baseline visibility. Configure these in the "Who can see your content" section:
 
@@ -44,7 +54,7 @@ The audience selector appears throughout Facebook, but the default settings dete
 
 To set defaults for future posts, use the "Limit who can see past posts" tool, which batch-updates all previous Public and Friends-of-Friends posts to Friends-only visibility.
 
-## Profile Privacy for Developers
+### Step 3: Profile Privacy for Developers
 
 When building applications that request profile data, be aware that the following fields require explicit user permission:
 
@@ -66,7 +76,7 @@ FB.api('/me/permissions', 'GET', (response) => {
 
 Users can review granted permissions at any time by visiting **Settings → Apps and Websites**. Revoking permissions immediately restricts API access for that application.
 
-## Controlling Tagging and Timeline
+### Step 4: Control Tagging and Timeline
 
 The "Timeline and Tagging" settings determine how others interact with your profile:
 
@@ -76,7 +86,7 @@ The "Timeline and Tagging" settings determine how others interact with your prof
 
 For developers, the `user_tagged_places` and `user_photos` permissions trigger these review settings. Applications should handle cases where content is pending review or rejected.
 
-## Story and Reel Privacy
+### Step 5: Story and Reel Privacy
 
 Facebook's "Stories" and "Reels" have separate privacy controls from standard posts. Access these under **Settings → Privacy → Story settings**:
 
@@ -84,7 +94,7 @@ Facebook's "Stories" and "Reels" have separate privacy controls from standard po
 - **Allow others to share your story as messages** — Prevents forwarding
 - **Hide story from** — Exclude specific users
 
-## Data Download and Portability
+### Step 6: Data Download and Portability
 
 Facebook provides data export options under **Settings → Your Facebook Information → Download your information**. You can request:
 
@@ -107,7 +117,7 @@ For developers, the Data Download tool is useful for auditing what data Facebook
 }
 ```
 
-## Off-Facebook Activity Management
+### Step 7: Off-Facebook Activity Management
 
 Facebook tracks activity from partner websites and apps to deliver targeted ads. The "Off-Facebook Activity" tool provides transparency and control:
 
@@ -116,7 +126,7 @@ Facebook tracks activity from partner websites and apps to deliver targeted ads.
 
 For privacy-conscious users, disabling "Future Off-Facebook Activity" prevents Facebook from receiving data about your browsing, though this may reduce ad relevance and some platform features.
 
-## API Rate Limits and Developer Controls
+### Step 8: API Rate Limits and Developer Controls
 
 For developers building Facebook-integrated applications, understanding rate limits is critical:
 
@@ -148,7 +158,7 @@ def facebook_api_call(url, token, max_retries=3):
     raise Exception("Max retries exceeded")
 ```
 
-## Two-Factor Authentication
+### Step 9: Two-Factor Authentication
 
 Secure your account with two-factor authentication (2FA) under **Settings → Security and Login → Two-factor authentication**. Facebook supports:
 
@@ -158,7 +168,7 @@ Secure your account with two-factor authentication (2FA) under **Settings → Se
 
 For developers, enabling 2FA on developer accounts is mandatory for accessing certain API features and advertising tools.
 
-## Privacy Checkup Tool
+### Step 10: Privacy Checkup Tool
 
 Facebook's Privacy Checkup walks through key settings in a guided flow. Access it from your profile's "..." menu or navigate directly to the Privacy Checkup section. This tool is particularly useful for reviewing post audience defaults, checking profile visibility, adjusting tagging controls, and reviewing app permissions.
 
@@ -189,7 +199,7 @@ FB.login(function(response) {
 ```
 ---
 
-## Privacy Controls by Facebook Feature (2026 Edition)
+### Step 11: Privacy Controls by Facebook Feature (2026 Edition)
 
 Facebook has fragmented into multiple services, each with distinct privacy concerns. Here's the complete breakdown:
 
@@ -265,7 +275,7 @@ Facebook owns Instagram. If your accounts are linked:
 
 ---
 
-## Data Request and Export for Privacy Audit
+### Step 12: Data Request and Export for Privacy Audit
 
 Understand exactly what Facebook knows about you:
 
@@ -334,7 +344,7 @@ echo "   Remove any interests you don't want to be targeted for"
 
 ---
 
-## Developer-Specific Privacy Hardening
+### Step 13: Developer-Specific Privacy Hardening
 
 If you build applications that use Facebook Login or integrate with Facebook data:
 
@@ -430,12 +440,12 @@ def track_permission_changes(user_id, old_permissions, new_permissions):
 
 ---
 
-## Annual Facebook Privacy Audit Checklist
+### Step 14: Annual Facebook Privacy Audit Checklist
 
 Run this checklist once per year:
 
 ```markdown
-## Facebook Privacy Audit (Annual)
+### Step 15: Facebook Privacy Audit (Annual)
 
 - [ ] Settings > Privacy > Review post audience default (should be Friends)
 - [ ] Settings > Privacy > Run "Limit past posts" (blocks all old public posts)
@@ -454,6 +464,21 @@ Run this checklist once per year:
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
