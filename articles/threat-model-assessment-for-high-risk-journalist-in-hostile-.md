@@ -1,5 +1,7 @@
 ---
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
+description: "Learn threat model assessment for high risk journalist in hostile  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Threat Model Assessment For High Risk Journalist In Hostile"

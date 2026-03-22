@@ -1,5 +1,7 @@
 ---
 permalink: /threat-modeling-basics-developers/
+description: "Learn threat modeling basics developers with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Threat Modeling Basics for Developers"

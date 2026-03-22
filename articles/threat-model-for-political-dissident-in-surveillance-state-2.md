@@ -9,7 +9,7 @@ permalink: /threat-model-for-political-dissident-in-surveillance-state-2/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

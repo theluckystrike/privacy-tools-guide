@@ -1,5 +1,7 @@
 ---
 permalink: /tinder-passport-feature-privacy-implications-what-location-d/
+description: "Learn tinder passport feature privacy implications what location d with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Tinder Passport Feature Privacy Implications What Location"

@@ -1,5 +1,7 @@
 ---
 permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
+description: "Follow this guide to threat model for human rights worker in conflict zone guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Threat Model For Human Rights Worker In Conflict Zone Guide"

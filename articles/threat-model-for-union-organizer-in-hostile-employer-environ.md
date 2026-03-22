@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /threat-model-for-union-organizer-in-hostile-employer-environ/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
