@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /privacy-focused-browser-performance-comparison-cpu-and-memory-usage-tested-2026/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy-focused-browsers, browser-performance, cpu-usage, memory-usage, privacy]---
