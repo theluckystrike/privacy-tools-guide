@@ -40,7 +40,17 @@ You can verify dating matches using public records by searching county court rec
 - **County Clerk and Court**: Records Most criminal and civil court records are maintained at the county level.
 - Uses the NSOPW API endpoints.
 
-## What Public Records Can Reveal
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Public Records Can Reveal
 
 Several categories of public information can help verify a dating match:
 
@@ -54,7 +64,7 @@ Several categories of public information can help verify a dating match:
 
 **Business Registrations**: If someone claims to own a business, you can verify business registrations through state secretary of state databases.
 
-## Legal Considerations
+### Step 2: Legal Considerations
 
 Before conducting any background check, understand the legal framework:
 
@@ -66,7 +76,7 @@ Before conducting any background check, understand the legal framework:
 
 **International Considerations**: If your match lives in a different country, research that country's public records access laws. Many countries have different frameworks for public information.
 
-## Methods for Public Records Searches
+### Step 3: Methods for Public Records Searches
 
 ### 1. County Clerk and Court Records
 
@@ -212,7 +222,7 @@ def verify_social_media_presence(name, location):
     return results
 ```
 
-## Practical Workflow
+### Step 4: Practical Workflow
 
 Here's a recommended approach for verifying a dating match:
 
@@ -234,7 +244,7 @@ If they've mentioned owning property or a business, verify through county assess
 **Step 6: Cross-Reference**
 Check social media presence to verify consistency. Multiple unconnected data points matching increases confidence.
 
-## Limitations and Caveats
+### Step 5: Limitations and Caveats
 
 **Incomplete Information**: Not all records are digitized or online. Older records, certain case types, and some jurisdictions may require in-person requests.
 
@@ -246,7 +256,7 @@ Check social media presence to verify consistency. Multiple unconnected data poi
 
 **International Records**: Checking records in other countries requires understanding that country's specific systems and laws.
 
-## Ethical Considerations
+### Step 6: Ethical Considerations
 
 Conduct background checks respectfully:
 
@@ -258,7 +268,7 @@ Conduct background checks respectfully:
 
 - **Respect Boundaries**: If someone declines to share information, respect that. Not everyone has clean records, and second chances are part of human relationships.
 
-## Building Your Verification Toolkit
+### Step 7: Build Your Verification Toolkit
 
 For ongoing personal safety verification, consider building a simple reference system:
 
@@ -288,6 +298,21 @@ def create_verification_record(name):
         "notes": ""
     }
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

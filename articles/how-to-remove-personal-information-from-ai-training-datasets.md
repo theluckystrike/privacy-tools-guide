@@ -41,13 +41,23 @@ Removing personal information from AI training datasets is becoming a critical s
 - **You can extend it**: with domain-specific recognizers for your particular use case.
 - **This is particularly useful**: when responding to data deletion requests under privacy regulations.
 
-## Understanding the Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Problem
 
 Large language models trained on internet data often memorize personal information present in their training corpora. This includes names, email addresses, phone numbers, physical addresses, and other PII (Personally Identifiable Information). When prompted appropriately, models can inadvertently reveal this memorized data, creating serious privacy violations.
 
 The challenge differs from traditional data anonymization because neural networks store information non-linearly. Simply removing explicit identifiers from your dataset does not guarantee the model cannot reconstruct or remember underlying personal information. You need an approach covering preprocessing, training, and post-deployment stages.
 
-## Preprocessing: PII Detection and Removal
+### Step 2: Preprocessing: PII Detection and Removal
 
 The first line of defense involves identifying and removing PII before training begins. Several tools and techniques make this process practical for large datasets.
 
@@ -135,7 +145,7 @@ print(f"Privacy budget: ε = {epsilon:.2f}")
 
 The noise_multiplier and max_grad_norm parameters balance privacy guarantees against model utility. Lower noise and higher grad norms preserve more accuracy but provide weaker privacy guarantees.
 
-## Post-Training: Model Editing and Unlearning
+### Step 3: Post-Training: Model Editing and Unlearning
 
 Sometimes you discover personal information in a trained model after training is complete. Several techniques allow you to remove or suppress this information without retraining from scratch.
 
@@ -202,7 +212,7 @@ def unlearn_example(model, forget_data, retain_data, epochs=5):
         optimizer.step()
 ```
 
-## Deployed Model Protection
+### Step 4: Deploy ed Model Protection
 
 After deployment, additional safeguards protect against privacy leaks through model outputs.
 
@@ -267,7 +277,7 @@ class PrivacyAwareGenerator:
         return self.model.generate(prompt)
 ```
 
-## Implementation Checklist
+### Step 5: Implementation Checklist
 
 When building privacy into your AI pipeline, consider these stages:
 
@@ -277,6 +287,21 @@ When building privacy into your AI pipeline, consider these stages:
 4. **Evaluation**: Test models with privacy-specific red-teaming attempts
 5. **Deployment**: Implement output filtering and request monitoring
 6. **Incident Response**: Have procedures for handling discovered privacy leaks
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

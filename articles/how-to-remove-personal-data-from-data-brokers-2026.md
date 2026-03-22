@@ -37,7 +37,17 @@ Data brokers sell your personal information to anyone who pays. Your name, addre
 - **Google yourself**: Results should drop by 50%+
 17.
 
-## The Data Broker Ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Data Broker Ecosystem
 
 Data brokers buy your information from public sources (voter rolls, property records, court filings) and private sources (data aggregators, leaked databases). They then repackage and resell it.
 
@@ -56,7 +66,7 @@ Data brokers buy your information from public sources (voter rolls, property rec
 - Neighbors: Reverse lookups to identify who moved nearby
 - Abusive exes: Stalking and harassment
 
-## The Major Data Brokers (And How to Remove Data)
+### Step 2: The Major Data Brokers (And How to Remove Data)
 
 ### 1. Spokeo (spokeo.com)
 
@@ -158,7 +168,7 @@ Data brokers buy your information from public sources (voter rolls, property rec
 
 **Cost:** Free. Whitepages Premium ($8.39-24.99/month) provides reverse lookups; removal is always free.
 
-## Secondary & Tertiary Brokers (Harder to Remove)
+### Step 3: Secondary & Tertiary Brokers (Harder to Remove)
 
 These resell data from primary brokers. Removing from Spokeo/BeenVerified/Whitepages removes you from many secondary brokers within 30 days.
 
@@ -203,7 +213,7 @@ Primarily B2B, but also list personal data:
 6. Click "Remove Profile"
 7. Done
 
-## Complete List of Data Brokers to Manually Remove From
+### Step 4: Complete List of Data Brokers to Manually Remove From
 
 **High-priority (visible in search results):**
 - Spokeo
@@ -231,7 +241,7 @@ Primarily B2B, but also list personal data:
 
 Total manual work: ~3-4 hours to remove from 15+ brokers.
 
-## Automated Removal Services: DeleteMe vs Kanary vs Privacy Bee
+### Step 5: Automated Removal Services: DeleteMe vs Kanary vs Privacy Bee
 
 For hands-off removal, automated services handle the requests:
 
@@ -335,7 +345,7 @@ For hands-off removal, automated services handle the requests:
 - **Willing to pay:** DeleteMe ($99/mo) for white-glove ongoing service
 - **High risk (abuse):** DeleteMe + contact your state's Attorney General for legal assistance
 
-## Step-by-Step: Complete Data Removal in 6 Hours
+### Step 6: Step-by-Step: Complete Data Removal in 6 Hours
 
 **Phase 1: Remove from Major Brokers (2 hours)**
 
@@ -364,7 +374,7 @@ For hands-off removal, automated services handle the requests:
 20. If new listings appear: Submit removal request
 21. Consider: Privacy Bee or Kanary for $10-40/month to automate monitoring
 
-## What Happens If You Don't Remove Your Data
+### Step 7: What Happens If You Don't Remove Your Data
 
 **In the next 12 months, expect:**
 - 10-50 phishing emails targeted to your address
@@ -378,7 +388,7 @@ For hands-off removal, automated services handle the requests:
 - Harassment and stalking risk is higher
 - Consider professional removal service ($99/mo is worth it if you get peace of mind)
 
-## Legal Rights & Regulations
+### Step 8: Legal Rights & Regulations
 
 **California (CCPA):**
 - You have a legal right to request data deletion from any company
@@ -398,7 +408,7 @@ For hands-off removal, automated services handle the requests:
 - Data brokers won't remove your info after multiple requests
 - You believe data is inaccurate
 
-## Privacy Beyond Data Brokers
+### Step 9: Privacy Beyond Data Brokers
 
 Removing from data brokers is necessary but not sufficient. Also do:
 
@@ -408,7 +418,7 @@ Removing from data brokers is necessary but not sufficient. Also do:
 4. **Opt-out lists:** Unsubscribe from marketing lists (DMAChoice, OptOutPrescreen)
 5. **Data aggregators:** Remove from credit bureaus (AnnualCreditReport.com for free reports)
 
-## Real Example: Removing Your Data (3 Hours)
+### Step 10: Real Example: Removing Your Data (3 Hours)
 
 ```
 2 hours 15 minutes - Manual removals:
@@ -432,13 +442,28 @@ Payoff:
 └─ 2-3 weeks later: Google yourself, 50% fewer results
 ```
 
-## Anti-Patterns to Avoid
+### Step 11: Anti-Patterns to Avoid
 
 1. **Not verifying removals.** Many brokers re-list you. Google yourself 1 month later.
 2. **Using the same password everywhere.** When removing accounts, use unique passwords or you leak credentials.
 3. **Trusting "opt-out" without confirmation.** Some brokers claim opt-out but don't actually remove. Check email confirmation.
 4. **Paying for "credit monitoring" from the broker.** Spokeo, BeenVerified sell monitoring services. Don't buy from them; monitoring is free elsewhere.
 5. **Only removing once.** Data brokers re-list you quarterly. Remove again if needed.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Articles
 

@@ -48,7 +48,17 @@ Beyond privacy, local assistants offer customization freedom. You can modify wak
 
 The privacy implications of cloud voice assistants deserve emphasis. Google Home sends every voice interaction—including recordings before and after the wake word—to Google's servers for processing. Google has acknowledged retaining some recordings for quality review by human contractors. Amazon Alexa operates similarly. Research has shown these devices occasionally activate on false wake words, sending unintended audio to the cloud. A local assistant eliminates this entirely: audio is processed on your hardware, by software you control, and never transmitted anywhere.
 
-## Rhasspy: The Developer-Friendly Option
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Rhasspy: The Developer-Friendly Option
 
 Rhasspy (pronounced "raspy") is a privacy-first, offline voice assistant toolkit designed for developers who want complete control. It supports multiple speech-to-text engines, natural language understanding systems, and text-to-speech outputs—all running locally.
 
@@ -154,7 +164,7 @@ automation:
 
 This keeps the entire voice pipeline local: microphone input → Rhasspy wake word detection → local STT → local intent parsing → Home Assistant automation → device control.
 
-## Mycroft: The Full-Featured Assistant
+### Step 2: Mycroft: The Full-Featured Assistant
 
 Mycroft provides a more complete out-of-the-box experience compared to Rhasspy. It includes its own voice AI (Precise), STT engine (Precise STT), TTS system ( Mimic), and the Adapt intent parser—all pre-integrated.
 
@@ -229,7 +239,7 @@ Configuration in `~/.mycroft/mycroft.conf`:
 }
 ```
 
-## Comparing Rhasspy and Mycroft
+### Step 3: Comparing Rhasspy and Mycroft
 
 | Feature | Rhasspy | Mycroft |
 |---------|---------|---------|
@@ -266,7 +276,7 @@ Regardless of your choice, several optimizations improve responsiveness:
 
 **Separate the wake word node from the processing node**. Run a lightweight wake word detector (OpenWakeWord on a Pi Zero 2W) near your microphone, and send audio snippets over the local network to a more powerful machine running Whisper. This keeps the physical microphone device inexpensive and power-efficient while maintaining accurate transcription.
 
-## Network Isolation
+### Step 4: Network Isolation
 
 Local voice assistants should be isolated on your network like any other IoT device. Even though Rhasspy and Mycroft don't call home, their MQTT brokers and HTTP APIs should not be exposed to the internet or other untrusted network segments:
 
@@ -285,6 +295,21 @@ listener 1883 127.0.0.1
 allow_anonymous false
 password_file /etc/mosquitto/passwords
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

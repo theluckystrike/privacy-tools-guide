@@ -59,7 +59,17 @@ How It Works:
 - **Provides address used only**: for official documents 4.
 - **Submit removal request (most**: require email verification) 6.
 
-## The Data Broker Ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Data Broker Ecosystem
 
 Data brokers operate in layers:
 
@@ -76,7 +86,7 @@ These aggregate data from public records, court documents, social media, and pur
 - Hundreds of small sites buying aggregated data and reselling
 - Often scrapers collecting from Tier 1 brokers
 
-## Understanding Your Data Exposure
+### Step 2: Understand Your Data Exposure
 
 Before removing, understand what data exists. Check what brokers know about you:
 
@@ -103,7 +113,7 @@ Before removing, understand what data exists. Check what brokers know about you:
 
 This information is real and used for targeted marketing, identity theft, scams, and stalking.
 
-## Manual Removal: Tier 1 Data Brokers
+### Step 3: Manual Removal: Tier 1 Data Brokers
 
 ### 1. Spokeo
 
@@ -247,7 +257,7 @@ MyLife specializes in background reports and reputation management.
 - Reviews from people you know
 - "Life events" (marriage, divorce, bankruptcy)
 
-## Semi-Automated Removal: Mid-Tier Brokers
+### Step 4: Semi-Automated Removal: Mid-Tier Brokers
 
 For brokers not listed above, use this systematic approach:
 
@@ -290,7 +300,7 @@ For brokers not listed above, use this systematic approach:
 - Full manual removal of 50 brokers: 40-50 hours
 - Manual removal keeps you off for 2-6 months (brokers re-add data from public records)
 
-## Automated Removal Tools
+### Step 5: Automated Removal Tools
 
 For coverage without manual work, use automation services:
 
@@ -472,7 +482,7 @@ US Alternative:
 | Privacy Duck | $79/yr | 250+ | Monthly | Monthly | Budget-conscious |
 | OneRep | $90/yr | 300+ | Limited | Quarterly | EU-focused |
 
-## Long-Term Prevention Strategy
+### Step 6: Long-Term Prevention Strategy
 
 Removing data today doesn't prevent re-listing tomorrow. Implement these practices:
 
@@ -545,7 +555,7 @@ Recommended Tools:
    - Most expensive services
 ```
 
-## Removal Timeline and Expectations
+### Step 7: Removal Timeline and Expectations
 
 **Week 1:**
 - Data removed from 3-5 major brokers
@@ -567,7 +577,7 @@ Recommended Tools:
 - DeleteMe/Kanary automatically handle quarterly re-removal
 - Manual approach requires manual re-removal
 
-## Special Cases
+### Step 8: Special Cases
 
 **Victims of Domestic Violence:**
 
@@ -604,6 +614,21 @@ Strategy for Public Figures:
 4. Use monitoring tools to catch inaccuracies
 5. Request corrections to false data
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

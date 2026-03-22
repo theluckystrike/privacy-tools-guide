@@ -54,7 +54,7 @@ Zigbee2MQTT bridges Zigbee devices directly to your local MQTT broker, bypassing
 
 Beyond privacy, the practical reliability improvement is significant. When your ISP has an outage, your lights still turn on and your motion sensors still trigger automations. The Zigbee mesh itself operates at 2.4GHz using the IEEE 802.15.4 standard, with each powered device acting as a router that extends coverage to battery-powered end devices like sensors and buttons.
 
-## Coordinator Hardware Selection
+### Step 1: Coordinator Hardware Selection
 
 The coordinator is the single most important hardware decision. It acts as the USB radio dongle that your Linux host uses to communicate with the Zigbee mesh.
 
@@ -83,7 +83,7 @@ Before starting, gather these components:
 - MQTT broker (Mosquitto)
 - Basic terminal familiarity
 
-## Installing the MQTT Broker
+### Step 2: Install the MQTT Broker
 
 Zigbee2MQTT publishes device states to an MQTT broker. Run Mosquitto in Docker:
 
@@ -118,7 +118,7 @@ listener 1883
 password_file /mosquitto/config/passwd
 ```
 
-## Installing Zigbee2MQTT
+### Step 3: Install Zigbee2MQTT
 
 The recommended approach uses the official Zigbee2MQTT Docker image. Create a `docker-compose.yml`:
 
@@ -148,7 +148,7 @@ ls -la /dev/serial/by-id/
 
 Using the `by-id` path rather than `/dev/ttyUSB0` directly ensures the correct device is used even if other USB serial devices are connected, and survives reboots where device enumeration order may change.
 
-## Configuring Zigbee2MQTT
+### Step 4: Configure Zigbee2MQTT
 
 Edit the `configuration.yaml` in your data directory:
 
@@ -172,7 +172,7 @@ The `network_key: GENERATE` option creates a unique 16-byte key for your Zigbee 
 
 Channel selection matters for interference avoidance. Zigbee channels 15, 20, 25, and 26 avoid overlap with the most common WiFi channels (1, 6, 11). Channel 25 or 26 offer the best separation from WiFi in most home environments, at the cost of slightly reduced range on older devices.
 
-## Starting the Service
+### Step 5: Starting the Service
 
 Launch Zigbee2MQTT:
 
@@ -195,7 +195,7 @@ zigbee2mqtt:info  2026-03-16 10:00:00: Starting scheduler...
 zigbee2mqtt:info  2026-03-16 10:00:00: Zigbee2MQTT started!
 ```
 
-## Pairing Devices
+### Step 6: Pairing Devices
 
 Put your Zigbee devices in pairing mode. The process varies by device type:
 
@@ -223,7 +223,7 @@ After pairing, devices appear in the MQTT topic hierarchy under `zigbee2mqtt/[de
 
 The `linkquality` field (0-255) tells you signal strength. Values below 50 indicate marginal connectivity; below 20, the device will frequently drop offline. Add a powered router device (plug or bulb) between the coordinator and weak end devices to extend mesh coverage.
 
-## Integrating with Home Automation
+### Step 7: Integrate with Home Automation
 
 With Zigbee2MQTT running locally, connect to home automation platforms that support MQTT:
 
@@ -269,7 +269,7 @@ client.subscribe("zigbee2mqtt/#")
 client.loop_forever()
 ```
 
-## Securing Your Setup
+### Step 8: Secure Your Setup
 
 While running locally, implement basic security measures:
 
@@ -301,7 +301,7 @@ Ensure no other Zigbee hubs are active nearby — two coordinators on the same c
 **High CPU on Raspberry Pi:**
 The Zigbee2MQTT process is lightweight, but Mosquitto logging at debug level can generate substantial disk I/O on SD cards. Set the MQTT log level to `info` and consider using an USB SSD instead of an SD card for the data directory.
 
-## Extending the Setup
+### Step 9: Extending the Setup
 
 Once running, explore these enhancements:
 

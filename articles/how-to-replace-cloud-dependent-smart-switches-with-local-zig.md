@@ -42,7 +42,17 @@ Cloud-dependent smart switches send your device data, usage patterns, and networ
 - **Zigbee2MQTT supports OTA updates**: for many devices.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Problem
 
 Most commercial smart switches rely on cloud infrastructure for basic functionality. When you tap that button in an app, the signal travels to the manufacturer's server, gets processed, and then sends a command back to your device. This architecture creates several problems:
 
@@ -53,7 +63,7 @@ Most commercial smart switches rely on cloud infrastructure for basic functional
 
 Zigbee operates on a mesh network protocol that devices use to communicate directly. With a local hub, you eliminate the cloud entirely while gaining reliable, low-latency control.
 
-## Choosing Your Hardware
+### Step 2: Choose Your Hardware
 
 For a local Zigbee setup, you need two components: a Zigbee hub and Zigbee-compatible switches or dimmers.
 
@@ -77,7 +87,7 @@ Look for devices with explicit Zigbee support. Some popular options include:
 
 Check the device's product database on [Zigbee2MQTT.io](https://zigbee2mqtt.io) to confirm compatibility before purchasing.
 
-## Setting Up Your Local Hub
+### Step 3: Set Up Your Local Hub
 
 This example uses Zigbee2MQTT on a Raspberry Pi or Linux server.
 
@@ -124,7 +134,7 @@ npm start
 
 The frontend will be available at `http://localhost:8080` where you can pair devices.
 
-## Pairing Your Switches
+### Step 4: Pairing Your Switches
 
 With Zigbee2MQTT running, put your switch into pairing mode. This usually involves pressing and holding a button for 5-10 seconds until the LED flashes. The device will appear in the Zigbee2MQTT interface.
 
@@ -138,7 +148,7 @@ Once paired, you'll see the device in the frontend with its entities. A typical 
 }
 ```
 
-## Integrating with Home Automation
+### Step 5: Integrate with Home Automation
 
 Now comes the powerful part: controlling your switches locally through automation.
 
@@ -181,7 +191,7 @@ For complex automations, Node-RED provides a visual programming interface. This 
 // MQTT out node sends command to zigbee2mqtt
 ```
 
-## Practical Migration Strategy
+### Step 6: Practical Migration Strategy
 
 Moving from cloud switches to local Zigbee requires a phased approach:
 
@@ -193,7 +203,7 @@ Moving from cloud switches to local Zigbee requires a phased approach:
 
 This approach minimizes disruption while allowing you to validate the new system.
 
-## Handling Edge Cases
+### Step 7: Handling Edge Cases
 
 ### No Neutral Wire
 
@@ -212,7 +222,7 @@ Zigbee mesh networks improve range as you add more devices. If you have coverage
 
 Zigbee devices occasionally need firmware updates. Zigbee2MQTT supports OTA updates for many devices. Check the documentation for your specific device to see if OTA updates are available.
 
-## Verification and Monitoring
+### Step 8: Verification and Monitoring
 
 After migration, verify your setup is truly local:
 
@@ -225,6 +235,21 @@ sudo ngrep -d eth0 '' host <hub_ip>
 ```
 
 You should see MQTT traffic only on your local network, with no external connections to manufacturer servers.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

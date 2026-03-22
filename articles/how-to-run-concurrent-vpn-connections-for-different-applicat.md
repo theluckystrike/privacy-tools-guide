@@ -42,13 +42,23 @@ This guide covers practical methods for achieving concurrent VPN connections on 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding VPN Routing at the Network Level
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand VPN Routing at the Network Level
 
 Before implementing concurrent connections, you need to understand how network routing works. Each VPN creates a virtual network interface with its own IP address and routing table entries. By default, all traffic flows through the default route, but you can manipulate routing tables to send specific traffic through specific interfaces.
 
 The key distinction is between **split tunneling** and **full tunnel** configurations. Split tunneling allows you to route only certain traffic through the VPN while letting other traffic use your regular connection. This is essential for running concurrent connections without routing all your traffic through every tunnel.
 
-## Method 1: Using Separate VPN Client Instances
+### Step 2: Method 1: Using Separate VPN Client Instances
 
 The simplest approach involves running multiple VPN client instances, each configured with different routing rules. Most OpenVPN, WireGuard, and IKEv2 clients support configuration files that specify which traffic should traverse the tunnel.
 
@@ -86,7 +96,7 @@ sudo openvpn --config vpn-client-b.conf &
 
 Each instance creates its own network interface, and the `route` directives ensure traffic to those networks goes through the appropriate tunnel.
 
-## Method 2: WireGuard with Custom Routing Tables
+### Step 3: Method 2: WireGuard with Custom Routing Tables
 
 WireGuard offers a modern, high-performance alternative with straightforward routing configuration. Each WireGuard interface can have its own peer configuration with specific allowed IPs.
 
@@ -129,7 +139,7 @@ sudo wg-quick up wg-client-b
 
 The `AllowedIPs` parameter controls what traffic each tunnel handles. Setting specific subnets rather than `0.0.0.0/0` enables split tunneling.
 
-## Method 3: Application-Level Routing with Proxy Chains
+### Step 4: Method 3: Application-Level Routing with Proxy Chains
 
 For fine-grained control at the application level, you can route specific processes through different tunnels without modifying system-wide routing. This approach is particularly useful for developers testing applications in different network environments.
 
@@ -196,7 +206,7 @@ sudo ip netns exec vpn-namespace-a curl https://api.example.com
 
 This approach provides complete isolation, ensuring no traffic leaks between namespaces.
 
-## Method 4: Routing Applications by UID on Linux
+### Step 5: Method 4: Routing Applications by UID on Linux
 
 For system-level control on Linux, you can route traffic based on user or group IDs using `iptables` marks:
 
